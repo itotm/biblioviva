@@ -1,0 +1,19 @@
+{
+	"title": "关于",
+	"app": {
+		"version": "版本",
+		"license": "许可证",
+		"repository": "源代码"
+	},
+	"deps": {
+		"title": "所用的库",
+		"runtime": "运行时（{{count}}）",
+		"development": "仅用于开发（{{count}}）",
+		"system": "系统组件",
+		"columns": {
+			"name": "名称",
+			"version": "版本",
+			"license": "许可证"
+		}
+	}
+}

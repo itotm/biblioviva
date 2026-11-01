@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Lecteurs",
+		"new": "Nouveau lecteur",
+		"search": "Rechercher par nom de famille…",
+		"empty": "Aucun lecteur ne correspond aux filtres.",
+		"filters": {
+			"type": "Type",
+			"stage": "Degré",
+			"level": "Classe",
+			"status": "Statut",
+			"all": "Tous",
+			"allF": "Toutes"
+		},
+		"columns": {
+			"name": "Nom de famille et prénom",
+			"type": "Type",
+			"class": "Classe",
+			"card": "Carte"
+		},
+		"clearFilters": "Effacer les filtres",
+		"countFiltered": "{{shown:plural; one:{{shown}} lecteur correspond; other:{{shown}} lecteurs correspondent;}} aux filtres",
+		"printCards": "Imprimer les cartes",
+		"printClassCards": "Imprimer les cartes {{classLabel}}",
+		"removeSelected": "Supprimer la sélection",
+		"removeTitle": "Supprimer {{count}} {{count:plural; one:lecteur; other:lecteurs;}} ?",
+		"removeDescription": "Pour chacun, le prénom et le nom de famille, les contacts, le matricule, les notes, le numéro de carte et la photo sont effacés immédiatement et pour toujours ; le type, la classe, la section et l'historique des prêts restent pour les statistiques. Ceux qui ont des prêts en cours sont conservés.",
+		"removed": "{{removed}} {{removed:plural; one:supprimé; other:supprimés;}}, {{kept}} {{kept:plural; one:gardé; other:gardés;}} pour prêts en cours",
+		"status": {
+			"title": "Statut",
+			"loans": "{{count}} en prêt",
+			"overdue": "{{count}} en retard",
+			"noPhoto": "sans photo"
+		},
+		"startTitle": "Rechercher un lecteur",
+		"startHint": "Recherche par nom, par carte ou avec les filtres."
+	},
+	"types": {
+		"student": "Élève",
+		"teacher": "Enseignant"
+	},
+	"fields": {
+		"patronType": "Type",
+		"firstName": "Prénom",
+		"lastName": "Nom de famille",
+		"cardNumber": "Numéro de carte",
+		"cardNumberHint": "Vide : le numéro est attribué automatiquement.",
+		"externalId": "Matricule",
+		"email": "E-mail",
+		"emailHint": "L'adresse que l'établissement attribue à l'élève ou à l'enseignant : elle servira pour les avis.",
+		"circulationNote": "Note pour la banque de prêt",
+		"circulationNoteHint": "Affichée bien en évidence pendant le prêt.",
+		"notes": "Notes internes",
+		"status": "Statut",
+		"openLoans": "Prêts en cours",
+		"overdueLoans": "En retard",
+		"noCard": "sans carte",
+		"none": "—",
+		"levelCode": "Classe",
+		"groupId": "Section",
+		"classLabel": "Classe",
+		"teacherGroup": "Groupe d'enseignants"
+	},
+	"form": {
+		"createTitle": "Nouveau lecteur",
+		"editTitle": "Modifier le lecteur",
+		"identity": "Identité",
+		"school": "Classe",
+		"contacts": "Contacts",
+		"notes": "Notes",
+		"create": "Créer le lecteur",
+		"save": "Enregistrer les modifications",
+		"classSelect": "Choisir…",
+		"defaultTeacherGroup": "Le groupe des enseignants"
+	},
+	"errors": {
+		"emailInvalid": "Adresse e-mail non valide.",
+		"cardNumberInvalid": "Numéro de carte non valide : chiffres, lettres majuscules et tiret uniquement, avec le bon caractère de contrôle.",
+		"cardNumberTaken": "Numéro de carte déjà attribué à un autre lecteur.",
+		"cardNumberIsCopy": "Le numéro de carte est, ou ressemble à, le code-barres d'un exemplaire : choisir un autre numéro.",
+		"externalIdTaken": "Matricule déjà attribué à un autre lecteur.",
+		"levelRequired": "Pour un élève, la classe (le niveau) est obligatoire.",
+		"levelUnknown": "Classe non prévue par les niveaux de l'établissement.",
+		"levelNotForTeachers": "Un enseignant n'a pas de classe.",
+		"groupRequired": "Pour un élève, la section est obligatoire.",
+		"groupUnknown": "Section introuvable parmi les classes actives : les classes se créent dans Administration → Configuration → Classes.",
+		"levelNotInGroup": "Cette section ne comporte pas cette classe : choisir une section de la classe."
+	},
+	"detail": {
+		"heading": "Fiche du lecteur",
+		"tabs": {
+			"loans": "Prêts en cours",
+			"history": "Historique",
+			"cards": "Carte",
+			"notes": "Notes"
+		},
+		"noLoans": "Aucun prêt en cours.",
+		"loanColumns": {
+			"due": "Retour prévu"
+		},
+		"overdue": "en retard",
+		"card": "Carte {{number}}",
+		"noNotes": "Aucune note.",
+		"edit": "Modifier",
+		"created": "Créé le {{when}}",
+		"barcodeAlt": "Code-barres de la carte {{number}}",
+		"cardPrinted": "Carte imprimée le {{when}}.",
+		"cardNotPrinted": "Carte non encore imprimée.",
+		"reassignCard": "Réattribuer la carte",
+		"reassignTitle": "Attribuer une nouvelle carte ?",
+		"reassignDescription": "Le numéro actuel est retiré définitivement et la nouvelle carte devra être imprimée.",
+		"cardReassigned": "Nouvelle carte : {{number}}",
+		"printCard": "Imprimer la carte",
+		"markCardPrinted": "Marquer comme imprimée",
+		"cardMarkedPrinted": "Carte marquée comme imprimée",
+		"historyColumns": {
+			"issuedAt": "Prêté le",
+			"dueDate": "Retour prévu",
+			"returnedAt": "Rendu le",
+			"outcome": "Issue",
+			"title": "Titre",
+			"author": "Auteur",
+			"barcode": "Exemplaire",
+			"renewals": "Prolongations",
+			"schoolYear": "Année scolaire"
+		},
+		"outcome": {
+			"open": "En cours",
+			"overdue": "En retard",
+			"returned": "Rendu",
+			"returnedLate": "Rendu en retard",
+			"lost": "Perdu"
+		},
+		"historyEmpty": "Aucun prêt enregistré.",
+		"historyCount": "{{count}} {{count:plural; one:prêt; other:prêts;}} au total",
+		"notesEdit": "Modifier les notes",
+		"notesSaved": "Notes enregistrées",
+		"notesUnchanged": "Aucune modification",
+		"notesHint": "La note pour la banque de prêt s'affiche en évidence au moment du prêt ; les autres notes restent ici.",
+		"remove": "Supprimer {{type}}",
+		"removeTitle": "Supprimer définitivement {{name}} ?",
+		"removeDescription": "Effacés immédiatement et pour toujours : nom et prénom, e-mail, matricule, notes, numéro de carte (retiré) et photo. Restent seulement le type, la classe, la section et l'historique des prêts, pour les statistiques. Cette opération est irréversible.",
+		"removeOpenLoans": "Ce lecteur a {{count}} {{count:plural; one:prêt en cours qui doit d'abord être rendu ou signalé perdu; other:prêts en cours qui doivent d'abord être rendus ou signalés perdus;}}.",
+		"removeClassSheets": "Ce lecteur a été choisi pour {{count}} {{count:plural; one:photo; other:photos;}} dans les images de classe (recensement à partir d'une image) : {{count:plural; one:ce cadre est recouvert; other:ces cadres sont recouverts;}}.",
+		"removed": "Lecteur supprimé : les données personnelles ont été effacées.",
+		"removedInfo": "Supprimé le {{when}}. Ne restent que les données pour les statistiques.",
+		"lostTitle": "Livres perdus",
+		"lostHint": "Signalés perdus pendant qu'ils étaient prêtés à ce lecteur. S'ils reviennent, les enregistrer comme rendus à la banque de prêt.",
+		"markLost": "Signaler « {{title}} » perdu",
+		"markLostTitle": "Signaler « {{title}} » comme perdu ?",
+		"markLostDescription": "Le prêt se clôt et l'exemplaire apparaît comme perdu. Si le livre réapparaît, il suffit d'enregistrer son retour : il redevient disponible.",
+		"markLostReason": "Motif (facultatif)",
+		"markLostConfirm": "Signaler perdu",
+		"markedLost": "« {{title}} » signalé comme perdu."
+	},
+	"photo": {
+		"title": "Photo",
+		"take": "Prendre une photo",
+		"upload": "Importer un fichier",
+		"retake": "Reprendre",
+		"use": "Utiliser cette photo",
+		"cancel": "Annuler",
+		"delete": "Supprimer la photo",
+		"deleteTitle": "Supprimer la photo ?",
+		"deleteDescription": "La photo est supprimée du serveur ; une nouvelle pourra être prise.",
+		"zoom": "Zoom",
+		"dragHint": "Glisser pour cadrer, utiliser le zoom pour se rapprocher.",
+		"saved": "Photo enregistrée",
+		"deleted": "Photo supprimée",
+		"placeholder": "Aucune photo",
+		"alt": "Photo de {{name}}",
+		"errors": {
+			"too_large": "Fichier trop volumineux : la limite est de {{maxMb}} Mo.",
+			"not_an_image": "Le fichier n'est pas une image lisible.",
+			"unsupported_format": "Format d'image non pris en charge (utiliser JPEG, PNG, WebP ou HEIC).",
+			"empty": "Aucun fichier sélectionné."
+		},
+		"withForm": "Elle est enregistrée avec le lecteur.",
+		"requiredHint": "La photo est requise : la prendre maintenant, ou plus tard depuis la fiche du lecteur.",
+		"optionalHint": "La photo peut être prise maintenant ou plus tard depuis la fiche du lecteur.",
+		"remove": "Retirer",
+		"notSaved": "La photo n'a pas été enregistrée : la reprendre depuis la fiche du lecteur.",
+		"retakePhoto": "Reprendre la photo"
+	},
+	"census": {
+		"title": "Recensement des photos",
+		"noGroup": "Sans classe",
+		"stageOthers": "Sans degré",
+		"progress": "{{done}} sur {{total}} avec photo",
+		"allDone": "Tous ont une photo.",
+		"back": "Changer de classe ou de liste",
+		"skip": "Passer",
+		"done": "Terminer",
+		"saved": "Photo enregistrée : {{name}}",
+		"quickAdd": "Nouveau lecteur",
+		"quickAddHint": "Ajouté à {{group}} ; sa photo sera la suivante.",
+		"create": "Ajouter et photographier",
+		"findPerson": "Chercher par nom de famille",
+		"pickTarget": "Choisir une liste ou une classe",
+		"listsTitle": "Listes de lecteurs",
+		"classesTitle": "Classes",
+		"nothingMissing": "Toutes les classes et toutes les listes ont leurs photos.",
+		"onlyMissing": "Ne sont affichées que les classes et listes où il manque au moins une photo.",
+		"byCamera": "Une personne à la fois",
+		"sheets": {
+			"title": "À partir d'une image avec plusieurs photos",
+			"hint": "Images avec plusieurs photos (planche du photographe, cartes posées sur une table, page de photos d'identité) : les photos sont repérées automatiquement et attribuées à chaque lecteur.",
+			"upload": "Charger une image",
+			"take": "Photographier la planche",
+			"uploading": "Envoi de l'image…",
+			"empty": "Aucune image pour cette classe ou cette liste.",
+			"item": "Image du {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:photo trouvée; other:photos trouvées;}} · {{saved}} {{saved:plural; one:enregistrée; other:enregistrées;}} · {{pending}} à faire",
+			"notDetected": "Pas encore traitée",
+			"demoScan": "Exemple d'un scanner",
+			"demoPhoto": "Exemple d'une photo",
+			"demoHint": "Deux façons d'obtenir les photos de la classe : une numérisation est à plat, ses photos sont des rectangles au plus tournés ; une photo est prise de biais, la perspective déforme les cadres."
+		},
+		"sheet": {
+			"title": "Photos à partir d'une image",
+			"back": "Retour à la classe",
+			"detecting": "Recherche des photos dans l'image…",
+			"found": "Photos trouvées : {{count}}. Choisir à qui appartient chacune.",
+			"none": "Aucune photo trouvée. Avec « Corriger les cadres », elles peuvent être dessinées à la main.",
+			"pictureAlt": "L'image chargée, avec les cadres des photos numérotés",
+			"frame": "Photo {{n}}",
+			"choose": "Qui est-ce ?",
+			"nobody": "— Personne —",
+			"takenBy": "{{name}} (déjà sur la photo {{n}})",
+			"hasPhoto": "a déjà une photo",
+			"noPhoto": "sans photo",
+			"ignore": "Ignorer",
+			"unignore": "Rétablir",
+			"ignored": "Ignorée : ce n'est personne de cette classe ou de cette liste.",
+			"saved": "Enregistrée comme photo de {{name}}",
+			"edit": "Corriger les cadres",
+			"editDone": "Fin des corrections",
+			"editHint": "Toucher un cadre et faire glisser ses angles ; pour une photo manquante, utiliser « Ajouter un cadre ».",
+			"editHintScan": "Toucher un cadre : faire glisser un angle pour l'agrandir ou le réduire, le cercle au-dessus pour le tourner ; pour une photo manquante, utiliser « Ajouter un cadre ».",
+			"addFrame": "Ajouter un cadre",
+			"addFrameHint": "Glisser sur l'image, d'un angle à l'autre de la photo manquante.",
+			"deleteFrame": "Supprimer le cadre {{n}}",
+			"rotateFrame": "Tourner le cadre",
+			"kind": "Type d'image",
+			"kindPhoto": "Photo",
+			"kindScan": "Numérisation",
+			"kindPhotoHint": "Prise de biais : chaque angle d'un cadre se déplace seul, pour suivre la perspective.",
+			"kindScanHint": "Faite avec un scanner : les cadres restent rectangulaires et peuvent seulement être tournés.",
+			"kindAgain": "Tant qu'aucun lecteur n'est choisi, changer de type relance la recherche des photos.",
+			"save": "Enregistrer les photos",
+			"saveTitle": "Enregistrer les photos choisies ?",
+			"saveSummary": "Photos à enregistrer : {{count}}.",
+			"saveReplaces": "Elles remplacent la photo déjà présente de : {{names}}.",
+			"saveUnassigned": "Cadres sans personne choisie : {{count}} (ils restent en l'état).",
+			"savedToast": "Photos enregistrées : {{count}}.",
+			"deleteSheet": "Supprimer l'image",
+			"deleteSheetTitle": "Supprimer l'image ?",
+			"deleteSheetDescription": "L'image et ses cadres sont supprimés. Les photos déjà enregistrées restent aux lecteurs.",
+			"deletedToast": "Image supprimée.",
+			"progress": "{{label}} : {{done}} sur {{total}} avec photo",
+			"missingTitle": "Encore sans photo",
+			"byCamera": "Les photographier un par un",
+			"errors": {
+				"not_found": "Image introuvable.",
+				"set_not_found": "La classe ou la liste n'existe plus.",
+				"empty": "Le fichier est vide.",
+				"too_large": "L'image est trop grande (au maximum {{maxMb}} Mo).",
+				"not_an_image": "Le fichier n'est pas une image lisible.",
+				"unsupported_format": "Format non pris en charge : utiliser JPEG, PNG, WebP ou HEIC.",
+				"too_many_frames": "Au maximum {{maxFrames}} {{maxFrames:plural; one:photo; other:photos;}} par image.",
+				"bad_corners": "Le cadre n'est pas valide : ses angles doivent former un quadrilatère à l'intérieur de l'image.",
+				"already_detected": "Les photos de cette image ont déjà été recherchées.",
+				"frame_saved": "Cette photo a déjà été enregistrée.",
+				"frame_erased": "Cette photo appartenait à un lecteur supprimé : le cadre a été recouvert.",
+				"not_a_member": "Seuls les lecteurs de la classe ou de la liste peuvent être choisis.",
+				"patron_taken": "Déjà choisi pour la photo {{position}} : la libérer avant de le choisir ici.",
+				"confirm_replace": "{{count:plural; one:{{count}} photo remplace une photo existante; other:{{count}} photos remplacent des photos existantes;}} : confirmer pour continuer.",
+				"nothing_to_save": "Choisir au moins un lecteur avant d'enregistrer."
+			},
+			"erased": "Lecteur supprimé : le cadre a été recouvert dans l'image."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "Fichier CSV",
+			"submit": "Charger",
+			"hints": {
+				"students": "Un fichier CSV avec une ligne par élève, séparé par ; ou par , (un export de tableur convient aussi). Utiliser les en-têtes du modèle, téléchargeable ci-dessous avec les colonnes nécessaires.",
+				"teachers": "Un fichier CSV avec une ligne par enseignant, séparé par ; ou par , . Utiliser les en-têtes du modèle, téléchargeable ci-dessous avec les colonnes nécessaires."
+			}
+		},
+		"mapping": {
+			"format": "Format reconnu",
+			"uncertain": "Le format n'est pas certain : vérifier les colonnes avant de continuer.",
+			"remembered": "Colonnes retenues lors de la dernière importation de ce fichier.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "en-tête du fichier",
+				"unknown": "inconnu"
+			},
+			"mode": "Mode",
+			"modes": {
+				"upsert": "Ajouter et mettre à jour",
+				"upsertHint": "Les lignes correspondant à un lecteur mettent celui-ci à jour, les autres créent de nouveaux lecteurs.",
+				"sync": {
+					"students": "Synchroniser les élèves",
+					"teachers": "Synchroniser les enseignants"
+				},
+				"syncHint": {
+					"students": "Le fichier est la liste complète des élèves : ceux qui manquent sont signalés (et supprimés, après confirmation). Les enseignants ne sont pas modifiés.",
+					"teachers": "Le fichier est la liste complète des enseignants : ceux qui manquent sont signalés (et supprimés, après confirmation). Les élèves ne sont pas modifiés."
+				}
+			},
+			"duplicates": "Lecteurs déjà présents",
+			"policies": {
+				"update": "Mettre à jour",
+				"skip": "Ignorer",
+				"create": "Créer quand même"
+			},
+			"validate": "Vérifier le fichier",
+			"matchByName": {
+				"students": "Sans la colonne external_id, les élèves déjà en archive sont reconnus par nom et classe.",
+				"teachers": "Sans la colonne external_id, les enseignants déjà en archive sont reconnus par nom."
+			}
+		},
+		"preview": {
+			"ready": "Aucune erreur : l'importation est possible.",
+			"blocked": "Corriger les erreurs du fichier (ou des lecteurs) et vérifier de nouveau : un fichier comportant des erreurs ne s'importe pas.",
+			"columns": {
+				"name": "Nom",
+				"class": "Classe"
+			},
+			"changed": "Modifications : {{fields}}",
+			"homonym": {
+				"pick": "Choisir le lecteur",
+				"create": "Créer un nouveau lecteur",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Homonymes à résoudre"
+			},
+			"missing": {
+				"students": {
+					"title": "Élèves présents en archive mais absents du fichier ({{count}})",
+					"remove": "Supprimer ces élèves de l'archive (anonymisation immédiate)",
+					"noPermission": "Sans l'autorisation de supprimer des lecteurs, les élèves manquants restent en archive.",
+					"notRemoved": "{{count}} {{count:plural; one:élève manquant non supprimé car il a; other:élèves manquants non supprimés car ils ont;}} des prêts en cours."
+				},
+				"teachers": {
+					"title": "Enseignants présents en archive mais absents du fichier ({{count}})",
+					"remove": "Supprimer ces enseignants de l'archive (anonymisation immédiate)",
+					"noPermission": "Sans l'autorisation de supprimer des lecteurs, les enseignants manquants restent en archive.",
+					"notRemoved": "{{count}} {{count:plural; one:enseignant manquant non supprimé car il a; other:enseignants manquants non supprimés car ils ont;}} des prêts en cours."
+				},
+				"hint": "Avec la synchronisation, celui qui n'est pas dans le fichier peut être supprimé : les données personnelles sont effacées immédiatement et pour toujours ; ne restent que la classe et les statistiques."
+			},
+			"commit": "Importer",
+			"back": "Retour aux colonnes",
+			"generatedCards": "{{count}} {{count:plural; one:nouvelle carte sera générée; other:nouvelles cartes seront générées;}} : le fichier ne contient pas de numéro."
+		},
+		"reasons": {
+			"tooLong": "Texte trop long dans la colonne {{column}} : au maximum {{max}} {{max:plural; one:caractère; other:caractères;}}",
+			"nameRequired": "Prénom ou nom de famille manquant",
+			"emailInvalid": "E-mail non valide",
+			"cardNumberInvalid": "Numéro de carte non valide",
+			"cardNumberTaken": "Numéro de carte déjà attribué à un autre lecteur",
+			"cardNumberIsCopy": "Numéro de carte égal ou semblable à un code-barres d'exemplaire",
+			"externalIdTaken": "Matricule déjà attribué à un autre lecteur",
+			"duplicateInFile": "Même personne déjà à la ligne {{line}}",
+			"homonym": "{{count}} {{count:plural; one:homonyme; other:homonymes;}} en archive : choisir lequel mettre à jour",
+			"matchedTwice": "Une autre ligne met déjà à jour le même lecteur",
+			"skipped": "Déjà présent : ignoré",
+			"levelRequired": "Classe manquante",
+			"levelUnknown": "Niveau « {{value}} » non prévu par l'établissement",
+			"groupRequired": "Section manquante",
+			"groupUnknown": "Section « {{value}} » introuvable pour ce niveau. Classes valides : {{classes}} (les classes se créent dans Administration → Configuration → Classes)",
+			"levelNotInGroup": "La section « {{value}} » n'a pas ce niveau. Classes valides : {{classes}}",
+			"classUnknown": "Classe « {{value}} » introuvable. Classes valides : {{classes}}",
+			"teacherGroupUnknown": "Groupe d'enseignants « {{value}} » introuvable. Groupes valides : {{classes}}"
+		},
+		"done": {
+			"title": "Importation terminée",
+			"summary": "{{created}} {{created:plural; one:nouveau; other:nouveaux;}}, {{updated}} mis à jour, {{unchanged}} sans modification, {{removed}} {{removed:plural; one:supprimé; other:supprimés;}}.",
+			"printNew": "Imprimer les cartes des nouveaux lecteurs",
+			"census": "Recensement des photos",
+			"again": "Importer un autre fichier",
+			"batch": "Importation n° {{id}} : le fichier d'origine est conservé sur le serveur."
+		},
+		"fields": {
+			"firstName": "Prénom",
+			"lastName": "Nom de famille",
+			"class": "Classe (niveau et section)",
+			"level": "Classe (niveau)",
+			"section": "Section",
+			"group": "Groupe d'enseignants",
+			"externalId": "Matricule",
+			"cardNumber": "Carte",
+			"email": "E-mail"
+		},
+		"titles": {
+			"students": "Importer des élèves",
+			"teachers": "Importer des enseignants"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "Le prénom."
+			},
+			"lastName": {
+				"hint": "Le nom de famille."
+			},
+			"class": {
+				"hint": "La classe dans une seule colonne, comme 3A ou 3 A : elle doit exister dans Administration → Configuration → Classes."
+			},
+			"level": {
+				"hint": "Le niveau (1, 2, 3…), avec la section dans la colonne section."
+			},
+			"section": {
+				"hint": "La section (A, B…) : avec level, elle désigne la classe."
+			},
+			"cardNumber": {
+				"hint": "Le numéro de carte, si l'élève en a déjà une.",
+				"missing": "les nouvelles cartes sont générées"
+			},
+			"externalId": {
+				"hint": "Le code du registre électronique.",
+				"missing": "les lecteurs déjà présents sont reconnus par nom et classe"
+			},
+			"email": {
+				"hint": "Facultatif."
+			},
+			"group": {
+				"hint": "Le groupe d'enseignants ; s'il manque, le groupe par défaut."
+			}
+		},
+		"classForm": {
+			"label": "La classe",
+			"class": "Dans une colonne (class : 3A)",
+			"levelSection": "Dans deux colonnes (level : 3, section : A)"
+		}
+	}
+}

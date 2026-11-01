@@ -1,0 +1,77 @@
+{
+	"id": "cn-xiaoxue",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Classes written 三年级(2)班; some schools use full-width parentheses （2） [VERIFY]. The school year starts on 1 September [VERIFY].",
+	"name": {
+		"it": "Scuola primaria, xiǎoxué (Cina)",
+		"en": "Primary school, xiaoxue (China)",
+		"zh": "小学（中国）"
+	},
+	"country": "CN",
+	"languages": ["zh"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "xiaoxue",
+				"name": "小学"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "一",
+				"name": "一年级",
+				"stage": "xiaoxue",
+				"aliases": ["1年级", "小一"]
+			},
+			{
+				"code": "2",
+				"label": "二",
+				"name": "二年级",
+				"stage": "xiaoxue",
+				"aliases": ["2年级", "小二"]
+			},
+			{
+				"code": "3",
+				"label": "三",
+				"name": "三年级",
+				"stage": "xiaoxue",
+				"aliases": ["3年级", "小三"]
+			},
+			{
+				"code": "4",
+				"label": "四",
+				"name": "四年级",
+				"stage": "xiaoxue",
+				"aliases": ["4年级", "小四"]
+			},
+			{
+				"code": "5",
+				"label": "五",
+				"name": "五年级",
+				"stage": "xiaoxue",
+				"aliases": ["5年级", "小五"]
+			},
+			{
+				"code": "6",
+				"label": "六",
+				"name": "六年级",
+				"stage": "xiaoxue",
+				"aliases": ["6年级", "小六"]
+			}
+		],
+		"classLabel": "{level}年级({group})班",
+		"groupWord": "班级",
+		"cardClass": "{class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"xiaoxue": ["1", "2", "3", "4"]
+	},
+	"teacherGroup": "教师",
+	"readingLevels": []
+}

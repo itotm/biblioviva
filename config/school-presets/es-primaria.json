@@ -1,0 +1,65 @@
+{
+	"id": "es-primaria",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md Phase 12, B2 of docs/studies/barcodes-and-school-classes.md).",
+	"name": {
+		"it": "Scuola primaria (Spagna)",
+		"en": "Primary school (Spain)"
+	},
+	"country": "ES",
+	"languages": ["es"],
+	"school": {
+		"stages": [
+			{
+				"code": "primaria",
+				"name": "Educación Primaria"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1º",
+				"name": "1º de Primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "2",
+				"label": "2º",
+				"name": "2º de Primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "3",
+				"label": "3º",
+				"name": "3º de Primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "4",
+				"label": "4º",
+				"name": "4º de Primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "5",
+				"label": "5º",
+				"name": "5º de Primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "6",
+				"label": "6º",
+				"name": "6º de Primaria",
+				"stage": "primaria"
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Grupo",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"primaria": ["A", "B", "C"]
+	},
+	"teacherGroup": "Profesorado",
+	"readingLevels": []
+}

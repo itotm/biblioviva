@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "印刷",
+		"newPatrons": "新しい利用者リスト",
+		"newItems": "新しい資料リスト",
+		"newPatronsTitle": "利用者の新しいリスト",
+		"newItemsTitle": "資料の新しいリスト",
+		"name": "リスト名",
+		"defaultName": "{{date}}のリスト{{n}}",
+		"kind": "種類",
+		"kinds": {
+			"all": "すべて",
+			"patrons": "利用者",
+			"items": "資料"
+		},
+		"classes": "学級",
+		"classesHint": "リストを作らずに、学級全体のカードを印刷します。",
+		"classKind": "学級",
+		"count": "{{count}}{{count:plural; other:件;}}",
+		"empty": "リストはありません。ここで作成するか、利用者と蔵書のページの「リストに追加」から作成できます。",
+		"lastPrinted": "{{when}}に印刷",
+		"neverPrinted": "未印刷",
+		"open": "開く",
+		"created": "リストを作成しました",
+		"deleted": "リストを削除しました",
+		"deleteTitle": "リスト「{{name}}」を削除しますか？",
+		"deleteDescription": "項目はリストから外れます。利用者の情報はそのまま残ります。"
+	},
+	"list": {
+		"rename": "名前を変更",
+		"renamed": "リストの名前を変更しました",
+		"print": "カードを印刷",
+		"markPrinted": "印刷済みにする",
+		"marked": "{{count}}{{count:plural; other:枚;}}のカードを印刷済みにしました",
+		"clearAfter": "印刷後にリストを空にする",
+		"clear": "空にする",
+		"cleared": "リストを空にしました",
+		"clearTitle": "リストを空にしますか？",
+		"clearDescription": "すべての項目がリストから外れます。利用者の情報はそのまま残ります。",
+		"delete": "削除",
+		"entries": "リスト内の利用者{{count}}{{count:plural; other:人;}}",
+		"empty": "リストは空です。クイックフィルター、バーコードリーダー、または利用者のページから利用者を追加してください。",
+		"remove": "リストから削除",
+		"moveUp": "上へ",
+		"moveDown": "下へ",
+		"dragHint": "項目をドラッグすると、印刷の順番を変更できます。",
+		"removed": "リストから削除しました",
+		"columns": {
+			"position": "番号",
+			"printed": "カード印刷済み"
+		},
+		"printedYes": "はい",
+		"printedNo": "いいえ",
+		"quick": {
+			"title": "フィルターで追加",
+			"hint": "リストにすでにいる利用者は、二重には追加されません。",
+			"type": "種類",
+			"any": "すべて",
+			"stage": "学校段階",
+			"level": "学年",
+			"withoutPrintedCard": "カードが一度も印刷されていない利用者のみ",
+			"withoutPhoto": "写真のない利用者のみ",
+			"importBatch": "取り込み",
+			"anyBatch": "— なし —",
+			"batchLabel": "番号{{id}} · {{file}} · 新規{{created}}件",
+			"createdAfter": "作成日から",
+			"add": "リストに追加",
+			"added": "{{added}}人を追加、{{skipped}}人はすでにリストにあります",
+			"none": "フィルターに一致する利用者はいません。",
+			"pendingLabels": "印刷するラベル",
+			"pendingAny": "— すべての資料 —",
+			"acquiredFrom": "受入日から",
+			"acquiredTo": "まで",
+			"genre": "ジャンル",
+			"itemType": "資料の種類",
+			"batchLabelItems": "番号{{id}} · {{file}} · {{created}}{{created:plural; other:冊;}}",
+			"noneItems": "フィルターに一致する資料はありません。",
+			"addedItems": "{{added}}冊を追加、{{skipped}}冊はすでにリストにあります",
+			"nonfictionClass": "非小説の分類"
+		},
+		"scan": {
+			"title": "バーコードリーダーで追加",
+			"hint": "利用者のカードを読み取ると、すぐに追加されます。リストにすでにあるカードは無視されます。",
+			"added": "{{name}}を追加しました",
+			"duplicate": "{{name}}はすでにリストにあります",
+			"unknown": "カード {{card}} の利用者はいません",
+			"notCard": "読み取ったコードはカードではありません",
+			"hintItems": "資料のバーコードを1冊ずつ読み取ってください（例：書架に沿って歩きながら）。すぐに追加されます。リストにすでにある資料は無視されます。",
+			"addedItem": "{{title}}（{{barcode}}）を追加しました",
+			"duplicateItem": "{{title}}（{{barcode}}）はすでにリストにあります",
+			"unknownItem": "バーコード {{barcode}} の資料はありません",
+			"notItem": "読み取ったコードは資料ではありません"
+		},
+		"printLabels": "ラベルを印刷",
+		"markPrintedKind": "ラベルを印刷済みにする",
+		"markedItems": "{{count}}{{count:plural; other:冊;}}を印刷済みにしました",
+		"entriesItems": "リスト内の資料{{count}}{{count:plural; other:冊;}}",
+		"emptyItems": "リストは空です。クイックフィルター、バーコードリーダー、または蔵書のページから資料を追加してください。",
+		"clearDescriptionItems": "すべての項目が削除されます。資料は蔵書に残ります。"
+	},
+	"basket": {
+		"label": "印刷リスト",
+		"labelToPrint": "印刷リスト：印刷待ち{{count}}{{count:plural; other:件;}}",
+		"entry": "{{name}}（{{count}}）",
+		"none": "印刷するリストはありません",
+		"all": "すべてのリスト"
+	},
+	"addTo": {
+		"button": "リストに追加",
+		"selected": "選択した項目をリストに追加",
+		"title": "印刷リストに追加",
+		"existing": "既存のリスト",
+		"create": "新しいリスト",
+		"newName": "新しいリストの名前",
+		"confirm": "追加",
+		"done": "「{{name}}」に{{added}}件を追加、{{skipped}}件はすでにあります"
+	},
+	"labels": {
+		"title": "ラベルを印刷",
+		"button": "ラベルを印刷",
+		"selected": "選択した項目のラベルを印刷",
+		"kind": "ラベルの種類",
+		"kinds": {
+			"pair": "ペア",
+			"barcode": "バーコードのみ",
+			"spine": "背ラベルのみ"
+		},
+		"kindHints": {
+			"pair": "上に背ラベル、下にバーコードラベルを1冊ごとに1組印刷します（現在の印刷物と同じ）。",
+			"barcode": "再印刷用に、内部のバーコードラベルのみ印刷します。",
+			"spine": "背ラベルのみ印刷します（例：分類を変更したあと）。"
+		},
+		"stock": "ラベルシート",
+		"start": "最初の空き位置",
+		"startHint": "1から{{max}}まで。シートですでに使ったラベルは飛ばされます。",
+		"count": "{{count}}{{count:plural; other:冊;}}",
+		"unclassified": "分類待ちの資料{{count}}{{count:plural; other:冊;}}です。分類が終わるまでは{{count:plural; other:その;}}バーコードラベルのみ印刷され、背ラベルは分類のあとに印刷されます。",
+		"pendingCount": "ラベルの印刷待ちの資料{{count}}{{count:plural; other:冊;}}",
+		"pages": "{{pages}}{{pages:plural; other:枚;}}（1枚あたり{{perPage}}）",
+		"print": "印刷ページを開く",
+		"afterPrint": "印刷ページが新しいタブで開きました。ラベルを印刷したら、印刷済みにしてください。",
+		"markPrinted": "印刷済みにする",
+		"marked": "{{count}}{{count:plural; other:冊;}}を印刷済みにしました",
+		"status": {
+			"printed": "ラベル印刷済み",
+			"pending": "ラベル印刷待ち",
+			"partial": "ラベル1枚が不足"
+		}
+	},
+	"cards": {
+		"title": "カードを印刷",
+		"count": "{{count}}{{count:plural; other:枚;}}",
+		"afterPrint": "印刷ページが新しいタブで開きました。カードを印刷したら、印刷済みにしてください。",
+		"layout": "印刷の方法",
+		"layouts": {
+			"side-by-side": "表と裏を並べて印刷",
+			"duplex": "用紙の両面に印刷"
+		},
+		"window": "ブラウザーの印刷画面で次のとおり設定してください：",
+		"steps": {
+			"duplex": {
+				"long-edge": "「両面印刷」を選び、長辺で反転させます。",
+				"short-edge": "「両面印刷」を選び、短辺で反転させます。"
+			},
+			"scale": "「実際のサイズ」を選び、拡大縮小は100%にします（「用紙に合わせる」ではありません）。",
+			"margins": "余白：なし。",
+			"after": {
+				"side-by-side": {
+					"marks": "次に、定規でカードの周りのトリムマークを結び、各カードを切り取ります。短辺で半分に折ってください。",
+					"line": "次に、各カードの周りの色のついた線に沿って切り取り、短辺で半分に折ってください。",
+					"edge": "次に、各カードの縁に沿って切り取り、短辺で半分に折ってください。"
+				},
+				"duplex": {
+					"marks": "次に、定規で表面の周りのトリムマークを結んでカードを切り取ります。裏面はすでに表面の後ろにあります（1枚に10枚）。",
+					"line": "次に、表面の周りの色のついた線に沿ってカードを切り取ります。裏面はすでに表面の後ろにあります（1枚に10枚）。",
+					"edge": "次に、表面の縁に沿ってカードを切り取ります。裏面はすでに表面の後ろにあります（1枚に10枚）。"
+				}
+			}
+		},
+		"print": "印刷",
+		"calibrate": "初めて印刷するとき、または裏面が表面の後ろに来ないときは："
+	},
+	"words": {
+		"teacher": "教員",
+		"title": "書名",
+		"code": "コード",
+		"dueBy": "返却期限",
+		"due": "期限",
+		"name": "氏名",
+		"daysOverdue": "延滞日数",
+		"loanOn": "{{date}}の貸出、宛先",
+		"overduesOn": "{{date}}の図書館からの督促状",
+		"toReturn": "図書館に返却する資料",
+		"enjoy": "どうぞ良い読書を。"
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"title": "Reports",
+	"categories": {
+		"loans": "Loans",
+		"books": "Books",
+		"patrons": "Patrons",
+		"ops": "Activity"
+	},
+	"restricted": "Administrators only",
+	"custom": "The school's",
+	"chart": "With chart",
+	"problemsTitle": "Report files not loaded",
+	"problemsHint": "These files of the reports folder have an error and are not listed:",
+	"params": "Parameters",
+	"run": "Update",
+	"all": "All",
+	"from": "from",
+	"to": "to",
+	"patronTypes": {
+		"student": "Students",
+		"teacher": "Teachers"
+	},
+	"rows": "{{count}} {{count:plural; one:row; other:rows;}}",
+	"ms": "in {{ms}} ms",
+	"truncated": "Only the first {{count}} {{count:plural; one:row is; other:rows are;}} shown: narrow the parameters to see them all.",
+	"empty": "No results with these parameters.",
+	"print": "Print",
+	"printedOn": "Printed on {{date}}",
+	"errors": {
+		"required": "“{{label}}” is missing.",
+		"invalid": "The value of “{{label}}” is not valid."
+	},
+	"back": "All reports",
+	"noParams": "This report has no parameters.",
+	"special": {
+		"teachers": "Teachers",
+		"total": "Total"
+	}
+}

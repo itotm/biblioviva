@@ -1,0 +1,60 @@
+{
+	"dashboard": "Oversikt",
+	"circulation": "Utlån",
+	"catalog": "Katalog",
+	"patrons": "Lånere",
+	"printing": "Utskrift",
+	"notes": "Meldinger",
+	"reports": "Rapporter",
+	"admin": "Administrasjon",
+	"more": "Mer",
+	"logout": "Logg ut",
+	"help": "Hjelp",
+	"about": "Om",
+	"areas": {
+		"circulation": {
+			"label": "Utlånsdisk",
+			"checkout": "Utlån",
+			"checkin": "Innleveringer",
+			"loans": "Bøker på utlån",
+			"overdues": "Purringer",
+			"wishlist": "Ønskeliste",
+			"calendar": "Kalender"
+		},
+		"catalog": {
+			"label": "Katalogsider",
+			"catalog": "Katalog",
+			"inventory": "Bokrevisjon",
+			"wishlist": "Ønskeliste",
+			"toClassify": "Til klassifisering"
+		},
+		"patrons": {
+			"label": "Lånersider",
+			"patrons": "Lånere",
+			"census": "Fotoregistrering"
+		},
+		"notes": {
+			"label": "Meldingssider",
+			"open": "Åpne",
+			"archived": "Arkiverte"
+		},
+		"config": {
+			"label": "Innstillingssider",
+			"overview": "Seksjoner",
+			"history": "Historikk"
+		},
+		"templates": {
+			"label": "Sider for utskriftsmaler",
+			"edit": "Maler",
+			"previews": "Forhåndsvisninger"
+		},
+		"imports": {
+			"label": "Import",
+			"catalog": "Katalog",
+			"students": "Elever",
+			"teachers": "Lærere",
+			"loans": "Pågående utlån",
+			"photos": "Lånerbilder"
+		}
+	}
+}

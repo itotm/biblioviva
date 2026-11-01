@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "Adminisztráció",
+		"sections": {
+			"config": {
+				"title": "Beállítások",
+				"description": "A könyvtár osztályozása és beállításai."
+			},
+			"audit": {
+				"title": "Műveleti napló",
+				"description": "Ki mit csinált: bejelentkezések, módosítások, importálások."
+			},
+			"users": {
+				"title": "Munkatársi fiókok",
+				"description": "Munkatársi fiókok, szerepkörök és jogosultságok."
+			},
+			"backups": {
+				"title": "Biztonsági mentések",
+				"description": "Az adatbázis és a fájlok biztonsági másolatai."
+			},
+			"rollover": {
+				"title": "Évfolyamlépés",
+				"description": "Év végén: előrelépések, évismétlők, az utolsó évfolyam távozói."
+			},
+			"exports": {
+				"title": "Exportálás",
+				"description": "Olvasók, katalógus, kölcsönzések és minden adat CSV vagy JSON fájlban."
+			},
+			"imports": {
+				"title": "Importálás",
+				"description": "Katalógus, olvasók, folyamatban lévő kölcsönzések és fotók: CSV fájlokból vagy a Koha-kivonatból."
+			}
+		}
+	},
+	"audit": {
+		"title": "Műveleti napló",
+		"filters": {
+			"from": "Kezdete",
+			"to": "Vége",
+			"user": "Fiók",
+			"action": "Művelet",
+			"all": "Mind"
+		},
+		"columns": {
+			"when": "Mikor",
+			"user": "Fiók",
+			"action": "Művelet",
+			"entity": "Objektum",
+			"entityId": "ID",
+			"details": "Részletek"
+		},
+		"count": "{{shown}} / {{total}} {{total:plural; one:bejegyzés; other:bejegyzés;}}",
+		"empty": "Ezekkel a szűrőkkel nincs bejegyzés.",
+		"system": "rendszer"
+	},
+	"users": {
+		"title": "Munkatársi fiókok",
+		"fields": {
+			"roles": "Szerepkörök",
+			"permissions": "Jogosultságok",
+			"lastLogin": "Utolsó bejelentkezés",
+			"never": "soha"
+		},
+		"status": {
+			"active": "Aktív",
+			"inactive": "Letiltva",
+			"plainPassword": "Jelszó nyílt szövegként a fájlban",
+			"notInConfig": "Eltávolítva a beállításokból"
+		},
+		"hash": {
+			"title": "Jelszó-hash létrehozása",
+			"description": "Adja meg a hozzárendelendő jelszót: megjelenik az argon2id hash, amelyet be kell illeszteni a passwordHash mezőbe. A jelszó nem kerül mentésre.",
+			"password": "Jelszó (legalább {{min}} karakter)",
+			"generate": "Hash létrehozása",
+			"result": "Beillesztendő hash",
+			"copy": "Másolás",
+			"copied": "A hash másolva",
+			"tooShort": "A jelszónak legalább {{min}} karakterből kell állnia.",
+			"disclosure": "Azoknak, akik kézzel szerkesztik a fájlokat: jelszó-hash létrehozása"
+		},
+		"reload": {
+			"button": "Beállítások újratöltése",
+			"success": "A beállítások újratöltve",
+			"successWithWarnings": "A beállítások újratöltve: {{count}} {{count:plural; one:figyelmeztetés; other:figyelmeztetés;}}",
+			"failed": "Érvénytelen beállítások: az előző marad érvényben",
+			"exampleSource": "Figyelem: a config.json fájl nem létezik, a példabeállítások vannak használatban."
+		},
+		"new": "Új fiók",
+		"newPassword": "Új jelszó",
+		"permissionNames": {
+			"all": "Minden",
+			"loans": "Kölcsönzés",
+			"patrons": "Olvasók",
+			"patrons_import": "Olvasók importálása",
+			"catalog": "Katalógus",
+			"catalog_import": "Katalógus importálása",
+			"reports": "Jelentések",
+			"anonymize": "Anonimizálás",
+			"admin": "Adminisztráció"
+		},
+		"roles": {
+			"title": "Szerepkörök és jogosultságok",
+			"hint": "A szerepkör jogosultságok csoportja; minden fióknak egy vagy több szerepköre van. A „Minden” minden jogosultságot ad, a későbbi verziók által hozzáadottakat is. Egy szerepkör átnevezése frissíti a használó fiókokat.",
+			"name": "Szerepkör",
+			"unused": "nincs fiók",
+			"badName": "Betűk, számjegyek, kötőjelek és aláhúzásjelek (legfeljebb 32).",
+			"add": "Szerepkör hozzáadása",
+			"saved": "A szerepkörök mentve"
+		},
+		"auth": {
+			"title": "Bejelentkezés",
+			"config": "Az emberek ezen az oldalon lévő fiókokkal jelentkeznek be, általában szerepkörönként egy közös fiókkal (például „kolcsonzes” a pulthoz).",
+			"database": "Az emberek személyes fiókokkal jelentkeznek be.",
+			"later": "A személyes fiókok, személyenként egy, egy későbbi verzióban várhatók."
+		},
+		"dialog": {
+			"title": {
+				"new": "Új fiók",
+				"edit": "Szerkesztés: {{name}}",
+				"password": "Új jelszó: {{name}}"
+			},
+			"username": "Felhasználónév",
+			"usernameHint": "Kisbetűk, számjegyek, pont, kötőjel és aláhúzásjel (2–32 karakter).",
+			"badUsername": "Csak kisbetűk, számjegyek, pont, kötőjel és aláhúzásjel használható (2–32 karakter).",
+			"displayName": "Megjelenített név",
+			"active": "Aktív fiók (be tud jelentkezni)",
+			"password": "Jelszó (legalább {{min}} karakter)",
+			"repeat": "Jelszó megismétlése",
+			"mismatch": "A két jelszó nem egyezik.",
+			"passwordHint": "A jelszó nem kerül mentésre: a beállításokba csak a hash íródik. Aki ezzel a fiókkal van bejelentkezve, újra be kell jelentkeznie.",
+			"saved": {
+				"new": "Fiók létrehozva",
+				"edit": "Fiók mentve",
+				"password": "Jelszó megváltoztatva"
+			},
+			"removed": "Fiók törölve",
+			"removeTitle": "Törli a következő fiókot: {{name}}?",
+			"removeHint": "A fiók kikerül a beállításokból; a nevében végzett műveletek megmaradnak a naplóban. A beállítások előzményei között visszavonható."
+		},
+		"errors": {
+			"badUsername": "Érvénytelen felhasználónév: {{details}}.",
+			"usernameTaken": "A(z) {{details}} felhasználónév már foglalt.",
+			"notFound": "Fiók nem található: {{details}}.",
+			"noRoles": "Válasszon legalább egy szerepkört.",
+			"unknownRole": "Ismeretlen szerepkör: {{details}}.",
+			"passwordTooShort": "A jelszó túl rövid.",
+			"passwordRequired": "Az új fiókhoz jelszó szükséges.",
+			"lastAdmin": "Legalább egy aktív fióknak meg kell tartania az adminisztrációs jogosultságot.",
+			"stillActive": "Törlés előtt tiltsa le a fiókot.",
+			"badRole": "Érvénytelen szerepkörnév: {{details}}.",
+			"roleTaken": "Két szerepkör ugyanazt a nevet viseli: {{details}}.",
+			"roleInUse": "A szerepkört néhány fiók használja: {{details}}.",
+			"invalid": "A beállítások érvénytelenek lennének: {{details}}."
+		}
+	},
+	"backups": {
+		"title": "Biztonsági mentések",
+		"runNow": "Mentés most",
+		"created": "Biztonsági mentés létrehozva: {{name}}",
+		"createdDeleted": "Biztonsági mentés létrehozva: {{name}} ({{deleted}} {{deleted:plural; one:régi mentés törölve; other:régi mentés törölve;}})",
+		"empty": "Még nincs biztonsági mentés. Az első az ütemezett időpontban készül, vagy a „Mentés most” gombbal.",
+		"download": "Letöltés",
+		"columns": {
+			"when": "Létrehozva",
+			"size": "Méret"
+		},
+		"catchUp": {
+			"badge": "Indításkor készült",
+			"hint": "Az ütemezett mentés kimaradt (a számítógép ki volt kapcsolva): a BiblioViva az indításkor elkészítette."
+		},
+		"offsite": {
+			"title": "Utolsó külső másolat",
+			"disabled": "A külső másolat nincs beállítva. A telepítési útmutatóban leírt „offsite” (rclone) szolgáltatással kapcsolható be.",
+			"never": "A szolgáltatás be van kapcsolva, de még nem jelentett eredményt.",
+			"ok": "Az utolsó másolat sikeres volt: {{when}}",
+			"error": "Az utolsó másolat sikertelen volt: {{when}}",
+			"stale": "A külső másolat két napnál régebbi: ellenőrizze az offsite szolgáltatást.",
+			"remote": "Célhely: {{remote}}"
+		},
+		"restore": {
+			"title": "Visszaállítás",
+			"button": "Visszaállítás…",
+			"hint": "Válassza a „Visszaállítás…” lehetőséget a lista egyik mentésénél, vagy töltsön fel egy BiblioViva-archívumot (mentés, „Minden exportálása” vagy „Beállítások exportálása”, legfeljebb {{maxMb}} MB; a nagyobb fájlt a szerver mentési mappájába kell másolni, vagy a bun run backup:restore paranccsal visszaállítani). Először minden ellenőrzésre kerül, majd csak a kiválasztott részek állnak vissza: a többi marad, ahogy van.",
+			"upload": "Archívum feltöltése",
+			"from": "Forrás: {{name}}, {{date}}",
+			"count": "{{part}}: most {{live}}, a mentésben {{archive}}",
+			"images": "Visszaállítandó képek: {{photos}} {{photos:plural; one:fotó; other:fotó;}}, {{covers}} {{covers:plural; one:borító; other:borító;}}.",
+			"gapsTitle": "Néhány adat olyan dolgok nélkül maradna, amelyekre hivatkozik:",
+			"gap": "{{rows:plural; one:{{rows}} sor a(z) „{{part}}” részből hivatkozik ehhez a részhez, nevezetesen „{{needs}}”, amely nem lenne ott; other:{{rows}} sor a(z) „{{part}}” részből hivatkozik ehhez a részhez, nevezetesen „{{needs}}”, amely nem lenne ott;}}: adja hozzá a(z) „{{add}}” részt a kiválasztáshoz.",
+			"schema": "A mentés a BiblioViva más verziójából származik (táblák: {{tables}}): itt nem állítható vissza.",
+			"apply": "Visszaállítás",
+			"confirmTitle": "Visszaállítja a kiválasztott részeket?",
+			"confirmHint": "A kiválasztott adatok és beállítások helyére a mentés adatai kerülnek. A beállítások visszavonhatók az előzményekből; az adatokhoz érdemes előbb biztonsági mentést készíteni, ha nincs friss.",
+			"done": "A visszaállítás befejeződött",
+			"notArchive": "A fájl nem BiblioViva-archívum."
+		},
+		"contents": {
+			"title": "A biztonsági mentés tartalma",
+			"database": "Adatbázis: teljes másolat minden futtatáskor (az alábbi listában).",
+			"images": "Fotók és borítók: minden éjjel átmásolódnak a mentés „uploads” mappájába ({{photos}} {{photos:plural; one:fotó; other:fotó;}}, {{covers}} {{covers:plural; one:borító; other:borító;}} jelenleg).",
+			"imagesPending": "Fotók és borítók: az első másolás a következő futtatáskor történik ({{photos}} {{photos:plural; one:fotó; other:fotó;}}, {{covers}} {{covers:plural; one:borító; other:borító;}} másolandó).",
+			"config": "A beállítások (sablonok, képek, egyéb beállítások) nincsenek benne az éjszakai mentésben: ehhez használja a „Minden exportálása” lehetőséget."
+		},
+		"export": {
+			"button": "Minden exportálása",
+			"hint": "Egyetlen ZIP-fájl az adatbázissal, a fotókkal, a borítókkal és a teljes beállítással (a sablonokkal és a képekkel együtt), a bun run backup:restore parancshoz."
+		},
+		"createdMirror": "Biztonsági mentés létrehozva: {{name}}; {{copied}} {{copied:plural; one:kép másolva; other:kép másolva;}}",
+		"parts": {
+			"title": "Biztonsági mentés vagy exportálás egyes részekről",
+			"hint": "Válassza ki, mit tartalmazzon: a könyvtár adatait, az egyes részek beállításait, a sablonokat, a képeket… A „Mentés létrehozása” az alábbi listában tárolja, a „Letöltés” a számítógépre tölti le.",
+			"create": "Mentés létrehozása",
+			"download": "Letöltés"
+		}
+	},
+	"demo": {
+		"clear": "Mintaadatok ürítése",
+		"confirmTitle": "Kiüríti a mintaadatokat?",
+		"confirmDescription": "A bemutató olvasói, könyvei, kölcsönzései és fotói törlődnek. Az osztályok és a tanári csoport megmarad. Minden kezelő ki lesz jelentkeztetve.",
+		"cleared": "A mintaadatok eltávolítva. Jelentkezzen be újra.",
+		"clearedPassword": "A fiókok még a bemutató jelszót használják („{{password}}”): azonnal módosítsa az Adminisztráció → Munkatársi fiókok oldalon."
+	},
+	"appearance": {
+		"title": "Megjelenés és nyelv",
+		"current": "Jelenlegi színkészlet: {{name}}",
+		"areas": {
+			"title": "Területek stílusa",
+			"hint": "A felső sáv azon terület színét veszi fel, amelyben éppen dolgozik (Kölcsönzés, Katalógus, Olvasók…), a kiválasztott színkészlet árnyalataiban. A terület ikonja és neve mindig látszik.",
+			"styles": {
+				"tinted": "Árnyalt sáv (ajánlott)",
+				"filled": "Teli sáv",
+				"accents": "Csak kiemelések",
+				"none": "Nincs szín"
+			},
+			"saved": "A területek stílusa mentve"
+		},
+		"colours": {
+			"title": "Színkészlet"
+		},
+		"save": "Színek mentése",
+		"saved": "A színek mentve",
+		"unchanged": "Nincs mentendő változtatás.",
+		"language": {
+			"title": "Az alkalmazás nyelve",
+			"hint": "Telepítésenként egy nyelv: minden munkatársra vonatkozik.",
+			"save": "Nyelv módosítása",
+			"saved": "A nyelv megváltozott: az oldal újratöltődik."
+		},
+		"logo": {
+			"title": "A könyvtár logója",
+			"hint": "Minden oldal bal felső sarkában látszik, a könyvtár neve mellett. PNG, JPEG vagy WebP; az átlátszó háttér a legjobb.",
+			"upload": "Logó feltöltése",
+			"replace": "Logó cseréje",
+			"remove": "Logó eltávolítása",
+			"saved": "A logó mentve.",
+			"removed": "A logó eltávolítva.",
+			"none": "Nincs logó: általános ikon látszik.",
+			"preview": "Jelenlegi logó",
+			"errors": {
+				"empty": "A fájl üres.",
+				"too_large": "A fájl túl nagy (legfeljebb {{maxMb}} MB).",
+				"not_an_image": "A fájl nem kép.",
+				"unsupported_format": "A formátum nem fogadható el: használjon PNG, JPEG vagy WebP formátumot."
+			}
+		},
+		"name": {
+			"title": "A könyvtár neve",
+			"hint": "A bal felső sarkban, az irányítópulton, a nyomtatványokon és a telefonra telepített alkalmazásban látszik.",
+			"label": "Név",
+			"save": "Név mentése",
+			"saved": "A könyvtár neve mentve",
+			"required": "Adja meg a könyvtár nevét."
+		},
+		"dashboard": {
+			"title": "Irányítópult",
+			"hint": "A kezdőoldal részei, az egész könyvtár számára. A gyors műveletek mindig elöl vannak; minden részen belül minden fiók csak azt látja, amit megtehet.",
+			"save": "Irányítópult mentése",
+			"saved": "Az irányítópult mentve",
+			"sections": {
+				"quickActions": "Gyors műveletek",
+				"tiles": "A könyvtár ma (számokat tartalmazó kártyák)",
+				"inventory": "Folyamatban lévő állományellenőrzés",
+				"installHint": "Meghívás az alkalmazás kezdőképernyőre helyezésére (telefonokon)",
+				"dueThisWeek": "Ezen a héten esedékes",
+				"upcomingDates": "A naptár közelgő dátumai",
+				"todayActivity": "A mai kölcsönzések"
+			}
+		}
+	},
+	"templates": {
+		"title": "Nyomtatási sablonok",
+		"reload": "Sablonok újratöltése",
+		"reloaded": "A sablonok újraolvasva a lemezről",
+		"kinds": {
+			"cards": "Olvasójegyek",
+			"labels": "Címkék",
+			"slips": "Szelvények"
+		},
+		"list": {
+			"source": {
+				"builtin": "Az alkalmazással szállítva",
+				"config": "A beállításokban"
+			},
+			"default": "Alapértelmezett",
+			"status": {
+				"ok": "Érvényes",
+				"error": "Hiba"
+			},
+			"folder": "Mappa",
+			"forTypes": "Ehhez: {{types}}",
+			"emptyCards": "Nincs olvasójegy-sablon: ellenőrizze a beállítások cards/templates mappáját.",
+			"emptyLabels": "Még nincs címkesablon: a katalógus címkenyomtatásával érkezik.",
+			"emptySlips": "Még nincs szelvénysablon: a kölcsönzéssel érkezik."
+		},
+		"preview": {
+			"title": "Előnézet",
+			"front": "Elöl",
+			"back": "Hátul",
+			"patron": "Megjelenítendő olvasó",
+			"sample": "Mintaolvasó",
+			"real": "Valódi olvasó",
+			"search": "Valódi olvasó keresése",
+			"searchPlaceholder": "Vezetéknév vagy keresztnév",
+			"noResults": "Nincs olvasó.",
+			"zoom": "Nagyítás",
+			"sheet": "Teljes lap",
+			"sheetHint": "Egy A4-es oldal a mintaolvasóval, úgy, ahogy nyomtatva lesz.",
+			"test": "Próbaoldal nyomtatása",
+			"broken": "A sablon nem használható, amíg nincs kijavítva:",
+			"size": "{{width}} × {{height}} mm, nagyítás: {{zoom}}"
+		},
+		"test": {
+			"title": "Olvasójegy-próbaoldal",
+			"ruler": "10 cm-es vonalzó: nyomtatás után 100 mm-t kell mérnie (100 %-os méretarányban nyomtasson, „Igazítás a lapra” nélkül)."
+		},
+		"calibration": {
+			"title": "Címke-kalibrálási oldal",
+			"stock": "Címkeanyag",
+			"print": "Kalibrálási oldal nyomtatása",
+			"hint": "Sima papírra nyomtasson, és tartson rá egy címkelapot, hogy ellenőrizze a margókat."
+		},
+		"howTo": {
+			"title": "Sablon létrehozása",
+			"steps": {
+				"step1": "A Beállítások → Nyomtatási sablonok oldalon válassza a „Duplikálás” lehetőséget egy sablonnál (például {{path}}), és adjon neki új nevet.",
+				"step2": "A „Szerkesztés” gombbal rajzolja át, vagy módosítsa a kódját; a képek ugyanezen az oldalon tölthetők fel.",
+				"step3": "Térjen vissza ide, és nézze meg az előnézetet: a nem létező mezőt vagy a hiányzó fájlt jelzi.",
+				"step4": "Éles használatra válassza ki az olvasójegy- vagy címkebeállításoknál."
+			}
+		},
+		"labels": {
+			"stocks": "Ehhez készült: {{stocks}}",
+			"preview": "Előnézet: {{name}}",
+			"geometry": "Egység: {{width}} × {{height}} mm · változat: {{variant}}",
+			"sheet": "Mintalap"
+		}
+	},
+	"loansImport": {
+		"title": "Folyamatban lévő kölcsönzések importálása",
+		"upload": {
+			"hint": "Egyszer használandó, a Kohából való áttéréskor: soronként egy folyamatban lévő kölcsönzés, az olvasó olvasójegyével és a példány vonalkódjával, valamint a kölcsönzés és a határidő dátumával, ha van. Először az olvasókat és a katalógust importálja; a szükséges oszlopokat tartalmazó sablon alul letölthető.",
+			"submit": "Feltöltés"
+		},
+		"mapping": {
+			"uncertain": "A továbblépés előtt ellenőrizze az oszlopokat.",
+			"validate": "Fájl ellenőrzése",
+			"without": {
+				"issuedOn": "Az issued_on oszlop nélkül a kölcsönzések mai dátummal kerülnek be.",
+				"dueOn": "A due_on oszlop nélkül a határidő a kölcsönzőpultnál számítódik ki, a kölcsönzési szabályok és a naptár alapján."
+			}
+		},
+		"fields": {
+			"cardNumber": "Olvasójegy száma",
+			"barcode": "Vonalkód",
+			"issuedOn": "Kölcsönzés dátuma",
+			"dueOn": "Határidő"
+		},
+		"preview": {
+			"ready": "Nincs hiba: a kölcsönzések importálhatók.",
+			"blocked": "Javítsa a hibákat, és ellenőrizze újra: hibával nem importálódik semmi.",
+			"overdue": "{{count}} {{count:plural; one:kölcsönzés; other:kölcsönzés;}} már lejárt határidejű: {{count:plural; one:beimportálódik, és a lejárt határidejűek között jelenik meg; other:beimportálódnak, és a lejárt határidejűek között jelennek meg;}}.",
+			"columns": {
+				"patron": "Olvasó",
+				"barcode": "Példány",
+				"issued": "Kölcsönözve",
+				"due": "Határidő"
+			},
+			"commit": "Kölcsönzések importálása",
+			"back": "Vissza az oszlopokhoz"
+		},
+		"reasons": {
+			"cardMissing": "Hiányzik az olvasójegy száma",
+			"cardUnknown": "Nincs olvasó a következő olvasójeggyel: {{value}}",
+			"barcodeMissing": "Hiányzik a vonalkód",
+			"barcodeUnknown": "Nincs példány a következő vonalkóddal: {{value}}",
+			"alreadyOnLoan": "A(z) {{value}} példány már kölcsönzésben van",
+			"itemWithdrawn": "A(z) {{value}} példány ki van vonva az állományból",
+			"duplicateInFile": "Ugyanez a példány már szerepel a(z) {{line}}. sorban",
+			"issueDateInvalid": "Érvénytelen kölcsönzési dátum: „{{value}}”",
+			"issueDateFuture": "Jövőbeli kölcsönzési dátum: {{value}}",
+			"dueDateInvalid": "Érvénytelen határidő: „{{value}}”",
+			"dueBeforeIssue": "A határidő a kölcsönzés dátuma előtt van",
+			"overdue": "Már lejárt {{date}} óta",
+			"itemUnclassified": "A(z) {{value}} példány osztályozandó könyvhöz tartozik: a kölcsönzés beimportálódik, de a kölcsönzőpult nem adja ki, amíg nincs osztályozva"
+		},
+		"done": {
+			"title": "A kölcsönzések importálva",
+			"summary": "{{created}} {{created:plural; one:kölcsönzés; other:kölcsönzés;}} importálva, ebből {{overdue}} már lejárt határidejű.",
+			"batch": "Importálás sz.: {{id}}: az eredeti fájl megmarad.",
+			"again": "Másik fájl importálása"
+		},
+		"columns": {
+			"cardNumber": "Az olvasó olvasójegyének száma, már importálva.",
+			"barcode": "A példány vonalkódja, már importálva.",
+			"issuedOn": "A kölcsönzés dátuma; hiány esetén a mai nap.",
+			"dueOn": "A határidő; hiány esetén a kölcsönzési szabályok szerint számítva."
+		}
+	},
+	"photosImport": {
+		"title": "Olvasói fotók importálása",
+		"hint": "Olvasónként egy fájl, az olvasójegy száma szerint elnevezve (például 0000001240.jpg): ezeket állítja elő a rendszergazdai útmutatóban leírt exportálás. Minden fotó átméretezésre és a rejtett adatok törlésére kerül; a semelyik olvasójeggyel sem egyező fájlok listát alkotnak.",
+		"replace": "A már meglévő fotók cseréje",
+		"zip": {
+			"title": "ZIP-archívumból",
+			"file": "A fotókat tartalmazó ZIP-archívum",
+			"submit": "Fotók importálása"
+		},
+		"folder": {
+			"title": "A szerver mappájából",
+			"hint": "Másolja a fájlokat ide: {{path}}. {{count:plural; one:Most {{count}} fájl van ott; other:Most {{count}} fájl van ott;}}. Sok fotóhoz ajánlott, amelyek archívumként túl nehezek volnának a feltöltéshez.",
+			"submit": "Importálás a mappából"
+		},
+		"summary": {
+			"title": "Eredmény",
+			"text": "{{imported}} {{imported:plural; one:fotó; other:fotó;}} importálva, {{replaced}} cserélve, {{kept}} {{kept:plural; one:változatlanul hagyva; other:változatlanul hagyva;}} (a fotó már megvolt), {{unmatched}} {{unmatched:plural; one:fájl; other:fájl;}} olvasó nélkül, {{unreadable}} olvashatatlan {{unreadable:plural; one:fájl; other:fájl;}}.",
+			"unreadable": "Nem olvasható képek: {{files}}",
+			"unmatched": "Az olvasó nélküli fájlok listájának letöltése"
+		},
+		"errors": {
+			"notZip": "A fájl nem érvényes ZIP-archívum.",
+			"empty": "Az archívum nem tartalmaz fájlokat."
+		},
+		"done": "Fotók importálva"
+	},
+	"rollover": {
+		"title": "Évfolyamlépés",
+		"subtitle": "Az év végén minden tanuló egy évfolyammal feljebb lép, az utolsó évfolyamot befejezők pedig elhagyják az iskolát.",
+		"steps": {
+			"backup": "Mentés",
+			"classes": "Osztályok",
+			"leavers": "Távozók",
+			"confirm": "Megerősítés",
+			"done": "Kész"
+		},
+		"backup": {
+			"text": "Először készítsen az adatbázisról biztonsági másolatot: ha valami nem sikerül, az Adminisztráció → Biztonsági mentések oldalon állíthatja vissza.",
+			"create": "Biztonsági mentés készítése",
+			"created": "Biztonsági mentés létrehozva: {{name}}"
+		},
+		"classes": {
+			"text": "Minden tanuló az osztályával együtt egy évfolyammal feljebb lép. Jelölje meg, ki ismétli az évet, és ki vált osztályt.",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; one:tanuló; other:tanuló;}}",
+			"exceptions": "{{count}} {{count:plural; one:kivétel; other:kivétel;}}",
+			"loans": "{{count}} olyan, akinek könyv van kölcsönzésben",
+			"repeat": "Ismétel",
+			"target": "Osztály",
+			"noGroup": "Nincs osztály",
+			"choose": "Válasszon osztályt…",
+			"fates": {
+				"advances": "Feljebb lép",
+				"stays": "Marad",
+				"archived": "Lezárul"
+			},
+			"unplaced": "{{count}} {{count:plural; one:tanuló vár; other:tanuló vár;}} arra, hogy osztályt válasszanak neki.",
+			"none": "Nincs olyan tanuló, aki egy évfolyammal feljebb lépne.",
+			"nextYear": "A következő év",
+			"leaves": "Elhagyja az iskolát"
+		},
+		"leavers": {
+			"text": "Az utolsó évfolyam tanulói elhagyják az iskolát: adataik azonnal és véglegesen törlődnek (csak a statisztikák számai maradnak meg). Vegye ki a pipát azoknál, akik maradnak, például az utolsó évet ismétlő tanulónál.",
+			"leaves": "Távozik",
+			"openLoans": "{{count}} {{count:plural; one:könyv; other:könyv;}} kölcsönzésben",
+			"blocked": "{{count}} {{count:plural; one:távozó tanulónak; other:távozó tanulónak;}} még van könyve: rögzítse a visszavételt, jelölje elveszettként, vagy vegye ki a pipát.",
+			"toCheckin": "Ugrás a visszavételhez",
+			"none": "Az utolsó évfolyamban nincs tanuló."
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; one:tanuló; other:tanuló;}} egy évfolyammal feljebb lép",
+			"repeat": "{{count}} {{count:plural; one:tanuló; other:tanuló;}} ismétli az évet",
+			"groupChanges": "{{count}} {{count:plural; one:tanuló; other:tanuló;}} osztályt vált",
+			"closing": "{{count}} {{count:plural; one:osztály; other:osztály;}} lezárul és archiválódik",
+			"remove": "{{count}} {{count:plural; one:tanuló; other:tanuló;}} elhagyja az iskolát, és az adatai törlődnek",
+			"recent": "Az utolsó évfolyamlépés {{date}} napján futott, hat hónapnál nem régebben. Megerősítem, hogy újra le akarom futtatni.",
+			"run": "Osztályok léptetése"
+		},
+		"done": {
+			"title": "Az évfolyamlépés befejeződött",
+			"advanced": "{{count}} {{count:plural; one:osztály; other:osztály;}} egy évfolyammal feljebb lépett",
+			"archived": "{{count}} {{count:plural; one:osztály; other:osztály;}} archiválva",
+			"text": "Következő lépések: szükség esetén hozza létre az új első évfolyamos osztályokat, és a szinkronizálással importálja az új tanulókat.",
+			"import": "Új tanulók importálása"
+		},
+		"errors": {
+			"blocked": "Néhány távozó tanulónak még van kölcsönzött könyve.",
+			"recent": "Megerősítés szükséges: az utolsó évfolyamlépés nemrég volt.",
+			"no_backup": "A mentés nem található, vagy túl régi: az első lépésben készítse el újra.",
+			"invalid_group": "A kiválasztott osztály nem létezik, vagy nem fogadja a tanuló évfolyamát.",
+			"unplaced": "Néhány tanulónak még nincs osztálya: válasszon az Osztályok lépésben.",
+			"invalid_level": "A kiválasztott évfolyamok egyike sem lehetséges: töltse újra az oldalt."
+		},
+		"next": "Tovább",
+		"back": "Vissza"
+	},
+	"classes": {
+		"title": "Osztályok",
+		"subtitle": "Az iskola osztályai és a tanári csoportok.",
+		"hint": "Az iskola évfolyamait és szakaszait a beállításokban lehet módosítani:",
+		"structureLink": "Iskola",
+		"new": "Új osztályok",
+		"newTeachers": "Új tanári csoport",
+		"teachers": "Tanárok",
+		"mixed": "Vegyes évfolyamú osztály",
+		"empty": "Nincs osztály",
+		"emptyHint": "Nincs osztály. Az Új osztályok gombbal lehet létrehozni őket, például az 1–5. évfolyamokat és az A–D neveket.",
+		"archivedTitle": "Archivált {{count:plural; one:osztály; other:osztály;}} ({{count}})",
+		"archive": "Archiválás",
+		"archiveNotEmpty": "Még vannak benne olvasók: nem archiválható",
+		"restore": "Visszaállítás",
+		"archived": "A(z) {{name}} osztály archiválva",
+		"restored": "A(z) {{name}} osztály visszaállítva",
+		"columns": {
+			"class": "Osztály",
+			"levels": "Évfolyamok",
+			"patrons": "Olvasók"
+		},
+		"dialog": {
+			"title": {
+				"students": "Új osztályok",
+				"teachers": "Új tanári csoport",
+				"edit": "Szerkesztés: {{name}}"
+			},
+			"levels": "Évfolyamok",
+			"names": "Az osztályok nevei",
+			"namesHint": "Vesszővel elválasztva; az A-D jelentése A, B, C, D. A név tartalmazhat szóközt.",
+			"name": "Név",
+			"mixed": "Egy vegyes évfolyamú osztály, a kiválasztott összes évfolyammal",
+			"stage": "Szakasz",
+			"anyStage": "Mind",
+			"notes": "Megjegyzések",
+			"preview": "Létrehozandó {{count}} {{count:plural; one:osztály; other:osztály;}}:",
+			"previewEmpty": "Válasszon legalább egy évfolyamot, és írja be a neveket.",
+			"saved": {
+				"students": "{{count}} {{count:plural; one:osztály; other:osztály;}} létrehozva",
+				"teachers": "A tanári csoport létrehozva",
+				"edit": "Az osztály mentve"
+			}
+		},
+		"errors": {
+			"nameRequired": "A név megadása kötelező.",
+			"nameLong": "A név túl hosszú (legfeljebb 40 karakter).",
+			"levelsRequired": "Válasszon legalább egy évfolyamot.",
+			"levelUnknown": "A kiválasztott évfolyam már nem létezik.",
+			"levelsNotForTeachers": "A tanári csoportnak nincsenek évfolyamai.",
+			"nameTaken": "Ugyanazon az évfolyamon már létezik ilyen nevű osztály.",
+			"levelInUse": "Az osztály néhány tanulója olyan évfolyamon van, amelyet törölnének.",
+			"notEmpty": "Az osztályban még vannak olvasók.",
+			"notFound": "Az osztály már nem létezik."
+		}
+	},
+	"exports": {
+		"title": "Exportálás",
+		"subtitle": "A könyvtár adatai megőrzésre szánt fájlokban, újraimportáláshoz vagy egy másik programba való átvitelhez.",
+		"items": {
+			"students": {
+				"title": "Tanulók (CSV)",
+				"description": "Az aktív tanulók az importálás formátumában: visszaimportálhatók az Adminisztráció → Importálás → Tanulók oldalon."
+			},
+			"teachers": {
+				"title": "Tanárok (CSV)",
+				"description": "Az aktív tanárok az importálás formátumában: visszaimportálhatók az Adminisztráció → Importálás → Tanárok oldalon."
+			},
+			"catalog": {
+				"title": "Katalógus (CSV)",
+				"description": "Soronként egy példány, a könyv adataival, a katalógus importálási formátumában."
+			},
+			"open-loans": {
+				"title": "Folyamatban lévő kölcsönzések (CSV)",
+				"description": "Olvasójegy, példány, kölcsönzés dátuma és határidő: visszaimportálhatók az Adminisztráció → Importálás → Folyamatban lévő kölcsönzések oldalon."
+			},
+			"loans-history": {
+				"title": "Kölcsönzési előzmények (CSV)",
+				"description": "Minden kölcsönzés a kölcsönzés napján érvényes osztállyal és szakasszal."
+			},
+			"dump": {
+				"title": "Minden adat (JSON)",
+				"description": "Olvasók, katalógus, kölcsönzések és listák egyetlen fájlban, másik telepítésbe vagy programba való átvitelhez."
+			}
+		},
+		"download": "Letöltés",
+		"patronNote": "Egy személy adatai (adatkérés) az ő oldaláról tölthetők le.",
+		"patronExport": "Személyes adatok exportálása"
+	},
+	"imports": {
+		"title": "Importálás",
+		"hint": "A Kohából való átvételkor használható, az olvasóknál pedig minden tanév elején az új osztályokhoz. Minden fájl teljes egészében ellenőrzésre kerül, mielőtt bármi importálódna.",
+		"cards": {
+			"catalog": {
+				"title": "Katalógus",
+				"description": "Könyvek és példányok CSV-fájlból vagy a Koha-exportból."
+			},
+			"students": {
+				"title": "Tanulók",
+				"description": "Az osztályok az iskolai nyilvántartásból, minden új tanévben: keresztnév, vezetéknév és osztály."
+			},
+			"teachers": {
+				"title": "Tanárok",
+				"description": "Az iskola tanárai: keresztnév és vezetéknév, olvasójeggyel, ha van."
+			},
+			"loans": {
+				"title": "Kölcsönzések",
+				"description": "A folyamatban lévő kölcsönzések, egyszer importálva a Kohából való átálláskor."
+			},
+			"photos": {
+				"title": "Olvasói fotók",
+				"description": "A Kohából exportált fotók, olvasójegyenként egy."
+			}
+		}
+	},
+	"calibration": {
+		"title": "Kétoldalas nyomtatás kalibrálása",
+		"intro": "Ahhoz, hogy az olvasójegyeket a lap mindkét oldalára nyomtathassa, a hátoldalnak pontosan az elülső mögé kell esnie. Minden nyomtató kissé elmozdítja a hátoldalt: ez a teszt egyszer megméri, mennyire.",
+		"current": "A lap fordítása: {{flip}}. A használt hátoldal-eltolás: {{x}} mm vízszintesen, {{y}} mm függőlegesen.",
+		"steps": {
+			"print": "Nyomtassa ki a kalibrációs lapot az alábbi gombbal.",
+			"window": {
+				"long-edge": "A nyomtatási ablakban válassza a „Kétoldalas” lehetőséget, a hosszú élen történő fordítással, 100 %-os méretaránnyal és margó nélkül.",
+				"short-edge": "A nyomtatási ablakban válassza a „Kétoldalas” lehetőséget, a rövid élen történő fordítással, 100 %-os méretaránnyal és margó nélkül."
+			},
+			"cut": "A nagy „1”-es oldalon gondosan vágja ki a fekete vonal mentén.",
+			"read": "Fordítsa meg a kártyát: a „2” oldalon nézze meg, hol metszi a vágási él a két vonalzót, és olvassa le a két számot (előjellel: + vagy −).",
+			"save": "Írja be alul a két számot, és mentse: a hátoldalak eltolása így kijavításra kerül.",
+			"check": "Nyomtassa újra a lapot az ellenőrzéshez: a vágási élnek most mindkét vonalzón a 0-n kell átmennie."
+		},
+		"print": "Kalibrációs lap nyomtatása",
+		"drawing": {
+			"title": "Mit kell leolvasni",
+			"label": "A 2-es oldal a vágás után: a vágási él átmetszi a vonalzókat",
+			"x": "vízszintes vonalzó",
+			"y": "függőleges vonalzó",
+			"hint": "A vágási él minden vonalzót átmetsz: az ott lévő szám az, amelyet be kell írni. Minden osztás egy milliméter, a számok ötönként követik egymást."
+		},
+		"fields": {
+			"x": "Vízszintes vonalzó (mm)",
+			"y": "Függőleges vonalzó (mm)",
+			"hint": "Az a szám, ahol a vágási él esik, előjellel; 0, ha a nullán esik."
+		},
+		"next": "Mentés után a hátoldalak {{x}} mm-rel lesznek eltolva vízszintesen és {{y}} mm-rel függőlegesen.",
+		"save": "Kalibrálás mentése",
+		"saved": "A kalibrálás mentve: a hátoldalak {{x}} mm-rel vízszintesen és {{y}} mm-rel függőlegesen el vannak tolva.",
+		"open": "Kétoldalas nyomtatás kalibrálása",
+		"sheet": {
+			"title": "BiblioViva · a kétoldalas nyomtatás kalibrálása",
+			"cut": "Vágja ki a fekete vonal mentén, majd fordítsa meg a kártyát.",
+			"read": "A két vonalzón olvassa le, hol esik a vágási él."
+		}
+	}
+}

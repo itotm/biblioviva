@@ -1,0 +1,19 @@
+{
+	"title": "O aplikaci",
+	"app": {
+		"version": "Verze",
+		"license": "Licence",
+		"repository": "Zdrojový kód"
+	},
+	"deps": {
+		"title": "Použité knihovny",
+		"runtime": "Za běhu ({{count}})",
+		"development": "Pouze pro vývoj ({{count}})",
+		"system": "Systémové součásti",
+		"columns": {
+			"name": "Název",
+			"version": "Verze",
+			"license": "Licence"
+		}
+	}
+}

@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Asiakkaat",
+		"new": "Uusi asiakas",
+		"search": "Hae sukunimellä…",
+		"empty": "Yksikään asiakas ei vastaa suodattimia.",
+		"filters": {
+			"type": "Tyyppi",
+			"stage": "Koulutusaste",
+			"level": "Vuosiluokka",
+			"status": "Tila",
+			"all": "Kaikki",
+			"allF": "Kaikki"
+		},
+		"columns": {
+			"name": "Sukunimi ja etunimi",
+			"type": "Tyyppi",
+			"class": "Luokka",
+			"card": "Kortti"
+		},
+		"clearFilters": "Tyhjennä suodattimet",
+		"countFiltered": "{{shown:plural; one:{{shown}} asiakas vastaa; other:{{shown}} asiakasta vastaa;}} suodattimia",
+		"printCards": "Tulosta kortit",
+		"printClassCards": "Tulosta kortit ({{classLabel}})",
+		"removeSelected": "Poista valitut",
+		"removeTitle": "Poistetaanko {{count}} {{count:plural; one:asiakas; other:asiakasta;}}?",
+		"removeDescription": "Jokaiselta poistetaan heti ja lopullisesti etu- ja sukunimi, yhteystiedot, ulkoinen tunnus, muistiinpanot, kortin numero ja valokuva. Tyyppi, luokka, osasto ja lainahistoria jäävät tilastoja varten. Niitä, joilla on avoimia lainoja, ei poisteta, vaan ne jätetään arkistoon.",
+		"removed": "Poistettuja: {{removed}}, avoimilla lainoilla arkistoon jätettyjä: {{kept}}",
+		"status": {
+			"title": "Tila",
+			"loans": "{{count}} lainassa",
+			"overdue": "{{count}} myöhässä",
+			"noPhoto": "ei valokuvaa"
+		},
+		"startTitle": "Etsi asiakas",
+		"startHint": "Hae nimellä, kortilla tai suodattimilla."
+	},
+	"types": {
+		"student": "Oppilas",
+		"teacher": "Opettaja"
+	},
+	"fields": {
+		"patronType": "Tyyppi",
+		"firstName": "Etunimi",
+		"lastName": "Sukunimi",
+		"cardNumber": "Kortin numero",
+		"cardNumberHint": "Tyhjä: numero annetaan automaattisesti.",
+		"externalId": "Oppilasnumero",
+		"email": "Sähköposti",
+		"emailHint": "Koulun oppilaalle tai opettajalle antama osoite: sen kautta kulkevat ilmoitukset.",
+		"circulationNote": "Muistiinpano lainaustiskille",
+		"circulationNoteHint": "Näkyy selvästi lainauksen aikana.",
+		"notes": "Sisäiset muistiinpanot",
+		"status": "Tila",
+		"openLoans": "Avoimet lainat",
+		"overdueLoans": "Myöhässä",
+		"noCard": "ei korttia",
+		"none": "—",
+		"levelCode": "Vuosiluokka",
+		"groupId": "Osasto",
+		"classLabel": "Luokka",
+		"teacherGroup": "Opettajaryhmä"
+	},
+	"form": {
+		"createTitle": "Uusi asiakas",
+		"editTitle": "Muokkaa asiakasta",
+		"identity": "Henkilötiedot",
+		"school": "Luokka",
+		"contacts": "Yhteystiedot",
+		"notes": "Muistiinpanot",
+		"create": "Luo asiakas",
+		"save": "Tallenna muutokset",
+		"classSelect": "Valitse…",
+		"defaultTeacherGroup": "Opettajaryhmä"
+	},
+	"errors": {
+		"emailInvalid": "Virheellinen sähköpostiosoite.",
+		"cardNumberInvalid": "Virheellinen kortin numero: vain numerot, isot kirjaimet ja väliviiva, ja oikea tarkistusmerkki.",
+		"cardNumberTaken": "Kortin numero on jo toisen asiakkaan käytössä.",
+		"cardNumberIsCopy": "Kortin numero on tai näyttää nidekoodilta: valitse toinen numero.",
+		"externalIdTaken": "Oppilasnumero on jo toisen asiakkaan käytössä.",
+		"levelRequired": "Oppilaalle on annettava luokka (vuosiluokka).",
+		"levelUnknown": "Luokka ei kuulu koulun vuosiluokkiin.",
+		"levelNotForTeachers": "Opettajalla ei ole luokkaa.",
+		"groupRequired": "Oppilaalle on annettava osasto.",
+		"groupUnknown": "Osastoa ei löydy aktiivisten luokkien joukosta: luokat luodaan kohdassa Ylläpito → Asetukset → Luokat.",
+		"levelNotInGroup": "Tällä osastolla ei ole tätä vuosiluokkaa: valitse vuosiluokan osasto."
+	},
+	"detail": {
+		"heading": "Asiakastiedot",
+		"tabs": {
+			"loans": "Avoimet lainat",
+			"history": "Historia",
+			"cards": "Kortti",
+			"notes": "Muistiinpanot"
+		},
+		"noLoans": "Ei avoimia lainoja.",
+		"loanColumns": {
+			"due": "Eräpäivä"
+		},
+		"overdue": "myöhässä",
+		"card": "Kortti {{number}}",
+		"noNotes": "Ei muistiinpanoja.",
+		"edit": "Muokkaa",
+		"created": "Luotu {{when}}",
+		"barcodeAlt": "Kortin {{number}} viivakoodi",
+		"cardPrinted": "Kortti tulostettu {{when}}.",
+		"cardNotPrinted": "Korttia ei ole vielä tulostettu.",
+		"reassignCard": "Vaihda kortti",
+		"reassignTitle": "Annetaanko uusi kortti?",
+		"reassignDescription": "Nykyinen numero poistuu käytöstä lopullisesti, ja uusi kortti on tulostettava.",
+		"cardReassigned": "Uusi kortti: {{number}}",
+		"printCard": "Tulosta kortti",
+		"markCardPrinted": "Merkitse tulostetuksi",
+		"cardMarkedPrinted": "Kortti merkitty tulostetuksi",
+		"historyColumns": {
+			"issuedAt": "Lainattu",
+			"dueDate": "Eräpäivä",
+			"returnedAt": "Palautettu",
+			"outcome": "Tila",
+			"title": "Nimeke",
+			"author": "Tekijä",
+			"barcode": "Nide",
+			"renewals": "Uusinnat",
+			"schoolYear": "Lukuvuosi"
+		},
+		"outcome": {
+			"open": "Avoin",
+			"overdue": "Myöhässä",
+			"returned": "Palautettu",
+			"returnedLate": "Palautettu myöhässä",
+			"lost": "Kadonnut"
+		},
+		"historyEmpty": "Ei kirjattuja lainoja.",
+		"historyCount": "{{count}} {{count:plural; one:laina; other:lainaa;}} yhteensä",
+		"notesEdit": "Muokkaa muistiinpanoja",
+		"notesSaved": "Muistiinpanot tallennettu",
+		"notesUnchanged": "Ei muutoksia",
+		"notesHint": "Lainaustiskin muistiinpano näkyy lainauksen yhteydessä selvästi; muut muistiinpanot jäävät tänne.",
+		"remove": "Poista {{type}}",
+		"removeTitle": "Poistetaanko {{name}} lopullisesti?",
+		"removeDescription": "Poistetaan heti ja lopullisesti: etu- ja sukunimi, sähköposti, ulkoinen tunnus, muistiinpanot, kortin numero (poistuu käytöstä) ja valokuva. Vain tyyppi, luokka ja osasto sekä lainahistoria jäävät tilastoja varten. Tätä ei voi perua.",
+		"removeOpenLoans": "Hänellä on {{count}} {{count:plural; one:avoin laina, se on palautettava tai merkittävä kadonneeksi ensin; other:avointa lainaa, ne on palautettava tai merkittävä kadonneiksi ensin;}}.",
+		"removeClassSheets": "Hänet on valittu luokkakuvissa {{count:plural; one:kerran; other:{{count}} kertaa;}} (kuvasta tehty kartoitus): {{count:plural; one:se ruutu peittyy; other:ne ruudut peittyvät;}}.",
+		"removed": "Asiakas poistettu: henkilötiedot on poistettu.",
+		"removedInfo": "Poistettu {{when}}. Jäljellä ovat vain tilastoja varten tarvittavat tiedot.",
+		"lostTitle": "Kadonneet kirjat",
+		"lostHint": "Merkitty kadonneiksi, kun ne olivat tämän asiakkaan lainassa. Jos ne löytyvät, ne on kirjattava palautuksissa.",
+		"markLost": "Merkitse kadonneeksi: ”{{title}}”",
+		"markLostTitle": "Merkitäänkö ”{{title}}” kadonneeksi?",
+		"markLostDescription": "Laina päättyy ja nide näkyy kadonneena. Jos kirja löytyy, palautus kirjataan, jolloin se on taas saatavilla.",
+		"markLostReason": "Syy (vapaaehtoinen)",
+		"markLostConfirm": "Merkitse kadonneeksi",
+		"markedLost": "”{{title}}” merkitty kadonneeksi."
+	},
+	"photo": {
+		"title": "Valokuva",
+		"take": "Ota kuva",
+		"upload": "Lataa tiedosto",
+		"retake": "Ota uudelleen",
+		"use": "Käytä tätä kuvaa",
+		"cancel": "Peruuta",
+		"delete": "Poista kuva",
+		"deleteTitle": "Poistetaanko kuva?",
+		"deleteDescription": "Kuva poistetaan palvelimelta; uusi kuva voidaan ottaa.",
+		"zoom": "Zoomaus",
+		"dragHint": "Vedä kehystääksesi, lähennä zoomilla.",
+		"saved": "Kuva tallennettu",
+		"deleted": "Kuva poistettu",
+		"placeholder": "Ei kuvaa",
+		"alt": "Valokuva: {{name}}",
+		"errors": {
+			"too_large": "Tiedosto on liian suuri: raja on {{maxMb}} Mt.",
+			"not_an_image": "Tiedosto ei ole luettava kuva.",
+			"unsupported_format": "Kuvamuotoa ei tueta (käytä JPEG-, PNG-, WebP- tai HEIC-muotoa).",
+			"empty": "Tiedostoa ei ole valittu."
+		},
+		"withForm": "Tallennetaan asiakkaan mukana.",
+		"requiredHint": "Valokuva tarvitaan: ota se nyt tai myöhemmin asiakkaan sivulta.",
+		"optionalHint": "Valokuvan voi ottaa nyt tai myöhemmin asiakkaan sivulta.",
+		"remove": "Poista",
+		"notSaved": "Kuvaa ei tallennettu: ota se uudelleen asiakkaan sivulta.",
+		"retakePhoto": "Ota kuva uudelleen"
+	},
+	"census": {
+		"title": "Valokuvakartoitus",
+		"noGroup": "Ilman luokkaa",
+		"stageOthers": "Ilman koulutusastetta",
+		"progress": "{{done}} / {{total}} valokuvalla",
+		"allDone": "Kaikilla on valokuva.",
+		"back": "Vaihda luokka tai lista",
+		"skip": "Ohita",
+		"done": "Valmis",
+		"saved": "Kuva tallennettu: {{name}}",
+		"quickAdd": "Uusi asiakas",
+		"quickAddHint": "Lisätään ryhmään {{group}}, ja hänen valokuvansa on seuraavana.",
+		"create": "Lisää ja ota kuva",
+		"findPerson": "Hae sukunimellä",
+		"pickTarget": "Valitse lista tai luokka",
+		"listsTitle": "Asiakaslistat",
+		"classesTitle": "Luokat",
+		"nothingMissing": "Kaikilla luokilla ja listoilla on valokuvat.",
+		"onlyMissing": "Näkyvissä ovat vain luokat ja listat, joista puuttuu vähintään yksi valokuva.",
+		"byCamera": "Yksi henkilö kerrallaan",
+		"sheets": {
+			"title": "Kuvasta, jossa on useita valokuvia",
+			"hint": "Kuvat, joissa on useita valokuvia (valokuvaajan taulu, kortit pöydällä, sivu passikuvia): valokuvat tunnistetaan automaattisesti ja liitetään kullekin asiakkaalle.",
+			"upload": "Lataa kuva",
+			"take": "Kuvaa arkki",
+			"uploading": "Lähetetään kuvaa…",
+			"empty": "Tälle luokalle tai listalle ei ole kuvia.",
+			"item": "Kuva {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:valokuva löydetty; other:valokuvaa löydetty;}} · {{saved}} {{saved:plural; one:tallennettu; other:tallennettua;}} · {{pending}} tekemättä",
+			"notDetected": "Ei vielä käsitelty",
+			"demoScan": "Esimerkki skannerista",
+			"demoPhoto": "Esimerkki valokuvasta",
+			"demoHint": "Kaksi tapaa saada luokan valokuvat: skannaus on tasainen, ja sen valokuvat ovat suorakulmioita, korkeintaan kiertyneitä; kuva otetaan vinosti, ja perspektiivi vääristää ruutuja."
+		},
+		"sheet": {
+			"title": "Valokuvat kuvasta",
+			"back": "Takaisin luokkaan",
+			"detecting": "Etsitään valokuvia kuvasta…",
+			"found": "Löydetty valokuvia: {{count}}. Valitse kunkin kohdalle, kenen se on.",
+			"none": "Valokuvia ei löytynyt. ”Korjaa ruutuja” -toiminnolla ne voi piirtää käsin.",
+			"pictureAlt": "Ladattu kuva, jossa valokuvien ruudut on numeroitu",
+			"frame": "Valokuva {{n}}",
+			"choose": "Kuka tämä on?",
+			"nobody": "— Ei kukaan —",
+			"takenBy": "{{name}} (on jo kuvassa {{n}})",
+			"hasPhoto": "on jo valokuva",
+			"noPhoto": "ei valokuvaa",
+			"ignore": "Ohita",
+			"unignore": "Palauta",
+			"ignored": "Ohitettu: tämä ei ole kenenkään tämän luokan tai listan jäsen.",
+			"saved": "Tallennettu valokuvaksi: {{name}}",
+			"edit": "Korjaa ruutuja",
+			"editDone": "Korjaukset valmis",
+			"editHint": "Napauta ruutua ja vedä sen kulmia; puuttuvalle valokuvalle käytä ”Lisää ruutu”.",
+			"editHintScan": "Napauta ruutua: vedä kulmaa suurentaaksesi tai pienentääksesi sitä, yläpuolella olevaa ympyrää kääntääksesi. Puuttuvalle valokuvalle käytä ”Lisää ruutu”.",
+			"addFrame": "Lisää ruutu",
+			"addFrameHint": "Vedä kuvan päällä puuttuvan valokuvan kulmasta toiseen.",
+			"deleteFrame": "Poista ruutu {{n}}",
+			"rotateFrame": "Kierrä ruutua",
+			"kind": "Kuvan tyyppi",
+			"kindPhoto": "Valokuva",
+			"kindScan": "Skannaus",
+			"kindPhotoHint": "Otettu vinosti: ruudun jokainen kulma liikkuu itsenäisesti, jotta se seuraa perspektiiviä.",
+			"kindScanHint": "Tehty skannerilla: ruudut pysyvät suorakulmioina, ja niitä voi vain kiertää.",
+			"kindAgain": "Ennen kuin asiakas on valittu, tyypin vaihtaminen etsii valokuvat uudelleen.",
+			"save": "Tallenna valokuvat",
+			"saveTitle": "Tallennetaanko valitut valokuvat?",
+			"saveSummary": "Tallennettavia valokuvia: {{count}}.",
+			"saveReplaces": "Ne korvaavat jo olemassa olevan valokuvan: {{names}}.",
+			"saveUnassigned": "Ruutuja, joille ei ole valittu ketään: {{count}} (jätetään ennalleen).",
+			"savedToast": "Valokuvat tallennettu: {{count}}.",
+			"deleteSheet": "Poista kuva",
+			"deleteSheetTitle": "Poistetaanko kuva?",
+			"deleteSheetDescription": "Kuva ja sen ruudut poistetaan. Jo tallennetut valokuvat jäävät asiakkaille.",
+			"deletedToast": "Kuva poistettu.",
+			"progress": "{{label}}: {{done}} / {{total}} valokuvalla",
+			"missingTitle": "Vielä ilman valokuvaa",
+			"byCamera": "Ota kuvat yksi kerrallaan",
+			"errors": {
+				"not_found": "Kuvaa ei löytynyt.",
+				"set_not_found": "Luokkaa tai listaa ei ole enää olemassa.",
+				"empty": "Tiedosto on tyhjä.",
+				"too_large": "Kuva on liian suuri (enintään {{maxMb}} Mt).",
+				"not_an_image": "Tiedosto ei ole luettava kuva.",
+				"unsupported_format": "Muotoa ei tueta: käytä JPEG-, PNG-, WebP- tai HEIC-muotoa.",
+				"too_many_frames": "Kuvassa voi olla enintään {{maxFrames}} {{maxFrames:plural; one:valokuva; other:valokuvaa;}}.",
+				"bad_corners": "Ruutu ei kelpaa: kulmien on muodostettava nelikulmio kuvan sisällä.",
+				"already_detected": "Tämän kuvan valokuvat on jo etsitty.",
+				"frame_saved": "Tämä valokuva on jo tallennettu.",
+				"frame_erased": "Tämä valokuva kuului poistetulle asiakkaalle: ruutu on peitetty.",
+				"not_a_member": "Vain luokan tai listan asiakkaat voidaan valita.",
+				"patron_taken": "Asiakas on jo valittu valokuvalle {{position}}: vapauta se ennen kuin valitset hänet tässä.",
+				"confirm_replace": "{{count:plural; one:{{count}} valokuva korvaa olemassa olevan; other:{{count}} valokuvaa korvaa olemassa olevat;}}: vahvista jatkaaksesi.",
+				"nothing_to_save": "Valitse vähintään yksi asiakas ennen tallennusta."
+			},
+			"erased": "Asiakas poistettu: ruutu on peitetty kuvassa."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "CSV-tiedosto",
+			"submit": "Lataa",
+			"hints": {
+				"students": "CSV-tiedosto, jossa on yksi rivi oppilasta kohden, erotettuna puolipisteellä (;) tai pilkulla (,). Taulukkolaskennasta viety tiedosto käy myös. Käytä mallin otsikoita, joka on ladattavissa alta tarvittavine sarakkeineen.",
+				"teachers": "CSV-tiedosto, jossa on yksi rivi opettajaa kohden, erotettuna puolipisteellä (;) tai pilkulla (,). Käytä mallin otsikoita, joka on ladattavissa alta tarvittavine sarakkeineen."
+			}
+		},
+		"mapping": {
+			"format": "Tunnistettu muoto",
+			"uncertain": "Muoto ei ole varma: tarkista sarakkeet ennen jatkamista.",
+			"remembered": "Sarakkeet muistettu tämän tiedoston edellisestä tuonnista.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "tiedoston otsikkorivi",
+				"unknown": "tuntematon"
+			},
+			"mode": "Tila",
+			"modes": {
+				"upsert": "Lisää ja päivitä",
+				"upsertHint": "Löytyneet rivit päivittävät olemassa olevan asiakkaan, muut rivit luovat uusia asiakkaita.",
+				"sync": {
+					"students": "Synkronoi oppilaat",
+					"teachers": "Synkronoi opettajat"
+				},
+				"syncHint": {
+					"students": "Tiedosto on oppilaiden täydellinen luettelo: puuttuvat luetellaan (ja poistetaan vahvistuksen jälkeen). Opettajiin ei kosketa.",
+					"teachers": "Tiedosto on opettajien täydellinen luettelo: puuttuvat luetellaan (ja poistetaan vahvistuksen jälkeen). Oppilaisiin ei kosketa."
+				}
+			},
+			"duplicates": "Jo olemassa olevat asiakkaat",
+			"policies": {
+				"update": "Päivitä",
+				"skip": "Ohita",
+				"create": "Luo silti"
+			},
+			"validate": "Tarkista tiedosto",
+			"matchByName": {
+				"students": "Ilman saraketta external_id rekisterissä jo olevat oppilaat tunnistetaan nimen ja luokan perusteella.",
+				"teachers": "Ilman saraketta external_id rekisterissä jo olevat opettajat tunnistetaan nimen perusteella."
+			}
+		},
+		"preview": {
+			"ready": "Ei virheitä: tuonti on mahdollinen.",
+			"blocked": "Korjaa virheet tiedostosta (tai asiakkaista) ja tarkista uudelleen: virheellisiä rivejä ei tuoda.",
+			"columns": {
+				"name": "Nimi",
+				"class": "Luokka"
+			},
+			"changed": "Muutokset: {{fields}}",
+			"homonym": {
+				"pick": "Valitse asiakas",
+				"create": "Luo uusi asiakas",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Samannimiset ratkaistavana"
+			},
+			"missing": {
+				"students": {
+					"title": "Oppilaat rekisterissä mutta puuttuvat tiedostosta ({{count}})",
+					"remove": "Poista nämä oppilaat rekisteristä (välitön anonymisointi)",
+					"noPermission": "Ilman oikeutta poistaa asiakkaita puuttuvat oppilaat jäävät rekisteriin.",
+					"notRemoved": "{{count}} {{count:plural; one:puuttuvaa oppilasta ei poisteta, koska hänellä on; other:puuttuvaa oppilasta ei poisteta, koska heillä on;}} avoimia lainoja."
+				},
+				"teachers": {
+					"title": "Opettajat rekisterissä mutta puuttuvat tiedostosta ({{count}})",
+					"remove": "Poista nämä opettajat rekisteristä (välitön anonymisointi)",
+					"noPermission": "Ilman oikeutta poistaa asiakkaita puuttuvat opettajat jäävät rekisteriin.",
+					"notRemoved": "{{count}} {{count:plural; one:puuttuvaa opettajaa ei poisteta, koska hänellä on; other:puuttuvaa opettajaa ei poisteta, koska heillä on;}} avoimia lainoja."
+				},
+				"hint": "Synkronoinnilla tiedostosta puuttuvat voidaan poistaa: henkilötiedot poistetaan heti ja lopullisesti, ja jäljelle jäävät vain luokka ja tilastot."
+			},
+			"commit": "Tuo",
+			"back": "Takaisin sarakkeisiin",
+			"generatedCards": "{{count}} {{count:plural; one:uusi kortti luodaan; other:uutta korttia luodaan;}}: tiedostossa ei ole numeroa."
+		},
+		"reasons": {
+			"tooLong": "Teksti on liian pitkä sarakkeessa {{column}}: enintään {{max}} {{max:plural; one:merkki; other:merkkiä;}}",
+			"nameRequired": "Etu- tai sukunimi puuttuu",
+			"emailInvalid": "Virheellinen sähköposti",
+			"cardNumberInvalid": "Virheellinen kortin numero",
+			"cardNumberTaken": "Kortin numero on jo toisen asiakkaan käytössä",
+			"cardNumberIsCopy": "Kortin numero on sama tai samankaltainen kuin nidekoodi",
+			"externalIdTaken": "Ulkoinen tunnus on jo toisen asiakkaan käytössä",
+			"duplicateInFile": "Sama henkilö on jo rivillä {{line}}",
+			"homonym": "{{count}} {{count:plural; one:samanniminen; other:samannimistä;}} arkistossa: valitse, kumpi päivitetään",
+			"matchedTwice": "Toinen rivi päivittää jo saman asiakkaan",
+			"skipped": "Jo olemassa: ohitettu",
+			"levelRequired": "Luokka puuttuu",
+			"levelUnknown": "Vuosiluokka ”{{value}}” ei kuulu koulun vuosiluokkiin",
+			"groupRequired": "Osasto puuttuu",
+			"groupUnknown": "Osastoa ”{{value}}” ei löydy tälle vuosiluokalle. Kelvolliset luokat: {{classes}} (luokat luodaan kohdassa Ylläpito → Asetukset → Luokat)",
+			"levelNotInGroup": "Osastolla ”{{value}}” ei ole tätä vuosiluokkaa. Kelvolliset luokat: {{classes}}",
+			"classUnknown": "Luokkaa ”{{value}}” ei löydy. Kelvolliset luokat: {{classes}}",
+			"teacherGroupUnknown": "Opettajaryhmää ”{{value}}” ei löydy. Kelvolliset ryhmät: {{classes}}"
+		},
+		"done": {
+			"title": "Tuonti valmis",
+			"summary": "{{created}} {{created:plural; one:uusi; other:uutta;}}, {{updated}} {{updated:plural; one:päivitetty; other:päivitettyä;}}, {{unchanged}} {{unchanged:plural; one:ennallaan; other:ennallaan;}}, {{removed}} {{removed:plural; one:poistettu; other:poistettua;}}.",
+			"printNew": "Tulosta uusien asiakkaiden kortit",
+			"census": "Valokuvakartoitus",
+			"again": "Tuo toinen tiedosto",
+			"batch": "Tuonti nro {{id}}: alkuperäinen tiedosto säilytetään palvelimella."
+		},
+		"fields": {
+			"firstName": "Etunimi",
+			"lastName": "Sukunimi",
+			"class": "Luokka (vuosiluokka ja osasto)",
+			"level": "Luokka (vuosiluokka)",
+			"section": "Osasto",
+			"group": "Opettajaryhmä",
+			"externalId": "Ulkoinen tunnus",
+			"cardNumber": "Kortti",
+			"email": "Sähköposti"
+		},
+		"titles": {
+			"students": "Tuo oppilaat",
+			"teachers": "Tuo opettajat"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "Etunimi."
+			},
+			"lastName": {
+				"hint": "Sukunimi."
+			},
+			"class": {
+				"hint": "Luokka yhdessä sarakkeessa, kuten 3A tai 3 A: sen on oltava olemassa kohdassa Ylläpito → Asetukset → Luokat."
+			},
+			"level": {
+				"hint": "Vuosiluokka (1, 2, 3…), osasto sarakkeessa section."
+			},
+			"section": {
+				"hint": "Osasto (A, B…): level-sarakkeen kanssa se nimeää luokan."
+			},
+			"cardNumber": {
+				"hint": "Kortin numero, jos oppilaalla on jo kortti.",
+				"missing": "uudet kortit luodaan"
+			},
+			"externalId": {
+				"hint": "Koulun rekisterin koodi.",
+				"missing": "rekisterissä jo olevat asiakkaat tunnistetaan nimen ja luokan perusteella"
+			},
+			"email": {
+				"hint": "Valinnainen."
+			},
+			"group": {
+				"hint": "Opettajaryhmä; jos se puuttuu, oletusryhmä."
+			}
+		},
+		"classForm": {
+			"label": "Luokka",
+			"class": "Yhdessä sarakkeessa (class: 3A)",
+			"levelSection": "Kahdessa sarakkeessa (level: 3, section: A)"
+		}
+	}
+}

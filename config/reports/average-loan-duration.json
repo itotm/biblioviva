@@ -1,0 +1,69 @@
+{
+	"id": "average-loan-duration",
+	"title": {
+		"it": "Durata media dei prestiti",
+		"en": "Average loan duration"
+	},
+	"description": {
+		"it": "Giorni tra prestito e restituzione dei libri restituiti, per tipo di utente (esclusi gli smarriti).",
+		"en": "Days between loan and return of the returned books, by patron type (lost books excluded)."
+	},
+	"category": "loans",
+	"params": [
+		{
+			"name": "from",
+			"label": {
+				"it": "Dal",
+				"en": "From"
+			},
+			"type": "date",
+			"required": true,
+			"default": "schoolYearStart"
+		},
+		{
+			"name": "to",
+			"label": {
+				"it": "Al",
+				"en": "To"
+			},
+			"type": "date",
+			"required": true,
+			"default": "today"
+		}
+	],
+	"sql": "SELECT l.patron_type_snapshot AS patron_type, COUNT(*) AS loans, ROUND(AVG(julianday(l.returned_at) - julianday(l.issued_at)), 1) AS avg_days, MAX(CAST(julianday(l.returned_at) - julianday(l.issued_at) AS INTEGER)) AS max_days FROM loan l WHERE l.returned_at IS NOT NULL AND date(l.issued_at) BETWEEN :from AND :to AND NOT EXISTS (SELECT 1 FROM loan_event e WHERE e.loan_id = l.id AND e.type = 'lost') GROUP BY 1 ORDER BY 1",
+	"columns": [
+		{
+			"key": "patron_type",
+			"label": {
+				"it": "Tipo di utente",
+				"en": "Patron type"
+			},
+			"type": "patronType"
+		},
+		{
+			"key": "loans",
+			"label": {
+				"it": "Prestiti",
+				"en": "Loans"
+			},
+			"type": "int"
+		},
+		{
+			"key": "avg_days",
+			"label": {
+				"it": "Giorni in media",
+				"en": "Average days"
+			},
+			"type": "number"
+		},
+		{
+			"key": "max_days",
+			"label": {
+				"it": "Giorni al massimo",
+				"en": "Maximum days"
+			},
+			"type": "int"
+		}
+	]
+}

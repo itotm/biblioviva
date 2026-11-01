@@ -1,0 +1,551 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later */
+/* Order matters (Skeleton v5 installation guide). */
+@import "tailwindcss";
+@import "@skeletonlabs/skeleton";
+@import "@skeletonlabs/skeleton-svelte";
+/* Colour sets (generated, colours only): src/lib/themes/*.css; shared shape and type: theme.css. */
+@import "./lib/themes/ocean.css";
+@import "./lib/themes/forest.css";
+@import "./lib/themes/grape.css";
+@import "./lib/themes/sunset.css";
+@import "./lib/themes/cherry.css";
+@import "./lib/themes/lagoon.css";
+@import "./lib/themes/silver.css";
+@import "./lib/themes/graphite.css";
+@import "./lib/themes/apricot.css";
+@import "./lib/themes/indigo.css";
+@import "./lib/themes/mint.css";
+@import "./lib/themes/rose.css";
+@import "./lib/themes/sahara.css";
+@import "./lib/themes/wintry.css";
+@import "./lib/themes/olive.css";
+@import "./lib/theme.css";
+/* The type of every screen, served by BiblioViva itself (ADR-044): Inter, and JetBrains Mono for codes. */
+@import "@fontsource-variable/inter/wght.css";
+@import "@fontsource-variable/inter/wght-italic.css";
+@import "@fontsource-variable/jetbrains-mono/wght.css";
+
+@theme {
+	--font-sans: "Inter Variable", system-ui, sans-serif;
+	--font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+}
+
+/*
+ * Light theme only (PLAN.md §3.18): Tailwind's `dark` variant is bound to an attribute
+ * that the app never sets, so no dark styles from Skeleton or from our code can apply,
+ * whatever the OS preference says.
+ */
+@custom-variant dark (&:where([data-mode='dark'], [data-mode='dark'] *));
+
+:root {
+	color-scheme: light;
+}
+
+@source "../node_modules/@skeletonlabs/skeleton-svelte/dist";
+
+/*
+ * Look and feel (step 2.3a, owner review): soft cards on a tinted page, clear form controls with
+ * one height, light placeholders, friendly rounded corners. These rules refine Skeleton's utilities
+ * and are the same for every colour set.
+ */
+@layer base {
+	:root {
+		--field-placeholder: var(--color-surface-400);
+		--bv-shadow-card: 0 1px 2px rgb(15 23 42 / 0.06), 0 1px 3px rgb(15 23 42 / 0.1);
+		--bv-shadow-raised: 0 4px 6px -1px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.1);
+		--bv-control-height: 2.5rem;
+	}
+	html {
+		background-color: var(--color-surface-100);
+	}
+	/* A grid without columns of its own has one column as wide as the page, never wider: a long
+	   title or a row that does not wrap shrinks with it instead of pushing the boxes past the right
+	   edge of a phone (owner). The `grid-cols-*` utilities override it. */
+	.grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	/* Phones: the fixed bottom bar must not cover an element scrolled into view (focus, tests). */
+	@media (max-width: 767px) {
+		html {
+			scroll-padding-bottom: 6rem;
+		}
+	}
+	/* Desktop: the top bar stays in place (9.13); an element scrolled into view lands below it. */
+	@media (min-width: 768px) {
+		html {
+			scroll-padding-top: 8rem;
+		}
+	}
+}
+
+/* Phones: the window shrinks above the keyboard (`interactive-widget=resizes-content` in app.html,
+   9.13 round 33), so the bottom bar would sit on the keyboard and take the room of the field being
+   typed in: it steps aside while the keyboard is open (`data-keyboard`, #lib/ui/keyboard.ts). */
+@media (max-width: 767px) {
+	html[data-keyboard] .bv-bottom-nav {
+		display: none;
+	}
+}
+
+/* Phones: any accidental horizontal overflow (a long title with a wide fallback font) would make
+   mobile Chromium widen its layout viewport, zoom the page out and detach the fixed bottom bar
+   from the visible viewport (seen on CI). Clipping the root keeps the viewport at the
+   device width. */
+html,
+body {
+	overflow-x: clip;
+}
+
+@layer utilities {
+	.card {
+		background-color: var(--color-surface-50);
+		border: 1px solid var(--color-surface-200);
+		box-shadow: var(--bv-shadow-card);
+	}
+	.card:where(.preset-filled-surface-100-900) {
+		background-color: var(--color-surface-50);
+	}
+	.input,
+	.select,
+	.textarea {
+		background-color: #ffffff;
+		--tw-ring-color: var(--color-surface-300);
+		transition: box-shadow 120ms ease;
+	}
+	.input,
+	.select {
+		min-height: var(--bv-control-height);
+		padding-block: 0;
+		line-height: calc(var(--bv-control-height) - 2px);
+	}
+	.input:focus,
+	.select:focus,
+	.textarea:focus {
+		--tw-ring-color: var(--color-primary-500);
+		--default-ring-width: 2px;
+	}
+	.select {
+		appearance: none;
+		padding-inline: 0.75rem 2.25rem;
+		background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>");
+		background-repeat: no-repeat;
+		background-position: right 0.75rem center;
+		background-size: 1rem;
+	}
+	.select[multiple],
+	.select[size] {
+		appearance: auto;
+		background-image: none;
+		line-height: 1.5;
+		min-height: 0;
+		padding: 0.5rem;
+	}
+	.select:disabled,
+	.input:disabled {
+		background-color: var(--color-surface-100);
+		color: var(--color-surface-500);
+	}
+	.label-text {
+		font-size: var(--text-sm);
+		line-height: 1.25rem;
+		color: var(--color-surface-700);
+	}
+	.btn {
+		font-weight: 600;
+		min-height: var(--bv-control-height);
+	}
+	/* Buttons never animate opacity: the disabled → enabled fade left axe sampling half-faded text. */
+	.btn,
+	.btn-icon {
+		transition-property: color, background-color, border-color, box-shadow;
+	}
+	.btn-sm {
+		min-height: 2rem;
+	}
+	.btn.preset-filled-primary-500,
+	.btn.preset-filled-error-500,
+	.btn.preset-filled-warning-500 {
+		box-shadow: var(--bv-shadow-card);
+	}
+	/* Skeleton's hover is a brightness filter, invisible on the light grey tonal buttons: darken instead. */
+	:is(.btn, .btn-icon, .ig-btn).preset-tonal {
+		background-color: color-mix(in oklab, var(--color-surface-950) 8%, transparent);
+	}
+	:is(.btn, .btn-icon, .ig-btn).preset-tonal:not(:disabled):hover {
+		filter: none;
+		background-color: color-mix(in oklab, var(--color-surface-950) 18%, transparent);
+	}
+	:is(.btn, .btn-icon).preset-outlined-surface-200-800:not(:disabled):hover {
+		filter: none;
+		background-color: var(--color-surface-100);
+	}
+	/* Coloured tonal buttons (50 background): hover moves to the 200 shade of the same tone. */
+	:is(.btn, .btn-icon, .ig-btn).preset-tonal-primary:not(:disabled):hover {
+		filter: none;
+		background-color: var(--color-primary-200);
+	}
+	:is(.btn, .btn-icon, .ig-btn).preset-tonal-secondary:not(:disabled):hover {
+		filter: none;
+		background-color: var(--color-secondary-200);
+	}
+	:is(.btn, .btn-icon, .ig-btn).preset-tonal-tertiary:not(:disabled):hover {
+		filter: none;
+		background-color: var(--color-tertiary-200);
+	}
+	:is(.btn, .btn-icon, .ig-btn).preset-tonal-success:not(:disabled):hover {
+		filter: none;
+		background-color: var(--color-success-200);
+	}
+	:is(.btn, .btn-icon, .ig-btn).preset-tonal-warning:not(:disabled):hover {
+		filter: none;
+		background-color: var(--color-warning-200);
+	}
+	:is(.btn, .btn-icon, .ig-btn).preset-tonal-error:not(:disabled):hover {
+		filter: none;
+		background-color: var(--color-error-200);
+	}
+	/* A usable element announces itself (owner review): pointer on every enabled control. */
+	:is(button, [role="button"], [role="radio"], [role="tab"], [role="menuitem"], summary):not(
+		:disabled
+	) {
+		cursor: pointer;
+	}
+	.badge {
+		--badge-size: var(--text-sm);
+		font-weight: 600;
+	}
+	/* A layer that covers its positioned parent exactly: the drawings over a photo (the cover's
+	   corners, the frames of a class picture) and, through `Overlay.svelte`, the camera's guides
+	   and the designer's grid. */
+	.overlay-fill {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+	}
+	/* Title of a card or dialog (step 1.15: one definition instead of `text-lg font-bold` everywhere). */
+	.title-lg {
+		font-size: var(--text-lg);
+		line-height: var(--text-lg--line-height);
+		font-weight: 700;
+	}
+	/* Tabs (owner review): the switch between views of `ChoiceButtons` (9.13, rounds 24–25) — pills
+	   with the buttons' corners in one grey track, the selected one tinted with a blue border, never
+	   an underline alone. Applies to every Skeleton Tabs in the app. */
+	[data-scope="tabs"][data-part="list"][data-orientation="horizontal"] {
+		display: inline-flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		padding: 0.5rem;
+		margin-bottom: 1rem;
+		border: 1px solid var(--color-surface-200);
+		border-radius: var(--radius-container);
+		background-color: var(--color-surface-100);
+		max-width: 100%;
+		overflow-x: auto;
+	}
+	@media (width < 48rem) {
+		[data-scope="tabs"][data-part="list"][data-orientation="horizontal"] {
+			flex-wrap: nowrap;
+		}
+	}
+	[data-scope="tabs"][data-part="trigger"] {
+		transition: none; /* axe would sample mid-transition colours after a tab switch */
+		border-radius: var(--radius-base);
+		border: 1px solid var(--color-surface-200);
+		background-color: white;
+		padding-inline: 0.875rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+		white-space: nowrap;
+		color: var(--color-surface-700);
+		min-height: 2.75rem;
+	}
+	@media (width >= 48rem) {
+		[data-scope="tabs"][data-part="trigger"] {
+			min-height: 2.25rem;
+		}
+	}
+	[data-scope="tabs"][data-part="trigger"]:hover {
+		filter: none;
+		border-color: var(--color-primary-200);
+		background-color: var(--color-primary-50);
+		color: var(--color-primary-800);
+	}
+	[data-scope="tabs"][data-part="trigger"][data-selected] {
+		background-color: var(--color-primary-100);
+		border-color: var(--color-primary-500);
+		color: var(--color-primary-800);
+	}
+	[data-scope="tabs"][data-part="indicator"] {
+		display: none;
+	}
+	/* Navigation items are styled by the shell, not as buttons (no brightness filter on hover). */
+	[data-scope="navigation"]:is([data-part="trigger"], [data-part="trigger-anchor"]) {
+		transition: none;
+	}
+	[data-scope="navigation"]:is([data-part="trigger"], [data-part="trigger-anchor"]):hover {
+		filter: none;
+	}
+	/* Joined input group (BarcodeInput, `input-group joined`): Skeleton v5 ships no input-group
+	   utility, only the gapped `field-group`, so the scanner field defines its own joined cells here.
+	   Scoped with `.joined` because other components use `input-group` as a plain flex wrapper. */
+	.input-group.joined {
+		display: grid;
+		align-items: stretch;
+		background-color: #ffffff;
+		min-height: var(--bv-control-height);
+		border-radius: var(--radius-base);
+		box-shadow: inset 0 0 0 1px var(--color-surface-300);
+		overflow: hidden;
+		transition: box-shadow 120ms ease;
+	}
+	.input-group.joined:focus-within {
+		box-shadow: inset 0 0 0 2px var(--color-primary-500);
+	}
+	.input-group.joined .ig-cell,
+	.input-group.joined .ig-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 2.75rem;
+		padding-inline: 0.75rem;
+	}
+	.input-group.joined .ig-btn {
+		cursor: pointer;
+		border-inline-start: 1px solid var(--color-surface-200);
+	}
+	.input-group.joined .ig-btn:hover {
+		filter: brightness(0.95);
+	}
+	.input-group.joined .ig-input {
+		min-height: calc(var(--bv-control-height) - 2px);
+		width: 100%;
+		min-width: 0;
+		border: 0;
+		background: transparent;
+		padding-inline: 0.75rem;
+		outline: none;
+	}
+}
+
+/*
+ * SVAR DataGrid (step 0.4): icon font vendored from cdn.svar.dev so the app works offline
+ * (the Willow theme is used with `fonts={false}`), and the Willow variables mapped to the
+ * Skeleton theme tokens so grids follow the app theme.
+ */
+@import "./lib/assets/wx-icons/wx-icons.css";
+
+.wx-willow-theme {
+	--wx-font-family: var(--typo-base--font-family, system-ui, sans-serif);
+	--wx-color-primary: var(--color-primary-500);
+	--wx-color-primary-selected: var(--color-primary-100);
+	--wx-color-primary-font: var(--color-primary-contrast-500);
+	--wx-color-font: var(--color-surface-950);
+	--wx-color-link: var(--color-primary-600);
+	--wx-background: var(--color-surface-50);
+	--wx-background-alt: var(--color-surface-100);
+	--wx-background-hover: var(--color-surface-200);
+	--wx-table-header-background: var(--color-surface-100);
+	--wx-table-select-background: var(--color-primary-100);
+	--wx-table-border: 1px solid var(--color-surface-200);
+	--wx-table-fixed-column-border: 3px solid var(--color-surface-300);
+	--wx-border-radius: var(--radius-container, 0.5rem);
+}
+
+/* Motion: subtle and respectful of the user's preference (§3.18). */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		/* once: an endless animation of 0.01 ms (the turning icon of a wait) would flicker */
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+/* Toasts (step 3.8b): Zag positions and stacks them through CSS variables on the root part; the
+   motion is a short slide and fade, removed under prefers-reduced-motion. */
+[data-scope="toast"][data-part="root"] {
+	translate: var(--x) var(--y);
+	scale: var(--scale, 1);
+	z-index: var(--z-index);
+	height: var(--height);
+	opacity: var(--opacity);
+	will-change: translate, opacity, scale;
+	transition:
+		translate 300ms,
+		scale 300ms,
+		opacity 300ms,
+		height 300ms;
+	transition-timing-function: cubic-bezier(0.21, 1.02, 0.73, 1);
+}
+[data-scope="toast"][data-part="root"][data-state="closed"] {
+	transition:
+		translate 300ms,
+		scale 300ms,
+		opacity 200ms;
+	transition-timing-function: cubic-bezier(0.06, 0.71, 0.55, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+	[data-scope="toast"][data-part="root"] {
+		transition: none;
+	}
+}
+
+/* The colour of the area in the top bar (step 9.16). The shell carries `data-area` (none on the
+   dashboard, none with `ui.areaStyle: none`) and `data-area-style`; the colours are generated with
+   every colour set (`--bv-area-<area>-*`, theme-palette.ts). Unlayered, so they win over the
+   utility classes the elements keep for the neutral bar. */
+[data-area="circulation"] {
+	--area-tint: var(--bv-area-circulation-tint);
+	--area-strong: var(--bv-area-circulation-strong);
+	--area-nav: var(--bv-area-circulation-nav);
+	--area-deep: var(--bv-area-circulation-deep);
+	--area-text: var(--bv-area-circulation-text);
+}
+[data-area="catalog"] {
+	--area-tint: var(--bv-area-catalog-tint);
+	--area-strong: var(--bv-area-catalog-strong);
+	--area-nav: var(--bv-area-catalog-nav);
+	--area-deep: var(--bv-area-catalog-deep);
+	--area-text: var(--bv-area-catalog-text);
+}
+[data-area="patrons"] {
+	--area-tint: var(--bv-area-patrons-tint);
+	--area-strong: var(--bv-area-patrons-strong);
+	--area-nav: var(--bv-area-patrons-nav);
+	--area-deep: var(--bv-area-patrons-deep);
+	--area-text: var(--bv-area-patrons-text);
+}
+[data-area="printing"] {
+	--area-tint: var(--bv-area-printing-tint);
+	--area-strong: var(--bv-area-printing-strong);
+	--area-nav: var(--bv-area-printing-nav);
+	--area-deep: var(--bv-area-printing-deep);
+	--area-text: var(--bv-area-printing-text);
+}
+[data-area="notes"] {
+	--area-tint: var(--bv-area-notes-tint);
+	--area-strong: var(--bv-area-notes-strong);
+	--area-nav: var(--bv-area-notes-nav);
+	--area-deep: var(--bv-area-notes-deep);
+	--area-text: var(--bv-area-notes-text);
+}
+[data-area="reports"] {
+	--area-tint: var(--bv-area-reports-tint);
+	--area-strong: var(--bv-area-reports-strong);
+	--area-nav: var(--bv-area-reports-nav);
+	--area-deep: var(--bv-area-reports-deep);
+	--area-text: var(--bv-area-reports-text);
+}
+[data-area="admin"] {
+	--area-tint: var(--bv-area-admin-tint);
+	--area-strong: var(--bv-area-admin-strong);
+	--area-nav: var(--bv-area-admin-nav);
+	--area-deep: var(--bv-area-admin-deep);
+	--area-text: var(--bv-area-admin-text);
+}
+/* every style: the page icon, the current item of the sidebar and of the phone's bottom bar */
+[data-area] .bv-area-icon {
+	background-color: var(--area-strong);
+	color: #fff;
+}
+[data-area] .bv-nav-current {
+	background-color: var(--area-nav);
+	color: #fff;
+}
+[data-area] .bv-nav-current-mobile {
+	background-color: var(--area-tint);
+	color: var(--area-text);
+}
+/* tinted (default): a light tint with a strong band along the bottom edge */
+[data-area][data-area-style="tinted"] .bv-topbar {
+	background-color: var(--area-tint);
+	box-shadow:
+		inset 0 -5px 0 var(--area-strong),
+		var(--bv-shadow-card);
+}
+/* accents: the neutral bar with a band along its left edge */
+[data-area][data-area-style="accents"] .bv-topbar {
+	box-shadow:
+		inset 6px 0 0 var(--area-strong),
+		var(--bv-shadow-card);
+}
+/* filled: the whole bar in the area's deep shade, white text; what sits on it keeps its own ground */
+[data-area][data-area-style="filled"] .bv-topbar {
+	background-color: var(--area-deep);
+	color: #fff;
+}
+[data-area][data-area-style="filled"] .bv-topbar .bv-area-icon {
+	background-color: rgb(255 255 255 / 0.2);
+}
+[data-area][data-area-style="filled"] .bv-topbar .bv-page-brand {
+	color: inherit;
+}
+[data-area][data-area-style="filled"] .bv-topbar .bv-page-actions,
+[data-area][data-area-style="filled"] .bv-topbar .bv-page-back {
+	color: var(--color-surface-950);
+}
+/* only when the page has actions: an empty row stays invisible */
+[data-area][data-area-style="filled"] .bv-topbar .bv-page-actions:has(> *) {
+	background-color: var(--color-surface-50);
+	border-radius: var(--radius-container);
+	padding: 0.5rem;
+}
+[data-area][data-area-style="filled"] .bv-topbar .bv-page-back {
+	background-color: var(--color-surface-50);
+}
+
+/* The staff notes as post-its (step 9.18): fixed light tints, the same in every colour set, dark
+   text (contrast well over 4.5:1 on each), a folded corner and a slight alternating tilt, with no
+   hover effect (owner review). The colour is decoration: the pin, the author and the date are
+   text. */
+.bv-note,
+.bv-note-swatch {
+	--note-bg: #fff4a3;
+	--note-fold: #ead64f;
+}
+.bv-note {
+	position: relative;
+	background: linear-gradient(225deg, transparent 0.9rem, var(--note-bg) 0.9rem);
+	color: var(--color-surface-950);
+	border-radius: 0.25rem;
+	box-shadow: var(--bv-shadow-raised);
+	rotate: -0.6deg;
+}
+.bv-note::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 1.27rem;
+	height: 1.27rem;
+	background: linear-gradient(225deg, transparent 50%, var(--note-fold) 50%);
+	border-bottom-left-radius: 0.25rem;
+}
+.bv-note-grid > :nth-child(even) .bv-note,
+.bv-note-grid > .bv-note:nth-child(even) {
+	rotate: 0.6deg;
+}
+[data-note-color="pink"] {
+	--note-bg: #ffdce8;
+	--note-fold: #f2a9c3;
+}
+[data-note-color="green"] {
+	--note-bg: #daf5cd;
+	--note-fold: #9fd88a;
+}
+[data-note-color="blue"] {
+	--note-bg: #d6edfb;
+	--note-fold: #96c8ea;
+}
+[data-note-color="orange"] {
+	--note-bg: #ffe0bb;
+	--note-fold: #f2b06a;
+}
+.bv-note-swatch {
+	background: var(--note-bg);
+	border: 1px solid var(--note-fold);
+}

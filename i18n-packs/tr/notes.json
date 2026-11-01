@@ -1,0 +1,66 @@
+{
+	"title": "Notlar",
+	"new": "Yeni not",
+	"adminOnly": "Notları yalnızca yönetici arşivler ve panoda öne çıkarabilir.",
+	"pinned": "Öne çıkarılan",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Arşivleyen: {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:not; other:not;}}",
+	"archiveCount": "{{shown}} / {{total}} arşivlenmiş {{total:plural; one:not; other:not;}}",
+	"actions": {
+		"label": "Not işlemleri",
+		"pin": "Panoda öne çıkar",
+		"unpin": "Öne çıkarmayı kaldır",
+		"archive": "Arşivle",
+		"restore": "Geri yükle",
+		"delete": "Sil",
+		"showAll": "Tümünü göster",
+		"showLess": "Daha azını göster",
+		"more": "Daha fazlasını göster"
+	},
+	"done": {
+		"added": "Not eklendi",
+		"pinned": "Not öne çıkarıldı",
+		"unpinned": "Öne çıkarma kaldırıldı",
+		"archived": "Not arşivlendi",
+		"restored": "Not geri yüklendi",
+		"deleted": "Not silindi"
+	},
+	"confirmDelete": {
+		"title": "Not silinsin mi?",
+		"text": "Kalıcı olarak silinir ve geri alınamaz."
+	},
+	"form": {
+		"body": "Metin",
+		"placeholder": "Örn. Masadaki tarayıcı kartları okumuyor.",
+		"privacy": "Notları tüm hesaplar okur: öğrencilerin kişisel verilerini yazmayın.",
+		"written": "Bir not değiştirilemez: hata olursa, yöneticiden notu arşivlemesini isteyin ve yeni bir not yazın.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Renk",
+		"pinned": "Panoda öne çıkar",
+		"pinnedHint": "Öne çıkarma kaldırılana ya da not arşivlenene kadar panonun (ve ödünç masasının) en üstünde herkese gösterilir.",
+		"save": "Ekle"
+	},
+	"colors": {
+		"yellow": "Sarı",
+		"pink": "Pembe",
+		"green": "Yeşil",
+		"blue": "Açık mavi",
+		"orange": "Turuncu"
+	},
+	"errors": {
+		"empty": "Notun metnini yazın.",
+		"tooLong": "Metin en fazla {{max}} {{max:plural; one:karakter; other:karakter;}} olabilir.",
+		"color": "Renklerden birini seçin."
+	},
+	"empty": {
+		"open": "Açık not yok",
+		"openHint": "Açık not yok. Notlar, sorunları ve duyuruları meslektaşlara ve yöneticiye iletir.",
+		"archived": "Arşivlenmiş not yok"
+	},
+	"home": {
+		"title": "Notlar",
+		"open": "Notları aç"
+	},
+	"tile": "Açık notlar"
+}

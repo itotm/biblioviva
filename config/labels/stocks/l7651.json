@@ -1,0 +1,20 @@
+{
+	"id": "l7651",
+	"name": "Etichette 38,1 × 21,2 mm (5 × 13)",
+	"paper": "A4",
+	"labelMm": {
+		"width": 38.1,
+		"height": 21.2
+	},
+	"columns": 5,
+	"rows": 13,
+	"marginMm": {
+		"top": 10.7,
+		"left": 4.75
+	},
+	"gapMm": {
+		"x": 2.5,
+		"y": 0
+	},
+	"cornerRadiusMm": 1.5
+}

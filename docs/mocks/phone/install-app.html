@@ -1,0 +1,133 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<!--
+	Mock (ADR-046): a phone's browser on the BiblioViva dashboard with its menu open at the entry
+	that installs the application, as the step "Dispositivi" says. The menu speaks the reader's
+	language; the entries are those of a common browser, without its marks.
+-->
+<html lang="it" data-lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>Installa app</title>
+		<link rel="stylesheet" href="../mock.css" />
+		<script>
+			document.documentElement.dataset.lang =
+				new URLSearchParams(location.search).get("lang") === "en" ? "en" : "it";
+			document.documentElement.lang = document.documentElement.dataset.lang;
+		</script>
+		<style>
+			.mock {
+				width: 380px;
+				height: 760px;
+				border-radius: 36px;
+				border: 10px solid #23262e;
+				position: relative;
+				background: #f7f8fb;
+			}
+			.status {
+				height: 26px;
+				background: #fff;
+				font-size: 12px;
+				display: flex;
+				justify-content: space-between;
+				padding: 5px 18px 0;
+				color: var(--muted);
+			}
+			.bar {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				padding: 8px 10px;
+				background: #fff;
+				border-bottom: 1px solid var(--line);
+			}
+			.address {
+				flex: 1;
+				border-radius: 999px;
+				background: var(--soft);
+				padding: 6px 12px;
+				font-size: 13px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			.dots {
+				width: 28px;
+				text-align: center;
+				font-weight: 700;
+				font-size: 18px;
+				line-height: 1;
+			}
+			.app {
+				padding: 16px;
+				opacity: 0.45;
+			}
+			.app h1 {
+				font-size: 20px;
+				margin-bottom: 12px;
+			}
+			.tile {
+				height: 74px;
+				border-radius: 12px;
+				background: #fff;
+				border: 1px solid var(--line);
+				margin-bottom: 10px;
+			}
+			.menu {
+				position: absolute;
+				top: 64px;
+				right: 8px;
+				width: 250px;
+				background: #fff;
+				border-radius: 12px;
+				box-shadow: 0 10px 30px rgb(20 24 40 / 25%);
+				padding: 6px 0;
+				font-size: 15px;
+			}
+			.menu div {
+				padding: 11px 18px;
+			}
+			.menu hr {
+				border: 0;
+				border-top: 1px solid var(--line);
+				margin: 4px 0;
+			}
+			.menu .pick {
+				background: var(--accent-soft);
+				color: var(--accent);
+				font-weight: 650;
+				outline: 3px solid #f59f00;
+				outline-offset: -3px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mock">
+			<div class="status"><span>9:41</span><span>▮▮▮ 100%</span></div>
+			<div class="bar">
+				<span class="address mono">biblioviva.tail1a2b3c.ts.net</span>
+				<span class="dots">⋮</span>
+			</div>
+			<div class="app">
+				<h1>Dashboard</h1>
+				<div class="tile"></div>
+				<div class="tile"></div>
+				<div class="tile"></div>
+				<div class="tile"></div>
+				<div class="tile"></div>
+			</div>
+			<div class="menu">
+				<div><span class="l-it">Nuova scheda</span><span class="l-en">New tab</span></div>
+				<div><span class="l-it">Cronologia</span><span class="l-en">History</span></div>
+				<div><span class="l-it">Preferiti</span><span class="l-en">Bookmarks</span></div>
+				<hr />
+				<div><span class="l-it">Condividi…</span><span class="l-en">Share…</span></div>
+				<div><span class="l-it">Trova nella pagina</span><span class="l-en">Find in page</span></div>
+				<div class="pick"><span class="l-it">Installa app</span><span class="l-en">Install app</span></div>
+				<div><span class="l-it">Sito desktop</span><span class="l-en">Desktop site</span></div>
+				<hr />
+				<div><span class="l-it">Impostazioni</span><span class="l-en">Settings</span></div>
+			</div>
+		</div>
+	</body>
+</html>

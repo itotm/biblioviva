@@ -1,0 +1,20 @@
+{
+	"id": "loans-by-school-year",
+	"title": {
+		"it": "Prestiti per anno scolastico",
+		"en": "Loans by school year"
+	},
+	"description": {
+		"it": "L'andamento dei prestiti negli anni scolastici, per ordine di scuola.",
+		"en": "Loans over the school years, by stage."
+	},
+	"category": "loans",
+	"query": {
+		"source": "loans",
+		"rows": ["schoolYear"],
+		"columns": "stage",
+		"measures": ["loans"],
+		"totals": "rows",
+		"chart": "bar"
+	}
+}

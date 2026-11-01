@@ -1,0 +1,1778 @@
+{
+	"home": {
+		"title": "Configuració"
+	},
+	"leave": {
+		"title": "Sortir sense desar?",
+		"description": "Els canvis que encara no s'han desat es perdran.",
+		"confirm": "Surt sense desar"
+	},
+	"taxonomy": {
+		"title": "Classificació",
+		"intro": "Els canvis resten en esborrany fins a «Desa»; la versió anterior de {{file}} es conserva.",
+		"invalid": "Alguns valors no són vàlids (marcats en vermell): cal corregir-los per poder desar.",
+		"orphans": "Al catàleg hi ha llibres amb codis que la classificació no conté: {{codes}}. Cal afegir aquests codis aquí o reclassificar aquests llibres des del catàleg.",
+		"unsaved": "Canvis no desats",
+		"discard": "Descarta els canvis",
+		"saved": "Classificació desada",
+		"savedDetail": "{{records}} {{records:plural; one:llibre desplaçat; other:llibres desplaçats;}}, {{callNumbers}} {{callNumbers:plural; one:signatura reescrita; other:signatures reescrites;}}, {{bands}} {{bands:plural; one:banda del llom per tornar a imprimir; other:bandes del llom per tornar a imprimir;}}.",
+		"tabs": {
+			"fiction": "Narrativa",
+			"nonfiction": "No ficció",
+			"dewey": "Dewey",
+			"options": "Opcions"
+		},
+		"addGenre": "Afegeix un gènere",
+		"addClass": "Afegeix un tema",
+		"addSubclass": "Afegeix un subtema",
+		"dragHint": "Arrossegar les files per canviar l'ordre, o usar les fletxes. L'ordre és el de les opcions del catàleg.",
+		"pickGenre": "Tria un gènere per modificar-lo",
+		"pickClass": "Tria un tema per modificar-lo",
+		"untitled": "Sense nom",
+		"hasProblems": "Per corregir",
+		"usageShort": "{{records}} {{records:plural; one:llibre; other:llibres;}}",
+		"moveUp": "Mou amunt",
+		"moveDown": "Mou avall",
+		"panel": {
+			"genre": "Gènere",
+			"class": "Tema",
+			"subclass": "Subtema"
+		},
+		"fields": {
+			"code": "Codi",
+			"label": "Nom",
+			"color": "Color",
+			"pictogram": "Pictograma",
+			"position": "Posició"
+		},
+		"renameNote": "Codi canviat: en desar, {{records}} {{records:plural; one:llibre passa; other:llibres passen;}} de {{from}} a {{to}} i les seves signatures s'actualitzen.",
+		"color": {
+			"inherit": "Usa el color de {{code}}",
+			"none": "Sense color",
+			"hex": "Codi del color"
+		},
+		"pictogram": {
+			"upload": "Puja una imatge",
+			"choose": "Tria entre les imatges",
+			"remove": "Treu la imatge",
+			"own": "Imatge pròpia. PNG, JPEG o WebP: es desa com a PNG.",
+			"missing": "El fitxer {{name}} no és a la carpeta de les imatges: a les etiquetes apareix el cercle amb el color i el codi.",
+			"inherited": "Sense imatge pròpia usa la de {{code}}.",
+			"placeholder": "Sense imatge: a les etiquetes apareix un cercle amb el color i el codi.",
+			"gallery": "Imatges de la classificació",
+			"errors": {
+				"empty": "El fitxer és buit.",
+				"too_large": "La imatge és massa gran (com a màxim {{maxMb}} MB).",
+				"not_an_image": "El fitxer no és una imatge.",
+				"unsupported_format": "Format no acceptat: cal usar PNG, JPEG o WebP."
+			}
+		},
+		"position": {
+			"top": "Tema principal",
+			"under": "Dins de {{code}} · {{label}}",
+			"locked": "Té subtemes: es queda com a tema principal."
+		},
+		"usage": {
+			"new": "Nou: cap llibre no l'usa encara.",
+			"none": "Cap llibre no usa aquest codi.",
+			"some": "L'usen {{records}} {{records:plural; one:llibre; other:llibres;}} ({{copies}} {{copies:plural; one:exemplar; other:exemplars;}})."
+		},
+		"remove": {
+			"genre": "Suprimeix el gènere",
+			"class": "Suprimeix el tema",
+			"confirmTitle": "Suprimir {{code}}?",
+			"withSubclasses": "{{count:plural; one:També se suprimeix el seu subtema.; other:També se suprimeixen els seus {{count}} subtemes.;}}",
+			"inUse": "{{records}} {{records:plural; one:llibre usa; other:llibres usen;}} aquest codi: en desar es tria on traslladar-los.",
+			"confirm": "Suprimeix"
+		},
+		"preview": {
+			"title": "Vista prèvia de la banda",
+			"hint": "Un llibre d'exemple tal com s'imprimiria ara, a mida real.",
+			"needsCode": "La vista prèvia apareix quan el codi és vàlid."
+		},
+		"problems": {
+			"codeRequired": "El codi és obligatori.",
+			"codeFormat": "Usa només lletres, xifres, punt, guionet o guió baix (32 com a màxim).",
+			"codeTaken": "Aquest codi ja l'usa un altre gènere o tema.",
+			"labelRequired": "El nom és obligatori.",
+			"labelLong": "El nom és massa llarg (120 caràcters com a màxim).",
+			"colorFormat": "Escriu el color com a #rrggbb, per exemple #e8231b.",
+			"patternRequired": "L'esquema no pot estar buit."
+		},
+		"dewey": {
+			"hint": "Quan un llibre de no ficció arriba amb un número Dewey (per exemple des de SBN), el tema es proposa segons aquesta taula: guanya el prefix més llarg que coincideix.",
+			"probe": "Prova un número Dewey",
+			"noMatch": "Cap tema no coincideix",
+			"empty": "Cap correspondència Dewey",
+			"prefix": "Prefix Dewey",
+			"class": "Tema",
+			"add": "Afegeix una correspondència",
+			"problems": {
+				"prefixFormat": "De 1 a 3 xifres.",
+				"prefixTaken": "Prefix repetit.",
+				"codeUnknown": "Tria un tema."
+			}
+		},
+		"options": {
+			"fictionByClass": "La narrativa es divideix per nivell de lectura",
+			"fictionByClassHint": "Als llibres de narrativa es pot associar el nivell de lectura al qual són adequats (per exemple la classe 4): apareix a la signatura i a la banda del llom.",
+			"classPerItem": "El nivell de lectura està a cada exemplar",
+			"classPerItemHint": "Cal quan exemplars del mateix llibre estan en prestatgeries de nivells diferents. Altrament el nivell està al llibre.",
+			"toCopies": "En desar, el nivell de lectura de cada llibre passa als seus exemplars.",
+			"toRecords": "En desar, el nivell dels exemplars torna al llibre; no es pot fer si exemplars del mateix llibre tenen nivells diferents.",
+			"patterns": "Esquemes de la signatura",
+			"patternsHint": "Valen per als exemplars afegits a partir d'ara; les signatures existents no canvien. Marcadors: {{placeholders}}.",
+			"pattern": {
+				"fiction": "Narrativa",
+				"fictionWithClass": "Narrativa amb classe associada",
+				"nonfiction": "No ficció"
+			},
+			"unknownPlaceholders": "Marcadors desconeguts: {{names}}.",
+			"example": "Exemple: {{example}}"
+		},
+		"save": {
+			"title": "Desa la classificació",
+			"checking": "Es comprova què canvia al catàleg…",
+			"unchanged": "No hi ha canvis per desar.",
+			"errors": "Abans de desar cal corregir aquests problemes:",
+			"removedTitle": "Codis suprimits encara en ús",
+			"removedHint": "Tria on traslladar els llibres de cada codi suprimit: el nou codi va als llibres, a l'inici de les seves signatures i a les bandes del llom.",
+			"moveTo": "{{code}} · {{label}}: {{records}} {{records:plural; one:llibre; other:llibres;}} ({{copies}} {{copies:plural; one:exemplar; other:exemplars;}}). Trasllada a",
+			"choose": "Tria…",
+			"callNumbers": "{{count}} {{count:plural; one:signatura comença; other:signatures comencen;}} amb un codi suprimit: el codi de l'inici se substitueix (per exemple B 4 DEL es converteix en A 4 DEL).",
+			"bandsMoved": "Les bandes del llom dels llibres traslladats, i les etiquetes amb la signatura canviada, tornen entre les que cal imprimir.",
+			"unused": "Suprimits, no els usa cap llibre: {{codes}}.",
+			"reprint": "Torna entre les etiquetes per imprimir les bandes del llom de {{copies}} {{copies:plural; one:exemplar; other:exemplars;}} el nom, color o pictograma dels quals canvia ({{codes}})",
+			"reprintHint": "Es pot deixar desactivat si la diferència de les bandes ja enganxades als llibres no importa.",
+			"conflicts": "{{count}} {{count:plural; one:llibre té; other:llibres tenen;}} exemplars en classes diferents: abans de treure la classe dels exemplars cal donar la mateixa classe a tots els exemplars de cada llibre.",
+			"toCopies": "La classe associada de {{count}} {{count:plural; one:llibre passa; other:llibres passen;}} als seus exemplars.",
+			"toRecords": "La classe dels exemplars torna al llibre per a {{count}} {{count:plural; one:títol; other:títols;}}.",
+			"warnings": "{{count}} {{count:plural; one:avís; other:avisos;}} (no bloquegen el desament)",
+			"levelsTitle": "Nivells de lectura suprimits mentre els llibres en tenen",
+			"levelMoveTo": "Els llibres del nivell {{code}} · {{label}} ({{records}} {{records:plural; one:títol; other:títols;}}, {{copies}} {{copies:plural; one:exemplar; other:exemplars;}}) passen a",
+			"noLevel": "Cap nivell",
+			"levelsHint": "A la signatura dels exemplars el nivell canvia amb ells (per exemple B 4 DEL es converteix en B 5 DEL) i les seves etiquetes tornen entre les que cal imprimir."
+		},
+		"levels": {
+			"title": "Nivells de lectura",
+			"hint": "En ordre, des del més senzill. El codi va als llibres i a la signatura (per exemple 4 a B 4 DEL), el nom es veu a les opcions. Per a un nivell en ús que es treu o es reanomena, en desar es pregunta on traslladar els seus llibres.",
+			"code": "Codi del nivell",
+			"label": "Nom del nivell",
+			"up": "Mou amunt",
+			"down": "Mou avall",
+			"remove": "Treu el nivell",
+			"add": "Afegeix un nivell"
+		}
+	},
+	"sections": {
+		"library": {
+			"title": "Biblioteca i escola",
+			"description": "Nom, tipus d'escola, classes i seccions, curs escolar, fus horari."
+		},
+		"school": {
+			"title": "Escola",
+			"description": "Les etapes i els cursos de l'escola, com s'escriu una classe i què passa amb les classes a final de curs. Les classes en si es gestionen a Administració → Configuració → Classes."
+		},
+		"catalog": {
+			"title": "Catàleg",
+			"description": "Valors per a autor, editor i lloc desconeguts."
+		},
+		"barcodes": {
+			"title": "Codis de barres",
+			"description": "Format dels carnets i dels exemplars, codis antics, tipus de codi de barres."
+		},
+		"circulation": {
+			"title": "Préstecs",
+			"description": "Regles de préstec i de renovació, dates de devolució, reclamacions, rebuts."
+		},
+		"calendar": {
+			"title": "Calendari",
+			"description": "Dies de tancament i festius."
+		},
+		"z3950": {
+			"title": "Z39.50 (SBN)",
+			"description": "Els servidors d'on vénen els registres dels llibres."
+		},
+		"metadata": {
+			"title": "Dades dels llibres",
+			"description": "Les fonts de dades en cercar per ISBN."
+		},
+		"performance": {
+			"title": "Rendiment",
+			"description": "L'ordinador on funciona BiblioViva i els ajustaments que en depenen."
+		},
+		"classification": {
+			"title": "Classificació",
+			"description": "Gèneres, temes, pictogrames, Dewey i signatures."
+		},
+		"cards": {
+			"title": "Carnets",
+			"description": "Format dels carnets i del full d'impressió."
+		},
+		"labels": {
+			"title": "Etiquetes",
+			"description": "Etiquetes i bandes del llom dels llibres, fulls adhesius."
+		},
+		"photos": {
+			"title": "Fotos dels usuaris",
+			"description": "Mida i format de les fotos."
+		},
+		"covers": {
+			"title": "Cobertes",
+			"description": "Mida, format i fonts de les cobertes."
+		},
+		"privacy": {
+			"title": "Privacitat",
+			"description": "Per quant de temps es conserva el registre de les operacions."
+		},
+		"backup": {
+			"title": "Còpia de seguretat",
+			"description": "Horari i conservació de les còpies de seguretat, còpia externa."
+		},
+		"security": {
+			"title": "Seguretat i accessos",
+			"description": "Durada de les sessions, intents d'accés, comptes i rols."
+		},
+		"ui": {
+			"title": "Interfície",
+			"description": "El taulell de préstec i els idiomes afegits; colors, idioma i tauler són a «Aspecte i idioma»."
+		}
+	},
+	"fields": {
+		"library": {
+			"name": {
+				"label": "Nom de la biblioteca",
+				"hint": "Apareix a dalt a l'esquerra, als carnets i a les impressions."
+			},
+			"contactEmail": {
+				"label": "Correu electrònic de contacte",
+				"hint": "Opcional: apareix a les impressions que el preveuen."
+			},
+			"schoolYearStart": {
+				"label": "Inici del curs escolar",
+				"hint": "Mes i dia en la forma MM-DD (per exemple 09-01): separa els anys a les estadístiques."
+			},
+			"schoolYearLabel": {
+				"label": "Nom del curs escolar",
+				"hint": "Com apareix el curs escolar als carnets, als informes i a les pàgines: dos anys (2026/2027) o l'any d'inici (2026), com al Brasil, al Japó i a Corea."
+			},
+			"timezone": {
+				"label": "Fus horari",
+				"hint": "Nom del fus, per exemple Europe/Rome: les dates i les dates de devolució el segueixen, no el rellotge del servidor."
+			},
+			"weekStart": {
+				"label": "Primer dia de la setmana",
+				"hint": "El dia des del qual comencen les setmanes als calendaris i a «aquesta setmana» del tauler. Al primer inici l'idioma en tria el valor (dilluns en català, diumenge en anglès)."
+			}
+		},
+		"school": {
+			"classLabel": {
+				"label": "Com s'escriu la classe",
+				"hint": "{level} és el curs, {group} el nom de la classe: «{level} {group}» dóna 3 B, «{level}{group}» dóna 3B. Una etapa en pot tenir un de propi (Etapes i cursos)."
+			},
+			"groupWord": {
+				"label": "Paraula per a la classe",
+				"hint": "El nom del camp de la classe als formularis i als filtres, i {word} a la línia de la classe del carnet (Secció B, Classe B, Grup B)."
+			},
+			"cardClass": {
+				"label": "Classe al carnet",
+				"hint": "La línia de la classe impresa al carnet: {word} és la paraula per a la classe, {group} el nom de la classe, {level} el curs, {class} la classe sencera. «{word} {group}» dóna Secció B, «{class}» dóna 3 B."
+			},
+			"teacherGroupName": {
+				"label": "Nom del grup dels docents",
+				"hint": "El grup en què entra un docent quan no se'n tria cap altre."
+			},
+			"promotionWithinStage": {
+				"label": "A final de curs, dins de la mateixa etapa",
+				"hint": "Normalment la classe avança amb els seus alumnes: la 3 B es converteix en 4 B."
+			},
+			"promotionAcrossStages": {
+				"label": "A final de curs, en passar a una altra etapa",
+				"hint": "Per exemple de 5è de primària a 1r de secundària en un centre comprensiu."
+			}
+		},
+		"catalog": {
+			"specialAuthors": {
+				"label": "Autors especials",
+				"hint": "Un per línia: els valors acceptats en lloc d'un autor personal (per exemple Anònim, AA. VV.)."
+			},
+			"unknownPublisher": {
+				"label": "Editor desconegut",
+				"hint": "El valor que s'escriu quan no s'indica l'editor."
+			},
+			"unknownPlace": {
+				"label": "Lloc desconegut",
+				"hint": "El valor que s'escriu quan no s'indica el lloc de publicació."
+			}
+		},
+		"barcodes": {
+			"keyboardLayout": {
+				"label": "Teclat dels ordinadors",
+				"hint": "La disposició del teclat dels ordinadors als quals són connectats els lectors de codis de barres: serveix a corregir els caràcters que un lector configurat per a un altre teclat escriu malament."
+			},
+			"cameraSound": {
+				"label": "So de la càmera",
+				"hint": "El senyal sonor del telèfon quan la càmera llegeix un carnet, el codi de barres d'un exemplar o un ISBN. El lector USB sona per si sol i no en necessita; el taulell de préstec es manté en silenci."
+			},
+			"patron": {
+				"symbology": {
+					"label": "Tipus de codi de barres dels carnets",
+					"hint": "Code 128 per als carnets nous; Code 39 només si els lectors de la biblioteca no llegeixen el Code 128."
+				}
+			},
+			"item": {
+				"symbology": {
+					"label": "Tipus de codi de barres dels exemplars",
+					"hint": "Code 128 per a les etiquetes noves; Code 39 només si els lectors de la biblioteca no llegeixen el Code 128."
+				}
+			}
+		},
+		"circulation": {
+			"rules": {
+				"student": {
+					"loanDays": {
+						"label": "Dies de préstec",
+						"hint": "Quants dies dura un préstec per als alumnes."
+					},
+					"maxLoans": {
+						"label": "Llibres en préstec com a màxim",
+						"hint": "Quants llibres es poden tenir alhora."
+					},
+					"maxRenewals": {
+						"label": "Renovacions com a màxim",
+						"hint": "Quantes vegades es pot renovar el mateix préstec (0 = mai)."
+					},
+					"renewalDays": {
+						"label": "Dies de renovació",
+						"hint": "Quants dies afegeix cada renovació."
+					}
+				},
+				"teacher": {
+					"loanDays": {
+						"label": "Dies de préstec",
+						"hint": "Quants dies dura un préstec per als docents."
+					},
+					"maxLoans": {
+						"label": "Llibres en préstec com a màxim",
+						"hint": "Quants llibres es poden tenir alhora."
+					},
+					"maxRenewals": {
+						"label": "Renovacions com a màxim",
+						"hint": "Quantes vegades es pot renovar el mateix préstec (0 = mai)."
+					},
+					"renewalDays": {
+						"label": "Dies de renovació",
+						"hint": "Quants dies afegeix cada renovació."
+					}
+				}
+			},
+			"dueDateMode": {
+				"label": "Càlcul de la data de devolució",
+				"hint": "Com es compta la durada del préstec respecte als dies de tancament."
+			},
+			"renewFrom": {
+				"label": "La renovació comença des de",
+				"hint": "Des de quin dia es compten els dies de renovació."
+			},
+			"allowRenewalWhenOverdue": {
+				"label": "Renovació també després de la data de devolució",
+				"hint": "Es pot renovar un préstec ja endarrerit."
+			},
+			"overdueNotice": {
+				"template": {
+					"label": "Plantilla de les reclamacions",
+					"hint": "El nom de la plantilla d'impressió de les reclamacions (carpeta a slips/templates)."
+				},
+				"pageBreakPerGroup": {
+					"label": "Una pàgina per classe",
+					"hint": "Cada classe en el seu full, per lliurar al docent; es pot canviar també en el moment d'imprimir."
+				},
+				"minDays": {
+					"label": "Dies de retard abans de la reclamació",
+					"hint": "Un préstec apareix a les reclamacions només després d'aquests dies de retard (0 = de seguida)."
+				}
+			},
+			"blockIfOverdue": {
+				"label": "Cap préstec nou amb llibres endarrerits",
+				"hint": "Qui té un llibre endarrerit no pot endur-se'n d'altres fins que no el torni."
+			},
+			"hardDueDate": {
+				"label": "Data de devolució màxima",
+				"hint": "Cap préstec no té data de devolució posterior a aquesta data (per exemple la fi de les classes). Buida: sense límit."
+			},
+			"receipts": {
+				"label": "Rebut de préstec",
+				"hint": "Mostra al taulell de préstec el botó per imprimir el rebut."
+			}
+		},
+		"calendar": {
+			"autoItalianHolidays": {
+				"label": "Festius nacionals italians",
+				"hint": "Els festius nacionals (inclosa la Pasqua) són dies de tancament sense haver-los d'escriure a mà."
+			}
+		},
+		"z3950": {
+			"defaultTarget": {
+				"label": "Servidor predeterminat",
+				"hint": "L'identificador del servidor Z39.50 que s'usa per a les cerques."
+			},
+			"timeoutMs": {
+				"label": "Temps màxim d'espera (ms)",
+				"hint": "Després de quants mil·lisegons es renuncia a una cerca Z39.50."
+			},
+			"maxRecordsIsbn": {
+				"label": "Resultats per ISBN",
+				"hint": "Quants registres com a màxim es llegeixen en cercar un ISBN (un mateix ISBN pot tenir un registre per reimpressió): s'obre el més complet."
+			},
+			"maxRecordsSearch": {
+				"label": "Resultats per cerca",
+				"hint": "Quants registres com a màxim es llegeixen en cercar per títol o autor."
+			}
+		},
+		"metadata": {
+			"providers": {
+				"label": "Fonts de dades",
+				"hint": "D'on arriben les dades dels llibres en cercar per ISBN: les fonts escollides s'interroguen juntes."
+			},
+			"cacheDays": {
+				"label": "Dies de memòria de les cerques",
+				"hint": "Durant quants dies es reutilitza una cerca ja feta sense tornar a preguntar."
+			},
+			"timeoutMs": {
+				"label": "Temps màxim d'espera (ms)",
+				"hint": "Després de quants mil·lisegons es deixa de banda una font que no respon."
+			}
+		},
+		"performance": {
+			"profile": {
+				"label": "Ordinador",
+				"hint": "Els ajustaments predeterminats adequats a l'ordinador on funciona BiblioViva."
+			},
+			"sqliteCacheMb": {
+				"label": "Memòria cau de la base de dades (MB)",
+				"hint": "Buit: segons l'ordinador (8, 16, 64 o 256 MB)."
+			},
+			"sqliteMmapMb": {
+				"label": "Memòria mapejada de la base de dades (MB)",
+				"hint": "Buit: segons l'ordinador (0, 0, 0 o 512 MB)."
+			},
+			"walAutocheckpointPages": {
+				"label": "Pàgines abans d'un punt de control",
+				"hint": "Buit: segons l'ordinador (500, 1000, 2000 o 4000)."
+			},
+			"imageConcurrency": {
+				"label": "Imatges elaborades alhora",
+				"hint": "Fotos, cobertes, fotos de classe i el logo elaborats en el mateix moment; les altres esperen el torn. Buit: segons l'ordinador (1, 1, 2 o 4)."
+			},
+			"yazConcurrency": {
+				"label": "Cerques Z39.50 alhora",
+				"hint": "Cerques Z39.50 en el mateix moment; les altres esperen el torn. Buit: segons l'ordinador (1, 1, 2 o 2)."
+			},
+			"heavyConcurrency": {
+				"label": "Impressions i exportacions alhora",
+				"hint": "Fulls per imprimir (carnets, etiquetes, reclamacions, rebuts, informes) i exportacions (CSV, ODS, arxius, còpies de seguretat) preparats en el mateix moment; les altres esperen el torn, perquè el taulell de préstec es mantingui ràpid. Buit: segons l'ordinador (1, 1, 2 o 4)."
+			},
+			"argon2MemoryMb": {
+				"label": "Memòria per comprovar les contrasenyes (MB)",
+				"hint": "Val per a les contrasenyes establertes a partir d'aleshores. Buit: 16 MB en cada ordinador (el sistema no està mai exposat a Internet)."
+			},
+			"smol": {
+				"label": "Estalvi de memòria",
+				"hint": "Menys memòria, una mica més de feina per al processador. Automàtic: segons l'ordinador (sí per a l'ordinador mínim i el Raspberry Pi). Val a partir del reinici."
+			}
+		},
+		"cards": {
+			"defaultTemplate": {
+				"label": "Plantilla dels carnets",
+				"hint": "El nom de la plantilla d'impressió que s'usa quan un tipus d'usuari no en té una de pròpia (carpeta a cards/templates)."
+			},
+			"layout": {
+				"label": "Impressió dels carnets",
+				"hint": "Davant i darrere un al costat de l'altre (per plegar pel costat curt) o als dos costats del full, amb una impressora que imprimeix pels dos costats. Es torna a triar a cada impressió."
+			},
+			"duplex": {
+				"flip": {
+					"label": "Com gira el full",
+					"hint": "Com la impressora gira el full per al darrere: pel costat llarg (com un llibre) o pel costat curt. Ha de ser el mateix que s'ha triat a la finestra d'impressió."
+				},
+				"backOffsetMm": {
+					"x": {
+						"label": "Desplaçament del revers, horitzontal (mm)",
+						"hint": "El troba la calibració: quant desplaçar el revers perquè caigui darrere de l'anvers."
+					},
+					"y": {
+						"label": "Desplaçament del revers, vertical (mm)",
+						"hint": "El troba la calibració."
+					}
+				}
+			},
+			"cardMm": {
+				"width": {
+					"label": "Amplada (mm)",
+					"hint": "El carnet estàndard mesura 85,6 mm."
+				},
+				"height": {
+					"label": "Alçada (mm)",
+					"hint": "El carnet estàndard té 53,98 mm d'alçada."
+				}
+			},
+			"bleedMm": {
+				"label": "Sagnat (mm)",
+				"hint": "Marge extra al voltant de les imatges a tota pàgina, que es talla."
+			},
+			"sheet": {
+				"paper": {
+					"label": "Mida del full",
+					"hint": "El full on s'imprimeixen els carnets."
+				},
+				"rows": {
+					"label": "Carnets per full",
+					"hint": "Quants carnets (davant i darrere) un sota l'altre: 4 o 5 en un A4."
+				},
+				"marginMm": {
+					"label": "Marge del full (mm)",
+					"hint": "L'espai blanc al voltant dels carnets."
+				},
+				"gapMm": {
+					"label": "Espai entre els carnets (mm)",
+					"hint": "La distància entre un carnet i el següent."
+				},
+				"foldMarks": {
+					"label": "Marques de plegat",
+					"hint": "Línies curtes de traços als marges i entre els carnets, on plegar davant i darrere."
+				},
+				"cutMarks": {
+					"label": "Marques de tall",
+					"hint": "Marques de tall: línies curtes als marges i entre els carnets que prolonguen les vores de cada carnet, per tallar amb regle i cúter."
+				}
+			},
+			"validityMonths": {
+				"label": "Validesa (mesos)",
+				"hint": "Durant quants mesos és vàlid un carnet imprès. Buit: sense caducitat."
+			},
+			"showPhoto": {
+				"label": "Foto al carnet",
+				"hint": "Imprimeix la foto de l'usuari al carnet."
+			}
+		},
+		"labels": {
+			"default": {
+				"label": "Etiquetes predeterminades",
+				"hint": "Què s'imprimeix en triar «Imprimeix etiquetes»."
+			},
+			"titleMaxChars": {
+				"label": "Lletres del títol",
+				"hint": "El títol de les etiquetes es talla a aquesta longitud."
+			},
+			"monochrome": {
+				"label": "Impressora en blanc i negre",
+				"hint": "A les bandes baixes la banda de color esdevé un tramat."
+			},
+			"pair": {
+				"template": {
+					"label": "Plantilla",
+					"hint": "El nom de la plantilla d'impressió de la parella (carpeta a labels/templates)."
+				},
+				"stock": {
+					"label": "Full adhesiu",
+					"hint": "L'identificador del full d'etiquetes usat (fitxer a labels/stocks)."
+				}
+			},
+			"barcode": {
+				"template": {
+					"label": "Plantilla",
+					"hint": "El nom de la plantilla d'impressió de l'etiqueta amb el codi (carpeta a labels/templates)."
+				},
+				"stock": {
+					"label": "Full adhesiu",
+					"hint": "L'identificador del full d'etiquetes usat (fitxer a labels/stocks)."
+				}
+			},
+			"spine": {
+				"template": {
+					"label": "Plantilla",
+					"hint": "El nom de la plantilla d'impressió de la banda del llom (carpeta a labels/templates)."
+				},
+				"stock": {
+					"label": "Full adhesiu",
+					"hint": "L'identificador del full d'etiquetes usat (fitxer a labels/stocks)."
+				}
+			}
+		},
+		"photos": {
+			"enabled": {
+				"label": "Fotos dels usuaris",
+				"hint": "Activat: fotos fetes o carregades per a cada usuari, cens, fotos als carnets. Desactivat: cap foto enlloc i carnets sense foto; les fotos ja desades es conserven i tornen a aparèixer si es torna a activar."
+			},
+			"required": {
+				"label": "Foto obligatòria",
+				"hint": "Activat: el tauler, la llista d'usuaris i les llistes d'impressió assenyalen qui no té la foto. Desactivat: cap recordatori, però les fotos es poden fer, carregar i imprimir sempre als carnets."
+			},
+			"width": {
+				"label": "Amplada (px)",
+				"hint": "Les fotos es desen a aquesta amplada."
+			},
+			"height": {
+				"label": "Alçada (px)",
+				"hint": "Les fotos es desen a aquesta alçada (retall al centre)."
+			},
+			"format": {
+				"label": "Format dels fitxers",
+				"hint": "El JPEG va bé a tot arreu; el WebP ocupa menys espai."
+			},
+			"quality": {
+				"label": "Qualitat",
+				"hint": "De l'1 al 100: com més alta, fitxers més grans."
+			},
+			"maxUploadBytes": {
+				"label": "Mida màxima que es pot carregar (bytes)",
+				"hint": "Un fitxer més gran es rebutja."
+			},
+			"sheet": {
+				"maxUploadBytes": {
+					"label": "Mida màxima del fitxer (bytes)",
+					"hint": "Una imatge amb diverses fotos (cens a partir d'una imatge) més gran que això es rebutja."
+				},
+				"maxPixels": {
+					"label": "Costat més llarg conservat (px)",
+					"hint": "La imatge es redueix fins que el costat més llarg no supera aquest valor."
+				},
+				"maxFrames": {
+					"label": "Fotos com a màxim",
+					"hint": "Si la imatge en conté més, es conserven les més nítides."
+				},
+				"minAspect": {
+					"label": "Proporció mínima d'una foto",
+					"hint": "Alçada dividida per amplada: 1 és un quadrat, 1,33 una foto carnet 3:4."
+				},
+				"maxAspect": {
+					"label": "Proporció màxima d'una foto",
+					"hint": "Alçada dividida per amplada: els quadres més allargats no es consideren fotos."
+				}
+			}
+		},
+		"covers": {
+			"enabled": {
+				"label": "Cobertes dels llibres",
+				"hint": "Activat: cobertes cercades a la xarxa, fetes amb fotografia o carregades i mostrades al catàleg. Desactivat: cap coberta enlloc; les ja desades es conserven i tornen a aparèixer si es torna a activar."
+			},
+			"width": {
+				"label": "Amplada (px)",
+				"hint": "Les cobertes es desen a aquesta amplada."
+			},
+			"maxHeight": {
+				"label": "Alçada màxima (px)",
+				"hint": "Les cobertes molt altes es redueixen. Buit: sense límit."
+			},
+			"format": {
+				"label": "Format dels fitxers",
+				"hint": "El JPEG va bé a tot arreu; el WebP ocupa menys espai."
+			},
+			"quality": {
+				"label": "Qualitat",
+				"hint": "De l'1 al 100: com més alta, fitxers més grans."
+			},
+			"maxUploadBytes": {
+				"label": "Mida màxima que es pot carregar (bytes)",
+				"hint": "Un fitxer més gran es rebutja."
+			},
+			"country": {
+				"label": "País",
+				"hint": "El país del catàleg dels proveïdors de cobertes (dues lletres, per exemple IT)."
+			},
+			"minWidth": {
+				"label": "Amplada mínima (px)",
+				"hint": "Les cobertes baixades més estretes que això es descarten."
+			},
+			"autoFetch": {
+				"label": "Cerca la coberta automàticament",
+				"hint": "A «Llibre nou» la coberta es cerca a la xarxa durant la comprovació del registre i es desa juntament amb ell; si és errònia, se substitueix amb una foto."
+			},
+			"timeoutMs": {
+				"label": "Temps màxim d'espera (ms)",
+				"hint": "Després de quants mil·lisegons es deixa de banda un proveïdor que no respon."
+			}
+		},
+		"privacy": {
+			"auditRetentionMonths": {
+				"label": "Mesos del registre de les operacions",
+				"hint": "Les files més antigues del registre s'esborren."
+			}
+		},
+		"backup": {
+			"cron": {
+				"label": "Hora de la còpia",
+				"hint": "En forma cron: minut, hora, dia, mes, dia de la setmana (0 3 * * * = cada nit a les 3)."
+			},
+			"catchUp": {
+				"label": "Còpia a l'inici si s'ha saltat",
+				"hint": "Si a l'hora de la còpia l'ordinador estava apagat, BiblioViva fa la còpia un minut després de la propera engegada: només una, encara que hagin passat diversos dies."
+			},
+			"keepDays": {
+				"label": "Dies de conservació",
+				"hint": "Les còpies més antigues s'esborren."
+			},
+			"offsite": {
+				"enabled": {
+					"label": "Còpia externa activa",
+					"hint": "Indica que la segona còpia de les còpies de seguretat (rclone, en un altre disc o en un altre servei) és en ús."
+				},
+				"remote": {
+					"label": "Destinació de la còpia",
+					"hint": "On va la còpia: una carpeta d'un altre disc (/offsite/biblioviva-backups, l'opció predeterminada) o una destinació configurada a rclone, escrita en la forma nom:carpeta."
+				}
+			}
+		},
+		"security": {
+			"sessionDays": {
+				"label": "Durada de la sessió (dies)",
+				"hint": "Després de quants dies cal tornar a entrar amb la contrasenya."
+			},
+			"loginMaxAttempts": {
+				"label": "Intents d'accés",
+				"hint": "Quants intents erronis abans d'una pausa forçada."
+			},
+			"loginWindowMinutes": {
+				"label": "Pausa després de massa intents (minuts)",
+				"hint": "Per quants minuts l'accés queda bloquat després de massa intents."
+			}
+		},
+		"ui": {
+			"checkoutIdleSeconds": {
+				"label": "Pausa del taulell de préstec (segons)",
+				"hint": "Després d'aquests segons sense lectures el taulell torna a estar a punt per a un nou usuari."
+			}
+		}
+	},
+	"options": {
+		"library": {
+			"weekStart": {
+				"monday": "Dilluns",
+				"sunday": "Diumenge",
+				"saturday": "Dissabte"
+			},
+			"schoolYearLabel": {
+				"span": "Dos anys (2026/2027)",
+				"start": "L'any d'inici (2026)"
+			}
+		},
+		"school": {
+			"promotionWithinStage": {
+				"keep": "La classe avança amb els seus alumnes",
+				"clear": "Els alumnes queden sense classe"
+			},
+			"promotionAcrossStages": {
+				"keep": "La classe avança amb els seus alumnes",
+				"clear": "Els alumnes queden sense classe",
+				"ask": "Es tria la classe de cada alumne"
+			}
+		},
+		"barcodes": {
+			"patron": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"item": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"keyboardLayout": {
+				"it": "Italià",
+				"es": "Espanyol",
+				"de": "Alemany",
+				"fr": "Francès",
+				"uk": "Anglès (Regne Unit)",
+				"us": "Anglès (Estats Units)"
+			},
+			"cameraSound": {
+				"off": "Sense so",
+				"till": "Caixa",
+				"scanner": "Lector",
+				"confirm": "Confirmació",
+				"arpeggio": "Arpegi"
+			}
+		},
+		"circulation": {
+			"dueDateMode": {
+				"datedue": "Dies de calendari, després el primer dia d'obertura",
+				"calendar": "Només els dies d'obertura",
+				"days": "Dies de calendari, sense tenir en compte els tancaments"
+			},
+			"renewFrom": {
+				"today": "El dia de la renovació",
+				"dueDate": "La data de devolució actual"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"sbn": "OPAC SBN (Z39.50)",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books",
+				"sbn-json": "OPAC SBN (servei web)"
+			}
+		},
+		"performance": {
+			"profile": {
+				"micro": "Ordinador mínim: un processador lent i 512 MB (Raspberry Pi Zero 2, el servidor més petit)",
+				"small": "Raspberry Pi 4 amb 2 GB o un ordinador petit",
+				"medium": "Ordinador vell amb disc tradicional",
+				"large": "Ordinador amb disc SSD"
+			}
+		},
+		"cards": {
+			"sheet": {
+				"paper": {
+					"A4": "A4"
+				}
+			},
+			"layout": {
+				"side-by-side": "Davant i darrere un al costat de l'altre",
+				"duplex": "Als dos costats del full"
+			},
+			"duplex": {
+				"flip": {
+					"long-edge": "Pel costat llarg",
+					"short-edge": "Pel costat curt"
+				}
+			}
+		},
+		"labels": {
+			"default": {
+				"pair": "Parella: banda del llom i etiqueta",
+				"barcode": "Només l'etiqueta amb el codi",
+				"spine": "Només la banda del llom"
+			}
+		},
+		"photos": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		},
+		"covers": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		}
+	},
+	"groups": {
+		"barcodes": {
+			"patron": {
+				"title": "Carnets dels usuaris"
+			},
+			"item": {
+				"title": "Exemplars dels llibres"
+			}
+		},
+		"circulation": {
+			"rules": {
+				"title": "Regles de préstec",
+				"student": {
+					"title": "Regles per als alumnes"
+				},
+				"teacher": {
+					"title": "Regles per als docents"
+				}
+			},
+			"overdueNotice": {
+				"title": "Reclamacions"
+			}
+		},
+		"cards": {
+			"cardMm": {
+				"title": "Mida del carnet"
+			},
+			"sheet": {
+				"title": "Full d'impressió"
+			},
+			"duplex": {
+				"title": "Impressió pels dos costats",
+				"backOffsetMm": {
+					"title": "Desplaçament dels revers"
+				}
+			}
+		},
+		"labels": {
+			"pair": {
+				"title": "Parella: banda del llom i etiqueta"
+			},
+			"barcode": {
+				"title": "Només l'etiqueta amb el codi"
+			},
+			"spine": {
+				"title": "Només la banda del llom"
+			}
+		},
+		"backup": {
+			"offsite": {
+				"title": "Còpia externa"
+			}
+		},
+		"photos": {
+			"sheet": {
+				"title": "Imatges amb diverses fotos (cens des d'una imatge)"
+			}
+		}
+	},
+	"overview": {
+		"reload": "Recarrega",
+		"reloaded": "Configuració recarregada",
+		"reloadFailed": "Els fitxers tenen errors: continua en ús la configuració anterior.",
+		"valid": "La configuració és vàlida: {{count}} {{count:plural; one:fitxer; other:fitxers;}}.",
+		"example": "La configuració encara no s'ha creat: s'usen els valors d'exemple.",
+		"warnings": "{{count}} {{count:plural; one:avís; other:avisos;}}",
+		"diskErrors": "Els fitxers de la configuració tenen errors: la biblioteca continua amb la versió anterior fins que no es corregeixin.",
+		"diskChanged": "Els fitxers s'han modificat a mà: prem «Recarrega» per usar els canvis.",
+		"sections": "Paràmetres",
+		"alsoFrom": "i {{count}} {{count:plural; one:un altre fitxer; other:altres fitxers;}}",
+		"editors": "Aspecte, classes i plantilles",
+		"templates": "Plantilles d'impressió",
+		"templatesDescription": "Carpetes de les plantilles dels carnets, de les etiquetes i de les reclamacions, amb les seves imatges.",
+		"reports": "Biblioteca d'informes",
+		"reportsDescription": "Informes subministrats i de l'escola: prova, descarrega, carrega, suprimeix.",
+		"appearance": "Aspecte i idioma",
+		"appearanceDescription": "El nom i el logo de la biblioteca, els colors, l'idioma i les seccions del tauler.",
+		"classes": "Classes",
+		"classesDescription": "Les classes de l'escola i els grups dels docents: crea, reanomena, arxiva."
+	},
+	"section": {
+		"tabs": {
+			"form": "Paràmetres",
+			"json": "JSON",
+			"label": "Edita com a"
+		},
+		"file": "Desada a {{file}}",
+		"alsoFrom": "També de: {{files}}",
+		"general": "General",
+		"default": "Predeterminat: {{value}}",
+		"defaultNone": "Predeterminat: cap valor",
+		"defaultAuto": "Predeterminat: automàtic",
+		"usesDefault": "Usa el valor predeterminat",
+		"reset": "Torna al predeterminat",
+		"willReset": "En desar torna al valor predeterminat.",
+		"auto": "Automàtic",
+		"none": "Cap data",
+		"yes": "Sí",
+		"no": "No",
+		"fixed": "Valor fix",
+		"range": "De {{min}} a {{max}}.",
+		"min": "Com a mínim {{min}}.",
+		"max": "Com a màxim {{max}}.",
+		"save": "Desa",
+		"discard": "Descarta els canvis",
+		"saved": "Paràmetres desats",
+		"unsaved": "Canvis no desats",
+		"invalid": "Cal corregir els valors marcats abans de desar.",
+		"errors": "El desament no ha tingut èxit:",
+		"inUse": "El desament suprimiria alguna cosa que encara és en ús:",
+		"inUseKinds": {
+			"classification": "codi {{code}}: {{count}} {{count:plural; one:llibre; other:llibres;}}",
+			"itemType": "tipus d'exemplar {{code}}: {{count}} {{count:plural; one:exemplar; other:exemplars;}}",
+			"level": "nivell {{code}}: {{count}} {{count:plural; one:alumne; other:alumnes;}} o classes",
+			"readingLevel": "nivell de lectura {{code}}: {{count}} {{count:plural; one:llibre; other:llibres;}}"
+		},
+		"patternError": "Format no vàlid.",
+		"numberError": "Cal un nombre enter.",
+		"required": "Obligatori.",
+		"elsewhereTitle": "Altres paràmetres d'aquesta secció",
+		"elsewhereHint": "Aquests es modifiquen amb un editor dedicat o a la pestanya JSON.",
+		"openEditor": "Obre",
+		"jsonOnly": "De moment a la pestanya JSON",
+		"editorNames": {
+			"taxonomy": "Classificació",
+			"appearance": "Aspecte i idioma",
+			"wizard": "L'assistent de configuració inicial",
+			"history": "Historial",
+			"settings": "Paràmetres",
+			"schoolLevels": "Etapes i cursos"
+		},
+		"json": {
+			"hint": "La secció tal com està escrita a {{file}}. Les claus que comencen amb _ són comentaris i resten al fitxer.",
+			"label": "Contingut JSON de la secció",
+			"parseError": "El text no és JSON vàlid: {{message}}",
+			"notObject": "La secció ha de ser un objecte JSON entre claus.",
+			"valid": "Cap problema.",
+			"checking": "Es comprova…",
+			"issues": "Problemes per corregir:"
+		},
+		"playSound": "Escolta"
+	},
+	"history": {
+		"title": "Historial de la configuració",
+		"hint": "Cada modificació feta des d'aquí conserva la versió anterior dels fitxers que toca (els últims 50 canvis).",
+		"empty": "Encara no s'ha fet cap canvi des de l'administració.",
+		"columns": {
+			"when": "Quan",
+			"what": "Què",
+			"files": "Fitxers"
+		},
+		"revert": "Restaura",
+		"revertTitle": "Restaurar els fitxers com eren abans d'aquest canvi?",
+		"revertDescription": "Tornen com abans només els valors canviats per aquest canvi. La restauració també és un canvi: resta a l'historial i es pot anul·lar.",
+		"reverted": "S'ha restaurat la versió anterior",
+		"refused": "Aquest canvi ha creat config.json: no es pot anul·lar.",
+		"conflict": "No es pot restaurar: després d'aquest canvi han tornat a canviar {{keys}}.",
+		"notFound": "El canvi ja no és a l'historial.",
+		"newFile": "nou",
+		"actions": {
+			"revert": "Restauració del canvi del {{when}}",
+			"theme": "Colors",
+			"locale": "Idioma",
+			"logo": "Logo de la biblioteca",
+			"setup": "Primera configuració",
+			"section": "Secció «{{section}}»",
+			"other": "Canvi ({{action}})"
+		}
+	},
+	"archive": {
+		"title": "Arxiu de la configuració",
+		"hint": "Tota la configuració en un sol fitxer: paràmetres, plantilles d'impressió, fulls adhesius, pictogrames, logo, informes i idiomes (no l'historial). Serveix per tenir-ne una còpia o per portar-la a una altra instal·lació. «Importa la configuració» accepta també una còpia de seguretat o un arxiu «Exporta-ho tot»: n'agafa només la configuració, les dades de la biblioteca es queden com són.",
+		"export": "Exporta la configuració",
+		"import": "Importa la configuració",
+		"checking": "Es comprova l'arxiu…",
+		"from": "Arxiu del {{date}} (versió {{version}})",
+		"fromLibrary": "Arxiu de «{{library}}» del {{date}} (versió {{version}})",
+		"files": "{{added}} {{added:plural; one:fitxer nou; other:fitxers nous;}}, {{changed}} {{changed:plural; one:modificat; other:modificats;}}, {{removed}} {{removed:plural; one:suprimit; other:suprimits;}}, {{unchanged}} {{unchanged:plural; one:igual; other:iguals;}}.",
+		"fileList": "Llista dels fitxers",
+		"added": "nou",
+		"changed": "modificat",
+		"removed": "suprimit",
+		"sameValues": "Els paràmetres són els mateixos.",
+		"sections": "Canvien: {{sections}}.",
+		"errorsTitle": "L'arxiu té problemes: cal corregir-los abans d'importar-lo.",
+		"apply": "Importa",
+		"confirmTitle": "Substituir la configuració per la de l'arxiu?",
+		"confirmDescription": "Els fitxers actuals resten a l'historial: «Restaura» torna a posar la configuració anterior. Les dades de la biblioteca (llibres, usuaris, préstecs) no canvien.",
+		"imported": "Configuració importada",
+		"failed": "La importació no ha tingut èxit",
+		"errors": {
+			"too_large": "L'arxiu és massa gran (com a màxim {{maxMb}} MB).",
+			"not_zip": "El fitxer no és un arxiu ZIP vàlid.",
+			"not_archive": "El fitxer no és un arxiu de BiblioViva.",
+			"too_many_files": "L'arxiu conté massa fitxers.",
+			"unsafe_path": "L'arxiu conté un camí no admès: {{name}}",
+			"link": "L'arxiu conté un enllaç, que no és admès: {{name}}",
+			"unknown_file": "L'arxiu conté un fitxer que no forma part de la configuració: {{name}}",
+			"no_config": "L'arxiu no conté la configuració (només dades de la biblioteca): es restaura des d'Administració → Còpia de seguretat."
+		},
+		"exportSome": "Exporta les parts triades",
+		"chooseExport": "Escull què exportar"
+	},
+	"blocks": {
+		"problems": {
+			"codeRequired": {
+				"itemTypes": "El codi és obligatori.",
+				"sections": "El grup és obligatori."
+			},
+			"codeFormat": {
+				"itemTypes": "Lletres, xifres, punt, guió o guió baix (com a màxim 32).",
+				"sections": "Lletres majúscules o xifres, com a màxim 8."
+			},
+			"codeTaken": {
+				"itemTypes": "Codi repetit.",
+				"sections": "Grup repetit."
+			},
+			"labelRequired": {
+				"itemTypes": "El nom és obligatori.",
+				"sections": "El nom és obligatori."
+			}
+		},
+		"itemTypes": {
+			"title": "Tipus d'exemplar",
+			"hint": "Llibre, DVD, consulta…: el tipus de cada exemplar decideix les regles de préstec. Canviar un codi trasllada els seus exemplars al codi nou.",
+			"code": "Codi",
+			"label": "Nom",
+			"notForLoan": "Només consulta",
+			"add": "Afegeix un tipus",
+			"saved": "Tipus d'exemplar desats"
+		},
+		"move": {
+			"title": "On van?",
+			"hint": {
+				"copies": "Alguns tipus eliminats tenen encara exemplars: tria el tipus on traslladar-los.",
+				"students": "Algunes seccions eliminades tenen encara alumnes: tria el grup on traslladar-los."
+			},
+			"row": {
+				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:exemplar; other:exemplars;}}. Trasllada a",
+				"students": "{{code}}: {{count}} {{count:plural; one:alumne; other:alumnes;}}. Trasllada a"
+			},
+			"choose": "Tria…",
+			"used": {
+				"copies": "Exemplars",
+				"students": "Alumnes"
+			},
+			"count": {
+				"copies": "{{count}} {{count:plural; one:exemplar; other:exemplars;}}",
+				"students": "{{count}} {{count:plural; one:alumne; other:alumnes;}}"
+			},
+			"done": {
+				"copies": "{{count}} {{count:plural; one:exemplar traslladat; other:exemplars traslladats;}}.",
+				"students": "{{count}} {{count:plural; one:alumne traslladat; other:alumnes traslladats;}}."
+			}
+		},
+		"barcodes": {
+			"title": "Numeració i previsualització",
+			"counter": "Números dels nous carnets",
+			"afterLegacy": "Després del número més alt dels carnets que ja existeixen",
+			"from": "A partir d'aquest número:",
+			"fromNumber": "Primer número dels nous carnets",
+			"counterHint": "Un número ja usat no torna mai: si el número triat és més baix, es continua d'on s'ha arribat. Els nous exemplars tenen sempre l'any i un número correlatiu.",
+			"nextCard": "Proper carnet: {{code}}",
+			"nextItem": "Proper exemplar: {{code}}",
+			"overrides": "Aquestes plantilles d'impressió trien ells mateixos el tipus de codi, de manera que l'ajust d'aquí dalt no s'hi aplica: {{templates}}.",
+			"saved": "Numeració desada"
+		},
+		"itemTypeRules": {
+			"title": "Regles per tipus d'exemplar",
+			"hint": "Cada tipus d'exemplar pot canviar una regla: per exemple els DVD per 5 dies. Les regles valen tant per als alumnes com per als docents.",
+			"inherit": "Buit: val la regla dels alumnes i dels docents (en gris: alumnes / docents).",
+			"saved": "Regles per tipus d'exemplar desades"
+		},
+		"calendar": {
+			"title": "Calendari de la biblioteca",
+			"weekly": "Dies de tancament cada setmana",
+			"weeklyHint": "Els dies ressaltats estan tancats cada setmana.",
+			"previous": "Curs escolar anterior",
+			"next": "Curs escolar següent",
+			"addNational": "Afegeix les festes nacionals del {{year}}",
+			"autoOn": "Les festes nacionals ja estan tancades automàticament. Un clic sobre un dia obert el tanca; sobre un dia tancat a mà, el torna a obrir.",
+			"clickHint": "Un clic sobre un dia obert el tanca; sobre un dia tancat a mà, el torna a obrir.",
+			"open": "obert",
+			"legend": {
+				"open": "Obert",
+				"weekly": "Tancament setmanal",
+				"national": "Festa nacional",
+				"holiday": "Tancat (triat aquí)",
+				"range": "Període de tancament"
+			},
+			"ranges": "Períodes de tancament",
+			"from": "Des de",
+			"to": "Fins a",
+			"reason": "Motiu",
+			"badRange": "La data de fi és abans de la d'inici.",
+			"addRange": "Afegeix un període",
+			"saved": "Calendari desat"
+		},
+		"cardTemplates": {
+			"title": "Plantilla per tipus d'usuari",
+			"hint": "Els alumnes i els docents imprimeixen el carnet amb la plantilla predeterminada triada més amunt, tret que aquí se'n triï una altra.",
+			"student": "Carnet dels alumnes",
+			"teacher": "Carnet dels docents",
+			"asDefault": "Igual que la predeterminada ({{name}})",
+			"cutLines": "Contorn de color a cada carnet",
+			"cutLinesOn": "Dibuixa un contorn de color a cada carnet (normalment no cal: n'hi ha prou amb les marques de tall)",
+			"color": "Color",
+			"width": "Gruix (mm)",
+			"sample": "Exemple de la línia de tall",
+			"saved": "Plantilles dels carnets desades"
+		},
+		"stocks": {
+			"title": "Fulls d'etiquetes adhesives",
+			"hint": "Les mides dels fulls d'etiquetes on s'imprimeix. El dibuix de la dreta segueix cada número: les etiquetes que surten del full són en vermell. Després de desar, cal imprimir la pàgina de prova en paper normal i superposar-la al full d'etiquetes.",
+			"new": "Nou",
+			"toFix": "Per corregir",
+			"add": "Afegeix un full",
+			"id": "Codi",
+			"name": "Nom",
+			"labelWidth": "Amplada de l'etiqueta (mm)",
+			"labelHeight": "Alçada de l'etiqueta (mm)",
+			"columns": "Columnes",
+			"rows": "Files",
+			"marginTop": "Marge superior (mm)",
+			"marginLeft": "Marge esquerre (mm)",
+			"gapX": "Espai entre les columnes (mm)",
+			"gapY": "Espai entre les files (mm)",
+			"radius": "Cantonades arrodonides (mm)",
+			"calibration": "Imprimeix la pàgina de prova",
+			"inUse": "Usat per a: {{jobs}}. Per eliminar-lo, primer tria un altre full als ajustos d'aquí dalt.",
+			"saveFirst": "Cal desar els canvis per imprimir la pàgina de prova.",
+			"drawing": "Dibuix del full A4 amb {{columns}} {{columns:plural; one:columna; other:columnes;}} i {{rows}} {{rows:plural; one:fila; other:files;}} d'etiquetes",
+			"caption": "Full A4 · {{count}} {{count:plural; one:etiqueta; other:etiquetes;}}",
+			"saved": "Fulls d'etiquetes desats",
+			"problems": {
+				"id": "El codi pot tenir lletres, xifres, guions i guions baixos.",
+				"duplicate": "Un altre full ja té aquest codi.",
+				"name": "Escriu un nom.",
+				"numbers": "Revisa les mides: números a partir de 0, etiquetes més grans que zero, columnes i files senceres.",
+				"width": "Les etiquetes ocupen {{mm}} mm: més que l'amplada del full A4 (210 mm).",
+				"height": "Les etiquetes ocupen {{mm}} mm: més que l'alçada del full A4 (297 mm).",
+				"pairRows": "La parella necessita un nombre parell de files (la banda del llom i l'etiqueta una sobre l'altra)."
+			},
+			"errors": {
+				"duplicate": "Dos fulls tenen el mateix codi: {{details}}.",
+				"inUse": "Un full usat per imprimir no es pot eliminar: {{details}}."
+			}
+		},
+		"backupSchedule": {
+			"title": "Properes còpies de seguretat",
+			"invalid": "L'hora no és una expressió cron vàlida (cinc camps: minuts, hores, dia, mes, dia de la setmana).",
+			"never": "Amb aquesta expressió la còpia de seguretat no s'executa mai.",
+			"hint": "Hores en el fus horari de la biblioteca ({{timezone}}). Si a aquella hora l'ordinador està apagat, amb «Còpia a l'inici si s'ha saltat» la còpia es fa a la propera engegada; també es pot traslladar l'hora dins de l'horari d'obertura."
+		},
+		"coverProviders": {
+			"off": "Les portades estan desactivades (Portades dels llibres, més amunt): no es consulta cap font.",
+			"title": "D'on es baixen les portades",
+			"hint": "Les fonts es proven en aquest ordre fins que una troba la portada; cadascuna es pot desactivar per separat.",
+			"names": {
+				"amazon": "Amazon",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books"
+			},
+			"googleKey": "Google Books necessita una clau d'API: escriu-la a la configuració «Dades dels llibres»; sense clau aquesta font s'omet.",
+			"saved": "Fonts de les portades desades"
+		},
+		"z3950Targets": {
+			"title": "Catàlegs Z39.50",
+			"hint": "Els catàlegs d'on provenen les dades dels llibres. «Prova la connexió» fa una cerca real amb els valors escrits, sense desar-los.",
+			"id": "Codi",
+			"name": "Nom",
+			"host": "Adreça del servidor",
+			"port": "Port",
+			"database": "Base de dades",
+			"syntax": "Format dels registres",
+			"charset": "Codificació dels caràcters",
+			"elements": "Elements",
+			"elementsHint": "Normalment F (registre complet).",
+			"add": "Afegeix un catàleg",
+			"isDefault": "És el catàleg predeterminat: per eliminar-lo, tria'n abans un altre més amunt.",
+			"saved": "Catàlegs desats",
+			"problems": {
+				"id": "El codi ha de ser únic: lletres, xifres i guions.",
+				"required": "El nom, la base de dades, la codificació i els elements són obligatoris.",
+				"host": "L'adreça pot tenir lletres, xifres, punts i guions.",
+				"words": "La base de dades, la codificació i els elements són una sola paraula cadascun, sense espais.",
+				"port": "El port és un número de l'1 al 65535."
+			},
+			"test": {
+				"button": "Prova la connexió",
+				"running": "S'està provant…",
+				"ok": "El catàleg respon: {{hits}} {{hits:plural; one:resultat; other:resultats;}} en {{ms}} ms.",
+				"unreachable": "El catàleg no respon: cal revisar l'adreça, el port i la base de dades.",
+				"timeout": "El catàleg no ha respost a temps.",
+				"protocol": "El catàleg ha respost amb un error: cal revisar la base de dades, el format i la codificació.",
+				"spawn": "El programa yaz-client no està disponible al servidor."
+			}
+		},
+		"barcodeFormats": {
+			"title": "Format dels codis",
+			"hint": "Com estan fets els codis dels nous exemplars i dels nous carnets. Els codis ja imprimits continuen a funcionar: un format substituït es manté entre els formats anteriors.",
+			"preset": "Formats predefinits",
+			"presets": {
+				"standard": "Estàndard (2026-E0267, U012345)",
+				"classic": "Clàssic (2026-02678, 0000012344)",
+				"prefix": "Amb una lletra davant (L-2602670, T0123455)",
+				"custom": "Personalitzat"
+			},
+			"check": "Caràcter de control",
+			"checks": {
+				"mod23": "Lletra (mod 23)",
+				"damm": "Xifra (Damm)",
+				"luhn": "Xifra (Luhn)"
+			},
+			"checkHint": "Detecta un codi llegit o escrit malament. La lletra és la més segura i fa que els carnets es distingeixin a primer cop d'ull dels codis dels exemplars.",
+			"advanced": "Avançades: els formats un per un",
+			"tokens": "YYYY o YY = any, N = xifres del número correlatiu, C = caràcter de control, {lib} = codi de la biblioteca, - = guió, lletres majúscules entre cometes simples ('T'). Les lletres I, O i Q no són admeses.",
+			"pattern": {
+				"item": "Format dels exemplars",
+				"patron": "Format dels carnets"
+			},
+			"libraryCode": "Codi de la biblioteca",
+			"libraryCodeHint": "Només si diverses biblioteques amb instal·lacions separades han de tenir codis diferents: s'usa amb {lib} al format.",
+			"plainMaxLength": "Xifres dels vells números simples",
+			"plainHint": "Quantes xifres té com a màxim el número més llarg dels carnets i dels exemplars del sistema anterior que no tenen format (0 si no n'hi ha).",
+			"plainLongest": "El número simple més llarg de l'arxiu té {{digits}} {{digits:plural; one:xifra; other:xifres;}}.",
+			"distinct": "Els exemplars i els carnets no es poden confondre.",
+			"confusable": "Amb aquests formats els exemplars i els carnets es podrien confondre:",
+			"warnings": "{{count}} {{count:plural; one:avís; other:avisos;}}",
+			"inUse": "El format {{pattern}} té encara {{count}} {{count:plural; one:codi; other:codis;}} a l'arxiu: no es pot treure.",
+			"kinds": {
+				"item": "exemplars",
+				"card": "carnets"
+			},
+			"heading": {
+				"item": "Exemplars",
+				"patron": "Carnets"
+			},
+			"examples": "Exemples de nous codis:",
+			"currentCount": "Codis d'aquest format a l'arxiu: {{count}}",
+			"count": "{{count}} {{count:plural; one:codi; other:codis;}}",
+			"noCheck": "sense control",
+			"remove": "Treu",
+			"retired": "Formats usats en el passat",
+			"legacy": "Codis del sistema anterior",
+			"noLegacy": "Cap.",
+			"addLegacy": "Afegeix un format antic",
+			"try": "Prova un codi",
+			"tryHint": "Un codi escrit o llegit aquí es reconeix amb els formats d'aquí dalt, encara que no s'hagin desat.",
+			"tried": {
+				"item": "{{value}}: codi d'un exemplar",
+				"legacy_item": "{{value}}: vell codi d'un exemplar",
+				"card": "{{value}}: número de carnet",
+				"isbn": "{{value}}: ISBN",
+				"ambiguous": "{{value}}: vell número simple (es cerca entre exemplars i carnets)",
+				"invalid": "{{value}}: no reconegut o caràcter de control erroni"
+			},
+			"saved": "Formats dels codis desats",
+			"patternErrors": {
+				"empty": "Format buit ({{kind}})",
+				"tooLong": "{{pattern}}: massa llarg",
+				"badToken": "{{pattern}}: conté un símbol no previst",
+				"badLetter": "{{pattern}}: lletra no admesa (només majúscules, no I, O, Q)",
+				"unclosedQuote": "{{pattern}}: falta la cometa de tancament",
+				"year": "{{pattern}}: l'any s'escriu YYYY o YY",
+				"twoYears": "{{pattern}}: l'any apareix dues vegades",
+				"twoCounters": "{{pattern}}: el número correlatiu ha de ser un sol grup de N",
+				"noCounter": "{{pattern}}: falta el número correlatiu (N)",
+				"twoChecks": "{{pattern}}: el caràcter de control apareix dues vegades",
+				"checkWithoutAlgorithm": "{{pattern}}: hi ha una C però no s'ha triat cap control",
+				"algorithmWithoutCheck": "{{pattern}}: falta la C, la posició del caràcter de control",
+				"noLibraryCode": "{{pattern}}: usa {lib} però el codi de la biblioteca és buit",
+				"badLibraryCode": "El codi de la biblioteca pot contenir només xifres i lletres majúscules (no I, O, Q)"
+			},
+			"issues": {
+				"overlap": "{{pattern}} ({{kind}}) i {{other}} ({{otherKind}}) poden donar el mateix codi, per exemple {{example}}",
+				"overlapWithoutDash": "{{pattern}} ({{kind}}) i {{other}} ({{otherKind}}) es confonen si el lector perd el guió, per exemple {{example}}",
+				"overlapLegacy": "Els vells codis {{pattern}} ({{kind}}) i {{other}} ({{otherKind}}) tenen la mateixa forma: es cerquen en tots dos arxius",
+				"overlapPlain": "{{pattern}} ({{kind}}) pot donar un codi igual a un vell número simple, per exemple {{example}}",
+				"overlapIsbn": "{{pattern}} ({{kind}}) pot donar un codi igual a un ISBN, per exemple {{example}}",
+				"overlapIsbn10": "{{pattern}} ({{kind}}) té la forma d'un ISBN-10 escrit sense guions: val el número de carnet",
+				"lookAlike": "{{pattern}} ({{kind}}) i {{other}} ({{otherKind}}) s'assemblen massa: cal una diferència de llargada d'almenys 2 caràcters, una lletra en una altra posició o un guió en un altre punt"
+			}
+		},
+		"schoolLevels": {
+			"title": "Etapes i cursos",
+			"hint": "Els cursos de l'escola en l'ordre en què es freqüenten, agrupats per etapa. El codi queda als alumnes: en treure o recodificar un curs en ús, es tria on traslladar-ne alumnes i classes.",
+			"preset": "Model predefinit",
+			"presetApply": "Usa aquest model",
+			"presetHint": "Substitueix les etapes i els cursos d'aquí sota amb els del model; no es desa res fins a «Desa».",
+			"custom": "Personalitzat",
+			"stages": "Etapes",
+			"stageCode": "Codi",
+			"stageName": "Nom",
+			"stageLabel": "Com s'escriu la classe",
+			"addStage": "Afegeix una etapa",
+			"stageLabelHint": "«Com s'escriu la classe» d'una etapa val per als seus cursos en lloc del de l'escola; sense {group} la classe és només el curs (Q1, sense grups). Buit: com la resta de l'escola.",
+			"levels": "Cursos",
+			"levelCode": "Codi",
+			"levelLabel": "A la classe",
+			"levelName": "Nom",
+			"levelStage": "Etapa",
+			"levelNext": "El curs després",
+			"levelAliases": "Altres noms",
+			"levelAliasesPlaceholder": "Separats per comes",
+			"nextFollowing": "El curs següent",
+			"nextLeaves": "Surt de l'escola",
+			"nextChoices": "Es tria entre diversos cursos",
+			"choiceAdd": "Afegeix una opció…",
+			"choiceRemove": "Treu {{name}}",
+			"choiceDefault": "predeterminat",
+			"addLevel": "Afegeix un curs",
+			"inUse": "En ús",
+			"moveUp": "Mou amunt",
+			"moveDown": "Mou avall",
+			"example": "Exemple: {{label}}",
+			"saved": "Etapes i cursos desats",
+			"problems": {
+				"code": "Codis: lletres, xifres i guió (fins a 8 per a un curs), tots diferents.",
+				"required": "L'etiqueta i el nom són obligatoris.",
+				"template": "«Com s'escriu la classe» d'una etapa ha de contenir {level}.",
+				"stageUsed": "Una etapa amb cursos no es pot treure.",
+				"structure": "L'estructura no és vàlida: {{details}}"
+			},
+			"move": {
+				"title": "On van els alumnes i les classes?",
+				"hint": "Alguns cursos eliminats tenen encara alumnes o classes. Tria per a cadascun el curs on traslladar-los; els préstecs conserven la classe en què es van fer.",
+				"level": "{{name}}: {{pupils}} {{pupils:plural; one:alumne; other:alumnes;}}, {{classes}} {{classes:plural; one:classe; other:classes;}}",
+				"choose": "Tria el curs…",
+				"confirm": "Trasllada i desa",
+				"done": "S'han traslladat {{pupils}} {{pupils:plural; one:alumne; other:alumnes;}} i {{classes}} {{classes:plural; one:classe; other:classes;}}."
+			}
+		}
+	},
+	"templates": {
+		"title": "Plantilles d'impressió",
+		"hint": "Les carpetes amb les plantilles de carnets, etiquetes, rebuts i reclamacions. Les que vénen amb BiblioViva es poden personalitzar (se'n crea una còpia amb el mateix nom) o duplicar amb un altre nom; les imatges i els tipus de lletra d'una còpia es carreguen aquí. Cada operació apareix a l'historial de la configuració i es pot desfer.",
+		"source": {
+			"builtin": "Inclosa amb BiblioViva",
+			"customised": "Personalitzada",
+			"added": "Afegida"
+		},
+		"broken": "Amb errors",
+		"customise": "Personalitza",
+		"duplicate": "Duplica",
+		"rename": "Canvia el nom",
+		"restore": "Torna a l'original",
+		"usedBy": "Utilitzada per: {{settings}}.",
+		"unused": "No la utilitza cap ajust.",
+		"assets": "Imatges i tipus de lletra ({{count}})",
+		"noAssets": "Cap fitxer.",
+		"usedIn": "utilitzat a {{files}}",
+		"assetUnused": "no utilitzat",
+		"upload": "Carrega un fitxer",
+		"uploadHint": "PNG, JPEG, WebP, GIF, SVG o tipus de lletra WOFF2, WOFF, TTF; com a màxim {{maxMb}} MB.",
+		"builtinAssets": "Per canviar les imatges d'una plantilla inclosa amb BiblioViva, cal personalitzar-la abans.",
+		"files": "Fitxers de la plantilla ({{count}})",
+		"filesHint": "El contingut de HTML i CSS es modifica amb l'editor visual de les plantilles.",
+		"done": {
+			"duplicate": "Plantilla duplicada",
+			"customise": "Plantilla personalitzada: la còpia es pot modificar",
+			"rename": "Plantilla reanomenada",
+			"delete": "Plantilla eliminada",
+			"upload": "{{name}} carregat",
+			"removeAsset": "{{name}} eliminat"
+		},
+		"errors": {
+			"notFound": "Plantilla o fitxer no trobat.",
+			"badName": "Nom no vàlid: lletres minúscules, xifres, guions i guions baixos.",
+			"exists": "Ja existeix una plantilla amb aquest nom.",
+			"builtin": "Les plantilles incloses amb BiblioViva no es modifiquen: cal personalitzar-les o duplicar-les.",
+			"inUse": "La plantilla és utilitzada per: {{details}}. Tria abans una altra plantilla.",
+			"badAsset": "«{{name}}» no és un fitxer admès (PNG, JPEG, WebP, GIF, SVG sense scripts, WOFF2, WOFF, TTF).",
+			"assetTooLarge": "«{{name}}» és massa gran: com a màxim {{maxMb}} MB.",
+			"assetInUse": "El fitxer s'utilitza a: {{details}}."
+		},
+		"dialog": {
+			"name": "Nom de la carpeta",
+			"nameHint": "Lletres minúscules, xifres, guions i guions baixos.",
+			"badName": "Fes servir només lletres minúscules, xifres, guions i guions baixos.",
+			"taken": "Ja existeix una plantilla amb aquest nom.",
+			"duplicate": {
+				"title": "Duplica {{name}}",
+				"hint": "Es crea una còpia amb tots els seus fitxers, a punt per ser modificada.",
+				"confirm": "Duplica"
+			},
+			"customise": {
+				"title": "Personalitza {{name}}",
+				"hint": "Es crea una còpia amb el mateix nom que ocupa el lloc de l'original; l'original queda disponible per tornar enrere.",
+				"confirm": "Personalitza"
+			},
+			"rename": {
+				"title": "Canvia el nom de {{name}}",
+				"hint": "Els ajustos que usen aquesta plantilla seguiran el nom nou.",
+				"confirm": "Canvia el nom"
+			},
+			"delete": {
+				"title": "Elimina {{name}}",
+				"hint": "La carpeta i els seus fitxers s'eliminen; si és la còpia d'una plantilla inclosa amb BiblioViva, torna a usar-se l'original. Es pot desfer des de l'historial.",
+				"confirm": "Elimina"
+			}
+		},
+		"edit": "Edita"
+	},
+	"languages": {
+		"title": "Paquets d'idioma",
+		"hint": "Per utilitzar BiblioViva en un altre idioma: descarrega l'exemple en anglès o en italià, tradueix els textos dels fitxers JSON mantenint sense canvis les claus i els marcadors entre dobles claus, escriu el nom de l'idioma a pack.json i carrega el zip. Un paquet amb errors no s'instal·la; els textos que manquen es veuen en anglès. L'idioma es tria a Aspecte i idioma.",
+		"none": "Cap paquet instal·lat.",
+		"valid": "Vàlid",
+		"errorsCount": "{{count}} {{count:plural; one:error; other:errors;}}",
+		"warnings": "{{count}} {{count:plural; one:text que falta o que sobra; other:textos que falten o que sobren;}}",
+		"inUse": "En ús",
+		"download": "Descarrega",
+		"report": "Resultat de la comprovació",
+		"upload": "Carrega un paquet (zip)",
+		"uploadHint": "Un zip amb pack.json i els fitxers de l'idioma, dins d'una carpeta amb el codi (per exemple de/); com a màxim {{maxMb}} MB.",
+		"examples": "Exemples per descarregar:",
+		"installed": "Idioma instal·lat: {{name}}",
+		"removed": "Paquet eliminat",
+		"removeTitle": "Eliminar el paquet {{code}}?",
+		"removeHint": "La carpeta de l'idioma s'elimina. Es pot desfer des de l'historial de la configuració.",
+		"errors": {
+			"notAZip": "El fitxer no és un zip.",
+			"tooLarge": "El zip és massa gran: com a màxim {{maxMb}} MB.",
+			"badLayout": "El zip ha de contenir només els fitxers .json de l'idioma, dins d'una sola carpeta amb el codi de l'idioma. {{details}}",
+			"badCode": "Codi d'idioma no vàlid: {{details}} (per exemple de, fr, pt-BR).",
+			"builtIn": "L'anglès i l'italià ja estan inclosos i no es substitueixen.",
+			"invalid": "El paquet té errors i no s'ha instal·lat: {{details}}",
+			"inUse": "És l'idioma en ús: cal triar-ne abans un altre.",
+			"notFound": "Paquet no trobat.",
+			"unavailable": "No s'ha pogut descarregar la llista d'idiomes o el paquet. Comprova la connexió a internet o carrega el zip a mà.",
+			"checksum": "El paquet descarregat està malmès i no s'ha instal·lat. Torna-ho a provar."
+		},
+		"release": {
+			"title": "Idiomes per instal·lar",
+			"hint": "Els idiomes publicats amb aquesta versió de BiblioViva. La llista es llegeix d'internet i cada paquet es comprova abans de ser instal·lat.",
+			"percent": "{{percent}}% traduït",
+			"machine": "Traducció automàtica, no llegida per un parlant nadiu",
+			"reviewed": "Traducció llegida per un parlant nadiu",
+			"install": "Instal·la",
+			"again": "Torna a instal·lar",
+			"installedBadge": "Instal·lat",
+			"page": "Pàgina de la versió, per descarregar els paquets a mà i carregar-los més avall",
+			"unavailable": "La llista d'idiomes no és accessible: no hi ha connexió a internet o aquesta versió encara no té una llista. Carregar un zip més avall funciona igualment."
+		}
+	},
+	"reports": {
+		"title": "Biblioteca dels informes",
+		"hint": "Els informes inclosos amb BiblioViva i els de l'escola. Per personalitzar-ne un: descarrega'l, modifica'l i carrega'l; amb el mateix codi (id) substitueix l'original. Abans de ser instal·lat es comproven el format, la seguretat de la consulta i les taules i columnes que fa servir. La guia per escriure els informes és docs/reports-authoring.md.",
+		"upload": "Carrega un informe (JSON)",
+		"try": "Prova",
+		"download": "Descarrega",
+		"problems": "Aquests fitxers no es carreguen:",
+		"installed": "Informe {{id}} instal·lat",
+		"replaced": "Informe {{id}} substituït",
+		"removed": "Fitxer eliminat",
+		"removeTitle": "Eliminar {{file}}?",
+		"removeHint": "El fitxer s'elimina de la configuració. Es pot desfer des de l'historial.",
+		"restoreHint": "S'elimina la versió de l'escola: torna a usar-se l'informe inclòs amb BiblioViva. Es pot desfer des de l'historial.",
+		"origin": {
+			"builtin": "Inclòs amb BiblioViva",
+			"customised": "Personalitzat",
+			"added": "Afegit"
+		},
+		"errors": {
+			"tooLarge": "El fitxer és massa gran: com a màxim {{maxKb}} KB.",
+			"badJson": "El fitxer no és un JSON vàlid: {{details}}",
+			"invalid": "La definició no és vàlida: {{details}}",
+			"sql": "La consulta no funciona en aquesta base de dades: {{details}}",
+			"notFound": "Fitxer no trobat.",
+			"reservedId": "«new» no pot ser el codi d'un informe."
+		},
+		"new": "Informe nou",
+		"edit": "Edita",
+		"duplicate": "Duplica",
+		"editor": {
+			"editTitle": "Edita l'informe",
+			"newTitle": "Informe nou",
+			"copySuffix": "còpia",
+			"builtinHint": "És un informe inclòs: en desar, se'n crea la còpia personalitzada de l'escola, amb el mateix nom. «Torna a l'original» a la biblioteca l'elimina.",
+			"id": "Codi de l'informe",
+			"category": "Categoria",
+			"title": {
+				"it": "Títol (italià)",
+				"en": "Títol (anglès)"
+			},
+			"description": {
+				"it": "Descripció (italià)",
+				"en": "Descripció (anglès)"
+			},
+			"restricted": "Només per als administradors",
+			"tabs": {
+				"label": "Mode d'edició",
+				"guided": "Guiat",
+				"sql": "SQL"
+			},
+			"sqlOnly": "Aquest informe està escrit en SQL: s'edita a la pestanya SQL.",
+			"source": "Dades",
+			"rows": "Files",
+			"rows2": "Files, segon nivell",
+			"columns": "Columnes",
+			"columnsHint": "Amb les columnes l'informe esdevé una taula de doble entrada, amb els totals.",
+			"none": "— cap —",
+			"totals": "Totals",
+			"totalsOptions": {
+				"both": "Fila i columna dels totals",
+				"rows": "Columna dels totals",
+				"columns": "Fila dels totals",
+				"none": "Cap total"
+			},
+			"sort": "Ordre",
+			"sortDimension": "Segons l'ordre de les files",
+			"sortMeasure": "Del valor més alt",
+			"measures": "Valors",
+			"oneMeasure": "Una taula de doble entrada mostra un sol valor.",
+			"filters": "Filtres",
+			"filterModes": {
+				"off": "Cap filtre",
+				"ask": "Demanat en obrir",
+				"fixed": "Fix"
+			},
+			"value": "Valor",
+			"chart": "Gràfic",
+			"charts": {
+				"bar": "Barres",
+				"line": "Línies",
+				"doughnut": "Rosca"
+			},
+			"compiledHint": "L'informe guiat es converteix en aquest SQL. Per escriure'l a mà, usa «Edita com a SQL»: després no es torna a l'edició guiada.",
+			"previewFirst": "Prem «Previsualitza» per veure el SQL.",
+			"convert": "Edita com a SQL",
+			"convertTitle": "Transformar l'informe en SQL?",
+			"convertHint": "L'informe esdevé un informe SQL amb les mateixes columnes i paràmetres. Ja no es podrà modificar amb la pestanya guiada.",
+			"converted": "L'informe ara és en SQL",
+			"sqlHint": "Una sola instrucció SELECT o WITH, amb els paràmetres com a :nom.",
+			"json": {
+				"params": "Paràmetres (JSON)",
+				"columns": "Columnes (JSON)",
+				"chart": "Gràfic (JSON, opcional)",
+				"pivot": "Taula de doble entrada (JSON, opcional)"
+			},
+			"jsonHint": "En el format descrit a la guia dels informes.",
+			"preview": "Previsualització",
+			"runPreview": "Previsualitza",
+			"previewHint": "La previsualització executa l'informe amb els valors predeterminats dels paràmetres (com a màxim 200 files).",
+			"save": "Desa",
+			"saved": "Informe «{{id}}» desat",
+			"back": "Torna a la biblioteca",
+			"jsonInvalid": "Corregeix les parts JSON marcades en vermell abans de desar."
+		}
+	},
+	"designer": {
+		"title": "Edita {{name}}",
+		"design": "Disseny",
+		"code": "Codi",
+		"preview": "Previsualització",
+		"front": "Davant",
+		"back": "Darrere",
+		"faces": "Cares o etiquetes",
+		"zoom": "Ampliació",
+		"grid": "Quadrícula",
+		"gridSteps": {
+			"s0": "Cap (lliure)",
+			"s05": "0,5 mm",
+			"s1": "1 mm",
+			"s2": "2 mm",
+			"s25": "2,5 mm",
+			"s5": "5 mm",
+			"s10": "10 mm"
+		},
+		"files": "Fitxers",
+		"problems": "La plantilla no es pot imprimir així:",
+		"saved": "Plantilla desada",
+		"notEditable": "Aquesta plantilla no es pot modificar aquí: les plantilles incloses amb BiblioViva s'han de personalitzar abans.",
+		"canvasHint": "Un clic sobre un quadre el tria, l'arrossegament el mou, la cantonada el redimensiona: posicions i mides s'ajusten a la quadrícula triada. Amb el teclat les fletxes el mouen d'un pas de la quadrícula (amb Maj de cinc mm aproximadament, sempre sobre la quadrícula) i Supr l'elimina.",
+		"flowHint": "{{count}} {{count:plural; one:element d'aquesta cara està disposat; other:elements d'aquesta cara estan disposats;}} pel full d'estil (contorn de punts): en el primer moviment les posicions de tots s'escriuen al fitxer, on són ara.",
+		"lockedHint": "{{count}} {{count:plural; one:part d'aquesta cara està; other:parts d'aquesta cara estan;}} dins d'una secció Mustache: {{count:plural; one:s'edita; other:s'editen;}} a la pestanya «Codi».",
+		"noStock": "Cap full d'etiquetes fa servir aquesta variant: el dibuix es mostra sense previsualització.",
+		"codeHint": "El dibuix i el codi modifiquen els mateixos fitxers: cada canvi fet aquí apareix també al dibuix, i a la inversa.",
+		"add": "Afegeix",
+		"newText": "Text",
+		"noImages": "Per afegir imatges, carrega-les primer entre les imatges de la plantilla.",
+		"types": {
+			"field": "Camp",
+			"text": "Text",
+			"barcode": "Codi de barres",
+			"photo": "Foto",
+			"pictogram": "Pictograma",
+			"image": "Imatge",
+			"box": "Quadre",
+			"html": "HTML lliure",
+			"other": "Element"
+		},
+		"fields": {
+			"library_name": "Nom de la biblioteca",
+			"patron_first_name": "Nom",
+			"patron_last_name": "Cognoms",
+			"patron_card_number": "Número de carnet",
+			"patron_class_label": "Classe i grup",
+			"patron_level_label": "Classe (curs)",
+			"patron_group": "Grup",
+			"school_year": "Curs escolar",
+			"issued_on": "Data d'emissió",
+			"valid_until": "Vàlid fins al",
+			"item_barcode": "Codi de barres (text)",
+			"item_call_number": "Signatura",
+			"call_head": "Signatura: primera línia",
+			"call_rest": "Signatura: segona línia",
+			"biblio_title_short": "Títol breu",
+			"biblio_author_short": "Autor breu",
+			"biblio_publication_year": "Any de publicació",
+			"biblio_series": "Col·lecció",
+			"biblio_series_number": "Número a la col·lecció",
+			"classification_code": "Codi de classificació",
+			"classification_label": "Nom de la classe",
+			"classification_reading_level": "Nivell de lectura",
+			"item_item_type": "Tipus d'exemplar"
+		},
+		"field": "Camp",
+		"text": "Text",
+		"image": "Imatge",
+		"content": "Contingut HTML",
+		"contentHint": "El quadre es mou i es formata des del dibuix; el contingut s'escriu en HTML amb els camps Mustache, com als fitxers de la plantilla.",
+		"inherited": "Predeterminat",
+		"unplacedHint": "Aquest element el disposa el full d'estil: en moure'l, la seva posició i la dels altres elements de la cara s'escriuen al fitxer.",
+		"geometry": {
+			"x": "X (mm)",
+			"y": "Y (mm)",
+			"w": "Amplada",
+			"h": "Alçada"
+		},
+		"fontSize": "Mida (pt)",
+		"font": "Tipus de lletra",
+		"fonts": {
+			"sans": "Sense serifa",
+			"serif": "Amb serifa",
+			"mono": "De pas fix"
+		},
+		"bold": "Negreta",
+		"italic": "Cursiva",
+		"uppercase": "Majúscules",
+		"align": "Alineació",
+		"aligns": {
+			"left": "Esquerra",
+			"center": "Centre",
+			"right": "Dreta"
+		},
+		"color": "Color",
+		"border": "Vora",
+		"borderColor": "Color de la vora",
+		"fill": "Ompliment",
+		"fillColor": "Color d'ompliment",
+		"backward": "Porta enrere",
+		"forward": "Porta endavant",
+		"background": "Fons de la cara",
+		"backgroundColor": "Color de fons",
+		"backgroundImage": "Imatge de fons",
+		"noImage": "Cap",
+		"chooseHint": "Tria un quadre al disseny per modificar-lo.",
+		"modes": "Vista de la plantilla",
+		"safeArea": "Àrea segura: mantén textos i fotos dins de la línia de punts, a 2 mm de la vora (en imprimir davant i darrere, el darrere pot desplaçar-se un mil·límetre).",
+		"chooseBackground": "Tria un fons",
+		"uploadBackground": "Carrega una imatge",
+		"backgroundsTitle": "Fons predefinits",
+		"backgroundsHint": "Cada fons va una mica més enllà del carnet, 3 mm per costat: la part sobrant es talla.",
+		"backgroundAlt": "Fons {{name}}",
+		"backgroundAdded": "Fons afegit a la cara: desa per conservar-lo.",
+		"backgroundFailed": "El fons no s'ha afegit.",
+		"cardSize": "Format del carnet",
+		"cardWidth": "Amplada (mm)",
+		"cardHeight": "Alçada (mm)",
+		"cardRotate": "Gira: vertical o horitzontal",
+		"cardDefault": "Torna al format predeterminat ({{width}} × {{height}} mm)",
+		"cardDefaultHint": "És el format predeterminat de la configuració (Configuració → Carnets): aquí es canvia només per a aquesta plantilla.",
+		"cardTooLarge": "Un carnet de {{width}} × {{height}} mm no entra al full A4: com a màxim {{maxWidth}} × {{maxHeight}} mm, perquè davant i darrere estan un al costat de l'altre dins dels marges."
+	},
+	"parts": {
+		"groups": {
+			"data": "Dades de la biblioteca",
+			"settings": "Ajustos",
+			"config": "Classificació, plantilles i altres"
+		},
+		"all": "Tots",
+		"none": "Cap",
+		"accountsConfirm": {
+			"title": "Importar també els comptes i les contrasenyes?",
+			"description": "Els comptes del personal i les seves contrasenyes que hi ha a l'arxiu substitueixen els actuals: qui accedeix ara ja no podrà fer-ho amb les credencials d'avui. Si no són necessàries, deixa aquesta part sense marcar.",
+			"confirm": "Importa també els comptes"
+		},
+		"needs": "«{{part}}» per ser restaurats necessiten també: {{needs}}.",
+		"data": {
+			"patrons": "Usuaris",
+			"catalog": "Catàleg i exemplars",
+			"loans": "Préstecs i historial",
+			"printLists": "Llistes d'impressió",
+			"photos": "Fotos dels usuaris",
+			"covers": "Portades",
+			"notes": "Notes del personal",
+			"dates": "Dates del calendari",
+			"audit": "Registre de les activitats"
+		},
+		"config": {
+			"classification": "Classificació i pictogrames",
+			"stocks": "Fulls d'etiquetes",
+			"calendar": "Calendari",
+			"reports": "Informes",
+			"cardTemplates": "Plantilles dels carnets",
+			"pairTemplates": "Plantilles de les parelles d'etiquetes",
+			"barcodeTemplates": "Plantilles de les etiquetes de codi de barres",
+			"spineTemplates": "Plantilles de les bandes del llom",
+			"slipTemplates": "Plantilles de rebuts i reclamacions",
+			"languages": "Paquets d'idioma",
+			"logo": "Logo de la biblioteca"
+		}
+	}
+}

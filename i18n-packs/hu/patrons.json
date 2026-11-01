@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Olvasók",
+		"new": "Új olvasó",
+		"search": "Keresés vezetéknév szerint…",
+		"empty": "Egyetlen olvasó sem felel meg a szűrőknek.",
+		"filters": {
+			"type": "Típus",
+			"stage": "Szakasz",
+			"level": "Évfolyam",
+			"status": "Állapot",
+			"all": "Mind",
+			"allF": "Mind"
+		},
+		"columns": {
+			"name": "Vezetéknév és keresztnév",
+			"type": "Típus",
+			"class": "Osztály",
+			"card": "Olvasójegy"
+		},
+		"clearFilters": "Szűrők törlése",
+		"countFiltered": "{{shown:plural; one:{{shown}} olvasó felel meg; other:{{shown}} olvasó felel meg;}} a szűrőknek.",
+		"printCards": "Olvasójegyek nyomtatása",
+		"printClassCards": "Olvasójegyek nyomtatása: {{classLabel}}",
+		"removeSelected": "Kijelöltek eltávolítása",
+		"removeTitle": "Eltávolítja a következő {{count}} {{count:plural; one:olvasót; other:olvasót;}}?",
+		"removeDescription": "Mindegyiknél a keresztnév és a vezetéknév, az elérhetőségek, a külső azonosító, a megjegyzések, az olvasójegy száma és a fotó azonnal és véglegesen törlődik; a típus, az osztály, a szakasz és a kölcsönzési előzmények statisztikai célból megmaradnak. A folyamatban lévő kölcsönzéssel rendelkezők megmaradnak.",
+		"removed": "{{removed}} eltávolítva, {{kept}} folyamatban lévő kölcsönzéssel megmaradt",
+		"status": {
+			"title": "Állapot",
+			"loans": "{{count}} kölcsönzésben",
+			"overdue": "{{count}} lejárt",
+			"noPhoto": "nincs fotó"
+		},
+		"startTitle": "Olvasó keresése",
+		"startHint": "Keresés névre, olvasójegyre, vagy a szűrőkkel."
+	},
+	"types": {
+		"student": "Tanuló",
+		"teacher": "Tanár"
+	},
+	"fields": {
+		"patronType": "Típus",
+		"firstName": "Keresztnév",
+		"lastName": "Vezetéknév",
+		"cardNumber": "Olvasójegy száma",
+		"cardNumberHint": "Üresen hagyva: automatikusan kerül hozzárendelésre.",
+		"externalId": "Tanulói azonosító",
+		"email": "E-mail",
+		"emailHint": "Az iskola által a tanulónak vagy a tanárnak megadott cím: erre mennek az értesítések.",
+		"circulationNote": "Megjegyzés a kölcsönzőpultnak",
+		"circulationNoteHint": "A kölcsönzéskor kiemelten látszik.",
+		"notes": "Belső megjegyzések",
+		"status": "Állapot",
+		"openLoans": "Kölcsönzések",
+		"overdueLoans": "Lejárt",
+		"noCard": "nincs olvasójegy",
+		"none": "—",
+		"levelCode": "Évfolyam",
+		"groupId": "Osztályjel",
+		"classLabel": "Osztály",
+		"teacherGroup": "Tanári csoport"
+	},
+	"form": {
+		"createTitle": "Új olvasó",
+		"editTitle": "Olvasó szerkesztése",
+		"identity": "Személyes adatok",
+		"school": "Osztály",
+		"contacts": "Elérhetőségek",
+		"notes": "Megjegyzések",
+		"create": "Olvasó létrehozása",
+		"save": "Módosítások mentése",
+		"classSelect": "Válasszon…",
+		"defaultTeacherGroup": "A tanári csoport"
+	},
+	"errors": {
+		"emailInvalid": "Érvénytelen e-mail-cím.",
+		"cardNumberInvalid": "Érvénytelen olvasójegy-szám: csak számjegyek, nagybetűk és kötőjelek lehetnek, a helyes ellenőrző karakterrel.",
+		"cardNumberTaken": "Az olvasójegy száma már másik olvasóhoz van rendelve.",
+		"cardNumberIsCopy": "Az olvasójegy száma megegyezik vagy hasonlít egy példány vonalkódjára: válasszon másik számot.",
+		"externalIdTaken": "A tanulói azonosító már másik olvasóhoz van rendelve.",
+		"levelRequired": "A tanulóhoz osztály (évfolyam) szükséges.",
+		"levelUnknown": "Az osztály nem szerepel az iskola évfolyamai között.",
+		"levelNotForTeachers": "A tanárnak nincs osztálya.",
+		"groupRequired": "A tanulóhoz osztályjel szükséges.",
+		"groupUnknown": "Az osztályjel nem található az aktív osztályok között: az osztályokat az Adminisztráció → Beállítások → Osztályok oldalon lehet létrehozni.",
+		"levelNotInGroup": "Ennek az osztálynak nincs ilyen évfolyama: válasszon az évfolyamhoz tartozó osztályt."
+	},
+	"detail": {
+		"heading": "Olvasói adatlap",
+		"tabs": {
+			"loans": "Kölcsönzések",
+			"history": "Előzmények",
+			"cards": "Olvasójegy",
+			"notes": "Megjegyzések"
+		},
+		"noLoans": "Nincs folyamatban lévő kölcsönzés.",
+		"loanColumns": {
+			"due": "Határidő"
+		},
+		"overdue": "lejárt",
+		"card": "Olvasójegy: {{number}}",
+		"noNotes": "Nincsenek megjegyzések.",
+		"edit": "Szerkesztés",
+		"created": "Létrehozva: {{when}}",
+		"barcodeAlt": "A(z) {{number}} olvasójegy vonalkódja",
+		"cardPrinted": "Az olvasójegy kinyomtatva: {{when}}.",
+		"cardNotPrinted": "Az olvasójegy még nincs kinyomtatva.",
+		"reassignCard": "Új olvasójegy hozzárendelése",
+		"reassignTitle": "Új olvasójegyet rendel hozzá?",
+		"reassignDescription": "A jelenlegi szám véglegesen visszavonásra kerül, az új olvasójegyet ki kell nyomtatni.",
+		"cardReassigned": "Új olvasójegy: {{number}}",
+		"printCard": "Olvasójegy nyomtatása",
+		"markCardPrinted": "Megjelölés nyomtatottként",
+		"cardMarkedPrinted": "Az olvasójegy nyomtatottként megjelölve",
+		"historyColumns": {
+			"issuedAt": "Kölcsönözve",
+			"dueDate": "Határidő",
+			"returnedAt": "Visszahozva",
+			"outcome": "Eredmény",
+			"title": "Cím",
+			"author": "Szerző",
+			"barcode": "Példány",
+			"renewals": "Hosszabbítások",
+			"schoolYear": "Tanév"
+		},
+		"outcome": {
+			"open": "Folyamatban",
+			"overdue": "Lejárt",
+			"returned": "Visszahozva",
+			"returnedLate": "Későn visszahozva",
+			"lost": "Elveszett"
+		},
+		"historyEmpty": "Nincs rögzített kölcsönzés.",
+		"historyCount": "{{count}} {{count:plural; one:kölcsönzés; other:kölcsönzés;}} összesen",
+		"notesEdit": "Megjegyzések szerkesztése",
+		"notesSaved": "A megjegyzések mentve",
+		"notesUnchanged": "Nincs változás",
+		"notesHint": "A kölcsönzőpultnál kölcsönzéskor felugrik a kölcsönzőpultnak szánt megjegyzés; a többi megjegyzés itt marad.",
+		"remove": "{{type}} eltávolítása",
+		"removeTitle": "Véglegesen eltávolítja a következőt: {{name}}?",
+		"removeDescription": "Azonnal és véglegesen törlődik: keresztnév és vezetéknév, e-mail-cím, külső azonosító, megjegyzések, olvasójegy száma (visszavonva) és fotó. Csak a típus, az osztály, a szakasz és a kölcsönzési előzmények maradnak meg statisztikai célból. Ez nem vonható vissza.",
+		"removeOpenLoans": "{{count}} folyamatban lévő {{count:plural; one:kölcsönzés; other:kölcsönzés;}} van: előbb a kölcsönzéseket kell visszahozni vagy elveszettnek jelölni.",
+		"removeClassSheets": "Az osztályképek felvételein {{count}} {{count:plural; one:fotóhoz; other:fotóhoz;}} lettek kiválasztva: {{count:plural; one:az a keret; other:azok a keretek;}} lefedésre kerül.",
+		"removed": "Az olvasó eltávolítva: a személyes adatok törölve.",
+		"removedInfo": "Eltávolítva: {{when}}. Csak a statisztikához szükséges adatok maradnak meg.",
+		"lostTitle": "Elveszett könyvek",
+		"lostHint": "Elveszettnek jelölve, amíg az olvasónál volt kölcsönzésben. Ha előkerül, a visszavételi pultnál olvassa be a vonalkódot.",
+		"markLost": "„{{title}}” elveszettnek jelölése",
+		"markLostTitle": "Elveszettnek jelöli: „{{title}}”?",
+		"markLostDescription": "A kölcsönzés lezárul, a példány elveszettként jelenik meg. Ha a könyv előkerül, a visszavételi pultnál olvassa be, és újra elérhető lesz.",
+		"markLostReason": "Ok (nem kötelező)",
+		"markLostConfirm": "Elveszettnek jelölés",
+		"markedLost": "„{{title}}” elveszettnek jelölve."
+	},
+	"photo": {
+		"title": "Fotó",
+		"take": "Fotó készítése",
+		"upload": "Fájl feltöltése",
+		"retake": "Új felvétel",
+		"use": "Ez a fotó használata",
+		"cancel": "Mégse",
+		"delete": "Fotó törlése",
+		"deleteTitle": "Törli a fotót?",
+		"deleteDescription": "A fotó törlődik a szerverről; új készíthető.",
+		"zoom": "Nagyítás",
+		"dragHint": "Húzza a keretbe; a nagyítással közelebb hozhatja.",
+		"saved": "A fotó mentve",
+		"deleted": "A fotó törölve",
+		"placeholder": "Nincs fotó",
+		"alt": "Fotó: {{name}}",
+		"errors": {
+			"too_large": "A fájl túl nagy: a határ {{maxMb}} MB.",
+			"not_an_image": "A fájl nem olvasható kép.",
+			"unsupported_format": "Nem támogatott képformátum (használjon JPEG, PNG, WebP vagy HEIC formátumot).",
+			"empty": "Nincs kiválasztott fájl."
+		},
+		"withForm": "Az olvasóval együtt mentődik.",
+		"requiredHint": "Fotó szükséges: készítse el most, vagy később az olvasó oldaláról.",
+		"optionalHint": "A fotó most vagy később, az olvasó oldaláról is elkészíthető.",
+		"remove": "Eltávolítás",
+		"notSaved": "A fotó nem került mentésre: készítse el újra az olvasó oldaláról.",
+		"retakePhoto": "Fotó újrafelvétele"
+	},
+	"census": {
+		"title": "Fotós felmérés",
+		"noGroup": "Osztály nélkül",
+		"stageOthers": "Nincs szakasz",
+		"progress": "{{done}} / {{total}} fotóval",
+		"allDone": "Mindenkinek van fotója.",
+		"back": "Osztály vagy lista módosítása",
+		"skip": "Kihagyás",
+		"done": "Kész",
+		"saved": "Fotó mentve: {{name}}",
+		"quickAdd": "Új olvasó",
+		"quickAddHint": "Hozzáadva: {{group}}; a fotója következik.",
+		"create": "Hozzáadás és lefotózás",
+		"findPerson": "Keresés vezetéknév szerint",
+		"pickTarget": "Válasszon listát vagy osztályt",
+		"listsTitle": "Olvasólisták",
+		"classesTitle": "Osztályok",
+		"nothingMissing": "Minden osztálynak és listának megvannak a fotói.",
+		"onlyMissing": "Csak azok az osztályok és listák láthatók, ahol legalább egy fotó hiányzik.",
+		"byCamera": "Egyenként, kamerával",
+		"sheets": {
+			"title": "Egy képről, több fotóval",
+			"hint": "Több fotót tartalmazó képek (a fotós ívei, kártyák egy asztalon, igazolványképek egy lapon): a fotók automatikusan felismerésre kerülnek, és minden olvasóhoz hozzárendelődnek.",
+			"upload": "Kép feltöltése",
+			"take": "Ív lefotózása",
+			"uploading": "A kép küldése…",
+			"empty": "Ehhez az osztályhoz vagy listához nincs kép.",
+			"item": "Kép: {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:fotó; other:fotó;}} megtalálva · {{saved}} mentve · {{pending}} hátra",
+			"notDetected": "Még nincs feldolgozva",
+			"demoScan": "Minta szkennelésből",
+			"demoPhoto": "Minta fotóból",
+			"demoHint": "Kétféleképpen kaphatók meg az osztály fotói: a szkenner lapja síkban fekszik, a fotói legfeljebb kissé elforgatott téglalapok; a szögben készült fotón a perspektíva meghajlítja a kereteket."
+		},
+		"sheet": {
+			"title": "Fotók egy képről",
+			"back": "Vissza az osztályhoz",
+			"detecting": "A fotók keresése a képen…",
+			"found": "Talált fotók: {{count}}. Válassza ki, kié mindegyik.",
+			"none": "Nem található fotó. A „Keretek javítása” gombbal kézzel is rajzolhatók.",
+			"pictureAlt": "A feltöltött kép, a fotókeretek számozva",
+			"frame": "{{n}}. fotó",
+			"choose": "Kicsoda?",
+			"nobody": "— Senki —",
+			"takenBy": "{{name}} (már a(z) {{n}}. fotón)",
+			"hasPhoto": "már van fotója",
+			"noPhoto": "nincs fotó",
+			"ignore": "Figyelmen kívül hagyás",
+			"unignore": "Visszaállítás",
+			"ignored": "Figyelmen kívül hagyva: nem tartozik ehhez az osztályhoz vagy listához.",
+			"saved": "Mentve, mint {{name}} fotója",
+			"edit": "Keretek javítása",
+			"editDone": "A javítás kész",
+			"editHint": "Koppintson egy keretre, és húzza a sarkait; hiányzó fotó esetén használja a „Keret hozzáadása” gombot.",
+			"editHintScan": "Koppintson egy keretre: a sarkát húzva nagyíthatja vagy kisebbítheti, a fölötte lévő körrel elforgathatja; hiányzó fotó esetén használja a „Keret hozzáadása” gombot.",
+			"addFrame": "Keret hozzáadása",
+			"addFrameHint": "Húzzon a képen a hiányzó fotó egyik sarkától a másikig.",
+			"deleteFrame": "{{n}}. keret törlése",
+			"rotateFrame": "Keret forgatása",
+			"kind": "A kép típusa",
+			"kindPhoto": "Fotó",
+			"kindScan": "Szkennelés",
+			"kindPhotoHint": "Szögben készült: a keret minden sarka külön mozog, hogy kövesse a perspektívát.",
+			"kindScanHint": "Szkennerrel készült: a keretek téglalapok maradnak, csak forgathatók.",
+			"kindAgain": "Amíg nincs olvasó kiválasztva, a típus megváltoztatása újra keresi a fotókat.",
+			"save": "Fotók mentése",
+			"saveTitle": "Menti a kiválasztott fotókat?",
+			"saveSummary": "Mentendő fotók: {{count}}.",
+			"saveReplaces": "Ezek felülírják a következők meglévő fotóját: {{names}}.",
+			"saveUnassigned": "Olyan keretek, amelyekhez nincs kiválasztva senki: {{count}} (változatlanul maradnak).",
+			"savedToast": "Fotók mentve: {{count}}.",
+			"deleteSheet": "Kép törlése",
+			"deleteSheetTitle": "Törli a képet?",
+			"deleteSheetDescription": "A kép és a keretei törlődnek. A már mentett fotók az olvasóknál maradnak.",
+			"deletedToast": "A kép törölve.",
+			"progress": "{{label}}: {{done}} / {{total}} fotóval",
+			"missingTitle": "Még fotó nélkül",
+			"byCamera": "Fotózza le őket egyenként",
+			"errors": {
+				"not_found": "A kép nem található.",
+				"set_not_found": "Az osztály vagy a lista már nem létezik.",
+				"empty": "A fájl üres.",
+				"too_large": "A kép túl nagy (legfeljebb {{maxMb}} MB).",
+				"not_an_image": "A fájl nem olvasható kép.",
+				"unsupported_format": "Nem támogatott formátum: használjon JPEG, PNG, WebP vagy HEIC formátumot.",
+				"too_many_frames": "Legfeljebb {{maxFrames}} {{maxFrames:plural; one:fotó; other:fotó;}} lehet képenként.",
+				"bad_corners": "A keret nem érvényes: a sarkainak a képen belüli négyszöget kell alkotniuk.",
+				"already_detected": "Ennek a képnek a fotóit már megkeresték.",
+				"frame_saved": "Ez a fotó már mentésre került.",
+				"frame_erased": "Ez a fotó egy eltávolított olvasóhoz tartozott: a keret le lett fedve.",
+				"not_a_member": "Csak az osztály vagy a lista olvasói választhatók ki.",
+				"patron_taken": "Már a(z) {{position}}. fotóhoz van kiválasztva: előbb szabadítsa fel, mielőtt itt választja ki.",
+				"confirm_replace": "{{count:plural; one:{{count}} fotó egy meglévőt cserél le; other:{{count}} fotó meglévőket cserél le;}}: erősítse meg a folytatáshoz.",
+				"nothing_to_save": "Mentés előtt válasszon legalább egy olvasót."
+			},
+			"erased": "Az olvasó eltávolítva: a keret le lett fedve a képen."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "CSV-fájl",
+			"submit": "Feltöltés",
+			"hints": {
+				"students": "CSV-fájl soronként egy tanulóval, pontosvesszővel vagy vesszővel elválasztva (táblázatkezelő exportja is megfelel). Használja a sablon fejléceit, amely alul letölthető a szükséges oszlopokkal.",
+				"teachers": "CSV-fájl soronként egy tanárral, pontosvesszővel vagy vesszővel elválasztva. Használja a sablon fejléceit, amely alul letölthető a szükséges oszlopokkal."
+			}
+		},
+		"mapping": {
+			"format": "Felismert formátum",
+			"uncertain": "A formátum nem biztos: ellenőrizze az oszlopokat a továbblépés előtt.",
+			"remembered": "Az oszlopok a fájl előző importálásából lettek megjegyezve.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "a fájl fejléce",
+				"unknown": "ismeretlen"
+			},
+			"mode": "Mód",
+			"modes": {
+				"upsert": "Hozzáadás és frissítés",
+				"upsertHint": "Az egyezők frissítik a meglévő olvasót, a többiek új olvasókat hoznak létre.",
+				"sync": {
+					"students": "Tanulók szinkronizálása",
+					"teachers": "Tanárok szinkronizálása"
+				},
+				"syncHint": {
+					"students": "A fájl a tanulók teljes listája: aki hiányzik, listába kerül (és megerősítés után eltávolításra kerül). A tanárok nem változnak.",
+					"teachers": "A fájl a tanárok teljes listája: aki hiányzik, listába kerül (és megerősítés után eltávolításra kerül). A tanulók nem változnak."
+				}
+			},
+			"duplicates": "Már meglévő olvasók",
+			"policies": {
+				"update": "Frissítés",
+				"skip": "Kihagyás",
+				"create": "Létrehozás mindenképpen"
+			},
+			"validate": "Fájl ellenőrzése",
+			"matchByName": {
+				"students": "Az external_id oszlop nélkül a nyilvántartott tanulókat név és osztály alapján ismeri fel.",
+				"teachers": "Az external_id oszlop nélkül a nyilvántartott tanárokat név alapján ismeri fel."
+			}
+		},
+		"preview": {
+			"ready": "Nincs hiba: a fájl importálható.",
+			"blocked": "Javítsa a hibákat a fájlban (vagy az olvasóknál), és ellenőrizze újra: hibával nem importálódik semmi.",
+			"columns": {
+				"name": "Név",
+				"class": "Osztály"
+			},
+			"changed": "Változások: {{fields}}",
+			"homonym": {
+				"pick": "Válassza ki az olvasót",
+				"create": "Új olvasó létrehozása",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Azonos nevek feloldása"
+			},
+			"missing": {
+				"students": {
+					"title": "A nyilvántartásban szereplő, de a fájlból hiányzó tanulók ({{count}})",
+					"remove": "Ezeknek a tanulóknak a törlése a nyilvántartásból (azonnali anonimizálással)",
+					"noPermission": "Az olvasók eltávolítására vonatkozó jogosultság nélkül a hiányzó tanulók a nyilvántartásban maradnak.",
+					"notRemoved": "{{count}} hiányzó {{count:plural; one:tanuló; other:tanuló;}} nem lett eltávolítva, mert folyamatban lévő kölcsönzése van."
+				},
+				"teachers": {
+					"title": "A nyilvántartásban szereplő, de a fájlból hiányzó tanárok ({{count}})",
+					"remove": "Ezeknek a tanároknak a törlése a nyilvántartásból (azonnali anonimizálással)",
+					"noPermission": "Az olvasók eltávolítására vonatkozó jogosultság nélkül a hiányzó tanárok a nyilvántartásban maradnak.",
+					"notRemoved": "{{count}} hiányzó {{count:plural; one:tanár; other:tanár;}} nem lett eltávolítva, mert folyamatban lévő kölcsönzése van."
+				},
+				"hint": "A szinkronizálással el lehet távolítani azokat, akik nincsenek a fájlban: a személyes adatok azonnal és véglegesen törlődnek, csak az osztály és a statisztika marad meg."
+			},
+			"commit": "Importálás",
+			"back": "Vissza az oszlopokhoz",
+			"generatedCards": "{{count}} új {{count:plural; one:olvasójegy; other:olvasójegy;}} lesz generálva: a fájlban nincs szám."
+		},
+		"reasons": {
+			"tooLong": "Túl hosszú szöveg a(z) {{column}} oszlopban: legfeljebb {{max}} {{max:plural; one:karakter; other:karakter;}}",
+			"nameRequired": "Hiányzik a keresztnév vagy a vezetéknév",
+			"emailInvalid": "Érvénytelen e-mail-cím",
+			"cardNumberInvalid": "Érvénytelen olvasójegy-szám",
+			"cardNumberTaken": "Az olvasójegy száma már másik olvasóhoz van rendelve",
+			"cardNumberIsCopy": "Az olvasójegy száma megegyezik vagy hasonlít egy példány vonalkódjára",
+			"externalIdTaken": "A külső azonosító már másik olvasóhoz van rendelve",
+			"duplicateInFile": "Ugyanez a személy már szerepel a(z) {{line}}. sorban",
+			"homonym": "{{count}} {{count:plural; one:azonos nevű olvasó; other:azonos nevű olvasó;}} van a nyilvántartásban: válassza ki, melyiket frissítse",
+			"matchedTwice": "Egy másik sor már frissíti ugyanazt az olvasót",
+			"skipped": "Már megvan: kihagyva",
+			"levelRequired": "Hiányzik az osztály",
+			"levelUnknown": "A(z) „{{value}}” évfolyam nem az iskola évfolyama",
+			"groupRequired": "Hiányzik az osztályjel",
+			"groupUnknown": "A(z) „{{value}}” osztályjel nem található ehhez az évfolyamhoz. Érvényes osztályok: {{classes}} (az osztályokat az Adminisztráció → Beállítások → Osztályok oldalon lehet létrehozni)",
+			"levelNotInGroup": "A(z) „{{value}}” osztályjelhez nincs ilyen évfolyam. Érvényes osztályok: {{classes}}",
+			"classUnknown": "A(z) „{{value}}” osztály nem található. Érvényes osztályok: {{classes}}",
+			"teacherGroupUnknown": "A(z) „{{value}}” tanári csoport nem található. Érvényes csoportok: {{classes}}"
+		},
+		"done": {
+			"title": "Az importálás befejeződött",
+			"summary": "{{created}} új, {{updated}} frissítve, {{unchanged}} változatlan, {{removed}} eltávolítva.",
+			"printNew": "Az új olvasók olvasójegyeinek nyomtatása",
+			"census": "Fotós felmérés",
+			"again": "Másik fájl importálása",
+			"batch": "Importálás sz.: {{id}}: az eredeti fájl megmarad a szerveren."
+		},
+		"fields": {
+			"firstName": "Keresztnév",
+			"lastName": "Vezetéknév",
+			"class": "Osztály (évfolyam és osztályjel)",
+			"level": "Osztály (évfolyam)",
+			"section": "Osztályjel",
+			"group": "Tanári csoport",
+			"externalId": "Külső azonosító",
+			"cardNumber": "Olvasójegy",
+			"email": "E-mail"
+		},
+		"titles": {
+			"students": "Tanulók importálása",
+			"teachers": "Tanárok importálása"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "A keresztnév."
+			},
+			"lastName": {
+				"hint": "A vezetéknév."
+			},
+			"class": {
+				"hint": "Az osztály egy oszlopban, például 3A vagy 3 A: léteznie kell az Adminisztráció → Beállítások → Osztályok oldalon."
+			},
+			"level": {
+				"hint": "Az évfolyam (1, 2, 3…); az osztályjel az osztályjel oszlopban van."
+			},
+			"section": {
+				"hint": "Az osztályjel (A, B…): az évfolyammal együtt nevezi meg az osztályt."
+			},
+			"cardNumber": {
+				"hint": "Az olvasójegy száma, ha a tanulónak már van.",
+				"missing": "új olvasójegyek generálódnak"
+			},
+			"externalId": {
+				"hint": "Az iskolai nyilvántartás kódja.",
+				"missing": "a nyilvántartott olvasók név és osztály alapján ismerhetők fel"
+			},
+			"email": {
+				"hint": "Nem kötelező."
+			},
+			"group": {
+				"hint": "A tanári csoport; hiány esetén az alapértelmezett csoport."
+			}
+		},
+		"classForm": {
+			"label": "Az osztály",
+			"class": "Egy oszlopban (osztály: 3A)",
+			"levelSection": "Két oszlopban (évfolyam: 3, osztályjel: A)"
+		}
+	}
+}

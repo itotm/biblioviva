@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Impressão",
+		"newPatrons": "Nova lista de utilizadores",
+		"newItems": "Nova lista de livros",
+		"newPatronsTitle": "Nova lista de utilizadores",
+		"newItemsTitle": "Nova lista de livros",
+		"name": "Nome da lista",
+		"defaultName": "Lista {{n}} de {{date}}",
+		"kind": "Tipo",
+		"kinds": {
+			"all": "Todas",
+			"patrons": "Utilizadores",
+			"items": "Livros"
+		},
+		"classes": "Turmas",
+		"classesHint": "Os cartões de uma turma inteira, sem criar uma lista.",
+		"classKind": "Turma",
+		"count": "{{count}} {{count:plural; one:entrada; other:entradas;}}",
+		"empty": "Nenhuma lista. As listas criam-se aqui ou com «Acrescentar à lista» nas páginas Utilizadores e Catálogo.",
+		"lastPrinted": "Impressa em {{when}}",
+		"neverPrinted": "Nunca impressa",
+		"open": "Abrir",
+		"created": "Lista criada",
+		"deleted": "Lista eliminada",
+		"deleteTitle": "Eliminar a lista «{{name}}»?",
+		"deleteDescription": "As entradas saem da lista; os utilizadores continuam no arquivo."
+	},
+	"list": {
+		"rename": "Mudar o nome",
+		"renamed": "Nome da lista alterado",
+		"print": "Imprimir cartões",
+		"markPrinted": "Marcar como impressos",
+		"marked": "{{count}} {{count:plural; one:cartão marcado como impresso; other:cartões marcados como impressos;}}",
+		"clearAfter": "Esvaziar a lista depois da impressão",
+		"clear": "Esvaziar",
+		"cleared": "Lista esvaziada",
+		"clearTitle": "Esvaziar a lista?",
+		"clearDescription": "Todas as entradas saem da lista; os utilizadores continuam no arquivo.",
+		"delete": "Eliminar",
+		"entries": "{{count}} {{count:plural; one:utilizador; other:utilizadores;}} na lista",
+		"empty": "A lista está vazia: acrescente utilizadores com os filtros rápidos, com o leitor de códigos ou na página Utilizadores.",
+		"remove": "Retirar da lista",
+		"moveUp": "Subir",
+		"moveDown": "Descer",
+		"dragHint": "Arraste as entradas para mudar a ordem de impressão.",
+		"removed": "Retirado da lista",
+		"columns": {
+			"position": "N.º",
+			"printed": "Cartão impresso"
+		},
+		"printedYes": "sim",
+		"printedNo": "não",
+		"quick": {
+			"title": "Acrescentar com filtros",
+			"hint": "Quem já está na lista não é acrescentado duas vezes.",
+			"type": "Tipo",
+			"any": "Qualquer",
+			"stage": "Nível de ensino",
+			"level": "Ano",
+			"withoutPrintedCard": "Só quem ainda não tem o cartão impresso",
+			"withoutPhoto": "Só quem não tem foto",
+			"importBatch": "Importação",
+			"anyBatch": "— nenhuma —",
+			"batchLabel": "n.º {{id}} · {{file}} · novos: {{created}}",
+			"createdAfter": "Criados a partir de",
+			"add": "Acrescentar à lista",
+			"added": "Acrescentados: {{added}}, já presentes: {{skipped}}",
+			"none": "Nenhum utilizador corresponde aos filtros.",
+			"pendingLabels": "Etiquetas por imprimir",
+			"pendingAny": "— todos os exemplares —",
+			"acquiredFrom": "Adquiridos desde",
+			"acquiredTo": "a",
+			"genre": "Género",
+			"itemType": "Tipo de exemplar",
+			"batchLabelItems": "n.º {{id}} · {{file}} · {{created}} {{created:plural; one:exemplar; other:exemplares;}}",
+			"noneItems": "Nenhum exemplar corresponde aos filtros.",
+			"addedItems": "Acrescentados: {{added}}, já presentes: {{skipped}}",
+			"nonfictionClass": "Classe de não ficção"
+		},
+		"scan": {
+			"title": "Acrescentar com o leitor",
+			"hint": "Leia o cartão de cada utilizador: fica logo acrescentado à lista. Os cartões já presentes na lista são ignorados.",
+			"added": "{{name}} acrescentado",
+			"duplicate": "{{name}} já está na lista",
+			"unknown": "Nenhum utilizador com o cartão {{card}}",
+			"notCard": "O código lido não é um cartão",
+			"hintItems": "Leia o código de barras de cada exemplar, também ao longo da estante: o exemplar fica logo acrescentado à lista. Os exemplares já presentes na lista são ignorados.",
+			"addedItem": "{{title}} ({{barcode}}) acrescentado",
+			"duplicateItem": "{{title}} ({{barcode}}) já está na lista",
+			"unknownItem": "Nenhum exemplar com o código {{barcode}}",
+			"notItem": "O código lido não é um exemplar"
+		},
+		"printLabels": "Imprimir etiquetas",
+		"markPrintedKind": "Etiquetas impressas",
+		"markedItems": "{{count}} {{count:plural; one:exemplar marcado como impresso; other:exemplares marcados como impressos;}}",
+		"entriesItems": "{{count}} {{count:plural; one:exemplar; other:exemplares;}} na lista",
+		"emptyItems": "A lista está vazia. Os exemplares acrescentam-se com os filtros rápidos, com o leitor de códigos ou a partir do catálogo.",
+		"clearDescriptionItems": "Todas as entradas são retiradas; os exemplares continuam no catálogo."
+	},
+	"basket": {
+		"label": "Listas de impressão",
+		"labelToPrint": "Listas de impressão: {{count}} por imprimir",
+		"entry": "{{name}} ({{count}})",
+		"none": "Nenhuma lista por imprimir",
+		"all": "Todas as listas"
+	},
+	"addTo": {
+		"button": "Acrescentar à lista",
+		"selected": "Acrescentar os selecionados à lista",
+		"title": "Acrescentar à lista de impressão",
+		"existing": "Lista existente",
+		"create": "Nova lista",
+		"newName": "Nome da nova lista",
+		"confirm": "Acrescentar",
+		"done": "Acrescentados a «{{name}}»: {{added}}, já presentes: {{skipped}}"
+	},
+	"labels": {
+		"title": "Imprimir etiquetas",
+		"button": "Imprimir etiquetas",
+		"selected": "Imprimir etiquetas dos selecionados",
+		"kind": "Tipo de etiqueta",
+		"kinds": {
+			"pair": "Par",
+			"barcode": "Só código de barras",
+			"spine": "Só faixa da lombada"
+		},
+		"kindHints": {
+			"pair": "Faixa da lombada em cima e etiqueta com o código de barras por baixo, um par por livro (a impressão atual).",
+			"barcode": "Só a etiqueta interna com o código de barras, para reimpressões.",
+			"spine": "Só a faixa da lombada, por exemplo depois de uma reclassificação."
+		},
+		"stock": "Folha de etiquetas",
+		"start": "Primeira posição livre",
+		"startHint": "De 1 a {{max}}: salta as etiquetas já usadas na folha.",
+		"count": "{{count}} {{count:plural; one:exemplar; other:exemplares;}}",
+		"unclassified": "{{count}} {{count:plural; one:exemplar de um livro; other:exemplares de livros;}} por classificar: imprime-se só {{count:plural; one:a sua etiqueta; other:as suas etiquetas;}} com o código de barras, e a faixa da lombada depois da classificação.",
+		"pendingCount": "{{count}} {{count:plural; one:exemplar; other:exemplares;}} com etiquetas por imprimir",
+		"pages": "{{pages}} {{pages:plural; one:folha; other:folhas;}} ({{perPage}} por folha)",
+		"print": "Abrir a impressão",
+		"afterPrint": "A página de impressão abriu-se num novo separador. Depois de imprimir as etiquetas, marque-as como impressas.",
+		"markPrinted": "Marcar como impressas",
+		"marked": "{{count}} {{count:plural; one:exemplar marcado como impresso; other:exemplares marcados como impressos;}}",
+		"status": {
+			"printed": "Etiquetas impressas",
+			"pending": "Etiquetas por imprimir",
+			"partial": "Falta uma etiqueta"
+		}
+	},
+	"cards": {
+		"title": "Imprimir cartões",
+		"count": "{{count}} {{count:plural; one:cartão; other:cartões;}}",
+		"afterPrint": "A página de impressão abriu-se num novo separador. Depois de imprimir os cartões, marque-os como impressos.",
+		"layout": "Como imprimir",
+		"layouts": {
+			"side-by-side": "Frente e verso lado a lado",
+			"duplex": "Nos dois lados da folha"
+		},
+		"window": "Na janela de impressão do navegador:",
+		"steps": {
+			"duplex": {
+				"long-edge": "escolha «Frente e verso», virando pelo lado comprido;",
+				"short-edge": "escolha «Frente e verso», virando pelo lado curto;"
+			},
+			"scale": "escala a 100 % («Tamanho real», não «Ajustar à página»);",
+			"margins": "margens: nenhuma.",
+			"after": {
+				"side-by-side": {
+					"marks": "Depois, recorte cada cartão unindo com a régua as marcas de corte à volta dos cartões, e dobre-o ao meio pelo lado curto.",
+					"line": "Depois, recorte cada cartão pela linha colorida que o contorna, e dobre-o ao meio pelo lado curto.",
+					"edge": "Depois, recorte cada cartão pela margem, e dobre-o ao meio pelo lado curto."
+				},
+				"duplex": {
+					"marks": "Depois, recorte os cartões unindo com a régua as marcas de corte à volta das frentes: o verso já fica atrás da frente (dez por folha).",
+					"line": "Depois, recorte os cartões pela linha colorida que contorna as frentes: o verso já fica atrás da frente (dez por folha).",
+					"edge": "Depois, recorte os cartões pela margem das frentes: o verso já fica atrás da frente (dez por folha)."
+				}
+			}
+		},
+		"print": "Imprimir",
+		"calibrate": "Na primeira vez, ou se os versos não ficarem atrás das frentes:"
+	},
+	"words": {
+		"teacher": "Professor",
+		"title": "Título",
+		"code": "Código",
+		"dueBy": "A devolver até",
+		"due": "Vencimento",
+		"name": "Nome",
+		"daysOverdue": "Dias de atraso",
+		"loanOn": "Empréstimo de {{date}} a",
+		"overduesOn": "Avisos da biblioteca de {{date}}",
+		"toReturn": "Livros a devolver à biblioteca",
+		"enjoy": "Boa leitura."
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"name": "checkout-receipt",
+	"description": "Ricevuta del prestito: i libri presi e la data entro cui restituirli",
+	"kind": "receipt",
+	"page": "A5 portrait",
+	"marginMm": 12
+}

@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Tulostus",
+		"newPatrons": "Uusi asiakaslista",
+		"newItems": "Uusi kirjalista",
+		"newPatronsTitle": "Uusi asiakaslista",
+		"newItemsTitle": "Uusi kirjalista",
+		"name": "Listan nimi",
+		"defaultName": "Lista {{n}}, {{date}}",
+		"kind": "Tyyppi",
+		"kinds": {
+			"all": "Kaikki",
+			"patrons": "Asiakkaat",
+			"items": "Kirjat"
+		},
+		"classes": "Luokat",
+		"classesHint": "Koko luokan tessereet ilman listan luomista.",
+		"classKind": "Luokka",
+		"count": "{{count}} {{count:plural; one:merkintä; other:merkintää;}}",
+		"empty": "Ei listoja. Listat luodaan täällä tai painikkeella ”Lisää listaan” Asiakkaat- ja Luettelo-sivuilla.",
+		"lastPrinted": "Tulostettu {{when}}",
+		"neverPrinted": "Ei koskaan tulostettu",
+		"open": "Avaa",
+		"created": "Lista luotu",
+		"deleted": "Lista poistettu",
+		"deleteTitle": "Poistetaanko lista ”{{name}}”?",
+		"deleteDescription": "Merkinnät poistuvat listalta, asiakkaat pysyvät arkistossa."
+	},
+	"list": {
+		"rename": "Nimeä uudelleen",
+		"renamed": "Lista nimetty uudelleen",
+		"print": "Tulosta kortit",
+		"markPrinted": "Merkitse tulostetuiksi",
+		"marked": "{{count:plural; one:{{count}} kortti merkittiin tulostetuksi; other:{{count}} korttia merkittiin tulostetuiksi;}}",
+		"clearAfter": "Tyhjennä lista tulostuksen jälkeen",
+		"clear": "Tyhjennä",
+		"cleared": "Lista tyhjennetty",
+		"clearTitle": "Tyhjennetäänkö lista?",
+		"clearDescription": "Jokainen merkintä poistuu listalta, asiakkaat pysyvät arkistossa.",
+		"delete": "Poista",
+		"entries": "{{count}} {{count:plural; one:asiakas; other:asiakasta;}} listalla",
+		"empty": "Lista on tyhjä: lisää asiakkaita pikasuodattimilla, skannerilla tai Asiakkaat-sivulta.",
+		"remove": "Poista listalta",
+		"moveUp": "Siirrä ylös",
+		"moveDown": "Siirrä alas",
+		"dragHint": "Vedä merkintöjä muuttaaksesi tulostusjärjestystä.",
+		"removed": "Poistettu listalta",
+		"columns": {
+			"position": "Nro",
+			"printed": "Kortti tulostettu"
+		},
+		"printedYes": "kyllä",
+		"printedNo": "ei",
+		"quick": {
+			"title": "Lisää suodattimilla",
+			"hint": "Listalla jo olevia ei lisätä kahdesti.",
+			"type": "Tyyppi",
+			"any": "Mikä tahansa",
+			"stage": "Koulutusaste",
+			"level": "Vuosiluokka",
+			"withoutPrintedCard": "Vain ne, joilla korttia ei ole vielä tulostettu",
+			"withoutPhoto": "Vain ne, joilla ei ole valokuvaa",
+			"importBatch": "Tuonti",
+			"anyBatch": "— ei mitään —",
+			"batchLabel": "nro {{id}} · {{file}} · {{created}} {{created:plural; one:uusi; other:uutta;}}",
+			"createdAfter": "Luotu alkaen",
+			"add": "Lisää listaan",
+			"added": "Lisätty: {{added}}, jo listalla: {{skipped}}",
+			"none": "Mikään asiakas ei vastaa suodattimia.",
+			"pendingLabels": "Tulostettavat tarrat",
+			"pendingAny": "— kaikki niteet —",
+			"acquiredFrom": "Hankittu alkaen",
+			"acquiredTo": "saakka",
+			"genre": "Lajityyppi",
+			"itemType": "Nidetyyppi",
+			"batchLabelItems": "nro {{id}} · {{file}} · {{created}} {{created:plural; one:nide; other:nidettä;}}",
+			"noneItems": "Mikään nide ei vastaa suodattimia.",
+			"addedItems": "Lisätty: {{added}}, jo listalla: {{skipped}}",
+			"nonfictionClass": "Tietokirjallisuuden luokka"
+		},
+		"scan": {
+			"title": "Lisää skannerilla",
+			"hint": "Skannaa jokaisen asiakkaan kortti: hänet lisätään heti listalle. Listalla jo olevat kortit ohitetaan.",
+			"added": "{{name}} lisätty",
+			"duplicate": "{{name}} on jo listalla",
+			"unknown": "Ei asiakasta kortilla {{card}}",
+			"notCard": "Luettu koodi ei ole kortti",
+			"hintItems": "Skannaa jokaisen niteen viivakoodi, esimerkiksi hyllyä pitkin kulkien: nide lisätään heti listalle. Listalla jo olevat niteet ohitetaan.",
+			"addedItem": "{{title}} ({{barcode}}) lisätty",
+			"duplicateItem": "{{title}} ({{barcode}}) on jo listalla",
+			"unknownItem": "Ei niteen viivakoodilla {{barcode}}",
+			"notItem": "Luettu koodi ei ole nide"
+		},
+		"printLabels": "Tulosta tarrat",
+		"markPrintedKind": "Tarrat tulostettu",
+		"markedItems": "{{count:plural; one:{{count}} nide merkittiin tulostetuksi; other:{{count}} nidettä merkittiin tulostetuiksi;}}",
+		"entriesItems": "{{count}} {{count:plural; one:nide; other:nidettä;}} listalla",
+		"emptyItems": "Lista on tyhjä: lisää niteitä pikasuodattimilla, skannerilla tai luettelosta.",
+		"clearDescriptionItems": "Jokainen merkintä poistetaan, niteet pysyvät luettelossa."
+	},
+	"basket": {
+		"label": "Tulostuslistat",
+		"labelToPrint": "Tulostuslistat: {{count}} tulostettavana",
+		"entry": "{{name}} ({{count}})",
+		"none": "Ei tulostettavia listoja",
+		"all": "Kaikki listat"
+	},
+	"addTo": {
+		"button": "Lisää listaan",
+		"selected": "Lisää valitut listaan",
+		"title": "Lisää tulostuslistaan",
+		"existing": "Olemassa oleva lista",
+		"create": "Uusi lista",
+		"newName": "Uuden listan nimi",
+		"confirm": "Lisää",
+		"done": "Listalle ”{{name}}” lisätty: {{added}}, jo listalla: {{skipped}}"
+	},
+	"labels": {
+		"title": "Tulosta tarrat",
+		"button": "Tulosta tarrat",
+		"selected": "Tulosta valittujen tarrat",
+		"kind": "Tarran tyyppi",
+		"kinds": {
+			"pair": "Pari",
+			"barcode": "Vain viivakoodi",
+			"spine": "Vain selkäkaista"
+		},
+		"kindHints": {
+			"pair": "Selkäkaista ylhäällä ja viivakoodin tarra alla, yksi pari per kirja (nykyinen tuloste).",
+			"barcode": "Vain sisäinen viivakoodin tarra, uusintatulostuksiin.",
+			"spine": "Vain selkäkaista, esimerkiksi uudelleenluokituksen jälkeen."
+		},
+		"stock": "Tarra-arkki",
+		"start": "Ensimmäinen vapaa paikka",
+		"startHint": "Välillä 1–{{max}}: ohittaa arkilla jo käytetyt tarrat.",
+		"count": "{{count}} {{count:plural; one:nide; other:nidettä;}}",
+		"unclassified": "{{count}} {{count:plural; one:kirjan nide; other:kirjan nidettä;}} luokiteltavana: tulostuu vain viivakoodin tarra, selkäkaista luokituksen jälkeen.",
+		"pendingCount": "{{count}} {{count:plural; one:nide; other:nidettä;}} tulostettavilla tarroilla",
+		"pages": "{{pages}} {{pages:plural; one:arkki; other:arkkia;}} ({{perPage}} per arkki)",
+		"print": "Avaa tulostussivu",
+		"afterPrint": "Tulostussivu avattiin uuteen välilehteen. Kun tarrat on tulostettu, merkitse ne tulostetuiksi.",
+		"markPrinted": "Merkitse tulostetuiksi",
+		"marked": "{{count:plural; one:{{count}} nide merkittiin tulostetuksi; other:{{count}} nidettä merkittiin tulostetuiksi;}}",
+		"status": {
+			"printed": "Tarrat tulostettu",
+			"pending": "Tarrat tulostettavana",
+			"partial": "Yksi tarra puuttuu"
+		}
+	},
+	"cards": {
+		"title": "Tulosta kortit",
+		"count": "{{count}} {{count:plural; one:kortti; other:korttia;}}",
+		"afterPrint": "Tulostussivu avattiin uuteen välilehteen. Kun kortit on tulostettu, merkitse ne tulostetuiksi.",
+		"layout": "Tulostustapa",
+		"layouts": {
+			"side-by-side": "Etu- ja takapuoli vierekkäin",
+			"duplex": "Arkin molemmille puolille"
+		},
+		"window": "Selaimen tulostusikkunassa:",
+		"steps": {
+			"duplex": {
+				"long-edge": "valitse ”Kaksipuolinen”, kääntäen pitkän reunan mukaan;",
+				"short-edge": "valitse ”Kaksipuolinen”, kääntäen lyhyen reunan mukaan;"
+			},
+			"scale": "mittakaava 100 % (”Todellinen koko”, ei ”Sovita sivulle”);",
+			"margins": "reunukset: ei yhtään.",
+			"after": {
+				"side-by-side": {
+					"marks": "Leikkaa sitten kukin kortti yhdistämällä viivoittimella korttien ympärillä olevat leikkausmerkit, ja taita se kahtia lyhyen reunan suuntaisesti.",
+					"line": "Leikkaa sitten kukin kortti kortin ympärillä olevaa värillistä viivaa pitkin, ja taita se kahtia lyhyen reunan suuntaisesti.",
+					"edge": "Leikkaa sitten kukin kortti sen reunaa pitkin, ja taita se kahtia lyhyen reunan suuntaisesti."
+				},
+				"duplex": {
+					"marks": "Leikkaa sitten kortit yhdistämällä viivoittimella etupuolten ympärillä olevat leikkausmerkit: takapuoli on jo etupuolen takana (kymmenen arkkia kohti).",
+					"line": "Leikkaa sitten kortit etupuolten ympärillä olevaa värillistä viivaa pitkin: takapuoli on jo etupuolen takana (kymmenen arkkia kohti).",
+					"edge": "Leikkaa sitten kortit etupuolten reunaa pitkin: takapuoli on jo etupuolen takana (kymmenen arkkia kohti)."
+				}
+			}
+		},
+		"print": "Tulosta",
+		"calibrate": "Ensimmäistä kertaa tai jos takapuolet eivät osu etupuolten taakse:"
+	},
+	"words": {
+		"teacher": "Opettaja",
+		"title": "Nimeke",
+		"code": "Koodi",
+		"dueBy": "Palautettava viimeistään",
+		"due": "Eräpäivä",
+		"name": "Nimi",
+		"daysOverdue": "Myöhästyneet päivät",
+		"loanOn": "Laina {{date}}, asiakas",
+		"overduesOn": "Kirjaston muistutukset {{date}}",
+		"toReturn": "Kirjat palautettavaksi kirjastolle",
+		"enjoy": "Hyvää lukemista"
+	}
+}

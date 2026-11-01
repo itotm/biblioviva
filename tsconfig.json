@@ -1,0 +1,21 @@
+{
+	"extends": "$app/tsconfig",
+	"compilerOptions": {
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+		"noFallthroughCasesInSwitch": true,
+		"types": ["$app/types", "bun"]
+	},
+	"include": [
+		"src",
+		"tests",
+		"scripts",
+		"docs/shots.ts",
+		"vite.config.ts",
+		"playwright.config.ts",
+		"playwright.shots.config.ts",
+		"drizzle.config.ts"
+	],
+	"exclude": ["src/lib/vision/vendor/**", "src/service-worker"]
+}

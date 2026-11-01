@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "利用者",
+		"new": "新規利用者",
+		"search": "姓で検索…",
+		"empty": "条件に一致する利用者はいません。",
+		"filters": {
+			"type": "種別",
+			"stage": "学校段階",
+			"level": "学年",
+			"status": "状態",
+			"all": "すべて",
+			"allF": "すべて"
+		},
+		"columns": {
+			"name": "姓と名",
+			"type": "種別",
+			"class": "学級",
+			"card": "カード"
+		},
+		"clearFilters": "条件をクリア",
+		"countFiltered": "{{shown:plural; other:条件に一致する利用者は{{shown}}人です;}}",
+		"printCards": "利用者カードを印刷",
+		"printClassCards": "{{classLabel}}の利用者カードを印刷",
+		"removeSelected": "選択したものを削除",
+		"removeTitle": "{{count}}{{count:plural; other:人の利用者を削除しますか？;}}",
+		"removeDescription": "1人ずつ、名と姓、連絡先、外部ID、メモ、カード番号、写真が直ちに永久に消去されます。種別、学級、組と貸出履歴は統計のために残ります。貸出中の人は削除されず残ります。",
+		"removed": "削除{{removed}}人、貸出中のため残した{{kept}}人",
+		"status": {
+			"title": "状態",
+			"loans": "貸出中{{count}}件",
+			"overdue": "延滞{{count}}件",
+			"noPhoto": "写真なし"
+		},
+		"startTitle": "利用者を探す",
+		"startHint": "名前、カード番号、または絞り込み条件で検索します。"
+	},
+	"types": {
+		"student": "児童生徒",
+		"teacher": "教員"
+	},
+	"fields": {
+		"patronType": "種別",
+		"firstName": "名",
+		"lastName": "姓",
+		"cardNumber": "カード番号",
+		"cardNumberHint": "空欄の場合は自動的に割り当てられます。",
+		"externalId": "学籍番号",
+		"email": "メール",
+		"emailHint": "学校が児童生徒または教員に割り当てたアドレス。お知らせに使われます。",
+		"circulationNote": "貸出カウンター用のメモ",
+		"circulationNoteHint": "貸出の際に目立つように表示されます。",
+		"notes": "内部メモ",
+		"status": "状態",
+		"openLoans": "貸出中",
+		"overdueLoans": "延滞",
+		"noCard": "カードなし",
+		"none": "—",
+		"levelCode": "学年",
+		"groupId": "組",
+		"classLabel": "学級",
+		"teacherGroup": "教員グループ"
+	},
+	"form": {
+		"createTitle": "新規利用者",
+		"editTitle": "利用者を編集",
+		"identity": "基本情報",
+		"school": "学級",
+		"contacts": "連絡先",
+		"notes": "メモ",
+		"create": "利用者を作成",
+		"save": "変更を保存",
+		"classSelect": "選択…",
+		"defaultTeacherGroup": "教員グループ"
+	},
+	"errors": {
+		"emailInvalid": "メールアドレスが無効です。",
+		"cardNumberInvalid": "カード番号が無効です。使えるのは数字、大文字のアルファベット、ハイフンだけで、正しいチェック文字が必要です。",
+		"cardNumberTaken": "このカード番号は、すでに別の利用者に割り当てられています。",
+		"cardNumberIsCopy": "カード番号が資料のバーコードと同じ、またはそれに似ています。別の番号を選んでください。",
+		"externalIdTaken": "この学籍番号は、すでに別の利用者に割り当てられています。",
+		"levelRequired": "児童生徒には学年（学級）が必要です。",
+		"levelUnknown": "学年が、この学校の学年の中にありません。",
+		"levelNotForTeachers": "教員には学年がありません。",
+		"groupRequired": "児童生徒には組が必要です。",
+		"groupUnknown": "有効な学級の中に組が見つかりません。学級は管理 → 設定 → 学級で作成します。",
+		"levelNotInGroup": "この組には、そのような学年がありません。その学年の組を選んでください。"
+	},
+	"detail": {
+		"heading": "利用者の記録",
+		"tabs": {
+			"loans": "貸出中",
+			"history": "履歴",
+			"cards": "カード",
+			"notes": "メモ"
+		},
+		"noLoans": "貸出中の資料はありません。",
+		"loanColumns": {
+			"due": "返却期限"
+		},
+		"overdue": "延滞",
+		"card": "カード {{number}}",
+		"noNotes": "メモはありません。",
+		"edit": "編集",
+		"created": "{{when}}に作成",
+		"barcodeAlt": "カード {{number}} のバーコード",
+		"cardPrinted": "カードを{{when}}に印刷しました。",
+		"cardNotPrinted": "カードはまだ印刷されていません。",
+		"reassignCard": "カードを割り当て直す",
+		"reassignTitle": "新しいカードを割り当てますか？",
+		"reassignDescription": "現在の番号は永久に廃止され、新しいカードを印刷する必要があります。",
+		"cardReassigned": "新しいカード：{{number}}",
+		"printCard": "カードを印刷",
+		"markCardPrinted": "印刷済みにする",
+		"cardMarkedPrinted": "カードを印刷済みにしました",
+		"historyColumns": {
+			"issuedAt": "貸出日",
+			"dueDate": "返却期限",
+			"returnedAt": "返却日",
+			"outcome": "結果",
+			"title": "書名",
+			"author": "著者",
+			"barcode": "資料",
+			"renewals": "延長回数",
+			"schoolYear": "年度"
+		},
+		"outcome": {
+			"open": "貸出中",
+			"overdue": "延滞",
+			"returned": "返却済み",
+			"returnedLate": "遅れて返却",
+			"lost": "紛失"
+		},
+		"historyEmpty": "記録された貸出はありません。",
+		"historyCount": "合計{{count}}{{count:plural; other:件;}}",
+		"notesEdit": "メモを編集",
+		"notesSaved": "メモを保存しました",
+		"notesUnchanged": "変更なし",
+		"notesHint": "貸出カウンター用のメモは、貸出の際に表示されます。その他のメモはここに残ります。",
+		"remove": "{{type}}を削除",
+		"removeTitle": "{{name}}を完全に削除しますか？",
+		"removeDescription": "直ちに永久に消去されます：名と姓、メール、学籍番号、メモ、カード番号（廃止）、写真。残るのは種別、学級、組と貸出履歴だけで、統計のためです。この操作は取り消せません。",
+		"removeOpenLoans": "貸出中の資料が{{count}}{{count:plural; other:件あります。先に返却するか、紛失として登録してください;}}。",
+		"removeClassSheets": "学級の画像（画像からの写真登録）で{{count}}{{count:plural; other:枚の写真に選ばれています。その枠は覆われます;}}。",
+		"removed": "利用者を削除しました：個人データは消去されました。",
+		"removedInfo": "{{when}}に削除されました。統計のためのデータだけが残っています。",
+		"lostTitle": "紛失した図書",
+		"lostHint": "この利用者が貸出中に紛失として登録されたもの。戻ってきたら、返却カウンターで読み取ってください。",
+		"markLost": "「{{title}}」を紛失として登録",
+		"markLostTitle": "「{{title}}」を紛失として登録しますか？",
+		"markLostDescription": "貸出は終了し、資料は紛失と表示されます。図書が見つかったら、返却カウンターで登録すれば、再び利用できます。",
+		"markLostReason": "理由（任意）",
+		"markLostConfirm": "紛失として登録",
+		"markedLost": "「{{title}}」を紛失として登録しました。"
+	},
+	"photo": {
+		"title": "写真",
+		"take": "写真を撮る",
+		"upload": "ファイルをアップロード",
+		"retake": "撮り直す",
+		"use": "この写真を使う",
+		"cancel": "キャンセル",
+		"delete": "写真を削除",
+		"deleteTitle": "写真を削除しますか？",
+		"deleteDescription": "写真はサーバーから削除されます。新しい写真を撮ることができます。",
+		"zoom": "拡大",
+		"dragHint": "ドラッグして枠に収め、拡大で寄せてください。",
+		"saved": "写真を保存しました",
+		"deleted": "写真を削除しました",
+		"placeholder": "写真なし",
+		"alt": "{{name}}の写真",
+		"errors": {
+			"too_large": "ファイルが大きすぎます。上限は {{maxMb}} MB です。",
+			"not_an_image": "このファイルは読み取れる画像ではありません。",
+			"unsupported_format": "対応していない画像形式です（JPEG、PNG、WebP、HEIC を使ってください）。",
+			"empty": "ファイルが選択されていません。"
+		},
+		"withForm": "利用者と一緒に保存されます。",
+		"requiredHint": "写真が必要です。今撮るか、後で利用者のページから撮ってください。",
+		"optionalHint": "写真は今撮るか、後で利用者のページから撮ることができます。",
+		"remove": "外す",
+		"notSaved": "写真は保存されていません。利用者のページから撮り直してください。",
+		"retakePhoto": "写真を撮り直す"
+	},
+	"census": {
+		"title": "写真登録",
+		"noGroup": "学級なし",
+		"stageOthers": "学校段階なし",
+		"progress": "{{total}}人中{{done}}人に写真あり",
+		"allDone": "全員に写真があります。",
+		"back": "学級またはリストを変更",
+		"skip": "スキップ",
+		"done": "完了",
+		"saved": "写真を保存しました：{{name}}",
+		"quickAdd": "新規利用者",
+		"quickAddHint": "{{group}}に追加されます。その人の写真は次です。",
+		"create": "追加して撮影",
+		"findPerson": "姓で探す",
+		"pickTarget": "リストまたは学級を選んでください",
+		"listsTitle": "利用者リスト",
+		"classesTitle": "学級",
+		"nothingMissing": "すべての学級とリストに写真があります。",
+		"onlyMissing": "写真が1枚でも欠けている学級とリストだけを表示しています。",
+		"byCamera": "1人ずつ撮影",
+		"sheets": {
+			"title": "複数の写真が写った画像から",
+			"hint": "複数の写真が入った画像（写真館の台紙、机の上のカード、証明写真のシート）から、写真を自動で見つけ、利用者それぞれに割り当てます。",
+			"upload": "画像をアップロード",
+			"take": "シートを撮影",
+			"uploading": "画像を送信しています…",
+			"empty": "この学級またはリストの画像はありません。",
+			"item": "{{date}}の画像",
+			"counts": "{{frames}}{{frames:plural; other:枚の写真を検出;}} · 保存済み{{saved}}枚 · 未処理{{pending}}枚",
+			"notDetected": "未処理",
+			"demoScan": "スキャナーからのサンプル",
+			"demoPhoto": "写真からのサンプル",
+			"demoHint": "学級の写真を得る2つの方法：スキャンは平らで、写真は長方形か、わずかに回転しているだけです。写真は斜めから撮ると、遠近で枠が歪みます。"
+		},
+		"sheet": {
+			"title": "画像からの写真",
+			"back": "学級に戻る",
+			"detecting": "画像の中の写真を探しています…",
+			"found": "見つかった写真：{{count}}。それぞれ誰の写真かを選んでください。",
+			"none": "写真が見つかりませんでした。「枠を修正」で手描きできます。",
+			"pictureAlt": "アップロードした画像。写真の枠に番号が付いています",
+			"frame": "写真 {{n}}",
+			"choose": "誰ですか？",
+			"nobody": "— 誰もいない —",
+			"takenBy": "{{name}}（すでに写真 {{n}} に）",
+			"hasPhoto": "すでに写真があります",
+			"noPhoto": "写真なし",
+			"ignore": "無視",
+			"unignore": "元に戻す",
+			"ignored": "無視しました：この学級またはリストの誰でもありません。",
+			"saved": "{{name}}の写真として保存しました",
+			"edit": "枠を修正",
+			"editDone": "修正を終える",
+			"editHint": "枠をタップして角をドラッグします。写真がない場合は「枠を追加」を使ってください。",
+			"editHintScan": "枠をタップしてください。角をドラッグすると大きくも小さくもなり、上の円で回転します。写真がない場合は「枠を追加」を使ってください。",
+			"addFrame": "枠を追加",
+			"addFrameHint": "写真がない部分の、一方の角から反対の角まで、画像上をドラッグしてください。",
+			"deleteFrame": "枠 {{n}} を削除",
+			"rotateFrame": "枠を回転",
+			"kind": "画像の種類",
+			"kindPhoto": "写真",
+			"kindScan": "スキャン",
+			"kindPhotoHint": "斜めから撮影されている場合。枠の角はそれぞれ単独で動き、遠近に合わせます。",
+			"kindScanHint": "スキャナーで作成された場合。枠は長方形のままで、回転だけできます。",
+			"kindAgain": "利用者が選ばれるまでは、種類を変えると写真を再び探します。",
+			"save": "写真を保存",
+			"saveTitle": "選んだ写真を保存しますか？",
+			"saveSummary": "保存する写真：{{count}}枚。",
+			"saveReplaces": "すでにある写真を置き換えます：{{names}}。",
+			"saveUnassigned": "誰も選ばれていない枠：{{count}}（そのまま残ります）。",
+			"savedToast": "写真を保存しました：{{count}}枚。",
+			"deleteSheet": "画像を削除",
+			"deleteSheetTitle": "画像を削除しますか？",
+			"deleteSheetDescription": "画像とその枠は削除されます。保存済みの写真は利用者に残ります。",
+			"deletedToast": "画像を削除しました。",
+			"progress": "{{label}}：{{total}}人中{{done}}人に写真あり",
+			"missingTitle": "まだ写真がない人",
+			"byCamera": "1人ずつ撮影",
+			"errors": {
+				"not_found": "画像が見つかりません。",
+				"set_not_found": "学級またはリストが存在しなくなりました。",
+				"empty": "ファイルが空です。",
+				"too_large": "画像が大きすぎます（最大 {{maxMb}} MB）。",
+				"not_an_image": "このファイルは読み取れる画像ではありません。",
+				"unsupported_format": "対応していない形式です。JPEG、PNG、WebP、HEIC を使ってください。",
+				"too_many_frames": "画像ごとの写真は最大{{maxFrames}}{{maxFrames:plural; other:枚まで;}}です。",
+				"bad_corners": "枠が無効です。角は画像の中の四角形を作らなければなりません。",
+				"already_detected": "この画像の写真は、すでに探されています。",
+				"frame_saved": "この写真はすでに保存されています。",
+				"frame_erased": "この写真は削除された利用者のものです。枠は覆われました。",
+				"not_a_member": "選べるのは、学級またはリストの利用者だけです。",
+				"patron_taken": "写真 {{position}} にすでに選ばれています。ここで選ぶ前に、そちらを外してください。",
+				"confirm_replace": "{{count}}{{count:plural; other:枚の写真が既存の写真を置き換えます。続けるには確認してください。;}}",
+				"nothing_to_save": "保存する前に、利用者を少なくとも1人選んでください。"
+			},
+			"erased": "利用者が削除されました：画像の中の枠は覆われました。"
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "CSV ファイル",
+			"submit": "アップロード",
+			"hints": {
+				"students": "1行に児童生徒1人の CSV ファイル。区切りは ; または ,（表計算ソフトからの書き出しでも可）。下からダウンロードできる、必要な列を含むテンプレートの見出しを使ってください。",
+				"teachers": "1行に教員1人の CSV ファイル。区切りは ; または ,。下からダウンロードできる、必要な列を含むテンプレートの見出しを使ってください。"
+			}
+		},
+		"mapping": {
+			"format": "認識した形式",
+			"uncertain": "形式が確実ではありません。続ける前に列を確認してください。",
+			"remembered": "このファイルの前回のインポートで覚えた列です。",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "ファイルの見出し",
+				"unknown": "不明"
+			},
+			"mode": "モード",
+			"modes": {
+				"upsert": "追加と更新",
+				"upsertHint": "一致する行は既存の利用者を更新し、ほかの行は新しい利用者を作成します。",
+				"sync": {
+					"students": "児童生徒を同期",
+					"teachers": "教員を同期"
+				},
+				"syncHint": {
+					"students": "ファイルは児童生徒の完全な一覧です。含まれていない人は一覧に出て、確認の後に削除されます。教員は変更されません。",
+					"teachers": "ファイルは教員の完全な一覧です。含まれていない人は一覧に出て、確認の後に削除されます。児童生徒は変更されません。"
+				}
+			},
+			"duplicates": "すでにある利用者",
+			"policies": {
+				"update": "更新",
+				"skip": "スキップ",
+				"create": "それでも作成"
+			},
+			"validate": "ファイルを検証",
+			"matchByName": {
+				"students": "external_id の列がない場合、すでに登録されている児童生徒は、名前と学級で認識されます。",
+				"teachers": "external_id の列がない場合、すでに登録されている教員は、名前で認識されます。"
+			}
+		},
+		"preview": {
+			"ready": "エラーはありません。ファイルをインポートできます。",
+			"blocked": "ファイル（または利用者）のエラーを直して、もう一度検証してください。エラーがあるものはインポートされません。",
+			"columns": {
+				"name": "名前",
+				"class": "学級"
+			},
+			"changed": "変更：{{fields}}",
+			"homonym": {
+				"pick": "利用者を選ぶ",
+				"create": "新しい利用者を作成",
+				"candidate": "{{name}}（{{group}}）",
+				"title": "解決する同姓同名"
+			},
+			"missing": {
+				"students": {
+					"title": "登録されているが、ファイルにない児童生徒（{{count}}人）",
+					"remove": "これらの児童生徒を登録から削除（直ちに匿名化）",
+					"noPermission": "利用者を削除する権限がない場合、ファイルにない児童生徒は登録に残ります。",
+					"notRemoved": "ファイルにない児童生徒{{count}}{{count:plural; other:人は、貸出中の資料があるため削除されません。;}}"
+				},
+				"teachers": {
+					"title": "登録されているが、ファイルにない教員（{{count}}人）",
+					"remove": "これらの教員を登録から削除（直ちに匿名化）",
+					"noPermission": "利用者を削除する権限がない場合、ファイルにない教員は登録に残ります。",
+					"notRemoved": "ファイルにない教員{{count}}{{count:plural; other:人は、貸出中の資料があるため削除されません。;}}"
+				},
+				"hint": "同期を行うと、ファイルにない人を削除できます。個人データは直ちに永久に消去され、学級と統計だけが残ります。"
+			},
+			"commit": "インポート",
+			"back": "列の設定に戻る",
+			"generatedCards": "新しいカード{{count}}{{count:plural; other:枚が生成されます。ファイルに番号がないためです。;}}"
+		},
+		"reasons": {
+			"tooLong": "列 {{column}} のテキストが長すぎます：最大 {{max}}{{max:plural; other:文字;}}",
+			"nameRequired": "名または姓がありません",
+			"emailInvalid": "メールが無効です",
+			"cardNumberInvalid": "カード番号が無効です",
+			"cardNumberTaken": "カード番号はすでに別の利用者に割り当てられています",
+			"cardNumberIsCopy": "カード番号が資料のバーコードと同じ、またはそれに似ています",
+			"externalIdTaken": "学籍番号はすでに別の利用者に割り当てられています",
+			"duplicateInFile": "同じ人物が、すでに {{line}} 行目にあります",
+			"homonym": "{{count}}{{count:plural; other:人の同姓同名がアーカイブにあります。更新する人を選んでください。;}}",
+			"matchedTwice": "別の行がすでに同じ利用者を更新しています",
+			"skipped": "すでに存在：スキップ",
+			"levelRequired": "学年がありません",
+			"levelUnknown": "「{{value}}」は学校の学年ではありません",
+			"groupRequired": "組がありません",
+			"groupUnknown": "この学年で「{{value}}」という組が見つかりません。有効な学級：{{classes}}（学級は管理 → 設定 → 学級で作成します）",
+			"levelNotInGroup": "組「{{value}}」にはこの学年がありません。有効な学級：{{classes}}",
+			"classUnknown": "学級「{{value}}」が見つかりません。有効な学級：{{classes}}",
+			"teacherGroupUnknown": "教員グループ「{{value}}」が見つかりません。有効なグループ：{{classes}}"
+		},
+		"done": {
+			"title": "インポートが完了しました",
+			"summary": "新規{{created}}人、更新{{updated}}人、変更なし{{unchanged}}人、削除{{removed}}人。",
+			"printNew": "新しい利用者のカードを印刷",
+			"census": "写真登録",
+			"again": "別のファイルをインポート",
+			"batch": "インポート番号 {{id}}：元のファイルはサーバーに保存されています。"
+		},
+		"fields": {
+			"firstName": "名",
+			"lastName": "姓",
+			"class": "学級（学年と組）",
+			"level": "学級（学年）",
+			"section": "組",
+			"group": "教員グループ",
+			"externalId": "外部ID",
+			"cardNumber": "カード",
+			"email": "メール"
+		},
+		"titles": {
+			"students": "児童生徒をインポート",
+			"teachers": "教員をインポート"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "名。"
+			},
+			"lastName": {
+				"hint": "姓。"
+			},
+			"class": {
+				"hint": "学級を1列で、3A または 3 A のように書きます。管理 → 設定 → 学級に存在している必要があります。"
+			},
+			"level": {
+				"hint": "学年（1、2、3…）。組は section の列に書きます。"
+			},
+			"section": {
+				"hint": "組（A、B…）。level と合わせて学級を指定します。"
+			},
+			"cardNumber": {
+				"hint": "カード番号。児童生徒がすでにカードを持っている場合。",
+				"missing": "新しいカードが生成されます"
+			},
+			"externalId": {
+				"hint": "電子名簿のコード。",
+				"missing": "すでにいる利用者は、名前と学級で認識されます"
+			},
+			"email": {
+				"hint": "任意。"
+			},
+			"group": {
+				"hint": "教員グループ。ない場合は既定のグループ。"
+			}
+		},
+		"classForm": {
+			"label": "学級",
+			"class": "1列で（class: 3A）",
+			"levelSection": "2列で（level: 3、section: A）"
+		}
+	}
+}

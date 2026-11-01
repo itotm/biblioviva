@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Cititori",
+		"new": "Cititor nou",
+		"search": "Căutați după nume de familie…",
+		"empty": "Niciun cititor nu corespunde filtrelor.",
+		"filters": {
+			"type": "Tip",
+			"stage": "Ciclu",
+			"level": "An",
+			"status": "Stare",
+			"all": "Toți",
+			"allF": "Toate"
+		},
+		"columns": {
+			"name": "Nume și prenume",
+			"type": "Tip",
+			"class": "Clasa",
+			"card": "Legitimație"
+		},
+		"clearFilters": "Resetați filtrele",
+		"countFiltered": "{{shown:plural; one:{{shown}} cititor corespunde; few:{{shown}} cititori corespund; other:{{shown}} de cititori corespund;}} filtrelor",
+		"printCards": "Tipăriți legitimațiile",
+		"printClassCards": "Tipăriți legitimațiile {{classLabel}}",
+		"removeSelected": "Eliminați cei selectați",
+		"removeTitle": "Eliminați {{count}} {{count:plural; one:cititor; few:cititori; other:de cititori;}}?",
+		"removeDescription": "Pentru fiecare, prenumele și numele, contactele, codul extern, notele, numărul legitimației și fotografia se șterg imediat și definitiv; tipul, clasa, secțiunea și istoricul împrumuturilor rămân pentru statistici. Cei cu împrumuturi în curs sunt păstrați.",
+		"removed": "{{removed}} {{removed:plural; one:eliminat; few:eliminați; other:eliminați;}}, {{kept}} cu împrumuturi în curs în arhivă",
+		"status": {
+			"title": "Stare",
+			"loans": "{{count}} cu împrumuturi în curs",
+			"overdue": "{{count}} în întârziere",
+			"noPhoto": "fără fotografie"
+		},
+		"startTitle": "Căutați un cititor",
+		"startHint": "Căutați după nume, legitimație sau cu ajutorul filtrelor."
+	},
+	"types": {
+		"student": "Elev",
+		"teacher": "Profesor"
+	},
+	"fields": {
+		"patronType": "Tip",
+		"firstName": "Prenume",
+		"lastName": "Nume de familie",
+		"cardNumber": "Numărul legitimației",
+		"cardNumberHint": "Gol: se atribuie automat.",
+		"externalId": "Cod extern",
+		"email": "Email",
+		"emailHint": "Adresa pe care școala o atribuie elevului sau profesorului: va primi notificările.",
+		"circulationNote": "Notă pentru ghișeul de împrumut",
+		"circulationNoteHint": "Apare evident la împrumut.",
+		"notes": "Note interne",
+		"status": "Stare",
+		"openLoans": "Împrumuturi în curs",
+		"overdueLoans": "În întârziere",
+		"noCard": "fără legitimație",
+		"none": "—",
+		"levelCode": "An",
+		"groupId": "Secțiune",
+		"classLabel": "Clasa",
+		"teacherGroup": "Grup de profesori"
+	},
+	"form": {
+		"createTitle": "Cititor nou",
+		"editTitle": "Modificare cititor",
+		"identity": "Date personale",
+		"school": "Clasa",
+		"contacts": "Contacte",
+		"notes": "Note",
+		"create": "Creați cititorul",
+		"save": "Salvați modificările",
+		"classSelect": "Alegeți…",
+		"defaultTeacherGroup": "Grupul profesorilor"
+	},
+	"errors": {
+		"emailInvalid": "Adresă de email nevalidă.",
+		"cardNumberInvalid": "Număr de legitimație nevalid: doar cifre, litere mari și cratimă, cu caracterul de control corect.",
+		"cardNumberTaken": "Numărul legitimației este deja atribuit altui cititor.",
+		"cardNumberIsCopy": "Numărul legitimației este sau seamănă cu codul de bare al unui exemplar: alegeți alt număr.",
+		"externalIdTaken": "Codul extern este deja atribuit altui cititor.",
+		"levelRequired": "Pentru un elev, anul (nivelul) este obligatoriu.",
+		"levelUnknown": "Anul nu este printre nivelurile școlii.",
+		"levelNotForTeachers": "Un profesor nu are clasă.",
+		"groupRequired": "Pentru un elev, secțiunea este obligatorie.",
+		"groupUnknown": "Secțiunea nu a fost găsită printre clasele active: clasele se creează în Administrare → Configurare → Clase.",
+		"levelNotInGroup": "Această secțiune nu are clasa respectivă: alegeți o secțiune a clasei."
+	},
+	"detail": {
+		"heading": "Fișa cititorului",
+		"tabs": {
+			"loans": "Împrumuturi în curs",
+			"history": "Istoric",
+			"cards": "Legitimație",
+			"notes": "Note"
+		},
+		"noLoans": "Niciun împrumut în curs.",
+		"loanColumns": {
+			"due": "Termen"
+		},
+		"overdue": "în întârziere",
+		"card": "Legitimația {{number}}",
+		"noNotes": "Nicio notă.",
+		"edit": "Modificați",
+		"created": "Creat la {{when}}",
+		"barcodeAlt": "Codul de bare al legitimației {{number}}",
+		"cardPrinted": "Legitimație tipărită la {{when}}.",
+		"cardNotPrinted": "Legitimația nu a fost încă tipărită.",
+		"reassignCard": "Reatribuiți legitimația",
+		"reassignTitle": "Atribuiți o legitimație nouă?",
+		"reassignDescription": "Numărul actual se retrage definitiv, iar legitimația nouă va trebui tipărită.",
+		"cardReassigned": "Legitimație nouă: {{number}}",
+		"printCard": "Tipăriți legitimația",
+		"markCardPrinted": "Marcați ca tipărită",
+		"cardMarkedPrinted": "Legitimație marcată ca tipărită",
+		"historyColumns": {
+			"issuedAt": "Împrumutat la",
+			"dueDate": "Termen",
+			"returnedAt": "Restituit la",
+			"outcome": "Rezultat",
+			"title": "Titlu",
+			"author": "Autor",
+			"barcode": "Exemplar",
+			"renewals": "Prelungiri",
+			"schoolYear": "An școlar"
+		},
+		"outcome": {
+			"open": "În curs",
+			"overdue": "În întârziere",
+			"returned": "Restituit",
+			"returnedLate": "Restituit cu întârziere",
+			"lost": "Pierdut"
+		},
+		"historyEmpty": "Niciun împrumut înregistrat.",
+		"historyCount": "{{count}} {{count:plural; one:împrumut; few:împrumuturi; other:de împrumuturi;}} în total",
+		"notesEdit": "Modificați notele",
+		"notesSaved": "Note salvate",
+		"notesUnchanged": "Nicio modificare",
+		"notesHint": "Nota pentru ghișeul de împrumut apare evident la fiecare împrumut; celelalte note rămân aici.",
+		"remove": "Eliminați {{type}}",
+		"removeTitle": "Eliminați definitiv {{name}}?",
+		"removeDescription": "Se șterg imediat și definitiv: prenumele și numele, emailul, codul extern, notele, numărul legitimației (retras) și fotografia. Rămân doar tipul, clasa, secțiunea și istoricul împrumuturilor, pentru statistici. Operațiunea nu poate fi anulată.",
+		"removeOpenLoans": "Are {{count}} {{count:plural; one:împrumut în curs, care trebuie întâi restituit sau marcat pierdut; few:împrumuturi în curs, care trebuie întâi restituite sau marcate pierdute; other:de împrumuturi în curs, care trebuie întâi restituite sau marcate pierdute;}}.",
+		"removeClassSheets": "Cititorul a fost ales pentru {{count}} {{count:plural; one:fotografie; few:fotografii; other:de fotografii;}} din imaginile claselor (recensământ dintr-o imagine): {{count:plural; one:acel cadru este acoperit; few:acele cadre sunt acoperite; other:acele cadre sunt acoperite;}}.",
+		"removed": "Cititor eliminat: datele personale au fost șterse.",
+		"removedInfo": "Eliminat la {{when}}. Rămân doar datele pentru statistici.",
+		"lostTitle": "Cărți pierdute",
+		"lostHint": "Marcate pierdute cât timp erau împrumutate acestui cititor. Dacă revin, scanați-le la restituire.",
+		"markLost": "Marcați „{{title}}” ca pierdută",
+		"markLostTitle": "Marcați „{{title}}” ca pierdută?",
+		"markLostDescription": "Împrumutul se închide, iar exemplarul apare ca pierdut. Dacă cartea reapare, se înregistrează restituirea și devine din nou disponibilă.",
+		"markLostReason": "Motiv (facultativ)",
+		"markLostConfirm": "Marcați ca pierdută",
+		"markedLost": "„{{title}}” marcată ca pierdută."
+	},
+	"photo": {
+		"title": "Fotografie",
+		"take": "Faceți fotografia",
+		"upload": "Încărcați fișierul",
+		"retake": "Refaceți",
+		"use": "Folosiți această fotografie",
+		"cancel": "Anulați",
+		"delete": "Ștergeți fotografia",
+		"deleteTitle": "Ștergeți fotografia?",
+		"deleteDescription": "Fotografia este eliminată de pe server; se poate face una nouă.",
+		"zoom": "Zoom",
+		"dragHint": "Trageți pentru a încadra, folosiți zoomul pentru a apropia.",
+		"saved": "Fotografie salvată",
+		"deleted": "Fotografie ștearsă",
+		"placeholder": "Nicio fotografie",
+		"alt": "Fotografia lui {{name}}",
+		"errors": {
+			"too_large": "Fișier prea mare: limita este de {{maxMb}} MB.",
+			"not_an_image": "Fișierul nu este o imagine care poate fi citită.",
+			"unsupported_format": "Format de imagine neacceptat (folosiți JPEG, PNG, WebP sau HEIC).",
+			"empty": "Niciun fișier selectat."
+		},
+		"withForm": "Se salvează împreună cu cititorul.",
+		"requiredHint": "Fotografia este necesară: o puteți face acum sau mai târziu din fișa cititorului.",
+		"optionalHint": "Fotografia se poate face acum sau mai târziu din fișa cititorului.",
+		"remove": "Scoateți",
+		"notSaved": "Fotografia nu a fost salvată: faceți-o din nou din fișa cititorului.",
+		"retakePhoto": "Refaceți fotografia"
+	},
+	"census": {
+		"title": "Recensământ foto",
+		"noGroup": "Fără clasă",
+		"stageOthers": "Fără ciclu",
+		"progress": "{{done}} din {{total}} cu fotografie",
+		"allDone": "Toți au fotografia.",
+		"back": "Schimbați clasa sau lista",
+		"skip": "Treceți peste",
+		"done": "Gata",
+		"saved": "Fotografie salvată: {{name}}",
+		"quickAdd": "Cititor nou",
+		"quickAddHint": "Este adăugat la {{group}}, iar fotografia lui urmează.",
+		"create": "Adăugați și fotografiați",
+		"findPerson": "Căutați după nume de familie",
+		"pickTarget": "Alegeți o listă sau o clasă",
+		"listsTitle": "Liste de cititori",
+		"classesTitle": "Clase",
+		"nothingMissing": "Toate clasele și listele au fotografiile.",
+		"onlyMissing": "Se arată doar clasele și listele în care lipsește cel puțin o fotografie.",
+		"byCamera": "Câte o persoană pe rând",
+		"sheets": {
+			"title": "Dintr-o imagine cu mai multe fotografii",
+			"hint": "Imagini cu mai multe fotografii (tabloul fotografului, legitimații pe o masă, o pagină de fotografii de identitate): fotografiile se detectează automat și se atribuie fiecărui cititor.",
+			"upload": "Încărcați imaginea",
+			"take": "Fotografiați foaia",
+			"uploading": "Se trimite imaginea…",
+			"empty": "Nicio imagine pentru această clasă sau listă.",
+			"item": "Imagine din {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:fotografie găsită; few:fotografii găsite; other:de fotografii găsite;}} · {{saved}} {{saved:plural; one:salvată; few:salvate; other:salvate;}} · {{pending}} de făcut",
+			"notDetected": "Nu a fost încă procesată",
+			"demoScan": "Exemplu de la scaner",
+			"demoPhoto": "Exemplu dintr-o fotografie",
+			"demoHint": "Două moduri de a avea fotografiile clasei: scanarea este plată, fotografiile sunt dreptunghiuri cel mult rotite; fotografia se face din unghi, iar perspectiva deformează cadrele."
+		},
+		"sheet": {
+			"title": "Fotografii dintr-o imagine",
+			"back": "Înapoi la clasă",
+			"detecting": "Se caută fotografiile în imagine…",
+			"found": "Fotografii găsite: {{count}}. Alegeți cui aparține fiecare.",
+			"none": "Nicio fotografie găsită. Cu „Corectați cadrele” pot fi desenate de mână.",
+			"pictureAlt": "Imaginea încărcată, cu cadrele fotografiilor numerotate",
+			"frame": "Fotografia {{n}}",
+			"choose": "Cine este?",
+			"nobody": "— Nimeni —",
+			"takenBy": "{{name}} (deja în fotografia {{n}})",
+			"hasPhoto": "are deja o fotografie",
+			"noPhoto": "fără fotografie",
+			"ignore": "Ignorați",
+			"unignore": "Restabiliți",
+			"ignored": "Ignorată: nu este nimeni din această clasă sau listă.",
+			"saved": "Salvată ca fotografia lui {{name}}",
+			"edit": "Corectați cadrele",
+			"editDone": "Gata cu corecțiile",
+			"editHint": "Atingeți un cadru și trageți colțurile; pentru o fotografie lipsă folosiți „Adăugați cadru”.",
+			"editHintScan": "Atingeți un cadru: trageți un colț pentru a-l mări sau micșora, cercul de deasupra pentru a-l roti; pentru o fotografie lipsă folosiți „Adăugați cadru”.",
+			"addFrame": "Adăugați cadru",
+			"addFrameHint": "Trageți pe imagine de la un colț la celălalt al fotografiei lipsă.",
+			"deleteFrame": "Ștergeți cadrul {{n}}",
+			"rotateFrame": "Rotiți cadrul",
+			"kind": "Tipul imaginii",
+			"kindPhoto": "Fotografie",
+			"kindScan": "Scanare",
+			"kindPhotoHint": "Făcută din unghi: fiecare colț al unui cadru se mișcă singur, pentru a urma perspectiva.",
+			"kindScanHint": "Făcută cu scanerul: cadrele rămân dreptunghiuri și pot fi doar rotite.",
+			"kindAgain": "Până nu este ales niciun cititor, schimbând tipul fotografiile sunt căutate din nou.",
+			"save": "Salvați fotografiile",
+			"saveTitle": "Salvați fotografiile alese?",
+			"saveSummary": "Fotografii de salvat: {{count}}.",
+			"saveReplaces": "Înlocuiesc fotografia existentă a: {{names}}.",
+			"saveUnassigned": "Cadre fără nimeni ales: {{count}} (rămân cum sunt).",
+			"savedToast": "Fotografii salvate: {{count}}.",
+			"deleteSheet": "Ștergeți imaginea",
+			"deleteSheetTitle": "Ștergeți imaginea?",
+			"deleteSheetDescription": "Imaginea și cadrele ei se șterg. Fotografiile deja salvate rămân cititorilor.",
+			"deletedToast": "Imagine ștearsă.",
+			"progress": "{{label}}: {{done}} din {{total}} cu fotografie",
+			"missingTitle": "Încă fără fotografie",
+			"byCamera": "Fotografiați-i unul câte unul",
+			"errors": {
+				"not_found": "Imaginea nu a fost găsită.",
+				"set_not_found": "Clasa sau lista nu mai există.",
+				"empty": "Fișierul este gol.",
+				"too_large": "Imaginea este prea mare (cel mult {{maxMb}} MB).",
+				"not_an_image": "Fișierul nu este o imagine care poate fi citită.",
+				"unsupported_format": "Format neacceptat: folosiți JPEG, PNG, WebP sau HEIC.",
+				"too_many_frames": "Cel mult {{maxFrames}} {{maxFrames:plural; one:fotografie; few:fotografii; other:de fotografii;}} pe imagine.",
+				"bad_corners": "Cadrul nu este valid: colțurile trebuie să formeze un patrulater în interiorul imaginii.",
+				"already_detected": "Fotografiile acestei imagini au fost deja căutate.",
+				"frame_saved": "Această fotografie a fost deja salvată.",
+				"frame_erased": "Această fotografie aparținea unui cititor eliminat: cadrul a fost acoperit.",
+				"not_a_member": "Pot fi alese doar persoanele din clasa sau lista respectivă.",
+				"patron_taken": "Cititorul este deja ales pentru fotografia {{position}}: eliberați-l înainte de a-l alege aici.",
+				"confirm_replace": "{{count:plural; one:{{count}} fotografie înlocuiește una existentă; few:{{count}} fotografii înlocuiesc unele existente; other:{{count}} de fotografii înlocuiesc unele existente;}}: confirmați pentru a continua.",
+				"nothing_to_save": "Alegeți cel puțin un cititor înainte de a salva."
+			},
+			"erased": "Cititor eliminat: cadrul a fost acoperit în imagine."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "Fișier CSV",
+			"submit": "Încărcați",
+			"hints": {
+				"students": "Un fișier CSV cu câte un rând pentru fiecare elev, separat prin ; sau , (merge și un export dintr-o foaie de calcul). Folosiți antetele modelului, care se descarcă mai jos, cu coloanele necesare.",
+				"teachers": "Un fișier CSV cu câte un rând pentru fiecare profesor, separat prin ; sau ,. Folosiți antetele modelului, care se descarcă mai jos, cu coloanele necesare."
+			}
+		},
+		"mapping": {
+			"format": "Format recunoscut",
+			"uncertain": "Formatul nu este sigur: verificați coloanele înainte de a continua.",
+			"remembered": "Coloane reținute de la ultimul import al acestui fișier.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "antetul fișierului",
+				"unknown": "necunoscut"
+			},
+			"mode": "Mod",
+			"modes": {
+				"upsert": "Adăugați și actualizați",
+				"upsertHint": "Rândurile găsite actualizează cititorul existent, celelalte creează cititori noi.",
+				"sync": {
+					"students": "Sincronizați elevii",
+					"teachers": "Sincronizați profesorii"
+				},
+				"syncHint": {
+					"students": "Fișierul este lista completă a elevilor: cine lipsește este listat (și eliminat, după confirmare). Profesorii nu sunt atinși.",
+					"teachers": "Fișierul este lista completă a profesorilor: cine lipsește este listat (și eliminat, după confirmare). Elevii nu sunt atinși."
+				}
+			},
+			"duplicates": "Cititori deja prezenți",
+			"policies": {
+				"update": "Actualizați",
+				"skip": "Treceți peste",
+				"create": "Creați oricum"
+			},
+			"validate": "Verificați fișierul",
+			"matchByName": {
+				"students": "Fără coloana external_id, elevii deja în arhivă se recunosc după nume și clasă.",
+				"teachers": "Fără coloana external_id, profesorii deja în arhivă se recunosc după nume."
+			}
+		},
+		"preview": {
+			"ready": "Nicio eroare: fișierul poate fi importat.",
+			"blocked": "Corectați erorile din fișier (sau din cititori) și verificați din nou: nimic nu se importă cu erori.",
+			"columns": {
+				"name": "Nume",
+				"class": "Clasa"
+			},
+			"changed": "Modificări: {{fields}}",
+			"homonym": {
+				"pick": "Alegeți cititorul",
+				"create": "Creați un cititor nou",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Omonimi de rezolvat"
+			},
+			"missing": {
+				"students": {
+					"title": "Elevi în arhivă, dar lipsă din fișier ({{count}})",
+					"remove": "Eliminați acești elevi din arhivă (anonimizare imediată)",
+					"noPermission": "Fără permisiunea de a elimina cititori, elevii lipsă rămân în arhivă.",
+					"notRemoved": "{{count}} {{count:plural; one:elev lipsă neeliminat, pentru că are; few:elevi lipsă neeliminați, pentru că au; other:de elevi lipsă neeliminați, pentru că au;}} împrumuturi în curs."
+				},
+				"teachers": {
+					"title": "Profesori în arhivă, dar lipsă din fișier ({{count}})",
+					"remove": "Eliminați acești profesori din arhivă (anonimizare imediată)",
+					"noPermission": "Fără permisiunea de a elimina cititori, profesorii lipsă rămân în arhivă.",
+					"notRemoved": "{{count}} {{count:plural; one:profesor lipsă neeliminat, pentru că are; few:profesori lipsă neeliminați, pentru că au; other:de profesori lipsă neeliminați, pentru că au;}} împrumuturi în curs."
+				},
+				"hint": "Cu sincronizarea, cine nu este în fișier poate fi eliminat: datele personale se șterg imediat și definitiv, iar clasa și statisticile rămân."
+			},
+			"commit": "Importați",
+			"back": "Înapoi la coloane",
+			"generatedCards": "{{count}} {{count:plural; one:legitimație nouă va fi generată; few:legitimații noi vor fi generate; other:de legitimații noi vor fi generate;}}: fișierul nu are numărul."
+		},
+		"reasons": {
+			"tooLong": "Text prea lung în coloana {{column}}: cel mult {{max}} {{max:plural; one:caracter; few:caractere; other:de caractere;}}",
+			"nameRequired": "Lipsește prenumele sau numele",
+			"emailInvalid": "Email nevalid",
+			"cardNumberInvalid": "Număr de legitimație nevalid",
+			"cardNumberTaken": "Numărul legitimației este deja atribuit altui cititor",
+			"cardNumberIsCopy": "Numărul legitimației este egal sau asemănător cu un cod de bare al unui exemplar",
+			"externalIdTaken": "Codul extern este deja atribuit altui cititor",
+			"duplicateInFile": "Aceeași persoană este deja pe rândul {{line}}",
+			"homonym": "{{count}} {{count:plural; one:omonim; few:omonimi; other:de omonimi;}} în arhivă: alegeți pe care să-l actualizați",
+			"matchedTwice": "Un alt rând actualizează deja același cititor",
+			"skipped": "Deja prezent: trecut peste",
+			"levelRequired": "Clasa lipsește",
+			"levelUnknown": "Anul „{{value}}” nu este un an al școlii",
+			"groupRequired": "Secțiunea lipsește",
+			"groupUnknown": "Secțiunea „{{value}}” nu a fost găsită pentru acest an. Clase valide: {{classes}} (clasele se creează în Administrare → Configurare → Clase)",
+			"levelNotInGroup": "Secțiunea „{{value}}” nu are acest an. Clase valide: {{classes}}",
+			"classUnknown": "Clasa „{{value}}” nu a fost găsită. Clase valide: {{classes}}",
+			"teacherGroupUnknown": "Grupul de profesori „{{value}}” nu a fost găsit. Grupuri valide: {{classes}}"
+		},
+		"done": {
+			"title": "Import finalizat",
+			"summary": "{{created}} {{created:plural; one:nou; few:noi; other:noi;}}, {{updated}} {{updated:plural; one:actualizat; few:actualizați; other:actualizați;}}, {{unchanged}} {{unchanged:plural; one:neschimbat; few:neschimbați; other:neschimbați;}}, {{removed}} {{removed:plural; one:eliminat; few:eliminați; other:eliminați;}}.",
+			"printNew": "Tipăriți legitimațiile cititorilor noi",
+			"census": "Recensământ foto",
+			"again": "Importați un alt fișier",
+			"batch": "Importul nr. {{id}}: fișierul original este păstrat pe server."
+		},
+		"fields": {
+			"firstName": "Prenume",
+			"lastName": "Nume de familie",
+			"class": "Clasa (an și secțiune)",
+			"level": "Clasa (an)",
+			"section": "Secțiune",
+			"group": "Grup de profesori",
+			"externalId": "Cod extern",
+			"cardNumber": "Legitimație",
+			"email": "Email"
+		},
+		"titles": {
+			"students": "Importați elevii",
+			"teachers": "Importați profesorii"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "Prenumele."
+			},
+			"lastName": {
+				"hint": "Numele de familie."
+			},
+			"class": {
+				"hint": "Clasa într-o singură coloană, ca 3A sau 3 A: trebuie să existe în Administrare → Configurare → Clase."
+			},
+			"level": {
+				"hint": "Anul (1, 2, 3…), cu secțiunea în coloana section."
+			},
+			"section": {
+				"hint": "Secțiunea (A, B…): împreună cu level indică clasa."
+			},
+			"cardNumber": {
+				"hint": "Numărul legitimației, dacă elevul are deja una.",
+				"missing": "legitimațiile noi se generează"
+			},
+			"externalId": {
+				"hint": "Codul din registrul electronic.",
+				"missing": "cititorii deja prezenți se recunosc după nume și clasă"
+			},
+			"email": {
+				"hint": "Facultativ."
+			},
+			"group": {
+				"hint": "Grupul de profesori; dacă lipsește, grupul implicit."
+			}
+		},
+		"classForm": {
+			"label": "Clasa",
+			"class": "Într-o singură coloană (class: 3A)",
+			"levelSection": "În două coloane (level: 3, section: A)"
+		}
+	}
+}

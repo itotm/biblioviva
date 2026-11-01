@@ -1,0 +1,66 @@
+{
+	"title": "Muistiinpanot",
+	"new": "Uusi muistiinpano",
+	"adminOnly": "Vain ylläpitäjä arkistoi muistiinpanot ja kiinnittää ne yleisnäkymän kärkeen.",
+	"pinned": "Kiinnitetty",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Arkistoinut {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:muistiinpano; other:muistiinpanoa;}}",
+	"archiveCount": "{{shown}}/{{total}} arkistoitua {{total:plural; one:muistiinpano; other:muistiinpanoa;}}",
+	"actions": {
+		"label": "Muistiinpanon toiminnot",
+		"pin": "Kiinnitä yleisnäkymään",
+		"unpin": "Poista kiinnitys",
+		"archive": "Arkistoi",
+		"restore": "Palauta",
+		"delete": "Poista",
+		"showAll": "Näytä kaikki",
+		"showLess": "Näytä vähemmän",
+		"more": "Näytä lisää"
+	},
+	"done": {
+		"added": "Muistiinpano lisätty",
+		"pinned": "Muistiinpano kiinnitetty",
+		"unpinned": "Kiinnitys poistettu",
+		"archived": "Muistiinpano arkistoitu",
+		"restored": "Muistiinpano palautettu",
+		"deleted": "Muistiinpano poistettu"
+	},
+	"confirmDelete": {
+		"title": "Poistetaanko muistiinpano?",
+		"text": "Se poistetaan pysyvästi, eikä sitä voi palauttaa."
+	},
+	"form": {
+		"body": "Teksti",
+		"placeholder": "Esim. Lainaustiskin skanneri ei lue kortteja.",
+		"privacy": "Kaikki tilit lukevat muistiinpanot: älä kirjoita oppilaiden henkilötietoja.",
+		"written": "Muistiinpanoa ei voi muokata: virheen sattuessa pyydä ylläpitäjää arkistoimaan se ja kirjoita toinen.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Väri",
+		"pinned": "Kiinnitetty yleisnäkymään",
+		"pinnedHint": "Näkyy kaikille yleisnäkymän yläosassa (ja lainaustiskillä), kunnes kiinnitys poistetaan tai muistiinpano arkistoidaan.",
+		"save": "Lisää"
+	},
+	"colors": {
+		"yellow": "Keltainen",
+		"pink": "Vaaleanpunainen",
+		"green": "Vihreä",
+		"blue": "Vaaleansininen",
+		"orange": "Oranssi"
+	},
+	"errors": {
+		"empty": "Kirjoita muistiinpanon teksti.",
+		"tooLong": "Teksti on pidempi kuin {{max}} {{max:plural; one:merkki; other:merkkiä;}}.",
+		"color": "Valitse jokin väreistä."
+	},
+	"empty": {
+		"open": "Ei avoimia muistiinpanoja",
+		"openHint": "Ei avoimia muistiinpanoja. Muistiinpanoilla välitetään ongelmat ja tiedotteet kollegoille ja ylläpitäjälle.",
+		"archived": "Ei arkistoituja muistiinpanoja"
+	},
+	"home": {
+		"title": "Muistiinpanot",
+		"open": "Avaa muistiinpanot"
+	},
+	"tile": "Avoimet muistiinpanot"
+}

@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Utskrifter",
+		"newPatrons": "Ny låntagarlista",
+		"newItems": "Ny boklista",
+		"newPatronsTitle": "Ny lista över låntagare",
+		"newItemsTitle": "Ny lista över böcker",
+		"name": "Listans namn",
+		"defaultName": "Lista {{n}} från {{date}}",
+		"kind": "Typ",
+		"kinds": {
+			"all": "Alla",
+			"patrons": "Låntagare",
+			"items": "Böcker"
+		},
+		"classes": "Klasser",
+		"classesHint": "Lånekorten för en hel klass, utan att skapa en lista av den.",
+		"classKind": "Klass",
+		"count": "{{count}} {{count:plural; one:post; other:poster;}}",
+		"empty": "Inga listor. Listor skapas här eller med ”Lägg till i lista” på sidorna Låntagare och Katalog.",
+		"lastPrinted": "Utskriven den {{when}}",
+		"neverPrinted": "Aldrig utskriven",
+		"open": "Öppna",
+		"created": "Lista skapad",
+		"deleted": "Lista borttagen",
+		"deleteTitle": "Ta bort listan ”{{name}}”?",
+		"deleteDescription": "Posterna lämnar listan; låntagarna finns kvar i arkivet."
+	},
+	"list": {
+		"rename": "Byt namn",
+		"renamed": "Listan fick nytt namn",
+		"print": "Skriv ut lånekort",
+		"markPrinted": "Markera som utskrivna",
+		"marked": "{{count}} {{count:plural; one:kort markerat som utskrivet; other:kort markerade som utskrivna;}}",
+		"clearAfter": "Töm listan efter utskriften",
+		"clear": "Töm",
+		"cleared": "Listan tömd",
+		"clearTitle": "Tömma listan?",
+		"clearDescription": "Alla poster lämnar listan; låntagarna finns kvar i arkivet.",
+		"delete": "Ta bort",
+		"entries": "{{count}} {{count:plural; one:låntagare; other:låntagare;}} i listan",
+		"empty": "Listan är tom: lägg till låntagare med snabbfiltren, med streckkodsläsaren eller från sidan Låntagare.",
+		"remove": "Ta bort från listan",
+		"moveUp": "Flytta upp",
+		"moveDown": "Flytta ner",
+		"dragHint": "Dra posterna för att ändra utskriftsordningen.",
+		"removed": "Borttagen från listan",
+		"columns": {
+			"position": "Nr",
+			"printed": "Kort utskrivet"
+		},
+		"printedYes": "ja",
+		"printedNo": "nej",
+		"quick": {
+			"title": "Lägg till med filter",
+			"hint": "Den som redan finns i listan läggs inte till två gånger.",
+			"type": "Typ",
+			"any": "Valfri",
+			"stage": "Skolstadium",
+			"level": "Årskurs",
+			"withoutPrintedCard": "Endast de vars kort aldrig skrivits ut",
+			"withoutPhoto": "Endast de utan foto",
+			"importBatch": "Import",
+			"anyBatch": "— ingen —",
+			"batchLabel": "nr {{id}} · {{file}} · {{created}} {{created:plural; one:ny; other:nya;}}",
+			"createdAfter": "Skapade från",
+			"add": "Lägg till i listan",
+			"added": "{{added}} {{added:plural; one:tillagd; other:tillagda;}}, {{skipped}} var redan med",
+			"none": "Ingen låntagare motsvarar filtren.",
+			"pendingLabels": "Etiketter att skriva ut",
+			"pendingAny": "— alla exemplar —",
+			"acquiredFrom": "Förvärvade från",
+			"acquiredTo": "till",
+			"genre": "Genre",
+			"itemType": "Typ av exemplar",
+			"batchLabelItems": "nr {{id}} · {{file}} · {{created}} {{created:plural; one:nytt; other:nya;}}",
+			"noneItems": "Inget exemplar motsvarar filtren.",
+			"addedItems": "{{added}} {{added:plural; one:tillagt; other:tillagda;}}, {{skipped}} var redan med",
+			"nonfictionClass": "Klass för facklitteratur"
+		},
+		"scan": {
+			"title": "Lägg till med streckkodsläsaren",
+			"hint": "Läs av varje låntagares lånekort: personen läggs till direkt. Kort som redan finns i listan ignoreras.",
+			"added": "{{name}} tillagd",
+			"duplicate": "{{name}} finns redan i listan",
+			"unknown": "Ingen låntagare med lånekort {{card}}",
+			"notCard": "Den inlästa koden är inget lånekort",
+			"hintItems": "Läs av streckkoden på varje exemplar, till exempel när du går längs hyllan: exemplaret läggs till direkt. Exemplar som redan finns i listan ignoreras.",
+			"addedItem": "{{title}} ({{barcode}}) tillagd",
+			"duplicateItem": "{{title}} ({{barcode}}) finns redan i listan",
+			"unknownItem": "Inget exemplar med streckkoden {{barcode}}",
+			"notItem": "Den inlästa koden är inget exemplar"
+		},
+		"printLabels": "Skriv ut etiketter",
+		"markPrintedKind": "Etiketter utskrivna",
+		"markedItems": "{{count}} {{count:plural; one:exemplar markerat som utskrivet; other:exemplar markerade som utskrivna;}}",
+		"entriesItems": "{{count}} {{count:plural; one:exemplar; other:exemplar;}} i listan",
+		"emptyItems": "Listan är tom: lägg till exemplar med snabbfiltren, med streckkodsläsaren eller från katalogen.",
+		"clearDescriptionItems": "Alla poster tas bort; exemplaren finns kvar i katalogen."
+	},
+	"basket": {
+		"label": "Utskriftslistor",
+		"labelToPrint": "Utskriftslistor: {{count}} att skriva ut",
+		"entry": "{{name}} ({{count}})",
+		"none": "Ingen lista att skriva ut",
+		"all": "Alla listor"
+	},
+	"addTo": {
+		"button": "Lägg till i lista",
+		"selected": "Lägg till markerade i lista",
+		"title": "Lägg till i utskriftslista",
+		"existing": "Befintlig lista",
+		"create": "Ny lista",
+		"newName": "Namn på den nya listan",
+		"confirm": "Lägg till",
+		"done": "{{added}} {{added:plural; one:tillagd; other:tillagda;}} i ”{{name}}”, {{skipped}} var redan med"
+	},
+	"labels": {
+		"title": "Skriv ut etiketter",
+		"button": "Skriv ut etiketter",
+		"selected": "Skriv ut etiketter för markerade",
+		"kind": "Typ av etikett",
+		"kinds": {
+			"pair": "Par",
+			"barcode": "Endast streckkod",
+			"spine": "Endast ryggband"
+		},
+		"kindHints": {
+			"pair": "Ryggband överst och etikett med streckkod under, ett par per bok (den nuvarande utskriften).",
+			"barcode": "Endast etiketten med den interna streckkoden, för omtryck.",
+			"spine": "Endast ryggbandet, till exempel efter en omklassificering."
+		},
+		"stock": "Etikettark",
+		"start": "Första lediga position",
+		"startHint": "Från 1 till {{max}}: hoppar över etiketter som redan används på arket.",
+		"count": "{{count}} {{count:plural; one:exemplar; other:exemplar;}}",
+		"unclassified": "{{count}} {{count:plural; one:exemplar av en bok; other:exemplar av böcker;}} att klassificera: endast {{count:plural; one:dess; other:deras;}} streckkodsetikett skrivs ut, ryggbandet efter klassificeringen.",
+		"pendingCount": "{{count}} {{count:plural; one:exemplar; other:exemplar;}} med etiketter att skriva ut",
+		"pages": "{{pages}} {{pages:plural; one:ark; other:ark;}} ({{perPage}} per ark)",
+		"print": "Öppna utskriften",
+		"afterPrint": "Utskriftssidan har öppnats i en ny flik. När etiketterna har skrivits ut, markera dem som utskrivna.",
+		"markPrinted": "Markera som utskrivna",
+		"marked": "{{count}} {{count:plural; one:exemplar markerat som utskrivet; other:exemplar markerade som utskrivna;}}",
+		"status": {
+			"printed": "Etiketter utskrivna",
+			"pending": "Etiketter att skriva ut",
+			"partial": "En etikett saknas"
+		}
+	},
+	"cards": {
+		"title": "Skriv ut lånekort",
+		"count": "{{count}} {{count:plural; one:lånekort; other:lånekort;}}",
+		"afterPrint": "Utskriftssidan har öppnats i en ny flik. När korten har skrivits ut, markera dem som utskrivna.",
+		"layout": "Hur du skriver ut",
+		"layouts": {
+			"side-by-side": "Framsida och baksida bredvid varandra",
+			"duplex": "På båda sidorna av arket"
+		},
+		"window": "I utskriftsfönstret i webbläsaren:",
+		"steps": {
+			"duplex": {
+				"long-edge": "välj ”Dubbelsidigt”, med vändning på långsidan;",
+				"short-edge": "välj ”Dubbelsidigt”, med vändning på kortsidan;"
+			},
+			"scale": "skala 100 % (”Verklig storlek”, inte ”Anpassa till sidan”);",
+			"margins": "marginaler: inga.",
+			"after": {
+				"side-by-side": {
+					"marks": "Klipp sedan ut varje kort genom att dra linjer med linjal mellan skärmärkena runt korten, och vik det på mitten längs kortsidan.",
+					"line": "Klipp sedan ut varje kort längs den färgade linjen runt det, och vik det på mitten längs kortsidan.",
+					"edge": "Klipp sedan ut varje kort längs kanten och vik det på mitten längs kortsidan."
+				},
+				"duplex": {
+					"marks": "Klipp sedan ut korten genom att dra linjer med linjal mellan skärmärkena runt framsidorna: baksidan sitter redan bakom framsidan (tio per ark).",
+					"line": "Klipp sedan ut korten längs den färgade linjen runt framsidorna: baksidan sitter redan bakom framsidan (tio per ark).",
+					"edge": "Klipp sedan ut korten längs kanten på framsidorna: baksidan sitter redan bakom framsidan (tio per ark)."
+				}
+			}
+		},
+		"print": "Skriv ut",
+		"calibrate": "Första gången, eller om baksidorna inte hamnar bakom framsidorna:"
+	},
+	"words": {
+		"teacher": "Lärare",
+		"title": "Titel",
+		"code": "Kod",
+		"dueBy": "Lämna tillbaka senast",
+		"due": "Förfaller",
+		"name": "Namn",
+		"daysOverdue": "Dagar försenad",
+		"loanOn": "Lån från {{date}} till",
+		"overduesOn": "Bibliotekets påminnelser från {{date}}",
+		"toReturn": "Böcker att lämna tillbaka till biblioteket",
+		"enjoy": "God läsning."
+	}
+}

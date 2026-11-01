@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "Catalogus",
+		"search": "Zoeken op titel, auteur of ISBN…",
+		"new": "Nieuw boek",
+		"empty": "Geen enkel boek voldoet aan de filters.",
+		"countFiltered": "{{shown}} {{shown:plural; one:titel voldoet; other:titels voldoen;}} aan de filters",
+		"clearFilters": "Filters wissen",
+		"filters": {
+			"kind": "Soort",
+			"genre": "Genre",
+			"class": "Classificatie",
+			"readingLevel": "Leesniveau",
+			"itemType": "Materiaal",
+			"series": "Serie",
+			"all": "Alle",
+			"allF": "Alle",
+			"withdrawn": "Ook afgevoerde boeken tonen"
+		},
+		"columns": {
+			"title": "Titel",
+			"series": "Serie",
+			"author": "Auteur",
+			"year": "Jaar",
+			"isbn": "ISBN",
+			"classification": "Classificatie",
+			"copies": "Exemplaren",
+			"callNumber": "Signatuur",
+			"acquiredAt": "Verworven"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "Doorzoek de catalogus",
+		"startHint": "Zoek op titel, auteur, uitgever, code of ISBN, of gebruik de filters."
+	},
+	"kinds": {
+		"fiction": "Fictie",
+		"nonfiction": "Non-fictie"
+	},
+	"fields": {
+		"title": "Titel",
+		"subtitle": "Ondertitel",
+		"originalTitle": "Oorspronkelijke titel",
+		"originalTitleHint": "Alleen als het boek een vertaling is: de titel van het werk in de oorspronkelijke taal.",
+		"responsibility": "Vermelding van verantwoordelijkheid (zoals op de titelpagina)",
+		"author": "Auteur",
+		"publisher": "Uitgever",
+		"publicationPlace": "Plaats",
+		"publicationYear": "Jaar",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN (geen ISBN)",
+		"physicalDescription": "Fysieke beschrijving",
+		"series": "Serie",
+		"seriesNumber": "Nummer in de serie",
+		"seriesHint": "Bijvoorbeeld Harry Potter en 3. De series die al in de catalogus staan, verschijnen tijdens het typen.",
+		"dewey": "Dewey (uit SBN)",
+		"kind": "Soort",
+		"genre": "Genre",
+		"classCode": "Classificatie",
+		"readingLevel": "Leesniveau",
+		"subjects": "Onderwerpen",
+		"notes": "Notities",
+		"authorHint": "Achternaam, voornaam. Gebruik de snelkeuzes als er geen persoonlijke auteur is.",
+		"subjectsHint": "Een per regel of gescheiden door komma's.",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "Nieuw boek",
+		"editTitle": "Titelbeschrijving bewerken",
+		"create": "Titelbeschrijving opslaan",
+		"save": "Wijzigingen opslaan",
+		"identity": "Titelbeschrijving",
+		"publication": "Publicatie",
+		"classification": "Classificatie",
+		"more": "Meer gegevens",
+		"quickPicks": "Snelkeuzes",
+		"unknownPublisher": "Onbekende uitgever",
+		"unknownPlace": "Onbekende plaats",
+		"singleCopy": "Exemplaar {{barcode}}",
+		"singleCopyHint": "De titelbeschrijving heeft één exemplaar: de gegevens ervan worden hier bewerkt en samen met de titelbeschrijving opgeslagen."
+	},
+	"picker": {
+		"kind": "Wat voor soort boek is het?",
+		"fiction": "Fictie",
+		"nonfiction": "Non-fictie",
+		"genre": "Kies het genre",
+		"class": "Kies het onderwerp",
+		"readingLevel": "Leesniveau",
+		"anyClass": "Geen",
+		"back": "Terug naar de hoofdonderwerpen",
+		"children": "Onderwerpen van {{label}}",
+		"selected": "Gekozen: {{label}}",
+		"parentOnly": "Gebruik “{{label}}” in het algemeen",
+		"later": "Later classificeren",
+		"laterHint": "Het boek gaat naar de lijst “Te classificeren”: de exemplaren ervan worden niet uitgeleend en de rugband wordt niet afgedrukt totdat het boek is geclassificeerd."
+	},
+	"detail": {
+		"heading": "Titelbeschrijving",
+		"tabs": {
+			"copies": "Exemplaren",
+			"details": "Gegevens"
+		},
+		"copies": "{{available}} beschikbaar van {{total}}",
+		"noCopies": "Nog geen exemplaar: voeg er een toe om het uit te lenen.",
+		"seriesLink": "Alle boeken van de serie “{{series}}”",
+		"edit": "Bewerken",
+		"delete": "Titelbeschrijving verwijderen",
+		"addCopies": "Exemplaren toevoegen",
+		"deleteTitle": "De titelbeschrijving “{{title}}” verwijderen?",
+		"deleteDescription": "De titelbeschrijving verdwijnt uit de catalogus. Dat kan alleen als er geen exemplaren meer zijn.",
+		"deleted": "Titelbeschrijving verwijderd",
+		"hasItems": "De titelbeschrijving heeft nog {{count}} {{count:plural; one:exemplaar; other:exemplaren;}}: {{count:plural; one:voer het eerst af of verwijder het; other:voer ze eerst af of verwijder ze;}}.",
+		"columns": {
+			"barcode": "Barcode",
+			"callNumber": "Signatuur",
+			"itemType": "Materiaal",
+			"readingLevel": "Leesniveau",
+			"status": "Status",
+			"borrower": "Uitgeleend aan",
+			"acquisition": "Verworven op",
+			"labels": "Etiketten"
+		},
+		"dueOn": "in te leveren op {{date}}",
+		"identifiers": "Identificatiecodes",
+		"source": "Bron: {{source}}",
+		"created": "Aangemaakt op {{when}}",
+		"updated": "Laatst gewijzigd op {{when}}",
+		"onLoan": "Uitgeleend"
+	},
+	"item": {
+		"addTitle": "Exemplaren toevoegen",
+		"copies": "Aantal exemplaren",
+		"itemType": "Materiaal",
+		"callNumber": "Signatuur",
+		"callNumberHint": "Voorgesteld op basis van de classificatie; kan worden gewijzigd.",
+		"readingLevel": "Leesniveau van het exemplaar",
+		"enumeration": "Deel / nummer",
+		"acquisitionDate": "Verwervingsdatum",
+		"notes": "Notities bij het exemplaar",
+		"notForLoan": "Alleen raadpleging (niet uitleenbaar)",
+		"add": "Toevoegen",
+		"added": "{{count}} {{count:plural; one:exemplaar toegevoegd; other:exemplaren toegevoegd;}}: {{barcodes}}",
+		"editTitle": "Exemplaar {{barcode}} bewerken",
+		"save": "Opslaan",
+		"saved": "Exemplaar bijgewerkt",
+		"status": "Status wijzigen",
+		"statusTitle": "Status van exemplaar {{barcode}}",
+		"newStatus": "Nieuwe status",
+		"reason": "Reden (facultatief, wordt geregistreerd)",
+		"statusSaved": "Status bijgewerkt",
+		"onLoan": "Het exemplaar is uitgeleend: eerst de inname registreren.",
+		"delete": "Exemplaar verwijderen",
+		"deleteTitle": "Exemplaar {{barcode}} verwijderen?",
+		"deleteDescription": "Alleen bij fouten in de catalogisering: een exemplaar dat ooit is uitgeleend, kan niet worden verwijderd. Het moet worden afgevoerd.",
+		"deleted": "Exemplaar verwijderd",
+		"hasLoans": "Het exemplaar heeft geregistreerde uitleningen: het moet worden afgevoerd, niet verwijderd.",
+		"labelsTitle": "Etiketten van exemplaar {{barcode}}"
+	},
+	"errors": {
+		"isbnInvalid": "Ongeldig ISBN (controleer de cijfers)",
+		"isbnTaken": "Er bestaat al een titelbeschrijving met dit ISBN",
+		"issnInvalid": "Ongeldig ISSN",
+		"eanInvalid": "Ongeldige EAN",
+		"yearImplausible": "Onwaarschijnlijk jaar",
+		"genreRequired": "Kies het genre",
+		"genreUnknown": "Genre niet in de configuratie",
+		"genreNotForNonfiction": "Non-fictie heeft geen genre",
+		"classCodeRequired": "Kies het onderwerp",
+		"classCodeUnknown": "Onderwerp niet in de configuratie",
+		"classCodeNotForFiction": "Fictie heeft geen onderwerp",
+		"readingLevelNotAllowed": "Hier is geen leesniveau voorzien",
+		"readingLevelOutOfRange": "Leesniveau niet in de configuratie",
+		"itemTypeUnknown": "Materiaal niet in de configuratie",
+		"acquisitionDateInvalid": "Ongeldige datum (JJJJ-MM-DD)",
+		"copiesOutOfRange": "Van 1 tot 100 exemplaren per keer"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "Testprovider"
+		},
+		"errors": {
+			"unreachable": "De dienst is niet bereikbaar. Controleer de internetverbinding en probeer het later opnieuw.",
+			"timeout": "De dienst heeft niet op tijd geantwoord. Probeer het later opnieuw.",
+			"protocol": "De dienst gaf een onverwacht antwoord. De gegevens kunnen met de hand worden ingevoerd.",
+			"http": "De dienst antwoordde met een fout. Probeer het later opnieuw.",
+			"rate_limited": "De dienst heeft het verzoek geweigerd vanwege te veel zoekopdrachten. Probeer het later opnieuw.",
+			"not_configured": "De dienst is niet ingesteld: een instelling ontbreekt (bijvoorbeeld de API-sleutel).",
+			"spawn": "Het programma yaz-client is op deze server niet beschikbaar. Waarschuw de beheerder."
+		},
+		"noHits": "Geen resultaten van {{provider}}.",
+		"hits": "{{count}} {{count:plural; one:resultaat; other:resultaten;}} van {{provider}}",
+		"fromCache": "uit de cache"
+	},
+	"fastAdd": {
+		"title": "Nieuw boek",
+		"steps": {
+			"code": "Code",
+			"lookup": "Zoeken",
+			"form": "Titelbeschrijving en exemplaren",
+			"done": "Voltooid"
+		},
+		"code": {
+			"heading": "De barcode scannen",
+			"label": "ISBN of EAN",
+			"placeholder": "978…",
+			"material": "Materiaal",
+			"noCode": "Zonder code",
+			"noCodeHint": "Zoek op titel en auteur, of vul de titelbeschrijving met de hand in.",
+			"manual": "Met de hand invullen",
+			"notACode": "De gelezen code is geen ISBN en geen EAN: controleer de cijfers of kies “Zonder code”.",
+			"eanNotIsbn": "EAN {{ean}} gelezen: het is geen ISBN, dus de titelbeschrijving moet met de hand worden ingevuld.",
+			"cameraNotIsbn": "Geen ISBN: richt op de barcode van het boek"
+		},
+		"search": {
+			"heading": "Zoeken op titel en auteur",
+			"title": "Titel",
+			"author": "Auteur",
+			"submit": "Zoeken",
+			"empty": "Vul minstens de titel of de auteur in."
+		},
+		"duplicate": {
+			"heading": "Dit ISBN staat al in de catalogus",
+			"copies": "{{count}} {{count:plural; one:exemplaar; other:exemplaren;}}",
+			"addCopy": "Exemplaar toevoegen",
+			"open": "Titelbeschrijving openen",
+			"another": "Een andere code scannen"
+		},
+		"lookup": {
+			"searching": "Zoeken bij {{providers}}…",
+			"best": "Meest volledig",
+			"heading": "Gevonden titelbeschrijvingen",
+			"pick": "Deze titelbeschrijving gebruiken",
+			"none": "Geen titelbeschrijving gevonden. De titelbeschrijving kan met de hand worden ingevuld.",
+			"manual": "Met de hand invoeren",
+			"bySearch": "Zoeken op titel",
+			"retry": "Opnieuw proberen",
+			"another": "Nieuwe code",
+			"source": "Bron: {{provider}}",
+			"providerOk": "{{count}} {{count:plural; one:titelbeschrijving; other:titelbeschrijvingen;}}",
+			"providerCached": "uit de cache",
+			"failed": "Fout"
+		},
+		"form": {
+			"heading": "Titelbeschrijving controleren en exemplaren toevoegen",
+			"rescan": "Een andere code scannen",
+			"bestOf": "De meest volledige van de {{count}} gevonden titelbeschrijvingen. Controleer het jaar en de beschrijving aan de hand van het exemplaar.",
+			"otherRecords": "Andere {{count:plural; one:titelbeschrijving; other:titelbeschrijvingen;}} ({{count}})",
+			"fromSource": "Titelbeschrijving van {{provider}}: controleer de gegevens voordat u opslaat.",
+			"manualSource": "Titelbeschrijving met de hand ingevuld.",
+			"copiesSection": "Exemplaren",
+			"copies": "Aantal exemplaren",
+			"itemType": "Materiaal",
+			"callNumber": "Signatuur",
+			"readingLevel": "Leesniveau van de exemplaren",
+			"acquisitionDate": "Verwervingsdatum",
+			"save": "Titelbeschrijving en exemplaren opslaan",
+			"deweySuggested": "Onderwerp voorgesteld op basis van het Dewey-nummer {{dewey}}."
+		},
+		"done": {
+			"heading": "Titelbeschrijving opgeslagen",
+			"summary": "“{{title}}” met {{count}} {{count:plural; one:exemplaar; other:exemplaren;}}",
+			"summaryCopies": "{{count}} {{count:plural; one:exemplaar toegevoegd; other:exemplaren toegevoegd;}} aan “{{title}}”",
+			"barcodes": "Barcodes van de exemplaren",
+			"printLabels": "Etiketten afdrukken",
+			"addToList": "Toevoegen aan de etikettenlijst",
+			"open": "Titelbeschrijving openen",
+			"another": "Nog een toevoegen"
+		},
+		"cover": {
+			"title": "Omslag",
+			"alt": "Omslag van het boek",
+			"searching": "Omslag zoeken op internet…",
+			"found": "Gevonden bij {{provider}}: het wordt met de titelbeschrijving opgeslagen. Als het fout is, fotografeer dan het omslag van het boek zelf.",
+			"photo": "Foto van het omslag: het wordt met de titelbeschrijving opgeslagen.",
+			"none": "Geen omslag op internet gevonden: het kan worden gefotografeerd.",
+			"empty": "Geen omslag: het kan worden gefotografeerd.",
+			"take": "Het omslag fotograferen",
+			"replace": "Vervangen door een foto",
+			"remove": "Verwijderen",
+			"saving": "Omslag opslaan…",
+			"failed": "Het omslag is niet opgeslagen: het kan worden toegevoegd vanuit de titelbeschrijving van het boek."
+		}
+	},
+	"cover": {
+		"title": "Omslag",
+		"take": "Het omslag fotograferen",
+		"upload": "Bestand uploaden",
+		"change": "Omslag wijzigen",
+		"delete": "Omslag verwijderen",
+		"deleteTitle": "Het omslag verwijderen?",
+		"deleteDescription": "De afbeelding wordt van de server gewist; er kan een nieuwe worden gefotografeerd.",
+		"shoot": "Fotograferen",
+		"loading": "Module voor het rechttrekken wordt geladen ({{loaded}} van {{total}} MB), alleen bij het eerste gebruik.",
+		"loadingShort": "Module voor het rechttrekken wordt geladen ({{loaded}} MB), alleen bij het eerste gebruik.",
+		"loadFailed": "De module voor het rechttrekken kon niet worden geladen. Controleer de verbinding en probeer het opnieuw.",
+		"detecting": "De randen van het omslag zoeken…",
+		"notFound": "De randen zijn niet automatisch gevonden: sleep de hoeken naar het omslag.",
+		"adjustHint": "Sleep de vier hoeken naar de randen van het omslag en trek het daarna recht.",
+		"straighten": "Rechttrekken",
+		"result": "Resultaat",
+		"use": "Dit omslag gebruiken",
+		"retake": "Opnieuw",
+		"cancel": "Annuleren",
+		"saved": "Omslag opgeslagen",
+		"deleted": "Omslag verwijderd",
+		"placeholder": "Geen omslag",
+		"alt": "Omslag van {{title}}",
+		"cameraHint": "Richt op het hele omslag, ook als het schuin staat: het wordt na de foto rechtgetrokken.",
+		"errors": {
+			"too_large": "Bestand te groot: de limiet is {{maxMb}} MB.",
+			"not_an_image": "Het bestand is geen leesbare afbeelding.",
+			"unsupported_format": "Niet-ondersteund beeldformaat (gebruik JPEG, PNG, WebP of HEIC).",
+			"empty": "Geen bestand geselecteerd."
+		},
+		"download": "Omslag downloaden",
+		"downloading": "Omslag zoeken op internet…",
+		"downloaded": "Omslag gedownload van {{provider}}",
+		"downloadNotFound": "Geen omslag op internet gevonden voor dit ISBN: het kan worden gefotografeerd.",
+		"downloadNoIsbn": "De titelbeschrijving heeft geen ISBN: het omslag moet worden gefotografeerd."
+	},
+	"export": {
+		"copiesTotal": "Exemplaren",
+		"copiesAvailable": "Beschikbaar",
+		"callNumber": "Signatuur",
+		"acquiredAt": "Verworven"
+	},
+	"import": {
+		"title": "Catalogus importeren",
+		"upload": {
+			"file": "CSV-bestand",
+			"hint": "Een regel per exemplaar: de gegevens van de titel herhalen zich op de regels van zijn exemplaren. Titel, auteur en uitgever zijn verplicht. Gebruik de kopteksten van het sjabloon, hieronder te downloaden met de nodige kolommen. Voor de overstap vanuit Koha gebruikt u de export die in de handleiding voor de beheerder wordt beschreven.",
+			"submit": "Uploaden"
+		},
+		"mapping": {
+			"uncertain": "De kolommen zijn niet herkend: kies het veld van elke kolom voordat u verdergaat.",
+			"remembered": "Kolommen onthouden van de vorige import van dit bestand.",
+			"specialValues": "Speciale waarden wanneer de auteur of de uitgever ontbreekt (“{{author}}”, “{{publisher}}”)",
+			"specialValuesHint": "Zonder deze keuze zijn rijen zonder auteur of uitgever fouten.",
+			"validate": "Bestand controleren",
+			"without": {
+				"biblioKey": "Zonder de kolom biblio_key worden de exemplaren van één boek gegroepeerd op ISBN; rijen zonder ISBN zijn elk een titel.",
+				"barcode": "Zonder de kolom barcode worden de barcodes van de exemplaren gegenereerd: druk na de import hun etiketten af.",
+				"classification": "Zonder de kolom classification gaan de boeken naar de lijst “Te classificeren”: hun exemplaren worden niet uitgeleend totdat ze zijn geclassificeerd."
+			}
+		},
+		"fields": {
+			"biblioKey": "Sleutel van de titel (biblionumber)",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "Titel",
+			"subtitle": "Ondertitel",
+			"originalTitle": "Oorspronkelijke titel",
+			"responsibility": "Vermelding van verantwoordelijkheid",
+			"author": "Auteur",
+			"publisher": "Uitgever",
+			"publicationPlace": "Plaats van uitgave",
+			"publicationYear": "Jaar",
+			"physicalDescription": "Fysieke beschrijving",
+			"series": "Serie",
+			"seriesNumber": "Nummer in de serie",
+			"dewey": "Dewey",
+			"classification": "Classificatie (genre of onderwerp, ccode van Koha)",
+			"readingLevel": "Leesniveau",
+			"subjects": "Onderwerpen",
+			"notes": "Notities bij de titel",
+			"barcode": "Barcode van het exemplaar",
+			"callNumber": "Signatuur",
+			"itemType": "Materiaal",
+			"enumeration": "Deel",
+			"status": "Status",
+			"notForLoan": "Niet uitleenbaar",
+			"acquisitionDate": "Verwervingsdatum",
+			"itemNotes": "Notities exemplaar"
+		},
+		"preview": {
+			"ready": "Geen fouten: de import is mogelijk.",
+			"blocked": "Verbeter de fouten in het bestand en controleer opnieuw: er wordt niets geïmporteerd met fouten.",
+			"nothing": "Alle exemplaren in het bestand staan al in de catalogus: er is niets te importeren.",
+			"titles": "{{new}} {{new:plural; one:nieuwe titel; other:nieuwe titels;}}, {{existing}} al in de catalogus (hun exemplaren worden toegevoegd)",
+			"columns": {
+				"title": "Titel",
+				"barcode": "Barcode",
+				"classification": "Classificatie"
+			},
+			"question": {
+				"title": "Exemplaren van dezelfde titel met verschillende leesniveaus",
+				"text": "Bij {{count}} {{count:plural; one:titel; other:titels;}} hebben de exemplaren verschillende leesniveaus. Het niveau kan bij elk exemplaar staan in plaats van bij de titel: dat is de instelling “leesniveau per exemplaar”, die voor de hele catalogus geldt en het niveau van de titels die er al staan naar hun exemplaren verplaatst.",
+				"yes": "Ja, leesniveau per exemplaar",
+				"no": "Nee, het zijn fouten om te verbeteren"
+			},
+			"commit": "Importeren",
+			"back": "Terug naar de kolommen",
+			"generatedBarcodes": "{{count}} {{count:plural; one:exemplaar; other:exemplaren;}} zonder barcode: de barcode wordt gegenereerd, daarna worden de etiketten afgedrukt.",
+			"toClassify": "{{count}} {{count:plural; one:nieuwe titel zonder classificatie; other:nieuwe titels zonder classificatie;}}: {{count:plural; one:die gaat; other:die gaan;}} naar “Te classificeren”."
+		},
+		"reasons": {
+			"tooLong": "Tekst te lang in de kolom {{column}}: maximaal {{max}} tekens",
+			"isbnInvalid": "Ongeldig ISBN: “{{value}}”",
+			"classificationUnknown": "Classificatie niet in de configuratie: “{{value}}”",
+			"barcodeInvalid": "Barcode met niet-toegestane tekens: “{{value}}”",
+			"barcodeCheckDigit": "Barcode met een verkeerd controleteken: “{{value}}”",
+			"barcodeDuplicateInFile": "Barcode al gebruikt op regel {{line}}",
+			"barcodeTaken": "Barcode {{value}} hoort al bij een ander exemplaar in de catalogus",
+			"barcodeIsCard": "De code {{value}} is of lijkt op een lenerspasnummer: een exemplaar kan niet de code van een lenerspas hebben",
+			"statusUnknown": "Status niet herkend: “{{value}}” (beschikbaar, zoek, beschadigd, in reparatie, afgevoerd)",
+			"notForLoanUnknown": "Waarde niet herkend voor “niet uitleenbaar”: “{{value}}” (ja/nee)",
+			"dateInvalid": "Ongeldige datum: “{{value}}” (JJJJ-MM-DD of DD/MM/JJJJ)",
+			"authorMissing": "De auteur ontbreekt (met “speciale waarden” wordt het Anonimo)",
+			"publisherMissing": "De uitgever ontbreekt (met “speciale waarden” wordt het s.n.)",
+			"titleMissing": "De titel ontbreekt",
+			"groupConflict": "Dezelfde sleutel als regel {{line}}, maar een andere titel",
+			"classQuestion": "Exemplaren met verschillende niveaus ({{classes}}): beantwoord de vraag hieronder",
+			"classDiffers": "Exemplaren met verschillende niveaus ({{classes}}) zonder leesniveau per exemplaar",
+			"copyExists": "Exemplaar al in de catalogus: wordt overgeslagen",
+			"mergedIntoExisting": "Toegevoegd aan de titel die al in de catalogus staat (zelfde sleutel of zelfde ISBN)"
+		},
+		"done": {
+			"title": "Catalogus geïmporteerd",
+			"summary": "{{titlesCreated}} {{titlesCreated:plural; one:nieuwe titel; other:nieuwe titels;}}, {{copiesCreated}} {{copiesCreated:plural; one:exemplaar toegevoegd; other:exemplaren toegevoegd;}} ({{titlesMerged}} {{titlesMerged:plural; one:titel al aanwezig; other:titels al aanwezig;}}, {{copiesSkipped}} {{copiesSkipped:plural; one:exemplaar overgeslagen; other:exemplaren overgeslagen;}}).",
+			"classPerItem": "Leesniveau per exemplaar is ingeschakeld.",
+			"batch": "Import nr. {{id}}: het oorspronkelijke bestand wordt bewaard.",
+			"labels": "Etiketten van de exemplaren zonder barcode afdrukken",
+			"open": "Naar de catalogus gaan",
+			"again": "Nog een bestand importeren"
+		},
+		"columns": {
+			"title": {
+				"hint": "De titel van het boek."
+			},
+			"author": {
+				"hint": "Achternaam, voornaam; leeg is een fout, behalve bij “speciale waarden”."
+			},
+			"publisher": {
+				"hint": "De uitgever; leeg zoals bij de auteur."
+			},
+			"biblioKey": {
+				"hint": "De code van de titel in het oude programma (biblionumber van Koha): houdt de exemplaren samen.",
+				"missing": "exemplaren worden gegroepeerd op ISBN"
+			},
+			"barcode": {
+				"hint": "De barcode die al op het exemplaar staat.",
+				"missing": "de barcode wordt gegenereerd en de etiketten moeten worden afgedrukt"
+			},
+			"classification": {
+				"hint": "De code van het genre (fictie) of van het onderwerp (non-fictie).",
+				"missing": "het boek gaat naar “Te classificeren”"
+			},
+			"readingLevel": {
+				"hint": "Het leesniveau (fictie)."
+			},
+			"isbn": {
+				"hint": "ISBN-10 of ISBN-13."
+			},
+			"issn": {
+				"hint": "Voor periodieken."
+			},
+			"ean": {
+				"hint": "De EAN-code van dvd's en ander materiaal."
+			},
+			"subtitle": {
+				"hint": "De ondertitel."
+			},
+			"originalTitle": {
+				"hint": "Alleen voor vertalingen: de titel in de oorspronkelijke taal."
+			},
+			"responsibility": {
+				"hint": "Illustratoren, vertalers…"
+			},
+			"publicationPlace": {
+				"hint": "De plaats van uitgave."
+			},
+			"publicationYear": {
+				"hint": "Het jaar van uitgave."
+			},
+			"physicalDescription": {
+				"hint": "Pagina's, illustraties, formaat."
+			},
+			"series": {
+				"hint": "De serie (niet de collectie van de uitgever)."
+			},
+			"seriesNumber": {
+				"hint": "Het nummer in de serie."
+			},
+			"dewey": {
+				"hint": "Het Dewey-nummer, alleen ter referentie."
+			},
+			"subjects": {
+				"hint": "Trefwoorden, gescheiden door ; of ,."
+			},
+			"notes": {
+				"hint": "Notities van de titel."
+			},
+			"callNumber": {
+				"hint": "De signatuur; wordt voorgesteld als die ontbreekt."
+			},
+			"itemType": {
+				"hint": "Het materiaal (boek, dvd…); ontbreekt het, dan het eerste ingestelde."
+			},
+			"enumeration": {
+				"hint": "Het deel, voor werken in meerdere delen."
+			},
+			"status": {
+				"hint": "beschikbaar, zoek, beschadigd, in reparatie, afgevoerd."
+			},
+			"notForLoan": {
+				"hint": "1 of ja voor exemplaren om te raadplegen."
+			},
+			"acquisitionDate": {
+				"hint": "De verwervingsdatum; ontbreekt die, dan vandaag."
+			},
+			"itemNotes": {
+				"hint": "Notities van het exemplaar."
+			}
+		}
+	},
+	"batch": {
+		"selected": "Exemplaren van de selectie wijzigen",
+		"title": "Exemplaren wijzigen",
+		"scope": "{{count}} {{count:plural; one:exemplaar; other:exemplaren;}}",
+		"operation": "Wat wijzigen",
+		"operations": {
+			"status": "Status",
+			"itemType": "Materiaal",
+			"notForLoan": "Niet uitleenbaar",
+			"readingLevel": "Leesniveau van het exemplaar",
+			"acquisitionDate": "Verwervingsdatum"
+		},
+		"value": "Nieuwe waarde",
+		"yes": "Ja",
+		"no": "Nee",
+		"noClass": "Geen niveau",
+		"reason": "Reden",
+		"reasonHint": "Verplicht bij zoek en afgevoerd: de reden blijft in het logboek van elk exemplaar.",
+		"check": "Controleren",
+		"apply": "Toepassen op {{count}} {{count:plural; one:exemplaar; other:exemplaren;}}",
+		"plan": {
+			"changes": "{{count}} {{count:plural; one:exemplaar wijzigt; other:exemplaren wijzigen;}}",
+			"onLoan": "{{count}} {{count:plural; one:exemplaar; other:exemplaren;}} in uitleen {{count:plural; one:blijft zoals het is; other:blijven zoals ze zijn;}} (eerst terugbrengen)",
+			"unchanged": "{{count}} {{count:plural; one:exemplaar heeft; other:exemplaren hebben;}} al deze waarde",
+			"notFound": "{{count}} {{count:plural; one:exemplaar bestaat; other:exemplaren bestaan;}} niet meer",
+			"notAllowed": "{{count}} {{count:plural; one:exemplaar is; other:exemplaren zijn;}} non-fictie: het leesniveau geldt niet",
+			"none": "Geen exemplaar om te wijzigen."
+		},
+		"excludedTitle": "Exemplaren die blijven zoals ze zijn",
+		"done": "{{count}} {{count:plural; one:exemplaar gewijzigd; other:exemplaren gewijzigd;}}",
+		"errors": {
+			"reasonRequired": "Geef de reden op: die is verplicht bij zoek en afgevoerd.",
+			"itemTypeUnknown": "Materiaal niet in de configuratie.",
+			"readingLevelNotAllowed": "Leesniveau per exemplaar is niet ingeschakeld.",
+			"readingLevelOutOfRange": "Leesniveau niet in de configuratie.",
+			"dateInvalid": "Ongeldige datum.",
+			"statusUnknown": "Ongeldige status.",
+			"classificationUnknown": "Kies een genre of een onderwerp uit de configuratie."
+		},
+		"reclassify": {
+			"button": "Opnieuw classificeren",
+			"title": "De geselecteerde titels opnieuw classificeren",
+			"scope": "{{count}} {{count:plural; one:titel; other:titels;}}",
+			"resuggest": "De signaturen van de exemplaren herschrijven volgens de nieuwe classificatie",
+			"labelsHint": "De rugbanden (en de etiketten als de signatuur verandert) komen weer tussen de af te drukken items.",
+			"changes": "{{count}} {{count:plural; one:titel verandert; other:titels veranderen;}}",
+			"apply": "{{count}} {{count:plural; one:titel; other:titels;}} opnieuw classificeren",
+			"done": "{{count}} {{count:plural; one:titel opnieuw geclassificeerd; other:titels opnieuw geclassificeerd;}}, {{calls}} {{calls:plural; one:signatuur herschreven; other:signaturen herschreven;}}"
+		}
+	},
+	"search": {
+		"suggest": "De code {{barcode}} is een exemplaar van “{{title}}”.",
+		"openSuggest": "Titelbeschrijving openen",
+		"available": "Alleen beschikbare",
+		"yearFrom": "Jaar vanaf",
+		"yearTo": "Jaar tot",
+		"copiesAvailable": "{{available}} van {{total}} beschikbaar",
+		"noCopies": "Geen exemplaren"
+	},
+	"inventory": {
+		"title": "Inventarisatie",
+		"defaultName": "Inventarisatie",
+		"emptyTitle": "Geen inventarisatie aan de gang",
+		"emptyHint": "Start een campagne en scan de exemplaren daarna schap per schap: bij het afsluiten worden de exemplaren die nooit zijn gescand als zoek gemarkeerd.",
+		"name": "Naam van de campagne",
+		"start": "Nieuwe campagne",
+		"started": "Begonnen op {{when}}",
+		"overall": "Hele bibliotheek",
+		"progress": "{{seen}} van {{expected}} ({{percent}}%)",
+		"counts": "{{scanned}} {{scanned:plural; one:exemplaar gescand; other:exemplaren gescand;}} · {{misplaced}} op de verkeerde plek · {{found}} teruggevonden",
+		"byShelf": "Voortgang per schap",
+		"noShelf": "Geen signatuur",
+		"scanTitle": "De exemplaren scannen",
+		"shelf": "Schap",
+		"shelfHint": "Bijvoorbeeld B of 590: exemplaren met een andere signatuur worden als op de verkeerde plek gemarkeerd.",
+		"scanLabel": "Barcode van het exemplaar",
+		"camera": "Scannen met de camera",
+		"outcomes": {
+			"seen": "{{title}} ({{barcode}}): gezien.",
+			"again": "{{title}} ({{barcode}}): al gescand op {{when}}.",
+			"misplaced": "{{title}} ({{barcode}}): op de verkeerde plek; zet het terug volgens de signatuur.",
+			"found": "{{title}} ({{barcode}}): was zoek en is teruggevonden; het is weer beschikbaar.",
+			"onLoan": "{{title}} ({{barcode}}): staat in uitleen; registreer de inname aan de uitleenbalie.",
+			"withdrawn": "{{title}} ({{barcode}}): afgevoerd exemplaar, uit het schap te halen.",
+			"unknown": "{{code}}: geen exemplaar heeft deze barcode."
+		},
+		"missing": "Nog niet gevonden ({{count}})",
+		"allShelves": "Alle schappen",
+		"allTypes": "Alle materialen",
+		"noneMissing": "Alle verwachte exemplaren zijn gezien.",
+		"more": "en {{count:plural; one:nog één; other:nog {{count}};}}: exporteer de lijst om {{count:plural; one:het te zien; other:ze allemaal te zien;}}.",
+		"close": "Inventarisatie afsluiten",
+		"closeTitle": "De inventarisatie afsluiten?",
+		"closeHint": "{{count}} {{count:plural; one:exemplaar dat nooit is gezien wordt; other:exemplaren die nooit zijn gezien worden;}} als zoek gemarkeerd. De campagne kan binnen een week worden heropend om dat ongedaan te maken.",
+		"closedTitle": "Inventarisatie afgesloten",
+		"summary": "{{seen}} van {{expected}} {{expected:plural; one:exemplaar; other:exemplaren;}} gezien, {{lost}} als zoek gemarkeerd, {{found}} teruggevonden, {{onLoan}} in uitleen, {{misplaced}} op de verkeerde plek.",
+		"history": "Eerdere campagnes",
+		"reopen": "Heropenen",
+		"errors": {
+			"alreadyOpen": "Er is al een inventarisatie aan de gang.",
+			"notOpen": "Deze inventarisatie is afgesloten.",
+			"notFound": "Inventarisatie niet gevonden.",
+			"tooLate": "Heropenen kan alleen binnen een week na het afsluiten.",
+			"badName": "Geef de campagne een naam.",
+			"badNotes": "De notities van de campagne mogen maximaal 500 tekens bevatten."
+		},
+		"cameraShelf": "Schap {{shelf}}",
+		"cameraDone": "Klaar"
+	},
+	"toClassify": {
+		"title": "Te classificeren",
+		"label": "Te classificeren",
+		"intro": "De boeken die zonder classificatie zijn ingevoerd, het oudste eerst. Hun exemplaren worden niet uitgeleend totdat ze zijn geclassificeerd.",
+		"count": "{{count}} {{count:plural; one:boek; other:boeken;}} te classificeren",
+		"empty": "Geen boek te classificeren",
+		"emptyHint": "Elk boek in de catalogus heeft een genre of een onderwerp.",
+		"start": "Begin met classificeren",
+		"classify": "Classificeren",
+		"badge": "Te classificeren",
+		"badgeHint": "De exemplaren worden niet uitgeleend zolang het boek niet is geclassificeerd.",
+		"columns": {
+			"title": "Titel",
+			"author": "Auteur",
+			"publisher": "Uitgever",
+			"year": "Jaar",
+			"isbn": "ISBN",
+			"copies": "Exemplaren",
+			"enteredOn": "Ingevoerd op"
+		},
+		"flow": {
+			"title": "Het boek classificeren",
+			"saveNext": "Opslaan en volgende",
+			"save": "Opslaan",
+			"skip": "Overslaan",
+			"saved": "“{{title}}” geclassificeerd",
+			"end": "Er zijn in deze ronde geen andere boeken meer om te classificeren.",
+			"backToList": "Terug naar de lijst",
+			"already": "Dit boek is al geclassificeerd.",
+			"callNumber": "Signatuur van de exemplaren",
+			"callNumberHint": "De exemplaren zonder signatuur krijgen deze; daarna kan de rugband worden afgedrukt.",
+			"dewey": "Het Dewey-nummer {{dewey}} hoort bij het onderwerp {{code}}.",
+			"copies": "{{count}} {{count:plural; one:exemplaar; other:exemplaren;}}",
+			"subjects": "Onderwerpen",
+			"notes": "Notities"
+		}
+	}
+}

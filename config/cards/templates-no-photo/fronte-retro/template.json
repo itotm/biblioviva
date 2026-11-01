@@ -1,0 +1,7 @@
+{
+	"name": "fronte-retro",
+	"description": "Tessera orizzontale senza foto, scritta sui due lati: nome e codice a barre sul fronte; nome della biblioteca, anno scolastico e due righe per chi la trova sul retro illustrato",
+	"patronTypes": ["student", "teacher"],
+	"bleedMm": 0,
+	"barcode": { "widthMm": 40, "heightMm": 7, "text": false }
+}

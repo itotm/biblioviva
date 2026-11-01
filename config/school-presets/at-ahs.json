@@ -1,0 +1,97 @@
+{
+	"id": "at-ahs",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Gymnasium with Unterstufe and Oberstufe; after the 4. Klasse some pupils leave (BHS, BMS). A Mittelschule (1.–4. Klasse) can use it without the Oberstufe [VERIFY].",
+	"name": {
+		"it": "Liceo, AHS (Austria)",
+		"en": "Academic secondary school, AHS (Austria)",
+		"de": "Allgemeinbildende höhere Schule, AHS (Österreich)"
+	},
+	"country": "AT",
+	"languages": ["de"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "unterstufe",
+				"name": "AHS-Unterstufe"
+			},
+			{
+				"code": "oberstufe",
+				"name": "AHS-Oberstufe"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1",
+				"name": "1. Klasse",
+				"stage": "unterstufe",
+				"aliases": ["5. Schulstufe"]
+			},
+			{
+				"code": "2",
+				"label": "2",
+				"name": "2. Klasse",
+				"stage": "unterstufe",
+				"aliases": ["6. Schulstufe"]
+			},
+			{
+				"code": "3",
+				"label": "3",
+				"name": "3. Klasse",
+				"stage": "unterstufe",
+				"aliases": ["7. Schulstufe"]
+			},
+			{
+				"code": "4",
+				"label": "4",
+				"name": "4. Klasse",
+				"stage": "unterstufe",
+				"next": ["5", null],
+				"aliases": ["8. Schulstufe"]
+			},
+			{
+				"code": "5",
+				"label": "5",
+				"name": "5. Klasse",
+				"stage": "oberstufe",
+				"aliases": ["9. Schulstufe"]
+			},
+			{
+				"code": "6",
+				"label": "6",
+				"name": "6. Klasse",
+				"stage": "oberstufe",
+				"aliases": ["10. Schulstufe"]
+			},
+			{
+				"code": "7",
+				"label": "7",
+				"name": "7. Klasse",
+				"stage": "oberstufe",
+				"aliases": ["11. Schulstufe"]
+			},
+			{
+				"code": "8",
+				"label": "8",
+				"name": "8. Klasse",
+				"stage": "oberstufe",
+				"aliases": ["12. Schulstufe"]
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Klasse",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"unterstufe": ["a", "b", "c", "d"],
+		"oberstufe": ["a", "b", "c"]
+	},
+	"teacherGroup": "Lehrpersonen",
+	"readingLevels": []
+}

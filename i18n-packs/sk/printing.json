@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Tlač",
+		"newPatrons": "Nový zoznam čitateľov",
+		"newItems": "Nový zoznam kníh",
+		"newPatronsTitle": "Nový zoznam čitateľov",
+		"newItemsTitle": "Nový zoznam kníh",
+		"name": "Názov zoznamu",
+		"defaultName": "Zoznam {{n}} z {{date}}",
+		"kind": "Druh",
+		"kinds": {
+			"all": "Všetky",
+			"patrons": "Čitatelia",
+			"items": "Knihy"
+		},
+		"classes": "Triedy",
+		"classesHint": "Preukazy celej triedy bez vytvárania zoznamu.",
+		"classKind": "Trieda",
+		"count": "{{count}} {{count:plural; one:položka; few:položky; other:položiek;}}",
+		"empty": "Žiadne zoznamy. Zoznamy sa vytvárajú tu alebo tlačidlom „Pridať do zoznamu“ na stránkach Čitatelia a Katalóg.",
+		"lastPrinted": "Vytlačené {{when}}",
+		"neverPrinted": "Nikdy nevytlačené",
+		"open": "Otvoriť",
+		"created": "Zoznam vytvorený",
+		"deleted": "Zoznam odstránený",
+		"deleteTitle": "Odstrániť zoznam „{{name}}“?",
+		"deleteDescription": "Položky sa zo zoznamu odstránia; čitatelia zostanú v archíve."
+	},
+	"list": {
+		"rename": "Premenovať",
+		"renamed": "Zoznam premenovaný",
+		"print": "Tlačiť preukazy",
+		"markPrinted": "Označiť ako vytlačené",
+		"marked": "{{count}} {{count:plural; one:preukaz označený ako vytlačený; few:preukazy označené ako vytlačené; other:preukazov označených ako vytlačených;}}",
+		"clearAfter": "Po tlači vyprázdniť zoznam",
+		"clear": "Vyprázdniť",
+		"cleared": "Zoznam vyprázdnený",
+		"clearTitle": "Vyprázdniť zoznam?",
+		"clearDescription": "Všetky položky sa zo zoznamu odstránia; čitatelia zostanú v archíve.",
+		"delete": "Odstrániť",
+		"entries": "{{count}} {{count:plural; one:čitateľ; few:čitatelia; other:čitateľov;}} v zozname",
+		"empty": "Zoznam je prázdny. Čitatelia sa pridávajú rýchlymi filtrami, čítačkou alebo zo stránky Čitatelia.",
+		"remove": "Odstrániť zo zoznamu",
+		"moveUp": "Posunúť nahor",
+		"moveDown": "Posunúť nadol",
+		"dragHint": "Položky presuňte myšou, ak chcete zmeniť poradie tlače.",
+		"removed": "Odstránené zo zoznamu",
+		"columns": {
+			"position": "Č.",
+			"printed": "Preukaz vytlačený"
+		},
+		"printedYes": "áno",
+		"printedNo": "nie",
+		"quick": {
+			"title": "Pridať pomocou filtrov",
+			"hint": "Kto už je v zozname, sa nepridá znova.",
+			"type": "Typ",
+			"any": "Ľubovoľný",
+			"stage": "Stupeň školy",
+			"level": "Ročník",
+			"withoutPrintedCard": "Iba tí, ktorým ešte nebol vytlačený preukaz",
+			"withoutPhoto": "Iba tí bez fotografie",
+			"importBatch": "Import",
+			"anyBatch": "— žiadny —",
+			"batchLabel": "č. {{id}} · {{file}} · {{created}} {{created:plural; one:nový; few:nové; other:nových;}}",
+			"createdAfter": "Vytvorené od",
+			"add": "Pridať do zoznamu",
+			"added": "{{added}} {{added:plural; one:pridaný; few:pridaní; other:pridaných;}}, {{skipped}} {{skipped:plural; one:už prítomný; few:už prítomní; other:už prítomných;}}",
+			"none": "Žiadny čitateľ nezodpovedá filtrom.",
+			"pendingLabels": "Štítky na tlač",
+			"pendingAny": "— všetky exempláre —",
+			"acquiredFrom": "Nadobudnuté od",
+			"acquiredTo": "do",
+			"genre": "Žáner",
+			"itemType": "Typ exempláru",
+			"batchLabelItems": "č. {{id}} · {{file}} · {{created}} {{created:plural; one:exemplár; few:exempláre; other:exemplárov;}}",
+			"noneItems": "Žiadny exemplár nezodpovedá filtrom.",
+			"addedItems": "{{added}} {{added:plural; one:pridaný; few:pridané; other:pridaných;}}, {{skipped}} {{skipped:plural; one:už prítomný; few:už prítomné; other:už prítomných;}}",
+			"nonfictionClass": "Trieda náučnej literatúry"
+		},
+		"scan": {
+			"title": "Pridať čítačkou",
+			"hint": "Načítajte preukaz každého čitateľa: hneď sa pridá do zoznamu. Preukazy, ktoré už sú v zozname, sa ignorujú.",
+			"added": "{{name}} pridaný",
+			"duplicate": "{{name}} už je v zozname",
+			"unknown": "Žiadny čitateľ s preukazom {{card}}",
+			"notCard": "Načítaný kód nie je preukaz",
+			"hintItems": "Načítajte čiarový kód každého exempláru, napríklad pri prechádzaní pozdĺž police: exemplár sa hneď pridá do zoznamu. Exempláre, ktoré už sú v zozname, sa ignorujú.",
+			"addedItem": "{{title}} ({{barcode}}) pridaný",
+			"duplicateItem": "{{title}} ({{barcode}}) už je v zozname",
+			"unknownItem": "Žiadny exemplár s čiarovým kódom {{barcode}}",
+			"notItem": "Načítaný kód nie je exemplár"
+		},
+		"printLabels": "Tlačiť štítky",
+		"markPrintedKind": "Štítky vytlačené",
+		"markedItems": "{{count}} {{count:plural; one:exemplár označený ako vytlačený; few:exempláre označené ako vytlačené; other:exemplárov označených ako vytlačených;}}",
+		"entriesItems": "{{count}} {{count:plural; one:exemplár; few:exempláre; other:exemplárov;}} v zozname",
+		"emptyItems": "Zoznam je prázdny. Exempláre sa pridávajú rýchlymi filtrami, čítačkou alebo z katalógu.",
+		"clearDescriptionItems": "Všetky položky sa odstránia; exempláre zostanú v katalógu."
+	},
+	"basket": {
+		"label": "Zoznamy na tlač",
+		"labelToPrint": "Zoznamy na tlač: {{count}} na tlač",
+		"entry": "{{name}} ({{count}})",
+		"none": "Žiadny zoznam na tlač",
+		"all": "Všetky zoznamy"
+	},
+	"addTo": {
+		"button": "Pridať do zoznamu",
+		"selected": "Pridať vybraté do zoznamu",
+		"title": "Pridať do zoznamu na tlač",
+		"existing": "Existujúci zoznam",
+		"create": "Nový zoznam",
+		"newName": "Názov nového zoznamu",
+		"confirm": "Pridať",
+		"done": "{{added}} {{added:plural; one:pridaný; few:pridané; other:pridaných;}} do „{{name}}“, {{skipped}} {{skipped:plural; one:už prítomný; few:už prítomné; other:už prítomných;}}"
+	},
+	"labels": {
+		"title": "Tlačiť štítky",
+		"button": "Tlačiť štítky",
+		"selected": "Tlačiť štítky vybratých",
+		"kind": "Druh štítka",
+		"kinds": {
+			"pair": "Dvojica",
+			"barcode": "Iba čiarový kód",
+			"spine": "Iba pásik"
+		},
+		"kindHints": {
+			"pair": "Pásik na chrbte hore a štítok s čiarovým kódom dole, jedna dvojica na knihu (aktuálna tlač).",
+			"barcode": "Iba vnútorný štítok s čiarovým kódom, na dotlač.",
+			"spine": "Iba pásik na chrbte, napríklad po preklasifikovaní."
+		},
+		"stock": "Hárok štítkov",
+		"start": "Prvá voľná pozícia",
+		"startHint": "Od 1 do {{max}}: preskočí štítky, ktoré sú na hárku už použité.",
+		"count": "{{count}} {{count:plural; one:exemplár; few:exempláre; other:exemplárov;}}",
+		"unclassified": "{{count}} {{count:plural; one:exemplár knihy; few:exempláre kníh; other:exemplárov kníh;}} na klasifikáciu: tlačí sa iba {{count:plural; one:jeho štítok; few:ich štítky; other:ich štítky;}} s čiarovým kódom, pásik na chrbte až po klasifikácii.",
+		"pendingCount": "{{count}} {{count:plural; one:exemplár; few:exempláre; other:exemplárov;}} s štítkami na tlač",
+		"pages": "{{pages}} {{pages:plural; one:hárok; few:hárky; other:hárkov;}} ({{perPage}} na hárok)",
+		"print": "Otvoriť tlač",
+		"afterPrint": "Stránka na tlač sa otvorila na novej karte. Po vytlačení označte štítky ako vytlačené.",
+		"markPrinted": "Označiť ako vytlačené",
+		"marked": "{{count}} {{count:plural; one:exemplár označený ako vytlačený; few:exempláre označené ako vytlačené; other:exemplárov označených ako vytlačených;}}",
+		"status": {
+			"printed": "Štítky vytlačené",
+			"pending": "Štítky na tlač",
+			"partial": "Chýba jeden štítok"
+		}
+	},
+	"cards": {
+		"title": "Tlačiť preukazy",
+		"count": "{{count}} {{count:plural; one:preukaz; few:preukazy; other:preukazov;}}",
+		"afterPrint": "Stránka na tlač sa otvorila na novej karte. Po vytlačení označte preukazy ako vytlačené.",
+		"layout": "Ako tlačiť",
+		"layouts": {
+			"side-by-side": "Predná a zadná strana vedľa seba",
+			"duplex": "Na oboch stranách listu"
+		},
+		"window": "V okne tlače prehliadača:",
+		"steps": {
+			"duplex": {
+				"long-edge": "zvoľte „Obojstranne“, otáčanie na dlhej hrane;",
+				"short-edge": "zvoľte „Obojstranne“, otáčanie na krátkej hrane;"
+			},
+			"scale": "mierka 100 % („Skutočná veľkosť“, nie „Prispôsobiť stránke“);",
+			"margins": "okraje: žiadne.",
+			"after": {
+				"side-by-side": {
+					"marks": "Potom každý preukaz vystrihnite spojením značiek orezu okolo preukazov pravítkom a prehnite ho na polovicu pozdĺž krátkej hrany.",
+					"line": "Potom každý preukaz vystrihnite pozdĺž farebnej čiary, ktorá ho obkolesuje, a prehnite ho na polovicu pozdĺž krátkej hrany.",
+					"edge": "Potom každý preukaz vystrihnite pozdĺž okraja a prehnite ho na polovicu pozdĺž krátkej hrany."
+				},
+				"duplex": {
+					"marks": "Potom preukazy vystrihnite spojením značiek orezu okolo predných strán pravítkom: zadná strana je už za prednou (desať na hárok).",
+					"line": "Potom preukazy vystrihnite pozdĺž farebnej čiary okolo predných strán: zadná strana je už za prednou (desať na hárok).",
+					"edge": "Potom preukazy vystrihnite pozdĺž okraja predných strán: zadná strana je už za prednou (desať na hárok)."
+				}
+			}
+		},
+		"print": "Tlačiť",
+		"calibrate": "Prvýkrát, alebo ak zadné strany nepadajú za predné:"
+	},
+	"words": {
+		"teacher": "Učiteľ",
+		"title": "Názov",
+		"code": "Kód",
+		"dueBy": "Vrátiť do",
+		"due": "Splatné",
+		"name": "Meno",
+		"daysOverdue": "Dni po termíne",
+		"loanOn": "Výpožička z {{date}} pre",
+		"overduesOn": "Upomienky knižnice z {{date}}",
+		"toReturn": "Knihy na vrátenie do knižnice",
+		"enjoy": "Príjemné čítanie."
+	}
+}

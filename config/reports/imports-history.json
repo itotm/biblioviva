@@ -1,0 +1,65 @@
+{
+	"id": "imports-history",
+	"title": {
+		"it": "Storico delle importazioni",
+		"en": "Import history"
+	},
+	"description": {
+		"it": "Le importazioni di utenti, catalogo e prestiti con il loro esito. Riservato agli amministratori.",
+		"en": "The imports of patrons, catalogue and loans with their outcome. Administrators only."
+	},
+	"category": "ops",
+	"restricted": true,
+	"params": [],
+	"sql": "SELECT ib.kind AS kind, ib.filename AS file, ib.mode AS mode, ib.started_at AS started, ib.finished_at AS finished, ib.summary AS summary FROM import_batch ib ORDER BY ib.started_at DESC",
+	"columns": [
+		{
+			"key": "kind",
+			"label": {
+				"it": "Tipo",
+				"en": "Kind"
+			},
+			"type": "text"
+		},
+		{
+			"key": "file",
+			"label": {
+				"it": "File",
+				"en": "File"
+			},
+			"type": "text"
+		},
+		{
+			"key": "mode",
+			"label": {
+				"it": "Modalità",
+				"en": "Mode"
+			},
+			"type": "text"
+		},
+		{
+			"key": "started",
+			"label": {
+				"it": "Iniziata",
+				"en": "Started"
+			},
+			"type": "datetime"
+		},
+		{
+			"key": "finished",
+			"label": {
+				"it": "Finita",
+				"en": "Finished"
+			},
+			"type": "datetime"
+		},
+		{
+			"key": "summary",
+			"label": {
+				"it": "Esito",
+				"en": "Outcome"
+			},
+			"type": "text"
+		}
+	]
+}

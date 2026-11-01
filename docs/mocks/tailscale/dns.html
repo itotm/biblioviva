@@ -1,0 +1,134 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<!--
+	Mock (ADR-046): the DNS page of the Tailscale admin console, as the step "Rete" of the
+	installation describes it: the tailnet's name ending in .ts.net, MagicDNS and HTTPS
+	Certificates on. The console is in English for every reader.
+-->
+<html lang="en" data-lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>DNS</title>
+		<link rel="stylesheet" href="../mock.css" />
+		<script>
+			document.documentElement.dataset.lang =
+				new URLSearchParams(location.search).get("lang") === "en" ? "en" : "it";
+		</script>
+		<style>
+			.mock {
+				width: 1040px;
+			}
+			nav {
+				display: flex;
+				gap: 4px;
+				padding: 10px 24px;
+				border-bottom: 1px solid var(--line);
+				background: var(--soft);
+				font-size: 14px;
+			}
+			nav span {
+				padding: 6px 12px;
+				border-radius: 6px;
+				color: var(--muted);
+			}
+			nav span.on {
+				background: #fff;
+				color: var(--ink);
+				font-weight: 600;
+				box-shadow: 0 0 0 1px var(--line);
+			}
+			main {
+				padding: 24px 32px 32px;
+			}
+			main > h1 {
+				font-size: 26px;
+				margin-bottom: 4px;
+			}
+			main > p {
+				margin: 0 0 20px;
+				color: var(--muted);
+			}
+			section {
+				border: 1px solid var(--line);
+				border-radius: 8px;
+				padding: 18px 20px;
+				margin-bottom: 16px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 24px;
+			}
+			section h2 {
+				font-size: 17px;
+				margin-bottom: 4px;
+			}
+			section p {
+				margin: 0;
+				color: var(--muted);
+				font-size: 14px;
+				max-width: 640px;
+			}
+			.name {
+				font-size: 18px;
+				margin-top: 6px;
+				color: var(--ink);
+			}
+			.on-badge {
+				color: var(--ok);
+				font-weight: 600;
+				font-size: 13px;
+				margin-right: 12px;
+			}
+			.mark {
+				outline: 3px solid #f59f00;
+				outline-offset: 3px;
+				border-radius: 4px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mock">
+			<nav>
+				<span>Machines</span><span>Apps</span><span>Services</span><span>Users</span
+				><span>Access controls</span><span>Logs</span><span class="on">DNS</span
+				><span>Settings</span>
+			</nav>
+			<main>
+				<h1>DNS</h1>
+				<p>Manage the DNS settings of your tailnet.</p>
+				<section>
+					<div>
+						<h2>Tailnet DNS name</h2>
+						<p>The unique name of your tailnet, used for DNS entries and HTTPS certificates.</p>
+						<div class="name mono"><span class="mark">tail1a2b3c.ts.net</span></div>
+					</div>
+					<span class="button">Rename tailnet…</span>
+				</section>
+				<section>
+					<div>
+						<h2>Nameservers</h2>
+						<p>Set the nameservers used by devices on your network to resolve DNS queries.</p>
+					</div>
+					<span class="button">Add nameserver</span>
+				</section>
+				<section>
+					<div>
+						<h2>MagicDNS</h2>
+						<p>
+							Automatically register domain names for devices in your tailnet, so they can be
+							reached by name.
+						</p>
+					</div>
+					<div><span class="on-badge">Enabled</span><span class="button">Disable MagicDNS…</span></div>
+				</section>
+				<section>
+					<div>
+						<h2>HTTPS Certificates</h2>
+						<p>Allow users to provision HTTPS certificates for their devices.</p>
+					</div>
+					<div><span class="on-badge">Enabled</span><span class="button">Disable HTTPS…</span></div>
+				</section>
+			</main>
+		</div>
+	</body>
+</html>

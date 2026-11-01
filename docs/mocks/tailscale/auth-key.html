@@ -1,0 +1,134 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<!--
+	Mock (ADR-046): the form "Generate auth key" of the Keys page of the Tailscale admin console,
+	filled in as the step "Rete" of the installation says: a description, Reusable and
+	Pre-approved on, Ephemeral off, the tag tag:biblioviva, the expiry left as proposed. The
+	console is in English for every reader.
+-->
+<html lang="en" data-lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>Generate auth key</title>
+		<link rel="stylesheet" href="../mock.css" />
+		<script>
+			document.documentElement.dataset.lang =
+				new URLSearchParams(location.search).get("lang") === "en" ? "en" : "it";
+		</script>
+		<style>
+			.mock {
+				width: 560px;
+			}
+			header {
+				padding: 20px 24px 8px;
+			}
+			header h1 {
+				font-size: 20px;
+			}
+			.body {
+				padding: 8px 24px 4px;
+			}
+			.row {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				gap: 20px;
+				padding: 14px 0;
+				border-top: 1px solid var(--line);
+			}
+			.row:first-child {
+				border-top: 0;
+			}
+			.row .text {
+				flex: 1;
+			}
+			.row .hint {
+				margin-top: 2px;
+			}
+			h2 {
+				font-size: 13px;
+				text-transform: uppercase;
+				letter-spacing: 0.04em;
+				color: var(--muted);
+				margin: 12px 0 0;
+			}
+			.chip {
+				display: inline-block;
+				margin-top: 8px;
+				padding: 3px 10px;
+				border-radius: 999px;
+				background: var(--accent-soft);
+				color: var(--accent);
+				font-weight: 600;
+			}
+			.days {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+			.days .field {
+				width: 64px;
+				text-align: right;
+			}
+			footer {
+				display: flex;
+				justify-content: flex-end;
+				gap: 10px;
+				padding: 16px 24px 20px;
+				border-top: 1px solid var(--line);
+				background: var(--soft);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mock" role="dialog" aria-label="Generate auth key">
+			<header><h1>Generate auth key</h1></header>
+			<div class="body">
+				<div class="row">
+					<div class="text">
+						<div class="label">Description</div>
+						<span class="field" style="margin-top: 6px">BiblioViva</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="text">
+						<div class="label">Reusable</div>
+						<div class="hint">Use this key to authenticate more than one device.</div>
+					</div>
+					<span class="switch on"></span>
+				</div>
+				<div class="row">
+					<div class="text">
+						<div class="label">Expiry</div>
+						<div class="hint">Number of days until this key expires (1 to 90).</div>
+					</div>
+					<div class="days"><span class="field">90</span><span>days</span></div>
+				</div>
+				<h2>Device settings</h2>
+				<div class="row">
+					<div class="text">
+						<div class="label">Ephemeral</div>
+						<div class="hint">Devices authenticated by this key are removed when they go offline.</div>
+					</div>
+					<span class="switch"></span>
+				</div>
+				<div class="row">
+					<div class="text">
+						<div class="label">Pre-approved</div>
+						<div class="hint">Devices authenticated by this key are approved automatically.</div>
+					</div>
+					<span class="switch on"></span>
+				</div>
+				<div class="row">
+					<div class="text">
+						<div class="label">Tags</div>
+						<div class="hint">Devices authenticated by this key are tagged.</div>
+						<span class="chip mono">tag:biblioviva</span>
+					</div>
+					<span class="switch on"></span>
+				</div>
+			</div>
+			<footer><span class="button">Cancel</span><span class="button primary">Generate key</span></footer>
+		</div>
+	</body>
+</html>

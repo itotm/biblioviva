@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "Katalog",
+		"search": "Hledat podle názvu, autora nebo ISBN…",
+		"new": "Nová kniha",
+		"empty": "Žádná kniha neodpovídá filtrům.",
+		"countFiltered": "{{shown}} {{shown:plural; one:titul odpovídá; few:tituly odpovídají; other:titulů odpovídá;}} filtrům",
+		"clearFilters": "Zrušit filtry",
+		"filters": {
+			"kind": "Druh",
+			"genre": "Žánr",
+			"class": "Třídění",
+			"readingLevel": "Úroveň",
+			"itemType": "Materiál",
+			"series": "Série",
+			"all": "Vše",
+			"allF": "Vše",
+			"withdrawn": "Zobrazit i vyřazené knihy"
+		},
+		"columns": {
+			"title": "Název",
+			"series": "Série",
+			"author": "Autor",
+			"year": "Rok",
+			"isbn": "ISBN",
+			"classification": "Třídění",
+			"copies": "Exempláře",
+			"callNumber": "Signatura",
+			"acquiredAt": "Pořízeno"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "Hledat v katalogu",
+		"startHint": "Hledání podle názvu, autora, nakladatele, kódu nebo ISBN, nebo pomocí filtrů."
+	},
+	"kinds": {
+		"fiction": "Beletrie",
+		"nonfiction": "Naučná literatura"
+	},
+	"fields": {
+		"title": "Název",
+		"subtitle": "Podnázev",
+		"originalTitle": "Originální název",
+		"originalTitleHint": "Pouze u překladu: název díla v původním jazyce.",
+		"responsibility": "Údaj o odpovědnosti (jak je na titulní straně)",
+		"author": "Autor",
+		"publisher": "Nakladatel",
+		"publicationPlace": "Místo",
+		"publicationYear": "Rok",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN (není ISBN)",
+		"physicalDescription": "Fyzický popis",
+		"series": "Série",
+		"seriesNumber": "Číslo v sérii",
+		"seriesHint": "Například Harry Potter a 3. Během psaní se nabízejí série, které už jsou v katalogu.",
+		"dewey": "Dewey (z SBN)",
+		"kind": "Druh",
+		"genre": "Žánr",
+		"classCode": "Třídění",
+		"readingLevel": "Čtenářská úroveň",
+		"subjects": "Hesla",
+		"notes": "Poznámky",
+		"authorHint": "Příjmení, Jméno. Rychlé volby použijte, když není osobní autor.",
+		"subjectsHint": "Jedno na řádek nebo oddělené čárkou.",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "Nová kniha",
+		"editTitle": "Upravit záznam",
+		"create": "Uložit záznam",
+		"save": "Uložit změny",
+		"identity": "Záznam",
+		"publication": "Vydání",
+		"classification": "Třídění",
+		"more": "Další údaje",
+		"quickPicks": "Rychlé volby",
+		"unknownPublisher": "Neznámý nakladatel",
+		"unknownPlace": "Neznámé místo",
+		"singleCopy": "Exemplář {{barcode}}",
+		"singleCopyHint": "Záznam má jediný exemplář: jeho údaje se upravují zde a ukládají spolu se záznamem."
+	},
+	"picker": {
+		"kind": "Jaký druh knihy to je?",
+		"fiction": "Beletrie",
+		"nonfiction": "Naučná literatura",
+		"genre": "Vyberte žánr",
+		"class": "Vyberte oblast",
+		"readingLevel": "Čtenářská úroveň",
+		"anyClass": "Žádná",
+		"back": "Zpět na hlavní oblasti",
+		"children": "Oblasti: {{label}}",
+		"selected": "Vybráno: {{label}}",
+		"parentOnly": "Použít „{{label}}“ obecně",
+		"later": "Zatřídit později",
+		"laterHint": "Kniha přejde do seznamu „K zatřídění“: její exempláře se nepůjčují a hřbetní štítek se netiskne, dokud nebude zatříděna."
+	},
+	"detail": {
+		"heading": "Záznam knihy",
+		"tabs": {
+			"copies": "Exempláře",
+			"details": "Podrobnosti"
+		},
+		"copies": "{{available}} {{available:plural; one:dostupný; few:dostupné; other:dostupných;}} z {{total}}",
+		"noCopies": "Zatím žádný exemplář: k výpůjčce je třeba nějaký přidat.",
+		"seriesLink": "Všechny knihy série „{{series}}“",
+		"edit": "Upravit",
+		"delete": "Smazat záznam",
+		"addCopies": "Přidat exempláře",
+		"deleteTitle": "Smazat záznam „{{title}}“?",
+		"deleteDescription": "Záznam zmizí z katalogu. Je to možné jen bez exemplářů.",
+		"deleted": "Záznam smazán",
+		"hasItems": "Záznam má ještě {{count}} {{count:plural; one:exemplář; few:exempláře; other:exemplářů;}}: nejdřív {{count:plural; one:jej vyřaďte nebo smažte; few:je vyřaďte nebo smažte; other:je vyřaďte nebo smažte;}}.",
+		"columns": {
+			"barcode": "Čárový kód",
+			"callNumber": "Signatura",
+			"itemType": "Materiál",
+			"readingLevel": "Úroveň",
+			"status": "Stav",
+			"borrower": "Vypůjčeno čtenáři",
+			"acquisition": "Pořízeno dne",
+			"labels": "Štítky"
+		},
+		"dueOn": "vrátit do {{date}}",
+		"identifiers": "Identifikátory",
+		"source": "Zdroj: {{source}}",
+		"created": "Vytvořeno {{when}}",
+		"updated": "Naposledy upraveno {{when}}",
+		"onLoan": "Vypůjčeno"
+	},
+	"item": {
+		"addTitle": "Přidat exempláře",
+		"copies": "Počet exemplářů",
+		"itemType": "Materiál",
+		"callNumber": "Signatura",
+		"callNumberHint": "Navrženo podle třídění; lze změnit.",
+		"readingLevel": "Úroveň exempláře",
+		"enumeration": "Svazek / číslo",
+		"acquisitionDate": "Datum pořízení",
+		"notes": "Poznámky k exempláři",
+		"notForLoan": "Pouze k nahlédnutí (nepůjčuje se)",
+		"add": "Přidat",
+		"added": "{{count}} {{count:plural; one:exemplář přidán; few:exempláře přidány; other:exemplářů přidáno;}}: {{barcodes}}",
+		"editTitle": "Upravit exemplář {{barcode}}",
+		"save": "Uložit",
+		"saved": "Exemplář aktualizován",
+		"status": "Změnit stav",
+		"statusTitle": "Stav exempláře {{barcode}}",
+		"newStatus": "Nový stav",
+		"reason": "Důvod (nepovinný, zaznamená se)",
+		"statusSaved": "Stav aktualizován",
+		"onLoan": "Exemplář je vypůjčen: nejprve zaznamenejte vrácení.",
+		"delete": "Smazat exemplář",
+		"deleteTitle": "Smazat exemplář {{barcode}}?",
+		"deleteDescription": "Jen při chybě v katalogizaci: exemplář, který byl někdy vypůjčen, nelze smazat, je třeba jej vyřadit.",
+		"deleted": "Exemplář smazán",
+		"hasLoans": "Exemplář má zaznamenané výpůjčky: je třeba jej vyřadit, ne smazat.",
+		"labelsTitle": "Štítky exempláře {{barcode}}"
+	},
+	"errors": {
+		"isbnInvalid": "Neplatné ISBN (zkontrolujte číslice)",
+		"isbnTaken": "Záznam s tímto ISBN už existuje",
+		"issnInvalid": "Neplatné ISSN",
+		"eanInvalid": "Neplatné EAN",
+		"yearImplausible": "Nepravděpodobný rok",
+		"genreRequired": "Vyberte žánr",
+		"genreUnknown": "Žánr není v nastavení",
+		"genreNotForNonfiction": "Naučná literatura nemá žánr",
+		"classCodeRequired": "Vyberte oblast",
+		"classCodeUnknown": "Oblast není v nastavení",
+		"classCodeNotForFiction": "Beletrie nemá oblast",
+		"readingLevelNotAllowed": "Čtenářská úroveň se zde neuplatňuje",
+		"readingLevelOutOfRange": "Čtenářská úroveň není v nastavení",
+		"itemTypeUnknown": "Materiál není v nastavení",
+		"acquisitionDateInvalid": "Neplatné datum (RRRR-MM-DD)",
+		"copiesOutOfRange": "Najednou od 1 do 100 exemplářů"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "Zkušební poskytovatel"
+		},
+		"errors": {
+			"unreachable": "Služba není dostupná. Zkontrolujte připojení k internetu a zkuste to později.",
+			"timeout": "Služba neodpověděla včas. Zkuste to později.",
+			"protocol": "Služba odpověděla neočekávaným způsobem. Údaje lze zadat ručně.",
+			"http": "Služba odpověděla chybou. Zkuste to později.",
+			"rate_limited": "Služba požadavek odmítla pro příliš mnoho dotazů. Zkuste to později.",
+			"not_configured": "Služba není nastavena: chybí nějaké nastavení (například klíč API).",
+			"spawn": "Program yaz-client na tomto serveru není k dispozici. Informujte správce."
+		},
+		"noHits": "Žádné výsledky od {{provider}}.",
+		"hits": "{{count}} {{count:plural; one:výsledek; few:výsledky; other:výsledků;}} od {{provider}}",
+		"fromCache": "z mezipaměti"
+	},
+	"fastAdd": {
+		"title": "Nová kniha",
+		"steps": {
+			"code": "Kód",
+			"lookup": "Hledání",
+			"form": "Záznam a exempláře",
+			"done": "Dokončeno"
+		},
+		"code": {
+			"heading": "Načtěte čárový kód",
+			"label": "ISBN nebo EAN",
+			"placeholder": "978…",
+			"material": "Materiál",
+			"noCode": "Bez kódu",
+			"noCodeHint": "Hledejte podle názvu a autora, nebo zadejte záznam ručně.",
+			"manual": "Vyplnit ručně",
+			"notACode": "Načtený kód není ISBN ani EAN: zkontrolujte číslice, nebo zvolte „Bez kódu“.",
+			"eanNotIsbn": "Načten EAN {{ean}}: není to ISBN, záznam je tedy třeba vyplnit ručně.",
+			"cameraNotIsbn": "Není to ISBN: zaměřte čárový kód knihy"
+		},
+		"search": {
+			"heading": "Hledat podle názvu a autora",
+			"title": "Název",
+			"author": "Autor",
+			"submit": "Hledat",
+			"empty": "Zadejte alespoň název nebo autora."
+		},
+		"duplicate": {
+			"heading": "Toto ISBN je už v katalogu",
+			"copies": "{{count}} {{count:plural; one:exemplář; few:exempláře; other:exemplářů;}}",
+			"addCopy": "Přidat exemplář",
+			"open": "Otevřít záznam",
+			"another": "Načíst jiný kód"
+		},
+		"lookup": {
+			"searching": "Probíhá hledání u: {{providers}}…",
+			"best": "Nejúplnější",
+			"heading": "Nalezené záznamy",
+			"pick": "Použít tento záznam",
+			"none": "Žádný záznam nenalezen. Záznam lze zadat ručně.",
+			"manual": "Zadat ručně",
+			"bySearch": "Hledat podle názvu",
+			"retry": "Zkusit znovu",
+			"another": "Nový kód",
+			"source": "Zdroj: {{provider}}",
+			"providerOk": "{{count}} {{count:plural; one:záznam; few:záznamy; other:záznamů;}}",
+			"providerCached": "z mezipaměti",
+			"failed": "Chyba"
+		},
+		"form": {
+			"heading": "Zkontrolujte záznam a přidejte exempláře",
+			"rescan": "Načíst jiný kód",
+			"bestOf": "Nejúplnější z {{count}} nalezených záznamů. Zkontrolujte rok a popis podle exempláře.",
+			"otherRecords": "{{count:plural; one:Jiný záznam; few:Jiné záznamy; other:Jiných záznamů;}} ({{count}})",
+			"fromSource": "Záznam od {{provider}}: před uložením zkontrolujte údaje.",
+			"manualSource": "Záznam zadán ručně.",
+			"copiesSection": "Exempláře",
+			"copies": "Počet exemplářů",
+			"itemType": "Materiál",
+			"callNumber": "Signatura",
+			"readingLevel": "Úroveň exemplářů",
+			"acquisitionDate": "Datum pořízení",
+			"save": "Uložit záznam a exempláře",
+			"deweySuggested": "Oblast navržena podle čísla Dewey {{dewey}}."
+		},
+		"done": {
+			"heading": "Záznam uložen",
+			"summary": "„{{title}}“ s {{count}} {{count:plural; one:exemplářem; few:exempláři; other:exempláři;}}",
+			"summaryCopies": "{{count}} {{count:plural; one:exemplář přidán; few:exempláře přidány; other:exemplářů přidáno;}} k „{{title}}“",
+			"barcodes": "Čárové kódy exemplářů",
+			"printLabels": "Vytisknout štítky",
+			"addToList": "Přidat do seznamu štítků",
+			"open": "Otevřít záznam",
+			"another": "Přidat další"
+		},
+		"cover": {
+			"title": "Obálka",
+			"alt": "Obálka knihy",
+			"searching": "Hledání obálky online…",
+			"found": "Nalezena u {{provider}}: uloží se se záznamem. Pokud je špatná, vyfotografujte obálku knihy.",
+			"photo": "Fotografie obálky: uloží se se záznamem.",
+			"none": "Obálka online nenalezena: lze ji vyfotografovat.",
+			"empty": "Bez obálky: lze ji vyfotografovat.",
+			"take": "Vyfotografovat obálku",
+			"replace": "Nahradit fotografií",
+			"remove": "Odebrat",
+			"saving": "Ukládání obálky…",
+			"failed": "Obálka nebyla uložena: lze ji přidat ze záznamu knihy."
+		}
+	},
+	"cover": {
+		"title": "Obálka",
+		"take": "Vyfotografovat obálku",
+		"upload": "Nahrát soubor",
+		"change": "Změnit obálku",
+		"delete": "Odebrat obálku",
+		"deleteTitle": "Odebrat obálku?",
+		"deleteDescription": "Obrázek se smaže ze serveru; lze vyfotografovat novou.",
+		"shoot": "Vyfotit",
+		"loading": "Načítání modulu pro narovnání ({{loaded}} z {{total}} MB), jen při prvním použití.",
+		"loadingShort": "Načítání modulu pro narovnání ({{loaded}} MB), jen při prvním použití.",
+		"loadFailed": "Modul pro narovnání nelze načíst. Zkontrolujte připojení a zkuste to znovu.",
+		"detecting": "Hledání okrajů obálky…",
+		"notFound": "Okraje se nenašly automaticky: přetáhněte rohy na okraje obálky.",
+		"adjustHint": "Přetáhněte čtyři rohy na okraje obálky a poté ji narovnejte.",
+		"straighten": "Narovnat",
+		"result": "Výsledek",
+		"use": "Použít tuto obálku",
+		"retake": "Znovu",
+		"cancel": "Zrušit",
+		"saved": "Obálka uložena",
+		"deleted": "Obálka odebrána",
+		"placeholder": "Bez obálky",
+		"alt": "Obálka knihy {{title}}",
+		"cameraHint": "Zaměřte celou obálku, i šikmo: po snímku se narovná.",
+		"errors": {
+			"too_large": "Soubor je příliš velký: limit je {{maxMb}} MB.",
+			"not_an_image": "Soubor není čitelný obrázek.",
+			"unsupported_format": "Nepodporovaný formát obrázku (použijte JPEG, PNG, WebP nebo HEIC).",
+			"empty": "Není vybrán žádný soubor."
+		},
+		"download": "Stáhnout obálku",
+		"downloading": "Hledání obálky online…",
+		"downloaded": "Obálka stažena z {{provider}}",
+		"downloadNotFound": "Pro toto ISBN nebyla online nalezena obálka: lze ji vyfotografovat.",
+		"downloadNoIsbn": "Záznam nemá ISBN: obálku je třeba vyfotografovat."
+	},
+	"export": {
+		"copiesTotal": "Exempláře",
+		"copiesAvailable": "K dispozici",
+		"callNumber": "Signatura",
+		"acquiredAt": "Pořízeno"
+	},
+	"import": {
+		"title": "Importovat katalog",
+		"upload": {
+			"file": "Soubor CSV",
+			"hint": "Jeden řádek na exemplář: údaje o titulu se opakují na řádcích jeho exemplářů. Povinné jsou název, autor a nakladatel. Použijte záhlaví šablony, která je níže ke stažení, s potřebnými sloupci. Pro přechod z Koha použijte export popsaný v příručce správce.",
+			"submit": "Nahrát"
+		},
+		"mapping": {
+			"uncertain": "Sloupce nebyly rozpoznány: před pokračováním zvolte pole každého z nich.",
+			"remembered": "Sloupce zapamatovány z posledního importu tohoto souboru.",
+			"specialValues": "Zvláštní hodnoty, když chybí autor nebo nakladatel („{{author}}“, „{{publisher}}“)",
+			"specialValuesHint": "Bez této volby jsou řádky bez autora nebo nakladatele chybou.",
+			"validate": "Zkontrolovat soubor",
+			"without": {
+				"biblioKey": "Bez sloupce biblio_key se exempláře téhož díla seskupují podle ISBN; řádky bez ISBN jsou každý samostatný titul.",
+				"barcode": "Bez sloupce barcode se čárové kódy exemplářů vygenerují: po importu vytiskněte štítky.",
+				"classification": "Bez sloupce classification jdou knihy do seznamu „K zatřídění“: jejich exempláře se nepůjčují, dokud nejsou zatříděny."
+			}
+		},
+		"fields": {
+			"biblioKey": "Klíč titulu (biblionumber)",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "Název",
+			"subtitle": "Podnázev",
+			"originalTitle": "Originální název",
+			"responsibility": "Údaj o odpovědnosti",
+			"author": "Autor",
+			"publisher": "Nakladatel",
+			"publicationPlace": "Místo vydání",
+			"publicationYear": "Rok",
+			"physicalDescription": "Fyzický popis",
+			"series": "Série",
+			"seriesNumber": "Číslo v sérii",
+			"dewey": "Dewey",
+			"classification": "Třídění (žánr nebo oblast, ccode v Koha)",
+			"readingLevel": "Čtenářská úroveň",
+			"subjects": "Hesla",
+			"notes": "Poznámky k titulu",
+			"barcode": "Čárový kód exempláře",
+			"callNumber": "Signatura",
+			"itemType": "Materiál",
+			"enumeration": "Svazek",
+			"status": "Stav",
+			"notForLoan": "Vyloučeno z výpůjčky",
+			"acquisitionDate": "Datum pořízení",
+			"itemNotes": "Poznámky k exempláři"
+		},
+		"preview": {
+			"ready": "Žádné chyby: import je možný.",
+			"blocked": "Opravte chyby v souboru a zkontrolujte jej znovu: soubor s chybami se neimportuje.",
+			"nothing": "Všechny exempláře v souboru už jsou v katalogu: není co importovat.",
+			"titles": "{{new}} {{new:plural; one:nový titul; few:nové tituly; other:nových titulů;}}, {{existing}} už v katalogu (jejich exempláře se přidají)",
+			"columns": {
+				"title": "Název",
+				"barcode": "Čárový kód",
+				"classification": "Třídění"
+			},
+			"question": {
+				"title": "Exempláře téhož titulu s různými úrovněmi",
+				"text": "U {{count}} {{count:plural; one:titulu; few:titulů; other:titulů;}} mají exempláře různé čtenářské úrovně. Úroveň může být na každém exempláři místo na titulu: je to nastavení „úroveň podle exempláře“, které platí pro celý katalog a přesune úroveň titulů, které už jsou v katalogu, na jejich exempláře.",
+				"yes": "Ano, úroveň podle exempláře",
+				"no": "Ne, jsou to chyby k opravě"
+			},
+			"commit": "Importovat",
+			"back": "Zpět na sloupce",
+			"generatedBarcodes": "{{count}} {{count:plural; one:exemplář; few:exempláře; other:exemplářů;}} bez čárového kódu: kód se vygeneruje, poté se vytisknou štítky.",
+			"toClassify": "{{count}} {{count:plural; one:nový titul; few:nové tituly; other:nových titulů;}} bez třídění: {{count:plural; one:půjde; few:půjdou; other:půjdou;}} do seznamu „K zatřídění“."
+		},
+		"reasons": {
+			"tooLong": "Text je příliš dlouhý ve sloupci {{column}}: nejvýše {{max}} znaků",
+			"isbnInvalid": "Neplatné ISBN: „{{value}}“",
+			"classificationUnknown": "Třídění není v nastavení: „{{value}}“",
+			"barcodeInvalid": "Čárový kód s nepovolenými znaky: „{{value}}“",
+			"barcodeCheckDigit": "Čárový kód se špatným kontrolním znakem: „{{value}}“",
+			"barcodeDuplicateInFile": "Čárový kód už použit na řádku {{line}}",
+			"barcodeTaken": "Čárový kód {{value}} už patří jinému exempláři v katalogu",
+			"barcodeIsCard": "Kód {{value}} je nebo vypadá jako číslo průkazu: exemplář nemůže mít kód z průkazu",
+			"statusUnknown": "Stav nerozpoznán: „{{value}}“ (dostupný, ztracený, poškozený, v opravě, vyřazený)",
+			"notForLoanUnknown": "Hodnota pro „vyloučeno z výpůjčky“ nerozpoznána: „{{value}}“ (ano/ne)",
+			"dateInvalid": "Neplatné datum: „{{value}}“ (RRRR-MM-DD nebo DD/MM/RRRR)",
+			"authorMissing": "Chybí autor (s „zvláštními hodnotami“ se doplní Anonimo)",
+			"publisherMissing": "Chybí nakladatel (s „zvláštními hodnotami“ se doplní s.n.)",
+			"titleMissing": "Chybí název",
+			"groupConflict": "Stejný klíč jako na řádku {{line}}, ale jiný název",
+			"classQuestion": "Exempláře s různými úrovněmi ({{classes}}): odpovězte na otázku níže",
+			"classDiffers": "Exempláře s různými úrovněmi ({{classes}}) bez úrovně podle exempláře",
+			"copyExists": "Exemplář už je v katalogu: přeskočen",
+			"mergedIntoExisting": "Přidáno k titulu, který už je v katalogu (stejný klíč nebo stejné ISBN)"
+		},
+		"done": {
+			"title": "Katalog importován",
+			"summary": "{{titlesCreated}} {{titlesCreated:plural; one:nový titul; few:nové tituly; other:nových titulů;}}, {{copiesCreated}} {{copiesCreated:plural; one:exemplář přidán; few:exempláře přidány; other:exemplářů přidáno;}} ({{titlesMerged}} {{titlesMerged:plural; one:titul již přítomen; few:tituly již přítomny; other:titulů již přítomno;}}, {{copiesSkipped}} {{copiesSkipped:plural; one:exemplář přeskočen; few:exempláře přeskočeny; other:exemplářů přeskočeno;}}).",
+			"classPerItem": "Úroveň podle exempláře byla zapnuta.",
+			"batch": "Import č. {{id}}: původní soubor je uchován.",
+			"labels": "Vytisknout štítky exemplářů bez kódu",
+			"open": "Přejít do katalogu",
+			"again": "Importovat další soubor"
+		},
+		"columns": {
+			"title": {
+				"hint": "Název knihy."
+			},
+			"author": {
+				"hint": "Příjmení, Jméno; prázdné je chyba, pokud nejsou „zvláštní hodnoty“."
+			},
+			"publisher": {
+				"hint": "Nakladatel; prázdné jako u autora."
+			},
+			"biblioKey": {
+				"hint": "Kód titulu ve starém programu (biblionumber v Koha): drží exempláře pohromadě.",
+				"missing": "exempláře se seskupují podle ISBN"
+			},
+			"barcode": {
+				"hint": "Čárový kód, který už je na exempláři.",
+				"missing": "kód se vygeneruje a štítky se vytisknou"
+			},
+			"classification": {
+				"hint": "Kód žánru (beletrie) nebo oblasti (naučná literatura).",
+				"missing": "kniha jde do „K zatřídění“"
+			},
+			"readingLevel": {
+				"hint": "Čtenářská úroveň (beletrie)."
+			},
+			"isbn": {
+				"hint": "ISBN-10 nebo ISBN-13."
+			},
+			"issn": {
+				"hint": "Pro periodika."
+			},
+			"ean": {
+				"hint": "Kód EAN u DVD a jiných materiálů."
+			},
+			"subtitle": {
+				"hint": "Podnázev."
+			},
+			"originalTitle": {
+				"hint": "Pouze u překladů: název v původním jazyce."
+			},
+			"responsibility": {
+				"hint": "Ilustrátoři, překladatelé…"
+			},
+			"publicationPlace": {
+				"hint": "Místo vydání."
+			},
+			"publicationYear": {
+				"hint": "Rok vydání."
+			},
+			"physicalDescription": {
+				"hint": "Strany, ilustrace, formát."
+			},
+			"series": {
+				"hint": "Série (ne edice nakladatele)."
+			},
+			"seriesNumber": {
+				"hint": "Číslo v sérii."
+			},
+			"dewey": {
+				"hint": "Číslo Dewey, pouze jako údaj."
+			},
+			"subjects": {
+				"hint": "Klíčová slova oddělená ; nebo ,."
+			},
+			"notes": {
+				"hint": "Poznámky k titulu."
+			},
+			"callNumber": {
+				"hint": "Signatura; pokud chybí, navrhne se."
+			},
+			"itemType": {
+				"hint": "Materiál (kniha, DVD…); pokud chybí, první nastavený."
+			},
+			"enumeration": {
+				"hint": "Svazek, u děl ve více svazcích."
+			},
+			"status": {
+				"hint": "dostupný, ztracený, poškozený, v opravě, vyřazený."
+			},
+			"notForLoan": {
+				"hint": "1 nebo ano u exemplářů pro nahlédnutí na místě."
+			},
+			"acquisitionDate": {
+				"hint": "Datum pořízení; pokud chybí, dnešní."
+			},
+			"itemNotes": {
+				"hint": "Poznámky k exempláři."
+			}
+		}
+	},
+	"batch": {
+		"selected": "Změnit exempláře vybraných",
+		"title": "Změnit exempláře",
+		"scope": "{{count}} {{count:plural; one:exemplář; few:exempláře; other:exemplářů;}}",
+		"operation": "Co změnit",
+		"operations": {
+			"status": "Stav",
+			"itemType": "Materiál",
+			"notForLoan": "Vyloučeno z výpůjčky",
+			"readingLevel": "Úroveň exempláře",
+			"acquisitionDate": "Datum pořízení"
+		},
+		"value": "Nová hodnota",
+		"yes": "Ano",
+		"no": "Ne",
+		"noClass": "Žádná úroveň",
+		"reason": "Důvod",
+		"reasonHint": "Povinné u ztracených a vyřazených: zůstane v záznamu každého exempláře.",
+		"check": "Zkontrolovat",
+		"apply": "Použít na {{count}} {{count:plural; one:exemplář; few:exempláře; other:exemplářů;}}",
+		"plan": {
+			"changes": "{{count}} {{count:plural; one:exemplář se změní; few:exempláře se změní; other:exemplářů se změní;}}",
+			"onLoan": "{{count}} {{count:plural; one:vypůjčený exemplář zůstane beze změny (nejprve jej vraťte); few:vypůjčené exempláře zůstanou beze změny (nejprve je vraťte); other:vypůjčených exemplářů zůstane beze změny (nejprve je vraťte);}}",
+			"unchanged": "{{count}} {{count:plural; one:exemplář již má; few:exempláře již mají; other:exemplářů již má;}} tuto hodnotu",
+			"notFound": "{{count}} {{count:plural; one:exemplář už neexistuje; few:exempláře už neexistují; other:exemplářů už neexistuje;}}",
+			"notAllowed": "{{count}} {{count:plural; one:exemplář není beletrie: úroveň se neuplatňuje; few:exempláře nejsou beletrie: úroveň se neuplatňuje; other:exemplářů není beletrie: úroveň se neuplatňuje;}}",
+			"none": "Žádný exemplář ke změně."
+		},
+		"excludedTitle": "Exempláře, které zůstanou beze změny",
+		"done": "{{count}} {{count:plural; one:exemplář změněn; few:exempláře změněny; other:exemplářů změněno;}}",
+		"errors": {
+			"reasonRequired": "Napište důvod: je povinný u ztracených a vyřazených.",
+			"itemTypeUnknown": "Materiál není v nastavení.",
+			"readingLevelNotAllowed": "Úroveň podle exempláře není zapnuta.",
+			"readingLevelOutOfRange": "Čtenářská úroveň není v nastavení.",
+			"dateInvalid": "Neplatné datum.",
+			"statusUnknown": "Neplatný stav.",
+			"classificationUnknown": "Vyberte žánr nebo oblast z nastavení."
+		},
+		"reclassify": {
+			"button": "Přetřídit",
+			"title": "Přetřídit vybrané tituly",
+			"scope": "{{count}} {{count:plural; one:titul; few:tituly; other:titulů;}}",
+			"resuggest": "Přepsat signatury exemplářů podle nového třídění",
+			"labelsHint": "Hřbetní štítky (a štítky, pokud se změní signatura) se vrátí mezi ty k tisku.",
+			"changes": "{{count}} {{count:plural; one:titul se změní; few:tituly se změní; other:titulů se změní;}}",
+			"apply": "Přetřídit {{count}} {{count:plural; one:titul; few:tituly; other:titulů;}}",
+			"done": "{{count}} {{count:plural; one:titul přetříděn; few:tituly přetříděny; other:titulů přetříděno;}}, {{calls}} {{calls:plural; one:signatura přepsána; few:signatury přepsány; other:signatur přepsáno;}}"
+		}
+	},
+	"search": {
+		"suggest": "Kód {{barcode}} je exemplář titulu „{{title}}“.",
+		"openSuggest": "Otevřít záznam",
+		"available": "Pouze dostupné",
+		"yearFrom": "Rok od",
+		"yearTo": "Rok do",
+		"copiesAvailable": "{{available}} z {{total}} dostupných",
+		"noCopies": "Žádný exemplář"
+	},
+	"inventory": {
+		"title": "Revize fondu",
+		"defaultName": "Revize fondu",
+		"emptyTitle": "Žádná revize fondu neprobíhá",
+		"emptyHint": "Zahajte kampaň a načítejte exempláře po regálech: na konci se exempláře, které nebyly načteny, označí jako ztracené.",
+		"name": "Název kampaně",
+		"start": "Nová kampaň",
+		"started": "Zahájeno {{when}}",
+		"overall": "Celá knihovna",
+		"progress": "{{seen}} z {{expected}} ({{percent}} %)",
+		"counts": "{{scanned}} {{scanned:plural; one:exemplář načten; few:exempláře načteny; other:exemplářů načteno;}} · {{misplaced}} na špatném regále · {{found}} {{found:plural; one:nalezen znovu; few:nalezeny znovu; other:nalezeno znovu;}}",
+		"byShelf": "Postup podle regálu",
+		"noShelf": "Bez signatury",
+		"scanTitle": "Načítejte exempláře",
+		"shelf": "Regál",
+		"shelfHint": "Například B nebo 590: exempláře s jinou signaturou jsou označeny jako mimo místo.",
+		"scanLabel": "Čárový kód exempláře",
+		"camera": "Načíst fotoaparátem",
+		"outcomes": {
+			"seen": "{{title}} ({{barcode}}): načten.",
+			"again": "{{title}} ({{barcode}}): už načten {{when}}.",
+			"misplaced": "{{title}} ({{barcode}}): na špatném regále; vraťte jej podle signatury.",
+			"found": "{{title}} ({{barcode}}): byl ztracen a je nalezen; je znovu dostupný.",
+			"onLoan": "{{title}} ({{barcode}}): je vypůjčen; zapište vrácení u výpůjčního pultu.",
+			"withdrawn": "{{title}} ({{barcode}}): vyřazený exemplář, je třeba jej sundat z regálu.",
+			"unknown": "{{code}}: žádný exemplář nemá tento čárový kód."
+		},
+		"missing": "Stále chybí ({{count}})",
+		"allShelves": "Všechny regály",
+		"allTypes": "Všechny materiály",
+		"noneMissing": "Všechny očekávané exempláře byly načteny.",
+		"more": "a {{count:plural; one:jeden další; few:{{count}} další; other:{{count}} dalších;}}: celý seznam je v exportu.",
+		"close": "Ukončit revizi",
+		"closeTitle": "Ukončit revizi fondu?",
+		"closeHint": "{{count}} {{count:plural; one:exemplář, který nikdy nebyl načten, bude označen jako ztracený; few:exempláře, které nikdy nebyly načteny, budou označeny jako ztracené; other:exemplářů, které nikdy nebyly načteny, bude označeno jako ztracených;}}. Kampaň lze do týdne znovu otevřít a změnu vrátit zpět.",
+		"closedTitle": "Revize fondu ukončena",
+		"summary": "Načteno {{seen}} z {{expected}} {{expected:plural; one:exempláře; few:exemplářů; other:exemplářů;}}, {{lost}} {{lost:plural; one:označen jako ztracený; few:označeny jako ztracené; other:označeno jako ztracených;}}, {{found}} {{found:plural; one:nalezen znovu; few:nalezeny znovu; other:nalezeno znovu;}}, {{onLoan}} v výpůjčce, {{misplaced}} na špatném regále.",
+		"history": "Předchozí kampaně",
+		"reopen": "Znovu otevřít",
+		"errors": {
+			"alreadyOpen": "Revize fondu už probíhá.",
+			"notOpen": "Tato revize fondu je ukončena.",
+			"notFound": "Revize fondu nenalezena.",
+			"tooLate": "Lze ji znovu otevřít jen do týdne od ukončení.",
+			"badName": "Zadejte název kampaně.",
+			"badNotes": "Poznámky ke kampani mohou mít nejvýše 500 znaků."
+		},
+		"cameraShelf": "Regál {{shelf}}",
+		"cameraDone": "Hotovo"
+	},
+	"toClassify": {
+		"title": "K zatřídění",
+		"label": "K zatřídění",
+		"intro": "Knihy zapsané bez třídění, od nejstarších. Jejich exempláře se nepůjčují, dokud nejsou zatříděny.",
+		"count": "{{count}} {{count:plural; one:kniha; few:knihy; other:knih;}} k zatřídění",
+		"empty": "Žádná kniha k zatřídění",
+		"emptyHint": "Všechny knihy v katalogu mají žánr nebo oblast.",
+		"start": "Začít třídit",
+		"classify": "Zatřídit",
+		"badge": "K zatřídění",
+		"badgeHint": "Exempláře se nepůjčují, dokud kniha není zatříděna.",
+		"columns": {
+			"title": "Název",
+			"author": "Autor",
+			"publisher": "Nakladatel",
+			"year": "Rok",
+			"isbn": "ISBN",
+			"copies": "Exempláře",
+			"enteredOn": "Zapsáno"
+		},
+		"flow": {
+			"title": "Zatřídit knihu",
+			"saveNext": "Uložit a dál",
+			"save": "Uložit",
+			"skip": "Přeskočit",
+			"saved": "Kniha „{{title}}“ zatříděna",
+			"end": "V tomto kole už nejsou žádné další knihy k zatřídění.",
+			"backToList": "Zpět na seznam",
+			"already": "Tato kniha je už zatříděna.",
+			"callNumber": "Signatura exemplářů",
+			"callNumberHint": "Exempláře bez signatury ji dostanou; poté lze hřbetní štítek vytisknout.",
+			"dewey": "Číslo Dewey {{dewey}} odpovídá oblasti {{code}}.",
+			"copies": "{{count}} {{count:plural; one:exemplář; few:exempláře; other:exemplářů;}}",
+			"subjects": "Hesla",
+			"notes": "Poznámky"
+		}
+	}
+}

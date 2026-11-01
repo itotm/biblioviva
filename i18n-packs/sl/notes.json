@@ -1,0 +1,66 @@
+{
+	"title": "Opombe",
+	"new": "Nova opomba",
+	"adminOnly": "Samo skrbnik arhivira opombe in jih pripenja na nadzorno ploščo.",
+	"pinned": "Pripeto",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Arhivirano: {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:opomba; two:opombi; few:opombe; other:opomb;}}",
+	"archiveCount": "{{shown}} od {{total}} {{total:plural; one:arhivirane opombe; two:arhiviranih opomb; few:arhiviranih opomb; other:arhiviranih opomb;}}",
+	"actions": {
+		"label": "Dejanja za opombo",
+		"pin": "Pripni na nadzorno ploščo",
+		"unpin": "Odpni",
+		"archive": "Arhiviraj",
+		"restore": "Obnovi",
+		"delete": "Izbriši",
+		"showAll": "Pokaži vse",
+		"showLess": "Pokaži manj",
+		"more": "Pokaži več"
+	},
+	"done": {
+		"added": "Opomba dodana",
+		"pinned": "Opomba pripeta",
+		"unpinned": "Opomba odpeta",
+		"archived": "Opomba arhivirana",
+		"restored": "Opomba obnovljena",
+		"deleted": "Opomba izbrisana"
+	},
+	"confirmDelete": {
+		"title": "Izbrisati opombo?",
+		"text": "Trajno se izbriše in je ni mogoče obnoviti."
+	},
+	"form": {
+		"body": "Besedilo",
+		"placeholder": "Npr. Čitalnik na pultu ne prebere izkaznic.",
+		"privacy": "Vsi računi berejo opombe: ne vpisujte osebnih podatkov učencev.",
+		"written": "Opombe ni mogoče urejati: če se zmotite, prosite skrbnika, naj jo arhivira, in napišite novo.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Barva",
+		"pinned": "Pripeto na nadzorno ploščo",
+		"pinnedHint": "Vsem je prikazano na vrhu nadzorne plošče (in na izposojevalnem pultu), dokler ni odpeto ali arhivirano.",
+		"save": "Dodaj"
+	},
+	"colors": {
+		"yellow": "Rumena",
+		"pink": "Roza",
+		"green": "Zelena",
+		"blue": "Svetlo modra",
+		"orange": "Oranžna"
+	},
+	"errors": {
+		"empty": "Napišite besedilo opombe.",
+		"tooLong": "Besedilo je daljše od {{max}} {{max:plural; one:znaka; two:znakov; few:znakov; other:znakov;}}.",
+		"color": "Izberite eno od barv."
+	},
+	"empty": {
+		"open": "Ni odprtih opomb",
+		"openHint": "Ni odprtih opomb. Opombe sporočajo težave in obvestila sodelavcem in skrbniku.",
+		"archived": "Ni arhiviranih opomb"
+	},
+	"home": {
+		"title": "Opombe",
+		"open": "Odpri opombe"
+	},
+	"tile": "Odprte opombe"
+}

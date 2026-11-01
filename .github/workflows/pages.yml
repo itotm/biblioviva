@@ -1,0 +1,75 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Publishes the documentation site (docs.biblioviva.org) to GitHub Pages (PLAN.md steps 1.13 and 9.7,
+# ADR-042, ADR-043), only by hand: Actions → pages → Run workflow, on the release's tag (or on main for a
+# correction of the text); a push never publishes it. The build takes the pictures from the app (`bun run docs:shots`, on the
+# built server like the end-to-end tests), then turns the Markdown of docs/ into site/dist/ with its
+# search index (`bun run site:build`). The home page (home/, biblioviva.org) is uploaded by hand to
+# Cloudflare Pages.
+name: pages
+
+on:
+    workflow_dispatch:
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+concurrency:
+    group: pages
+    cancel-in-progress: true
+
+jobs:
+    build:
+        runs-on: ubuntu-24.04
+        timeout-minutes: 30
+        steps:
+            - uses: actions/checkout@v7
+
+            - uses: oven-sh/setup-bun@v2
+              with:
+                  bun-version: 1.4.4
+
+            - uses: actions/setup-node@v6
+              with:
+                  node-version: 24
+
+            - name: Install dependencies (frozen lockfile)
+              run: bun install --frozen-lockfile
+
+            - name: Cache Playwright browsers
+              uses: actions/cache@v5
+              with:
+                  path: ~/.cache/ms-playwright
+                  key: playwright-${{ runner.os }}-${{ hashFiles('bun.lock') }}
+
+            - name: Install Chromium for Playwright
+              run: bunx playwright install --with-deps chromium
+
+            - name: Build the application
+              run: bun run build
+
+            - name: Pictures of the documentation, taken from the app
+              run: bun run docs:shots
+              env:
+                  CI: "true"
+                  E2E_PREBUILT: "1"
+
+            - name: Build the site and its search index
+              run: bun run site:build
+
+            - uses: actions/configure-pages@v5
+
+            - uses: actions/upload-pages-artifact@v3
+              with:
+                  path: site/dist
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - id: deployment
+              uses: actions/deploy-pages@v4

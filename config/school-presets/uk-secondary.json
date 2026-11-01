@@ -1,0 +1,71 @@
+{
+	"id": "uk-secondary",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md Phase 12, B2 of docs/studies/barcodes-and-school-classes.md).",
+	"name": {
+		"it": "Scuola secondaria (Inghilterra)",
+		"en": "Secondary school (England)"
+	},
+	"country": "GB",
+	"languages": ["en"],
+	"school": {
+		"stages": [
+			{
+				"code": "secondary",
+				"name": "Secondary"
+			}
+		],
+		"levels": [
+			{
+				"code": "Y7",
+				"label": "7",
+				"name": "Year 7",
+				"stage": "secondary"
+			},
+			{
+				"code": "Y8",
+				"label": "8",
+				"name": "Year 8",
+				"stage": "secondary"
+			},
+			{
+				"code": "Y9",
+				"label": "9",
+				"name": "Year 9",
+				"stage": "secondary"
+			},
+			{
+				"code": "Y10",
+				"label": "10",
+				"name": "Year 10",
+				"stage": "secondary"
+			},
+			{
+				"code": "Y11",
+				"label": "11",
+				"name": "Year 11",
+				"stage": "secondary"
+			},
+			{
+				"code": "Y12",
+				"label": "12",
+				"name": "Year 12",
+				"stage": "secondary"
+			},
+			{
+				"code": "Y13",
+				"label": "13",
+				"name": "Year 13",
+				"stage": "secondary"
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Form",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"secondary": ["R", "S", "T", "U"]
+	},
+	"teacherGroup": "Teachers",
+	"readingLevels": []
+}

@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "Yönetim",
+		"sections": {
+			"config": {
+				"title": "Yapılandırma",
+				"description": "Kütüphanenin sınıflandırması ve ayarları."
+			},
+			"audit": {
+				"title": "İşlem günlüğü",
+				"description": "Kim neyi yaptı: girişler, değişiklikler, içe aktarmalar."
+			},
+			"users": {
+				"title": "Personel hesapları",
+				"description": "Personel hesapları, roller ve izinler."
+			},
+			"backups": {
+				"title": "Yedekler",
+				"description": "Veritabanının ve dosyaların yedekleri."
+			},
+			"rollover": {
+				"title": "Sınıf yükseltme",
+				"description": "Yıl sonunda: sınıf geçenler, sınıfta kalanlar, son sınıftan ayrılanlar."
+			},
+			"exports": {
+				"title": "Dışa aktarmalar",
+				"description": "Üyeler, katalog, ödünç verme işlemleri ve tüm veriler CSV veya JSON dosyaları olarak."
+			},
+			"imports": {
+				"title": "İçe aktarmalar",
+				"description": "Katalog, üyeler, devam eden ödünç verme işlemleri ve fotoğraflar: CSV dosyalarından veya Koha dışa aktarımından."
+			}
+		}
+	},
+	"audit": {
+		"title": "İşlem günlüğü",
+		"filters": {
+			"from": "Başlangıç",
+			"to": "Bitiş",
+			"user": "Hesap",
+			"action": "İşlem",
+			"all": "Tümü"
+		},
+		"columns": {
+			"when": "Zaman",
+			"user": "Hesap",
+			"action": "İşlem",
+			"entity": "Nesne",
+			"entityId": "ID",
+			"details": "Ayrıntılar"
+		},
+		"count": "{{shown}} / {{total}} {{total:plural; one:işlem; other:işlem;}}",
+		"empty": "Bu filtrelerle kayıtlı işlem yok.",
+		"system": "sistem"
+	},
+	"users": {
+		"title": "Personel hesapları",
+		"fields": {
+			"roles": "Roller",
+			"permissions": "İzinler",
+			"lastLogin": "Son giriş",
+			"never": "hiçbir zaman"
+		},
+		"status": {
+			"active": "Etkin",
+			"inactive": "Devre dışı",
+			"plainPassword": "Dosyada açık metin şifre",
+			"notInConfig": "Yapılandırmadan çıkarıldı"
+		},
+		"hash": {
+			"title": "Şifre karması oluştur",
+			"description": "Atanacak şifreyi girin: passwordHash alanına yapıştırılacak argon2id karması elde edilir. Şifre kaydedilmez.",
+			"password": "Şifre (en az {{min}} karakter)",
+			"generate": "Karma oluştur",
+			"result": "Yapıştırılacak karma",
+			"copy": "Kopyala",
+			"copied": "Karma kopyalandı",
+			"tooShort": "Şifre en az {{min}} karakter olmalıdır.",
+			"disclosure": "Dosyaları elle düzenleyenler için: bir şifrenin karmasını oluşturmak"
+		},
+		"reload": {
+			"button": "Yapılandırmayı yeniden yükle",
+			"success": "Yapılandırma yeniden yüklendi",
+			"successWithWarnings": "Yapılandırma yeniden yüklendi: {{count}} {{count:plural; one:uyarı; other:uyarı;}} var",
+			"failed": "Geçersiz yapılandırma: önceki yapılandırma etkin kalır",
+			"exampleSource": "Uyarı: config.json dosyası yok, örnek yapılandırma kullanılıyor."
+		},
+		"new": "Yeni hesap",
+		"newPassword": "Yeni şifre",
+		"permissionNames": {
+			"all": "Her şey",
+			"loans": "Ödünç verme",
+			"patrons": "Üyeler",
+			"patrons_import": "Üyeleri içe aktar",
+			"catalog": "Katalog",
+			"catalog_import": "Katalogu içe aktar",
+			"reports": "Raporlar",
+			"anonymize": "Anonimleştir",
+			"admin": "Yönetim"
+		},
+		"roles": {
+			"title": "Roller ve izinler",
+			"hint": "Bir rol, izinler kümesidir; her hesabın bir ya da birkaç rolü vardır. “Her şey” bütün izinleri verir, sonraki sürümlerle gelecek izinler de dahil. Bir rolü yeniden adlandırmak, onu kullanan hesapları günceller.",
+			"name": "Rol",
+			"unused": "hesap yok",
+			"badName": "Harfler, rakamlar, tireler ve alt çizgiler (en fazla 32).",
+			"add": "Rol ekle",
+			"saved": "Roller kaydedildi"
+		},
+		"auth": {
+			"title": "Giriş",
+			"config": "Kişiler bu sayfadaki hesaplarla giriş yapar; genellikle rol başına bir ortak hesap (örneğin ödünç masası için «odunc»).",
+			"database": "Kişiler kişisel hesaplarla giriş yapar.",
+			"later": "Kişisel hesaplar, her kişi için bir tane olmak üzere, sonraki bir sürümde planlanmıştır."
+		},
+		"dialog": {
+			"title": {
+				"new": "Yeni hesap",
+				"edit": "{{name}} düzenle",
+				"password": "{{name}} için yeni şifre"
+			},
+			"username": "Kullanıcı adı",
+			"usernameHint": "Küçük harfler, rakamlar, nokta, tire ve alt çizgi (2 ila 32 karakter).",
+			"badUsername": "Yalnızca küçük harfler, rakamlar, nokta, tire ve alt çizgi kullanın (2 ila 32 karakter).",
+			"displayName": "Gösterilen ad",
+			"active": "Etkin hesap (giriş yapabilir)",
+			"password": "Şifre (en az {{min}} karakter)",
+			"repeat": "Şifreyi yeniden girin",
+			"mismatch": "İki şifre aynı değil.",
+			"passwordHint": "Şifre kaydedilmez: yapılandırmaya yalnızca karması yazılır. Bu hesapla giriş yapmış olanlar yeniden giriş yapmak zorunda kalır.",
+			"saved": {
+				"new": "Hesap oluşturuldu",
+				"edit": "Hesap kaydedildi",
+				"password": "Şifre değiştirildi"
+			},
+			"removed": "Hesap silindi",
+			"removeTitle": "{{name}} silinsin mi?",
+			"removeHint": "Hesap yapılandırmadan çıkar; hesabın yaptığı işlemler adıyla birlikte günlükte kalır. Yapılandırma geçmişinden geri alınabilir."
+		},
+		"errors": {
+			"badUsername": "Geçersiz kullanıcı adı: {{details}}.",
+			"usernameTaken": "{{details}} kullanıcı adı zaten kullanılıyor.",
+			"notFound": "Hesap bulunamadı: {{details}}.",
+			"noRoles": "En az bir rol seçin.",
+			"unknownRole": "Bilinmeyen rol: {{details}}.",
+			"passwordTooShort": "Şifre çok kısa.",
+			"passwordRequired": "Yeni bir hesap için şifre gerekir.",
+			"lastAdmin": "En az bir etkin hesap yönetim iznini korumalıdır.",
+			"stillActive": "Silmeden önce hesabı devre dışı bırakın.",
+			"badRole": "Geçersiz rol adı: {{details}}.",
+			"roleTaken": "{{details}} adlı iki rol var.",
+			"roleInUse": "Rol bazı hesaplar tarafından kullanılıyor: {{details}}.",
+			"invalid": "Yapılandırma geçerli olmaz: {{details}}."
+		}
+	},
+	"backups": {
+		"title": "Yedekler",
+		"runNow": "Şimdi yedekle",
+		"created": "Yedek oluşturuldu: {{name}}",
+		"createdDeleted": "Yedek oluşturuldu: {{name}} ({{deleted}} {{deleted:plural; one:eski yedek; other:eski yedek;}} silindi)",
+		"empty": "Henüz yedek yok. İlki planlanan saatte alınacak ya da «Şimdi yedekle» düğmesine basın.",
+		"download": "İndir",
+		"columns": {
+			"when": "Oluşturulma",
+			"size": "Boyut"
+		},
+		"catchUp": {
+			"badge": "Açılışta telafi edildi",
+			"hint": "Planlanan yedek kaçırılmıştı (bilgisayar kapalıydı): BiblioViva yedeği açılışta aldı."
+		},
+		"offsite": {
+			"title": "Son dış yedek",
+			"disabled": "Dış yedek yapılandırılmadı. Bu, kurulum kılavuzunda anlatılan «offsite» (rclone) hizmetiyle etkinleştirilir.",
+			"never": "Hizmet etkin, ama henüz bir sonuç kaydetmedi.",
+			"ok": "Son dış yedek başarılı: {{when}}",
+			"error": "Son dış yedek başarısız: {{when}}",
+			"stale": "Dış yedek iki günden eski: offsite hizmetini kontrol edin.",
+			"remote": "Hedef: {{remote}}"
+		},
+		"restore": {
+			"title": "Geri yükleme",
+			"button": "Geri yükle…",
+			"hint": "Listedeki bir yedekte «Geri yükle…» seçin ya da bir BiblioViva arşivi yükleyin (bir yedek, «Her şeyi dışa aktar» veya «Yapılandırmayı dışa aktar», en fazla {{maxMb}} MB; daha büyük olan, sunucunun yedek klasörüne kopyalanır ya da bun run backup:restore ile geri yüklenir). Önce her şey denetlenir, sonra yalnızca seçilen bölümler geri yüklenir: diğerleri olduğu gibi kalır.",
+			"upload": "Bir arşiv yükle",
+			"from": "{{name}}, {{date}} tarihli",
+			"count": "{{part}}: şimdi {{live}}, yedekte {{archive}}",
+			"images": "Geri yüklenecek görseller: {{photos}} {{photos:plural; one:fotoğraf; other:fotoğraf;}}, {{covers}} {{covers:plural; one:kapak; other:kapak;}}.",
+			"gapsTitle": "Bu durumda bazı veriler, başvurdukları şey olmadan kalır:",
+			"gap": "“{{part}}” bölümü: {{rows:plural; one:{{rows}} satır; other:{{rows}} satır;}} var. Bunlar, seçilmediği için olmayacak “{{needs}}”’ye başvuruyor: seçime “{{add}}” ekleyin.",
+			"schema": "Yedek BiblioViva’nın başka bir sürümünden (tablolar: {{tables}}): burada geri yüklenemez.",
+			"apply": "Geri yükle",
+			"confirmTitle": "Seçilen bölümler geri yüklensin mi?",
+			"confirmHint": "Seçilen veriler ve yapılandırma yedekteki verilerle değiştirilir. Yapılandırma geçmişten geri alınabilir; veriler için, yakın tarihli bir yedek yoksa önce yedek alın.",
+			"done": "Geri yükleme tamamlandı",
+			"notArchive": "Dosya bir BiblioViva arşivi değil."
+		},
+		"contents": {
+			"title": "Yedeğin içeriği",
+			"database": "Veritabanı: her çalıştırmada tam bir kopya (aşağıdaki listede).",
+			"images": "Fotoğraflar ve kapaklar: her gece yedeğin «uploads» klasörüne kopyalanır ({{photos}} {{photos:plural; one:fotoğraf; other:fotoğraf;}}, {{covers}} {{covers:plural; one:kapak; other:kapak;}} şu anda).",
+			"imagesPending": "Fotoğraflar ve kapaklar: ilk kopya bir sonraki çalıştırmada alınır ({{photos}} {{photos:plural; one:fotoğraf; other:fotoğraf;}}, {{covers}} {{covers:plural; one:kapak; other:kapak;}} kopyalanacak).",
+			"config": "Yapılandırma (şablonlar, görseller, ayarlar) gece yedeğinde yer almaz: bunu almak için «Her şeyi dışa aktar» kullanın."
+		},
+		"export": {
+			"button": "Her şeyi dışa aktar",
+			"hint": "Veritabanı, fotoğraflar, kapaklar ve tüm yapılandırma (şablonlar ve görseller dahil) içeren tek bir ZIP dosyası. «bun run backup:restore» ile geri yüklemeye hazır."
+		},
+		"createdMirror": "Yedek oluşturuldu: {{name}}; {{copied}} {{copied:plural; one:görsel; other:görsel;}} kopyalandı",
+		"parts": {
+			"title": "Bazı bölümlerin yedeği veya dışa aktarımı",
+			"hint": "Neyin ekleneceğini seçin: kütüphanenin verileri, her bölümün ayarları, şablonlar, görseller… «Yedek oluştur» onu aşağıdaki listeye kaydeder, «İndir» ise bilgisayara indirir.",
+			"create": "Yedek oluştur",
+			"download": "İndir"
+		}
+	},
+	"demo": {
+		"clear": "Örnek verileri temizle",
+		"confirmTitle": "Örnek veriler temizlensin mi?",
+		"confirmDescription": "Demonun üyeleri, kitapları, ödünç verme işlemleri ve fotoğrafları silinecek. Sınıflar ve öğretmen grubu kalır. Tüm personelin oturumu kapatılacak.",
+		"cleared": "Örnek veriler kaldırıldı. Yeniden giriş yapın.",
+		"clearedPassword": "Hesaplarda hâlâ demo şifresi “{{password}}” var: hemen Yönetim → Personel hesapları bölümünden değiştirin."
+	},
+	"appearance": {
+		"title": "Görünüm ve dil",
+		"current": "Geçerli set: {{name}}",
+		"areas": {
+			"title": "Alan stili",
+			"hint": "Üst çubuk, üzerinde çalışılan alanın rengini alır (Ödünç İşlemleri, Katalog, Üyeler…), seçilen renk paletinin tonlarında. Alanın simgesi ve adı her zaman görünür kalır.",
+			"styles": {
+				"tinted": "Renkli çubuk (önerilen)",
+				"filled": "Dolu çubuk",
+				"accents": "Yalnızca vurgular",
+				"none": "Renk yok"
+			},
+			"saved": "Alan stili kaydedildi"
+		},
+		"colours": {
+			"title": "Renk paleti"
+		},
+		"save": "Renkleri kaydet",
+		"saved": "Renkler kaydedildi",
+		"unchanged": "Kaydedilecek bir değişiklik yok.",
+		"language": {
+			"title": "Uygulama dili",
+			"hint": "Kurulum başına tek dil: tüm personel için geçerlidir.",
+			"save": "Dili değiştir",
+			"saved": "Dil değiştirildi: sayfa yeniden yüklenir."
+		},
+		"logo": {
+			"title": "Kütüphane logosu",
+			"hint": "Her sayfanın sol üstünde, kütüphanenin adının yanında gösterilir. PNG, JPEG veya WebP; şeffaf arka plan en iyisidir.",
+			"upload": "Logoyu yükle",
+			"replace": "Logoyu değiştir",
+			"remove": "Logoyu kaldır",
+			"saved": "Logo kaydedildi.",
+			"removed": "Logo kaldırıldı.",
+			"none": "Logo yok: genel bir simge gösterilir.",
+			"preview": "Geçerli logo",
+			"errors": {
+				"empty": "Dosya boş.",
+				"too_large": "Dosya çok büyük (en fazla {{maxMb}} MB).",
+				"not_an_image": "Dosya bir görsel değil.",
+				"unsupported_format": "Biçim kabul edilmiyor: PNG, JPEG veya WebP kullanın."
+			}
+		},
+		"name": {
+			"title": "Kütüphanenin adı",
+			"hint": "Sol üstte, kontrol panelinde, çıktılarda ve telefona kurulan uygulamada gösterilir.",
+			"label": "Ad",
+			"save": "Adı kaydet",
+			"saved": "Kütüphanenin adı kaydedildi",
+			"required": "Kütüphanenin adını yazın."
+		},
+		"dashboard": {
+			"title": "Kontrol paneli",
+			"hint": "Başlangıç sayfasının bölümleri, bütün kütüphane için. Hızlı işlemler her zaman en üstte durur; her bölümün içinde her hesap yalnızca yapabileceği şeyleri görür.",
+			"save": "Kontrol panelini kaydet",
+			"saved": "Kontrol paneli kaydedildi",
+			"sections": {
+				"quickActions": "Hızlı işlemler",
+				"tiles": "Bugün kütüphane (sayılı kutucuklar)",
+				"inventory": "Devam eden sayım",
+				"installHint": "Uygulamayı Ana ekrana ekleme daveti (telefonlar)",
+				"dueThisWeek": "Bu hafta iade tarihi gelenler",
+				"upcomingDates": "Takvimdeki yaklaşan tarihler",
+				"todayActivity": "Bugünkü ödünç verme işlemleri"
+			}
+		}
+	},
+	"templates": {
+		"title": "Yazdırma şablonları",
+		"reload": "Şablonları yeniden yükle",
+		"reloaded": "Şablonlar diskten yeniden okundu",
+		"kinds": {
+			"cards": "Üye kartları",
+			"labels": "Etiketler",
+			"slips": "Hatırlatmalar"
+		},
+		"list": {
+			"source": {
+				"builtin": "Uygulamayla birlikte gelir",
+				"config": "Yapılandırmada"
+			},
+			"default": "Varsayılan",
+			"status": {
+				"ok": "Geçerli",
+				"error": "Hata"
+			},
+			"folder": "Klasör",
+			"forTypes": "İçin: {{types}}",
+			"emptyCards": "Üye kartı şablonu yok: yapılandırmanın cards/templates klasörünü kontrol edin.",
+			"emptyLabels": "Henüz etiket şablonu yok: katalog etiketlerinin yazdırmasıyla birlikte gelecekler.",
+			"emptySlips": "Henüz hatırlatma şablonu yok: ödünç verme işlemleriyle birlikte gelecek."
+		},
+		"preview": {
+			"title": "Önizleme",
+			"front": "Ön yüz",
+			"back": "Arka yüz",
+			"patron": "Gösterilecek üye",
+			"sample": "Örnek üye",
+			"real": "Gerçek üye",
+			"search": "Gerçek bir üye arayın",
+			"searchPlaceholder": "Soyadı veya ad",
+			"noResults": "Üye bulunamadı.",
+			"zoom": "Yakınlaştırma",
+			"sheet": "Tüm sayfa",
+			"sheetHint": "Örnek üyeyle bir A4 sayfası, yazdırılacağı gibi.",
+			"test": "Deneme sayfasını yazdır",
+			"broken": "Şablon düzeltilene kadar kullanılamaz:",
+			"size": "{{width}} × {{height}} mm, yakınlaştırma {{zoom}}"
+		},
+		"test": {
+			"title": "Kart deneme sayfası",
+			"ruler": "10 cm cetvel: yazdırdıktan sonra 100 mm ölçmelidir (%100 ile yazdırın, «sayfaya sığdır» seçmeden)."
+		},
+		"calibration": {
+			"title": "Etiket kalibrasyon sayfası",
+			"stock": "Yapışkanlı malzeme",
+			"print": "Kalibrasyon sayfasını yazdır",
+			"hint": "Düz kağıda yazdırın ve kenar boşluklarını kontrol etmek için üzerine bir etiket sayfası tutun."
+		},
+		"howTo": {
+			"title": "Şablon nasıl oluşturulur",
+			"steps": {
+				"step1": "Yapılandırma → Yazdırma şablonları bölümünde bir şablonda (örneğin {{path}}) «Çoğalt» seçin ve ona yeni bir ad verin.",
+				"step2": "«Düzenle» ile tasarlayın ya da kodunu değiştirin; görseller aynı sayfada yüklenir.",
+				"step3": "Buraya dönün ve önizlemeyi kontrol edin: bilinmeyen bir alan ya da eksik bir dosya bildirilir.",
+				"step4": "Gerçekten kullanmak için Üye kartları ya da Etiketler ayarlarında seçin."
+			}
+		},
+		"labels": {
+			"stocks": "Öngörülen sayfalar: {{stocks}}",
+			"preview": "{{name}} önizlemesi",
+			"geometry": "{{width}} × {{height}} mm birim · varyant {{variant}}",
+			"sheet": "Örnek sayfa"
+		}
+	},
+	"loansImport": {
+		"title": "Devam eden ödünç verme işlemlerini içe aktar",
+		"upload": {
+			"hint": "Yalnızca bir kez, Koha'dan geçerken kullanılır: her devam eden ödünç verme işlemi için bir satır; üye kartı ve nüsha barkoduyla, varsa ödünç verme ve iade tarihleriyle birlikte. Önce üyeleri ve katalogu içe aktarın; gerekli sütunları içeren şablon aşağıda indirilir.",
+			"submit": "Yükle"
+		},
+		"mapping": {
+			"uncertain": "Devam etmeden önce sütunları kontrol edin.",
+			"validate": "Dosyayı denetle",
+			"without": {
+				"issuedOn": "issued_on sütunu yoksa ödünç verme işlemleri bugün yapılmış sayılır.",
+				"dueOn": "due_on sütunu yoksa iade tarihi, ödünç verme kuralları ve takvime göre, masada olduğu gibi hesaplanır."
+			}
+		},
+		"fields": {
+			"cardNumber": "Üye kartı numarası",
+			"barcode": "Barkod",
+			"issuedOn": "Ödünç verme tarihi",
+			"dueOn": "İade tarihi"
+		},
+		"preview": {
+			"ready": "Hata yok: ödünç verme işlemleri içe aktarılabilir.",
+			"blocked": "Hataları düzeltin ve yeniden denetleyin: hatalı bir dosya içe aktarılmaz.",
+			"overdue": "{{count}} {{count:plural; one:ödünç verme işlemi; other:ödünç verme işlemi;}} zaten gecikmiş durumda: {{count:plural; one:içe aktarılacak ve gecikenler arasında görünecek; other:içe aktarılacak ve gecikenler arasında görünecek;}}.",
+			"columns": {
+				"patron": "Üye",
+				"barcode": "Nüsha",
+				"issued": "Ödünç verme",
+				"due": "İade"
+			},
+			"commit": "Ödünç verme işlemlerini içe aktar",
+			"back": "Sütunlara dön"
+		},
+		"reasons": {
+			"cardMissing": "Üye kartı numarası eksik",
+			"cardUnknown": "{{value}} numaralı karta sahip üye yok",
+			"barcodeMissing": "Barkod eksik",
+			"barcodeUnknown": "{{value}} barkodlu nüsha yok",
+			"alreadyOnLoan": "{{value}} nüshası zaten ödünçte",
+			"itemWithdrawn": "{{value}} nüshası çıkarılmış",
+			"duplicateInFile": "Aynı nüsha zaten {{line}} numaralı satırda",
+			"issueDateInvalid": "Geçersiz ödünç verme tarihi: “{{value}}”",
+			"issueDateFuture": "Gelecekteki ödünç verme tarihi: {{value}}",
+			"dueDateInvalid": "Geçersiz iade tarihi: “{{value}}”",
+			"dueBeforeIssue": "İade tarihi ödünç verme tarihinden önce",
+			"overdue": "Zaten gecikmiş; son iade tarihi: {{date}}",
+			"itemUnclassified": "{{value}} nüshası sınıflandırılacak bir kitaba ait: ödünç verme işlemi içe aktarılır, ama sınıflandırılana kadar masadan ödünç verilmez"
+		},
+		"done": {
+			"title": "Ödünç verme işlemleri içe aktarıldı",
+			"summary": "{{created}} {{created:plural; one:ödünç verme işlemi; other:ödünç verme işlemi;}} içe aktarıldı, bunlardan {{overdue}} {{overdue:plural; one:zaten gecikmiş; other:zaten gecikmiş;}}.",
+			"batch": "İçe aktarma no. {{id}}: özgün dosya saklanır.",
+			"again": "Başka bir dosya içe aktar"
+		},
+		"columns": {
+			"cardNumber": "Üyenin üye kartı numarası, zaten içe aktarılmış.",
+			"barcode": "Nüshanın barkodu, zaten içe aktarılmış.",
+			"issuedOn": "Ödünç verme tarihi; yoksa bugün.",
+			"dueOn": "İade tarihi; yoksa ödünç verme kurallarına göre hesaplanır."
+		}
+	},
+	"photosImport": {
+		"title": "Üye fotoğraflarını içe aktar",
+		"hint": "Üye başına bir dosya, üye kartı numarasıyla adlandırılmış (örneğin 0000001240.jpg): yönetici kılavuzunda anlatılan dışa aktarım bunları üretir. Her fotoğraf yeniden boyutlandırılır ve gizli verilerinden temizlenir; hiçbir karta uymayan dosyalar listelenir.",
+		"replace": "Zaten bulunan fotoğrafları değiştir",
+		"zip": {
+			"title": "ZIP arşivinden",
+			"file": "Fotoğrafları içeren ZIP arşivi",
+			"submit": "Fotoğrafları içe aktar"
+		},
+		"folder": {
+			"title": "Sunucu klasöründen",
+			"hint": "Dosyaları {{path}} konumuna kopyalayın: {{count:plural; one:şu anda {{count}} tane var; other:şu anda {{count}} tane var;}}. Çok sayıda fotoğraf için uygundur; bunlar arşiv olarak yüklemek için çok ağır olurdu.",
+			"submit": "Klasörden içe aktar"
+		},
+		"summary": {
+			"title": "Sonuç",
+			"text": "{{imported}} {{imported:plural; one:fotoğraf; other:fotoğraf;}} içe aktarıldı, {{replaced}} değiştirildi, {{kept:plural; one:{{kept}} olduğu gibi bırakıldı; other:{{kept}} olduğu gibi bırakıldı;}} (fotoğraf zaten bulunuyor), {{unmatched}} {{unmatched:plural; one:dosya; other:dosya;}} bir üyeye ait değil, {{unreadable}} okunamayan {{unreadable:plural; one:dosya; other:dosya;}}.",
+			"unreadable": "Okunamayan görseller: {{files}}",
+			"unmatched": "Bir üyeye ait olmayan dosyaların listesini indir"
+		},
+		"errors": {
+			"notZip": "Dosya geçerli bir ZIP arşivi değil.",
+			"empty": "Arşivde hiç dosya yok."
+		},
+		"done": "Fotoğraflar içe aktarıldı"
+	},
+	"rollover": {
+		"title": "Sınıf yükseltme",
+		"subtitle": "Yıl sonunda her öğrenci bir üst sınıfa geçer; son sınıfı bitiren öğrenci okuldan ayrılır.",
+		"steps": {
+			"backup": "Yedek",
+			"classes": "Sınıflar",
+			"leavers": "Ayrılanlar",
+			"confirm": "Onay",
+			"done": "Tamamlandı"
+		},
+		"backup": {
+			"text": "Her şeyden önce veritabanının bir yedeği: bir şey ters giderse Yönetim → Yedekler bölümünden geri dönebilirsiniz.",
+			"create": "Yedeği oluştur",
+			"created": "Yedek oluşturuldu: {{name}}"
+		},
+		"classes": {
+			"text": "Her öğrenci sınıfıyla birlikte bir üst yıla geçer. Yılı tekrar edeni ve sınıf değiştireni işaretleyin.",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; one:öğrenci; other:öğrenci;}}",
+			"exceptions": "{{count}} {{count:plural; one:istisna; other:istisna;}}",
+			"loans": "{{count}} ödünçte kitabı olan",
+			"repeat": "Tekrar eder",
+			"target": "Sınıf",
+			"noGroup": "Sınıfsız",
+			"choose": "Sınıfı seçin…",
+			"fates": {
+				"advances": "Geçer",
+				"stays": "Kalır",
+				"archived": "Kapanır"
+			},
+			"unplaced": "{{count}} {{count:plural; one:öğrenci; other:öğrenci;}} sınıfının seçilmesini bekliyor.",
+			"none": "Bir üst yıla geçecek öğrenci yok.",
+			"nextYear": "Sonraki yıl",
+			"leaves": "Okuldan ayrılır"
+		},
+		"leavers": {
+			"text": "Son yılın öğrencileri okuldan ayrılır: verileri hemen ve kalıcı olarak silinir (yalnızca istatistiklerin sayıları kalır). Kalacak olanların işaretini kaldırın, örneğin son yılı tekrar eden bir öğrencinin.",
+			"leaves": "Ayrılır",
+			"openLoans": "{{count}} {{count:plural; one:kitap; other:kitap;}} ödünçte",
+			"blocked": "{{count}} {{count:plural; one:okuldan ayrılacak öğrencinin; other:okuldan ayrılacak öğrencinin;}} hâlâ kitabı var: iadeyi kaydedin ya da kayıp olarak işaretleyin, ya da işaretini kaldırın.",
+			"toCheckin": "İadeler sayfasına git",
+			"none": "Son yılda öğrenci yok."
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; one:öğrenci; other:öğrenci;}} bir üst yıla geçecek",
+			"repeat": "{{count}} {{count:plural; one:öğrenci; other:öğrenci;}} sınıfta kalacak",
+			"groupChanges": "{{count}} {{count:plural; one:öğrenci; other:öğrenci;}} sınıf değiştirecek",
+			"closing": "{{count}} {{count:plural; one:sınıf; other:sınıf;}} kapanıp arşivlenecek",
+			"remove": "{{count}} {{count:plural; one:öğrenci; other:öğrenci;}} okuldan ayrılacak ve verileri silinecek",
+			"recent": "Son yükseltmenin tarihi: {{date}}, altı aydan daha kısa bir süre önce. Bunu yeniden çalıştırmak istediğimi onaylıyorum.",
+			"run": "Sınıfları yükselt"
+		},
+		"done": {
+			"title": "Yükseltme tamamlandı",
+			"advanced": "{{count}} {{count:plural; one:sınıf; other:sınıf;}} bir üst yıla geçti",
+			"archived": "{{count}} {{count:plural; one:sınıf; other:sınıf;}} arşivlendi",
+			"text": "Sonraki adımlar: gerekirse yeni birinci sınıfları oluşturun ve yeni öğrencileri eşzamanlamayla içe aktarın.",
+			"import": "Yeni öğrencileri içe aktar"
+		},
+		"errors": {
+			"blocked": "Okuldan ayrılacak bazı öğrencilerin hâlâ ödünçte kitapları var.",
+			"recent": "Onay gerekli: son yükseltme yakın tarihli.",
+			"no_backup": "Yedek bulunamadı ya da çok eski: ilk adımdan yeniden alın.",
+			"invalid_group": "Seçilen sınıflardan biri yok ya da öğrencinin yılını barındırmıyor.",
+			"unplaced": "Bazı öğrencilerin henüz sınıfı yok: Sınıflar adımında seçin.",
+			"invalid_level": "Seçilen yıllardan biri olası yıllar arasında değil: sayfayı yeniden yükleyin."
+		},
+		"next": "İleri",
+		"back": "Geri"
+	},
+	"classes": {
+		"title": "Sınıflar",
+		"subtitle": "Okulun sınıfları ve öğretmen grupları.",
+		"hint": "Okulun yılları ve kademeleri ayarlarda değiştirilir:",
+		"structureLink": "Okul",
+		"new": "Yeni sınıflar",
+		"newTeachers": "Yeni öğretmen grubu",
+		"teachers": "Öğretmenler",
+		"mixed": "Çok seviyeli sınıf",
+		"empty": "Sınıf yok",
+		"emptyHint": "Sınıf yok. Sınıflar «Yeni sınıflar» ile oluşturulur, örneğin 1 ila 5 arası yıllar ve A-D adları için.",
+		"archivedTitle": "{{count:plural; one:Arşivlenmiş sınıf; other:Arşivlenmiş sınıflar;}} ({{count}})",
+		"archive": "Arşivle",
+		"archiveNotEmpty": "Hâlâ üyeleri var: arşivlenemez",
+		"restore": "Geri yükle",
+		"archived": "{{name}} sınıfı arşivlendi",
+		"restored": "{{name}} sınıfı geri yüklendi",
+		"columns": {
+			"class": "Sınıf",
+			"levels": "Yıllar",
+			"patrons": "Üyeler"
+		},
+		"dialog": {
+			"title": {
+				"students": "Yeni sınıflar",
+				"teachers": "Yeni öğretmen grubu",
+				"edit": "{{name}} düzenle"
+			},
+			"levels": "Yıllar",
+			"names": "Sınıfların adları",
+			"namesHint": "Virgülle ayrılmış; A-D, A, B, C, D demektir. Bir ad boşluk içerebilir.",
+			"name": "Ad",
+			"mixed": "Seçilen bütün yılları içeren tek bir çok seviyeli sınıf",
+			"stage": "Kademe",
+			"anyStage": "Tümü",
+			"notes": "Notlar",
+			"preview": "Oluşturulacak {{count}} {{count:plural; one:sınıf; other:sınıf;}}:",
+			"previewEmpty": "En az bir yıl seçin ve adları yazın.",
+			"saved": {
+				"students": "{{count}} {{count:plural; one:sınıf oluşturuldu; other:sınıf oluşturuldu;}}",
+				"teachers": "Öğretmen grubu oluşturuldu",
+				"edit": "Sınıf kaydedildi"
+			}
+		},
+		"errors": {
+			"nameRequired": "Ad gerekli.",
+			"nameLong": "Ad çok uzun (en fazla 40 karakter).",
+			"levelsRequired": "En az bir yıl seçin.",
+			"levelUnknown": "Seçilen bir yıl artık yok.",
+			"levelsNotForTeachers": "Bir öğretmen grubunun yılı yoktur.",
+			"nameTaken": "Aynı yıl için bu adda bir sınıf zaten var.",
+			"levelInUse": "Sınıfın bazı öğrencileri kaldırılacak bir yılda.",
+			"notEmpty": "Sınıfın hâlâ üyeleri var.",
+			"notFound": "Sınıf artık yok."
+		}
+	},
+	"exports": {
+		"title": "Dışa aktarmalar",
+		"subtitle": "Kütüphanenin verileri; saklamak, yeniden içe aktarmak ya da başka bir programa taşımak için dosyalarda.",
+		"items": {
+			"students": {
+				"title": "Öğrenciler (CSV)",
+				"description": "İçe aktarma biçiminde aktif öğrenciler: Yönetim → İçe aktarmalar → Öğrenciler bölümünden yeniden içe aktarılırlar."
+			},
+			"teachers": {
+				"title": "Öğretmenler (CSV)",
+				"description": "İçe aktarma biçiminde aktif öğretmenler: Yönetim → İçe aktarmalar → Öğretmenler bölümünden yeniden içe aktarılırlar."
+			},
+			"catalog": {
+				"title": "Katalog (CSV)",
+				"description": "Her nüsha için bir satır, kitabın verileriyle, katalog içe aktarma biçiminde."
+			},
+			"open-loans": {
+				"title": "Devam eden ödünç verme işlemleri (CSV)",
+				"description": "Kart, nüsha, ödünç verme tarihi ve iade tarihi: Yönetim → İçe aktarmalar → Devam eden ödünç verme işlemleri bölümünden yeniden içe aktarılırlar."
+			},
+			"loans-history": {
+				"title": "Ödünç verme geçmişi (CSV)",
+				"description": "Her ödünç verme işlemi, ödünç verildiği günkü sınıf ve bölümüyle."
+			},
+			"dump": {
+				"title": "Tüm veriler (JSON)",
+				"description": "Üyeler, katalog, ödünç verme işlemleri ve listeler tek bir dosyada; başka bir kuruluma ya da programa taşımak için."
+			}
+		},
+		"download": "İndir",
+		"patronNote": "Tek bir kişinin verileri (erişim talebi) onun sayfasından indirilir.",
+		"patronExport": "Kişinin verilerini dışa aktar"
+	},
+	"imports": {
+		"title": "İçe aktarmalar",
+		"hint": "Koha'dan geçerken kullanılır; üyeler için de her okul yılı başında yeni sınıflar için. Her dosya, bir şey içe aktarılmadan önce baştan sona denetlenir.",
+		"cards": {
+			"catalog": {
+				"title": "Katalog",
+				"description": "CSV dosyasından ya da Koha dışa aktarımından kitaplar ve nüshalar."
+			},
+			"students": {
+				"title": "Öğrenciler",
+				"description": "Okulun elektronik kayıt defterinden, her yeni okul yılında sınıflar: ad, soyad ve sınıf."
+			},
+			"teachers": {
+				"title": "Öğretmenler",
+				"description": "Okulun öğretmenleri: ad ve soyad, varsa üye kartlarıyla birlikte."
+			},
+			"loans": {
+				"title": "Devam eden ödünçler",
+				"description": "Açık ödünç verme işlemleri, Koha'dan geçerken bir kez içe aktarılır."
+			},
+			"photos": {
+				"title": "Üye fotoğrafları",
+				"description": "Koha'dan dışa aktarılan fotoğraflar, kart başına bir tane."
+			}
+		}
+	},
+	"calibration": {
+		"title": "Çift yüzlü baskıyı kalibre et",
+		"intro": "Kartları sayfanın iki yüzüne basmak için arka yüz, ön yüzün tam arkasına denk gelmelidir. Her yazıcı arka yüzü biraz kaydırır: bu deneme, bunun ne kadar olduğunu bir kez ölçer.",
+		"current": "Sayfanın dönüşü: {{flip}}. Kullanımdaki arka yüzlerin kayması: yatayda {{x}} mm, dikeyde {{y}} mm.",
+		"steps": {
+			"print": "Aşağıdaki düğmeyle kalibrasyon sayfasını yazdırın.",
+			"window": {
+				"long-edge": "Yazdırma penceresinde «Çift yüzlü» seçin, uzun kenardan çevirerek, ölçek %100 ve kenar boşluğu olmadan.",
+				"short-edge": "Yazdırma penceresinde «Çift yüzlü» seçin, kısa kenardan çevirerek, ölçek %100 ve kenar boşluğu olmadan."
+			},
+			"cut": "Büyük «1» yazılı tarafta, siyah çizgi boyunca dikkatle kesin.",
+			"read": "Kartı çevirin: «2» yazılı tarafta, kesilen kenarın iki cetvelle kesiştiği noktada iki sayıyı okuyun (işaretleriyle birlikte: + ya da −).",
+			"save": "Aşağıya iki sayıyı yazın ve kaydedin: arka yüzlerin kayması düzeltilir.",
+			"check": "Kontrol için sayfayı yeniden yazdırın: kesilen kenar şimdi iki cetvelin de 0 noktasından geçmelidir."
+		},
+		"print": "Kalibrasyon sayfasını yazdır",
+		"drawing": {
+			"title": "Ne okunacak",
+			"label": "Kesimden sonra “2” yüzü: kesilen kenar cetvelleri kesiyor",
+			"x": "yatay cetvel",
+			"y": "dikey cetvel",
+			"hint": "Kesilen kenar her cetveli keser: oradaki sayı girilecek değerdir. Her çentik bir milimetredir, sayılar beşer beşer gelir."
+		},
+		"fields": {
+			"x": "Yatay cetvel (mm)",
+			"y": "Dikey cetvel (mm)",
+			"hint": "Kesilen kenarın geçtiği sayı, işaretiyle birlikte; sıfırın üzerine düşerse 0."
+		},
+		"next": "Kaydettikten sonra arka yüzler yatayda {{x}} mm, dikeyde {{y}} mm kaydırılacak.",
+		"save": "Kalibrasyonu kaydet",
+		"saved": "Kalibrasyon kaydedildi: arka yüzler yatayda {{x}} mm, dikeyde {{y}} mm kaydırıldı.",
+		"open": "Çift yüzlü baskıyı kalibre et",
+		"sheet": {
+			"title": "BiblioViva · çift yüzlü baskının kalibrasyonu",
+			"cut": "Siyah çizgi boyunca kesin, sonra kartı çevirin.",
+			"read": "İki cetvelde kesilen kenarın geçtiği yeri okuyun."
+		}
+	}
+}

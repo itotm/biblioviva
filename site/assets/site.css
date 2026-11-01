@@ -1,0 +1,426 @@
+/* BiblioViva documentation site: what the generated pages need beyond style.css (the approved look).
+   Light only; one small script, the search (search.js). */
+
+/* notes: several paragraphs and lists inside */
+.note > .note-body {
+	min-width: 0;
+}
+.note .note-body > :first-child {
+	margin-top: 0;
+}
+.note .note-body > :last-child {
+	margin-bottom: 0;
+}
+.note .note-body p {
+	margin: 0 0 0.5em;
+	color: var(--ink-2);
+}
+.note .note-body ul,
+.note .note-body ol {
+	margin: 0.3em 0;
+}
+
+/* result box */
+.done > .done-body {
+	min-width: 0;
+}
+.done .done-body > :first-child {
+	margin-top: 0;
+}
+.done .done-body > :last-child {
+	margin-bottom: 0;
+}
+.done .done-body p {
+	margin: 0 0 0.6em;
+	color: #14532d;
+}
+.done .done-body li {
+	color: #14532d;
+}
+
+/* boxes made from sections */
+.check > p:first-child {
+	margin-bottom: 8px;
+}
+.check p,
+.check li {
+	color: var(--ink-2);
+}
+.check p:first-child {
+	color: var(--ink);
+}
+.check li > p {
+	margin: 0;
+}
+.check li > ul,
+.check li > ol {
+	margin: 4px 0 0;
+}
+
+/* the opening list of a guide: time, account, what is needed */
+.intro-list {
+	margin: 0 0 8px;
+	padding: 6px 18px;
+	border-radius: 16px;
+	background: #fff;
+	border: 1px solid var(--line);
+}
+.intro-list ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.intro-list li {
+	padding: 8px 0;
+	border-bottom: 1px solid var(--line);
+}
+.intro-list li:last-child {
+	border-bottom: 0;
+}
+
+/* variant blocks shown on pages that are not installation steps */
+.variant {
+	margin: 16px 0;
+	padding: 4px 18px 8px;
+	border-radius: 14px;
+	border: 1px dashed var(--line-2);
+	background: #fff;
+}
+.variant > p:first-child {
+	margin: 10px 0 4px;
+}
+.variant > p:first-child > strong:only-child {
+	display: inline-block;
+	padding: 1px 10px;
+	border-radius: 999px;
+	background: var(--primary-tint);
+	color: var(--primary-deep);
+	font-size: 0.85rem;
+}
+
+/* code and tables of the Markdown */
+.content pre {
+	margin: 14px 0;
+	padding: 12px 16px;
+	overflow-x: auto;
+	border-radius: 12px;
+	background: #eef2f7;
+	border: 1px solid var(--line);
+	font-size: 0.88rem;
+	line-height: 1.5;
+}
+.content pre code {
+	padding: 0;
+	background: none;
+	border-radius: 0;
+	font-size: inherit;
+}
+.content .tw {
+	margin: 16px 0;
+	overflow-x: auto;
+	border-radius: 14px;
+	border: 1px solid var(--line);
+	background: #fff;
+}
+.content table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.92rem;
+}
+.content th,
+.content td {
+	padding: 9px 14px;
+	text-align: left;
+	vertical-align: top;
+	border-bottom: 1px solid var(--line);
+	color: var(--ink-2);
+}
+.content th {
+	background: #f8fafc;
+	color: var(--ink);
+	font-size: 0.82rem;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+.content tr:last-child td {
+	border-bottom: 0;
+}
+.content blockquote {
+	margin: 16px 0;
+	padding: 4px 16px;
+	border-radius: 12px;
+	background: #fff;
+	border: 1px solid var(--line);
+}
+.content hr {
+	border: 0;
+	border-top: 1px solid var(--line);
+	margin: 32px 0;
+}
+.content ul,
+.content ol {
+	padding-left: 1.4em;
+}
+.content li > p {
+	margin: 0.3em 0;
+}
+.content li {
+	margin: 0.2em 0;
+}
+.content img {
+	height: auto;
+}
+.content .steps {
+	padding-left: 0;
+}
+.content .steps > li {
+	margin: 0;
+}
+.content .steps > li > p:first-child {
+	margin-top: 0;
+}
+.content .steps > li > :last-child {
+	margin-bottom: 0;
+}
+.content .steps > li > b:first-child a {
+	color: inherit;
+	text-decoration: none;
+}
+.content .steps > li > b:first-child a:hover {
+	text-decoration: underline;
+}
+.content .steps > li > p {
+	margin: 0.2em 0;
+}
+.content .cards {
+	padding: 0;
+}
+.content .card b {
+	font-size: 0.98rem;
+}
+.content .trouble details > div > :last-child {
+	margin-bottom: 0;
+}
+.content .trouble details > div ol,
+.content .trouble details > div ul {
+	margin: 0.3em 0 0.6em;
+}
+.content kbd {
+	color: var(--ink);
+}
+
+/* the side menu: sub-headings between runs of links */
+.side li.side-sub {
+	margin: 24px 0 4px;
+	padding: 0 12px;
+	font-size: 0.74rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+.side li.side-sub:first-child {
+	margin-top: 2px;
+}
+.toc a[aria-current] {
+	color: var(--ink);
+}
+
+/* tabs in the header on a narrow screen: a row that scrolls */
+@media (max-width: 900px) {
+	.dh-tabs {
+		overflow-x: auto;
+		scrollbar-width: none;
+	}
+}
+
+/* a picture that is not there yet: a plain wireframe with its caption below */
+.fig img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	border: 1px solid var(--line-2);
+	background: #fff;
+}
+.ph {
+	border-radius: 12px;
+	border: 1px solid var(--line-2);
+	background: #fff;
+	overflow: hidden;
+}
+.ph-chrome {
+	display: flex;
+	gap: 6px;
+	padding: 9px 12px;
+	background: #e9eef5;
+	border-bottom: 1px solid var(--line);
+}
+.ph-chrome i {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #cbd5e1;
+}
+.ph-body {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	min-height: 150px;
+	padding: 24px 16px;
+	color: var(--muted);
+	text-align: center;
+}
+.ph-body .i {
+	width: 30px;
+	height: 30px;
+	color: var(--line-2);
+}
+.ph-body b {
+	font-size: 0.85rem;
+	color: var(--ink-2);
+}
+.ph-body code {
+	font-size: 0.74rem;
+	background: #f1f5f9;
+}
+.ph-lines {
+	position: absolute;
+	inset: 18px 24px;
+	opacity: 0.55;
+	background:
+		linear-gradient(var(--line) 0 0) 0 0 / 60% 10px no-repeat,
+		linear-gradient(var(--line) 0 0) 0 22px / 85% 10px no-repeat,
+		linear-gradient(var(--line) 0 0) 0 44px / 72% 10px no-repeat;
+}
+.ph-body > :not(.ph-lines) {
+	position: relative;
+}
+
+/* the A-Z index */
+.az {
+	list-style: none;
+	margin: 0 0 8px;
+	padding: 0;
+	columns: 2 280px;
+	column-gap: 28px;
+}
+.az li {
+	break-inside: avoid;
+	padding: 5px 0;
+	border-bottom: 1px solid var(--line);
+}
+.az small {
+	margin-left: 6px;
+	padding: 1px 8px;
+	border-radius: 999px;
+	font-size: 0.72rem;
+	font-weight: 700;
+	color: var(--a);
+	background: color-mix(in srgb, var(--a) 10%, #fff);
+}
+
+/* the home: five sections */
+.plain .roles {
+	grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+.plain .page-head {
+	max-width: 52rem;
+}
+.role > span:not(.go) {
+	color: var(--ink-2);
+	font-size: 0.93rem;
+}
+.role ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.role .go {
+	margin-top: auto;
+}
+
+/* the footer on its own line of text */
+.df a {
+	color: inherit;
+}
+
+/* the search dialog (search.js, Pagefind's default interface in the site's colours) */
+.ds {
+	width: min(720px, calc(100vw - 32px));
+	max-height: min(80vh, 760px);
+	margin: 10vh auto auto;
+	padding: 16px;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow-2);
+	background: #fff;
+	color: var(--ink);
+}
+/* Pagefind sets its variables on its own root */
+.ds .pagefind-ui {
+	--pagefind-ui-primary: var(--primary);
+	--pagefind-ui-text: var(--ink);
+	--pagefind-ui-background: #fff;
+	--pagefind-ui-border: var(--line-2);
+	--pagefind-ui-tag: #f1f5f9;
+	--pagefind-ui-border-width: 1px;
+	--pagefind-ui-border-radius: 10px;
+	--pagefind-ui-font: var(--font);
+	--pagefind-ui-scale: 0.85;
+}
+.ds .pagefind-ui__search-input {
+	font-weight: 500;
+}
+.ds .pagefind-ui__search-input:focus {
+	outline: 2px solid var(--primary);
+	outline-offset: 1px;
+}
+.ds .pagefind-ui__search-clear {
+	border: 0;
+	font: 500 0.85rem var(--font);
+	color: var(--muted);
+}
+.ds::backdrop {
+	background: rgb(15 23 42 / 0.35);
+}
+.ds-box {
+	display: flex;
+	gap: 8px;
+	align-items: flex-start;
+}
+.ds-ui {
+	flex: 1;
+	min-width: 0;
+}
+.ds-close {
+	display: grid;
+	place-items: center;
+	width: 40px;
+	height: 40px;
+	flex: none;
+	border: 0;
+	border-radius: 10px;
+	background: none;
+	color: var(--ink-2);
+	cursor: pointer;
+}
+.ds-close:hover {
+	background: #eef2f7;
+}
+.ds-foot {
+	margin: 12px 0 0;
+	font-size: 0.9rem;
+}
+.ds-foot a {
+	display: inline-flex;
+	gap: 6px;
+	align-items: center;
+	color: var(--ink-2);
+}
+.ds .pagefind-ui__result-link {
+	color: var(--primary);
+}

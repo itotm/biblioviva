@@ -1,0 +1,7 @@
+{
+	"name": "overdue-by-class",
+	"description": "Solleciti prestiti scaduti, un blocco per classe (o Docente), da consegnare agli insegnanti",
+	"kind": "overdue",
+	"page": "A4 portrait",
+	"marginMm": 15
+}

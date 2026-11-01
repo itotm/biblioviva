@@ -1,0 +1,43 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# The language packs of a release (PLAN.md step 9.39, ADR-051): on a tag `v*` every pack of
+# `i18n-packs/` is checked, zipped (`biblioviva-i18n-<code>-<version>.zip`) and attached to the
+# GitHub release together with `biblioviva-i18n-index.json`, the list the app reads to offer them.
+# The release is created as a pre-release when it does not exist yet (the beta); its notes are the
+# owner's. Run by hand on a tag to attach the packs again.
+name: i18n-packs
+
+on:
+    push:
+        tags: ["v*"]
+    workflow_dispatch:
+
+permissions:
+    contents: write
+
+jobs:
+    packs:
+        runs-on: ubuntu-24.04
+        timeout-minutes: 10
+        steps:
+            - uses: actions/checkout@v7
+
+            - uses: oven-sh/setup-bun@v2
+              with:
+                  bun-version: 1.4.4
+
+            - name: Install dependencies (frozen lockfile)
+              run: bun install --frozen-lockfile
+
+            - name: Every pack valid
+              run: bun run i18n:status
+
+            - name: Zips and index
+              run: bun run i18n:release --version "${GITHUB_REF_NAME#v}"
+
+            - name: Attach to the release
+              env:
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 \
+                    || gh release create "$GITHUB_REF_NAME" --prerelease --title "$GITHUB_REF_NAME" --notes "Language packs and images of $GITHUB_REF_NAME."
+                  gh release upload "$GITHUB_REF_NAME" dist/i18n/* --clobber

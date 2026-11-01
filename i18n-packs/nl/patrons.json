@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Leners",
+		"new": "Nieuwe lener",
+		"search": "Zoeken op achternaam…",
+		"empty": "Geen enkele lener past bij de filters.",
+		"filters": {
+			"type": "Type",
+			"stage": "Schoolsoort",
+			"level": "Leerjaar",
+			"status": "Status",
+			"all": "Alle",
+			"allF": "Alle"
+		},
+		"columns": {
+			"name": "Achternaam en voornaam",
+			"type": "Type",
+			"class": "Klas",
+			"card": "Lenerspas"
+		},
+		"clearFilters": "Filters wissen",
+		"countFiltered": "{{shown:plural; one:{{shown}} lener past; other:{{shown}} leners passen;}} bij de filters",
+		"printCards": "Lenerspassen afdrukken",
+		"printClassCards": "Lenerspassen afdrukken {{classLabel}}",
+		"removeSelected": "Geselecteerde verwijderen",
+		"removeTitle": "{{count}} {{count:plural; one:lener; other:leners;}} verwijderen?",
+		"removeDescription": "Voor elk van hen worden voornaam en achternaam, contactgegevens, leerlingnummer, notities, lenerspasnummer en foto meteen en voorgoed gewist; type, klas, leerjaar en de uitleengeschiedenis blijven voor de statistiek. Leners met lopende uitleningen blijven in het archief.",
+		"removed": "{{removed}} verwijderd, {{kept}} met lopende uitleningen in het archief",
+		"status": {
+			"title": "Status",
+			"loans": "{{count}} in uitleen",
+			"overdue": "{{count}} te laat",
+			"noPhoto": "geen foto"
+		},
+		"startTitle": "Zoek een lener",
+		"startHint": "Zoek op naam of lenerspas, of gebruik de filters."
+	},
+	"types": {
+		"student": "Leerling",
+		"teacher": "Leerkracht"
+	},
+	"fields": {
+		"patronType": "Type",
+		"firstName": "Voornaam",
+		"lastName": "Achternaam",
+		"cardNumber": "Lenerspasnummer",
+		"cardNumberHint": "Leeg: wordt automatisch toegekend.",
+		"externalId": "Leerlingnummer",
+		"email": "E-mail",
+		"emailHint": "Het adres dat de school aan de leerling of leerkracht geeft: hierop komen de berichten.",
+		"circulationNote": "Notitie voor de uitleenbalie",
+		"circulationNoteHint": "Wordt opvallend getoond bij het uitlenen.",
+		"notes": "Interne notities",
+		"status": "Status",
+		"openLoans": "Lopende uitleningen",
+		"overdueLoans": "Te laat",
+		"noCard": "geen lenerspas",
+		"none": "—",
+		"levelCode": "Leerjaar",
+		"groupId": "Klasletter",
+		"classLabel": "Klas",
+		"teacherGroup": "Groep leerkrachten"
+	},
+	"form": {
+		"createTitle": "Nieuwe lener",
+		"editTitle": "Lener bewerken",
+		"identity": "Persoonsgegevens",
+		"school": "Klas",
+		"contacts": "Contactgegevens",
+		"notes": "Notities",
+		"create": "Lener aanmaken",
+		"save": "Wijzigingen opslaan",
+		"classSelect": "Kies…",
+		"defaultTeacherGroup": "De groep leerkrachten"
+	},
+	"errors": {
+		"emailInvalid": "Ongeldig e-mailadres.",
+		"cardNumberInvalid": "Ongeldig lenerspasnummer: alleen cijfers, hoofdletters en koppeltekens, met het juiste controleteken.",
+		"cardNumberTaken": "Dit lenerspasnummer is al aan een andere lener toegekend.",
+		"cardNumberIsCopy": "Het lenerspasnummer is of lijkt op de barcode van een exemplaar: kies een ander nummer.",
+		"externalIdTaken": "Dit leerlingnummer is al aan een andere lener toegekend.",
+		"levelRequired": "Voor een leerling is het leerjaar verplicht.",
+		"levelUnknown": "Leerjaar dat niet bij de leerjaren van de school hoort.",
+		"levelNotForTeachers": "Een leerkracht heeft geen leerjaar.",
+		"groupRequired": "Voor een leerling is de klasletter verplicht.",
+		"groupUnknown": "Klasletter niet gevonden onder de actieve klassen: klassen maakt u aan via Beheer → Configuratie → Klassen.",
+		"levelNotInGroup": "Deze klasletter heeft dit leerjaar niet: kies een klasletter van dit leerjaar."
+	},
+	"detail": {
+		"heading": "Gegevens van de lener",
+		"tabs": {
+			"loans": "Lopende uitleningen",
+			"history": "Geschiedenis",
+			"cards": "Lenerspas",
+			"notes": "Notities"
+		},
+		"noLoans": "Geen lopende uitleningen.",
+		"loanColumns": {
+			"due": "Inleverdatum"
+		},
+		"overdue": "te laat",
+		"card": "Lenerspas {{number}}",
+		"noNotes": "Geen notities.",
+		"edit": "Bewerken",
+		"created": "Aangemaakt op {{when}}",
+		"barcodeAlt": "Barcode van lenerspas {{number}}",
+		"cardPrinted": "Lenerspas afgedrukt op {{when}}.",
+		"cardNotPrinted": "Lenerspas nog niet afgedrukt.",
+		"reassignCard": "Lenerspas opnieuw toewijzen",
+		"reassignTitle": "Een nieuwe lenerspas toewijzen?",
+		"reassignDescription": "Het huidige nummer wordt voorgoed ingetrokken en de nieuwe lenerspas moet worden afgedrukt.",
+		"cardReassigned": "Nieuwe lenerspas: {{number}}",
+		"printCard": "Lenerspas afdrukken",
+		"markCardPrinted": "Markeren als afgedrukt",
+		"cardMarkedPrinted": "Lenerspas gemarkeerd als afgedrukt",
+		"historyColumns": {
+			"issuedAt": "Uitgeleend op",
+			"dueDate": "Inleverdatum",
+			"returnedAt": "Ingeleverd op",
+			"outcome": "Resultaat",
+			"title": "Titel",
+			"author": "Auteur",
+			"barcode": "Exemplaar",
+			"renewals": "Verlengingen",
+			"schoolYear": "Schooljaar"
+		},
+		"outcome": {
+			"open": "Lopend",
+			"overdue": "Te laat",
+			"returned": "Ingeleverd",
+			"returnedLate": "Te laat ingeleverd",
+			"lost": "Vermist"
+		},
+		"historyEmpty": "Geen uitlening geregistreerd.",
+		"historyCount": "{{count}} {{count:plural; one:uitlening; other:uitleningen;}} in totaal",
+		"notesEdit": "Notities bewerken",
+		"notesSaved": "Notities opgeslagen",
+		"notesUnchanged": "Geen wijziging",
+		"notesHint": "De notitie voor de uitleenbalie verschijnt opvallend bij het uitlenen; de andere notities blijven hier.",
+		"remove": "{{type}} verwijderen",
+		"removeTitle": "{{name}} definitief verwijderen?",
+		"removeDescription": "Meteen en voorgoed gewist: voornaam en achternaam, e-mailadres, leerlingnummer, notities, lenerspasnummer (ingetrokken) en foto. Alleen type, klas, leerjaar en de uitleengeschiedenis blijven voor de statistiek. Dit kan niet ongedaan worden gemaakt.",
+		"removeOpenLoans": "Heeft {{count}} {{count:plural; one:lopende uitlening; other:lopende uitleningen;}}. {{count:plural; one:Die moet; other:Die moeten;}} eerst worden ingeleverd of als vermist gemarkeerd.",
+		"removeClassSheets": "Deze lener is gekozen voor {{count}} {{count:plural; one:foto; other:foto's;}} in de klasfoto's (fotoregistratie vanuit een afbeelding): {{count:plural; one:dat kader wordt; other:die kaders worden;}} bedekt.",
+		"removed": "Lener verwijderd: persoonsgegevens gewist.",
+		"removedInfo": "Verwijderd op {{when}}. Alleen de gegevens voor de statistiek blijven.",
+		"lostTitle": "Vermiste boeken",
+		"lostHint": "Gemarkeerd als vermist terwijl ze bij deze lener in uitleen waren. Komen ze terug, dan worden ze bij de inname geregistreerd.",
+		"markLost": "“{{title}}” als vermist markeren",
+		"markLostTitle": "“{{title}}” als vermist markeren?",
+		"markLostDescription": "De uitlening wordt afgesloten en het exemplaar staat als vermist. Duikt het boek weer op, dan registreert u de inname en is het weer beschikbaar.",
+		"markLostReason": "Reden (facultatief)",
+		"markLostConfirm": "Als vermist markeren",
+		"markedLost": "“{{title}}” als vermist gemarkeerd."
+	},
+	"photo": {
+		"title": "Foto",
+		"take": "Foto maken",
+		"upload": "Bestand uploaden",
+		"retake": "Opnieuw",
+		"use": "Deze foto gebruiken",
+		"cancel": "Annuleren",
+		"delete": "Foto verwijderen",
+		"deleteTitle": "De foto verwijderen?",
+		"deleteDescription": "De foto wordt van de server verwijderd; een nieuwe kan daarna worden gemaakt.",
+		"zoom": "Zoom",
+		"dragHint": "Sleep om het beeld te kaderen, gebruik de zoom om dichterbij te komen.",
+		"saved": "Foto opgeslagen",
+		"deleted": "Foto verwijderd",
+		"placeholder": "Geen foto",
+		"alt": "Foto van {{name}}",
+		"errors": {
+			"too_large": "Bestand te groot: de limiet is {{maxMb}} MB.",
+			"not_an_image": "Het bestand is geen leesbare afbeelding.",
+			"unsupported_format": "Niet ondersteund beeldformaat (toegestaan zijn JPEG, PNG, WebP en HEIC).",
+			"empty": "Geen bestand gekozen."
+		},
+		"withForm": "Ze wordt opgeslagen samen met de lener.",
+		"requiredHint": "Een foto is vereist: maak die nu, of later op de pagina van de lener.",
+		"optionalHint": "De foto kan nu of later op de pagina van de lener worden gemaakt.",
+		"remove": "Verwijderen",
+		"notSaved": "De foto is niet opgeslagen: maak hem opnieuw op de pagina van de lener.",
+		"retakePhoto": "De foto opnieuw maken"
+	},
+	"census": {
+		"title": "Fotoregistratie",
+		"noGroup": "Zonder klas",
+		"stageOthers": "Zonder schoolsoort",
+		"progress": "{{done}} van {{total}} met foto",
+		"allDone": "Iedereen heeft een foto.",
+		"back": "Klas of lijst wijzigen",
+		"skip": "Overslaan",
+		"done": "Klaar",
+		"saved": "Foto opgeslagen: {{name}}",
+		"quickAdd": "Nieuwe lener",
+		"quickAddHint": "Wordt toegevoegd aan {{group}}, daarna komt zijn of haar foto.",
+		"create": "Toevoegen en fotograferen",
+		"findPerson": "Zoek op achternaam",
+		"pickTarget": "Kies een lijst of een klas",
+		"listsTitle": "Lijsten van leners",
+		"classesTitle": "Klassen",
+		"nothingMissing": "Alle klassen en lijsten hebben hun foto's.",
+		"onlyMissing": "Worden alleen de klassen en lijsten getoond waarin minstens één foto ontbreekt.",
+		"byCamera": "Eén persoon tegelijk",
+		"sheets": {
+			"title": "Uit een afbeelding met meerdere foto's",
+			"hint": "Afbeeldingen met meerdere foto's (het blad van de fotograaf, pasjes op een tafel, een vel pasfoto's): de foto's worden automatisch herkend en aan elke lener toegewezen.",
+			"upload": "Afbeelding uploaden",
+			"take": "Het vel fotograferen",
+			"uploading": "De afbeelding wordt verstuurd…",
+			"empty": "Geen afbeelding voor deze klas of lijst.",
+			"item": "Afbeelding van {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:foto gevonden; other:foto's gevonden;}} · {{saved}} opgeslagen · {{pending}} nog te doen",
+			"notDetected": "Nog niet verwerkt",
+			"demoScan": "Voorbeeld van een scanner",
+			"demoPhoto": "Voorbeeld van een foto",
+			"demoHint": "Twee manieren om de foto's van de klas te krijgen: een scan ligt vlak, de foto's zijn rechthoeken die hooguit gedraaid zijn; een foto wordt schuin genomen, het perspectief vervormt de kaders."
+		},
+		"sheet": {
+			"title": "Foto's uit een afbeelding",
+			"back": "Terug naar de klas",
+			"detecting": "De foto's worden in de afbeelding gezocht…",
+			"found": "Gevonden foto's: {{count}}. Kies bij elke foto wie erop staat.",
+			"none": "Geen foto gevonden. Met «Kaders corrigeren» kunnen ze met de hand worden getekend.",
+			"pictureAlt": "De geüploade afbeelding, met de genummerde fotokaders",
+			"frame": "Foto {{n}}",
+			"choose": "Wie is het?",
+			"nobody": "— Niemand —",
+			"takenBy": "{{name}} (staat al op foto {{n}})",
+			"hasPhoto": "heeft al een foto",
+			"noPhoto": "geen foto",
+			"ignore": "Negeren",
+			"unignore": "Herstellen",
+			"ignored": "Genegeerd: het is niemand van deze klas of lijst.",
+			"saved": "Opgeslagen als foto van {{name}}",
+			"edit": "Kaders corrigeren",
+			"editDone": "Correcties klaar",
+			"editHint": "Tik op een kader en sleep de hoeken; voor een ontbrekende foto gebruikt u «Kader toevoegen».",
+			"editHintScan": "Tik op een kader: sleep een hoek om het groter of kleiner te maken, de cirkel erboven om het te draaien; voor een ontbrekende foto gebruikt u «Kader toevoegen».",
+			"addFrame": "Kader toevoegen",
+			"addFrameHint": "Sleep op de afbeelding van de ene hoek van de ontbrekende foto naar de andere.",
+			"deleteFrame": "Kader {{n}} verwijderen",
+			"rotateFrame": "Het kader draaien",
+			"kind": "Soort afbeelding",
+			"kindPhoto": "Foto",
+			"kindScan": "Scan",
+			"kindPhotoHint": "Schuin genomen: elke hoek van een kader beweegt apart, om het perspectief te volgen.",
+			"kindScanHint": "Gemaakt met een scanner: de kaders blijven rechthoeken en kunnen alleen worden gedraaid.",
+			"kindAgain": "Zolang er geen lener is gekozen, worden de foto's bij een wijziging van het soort opnieuw gezocht.",
+			"save": "Foto's opslaan",
+			"saveTitle": "De gekozen foto's opslaan?",
+			"saveSummary": "Op te slaan foto's: {{count}}.",
+			"saveReplaces": "Ze vervangen de bestaande foto van: {{names}}.",
+			"saveUnassigned": "Kaders zonder gekozen persoon: {{count}} (blijven zoals ze zijn).",
+			"savedToast": "Foto's opgeslagen: {{count}}.",
+			"deleteSheet": "Afbeelding verwijderen",
+			"deleteSheetTitle": "De afbeelding verwijderen?",
+			"deleteSheetDescription": "De afbeelding en de kaders worden verwijderd. De foto's die al zijn opgeslagen, blijven bij de leners.",
+			"deletedToast": "Afbeelding verwijderd.",
+			"progress": "{{label}}: {{done}} van {{total}} met foto",
+			"missingTitle": "Nog zonder foto",
+			"byCamera": "Fotografeer ze één voor één",
+			"errors": {
+				"not_found": "Afbeelding niet gevonden.",
+				"set_not_found": "De klas of lijst bestaat niet meer.",
+				"empty": "Het bestand is leeg.",
+				"too_large": "De afbeelding is te groot (maximaal {{maxMb}} MB).",
+				"not_an_image": "Het bestand is geen leesbare afbeelding.",
+				"unsupported_format": "Niet ondersteund formaat: gebruik JPEG, PNG, WebP of HEIC.",
+				"too_many_frames": "Maximaal {{maxFrames}} {{maxFrames:plural; one:foto; other:foto's;}} per afbeelding.",
+				"bad_corners": "Het kader is niet geldig: de hoeken moeten een vierhoek vormen binnen de afbeelding.",
+				"already_detected": "De foto's van deze afbeelding zijn al gezocht.",
+				"frame_saved": "Deze foto is al opgeslagen.",
+				"frame_erased": "Deze foto hoorde bij een verwijderde lener: het kader is bedekt.",
+				"not_a_member": "Alleen de leners van de klas of de lijst kunnen worden gekozen.",
+				"patron_taken": "Al gekozen voor foto {{position}}: maak die eerst vrij voordat u hem hier kiest.",
+				"confirm_replace": "{{count:plural; one:{{count}} foto vervangt een bestaande; other:{{count}} foto's vervangen bestaande;}}: bevestig om door te gaan.",
+				"nothing_to_save": "Kies minstens één lener voordat u opslaat."
+			},
+			"erased": "Lener verwijderd: het kader is in de afbeelding bedekt."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "CSV-bestand",
+			"submit": "Uploaden",
+			"hints": {
+				"students": "Een CSV-bestand met één regel per leerling, gescheiden door ; of , (ook een export uit een spreadsheet werkt). Gebruik de koppen van het model, hieronder te downloaden met de nodige kolommen.",
+				"teachers": "Een CSV-bestand met één regel per leerkracht, gescheiden door ; of ,. Gebruik de koppen van het model, hieronder te downloaden met de nodige kolommen."
+			}
+		},
+		"mapping": {
+			"format": "Herkend formaat",
+			"uncertain": "Het formaat is niet zeker: controleer de kolommen voordat u verdergaat.",
+			"remembered": "Kolommen onthouden van de laatste import van dit bestand.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "de kop van het bestand",
+				"unknown": "onbekend"
+			},
+			"mode": "Modus",
+			"modes": {
+				"upsert": "Toevoegen en bijwerken",
+				"upsertHint": "Overeenkomende regels werken de bestaande lener bij, de andere maken nieuwe leners aan.",
+				"sync": {
+					"students": "Leerlingen synchroniseren",
+					"teachers": "Leerkrachten synchroniseren"
+				},
+				"syncHint": {
+					"students": "Het bestand is de volledige lijst van leerlingen: wie ontbreekt wordt opgesomd (en na bevestiging verwijderd). Leerkrachten worden niet aangeraakt.",
+					"teachers": "Het bestand is de volledige lijst van leerkrachten: wie ontbreekt wordt opgesomd (en na bevestiging verwijderd). Leerlingen worden niet aangeraakt."
+				}
+			},
+			"duplicates": "Leners die al aanwezig zijn",
+			"policies": {
+				"update": "Bijwerken",
+				"skip": "Overslaan",
+				"create": "Toch aanmaken"
+			},
+			"validate": "Controleer het bestand",
+			"matchByName": {
+				"students": "Zonder de kolom external_id worden leerlingen die al in het archief staan herkend aan naam en klas.",
+				"teachers": "Zonder de kolom external_id worden leerkrachten die al in het archief staan herkend aan naam."
+			}
+		},
+		"preview": {
+			"ready": "Geen fouten: het bestand kan worden geïmporteerd.",
+			"blocked": "Verbeter de fouten in het bestand (of bij de leners) en controleer opnieuw: een bestand met fouten wordt niet geïmporteerd.",
+			"columns": {
+				"name": "Naam",
+				"class": "Klas"
+			},
+			"changed": "Wijzigingen: {{fields}}",
+			"homonym": {
+				"pick": "Kies de lener",
+				"create": "Maak een nieuwe lener aan",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Naamgenoten om op te lossen"
+			},
+			"missing": {
+				"students": {
+					"title": "Leerlingen in het archief maar niet in het bestand ({{count}})",
+					"remove": "Deze leerlingen uit het archief verwijderen (meteen anonimiseren)",
+					"noPermission": "Zonder het recht om leners te verwijderen blijven de ontbrekende leerlingen in het archief.",
+					"notRemoved": "{{count}} {{count:plural; one:ontbrekende leerling niet verwijderd, omdat die lopende uitleningen heeft; other:ontbrekende leerlingen niet verwijderd, omdat ze lopende uitleningen hebben;}}."
+				},
+				"teachers": {
+					"title": "Leerkrachten in het archief maar niet in het bestand ({{count}})",
+					"remove": "Deze leerkrachten uit het archief verwijderen (meteen anonimiseren)",
+					"noPermission": "Zonder het recht om leners te verwijderen blijven de ontbrekende leerkrachten in het archief.",
+					"notRemoved": "{{count}} {{count:plural; one:ontbrekende leerkracht niet verwijderd, omdat die lopende uitleningen heeft; other:ontbrekende leerkrachten niet verwijderd, omdat ze lopende uitleningen hebben;}}."
+				},
+				"hint": "Met de synchronisatie kan wie niet in het bestand staat worden verwijderd: persoonsgegevens worden meteen en voorgoed gewist; alleen klas en statistiek blijven."
+			},
+			"commit": "Importeren",
+			"back": "Terug naar de kolommen",
+			"generatedCards": "{{count}} {{count:plural; one:nieuwe lenerspas wordt; other:nieuwe lenerspassen worden;}} gegenereerd: het bestand bevat geen nummer."
+		},
+		"reasons": {
+			"tooLong": "Te lange tekst in de kolom {{column}}: maximaal {{max}} {{max:plural; one:teken; other:tekens;}}",
+			"nameRequired": "Voornaam of achternaam ontbreekt",
+			"emailInvalid": "Ongeldig e-mailadres",
+			"cardNumberInvalid": "Ongeldig lenerspasnummer",
+			"cardNumberTaken": "Lenerspasnummer al aan een andere lener toegekend",
+			"cardNumberIsCopy": "Lenerspasnummer gelijk aan of lijkend op de barcode van een exemplaar",
+			"externalIdTaken": "Leerlingnummer al aan een andere lener toegekend",
+			"duplicateInFile": "Dezelfde persoon staat al op regel {{line}}",
+			"homonym": "{{count}} {{count:plural; one:naamgenoot; other:naamgenoten;}} in het archief: kies welke bijgewerkt moet worden",
+			"matchedTwice": "Een andere regel werkt al dezelfde lener bij",
+			"skipped": "Al aanwezig: overgeslagen",
+			"levelRequired": "Leerjaar ontbreekt",
+			"levelUnknown": "Leerjaar “{{value}}” hoort niet bij de school",
+			"groupRequired": "Klasletter ontbreekt",
+			"groupUnknown": "Klasletter “{{value}}” niet gevonden voor dit leerjaar. Geldige klassen: {{classes}} (klassen maakt u aan via Beheer → Configuratie → Klassen)",
+			"levelNotInGroup": "Klasletter “{{value}}” heeft dit leerjaar niet. Geldige klassen: {{classes}}",
+			"classUnknown": "Klas “{{value}}” niet gevonden. Geldige klassen: {{classes}}",
+			"teacherGroupUnknown": "Groep leerkrachten “{{value}}” niet gevonden. Geldige groepen: {{classes}}"
+		},
+		"done": {
+			"title": "Import voltooid",
+			"summary": "Nieuw: {{created}}, bijgewerkt: {{updated}}, ongewijzigd: {{unchanged}}, verwijderd: {{removed}}.",
+			"printNew": "De tessere van de nieuwe leners afdrukken",
+			"census": "Fotoregistratie",
+			"again": "Een ander bestand importeren",
+			"batch": "Importatie nr. {{id}}: het oorspronkelijke bestand wordt op de server bewaard."
+		},
+		"fields": {
+			"firstName": "Voornaam",
+			"lastName": "Achternaam",
+			"class": "Klas (leerjaar en klasletter)",
+			"level": "Leerjaar",
+			"section": "Klasletter",
+			"group": "Groep leerkrachten",
+			"externalId": "Extern nummer",
+			"cardNumber": "Lenerspas",
+			"email": "E-mail"
+		},
+		"titles": {
+			"students": "Leerlingen importeren",
+			"teachers": "Leerkrachten importeren"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "De voornaam."
+			},
+			"lastName": {
+				"hint": "De achternaam."
+			},
+			"class": {
+				"hint": "De klas in één kolom, zoals 3A of 3 A: die moet bestaan in Beheer → Configuratie → Klassen."
+			},
+			"level": {
+				"hint": "Het leerjaar (1, 2, 3…), met de klasletter in de kolom section."
+			},
+			"section": {
+				"hint": "De klasletter (A, B…): samen met het leerjaar noemt die de klas."
+			},
+			"cardNumber": {
+				"hint": "Het lenerspasnummer, als de leerling er al een heeft.",
+				"missing": "nieuwe lenerspassen worden gegenereerd"
+			},
+			"externalId": {
+				"hint": "De code van het elektronische klassenregister.",
+				"missing": "leners die al aanwezig zijn, worden herkend aan naam en klas"
+			},
+			"email": {
+				"hint": "Facultatief."
+			},
+			"group": {
+				"hint": "De groep leerkrachten; als die ontbreekt, de standaardgroep."
+			}
+		},
+		"classForm": {
+			"label": "De klas",
+			"class": "In één kolom (class: 3A)",
+			"levelSection": "In twee kolommen (level: 3, section: A)"
+		}
+	}
+}

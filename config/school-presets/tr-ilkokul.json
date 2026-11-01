@@ -1,0 +1,59 @@
+{
+	"id": "tr-ilkokul",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Classes (şubeler) written 5-A or 5/A [VERIFY]; lessons start in the second week of September [VERIFY].",
+	"name": {
+		"it": "Scuola primaria, İlkokul (Turchia)",
+		"en": "Primary school, İlkokul (Turkey)",
+		"tr": "İlkokul (Türkiye)"
+	},
+	"country": "TR",
+	"languages": ["tr"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "ilkokul",
+				"name": "İlkokul"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1",
+				"name": "1. sınıf",
+				"stage": "ilkokul"
+			},
+			{
+				"code": "2",
+				"label": "2",
+				"name": "2. sınıf",
+				"stage": "ilkokul"
+			},
+			{
+				"code": "3",
+				"label": "3",
+				"name": "3. sınıf",
+				"stage": "ilkokul"
+			},
+			{
+				"code": "4",
+				"label": "4",
+				"name": "4. sınıf",
+				"stage": "ilkokul"
+			}
+		],
+		"classLabel": "{level}-{group}",
+		"groupWord": "Şube",
+		"cardClass": "{class} sınıfı",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"ilkokul": ["A", "B", "C", "D"]
+	},
+	"teacherGroup": "Öğretmenler",
+	"readingLevels": []
+}

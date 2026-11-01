@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "Administration",
+		"sections": {
+			"config": {
+				"title": "Configuration",
+				"description": "La classification et les paramètres de la bibliothèque."
+			},
+			"audit": {
+				"title": "Journal des opérations",
+				"description": "Qui a fait quoi : connexions, modifications, importations."
+			},
+			"users": {
+				"title": "Comptes du personnel",
+				"description": "Comptes du personnel, rôles et permissions."
+			},
+			"backups": {
+				"title": "Sauvegardes",
+				"description": "Copies de sécurité de la base de données et des fichiers."
+			},
+			"rollover": {
+				"title": "Passage de classe",
+				"description": "En fin d'année : promotions, redoublements, sorties de la dernière classe."
+			},
+			"exports": {
+				"title": "Exportations",
+				"description": "Lecteurs, catalogue, prêts et toutes les données en fichiers CSV ou JSON."
+			},
+			"imports": {
+				"title": "Importations",
+				"description": "Catalogue, lecteurs, prêts en cours et photos : à partir de fichiers CSV ou de l'extraction de Koha."
+			}
+		}
+	},
+	"audit": {
+		"title": "Journal des opérations",
+		"filters": {
+			"from": "Du",
+			"to": "Au",
+			"user": "Compte",
+			"action": "Opération",
+			"all": "Tous"
+		},
+		"columns": {
+			"when": "Date",
+			"user": "Compte",
+			"action": "Opération",
+			"entity": "Objet",
+			"entityId": "ID",
+			"details": "Détails"
+		},
+		"count": "{{shown}} sur {{total}} {{total:plural; one:opération; other:opérations;}}",
+		"empty": "Aucune opération enregistrée avec ces filtres.",
+		"system": "système"
+	},
+	"users": {
+		"title": "Comptes du personnel",
+		"fields": {
+			"roles": "Rôles",
+			"permissions": "Permissions",
+			"lastLogin": "Dernière connexion",
+			"never": "jamais"
+		},
+		"status": {
+			"active": "Actif",
+			"inactive": "Désactivé",
+			"plainPassword": "Mot de passe en clair dans le fichier",
+			"notInConfig": "Retiré de la configuration"
+		},
+		"hash": {
+			"title": "Générer un hachage de mot de passe",
+			"description": "Saisir le mot de passe à attribuer : on obtient le hachage argon2id à coller dans passwordHash. Le mot de passe n'est pas enregistré.",
+			"password": "Mot de passe (au moins {{min}} caractères)",
+			"generate": "Générer le hachage",
+			"result": "Hachage à coller",
+			"copy": "Copier",
+			"copied": "Hachage copié",
+			"tooShort": "Le mot de passe doit comporter au moins {{min}} caractères.",
+			"disclosure": "Pour qui modifie les fichiers à la main : générer le hachage d'un mot de passe"
+		},
+		"reload": {
+			"button": "Recharger la configuration",
+			"success": "Configuration rechargée",
+			"successWithWarnings": "Configuration rechargée avec {{count}} {{count:plural; one:avertissement; other:avertissements;}}",
+			"failed": "Configuration non valide : la précédente reste active",
+			"exampleSource": "Attention : config.json n'existe pas, c'est la configuration d'exemple qui est utilisée."
+		},
+		"new": "Nouveau compte",
+		"newPassword": "Nouveau mot de passe",
+		"permissionNames": {
+			"all": "Tout",
+			"loans": "Prêts",
+			"patrons": "Lecteurs",
+			"patrons_import": "Importer les lecteurs",
+			"catalog": "Catalogue",
+			"catalog_import": "Importer le catalogue",
+			"reports": "Rapports",
+			"anonymize": "Anonymiser",
+			"admin": "Administration"
+		},
+		"roles": {
+			"title": "Rôles et permissions",
+			"hint": "Un rôle est un ensemble de permissions ; chaque compte a un ou plusieurs rôles. « Tout » donne toutes les permissions, y compris celles des versions suivantes. Renommer un rôle met à jour les comptes qui l'utilisent.",
+			"name": "Rôle",
+			"unused": "aucun compte",
+			"badName": "Lettres, chiffres, tirets et tirets bas (32 au maximum).",
+			"add": "Ajouter un rôle",
+			"saved": "Rôles enregistrés"
+		},
+		"auth": {
+			"title": "Connexion",
+			"config": "On se connecte avec les comptes de cette page, en général un par rôle et partagé (par exemple « prêts » pour la banque de prêt).",
+			"database": "On se connecte avec des comptes personnels.",
+			"later": "Les comptes personnels, un par personne, sont prévus pour une version ultérieure."
+		},
+		"dialog": {
+			"title": {
+				"new": "Nouveau compte",
+				"edit": "Modifier {{name}}",
+				"password": "Nouveau mot de passe pour {{name}}"
+			},
+			"username": "Nom d'utilisateur",
+			"usernameHint": "Minuscules, chiffres, point, tiret et tiret bas (de 2 à 32).",
+			"badUsername": "Uniquement des minuscules, des chiffres, un point, un tiret et un tiret bas (de 2 à 32).",
+			"displayName": "Nom affiché",
+			"active": "Compte actif (peut se connecter)",
+			"password": "Mot de passe (au moins {{min}} caractères)",
+			"repeat": "Répéter le mot de passe",
+			"mismatch": "Les deux mots de passe sont différents.",
+			"passwordHint": "Le mot de passe n'est pas enregistré : seul son hachage est écrit dans la configuration. Qui est connecté avec ce compte devra se reconnecter.",
+			"saved": {
+				"new": "Compte créé",
+				"edit": "Compte enregistré",
+				"password": "Mot de passe modifié"
+			},
+			"removed": "Compte supprimé",
+			"removeTitle": "Supprimer {{name}} ?",
+			"removeHint": "Le compte sort de la configuration ; les opérations qu'il a effectuées restent dans le journal sous son nom. Il est possible de l'annuler depuis l'historique de la configuration."
+		},
+		"errors": {
+			"badUsername": "Nom d'utilisateur non valide : {{details}}.",
+			"usernameTaken": "Le nom d'utilisateur {{details}} est déjà utilisé.",
+			"notFound": "Compte introuvable : {{details}}.",
+			"noRoles": "Choisir au moins un rôle.",
+			"unknownRole": "Rôle inconnu : {{details}}.",
+			"passwordTooShort": "Le mot de passe est trop court.",
+			"passwordRequired": "Un nouveau compte a besoin d'un mot de passe.",
+			"lastAdmin": "Il doit rester au moins un compte actif avec la permission d'administration.",
+			"stillActive": "Désactiver le compte avant de le supprimer.",
+			"badRole": "Nom de rôle non valide : {{details}}.",
+			"roleTaken": "Deux rôles s'appellent {{details}}.",
+			"roleInUse": "Le rôle est utilisé par des comptes : {{details}}.",
+			"invalid": "La configuration ne serait pas valide : {{details}}."
+		}
+	},
+	"backups": {
+		"title": "Sauvegardes",
+		"runNow": "Sauvegarder maintenant",
+		"created": "Sauvegarde créée : {{name}}",
+		"createdDeleted": "Sauvegarde créée : {{name}} ({{deleted}} {{deleted:plural; one:ancienne sauvegarde supprimée; other:anciennes sauvegardes supprimées;}})",
+		"empty": "Aucune sauvegarde. La première sera créée à l'heure programmée, ou avec « Sauvegarder maintenant ».",
+		"download": "Télécharger",
+		"columns": {
+			"when": "Créée le",
+			"size": "Taille"
+		},
+		"catchUp": {
+			"badge": "Créée au démarrage",
+			"hint": "La sauvegarde programmée a été manquée (ordinateur éteint) : BiblioViva l'a faite au démarrage."
+		},
+		"offsite": {
+			"title": "Dernière copie externe",
+			"disabled": "Copie externe non configurée. Elle s'active avec le service « offsite » (rclone) décrit dans le guide d'installation.",
+			"never": "Le service est activé mais n'a encore écrit aucun résultat.",
+			"ok": "Dernière copie réussie : {{when}}",
+			"error": "Dernière copie échouée : {{when}}",
+			"stale": "La copie externe date de plus de deux jours : vérifier le service offsite.",
+			"remote": "Destination : {{remote}}"
+		},
+		"restore": {
+			"title": "Restauration",
+			"button": "Restaurer…",
+			"hint": "Choisir « Restaurer… » sur une sauvegarde de la liste, ou charger une archive BiblioViva (une sauvegarde, « Tout exporter » ou « Exporter la configuration », jusqu'à {{maxMb}} Mo ; une archive plus grande est copiée dans le dossier des sauvegardes du serveur ou restaurée avec bun run backup:restore). Tout est d'abord vérifié, puis seules les parties choisies sont restaurées : les autres restent telles quelles.",
+			"upload": "Charger une archive",
+			"from": "De {{name}} du {{date}}",
+			"count": "{{part}} : maintenant {{live}}, dans la sauvegarde {{archive}}",
+			"images": "Images à restaurer : {{photos}} {{photos:plural; one:photo; other:photos;}}, {{covers}} {{covers:plural; one:couverture; other:couvertures;}}.",
+			"gapsTitle": "Certaines données resteraient sans ce à quoi elles se rapportent :",
+			"gap": "{{rows:plural; one:{{rows}} ligne de « {{part}} » se réfère; other:{{rows}} lignes de « {{part}} » se réfèrent;}} à « {{needs}} » qui ne seraient pas là : ajouter « {{add}} » au choix.",
+			"schema": "La sauvegarde provient d'une autre version de BiblioViva (tables {{tables}}) : elle ne peut pas être restaurée ici.",
+			"apply": "Restaurer",
+			"confirmTitle": "Restaurer les parties choisies ?",
+			"confirmHint": "Les données et la configuration choisies sont remplacées par celles de la sauvegarde. La configuration peut être rétablie depuis l'historique ; pour les données, il est préférable de faire d'abord une sauvegarde, s'il n'y en a pas de récente.",
+			"done": "Restauration terminée",
+			"notArchive": "Le fichier n'est pas une archive BiblioViva."
+		},
+		"contents": {
+			"title": "Ce que contient la sauvegarde",
+			"database": "Base de données : une copie complète à chaque exécution (liste ci-dessous).",
+			"images": "Photos et couvertures : copiées chaque nuit dans le dossier « uploads » de la sauvegarde ({{photos}} {{photos:plural; one:photo; other:photos;}}, {{covers}} {{covers:plural; one:couverture; other:couvertures;}} pour l'instant).",
+			"imagesPending": "Photos et couvertures : la première copie aura lieu à la prochaine exécution ({{photos}} {{photos:plural; one:photo; other:photos;}}, {{covers}} {{covers:plural; one:couverture; other:couvertures;}} à copier).",
+			"config": "La configuration (modèles, images, paramètres) n'est pas dans la sauvegarde nocturne : pour l'obtenir, utiliser « Tout exporter »."
+		},
+		"export": {
+			"button": "Tout exporter",
+			"hint": "Un seul fichier ZIP avec la base de données, les photos, les couvertures et toute la configuration (modèles et images compris), prêt pour la restauration avec « bun run backup:restore »."
+		},
+		"createdMirror": "Sauvegarde créée : {{name}} ; {{copied}} {{copied:plural; one:image copiée; other:images copiées;}}",
+		"parts": {
+			"title": "Sauvegarde ou exportation de certaines parties",
+			"hint": "Choisir ce qu'il faut inclure : les données de la bibliothèque, les paramètres de chaque section, les modèles, les images… « Créer une sauvegarde » l'enregistre dans la liste ci-dessous, « Télécharger » le télécharge sur l'ordinateur.",
+			"create": "Créer une sauvegarde",
+			"download": "Télécharger"
+		}
+	},
+	"demo": {
+		"clear": "Vider les données de démonstration",
+		"confirmTitle": "Vider les données de démonstration ?",
+		"confirmDescription": "Les lecteurs, les livres, les prêts et les photos de démonstration seront supprimés. Les classes et le groupe des enseignants restent. Tous les opérateurs seront déconnectés.",
+		"cleared": "Données de démonstration supprimées. Il est nécessaire de se reconnecter.",
+		"clearedPassword": "Les comptes ont encore le mot de passe de démonstration « {{password}} » : le changer dès maintenant dans Administration → Comptes du personnel."
+	},
+	"appearance": {
+		"title": "Apparence et langue",
+		"current": "Palette actuelle : {{name}}",
+		"areas": {
+			"title": "Style des zones",
+			"hint": "La barre du haut prend la couleur de la zone de travail (Prêts, Catalogue, Lecteurs…), dans les tons de la palette choisie. L'icône et le nom de la zone restent toujours visibles.",
+			"styles": {
+				"tinted": "Barre teintée (recommandé)",
+				"filled": "Barre pleine",
+				"accents": "Accents seulement",
+				"none": "Aucune couleur"
+			},
+			"saved": "Style des zones enregistré"
+		},
+		"colours": {
+			"title": "Palette de couleurs"
+		},
+		"save": "Enregistrer les couleurs",
+		"saved": "Couleurs enregistrées",
+		"unchanged": "Aucune modification à enregistrer.",
+		"language": {
+			"title": "Langue de l'application",
+			"hint": "Une seule langue par installation : elle vaut pour tout le personnel.",
+			"save": "Changer de langue",
+			"saved": "Langue changée : la page est rechargée."
+		},
+		"logo": {
+			"title": "Logo de la bibliothèque",
+			"hint": "Affiché en haut à gauche de chaque page, à côté du nom de la bibliothèque. PNG, JPEG ou WebP ; le fond transparent convient le mieux.",
+			"upload": "Charger le logo",
+			"replace": "Changer le logo",
+			"remove": "Retirer le logo",
+			"saved": "Logo enregistré.",
+			"removed": "Logo retiré.",
+			"none": "Aucun logo : une icône générique est affichée.",
+			"preview": "Logo actuel",
+			"errors": {
+				"empty": "Le fichier est vide.",
+				"too_large": "Le fichier est trop volumineux (maximum {{maxMb}} Mo).",
+				"not_an_image": "Le fichier n'est pas une image.",
+				"unsupported_format": "Format non accepté : utiliser PNG, JPEG ou WebP."
+			}
+		},
+		"name": {
+			"title": "Nom de la bibliothèque",
+			"hint": "Affiché en haut à gauche, sur le tableau de bord, sur les impressions et dans l'application installée sur le téléphone.",
+			"label": "Nom",
+			"save": "Enregistrer le nom",
+			"saved": "Nom de la bibliothèque enregistré",
+			"required": "Saisir le nom de la bibliothèque."
+		},
+		"dashboard": {
+			"title": "Tableau de bord",
+			"hint": "Les sections de la page d'accueil, pour toute la bibliothèque. Les actions rapides restent toujours en tête ; dans chaque section, chaque compte ne voit que ce qu'il peut faire.",
+			"save": "Enregistrer le tableau de bord",
+			"saved": "Tableau de bord enregistré",
+			"sections": {
+				"quickActions": "Actions rapides",
+				"tiles": "La bibliothèque aujourd'hui (tuiles avec les chiffres)",
+				"inventory": "Récolement en cours",
+				"installHint": "Invitation à ajouter l'application à l'écran d'accueil (téléphones)",
+				"dueThisWeek": "Échéances de cette semaine",
+				"upcomingDates": "Prochaines dates du calendrier",
+				"todayActivity": "Prêts du jour"
+			}
+		}
+	},
+	"templates": {
+		"title": "Modèles d'impression",
+		"reload": "Recharger les modèles",
+		"reloaded": "Modèles relus depuis le disque",
+		"kinds": {
+			"cards": "Cartes",
+			"labels": "Étiquettes",
+			"slips": "Relances"
+		},
+		"list": {
+			"source": {
+				"builtin": "Fourni avec l'application",
+				"config": "Dans la configuration"
+			},
+			"default": "Par défaut",
+			"status": {
+				"ok": "Valide",
+				"error": "Erreur"
+			},
+			"folder": "Dossier",
+			"forTypes": "Pour : {{types}}",
+			"emptyCards": "Aucun modèle de carte : vérifier le dossier cards/templates de la configuration.",
+			"emptyLabels": "Aucun modèle d'étiquettes pour l'instant : ils arriveront avec l'impression des étiquettes du catalogue.",
+			"emptySlips": "Aucun modèle de relance pour l'instant : il arrivera avec les prêts."
+		},
+		"preview": {
+			"title": "Aperçu",
+			"front": "Recto",
+			"back": "Verso",
+			"patron": "Lecteur à afficher",
+			"sample": "Lecteur d'exemple",
+			"real": "Lecteur réel",
+			"search": "Chercher un lecteur réel",
+			"searchPlaceholder": "Nom de famille ou prénom",
+			"noResults": "Aucun lecteur trouvé.",
+			"zoom": "Zoom",
+			"sheet": "Feuille entière",
+			"sheetHint": "Une page A4 avec le lecteur d'exemple, telle qu'elle sera imprimée.",
+			"test": "Imprimer la page d'essai",
+			"broken": "Le modèle ne peut pas être utilisé tant qu'il n'est pas corrigé :",
+			"size": "{{width}} × {{height}} mm au zoom {{zoom}}"
+		},
+		"test": {
+			"title": "Page d'essai des cartes",
+			"ruler": "Règle de 10 cm : après impression, elle doit mesurer 100 mm (imprimer à 100 %, sans « adapter à la page »)."
+		},
+		"calibration": {
+			"title": "Page de calibrage des étiquettes",
+			"stock": "Support adhésif",
+			"print": "Imprimer la page de calibrage",
+			"hint": "Imprimer sur papier ordinaire et superposer une feuille d'étiquettes pour vérifier les marges."
+		},
+		"howTo": {
+			"title": "Comment créer un modèle",
+			"steps": {
+				"step1": "Dans Configuration → Modèles d'impression, choisir « Dupliquer » sur un modèle (par exemple {{path}}) et lui donner un nouveau nom.",
+				"step2": "Avec « Modifier », le dessiner ou en changer le code ; les images se chargent sur la même page.",
+				"step3": "Revenir ici et vérifier l'aperçu : un champ inconnu ou un fichier manquant est signalé.",
+				"step4": "Pour l'utiliser réellement, le choisir dans les paramètres Cartes ou Étiquettes."
+			}
+		},
+		"labels": {
+			"stocks": "Feuilles prévues : {{stocks}}",
+			"preview": "Aperçu de {{name}}",
+			"geometry": "Unité de {{width}} × {{height}} mm · variante {{variant}}",
+			"sheet": "Feuille d'exemple"
+		}
+	},
+	"loansImport": {
+		"title": "Importer les prêts en cours",
+		"upload": {
+			"hint": "À utiliser une seule fois, lors du passage depuis Koha : une ligne par prêt en cours, avec la carte du lecteur et le code-barres de l'exemplaire, ainsi que la date du prêt et la date de retour lorsqu'elles existent. Importer d'abord les lecteurs et le catalogue ; le modèle, avec les colonnes nécessaires, se télécharge ci-dessous.",
+			"submit": "Charger"
+		},
+		"mapping": {
+			"uncertain": "Vérifier les colonnes avant de continuer.",
+			"validate": "Vérifier le fichier",
+			"without": {
+				"issuedOn": "Sans la colonne issued_on, les prêts sont datés d'aujourd'hui.",
+				"dueOn": "Sans la colonne due_on, la date de retour se calcule comme à la banque de prêt, avec les règles de prêt et le calendrier."
+			}
+		},
+		"fields": {
+			"cardNumber": "Numéro de carte",
+			"barcode": "Code-barres",
+			"issuedOn": "Date du prêt",
+			"dueOn": "Date de retour"
+		},
+		"preview": {
+			"ready": "Aucune erreur : l'importation des prêts est possible.",
+			"blocked": "Corriger les erreurs puis vérifier de nouveau : un fichier comportant des erreurs ne s'importe pas.",
+			"overdue": "{{count}} {{count:plural; one:prêt est déjà en retard; other:prêts sont déjà en retard;}} : {{count:plural; one:il sera importé et apparaîtra; other:ils seront importés et apparaîtront;}} parmi les retards.",
+			"columns": {
+				"patron": "Lecteur",
+				"barcode": "Exemplaire",
+				"issued": "Prêt",
+				"due": "Retour"
+			},
+			"commit": "Importer les prêts",
+			"back": "Retour aux colonnes"
+		},
+		"reasons": {
+			"cardMissing": "Le numéro de carte manque",
+			"cardUnknown": "Aucun lecteur avec la carte {{value}}",
+			"barcodeMissing": "Le code-barres manque",
+			"barcodeUnknown": "Aucun exemplaire avec le code-barres {{value}}",
+			"alreadyOnLoan": "L'exemplaire {{value}} est déjà en prêt",
+			"itemWithdrawn": "L'exemplaire {{value}} est retiré",
+			"duplicateInFile": "Même exemplaire déjà à la ligne {{line}}",
+			"issueDateInvalid": "Date du prêt non valide : « {{value}} »",
+			"issueDateFuture": "Date du prêt dans le futur : {{value}}",
+			"dueDateInvalid": "Date de retour non valide : « {{value}} »",
+			"dueBeforeIssue": "La date de retour est antérieure à la date du prêt",
+			"overdue": "Déjà en retard depuis le {{date}}",
+			"itemUnclassified": "L'exemplaire {{value}} appartient à un livre à classer : le prêt est importé, mais la banque de prêt ne le prête pas tant qu'il n'est pas classé"
+		},
+		"done": {
+			"title": "Prêts importés",
+			"summary": "{{created}} {{created:plural; one:prêt importé; other:prêts importés;}}, dont {{overdue}} déjà en retard.",
+			"batch": "Importation n° {{id}} : le fichier d'origine est conservé.",
+			"again": "Importer un autre fichier"
+		},
+		"columns": {
+			"cardNumber": "Le numéro de carte du lecteur, déjà importé.",
+			"barcode": "Le code-barres de l'exemplaire, déjà importé.",
+			"issuedOn": "La date du prêt ; si elle manque, aujourd'hui.",
+			"dueOn": "La date de retour ; si elle manque, elle se calcule avec les règles de prêt."
+		}
+	},
+	"photosImport": {
+		"title": "Importer les photos des lecteurs",
+		"hint": "Un fichier par lecteur, nommé d'après le numéro de carte (par exemple 0000001240.jpg) : c'est ce que produit l'extraction décrite dans le guide de l'administrateur. Chaque photo est redimensionnée et débarrassée des données cachées ; les fichiers qui ne correspondent à aucune carte sont listés.",
+		"replace": "Remplacer les photos déjà présentes",
+		"zip": {
+			"title": "Depuis une archive ZIP",
+			"file": "Archive ZIP avec les photos",
+			"submit": "Importer les photos"
+		},
+		"folder": {
+			"title": "Depuis le dossier du serveur",
+			"hint": "Copier les fichiers dans {{path}} : il y a {{count}} {{count:plural; one:fichier; other:fichiers;}} pour l'instant. Adapté aux nombreuses photos, qui seraient trop lourdes à charger dans une archive.",
+			"submit": "Importer depuis le dossier"
+		},
+		"summary": {
+			"title": "Résultat",
+			"text": "{{imported}} {{imported:plural; one:photo importée; other:photos importées;}}, {{replaced}} {{replaced:plural; one:remplacée; other:remplacées;}}, {{kept:plural; one:{{kept}} laissée telle quelle; other:{{kept}} laissées telles quelles;}} (photo déjà présente), {{unmatched}} {{unmatched:plural; one:fichier sans lecteur; other:fichiers sans lecteur;}}, {{unreadable}} {{unreadable:plural; one:fichier illisible; other:fichiers illisibles;}}.",
+			"unreadable": "Images non lisibles : {{files}}",
+			"unmatched": "Télécharger la liste des fichiers sans lecteur"
+		},
+		"errors": {
+			"notZip": "Le fichier n'est pas une archive ZIP valide.",
+			"empty": "L'archive ne contient aucun fichier."
+		},
+		"done": "Photos importées"
+	},
+	"rollover": {
+		"title": "Passage de classe",
+		"subtitle": "En fin d'année, tous les élèves passent à l'année suivante, et celui qui termine la dernière année quitte l'établissement.",
+		"steps": {
+			"backup": "Sauvegarde",
+			"classes": "Classes",
+			"leavers": "Sorties",
+			"confirm": "Confirmation",
+			"done": "Terminé"
+		},
+		"backup": {
+			"text": "Avant tout, une copie de sécurité de la base de données : si quelque chose ne va pas, revenir en arrière depuis Administration → Sauvegardes.",
+			"create": "Créer la sauvegarde",
+			"created": "Sauvegarde créée : {{name}}"
+		},
+		"classes": {
+			"text": "Chaque élève passe à l'année suivante avec sa classe. Indiquer qui redouble et qui change de classe.",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; one:élève; other:élèves;}}",
+			"exceptions": "{{count}} {{count:plural; one:exception; other:exceptions;}}",
+			"loans": "{{count}} avec des livres en prêt",
+			"repeat": "Redouble",
+			"target": "Classe",
+			"noGroup": "Sans classe",
+			"choose": "Choisir la classe…",
+			"fates": {
+				"advances": "Passe",
+				"stays": "Reste",
+				"archived": "Se ferme"
+			},
+			"unplaced": "{{count}} {{count:plural; one:élève attend; other:élèves attendent;}} le choix de la classe.",
+			"none": "Aucun élève ne passe à l'année suivante.",
+			"nextYear": "L'année suivante",
+			"leaves": "Quitte l'établissement"
+		},
+		"leavers": {
+			"text": "Les élèves de la dernière année quittent l'établissement : leurs données sont effacées tout de suite et pour toujours (restent seulement les chiffres des statistiques). Décocher ceux qui restent, par exemple un élève qui redouble la dernière année.",
+			"leaves": "Sort",
+			"openLoans": "{{count}} {{count:plural; one:livre; other:livres;}} en prêt",
+			"blocked": "{{count}} {{count:plural; one:élève qui sort a encore; other:élèves qui sortent ont encore;}} des livres : enregistrer le retour ou les marquer perdus, ou décocher.",
+			"toCheckin": "Aller aux retours",
+			"none": "Aucun élève de la dernière année."
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; one:élève passe; other:élèves passent;}} à l'année suivante",
+			"repeat": "{{count}} {{count:plural; one:redouble; other:redoublent;}} l'année",
+			"groupChanges": "{{count}} {{count:plural; one:change; other:changent;}} de classe",
+			"closing": "{{count}} {{count:plural; one:classe se ferme et est archivée; other:classes se ferment et sont archivées;}}",
+			"remove": "{{count}} {{count:plural; one:quitte; other:quittent;}} l'établissement et leurs données sont effacées",
+			"recent": "Le dernier passage a été effectué le {{date}}, il y a moins de six mois. Je confirme vouloir le refaire.",
+			"run": "Effectuer le passage de classe"
+		},
+		"done": {
+			"title": "Passage terminé",
+			"advanced": "{{count}} {{count:plural; one:classe est passée; other:classes sont passées;}} à l'année suivante",
+			"archived": "{{count}} {{count:plural; one:classe archivée; other:classes archivées;}}",
+			"text": "Étapes suivantes : créer les nouvelles classes de première, si nécessaire, et importer les nouveaux élèves avec la synchronisation.",
+			"import": "Importer les nouveaux élèves"
+		},
+		"errors": {
+			"blocked": "Certains élèves qui sortent ont encore des livres en prêt.",
+			"recent": "Confirmation nécessaire : le dernier passage est récent.",
+			"no_backup": "La sauvegarde est introuvable ou trop ancienne : la refaire à partir de la première étape.",
+			"invalid_group": "Une classe choisie n'existe pas ou n'accueille pas l'année de l'élève.",
+			"unplaced": "Certains élèves n'ont pas encore de classe : la choisir à l'étape Classes.",
+			"invalid_level": "Une des années choisies ne fait pas partie de celles possibles : recharger la page."
+		},
+		"next": "Suivant",
+		"back": "Retour"
+	},
+	"classes": {
+		"title": "Classes",
+		"subtitle": "Les classes de l'établissement et les groupes des enseignants.",
+		"hint": "Les années et les niveaux de l'établissement se modifient dans les paramètres :",
+		"structureLink": "Établissement",
+		"new": "Nouvelles classes",
+		"newTeachers": "Nouveau groupe d'enseignants",
+		"teachers": "Enseignants",
+		"mixed": "Pluriclasse",
+		"empty": "Aucune classe",
+		"emptyHint": "Aucune classe. Les classes se créent avec Nouvelles classes, par exemple les années de 1 à 5 et les noms A-D.",
+		"archivedTitle": "{{count:plural; one:Classe archivée; other:Classes archivées;}} ({{count}})",
+		"archive": "Archiver",
+		"archiveNotEmpty": "Elle a encore des lecteurs : impossible d'archiver",
+		"restore": "Restaurer",
+		"archived": "Classe {{name}} archivée",
+		"restored": "Classe {{name}} restaurée",
+		"columns": {
+			"class": "Classe",
+			"levels": "Années",
+			"patrons": "Lecteurs"
+		},
+		"dialog": {
+			"title": {
+				"students": "Nouvelles classes",
+				"teachers": "Nouveau groupe d'enseignants",
+				"edit": "Modifier {{name}}"
+			},
+			"levels": "Années",
+			"names": "Noms des classes",
+			"namesHint": "Séparés par des virgules ; A-D vaut A, B, C, D. Un nom peut contenir des espaces.",
+			"name": "Nom",
+			"mixed": "Une pluriclasse avec toutes les années choisies",
+			"stage": "Cycle",
+			"anyStage": "Tous",
+			"notes": "Notes",
+			"preview": "{{count}} {{count:plural; one:classe; other:classes;}} à créer :",
+			"previewEmpty": "Choisir au moins une année et saisir les noms.",
+			"saved": {
+				"students": "{{count}} {{count:plural; one:classe créée; other:classes créées;}}",
+				"teachers": "Groupe d'enseignants créé",
+				"edit": "Classe enregistrée"
+			}
+		},
+		"errors": {
+			"nameRequired": "Le nom est obligatoire.",
+			"nameLong": "Le nom est trop long (40 caractères au maximum).",
+			"levelsRequired": "Choisir au moins une année.",
+			"levelUnknown": "Une année choisie n'existe plus.",
+			"levelsNotForTeachers": "Un groupe d'enseignants n'a pas d'années.",
+			"nameTaken": "Une classe portant ce nom existe déjà pour la même année.",
+			"levelInUse": "Certains élèves de la classe sont dans une année qui serait supprimée.",
+			"notEmpty": "La classe compte encore des lecteurs.",
+			"notFound": "La classe n'existe plus."
+		}
+	},
+	"exports": {
+		"title": "Exportations",
+		"subtitle": "Les données de la bibliothèque dans des fichiers à conserver, à réimporter ou à transférer vers un autre logiciel.",
+		"items": {
+			"students": {
+				"title": "Élèves (CSV)",
+				"description": "Les élèves actifs dans le format de l'importation : ils se réimportent depuis Administration → Importations → Élèves."
+			},
+			"teachers": {
+				"title": "Enseignants (CSV)",
+				"description": "Les enseignants actifs dans le format de l'importation : ils se réimportent depuis Administration → Importations → Enseignants."
+			},
+			"catalog": {
+				"title": "Catalogue (CSV)",
+				"description": "Une ligne par exemplaire avec les données du livre, dans le format de l'importation du catalogue."
+			},
+			"open-loans": {
+				"title": "Prêts en cours (CSV)",
+				"description": "Carte, exemplaire, date du prêt et date de retour : ils se réimportent depuis Administration → Importations → Prêts en cours."
+			},
+			"loans-history": {
+				"title": "Historique des prêts (CSV)",
+				"description": "Tous les prêts avec la classe et la section du jour du prêt."
+			},
+			"dump": {
+				"title": "Toutes les données (JSON)",
+				"description": "Lecteurs, catalogue, prêts et listes dans un seul fichier, pour passer à une autre installation ou à un autre logiciel."
+			}
+		},
+		"download": "Télécharger",
+		"patronNote": "Les données d'une seule personne (demande d'accès) se téléchargent depuis sa fiche.",
+		"patronExport": "Exporter les données de la personne"
+	},
+	"imports": {
+		"title": "Importations",
+		"hint": "Elles servent au passage depuis Koha et, pour les lecteurs, à chaque début d'année pour les nouvelles classes. Chaque fichier est entièrement contrôlé avant toute importation.",
+		"cards": {
+			"catalog": {
+				"title": "Catalogue",
+				"description": "Livres et exemplaires à partir d'un fichier CSV ou de l'export de Koha."
+			},
+			"students": {
+				"title": "Élèves",
+				"description": "Les classes du registre électronique, à chaque début d'année : prénom, nom et classe."
+			},
+			"teachers": {
+				"title": "Enseignants",
+				"description": "Les enseignants de l'établissement : prénom et nom, avec leur carte s'ils en ont déjà une."
+			},
+			"loans": {
+				"title": "Prêts en cours",
+				"description": "Les prêts ouverts, importés une seule fois lors du passage depuis Koha."
+			},
+			"photos": {
+				"title": "Photos des lecteurs",
+				"description": "Les photos exportées depuis Koha, une par carte."
+			}
+		}
+	},
+	"calibration": {
+		"title": "Calibrer l'impression recto verso",
+		"intro": "Pour imprimer les cartes sur les deux côtés de la feuille, le verso doit tomber exactement derrière le recto. Chaque imprimante décale un peu le verso : ce test mesure de combien, une seule fois.",
+		"current": "Retournement de la feuille : {{flip}}. Décalage actuel des versos utilisés : {{x}} mm en horizontal, {{y}} mm en vertical.",
+		"steps": {
+			"print": "Imprimer la feuille de calibrage avec le bouton ci-dessous.",
+			"window": {
+				"long-edge": "Dans la fenêtre d'impression, choisir « Recto verso » en retournant sur le grand côté, l'échelle à 100 % et aucune marge.",
+				"short-edge": "Dans la fenêtre d'impression, choisir « Recto verso » en retournant sur le petit côté, l'échelle à 100 % et aucune marge."
+			},
+			"cut": "Du côté du grand « 1 », découper soigneusement le long de la ligne noire.",
+			"read": "Retourner le carton : sur le côté « 2 », lire les deux nombres à l'endroit où le bord découpé croise les deux règles (avec leur signe, + ou −).",
+			"save": "Saisir les deux nombres ci-dessous et enregistrer : le décalage des versos est corrigé.",
+			"check": "Réimprimer la feuille pour vérifier : le bord découpé doit maintenant passer par le 0 des deux règles."
+		},
+		"print": "Imprimer la feuille de calibrage",
+		"drawing": {
+			"title": "Quoi lire",
+			"label": "Côté 2 après la découpe : le bord découpé croise les règles",
+			"x": "règle horizontale",
+			"y": "règle verticale",
+			"hint": "Le bord découpé croise chaque règle : le nombre situé à cet endroit est la valeur à saisir. Chaque trait est un millimètre, les nombres apparaissent tous les cinq."
+		},
+		"fields": {
+			"x": "Règle horizontale (mm)",
+			"y": "Règle verticale (mm)",
+			"hint": "Le nombre où passe le bord découpé, avec son signe ; 0 s'il tombe sur le zéro."
+		},
+		"next": "Après l'enregistrement, le décalage des versos sera de {{x}} mm en horizontal et {{y}} mm en vertical.",
+		"save": "Enregistrer le calibrage",
+		"saved": "Calibrage enregistré : versos décalés de {{x}} mm en horizontal et {{y}} mm en vertical.",
+		"open": "Calibrer l'impression recto verso",
+		"sheet": {
+			"title": "BiblioViva · calibrage de l'impression recto verso",
+			"cut": "Découper le long de la ligne noire, puis retourner le carton.",
+			"read": "Lire sur les deux règles l'endroit où passe le bord découpé."
+		}
+	}
+}

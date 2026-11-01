@@ -1,0 +1,1778 @@
+{
+	"home": {
+		"title": "Postavke"
+	},
+	"leave": {
+		"title": "Napustiti bez spremanja?",
+		"description": "Nespremljene promjene će se izgubiti.",
+		"confirm": "Napusti bez spremanja"
+	},
+	"taxonomy": {
+		"title": "Klasifikacija",
+		"intro": "Promjene ostaju u nacrtu dok se ne pritisne „Spremi“; prethodna verzija datoteke {{file}} se čuva.",
+		"invalid": "Neke vrijednosti nisu valjane (označene crveno): ispravite ih da biste mogli spremiti.",
+		"orphans": "U katalogu ima knjiga s kodovima koje klasifikacija ne sadrži: {{codes}}. Dodajte te kodove ovdje ili preklasificirajte te knjige iz kataloga.",
+		"unsaved": "Nespremljene promjene",
+		"discard": "Odbaci promjene",
+		"saved": "Klasifikacija spremljena",
+		"savedDetail": "{{records}} {{records:plural; one:knjiga premještena; few:knjige premještene; other:knjiga premještenih;}}, {{callNumbers}} {{callNumbers:plural; one:signatura prepisana; few:signature prepisane; other:signatura prepisanih;}}, {{bands}} {{bands:plural; one:traka na hrptu za ponovni ispis; few:trake na hrptu za ponovni ispis; other:traka na hrptu za ponovni ispis;}}.",
+		"tabs": {
+			"fiction": "Beletristika",
+			"nonfiction": "Stručna literatura",
+			"dewey": "Dewey",
+			"options": "Opcije"
+		},
+		"addGenre": "Dodaj žanr",
+		"addClass": "Dodaj temu",
+		"addSubclass": "Dodaj podtemu",
+		"dragHint": "Povucite retke za promjenu redoslijeda ili upotrijebite strelice. Redoslijed je onaj iz izbora u katalogu.",
+		"pickGenre": "Odaberite žanr za uređivanje.",
+		"pickClass": "Odaberite temu za uređivanje.",
+		"untitled": "Bez naziva",
+		"hasProblems": "Za ispraviti",
+		"usageShort": "{{records}} {{records:plural; one:knjiga; few:knjige; other:knjiga;}}",
+		"moveUp": "Pomakni gore",
+		"moveDown": "Pomakni dolje",
+		"panel": {
+			"genre": "Žanr",
+			"class": "Tema",
+			"subclass": "Podtema"
+		},
+		"fields": {
+			"code": "Kod",
+			"label": "Naziv",
+			"color": "Boja",
+			"pictogram": "Piktogram",
+			"position": "Položaj"
+		},
+		"renameNote": "Kod je promijenjen: pri spremanju {{records}} {{records:plural; one:knjiga prelazi; few:knjige prelaze; other:knjiga prelazi;}} s {{from}} na {{to}}, a njihove signature se ažuriraju.",
+		"color": {
+			"inherit": "Koristi boju od {{code}}",
+			"none": "Bez boje",
+			"hex": "Kod boje"
+		},
+		"pictogram": {
+			"upload": "Učitaj sliku",
+			"choose": "Odaberi među slikama",
+			"remove": "Ukloni sliku",
+			"own": "Vlastita slika. PNG, JPEG ili WebP: sprema se kao PNG.",
+			"missing": "Datoteka {{name}} nije u mapi slika: na naljepnicama se prikazuje krug s bojom i kodom.",
+			"inherited": "Bez vlastite slike koristi sliku koda {{code}}.",
+			"placeholder": "Bez slike na naljepnicama se prikazuje krug s bojom i kodom.",
+			"gallery": "Slike klasifikacije",
+			"errors": {
+				"empty": "Datoteka je prazna.",
+				"too_large": "Slika je prevelika (najviše {{maxMb}} MB).",
+				"not_an_image": "Datoteka nije slika.",
+				"unsupported_format": "Format nije prihvaćen: upotrijebite PNG, JPEG ili WebP."
+			}
+		},
+		"position": {
+			"top": "Glavna tema",
+			"under": "Unutar {{code}} · {{label}}",
+			"locked": "Ima podteme: ostaje glavna tema."
+		},
+		"usage": {
+			"new": "Novo: još ga nijedna knjiga ne koristi.",
+			"none": "Ovaj kod ne koristi nijedna knjiga.",
+			"some": "Koristi ga {{records}} {{records:plural; one:knjiga; few:knjige; other:knjiga;}} ({{copies}} {{copies:plural; one:primjerak; few:primjerka; other:primjeraka;}})."
+		},
+		"remove": {
+			"genre": "Obriši žanr",
+			"class": "Obriši temu",
+			"confirmTitle": "Obrisati {{code}}?",
+			"withSubclasses": "Obrisat će se i {{count}} {{count:plural; one:njezina podtema; few:njezine podteme; other:njezinih podtema;}}.",
+			"inUse": "{{records}} {{records:plural; one:knjiga koristi; few:knjige koriste; other:knjiga koristi;}} ovaj kod: pri spremanju se bira kamo ih premjestiti.",
+			"confirm": "Obriši"
+		},
+		"preview": {
+			"title": "Pregled trake na hrptu",
+			"hint": "Primjer knjige kako bi se sada ispisala, u stvarnoj veličini.",
+			"needsCode": "Pregled se pojavljuje kad je kod valjan."
+		},
+		"problems": {
+			"codeRequired": "Kod je obavezan.",
+			"codeFormat": "Upotrijebite samo slova, brojke, točku, crticu ili donju crtu (najviše 32).",
+			"codeTaken": "Ovaj kod već koristi drugi žanr ili tema.",
+			"labelRequired": "Naziv je obavezan.",
+			"labelLong": "Naziv je predug (najviše 120 znakova).",
+			"colorFormat": "Boju upišite kao #rrggbb, na primjer #e8231b.",
+			"patternRequired": "Shema ne može biti prazna."
+		},
+		"dewey": {
+			"hint": "Kad knjiga iz stručne literature dođe s Dewey brojem (na primjer iz SBN-a), tema se predlaže prema ovoj tablici: vrijedi najdulji prefiks koji se podudara.",
+			"probe": "Isprobaj Dewey broj",
+			"noMatch": "Nijedna tema se ne podudara",
+			"empty": "Nema Dewey povezivanja",
+			"prefix": "Dewey prefiks",
+			"class": "Tema",
+			"add": "Dodaj povezivanje",
+			"problems": {
+				"prefixFormat": "Od 1 do 3 znamenki.",
+				"prefixTaken": "Prefiks se ponavlja.",
+				"codeUnknown": "Odaberite temu."
+			}
+		},
+		"options": {
+			"fictionByClass": "Beletristika je podijeljena po razini čitanja",
+			"fictionByClassHint": "Knjigama beletristike može se pridružiti razina čitanja za koju su prikladne (na primjer razred 4): pojavljuje se u signaturi i na traci na hrptu.",
+			"classPerItem": "Razina čitanja je na svakom primjerku",
+			"classPerItemHint": "Potrebno kad primjerci iste knjige stoje na policama različitih razina. Inače je razina na knjizi.",
+			"toCopies": "Pri spremanju razina čitanja svake knjige prelazi na njezine primjerke.",
+			"toRecords": "Pri spremanju razina primjeraka vraća se na knjigu; nije moguće ako primjerci iste knjige imaju različite razine.",
+			"patterns": "Obrasci signature",
+			"patternsHint": "Vrijede za primjerke dodane od sada; postojeće signature se ne mijenjaju. Oznake mjesta: {{placeholders}}.",
+			"pattern": {
+				"fiction": "Beletristika",
+				"fictionWithClass": "Beletristika s pridruženim razredom",
+				"nonfiction": "Stručna literatura"
+			},
+			"unknownPlaceholders": "Nepoznate oznake mjesta: {{names}}.",
+			"example": "Primjer: {{example}}"
+		},
+		"save": {
+			"title": "Spremi klasifikaciju",
+			"checking": "Provjera što se mijenja u katalogu…",
+			"unchanged": "Nema promjena za spremanje.",
+			"errors": "Prije spremanja ispravite ove probleme:",
+			"removedTitle": "Obrisani kodovi još u upotrebi",
+			"removedHint": "Odaberite kamo premjestiti knjige svakog obrisanog koda: novi kod ide na knjige, na početak njihovih signatura i na trake na hrptu.",
+			"moveTo": "{{code}} · {{label}}: {{records}} {{records:plural; one:knjiga; few:knjige; other:knjiga;}} ({{copies}} {{copies:plural; one:primjerak; few:primjerka; other:primjeraka;}}). Premjesti u",
+			"choose": "Odaberi…",
+			"callNumbers": "{{count}} {{count:plural; one:signatura počinje; few:signature počinju; other:signatura počinje;}} s obrisanim kodom: kod na početku se zamjenjuje (na primjer B 4 DEL postaje A 4 DEL).",
+			"bandsMoved": "Trake na hrptu premještenih knjiga i naljepnice s promijenjenom signaturom vraćaju se među one za ispis.",
+			"unused": "Obrisani, ne koristi ih nijedna knjiga: {{codes}}.",
+			"reprint": "Vrati među naljepnice za ispis trake na hrptu za {{copies}} {{copies:plural; one:primjerak; few:primjerka; other:primjeraka;}} kojima se mijenja naziv, boja ili piktogram ({{codes}})",
+			"reprintHint": "Ostavite isključeno ako razlika na trakama koje su već zalijepljene na knjige nije važna.",
+			"conflicts": "{{count}} {{count:plural; one:knjiga ima; few:knjige imaju; other:knjiga ima;}} primjerke u različitim razredima: prije uklanjanja razreda s primjeraka dajte isti razred svim primjercima svake knjige.",
+			"toCopies": "Pridruženi razred prelazi na primjerke za {{count}} {{count:plural; one:knjigu; few:knjige; other:knjiga;}}.",
+			"toRecords": "Razred primjeraka vraća se na knjigu za {{count}} {{count:plural; one:naslov; few:naslova; other:naslova;}}.",
+			"warnings": "{{count}} {{count:plural; one:upozorenje; few:upozorenja; other:upozorenja;}} (ne blokiraju spremanje)",
+			"levelsTitle": "Razine čitanja uklonjene dok ih knjige imaju",
+			"levelMoveTo": "Knjige razine {{code}} · {{label}} ({{records}} {{records:plural; one:naslov; few:naslova; other:naslova;}}, {{copies}} {{copies:plural; one:primjerak; few:primjerka; other:primjeraka;}}) prelaze u",
+			"noLevel": "Bez razine",
+			"levelsHint": "Razina u signaturama primjeraka mijenja se zajedno s njima (na primjer B 4 DEL postaje B 5 DEL), a njihove naljepnice vraćaju se među one za ispis."
+		},
+		"levels": {
+			"title": "Razine čitanja",
+			"hint": "Redom, od najlakše. Kod ide na knjige i u signaturu (na primjer 4 u B 4 DEL), naziv se vidi među izborima. Za razinu u upotrebi koja se uklanja ili preimenuje, pri spremanju se pita kamo premjestiti njezine knjige.",
+			"code": "Kod razine",
+			"label": "Naziv razine",
+			"up": "Pomakni gore",
+			"down": "Pomakni dolje",
+			"remove": "Ukloni razinu",
+			"add": "Dodaj razinu"
+		}
+	},
+	"sections": {
+		"library": {
+			"title": "Knjižnica i škola",
+			"description": "Naziv, vrsta škole, razredi i odjeljci, školska godina, vremenska zona."
+		},
+		"school": {
+			"title": "Škola",
+			"description": "Obrazovne razine i godine škole, kako se piše razred, što se događa s razredima na kraju godine. Sami razredi uređuju se u Administracija → Postavke → Razredi."
+		},
+		"catalog": {
+			"title": "Katalog",
+			"description": "Vrijednosti za nepoznatog autora, nakladnika i mjesto."
+		},
+		"barcodes": {
+			"title": "Crtični kodovi",
+			"description": "Format iskaznica i primjeraka, stari kodovi, vrsta crtičnog koda."
+		},
+		"circulation": {
+			"title": "Posudbe",
+			"description": "Pravila posudbe i produljenja, rokovi, opomene, potvrde."
+		},
+		"calendar": {
+			"title": "Kalendar",
+			"description": "Dani zatvaranja i praznici."
+		},
+		"z3950": {
+			"title": "Z39.50 (SBN)",
+			"description": "Poslužitelji iz kojih dolaze zapisi knjiga."
+		},
+		"metadata": {
+			"title": "Podaci o knjigama",
+			"description": "Izvori podataka pri pretraživanju po ISBN-u."
+		},
+		"performance": {
+			"title": "Učinkovitost",
+			"description": "Računalo na kojem radi BiblioViva i postavke koje o njemu ovise."
+		},
+		"classification": {
+			"title": "Klasifikacija",
+			"description": "Žanrovi, teme, piktogrami, Dewey i signature."
+		},
+		"cards": {
+			"title": "Iskaznice",
+			"description": "Format iskaznica i lista za ispis."
+		},
+		"labels": {
+			"title": "Naljepnice",
+			"description": "Naljepnice knjiga i trake na hrptu, ljepljivi listovi."
+		},
+		"photos": {
+			"title": "Fotografije korisnika",
+			"description": "Veličina i format fotografija."
+		},
+		"covers": {
+			"title": "Naslovnice",
+			"description": "Veličina, format i izvori naslovnica."
+		},
+		"privacy": {
+			"title": "Privatnost",
+			"description": "Koliko dugo se čuva dnevnik radnji."
+		},
+		"backup": {
+			"title": "Sigurnosne kopije",
+			"description": "Vrijeme i čuvanje sigurnosnih kopija, vanjska kopija."
+		},
+		"security": {
+			"title": "Sigurnost i pristup",
+			"description": "Trajanje sesije, pokušaji prijave, računi i uloge."
+		},
+		"ui": {
+			"title": "Sučelje",
+			"description": "Posudbeni pult i dodani jezici; boje, jezik i nadzorna ploča su u „Izgled i jezik“."
+		}
+	},
+	"fields": {
+		"library": {
+			"name": {
+				"label": "Naziv knjižnice",
+				"hint": "Prikazuje se gore lijevo, na iskaznicama i na ispisima."
+			},
+			"contactEmail": {
+				"label": "Kontakt e-mail",
+				"hint": "Neobavezno: prikazuje se na ispisima koji ga predviđaju."
+			},
+			"schoolYearStart": {
+				"label": "Početak školske godine",
+				"hint": "Mjesec i dan kao MM-DD (na primjer 09-01): razdvaja godine u statistikama."
+			},
+			"schoolYearLabel": {
+				"label": "Naziv školske godine",
+				"hint": "Kako se školska godina pojavljuje na iskaznicama, izvještajima i stranicama: dvije godine (2026/2027) ili godina početka (2026), kao u Brazilu, Japanu i Koreji."
+			},
+			"timezone": {
+				"label": "Vremenska zona",
+				"hint": "Naziv zone, na primjer Europe/Zagreb: datumi i rokovi prate nju, a ne sat poslužitelja."
+			},
+			"weekStart": {
+				"label": "Prvi dan u tjednu",
+				"hint": "Dan od kojeg počinju tjedni u kalendarima i u „Ovaj tjedan“ na nadzornoj ploči. Pri prvom pokretanju bira ga jezik (ponedjeljak u hrvatskom, nedjelja u engleskom)."
+			}
+		},
+		"school": {
+			"classLabel": {
+				"label": "Kako se piše razred",
+				"hint": "{level} je godina, {group} naziv razreda: „{level} {group}“ daje 3 B, „{level}{group}“ daje 3B. Pojedini obrazovni stupanj može imati svoj (Obrazovne razine i godine)."
+			},
+			"groupWord": {
+				"label": "Riječ za razred",
+				"hint": "Naziv polja razreda u obrascima i filtrima te {word} u retku razreda na iskaznici (Odjeljak B, Razred B, Skupina B)."
+			},
+			"cardClass": {
+				"label": "Razred na iskaznici",
+				"hint": "Redak razreda otisnut na iskaznici: {word} je riječ za razred, {group} naziv razreda, {level} godina, {class} cijeli razred. „{word} {group}“ daje Odjeljak B, „{class}“ daje 3 B."
+			},
+			"teacherGroupName": {
+				"label": "Naziv skupine nastavnika",
+				"hint": "Skupina u koju ulazi nastavnik kad se ne odabere druga."
+			},
+			"promotionWithinStage": {
+				"label": "Na kraju godine, unutar istog obrazovnog stupnja",
+				"hint": "Obično razred napreduje sa svojim učenicima: 3 B postaje 4 B."
+			},
+			"promotionAcrossStages": {
+				"label": "Na kraju godine, prijelaz u drugi stupanj",
+				"hint": "Na primjer iz 5. razreda osnovne škole u 1. razred srednje škole u cjelovitoj školi."
+			}
+		},
+		"catalog": {
+			"specialAuthors": {
+				"label": "Posebni autori",
+				"hint": "Jedan po retku: vrijednosti prihvaćene umjesto osobnog autora (na primjer Anonimo, AA. VV.)."
+			},
+			"unknownPublisher": {
+				"label": "Nepoznat nakladnik",
+				"hint": "Vrijednost koja se upisuje kad nakladnik nije naveden."
+			},
+			"unknownPlace": {
+				"label": "Nepoznato mjesto",
+				"hint": "Vrijednost koja se upisuje kad mjesto izdanja nije navedeno."
+			}
+		},
+		"barcodes": {
+			"keyboardLayout": {
+				"label": "Tipkovnica računala",
+				"hint": "Raspored tipkovnice računala na koja su priključeni čitači crtičnih kodova: služi za ispravak znakova koje čitač postavljen za drugu tipkovnicu upisuje pogrešno."
+			},
+			"cameraSound": {
+				"label": "Zvuk kamere",
+				"hint": "Zvučni signal telefona kad kamera očita člansku iskaznicu, crtični kod primjerka ili ISBN. USB čitač sam daje zvučni signal i ne treba mu; pult ostaje tih."
+			},
+			"patron": {
+				"symbology": {
+					"label": "Vrsta crtičnog koda iskaznica",
+					"hint": "Code 128 za nove iskaznice; Code 39 samo ako čitači knjižnice ne mogu čitati Code 128."
+				}
+			},
+			"item": {
+				"symbology": {
+					"label": "Vrsta crtičnog koda primjeraka",
+					"hint": "Code 128 za nove naljepnice; Code 39 samo ako čitači knjižnice ne mogu čitati Code 128."
+				}
+			}
+		},
+		"circulation": {
+			"rules": {
+				"student": {
+					"loanDays": {
+						"label": "Dani posudbe",
+						"hint": "Koliko dana traje posudba za učenike."
+					},
+					"maxLoans": {
+						"label": "Najviše knjiga u posudbi",
+						"hint": "Koliko knjiga se može imati istodobno."
+					},
+					"maxRenewals": {
+						"label": "Najviše produljenja",
+						"hint": "Koliko se puta ista posudba može produljiti (0 = nikad)."
+					},
+					"renewalDays": {
+						"label": "Dani produljenja",
+						"hint": "Koliko dana dodaje svako produljenje."
+					}
+				},
+				"teacher": {
+					"loanDays": {
+						"label": "Dani posudbe",
+						"hint": "Koliko dana traje posudba za nastavnike."
+					},
+					"maxLoans": {
+						"label": "Najviše knjiga u posudbi",
+						"hint": "Koliko knjiga se može imati istodobno."
+					},
+					"maxRenewals": {
+						"label": "Najviše produljenja",
+						"hint": "Koliko se puta ista posudba može produljiti (0 = nikad)."
+					},
+					"renewalDays": {
+						"label": "Dani produljenja",
+						"hint": "Koliko dana dodaje svako produljenje."
+					}
+				}
+			},
+			"dueDateMode": {
+				"label": "Izračun roka povrata",
+				"hint": "Kako se trajanje posudbe računa u odnosu na dane zatvaranja knjižnice."
+			},
+			"renewFrom": {
+				"label": "Produljenje počinje od",
+				"hint": "Dan od kojeg se računaju dani produljenja."
+			},
+			"allowRenewalWhenOverdue": {
+				"label": "Produljenje i nakon roka povrata",
+				"hint": "Može se produljiti posudba koja je već istekla."
+			},
+			"overdueNotice": {
+				"template": {
+					"label": "Predložak opomena",
+					"hint": "Naziv predloška za ispis opomena (mapa u slips/templates)."
+				},
+				"pageBreakPerGroup": {
+					"label": "Jedna stranica po razredu",
+					"hint": "Svaki razred na svom listu, da se preda nastavniku; može se promijeniti i pri ispisu."
+				},
+				"minDays": {
+					"label": "Dana kašnjenja prije opomene",
+					"hint": "Posudba se pojavljuje u opomenama tek nakon ovoliko dana kašnjenja (0 = odmah)."
+				}
+			},
+			"blockIfOverdue": {
+				"label": "Nema novih posudbi s knjigama u kašnjenju",
+				"hint": "Tko ima knjigu u kašnjenju, ne može posuditi druge dok je ne vrati."
+			},
+			"hardDueDate": {
+				"label": "Najkasniji rok povrata",
+				"hint": "Nijedna posudba ne istječe nakon ovog datuma (na primjer kraj nastave). Prazno: bez ograničenja."
+			},
+			"receipts": {
+				"label": "Potvrda o posudbi",
+				"hint": "Na posudbenom pultu prikazuje gumb za ispis potvrde."
+			}
+		},
+		"calendar": {
+			"autoItalianHolidays": {
+				"label": "Talijanski državni praznici",
+				"hint": "Državni praznici (uključujući Uskrs) dani su zatvaranja bez njihova ručnog upisivanja."
+			}
+		},
+		"z3950": {
+			"defaultTarget": {
+				"label": "Zadani poslužitelj",
+				"hint": "Identifikator Z39.50 poslužitelja koji se koristi za pretraživanja."
+			},
+			"timeoutMs": {
+				"label": "Najdulje vrijeme čekanja (ms)",
+				"hint": "Nakon koliko milisekundi se pretraživanje Z39.50 napušta."
+			},
+			"maxRecordsIsbn": {
+				"label": "Rezultati po ISBN-u",
+				"hint": "Koliko se zapisa najviše čita pri traženju ISBN-a (isti ISBN može imati zapis za svaki pretisak): otvara se najpotpuniji."
+			},
+			"maxRecordsSearch": {
+				"label": "Rezultati po pretraživanju",
+				"hint": "Koliko se zapisa najviše čita pri traženju po naslovu ili autoru."
+			}
+		},
+		"metadata": {
+			"providers": {
+				"label": "Izvori podataka",
+				"hint": "Odakle dolaze podaci o knjigama pri traženju po ISBN-u: odabrani izvori se pretražuju zajedno."
+			},
+			"cacheDays": {
+				"label": "Dani pamćenja pretraživanja",
+				"hint": "Koliko se dana već obavljeno pretraživanje ponovno koristi bez novog upita."
+			},
+			"timeoutMs": {
+				"label": "Najdulje vrijeme čekanja (ms)",
+				"hint": "Nakon koliko milisekundi se izvor koji ne odgovara izostavlja."
+			}
+		},
+		"performance": {
+			"profile": {
+				"label": "Računalo",
+				"hint": "Standardne postavke prikladne za računalo na kojem radi BiblioViva."
+			},
+			"sqliteCacheMb": {
+				"label": "Predmemorija baze podataka (MB)",
+				"hint": "Prazno: prema računalu (8, 16, 64 ili 256 MB)."
+			},
+			"sqliteMmapMb": {
+				"label": "Memorijsko preslikavanje baze podataka (MB)",
+				"hint": "Prazno: prema računalu (0, 0, 0 ili 512 MB)."
+			},
+			"walAutocheckpointPages": {
+				"label": "Stranice prije kontrolne točke",
+				"hint": "Prazno: prema računalu (500, 1000, 2000 ili 4000)."
+			},
+			"imageConcurrency": {
+				"label": "Slike obrađene istodobno",
+				"hint": "Fotografije, naslovnice, slike razreda i logotip obrađuju se u isto vrijeme; ostale čekaju na red. Prazno: prema računalu (1, 1, 2 ili 4)."
+			},
+			"yazConcurrency": {
+				"label": "Pretraživanja Z39.50 istodobno",
+				"hint": "Pretraživanja Z39.50 u isto vrijeme; ostala čekaju na red. Prazno: prema računalu (1, 1, 2 ili 2)."
+			},
+			"heavyConcurrency": {
+				"label": "Ispisi i izvoz istodobno",
+				"hint": "Listovi za ispis (iskaznice, naljepnice, opomene, potvrde, izvještaji) i izvozi (CSV, ODS, arhive, sigurnosne kopije) pripremaju se u isto vrijeme; ostali čekaju na red, pa pult za posudbe ostaje brz. Prazno: prema računalu (1, 1, 2 ili 4)."
+			},
+			"argon2MemoryMb": {
+				"label": "Memorija za provjeru lozinki (MB)",
+				"hint": "Vrijedi za lozinke postavljene od tada. Prazno: 16 MB na svakom računalu (sustav nikad nije izložen internetu)."
+			},
+			"smol": {
+				"label": "Ušteda memorije",
+				"hint": "Manje memorije, malo više posla za procesor. Automatski: prema računalu (da za minimalno računalo i Raspberry Pi). Vrijedi nakon ponovnog pokretanja."
+			}
+		},
+		"cards": {
+			"defaultTemplate": {
+				"label": "Predložak iskaznica",
+				"hint": "Naziv predloška za ispis koji se koristi kad tip korisnika nema svoj (mapa u cards/templates)."
+			},
+			"layout": {
+				"label": "Ispis iskaznica",
+				"hint": "Prednja i stražnja strana jedna do druge (presaviti na kraću stranu) ili na obje strane lista, uz pisač koji ispisuje obje strane. Bira se ponovno pri svakom ispisu."
+			},
+			"duplex": {
+				"flip": {
+					"label": "Kako se list okreće",
+					"hint": "Kako pisač okreće list za stražnju stranu: po dužoj strani (kao knjiga) ili po kraćoj. Mora biti isto kao odabir u prozoru ispisa."
+				},
+				"backOffsetMm": {
+					"x": {
+						"label": "Pomak stražnjih strana, vodoravno (mm)",
+						"hint": "Pronalazi ga kalibracija: koliko pomaknuti stražnje strane da padnu iza prednjih."
+					},
+					"y": {
+						"label": "Pomak stražnjih strana, okomito (mm)",
+						"hint": "Pronalazi ga kalibracija."
+					}
+				}
+			},
+			"cardMm": {
+				"width": {
+					"label": "Širina (mm)",
+					"hint": "Standardna iskaznica široka je 85,6 mm."
+				},
+				"height": {
+					"label": "Visina (mm)",
+					"hint": "Standardna iskaznica visoka je 53,98 mm."
+				}
+			},
+			"bleedMm": {
+				"label": "Prelijev (mm)",
+				"hint": "Dodatni rub oko slika preko cijele stranice, koji se odreže."
+			},
+			"sheet": {
+				"paper": {
+					"label": "Format papira",
+					"hint": "List na koji se ispisuju iskaznice."
+				},
+				"rows": {
+					"label": "Iskaznica po listu",
+					"hint": "Koliko iskaznica (prednja i stražnja strana) jedna ispod druge: 4 ili 5 na A4."
+				},
+				"marginMm": {
+					"label": "Margina lista (mm)",
+					"hint": "Bijeli prostor oko iskaznica."
+				},
+				"gapMm": {
+					"label": "Razmak između iskaznica (mm)",
+					"hint": "Udaljenost između jedne iskaznice i sljedeće."
+				},
+				"foldMarks": {
+					"label": "Oznake za savijanje",
+					"hint": "Kratke isprekidane crte na marginama i među iskaznicama, gdje se savijaju prednja i stražnja strana."
+				},
+				"cutMarks": {
+					"label": "Oznake za rezanje",
+					"hint": "Oznake reza: kratke crte na marginama i među iskaznicama koje produljuju rubove svake iskaznice, za rezanje ravnalom i reznim nožem."
+				}
+			},
+			"validityMonths": {
+				"label": "Valjanost (mjeseci)",
+				"hint": "Koliko mjeseci vrijedi ispisana iskaznica. Prazno: bez roka isteka."
+			},
+			"showPhoto": {
+				"label": "Fotografija na iskaznici",
+				"hint": "Ispisuje fotografiju korisnika na iskaznici."
+			}
+		},
+		"labels": {
+			"default": {
+				"label": "Zadane naljepnice",
+				"hint": "Što se ispisuje kad se odabere „Ispiši naljepnice“."
+			},
+			"titleMaxChars": {
+				"label": "Broj slova naslova",
+				"hint": "Naslov na naljepnicama skraćuje se na ovu duljinu."
+			},
+			"monochrome": {
+				"label": "Crno-bijeli pisač",
+				"hint": "Na niskim trakama na hrptu obojena traka postaje šrafura."
+			},
+			"pair": {
+				"template": {
+					"label": "Predložak",
+					"hint": "Naziv predloška za ispis para (mapa u labels/templates)."
+				},
+				"stock": {
+					"label": "Ljepljivi list",
+					"hint": "Identifikator korištenog lista naljepnica (datoteka u labels/stocks)."
+				}
+			},
+			"barcode": {
+				"template": {
+					"label": "Predložak",
+					"hint": "Naziv predloška za ispis naljepnice s crtičnim kodom (mapa u labels/templates)."
+				},
+				"stock": {
+					"label": "Ljepljivi list",
+					"hint": "Identifikator korištenog lista naljepnica (datoteka u labels/stocks)."
+				}
+			},
+			"spine": {
+				"template": {
+					"label": "Predložak",
+					"hint": "Naziv predloška za ispis trake na hrptu (mapa u labels/templates)."
+				},
+				"stock": {
+					"label": "Ljepljivi list",
+					"hint": "Identifikator korištenog lista naljepnica (datoteka u labels/stocks)."
+				}
+			}
+		},
+		"photos": {
+			"enabled": {
+				"label": "Fotografije korisnika",
+				"hint": "Uključeno: fotografije snimljene ili učitane za svakog korisnika, popis, fotografije na iskaznicama. Isključeno: nigdje nema fotografija i iskaznice su bez fotografije; već spremljene fotografije ostaju i vraćaju se kad se ponovno uključe."
+			},
+			"required": {
+				"label": "Fotografija obavezna",
+				"hint": "Uključeno: nadzorna ploča, popis korisnika i popisi za ispis pokazuju tko nema fotografiju. Isključeno: nema podsjetnika, ali fotografije se i dalje mogu snimiti, učitati i ispisati na iskaznicama."
+			},
+			"width": {
+				"label": "Širina (px)",
+				"hint": "Fotografije se spremaju s ovom širinom."
+			},
+			"height": {
+				"label": "Visina (px)",
+				"hint": "Fotografije se spremaju s ovom visinom (središnje izrezivanje)."
+			},
+			"format": {
+				"label": "Format datoteka",
+				"hint": "JPEG radi svuda; WebP zauzima manje prostora."
+			},
+			"quality": {
+				"label": "Kvaliteta",
+				"hint": "Od 1 do 100: što veća, to datoteke veće."
+			},
+			"maxUploadBytes": {
+				"label": "Najveća veličina za učitavanje (bajtovi)",
+				"hint": "Veća datoteka se odbija."
+			},
+			"sheet": {
+				"maxUploadBytes": {
+					"label": "Najveća veličina (bajtovi)",
+					"hint": "Slika s mnogo fotografija (popis iz slike) veća od ove vrijednosti se odbija."
+				},
+				"maxPixels": {
+					"label": "Najdulja zadržana stranica (px)",
+					"hint": "Slika se smanjuje dok njezina najdulja stranica ne bude veća od ove vrijednosti."
+				},
+				"maxFrames": {
+					"label": "Najviše fotografija",
+					"hint": "Kad slika sadrži više, zadržavaju se najoštrije."
+				},
+				"minAspect": {
+					"label": "Najmanji omjer fotografije",
+					"hint": "Visina podijeljena širinom: 1 je kvadrat, 1,33 fotografija za dokumente 3:4."
+				},
+				"maxAspect": {
+					"label": "Najveći omjer fotografije",
+					"hint": "Visina podijeljena širinom: izduženiji okviri ne uzimaju se za fotografije."
+				}
+			}
+		},
+		"covers": {
+			"enabled": {
+				"label": "Naslovnice knjiga",
+				"hint": "Uključeno: naslovnice potražene na internetu, fotografirane ili učitane i prikazane u katalogu. Isključeno: nigdje nema naslovnice; već spremljene ostaju i vraćaju se kad se ponovno uključe."
+			},
+			"width": {
+				"label": "Širina (px)",
+				"hint": "Naslovnice se spremaju s ovom širinom."
+			},
+			"maxHeight": {
+				"label": "Najveća visina (px)",
+				"hint": "Vrlo visoke naslovnice se smanjuju. Prazno: bez ograničenja."
+			},
+			"format": {
+				"label": "Format datoteka",
+				"hint": "JPEG radi svuda; WebP zauzima manje prostora."
+			},
+			"quality": {
+				"label": "Kvaliteta",
+				"hint": "Od 1 do 100: što veća, to datoteke veće."
+			},
+			"maxUploadBytes": {
+				"label": "Najveća veličina za učitavanje (bajtovi)",
+				"hint": "Veća datoteka se odbija."
+			},
+			"country": {
+				"label": "Zemlja",
+				"hint": "Zemlja kataloga pružatelja naslovnica (dva slova, na primjer IT)."
+			},
+			"minWidth": {
+				"label": "Najmanja širina (px)",
+				"hint": "Preuzete naslovnice uže od ove vrijednosti odbacuju se."
+			},
+			"autoFetch": {
+				"label": "Sam traži naslovnicu",
+				"hint": "U „Nova knjiga“ naslovnica se traži na internetu dok se provjerava zapis i sprema se zajedno s njim; ako nije ispravna, zamjenjuje se fotografijom."
+			},
+			"timeoutMs": {
+				"label": "Najdulje vrijeme čekanja (ms)",
+				"hint": "Nakon koliko milisekundi se pružatelj koji ne odgovara izostavlja."
+			}
+		},
+		"privacy": {
+			"auditRetentionMonths": {
+				"label": "Mjeseci dnevnika radnji",
+				"hint": "Stariji redovi dnevnika brišu se."
+			}
+		},
+		"backup": {
+			"cron": {
+				"label": "Vrijeme sigurnosne kopije",
+				"hint": "U cron obliku: minuta, sat, dan, mjesec, dan u tjednu (0 3 * * * = svake noći u 3 sata)."
+			},
+			"catchUp": {
+				"label": "Sigurnosna kopija pri pokretanju ako je propuštena",
+				"hint": "Ako je računalo bilo isključeno u vrijeme sigurnosne kopije, BiblioViva napravi kopiju minutu nakon sljedećeg pokretanja: samo jednu, čak i nakon više dana."
+			},
+			"keepDays": {
+				"label": "Dani čuvanja",
+				"hint": "Starije sigurnosne kopije brišu se."
+			},
+			"offsite": {
+				"enabled": {
+					"label": "Vanjska kopija u upotrebi",
+					"hint": "Pokazuje da se koristi druga kopija sigurnosnih kopija (rclone, na drugom disku ili drugoj usluzi)."
+				},
+				"remote": {
+					"label": "Odredište kopije",
+					"hint": "Kamo ide kopija: mapa na drugom disku (/offsite/biblioviva-backups, zadana vrijednost) ili odredište podešeno u rclone, zapisano kao naziv:mapa."
+				}
+			}
+		},
+		"security": {
+			"sessionDays": {
+				"label": "Trajanje sesije (dani)",
+				"hint": "Nakon koliko dana treba ponovno unijeti lozinku."
+			},
+			"loginMaxAttempts": {
+				"label": "Pokušaji prijave",
+				"hint": "Koliko pogrešnih pokušaja prije prisilne stanke."
+			},
+			"loginWindowMinutes": {
+				"label": "Stanka nakon previše pokušaja (minuti)",
+				"hint": "Koliko minuta prijava ostaje blokirana nakon previše pokušaja."
+			}
+		},
+		"ui": {
+			"checkoutIdleSeconds": {
+				"label": "Mirovanje posudbenog pulta (sekunde)",
+				"hint": "Nakon ovoliko sekundi bez očitanja pult je spreman za novog korisnika."
+			}
+		}
+	},
+	"options": {
+		"library": {
+			"weekStart": {
+				"monday": "Ponedjeljak",
+				"sunday": "Nedjelja",
+				"saturday": "Subota"
+			},
+			"schoolYearLabel": {
+				"span": "Dvije godine (2026/2027)",
+				"start": "Godina početka (2026)"
+			}
+		},
+		"school": {
+			"promotionWithinStage": {
+				"keep": "Razred napreduje sa svojim učenicima",
+				"clear": "Učenici ostaju bez razreda"
+			},
+			"promotionAcrossStages": {
+				"keep": "Razred napreduje sa svojim učenicima",
+				"clear": "Učenici ostaju bez razreda",
+				"ask": "Razred svakog učenika se bira"
+			}
+		},
+		"barcodes": {
+			"patron": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"item": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"keyboardLayout": {
+				"it": "Talijanska",
+				"es": "Španjolska",
+				"de": "Njemačka",
+				"fr": "Francuska",
+				"uk": "Engleska (Ujedinjeno Kraljevstvo)",
+				"us": "Engleska (Sjedinjene Američke Države)"
+			},
+			"cameraSound": {
+				"off": "Nema zvuka",
+				"till": "Blagajna",
+				"scanner": "Čitač",
+				"confirm": "Potvrda",
+				"arpeggio": "Arpeggio"
+			}
+		},
+		"circulation": {
+			"dueDateMode": {
+				"datedue": "Kalendarski dani, zatim prvi dan rada knjižnice",
+				"calendar": "Samo dani rada knjižnice",
+				"days": "Kalendarski dani, bez obzira na zatvaranja"
+			},
+			"renewFrom": {
+				"today": "Dan produljenja",
+				"dueDate": "Trenutni rok povrata"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"sbn": "OPAC SBN (Z39.50)",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books",
+				"sbn-json": "OPAC SBN (web usluga)"
+			}
+		},
+		"performance": {
+			"profile": {
+				"micro": "Minimalno računalo: jedan spor procesor i 512 MB (Raspberry Pi Zero 2, najmanji poslužitelj)",
+				"small": "Raspberry Pi 4 s 2 GB ili malo računalo",
+				"medium": "Stari PC s tvrdim diskom",
+				"large": "PC s SSD diskom"
+			}
+		},
+		"cards": {
+			"sheet": {
+				"paper": {
+					"A4": "A4"
+				}
+			},
+			"layout": {
+				"side-by-side": "Prednja i stražnja strana jedna do druge",
+				"duplex": "Na obje strane lista"
+			},
+			"duplex": {
+				"flip": {
+					"long-edge": "Po dužoj strani",
+					"short-edge": "Po kraćoj strani"
+				}
+			}
+		},
+		"labels": {
+			"default": {
+				"pair": "Par: traka na hrptu i naljepnica",
+				"barcode": "Samo naljepnica s crtičnim kodom",
+				"spine": "Samo traka na hrptu"
+			}
+		},
+		"photos": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		},
+		"covers": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		}
+	},
+	"groups": {
+		"barcodes": {
+			"patron": {
+				"title": "Iskaznice korisnika"
+			},
+			"item": {
+				"title": "Primjerci knjiga"
+			}
+		},
+		"circulation": {
+			"rules": {
+				"title": "Pravila posudbe",
+				"student": {
+					"title": "Pravila za učenike"
+				},
+				"teacher": {
+					"title": "Pravila za nastavnike"
+				}
+			},
+			"overdueNotice": {
+				"title": "Opomene"
+			}
+		},
+		"cards": {
+			"cardMm": {
+				"title": "Veličina iskaznice"
+			},
+			"sheet": {
+				"title": "List za ispis"
+			},
+			"duplex": {
+				"title": "Ispis na obje strane",
+				"backOffsetMm": {
+					"title": "Pomak stražnjih strana"
+				}
+			}
+		},
+		"labels": {
+			"pair": {
+				"title": "Par: traka na hrptu i naljepnica"
+			},
+			"barcode": {
+				"title": "Samo naljepnica s crtičnim kodom"
+			},
+			"spine": {
+				"title": "Samo traka na hrptu"
+			}
+		},
+		"backup": {
+			"offsite": {
+				"title": "Vanjska kopija"
+			}
+		},
+		"photos": {
+			"sheet": {
+				"title": "Slike s više fotografija (popis iz slike)"
+			}
+		}
+	},
+	"overview": {
+		"reload": "Ponovno učitaj",
+		"reloaded": "Postavke ponovno učitane",
+		"reloadFailed": "Datoteke imaju pogreške: ostaje u upotrebi prethodna konfiguracija.",
+		"valid": "Konfiguracija je valjana: {{count}} {{count:plural; one:datoteka; few:datoteke; other:datoteka;}}.",
+		"example": "Konfiguracija još nije stvorena: koriste se vrijednosti primjera.",
+		"warnings": "{{count}} {{count:plural; one:upozorenje; few:upozorenja; other:upozorenja;}}",
+		"diskErrors": "Datoteke postavki imaju pogreške: knjižnica nastavlja s prethodnom verzijom dok se ne isprave.",
+		"diskChanged": "Datoteke su promijenjene ručno: pritisnite „Ponovno učitaj“ da biste upotrijebili promjene.",
+		"sections": "Postavke",
+		"alsoFrom": "i {{count}} {{count:plural; one:druga datoteka; few:druge datoteke; other:drugih datoteka;}}",
+		"editors": "Izgled, razredi i predlošci",
+		"templates": "Predlošci za ispis",
+		"templatesDescription": "Mape predložaka iskaznica, naljepnica i opomena, sa svojim slikama.",
+		"reports": "Biblioteka izvještaja",
+		"reportsDescription": "Isporučeni i školski izvještaji: isprobaj, preuzmi, učitaj, obriši.",
+		"appearance": "Izgled i jezik",
+		"appearanceDescription": "Naziv i logotip knjižnice, boje, jezik i odjeljci nadzorne ploče.",
+		"classes": "Razredi",
+		"classesDescription": "Razredi škole i skupine nastavnika: stvori, preimenuj, arhiviraj."
+	},
+	"section": {
+		"tabs": {
+			"form": "Postavke",
+			"json": "JSON",
+			"label": "Uredi kao"
+		},
+		"file": "Spremljeno u {{file}}",
+		"alsoFrom": "Također iz: {{files}}",
+		"general": "Općenito",
+		"default": "Zadano: {{value}}",
+		"defaultNone": "Zadano: bez vrijednosti",
+		"defaultAuto": "Zadano: automatski",
+		"usesDefault": "Koristi zadanu vrijednost",
+		"reset": "Vrati na zadano",
+		"willReset": "Pri spremanju vraća se na zadanu vrijednost.",
+		"auto": "Automatski",
+		"none": "Nema datuma",
+		"yes": "Da",
+		"no": "Ne",
+		"fixed": "Fiksna vrijednost",
+		"range": "Od {{min}} do {{max}}.",
+		"min": "Najmanje {{min}}.",
+		"max": "Najviše {{max}}.",
+		"save": "Spremi",
+		"discard": "Odbaci promjene",
+		"saved": "Postavke spremljene",
+		"unsaved": "Nespremljene promjene",
+		"invalid": "Ispravite označene vrijednosti prije spremanja.",
+		"errors": "Spremanje nije uspjelo:",
+		"inUse": "Spremanje bi uklonilo nešto što je još u upotrebi:",
+		"inUseKinds": {
+			"classification": "kod {{code}}: {{count}} {{count:plural; one:knjiga; few:knjige; other:knjiga;}}",
+			"itemType": "vrsta primjerka {{code}}: {{count}} {{count:plural; one:primjerak; few:primjerka; other:primjeraka;}}",
+			"level": "razina {{code}}: {{count}} {{count:plural; one:učenik; few:učenika; other:učenika;}} ili razreda",
+			"readingLevel": "razina čitanja {{code}}: {{count}} {{count:plural; one:knjiga; few:knjige; other:knjiga;}}"
+		},
+		"patternError": "Neispravan format.",
+		"numberError": "Upišite cijeli broj.",
+		"required": "Obavezno.",
+		"elsewhereTitle": "Ostale postavke ovog odjeljka",
+		"elsewhereHint": "Ove se mijenjaju namjenskim uređivačem ili na kartici JSON.",
+		"openEditor": "Otvori",
+		"jsonOnly": "Za sada na kartici JSON",
+		"editorNames": {
+			"taxonomy": "Klasifikacija",
+			"appearance": "Izgled i jezik",
+			"wizard": "Čarobnjak prvog pokretanja",
+			"history": "Povijest",
+			"settings": "Postavke",
+			"schoolLevels": "Obrazovne razine i godine"
+		},
+		"json": {
+			"hint": "Odjeljak kako je zapisan u {{file}}. Ključevi koji počinju s _ su komentari i ostaju u datoteci.",
+			"label": "Sadržaj JSON odjeljka",
+			"parseError": "Tekst nije valjani JSON: {{message}}",
+			"notObject": "Odjeljak mora biti JSON objekt u vitičastim zagradama.",
+			"valid": "Nema problema.",
+			"checking": "Provjera…",
+			"issues": "Problemi za ispravak:"
+		},
+		"playSound": "Slušaj"
+	},
+	"history": {
+		"title": "Povijest postavki",
+		"hint": "Svaka promjena napravljena ovdje čuva prethodnu verziju datoteka koje dira (zadnjih 50 promjena).",
+		"empty": "Administracija još nije napravila nijednu promjenu.",
+		"columns": {
+			"when": "Kada",
+			"what": "Što",
+			"files": "Datoteke"
+		},
+		"revert": "Vrati",
+		"revertTitle": "Vratiti datoteke kakve su bile prije ove promjene?",
+		"revertDescription": "Vraćaju se samo vrijednosti promijenjene ovom promjenom. I vraćanje je promjena: ostaje u povijesti i može se poništiti.",
+		"reverted": "Prethodna verzija vraćena",
+		"refused": "Ova promjena je stvorila config.json: ne može se poništiti.",
+		"conflict": "Ne može se vratiti: nakon ove promjene {{keys}} su se ponovno promijenili.",
+		"notFound": "Promjena više nije u povijesti.",
+		"newFile": "novo",
+		"actions": {
+			"revert": "Vraćanje promjene od {{when}}",
+			"theme": "Boje",
+			"locale": "Jezik",
+			"logo": "Logotip knjižnice",
+			"setup": "Prvo postavljanje",
+			"section": "Odjeljak „{{section}}“",
+			"other": "Promjena ({{action}})"
+		}
+	},
+	"archive": {
+		"title": "Arhiva postavki",
+		"hint": "Cijela konfiguracija u jednoj datoteci: postavke, predlošci za ispis, listovi naljepnica, piktogrami, logotip, izvještaji i jezici (ne povijest). Služi za čuvanje kopije ili za prijenos na drugu instalaciju. „Uvezi postavke“ prihvaća i sigurnosnu kopiju ili arhivu „Izvezi sve“: iz nje uzima samo postavke, a podaci knjižnice ostaju kakvi jesu.",
+		"export": "Izvezi postavke",
+		"import": "Uvezi postavke",
+		"checking": "Provjera arhive…",
+		"from": "Arhiva od {{date}} (verzija {{version}})",
+		"fromLibrary": "Arhiva knjižnice „{{library}}“ od {{date}} (verzija {{version}})",
+		"files": "{{added}} {{added:plural; one:nova datoteka; few:nove datoteke; other:novih datoteka;}}, {{changed}} {{changed:plural; one:promijenjena; few:promijenjene; other:promijenjenih;}}, {{removed}} {{removed:plural; one:uklonjena; few:uklonjene; other:uklonjenih;}}, {{unchanged}} {{unchanged:plural; one:nepromijenjena; few:nepromijenjene; other:nepromijenjenih;}}.",
+		"fileList": "Popis datoteka",
+		"added": "novo",
+		"changed": "promijenjeno",
+		"removed": "uklonjeno",
+		"sameValues": "Postavke ostaju iste.",
+		"sections": "Mijenjaju se: {{sections}}.",
+		"errorsTitle": "Arhiva ima probleme: moraju se ispraviti prije uvoza.",
+		"apply": "Uvezi",
+		"confirmTitle": "Zamijeniti postavke onima iz arhive?",
+		"confirmDescription": "Trenutne datoteke ostaju u povijesti: „Vrati“ vraća prethodnu konfiguraciju. Podaci knjižnice (knjige, korisnici, posudbe) se ne mijenjaju.",
+		"imported": "Konfiguracija uvezena",
+		"failed": "Uvoz nije uspio",
+		"errors": {
+			"too_large": "Arhiva je prevelika (najviše {{maxMb}} MB).",
+			"not_zip": "Datoteka nije valjana ZIP arhiva.",
+			"not_archive": "Datoteka nije arhiva programa BiblioViva.",
+			"too_many_files": "Arhiva sadrži previše datoteka.",
+			"unsafe_path": "Arhiva sadrži nedopuštenu putanju: {{name}}",
+			"link": "Arhiva sadrži poveznicu, što nije dopušteno: {{name}}",
+			"unknown_file": "Arhiva sadrži datoteku koja nije dio konfiguracije: {{name}}",
+			"no_config": "Arhiva ne sadrži konfiguraciju (samo podatke knjižnice): vraća se iz Administracija → Sigurnosne kopije."
+		},
+		"exportSome": "Izvezi odabrane dijelove",
+		"chooseExport": "Odaberi što izvesti"
+	},
+	"blocks": {
+		"problems": {
+			"codeRequired": {
+				"itemTypes": "Šifra je obavezna.",
+				"sections": "Odjeljak je obavezan."
+			},
+			"codeFormat": {
+				"itemTypes": "Slova, znamenke, točka, crtica ili donja crta (najviše 32).",
+				"sections": "Velika slova ili znamenke, najviše 8."
+			},
+			"codeTaken": {
+				"itemTypes": "Šifra se ponavlja.",
+				"sections": "Odjeljak se ponavlja."
+			},
+			"labelRequired": {
+				"itemTypes": "Naziv je obavezan.",
+				"sections": "Naziv je obavezan."
+			}
+		},
+		"itemTypes": {
+			"title": "Vrste primjeraka",
+			"hint": "Knjiga, DVD, priručnik…: vrsta svakog primjerka određuje pravila posudbe. Promjena šifre premješta njegove primjerke na novu šifru.",
+			"code": "Šifra",
+			"label": "Naziv",
+			"notForLoan": "Samo za čitanje",
+			"add": "Dodaj vrstu",
+			"saved": "Vrste primjeraka spremljene"
+		},
+		"move": {
+			"title": "Kamo idu?",
+			"hint": {
+				"copies": "Neke uklonjene vrste još imaju primjerke: odabrati vrstu na koju ih premjestiti.",
+				"students": "Neki uklonjeni odjeljci još imaju učenike: odabrati odjeljak u koji ih premjestiti."
+			},
+			"row": {
+				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:primjerak; few:primjerka; other:primjeraka;}}. Premjesti na",
+				"students": "{{code}}: {{count}} {{count:plural; one:učenik; few:učenika; other:učenika;}}. Premjesti u"
+			},
+			"choose": "Odaberi…",
+			"used": {
+				"copies": "Primjerci",
+				"students": "Učenici"
+			},
+			"count": {
+				"copies": "{{count}} {{count:plural; one:primjerak; few:primjerka; other:primjeraka;}}",
+				"students": "{{count}} {{count:plural; one:učenik; few:učenika; other:učenika;}}"
+			},
+			"done": {
+				"copies": "Premješteno: {{count}} {{count:plural; one:primjerak; few:primjerka; other:primjeraka;}}.",
+				"students": "Premješteno: {{count}} {{count:plural; one:učenik; few:učenika; other:učenika;}}."
+			}
+		},
+		"barcodes": {
+			"title": "Numeriranje i pregled",
+			"counter": "Brojevi novih iskaznica",
+			"afterLegacy": "Nakon najvećeg broja postojećih iskaznica",
+			"from": "Od ovog broja nadalje:",
+			"fromNumber": "Prvi broj novih iskaznica",
+			"counterHint": "Broj koji je već bio upotrijebljen nikad se ne vraća: ako je odabrani broj niži, brojanje se nastavlja od mjesta do kojeg se došlo. Novi primjerci uvijek imaju godinu i redni broj.",
+			"nextCard": "Sljedeća iskaznica: {{code}}",
+			"nextItem": "Sljedeći primjerak: {{code}}",
+			"overrides": "Ovi predlošci za ispis sami biraju vrstu crtičnog koda, pa postavka iznad za njih ne vrijedi: {{templates}}.",
+			"saved": "Numeriranje spremljeno"
+		},
+		"itemTypeRules": {
+			"title": "Pravila po vrsti primjerka",
+			"hint": "Za svaku vrstu primjerka može se promijeniti pravilo: na primjer DVD-i na 5 dana. Pravila vrijede jednako za učenike i nastavnike.",
+			"inherit": "Prazno: vrijedi pravilo za učenike i nastavnike (sivo: učenici / nastavnici).",
+			"saved": "Pravila po vrsti primjerka spremljena"
+		},
+		"calendar": {
+			"title": "Kalendar knjižnice",
+			"weekly": "Dani zatvaranja svaki tjedan",
+			"weeklyHint": "Istaknuti dani su zatvoreni svaki tjedan.",
+			"previous": "Prethodna školska godina",
+			"next": "Sljedeća školska godina",
+			"addNational": "Dodaj državne praznike za {{year}}",
+			"autoOn": "Državni praznici su već zatvoreni automatski. Klik na otvoreni dan ga zatvara; klik na dan koji je zatvoren ručno ponovno ga otvara.",
+			"clickHint": "Klik na otvoreni dan ga zatvara; klik na dan koji je zatvoren ručno ponovno ga otvara.",
+			"open": "otvoreno",
+			"legend": {
+				"open": "Otvoreno",
+				"weekly": "Tjedno zatvaranje",
+				"national": "Državni praznik",
+				"holiday": "Zatvoreno (odabrano ovdje)",
+				"range": "Razdoblje zatvaranja"
+			},
+			"ranges": "Razdoblja zatvaranja",
+			"from": "Od",
+			"to": "Do",
+			"reason": "Razlog",
+			"badRange": "Kraj je prije početka.",
+			"addRange": "Dodaj razdoblje",
+			"saved": "Kalendar spremljen"
+		},
+		"cardTemplates": {
+			"title": "Predložak po vrsti korisnika",
+			"hint": "Učenici i nastavnici ispisuju iskaznicu zadanim predloškom odabranim iznad, osim ako se ovdje ne odabere drugi.",
+			"student": "Iskaznica učenika",
+			"teacher": "Iskaznica nastavnika",
+			"asDefault": "Isto kao zadani ({{name}})",
+			"cutLines": "Obrub u boji na svakoj iskaznici",
+			"cutLinesOn": "Crtati obrub u boji na svakoj iskaznici (obično nije potrebno: dovoljne su oznake za rezanje)",
+			"color": "Boja",
+			"width": "Debljina (mm)",
+			"sample": "Primjer linije reza",
+			"saved": "Predlošci iskaznica spremljeni"
+		},
+		"stocks": {
+			"title": "Listovi samoljepljivih naljepnica",
+			"hint": "Mjere listova naljepnica na koje se ispisuje. Crtež s desne strane prati svaku vrijednost: naljepnice koje izlaze iz lista su crvene. Nakon spremanja ispisati probnu stranicu na običnom papiru i staviti je preko lista naljepnica.",
+			"new": "Novo",
+			"toFix": "Za ispraviti",
+			"add": "Dodaj list",
+			"id": "Šifra",
+			"name": "Naziv",
+			"labelWidth": "Širina naljepnice (mm)",
+			"labelHeight": "Visina naljepnice (mm)",
+			"columns": "Stupci",
+			"rows": "Redovi",
+			"marginTop": "Gornja margina (mm)",
+			"marginLeft": "Lijeva margina (mm)",
+			"gapX": "Razmak među stupcima (mm)",
+			"gapY": "Razmak među redovima (mm)",
+			"radius": "Zaobljeni kutovi (mm)",
+			"calibration": "Ispiši probnu stranicu",
+			"inUse": "Koristi se za: {{jobs}}. Za brisanje najprije odabrati drugi list u postavkama iznad.",
+			"saveFirst": "Spremiti promjene za ispis probne stranice.",
+			"drawing": "Crtež lista A4 s {{columns}} {{columns:plural; one:stupcem; few:stupca; other:stupaca;}} i {{rows}} {{rows:plural; one:redom; few:reda; other:redova;}} naljepnica",
+			"caption": "List A4 · {{count}} {{count:plural; one:naljepnica; few:naljepnice; other:naljepnica;}}",
+			"saved": "Listovi naljepnica spremljeni",
+			"problems": {
+				"id": "Šifra može imati slova, znamenke, crtice i donje crte.",
+				"duplicate": "Drugi list već ima ovu šifru.",
+				"name": "Upisati naziv.",
+				"numbers": "Provjeriti mjere: brojevi od 0 naviše, naljepnice veće od nule, cijeli stupci i redovi.",
+				"width": "Naljepnice zauzimaju {{mm}} mm: više od širine lista A4 (210 mm).",
+				"height": "Naljepnice zauzimaju {{mm}} mm: više od visine lista A4 (297 mm).",
+				"pairRows": "Par zahtijeva paran broj redova (traka na hrptu i naljepnica jedna iznad druge)."
+			},
+			"errors": {
+				"duplicate": "Dva lista imaju istu šifru: {{details}}.",
+				"inUse": "List koji se koristi za ispis ne može se obrisati: {{details}}."
+			}
+		},
+		"backupSchedule": {
+			"title": "Sljedeće sigurnosne kopije",
+			"invalid": "Vrijeme nije valjani cron izraz (pet polja: minute, sati, dan, mjesec, dan u tjednu).",
+			"never": "Uz ovaj izraz sigurnosna kopija nikad ne kreće.",
+			"hint": "Vremena su u vremenskoj zoni knjižnice ({{timezone}}). Ako je računalo u to vrijeme isključeno, uz opciju „Sigurnosna kopija pri pokretanju ako je propuštena“ kopija se napravi pri sljedećem pokretanju; vrijeme se može pomaknuti i unutar radnog vremena knjižnice."
+		},
+		"coverProviders": {
+			"off": "Korice su isključene (Korice knjiga, iznad): ne pretražuje se nijedan izvor.",
+			"title": "Odakle se preuzimaju korice",
+			"hint": "Izvori se isprobavaju redom dok jedan ne pronađe koricu; svaki se može isključiti pojedinačno.",
+			"names": {
+				"amazon": "Amazon",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books"
+			},
+			"googleKey": "Google Books zahtijeva API ključ: upisati ga u postavke „Podaci o knjigama“; bez ključa ovaj izvor se preskače.",
+			"saved": "Izvori korica spremljeni"
+		},
+		"z3950Targets": {
+			"title": "Z39.50 katalozi",
+			"hint": "Katalozi iz kojih se preuzimaju podaci o knjigama. „Provjeri vezu“ izvodi pravo pretraživanje s upisanim vrijednostima, bez njihova spremanja.",
+			"id": "Šifra",
+			"name": "Naziv",
+			"host": "Adresa poslužitelja",
+			"port": "Port",
+			"database": "Baza podataka",
+			"syntax": "Format zapisa",
+			"charset": "Kodiranje znakova",
+			"elements": "Elementi",
+			"elementsHint": "Obično F (cijeli zapis).",
+			"add": "Dodaj katalog",
+			"isDefault": "Ovo je zadani katalog: za brisanje najprije odabrati drugi iznad.",
+			"saved": "Katalozi spremljeni",
+			"problems": {
+				"id": "Šifra mora biti jedinstvena: slova, znamenke, crtice.",
+				"required": "Naziv, baza podataka, kodiranje i elementi su obavezni.",
+				"host": "Adresa može imati slova, znamenke, točke i crtice.",
+				"words": "Baza podataka, kodiranje i elementi su jedna riječ svaki, bez razmaka.",
+				"port": "Port je broj od 1 do 65535."
+			},
+			"test": {
+				"button": "Provjeri vezu",
+				"running": "Provjera u tijeku…",
+				"ok": "Katalog odgovara: {{hits}} {{hits:plural; one:rezultat; few:rezultata; other:rezultata;}} za {{ms}} ms.",
+				"unreachable": "Katalog ne odgovara: provjeriti adresu, port i bazu podataka.",
+				"timeout": "Katalog nije odgovorio na vrijeme.",
+				"protocol": "Katalog je odgovorio pogreškom: provjeriti bazu podataka, format i kodiranje.",
+				"spawn": "Program yaz-client nije dostupan na poslužitelju."
+			}
+		},
+		"barcodeFormats": {
+			"title": "Format šifri",
+			"hint": "Kako su sastavljene šifre novih primjeraka i novih iskaznica. Šifre koje su već otisnute nastavljaju raditi: zamijenjeni format ostaje među prethodnim formatima.",
+			"preset": "Gotovi formati",
+			"presets": {
+				"standard": "Standardni (2026-E0267, U012345)",
+				"classic": "Klasični (2026-02678, 0000012344)",
+				"prefix": "Sa slovom ispred (L-2602670, T0123455)",
+				"custom": "Prilagođeni"
+			},
+			"check": "Kontrolni znak",
+			"checks": {
+				"mod23": "Slovo (mod 23)",
+				"damm": "Znamenka (Damm)",
+				"luhn": "Znamenka (Luhn)"
+			},
+			"checkHint": "Otkriva šifru pročitanu ili upisanu pogrešno. Slovo je najsigurnije i čini iskaznice na prvi pogled različitima od šifri primjeraka.",
+			"advanced": "Napredno: formati jedan po jedan",
+			"tokens": "YYYY ili YY = godina, N = znamenke rednog broja, C = kontrolni znak, {lib} = šifra knjižnice, - = crtica, velika slova u navodnicima ('T'). Slova I, O i Q nisu dopuštena.",
+			"pattern": {
+				"item": "Format primjeraka",
+				"patron": "Format iskaznica"
+			},
+			"libraryCode": "Šifra knjižnice",
+			"libraryCodeHint": "Samo ako više knjižnica s odvojenim instalacijama mora imati različite šifre: koristi se s {lib} u formatu.",
+			"plainMaxLength": "Znamenke starih jednostavnih brojeva",
+			"plainHint": "Najveći broj znamenki iskaznica i primjeraka iz prethodnog sustava koji nemaju format (0 ako ih nema).",
+			"plainLongest": "Najdulji jednostavan broj u arhivu ima {{digits}} {{digits:plural; one:znamenku; few:znamenke; other:znamenki;}}.",
+			"distinct": "Primjerci i iskaznice ne mogu se zamijeniti.",
+			"confusable": "S ovim formatima primjerci i iskaznice mogli bi se zamijeniti:",
+			"warnings": "{{count}} {{count:plural; one:upozorenje; few:upozorenja; other:upozorenja;}}",
+			"inUse": "Format {{pattern}} još ima {{count}} {{count:plural; one:šifru; few:šifre; other:šifri;}} u arhivu: ne može se ukloniti.",
+			"kinds": {
+				"item": "primjerci",
+				"card": "iskaznice"
+			},
+			"heading": {
+				"item": "Primjerci",
+				"patron": "Iskaznice"
+			},
+			"examples": "Primjeri novih šifri:",
+			"currentCount": "Šifre ovog formata u arhivu: {{count}}",
+			"count": "{{count}} {{count:plural; one:šifra; few:šifre; other:šifri;}}",
+			"noCheck": "bez kontrole",
+			"remove": "Ukloni",
+			"retired": "Formati korišteni u prošlosti",
+			"legacy": "Šifre prethodnog sustava",
+			"noLegacy": "Nema.",
+			"addLegacy": "Dodaj stari format",
+			"try": "Isprobaj šifru",
+			"tryHint": "Šifra upisana ili pročitana ovdje prepoznaje se prema formatima iznad, čak i prije spremanja.",
+			"tried": {
+				"item": "{{value}}: šifra primjerka",
+				"legacy_item": "{{value}}: stara šifra primjerka",
+				"card": "{{value}}: broj iskaznice",
+				"isbn": "{{value}}: ISBN",
+				"ambiguous": "{{value}}: stari jednostavni broj (traži se među primjercima i iskaznicama)",
+				"invalid": "{{value}}: nije prepoznato ili je kontrolni znak pogrešan"
+			},
+			"saved": "Formati šifri spremljeni",
+			"patternErrors": {
+				"empty": "Prazan format ({{kind}})",
+				"tooLong": "{{pattern}}: predugo",
+				"badToken": "{{pattern}}: sadrži neočekivani znak",
+				"badLetter": "{{pattern}}: slovo nije dopušteno (samo velika, bez I, O, Q)",
+				"unclosedQuote": "{{pattern}}: nedostaje zatvarajući navodnik",
+				"year": "{{pattern}}: godina se piše YYYY ili YY",
+				"twoYears": "{{pattern}}: godina se pojavljuje dvaput",
+				"twoCounters": "{{pattern}}: redni broj mora biti jedna skupina N",
+				"noCounter": "{{pattern}}: nedostaje redni broj (N)",
+				"twoChecks": "{{pattern}}: kontrolni znak se pojavljuje dvaput",
+				"checkWithoutAlgorithm": "{{pattern}}: ima C, ali nije odabrana kontrola",
+				"algorithmWithoutCheck": "{{pattern}}: nedostaje C, mjesto kontrolnog znaka",
+				"noLibraryCode": "{{pattern}}: sadrži {lib}, ali je šifra knjižnice prazna",
+				"badLibraryCode": "Šifra knjižnice smije sadržavati samo znamenke i velika slova (ne I, O, Q)"
+			},
+			"issues": {
+				"overlap": "{{pattern}} ({{kind}}) i {{other}} ({{otherKind}}) mogu dati istu šifru, na primjer {{example}}",
+				"overlapWithoutDash": "{{pattern}} ({{kind}}) i {{other}} ({{otherKind}}) zamjenjuju se kad čitač izgubi crticu, na primjer {{example}}",
+				"overlapLegacy": "Stare šifre {{pattern}} ({{kind}}) i {{other}} ({{otherKind}}) imaju isti oblik: traže se u oba arhiva",
+				"overlapPlain": "{{pattern}} ({{kind}}) može dati šifru jednaku starom jednostavnom broju, na primjer {{example}}",
+				"overlapIsbn": "{{pattern}} ({{kind}}) može dati šifru jednaku ISBN-u, na primjer {{example}}",
+				"overlapIsbn10": "{{pattern}} ({{kind}}) ima oblik ISBN-10 upisanog bez crtica: vrijedi broj iskaznice",
+				"lookAlike": "{{pattern}} ({{kind}}) i {{other}} ({{otherKind}}) previše se sliče: potrebna je razlika u duljini od najmanje 2 znaka, slovo na drugom mjestu ili crtica na drugom mjestu"
+			}
+		},
+		"schoolLevels": {
+			"title": "Vrste škola i godine",
+			"hint": "Godine škole redom kojim se pohađaju, razvrstane po vrsti škole. Šifra ostaje na učenicima: pri uklanjanju ili promjeni šifre godine u uporabi bira se gdje će se premjestiti njezini učenici i razredi.",
+			"preset": "Gotov model",
+			"presetApply": "Upotrijebi ovaj model",
+			"presetHint": "Zamjenjuje vrste škola i godine ispod onima iz modela; ništa se ne sprema dok se ne pritisne „Spremi“.",
+			"custom": "Prilagođeno",
+			"stages": "Vrste škola",
+			"stageCode": "Šifra",
+			"stageName": "Naziv",
+			"stageLabel": "Kako se piše razred",
+			"addStage": "Dodaj vrstu škole",
+			"stageLabelHint": "„Kako se piše razred“ jedne vrste škole vrijedi za njezine godine umjesto onoga za cijelu školu; bez {group} razred je sama godina (Q1, bez odjeljaka). Prazno: kao ostatak škole.",
+			"levels": "Godine",
+			"levelCode": "Šifra",
+			"levelLabel": "U razredu",
+			"levelName": "Naziv",
+			"levelStage": "Vrsta škole",
+			"levelNext": "Sljedeća godina",
+			"levelAliases": "Ostali nazivi",
+			"levelAliasesPlaceholder": "Odvojeni zarezima",
+			"nextFollowing": "Sljedeća godina",
+			"nextLeaves": "Izlazi iz škole",
+			"nextChoices": "Izbor između više godina",
+			"choiceAdd": "Dodaj izbor…",
+			"choiceRemove": "Ukloni {{name}}",
+			"choiceDefault": "zadano",
+			"addLevel": "Dodaj godinu",
+			"inUse": "U uporabi",
+			"moveUp": "Pomakni gore",
+			"moveDown": "Pomakni dolje",
+			"example": "Primjer: {{label}}",
+			"saved": "Vrste škola i godine spremljene",
+			"problems": {
+				"code": "Šifre: slova, znamenke i crtica (do 8 za godinu), sve različite.",
+				"required": "Oznaka i naziv su obavezni.",
+				"template": "„Kako se piše razred“ jedne vrste škole mora sadržavati {level}.",
+				"stageUsed": "Vrsta škole s godinama ne može se ukloniti.",
+				"structure": "Struktura nije valjana: {{details}}"
+			},
+			"move": {
+				"title": "Kamo idu učenici i razredi?",
+				"hint": "Neke uklonjene godine još imaju učenike ili razrede. Za svaku odabrati godinu u koju se premještaju; posudbe zadržavaju razred u kojem su napravljene.",
+				"level": "{{name}}: {{pupils}} {{pupils:plural; one:učenik; few:učenika; other:učenika;}}, {{classes}} {{classes:plural; one:razred; few:razreda; other:razreda;}}",
+				"choose": "Odaberi godinu…",
+				"confirm": "Premjesti i spremi",
+				"done": "Premješteno: {{pupils}} {{pupils:plural; one:učenik; few:učenika; other:učenika;}} i {{classes}} {{classes:plural; one:razred; few:razreda; other:razreda;}}."
+			}
+		}
+	},
+	"templates": {
+		"title": "Predlošci za ispis",
+		"hint": "Mape predložaka za iskaznice, naljepnice, potvrde i opomene. Predlošci koji dolaze uz BiblioViva mogu se prilagoditi (napravi se kopija s istim nazivom) ili duplicirati pod drugim nazivom; slike i fontovi kopije učitavaju se ovdje. Svaka radnja vidi se u povijesti konfiguracije i može se poništiti.",
+		"source": {
+			"builtin": "Dolazi uz BiblioViva",
+			"customised": "Prilagođeno",
+			"added": "Dodano"
+		},
+		"broken": "Ima pogreške",
+		"customise": "Prilagodi",
+		"duplicate": "Dupliciraj",
+		"rename": "Preimenuj",
+		"restore": "Vrati original",
+		"usedBy": "Koristi: {{settings}}.",
+		"unused": "Ne koristi nijedna postavka.",
+		"assets": "Slike i fontovi ({{count}})",
+		"noAssets": "Nema datoteka.",
+		"usedIn": "koristi se u {{files}}",
+		"assetUnused": "ne koristi se",
+		"upload": "Učitaj datoteku",
+		"uploadHint": "PNG, JPEG, WebP, GIF, SVG ili fontovi WOFF2, WOFF, TTF; najviše {{maxMb}} MB.",
+		"builtinAssets": "Za promjenu slika predloška koji dolazi uz BiblioViva, prvo ga prilagoditi.",
+		"files": "Datoteke predloška ({{count}})",
+		"filesHint": "Sadržaj HTML-a i CSS-a uređuje se vizualnim uređivačem predložaka.",
+		"done": {
+			"duplicate": "Predložak dupliciran",
+			"customise": "Predložak prilagođen: kopija se može mijenjati",
+			"rename": "Predložak preimenovan",
+			"delete": "Predložak obrisan",
+			"upload": "{{name}} učitano",
+			"removeAsset": "{{name}} obrisano"
+		},
+		"errors": {
+			"notFound": "Predložak ili datoteka nije pronađena.",
+			"badName": "Neispravan naziv: male slove, znamenke, crtice i donje crte.",
+			"exists": "Predložak s ovim nazivom već postoji.",
+			"builtin": "Predlošci koji dolaze uz BiblioViva ne mijenjaju se: prilagoditi ih ili duplicirati.",
+			"inUse": "Predložak koristi: {{details}}. Prvo odabrati drugi predložak.",
+			"badAsset": "„{{name}}“ nije dopuštena datoteka (PNG, JPEG, WebP, GIF, SVG bez skripti, WOFF2, WOFF, TTF).",
+			"assetTooLarge": "„{{name}}“ je prevelika: najviše {{maxMb}} MB.",
+			"assetInUse": "Datoteka se koristi u: {{details}}."
+		},
+		"dialog": {
+			"name": "Naziv mape",
+			"nameHint": "Male slove, znamenke, crtice i donje crte.",
+			"badName": "Upotrijebiti samo male slove, znamenke, crtice i donje crte.",
+			"taken": "Predložak s ovim nazivom već postoji.",
+			"duplicate": {
+				"title": "Dupliciraj {{name}}",
+				"hint": "Napravi se kopija sa svim datotekama, spremna za izmjenu.",
+				"confirm": "Dupliciraj"
+			},
+			"customise": {
+				"title": "Prilagodi {{name}}",
+				"hint": "Napravi se kopija s istim nazivom koja zauzima mjesto originala; original ostaje dostupan za povratak.",
+				"confirm": "Prilagodi"
+			},
+			"rename": {
+				"title": "Preimenuj {{name}}",
+				"hint": "Postavke koje koriste ovaj predložak slijedit će novi naziv.",
+				"confirm": "Preimenuj"
+			},
+			"delete": {
+				"title": "Obriši {{name}}",
+				"hint": "Mapa i njezine datoteke se brišu; ako je to kopija predloška koji dolazi uz BiblioViva, ponovno se koristi original. Može se poništiti iz povijesti.",
+				"confirm": "Obriši"
+			}
+		},
+		"edit": "Uredi"
+	},
+	"languages": {
+		"title": "Jezični paketi",
+		"hint": "Za upotrebu BiblioViva na drugom jeziku: preuzeti engleski ili talijanski primjer, prevesti tekstove JSON datoteka ostavljajući nepromijenjene ključeve i oznake mjesta u dvostrukim vitičastim zagradama, upisati naziv jezika u pack.json i učitati zip. Paket s pogreškama ne instalira se; nedostajući tekstovi prikazuju se na engleskom. Jezik se odabire u Prikaz i jezik.",
+		"none": "Nijedan paket nije instaliran.",
+		"valid": "Valjan",
+		"errorsCount": "{{count}} {{count:plural; one:pogreška; few:pogreške; other:pogrešaka;}}",
+		"warnings": "{{count}} {{count:plural; one:tekst koji nedostaje ili je višak; few:teksta koji nedostaju ili su višak; other:tekstova koji nedostaju ili su višak;}}",
+		"inUse": "U uporabi",
+		"download": "Preuzmi",
+		"report": "Rezultat provjere",
+		"upload": "Učitaj paket (zip)",
+		"uploadHint": "Zip s pack.json i datotekama jezika, unutar mape s nazivom šifre (na primjer de/); najviše {{maxMb}} MB.",
+		"examples": "Primjeri za preuzimanje:",
+		"installed": "Jezik instaliran: {{name}}",
+		"removed": "Paket obrisan",
+		"removeTitle": "Obrisati paket {{code}}?",
+		"removeHint": "Mapa jezika se briše. Može se poništiti iz povijesti konfiguracije.",
+		"errors": {
+			"notAZip": "Datoteka nije zip.",
+			"tooLarge": "Zip je prevelik: najviše {{maxMb}} MB.",
+			"badLayout": "Zip smije sadržavati samo .json datoteke jezika, unutar jedne mape sa šifrom jezika. {{details}}",
+			"badCode": "Neispravna šifra jezika: {{details}} (na primjer de, fr, pt-BR).",
+			"builtIn": "Engleski i talijanski su ugrađeni i ne zamjenjuju se.",
+			"invalid": "Paket ima pogreške i nije instaliran: {{details}}",
+			"inUse": "To je jezik u uporabi: prvo odabrati drugi.",
+			"notFound": "Paket nije pronađen.",
+			"unavailable": "Popis jezika ili paket nije se mogao preuzeti. Provjeriti internetsku vezu ili ručno učitati zip.",
+			"checksum": "Preuzeti paket je oštećen i nije instaliran. Pokušati ponovno."
+		},
+		"release": {
+			"title": "Jezici za instalaciju",
+			"hint": "Jezici objavljeni uz ovu verziju BiblioViva. Popis se čita s interneta, a svaki paket se provjerava prije instalacije.",
+			"percent": "{{percent}}% prevedeno",
+			"machine": "Automatski prijevod, nije ga pročitao izvorni govornik",
+			"reviewed": "Prijevod pročitao izvorni govornik",
+			"install": "Instaliraj",
+			"again": "Instaliraj ponovno",
+			"installedBadge": "Instalirano",
+			"page": "Stranica izdanja, za ručno preuzimanje paketa i učitavanje ispod",
+			"unavailable": "Popis jezika nije dostupan: nema internetske veze ili ova verzija još nema popis. Učitavanje zipa ispod ipak radi."
+		}
+	},
+	"reports": {
+		"title": "Biblioteka izvještaja",
+		"hint": "Izvještaji koji dolaze uz BiblioViva i izvještaji škole. Za prilagodbu jednog preuzeti ga, izmijeniti i učitati: s istom šifrom (id) zauzima mjesto originala. Prije instalacije provjeravaju se format, sigurnost upita te tablice i stupci koje koristi. Vodič za pisanje izvještaja nalazi se u docs/reports-authoring.md.",
+		"upload": "Učitaj izvještaj (JSON)",
+		"try": "Isprobaj",
+		"download": "Preuzmi",
+		"problems": "Ove datoteke nisu učitane:",
+		"installed": "Izvještaj {{id}} instaliran",
+		"replaced": "Izvještaj {{id}} zamijenjen",
+		"removed": "Datoteka obrisana",
+		"removeTitle": "Obrisati {{file}}?",
+		"removeHint": "Datoteka se briše iz konfiguracije. Može se poništiti iz povijesti.",
+		"restoreHint": "Briše se školska verzija: ponovno se koristi izvještaj koji dolazi uz BiblioViva. Može se poništiti iz povijesti.",
+		"origin": {
+			"builtin": "Dolazi uz BiblioViva",
+			"customised": "Prilagođeno",
+			"added": "Dodano"
+		},
+		"errors": {
+			"tooLarge": "Datoteka je prevelika: najviše {{maxKb}} KB.",
+			"badJson": "Datoteka nije valjan JSON: {{details}}",
+			"invalid": "Definicija nije valjana: {{details}}",
+			"sql": "Upit ne radi na ovoj bazi podataka: {{details}}",
+			"notFound": "Datoteka nije pronađena.",
+			"reservedId": "„new“ ne može biti šifra izvještaja."
+		},
+		"new": "Novi izvještaj",
+		"edit": "Uredi",
+		"duplicate": "Dupliciraj",
+		"editor": {
+			"editTitle": "Uredi izvještaj",
+			"newTitle": "Novi izvještaj",
+			"copySuffix": "kopija",
+			"builtinHint": "Ovo je izvještaj koji dolazi uz BiblioViva: spremanjem se stvara prilagođena kopija škole, s istim nazivom. „Vrati original“ u knjižnici je uklanja.",
+			"id": "Šifra izvještaja",
+			"category": "Kategorija",
+			"title": {
+				"it": "Naslov (talijanski)",
+				"en": "Naslov (engleski)"
+			},
+			"description": {
+				"it": "Opis (talijanski)",
+				"en": "Opis (engleski)"
+			},
+			"restricted": "Samo za administratore",
+			"tabs": {
+				"label": "Način uređivanja",
+				"guided": "Vođeno",
+				"sql": "SQL"
+			},
+			"sqlOnly": "Ovaj izvještaj je napisan u SQL-u: uređuje se na kartici SQL.",
+			"source": "Podaci",
+			"rows": "Redovi",
+			"rows2": "Redovi, druga razina",
+			"columns": "Stupci",
+			"columnsHint": "S stupcima izvještaj postaje tablica s dvostrukim ulazom, sa zbrojevima.",
+			"none": "— nijedan —",
+			"totals": "Zbrojevi",
+			"totalsOptions": {
+				"both": "Redak i stupac zbrojeva",
+				"rows": "Stupac zbrojeva",
+				"columns": "Redak zbrojeva",
+				"none": "Bez zbrojeva"
+			},
+			"sort": "Poredak",
+			"sortDimension": "Redom kao redovi",
+			"sortMeasure": "Od najveće vrijednosti",
+			"measures": "Vrijednosti",
+			"oneMeasure": "Tablica s dvostrukim ulazom prikazuje jednu vrijednost.",
+			"filters": "Filtri",
+			"filterModes": {
+				"off": "Bez filtra",
+				"ask": "Traži se pri otvaranju",
+				"fixed": "Fiksno"
+			},
+			"value": "Vrijednost",
+			"chart": "Grafikon",
+			"charts": {
+				"bar": "Stupci",
+				"line": "Linije",
+				"doughnut": "Prstenasti"
+			},
+			"compiledHint": "Vođeni izvještaj postaje ovaj SQL. Za pisanje ručno koristiti „Uredi kao SQL“: poslije se ne vraća na vođeno uređivanje.",
+			"previewFirst": "Pritisnuti „Pregled“ za prikaz SQL-a.",
+			"convert": "Uredi kao SQL",
+			"convertTitle": "Pretvoriti izvještaj u SQL?",
+			"convertHint": "Izvještaj postaje SQL izvještaj s istim stupcima i parametrima. Više se ne može uređivati na vođenoj kartici.",
+			"converted": "Izvještaj je sada u SQL-u",
+			"sqlHint": "Jedna naredba SELECT ili WITH, s parametrima kao :naziv.",
+			"json": {
+				"params": "Parametri (JSON)",
+				"columns": "Stupci (JSON)",
+				"chart": "Grafikon (JSON, neobavezno)",
+				"pivot": "Tablica s dvostrukim ulazom (JSON, neobavezno)"
+			},
+			"jsonHint": "U formatu opisanom u vodiču za izvještaje.",
+			"preview": "Pregled",
+			"runPreview": "Pregled",
+			"previewHint": "Pregled izvršava izvještaj sa zadanim vrijednostima parametara (najviše 200 redaka).",
+			"save": "Spremi",
+			"saved": "Izvještaj „{{id}}“ spremljen",
+			"back": "Natrag u biblioteku",
+			"jsonInvalid": "Ispraviti dijelove JSON-a označene crvenom bojom prije spremanja."
+		}
+	},
+	"designer": {
+		"title": "Uredi {{name}}",
+		"design": "Izgled",
+		"code": "Kod",
+		"preview": "Pregled",
+		"front": "Prednja strana",
+		"back": "Stražnja strana",
+		"faces": "Strane ili naljepnice",
+		"zoom": "Povećanje",
+		"grid": "Mreža",
+		"gridSteps": {
+			"s0": "Nijedna (slobodno)",
+			"s05": "0,5 mm",
+			"s1": "1 mm",
+			"s2": "2 mm",
+			"s25": "2,5 mm",
+			"s5": "5 mm",
+			"s10": "10 mm"
+		},
+		"files": "Datoteke",
+		"problems": "Predložak se ovako ne može ispisati:",
+		"saved": "Predložak spremljen",
+		"notEditable": "Ovaj predložak se ovdje ne može uređivati: predlošci koji dolaze uz BiblioViva prvo se moraju prilagoditi.",
+		"canvasHint": "Klik na okvir ga odabire, povlačenje ga pomiče, kut ga mijenja veličinu: položaji i veličine hvataju se za odabranu mrežu. Tipkovnicom strelice ga pomiču za jedan korak mreže (uz Shift oko 5 mm, uvijek na mreži), a Delete ga briše.",
+		"flowHint": "{{count}} {{count:plural; one:element ove strane prati raspored iz stilskog lista; few:elementa ove strane prate raspored iz stilskog lista; other:elemenata ove strane prate raspored iz stilskog lista;}} (crtkani obris): pri prvom pomicanju položaji svih njih upisuju se u datoteku, na mjestu gdje se nalaze sada.",
+		"lockedHint": "{{count}} {{count:plural; one:dio ove strane nalazi se; few:dijela ove strane nalaze se; other:dijelova ove strane nalaze se;}} unutar Mustache odjeljka: {{count:plural; one:uređuje se; few:uređuju se; other:uređuju se;}} na kartici „Kod“.",
+		"noStock": "Nijedan list naljepnica ne koristi ovu varijantu: crtež se prikazuje bez pregleda.",
+		"codeHint": "Crtež i kod uređuju iste datoteke: svaka promjena napravljena ovdje vidi se i u crtežu, i obrnuto.",
+		"add": "Dodaj",
+		"newText": "Tekst",
+		"noImages": "Za dodavanje slika prvo ih učitati među slikama predloška.",
+		"types": {
+			"field": "Polje",
+			"text": "Tekst",
+			"barcode": "Crtični kod",
+			"photo": "Fotografija",
+			"pictogram": "Piktogram",
+			"image": "Slika",
+			"box": "Okvir",
+			"html": "Slobodan HTML",
+			"other": "Element"
+		},
+		"fields": {
+			"library_name": "Naziv knjižnice",
+			"patron_first_name": "Ime",
+			"patron_last_name": "Prezime",
+			"patron_card_number": "Broj iskaznice",
+			"patron_class_label": "Razred i odjeljak",
+			"patron_level_label": "Razred (godina)",
+			"patron_group": "Odjeljak",
+			"school_year": "Školska godina",
+			"issued_on": "Datum izdavanja",
+			"valid_until": "Vrijedi do",
+			"item_barcode": "Crtični kod (tekst)",
+			"item_call_number": "Signatura",
+			"call_head": "Signatura: prvi redak",
+			"call_rest": "Signatura: drugi redak",
+			"biblio_title_short": "Kratki naslov",
+			"biblio_author_short": "Kratki autor",
+			"biblio_publication_year": "Godina izdanja",
+			"biblio_series": "Serija",
+			"biblio_series_number": "Broj u seriji",
+			"classification_code": "Šifra klasifikacije",
+			"classification_label": "Naziv klase",
+			"classification_reading_level": "Razina čitanja",
+			"item_item_type": "Vrsta primjerka"
+		},
+		"field": "Polje",
+		"text": "Tekst",
+		"image": "Slika",
+		"content": "HTML sadržaj",
+		"contentHint": "Okvir se pomiče i oblikuje iz crteža; sadržaj se piše u HTML-u s Mustache poljima, kao u datotekama predloška.",
+		"inherited": "Zadano",
+		"unplacedHint": "Ovaj element raspoređuje stilski list: pomicanjem se njegov položaj i položaji ostalih elemenata strane upisuju u datoteku.",
+		"geometry": {
+			"x": "X (mm)",
+			"y": "Y (mm)",
+			"w": "Širina",
+			"h": "Visina"
+		},
+		"fontSize": "Veličina (pt)",
+		"font": "Font",
+		"fonts": {
+			"sans": "Bez serifa",
+			"serif": "Sa serifima",
+			"mono": "Jednake širine"
+		},
+		"bold": "Podebljano",
+		"italic": "Kurziv",
+		"uppercase": "Velika slova",
+		"align": "Poravnanje",
+		"aligns": {
+			"left": "Lijevo",
+			"center": "Sredina",
+			"right": "Desno"
+		},
+		"color": "Boja",
+		"border": "Obrub",
+		"borderColor": "Boja obruba",
+		"fill": "Ispuna",
+		"fillColor": "Boja ispune",
+		"backward": "Pošalji u pozadinu",
+		"forward": "Pošalji u prednji plan",
+		"background": "Pozadina strane",
+		"backgroundColor": "Boja pozadine",
+		"backgroundImage": "Slika pozadine",
+		"noImage": "Nijedna",
+		"chooseHint": "Odabrati okvir na crtežu da bi se promijenio.",
+		"modes": "Prikaz predloška",
+		"safeArea": "Sigurno područje: držati tekst i fotografije unutar crtkane linije, 2 mm od ruba (pri ispisu sprijeda i straga stražnja strana se može pomaknuti za milimetar).",
+		"chooseBackground": "Odabrati pozadinu",
+		"uploadBackground": "Učitaj sliku",
+		"backgroundsTitle": "Gotove pozadine",
+		"backgroundsHint": "Svaka pozadina ide malo preko iskaznice, po 3 mm sa svake strane: dodatni dio se odreže.",
+		"backgroundAlt": "Pozadina {{name}}",
+		"backgroundAdded": "Pozadina dodana strani: spremiti da se zadrži.",
+		"backgroundFailed": "Pozadina nije dodana.",
+		"cardSize": "Veličina iskaznice",
+		"cardWidth": "Širina (mm)",
+		"cardHeight": "Visina (mm)",
+		"cardRotate": "Zakreni: uspravno ili vodoravno",
+		"cardDefault": "Vrati zadanu veličinu ({{width}} × {{height}} mm)",
+		"cardDefaultHint": "To je zadana veličina postavki (Postavke → Iskaznice): ovdje se mijenja samo za ovaj predložak.",
+		"cardTooLarge": "Iskaznica od {{width}} × {{height}} mm ne stane na list A4: najviše {{maxWidth}} × {{maxHeight}} mm, jer prednja i stražnja strana stoje jedna pored druge unutar margina."
+	},
+	"parts": {
+		"groups": {
+			"data": "Podaci knjižnice",
+			"settings": "Postavke",
+			"config": "Klasifikacija, predlošci i drugo"
+		},
+		"all": "Sve",
+		"none": "Ništa",
+		"accountsConfirm": {
+			"title": "Uvesti i račune i lozinke?",
+			"description": "Računi osoblja i njihove lozinke iz arhiva zamjenjuju sadašnje: tko se sada prijavljuje, više se neće moći s današnjim vjerodajnicama. Ako nisu potrebni, ostaviti stavku neoznačenom.",
+			"confirm": "Uvezi i račune"
+		},
+		"needs": "„{{part}}“ za vraćanje trebaju i: {{needs}}.",
+		"data": {
+			"patrons": "Korisnici",
+			"catalog": "Katalog i primjerci",
+			"loans": "Posudbe i povijest",
+			"printLists": "Popisi za ispis",
+			"photos": "Fotografije korisnika",
+			"covers": "Korice",
+			"notes": "Bilješke osoblja",
+			"dates": "Datumi kalendara",
+			"audit": "Dnevnik aktivnosti"
+		},
+		"config": {
+			"classification": "Klasifikacija i piktogrami",
+			"stocks": "Listovi naljepnica",
+			"calendar": "Kalendar",
+			"reports": "Izvještaji",
+			"cardTemplates": "Predlošci iskaznica",
+			"pairTemplates": "Predlošci parova naljepnica",
+			"barcodeTemplates": "Predlošci naljepnica s crtičnim kodom",
+			"spineTemplates": "Predlošci traka na hrptu",
+			"slipTemplates": "Predlošci potvrda i opomena",
+			"languages": "Jezični paketi",
+			"logo": "Logo knjižnice"
+		}
+	}
+}

@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "打印",
+		"newPatrons": "新建读者清单",
+		"newItems": "新建图书清单",
+		"newPatronsTitle": "新建读者清单",
+		"newItemsTitle": "新建图书清单",
+		"name": "清单名称",
+		"defaultName": "{{date}} 清单 {{n}}",
+		"kind": "类型",
+		"kinds": {
+			"all": "全部",
+			"patrons": "读者",
+			"items": "图书"
+		},
+		"classes": "班级",
+		"classesHint": "整个班级的读者证，无需为其建立清单。",
+		"classKind": "班级",
+		"count": "{{count}} {{count:plural; other:项;}}",
+		"empty": "没有清单。清单可在此处建立，或在读者页面和目录页面使用“添加到清单”。",
+		"lastPrinted": "打印于 {{when}}",
+		"neverPrinted": "从未打印",
+		"open": "打开",
+		"created": "清单已建立",
+		"deleted": "清单已删除",
+		"deleteTitle": "删除清单“{{name}}”？",
+		"deleteDescription": "各项将从清单中移除；读者仍保留在档案中。"
+	},
+	"list": {
+		"rename": "重命名",
+		"renamed": "清单已重命名",
+		"print": "打印读者证",
+		"markPrinted": "标记为已打印",
+		"marked": "已将 {{count}} {{count:plural; other:张读者证;}}标记为已打印",
+		"clearAfter": "打印后清空清单",
+		"clear": "清空",
+		"cleared": "清单已清空",
+		"clearTitle": "清空清单？",
+		"clearDescription": "所有项目都将移出清单；读者仍保留在档案中。",
+		"delete": "删除",
+		"entries": "清单中有 {{count}} {{count:plural; other:位读者;}}",
+		"empty": "清单为空：可用快速筛选、扫码枪或在读者页面添加读者。",
+		"remove": "从清单中移除",
+		"moveUp": "上移",
+		"moveDown": "下移",
+		"dragHint": "拖动各项可更改打印顺序。",
+		"removed": "已从清单中移除",
+		"columns": {
+			"position": "序号",
+			"printed": "已打印读者证"
+		},
+		"printedYes": "是",
+		"printedNo": "否",
+		"quick": {
+			"title": "用筛选添加",
+			"hint": "已在清单中的读者不会重复添加。",
+			"type": "类型",
+			"any": "任意",
+			"stage": "学段",
+			"level": "年级",
+			"withoutPrintedCard": "仅限从未打印读者证的读者",
+			"withoutPhoto": "仅限没有照片的读者",
+			"importBatch": "导入",
+			"anyBatch": "— 无 —",
+			"batchLabel": "编号 {{id}} · {{file}} · 新增 {{created}}",
+			"createdAfter": "创建日期（从）",
+			"add": "添加到清单",
+			"added": "已添加 {{added}} 项，{{skipped}} 项已在清单中",
+			"none": "没有符合筛选条件的读者。",
+			"pendingLabels": "待打印的标签",
+			"pendingAny": "— 所有复本 —",
+			"acquiredFrom": "入藏日期（从）",
+			"acquiredTo": "至",
+			"genre": "体裁",
+			"itemType": "复本类型",
+			"batchLabelItems": "编号 {{id}} · {{file}} · 新增 {{created}} {{created:plural; other:册;}}",
+			"noneItems": "没有符合筛选条件的复本。",
+			"addedItems": "已添加 {{added}} 册，{{skipped}} 册已在清单中",
+			"nonfictionClass": "非小说类别"
+		},
+		"scan": {
+			"title": "用扫码枪添加",
+			"hint": "扫描每位读者的读者证：立即添加。已在清单中的读者证将被忽略。",
+			"added": "已添加 {{name}}",
+			"duplicate": "{{name}} 已在清单中",
+			"unknown": "没有读者证号为 {{card}} 的读者",
+			"notCard": "扫描的代码不是读者证",
+			"hintItems": "扫描每个复本的条码（例如沿书架逐本扫描）：立即添加。已在清单中的复本将被忽略。",
+			"addedItem": "已添加 {{title}}（{{barcode}}）",
+			"duplicateItem": "{{title}}（{{barcode}}）已在清单中",
+			"unknownItem": "没有条码为 {{barcode}} 的复本",
+			"notItem": "扫描的代码不是复本"
+		},
+		"printLabels": "打印标签",
+		"markPrintedKind": "标签已打印",
+		"markedItems": "已将 {{count}} {{count:plural; other:册;}}标记为已打印",
+		"entriesItems": "清单中有 {{count}} {{count:plural; other:册;}}",
+		"emptyItems": "清单为空：可用快速筛选、扫码枪或从目录中添加复本。",
+		"clearDescriptionItems": "所有项目都将被移除；复本仍保留在目录中。"
+	},
+	"basket": {
+		"label": "打印清单",
+		"labelToPrint": "打印清单：{{count}} 项待打印",
+		"entry": "{{name}}（{{count}}）",
+		"none": "没有可打印的清单",
+		"all": "全部清单"
+	},
+	"addTo": {
+		"button": "添加到清单",
+		"selected": "将所选项添加到清单",
+		"title": "添加到打印清单",
+		"existing": "现有清单",
+		"create": "新建清单",
+		"newName": "新清单名称",
+		"confirm": "添加",
+		"done": "已将 {{added}} 项添加到“{{name}}”，{{skipped}} 项已在清单中"
+	},
+	"labels": {
+		"title": "打印标签",
+		"button": "打印标签",
+		"selected": "打印所选项的标签",
+		"kind": "标签类型",
+		"kinds": {
+			"pair": "成对标签",
+			"barcode": "仅条码",
+			"spine": "仅书脊标签"
+		},
+		"kindHints": {
+			"pair": "上方为书脊标签，下方为条码标签，每本书一对（即当前的打印样式）。",
+			"barcode": "仅内部条码标签，用于补印。",
+			"spine": "仅书脊标签，例如重新分类之后使用。"
+		},
+		"stock": "标签纸",
+		"start": "首个空白位置",
+		"startHint": "从 1 到 {{max}}：跳过标签纸上已经使用过的标签。",
+		"count": "{{count}} {{count:plural; other:册;}}",
+		"unclassified": "{{count}} {{count:plural; other:册图书复本;}}待分类：只打印{{count:plural; other:其;}}条码标签，书脊标签在分类后打印。",
+		"pendingCount": "{{count}} {{count:plural; other:册;}}有待打印的标签",
+		"pages": "{{pages}} {{pages:plural; other:张标签纸;}}（每张 {{perPage}} 个）",
+		"print": "打开打印页面",
+		"afterPrint": "打印页面已在新标签页中打开。标签打印完成后，请将其标记为已打印。",
+		"markPrinted": "标记为已打印",
+		"marked": "已将 {{count}} {{count:plural; other:册;}}标记为已打印",
+		"status": {
+			"printed": "标签已打印",
+			"pending": "待打印标签",
+			"partial": "缺一个标签"
+		}
+	},
+	"cards": {
+		"title": "打印读者证",
+		"count": "{{count}} {{count:plural; other:张读者证;}}",
+		"afterPrint": "打印页面已在新标签页中打开。读者证打印完成后，请将其标记为已打印。",
+		"layout": "打印方式",
+		"layouts": {
+			"side-by-side": "正反面并排",
+			"duplex": "双面打印"
+		},
+		"window": "在浏览器的打印窗口中：",
+		"steps": {
+			"duplex": {
+				"long-edge": "选择“双面打印”，沿长边翻转；",
+				"short-edge": "选择“双面打印”，沿短边翻转；"
+			},
+			"scale": "缩放比例 100 %（选择“实际大小”，而非“适合页面”）；",
+			"margins": "页边距：无。",
+			"after": {
+				"side-by-side": {
+					"marks": "然后用直尺连接读者证周围的裁切线标记，裁下每张读者证，并沿短边对折。",
+					"line": "然后沿每张读者证周围的彩色线裁下，并沿短边对折。",
+					"edge": "然后沿边缘裁下每张读者证，并沿短边对折。"
+				},
+				"duplex": {
+					"marks": "然后用直尺连接正面周围的裁切线标记裁下读者证：背面已位于正面之后（每张纸十张）。",
+					"line": "然后沿正面周围的彩色线裁下读者证：背面已位于正面之后（每张纸十张）。",
+					"edge": "然后沿正面边缘裁下读者证：背面已位于正面之后（每张纸十张）。"
+				}
+			}
+		},
+		"print": "打印",
+		"calibrate": "首次使用时，或背面没有正确位于正面之后时："
+	},
+	"words": {
+		"teacher": "教师",
+		"title": "书名",
+		"code": "代码",
+		"dueBy": "应还日期",
+		"due": "应还",
+		"name": "姓名",
+		"daysOverdue": "逾期天数",
+		"loanOn": "{{date}} 借出给",
+		"overduesOn": "{{date}} 的图书馆催还通知",
+		"toReturn": "需归还图书馆的图书",
+		"enjoy": "祝阅读愉快。"
+	}
+}

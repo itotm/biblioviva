@@ -1,0 +1,226 @@
+{
+	"title": "Prima configurare",
+	"intro": "Bun venit în BiblioViva. În câțiva pași biblioteca este gata: limba, culorile, școala, codurile și parolele personalului.",
+	"stepOf": "Pasul {{step}} din {{total}}",
+	"next": "Înainte",
+	"back": "Înapoi",
+	"finish": "Finalizați configurarea",
+	"steps": {
+		"language": "Limba",
+		"theme": "Culori",
+		"library": "Biblioteca",
+		"school": "Școala",
+		"codes": "Coduri",
+		"passwords": "Parole",
+		"demo": "Date demonstrative",
+		"summary": "Rezumat"
+	},
+	"language": {
+		"title": "În ce limbă trebuie să vorbească BiblioViva?",
+		"hint": "O singură limbă pentru fiecare instalare: se aplică întregului personal și se poate schimba din Administrare → Configurare → Aspect și limbă.",
+		"restore": {
+			"title": "Aveți deja o copie de siguranță a BiblioViva?",
+			"hint": "Pentru a muta BiblioViva pe alt calculator sau pentru a începe din nou după o defecțiune, nu trebuie să răspundeți la întrebări: este suficientă o arhivă creată cu «Exportă tot».",
+			"button": "Restaurați dintr-o copie de siguranță"
+		}
+	},
+	"theme": {
+		"title": "Alegeți culorile",
+		"hint": "Cincisprezece seturi de culori: schimbă doar culorile, niciodată forma. Toate sunt deschise și lizibile și în alb-negru.",
+		"names": {
+			"ocean": "Ocean",
+			"forest": "Pădure",
+			"grape": "Struguri",
+			"sunset": "Apus",
+			"cherry": "Cireașă",
+			"lagoon": "Lagună",
+			"silver": "Argint",
+			"graphite": "Grafit",
+			"apricot": "Caisă",
+			"indigo": "Indigo",
+			"mint": "Mentă",
+			"rose": "Trandafir",
+			"sahara": "Sahara",
+			"wintry": "Iarnă",
+			"olive": "Măsliniu"
+		}
+	},
+	"library": {
+		"title": "Biblioteca",
+		"name": "Numele bibliotecii",
+		"namePlaceholder": "Biblioteca Școlii Primare Rodari",
+		"schoolType": "Tipul școlii",
+		"schoolTypeHint": "Anii și clasele după uzanța școlii. Se pot schimba după aceea din Administrare → Configurare → Școala și Administrare → Configurare → Clase.",
+		"photos": "Fotografiile cititorilor",
+		"photosHint": "Fotografiile elevilor și profesorilor, făcute sau încărcate, tipărite pe legitimații. Dezactivat: nicio fotografie nicăieri și legitimații fără fotografie.",
+		"covers": "Coperțile cărților",
+		"coversHint": "Coperți căutate online, fotografiate sau încărcate, afișate în catalog. Dezactivat: nicio copertă."
+	},
+	"school": {
+		"title": "Școala",
+		"hint": "Tipul școlii propune anii, clasele și nivelurile de lectură. Clasele se creează imediat; cu datele demonstrative se umplu cu elevi inventați.",
+		"otherCountries": "Alte țări",
+		"names": {
+			"perLevel": "{{stage}}: numele claselor, câte unul pentru fiecare an",
+			"mixed": "{{stage}}: numele secțiunilor, fiecare cu toți anii"
+		},
+		"namesHint": "Separate prin virgule; A-D înseamnă A, B, C, D. Gol: nicio clasă.",
+		"namesInvalid": "Nume nevalide: scrieți-le separate prin virgule (cel mult 40).",
+		"classes": "{{count}} {{count:plural; one:clasă; few:clase; other:de clase;}} de creat:",
+		"more": "și încă {{count}}",
+		"classLabel": "Cum se scrie clasa",
+		"teacherGroup": "Grupul profesorilor",
+		"teacherGroupHint": "Fiecare profesor intră în acest grup; alte grupuri se pot adăuga mai târziu.",
+		"schoolYearStart": "Începutul anului școlar",
+		"schoolYearStartHint": "Luna și ziua în forma LL-ZZ (de exemplu 09-01).",
+		"schoolYearStartInvalid": "Scrieți luna și ziua în forma LL-ZZ.",
+		"schoolYearLabel": "Numele anului școlar",
+		"schoolYearLabels": {
+			"span": "Doi ani (2026/2027)",
+			"start": "Anul de început (2026)"
+		},
+		"readingLevels": "Narativa aranjată pe nivel de lectură",
+		"readingLevelsHint": "Anii, clasele și nivelurile de lectură se pot schimba după aceea din Administrare."
+	},
+	"codes": {
+		"title": "Codurile",
+		"hint": "Formatul codurilor de bare ale noilor exemplare și cel al noilor legitimații, alese fiecare separat. Cele două forme nu se pot confunda: cine citește un cod înțelege imediat dacă este o carte sau o legitimație.",
+		"itemFormat": "Formatul exemplarelor",
+		"itemFormats": {
+			"standard": "An, control și număr (recomandat)",
+			"classic": "An și număr, control la sfârșit",
+			"prefix": "Cu litera L în față"
+		},
+		"cardFormat": "Formatul legitimațiilor",
+		"cardFormats": {
+			"standard": "Control și număr de 6 cifre (recomandat)",
+			"classic": "Număr de 10 cifre, control la sfârșit",
+			"prefix": "Cu litera T în față"
+		},
+		"check": "Caracter de control",
+		"checks": {
+			"mod23": "O literă (mod 23)",
+			"luhn": "O cifră (Luhn)",
+			"damm": "O cifră (Damm)"
+		},
+		"layout": "Tastatura cititoarelor",
+		"layoutHint": "Limba tastaturii calculatorului la care sunt conectate cititoarele de coduri de bare: servește la corectarea caracterelor schimbate. Dacă a dumneavoastră nu este în listă, alegeți cea mai apropiată: se poate schimba după aceea din Configurare → Coduri de bare.",
+		"layouts": {
+			"it": "Italiană",
+			"es": "Spaniolă",
+			"de": "Germană",
+			"fr": "Franceză",
+			"uk": "Engleză (Regatul Unit)",
+			"us": "Engleză (Statele Unite)"
+		},
+		"copy": "Exemplar al unei cărți",
+		"card": "Legitimație",
+		"verdict": "Exemplarele și legitimațiile nu se pot confunda.",
+		"refused": "Cu această alegere exemplarele și legitimațiile s-ar putea confunda: alegeți alt format.",
+		"later": "Formatele, codurile sistemelor precedente și numerotarea se pot schimba după aceea din Configurare → Coduri de bare."
+	},
+	"passwords": {
+		"title": "Parolele personalului",
+		"hint": "Cinci conturi comune, câte unul pentru fiecare rol. Parolele propuse sunt generate la întâmplare și pot fi înlocuite. Notați-le la pasul final: sunt afișate o singură dată.",
+		"accounts": {
+			"admin": "Administrare (admin)",
+			"prestiti": "Gestionarea împrumuturilor (prestiti)",
+			"catalogo": "Catalogare (catalogo)",
+			"tessere": "Legitimații și fotografii (tessere)",
+			"report": "Rapoarte (report)"
+		},
+		"regenerate": "Regenerați",
+		"tooShort": "Cel puțin 8 caractere.",
+		"demo": "Cu datele demonstrative toate conturile folosesc aceeași parolă, ușor de reținut: „{{password}}”. Înainte de a folosi BiblioViva cu adevărat, schimbați-le din Administrare → Conturi de personal."
+	},
+	"demo": {
+		"title": "Date demonstrative",
+		"hint": "Elevi, cărți și împrumuturi inventate pentru a încerca aplicația. Se șterg dintr-un clic din Administrare când intră datele reale.",
+		"load": "Încarcă datele demonstrative",
+		"hasData": "Baza de date conține deja date: datele demonstrative nu vor fi încărcate."
+	},
+	"summary": {
+		"title": "Rezumat",
+		"hint": "Verificați și confirmați. Parolele apar doar în această pagină: copiați-le înainte de a continua.",
+		"language": "Limba",
+		"theme": "Culori",
+		"library": "Biblioteca",
+		"photos": "Fotografiile cititorilor",
+		"covers": "Coperțile cărților",
+		"school": "Școala",
+		"classes": "Clasele",
+		"classesValue": "{{count}} {{count:plural; one:clasă; few:clase; other:de clase;}} ({{first}}…) și grupul {{teachers}}",
+		"readingLevels": "Niveluri de lectură",
+		"none": "Niciunul",
+		"codes": "Coduri",
+		"demo": "Date demonstrative",
+		"yes": "Da",
+		"no": "Nu",
+		"later": "Ulterior, parolele se schimbă din Administrare → Conturi de personal.",
+		"working": "Se salvează…",
+		"error": "Configurarea nu a fost salvată: {{message}}"
+	},
+	"done": {
+		"title": "Configurare finalizată",
+		"hint": "Păstrați aceste parole într-un loc sigur: nu vor mai fi afișate.",
+		"demoLoaded": "Date demonstrative încărcate: {{patrons}} {{patrons:plural; one:cititor; few:cititori; other:de cititori;}}, {{biblios}} {{biblios:plural; one:titlu; few:titluri; other:de titluri;}}, {{items}} {{items:plural; one:exemplar; few:exemplare; other:de exemplare;}}, {{loans}} {{loans:plural; one:împrumut; few:împrumuturi; other:de împrumuturi;}}.",
+		"login": "Mergeți la autentificare"
+	},
+	"generic": {
+		"stage": "Școala",
+		"level": "Nivelul {{level}}",
+		"groupWord": "Secțiunea",
+		"teacherGroup": "Profesorii"
+	},
+	"restore": {
+		"title": "Restaurați dintr-o copie de siguranță",
+		"hint": "Alegeți arhiva creată cu «Exportă tot» (Administrare → Copie de siguranță). Dimensiune maximă: {{maxMb}} MB. Arhiva este verificată înainte de a restaura ceva.",
+		"choose": "Alegeți arhiva",
+		"checking": "Se verifică arhiva…",
+		"from": "Arhiva bibliotecii „{{library}}”, creată la {{date}}, versiunea {{version}}.",
+		"fromAnonymous": "Arhivă creată la {{date}}, versiunea {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "Cititori",
+			"catalog": "Catalog și exemplare",
+			"loans": "Împrumuturi și istoric",
+			"printLists": "Liste de tipărire",
+			"photos": "Fotografiile cititorilor",
+			"covers": "Coperți",
+			"notes": "Note",
+			"dates": "Date ale calendarului",
+			"audit": "Jurnalul activității",
+			"ui": "Interfață",
+			"security": "Securitate și acces",
+			"library": "Biblioteca și școala"
+		},
+		"images": "Fotografii: {{photos}} · coperți: {{covers}}",
+		"accounts": "Conturi care vor putea intra: {{accounts}}. Parolele sunt cele din arhivă.",
+		"warning": "Restaurarea aduce deodată setările, datele și imaginile așa cum erau în arhivă. După aceea, configurarea ghidată nu mai este necesară.",
+		"apply": "Restaurează",
+		"restoring": "Se restaurează…",
+		"cancel": "Anulează",
+		"back": "Înapoi la configurarea ghidată",
+		"done": {
+			"title": "Restaurare finalizată",
+			"hint": "Biblioteca este așa cum era în arhivă. Pentru a intra, folosiți unul dintre aceste conturi, cu parola pe care o avea în arhivă:",
+			"login": "Mergeți la autentificare"
+		},
+		"errors": {
+			"too_large": "Arhiva este prea mare (maximum {{maxMb}} MB).",
+			"not_zip": "Fișierul nu este o arhivă ZIP validă.",
+			"not_archive": "Fișierul nu este o arhivă BiblioViva: alegeți o arhivă creată cu «Exportă tot».",
+			"too_many_files": "Arhiva conține prea multe fișiere.",
+			"unsafe_path": "Arhiva conține un traseu nepermis: {{name}}",
+			"link": "Arhiva conține o legătură, care nu este permisă: {{name}}",
+			"unknown_file": "Arhiva conține un fișier care nu face parte din BiblioViva: {{name}}",
+			"not_setup": "Configurarea ghidată a fost deja finalizată: restaurarea se face din Administrare → Copie de siguranță.",
+			"newer_version": "Arhiva a fost creată de o versiune mai nouă a BiblioViva ({{name}}): instalați mai întâi acea versiune.",
+			"missing_parts": "Arhiva este incompletă: lipsesc {{name}}. Alegeți o arhivă creată cu «Exportă tot».",
+			"unfinished_setup": "Arhiva provine dintr-o instalare în care configurarea ghidată nu fusese finalizată.",
+			"not_ready": "Arhiva are probleme și nu poate fi restaurată: {{name}}",
+			"gone": "Arhiva verificată nu mai există: alegeți-o din nou.",
+			"failed": "Restaurarea nu a reușit."
+		}
+	}
+}

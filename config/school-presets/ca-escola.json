@@ -1,0 +1,94 @@
+{
+	"id": "ca-escola",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Escola of infantil (P3–P5) and primària; ordinals written 1r, 2n, 3r, 4t, 5è, 6è [VERIFY the form of the class labels, e.g. 5è A or 5.è A].",
+	"name": {
+		"it": "Scuola dell'infanzia e primaria (Catalogna)",
+		"en": "Pre-school and primary school (Catalonia)",
+		"ca": "Escola d'educació infantil i primària (Catalunya)"
+	},
+	"country": "ES",
+	"languages": ["ca"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "infantil",
+				"name": "Educació infantil (segon cicle)"
+			},
+			{
+				"code": "primaria",
+				"name": "Educació primària"
+			}
+		],
+		"levels": [
+			{
+				"code": "P3",
+				"label": "P3",
+				"name": "P3 (3 anys)",
+				"stage": "infantil"
+			},
+			{
+				"code": "P4",
+				"label": "P4",
+				"name": "P4 (4 anys)",
+				"stage": "infantil"
+			},
+			{
+				"code": "P5",
+				"label": "P5",
+				"name": "P5 (5 anys)",
+				"stage": "infantil"
+			},
+			{
+				"code": "1",
+				"label": "1r",
+				"name": "Primer de primària",
+				"stage": "primaria"
+			},
+			{
+				"code": "2",
+				"label": "2n",
+				"name": "Segon de primària",
+				"stage": "primaria"
+			},
+			{
+				"code": "3",
+				"label": "3r",
+				"name": "Tercer de primària",
+				"stage": "primaria"
+			},
+			{
+				"code": "4",
+				"label": "4t",
+				"name": "Quart de primària",
+				"stage": "primaria"
+			},
+			{
+				"code": "5",
+				"label": "5è",
+				"name": "Cinquè de primària",
+				"stage": "primaria"
+			},
+			{
+				"code": "6",
+				"label": "6è",
+				"name": "Sisè de primària",
+				"stage": "primaria"
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Grup",
+		"cardClass": "{class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"infantil": ["A", "B"],
+		"primaria": ["A", "B", "C"]
+	},
+	"teacherGroup": "Mestres",
+	"readingLevels": []
+}

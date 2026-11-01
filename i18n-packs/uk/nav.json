@@ -1,0 +1,60 @@
+{
+	"dashboard": "Панель",
+	"circulation": "Видача",
+	"catalog": "Каталог",
+	"patrons": "Читачі",
+	"printing": "Друк",
+	"notes": "Нотатки",
+	"reports": "Звіти",
+	"admin": "Адміністрування",
+	"more": "Більше",
+	"logout": "Вийти",
+	"help": "Довідка",
+	"about": "Про програму",
+	"areas": {
+		"circulation": {
+			"label": "Абонемент",
+			"checkout": "Видача",
+			"checkin": "Повернення",
+			"loans": "Книги на руках",
+			"overdues": "Нагадування",
+			"wishlist": "Список побажань",
+			"calendar": "Календар"
+		},
+		"catalog": {
+			"label": "Сторінки каталогу",
+			"catalog": "Каталог",
+			"inventory": "Інвентаризація",
+			"wishlist": "Список побажань",
+			"toClassify": "До класифікації"
+		},
+		"patrons": {
+			"label": "Сторінки читачів",
+			"patrons": "Читачі",
+			"census": "Перепис з фото"
+		},
+		"notes": {
+			"label": "Сторінки нотаток",
+			"open": "Відкриті",
+			"archived": "Архівовані"
+		},
+		"config": {
+			"label": "Сторінки налаштування",
+			"overview": "Розділи",
+			"history": "Історія"
+		},
+		"templates": {
+			"label": "Сторінки шаблонів друку",
+			"edit": "Шаблони",
+			"previews": "Попередній перегляд"
+		},
+		"imports": {
+			"label": "Імпорт",
+			"catalog": "Каталог",
+			"students": "Учні",
+			"teachers": "Вчителі",
+			"loans": "Чинні видачі",
+			"photos": "Фото читачів"
+		}
+	}
+}

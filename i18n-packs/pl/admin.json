@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "Administracja",
+		"sections": {
+			"config": {
+				"title": "Konfiguracja",
+				"description": "Klasyfikacja i ustawienia biblioteki."
+			},
+			"audit": {
+				"title": "Dziennik operacji",
+				"description": "Kto co zrobił: logowania, zmiany, importy."
+			},
+			"users": {
+				"title": "Konta pracowników",
+				"description": "Konta pracowników, role i uprawnienia."
+			},
+			"backups": {
+				"title": "Kopie zapasowe",
+				"description": "Kopie bezpieczeństwa bazy danych i plików."
+			},
+			"rollover": {
+				"title": "Przejście do kolejnej klasy",
+				"description": "Na koniec roku: awanse, uczniowie powtarzający rok, uczniowie kończący ostatnią klasę."
+			},
+			"exports": {
+				"title": "Eksport",
+				"description": "Czytelnicy, katalog, wypożyczenia i wszystkie dane w plikach CSV lub JSON."
+			},
+			"imports": {
+				"title": "Import",
+				"description": "Katalog, czytelnicy, wypożyczenia w toku i zdjęcia: z plików CSV lub z eksportu Koha."
+			}
+		}
+	},
+	"audit": {
+		"title": "Dziennik operacji",
+		"filters": {
+			"from": "Od",
+			"to": "Do",
+			"user": "Konto",
+			"action": "Operacja",
+			"all": "Wszystkie"
+		},
+		"columns": {
+			"when": "Kiedy",
+			"user": "Konto",
+			"action": "Operacja",
+			"entity": "Obiekt",
+			"entityId": "ID",
+			"details": "Szczegóły"
+		},
+		"count": "{{shown}} z {{total}} {{total:plural; one:wpis; few:wpisy; many:wpisów; other:wpisu;}}",
+		"empty": "Żadna operacja nie pasuje do tych filtrów.",
+		"system": "system"
+	},
+	"users": {
+		"title": "Konta pracowników",
+		"fields": {
+			"roles": "Role",
+			"permissions": "Uprawnienia",
+			"lastLogin": "Ostatnie logowanie",
+			"never": "nigdy"
+		},
+		"status": {
+			"active": "Aktywne",
+			"inactive": "Dezaktywowane",
+			"plainPassword": "Hasło jawne w pliku",
+			"notInConfig": "Usunięte z konfiguracji"
+		},
+		"hash": {
+			"title": "Wygeneruj skrót hasła",
+			"description": "Wpisz hasło do nadania: otrzymasz skrót argon2id do wklejenia w polu passwordHash. Hasło nie jest zapisywane.",
+			"password": "Hasło (co najmniej {{min}} znaków)",
+			"generate": "Generuj skrót",
+			"result": "Skrót do wklejenia",
+			"copy": "Kopiuj",
+			"copied": "Skrót skopiowany",
+			"tooShort": "Hasło musi mieć co najmniej {{min}} znaków.",
+			"disclosure": "Dla osób, które edytują pliki ręcznie: wygeneruj skrót hasła"
+		},
+		"reload": {
+			"button": "Wczytaj konfigurację ponownie",
+			"success": "Konfiguracja wczytana ponownie",
+			"successWithWarnings": "Konfiguracja wczytana ponownie, z {{count}} {{count:plural; one:ostrzeżeniem; few:ostrzeżeniami; many:ostrzeżeniami; other:ostrzeżeniem;}}",
+			"failed": "Konfiguracja nieprawidłowa: pozostaje aktywna poprzednia",
+			"exampleSource": "Uwaga: plik config.json nie istnieje, używana jest konfiguracja przykładowa."
+		},
+		"new": "Nowe konto",
+		"newPassword": "Nowe hasło",
+		"permissionNames": {
+			"all": "Wszystko",
+			"loans": "Wypożyczenia",
+			"patrons": "Czytelnicy",
+			"patrons_import": "Import czytelników",
+			"catalog": "Katalog",
+			"catalog_import": "Import katalogu",
+			"reports": "Raporty",
+			"anonymize": "Anonimizacja",
+			"admin": "Administracja"
+		},
+		"roles": {
+			"title": "Role i uprawnienia",
+			"hint": "Rola to zestaw uprawnień; każde konto ma jedną lub więcej ról. „Wszystko” daje każde uprawnienie, także te, które dodadzą kolejne wersje. Zmiana nazwy roli aktualizuje konta, które ją używają.",
+			"name": "Rola",
+			"unused": "brak konta",
+			"badName": "Litery, cyfry, myślniki i podkreślenia (najwyżej 32).",
+			"add": "Dodaj rolę",
+			"saved": "Role zapisane"
+		},
+		"auth": {
+			"title": "Logowanie",
+			"config": "Logowanie odbywa się na konta z tej strony, zwykle jedno wspólne na rolę (na przykład „wypozyczenia” dla stanowiska wypożyczeń).",
+			"database": "Logowanie odbywa się na osobiste konta.",
+			"later": "Osobiste konta, jedno dla każdej osoby, są przewidziane w jednej z kolejnych wersji."
+		},
+		"dialog": {
+			"title": {
+				"new": "Nowe konto",
+				"edit": "Edycja: {{name}}",
+				"password": "Nowe hasło dla: {{name}}"
+			},
+			"username": "Nazwa użytkownika",
+			"usernameHint": "Małe litery, cyfry, kropka, myślnik i podkreślenie (od 2 do 32 znaków).",
+			"badUsername": "Używaj małych liter, cyfr, kropki, myślnika i podkreślenia (od 2 do 32 znaków).",
+			"displayName": "Wyświetlana nazwa",
+			"active": "Konto aktywne (może się zalogować)",
+			"password": "Hasło (co najmniej {{min}} znaków)",
+			"repeat": "Powtórz hasło",
+			"mismatch": "Hasła różnią się.",
+			"passwordHint": "Hasło nie jest zapisywane: w konfiguracji zapisuje się tylko jego skrót. Kto jest zalogowany na to konto, będzie musiał zalogować się ponownie.",
+			"saved": {
+				"new": "Konto utworzone",
+				"edit": "Konto zapisane",
+				"password": "Hasło zmienione"
+			},
+			"removed": "Konto usunięte",
+			"removeTitle": "Usunąć {{name}}?",
+			"removeHint": "Konto wychodzi z konfiguracji; operacje, które wykonało, zostają w dzienniku pod jego nazwą. Można to cofnąć z historii konfiguracji."
+		},
+		"errors": {
+			"badUsername": "Nieprawidłowa nazwa użytkownika: {{details}}.",
+			"usernameTaken": "Nazwa użytkownika {{details}} jest już używana.",
+			"notFound": "Nie znaleziono konta: {{details}}.",
+			"noRoles": "Wybierz co najmniej jedną rolę.",
+			"unknownRole": "Nieznana rola: {{details}}.",
+			"passwordTooShort": "Hasło jest za krótkie.",
+			"passwordRequired": "Nowe konto wymaga hasła.",
+			"lastAdmin": "Co najmniej jedno aktywne konto musi zachować uprawnienie administracji.",
+			"stillActive": "Przed usunięciem dezaktywuj konto.",
+			"badRole": "Nieprawidłowa nazwa roli: {{details}}.",
+			"roleTaken": "Dwie role mają nazwę {{details}}.",
+			"roleInUse": "Rola jest używana przez niektóre konta: {{details}}.",
+			"invalid": "Konfiguracja nie byłaby prawidłowa: {{details}}."
+		}
+	},
+	"backups": {
+		"title": "Kopie zapasowe",
+		"runNow": "Wykonaj kopię teraz",
+		"created": "Utworzono kopię: {{name}}",
+		"createdDeleted": "Utworzono kopię: {{name}} (usunięto {{deleted}} {{deleted:plural; one:starą kopię; few:stare kopie; many:starych kopii; other:starej kopii;}})",
+		"empty": "Brak kopii. Pierwsza powstanie o zaplanowanej porze albo po naciśnięciu „Wykonaj kopię teraz”.",
+		"download": "Pobierz",
+		"columns": {
+			"when": "Utworzono",
+			"size": "Rozmiar"
+		},
+		"catchUp": {
+			"badge": "Wykonana przy starcie",
+			"hint": "Zaplanowana kopia została pominięta (komputer wyłączony): BiblioViva wykonała ją przy starcie."
+		},
+		"offsite": {
+			"title": "Ostatnia kopia zewnętrzna",
+			"disabled": "Kopia zewnętrzna nie jest skonfigurowana. Włącza się ją usługą „offsite” (rclone) opisaną w przewodniku instalacji.",
+			"never": "Usługa jest włączona, ale nie zapisała jeszcze żadnego wyniku.",
+			"ok": "Ostatnia kopia udana: {{when}}",
+			"error": "Ostatnia kopia nieudana: {{when}}",
+			"stale": "Kopia zewnętrzna jest starsza niż dwa dni: sprawdzić usługę offsite.",
+			"remote": "Miejsce docelowe: {{remote}}"
+		},
+		"restore": {
+			"title": "Przywracanie",
+			"button": "Przywróć…",
+			"hint": "Wybierz „Przywróć…” przy kopii z listy albo wgraj archiwum BiblioViva (kopię, „Eksportuj wszystko” lub „Eksportuj konfigurację”, do {{maxMb}} MB; większe kopiuje się do folderu kopii na serwerze albo przywraca poleceniem bun run backup:restore). Najpierw wszystko jest sprawdzane, potem przywracane są tylko wybrane części: pozostałe zostają bez zmian.",
+			"upload": "Wgraj archiwum",
+			"from": "Z kopii {{name}} z {{date}}",
+			"count": "{{part}}: teraz {{live}}, w kopii {{archive}}",
+			"images": "Obrazy do przywrócenia: {{photos}} {{photos:plural; one:zdjęcie; few:zdjęcia; many:zdjęć; other:zdjęcia;}}, {{covers}} {{covers:plural; one:okładka; few:okładki; many:okładek; other:okładki;}}.",
+			"gapsTitle": "Niektóre dane zostałyby bez tego, do czego się odnoszą:",
+			"gap": "{{rows:plural; one:{{rows}} wiersz w „{{part}}” odnosi się; few:{{rows}} wiersze w „{{part}}” odnoszą się; many:{{rows}} wierszy w „{{part}}” odnosi się; other:{{rows}} wiersza w „{{part}}” odnosi się;}} do „{{needs}}”, a tej części by nie było: dodać „{{add}}” do wyboru.",
+			"schema": "Kopia pochodzi z innej wersji BiblioViva (tabele {{tables}}): nie można jej tu przywrócić.",
+			"apply": "Przywróć",
+			"confirmTitle": "Przywrócić wybrane części?",
+			"confirmHint": "Wybrane dane i konfiguracja zostaną zastąpione tymi z kopii. Konfigurację można cofnąć z historii; przed przywróceniem danych warto wykonać kopię, jeśli nie ma świeżej.",
+			"done": "Przywracanie zakończone",
+			"notArchive": "Plik nie jest archiwum BiblioViva."
+		},
+		"contents": {
+			"title": "Co zawiera kopia",
+			"database": "Baza danych: pełna kopia przy każdym uruchomieniu (lista poniżej).",
+			"images": "Zdjęcia i okładki: kopiowane co noc do folderu „uploads” kopii ({{photos}} {{photos:plural; one:zdjęcie; few:zdjęcia; many:zdjęć; other:zdjęcia;}}, {{covers}} {{covers:plural; one:okładka; few:okładki; many:okładek; other:okładki;}} w tej chwili).",
+			"imagesPending": "Zdjęcia i okładki: pierwsza kopia powstanie przy następnym uruchomieniu ({{photos}} {{photos:plural; one:zdjęcie; few:zdjęcia; many:zdjęć; other:zdjęcia;}}, {{covers}} {{covers:plural; one:okładka; few:okładki; many:okładek; other:okładki;}} do skopiowania).",
+			"config": "Konfiguracja (szablony, obrazy, ustawienia) nie jest w nocnej kopii: aby ją mieć, użyj „Eksportuj wszystko”."
+		},
+		"export": {
+			"button": "Eksportuj wszystko",
+			"hint": "Jeden plik ZIP z bazą danych, zdjęciami, okładkami i całą konfiguracją (wraz z szablonami i obrazami), gotowy do przywrócenia poleceniem „bun run backup:restore”."
+		},
+		"createdMirror": "Utworzono kopię: {{name}}; skopiowano {{copied}} {{copied:plural; one:obraz; few:obrazy; many:obrazów; other:obrazu;}}",
+		"parts": {
+			"title": "Kopia lub eksport wybranych części",
+			"hint": "Wybierz, co uwzględnić: dane biblioteki, ustawienia każdej sekcji, szablony, obrazy… „Utwórz kopię” zapisuje ją na liście poniżej, „Pobierz” pobiera ją na komputer.",
+			"create": "Utwórz kopię",
+			"download": "Pobierz"
+		}
+	},
+	"demo": {
+		"clear": "Wyczyść dane przykładowe",
+		"confirmTitle": "Wyczyścić dane przykładowe?",
+		"confirmDescription": "Czytelnicy, książki, wypożyczenia i zdjęcia przykładowe zostaną usunięte. Klasy i grupa nauczycieli pozostają. Wszyscy operatorzy zostaną wylogowani.",
+		"cleared": "Dane przykładowe usunięte. Zaloguj się ponownie.",
+		"clearedPassword": "Konta nadal mają przykładowe hasło „{{password}}”: zmień je od razu w menu Administracja → Konta pracowników."
+	},
+	"appearance": {
+		"title": "Wygląd i język",
+		"current": "Obecny zestaw: {{name}}",
+		"areas": {
+			"title": "Styl obszarów",
+			"hint": "Pasek na górze przyjmuje kolor obszaru, w którym się pracuje (Wypożyczenia, Katalog, Czytelnicy…), w odcieniach wybranego zestawu kolorów. Ikona i nazwa obszaru są zawsze widoczne.",
+			"styles": {
+				"tinted": "Pasek w odcieniu (zalecany)",
+				"filled": "Pełny pasek",
+				"accents": "Tylko akcenty",
+				"none": "Bez koloru"
+			},
+			"saved": "Styl obszarów zapisany"
+		},
+		"colours": {
+			"title": "Zestaw kolorów"
+		},
+		"save": "Zapisz kolory",
+		"saved": "Kolory zapisane",
+		"unchanged": "Brak zmian do zapisania.",
+		"language": {
+			"title": "Język aplikacji",
+			"hint": "Jeden język dla instalacji: obowiązuje cały personel.",
+			"save": "Zmień język",
+			"saved": "Język zmieniony: strona zostanie przeładowana."
+		},
+		"logo": {
+			"title": "Logo biblioteki",
+			"hint": "Wyświetlane w lewym górnym rogu każdej strony, obok nazwy biblioteki. PNG, JPEG lub WebP; najlepiej z przezroczystym tłem.",
+			"upload": "Wgraj logo",
+			"replace": "Zmień logo",
+			"remove": "Usuń logo",
+			"saved": "Logo zapisane.",
+			"removed": "Logo usunięte.",
+			"none": "Brak logo: widoczna jest ikona ogólna.",
+			"preview": "Obecne logo",
+			"errors": {
+				"empty": "Plik jest pusty.",
+				"too_large": "Plik jest za duży (najwyżej {{maxMb}} MB).",
+				"not_an_image": "Plik nie jest obrazem.",
+				"unsupported_format": "Format niedozwolony: użyj PNG, JPEG lub WebP."
+			}
+		},
+		"name": {
+			"title": "Nazwa biblioteki",
+			"hint": "Wyświetlana w lewym górnym rogu, na pulpicie, na wydrukach i w aplikacji zainstalowanej na telefonie.",
+			"label": "Nazwa",
+			"save": "Zapisz nazwę",
+			"saved": "Nazwa biblioteki zapisana",
+			"required": "Wpisz nazwę biblioteki."
+		},
+		"dashboard": {
+			"title": "Pulpit",
+			"hint": "Sekcje strony początkowej, dla całej biblioteki. Szybkie działania zawsze są na górze; wewnątrz każdej sekcji każde konto widzi tylko to, co może zrobić.",
+			"save": "Zapisz pulpit",
+			"saved": "Pulpit zapisany",
+			"sections": {
+				"quickActions": "Szybkie działania",
+				"tiles": "Biblioteka dzisiaj (kafelki z liczbami)",
+				"inventory": "Skontrum w toku",
+				"installHint": "Zaproszenie do dodania aplikacji na ekran główny (telefony)",
+				"dueThisWeek": "Termin zwrotu w tym tygodniu",
+				"upcomingDates": "Najbliższe daty z kalendarza",
+				"todayActivity": "Wypożyczenia z dzisiaj"
+			}
+		}
+	},
+	"templates": {
+		"title": "Szablony wydruku",
+		"reload": "Wczytaj szablony ponownie",
+		"reloaded": "Szablony ponownie odczytane z dysku",
+		"kinds": {
+			"cards": "Karty",
+			"labels": "Etykiety",
+			"slips": "Monity"
+		},
+		"list": {
+			"source": {
+				"builtin": "Dostarczone z aplikacją",
+				"config": "W konfiguracji"
+			},
+			"default": "Domyślny",
+			"status": {
+				"ok": "Poprawny",
+				"error": "Błąd"
+			},
+			"folder": "Folder",
+			"forTypes": "Dla: {{types}}",
+			"emptyCards": "Brak szablonu kart: sprawdź folder cards/templates w konfiguracji.",
+			"emptyLabels": "Brak szablonu etykiet: pojawi się wraz z drukowaniem etykiet katalogu.",
+			"emptySlips": "Brak szablonu monitu: pojawi się wraz z obsługą wypożyczeń."
+		},
+		"preview": {
+			"title": "Podgląd",
+			"front": "Przód",
+			"back": "Tył",
+			"patron": "Czytelnik do pokazania",
+			"sample": "Czytelnik przykładowy",
+			"real": "Prawdziwy czytelnik",
+			"search": "Znajdź prawdziwego czytelnika",
+			"searchPlaceholder": "Nazwisko lub imię",
+			"noResults": "Nie znaleziono czytelnika.",
+			"zoom": "Powiększenie",
+			"sheet": "Cała strona",
+			"sheetHint": "Jedna strona A4 z czytelnikiem przykładowym, tak jak zostanie wydrukowana.",
+			"test": "Wydrukuj stronę testową",
+			"broken": "Szablon nie może być używany, dopóki nie zostanie poprawiony:",
+			"size": "{{width}} × {{height}} mm przy powiększeniu {{zoom}}"
+		},
+		"test": {
+			"title": "Strona testowa kart",
+			"ruler": "Linijka 10 cm: po wydruku musi mieć 100 mm (drukować w skali 100 %, bez „dopasuj do strony”)."
+		},
+		"calibration": {
+			"title": "Strona kalibracyjna etykiet",
+			"stock": "Nośnik samoprzylepny",
+			"print": "Wydrukuj stronę kalibracyjną",
+			"hint": "Drukować na zwykłym papierze i przyłożyć do niego arkusz etykiet, aby sprawdzić marginesy."
+		},
+		"howTo": {
+			"title": "Jak stworzyć szablon",
+			"steps": {
+				"step1": "W menu Konfiguracja → Szablony wydruku wybierz „Duplikuj” przy szablonie (na przykład {{path}}) i nadaj mu nową nazwę.",
+				"step2": "Przy „Edytuj” zaprojektować go albo zmienić jego kod; obrazy wgrywa się na tej samej stronie.",
+				"step3": "Wrócić tutaj i sprawdzić podgląd: nieznane pole albo brakujący plik zostaną zgłoszone.",
+				"step4": "Aby go naprawdę użyć, wybrać go w ustawieniach Karty lub Etykiety."
+			}
+		},
+		"labels": {
+			"stocks": "Przewidziane arkusze: {{stocks}}",
+			"preview": "Podgląd: {{name}}",
+			"geometry": "Jednostka {{width}} × {{height}} mm · wariant {{variant}}",
+			"sheet": "Arkusz przykładowy"
+		}
+	},
+	"loansImport": {
+		"title": "Import otwartych wypożyczeń",
+		"upload": {
+			"hint": "Do użycia jeden raz, przy przejściu z Koha: jeden wiersz na każde otwarte wypożyczenie, z numerem karty i kodem kreskowym egzemplarza oraz, jeśli są, datą wypożyczenia i terminem zwrotu. Najpierw zaimportować czytelników i katalog; szablon z potrzebnymi kolumnami pobiera się poniżej.",
+			"submit": "Wgraj"
+		},
+		"mapping": {
+			"uncertain": "Sprawdzić kolumny przed dalszym krokiem.",
+			"validate": "Sprawdź plik",
+			"without": {
+				"issuedOn": "Bez kolumny issued_on wypożyczenia mają datę dzisiejszą.",
+				"dueOn": "Bez kolumny due_on termin zwrotu oblicza się jak na stanowisku wypożyczeń, z regułami wypożyczeń i kalendarzem."
+			}
+		},
+		"fields": {
+			"cardNumber": "Numer karty",
+			"barcode": "Kod kreskowy",
+			"issuedOn": "Data wypożyczenia",
+			"dueOn": "Termin zwrotu"
+		},
+		"preview": {
+			"ready": "Brak błędów: wypożyczenia można zaimportować.",
+			"blocked": "Popraw błędy i sprawdź ponownie: z błędami nic nie jest importowane.",
+			"overdue": "{{count}} {{count:plural; one:wypożyczenie jest już po terminie; few:wypożyczenia są już po terminie; many:wypożyczeń jest już po terminie; other:wypożyczenia są już po terminie;}}: {{count:plural; one:zostanie zaimportowane i pojawi się; few:zostaną zaimportowane i pojawią się; many:zostanie zaimportowanych i pojawi się; other:zostaną zaimportowane i pojawią się;}} wśród przetrzymanych.",
+			"columns": {
+				"patron": "Czytelnik",
+				"barcode": "Egzemplarz",
+				"issued": "Wypożyczenie",
+				"due": "Termin"
+			},
+			"commit": "Importuj wypożyczenia",
+			"back": "Wróć do kolumn"
+		},
+		"reasons": {
+			"cardMissing": "Brak numeru karty",
+			"cardUnknown": "Brak czytelnika z kartą {{value}}",
+			"barcodeMissing": "Brak kodu kreskowego",
+			"barcodeUnknown": "Brak egzemplarza o kodzie {{value}}",
+			"alreadyOnLoan": "Egzemplarz {{value}} jest już wypożyczony",
+			"itemWithdrawn": "Egzemplarz {{value}} jest wycofany",
+			"duplicateInFile": "Ten sam egzemplarz już w wierszu {{line}}",
+			"issueDateInvalid": "Nieprawidłowa data wypożyczenia: „{{value}}”",
+			"issueDateFuture": "Data wypożyczenia w przyszłości: {{value}}",
+			"dueDateInvalid": "Nieprawidłowy termin zwrotu: „{{value}}”",
+			"dueBeforeIssue": "Termin zwrotu jest przed datą wypożyczenia",
+			"overdue": "Już po terminie od {{date}}",
+			"itemUnclassified": "Egzemplarz {{value}} należy do książki do sklasyfikowania: wypożyczenie zostanie zaimportowane, ale na stanowisku wypożyczeń nie wypożycza się go, dopóki nie zostanie sklasyfikowany"
+		},
+		"done": {
+			"title": "Wypożyczenia zaimportowane",
+			"summary": "{{created}} {{created:plural; one:wypożyczenie zaimportowane; few:wypożyczenia zaimportowane; many:wypożyczeń zaimportowano; other:wypożyczenia zaimportowane;}}, z czego {{overdue}} {{overdue:plural; one:już po terminie; few:już po terminie; many:już po terminie; other:już po terminie;}}.",
+			"batch": "Import nr {{id}}: oryginalny plik został zachowany.",
+			"again": "Importuj inny plik"
+		},
+		"columns": {
+			"cardNumber": "Numer karty czytelnika, już zaimportowany.",
+			"barcode": "Kod kreskowy egzemplarza, już zaimportowanego.",
+			"issuedOn": "Data wypożyczenia; gdy brak, dzisiejsza.",
+			"dueOn": "Termin zwrotu; gdy brak, obliczany według reguł wypożyczeń."
+		}
+	},
+	"photosImport": {
+		"title": "Import zdjęć czytelników",
+		"hint": "Jeden plik na czytelnika, nazwany numerem karty (na przykład 0000001240.jpg): tak wygląda eksport opisany w przewodniku administratora. Każde zdjęcie zostanie zmniejszone i oczyszczone z ukrytych danych; pliki, które nie pasują do żadnej karty, są wypisane.",
+		"replace": "Zastąp zdjęcia, które już są",
+		"zip": {
+			"title": "Z archiwum ZIP",
+			"file": "Archiwum ZIP ze zdjęciami",
+			"submit": "Importuj zdjęcia"
+		},
+		"folder": {
+			"title": "Z folderu serwera",
+			"hint": "Skopiować pliki do {{path}}, {{count:plural; one:jest teraz {{count}}; few:są teraz {{count}}; many:jest teraz {{count}}; other:są teraz {{count}};}}. Nadaje się do wielu zdjęć, które w archiwum byłyby zbyt ciężkie do wgrania.",
+			"submit": "Importuj z folderu"
+		},
+		"summary": {
+			"title": "Wynik",
+			"text": "{{imported}} {{imported:plural; one:zdjęcie zaimportowane; few:zdjęcia zaimportowane; many:zdjęć zaimportowanych; other:zdjęcia zaimportowanego;}}, zastąpiono {{replaced}}, {{kept}} {{kept:plural; one:zdjęcie zostawione bez zmian; few:zdjęcia zostawione bez zmian; many:zdjęć zostawionych bez zmian; other:zdjęcia zostawionego bez zmian;}} (już obecne), {{unmatched}} {{unmatched:plural; one:plik bez czytelnika; few:pliki bez czytelnika; many:plików bez czytelnika; other:pliku bez czytelnika;}}, {{unreadable}} {{unreadable:plural; one:nieczytelny plik; few:nieczytelne pliki; many:nieczytelnych plików; other:nieczytelnego pliku;}}.",
+			"unreadable": "Obrazy nieczytelne: {{files}}",
+			"unmatched": "Pobierz listę plików bez czytelnika"
+		},
+		"errors": {
+			"notZip": "Plik nie jest prawidłowym archiwum ZIP.",
+			"empty": "Archiwum nie zawiera plików."
+		},
+		"done": "Zdjęcia zaimportowane"
+	},
+	"rollover": {
+		"title": "Przejście do kolejnej klasy",
+		"subtitle": "Na koniec roku wszyscy uczniowie przechodzą do kolejnej klasy, a kto kończy ostatnią klasę, opuszcza szkołę.",
+		"steps": {
+			"backup": "Kopia zapasowa",
+			"classes": "Klasy",
+			"leavers": "Odchodzący",
+			"confirm": "Potwierdzenie",
+			"done": "Zakończone"
+		},
+		"backup": {
+			"text": "Przede wszystkim kopia zapasowa bazy danych: jeśli coś pójdzie nie tak, wróć przez menu Administracja → Kopie zapasowe.",
+			"create": "Utwórz kopię zapasową",
+			"created": "Utworzono kopię: {{name}}"
+		},
+		"classes": {
+			"text": "Każdy uczeń przechodzi do następnego roku wraz ze swoją klasą. Zaznacz, kto powtarza rok i kto zmienia klasę.",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; one:uczeń; few:uczniowie; many:uczniów; other:ucznia;}}",
+			"exceptions": "{{count}} {{count:plural; one:wyjątek; few:wyjątki; many:wyjątków; other:wyjątku;}}",
+			"loans": "{{count}} z książkami w wypożyczeniu",
+			"repeat": "Powtarza",
+			"target": "Klasa",
+			"noGroup": "Bez klasy",
+			"choose": "Wybierz klasę…",
+			"fates": {
+				"advances": "Przechodzi",
+				"stays": "Zostaje",
+				"archived": "Zamyka się"
+			},
+			"unplaced": "{{count}} {{count:plural; one:uczeń czeka; few:uczniowie czekają; many:uczniów czeka; other:ucznia czeka;}} na wybór klasy.",
+			"none": "Żaden uczeń nie przechodzi do następnego roku.",
+			"nextYear": "Następny rok",
+			"leaves": "Opuszcza szkołę"
+		},
+		"leavers": {
+			"text": "Uczniowie ostatniego roku opuszczają szkołę: ich dane zostaną natychmiast i na zawsze usunięte (pozostają tylko liczby do statystyk). Odznacz tych, którzy zostają, na przykład ucznia powtarzającego ostatni rok.",
+			"leaves": "Odchodzi",
+			"openLoans": "{{count}} {{count:plural; one:książka; few:książki; many:książek; other:książki;}} w wypożyczeniu",
+			"blocked": "{{count}} {{count:plural; one:odchodzący uczeń nadal ma; few:odchodzący uczniowie nadal mają; many:odchodzących uczniów nadal ma; other:odchodzącego ucznia nadal ma;}} książki: zarejestruj zwrot albo oznacz je jako zagubione, albo odznacz ucznia.",
+			"toCheckin": "Przejdź do zwrotów",
+			"none": "Brak uczniów w ostatnim roku."
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; one:uczeń przechodzi; few:uczniowie przechodzą; many:uczniów przechodzi; other:ucznia przechodzi;}} do następnego roku",
+			"repeat": "{{count}} {{count:plural; one:powtarza; few:powtarzają; many:powtarza; other:powtarza;}} rok",
+			"groupChanges": "{{count}} {{count:plural; one:zmienia; few:zmieniają; many:zmienia; other:zmienia;}} klasę",
+			"closing": "{{count}} {{count:plural; one:klasa zamyka się i zostaje zarchiwizowana; few:klasy zamykają się i zostają zarchiwizowane; many:klas zamyka się i zostaje zarchiwizowanych; other:klasy zamyka się i zostaje zarchiwizowanej;}}",
+			"remove": "{{count}} {{count:plural; one:uczeń opuszcza szkołę i jego dane zostaną usunięte; few:uczniowie opuszczają szkołę i ich dane zostaną usunięte; many:uczniów opuszcza szkołę i ich dane zostaną usunięte; other:ucznia opuszcza szkołę i jego dane zostaną usunięte;}}",
+			"recent": "Ostatnie przejście zostało wykonane {{date}}, mniej niż sześć miesięcy temu. Potwierdzam, że chcę je powtórzyć.",
+			"run": "Przenieś klasy"
+		},
+		"done": {
+			"title": "Przejście zakończone",
+			"advanced": "{{count}} {{count:plural; one:klasa przeszła; few:klasy przeszły; many:klas przeszło; other:klasy przeszły;}} do następnego roku",
+			"archived": "{{count}} {{count:plural; one:klasa zarchiwizowana; few:klasy zarchiwizowane; many:klas zarchiwizowanych; other:klasy zarchiwizowanej;}}",
+			"text": "Dalsze kroki: w razie potrzeby utworzyć nowe klasy pierwsze i zaimportować nowych uczniów przez synchronizację.",
+			"import": "Importuj nowych uczniów"
+		},
+		"errors": {
+			"blocked": "Niektórzy uczniowie opuszczający szkołę nadal mają książki w wypożyczeniu.",
+			"recent": "Potrzebne potwierdzenie: ostatnie przejście jest niedawne.",
+			"no_backup": "Nie znaleziono kopii zapasowej albo jest za stara: wykonaj ją od nowa, od pierwszego kroku.",
+			"invalid_group": "Wybrana klasa nie istnieje albo nie obejmuje roku ucznia.",
+			"unplaced": "Niektórzy uczniowie nie mają jeszcze klasy: wybierz ją w kroku Klasy.",
+			"invalid_level": "Jeden z wybranych lat nauki nie jest wśród możliwych: wczytaj stronę ponownie."
+		},
+		"next": "Dalej",
+		"back": "Wstecz"
+	},
+	"classes": {
+		"title": "Klasy",
+		"subtitle": "Klasy szkoły i grupy nauczycieli.",
+		"hint": "Lata i etapy edukacyjne szkoły zmienia się w ustawieniach:",
+		"structureLink": "Szkoła",
+		"new": "Nowe klasy",
+		"newTeachers": "Nowa grupa nauczycieli",
+		"teachers": "Nauczyciele",
+		"mixed": "Klasa łączona",
+		"empty": "Brak klas",
+		"emptyHint": "Brak klas. Klasy tworzy się przez Nowe klasy, na przykład lata od 1 do 5 i nazwy A-D.",
+		"archivedTitle": "{{count:plural; one:Zarchiwizowana klasa; few:Zarchiwizowane klasy; many:Zarchiwizowanych klas; other:Zarchiwizowanej klasy;}} ({{count}})",
+		"archive": "Archiwizuj",
+		"archiveNotEmpty": "Nadal są w niej czytelnicy: nie można zarchiwizować",
+		"restore": "Przywróć",
+		"archived": "Klasa {{name}} zarchiwizowana",
+		"restored": "Klasa {{name}} przywrócona",
+		"columns": {
+			"class": "Klasa",
+			"levels": "Lata",
+			"patrons": "Czytelnicy"
+		},
+		"dialog": {
+			"title": {
+				"students": "Nowe klasy",
+				"teachers": "Nowa grupa nauczycieli",
+				"edit": "Edycja: {{name}}"
+			},
+			"levels": "Lata nauki",
+			"names": "Nazwy klas",
+			"namesHint": "Oddzielone przecinkami; A-D oznacza A, B, C, D. Nazwa może zawierać spacje.",
+			"name": "Nazwa",
+			"mixed": "Jedna klasa łączona ze wszystkimi wybranymi latami",
+			"stage": "Etap edukacyjny",
+			"anyStage": "Wszystkie",
+			"notes": "Uwagi",
+			"preview": "{{count}} {{count:plural; one:klasa; few:klasy; many:klas; other:klasy;}} do utworzenia:",
+			"previewEmpty": "Wybierz co najmniej jeden rok i wpisz nazwy.",
+			"saved": {
+				"students": "{{count}} {{count:plural; one:klasa utworzona; few:klasy utworzone; many:klas utworzonych; other:klasy utworzonej;}}",
+				"teachers": "Grupa nauczycieli utworzona",
+				"edit": "Klasa zapisana"
+			}
+		},
+		"errors": {
+			"nameRequired": "Nazwa jest obowiązkowa.",
+			"nameLong": "Nazwa jest za długa (najwyżej 40 znaków).",
+			"levelsRequired": "Wybierz co najmniej jeden rok.",
+			"levelUnknown": "Wybrany rok już nie istnieje.",
+			"levelsNotForTeachers": "Grupa nauczycieli nie ma lat nauki.",
+			"nameTaken": "Klasa o tej nazwie już istnieje dla tego samego roku.",
+			"levelInUse": "Niektórzy uczniowie klasy są w roku, który zostałby usunięty.",
+			"notEmpty": "W klasie są nadal czytelnicy.",
+			"notFound": "Klasa już nie istnieje."
+		}
+	},
+	"exports": {
+		"title": "Eksport",
+		"subtitle": "Dane biblioteki w plikach do zachowania, ponownego importu lub przeniesienia do innego programu.",
+		"items": {
+			"students": {
+				"title": "Uczniowie (CSV)",
+				"description": "Aktywni uczniowie w formacie importu: importuje się ich ponownie z menu Administracja → Import → Uczniowie."
+			},
+			"teachers": {
+				"title": "Nauczyciele (CSV)",
+				"description": "Aktywni nauczyciele w formacie importu: importuje się ich ponownie z menu Administracja → Import → Nauczyciele."
+			},
+			"catalog": {
+				"title": "Katalog (CSV)",
+				"description": "Jeden wiersz na egzemplarz z danymi książki, w formacie importu katalogu."
+			},
+			"open-loans": {
+				"title": "Wypożyczenia w toku (CSV)",
+				"description": "Karta, egzemplarz, data wypożyczenia i termin zwrotu: importuje się je ponownie z menu Administracja → Import → Wypożyczenia w toku."
+			},
+			"loans-history": {
+				"title": "Historia wypożyczeń (CSV)",
+				"description": "Każde wypożyczenie z klasą i oddziałem z dnia wypożyczenia."
+			},
+			"dump": {
+				"title": "Wszystkie dane (JSON)",
+				"description": "Czytelnicy, katalog, wypożyczenia i listy w jednym pliku, do przeniesienia do innej instalacji lub programu."
+			}
+		},
+		"download": "Pobierz",
+		"patronNote": "Dane jednej osoby (wniosek o dostęp) pobiera się z jej kartoteki czytelnika.",
+		"patronExport": "Eksportuj dane osoby"
+	},
+	"imports": {
+		"title": "Import",
+		"hint": "Używane przy przejściu z Koha, a dla czytelników na początku każdego roku szkolnego, dla nowych klas. Każdy plik jest sprawdzany w całości, zanim cokolwiek zostanie zaimportowane.",
+		"cards": {
+			"catalog": {
+				"title": "Katalog",
+				"description": "Książki i egzemplarze z pliku CSV albo z eksportu Koha."
+			},
+			"students": {
+				"title": "Uczniowie",
+				"description": "Klasy z dziennika elektronicznego, na początku każdego roku szkolnego: imię, nazwisko i klasa."
+			},
+			"teachers": {
+				"title": "Nauczyciele",
+				"description": "Nauczyciele szkoły: imię i nazwisko, z kartą, jeśli już ją mają."
+			},
+			"loans": {
+				"title": "Wypożyczenia w toku",
+				"description": "Otwarte wypożyczenia, importowane tylko raz, przy przejściu z Koha."
+			},
+			"photos": {
+				"title": "Zdjęcia czytelników",
+				"description": "Zdjęcia wyeksportowane z Koha, jedno na kartę."
+			}
+		}
+	},
+	"calibration": {
+		"title": "Kalibracja druku dwustronnego",
+		"intro": "Aby wydrukować karty po obu stronach arkusza, tył musi przypaść dokładnie za przodem. Każda drukarka lekko przesuwa tył: ta próba mierzy, o ile, tylko raz.",
+		"current": "Jak obraca się arkusz: {{flip}}. Obecne przesunięcie tyłów: {{x}} mm w poziomie, {{y}} mm w pionie.",
+		"steps": {
+			"print": "Wydrukować arkusz kalibracyjny przyciskiem poniżej.",
+			"window": {
+				"long-edge": "W oknie drukowania wybrać „Dwustronnie”, z odwracaniem po dłuższym boku, skala 100 % i bez marginesów.",
+				"short-edge": "W oknie drukowania wybrać „Dwustronnie”, z odwracaniem po krótszym boku, skala 100 % i bez marginesów."
+			},
+			"cut": "Po stronie z dużą „1” ostrożnie wyciąć wzdłuż czarnej linii.",
+			"read": "Odwrócić kartonik: na stronie „2” odczytać dwie liczby w miejscu, w którym odcięta krawędź przecina linijki (ze znakiem + lub −).",
+			"save": "Wpisać dwie liczby poniżej i zapisać: przesunięcie tyłów zostanie skorygowane.",
+			"check": "Wydrukować arkusz ponownie, aby sprawdzić: odcięta krawędź powinna teraz przechodzić przez zero na obu linijkach."
+		},
+		"print": "Wydrukuj arkusz kalibracyjny",
+		"drawing": {
+			"title": "Co odczytać",
+			"label": "Strona 2 po cięciu: odcięta krawędź przecina linijki",
+			"x": "linijka pozioma",
+			"y": "linijka pionowa",
+			"hint": "Odcięta krawędź przecina każdą linijkę: liczba przy niej to wartość do wpisania. Każda kreska to milimetr, liczby są co pięć."
+		},
+		"fields": {
+			"x": "Linijka pozioma (mm)",
+			"y": "Linijka pionowa (mm)",
+			"hint": "Liczba, w której przechodzi odcięta krawędź, ze znakiem; 0, jeśli wypada na zerze."
+		},
+		"next": "Po zapisaniu przesunięcie tyłów wyniesie {{x}} mm w poziomie i {{y}} mm w pionie.",
+		"save": "Zapisz kalibrację",
+		"saved": "Kalibracja zapisana: tyły przesunięte o {{x}} mm w poziomie i {{y}} mm w pionie.",
+		"open": "Kalibruj druk dwustronny",
+		"sheet": {
+			"title": "BiblioViva · kalibracja druku dwustronnego",
+			"cut": "Wyciąć wzdłuż czarnej linii, a potem odwrócić kartonik.",
+			"read": "Odczytać na obu linijkach, gdzie przechodzi odcięta krawędź."
+		}
+	}
+}

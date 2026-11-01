@@ -1,0 +1,39 @@
+{
+	"title": "Sestavy",
+	"categories": {
+		"loans": "Výpůjčky",
+		"books": "Knihy",
+		"patrons": "Čtenáři",
+		"ops": "Činnost"
+	},
+	"restricted": "Jen pro správce",
+	"custom": "Školní",
+	"chart": "S grafem",
+	"problemsTitle": "Soubory sestav se nenačetly",
+	"problemsHint": "Tyto soubory ve složce sestav obsahují chybu a v seznamu se nezobrazují:",
+	"params": "Parametry",
+	"run": "Aktualizovat",
+	"all": "Všechny",
+	"from": "od",
+	"to": "do",
+	"patronTypes": {
+		"student": "Žáci",
+		"teacher": "Učitelé"
+	},
+	"rows": "{{count}} {{count:plural; one:řádek; few:řádky; other:řádků;}}",
+	"ms": "za {{ms}} ms",
+	"truncated": "{{count:plural; one:Zobrazen je jen první řádek, pro zobrazení všeho zúžte parametry.; few:Zobrazeny jsou jen první {{count}} řádky, pro zobrazení všeho zúžte parametry.; other:Zobrazeno je jen prvních {{count}} řádků, pro zobrazení všeho zúžte parametry.;}}",
+	"empty": "Žádné výsledky pro tyto parametry.",
+	"print": "Tisknout",
+	"printedOn": "Vytištěno {{date}}",
+	"errors": {
+		"required": "Chybí „{{label}}“.",
+		"invalid": "Hodnota pole „{{label}}“ není platná."
+	},
+	"back": "Všechny sestavy",
+	"noParams": "Tato sestava nemá parametry.",
+	"special": {
+		"teachers": "Učitelé",
+		"total": "Celkem"
+	}
+}

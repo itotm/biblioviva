@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Låntagare",
+		"new": "Ny låntagare",
+		"search": "Sök på efternamn…",
+		"empty": "Ingen låntagare matchar filtren.",
+		"filters": {
+			"type": "Typ",
+			"stage": "Skolform",
+			"level": "Årskurs",
+			"status": "Status",
+			"all": "Alla",
+			"allF": "Alla"
+		},
+		"columns": {
+			"name": "Efternamn och förnamn",
+			"type": "Typ",
+			"class": "Klass",
+			"card": "Lånekort"
+		},
+		"clearFilters": "Rensa filtren",
+		"countFiltered": "{{shown:plural; one:{{shown}} låntagare matchar; other:{{shown}} låntagare matchar;}} filtren",
+		"printCards": "Skriv ut lånekort",
+		"printClassCards": "Skriv ut lånekort {{classLabel}}",
+		"removeSelected": "Ta bort markerade",
+		"removeTitle": "Ta bort {{count}} {{count:plural; one:låntagare; other:låntagare;}}?",
+		"removeDescription": "För var och en raderas förnamn och efternamn, kontaktuppgifter, elevnummer, anteckningar, lånekortsnummer och foto genast och för alltid. Typ, klass, avdelning och lånehistoriken finns kvar för statistiken. De som har pågående lån behålls.",
+		"removed": "Borttagna: {{removed}}, kvar i arkivet med pågående lån: {{kept}}",
+		"status": {
+			"title": "Status",
+			"loans": "{{count}} på lån",
+			"overdue": "{{count}} med försenad återlämning",
+			"noPhoto": "utan foto"
+		},
+		"startTitle": "Hitta en låntagare",
+		"startHint": "Sök på namn, lånekort eller med filtren."
+	},
+	"types": {
+		"student": "Elev",
+		"teacher": "Lärare"
+	},
+	"fields": {
+		"patronType": "Typ",
+		"firstName": "Förnamn",
+		"lastName": "Efternamn",
+		"cardNumber": "Lånekortsnummer",
+		"cardNumberHint": "Tomt: tilldelas automatiskt.",
+		"externalId": "Elevnummer",
+		"email": "E-post",
+		"emailHint": "Adressen som skolan ger eleven eller läraren: den används för meddelandena.",
+		"circulationNote": "Anteckning för utlåningsdisken",
+		"circulationNoteHint": "Visas tydligt vid utlåningen.",
+		"notes": "Interna anteckningar",
+		"status": "Status",
+		"openLoans": "Pågående lån",
+		"overdueLoans": "Försenade",
+		"noCard": "inget lånekort",
+		"none": "—",
+		"levelCode": "Årskurs",
+		"groupId": "Avdelning",
+		"classLabel": "Klass",
+		"teacherGroup": "Lärargrupp"
+	},
+	"form": {
+		"createTitle": "Ny låntagare",
+		"editTitle": "Redigera låntagare",
+		"identity": "Personuppgifter",
+		"school": "Klass",
+		"contacts": "Kontakt",
+		"notes": "Anteckningar",
+		"create": "Skapa låntagare",
+		"save": "Spara ändringarna",
+		"classSelect": "Välj…",
+		"defaultTeacherGroup": "Lärargruppen"
+	},
+	"errors": {
+		"emailInvalid": "Ogiltig e-postadress.",
+		"cardNumberInvalid": "Ogiltigt lånekortsnummer: endast siffror, versaler och bindestreck, med rätt kontrolltecken.",
+		"cardNumberTaken": "Lånekortsnumret är redan tilldelat en annan låntagare.",
+		"cardNumberIsCopy": "Lånekortsnumret är eller liknar streckkoden för ett exemplar: välj ett annat nummer.",
+		"externalIdTaken": "Elevnumret är redan tilldelat en annan låntagare.",
+		"levelRequired": "En elev behöver en klass (årskurs).",
+		"levelUnknown": "Klassen finns inte bland skolans årskurser.",
+		"levelNotForTeachers": "En lärare har ingen klass.",
+		"groupRequired": "En elev behöver en avdelning.",
+		"groupUnknown": "Avdelningen hittades inte bland de aktiva klasserna: klasser skapas under Administration → Inställningar → Klasser.",
+		"levelNotInGroup": "Den här avdelningen har inte denna klass: välj en avdelning för klassen."
+	},
+	"detail": {
+		"heading": "Låntagarens uppgifter",
+		"tabs": {
+			"loans": "Pågående lån",
+			"history": "Historik",
+			"cards": "Lånekort",
+			"notes": "Anteckningar"
+		},
+		"noLoans": "Inga pågående lån.",
+		"loanColumns": {
+			"due": "Förfaller"
+		},
+		"overdue": "försenat",
+		"card": "Lånekort {{number}}",
+		"noNotes": "Inga anteckningar.",
+		"edit": "Redigera",
+		"created": "Skapad den {{when}}",
+		"barcodeAlt": "Streckkod för lånekort {{number}}",
+		"cardPrinted": "Lånekortet utskrivet den {{when}}.",
+		"cardNotPrinted": "Lånekortet är inte utskrivet ännu.",
+		"reassignCard": "Tilldela nytt kort",
+		"reassignTitle": "Tilldela ett nytt lånekort?",
+		"reassignDescription": "Det nuvarande numret dras tillbaka för alltid och det nya kortet måste skrivas ut.",
+		"cardReassigned": "Nytt lånekort: {{number}}",
+		"printCard": "Skriv ut lånekort",
+		"markCardPrinted": "Markera som utskrivet",
+		"cardMarkedPrinted": "Lånekortet markerat som utskrivet",
+		"historyColumns": {
+			"issuedAt": "Lånad den",
+			"dueDate": "Förfaller",
+			"returnedAt": "Återlämnad den",
+			"outcome": "Utfall",
+			"title": "Titel",
+			"author": "Författare",
+			"barcode": "Exemplar",
+			"renewals": "Förnyelser",
+			"schoolYear": "Läsår"
+		},
+		"outcome": {
+			"open": "Pågående",
+			"overdue": "Försenat",
+			"returned": "Återlämnat",
+			"returnedLate": "Återlämnat för sent",
+			"lost": "Förkommen"
+		},
+		"historyEmpty": "Inget lån registrerat.",
+		"historyCount": "{{count}} {{count:plural; one:lån; other:lån;}} totalt",
+		"notesEdit": "Redigera anteckningar",
+		"notesSaved": "Anteckningarna sparades",
+		"notesUnchanged": "Ingen ändring",
+		"notesHint": "Anteckningen för utlåningsdisken visas tydligt när ett lån görs; de övriga anteckningarna finns kvar här.",
+		"remove": "Ta bort {{type}}",
+		"removeTitle": "Ta bort {{name}} för alltid?",
+		"removeDescription": "Raderas genast och för alltid: förnamn och efternamn, e-post, elevnummer, anteckningar, lånekortsnummer (dras tillbaka) och foto. Bara typ, klass och avdelning samt lånehistoriken finns kvar för statistiken. Detta kan inte ångras.",
+		"removeOpenLoans": "Har {{count}} {{count:plural; one:pågående lån som först måste; other:pågående lån som först måste;}} återlämnas eller markeras som förkomna.",
+		"removeClassSheets": "Personen valdes för {{count}} {{count:plural; one:foto; other:foton;}} på klassbilderna (fotoregistrering från en bild): {{count:plural; one:den rutan täcks; other:de rutorna täcks;}}.",
+		"removed": "Låntagaren borttagen: personuppgifterna raderades.",
+		"removedInfo": "Borttagen den {{when}}. Bara uppgifterna för statistiken finns kvar.",
+		"lostTitle": "Förkomna böcker",
+		"lostHint": "Markerade som förkomna medan de var utlånade till den här låntagaren. Om de dyker upp igen ska de registreras vid återlämningen.",
+		"markLost": "Markera ”{{title}}” som förkommen",
+		"markLostTitle": "Markera ”{{title}}” som förkommen?",
+		"markLostDescription": "Lånet avslutas och exemplaret visas som förkommet. Om boken dyker upp igen räcker det att registrera återlämningen, så blir den tillgänglig igen.",
+		"markLostReason": "Orsak (valfritt)",
+		"markLostConfirm": "Markera förkommen",
+		"markedLost": "”{{title}}” markerad som förkommen."
+	},
+	"photo": {
+		"title": "Foto",
+		"take": "Ta foto",
+		"upload": "Ladda upp fil",
+		"retake": "Ta om",
+		"use": "Använd det här fotot",
+		"cancel": "Avbryt",
+		"delete": "Ta bort foto",
+		"deleteTitle": "Ta bort fotot?",
+		"deleteDescription": "Fotot tas bort från servern; ett nytt kan tas.",
+		"zoom": "Zoom",
+		"dragHint": "Dra för att rama in, använd zoomen för att komma närmare.",
+		"saved": "Fotot sparades",
+		"deleted": "Fotot togs bort",
+		"placeholder": "Inget foto",
+		"alt": "Foto av {{name}}",
+		"errors": {
+			"too_large": "Filen är för stor: gränsen är {{maxMb}} MB.",
+			"not_an_image": "Filen är inte en läsbar bild.",
+			"unsupported_format": "Bildformatet stöds inte (använd JPEG, PNG, WebP eller HEIC).",
+			"empty": "Ingen fil vald."
+		},
+		"withForm": "Det sparas tillsammans med låntagaren.",
+		"requiredHint": "Ett foto krävs: ta det nu, eller senare från låntagarens sida.",
+		"optionalHint": "Fotot kan tas nu eller senare från låntagarens sida.",
+		"remove": "Ta bort",
+		"notSaved": "Fotot sparades inte: ta det igen från låntagarens sida.",
+		"retakePhoto": "Ta fotot igen"
+	},
+	"census": {
+		"title": "Fotoregistrering",
+		"noGroup": "Utan klass",
+		"stageOthers": "Utan skolform",
+		"progress": "{{done}} av {{total}} med foto",
+		"allDone": "Alla har ett foto.",
+		"back": "Ändra klass eller lista",
+		"skip": "Hoppa över",
+		"done": "Klar",
+		"saved": "Foto sparat: {{name}}",
+		"quickAdd": "Ny låntagare",
+		"quickAddHint": "Läggs till i {{group}} och fotot tas härnäst.",
+		"create": "Lägg till och fotografera",
+		"findPerson": "Sök efter efternamn",
+		"pickTarget": "Välj en lista eller en klass",
+		"listsTitle": "Låntagarlistor",
+		"classesTitle": "Klasser",
+		"nothingMissing": "Alla klasser och listor har sina foton.",
+		"onlyMissing": "Bara klasser och listor där minst ett foto saknas visas.",
+		"byCamera": "En person i taget",
+		"sheets": {
+			"title": "Från en bild med flera foton",
+			"hint": "Bilder med flera foton (fotografens tavla, kort på ett bord, ett blad med passfoton): fotona hittas automatiskt och tilldelas varje låntagare.",
+			"upload": "Ladda upp bild",
+			"take": "Fotografera arket",
+			"uploading": "Skickar bilden…",
+			"empty": "Ingen bild för den här klassen eller listan.",
+			"item": "Bild från {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:foto hittat; other:foton hittade;}} · {{saved}} {{saved:plural; one:sparat; other:sparade;}} · {{pending}} kvar",
+			"notDetected": "Inte behandlad ännu",
+			"demoScan": "Exempel från en skanner",
+			"demoPhoto": "Exempel från ett foto",
+			"demoHint": "Två sätt att få klassens foton: en skanning är plan och fotona är rektanglar, högst lite vridna; ett foto tas snett och perspektivet deformerar ramarna."
+		},
+		"sheet": {
+			"title": "Foton från en bild",
+			"back": "Tillbaka till klassen",
+			"detecting": "Letar efter fotona i bilden…",
+			"found": "Hittade foton: {{count}}. Välj vem var och en är.",
+			"none": "Inget foto hittades. Med ”Rätta ramar” kan de ritas för hand.",
+			"pictureAlt": "Den uppladdade bilden, med fotoramarna numrerade",
+			"frame": "Foto {{n}}",
+			"choose": "Vem är det?",
+			"nobody": "— Ingen —",
+			"takenBy": "{{name}} (redan på foto {{n}})",
+			"hasPhoto": "har redan ett foto",
+			"noPhoto": "utan foto",
+			"ignore": "Ignorera",
+			"unignore": "Återställ",
+			"ignored": "Ignorerad: det är ingen i den här klassen eller listan.",
+			"saved": "Sparat som foto av {{name}}",
+			"edit": "Rätta ramar",
+			"editDone": "Klar med rättningarna",
+			"editHint": "Tryck på en ram och dra i hörnen; för ett saknat foto används ”Lägg till ram”.",
+			"editHintScan": "Tryck på en ram: dra i ett hörn för att göra den större eller mindre, i cirkeln ovanför för att vrida den; för ett saknat foto används ”Lägg till ram”.",
+			"addFrame": "Lägg till ram",
+			"addFrameHint": "Dra på bilden från ett hörn till det andra på det saknade fotot.",
+			"deleteFrame": "Ta bort ram {{n}}",
+			"rotateFrame": "Vrid ramen",
+			"kind": "Typ av bild",
+			"kindPhoto": "Foto",
+			"kindScan": "Skanning",
+			"kindPhotoHint": "Tagen snett: varje hörn på en ram rör sig för sig själv för att följa perspektivet.",
+			"kindScanHint": "Gjord med en skanner: ramarna förblir rektanglar och kan bara vridas.",
+			"kindAgain": "Så länge ingen låntagare är vald letas fotona upp igen när typen ändras.",
+			"save": "Spara fotona",
+			"saveTitle": "Spara de valda fotona?",
+			"saveSummary": "Foton att spara: {{count}}.",
+			"saveReplaces": "De ersätter det befintliga fotot av: {{names}}.",
+			"saveUnassigned": "Ramar utan vald person: {{count}} (lämnas som de är).",
+			"savedToast": "Foton sparade: {{count}}.",
+			"deleteSheet": "Ta bort bilden",
+			"deleteSheetTitle": "Ta bort bilden?",
+			"deleteSheetDescription": "Bilden och dess ramar tas bort. Foton som redan sparats finns kvar hos låntagarna.",
+			"deletedToast": "Bilden borttagen.",
+			"progress": "{{label}}: {{done}} av {{total}} med foto",
+			"missingTitle": "Fortfarande utan foto",
+			"byCamera": "Fotografera dem en i taget",
+			"errors": {
+				"not_found": "Bilden hittades inte.",
+				"set_not_found": "Klassen eller listan finns inte längre.",
+				"empty": "Filen är tom.",
+				"too_large": "Bilden är för stor (högst {{maxMb}} MB).",
+				"not_an_image": "Filen är inte en läsbar bild.",
+				"unsupported_format": "Formatet stöds inte: använd JPEG, PNG, WebP eller HEIC.",
+				"too_many_frames": "Högst {{maxFrames}} {{maxFrames:plural; one:foto; other:foton;}} per bild.",
+				"bad_corners": "Ramen är inte giltig: hörnen måste bilda en fyrhörning inne i bilden.",
+				"already_detected": "Fotona i den här bilden har redan letats upp.",
+				"frame_saved": "Det här fotot har redan sparats.",
+				"frame_erased": "Det här fotot tillhörde en borttagen låntagare: ramen har täckts.",
+				"not_a_member": "Bara låntagarna i klassen eller listan kan väljas.",
+				"patron_taken": "Redan vald för foto {{position}}: frigör den först innan du väljer den här.",
+				"confirm_replace": "{{count:plural; one:{{count}} foto ersätter ett befintligt; other:{{count}} foton ersätter befintliga;}}: bekräfta för att fortsätta.",
+				"nothing_to_save": "Välj minst en låntagare innan du sparar."
+			},
+			"erased": "Låntagaren borttagen: ramen har täckts i bilden."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "CSV-fil",
+			"submit": "Ladda upp",
+			"hints": {
+				"students": "En CSV-fil med en rad per elev, åtskild med ; eller , (en export från ett kalkylblad fungerar också). Använd mallens rubriker, som kan laddas ner nedan med de nödvändiga kolumnerna.",
+				"teachers": "En CSV-fil med en rad per lärare, åtskild med ; eller ,. Använd mallens rubriker, som kan laddas ner nedan med de nödvändiga kolumnerna."
+			}
+		},
+		"mapping": {
+			"format": "Igenkänt format",
+			"uncertain": "Formatet är inte säkert: kontrollera kolumnerna innan du går vidare.",
+			"remembered": "Kolumnerna är hämtade från den senaste importen av den här filen.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "filens rubrik",
+				"unknown": "okänt"
+			},
+			"mode": "Läge",
+			"modes": {
+				"upsert": "Lägg till och uppdatera",
+				"upsertHint": "Rader som hittas uppdaterar den befintliga låntagaren, de övriga skapar nya låntagare.",
+				"sync": {
+					"students": "Synkronisera elever",
+					"teachers": "Synkronisera lärare"
+				},
+				"syncHint": {
+					"students": "Filen är den kompletta listan över elever: den som saknas listas (och tas bort efter bekräftelse). Lärare berörs inte.",
+					"teachers": "Filen är den kompletta listan över lärare: den som saknas listas (och tas bort efter bekräftelse). Elever berörs inte."
+				}
+			},
+			"duplicates": "Låntagare som redan finns",
+			"policies": {
+				"update": "Uppdatera",
+				"skip": "Hoppa över",
+				"create": "Skapa ändå"
+			},
+			"validate": "Kontrollera filen",
+			"matchByName": {
+				"students": "Utan kolumnen external_id känns elever som redan finns i arkivet igen på namn och klass.",
+				"teachers": "Utan kolumnen external_id känns lärare som redan finns i arkivet igen på namn."
+			}
+		},
+		"preview": {
+			"ready": "Inga fel: filen kan importeras.",
+			"blocked": "Rätta felen i filen (eller bland låntagarna) och kontrollera igen: inget importeras med fel.",
+			"columns": {
+				"name": "Namn",
+				"class": "Klass"
+			},
+			"changed": "Ändras: {{fields}}",
+			"homonym": {
+				"pick": "Välj låntagaren",
+				"create": "Skapa en ny låntagare",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Namnlikheter att lösa"
+			},
+			"missing": {
+				"students": {
+					"title": "Elever i arkivet men saknas i filen ({{count}})",
+					"remove": "Ta bort dessa elever från arkivet (omedelbar anonymisering)",
+					"noPermission": "Utan behörighet att ta bort låntagare står de saknade eleverna kvar i arkivet.",
+					"notRemoved": "{{count}} {{count:plural; one:saknad elev har; other:saknade elever har;}} pågående lån och togs därför inte bort."
+				},
+				"teachers": {
+					"title": "Lärare i arkivet men saknas i filen ({{count}})",
+					"remove": "Ta bort dessa lärare från arkivet (omedelbar anonymisering)",
+					"noPermission": "Utan behörighet att ta bort låntagare står de saknade lärarna kvar i arkivet.",
+					"notRemoved": "{{count}} {{count:plural; one:saknad lärare har; other:saknade lärare har;}} pågående lån och togs därför inte bort."
+				},
+				"hint": "Med synkroniseringen kan den som inte finns i filen tas bort: personuppgifterna raderas genast och för alltid, bara klass och statistik finns kvar."
+			},
+			"commit": "Importera",
+			"back": "Tillbaka till kolumnerna",
+			"generatedCards": "{{count}} {{count:plural; one:nytt lånekort; other:nya lånekort;}} kommer att genereras: filen har inget nummer."
+		},
+		"reasons": {
+			"tooLong": "För lång text i kolumnen {{column}}: högst {{max}} {{max:plural; one:tecken; other:tecken;}}",
+			"nameRequired": "Förnamn eller efternamn saknas",
+			"emailInvalid": "Ogiltig e-post",
+			"cardNumberInvalid": "Ogiltigt lånekortsnummer",
+			"cardNumberTaken": "Lånekortsnumret är redan tilldelat en annan låntagare",
+			"cardNumberIsCopy": "Lånekortsnumret är samma som eller liknar streckkoden för ett exemplar",
+			"externalIdTaken": "Elevnumret är redan tilldelat en annan låntagare",
+			"duplicateInFile": "Samma person redan på rad {{line}}",
+			"homonym": "{{count}} {{count:plural; one:namnlik person; other:namnlika personer;}} i arkivet: välj vilken som ska uppdateras",
+			"matchedTwice": "En annan rad uppdaterar redan samma låntagare",
+			"skipped": "Finns redan: hoppades över",
+			"levelRequired": "Klass saknas",
+			"levelUnknown": "Årskursen ”{{value}}” finns inte i skolan",
+			"groupRequired": "Avdelning saknas",
+			"groupUnknown": "Avdelningen ”{{value}}” hittades inte för det här året. Giltiga klasser: {{classes}} (klasser skapas under Administration → Inställningar → Klasser)",
+			"levelNotInGroup": "Avdelningen ”{{value}}” har inte den årskursen. Giltiga klasser: {{classes}}",
+			"classUnknown": "Klassen ”{{value}}” hittades inte. Giltiga klasser: {{classes}}",
+			"teacherGroupUnknown": "Lärargruppen ”{{value}}” hittades inte. Giltiga grupper: {{classes}}"
+		},
+		"done": {
+			"title": "Importen slutförd",
+			"summary": "{{created}} {{created:plural; one:ny; other:nya;}}, {{updated}} {{updated:plural; one:uppdaterad; other:uppdaterade;}}, {{unchanged}} {{unchanged:plural; one:oförändrad; other:oförändrade;}}, {{removed}} {{removed:plural; one:borttagen; other:borttagna;}}.",
+			"printNew": "Skriv ut lånekorten för de nya",
+			"census": "Fotoregistrering",
+			"again": "Importera en annan fil",
+			"batch": "Import nr {{id}}: originalfilen sparas på servern."
+		},
+		"fields": {
+			"firstName": "Förnamn",
+			"lastName": "Efternamn",
+			"class": "Klass (årskurs och avdelning)",
+			"level": "Klass (årskurs)",
+			"section": "Avdelning",
+			"group": "Lärargrupp",
+			"externalId": "Elevnummer",
+			"cardNumber": "Lånekort",
+			"email": "E-post"
+		},
+		"titles": {
+			"students": "Importera elever",
+			"teachers": "Importera lärare"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "Förnamnet."
+			},
+			"lastName": {
+				"hint": "Efternamnet."
+			},
+			"class": {
+				"hint": "Klassen i en kolumn, till exempel 3A eller 3 A: den måste finnas under Administration → Inställningar → Klasser."
+			},
+			"level": {
+				"hint": "Årskursen (1, 2, 3…), med avdelningen i kolumnen section."
+			},
+			"section": {
+				"hint": "Avdelningen (A, B…): tillsammans med level anger den klassen."
+			},
+			"cardNumber": {
+				"hint": "Lånekortsnumret, om eleven redan har ett.",
+				"missing": "nya lånekort genereras"
+			},
+			"externalId": {
+				"hint": "Koden i det elektroniska registret.",
+				"missing": "låntagare som redan finns känns igen på namn och klass"
+			},
+			"email": {
+				"hint": "Valfri."
+			},
+			"group": {
+				"hint": "Lärargruppen; om den saknas, standardgruppen."
+			}
+		},
+		"classForm": {
+			"label": "Klassen",
+			"class": "I en kolumn (class: 3A)",
+			"levelSection": "I två kolumner (level: 3, section: A)"
+		}
+	}
+}

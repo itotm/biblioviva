@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "目录",
+		"search": "按书名、作者或 ISBN 搜索…",
+		"new": "新增图书",
+		"empty": "没有图书符合筛选条件。",
+		"countFiltered": "共 {{shown}} {{shown:plural; other:种书目符合筛选条件;}}",
+		"clearFilters": "清除筛选",
+		"filters": {
+			"kind": "种类",
+			"genre": "体裁",
+			"class": "分类",
+			"readingLevel": "等级",
+			"itemType": "资料类型",
+			"series": "丛书",
+			"all": "全部",
+			"allF": "全部",
+			"withdrawn": "同时显示已剔除的图书"
+		},
+		"columns": {
+			"title": "书名",
+			"series": "丛书",
+			"author": "作者",
+			"year": "年份",
+			"isbn": "ISBN",
+			"classification": "分类",
+			"copies": "复本",
+			"callNumber": "索书号",
+			"acquiredAt": "入藏日期"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "搜索目录",
+		"startHint": "按书名、作者、出版社、编码或 ISBN 搜索，也可以使用筛选条件。"
+	},
+	"kinds": {
+		"fiction": "小说",
+		"nonfiction": "非小说"
+	},
+	"fields": {
+		"title": "书名",
+		"subtitle": "副书名",
+		"originalTitle": "原书名",
+		"originalTitleHint": "仅当图书是译本时填写：作品在原文中的书名。",
+		"responsibility": "责任说明（如扉页所载）",
+		"author": "作者",
+		"publisher": "出版社",
+		"publicationPlace": "出版地",
+		"publicationYear": "年份",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN（非 ISBN）",
+		"physicalDescription": "形态描述",
+		"series": "丛书",
+		"seriesNumber": "丛书序号",
+		"seriesHint": "例如：哈利·波特，序号 3。输入时会显示目录中已有的丛书。",
+		"dewey": "杜威分类号（来自 SBN）",
+		"kind": "种类",
+		"genre": "体裁",
+		"classCode": "分类",
+		"readingLevel": "阅读等级",
+		"subjects": "主题词",
+		"notes": "备注",
+		"authorHint": "格式为“姓，名”。没有个人作者时使用快捷选项。",
+		"subjectsHint": "每行一个，或用逗号分隔。",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "新增图书",
+		"editTitle": "编辑书目记录",
+		"create": "保存书目记录",
+		"save": "保存修改",
+		"identity": "书目记录",
+		"publication": "出版信息",
+		"classification": "分类",
+		"more": "其他信息",
+		"quickPicks": "快捷选项",
+		"unknownPublisher": "出版社不详",
+		"unknownPlace": "出版地不详",
+		"singleCopy": "复本 {{barcode}}",
+		"singleCopyHint": "该书目记录只有一个复本：其数据在此编辑，并与书目记录一同保存。"
+	},
+	"picker": {
+		"kind": "这是哪类图书？",
+		"fiction": "小说",
+		"nonfiction": "非小说",
+		"genre": "选择体裁",
+		"class": "选择主题",
+		"readingLevel": "阅读等级",
+		"anyClass": "无",
+		"back": "返回主要主题",
+		"children": "{{label}}的子主题",
+		"selected": "已选：{{label}}",
+		"parentOnly": "总体使用“{{label}}”",
+		"later": "稍后分类",
+		"laterHint": "图书将进入“待分类”列表：分类之前，其复本不外借，书脊标签也不打印。"
+	},
+	"detail": {
+		"heading": "图书书目记录",
+		"tabs": {
+			"copies": "复本",
+			"details": "详细信息"
+		},
+		"copies": "共 {{total}} 册，其中可借 {{available}} {{available:plural; other:册;}}",
+		"noCopies": "还没有复本：添加复本后才能外借。",
+		"seriesLink": "丛书“{{series}}”的所有图书",
+		"edit": "编辑",
+		"delete": "删除书目记录",
+		"addCopies": "添加复本",
+		"deleteTitle": "删除书目记录“{{title}}”？",
+		"deleteDescription": "该书目记录将从目录中移除。只有在没有复本时才能删除。",
+		"deleted": "书目记录已删除",
+		"hasItems": "该书目记录仍有 {{count}} {{count:plural; other:册复本;}}：请先剔除或删除{{count:plural; other:这些;}}。",
+		"columns": {
+			"barcode": "条码",
+			"callNumber": "索书号",
+			"itemType": "资料类型",
+			"readingLevel": "等级",
+			"status": "状态",
+			"borrower": "借阅人",
+			"acquisition": "入藏日期",
+			"labels": "标签"
+		},
+		"dueOn": "应还 {{date}}",
+		"identifiers": "标识符",
+		"source": "来源：{{source}}",
+		"created": "创建于 {{when}}",
+		"updated": "最后修改于 {{when}}",
+		"onLoan": "借出中"
+	},
+	"item": {
+		"addTitle": "添加复本",
+		"copies": "复本数量",
+		"itemType": "资料类型",
+		"callNumber": "索书号",
+		"callNumberHint": "根据分类提出建议；可以修改。",
+		"readingLevel": "复本的阅读等级",
+		"enumeration": "卷 / 号",
+		"acquisitionDate": "入藏日期",
+		"notes": "复本备注",
+		"notForLoan": "仅供馆内阅览（不外借）",
+		"add": "添加",
+		"added": "已添加 {{count}} {{count:plural; other:册;}}：{{barcodes}}",
+		"editTitle": "编辑复本 {{barcode}}",
+		"save": "保存",
+		"saved": "复本已更新",
+		"status": "更改状态",
+		"statusTitle": "复本 {{barcode}} 的状态",
+		"newStatus": "新状态",
+		"reason": "原因（选填，将被记录）",
+		"statusSaved": "状态已更新",
+		"onLoan": "该复本正在借出：请先登记归还。",
+		"delete": "删除复本",
+		"deleteTitle": "删除复本 {{barcode}}？",
+		"deleteDescription": "仅用于纠正编目错误：曾被借出的复本不能删除，应予剔除。",
+		"deleted": "复本已删除",
+		"hasLoans": "该复本有借阅记录：应予剔除，而不是删除。",
+		"labelsTitle": "复本 {{barcode}} 的标签"
+	},
+	"errors": {
+		"isbnInvalid": "ISBN 无效（请检查数字）",
+		"isbnTaken": "已存在使用此 ISBN 的书目记录",
+		"issnInvalid": "ISSN 无效",
+		"eanInvalid": "EAN 无效",
+		"yearImplausible": "年份不合理",
+		"genreRequired": "请选择体裁",
+		"genreUnknown": "体裁不在配置中",
+		"genreNotForNonfiction": "非小说没有体裁",
+		"classCodeRequired": "必须选择主题",
+		"classCodeUnknown": "主题不在配置中",
+		"classCodeNotForFiction": "小说没有主题",
+		"readingLevelNotAllowed": "此处不需要阅读等级",
+		"readingLevelOutOfRange": "阅读等级不在配置中",
+		"itemTypeUnknown": "资料类型不在配置中",
+		"acquisitionDateInvalid": "日期无效（格式 YYYY-MM-DD）",
+		"copiesOutOfRange": "每次只能添加 1 至 100 册复本"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "测试数据源"
+		},
+		"errors": {
+			"unreachable": "无法连接服务。请检查网络连接，稍后再试。",
+			"timeout": "服务未能及时响应。请稍后再试。",
+			"protocol": "服务返回了意外的结果。数据可以手动输入。",
+			"http": "服务返回了错误。请稍后再试。",
+			"rate_limited": "查询过于频繁，服务拒绝了请求。请稍后再试。",
+			"not_configured": "服务未配置：缺少一项设置（例如 API 密钥）。",
+			"spawn": "本服务器上没有 yaz-client 程序。请告知管理员。"
+		},
+		"noHits": "{{provider}} 没有结果。",
+		"hits": "{{provider}} 返回 {{count}} {{count:plural; other:条结果;}}",
+		"fromCache": "来自缓存"
+	},
+	"fastAdd": {
+		"title": "新增图书",
+		"steps": {
+			"code": "条码",
+			"lookup": "查询",
+			"form": "书目记录与复本",
+			"done": "完成"
+		},
+		"code": {
+			"heading": "扫描条码",
+			"label": "ISBN 或 EAN",
+			"placeholder": "978…",
+			"material": "资料类型",
+			"noCode": "无条码",
+			"noCodeHint": "按书名和作者搜索，或手动填写书目记录。",
+			"manual": "手动填写",
+			"notACode": "读取的代码既不是 ISBN 也不是 EAN：请检查数字，或选择“无条码”。",
+			"eanNotIsbn": "已读取 EAN {{ean}}：它不是 ISBN，因此书目记录需要手动填写。",
+			"cameraNotIsbn": "不是 ISBN：请将图书的条码对准取景框"
+		},
+		"search": {
+			"heading": "按书名和作者搜索",
+			"title": "书名",
+			"author": "作者",
+			"submit": "搜索",
+			"empty": "请至少输入书名或作者。"
+		},
+		"duplicate": {
+			"heading": "目录中已有此 ISBN",
+			"copies": "{{count}} {{count:plural; other:册;}}",
+			"addCopy": "添加复本",
+			"open": "打开书目记录",
+			"another": "扫描另一个条码"
+		},
+		"lookup": {
+			"searching": "正在 {{providers}} 上搜索…",
+			"best": "最完整",
+			"heading": "找到的书目记录",
+			"pick": "使用此书目记录",
+			"none": "没有找到书目记录。可以手动填写。",
+			"manual": "手动输入",
+			"bySearch": "按书名搜索",
+			"retry": "重试",
+			"another": "新条码",
+			"source": "来源：{{provider}}",
+			"providerOk": "{{count}} {{count:plural; other:条书目记录;}}",
+			"providerCached": "来自缓存",
+			"failed": "错误"
+		},
+		"form": {
+			"heading": "核对书目记录并添加复本",
+			"rescan": "扫描另一个条码",
+			"bestOf": "在找到的 {{count}} 条书目记录中，这是最完整的一条。请对照实书核对年份和描述。",
+			"otherRecords": "其他 {{count:plural; other:条书目记录;}}（{{count}}）",
+			"fromSource": "书目记录来自 {{provider}}：保存前请核对数据。",
+			"manualSource": "书目记录为手动填写。",
+			"copiesSection": "复本",
+			"copies": "复本数量",
+			"itemType": "资料类型",
+			"callNumber": "索书号",
+			"readingLevel": "复本的阅读等级",
+			"acquisitionDate": "入藏日期",
+			"save": "保存书目记录和复本",
+			"deweySuggested": "根据杜威分类号 {{dewey}} 提出的主题。"
+		},
+		"done": {
+			"heading": "书目记录已保存",
+			"summary": "“{{title}}”，共 {{count}} {{count:plural; other:册;}}",
+			"summaryCopies": "已为“{{title}}”添加 {{count}} {{count:plural; other:册;}}",
+			"barcodes": "复本条码",
+			"printLabels": "打印标签",
+			"addToList": "添加到标签列表",
+			"open": "打开书目记录",
+			"another": "再添加一本"
+		},
+		"cover": {
+			"title": "封面",
+			"alt": "图书封面",
+			"searching": "正在网上查找封面…",
+			"found": "已在 {{provider}} 上找到：将随书目记录一同保存。如果不对，请拍摄书本自身的封面。",
+			"photo": "封面照片：将随书目记录一同保存。",
+			"none": "网上没有找到封面：可以拍摄。",
+			"empty": "没有封面：可以拍摄。",
+			"take": "拍摄封面",
+			"replace": "用照片替换",
+			"remove": "移除",
+			"saving": "正在保存封面…",
+			"failed": "封面未能保存：可以之后在图书的书目记录中添加。"
+		}
+	},
+	"cover": {
+		"title": "封面",
+		"take": "拍摄封面",
+		"upload": "上传文件",
+		"change": "更换封面",
+		"delete": "移除封面",
+		"deleteTitle": "移除封面？",
+		"deleteDescription": "图像将从服务器删除；之后可以重新拍摄。",
+		"shoot": "拍摄",
+		"loading": "正在加载校正模块（{{loaded}} / {{total}} MB），仅在首次使用时加载。",
+		"loadingShort": "正在加载校正模块（{{loaded}} MB），仅在首次使用时加载。",
+		"loadFailed": "无法加载校正模块。请检查连接后重试。",
+		"detecting": "正在查找封面的边缘…",
+		"notFound": "未能自动找到边缘：请将四角拖到封面的边缘上。",
+		"adjustHint": "将四个角拖到封面的边缘上，然后校正。",
+		"straighten": "校正",
+		"result": "结果",
+		"use": "使用此封面",
+		"retake": "重拍",
+		"cancel": "取消",
+		"saved": "封面已保存",
+		"deleted": "封面已移除",
+		"placeholder": "没有封面",
+		"alt": "{{title}} 的封面",
+		"cameraHint": "即使倾斜也要将整个封面纳入取景框：拍摄后会自动校正。",
+		"errors": {
+			"too_large": "文件过大：上限为 {{maxMb}} MB。",
+			"not_an_image": "该文件不是可读取的图像。",
+			"unsupported_format": "不支持的图像格式（可用 JPEG、PNG、WebP 或 HEIC）。",
+			"empty": "未选择文件。"
+		},
+		"download": "下载封面",
+		"downloading": "正在网上查找封面…",
+		"downloaded": "已从 {{provider}} 下载封面",
+		"downloadNotFound": "网上没有找到此 ISBN 的封面：可以拍摄。",
+		"downloadNoIsbn": "书目记录没有 ISBN：需要拍摄封面。"
+	},
+	"export": {
+		"copiesTotal": "复本",
+		"copiesAvailable": "可借",
+		"callNumber": "索书号",
+		"acquiredAt": "入藏日期"
+	},
+	"import": {
+		"title": "导入目录",
+		"upload": {
+			"file": "CSV 文件",
+			"hint": "每行对应一个复本：书目数据会在其复本所在的各行中重复。书名、作者和出版社为必填项。请使用下方可下载的模板表头，并保留所需的列。从 Koha 迁移时，请使用管理员指南中说明的导出方式。",
+			"submit": "上传"
+		},
+		"mapping": {
+			"uncertain": "未能识别这些列：继续之前请为每一列指定字段。",
+			"remembered": "已记住此文件上次导入时的列。",
+			"specialValues": "作者或出版社缺失时使用的特殊值（“{{author}}”，“{{publisher}}”）",
+			"specialValuesHint": "不做此选择的话，没有作者或出版社的行将被视为错误。",
+			"validate": "检查文件",
+			"without": {
+				"biblioKey": "没有 biblio_key 列时，同一本书的复本按 ISBN 归组；没有 ISBN 的行各自成为一个书目。",
+				"barcode": "没有 barcode 列时，将自动生成复本的条码：导入后请打印其标签。",
+				"classification": "没有 classification 列时，图书将进入“待分类”列表：分类之前其复本不外借。"
+			}
+		},
+		"fields": {
+			"biblioKey": "书目键（biblionumber）",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "书名",
+			"subtitle": "副书名",
+			"originalTitle": "原书名",
+			"responsibility": "责任说明",
+			"author": "作者",
+			"publisher": "出版社",
+			"publicationPlace": "出版地",
+			"publicationYear": "年份",
+			"physicalDescription": "形态描述",
+			"series": "丛书",
+			"seriesNumber": "丛书序号",
+			"dewey": "杜威分类号",
+			"classification": "分类（体裁或主题，即 Koha 的 ccode）",
+			"readingLevel": "阅读等级",
+			"subjects": "主题词",
+			"notes": "书目备注",
+			"barcode": "复本条码",
+			"callNumber": "索书号",
+			"itemType": "资料类型",
+			"enumeration": "卷",
+			"status": "状态",
+			"notForLoan": "不外借",
+			"acquisitionDate": "入藏日期",
+			"itemNotes": "复本备注"
+		},
+		"preview": {
+			"ready": "没有错误：可以导入。",
+			"blocked": "请修正文件中的错误并重新检查：有错误的文件不会被导入。",
+			"nothing": "文件中的所有复本已在目录中：没有可导入的内容。",
+			"titles": "新书目 {{new}} {{new:plural; other:种;}}，{{existing}} 种已在目录中（其复本将被添加）",
+			"columns": {
+				"title": "书名",
+				"barcode": "条码",
+				"classification": "分类"
+			},
+			"question": {
+				"title": "同一书名的复本阅读等级不同",
+				"text": "在 {{count}} {{count:plural; other:种书目;}}中，复本的阅读等级不同。阅读等级可以记在每个复本上，而不是记在书目上：这就是“按复本设置阅读等级”，它适用于整个目录，并会把目录中已有书目的等级移到其复本上。",
+				"yes": "是，按复本设置阅读等级",
+				"no": "否，这些是需要修正的错误"
+			},
+			"commit": "导入",
+			"back": "返回列设置",
+			"generatedBarcodes": "{{count}} {{count:plural; other:册复本;}}没有条码：将生成条码，然后打印标签。",
+			"toClassify": "{{count}} {{count:plural; other:种没有分类的新书目;}}：{{count:plural; other:它们将进入;}}“待分类”。"
+		},
+		"reasons": {
+			"tooLong": "列 {{column}} 中的文字过长：最多 {{max}} 个字符",
+			"isbnInvalid": "ISBN 无效：“{{value}}”",
+			"classificationUnknown": "分类不在配置中：“{{value}}”",
+			"barcodeInvalid": "条码含有不允许的字符：“{{value}}”",
+			"barcodeCheckDigit": "条码的校验字符错误：“{{value}}”",
+			"barcodeDuplicateInFile": "条码已在第 {{line}} 行使用",
+			"barcodeTaken": "条码 {{value}} 已属于目录中的另一个复本",
+			"barcodeIsCard": "代码 {{value}} 是读者证号或看似读者证号：复本不能使用读者证的代码",
+			"statusUnknown": "无法识别的状态：“{{value}}”（可借、遗失、损坏、维修中、已剔除）",
+			"notForLoanUnknown": "“不外借”的取值无法识别：“{{value}}”（是/否）",
+			"dateInvalid": "日期无效：“{{value}}”（格式 YYYY-MM-DD 或 DD/MM/YYYY）",
+			"authorMissing": "缺少作者（使用“特殊值”时将变为 Anonimo）",
+			"publisherMissing": "缺少出版社（使用“特殊值”时将变为 s.n.）",
+			"titleMissing": "缺少书名",
+			"groupConflict": "与第 {{line}} 行的键相同，但书名不同",
+			"classQuestion": "复本的阅读等级不同（{{classes}}）：请回答下方的问题",
+			"classDiffers": "复本的阅读等级不同（{{classes}}），但未开启“按复本设置阅读等级”",
+			"copyExists": "复本已在目录中：已跳过",
+			"mergedIntoExisting": "已加入目录中已有的书目（相同的键或相同的 ISBN）"
+		},
+		"done": {
+			"title": "目录已导入",
+			"summary": "新书目 {{titlesCreated}} {{titlesCreated:plural; other:种;}}，添加复本 {{copiesCreated}} {{copiesCreated:plural; other:册;}}（已在目录中的书目 {{titlesMerged}} {{titlesMerged:plural; other:种;}}，跳过的复本 {{copiesSkipped}} {{copiesSkipped:plural; other:册;}}）。",
+			"classPerItem": "已开启“按复本设置阅读等级”。",
+			"batch": "导入编号 {{id}}：原始文件已保留。",
+			"labels": "打印没有条码的复本的标签",
+			"open": "前往目录",
+			"again": "导入另一个文件"
+		},
+		"columns": {
+			"title": {
+				"hint": "图书的书名。"
+			},
+			"author": {
+				"hint": "格式为“姓，名”；留空是错误，除非使用“特殊值”。"
+			},
+			"publisher": {
+				"hint": "出版社；留空的处理同作者。"
+			},
+			"biblioKey": {
+				"hint": "旧程序中书目的编码（Koha 的 biblionumber）：用于把复本归在一起。",
+				"missing": "复本按 ISBN 归组"
+			},
+			"barcode": {
+				"hint": "复本上已有的条码。",
+				"missing": "将生成条码，并且需要打印标签"
+			},
+			"classification": {
+				"hint": "体裁（小说）或主题（非小说）的编码。",
+				"missing": "图书将进入“待分类”列表"
+			},
+			"readingLevel": {
+				"hint": "阅读等级（小说）。"
+			},
+			"isbn": {
+				"hint": "ISBN-10 或 ISBN-13。"
+			},
+			"issn": {
+				"hint": "用于期刊。"
+			},
+			"ean": {
+				"hint": "DVD 等资料的 EAN 编码。"
+			},
+			"subtitle": {
+				"hint": "副书名。"
+			},
+			"originalTitle": {
+				"hint": "仅用于译本：原文语言中的书名。"
+			},
+			"responsibility": {
+				"hint": "插图者、译者……"
+			},
+			"publicationPlace": {
+				"hint": "出版地。"
+			},
+			"publicationYear": {
+				"hint": "出版年份。"
+			},
+			"physicalDescription": {
+				"hint": "页数、插图、开本。"
+			},
+			"series": {
+				"hint": "丛书（不是出版社的出版系列）。"
+			},
+			"seriesNumber": {
+				"hint": "丛书中的序号。"
+			},
+			"dewey": {
+				"hint": "杜威分类号，仅供参考。"
+			},
+			"subjects": {
+				"hint": "关键词，用分号或逗号分隔。"
+			},
+			"notes": {
+				"hint": "书目的备注。"
+			},
+			"callNumber": {
+				"hint": "索书号；缺失时会提出建议。"
+			},
+			"itemType": {
+				"hint": "资料类型（书、DVD……）；缺失时采用第一个已配置的类型。"
+			},
+			"enumeration": {
+				"hint": "卷号，用于多卷本作品。"
+			},
+			"status": {
+				"hint": "可借、遗失、损坏、维修中、已剔除。"
+			},
+			"notForLoan": {
+				"hint": "1 或“是”表示仅供馆内阅览的复本。"
+			},
+			"acquisitionDate": {
+				"hint": "入藏日期；缺失时为今天。"
+			},
+			"itemNotes": {
+				"hint": "复本的备注。"
+			}
+		}
+	},
+	"batch": {
+		"selected": "修改所选复本",
+		"title": "修改复本",
+		"scope": "{{count}} {{count:plural; other:册;}}",
+		"operation": "修改内容",
+		"operations": {
+			"status": "状态",
+			"itemType": "资料类型",
+			"notForLoan": "不外借",
+			"readingLevel": "复本的阅读等级",
+			"acquisitionDate": "入藏日期"
+		},
+		"value": "新值",
+		"yes": "是",
+		"no": "否",
+		"noClass": "无等级",
+		"reason": "原因",
+		"reasonHint": "遗失和已剔除的复本必须填写：原因会保留在每个复本的记录中。",
+		"check": "检查",
+		"apply": "应用于 {{count}} {{count:plural; other:册;}}",
+		"plan": {
+			"changes": "{{count}} {{count:plural; other:册复本将改变;}}",
+			"onLoan": "{{count}} {{count:plural; other:册复本在借出，保持不变（需先归还）;}}",
+			"unchanged": "{{count}} {{count:plural; other:册复本已经是这个值;}}",
+			"notFound": "{{count}} {{count:plural; other:册复本不再存在;}}",
+			"notAllowed": "{{count}} {{count:plural; other:册复本不是小说，等级不适用;}}",
+			"none": "没有需要修改的复本。"
+		},
+		"excludedTitle": "保持不变的复本",
+		"done": "已修改 {{count}} {{count:plural; other:册;}}",
+		"errors": {
+			"reasonRequired": "请填写原因：遗失和已剔除的复本必须填写。",
+			"itemTypeUnknown": "资料类型不在配置中。",
+			"readingLevelNotAllowed": "未开启“按复本设置阅读等级”。",
+			"readingLevelOutOfRange": "阅读等级不在配置中。",
+			"dateInvalid": "日期无效。",
+			"statusUnknown": "状态无效。",
+			"classificationUnknown": "请选择配置中的一个体裁或主题。"
+		},
+		"reclassify": {
+			"button": "重新分类",
+			"title": "重新分类所选书目",
+			"scope": "{{count}} {{count:plural; other:种书目;}}",
+			"resuggest": "根据新的分类重写复本的索书号",
+			"labelsHint": "书脊标签（如索书号改变，还有标签）将重新列入待打印的内容。",
+			"changes": "{{count}} {{count:plural; other:种书目将改变;}}",
+			"apply": "重新分类 {{count}} {{count:plural; other:种书目;}}",
+			"done": "已重新分类 {{count}} {{count:plural; other:种书目;}}，重写了 {{calls}} {{calls:plural; other:个索书号;}}"
+		}
+	},
+	"search": {
+		"suggest": "代码 {{barcode}} 是“{{title}}”的一个复本。",
+		"openSuggest": "打开书目记录",
+		"available": "仅显示可借",
+		"yearFrom": "起始年份",
+		"yearTo": "截止年份",
+		"copiesAvailable": "{{available}} / {{total}} 册可借",
+		"noCopies": "没有复本"
+	},
+	"inventory": {
+		"title": "盘点",
+		"defaultName": "盘点",
+		"emptyTitle": "没有正在进行的盘点",
+		"emptyHint": "开始一次盘点，然后逐架扫描复本：盘点结束时，未被扫描到的复本会被标记为遗失。",
+		"name": "盘点名称",
+		"start": "开始新盘点",
+		"started": "开始于 {{when}}",
+		"overall": "全馆",
+		"progress": "{{seen}} / {{expected}}（{{percent}}%）",
+		"counts": "已扫描 {{scanned}} {{scanned:plural; other:册;}} · 错架 {{misplaced}} · 重新找到 {{found}}",
+		"byShelf": "按书架统计进度",
+		"noShelf": "没有索书号",
+		"scanTitle": "扫描复本",
+		"shelf": "书架",
+		"shelfHint": "例如 B 或 590：索书号不同的复本会被标为错架。",
+		"scanLabel": "复本条码",
+		"camera": "用摄像头扫描",
+		"outcomes": {
+			"seen": "{{title}}（{{barcode}}）：已扫描。",
+			"again": "{{title}}（{{barcode}}）：已于 {{when}} 扫描过。",
+			"misplaced": "{{title}}（{{barcode}}）：错架；请按索书号放回原处。",
+			"found": "{{title}}（{{barcode}}）：原已遗失，现已找到；重新可借。",
+			"onLoan": "{{title}}（{{barcode}}）：显示为借出中；请在借还台登记归还。",
+			"withdrawn": "{{title}}（{{barcode}}）：已剔除的复本，应从书架上取下。",
+			"unknown": "{{code}}：没有复本使用此条码。"
+		},
+		"missing": "仍未找到（{{count}}）",
+		"allShelves": "全部书架",
+		"allTypes": "全部资料",
+		"noneMissing": "所有应有的复本都已扫描到。",
+		"more": "还有 {{count}} {{count:plural; other:册;}}：导出列表即可查看{{count:plural; other:全部;}}。",
+		"close": "结束盘点",
+		"closeTitle": "结束盘点？",
+		"closeHint": "{{count}} {{count:plural; other:册;}}从未被扫描到的复本将被标记为遗失。盘点可在一周之内重新开启，以撤销此操作。",
+		"closedTitle": "盘点已结束",
+		"summary": "已扫描 {{seen}} / {{expected}} {{expected:plural; other:册;}}，标记为遗失 {{lost}}，重新找到 {{found}}，借出中 {{onLoan}}，错架 {{misplaced}}。",
+		"history": "往期盘点",
+		"reopen": "重新开启",
+		"errors": {
+			"alreadyOpen": "已有正在进行的盘点。",
+			"notOpen": "此盘点已结束。",
+			"notFound": "未找到该盘点。",
+			"tooLate": "只能在结束后一周之内重新开启。",
+			"badName": "请为盘点命名。",
+			"badNotes": "盘点备注最多 500 个字符。"
+		},
+		"cameraShelf": "书架 {{shelf}}",
+		"cameraDone": "完成"
+	},
+	"toClassify": {
+		"title": "待分类",
+		"label": "待分类",
+		"intro": "录入时未分类的图书，按录入先后排列，最早的在前。分类之前，其复本不外借。",
+		"count": "待分类的图书 {{count}} {{count:plural; other:册;}}",
+		"empty": "没有需要分类的图书",
+		"emptyHint": "目录中的每本图书都已有体裁或主题。",
+		"start": "开始分类",
+		"classify": "分类",
+		"badge": "待分类",
+		"badgeHint": "图书分类之前，其复本不外借。",
+		"columns": {
+			"title": "书名",
+			"author": "作者",
+			"publisher": "出版社",
+			"year": "年份",
+			"isbn": "ISBN",
+			"copies": "复本",
+			"enteredOn": "录入日期"
+		},
+		"flow": {
+			"title": "为图书分类",
+			"saveNext": "保存并继续",
+			"save": "保存",
+			"skip": "跳过",
+			"saved": "“{{title}}”已分类",
+			"end": "本轮没有其他待分类的图书了。",
+			"backToList": "返回列表",
+			"already": "这本图书已经分类。",
+			"callNumber": "复本的索书号",
+			"callNumberHint": "没有索书号的复本将使用此索书号；之后即可打印书脊标签。",
+			"dewey": "杜威分类号 {{dewey}} 对应主题 {{code}}。",
+			"copies": "{{count}} {{count:plural; other:册;}}",
+			"subjects": "主题词",
+			"notes": "备注"
+		}
+	}
+}

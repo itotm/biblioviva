@@ -1,0 +1,35 @@
+.receipt {
+	font-family: Arial, Helvetica, "Liberation Sans", sans-serif;
+	font-size: 11pt;
+}
+.receipt h1 {
+	font-size: 14pt;
+	font-weight: 700;
+	margin: 0 0 3mm;
+}
+.receipt table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 3mm 0;
+}
+.receipt th,
+.receipt td {
+	border-bottom: 0.3mm solid #000;
+	padding: 1.5mm 1mm;
+	text-align: left;
+	vertical-align: top;
+}
+.receipt th {
+	font-weight: 700;
+}
+.receipt .author {
+	font-size: 9pt;
+}
+.receipt td:nth-child(2),
+.receipt td:nth-child(3) {
+	white-space: nowrap;
+}
+.receipt .thanks {
+	margin-top: 5mm;
+	font-style: italic;
+}

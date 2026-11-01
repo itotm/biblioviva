@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "Lagre",
+		"cancel": "Avbryt",
+		"close": "Lukk",
+		"confirm": "Bekreft",
+		"delete": "Slett",
+		"edit": "Rediger",
+		"search": "Søk",
+		"export": "Eksporter",
+		"back": "Tilbake",
+		"retry": "Prøv igjen",
+		"backTo": "Tilbake til {{page}}",
+		"more": "Flere handlinger"
+	},
+	"similar": {
+		"label": "Lignende",
+		"count": "pluss {{count}} lignende, funnet ved å rette en skrivefeil",
+		"hint": "Funnet ved å rette en skrivefeil: kontroller at det er den du søkte."
+	},
+	"status": {
+		"loading": "Laster…",
+		"error": "Noe gikk galt"
+	},
+	"statuses": {
+		"item": {
+			"available": "Tilgjengelig",
+			"onLoan": "På utlån",
+			"lost": "Savnet",
+			"damaged": "Skadet",
+			"inRepair": "Til reparasjon",
+			"withdrawn": "Utrangert",
+			"notForLoan": "Kun i biblioteket"
+		},
+		"loan": {
+			"open": "Pågående",
+			"dueSoon": "Forfaller snart",
+			"overdue": "Forfalt",
+			"returned": "Innlevert"
+		},
+		"patron": {
+			"active": "Aktiv",
+			"anonymized": "Fjernet"
+		},
+		"print": {
+			"pending": "Skal skrives ut",
+			"printed": "Skrevet ut"
+		}
+	},
+	"list": {
+		"selected": "{{count}} {{count:plural; one:valgt; other:valgte;}}"
+	},
+	"scan": {
+		"label": "Strekkode",
+		"placeholder": "Skann eller skriv inn en kode",
+		"submit": "Søk etter kode",
+		"camera": "Kamera",
+		"cameraTitle": "Skann med kameraet",
+		"errors": {
+			"empty": "Ingen kode er skrevet inn.",
+			"item_check_digit": "Strekkoden til eksemplaret har feil kontrolltegn: skann den på nytt.",
+			"card_check_digit": "Kortnummeret har feil kontrolltegn: skann det på nytt.",
+			"isbn_check_digit": "ISBN-nummeret har feil kontrollsiffer: kontroller sifrene.",
+			"unrecognised": "Koden er ikke gjenkjent: kontroller at skanneren leser Code 39 og Code 128."
+		},
+		"invalidRead": "Ugyldig kode ({{code}}): leser inn…",
+		"invalidShort": "Ugyldig kode, leser på nytt…",
+		"useAnyway": "Bruk {{code}} likevel"
+	},
+	"camera": {
+		"start": "Start kamera",
+		"stop": "Stopp kamera",
+		"switch": "Bytt kamera",
+		"torch": "Lommelykt",
+		"snapshot": "Ta bilde",
+		"device": "Kamera",
+		"starting": "Starter kameraet…",
+		"errors": {
+			"insecure": "Kameraet fungerer bare med en sikker tilkobling (https): åpnet fra det lokale nettverket uten Tailscale kan ikke appen bruke det. Bruk strekkodeleseren eller last opp en fil, eller åpne appen fra Tailscale-adressen.",
+			"denied": "Tilgang nektet: tillat bruk av kameraet i innstillingene til nettleseren, og prøv igjen.",
+			"notFound": "Fant ingen kamera på denne enheten.",
+			"busy": "Kameraet brukes allerede av en annen app.",
+			"generic": "Kunne ikke starte kameraet ({{message}}).",
+			"timeout": "Kameraet svarte ikke. Kontroller at nettleseren ikke fortsatt spør om tillatelse, og at tilgangen ikke er nektet tidligere for denne siden (ikonet ved adressen)."
+		},
+		"permissionHint": "Hvis nettleseren spør om tillatelse til å bruke kameraet (vanligvis ved adressefeltet), velg «Tillat»."
+	},
+	"clipboard": {
+		"failed": "Kopiering mislyktes: marker teksten og kopier den for hånd."
+	},
+	"form": {
+		"errorsTitle": "Kontroller feltene som er merket",
+		"field": "Felt {{field}}"
+	},
+	"confirm": {
+		"title": "Bekrefter du?"
+	},
+	"export": {
+		"csv": "CSV (regneark, tekst)",
+		"ods": "ODS (LibreOffice / Excel)"
+	},
+	"demo": {
+		"panel": "Denne installasjonen inneholder eksempeldata lastet inn {{when}}: {{patrons}} {{patrons:plural; one:låner; other:lånere;}}, {{biblios}} {{biblios:plural; one:tittel; other:titler;}}, {{items}} {{items:plural; one:eksemplar; other:eksemplarer;}}, {{loans}} {{loans:plural; one:utlån; other:utlån;}}. Alt er oppdiktet: ingen virkelig person."
+	},
+	"import": {
+		"header": "Første rad er en overskrift",
+		"column": "Kolonne {{n}}",
+		"ignore": "— ignorer —",
+		"counts": {
+			"new": "{{count}} {{count:plural; one:ny; other:nye;}}",
+			"update": "{{count}} å oppdatere",
+			"unchanged": "{{count}} {{count:plural; one:uendret; other:uendrede;}}",
+			"error": "{{count}} {{count:plural; one:feil; other:feil;}}"
+		},
+		"onlyErrors": "Vis bare feilene",
+		"info": "{{rows}} {{rows:plural; one:rad; other:rader;}} · koding {{encoding}} · skilletegn «{{delimiter}}»",
+		"steps": {
+			"upload": "Fil",
+			"mapping": "Kolonner",
+			"preview": "Kontroll",
+			"done": "Fullført"
+		},
+		"line": "Rad",
+		"status": "Resultat",
+		"reason": "Detaljer",
+		"statuses": {
+			"new": "Ny",
+			"update": "Oppdater",
+			"unchanged": "Uendret",
+			"error": "Feil"
+		},
+		"errors": {
+			"empty": "Filen er tom.",
+			"tooLarge": "Filen er større enn {{mb}} MB.",
+			"noRows": "Fant ingen rader i filen.",
+			"uploadGone": "Den opplastede filen er ikke lenger tilgjengelig: last den opp på nytt.",
+			"notReady": "Filen har fortsatt feil: kontroller den på nytt.",
+			"mappingIncomplete": "Obligatoriske kolonner mangler: {{columns}}."
+		},
+		"template": {
+			"title": "Malen for filen",
+			"hint": "Velg kolonnene: malen inneholder bare overskriften og fylles ut én rad om gangen (et regneark lagret som CSV fungerer også).",
+			"required": "Obligatoriske",
+			"keys": "Nøkler",
+			"keysHint": "Brukes til å gjenkjenne det som allerede finnes; de kan utelates.",
+			"optional": "Valgfrie",
+			"download": "Last ned malen",
+			"ifMissing": "Hvis den mangler: {{text}}."
+		},
+		"groups": {
+			"required": "obligatorisk",
+			"key": "nøkkel"
+		}
+	},
+	"words": {
+		"yes": "Ja",
+		"no": "Nei"
+	},
+	"password": {
+		"show": "Vis passordet",
+		"hide": "Skjul passordet"
+	},
+	"demoPublic": {
+		"language": "Språk",
+		"welcome": {
+			"title": "Velkommen til demoen av BiblioViva",
+			"beta": "Offentlig beta",
+			"betaText": "BiblioViva er i offentlig beta: funksjonene er stabile, men frem til versjon 1.0 er det ikke garantert at en oppdatering forblir kompatibel med dataene og innstillingene fra forrige versjon.",
+			"intro": "BiblioViva er programmet for å drive biblioteket på en skole: utlån og innleveringer, katalog, lånere med bilder og kort, etiketter, utskrifter og rapporter. Dette er en offentlig demo: alle funksjonene kan prøves.",
+			"contents": "Her finner du en oppdiktet barneskole: {{patrons}} {{patrons:plural; one:elev eller lærer; other:elever og lærere;}}, {{biblios}} {{biblios:plural; one:tittel; other:titler;}} og {{items}} {{items:plural; one:eksemplar; other:eksemplarer;}}, {{openLoans}} {{openLoans:plural; one:utlån; other:utlån;}} pågående, av disse {{overdueLoans}} forfalt. Navn og bilder er oppdiktet: ingen virkelig person.",
+			"reset": "Hver dag kl. {{time}} tilbakestilles demoen. Endringer i innstillingene kan prøves, men de lagres ikke.",
+			"examples": "I demoen erstattes tekst og bilder med et eksempel: alt kan prøves helt til slutt, men det som skrives eller fotograferes, blir ikke lagret, og ingen andre besøkende ser det. Importene godtar bare eksempelfilene, som kan lastes ned fra siden for hver import.",
+			"accountsTitle": "Hvilken konto du skal logge inn med",
+			"accountsHint": "Som i biblioteket ser hver konto bare arbeidet til sin rolle. Brukernavn og passord skrives inn i skjemaet ovenfor.",
+			"password": "Passordet er det samme for alle kontoene:"
+		},
+		"accounts": {
+			"admin": {
+				"name": "Administrasjon",
+				"does": "ser alt: i tillegg til arbeidet til de andre kontoene, innstillingene, personalkontoene, sikkerhetskopiene, klassene og overgangen til neste skoleår."
+			},
+			"prestiti": {
+				"name": "Utlånsforvaltning",
+				"does": "utlånsdisken: låne ut, registrere innleveringer og fornye, følge med på forfalte utlån og skrive ut purringene."
+			},
+			"catalogo": {
+				"name": "Katalogisering",
+				"does": "bøker og eksemplarer, oppslag av katalogposter i SBN (simulert her), bokomslag, klassifisering og etiketter."
+			},
+			"tessere": {
+				"name": "Kort og bilder",
+				"does": "elever og lærere, bilder og fotoregistrering av klassene, utskrift av lånekort."
+			},
+			"report": {
+				"name": "Rapporter",
+				"does": "statistikk over utlån, katalog og lånere, eksport av tabeller."
+			}
+		},
+		"blocked": {
+			"config": "I demoen lagres ikke innstillingene: alt kan prøves, men endringene skrives ikke.",
+			"restore": "I demoen er gjenoppretting av sikkerhetskopier avslått: eksempeldataene opprettes på nytt av seg selv hver natt.",
+			"configImport": "I demoen er import av en konfigurasjon avslått: konfigurasjonen i demoen er den samme for alle besøkende.",
+			"pictures": "I demoen lastes ikke klassebilder opp: prøv fotoregistreringen med eksempelbildet av klassen.",
+			"sqlReports": "I demoen er rapporter skrevet i SQL avslått: prøv de veiledede rapportene.",
+			"importSize": "I demoen kan filer som skal importeres være på høyst 1 MB.",
+			"printSize": "I demoen skrives høyst 3 ark ut om gangen: velg færre eksemplarer eller færre lånere.",
+			"importExample": "I demoen importeres bare eksempelfilen: last den ned med knappen for malen og last den opp slik den er.",
+			"notesLimit": "I demoen kan bare noen få meldinger skrives per dag.",
+			"demoData": "I demoen beholdes eksempeldataene til den nattlige tilbakestillingen.",
+			"backups": "I demoen er manuelle sikkerhetskopier avslått: eksempeldataene opprettes på nytt av seg selv hver natt.",
+			"archives": "I demoen lastes arkiver og sikkerhetskopier ikke ned: data og konfigurasjon i demoen opprettes på nytt av seg selv hver natt.",
+			"languagePacks": "I demoen lastes språkpakker ikke ned: demoen har italiensk og engelsk."
+		},
+		"example": {
+			"note": "DEMO – melding fra {{when}}",
+			"comment": "Demo-merknad fra {{when}}",
+			"book": "Demo-bok fra {{when}}",
+			"wish": "Demo-ønske fra {{when}}",
+			"class": "Demo-klasse fra {{when}}",
+			"printList": "Demo-liste fra {{when}}",
+			"inventory": "Demo-bokrevisjon fra {{when}}",
+			"reason": "Demo-årsak fra {{when}}",
+			"date": "Demo-dato fra {{when}}"
+		},
+		"replaced": "I demoen erstattes tekst og bilder med et eksempel: lagringen gikk bra, men det som beholdes er eksempelet.",
+		"tooMany": "For mange forespørsler på kort tid: prøv igjen om ett minutt.",
+		"refused": {
+			"title": "Ikke tilgjengelig i demoen",
+			"busyTitle": "For mange forespørsler",
+			"back": "Tilbake til BiblioViva"
+		}
+	}
+}

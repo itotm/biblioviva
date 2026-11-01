@@ -1,0 +1,76 @@
+code;label
+001;Conoscenza
+004;Informatica
+030;Enciclopedie
+200;Religione
+292;Mitologia
+340;Diritto
+380;Economia
+390;Folclore
+413;Dizionario Straniero
+453;Dizionario Italiano
+503;Scienze
+505;Serie Scienze
+507;Esperimenti
+510;Matematica
+520;Astronomia
+530;Fisica
+540;Chimica
+550;Terra
+551;Meteorologia
+560;Dinosauri
+570;Natura
+574;Ecologia
+577;Ambienti
+580;Vegetali
+590;Animali
+600;Tecnologia
+608;Invenzioni
+610;Medicina
+620;Trasporti
+630;Agricoltura
+641;Cibo
+702;Arte
+708;Musei
+720;Architettura
+730;Scultura
+740;Decorazione
+750;Pittura
+760;Grafica
+770;Fotografia
+780;Musica
+790;Giochi
+792;Teatro
+796;Sport
+900;Storia
+905;Serie Storia
+910;Geografia
+912;Atlanti
+913;Esplorazioni
+914;Europa
+915;Asia
+916;Africa
+917;America
+919;Italia
+920;Biografie
+930;Civiltà Antiche
+940;Storia Europea
+950;Storia Asiatica
+960;Storia Africana
+970;Storia Americana
+990;Storia Esplorazioni
+A;Romanzi e Racconti
+B;Romanzi Storici - Educazione Civica
+C;Stampato Maiuscolo
+D;Avventura
+E;Fantasy
+F;Miti e Leggende
+G;Favole e Fiabe
+H;Fantascienza e Scienza
+I;Gialli e Horror
+L;Racconti Umoristici
+M;Fumetti
+MMM;Milano
+N;Libri Game
+P;Lingua Straniera
+R;Poesia e Teatro

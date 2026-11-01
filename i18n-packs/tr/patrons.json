@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Üyeler",
+		"new": "Yeni üye",
+		"search": "Soyada göre ara…",
+		"empty": "Filtrelerle eşleşen üye yok.",
+		"filters": {
+			"type": "Tür",
+			"stage": "Kademe",
+			"level": "Yıl",
+			"status": "Durum",
+			"all": "Tümü",
+			"allF": "Tümü"
+		},
+		"columns": {
+			"name": "Soyad ve ad",
+			"type": "Tür",
+			"class": "Sınıf",
+			"card": "Kart"
+		},
+		"clearFilters": "Filtreleri temizle",
+		"countFiltered": "{{shown:plural; one:{{shown}} üye; other:{{shown}} üye;}} filtrelerle eşleşiyor",
+		"printCards": "Kartları yazdır",
+		"printClassCards": "Kartları yazdır: {{classLabel}}",
+		"removeSelected": "Seçilenleri kaldır",
+		"removeTitle": "{{count}} {{count:plural; one:üye; other:üye;}} kaldırılsın mı?",
+		"removeDescription": "Her biri için ad ve soyad, iletişim bilgileri, öğrenci numarası, notlar, kart numarası ve fotoğraf hemen ve kalıcı olarak silinir; tür, sınıf, şube ve ödünç verme geçmişi istatistikler için kalır. Devam eden ödünç verme işlemi olanlar arşivde bırakılır.",
+		"removed": "{{removed}} kaldırıldı, devam eden ödünç verme işlemi olan {{kept}} üye arşivde bırakıldı",
+		"status": {
+			"title": "Durum",
+			"loans": "{{count}} ödünçte",
+			"overdue": "{{count}} gecikmiş",
+			"noPhoto": "fotoğrafsız"
+		},
+		"startTitle": "Bir üye bulun",
+		"startHint": "Ada, karta göre ya da filtrelerle arayın."
+	},
+	"types": {
+		"student": "Öğrenci",
+		"teacher": "Öğretmen"
+	},
+	"fields": {
+		"patronType": "Tür",
+		"firstName": "Ad",
+		"lastName": "Soyad",
+		"cardNumber": "Kart numarası",
+		"cardNumberHint": "Boş bırakılırsa otomatik atanır.",
+		"externalId": "Öğrenci numarası",
+		"email": "E-posta",
+		"emailHint": "Okulun öğrenciye ya da öğretmene atadığı adres: bildirimler bu adrese gönderilir.",
+		"circulationNote": "Ödünç masası için not",
+		"circulationNoteHint": "Ödünç verme sırasında belirgin şekilde gösterilir.",
+		"notes": "İç notlar",
+		"status": "Durum",
+		"openLoans": "Devam eden ödünçler",
+		"overdueLoans": "Gecikmiş",
+		"noCard": "kartı yok",
+		"none": "—",
+		"levelCode": "Sınıf",
+		"groupId": "Şube",
+		"classLabel": "Sınıf",
+		"teacherGroup": "Öğretmen grubu"
+	},
+	"form": {
+		"createTitle": "Yeni üye",
+		"editTitle": "Üyeyi düzenle",
+		"identity": "Kimlik bilgileri",
+		"school": "Sınıf",
+		"contacts": "İletişim",
+		"notes": "Notlar",
+		"create": "Üyeyi oluştur",
+		"save": "Değişiklikleri kaydet",
+		"classSelect": "Seçin…",
+		"defaultTeacherGroup": "Öğretmen grubu"
+	},
+	"errors": {
+		"emailInvalid": "Geçersiz e-posta adresi.",
+		"cardNumberInvalid": "Geçersiz kart numarası: yalnızca rakamlar, büyük harfler ve tire, doğru kontrol karakteriyle.",
+		"cardNumberTaken": "Kart numarası zaten başka bir üyeye atanmış.",
+		"cardNumberIsCopy": "Kart numarası bir nüshanın barkodu ya da ona benziyor: başka bir numara seçin.",
+		"externalIdTaken": "Öğrenci numarası zaten başka bir üyeye atanmış.",
+		"levelRequired": "Bir öğrenci için sınıf (düzey) gerekir.",
+		"levelUnknown": "Sınıf, okulun düzeyleri arasında yok.",
+		"levelNotForTeachers": "Bir öğretmenin sınıfı yoktur.",
+		"groupRequired": "Bir öğrenci için şube gerekir.",
+		"groupUnknown": "Şube etkin sınıflar arasında bulunamadı: sınıflar Yönetim → Yapılandırma → Sınıflar bölümünde oluşturulur.",
+		"levelNotInGroup": "Bu şubede böyle bir sınıf yok: sınıfın bir şubesini seçin."
+	},
+	"detail": {
+		"heading": "Üye kaydı",
+		"tabs": {
+			"loans": "Ödünçler",
+			"history": "Geçmiş",
+			"cards": "Kart",
+			"notes": "Notlar"
+		},
+		"noLoans": "Devam eden ödünç verme işlemi yok.",
+		"loanColumns": {
+			"due": "İade"
+		},
+		"overdue": "gecikmiş",
+		"card": "Kart {{number}}",
+		"noNotes": "Not yok.",
+		"edit": "Düzenle",
+		"created": "Oluşturulma tarihi: {{when}}",
+		"barcodeAlt": "{{number}} numaralı kartın barkodu",
+		"cardPrinted": "Kart şu tarihte yazdırıldı: {{when}}.",
+		"cardNotPrinted": "Kart henüz yazdırılmadı.",
+		"reassignCard": "Kartı yeniden ata",
+		"reassignTitle": "Yeni kart atansın mı?",
+		"reassignDescription": "Mevcut numara kalıcı olarak geri alınır ve yeni kartın yazdırılması gerekir.",
+		"cardReassigned": "Yeni kart: {{number}}",
+		"printCard": "Kartı yazdır",
+		"markCardPrinted": "Yazdırıldı olarak işaretle",
+		"cardMarkedPrinted": "Kart yazdırıldı olarak işaretlendi",
+		"historyColumns": {
+			"issuedAt": "Ödünç verme",
+			"dueDate": "İade",
+			"returnedAt": "İade edildi",
+			"outcome": "Sonuç",
+			"title": "Başlık",
+			"author": "Yazar",
+			"barcode": "Nüsha",
+			"renewals": "Süre uzatma",
+			"schoolYear": "Eğitim öğretim yılı"
+		},
+		"outcome": {
+			"open": "Devam ediyor",
+			"overdue": "Gecikmiş",
+			"returned": "İade edildi",
+			"returnedLate": "Gecikmeli iade edildi",
+			"lost": "Kayıp"
+		},
+		"historyEmpty": "Kayıtlı ödünç verme işlemi yok.",
+		"historyCount": "Toplam {{count}} {{count:plural; one:ödünç verme işlemi; other:ödünç verme işlemi;}}",
+		"notesEdit": "Notları düzenle",
+		"notesSaved": "Notlar kaydedildi",
+		"notesUnchanged": "Değişiklik yok",
+		"notesHint": "Ödünç masası için not, ödünç verme sırasında belirir; diğer notlar burada kalır.",
+		"remove": "{{type}} kaldır",
+		"removeTitle": "{{name}} kalıcı olarak kaldırılsın mı?",
+		"removeDescription": "Hemen ve kalıcı olarak silinir: ad ve soyad, e-posta, öğrenci numarası, notlar, kart numarası (geri alınmış) ve fotoğraf. Yalnızca tür, sınıf ve şube ile ödünç verme geçmişi istatistikler için kalır. Bu işlem geri alınamaz.",
+		"removeOpenLoans": "Devam eden {{count}} {{count:plural; one:ödünç verme işlemi; other:ödünç verme işlemi;}} var: önce iade edilmeli ya da kayıp olarak işaretlenmeli.",
+		"removeClassSheets": "Bu üye, sınıf resimlerindeki {{count}} {{count:plural; one:fotoğrafta; other:fotoğrafta;}} seçilmiş (resimden fotoğraf çekimi): {{count:plural; one:bu kare kapatılır; other:bu kareler kapatılır;}}.",
+		"removed": "Üye kaldırıldı: kişisel veriler silindi.",
+		"removedInfo": "Kaldırılma tarihi: {{when}}. Yalnızca istatistik verileri kaldı.",
+		"lostTitle": "Kayıp kitaplar",
+		"lostHint": "Bu üyede ödünçteyken kayıp olarak işaretlendi. Geri gelirlerse iade masasında okutun.",
+		"markLost": "“{{title}}” kayıp olarak işaretle",
+		"markLostTitle": "“{{title}}” kayıp olarak işaretlensin mi?",
+		"markLostDescription": "Ödünç verme işlemi kapanır ve nüsha kayıp görünür. Kitap ortaya çıkarsa iade masasında okutun; yeniden kullanılabilir olur.",
+		"markLostReason": "Neden (isteğe bağlı)",
+		"markLostConfirm": "Kayıp olarak işaretle",
+		"markedLost": "“{{title}}” kayıp olarak işaretlendi."
+	},
+	"photo": {
+		"title": "Fotoğraf",
+		"take": "Fotoğraf çek",
+		"upload": "Dosya yükle",
+		"retake": "Yeniden çek",
+		"use": "Bu fotoğrafı kullan",
+		"cancel": "İptal",
+		"delete": "Fotoğrafı sil",
+		"deleteTitle": "Fotoğraf silinsin mi?",
+		"deleteDescription": "Fotoğraf sunucudan kaldırılır; yenisi çekilebilir.",
+		"zoom": "Yakınlaştırma",
+		"dragHint": "Çerçevelemek için sürükleyin, yaklaştırmak için yakınlaştırmayı kullanın.",
+		"saved": "Fotoğraf kaydedildi",
+		"deleted": "Fotoğraf silindi",
+		"placeholder": "Fotoğraf yok",
+		"alt": "{{name}} fotoğrafı",
+		"errors": {
+			"too_large": "Dosya çok büyük: sınır {{maxMb}} MB.",
+			"not_an_image": "Dosya okunabilir bir görsel değil.",
+			"unsupported_format": "Desteklenmeyen görsel biçimi (JPEG, PNG, WebP veya HEIC kullanın).",
+			"empty": "Dosya seçilmedi."
+		},
+		"withForm": "Üyeyle birlikte kaydedilir.",
+		"requiredHint": "Fotoğraf gerekli: şimdi çekin ya da daha sonra üyenin sayfasından çekin.",
+		"optionalHint": "Fotoğraf şimdi ya da daha sonra üyenin sayfasından çekilebilir.",
+		"remove": "Kaldır",
+		"notSaved": "Fotoğraf kaydedilmedi: üyenin sayfasından yeniden çekin.",
+		"retakePhoto": "Fotoğrafı yeniden çek"
+	},
+	"census": {
+		"title": "Fotoğraf çekimi",
+		"noGroup": "Sınıfsız",
+		"stageOthers": "Kademesiz",
+		"progress": "{{total}} üyeden {{done}} tanesinin fotoğrafı var",
+		"allDone": "Herkesin fotoğrafı var.",
+		"back": "Sınıfı ya da listeyi değiştir",
+		"skip": "Atla",
+		"done": "Bitti",
+		"saved": "Fotoğraf kaydedildi: {{name}}",
+		"quickAdd": "Yeni üye",
+		"quickAddHint": "Grup: {{group}}. Fotoğrafı sıradaki olacak.",
+		"create": "Ekle ve fotoğrafını çek",
+		"findPerson": "Soyadına göre bul",
+		"pickTarget": "Bir liste ya da sınıf seçin",
+		"listsTitle": "Üye listeleri",
+		"classesTitle": "Sınıflar",
+		"nothingMissing": "Bütün sınıfların ve listelerin fotoğrafları var.",
+		"onlyMissing": "Yalnızca en az bir fotoğrafı eksik olan sınıflar ve listeler gösterilir.",
+		"byCamera": "Bir seferde bir kişi",
+		"sheets": {
+			"title": "Birden çok fotoğraf içeren bir resimden",
+			"hint": "Birden çok fotoğraflı resimler (fotoğrafçının levhası, masada kartlar, kimlik fotoğrafı sayfası): fotoğraflar otomatik bulunur ve her üyeye atanır.",
+			"upload": "Resim yükle",
+			"take": "Levhayı fotoğrafla",
+			"uploading": "Resim gönderiliyor…",
+			"empty": "Bu sınıf ya da liste için resim yok.",
+			"item": "Resim tarihi: {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:fotoğraf bulundu; other:fotoğraf bulundu;}} · {{saved}} {{saved:plural; one:kaydedildi; other:kaydedildi;}} · {{pending}} yapılacak",
+			"notDetected": "Henüz işlenmedi",
+			"demoScan": "Tarayıcıdan örnek",
+			"demoPhoto": "Fotoğraftan örnek",
+			"demoHint": "Sınıfın fotoğraflarını almanın iki yolu: tarama düz durur, fotoğrafları en fazla hafifçe döndürülmüş dikdörtgenlerdir; fotoğraf eğik çekilir, perspektif çerçeveleri büker."
+		},
+		"sheet": {
+			"title": "Bir resimden fotoğraflar",
+			"back": "Sınıfa dön",
+			"detecting": "Resimde fotoğraflar aranıyor…",
+			"found": "Bulunan fotoğraf: {{count}}. Her biri için üyeyi seçin.",
+			"none": "Fotoğraf bulunamadı. «Çerçeveleri düzelt» ile elle çizilebilirler.",
+			"pictureAlt": "Yüklenen resim; fotoğraf çerçeveleri numaralandırılmış",
+			"frame": "Fotoğraf {{n}}",
+			"choose": "Kim bu?",
+			"nobody": "— Hiç kimse —",
+			"takenBy": "{{name}} (zaten {{n}} numaralı fotoğrafta)",
+			"hasPhoto": "zaten fotoğrafı var",
+			"noPhoto": "fotoğrafsız",
+			"ignore": "Yok say",
+			"unignore": "Geri al",
+			"ignored": "Yok sayıldı: bu sınıfın ya da listenin kimsesi değil.",
+			"saved": "Fotoğraf kaydedildi: {{name}}",
+			"edit": "Çerçeveleri düzelt",
+			"editDone": "Düzeltme bitti",
+			"editHint": "Bir çerçeveye dokunup köşelerini sürükleyin; eksik bir fotoğraf için «Çerçeve ekle» kullanın.",
+			"editHintScan": "Bir çerçeveye dokunun: köşeyi sürükleyerek büyütün ya da küçültün, üstteki daireyi sürükleyerek döndürün; eksik bir fotoğraf için «Çerçeve ekle» kullanın.",
+			"addFrame": "Çerçeve ekle",
+			"addFrameHint": "Eksik fotoğrafın bir köşesinden diğer köşesine, resmin üzerinde sürükleyin.",
+			"deleteFrame": "{{n}} numaralı çerçeveyi sil",
+			"rotateFrame": "Çerçeveyi döndür",
+			"kind": "Resim türü",
+			"kindPhoto": "Fotoğraf",
+			"kindScan": "Tarama",
+			"kindPhotoHint": "Eğik çekilmiş: her çerçevenin köşesi, perspektifi izlemek için kendi başına hareket eder.",
+			"kindScanHint": "Tarayıcıyla yapılmış: çerçeveler dikdörtgen kalır, yalnızca döndürülebilir.",
+			"kindAgain": "Bir üye seçilene kadar tür değiştirildiğinde fotoğraflar yeniden aranır.",
+			"save": "Fotoğrafları kaydet",
+			"saveTitle": "Seçilen fotoğraflar kaydedilsin mi?",
+			"saveSummary": "Kaydedilecek fotoğraf: {{count}}.",
+			"saveReplaces": "Şu üyelerin mevcut fotoğraflarının yerini alırlar: {{names}}.",
+			"saveUnassigned": "Hiç kimse seçilmemiş çerçeveler: {{count}} (olduğu gibi kalır).",
+			"savedToast": "Kaydedilen fotoğraf: {{count}}.",
+			"deleteSheet": "Resmi sil",
+			"deleteSheetTitle": "Resim silinsin mi?",
+			"deleteSheetDescription": "Resim ve çerçeveleri silinir. Zaten kaydedilmiş fotoğraflar üyelerde kalır.",
+			"deletedToast": "Resim silindi.",
+			"progress": "{{label}}: {{total}} üyeden {{done}} tanesinin fotoğrafı var",
+			"missingTitle": "Hâlâ fotoğrafı olmayanlar",
+			"byCamera": "Tek tek fotoğrafla",
+			"errors": {
+				"not_found": "Resim bulunamadı.",
+				"set_not_found": "Sınıf ya da liste artık yok.",
+				"empty": "Dosya boş.",
+				"too_large": "Resim çok büyük (en fazla {{maxMb}} MB).",
+				"not_an_image": "Dosya okunabilir bir görsel değil.",
+				"unsupported_format": "Desteklenmeyen biçim: JPEG, PNG, WebP veya HEIC kullanın.",
+				"too_many_frames": "Resim başına en fazla {{maxFrames}} {{maxFrames:plural; one:fotoğraf; other:fotoğraf;}}.",
+				"bad_corners": "Çerçeve geçerli değil: köşeleri resmin içinde bir dörtgen oluşturmalıdır.",
+				"already_detected": "Bu resmin fotoğrafları zaten aranmış.",
+				"frame_saved": "Bu fotoğraf zaten kaydedilmiş.",
+				"frame_erased": "Bu fotoğraf kaldırılmış bir üyeye aitti: çerçeve kapatıldı.",
+				"not_a_member": "Yalnızca sınıfın ya da listenin üyeleri seçilebilir.",
+				"patron_taken": "Zaten {{position}} numaralı fotoğraf için seçilmiş: burada seçmeden önce o seçimi kaldırın.",
+				"confirm_replace": "{{count:plural; one:{{count}} fotoğraf mevcut bir fotoğrafın yerini alır; other:{{count}} fotoğraf mevcut fotoğrafların yerini alır;}}: devam etmek için onaylayın.",
+				"nothing_to_save": "Kaydetmeden önce en az bir üye seçin."
+			},
+			"erased": "Üye kaldırıldı: çerçeve resimde kapatıldı."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "CSV dosyası",
+			"submit": "Yükle",
+			"hints": {
+				"students": "Her öğrenci için bir satır içeren CSV dosyası; ; ya da , ile ayrılmış (bir elektronik tablodan dışa aktarılan dosya da olur). Aşağıda indirilen ve gerekli sütunları içeren modelin başlıklarını kullanın.",
+				"teachers": "Her öğretmen için bir satır içeren CSV dosyası; ; ya da , ile ayrılmış. Aşağıda indirilen ve gerekli sütunları içeren modelin başlıklarını kullanın."
+			}
+		},
+		"mapping": {
+			"format": "Algılanan biçim",
+			"uncertain": "Biçim kesin değil: devam etmeden önce sütunları kontrol edin.",
+			"remembered": "Bu dosyanın son içe aktarmasından hatırlanan sütunlar.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "dosyanın başlık satırı",
+				"unknown": "bilinmiyor"
+			},
+			"mode": "Mod",
+			"modes": {
+				"upsert": "Ekle ve güncelle",
+				"upsertHint": "Eşleşen satırlar mevcut üyeyi günceller, diğerleri yeni üye oluşturur.",
+				"sync": {
+					"students": "Öğrencileri eşzamanla",
+					"teachers": "Öğretmenleri eşzamanla"
+				},
+				"syncHint": {
+					"students": "Dosya öğrencilerin tam listesidir: eksik olanlar listelenir (ve onaydan sonra kaldırılır). Öğretmenlere dokunulmaz.",
+					"teachers": "Dosya öğretmenlerin tam listesidir: eksik olanlar listelenir (ve onaydan sonra kaldırılır). Öğrencilere dokunulmaz."
+				}
+			},
+			"duplicates": "Zaten mevcut üyeler",
+			"policies": {
+				"update": "Güncelle",
+				"skip": "Atla",
+				"create": "Yine de oluştur"
+			},
+			"validate": "Dosyayı denetle",
+			"matchByName": {
+				"students": "external_id sütunu yoksa, arşivde zaten bulunan öğrenciler ad ve sınıfa göre tanınır.",
+				"teachers": "external_id sütunu yoksa, arşivde zaten bulunan öğretmenler ada göre tanınır."
+			}
+		},
+		"preview": {
+			"ready": "Hata yok: dosya içe aktarılabilir.",
+			"blocked": "Dosyadaki (ya da üyelerdeki) hataları düzeltin ve yeniden denetleyin: hatalı bir dosya içe aktarılmaz.",
+			"columns": {
+				"name": "Ad",
+				"class": "Sınıf"
+			},
+			"changed": "Değişiklikler: {{fields}}",
+			"homonym": {
+				"pick": "Üyeyi seçin",
+				"create": "Yeni bir üye oluştur",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Çözülecek aynı adlılar"
+			},
+			"missing": {
+				"students": {
+					"title": "Arşivde olup dosyada olmayan öğrenciler ({{count}})",
+					"remove": "Bu öğrencileri arşivden kaldır (anında anonimleştirme)",
+					"noPermission": "Üyeleri kaldırma izni olmadığında, eksik öğrenciler arşivde kalır.",
+					"notRemoved": "{{count}} {{count:plural; one:eksik öğrenci; other:eksik öğrenci;}} açık ödünç verme işlemleri olduğu için kaldırılmadı."
+				},
+				"teachers": {
+					"title": "Arşivde olup dosyada olmayan öğretmenler ({{count}})",
+					"remove": "Bu öğretmenleri arşivden kaldır (anında anonimleştirme)",
+					"noPermission": "Üyeleri kaldırma izni olmadığında, eksik öğretmenler arşivde kalır.",
+					"notRemoved": "{{count}} {{count:plural; one:eksik öğretmen; other:eksik öğretmen;}} açık ödünç verme işlemleri olduğu için kaldırılmadı."
+				},
+				"hint": "Eşzamanlamayla, dosyada olmayan herkes kaldırılabilir: kişisel veriler hemen ve kalıcı olarak silinir, yalnızca sınıf ve istatistikler kalır."
+			},
+			"commit": "İçe aktar",
+			"back": "Sütunlara dön",
+			"generatedCards": "{{count}} {{count:plural; one:yeni kart oluşturulacak; other:yeni kart oluşturulacak;}}: dosyada numara yok."
+		},
+		"reasons": {
+			"tooLong": "{{column}} sütunundaki metin çok uzun: en fazla {{max}} {{max:plural; one:karakter; other:karakter;}}",
+			"nameRequired": "Ad ya da soyad eksik",
+			"emailInvalid": "Geçersiz e-posta",
+			"cardNumberInvalid": "Geçersiz kart numarası",
+			"cardNumberTaken": "Kart numarası zaten başka bir üyeye atanmış",
+			"cardNumberIsCopy": "Kart numarası bir nüshanın barkoduyla aynı ya da ona benzer",
+			"externalIdTaken": "Öğrenci numarası zaten başka bir üyeye atanmış",
+			"duplicateInFile": "Aynı kişi zaten {{line}} numaralı satırda",
+			"homonym": "Arşivde {{count}} {{count:plural; one:aynı adlı üye; other:aynı adlı üye;}} var: hangisinin güncelleneceğini seçin",
+			"matchedTwice": "Başka bir satır zaten aynı üyeyi güncelliyor",
+			"skipped": "Zaten mevcut: atlandı",
+			"levelRequired": "Sınıf eksik",
+			"levelUnknown": "“{{value}}” yılı okulun bir yılı değil",
+			"groupRequired": "Şube eksik",
+			"groupUnknown": "Bu yıl için “{{value}}” şubesi bulunamadı. Geçerli sınıflar: {{classes}} (sınıflar Yönetim → Yapılandırma → Sınıflar bölümünde oluşturulur)",
+			"levelNotInGroup": "“{{value}}” şubesinde böyle bir yıl yok. Geçerli sınıflar: {{classes}}",
+			"classUnknown": "“{{value}}” sınıfı bulunamadı. Geçerli sınıflar: {{classes}}",
+			"teacherGroupUnknown": "“{{value}}” öğretmen grubu bulunamadı. Geçerli gruplar: {{classes}}"
+		},
+		"done": {
+			"title": "İçe aktarma tamamlandı",
+			"summary": "{{created}} yeni, {{updated}} güncellendi, {{unchanged}} değişmedi, {{removed}} kaldırıldı.",
+			"printNew": "Yeni üyelerin kartlarını yazdır",
+			"census": "Fotoğraf çekimi",
+			"again": "Başka bir dosya içe aktar",
+			"batch": "İçe aktarma no. {{id}}: özgün dosya sunucuda saklanır."
+		},
+		"fields": {
+			"firstName": "Ad",
+			"lastName": "Soyad",
+			"class": "Sınıf (yıl ve şube)",
+			"level": "Sınıf (yıl)",
+			"section": "Şube",
+			"group": "Öğretmen grubu",
+			"externalId": "Öğrenci numarası",
+			"cardNumber": "Kart",
+			"email": "E-posta"
+		},
+		"titles": {
+			"students": "Öğrencileri içe aktar",
+			"teachers": "Öğretmenleri içe aktar"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "Ad."
+			},
+			"lastName": {
+				"hint": "Soyad."
+			},
+			"class": {
+				"hint": "Sınıf tek bir sütunda, 3A ya da 3 A gibi: Yönetim → Yapılandırma → Sınıflar bölümünde var olmalı."
+			},
+			"level": {
+				"hint": "Yıl (1, 2, 3…); şube section sütununda."
+			},
+			"section": {
+				"hint": "Şube (A, B…): level ile birlikte sınıfı belirler."
+			},
+			"cardNumber": {
+				"hint": "Kart numarası; öğrencinin zaten bir kartı varsa.",
+				"missing": "yeni kartlar oluşturulur"
+			},
+			"externalId": {
+				"hint": "Okul kayıt defterinin kodu.",
+				"missing": "mevcut üyeler ad ve sınıfa göre tanınır"
+			},
+			"email": {
+				"hint": "İsteğe bağlı."
+			},
+			"group": {
+				"hint": "Öğretmen grubu; yoksa varsayılan grup."
+			}
+		},
+		"classForm": {
+			"label": "Sınıf",
+			"class": "Tek sütunda (class: 3A)",
+			"levelSection": "İki sütunda (level: 3, section: A)"
+		}
+	}
+}

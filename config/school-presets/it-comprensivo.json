@@ -1,0 +1,134 @@
+{
+	"id": "it-comprensivo",
+	"name": {
+		"it": "Istituto comprensivo (infanzia, primaria, secondaria)",
+		"en": "Comprehensive school (Italy: pre-school, primary, lower secondary)"
+	},
+	"country": "IT",
+	"languages": ["it"],
+	"school": {
+		"stages": [
+			{
+				"code": "infanzia",
+				"name": "Infanzia"
+			},
+			{
+				"code": "primaria",
+				"name": "Primaria"
+			},
+			{
+				"code": "secondaria-I",
+				"name": "Secondaria di primo grado"
+			}
+		],
+		"levels": [
+			{
+				"code": "I3",
+				"label": "3 anni",
+				"name": "Infanzia, 3 anni",
+				"stage": "infanzia"
+			},
+			{
+				"code": "I4",
+				"label": "4 anni",
+				"name": "Infanzia, 4 anni",
+				"stage": "infanzia"
+			},
+			{
+				"code": "I5",
+				"label": "5 anni",
+				"name": "Infanzia, 5 anni",
+				"stage": "infanzia"
+			},
+			{
+				"code": "P1",
+				"label": "1ª",
+				"name": "Prima primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "P2",
+				"label": "2ª",
+				"name": "Seconda primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "P3",
+				"label": "3ª",
+				"name": "Terza primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "P4",
+				"label": "4ª",
+				"name": "Quarta primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "P5",
+				"label": "5ª",
+				"name": "Quinta primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "S1",
+				"label": "1ª media",
+				"name": "Prima media",
+				"stage": "secondaria-I"
+			},
+			{
+				"code": "S2",
+				"label": "2ª media",
+				"name": "Seconda media",
+				"stage": "secondaria-I"
+			},
+			{
+				"code": "S3",
+				"label": "3ª media",
+				"name": "Terza media",
+				"stage": "secondaria-I"
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Sezione",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"primaria": ["A", "B", "C", "D"],
+		"secondaria-I": ["A", "B", "C", "D"]
+	},
+	"teacherGroup": "Docenti",
+	"readingLevels": [
+		{
+			"code": "1",
+			"label": "1ª"
+		},
+		{
+			"code": "2",
+			"label": "2ª"
+		},
+		{
+			"code": "3",
+			"label": "3ª"
+		},
+		{
+			"code": "4",
+			"label": "4ª"
+		},
+		{
+			"code": "5",
+			"label": "5ª"
+		}
+	],
+	"mixedGroups": [
+		{
+			"name": "Infanzia A",
+			"levels": ["I3", "I4", "I5"]
+		},
+		{
+			"name": "Infanzia B",
+			"levels": ["I3", "I4", "I5"]
+		}
+	]
+}

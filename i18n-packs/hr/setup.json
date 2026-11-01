@@ -1,0 +1,226 @@
+{
+	"title": "Početno postavljanje",
+	"intro": "Dobro došli u BiblioViva. Za nekoliko koraka knjižnica je spremna: jezik, boje, škola, kodovi i lozinke osoblja.",
+	"stepOf": "Korak {{step}} od {{total}}",
+	"next": "Dalje",
+	"back": "Natrag",
+	"finish": "Dovrši postavljanje",
+	"steps": {
+		"language": "Jezik",
+		"theme": "Boje",
+		"library": "Knjižnica",
+		"school": "Škola",
+		"codes": "Kodovi",
+		"passwords": "Lozinke",
+		"demo": "Probni podaci",
+		"summary": "Sažetak"
+	},
+	"language": {
+		"title": "Koji jezik treba govoriti BiblioViva?",
+		"hint": "Jedan jezik po instalaciji: vrijedi za sve osoblje i može se promijeniti u Administracija → Postavke → Izgled i jezik.",
+		"restore": {
+			"title": "Već imate sigurnosnu kopiju BiblioViva?",
+			"hint": "Za prijenos BiblioViva na drugo računalo ili za novi početak nakon kvara ne treba odgovarati na pitanja: dovoljna je arhiva izrađena naredbom „Izvezi sve“.",
+			"button": "Vrati iz sigurnosne kopije"
+		}
+	},
+	"theme": {
+		"title": "Odaberite boje",
+		"hint": "Petnaest skupova boja: mijenjaju samo boje, nikad oblik. Svi su svijetli i čitljivi i u crno-bijelom.",
+		"names": {
+			"ocean": "Ocean",
+			"forest": "Šuma",
+			"grape": "Grožđe",
+			"sunset": "Zalazak",
+			"cherry": "Trešnja",
+			"lagoon": "Laguna",
+			"silver": "Srebro",
+			"graphite": "Grafit",
+			"apricot": "Marelica",
+			"indigo": "Indigo",
+			"mint": "Metvica",
+			"rose": "Ruža",
+			"sahara": "Sahara",
+			"wintry": "Zimska",
+			"olive": "Maslina"
+		}
+	},
+	"library": {
+		"title": "Knjižnica",
+		"name": "Naziv knjižnice",
+		"namePlaceholder": "Knjižnica osnovne škole Rodari",
+		"schoolType": "Vrsta škole",
+		"schoolTypeHint": "Godine i razredi prema uporabi škole. Kasnije se mogu promijeniti u Administracija → Postavke → Škola i Administracija → Postavke → Razredi.",
+		"photos": "Fotografije korisnika",
+		"photosHint": "Fotografije učenika i nastavnika, snimljene ili učitane, i ispisane na iskaznicama. Isključeno: nigdje nema fotografija, a iskaznice su bez fotografije.",
+		"covers": "Naslovnice knjiga",
+		"coversHint": "Naslovnice pronađene na internetu, fotografirane ili učitane, i prikazane u katalogu. Isključeno: nema naslovnice."
+	},
+	"school": {
+		"title": "Škola",
+		"hint": "Vrsta škole predlaže godine, razrede i razine čitanja. Razredi se stvaraju odmah; s probnim podacima se popunjavaju izmišljenim učenicima.",
+		"otherCountries": "Ostale zemlje",
+		"names": {
+			"perLevel": "{{stage}}: nazivi razreda, jedan po godini",
+			"mixed": "{{stage}}: nazivi odjeljaka, svaki sa svim godinama"
+		},
+		"namesHint": "Odvojeno zarezima; A-D znači A, B, C, D. Prazno: nema razreda.",
+		"namesInvalid": "Nevaljani nazivi: upišite ih odvojene zarezima (najviše 40).",
+		"classes": "{{count}} {{count:plural; one:razred; few:razreda; other:razreda;}} za izradu:",
+		"more": "i još {{count}}",
+		"classLabel": "Kako se piše razred",
+		"teacherGroup": "Skupina nastavnika",
+		"teacherGroupHint": "Svaki nastavnik ulazi u ovu skupinu; kasnije se mogu dodati druge skupine.",
+		"schoolYearStart": "Početak školske godine",
+		"schoolYearStartHint": "Mjesec i dan kao MM-DD (na primjer 09-01).",
+		"schoolYearStartInvalid": "Upišite mjesec i dan kao MM-DD.",
+		"schoolYearLabel": "Naziv školske godine",
+		"schoolYearLabels": {
+			"span": "Dvije godine (2026/2027)",
+			"start": "Godina početka (2026)"
+		},
+		"readingLevels": "Beletristika razvrstana po razini čitanja",
+		"readingLevelsHint": "Godine, razredi i razine čitanja kasnije se mogu promijeniti u Administracija."
+	},
+	"codes": {
+		"title": "Kodovi",
+		"hint": "Format crtičnih kodova novih primjeraka i novih iskaznica, odabran zasebno za svaki. Dva oblika se ne mogu zamijeniti: tko čita kod odmah zna je li to knjiga ili iskaznica.",
+		"itemFormat": "Format primjeraka",
+		"itemFormats": {
+			"standard": "Godina, kontrolni znak i broj (preporučeno)",
+			"classic": "Godina i broj, kontrolni znak na kraju",
+			"prefix": "S slovom L ispred"
+		},
+		"cardFormat": "Format iskaznica",
+		"cardFormats": {
+			"standard": "Kontrolni znak i broj od 6 znamenki (preporučeno)",
+			"classic": "Broj od 10 znamenki, kontrolni znak na kraju",
+			"prefix": "S slovom T ispred"
+		},
+		"check": "Kontrolni znak",
+		"checks": {
+			"mod23": "Slovo (mod 23)",
+			"luhn": "Znamenka (Luhn)",
+			"damm": "Znamenka (Damm)"
+		},
+		"layout": "Tipkovnica čitača",
+		"layoutHint": "Jezik tipkovnice računala na koje su priključeni čitači crtičnih kodova: služi za ispravljanje zamijenjenih znakova. Ako vaš nije na popisu, odaberite najsličniji: kasnije se može promijeniti u Postavke → Crtični kodovi.",
+		"layouts": {
+			"it": "Talijanska",
+			"es": "Španjolska",
+			"de": "Njemačka",
+			"fr": "Francuska",
+			"uk": "Engleska (Ujedinjeno Kraljevstvo)",
+			"us": "Engleska (SAD)"
+		},
+		"copy": "Primjerak knjige",
+		"card": "Iskaznica",
+		"verdict": "Primjerci i iskaznice ne mogu se zamijeniti.",
+		"refused": "Uz ovaj izbor primjerci i iskaznice mogli bi se zamijeniti: odaberite drugi format.",
+		"later": "Formati, kodovi prethodnih sustava i numeracija kasnije se mogu promijeniti u Postavke → Crtični kodovi."
+	},
+	"passwords": {
+		"title": "Lozinke osoblja",
+		"hint": "Pet zajedničkih računa, po jedan za svaku ulogu. Predložene lozinke su nasumične i mogu se zamijeniti. Zapišite ih u posljednjem koraku: prikazuju se samo jednom.",
+		"accounts": {
+			"admin": "Administracija (admin)",
+			"prestiti": "Upravljanje posudbama (prestiti)",
+			"catalogo": "Katalogizacija (catalogo)",
+			"tessere": "Iskaznice i fotografije (tessere)",
+			"report": "Izvješća (report)"
+		},
+		"regenerate": "Generiraj ponovo",
+		"tooShort": "Najmanje 8 znakova.",
+		"demo": "S probnim podacima svi računi koriste istu lako pamtljivu lozinku: „{{password}}“. Prije stvarnog korištenja BiblioViva promijenite je u Administracija → Računi osoblja."
+	},
+	"demo": {
+		"title": "Probni podaci",
+		"hint": "Izmišljeni učenici, knjige i posudbe za isprobavanje programa. Uklanjaju se jednim klikom iz Administracije kada se unesu pravi podaci.",
+		"load": "Učitaj probne podatke",
+		"hasData": "Baza već sadrži podatke: probni podaci neće biti učitani."
+	},
+	"summary": {
+		"title": "Sažetak",
+		"hint": "Provjerite i potvrdite. Lozinke se pojavljuju samo na ovoj stranici: prije nastavka ih kopirajte.",
+		"language": "Jezik",
+		"theme": "Boje",
+		"library": "Knjižnica",
+		"photos": "Fotografije korisnika",
+		"covers": "Naslovnice knjiga",
+		"school": "Škola",
+		"classes": "Razredi",
+		"classesValue": "{{count}} {{count:plural; one:razred; few:razreda; other:razreda;}} ({{first}}…) i skupina {{teachers}}",
+		"readingLevels": "Razine čitanja",
+		"none": "Nijedna",
+		"codes": "Kodovi",
+		"demo": "Probni podaci",
+		"yes": "Da",
+		"no": "Ne",
+		"later": "Kasnije se lozinke mijenjaju u Administracija → Računi osoblja.",
+		"working": "Spremanje…",
+		"error": "Postavke nisu spremljene: {{message}}"
+	},
+	"done": {
+		"title": "Postavljanje dovršeno",
+		"hint": "Čuvajte ove lozinke na sigurnom mjestu: neće se ponovo prikazati.",
+		"demoLoaded": "Probni podaci učitani: {{patrons}} {{patrons:plural; one:korisnik; few:korisnika; other:korisnika;}}, {{biblios}} {{biblios:plural; one:naslov; few:naslova; other:naslova;}}, {{items}} {{items:plural; one:primjerak; few:primjerka; other:primjeraka;}}, {{loans}} {{loans:plural; one:posudba; few:posudbe; other:posudbi;}}.",
+		"login": "Idi na prijavu"
+	},
+	"generic": {
+		"stage": "Škola",
+		"level": "Razina {{level}}",
+		"groupWord": "Odjeljak",
+		"teacherGroup": "Nastavnici"
+	},
+	"restore": {
+		"title": "Vrati iz sigurnosne kopije",
+		"hint": "Odaberite arhiv izrađen naredbom „Izvezi sve“ (Administracija → Sigurnosne kopije). Najveća veličina: {{maxMb}} MB. Arhiv se provjerava prije vraćanja bilo čega.",
+		"choose": "Odaberite arhiv",
+		"checking": "Provjera arhiva…",
+		"from": "Arhiv knjižnice „{{library}}“, izrađen {{date}}, verzija {{version}}.",
+		"fromAnonymous": "Arhiv izrađen {{date}}, verzija {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "Korisnici",
+			"catalog": "Katalog i primjerci",
+			"loans": "Posudbe i povijest",
+			"printLists": "Popisi za ispis",
+			"photos": "Fotografije korisnika",
+			"covers": "Naslovnice",
+			"notes": "Bilješke",
+			"dates": "Datumi kalendara",
+			"audit": "Dnevnik aktivnosti",
+			"ui": "Sučelje",
+			"security": "Sigurnost i pristup",
+			"library": "Knjižnica i škola"
+		},
+		"images": "Fotografije: {{photos}} · naslovnice: {{covers}}",
+		"accounts": "Računi koji će se moći prijaviti: {{accounts}}. Lozinke su one iz arhiva.",
+		"warning": "Vraćanje odjednom vraća postavke, podatke i slike kakvi su bili u arhivu. Nakon toga čarobnjak za postavljanje više nije potreban.",
+		"apply": "Vrati",
+		"restoring": "Vraćanje u tijeku…",
+		"cancel": "Odustani",
+		"back": "Natrag na čarobnjak za postavljanje",
+		"done": {
+			"title": "Vraćanje dovršeno",
+			"hint": "Knjižnica je kakva je bila u arhivu. Za prijavu koristite jedan od ovih računa, s lozinkom koju je imao u arhivu:",
+			"login": "Idi na prijavu"
+		},
+		"errors": {
+			"too_large": "Arhiv je prevelik (najviše {{maxMb}} MB).",
+			"not_zip": "Datoteka nije valjani ZIP arhiv.",
+			"not_archive": "Datoteka nije BiblioViva arhiv: odaberite arhiv izrađen naredbom „Izvezi sve“.",
+			"too_many_files": "Arhiv sadrži previše datoteka.",
+			"unsafe_path": "Arhiv sadrži nedopuštenu putanju: {{name}}",
+			"link": "Arhiv sadrži poveznicu, što nije dopušteno: {{name}}",
+			"unknown_file": "Arhiv sadrži datoteku koja nije dio BiblioViva: {{name}}",
+			"not_setup": "Čarobnjak za postavljanje već je dovršen: vraćanje se obavlja iz Administracija → Sigurnosne kopije.",
+			"newer_version": "Arhiv je izradila novija verzija BiblioViva ({{name}}): prvo instalirajte tu verziju.",
+			"missing_parts": "Arhiv je nepotpun: nedostaju {{name}}. Odaberite arhiv izrađen naredbom „Izvezi sve“.",
+			"unfinished_setup": "Arhiv potječe iz instalacije u kojoj čarobnjak za postavljanje nije bio dovršen.",
+			"not_ready": "Arhiv ima probleme i ne može se vratiti: {{name}}",
+			"gone": "Provjereni arhiv više ne postoji: odaberite ga ponovo.",
+			"failed": "Vraćanje nije uspjelo."
+		}
+	}
+}

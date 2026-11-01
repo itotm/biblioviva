@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "Catalog",
+		"search": "Căutați după titlu, autor sau ISBN…",
+		"new": "Carte nouă",
+		"empty": "Nicio carte nu corespunde filtrelor.",
+		"countFiltered": "{{shown}} {{shown:plural; one:titlu corespunde; few:titluri corespund; other:de titluri corespund;}} filtrelor",
+		"clearFilters": "Ștergeți filtrele",
+		"filters": {
+			"kind": "Tip",
+			"genre": "Gen",
+			"class": "Clasificare",
+			"readingLevel": "Nivel",
+			"itemType": "Material",
+			"series": "Serie",
+			"all": "Toate",
+			"allF": "Toate",
+			"withdrawn": "Afișați și cărțile retrase"
+		},
+		"columns": {
+			"title": "Titlu",
+			"series": "Serie",
+			"author": "Autor",
+			"year": "An",
+			"isbn": "ISBN",
+			"classification": "Clasificare",
+			"copies": "Exemplare",
+			"callNumber": "Cotă",
+			"acquiredAt": "Achiziție"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "Căutați în catalog",
+		"startHint": "Căutați după titlu, autor, editură, cod sau ISBN, sau folosiți filtrele."
+	},
+	"kinds": {
+		"fiction": "Ficțiune",
+		"nonfiction": "Non-ficțiune"
+	},
+	"fields": {
+		"title": "Titlu",
+		"subtitle": "Subtitlu",
+		"originalTitle": "Titlu original",
+		"originalTitleHint": "Doar dacă cartea este o traducere: titlul operei în limba originală.",
+		"responsibility": "Responsabilitate (cum apare pe pagina de titlu)",
+		"author": "Autor",
+		"publisher": "Editură",
+		"publicationPlace": "Loc",
+		"publicationYear": "An",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN (nu ISBN)",
+		"physicalDescription": "Descriere fizică",
+		"series": "Serie",
+		"seriesNumber": "Numărul din serie",
+		"seriesHint": "De exemplu Harry Potter și 3. Seriile deja existente în catalog apar pe măsură ce scrieți.",
+		"dewey": "Dewey (din SBN)",
+		"kind": "Tip",
+		"genre": "Gen",
+		"classCode": "Clasificare",
+		"readingLevel": "Nivel de lectură",
+		"subjects": "Subiecte",
+		"notes": "Note",
+		"authorHint": "Numele de familie, prenumele. Folosiți valorile rapide când nu există un autor persoană fizică.",
+		"subjectsHint": "Unul pe rând sau separate prin virgulă.",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "Carte nouă",
+		"editTitle": "Modificare înregistrare",
+		"create": "Salvați înregistrarea",
+		"save": "Salvați modificările",
+		"identity": "Înregistrare",
+		"publication": "Publicație",
+		"classification": "Clasificare",
+		"more": "Alte date",
+		"quickPicks": "Valori rapide",
+		"unknownPublisher": "Editură necunoscută",
+		"unknownPlace": "Loc necunoscut",
+		"singleCopy": "Exemplarul {{barcode}}",
+		"singleCopyHint": "Înregistrarea are un singur exemplar: datele lui se modifică aici și se salvează împreună cu înregistrarea."
+	},
+	"picker": {
+		"kind": "Ce fel de carte este?",
+		"fiction": "Ficțiune",
+		"nonfiction": "Non-ficțiune",
+		"genre": "Alegeți genul",
+		"class": "Alegeți subiectul",
+		"readingLevel": "Nivel de lectură",
+		"anyClass": "Niciunul",
+		"back": "Înapoi la subiectele principale",
+		"children": "Subiectele din {{label}}",
+		"selected": "Selectat: {{label}}",
+		"parentOnly": "Folosiți „{{label}}” în general",
+		"later": "Clasificați mai târziu",
+		"laterHint": "Cartea merge în lista «De clasificat»: exemplarele ei nu se împrumută, iar banda de cotor nu se tipărește până la clasificare."
+	},
+	"detail": {
+		"heading": "Înregistrarea cărții",
+		"tabs": {
+			"copies": "Exemplare",
+			"details": "Detalii"
+		},
+		"copies": "{{available}} {{available:plural; one:disponibil; few:disponibile; other:de disponibile;}} din {{total}}",
+		"noCopies": "Niciun exemplar încă: pentru împrumut trebuie adăugat unul.",
+		"seriesLink": "Toate cărțile din seria „{{series}}”",
+		"edit": "Modificați",
+		"delete": "Ștergeți înregistrarea",
+		"addCopies": "Adăugați exemplare",
+		"deleteTitle": "Ștergeți înregistrarea „{{title}}”?",
+		"deleteDescription": "Înregistrarea iese din catalog. Este posibil doar fără exemplare.",
+		"deleted": "Înregistrare ștearsă",
+		"hasItems": "Înregistrarea mai are {{count}} {{count:plural; one:exemplar; few:exemplare; other:de exemplare;}}: mai întâi {{count:plural; one:acesta trebuie retras sau șters; few:acestea trebuie retrase sau șterse; other:acestea trebuie retrase sau șterse;}}.",
+		"columns": {
+			"barcode": "Cod de bare",
+			"callNumber": "Cotă",
+			"itemType": "Material",
+			"readingLevel": "Nivel",
+			"status": "Stare",
+			"borrower": "Împrumutat la",
+			"acquisition": "Achiziționat la",
+			"labels": "Etichete"
+		},
+		"dueOn": "termen {{date}}",
+		"identifiers": "Identificatori",
+		"source": "Sursă: {{source}}",
+		"created": "Creată la {{when}}",
+		"updated": "Ultima modificare la {{when}}",
+		"onLoan": "Împrumutat"
+	},
+	"item": {
+		"addTitle": "Adăugați exemplare",
+		"copies": "Număr de exemplare",
+		"itemType": "Material",
+		"callNumber": "Cotă",
+		"callNumberHint": "Propusă de la clasificare; se poate schimba.",
+		"readingLevel": "Nivelul exemplarului",
+		"enumeration": "Volum / număr",
+		"acquisitionDate": "Data achiziției",
+		"notes": "Note despre exemplar",
+		"notForLoan": "Doar consultare (nu se împrumută)",
+		"add": "Adăugați",
+		"added": "{{count}} {{count:plural; one:exemplar adăugat; few:exemplare adăugate; other:de exemplare adăugate;}}: {{barcodes}}",
+		"editTitle": "Modificare exemplar {{barcode}}",
+		"save": "Salvați",
+		"saved": "Exemplar actualizat",
+		"status": "Schimbați starea",
+		"statusTitle": "Starea exemplarului {{barcode}}",
+		"newStatus": "Stare nouă",
+		"reason": "Motiv (facultativ, se înregistrează)",
+		"statusSaved": "Stare actualizată",
+		"onLoan": "Exemplarul este împrumutat: înregistrați mai întâi restituirea.",
+		"delete": "Ștergeți exemplarul",
+		"deleteTitle": "Ștergeți exemplarul {{barcode}}?",
+		"deleteDescription": "Doar pentru erori de catalogare: un exemplar care a fost vreodată împrumutat nu poate fi șters, ci trebuie retras.",
+		"deleted": "Exemplar șters",
+		"hasLoans": "Exemplarul are împrumuturi înregistrate: trebuie retras, nu șters.",
+		"labelsTitle": "Etichetele exemplarului {{barcode}}"
+	},
+	"errors": {
+		"isbnInvalid": "ISBN nevalid (verificați cifrele)",
+		"isbnTaken": "Există deja o înregistrare cu acest ISBN",
+		"issnInvalid": "ISSN nevalid",
+		"eanInvalid": "EAN nevalid",
+		"yearImplausible": "An neplauzibil",
+		"genreRequired": "Alegeți genul",
+		"genreUnknown": "Genul nu există în configurare",
+		"genreNotForNonfiction": "Non-ficțiunea nu are gen",
+		"classCodeRequired": "Alegeți subiectul",
+		"classCodeUnknown": "Subiectul nu există în configurare",
+		"classCodeNotForFiction": "Ficțiunea nu are subiect",
+		"readingLevelNotAllowed": "Nivelul de lectură nu este prevăzut aici",
+		"readingLevelOutOfRange": "Nivelul de lectură nu există în configurare",
+		"itemTypeUnknown": "Materialul nu este prevăzut în configurare",
+		"acquisitionDateInvalid": "Dată nevalidă (AAAA-LL-ZZ)",
+		"copiesOutOfRange": "De la 1 la 100 de exemplare deodată"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "Furnizor de probă"
+		},
+		"errors": {
+			"unreachable": "Serviciul nu poate fi contactat. Verificați conexiunea la internet și încercați din nou mai târziu.",
+			"timeout": "Serviciul nu a răspuns la timp. Încercați din nou mai târziu.",
+			"protocol": "Serviciul a dat un răspuns neașteptat. Datele pot fi introduse manual.",
+			"http": "Serviciul a răspuns cu o eroare. Încercați din nou mai târziu.",
+			"rate_limited": "Serviciul a refuzat cererea din cauza prea multor interogări. Încercați din nou mai târziu.",
+			"not_configured": "Serviciul nu este configurat: lipsește o setare (de exemplu cheia API).",
+			"spawn": "Programul yaz-client nu este disponibil pe acest server. Informați administratorul."
+		},
+		"noHits": "Niciun rezultat de la {{provider}}.",
+		"hits": "{{count}} {{count:plural; one:rezultat; few:rezultate; other:de rezultate;}} de la {{provider}}",
+		"fromCache": "din cache"
+	},
+	"fastAdd": {
+		"title": "Carte nouă",
+		"steps": {
+			"code": "Cod",
+			"lookup": "Căutare",
+			"form": "Înregistrare și exemplare",
+			"done": "Completat"
+		},
+		"code": {
+			"heading": "Scanați codul de bare",
+			"label": "ISBN sau EAN",
+			"placeholder": "978…",
+			"material": "Material",
+			"noCode": "Fără cod",
+			"noCodeHint": "Căutați după titlu și autor sau completați înregistrarea manual.",
+			"manual": "Completați manual",
+			"notACode": "Codul citit nu este nici ISBN, nici EAN: verificați cifrele sau alegeți „Fără cod”.",
+			"eanNotIsbn": "EAN {{ean}} citit: nu este ISBN, deci înregistrarea trebuie completată manual.",
+			"cameraNotIsbn": "Nu este ISBN: încadrați codul de bare al cărții"
+		},
+		"search": {
+			"heading": "Căutați după titlu și autor",
+			"title": "Titlu",
+			"author": "Autor",
+			"submit": "Căutați",
+			"empty": "Scrieți cel puțin titlul sau autorul."
+		},
+		"duplicate": {
+			"heading": "Acest ISBN există deja în catalog",
+			"copies": "{{count}} {{count:plural; one:exemplar; few:exemplare; other:de exemplare;}}",
+			"addCopy": "Adăugați exemplar",
+			"open": "Deschideți înregistrarea",
+			"another": "Scanați alt cod"
+		},
+		"lookup": {
+			"searching": "Se caută în {{providers}}…",
+			"best": "Cea mai completă",
+			"heading": "Înregistrări găsite",
+			"pick": "Folosiți această înregistrare",
+			"none": "Nicio înregistrare găsită. Înregistrarea se poate completa manual.",
+			"manual": "Introduceți manual",
+			"bySearch": "Căutați după titlu",
+			"retry": "Reîncercați",
+			"another": "Cod nou",
+			"source": "Sursă: {{provider}}",
+			"providerOk": "{{count}} {{count:plural; one:înregistrare; few:înregistrări; other:de înregistrări;}}",
+			"providerCached": "din cache",
+			"failed": "Eroare"
+		},
+		"form": {
+			"heading": "Verificarea înregistrării și adăugarea exemplarelor",
+			"rescan": "Scanați alt cod",
+			"bestOf": "{{count:plural; one:Cea mai completă dintre {{count}} înregistrare găsită. Verificați anul și descrierea pe exemplar.; few:Cea mai completă dintre {{count}} înregistrări găsite. Verificați anul și descrierea pe exemplar.; other:Cea mai completă dintre {{count}} de înregistrări găsite. Verificați anul și descrierea pe exemplar.;}}",
+			"otherRecords": "{{count:plural; one:Altă înregistrare ({{count}}); few:Alte {{count}} înregistrări; other:Alte {{count}} de înregistrări;}}",
+			"fromSource": "Înregistrare din {{provider}}: verificați datele înainte de salvare.",
+			"manualSource": "Înregistrare completată manual.",
+			"copiesSection": "Exemplare",
+			"copies": "Număr de exemplare",
+			"itemType": "Material",
+			"callNumber": "Cotă",
+			"readingLevel": "Nivelul exemplarelor",
+			"acquisitionDate": "Data achiziției",
+			"save": "Salvați înregistrarea și exemplarele",
+			"deweySuggested": "Subiect propus de la numărul Dewey {{dewey}}."
+		},
+		"done": {
+			"heading": "Înregistrare salvată",
+			"summary": "„{{title}}” cu {{count}} {{count:plural; one:exemplar; few:exemplare; other:de exemplare;}}",
+			"summaryCopies": "{{count}} {{count:plural; one:exemplar adăugat; few:exemplare adăugate; other:de exemplare adăugate;}} la „{{title}}”",
+			"barcodes": "Codurile de bare ale exemplarelor",
+			"printLabels": "Tipăriți etichetele",
+			"addToList": "Adăugați în lista de etichete",
+			"open": "Deschideți înregistrarea",
+			"another": "Adăugați încă una"
+		},
+		"cover": {
+			"title": "Copertă",
+			"alt": "Coperta cărții",
+			"searching": "Se caută coperta online…",
+			"found": "Găsită la {{provider}}: se salvează împreună cu înregistrarea. Dacă este greșită, fotografiați coperta cărții.",
+			"photo": "Fotografia copertei: se salvează împreună cu înregistrarea.",
+			"none": "Nicio copertă găsită online: se poate fotografia.",
+			"empty": "Nicio copertă: se poate fotografia.",
+			"take": "Fotografiați coperta",
+			"replace": "Înlocuiți cu o fotografie",
+			"remove": "Ștergeți",
+			"saving": "Se salvează coperta…",
+			"failed": "Coperta nu a fost salvată: o puteți adăuga din înregistrarea cărții."
+		}
+	},
+	"cover": {
+		"title": "Copertă",
+		"take": "Fotografiați coperta",
+		"upload": "Încărcați un fișier",
+		"change": "Schimbați coperta",
+		"delete": "Ștergeți coperta",
+		"deleteTitle": "Ștergeți coperta?",
+		"deleteDescription": "Imaginea se șterge de pe server; se poate fotografia una nouă.",
+		"shoot": "Fotografiați",
+		"loading": "Se încarcă modulul de îndreptare ({{loaded}} din {{total}} MB), doar la prima utilizare.",
+		"loadingShort": "Se încarcă modulul de îndreptare ({{loaded}} MB), doar la prima utilizare.",
+		"loadFailed": "Modulul de îndreptare nu a putut fi încărcat. Verificați conexiunea și reîncercați.",
+		"detecting": "Se caută marginile copertei…",
+		"notFound": "Marginile nu au fost găsite automat: trageți colțurile pe copertă.",
+		"adjustHint": "Trageți cele patru colțuri pe marginile copertei, apoi îndreptați.",
+		"straighten": "Îndreptați",
+		"result": "Rezultat",
+		"use": "Folosiți această copertă",
+		"retake": "Refaceți",
+		"cancel": "Anulați",
+		"saved": "Copertă salvată",
+		"deleted": "Copertă ștearsă",
+		"placeholder": "Nicio copertă",
+		"alt": "Coperta cărții „{{title}}”",
+		"cameraHint": "Încadrați toată coperta, chiar și înclinată: se îndreaptă după fotografiere.",
+		"errors": {
+			"too_large": "Fișier prea mare: limita este de {{maxMb}} MB.",
+			"not_an_image": "Fișierul nu este o imagine lizibilă.",
+			"unsupported_format": "Format de imagine nesuportat (folosiți JPEG, PNG, WebP sau HEIC).",
+			"empty": "Niciun fișier selectat."
+		},
+		"download": "Descărcați coperta",
+		"downloading": "Se caută coperta online…",
+		"downloaded": "Copertă descărcată de la {{provider}}",
+		"downloadNotFound": "Nicio copertă găsită online pentru acest ISBN: se poate fotografia.",
+		"downloadNoIsbn": "Înregistrarea nu are ISBN: coperta trebuie fotografiată."
+	},
+	"export": {
+		"copiesTotal": "Exemplare",
+		"copiesAvailable": "Disponibile",
+		"callNumber": "Cotă",
+		"acquiredAt": "Achiziție"
+	},
+	"import": {
+		"title": "Importați catalogul",
+		"upload": {
+			"file": "Fișier CSV",
+			"hint": "Un rând pentru fiecare exemplar: datele titlului se repetă pe rândurile exemplarelor sale. Sunt necesare titlul, autorul și editura. Folosiți antetele modelului, care se descarcă mai jos, cu coloanele necesare. Pentru trecerea de la Koha folosiți exportul descris în ghidul administratorului.",
+			"submit": "Încărcați"
+		},
+		"mapping": {
+			"uncertain": "Coloanele nu au fost recunoscute: indicați câmpul fiecăreia înainte de a continua.",
+			"remembered": "Coloane reținute de la ultima importare a acestui fișier.",
+			"specialValues": "Valori speciale când lipsesc autorul sau editura („{{author}}”, „{{publisher}}”)",
+			"specialValuesHint": "Fără această alegere, rândurile fără autor sau editură sunt erori.",
+			"validate": "Verificați fișierul",
+			"without": {
+				"biblioKey": "Fără coloana biblio_key, exemplarele aceleiași cărți se grupează după ISBN; rândurile fără ISBN sunt câte un titlu fiecare.",
+				"barcode": "Fără coloana barcode, codurile exemplarelor se generează: după importare tipăriți etichetele lor.",
+				"classification": "Fără coloana classification, cărțile merg în lista «De clasificat»: exemplarele lor nu se împrumută până la clasificare."
+			}
+		},
+		"fields": {
+			"biblioKey": "Cheia titlului (biblionumber)",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "Titlu",
+			"subtitle": "Subtitlu",
+			"originalTitle": "Titlu original",
+			"responsibility": "Responsabilitate",
+			"author": "Autor",
+			"publisher": "Editură",
+			"publicationPlace": "Loc de publicare",
+			"publicationYear": "An",
+			"physicalDescription": "Descriere fizică",
+			"series": "Serie",
+			"seriesNumber": "Numărul din serie",
+			"dewey": "Dewey",
+			"classification": "Clasificare (gen sau subiect, ccode din Koha)",
+			"readingLevel": "Nivel de lectură",
+			"subjects": "Subiecte",
+			"notes": "Note ale titlului",
+			"barcode": "Cod de bare al exemplarului",
+			"callNumber": "Cotă",
+			"itemType": "Material",
+			"enumeration": "Volum",
+			"status": "Stare",
+			"notForLoan": "Exclus de la împrumut",
+			"acquisitionDate": "Data achiziției",
+			"itemNotes": "Note ale exemplarului"
+		},
+		"preview": {
+			"ready": "Nicio eroare: fișierul poate fi importat.",
+			"blocked": "Corectați erorile din fișier și verificați din nou: nimic nu se importă cu erori.",
+			"nothing": "Toate exemplarele din fișier există deja în catalog: nu există nimic de importat.",
+			"titles": "{{new}} {{new:plural; one:titlu nou; few:titluri noi; other:de titluri noi;}}, {{existing}} deja în catalog (exemplarele lor se adaugă)",
+			"columns": {
+				"title": "Titlu",
+				"barcode": "Cod de bare",
+				"classification": "Clasificare"
+			},
+			"question": {
+				"title": "Exemplare ale aceluiași titlu cu niveluri diferite",
+				"text": "La {{count}} {{count:plural; one:titlu; few:titluri; other:de titluri;}} exemplarele au niveluri de lectură diferite. Nivelul poate sta pe fiecare exemplar în loc de pe titlu: este setarea „nivel pe exemplar”, care se aplică întregului catalog și mută nivelul titlurilor deja existente pe exemplarele lor.",
+				"yes": "Da, nivel pe exemplar",
+				"no": "Nu, sunt erori de corectat"
+			},
+			"commit": "Importați",
+			"back": "Înapoi la coloane",
+			"generatedBarcodes": "{{count}} {{count:plural; one:exemplar; few:exemplare; other:de exemplare;}} fără cod de bare: codul se generează, apoi se tipăresc etichetele.",
+			"toClassify": "{{count}} {{count:plural; one:titlu nou; few:titluri noi; other:de titluri noi;}} fără clasificare: {{count:plural; one:va merge; few:vor merge; other:vor merge;}} în «De clasificat»."
+		},
+		"reasons": {
+			"tooLong": "Text prea lung în coloana {{column}}: cel mult {{max}} caractere",
+			"isbnInvalid": "ISBN nevalid: „{{value}}”",
+			"classificationUnknown": "Clasificare care nu există în configurare: „{{value}}”",
+			"barcodeInvalid": "Cod de bare cu caractere nepermise: „{{value}}”",
+			"barcodeCheckDigit": "Cod de bare cu caracter de control greșit: „{{value}}”",
+			"barcodeDuplicateInFile": "Cod de bare deja folosit la rândul {{line}}",
+			"barcodeTaken": "Codul {{value}} aparține deja altui exemplar din catalog",
+			"barcodeIsCard": "Codul {{value}} este sau seamănă cu numărul unei legitimații: un exemplar nu poate avea codul unei legitimații",
+			"statusUnknown": "Stare nerecunoscută: „{{value}}” (disponibil, pierdut, deteriorat, în reparație, retras)",
+			"notForLoanUnknown": "Valoare nerecunoscută pentru „exclus de la împrumut”: „{{value}}” (da/nu)",
+			"dateInvalid": "Dată nevalidă: „{{value}}” (AAAA-LL-ZZ sau ZZ/LL/AAAA)",
+			"authorMissing": "Lipsește autorul (cu „valori speciale” devine Anonimo)",
+			"publisherMissing": "Lipsește editura (cu „valori speciale” devine s.n.)",
+			"titleMissing": "Lipsește titlul",
+			"groupConflict": "Aceeași cheie ca la rândul {{line}}, dar titlu diferit",
+			"classQuestion": "Exemplare cu niveluri diferite ({{classes}}): răspundeți la întrebarea de mai jos",
+			"classDiffers": "Exemplare cu niveluri diferite ({{classes}}) fără nivel pe exemplar",
+			"copyExists": "Exemplar deja în catalog: este sărit",
+			"mergedIntoExisting": "Adăugat la titlul deja în catalog (aceeași cheie sau același ISBN)"
+		},
+		"done": {
+			"title": "Catalog importat",
+			"summary": "{{titlesCreated}} {{titlesCreated:plural; one:titlu nou; few:titluri noi; other:de titluri noi;}}, {{copiesCreated}} {{copiesCreated:plural; one:exemplar adăugat; few:exemplare adăugate; other:de exemplare adăugate;}} ({{titlesMerged}} {{titlesMerged:plural; one:titlu deja prezent; few:titluri deja prezente; other:de titluri deja prezente;}}, {{copiesSkipped}} {{copiesSkipped:plural; one:exemplar sărit; few:exemplare sărite; other:de exemplare sărite;}}).",
+			"classPerItem": "Nivelul pe exemplar a fost activat.",
+			"batch": "Importarea nr. {{id}}: fișierul original este păstrat.",
+			"labels": "Tipăriți etichetele exemplarelor fără cod de bare",
+			"open": "Mergeți la catalog",
+			"again": "Importați alt fișier"
+		},
+		"columns": {
+			"title": {
+				"hint": "Titlul cărții."
+			},
+			"author": {
+				"hint": "Numele de familie, prenumele; lăsat gol este o eroare, cu excepția „valorilor speciale”."
+			},
+			"publisher": {
+				"hint": "Editura; gol ca la autor."
+			},
+			"biblioKey": {
+				"hint": "Codul titlului în vechiul program (biblionumber din Koha): ține exemplarele împreună.",
+				"missing": "exemplarele se grupează după ISBN"
+			},
+			"barcode": {
+				"hint": "Codul de bare deja existent pe exemplar.",
+				"missing": "codul de bare se generează și etichetele trebuie tipărite"
+			},
+			"classification": {
+				"hint": "Codul genului (ficțiune) sau al subiectului (non-ficțiune).",
+				"missing": "cartea merge în «De clasificat»"
+			},
+			"readingLevel": {
+				"hint": "Nivelul de lectură (ficțiune)."
+			},
+			"isbn": {
+				"hint": "ISBN-10 sau ISBN-13."
+			},
+			"issn": {
+				"hint": "Pentru periodice."
+			},
+			"ean": {
+				"hint": "Codul EAN al DVD-urilor și al altor materiale."
+			},
+			"subtitle": {
+				"hint": "Subtitlul."
+			},
+			"originalTitle": {
+				"hint": "Doar pentru traduceri: titlul în limba originală."
+			},
+			"responsibility": {
+				"hint": "Ilustratori, traducători…"
+			},
+			"publicationPlace": {
+				"hint": "Locul publicării."
+			},
+			"publicationYear": {
+				"hint": "Anul publicării."
+			},
+			"physicalDescription": {
+				"hint": "Pagini, ilustrații, format."
+			},
+			"series": {
+				"hint": "Seria (nu colecția editurii)."
+			},
+			"seriesNumber": {
+				"hint": "Numărul din serie."
+			},
+			"dewey": {
+				"hint": "Numărul Dewey, doar ca referință."
+			},
+			"subjects": {
+				"hint": "Cuvinte cheie separate prin ; sau ,."
+			},
+			"notes": {
+				"hint": "Notele titlului."
+			},
+			"callNumber": {
+				"hint": "Cota; dacă lipsește, se propune."
+			},
+			"itemType": {
+				"hint": "Materialul (carte, dvd…); dacă lipsește, primul configurat."
+			},
+			"enumeration": {
+				"hint": "Volumul, pentru operele în mai multe volume."
+			},
+			"status": {
+				"hint": "disponibil, pierdut, deteriorat, în reparație, retras."
+			},
+			"notForLoan": {
+				"hint": "1 sau da pentru exemplarele de consultare."
+			},
+			"acquisitionDate": {
+				"hint": "Data achiziției; dacă lipsește, azi."
+			},
+			"itemNotes": {
+				"hint": "Notele exemplarului."
+			}
+		}
+	},
+	"batch": {
+		"selected": "Modificați exemplarele selectate",
+		"title": "Modificare exemplare",
+		"scope": "{{count}} {{count:plural; one:exemplar; few:exemplare; other:de exemplare;}}",
+		"operation": "Ce să se modifice",
+		"operations": {
+			"status": "Stare",
+			"itemType": "Material",
+			"notForLoan": "Exclus de la împrumut",
+			"readingLevel": "Nivelul exemplarului",
+			"acquisitionDate": "Data achiziției"
+		},
+		"value": "Valoare nouă",
+		"yes": "Da",
+		"no": "Nu",
+		"noClass": "Niciun nivel",
+		"reason": "Motiv",
+		"reasonHint": "Obligatoriu pentru pierdute și retrase: rămâne în registrul fiecărui exemplar.",
+		"check": "Verificați",
+		"apply": "Aplicați la {{count}} {{count:plural; one:exemplar; few:exemplare; other:de exemplare;}}",
+		"plan": {
+			"changes": "{{count}} {{count:plural; one:exemplar se schimbă; few:exemplare se schimbă; other:de exemplare se schimbă;}}",
+			"onLoan": "{{count}} {{count:plural; one:exemplar; few:exemplare; other:de exemplare;}} în împrumut {{count:plural; one:rămâne așa (se restituie mai întâi); few:rămân așa (se restituie mai întâi); other:rămân așa (se restituie mai întâi);}}",
+			"unchanged": "{{count:plural; one:{{count}} exemplar are deja această valoare; few:{{count}} exemplare au deja această valoare; other:{{count}} de exemplare au deja această valoare;}}",
+			"notFound": "{{count:plural; one:{{count}} exemplar nu mai există; few:{{count}} exemplare nu mai există; other:{{count}} de exemplare nu mai există;}}",
+			"notAllowed": "{{count:plural; one:{{count}} exemplar nu este de ficțiune, nivelul nu se aplică; few:{{count}} exemplare nu sunt de ficțiune, nivelul nu se aplică; other:{{count}} de exemplare nu sunt de ficțiune, nivelul nu se aplică;}}",
+			"none": "Niciun exemplar de modificat."
+		},
+		"excludedTitle": "Exemplarele care rămân ca sunt",
+		"done": "{{count}} {{count:plural; one:exemplar modificat; few:exemplare modificate; other:de exemplare modificate;}}",
+		"errors": {
+			"reasonRequired": "Scrieți motivul: este obligatoriu pentru pierdute și retrase.",
+			"itemTypeUnknown": "Material care nu este prevăzut în configurare.",
+			"readingLevelNotAllowed": "Nivelul pe exemplar nu este activat.",
+			"readingLevelOutOfRange": "Nivelul de lectură nu este prevăzut în configurare.",
+			"dateInvalid": "Dată nevalidă.",
+			"statusUnknown": "Stare nevalidă.",
+			"classificationUnknown": "Alegeți un gen sau un subiect din configurare."
+		},
+		"reclassify": {
+			"button": "Reclasificați",
+			"title": "Reclasificați titlurile selectate",
+			"scope": "{{count}} {{count:plural; one:titlu; few:titluri; other:de titluri;}}",
+			"resuggest": "Rescrieți cotele exemplarelor după noua clasificare",
+			"labelsHint": "Benzile de cotor (și etichetele, dacă se schimbă cota) revin printre cele de tipărit.",
+			"changes": "{{count}} {{count:plural; one:titlu se schimbă; few:titluri se schimbă; other:de titluri se schimbă;}}",
+			"apply": "Reclasificați {{count}} {{count:plural; one:titlu; few:titluri; other:de titluri;}}",
+			"done": "{{count}} {{count:plural; one:titlu reclasificat; few:titluri reclasificate; other:de titluri reclasificate;}}, {{calls}} {{calls:plural; one:cotă rescrisă; few:cote rescrise; other:de cote rescrise;}}"
+		}
+	},
+	"search": {
+		"suggest": "Codul {{barcode}} este un exemplar al cărții „{{title}}”.",
+		"openSuggest": "Deschideți înregistrarea",
+		"available": "Doar disponibile",
+		"yearFrom": "An de la",
+		"yearTo": "An până la",
+		"copiesAvailable": "{{available}} din {{total}} disponibile",
+		"noCopies": "Niciun exemplar"
+	},
+	"inventory": {
+		"title": "Recolare",
+		"defaultName": "Recolare",
+		"emptyTitle": "Nicio recolare în desfășurare",
+		"emptyHint": "Începeți o campanie, apoi scanați exemplarele raft cu raft: la sfârșit, cele niciodată văzute se marchează ca pierdute.",
+		"name": "Numele campaniei",
+		"start": "Campanie nouă",
+		"started": "Început la {{when}}",
+		"overall": "Toată biblioteca",
+		"progress": "{{seen}} din {{expected}} ({{percent}}%)",
+		"counts": "{{scanned}} {{scanned:plural; one:exemplar citit; few:exemplare citite; other:de exemplare citite;}} · {{misplaced}} în locul greșit · {{found}} {{found:plural; one:regăsit; few:regăsite; other:regăsite;}}",
+		"byShelf": "Progres pe raft",
+		"noShelf": "Fără cotă",
+		"scanTitle": "Scanați exemplarele",
+		"shelf": "Raft",
+		"shelfHint": "De exemplu B sau 590: exemplarele cu altă cotă sunt semnalate ca fiind în locul greșit.",
+		"scanLabel": "Codul exemplarului",
+		"camera": "Scanați cu camera",
+		"outcomes": {
+			"seen": "{{title}} ({{barcode}}): văzut.",
+			"again": "{{title}} ({{barcode}}): deja citit {{when}}.",
+			"misplaced": "{{title}} ({{barcode}}): în locul greșit; puneți-l înapoi conform cotei.",
+			"found": "{{title}} ({{barcode}}): era pierdut și a fost regăsit; este din nou disponibil.",
+			"onLoan": "{{title}} ({{barcode}}): în împrumut; înregistrați restituirea la ghișeu.",
+			"withdrawn": "{{title}} ({{barcode}}): exemplar retras, de scos de pe raft.",
+			"unknown": "{{code}}: niciun exemplar nu are acest cod de bare."
+		},
+		"missing": "Încă de găsit ({{count}})",
+		"allShelves": "Toate rafturile",
+		"allTypes": "Toate materialele",
+		"noneMissing": "Toate exemplarele așteptate au fost văzute.",
+		"more": "și încă {{count:plural; one:unul; few:{{count}}; other:{{count}};}}: exportați lista ca să {{count:plural; one:îl vedeți; few:le vedeți; other:le vedeți pe toate;}}.",
+		"close": "Închideți recolarea",
+		"closeTitle": "Închideți recolarea?",
+		"closeHint": "{{count:plural; one:{{count}} exemplar nevăzut niciodată va fi marcat ca pierdut; few:{{count}} exemplare nevăzute niciodată vor fi marcate ca pierdute; other:{{count}} de exemplare nevăzute niciodată vor fi marcate ca pierdute;}}. Campania poate fi redeschisă în decurs de o săptămână pentru a anula.",
+		"closedTitle": "Recolare închisă",
+		"summary": "{{seen}} din {{expected}} {{expected:plural; one:exemplar văzut; few:exemplare văzute; other:de exemplare văzute;}}, {{lost}} {{lost:plural; one:marcat ca pierdut; few:marcate ca pierdute; other:marcate ca pierdute;}}, {{found}} {{found:plural; one:regăsit; few:regăsite; other:regăsite;}}, {{onLoan}} în împrumut, {{misplaced}} în locul greșit.",
+		"history": "Campanii anterioare",
+		"reopen": "Redeschideți",
+		"errors": {
+			"alreadyOpen": "Există deja o recolare în desfășurare.",
+			"notOpen": "Această recolare este închisă.",
+			"notFound": "Recolarea nu a fost găsită.",
+			"tooLate": "Poate fi redeschisă doar în decurs de o săptămână de la închidere.",
+			"badName": "Dați un nume campaniei.",
+			"badNotes": "Notele campaniei pot avea cel mult 500 de caractere."
+		},
+		"cameraShelf": "Raftul {{shelf}}",
+		"cameraDone": "Gata"
+	},
+	"toClassify": {
+		"title": "De clasificat",
+		"label": "De clasificat",
+		"intro": "Cărțile introduse fără clasificare, de la cea mai veche. Exemplarele lor nu se împrumută până când nu sunt clasificate.",
+		"count": "{{count}} {{count:plural; one:carte; few:cărți; other:de cărți;}} de clasificat",
+		"empty": "Nicio carte de clasificat",
+		"emptyHint": "Fiecare carte din catalog are un gen sau un subiect.",
+		"start": "Începeți clasificarea",
+		"classify": "Clasificați",
+		"badge": "De clasificat",
+		"badgeHint": "Exemplarele nu se împrumută până când cartea nu este clasificată.",
+		"columns": {
+			"title": "Titlu",
+			"author": "Autor",
+			"publisher": "Editură",
+			"year": "An",
+			"isbn": "ISBN",
+			"copies": "Exemplare",
+			"enteredOn": "Introdusă la"
+		},
+		"flow": {
+			"title": "Clasificați cartea",
+			"saveNext": "Salvați și continuați",
+			"save": "Salvați",
+			"skip": "Treceți peste",
+			"saved": "„{{title}}” clasificată",
+			"end": "Nu mai sunt alte cărți de clasificat în această rundă.",
+			"backToList": "Înapoi la listă",
+			"already": "Această carte este deja clasificată.",
+			"callNumber": "Cota exemplarelor",
+			"callNumberHint": "Exemplarele fără cotă o primesc pe aceasta; apoi banda de cotor poate fi tipărită.",
+			"dewey": "Numărul Dewey {{dewey}} corespunde subiectului {{code}}.",
+			"copies": "{{count}} {{count:plural; one:exemplar; few:exemplare; other:de exemplare;}}",
+			"subjects": "Subiecte",
+			"notes": "Note"
+		}
+	}
+}

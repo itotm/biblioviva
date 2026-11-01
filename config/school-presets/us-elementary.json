@@ -1,0 +1,65 @@
+{
+	"id": "us-elementary",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md Phase 12, B2 of docs/studies/barcodes-and-school-classes.md).",
+	"name": {
+		"it": "Scuola elementare (USA)",
+		"en": "Elementary school (USA)"
+	},
+	"country": "US",
+	"languages": ["en"],
+	"school": {
+		"stages": [
+			{
+				"code": "elementary",
+				"name": "Elementary"
+			}
+		],
+		"levels": [
+			{
+				"code": "K",
+				"label": "K",
+				"name": "Kindergarten",
+				"stage": "elementary"
+			},
+			{
+				"code": "G1",
+				"label": "1",
+				"name": "Grade 1",
+				"stage": "elementary"
+			},
+			{
+				"code": "G2",
+				"label": "2",
+				"name": "Grade 2",
+				"stage": "elementary"
+			},
+			{
+				"code": "G3",
+				"label": "3",
+				"name": "Grade 3",
+				"stage": "elementary"
+			},
+			{
+				"code": "G4",
+				"label": "4",
+				"name": "Grade 4",
+				"stage": "elementary"
+			},
+			{
+				"code": "G5",
+				"label": "5",
+				"name": "Grade 5",
+				"stage": "elementary"
+			}
+		],
+		"classLabel": "{level}-{group}",
+		"groupWord": "Homeroom",
+		"promotionWithinStage": "clear",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"elementary": ["A", "B"]
+	},
+	"teacherGroup": "Teachers",
+	"readingLevels": []
+}

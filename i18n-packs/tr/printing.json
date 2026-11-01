@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Yazdırma",
+		"newPatrons": "Yeni üye listesi",
+		"newItems": "Yeni kitap listesi",
+		"newPatronsTitle": "Yeni üye listesi",
+		"newItemsTitle": "Yeni kitap listesi",
+		"name": "Liste adı",
+		"defaultName": "Liste {{n}}, {{date}}",
+		"kind": "Tür",
+		"kinds": {
+			"all": "Tümü",
+			"patrons": "Üyeler",
+			"items": "Kitaplar"
+		},
+		"classes": "Sınıflar",
+		"classesHint": "Bir sınıfın tüm kartları, bir liste oluşturmadan.",
+		"classKind": "Sınıf",
+		"count": "{{count}} {{count:plural; one:madde; other:madde;}}",
+		"empty": "Liste yok. Listeler burada ya da Üyeler ve Katalog sayfalarındaki “Listeye ekle” ile oluşturulur.",
+		"lastPrinted": "{{when}} tarihinde yazdırıldı",
+		"neverPrinted": "Hiç yazdırılmadı",
+		"open": "Aç",
+		"created": "Liste oluşturuldu",
+		"deleted": "Liste silindi",
+		"deleteTitle": "“{{name}}” listesi silinsin mi?",
+		"deleteDescription": "Maddeler listeden çıkarılır; üyeler arşivde kalır."
+	},
+	"list": {
+		"rename": "Yeniden adlandır",
+		"renamed": "Liste yeniden adlandırıldı",
+		"print": "Kartları yazdır",
+		"markPrinted": "Yazdırıldı olarak işaretle",
+		"marked": "{{count}} {{count:plural; one:kart; other:kart;}} yazdırıldı olarak işaretlendi",
+		"clearAfter": "Yazdırdıktan sonra listeyi boşalt",
+		"clear": "Boşalt",
+		"cleared": "Liste boşaltıldı",
+		"clearTitle": "Liste boşaltılsın mı?",
+		"clearDescription": "Tüm maddeler listeden çıkarılır; üyeler arşivde kalır.",
+		"delete": "Sil",
+		"entries": "{{count}} {{count:plural; one:üye; other:üye;}} listede",
+		"empty": "Liste boş: üyeleri hızlı filtrelerle, okuyucuyla ya da Üyeler sayfasından ekleyin.",
+		"remove": "Listeden çıkar",
+		"moveUp": "Yukarı taşı",
+		"moveDown": "Aşağı taşı",
+		"dragHint": "Yazdırma sırasını değiştirmek için maddeleri sürükleyin.",
+		"removed": "Listeden çıkarıldı",
+		"columns": {
+			"position": "Sıra",
+			"printed": "Kart yazdırıldı"
+		},
+		"printedYes": "evet",
+		"printedNo": "hayır",
+		"quick": {
+			"title": "Filtrelerle ekle",
+			"hint": "Listede zaten bulunan kişi iki kez eklenmez.",
+			"type": "Üye türü",
+			"any": "Herhangi",
+			"stage": "Okul kademesi",
+			"level": "Sınıf",
+			"withoutPrintedCard": "Yalnızca kartı henüz yazdırılmamış olanlar",
+			"withoutPhoto": "Yalnızca fotoğrafı olmayanlar",
+			"importBatch": "İçe aktarma",
+			"anyBatch": "— hiçbiri —",
+			"batchLabel": "no. {{id}} · {{file}} · {{created}} yeni",
+			"createdAfter": "Oluşturulma başlangıcı",
+			"add": "Listeye ekle",
+			"added": "{{added}} eklendi, {{skipped}} zaten vardı",
+			"none": "Hiçbir üye filtrelere uymuyor.",
+			"pendingLabels": "Yazdırılacak etiketler",
+			"pendingAny": "— tüm nüshalar —",
+			"acquiredFrom": "Edinilme başlangıcı",
+			"acquiredTo": "Bitiş",
+			"genre": "Edebi tür",
+			"itemType": "Nüsha türü",
+			"batchLabelItems": "no. {{id}} · {{file}} · {{created}} {{created:plural; one:nüsha; other:nüsha;}}",
+			"noneItems": "Hiçbir nüsha filtrelere uymuyor.",
+			"addedItems": "{{added}} eklendi, {{skipped}} zaten vardı",
+			"nonfictionClass": "Bilgi kitapları sınıfı"
+		},
+		"scan": {
+			"title": "Okuyucuyla ekle",
+			"hint": "Her üyenin kartını okutun: hemen listeye eklenir. Listede zaten bulunan kartlar yok sayılır.",
+			"added": "{{name}} eklendi",
+			"duplicate": "{{name}} zaten listede",
+			"unknown": "{{card}} numaralı kartı olan üye yok",
+			"notCard": "Okunan kod bir kart değil",
+			"hintItems": "Her nüshanın barkodunu okutun, örneğin raf boyunca yürürken: nüsha hemen listeye eklenir. Listede zaten bulunan nüshalar yok sayılır.",
+			"addedItem": "{{title}} ({{barcode}}) eklendi",
+			"duplicateItem": "{{title}} ({{barcode}}) zaten listede",
+			"unknownItem": "{{barcode}} barkodlu nüsha yok",
+			"notItem": "Okunan kod bir nüsha değil"
+		},
+		"printLabels": "Etiketleri yazdır",
+		"markPrintedKind": "Etiketler yazdırıldı",
+		"markedItems": "{{count}} {{count:plural; one:nüsha; other:nüsha;}} yazdırıldı olarak işaretlendi",
+		"entriesItems": "{{count}} {{count:plural; one:nüsha; other:nüsha;}} listede",
+		"emptyItems": "Liste boş: nüshaları hızlı filtrelerle, okuyucuyla ya da katalogdan ekleyin.",
+		"clearDescriptionItems": "Tüm maddeler çıkarılır; nüshalar katalogda kalır."
+	},
+	"basket": {
+		"label": "Yazdırma listeleri",
+		"labelToPrint": "Yazdırma listeleri: {{count}} yazdırılacak",
+		"entry": "{{name}} ({{count}})",
+		"none": "Yazdırılacak liste yok",
+		"all": "Tüm listeler"
+	},
+	"addTo": {
+		"button": "Listeye ekle",
+		"selected": "Seçilenleri listeye ekle",
+		"title": "Yazdırma listesine ekle",
+		"existing": "Mevcut liste",
+		"create": "Yeni liste",
+		"newName": "Yeni listenin adı",
+		"confirm": "Ekle",
+		"done": "{{added}} “{{name}}” listesine eklendi, {{skipped}} zaten vardı"
+	},
+	"labels": {
+		"title": "Etiketleri yazdır",
+		"button": "Etiketleri yazdır",
+		"selected": "Seçilenlerin etiketlerini yazdır",
+		"kind": "Etiket türü",
+		"kinds": {
+			"pair": "Çift",
+			"barcode": "Yalnızca barkod",
+			"spine": "Yalnızca sırt bandı"
+		},
+		"kindHints": {
+			"pair": "Sırt bandı üstte, barkod etiketi altta; kitap başına bir çift (mevcut çıktı).",
+			"barcode": "Yalnızca iç barkod etiketi, yeniden basımlar için.",
+			"spine": "Yalnızca sırt bandı, örneğin yeniden sınıflandırmadan sonra."
+		},
+		"stock": "Etiket sayfası",
+		"start": "İlk boş konum",
+		"startHint": "1 ile {{max}} arası: sayfada kullanılmış etiketleri atlar.",
+		"count": "{{count}} {{count:plural; one:nüsha; other:nüsha;}}",
+		"unclassified": "Sınıflandırılacak {{count}} {{count:plural; one:kitap nüshası; other:kitap nüshası;}}: {{count:plural; one:bunun; other:bunların;}} yalnızca barkod etiketi yazdırılır, sırt bandı sınıflandırmadan sonra.",
+		"pendingCount": "{{count}} {{count:plural; one:nüsha; other:nüsha;}} yazdırılacak etiketle",
+		"pages": "{{pages}} {{pages:plural; one:sayfa; other:sayfa;}} (sayfa başına {{perPage}})",
+		"print": "Yazdırma sayfasını aç",
+		"afterPrint": "Yazdırma sayfası yeni bir sekmede açıldı. Etiketler yazdırıldıktan sonra, bunları yazdırıldı olarak işaretleyin.",
+		"markPrinted": "Yazdırıldı olarak işaretle",
+		"marked": "{{count}} {{count:plural; one:nüsha; other:nüsha;}} yazdırıldı olarak işaretlendi",
+		"status": {
+			"printed": "Etiketler yazdırıldı",
+			"pending": "Yazdırılacak etiketler",
+			"partial": "Bir etiket eksik"
+		}
+	},
+	"cards": {
+		"title": "Kartları yazdır",
+		"count": "{{count}} {{count:plural; one:kart; other:kart;}}",
+		"afterPrint": "Yazdırma sayfası yeni bir sekmede açıldı. Kartlar yazdırıldıktan sonra, bunları yazdırıldı olarak işaretleyin.",
+		"layout": "Nasıl yazdırılır",
+		"layouts": {
+			"side-by-side": "Ön ve arka yan yana",
+			"duplex": "Sayfanın iki yüzüne"
+		},
+		"window": "Tarayıcının yazdırma penceresinde:",
+		"steps": {
+			"duplex": {
+				"long-edge": "“Çift taraflı” seçin, uzun kenardan çevirerek;",
+				"short-edge": "“Çift taraflı” seçin, kısa kenardan çevirerek;"
+			},
+			"scale": "ölçek %100 (“Gerçek boyut”, “Sayfaya sığdır” değil);",
+			"margins": "kenar boşlukları: yok.",
+			"after": {
+				"side-by-side": {
+					"marks": "Ardından, kartların etrafındaki kesim işaretlerini cetvelle birleştirerek her kartı kesin ve kısa kenardan ikiye katlayın.",
+					"line": "Ardından her kartı çevresindeki renkli çizgiden kesin ve kısa kenardan ikiye katlayın.",
+					"edge": "Ardından her kartı kenarından kesin ve kısa kenardan ikiye katlayın."
+				},
+				"duplex": {
+					"marks": "Ardından, ön yüzlerin etrafındaki kesim işaretlerini cetvelle birleştirerek kartları kesin: arka yüz ön yüzün arkasındadır zaten (sayfa başına on).",
+					"line": "Ardından kartları ön yüzlerin etrafındaki renkli çizgiden kesin: arka yüz ön yüzün arkasındadır zaten (sayfa başına on).",
+					"edge": "Ardından kartları ön yüzlerin kenarından kesin: arka yüz ön yüzün arkasındadır zaten (sayfa başına on)."
+				}
+			}
+		},
+		"print": "Yazdır",
+		"calibrate": "İlk kez, ya da arka yüzler ön yüzlerin arkasına düşmediğinde:"
+	},
+	"words": {
+		"teacher": "Öğretmen",
+		"title": "Başlık",
+		"code": "Kod",
+		"dueBy": "En geç iade tarihi",
+		"due": "İade tarihi",
+		"name": "Ad",
+		"daysOverdue": "Gecikme (gün)",
+		"loanOn": "{{date}} tarihinde ödünç verilen:",
+		"overduesOn": "{{date}} tarihli kütüphane hatırlatmaları",
+		"toReturn": "Kütüphaneye iade edilecek kitaplar",
+		"enjoy": "İyi okumalar."
+	}
+}

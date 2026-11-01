@@ -1,0 +1,11 @@
+{
+	"id": "demo",
+	"name": "Demo",
+	"paper": "A4",
+	"labelMm": { "width": 70, "height": 48 },
+	"columns": 3,
+	"rows": 6,
+	"marginMm": { "top": 4, "left": 0 },
+	"gapMm": { "x": 0, "y": 0 },
+	"cornerRadiusMm": 0
+}

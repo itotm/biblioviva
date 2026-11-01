@@ -1,0 +1,60 @@
+{
+	"dashboard": "대시보드",
+	"circulation": "대출",
+	"catalog": "도서 목록",
+	"patrons": "이용자",
+	"printing": "인쇄",
+	"notes": "메모",
+	"reports": "보고서",
+	"admin": "관리",
+	"more": "더보기",
+	"logout": "로그아웃",
+	"help": "도움말",
+	"about": "정보",
+	"areas": {
+		"circulation": {
+			"label": "대출·반납 데스크",
+			"checkout": "대출",
+			"checkin": "반납",
+			"loans": "대출 중인 도서",
+			"overdues": "연체 독촉장",
+			"wishlist": "희망도서",
+			"calendar": "달력"
+		},
+		"catalog": {
+			"label": "도서 목록 페이지",
+			"catalog": "도서 목록",
+			"inventory": "장서 점검",
+			"wishlist": "희망도서",
+			"toClassify": "분류 대기"
+		},
+		"patrons": {
+			"label": "이용자 페이지",
+			"patrons": "이용자",
+			"census": "사진 등록"
+		},
+		"notes": {
+			"label": "메모 페이지",
+			"open": "진행 중",
+			"archived": "보관함"
+		},
+		"config": {
+			"label": "설정 페이지",
+			"overview": "항목",
+			"history": "변경 내역"
+		},
+		"templates": {
+			"label": "인쇄 서식 페이지",
+			"edit": "서식",
+			"previews": "미리보기"
+		},
+		"imports": {
+			"label": "가져오기",
+			"catalog": "도서 목록",
+			"students": "학생",
+			"teachers": "교사",
+			"loans": "진행 중인 대출",
+			"photos": "이용자 사진"
+		}
+	}
+}

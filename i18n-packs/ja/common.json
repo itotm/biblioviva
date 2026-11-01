@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "保存",
+		"cancel": "キャンセル",
+		"close": "閉じる",
+		"confirm": "確認",
+		"delete": "削除",
+		"edit": "編集",
+		"search": "検索",
+		"export": "書き出し",
+		"back": "戻る",
+		"retry": "再試行",
+		"backTo": "{{page}}に戻る",
+		"more": "その他の操作"
+	},
+	"similar": {
+		"label": "類似",
+		"count": "ほか類似{{count}}{{count:plural; other:件;}}（入力ミスを修正して見つかったもの）",
+		"hint": "入力ミスを修正して見つかりました。探していたものかどうか確認してください。"
+	},
+	"status": {
+		"loading": "読み込み中…",
+		"error": "エラーが発生しました"
+	},
+	"statuses": {
+		"item": {
+			"available": "貸出可能",
+			"onLoan": "貸出中",
+			"lost": "紛失",
+			"damaged": "破損",
+			"inRepair": "修理中",
+			"withdrawn": "除籍",
+			"notForLoan": "館内専用"
+		},
+		"loan": {
+			"open": "貸出中",
+			"dueSoon": "まもなく期限",
+			"overdue": "延滞",
+			"returned": "返却済み"
+		},
+		"patron": {
+			"active": "有効",
+			"anonymized": "削除済み"
+		},
+		"print": {
+			"pending": "印刷待ち",
+			"printed": "印刷済み"
+		}
+	},
+	"list": {
+		"selected": "{{count}}{{count:plural; other:件;}}を選択中"
+	},
+	"scan": {
+		"label": "バーコード",
+		"placeholder": "バーコードを読み取るか、コードを入力してください",
+		"submit": "コードで検索",
+		"camera": "カメラ",
+		"cameraTitle": "カメラで読み取る",
+		"errors": {
+			"empty": "コードが入力されていません。",
+			"item_check_digit": "資料のバーコードのチェック文字が正しくありません。もう一度読み取ってください。",
+			"card_check_digit": "カード番号のチェック文字が正しくありません。もう一度読み取ってください。",
+			"isbn_check_digit": "ISBN のチェックデジットが正しくありません。数字を確認してください。",
+			"unrecognised": "コードを認識できません。バーコードリーダーが Code 39 と Code 128 を読み取れるか確認してください。"
+		},
+		"invalidRead": "無効なコード（{{code}}）：読み取っています。",
+		"invalidShort": "無効なコードです。もう一度読み取っています…",
+		"useAnyway": "{{code}}をそのまま使う"
+	},
+	"camera": {
+		"start": "カメラを開始",
+		"stop": "カメラを停止",
+		"switch": "カメラを切り替え",
+		"torch": "ライト",
+		"snapshot": "写真を撮る",
+		"device": "カメラ",
+		"starting": "カメラを起動しています…",
+		"errors": {
+			"insecure": "カメラは安全な接続（https）でのみ使えます。Tailscale を使わずにローカルネットワークから開いた場合、アプリはカメラを使えません。バーコードリーダーを使うか、ファイルを読み込むか、Tailscale のアドレスからアプリを開いてください。",
+			"denied": "許可されていません。ブラウザーの設定でカメラを許可してから、もう一度お試しください。",
+			"notFound": "このデバイスにカメラが見つかりません。",
+			"busy": "カメラは別のアプリで使用中です。",
+			"generic": "カメラを起動できませんでした（{{message}}）。",
+			"timeout": "カメラから応答がありません。ブラウザーがまだ許可を求めていないか、このサイトで以前に拒否されていないか（アドレスバー付近のアイコン）を確認してください。"
+		},
+		"permissionHint": "ブラウザーがカメラの使用を求めてきたら（通常はアドレスバー付近に表示されます）、「許可」を選んでください。"
+	},
+	"clipboard": {
+		"failed": "コピーできませんでした。テキストを選択し、手動でコピーしてください。"
+	},
+	"form": {
+		"errorsTitle": "強調表示された項目を確認してください",
+		"field": "項目 {{field}}"
+	},
+	"confirm": {
+		"title": "確認しますか？"
+	},
+	"export": {
+		"csv": "CSV（表計算、テキスト）",
+		"ods": "ODS（LibreOffice / Excel）"
+	},
+	"demo": {
+		"panel": "このインストールには{{when}}に読み込まれたサンプルデータがあります：利用者{{patrons}}{{patrons:plural; other:人;}}、書名{{biblios}}{{biblios:plural; other:件;}}、資料{{items}}{{items:plural; other:冊;}}、貸出{{loans}}{{loans:plural; other:件;}}。すべて架空のもので、実在の人物は含まれていません。"
+	},
+	"import": {
+		"header": "最初の行は見出しです",
+		"column": "{{n}}列目",
+		"ignore": "— 無視 —",
+		"counts": {
+			"new": "新規{{count}}件",
+			"update": "更新{{count}}件",
+			"unchanged": "変更なし{{count}}件",
+			"error": "{{count}}{{count:plural; other:件のエラー;}}"
+		},
+		"onlyErrors": "エラーのみ表示",
+		"info": "{{rows}}{{rows:plural; other:行;}} · 文字コード {{encoding}} · 区切り文字「{{delimiter}}」",
+		"steps": {
+			"upload": "ファイル",
+			"mapping": "列",
+			"preview": "確認",
+			"done": "完了"
+		},
+		"line": "行",
+		"status": "結果",
+		"reason": "詳細",
+		"statuses": {
+			"new": "新規",
+			"update": "更新",
+			"unchanged": "変更なし",
+			"error": "エラー"
+		},
+		"errors": {
+			"empty": "ファイルが空です。",
+			"tooLarge": "ファイルが{{mb}} MBを超えています。",
+			"noRows": "ファイルに行が見つかりません。",
+			"uploadGone": "読み込んだファイルはもう利用できません。もう一度読み込んでください。",
+			"notReady": "ファイルにまだエラーがあります。もう一度確認してください。",
+			"mappingIncomplete": "必要な列がありません：{{columns}}。"
+		},
+		"template": {
+			"title": "ファイルのテンプレート",
+			"hint": "列を選んでください。テンプレートには見出しだけが含まれ、1行ずつ入力します（CSV 形式で保存した表計算ファイルも使えます）。",
+			"required": "必須",
+			"keys": "キー",
+			"keysHint": "登録済みのデータを識別するために使います。省略してもかまいません。",
+			"optional": "任意",
+			"download": "テンプレートをダウンロード",
+			"ifMissing": "欠けている場合：{{text}}。"
+		},
+		"groups": {
+			"required": "必須",
+			"key": "キー"
+		}
+	},
+	"words": {
+		"yes": "はい",
+		"no": "いいえ"
+	},
+	"password": {
+		"show": "パスワードを表示",
+		"hide": "パスワードを隠す"
+	},
+	"demoPublic": {
+		"language": "言語",
+		"welcome": {
+			"title": "BiblioViva デモへようこそ",
+			"beta": "公開ベータ版",
+			"betaText": "BiblioViva は公開ベータ版です。機能は安定していますが、バージョン 1.0 までは、更新後も以前のバージョンのデータと設定との互換性は保証されません。",
+			"intro": "BiblioViva は学校図書館を運営するためのプログラムです。貸出と返却、蔵書、写真とカードのある利用者、ラベル、印刷、レポートを扱います。これは公開デモです。すべての機能を試すことができます。",
+			"contents": "架空の小学校のデータが含まれています：児童生徒と教員{{patrons}}{{patrons:plural; other:人;}}、書名{{biblios}}{{biblios:plural; other:件;}}、資料{{items}}{{items:plural; other:冊;}}、貸出中{{openLoans}}{{openLoans:plural; other:件;}}（うち延滞{{overdueLoans}}{{overdueLoans:plural; other:件;}}）。名前と写真は架空のもので、実在の人物ではありません。",
+			"reset": "毎日{{time}}に、デモは最初の状態に戻ります。設定は変更して試すことができますが、保存されません。",
+			"examples": "デモでは、テキストと画像は例に置き換えられます。すべての操作を最後まで試せますが、入力したものや撮影したものは保存されず、ほかの訪問者には表示されません。読み込みは、各取り込みのページからダウンロードした例のファイルだけを受け付けます。",
+			"accountsTitle": "どのアカウントでログインするか",
+			"accountsHint": "図書館と同様に、各アカウントは自分の役割の作業だけを表示します。ユーザー名とパスワードは上のフォームに入力してください。",
+			"password": "すべてのアカウントで共通のパスワード："
+		},
+		"accounts": {
+			"admin": {
+				"name": "管理",
+				"does": "すべてを表示します。ほかのアカウントの作業に加えて、設定、職員アカウント、バックアップ、学級、進級処理を扱います。"
+			},
+			"prestiti": {
+				"name": "貸出管理",
+				"does": "貸出、返却、延長を行い、延滞中の貸出を確認して、督促状を印刷します。"
+			},
+			"catalogo": {
+				"name": "蔵書登録",
+				"does": "資料と書誌の登録、SBN からの書誌検索（ここでは模擬）、表紙、分類、ラベルを扱います。"
+			},
+			"tessere": {
+				"name": "カードと写真",
+				"does": "児童生徒と教員、写真、学級の写真登録、カードの印刷を扱います。"
+			},
+			"report": {
+				"name": "レポート",
+				"does": "貸出、蔵書、利用者の統計と、表の書き出しを扱います。"
+			}
+		},
+		"blocked": {
+			"config": "デモでは設定は保存されません。すべて試すことができますが、変更は書き込まれません。",
+			"restore": "デモではバックアップからの復元は無効です。デモのデータは毎晩自動的に作り直されます。",
+			"configImport": "デモでは設定の読み込みは無効です。デモの設定は、どの訪問者にも同じです。",
+			"pictures": "デモでは学級の画像を読み込めません。例の学級画像を使って写真登録を試してください。",
+			"sqlReports": "デモでは SQL で書いたレポートは無効です。ガイド付きのレポートを試してください。",
+			"importSize": "デモでは、読み込むファイルは最大 1 MB です。",
+			"printSize": "デモでは一度に印刷できるのは最大3枚です。資料または利用者の数を減らしてください。",
+			"importExample": "デモで読み込めるのは例のファイルだけです。テンプレートのボタンからダウンロードし、そのまま読み込んでください。",
+			"notesLimit": "デモでは1日に書けるメモは少数だけです。",
+			"demoData": "デモでは、サンプルデータは夜間のリセットまで残ります。",
+			"backups": "デモでは手動のバックアップは無効です。デモのデータは毎晩自動的に作り直されます。",
+			"archives": "デモではアーカイブとバックアップはダウンロードできません。デモのデータと設定は毎晩作り直されます。",
+			"languagePacks": "デモでは言語パックはダウンロードできません。デモにはイタリア語と英語のみがあります。"
+		},
+		"example": {
+			"note": "デモ – {{when}}のメモ",
+			"comment": "{{when}}のデモ用メモ",
+			"book": "{{when}}のデモ用資料",
+			"wish": "{{when}}のデモ用購入希望",
+			"class": "{{when}}のデモ用学級",
+			"printList": "{{when}}のデモ用リスト",
+			"inventory": "{{when}}のデモ用蔵書点検",
+			"reason": "{{when}}のデモ用理由",
+			"date": "{{when}}のデモ用日付"
+		},
+		"replaced": "デモでは、テキストと画像は例に置き換えられます。保存は完了しましたが、残るのは例の内容です。",
+		"tooMany": "短時間に要求が多すぎます。1分ほどたってから、もう一度お試しください。",
+		"refused": {
+			"title": "デモでは利用できません",
+			"busyTitle": "要求が多すぎます",
+			"back": "BiblioViva に戻る"
+		}
+	}
+}

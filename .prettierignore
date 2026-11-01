@@ -1,0 +1,30 @@
+# Package Managers
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lock
+bun.lockb
+
+# Miscellaneous
+/static/
+# Third-party builds vendored as-is (OpenCV.js)
+/src/lib/vision/vendor/
+
+# Project documents and reference material are hand-formatted
+PLAN.md
+CLAUDE.md
+README.md
+README.it.md
+/docs/
+# Language packs: translated files, written by `bun run i18n:work` (tab-indented JSON), and their glossaries
+/i18n-packs/
+# The home page of biblioviva.org: one long line per block, the same in both languages
+/home/*.html
+/build/
+/.svelte-kit/
+
+# Mustache print templates: prettier would break the tags across lines
+config/**/templates/**/*.html
+config/**/templates-no-photo/**/*.html
+tests/snapshots/
+drizzle/**/snapshot.json

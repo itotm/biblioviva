@@ -1,0 +1,129 @@
+# Container image for amd64 and arm64 (PLAN.md step 8.2), pushed to GHCR on tags `v*` and on main.
+# Each platform builds on a native runner and pushes by digest; a last job joins the digests into
+# one manifest list with the tags. The Dockerfile's build stage always runs on the build host's
+# platform, so Bun is never emulated (it crashes under QEMU): where no arm64 runner is available,
+# set the repository variable ARM64_RUNNER to ubuntu-24.04 and only the runtime stage's apt-get
+# runs under QEMU.
+name: publish
+
+on:
+    push:
+        tags: ["v*"]
+        branches: [main]
+    workflow_dispatch:
+
+permissions:
+    contents: read
+    packages: write
+
+concurrency:
+    group: publish-${{ github.ref }}
+    cancel-in-progress: false
+
+jobs:
+    build:
+        strategy:
+            fail-fast: true
+            matrix:
+                include:
+                    - platform: linux/amd64
+                      runner: ubuntu-24.04
+                    - platform: linux/arm64
+                      runner: arm64
+        runs-on: ${{ matrix.runner == 'arm64' && (vars.ARM64_RUNNER || 'ubuntu-24.04-arm') || matrix.runner }}
+        timeout-minutes: 45
+        steps:
+            - uses: actions/checkout@v7
+
+            - name: Image name (GHCR wants lowercase) and platform pair
+              run: |
+                  echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
+                  platform="${{ matrix.platform }}"
+                  echo "PLATFORM_PAIR=${platform//\//-}" >> "$GITHUB_ENV"
+
+            - name: QEMU (only when the arm64 image is built on an amd64 runner)
+              if: matrix.platform == 'linux/arm64' && runner.arch != 'ARM64'
+              uses: docker/setup-qemu-action@v4
+
+            - uses: docker/setup-buildx-action@v4
+
+            - uses: docker/login-action@v4
+              with:
+                  registry: ghcr.io
+                  username: ${{ github.actor }}
+                  password: ${{ secrets.GITHUB_TOKEN }}
+
+            - id: meta
+              uses: docker/metadata-action@v6
+              with:
+                  images: ${{ env.IMAGE }}
+
+            - id: build
+              uses: docker/build-push-action@v7
+              with:
+                  context: .
+                  file: docker/Dockerfile
+                  platforms: ${{ matrix.platform }}
+                  labels: ${{ steps.meta.outputs.labels }}
+                  outputs: type=image,name=${{ env.IMAGE }},push-by-digest=true,name-canonical=true,push=true
+                  cache-from: type=gha,scope=${{ env.PLATFORM_PAIR }}
+                  cache-to: type=gha,mode=max,scope=${{ env.PLATFORM_PAIR }}
+
+            - name: Keep the digest for the manifest list
+              run: |
+                  mkdir -p "${{ runner.temp }}/digests"
+                  digest="${{ steps.build.outputs.digest }}"
+                  touch "${{ runner.temp }}/digests/${digest#sha256:}"
+
+            - uses: actions/upload-artifact@v7
+              with:
+                  name: digests-${{ env.PLATFORM_PAIR }}
+                  path: ${{ runner.temp }}/digests/*
+                  if-no-files-found: error
+                  retention-days: 1
+
+    merge:
+        needs: build
+        runs-on: ubuntu-24.04
+        timeout-minutes: 15
+        steps:
+            - name: Image name
+              run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
+
+            - uses: actions/download-artifact@v8
+              with:
+                  path: ${{ runner.temp }}/digests
+                  pattern: digests-*
+                  merge-multiple: true
+
+            - uses: docker/setup-buildx-action@v4
+
+            - uses: docker/login-action@v4
+              with:
+                  registry: ghcr.io
+                  username: ${{ github.actor }}
+                  password: ${{ secrets.GITHUB_TOKEN }}
+
+            - id: meta
+              uses: docker/metadata-action@v6
+              with:
+                  images: ${{ env.IMAGE }}
+                  # `latest` follows the highest release tag; main gets `main`, every build its sha
+                  tags: |
+                      type=ref,event=branch
+                      type=semver,pattern={{version}}
+                      type=semver,pattern={{major}}.{{minor}}
+                      type=sha
+
+            - name: Manifest list with both platforms
+              working-directory: ${{ runner.temp }}/digests
+              run: |
+                  docker buildx imagetools create \
+                    $(jq -cr '.tags | map("-t " + .) | join(" ")' <<< "$DOCKER_METADATA_OUTPUT_JSON") \
+                    $(printf "${IMAGE}@sha256:%s " *)
+
+            - name: Check that both platforms are there
+              run: |
+                  docker buildx imagetools inspect "${IMAGE}:${{ steps.meta.outputs.version }}" \
+                    --format '{{json .Manifest}}' \
+                    | jq -e '[.manifests[].platform.architecture] | contains(["amd64", "arm64"])'

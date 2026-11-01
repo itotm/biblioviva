@@ -1,0 +1,25 @@
+{
+	"id": "loans-by-item-type",
+	"title": {
+		"it": "Prestiti per tipo di materiale",
+		"en": "Loans by item type"
+	},
+	"description": {
+		"it": "Prestiti del periodo per materiale (libri, DVD…).",
+		"en": "Loans of the period by material (books, DVDs…)."
+	},
+	"category": "loans",
+	"query": {
+		"source": "loans",
+		"filters": [
+			{
+				"field": "period",
+				"ask": true
+			}
+		],
+		"rows": ["itemType"],
+		"measures": ["loans"],
+		"sort": "measure",
+		"chart": "doughnut"
+	}
+}

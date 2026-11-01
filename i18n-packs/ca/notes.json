@@ -1,0 +1,66 @@
+{
+	"title": "Notes",
+	"new": "Nova nota",
+	"adminOnly": "Només l'administrador arxiva les notes i les destaca al tauler.",
+	"pinned": "Destacada",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Arxivada per {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:nota; other:notes;}}",
+	"archiveCount": "{{shown}} de {{total}} {{total:plural; one:nota arxivada; other:notes arxivades;}}",
+	"actions": {
+		"label": "Accions sobre la nota",
+		"pin": "Destaca al tauler",
+		"unpin": "Treu el destacat",
+		"archive": "Arxiva",
+		"restore": "Restaura",
+		"delete": "Elimina",
+		"showAll": "Mostra-ho tot",
+		"showLess": "Mostra'n menys",
+		"more": "Mostra més"
+	},
+	"done": {
+		"added": "Nota afegida",
+		"pinned": "Nota destacada",
+		"unpinned": "Nota sense destacat",
+		"archived": "Nota arxivada",
+		"restored": "Nota restaurada",
+		"deleted": "Nota eliminada"
+	},
+	"confirmDelete": {
+		"title": "Eliminar la nota?",
+		"text": "S'esborra per sempre i no es pot recuperar."
+	},
+	"form": {
+		"body": "Text",
+		"placeholder": "Per exemple: el lector del taulell no llegeix els carnets.",
+		"privacy": "Tots els comptes llegeixen les notes: no hi han d'incloure's dades personals dels alumnes.",
+		"written": "Una nota no es pot modificar: en cas d'error, cal demanar a l'administrador que l'arxivi i en escrigui una altra.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Color",
+		"pinned": "Destacada al tauler",
+		"pinnedHint": "Es mostra a tothom a dalt del tauler (i del taulell de préstec) fins que es treu el destacat o s'arxiva.",
+		"save": "Afegeix"
+	},
+	"colors": {
+		"yellow": "Groc",
+		"pink": "Rosa",
+		"green": "Verd",
+		"blue": "Blau clar",
+		"orange": "Taronja"
+	},
+	"errors": {
+		"empty": "Cal escriure el text de la nota.",
+		"tooLong": "El text és més llarg de {{max}} {{max:plural; one:caràcter; other:caràcters;}}.",
+		"color": "Tria un dels colors."
+	},
+	"empty": {
+		"open": "Cap nota oberta",
+		"openHint": "Cap nota oberta. Les notes transmeten problemes i avisos als companys i a l'administrador.",
+		"archived": "Cap nota arxivada"
+	},
+	"home": {
+		"title": "Notes",
+		"open": "Obre les notes"
+	},
+	"tile": "Notes obertes"
+}

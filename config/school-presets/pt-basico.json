@@ -1,0 +1,98 @@
+{
+	"id": "pt-basico",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). The 1.º ciclo often works in its own buildings with mixed-grade classes (turmas mistas): add them as mixed groups. The ano letivo starts on 1 September, lessons in mid-September [VERIFY].",
+	"name": {
+		"it": "Scuola di base, dal 1º al 9º anno (Portogallo)",
+		"en": "Basic education, grades 1 to 9 (Portugal)",
+		"pt-PT": "Ensino básico, do 1.º ao 9.º ano (Portugal)"
+	},
+	"country": "PT",
+	"languages": ["pt-PT"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "1-ciclo",
+				"name": "1.º ciclo do ensino básico"
+			},
+			{
+				"code": "2-ciclo",
+				"name": "2.º ciclo do ensino básico"
+			},
+			{
+				"code": "3-ciclo",
+				"name": "3.º ciclo do ensino básico"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1.º",
+				"name": "1.º ano",
+				"stage": "1-ciclo"
+			},
+			{
+				"code": "2",
+				"label": "2.º",
+				"name": "2.º ano",
+				"stage": "1-ciclo"
+			},
+			{
+				"code": "3",
+				"label": "3.º",
+				"name": "3.º ano",
+				"stage": "1-ciclo"
+			},
+			{
+				"code": "4",
+				"label": "4.º",
+				"name": "4.º ano",
+				"stage": "1-ciclo"
+			},
+			{
+				"code": "5",
+				"label": "5.º",
+				"name": "5.º ano",
+				"stage": "2-ciclo"
+			},
+			{
+				"code": "6",
+				"label": "6.º",
+				"name": "6.º ano",
+				"stage": "2-ciclo"
+			},
+			{
+				"code": "7",
+				"label": "7.º",
+				"name": "7.º ano",
+				"stage": "3-ciclo"
+			},
+			{
+				"code": "8",
+				"label": "8.º",
+				"name": "8.º ano",
+				"stage": "3-ciclo"
+			},
+			{
+				"code": "9",
+				"label": "9.º",
+				"name": "9.º ano",
+				"stage": "3-ciclo"
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Turma",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"1-ciclo": ["A", "B", "C"],
+		"2-ciclo": ["A", "B", "C", "D"],
+		"3-ciclo": ["A", "B", "C", "D"]
+	},
+	"teacherGroup": "Professores",
+	"readingLevels": []
+}

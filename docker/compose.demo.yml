@@ -1,0 +1,75 @@
+# The public demo (PLAN.md step 9.17, Q118, Q119; docs/demo.md): BiblioViva with DEMO_PUBLIC=1 and
+# a Cloudflare Tunnel, never a school's installation. The tunnel connects out to Cloudflare, so no
+# port is opened on the host; Cloudflare gives the browser HTTPS and sends every request to
+# http://app:3000 (the public hostname is set on the tunnel in Cloudflare's dashboard). The app
+# builds the demo afresh at every start and ends itself at DEMO_RESET_AT (library time):
+# `restart: unless-stopped` starts it again on a fresh demo. Settings come from `.env` next to
+# this file (see `.env.example`).
+#   docker compose -f compose.demo.yml up -d
+services:
+    app:
+        image: ${BIBLIOVIVA_IMAGE:-ghcr.io/itotm/biblioviva:latest}
+        environment:
+            - DEMO_PUBLIC=1
+            # the demo keeps at most the backup of a class upgrade: inside its data volume,
+            # emptied with it at every start, not in a volume of its own
+            - BACKUP_DIR=/data/backups
+            - DEMO_RESET_AT=${DEMO_RESET_AT:-04:00}
+            - DEMO_NOTES_PER_DAY=${DEMO_NOTES_PER_DAY:-5}
+            # cloudflared sends the visitor's address in Cf-Connecting-Ip (the login limiter and
+            # the per-address limits of the demo count visitors, not the tunnel), https in
+            # X-Forwarded-Proto and keeps the public hostname in Host
+            - ADDRESS_HEADER=cf-connecting-ip
+            - PROTOCOL_HEADER=x-forwarded-proto
+            - HOST_HEADER=host
+            # the demo takes no photos, covers or large files: a request stays small
+            - BODY_SIZE_LIMIT=4M
+            - LOG_LEVEL=${LOG_LEVEL:-info}
+        volumes:
+            # emptied and built again at every start (a folder without the demo's marker is
+            # refused, so a school's volume is never touched)
+            - demo-config:/config
+            - demo-data:/data
+        # a school's usual host: the `small` profile in 512 MB and 1 CPU, as on a Raspberry Pi
+        # (compose.yml); both can be changed in `.env` (DEMO_CPUS never above `nproc`)
+        mem_limit: ${DEMO_MEM_LIMIT:-512m}
+        cpus: ${DEMO_CPUS:-1}
+        read_only: true
+        tmpfs: ["/tmp"]
+        security_opt: ["no-new-privileges:true"]
+        cap_drop: ["ALL"]
+        init: true
+        stop_grace_period: 35s
+        restart: unless-stopped
+        healthcheck:
+            test:
+                [
+                    "CMD",
+                    "bun",
+                    "-e",
+                    "const r=await fetch('http://127.0.0.1:3000/healthz').catch(()=>null); process.exit(r&&r.ok?0:1)",
+                ]
+            interval: 30s
+            timeout: 5s
+            retries: 3
+            start_period: 30s
+
+    cloudflared:
+        image: docker.io/cloudflare/cloudflared:2026.10.3
+        # a remotely managed tunnel: its public hostname and its service (http://app:3000) are
+        # set in Cloudflare's dashboard, the token is all the connector needs
+        command: ["tunnel", "--no-autoupdate", "run"]
+        environment:
+            - TUNNEL_TOKEN=${TUNNEL_TOKEN:?set TUNNEL_TOKEN in .env}
+        depends_on:
+            app:
+                condition: service_healthy
+        mem_limit: 256m
+        read_only: true
+        security_opt: ["no-new-privileges:true"]
+        cap_drop: ["ALL"]
+        restart: unless-stopped
+
+volumes:
+    demo-config:
+    demo-data:

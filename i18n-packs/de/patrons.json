@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Nutzer",
+		"new": "Neuer Nutzer",
+		"search": "Nach Nachname suchen…",
+		"empty": "Kein Nutzer entspricht den Filtern.",
+		"filters": {
+			"type": "Typ",
+			"stage": "Stufe",
+			"level": "Jahrgang",
+			"status": "Status",
+			"all": "Alle",
+			"allF": "Alle"
+		},
+		"columns": {
+			"name": "Nachname und Vorname",
+			"type": "Typ",
+			"class": "Klasse",
+			"card": "Ausweis"
+		},
+		"clearFilters": "Filter zurücksetzen",
+		"countFiltered": "{{shown:plural; one:{{shown}} Nutzer passt; other:{{shown}} Nutzer passen;}} zu den Filtern",
+		"printCards": "Ausweise drucken",
+		"printClassCards": "Ausweise drucken {{classLabel}}",
+		"removeSelected": "Ausgewählte entfernen",
+		"removeTitle": "{{count}} {{count:plural; one:Nutzer; other:Nutzer;}} entfernen?",
+		"removeDescription": "Bei jedem werden Vor- und Nachname, Kontakte, Schülernummer, Notizen, Ausweisnummer und Foto sofort und endgültig gelöscht; Typ, Jahrgang, Klasse und der Ausleihverlauf bleiben für die Statistik erhalten. Nutzer mit offenen Ausleihen bleiben im Archiv.",
+		"removed": "{{removed}} entfernt, {{kept}} mit offenen Ausleihen bleiben im Archiv",
+		"status": {
+			"title": "Status",
+			"loans": "{{count}} entliehen",
+			"overdue": "{{count}} überfällig",
+			"noPhoto": "kein Foto"
+		},
+		"startTitle": "Nutzer suchen",
+		"startHint": "Suche nach Name, Ausweis oder mit den Filtern."
+	},
+	"types": {
+		"student": "Schüler",
+		"teacher": "Lehrkraft"
+	},
+	"fields": {
+		"patronType": "Typ",
+		"firstName": "Vorname",
+		"lastName": "Nachname",
+		"cardNumber": "Ausweisnummer",
+		"cardNumberHint": "Leer: wird automatisch vergeben.",
+		"externalId": "Schülernummer",
+		"email": "E-Mail",
+		"emailHint": "Die Adresse, die die Schule dem Schüler oder der Lehrkraft zuweist: An sie gehen die Benachrichtigungen.",
+		"circulationNote": "Notiz für die Ausleihtheke",
+		"circulationNoteHint": "Wird bei der Ausleihe deutlich angezeigt.",
+		"notes": "Interne Notizen",
+		"status": "Status",
+		"openLoans": "Offene Ausleihen",
+		"overdueLoans": "Überfällig",
+		"noCard": "ohne Ausweis",
+		"none": "—",
+		"levelCode": "Jahrgang",
+		"groupId": "Klasse",
+		"classLabel": "Klasse",
+		"teacherGroup": "Gruppe der Lehrkräfte"
+	},
+	"form": {
+		"createTitle": "Neuer Nutzer",
+		"editTitle": "Nutzer bearbeiten",
+		"identity": "Personendaten",
+		"school": "Schulklasse",
+		"contacts": "Kontakte",
+		"notes": "Notizen",
+		"create": "Nutzer anlegen",
+		"save": "Änderungen speichern",
+		"classSelect": "Wählen…",
+		"defaultTeacherGroup": "Die Gruppe der Lehrkräfte"
+	},
+	"errors": {
+		"emailInvalid": "Ungültige E-Mail-Adresse.",
+		"cardNumberInvalid": "Ungültige Ausweisnummer: nur Ziffern, Großbuchstaben und Bindestriche, mit dem richtigen Prüfzeichen.",
+		"cardNumberTaken": "Die Ausweisnummer ist bereits einem anderen Nutzer zugewiesen.",
+		"cardNumberIsCopy": "Die Ausweisnummer ist oder ähnelt dem Barcode eines Exemplars: eine andere Nummer wählen.",
+		"externalIdTaken": "Die Schülernummer ist bereits einem anderen Nutzer zugewiesen.",
+		"levelRequired": "Für einen Schüler ist der Jahrgang Pflicht.",
+		"levelUnknown": "Jahrgang ist an der Schule nicht vorgesehen.",
+		"levelNotForTeachers": "Eine Lehrkraft hat keinen Jahrgang.",
+		"groupRequired": "Für einen Schüler ist die Klasse Pflicht.",
+		"groupUnknown": "Klasse unter den aktiven Klassen nicht gefunden: Klassen werden unter Verwaltung → Konfiguration → Klassen angelegt.",
+		"levelNotInGroup": "Diese Klasse hat diesen Jahrgang nicht: eine Klasse dieses Jahrgangs wählen."
+	},
+	"detail": {
+		"heading": "Nutzerakte",
+		"tabs": {
+			"loans": "Offene Ausleihen",
+			"history": "Verlauf",
+			"cards": "Ausweis",
+			"notes": "Notizen"
+		},
+		"noLoans": "Keine offenen Ausleihen.",
+		"loanColumns": {
+			"due": "Frist"
+		},
+		"overdue": "überfällig",
+		"card": "Ausweis {{number}}",
+		"noNotes": "Keine Notizen.",
+		"edit": "Bearbeiten",
+		"created": "Angelegt am {{when}}",
+		"barcodeAlt": "Barcode des Ausweises {{number}}",
+		"cardPrinted": "Ausweis gedruckt am {{when}}.",
+		"cardNotPrinted": "Ausweis noch nicht gedruckt.",
+		"reassignCard": "Ausweis neu zuweisen",
+		"reassignTitle": "Einen neuen Ausweis zuweisen?",
+		"reassignDescription": "Die bisherige Nummer wird endgültig eingezogen, der neue Ausweis muss gedruckt werden.",
+		"cardReassigned": "Neuer Ausweis: {{number}}",
+		"printCard": "Ausweis drucken",
+		"markCardPrinted": "Als gedruckt markieren",
+		"cardMarkedPrinted": "Ausweis als gedruckt markiert",
+		"historyColumns": {
+			"issuedAt": "Ausgeliehen am",
+			"dueDate": "Frist",
+			"returnedAt": "Zurückgegeben am",
+			"outcome": "Ergebnis",
+			"title": "Titel",
+			"author": "Autor",
+			"barcode": "Exemplar",
+			"renewals": "Verlängerungen",
+			"schoolYear": "Schuljahr"
+		},
+		"outcome": {
+			"open": "Offen",
+			"overdue": "Überfällig",
+			"returned": "Zurückgegeben",
+			"returnedLate": "Verspätet zurückgegeben",
+			"lost": "Verloren"
+		},
+		"historyEmpty": "Keine Ausleihe erfasst.",
+		"historyCount": "{{count}} {{count:plural; one:Ausleihe; other:Ausleihen;}} insgesamt",
+		"notesEdit": "Notizen bearbeiten",
+		"notesSaved": "Notizen gespeichert",
+		"notesUnchanged": "Keine Änderung",
+		"notesHint": "Die Notiz für die Ausleihtheke erscheint bei jeder Ausleihe deutlich; die übrigen Notizen bleiben hier.",
+		"remove": "{{type}} entfernen",
+		"removeTitle": "{{name}} endgültig entfernen?",
+		"removeDescription": "Sofort und endgültig gelöscht: Vor- und Nachname, E-Mail, Schülernummer, Notizen, Ausweisnummer (eingezogen) und Foto. Nur Typ, Jahrgang, Klasse und der Ausleihverlauf bleiben für die Statistik erhalten. Dies kann nicht rückgängig gemacht werden.",
+		"removeOpenLoans": "Hat {{count}} {{count:plural; one:offene Ausleihe; other:offene Ausleihen;}}. Vorher {{count:plural; one:muss sie; other:müssen sie;}} zurückgegeben oder als verloren markiert werden.",
+		"removeClassSheets": "Dieser Nutzer wurde für {{count}} {{count:plural; one:Foto; other:Fotos;}} auf den Klassenbildern gewählt (Erfassung aus einem Bild): {{count:plural; one:dieser Rahmen wird; other:diese Rahmen werden;}} überdeckt.",
+		"removed": "Nutzer entfernt: die persönlichen Daten wurden gelöscht.",
+		"removedInfo": "Entfernt am {{when}}. Es bleiben nur die Daten für die Statistik.",
+		"lostTitle": "Verlorene Bücher",
+		"lostHint": "Als verloren markiert, während sie diesem Nutzer ausgeliehen waren. Kommen sie zurück, werden sie bei der Rückgabe erfasst.",
+		"markLost": "„{{title}}“ als verloren markieren",
+		"markLostTitle": "„{{title}}“ als verloren markieren?",
+		"markLostDescription": "Die Ausleihe wird abgeschlossen und das Exemplar gilt als verloren. Taucht das Buch wieder auf, genügt die Rückgabe, und es ist wieder verfügbar.",
+		"markLostReason": "Grund (optional)",
+		"markLostConfirm": "Als verloren markieren",
+		"markedLost": "„{{title}}“ als verloren markiert."
+	},
+	"photo": {
+		"title": "Foto",
+		"take": "Foto aufnehmen",
+		"upload": "Datei hochladen",
+		"retake": "Neu aufnehmen",
+		"use": "Dieses Foto verwenden",
+		"cancel": "Abbrechen",
+		"delete": "Foto löschen",
+		"deleteTitle": "Das Foto löschen?",
+		"deleteDescription": "Das Foto wird vom Server entfernt; ein neues kann aufgenommen werden.",
+		"zoom": "Zoom",
+		"dragHint": "Ziehen, um den Ausschnitt zu wählen; mit dem Zoom näher heranrücken.",
+		"saved": "Foto gespeichert",
+		"deleted": "Foto gelöscht",
+		"placeholder": "Kein Foto",
+		"alt": "Foto von {{name}}",
+		"errors": {
+			"too_large": "Datei zu groß: die Grenze liegt bei {{maxMb}} MB.",
+			"not_an_image": "Die Datei ist kein lesbares Bild.",
+			"unsupported_format": "Nicht unterstütztes Bildformat (zulässig sind JPEG, PNG, WebP und HEIC).",
+			"empty": "Keine Datei ausgewählt."
+		},
+		"withForm": "Es wird zusammen mit dem Nutzer gespeichert.",
+		"requiredHint": "Ein Foto wird erwartet: Es kann jetzt oder später auf der Seite des Nutzers aufgenommen werden.",
+		"optionalHint": "Das Foto kann jetzt oder später auf der Seite des Nutzers aufgenommen werden.",
+		"remove": "Entfernen",
+		"notSaved": "Das Foto wurde nicht gespeichert: auf der Seite des Nutzers neu aufnehmen.",
+		"retakePhoto": "Foto neu aufnehmen"
+	},
+	"census": {
+		"title": "Fotoerfassung",
+		"noGroup": "Ohne Klasse",
+		"stageOthers": "Ohne Stufe",
+		"progress": "{{done}} von {{total}} mit Foto",
+		"allDone": "Alle haben ein Foto.",
+		"back": "Klasse oder Liste ändern",
+		"skip": "Überspringen",
+		"done": "Fertig",
+		"saved": "Foto gespeichert: {{name}}",
+		"quickAdd": "Neuer Nutzer",
+		"quickAddHint": "Wird {{group}} hinzugefügt, als Nächstes kommt das Foto.",
+		"create": "Hinzufügen und fotografieren",
+		"findPerson": "Nach Nachname suchen",
+		"pickTarget": "Eine Liste oder eine Klasse wählen",
+		"listsTitle": "Nutzerlisten",
+		"classesTitle": "Klassen",
+		"nothingMissing": "Alle Klassen und Listen haben ihre Fotos.",
+		"onlyMissing": "Angezeigt werden nur Klassen und Listen, in denen mindestens ein Foto fehlt.",
+		"byCamera": "Eine Person nach der anderen",
+		"sheets": {
+			"title": "Aus einem Bild mit mehreren Fotos",
+			"hint": "Bilder mit mehreren Fotos (Fotografenbogen, auf einem Tisch ausgelegte Ausweise, ein Blatt mit Passfotos): Die Fotos werden automatisch erkannt und jedem Nutzer zugeordnet.",
+			"upload": "Bild hochladen",
+			"take": "Den Bogen fotografieren",
+			"uploading": "Das Bild wird gesendet…",
+			"empty": "Kein Bild für diese Klasse oder Liste.",
+			"item": "Bild vom {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:Foto gefunden; other:Fotos gefunden;}} · {{saved}} {{saved:plural; one:gespeichert; other:gespeichert;}} · {{pending}} offen",
+			"notDetected": "Noch nicht verarbeitet",
+			"demoScan": "Beispiel von einem Scanner",
+			"demoPhoto": "Beispiel aus einem Foto",
+			"demoHint": "Zwei Wege, die Fotos der Klasse zu erhalten: Ein Scan liegt flach, seine Fotos sind höchstens leicht gedrehte Rechtecke; ein Foto wird schräg aufgenommen, die Perspektive verzerrt die Rahmen."
+		},
+		"sheet": {
+			"title": "Fotos aus einem Bild",
+			"back": "Zurück zur Klasse",
+			"detecting": "Die Fotos im Bild werden gesucht…",
+			"found": "Gefundene Fotos: {{count}}. Für jedes den Nutzer wählen.",
+			"none": "Kein Foto gefunden. Mit „Rahmen korrigieren“ lassen sie sich von Hand zeichnen.",
+			"pictureAlt": "Das hochgeladene Bild mit nummerierten Foto-Rahmen",
+			"frame": "Foto {{n}}",
+			"choose": "Wer ist das?",
+			"nobody": "— Niemand —",
+			"takenBy": "{{name}} (schon auf Foto {{n}})",
+			"hasPhoto": "hat bereits ein Foto",
+			"noPhoto": "kein Foto",
+			"ignore": "Ignorieren",
+			"unignore": "Wiederherstellen",
+			"ignored": "Ignoriert: ist niemand aus dieser Klasse oder Liste.",
+			"saved": "Gespeichert als Foto von {{name}}",
+			"edit": "Rahmen korrigieren",
+			"editDone": "Korrekturen abgeschlossen",
+			"editHint": "Einen Rahmen antippen und an seinen Ecken ziehen; für ein fehlendes Foto „Rahmen hinzufügen“ verwenden.",
+			"editHintScan": "Einen Rahmen antippen: an einer Ecke ziehen, um ihn größer oder kleiner zu machen, am Kreis oben drehen; für ein fehlendes Foto „Rahmen hinzufügen“ verwenden.",
+			"addFrame": "Rahmen hinzufügen",
+			"addFrameHint": "Auf dem Bild von einer Ecke des fehlenden Fotos zur anderen ziehen.",
+			"deleteFrame": "Rahmen {{n}} löschen",
+			"rotateFrame": "Rahmen drehen",
+			"kind": "Art des Bildes",
+			"kindPhoto": "Foto",
+			"kindScan": "Scan",
+			"kindPhotoHint": "Schräg aufgenommen: Jede Ecke eines Rahmens bewegt sich einzeln, um der Perspektive zu folgen.",
+			"kindScanHint": "Mit dem Scanner erstellt: Die Rahmen bleiben Rechtecke und lassen sich nur drehen.",
+			"kindAgain": "Solange kein Nutzer gewählt ist, werden beim Wechsel der Art die Fotos erneut gesucht.",
+			"save": "Fotos speichern",
+			"saveTitle": "Die gewählten Fotos speichern?",
+			"saveSummary": "Zu speichernde Fotos: {{count}}.",
+			"saveReplaces": "Sie ersetzen das vorhandene Foto von: {{names}}.",
+			"saveUnassigned": "Rahmen ohne gewählten Nutzer: {{count}} (bleiben unverändert).",
+			"savedToast": "Fotos gespeichert: {{count}}.",
+			"deleteSheet": "Bild löschen",
+			"deleteSheetTitle": "Das Bild löschen?",
+			"deleteSheetDescription": "Das Bild und seine Rahmen werden gelöscht. Die bereits gespeicherten Fotos bleiben bei den Nutzern.",
+			"deletedToast": "Bild gelöscht.",
+			"progress": "{{label}}: {{done}} von {{total}} mit Foto",
+			"missingTitle": "Noch ohne Foto",
+			"byCamera": "Einzeln fotografieren",
+			"errors": {
+				"not_found": "Bild nicht gefunden.",
+				"set_not_found": "Die Klasse oder die Liste existiert nicht mehr.",
+				"empty": "Die Datei ist leer.",
+				"too_large": "Das Bild ist zu groß (höchstens {{maxMb}} MB).",
+				"not_an_image": "Die Datei ist kein lesbares Bild.",
+				"unsupported_format": "Nicht unterstütztes Format: zulässig sind JPEG, PNG, WebP und HEIC.",
+				"too_many_frames": "Höchstens {{maxFrames}} {{maxFrames:plural; one:Foto; other:Fotos;}} pro Bild.",
+				"bad_corners": "Der Rahmen ist ungültig: Seine Ecken müssen ein Viereck innerhalb des Bildes bilden.",
+				"already_detected": "Die Fotos dieses Bildes wurden bereits gesucht.",
+				"frame_saved": "Dieses Foto wurde bereits gespeichert.",
+				"frame_erased": "Dieses Foto gehörte einem entfernten Nutzer: Der Rahmen wurde überdeckt.",
+				"not_a_member": "Gewählt werden können nur Nutzer der Klasse oder der Liste.",
+				"patron_taken": "Bereits für Foto {{position}} gewählt: zuerst dort freigeben, bevor er hier gewählt wird.",
+				"confirm_replace": "{{count:plural; one:{{count}} Foto ersetzt ein vorhandenes; other:{{count}} Fotos ersetzen vorhandene;}}: zum Fortfahren bestätigen.",
+				"nothing_to_save": "Vor dem Speichern mindestens einen Nutzer wählen."
+			},
+			"erased": "Nutzer entfernt: Der Rahmen wurde im Bild überdeckt."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "CSV-Datei",
+			"submit": "Hochladen",
+			"hints": {
+				"students": "Eine CSV-Datei mit einer Zeile pro Schüler, getrennt durch ; oder , (auch ein Export aus einer Tabellenkalkulation ist möglich). Die Spaltenüberschriften der Vorlage verwenden, die unten mit den nötigen Spalten heruntergeladen werden kann.",
+				"teachers": "Eine CSV-Datei mit einer Zeile pro Lehrkraft, getrennt durch ; oder ,. Die Spaltenüberschriften der Vorlage verwenden, die unten mit den nötigen Spalten heruntergeladen werden kann."
+			}
+		},
+		"mapping": {
+			"format": "Erkanntes Format",
+			"uncertain": "Das Format ist nicht sicher: vor dem Fortfahren die Spalten prüfen.",
+			"remembered": "Spalten aus dem letzten Import dieser Datei übernommen.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "die Kopfzeile der Datei",
+				"unknown": "unbekannt"
+			},
+			"mode": "Modus",
+			"modes": {
+				"upsert": "Hinzufügen und aktualisieren",
+				"upsertHint": "Gefundene Zeilen aktualisieren den vorhandenen Nutzer, die übrigen legen neue Nutzer an.",
+				"sync": {
+					"students": "Schüler synchronisieren",
+					"teachers": "Lehrkräfte synchronisieren"
+				},
+				"syncHint": {
+					"students": "Die Datei ist die vollständige Liste der Schüler: Wer fehlt, wird aufgeführt (und nach Bestätigung entfernt). Lehrkräfte bleiben unverändert.",
+					"teachers": "Die Datei ist die vollständige Liste der Lehrkräfte: Wer fehlt, wird aufgeführt (und nach Bestätigung entfernt). Schüler bleiben unverändert."
+				}
+			},
+			"duplicates": "Bereits vorhandene Nutzer",
+			"policies": {
+				"update": "Aktualisieren",
+				"skip": "Überspringen",
+				"create": "Trotzdem anlegen"
+			},
+			"validate": "Datei prüfen",
+			"matchByName": {
+				"students": "Ohne die Spalte external_id werden Schüler im Bestand über Name und Klasse erkannt.",
+				"teachers": "Ohne die Spalte external_id werden Lehrkräfte im Bestand über den Namen erkannt."
+			}
+		},
+		"preview": {
+			"ready": "Keine Fehler: der Import ist möglich.",
+			"blocked": "Die Fehler in der Datei (oder bei den Nutzern) beheben und erneut prüfen: Eine Datei mit Fehlern wird nicht importiert.",
+			"columns": {
+				"name": "Name",
+				"class": "Klasse"
+			},
+			"changed": "Änderungen: {{fields}}",
+			"homonym": {
+				"pick": "Nutzer wählen",
+				"create": "Einen neuen Nutzer anlegen",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Namensgleiche zu klären"
+			},
+			"missing": {
+				"students": {
+					"title": "Schüler im Bestand, aber nicht in der Datei ({{count}})",
+					"remove": "Diese Schüler aus dem Bestand entfernen (sofortige Anonymisierung)",
+					"noPermission": "Ohne die Berechtigung, Nutzer zu entfernen, bleiben die fehlenden Schüler im Bestand.",
+					"notRemoved": "{{count}} fehlende {{count:plural; one:Schüler; other:Schüler;}} nicht entfernt, weil {{count:plural; one:er; other:sie;}} offene Ausleihen {{count:plural; one:hat; other:haben;}}."
+				},
+				"teachers": {
+					"title": "Lehrkräfte im Bestand, aber nicht in der Datei ({{count}})",
+					"remove": "Diese Lehrkräfte aus dem Bestand entfernen (sofortige Anonymisierung)",
+					"noPermission": "Ohne die Berechtigung, Nutzer zu entfernen, bleiben die fehlenden Lehrkräfte im Bestand.",
+					"notRemoved": "{{count}} fehlende {{count:plural; one:Lehrkraft; other:Lehrkräfte;}} nicht entfernt, weil {{count:plural; one:sie; other:sie;}} offene Ausleihen {{count:plural; one:hat; other:haben;}}."
+				},
+				"hint": "Bei der Synchronisation kann entfernt werden, wer nicht in der Datei steht: Die persönlichen Daten werden sofort und endgültig gelöscht, nur Klasse und Statistik bleiben."
+			},
+			"commit": "Importieren",
+			"back": "Zurück zu den Spalten",
+			"generatedCards": "{{count}} {{count:plural; one:neuer Ausweis wird; other:neue Ausweise werden;}} erzeugt: Die Datei enthält keine Nummer."
+		},
+		"reasons": {
+			"tooLong": "Text in der Spalte {{column}} zu lang: höchstens {{max}} {{max:plural; one:Zeichen; other:Zeichen;}}",
+			"nameRequired": "Vor- oder Nachname fehlt",
+			"emailInvalid": "E-Mail ungültig",
+			"cardNumberInvalid": "Ausweisnummer ungültig",
+			"cardNumberTaken": "Ausweisnummer bereits einem anderen Nutzer zugewiesen",
+			"cardNumberIsCopy": "Ausweisnummer gleich oder ähnlich dem Barcode eines Exemplars",
+			"externalIdTaken": "Externe Kennung bereits einem anderen Nutzer zugewiesen",
+			"duplicateInFile": "Dieselbe Person steht bereits in Zeile {{line}}",
+			"homonym": "{{count}} {{count:plural; one:Namensgleicher; other:Namensgleiche;}} im Archiv: wählen, wen man aktualisiert",
+			"matchedTwice": "Eine andere Zeile aktualisiert bereits denselben Nutzer",
+			"skipped": "Bereits vorhanden: übersprungen",
+			"levelRequired": "Jahrgang fehlt",
+			"levelUnknown": "Jahrgang „{{value}}“ ist an der Schule nicht vorgesehen",
+			"groupRequired": "Klasse fehlt",
+			"groupUnknown": "Klasse „{{value}}“ für diesen Jahrgang nicht gefunden. Gültige Klassen: {{classes}} (Klassen werden unter Verwaltung → Konfiguration → Klassen angelegt)",
+			"levelNotInGroup": "Die Klasse „{{value}}“ hat diesen Jahrgang nicht. Gültige Klassen: {{classes}}",
+			"classUnknown": "Klasse „{{value}}“ nicht gefunden. Gültige Klassen: {{classes}}",
+			"teacherGroupUnknown": "Gruppe der Lehrkräfte „{{value}}“ nicht gefunden. Gültige Gruppen: {{classes}}"
+		},
+		"done": {
+			"title": "Import abgeschlossen",
+			"summary": "{{created}} {{created:plural; one:neu; other:neu;}}, {{updated}} {{updated:plural; one:aktualisiert; other:aktualisiert;}}, {{unchanged}} {{unchanged:plural; one:unverändert; other:unverändert;}}, {{removed}} {{removed:plural; one:entfernt; other:entfernt;}}.",
+			"printNew": "Die Ausweise der neuen Nutzer drucken",
+			"census": "Fotoerfassung",
+			"again": "Eine weitere Datei importieren",
+			"batch": "Import Nr. {{id}}: die Originaldatei wird auf dem Server aufbewahrt."
+		},
+		"fields": {
+			"firstName": "Vorname",
+			"lastName": "Nachname",
+			"class": "Klasse (Jahrgang und Abschnitt)",
+			"level": "Klasse (Jahrgang)",
+			"section": "Abschnitt",
+			"group": "Gruppe der Lehrkräfte",
+			"externalId": "Externe Kennung",
+			"cardNumber": "Ausweis",
+			"email": "E-Mail"
+		},
+		"titles": {
+			"students": "Schüler importieren",
+			"teachers": "Lehrkräfte importieren"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "Der Vorname."
+			},
+			"lastName": {
+				"hint": "Der Nachname."
+			},
+			"class": {
+				"hint": "Die Klasse in einer Spalte, zum Beispiel 3A oder 3 A: Sie muss unter Verwaltung → Konfiguration → Klassen angelegt sein."
+			},
+			"level": {
+				"hint": "Der Jahrgang (1, 2, 3…), mit dem Abschnitt in der Spalte section."
+			},
+			"section": {
+				"hint": "Der Abschnitt (A, B…): Zusammen mit level ergibt er die Klasse."
+			},
+			"cardNumber": {
+				"hint": "Die Ausweisnummer, wenn der Schüler bereits einen hat.",
+				"missing": "neue Ausweise werden erzeugt"
+			},
+			"externalId": {
+				"hint": "Die Nummer aus dem elektronischen Klassenbuch.",
+				"missing": "vorhandene Nutzer werden über Name und Klasse erkannt"
+			},
+			"email": {
+				"hint": "Optional."
+			},
+			"group": {
+				"hint": "Die Gruppe der Lehrkräfte; fehlt sie, gilt die Standardgruppe."
+			}
+		},
+		"classForm": {
+			"label": "Die Klasse",
+			"class": "In einer Spalte (class: 3A)",
+			"levelSection": "In zwei Spalten (level: 3, section: A)"
+		}
+	}
+}

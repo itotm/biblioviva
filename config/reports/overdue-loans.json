@@ -1,0 +1,76 @@
+{
+	"id": "overdue-loans",
+	"title": {
+		"it": "Prestiti in ritardo",
+		"en": "Overdue loans"
+	},
+	"description": {
+		"it": "Libri non restituiti dopo la scadenza, per classe (i docenti in fondo), con i giorni di ritardo.",
+		"en": "Books not returned after the due date, by class (teachers last), with the days late."
+	},
+	"category": "loans",
+	"params": [
+		{
+			"name": "minDays",
+			"label": {
+				"it": "Giorni minimi di ritardo",
+				"en": "Minimum days late"
+			},
+			"type": "int",
+			"default": 1,
+			"min": 0,
+			"max": 365
+		}
+	],
+	"sql": "SELECT pc.class_label AS class, p.last_name || ' ' || p.first_name AS patron, p.patron_type AS patron_type, b.title AS title, l.due_date AS due, CAST(julianday(:today) - julianday(l.due_date) AS INTEGER) AS days_late FROM loan l JOIN patron p ON p.id = l.patron_id LEFT JOIN patron_class pc ON pc.patron_id = p.id JOIN item i ON i.id = l.item_id JOIN biblio b ON b.id = i.biblio_id WHERE l.returned_at IS NULL AND l.due_date < :today AND julianday(:today) - julianday(l.due_date) >= :minDays ORDER BY CASE pc.group_kind WHEN 'students' THEN 0 WHEN 'teachers' THEN 2 ELSE 1 END, pc.level_position, pc.group_name, p.last_name, p.first_name, l.due_date",
+	"columns": [
+		{
+			"key": "class",
+			"type": "text",
+			"label": {
+				"it": "Classe",
+				"en": "Class"
+			}
+		},
+		{
+			"key": "patron",
+			"label": {
+				"it": "Utente",
+				"en": "Patron"
+			},
+			"type": "text"
+		},
+		{
+			"key": "patron_type",
+			"label": {
+				"it": "Tipo di utente",
+				"en": "Patron type"
+			},
+			"type": "patronType"
+		},
+		{
+			"key": "title",
+			"label": {
+				"it": "Titolo",
+				"en": "Title"
+			},
+			"type": "text"
+		},
+		{
+			"key": "due",
+			"label": {
+				"it": "Scadenza",
+				"en": "Due"
+			},
+			"type": "date"
+		},
+		{
+			"key": "days_late",
+			"label": {
+				"it": "Giorni di ritardo",
+				"en": "Days late"
+			},
+			"type": "int"
+		}
+	]
+}

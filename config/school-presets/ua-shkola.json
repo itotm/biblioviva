@@ -1,0 +1,112 @@
+{
+	"id": "ua-shkola",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Заклад загальної середньої освіти 1–11; the reform of the Нова українська школа makes the profile stage 10–12 [VERIFY whether to add a 12th class]. After the 9th class some pupils leave for a college. Group letters are Cyrillic, classes written 5-А or 5А [VERIFY]. The school year starts on 1 September [VERIFY].",
+	"name": {
+		"it": "Scuola di istruzione generale, dalla 1ª all'11ª classe (Ucraina)",
+		"en": "General secondary school, grades 1 to 11 (Ukraine)",
+		"uk": "Заклад загальної середньої освіти, 1–11 класи"
+	},
+	"country": "UA",
+	"languages": ["uk"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "pochatkova",
+				"name": "Початкова освіта"
+			},
+			{
+				"code": "bazova",
+				"name": "Базова середня освіта"
+			},
+			{
+				"code": "profilna",
+				"name": "Профільна середня освіта"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1",
+				"name": "1 клас",
+				"stage": "pochatkova"
+			},
+			{
+				"code": "2",
+				"label": "2",
+				"name": "2 клас",
+				"stage": "pochatkova"
+			},
+			{
+				"code": "3",
+				"label": "3",
+				"name": "3 клас",
+				"stage": "pochatkova"
+			},
+			{
+				"code": "4",
+				"label": "4",
+				"name": "4 клас",
+				"stage": "pochatkova"
+			},
+			{
+				"code": "5",
+				"label": "5",
+				"name": "5 клас",
+				"stage": "bazova"
+			},
+			{
+				"code": "6",
+				"label": "6",
+				"name": "6 клас",
+				"stage": "bazova"
+			},
+			{
+				"code": "7",
+				"label": "7",
+				"name": "7 клас",
+				"stage": "bazova"
+			},
+			{
+				"code": "8",
+				"label": "8",
+				"name": "8 клас",
+				"stage": "bazova"
+			},
+			{
+				"code": "9",
+				"label": "9",
+				"name": "9 клас",
+				"stage": "bazova",
+				"next": ["10", null]
+			},
+			{
+				"code": "10",
+				"label": "10",
+				"name": "10 клас",
+				"stage": "profilna"
+			},
+			{
+				"code": "11",
+				"label": "11",
+				"name": "11 клас",
+				"stage": "profilna"
+			}
+		],
+		"classLabel": "{level}-{group}",
+		"groupWord": "Клас",
+		"cardClass": "{class} клас",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"pochatkova": ["А", "Б", "В", "Г"],
+		"bazova": ["А", "Б", "В", "Г"],
+		"profilna": ["А", "Б"]
+	},
+	"teacherGroup": "Вчителі",
+	"readingLevels": []
+}

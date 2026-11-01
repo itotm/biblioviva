@@ -1,0 +1,9 @@
+/* Physical units; the renderer sizes each face to the card format and scopes these rules to this template.
+   Each element carries its place and look in its own style attribute, and each face its background (the
+   designer reads and writes them there); these rules are the faces' common ones. */
+.front {
+	position: relative;
+	background: #fff;
+	font-family: "DejaVu Sans", Arial, sans-serif;
+	color: #000;
+}

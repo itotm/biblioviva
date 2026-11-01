@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Ispis",
+		"newPatrons": "Novi popis korisnika",
+		"newItems": "Novi popis knjiga",
+		"newPatronsTitle": "Novi popis korisnika",
+		"newItemsTitle": "Novi popis knjiga",
+		"name": "Naziv popisa",
+		"defaultName": "Popis {{n}} od {{date}}",
+		"kind": "Vrsta",
+		"kinds": {
+			"all": "Sve",
+			"patrons": "Korisnici",
+			"items": "Knjige"
+		},
+		"classes": "Razredi",
+		"classesHint": "Iskaznice cijelog razreda, bez izrade popisa.",
+		"classKind": "Razred",
+		"count": "{{count}} {{count:plural; one:stavka; few:stavke; other:stavki;}}",
+		"empty": "Nema popisa. Popisi se izrađuju ovdje ili s „Dodaj na popis“ na stranicama Korisnici i Katalog.",
+		"lastPrinted": "Ispisano {{when}}",
+		"neverPrinted": "Nikad ispisano",
+		"open": "Otvori",
+		"created": "Popis je izrađen",
+		"deleted": "Popis je izbrisan",
+		"deleteTitle": "Izbrisati popis „{{name}}“?",
+		"deleteDescription": "Stavke napuštaju popis; korisnici ostaju u arhivu."
+	},
+	"list": {
+		"rename": "Preimenuj",
+		"renamed": "Popis je preimenovan",
+		"print": "Ispiši iskaznice",
+		"markPrinted": "Označi kao ispisano",
+		"marked": "{{count}} {{count:plural; one:iskaznica označena kao ispisana; few:iskaznice označene kao ispisane; other:iskaznica označenih kao ispisanih;}}",
+		"clearAfter": "Nakon ispisa isprazni popis",
+		"clear": "Isprazni",
+		"cleared": "Popis je ispražnjen",
+		"clearTitle": "Isprazniti popis?",
+		"clearDescription": "Sve stavke napuštaju popis; korisnici ostaju u arhivu.",
+		"delete": "Izbriši",
+		"entries": "{{count}} {{count:plural; one:korisnik; few:korisnika; other:korisnika;}} na popisu",
+		"empty": "Popis je prazan: korisnici se dodaju filtrima za brzi odabir, čitačem ili sa stranice Korisnici.",
+		"remove": "Ukloni s popisa",
+		"moveUp": "Pomakni gore",
+		"moveDown": "Pomakni dolje",
+		"dragHint": "Povucite stavke da promijenite redoslijed ispisa.",
+		"removed": "Uklonjeno s popisa",
+		"columns": {
+			"position": "Br.",
+			"printed": "Iskaznica ispisana"
+		},
+		"printedYes": "da",
+		"printedNo": "ne",
+		"quick": {
+			"title": "Dodaj filtrima",
+			"hint": "Tko je već na popisu, ne dodaje se dvaput.",
+			"type": "Vrsta",
+			"any": "Bilo koja",
+			"stage": "Stupanj škole",
+			"level": "Razred",
+			"withoutPrintedCard": "Samo oni kojima iskaznica još nije ispisana",
+			"withoutPhoto": "Samo oni bez fotografije",
+			"importBatch": "Uvoz",
+			"anyBatch": "— nijedan —",
+			"batchLabel": "br. {{id}} · {{file}} · {{created}} {{created:plural; one:novi; few:novi; other:novih;}}",
+			"createdAfter": "Izrađeno od",
+			"add": "Dodaj na popis",
+			"added": "{{added}} {{added:plural; one:dodan; few:dodana; other:dodanih;}}, {{skipped}} {{skipped:plural; one:već prisutan; few:već prisutna; other:već prisutnih;}}",
+			"none": "Nijedan korisnik ne odgovara filtrima.",
+			"pendingLabels": "Naljepnice za ispis",
+			"pendingAny": "— svi primjerci —",
+			"acquiredFrom": "Nabavljeno od",
+			"acquiredTo": "do",
+			"genre": "Žanr",
+			"itemType": "Vrsta primjerka",
+			"batchLabelItems": "br. {{id}} · {{file}} · {{created}} {{created:plural; one:novi primjerak; few:nova primjerka; other:novih primjeraka;}}",
+			"noneItems": "Nijedan primjerak ne odgovara filtrima.",
+			"addedItems": "{{added}} {{added:plural; one:dodan; few:dodana; other:dodanih;}}, {{skipped}} {{skipped:plural; one:već prisutan; few:već prisutna; other:već prisutnih;}}",
+			"nonfictionClass": "Klasa stručne literature"
+		},
+		"scan": {
+			"title": "Dodaj čitačem",
+			"hint": "Očitajte iskaznicu svakog korisnika: odmah se dodaje na popis. Iskaznice koje su već na popisu zanemaruju se.",
+			"added": "{{name}} dodan",
+			"duplicate": "{{name}} je već na popisu.",
+			"unknown": "Nema korisnika s iskaznicom {{card}}",
+			"notCard": "Očitani kod nije iskaznica",
+			"hintItems": "Očitajte crtični kod svakog primjerka, na primjer dok prolazite uz policu: primjerak se odmah dodaje na popis. Primjerci koji su već na popisu zanemaruju se.",
+			"addedItem": "{{title}} ({{barcode}}) dodan",
+			"duplicateItem": "{{title}} ({{barcode}}) je već na popisu.",
+			"unknownItem": "Nema primjerka s crtičnim kodom {{barcode}}",
+			"notItem": "Očitani kod nije primjerak"
+		},
+		"printLabels": "Ispiši naljepnice",
+		"markPrintedKind": "Naljepnice ispisane",
+		"markedItems": "{{count}} {{count:plural; one:primjerak označen kao ispisan; few:primjerka označena kao ispisana; other:primjeraka označenih kao ispisanih;}}",
+		"entriesItems": "{{count}} {{count:plural; one:primjerak; few:primjerka; other:primjeraka;}} na popisu",
+		"emptyItems": "Popis je prazan: primjerci se dodaju filtrima za brzi odabir, čitačem ili iz kataloga.",
+		"clearDescriptionItems": "Sve stavke se uklanjaju; primjerci ostaju u katalogu."
+	},
+	"basket": {
+		"label": "Popisi za ispis",
+		"labelToPrint": "Popisi za ispis: {{count}} za ispis",
+		"entry": "{{name}} ({{count}})",
+		"none": "Nema popisa za ispis",
+		"all": "Svi popisi"
+	},
+	"addTo": {
+		"button": "Dodaj na popis",
+		"selected": "Dodaj odabrane na popis",
+		"title": "Dodaj na popis za ispis",
+		"existing": "Postojeći popis",
+		"create": "Novi popis",
+		"newName": "Naziv novog popisa",
+		"confirm": "Dodaj",
+		"done": "{{added}} {{added:plural; one:dodan; few:dodana; other:dodanih;}} u „{{name}}“, {{skipped}} {{skipped:plural; one:već prisutan; few:već prisutna; other:već prisutnih;}}"
+	},
+	"labels": {
+		"title": "Ispis naljepnica",
+		"button": "Ispiši naljepnice",
+		"selected": "Ispiši naljepnice odabranih",
+		"kind": "Vrsta naljepnice",
+		"kinds": {
+			"pair": "Par",
+			"barcode": "Samo crtični kod",
+			"spine": "Samo traka na hrptu"
+		},
+		"kindHints": {
+			"pair": "Traka na hrptu gore i naljepnica s crtičnim kodom dolje, jedan par po knjizi (sadašnji ispis).",
+			"barcode": "Samo unutarnja naljepnica s crtičnim kodom, za ponovni ispis.",
+			"spine": "Samo traka na hrptu, na primjer nakon promjene klasifikacije."
+		},
+		"stock": "List naljepnica",
+		"start": "Prvo slobodno mjesto",
+		"startHint": "Od 1 do {{max}}: preskače naljepnice koje su već iskorištene na listu.",
+		"count": "{{count}} {{count:plural; one:primjerak; few:primjerka; other:primjeraka;}}",
+		"unclassified": "{{count}} {{count:plural; one:primjerak knjige; few:primjerka knjige; other:primjeraka knjiga;}} za klasifikaciju: {{count:plural; one:ispisuje se samo njegova naljepnica; few:ispisuju se samo njihove naljepnice; other:ispisuje se samo naljepnica;}} s crtičnim kodom, traka na hrptu nakon klasifikacije.",
+		"pendingCount": "{{count}} {{count:plural; one:primjerak; few:primjerka; other:primjeraka;}} s naljepnicama za ispis",
+		"pages": "{{pages}} {{pages:plural; one:list; few:lista; other:listova;}} ({{perPage}} po listu)",
+		"print": "Otvori ispis",
+		"afterPrint": "Stranica za ispis otvorena je u novoj kartici. Nakon ispisa označite naljepnice kao ispisane.",
+		"markPrinted": "Označi kao ispisane",
+		"marked": "{{count}} {{count:plural; one:primjerak označen kao ispisan; few:primjerka označena kao ispisana; other:primjeraka označenih kao ispisanih;}}",
+		"status": {
+			"printed": "Naljepnice ispisane",
+			"pending": "Naljepnice za ispis",
+			"partial": "Nedostaje jedna naljepnica"
+		}
+	},
+	"cards": {
+		"title": "Ispis iskaznica",
+		"count": "{{count}} {{count:plural; one:iskaznica; few:iskaznice; other:iskaznica;}}",
+		"afterPrint": "Stranica za ispis otvorena je u novoj kartici. Nakon ispisa označite iskaznice kao ispisane.",
+		"layout": "Način ispisa",
+		"layouts": {
+			"side-by-side": "Prednja i stražnja strana jedna do druge",
+			"duplex": "Na obje strane lista"
+		},
+		"window": "U prozoru za ispis preglednika:",
+		"steps": {
+			"duplex": {
+				"long-edge": "odaberi „Dvostrano“ i okreni po dužoj strani;",
+				"short-edge": "odaberi „Dvostrano“ i okreni po kraćoj strani;"
+			},
+			"scale": "mjerilo 100 % („Stvarna veličina“, a ne „Prilagodi stranici“);",
+			"margins": "margine: bez margina.",
+			"after": {
+				"side-by-side": {
+					"marks": "Zatim izreži svaku iskaznicu spajanjem oznaka reza oko iskaznica ravnalom i presavij je na pola po kraćoj strani.",
+					"line": "Zatim izreži svaku iskaznicu duž obojene linije koja je okružuje i presavij je na pola po kraćoj strani.",
+					"edge": "Zatim izreži svaku iskaznicu duž ruba i presavij je na pola po kraćoj strani."
+				},
+				"duplex": {
+					"marks": "Zatim izreži iskaznice spajanjem oznaka reza oko prednjih strana ravnalom: stražnja strana je već iza prednje (deset po listu).",
+					"line": "Zatim izreži iskaznice duž obojene linije koja okružuje prednje strane: stražnja strana je već iza prednje (deset po listu).",
+					"edge": "Zatim izreži iskaznice duž ruba prednjih strana: stražnja strana je već iza prednje (deset po listu)."
+				}
+			}
+		},
+		"print": "Ispiši",
+		"calibrate": "Prvi put, ili kad se stražnje strane ne poklope iza prednjih:"
+	},
+	"words": {
+		"teacher": "Nastavnik",
+		"title": "Naslov",
+		"code": "Kod",
+		"dueBy": "Vratiti do",
+		"due": "Rok",
+		"name": "Ime",
+		"daysOverdue": "Dana u kašnjenju",
+		"loanOn": "Posudba od {{date}} za",
+		"overduesOn": "Opomene knjižnice od {{date}}",
+		"toReturn": "Knjige koje treba vratiti u knjižnicu",
+		"enjoy": "Ugodno čitanje."
+	}
+}

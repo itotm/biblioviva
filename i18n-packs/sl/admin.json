@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "Upravljanje",
+		"sections": {
+			"config": {
+				"title": "Nastavitve",
+				"description": "Razvrstitev in nastavitve knjižnice."
+			},
+			"audit": {
+				"title": "Dnevnik dejavnosti",
+				"description": "Kdo je kaj naredil: prijave, spremembe, uvozi."
+			},
+			"users": {
+				"title": "Računi osebja",
+				"description": "Računi osebja, vloge in dovoljenja."
+			},
+			"backups": {
+				"title": "Varnostne kopije",
+				"description": "Varnostne kopije podatkovne zbirke in datotek."
+			},
+			"rollover": {
+				"title": "Prehod v višji razred",
+				"description": "Ob koncu šolskega leta: napredovanja, ponavljanja, odhodi iz zadnjega razreda."
+			},
+			"exports": {
+				"title": "Izvozi",
+				"description": "Uporabniki, katalog, izposoje in vsi podatki v datotekah CSV ali JSON."
+			},
+			"imports": {
+				"title": "Uvozi",
+				"description": "Katalog, uporabniki, odprte izposoje in fotografije: iz datotek CSV ali iz izvoza Koha."
+			}
+		}
+	},
+	"audit": {
+		"title": "Dnevnik dejavnosti",
+		"filters": {
+			"from": "Od",
+			"to": "Do",
+			"user": "Račun",
+			"action": "Dejanje",
+			"all": "Vse"
+		},
+		"columns": {
+			"when": "Kdaj",
+			"user": "Račun",
+			"action": "Dejanje",
+			"entity": "Predmet",
+			"entityId": "ID",
+			"details": "Podrobnosti"
+		},
+		"count": "{{shown}} od {{total}} {{total:plural; one:vnosa; two:vnosov; few:vnosov; other:vnosov;}}",
+		"empty": "Z izbranimi filtri ni zabeleženih dejanj.",
+		"system": "sistem"
+	},
+	"users": {
+		"title": "Računi osebja",
+		"fields": {
+			"roles": "Vloge",
+			"permissions": "Dovoljenja",
+			"lastLogin": "Zadnja prijava",
+			"never": "nikoli"
+		},
+		"status": {
+			"active": "Aktiven",
+			"inactive": "Deaktiviran",
+			"plainPassword": "Geslo v navadnem besedilu v datoteki",
+			"notInConfig": "Odstranjen iz nastavitev"
+		},
+		"hash": {
+			"title": "Ustvari hash gesla",
+			"description": "Vnesite geslo, ki naj se dodeli: dobite hash argon2id, ki ga prilepite v passwordHash. Geslo se ne shrani.",
+			"password": "Geslo (vsaj {{min}} znakov)",
+			"generate": "Ustvari hash",
+			"result": "Hash za prilepitev",
+			"copy": "Kopiraj",
+			"copied": "Hash kopiran",
+			"tooShort": "Geslo mora imeti vsaj {{min}} znakov.",
+			"disclosure": "Za tiste, ki datoteke urejajo ročno: ustvarite hash gesla"
+		},
+		"reload": {
+			"button": "Znova naloži nastavitve",
+			"success": "Nastavitve so znova naložene",
+			"successWithWarnings": "Nastavitve so znova naložene z {{count}} {{count:plural; one:opozorilom; two:opozoriloma; few:opozorili; other:opozorili;}}",
+			"failed": "Nastavitve niso veljavne: ostanejo aktivne prejšnje",
+			"exampleSource": "Pozor: datoteka config.json ne obstaja, uporablja se vzorčna nastavitev."
+		},
+		"new": "Nov račun",
+		"newPassword": "Novo geslo",
+		"permissionNames": {
+			"all": "Vse",
+			"loans": "Izposoja",
+			"patrons": "Uporabniki",
+			"patrons_import": "Uvoz uporabnikov",
+			"catalog": "Katalog",
+			"catalog_import": "Uvoz kataloga",
+			"reports": "Poročila",
+			"anonymize": "Anonimiziraj",
+			"admin": "Upravljanje"
+		},
+		"roles": {
+			"title": "Vloge in dovoljenja",
+			"hint": "Vloga je nabor dovoljenj; vsak račun ima eno ali več vlog. „Vse“ daje vsa dovoljenja, tudi tista, ki bodo prišla v prihodnjih različicah. Če preimenujete vlogo, se posodobijo računi, ki jo uporabljajo.",
+			"name": "Vloga",
+			"unused": "brez računa",
+			"badName": "Črke, številke, vezaji in podčrtaji (največ 32).",
+			"add": "Dodaj vlogo",
+			"saved": "Vloge shranjene"
+		},
+		"auth": {
+			"title": "Prijava",
+			"config": "Uporabniki se prijavijo z računi s te strani, običajno po enem skupnem za vsako vlogo (na primer „izposoja“ za pult).",
+			"database": "Uporabniki se prijavijo z osebnimi računi.",
+			"later": "Osebni računi, po eden za vsakega, so načrtovani za prihodnjo različico."
+		},
+		"dialog": {
+			"title": {
+				"new": "Nov račun",
+				"edit": "Uredi {{name}}",
+				"password": "Novo geslo za {{name}}"
+			},
+			"username": "Uporabniško ime",
+			"usernameHint": "Male črke, številke, pika, vezaj in podčrtaj (od 2 do 32).",
+			"badUsername": "Uporabite male črke, številke, piko, vezaj in podčrtaj (od 2 do 32).",
+			"displayName": "Prikazano ime",
+			"active": "Aktiven račun (lahko se prijavi)",
+			"password": "Geslo (vsaj {{min}} znakov)",
+			"repeat": "Ponovite geslo",
+			"mismatch": "Gesli se ne ujemata.",
+			"passwordHint": "Geslo se ne shrani: v nastavitve se zapiše samo njegov hash. Kdor je prijavljen s tem računom, se bo moral znova prijaviti.",
+			"saved": {
+				"new": "Račun ustvarjen",
+				"edit": "Račun shranjen",
+				"password": "Geslo spremenjeno"
+			},
+			"removed": "Račun izbrisan",
+			"removeTitle": "Izbrisati {{name}}?",
+			"removeHint": "Račun zapusti nastavitve; dejanja, ki jih je opravil, ostanejo v dnevniku pod njegovim imenom. Mogoče je razveljaviti iz zgodovine nastavitev."
+		},
+		"errors": {
+			"badUsername": "Neveljavno uporabniško ime: {{details}}.",
+			"usernameTaken": "Uporabniško ime {{details}} je že v uporabi.",
+			"notFound": "Račun ni najden: {{details}}.",
+			"noRoles": "Izberite vsaj eno vlogo.",
+			"unknownRole": "Neznana vloga: {{details}}.",
+			"passwordTooShort": "Geslo je prekratko.",
+			"passwordRequired": "Nov račun potrebuje geslo.",
+			"lastAdmin": "Vsaj en aktiven račun mora ohraniti dovoljenje za upravljanje.",
+			"stillActive": "Pred brisanjem deaktivirajte račun.",
+			"badRole": "Neveljavno ime vloge: {{details}}.",
+			"roleTaken": "Dve vlogi se imenujeta {{details}}.",
+			"roleInUse": "Vlogo uporabljajo nekateri računi: {{details}}.",
+			"invalid": "Nastavitve ne bi bile veljavne: {{details}}."
+		}
+	},
+	"backups": {
+		"title": "Varnostne kopije",
+		"runNow": "Naredi kopijo zdaj",
+		"created": "Varnostna kopija ustvarjena: {{name}}",
+		"createdDeleted": "Varnostna kopija ustvarjena: {{name}} ({{deleted}} {{deleted:plural; one:stara varnostna kopija izbrisana; two:stari varnostni kopiji izbrisani; few:stare varnostne kopije izbrisane; other:starih varnostnih kopij izbrisanih;}})",
+		"empty": "Še ni varnostnih kopij. Prva se ustvari ob načrtovanem času ali s pritiskom na „Naredi varnostno kopijo zdaj“.",
+		"download": "Prenesi",
+		"columns": {
+			"when": "Ustvarjeno",
+			"size": "Velikost"
+		},
+		"catchUp": {
+			"badge": "Ustvarjeno ob zagonu",
+			"hint": "Načrtovana varnostna kopija je bila izpuščena (računalnik izklopljen): BiblioViva jo je naredila ob zagonu."
+		},
+		"offsite": {
+			"title": "Zadnja zunanja kopija",
+			"disabled": "Zunanja kopija ni nastavljena. Vklopi se s storitvijo „offsite“ (rclone), opisano v navodilih za namestitev.",
+			"never": "Storitev je vklopljena, vendar še ni zapisala nobenega izida.",
+			"ok": "Zadnja kopija uspešna: {{when}}",
+			"error": "Zadnja kopija neuspešna: {{when}}",
+			"stale": "Zunanja kopija je starejša od dveh dni: preverite storitev offsite.",
+			"remote": "Cilj: {{remote}}"
+		},
+		"restore": {
+			"title": "Obnovitev",
+			"button": "Obnovi…",
+			"hint": "Izberite „Obnovi…“ pri varnostni kopiji s seznama ali naložite arhiv BiblioViva (varnostno kopijo, „Izvozi vse“ ali „Izvozi nastavitve“, do {{maxMb}} MB; večjega se prekopira v mapo varnostnih kopij na strežniku ali obnovi z ukazom „bun run backup:restore“). Najprej se vse preveri, nato se obnovijo samo izbrani deli: ostali ostanejo, kakršni so.",
+			"upload": "Naloži arhiv",
+			"from": "Iz {{name}} z dne {{date}}",
+			"count": "{{part}}: zdaj {{live}}, v varnostni kopiji {{archive}}",
+			"images": "Slike za obnovitev: {{photos}} {{photos:plural; one:fotografija; two:fotografiji; few:fotografije; other:fotografij;}}, {{covers}} {{covers:plural; one:naslovnica; two:naslovnici; few:naslovnice; other:naslovnic;}}.",
+			"gapsTitle": "Nekateri podatki bi ostali brez tega, na kar se nanašajo:",
+			"gap": "{{rows:plural; one:{{rows}} vrstica „{{part}}“ se nanaša; two:{{rows}} vrstici „{{part}}“ se nanašata; few:{{rows}} vrstice „{{part}}“ se nanašajo; other:{{rows}} vrstic „{{part}}“ se nanaša;}} na „{{needs}}“, ki ne bi bil obnovljen: dodajte „{{add}}“ k izbiri.",
+			"schema": "Varnostna kopija je iz druge različice BiblioViva (tabele {{tables}}): tukaj je ni mogoče obnoviti.",
+			"apply": "Obnovi",
+			"confirmTitle": "Obnoviti izbrane dele?",
+			"confirmHint": "Izbrani podatki in nastavitve se zamenjajo s tistimi iz varnostne kopije. Nastavitve je mogoče vrniti iz zgodovine; za podatke je dobro prej narediti varnostno kopijo, če ni nobene nedavne.",
+			"done": "Obnovitev končana",
+			"notArchive": "Datoteka ni arhiv BiblioViva."
+		},
+		"contents": {
+			"title": "Kaj vsebuje varnostna kopija",
+			"database": "Podatkovna zbirka: popolna kopija ob vsakem zagonu (spodaj je seznam).",
+			"images": "Fotografije in naslovnice: vsako noč kopirane v mapo „uploads“ varnostne kopije ({{photos}} {{photos:plural; one:fotografija; two:fotografiji; few:fotografije; other:fotografij;}}, {{covers}} {{covers:plural; one:naslovnica; two:naslovnici; few:naslovnice; other:naslovnic;}} trenutno).",
+			"imagesPending": "Fotografije in naslovnice: prvo kopiranje bo ob naslednjem zagonu ({{photos}} {{photos:plural; one:fotografija; two:fotografiji; few:fotografije; other:fotografij;}}, {{covers}} {{covers:plural; one:naslovnica; two:naslovnici; few:naslovnice; other:naslovnic;}} za kopiranje).",
+			"config": "Nastavitve (predloge, slike, možnosti) niso v nočni varnostni kopiji: za njih uporabite „Izvozi vse“."
+		},
+		"export": {
+			"button": "Izvozi vse",
+			"hint": "Ena datoteka ZIP s podatkovno zbirko, fotografijami, naslovnicami in vso nastavitvijo (vključno s predlogami in slikami), pripravljena za obnovitev z ukazom „bun run backup:restore“."
+		},
+		"createdMirror": "Varnostna kopija ustvarjena: {{name}}; {{copied}} {{copied:plural; one:slika kopirana; two:sliki kopirani; few:slike kopirane; other:slik kopiranih;}}",
+		"parts": {
+			"title": "Varnostna kopija ali izvoz nekaterih delov",
+			"hint": "Izberite, kaj vključiti: podatke knjižnice, nastavitve vsakega razdelka, predloge, slike … „Ustvari varnostno kopijo“ jo shrani na seznam spodaj, „Prenesi“ jo prenese v računalnik.",
+			"create": "Ustvari varnostno kopijo",
+			"download": "Prenesi"
+		}
+	},
+	"demo": {
+		"clear": "Izprazni predstavitvene podatke",
+		"confirmTitle": "Izprazniti predstavitvene podatke?",
+		"confirmDescription": "Predstavitveni uporabniki, knjige, izposoje in fotografije bodo izbrisani. Razredi in skupina učiteljev ostanejo. Vsi operaterji bodo odjavljeni.",
+		"cleared": "Predstavitveni podatki odstranjeni. Znova se prijavite.",
+		"clearedPassword": "Računi imajo še vedno predstavitveno geslo „{{password}}“: takoj ga spremenite v Upravljanje → Računi osebja."
+	},
+	"appearance": {
+		"title": "Videz in jezik",
+		"current": "Trenutni set: {{name}}",
+		"areas": {
+			"title": "Slog območij",
+			"hint": "Zgornja vrstica prevzame barvo območja, v katerem se dela (Izposoja, Katalog, Uporabniki …), v odtenkih izbranega seta barv. Ikona in ime območja ostaneta vedno vidna.",
+			"styles": {
+				"tinted": "Obarvana vrstica (priporočeno)",
+				"filled": "Polna vrstica",
+				"accents": "Samo poudarki",
+				"none": "Brez barve"
+			},
+			"saved": "Slog območij shranjen"
+		},
+		"colours": {
+			"title": "Set barv"
+		},
+		"save": "Shrani barve",
+		"saved": "Barve shranjene",
+		"unchanged": "Ni sprememb za shranjevanje.",
+		"language": {
+			"title": "Jezik aplikacije",
+			"hint": "Vsaka namestitev ima en sam jezik: velja za vse osebje.",
+			"save": "Spremeni jezik",
+			"saved": "Jezik spremenjen: stran se znova naloži."
+		},
+		"logo": {
+			"title": "Logotip knjižnice",
+			"hint": "Prikazan v zgornjem levem kotu vsake strani, ob imenu knjižnice. PNG, JPEG ali WebP; najbolje s prosojnim ozadjem.",
+			"upload": "Naloži logotip",
+			"replace": "Zamenjaj logotip",
+			"remove": "Odstrani logotip",
+			"saved": "Logotip shranjen.",
+			"removed": "Logotip odstranjen.",
+			"none": "Ni logotipa: prikaže se splošna ikona.",
+			"preview": "Trenutni logotip",
+			"errors": {
+				"empty": "Datoteka je prazna.",
+				"too_large": "Datoteka je prevelika (največ {{maxMb}} MB).",
+				"not_an_image": "Datoteka ni slika.",
+				"unsupported_format": "Format ni sprejet: uporabite PNG, JPEG ali WebP."
+			}
+		},
+		"name": {
+			"title": "Ime knjižnice",
+			"hint": "Prikazano v zgornjem levem kotu, na nadzorni plošči, na tiskih in v aplikaciji, nameščeni v telefon.",
+			"label": "Ime",
+			"save": "Shrani ime",
+			"saved": "Ime knjižnice shranjeno",
+			"required": "Vpišite ime knjižnice."
+		},
+		"dashboard": {
+			"title": "Nadzorna plošča",
+			"hint": "Razdelki začetne strani za vso knjižnico. Hitra dejanja so vedno na vrhu; znotraj vsakega razdelka vsak račun vidi samo tisto, kar sme narediti.",
+			"save": "Shrani nadzorno ploščo",
+			"saved": "Nadzorna plošča shranjena",
+			"sections": {
+				"quickActions": "Hitra dejanja",
+				"tiles": "Knjižnica danes (ploščice s številkami)",
+				"inventory": "Inventura v teku",
+				"installHint": "Povabilo k dodajanju aplikacije na začetni zaslon (telefoni)",
+				"dueThisWeek": "Rok poteče ta teden",
+				"upcomingDates": "Prihajajoči datumi koledarja",
+				"todayActivity": "Današnje izposoje"
+			}
+		}
+	},
+	"templates": {
+		"title": "Predloge za tisk",
+		"reload": "Znova naloži predloge",
+		"reloaded": "Predloge znova prebrane z diska",
+		"kinds": {
+			"cards": "Izkaznice",
+			"labels": "Nalepke",
+			"slips": "Opomini"
+		},
+		"list": {
+			"source": {
+				"builtin": "Priložena z aplikacijo",
+				"config": "V nastavitvah"
+			},
+			"default": "Privzeta",
+			"status": {
+				"ok": "Veljavna",
+				"error": "Napaka"
+			},
+			"folder": "Mapa",
+			"forTypes": "Za: {{types}}",
+			"emptyCards": "Ni predloge za izkaznice: preverite mapo cards/templates v nastavitvah.",
+			"emptyLabels": "Še ni predloge za nalepke: pridejo s tiskom nalepk kataloga.",
+			"emptySlips": "Še ni predloge za opomin: pride z izposojo."
+		},
+		"preview": {
+			"title": "Predogled",
+			"front": "Sprednja stran",
+			"back": "Zadnja stran",
+			"patron": "Uporabnik za prikaz",
+			"sample": "Vzorčni uporabnik",
+			"real": "Pravi uporabnik",
+			"search": "Poiščite pravega uporabnika",
+			"searchPlaceholder": "Priimek ali ime",
+			"noResults": "Uporabnik ni najden.",
+			"zoom": "Povečava",
+			"sheet": "Celoten list",
+			"sheetHint": "Ena stran A4 z vzorčnim uporabnikom, tako kot bo natisnjena.",
+			"test": "Natisni preizkusno stran",
+			"broken": "Predloge ni mogoče uporabiti, dokler ni popravljena:",
+			"size": "{{width}} × {{height}} mm pri povečavi {{zoom}}"
+		},
+		"test": {
+			"title": "Preizkusna stran izkaznic",
+			"ruler": "Ravnilo 10 cm: po tisku mora meriti 100 mm (tiskajte pri 100 %, brez „prilagodi na stran“)."
+		},
+		"calibration": {
+			"title": "Kalibracijska stran za nalepke",
+			"stock": "Lepljivi nosilec",
+			"print": "Natisni kalibracijsko stran",
+			"hint": "Tiskajte na običajen papir in nanj položite list nalepk, da preverite robove."
+		},
+		"howTo": {
+			"title": "Kako ustvariti predlogo",
+			"steps": {
+				"step1": "V Nastavitve → Predloge za tisk izberite „Podvoji“ pri predlogi (na primer {{path}}) in ji dajte novo ime.",
+				"step2": "Z „Uredi“ jo oblikujte ali spremenite kodo; slike se naložijo na isti strani.",
+				"step3": "Vrnite se sem in preverite predogled: neznano polje ali manjkajoča datoteka se prijavi.",
+				"step4": "Za pravo uporabo jo izberite v nastavitvah izkaznic ali nalepk."
+			}
+		},
+		"labels": {
+			"stocks": "Namenjeno za: {{stocks}}",
+			"preview": "Predogled: {{name}}",
+			"geometry": "Enota {{width}} × {{height}} mm · varianta {{variant}}",
+			"sheet": "Vzorčni list"
+		}
+	},
+	"loansImport": {
+		"title": "Uvoz odprtih izposoj",
+		"upload": {
+			"hint": "Uporabiti enkrat, ob prehodu iz Koha: ena vrstica za vsako odprto izposojo s številko izkaznice in črtno kodo izvoda ter, če jih je, z datumom izposoje in rokom vrnitve. Najprej uvozite uporabnike in katalog; predloga s potrebnimi stolpci se prenese spodaj.",
+			"submit": "Naloži"
+		},
+		"mapping": {
+			"uncertain": "Pred nadaljevanjem preverite stolpce.",
+			"validate": "Preveri datoteko",
+			"without": {
+				"issuedOn": "Brez stolpca issued_on so izposoje datirane z današnjim dnem.",
+				"dueOn": "Brez stolpca due_on se rok izračuna kot na pultu, s pravili izposoje in koledarjem."
+			}
+		},
+		"fields": {
+			"cardNumber": "Številka izkaznice",
+			"barcode": "Črtna koda",
+			"issuedOn": "Datum izposoje",
+			"dueOn": "Rok vrnitve"
+		},
+		"preview": {
+			"ready": "Ni napak: izposoje je mogoče uvoziti.",
+			"blocked": "Popravite napake in znova preverite: datoteka z napakami se ne uvozi.",
+			"overdue": "{{count}} {{count:plural; one:izposoja je že prekoračena; two:izposoji sta že prekoračeni; few:izposoje so že prekoračene; other:izposoj je že prekoračenih;}}, {{count:plural; one:uvozi se in se prikaže; two:uvozita se in se prikažeta; few:uvozijo se in se prikažejo; other:uvozijo se in se prikažejo;}} med zamudami.",
+			"columns": {
+				"patron": "Uporabnik",
+				"barcode": "Izvod",
+				"issued": "Izposojeno",
+				"due": "Rok"
+			},
+			"commit": "Uvozi izposoje",
+			"back": "Nazaj na stolpce"
+		},
+		"reasons": {
+			"cardMissing": "Manjka številka izkaznice",
+			"cardUnknown": "Ni uporabnika s številko izkaznice {{value}}",
+			"barcodeMissing": "Manjka črtna koda",
+			"barcodeUnknown": "Ni izvoda s črtno kodo {{value}}",
+			"alreadyOnLoan": "Izvod {{value}} je že izposojen",
+			"itemWithdrawn": "Izvod {{value}} je umaknjen",
+			"duplicateInFile": "Isti izvod je že v vrstici {{line}}",
+			"issueDateInvalid": "Neveljaven datum izposoje: „{{value}}“",
+			"issueDateFuture": "Datum izposoje v prihodnosti: {{value}}",
+			"dueDateInvalid": "Neveljaven rok vrnitve: „{{value}}“",
+			"dueBeforeIssue": "Rok vrnitve je pred datumom izposoje",
+			"overdue": "Že prekoračeno od {{date}}",
+			"itemUnclassified": "Izvod {{value}} je knjige, ki jo je treba razvrstiti: izposoja se uvozi, vendar se na pultu ne izposodi, dokler ni razvrščena"
+		},
+		"done": {
+			"title": "Izposoje uvožene",
+			"summary": "{{created}} {{created:plural; one:izposoja uvožena; two:izposoji uvoženi; few:izposoje uvožene; other:izposoj uvoženih;}}, od tega {{overdue}} {{overdue:plural; one:že prekoračena; two:že prekoračeni; few:že prekoračene; other:že prekoračenih;}}.",
+			"batch": "Uvoz št. {{id}}: izvirna datoteka je shranjena.",
+			"again": "Uvozi drugo datoteko"
+		},
+		"columns": {
+			"cardNumber": "Številka izkaznice uporabnika, že uvožena.",
+			"barcode": "Črtna koda izvoda, že uvožena.",
+			"issuedOn": "Datum izposoje; če manjka, je danes.",
+			"dueOn": "Rok vrnitve; če manjka, se izračuna s pravili izposoje."
+		}
+	},
+	"photosImport": {
+		"title": "Uvoz fotografij uporabnikov",
+		"hint": "Ena datoteka za uporabnika, poimenovana po številki izkaznice (na primer 0000001240.jpg): to je izvoz, opisan v priročniku za skrbnika. Vsaka fotografija se pomanjša in očisti skritih podatkov; datoteke, ki ne ustrezajo nobeni izkaznici, se navedejo.",
+		"replace": "Zamenjaj fotografije, ki so že prisotne",
+		"zip": {
+			"title": "Iz arhiva ZIP",
+			"file": "Arhiv ZIP s fotografijami",
+			"submit": "Uvozi fotografije"
+		},
+		"folder": {
+			"title": "Iz mape na strežniku",
+			"hint": "Datoteke kopirajte v {{path}}: {{count:plural; one:zdaj je {{count}}; two:zdaj jih je {{count}}; few:zdaj jih je {{count}}; other:zdaj jih je {{count}};}}. Primerno za veliko fotografij, ki bi bile v arhivu preveč težke za nalaganje.",
+			"submit": "Uvozi iz mape"
+		},
+		"summary": {
+			"title": "Izid",
+			"text": "{{imported}} {{imported:plural; one:fotografija uvožena; two:fotografiji uvoženi; few:fotografije uvožene; other:fotografij uvoženih;}}, {{replaced}} {{replaced:plural; one:zamenjana; two:zamenjani; few:zamenjane; other:zamenjanih;}}, {{kept}} {{kept:plural; one:ostala nedotaknjena; two:ostali nedotaknjeni; few:ostale nedotaknjene; other:ostalo nedotaknjenih;}} (fotografija je že prisotna), {{unmatched}} {{unmatched:plural; one:datoteka brez uporabnika; two:datoteki brez uporabnika; few:datoteke brez uporabnika; other:datotek brez uporabnika;}}, {{unreadable}} {{unreadable:plural; one:nečitljiva datoteka; two:nečitljivi datoteki; few:nečitljive datoteke; other:nečitljivih datotek;}}.",
+			"unreadable": "Niso čitljive slike: {{files}}",
+			"unmatched": "Prenesi seznam datotek brez uporabnika"
+		},
+		"errors": {
+			"notZip": "Datoteka ni veljaven arhiv ZIP.",
+			"empty": "Arhiv ne vsebuje datotek."
+		},
+		"done": "Fotografije uvožene"
+	},
+	"rollover": {
+		"title": "Prehod v višji razred",
+		"subtitle": "Ob koncu šolskega leta vsak učenec napreduje za eno leto, kdor konča zadnji letnik, zapusti šolo.",
+		"steps": {
+			"backup": "Varnostna kopija",
+			"classes": "Razredi",
+			"leavers": "Odhodi",
+			"confirm": "Potrditev",
+			"done": "Končano"
+		},
+		"backup": {
+			"text": "Najprej varnostna kopija podatkovne zbirke: če kaj ne gre prav, se vrnete preko Upravljanje → Varnostne kopije.",
+			"create": "Ustvari varnostno kopijo",
+			"created": "Varnostna kopija ustvarjena: {{name}}"
+		},
+		"classes": {
+			"text": "Vsak učenec napreduje v naslednje leto s svojim razredom. Označite, kdo ponavlja leto in kdo menja razred.",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; one:učenec; two:učenca; few:učenci; other:učencev;}}",
+			"exceptions": "{{count}} {{count:plural; one:izjema; two:izjemi; few:izjeme; other:izjem;}}",
+			"loans": "{{count}} z izposojenimi knjigami",
+			"repeat": "Ponavlja",
+			"target": "Razred",
+			"noGroup": "Brez razreda",
+			"choose": "Izberite razred…",
+			"fates": {
+				"advances": "Napreduje",
+				"stays": "Ostane",
+				"archived": "Se zaključi"
+			},
+			"unplaced": "{{count}} {{count:plural; one:učenec čaka; two:učenca čakata; few:učenci čakajo; other:učencev čaka;}} na izbiro razreda.",
+			"none": "Noben učenec ne napreduje v naslednje leto.",
+			"nextYear": "Naslednje leto",
+			"leaves": "Zapusti šolo"
+		},
+		"leavers": {
+			"text": "Učenci zadnjega letnika zapustijo šolo: njihovi podatki se takoj in dokončno izbrišejo (ostanejo samo številke statistik). Odstranite oznako pri tistih, ki ostanejo, na primer pri učencu, ki ponavlja zadnji letnik.",
+			"leaves": "Odide",
+			"openLoans": "{{count}} {{count:plural; one:knjiga; two:knjigi; few:knjige; other:knjig;}} v izposoji",
+			"blocked": "{{count}} {{count:plural; one:učenec, ki odhaja, še ima; two:učenca, ki odhajata, še imata; few:učenci, ki odhajajo, še imajo; other:učencev, ki odhajajo, še imajo;}} knjige: zabeležite vrnitev ali jih označite kot izgubljene, ali odstranite oznako.",
+			"toCheckin": "Pojdi na Vrnitve",
+			"none": "Ni učencev v zadnjem letniku."
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; one:učenec napreduje; two:učenca napredujeta; few:učenci napredujejo; other:učencev napreduje;}} v naslednje leto",
+			"repeat": "{{count}} {{count:plural; one:ponavlja; two:ponavljata; few:ponavljajo; other:ponavlja;}} letnik",
+			"groupChanges": "{{count}} {{count:plural; one:menja; two:menjata; few:menjajo; other:menja;}} razred",
+			"closing": "{{count}} {{count:plural; one:razred se zaključi in se arhivira; two:razreda se zaključita in se arhivirata; few:razredi se zaključijo in se arhivirajo; other:razredov se zaključi in se arhivira;}}",
+			"remove": "{{count}} {{count:plural; one:učenec zapusti šolo in podatki se izbrišejo; two:učenca zapustita šolo in podatki se izbrišejo; few:učenci zapustijo šolo in podatki se izbrišejo; other:učencev zapusti šolo in podatki se izbrišejo;}}",
+			"recent": "Zadnji prehod je bil izveden {{date}}, manj kot pred šestimi meseci. Potrjujem, da ga želim ponoviti.",
+			"run": "Izvedi prehod razredov"
+		},
+		"done": {
+			"title": "Prehod končan",
+			"advanced": "{{count}} {{count:plural; one:razred je napredoval; two:razreda sta napredovala; few:razredi so napredovali; other:razredov je napredovalo;}} v naslednje leto",
+			"archived": "{{count}} {{count:plural; one:razred arhiviran; two:razreda arhivirana; few:razredi arhivirani; other:razredov arhiviranih;}}",
+			"text": "Naslednji koraki: po potrebi ustvarite nove prve razrede in uvozite nove učence s sinhronizacijo.",
+			"import": "Uvozi nove učence"
+		},
+		"errors": {
+			"blocked": "Nekateri učenci, ki odhajajo, imajo še knjige v izposoji.",
+			"recent": "Potrebna je potrditev: zadnji prehod je nedaven.",
+			"no_backup": "Varnostne kopije ni bilo mogoče najti ali je prestara: ponovite jo od prvega koraka.",
+			"invalid_group": "Izbrani razred ne obstaja ali ne ustreza letniku učenca.",
+			"unplaced": "Nekateri učenci še nimajo razreda: izberite ga v koraku Razredi.",
+			"invalid_level": "Eden od izbranih letnikov ni med mogočimi: ponovno naložite stran."
+		},
+		"next": "Naprej",
+		"back": "Nazaj"
+	},
+	"classes": {
+		"title": "Razredi",
+		"subtitle": "Razredi šole in skupine učiteljev.",
+		"hint": "Letnike in stopnje šole spremenite v nastavitvah:",
+		"structureLink": "Šola",
+		"new": "Novi razredi",
+		"newTeachers": "Nova skupina učiteljev",
+		"teachers": "Učitelji",
+		"mixed": "Kombiniran razred",
+		"empty": "Ni razredov",
+		"emptyHint": "Ni razredov. Razredi se ustvarijo z „Novi razredi“, na primer letniki od 1 do 5 in imena A-D.",
+		"archivedTitle": "{{count:plural; one:Arhiviran razred; two:Arhivirana razreda; few:Arhivirani razredi; other:Arhiviranih razredov;}} ({{count}})",
+		"archive": "Arhiviraj",
+		"archiveNotEmpty": "Še ima uporabnike: ni mogoče arhivirati",
+		"restore": "Obnovi",
+		"archived": "Razred {{name}} arhiviran",
+		"restored": "Razred {{name}} obnovljen",
+		"columns": {
+			"class": "Razred",
+			"levels": "Letniki",
+			"patrons": "Uporabniki"
+		},
+		"dialog": {
+			"title": {
+				"students": "Novi razredi",
+				"teachers": "Nova skupina učiteljev",
+				"edit": "Uredi {{name}}"
+			},
+			"levels": "Letniki",
+			"names": "Imena razredov",
+			"namesHint": "Ločena z vejicami; A-D pomeni A, B, C, D. Ime lahko vsebuje presledke.",
+			"name": "Ime",
+			"mixed": "Kombiniran razred z vsemi izbranimi letniki",
+			"stage": "Stopnja šole",
+			"anyStage": "Vse",
+			"notes": "Opombe",
+			"preview": "{{count}} {{count:plural; one:razred; two:razreda; few:razredi; other:razredov;}} za ustvarjanje:",
+			"previewEmpty": "Izberite vsaj eno leto in vpišite imena.",
+			"saved": {
+				"students": "{{count}} {{count:plural; one:razred ustvarjen; two:razreda ustvarjena; few:razredi ustvarjeni; other:razredov ustvarjenih;}}",
+				"teachers": "Skupina učiteljev ustvarjena",
+				"edit": "Razred shranjen"
+			}
+		},
+		"errors": {
+			"nameRequired": "Ime je obvezno.",
+			"nameLong": "Ime je predolgo (največ 40 znakov).",
+			"levelsRequired": "Izberite vsaj eno leto.",
+			"levelUnknown": "Izbrano leto ne obstaja več.",
+			"levelsNotForTeachers": "Skupina učiteljev nima letnikov.",
+			"nameTaken": "Razred s tem imenom za isto leto že obstaja.",
+			"levelInUse": "Nekateri učenci razreda so v letniku, ki bi bil odstranjen.",
+			"notEmpty": "Razred še ima uporabnike.",
+			"notFound": "Razred ne obstaja več."
+		}
+	},
+	"exports": {
+		"title": "Izvozi",
+		"subtitle": "Podatki knjižnice v datotekah, ki jih lahko hranite, ponovno uvozite ali prenesete v drug program.",
+		"items": {
+			"students": {
+				"title": "Učenci (CSV)",
+				"description": "Aktivni učenci v obliki uvoza: ponovno se uvozijo iz Upravljanje → Uvozi → Učenci."
+			},
+			"teachers": {
+				"title": "Učitelji (CSV)",
+				"description": "Aktivni učitelji v obliki uvoza: ponovno se uvozijo iz Upravljanje → Uvozi → Učitelji."
+			},
+			"catalog": {
+				"title": "Katalog (CSV)",
+				"description": "Ena vrstica za vsak izvod s podatki o knjigi, v obliki uvoza kataloga."
+			},
+			"open-loans": {
+				"title": "Odprte izposoje (CSV)",
+				"description": "Izkaznica, izvod, datum izposoje in rok vrnitve: ponovno se uvozijo iz Upravljanje → Uvozi → Odprte izposoje."
+			},
+			"loans-history": {
+				"title": "Zgodovina izposoj (CSV)",
+				"description": "Vse izposoje z razredom in oddelkom na dan izposoje."
+			},
+			"dump": {
+				"title": "Vsi podatki (JSON)",
+				"description": "Uporabniki, katalog, izposoje in seznami v eni datoteki, za prenos v drugo namestitev ali program."
+			}
+		},
+		"download": "Prenesi",
+		"patronNote": "Podatke ene osebe (zahteva za dostop) prenesete s njene strani.",
+		"patronExport": "Izvozi podatke osebe"
+	},
+	"imports": {
+		"title": "Uvozi",
+		"hint": "Uporabljajo se ob prehodu iz Koha in, za uporabnike, ob vsakem začetku šolskega leta za nove razrede. Vsaka datoteka se v celoti preveri, preden se kaj uvozi.",
+		"cards": {
+			"catalog": {
+				"title": "Katalog",
+				"description": "Knjige in izvodi iz datoteke CSV ali iz izvoza Koha."
+			},
+			"students": {
+				"title": "Učenci",
+				"description": "Razredi iz šolskega registra, ob vsakem začetku šolskega leta: ime, priimek in razred."
+			},
+			"teachers": {
+				"title": "Učitelji",
+				"description": "Učitelji šole: ime in priimek, s številko izkaznice, če jo že imajo."
+			},
+			"loans": {
+				"title": "Odprte izposoje",
+				"description": "Odprte izposoje, uvožene enkrat ob prehodu iz Koha."
+			},
+			"photos": {
+				"title": "Fotografije uporabnikov",
+				"description": "Fotografije, izvožene iz Koha, ena na izkaznico."
+			}
+		}
+	},
+	"calibration": {
+		"title": "Kalibriraj obojestransko tiskanje",
+		"intro": "Da se izkaznice natisnejo na obe strani lista, mora hrbtna stran pasti natanko za sprednjo. Vsak tiskalnik malo premakne hrbtno stran: ta preizkus enkrat izmeri, koliko.",
+		"current": "Kako se list obrača: {{flip}}. Trenutni premik hrbtnih strani: {{x}} mm vodoravno, {{y}} mm navpično.",
+		"steps": {
+			"print": "Natisnite kalibracijski list s spodnjim gumbom.",
+			"window": {
+				"long-edge": "V oknu za tisk izberite „Obojestransko“, obračanje po dolgem robu, merilo 100 % in brez robov.",
+				"short-edge": "V oknu za tisk izberite „Obojestransko“, obračanje po kratkem robu, merilo 100 % in brez robov."
+			},
+			"cut": "Na strani z veliko „1“ previdno izrežite vzdolž črne črte.",
+			"read": "Obrnite kartico: na strani „2“ preberite obe številki (s predznakom + ali −) tam, kjer odrezani rob seka obe ravnili.",
+			"save": "Vpišite obe številki spodaj in shranite: premik hrbtnih strani se popravi.",
+			"check": "Ponovno natisnite list za preverjanje: odrezani rob bi moral zdaj sekati obe ravnili na 0."
+		},
+		"print": "Natisni kalibracijski list",
+		"drawing": {
+			"title": "Kaj brati",
+			"label": "Stran 2 po rezanju: odrezani rob seka ravnili",
+			"x": "vodoravno ravnilo",
+			"y": "navpično ravnilo",
+			"hint": "Odrezani rob seka vsako ravnilo: številka tam je vrednost za vpis. Vsaka črtica je milimeter, številke so na vsakih pet."
+		},
+		"fields": {
+			"x": "Vodoravno ravnilo (mm)",
+			"y": "Navpično ravnilo (mm)",
+			"hint": "Številka, kjer pade odrezani rob, s predznakom; 0, če pade na ničlo."
+		},
+		"next": "Po shranjevanju bo premik hrbtnih strani {{x}} mm vodoravno in {{y}} mm navpično.",
+		"save": "Shrani kalibracijo",
+		"saved": "Kalibracija shranjena: hrbtne strani premaknjene za {{x}} mm vodoravno in {{y}} mm navpično.",
+		"open": "Kalibriraj obojestransko tiskanje",
+		"sheet": {
+			"title": "BiblioViva · kalibracija obojestranskega tiskanja",
+			"cut": "Izrežite vzdolž črne črte, nato obrnite kartico.",
+			"read": "Na obeh ravnilih preberite, kje pade odrezani rob."
+		}
+	}
+}

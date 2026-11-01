@@ -1,0 +1,226 @@
+{
+	"title": "Startguide",
+	"intro": "Välkommen till BiblioViva. På några steg blir biblioteket klart: språk, färger, skola, koder och lösenord för personalen.",
+	"stepOf": "Steg {{step}} av {{total}}",
+	"next": "Nästa",
+	"back": "Tillbaka",
+	"finish": "Slutför konfigurationen",
+	"steps": {
+		"language": "Språk",
+		"theme": "Färger",
+		"library": "Biblioteket",
+		"school": "Skolan",
+		"codes": "Koder",
+		"passwords": "Lösenord",
+		"demo": "Exempeldata",
+		"summary": "Sammanfattning"
+	},
+	"language": {
+		"title": "Vilket språk ska BiblioViva använda?",
+		"hint": "Ett språk per installation: det gäller för all personal och kan ändras under Administration → Inställningar → Utseende och språk.",
+		"restore": {
+			"title": "Har du redan en säkerhetskopia av BiblioViva?",
+			"hint": "För att flytta BiblioViva till en annan dator, eller för att börja om efter ett haveri, behöver du inte svara på några frågor: ett arkiv skapat med ”Exportera allt” räcker.",
+			"button": "Återställ från en säkerhetskopia"
+		}
+	},
+	"theme": {
+		"title": "Välj färgerna",
+		"hint": "Femton färgpaletter: de ändrar bara färgerna, aldrig formen. Alla är ljusa och läsbara även i svartvitt.",
+		"names": {
+			"ocean": "Hav",
+			"forest": "Skog",
+			"grape": "Druva",
+			"sunset": "Solnedgång",
+			"cherry": "Körsbär",
+			"lagoon": "Lagun",
+			"silver": "Silver",
+			"graphite": "Grafit",
+			"apricot": "Aprikos",
+			"indigo": "Indigo",
+			"mint": "Mint",
+			"rose": "Ros",
+			"sahara": "Sahara",
+			"wintry": "Vinter",
+			"olive": "Oliv"
+		}
+	},
+	"library": {
+		"title": "Biblioteket",
+		"name": "Bibliotekets namn",
+		"namePlaceholder": "Biblioteket på Rodariskolan",
+		"schoolType": "Skolform",
+		"schoolTypeHint": "Årskurserna och klasserna enligt skolans sätt att använda dem. De kan ändras senare under Administration → Inställningar → Skolan och Administration → Inställningar → Klasser.",
+		"photos": "Foton av låntagare",
+		"photosHint": "Foton av elever och lärare, tagna eller uppladdade, och utskrivna på korten. Av: inga foton någonstans och kort utan foto.",
+		"covers": "Bokomslag",
+		"coversHint": "Omslag som hämtas från nätet, fotograferas eller laddas upp, och visas i katalogen. Av: inga omslag."
+	},
+	"school": {
+		"title": "Skolan",
+		"hint": "Skoltypen föreslår årskurserna, klasserna och läsnivåerna. Klasserna skapas direkt; med exempeldata fylls de med påhittade elever.",
+		"otherCountries": "Andra länder",
+		"names": {
+			"perLevel": "{{stage}}: klassernas namn, ett per år",
+			"mixed": "{{stage}}: sektionernas namn, var och en med alla år"
+		},
+		"namesHint": "Separerade med kommatecken; A-D betyder A, B, C, D. Tomt: inga klasser.",
+		"namesInvalid": "Ogiltiga namn: skriv dem separerade med kommatecken (högst 40).",
+		"classes": "{{count}} {{count:plural; one:klass; other:klasser;}} att skapa:",
+		"more": "och {{count}} till",
+		"classLabel": "Så skrivs klassen",
+		"teacherGroup": "Lärargrupp",
+		"teacherGroupHint": "Varje lärare ingår i denna grupp; fler grupper kan läggas till senare.",
+		"schoolYearStart": "Läsårets början",
+		"schoolYearStartHint": "Månad och dag som MM-DD (till exempel 09-01).",
+		"schoolYearStartInvalid": "Skriv månad och dag i formen MM-DD.",
+		"schoolYearLabel": "Namn på läsåret",
+		"schoolYearLabels": {
+			"span": "Två år (2026/2027)",
+			"start": "Startåret (2026)"
+		},
+		"readingLevels": "Skönlitteratur placerad efter läsnivå",
+		"readingLevelsHint": "Årskurser, klasser och läsnivåer kan ändras senare under Administration."
+	},
+	"codes": {
+		"title": "Koderna",
+		"hint": "Streckkodsformatet för nya exemplar och för nya lånekort, var och en valt för sig. De två formerna kan aldrig förväxlas: den som läser en kod förstår genast om det är en bok eller ett kort.",
+		"itemFormat": "Format för exemplar",
+		"itemFormats": {
+			"standard": "År, kontroll och nummer (rekommenderas)",
+			"classic": "År och nummer, kontroll sist",
+			"prefix": "Med bokstaven L först"
+		},
+		"cardFormat": "Format för lånekort",
+		"cardFormats": {
+			"standard": "Kontroll och ett nummer med 6 siffror (rekommenderas)",
+			"classic": "Nummer med 10 siffror, kontroll sist",
+			"prefix": "Med bokstaven T först"
+		},
+		"check": "Kontrolltecken",
+		"checks": {
+			"mod23": "En bokstav (mod 23)",
+			"luhn": "En siffra (Luhn)",
+			"damm": "En siffra (Damm)"
+		},
+		"layout": "Tangentbord för läsarna",
+		"layoutHint": "Tangentbordsspråket för datorn som streckkodsläsarna är kopplade till: det rättar bytta tecken. Om ditt inte finns med, välj det närmaste: det kan ändras senare under Inställningar → Streckkoder.",
+		"layouts": {
+			"it": "Italienska",
+			"es": "Spanska",
+			"de": "Tyska",
+			"fr": "Franska",
+			"uk": "Engelska (Storbritannien)",
+			"us": "Engelska (USA)"
+		},
+		"copy": "Exemplar av en bok",
+		"card": "Lånekort",
+		"verdict": "Exemplar och lånekort kan aldrig förväxlas.",
+		"refused": "Med detta val skulle exemplar och lånekort kunna förväxlas: välj ett annat format.",
+		"later": "Format, koder från äldre system och numrering kan ändras senare under Inställningar → Streckkoder."
+	},
+	"passwords": {
+		"title": "Lösenord för personalen",
+		"hint": "Fem delade konton, ett per roll. De föreslagna lösenorden är slumpmässiga och kan bytas ut. Skriv upp dem i det sista steget: de visas bara en gång.",
+		"accounts": {
+			"admin": "Administration (admin)",
+			"prestiti": "Utlåningshantering (prestiti)",
+			"catalogo": "Katalogisering (catalogo)",
+			"tessere": "Kort och foton (tessere)",
+			"report": "Rapporter (report)"
+		},
+		"regenerate": "Generera nytt",
+		"tooShort": "Minst 8 tecken.",
+		"demo": "Med exempeldata använder alla konton samma lösenord, lätt att komma ihåg: ”{{password}}”. Byt dem under Administration → Personalkonton innan du använder BiblioViva på riktigt."
+	},
+	"demo": {
+		"title": "Exempeldata",
+		"hint": "Påhittade elever, böcker och lån för att prova programmet. De tas bort med ett klick under Administration när de riktiga uppgifterna läggs in.",
+		"load": "Läs in exempeldata",
+		"hasData": "Databasen innehåller redan data: exempeldata läses inte in."
+	},
+	"summary": {
+		"title": "Sammanfattning",
+		"hint": "Kontrollera och bekräfta. Lösenorden visas bara på den här sidan: kopiera dem innan du går vidare.",
+		"language": "Språk",
+		"theme": "Färger",
+		"library": "Biblioteket",
+		"photos": "Foton av låntagare",
+		"covers": "Bokomslag",
+		"school": "Skolan",
+		"classes": "Klasser",
+		"classesValue": "{{count}} {{count:plural; one:klass; other:klasser;}} ({{first}}…) och gruppen {{teachers}}",
+		"readingLevels": "Läsnivåer",
+		"none": "Inga",
+		"codes": "Koder",
+		"demo": "Exempeldata",
+		"yes": "Ja",
+		"no": "Nej",
+		"later": "Senare byts lösenorden under Administration → Personalkonton.",
+		"working": "Sparar…",
+		"error": "Inställningarna sparades inte: {{message}}"
+	},
+	"done": {
+		"title": "Konfigurationen är klar",
+		"hint": "Förvara lösenorden på ett säkert ställe: de visas inte igen.",
+		"demoLoaded": "Exempeldata inlästa: {{patrons}} {{patrons:plural; one:låntagare; other:låntagare;}}, {{biblios}} {{biblios:plural; one:titel; other:titlar;}}, {{items}} {{items:plural; one:exemplar; other:exemplar;}}, {{loans}} {{loans:plural; one:lån; other:lån;}}.",
+		"login": "Gå till inloggningen"
+	},
+	"generic": {
+		"stage": "Skola",
+		"level": "Nivå {{level}}",
+		"groupWord": "Sektion",
+		"teacherGroup": "Lärare"
+	},
+	"restore": {
+		"title": "Återställ från en säkerhetskopia",
+		"hint": "Välj arkivet som skapats med ”Exportera allt” (Administration → Säkerhetskopiering). Största storlek: {{maxMb}} MB. Arkivet kontrolleras innan något återställs.",
+		"choose": "Välj arkivet",
+		"checking": "Kontrollerar arkivet…",
+		"from": "Arkiv för biblioteket ”{{library}}”, skapat den {{date}}, version {{version}}.",
+		"fromAnonymous": "Arkiv skapat den {{date}}, version {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "Låntagare",
+			"catalog": "Katalog och exemplar",
+			"loans": "Lån och historik",
+			"printLists": "Utskriftslistor",
+			"photos": "Foton av låntagare",
+			"covers": "Bokomslag",
+			"notes": "Anteckningar",
+			"dates": "Kalenderdatum",
+			"audit": "Aktivitetslogg",
+			"ui": "Gränssnitt",
+			"security": "Säkerhet och åtkomst",
+			"library": "Bibliotek och skola"
+		},
+		"images": "Foton: {{photos}} · omslag: {{covers}}",
+		"accounts": "Konton som kommer att kunna logga in: {{accounts}}. Lösenorden är de som fanns i arkivet.",
+		"warning": "Återställningen för tillbaka inställningar, data och bilder i ett enda steg, precis så som de var i arkivet. Därefter behövs inte startguiden längre.",
+		"apply": "Återställ",
+		"restoring": "Återställer…",
+		"cancel": "Avbryt",
+		"back": "Tillbaka till startguiden",
+		"done": {
+			"title": "Återställningen är klar",
+			"hint": "Biblioteket är som det var i arkivet. Logga in med ett av dessa konton, med det lösenord det hade i arkivet:",
+			"login": "Gå till inloggningen"
+		},
+		"errors": {
+			"too_large": "Arkivet är för stort (högst {{maxMb}} MB).",
+			"not_zip": "Filen är inte ett giltigt ZIP-arkiv.",
+			"not_archive": "Filen är inget BiblioViva-arkiv: välj ett arkiv skapat med ”Exportera allt”.",
+			"too_many_files": "Arkivet innehåller för många filer.",
+			"unsafe_path": "Arkivet innehåller en sökväg som inte är tillåten: {{name}}",
+			"link": "Arkivet innehåller en länk, som inte är tillåten: {{name}}",
+			"unknown_file": "Arkivet innehåller en fil som inte hör till BiblioViva: {{name}}",
+			"not_setup": "Startguiden är redan genomförd: återställning görs under Administration → Säkerhetskopiering.",
+			"newer_version": "Arkivet skapades av en nyare version av BiblioViva ({{name}}): installera den versionen först.",
+			"missing_parts": "Arkivet är ofullständigt: {{name}} saknas. Välj ett arkiv skapat med ”Exportera allt”.",
+			"unfinished_setup": "Arkivet kommer från en installation där startguiden inte hade slutförts.",
+			"not_ready": "Arkivet har problem och kan inte återställas: {{name}}",
+			"gone": "Det kontrollerade arkivet finns inte längre: välj det igen.",
+			"failed": "Återställningen lyckades inte."
+		}
+	}
+}

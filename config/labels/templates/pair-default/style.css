@@ -1,0 +1,95 @@
+/* The renderer sizes each cell to the stock's label (70 × 48 mm on a4-70x48) and scopes these rules.
+   Full variant: the layout of the library's current printout (docs/reference/labels/). */
+.band,
+.bc {
+	height: 100%;
+	box-sizing: border-box;
+	padding-top: 3mm;
+	text-align: center;
+	overflow: hidden;
+	font-family: Arial, Helvetica, "Liberation Sans", sans-serif;
+	font-weight: 700;
+	color: #000;
+}
+.band .code,
+.band .title {
+	font-size: 10pt;
+	line-height: 1.2;
+	white-space: nowrap;
+}
+.band .pictogram {
+	display: block;
+	width: 20mm;
+	height: 20mm;
+	margin: 2mm auto;
+	object-fit: contain;
+}
+.band .head,
+.band .sub {
+	font-size: 15pt;
+	line-height: 1.15;
+	text-transform: uppercase;
+}
+.bc .call {
+	font-size: 10pt;
+	margin: 3pt 0 5pt;
+}
+.bc .title {
+	font-size: 12pt;
+	font-style: italic;
+	font-weight: 400;
+	margin-bottom: 3pt;
+	white-space: nowrap;
+}
+.bc .svg svg {
+	display: block;
+	width: 50mm;
+	height: 15mm;
+	margin: 3mm auto;
+}
+.bc .num {
+	font-size: 15pt;
+}
+
+/* Compact variant (cells lower than 40 mm, e.g. the half-height 70 × 24 mm sheet): pictogram
+   beside the call number, no title line on the band, 40 × 8 mm barcode. */
+.band.compact {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 3mm;
+	padding: 1.5mm;
+}
+.band.compact .pictogram {
+	width: 12mm;
+	height: 12mm;
+	margin: 0;
+	flex: 0 0 auto;
+}
+.band.compact .lines {
+	text-align: left;
+}
+.band.compact .head,
+.band.compact .sub {
+	font-size: 13pt;
+	line-height: 1.1;
+}
+.bc.compact {
+	padding-top: 1.5mm;
+}
+.bc.compact .call {
+	font-size: 9pt;
+	margin: 0 0 1pt;
+	white-space: nowrap;
+}
+.bc.compact .call i {
+	font-weight: 400;
+}
+.bc.compact .svg svg {
+	width: 40mm;
+	height: 8mm;
+	margin: 1mm auto;
+}
+.bc.compact .num {
+	font-size: 11pt;
+}

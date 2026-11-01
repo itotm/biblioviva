@@ -1,0 +1,1778 @@
+{
+	"home": {
+		"title": "配置"
+	},
+	"leave": {
+		"title": "不保存就离开？",
+		"description": "尚未保存的修改将会丢失。",
+		"confirm": "不保存离开"
+	},
+	"taxonomy": {
+		"title": "分类",
+		"intro": "修改会保留在草稿中，直到点击“保存”；{{file}} 的上一版本会被保留。",
+		"invalid": "部分值无效（以红色标出）：请先更正，然后才能保存。",
+		"orphans": "目录中有些图书的编码不在分类表中：{{codes}}。请在此添加这些编码，或在目录中重新分类这些图书。",
+		"unsaved": "未保存的修改",
+		"discard": "放弃修改",
+		"saved": "分类已保存",
+		"savedDetail": "{{records}} {{records:plural; other:册图书已移动;}}，{{callNumbers}} {{callNumbers:plural; other:个索书号已改写;}}，{{bands}} {{bands:plural; other:个书脊标签需重新打印;}}。",
+		"tabs": {
+			"fiction": "小说",
+			"nonfiction": "非虚构",
+			"dewey": "杜威",
+			"options": "选项"
+		},
+		"addGenre": "添加体裁",
+		"addClass": "添加主题",
+		"addSubclass": "添加子主题",
+		"dragHint": "拖动各行可更改顺序，也可以使用箭头。顺序与目录中各选项的排列顺序相同。",
+		"pickGenre": "选择一个体裁以进行编辑",
+		"pickClass": "选择一个主题以进行编辑",
+		"untitled": "未命名",
+		"hasProblems": "需要更正",
+		"usageShort": "{{records}} {{records:plural; other:册图书;}}",
+		"moveUp": "上移",
+		"moveDown": "下移",
+		"panel": {
+			"genre": "体裁",
+			"class": "主题",
+			"subclass": "子主题"
+		},
+		"fields": {
+			"code": "编码",
+			"label": "名称",
+			"color": "颜色",
+			"pictogram": "图示",
+			"position": "位置"
+		},
+		"renameNote": "编码已更改：保存时，{{records}} {{records:plural; other:册图书}}会从 {{from}} 改为 {{to}}，其索书号也会更新。",
+		"color": {
+			"inherit": "使用 {{code}} 的颜色",
+			"none": "无颜色",
+			"hex": "颜色代码"
+		},
+		"pictogram": {
+			"upload": "上传图片",
+			"choose": "从图片中选择",
+			"remove": "删除图片",
+			"own": "自有图片。支持 PNG、JPEG 或 WebP：保存时会转为 PNG。",
+			"missing": "文件 {{name}} 不在图片文件夹中：标签上会显示带颜色和编码的圆圈。",
+			"inherited": "没有自有图片时，使用 {{code}} 的图片。",
+			"placeholder": "没有图片时，标签上会显示带颜色和编码的圆圈。",
+			"gallery": "分类图片",
+			"errors": {
+				"empty": "文件为空。",
+				"too_large": "图片过大（最大 {{maxMb}} MB）。",
+				"not_an_image": "该文件不是图片。",
+				"unsupported_format": "格式不受支持：请使用 PNG、JPEG 或 WebP。"
+			}
+		},
+		"position": {
+			"top": "主要主题",
+			"under": "位于 {{code}} · {{label}} 之下",
+			"locked": "它有子主题，因此仍为主要主题。"
+		},
+		"usage": {
+			"new": "新建：尚无图书使用。",
+			"none": "没有图书使用此编码。",
+			"some": "被 {{records}} {{records:plural; other:册图书}}使用（{{copies}} {{copies:plural; other:册复本;}}）。"
+		},
+		"remove": {
+			"genre": "删除体裁",
+			"class": "删除主题",
+			"confirmTitle": "删除 {{code}}？",
+			"withSubclasses": "同时会删除其下的 {{count}} {{count:plural; other:个子主题;}}。",
+			"inUse": "{{records}} {{records:plural; other:册图书使用}}此编码：保存时会询问将这些图书移到何处。",
+			"confirm": "删除"
+		},
+		"preview": {
+			"title": "书脊标签预览",
+			"hint": "一本示例图书，按当前设置打印出来的样子，实际大小。",
+			"needsCode": "编码有效时显示预览。"
+		},
+		"problems": {
+			"codeRequired": "必须填写编码。",
+			"codeFormat": "只能使用字母、数字、点、短横线或下划线（最多 32 个字符）。",
+			"codeTaken": "此编码已被另一个体裁或主题使用。",
+			"labelRequired": "必须填写名称。",
+			"labelLong": "名称过长（最多 120 个字符）。",
+			"colorFormat": "颜色请写成 #rrggbb 的形式，例如 #e8231b。",
+			"patternRequired": "模式不能为空。"
+		},
+		"dewey": {
+			"hint": "当一本非虚构图书带有杜威编号（例如来自 SBN）时，此表会推荐它的主题：以最长的匹配前缀为准。",
+			"probe": "试一个杜威编号",
+			"noMatch": "没有匹配的主题",
+			"empty": "没有杜威对应关系",
+			"prefix": "杜威前缀",
+			"class": "主题",
+			"add": "添加对应关系",
+			"problems": {
+				"prefixFormat": "1 至 3 位数字。",
+				"prefixTaken": "前缀重复。",
+				"codeUnknown": "请选择一个主题。"
+			}
+		},
+		"options": {
+			"fictionByClass": "小说按阅读等级划分",
+			"fictionByClassHint": "小说图书可以标注其适合的阅读等级（例如 4 年级）：会显示在索书号和书脊标签上。",
+			"classPerItem": "阅读等级标在每个复本上",
+			"classPerItemHint": "同一本书的复本放在不同年级的书架上时需要此项。否则等级标在图书上。",
+			"toCopies": "保存时，每本书的阅读等级会转到它的复本上。",
+			"toRecords": "保存时，复本的等级会回到图书上；如果同一本书的复本等级不同，则无法执行。",
+			"patterns": "索书号模式",
+			"patternsHint": "仅适用于从现在起新增的复本；现有索书号不会改变。占位符：{{placeholders}}。",
+			"pattern": {
+				"fiction": "小说",
+				"fictionWithClass": "带关联年级的小说",
+				"nonfiction": "非虚构"
+			},
+			"unknownPlaceholders": "未知的占位符：{{names}}。",
+			"example": "示例：{{example}}"
+		},
+		"save": {
+			"title": "保存分类",
+			"checking": "正在检查目录中会发生哪些变化……",
+			"unchanged": "没有需要保存的修改。",
+			"errors": "保存前请先更正以下问题：",
+			"removedTitle": "仍在使用的已删除编码",
+			"removedHint": "请选择每个已删除编码的图书要移到何处：新编码会标在图书上，位于索书号的开头和书脊标签上。",
+			"moveTo": "{{code}} · {{label}}：{{records}} {{records:plural; other:册图书}}（{{copies}} {{copies:plural; other:册复本;}}）。移至",
+			"choose": "请选择…",
+			"callNumbers": "{{count}} {{count:plural; other:个索书号以已删除的编码开头;}}：开头的编码会被替换（例如 B 4 DEL 变为 A 4 DEL）。",
+			"bandsMoved": "被移动图书的书脊标签，以及索书号已更改的标签，会重新列入待打印的内容。",
+			"unused": "已删除，未被任何图书使用：{{codes}}。",
+			"reprint": "把名称、颜色或图示有变化的 {{copies}} {{copies:plural; other:册复本}}的书脊标签重新列入待打印标签（{{codes}}）",
+			"reprintHint": "如果已贴在书上的标签差异无关紧要，可关闭此项。",
+			"conflicts": "{{count}} {{count:plural; other:册图书的复本分属不同班级;}}：在取消复本的班级之前，请先为每本书的所有复本设置相同的班级。",
+			"toCopies": "{{count}} {{count:plural; other:册图书}}的关联班级将转到其复本上。",
+			"toRecords": "对 {{count}} {{count:plural; other:种书目;}}，复本的班级将回到图书上。",
+			"warnings": "{{count}} {{count:plural; other:条警告;}}（不会阻止保存）",
+			"levelsTitle": "有图书使用时被取消的阅读等级",
+			"levelMoveTo": "等级为 {{code}} · {{label}} 的图书（{{records}} {{records:plural; other:种}}，{{copies}} {{copies:plural; other:册复本;}}）移至",
+			"noLevel": "无等级",
+			"levelsHint": "复本索书号中的等级会随之改变（例如 B 4 DEL 变为 B 5 DEL），它们的标签会重新列入待打印的内容。"
+		},
+		"levels": {
+			"title": "阅读等级",
+			"hint": "按顺序排列，从最简单的开始。编码会标在图书上并写入索书号（例如 B 4 DEL 中的 4），名称显示在选项中。对于正在使用中的等级，如果将其删除或改名，保存时会询问其图书要移到何处。",
+			"code": "等级编码",
+			"label": "等级名称",
+			"up": "上移",
+			"down": "下移",
+			"remove": "删除等级",
+			"add": "添加等级"
+		}
+	},
+	"sections": {
+		"library": {
+			"title": "图书馆与学校",
+			"description": "名称、学校类型、班级和分部、学年、时区。"
+		},
+		"school": {
+			"title": "学校",
+			"description": "学校的学段和年级，班级的写法，学年结束时班级如何处理。班级本身在“管理 → 配置 → 班级”中管理。"
+		},
+		"catalog": {
+			"title": "目录",
+			"description": "作者、出版社和地点未知时使用的值。"
+		},
+		"barcodes": {
+			"title": "条码",
+			"description": "读者证和复本的格式、旧编码、条码类型。"
+		},
+		"circulation": {
+			"title": "借阅",
+			"description": "借阅和续借规则、应还日期、催还通知、收据。"
+		},
+		"calendar": {
+			"title": "日历",
+			"description": "闭馆日和节假日。"
+		},
+		"z3950": {
+			"title": "Z39.50 (SBN)",
+			"description": "提供书目记录的服务器。"
+		},
+		"metadata": {
+			"title": "图书数据",
+			"description": "按 ISBN 搜索时使用的数据来源。"
+		},
+		"performance": {
+			"title": "性能",
+			"description": "BiblioViva 所在的计算机，以及依赖它的设置。"
+		},
+		"classification": {
+			"title": "分类",
+			"description": "体裁、主题、图示、杜威和索书号。"
+		},
+		"cards": {
+			"title": "读者证",
+			"description": "读者证和打印页的格式。"
+		},
+		"labels": {
+			"title": "标签",
+			"description": "图书标签和书脊标签，不干胶纸。"
+		},
+		"photos": {
+			"title": "读者照片",
+			"description": "照片的尺寸和格式。"
+		},
+		"covers": {
+			"title": "封面",
+			"description": "封面的尺寸、格式和来源。"
+		},
+		"privacy": {
+			"title": "隐私",
+			"description": "操作日志的保存时间。"
+		},
+		"backup": {
+			"title": "备份",
+			"description": "备份的时间和保留期限，异地副本。"
+		},
+		"security": {
+			"title": "安全与访问",
+			"description": "会话时长、登录尝试、账户和角色。"
+		},
+		"ui": {
+			"title": "界面",
+			"description": "借还台和已添加的语言；颜色、语言和仪表盘位于“外观与语言”中。"
+		}
+	},
+	"fields": {
+		"library": {
+			"name": {
+				"label": "图书馆名称",
+				"hint": "显示在左上角、读者证和打印件上。"
+			},
+			"contactEmail": {
+				"label": "联系电子邮箱",
+				"hint": "可选：显示在包含此项的打印件上。"
+			},
+			"schoolYearStart": {
+				"label": "学年开始日期",
+				"hint": "月和日，格式为 MM-DD（例如 09-01）：用于在统计中划分学年。"
+			},
+			"schoolYearLabel": {
+				"label": "学年名称",
+				"hint": "学年在读者证、报告和页面上的显示方式：两个年份（2026/2027）或开始的年份（2026），如巴西、日本和韩国的做法。"
+			},
+			"timezone": {
+				"label": "时区",
+				"hint": "时区名称，例如 Europe/Rome：日期和应还日期遵循此时区，而不是服务器时钟。"
+			},
+			"weekStart": {
+				"label": "每周第一天",
+				"hint": "日历中以及仪表盘“本周”所用的每周起始日。首次启动时由所选语言决定（意大利语为周一，英语为周日）。"
+			}
+		},
+		"school": {
+			"classLabel": {
+				"label": "班级的写法",
+				"hint": "{level} 是年级，{group} 是班级的名称：“{level} {group}”得到 3 B，“{level}{group}”得到 3B。某个学段可以有自己的写法（见“学段和年级”）。"
+			},
+			"groupWord": {
+				"label": "班级的称谓",
+				"hint": "表单和筛选中班级字段的名称，以及读者证班级一行中的 {word}（例如“分部 B”“班 B”“组 B”）。"
+			},
+			"cardClass": {
+				"label": "读者证上的班级",
+				"hint": "读者证上打印的班级一行：{word} 是班级的称谓，{group} 是班级名称，{level} 是年级，{class} 是完整的班级。“{word} {group}”得到“分部 B”，“{class}”得到 3 B。"
+			},
+			"teacherGroupName": {
+				"label": "教师组名称",
+				"hint": "未选择其他组时，教师所加入的组。"
+			},
+			"promotionWithinStage": {
+				"label": "学年结束时，在同一学段内",
+				"hint": "通常班级会随学生升级：3 B 变为 4 B。"
+			},
+			"promotionAcrossStages": {
+				"label": "学年结束时，转入另一学段",
+				"hint": "例如在综合学校中，从小学五年级升入初中一年级。"
+			}
+		},
+		"catalog": {
+			"specialAuthors": {
+				"label": "特殊作者",
+				"hint": "每行一个：代替个人作者而接受的值（例如 Anonimo、AA. VV.）。"
+			},
+			"unknownPublisher": {
+				"label": "未知出版社",
+				"hint": "未填写出版社时写入的值。"
+			},
+			"unknownPlace": {
+				"label": "未知地点",
+				"hint": "未填写出版地时写入的值。"
+			}
+		},
+		"barcodes": {
+			"keyboardLayout": {
+				"label": "电脑键盘",
+				"hint": "连接条码扫描器的电脑所用的键盘布局：用于修正扫描器按其他键盘设置时输错的字符。"
+			},
+			"cameraSound": {
+				"label": "摄像头提示音",
+				"hint": "手机摄像头读取读者证、图书的条码或 ISBN 时发出的提示音。USB 扫描器自己会发声，不需要此项；借还台保持安静。"
+			},
+			"patron": {
+				"symbology": {
+					"label": "读者证的条码类型",
+					"hint": "新读者证使用 Code 128；只有当馆里的扫描器读不了 Code 128 时才使用 Code 39。"
+				}
+			},
+			"item": {
+				"symbology": {
+					"label": "复本的条码类型",
+					"hint": "新标签使用 Code 128；只有当馆里的扫描器读不了 Code 128 时才使用 Code 39。"
+				}
+			}
+		},
+		"circulation": {
+			"rules": {
+				"student": {
+					"loanDays": {
+						"label": "借阅天数",
+						"hint": "学生的借阅期限为多少天。"
+					},
+					"maxLoans": {
+						"label": "最多借阅册数",
+						"hint": "同一时间最多可以借阅多少册图书。"
+					},
+					"maxRenewals": {
+						"label": "最多续借次数",
+						"hint": "同一笔借阅最多可以续借几次（0 = 不允许续借）。"
+					},
+					"renewalDays": {
+						"label": "续借天数",
+						"hint": "每次续借延长的天数。"
+					}
+				},
+				"teacher": {
+					"loanDays": {
+						"label": "借阅天数",
+						"hint": "教师的借阅期限为多少天。"
+					},
+					"maxLoans": {
+						"label": "最多借阅册数",
+						"hint": "同一时间最多可以借阅多少册图书。"
+					},
+					"maxRenewals": {
+						"label": "最多续借次数",
+						"hint": "同一笔借阅最多可以续借几次（0 = 不允许续借）。"
+					},
+					"renewalDays": {
+						"label": "续借天数",
+						"hint": "每次续借延长的天数。"
+					}
+				}
+			},
+			"dueDateMode": {
+				"label": "应还日期的计算方式",
+				"hint": "借阅期限与闭馆日之间如何计算。"
+			},
+			"renewFrom": {
+				"label": "续借从何时起算",
+				"hint": "续借天数从哪一天开始计算。"
+			},
+			"allowRenewalWhenOverdue": {
+				"label": "逾期后也可续借",
+				"hint": "已经逾期的借阅也可以续借。"
+			},
+			"overdueNotice": {
+				"template": {
+					"label": "催还通知模板",
+					"hint": "催还通知的打印模板名称（slips/templates 中的文件夹）。"
+				},
+				"pageBreakPerGroup": {
+					"label": "每个班级一页",
+					"hint": "每个班级单独一张纸，交给老师；打印时也可以更改。"
+				},
+				"minDays": {
+					"label": "发出催还通知前的逾期天数",
+					"hint": "借阅只有在逾期这些天之后才会出现在催还通知中（0 = 立即）。"
+				}
+			},
+			"blockIfOverdue": {
+				"label": "有逾期图书时不允许新借阅",
+				"hint": "有逾期图书的人，在归还之前不能再借其他图书。"
+			},
+			"hardDueDate": {
+				"label": "最晚应还日期",
+				"hint": "任何借阅的应还日期都不会晚于此日期（例如学年的最后一天）。留空：不设限制。"
+			},
+			"receipts": {
+				"label": "借阅收据",
+				"hint": "在借还台显示打印收据的按钮。"
+			}
+		},
+		"calendar": {
+			"autoItalianHolidays": {
+				"label": "意大利国家节假日",
+				"hint": "国家节假日（包括复活节）自动作为闭馆日，无需手动填写。"
+			}
+		},
+		"z3950": {
+			"defaultTarget": {
+				"label": "默认服务器",
+				"hint": "搜索时使用的 Z39.50 服务器标识符。"
+			},
+			"timeoutMs": {
+				"label": "最长等待时间（毫秒）",
+				"hint": "Z39.50 搜索超过多少毫秒后放弃。"
+			},
+			"maxRecordsIsbn": {
+				"label": "每个 ISBN 的结果数",
+				"hint": "搜索 ISBN 时最多读取的书目记录数（同一 ISBN 可能对应每次重印的记录）：会打开其中最完整的一条。"
+			},
+			"maxRecordsSearch": {
+				"label": "每次搜索的结果数",
+				"hint": "按书名或作者搜索时最多读取的书目记录数。"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"label": "数据来源",
+				"hint": "按 ISBN 搜索时图书数据的来源：所选的来源会同时查询。"
+			},
+			"cacheDays": {
+				"label": "搜索结果保存天数",
+				"hint": "已经做过的搜索，在多少天内直接重用，不再重新询问。"
+			},
+			"timeoutMs": {
+				"label": "最长等待时间（毫秒）",
+				"hint": "不响应的来源超过多少毫秒后将被跳过。"
+			}
+		},
+		"performance": {
+			"profile": {
+				"label": "计算机",
+				"hint": "适合 BiblioViva 所在计算机的默认设置。"
+			},
+			"sqliteCacheMb": {
+				"label": "数据库缓存（MB）",
+				"hint": "留空：按计算机决定（8、16、64 或 256 MB）。"
+			},
+			"sqliteMmapMb": {
+				"label": "数据库内存映射（MB）",
+				"hint": "留空：按计算机决定（0、0、0 或 512 MB）。"
+			},
+			"walAutocheckpointPages": {
+				"label": "检查点之前的页数",
+				"hint": "留空：按计算机决定（500、1000、2000 或 4000）。"
+			},
+			"imageConcurrency": {
+				"label": "同时处理的图片",
+				"hint": "照片、封面、班级照片和标志同时处理；其他图片排队等待。留空：按计算机决定（1、1、2 或 4）。"
+			},
+			"yazConcurrency": {
+				"label": "同时进行的 Z39.50 搜索",
+				"hint": "同时进行的 Z39.50 搜索数量；其余的排队等待。留空：按计算机决定（1、1、2 或 2）。"
+			},
+			"heavyConcurrency": {
+				"label": "同时准备的打印和导出",
+				"hint": "同时准备的打印稿（读者证、标签、催还通知、收据、报告）和导出（CSV、ODS、归档、备份）；其余的排队等待，这样借还台始终保持流畅。留空：按计算机决定（1、1、2 或 4）。"
+			},
+			"argon2MemoryMb": {
+				"label": "校验密码所用的内存（MB）",
+				"hint": "适用于此后设置的密码。留空：每台计算机均为 16 MB（系统从不暴露在互联网上）。"
+			},
+			"smol": {
+				"label": "内存节省",
+				"hint": "占用的内存更少，处理器的工作稍多。自动：按计算机决定（最小配置的计算机和 Raspberry Pi 上为开启）。重启后生效。"
+			}
+		},
+		"cards": {
+			"defaultTemplate": {
+				"label": "读者证模板",
+				"hint": "读者类型没有自己的模板时使用的打印模板名称（cards/templates 中的文件夹）。"
+			},
+			"layout": {
+				"label": "读者证的打印方式",
+				"hint": "正反面并排打印（沿短边对折），或打印在纸张的两面（需要能够双面打印的打印机）。每次打印时可以重新选择。"
+			},
+			"duplex": {
+				"flip": {
+					"label": "纸张的翻转方式",
+					"hint": "打印机翻转纸张打印背面的方式：沿长边（像翻书一样）或沿短边。须与打印窗口中的选择一致。"
+				},
+				"backOffsetMm": {
+					"x": {
+						"label": "背面的横向偏移（mm）",
+						"hint": "由校准得出：背面需要移动多少，才能正好落在正面的背后。"
+					},
+					"y": {
+						"label": "背面的纵向偏移（mm）",
+						"hint": "由校准得出。"
+					}
+				}
+			},
+			"cardMm": {
+				"width": {
+					"label": "宽度（mm）",
+					"hint": "标准读者证宽 85.6 mm。"
+				},
+				"height": {
+					"label": "高度（mm）",
+					"hint": "标准读者证高 53.98 mm。"
+				}
+			},
+			"bleedMm": {
+				"label": "出血（mm）",
+				"hint": "全幅图像周围多出的边距，裁切时去掉。"
+			},
+			"sheet": {
+				"paper": {
+					"label": "纸张尺寸",
+					"hint": "打印读者证所用的纸张。"
+				},
+				"rows": {
+					"label": "每张纸的读者证数",
+					"hint": "正反面各自上下排列的读者证数量：A4 纸上为 4 或 5 张。"
+				},
+				"marginMm": {
+					"label": "纸张页边距（mm）",
+					"hint": "读者证周围的空白。"
+				},
+				"gapMm": {
+					"label": "读者证之间的间距（mm）",
+					"hint": "一张读者证与下一张之间的距离。"
+				},
+				"foldMarks": {
+					"label": "折叠线",
+					"hint": "页边和读者证之间的短虚线，标出正反面折叠的位置。"
+				},
+				"cutMarks": {
+					"label": "裁切线",
+					"hint": "裁切标记：页边和读者证之间的短线，延伸出每张读者证的边缘，便于用尺子和裁纸刀裁切。"
+				}
+			},
+			"validityMonths": {
+				"label": "有效期（月）",
+				"hint": "打印的读者证有效的月数。留空：永久有效。"
+			},
+			"showPhoto": {
+				"label": "读者证上的照片",
+				"hint": "在读者证上打印读者的照片。"
+			}
+		},
+		"labels": {
+			"default": {
+				"label": "默认标签",
+				"hint": "选择“打印标签”时打印的内容。"
+			},
+			"titleMaxChars": {
+				"label": "书名字数",
+				"hint": "标签上的书名会被截断为此长度。"
+			},
+			"monochrome": {
+				"label": "黑白打印机",
+				"hint": "在较矮的书脊标签上，彩色带会变为斜线纹理。"
+			},
+			"pair": {
+				"template": {
+					"label": "模板",
+					"hint": "成对标签的打印模板名称（labels/templates 中的文件夹）。"
+				},
+				"stock": {
+					"label": "不干胶纸",
+					"hint": "所用标签纸的标识符（labels/stocks 中的文件）。"
+				}
+			},
+			"barcode": {
+				"template": {
+					"label": "模板",
+					"hint": "条码标签的打印模板名称（labels/templates 中的文件夹）。"
+				},
+				"stock": {
+					"label": "不干胶纸",
+					"hint": "所用标签纸的标识符（labels/stocks 中的文件）。"
+				}
+			},
+			"spine": {
+				"template": {
+					"label": "模板",
+					"hint": "书脊标签的打印模板名称（labels/templates 中的文件夹）。"
+				},
+				"stock": {
+					"label": "不干胶纸",
+					"hint": "所用标签纸的标识符（labels/stocks 中的文件）。"
+				}
+			}
+		},
+		"photos": {
+			"enabled": {
+				"label": "读者照片",
+				"hint": "开启：为每位读者拍摄或上传照片，用于信息采集，并显示在读者证上。关闭：任何地方都不显示照片，读者证不带照片；已保存的照片会保留，重新开启后再次出现。"
+			},
+			"required": {
+				"label": "必须有照片",
+				"hint": "开启：仪表盘、读者列表和打印清单会标出没有照片的人。关闭：不再提醒，但仍可以拍摄、上传照片，并打印在读者证上。"
+			},
+			"width": {
+				"label": "宽度（像素）",
+				"hint": "照片按此宽度保存。"
+			},
+			"height": {
+				"label": "高度（像素）",
+				"hint": "照片按此高度保存（居中裁剪）。"
+			},
+			"format": {
+				"label": "文件格式",
+				"hint": "JPEG 通用性最好；WebP 占用的空间更小。"
+			},
+			"quality": {
+				"label": "质量",
+				"hint": "1 至 100：数值越高，文件越大。"
+			},
+			"maxUploadBytes": {
+				"label": "最大上传大小（字节）",
+				"hint": "超过此大小的文件会被拒绝。"
+			},
+			"sheet": {
+				"maxUploadBytes": {
+					"label": "最大文件大小（字节）",
+					"hint": "包含多张照片的图片（从图片进行信息采集）超过此大小会被拒绝。"
+				},
+				"maxPixels": {
+					"label": "保留的最长边（像素）",
+					"hint": "图片会被缩小，直到其最长边不超过此值。"
+				},
+				"maxFrames": {
+					"label": "最多照片数",
+					"hint": "图片中的照片超过此数量时，保留最清晰的几张。"
+				},
+				"minAspect": {
+					"label": "照片的最小比例",
+					"hint": "高除以宽：1 为正方形，1.33 为 3:4 的证件照。"
+				},
+				"maxAspect": {
+					"label": "照片的最大比例",
+					"hint": "高除以宽：过于细长的方框不会被当作照片。"
+				}
+			}
+		},
+		"covers": {
+			"enabled": {
+				"label": "图书封面",
+				"hint": "开启：从网上查找、拍摄或上传的封面会显示在目录中。关闭：任何地方都不显示封面；已保存的封面会保留，重新开启后再次出现。"
+			},
+			"width": {
+				"label": "宽度（像素）",
+				"hint": "封面按此宽度保存。"
+			},
+			"maxHeight": {
+				"label": "最大高度（像素）",
+				"hint": "过高的封面会被缩小。留空：不设限制。"
+			},
+			"format": {
+				"label": "文件格式",
+				"hint": "JPEG 通用性最好；WebP 占用的空间更小。"
+			},
+			"quality": {
+				"label": "质量",
+				"hint": "1 至 100：数值越高，文件越大。"
+			},
+			"maxUploadBytes": {
+				"label": "最大上传大小（字节）",
+				"hint": "超过此大小的文件会被拒绝。"
+			},
+			"country": {
+				"label": "国家",
+				"hint": "封面供应商目录所在的国家（两个字母，例如 IT）。"
+			},
+			"minWidth": {
+				"label": "最小宽度（像素）",
+				"hint": "下载的封面如果比这更窄，会被丢弃。"
+			},
+			"autoFetch": {
+				"label": "自动查找封面",
+				"hint": "在“新建图书”中，核对记录时会在线查找封面，并与记录一起保存；如果封面不对，可以换成照片。"
+			},
+			"timeoutMs": {
+				"label": "最长等待时间（毫秒）",
+				"hint": "不响应的供应商超过多少毫秒后将被跳过。"
+			}
+		},
+		"privacy": {
+			"auditRetentionMonths": {
+				"label": "操作日志的保存月数",
+				"hint": "超过保存期限的日志记录会被删除。"
+			}
+		},
+		"backup": {
+			"cron": {
+				"label": "备份时间",
+				"hint": "cron 格式：分钟、小时、日、月、星期（0 3 * * * = 每晚 3 点）。"
+			},
+			"catchUp": {
+				"label": "启动时补做错过的备份",
+				"hint": "如果到备份时间时计算机是关闭的，BiblioViva 会在下次启动后一分钟做备份：即使过了好几天，也只做一次。"
+			},
+			"keepDays": {
+				"label": "保存天数",
+				"hint": "较早的备份会被删除。"
+			},
+			"offsite": {
+				"enabled": {
+					"label": "启用异地副本",
+					"hint": "表示正在使用备份的第二份副本（rclone，存放在另一块磁盘或另一项服务上）。"
+				},
+				"remote": {
+					"label": "副本的目标位置",
+					"hint": "副本存放的位置：另一块磁盘上的文件夹（/offsite/biblioviva-backups，默认值），或在 rclone 中配置的目标，写成“名称:文件夹”的形式。"
+				}
+			}
+		},
+		"security": {
+			"sessionDays": {
+				"label": "会话时长（天）",
+				"hint": "过了这么多天之后，需要重新输入密码。"
+			},
+			"loginMaxAttempts": {
+				"label": "登录尝试次数",
+				"hint": "连续输错多少次后强制暂停。"
+			},
+			"loginWindowMinutes": {
+				"label": "多次尝试失败后的暂停时间（分钟）",
+				"hint": "多次尝试失败后，登录保持阻止的分钟数。"
+			}
+		},
+		"ui": {
+			"checkoutIdleSeconds": {
+				"label": "借还台空闲时间（秒）",
+				"hint": "经过这些秒数没有读取后，借还台会准备好迎接新的读者。"
+			}
+		}
+	},
+	"options": {
+		"library": {
+			"weekStart": {
+				"monday": "星期一",
+				"sunday": "星期日",
+				"saturday": "星期六"
+			},
+			"schoolYearLabel": {
+				"span": "两个年份（2026/2027）",
+				"start": "开始的年份（2026）"
+			}
+		},
+		"school": {
+			"promotionWithinStage": {
+				"keep": "班级随学生一起升级",
+				"clear": "学生保持无班级"
+			},
+			"promotionAcrossStages": {
+				"keep": "班级随学生一起升级",
+				"clear": "学生保持无班级",
+				"ask": "为每位学生选择班级"
+			}
+		},
+		"barcodes": {
+			"patron": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"item": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"keyboardLayout": {
+				"it": "意大利语",
+				"es": "西班牙语",
+				"de": "德语",
+				"fr": "法语",
+				"uk": "英语（英国）",
+				"us": "英语（美国）"
+			},
+			"cameraSound": {
+				"off": "无声",
+				"till": "收银机",
+				"scanner": "扫描器",
+				"confirm": "确认",
+				"arpeggio": "琶音"
+			}
+		},
+		"circulation": {
+			"dueDateMode": {
+				"datedue": "日历日，然后顺延到第一个开馆日",
+				"calendar": "仅开馆日",
+				"days": "日历日，不考虑闭馆"
+			},
+			"renewFrom": {
+				"today": "续借当天",
+				"dueDate": "当前的应还日期"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"sbn": "OPAC SBN（Z39.50）",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books",
+				"sbn-json": "OPAC SBN（网络服务）"
+			}
+		},
+		"performance": {
+			"profile": {
+				"micro": "最小配置的计算机：一颗慢速处理器和 512 MB（Raspberry Pi Zero 2，最小的服务器）",
+				"small": "Raspberry Pi 4（2 GB）或小型计算机",
+				"medium": "带硬盘的旧电脑",
+				"large": "带 SSD 的电脑"
+			}
+		},
+		"cards": {
+			"sheet": {
+				"paper": {
+					"A4": "A4"
+				}
+			},
+			"layout": {
+				"side-by-side": "正反面并排",
+				"duplex": "纸张的两面"
+			},
+			"duplex": {
+				"flip": {
+					"long-edge": "沿长边",
+					"short-edge": "沿短边"
+				}
+			}
+		},
+		"labels": {
+			"default": {
+				"pair": "成对：书脊标签和标签",
+				"barcode": "仅条码标签",
+				"spine": "仅书脊标签"
+			}
+		},
+		"photos": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		},
+		"covers": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		}
+	},
+	"groups": {
+		"barcodes": {
+			"patron": {
+				"title": "读者证"
+			},
+			"item": {
+				"title": "图书复本"
+			}
+		},
+		"circulation": {
+			"rules": {
+				"title": "借阅规则",
+				"student": {
+					"title": "学生的规则"
+				},
+				"teacher": {
+					"title": "教师的规则"
+				}
+			},
+			"overdueNotice": {
+				"title": "催还通知"
+			}
+		},
+		"cards": {
+			"cardMm": {
+				"title": "读者证尺寸"
+			},
+			"sheet": {
+				"title": "打印纸"
+			},
+			"duplex": {
+				"title": "双面打印",
+				"backOffsetMm": {
+					"title": "背面的偏移"
+				}
+			}
+		},
+		"labels": {
+			"pair": {
+				"title": "成对：书脊标签和标签"
+			},
+			"barcode": {
+				"title": "仅条码标签"
+			},
+			"spine": {
+				"title": "仅书脊标签"
+			}
+		},
+		"backup": {
+			"offsite": {
+				"title": "异地副本"
+			}
+		},
+		"photos": {
+			"sheet": {
+				"title": "包含多张照片的图片（从图片进行信息采集）"
+			}
+		}
+	},
+	"overview": {
+		"reload": "重新加载",
+		"reloaded": "配置已重新加载",
+		"reloadFailed": "文件有错误：继续使用之前的配置。",
+		"valid": "配置有效：{{count}} {{count:plural; other:个文件;}}。",
+		"example": "尚未创建配置：使用示例值。",
+		"warnings": "{{count}} {{count:plural; other:条警告;}}",
+		"diskErrors": "配置文件有错误：在修正之前，图书馆继续使用之前的版本。",
+		"diskChanged": "文件已被手动修改：点击“重新加载”以使用这些修改。",
+		"sections": "设置",
+		"alsoFrom": "以及另外 {{count}} {{count:plural; other:个文件;}}",
+		"editors": "外观、班级和模板",
+		"templates": "打印模板",
+		"templatesDescription": "读者证、标签和催还通知的模板文件夹，以及其中的图片。",
+		"reports": "报表库",
+		"reportsDescription": "随附报表和学校报表：试用、下载、上传、删除。",
+		"appearance": "外观与语言",
+		"appearanceDescription": "图书馆的名称和标志、颜色、语言以及仪表盘的各个部分。",
+		"classes": "班级",
+		"classesDescription": "学校的班级和教师组：创建、重命名、归档。"
+	},
+	"section": {
+		"tabs": {
+			"form": "设置",
+			"json": "JSON",
+			"label": "编辑方式"
+		},
+		"file": "保存在 {{file}} 中",
+		"alsoFrom": "另外来自：{{files}}",
+		"general": "常规",
+		"default": "默认值：{{value}}",
+		"defaultNone": "默认值：无",
+		"defaultAuto": "默认值：自动",
+		"usesDefault": "使用默认值",
+		"reset": "恢复默认值",
+		"willReset": "保存时将恢复为默认值。",
+		"auto": "自动",
+		"none": "无日期",
+		"yes": "是",
+		"no": "否",
+		"fixed": "固定值",
+		"range": "从 {{min}} 到 {{max}}。",
+		"min": "至少 {{min}}。",
+		"max": "至多 {{max}}。",
+		"save": "保存",
+		"discard": "放弃修改",
+		"saved": "设置已保存",
+		"unsaved": "未保存的修改",
+		"invalid": "保存前请更正标出的值。",
+		"errors": "保存未成功：",
+		"inUse": "保存会取消仍在使用中的内容：",
+		"inUseKinds": {
+			"classification": "编码 {{code}}：{{count}} {{count:plural; other:册图书;}}",
+			"itemType": "复本类型 {{code}}：{{count}} {{count:plural; other:册复本;}}",
+			"level": "等级 {{code}}：{{count}} {{count:plural; other:位学生}}或班级",
+			"readingLevel": "阅读等级 {{code}}：{{count}} {{count:plural; other:册图书;}}"
+		},
+		"patternError": "格式无效。",
+		"numberError": "请输入整数。",
+		"required": "必填。",
+		"elsewhereTitle": "本部分的其他设置",
+		"elsewhereHint": "这些设置需通过专用编辑器修改，或在 JSON 标签页中修改。",
+		"openEditor": "打开",
+		"jsonOnly": "目前在 JSON 标签页中",
+		"editorNames": {
+			"taxonomy": "分类",
+			"appearance": "外观与语言",
+			"wizard": "首次启动设置向导",
+			"history": "历史记录",
+			"settings": "设置",
+			"schoolLevels": "学段和年级"
+		},
+		"json": {
+			"hint": "{{file}} 中所写的该部分内容。以 _ 开头的键是注释，会保留在文件中。",
+			"label": "该部分的 JSON 内容",
+			"parseError": "文本不是有效的 JSON：{{message}}",
+			"notObject": "该部分必须是放在花括号中的 JSON 对象。",
+			"valid": "没有问题。",
+			"checking": "检查中…",
+			"issues": "需要修正的问题："
+		},
+		"playSound": "试听"
+	},
+	"history": {
+		"title": "配置历史记录",
+		"hint": "从这里所做的每次修改，都会保留其所涉及文件的上一版本（最近 50 次修改）。",
+		"empty": "管理员尚未做过任何修改。",
+		"columns": {
+			"when": "时间",
+			"what": "内容",
+			"files": "文件"
+		},
+		"revert": "恢复",
+		"revertTitle": "将文件恢复为此次修改之前的样子？",
+		"revertDescription": "只恢复由此次修改设置的值。恢复本身也是一次修改：它会保留在历史记录中，并且可以撤销。",
+		"reverted": "已恢复为上一版本",
+		"refused": "此次修改创建了 config.json：无法撤销。",
+		"conflict": "无法恢复：此次修改之后，{{keys}} 又发生了变化。",
+		"notFound": "该修改已不在历史记录中。",
+		"newFile": "新文件",
+		"actions": {
+			"revert": "恢复 {{when}} 的修改",
+			"theme": "颜色",
+			"locale": "语言",
+			"logo": "图书馆标志",
+			"setup": "初始设置",
+			"section": "“{{section}}”部分",
+			"other": "修改（{{action}}）"
+		}
+	},
+	"archive": {
+		"title": "配置归档",
+		"hint": "全部配置集中在一个文件中：设置、打印模板、不干胶纸、图示、标志、报表和语言（不包括历史记录）。用于保存一份副本，或将其迁移到另一套安装中。“导入配置”也接受备份或“导出全部”的归档：只从中提取配置，图书馆的数据保持不变。",
+		"export": "导出配置",
+		"import": "导入配置",
+		"checking": "正在检查归档文件…",
+		"from": "{{date}} 的归档（版本 {{version}}）",
+		"fromLibrary": "{{date}} 的“{{library}}”归档（版本 {{version}}）",
+		"files": "{{added}} {{added:plural; other:个新文件}}，{{changed}} 个已修改，{{removed}} 个已删除，{{unchanged}} 个未变。",
+		"fileList": "文件列表",
+		"added": "新增",
+		"changed": "已修改",
+		"removed": "已删除",
+		"sameValues": "设置保持不变。",
+		"sections": "将更改：{{sections}}。",
+		"errorsTitle": "归档有问题：导入前必须更正。",
+		"apply": "导入",
+		"confirmTitle": "用归档中的配置替换当前配置？",
+		"confirmDescription": "当前的文件会保留在历史记录中：“恢复”可以带回之前的配置。图书馆的数据（图书、读者、借阅）不会改变。",
+		"imported": "配置已导入",
+		"failed": "导入未成功",
+		"errors": {
+			"too_large": "归档过大（最大 {{maxMb}} MB）。",
+			"not_zip": "文件不是有效的 ZIP 归档。",
+			"not_archive": "文件不是 BiblioViva 的归档。",
+			"too_many_files": "归档中的文件过多。",
+			"unsafe_path": "归档中含有不允许的路径：{{name}}",
+			"link": "归档中含有不允许的链接：{{name}}",
+			"unknown_file": "归档中含有不属于配置的文件：{{name}}",
+			"no_config": "归档中不含配置（只有图书馆的数据）：应从“管理 → 备份”中恢复。"
+		},
+		"exportSome": "导出所选部分",
+		"chooseExport": "选择要导出的内容"
+	},
+	"blocks": {
+		"problems": {
+			"codeRequired": {
+				"itemTypes": "代码为必填项。",
+				"sections": "组别为必填项。"
+			},
+			"codeFormat": {
+				"itemTypes": "字母、数字、点、连字符或下划线（最多 32 个）。",
+				"sections": "大写字母或数字，最多 8 个。"
+			},
+			"codeTaken": {
+				"itemTypes": "代码重复。",
+				"sections": "组别重复。"
+			},
+			"labelRequired": {
+				"itemTypes": "名称为必填项。",
+				"sections": "名称为必填项。"
+			}
+		},
+		"itemTypes": {
+			"title": "复本类型",
+			"hint": "图书、DVD、工具书…：每个复本的类型决定其借阅规则。更改代码后，其复本会转到新代码。",
+			"code": "代码",
+			"label": "名称",
+			"notForLoan": "仅供馆内查阅",
+			"add": "添加类型",
+			"saved": "复本类型已保存"
+		},
+		"move": {
+			"title": "移至何处？",
+			"hint": {
+				"copies": "被删除的某些类型仍有复本：请选择用于接收这些复本的类型。",
+				"students": "被删除的某些组别仍有学生：请选择用于接收这些学生的组别。"
+			},
+			"row": {
+				"copies": "{{code}} · {{label}}：{{count}} {{count:plural; other:册复本;}}。移至",
+				"students": "{{code}}：{{count}} {{count:plural; other:位学生;}}。移至"
+			},
+			"choose": "选择…",
+			"used": {
+				"copies": "复本",
+				"students": "学生"
+			},
+			"count": {
+				"copies": "{{count}} {{count:plural; other:册复本;}}",
+				"students": "{{count}} {{count:plural; other:位学生;}}"
+			},
+			"done": {
+				"copies": "已移动 {{count}} {{count:plural; other:册复本;}}。",
+				"students": "已移动 {{count}} {{count:plural; other:位学生;}}。"
+			}
+		},
+		"barcodes": {
+			"title": "编号与预览",
+			"counter": "新读者证的编号",
+			"afterLegacy": "接在现有读者证的最大编号之后",
+			"from": "从此编号起：",
+			"fromNumber": "新读者证的起始编号",
+			"counterHint": "已使用过的编号不会再次出现：若所选编号更小，则从已达到的位置继续计数。新复本的编号始终包含年份和递增的序号。",
+			"nextCard": "下一个读者证：{{code}}",
+			"nextItem": "下一个复本：{{code}}",
+			"overrides": "这些打印模板自行选择条码类型，因此上述设置对它们不适用：{{templates}}。",
+			"saved": "编号已保存"
+		},
+		"itemTypeRules": {
+			"title": "各复本类型的规则",
+			"hint": "每种复本类型都可以更改一项规则：例如 DVD 借阅 5 天。这些规则对学生和教师同样适用。",
+			"inherit": "留空：适用学生和教师的规则（灰色字样：学生 / 教师）。",
+			"saved": "各复本类型的规则已保存"
+		},
+		"calendar": {
+			"title": "图书馆日历",
+			"weekly": "每周闭馆的日子",
+			"weeklyHint": "高亮显示的日子每周都闭馆。",
+			"previous": "上一学年",
+			"next": "下一学年",
+			"addNational": "添加 {{year}} 年的国家法定假日",
+			"autoOn": "国家法定假日已自动设为闭馆。点击开放的日子可将其设为闭馆；点击手动设为闭馆的日子则重新开放。",
+			"clickHint": "点击开放的日子可将其设为闭馆；点击手动设为闭馆的日子则重新开放。",
+			"open": "开放",
+			"legend": {
+				"open": "开放",
+				"weekly": "每周闭馆",
+				"national": "国家法定假日",
+				"holiday": "闭馆（此处设定）",
+				"range": "闭馆时段"
+			},
+			"ranges": "闭馆时段",
+			"from": "从",
+			"to": "至",
+			"reason": "原因",
+			"badRange": "结束日期早于开始日期。",
+			"addRange": "添加时段",
+			"saved": "日历已保存"
+		},
+		"cardTemplates": {
+			"title": "按读者类型选择模板",
+			"hint": "学生和教师默认使用上面选择的默认模板打印读者证，除非在此选择了其他模板。",
+			"student": "学生读者证",
+			"teacher": "教师读者证",
+			"asDefault": "与默认模板相同（{{name}}）",
+			"cutLines": "每张读者证的彩色边框",
+			"cutLinesOn": "在每张读者证上绘制彩色边框（通常不需要：裁切标记已经足够）",
+			"color": "颜色",
+			"width": "粗细（mm）",
+			"sample": "裁切线示例",
+			"saved": "读者证模板已保存"
+		},
+		"stocks": {
+			"title": "不干胶标签纸",
+			"hint": "所用标签纸的尺寸。右侧的示意图随每个数字变化：超出纸张的标签显示为红色。保存后，请在普通纸上打印测试页，并将其覆盖在标签纸上进行核对。",
+			"new": "新建",
+			"toFix": "需修正",
+			"add": "添加标签纸",
+			"id": "代码",
+			"name": "名称",
+			"labelWidth": "标签宽度（mm）",
+			"labelHeight": "标签高度（mm）",
+			"columns": "列数",
+			"rows": "行数",
+			"marginTop": "上边距（mm）",
+			"marginLeft": "左边距（mm）",
+			"gapX": "列间距（mm）",
+			"gapY": "行间距（mm）",
+			"radius": "圆角（mm）",
+			"calibration": "打印测试页",
+			"inUse": "用于：{{jobs}}。要删除它，请先在上面的设置中选择另一张标签纸。",
+			"saveFirst": "保存更改后才能打印测试页。",
+			"drawing": "A4 纸示意图：标签 {{columns}} {{columns:plural; other:列;}}，{{rows}} {{rows:plural; other:行;}}",
+			"caption": "A4 纸 · {{count}} {{count:plural; other:个标签;}}",
+			"saved": "标签纸已保存",
+			"problems": {
+				"id": "代码可包含字母、数字、连字符和下划线。",
+				"duplicate": "另一张标签纸已使用此代码。",
+				"name": "请填写名称。",
+				"numbers": "请检查尺寸：数字须为非负数，标签须大于零，列数和行数须为整数。",
+				"width": "标签占用 {{mm}} mm：超过 A4 纸的宽度（210 mm）。",
+				"height": "标签占用 {{mm}} mm：超过 A4 纸的高度（297 mm）。",
+				"pairRows": "成对标签需要偶数行（书脊标签与标签上下相邻排列）。"
+			},
+			"errors": {
+				"duplicate": "两张标签纸的代码相同：{{details}}。",
+				"inUse": "用于打印的标签纸不能删除：{{details}}。"
+			}
+		},
+		"backupSchedule": {
+			"title": "下次备份",
+			"invalid": "时间不是有效的 cron 表达式（五个字段：分钟、小时、日、月、星期）。",
+			"never": "使用此表达式时，备份永远不会启动。",
+			"hint": "时间按图书馆时区（{{timezone}}）计算。若该时刻计算机处于关机状态，则启用“启动时补做错过的备份”后，备份将在下次开机时进行；也可以把时间调整到开馆时间内。"
+		},
+		"coverProviders": {
+			"off": "封面已关闭（见上方“书籍封面”）：不会查询任何来源。",
+			"title": "封面来源",
+			"hint": "按以下顺序依次尝试各个来源，直到找到封面为止；每个来源都可以单独关闭。",
+			"names": {
+				"amazon": "Amazon",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books"
+			},
+			"googleKey": "Google Books 需要 API 密钥，请在“书籍数据”设置中填写；否则将跳过此来源。",
+			"saved": "封面来源已保存"
+		},
+		"z3950Targets": {
+			"title": "Z39.50 目录",
+			"hint": "书籍数据所取自的目录。“测试连接”会用所填的值执行一次真实检索，但不保存这些值。",
+			"id": "代码",
+			"name": "名称",
+			"host": "服务器地址",
+			"port": "端口",
+			"database": "数据库",
+			"syntax": "记录格式",
+			"charset": "字符编码",
+			"elements": "元素集",
+			"elementsHint": "通常为 F（完整记录）。",
+			"add": "添加目录",
+			"isDefault": "这是默认目录：删除前请先在上方选择另一个目录。",
+			"saved": "目录已保存",
+			"problems": {
+				"id": "代码必须唯一：可使用字母、数字和连字符。",
+				"required": "名称、数据库、字符编码和元素集为必填项。",
+				"host": "地址可包含字母、数字、句点和连字符。",
+				"words": "数据库、字符编码和元素集各为一个词，不得含空格。",
+				"port": "端口为 1 至 65535 之间的数字。"
+			},
+			"test": {
+				"button": "测试连接",
+				"running": "测试中…",
+				"ok": "目录有响应：{{hits}} {{hits:plural; other:条结果;}}，耗时 {{ms}} ms。",
+				"unreachable": "目录无响应：请检查地址、端口和数据库。",
+				"timeout": "目录未在规定时间内响应。",
+				"protocol": "目录返回错误：请检查数据库、格式和字符编码。",
+				"spawn": "服务器上没有 yaz-client 程序。"
+			}
+		},
+		"barcodeFormats": {
+			"title": "代码格式",
+			"hint": "新复本和新读者证的代码如何生成。已打印的代码仍然有效：被替换的格式会保留在“以前使用过的格式”之中。",
+			"preset": "预设格式",
+			"presets": {
+				"standard": "标准（2026-E0267，U012345）",
+				"classic": "经典（2026-02678，0000012344）",
+				"prefix": "前置字母（L-2602670，T0123455）",
+				"custom": "自定义"
+			},
+			"check": "校验字符",
+			"checks": {
+				"mod23": "字母（mod 23）",
+				"damm": "数字（Damm）",
+				"luhn": "数字（Luhn）"
+			},
+			"checkHint": "可识别读错或输错的代码。字母最为可靠，并使读者证与复本代码一眼就能区分。",
+			"advanced": "高级：逐个编辑格式",
+			"tokens": "YYYY 或 YY = 年份，N = 序号位数，C = 校验字符，{lib} = 图书馆代码，- = 连字符，用引号括起的大写字母（如 'T'）。不允许使用字母 I、O、Q。",
+			"pattern": {
+				"item": "复本格式",
+				"patron": "读者证格式"
+			},
+			"libraryCode": "图书馆代码",
+			"libraryCodeHint": "仅当多个各自安装的图书馆须使用不同代码时才需要：在格式中与 {lib} 一起使用。",
+			"plainMaxLength": "旧纯数字的位数",
+			"plainHint": "以前系统中没有格式的读者证和复本的最长数字位数（若没有则填 0）。",
+			"plainLongest": "数据库中最长的纯数字有 {{digits}} {{digits:plural; other:位;}}。",
+			"distinct": "复本与读者证不会混淆。",
+			"confusable": "在这些格式下，复本与读者证可能会混淆：",
+			"warnings": "{{count}} {{count:plural; other:条警告;}}",
+			"inUse": "格式 {{pattern}} 在数据库中仍有 {{count}} {{count:plural; other:个代码;}}：不能删除。",
+			"kinds": {
+				"item": "复本",
+				"card": "读者证"
+			},
+			"heading": {
+				"item": "复本",
+				"patron": "读者证"
+			},
+			"examples": "新代码示例：",
+			"currentCount": "数据库中此格式的代码数：{{count}}",
+			"count": "{{count}} {{count:plural; other:个代码;}}",
+			"noCheck": "无校验",
+			"remove": "删除",
+			"retired": "以前使用过的格式",
+			"legacy": "旧系统的代码",
+			"noLegacy": "无。",
+			"addLegacy": "添加旧格式",
+			"try": "试用代码",
+			"tryHint": "在此输入或扫描的代码会用上面的格式识别，即使尚未保存。",
+			"tried": {
+				"item": "{{value}}：复本代码",
+				"legacy_item": "{{value}}：旧复本代码",
+				"card": "{{value}}：读者证编号",
+				"isbn": "{{value}}：ISBN",
+				"ambiguous": "{{value}}：旧纯数字（在复本和读者证中查找）",
+				"invalid": "{{value}}：无法识别，或校验字符错误"
+			},
+			"saved": "代码格式已保存",
+			"patternErrors": {
+				"empty": "格式为空（{{kind}}）",
+				"tooLong": "{{pattern}}：太长",
+				"badToken": "{{pattern}}：包含不允许的符号",
+				"badLetter": "{{pattern}}：字母不允许（仅限大写，且不能是 I、O、Q）",
+				"unclosedQuote": "{{pattern}}：缺少结束引号",
+				"year": "{{pattern}}：年份应写作 YYYY 或 YY",
+				"twoYears": "{{pattern}}：年份出现了两次",
+				"twoCounters": "{{pattern}}：序号必须是一组 N",
+				"noCounter": "{{pattern}}：缺少序号（N）",
+				"twoChecks": "{{pattern}}：校验字符出现了两次",
+				"checkWithoutAlgorithm": "{{pattern}}：有 C，但未选择校验方式",
+				"algorithmWithoutCheck": "{{pattern}}：缺少 C，即校验字符的位置",
+				"noLibraryCode": "{{pattern}}：使用了 {lib}，但图书馆代码为空",
+				"badLibraryCode": "图书馆代码只能包含数字和大写字母（不能是 I、O、Q）"
+			},
+			"issues": {
+				"overlap": "{{pattern}}（{{kind}}）与 {{other}}（{{otherKind}}）可能生成相同的代码，例如 {{example}}",
+				"overlapWithoutDash": "{{pattern}}（{{kind}}）与 {{other}}（{{otherKind}}）在扫描器丢失连字符时会混淆，例如 {{example}}",
+				"overlapLegacy": "旧代码 {{pattern}}（{{kind}}）与 {{other}}（{{otherKind}}）形式相同：两者都会在两个数据库中查找",
+				"overlapPlain": "{{pattern}}（{{kind}}）可能生成与旧纯数字相同的代码，例如 {{example}}",
+				"overlapIsbn": "{{pattern}}（{{kind}}）可能生成与 ISBN 相同的代码，例如 {{example}}",
+				"overlapIsbn10": "{{pattern}}（{{kind}}）的形式与不带连字符输入的 ISBN-10 相同：以读者证编号为准",
+				"lookAlike": "{{pattern}}（{{kind}}）与 {{other}}（{{otherKind}}）太相似：需要长度至少相差 2 个字符，或字母位于不同位置，或连字符位于其他位置"
+			}
+		},
+		"schoolLevels": {
+			"title": "学段与年级",
+			"hint": "学校的年级按就读顺序排列，并按学段分组。代码属于学生：删除或更改正在使用的年级代码时，需选择其学生和班级转到何处。",
+			"preset": "预设",
+			"presetApply": "使用此预设",
+			"presetHint": "用预设的学段和年级替换下方内容；点击“保存”之前，不会保存任何内容。",
+			"custom": "自定义",
+			"stages": "学段",
+			"stageCode": "代码",
+			"stageName": "名称",
+			"stageLabel": "班级的写法",
+			"addStage": "添加学段",
+			"stageLabelHint": "学段的“班级的写法”替代全校的写法，适用于该学段的年级；若不含 {group}，则班级仅为年级本身（如 Q1，无分组）。留空：与全校其他学段相同。",
+			"levels": "年级",
+			"levelCode": "代码",
+			"levelLabel": "在班级中的写法",
+			"levelName": "名称",
+			"levelStage": "学段",
+			"levelNext": "下一年级",
+			"levelAliases": "其他名称",
+			"levelAliasesPlaceholder": "用逗号分隔",
+			"nextFollowing": "紧随其后的年级",
+			"nextLeaves": "离开学校",
+			"nextChoices": "在多个年级之间选择",
+			"choiceAdd": "添加选项…",
+			"choiceRemove": "删除 {{name}}",
+			"choiceDefault": "默认",
+			"addLevel": "添加年级",
+			"inUse": "使用中",
+			"moveUp": "上移",
+			"moveDown": "下移",
+			"example": "示例：{{label}}",
+			"saved": "学段和年级已保存",
+			"problems": {
+				"code": "代码：可包含字母、数字和连字符（年级代码最多 8 个字符），且各不相同。",
+				"required": "写法和名称为必填项。",
+				"template": "学段的“班级的写法”必须包含 {level}。",
+				"stageUsed": "含有年级的学段不能删除。",
+				"structure": "结构无效：{{details}}"
+			},
+			"move": {
+				"title": "学生和班级转到何处？",
+				"hint": "被删除的某些年级仍有学生或班级。请为每个年级选择其转入的年级；借阅记录保留借阅时所在的班级。",
+				"level": "{{name}}：{{pupils}} {{pupils:plural; other:位学生;}}，{{classes}} {{classes:plural; other:个班级;}}",
+				"choose": "选择年级…",
+				"confirm": "转移并保存",
+				"done": "已转移 {{pupils}} {{pupils:plural; other:位学生;}}和 {{classes}} {{classes:plural; other:个班级;}}。"
+			}
+		}
+	},
+	"templates": {
+		"title": "打印模板",
+		"hint": "卡片、标签、收据和逾期通知的模板文件夹。BiblioViva 自带的模板可以自定义（会创建同名副本）或以其他名称复制；副本的图片和字体在此上传。每项操作都会出现在配置历史中，并可撤销。",
+		"source": {
+			"builtin": "BiblioViva 自带",
+			"customised": "已自定义",
+			"added": "已添加"
+		},
+		"broken": "有错误",
+		"customise": "自定义",
+		"duplicate": "复制",
+		"rename": "重命名",
+		"restore": "恢复原版",
+		"usedBy": "使用者：{{settings}}。",
+		"unused": "未被任何设置使用。",
+		"assets": "图片和字体（{{count}}）",
+		"noAssets": "没有文件。",
+		"usedIn": "用于 {{files}}",
+		"assetUnused": "未使用",
+		"upload": "上传文件",
+		"uploadHint": "PNG、JPEG、WebP、GIF、SVG 或 WOFF2、WOFF、TTF 字体；最大 {{maxMb}} MB。",
+		"builtinAssets": "若要更换 BiblioViva 自带模板的图片，请先将其自定义。",
+		"files": "模板文件（{{count}}）",
+		"filesHint": "HTML 和 CSS 通过可视化模板编辑器进行编辑。",
+		"done": {
+			"duplicate": "模板已复制",
+			"customise": "模板已自定义：其副本可以修改",
+			"rename": "模板已重命名",
+			"delete": "模板已删除",
+			"upload": "已上传 {{name}}",
+			"removeAsset": "已删除 {{name}}"
+		},
+		"errors": {
+			"notFound": "未找到模板或文件。",
+			"badName": "名称无效：只能使用小写字母、数字、连字符和下划线。",
+			"exists": "已存在同名模板。",
+			"builtin": "BiblioViva 自带的模板不能更改：请将其自定义或复制。",
+			"inUse": "该模板正被以下项目使用：{{details}}。请先选择另一个模板。",
+			"badAsset": "“{{name}}”不是允许的文件（PNG、JPEG、WebP、GIF、不含脚本的 SVG、WOFF2、WOFF、TTF）。",
+			"assetTooLarge": "“{{name}}”太大：最大 {{maxMb}} MB。",
+			"assetInUse": "该文件正用于：{{details}}。"
+		},
+		"dialog": {
+			"name": "文件夹名称",
+			"nameHint": "小写字母、数字、连字符和下划线。",
+			"badName": "只能使用小写字母、数字、连字符和下划线。",
+			"taken": "已存在同名模板。",
+			"duplicate": {
+				"title": "复制 {{name}}",
+				"hint": "将创建一个包含全部文件的副本，可以修改。",
+				"confirm": "复制"
+			},
+			"customise": {
+				"title": "自定义 {{name}}",
+				"hint": "将创建一个同名副本并取代原版；原版仍可用于恢复。",
+				"confirm": "自定义"
+			},
+			"rename": {
+				"title": "重命名 {{name}}",
+				"hint": "使用此模板的设置将采用新名称。",
+				"confirm": "重命名"
+			},
+			"delete": {
+				"title": "删除 {{name}}",
+				"hint": "文件夹及其文件将被删除；若它是 BiblioViva 自带模板的副本，则重新使用原版。可在历史记录中撤销。",
+				"confirm": "删除"
+			}
+		},
+		"edit": "编辑"
+	},
+	"languages": {
+		"title": "语言包",
+		"hint": "要以其他语言使用 BiblioViva：下载英文或意大利文示例，翻译 JSON 文件中的文字，保持键名和双花括号中的占位符不变，在 pack.json 中写明语言名称，然后上传 zip 文件。有错误的语言包不会被安装；缺失的文字会以英文显示。语言在“外观和语言”中选择。",
+		"none": "未安装语言包。",
+		"valid": "有效",
+		"errorsCount": "{{count}} {{count:plural; other:个错误;}}",
+		"warnings": "{{count}} {{count:plural; other:处文字缺失或多余;}}",
+		"inUse": "使用中",
+		"download": "下载",
+		"report": "检查结果",
+		"upload": "上传语言包（zip）",
+		"uploadHint": "一个 zip 文件，内含 pack.json 和语言文件，并放在以语言代码命名的文件夹中（例如 de/）；最大 {{maxMb}} MB。",
+		"examples": "可下载的示例：",
+		"installed": "已安装语言：{{name}}",
+		"removed": "语言包已删除",
+		"removeTitle": "删除语言包 {{code}}？",
+		"removeHint": "语言文件夹将被删除。可在配置历史中撤销。",
+		"errors": {
+			"notAZip": "该文件不是 zip 文件。",
+			"tooLarge": "zip 文件太大：最大 {{maxMb}} MB。",
+			"badLayout": "zip 文件只能包含语言的 .json 文件，且须位于一个以语言代码命名的文件夹中。{{details}}",
+			"badCode": "语言代码无效：{{details}}（例如 de、fr、pt-BR）。",
+			"builtIn": "英语和意大利语已内置，不能被替换。",
+			"invalid": "语言包有错误，未安装：{{details}}",
+			"inUse": "这是正在使用的语言：请先选择另一种语言。",
+			"notFound": "未找到语言包。",
+			"unavailable": "无法下载语言列表或语言包。请检查网络连接，或手动上传 zip 文件。",
+			"checksum": "下载的语言包已损坏，未安装。请重试。"
+		},
+		"release": {
+			"title": "可安装的语言",
+			"hint": "随本版 BiblioViva 发布的语言。列表从互联网读取，每个语言包在安装前都会经过检查。",
+			"percent": "已翻译 {{percent}}%",
+			"machine": "自动翻译，未经母语者审阅",
+			"reviewed": "译文经母语者审阅",
+			"install": "安装",
+			"again": "重新安装",
+			"installedBadge": "已安装",
+			"page": "发布页面：可在此手动下载语言包，然后在下方上传",
+			"unavailable": "无法获取语言列表：没有网络连接，或本版本尚无列表。仍可在下方上传 zip 文件。"
+		}
+	},
+	"reports": {
+		"title": "报表库",
+		"hint": "BiblioViva 自带的报表和学校自己的报表。要个性化某个报表：下载、修改后上传；若代码（id）相同，则取代原版。安装前会检查格式、查询的安全性以及它所用的表和列。报表编写指南见 docs/reports-authoring.md。",
+		"upload": "上传报表（JSON）",
+		"try": "试用",
+		"download": "下载",
+		"problems": "以下文件未被加载：",
+		"installed": "报表 {{id}} 已安装",
+		"replaced": "报表 {{id}} 已替换",
+		"removed": "文件已删除",
+		"removeTitle": "删除 {{file}}？",
+		"removeHint": "该文件将从配置中删除。可在历史记录中撤销。",
+		"restoreHint": "学校的版本将被删除：重新使用 BiblioViva 自带的报表。可在历史记录中撤销。",
+		"origin": {
+			"builtin": "BiblioViva 自带",
+			"customised": "已自定义",
+			"added": "已添加"
+		},
+		"errors": {
+			"tooLarge": "文件太大：最大 {{maxKb}} KB。",
+			"badJson": "文件不是有效的 JSON：{{details}}",
+			"invalid": "定义无效：{{details}}",
+			"sql": "该查询无法在此数据库上运行：{{details}}",
+			"notFound": "未找到文件。",
+			"reservedId": "“new”不能用作报表代码。"
+		},
+		"new": "新建报表",
+		"edit": "编辑",
+		"duplicate": "复制",
+		"editor": {
+			"editTitle": "编辑报表",
+			"newTitle": "新建报表",
+			"copySuffix": "副本",
+			"builtinHint": "这是自带报表：保存时会生成学校的自定义副本，名称相同。在报表库中点击“恢复原版”即可删除该副本。",
+			"id": "报表代码",
+			"category": "类别",
+			"title": {
+				"it": "标题（意大利语）",
+				"en": "标题（英语）"
+			},
+			"description": {
+				"it": "描述（意大利语）",
+				"en": "描述（英语）"
+			},
+			"restricted": "仅限管理员",
+			"tabs": {
+				"label": "编辑方式",
+				"guided": "引导式",
+				"sql": "SQL"
+			},
+			"sqlOnly": "此报表以 SQL 编写：请在 SQL 标签中编辑。",
+			"source": "数据",
+			"rows": "行",
+			"rows2": "行，第二级",
+			"columns": "列",
+			"columnsHint": "添加列后，报表将变为交叉表，并带有合计。",
+			"none": "— 无 —",
+			"totals": "合计",
+			"totalsOptions": {
+				"both": "行和列的合计",
+				"rows": "合计列",
+				"columns": "合计行",
+				"none": "无合计"
+			},
+			"sort": "排序",
+			"sortDimension": "按行的顺序",
+			"sortMeasure": "按数值从高到低",
+			"measures": "数值",
+			"oneMeasure": "交叉表只显示一个数值。",
+			"filters": "筛选",
+			"filterModes": {
+				"off": "无筛选",
+				"ask": "打开时询问",
+				"fixed": "固定"
+			},
+			"value": "值",
+			"chart": "图表",
+			"charts": {
+				"bar": "柱状图",
+				"line": "折线图",
+				"doughnut": "环形图"
+			},
+			"compiledHint": "引导式报表会生成此 SQL。若要手动编写，请使用“编辑为 SQL”：之后无法再返回引导式编辑。",
+			"previewFirst": "点击“预览”查看 SQL。",
+			"convert": "编辑为 SQL",
+			"convertTitle": "将报表转换为 SQL？",
+			"convertHint": "报表将变为 SQL 报表，列和参数保持不变。之后无法再通过引导式标签进行编辑。",
+			"converted": "报表现已为 SQL 格式",
+			"sqlHint": "一条 SELECT 或 WITH 语句，参数写作 :名称。",
+			"json": {
+				"params": "参数（JSON）",
+				"columns": "列（JSON）",
+				"chart": "图表（JSON，可选）",
+				"pivot": "交叉表（JSON，可选）"
+			},
+			"jsonHint": "使用报表指南中描述的格式。",
+			"preview": "预览",
+			"runPreview": "预览",
+			"previewHint": "预览会使用参数的默认值运行报表（最多 200 行）。",
+			"save": "保存",
+			"saved": "报表“{{id}}”已保存",
+			"back": "返回报表库",
+			"jsonInvalid": "请先修正标为红色的 JSON 部分，然后再保存。"
+		}
+	},
+	"designer": {
+		"title": "编辑 {{name}}",
+		"design": "设计",
+		"code": "代码",
+		"preview": "预览",
+		"front": "正面",
+		"back": "背面",
+		"faces": "面或标签",
+		"zoom": "缩放",
+		"grid": "网格",
+		"gridSteps": {
+			"s0": "无（自由）",
+			"s05": "0.5 mm",
+			"s1": "1 mm",
+			"s2": "2 mm",
+			"s25": "2.5 mm",
+			"s5": "5 mm",
+			"s10": "10 mm"
+		},
+		"files": "文件",
+		"problems": "该模板无法这样打印：",
+		"saved": "模板已保存",
+		"notEditable": "此模板不能在此编辑：BiblioViva 自带的模板须先进行自定义。",
+		"canvasHint": "点击方框即可选中，拖动可移动，拖动角点可调整大小：位置和尺寸会对齐到所选网格。用键盘时，方向键每次移动一个网格步长（按住 Shift 约为 5 mm，且始终对齐网格），Delete 键则删除该方框。",
+		"flowHint": "本面中有 {{count}} {{count:plural; other:个元素;}}由样式表排版（虚线轮廓）：第一次移动时，本面所有元素的位置都会写入文件，即它们当前所在的位置。",
+		"lockedHint": "本面中有 {{count}} {{count:plural; other:个部分;}}位于 Mustache 区段内：需在“代码”标签中编辑。",
+		"noStock": "没有标签纸使用此变体：示意图不显示预览。",
+		"codeHint": "示意图与代码编辑的是同一批文件：在此所做的每项修改都会同时出现在示意图中，反之亦然。",
+		"add": "添加",
+		"newText": "文本",
+		"noImages": "要添加图片，请先将其上传到模板的图片中。",
+		"types": {
+			"field": "字段",
+			"text": "文本",
+			"barcode": "条码",
+			"photo": "照片",
+			"pictogram": "图标",
+			"image": "图片",
+			"box": "方框",
+			"html": "自由 HTML",
+			"other": "元素"
+		},
+		"fields": {
+			"library_name": "图书馆名称",
+			"patron_first_name": "名",
+			"patron_last_name": "姓",
+			"patron_card_number": "读者证编号",
+			"patron_class_label": "班级与组别",
+			"patron_level_label": "班级（年级）",
+			"patron_group": "组别",
+			"school_year": "学年",
+			"issued_on": "签发日期",
+			"valid_until": "有效期至",
+			"item_barcode": "条码（文本）",
+			"item_call_number": "索书号",
+			"call_head": "索书号：第一行",
+			"call_rest": "索书号：第二行",
+			"biblio_title_short": "短书名",
+			"biblio_author_short": "短作者名",
+			"biblio_publication_year": "出版年份",
+			"biblio_series": "丛书",
+			"biblio_series_number": "丛书中的编号",
+			"classification_code": "分类代码",
+			"classification_label": "类别名称",
+			"classification_reading_level": "阅读等级",
+			"item_item_type": "复本类型"
+		},
+		"field": "字段",
+		"text": "文本",
+		"image": "图片",
+		"content": "HTML 内容",
+		"contentHint": "方框在示意图中移动和设置格式；内容以 HTML 书写，并使用 Mustache 字段，与模板文件中的写法相同。",
+		"inherited": "默认",
+		"unplacedHint": "此元素由样式表排版：移动它时，它的位置以及本面其他元素的位置都会写入文件。",
+		"geometry": {
+			"x": "X（mm）",
+			"y": "Y（mm）",
+			"w": "宽度",
+			"h": "高度"
+		},
+		"fontSize": "字号（pt）",
+		"font": "字体",
+		"fonts": {
+			"sans": "无衬线",
+			"serif": "衬线",
+			"mono": "等宽"
+		},
+		"bold": "粗体",
+		"italic": "斜体",
+		"uppercase": "大写",
+		"align": "对齐",
+		"aligns": {
+			"left": "左",
+			"center": "居中",
+			"right": "右"
+		},
+		"color": "颜色",
+		"border": "边框",
+		"borderColor": "边框颜色",
+		"fill": "填充",
+		"fillColor": "填充颜色",
+		"backward": "下移一层",
+		"forward": "上移一层",
+		"background": "面背景",
+		"backgroundColor": "背景颜色",
+		"backgroundImage": "背景图片",
+		"noImage": "无",
+		"chooseHint": "在示意图上选择一个方框以进行修改。",
+		"modes": "模板视图",
+		"safeArea": "安全区域：文字和照片须置于虚线之内，距边缘 2 mm（双面打印时，背面可能偏移 1 mm）。",
+		"chooseBackground": "选择背景",
+		"uploadBackground": "上传图片",
+		"backgroundsTitle": "现成背景",
+		"backgroundsHint": "每个背景都会略微超出卡片，每边 3 mm：超出的部分会被裁掉。",
+		"backgroundAlt": "背景 {{name}}",
+		"backgroundAdded": "背景已添加到此面：保存后生效。",
+		"backgroundFailed": "背景未能添加。",
+		"cardSize": "卡片尺寸",
+		"cardWidth": "宽度（mm）",
+		"cardHeight": "高度（mm）",
+		"cardRotate": "旋转：纵向或横向",
+		"cardDefault": "恢复默认尺寸（{{width}} × {{height}} mm）",
+		"cardDefaultHint": "这是配置中的默认尺寸（配置 → 读者证）：在此只更改本模板的尺寸。",
+		"cardTooLarge": "{{width}} × {{height}} mm 的卡片放不进 A4 纸：最大为 {{maxWidth}} × {{maxHeight}} mm，因为正面和背面须并排放在页边距之内。"
+	},
+	"parts": {
+		"groups": {
+			"data": "图书馆数据",
+			"settings": "设置",
+			"config": "分类、模板及其他"
+		},
+		"all": "全部",
+		"none": "无",
+		"accountsConfirm": {
+			"title": "也导入账户和密码吗？",
+			"description": "压缩包中的工作人员账户和密码将取代当前的账户和密码：现在能登录的人将无法再用当前的凭据登录。若不需要，请不要勾选此项。",
+			"confirm": "同时导入账户"
+		},
+		"needs": "“{{part}}”要恢复，还需要：{{needs}}。",
+		"data": {
+			"patrons": "读者",
+			"catalog": "目录和复本",
+			"loans": "借阅与历史",
+			"printLists": "打印清单",
+			"photos": "读者照片",
+			"covers": "封面",
+			"notes": "工作人员备注",
+			"dates": "日历日期",
+			"audit": "操作日志"
+		},
+		"config": {
+			"classification": "分类与图标",
+			"stocks": "标签纸",
+			"calendar": "日历",
+			"reports": "报表",
+			"cardTemplates": "读者证模板",
+			"pairTemplates": "标签对模板",
+			"barcodeTemplates": "条码标签模板",
+			"spineTemplates": "书脊标签模板",
+			"slipTemplates": "收据和通知模板",
+			"languages": "语言包",
+			"logo": "图书馆徽标"
+		}
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "Prêts en cours",
+		"overdue": "En retard",
+		"issuedToday": "Prêtés aujourd'hui",
+		"returnedToday": "Retournés aujourd'hui",
+		"withoutCard": "Lecteurs sans carte imprimée",
+		"withoutPhoto": "Lecteurs sans photo",
+		"toClassify": "Livres à classifier",
+		"pendingLabels": "Livres sans étiquettes"
+	},
+	"tilesTitle": "La bibliothèque aujourd'hui",
+	"actions": {
+		"title": "Actions rapides"
+	},
+	"dueWeek": {
+		"title": "À rendre cette semaine",
+		"none": "Aucun prêt à rendre d'ici le {{day}}.",
+		"more": "et {{count:plural; one:un autre; other:{{count}} autres;}}",
+		"due": "à rendre le {{date}}"
+	},
+	"inventory": {
+		"title": "Récolement",
+		"continue": "Continuer"
+	},
+	"install": {
+		"title": "Ajouter à l'écran d'accueil",
+		"hint": "BiblioViva s'ouvre comme une application, en plein écran, depuis l'icône du téléphone.",
+		"install": "Installer",
+		"fromMenu": "Ouvrir le menu ⋮ de Firefox et choisir « Installer » ou « Ajouter à l'écran d'accueil ».",
+		"later": "Pas maintenant"
+	},
+	"upcoming": {
+		"title": "Prochaines dates",
+		"none": "Aucune date {{days:plural; one:dans le prochain jour; other:dans les {{days}} prochains jours;}}.",
+		"more": "et {{count:plural; one:une autre; other:{{count}} autres;}}",
+		"open": "Ouvrir le calendrier"
+	}
+}

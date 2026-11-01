@@ -1,0 +1,8 @@
+<div class="face front" style="background-color:#f3f8f6">
+	<img src="{{#asset}}logo.png{{/asset}}" alt="" style="position:absolute;left:15mm;top:6mm;width:24mm;height:24mm;object-fit:contain" />
+	<div style="position:absolute;left:4mm;top:32mm;width:46mm;height:11mm;text-align:center;font-family:'DejaVu Serif', Georgia, serif;font-style:italic;font-size:3.6mm">{{library.name}}</div>
+	<div style="position:absolute;left:4mm;top:48mm;width:46mm;height:10mm;text-align:center;font-size:3.8mm;line-height:1.25"><span style="color:#777777">{{patron.first_name}}</span><br /><strong>{{patron.last_name}}</strong></div>
+	<div style="position:absolute;left:4mm;top:60mm;width:46mm;height:4.5mm;text-align:center;font-size:3.4mm">{{#patron.is_student}}{{patron.class_line}}{{/patron.is_student}}{{#patron.is_teacher}}{{words.teacher}}{{/patron.is_teacher}}</div>
+	<div class="bv-barcode" style="position:absolute;left:5mm;top:70mm;width:44mm;height:7.5mm">{{{barcode_svg}}}</div>
+	<div style="position:absolute;left:5mm;top:78mm;width:44mm;height:4mm;text-align:center;font-weight:700;font-size:3.2mm;letter-spacing:0.3mm">{{patron.card_number}}</div>
+</div>

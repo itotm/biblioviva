@@ -1,0 +1,60 @@
+{
+	"dashboard": "ダッシュボード",
+	"circulation": "貸出",
+	"catalog": "蔵書",
+	"patrons": "利用者",
+	"printing": "印刷",
+	"notes": "メモ",
+	"reports": "レポート",
+	"admin": "管理",
+	"more": "その他",
+	"logout": "ログアウト",
+	"help": "ヘルプ",
+	"about": "バージョン情報",
+	"areas": {
+		"circulation": {
+			"label": "貸出カウンター",
+			"checkout": "貸出",
+			"checkin": "返却",
+			"loans": "貸出中の資料",
+			"overdues": "延滞の督促状",
+			"wishlist": "購入希望リスト",
+			"calendar": "カレンダー"
+		},
+		"catalog": {
+			"label": "蔵書のページ",
+			"catalog": "蔵書",
+			"inventory": "蔵書点検",
+			"wishlist": "購入希望リスト",
+			"toClassify": "分類待ち"
+		},
+		"patrons": {
+			"label": "利用者のページ",
+			"patrons": "利用者",
+			"census": "写真登録"
+		},
+		"notes": {
+			"label": "メモのページ",
+			"open": "未処理",
+			"archived": "アーカイブ済み"
+		},
+		"config": {
+			"label": "設定のページ",
+			"overview": "セクション",
+			"history": "履歴"
+		},
+		"templates": {
+			"label": "印刷テンプレートのページ",
+			"edit": "テンプレート",
+			"previews": "プレビュー"
+		},
+		"imports": {
+			"label": "取り込み",
+			"catalog": "蔵書",
+			"students": "児童生徒",
+			"teachers": "教員",
+			"loans": "貸出中",
+			"photos": "利用者の写真"
+		}
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"title": "Rapports",
+	"categories": {
+		"loans": "Prêts",
+		"books": "Livres",
+		"patrons": "Lecteurs",
+		"ops": "Activité"
+	},
+	"restricted": "Réservé aux administrateurs",
+	"custom": "De l'école",
+	"chart": "Avec graphique",
+	"problemsTitle": "Fichiers de rapport non chargés",
+	"problemsHint": "Ces fichiers du dossier des rapports contiennent une erreur et ne figurent pas dans la liste :",
+	"params": "Paramètres",
+	"run": "Actualiser",
+	"all": "Tous",
+	"from": "du",
+	"to": "au",
+	"patronTypes": {
+		"student": "Élèves",
+		"teacher": "Enseignants"
+	},
+	"rows": "{{count}} {{count:plural; one:ligne; other:lignes;}}",
+	"ms": "en {{ms}} ms",
+	"truncated": "{{count:plural; one:Seule la première ligne est affichée. Pour la voir, restreindre les paramètres.; other:Seules les {{count}} premières lignes sont affichées. Pour toutes les voir, restreindre les paramètres.;}}",
+	"empty": "Aucun résultat avec ces paramètres.",
+	"print": "Imprimer",
+	"printedOn": "Imprimé le {{date}}",
+	"errors": {
+		"required": "Il manque « {{label}} ».",
+		"invalid": "La valeur de « {{label}} » n'est pas valide."
+	},
+	"back": "Tous les rapports",
+	"noParams": "Ce rapport n'a pas de paramètres.",
+	"special": {
+		"teachers": "Enseignants",
+		"total": "Total"
+	}
+}

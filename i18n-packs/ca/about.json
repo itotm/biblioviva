@@ -1,0 +1,19 @@
+{
+	"title": "Informació",
+	"app": {
+		"version": "Versió",
+		"license": "Llicència",
+		"repository": "Codi font"
+	},
+	"deps": {
+		"title": "Biblioteques utilitzades",
+		"runtime": "En execució ({{count}})",
+		"development": "Només per al desenvolupament ({{count}})",
+		"system": "Components del sistema",
+		"columns": {
+			"name": "Nom",
+			"version": "Versió",
+			"license": "Llicència"
+		}
+	}
+}

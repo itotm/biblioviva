@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "Kaydet",
+		"cancel": "İptal",
+		"close": "Kapat",
+		"confirm": "Onayla",
+		"delete": "Sil",
+		"edit": "Düzenle",
+		"search": "Ara",
+		"export": "Dışa aktar",
+		"back": "Geri",
+		"retry": "Yeniden dene",
+		"backTo": "Geri dön: {{page}}",
+		"more": "Diğer işlemler"
+	},
+	"similar": {
+		"label": "Benzer",
+		"count": "ayrıca {{count:plural; one:{{count}} benzer kayıt; other:{{count}} benzer kayıt;}}, yazım hatası düzeltilerek bulundu",
+		"hint": "Yazım hatası düzeltilerek bulundu: aranan kayıt bu mu, kontrol edin."
+	},
+	"status": {
+		"loading": "Yükleniyor…",
+		"error": "Bir hata oluştu"
+	},
+	"statuses": {
+		"item": {
+			"available": "Mevcut",
+			"onLoan": "Ödünçte",
+			"lost": "Kayıp",
+			"damaged": "Hasarlı",
+			"inRepair": "Onarımda",
+			"withdrawn": "Çıkarılmış",
+			"notForLoan": "Yalnızca kütüphanede"
+		},
+		"loan": {
+			"open": "Açık",
+			"dueSoon": "Süresi yaklaşıyor",
+			"overdue": "Gecikmiş",
+			"returned": "İade edildi"
+		},
+		"patron": {
+			"active": "Aktif",
+			"anonymized": "Kaldırıldı"
+		},
+		"print": {
+			"pending": "Yazdırılacak",
+			"printed": "Yazdırıldı"
+		}
+	},
+	"list": {
+		"selected": "{{count}} {{count:plural; one:seçili; other:seçili;}}"
+	},
+	"scan": {
+		"label": "Barkod",
+		"placeholder": "Okutun ya da kodu yazın",
+		"submit": "Kodu ara",
+		"camera": "Kamera",
+		"cameraTitle": "Kamerayla okutun",
+		"errors": {
+			"empty": "Kod girilmedi.",
+			"item_check_digit": "Nüshanın barkodunda kontrol karakteri yanlış: yeniden okutun.",
+			"card_check_digit": "Kart numarasında kontrol karakteri yanlış: yeniden okutun.",
+			"isbn_check_digit": "ISBN'de kontrol rakamı yanlış: rakamları kontrol edin.",
+			"unrecognised": "Kod tanınmadı: okuyucunun Code 39 ve Code 128 kodlarını okuyabildiğini kontrol edin."
+		},
+		"invalidRead": "Geçersiz kod ({{code}}): okunuyor.",
+		"invalidShort": "Geçersiz kod, yeniden okunuyor…",
+		"useAnyway": "Yine de kullan: {{code}}"
+	},
+	"camera": {
+		"start": "Kamerayı başlat",
+		"stop": "Kamerayı durdur",
+		"switch": "Kamerayı değiştir",
+		"torch": "Fener",
+		"snapshot": "Fotoğraf çek",
+		"device": "Kamera",
+		"starting": "Kamera başlatılıyor…",
+		"errors": {
+			"insecure": "Kamera yalnızca güvenli bağlantıda (https) çalışır; yerel ağdan, Tailscale olmadan açıldığında uygulama onu kullanamaz. Barkod okuyucuyu kullanın ya da bir dosya yükleyin, ya da uygulamayı Tailscale adresinden açın.",
+			"denied": "İzin verilmedi: tarayıcı ayarlarında kameraya izin verin ve yeniden deneyin.",
+			"notFound": "Bu cihazda kamera bulunamadı.",
+			"busy": "Kamera başka bir uygulama tarafından zaten kullanılıyor.",
+			"generic": "Kamera başlatılamadı ({{message}}).",
+			"timeout": "Kamera yanıt vermedi. Tarayıcının hâlâ izin istemediğini ya da bu site için daha önce izin verilmediğini kontrol edin (adres çubuğunun yanındaki simge)."
+		},
+		"permissionHint": "Tarayıcı kameraya erişim izni isterse (genellikle adres çubuğunun yanında), “İzin ver” seçeneğini seçin."
+	},
+	"clipboard": {
+		"failed": "Kopyalanamadı: metni seçip elle kopyalayın."
+	},
+	"form": {
+		"errorsTitle": "İşaretli alanları kontrol edin",
+		"field": "Alan {{field}}"
+	},
+	"confirm": {
+		"title": "Onaylansın mı?"
+	},
+	"export": {
+		"csv": "CSV (elektronik tablo, metin)",
+		"ods": "ODS (LibreOffice / Excel)"
+	},
+	"demo": {
+		"panel": "Bu kurulum {{when}} tarihinde yüklenen örnek veriler içerir: {{patrons}} {{patrons:plural; one:üye; other:üye;}}, {{biblios}} {{biblios:plural; one:kitap; other:kitap;}}, {{items}} {{items:plural; one:nüsha; other:nüsha;}}, {{loans}} {{loans:plural; one:ödünç; other:ödünç;}}. Hepsi uydurmadır: gerçek bir kişi yoktur."
+	},
+	"import": {
+		"header": "İlk satır başlıktır",
+		"column": "Sütun {{n}}",
+		"ignore": "— yoksay —",
+		"counts": {
+			"new": "{{count}} {{count:plural; one:yeni; other:yeni;}}",
+			"update": "{{count}} güncellenecek",
+			"unchanged": "{{count}} {{count:plural; one:değişmemiş; other:değişmemiş;}}",
+			"error": "{{count}} {{count:plural; one:hata; other:hata;}}"
+		},
+		"onlyErrors": "Yalnızca hataları göster",
+		"info": "{{rows}} {{rows:plural; one:satır; other:satır;}} · kodlama {{encoding}} · ayırıcı “{{delimiter}}”",
+		"steps": {
+			"upload": "Dosya",
+			"mapping": "Sütunlar",
+			"preview": "Kontrol",
+			"done": "Tamamlandı"
+		},
+		"line": "Satır",
+		"status": "Sonuç",
+		"reason": "Ayrıntılar",
+		"statuses": {
+			"new": "Yeni",
+			"update": "Güncelle",
+			"unchanged": "Değişmemiş",
+			"error": "Hata"
+		},
+		"errors": {
+			"empty": "Dosya boş.",
+			"tooLarge": "Dosya {{mb}} MB'den büyük.",
+			"noRows": "Dosyada satır bulunamadı.",
+			"uploadGone": "Yüklenen dosya artık kullanılamıyor: dosyayı yeniden yükleyin.",
+			"notReady": "Dosyada hâlâ hatalar var: yeniden kontrol edin.",
+			"mappingIncomplete": "Zorunlu sütunlar eksik: {{columns}}."
+		},
+		"template": {
+			"title": "Dosyanın şablonu",
+			"hint": "Sütunları seçin: şablon yalnızca başlığı içerir ve bir satır olarak doldurulur (elektronik tablo CSV olarak kaydedilerek de olur).",
+			"required": "Zorunlu",
+			"keys": "Anahtarlar",
+			"keysHint": "Kayıtlarda zaten bulunanları tanımaya yarar; bunlar dışarıda bırakılabilir.",
+			"optional": "İsteğe bağlı",
+			"download": "Şablonu indir",
+			"ifMissing": "Eksikse: {{text}}."
+		},
+		"groups": {
+			"required": "zorunlu",
+			"key": "anahtar"
+		}
+	},
+	"words": {
+		"yes": "Evet",
+		"no": "Hayır"
+	},
+	"password": {
+		"show": "Parolayı göster",
+		"hide": "Parolayı gizle"
+	},
+	"demoPublic": {
+		"language": "Dil",
+		"welcome": {
+			"title": "BiblioViva demosuna hoş geldiniz",
+			"beta": "Herkese açık beta",
+			"betaText": "BiblioViva herkese açık betadadır: işlevler kararlıdır, ancak 1.0 sürümüne kadar bir güncellemenin önceki sürümün verileri ve ayarlarıyla uyumlu kalacağı garanti edilmez.",
+			"intro": "BiblioViva, bir okul kütüphanesini yönetmek için kullanılan programdır: ödünç ve iade işlemleri, katalog, fotoğraflı ve kartlı üyeler, etiketler, yazdırma ve raporlar. Bu herkese açık bir demodur: her işlev denenebilir.",
+			"contents": "Burada uydurma bir ilkokul bulunur: {{patrons}} {{patrons:plural; one:öğrenci veya öğretmen; other:öğrenci ve öğretmen;}}, {{biblios}} {{biblios:plural; one:kitap; other:kitap;}} ve {{items}} {{items:plural; one:nüsha; other:nüsha;}}, devam eden {{openLoans}} {{openLoans:plural; one:ödünç; other:ödünç;}} var; bunlardan {{overdueLoans}} tanesi gecikmiş. Adlar ve fotoğraflar uydurmadır: gerçek bir kişi yoktur.",
+			"reset": "Demo her gün {{time}} saatinde başlangıç haline döner. Yapılandırma değişiklikleri denenebilir ama kaydedilmez.",
+			"examples": "Demoda metin ve fotoğraflar bir örnekle değiştirilir: her işlem sonuna kadar denenebilir, ancak yazılan ya da fotoğraflanan şey saklanmaz ve başka hiçbir ziyaretçi görmez. İçe aktarmalar yalnızca örnek dosyaları kabul eder; bunlar her içe aktarma sayfasından indirilebilir.",
+			"accountsTitle": "Hangi hesapla girilir",
+			"accountsHint": "Kütüphanedeki gibi, her hesap yalnızca kendi rolünün işini görür. Kullanıcı adı ve parola yukarıdaki forma yazılır.",
+			"password": "Parola tüm hesaplar için aynıdır:"
+		},
+		"accounts": {
+			"admin": {
+				"name": "Yönetim",
+				"does": "her şeyi görür: diğer hesapların işine ek olarak yapılandırmayı, personel hesaplarını, yedekleri, sınıfları ve bir sonraki eğitim yılına geçişi."
+			},
+			"prestiti": {
+				"name": "Ödünç yönetimi",
+				"does": "ödünç masası: ödünç verir, iade alır ve yeniler, gecikmeleri takip eder ve hatırlatmaları yazdırır."
+			},
+			"catalogo": {
+				"name": "Kataloglama",
+				"does": "kitaplar ve nüshalar, SBN'den kayıt arama (burada simüle edilmiş), kapaklar, sınıflandırma ve etiketler."
+			},
+			"tessere": {
+				"name": "Kartlar ve fotoğraflar",
+				"does": "öğrenciler ve öğretmenler, fotoğraflar ve sınıfların fotoğraf çekimi, kart basımı."
+			},
+			"report": {
+				"name": "Raporlar",
+				"does": "ödünç, katalog ve üyelerle ilgili istatistikler, tabloların dışa aktarılması."
+			}
+		},
+		"blocked": {
+			"config": "Demoda yapılandırma kaydedilmez: her şey denenebilir, ancak değişiklikler yazılmaz.",
+			"restore": "Demoda yedeklerin geri yüklenmesi kapalıdır: demonun verileri her gece kendiliğinden yeniden oluşturulur.",
+			"configImport": "Demoda bir yapılandırmanın içe aktarılması kapalıdır: demonun yapılandırması tüm ziyaretçiler için aynıdır.",
+			"pictures": "Demoda sınıf fotoğrafları yüklenmez: fotoğraf çekiminde örnek sınıf fotoğrafını deneyin.",
+			"sqlReports": "Demoda SQL ile yazılmış raporlar kapalıdır; yönlendirmeli raporlar kullanılabilir.",
+			"importSize": "Demoda içe aktarılacak dosyalar en fazla 1 MB olabilir.",
+			"printSize": "Demoda bir seferde en fazla 3 sayfa yazdırılır: daha az nüsha ya da daha az üye seçin.",
+			"importExample": "Demoda yalnızca örnek dosya içe aktarılır: şablon düğmesiyle indirin ve olduğu gibi yükleyin.",
+			"notesLimit": "Demoda günde yalnızca birkaç not yazılabilir.",
+			"demoData": "Demoda örnek veriler gece sıfırlanana kadar kalır.",
+			"backups": "Demoda elle yedekleme kapalıdır: demonun verileri her gece kendiliğinden yeniden oluşturulur.",
+			"archives": "Demoda arşivler ve yedekler indirilmez: demonun verileri ve yapılandırması her gece yeniden oluşturulur.",
+			"languagePacks": "Demoda dil paketleri indirilmez: demoda İtalyanca ve İngilizce bulunur."
+		},
+		"example": {
+			"note": "DEMO – {{when}} tarihli not",
+			"comment": "{{when}} tarihli demo not",
+			"book": "{{when}} tarihli demo kitap",
+			"wish": "{{when}} tarihli demo istek",
+			"class": "{{when}} tarihli demo sınıf",
+			"printList": "{{when}} tarihli demo liste",
+			"inventory": "{{when}} tarihli demo sayım",
+			"reason": "{{when}} tarihli demo neden",
+			"date": "{{when}} tarihli demo tarih"
+		},
+		"replaced": "Demoda metin ve fotoğraflar bir örnekle değiştirilir: kaydetme gerçekleşti, ancak örnek kalır.",
+		"tooMany": "Kısa sürede çok fazla istek: bir dakika sonra yeniden deneyin.",
+		"refused": {
+			"title": "Demoda kullanılamaz",
+			"busyTitle": "Çok fazla istek",
+			"back": "BiblioViva'ya dön"
+		}
+	}
+}

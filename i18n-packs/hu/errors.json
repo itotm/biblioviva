@@ -1,0 +1,7 @@
+{
+	"notFound": "Az oldal nem található",
+	"forbidden": "Ez az oldal nem érhető el a használt fiókkal",
+	"unauthorized": "A folytatáshoz kérjük, jelentkezzen be",
+	"generic": "Hiba történt ({{status}})",
+	"backHome": "Vissza a kezdőlapra"
+}

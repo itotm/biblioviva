@@ -1,0 +1,60 @@
+{
+	"dashboard": "Tableau de bord",
+	"circulation": "Prêts",
+	"catalog": "Catalogue",
+	"patrons": "Lecteurs",
+	"printing": "Impression",
+	"notes": "Notes",
+	"reports": "Rapports",
+	"admin": "Administration",
+	"more": "Plus",
+	"logout": "Se déconnecter",
+	"help": "Aide",
+	"about": "À propos",
+	"areas": {
+		"circulation": {
+			"label": "Banque de prêt",
+			"checkout": "Prêts",
+			"checkin": "Retours",
+			"loans": "Livres en prêt",
+			"overdues": "Relances",
+			"wishlist": "Suggestions d'achat",
+			"calendar": "Calendrier"
+		},
+		"catalog": {
+			"label": "Pages du catalogue",
+			"catalog": "Catalogue",
+			"inventory": "Récolement",
+			"wishlist": "Suggestions d'achat",
+			"toClassify": "À classifier"
+		},
+		"patrons": {
+			"label": "Pages des lecteurs",
+			"patrons": "Lecteurs",
+			"census": "Recensement photo"
+		},
+		"notes": {
+			"label": "Pages des notes",
+			"open": "Ouvertes",
+			"archived": "Archivées"
+		},
+		"config": {
+			"label": "Pages de la configuration",
+			"overview": "Sections",
+			"history": "Historique"
+		},
+		"templates": {
+			"label": "Pages des modèles d'impression",
+			"edit": "Modèles",
+			"previews": "Aperçus"
+		},
+		"imports": {
+			"label": "Importations",
+			"catalog": "Catalogue",
+			"students": "Élèves",
+			"teachers": "Enseignants",
+			"loans": "Prêts en cours",
+			"photos": "Photos des lecteurs"
+		}
+	}
+}

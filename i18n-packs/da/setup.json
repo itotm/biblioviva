@@ -1,0 +1,226 @@
+{
+	"title": "Første opsætning",
+	"intro": "Velkommen til BiblioViva. Om få trin er biblioteket klar: sprog, farver, skole, koder og adgangskoder til personalet.",
+	"stepOf": "Trin {{step}} af {{total}}",
+	"next": "Næste",
+	"back": "Tilbage",
+	"finish": "Fuldfør opsætningen",
+	"steps": {
+		"language": "Sprog",
+		"theme": "Farver",
+		"library": "Bibliotek",
+		"school": "Skole",
+		"codes": "Stregkoder",
+		"passwords": "Adgangskoder",
+		"demo": "Eksempeldata",
+		"summary": "Oversigt"
+	},
+	"language": {
+		"title": "Hvilket sprog skal BiblioViva tale?",
+		"hint": "Ét sprog pr. installation: det gælder for alt personale og kan ændres under Administration → Konfiguration → Udseende og sprog.",
+		"restore": {
+			"title": "Har du allerede en sikkerhedskopi af BiblioViva?",
+			"hint": "For at flytte BiblioViva til en anden computer, eller for at begynde forfra efter et nedbrud, skal der ikke svares på spørgsmål: et arkiv oprettet med »Eksportér alt« er nok.",
+			"button": "Gendan fra en sikkerhedskopi"
+		}
+	},
+	"theme": {
+		"title": "Vælg farverne",
+		"hint": "Femten farvesæt: de ændrer kun farverne, aldrig formen. Alle er lyse og læsbare, også i sort-hvid.",
+		"names": {
+			"ocean": "Ocean",
+			"forest": "Skov",
+			"grape": "Drue",
+			"sunset": "Solnedgang",
+			"cherry": "Kirsebær",
+			"lagoon": "Lagune",
+			"silver": "Sølv",
+			"graphite": "Grafit",
+			"apricot": "Abrikos",
+			"indigo": "Indigo",
+			"mint": "Mynte",
+			"rose": "Rose",
+			"sahara": "Sahara",
+			"wintry": "Vinter",
+			"olive": "Oliven"
+		}
+	},
+	"library": {
+		"title": "Biblioteket",
+		"name": "Bibliotekets navn",
+		"namePlaceholder": "Rodari skolebibliotek",
+		"schoolType": "Skoletype",
+		"schoolTypeHint": "Årgangene og klasserne, som skolen bruger dem. De kan ændres senere under Administration → Konfiguration → Skole og Administration → Konfiguration → Klasser.",
+		"photos": "Lånerfotos",
+		"photosHint": "Fotos af elever og lærere, taget eller uploadet, og trykt på kortene. Slukket: ingen fotos nogen steder og kort uden foto.",
+		"covers": "Bogomslag",
+		"coversHint": "Omslag hentet på nettet, fotograferet eller uploadet, og vist i kataloget. Slukket: intet omslag."
+	},
+	"school": {
+		"title": "Skolen",
+		"hint": "Skoletypen foreslår årgangene, klasserne og læseniveauerne. Klasserne oprettes med det samme; med eksempeldata fyldes de op med opdigtede elever.",
+		"otherCountries": "Andre lande",
+		"names": {
+			"perLevel": "{{stage}}: navne på klasserne, én for hvert år",
+			"mixed": "{{stage}}: navne på sektionerne, hver med alle årgange"
+		},
+		"namesHint": "Adskilt med kommaer; A-D betyder A, B, C, D. Tomt: ingen klasser.",
+		"namesInvalid": "Ugyldige navne: skriv dem adskilt med kommaer (højst 40).",
+		"classes": "{{count}} {{count:plural; one:klasse; other:klasser;}} der skal oprettes:",
+		"more": "og {{count}} mere",
+		"classLabel": "Sådan skrives klassen",
+		"teacherGroup": "Lærergruppe",
+		"teacherGroupHint": "Alle lærere kommer i denne gruppe; flere grupper kan tilføjes senere.",
+		"schoolYearStart": "Skoleårets start",
+		"schoolYearStartHint": "Måned og dag som MM-DD (for eksempel 09-01).",
+		"schoolYearStartInvalid": "Skriv måned og dag i formen MM-DD.",
+		"schoolYearLabel": "Navn på skoleåret",
+		"schoolYearLabels": {
+			"span": "To år (2026/2027)",
+			"start": "Startåret (2026)"
+		},
+		"readingLevels": "Skønlitteratur placeret efter læseniveau",
+		"readingLevelsHint": "Årgange, klasser og læseniveauer kan ændres senere under Administration."
+	},
+	"codes": {
+		"title": "Stregkoderne",
+		"hint": "Stregkodeformatet for nye eksemplarer og for nye kort, valgt hver for sig. De to former kan aldrig forveksles: den, der læser en kode, ser straks, om det er en bog eller et kort.",
+		"itemFormat": "Format for eksemplarer",
+		"itemFormats": {
+			"standard": "År, kontrol og nummer (anbefalet)",
+			"classic": "År og nummer, kontrol til sidst",
+			"prefix": "Med bogstavet L foran"
+		},
+		"cardFormat": "Format for kortene",
+		"cardFormats": {
+			"standard": "Kontrol og et 6-cifret nummer (anbefalet)",
+			"classic": "10-cifret nummer, kontrol til sidst",
+			"prefix": "Med bogstavet T foran"
+		},
+		"check": "Kontroltegn",
+		"checks": {
+			"mod23": "Et bogstav (mod 23)",
+			"luhn": "Et ciffer (Luhn)",
+			"damm": "Et ciffer (Damm)"
+		},
+		"layout": "Stregkodelæserens tastatur",
+		"layoutHint": "Tastaturets sprog på den computer, som stregkodelæserne er tilsluttet: det retter byttede tegn. Hvis dit ikke står på listen, vælg det nærmeste: det kan ændres senere under Konfiguration → Stregkoder.",
+		"layouts": {
+			"it": "italiensk",
+			"es": "spansk",
+			"de": "tysk",
+			"fr": "fransk",
+			"uk": "engelsk (Storbritannien)",
+			"us": "engelsk (USA)"
+		},
+		"copy": "Eksemplar af en bog",
+		"card": "Lånerkort",
+		"verdict": "Eksemplarer og kort kan aldrig forveksles.",
+		"refused": "Med dette valg kan eksemplarer og kort forveksles: vælg et andet format.",
+		"later": "Formater, koder fra ældre systemer og nummerering kan ændres senere under Konfiguration → Stregkoder."
+	},
+	"passwords": {
+		"title": "Adgangskoder til personalet",
+		"hint": "Fem delte konti, én for hver rolle. De foreslåede adgangskoder er tilfældige og kan erstattes. Skriv dem ned på det sidste trin: de vises kun én gang.",
+		"accounts": {
+			"admin": "Administration (admin)",
+			"prestiti": "Udlånsstyring (prestiti)",
+			"catalogo": "Katalogisering (catalogo)",
+			"tessere": "Kort og foto (tessere)",
+			"report": "Rapporter (report)"
+		},
+		"regenerate": "Generér igen",
+		"tooShort": "Mindst 8 tegn.",
+		"demo": "Med eksempeldata bruger alle konti den samme nemme adgangskode: »{{password}}«. Før BiblioViva tages i brug for alvor, skal de ændres under Administration → Personalekonti."
+	},
+	"demo": {
+		"title": "Eksempeldata",
+		"hint": "Opdigtede elever, bøger og udlån til at prøve programmet. De fjernes med ét klik under Administration, når de rigtige data indlæses.",
+		"load": "Indlæs eksempeldata",
+		"hasData": "Databasen indeholder allerede data: eksempeldata indlæses ikke."
+	},
+	"summary": {
+		"title": "Oversigt",
+		"hint": "Kontrollér og bekræft. Adgangskoderne vises kun på denne side: kopiér dem, før der fortsættes.",
+		"language": "Sprog",
+		"theme": "Farver",
+		"library": "Bibliotek",
+		"photos": "Lånerfotos",
+		"covers": "Bogomslag",
+		"school": "Skole",
+		"classes": "Klasser",
+		"classesValue": "{{count}} {{count:plural; one:klasse; other:klasser;}} ({{first}}…) og gruppen {{teachers}}",
+		"readingLevels": "Læseniveauer",
+		"none": "Ingen",
+		"codes": "Stregkoder",
+		"demo": "Eksempeldata",
+		"yes": "Ja",
+		"no": "Nej",
+		"later": "Senere ændres adgangskoderne under Administration → Personalekonti.",
+		"working": "Gemmer…",
+		"error": "Opsætningen er ikke gemt: {{message}}"
+	},
+	"done": {
+		"title": "Opsætningen er gennemført",
+		"hint": "Gem adgangskoderne et sikkert sted: de vises ikke igen.",
+		"demoLoaded": "Eksempeldata indlæst: {{patrons}} {{patrons:plural; one:låner; other:lånere;}}, {{biblios}} {{biblios:plural; one:titel; other:titler;}}, {{items}} {{items:plural; one:eksemplar; other:eksemplarer;}}, {{loans}} {{loans:plural; one:udlån; other:udlån;}}.",
+		"login": "Gå til log ind"
+	},
+	"generic": {
+		"stage": "Skole",
+		"level": "Niveau {{level}}",
+		"groupWord": "Sektion",
+		"teacherGroup": "Lærere"
+	},
+	"restore": {
+		"title": "Gendan fra en sikkerhedskopi",
+		"hint": "Vælg arkivet oprettet med »Eksportér alt« (Administration → Sikkerhedskopi). Maksimal størrelse: {{maxMb}} MB. Arkivet kontrolleres, før noget gendannes.",
+		"choose": "Vælg arkivet",
+		"checking": "Kontrollerer arkivet…",
+		"from": "Arkiv for biblioteket »{{library}}«, oprettet den {{date}}, version {{version}}.",
+		"fromAnonymous": "Arkiv oprettet den {{date}}, version {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "Lånere",
+			"catalog": "Katalog og eksemplarer",
+			"loans": "Udlån og historik",
+			"printLists": "Udskriftslister",
+			"photos": "Lånerfotos",
+			"covers": "Omslag",
+			"notes": "Noter",
+			"dates": "Kalenderdatoer",
+			"audit": "Aktivitetslog",
+			"ui": "Grænseflade",
+			"security": "Sikkerhed og adgang",
+			"library": "Bibliotek og skole"
+		},
+		"images": "Fotos: {{photos}} · omslag: {{covers}}",
+		"accounts": "Konti, der kan logge ind: {{accounts}}. Adgangskoderne er dem fra arkivet.",
+		"warning": "Gendannelsen henter indstillinger, data og billeder tilbage, præcis som de var i arkivet, på én gang. Derefter er opsætningsguiden ikke længere nødvendig.",
+		"apply": "Gendan",
+		"restoring": "Gendanner…",
+		"cancel": "Annuller",
+		"back": "Tilbage til opsætningsguiden",
+		"done": {
+			"title": "Gendannelsen er gennemført",
+			"hint": "Biblioteket er, som det var i arkivet. Log ind med en af disse konti og den adgangskode, den havde i arkivet:",
+			"login": "Gå til log ind"
+		},
+		"errors": {
+			"too_large": "Arkivet er for stort (højst {{maxMb}} MB).",
+			"not_zip": "Filen er ikke et gyldigt ZIP-arkiv.",
+			"not_archive": "Filen er ikke et BiblioViva-arkiv: vælg et arkiv oprettet med »Eksportér alt«.",
+			"too_many_files": "Arkivet indeholder for mange filer.",
+			"unsafe_path": "Arkivet indeholder en sti, der ikke er tilladt: {{name}}",
+			"link": "Arkivet indeholder et link, der ikke er tilladt: {{name}}",
+			"unknown_file": "Arkivet indeholder en fil, der ikke hører til BiblioViva: {{name}}",
+			"not_setup": "Opsætningsguiden er allerede gennemført: gendannelse sker under Administration → Sikkerhedskopi.",
+			"newer_version": "Arkivet er oprettet af en nyere version af BiblioViva ({{name}}): installér den version først.",
+			"missing_parts": "Arkivet er ufuldstændigt: {{name}} mangler. Vælg et arkiv oprettet med »Eksportér alt«.",
+			"unfinished_setup": "Arkivet stammer fra en installation, hvor opsætningsguiden ikke var gennemført.",
+			"not_ready": "Arkivet har problemer og kan ikke gendannes: {{name}}",
+			"gone": "Det kontrollerede arkiv findes ikke længere: vælg det igen.",
+			"failed": "Gendannelsen lykkedes ikke."
+		}
+	}
+}

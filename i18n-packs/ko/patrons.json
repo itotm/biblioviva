@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "이용자",
+		"new": "새 이용자",
+		"search": "성으로 검색…",
+		"empty": "필터에 맞는 이용자가 없습니다.",
+		"filters": {
+			"type": "유형",
+			"stage": "학교급",
+			"level": "학년",
+			"status": "상태",
+			"all": "전체",
+			"allF": "전체"
+		},
+		"columns": {
+			"name": "성명",
+			"type": "유형",
+			"class": "학급",
+			"card": "이용증"
+		},
+		"clearFilters": "필터 지우기",
+		"countFiltered": "필터에 맞는 이용자 {{shown:plural; other:{{shown}}명;}}",
+		"printCards": "이용증 인쇄",
+		"printClassCards": "{{classLabel}} 이용증 인쇄",
+		"removeSelected": "선택 항목 삭제",
+		"removeTitle": "이용자 {{count}}{{count:plural; other:명;}}을 삭제하시겠습니까?",
+		"removeDescription": "각 이용자의 이름과 성, 연락처, 학생 번호, 메모, 이용증 번호와 사진은 즉시 그리고 영구히 삭제됩니다. 유형, 학급, 반과 대출 이력은 통계를 위해 남습니다. 진행 중인 대출이 있는 이용자는 보관됩니다.",
+		"removed": "삭제 {{removed}}{{removed:plural; other:명;}}, 진행 중인 대출이 있어 보관된 {{kept}}명",
+		"status": {
+			"title": "상태",
+			"loans": "대출 중 {{count}}건",
+			"overdue": "연체 {{count}}건",
+			"noPhoto": "사진 없음"
+		},
+		"startTitle": "이용자 찾기",
+		"startHint": "이름, 이용증 또는 필터로 검색하십시오."
+	},
+	"types": {
+		"student": "학생",
+		"teacher": "교사"
+	},
+	"fields": {
+		"patronType": "유형",
+		"firstName": "이름",
+		"lastName": "성",
+		"cardNumber": "이용증 번호",
+		"cardNumberHint": "비워 두면 자동으로 배정됩니다.",
+		"externalId": "학생 번호",
+		"email": "이메일",
+		"emailHint": "학교가 학생이나 교사에게 준 주소입니다. 안내 메시지가 이 주소로 갑니다.",
+		"circulationNote": "대출·반납 데스크 메모",
+		"circulationNoteHint": "대출을 할 때 눈에 띄게 표시됩니다.",
+		"notes": "내부 메모",
+		"status": "상태",
+		"openLoans": "진행 중인 대출",
+		"overdueLoans": "연체",
+		"noCard": "이용증 없음",
+		"none": "—",
+		"levelCode": "학급",
+		"groupId": "반",
+		"classLabel": "학급",
+		"teacherGroup": "교사 그룹"
+	},
+	"form": {
+		"createTitle": "새 이용자",
+		"editTitle": "이용자 수정",
+		"identity": "인적 사항",
+		"school": "학급",
+		"contacts": "연락처",
+		"notes": "메모",
+		"create": "이용자 만들기",
+		"save": "변경 사항 저장",
+		"classSelect": "선택…",
+		"defaultTeacherGroup": "교사 그룹"
+	},
+	"errors": {
+		"emailInvalid": "이메일 주소가 올바르지 않습니다.",
+		"cardNumberInvalid": "이용증 번호가 올바르지 않습니다. 숫자, 대문자 영문자와 하이픈만 쓰고, 올바른 검사 문자를 넣으십시오.",
+		"cardNumberTaken": "이 이용증 번호는 이미 다른 이용자에게 배정되었습니다.",
+		"cardNumberIsCopy": "이용증 번호가 소장본의 바코드와 같거나 비슷합니다. 다른 번호를 고르십시오.",
+		"externalIdTaken": "이 학생 번호는 이미 다른 이용자에게 배정되었습니다.",
+		"levelRequired": "학생에게는 학급(학년)이 필요합니다.",
+		"levelUnknown": "이 학급은 학교의 학년에 없습니다.",
+		"levelNotForTeachers": "교사에게는 학급이 없습니다.",
+		"groupRequired": "학생에게는 반이 필요합니다.",
+		"groupUnknown": "활성 학급 중에서 반을 찾을 수 없습니다. 학급은 관리 → 설정 → 학급에서 만듭니다.",
+		"levelNotInGroup": "이 반에는 이 학년이 없습니다. 학년에 맞는 반을 고르십시오."
+	},
+	"detail": {
+		"heading": "이용자 정보",
+		"tabs": {
+			"loans": "진행 중인 대출",
+			"history": "이력",
+			"cards": "이용증",
+			"notes": "메모"
+		},
+		"noLoans": "진행 중인 대출이 없습니다.",
+		"loanColumns": {
+			"due": "반납 예정"
+		},
+		"overdue": "연체",
+		"card": "이용증 {{number}}",
+		"noNotes": "메모가 없습니다.",
+		"edit": "수정",
+		"created": "만든 날짜: {{when}}",
+		"barcodeAlt": "이용증 {{number}}의 바코드",
+		"cardPrinted": "이용증 인쇄일: {{when}}.",
+		"cardNotPrinted": "이용증이 아직 인쇄되지 않았습니다.",
+		"reassignCard": "이용증 다시 배정",
+		"reassignTitle": "새 이용증을 배정하시겠습니까?",
+		"reassignDescription": "현재 번호는 영구히 폐기되며, 새 이용증은 인쇄해야 합니다.",
+		"cardReassigned": "새 이용증: {{number}}",
+		"printCard": "이용증 인쇄",
+		"markCardPrinted": "인쇄됨으로 표시",
+		"cardMarkedPrinted": "이용증을 인쇄됨으로 표시했습니다",
+		"historyColumns": {
+			"issuedAt": "대출일",
+			"dueDate": "반납 예정",
+			"returnedAt": "반납일",
+			"outcome": "결과",
+			"title": "제목",
+			"author": "저자",
+			"barcode": "소장본",
+			"renewals": "연장",
+			"schoolYear": "학년도"
+		},
+		"outcome": {
+			"open": "진행 중",
+			"overdue": "연체",
+			"returned": "반납됨",
+			"returnedLate": "연체 후 반납",
+			"lost": "분실"
+		},
+		"historyEmpty": "기록된 대출이 없습니다.",
+		"historyCount": "총 {{count}}{{count:plural; other:건;}}",
+		"notesEdit": "메모 수정",
+		"notesSaved": "메모를 저장했습니다",
+		"notesUnchanged": "변경 없음",
+		"notesHint": "대출·반납 데스크 메모는 대출을 할 때 눈에 띄게 표시되며, 다른 메모는 여기에 남습니다.",
+		"remove": "{{type}} 삭제",
+		"removeTitle": "이용자 영구 삭제: {{name}}",
+		"removeDescription": "즉시 그리고 영구히 삭제됩니다: 이름과 성, 이메일, 학생 번호, 메모, 이용증 번호(폐기됨)와 사진. 유형, 학급, 반과 대출 이력만 통계를 위해 남습니다. 이 작업은 되돌릴 수 없습니다.",
+		"removeOpenLoans": "진행 중인 대출 {{count}}{{count:plural; other:건이 있습니다. 먼저 반납하거나 분실로 표시해야 합니다;}}.",
+		"removeClassSheets": "이 이용자는 학급 이미지의 사진 {{count}}{{count:plural; other:장에 지정되어 있습니다 (이미지에서 사진 등록). 그 칸은 가려집니다;}}.",
+		"removed": "이용자를 삭제했습니다: 개인 정보를 지웠습니다.",
+		"removedInfo": "삭제일: {{when}}. 통계용 데이터만 남아 있습니다.",
+		"lostTitle": "분실 도서",
+		"lostHint": "이 이용자에게 대출된 동안 분실로 표시된 도서입니다. 돌아오면 반납 데스크에서 스캔하십시오.",
+		"markLost": "“{{title}}” 분실로 표시",
+		"markLostTitle": "분실로 표시하시겠습니까: “{{title}}”",
+		"markLostDescription": "대출이 종료되고 소장본은 분실로 나타납니다. 도서가 다시 나타나면 반납 데스크에서 스캔하십시오. 그러면 다시 이용할 수 있게 됩니다.",
+		"markLostReason": "사유 (선택 사항)",
+		"markLostConfirm": "분실로 표시",
+		"markedLost": "분실로 표시했습니다: “{{title}}”"
+	},
+	"photo": {
+		"title": "사진",
+		"take": "사진 찍기",
+		"upload": "파일 업로드",
+		"retake": "다시 찍기",
+		"use": "이 사진 사용",
+		"cancel": "취소",
+		"delete": "사진 삭제",
+		"deleteTitle": "사진을 삭제하시겠습니까?",
+		"deleteDescription": "사진이 서버에서 지워집니다. 새 사진을 찍을 수 있습니다.",
+		"zoom": "확대/축소",
+		"dragHint": "드래그해서 프레임을 맞추고, 확대/축소로 가까이 보십시오.",
+		"saved": "사진을 저장했습니다",
+		"deleted": "사진을 삭제했습니다",
+		"placeholder": "사진 없음",
+		"alt": "{{name}}의 사진",
+		"errors": {
+			"too_large": "파일이 너무 큽니다. 한도는 {{maxMb}} MB입니다.",
+			"not_an_image": "읽을 수 있는 이미지 파일이 아닙니다.",
+			"unsupported_format": "지원하지 않는 이미지 형식입니다 (JPEG, PNG, WebP 또는 HEIC를 사용하십시오).",
+			"empty": "선택한 파일이 없습니다."
+		},
+		"withForm": "이용자 정보와 함께 저장됩니다.",
+		"requiredHint": "사진이 필요합니다. 지금 찍거나 나중에 이용자 페이지에서 찍으십시오.",
+		"optionalHint": "사진은 지금 찍거나 나중에 이용자 페이지에서 찍을 수 있습니다.",
+		"remove": "제거",
+		"notSaved": "사진이 저장되지 않았습니다. 이용자 페이지에서 다시 찍으십시오.",
+		"retakePhoto": "사진 다시 찍기"
+	},
+	"census": {
+		"title": "사진 등록",
+		"noGroup": "학급 없음",
+		"stageOthers": "학교급 없음",
+		"progress": "{{total}}명 중 {{done}}명 사진 있음",
+		"allDone": "모든 이용자에게 사진이 있습니다.",
+		"back": "학급이나 목록 바꾸기",
+		"skip": "건너뛰기",
+		"done": "완료",
+		"saved": "사진 저장: {{name}}",
+		"quickAdd": "새 이용자",
+		"quickAddHint": "추가된 곳: {{group}}. 다음은 사진 차례입니다.",
+		"create": "추가 후 촬영",
+		"findPerson": "성으로 찾기",
+		"pickTarget": "목록이나 학급을 고르십시오",
+		"listsTitle": "이용자 목록",
+		"classesTitle": "학급",
+		"nothingMissing": "모든 학급과 목록에 사진이 있습니다.",
+		"onlyMissing": "사진이 하나라도 없는 학급과 목록만 표시됩니다.",
+		"byCamera": "한 번에 한 사람",
+		"sheets": {
+			"title": "사진이 여러 장 있는 이미지에서",
+			"hint": "사진이 여러 장 든 이미지(사진사의 사진판, 탁자 위의 이용증, 증명사진 한 장)입니다. 사진이 자동으로 찾아져 이용자마다 배정됩니다.",
+			"upload": "이미지 업로드",
+			"take": "사진판 촬영",
+			"uploading": "이미지를 보내는 중…",
+			"empty": "이 학급이나 목록에는 이미지가 없습니다.",
+			"item": "{{date}} 이미지",
+			"counts": "찾은 사진 {{frames}}{{frames:plural; other:장;}} · 저장 {{saved}}장 · 남은 작업 {{pending}}",
+			"notDetected": "아직 처리되지 않음",
+			"demoScan": "스캐너로 만든 예시",
+			"demoPhoto": "사진으로 찍은 예시",
+			"demoHint": "학급 사진을 얻는 두 가지 방법이 있습니다. 스캔은 평평해서 사진이 직사각형이며 기껏해야 조금 돌아가 있습니다. 사진은 비스듬히 찍혀서 원근감이 칸을 찌그러뜨립니다."
+		},
+		"sheet": {
+			"title": "이미지의 사진",
+			"back": "학급으로 돌아가기",
+			"detecting": "이미지에서 사진을 찾는 중…",
+			"found": "찾은 사진: {{count}}장. 각 사진의 이용자를 고르십시오.",
+			"none": "사진을 찾지 못했습니다. “칸 바로잡기”로 손으로 그릴 수 있습니다.",
+			"pictureAlt": "업로드한 이미지이며, 사진 칸에 번호가 붙어 있습니다",
+			"frame": "사진 {{n}}",
+			"choose": "누구입니까?",
+			"nobody": "— 없음 —",
+			"takenBy": "{{name}} (이미 사진 {{n}}에 있음)",
+			"hasPhoto": "이미 사진이 있음",
+			"noPhoto": "사진 없음",
+			"ignore": "무시",
+			"unignore": "복원",
+			"ignored": "무시함: 이 학급이나 목록의 사람이 아닙니다.",
+			"saved": "{{name}}의 사진으로 저장했습니다",
+			"edit": "칸 바로잡기",
+			"editDone": "바로잡기 완료",
+			"editHint": "칸을 누르고 모서리를 끌어 조정하십시오. 사진이 없으면 “칸 추가”를 쓰십시오.",
+			"editHintScan": "칸을 누르고, 모서리를 끌어 크기를 바꾸고, 위의 원을 끌어 돌리십시오. 사진이 없으면 “칸 추가”를 쓰십시오.",
+			"addFrame": "칸 추가",
+			"addFrameHint": "빠진 사진의 한쪽 모서리에서 반대쪽 모서리까지 이미지 위에서 드래그하십시오.",
+			"deleteFrame": "칸 {{n}} 삭제",
+			"rotateFrame": "칸 돌리기",
+			"kind": "이미지 종류",
+			"kindPhoto": "사진",
+			"kindScan": "스캔",
+			"kindPhotoHint": "비스듬히 찍은 사진입니다. 원근을 따라가도록 칸의 모서리가 각각 따로 움직입니다.",
+			"kindScanHint": "스캐너로 만든 이미지입니다. 칸은 직사각형으로 남고 돌리기만 할 수 있습니다.",
+			"kindAgain": "이용자를 고르기 전이라면, 종류를 바꿀 때 사진을 다시 찾습니다.",
+			"save": "사진 저장",
+			"saveTitle": "고른 사진을 저장하시겠습니까?",
+			"saveSummary": "저장할 사진: {{count}}장.",
+			"saveReplaces": "다음 이용자의 기존 사진을 대체합니다: {{names}}.",
+			"saveUnassigned": "아무도 고르지 않은 칸: {{count}}칸 (그대로 둡니다).",
+			"savedToast": "사진 {{count}}장을 저장했습니다.",
+			"deleteSheet": "이미지 삭제",
+			"deleteSheetTitle": "이미지를 삭제하시겠습니까?",
+			"deleteSheetDescription": "이미지와 칸이 삭제됩니다. 이미 저장된 사진은 이용자에게 그대로 남습니다.",
+			"deletedToast": "이미지를 삭제했습니다.",
+			"progress": "{{label}}: {{total}}명 중 {{done}}명 사진 있음",
+			"missingTitle": "아직 사진이 없음",
+			"byCamera": "한 명씩 촬영하기",
+			"errors": {
+				"not_found": "이미지를 찾을 수 없습니다.",
+				"set_not_found": "학급이나 목록이 더 이상 없습니다.",
+				"empty": "파일이 비어 있습니다.",
+				"too_large": "이미지가 너무 큽니다 (최대 {{maxMb}} MB).",
+				"not_an_image": "읽을 수 있는 이미지 파일이 아닙니다.",
+				"unsupported_format": "지원하지 않는 형식입니다. JPEG, PNG, WebP 또는 HEIC를 사용하십시오.",
+				"too_many_frames": "이미지 한 장에는 최대 {{maxFrames}}{{maxFrames:plural; other:장;}}까지 가능합니다.",
+				"bad_corners": "칸이 올바르지 않습니다. 모서리가 이미지 안에서 사각형을 이루어야 합니다.",
+				"already_detected": "이 이미지의 사진은 이미 찾았습니다.",
+				"frame_saved": "이 사진은 이미 저장되었습니다.",
+				"frame_erased": "이 사진은 삭제된 이용자의 것입니다. 칸을 가렸습니다.",
+				"not_a_member": "학급이나 목록의 이용자만 고를 수 있습니다.",
+				"patron_taken": "이미 사진 {{position}} 번으로 골랐습니다. 여기서 고르려면 먼저 그 선택을 해제하십시오.",
+				"confirm_replace": "{{count:plural; other:사진 {{count}}장이 기존 사진을 대체합니다;}}. 계속하려면 확인하십시오.",
+				"nothing_to_save": "저장하기 전에 이용자를 하나 이상 고르십시오."
+			},
+			"erased": "이용자를 삭제했습니다. 이미지에서 칸을 가렸습니다."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "CSV 파일",
+			"submit": "업로드",
+			"hints": {
+				"students": "학생마다 한 줄씩, ; 또는 , 로 구분된 CSV 파일입니다 (스프레드시트에서 내보낸 파일도 됩니다). 필요한 열이 있는 양식의 머리글을 쓰십시오. 양식은 아래에서 내려받습니다.",
+				"teachers": "교사마다 한 줄씩, ; 또는 , 로 구분된 CSV 파일입니다. 필요한 열이 있는 양식의 머리글을 쓰십시오. 양식은 아래에서 내려받습니다."
+			}
+		},
+		"mapping": {
+			"format": "인식된 형식",
+			"uncertain": "형식이 확실하지 않습니다. 계속하기 전에 열을 확인하십시오.",
+			"remembered": "이 파일을 지난번에 가져올 때의 열을 기억해 두었습니다.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "파일의 머리글",
+				"unknown": "알 수 없음"
+			},
+			"mode": "방식",
+			"modes": {
+				"upsert": "추가 및 갱신",
+				"upsertHint": "일치하는 행은 기존 이용자를 갱신하고, 나머지 행은 새 이용자를 만듭니다.",
+				"sync": {
+					"students": "학생 동기화",
+					"teachers": "교사 동기화"
+				},
+				"syncHint": {
+					"students": "파일은 학생 전체 목록입니다. 파일에 없는 학생은 목록으로 표시되며 (확인 후) 삭제됩니다. 교사는 건드리지 않습니다.",
+					"teachers": "파일은 교사 전체 목록입니다. 파일에 없는 교사는 목록으로 표시되며 (확인 후) 삭제됩니다. 학생은 건드리지 않습니다."
+				}
+			},
+			"duplicates": "이미 있는 이용자",
+			"policies": {
+				"update": "갱신",
+				"skip": "건너뛰기",
+				"create": "그래도 만들기"
+			},
+			"validate": "파일 확인",
+			"matchByName": {
+				"students": "external_id 열이 없으면 이미 기록에 있는 학생은 이름과 학급으로 알아봅니다.",
+				"teachers": "external_id 열이 없으면 이미 기록에 있는 교사는 이름으로 알아봅니다."
+			}
+		},
+		"preview": {
+			"ready": "오류가 없습니다. 파일을 가져올 수 있습니다.",
+			"blocked": "파일(또는 이용자 정보)의 오류를 고치고 다시 확인하십시오. 오류가 있으면 아무것도 가져오지 않습니다.",
+			"columns": {
+				"name": "이름",
+				"class": "학급"
+			},
+			"changed": "변경: {{fields}}",
+			"homonym": {
+				"pick": "이용자 고르기",
+				"create": "새 이용자 만들기",
+				"candidate": "{{name}} ({{group}})",
+				"title": "해결할 동명이인"
+			},
+			"missing": {
+				"students": {
+					"title": "기록에 있지만 파일에 없는 학생 ({{count}})",
+					"remove": "이 학생들을 기록에서 삭제 (즉시 익명화)",
+					"noPermission": "이용자를 삭제할 권한이 없으면 빠진 학생은 기록에 남습니다.",
+					"notRemoved": "진행 중인 대출이 있어 삭제하지 않은 빠진 학생 {{count}}{{count:plural; other:명;}}."
+				},
+				"teachers": {
+					"title": "기록에 있지만 파일에 없는 교사 ({{count}})",
+					"remove": "이 교사들을 기록에서 삭제 (즉시 익명화)",
+					"noPermission": "이용자를 삭제할 권한이 없으면 빠진 교사는 기록에 남습니다.",
+					"notRemoved": "진행 중인 대출이 있어 삭제하지 않은 빠진 교사 {{count}}{{count:plural; other:명;}}."
+				},
+				"hint": "동기화하면 파일에 없는 사람을 삭제할 수 있습니다. 개인 데이터는 즉시 그리고 영구히 삭제되며, 학급과 통계만 남습니다."
+			},
+			"commit": "가져오기",
+			"back": "열 설정으로 돌아가기",
+			"generatedCards": "새 이용증 {{count}}{{count:plural; other:장;}}이 만들어집니다. 파일에 번호가 없습니다."
+		},
+		"reasons": {
+			"tooLong": "{{column}} 열의 글이 너무 깁니다. 최대 {{max}}{{max:plural; other:자;}}까지입니다",
+			"nameRequired": "이름 또는 성이 없습니다",
+			"emailInvalid": "이메일이 올바르지 않습니다",
+			"cardNumberInvalid": "이용증 번호가 올바르지 않습니다",
+			"cardNumberTaken": "이 이용증 번호는 이미 다른 이용자에게 배정되었습니다",
+			"cardNumberIsCopy": "이용증 번호가 소장본의 바코드와 같거나 비슷합니다",
+			"externalIdTaken": "학생 번호가 이미 다른 이용자에게 배정되었습니다",
+			"duplicateInFile": "같은 사람이 이미 {{line}}행에 있습니다",
+			"homonym": "기록에 동명이인 {{count}}{{count:plural; other:명이 있습니다;}}: 갱신할 사람을 고르십시오",
+			"matchedTwice": "다른 행이 이미 같은 이용자를 갱신합니다",
+			"skipped": "이미 있음: 건너뜀",
+			"levelRequired": "학급이 없습니다",
+			"levelUnknown": "학교에 없는 학년: “{{value}}”",
+			"groupRequired": "반이 없습니다",
+			"groupUnknown": "이 학년에서 찾을 수 없는 반: “{{value}}”. 가능한 학급: {{classes}} (학급은 관리 → 설정 → 학급에서 만듭니다)",
+			"levelNotInGroup": "이 학년이 없는 반: “{{value}}”. 가능한 학급: {{classes}}",
+			"classUnknown": "찾을 수 없는 학급: “{{value}}”. 가능한 학급: {{classes}}",
+			"teacherGroupUnknown": "찾을 수 없는 교사 그룹: “{{value}}”. 가능한 그룹: {{classes}}"
+		},
+		"done": {
+			"title": "가져오기를 완료했습니다",
+			"summary": "추가 {{created}}{{created:plural; other:명;}}, 갱신 {{updated}}{{updated:plural; other:명;}}, 변경 없음 {{unchanged}}{{unchanged:plural; other:명;}}, 삭제 {{removed}}{{removed:plural; other:명;}}.",
+			"printNew": "새 이용자의 이용증 인쇄",
+			"census": "사진 등록",
+			"again": "다른 파일 가져오기",
+			"batch": "가져오기 번호 {{id}}: 원본 파일은 서버에 보관됩니다."
+		},
+		"fields": {
+			"firstName": "이름",
+			"lastName": "성",
+			"class": "학급 (학년과 반)",
+			"level": "학급 (학년)",
+			"section": "반",
+			"group": "교사 그룹",
+			"externalId": "학생 번호",
+			"cardNumber": "이용증",
+			"email": "이메일"
+		},
+		"titles": {
+			"students": "학생 가져오기",
+			"teachers": "교사 가져오기"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "이름입니다."
+			},
+			"lastName": {
+				"hint": "성입니다."
+			},
+			"class": {
+				"hint": "한 열에 있는 학급입니다 (예: 3A 또는 3 A). 관리 → 설정 → 학급에 있어야 합니다."
+			},
+			"level": {
+				"hint": "학년입니다 (1, 2, 3…). 반은 section 열에 씁니다."
+			},
+			"section": {
+				"hint": "반입니다 (A, B…). level과 함께 학급을 가리킵니다."
+			},
+			"cardNumber": {
+				"hint": "학생에게 이미 이용증이 있으면 그 번호입니다.",
+				"missing": "새 이용증이 만들어집니다"
+			},
+			"externalId": {
+				"hint": "학교 전자 학적부의 코드입니다.",
+				"missing": "이미 있는 이용자는 이름과 학급으로 알아봅니다"
+			},
+			"email": {
+				"hint": "선택 사항입니다."
+			},
+			"group": {
+				"hint": "교사 그룹입니다. 없으면 기본 그룹입니다."
+			}
+		},
+		"classForm": {
+			"label": "학급",
+			"class": "한 열에 (class: 3A)",
+			"levelSection": "두 열에 (level: 3, section: A)"
+		}
+	}
+}

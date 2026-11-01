@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Utilizadores",
+		"new": "Novo utilizador",
+		"search": "Pesquisar por apelido…",
+		"empty": "Nenhum utilizador corresponde aos filtros.",
+		"filters": {
+			"type": "Tipo",
+			"stage": "Nível de ensino",
+			"level": "Ano",
+			"status": "Estado",
+			"all": "Todos",
+			"allF": "Todas"
+		},
+		"columns": {
+			"name": "Apelido e nome",
+			"type": "Tipo",
+			"class": "Turma",
+			"card": "Cartão"
+		},
+		"clearFilters": "Limpar filtros",
+		"countFiltered": "{{shown:plural; one:{{shown}} utilizador corresponde; other:{{shown}} utilizadores correspondem;}} aos filtros",
+		"printCards": "Imprimir cartões",
+		"printClassCards": "Imprimir cartões {{classLabel}}",
+		"removeSelected": "Remover os selecionados",
+		"removeTitle": "Remover {{count}} {{count:plural; one:utilizador; other:utilizadores;}}?",
+		"removeDescription": "De cada um são eliminados de imediato e para sempre o nome e o apelido, os contactos, o número de aluno, as notas, o número do cartão e a fotografia; ficam o tipo, o ano, a turma e o histórico dos empréstimos para as estatísticas. Os que têm empréstimos em curso são mantidos.",
+		"removed": "Removidos: {{removed}}; com empréstimos em curso mantidos: {{kept}}",
+		"status": {
+			"title": "Estado",
+			"loans": "{{count}} em empréstimo",
+			"overdue": "{{count}} em atraso",
+			"noPhoto": "sem fotografia"
+		},
+		"startTitle": "Procurar um utilizador",
+		"startHint": "Pesquisar por nome, cartão ou com os filtros."
+	},
+	"types": {
+		"student": "Aluno",
+		"teacher": "Professor"
+	},
+	"fields": {
+		"patronType": "Tipo",
+		"firstName": "Nome",
+		"lastName": "Apelido",
+		"cardNumber": "Número do cartão",
+		"cardNumberHint": "Vazio: é atribuído automaticamente.",
+		"externalId": "Número de aluno",
+		"email": "Correio eletrónico",
+		"emailHint": "O endereço que a escola atribui ao aluno ou ao professor: receberá os avisos.",
+		"circulationNote": "Nota para o balcão de empréstimo",
+		"circulationNoteHint": "Aparece em destaque durante o empréstimo.",
+		"notes": "Notas internas",
+		"status": "Estado",
+		"openLoans": "Empréstimos em curso",
+		"overdueLoans": "Em atraso",
+		"noCard": "sem cartão",
+		"none": "—",
+		"levelCode": "Ano",
+		"groupId": "Turma",
+		"classLabel": "Turma",
+		"teacherGroup": "Grupo de professores"
+	},
+	"form": {
+		"createTitle": "Novo utilizador",
+		"editTitle": "Editar utilizador",
+		"identity": "Dados pessoais",
+		"school": "Ano e turma",
+		"contacts": "Contactos",
+		"notes": "Notas",
+		"create": "Criar utilizador",
+		"save": "Guardar alterações",
+		"classSelect": "Escolher…",
+		"defaultTeacherGroup": "O grupo de professores"
+	},
+	"errors": {
+		"emailInvalid": "Endereço de correio eletrónico inválido.",
+		"cardNumberInvalid": "Número de cartão inválido: apenas algarismos, letras maiúsculas e hífen, com o carácter de controlo correto.",
+		"cardNumberTaken": "Número de cartão já atribuído a outro utilizador.",
+		"cardNumberIsCopy": "O número do cartão é ou parece o código de barras de um exemplar: escolha outro número.",
+		"externalIdTaken": "Número de aluno já atribuído a outro utilizador.",
+		"levelRequired": "Para um aluno, o ano é obrigatório.",
+		"levelUnknown": "Ano não previsto pelos níveis da escola.",
+		"levelNotForTeachers": "Um professor não tem ano.",
+		"groupRequired": "Para um aluno, a turma é obrigatória.",
+		"groupUnknown": "Turma não encontrada entre as turmas ativas: as turmas criam-se em Administração → Configuração → Turmas.",
+		"levelNotInGroup": "Esta turma não tem este ano: escolha uma turma do ano."
+	},
+	"detail": {
+		"heading": "Ficha do utilizador",
+		"tabs": {
+			"loans": "Empréstimos em curso",
+			"history": "Histórico",
+			"cards": "Cartão",
+			"notes": "Notas"
+		},
+		"noLoans": "Nenhum empréstimo em curso.",
+		"loanColumns": {
+			"due": "Devolução"
+		},
+		"overdue": "em atraso",
+		"card": "Cartão {{number}}",
+		"noNotes": "Sem notas.",
+		"edit": "Editar",
+		"created": "Criado em {{when}}",
+		"barcodeAlt": "Código de barras do cartão {{number}}",
+		"cardPrinted": "Cartão impresso em {{when}}.",
+		"cardNotPrinted": "Cartão ainda não impresso.",
+		"reassignCard": "Atribuir novo cartão",
+		"reassignTitle": "Atribuir um novo cartão?",
+		"reassignDescription": "O número atual é retirado para sempre e o novo cartão terá de ser impresso.",
+		"cardReassigned": "Novo cartão: {{number}}",
+		"printCard": "Imprimir cartão",
+		"markCardPrinted": "Marcar como impresso",
+		"cardMarkedPrinted": "Cartão marcado como impresso",
+		"historyColumns": {
+			"issuedAt": "Emprestado em",
+			"dueDate": "Devolução prevista",
+			"returnedAt": "Devolvido em",
+			"outcome": "Resultado",
+			"title": "Título",
+			"author": "Autor",
+			"barcode": "Exemplar",
+			"renewals": "Renovações",
+			"schoolYear": "Ano letivo"
+		},
+		"outcome": {
+			"open": "Em curso",
+			"overdue": "Em atraso",
+			"returned": "Devolvido",
+			"returnedLate": "Devolvido com atraso",
+			"lost": "Perdido"
+		},
+		"historyEmpty": "Nenhum empréstimo registado.",
+		"historyCount": "{{count}} {{count:plural; one:empréstimo; other:empréstimos;}} no total",
+		"notesEdit": "Editar notas",
+		"notesSaved": "Notas guardadas",
+		"notesUnchanged": "Sem alterações",
+		"notesHint": "A nota para o balcão de empréstimo aparece em destaque ao fazer um empréstimo; as outras notas ficam aqui.",
+		"remove": "Remover {{type}}",
+		"removeTitle": "Remover {{name}} definitivamente?",
+		"removeDescription": "Eliminados de imediato e para sempre: nome e apelido, correio eletrónico, número de aluno, notas, número do cartão (retirado) e fotografia. Ficam apenas o tipo, o ano, a turma e o histórico dos empréstimos, para as estatísticas. Esta operação não pode ser anulada.",
+		"removeOpenLoans": "Tem {{count}} {{count:plural; one:empréstimo em curso: antes tem de ser devolvido ou marcado como perdido; other:empréstimos em curso: antes têm de ser devolvidos ou marcados como perdidos;}}.",
+		"removeClassSheets": "Foi escolhido para {{count}} {{count:plural; one:fotografia; other:fotografias;}} nas imagens da turma (recenseamento a partir de imagem): {{count:plural; one:essa moldura fica coberta; other:essas molduras ficam cobertas;}}.",
+		"removed": "Utilizador removido: dados pessoais eliminados.",
+		"removedInfo": "Removido em {{when}}. Ficam apenas os dados para as estatísticas.",
+		"lostTitle": "Livros perdidos",
+		"lostHint": "Marcados como perdidos enquanto estavam emprestados a este utilizador. Se voltarem, devem ser registados na devolução.",
+		"markLost": "Marcar «{{title}}» como perdido",
+		"markLostTitle": "Marcar «{{title}}» como perdido?",
+		"markLostDescription": "O empréstimo fecha-se e o exemplar aparece como perdido. Se o livro reaparecer, basta registar a devolução e volta a ficar disponível.",
+		"markLostReason": "Motivo (facultativo)",
+		"markLostConfirm": "Marcar como perdido",
+		"markedLost": "«{{title}}» marcado como perdido."
+	},
+	"photo": {
+		"title": "Fotografia",
+		"take": "Tirar fotografia",
+		"upload": "Carregar ficheiro",
+		"retake": "Refazer",
+		"use": "Usar esta fotografia",
+		"cancel": "Cancelar",
+		"delete": "Eliminar fotografia",
+		"deleteTitle": "Eliminar a fotografia?",
+		"deleteDescription": "A fotografia é retirada do servidor; pode tirar-se uma nova.",
+		"zoom": "Zoom",
+		"dragHint": "Arrastar para enquadrar; usar o zoom para aproximar.",
+		"saved": "Fotografia guardada",
+		"deleted": "Fotografia eliminada",
+		"placeholder": "Sem fotografia",
+		"alt": "Fotografia de {{name}}",
+		"errors": {
+			"too_large": "Ficheiro demasiado grande: o limite é de {{maxMb}} MB.",
+			"not_an_image": "O ficheiro não é uma imagem legível.",
+			"unsupported_format": "Formato de imagem não suportado (são aceites JPEG, PNG, WebP e HEIC).",
+			"empty": "Nenhum ficheiro selecionado."
+		},
+		"withForm": "É guardada com o utilizador.",
+		"requiredHint": "A fotografia é necessária: pode tirar-se agora ou mais tarde, na página do utilizador.",
+		"optionalHint": "A fotografia pode tirar-se agora ou mais tarde, na página do utilizador.",
+		"remove": "Retirar",
+		"notSaved": "A fotografia não foi guardada: tire-a de novo a partir da página do utilizador.",
+		"retakePhoto": "Refazer a fotografia"
+	},
+	"census": {
+		"title": "Recenseamento de fotografias",
+		"noGroup": "Sem turma",
+		"stageOthers": "Sem nível de ensino",
+		"progress": "{{done}} de {{total}} com fotografia",
+		"allDone": "Todos têm fotografia.",
+		"back": "Mudar de turma ou de lista",
+		"skip": "Saltar",
+		"done": "Concluído",
+		"saved": "Fotografia guardada: {{name}}",
+		"quickAdd": "Novo utilizador",
+		"quickAddHint": "Acrescentado a {{group}}; a sua fotografia é a seguinte.",
+		"create": "Acrescentar e fotografar",
+		"findPerson": "Procurar por apelido",
+		"pickTarget": "Escolher uma lista ou uma turma",
+		"listsTitle": "Listas de utilizadores",
+		"classesTitle": "Turmas",
+		"nothingMissing": "Todas as turmas e listas têm fotografias.",
+		"onlyMissing": "Aparecem apenas as turmas e as listas em que falta pelo menos uma fotografia.",
+		"byCamera": "Uma pessoa de cada vez",
+		"sheets": {
+			"title": "A partir de uma imagem com várias fotografias",
+			"hint": "Imagens com várias fotografias (a folha do fotógrafo, cartões sobre uma mesa, uma página de fotografias de identificação): as fotografias são encontradas automaticamente e atribuídas a cada utilizador.",
+			"upload": "Carregar imagem",
+			"take": "Fotografar a folha",
+			"uploading": "A enviar a imagem…",
+			"empty": "Nenhuma imagem para esta turma ou lista.",
+			"item": "Imagem de {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:fotografia encontrada; other:fotografias encontradas;}} · {{saved}} {{saved:plural; one:guardada; other:guardadas;}} · {{pending}} por fazer",
+			"notDetected": "Ainda não processada",
+			"demoScan": "Exemplo de digitalização",
+			"demoPhoto": "Exemplo de fotografia",
+			"demoHint": "Duas formas de obter as fotografias da turma: uma digitalização fica plana, e as fotografias são retângulos quando muito rodados; uma fotografia tirada de lado, e a perspetiva deforma as molduras."
+		},
+		"sheet": {
+			"title": "Fotografias a partir de uma imagem",
+			"back": "Voltar à turma",
+			"detecting": "A procurar as fotografias na imagem…",
+			"found": "Fotografias encontradas: {{count}}. Escolher a quem pertence cada uma.",
+			"none": "Nenhuma fotografia encontrada. Com «Corrigir molduras» podem desenhar-se à mão.",
+			"pictureAlt": "A imagem carregada, com as molduras das fotografias numeradas",
+			"frame": "Fotografia {{n}}",
+			"choose": "Quem é?",
+			"nobody": "— Ninguém —",
+			"takenBy": "{{name}} (já na fotografia {{n}})",
+			"hasPhoto": "já tem fotografia",
+			"noPhoto": "sem fotografia",
+			"ignore": "Ignorar",
+			"unignore": "Repor",
+			"ignored": "Ignorada: não é ninguém desta turma ou lista.",
+			"saved": "Guardada como fotografia de {{name}}",
+			"edit": "Corrigir molduras",
+			"editDone": "Concluir as correções",
+			"editHint": "Tocar numa moldura e arrastar os cantos; para uma fotografia em falta, usar «Acrescentar moldura».",
+			"editHintScan": "Tocar numa moldura: arrastar um canto para a aumentar ou diminuir, e o círculo no topo para a rodar; para uma fotografia em falta, usar «Acrescentar moldura».",
+			"addFrame": "Acrescentar moldura",
+			"addFrameHint": "Arrastar sobre a imagem, de um canto ao outro da fotografia em falta.",
+			"deleteFrame": "Eliminar moldura {{n}}",
+			"rotateFrame": "Rodar a moldura",
+			"kind": "Tipo de imagem",
+			"kindPhoto": "Fotografia",
+			"kindScan": "Digitalização",
+			"kindPhotoHint": "Tirada de lado: cada canto de uma moldura move-se por si, para seguir a perspetiva.",
+			"kindScanHint": "Feita com digitalizador: as molduras continuam retangulares e só podem ser rodadas.",
+			"kindAgain": "Enquanto não for escolhido nenhum utilizador, ao mudar o tipo as fotografias voltam a ser procuradas.",
+			"save": "Guardar as fotografias",
+			"saveTitle": "Guardar as fotografias escolhidas?",
+			"saveSummary": "Fotografias a guardar: {{count}}.",
+			"saveReplaces": "Substituem a fotografia que já existe de: {{names}}.",
+			"saveUnassigned": "Molduras sem ninguém escolhido: {{count}} (ficam como estão).",
+			"savedToast": "Fotografias guardadas: {{count}}.",
+			"deleteSheet": "Eliminar imagem",
+			"deleteSheetTitle": "Eliminar a imagem?",
+			"deleteSheetDescription": "A imagem e as suas molduras são eliminadas. As fotografias já guardadas continuam com os utilizadores.",
+			"deletedToast": "Imagem eliminada.",
+			"progress": "{{label}}: {{done}} de {{total}} com fotografia",
+			"missingTitle": "Ainda sem fotografia",
+			"byCamera": "Fotografar um a um",
+			"errors": {
+				"not_found": "Imagem não encontrada.",
+				"set_not_found": "A turma ou a lista já não existe.",
+				"empty": "O ficheiro está vazio.",
+				"too_large": "A imagem é demasiado grande (no máximo {{maxMb}} MB).",
+				"not_an_image": "O ficheiro não é uma imagem legível.",
+				"unsupported_format": "Formato não suportado: use JPEG, PNG, WebP ou HEIC.",
+				"too_many_frames": "No máximo {{maxFrames}} {{maxFrames:plural; one:fotografia; other:fotografias;}} por imagem.",
+				"bad_corners": "A moldura não é válida: os cantos têm de formar um quadrilátero dentro da imagem.",
+				"already_detected": "As fotografias desta imagem já foram procuradas.",
+				"frame_saved": "Esta fotografia já foi guardada.",
+				"frame_erased": "Esta fotografia pertencia a um utilizador removido: a moldura foi coberta.",
+				"not_a_member": "Só se podem escolher os utilizadores da turma ou da lista.",
+				"patron_taken": "Já escolhido para a fotografia {{position}}: libertar essa antes de o escolher aqui.",
+				"confirm_replace": "{{count:plural; one:{{count}} fotografia substitui uma já existente; other:{{count}} fotografias substituem já existentes;}}: confirme para continuar.",
+				"nothing_to_save": "Escolher pelo menos um utilizador antes de guardar."
+			},
+			"erased": "Utilizador removido: a moldura foi coberta na imagem."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "Ficheiro CSV",
+			"submit": "Carregar",
+			"hints": {
+				"students": "Um ficheiro CSV com uma linha por aluno, separado por ; ou por , (serve também uma exportação de uma folha de cálculo). Usar os cabeçalhos do modelo, que se transfere abaixo com as colunas necessárias.",
+				"teachers": "Um ficheiro CSV com uma linha por professor, separado por ; ou por ,. Usar os cabeçalhos do modelo, que se transfere abaixo com as colunas necessárias."
+			}
+		},
+		"mapping": {
+			"format": "Formato reconhecido",
+			"uncertain": "O formato não é certo: verifique as colunas antes de continuar.",
+			"remembered": "Colunas lembradas da última importação deste ficheiro.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "o cabeçalho do ficheiro",
+				"unknown": "desconhecido"
+			},
+			"mode": "Modo",
+			"modes": {
+				"upsert": "Acrescentar e atualizar",
+				"upsertHint": "As linhas encontradas atualizam o utilizador existente; as restantes criam utilizadores novos.",
+				"sync": {
+					"students": "Sincronizar alunos",
+					"teachers": "Sincronizar professores"
+				},
+				"syncHint": {
+					"students": "O ficheiro é a lista completa dos alunos: quem faltar fica listado (e é removido, após confirmação). Os professores não são alterados.",
+					"teachers": "O ficheiro é a lista completa dos professores: quem faltar fica listado (e é removido, após confirmação). Os alunos não são alterados."
+				}
+			},
+			"duplicates": "Utilizadores já existentes",
+			"policies": {
+				"update": "Atualizar",
+				"skip": "Saltar",
+				"create": "Criar mesmo assim"
+			},
+			"validate": "Verificar o ficheiro",
+			"matchByName": {
+				"students": "Sem a coluna external_id, os alunos já existentes reconhecem-se pelo nome e pela turma.",
+				"teachers": "Sem a coluna external_id, os professores já existentes reconhecem-se pelo nome."
+			}
+		},
+		"preview": {
+			"ready": "Sem erros: o ficheiro pode ser importado.",
+			"blocked": "Corrija os erros no ficheiro (ou nos utilizadores) e verifique de novo: um ficheiro com erros não é importado.",
+			"columns": {
+				"name": "Nome",
+				"class": "Turma"
+			},
+			"changed": "Alterações: {{fields}}",
+			"homonym": {
+				"pick": "Escolher o utilizador",
+				"create": "Criar um novo utilizador",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Homónimos a resolver"
+			},
+			"missing": {
+				"students": {
+					"title": "Alunos no arquivo mas em falta no ficheiro ({{count}})",
+					"remove": "Remover estes alunos do arquivo (anonimização imediata)",
+					"noPermission": "Sem a permissão para remover utilizadores, os alunos em falta mantêm-se no arquivo.",
+					"notRemoved": "{{count}} {{count:plural; one:aluno em falta não eliminado porque tem; other:alunos em falta não eliminados porque têm;}} empréstimos em curso."
+				},
+				"teachers": {
+					"title": "Professores no arquivo mas em falta no ficheiro ({{count}})",
+					"remove": "Remover estes professores do arquivo (anonimização imediata)",
+					"noPermission": "Sem a permissão para remover utilizadores, os professores em falta mantêm-se no arquivo.",
+					"notRemoved": "{{count}} {{count:plural; one:professor em falta não eliminado porque tem; other:professores em falta não eliminados porque têm;}} empréstimos em curso."
+				},
+				"hint": "Com a sincronização, quem não está no ficheiro pode ser removido: os dados pessoais são eliminados de imediato e para sempre; ficam apenas a turma e as estatísticas."
+			},
+			"commit": "Importar",
+			"back": "Voltar às colunas",
+			"generatedCards": "{{count}} {{count:plural; one:cartão novo será gerado; other:cartões novos serão gerados;}}: o ficheiro não tem número."
+		},
+		"reasons": {
+			"tooLong": "Texto demasiado longo na coluna {{column}}: no máximo {{max}} {{max:plural; one:carácter; other:caracteres;}}",
+			"nameRequired": "Falta o nome ou o apelido",
+			"emailInvalid": "Correio eletrónico inválido",
+			"cardNumberInvalid": "Número de cartão inválido",
+			"cardNumberTaken": "Número de cartão já atribuído a outro utilizador",
+			"cardNumberIsCopy": "Número de cartão igual ou parecido com o código de barras de um exemplar",
+			"externalIdTaken": "Número de aluno já atribuído a outro utilizador",
+			"duplicateInFile": "A mesma pessoa já está na linha {{line}}",
+			"homonym": "{{count}} {{count:plural; one:homónimo; other:homónimos;}} no arquivo: escolher qual atualizar",
+			"matchedTwice": "Outra linha já atualiza o mesmo utilizador",
+			"skipped": "Já existente: saltado",
+			"levelRequired": "Falta o ano",
+			"levelUnknown": "Ano «{{value}}» não previsto pela escola",
+			"groupRequired": "Falta a turma",
+			"groupUnknown": "Turma «{{value}}» não encontrada para este ano. Turmas válidas: {{classes}} (as turmas criam-se em Administração → Configuração → Turmas)",
+			"levelNotInGroup": "A turma «{{value}}» não tem este ano. Turmas válidas: {{classes}}",
+			"classUnknown": "Turma «{{value}}» não encontrada. Turmas válidas: {{classes}}",
+			"teacherGroupUnknown": "Grupo de professores «{{value}}» não encontrado. Grupos válidos: {{classes}}"
+		},
+		"done": {
+			"title": "Importação concluída",
+			"summary": "Novos: {{created}}, atualizados: {{updated}}, sem alterações: {{unchanged}}, removidos: {{removed}}.",
+			"printNew": "Imprimir os cartões dos novos utilizadores",
+			"census": "Recenseamento de fotografias",
+			"again": "Importar outro ficheiro",
+			"batch": "Importação n.º {{id}}: o ficheiro original é conservado no servidor."
+		},
+		"fields": {
+			"firstName": "Nome",
+			"lastName": "Apelido",
+			"class": "Turma (ano e letra)",
+			"level": "Ano",
+			"section": "Turma",
+			"group": "Grupo de professores",
+			"externalId": "Número de aluno",
+			"cardNumber": "Cartão",
+			"email": "Correio eletrónico"
+		},
+		"titles": {
+			"students": "Importar alunos",
+			"teachers": "Importar professores"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "O nome."
+			},
+			"lastName": {
+				"hint": "O apelido."
+			},
+			"class": {
+				"hint": "A turma numa só coluna, como 3A ou 3 A: tem de existir em Administração → Configuração → Turmas."
+			},
+			"level": {
+				"hint": "O ano (1, 2, 3…), com a letra na coluna section."
+			},
+			"section": {
+				"hint": "A letra da turma (A, B…): com level indica a turma."
+			},
+			"cardNumber": {
+				"hint": "O número do cartão, se o aluno já tiver um.",
+				"missing": "são gerados novos cartões"
+			},
+			"externalId": {
+				"hint": "O código do registo escolar.",
+				"missing": "os utilizadores já existentes reconhecem-se pelo nome e pela turma"
+			},
+			"email": {
+				"hint": "Opcional."
+			},
+			"group": {
+				"hint": "O grupo de professores; se faltar, o grupo predefinido."
+			}
+		},
+		"classForm": {
+			"label": "A turma",
+			"class": "Numa coluna (class: 3A)",
+			"levelSection": "Em duas colunas (level: 3, section: A)"
+		}
+	}
+}

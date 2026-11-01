@@ -1,0 +1,12 @@
+{
+	"name": "pair-default",
+	"description": "Coppia impilata: fascetta dorso (pittogramma + segnatura) sopra, etichetta barcode sotto — come la stampa attuale",
+	"kind": "pair",
+	"unit": { "cells": 2, "stack": "vertical", "files": ["top.html", "bottom.html"] },
+	"stocks": ["a4-70x48", "a4-70x24"],
+	"variants": {
+		"full": { "minCellHeightMm": 40 },
+		"compact": { "maxCellHeightMm": 39.9, "files": ["top-compact.html", "bottom-compact.html"] }
+	},
+	"barcode": { "widthMm": 50, "heightMm": 15, "text": false }
+}

@@ -1,0 +1,40 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later */
+/*
+ * Shape and typography shared by every colour set (PLAN.md §3.18, step 2.3a): the six themes in
+ * src/lib/themes/*.css define colours only, so switching a theme never moves anything. Light only.
+ * Every filled tone of every theme keeps a 4.5:1 contrast (src/lib/ui/theme-contrast.test.ts).
+ */
+[data-theme] {
+	--spacing: 0.25rem;
+	--text-scaling: 1;
+	--typo-base--font-family: "Inter Variable", system-ui, sans-serif;
+	--typo-base--color-light: var(--color-surface-950);
+	--typo-base--color-dark: var(--color-surface-950);
+	--typo-heading--font-weight: 700;
+	--typo-anchor--color-light: var(--color-primary-600);
+	--typo-anchor--color-dark: var(--color-primary-600);
+	--typo-anchor--hover--text-decoration-line: underline;
+	/* Friendlier rounded shapes (Flowbite/daisyUI feel) for a primary-school audience. */
+	--radius-base: 0.625rem;
+	--radius-container: 1rem;
+	--default-border-width: 1px;
+	--default-ring-width: 1px;
+	--default-outline-width: 2px;
+	--corner-shape-base: round;
+	--corner-shape-container: round;
+	--color-root-bg-light: var(--color-surface-100);
+	--color-root-bg-dark: var(--color-surface-100);
+	--color-brand-light: var(--color-primary-500);
+	--color-brand-contrast-light: var(--color-primary-contrast-500);
+	--color-brand-dark: var(--color-primary-500);
+	--color-brand-contrast-dark: var(--color-primary-contrast-500);
+}
+
+/* Status colours are always paired with an icon and a label (StatusBadge); these only name them. */
+:root {
+	--bv-status-available: var(--color-success-500);
+	--bv-status-due-soon: var(--color-warning-500);
+	--bv-status-overdue: var(--color-error-500);
+	--bv-status-reference: var(--color-tertiary-500);
+	--bv-status-neutral: var(--color-surface-500);
+}

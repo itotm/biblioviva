@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "系统管理",
+		"sections": {
+			"config": {
+				"title": "配置",
+				"description": "图书馆的分类和设置。"
+			},
+			"audit": {
+				"title": "操作日志",
+				"description": "谁做了什么：登录、修改、导入。"
+			},
+			"users": {
+				"title": "工作人员账户",
+				"description": "工作人员账户、角色和权限。"
+			},
+			"backups": {
+				"title": "备份",
+				"description": "数据库和文件的安全副本。"
+			},
+			"rollover": {
+				"title": "班级升级",
+				"description": "学年结束时：升级、留级以及毕业班的离校。"
+			},
+			"exports": {
+				"title": "导出",
+				"description": "读者、目录、借阅以及全部数据，导出为 CSV 或 JSON 文件。"
+			},
+			"imports": {
+				"title": "导入",
+				"description": "目录、读者、未还借阅和照片：来自 CSV 文件或 Koha 导出数据。"
+			}
+		}
+	},
+	"audit": {
+		"title": "操作日志",
+		"filters": {
+			"from": "从",
+			"to": "至",
+			"user": "账户",
+			"action": "操作",
+			"all": "全部"
+		},
+		"columns": {
+			"when": "时间",
+			"user": "账户",
+			"action": "操作",
+			"entity": "对象",
+			"entityId": "编号",
+			"details": "详情"
+		},
+		"count": "{{shown}} / {{total}} {{total:plural; other:条记录;}}",
+		"empty": "没有符合这些筛选条件的记录。",
+		"system": "系统"
+	},
+	"users": {
+		"title": "工作人员账户",
+		"fields": {
+			"roles": "角色",
+			"permissions": "权限",
+			"lastLogin": "上次登录",
+			"never": "从未"
+		},
+		"status": {
+			"active": "有效",
+			"inactive": "已停用",
+			"plainPassword": "文件中为明文密码",
+			"notInConfig": "已从配置中移除"
+		},
+		"hash": {
+			"title": "生成密码哈希值",
+			"description": "输入要设置的密码，即可得到要粘贴到 passwordHash 中的 argon2id 哈希值。密码不会被保存。",
+			"password": "密码（至少 {{min}} 个字符）",
+			"generate": "生成哈希值",
+			"result": "要粘贴的哈希值",
+			"copy": "复制",
+			"copied": "哈希值已复制",
+			"tooShort": "密码至少须有 {{min}} 个字符。",
+			"disclosure": "供手动编辑文件的人员使用：为密码生成哈希值"
+		},
+		"reload": {
+			"button": "重新加载配置",
+			"success": "配置已重新加载",
+			"successWithWarnings": "配置已重新加载，附带 {{count}} {{count:plural; other:条警告;}}",
+			"failed": "配置无效：之前的配置继续生效",
+			"exampleSource": "警告：config.json 不存在，正在使用示例配置。"
+		},
+		"new": "新建账户",
+		"newPassword": "新密码",
+		"permissionNames": {
+			"all": "全部",
+			"loans": "借阅",
+			"patrons": "读者",
+			"patrons_import": "导入读者",
+			"catalog": "目录",
+			"catalog_import": "导入目录",
+			"reports": "报表",
+			"anonymize": "匿名化",
+			"admin": "系统管理"
+		},
+		"roles": {
+			"title": "角色和权限",
+			"hint": "角色是一组权限；每个账户至少有一个角色。“全部”授予每一项权限，包括以后版本加入的权限。重命名角色会更新使用该角色的账户。",
+			"name": "角色",
+			"unused": "没有账户使用",
+			"badName": "只能使用字母、数字、连字符和下划线（最多 32 个）。",
+			"add": "添加角色",
+			"saved": "角色已保存"
+		},
+		"auth": {
+			"title": "登录",
+			"config": "人员使用本页的账户登录，通常每个角色共用一个账户（例如服务台的“prestiti”）。",
+			"database": "人员使用个人账户登录。",
+			"later": "每人一个的个人账户计划在以后的版本中提供。"
+		},
+		"dialog": {
+			"title": {
+				"new": "新建账户",
+				"edit": "编辑 {{name}}",
+				"password": "{{name}} 的新密码"
+			},
+			"username": "用户名",
+			"usernameHint": "小写字母、数字、点、连字符和下划线（2 到 32 个字符）。",
+			"badUsername": "请使用小写字母、数字、点、连字符和下划线（2 到 32 个字符）。",
+			"displayName": "显示的名称",
+			"active": "有效账户（可以登录）",
+			"password": "密码（至少 {{min}} 个字符）",
+			"repeat": "再次输入密码",
+			"mismatch": "两次输入的密码不一致。",
+			"passwordHint": "密码不会被保存，配置中只写入其哈希值。使用此账户登录的人员需要重新登录。",
+			"saved": {
+				"new": "账户已创建",
+				"edit": "账户已保存",
+				"password": "密码已更改"
+			},
+			"removed": "账户已删除",
+			"removeTitle": "删除 {{name}}？",
+			"removeHint": "该账户将从配置中移除；它的操作在日志中仍以其名称保留。可以从配置历史中撤销。"
+		},
+		"errors": {
+			"badUsername": "用户名无效：{{details}}。",
+			"usernameTaken": "用户名 {{details}} 已被使用。",
+			"notFound": "未找到账户：{{details}}。",
+			"noRoles": "请至少选择一个角色。",
+			"unknownRole": "未知角色：{{details}}。",
+			"passwordTooShort": "密码太短。",
+			"passwordRequired": "新账户需要设置密码。",
+			"lastAdmin": "至少须有一个有效账户保留系统管理权限。",
+			"stillActive": "请先停用账户，再将其删除。",
+			"badRole": "角色名称无效：{{details}}。",
+			"roleTaken": "有两个角色同名：{{details}}。",
+			"roleInUse": "该角色正被一些账户使用：{{details}}。",
+			"invalid": "配置将无效：{{details}}。"
+		}
+	},
+	"backups": {
+		"title": "备份",
+		"runNow": "立即备份",
+		"created": "已创建备份：{{name}}",
+		"createdDeleted": "已创建备份：{{name}}（已删除 {{deleted}} {{deleted:plural; other:个旧备份;}}）",
+		"empty": "尚无备份。第一次备份将在预定时间进行，也可以按下“立即备份”。",
+		"download": "下载",
+		"columns": {
+			"when": "创建时间",
+			"size": "大小"
+		},
+		"catchUp": {
+			"badge": "启动时补做",
+			"hint": "预定的备份未能进行（电脑已关闭）：BiblioViva 已在启动时补做。"
+		},
+		"offsite": {
+			"title": "最近一次异地副本",
+			"disabled": "未配置异地副本。请按安装指南中的说明，通过“offsite”（rclone）服务启用。",
+			"never": "该服务已启用，但尚未写入任何结果。",
+			"ok": "最近一次副本成功：{{when}}",
+			"error": "最近一次副本失败：{{when}}",
+			"stale": "异地副本已超过两天未更新：请检查 offsite 服务。",
+			"remote": "目标：{{remote}}"
+		},
+		"restore": {
+			"title": "恢复",
+			"button": "恢复…",
+			"hint": "在列表中的备份上选择“恢复…”，或上传一个 BiblioViva 归档文件（备份、“导出全部”或“导出配置”，最大 {{maxMb}} MB；更大的文件请复制到服务器的备份文件夹中，或使用 bun run backup:restore 恢复）。所有内容会先被检查，然后只恢复所选部分：其他部分保持不变。",
+			"upload": "上传归档文件",
+			"from": "来自 {{date}} 的 {{name}}",
+			"count": "{{part}}：当前 {{live}}，备份 {{archive}} 中的数量",
+			"images": "待恢复的图片：{{photos}} {{photos:plural; other:张照片;}}，{{covers}} {{covers:plural; other:张封面;}}。",
+			"gapsTitle": "有些数据将失去其所指向的内容：",
+			"gap": "{{rows:plural; other:“{{part}}”中有 {{rows}} 行指向将不存在的“{{needs}}”，请在所选内容中加入“{{add}}”。;}}",
+			"schema": "该备份来自另一版本的 BiblioViva（数据表 {{tables}}），无法在此恢复。",
+			"apply": "恢复",
+			"confirmTitle": "恢复所选部分？",
+			"confirmHint": "所选的数据和配置将被备份中的内容替换。配置可以从历史记录中找回；至于数据，如果没有近期的备份，请先做一次备份。",
+			"done": "恢复完成",
+			"notArchive": "该文件不是 BiblioViva 归档文件。"
+		},
+		"contents": {
+			"title": "备份包含的内容",
+			"database": "数据库：每次备份都会完整复制一份（见下文）。",
+			"images": "照片和封面：每晚复制到备份的“uploads”文件夹（当前有 {{photos}} {{photos:plural; other:张照片;}}，{{covers}} {{covers:plural; other:张封面;}}）。",
+			"imagesPending": "照片和封面：首次复制将在下次备份时进行（待复制 {{photos}} {{photos:plural; other:张照片;}}，{{covers}} {{covers:plural; other:张封面;}}）。",
+			"config": "配置（模板、图片、设置）不包含在每晚备份中：请使用“导出全部”获取。"
+		},
+		"export": {
+			"button": "导出全部",
+			"hint": "一个 ZIP 文件，包含数据库、照片、封面和全部配置（包括模板和图片），可用于“bun run backup:restore”。"
+		},
+		"createdMirror": "已创建备份：{{name}}；已复制 {{copied}} {{copied:plural; other:张图片;}}",
+		"parts": {
+			"title": "部分内容的备份或导出",
+			"hint": "选择要包含的内容：图书馆数据、各部分的设置、模板、图片……“创建备份”会将其保存在下方的列表中，“下载”则将其下载到电脑。",
+			"create": "创建备份",
+			"download": "下载"
+		}
+	},
+	"demo": {
+		"clear": "清除示例数据",
+		"confirmTitle": "清除示例数据？",
+		"confirmDescription": "示例中的读者、图书、借阅和照片将被删除。班级和教师组保留。所有操作人员都将被退出登录。",
+		"cleared": "示例数据已删除。请重新登录。",
+		"clearedPassword": "账户仍使用示例密码“{{password}}”：请立即在系统管理 → 工作人员账户中更改。"
+	},
+	"appearance": {
+		"title": "外观和语言",
+		"current": "当前配色方案：{{name}}",
+		"areas": {
+			"title": "区域样式",
+			"hint": "顶栏采用当前工作区域（借阅、目录、读者……）的颜色，色调取自所选配色方案。区域的图标和名称始终可见。",
+			"styles": {
+				"tinted": "着色顶栏（推荐）",
+				"filled": "填充顶栏",
+				"accents": "仅强调色",
+				"none": "无颜色"
+			},
+			"saved": "区域样式已保存"
+		},
+		"colours": {
+			"title": "配色方案"
+		},
+		"save": "保存颜色",
+		"saved": "颜色已保存",
+		"unchanged": "没有需要保存的内容。",
+		"language": {
+			"title": "应用语言",
+			"hint": "每个安装只使用一种语言：对所有工作人员生效。",
+			"save": "更改语言",
+			"saved": "语言已更改：页面将重新加载。"
+		},
+		"logo": {
+			"title": "图书馆标志",
+			"hint": "显示在每个页面的左上角，紧挨图书馆名称。支持 PNG、JPEG 或 WebP；透明背景效果最佳。",
+			"upload": "上传标志",
+			"replace": "更换标志",
+			"remove": "删除标志",
+			"saved": "标志已保存。",
+			"removed": "标志已删除。",
+			"none": "没有标志：显示通用图标。",
+			"preview": "当前标志",
+			"errors": {
+				"empty": "文件为空。",
+				"too_large": "文件过大（最大 {{maxMb}} MB）。",
+				"not_an_image": "该文件不是图片。",
+				"unsupported_format": "不接受该格式：请使用 PNG、JPEG 或 WebP。"
+			}
+		},
+		"name": {
+			"title": "图书馆名称",
+			"hint": "显示在左上角、仪表盘、打印件以及安装在手机上的应用中。",
+			"label": "名称",
+			"save": "保存名称",
+			"saved": "图书馆名称已保存",
+			"required": "请输入图书馆名称。"
+		},
+		"dashboard": {
+			"title": "仪表盘",
+			"hint": "起始页的各个部分，适用于整个图书馆。快捷操作始终排在最前；在每个部分内，每个账户只看到其有权执行的内容。",
+			"save": "保存仪表盘",
+			"saved": "仪表盘已保存",
+			"sections": {
+				"quickActions": "快捷操作",
+				"tiles": "今日图书馆概况（数字卡片）",
+				"inventory": "进行中的盘点",
+				"installHint": "邀请将应用添加到主屏幕（手机）",
+				"dueThisWeek": "本周到期",
+				"upcomingDates": "日历中的近期日期",
+				"todayActivity": "今日借阅"
+			}
+		}
+	},
+	"templates": {
+		"title": "打印模板",
+		"reload": "重新加载模板",
+		"reloaded": "已从磁盘重新读取模板",
+		"kinds": {
+			"cards": "读者证",
+			"labels": "标签",
+			"slips": "单据"
+		},
+		"list": {
+			"source": {
+				"builtin": "随应用提供",
+				"config": "在配置中"
+			},
+			"default": "默认",
+			"status": {
+				"ok": "有效",
+				"error": "错误"
+			},
+			"folder": "文件夹",
+			"forTypes": "适用于：{{types}}",
+			"emptyCards": "没有读者证模板：请检查配置中的 cards/templates 文件夹。",
+			"emptyLabels": "尚无标签模板：将随目录标签打印功能提供。",
+			"emptySlips": "尚无单据模板：将随借阅功能提供。"
+		},
+		"preview": {
+			"title": "预览",
+			"front": "正面",
+			"back": "背面",
+			"patron": "要显示的读者",
+			"sample": "示例读者",
+			"real": "真实读者",
+			"search": "搜索真实读者",
+			"searchPlaceholder": "姓氏或名字",
+			"noResults": "未找到读者。",
+			"zoom": "缩放",
+			"sheet": "整张纸",
+			"sheetHint": "一张 A4 纸，显示示例读者，与打印效果相同。",
+			"test": "打印测试页",
+			"broken": "修复之前无法使用该模板：",
+			"size": "{{width}} × {{height}} mm，缩放 {{zoom}}"
+		},
+		"test": {
+			"title": "读者证测试页",
+			"ruler": "10 厘米标尺：打印后应量得 100 毫米（按 100% 打印，不要“适应页面”）。"
+		},
+		"calibration": {
+			"title": "标签校准页",
+			"stock": "不干胶标签纸",
+			"print": "打印校准页",
+			"hint": "请在普通纸上打印，然后将一张标签纸覆盖其上，检查边距。"
+		},
+		"howTo": {
+			"title": "如何创建模板",
+			"steps": {
+				"step1": "在配置 → 打印模板中，对某个模板（例如 {{path}}）选择“复制”，并为其取一个新名称。",
+				"step2": "使用“编辑”进行设计或修改其代码；图片在同一页面上传。",
+				"step3": "返回此处检查预览：未知字段或缺失的文件都会被报告。",
+				"step4": "要正式使用，请在读者证或标签设置中选择它。"
+			}
+		},
+		"labels": {
+			"stocks": "设计用于：{{stocks}}",
+			"preview": "{{name}} 的预览",
+			"geometry": "单元尺寸 {{width}} × {{height}} mm · 变体 {{variant}}",
+			"sheet": "示例纸张"
+		}
+	},
+	"loansImport": {
+		"title": "导入未还借阅",
+		"upload": {
+			"hint": "仅在从 Koha 迁移时使用一次：每条未还借阅一行，包含读者的证号和复本的条码，以及（如有）借出日期和应还日期。请先导入读者和目录；下方可下载所需列的模板。",
+			"submit": "上传"
+		},
+		"mapping": {
+			"uncertain": "继续之前请检查各列。",
+			"validate": "检查文件",
+			"without": {
+				"issuedOn": "没有 issued_on 列时，借阅日期记为今天。",
+				"dueOn": "没有 due_on 列时，应还日期将在服务台按借阅规则和日历计算。"
+			}
+		},
+		"fields": {
+			"cardNumber": "读者证号",
+			"barcode": "条码",
+			"issuedOn": "借出日期",
+			"dueOn": "应还日期"
+		},
+		"preview": {
+			"ready": "没有错误：可以导入借阅。",
+			"blocked": "请修正错误后重新检查：有错误时不会导入任何内容。",
+			"overdue": "{{count}} {{count:plural; other:条借阅已经逾期;}}，导入后会出现在逾期列表中。",
+			"columns": {
+				"patron": "读者",
+				"barcode": "复本",
+				"issued": "借出",
+				"due": "应还"
+			},
+			"commit": "导入借阅",
+			"back": "返回各列"
+		},
+		"reasons": {
+			"cardMissing": "缺少读者证号",
+			"cardUnknown": "没有证号为 {{value}} 的读者",
+			"barcodeMissing": "缺少条码",
+			"barcodeUnknown": "没有条码为 {{value}} 的复本",
+			"alreadyOnLoan": "复本 {{value}} 已在借出中",
+			"itemWithdrawn": "复本 {{value}} 已撤架",
+			"duplicateInFile": "同一复本已出现在第 {{line}} 行",
+			"issueDateInvalid": "借出日期无效：“{{value}}”",
+			"issueDateFuture": "借出日期在将来：{{value}}",
+			"dueDateInvalid": "应还日期无效：“{{value}}”",
+			"dueBeforeIssue": "应还日期早于借出日期",
+			"overdue": "自 {{date}} 起已逾期",
+			"itemUnclassified": "复本 {{value}} 属于待分类的图书：借阅将被导入，但在分类完成前服务台不予外借"
+		},
+		"done": {
+			"title": "借阅已导入",
+			"summary": "已导入 {{created}} {{created:plural; other:条借阅;}}，其中 {{overdue}} 条已经逾期。",
+			"batch": "导入编号 {{id}}：原始文件已保留。",
+			"again": "导入另一个文件"
+		},
+		"columns": {
+			"cardNumber": "读者的证号，已导入。",
+			"barcode": "复本的条码，已导入。",
+			"issuedOn": "借出日期；缺失时为今天。",
+			"dueOn": "应还日期；缺失时按借阅规则计算。"
+		}
+	},
+	"photosImport": {
+		"title": "导入读者照片",
+		"hint": "每位读者一个文件，以证号命名（例如 0000001240.jpg）：管理员指南中所述的导出会生成这些文件。每张照片都会被调整大小并清除隐藏数据；与任何证号都不匹配的文件会列出。",
+		"replace": "替换已有的照片",
+		"zip": {
+			"title": "从 ZIP 归档文件",
+			"file": "包含照片的 ZIP 归档文件",
+			"submit": "导入照片"
+		},
+		"folder": {
+			"title": "从服务器文件夹",
+			"hint": "将文件复制到 {{path}}，目前有 {{count}} {{count:plural; other:个文件;}}。适合照片较多的情况，若作为归档上传则会太大。",
+			"submit": "从文件夹导入"
+		},
+		"summary": {
+			"title": "结果",
+			"text": "已导入 {{imported}} {{imported:plural; other:张照片;}}，替换了 {{replaced}} 张，{{kept:plural; other:{{kept}} 张保持原样;}}（已有照片），{{unmatched}} {{unmatched:plural; other:个文件;}}没有对应的读者，{{unreadable}} {{unreadable:plural; other:个文件;}}无法读取。",
+			"unreadable": "无法读取的图片：{{files}}",
+			"unmatched": "下载没有对应读者的文件列表"
+		},
+		"errors": {
+			"notZip": "该文件不是有效的 ZIP 归档文件。",
+			"empty": "归档文件中没有文件。"
+		},
+		"done": "照片已导入"
+	},
+	"rollover": {
+		"title": "班级升级",
+		"subtitle": "学年结束时，每位学生升入上一年级；学完最后一个年级的学生离开学校。",
+		"steps": {
+			"backup": "备份",
+			"classes": "班级",
+			"leavers": "离校",
+			"confirm": "确认",
+			"done": "完成"
+		},
+		"backup": {
+			"text": "首先为数据库做一份安全副本：如果出现问题，可以从 系统管理 → 备份 恢复。",
+			"create": "创建备份",
+			"created": "已创建备份：{{name}}"
+		},
+		"classes": {
+			"text": "每位学生连同其班级升入上一年级。请标出留级的学生和更换班级的学生。",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; other:位学生;}}",
+			"exceptions": "{{count}} {{count:plural; other:项例外;}}",
+			"loans": "{{count}} 位学生有借出的图书",
+			"repeat": "留级",
+			"target": "班级",
+			"noGroup": "无班级",
+			"choose": "选择班级…",
+			"fates": {
+				"advances": "升级",
+				"stays": "留在本级",
+				"archived": "结束"
+			},
+			"unplaced": "{{count}} {{count:plural; other:位学生等待选择班级;}}。",
+			"none": "没有需要升入上一年级的学生。",
+			"nextYear": "下一学年",
+			"leaves": "离开学校"
+		},
+		"leavers": {
+			"text": "最后一个年级的学生离开学校：其数据将立即且永久删除（仅保留统计数字）。取消勾选仍留在校内的学生，例如留读最后一年的学生。",
+			"leaves": "离校",
+			"openLoans": "{{count}} {{count:plural; other:册图书;}}仍在借出",
+			"blocked": "{{count}} {{count:plural; other:位即将离校的学生仍有借出的图书;}}，请办理归还或标记为遗失，或取消勾选。",
+			"toCheckin": "前往归还",
+			"none": "最后一个年级没有学生。"
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; other:位学生升入上一年级;}}",
+			"repeat": "{{count}} {{count:plural; other:位学生留级;}}",
+			"groupChanges": "{{count}} {{count:plural; other:位学生更换班级;}}",
+			"closing": "{{count}} {{count:plural; other:个班级将结束并归档;}}",
+			"remove": "{{count}} {{count:plural; other:位学生离开学校，其数据将被删除;}}",
+			"recent": "上一次班级升级于 {{date}} 进行，距今不足六个月。我确认要再次进行。",
+			"run": "升级班级"
+		},
+		"done": {
+			"title": "升级已完成",
+			"advanced": "{{count}} {{count:plural; other:个班级升入上一年级;}}",
+			"archived": "{{count}} {{count:plural; other:个班级已归档;}}",
+			"text": "后续步骤：如有需要，请创建新的一年级班级，并通过同步功能导入新学生。",
+			"import": "导入新学生"
+		},
+		"errors": {
+			"blocked": "部分离校学生仍有借出的图书。",
+			"recent": "需要确认：上一次班级升级时间很近。",
+			"no_backup": "未找到备份，或备份太旧：请从第一步重新创建。",
+			"invalid_group": "所选的班级不存在，或不接收该学生所在的年级。",
+			"unplaced": "部分学生尚未分配班级：请在“班级”步骤中选择。",
+			"invalid_level": "所选的某个年级不在可选范围内：请重新加载页面。"
+		},
+		"next": "下一步",
+		"back": "返回"
+	},
+	"classes": {
+		"title": "班级",
+		"subtitle": "学校的班级和教师组。",
+		"hint": "学校的年级和学段在设置中更改：",
+		"structureLink": "学校",
+		"new": "新建班级",
+		"newTeachers": "新建教师组",
+		"teachers": "教师",
+		"mixed": "混合年级班",
+		"empty": "没有班级",
+		"emptyHint": "没有班级。点击“新建班级”即可创建，例如 1 至 5 年级、名称为 A 至 D。",
+		"archivedTitle": "已归档的{{count:plural; other:班级;}}（{{count}}）",
+		"archive": "归档",
+		"archiveNotEmpty": "该班级仍有读者，无法归档",
+		"restore": "恢复",
+		"archived": "班级 {{name}} 已归档",
+		"restored": "班级 {{name}} 已恢复",
+		"columns": {
+			"class": "班级",
+			"levels": "年级",
+			"patrons": "读者"
+		},
+		"dialog": {
+			"title": {
+				"students": "新建班级",
+				"teachers": "新建教师组",
+				"edit": "编辑 {{name}}"
+			},
+			"levels": "年级",
+			"names": "班级名称",
+			"namesHint": "用逗号分隔；A-D 代表 A、B、C、D。名称可以包含空格。",
+			"name": "名称",
+			"mixed": "一个混合年级班，包含所选的全部年级",
+			"stage": "学段",
+			"anyStage": "全部",
+			"notes": "备注",
+			"preview": "将创建 {{count}} {{count:plural; other:个班级;}}：",
+			"previewEmpty": "请至少选择一个年级并输入名称。",
+			"saved": {
+				"students": "已创建 {{count}} {{count:plural; other:个班级;}}",
+				"teachers": "教师组已创建",
+				"edit": "班级已保存"
+			}
+		},
+		"errors": {
+			"nameRequired": "必须填写名称。",
+			"nameLong": "名称太长（最多 40 个字符）。",
+			"levelsRequired": "请至少选择一个年级。",
+			"levelUnknown": "所选的某个年级已不存在。",
+			"levelsNotForTeachers": "教师组没有年级。",
+			"nameTaken": "同一年级已有同名的班级。",
+			"levelInUse": "该班级的部分学生所在的年级将被删除。",
+			"notEmpty": "该班级仍有读者。",
+			"notFound": "该班级已不存在。"
+		}
+	},
+	"exports": {
+		"title": "导出",
+		"subtitle": "将图书馆的数据导出为文件，以便保存、重新导入或迁移到其他程序。",
+		"items": {
+			"students": {
+				"title": "学生（CSV）",
+				"description": "在校学生，格式与导入相同：可从 系统管理 → 导入 → 学生 重新导入。"
+			},
+			"teachers": {
+				"title": "教师（CSV）",
+				"description": "在职教师，格式与导入相同：可从 系统管理 → 导入 → 教师 重新导入。"
+			},
+			"catalog": {
+				"title": "目录（CSV）",
+				"description": "每个复本一行，包含图书数据，采用目录导入的格式。"
+			},
+			"open-loans": {
+				"title": "未还借阅（CSV）",
+				"description": "读者证、复本、借出日期和应还日期：可从 系统管理 → 导入 → 未还借阅 重新导入。"
+			},
+			"loans-history": {
+				"title": "借阅历史（CSV）",
+				"description": "每笔借阅，包含借出当天的班级和组别。"
+			},
+			"dump": {
+				"title": "全部数据（JSON）",
+				"description": "读者、目录、借阅和各类清单合并在一个文件中，便于迁移到另一个安装或程序。"
+			}
+		},
+		"download": "下载",
+		"patronNote": "某位读者的个人数据（查阅请求）可从其页面下载。",
+		"patronExport": "导出该读者的数据"
+	},
+	"imports": {
+		"title": "导入",
+		"hint": "从 Koha 迁移时使用；每学年开始时，读者的新班级也通过导入录入。每个文件在导入前都会被完整检查。",
+		"cards": {
+			"catalog": {
+				"title": "目录",
+				"description": "图书和复本，来自 CSV 文件或 Koha 导出数据。"
+			},
+			"students": {
+				"title": "学生",
+				"description": "每个新学年的学校名册中的班级：名、姓和班级。"
+			},
+			"teachers": {
+				"title": "教师",
+				"description": "学校的教师：名、姓，以及（如已有）其读者证。"
+			},
+			"loans": {
+				"title": "未还借阅",
+				"description": "未还借阅，从 Koha 切换时仅导入一次。"
+			},
+			"photos": {
+				"title": "读者照片",
+				"description": "从 Koha 导出的照片，每张读者证一张。"
+			}
+		}
+	},
+	"calibration": {
+		"title": "校准双面打印",
+		"intro": "要在纸张两面打印读者证，背面必须准确地落在正面的背后。每台打印机都会使背面有所偏移：此测试只需进行一次，即可测出偏移量。",
+		"current": "纸张翻转方式：{{flip}}。当前使用的背面偏移量：横向 {{x}} mm，纵向 {{y}} mm。",
+		"steps": {
+			"print": "点击下方按钮打印校准页。",
+			"window": {
+				"long-edge": "在打印窗口中选择“双面打印”，沿长边翻转，缩放 100%，无页边距。",
+				"short-edge": "在打印窗口中选择“双面打印”，沿短边翻转，缩放 100%，无页边距。"
+			},
+			"cut": "在标有大号“1”的一面，沿黑线小心裁切。",
+			"read": "翻转读者证：在“2”的一面，查看裁切边与两条标尺的交点，读出两个数字（带正负号：+ 或 −）。",
+			"save": "在下方输入这两个数字并保存：背面的偏移量即得到校正。",
+			"check": "再次打印校准页进行检查：裁切边现在应当与两条标尺的 0 点相交。"
+		},
+		"print": "打印校准页",
+		"drawing": {
+			"title": "如何读数",
+			"label": "裁切后的“2”面：裁切边与标尺相交",
+			"x": "水平标尺",
+			"y": "垂直标尺",
+			"hint": "裁切边与每条标尺相交，交点处的数字即为要输入的数值。每一小格为一毫米，数字每五毫米标注一次。"
+		},
+		"fields": {
+			"x": "水平标尺（mm）",
+			"y": "垂直标尺（mm）",
+			"hint": "裁切边落在的数字，带正负号；如落在零点，则填 0。"
+		},
+		"next": "保存后，背面将横向偏移 {{x}} mm，纵向偏移 {{y}} mm。",
+		"save": "保存校准",
+		"saved": "校准已保存：背面横向偏移 {{x}} mm，纵向偏移 {{y}} mm。",
+		"open": "校准双面打印",
+		"sheet": {
+			"title": "BiblioViva · 双面打印校准",
+			"cut": "沿黑线裁切，然后翻转读者证。",
+			"read": "在两条标尺上读出裁切边的位置。"
+		}
+	}
+}

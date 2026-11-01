@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "Save",
+		"cancel": "Cancel",
+		"close": "Close",
+		"confirm": "Confirm",
+		"delete": "Delete",
+		"edit": "Edit",
+		"search": "Search",
+		"export": "Export",
+		"back": "Back",
+		"retry": "Retry",
+		"backTo": "Back to {{page}}",
+		"more": "More actions"
+	},
+	"similar": {
+		"label": "Similar",
+		"count": "plus {{count}} similar, found by correcting a typing mistake",
+		"hint": "Found by correcting a typing mistake: check that it is the one sought."
+	},
+	"status": {
+		"loading": "Loading…",
+		"error": "Something went wrong"
+	},
+	"statuses": {
+		"item": {
+			"available": "Available",
+			"onLoan": "On loan",
+			"lost": "Lost",
+			"damaged": "Damaged",
+			"inRepair": "In repair",
+			"withdrawn": "Withdrawn",
+			"notForLoan": "Reference only"
+		},
+		"loan": {
+			"open": "Open",
+			"dueSoon": "Due soon",
+			"overdue": "Overdue",
+			"returned": "Returned"
+		},
+		"patron": {
+			"active": "Active",
+			"anonymized": "Removed"
+		},
+		"print": {
+			"pending": "To print",
+			"printed": "Printed"
+		}
+	},
+	"list": {
+		"selected": "{{count}} selected"
+	},
+	"scan": {
+		"label": "Barcode",
+		"placeholder": "Scan or type a code",
+		"submit": "Look up code",
+		"camera": "Camera",
+		"cameraTitle": "Scan with the camera",
+		"errors": {
+			"empty": "No code entered.",
+			"item_check_digit": "The copy barcode has a wrong check character: scan it again.",
+			"card_check_digit": "The card number has a wrong check character: scan it again.",
+			"isbn_check_digit": "The ISBN has a wrong check digit: check the digits.",
+			"unrecognised": "Code not recognised: make sure the scanner reads Code 39 and Code 128."
+		},
+		"invalidRead": "Invalid code ({{code}}): reading.",
+		"invalidShort": "Invalid code, reading again…",
+		"useAnyway": "Use {{code}} anyway"
+	},
+	"camera": {
+		"start": "Start camera",
+		"stop": "Stop camera",
+		"switch": "Switch camera",
+		"torch": "Torch",
+		"snapshot": "Take photo",
+		"device": "Camera",
+		"starting": "Starting the camera…",
+		"errors": {
+			"insecure": "The camera only works over a secure connection (https): opened from the local network without Tailscale, the app cannot use it. Use the barcode scanner or upload a file, or open the app from its Tailscale address.",
+			"denied": "Permission denied: allow the camera in the browser settings and try again.",
+			"notFound": "No camera found on this device.",
+			"busy": "The camera is already in use by another app.",
+			"generic": "Could not start the camera ({{message}}).",
+			"timeout": "The camera did not answer. Check that the browser is not still asking for permission, or that it was not denied earlier for this site (icon near the address)."
+		},
+		"permissionHint": "If the browser asks for permission to use the camera (usually near the address bar), choose “Allow”."
+	},
+	"clipboard": {
+		"failed": "Could not copy: select the text and copy it by hand."
+	},
+	"form": {
+		"errorsTitle": "Check the highlighted fields",
+		"field": "Field {{field}}"
+	},
+	"confirm": {
+		"title": "Confirm?"
+	},
+	"export": {
+		"csv": "CSV (spreadsheet, text)",
+		"ods": "ODS (LibreOffice / Excel)"
+	},
+	"demo": {
+		"panel": "This installation holds sample data loaded on {{when}}: {{patrons}} {{patrons:plural; one:patron; other:patrons;}}, {{biblios}} {{biblios:plural; one:title; other:titles;}}, {{items}} {{items:plural; one:copy; other:copies;}}, {{loans}} {{loans:plural; one:loan; other:loans;}}. Everything is made up: no real person."
+	},
+	"import": {
+		"header": "The first row is a header",
+		"column": "Column {{n}}",
+		"ignore": "— ignore —",
+		"counts": {
+			"new": "{{count}} new",
+			"update": "{{count}} to update",
+			"unchanged": "{{count}} unchanged",
+			"error": "{{count}} {{count:plural; one:error; other:errors;}}"
+		},
+		"onlyErrors": "Show errors only",
+		"info": "{{rows}} {{rows:plural; one:row; other:rows;}} · encoding {{encoding}} · delimiter “{{delimiter}}”",
+		"steps": {
+			"upload": "File",
+			"mapping": "Columns",
+			"preview": "Check",
+			"done": "Completed"
+		},
+		"line": "Line",
+		"status": "Result",
+		"reason": "Details",
+		"statuses": {
+			"new": "New",
+			"update": "Update",
+			"unchanged": "Unchanged",
+			"error": "Error"
+		},
+		"errors": {
+			"empty": "The file is empty.",
+			"tooLarge": "The file is larger than {{mb}} MB.",
+			"noRows": "No rows found in the file.",
+			"uploadGone": "The uploaded file is no longer available: upload it again.",
+			"notReady": "The file still has errors: check again.",
+			"mappingIncomplete": "Required columns are missing: {{columns}}."
+		},
+		"template": {
+			"title": "The template of the file",
+			"hint": "Choose the columns: the template holds the header only and is filled one row at a time (a spreadsheet saved as CSV works too).",
+			"required": "Required",
+			"keys": "Keys",
+			"keysHint": "They recognise what is on record already; they may be left out.",
+			"optional": "Optional",
+			"download": "Download the template",
+			"ifMissing": "When missing: {{text}}."
+		},
+		"groups": {
+			"required": "required",
+			"key": "key"
+		}
+	},
+	"words": {
+		"yes": "Yes",
+		"no": "No"
+	},
+	"password": {
+		"show": "Show the password",
+		"hide": "Hide the password"
+	},
+	"demoPublic": {
+		"language": "Language",
+		"welcome": {
+			"title": "Welcome to the BiblioViva demo",
+			"beta": "Public beta",
+			"betaText": "BiblioViva is a public beta: the features are stable, but until version 1.0 an update is not guaranteed to stay compatible with the data and settings of the previous version.",
+			"intro": "BiblioViva is the program to run a school library: loans and returns, catalogue, patrons with photos and cards, labels, printing and reports. This is a public demo: every feature is available to try.",
+			"contents": "Inside there is a made-up primary school: {{patrons}} {{patrons:plural; one:pupil or teacher; other:pupils and teachers;}}, {{biblios}} {{biblios:plural; one:title; other:titles;}} and {{items}} {{items:plural; one:copy; other:copies;}}, {{openLoans}} {{openLoans:plural; one:loan; other:loans;}} in progress, {{overdueLoans}} of them overdue. Names and photos are made up: no real person.",
+			"reset": "Every day at {{time}} the demo goes back to how it started. Configuration changes can be tried but are not saved.",
+			"examples": "In the demo, text and pictures are replaced by an example: every operation can be tried to the end, but what is typed or photographed is not kept and no other visitor sees it. The imports accept only the example files, downloaded from the page of each import.",
+			"accountsTitle": "Which account to sign in with",
+			"accountsHint": "As in the library, each account sees only the work of its role. User name and password go in the form above.",
+			"password": "The password is the same for every account:"
+		},
+		"accounts": {
+			"admin": {
+				"name": "Administration",
+				"does": "sees everything: besides the work of the other accounts, the configuration, the staff accounts, backups, classes and the move to the next school year."
+			},
+			"prestiti": {
+				"name": "Loan management",
+				"does": "the loan desk: lends, returns and renews, follows the overdue loans and prints the reminders."
+			},
+			"catalogo": {
+				"name": "Cataloguing",
+				"does": "books and copies, record lookup from SBN (simulated here), covers, classification and labels."
+			},
+			"tessere": {
+				"name": "Cards and photos",
+				"does": "pupils and teachers, photos and the photo census of the classes, card printing."
+			},
+			"report": {
+				"name": "Reports",
+				"does": "statistics on loans, catalogue and patrons, table exports."
+			}
+		},
+		"blocked": {
+			"config": "In the demo the configuration is not saved: everything can be tried, but changes are not written.",
+			"restore": "In the demo restoring a backup is off: the demo data are built again by themselves every night.",
+			"configImport": "In the demo importing a configuration is off: the demo's configuration is the same for every visitor.",
+			"pictures": "The demo does not upload class pictures: try the census with the example class picture.",
+			"sqlReports": "In the demo reports written in SQL are off: try the guided reports.",
+			"importSize": "In the demo files to import may be 1 MB at most.",
+			"printSize": "In the demo at most 3 sheets are printed at a time: choose fewer copies or fewer patrons.",
+			"importExample": "The demo imports its example file only: download it with the template button and upload it as it is.",
+			"notesLimit": "In the demo only a few notes a day can be written.",
+			"demoData": "In the demo the sample data stay until the nightly reset.",
+			"backups": "In the demo manual backups are off: the demo data are built again by themselves every night.",
+			"archives": "In the demo archives and backups are not downloaded: the demo's data and configuration are built again every night.",
+			"languagePacks": "In the demo language packs are not downloaded: the demo has Italian and English."
+		},
+		"example": {
+			"note": "DEMO – note of {{when}}",
+			"comment": "Demo note of {{when}}",
+			"book": "Demo book of {{when}}",
+			"wish": "Demo wish of {{when}}",
+			"class": "Demo class of {{when}}",
+			"printList": "Demo list of {{when}}",
+			"inventory": "Demo inventory of {{when}}",
+			"reason": "Demo reason of {{when}}",
+			"date": "Demo date of {{when}}"
+		},
+		"replaced": "In the demo, text and pictures are replaced by an example: the save went through, but the example is kept.",
+		"tooMany": "Too many requests in a short time: try again in a minute.",
+		"refused": {
+			"title": "Not available in the demo",
+			"busyTitle": "Too many requests",
+			"back": "Back to BiblioViva"
+		}
+	}
+}

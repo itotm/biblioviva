@@ -1,0 +1,78 @@
+{
+	"numFound": 4,
+	"start": 0,
+	"numFoundExact": true,
+	"num_found": 4,
+	"documentation_url": "https://openlibrary.org/dev/docs/api/search",
+	"q": "",
+	"offset": null,
+	"docs": [
+		{
+			"author_name": ["Italo Calvino"],
+			"ddc": ["853.914"],
+			"first_publish_year": 1965,
+			"key": "/works/OL15344W",
+			"number_of_pages_median": 160,
+			"publish_place": [
+				"S. I",
+				"New York",
+				"San Diego",
+				"Milano",
+				"London",
+				"Torino]",
+				"[New York]",
+				"Paris",
+				"Torino"
+			],
+			"publisher": [
+				"Harvest Book",
+				"Harcourt, Brace & World",
+				"Minotauro Ediciones Avd",
+				"A. Mondadori",
+				"Cape",
+				"Einaudi",
+				"Garzanti Editore",
+				"Picador",
+				"Palomar",
+				"Garzanti",
+				"Harcourt Brace Jovanovich",
+				"Mondadori",
+				"Collier Books",
+				"Carl Hanser",
+				"MacMillan",
+				"Harcourt, Brace",
+				"Seuil",
+				"Abacus"
+			],
+			"title": "Le cosmicomiche",
+			"subject": [
+				"Fiction",
+				"Italian Short stories",
+				"Social life and customs",
+				"PRO Adams, Mark B. (donor) (inscription) (Adams Collection copy)",
+				"PRO Gotham Book Mart (former owner) (Gotham Book Mart Collection copy)",
+				"Manners and customs",
+				"CHR 1968",
+				"Novela",
+				"Vida social y costumbres",
+				"Cosmology",
+				"Humor, form, comic strips & cartoons"
+			]
+		},
+		{
+			"author_name": ["Italo Calvino"],
+			"first_publish_year": 1997,
+			"key": "/works/OL10423744W",
+			"publisher": ["Arnoldo Mondadori"],
+			"title": "Tutte le cosmicomiche"
+		},
+		{
+			"author_name": ["Italo Calvino"],
+			"first_publish_year": 1984,
+			"key": "/works/OL10423719W",
+			"publish_place": ["Milano"],
+			"publisher": ["Garzanti"],
+			"title": "Cosmicomiche vecchie e nuove"
+		}
+	]
+}

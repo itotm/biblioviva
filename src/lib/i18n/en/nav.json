@@ -1,0 +1,60 @@
+{
+	"dashboard": "Dashboard",
+	"circulation": "Loans",
+	"catalog": "Catalogue",
+	"patrons": "Patrons",
+	"printing": "Printing",
+	"notes": "Notes",
+	"reports": "Reports",
+	"admin": "Administration",
+	"more": "More",
+	"logout": "Log out",
+	"help": "Help",
+	"about": "About",
+	"areas": {
+		"circulation": {
+			"label": "Circulation desk",
+			"checkout": "Loans",
+			"checkin": "Returns",
+			"loans": "Books on loan",
+			"overdues": "Overdue notices",
+			"wishlist": "Wishlist",
+			"calendar": "Calendar"
+		},
+		"catalog": {
+			"label": "Catalogue pages",
+			"catalog": "Catalogue",
+			"inventory": "Stocktaking",
+			"wishlist": "Wishlist",
+			"toClassify": "To classify"
+		},
+		"patrons": {
+			"label": "Patron pages",
+			"patrons": "Patrons",
+			"census": "Photo census"
+		},
+		"notes": {
+			"label": "Note pages",
+			"open": "Open",
+			"archived": "Archived"
+		},
+		"config": {
+			"label": "Configuration pages",
+			"overview": "Sections",
+			"history": "History"
+		},
+		"templates": {
+			"label": "Print template pages",
+			"edit": "Templates",
+			"previews": "Previews"
+		},
+		"imports": {
+			"label": "Imports",
+			"catalog": "Catalogue",
+			"students": "Students",
+			"teachers": "Teachers",
+			"loans": "Open loans",
+			"photos": "Patron photos"
+		}
+	}
+}

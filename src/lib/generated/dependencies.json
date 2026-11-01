@@ -1,0 +1,368 @@
+{
+	"app": {
+		"name": "biblioviva",
+		"version": "0.1.0",
+		"license": "GPL-3.0-or-later",
+		"repository": "https://github.com/itotm/biblioviva"
+	},
+	"runtime": [
+		{
+			"name": "@bwip-js/generic",
+			"version": "4.11.4",
+			"license": "MIT",
+			"homepage": "https://github.com/metafloor/bwip-js"
+		},
+		{
+			"name": "@date-fns/tz",
+			"version": "1.5.0",
+			"license": "MIT",
+			"homepage": "https://github.com/date-fns/date-fns#readme"
+		},
+		{
+			"name": "@faker-js/faker",
+			"version": "10.6.0",
+			"license": "MIT",
+			"homepage": "https://fakerjs.dev"
+		},
+		{
+			"name": "@fontsource-variable/inter",
+			"version": "5.3.0",
+			"license": "OFL-1.1",
+			"homepage": "https://fontsource.org/fonts/inter"
+		},
+		{
+			"name": "@fontsource-variable/jetbrains-mono",
+			"version": "5.3.0",
+			"license": "OFL-1.1",
+			"homepage": "https://fontsource.org/fonts/jetbrains-mono"
+		},
+		{
+			"name": "@lucide/svelte",
+			"version": "1.66.0",
+			"license": "ISC",
+			"homepage": "https://lucide.dev"
+		},
+		{
+			"name": "@skeletonlabs/skeleton",
+			"version": "5.0.1",
+			"license": "MIT",
+			"homepage": "https://github.com/skeletonlabs/skeleton"
+		},
+		{
+			"name": "@skeletonlabs/skeleton-svelte",
+			"version": "5.0.1",
+			"license": "MIT",
+			"homepage": "https://github.com/skeletonlabs/skeleton"
+		},
+		{
+			"name": "@svar-ui/grid-locales",
+			"version": "2.7.5",
+			"license": "MIT",
+			"homepage": "https://www.npmjs.com/package/@svar-ui/grid-locales"
+		},
+		{
+			"name": "@svar-ui/svelte-grid",
+			"version": "2.7.5",
+			"license": "MIT",
+			"homepage": "https://svar.dev/svelte/datagrid/"
+		},
+		{
+			"name": "barcode-detector",
+			"version": "3.2.3",
+			"license": "MIT",
+			"homepage": "https://github.com/Sec-ant/barcode-detector"
+		},
+		{
+			"name": "chart.js",
+			"version": "4.6.1",
+			"license": "MIT",
+			"homepage": "https://www.chartjs.org"
+		},
+		{
+			"name": "date-fns",
+			"version": "4.4.0",
+			"license": "MIT",
+			"homepage": "https://github.com/date-fns/date-fns"
+		},
+		{
+			"name": "drizzle-orm",
+			"version": "1.0.0-rc.5",
+			"license": "Apache-2.0",
+			"homepage": "https://orm.drizzle.team"
+		},
+		{
+			"name": "fflate",
+			"version": "0.8.3",
+			"license": "MIT",
+			"homepage": "https://101arrowz.github.io/fflate"
+		},
+		{
+			"name": "marcjs",
+			"version": "3.0.3",
+			"license": "MIT",
+			"homepage": "https://github.com/fredericd/marcjs"
+		},
+		{
+			"name": "mustache",
+			"version": "4.2.0",
+			"license": "MIT",
+			"homepage": "https://github.com/janl/mustache.js"
+		},
+		{
+			"name": "papaparse",
+			"version": "5.7.0",
+			"license": "MIT",
+			"homepage": "https://www.papaparse.com/"
+		},
+		{
+			"name": "sveltekit-i18n",
+			"version": "3.4.1",
+			"license": "MIT",
+			"homepage": "https://sveltekit-i18n.github.io"
+		},
+		{
+			"name": "valibot",
+			"version": "1.5.0",
+			"license": "MIT",
+			"homepage": "https://valibot.dev"
+		}
+	],
+	"development": [
+		{
+			"name": "@axe-core/playwright",
+			"version": "4.14.0",
+			"license": "MPL-2.0",
+			"homepage": "https://github.com/dequelabs/axe-core-npm"
+		},
+		{
+			"name": "@eslint/js",
+			"version": "10.0.1",
+			"license": "MIT",
+			"homepage": "https://eslint.org"
+		},
+		{
+			"name": "@playwright/test",
+			"version": "1.64.1",
+			"license": "Apache-2.0",
+			"homepage": "https://playwright.dev"
+		},
+		{
+			"name": "@sveltejs/adapter-bun",
+			"version": "1.0.0",
+			"license": "MIT",
+			"homepage": "https://svelte.dev/docs/kit/adapter-bun"
+		},
+		{
+			"name": "@sveltejs/kit",
+			"version": "3.1.1",
+			"license": "MIT",
+			"homepage": "https://svelte.dev"
+		},
+		{
+			"name": "@sveltejs/vite-plugin-svelte",
+			"version": "7.3.1",
+			"license": "MIT",
+			"homepage": "https://github.com/sveltejs/vite-plugin-svelte#readme"
+		},
+		{
+			"name": "@tailwindcss/vite",
+			"version": "4.3.3",
+			"license": "MIT",
+			"homepage": "https://tailwindcss.com"
+		},
+		{
+			"name": "@techstark/opencv-js",
+			"version": "5.0.0-release.1",
+			"license": "Apache-2.0",
+			"homepage": "https://github.com/TechStark/opencv-js#readme"
+		},
+		{
+			"name": "@types/bun",
+			"version": "1.4.4",
+			"license": "MIT",
+			"homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/bun"
+		},
+		{
+			"name": "@types/mustache",
+			"version": "4.2.6",
+			"license": "MIT",
+			"homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/mustache"
+		},
+		{
+			"name": "@types/node",
+			"version": "26.6.6",
+			"license": "MIT",
+			"homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node"
+		},
+		{
+			"name": "@types/papaparse",
+			"version": "5.5.2",
+			"license": "MIT",
+			"homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/papaparse"
+		},
+		{
+			"name": "@vitest/browser-playwright",
+			"version": "5.0.5",
+			"license": "MIT",
+			"homepage": "https://vitest.dev/config/browser/playwright"
+		},
+		{
+			"name": "@vitest/coverage-v8",
+			"version": "5.0.5",
+			"license": "MIT",
+			"homepage": "https://vitest.dev/guide/coverage"
+		},
+		{
+			"name": "@vitest/ui",
+			"version": "5.0.5",
+			"license": "MIT",
+			"homepage": "https://vitest.dev/guide/ui"
+		},
+		{
+			"name": "drizzle-kit",
+			"version": "1.0.0-rc.5",
+			"license": "MIT",
+			"homepage": "https://orm.drizzle.team"
+		},
+		{
+			"name": "eslint",
+			"version": "10.14.0",
+			"license": "MIT",
+			"homepage": "https://eslint.org"
+		},
+		{
+			"name": "eslint-config-prettier",
+			"version": "10.1.8",
+			"license": "MIT",
+			"homepage": "https://github.com/prettier/eslint-config-prettier#readme"
+		},
+		{
+			"name": "eslint-plugin-svelte",
+			"version": "3.23.1",
+			"license": "MIT",
+			"homepage": "https://sveltejs.github.io/eslint-plugin-svelte"
+		},
+		{
+			"name": "globals",
+			"version": "17.14.0",
+			"license": "MIT",
+			"homepage": "sindresorhus/globals"
+		},
+		{
+			"name": "pagefind",
+			"version": "1.6.0",
+			"license": "MIT",
+			"homepage": "https://github.com/Pagefind/pagefind#readme"
+		},
+		{
+			"name": "playwright",
+			"version": "1.64.1",
+			"license": "Apache-2.0",
+			"homepage": "https://playwright.dev"
+		},
+		{
+			"name": "prettier",
+			"version": "3.9.10",
+			"license": "MIT",
+			"homepage": "https://prettier.io"
+		},
+		{
+			"name": "prettier-plugin-svelte",
+			"version": "4.1.1",
+			"license": "MIT",
+			"homepage": "https://github.com/sveltejs/prettier-plugin-svelte#readme"
+		},
+		{
+			"name": "prettier-plugin-tailwindcss",
+			"version": "0.8.1",
+			"license": "MIT",
+			"homepage": "https://github.com/tailwindlabs/prettier-plugin-tailwindcss"
+		},
+		{
+			"name": "svelte",
+			"version": "5.57.3",
+			"license": "MIT",
+			"homepage": "https://svelte.dev"
+		},
+		{
+			"name": "svelte-check",
+			"version": "4.7.7",
+			"license": "MIT",
+			"homepage": "https://github.com/sveltejs/language-tools#readme"
+		},
+		{
+			"name": "tailwindcss",
+			"version": "4.3.3",
+			"license": "MIT",
+			"homepage": "https://tailwindcss.com"
+		},
+		{
+			"name": "typescript",
+			"version": "6.0.3",
+			"license": "Apache-2.0",
+			"homepage": "https://www.typescriptlang.org/"
+		},
+		{
+			"name": "typescript-eslint",
+			"version": "8.72.1",
+			"license": "MIT",
+			"homepage": "https://typescript-eslint.io/packages/typescript-eslint"
+		},
+		{
+			"name": "vite",
+			"version": "8.3.5",
+			"license": "MIT",
+			"homepage": "https://vite.dev"
+		},
+		{
+			"name": "vitest",
+			"version": "5.0.5",
+			"license": "MIT",
+			"homepage": "https://vitest.dev"
+		},
+		{
+			"name": "vitest-browser-svelte",
+			"version": "3.1.0",
+			"license": "MIT",
+			"homepage": "https://github.com/vitest-community/vitest-browser-svelte#readme"
+		}
+	],
+	"system": [
+		{
+			"name": "Bun",
+			"version": "1.4.4",
+			"license": "MIT",
+			"homepage": "https://bun.com"
+		},
+		{
+			"name": "YAZ (yaz-client)",
+			"version": "5.34.4",
+			"license": "BSD-3-Clause",
+			"homepage": "https://www.indexdata.com/resources/software/yaz/"
+		},
+		{
+			"name": "SQLite",
+			"version": "bundled with Bun",
+			"license": "Public domain",
+			"homepage": "https://sqlite.org"
+		},
+		{
+			"name": "OpenCV.js",
+			"version": "5.0.0",
+			"license": "Apache-2.0",
+			"homepage": "https://opencv.org"
+		},
+		{
+			"name": "BusyBox (Debian busybox-static)",
+			"version": "1.37.0",
+			"license": "GPL-2.0-only",
+			"homepage": "https://busybox.net"
+		},
+		{
+			"name": "Debian trixie distroless (oven/bun image)",
+			"version": "1.4.4-distroless",
+			"license": "various (Debian)",
+			"homepage": "https://hub.docker.com/r/oven/bun"
+		}
+	]
+}

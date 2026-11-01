@@ -1,0 +1,59 @@
+{
+	"id": "tr-ortaokul",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Classes (şubeler) written 5-A or 5/A [VERIFY]; lessons start in the second week of September [VERIFY].",
+	"name": {
+		"it": "Secondaria di primo grado, Ortaokul (Turchia)",
+		"en": "Lower secondary school, Ortaokul (Turkey)",
+		"tr": "Ortaokul (Türkiye)"
+	},
+	"country": "TR",
+	"languages": ["tr"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "ortaokul",
+				"name": "Ortaokul"
+			}
+		],
+		"levels": [
+			{
+				"code": "5",
+				"label": "5",
+				"name": "5. sınıf",
+				"stage": "ortaokul"
+			},
+			{
+				"code": "6",
+				"label": "6",
+				"name": "6. sınıf",
+				"stage": "ortaokul"
+			},
+			{
+				"code": "7",
+				"label": "7",
+				"name": "7. sınıf",
+				"stage": "ortaokul"
+			},
+			{
+				"code": "8",
+				"label": "8",
+				"name": "8. sınıf",
+				"stage": "ortaokul"
+			}
+		],
+		"classLabel": "{level}-{group}",
+		"groupWord": "Şube",
+		"cardClass": "{class} sınıfı",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"ortaokul": ["A", "B", "C", "D"]
+	},
+	"teacherGroup": "Öğretmenler",
+	"readingLevels": []
+}

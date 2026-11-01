@@ -1,0 +1,12 @@
+<section class="slip">
+	<h2>{{patron.full_name}}{{#patron.class_label}} ({{patron.class_label}}){{/patron.class_label}} - {{words.to_return}}</h2>
+	<p class="when">{{library.name}}, {{date}}</p>
+	<table>
+		<thead>
+			<tr><th>{{words.title}}</th><th>{{words.code}}</th><th>{{words.due}}</th><th>{{words.days_overdue}}</th></tr>
+		</thead>
+		<tbody>
+			{{#rows}}<tr><td>{{biblio.title}}</td><td>{{item.barcode}}</td><td>{{due_date}}</td><td>{{days_overdue}}</td></tr>{{/rows}}
+		</tbody>
+	</table>
+</section>

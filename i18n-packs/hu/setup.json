@@ -1,0 +1,226 @@
+{
+	"title": "Első beállítás",
+	"intro": "Üdvözöljük! A BiblioViva néhány lépésben beállítja a könyvtárat: nyelv, színek, iskola, kódok és a személyzeti jelszavak.",
+	"stepOf": "Lépés: {{step}} / {{total}}",
+	"next": "Tovább",
+	"back": "Vissza",
+	"finish": "A beállítás befejezése",
+	"steps": {
+		"language": "Nyelv",
+		"theme": "Színek",
+		"library": "Könyvtár",
+		"school": "Iskola",
+		"codes": "Kódok",
+		"passwords": "Jelszavak",
+		"demo": "Mintaadatok",
+		"summary": "Összefoglaló"
+	},
+	"language": {
+		"title": "Milyen nyelven beszéljen a BiblioViva?",
+		"hint": "Egy nyelv telepítésenként: az összes munkatársra vonatkozik, és később az Adminisztráció → Beállítások → Megjelenés és nyelv menüpontban módosítható.",
+		"restore": {
+			"title": "Van már BiblioViva-biztonsági mentése?",
+			"hint": "A BiblioViva másik számítógépre költöztetéséhez, vagy meghibásodás után az újrakezdéshez nem kell kérdésekre válaszolni: elég egy olyan archívum, amelyet a „Minden exportálása” funkcióval készítettek.",
+			"button": "Visszaállítás biztonsági mentésből"
+		}
+	},
+	"theme": {
+		"title": "Válassza ki a színeket",
+		"hint": "Tizenöt színkészlet: csak a színeket változtatják, a formát soha. Mind világos, és fekete-fehéren is olvasható.",
+		"names": {
+			"ocean": "Óceán",
+			"forest": "Erdő",
+			"grape": "Szőlő",
+			"sunset": "Naplemente",
+			"cherry": "Cseresznye",
+			"lagoon": "Lagúna",
+			"silver": "Ezüst",
+			"graphite": "Grafit",
+			"apricot": "Sárgabarack",
+			"indigo": "Indigó",
+			"mint": "Menta",
+			"rose": "Rózsa",
+			"sahara": "Szahara",
+			"wintry": "Téli",
+			"olive": "Olíva"
+		}
+	},
+	"library": {
+		"title": "A könyvtár",
+		"name": "A könyvtár neve",
+		"namePlaceholder": "Rodari Általános Iskola könyvtára",
+		"schoolType": "Iskola típusa",
+		"schoolTypeHint": "Az évfolyamok és az osztályok az iskola szokása szerint. Később az Adminisztráció → Beállítások → Iskola és az Adminisztráció → Beállítások → Osztályok menüpontban módosíthatók.",
+		"photos": "Olvasók fényképei",
+		"photosHint": "A tanulók és tanárok fényképei, amelyeket készítenek vagy feltöltenek, és amelyek az olvasójegyeken nyomtatódnak. Kikapcsolva: sehol nincs fénykép, és az olvasójegyek fénykép nélkül készülnek.",
+		"covers": "Könyvborítók",
+		"coversHint": "Az interneten keresett, fényképezett vagy feltöltött borítók, amelyek a katalógusban látszanak. Kikapcsolva: nincs borító."
+	},
+	"school": {
+		"title": "Az iskola",
+		"hint": "Az iskola típusa javasolja az évfolyamokat, az osztályokat és az olvasási szinteket. Az osztályok azonnal létrejönnek; a mintaadatokkal tanulókkal töltődnek fel.",
+		"otherCountries": "Más országok",
+		"names": {
+			"perLevel": "{{stage}}: az osztályok nevei, évfolyamonként egy",
+			"mixed": "{{stage}}: a szekciók nevei, mindegyikben minden évfolyam"
+		},
+		"namesHint": "Vesszővel elválasztva; az A-D jelentése A, B, C, D. Üresen hagyva: nincs osztály.",
+		"namesInvalid": "Érvénytelen nevek: vesszővel elválasztva írja be őket (legfeljebb 40).",
+		"classes": "{{count}} {{count:plural; one:osztály; other:osztály;}} létrehozandó:",
+		"more": "és még {{count}} további",
+		"classLabel": "Az osztály írásmódja",
+		"teacherGroup": "Tanárok csoportja",
+		"teacherGroupHint": "Minden tanár bekerül ebbe a csoportba; később további csoportok is hozzáadhatók.",
+		"schoolYearStart": "A tanév kezdete",
+		"schoolYearStartHint": "A hónap és a nap HH-NN alakban (például 09-01).",
+		"schoolYearStartInvalid": "A hónapot és a napot HH-NN alakban írja.",
+		"schoolYearLabel": "A tanév neve",
+		"schoolYearLabels": {
+			"span": "Két év (2026/2027)",
+			"start": "A kezdő év (2026)"
+		},
+		"readingLevels": "Szépirodalom olvasási szint szerint sorolva",
+		"readingLevelsHint": "Az évfolyamok, az osztályok és az olvasási szintek később az Adminisztrációban módosíthatók."
+	},
+	"codes": {
+		"title": "A kódok",
+		"hint": "Az új példányok vonalkódjának formátuma és az új olvasójegyek formátuma, mindkettő külön választva. A két alak soha nem téveszthető össze: aki beolvas egy kódot, azonnal tudja, hogy könyv vagy olvasójegy.",
+		"itemFormat": "A példányok formátuma",
+		"itemFormats": {
+			"standard": "Év, ellenőrző karakter és szám (ajánlott)",
+			"classic": "Év és szám, ellenőrző karakter a végén",
+			"prefix": "Az L betűvel az elején"
+		},
+		"cardFormat": "Az olvasójegyek formátuma",
+		"cardFormats": {
+			"standard": "Ellenőrző karakter és 6 jegyű szám (ajánlott)",
+			"classic": "10 jegyű szám, ellenőrző karakter a végén",
+			"prefix": "A T betűvel az elején"
+		},
+		"check": "Ellenőrző karakter",
+		"checks": {
+			"mod23": "Egy betű (mod 23)",
+			"luhn": "Egy számjegy (Luhn)",
+			"damm": "Egy számjegy (Damm)"
+		},
+		"layout": "Vonalkódolvasók billentyűzete",
+		"layoutHint": "Annak a számítógépnek a billentyűzetnyelve, amelyhez a vonalkódolvasók csatlakoznak: javítja a felcserélt karaktereket. Ha a sajátja nincs a listában, válassza a legközelebbit: később a Beállítások → Vonalkódok menüpontban módosítható.",
+		"layouts": {
+			"it": "Olasz",
+			"es": "Spanyol",
+			"de": "Német",
+			"fr": "Francia",
+			"uk": "Angol (Egyesült Királyság)",
+			"us": "Angol (Egyesült Államok)"
+		},
+		"copy": "Könyvpéldány",
+		"card": "Olvasójegy",
+		"verdict": "Példányok és olvasójegyek soha nem téveszthetők össze.",
+		"refused": "Ezzel a választással a példányok és az olvasójegyek összetéveszthetők lennének: válasszon másik formátumot.",
+		"later": "A formátumok, a korábbi rendszerek kódjai és a számozás később a Beállítások → Vonalkódok menüpontban módosíthatók."
+	},
+	"passwords": {
+		"title": "A személyzet jelszavai",
+		"hint": "Öt megosztott fiók, szerepkörönként egy. A javasolt jelszavakat véletlenszerűen állítják elő, és lecserélhetők. Az utolsó lépésnél jegyezze fel őket: csak egyszer jelennek meg.",
+		"accounts": {
+			"admin": "Adminisztráció (admin)",
+			"prestiti": "Kölcsönzéskezelés (prestiti)",
+			"catalogo": "Katalogizálás (catalogo)",
+			"tessere": "Olvasójegyek és fényképek (tessere)",
+			"report": "Jelentések (report)"
+		},
+		"regenerate": "Újragenerálás",
+		"tooShort": "Legalább 8 karakter.",
+		"demo": "A mintaadatokkal minden fiók ugyanazt a könnyen megjegyezhető jelszót használja: „{{password}}”. Az éles használat előtt módosítsa őket az Adminisztráció → Munkatársi fiókok menüpontban."
+	},
+	"demo": {
+		"title": "Mintaadatok",
+		"hint": "Kitalált tanulók, könyvek és kölcsönzések az alkalmazás kipróbálásához. Az igazi adatok betöltésekor az Adminisztrációból egy kattintással törölhetők.",
+		"load": "Mintaadatok betöltése",
+		"hasData": "Az adatbázis már tartalmaz adatokat: a mintaadatok nem töltődnek be."
+	},
+	"summary": {
+		"title": "Összefoglaló",
+		"hint": "Ellenőrizze, majd erősítse meg. A jelszavak csak ezen az oldalon jelennek meg: a továbblépés előtt másolja ki őket.",
+		"language": "Nyelv",
+		"theme": "Színek",
+		"library": "Könyvtár",
+		"photos": "Olvasók fényképei",
+		"covers": "Könyvborítók",
+		"school": "Iskola",
+		"classes": "Osztályok",
+		"classesValue": "{{count}} {{count:plural; one:osztály; other:osztály;}} ({{first}}…) és a tanárok csoportja ({{teachers}})",
+		"readingLevels": "Olvasási szintek",
+		"none": "Nincs",
+		"codes": "Kódok",
+		"demo": "Mintaadatok",
+		"yes": "Igen",
+		"no": "Nem",
+		"later": "Később a jelszavakat az Adminisztráció → Munkatársi fiókok menüpontban lehet módosítani.",
+		"working": "Mentés folyamatban…",
+		"error": "A beállítások nem lettek mentve: {{message}}"
+	},
+	"done": {
+		"title": "A beállítás befejeződött",
+		"hint": "Őrizze meg a jelszavakat biztonságos helyen: nem jelennek meg újra.",
+		"demoLoaded": "Mintaadatok betöltve: {{patrons}} {{patrons:plural; one:olvasó; other:olvasó;}}, {{biblios}} {{biblios:plural; one:cím; other:cím;}}, {{items}} {{items:plural; one:példány; other:példány;}}, {{loans}} {{loans:plural; one:kölcsönzés; other:kölcsönzés;}}.",
+		"login": "Tovább a bejelentkezéshez"
+	},
+	"generic": {
+		"stage": "Iskola",
+		"level": "{{level}}. évfolyam",
+		"groupWord": "Szekció",
+		"teacherGroup": "Tanárok"
+	},
+	"restore": {
+		"title": "Visszaállítás biztonsági mentésből",
+		"hint": "Válassza ki a „Minden exportálása” funkcióval készült archívumot (Adminisztráció → Biztonsági mentés). Legnagyobb méret: {{maxMb}} MB. Az archívum visszaállítás előtt ellenőrzésre kerül.",
+		"choose": "Válassza ki az archívumot",
+		"checking": "Az archívum ellenőrzése…",
+		"from": "A(z) „{{library}}” könyvtár archívuma. Készítés dátuma: {{date}}, verzió: {{version}}.",
+		"fromAnonymous": "Archívum. Készítés dátuma: {{date}}, verzió: {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "Olvasók",
+			"catalog": "Katalógus és példányok",
+			"loans": "Kölcsönzések és előzmények",
+			"printLists": "Nyomtatási listák",
+			"photos": "Olvasók fényképei",
+			"covers": "Borítók",
+			"notes": "Megjegyzések",
+			"dates": "Naptári dátumok",
+			"audit": "Tevékenységnapló",
+			"ui": "Felület",
+			"security": "Biztonság és hozzáférés",
+			"library": "Könyvtár és iskola"
+		},
+		"images": "Fényképek: {{photos}} · borítók: {{covers}}",
+		"accounts": "Bejelentkezni tudó fiókok: {{accounts}}. A jelszavak az archívumban szereplők.",
+		"warning": "A visszaállítás egyszerre hozza vissza a beállításokat, az adatokat és a képeket úgy, ahogy az archívumban voltak. Utána a beállítási varázsló már nem szükséges.",
+		"apply": "Visszaállítás",
+		"restoring": "Visszaállítás…",
+		"cancel": "Mégse",
+		"back": "Vissza a beállítási varázslóhoz",
+		"done": {
+			"title": "A visszaállítás befejeződött",
+			"hint": "A könyvtár olyan, mint az archívumban volt. A bejelentkezéshez használja az alábbi fiókok egyikét, az archívumban lévő jelszóval:",
+			"login": "Tovább a bejelentkezéshez"
+		},
+		"errors": {
+			"too_large": "Az archívum túl nagy (legfeljebb {{maxMb}} MB).",
+			"not_zip": "A fájl nem érvényes ZIP-archívum.",
+			"not_archive": "A fájl nem BiblioViva-archívum: válasszon egy „Minden exportálása” funkcióval készült archívumot.",
+			"too_many_files": "Az archívum túl sok fájlt tartalmaz.",
+			"unsafe_path": "Az archívum nem engedélyezett elérési utat tartalmaz: {{name}}",
+			"link": "Az archívum nem engedélyezett szimbolikus hivatkozást tartalmaz: {{name}}",
+			"unknown_file": "Az archívum a BiblioVivához nem tartozó fájlt tartalmaz: {{name}}",
+			"not_setup": "A beállítási varázsló már befejeződött: a visszaállítás az Adminisztráció → Biztonsági mentés menüpontból végezhető.",
+			"newer_version": "Az archívumot a BiblioViva egy újabb verziója készítette ({{name}}): előbb ezt a verziót telepítse.",
+			"missing_parts": "Az archívum hiányos, hiányoznak: {{name}}. Válasszon egy „Minden exportálása” funkcióval készült archívumot.",
+			"unfinished_setup": "Az archívum olyan telepítésből származik, ahol a beállítási varázslót nem fejezték be.",
+			"not_ready": "Az archívumban problémák vannak, ezért nem állítható vissza: {{name}}",
+			"gone": "Az ellenőrzött archívum már nincs meg: válassza ki újra.",
+			"failed": "A visszaállítás nem sikerült."
+		}
+	}
+}

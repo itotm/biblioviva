@@ -1,0 +1,164 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<!--
+	Mock (ADR-046): the customisation of Raspberry Pi Imager filled in as the step "Preparare il
+	computer" says: the steps of the program on the left, the five tabs of the customisation with
+	their values on the right (Hostname, Localisation, User, Wi-Fi left empty for a cable, Remote
+	Access with SSH and a password). The tabs keep the English names the guide uses.
+-->
+<html lang="en" data-lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<title>Customisation</title>
+		<link rel="stylesheet" href="../mock.css" />
+		<script>
+			document.documentElement.dataset.lang =
+				new URLSearchParams(location.search).get("lang") === "en" ? "en" : "it";
+		</script>
+		<style>
+			.mock {
+				width: 960px;
+				display: grid;
+				grid-template-columns: 210px 1fr;
+			}
+			aside {
+				background: var(--soft);
+				border-right: 1px solid var(--line);
+				padding: 20px 0;
+				font-size: 14px;
+			}
+			aside div {
+				padding: 7px 20px;
+				color: var(--muted);
+			}
+			aside .done::before {
+				content: "✓ ";
+				color: var(--ok);
+				font-weight: 700;
+			}
+			aside .sub {
+				padding-left: 36px;
+			}
+			aside .on {
+				color: var(--ink);
+				font-weight: 600;
+			}
+			main {
+				padding: 22px 28px 20px;
+			}
+			main > h1 {
+				font-size: 22px;
+				margin-bottom: 14px;
+			}
+			.cards {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 12px;
+			}
+			.card {
+				border: 1px solid var(--line);
+				border-radius: 8px;
+				padding: 12px 14px;
+			}
+			.card h2 {
+				font-size: 15px;
+				margin-bottom: 8px;
+			}
+			.pair {
+				display: grid;
+				grid-template-columns: 120px 1fr;
+				align-items: center;
+				gap: 6px 10px;
+				font-size: 14px;
+			}
+			.pair .field {
+				min-height: 32px;
+				padding: 5px 9px;
+			}
+			.toggle {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				font-size: 14px;
+				margin-bottom: 8px;
+			}
+			.radio {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				font-size: 14px;
+				margin: 4px 0;
+			}
+			.radio i {
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				border: 2px solid #9aa0ad;
+				display: inline-block;
+			}
+			.radio i.on {
+				border: 5px solid var(--accent);
+			}
+			footer {
+				display: flex;
+				justify-content: flex-end;
+				gap: 10px;
+				margin-top: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mock">
+			<aside>
+				<div class="done">Device</div>
+				<div class="done">OS</div>
+				<div class="done">Storage</div>
+				<div class="on">Customisation</div>
+				<div class="sub done">Hostname</div>
+				<div class="sub done">Localisation</div>
+				<div class="sub done">User</div>
+				<div class="sub done">Wi-Fi</div>
+				<div class="sub done on">Remote Access</div>
+				<div>Writing</div>
+			</aside>
+			<main>
+				<h1>Customisation</h1>
+				<div class="cards">
+					<div class="card">
+						<h2>Hostname</h2>
+						<div class="pair"><span>Hostname</span><span class="field mono">biblioviva</span></div>
+					</div>
+					<div class="card">
+						<h2>Localisation</h2>
+						<div class="pair">
+							<span>Capital city</span><span class="field">Rome (Italy)</span>
+							<span>Time zone</span><span class="field">Europe/Rome</span>
+							<span>Keyboard layout</span><span class="field">it</span>
+						</div>
+					</div>
+					<div class="card">
+						<h2>User</h2>
+						<div class="pair">
+							<span>Username</span><span class="field mono">biblioviva</span>
+							<span>Password</span><span class="field">••••••••••</span>
+						</div>
+					</div>
+					<div class="card">
+						<h2>Wi-Fi</h2>
+						<div class="pair">
+							<span>SSID</span><span class="field empty">—</span>
+							<span>Password</span><span class="field empty">—</span>
+						</div>
+					</div>
+					<div class="card" style="grid-column: span 2">
+						<h2>Remote Access</h2>
+						<div class="toggle"><span class="switch on"></span>Enable SSH</div>
+						<div class="radio"><i class="on"></i>Use password authentication</div>
+						<div class="radio"><i></i>Use public-key authentication</div>
+					</div>
+				</div>
+				<footer><span class="button">Back</span><span class="button primary">Next</span></footer>
+			</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Korisnici",
+		"new": "Novi korisnik",
+		"search": "Pretraži po prezimenu…",
+		"empty": "Nijedan korisnik ne odgovara filtrima.",
+		"filters": {
+			"type": "Vrsta",
+			"stage": "Obrazovna razina",
+			"level": "Razred",
+			"status": "Stanje",
+			"all": "Svi",
+			"allF": "Sve"
+		},
+		"columns": {
+			"name": "Prezime i ime",
+			"type": "Vrsta",
+			"class": "Razred",
+			"card": "Iskaznica"
+		},
+		"clearFilters": "Poništi filtre",
+		"countFiltered": "{{shown:plural; one:{{shown}} korisnik odgovara; few:{{shown}} korisnika odgovara; other:{{shown}} korisnika odgovara;}} filtrima",
+		"printCards": "Ispiši iskaznice",
+		"printClassCards": "Ispiši iskaznice {{classLabel}}",
+		"removeSelected": "Ukloni odabrane",
+		"removeTitle": "Ukloniti {{count}} {{count:plural; one:korisnika; few:korisnika; other:korisnika;}}?",
+		"removeDescription": "Za svakoga se odmah i zauvijek brišu ime i prezime, kontakti, matični broj, bilješke, broj iskaznice i fotografija; vrsta, razred, odjeljak i povijest posudbi ostaju za statistiku. Oni s posudbama u tijeku ostaju u arhivu.",
+		"removed": "{{removed}} {{removed:plural; one:uklonjen; few:uklonjena; other:uklonjeno;}}, {{kept}} s posudbama u tijeku {{kept:plural; one:ostavljen u arhivu; few:ostavljena u arhivu; other:ostavljeno u arhivu;}}",
+		"status": {
+			"title": "Stanje",
+			"loans": "{{count}} u posudbi",
+			"overdue": "{{count}} u kašnjenju",
+			"noPhoto": "bez fotografije"
+		},
+		"startTitle": "Potraži korisnika",
+		"startHint": "Pretraga po imenu, iskaznici ili s filtrima."
+	},
+	"types": {
+		"student": "Učenik",
+		"teacher": "Nastavnik"
+	},
+	"fields": {
+		"patronType": "Vrsta",
+		"firstName": "Ime",
+		"lastName": "Prezime",
+		"cardNumber": "Broj iskaznice",
+		"cardNumberHint": "Prazno: dodjeljuje se automatski.",
+		"externalId": "Matični broj",
+		"email": "Email",
+		"emailHint": "Adresa koju škola dodjeljuje učeniku ili nastavniku: služit će za obavijesti.",
+		"circulationNote": "Bilješka za posudbeni pult",
+		"circulationNoteHint": "Istaknuto se prikazuje pri posudbi.",
+		"notes": "Interne bilješke",
+		"status": "Stanje",
+		"openLoans": "Posudbe u tijeku",
+		"overdueLoans": "U kašnjenju",
+		"noCard": "bez iskaznice",
+		"none": "—",
+		"levelCode": "Razred",
+		"groupId": "Odjeljak",
+		"classLabel": "Razred",
+		"teacherGroup": "Skupina nastavnika"
+	},
+	"form": {
+		"createTitle": "Novi korisnik",
+		"editTitle": "Uredi korisnika",
+		"identity": "Osobni podaci",
+		"school": "Razred",
+		"contacts": "Kontakti",
+		"notes": "Bilješke",
+		"create": "Stvori korisnika",
+		"save": "Spremi promjene",
+		"classSelect": "Odaberi…",
+		"defaultTeacherGroup": "Skupina nastavnika"
+	},
+	"errors": {
+		"emailInvalid": "Neispravna adresa e-pošte.",
+		"cardNumberInvalid": "Neispravan broj iskaznice: samo brojke, velika slova i crtica, s ispravnim kontrolnim znakom.",
+		"cardNumberTaken": "Broj iskaznice već je dodijeljen drugom korisniku.",
+		"cardNumberIsCopy": "Broj iskaznice jest ili nalikuje crtičnom kodu primjerka: odaberite drugi broj.",
+		"externalIdTaken": "Matični broj već je dodijeljen drugom korisniku.",
+		"levelRequired": "Učenik treba razred (godinu).",
+		"levelUnknown": "Razred nije među razinama škole.",
+		"levelNotForTeachers": "Nastavnik nema razred.",
+		"groupRequired": "Učenik treba odjeljak.",
+		"groupUnknown": "Odjeljak nije pronađen među aktivnim razredima: razredi se stvaraju u Administracija → Postavke → Razredi.",
+		"levelNotInGroup": "Taj odjeljak nema takav razred: odaberite odjeljak tog razreda."
+	},
+	"detail": {
+		"heading": "Kartica korisnika",
+		"tabs": {
+			"loans": "Posudbe u tijeku",
+			"history": "Povijest",
+			"cards": "Iskaznica",
+			"notes": "Bilješke"
+		},
+		"noLoans": "Nema posudbi u tijeku.",
+		"loanColumns": {
+			"due": "Rok povrata"
+		},
+		"overdue": "u kašnjenju",
+		"card": "Iskaznica {{number}}",
+		"noNotes": "Nema bilješki.",
+		"edit": "Uredi",
+		"created": "Stvoreno {{when}}",
+		"barcodeAlt": "Crtični kod iskaznice {{number}}",
+		"cardPrinted": "Iskaznica ispisana {{when}}.",
+		"cardNotPrinted": "Iskaznica još nije ispisana.",
+		"reassignCard": "Dodijeli novu iskaznicu",
+		"reassignTitle": "Dodijeliti novu iskaznicu?",
+		"reassignDescription": "Trenutačni broj povlači se zauvijek, a novu iskaznicu treba ispisati.",
+		"cardReassigned": "Nova iskaznica: {{number}}",
+		"printCard": "Ispiši iskaznicu",
+		"markCardPrinted": "Označi kao ispisanu",
+		"cardMarkedPrinted": "Iskaznica označena kao ispisana",
+		"historyColumns": {
+			"issuedAt": "Posuđeno",
+			"dueDate": "Rok povrata",
+			"returnedAt": "Vraćeno",
+			"outcome": "Ishod",
+			"title": "Naslov",
+			"author": "Autor",
+			"barcode": "Primjerak",
+			"renewals": "Produljenja",
+			"schoolYear": "Školska godina"
+		},
+		"outcome": {
+			"open": "U tijeku",
+			"overdue": "U kašnjenju",
+			"returned": "Vraćeno",
+			"returnedLate": "Vraćeno sa zakašnjenjem",
+			"lost": "Izgubljeno"
+		},
+		"historyEmpty": "Nije zabilježena nijedna posudba.",
+		"historyCount": "{{count}} {{count:plural; one:posudba; few:posudbe; other:posudbi;}} ukupno",
+		"notesEdit": "Uredi bilješke",
+		"notesSaved": "Bilješke spremljene",
+		"notesUnchanged": "Nema promjena",
+		"notesHint": "Bilješka za posudbeni pult pojavljuje se istaknuto pri posudbi; ostale bilješke ostaju ovdje.",
+		"remove": "Ukloni: {{type}}",
+		"removeTitle": "Ukloniti {{name}} zauvijek?",
+		"removeDescription": "Odmah i zauvijek brišu se: ime i prezime, e-pošta, matični broj, bilješke, broj iskaznice (povučen) i fotografija. Ostaju samo vrsta, razred i odjeljak te povijest posudbi za statistiku. Ovo se ne može poništiti.",
+		"removeOpenLoans": "Ima {{count}} {{count:plural; one:posudbu u tijeku koju prije treba vratiti ili označiti kao izgubljenu; few:posudbe u tijeku koje prije treba vratiti ili označiti kao izgubljene; other:posudbi u tijeku koje prije treba vratiti ili označiti kao izgubljene;}}.",
+		"removeClassSheets": "Odabran je za {{count}} {{count:plural; one:fotografiju; few:fotografije; other:fotografija;}} na slikama razreda (popis iz slike): {{count:plural; one:taj okvir bit će prekriven; few:ti okviri bit će prekriveni; other:ti okviri bit će prekriveni;}}.",
+		"removed": "Korisnik uklonjen: osobni podaci izbrisani.",
+		"removedInfo": "Uklonjen {{when}}. Ostaju samo podaci za statistiku.",
+		"lostTitle": "Izgubljene knjige",
+		"lostHint": "Označene kao izgubljene dok su bile posuđene ovom korisniku. Ako se vrate, provucite ih kroz povrate.",
+		"markLost": "Označi „{{title}}“ kao izgubljeno",
+		"markLostTitle": "Označiti „{{title}}“ kao izgubljeno?",
+		"markLostDescription": "Posudba se zatvara, a primjerak se vodi kao izgubljen. Ako se knjiga pronađe, dovoljno je evidentirati povrat i ponovno je dostupna.",
+		"markLostReason": "Razlog (neobavezno)",
+		"markLostConfirm": "Označi kao izgubljeno",
+		"markedLost": "„{{title}}“ označeno kao izgubljeno."
+	},
+	"photo": {
+		"title": "Fotografija",
+		"take": "Snimi fotografiju",
+		"upload": "Učitaj datoteku",
+		"retake": "Snimi ponovno",
+		"use": "Upotrijebi ovu fotografiju",
+		"cancel": "Odustani",
+		"delete": "Obriši fotografiju",
+		"deleteTitle": "Obrisati fotografiju?",
+		"deleteDescription": "Fotografija se briše s poslužitelja; može se snimiti nova.",
+		"zoom": "Zumiranje",
+		"dragHint": "Povucite za kadriranje, zumom približite.",
+		"saved": "Fotografija spremljena",
+		"deleted": "Fotografija obrisana",
+		"placeholder": "Nema fotografije",
+		"alt": "Fotografija korisnika {{name}}",
+		"errors": {
+			"too_large": "Datoteka je prevelika: ograničenje je {{maxMb}} MB.",
+			"not_an_image": "Datoteka nije čitljiva slika.",
+			"unsupported_format": "Format slike nije podržan (dopušteni su JPEG, PNG, WebP i HEIC).",
+			"empty": "Nije odabrana nijedna datoteka."
+		},
+		"withForm": "Sprema se zajedno s korisnikom.",
+		"requiredHint": "Fotografija je obavezna: može se snimiti sada ili kasnije s kartice korisnika.",
+		"optionalHint": "Fotografija se može snimiti sada ili kasnije s kartice korisnika.",
+		"remove": "Ukloni",
+		"notSaved": "Fotografija nije spremljena: snimite je ponovno s kartice korisnika.",
+		"retakePhoto": "Snimi fotografiju ponovno"
+	},
+	"census": {
+		"title": "Evidencija fotografija",
+		"noGroup": "Bez razreda",
+		"stageOthers": "Bez obrazovne razine",
+		"progress": "{{done}} od {{total}} s fotografijom",
+		"allDone": "Svi imaju fotografiju.",
+		"back": "Promijeni razred ili popis",
+		"skip": "Preskoči",
+		"done": "Gotovo",
+		"saved": "Fotografija spremljena: {{name}}",
+		"quickAdd": "Novi korisnik",
+		"quickAddHint": "Dodaje se u {{group}}, a njegova fotografija je sljedeća.",
+		"create": "Dodaj i fotografiraj",
+		"findPerson": "Pronađi po prezimenu",
+		"pickTarget": "Odaberite popis ili razred",
+		"listsTitle": "Popisi korisnika",
+		"classesTitle": "Razredi",
+		"nothingMissing": "Svi razredi i popisi imaju fotografije.",
+		"onlyMissing": "Prikazuju se samo razredi i popisi u kojima nedostaje barem jedna fotografija.",
+		"byCamera": "Jednu po jednu osobu",
+		"sheets": {
+			"title": "Iz slike s više fotografija",
+			"hint": "Slike s više fotografija (list fotografa, iskaznice na stolu, stranica fotografija za dokumente): fotografije se automatski pronalaze i dodjeljuju svakom korisniku.",
+			"upload": "Učitaj sliku",
+			"take": "Fotografiraj list",
+			"uploading": "Slanje slike…",
+			"empty": "Nema slike za ovaj razred ili popis.",
+			"item": "Slika od {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:pronađena fotografija; few:pronađene fotografije; other:pronađenih fotografija;}} · {{saved}} {{saved:plural; one:spremljena; few:spremljene; other:spremljenih;}} · {{pending}} za obradu",
+			"notDetected": "Još nije obrađeno",
+			"demoScan": "Primjer sa skenera",
+			"demoPhoto": "Primjer s fotografije",
+			"demoHint": "Dva načina za dobivanje fotografija razreda: skeniranje je ravno, fotografije su pravokutnici, najviše zarotirani; fotografija je snimljena pod kutom, pa perspektiva iskrivljuje okvire."
+		},
+		"sheet": {
+			"title": "Fotografije sa slike",
+			"back": "Natrag na razred",
+			"detecting": "Traženje fotografija na slici…",
+			"found": "Pronađene fotografije: {{count}}. Odaberite čija je svaka.",
+			"none": "Nije pronađena nijedna fotografija. Uz „Ispravi okvire“ mogu se nacrtati ručno.",
+			"pictureAlt": "Učitana slika s numeriranim okvirima fotografija",
+			"frame": "Fotografija {{n}}",
+			"choose": "Tko je?",
+			"nobody": "— Nitko —",
+			"takenBy": "{{name}} (već na fotografiji {{n}})",
+			"hasPhoto": "već ima fotografiju",
+			"noPhoto": "bez fotografije",
+			"ignore": "Zanemari",
+			"unignore": "Vrati",
+			"ignored": "Zanemarena: nije nitko iz ovog razreda ili popisa.",
+			"saved": "Spremljena kao fotografija korisnika {{name}}",
+			"edit": "Ispravi okvire",
+			"editDone": "Gotovo ispravljanje",
+			"editHint": "Dodirnite okvir i povucite njegove kutove; za fotografiju koja nedostaje koristite „Dodaj okvir“.",
+			"editHintScan": "Dodirnite okvir: povucite kut da ga proširite ili suzite, krug iznad njega da ga zarotirate; za fotografiju koja nedostaje koristite „Dodaj okvir“.",
+			"addFrame": "Dodaj okvir",
+			"addFrameHint": "Povucite po slici od jednog do drugog kuta fotografije koja nedostaje.",
+			"deleteFrame": "Obriši okvir {{n}}",
+			"rotateFrame": "Zarotiraj okvir",
+			"kind": "Vrsta slike",
+			"kindPhoto": "Fotografija",
+			"kindScan": "Skeniranje",
+			"kindPhotoHint": "Snimljeno pod kutom: svaki kut okvira pomiče se sam, da prati perspektivu.",
+			"kindScanHint": "Napravljeno skenerom: okviri ostaju pravokutnici i mogu se samo rotirati.",
+			"kindAgain": "Dok nije odabran nijedan korisnik, promjenom vrste fotografije ponovno se traže.",
+			"save": "Spremi fotografije",
+			"saveTitle": "Spremiti odabrane fotografije?",
+			"saveSummary": "Fotografija za spremanje: {{count}}.",
+			"saveReplaces": "Zamjenjuju postojeću fotografiju korisnika: {{names}}.",
+			"saveUnassigned": "Okviri bez odabranog korisnika: {{count}} (ostaju kakvi jesu).",
+			"savedToast": "Fotografije spremljene: {{count}}.",
+			"deleteSheet": "Obriši sliku",
+			"deleteSheetTitle": "Obrisati sliku?",
+			"deleteSheetDescription": "Slika i njezini okviri brišu se. Fotografije koje su već spremljene ostaju korisnicima.",
+			"deletedToast": "Slika obrisana.",
+			"progress": "{{label}}: {{done}} od {{total}} s fotografijom",
+			"missingTitle": "Još bez fotografije",
+			"byCamera": "Fotografirajte ih jednog po jednog",
+			"errors": {
+				"not_found": "Slika nije pronađena.",
+				"set_not_found": "Razred ili popis više ne postoji.",
+				"empty": "Datoteka je prazna.",
+				"too_large": "Slika je prevelika (najviše {{maxMb}} MB).",
+				"not_an_image": "Datoteka nije čitljiva slika.",
+				"unsupported_format": "Format nije podržan: koristite JPEG, PNG, WebP ili HEIC.",
+				"too_many_frames": "Najviše {{maxFrames}} {{maxFrames:plural; one:fotografija; few:fotografije; other:fotografija;}} po slici.",
+				"bad_corners": "Okvir nije ispravan: kutovi moraju tvoriti četverokut unutar slike.",
+				"already_detected": "Fotografije na ovoj slici već su tražene.",
+				"frame_saved": "Ova fotografija već je spremljena.",
+				"frame_erased": "Ova fotografija pripadala je uklonjenom korisniku: okvir je prekriven.",
+				"not_a_member": "Mogu se odabrati samo korisnici razreda ili popisa.",
+				"patron_taken": "Već odabran za fotografiju {{position}}: prvo je oslobodite pa ga ovdje odaberite.",
+				"confirm_replace": "{{count:plural; one:{{count}} fotografija zamjenjuje postojeću; few:{{count}} fotografije zamjenjuju postojeće; other:{{count}} fotografija zamjenjuje postojeće;}}: potvrdite za nastavak.",
+				"nothing_to_save": "Prije spremanja odaberite barem jednog korisnika."
+			},
+			"erased": "Korisnik uklonjen: okvir je na slici prekriven."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "Datoteka CSV",
+			"submit": "Učitaj",
+			"hints": {
+				"students": "Datoteka CSV s jednim retkom po učeniku, odvojena s ; ili , (funkcionira i izvoz iz tablice). Koristite zaglavlja predloška, koji se preuzima u nastavku s potrebnim stupcima.",
+				"teachers": "Datoteka CSV s jednim retkom po nastavniku, odvojena s ; ili ,. Koristite zaglavlja predloška, koji se preuzima u nastavku s potrebnim stupcima."
+			}
+		},
+		"mapping": {
+			"format": "Prepoznat format",
+			"uncertain": "Format nije siguran: provjerite stupce prije nastavka.",
+			"remembered": "Stupci zapamćeni iz zadnjeg uvoza ove datoteke.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "zaglavlje datoteke",
+				"unknown": "nepoznat"
+			},
+			"mode": "Način rada",
+			"modes": {
+				"upsert": "Dodaj i ažuriraj",
+				"upsertHint": "Pronađeni redovi ažuriraju postojećeg korisnika, a ostali stvaraju nove korisnike.",
+				"sync": {
+					"students": "Sinkroniziraj učenike",
+					"teachers": "Sinkroniziraj nastavnike"
+				},
+				"syncHint": {
+					"students": "Datoteka je potpuni popis učenika: tko nedostaje, prikazuje se na popisu (i uklanja se, nakon potvrde). Nastavnici se ne diraju.",
+					"teachers": "Datoteka je potpuni popis nastavnika: tko nedostaje, prikazuje se na popisu (i uklanja se, nakon potvrde). Učenici se ne diraju."
+				}
+			},
+			"duplicates": "Korisnici već prisutni",
+			"policies": {
+				"update": "Ažuriraj",
+				"skip": "Preskoči",
+				"create": "Ipak stvori"
+			},
+			"validate": "Provjeri datoteku",
+			"matchByName": {
+				"students": "Bez stupca external_id učenici koji su već u evidenciji prepoznaju se po imenu i razredu.",
+				"teachers": "Bez stupca external_id nastavnici koji su već u evidenciji prepoznaju se po imenu."
+			}
+		},
+		"preview": {
+			"ready": "Nema pogrešaka: datoteka se može uvesti.",
+			"blocked": "Ispravite pogreške u datoteci (ili u korisnicima) i ponovno provjerite: datoteka s pogreškama ne uvozi se.",
+			"columns": {
+				"name": "Ime",
+				"class": "Razred"
+			},
+			"changed": "Promjene: {{fields}}",
+			"homonym": {
+				"pick": "Odaberi korisnika",
+				"create": "Stvori novog korisnika",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Istoimenjaci za razrješenje"
+			},
+			"missing": {
+				"students": {
+					"title": "Učenici u evidenciji, ali ne i u datoteci ({{count}})",
+					"remove": "Ukloni ove učenike iz evidencije (odmah se anonimiziraju)",
+					"noPermission": "Bez dopuštenja za uklanjanje korisnika, nedostajući učenici ostaju u evidenciji.",
+					"notRemoved": "{{count}} {{count:plural; one:nedostajući učenik nije uklonjen jer ima; few:nedostajuća učenika nisu uklonjena jer imaju; other:nedostajućih učenika nisu uklonjena jer imaju;}} posudbe u tijeku."
+				},
+				"teachers": {
+					"title": "Nastavnici u evidenciji, ali ne i u datoteci ({{count}})",
+					"remove": "Ukloni ove nastavnike iz evidencije (odmah se anonimiziraju)",
+					"noPermission": "Bez dopuštenja za uklanjanje korisnika, nedostajući nastavnici ostaju u evidenciji.",
+					"notRemoved": "{{count}} {{count:plural; one:nedostajući nastavnik nije uklonjen jer ima; few:nedostajuća nastavnika nisu uklonjena jer imaju; other:nedostajućih nastavnika nisu uklonjena jer imaju;}} posudbe u tijeku."
+				},
+				"hint": "Sinkronizacijom se mogu ukloniti oni koji nisu u datoteci: osobni podaci odmah se i zauvijek brišu, ostaju samo razred i statistika."
+			},
+			"commit": "Uvezi",
+			"back": "Natrag na stupce",
+			"generatedCards": "{{count}} {{count:plural; one:nova iskaznica bit će stvorena; few:nove iskaznice bit će stvorene; other:novih iskaznica bit će stvoreno;}}: u datoteci nema broja."
+		},
+		"reasons": {
+			"tooLong": "Predugačak tekst u stupcu {{column}}: najviše {{max}} {{max:plural; one:znak; few:znaka; other:znakova;}}",
+			"nameRequired": "Nedostaje ime ili prezime",
+			"emailInvalid": "Neispravna e-pošta",
+			"cardNumberInvalid": "Neispravan broj iskaznice",
+			"cardNumberTaken": "Broj iskaznice već je dodijeljen drugom korisniku",
+			"cardNumberIsCopy": "Broj iskaznice jednak je ili sličan crtičnom kodu primjerka",
+			"externalIdTaken": "Matični broj već je dodijeljen drugom korisniku",
+			"duplicateInFile": "Ista osoba već je u retku {{line}}",
+			"homonym": "{{count}} {{count:plural; one:istoimenjak; few:istoimenjaka; other:istoimenjaka;}} u arhivu: odaberite kojeg ažurirati",
+			"matchedTwice": "Drugi redak već ažurira istog korisnika",
+			"skipped": "Već prisutan: preskočeno",
+			"levelRequired": "Nedostaje razred",
+			"levelUnknown": "Godina „{{value}}“ nije godina škole",
+			"groupRequired": "Nedostaje odjeljak",
+			"groupUnknown": "Odjeljak „{{value}}“ nije pronađen za ovu godinu. Važeći razredi: {{classes}} (razredi se stvaraju u Administracija → Postavke → Razredi)",
+			"levelNotInGroup": "Odjeljak „{{value}}“ nema takvu godinu. Važeći razredi: {{classes}}",
+			"classUnknown": "Razred „{{value}}“ nije pronađen. Važeći razredi: {{classes}}",
+			"teacherGroupUnknown": "Skupina nastavnika „{{value}}“ nije pronađena. Važeće skupine: {{classes}}"
+		},
+		"done": {
+			"title": "Uvoz dovršen",
+			"summary": "Novih: {{created}}, ažurirano: {{updated}}, nepromijenjeno: {{unchanged}}, uklonjeno: {{removed}}.",
+			"printNew": "Ispiši iskaznice novih korisnika",
+			"census": "Evidencija fotografija",
+			"again": "Uvezi drugu datoteku",
+			"batch": "Uvoz br. {{id}}: izvorna datoteka čuva se na poslužitelju."
+		},
+		"fields": {
+			"firstName": "Ime",
+			"lastName": "Prezime",
+			"class": "Razred (godina i odjeljak)",
+			"level": "Razred (godina)",
+			"section": "Odjeljak",
+			"group": "Skupina nastavnika",
+			"externalId": "Matični broj",
+			"cardNumber": "Iskaznica",
+			"email": "Email"
+		},
+		"titles": {
+			"students": "Uvezi učenike",
+			"teachers": "Uvezi nastavnike"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "Ime."
+			},
+			"lastName": {
+				"hint": "Prezime."
+			},
+			"class": {
+				"hint": "Razred u jednom stupcu, kao 3A ili 3 A: mora postojati u Administracija → Postavke → Razredi."
+			},
+			"level": {
+				"hint": "Godina (1, 2, 3…), s odjeljkom u stupcu section."
+			},
+			"section": {
+				"hint": "Odjeljak (A, B…): uz level označava razred."
+			},
+			"cardNumber": {
+				"hint": "Broj iskaznice, ako učenik već ima jednu.",
+				"missing": "nove iskaznice se stvaraju"
+			},
+			"externalId": {
+				"hint": "Šifra elektroničkog dnevnika.",
+				"missing": "korisnici koji su već u evidenciji prepoznaju se po imenu i razredu"
+			},
+			"email": {
+				"hint": "Neobavezna."
+			},
+			"group": {
+				"hint": "Skupina nastavnika; ako nedostaje, zadana skupina."
+			}
+		},
+		"classForm": {
+			"label": "Razred",
+			"class": "U jednom stupcu (class: 3A)",
+			"levelSection": "U dva stupca (level: 3, section: A)"
+		}
+	}
+}

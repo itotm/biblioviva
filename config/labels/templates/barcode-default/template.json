@@ -1,0 +1,12 @@
+{
+	"name": "barcode-default",
+	"description": "Etichetta barcode interna da sola: segnatura, titolo, codice a barre e numero",
+	"kind": "barcode",
+	"unit": { "cells": 1, "files": ["label.html"] },
+	"stocks": ["a4-70x48", "l7159", "a4-70x24"],
+	"variants": {
+		"full": { "minCellHeightMm": 30 },
+		"compact": { "maxCellHeightMm": 29.9, "files": ["label-compact.html"] }
+	},
+	"barcode": { "widthMm": 50, "heightMm": 15, "text": false }
+}

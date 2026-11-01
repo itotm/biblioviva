@@ -1,0 +1,160 @@
+<!--meta {"title":"BiblioViva — The school library made easy","description":"Free and open-source software for the school library: loans, catalogue, library cards and labels."} -->
+<header class="gn">
+	<div class="gn-row">
+		<a class="gn-brand" href="{{home}}"><img src="logo.webp" alt="" width="30" height="30">BiblioViva</a>
+		<nav class="gn-links" aria-label="Site">
+			[[site:docs]]<a href="{{docs}}">Documentation</a><a href="{{docs}}install/">Installation</a>[[/site]][[site:!docs]][[site:repo]]<a href="{{setup}}" rel="external">Installation</a>[[/site]][[/site]]
+		</nav>
+		[[lang]]
+		[[site:repo]]<a class="gn-ico" href="{{repo}}" rel="external" title="Source code on GitHub" aria-label="GitHub">[[icon:github]]</a>[[/site]]
+	</div>
+</header>
+
+<main id="main">
+<section class="h-hero">
+	<div class="h-hero-in">
+		<div class="h-hero-copy">
+			<img class="h-logo" src="logo.webp" alt="BiblioViva" width="640" height="640">
+			<h1>The school library made easy</h1>
+			<p class="sub">BiblioViva is software for running a school library: loans for students and teachers, cataloguing from the ISBN, printing of library cards for patrons, barcodes and spine labels for books. It comes from hands-on experience running a school library, with the aim of a tool that is simple, also for people who seldom use a computer.<br><strong>Free and open source.</strong></p>
+			<div class="h-cta">
+				<a class="pill pill-blue" href="{{demo}}" rel="external">Try the demo [[icon:chevron-right]]</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="h-statement" data-scrub="pass">
+	<p>[[words:Scan the card. Scan the book. Done.]]</p>
+	<div class="scanner reveal">
+		<span class="ico">[[icon:scan-barcode]]</span>
+		<div><b>No special equipment.</b><span>An inexpensive USB barcode scanner, or a phone, reads library cards, books and ISBNs.</span></div>
+	</div>
+</section>
+
+<section class="h-sec alt h-desk" id="banco">
+	<div class="h-wrap" data-steps data-step="3">
+		<div class="desk-stage">
+			<div class="desk wf wf-desktop" style="--area:var(--c-circ)">
+				<div class="wf-chrome"><i></i><i></i><i></i><span class="wf-url">biblioviva.scuola.ts.net</span></div>
+				<div class="wf-app">
+					<div class="wf-side"><span></span><span class="on"></span><span></span><span></span><span></span><span></span></div>
+					<div class="wf-main">
+						<div class="wf-top"><span class="wf-back"></span><span class="wf-title">Loans</span><span class="desk-help">[[icon:info]]</span><span class="wf-search"></span></div>
+						<div class="desk-body">
+							<div class="desk-scan">[[icon:scan-barcode]]<span class="dt"><span class="only2">Card · Giulia Rossi</span><span class="only3">Book · The Little Prince</span><span class="only4">Book · Matilda</span></span></div>
+							<div class="desk-grid">
+								<div class="desk-card desk-patron from2"><span class="ph"></span><div><b>Giulia Rossi</b><span>Class 4 B</span><span class="badge-swap"><span class="badge only2">No books on loan</span><span class="badge from3">1 book on loan</span></span></div></div>
+								<div class="desk-msgs">
+									<div class="desk-msg wait only2">Now scan the books</div>
+									<div class="desk-msg ok only3">[[icon:circle-check]]<div><b>Loan recorded</b>The Little Prince · due 12 November</div></div>
+									<div class="desk-msg bad only4">[[icon:circle-x]]<div><b>Matilda is on loan to Marco</b>Record the return first, then come back here.<br><em>Go to Returns</em></div></div>
+								</div>
+							</div>
+							<div class="desk-card desk-list from3"><div class="row"><span>The Little Prince</span><span>due 12/11</span></div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="desk-steps">
+			<div class="step" data-n="2"><span class="n">1</span><h3>Enter the card.</h3><p>The patron's photo and class appear at once.</p></div>
+			<div class="step" data-n="3"><span class="n">2</span><h3>Scan the book.</h3><p>The loan is recorded with its due date.</p></div>
+			<div class="step" data-n="4"><span class="n">3</span><h3>Not sure what to do?</h3><p>The message explains what to do, and the documentation is one click away.</p></div>
+		</div>
+	</div>
+</section>
+
+<section class="h-sec" id="funzioni">
+	<div class="h-wrap">
+		<div class="h-gal-head">
+			<h2 class="h-title reveal" style="margin:0">Highlights.</h2>
+
+		</div>
+	<div class="ggrid">
+		<article class="gcard reveal wide" style="--d:0;--a:var(--c-cat)"><span class="k">Catalogue</span><h3>Type the ISBN, or read it with a barcode scanner or a phone.</h3><p>Title, author, publisher and cover from OPAC SBN.</p><div class="vis">[[shot:catalog/new-book-form|New book|cat|form]]</div><span class="plus">[[icon:plus]]</span></article>
+		<article class="gcard reveal" style="--d:1;--a:var(--c-pat)"><span class="k">Scanned ID photos</span><h3>A whole class's photos in a few minutes.</h3><p>From a scan of the sheet of ID photos, each portrait is cut out and matched to its student.</p><div class="vis">[[shot:census/start|Photo census|pat|form]]</div><span class="plus">[[icon:plus]]</span></article>
+		<article class="gcard reveal" style="--d:2;--a:var(--c-print)"><span class="k">Library cards</span><h3>Two-sided library cards.</h3><p>With photo and barcode, on a template you can customise.</p><div class="vis"><div class="idcard"><span class="ph"></span><div><b>Giulia Rossi</b><span>4 B · Rodari Library</span><div class="bc"></div></div></div></div><span class="plus">[[icon:plus]]</span></article>
+		<article class="gcard reveal" style="--d:0;--a:#e8590c"><span class="k">Labels</span><h3>The band on the spine and the barcode inside.</h3><p>On ordinary adhesive sheets, even with a black-and-white printer.</p><div class="vis spines-vis">[[shelfmini]]</div><span class="plus">[[icon:plus]]</span></article>
+		<article class="gcard reveal" style="--d:2;--a:var(--c-cat)"><span class="k">Stocktaking</span><h3>Stocktaking, shelf by shelf.</h3><p>At the end, the list of books not found is already there.</p><div class="vis">[[shot:catalog/inventory-empty|Stocktaking|cat|grid]]</div><span class="plus">[[icon:plus]]</span></article>
+		<article class="gcard reveal wide" style="--d:2;--a:var(--c-rep)"><span class="k">Reports</span><h3>Statistics without spreadsheets.</h3><p>Loans, reading and late returns, by class and by period.</p><div class="vis">[[shot:reports/library|Reports|rep|dash]]</div><span class="plus">[[icon:plus]]</span></article>
+		<article class="gcard reveal" style="--d:1;--a:var(--c-notes)"><span class="k">Phone · optional</span><h3>The phone as an extra tool.</h3><p>Its camera can stand in for the scanner and take photos and covers.</p><div class="vis">[[wfp:notes|desk|Loans]]</div><span class="plus">[[icon:plus]]</span></article>
+	</div>
+	</div>
+</section>
+
+<section class="h-sec h-dark" id="privacy" data-scrub="pass">
+	<div class="h-wrap">
+		<div class="big-ico">[[icon:shield-check]]</div>
+		<h2 class="h-title">Students' data<br>stay at school.</h2>
+		<p class="h-lead">BiblioViva runs on a computer at the school and only the staff can reach it. No cloud service, no subscription, no data handed over.</p>
+		<div class="facts3">
+			<div class="reveal">[[icon:key-round]]<b>Staff-only access</b><span>No access for students or families; connections go through a private network.</span></div>
+			<div class="reveal">[[icon:user-round]]<b>Anonymisation</b><span>When a patron leaves the school, their personal data are erased at once.</span></div>
+			<div class="reveal">[[icon:hard-drive-download]]<b>Backup and restore</b><span>A daily backup of books, patrons, photos and settings.</span></div>
+		</div>
+	</div>
+</section>
+
+<section class="h-sec alt h-features">
+	<div class="h-wrap">
+		<h2 class="h-title reveal">What BiblioViva does.</h2>
+		<p class="h-lead reveal">Everything a school library needs, area by area.</p>
+		<div class="fgrid">
+			<div class="farea reveal" style="--a:var(--c-circ);--d:0"><h3><span class="ico">[[icon:arrow-right-left]]</span>Loans</h3><ul><li>Loans and returns with the barcode scanner</li><li>Renewals, limits and due dates on the school calendar</li><li>Overdue notices printed by class</li><li>A wishlist of books</li></ul></div>
+			<div class="farea reveal" style="--a:var(--c-cat);--d:1"><h3><span class="ico">[[icon:book-open]]</span>Catalogue</h3><ul><li>Cataloguing from the ISBN with OPAC SBN and covers</li><li>Genres, reading levels and automatic call numbers</li><li>A search that forgives typing mistakes</li><li>Shelf stocktaking</li></ul></div>
+			<div class="farea reveal" style="--a:var(--c-pat);--d:2"><h3><span class="ico">[[icon:users]]</span>Patrons</h3><ul><li>Students and teachers, organised by class</li><li>Import from the school office's lists</li><li>ID photos from a scan</li><li>Class upgrade at the end of the year</li></ul></div>
+			<div class="farea reveal" style="--a:var(--c-print);--d:0"><h3><span class="ico">[[icon:printer]]</span>Printing</h3><ul><li>Two-sided library cards, with calibration</li><li>Spine bands and barcode labels</li><li>Templates edited with a visual editor</li><li>Print lists to work in batches</li></ul></div>
+			<div class="farea reveal" style="--a:var(--c-rep);--d:1"><h3><span class="ico">[[icon:chart-bar]]</span>Reports</h3><ul><li>Ready-made reports for the end-of-year review</li><li>A guided editor and pivot tables</li><li>Export to a spreadsheet</li><li>Direct printing</li></ul></div>
+			<div class="farea reveal" style="--a:var(--c-admin);--d:2"><h3><span class="ico">[[icon:settings]]</span>Administration</h3><ul><li>Accounts by role, with separate permissions</li><li>Every setting from the interface</li><li>Nightly backup and restore</li><li>Italian and English, other languages with translation packs</li></ul></div>
+		</div>
+	</div>
+</section>
+
+<section class="h-sec">
+	<div class="h-wrap">
+		<h2 class="h-title reveal">Why BiblioViva.</h2>
+		<div class="why">
+			<div class="reveal" style="--a:#e8590c">[[icon:heart]]<b>Free, for good</b><span>No licence fee, no subscription, no limit on books.</span></div>
+			<div class="reveal" style="--a:var(--primary)">[[icon:code-xml]]<b>Open source</b><span>Released under the GPL: the code is public and anyone can contribute.</span></div>
+			<div class="reveal" style="--a:var(--c-pat)">[[icon:cpu]]<b>An old PC is enough</b><span>Even the library's own PC, or a Raspberry Pi.</span></div>
+			<div class="reveal" style="--a:var(--c-circ)">[[icon:languages]]<b>Italian and English</b><span>The interface is in Italian and English; other languages with a translation pack.</span></div>
+			<div class="reveal" style="--a:var(--c-cat)">[[icon:book-open]]<b>Data import</b><span>Catalogue, patrons and loans from existing data, checked before they are imported.</span></div>
+			<div class="reveal" style="--a:var(--c-rep)">[[icon:book-open-text]]<b>Complete documentation</b><span>Step-by-step guides for everyday use, administration and installation.</span></div>
+		</div>
+	</div>
+</section>
+
+<section class="h-sec alt" id="installa">
+	<div class="h-wrap">
+		<h2 class="h-title reveal">From nothing to the first loan.</h2>
+		<p class="h-lead reveal">An illustrated guide goes with every step.</p>
+		<div class="inst">
+			<div class="reveal" style="--a:var(--s-install)"><span class="num">1</span><b>Prepare the computer</b><span>A PC with Linux or Windows, or a Raspberry Pi.</span><small>[[icon:clock]] 10 min</small></div>
+			<div class="reveal" style="--a:#d97706"><span class="num">2</span><b>Choose the network</b><span>The school's network, or Tailscale (free) for the phone and access from outside.</span><small>[[icon:clock]] 5 min</small></div>
+			<div class="reveal" style="--a:var(--primary)"><span class="num">3</span><b>Install BiblioViva</b><span>One command and two questions: the rest is automatic.</span><small>[[icon:clock]] 10 min</small></div>
+			<div class="reveal" style="--a:var(--c-pat)"><span class="num">4</span><b>Complete the first start</b><span>The wizard sets up the school, the classes and the codes.</span><small>[[icon:clock]] 5 min</small></div>
+		</div>
+		[[site:docs]]<a class="pill pill-blue" href="{{docs}}install/">Follow the installation guide [[icon:chevron-right]]</a>[[/site]][[site:!docs]][[site:repo]]<a class="pill pill-blue" href="{{setup}}" rel="external">Follow the installation guide [[icon:chevron-right]]</a>[[/site]][[/site]]
+	</div>
+</section>
+
+<section class="final" id="demo">
+	<h2 class="h-title">Try the demo.</h2>
+	<p>A complete copy of BiblioViva with sample data, reset every night.</p>
+	<div class="h-cta">
+		<a class="pill pill-blue" href="{{demo}}" rel="external" style="background:#fff;color:#0b3f8a">[[icon:play]] Open the demo</a>
+		[[site:docs]]<a class="pill pill-line" href="{{docs}}">Read the documentation</a>[[/site]]
+	</div>
+</section>
+</main>
+
+<footer class="h-foot">
+	<div class="h-wrap">
+		<div><b>BiblioViva</b>Free software (GPL-3.0-or-later) for school libraries. Developed with the help of LLMs.</div>
+		[[site:docs]]<div><b>Documentation</b><a href="{{docs}}manual/">Manual</a><a href="{{docs}}admin/">Administration</a><a href="{{docs}}install/">Installation</a><a href="{{docs}}tech/">Technical</a></div>[[/site]]
+		[[site:repo]]<div><b>Project</b><a href="{{repo}}" rel="external">GitHub</a><a href="{{repo}}/releases" rel="external">What's new</a><a href="{{repo}}/blob/main/LICENSE" rel="external">Licence</a></div>[[/site]]
+		[[site:docs]]<div><b>Help</b><a href="{{docs}}help/problems/">Common problems</a><a href="{{docs}}help/glossary/">Glossary</a><a href="{{docs}}help/ask-for-help/">Ask for help</a></div>[[/site]]
+	</div>
+	<p class="h-beta">[[icon:flask-conical]]<span><b>Public beta.</b> The features are stable, but until version 1.0 an update is not guaranteed to stay compatible with the data and settings of the previous version.[[site:repo]] <a href="{{repo}}/issues" rel="external">Report a problem</a>[[/site]]</span></p>
+</footer>

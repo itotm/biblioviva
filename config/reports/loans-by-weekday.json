@@ -1,0 +1,24 @@
+{
+	"id": "loans-by-weekday",
+	"title": {
+		"it": "Prestiti per giorno della settimana",
+		"en": "Loans by weekday"
+	},
+	"description": {
+		"it": "In quali giorni della settimana si presta di più: utile per gli orari della biblioteca.",
+		"en": "On which weekdays most books are lent: useful for the opening hours."
+	},
+	"category": "loans",
+	"query": {
+		"source": "loans",
+		"filters": [
+			{
+				"field": "period",
+				"ask": true
+			}
+		],
+		"rows": ["weekday"],
+		"measures": ["loans"],
+		"chart": "bar"
+	}
+}

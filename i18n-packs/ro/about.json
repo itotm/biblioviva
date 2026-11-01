@@ -1,0 +1,19 @@
+{
+	"title": "Despre",
+	"app": {
+		"version": "Versiune",
+		"license": "Licență",
+		"repository": "Cod sursă"
+	},
+	"deps": {
+		"title": "Biblioteci utilizate",
+		"runtime": "În execuție ({{count}})",
+		"development": "Doar pentru dezvoltare ({{count}})",
+		"system": "Componente de sistem",
+		"columns": {
+			"name": "Nume",
+			"version": "Versiune",
+			"license": "Licență"
+		}
+	}
+}

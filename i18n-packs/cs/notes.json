@@ -1,0 +1,66 @@
+{
+	"title": "Poznámky",
+	"new": "Nová poznámka",
+	"adminOnly": "Poznámky archivuje a na přehled připíná jen správce.",
+	"pinned": "Připnuté",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Archivováno: {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:poznámka; few:poznámky; other:poznámek;}}",
+	"archiveCount": "{{shown}} z {{total}} {{total:plural; one:archivovaná poznámka; few:archivované poznámky; other:archivovaných poznámek;}}",
+	"actions": {
+		"label": "Akce s poznámkou",
+		"pin": "Připnout na přehled",
+		"unpin": "Odepnout",
+		"archive": "Archivovat",
+		"restore": "Obnovit",
+		"delete": "Smazat",
+		"showAll": "Zobrazit vše",
+		"showLess": "Zobrazit méně",
+		"more": "Zobrazit více"
+	},
+	"done": {
+		"added": "Poznámka přidána",
+		"pinned": "Poznámka připnuta",
+		"unpinned": "Poznámka odepnuta",
+		"archived": "Poznámka archivována",
+		"restored": "Poznámka obnovena",
+		"deleted": "Poznámka smazána"
+	},
+	"confirmDelete": {
+		"title": "Smazat poznámku?",
+		"text": "Bude trvale vymazána a nelze ji obnovit."
+	},
+	"form": {
+		"body": "Text",
+		"placeholder": "Např. Skener u pultu nečte průkazy.",
+		"privacy": "Poznámky vidí všechny účty: nevkládejte osobní údaje žáků.",
+		"written": "Poznámku nelze upravit: v případě chyby požádejte správce, aby ji archivoval, a napište novou.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Barva",
+		"pinned": "Připnout na přehled",
+		"pinnedHint": "Zobrazí se všem nahoře na přehledu (a na výpůjčním pultu), dokud nebude odepnuta nebo archivována.",
+		"save": "Přidat"
+	},
+	"colors": {
+		"yellow": "Žlutá",
+		"pink": "Růžová",
+		"green": "Zelená",
+		"blue": "Světle modrá",
+		"orange": "Oranžová"
+	},
+	"errors": {
+		"empty": "Napište text poznámky.",
+		"tooLong": "Text je delší než {{max}} {{max:plural; one:znak; few:znaky; other:znaků;}}.",
+		"color": "Zvolte jednu z barev."
+	},
+	"empty": {
+		"open": "Žádné otevřené poznámky",
+		"openHint": "Žádné otevřené poznámky. Poznámky předávají problémy a upozornění kolegům a správci.",
+		"archived": "Žádné archivované poznámky"
+	},
+	"home": {
+		"title": "Poznámky",
+		"open": "Otevřít poznámky"
+	},
+	"tile": "Otevřené poznámky"
+}

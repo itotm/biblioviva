@@ -1,0 +1,37 @@
+{
+	"id": "acquisitions-by-year",
+	"title": {
+		"it": "Acquisizioni per anno",
+		"en": "Acquisitions by year"
+	},
+	"description": {
+		"it": "Copie entrate in biblioteca ogni anno.",
+		"en": "Copies added to the library each year."
+	},
+	"category": "books",
+	"params": [],
+	"sql": "SELECT strftime('%Y', COALESCE(i.acquisition_date, i.created_at)) AS year, COUNT(*) AS copies FROM item i GROUP BY 1 ORDER BY 1",
+	"columns": [
+		{
+			"key": "year",
+			"label": {
+				"it": "Anno",
+				"en": "Year"
+			},
+			"type": "text"
+		},
+		{
+			"key": "copies",
+			"label": {
+				"it": "Copie",
+				"en": "Copies"
+			},
+			"type": "int"
+		}
+	],
+	"chart": {
+		"type": "bar",
+		"x": "year",
+		"y": "copies"
+	}
+}

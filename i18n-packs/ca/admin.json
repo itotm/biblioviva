@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "Administració",
+		"sections": {
+			"config": {
+				"title": "Configuració",
+				"description": "La classificació i la configuració de la biblioteca."
+			},
+			"audit": {
+				"title": "Registre d'operacions",
+				"description": "Qui ha fet què: accessos, canvis, importacions."
+			},
+			"users": {
+				"title": "Comptes del personal",
+				"description": "Comptes del personal, rols i permisos."
+			},
+			"backups": {
+				"title": "Còpies de seguretat",
+				"description": "Còpies de seguretat de la base de dades i dels fitxers."
+			},
+			"rollover": {
+				"title": "Pas de curs",
+				"description": "A final de curs: promocions, repetidors, sortides de l'últim curs."
+			},
+			"exports": {
+				"title": "Exportacions",
+				"description": "Usuaris, catàleg, préstecs i totes les dades en fitxers CSV o JSON."
+			},
+			"imports": {
+				"title": "Importacions",
+				"description": "Catàleg, usuaris, préstecs en curs i fotos: des de fitxers CSV o de l'extracció de Koha."
+			}
+		}
+	},
+	"audit": {
+		"title": "Registre d'operacions",
+		"filters": {
+			"from": "Des de",
+			"to": "Fins a",
+			"user": "Compte",
+			"action": "Operació",
+			"all": "Tots"
+		},
+		"columns": {
+			"when": "Quan",
+			"user": "Compte",
+			"action": "Operació",
+			"entity": "Objecte",
+			"entityId": "ID",
+			"details": "Detalls"
+		},
+		"count": "{{shown}} de {{total}} {{total:plural; one:operació; other:operacions;}}",
+		"empty": "Cap operació registrada amb aquests filtres.",
+		"system": "sistema"
+	},
+	"users": {
+		"title": "Comptes del personal",
+		"fields": {
+			"roles": "Rols",
+			"permissions": "Permisos",
+			"lastLogin": "Últim accés",
+			"never": "mai"
+		},
+		"status": {
+			"active": "Actiu",
+			"inactive": "Desactivat",
+			"plainPassword": "Contrasenya en clar al fitxer",
+			"notInConfig": "Tret de la configuració"
+		},
+		"hash": {
+			"title": "Genera el hash de la contrasenya",
+			"description": "Escriu la contrasenya que assignar per obtenir el hash argon2id que enganxar a passwordHash. La contrasenya no es desa.",
+			"password": "Contrasenya (almenys {{min}} caràcters)",
+			"generate": "Genera el hash",
+			"result": "Hash per enganxar",
+			"copy": "Copia",
+			"copied": "Hash copiat",
+			"tooShort": "La contrasenya ha de tenir almenys {{min}} caràcters.",
+			"disclosure": "Per a qui edita els fitxers a mà: generar el hash d'una contrasenya"
+		},
+		"reload": {
+			"button": "Torna a carregar la configuració",
+			"success": "Configuració tornada a carregar",
+			"successWithWarnings": "Configuració tornada a carregar amb {{count}} {{count:plural; one:avís; other:avisos;}}",
+			"failed": "Configuració no vàlida: es manté l'anterior",
+			"exampleSource": "Atenció: config.json no existeix, s'usa la configuració d'exemple."
+		},
+		"new": "Nou compte",
+		"newPassword": "Nova contrasenya",
+		"permissionNames": {
+			"all": "Tot",
+			"loans": "Préstecs",
+			"patrons": "Usuaris",
+			"patrons_import": "Importa usuaris",
+			"catalog": "Catàleg",
+			"catalog_import": "Importa catàleg",
+			"reports": "Informes",
+			"anonymize": "Anonimitza",
+			"admin": "Administració"
+		},
+		"roles": {
+			"title": "Rols i permisos",
+			"hint": "Un rol és un conjunt de permisos; cada compte té un o més rols. «Tot» dona cada permís, també els que arribaran amb les versions següents. Canviar el nom d'un rol actualitza els comptes que l'usen.",
+			"name": "Rol",
+			"unused": "cap compte",
+			"badName": "Lletres, xifres, guions i guions baixos (32 com a màxim).",
+			"add": "Afegeix un rol",
+			"saved": "Rols desats"
+		},
+		"auth": {
+			"title": "Accés",
+			"config": "S'hi accedeix amb els comptes d'aquesta pàgina, normalment un de compartit per rol (per exemple «préstecs» per al taulell).",
+			"database": "S'hi accedeix amb comptes personals.",
+			"later": "Els comptes personals, un per persona, estan previstos per a una versió posterior."
+		},
+		"dialog": {
+			"title": {
+				"new": "Nou compte",
+				"edit": "Modifica {{name}}",
+				"password": "Nova contrasenya per a {{name}}"
+			},
+			"username": "Nom d'usuari",
+			"usernameHint": "Minúscules, xifres, punt, guió i guió baix (de 2 a 32).",
+			"badUsername": "Fes servir minúscules, xifres, punt, guió i guió baix (de 2 a 32).",
+			"displayName": "Nom que es mostra",
+			"active": "Compte actiu (pot accedir)",
+			"password": "Contrasenya (almenys {{min}} caràcters)",
+			"repeat": "Repeteix la contrasenya",
+			"mismatch": "Les dues contrasenyes no coincideixen.",
+			"passwordHint": "La contrasenya no es desa: a la configuració s'escriu només el seu hash. Qui hagi entrat amb aquest compte haurà de tornar a accedir.",
+			"saved": {
+				"new": "Compte creat",
+				"edit": "Compte desat",
+				"password": "Contrasenya canviada"
+			},
+			"removed": "Compte eliminat",
+			"removeTitle": "Eliminar {{name}}?",
+			"removeHint": "El compte surt de la configuració; les operacions que ha fet resten al registre amb el seu nom. Es pot desfer des de l'historial de la configuració."
+		},
+		"errors": {
+			"badUsername": "Nom d'usuari no vàlid: {{details}}.",
+			"usernameTaken": "El nom d'usuari {{details}} ja s'utilitza.",
+			"notFound": "Compte no trobat: {{details}}.",
+			"noRoles": "Tria almenys un rol.",
+			"unknownRole": "Rol desconegut: {{details}}.",
+			"passwordTooShort": "La contrasenya és massa curta.",
+			"passwordRequired": "Un compte nou necessita una contrasenya.",
+			"lastAdmin": "Ha de quedar almenys un compte actiu amb el permís d'administració.",
+			"stillActive": "Desactiva el compte abans d'eliminar-lo.",
+			"badRole": "Nom de rol no vàlid: {{details}}.",
+			"roleTaken": "Hi ha dos rols que es diuen {{details}}.",
+			"roleInUse": "El rol l'usen alguns comptes: {{details}}.",
+			"invalid": "La configuració no seria vàlida: {{details}}."
+		}
+	},
+	"backups": {
+		"title": "Còpies de seguretat",
+		"runNow": "Fes una còpia ara",
+		"created": "Còpia de seguretat creada: {{name}}",
+		"createdDeleted": "Còpia de seguretat creada: {{name}} ({{deleted}} {{deleted:plural; one:còpia antiga eliminada; other:còpies antigues eliminades;}})",
+		"empty": "Encara no hi ha còpies de seguretat. La primera es farà a l'hora programada o amb «Fes una còpia de seguretat ara».",
+		"download": "Descarrega",
+		"columns": {
+			"when": "Creada",
+			"size": "Mida"
+		},
+		"catchUp": {
+			"badge": "Feta a l'inici",
+			"hint": "La còpia programada s'havia saltat (ordinador apagat): BiblioViva l'ha feta a l'inici."
+		},
+		"offsite": {
+			"title": "Última còpia externa",
+			"disabled": "Còpia externa no configurada. S'activa amb el servei «offsite» (rclone) descrit a la guia d'instal·lació.",
+			"never": "El servei està activat però encara no ha escrit cap resultat.",
+			"ok": "Última còpia reeixida: {{when}}",
+			"error": "Última còpia fallida: {{when}}",
+			"stale": "La còpia externa té més de dos dies: revisa el servei offsite.",
+			"remote": "Destinació: {{remote}}"
+		},
+		"restore": {
+			"title": "Restauració",
+			"button": "Restaura…",
+			"hint": "Tria «Restaura…» en una còpia de la llista, o puja un arxiu de BiblioViva (una còpia, «Exporta-ho tot» o «Exporta la configuració», fins a {{maxMb}} MB; un de més gran es copia a la carpeta de còpies del servidor o es restaura amb bun run backup:restore). Primer es verifica tot; després només es restauren les parts triades: les altres es queden com són.",
+			"upload": "Puja un arxiu",
+			"from": "De {{name}} del {{date}}",
+			"count": "{{part}}: ara {{live}}, a la còpia {{archive}}",
+			"images": "Imatges a restaurar: {{photos}} {{photos:plural; one:foto; other:fotos;}}, {{covers}} {{covers:plural; one:coberta; other:cobertes;}}.",
+			"gapsTitle": "Algunes dades quedarien sense allò a què es refereixen:",
+			"gap": "{{rows:plural; one:{{rows}} fila de «{{part}}» es refereix; other:{{rows}} files de «{{part}}» es refereixen;}} a «{{needs}}» que no hi serien: afegeix «{{add}}» a la selecció.",
+			"schema": "La còpia és d'una altra versió de BiblioViva (taules {{tables}}): aquí no es pot restaurar.",
+			"apply": "Restaura",
+			"confirmTitle": "Restaurar les parts triades?",
+			"confirmHint": "Les dades i la configuració triades se substitueixen per les de la còpia. La configuració es pot recuperar des de l'historial; per a les dades convé fer abans una còpia de seguretat, si no n'hi ha una de recent.",
+			"done": "Restauració completada",
+			"notArchive": "El fitxer no és un arxiu de BiblioViva."
+		},
+		"contents": {
+			"title": "Què conté la còpia de seguretat",
+			"database": "Base de dades: una còpia completa a cada execució (llista a sota).",
+			"images": "Fotos i cobertes: copiades cada nit a la carpeta «uploads» de la còpia ({{photos}} {{photos:plural; one:foto; other:fotos;}}, {{covers}} {{covers:plural; one:coberta; other:cobertes;}} ara mateix).",
+			"imagesPending": "Fotos i cobertes: la primera còpia es farà a la propera execució ({{photos}} {{photos:plural; one:foto; other:fotos;}}, {{covers}} {{covers:plural; one:coberta; other:cobertes;}} per copiar).",
+			"config": "La configuració (plantilles, imatges, paràmetres) no és a la còpia nocturna: per tenir-la, utilitza «Exporta-ho tot»."
+		},
+		"export": {
+			"button": "Exporta-ho tot",
+			"hint": "Un únic fitxer ZIP amb la base de dades, les fotos, les cobertes i tota la configuració (plantilles i imatges incloses), a punt per restaurar amb «bun run backup:restore»."
+		},
+		"createdMirror": "Còpia de seguretat creada: {{name}}; {{copied}} {{copied:plural; one:imatge copiada; other:imatges copiades;}}",
+		"parts": {
+			"title": "Còpia de seguretat o exportació d'algunes parts",
+			"hint": "Tria què incloure: les dades de la biblioteca, els paràmetres de cada secció, les plantilles, les imatges… «Crea la còpia» la desa a la llista de sota, «Descarrega» la baixa a l'ordinador.",
+			"create": "Crea la còpia",
+			"download": "Descarrega"
+		}
+	},
+	"demo": {
+		"clear": "Buida les dades de demostració",
+		"confirmTitle": "Buidar les dades de demostració?",
+		"confirmDescription": "Els usuaris, els llibres, els préstecs i les fotos de demostració s'eliminaran. Les classes i el grup de docents es mantenen. Tots els operadors es desconnectaran.",
+		"cleared": "Dades de demostració eliminades. Torna a accedir.",
+		"clearedPassword": "Els comptes tenen encara la contrasenya de demostració «{{password}}»: canvia-la ara a Administració → Comptes del personal."
+	},
+	"appearance": {
+		"title": "Aspecte i idioma",
+		"current": "Paleta actual: {{name}}",
+		"areas": {
+			"title": "Estil de les àrees",
+			"hint": "La barra superior pren el color de l'àrea en què es treballa (Préstecs, Catàleg, Usuaris…), en els tons de la paleta de colors escollida. La icona i el nom de l'àrea es veuen sempre.",
+			"styles": {
+				"tinted": "Barra tenyida (recomanada)",
+				"filled": "Barra plena",
+				"accents": "Només accents",
+				"none": "Cap color"
+			},
+			"saved": "Estil de les àrees desat"
+		},
+		"colours": {
+			"title": "Paleta de colors"
+		},
+		"save": "Desa els colors",
+		"saved": "Colors desats",
+		"unchanged": "Cap canvi per desar.",
+		"language": {
+			"title": "Idioma de l'aplicació",
+			"hint": "Un sol idioma per instal·lació: val per a tot el personal.",
+			"save": "Canvia l'idioma",
+			"saved": "Idioma canviat: la pàgina es torna a carregar."
+		},
+		"logo": {
+			"title": "Logo de la biblioteca",
+			"hint": "Es mostra a dalt a l'esquerra de cada pàgina, al costat del nom de la biblioteca. PNG, JPEG o WebP; va millor amb el fons transparent.",
+			"upload": "Puja el logo",
+			"replace": "Canvia el logo",
+			"remove": "Treu el logo",
+			"saved": "Logo desat.",
+			"removed": "Logo tret.",
+			"none": "Cap logo: es veu una icona genèrica.",
+			"preview": "Logo actual",
+			"errors": {
+				"empty": "El fitxer és buit.",
+				"too_large": "El fitxer és massa gran (com a màxim {{maxMb}} MB).",
+				"not_an_image": "El fitxer no és una imatge.",
+				"unsupported_format": "Format no acceptat: fes servir PNG, JPEG o WebP."
+			}
+		},
+		"name": {
+			"title": "Nom de la biblioteca",
+			"hint": "Es mostra a dalt a l'esquerra, al tauler, a les impressions i a l'aplicació instal·lada al telèfon.",
+			"label": "Nom",
+			"save": "Desa el nom",
+			"saved": "Nom de la biblioteca desat",
+			"required": "Escriu el nom de la biblioteca."
+		},
+		"dashboard": {
+			"title": "Tauler",
+			"hint": "Les seccions de la pàgina d'inici, per a tota la biblioteca. Les accions ràpides van sempre al capdamunt; dins de cada secció cada compte veu només el que pot fer.",
+			"save": "Desa el tauler",
+			"saved": "Tauler desat",
+			"sections": {
+				"quickActions": "Accions ràpides",
+				"tiles": "La biblioteca avui (quadres amb els números)",
+				"inventory": "Inventari en curs",
+				"installHint": "Invitació a afegir l'aplicació a la pantalla d'inici (telèfons)",
+				"dueThisWeek": "Vencen aquesta setmana",
+				"upcomingDates": "Properes dates del calendari",
+				"todayActivity": "Préstecs d'avui"
+			}
+		}
+	},
+	"templates": {
+		"title": "Plantilles d'impressió",
+		"reload": "Torna a carregar les plantilles",
+		"reloaded": "Plantilles rellegides del disc",
+		"kinds": {
+			"cards": "Carnets",
+			"labels": "Etiquetes",
+			"slips": "Reclamacions"
+		},
+		"list": {
+			"source": {
+				"builtin": "Inclosa amb l'aplicació",
+				"config": "A la configuració"
+			},
+			"default": "Predeterminada",
+			"status": {
+				"ok": "Vàlida",
+				"error": "Error"
+			},
+			"folder": "Carpeta",
+			"forTypes": "Per a: {{types}}",
+			"emptyCards": "Cap plantilla de carnets: revisa la carpeta cards/templates de la configuració.",
+			"emptyLabels": "Cap plantilla d'etiquetes encara: arribaran amb la impressió d'etiquetes del catàleg.",
+			"emptySlips": "Cap plantilla de reclamació encara: arribarà amb els préstecs."
+		},
+		"preview": {
+			"title": "Vista prèvia",
+			"front": "Anvers",
+			"back": "Revers",
+			"patron": "Usuari a mostrar",
+			"sample": "Usuari d'exemple",
+			"real": "Usuari real",
+			"search": "Cerca un usuari real",
+			"searchPlaceholder": "Cognom o nom",
+			"noResults": "Cap usuari trobat.",
+			"zoom": "Zoom",
+			"sheet": "Foli complet",
+			"sheetHint": "Una pàgina A4 amb l'usuari d'exemple, tal com s'imprimirà.",
+			"test": "Imprimeix la pàgina de prova",
+			"broken": "La plantilla no es pot usar fins que no es corregeix:",
+			"size": "{{width}} × {{height}} mm amb zoom {{zoom}}"
+		},
+		"test": {
+			"title": "Pàgina de prova de carnets",
+			"ruler": "Regle de 10 cm: després d'imprimir ha de mesurar 100 mm (imprimeix al 100 %, sense «ajusta a la pàgina»)."
+		},
+		"calibration": {
+			"title": "Pàgina de calibratge d'etiquetes",
+			"stock": "Suport adhesiu",
+			"print": "Imprimeix la pàgina de calibratge",
+			"hint": "Imprimeix en paper normal i posa un foli d'etiquetes a sobre per comprovar els marges."
+		},
+		"howTo": {
+			"title": "Com crear una plantilla",
+			"steps": {
+				"step1": "A Configuració → Plantilles d'impressió, tria «Duplica» en una plantilla (per exemple {{path}}) i dona-li un nom nou.",
+				"step2": "Amb «Modifica» dissenya-la o canvia'n el codi; les imatges es pugen a la mateixa pàgina.",
+				"step3": "Torna aquí i comprova la vista prèvia: es marca un camp desconegut o un fitxer que falta.",
+				"step4": "Per usar-la de debò, tria-la a la configuració de Carnets o Etiquetes."
+			}
+		},
+		"labels": {
+			"stocks": "Fulls previstos: {{stocks}}",
+			"preview": "Vista prèvia de {{name}}",
+			"geometry": "Unitat de {{width}} × {{height}} mm · variant {{variant}}",
+			"sheet": "Foli d'exemple"
+		}
+	},
+	"loansImport": {
+		"title": "Importa els préstecs en curs",
+		"upload": {
+			"hint": "Per fer servir una sola vegada, en passar de Koha: una fila per cada préstec en curs amb el número de carnet de l'usuari i el codi de barres de l'exemplar, i si n'hi ha, la data del préstec i la data de devolució. Importa primer usuaris i catàleg; el model, amb les columnes necessàries, es descarrega a sota.",
+			"submit": "Puja"
+		},
+		"mapping": {
+			"uncertain": "Revisa les columnes abans de continuar.",
+			"validate": "Verifica el fitxer",
+			"without": {
+				"issuedOn": "Sense la columna issued_on, els préstecs es consideren fets avui.",
+				"dueOn": "Sense la columna due_on, la data de devolució es calcula com al taulell, amb les regles de préstec i el calendari."
+			}
+		},
+		"fields": {
+			"cardNumber": "Número de carnet",
+			"barcode": "Codi de barres",
+			"issuedOn": "Data del préstec",
+			"dueOn": "Data de devolució"
+		},
+		"preview": {
+			"ready": "Cap error: els préstecs es poden importar.",
+			"blocked": "Corregeix els errors i verifica de nou: un fitxer amb errors no s'importa.",
+			"overdue": "{{count}} {{count:plural; one:préstec ja està endarrerit; other:préstecs ja estan endarrerits;}}: {{count:plural; one:s'importarà i apareixerà; other:s'importaran i apareixeran;}} entre els endarrerits.",
+			"columns": {
+				"patron": "Usuari",
+				"barcode": "Exemplar",
+				"issued": "Préstec",
+				"due": "Devolució"
+			},
+			"commit": "Importa els préstecs",
+			"back": "Torna a les columnes"
+		},
+		"reasons": {
+			"cardMissing": "Falta el número de carnet",
+			"cardUnknown": "Cap usuari amb el carnet {{value}}",
+			"barcodeMissing": "Falta el codi de barres",
+			"barcodeUnknown": "Cap exemplar amb el codi {{value}}",
+			"alreadyOnLoan": "L'exemplar {{value}} ja és en préstec",
+			"itemWithdrawn": "L'exemplar {{value}} està retirat",
+			"duplicateInFile": "Mateix exemplar ja a la línia {{line}}",
+			"issueDateInvalid": "Data del préstec no vàlida: «{{value}}»",
+			"issueDateFuture": "Data del préstec al futur: {{value}}",
+			"dueDateInvalid": "Data de devolució no vàlida: «{{value}}»",
+			"dueBeforeIssue": "La data de devolució és abans de la data del préstec",
+			"overdue": "Ja endarrerit des del {{date}}",
+			"itemUnclassified": "L'exemplar {{value}} és d'un llibre per classificar: el préstec s'importa, però al taulell no es deixa fins que no es classifica"
+		},
+		"done": {
+			"title": "Préstecs importats",
+			"summary": "{{created}} {{created:plural; one:préstec importat; other:préstecs importats;}}, dels quals {{overdue}} {{overdue:plural; one:ja endarrerit; other:ja endarrerits;}}.",
+			"batch": "Importació núm. {{id}}: el fitxer original es conserva.",
+			"again": "Importa un altre fitxer"
+		},
+		"columns": {
+			"cardNumber": "El número de carnet de l'usuari, ja importat.",
+			"barcode": "El codi de barres de l'exemplar, ja importat.",
+			"issuedOn": "La data del préstec; si falta, avui.",
+			"dueOn": "La data de devolució; si falta, es calcula amb les regles de préstec."
+		}
+	},
+	"photosImport": {
+		"title": "Importa les fotos dels usuaris",
+		"hint": "Un fitxer per usuari, amb el nom del número de carnet (per exemple 0000001240.jpg): és el que produeix l'extracció descrita a la guia de l'administrador. Cada foto es redimensiona i es neteja de les dades ocultes; els fitxers que no corresponen a cap carnet es llisten.",
+		"replace": "Substitueix les fotos ja presents",
+		"zip": {
+			"title": "Des d'un arxiu ZIP",
+			"file": "Arxiu ZIP amb les fotos",
+			"submit": "Importa les fotos"
+		},
+		"folder": {
+			"title": "Des de la carpeta del servidor",
+			"hint": "Copia els fitxers a {{path}}. Ara n'hi ha {{count}} {{count:plural; one:fitxer; other:fitxers;}}. Adequat per a moltes fotos, que en un arxiu serien massa pesades per pujar.",
+			"submit": "Importa des de la carpeta"
+		},
+		"summary": {
+			"title": "Resultat",
+			"text": "{{imported}} {{imported:plural; one:foto importada; other:fotos importades;}}, {{replaced}} {{replaced:plural; one:substituïda; other:substituïdes;}}, {{kept:plural; one:{{kept}} deixada tal com estava; other:{{kept}} deixades tal com estaven;}} (ja hi havia foto), {{unmatched}} {{unmatched:plural; one:fitxer sense usuari; other:fitxers sense usuari;}}, {{unreadable}} {{unreadable:plural; one:fitxer il·legible; other:fitxers il·legibles;}}.",
+			"unreadable": "No són imatges llegibles: {{files}}",
+			"unmatched": "Descarrega la llista dels fitxers sense usuari"
+		},
+		"errors": {
+			"notZip": "El fitxer no és un arxiu ZIP vàlid.",
+			"empty": "L'arxiu no conté cap fitxer."
+		},
+		"done": "Fotos importades"
+	},
+	"rollover": {
+		"title": "Pas de curs",
+		"subtitle": "A final de curs, tots els alumnes passen al curs següent, i qui acaba l'últim curs deixa l'escola.",
+		"steps": {
+			"backup": "Còpia de seguretat",
+			"classes": "Classes",
+			"leavers": "Sortides",
+			"confirm": "Confirma",
+			"done": "Completat"
+		},
+		"backup": {
+			"text": "Abans de tot, una còpia de seguretat de la base de dades: si alguna cosa no va bé, es torna enrere des d'Administració → Còpies de seguretat.",
+			"create": "Fes la còpia de seguretat",
+			"created": "Còpia de seguretat creada: {{name}}"
+		},
+		"classes": {
+			"text": "Cada alumne passa al curs següent amb la seva classe. Marca qui repeteix el curs i qui canvia de classe.",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; one:alumne; other:alumnes;}}",
+			"exceptions": "{{count}} {{count:plural; one:excepció; other:excepcions;}}",
+			"loans": "{{count}} amb llibres en préstec",
+			"repeat": "Repeteix",
+			"target": "Classe",
+			"noGroup": "Sense classe",
+			"choose": "Tria la classe…",
+			"fates": {
+				"advances": "Avança",
+				"stays": "Es queda",
+				"archived": "Es tanca"
+			},
+			"unplaced": "{{count}} {{count:plural; one:alumne espera; other:alumnes esperen;}} la tria de la classe.",
+			"none": "Cap alumne no passa al curs següent.",
+			"nextYear": "El curs següent",
+			"leaves": "Surt de l'escola"
+		},
+		"leavers": {
+			"text": "Els alumnes de l'últim curs deixen l'escola: les seves dades s'esborren de seguida i per sempre (només es queden els números de les estadístiques). Lleva la marca a qui es queda, per exemple a qui repeteix l'últim curs.",
+			"leaves": "Surt",
+			"openLoans": "{{count}} {{count:plural; one:llibre; other:llibres;}} en préstec",
+			"blocked": "{{count}} {{count:plural; one:alumne que surt encara té; other:alumnes que surten encara tenen;}} llibres: registra la devolució o marca-los com a perduts, o lleva la marca.",
+			"toCheckin": "Vés a Devolucions",
+			"none": "Cap alumne a l'últim curs."
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; one:alumne passa; other:alumnes passen;}} al curs següent",
+			"repeat": "{{count}} {{count:plural; one:repeteix; other:repeteixen;}} el curs",
+			"groupChanges": "{{count}} {{count:plural; one:canvia; other:canvien;}} de classe",
+			"closing": "{{count}} {{count:plural; one:classe es tanca i s'arxiva; other:classes es tanquen i s'arxiven;}}",
+			"remove": "{{count}} {{count:plural; one:surt de l'escola i les seves dades s'esborren; other:surten de l'escola i les seves dades s'esborren;}}",
+			"recent": "L'últim avançament es va fer el {{date}}, fa menys de sis mesos. Confirmo que el vull repetir.",
+			"run": "Fes el pas de curs"
+		},
+		"done": {
+			"title": "Pas de curs completat",
+			"advanced": "{{count}} {{count:plural; one:classe ha passat; other:classes han passat;}} al curs següent",
+			"archived": "{{count}} {{count:plural; one:classe arxivada; other:classes arxivades;}}",
+			"text": "Passos següents: crear les noves classes de primer, si cal, i importar els nous alumnes amb la sincronització.",
+			"import": "Importa els nous alumnes"
+		},
+		"errors": {
+			"blocked": "Algun alumne que surt té encara llibres en préstec.",
+			"recent": "Cal la confirmació: l'últim avançament és recent.",
+			"no_backup": "No s'ha trobat la còpia de seguretat o és massa antiga: fes-la de nou des del primer pas.",
+			"invalid_group": "Una classe triada no existeix o no acull el curs de l'alumne.",
+			"unplaced": "Alguns alumnes encara no tenen classe: tria-la al pas Classes.",
+			"invalid_level": "Un dels cursos triats no és dels possibles: torna a carregar la pàgina."
+		},
+		"next": "Següent",
+		"back": "Enrere"
+	},
+	"classes": {
+		"title": "Classes",
+		"subtitle": "Les classes de l'escola i els grups de docents.",
+		"hint": "Els cursos i les etapes de l'escola es canvien a la configuració:",
+		"structureLink": "Escola",
+		"new": "Noves classes",
+		"newTeachers": "Nou grup de docents",
+		"teachers": "Docents",
+		"mixed": "Pluriclasse",
+		"empty": "Cap classe",
+		"emptyHint": "Cap classe. Les classes es creen amb «Noves classes», per exemple els cursos de l'1 al 5 i els noms A-D.",
+		"archivedTitle": "{{count:plural; one:Classe arxivada; other:Classes arxivades;}} ({{count}})",
+		"archive": "Arxiva",
+		"archiveNotEmpty": "Encara té usuaris: no es pot arxivar",
+		"restore": "Restaura",
+		"archived": "Classe {{name}} arxivada",
+		"restored": "Classe {{name}} restaurada",
+		"columns": {
+			"class": "Classe",
+			"levels": "Cursos",
+			"patrons": "Usuaris"
+		},
+		"dialog": {
+			"title": {
+				"students": "Noves classes",
+				"teachers": "Nou grup de docents",
+				"edit": "Modifica {{name}}"
+			},
+			"levels": "Cursos",
+			"names": "Noms de les classes",
+			"namesHint": "Separats per comes; A-D vol dir A, B, C, D. Un nom pot contenir espais.",
+			"name": "Nom",
+			"mixed": "Una pluriclasse amb tots els cursos triats",
+			"stage": "Etapa",
+			"anyStage": "Totes",
+			"notes": "Notes",
+			"preview": "{{count}} {{count:plural; one:classe; other:classes;}} per crear:",
+			"previewEmpty": "Tria almenys un curs i escriu els noms.",
+			"saved": {
+				"students": "{{count}} {{count:plural; one:classe creada; other:classes creades;}}",
+				"teachers": "Grup de docents creat",
+				"edit": "Classe desada"
+			}
+		},
+		"errors": {
+			"nameRequired": "El nom és obligatori.",
+			"nameLong": "El nom és massa llarg (com a màxim 40 caràcters).",
+			"levelsRequired": "Tria almenys un curs.",
+			"levelUnknown": "Un curs triat ja no existeix.",
+			"levelsNotForTeachers": "Un grup de docents no té cursos.",
+			"nameTaken": "Ja existeix una classe amb aquest nom per al mateix curs.",
+			"levelInUse": "Alguns alumnes de la classe són en un curs que s'eliminaria.",
+			"notEmpty": "La classe encara té usuaris.",
+			"notFound": "La classe ja no existeix."
+		}
+	},
+	"exports": {
+		"title": "Exportacions",
+		"subtitle": "Les dades de la biblioteca en fitxers per guardar, per reimportar o per portar a un altre programa.",
+		"items": {
+			"students": {
+				"title": "Alumnes (CSV)",
+				"description": "Els alumnes actius en el format de la importació: es reimporten des d'Administració → Importacions → Alumnes."
+			},
+			"teachers": {
+				"title": "Docents (CSV)",
+				"description": "Els docents actius en el format de la importació: es reimporten des d'Administració → Importacions → Docents."
+			},
+			"catalog": {
+				"title": "Catàleg (CSV)",
+				"description": "Una fila per exemplar amb les dades del llibre, en el format de la importació del catàleg."
+			},
+			"open-loans": {
+				"title": "Préstecs en curs (CSV)",
+				"description": "Carnet, exemplar, data del préstec i data de devolució: es reimporten des d'Administració → Importacions → Préstecs en curs."
+			},
+			"loans-history": {
+				"title": "Historial de préstecs (CSV)",
+				"description": "Cada préstec amb la classe i la secció del dia del préstec."
+			},
+			"dump": {
+				"title": "Totes les dades (JSON)",
+				"description": "Usuaris, catàleg, préstecs i llistes en un únic fitxer, per passar a una altra instal·lació o a un altre programa."
+			}
+		},
+		"download": "Descarrega",
+		"patronNote": "Les dades d'una sola persona (sol·licitud d'accés) es descarreguen des de la seva pàgina.",
+		"patronExport": "Exporta les dades de la persona"
+	},
+	"imports": {
+		"title": "Importacions",
+		"hint": "S'usen en passar de Koha i, per als usuaris, a cada inici de curs per a les classes noves. Tot fitxer es verifica sencer abans d'importar res.",
+		"cards": {
+			"catalog": {
+				"title": "Catàleg",
+				"description": "Llibres i exemplars des d'un fitxer CSV o de l'exportació de Koha."
+			},
+			"students": {
+				"title": "Alumnes",
+				"description": "Les classes del registre escolar, a cada inici de curs: nom, cognom i classe."
+			},
+			"teachers": {
+				"title": "Docents",
+				"description": "Els docents de l'escola: nom i cognom, amb el carnet quan ja en tenen un."
+			},
+			"loans": {
+				"title": "Préstecs en curs",
+				"description": "Els préstecs oberts, importats una sola vegada en passar de Koha."
+			},
+			"photos": {
+				"title": "Fotos dels usuaris",
+				"description": "Les fotos exportades de Koha, una per carnet."
+			}
+		}
+	},
+	"calibration": {
+		"title": "Calibra la impressió a doble cara",
+		"intro": "Per imprimir els carnets a les dues cares del foli, el revers ha de caure exactament darrere de l'anvers. Cada impressora desplaça una mica el revers: aquesta prova en mesura quant, una sola vegada.",
+		"current": "Com gira el foli: {{flip}}. Desplaçament actual dels revers en ús: {{x}} mm en horitzontal, {{y}} mm en vertical.",
+		"steps": {
+			"print": "Imprimeix el foli de calibratge amb el botó de sota.",
+			"window": {
+				"long-edge": "A la finestra d'impressió, tria «Doble cara» girant per la llarga, l'escala al 100 % i sense marges.",
+				"short-edge": "A la finestra d'impressió, tria «Doble cara» girant per la curta, l'escala al 100 % i sense marges."
+			},
+			"cut": "A la cara amb el gran «1», retalla amb cura seguint la línia negra.",
+			"read": "Gira el cartó: a la cara «2» llegeix els dos números al punt on la vora retallada creua les regles (amb el signe + o −).",
+			"save": "Escriu els dos números de sota i desa: el desplaçament dels revers es corregeix.",
+			"check": "Torna a imprimir el foli per verificar: la vora retallada hauria de passar pel 0 de totes dues regles."
+		},
+		"print": "Imprimeix el foli de calibratge",
+		"drawing": {
+			"title": "Què cal llegir",
+			"label": "La cara 2 després de retallar: la vora retallada creua les regles",
+			"x": "regle horitzontal",
+			"y": "regle vertical",
+			"hint": "La vora retallada creua cada regle: el número que hi ha allà és el valor a escriure. Cada traç és un mil·límetre, els números van de cinc en cinc."
+		},
+		"fields": {
+			"x": "Regle horitzontal (mm)",
+			"y": "Regle vertical (mm)",
+			"hint": "El número on passa la vora retallada, amb el seu signe; 0 si cau sobre el zero."
+		},
+		"next": "Després de desar, el desplaçament dels revers serà de {{x}} mm en horitzontal i {{y}} mm en vertical.",
+		"save": "Desa el calibratge",
+		"saved": "Calibratge desat: revers desplaçats {{x}} mm en horitzontal i {{y}} mm en vertical.",
+		"open": "Calibra la impressió a doble cara",
+		"sheet": {
+			"title": "BiblioViva · calibratge de la impressió a doble cara",
+			"cut": "Retalla seguint la línia negra i després gira el cartó.",
+			"read": "Llegeix a les dues regles on passa la vora retallada."
+		}
+	}
+}

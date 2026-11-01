@@ -1,0 +1,19 @@
+{
+	"title": "Om",
+	"app": {
+		"version": "Version",
+		"license": "Licens",
+		"repository": "Källkod"
+	},
+	"deps": {
+		"title": "Använda bibliotek",
+		"runtime": "Under körning ({{count}})",
+		"development": "Endast för utveckling ({{count}})",
+		"system": "Systemkomponenter",
+		"columns": {
+			"name": "Namn",
+			"version": "Version",
+			"license": "Licens"
+		}
+	}
+}

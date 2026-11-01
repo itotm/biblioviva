@@ -1,0 +1,66 @@
+{
+	"title": "Notizen",
+	"new": "Neue Notiz",
+	"adminOnly": "Nur die Verwaltung archiviert Notizen und hebt sie auf dem Dashboard hervor.",
+	"pinned": "Hervorgehoben",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Archiviert von {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:Notiz; other:Notizen;}}",
+	"archiveCount": "{{shown}} von {{total}} archivierten {{total:plural; one:Notiz; other:Notizen;}}",
+	"actions": {
+		"label": "Aktionen für die Notiz",
+		"pin": "Auf dem Dashboard hervorheben",
+		"unpin": "Hervorhebung entfernen",
+		"archive": "Archivieren",
+		"restore": "Wiederherstellen",
+		"delete": "Löschen",
+		"showAll": "Alle anzeigen",
+		"showLess": "Weniger anzeigen",
+		"more": "Weitere anzeigen"
+	},
+	"done": {
+		"added": "Notiz hinzugefügt",
+		"pinned": "Notiz hervorgehoben",
+		"unpinned": "Hervorhebung der Notiz entfernt",
+		"archived": "Notiz archiviert",
+		"restored": "Notiz wiederhergestellt",
+		"deleted": "Notiz gelöscht"
+	},
+	"confirmDelete": {
+		"title": "Notiz löschen?",
+		"text": "Die Notiz wird endgültig gelöscht und kann nicht wiederhergestellt werden."
+	},
+	"form": {
+		"body": "Text",
+		"placeholder": "Z. B. Der Barcodescanner an der Ausleihtheke liest die Ausweise nicht.",
+		"privacy": "Alle Konten sehen die Notizen. Keine persönlichen Daten von Schülerinnen und Schülern eintragen.",
+		"written": "Eine Notiz kann nicht bearbeitet werden. Bei einem Fehler die Verwaltung bitten, sie zu archivieren, und eine neue zu schreiben.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Farbe",
+		"pinned": "Auf dem Dashboard hervorgehoben",
+		"pinnedHint": "Wird allen oben auf dem Dashboard (und an der Ausleihtheke) angezeigt, bis die Hervorhebung entfernt oder die Notiz archiviert wird.",
+		"save": "Hinzufügen"
+	},
+	"colors": {
+		"yellow": "Gelb",
+		"pink": "Rosa",
+		"green": "Grün",
+		"blue": "Hellblau",
+		"orange": "Orange"
+	},
+	"errors": {
+		"empty": "Den Text der Notiz eingeben.",
+		"tooLong": "Der Text ist länger als {{max}} {{max:plural; one:Zeichen; other:Zeichen;}}.",
+		"color": "Eine der Farben auswählen."
+	},
+	"empty": {
+		"open": "Keine offenen Notizen",
+		"openHint": "Keine offenen Notizen. Notizen geben Probleme und Hinweise an Kolleginnen und Kollegen sowie an die Verwaltung weiter.",
+		"archived": "Keine archivierten Notizen"
+	},
+	"home": {
+		"title": "Notizen",
+		"open": "Notizen öffnen"
+	},
+	"tile": "Offene Notizen"
+}

@@ -1,0 +1,66 @@
+{
+	"title": "Notas",
+	"new": "Nova nota",
+	"adminOnly": "Apenas o administrador arquiva as notas e as coloca em destaque no painel.",
+	"pinned": "Em destaque",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Arquivada por {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:nota; other:notas;}}",
+	"archiveCount": "{{shown}} de {{total}} {{total:plural; one:nota arquivada; other:notas arquivadas;}}",
+	"actions": {
+		"label": "Ações sobre a nota",
+		"pin": "Colocar em destaque",
+		"unpin": "Retirar do destaque",
+		"archive": "Arquivar",
+		"restore": "Repor",
+		"delete": "Eliminar",
+		"showAll": "Mostrar tudo",
+		"showLess": "Mostrar menos",
+		"more": "Mostrar mais"
+	},
+	"done": {
+		"added": "Nota adicionada",
+		"pinned": "Nota colocada em destaque",
+		"unpinned": "Nota retirada do destaque",
+		"archived": "Nota arquivada",
+		"restored": "Nota reposta",
+		"deleted": "Nota eliminada"
+	},
+	"confirmDelete": {
+		"title": "Eliminar a nota?",
+		"text": "É apagada para sempre e não pode ser recuperada."
+	},
+	"form": {
+		"body": "Texto",
+		"placeholder": "Ex.: O leitor do balcão não lê os cartões.",
+		"privacy": "As notas são visíveis a todas as contas: não escreva dados pessoais dos alunos.",
+		"written": "Uma nota não pode ser alterada: em caso de erro, peça ao administrador que a arquive e escreva outra.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Cor",
+		"pinned": "Em destaque no painel",
+		"pinnedHint": "Mostrada a todos no topo do painel (e do balcão de empréstimo) até ser retirada do destaque ou arquivada.",
+		"save": "Adicionar"
+	},
+	"colors": {
+		"yellow": "Amarelo",
+		"pink": "Cor-de-rosa",
+		"green": "Verde",
+		"blue": "Azul-claro",
+		"orange": "Laranja"
+	},
+	"errors": {
+		"empty": "Escreva o texto da nota.",
+		"tooLong": "O texto tem mais de {{max}} {{max:plural; one:carácter; other:caracteres;}}.",
+		"color": "Escolha uma das cores."
+	},
+	"empty": {
+		"open": "Nenhuma nota aberta",
+		"openHint": "Nenhuma nota aberta. As notas comunicam problemas e avisos aos colegas e ao administrador.",
+		"archived": "Nenhuma nota arquivada"
+	},
+	"home": {
+		"title": "Notas",
+		"open": "Abrir as notas"
+	},
+	"tile": "Notas abertas"
+}

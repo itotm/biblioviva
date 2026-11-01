@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Impressions",
+		"newPatrons": "Nouvelle liste de lecteurs",
+		"newItems": "Nouvelle liste de livres",
+		"newPatronsTitle": "Nouvelle liste de lecteurs",
+		"newItemsTitle": "Nouvelle liste de livres",
+		"name": "Nom de la liste",
+		"defaultName": "Liste {{n}} du {{date}}",
+		"kind": "Type",
+		"kinds": {
+			"all": "Tous",
+			"patrons": "Lecteurs",
+			"items": "Livres"
+		},
+		"classes": "Classes",
+		"classesHint": "Les cartes de toute une classe, sans en créer la liste.",
+		"classKind": "Classe",
+		"count": "{{count}} {{count:plural; one:entrée; other:entrées;}}",
+		"empty": "Aucune liste. Les listes se créent ici ou avec « Ajouter à une liste » dans les pages Lecteurs et Catalogue.",
+		"lastPrinted": "Imprimée le {{when}}",
+		"neverPrinted": "Jamais imprimée",
+		"open": "Ouvrir",
+		"created": "Liste créée",
+		"deleted": "Liste supprimée",
+		"deleteTitle": "Supprimer la liste « {{name}} » ?",
+		"deleteDescription": "Les entrées quittent la liste ; les lecteurs restent dans les archives."
+	},
+	"list": {
+		"rename": "Renommer",
+		"renamed": "Liste renommée",
+		"print": "Imprimer les cartes",
+		"markPrinted": "Marquer comme imprimées",
+		"marked": "{{count:plural; one:{{count}} carte marquée comme imprimée; other:{{count}} cartes marquées comme imprimées;}}",
+		"clearAfter": "Vider la liste après l'impression",
+		"clear": "Vider",
+		"cleared": "Liste vidée",
+		"clearTitle": "Vider la liste ?",
+		"clearDescription": "Toutes les entrées quittent la liste ; les lecteurs restent dans les archives.",
+		"delete": "Supprimer",
+		"entries": "{{count}} {{count:plural; one:lecteur; other:lecteurs;}} dans la liste",
+		"empty": "La liste est vide. Les lecteurs s'ajoutent avec les filtres rapides, avec la douchette ou depuis la page Lecteurs.",
+		"remove": "Retirer de la liste",
+		"moveUp": "Monter",
+		"moveDown": "Descendre",
+		"dragHint": "Faire glisser les entrées pour modifier l'ordre d'impression.",
+		"removed": "Retiré de la liste",
+		"columns": {
+			"position": "N°",
+			"printed": "Carte imprimée"
+		},
+		"printedYes": "oui",
+		"printedNo": "non",
+		"quick": {
+			"title": "Ajouter avec les filtres",
+			"hint": "Les lecteurs déjà présents dans la liste ne sont pas ajoutés deux fois.",
+			"type": "Type",
+			"any": "Tous",
+			"stage": "Degré scolaire",
+			"level": "Année",
+			"withoutPrintedCard": "Seulement ceux dont la carte n'a jamais été imprimée",
+			"withoutPhoto": "Seulement ceux sans photo",
+			"importBatch": "Importation",
+			"anyBatch": "— aucune —",
+			"batchLabel": "n° {{id}} · {{file}} · {{created}} {{created:plural; one:nouveau; other:nouveaux;}}",
+			"createdAfter": "Créés à partir du",
+			"add": "Ajouter à la liste",
+			"added": "{{added}} {{added:plural; one:ajouté; other:ajoutés;}}, {{skipped}} {{skipped:plural; one:déjà présent; other:déjà présents;}}",
+			"none": "Aucun lecteur ne correspond aux filtres.",
+			"pendingLabels": "Étiquettes à imprimer",
+			"pendingAny": "— tous les exemplaires —",
+			"acquiredFrom": "Acquis à partir du",
+			"acquiredTo": "au",
+			"genre": "Genre",
+			"itemType": "Type d'exemplaire",
+			"batchLabelItems": "n° {{id}} · {{file}} · {{created}} {{created:plural; one:exemplaire; other:exemplaires;}}",
+			"noneItems": "Aucun exemplaire ne correspond aux filtres.",
+			"addedItems": "{{added}} {{added:plural; one:ajouté; other:ajoutés;}}, {{skipped}} {{skipped:plural; one:déjà présent; other:déjà présents;}}",
+			"nonfictionClass": "Classe de documentaires"
+		},
+		"scan": {
+			"title": "Ajouter avec la douchette",
+			"hint": "Lire la carte de chaque lecteur : il est ajouté aussitôt à la liste. Les cartes déjà présentes sont ignorées.",
+			"added": "{{name}} ajouté",
+			"duplicate": "{{name}} est déjà dans la liste",
+			"unknown": "Aucun lecteur avec la carte {{card}}",
+			"notCard": "Le code lu n'est pas une carte",
+			"hintItems": "Lire le code-barres de chaque exemplaire, par exemple le long de l'étagère : il est aussitôt ajouté à la liste. Les exemplaires déjà présents sont ignorés.",
+			"addedItem": "{{title}} ({{barcode}}) ajouté",
+			"duplicateItem": "{{title}} ({{barcode}}) est déjà dans la liste",
+			"unknownItem": "Aucun exemplaire avec le code-barres {{barcode}}",
+			"notItem": "Le code lu n'est pas un exemplaire"
+		},
+		"printLabels": "Imprimer les étiquettes",
+		"markPrintedKind": "Étiquettes imprimées",
+		"markedItems": "{{count:plural; one:{{count}} exemplaire marqué comme imprimé; other:{{count}} exemplaires marqués comme imprimés;}}",
+		"entriesItems": "{{count}} {{count:plural; one:exemplaire; other:exemplaires;}} dans la liste",
+		"emptyItems": "La liste est vide. Les exemplaires s'ajoutent avec les filtres rapides, avec la douchette ou depuis le catalogue.",
+		"clearDescriptionItems": "Toutes les entrées sont retirées ; les exemplaires restent au catalogue."
+	},
+	"basket": {
+		"label": "Listes d'impression",
+		"labelToPrint": "Listes d'impression : {{count}} à imprimer",
+		"entry": "{{name}} ({{count}})",
+		"none": "Aucune liste à imprimer",
+		"all": "Toutes les listes"
+	},
+	"addTo": {
+		"button": "Ajouter à une liste",
+		"selected": "Ajouter les sélectionnés à une liste",
+		"title": "Ajouter à une liste d'impression",
+		"existing": "Liste existante",
+		"create": "Nouvelle liste",
+		"newName": "Nom de la nouvelle liste",
+		"confirm": "Ajouter",
+		"done": "{{added}} {{added:plural; one:ajouté; other:ajoutés;}} à « {{name}} », {{skipped}} {{skipped:plural; one:déjà présent; other:déjà présents;}}"
+	},
+	"labels": {
+		"title": "Imprimer les étiquettes",
+		"button": "Imprimer les étiquettes",
+		"selected": "Imprimer les étiquettes des sélectionnés",
+		"kind": "Type d'étiquette",
+		"kinds": {
+			"pair": "Paire",
+			"barcode": "Code-barres seul",
+			"spine": "Bandeau de dos seul"
+		},
+		"kindHints": {
+			"pair": "Bandeau de dos au-dessus et étiquette avec le code-barres dessous, une paire par livre (l'impression actuelle).",
+			"barcode": "Seulement l'étiquette interne avec le code-barres, pour les réimpressions.",
+			"spine": "Seulement le bandeau de dos, par exemple après un reclassement."
+		},
+		"stock": "Feuille d'étiquettes",
+		"start": "Première position libre",
+		"startHint": "De 1 à {{max}} : saute les étiquettes déjà utilisées sur la feuille.",
+		"count": "{{count}} {{count:plural; one:exemplaire; other:exemplaires;}}",
+		"unclassified": "{{count}} {{count:plural; one:exemplaire d'un livre; other:exemplaires de livres;}} à classer : {{count:plural; one:seule l'étiquette avec le code-barres s'imprime; other:seules les étiquettes avec le code-barres s'impriment;}}, le bandeau de dos après la classification.",
+		"pendingCount": "{{count}} {{count:plural; one:exemplaire; other:exemplaires;}} avec des étiquettes à imprimer",
+		"pages": "{{pages}} {{pages:plural; one:feuille; other:feuilles;}} ({{perPage}} par feuille)",
+		"print": "Ouvrir l'impression",
+		"afterPrint": "La page d'impression s'est ouverte dans un nouvel onglet. Une fois les étiquettes imprimées, les marquer comme imprimées.",
+		"markPrinted": "Marquer comme imprimées",
+		"marked": "{{count:plural; one:{{count}} exemplaire marqué comme imprimé; other:{{count}} exemplaires marqués comme imprimés;}}",
+		"status": {
+			"printed": "Étiquettes imprimées",
+			"pending": "Étiquettes à imprimer",
+			"partial": "Une étiquette manquante"
+		}
+	},
+	"cards": {
+		"title": "Imprimer les cartes",
+		"count": "{{count}} {{count:plural; one:carte; other:cartes;}}",
+		"afterPrint": "La page d'impression s'est ouverte dans un nouvel onglet. Une fois les cartes imprimées, les marquer comme imprimées.",
+		"layout": "Comment imprimer",
+		"layouts": {
+			"side-by-side": "Recto et verso côte à côte",
+			"duplex": "Sur les deux faces de la feuille"
+		},
+		"window": "Dans la fenêtre d'impression du navigateur :",
+		"steps": {
+			"duplex": {
+				"long-edge": "choisir « Recto verso », en retournant sur le grand côté ;",
+				"short-edge": "choisir « Recto verso », en retournant sur le petit côté ;"
+			},
+			"scale": "échelle à 100 % (« Taille réelle », non « Ajuster à la page ») ;",
+			"margins": "marges : aucune.",
+			"after": {
+				"side-by-side": {
+					"marks": "Découper ensuite chaque carte en reliant avec une règle les repères de coupe autour des cartes, puis la plier en deux sur le petit côté.",
+					"line": "Découper ensuite chaque carte le long du trait coloré qui l'entoure, puis la plier en deux sur le petit côté.",
+					"edge": "Découper ensuite chaque carte le long de son bord, puis la plier en deux sur le petit côté."
+				},
+				"duplex": {
+					"marks": "Découper ensuite les cartes en reliant avec une règle les repères de coupe autour des recto : le verso est déjà derrière le recto (dix par feuille).",
+					"line": "Découper ensuite les cartes le long du trait coloré qui entoure les recto : le verso est déjà derrière le recto (dix par feuille).",
+					"edge": "Découper ensuite les cartes le long du bord des recto : le verso est déjà derrière le recto (dix par feuille)."
+				}
+			}
+		},
+		"print": "Imprimer",
+		"calibrate": "La première fois, ou si les versos ne tombent pas derrière les recto :"
+	},
+	"words": {
+		"teacher": "Enseignant",
+		"title": "Titre",
+		"code": "Code",
+		"dueBy": "À restituer avant le",
+		"due": "Échéance",
+		"name": "Nom",
+		"daysOverdue": "Jours de retard",
+		"loanOn": "Prêt du {{date}} à",
+		"overduesOn": "Relances de la bibliothèque du {{date}}",
+		"toReturn": "Livres à restituer à la bibliothèque",
+		"enjoy": "Bonne lecture."
+	}
+}

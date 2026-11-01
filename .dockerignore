@@ -1,0 +1,14 @@
+# Only what the image build needs (PLAN.md step 8.1)
+.git
+node_modules
+build
+.svelte-kit
+local
+test-results
+test-reports
+tests/snapshots
+site
+docs
+*.log
+.env
+.env.*

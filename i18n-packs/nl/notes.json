@@ -1,0 +1,66 @@
+{
+	"title": "Notities",
+	"new": "Nieuwe notitie",
+	"adminOnly": "Alleen de beheerder archiveert notities en zet ze op het dashboard.",
+	"pinned": "Vastgezet",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Gearchiveerd door {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:notitie; other:notities;}}",
+	"archiveCount": "{{shown}} van {{total}} {{total:plural; one:gearchiveerde notitie; other:gearchiveerde notities;}}",
+	"actions": {
+		"label": "Acties op de notitie",
+		"pin": "Vastzetten op het dashboard",
+		"unpin": "Losmaken",
+		"archive": "Archiveren",
+		"restore": "Terugzetten",
+		"delete": "Verwijderen",
+		"showAll": "Alles tonen",
+		"showLess": "Minder tonen",
+		"more": "Meer tonen"
+	},
+	"done": {
+		"added": "Notitie toegevoegd",
+		"pinned": "Notitie vastgezet",
+		"unpinned": "Notitie losgemaakt",
+		"archived": "Notitie gearchiveerd",
+		"restored": "Notitie teruggezet",
+		"deleted": "Notitie verwijderd"
+	},
+	"confirmDelete": {
+		"title": "De notitie verwijderen?",
+		"text": "Ze wordt voorgoed gewist en kan niet worden hersteld."
+	},
+	"form": {
+		"body": "Tekst",
+		"placeholder": "Bijv. De scanner aan de balie leest de lenerspassen niet.",
+		"privacy": "Alle accounts lezen de notities: zet er geen persoonsgegevens van leerlingen in.",
+		"written": "Een notitie kan niet worden gewijzigd: vraag bij een fout de beheerder haar te archiveren en schrijf een nieuwe.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Kleur",
+		"pinned": "Vastgezet op het dashboard",
+		"pinnedHint": "Wordt iedereen bovenaan het dashboard getoond (en aan de uitleenbalie) tot ze wordt losgemaakt of gearchiveerd.",
+		"save": "Toevoegen"
+	},
+	"colors": {
+		"yellow": "Geel",
+		"pink": "Roze",
+		"green": "Groen",
+		"blue": "Lichtblauw",
+		"orange": "Oranje"
+	},
+	"errors": {
+		"empty": "Schrijf de tekst van de notitie.",
+		"tooLong": "De tekst is langer dan {{max}} {{max:plural; one:teken; other:tekens;}}.",
+		"color": "Kies een van de kleuren."
+	},
+	"empty": {
+		"open": "Geen open notities",
+		"openHint": "Er zijn geen open notities. Notities brengen problemen en mededelingen over aan collega's en de beheerder.",
+		"archived": "Geen gearchiveerde notities"
+	},
+	"home": {
+		"title": "Notities",
+		"open": "De notities openen"
+	},
+	"tile": "Open notities"
+}

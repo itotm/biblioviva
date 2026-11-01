@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Uporabniki",
+		"new": "Nov uporabnik",
+		"search": "Išči po priimku…",
+		"empty": "Nobeden uporabnik ne ustreza filtrom.",
+		"filters": {
+			"type": "Vrsta",
+			"stage": "Stopnja",
+			"level": "Letnik",
+			"status": "Stanje",
+			"all": "Vsi",
+			"allF": "Vse"
+		},
+		"columns": {
+			"name": "Priimek in ime",
+			"type": "Vrsta",
+			"class": "Razred",
+			"card": "Izkaznica"
+		},
+		"clearFilters": "Počisti filtre",
+		"countFiltered": "{{shown:plural; one:{{shown}} uporabnik ustreza; two:{{shown}} uporabnika ustrezata; few:{{shown}} uporabniki ustrezajo; other:{{shown}} uporabnikov ustreza;}} filtrom",
+		"printCards": "Natisni izkaznice",
+		"printClassCards": "Natisni izkaznice {{classLabel}}",
+		"removeSelected": "Odstrani izbrane",
+		"removeTitle": "Odstraniti {{count}} {{count:plural; one:uporabnika; two:uporabnika; few:uporabnike; other:uporabnikov;}}?",
+		"removeDescription": "Za vsakega se takoj in dokončno izbrišejo ime in priimek, stiki, šifra, opombe, številka izkaznice in fotografija; vrsta, razred, oddelek in zgodovina izposoj ostanejo za statistiko. Tisti z odprtimi izposojami ostanejo v arhivu.",
+		"removed": "{{removed}} {{removed:plural; one:odstranjen; two:odstranjena; few:odstranjeni; other:odstranjenih;}}, {{kept}} {{kept:plural; one:uporabnik z odprtimi izposojami ostane; two:uporabnika z odprtimi izposojami ostaneta; few:uporabniki z odprtimi izposojami ostanejo; other:uporabnikov z odprtimi izposojami ostane;}} v arhivu",
+		"status": {
+			"title": "Stanje",
+			"loans": "{{count}} v izposoji",
+			"overdue": "{{count}} v zamudi",
+			"noPhoto": "brez fotografije"
+		},
+		"startTitle": "Poišči uporabnika",
+		"startHint": "Iščite po imenu, izkaznici ali z filtri."
+	},
+	"types": {
+		"student": "Učenec",
+		"teacher": "Učitelj"
+	},
+	"fields": {
+		"patronType": "Vrsta",
+		"firstName": "Ime",
+		"lastName": "Priimek",
+		"cardNumber": "Številka izkaznice",
+		"cardNumberHint": "Prazno: dodeli se samodejno.",
+		"externalId": "Šifra",
+		"email": "E-pošta",
+		"emailHint": "Naslov, ki ga šola dodeli učencu ali učitelju: nanj bodo šla obvestila.",
+		"circulationNote": "Opomba za pult",
+		"circulationNoteHint": "Prikaže se v ospredju med izposojo.",
+		"notes": "Notranje opombe",
+		"status": "Stanje",
+		"openLoans": "Odprte izposoje",
+		"overdueLoans": "V zamudi",
+		"noCard": "brez izkaznice",
+		"none": "—",
+		"levelCode": "Razred",
+		"groupId": "Oddelek",
+		"classLabel": "Razred",
+		"teacherGroup": "Skupina učiteljev"
+	},
+	"form": {
+		"createTitle": "Nov uporabnik",
+		"editTitle": "Uredi uporabnika",
+		"identity": "Osebni podatki",
+		"school": "Razred",
+		"contacts": "Stiki",
+		"notes": "Opombe",
+		"create": "Ustvari uporabnika",
+		"save": "Shrani spremembe",
+		"classSelect": "Izberite…",
+		"defaultTeacherGroup": "Skupina učiteljev"
+	},
+	"errors": {
+		"emailInvalid": "Neveljaven naslov e-pošte.",
+		"cardNumberInvalid": "Neveljavna številka izkaznice: samo številke, velike črke in vezaj, s pravilnim kontrolnim znakom.",
+		"cardNumberTaken": "Številka izkaznice je že dodeljena drugemu uporabniku.",
+		"cardNumberIsCopy": "Številka izkaznice je ali je podobna črtni kodi izvoda: izberite drugo številko.",
+		"externalIdTaken": "Šifra je že dodeljena drugemu uporabniku.",
+		"levelRequired": "Za učenca je obvezen razred (letnik).",
+		"levelUnknown": "Razreda ni med letniki šole.",
+		"levelNotForTeachers": "Učitelj nima razreda.",
+		"groupRequired": "Za učenca je obvezen oddelek.",
+		"groupUnknown": "Oddelek ni najden med aktivnimi razredi: razredi se ustvarijo v Upravljanje → Nastavitve → Razredi.",
+		"levelNotInGroup": "Ta oddelek nima takega razreda: izberite oddelek razreda."
+	},
+	"detail": {
+		"heading": "Kartoteka uporabnika",
+		"tabs": {
+			"loans": "Odprte izposoje",
+			"history": "Zgodovina",
+			"cards": "Izkaznica",
+			"notes": "Opombe"
+		},
+		"noLoans": "Ni odprtih izposoj.",
+		"loanColumns": {
+			"due": "Rok"
+		},
+		"overdue": "v zamudi",
+		"card": "Izkaznica {{number}}",
+		"noNotes": "Ni opomb.",
+		"edit": "Uredi",
+		"created": "Ustvarjen dne {{when}}",
+		"barcodeAlt": "Črtna koda izkaznice {{number}}",
+		"cardPrinted": "Izkaznica natisnjena {{when}}.",
+		"cardNotPrinted": "Izkaznica še ni natisnjena.",
+		"reassignCard": "Dodeli novo izkaznico",
+		"reassignTitle": "Dodeliti novo izkaznico?",
+		"reassignDescription": "Trenutna številka se dokončno umakne, nova izkaznica pa jo bo treba natisniti.",
+		"cardReassigned": "Nova izkaznica: {{number}}",
+		"printCard": "Natisni izkaznico",
+		"markCardPrinted": "Označi kot natisnjeno",
+		"cardMarkedPrinted": "Izkaznica označena kot natisnjena",
+		"historyColumns": {
+			"issuedAt": "Izposojeno",
+			"dueDate": "Rok",
+			"returnedAt": "Vrnjeno",
+			"outcome": "Izid",
+			"title": "Naslov",
+			"author": "Avtor",
+			"barcode": "Izvod",
+			"renewals": "Podaljšanja",
+			"schoolYear": "Šolsko leto"
+		},
+		"outcome": {
+			"open": "V teku",
+			"overdue": "V zamudi",
+			"returned": "Vrnjeno",
+			"returnedLate": "Vrnjeno z zamudo",
+			"lost": "Izgubljeno"
+		},
+		"historyEmpty": "Ni zabeleženih izposoj.",
+		"historyCount": "{{count}} {{count:plural; one:izposoja; two:izposoji; few:izposoje; other:izposoj;}} skupaj",
+		"notesEdit": "Uredi opombe",
+		"notesSaved": "Opombe shranjene",
+		"notesUnchanged": "Ni sprememb",
+		"notesHint": "Opomba za pult se ob izposoji prikaže v ospredju; druge opombe ostanejo tukaj.",
+		"remove": "Odstrani: {{type}}",
+		"removeTitle": "Odstraniti {{name}} dokončno?",
+		"removeDescription": "Takoj in dokončno se izbrišejo: ime in priimek, e-pošta, šifra, opombe, številka izkaznice (umaknjena) in fotografija. Ostanejo samo vrsta, razred in oddelek ter zgodovina izposoj za statistiko. Tega ni mogoče razveljaviti.",
+		"removeOpenLoans": "Ima {{count}} {{count:plural; one:odprto izposojo, ki jo je prej treba vrniti ali označiti kot izgubljeno; two:odprti izposoji, ki ju je prej treba vrniti ali označiti kot izgubljeni; few:odprte izposoje, ki jih je prej treba vrniti ali označiti kot izgubljene; other:odprtih izposoj, ki jih je prej treba vrniti ali označiti kot izgubljene;}}.",
+		"removeClassSheets": "Izbran je bil za {{count}} {{count:plural; one:fotografijo; two:fotografiji; few:fotografije; other:fotografij;}} na slikah razreda (popis s slike): {{count:plural; one:ta okvir je prekrit; two:ta okvirja sta prekrita; few:ti okvirji so prekriti; other:ti okvirji so prekriti;}}.",
+		"removed": "Uporabnik odstranjen: osebni podatki so izbrisani.",
+		"removedInfo": "Odstranjen dne {{when}}. Ostanejo samo podatki za statistiko.",
+		"lostTitle": "Izgubljene knjige",
+		"lostHint": "Označene kot izgubljene, medtem ko so bile izposojene temu uporabniku. Če se vrnejo, jih vnesite na pultu za vrnitve.",
+		"markLost": "Označi „{{title}}“ kot izgubljeno",
+		"markLostTitle": "Označiti „{{title}}“ kot izgubljeno?",
+		"markLostDescription": "Izposoja se zaključi in izvod se prikaže kot izgubljen. Če se knjiga najde, jo vnesite na pultu za vrnitve in spet bo na voljo.",
+		"markLostReason": "Razlog (neobvezno)",
+		"markLostConfirm": "Označi kot izgubljeno",
+		"markedLost": "Izvod „{{title}}“ označen kot izgubljen."
+	},
+	"photo": {
+		"title": "Fotografija",
+		"take": "Posnemi fotografijo",
+		"upload": "Naloži datoteko",
+		"retake": "Ponovi",
+		"use": "Uporabi to fotografijo",
+		"cancel": "Prekliči",
+		"delete": "Izbriši fotografijo",
+		"deleteTitle": "Izbrisati fotografijo?",
+		"deleteDescription": "Fotografija se izbriše s strežnika; lahko se posname nova.",
+		"zoom": "Povečava",
+		"dragHint": "Povlecite za uokvirjanje, za približanje uporabite povečavo.",
+		"saved": "Fotografija shranjena",
+		"deleted": "Fotografija izbrisana",
+		"placeholder": "Ni fotografije",
+		"alt": "Fotografija uporabnika {{name}}",
+		"errors": {
+			"too_large": "Datoteka je prevelika: omejitev je {{maxMb}} MB.",
+			"not_an_image": "Datoteka ni berljiva slika.",
+			"unsupported_format": "Nepodprt format slike (dovoljeni so JPEG, PNG, WebP in HEIC).",
+			"empty": "Ni izbrane datoteke."
+		},
+		"withForm": "Shrani se skupaj z uporabnikom.",
+		"requiredHint": "Fotografija je zahtevana: lahko se posname zdaj ali pozneje s strani uporabnika.",
+		"optionalHint": "Fotografijo je mogoče posneti zdaj ali pozneje s strani uporabnika.",
+		"remove": "Odstrani",
+		"notSaved": "Fotografija ni bila shranjena: ponovite jo s strani uporabnika.",
+		"retakePhoto": "Ponovi fotografijo"
+	},
+	"census": {
+		"title": "Popis fotografij",
+		"noGroup": "Brez razreda",
+		"stageOthers": "Brez stopnje",
+		"progress": "{{done}} od {{total}} s fotografijo",
+		"allDone": "Vsi imajo fotografijo.",
+		"back": "Spremeni razred ali seznam",
+		"skip": "Preskoči",
+		"done": "Konec",
+		"saved": "Fotografija shranjena: {{name}}",
+		"quickAdd": "Nov uporabnik",
+		"quickAddHint": "Dodan v {{group}}, njegova fotografija je naslednja.",
+		"create": "Dodaj in fotografiraj",
+		"findPerson": "Poišči po priimku",
+		"pickTarget": "Izberite seznam ali razred",
+		"listsTitle": "Seznami uporabnikov",
+		"classesTitle": "Razredi",
+		"nothingMissing": "Vsi razredi in seznami imajo fotografije.",
+		"onlyMissing": "Prikazani so samo razredi in seznami, v katerih manjka vsaj ena fotografija.",
+		"byCamera": "Ena oseba naenkrat",
+		"sheets": {
+			"title": "Iz slike z več fotografijami",
+			"hint": "Slike z več fotografijami (fotografov list, izkaznice na mizi, stran s slikami za dokumente): fotografije se samodejno zaznajo in dodelijo vsakemu uporabniku.",
+			"upload": "Naloži sliko",
+			"take": "Fotografiraj list",
+			"uploading": "Pošiljanje slike…",
+			"empty": "Za ta razred ali seznam ni slike.",
+			"item": "Slika z dne {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:najdena fotografija; two:najdeni fotografiji; few:najdene fotografije; other:najdenih fotografij;}} · {{saved}} {{saved:plural; one:shranjena; two:shranjeni; few:shranjene; other:shranjenih;}} · {{pending}} za narediti",
+			"notDetected": "Še ni obdelano",
+			"demoScan": "Primer s skenerja",
+			"demoPhoto": "Primer s fotografije",
+			"demoHint": "Dva načina za fotografije razreda: skenirana slika je ravna, fotografije so pravokotniki, kvečjemu zasukani; fotografija je posneta postrani, perspektiva pa izkrivi okvirje."
+		},
+		"sheet": {
+			"title": "Fotografije iz slike",
+			"back": "Nazaj na razred",
+			"detecting": "Iskanje fotografij na sliki…",
+			"found": "Najdene fotografije: {{count}}. Izberite, čigava je vsaka.",
+			"none": "Ni najdene fotografije. Z „Popravi okvirje“ jih je mogoče narisati ročno.",
+			"pictureAlt": "Naložena slika z oštevilčenimi okvirji fotografij",
+			"frame": "Fotografija {{n}}",
+			"choose": "Kdo je?",
+			"nobody": "— Nihče —",
+			"takenBy": "{{name}} (že na fotografiji {{n}})",
+			"hasPhoto": "že ima fotografijo",
+			"noPhoto": "brez fotografije",
+			"ignore": "Prezri",
+			"unignore": "Obnovi",
+			"ignored": "Prezrta: ni nihče iz tega razreda ali seznama.",
+			"saved": "Shranjeno kot fotografija uporabnika {{name}}",
+			"edit": "Popravi okvirje",
+			"editDone": "Konec popravkov",
+			"editHint": "Tapnite okvir in povlecite njegove vogale; za manjkajočo fotografijo uporabite „Dodaj okvir“.",
+			"editHintScan": "Tapnite okvir: povlecite vogal, da ga povečate ali zmanjšate, krog zgoraj, da ga zasučete; za manjkajočo fotografijo uporabite „Dodaj okvir“.",
+			"addFrame": "Dodaj okvir",
+			"addFrameHint": "Povlecite po sliki od enega do drugega vogala manjkajoče fotografije.",
+			"deleteFrame": "Izbriši okvir {{n}}",
+			"rotateFrame": "Zasukaj okvir",
+			"kind": "Vrsta slike",
+			"kindPhoto": "Fotografija",
+			"kindScan": "Skenirana slika",
+			"kindPhotoHint": "Posneto postrani: vsak vogal okvirja se premakne samostojno, da sledi perspektivi.",
+			"kindScanHint": "Narejeno s skenerjem: okvirji ostanejo pravokotniki in se lahko samo zasukajo.",
+			"kindAgain": "Dokler ni izbran noben uporabnik, se ob spremembi vrste fotografije poiščejo znova.",
+			"save": "Shrani fotografije",
+			"saveTitle": "Shraniti izbrane fotografije?",
+			"saveSummary": "Fotografije za shranjevanje: {{count}}.",
+			"saveReplaces": "Nadomestijo obstoječo fotografijo: {{names}}.",
+			"saveUnassigned": "Okvirji brez izbranega uporabnika: {{count}} (ostanejo, kakršni so).",
+			"savedToast": "Shranjene fotografije: {{count}}.",
+			"deleteSheet": "Izbriši sliko",
+			"deleteSheetTitle": "Izbrisati sliko?",
+			"deleteSheetDescription": "Slika in njeni okvirji se izbrišejo. Fotografije, ki so že shranjene, ostanejo uporabnikom.",
+			"deletedToast": "Slika izbrisana.",
+			"progress": "{{label}}: {{done}} od {{total}} s fotografijo",
+			"missingTitle": "Še brez fotografije",
+			"byCamera": "Fotografirajte jih enega za drugim",
+			"errors": {
+				"not_found": "Slika ni najdena.",
+				"set_not_found": "Razred ali seznam ne obstaja več.",
+				"empty": "Datoteka je prazna.",
+				"too_large": "Slika je prevelika (največ {{maxMb}} MB).",
+				"not_an_image": "Datoteka ni berljiva slika.",
+				"unsupported_format": "Nepodprt format: dovoljeni so JPEG, PNG, WebP in HEIC.",
+				"too_many_frames": "Največ {{maxFrames}} {{maxFrames:plural; one:fotografija; two:fotografiji; few:fotografije; other:fotografij;}} na sliko.",
+				"bad_corners": "Okvir ni veljaven: vogali morajo tvoriti štirikotnik znotraj slike.",
+				"already_detected": "Fotografije na tej sliki so že bile iskane.",
+				"frame_saved": "Ta fotografija je že shranjena.",
+				"frame_erased": "Ta fotografija pripada odstranjenemu uporabniku: okvir je bil prekrit.",
+				"not_a_member": "Izbrati je mogoče samo uporabnike razreda ali seznama.",
+				"patron_taken": "Že izbran za fotografijo {{position}}: pred izbiro tukaj ga sprostite.",
+				"confirm_replace": "{{count:plural; one:{{count}} fotografija nadomesti obstoječo; two:{{count}} fotografiji nadomestita obstoječi; few:{{count}} fotografije nadomestijo obstoječe; other:{{count}} fotografij nadomesti obstoječe;}}: potrdite za nadaljevanje.",
+				"nothing_to_save": "Pred shranjevanjem izberite vsaj enega uporabnika."
+			},
+			"erased": "Uporabnik odstranjen: okvir je v sliki prekrit."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "Datoteka CSV",
+			"submit": "Naloži",
+			"hints": {
+				"students": "Datoteka CSV z eno vrstico za vsakega učenca, ločena s ; ali , (deluje tudi izvoz iz preglednice). Uporabite glave predloge, ki jo prenesete spodaj s potrebnimi stolpci.",
+				"teachers": "Datoteka CSV z eno vrstico za vsakega učitelja, ločena s ; ali ,. Uporabite glave predloge, ki jo prenesete spodaj s potrebnimi stolpci."
+			}
+		},
+		"mapping": {
+			"format": "Prepoznan format",
+			"uncertain": "Format ni zanesljiv: pred nadaljevanjem preverite stolpce.",
+			"remembered": "Stolpci, zapomnjeni iz zadnjega uvoza te datoteke.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "glava datoteke",
+				"unknown": "neznan"
+			},
+			"mode": "Način",
+			"modes": {
+				"upsert": "Dodaj in posodobi",
+				"upsertHint": "Ujemajoče se vrstice posodobijo obstoječega uporabnika, druge ustvarijo nove uporabnike.",
+				"sync": {
+					"students": "Sinhroniziraj učence",
+					"teachers": "Sinhroniziraj učitelje"
+				},
+				"syncHint": {
+					"students": "Datoteka je popoln seznam učencev: kdor manjka, se navede (in po potrditvi odstrani). Učitelji se ne spreminjajo.",
+					"teachers": "Datoteka je popoln seznam učiteljev: kdor manjka, se navede (in po potrditvi odstrani). Učenci se ne spreminjajo."
+				}
+			},
+			"duplicates": "Že prisotni uporabniki",
+			"policies": {
+				"update": "Posodobi",
+				"skip": "Preskoči",
+				"create": "Vseeno ustvari"
+			},
+			"validate": "Preveri datoteko",
+			"matchByName": {
+				"students": "Brez stolpca external_id se učenci, ki so že v evidenci, prepoznajo po imenu in razredu.",
+				"teachers": "Brez stolpca external_id se učitelji, ki so že v evidenci, prepoznajo po imenu."
+			}
+		},
+		"preview": {
+			"ready": "Ni napak: datoteko je mogoče uvoziti.",
+			"blocked": "Popravite napake v datoteki (ali pri uporabnikih) in znova preverite: datoteka z napakami se ne uvozi.",
+			"columns": {
+				"name": "Ime",
+				"class": "Razred"
+			},
+			"changed": "Spremembe: {{fields}}",
+			"homonym": {
+				"pick": "Izberite uporabnika",
+				"create": "Ustvari novega uporabnika",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Istoimenjaki za razrešitev"
+			},
+			"missing": {
+				"students": {
+					"title": "Učenci v evidenci, ki manjkajo v datoteki ({{count}})",
+					"remove": "Odstrani te učence iz evidence (takojšnja anonimizacija)",
+					"noPermission": "Brez dovoljenja za odstranjevanje uporabnikov ostanejo manjkajoči učenci v evidenci.",
+					"notRemoved": "{{count}} {{count:plural; one:manjkajoč učenec ni odstranjen, ker ima; two:manjkajoča učenca nista odstranjena, ker imata; few:manjkajoči učenci niso odstranjeni, ker imajo; other:manjkajočih učencev ni odstranjenih, ker imajo;}} odprte izposoje."
+				},
+				"teachers": {
+					"title": "Učitelji v evidenci, ki manjkajo v datoteki ({{count}})",
+					"remove": "Odstrani te učitelje iz evidence (takojšnja anonimizacija)",
+					"noPermission": "Brez dovoljenja za odstranjevanje uporabnikov ostanejo manjkajoči učitelji v evidenci.",
+					"notRemoved": "{{count}} {{count:plural; one:manjkajoč učitelj ni odstranjen, ker ima; two:manjkajoča učitelja nista odstranjena, ker imata; few:manjkajoči učitelji niso odstranjeni, ker imajo; other:manjkajočih učiteljev ni odstranjenih, ker imajo;}} odprte izposoje."
+				},
+				"hint": "S sinhronizacijo je mogoče odstraniti vsakogar, ki ga ni v datoteki: osebni podatki se takoj in dokončno izbrišejo, ostanejo samo razred in statistike."
+			},
+			"commit": "Uvozi",
+			"back": "Nazaj na stolpce",
+			"generatedCards": "{{count}} {{count:plural; one:nova izkaznica bo ustvarjena; two:novi izkaznici bosta ustvarjeni; few:nove izkaznice bodo ustvarjene; other:novih izkaznic bo ustvarjenih;}}: v datoteki ni številke."
+		},
+		"reasons": {
+			"tooLong": "Predolgo besedilo v stolpcu {{column}}: največ {{max}} {{max:plural; one:znak; two:znaka; few:znaki; other:znakov;}}",
+			"nameRequired": "Manjka ime ali priimek",
+			"emailInvalid": "Neveljavna e-pošta",
+			"cardNumberInvalid": "Neveljavna številka izkaznice",
+			"cardNumberTaken": "Številka izkaznice je že dodeljena drugemu uporabniku",
+			"cardNumberIsCopy": "Številka izkaznice je enaka črtni kodi izvoda ali je podobna",
+			"externalIdTaken": "Šifra je že dodeljena drugemu uporabniku",
+			"duplicateInFile": "Ista oseba je že v vrstici {{line}}",
+			"homonym": "{{count}} {{count:plural; one:istoimenjak; two:istoimenjaka; few:istoimenjaki; other:istoimenjakov;}} v arhivu: izberite, kateri posodobiti",
+			"matchedTwice": "Druga vrstica že posodablja istega uporabnika",
+			"skipped": "Že prisoten: preskočeno",
+			"levelRequired": "Manjka razred",
+			"levelUnknown": "Letnik „{{value}}“ ni letnik šole",
+			"groupRequired": "Manjka oddelek",
+			"groupUnknown": "Oddelek „{{value}}“ za ta letnik ni najden. Veljavni razredi: {{classes}} (razredi se ustvarijo v Upravljanje → Nastavitve → Razredi)",
+			"levelNotInGroup": "Oddelek „{{value}}“ nima tega letnika. Veljavni razredi: {{classes}}",
+			"classUnknown": "Razred „{{value}}“ ni najden. Veljavni razredi: {{classes}}",
+			"teacherGroupUnknown": "Skupina učiteljev „{{value}}“ ni najdena. Veljavne skupine: {{classes}}"
+		},
+		"done": {
+			"title": "Uvoz končan",
+			"summary": "{{created}} {{created:plural; one:nov; two:nova; few:novi; other:novih;}}, {{updated}} {{updated:plural; one:posodobljen; two:posodobljena; few:posodobljeni; other:posodobljenih;}}, {{unchanged}} {{unchanged:plural; one:nespremenjen; two:nespremenjena; few:nespremenjeni; other:nespremenjenih;}}, {{removed}} {{removed:plural; one:odstranjen; two:odstranjena; few:odstranjeni; other:odstranjenih;}}.",
+			"printNew": "Natisni izkaznice novih uporabnikov",
+			"census": "Popis fotografij",
+			"again": "Uvozi drugo datoteko",
+			"batch": "Uvoz št. {{id}}: izvirna datoteka je shranjena na strežniku."
+		},
+		"fields": {
+			"firstName": "Ime",
+			"lastName": "Priimek",
+			"class": "Razred (letnik in oddelek)",
+			"level": "Razred (letnik)",
+			"section": "Oddelek",
+			"group": "Skupina učiteljev",
+			"externalId": "Šifra",
+			"cardNumber": "Izkaznica",
+			"email": "E-pošta"
+		},
+		"titles": {
+			"students": "Uvoz učencev",
+			"teachers": "Uvoz učiteljev"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "Ime."
+			},
+			"lastName": {
+				"hint": "Priimek."
+			},
+			"class": {
+				"hint": "Razred v enem stolpcu, kot 3A ali 3 A: mora obstajati v Upravljanje → Nastavitve → Razredi."
+			},
+			"level": {
+				"hint": "Letnik (1, 2, 3…), z oddelkom v stolpcu section."
+			},
+			"section": {
+				"hint": "Oddelek (A, B…): skupaj z level določa razred."
+			},
+			"cardNumber": {
+				"hint": "Številka izkaznice, če jo učenec že ima.",
+				"missing": "nove izkaznice se ustvarijo samodejno"
+			},
+			"externalId": {
+				"hint": "Šifra iz šolskega registra.",
+				"missing": "uporabniki, ki so že v evidenci, se prepoznajo po imenu in razredu"
+			},
+			"email": {
+				"hint": "Neobvezno."
+			},
+			"group": {
+				"hint": "Skupina učiteljev; če manjka, privzeta skupina."
+			}
+		},
+		"classForm": {
+			"label": "Razred",
+			"class": "V enem stolpcu (class: 3A)",
+			"levelSection": "V dveh stolpcih (level: 3, section: A)"
+		}
+	}
+}

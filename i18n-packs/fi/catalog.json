@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "Luettelo",
+		"search": "Hae nimekkeen, tekijän tai ISBN:n perusteella…",
+		"new": "Uusi kirja",
+		"empty": "Yksikään kirja ei vastaa suodattimia.",
+		"countFiltered": "{{shown}} {{shown:plural; one:nimeke vastaa; other:nimekettä vastaa;}} suodattimia",
+		"clearFilters": "Tyhjennä suodattimet",
+		"filters": {
+			"kind": "Tyyppi",
+			"genre": "Lajityyppi",
+			"class": "Luokitus",
+			"readingLevel": "Lukutaso",
+			"itemType": "Materiaali",
+			"series": "Sarja",
+			"all": "Kaikki",
+			"allF": "Kaikki",
+			"withdrawn": "Näytä myös ritirätyt kirjat"
+		},
+		"columns": {
+			"title": "Nimeke",
+			"series": "Sarja",
+			"author": "Tekijä",
+			"year": "Vuosi",
+			"isbn": "ISBN",
+			"classification": "Luokitus",
+			"copies": "Niteet",
+			"callNumber": "Paikkamerkintä",
+			"acquiredAt": "Hankittu"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "Hae luettelosta",
+		"startHint": "Hae nimekkeen, tekijän, kustantajan, koodin tai ISBN:n perusteella tai suodattimilla."
+	},
+	"kinds": {
+		"fiction": "Kaunokirjallisuus",
+		"nonfiction": "Tietokirjallisuus"
+	},
+	"fields": {
+		"title": "Nimeke",
+		"subtitle": "Alanimeke",
+		"originalTitle": "Alkuperäinen nimeke",
+		"originalTitleHint": "Vain jos kirja on käännös: teoksen nimi alkuperäiskielellä.",
+		"responsibility": "Vastuullisuusmerkintä (nimiösivun mukaan)",
+		"author": "Tekijä",
+		"publisher": "Kustantaja",
+		"publicationPlace": "Paikka",
+		"publicationYear": "Vuosi",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN (ei ISBN)",
+		"physicalDescription": "Fyysinen kuvaus",
+		"series": "Sarja",
+		"seriesNumber": "Numero sarjassa",
+		"seriesHint": "Esimerkiksi Harry Potter ja 3. Luettelossa jo olevat sarjat näkyvät kirjoitettaessa.",
+		"dewey": "Dewey (SBN:stä)",
+		"kind": "Tyyppi",
+		"genre": "Lajityyppi",
+		"classCode": "Luokitus",
+		"readingLevel": "Lukutaso",
+		"subjects": "Asiasanat",
+		"notes": "Huomautukset",
+		"authorHint": "Sukunimi, etunimi. Pikavalintoja käytetään, kun henkilötekijää ei ole.",
+		"subjectsHint": "Yksi riviä kohti tai pilkuilla erotettuna.",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "Uusi kirja",
+		"editTitle": "Muokkaa tietuetta",
+		"create": "Tallenna tietue",
+		"save": "Tallenna muutokset",
+		"identity": "Tietue",
+		"publication": "Julkaisu",
+		"classification": "Luokitus",
+		"more": "Lisätiedot",
+		"quickPicks": "Pikavalinnat",
+		"unknownPublisher": "Tuntematon kustantaja",
+		"unknownPlace": "Tuntematon paikka",
+		"singleCopy": "Nide {{barcode}}",
+		"singleCopyHint": "Tietueessa on yksi nide: sen tiedot muokataan tässä ja tallennetaan tietueen mukana."
+	},
+	"picker": {
+		"kind": "Minkä tyyppinen kirja on?",
+		"fiction": "Kaunokirjallisuus",
+		"nonfiction": "Tietokirjallisuus",
+		"genre": "Valitse lajityyppi",
+		"class": "Valitse aihe",
+		"readingLevel": "Lukutaso",
+		"anyClass": "Ei mitään",
+		"back": "Takaisin pääaiheisiin",
+		"children": "Aiheet: {{label}}",
+		"selected": "Valittu: {{label}}",
+		"parentOnly": "Käytä yleisesti: ”{{label}}”",
+		"later": "Luokittele myöhemmin",
+		"laterHint": "Kirja siirtyy luetteloon ”Luokiteltavat”: sen niteitä ei lainata, eikä selkäkaistaa tulosteta ennen luokittelua."
+	},
+	"detail": {
+		"heading": "Kirjan tietue",
+		"tabs": {
+			"copies": "Niteet",
+			"details": "Tiedot"
+		},
+		"copies": "{{available}} / {{total}} saatavilla",
+		"noCopies": "Ei vielä niteitä: lainaamiseksi on lisättävä yksi.",
+		"seriesLink": "Kaikki sarjan ”{{series}}” kirjat",
+		"edit": "Muokkaa",
+		"delete": "Poista tietue",
+		"addCopies": "Lisää niteitä",
+		"deleteTitle": "Poistetaanko tietue ”{{title}}”?",
+		"deleteDescription": "Tietue poistuu luettelosta. Mahdollista vain, kun niteitä ei ole.",
+		"deleted": "Tietue poistettu",
+		"hasItems": "Tietueessa on vielä {{count}} {{count:plural; one:nide; other:nidettä;}}: ritirä tai poista {{count:plural; one:se; other:ne;}} ensin.",
+		"columns": {
+			"barcode": "Viivakoodi",
+			"callNumber": "Paikkamerkintä",
+			"itemType": "Materiaali",
+			"readingLevel": "Lukutaso",
+			"status": "Tila",
+			"borrower": "Lainattu",
+			"acquisition": "Hankittu",
+			"labels": "Tarrat"
+		},
+		"dueOn": "eräpäivä {{date}}",
+		"identifiers": "Tunnisteet",
+		"source": "Lähde: {{source}}",
+		"created": "Luotu {{when}}",
+		"updated": "Viimeksi muokattu {{when}}",
+		"onLoan": "Lainassa"
+	},
+	"item": {
+		"addTitle": "Lisää niteitä",
+		"copies": "Niteiden määrä",
+		"itemType": "Materiaali",
+		"callNumber": "Paikkamerkintä",
+		"callNumberHint": "Ehdotettu luokituksesta; sitä voi muuttaa.",
+		"readingLevel": "Niteen lukutaso",
+		"enumeration": "Osa / numero",
+		"acquisitionDate": "Hankintapäivä",
+		"notes": "Niteen huomautukset",
+		"notForLoan": "Vain lukemiseen kirjastossa (ei lainata)",
+		"add": "Lisää",
+		"added": "Lisätty {{count}} {{count:plural; one:nide; other:nidettä;}}: {{barcodes}}",
+		"editTitle": "Muokkaa nidettä {{barcode}}",
+		"save": "Tallenna",
+		"saved": "Nide päivitetty",
+		"status": "Muuta tilaa",
+		"statusTitle": "Niteen {{barcode}} tila",
+		"newStatus": "Uusi tila",
+		"reason": "Syy (valinnainen, tallennetaan)",
+		"statusSaved": "Tila päivitetty",
+		"onLoan": "Nide on lainassa: kirjaa ensin palautus.",
+		"delete": "Poista nide",
+		"deleteTitle": "Poistetaanko nide {{barcode}}?",
+		"deleteDescription": "Vain luettelointivirheitä varten: lainattua niteitä ei voi poistaa, vaan ne on ritirättävä.",
+		"deleted": "Nide poistettu",
+		"hasLoans": "Nidettä koskevat lainaukset on kirjattu: nide on ritirättävä, ei poistettava.",
+		"labelsTitle": "Niteen {{barcode}} tarrat"
+	},
+	"errors": {
+		"isbnInvalid": "Virheellinen ISBN (tarkista numerot)",
+		"isbnTaken": "Tällä ISBN:llä on jo tietue",
+		"issnInvalid": "Virheellinen ISSN",
+		"eanInvalid": "Virheellinen EAN",
+		"yearImplausible": "Epäuskottava vuosi",
+		"genreRequired": "Valitse lajityyppi",
+		"genreUnknown": "Lajityyppiä ei ole asetuksissa",
+		"genreNotForNonfiction": "Tietokirjallisuudella ei ole lajityyppiä",
+		"classCodeRequired": "Valitse aihe",
+		"classCodeUnknown": "Aihetta ei ole asetuksissa",
+		"classCodeNotForFiction": "Kaunokirjallisuudella ei ole aihetta",
+		"readingLevelNotAllowed": "Lukutasoa ei odoteta tässä",
+		"readingLevelOutOfRange": "Lukutasoa ei ole asetuksissa",
+		"itemTypeUnknown": "Materiaalia ei ole asetuksissa",
+		"acquisitionDateInvalid": "Virheellinen päivämäärä (VVVV-KK-PP)",
+		"copiesOutOfRange": "Yhdellä kertaa 1–100 niteitä"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "Testipalvelu"
+		},
+		"errors": {
+			"unreachable": "Palveluun ei saada yhteyttä. Tarkista internetyhteys ja yritä myöhemmin uudelleen.",
+			"timeout": "Palvelu ei vastannut ajoissa. Yritä myöhemmin uudelleen.",
+			"protocol": "Palvelu antoi odottamattoman vastauksen. Tiedot voi syöttää käsin.",
+			"http": "Palvelu vastasi virheellä. Yritä myöhemmin uudelleen.",
+			"rate_limited": "Palvelu hylkäsi pyynnön, koska kyselyjä on ollut liian monta. Yritä myöhemmin uudelleen.",
+			"not_configured": "Palvelua ei ole määritetty: asetus puuttuu (esimerkiksi API-avain).",
+			"spawn": "Ohjelma yaz-client ei ole käytettävissä tällä palvelimella. Ilmoita ylläpitäjälle."
+		},
+		"noHits": "Ei tuloksia palvelusta {{provider}}.",
+		"hits": "{{count}} {{count:plural; one:tulos; other:tulosta;}} palvelusta {{provider}}",
+		"fromCache": "välimuistista"
+	},
+	"fastAdd": {
+		"title": "Uusi kirja",
+		"steps": {
+			"code": "Koodi",
+			"lookup": "Haku",
+			"form": "Tietue ja niteet",
+			"done": "Valmis"
+		},
+		"code": {
+			"heading": "Lue viivakoodi",
+			"label": "ISBN tai EAN",
+			"placeholder": "978…",
+			"material": "Materiaali",
+			"noCode": "Ei koodia",
+			"noCodeHint": "Hae nimekkeen ja tekijän perusteella tai täytä tietue käsin.",
+			"manual": "Täytä käsin",
+			"notACode": "Luettu koodi ei ole ISBN eikä EAN: tarkista numerot tai valitse ”Ei koodia”.",
+			"eanNotIsbn": "Luettu EAN {{ean}}: se ei ole ISBN, joten tietue on täytettävä käsin.",
+			"cameraNotIsbn": "Ei ISBN: kohdista kameralla kirjan viivakoodi"
+		},
+		"search": {
+			"heading": "Hae nimekkeen ja tekijän perusteella",
+			"title": "Nimeke",
+			"author": "Tekijä",
+			"submit": "Hae",
+			"empty": "Kirjoita vähintään nimeke tai tekijä."
+		},
+		"duplicate": {
+			"heading": "Tämä ISBN on jo luettelossa",
+			"copies": "{{count}} {{count:plural; one:nide; other:nidettä;}}",
+			"addCopy": "Lisää nide",
+			"open": "Avaa tietue",
+			"another": "Lue toinen koodi"
+		},
+		"lookup": {
+			"searching": "Haku käynnissä palveluista {{providers}}…",
+			"best": "Täydellisin",
+			"heading": "Löydetyt tietueet",
+			"pick": "Käytä tätä tietuetta",
+			"none": "Tietuetta ei löytynyt. Tietue voidaan täyttää käsin.",
+			"manual": "Syötä käsin",
+			"bySearch": "Hae nimekkeellä",
+			"retry": "Yritä uudelleen",
+			"another": "Uusi koodi",
+			"source": "Lähde: {{provider}}",
+			"providerOk": "{{count}} {{count:plural; one:tietue; other:tietuetta;}}",
+			"providerCached": "välimuistista",
+			"failed": "Virhe"
+		},
+		"form": {
+			"heading": "Tarkista tietue ja lisää niteet",
+			"rescan": "Lue toinen koodi",
+			"bestOf": "Täydellisin {{count}} löydetystä tietueesta. Tarkista vuosi ja kuvaus niteestä.",
+			"otherRecords": "Muut {{count:plural; one:tietue; other:tietuetta;}} ({{count}})",
+			"fromSource": "Tietue palvelusta {{provider}}: tarkista tiedot ennen tallennusta.",
+			"manualSource": "Tietue täytetty käsin.",
+			"copiesSection": "Niteet",
+			"copies": "Niteiden määrä",
+			"itemType": "Materiaali",
+			"callNumber": "Paikkamerkintä",
+			"readingLevel": "Niteiden lukutaso",
+			"acquisitionDate": "Hankintapäivä",
+			"save": "Tallenna tietue ja niteet",
+			"deweySuggested": "Aihe ehdotettu Dewey-numerosta {{dewey}}."
+		},
+		"done": {
+			"heading": "Tietue tallennettu",
+			"summary": "”{{title}}”, {{count}} {{count:plural; one:nide; other:nidettä;}}",
+			"summaryCopies": "{{count}} {{count:plural; one:nide; other:nidettä;}} lisätty tietueeseen ”{{title}}”",
+			"barcodes": "Niteiden viivakoodit",
+			"printLabels": "Tulosta tarrat",
+			"addToList": "Lisää tarralistaan",
+			"open": "Avaa tietue",
+			"another": "Lisää toinen"
+		},
+		"cover": {
+			"title": "Kansikuva",
+			"alt": "Kirjan kansikuva",
+			"searching": "Haetaan kansikuvaa verkosta…",
+			"found": "Löytyi palvelusta {{provider}}: se tallennetaan tietueen mukana. Jos se on väärä, valokuvaa kirjan oma kansi.",
+			"photo": "Kansikuvan valokuva: se tallennetaan tietueen mukana.",
+			"none": "Kansikuvaa ei löytynyt verkosta: sen voi valokuvata.",
+			"empty": "Ei kansikuvaa: sen voi valokuvata.",
+			"take": "Valokuvaa kansi",
+			"replace": "Korvaa valokuvalla",
+			"remove": "Poista",
+			"saving": "Tallennetaan kansikuvaa…",
+			"failed": "Kansikuvaa ei tallennettu: sen voi lisätä kirjan tietueesta."
+		}
+	},
+	"cover": {
+		"title": "Kansikuva",
+		"take": "Valokuvaa kansi",
+		"upload": "Lataa tiedosto",
+		"change": "Vaihda kansikuva",
+		"delete": "Poista kansikuva",
+		"deleteTitle": "Poistetaanko kansikuva?",
+		"deleteDescription": "Kuva poistetaan palvelimelta; uusi kansikuva voidaan valokuvata.",
+		"shoot": "Ota kuva",
+		"loading": "Ladataan suoristusmoduulia ({{loaded}} / {{total}} Mt), vain ensimmäisellä käyttökerralla.",
+		"loadingShort": "Ladataan suoristusmoduulia ({{loaded}} Mt), vain ensimmäisellä käyttökerralla.",
+		"loadFailed": "Suoristusmoduulia ei voitu ladata. Tarkista yhteys ja yritä uudelleen.",
+		"detecting": "Haetaan kansikuvan reunoja…",
+		"notFound": "Reunoja ei löytynyt automaattisesti: vedä kulmat kannen päälle.",
+		"adjustHint": "Vedä neljä kulmaa kannen reunoille ja suorista sitten.",
+		"straighten": "Suorista",
+		"result": "Tulos",
+		"use": "Käytä tätä kansikuvaa",
+		"retake": "Ota uusi",
+		"cancel": "Peru",
+		"saved": "Kansikuva tallennettu",
+		"deleted": "Kansikuva poistettu",
+		"placeholder": "Ei kansikuvaa",
+		"alt": "Kansikuva: {{title}}",
+		"cameraHint": "Kohdista koko kansi, vaikka vinosti: se suoristetaan kuvan ottamisen jälkeen.",
+		"errors": {
+			"too_large": "Tiedosto on liian suuri: raja on {{maxMb}} Mt.",
+			"not_an_image": "Tiedosto ei ole luettava kuva.",
+			"unsupported_format": "Kuvamuotoa ei tueta (käytettävissä ovat JPEG, PNG, WebP ja HEIC).",
+			"empty": "Tiedostoa ei ole valittu."
+		},
+		"download": "Lataa kansikuva",
+		"downloading": "Haetaan kansikuvaa verkosta…",
+		"downloaded": "Kansikuva ladattu palvelusta {{provider}}",
+		"downloadNotFound": "Tälle ISBN:lle ei löytynyt kansikuvaa verkosta: sen voi valokuvata.",
+		"downloadNoIsbn": "Tietueella ei ole ISBN:ää: kansi on valokuvattava."
+	},
+	"export": {
+		"copiesTotal": "Niteet",
+		"copiesAvailable": "Saatavilla",
+		"callNumber": "Paikkamerkintä",
+		"acquiredAt": "Hankittu"
+	},
+	"import": {
+		"title": "Tuo luettelo",
+		"upload": {
+			"file": "CSV-tiedosto",
+			"hint": "Yksi rivi kutakin niteä kohti: nimekkeen tiedot toistuvat sen niteiden riveillä. Nimeke, tekijä ja kustantaja ovat pakollisia. Käytä mallin otsikoita, jonka voi ladata alla tarvittavine sarakkeineen. Koha-ohjelmasta siirtymiseen käytä ylläpitäjän oppaassa kuvattua vientiä.",
+			"submit": "Lataa"
+		},
+		"mapping": {
+			"uncertain": "Sarakkeita ei tunnistettu: valitse jokaiselle kenttä ennen jatkamista.",
+			"remembered": "Sarakkeet muistettu tämän tiedoston edellisestä tuonnista.",
+			"specialValues": "Erikoisarvot, kun tekijä tai kustantaja puuttuu (”{{author}}”, ”{{publisher}}”)",
+			"specialValuesHint": "Ilman tätä valintaa rivit ilman tekijää tai kustantajaa ovat virheitä.",
+			"validate": "Tarkista tiedosto",
+			"without": {
+				"biblioKey": "Ilman biblio_key-saraketta saman kirjan niteet ryhmitellään ISBN:n mukaan; rivit ilman ISBN:ää ovat kukin oma nimekkeensä.",
+				"barcode": "Ilman barcode-saraketta niteiden viivakoodit luodaan: tuonnin jälkeen tarrat tulostetaan.",
+				"classification": "Ilman classification-saraketta kirjat menevät luetteloon ”Luokiteltavat”: niteitä ei lainata, ennen kuin ne on luokiteltu."
+			}
+		},
+		"fields": {
+			"biblioKey": "Nimekkeen avain (biblionumber)",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "Nimeke",
+			"subtitle": "Alanimeke",
+			"originalTitle": "Alkuperäinen nimeke",
+			"responsibility": "Vastuullisuusmerkintä",
+			"author": "Tekijä",
+			"publisher": "Kustantaja",
+			"publicationPlace": "Julkaisupaikka",
+			"publicationYear": "Vuosi",
+			"physicalDescription": "Fyysinen kuvaus",
+			"series": "Sarja",
+			"seriesNumber": "Numero sarjassa",
+			"dewey": "Dewey",
+			"classification": "Luokitus (lajityyppi tai aihe, Kohan ccode)",
+			"readingLevel": "Lukutaso",
+			"subjects": "Asiasanat",
+			"notes": "Nimekkeen huomautukset",
+			"barcode": "Niteen viivakoodi",
+			"callNumber": "Paikkamerkintä",
+			"itemType": "Materiaali",
+			"enumeration": "Osa",
+			"status": "Tila",
+			"notForLoan": "Ei lainattavissa",
+			"acquisitionDate": "Hankintapäivä",
+			"itemNotes": "Niteen huomautukset"
+		},
+		"preview": {
+			"ready": "Ei virheitä: tuonti on mahdollinen.",
+			"blocked": "Korjaa tiedoston virheet ja tarkista uudelleen: virheellistä tiedostoa ei tuoda.",
+			"nothing": "Kaikki tiedoston niteet ovat jo luettelossa: tuotavaa ei ole.",
+			"titles": "{{new}} {{new:plural; one:uusi nimeke; other:uutta nimekettä;}}, {{existing}} jo luettelossa (niiden niteet lisätään)",
+			"columns": {
+				"title": "Nimeke",
+				"barcode": "Viivakoodi",
+				"classification": "Luokitus"
+			},
+			"question": {
+				"title": "Saman nimekkeen niteet eri lukutasoilla",
+				"text": "{{count}} {{count:plural; one:nimeke; other:nimekettä;}}, joiden niteillä on eri lukutasot. Taso voi olla jokaisella niteellä nimekkeen sijaan: tämä on ”lukutaso niteittäin” -asetus, joka koskee koko luetteloa ja siirtää jo olemassa olevien nimekkeiden tason niiden niteille.",
+				"yes": "Kyllä, lukutaso niteittäin",
+				"no": "Ei, ne ovat virheitä korjattavaksi"
+			},
+			"commit": "Tuo",
+			"back": "Takaisin sarakkeisiin",
+			"generatedBarcodes": "{{count}} {{count:plural; one:nide; other:nidettä;}} ilman viivakoodia: viivakoodi luodaan, ja sitten tulostetaan tarrat.",
+			"toClassify": "{{count}} {{count:plural; one:uusi nimeke; other:uutta nimekettä;}} ilman luokitusta: {{count:plural; one:se menee; other:ne menevät;}} luetteloon ”Luokiteltavat”."
+		},
+		"reasons": {
+			"tooLong": "Teksti on liian pitkä sarakkeessa {{column}}: enintään {{max}} merkkiä",
+			"isbnInvalid": "Virheellinen ISBN: ”{{value}}”",
+			"classificationUnknown": "Luokitusta ei ole asetuksissa: ”{{value}}”",
+			"barcodeInvalid": "Viivakoodissa on kiellettyjä merkkejä: ”{{value}}”",
+			"barcodeCheckDigit": "Viivakoodissa on väärä tarkistusmerkki: ”{{value}}”",
+			"barcodeDuplicateInFile": "Viivakoodi on jo käytetty rivillä {{line}}",
+			"barcodeTaken": "Viivakoodi {{value}} kuuluu jo toiselle niteelle luettelossa",
+			"barcodeIsCard": "Koodi {{value}} on tai näyttää kortin numerolta: niteellä ei voi olla kortin koodia",
+			"statusUnknown": "Tilaa ei tunnistettu: ”{{value}}” (saatavilla, kadonnut, vahingoittunut, korjauksessa, ritirätty)",
+			"notForLoanUnknown": "Arvoa ei tunnistettu kohdassa ”ei lainattavissa”: ”{{value}}” (kyllä/ei)",
+			"dateInvalid": "Virheellinen päivämäärä: ”{{value}}” (VVVV-KK-PP tai PP.KK.VVVV)",
+			"authorMissing": "Tekijä puuttuu (”erikoisarvoilla” siitä tulee Anonimo)",
+			"publisherMissing": "Kustantaja puuttuu (”erikoisarvoilla” siitä tulee s.n.)",
+			"titleMissing": "Nimeke puuttuu",
+			"groupConflict": "Sama avain kuin rivillä {{line}}, mutta eri nimeke",
+			"classQuestion": "Niteillä on eri lukutasot ({{classes}}): vastaa alla olevaan kysymykseen",
+			"classDiffers": "Niteillä on eri lukutasot ({{classes}}) ilman lukutasoa niteittäin",
+			"copyExists": "Nide on jo luettelossa: se ohitetaan",
+			"mergedIntoExisting": "Lisätty nimekkeeseen, joka on jo luettelossa (sama avain tai sama ISBN)"
+		},
+		"done": {
+			"title": "Luettelo tuotu",
+			"summary": "{{titlesCreated}} {{titlesCreated:plural; one:uusi nimeke; other:uutta nimekettä;}}, {{copiesCreated}} {{copiesCreated:plural; one:nide; other:nidettä;}} lisätty ({{titlesMerged}} {{titlesMerged:plural; one:nimeke; other:nimekettä;}} jo luettelossa, {{copiesSkipped}} {{copiesSkipped:plural; one:nide; other:nidettä;}} ohitettiin).",
+			"classPerItem": "Lukutaso niteittäin on otettu käyttöön.",
+			"batch": "Tuonti nro {{id}}: alkuperäinen tiedosto on säilytetty.",
+			"labels": "Tulosta tarrat niteille, joilla ei ole viivakoodia",
+			"open": "Siirry luetteloon",
+			"again": "Tuo toinen tiedosto"
+		},
+		"columns": {
+			"title": {
+				"hint": "Kirjan nimeke."
+			},
+			"author": {
+				"hint": "Sukunimi, etunimi; tyhjä on virhe, paitsi jos käytetään ”erikoisarvoja”."
+			},
+			"publisher": {
+				"hint": "Kustantaja; tyhjä kuten tekijä."
+			},
+			"biblioKey": {
+				"hint": "Nimekkeen koodi vanhassa ohjelmassa (Kohan biblionumber): se pitää niteet yhdessä.",
+				"missing": "niteet ryhmitellään ISBN:n mukaan"
+			},
+			"barcode": {
+				"hint": "Niteessä jo oleva viivakoodi.",
+				"missing": "viivakoodi luodaan ja tarrat tulostetaan"
+			},
+			"classification": {
+				"hint": "Lajityypin (kaunokirjallisuus) tai aiheen (tietokirjallisuus) koodi.",
+				"missing": "kirja menee luetteloon ”Luokiteltavat”"
+			},
+			"readingLevel": {
+				"hint": "Lukutaso (kaunokirjallisuus)."
+			},
+			"isbn": {
+				"hint": "ISBN-10 tai ISBN-13."
+			},
+			"issn": {
+				"hint": "Aikakauslehdille."
+			},
+			"ean": {
+				"hint": "DVD-levyjen ja muiden materiaalien EAN-koodi."
+			},
+			"subtitle": {
+				"hint": "Alanimeke."
+			},
+			"originalTitle": {
+				"hint": "Vain käännöksille: nimeke alkuperäiskielellä."
+			},
+			"responsibility": {
+				"hint": "Kuvittajat, kääntäjät…"
+			},
+			"publicationPlace": {
+				"hint": "Julkaisupaikka."
+			},
+			"publicationYear": {
+				"hint": "Julkaisuvuosi."
+			},
+			"physicalDescription": {
+				"hint": "Sivut, kuvitus, koko."
+			},
+			"series": {
+				"hint": "Sarja (ei kustantajan kokoelma)."
+			},
+			"seriesNumber": {
+				"hint": "Numero sarjassa."
+			},
+			"dewey": {
+				"hint": "Dewey-numero, vain viitteeksi."
+			},
+			"subjects": {
+				"hint": "Avainsanat erotettuina merkillä ; tai ,."
+			},
+			"notes": {
+				"hint": "Nimekkeen huomautukset."
+			},
+			"callNumber": {
+				"hint": "Paikkamerkintä; jos se puuttuu, se ehdotetaan."
+			},
+			"itemType": {
+				"hint": "Materiaali (kirja, dvd…); jos se puuttuu, käytetään ensimmäistä asetuksissa olevaa."
+			},
+			"enumeration": {
+				"hint": "Osa, monen osan teoksille."
+			},
+			"status": {
+				"hint": "saatavilla, kadonnut, vahingoittunut, korjauksessa, ritirätty."
+			},
+			"notForLoan": {
+				"hint": "1 tai kyllä kirjastossa luettaville niteille."
+			},
+			"acquisitionDate": {
+				"hint": "Hankintapäivä; jos se puuttuu, tämä päivä."
+			},
+			"itemNotes": {
+				"hint": "Niteen huomautukset."
+			}
+		}
+	},
+	"batch": {
+		"selected": "Muuta valittujen niteitä",
+		"title": "Muokkaa niteitä",
+		"scope": "{{count}} {{count:plural; one:nide; other:nidettä;}}",
+		"operation": "Mitä muutetaan",
+		"operations": {
+			"status": "Tila",
+			"itemType": "Materiaali",
+			"notForLoan": "Ei lainattavissa",
+			"readingLevel": "Niteen lukutaso",
+			"acquisitionDate": "Hankintapäivä"
+		},
+		"value": "Uusi arvo",
+		"yes": "Kyllä",
+		"no": "Ei",
+		"noClass": "Ei lukutasoa",
+		"reason": "Syy",
+		"reasonHint": "Pakollinen kadonneille ja ritirätyille: se jää kunkin niteen lokiin.",
+		"check": "Tarkista",
+		"apply": "Käytä {{count}} {{count:plural; one:niteeseen; other:niteisiin;}}",
+		"plan": {
+			"changes": "{{count}} {{count:plural; one:nide muuttuu; other:niteet muuttuvat;}}",
+			"onLoan": "{{count}} lainassa {{count:plural; one:pysyy ennallaan (palauta se; other:pysyvät ennallaan (palauta ne;}} ensin)",
+			"unchanged": "{{count}} {{count:plural; one:on jo tämä arvo; other:ovat jo tämän arvon;}}",
+			"notFound": "{{count}} {{count:plural; one:ei ole enää luettelossa; other:eivät ole enää luettelossa;}}",
+			"notAllowed": "{{count}} {{count:plural; one:ei ole kaunokirjallisuutta; other:eivät ole kaunokirjallisuutta;}}: lukutaso ei koske niitä",
+			"none": "Ei niteitä muutettavaksi."
+		},
+		"excludedTitle": "Niteet, jotka pysyvät ennallaan",
+		"done": "{{count}} {{count:plural; one:nide muutettu; other:nidettä muutettu;}}",
+		"errors": {
+			"reasonRequired": "Kirjoita syy: se vaaditaan kadonneille ja ritirätyille.",
+			"itemTypeUnknown": "Materiaalia ei ole asetuksissa.",
+			"readingLevelNotAllowed": "Lukutaso niteittäin ei ole käytössä.",
+			"readingLevelOutOfRange": "Lukutasoa ei ole asetuksissa.",
+			"dateInvalid": "Virheellinen päivämäärä.",
+			"statusUnknown": "Virheellinen tila.",
+			"classificationUnknown": "Valitse lajityyppi tai aihe asetuksista."
+		},
+		"reclassify": {
+			"button": "Luokittele uudelleen",
+			"title": "Luokittele valitut nimekkeet uudelleen",
+			"scope": "{{count}} {{count:plural; one:nimeke; other:nimekettä;}}",
+			"resuggest": "Kirjoita niteiden paikkamerkinnät uudelleen uuden luokituksen mukaan",
+			"labelsHint": "Selkäkaistat (ja tarrat, jos paikkamerkintä muuttuu) palaavat tulostettavien joukkoon.",
+			"changes": "{{count}} {{count:plural; one:nimeke muuttuu; other:nimekkeet muuttuvat;}}",
+			"apply": "Luokittele uudelleen {{count}} {{count:plural; one:nimeke; other:nimekettä;}}",
+			"done": "{{count}} {{count:plural; one:nimeke luokiteltu uudelleen; other:nimekettä luokiteltu uudelleen;}}, {{calls}} {{calls:plural; one:paikkamerkintä kirjoitettu uudelleen; other:paikkamerkintää kirjoitettu uudelleen;}}"
+		}
+	},
+	"search": {
+		"suggest": "Koodi {{barcode}} on nimekkeen ”{{title}}” nide.",
+		"openSuggest": "Avaa tietue",
+		"available": "Vain saatavilla olevat",
+		"yearFrom": "Vuodesta",
+		"yearTo": "Vuoteen",
+		"copiesAvailable": "{{available}} / {{total}} saatavilla",
+		"noCopies": "Ei niteitä"
+	},
+	"inventory": {
+		"title": "Inventointi",
+		"defaultName": "Inventointi",
+		"emptyTitle": "Ei käynnissä olevaa inventointia",
+		"emptyHint": "Aloita kampanja ja lue niteet hyllyittäin: lopuksi niitä, joita ei ole nähty, merkitään kadonneiksi.",
+		"name": "Kampanjan nimi",
+		"start": "Uusi kampanja",
+		"started": "Aloitettu {{when}}",
+		"overall": "Koko kirjasto",
+		"progress": "{{seen}} / {{expected}} ({{percent}} %)",
+		"counts": "{{scanned}} {{scanned:plural; one:nide luettu; other:niteitä luettu;}} · {{misplaced}} väärällä paikalla · {{found}} löydetty uudelleen",
+		"byShelf": "Edistyminen hyllyittäin",
+		"noShelf": "Ei paikkamerkintää",
+		"scanTitle": "Lue niteet",
+		"shelf": "Hylly",
+		"shelfHint": "Esimerkiksi B tai 590: niteet, joiden paikkamerkintä on toinen, merkitään väärällä paikalla oleviksi.",
+		"scanLabel": "Niteen viivakoodi",
+		"camera": "Lue kameralla",
+		"outcomes": {
+			"seen": "{{title}} ({{barcode}}): nähty.",
+			"again": "{{title}} ({{barcode}}): jo luettu {{when}}.",
+			"misplaced": "{{title}} ({{barcode}}): väärällä paikalla; aseta se takaisin paikkamerkinnän mukaan.",
+			"found": "{{title}} ({{barcode}}): oli kadonnut ja on löydetty; se on taas saatavilla.",
+			"onLoan": "{{title}} ({{barcode}}): lainassa; kirjaa palautus tiskillä.",
+			"withdrawn": "{{title}} ({{barcode}}): ritirätty nide, poistettava hyllystä.",
+			"unknown": "{{code}}: yksikään nide ei ole tällä viivakoodilla."
+		},
+		"missing": "Yhä löytämättä ({{count}})",
+		"allShelves": "Kaikki hyllyt",
+		"allTypes": "Kaikki materiaalit",
+		"noneMissing": "Kaikki odotetut niteet on nähty.",
+		"more": "ja {{count}} {{count:plural; one:muu; other:muuta;}}: vie luettelo nähdäksesi {{count:plural; one:sen; other:ne kaikki;}}.",
+		"close": "Sulje inventointi",
+		"closeTitle": "Suljetaanko inventointi?",
+		"closeHint": "Niteet, joita ei ole koskaan nähty ({{count}} {{count:plural; one:nide; other:nidettä;}}), merkitään kadonneiksi. Kampanjan voi avata uudelleen viikon kuluessa tämän kumoamiseksi.",
+		"closedTitle": "Inventointi suljettu",
+		"summary": "{{seen}} / {{expected}} {{expected:plural; one:nide; other:nidettä;}} nähty, {{lost}} merkitty kadonneiksi, {{found}} löydetty uudelleen, {{onLoan}} lainassa, {{misplaced}} väärällä paikalla.",
+		"history": "Aiemmat kampanjat",
+		"reopen": "Avaa uudelleen",
+		"errors": {
+			"alreadyOpen": "Inventointi on jo käynnissä.",
+			"notOpen": "Tämä inventointi on suljettu.",
+			"notFound": "Inventointia ei löytynyt.",
+			"tooLate": "Sen voi avata uudelleen vain viikon kuluessa sulkemisesta.",
+			"badName": "Anna kampanjalle nimi.",
+			"badNotes": "Kampanjan huomautuksissa saa olla enintään 500 merkkiä."
+		},
+		"cameraShelf": "Hylly {{shelf}}",
+		"cameraDone": "Valmis"
+	},
+	"toClassify": {
+		"title": "Luokiteltavat",
+		"label": "Luokiteltavat",
+		"intro": "Luokittelematta kirjastoon lisätyt kirjat, vanhimmat ensin. Niiden niteitä ei lainata, ennen kuin ne on luokiteltu.",
+		"count": "{{count}} {{count:plural; one:kirja; other:kirjaa;}} luokiteltavana",
+		"empty": "Ei luokiteltavia kirjoja",
+		"emptyHint": "Kaikilla luettelon kirjoilla on lajityyppi tai aihe.",
+		"start": "Aloita luokittelu",
+		"classify": "Luokittele",
+		"badge": "Luokiteltava",
+		"badgeHint": "Niteitä ei lainata, ennen kuin kirja on luokiteltu.",
+		"columns": {
+			"title": "Nimeke",
+			"author": "Tekijä",
+			"publisher": "Kustantaja",
+			"year": "Vuosi",
+			"isbn": "ISBN",
+			"copies": "Niteet",
+			"enteredOn": "Lisätty"
+		},
+		"flow": {
+			"title": "Luokittele kirja",
+			"saveNext": "Tallenna ja seuraava",
+			"save": "Tallenna",
+			"skip": "Ohita",
+			"saved": "”{{title}}” luokiteltu",
+			"end": "Tällä kierroksella ei ole enää luokiteltavia kirjoja.",
+			"backToList": "Takaisin luetteloon",
+			"already": "Tämä kirja on jo luokiteltu.",
+			"callNumber": "Niteiden paikkamerkintä",
+			"callNumberHint": "Niteet ilman paikkamerkintää saavat tämän; sen jälkeen selkäkaista voidaan tulostaa.",
+			"dewey": "Dewey-numero {{dewey}} viittaa aiheeseen {{code}}.",
+			"copies": "{{count}} {{count:plural; one:nide; other:nidettä;}}",
+			"subjects": "Asiasanat",
+			"notes": "Huomautukset"
+		}
+	}
+}

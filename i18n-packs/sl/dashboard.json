@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "Aktivne izposoje",
+		"overdue": "V zamudi",
+		"issuedToday": "Izposojeno danes",
+		"returnedToday": "Vrnjeno danes",
+		"withoutCard": "Uporabniki brez natisnjene izkaznice",
+		"withoutPhoto": "Uporabniki brez fotografije",
+		"toClassify": "Knjige za klasifikacijo",
+		"pendingLabels": "Knjige brez nalepk"
+	},
+	"tilesTitle": "Knjižnica danes",
+	"actions": {
+		"title": "Hitra dejanja"
+	},
+	"dueWeek": {
+		"title": "Zapadejo ta teden",
+		"none": "Nobena izposoja ne zapade do {{day}}.",
+		"more": "in še {{count}}",
+		"due": "zapade {{date}}"
+	},
+	"inventory": {
+		"title": "Inventura",
+		"continue": "Nadaljuj"
+	},
+	"install": {
+		"title": "Dodaj na začetni zaslon",
+		"hint": "BiblioViva se odpre kot aplikacija, čez cel zaslon, z ikone na telefonu.",
+		"install": "Namesti",
+		"fromMenu": "V meniju ⋮ brskalnika Firefox izberite „Namesti“ ali „Dodaj na začetni zaslon“.",
+		"later": "Ne zdaj"
+	},
+	"upcoming": {
+		"title": "Bližnji datumi",
+		"none": "{{days:plural; one:Ni datumov v naslednjem dnevu.; two:Ni datumov v naslednjih dveh dneh.; few:Ni datumov v naslednjih {{days}} dneh.; other:Ni datumov v naslednjih {{days}} dneh.;}}",
+		"more": "in še {{count}}",
+		"open": "Odpri koledar"
+	}
+}

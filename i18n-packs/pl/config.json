@@ -1,0 +1,1778 @@
+{
+	"home": {
+		"title": "Konfiguracja"
+	},
+	"leave": {
+		"title": "Wyjść bez zapisywania?",
+		"description": "Niezapisane jeszcze zmiany zostaną utracone.",
+		"confirm": "Wyjdź bez zapisywania"
+	},
+	"taxonomy": {
+		"title": "Klasyfikacja",
+		"intro": "Zmiany pozostają w wersji roboczej do momentu kliknięcia „Zapisz”; poprzednia wersja pliku {{file}} zostaje zachowana.",
+		"invalid": "Niektóre wartości są nieprawidłowe (zaznaczone na czerwono): popraw je, aby móc zapisać.",
+		"orphans": "W katalogu są książki z kodami, których klasyfikacja nie zawiera: {{codes}}. Dodaj te kody tutaj albo przeklasyfikuj te książki z poziomu katalogu.",
+		"unsaved": "Niezapisane zmiany",
+		"discard": "Odrzuć zmiany",
+		"saved": "Klasyfikacja zapisana",
+		"savedDetail": "{{records}} {{records:plural; one:przeniesiona książka; few:przeniesione książki; many:przeniesionych książek; other:przeniesionej książki;}}, {{callNumbers}} {{callNumbers:plural; one:przepisana sygnatura; few:przepisane sygnatury; many:przepisanych sygnatur; other:przepisanej sygnatury;}}, {{bands}} {{bands:plural; one:pasek grzbietowy do ponownego wydruku; few:paski grzbietowe do ponownego wydruku; many:pasków grzbietowych do ponownego wydruku; other:paska grzbietowego do ponownego wydruku;}}.",
+		"tabs": {
+			"fiction": "Beletrystyka",
+			"nonfiction": "Literatura faktu",
+			"dewey": "Dewey",
+			"options": "Opcje"
+		},
+		"addGenre": "Dodaj gatunek",
+		"addClass": "Dodaj dział",
+		"addSubclass": "Dodaj podrozdział",
+		"dragHint": "Przeciągnij wiersze, aby zmienić kolejność, albo użyj strzałek. Kolejność jest taka, w jakiej pojawiają się w wyborach katalogu.",
+		"pickGenre": "Wybierz gatunek, aby go edytować",
+		"pickClass": "Wybierz dział, aby go edytować",
+		"untitled": "Bez nazwy",
+		"hasProblems": "Do poprawienia",
+		"usageShort": "{{records}} {{records:plural; one:książka; few:książki; many:książek; other:książki;}}",
+		"moveUp": "Przesuń w górę",
+		"moveDown": "Przesuń w dół",
+		"panel": {
+			"genre": "Gatunek",
+			"class": "Dział",
+			"subclass": "Podrozdział"
+		},
+		"fields": {
+			"code": "Kod",
+			"label": "Nazwa",
+			"color": "Kolor",
+			"pictogram": "Piktogram",
+			"position": "Położenie"
+		},
+		"renameNote": "Kod zmieniony: przy zapisie {{records}} {{records:plural; one:książka przechodzi; few:książki przechodzą; many:książek przechodzi; other:książki przechodzą;}} z {{from}} do {{to}}, a ich sygnatury zostają zaktualizowane.",
+		"color": {
+			"inherit": "Użyj koloru {{code}}",
+			"none": "Bez koloru",
+			"hex": "Kod koloru"
+		},
+		"pictogram": {
+			"upload": "Wczytaj obraz",
+			"choose": "Wybierz spośród obrazów",
+			"remove": "Usuń obraz",
+			"own": "Własny obraz. PNG, JPEG lub WebP: zapisywany jest jako PNG.",
+			"missing": "Pliku {{name}} nie ma w folderze obrazów: na etykietach widnieje koło z kolorem i kodem.",
+			"inherited": "Bez własnego obrazu używa obrazu {{code}}.",
+			"placeholder": "Bez obrazu na etykietach widnieje koło z kolorem i kodem.",
+			"gallery": "Obrazy klasyfikacji",
+			"errors": {
+				"empty": "Plik jest pusty.",
+				"too_large": "Obraz jest za duży (najwyżej {{maxMb}} MB).",
+				"not_an_image": "Plik nie jest obrazem.",
+				"unsupported_format": "Format nieobsługiwany: użyj PNG, JPEG lub WebP."
+			}
+		},
+		"position": {
+			"top": "Dział główny",
+			"under": "W obrębie {{code}} · {{label}}",
+			"locked": "Ma podrozdziały: pozostaje działem głównym."
+		},
+		"usage": {
+			"new": "Nowy: żadna książka jeszcze go nie używa.",
+			"none": "Żadna książka nie używa tego kodu.",
+			"some": "Używany przez {{records}} {{records:plural; one:książkę; few:książki; many:książek; other:książki;}} ({{copies}} {{copies:plural; one:egzemplarz; few:egzemplarze; many:egzemplarzy; other:egzemplarza;}})."
+		},
+		"remove": {
+			"genre": "Usuń gatunek",
+			"class": "Usuń dział",
+			"confirmTitle": "Usunąć {{code}}?",
+			"withSubclasses": "Usunięte zostaną także jego {{count}} {{count:plural; one:podrozdział; few:podrozdziały; many:podrozdziałów; other:podrozdziału;}}.",
+			"inUse": "{{records}} {{records:plural; one:książka używa; few:książki używają; many:książek używa; other:książki używają;}} tego kodu: przy zapisie trzeba wybrać, dokąd je przenieść.",
+			"confirm": "Usuń"
+		},
+		"preview": {
+			"title": "Podgląd paska grzbietowego",
+			"hint": "Przykładowa książka tak, jak zostanie wydrukowana teraz, w rzeczywistym rozmiarze.",
+			"needsCode": "Podgląd pojawia się, gdy kod jest prawidłowy."
+		},
+		"problems": {
+			"codeRequired": "Kod jest wymagany.",
+			"codeFormat": "Użyj tylko liter, cyfr, kropki, łącznika lub podkreślenia (najwyżej 32 znaki).",
+			"codeTaken": "Ten kod jest już używany przez inny gatunek lub dział.",
+			"labelRequired": "Nazwa jest wymagana.",
+			"labelLong": "Nazwa jest za długa (najwyżej 120 znaków).",
+			"colorFormat": "Kolor zapisz jako #rrggbb, na przykład #e8231b.",
+			"patternRequired": "Schemat nie może być pusty."
+		},
+		"dewey": {
+			"hint": "Gdy książka z literatury faktu ma numer Dewey (na przykład z SBN), dział jest proponowany według tej tabeli: wygrywa najdłuższy pasujący prefiks.",
+			"probe": "Sprawdź numer Dewey",
+			"noMatch": "Żaden dział nie pasuje",
+			"empty": "Brak odpowiedniości Dewey",
+			"prefix": "Prefiks Dewey",
+			"class": "Dział",
+			"add": "Dodaj odpowiedniość",
+			"problems": {
+				"prefixFormat": "Od 1 do 3 cyfr.",
+				"prefixTaken": "Prefiks powtórzony.",
+				"codeUnknown": "Wybierz dział."
+			}
+		},
+		"options": {
+			"fictionByClass": "Beletrystyka jest podzielona według poziomu czytelniczego",
+			"fictionByClassHint": "Książki beletrystyczne mogą mieć przypisany poziom czytelniczy, do którego są przeznaczone (na przykład klasa 4): pojawia się w sygnaturze i na pasku grzbietowym.",
+			"classPerItem": "Poziom czytelniczy jest przypisany do każdego egzemplarza",
+			"classPerItemHint": "Potrzebne, gdy egzemplarze tej samej książki stoją na półkach różnych poziomów. W przeciwnym razie poziom jest przypisany do książki.",
+			"toCopies": "Przy zapisie poziom czytelniczy każdej książki przechodzi do jej egzemplarzy.",
+			"toRecords": "Przy zapisie poziom egzemplarzy wraca do książki; nie można tego zrobić, gdy egzemplarze tej samej książki mają różne poziomy.",
+			"patterns": "Schematy sygnatury",
+			"patternsHint": "Obowiązują dla egzemplarzy dodawanych od teraz; istniejące sygnatury się nie zmieniają. Symbole zastępcze: {{placeholders}}.",
+			"pattern": {
+				"fiction": "Beletrystyka",
+				"fictionWithClass": "Beletrystyka z przypisanym poziomem czytelniczym",
+				"nonfiction": "Literatura faktu"
+			},
+			"unknownPlaceholders": "Nieznane symbole zastępcze: {{names}}.",
+			"example": "Przykład: {{example}}"
+		},
+		"save": {
+			"title": "Zapisz klasyfikację",
+			"checking": "Sprawdzanie, co zmienia się w katalogu…",
+			"unchanged": "Nie ma zmian do zapisania.",
+			"errors": "Przed zapisaniem popraw te problemy:",
+			"removedTitle": "Usunięte kody wciąż w użyciu",
+			"removedHint": "Wybierz, dokąd przenieść książki każdego usuniętego kodu: nowy kod trafia na książki, na początek ich sygnatur i na paski grzbietowe.",
+			"moveTo": "{{code}} · {{label}}: {{records}} {{records:plural; one:książka; few:książki; many:książek; other:książki;}} ({{copies}} {{copies:plural; one:egzemplarz; few:egzemplarze; many:egzemplarzy; other:egzemplarza;}}). Przenieś do",
+			"choose": "Wybierz…",
+			"callNumbers": "{{count}} {{count:plural; one:sygnatura zaczyna się; few:sygnatury zaczynają się; many:sygnatur zaczyna się; other:sygnatury zaczynają się;}} od usuniętego kodu: kod na początku zostaje zastąpiony (na przykład B 4 DEL staje się A 4 DEL).",
+			"bandsMoved": "Paski grzbietowe przeniesionych książek oraz etykiety ze zmienioną sygnaturą wracają na listę do wydrukowania.",
+			"unused": "Usunięte, nieużywane przez żadną książkę: {{codes}}.",
+			"reprint": "Ponownie umieść wśród etykiet do wydrukowania paski grzbietowe dla {{copies}} {{copies:plural; one:egzemplarza; few:egzemplarzy; many:egzemplarzy; other:egzemplarza;}} ze zmienioną nazwą, kolorem lub piktogramem ({{codes}})",
+			"reprintHint": "Pozostaw wyłączone, jeśli różnica na paskach już naklejonych na książkach nie ma znaczenia.",
+			"conflicts": "{{count}} {{count:plural; one:książka ma; few:książki mają; many:książek ma; other:książki mają;}} egzemplarze w różnych klasach: zanim zdejmiesz klasę z egzemplarzy, nadaj tę samą klasę wszystkim egzemplarzom każdej książki.",
+			"toCopies": "{{count}} {{count:plural; one:książka przechodzi; few:książki przechodzą; many:książek przechodzi; other:książki przechodzą;}} przypisaną klasę do swoich egzemplarzy.",
+			"toRecords": "Klasa egzemplarzy wraca na książkę dla {{count}} {{count:plural; one:tytułu; few:tytułów; many:tytułów; other:tytułu;}}.",
+			"warnings": "{{count}} {{count:plural; one:ostrzeżenie; few:ostrzeżenia; many:ostrzeżeń; other:ostrzeżenia;}} (nie blokują zapisu)",
+			"levelsTitle": "Poziomy czytelnicze usunięte, gdy książki je wciąż mają",
+			"levelMoveTo": "Książki poziomu {{code}} · {{label}} ({{records}} {{records:plural; one:tytuł; few:tytuły; many:tytułów; other:tytułu;}}, {{copies}} {{copies:plural; one:egzemplarz; few:egzemplarze; many:egzemplarzy; other:egzemplarza;}}) przechodzą do",
+			"noLevel": "Bez poziomu",
+			"levelsHint": "W sygnaturze egzemplarzy poziom zmienia się razem z nimi (na przykład B 4 DEL staje się B 5 DEL), a ich etykiety wracają na listę do wydrukowania."
+		},
+		"levels": {
+			"title": "Poziomy czytelnicze",
+			"hint": "W kolejności od najprostszego. Kod trafia na książki i do sygnatury (na przykład 4 w B 4 DEL), nazwa widnieje w wyborach. Dla poziomu w użyciu, który zostaje usunięty lub przemianowany, przy zapisie pytamy, dokąd przenieść jego książki.",
+			"code": "Kod poziomu",
+			"label": "Nazwa poziomu",
+			"up": "Przesuń w górę",
+			"down": "Przesuń w dół",
+			"remove": "Usuń poziom",
+			"add": "Dodaj poziom"
+		}
+	},
+	"sections": {
+		"library": {
+			"title": "Biblioteka i szkoła",
+			"description": "Nazwa, typ szkoły, klasy i sekcje, rok szkolny, strefa czasowa."
+		},
+		"school": {
+			"title": "Szkoła",
+			"description": "Etapy i lata szkoły, sposób zapisu klasy, co dzieje się z klasami na koniec roku. Klasami zarządza się w Administracja → Konfiguracja → Klasy."
+		},
+		"catalog": {
+			"title": "Katalog",
+			"description": "Wartości dla autora, wydawcy i miejsca nieznanych."
+		},
+		"barcodes": {
+			"title": "Kody kreskowe",
+			"description": "Format kart i egzemplarzy, stare kody, rodzaj kodu kreskowego."
+		},
+		"circulation": {
+			"title": "Wypożyczenia",
+			"description": "Zasady wypożyczeń i prolongaty, terminy zwrotu, monity, pokwitowania."
+		},
+		"calendar": {
+			"title": "Kalendarz",
+			"description": "Dni zamknięcia i święta."
+		},
+		"z3950": {
+			"title": "Z39.50 (SBN)",
+			"description": "Serwery, z których pochodzą opisy książek."
+		},
+		"metadata": {
+			"title": "Dane o książkach",
+			"description": "Źródła danych przy wyszukiwaniu po ISBN."
+		},
+		"performance": {
+			"title": "Wydajność",
+			"description": "Komputer, na którym działa BiblioViva, i ustawienia, które od niego zależą."
+		},
+		"classification": {
+			"title": "Klasyfikacja",
+			"description": "Gatunki, działy, piktogramy, Dewey i sygnatury."
+		},
+		"cards": {
+			"title": "Karty",
+			"description": "Format kart i arkusza do druku."
+		},
+		"labels": {
+			"title": "Etykiety",
+			"description": "Etykiety i paski grzbietowe książek, arkusze samoprzylepne."
+		},
+		"photos": {
+			"title": "Zdjęcia czytelników",
+			"description": "Wymiary i format zdjęć."
+		},
+		"covers": {
+			"title": "Okładki",
+			"description": "Wymiary, format i źródła okładek."
+		},
+		"privacy": {
+			"title": "Prywatność",
+			"description": "Jak długo przechowuje się dziennik operacji."
+		},
+		"backup": {
+			"title": "Kopia zapasowa",
+			"description": "Godzina i przechowywanie kopii zapasowych, kopia zewnętrzna."
+		},
+		"security": {
+			"title": "Bezpieczeństwo i dostęp",
+			"description": "Długość sesji, próby logowania, konta i role."
+		},
+		"ui": {
+			"title": "Interfejs",
+			"description": "Stanowisko wypożyczeń i dodatkowe języki; kolory, język i pulpit są w „Wygląd i język”."
+		}
+	},
+	"fields": {
+		"library": {
+			"name": {
+				"label": "Nazwa biblioteki",
+				"hint": "Widoczna u góry po lewej, na kartach i na wydrukach."
+			},
+			"contactEmail": {
+				"label": "Adres e-mail kontaktowy",
+				"hint": "Opcjonalnie: widnieje na wydrukach, które go przewidują."
+			},
+			"schoolYearStart": {
+				"label": "Początek roku szkolnego",
+				"hint": "Miesiąc i dzień w postaci MM-DD (na przykład 09-01): oddziela lata w statystykach."
+			},
+			"schoolYearLabel": {
+				"label": "Nazwa roku szkolnego",
+				"hint": "Jak rok szkolny pojawia się na kartach, raportach i stronach: dwa lata (2026/2027) lub rok rozpoczęcia (2026), jak w Brazylii, Japonii i Korei."
+			},
+			"timezone": {
+				"label": "Strefa czasowa",
+				"hint": "Nazwa strefy, na przykład Europe/Rome: daty i terminy zwrotu obowiązują według niej, a nie według zegara serwera."
+			},
+			"weekStart": {
+				"label": "Pierwszy dzień tygodnia",
+				"hint": "Dzień, od którego zaczynają się tygodnie w kalendarzach i w pulpicie w pozycji „ten tydzień”. Przy pierwszym uruchomieniu wybiera go język (w języku włoskim poniedziałek, w angielskim niedziela)."
+			}
+		},
+		"school": {
+			"classLabel": {
+				"label": "Sposób zapisu klasy",
+				"hint": "{level} to rok, {group} nazwa klasy: „{level} {group}” daje 3 B, „{level}{group}” daje 3B. Etap może mieć własny zapis (Etapy i lata szkoły)."
+			},
+			"groupWord": {
+				"label": "Słowo oznaczające klasę",
+				"hint": "Nazwa pola klasy w kartotekach i filtrach oraz {word} w wierszu klasy na karcie (Sekcja B, Klasa B, Grupa B)."
+			},
+			"cardClass": {
+				"label": "Klasa na karcie",
+				"hint": "Wiersz klasy drukowany na karcie: {word} to słowo oznaczające klasę, {group} nazwa klasy, {level} rok, {class} cała klasa. „{word} {group}” daje Sekcja B, „{class}” daje 3 B."
+			},
+			"teacherGroupName": {
+				"label": "Nazwa grupy nauczycieli",
+				"hint": "Grupa, do której trafia nauczyciel, gdy nie zostanie wybrana inna."
+			},
+			"promotionWithinStage": {
+				"label": "Na koniec roku, w obrębie etapu",
+				"hint": "Zwykle klasa przechodzi razem z uczniami: 3 B staje się 4 B."
+			},
+			"promotionAcrossStages": {
+				"label": "Na koniec roku, przy przejściu na inny etap",
+				"hint": "Na przykład z 5. klasy szkoły podstawowej do 1. klasy gimnazjum w zespole szkół."
+			}
+		},
+		"catalog": {
+			"specialAuthors": {
+				"label": "Autorzy specjalni",
+				"hint": "Jeden w wierszu: wartości przyjmowane zamiast autora osobowego (na przykład Anonimo, AA. VV.)."
+			},
+			"unknownPublisher": {
+				"label": "Nieznany wydawca",
+				"hint": "Wartość wpisywana, gdy wydawca nie jest podany."
+			},
+			"unknownPlace": {
+				"label": "Nieznane miejsce",
+				"hint": "Wartość wpisywana, gdy miejsce wydania nie jest podane."
+			}
+		},
+		"barcodes": {
+			"keyboardLayout": {
+				"label": "Klawiatura komputera",
+				"hint": "Układ klawiatury komputerów, do których są podłączone czytniki kodów kreskowych: służy do poprawiania znaków, które czytnik ustawiony na inną klawiaturę zapisuje błędnie."
+			},
+			"cameraSound": {
+				"label": "Dźwięk aparatu",
+				"hint": "Sygnał dźwiękowy telefonu, gdy aparat odczyta kartę, kod kreskowy egzemplarza lub ISBN. Czytnik USB sygnalizuje sam i nie potrzebuje tego; stanowisko pozostaje ciche."
+			},
+			"patron": {
+				"symbology": {
+					"label": "Rodzaj kodu kreskowego kart",
+					"hint": "Code 128 dla nowych kart; Code 39 tylko wtedy, gdy czytniki biblioteki nie odczytują Code 128."
+				}
+			},
+			"item": {
+				"symbology": {
+					"label": "Rodzaj kodu kreskowego egzemplarzy",
+					"hint": "Code 128 dla nowych etykiet; Code 39 tylko wtedy, gdy czytniki biblioteki nie odczytują Code 128."
+				}
+			}
+		},
+		"circulation": {
+			"rules": {
+				"student": {
+					"loanDays": {
+						"label": "Dni wypożyczenia",
+						"hint": "Jak długo trwa wypożyczenie dla uczniów."
+					},
+					"maxLoans": {
+						"label": "Najwięcej wypożyczonych książek",
+						"hint": "Ile książek może mieć jednocześnie jedna osoba."
+					},
+					"maxRenewals": {
+						"label": "Najwięcej prolongat",
+						"hint": "Ile razy można prolongować to samo wypożyczenie (0 = nigdy)."
+					},
+					"renewalDays": {
+						"label": "Dni prolongaty",
+						"hint": "O ile dni wydłuża się wypożyczenie przy każdej prolongacie."
+					}
+				},
+				"teacher": {
+					"loanDays": {
+						"label": "Dni wypożyczenia",
+						"hint": "Jak długo trwa wypożyczenie dla nauczycieli."
+					},
+					"maxLoans": {
+						"label": "Najwięcej wypożyczonych książek",
+						"hint": "Ile książek może mieć jednocześnie jedna osoba."
+					},
+					"maxRenewals": {
+						"label": "Najwięcej prolongat",
+						"hint": "Ile razy można prolongować to samo wypożyczenie (0 = nigdy)."
+					},
+					"renewalDays": {
+						"label": "Dni prolongaty",
+						"hint": "O ile dni wydłuża się wypożyczenie przy każdej prolongacie."
+					}
+				}
+			},
+			"dueDateMode": {
+				"label": "Obliczanie terminu zwrotu",
+				"hint": "Jak długość wypożyczenia jest liczona względem dni zamknięcia biblioteki."
+			},
+			"renewFrom": {
+				"label": "Prolongata liczy się od",
+				"hint": "Dzień, od którego liczy się dni prolongaty."
+			},
+			"allowRenewalWhenOverdue": {
+				"label": "Prolongata także po terminie",
+				"hint": "Wypożyczenie już przetrzymane można prolongować."
+			},
+			"overdueNotice": {
+				"template": {
+					"label": "Szablon monitów",
+					"hint": "Nazwa szablonu wydruku monitów (folder w slips/templates)."
+				},
+				"pageBreakPerGroup": {
+					"label": "Jedna strona na klasę",
+					"hint": "Każda klasa na osobnym arkuszu, do przekazania nauczycielowi; można to zmienić także przy drukowaniu."
+				},
+				"minDays": {
+					"label": "Dni opóźnienia przed monitem",
+					"hint": "Wypożyczenie pojawia się w monitach dopiero po tylu dniach opóźnienia (0 = od razu)."
+				}
+			},
+			"blockIfOverdue": {
+				"label": "Bez nowych wypożyczeń przy przetrzymanych książkach",
+				"hint": "Kto ma przetrzymaną książkę, nie może wypożyczyć kolejnych, dopóki jej nie zwróci."
+			},
+			"hardDueDate": {
+				"label": "Najpóźniejszy termin zwrotu",
+				"hint": "Żadne wypożyczenie nie wygasa po tej dacie (na przykład koniec zajęć). Puste: brak limitu."
+			},
+			"receipts": {
+				"label": "Pokwitowanie wypożyczenia",
+				"hint": "Pokazuje na stanowisku wypożyczeń przycisk drukowania pokwitowania."
+			}
+		},
+		"calendar": {
+			"autoItalianHolidays": {
+				"label": "Włoskie święta państwowe",
+				"hint": "Święta państwowe (łącznie z Wielkanocą) są dniami zamknięcia bez wpisywania ich ręcznie."
+			}
+		},
+		"z3950": {
+			"defaultTarget": {
+				"label": "Serwer domyślny",
+				"hint": "Identyfikator serwera Z39.50 używanego do wyszukiwań."
+			},
+			"timeoutMs": {
+				"label": "Limit czasu oczekiwania (ms)",
+				"hint": "Po ilu milisekundach wyszukiwanie Z39.50 jest przerywane."
+			},
+			"maxRecordsIsbn": {
+				"label": "Wyniki na ISBN",
+				"hint": "Ile opisów najwyżej jest odczytywanych przy wyszukiwaniu ISBN (jeden ISBN może mieć opis dla każdego dodruku): otwiera się najpełniejszy."
+			},
+			"maxRecordsSearch": {
+				"label": "Wyniki na wyszukiwanie",
+				"hint": "Ile opisów najwyżej jest odczytywanych przy wyszukiwaniu po tytule lub autorze."
+			}
+		},
+		"metadata": {
+			"providers": {
+				"label": "Źródła danych",
+				"hint": "Skąd pochodzą dane o książkach przy wyszukiwaniu po ISBN: wybrane źródła są pytane równocześnie."
+			},
+			"cacheDays": {
+				"label": "Dni pamiętania wyszukiwań",
+				"hint": "Przez ile dni wyszukiwanie już wykonane jest ponownie wykorzystywane bez pytania jeszcze raz."
+			},
+			"timeoutMs": {
+				"label": "Limit czasu oczekiwania (ms)",
+				"hint": "Po ilu milisekundach źródło, które nie odpowiada, jest pomijane."
+			}
+		},
+		"performance": {
+			"profile": {
+				"label": "Komputer",
+				"hint": "Domyślne ustawienia odpowiednie dla komputera, na którym działa BiblioViva."
+			},
+			"sqliteCacheMb": {
+				"label": "Pamięć podręczna bazy danych (MB)",
+				"hint": "Puste: zależnie od komputera (8, 16, 64 lub 256 MB)."
+			},
+			"sqliteMmapMb": {
+				"label": "Mapowanie pamięci bazy danych (MB)",
+				"hint": "Puste: zależnie od komputera (0, 0, 0 lub 512 MB)."
+			},
+			"walAutocheckpointPages": {
+				"label": "Strony przed punktem kontrolnym",
+				"hint": "Puste: zależnie od komputera (500, 1000, 2000 lub 4000)."
+			},
+			"imageConcurrency": {
+				"label": "Obrazy przetwarzane równocześnie",
+				"hint": "Zdjęcia, okładki, zdjęcia klasowe i logo przetwarzane w tym samym czasie; pozostałe czekają na swoją kolej. Puste: zależnie od komputera (1, 1, 2 lub 4)."
+			},
+			"yazConcurrency": {
+				"label": "Wyszukiwania Z39.50 równocześnie",
+				"hint": "Wyszukiwania Z39.50 wykonywane w tym samym czasie; pozostałe czekają na swoją kolej. Puste: zależnie od komputera (1, 1, 2 lub 2)."
+			},
+			"heavyConcurrency": {
+				"label": "Wydruki i eksporty naraz",
+				"hint": "Arkusze do wydruku (karty, etykiety, monity, pokwitowania, raporty) i eksporty (CSV, ODS, archiwa, kopie zapasowe) przygotowywane w tym samym czasie; pozostałe czekają na swoją kolej, dzięki czemu stanowisko wypożyczeń pozostaje szybkie. Puste: zależnie od komputera (1, 1, 2 lub 4)."
+			},
+			"argon2MemoryMb": {
+				"label": "Pamięć do sprawdzania haseł (MB)",
+				"hint": "Dotyczy haseł ustawianych od tej chwili. Puste: 16 MB na każdym komputerze (system nigdy nie jest wystawiony na Internet)."
+			},
+			"smol": {
+				"label": "Oszczędzanie pamięci",
+				"hint": "Mniej pamięci, nieco więcej pracy dla procesora. Automatycznie: zależnie od komputera (tak dla minimalnego komputera i Raspberry Pi). Działa po ponownym uruchomieniu."
+			}
+		},
+		"cards": {
+			"defaultTemplate": {
+				"label": "Szablon kart",
+				"hint": "Nazwa szablonu wydruku używanego, gdy rodzaj czytelnika nie ma własnego (folder w cards/templates)."
+			},
+			"layout": {
+				"label": "Drukowanie kart",
+				"hint": "Awers i rewers obok siebie (do zgięcia po krótszym boku) albo na dwóch stronach arkusza, przy drukarce drukującej dwustronnie. Wybierane ponownie przy każdym wydruku."
+			},
+			"duplex": {
+				"flip": {
+					"label": "Jak obraca się arkusz",
+					"hint": "Jak drukarka obraca arkusz dla rewersu: po dłuższym boku (jak książkę) czy po krótszym. Musi być zgodne z wyborem w oknie drukowania."
+				},
+				"backOffsetMm": {
+					"x": {
+						"label": "Przesunięcie rewersów w poziomie (mm)",
+						"hint": "Wyznacza kalibracja: o ile przesunąć rewersy, aby trafiły za awersy."
+					},
+					"y": {
+						"label": "Przesunięcie rewersów w pionie (mm)",
+						"hint": "Wyznacza kalibracja."
+					}
+				}
+			},
+			"cardMm": {
+				"width": {
+					"label": "Szerokość (mm)",
+					"hint": "Standardowa karta ma 85,6 mm szerokości."
+				},
+				"height": {
+					"label": "Wysokość (mm)",
+					"hint": "Standardowa karta ma 53,98 mm wysokości."
+				}
+			},
+			"bleedMm": {
+				"label": "Spad (mm)",
+				"hint": "Dodatkowy margines wokół obrazów na całą stronę, do odcięcia."
+			},
+			"sheet": {
+				"paper": {
+					"label": "Format arkusza",
+					"hint": "Arkusz, na którym drukuje się karty."
+				},
+				"rows": {
+					"label": "Kart na arkusz",
+					"hint": "Ile kart (awers i rewers) jedna pod drugą: 4 lub 5 na arkuszu A4."
+				},
+				"marginMm": {
+					"label": "Margines arkusza (mm)",
+					"hint": "Biała przestrzeń wokół kart."
+				},
+				"gapMm": {
+					"label": "Odstęp między kartami (mm)",
+					"hint": "Odległość między jedną kartą a następną."
+				},
+				"foldMarks": {
+					"label": "Znaki zgięcia",
+					"hint": "Krótkie linie przerywane na marginesach i między kartami, po których zgina się awers i rewers."
+				},
+				"cutMarks": {
+					"label": "Znaki cięcia",
+					"hint": "Znaczniki cięcia: krótkie linie na marginesach i między kartami, przedłużające krawędzie każdej karty, do cięcia linijką i nożem."
+				}
+			},
+			"validityMonths": {
+				"label": "Ważność (miesiące)",
+				"hint": "Przez ile miesięcy ważna jest wydrukowana karta. Puste: bez terminu ważności."
+			},
+			"showPhoto": {
+				"label": "Zdjęcie na karcie",
+				"hint": "Drukuje zdjęcie czytelnika na karcie."
+			}
+		},
+		"labels": {
+			"default": {
+				"label": "Etykiety domyślne",
+				"hint": "Co drukuje się po wybraniu „Drukuj etykiety”."
+			},
+			"titleMaxChars": {
+				"label": "Liczba liter tytułu",
+				"hint": "Tytuł na etykietach jest obcinany do tej długości."
+			},
+			"monochrome": {
+				"label": "Drukarka czarno-biała",
+				"hint": "Na niskich paskach grzbietowych kolorowy pasek zamienia się we wzór kreskowany."
+			},
+			"pair": {
+				"template": {
+					"label": "Szablon",
+					"hint": "Nazwa szablonu wydruku pary (folder w labels/templates)."
+				},
+				"stock": {
+					"label": "Arkusz samoprzylepny",
+					"hint": "Identyfikator używanego arkusza etykiet (plik w labels/stocks)."
+				}
+			},
+			"barcode": {
+				"template": {
+					"label": "Szablon",
+					"hint": "Nazwa szablonu wydruku etykiety z kodem kreskowym (folder w labels/templates)."
+				},
+				"stock": {
+					"label": "Arkusz samoprzylepny",
+					"hint": "Identyfikator używanego arkusza etykiet (plik w labels/stocks)."
+				}
+			},
+			"spine": {
+				"template": {
+					"label": "Szablon",
+					"hint": "Nazwa szablonu wydruku paska grzbietowego (folder w labels/templates)."
+				},
+				"stock": {
+					"label": "Arkusz samoprzylepny",
+					"hint": "Identyfikator używanego arkusza etykiet (plik w labels/stocks)."
+				}
+			}
+		},
+		"photos": {
+			"enabled": {
+				"label": "Zdjęcia czytelników",
+				"hint": "Włączone: zdjęcia wykonane lub wczytane dla każdego czytelnika, spis, zdjęcia na kartach. Wyłączone: brak zdjęć wszędzie i karty bez zdjęcia; zdjęcia już zapisane pozostają i pojawią się ponownie po ponownym włączeniu."
+			},
+			"required": {
+				"label": "Zdjęcie wymagane",
+				"hint": "Włączone: pulpit, lista czytelników i listy do wydruku wskazują, kto nie ma zdjęcia. Wyłączone: brak przypomnień, ale zdjęcia wciąż można wykonać, wczytać i wydrukować na kartach."
+			},
+			"width": {
+				"label": "Szerokość (px)",
+				"hint": "Zdjęcia są zapisywane w tej szerokości."
+			},
+			"height": {
+				"label": "Wysokość (px)",
+				"hint": "Zdjęcia są zapisywane w tej wysokości (przycięcie od środka)."
+			},
+			"format": {
+				"label": "Format pliku",
+				"hint": "JPEG działa wszędzie; WebP zajmuje mniej miejsca."
+			},
+			"quality": {
+				"label": "Jakość",
+				"hint": "Od 1 do 100: wyższa wartość oznacza większe pliki."
+			},
+			"maxUploadBytes": {
+				"label": "Największy wczytywany plik (bajty)",
+				"hint": "Większy plik zostaje odrzucony."
+			},
+			"sheet": {
+				"maxUploadBytes": {
+					"label": "Największy plik (bajty)",
+					"hint": "Obraz z wieloma zdjęciami (spis z obrazu) większy niż to zostaje odrzucony."
+				},
+				"maxPixels": {
+					"label": "Zachowany najdłuższy bok (px)",
+					"hint": "Obraz jest zmniejszany, aż jego najdłuższy bok nie przekroczy tej wartości."
+				},
+				"maxFrames": {
+					"label": "Najwięcej zdjęć",
+					"hint": "Gdy obraz zawiera ich więcej, zachowuje się najostrzejsze."
+				},
+				"minAspect": {
+					"label": "Najmniejsze proporcje zdjęcia",
+					"hint": "Wysokość podzielona przez szerokość: 1 to kwadrat, 1,33 to zdjęcie legitymacyjne 3:4."
+				},
+				"maxAspect": {
+					"label": "Największe proporcje zdjęcia",
+					"hint": "Wysokość podzielona przez szerokość: zbyt wysokie kadry nie są brane za zdjęcia."
+				}
+			}
+		},
+		"covers": {
+			"enabled": {
+				"label": "Okładki książek",
+				"hint": "Włączone: okładki szukane w sieci, fotografowane lub wczytywane i pokazywane w katalogu. Wyłączone: brak okładek wszędzie; te już zapisane pozostają i pojawią się ponownie po ponownym włączeniu."
+			},
+			"width": {
+				"label": "Szerokość (px)",
+				"hint": "Okładki są zapisywane w tej szerokości."
+			},
+			"maxHeight": {
+				"label": "Największa wysokość (px)",
+				"hint": "Bardzo wysokie okładki są zmniejszane. Puste: brak limitu."
+			},
+			"format": {
+				"label": "Format pliku",
+				"hint": "JPEG działa wszędzie; WebP zajmuje mniej miejsca."
+			},
+			"quality": {
+				"label": "Jakość",
+				"hint": "Od 1 do 100: wyższa wartość oznacza większe pliki."
+			},
+			"maxUploadBytes": {
+				"label": "Największy wczytywany plik (bajty)",
+				"hint": "Większy plik zostaje odrzucony."
+			},
+			"country": {
+				"label": "Kraj",
+				"hint": "Kraj katalogu dostawców okładek (dwie litery, na przykład IT)."
+			},
+			"minWidth": {
+				"label": "Najmniejsza szerokość (px)",
+				"hint": "Pobrane okładki węższe niż to zostają odrzucone."
+			},
+			"autoFetch": {
+				"label": "Szukaj okładki samodzielnie",
+				"hint": "W „Nowa książka” okładka jest szukana w sieci podczas sprawdzania opisu i zapisywana razem z nim; jeśli jest błędna, zastępuje się ją zdjęciem."
+			},
+			"timeoutMs": {
+				"label": "Limit czasu oczekiwania (ms)",
+				"hint": "Po ilu milisekundach dostawca, który nie odpowiada, jest pomijany."
+			}
+		},
+		"privacy": {
+			"auditRetentionMonths": {
+				"label": "Miesiące dziennika operacji",
+				"hint": "Starsze wiersze dziennika są usuwane."
+			}
+		},
+		"backup": {
+			"cron": {
+				"label": "Godzina kopii zapasowej",
+				"hint": "W postaci cron: minuta, godzina, dzień, miesiąc, dzień tygodnia (0 3 * * * = co noc o 3)."
+			},
+			"catchUp": {
+				"label": "Kopia przy uruchomieniu, jeśli pominięta",
+				"hint": "Jeśli o godzinie kopii komputer był wyłączony, BiblioViva wykonuje kopię minutę po najbliższym uruchomieniu: tylko jedną, nawet po kilku dniach."
+			},
+			"keepDays": {
+				"label": "Dni przechowywania",
+				"hint": "Starsze kopie zapasowe są usuwane."
+			},
+			"offsite": {
+				"enabled": {
+					"label": "Kopia zewnętrzna włączona",
+					"hint": "Wskazuje, że w użyciu jest druga kopia kopii zapasowych (rclone, na innym dysku lub w innej usłudze)."
+				},
+				"remote": {
+					"label": "Miejsce docelowe kopii",
+					"hint": "Dokąd trafia kopia: folder innego dysku (/offsite/biblioviva-backups, wybór domyślny) albo miejsce skonfigurowane w rclone, zapisane w postaci nazwa:folder."
+				}
+			}
+		},
+		"security": {
+			"sessionDays": {
+				"label": "Długość sesji (dni)",
+				"hint": "Po ilu dniach trzeba ponownie podać hasło."
+			},
+			"loginMaxAttempts": {
+				"label": "Próby logowania",
+				"hint": "Ile błędnych prób przed wymuszoną przerwą."
+			},
+			"loginWindowMinutes": {
+				"label": "Przerwa po zbyt wielu próbach (minuty)",
+				"hint": "Na ile minut logowanie pozostaje zablokowane po zbyt wielu próbach."
+			}
+		},
+		"ui": {
+			"checkoutIdleSeconds": {
+				"label": "Czas bezczynności stanowiska wypożyczeń (sekundy)",
+				"hint": "Po tylu sekundach bez odczytów stanowisko wraca do gotowości dla nowego czytelnika."
+			}
+		}
+	},
+	"options": {
+		"library": {
+			"weekStart": {
+				"monday": "Poniedziałek",
+				"sunday": "Niedziela",
+				"saturday": "Sobota"
+			},
+			"schoolYearLabel": {
+				"span": "Dwa lata (2026/2027)",
+				"start": "Rok rozpoczęcia (2026)"
+			}
+		},
+		"school": {
+			"promotionWithinStage": {
+				"keep": "Klasa przechodzi razem z uczniami",
+				"clear": "Uczniowie pozostają bez klasy"
+			},
+			"promotionAcrossStages": {
+				"keep": "Klasa przechodzi razem z uczniami",
+				"clear": "Uczniowie pozostają bez klasy",
+				"ask": "Klasę każdego ucznia wybiera się"
+			}
+		},
+		"barcodes": {
+			"patron": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"item": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"keyboardLayout": {
+				"it": "Włoska",
+				"es": "Hiszpańska",
+				"de": "Niemiecka",
+				"fr": "Francuska",
+				"uk": "Angielska (Wielka Brytania)",
+				"us": "Angielska (Stany Zjednoczone)"
+			},
+			"cameraSound": {
+				"off": "Bez dźwięku",
+				"till": "Kasa",
+				"scanner": "Skaner",
+				"confirm": "Potwierdzenie",
+				"arpeggio": "Arpeggio"
+			}
+		},
+		"circulation": {
+			"dueDateMode": {
+				"datedue": "Dni kalendarzowe, potem pierwszy dzień otwarcia",
+				"calendar": "Tylko dni otwarcia",
+				"days": "Dni kalendarzowe, bez uwzględniania zamknięć"
+			},
+			"renewFrom": {
+				"today": "Dzień prolongaty",
+				"dueDate": "Obecny termin zwrotu"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"sbn": "OPAC SBN (Z39.50)",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books",
+				"sbn-json": "OPAC SBN (usługa sieciowa)"
+			}
+		},
+		"performance": {
+			"profile": {
+				"micro": "Komputer minimalny: wolny procesor i 512 MB (Raspberry Pi Zero 2, najmniejszy serwer)",
+				"small": "Raspberry Pi 4 z 2 GB lub mały komputer",
+				"medium": "Stary komputer z dyskiem twardym",
+				"large": "Komputer z dyskiem SSD"
+			}
+		},
+		"cards": {
+			"sheet": {
+				"paper": {
+					"A4": "A4"
+				}
+			},
+			"layout": {
+				"side-by-side": "Awers i rewers obok siebie",
+				"duplex": "Na obu stronach arkusza"
+			},
+			"duplex": {
+				"flip": {
+					"long-edge": "Po dłuższym boku",
+					"short-edge": "Po krótszym boku"
+				}
+			}
+		},
+		"labels": {
+			"default": {
+				"pair": "Para: pasek grzbietowy i etykieta",
+				"barcode": "Sama etykieta z kodem kreskowym",
+				"spine": "Sam pasek grzbietowy"
+			}
+		},
+		"photos": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		},
+		"covers": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		}
+	},
+	"groups": {
+		"barcodes": {
+			"patron": {
+				"title": "Karty czytelników"
+			},
+			"item": {
+				"title": "Egzemplarze książek"
+			}
+		},
+		"circulation": {
+			"rules": {
+				"title": "Zasady wypożyczeń",
+				"student": {
+					"title": "Zasady dla uczniów"
+				},
+				"teacher": {
+					"title": "Zasady dla nauczycieli"
+				}
+			},
+			"overdueNotice": {
+				"title": "Monity"
+			}
+		},
+		"cards": {
+			"cardMm": {
+				"title": "Wymiary karty"
+			},
+			"sheet": {
+				"title": "Arkusz do druku"
+			},
+			"duplex": {
+				"title": "Drukowanie na obu stronach",
+				"backOffsetMm": {
+					"title": "Przesunięcie rewersów"
+				}
+			}
+		},
+		"labels": {
+			"pair": {
+				"title": "Para: pasek grzbietowy i etykieta"
+			},
+			"barcode": {
+				"title": "Sama etykieta z kodem kreskowym"
+			},
+			"spine": {
+				"title": "Sam pasek grzbietowy"
+			}
+		},
+		"backup": {
+			"offsite": {
+				"title": "Kopia zewnętrzna"
+			}
+		},
+		"photos": {
+			"sheet": {
+				"title": "Obrazy z wieloma zdjęciami (spis z obrazu)"
+			}
+		}
+	},
+	"overview": {
+		"reload": "Wczytaj ponownie",
+		"reloaded": "Konfiguracja wczytana ponownie",
+		"reloadFailed": "Pliki zawierają błędy: pozostaje w użyciu poprzednia konfiguracja.",
+		"valid": "Konfiguracja jest prawidłowa: {{count}} {{count:plural; one:plik; few:pliki; many:plików; other:pliku;}}.",
+		"example": "Konfiguracja nie została jeszcze utworzona: używane są wartości przykładowe.",
+		"warnings": "{{count}} {{count:plural; one:ostrzeżenie; few:ostrzeżenia; many:ostrzeżeń; other:ostrzeżenia;}}",
+		"diskErrors": "Pliki konfiguracji zawierają błędy: biblioteka działa dalej na poprzedniej wersji, dopóki nie zostaną poprawione.",
+		"diskChanged": "Pliki zostały zmienione ręcznie: naciśnij „Wczytaj ponownie”, aby użyć zmian.",
+		"sections": "Ustawienia",
+		"alsoFrom": "i {{count}} {{count:plural; one:inny plik; few:inne pliki; many:innych plików; other:innego pliku;}}",
+		"editors": "Wygląd, klasy i szablony",
+		"templates": "Szablony wydruku",
+		"templatesDescription": "Foldery szablonów kart, etykiet i monitów, wraz z ich obrazami.",
+		"reports": "Biblioteka raportów",
+		"reportsDescription": "Raporty dostarczone i szkolne: wypróbuj, pobierz, wczytaj, usuń.",
+		"appearance": "Wygląd i język",
+		"appearanceDescription": "Nazwa i logo biblioteki, kolory, język oraz sekcje pulpitu.",
+		"classes": "Klasy",
+		"classesDescription": "Klasy szkoły i grupy nauczycieli: utwórz, zmień nazwę, zarchiwizuj."
+	},
+	"section": {
+		"tabs": {
+			"form": "Ustawienia",
+			"json": "JSON",
+			"label": "Edytuj jako"
+		},
+		"file": "Zapisane w {{file}}",
+		"alsoFrom": "Także z: {{files}}",
+		"general": "Ogólne",
+		"default": "Domyślnie: {{value}}",
+		"defaultNone": "Domyślnie: brak wartości",
+		"defaultAuto": "Domyślnie: automatycznie",
+		"usesDefault": "Używa wartości domyślnej",
+		"reset": "Przywróć wartość domyślną",
+		"willReset": "Po zapisaniu wraca do wartości domyślnej.",
+		"auto": "Automatycznie",
+		"none": "Brak daty",
+		"yes": "Tak",
+		"no": "Nie",
+		"fixed": "Stała wartość",
+		"range": "Od {{min}} do {{max}}.",
+		"min": "Co najmniej {{min}}.",
+		"max": "Najwyżej {{max}}.",
+		"save": "Zapisz",
+		"discard": "Odrzuć zmiany",
+		"saved": "Ustawienia zapisane",
+		"unsaved": "Niezapisane zmiany",
+		"invalid": "Przed zapisaniem popraw zaznaczone wartości.",
+		"errors": "Zapisanie nie powiodło się:",
+		"inUse": "Zapisanie usunęłoby coś, co jest wciąż w użyciu:",
+		"inUseKinds": {
+			"classification": "kod {{code}}: {{count}} {{count:plural; one:książka; few:książki; many:książek; other:książki;}}",
+			"itemType": "rodzaj egzemplarza {{code}}: {{count}} {{count:plural; one:egzemplarz; few:egzemplarze; many:egzemplarzy; other:egzemplarza;}}",
+			"level": "poziom {{code}}: {{count}} {{count:plural; one:uczeń; few:uczniowie; many:uczniów; other:ucznia;}} lub klasy",
+			"readingLevel": "poziom czytelniczy {{code}}: {{count}} {{count:plural; one:książka; few:książki; many:książek; other:książki;}}"
+		},
+		"patternError": "Nieprawidłowy format.",
+		"numberError": "Wpisz liczbę całkowitą.",
+		"required": "Wymagane.",
+		"elsewhereTitle": "Inne ustawienia tej sekcji",
+		"elsewhereHint": "Zmienia się je w osobnym edytorze albo w zakładce JSON.",
+		"openEditor": "Otwórz",
+		"jsonOnly": "Na razie w zakładce JSON",
+		"editorNames": {
+			"taxonomy": "Klasyfikacja",
+			"appearance": "Wygląd i język",
+			"wizard": "Kreator pierwszego uruchomienia",
+			"history": "Historia",
+			"settings": "Ustawienia",
+			"schoolLevels": "Etapy i lata szkoły"
+		},
+		"json": {
+			"hint": "Sekcja tak, jak jest zapisana w {{file}}. Klucze zaczynające się od _ to komentarze i zostają w pliku.",
+			"label": "Zawartość JSON sekcji",
+			"parseError": "Tekst nie jest poprawnym JSON: {{message}}",
+			"notObject": "Sekcja musi być obiektem JSON ujętym w nawiasy klamrowe.",
+			"valid": "Brak problemów.",
+			"checking": "Sprawdzanie…",
+			"issues": "Problemy do poprawienia:"
+		},
+		"playSound": "Posłuchaj"
+	},
+	"history": {
+		"title": "Historia konfiguracji",
+		"hint": "Każda zmiana wykonana tutaj zachowuje poprzednią wersję plików, których dotyczy (ostatnie 50 zmian).",
+		"empty": "Dotąd nie wykonano żadnych zmian z poziomu administracji.",
+		"columns": {
+			"when": "Kiedy",
+			"what": "Co",
+			"files": "Pliki"
+		},
+		"revert": "Przywróć",
+		"revertTitle": "Przywrócić pliki sprzed tej zmiany?",
+		"revertDescription": "Wracają do poprzedniego stanu tylko wartości zmienione przez tę zmianę. Przywrócenie jest także zmianą: pozostaje w historii i można je cofnąć.",
+		"reverted": "Przywrócono poprzednią wersję",
+		"refused": "Ta zmiana utworzyła config.json: nie można jej cofnąć.",
+		"conflict": "Nie można przywrócić: po tej zmianie ponownie zmieniono {{keys}}.",
+		"notFound": "Zmiany nie ma już w historii.",
+		"newFile": "nowy",
+		"actions": {
+			"revert": "Przywrócenie zmiany z {{when}}",
+			"theme": "Kolory",
+			"locale": "Język",
+			"logo": "Logo biblioteki",
+			"setup": "Pierwsza konfiguracja",
+			"section": "Sekcja „{{section}}”",
+			"other": "Zmiana ({{action}})"
+		}
+	},
+	"archive": {
+		"title": "Archiwum konfiguracji",
+		"hint": "Cała konfiguracja w jednym pliku: ustawienia, szablony wydruku, arkusze samoprzylepne, piktogramy, logo, raporty i języki (bez historii). Służy do zachowania kopii albo do przeniesienia na inną instalację. „Importuj konfigurację” przyjmuje także kopię zapasową lub archiwum „Eksportuj wszystko”: bierze z niego tylko konfigurację, dane biblioteki pozostają bez zmian.",
+		"export": "Eksportuj konfigurację",
+		"import": "Importuj konfigurację",
+		"checking": "Sprawdzanie archiwum…",
+		"from": "Archiwum z {{date}} (wersja {{version}})",
+		"fromLibrary": "Archiwum „{{library}}” z {{date}} (wersja {{version}})",
+		"files": "{{added}} {{added:plural; one:nowy plik; few:nowe pliki; many:nowych plików; other:nowego pliku;}}, {{changed}} {{changed:plural; one:zmieniony; few:zmienione; many:zmienionych; other:zmienionego;}}, {{removed}} {{removed:plural; one:usunięty; few:usunięte; many:usuniętych; other:usuniętego;}}, {{unchanged}} {{unchanged:plural; one:nietknięty; few:nietknięte; many:nietkniętych; other:nietkniętego;}}.",
+		"fileList": "Lista plików",
+		"added": "nowy",
+		"changed": "zmieniony",
+		"removed": "usunięty",
+		"sameValues": "Ustawienia pozostają takie same.",
+		"sections": "Zmieniają się: {{sections}}.",
+		"errorsTitle": "Archiwum zawiera problemy: trzeba je poprawić przed importem.",
+		"apply": "Importuj",
+		"confirmTitle": "Zastąpić konfigurację konfiguracją z archiwum?",
+		"confirmDescription": "Obecne pliki zostają w historii: „Przywróć” przywraca poprzednią konfigurację. Dane biblioteki (książki, czytelnicy, wypożyczenia) nie zmieniają się.",
+		"imported": "Konfiguracja zaimportowana",
+		"failed": "Import nie powiódł się",
+		"errors": {
+			"too_large": "Archiwum jest za duże (najwyżej {{maxMb}} MB).",
+			"not_zip": "Plik nie jest prawidłowym archiwum ZIP.",
+			"not_archive": "Plik nie jest archiwum BiblioViva.",
+			"too_many_files": "Archiwum zawiera zbyt wiele plików.",
+			"unsafe_path": "Archiwum zawiera niedozwoloną ścieżkę: {{name}}",
+			"link": "Archiwum zawiera dowiązanie, które jest niedozwolone: {{name}}",
+			"unknown_file": "Archiwum zawiera plik, który nie należy do konfiguracji: {{name}}",
+			"no_config": "Archiwum nie zawiera konfiguracji (tylko dane biblioteki): przywraca się je z Administracja → Kopie zapasowe."
+		},
+		"exportSome": "Eksportuj wybrane części",
+		"chooseExport": "Wybierz, co wyeksportować"
+	},
+	"blocks": {
+		"problems": {
+			"codeRequired": {
+				"itemTypes": "Kod jest wymagany.",
+				"sections": "Sekcja jest wymagana."
+			},
+			"codeFormat": {
+				"itemTypes": "Litery, cyfry, kropka, łącznik lub podkreślnik (najwyżej 32).",
+				"sections": "Wielkie litery lub cyfry, najwyżej 8."
+			},
+			"codeTaken": {
+				"itemTypes": "Kod powtórzony.",
+				"sections": "Sekcja powtórzona."
+			},
+			"labelRequired": {
+				"itemTypes": "Nazwa jest wymagana.",
+				"sections": "Nazwa jest wymagana."
+			}
+		},
+		"itemTypes": {
+			"title": "Typy egzemplarzy",
+			"hint": "Książka, DVD, księgozbiór podręczny…: typ każdego egzemplarza określa zasady wypożyczenia. Zmiana kodu przenosi jego egzemplarze na nowy kod.",
+			"code": "Kod",
+			"label": "Nazwa",
+			"notForLoan": "Tylko na miejscu",
+			"add": "Dodaj typ",
+			"saved": "Typy egzemplarzy zapisane"
+		},
+		"move": {
+			"title": "Dokąd przenieść?",
+			"hint": {
+				"copies": "Niektóre usunięte typy mają jeszcze egzemplarze: wybierz typ, na który je przenieść.",
+				"students": "Niektóre usunięte sekcje mają jeszcze uczniów: wybierz sekcję, do której ich przenieść."
+			},
+			"row": {
+				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:egzemplarz; few:egzemplarze; many:egzemplarzy; other:egzemplarza;}}. Przenieś do",
+				"students": "{{code}}: {{count}} {{count:plural; one:uczeń; few:uczniowie; many:uczniów; other:ucznia;}}. Przenieś do"
+			},
+			"choose": "Wybierz…",
+			"used": {
+				"copies": "Egzemplarze",
+				"students": "Uczniowie"
+			},
+			"count": {
+				"copies": "{{count}} {{count:plural; one:egzemplarz; few:egzemplarze; many:egzemplarzy; other:egzemplarza;}}",
+				"students": "{{count}} {{count:plural; one:uczeń; few:uczniowie; many:uczniów; other:ucznia;}}"
+			},
+			"done": {
+				"copies": "{{count}} {{count:plural; one:egzemplarz przeniesiony; few:egzemplarze przeniesione; many:egzemplarzy przeniesionych; other:egzemplarza przeniesionego;}}.",
+				"students": "{{count}} {{count:plural; one:uczeń przeniesiony; few:uczniowie przeniesieni; many:uczniów przeniesionych; other:ucznia przeniesionego;}}."
+			}
+		},
+		"barcodes": {
+			"title": "Numeracja i podgląd",
+			"counter": "Numery nowych kart",
+			"afterLegacy": "Po najwyższym numerze kart, które już istnieją",
+			"from": "Od tego numeru w górę:",
+			"fromNumber": "Pierwszy numer nowych kart",
+			"counterHint": "Numer już użyty nigdy nie wraca: jeśli wybrany numer jest niższy, numeracja idzie dalej od miejsca, w którym się znajduje. Nowe egzemplarze mają zawsze rok i numer porządkowy.",
+			"nextCard": "Następna karta: {{code}}",
+			"nextItem": "Następny egzemplarz: {{code}}",
+			"overrides": "Te szablony wydruku same wybierają typ kodu, więc powyższe ustawienie dla nich nie obowiązuje: {{templates}}.",
+			"saved": "Numeracja zapisana"
+		},
+		"itemTypeRules": {
+			"title": "Zasady dla typu egzemplarza",
+			"hint": "Dla każdego typu egzemplarza można zmienić jedną zasadę: na przykład DVD na 5 dni. Zasady obowiązują zarówno uczniów, jak i nauczycieli.",
+			"inherit": "Puste: obowiązuje zasada uczniów i nauczycieli (szarym kolorem: uczniów / nauczycieli).",
+			"saved": "Zasady dla typów egzemplarzy zapisane"
+		},
+		"calendar": {
+			"title": "Kalendarz biblioteki",
+			"weekly": "Dni zamknięcia w każdym tygodniu",
+			"weeklyHint": "Zaznaczone dni są zamknięte w każdym tygodniu.",
+			"previous": "Poprzedni rok szkolny",
+			"next": "Następny rok szkolny",
+			"addNational": "Dodaj święta państwowe roku {{year}}",
+			"autoOn": "Święta państwowe są już zamknięte automatycznie. Kliknięcie otwartego dnia go zamyka; w dniu zamkniętym ręcznie kliknięcie go ponownie otwiera.",
+			"clickHint": "Kliknięcie otwartego dnia go zamyka; w dniu zamkniętym ręcznie kliknięcie go ponownie otwiera.",
+			"open": "otwarty",
+			"legend": {
+				"open": "Otwarte",
+				"weekly": "Zamknięcie tygodniowe",
+				"national": "Święto państwowe",
+				"holiday": "Zamknięte (wybrane tutaj)",
+				"range": "Okres zamknięcia"
+			},
+			"ranges": "Okresy zamknięcia",
+			"from": "Od",
+			"to": "Do",
+			"reason": "Powód",
+			"badRange": "Koniec jest przed początkiem.",
+			"addRange": "Dodaj okres",
+			"saved": "Kalendarz zapisany"
+		},
+		"cardTemplates": {
+			"title": "Szablon według typu czytelnika",
+			"hint": "Uczniowie i nauczyciele drukują kartę według domyślnego szablonu wybranego powyżej, chyba że tutaj wybierze się inny.",
+			"student": "Karta uczniów",
+			"teacher": "Karta nauczycieli",
+			"asDefault": "Taki sam jak domyślny ({{name}})",
+			"cutLines": "Kolorowa ramka na każdej karcie",
+			"cutLinesOn": "Rysuje kolorową ramkę na każdej karcie (zwykle niepotrzebną: wystarczają znaczniki cięcia)",
+			"color": "Kolor",
+			"width": "Grubość (mm)",
+			"sample": "Przykład linii cięcia",
+			"saved": "Szablony kart zapisane"
+		},
+		"stocks": {
+			"title": "Arkusze etykiet samoprzylepnych",
+			"hint": "Wymiary arkuszy etykiet, na których się drukuje. Rysunek po prawej reaguje na każdą liczbę: etykiety wychodzące poza arkusz są czerwone. Po zapisaniu wydrukuj stronę próbną na zwykłym papierze i przyłóż ją do arkusza etykiet.",
+			"new": "Nowy",
+			"toFix": "Do poprawy",
+			"add": "Dodaj arkusz",
+			"id": "Kod",
+			"name": "Nazwa",
+			"labelWidth": "Szerokość etykiety (mm)",
+			"labelHeight": "Wysokość etykiety (mm)",
+			"columns": "Kolumny",
+			"rows": "Wiersze",
+			"marginTop": "Margines górny (mm)",
+			"marginLeft": "Margines lewy (mm)",
+			"gapX": "Odstęp między kolumnami (mm)",
+			"gapY": "Odstęp między wierszami (mm)",
+			"radius": "Zaokrąglenie rogów (mm)",
+			"calibration": "Drukuj stronę próbną",
+			"inUse": "Używany do: {{jobs}}. Aby go usunąć, najpierw wybierz inny arkusz w ustawieniach powyżej.",
+			"saveFirst": "Zapisz zmiany, aby wydrukować stronę próbną.",
+			"drawing": "Rysunek arkusza A4 z etykietami: {{columns}} {{columns:plural; one:kolumna; few:kolumny; many:kolumn; other:kolumny;}} i {{rows}} {{rows:plural; one:wiersz; few:wiersze; many:wierszy; other:wiersza;}}",
+			"caption": "Arkusz A4 · {{count}} {{count:plural; one:etykieta; few:etykiety; many:etykiet; other:etykiety;}}",
+			"saved": "Arkusze etykiet zapisane",
+			"problems": {
+				"id": "Kod może zawierać litery, cyfry, łączniki i podkreślniki.",
+				"duplicate": "Inny arkusz ma już ten kod.",
+				"name": "Wpisz nazwę.",
+				"numbers": "Sprawdź wymiary: liczby od 0 w górę, etykiety większe od zera, całe kolumny i wiersze.",
+				"width": "Etykiety zajmują {{mm}} mm: więcej niż szerokość arkusza A4 (210 mm).",
+				"height": "Etykiety zajmują {{mm}} mm: więcej niż wysokość arkusza A4 (297 mm).",
+				"pairRows": "Para wymaga parzystej liczby wierszy (pasek grzbietowy i etykieta jeden nad drugim)."
+			},
+			"errors": {
+				"duplicate": "Dwa arkusze mają ten sam kod: {{details}}.",
+				"inUse": "Nie można usunąć arkusza używanego do drukowania: {{details}}."
+			}
+		},
+		"backupSchedule": {
+			"title": "Następne kopie zapasowe",
+			"invalid": "Godzina nie jest poprawnym wyrażeniem cron (pięć pól: minuty, godziny, dzień, miesiąc, dzień tygodnia).",
+			"never": "Przy tym wyrażeniu kopia zapasowa nigdy nie startuje.",
+			"hint": "Godziny w strefie czasowej biblioteki ({{timezone}}). Jeśli o tej godzinie komputer jest wyłączony, przy opcji „Kopia przy starcie, jeśli pominięta” kopia powstaje przy następnym uruchomieniu; godzinę można też przesunąć w godziny otwarcia."
+		},
+		"coverProviders": {
+			"off": "Okładki są wyłączone (Okładki książek, wyżej): żadne źródło nie jest pytane.",
+			"title": "Skąd pobierać okładki",
+			"hint": "Źródła są sprawdzane w tej kolejności, aż któreś znajdzie okładkę; każde można wyłączyć osobno.",
+			"names": {
+				"amazon": "Amazon",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books"
+			},
+			"googleKey": "Google Books wymaga klucza API, który wpisuje się w ustawieniach „Dane książek”; bez klucza to źródło jest pomijane.",
+			"saved": "Źródła okładek zapisane"
+		},
+		"z3950Targets": {
+			"title": "Katalogi Z39.50",
+			"hint": "Katalogi, z których pochodzą dane książek. „Sprawdź połączenie” wykonuje prawdziwe wyszukiwanie z wpisanymi wartościami, bez ich zapisywania.",
+			"id": "Kod",
+			"name": "Nazwa",
+			"host": "Adres serwera",
+			"port": "Port",
+			"database": "Baza danych",
+			"syntax": "Format rekordów",
+			"charset": "Kodowanie znaków",
+			"elements": "Elementy",
+			"elementsHint": "Zwykle F (pełny rekord).",
+			"add": "Dodaj katalog",
+			"isDefault": "To katalog domyślny: aby go usunąć, najpierw wybierz inny powyżej.",
+			"saved": "Katalogi zapisane",
+			"problems": {
+				"id": "Kod musi być niepowtarzalny: litery, cyfry, łączniki.",
+				"required": "Nazwa, baza danych, kodowanie i elementy są wymagane.",
+				"host": "Adres może zawierać litery, cyfry, kropki i łączniki.",
+				"words": "Baza danych, kodowanie i elementy to po jednym słowie, bez spacji.",
+				"port": "Port to liczba od 1 do 65535."
+			},
+			"test": {
+				"button": "Sprawdź połączenie",
+				"running": "Sprawdzanie…",
+				"ok": "Katalog odpowiada: {{hits}} {{hits:plural; one:wynik; few:wyniki; many:wyników; other:wyniku;}} w {{ms}} ms.",
+				"unreachable": "Katalog nie odpowiada: sprawdź adres, port i bazę danych.",
+				"timeout": "Katalog nie odpowiedział na czas.",
+				"protocol": "Katalog odpowiedział błędem: sprawdź bazę danych, format i kodowanie.",
+				"spawn": "Program yaz-client nie jest dostępny na serwerze."
+			}
+		},
+		"barcodeFormats": {
+			"title": "Format kodów",
+			"hint": "Jak są zbudowane kody nowych egzemplarzy i nowych kart. Kody już wydrukowane nadal działają: zastąpiony format zostaje wśród poprzednich formatów.",
+			"preset": "Gotowe formaty",
+			"presets": {
+				"standard": "Standardowy (2026-E0267, U012345)",
+				"classic": "Klasyczny (2026-02678, 0000012344)",
+				"prefix": "Z literą z przodu (L-2602670, T0123455)",
+				"custom": "Niestandardowy"
+			},
+			"check": "Znak kontrolny",
+			"checks": {
+				"mod23": "Litera (mod 23)",
+				"damm": "Cyfra (Damm)",
+				"luhn": "Cyfra (Luhn)"
+			},
+			"checkHint": "Wykrywa kod odczytany lub wpisany błędnie. Litera jest najbezpieczniejsza i sprawia, że karty na pierwszy rzut oka różnią się od kodów egzemplarzy.",
+			"advanced": "Zaawansowane: formaty jeden po drugim",
+			"tokens": "YYYY lub YY = rok, N = cyfry numeru porządkowego, C = znak kontrolny, {lib} = kod biblioteki, - = łącznik, wielkie litery w apostrofach ('T'). Litery I, O i Q są niedozwolone.",
+			"pattern": {
+				"item": "Format egzemplarzy",
+				"patron": "Format kart"
+			},
+			"libraryCode": "Kod biblioteki",
+			"libraryCodeHint": "Tylko gdy kilka bibliotek z osobnymi instalacjami ma mieć różne kody: używa się go z {lib} w formacie.",
+			"plainMaxLength": "Liczba cyfr starych prostych numerów",
+			"plainHint": "Najwięcej cyfr, jakie mają karty i egzemplarze poprzedniego systemu bez formatu (0, jeśli ich nie ma).",
+			"plainLongest": "Najdłuższy zapisany prosty numer ma {{digits}} {{digits:plural; one:cyfrę; few:cyfry; many:cyfr; other:cyfry;}}.",
+			"distinct": "Egzemplarze i karty nie mogą się pomylić.",
+			"confusable": "Przy tych formatach egzemplarze i karty mogłyby się pomylić:",
+			"warnings": "{{count}} {{count:plural; one:ostrzeżenie; few:ostrzeżenia; many:ostrzeżeń; other:ostrzeżenia;}}",
+			"inUse": "Format {{pattern}} ma jeszcze {{count}} {{count:plural; one:kod w archiwum; few:kody w archiwum; many:kodów w archiwum; other:kodu w archiwum;}}: nie można go usunąć.",
+			"kinds": {
+				"item": "egzemplarze",
+				"card": "karty"
+			},
+			"heading": {
+				"item": "Egzemplarze",
+				"patron": "Karty"
+			},
+			"examples": "Przykłady nowych kodów:",
+			"currentCount": "Kody tego formatu w archiwum: {{count}}",
+			"count": "{{count}} {{count:plural; one:kod; few:kody; many:kodów; other:kodu;}}",
+			"noCheck": "bez kontroli",
+			"remove": "Usuń",
+			"retired": "Formaty używane w przeszłości",
+			"legacy": "Kody poprzedniego systemu",
+			"noLegacy": "Brak.",
+			"addLegacy": "Dodaj stary format",
+			"try": "Wypróbuj kod",
+			"tryHint": "Kod wpisany lub odczytany tutaj jest rozpoznawany według powyższych formatów, także zanim zostaną zapisane.",
+			"tried": {
+				"item": "{{value}}: kod egzemplarza",
+				"legacy_item": "{{value}}: stary kod egzemplarza",
+				"card": "{{value}}: numer karty",
+				"isbn": "{{value}}: ISBN",
+				"ambiguous": "{{value}}: stary prosty numer (szukany wśród egzemplarzy i kart)",
+				"invalid": "{{value}}: nierozpoznany lub z błędnym znakiem kontrolnym"
+			},
+			"saved": "Formaty kodów zapisane",
+			"patternErrors": {
+				"empty": "Pusty format ({{kind}})",
+				"tooLong": "{{pattern}}: za długi",
+				"badToken": "{{pattern}}: zawiera nieoczekiwany symbol",
+				"badLetter": "{{pattern}}: litera niedozwolona (tylko wielkie, bez I, O, Q)",
+				"unclosedQuote": "{{pattern}}: brakuje apostrofu zamykającego",
+				"year": "{{pattern}}: rok zapisuje się jako YYYY lub YY",
+				"twoYears": "{{pattern}}: rok występuje dwa razy",
+				"twoCounters": "{{pattern}}: numer porządkowy musi być jedną grupą N",
+				"noCounter": "{{pattern}}: brakuje numeru porządkowego (N)",
+				"twoChecks": "{{pattern}}: znak kontrolny występuje dwa razy",
+				"checkWithoutAlgorithm": "{{pattern}}: jest C, ale nie wybrano kontroli",
+				"algorithmWithoutCheck": "{{pattern}}: brakuje C, czyli miejsca znaku kontrolnego",
+				"noLibraryCode": "{{pattern}}: zawiera {lib}, ale kod biblioteki jest pusty",
+				"badLibraryCode": "Kod biblioteki może zawierać tylko cyfry i wielkie litery (bez I, O, Q)"
+			},
+			"issues": {
+				"overlap": "{{pattern}} ({{kind}}) i {{other}} ({{otherKind}}) mogą dać ten sam kod, na przykład {{example}}",
+				"overlapWithoutDash": "{{pattern}} ({{kind}}) i {{other}} ({{otherKind}}) mylą się, gdy skaner zgubi łącznik, na przykład {{example}}",
+				"overlapLegacy": "Stare kody {{pattern}} ({{kind}}) i {{other}} ({{otherKind}}) mają tę samą postać: szukane są w obu archiwach",
+				"overlapPlain": "{{pattern}} ({{kind}}) może dać kod równy staremu prostemu numerowi, na przykład {{example}}",
+				"overlapIsbn": "{{pattern}} ({{kind}}) może dać kod równy ISBN-owi, na przykład {{example}}",
+				"overlapIsbn10": "{{pattern}} ({{kind}}) ma postać ISBN-10 zapisanego bez łączników: wygrywa numer karty",
+				"lookAlike": "{{pattern}} ({{kind}}) i {{other}} ({{otherKind}}) są do siebie zbyt podobne: potrzebna jest różnica długości co najmniej 2 znaków, litera w innym miejscu albo łącznik w innym miejscu"
+			}
+		},
+		"schoolLevels": {
+			"title": "Etapy edukacyjne i lata",
+			"hint": "Lata szkoły w kolejności, w jakiej się je uczęszcza, pogrupowane według etapu edukacyjnego. Kod zostaje przy uczniach: usuwając lub zmieniając kod roku w użyciu, wybiera się, dokąd przenieść jego uczniów i klasy.",
+			"preset": "Wzór",
+			"presetApply": "Użyj tego wzoru",
+			"presetHint": "Zastępuje etapy i lata poniżej tymi z wzoru; nic nie jest zapisane, dopóki nie kliknie się „Zapisz”.",
+			"custom": "Niestandardowy",
+			"stages": "Etapy edukacyjne",
+			"stageCode": "Kod",
+			"stageName": "Nazwa",
+			"stageLabel": "Jak zapisuje się klasę",
+			"addStage": "Dodaj etap",
+			"stageLabelHint": "„Jak zapisuje się klasę” danego etapu obowiązuje dla jego lat zamiast tego ustawionego dla szkoły; bez {group} klasa to sam rok (Q1, bez sekcji). Puste: tak jak w reszcie szkoły.",
+			"levels": "Lata",
+			"levelCode": "Kod",
+			"levelLabel": "W klasie",
+			"levelName": "Nazwa",
+			"levelStage": "Etap",
+			"levelNext": "Rok następny",
+			"levelAliases": "Inne nazwy",
+			"levelAliasesPlaceholder": "Oddzielone przecinkami",
+			"nextFollowing": "Następny rok",
+			"nextLeaves": "Odchodzi ze szkoły",
+			"nextChoices": "Wybór między latami",
+			"choiceAdd": "Dodaj wybór…",
+			"choiceRemove": "Usuń {{name}}",
+			"choiceDefault": "domyślny",
+			"addLevel": "Dodaj rok",
+			"inUse": "W użyciu",
+			"moveUp": "Przesuń w górę",
+			"moveDown": "Przesuń w dół",
+			"example": "Przykład: {{label}}",
+			"saved": "Etapy i lata zapisane",
+			"problems": {
+				"code": "Kody: litery, cyfry i łącznik (do 8 znaków dla roku), wszystkie różne.",
+				"required": "Etykieta i nazwa są wymagane.",
+				"template": "„Jak zapisuje się klasę” danego etapu musi zawierać {level}.",
+				"stageUsed": "Nie można usunąć etapu, który ma lata.",
+				"structure": "Struktura jest nieprawidłowa: {{details}}"
+			},
+			"move": {
+				"title": "Dokąd przenieść uczniów i klasy?",
+				"hint": "Niektóre usunięte lata mają jeszcze uczniów lub klasy. Dla każdego wybierz rok, do którego je przenieść; wypożyczenia zachowują klasę, w której zostały zrobione.",
+				"level": "{{name}}: {{pupils}} {{pupils:plural; one:uczeń; few:uczniowie; many:uczniów; other:ucznia;}}, {{classes}} {{classes:plural; one:klasa; few:klasy; many:klas; other:klasy;}}",
+				"choose": "Wybierz rok…",
+				"confirm": "Przenieś i zapisz",
+				"done": "Przeniesiono {{pupils}} {{pupils:plural; one:ucznia; few:uczniów; many:uczniów; other:ucznia;}} i {{classes}} {{classes:plural; one:klasę; few:klasy; many:klas; other:klasy;}}."
+			}
+		}
+	},
+	"templates": {
+		"title": "Szablony wydruku",
+		"hint": "Foldery szablonów kart, etykiet, pokwitowań i monitów. Te dołączone do BiblioViva można dostosować (powstaje kopia o tej samej nazwie) albo powielić pod inną nazwą; obrazy i czcionki kopii wgrywa się tutaj. Każda operacja pojawia się w historii konfiguracji i można ją cofnąć.",
+		"source": {
+			"builtin": "Dołączony do BiblioViva",
+			"customised": "Dostosowany",
+			"added": "Dodany"
+		},
+		"broken": "Z błędami",
+		"customise": "Dostosuj",
+		"duplicate": "Powiel",
+		"rename": "Zmień nazwę",
+		"restore": "Przywróć oryginał",
+		"usedBy": "Używany przez: {{settings}}.",
+		"unused": "Nieużywany przez żadne ustawienie.",
+		"assets": "Obrazy i czcionki ({{count}})",
+		"noAssets": "Brak plików.",
+		"usedIn": "używany w {{files}}",
+		"assetUnused": "nieużywany",
+		"upload": "Wgraj plik",
+		"uploadHint": "Obrazy PNG, JPEG, WebP, GIF, SVG lub czcionki WOFF2, WOFF, TTF; najwyżej {{maxMb}} MB.",
+		"builtinAssets": "Aby zmienić obrazy szablonu dołączonego do BiblioViva, najpierw go dostosuj.",
+		"files": "Pliki szablonu ({{count}})",
+		"filesHint": "Zawartość HTML i CSS edytuje się w wizualnym edytorze szablonów.",
+		"done": {
+			"duplicate": "Szablon powielony",
+			"customise": "Szablon dostosowany: jego kopię można zmieniać",
+			"rename": "Zmieniono nazwę szablonu",
+			"delete": "Szablon usunięty",
+			"upload": "Wgrano: {{name}}",
+			"removeAsset": "Usunięto: {{name}}"
+		},
+		"errors": {
+			"notFound": "Nie znaleziono szablonu lub pliku.",
+			"badName": "Nieprawidłowa nazwa: małe litery, cyfry, łączniki i podkreślniki.",
+			"exists": "Szablon o tej nazwie już istnieje.",
+			"builtin": "Szablonów dołączonych do BiblioViva nie zmienia się: dostosuj je albo powiel.",
+			"inUse": "Szablon jest używany przez: {{details}}. Najpierw wybierz inny szablon.",
+			"badAsset": "„{{name}}” nie jest dozwolonym plikiem (PNG, JPEG, WebP, GIF, SVG bez skryptów, WOFF2, WOFF, TTF).",
+			"assetTooLarge": "„{{name}}” jest za duży: najwyżej {{maxMb}} MB.",
+			"assetInUse": "Plik jest używany w: {{details}}."
+		},
+		"dialog": {
+			"name": "Nazwa folderu",
+			"nameHint": "Małe litery, cyfry, łączniki i podkreślniki.",
+			"badName": "Używaj tylko małych liter, cyfr, łączników i podkreślników.",
+			"taken": "Szablon o tej nazwie już istnieje.",
+			"duplicate": {
+				"title": "Powiel {{name}}",
+				"hint": "Powstaje kopia ze wszystkimi plikami, gotowa do zmian.",
+				"confirm": "Powiel"
+			},
+			"customise": {
+				"title": "Dostosuj {{name}}",
+				"hint": "Powstaje kopia o tej samej nazwie, która zajmuje miejsce oryginału; oryginał pozostaje dostępny, aby do niego wrócić.",
+				"confirm": "Dostosuj"
+			},
+			"rename": {
+				"title": "Zmień nazwę: {{name}}",
+				"hint": "Ustawienia używające tego szablonu przejmą nową nazwę.",
+				"confirm": "Zmień nazwę"
+			},
+			"delete": {
+				"title": "Usuń {{name}}",
+				"hint": "Folder i jego pliki zostają usunięte; jeśli to kopia szablonu dołączonego do BiblioViva, ponownie zaczyna być używany oryginał. Można to cofnąć z historii.",
+				"confirm": "Usuń"
+			}
+		},
+		"edit": "Edytuj"
+	},
+	"languages": {
+		"title": "Pakiety językowe",
+		"hint": "Aby używać BiblioViva w innym języku: pobierz przykład po angielsku lub po włosku, przetłumacz teksty w plikach JSON, zachowując klucze i znaczniki w podwójnych nawiasach klamrowych bez zmian, wpisz nazwę języka w pack.json i wgraj plik zip. Pakiet z błędami nie zostaje zainstalowany; brakujące teksty pojawiają się po angielsku. Język wybiera się w Wygląd i język.",
+		"none": "Nie zainstalowano żadnego pakietu.",
+		"valid": "Poprawny",
+		"errorsCount": "{{count}} {{count:plural; one:błąd; few:błędy; many:błędów; other:błędu;}}",
+		"warnings": "{{count}} {{count:plural; one:brakujący lub nadmiarowy tekst; few:brakujące lub nadmiarowe teksty; many:brakujących lub nadmiarowych tekstów; other:brakującego lub nadmiarowego tekstu;}}",
+		"inUse": "W użyciu",
+		"download": "Pobierz",
+		"report": "Wynik kontroli",
+		"upload": "Wgraj pakiet (zip)",
+		"uploadHint": "Zip z plikiem pack.json i plikami języka, w folderze nazwanym kodem języka (na przykład de/); najwyżej {{maxMb}} MB.",
+		"examples": "Przykłady do pobrania:",
+		"installed": "Zainstalowano język: {{name}}",
+		"removed": "Pakiet usunięty",
+		"removeTitle": "Usunąć pakiet {{code}}?",
+		"removeHint": "Folder języka zostaje usunięty. Można to cofnąć z historii konfiguracji.",
+		"errors": {
+			"notAZip": "Plik nie jest zipem.",
+			"tooLarge": "Zip jest za duży: najwyżej {{maxMb}} MB.",
+			"badLayout": "Zip może zawierać tylko pliki .json języka, w jednym folderze nazwanym kodem języka. {{details}}",
+			"badCode": "Nieprawidłowy kod języka: {{details}} (na przykład de, fr, pt-BR).",
+			"builtIn": "Angielski i włoski są wbudowane i nie są zastępowane.",
+			"invalid": "Pakiet zawiera błędy i nie został zainstalowany: {{details}}",
+			"inUse": "To język w użyciu: najpierw wybierz inny.",
+			"notFound": "Nie znaleziono pakietu.",
+			"unavailable": "Nie udało się pobrać listy języków ani pakietu. Sprawdź połączenie z internetem albo wgraj zip ręcznie.",
+			"checksum": "Pobrany pakiet jest uszkodzony i nie został zainstalowany. Spróbuj ponownie."
+		},
+		"release": {
+			"title": "Języki do zainstalowania",
+			"hint": "Języki opublikowane wraz z tą wersją BiblioViva. Lista jest odczytywana z internetu, a każdy pakiet jest sprawdzany przed instalacją.",
+			"percent": "Przetłumaczono {{percent}}%",
+			"machine": "Tłumaczenie automatyczne, nieprzeczytane przez rodzimego użytkownika języka",
+			"reviewed": "Tłumaczenie przeczytane przez rodzimego użytkownika języka",
+			"install": "Zainstaluj",
+			"again": "Zainstaluj ponownie",
+			"installedBadge": "Zainstalowano",
+			"page": "Strona wydania, aby pobrać pakiety ręcznie i wgrać je poniżej",
+			"unavailable": "Lista języków jest niedostępna: brak połączenia z internetem albo ta wersja nie ma jeszcze listy. Wgranie zipa poniżej działa mimo to."
+		}
+	},
+	"reports": {
+		"title": "Biblioteka raportów",
+		"hint": "Raporty dołączone do BiblioViva i raporty szkoły. Aby dostosować jeden z nich: pobierz go, zmień i wgraj; z tym samym kodem (id) zastępuje on oryginał. Przed instalacją sprawdzane są format, bezpieczeństwo zapytania oraz tabele i kolumny, których używa. Przewodnik po pisaniu raportów to docs/reports-authoring.md.",
+		"upload": "Wgraj raport (JSON)",
+		"try": "Wypróbuj",
+		"download": "Pobierz",
+		"problems": "Te pliki nie zostaną wczytane:",
+		"installed": "Raport {{id}} zainstalowany",
+		"replaced": "Raport {{id}} zastąpiony",
+		"removed": "Plik usunięty",
+		"removeTitle": "Usunąć {{file}}?",
+		"removeHint": "Plik zostaje usunięty z konfiguracji. Można to cofnąć z historii.",
+		"restoreHint": "Wersja szkoły zostaje usunięta: ponownie zaczyna być używany raport dołączony do BiblioViva. Można to cofnąć z historii.",
+		"origin": {
+			"builtin": "Dołączony do BiblioViva",
+			"customised": "Dostosowany",
+			"added": "Dodany"
+		},
+		"errors": {
+			"tooLarge": "Plik jest za duży: najwyżej {{maxKb}} KB.",
+			"badJson": "Plik nie jest poprawnym JSON-em: {{details}}",
+			"invalid": "Definicja jest nieprawidłowa: {{details}}",
+			"sql": "Zapytanie nie działa w tej bazie danych: {{details}}",
+			"notFound": "Nie znaleziono pliku.",
+			"reservedId": "„new” nie może być kodem raportu."
+		},
+		"new": "Nowy raport",
+		"edit": "Edytuj",
+		"duplicate": "Powiel",
+		"editor": {
+			"editTitle": "Edytuj raport",
+			"newTitle": "Nowy raport",
+			"copySuffix": "kopia",
+			"builtinHint": "To raport dołączony: zapisanie tworzy dostosowaną kopię szkoły, o tej samej nazwie. „Przywróć oryginał” w bibliotece ją usuwa.",
+			"id": "Kod raportu",
+			"category": "Kategoria",
+			"title": {
+				"it": "Tytuł (włoski)",
+				"en": "Tytuł (angielski)"
+			},
+			"description": {
+				"it": "Opis (włoski)",
+				"en": "Opis (angielski)"
+			},
+			"restricted": "Tylko dla administratorów",
+			"tabs": {
+				"label": "Tryb edycji",
+				"guided": "Prowadzony",
+				"sql": "SQL"
+			},
+			"sqlOnly": "Ten raport jest napisany w SQL: edytuje się go na karcie SQL.",
+			"source": "Dane",
+			"rows": "Wiersze",
+			"rows2": "Wiersze, drugi poziom",
+			"columns": "Kolumny",
+			"columnsHint": "Z kolumnami raport staje się tabelą przestawną, z sumami.",
+			"none": "— brak —",
+			"totals": "Sumy",
+			"totalsOptions": {
+				"both": "Wiersz i kolumna sum",
+				"rows": "Kolumna sum",
+				"columns": "Wiersz sum",
+				"none": "Bez sum"
+			},
+			"sort": "Porządek",
+			"sortDimension": "W kolejności wierszy",
+			"sortMeasure": "Od najwyższej wartości",
+			"measures": "Wartości",
+			"oneMeasure": "Tabela przestawna pokazuje jedną wartość.",
+			"filters": "Filtry",
+			"filterModes": {
+				"off": "Bez filtra",
+				"ask": "Pytany przy otwarciu",
+				"fixed": "Stały"
+			},
+			"value": "Wartość",
+			"chart": "Wykres",
+			"charts": {
+				"bar": "Słupki",
+				"line": "Linie",
+				"doughnut": "Pierścień"
+			},
+			"compiledHint": "Raport prowadzony staje się tym SQL-em. Aby napisać go ręcznie, użyj „Edytuj jako SQL”: nie ma powrotu do edycji prowadzonej.",
+			"previewFirst": "Naciśnij „Podgląd”, aby zobaczyć SQL.",
+			"convert": "Edytuj jako SQL",
+			"convertTitle": "Przekształcić raport w SQL?",
+			"convertHint": "Raport stanie się raportem SQL z tymi samymi kolumnami i parametrami. Nie będzie już można go edytować na karcie prowadzonej.",
+			"converted": "Raport jest teraz w SQL",
+			"sqlHint": "Jedna instrukcja SELECT lub WITH, z parametrami jako :nazwa.",
+			"json": {
+				"params": "Parametry (JSON)",
+				"columns": "Kolumny (JSON)",
+				"chart": "Wykres (JSON, opcjonalnie)",
+				"pivot": "Tabela przestawna (JSON, opcjonalnie)"
+			},
+			"jsonHint": "W formacie opisanym w przewodniku po raportach.",
+			"preview": "Podgląd",
+			"runPreview": "Podgląd",
+			"previewHint": "Podgląd uruchamia raport z domyślnymi wartościami parametrów (najwyżej 200 wierszy).",
+			"save": "Zapisz",
+			"saved": "Raport „{{id}}” zapisany",
+			"back": "Wróć do biblioteki",
+			"jsonInvalid": "Popraw zaznaczone na czerwono części JSON przed zapisaniem."
+		}
+	},
+	"designer": {
+		"title": "Edytuj {{name}}",
+		"design": "Projekt",
+		"code": "Kod",
+		"preview": "Podgląd",
+		"front": "Przód",
+		"back": "Tył",
+		"faces": "Strony lub etykiety",
+		"zoom": "Powiększenie",
+		"grid": "Siatka",
+		"gridSteps": {
+			"s0": "Brak (dowolnie)",
+			"s05": "0,5 mm",
+			"s1": "1 mm",
+			"s2": "2 mm",
+			"s25": "2,5 mm",
+			"s5": "5 mm",
+			"s10": "10 mm"
+		},
+		"files": "Pliki",
+		"problems": "Szablon nie może się tak wydrukować:",
+		"saved": "Szablon zapisany",
+		"notEditable": "Tego szablonu nie można tutaj edytować: szablony dołączone do BiblioViva trzeba najpierw dostosować.",
+		"canvasHint": "Kliknięcie prostokąta go wybiera, przeciąganie go przesuwa, róg zmienia rozmiar: położenia i wymiary przyciągają się do wybranej siatki. Klawiszami strzałek element przesuwa się o jeden krok siatki (z Shift około 5 mm, zawsze po siatce), a Delete go usuwa.",
+		"flowHint": "{{count}} {{count:plural; one:element tej strony jest ułożony; few:elementy tej strony są ułożone; many:elementów tej strony jest ułożonych; other:elementu tej strony jest ułożonego;}} przez arkusz stylów (przerywany kontur): przy pierwszym przesunięciu położenia wszystkich zostaną zapisane w pliku, tam gdzie są teraz.",
+		"lockedHint": "{{count}} {{count:plural; one:część tej strony znajduje się; few:części tej strony znajdują się; many:części tej strony znajduje się; other:części tej strony znajduje się;}} w sekcji Mustache: edytuje się w zakładce „Kod”.",
+		"noStock": "Żaden arkusz etykiet nie używa tego wariantu: rysunek wyświetla się bez podglądu.",
+		"codeHint": "Rysunek i kod modyfikują te same pliki: każda zmiana wprowadzona tutaj widoczna jest także na rysunku i odwrotnie.",
+		"add": "Dodaj",
+		"newText": "Tekst",
+		"noImages": "Aby dodać obrazy, najpierw wgraj je wśród obrazów szablonu.",
+		"types": {
+			"field": "Pole",
+			"text": "Tekst",
+			"barcode": "Kod kreskowy",
+			"photo": "Zdjęcie",
+			"pictogram": "Piktogram",
+			"image": "Obraz",
+			"box": "Ramka",
+			"html": "Dowolny HTML",
+			"other": "Element"
+		},
+		"fields": {
+			"library_name": "Nazwa biblioteki",
+			"patron_first_name": "Imię",
+			"patron_last_name": "Nazwisko",
+			"patron_card_number": "Numer karty",
+			"patron_class_label": "Klasa i sekcja",
+			"patron_level_label": "Klasa (rok)",
+			"patron_group": "Sekcja",
+			"school_year": "Rok szkolny",
+			"issued_on": "Data wydania",
+			"valid_until": "Ważna do",
+			"item_barcode": "Kod kreskowy (tekst)",
+			"item_call_number": "Sygnatura",
+			"call_head": "Sygnatura: pierwszy wiersz",
+			"call_rest": "Sygnatura: drugi wiersz",
+			"biblio_title_short": "Skrócony tytuł",
+			"biblio_author_short": "Skrócony autor",
+			"biblio_publication_year": "Rok wydania",
+			"biblio_series": "Seria",
+			"biblio_series_number": "Numer w serii",
+			"classification_code": "Kod klasyfikacji",
+			"classification_label": "Nazwa działu",
+			"classification_reading_level": "Poziom czytelniczy",
+			"item_item_type": "Typ egzemplarza"
+		},
+		"field": "Pole",
+		"text": "Tekst",
+		"image": "Obraz",
+		"content": "Zawartość HTML",
+		"contentHint": "Ramkę przesuwa się i formatuje z rysunku; zawartość pisze się w HTML z polami Mustache, jak w plikach szablonu.",
+		"inherited": "Domyślny",
+		"unplacedHint": "Ten element jest ułożony przez arkusz stylów: przesunięcie zapisuje jego położenie oraz położenia pozostałych elementów strony w pliku.",
+		"geometry": {
+			"x": "X (mm)",
+			"y": "Y (mm)",
+			"w": "Szerokość",
+			"h": "Wysokość"
+		},
+		"fontSize": "Rozmiar (pt)",
+		"font": "Czcionka",
+		"fonts": {
+			"sans": "Bezszeryfowa",
+			"serif": "Szeryfowa",
+			"mono": "Stałej szerokości"
+		},
+		"bold": "Pogrubienie",
+		"italic": "Kursywa",
+		"uppercase": "Wielkie litery",
+		"align": "Wyrównanie",
+		"aligns": {
+			"left": "Do lewej",
+			"center": "Do środka",
+			"right": "Do prawej"
+		},
+		"color": "Kolor",
+		"border": "Obramowanie",
+		"borderColor": "Kolor obramowania",
+		"fill": "Wypełnienie",
+		"fillColor": "Kolor wypełnienia",
+		"backward": "Przesuń do tyłu",
+		"forward": "Przesuń do przodu",
+		"background": "Tło strony",
+		"backgroundColor": "Kolor tła",
+		"backgroundImage": "Obraz tła",
+		"noImage": "Brak",
+		"chooseHint": "Wybierz prostokąt na projekcie, aby go zmienić.",
+		"modes": "Widok szablonu",
+		"safeArea": "Bezpieczny obszar: teksty i zdjęcia trzymaj wewnątrz linii przerywanej, 2 mm od krawędzi (przy druku dwustronnym tył może przesunąć się o milimetr).",
+		"chooseBackground": "Wybierz tło",
+		"uploadBackground": "Wgraj obraz",
+		"backgroundsTitle": "Gotowe tła",
+		"backgroundsHint": "Każde tło wychodzi nieco poza kartę, po 3 mm z każdej strony: nadmiar zostaje odcięty.",
+		"backgroundAlt": "Tło {{name}}",
+		"backgroundAdded": "Tło dodano do strony: zapisz, aby je zachować.",
+		"backgroundFailed": "Tła nie dodano.",
+		"cardSize": "Format karty",
+		"cardWidth": "Szerokość (mm)",
+		"cardHeight": "Wysokość (mm)",
+		"cardRotate": "Obróć: pionowo lub poziomo",
+		"cardDefault": "Wróć do domyślnego formatu ({{width}} × {{height}} mm)",
+		"cardDefaultHint": "To domyślny format konfiguracji (Konfiguracja → Karty): tutaj zmienia się go tylko dla tego szablonu.",
+		"cardTooLarge": "Karta {{width}} × {{height}} mm nie mieści się na arkuszu A4: najwyżej {{maxWidth}} × {{maxHeight}} mm, ponieważ przód i tył stoją obok siebie w marginesach."
+	},
+	"parts": {
+		"groups": {
+			"data": "Dane biblioteki",
+			"settings": "Ustawienia",
+			"config": "Klasyfikacja, szablony i inne"
+		},
+		"all": "Wszystkie",
+		"none": "Żadne",
+		"accountsConfirm": {
+			"title": "Zaimportować także konta i hasła?",
+			"description": "Konta pracowników i ich hasła z archiwum zastępują obecne: kto loguje się teraz, nie będzie mógł tego zrobić z dzisiejszymi danymi logowania. Jeśli nie są potrzebne, zostaw tę pozycję niezaznaczoną.",
+			"confirm": "Importuj także konta"
+		},
+		"needs": "„{{part}}” do przywrócenia potrzebują także: {{needs}}.",
+		"data": {
+			"patrons": "Czytelnicy",
+			"catalog": "Katalog i egzemplarze",
+			"loans": "Wypożyczenia i historia",
+			"printLists": "Listy wydruku",
+			"photos": "Zdjęcia czytelników",
+			"covers": "Okładki",
+			"notes": "Notatki personelu",
+			"dates": "Daty kalendarza",
+			"audit": "Dziennik działań"
+		},
+		"config": {
+			"classification": "Klasyfikacja i piktogramy",
+			"stocks": "Arkusze etykiet",
+			"calendar": "Kalendarz",
+			"reports": "Raporty",
+			"cardTemplates": "Szablony kart",
+			"pairTemplates": "Szablony par etykiet",
+			"barcodeTemplates": "Szablony etykiet z kodem kreskowym",
+			"spineTemplates": "Szablony pasków grzbietowych",
+			"slipTemplates": "Szablony pokwitowań i monitów",
+			"languages": "Pakiety językowe",
+			"logo": "Logo biblioteki"
+		}
+	}
+}

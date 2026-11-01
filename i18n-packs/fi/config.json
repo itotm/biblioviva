@@ -1,0 +1,1778 @@
+{
+	"home": {
+		"title": "Asetukset"
+	},
+	"leave": {
+		"title": "Poistutaanko tallentamatta?",
+		"description": "Vielä tallentamattomat muutokset menetetään.",
+		"confirm": "Poistu tallentamatta"
+	},
+	"taxonomy": {
+		"title": "Luokitus",
+		"intro": "Muutokset pysyvät luonnoksena, kunnes painat ”Tallenna”. Edellinen versio tiedostosta {{file}} säilytetään.",
+		"invalid": "Osa arvoista ei ole kelvollisia (merkitty punaisella). Korjaa ne, jotta voit tallentaa.",
+		"orphans": "Luettelossa on kirjoja, joiden koodit eivät kuulu luokitukseen: {{codes}}. Lisää nämä koodit tähän tai luokittele nämä kirjat uudelleen luettelosta.",
+		"unsaved": "Tallentamattomia muutoksia",
+		"discard": "Hylkää muutokset",
+		"saved": "Luokitus tallennettu",
+		"savedDetail": "{{records}} {{records:plural; one:kirja siirretty; other:kirjaa siirretty;}}, {{callNumbers}} {{callNumbers:plural; one:paikkamerkintä kirjoitettu uudelleen; other:paikkamerkintää kirjoitettu uudelleen;}}, {{bands}} {{bands:plural; one:selkäkaista tulostettava uudelleen; other:selkäkaistaa tulostettava uudelleen;}}.",
+		"tabs": {
+			"fiction": "Kaunokirjallisuus",
+			"nonfiction": "Tietokirjallisuus",
+			"dewey": "Dewey",
+			"options": "Valinnat"
+		},
+		"addGenre": "Lisää lajityyppi",
+		"addClass": "Lisää aihe",
+		"addSubclass": "Lisää alaaihe",
+		"dragHint": "Vedä rivejä muuttaaksesi järjestystä tai käytä nuolia. Järjestys on luettelon valintojen järjestys.",
+		"pickGenre": "Valitse lajityyppi muokataksesi sitä",
+		"pickClass": "Valitse aihe muokataksesi sitä",
+		"untitled": "Nimetön",
+		"hasProblems": "Korjattava",
+		"usageShort": "{{records}} {{records:plural; one:kirja; other:kirjaa;}}",
+		"moveUp": "Siirrä ylös",
+		"moveDown": "Siirrä alas",
+		"panel": {
+			"genre": "Lajityyppi",
+			"class": "Aihe",
+			"subclass": "Alaaihe"
+		},
+		"fields": {
+			"code": "Koodi",
+			"label": "Nimi",
+			"color": "Väri",
+			"pictogram": "Piktogrammi",
+			"position": "Sijainti"
+		},
+		"renameNote": "Koodi muuttuu: tallennettaessa {{records}} {{records:plural; one:kirja siirtyy; other:kirjaa siirtyy;}} koodista {{from}} koodiin {{to}}, ja niiden paikkamerkinnät päivitetään.",
+		"color": {
+			"inherit": "Käytä koodin {{code}} väriä",
+			"none": "Ei väriä",
+			"hex": "Värikoodi"
+		},
+		"pictogram": {
+			"upload": "Lataa kuva",
+			"choose": "Valitse kuvista",
+			"remove": "Poista kuva",
+			"own": "Oma kuva. PNG, JPEG tai WebP: tallennetaan PNG-muodossa.",
+			"missing": "Tiedostoa {{name}} ei ole kuvakansiossa. Tarrat näyttävät värillisen ympyrän ja koodin.",
+			"inherited": "Ilman omaa kuvaa käytetään koodin {{code}} kuvaa.",
+			"placeholder": "Ilman kuvaa tarrat näyttävät värillisen ympyrän ja koodin.",
+			"gallery": "Luokituksen kuvat",
+			"errors": {
+				"empty": "Tiedosto on tyhjä.",
+				"too_large": "Kuva on liian suuri (enintään {{maxMb}} Mt).",
+				"not_an_image": "Tiedosto ei ole kuva.",
+				"unsupported_format": "Muotoa ei hyväksytä. Käytä PNG-, JPEG- tai WebP-muotoa."
+			}
+		},
+		"position": {
+			"top": "Pääaihe",
+			"under": "Osana {{code}} · {{label}}",
+			"locked": "Sillä on alaaiheita, joten se pysyy pääaiheena."
+		},
+		"usage": {
+			"new": "Uusi: mikään kirja ei käytä sitä vielä.",
+			"none": "Mikään kirja ei käytä tätä koodia.",
+			"some": "Käytössä: {{records}} {{records:plural; one:kirja; other:kirjaa;}} ({{copies}} {{copies:plural; one:nide; other:nidettä;}})."
+		},
+		"remove": {
+			"genre": "Poista lajityyppi",
+			"class": "Poista aihe",
+			"confirmTitle": "Poistetaanko {{code}}?",
+			"withSubclasses": "Sen {{count}} {{count:plural; one:alaaihe poistetaan; other:alaaihetta poistetaan;}} myös.",
+			"inUse": "{{records}} {{records:plural; one:kirja käyttää; other:kirjaa käyttää;}} tätä koodia. Tallennettaessa kysytään, minne ne siirretään.",
+			"confirm": "Poista"
+		},
+		"preview": {
+			"title": "Selkäkaistan esikatselu",
+			"hint": "Esimerkkikirja sellaisena kuin se tulostettaisiin nyt, todellisessa koossa.",
+			"needsCode": "Esikatselu näkyy, kun koodi on kelvollinen."
+		},
+		"problems": {
+			"codeRequired": "Koodi on pakollinen.",
+			"codeFormat": "Käytä vain kirjaimia, numeroita, pistettä, viivaa tai alaviivaa (enintään 32 merkkiä).",
+			"codeTaken": "Toinen lajityyppi tai aihe käyttää jo tätä koodia.",
+			"labelRequired": "Nimi on pakollinen.",
+			"labelLong": "Nimi on liian pitkä (enintään 120 merkkiä).",
+			"colorFormat": "Kirjoita väri muodossa #rrggbb, esimerkiksi #e8231b.",
+			"patternRequired": "Kaava ei voi olla tyhjä."
+		},
+		"dewey": {
+			"hint": "Kun tietokirjallisuuden kirjalla on Dewey-numero (esimerkiksi SBN:stä), sen aihe ehdotetaan tämän taulukon perusteella. Pisin vastaava alku voittaa.",
+			"probe": "Kokeile Dewey-numeroa",
+			"noMatch": "Mikään aihe ei vastaa",
+			"empty": "Ei Dewey-vastaavuuksia",
+			"prefix": "Dewey-alku",
+			"class": "Aihe",
+			"add": "Lisää vastaavuus",
+			"problems": {
+				"prefixFormat": "1–3 numeroa.",
+				"prefixTaken": "Alku on jo käytössä.",
+				"codeUnknown": "Valitse aihe."
+			}
+		},
+		"options": {
+			"fictionByClass": "Kaunokirjallisuus jaetaan lukutason mukaan",
+			"fictionByClassHint": "Kaunokirjallisuuden kirjoilla voi olla lukutaso, johon ne sopivat (esimerkiksi luokka 4). Se näkyy paikkamerkinnässä ja selkäkaistassa.",
+			"classPerItem": "Lukutaso on kullakin niteellä",
+			"classPerItemHint": "Tarvitaan, kun saman kirjan niteet ovat eri tasojen hyllyissä. Muuten taso on kirjalla.",
+			"toCopies": "Tallennettaessa kunkin kirjan lukutaso siirtyy sen niteille.",
+			"toRecords": "Tallennettaessa niteiden taso palautuu kirjalle. Tämä ei ole mahdollista, jos saman kirjan niteillä on eri tasot.",
+			"patterns": "Paikkamerkintöjen kaavat",
+			"patternsHint": "Kaavat koskevat tästä eteenpäin lisättäviä niteitä. Olemassa olevat paikkamerkinnät eivät muutu. Paikkamerkit: {{placeholders}}.",
+			"pattern": {
+				"fiction": "Kaunokirjallisuus",
+				"fictionWithClass": "Kaunokirjallisuus, johon liittyy luokka",
+				"nonfiction": "Tietokirjallisuus"
+			},
+			"unknownPlaceholders": "Tuntemattomat paikkamerkit: {{names}}.",
+			"example": "Esimerkki: {{example}}"
+		},
+		"save": {
+			"title": "Tallenna luokitus",
+			"checking": "Tarkistetaan, mitä muuttuu luettelossa…",
+			"unchanged": "Ei tallennettavia muutoksia.",
+			"errors": "Korjaa ennen tallentamista nämä ongelmat:",
+			"removedTitle": "Poistetut koodit, joita käytetään yhä",
+			"removedHint": "Valitse, minne kunkin poistetun koodin kirjat siirretään. Uusi koodi tulee kirjoihin, paikkamerkintöjen alkuun ja selkäkaistoihin.",
+			"moveTo": "{{code}} · {{label}}: {{records}} {{records:plural; one:kirja; other:kirjaa;}} ({{copies}} {{copies:plural; one:nide; other:nidettä;}}). Siirrä kohteeseen",
+			"choose": "Valitse…",
+			"callNumbers": "{{count}} {{count:plural; one:paikkamerkintä alkaa; other:paikkamerkintää alkaa;}} poistetulla koodilla. Alun koodi korvataan (esimerkiksi B 4 DEL muuttuu muotoon A 4 DEL).",
+			"bandsMoved": "Siirrettyjen kirjojen selkäkaistat ja paikkamerkinnän muuttuneet tarrat palautetaan tulostettavien joukkoon.",
+			"unused": "Poistettu, eikä yksikään kirja käytä: {{codes}}.",
+			"reprint": "Palautetaan tulostettaviin tarroihin selkäkaistat niiltä {{copies}} {{copies:plural; one:niteeltä; other:niteiltä;}}, joiden nimi, väri tai piktogrammi muuttuu ({{codes}})",
+			"reprintHint": "Jätä pois, jos ero jo kirjoihin liimattujen selkäkaistojen välillä ei haittaa.",
+			"conflicts": "{{count}} {{count:plural; one:kirjalla on; other:kirjoilla on;}} niteitä eri luokissa. Anna kaikille kunkin kirjan niteille sama luokka, ennen kuin luokka poistetaan niteiltä.",
+			"toCopies": "Liittyvä luokka siirtyy niteille {{count}} {{count:plural; one:kirjalta; other:kirjalta;}}.",
+			"toRecords": "Niteen luokka palautuu kirjalle {{count}} {{count:plural; one:nimekkeeltä; other:nimekkeeltä;}}.",
+			"warnings": "{{count}} {{count:plural; one:varoitus; other:varoitusta;}} (ne eivät estä tallennusta)",
+			"levelsTitle": "Lukutasot, jotka poistetaan, kun kirjoilla on ne",
+			"levelMoveTo": "Tason {{code}} · {{label}} kirjat ({{records}} {{records:plural; one:nimeke; other:nimekettä;}}, {{copies}} {{copies:plural; one:nide; other:nidettä;}}) siirtyvät kohteeseen",
+			"noLevel": "Ei tasoa",
+			"levelsHint": "Niteiden paikkamerkintöjen taso muuttuu niiden mukana (esimerkiksi B 4 DEL muuttuu muotoon B 5 DEL), ja niiden tarrat palautetaan tulostettavien joukkoon."
+		},
+		"levels": {
+			"title": "Lukutasot",
+			"hint": "Järjestyksessä, helpoimmasta alkaen. Koodi tulee kirjoihin ja paikkamerkintään (esimerkiksi 4 muodossa B 4 DEL), ja nimi näkyy valinnoissa. Käytössä olevan tason poistaessa tai nimetessä tallennus kysyy, minne sen kirjat siirtyvät.",
+			"code": "Tason koodi",
+			"label": "Tason nimi",
+			"up": "Siirrä ylös",
+			"down": "Siirrä alas",
+			"remove": "Poista taso",
+			"add": "Lisää taso"
+		}
+	},
+	"sections": {
+		"library": {
+			"title": "Kirjasto ja koulu",
+			"description": "Nimi, koulutyyppi, luokat ja osastot, lukuvuosi, aikavyöhyke."
+		},
+		"school": {
+			"title": "Koulu",
+			"description": "Koulun opetusasteet ja vuosiluokat, luokan kirjoitustapa ja se, mitä luokille tapahtuu vuoden lopussa. Luokat itse hallitaan kohdassa Ylläpito → Asetukset → Luokat."
+		},
+		"catalog": {
+			"title": "Luettelo",
+			"description": "Arvot tuntemattomalle tekijälle, kustantajalle ja paikalle."
+		},
+		"barcodes": {
+			"title": "Viivakoodit",
+			"description": "Korttien ja niteiden muoto, vanhat koodit, viivakoodin tyyppi."
+		},
+		"circulation": {
+			"title": "Lainaus",
+			"description": "Lainaus- ja uusimissäännöt, eräpäivät, muistutukset, kuitit."
+		},
+		"calendar": {
+			"title": "Kalenteri",
+			"description": "Suljetut päivät ja pyhäpäivät."
+		},
+		"z3950": {
+			"title": "Z39.50 (SBN)",
+			"description": "Palvelimet, joista kirjatietueet tulevat."
+		},
+		"metadata": {
+			"title": "Kirjatiedot",
+			"description": "Tietolähteet, kun haetaan ISBN-koodilla."
+		},
+		"performance": {
+			"title": "Suorituskyky",
+			"description": "Tietokone, jolla BiblioViva toimii, ja sen mukaiset asetukset."
+		},
+		"classification": {
+			"title": "Luokitus",
+			"description": "Lajityypit, aiheet, piktogrammit, Dewey ja paikkamerkinnät."
+		},
+		"cards": {
+			"title": "Kortit",
+			"description": "Korttien ja tulostusarkin muoto."
+		},
+		"labels": {
+			"title": "Tarrat",
+			"description": "Kirjatarrat ja selkäkaistat, tarra-arkit."
+		},
+		"photos": {
+			"title": "Asiakkaiden valokuvat",
+			"description": "Valokuvien koko ja muoto."
+		},
+		"covers": {
+			"title": "Kansikuvat",
+			"description": "Kansikuvien koko, muoto ja lähteet."
+		},
+		"privacy": {
+			"title": "Yksityisyys",
+			"description": "Kuinka kauan tarkastuslokia säilytetään."
+		},
+		"backup": {
+			"title": "Varmuuskopio",
+			"description": "Varmuuskopioiden ajoitus ja säilytysaika, kopio muualle."
+		},
+		"security": {
+			"title": "Turvallisuus ja käyttöoikeudet",
+			"description": "Istunnon kesto, kirjautumisyritykset, tunnukset ja roolit."
+		},
+		"ui": {
+			"title": "Käyttöliittymä",
+			"description": "Lainaustiski ja lisätyt kielet. Värit, kieli ja aloitusnäkymä ovat kohdassa ”Ulkoasu ja kieli”."
+		}
+	},
+	"fields": {
+		"library": {
+			"name": {
+				"label": "Kirjaston nimi",
+				"hint": "Näkyy vasemmassa yläkulmassa, korteissa ja tulosteissa."
+			},
+			"contactEmail": {
+				"label": "Yhteyssähköposti",
+				"hint": "Valinnainen. Näkyy tulosteissa, jotka sen sisältävät."
+			},
+			"schoolYearStart": {
+				"label": "Lukuvuoden alku",
+				"hint": "Kuukausi ja päivä muodossa KK-PP (esimerkiksi 09-01). Se erottaa vuodet tilastoissa."
+			},
+			"schoolYearLabel": {
+				"label": "Lukuvuoden nimi",
+				"hint": "Miten lukuvuosi näkyy korteissa, raporteissa ja sivuilla: kaksi vuotta (2026/2027) tai alkamisvuosi (2026), kuten Brasiliassa, Japanissa ja Koreassa."
+			},
+			"timezone": {
+				"label": "Aikavyöhyke",
+				"hint": "Vyöhykkeen nimi, esimerkiksi Europe/Rome. Päivämäärät ja eräpäivät noudattavat sitä, eivät palvelimen kelloa."
+			},
+			"weekStart": {
+				"label": "Viikon ensimmäinen päivä",
+				"hint": "Päivä, jolta viikot alkavat kalenterissa ja aloitusnäkymän ”Tämä viikko” -kohdassa. Ensimmäisellä käynnistyksellä kieli valitsee sen (maanantai suomenkielisessä ja sunnuntai englanninkielisessä asennuksessa)."
+			}
+		},
+		"school": {
+			"classLabel": {
+				"label": "Luokan kirjoitustapa",
+				"hint": "{level} on vuosiluokka, {group} luokan nimi: ”{level} {group}” antaa muodon 3 B, ”{level}{group}” muodon 3B. Opetusasteella voi olla oma kirjoitustapa (Opetusasteet ja vuosiluokat)."
+			},
+			"groupWord": {
+				"label": "Sana luokalle",
+				"hint": "Luokkakentän nimi lomakkeissa ja suodattimissa sekä {word} kortin luokkarivillä (Osasto B, Luokka B, Ryhmä B)."
+			},
+			"cardClass": {
+				"label": "Luokka kortilla",
+				"hint": "Kortin luokkarivi: {word} on luokan sana, {group} luokan nimi, {level} vuosiluokka ja {class} koko luokka. ”{word} {group}” antaa muodon Osasto B, ”{class}” muodon 3 B."
+			},
+			"teacherGroupName": {
+				"label": "Opettajien ryhmän nimi",
+				"hint": "Ryhmä, johon opettaja liittyy, kun muuta ei valita."
+			},
+			"promotionWithinStage": {
+				"label": "Vuoden lopussa opetusasteen sisällä",
+				"hint": "Yleensä luokka siirtyy ylemmäksi oppilaineen: 3 B muuttuu muotoon 4 B."
+			},
+			"promotionAcrossStages": {
+				"label": "Vuoden lopussa toiselle opetusasteelle",
+				"hint": "Esimerkiksi alakoulun 5. vuosiluokasta yläkoulun 1. vuosiluokkaan yhtenäiskoulussa."
+			}
+		},
+		"catalog": {
+			"specialAuthors": {
+				"label": "Erityiset tekijät",
+				"hint": "Yksi riviltä: arvot, joita hyväksytään henkilötekijän sijaan (esimerkiksi Anonyymi, AA. VV.)."
+			},
+			"unknownPublisher": {
+				"label": "Tuntematon kustantaja",
+				"hint": "Arvo, joka kirjoitetaan, kun kustantajaa ei ilmoiteta."
+			},
+			"unknownPlace": {
+				"label": "Tuntematon paikka",
+				"hint": "Arvo, joka kirjoitetaan, kun julkaisupaikkaa ei ilmoiteta."
+			}
+		},
+		"barcodes": {
+			"keyboardLayout": {
+				"label": "Tietokoneen näppäimistö",
+				"hint": "Tietokoneiden näppäimistöasettelu, johon viivakoodinlukijat on kytketty. Sitä käytetään korjaamaan merkit, jotka lukija kirjoittaa väärin, jos se on asetettu toiselle näppäimistölle."
+			},
+			"cameraSound": {
+				"label": "Kameran ääni",
+				"hint": "Puhelimen äänimerkki, kun kamera lukee kortin, niteen viivakoodin tai ISBN-koodin. USB-lukija piippaa itse eikä tarvitse sitä, ja lainaustiski pysyy äänettömänä."
+			},
+			"patron": {
+				"symbology": {
+					"label": "Korttien viivakoodityyppi",
+					"hint": "Code 128 uusille korteille. Code 39 vain, jos kirjaston lukijat eivät lue Code 128:aa."
+				}
+			},
+			"item": {
+				"symbology": {
+					"label": "Niteiden viivakoodityyppi",
+					"hint": "Code 128 uusille tarroille. Code 39 vain, jos kirjaston lukijat eivät lue Code 128:aa."
+				}
+			}
+		},
+		"circulation": {
+			"rules": {
+				"student": {
+					"loanDays": {
+						"label": "Lainapäivät",
+						"hint": "Kuinka monta päivää laina kestää oppilailla."
+					},
+					"maxLoans": {
+						"label": "Lainattujen kirjojen enimmäismäärä",
+						"hint": "Kuinka monta kirjaa yhdellä voi olla lainassa samanaikaisesti."
+					},
+					"maxRenewals": {
+						"label": "Uusimisten enimmäismäärä",
+						"hint": "Kuinka monta kertaa saman lainan voi uusia (0 = ei koskaan)."
+					},
+					"renewalDays": {
+						"label": "Uusimispäivät",
+						"hint": "Kuinka monta päivää kukin uusiminen lisää."
+					}
+				},
+				"teacher": {
+					"loanDays": {
+						"label": "Lainapäivät",
+						"hint": "Kuinka monta päivää laina kestää opettajilla."
+					},
+					"maxLoans": {
+						"label": "Lainattujen kirjojen enimmäismäärä",
+						"hint": "Kuinka monta kirjaa yhdellä voi olla lainassa samanaikaisesti."
+					},
+					"maxRenewals": {
+						"label": "Uusimisten enimmäismäärä",
+						"hint": "Kuinka monta kertaa saman lainan voi uusia (0 = ei koskaan)."
+					},
+					"renewalDays": {
+						"label": "Uusimispäivät",
+						"hint": "Kuinka monta päivää kukin uusiminen lisää."
+					}
+				}
+			},
+			"dueDateMode": {
+				"label": "Eräpäivän laskenta",
+				"hint": "Miten lainan pituus lasketaan suhteessa päiviin, jolloin kirjasto on suljettuna."
+			},
+			"renewFrom": {
+				"label": "Uusiminen alkaa",
+				"hint": "Päivä, josta uusimispäivät lasketaan."
+			},
+			"allowRenewalWhenOverdue": {
+				"label": "Uusi myös eräpäivän jälkeen",
+				"hint": "Jo myöhässä oleva laina voidaan uusia."
+			},
+			"overdueNotice": {
+				"template": {
+					"label": "Muistutuksen pohja",
+					"hint": "Muistutusten tulostuspohjan nimi (kansio kohdassa slips/templates)."
+				},
+				"pageBreakPerGroup": {
+					"label": "Yksi sivu luokkaa kohden",
+					"hint": "Jokainen luokka omalle arkilleen, annettavaksi opettajalle. Sitä voi muuttaa myös tulostettaessa."
+				},
+				"minDays": {
+					"label": "Myöhästymispäiviä ennen muistutusta",
+					"hint": "Laina näkyy muistutuksissa vasta näin monen myöhästymispäivän jälkeen (0 = heti)."
+				}
+			},
+			"blockIfOverdue": {
+				"label": "Ei uusia lainoja, jos kirja on myöhässä",
+				"hint": "Jolla on myöhässä oleva kirja, ei voi lainata muita, ennen kuin kirja on palautettu."
+			},
+			"hardDueDate": {
+				"label": "Viimeisin eräpäivä",
+				"hint": "Mikään laina ei erää tämän päivän jälkeen, esimerkiksi oppituntien päättyessä. Tyhjä: ei rajaa."
+			},
+			"receipts": {
+				"label": "Lainakuitti",
+				"hint": "Näyttää painikkeen, jolla kuitti tulostetaan lainaustiskillä."
+			}
+		},
+		"calendar": {
+			"autoItalianHolidays": {
+				"label": "Italian kansalliset juhlapäivät",
+				"hint": "Kansalliset juhlapäivät, pääsiäinen mukaan lukien, ovat suljettuja päiviä ilman, että niitä kirjoitetaan käsin."
+			}
+		},
+		"z3950": {
+			"defaultTarget": {
+				"label": "Oletuspalvelin",
+				"hint": "Hauissa käytettävän Z39.50-palvelimen tunnus."
+			},
+			"timeoutMs": {
+				"label": "Odotusajan raja (ms)",
+				"hint": "Millisekunnin jälkeen Z39.50-haku keskeytetään."
+			},
+			"maxRecordsIsbn": {
+				"label": "Tuloksia ISBN-koodia kohden",
+				"hint": "Kuinka monta tietuetta luetaan enintään ISBN-haun yhteydessä (yhdellä ISBN-koodilla voi olla tietue jokaisesta painoksesta). Täydellisin tietue avautuu."
+			},
+			"maxRecordsSearch": {
+				"label": "Tuloksia hakua kohden",
+				"hint": "Kuinka monta tietuetta luetaan enintään, kun haetaan nimen tai tekijän perusteella."
+			}
+		},
+		"metadata": {
+			"providers": {
+				"label": "Tietolähteet",
+				"hint": "Mistä kirjatiedot haetaan ISBN-koodilla. Valitut lähteet kysytään yhdessä."
+			},
+			"cacheDays": {
+				"label": "Päiviä, joina haku muistetaan",
+				"hint": "Kuinka monta päivää jo tehtyä hakua käytetään uudelleen kysymättä uudestaan."
+			},
+			"timeoutMs": {
+				"label": "Odotusajan raja (ms)",
+				"hint": "Millisekunnin jälkeen lähde, joka ei vastaa, jätetään huomiotta."
+			}
+		},
+		"performance": {
+			"profile": {
+				"label": "Tietokone",
+				"hint": "Oletusasetukset, jotka sopivat tietokoneelle, jolla BiblioViva toimii."
+			},
+			"sqliteCacheMb": {
+				"label": "Tietokannan välimuisti (Mt)",
+				"hint": "Tyhjä: tietokoneen mukaan (8, 16, 64 tai 256 Mt)."
+			},
+			"sqliteMmapMb": {
+				"label": "Tietokannan muistikartta (Mt)",
+				"hint": "Tyhjä: tietokoneen mukaan (0, 0, 0 tai 512 Mt)."
+			},
+			"walAutocheckpointPages": {
+				"label": "Sivuja ennen tarkistuspistettä",
+				"hint": "Tyhjä: tietokoneen mukaan (500, 1000, 2000 tai 4000)."
+			},
+			"imageConcurrency": {
+				"label": "Samanaikaisesti käsiteltävät kuvat",
+				"hint": "Valokuvat, kannet, luokkakuvat ja logo käsitellään samanaikaisesti, muut odottavat vuoroaan. Tyhjä: tietokoneen mukaan (1, 1, 2 tai 4)."
+			},
+			"yazConcurrency": {
+				"label": "Z39.50-hakuja samanaikaisesti",
+				"hint": "Z39.50-hakuja tehdään samanaikaisesti, muut odottavat vuoroaan. Tyhjä: tietokoneen mukaan (1, 1, 2 tai 2)."
+			},
+			"heavyConcurrency": {
+				"label": "Tulosteita ja vientejä kerralla",
+				"hint": "Tulostettavat arkit (kortit, tarrat, muistutukset, kuitit, raportit) ja viennit (CSV, ODS, arkistot, varmuuskopiot) valmistellaan samanaikaisesti, muut odottavat vuoroaan, jotta lainaustiski pysyy nopeana. Tyhjä: tietokoneen mukaan (1, 1, 2 tai 4)."
+			},
+			"argon2MemoryMb": {
+				"label": "Muisti salasanojen tarkistukseen (Mt)",
+				"hint": "Koskee tästä eteenpäin asetettuja salasanoja. Tyhjä: 16 Mt jokaisella tietokoneella, sillä järjestelmä ei ole koskaan alttiina Internetille."
+			},
+			"smol": {
+				"label": "Muistin säästö",
+				"hint": "Vähemmän muistia, hieman enemmän työtä prosessorille. Automaattinen: tietokoneen mukaan (kyllä vähimmäistietokoneella ja Raspberry Pi:llä). Muutos tulee voimaan uudelleenkäynnistyksen jälkeen."
+			}
+		},
+		"cards": {
+			"defaultTemplate": {
+				"label": "Korttipohja",
+				"hint": "Tulostuspohjan nimi, jota käytetään, kun asiakastyypillä ei ole omaa pohjaa (kansio kohdassa cards/templates)."
+			},
+			"layout": {
+				"label": "Korttien tulostus",
+				"hint": "Etu- ja takapuoli vierekkäin (taitetaan lyhyeltä reunalta) tai arkin molemmille puolille, tulostimella, joka tulostaa molemmat puolet. Valitaan uudelleen joka tulostuksessa."
+			},
+			"duplex": {
+				"flip": {
+					"label": "Miten arkki käännetään",
+					"hint": "Miten tulostin kääntää arkin takapuolta varten: pitkän reunan ympäri (kuten kirja) vai lyhyen reunan ympäri. Sen on vastattava tulostusikkunan valintaa."
+				},
+				"backOffsetMm": {
+					"x": {
+						"label": "Takapuolten siirto vaakasuunnassa (mm)",
+						"hint": "Kalibroinnin löytämä arvo: kuinka paljon takapuolet siirtyvät, jotta ne osuvat etupuolten taakse."
+					},
+					"y": {
+						"label": "Takapuolten siirto alaspäin (mm)",
+						"hint": "Kalibroinnin löytämä arvo."
+					}
+				}
+			},
+			"cardMm": {
+				"width": {
+					"label": "Leveys (mm)",
+					"hint": "Tavallinen kortti on 85,6 mm leveä."
+				},
+				"height": {
+					"label": "Korkeus (mm)",
+					"hint": "Tavallinen kortti on 53,98 mm korkea."
+				}
+			},
+			"bleedMm": {
+				"label": "Leikkausvara (mm)",
+				"hint": "Ylimääräinen reuna kuvien ympärillä, joissa kuva ulottuu reunaan asti. Reuna leikataan pois."
+			},
+			"sheet": {
+				"paper": {
+					"label": "Paperikoko",
+					"hint": "Arkki, jolle kortit tulostetaan."
+				},
+				"rows": {
+					"label": "Kortteja arkkia kohden",
+					"hint": "Kuinka monta korttia (etu- ja takapuoli) on yksi toisensa alla: 4 tai 5 A4-arkilla."
+				},
+				"marginMm": {
+					"label": "Arkin reunus (mm)",
+					"hint": "Korttien ympärillä oleva tyhjä tila."
+				},
+				"gapMm": {
+					"label": "Korttien väli (mm)",
+					"hint": "Etäisyys yhdestä kortista seuraavaan."
+				},
+				"foldMarks": {
+					"label": "Taittomerkit",
+					"hint": "Lyhyet katkoviivat reunuksissa ja korttien välissä, siellä missä etu- ja takapuoli taitetaan."
+				},
+				"cutMarks": {
+					"label": "Leikkausmerkit",
+					"hint": "Leikkausmerkit: lyhyet viivat reunuksissa ja korttien välissä, jotka jatkavat kunkin kortin reunoja. Leikataan viivoittimella ja leikkurilla."
+				}
+			},
+			"validityMonths": {
+				"label": "Voimassaolo (kuukausia)",
+				"hint": "Kuinka monta kuukautta tulostettu kortti on voimassa. Tyhjä: ei vanhene koskaan."
+			},
+			"showPhoto": {
+				"label": "Valokuva kortissa",
+				"hint": "Tulostaa asiakkaan valokuvan kortille."
+			}
+		},
+		"labels": {
+			"default": {
+				"label": "Oletustarrat",
+				"hint": "Mitä tulostetaan, kun valitaan ”Tulosta tarrat”."
+			},
+			"titleMaxChars": {
+				"label": "Nimekkeen merkkimäärä",
+				"hint": "Tarrojen nimeke katkaistaan tähän pituuteen."
+			},
+			"monochrome": {
+				"label": "Mustavalkoinen tulostin",
+				"hint": "Matalilla selkäkaistoilla värillinen kaista muuttuu raidoitetuksi kuvioksi."
+			},
+			"pair": {
+				"template": {
+					"label": "Pohja",
+					"hint": "Parin tulostuspohjan nimi (kansio kohdassa labels/templates)."
+				},
+				"stock": {
+					"label": "Tarra-arkki",
+					"hint": "Käytettävän tarra-arkin tunnus (tiedosto kohdassa labels/stocks)."
+				}
+			},
+			"barcode": {
+				"template": {
+					"label": "Pohja",
+					"hint": "Viivakooditarran tulostuspohjan nimi (kansio kohdassa labels/templates)."
+				},
+				"stock": {
+					"label": "Tarra-arkki",
+					"hint": "Käytettävän tarra-arkin tunnus (tiedosto kohdassa labels/stocks)."
+				}
+			},
+			"spine": {
+				"template": {
+					"label": "Pohja",
+					"hint": "Selkäkaistan tulostuspohjan nimi (kansio kohdassa labels/templates)."
+				},
+				"stock": {
+					"label": "Tarra-arkki",
+					"hint": "Käytettävän tarra-arkin tunnus (tiedosto kohdassa labels/stocks)."
+				}
+			}
+		},
+		"photos": {
+			"enabled": {
+				"label": "Asiakkaiden valokuvat",
+				"hint": "Päällä: jokaiselle asiakkaalle otetaan tai ladataan valokuva, ja valokuvat näkyvät kuvauksessa ja korteissa. Pois: valokuvia ei näy missään eikä kortteja tulosteta valokuvin. Jo tallennetut valokuvat säilyvät ja palaavat, kun asetus kytketään uudelleen päälle."
+			},
+			"required": {
+				"label": "Valokuva vaaditaan",
+				"hint": "Päällä: aloitusnäkymä, asiakasluettelo ja tulostuslistat osoittavat, kenellä ei ole valokuvaa. Pois: muistutuksia ei ole, mutta valokuvia voi edelleen ottaa, ladata ja tulostaa korteille."
+			},
+			"width": {
+				"label": "Leveys (px)",
+				"hint": "Valokuvat tallennetaan tähän leveyteen."
+			},
+			"height": {
+				"label": "Korkeus (px)",
+				"hint": "Valokuvat tallennetaan tähän korkeuteen (keskeltä rajattuna)."
+			},
+			"format": {
+				"label": "Tiedostomuoto",
+				"hint": "JPEG toimii kaikkialla. WebP vie vähemmän tilaa."
+			},
+			"quality": {
+				"label": "Laatu",
+				"hint": "1–100: suurempi arvo tarkoittaa suurempia tiedostoja."
+			},
+			"maxUploadBytes": {
+				"label": "Suurin lähetettävä koko (tavua)",
+				"hint": "Suurempi tiedosto hylätään."
+			},
+			"sheet": {
+				"maxUploadBytes": {
+					"label": "Suurin tiedostokoko (tavua)",
+					"hint": "Kuva, jossa on useita valokuvia (kuvauksen kuvasta), hylätään, jos se on tätä suurempi."
+				},
+				"maxPixels": {
+					"label": "Pisin säilytettävä sivu (px)",
+					"hint": "Kuvaa pienennetään, kunnes sen pisin sivu ei ole tätä suurempi."
+				},
+				"maxFrames": {
+					"label": "Valokuvia enintään",
+					"hint": "Kun kuvassa on enemmän, säilytetään terävimmät."
+				},
+				"minAspect": {
+					"label": "Valokuvan pienin mittasuhde",
+					"hint": "Korkeus jaettuna leveydellä: 1 on neliö, 1,33 on 3:4 passikuva."
+				},
+				"maxAspect": {
+					"label": "Valokuvan suurin mittasuhde",
+					"hint": "Korkeus jaettuna leveydellä: korkeampia kehyksiä ei oteta valokuviksi."
+				}
+			}
+		},
+		"covers": {
+			"enabled": {
+				"label": "Kansikuvat",
+				"hint": "Päällä: kannet haetaan verkosta, otetaan valokuvana tai ladataan, ja ne näkyvät luettelossa. Pois: kansia ei näy missään. Jo tallennetut kannet säilyvät ja palaavat, kun asetus kytketään uudelleen päälle."
+			},
+			"width": {
+				"label": "Leveys (px)",
+				"hint": "Kannet tallennetaan tähän leveyteen."
+			},
+			"maxHeight": {
+				"label": "Suurin korkeus (px)",
+				"hint": "Hyvin pitkät kannet pienennetään. Tyhjä: ei rajaa."
+			},
+			"format": {
+				"label": "Tiedostomuoto",
+				"hint": "JPEG toimii kaikkialla. WebP vie vähemmän tilaa."
+			},
+			"quality": {
+				"label": "Laatu",
+				"hint": "1–100: suurempi arvo tarkoittaa suurempia tiedostoja."
+			},
+			"maxUploadBytes": {
+				"label": "Suurin lähetettävä koko (tavua)",
+				"hint": "Suurempi tiedosto hylätään."
+			},
+			"country": {
+				"label": "Maa",
+				"hint": "Kansien tarjoajien luettelon maa (kaksi kirjainta, esimerkiksi IT)."
+			},
+			"minWidth": {
+				"label": "Pienin leveys (px)",
+				"hint": "Ladatut kannet, jotka ovat tätä kapeampia, hylätään."
+			},
+			"autoFetch": {
+				"label": "Hae kansi itse",
+				"hint": "Kohdassa ”Uusi kirja” kansi haetaan verkosta tietuetta tarkistettaessa, ja se tallennetaan tietueen mukana. Jos kansi on väärä, se korvataan valokuvalla."
+			},
+			"timeoutMs": {
+				"label": "Odotusajan raja (ms)",
+				"hint": "Millisekunnin jälkeen palveluntarjoaja, joka ei vastaa, jätetään huomiotta."
+			}
+		},
+		"privacy": {
+			"auditRetentionMonths": {
+				"label": "Tarkastuslokin säilytysaika (kuukausia)",
+				"hint": "Lokin vanhemmat rivit poistetaan."
+			}
+		},
+		"backup": {
+			"cron": {
+				"label": "Varmuuskopioinnin aika",
+				"hint": "Cron-muodossa: minuutti, tunti, päivä, kuukausi, viikonpäivä (0 3 * * * = joka yö kello 3)."
+			},
+			"catchUp": {
+				"label": "Varmuuskopio käynnistyksessä, jos jäi väliin",
+				"hint": "Jos tietokone oli pois päältä varmuuskopioinnin aikaan, BiblioViva tekee varmuuskopion minuutin kuluttua seuraavasta käynnistyksestä: vain yhden, vaikka päiviä kuluisi useita."
+			},
+			"keepDays": {
+				"label": "Säilytettävät päivät",
+				"hint": "Vanhemmat varmuuskopiot poistetaan."
+			},
+			"offsite": {
+				"enabled": {
+					"label": "Kopio muualle käytössä",
+					"hint": "Kertoo, että varmuuskopioiden toinen kopio (rclone, toisella levyllä tai toisessa palvelussa) on käytössä."
+				},
+				"remote": {
+					"label": "Kopion kohde",
+					"hint": "Minne kopio menee: toisen levyn kansio (/offsite/biblioviva-backups, oletus) tai rclonessa määritetty kohde, kirjoitettuna muodossa nimi:kansio."
+				}
+			}
+		},
+		"security": {
+			"sessionDays": {
+				"label": "Istunnon kesto (päivää)",
+				"hint": "Kuinka monen päivän jälkeen salasana kysytään uudelleen."
+			},
+			"loginMaxAttempts": {
+				"label": "Kirjautumisyritykset",
+				"hint": "Kuinka monta väärää yritystä sallitaan ennen pakollista taukoa."
+			},
+			"loginWindowMinutes": {
+				"label": "Tauko liian monen yrityksen jälkeen (minuuttia)",
+				"hint": "Kuinka monta minuuttia kirjautuminen on estetty liian monen yrityksen jälkeen."
+			}
+		},
+		"ui": {
+			"checkoutIdleSeconds": {
+				"label": "Lainaustiskin lepoaika (sekuntia)",
+				"hint": "Kun näiden sekuntien ajan ei skannata mitään, tiski valmistautuu seuraavaan asiakkaaseen."
+			}
+		}
+	},
+	"options": {
+		"library": {
+			"weekStart": {
+				"monday": "Maanantai",
+				"sunday": "Sunnuntai",
+				"saturday": "Lauantai"
+			},
+			"schoolYearLabel": {
+				"span": "Kaksi vuotta (2026/2027)",
+				"start": "Alkamisvuosi (2026)"
+			}
+		},
+		"school": {
+			"promotionWithinStage": {
+				"keep": "Luokka siirtyy oppilaineen",
+				"clear": "Oppilaat jäävät ilman luokkaa"
+			},
+			"promotionAcrossStages": {
+				"keep": "Luokka siirtyy oppilaineen",
+				"clear": "Oppilaat jäävät ilman luokkaa",
+				"ask": "Jokaiselle oppilaalle valitaan luokka"
+			}
+		},
+		"barcodes": {
+			"patron": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"item": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"keyboardLayout": {
+				"it": "Italia",
+				"es": "Espanja",
+				"de": "Saksa",
+				"fr": "Ranska",
+				"uk": "Englanti (Iso-Britannia)",
+				"us": "Englanti (Yhdysvallat)"
+			},
+			"cameraSound": {
+				"off": "Ei ääntä",
+				"till": "Kassa",
+				"scanner": "Lukija",
+				"confirm": "Vahvistus",
+				"arpeggio": "Arpeggio"
+			}
+		},
+		"circulation": {
+			"dueDateMode": {
+				"datedue": "Kalenteripäiviä, sitten ensimmäinen avoinna oleva päivä",
+				"calendar": "Vain avoinna olevat päivät",
+				"days": "Kalenteripäiviä, sulkemiset huomioimatta"
+			},
+			"renewFrom": {
+				"today": "Uusimispäivästä",
+				"dueDate": "Nykyisestä eräpäivästä"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"sbn": "OPAC SBN (Z39.50)",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books",
+				"sbn-json": "OPAC SBN (verkkopalvelu)"
+			}
+		},
+		"performance": {
+			"profile": {
+				"micro": "Vähimmäistietokone: yksi hidas prosessori ja 512 Mt (Raspberry Pi Zero 2, pienin palvelin)",
+				"small": "Raspberry Pi 4 (2 Gt) tai pieni tietokone",
+				"medium": "Vanha PC kiintolevyllä",
+				"large": "PC SSD-levyllä"
+			}
+		},
+		"cards": {
+			"sheet": {
+				"paper": {
+					"A4": "A4"
+				}
+			},
+			"layout": {
+				"side-by-side": "Etu- ja takapuoli vierekkäin",
+				"duplex": "Arkin molemmilla puolilla"
+			},
+			"duplex": {
+				"flip": {
+					"long-edge": "Pitkän reunan ympäri",
+					"short-edge": "Lyhyen reunan ympäri"
+				}
+			}
+		},
+		"labels": {
+			"default": {
+				"pair": "Pari: selkäkaista ja tarra",
+				"barcode": "Vain viivakooditarra",
+				"spine": "Vain selkäkaista"
+			}
+		},
+		"photos": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		},
+		"covers": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		}
+	},
+	"groups": {
+		"barcodes": {
+			"patron": {
+				"title": "Asiakaskortit"
+			},
+			"item": {
+				"title": "Niteet"
+			}
+		},
+		"circulation": {
+			"rules": {
+				"title": "Lainasäännöt",
+				"student": {
+					"title": "Oppilaiden säännöt"
+				},
+				"teacher": {
+					"title": "Opettajien säännöt"
+				}
+			},
+			"overdueNotice": {
+				"title": "Myöhästymismuistutukset"
+			}
+		},
+		"cards": {
+			"cardMm": {
+				"title": "Kortin koko"
+			},
+			"sheet": {
+				"title": "Tulostusarkki"
+			},
+			"duplex": {
+				"title": "Kaksipuolinen tulostus",
+				"backOffsetMm": {
+					"title": "Takapuolten siirto"
+				}
+			}
+		},
+		"labels": {
+			"pair": {
+				"title": "Pari: selkäkaista ja tarra"
+			},
+			"barcode": {
+				"title": "Vain viivakooditarra"
+			},
+			"spine": {
+				"title": "Vain selkäkaista"
+			}
+		},
+		"backup": {
+			"offsite": {
+				"title": "Kopio muualle"
+			}
+		},
+		"photos": {
+			"sheet": {
+				"title": "Kuvat, joissa on useita valokuvia (kuvauksen kuvasta)"
+			}
+		}
+	},
+	"overview": {
+		"reload": "Lataa uudelleen",
+		"reloaded": "Asetukset ladattu uudelleen",
+		"reloadFailed": "Tiedostoissa on virheitä: käytössä on edellinen asetus.",
+		"valid": "Asetukset ovat kelvolliset: {{count}} {{count:plural; one:tiedosto; other:tiedostoa;}}.",
+		"example": "Asetuksia ei ole vielä luotu: käytössä ovat esimerkkiarvot.",
+		"warnings": "{{count}} {{count:plural; one:varoitus; other:varoitusta;}}",
+		"diskErrors": "Asetustiedostoissa on virheitä: kirjasto käyttää edellistä versiota, kunnes ne korjataan.",
+		"diskChanged": "Tiedostoja on muutettu käsin: käytä muutoksia painamalla ”Lataa uudelleen”.",
+		"sections": "Asetukset",
+		"alsoFrom": "ja {{count}} {{count:plural; one:muu tiedosto; other:muuta tiedostoa;}}",
+		"editors": "Ulkoasu, luokat ja pohjat",
+		"templates": "Tulostuspohjat",
+		"templatesDescription": "Korttien, tarrojen ja muistutusten pohjakansiot kuvineen.",
+		"reports": "Raporttikirjasto",
+		"reportsDescription": "Valmiit ja koulun raportit: kokeile, lataa, lähetä ja poista.",
+		"appearance": "Ulkoasu ja kieli",
+		"appearanceDescription": "Kirjaston nimi ja logo, värit, kieli ja aloitusnäkymän osiot.",
+		"classes": "Luokat",
+		"classesDescription": "Koulun luokat ja opettajien ryhmät: luo, nimeä uudelleen ja arkistoi."
+	},
+	"section": {
+		"tabs": {
+			"form": "Asetukset",
+			"json": "JSON",
+			"label": "Muokkaa muodossa"
+		},
+		"file": "Tallennettu tiedostoon {{file}}",
+		"alsoFrom": "Myös tiedostosta: {{files}}",
+		"general": "Yleiset",
+		"default": "Oletus: {{value}}",
+		"defaultNone": "Oletus: ei arvoa",
+		"defaultAuto": "Oletus: automaattinen",
+		"usesDefault": "Käyttää oletusta",
+		"reset": "Palauta oletukseen",
+		"willReset": "Tallennettaessa palautuu oletukseen.",
+		"auto": "Automaattinen",
+		"none": "Ei päivämäärää",
+		"yes": "Kyllä",
+		"no": "Ei",
+		"fixed": "Kiinteä arvo",
+		"range": "Välillä {{min}}–{{max}}.",
+		"min": "Vähintään {{min}}.",
+		"max": "Enintään {{max}}.",
+		"save": "Tallenna",
+		"discard": "Hylkää muutokset",
+		"saved": "Asetukset tallennettu",
+		"unsaved": "Tallentamattomia muutoksia",
+		"invalid": "Korjaa merkityt arvot ennen tallentamista.",
+		"errors": "Tallennus ei onnistunut:",
+		"inUse": "Tallennus poistaisi jotain, mitä käytetään yhä:",
+		"inUseKinds": {
+			"classification": "koodi {{code}}: {{count}} {{count:plural; one:kirja; other:kirjaa;}}",
+			"itemType": "niteen tyyppi {{code}}: {{count}} {{count:plural; one:nide; other:nidettä;}}",
+			"level": "taso {{code}}: {{count}} {{count:plural; one:oppilas tai luokka; other:oppilasta tai luokkaa;}}",
+			"readingLevel": "lukutaso {{code}}: {{count}} {{count:plural; one:kirja; other:kirjaa;}}"
+		},
+		"patternError": "Virheellinen muoto.",
+		"numberError": "Kirjoita kokonaisluku.",
+		"required": "Pakollinen.",
+		"elsewhereTitle": "Tämän osion muut asetukset",
+		"elsewhereHint": "Niitä muutetaan erillisellä muokkausikkunalla tai JSON-välilehdellä.",
+		"openEditor": "Avaa",
+		"jsonOnly": "Toistaiseksi JSON-välilehdellä",
+		"editorNames": {
+			"taxonomy": "Luokitus",
+			"appearance": "Ulkoasu ja kieli",
+			"wizard": "Ensimmäisen käynnistyksen ohjattu asennus",
+			"history": "Historia",
+			"settings": "Asetukset",
+			"schoolLevels": "Opetusasteet ja vuosiluokat"
+		},
+		"json": {
+			"hint": "Osio sellaisena kuin se on kirjoitettu tiedostoon {{file}}. Avaimet, jotka alkavat _-merkillä, ovat kommentteja ja jäävät tiedostoon.",
+			"label": "Osion JSON-sisältö",
+			"parseError": "Teksti ei ole kelvollista JSONia: {{message}}",
+			"notObject": "Osion on oltava JSON-olio aaltosulkeissa.",
+			"valid": "Ei ongelmia.",
+			"checking": "Tarkistetaan…",
+			"issues": "Korjattavia ongelmia:"
+		},
+		"playSound": "Kuuntele"
+	},
+	"history": {
+		"title": "Asetushistoria",
+		"hint": "Jokainen tältä sivulta tehty muutos säilyttää edellisen version muuttamistaan tiedostoista (viimeiset 50 muutosta).",
+		"empty": "Ylläpidosta ei ole vielä tehty muutoksia.",
+		"columns": {
+			"when": "Milloin",
+			"what": "Mitä",
+			"files": "Tiedostot"
+		},
+		"revert": "Palauta",
+		"revertTitle": "Palautetaanko tiedostot sellaisina kuin ne olivat ennen tätä muutosta?",
+		"revertDescription": "Palautuvat vain tämän muutoksen asettamat arvot. Palautus on myös muutos: se jää historiaan, ja sen voi perua.",
+		"reverted": "Edellinen versio palautettu",
+		"refused": "Tämä muutos loi tiedoston config.json: sitä ei voi perua.",
+		"conflict": "Muutosta ei voi palauttaa: muutoksen jälkeen {{keys}} on muuttunut uudelleen.",
+		"notFound": "Muutos ei ole enää historiassa.",
+		"newFile": "uusi",
+		"actions": {
+			"revert": "Muutoksen {{when}} palauttaminen",
+			"theme": "Värit",
+			"locale": "Kieli",
+			"logo": "Kirjaston logo",
+			"setup": "Ensimmäisen käynnistyksen asennus",
+			"section": "Osio ”{{section}}”",
+			"other": "Muutos ({{action}})"
+		}
+	},
+	"archive": {
+		"title": "Asetusarkisto",
+		"hint": "Koko asetukset yhdessä tiedostossa: asetukset, tulostuspohjat, tarra-arkit, piktogrammit, logo, raportit ja kielet (ei historiaa). Käytä sitä kopion tallentamiseen tai siirtämiseen toiseen asennukseen. ”Tuo asetukset” ottaa myös varmuuskopion tai ”Vie kaikki” -arkiston: siitä otetaan vain asetukset, ja kirjaston tiedot pysyvät ennallaan.",
+		"export": "Vie asetukset",
+		"import": "Tuo asetukset",
+		"checking": "Tarkistetaan arkistoa…",
+		"from": "Arkisto {{date}} (versio {{version}})",
+		"fromLibrary": "Arkisto ”{{library}}” ajalta {{date}} (versio {{version}})",
+		"files": "{{added}} {{added:plural; one:uusi tiedosto; other:uutta tiedostoa;}}, {{changed}} muutettu, {{removed}} poistettu, {{unchanged}} ennallaan.",
+		"fileList": "Tiedostoluettelo",
+		"added": "uusi",
+		"changed": "muutettu",
+		"removed": "poistettu",
+		"sameValues": "Asetukset pysyvät ennallaan.",
+		"sections": "Muuttuu: {{sections}}.",
+		"errorsTitle": "Arkistossa on ongelmia: ne on korjattava ennen tuontia.",
+		"apply": "Tuo",
+		"confirmTitle": "Korvataanko asetukset arkiston asetuksilla?",
+		"confirmDescription": "Nykyiset tiedostot jäävät historiaan: ”Palauta” tuo edellisen asetuksen takaisin. Kirjaston tiedot (niteet, asiakkaat, lainat) eivät muutu.",
+		"imported": "Asetukset tuotu",
+		"failed": "Tuonti ei onnistunut",
+		"errors": {
+			"too_large": "Arkisto on liian suuri (enintään {{maxMb}} Mt).",
+			"not_zip": "Tiedosto ei ole kelvollinen ZIP-arkisto.",
+			"not_archive": "Tiedosto ei ole BiblioViva-arkisto.",
+			"too_many_files": "Arkistossa on liian monta tiedostoa.",
+			"unsafe_path": "Arkistossa on sallimaton polku: {{name}}",
+			"link": "Arkistossa on linkki, mikä ei ole sallittua: {{name}}",
+			"unknown_file": "Arkistossa on tiedosto, joka ei kuulu asetuksiin: {{name}}",
+			"no_config": "Arkistossa ei ole asetuksia, vain kirjaston tietoja. Se palautetaan kohdasta Ylläpito → Varmuuskopiot."
+		},
+		"exportSome": "Vie valitut osat",
+		"chooseExport": "Valitse, mitä viedään"
+	},
+	"blocks": {
+		"problems": {
+			"codeRequired": {
+				"itemTypes": "Koodi on pakollinen.",
+				"sections": "Osasto on pakollinen."
+			},
+			"codeFormat": {
+				"itemTypes": "Kirjaimia, numeroita, pistettä, viivaa tai alaviivaa (enintään 32).",
+				"sections": "Isoja kirjaimia tai numeroita, enintään 8."
+			},
+			"codeTaken": {
+				"itemTypes": "Koodi toistuu.",
+				"sections": "Osasto toistuu."
+			},
+			"labelRequired": {
+				"itemTypes": "Nimi on pakollinen.",
+				"sections": "Nimi on pakollinen."
+			}
+		},
+		"itemTypes": {
+			"title": "Nidetyypit",
+			"hint": "Kirja, DVD, hakuteos…: kunkin niteen tyyppi määrää lainaussäännöt. Koodin vaihtaminen siirtää sen niteet uuteen koodiin.",
+			"code": "Koodi",
+			"label": "Nimi",
+			"notForLoan": "Vain paikan päällä",
+			"add": "Lisää tyyppi",
+			"saved": "Nidetyypit tallennettu"
+		},
+		"move": {
+			"title": "Minne ne menevät?",
+			"hint": {
+				"copies": "Jotkin poistetut tyypit ovat yhä niteiden käytössä: valitse tyyppi, jolle ne siirretään.",
+				"students": "Jotkin poistetut osastot ovat yhä oppilaiden käytössä: valitse osasto, jolle he siirretään."
+			},
+			"row": {
+				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:nide; other:nidettä;}}. Siirrä kohteeseen",
+				"students": "{{code}}: {{count}} {{count:plural; one:oppilas; other:oppilasta;}}. Siirrä osastoon"
+			},
+			"choose": "Valitse…",
+			"used": {
+				"copies": "Niteet",
+				"students": "Oppilaat"
+			},
+			"count": {
+				"copies": "{{count}} {{count:plural; one:nide; other:nidettä;}}",
+				"students": "{{count}} {{count:plural; one:oppilas; other:oppilasta;}}"
+			},
+			"done": {
+				"copies": "Siirrettiin {{count}} {{count:plural; one:nide; other:nidettä;}}.",
+				"students": "Siirrettiin {{count}} {{count:plural; one:oppilas; other:oppilasta;}}."
+			}
+		},
+		"barcodes": {
+			"title": "Numerointi ja esikatselu",
+			"counter": "Uusien tessereiden numerot",
+			"afterLegacy": "Vanhojen olemassa olevien tessereiden korkeimman numeron jälkeen",
+			"from": "Tästä numerosta alkaen:",
+			"fromNumber": "Uusien tessereiden ensimmäinen numero",
+			"counterHint": "Jo käytettyä numeroa ei palauteta koskaan: jos valittu numero on pienempi, laskenta jatkuu siitä, mihin on päästy. Uusilla niteillä on aina vuosi ja juokseva numero.",
+			"nextCard": "Seuraava kortti: {{code}}",
+			"nextItem": "Seuraava nide: {{code}}",
+			"overrides": "Nämä tulostuspohjat valitsevat itse viivakoodin tyypin, joten yllä oleva asetus ei koske niitä: {{templates}}.",
+			"saved": "Numerointi tallennettu"
+		},
+		"itemTypeRules": {
+			"title": "Säännöt nidetyypeittäin",
+			"hint": "Jokainen nidetyyppi voi muuttaa yhtä sääntöä: esimerkiksi DVD:t 5 päiväksi. Säännöt koskevat yhtä lailla oppilaita ja opettajia.",
+			"inherit": "Tyhjä: pätee oppilaiden ja opettajien sääntö (harmaalla: oppilaat / opettajat).",
+			"saved": "Säännöt nidetyypeittäin tallennettu"
+		},
+		"calendar": {
+			"title": "Kirjaston kalenteri",
+			"weekly": "Joka viikko suljetut päivät",
+			"weeklyHint": "Korostetut päivät ovat suljettuina joka viikko.",
+			"previous": "Edellinen lukuvuosi",
+			"next": "Seuraava lukuvuosi",
+			"addNational": "Lisää vuoden {{year}} kansalliset juhlapäivät",
+			"autoOn": "Kansalliset juhlapäivät ovat jo suljettuina automaattisesti. Napsauttamalla avointa päivää sen voi sulkea; käsin suljetun päivän napsauttaminen avaa sen uudelleen.",
+			"clickHint": "Napsauttamalla avointa päivää sen voi sulkea; käsin suljetun päivän napsauttaminen avaa sen uudelleen.",
+			"open": "avoinna",
+			"legend": {
+				"open": "Avoinna",
+				"weekly": "Viikoittainen sulkeminen",
+				"national": "Kansallinen juhlapäivä",
+				"holiday": "Suljettu (valittu tässä)",
+				"range": "Sulkuaika"
+			},
+			"ranges": "Sulkuajat",
+			"from": "Alkaen",
+			"to": "Päättyen",
+			"reason": "Syy",
+			"badRange": "Päättymispäivä on ennen alkua.",
+			"addRange": "Lisää sulkuaika",
+			"saved": "Kalenteri tallennettu"
+		},
+		"cardTemplates": {
+			"title": "Tulostuspohja tyypin mukaan",
+			"hint": "Oppilaat ja opettajat tulostavat kirjastokorttinsa yllä valitulla oletuspohjalla, ellei tässä valita toista.",
+			"student": "Oppilaiden kortti",
+			"teacher": "Opettajien kortti",
+			"asDefault": "Sama kuin oletus ({{name}})",
+			"cutLines": "Värillinen reunus jokaiseen korttiin",
+			"cutLinesOn": "Piirtää jokaiseen korttiin värillisen reunuksen (yleensä ei tarvita: leikkausmerkit riittävät)",
+			"color": "Väri",
+			"width": "Viivan paksuus (mm)",
+			"sample": "Esimerkki leikkausviivasta",
+			"saved": "Korttipohjat tallennettu"
+		},
+		"stocks": {
+			"title": "Tarra-arkit",
+			"hint": "Tarra-arkkien mitat, joille tulostetaan. Oikealla oleva piirros seuraa jokaista lukua: arkin reunan ylittävät tarrat näkyvät punaisina. Tallentamisen jälkeen tulosta koesivu tavalliselle paperille ja aseta se tarra-arkin päälle.",
+			"new": "Uusi",
+			"toFix": "Korjattava",
+			"add": "Lisää arkki",
+			"id": "Koodi",
+			"name": "Nimi",
+			"labelWidth": "Tarran leveys (mm)",
+			"labelHeight": "Tarran korkeus (mm)",
+			"columns": "Sarakkeet",
+			"rows": "Rivit",
+			"marginTop": "Yläreuna (mm)",
+			"marginLeft": "Vasen reuna (mm)",
+			"gapX": "Sarakkeiden väli (mm)",
+			"gapY": "Rivien väli (mm)",
+			"radius": "Pyöristetyt kulmat (mm)",
+			"calibration": "Tulosta koesivu",
+			"inUse": "Käytössä: {{jobs}}. Jos haluat poistaa sen, valitse ensin toinen arkki yllä olevissa asetuksissa.",
+			"saveFirst": "Tallenna muutokset, jotta koesivun voi tulostaa.",
+			"drawing": "Piirros A4-arkista, jossa {{columns}} {{columns:plural; one:sarake; other:saraketta;}} ja {{rows}} {{rows:plural; one:rivi; other:riviä;}} tarroja",
+			"caption": "A4-arkki · {{count}} {{count:plural; one:tarra; other:tarraa;}}",
+			"saved": "Tarra-arkit tallennettu",
+			"problems": {
+				"id": "Koodi voi sisältää kirjaimia, numeroita, viivoja ja alaviivoja.",
+				"duplicate": "Toisella arkilla on jo tämä koodi.",
+				"name": "Kirjoita nimi.",
+				"numbers": "Tarkista mitat: luvut alkaen nollasta, tarrat suurempia kuin nolla, kokonaisia sarakkeita ja rivejä.",
+				"width": "Tarrat vievät {{mm}} mm: enemmän kuin A4-arkin leveys (210 mm).",
+				"height": "Tarrat vievät {{mm}} mm: enemmän kuin A4-arkin korkeus (297 mm).",
+				"pairRows": "Pari tarvitsee parillisen määrän rivejä (selkäkaista ja tarra toinen toisensa päällä)."
+			},
+			"errors": {
+				"duplicate": "Kahdella arkilla on sama koodi: {{details}}.",
+				"inUse": "Tulostukseen käytettyä arkkia ei voi poistaa: {{details}}."
+			}
+		},
+		"backupSchedule": {
+			"title": "Seuraavat varmuuskopiot",
+			"invalid": "Kellonaika ei ole kelvollinen cron-lauseke (viisi kenttää: minuutit, tunnit, päivä, kuukausi, viikonpäivä).",
+			"never": "Tällä lausekkeella varmuuskopiointi ei käynnisty koskaan.",
+			"hint": "Ajat kirjaston aikavyöhykkeellä ({{timezone}}). Jos tietokone on sammutettuna kyseisenä aikana, ”Varmuuskopio käynnistyksessä, jos jäi väliin” -asetuksella varmuuskopio tehdään seuraavassa käynnistyksessä; ajan voi myös siirtää aukioloaikojen sisään."
+		},
+		"coverProviders": {
+			"off": "Kansikuvat on kytketty pois (Kirjojen kansikuvat, yllä): mitään lähdettä ei kysytä.",
+			"title": "Mistä kansikuvat haetaan",
+			"hint": "Lähteitä kokeillaan tässä järjestyksessä, kunnes yksi löytää kansikuvan; kukin voi kytkeä pois päältä.",
+			"names": {
+				"amazon": "Amazon",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books"
+			},
+			"googleKey": "Google Books tarvitsee API-avaimen: kirjoita se ”Kirjojen tiedot” -asetuksiin, muuten tämä lähde ohitetaan.",
+			"saved": "Kansikuvien lähteet tallennettu"
+		},
+		"z3950Targets": {
+			"title": "Z39.50-luettelot",
+			"hint": "Luettelot, joista kirjojen tiedot haetaan. ”Testaa yhteys” tekee oikean haun kirjoitetuilla arvoilla tallentamatta niitä.",
+			"id": "Koodi",
+			"name": "Nimi",
+			"host": "Palvelimen osoite",
+			"port": "Portti",
+			"database": "Tietokanta",
+			"syntax": "Tietueiden muoto",
+			"charset": "Merkistökoodaus",
+			"elements": "Elementit",
+			"elementsHint": "Yleensä F (koko tietue).",
+			"add": "Lisää luettelo",
+			"isDefault": "Tämä on oletusluettelo: jotta voit poistaa sen, valitse ensin toinen yllä.",
+			"saved": "Luettelot tallennettu",
+			"problems": {
+				"id": "Koodin on oltava yksilöllinen: kirjaimia, numeroita, viivoja.",
+				"required": "Nimi, tietokanta, merkistökoodaus ja elementit ovat pakollisia.",
+				"host": "Osoite voi sisältää kirjaimia, numeroita, pisteitä ja viivoja.",
+				"words": "Tietokanta, merkistökoodaus ja elementit ovat kukin yksi sana ilman välilyöntejä.",
+				"port": "Portti on luku väliltä 1–65535."
+			},
+			"test": {
+				"button": "Testaa yhteys",
+				"running": "Testataan…",
+				"ok": "Luettelo vastaa: {{hits}} {{hits:plural; one:tulos; other:tulosta;}} ajassa {{ms}} ms.",
+				"unreachable": "Luettelo ei vastaa: tarkista osoite, portti ja tietokanta.",
+				"timeout": "Luettelo ei vastannut ajoissa.",
+				"protocol": "Luettelo vastasi virheellä: tarkista tietokanta, muoto ja merkistökoodaus.",
+				"spawn": "Ohjelma yaz-client ei ole käytettävissä palvelimella."
+			}
+		},
+		"barcodeFormats": {
+			"title": "Viivakoodien muodot",
+			"hint": "Miten uusien niteiden ja uusien korttien koodit muodostetaan. Jo tulostetut koodit toimivat edelleen: korvattu muoto säilyy aiempien muotojen joukossa.",
+			"preset": "Valmiit muodot",
+			"presets": {
+				"standard": "Vakio (2026-E0267, U012345)",
+				"classic": "Klassinen (2026-02678, 0000012344)",
+				"prefix": "Kirjain edessä (L-2602670, T0123455)",
+				"custom": "Mukautettu"
+			},
+			"check": "Tarkistusmerkki",
+			"checks": {
+				"mod23": "Kirjain (mod 23)",
+				"damm": "Numero (Damm)",
+				"luhn": "Numero (Luhn)"
+			},
+			"checkHint": "Huomaa väärin luetun tai kirjoitetun koodin. Kirjain on turvallisin ja tekee kortit heti erotettaviksi niteiden koodeista.",
+			"advanced": "Lisäasetukset: muodot yksitellen",
+			"tokens": "YYYY tai YY = vuosi, N = juoksevan numeron numerot, C = tarkistusmerkki, {lib} = kirjaston koodi, - = viiva, isot kirjaimet lainausmerkeissä ('T'). Kirjaimet I, O ja Q eivät ole sallittuja.",
+			"pattern": {
+				"item": "Niteiden muoto",
+				"patron": "Korttien muoto"
+			},
+			"libraryCode": "Kirjaston koodi",
+			"libraryCodeHint": "Vain jos useilla kirjastoilla, joilla on erilliset asennukset, on oltava eri koodit: käytetään muodossa {lib}.",
+			"plainMaxLength": "Vanhojen pelkkien numeroiden pituus",
+			"plainHint": "Suurin numeroiden määrä aiemman järjestelmän korteilla ja niteillä, joilla ei ole muotoa (0, jos sellaisia ei ole).",
+			"plainLongest": "Arkistossa pisimmässä pelkässä numerossa on {{digits}} {{digits:plural; one:numero; other:numeroa;}}.",
+			"distinct": "Niteitä ja kortteja ei voi sekoittaa.",
+			"confusable": "Näillä muodoilla niteet ja kortit voisivat sekoittua:",
+			"warnings": "{{count}} {{count:plural; one:varoitus; other:varoitusta;}}",
+			"inUse": "Muodolla {{pattern}} on yhä {{count}} {{count:plural; one:koodi; other:koodia;}} arkistossa: sitä ei voi poistaa.",
+			"kinds": {
+				"item": "niteet",
+				"card": "kortit"
+			},
+			"heading": {
+				"item": "Niteet",
+				"patron": "Kortit"
+			},
+			"examples": "Esimerkkejä uusista koodeista:",
+			"currentCount": "Tämän muodon koodeja arkistossa: {{count}}",
+			"count": "{{count}} {{count:plural; one:koodi; other:koodia;}}",
+			"noCheck": "ilman tarkistusta",
+			"remove": "Poista",
+			"retired": "Aiemmin käytetyt muodot",
+			"legacy": "Aiemman järjestelmän koodit",
+			"noLegacy": "Ei yhtään.",
+			"addLegacy": "Lisää vanha muoto",
+			"try": "Kokeile koodia",
+			"tryHint": "Tässä kirjoitettu tai luettu koodi tunnistetaan yllä olevilla muodoilla, vaikka niitä ei ole vielä tallennettu.",
+			"tried": {
+				"item": "{{value}}: niteen viivakoodi",
+				"legacy_item": "{{value}}: vanha niteen viivakoodi",
+				"card": "{{value}}: kortin numero",
+				"isbn": "{{value}}: ISBN",
+				"ambiguous": "{{value}}: vanha pelkkä numero (haetaan niteistä ja korteista)",
+				"invalid": "{{value}}: ei tunnistettu tai väärä tarkistusmerkki"
+			},
+			"saved": "Koodien muodot tallennettu",
+			"patternErrors": {
+				"empty": "Tyhjä muoto ({{kind}})",
+				"tooLong": "{{pattern}}: liian pitkä",
+				"badToken": "{{pattern}}: sisältää odottamattoman merkin",
+				"badLetter": "{{pattern}}: kirjain ei ole sallittu (vain isot kirjaimet, ei I, O, Q)",
+				"unclosedQuote": "{{pattern}}: sulkevaa heittomerkkiä puuttuu",
+				"year": "{{pattern}}: vuosi kirjoitetaan YYYY tai YY",
+				"twoYears": "{{pattern}}: vuosi esiintyy kahdesti",
+				"twoCounters": "{{pattern}}: juoksevan numeron on oltava yksi N-ryhmä",
+				"noCounter": "{{pattern}}: juoksevaa numeroa (N) puuttuu",
+				"twoChecks": "{{pattern}}: tarkistusmerkki esiintyy kahdesti",
+				"checkWithoutAlgorithm": "{{pattern}}: muodossa on C, mutta tarkistusta ei ole valittu",
+				"algorithmWithoutCheck": "{{pattern}}: C puuttuu, eli tarkistusmerkin paikka",
+				"noLibraryCode": "{{pattern}}: sisältää {lib}-kohdan, mutta kirjaston koodi on tyhjä",
+				"badLibraryCode": "Kirjaston koodi voi sisältää vain numeroita ja isoja kirjaimia (ei I, O, Q)"
+			},
+			"issues": {
+				"overlap": "{{pattern}} ({{kind}}) ja {{other}} ({{otherKind}}) voivat antaa saman koodin, esimerkiksi {{example}}",
+				"overlapWithoutDash": "{{pattern}} ({{kind}}) ja {{other}} ({{otherKind}}) sekoittuvat, jos lukija menettää viivan, esimerkiksi {{example}}",
+				"overlapLegacy": "Vanhat koodit {{pattern}} ({{kind}}) ja {{other}} ({{otherKind}}) ovat samanmuotoisia: niitä haetaan molemmista",
+				"overlapPlain": "{{pattern}} ({{kind}}) voi antaa koodin, joka on sama kuin vanha pelkkä numero, esimerkiksi {{example}}",
+				"overlapIsbn": "{{pattern}} ({{kind}}) voi antaa koodin, joka on sama kuin ISBN, esimerkiksi {{example}}",
+				"overlapIsbn10": "{{pattern}} ({{kind}}) on muodoltaan ISBN-10 ilman viivoja kirjoitettuna: ratkaisee kortin numero",
+				"lookAlike": "{{pattern}} ({{kind}}) ja {{other}} ({{otherKind}}) näyttävät liian samalta: tarvitaan pituusero vähintään 2 merkkiä, kirjain toisella paikalla tai viiva muualla"
+			}
+		},
+		"schoolLevels": {
+			"title": "Koulutusasteet ja vuosiluokat",
+			"hint": "Koulun vuosiluokat siinä järjestyksessä, jossa niitä käydään, ryhmiteltyinä koulutusasteittain. Koodi pysyy oppilailla: käytössä olevan vuosiluokan poistaminen tai koodin vaihtaminen kysyy, minne sen oppilaat ja luokat siirretään.",
+			"preset": "Malli",
+			"presetApply": "Käytä tätä mallia",
+			"presetHint": "Korvaa alla olevat koulutusasteet ja vuosiluokat mallin mukaisilla; mitään ei tallenneta ennen kuin painetaan ”Tallenna”.",
+			"custom": "Oma",
+			"stages": "Koulutusasteet",
+			"stageCode": "Koodi",
+			"stageName": "Nimi",
+			"stageLabel": "Miten luokka kirjoitetaan",
+			"addStage": "Lisää koulutusaste",
+			"stageLabelHint": "”Miten luokka kirjoitetaan” koulutusasteella koskee sen vuosiluokkia koulun asetuksen sijaan; ilman {group}-kohtaa luokka on pelkkä vuosiluokka (Q1, ilman osastoja). Tyhjä: kuten koulun muilla.",
+			"levels": "Vuosiluokat",
+			"levelCode": "Koodi",
+			"levelLabel": "Luokassa",
+			"levelName": "Nimi",
+			"levelStage": "Koulutusaste",
+			"levelNext": "Seuraava vuosiluokka",
+			"levelAliases": "Muut nimet",
+			"levelAliasesPlaceholder": "Pilkuilla erotettuina",
+			"nextFollowing": "Seuraava vuosiluokka",
+			"nextLeaves": "Poistuu koulusta",
+			"nextChoices": "Valinta useiden vuosiluokkien välillä",
+			"choiceAdd": "Lisää valinta…",
+			"choiceRemove": "Poista {{name}}",
+			"choiceDefault": "oletus",
+			"addLevel": "Lisää vuosiluokka",
+			"inUse": "Käytössä",
+			"moveUp": "Siirrä ylös",
+			"moveDown": "Siirrä alas",
+			"example": "Esimerkki: {{label}}",
+			"saved": "Koulutusasteet ja vuosiluokat tallennettu",
+			"problems": {
+				"code": "Koodit: kirjaimia, numeroita ja viiva (vuosiluokalle enintään 8), kaikki erilaisia.",
+				"required": "Tunniste ja nimi ovat pakollisia.",
+				"template": "Koulutusasteen ”Miten luokka kirjoitetaan” on sisällettävä {level}.",
+				"stageUsed": "Vuosiluokkia sisältävää koulutusastetta ei voi poistaa.",
+				"structure": "Rakenne ei ole kelvollinen: {{details}}"
+			},
+			"move": {
+				"title": "Minne oppilaat ja luokat menevät?",
+				"hint": "Jotkin poistetut vuosiluokat ovat yhä oppilaiden tai luokkien käytössä. Valitse jokaiselle vuosiluokka, johon ne siirretään; lainat säilyttävät luokan, jossa ne tehtiin.",
+				"level": "{{name}}: {{pupils}} {{pupils:plural; one:oppilas; other:oppilasta;}}, {{classes}} {{classes:plural; one:luokka; other:luokkaa;}}",
+				"choose": "Valitse vuosiluokka…",
+				"confirm": "Siirrä ja tallenna",
+				"done": "Siirrettiin {{pupils}} {{pupils:plural; one:oppilas; other:oppilasta;}} ja {{classes}} {{classes:plural; one:luokka; other:luokkaa;}}."
+			}
+		}
+	},
+	"templates": {
+		"title": "Tulostuspohjat",
+		"hint": "Kirjastokorttien, tarrojen, kuittien ja muistutuskirjeiden pohjien kansiot. BiblioVivan mukana toimitettuja voi mukauttaa (tehdään kopio samalla nimellä) tai monistaa toisella nimellä; kopion kuvat ja kirjasimet lähetetään tässä. Jokainen toimenpide näkyy asetusten historiassa, ja sen voi perua.",
+		"source": {
+			"builtin": "BiblioVivan mukana toimitettu",
+			"customised": "Mukautettu",
+			"added": "Lisätty"
+		},
+		"broken": "Virheitä",
+		"customise": "Mukauta",
+		"duplicate": "Monista",
+		"rename": "Nimeä uudelleen",
+		"restore": "Takaisin alkuperäiseen",
+		"usedBy": "Käytössä: {{settings}}.",
+		"unused": "Mikään asetus ei käytä sitä.",
+		"assets": "Kuvat ja kirjasimet ({{count}})",
+		"noAssets": "Ei tiedostoja.",
+		"usedIn": "käytössä: {{files}}",
+		"assetUnused": "ei käytössä",
+		"upload": "Lähetä tiedosto",
+		"uploadHint": "PNG, JPEG, WebP, GIF, SVG tai kirjasimet WOFF2, WOFF, TTF; enintään {{maxMb}} MB.",
+		"builtinAssets": "Jos haluat vaihtaa BiblioVivan mukana toimitetun pohjan kuvat, mukauta pohja ensin.",
+		"files": "Pohjan tiedostot ({{count}})",
+		"filesHint": "HTML:n ja CSS:n sisältö muokataan visuaalisessa pohjaeditorissa.",
+		"done": {
+			"duplicate": "Pohja monistettu",
+			"customise": "Pohja mukautettu: sen kopiota voi muokata",
+			"rename": "Pohjan nimi muutettu",
+			"delete": "Pohja poistettu",
+			"upload": "{{name}} lähetetty",
+			"removeAsset": "{{name}} poistettu"
+		},
+		"errors": {
+			"notFound": "Pohjaa tai tiedostoa ei löytynyt.",
+			"badName": "Virheellinen nimi: pienet kirjaimet, numerot, viivat ja alaviivat.",
+			"exists": "Tämän niminen pohja on jo olemassa.",
+			"builtin": "BiblioVivan mukana toimitettuja pohjia ei muuteta: mukauta tai monista ne.",
+			"inUse": "Pohjaa käyttää: {{details}}. Valitse ensin toinen pohja.",
+			"badAsset": "”{{name}}” ei ole sallittu tiedosto (PNG, JPEG, WebP, GIF, SVG ilman skriptejä, WOFF2, WOFF, TTF).",
+			"assetTooLarge": "”{{name}}” on liian suuri: enintään {{maxMb}} MB.",
+			"assetInUse": "Tiedosto on käytössä: {{details}}."
+		},
+		"dialog": {
+			"name": "Kansion nimi",
+			"nameHint": "Pienet kirjaimet, numerot, viivat ja alaviivat.",
+			"badName": "Käytä vain pieniä kirjaimia, numeroita, viivoja ja alaviivoja.",
+			"taken": "Tämän niminen pohja on jo olemassa.",
+			"duplicate": {
+				"title": "Monista {{name}}",
+				"hint": "Luodaan kopio kaikista sen tiedostoista, valmis muokattavaksi.",
+				"confirm": "Monista"
+			},
+			"customise": {
+				"title": "Mukauta {{name}}",
+				"hint": "Samanniminen kopio korvaa alkuperäisen; alkuperäinen pysyy saatavilla, jotta siihen voi palata.",
+				"confirm": "Mukauta"
+			},
+			"rename": {
+				"title": "Nimeä {{name}} uudelleen",
+				"hint": "Tätä pohjaa käyttävät asetukset seuraavat uutta nimeä.",
+				"confirm": "Nimeä uudelleen"
+			},
+			"delete": {
+				"title": "Poista {{name}}",
+				"hint": "Kansio ja sen tiedostot poistetaan; jos se on BiblioVivan mukana toimitetun pohjan kopio, alkuperäinen otetaan taas käyttöön. Tämän voi perua historiasta.",
+				"confirm": "Poista"
+			}
+		},
+		"edit": "Muokkaa"
+	},
+	"languages": {
+		"title": "Kielipaketit",
+		"hint": "Jos haluat käyttää BiblioVivaa toisella kielellä: lataa englannin tai italian esimerkki, käännä JSON-tiedostojen tekstit pitäen avaimet ja kaksinkertaisiin aaltosulkeisiin kirjoitetut paikkamerkit ennallaan, kirjoita kielen nimi tiedostoon pack.json ja lähetä zip-tiedosto. Virheellistä pakettia ei asenneta; puuttuvat tekstit näkyvät englanniksi. Kieli valitaan kohdassa Ulkoasu ja kieli.",
+		"none": "Kielipakettia ei ole asennettu.",
+		"valid": "Kelvollinen",
+		"errorsCount": "{{count}} {{count:plural; one:virhe; other:virhettä;}}",
+		"warnings": "{{count}} {{count:plural; one:puuttuva tai ylimääräinen teksti; other:puuttuvaa tai ylimääräistä tekstiä;}}",
+		"inUse": "Käytössä",
+		"download": "Lataa",
+		"report": "Tarkistuksen tulos",
+		"upload": "Lähetä kielipaketti (zip)",
+		"uploadHint": "Zip-tiedosto, jossa on pack.json ja kielen tiedostot kansiossa, joka on nimetty kielikoodin mukaan (esimerkiksi de/); enintään {{maxMb}} MB.",
+		"examples": "Esimerkit ladattaviksi:",
+		"installed": "Kieli asennettu: {{name}}",
+		"removed": "Kielipaketti poistettu",
+		"removeTitle": "Poistetaanko kielipaketti {{code}}?",
+		"removeHint": "Kielen kansio poistetaan. Tämän voi perua asetusten historiasta.",
+		"errors": {
+			"notAZip": "Tiedosto ei ole zip-tiedosto.",
+			"tooLarge": "Zip-tiedosto on liian suuri: enintään {{maxMb}} MB.",
+			"badLayout": "Zip-tiedoston on sisällettävä vain kielen .json-tiedostot, yhdessä kansiossa, joka on nimetty kielikoodin mukaan. {{details}}",
+			"badCode": "Virheellinen kielikoodi: {{details}} (esimerkiksi de, fr, pt-BR).",
+			"builtIn": "Englanti ja italia ovat valmiina mukana, eikä niitä korvata.",
+			"invalid": "Paketissa on virheitä, eikä sitä asennettu: {{details}}",
+			"inUse": "Se on käytössä oleva kieli: valitse ensin toinen.",
+			"notFound": "Pakettia ei löytynyt.",
+			"unavailable": "Kieliluetteloa tai pakettia ei voitu ladata. Tarkista internet-yhteys tai lähetä zip-tiedosto käsin.",
+			"checksum": "Ladattu paketti on vioittunut, eikä sitä asennettu. Yritä uudelleen."
+		},
+		"release": {
+			"title": "Asennettavat kielet",
+			"hint": "BiblioVivan tämän version kanssa julkaistut kielet. Luettelo luetaan internetistä, ja jokainen paketti tarkistetaan ennen asentamista.",
+			"percent": "{{percent}}% käännetty",
+			"machine": "Automaattinen käännös, jota äidinkielinen henkilö ei ole lukenut",
+			"reviewed": "Käännös, jonka äidinkielinen henkilö on lukenut",
+			"install": "Asenna",
+			"again": "Asenna uudelleen",
+			"installedBadge": "Asennettu",
+			"page": "Julkaisusivu, jolta paketit voi ladata käsin ja lähettää alla",
+			"unavailable": "Kieliluetteloon ei saada yhteyttä: internet-yhteys puuttuu tai tästä versiosta ei ole vielä luetteloa. Zip-tiedoston lähettäminen alla toimii silti."
+		}
+	},
+	"reports": {
+		"title": "Raporttikirjasto",
+		"hint": "BiblioVivan mukana toimitetut raportit ja koulun omat raportit. Raportin mukauttamiseksi lataa se, muokkaa ja lähetä takaisin: samalla koodilla (id) se korvaa alkuperäisen. Ennen asentamista tarkistetaan muoto, kyselyn turvallisuus sekä taulut ja sarakkeet, joita se käyttää. Ohje raporttien kirjoittamiseen on tiedostossa docs/reports-authoring.md.",
+		"upload": "Lähetä raportti (JSON)",
+		"try": "Kokeile",
+		"download": "Lataa",
+		"problems": "Näitä tiedostoja ei ladata:",
+		"installed": "Raportti {{id}} asennettu",
+		"replaced": "Raportti {{id}} korvattu",
+		"removed": "Tiedosto poistettu",
+		"removeTitle": "Poistetaanko {{file}}?",
+		"removeHint": "Tiedosto poistetaan asetuksista. Tämän voi perua historiasta.",
+		"restoreHint": "Koulun versio poistetaan: BiblioVivan mukana toimitettu raportti otetaan taas käyttöön. Tämän voi perua historiasta.",
+		"origin": {
+			"builtin": "BiblioVivan mukana toimitettu",
+			"customised": "Mukautettu",
+			"added": "Lisätty"
+		},
+		"errors": {
+			"tooLarge": "Tiedosto on liian suuri: enintään {{maxKb}} KB.",
+			"badJson": "Tiedosto ei ole kelvollinen JSON: {{details}}",
+			"invalid": "Määritys ei ole kelvollinen: {{details}}",
+			"sql": "Kysely ei toimi tässä tietokannassa: {{details}}",
+			"notFound": "Tiedostoa ei löytynyt.",
+			"reservedId": "”new” ei voi olla raportin koodi."
+		},
+		"new": "Uusi raportti",
+		"edit": "Muokkaa",
+		"duplicate": "Monista",
+		"editor": {
+			"editTitle": "Muokkaa raporttia",
+			"newTitle": "Uusi raportti",
+			"copySuffix": "kopio",
+			"builtinHint": "Tämä on valmis raportti: tallennus luo koulun mukautetun kopion samalla nimellä. Kirjastossa ”Takaisin alkuperäiseen” poistaa sen.",
+			"id": "Raportin koodi",
+			"category": "Kategoria",
+			"title": {
+				"it": "Otsikko (italia)",
+				"en": "Otsikko (englanti)"
+			},
+			"description": {
+				"it": "Kuvaus (italia)",
+				"en": "Kuvaus (englanti)"
+			},
+			"restricted": "Vain ylläpitäjille",
+			"tabs": {
+				"label": "Muokkaustapa",
+				"guided": "Ohjattu",
+				"sql": "SQL"
+			},
+			"sqlOnly": "Tämä raportti on kirjoitettu SQL-kielellä: muokkaa sitä SQL-välilehdellä.",
+			"source": "Tiedot",
+			"rows": "Rivit",
+			"rows2": "Rivit, toinen taso",
+			"columns": "Sarakkeet",
+			"columnsHint": "Sarakkeiden kanssa raportista tulee ristiintaulukko, jossa on summat.",
+			"none": "— ei —",
+			"totals": "Summat",
+			"totalsOptions": {
+				"both": "Summarivi ja -sarake",
+				"rows": "Summasarake",
+				"columns": "Summarivi",
+				"none": "Ei summia"
+			},
+			"sort": "Järjestys",
+			"sortDimension": "Rivien järjestyksessä",
+			"sortMeasure": "Suurin arvo ensin",
+			"measures": "Arvot",
+			"oneMeasure": "Ristiintaulukko näyttää yhden arvon.",
+			"filters": "Suodattimet",
+			"filterModes": {
+				"off": "Ei suodatinta",
+				"ask": "Kysytään avattaessa",
+				"fixed": "Kiinteä"
+			},
+			"value": "Arvo",
+			"chart": "Kaavio",
+			"charts": {
+				"bar": "Pylväät",
+				"line": "Viivat",
+				"doughnut": "Rengas"
+			},
+			"compiledHint": "Ohjattu raportti muuttuu tästä SQL:ksi. Jos haluat kirjoittaa sen käsin, käytä ”Muokkaa SQL:nä”: ohjattuun muokkaukseen ei voi palata.",
+			"previewFirst": "Paina ”Esikatselu” nähdäksesi SQL:n.",
+			"convert": "Muokkaa SQL:nä",
+			"convertTitle": "Muutetaanko raportti SQL:ksi?",
+			"convertHint": "Raportista tulee SQL-raportti samoilla sarakkeilla ja parametreilla. Sitä ei voi enää muokata ohjatussa välilehdessä.",
+			"converted": "Raportti on nyt SQL-muodossa",
+			"sqlHint": "Yksi SELECT- tai WITH-lause, parametrit muodossa :nimi.",
+			"json": {
+				"params": "Parametrit (JSON)",
+				"columns": "Sarakkeet (JSON)",
+				"chart": "Kaavio (JSON, valinnainen)",
+				"pivot": "Ristiintaulukko (JSON, valinnainen)"
+			},
+			"jsonHint": "Raporttioppaassa kuvatussa muodossa.",
+			"preview": "Esikatselu",
+			"runPreview": "Esikatselu",
+			"previewHint": "Esikatselu suorittaa raportin parametrien oletusarvoilla (enintään 200 riviä).",
+			"save": "Tallenna",
+			"saved": "Raportti ”{{id}}” tallennettu",
+			"back": "Takaisin kirjastoon",
+			"jsonInvalid": "Korjaa punaisella merkityt JSON-osat ennen tallentamista."
+		}
+	},
+	"designer": {
+		"title": "Muokkaa {{name}}",
+		"design": "Piirros",
+		"code": "Koodi",
+		"preview": "Esikatselu",
+		"front": "Etupuoli",
+		"back": "Takapuoli",
+		"faces": "Puolet tai tarrat",
+		"zoom": "Zoomaus",
+		"grid": "Ruudukko",
+		"gridSteps": {
+			"s0": "Ei mitään (vapaa)",
+			"s05": "0,5 mm",
+			"s1": "1 mm",
+			"s2": "2 mm",
+			"s25": "2,5 mm",
+			"s5": "5 mm",
+			"s10": "10 mm"
+		},
+		"files": "Tiedostot",
+		"problems": "Pohjaa ei voi tulostaa näin:",
+		"saved": "Pohja tallennettu",
+		"notEditable": "Tätä pohjaa ei voi muokata täällä: BiblioVivan mukana toimitetut pohjat on mukautettava ensin.",
+		"canvasHint": "Napsauta ruutua valitaksesi sen, vedä sitä siirtääksesi, käytä kulmaa koon muuttamiseen: paikat ja koot kiinnittyvät valittuun ruudukkoon. Näppäimistöllä nuolet siirtävät sitä yhden ruudukkoaskeleen (Shiftin kanssa noin 5 mm, aina ruudukolla) ja Delete poistaa sen.",
+		"flowHint": "{{count}} {{count:plural; one:tämän puolen elementti on; other:tämän puolen elementit ovat;}} tyyliarkin asettamia (pisteviiva): ensimmäisellä siirrolla kaikkien paikat kirjoitetaan tiedostoon, siihen missä ne nyt ovat.",
+		"lockedHint": "{{count}} {{count:plural; one:tämän puolen osa on; other:tämän puolen osat ovat;}} Mustache-osiossa: {{count:plural; one:sitä muokataan; other:niitä muokataan;}} ”Koodi”-välilehdellä.",
+		"noStock": "Mikään tarra-arkki ei käytä tätä varianttia: piirros näkyy ilman esikatselua.",
+		"codeHint": "Piirros ja koodi muokkaavat samoja tiedostoja: jokainen tässä tehty muutos näkyy myös piirroksessa, ja päinvastoin.",
+		"add": "Lisää",
+		"newText": "Teksti",
+		"noImages": "Jos haluat lisätä kuvia, lähetä ne ensin pohjan kuvien joukkoon.",
+		"types": {
+			"field": "Kenttä",
+			"text": "Teksti",
+			"barcode": "Viivakoodi",
+			"photo": "Valokuva",
+			"pictogram": "Piktogrammi",
+			"image": "Kuva",
+			"box": "Ruutu",
+			"html": "Vapaa HTML",
+			"other": "Elementti"
+		},
+		"fields": {
+			"library_name": "Kirjaston nimi",
+			"patron_first_name": "Etunimi",
+			"patron_last_name": "Sukunimi",
+			"patron_card_number": "Kortin numero",
+			"patron_class_label": "Luokka ja osasto",
+			"patron_level_label": "Luokka (vuosiluokka)",
+			"patron_group": "Osasto",
+			"school_year": "Lukuvuosi",
+			"issued_on": "Myöntöpäivä",
+			"valid_until": "Voimassa asti",
+			"item_barcode": "Viivakoodi (teksti)",
+			"item_call_number": "Paikkamerkintä",
+			"call_head": "Paikkamerkintä: ensimmäinen rivi",
+			"call_rest": "Paikkamerkintä: toinen rivi",
+			"biblio_title_short": "Lyhyt nimeke",
+			"biblio_author_short": "Lyhyt tekijä",
+			"biblio_publication_year": "Julkaisuvuosi",
+			"biblio_series": "Sarja",
+			"biblio_series_number": "Numero sarjassa",
+			"classification_code": "Luokituskoodi",
+			"classification_label": "Luokituksen nimi",
+			"classification_reading_level": "Lukutaso",
+			"item_item_type": "Nidetyyppi"
+		},
+		"field": "Kenttä",
+		"text": "Teksti",
+		"image": "Kuva",
+		"content": "HTML-sisältö",
+		"contentHint": "Ruudun voi siirtää ja muotoilla piirroksesta; sen sisältö kirjoitetaan HTML-muodossa Mustache-kentillä, kuten pohjan tiedostoissa.",
+		"inherited": "Oletus",
+		"unplacedHint": "Tyyliarkki asettaa tämän elementin paikkaan: siirrettäessä sen paikka ja saman puolen muiden elementtien paikat kirjoitetaan tiedostoon.",
+		"geometry": {
+			"x": "X (mm)",
+			"y": "Y (mm)",
+			"w": "Leveys",
+			"h": "Korkeus"
+		},
+		"fontSize": "Koko (pt)",
+		"font": "Kirjasin",
+		"fonts": {
+			"sans": "Groteski",
+			"serif": "Antiikva",
+			"mono": "Tasaleveä"
+		},
+		"bold": "Lihavoitu",
+		"italic": "Kursiivi",
+		"uppercase": "Isot kirjaimet",
+		"align": "Tasaus",
+		"aligns": {
+			"left": "Vasen",
+			"center": "Keskellä",
+			"right": "Oikea"
+		},
+		"color": "Väri",
+		"border": "Reunus",
+		"borderColor": "Reunuksen väri",
+		"fill": "Täyttö",
+		"fillColor": "Täytön väri",
+		"backward": "Siirrä taakse",
+		"forward": "Siirrä eteen",
+		"background": "Puolen tausta",
+		"backgroundColor": "Taustan väri",
+		"backgroundImage": "Taustakuva",
+		"noImage": "Ei mitään",
+		"chooseHint": "Valitse piirroksesta ruutu, jota haluat muokata.",
+		"modes": "Pohjan näkymä",
+		"safeArea": "Turvallinen alue: pidä teksti ja kuvat katkoviivan sisäpuolella, 2 mm reunasta (kun tulostetaan molemmat puolet, takapuoli voi siirtyä millimetrin).",
+		"chooseBackground": "Valitse tausta",
+		"uploadBackground": "Lähetä kuva",
+		"backgroundsTitle": "Valmiit taustat",
+		"backgroundsHint": "Jokainen tausta ulottuu hiukan kortin yli, 3 mm kummallekin puolelle: ylimääräinen osa leikataan pois.",
+		"backgroundAlt": "Tausta {{name}}",
+		"backgroundAdded": "Tausta lisätty puolelle: tallenna, jotta se säilyy.",
+		"backgroundFailed": "Taustaa ei lisätty.",
+		"cardSize": "Kortin koko",
+		"cardWidth": "Leveys (mm)",
+		"cardHeight": "Korkeus (mm)",
+		"cardRotate": "Käännä: pysty tai vaaka",
+		"cardDefault": "Palauta oletuskokoon ({{width}} × {{height}} mm)",
+		"cardDefaultHint": "Tämä on kokoonpanon oletuskoko (Asetukset → Kortit): tässä muutos koskee vain tätä pohjaa.",
+		"cardTooLarge": "{{width}} × {{height}} mm:n kortti ei mahdu A4-arkille: enintään {{maxWidth}} × {{maxHeight}} mm, koska etupuoli ja takapuoli ovat vierekkäin marginaalien sisällä."
+	},
+	"parts": {
+		"groups": {
+			"data": "Kirjaston tiedot",
+			"settings": "Asetukset",
+			"config": "Luokitus, pohjat ja muut"
+		},
+		"all": "Kaikki",
+		"none": "Ei mitään",
+		"accountsConfirm": {
+			"title": "Tuodaanko myös tilit ja salasanat?",
+			"description": "Arkiston henkilökunnan tilit ja salasanat korvaavat nykyiset: se, joka kirjautuu nyt, ei enää pääse sisään nykyisillä tunnuksilla. Jos niitä ei tarvita, jätä tämä kohta valitsematta.",
+			"confirm": "Tuo myös tilit"
+		},
+		"needs": "”{{part}}” palauttaminen vaatii myös: {{needs}}.",
+		"data": {
+			"patrons": "Asiakkaat",
+			"catalog": "Luettelo ja niteet",
+			"loans": "Lainat ja historia",
+			"printLists": "Tulostuslistat",
+			"photos": "Asiakkaiden valokuvat",
+			"covers": "Kansikuvat",
+			"notes": "Henkilökunnan muistiinpanot",
+			"dates": "Kalenterin päivät",
+			"audit": "Toimintaloki"
+		},
+		"config": {
+			"classification": "Luokitus ja piktogrammit",
+			"stocks": "Tarra-arkit",
+			"calendar": "Kalenteri",
+			"reports": "Raportit",
+			"cardTemplates": "Korttipohjat",
+			"pairTemplates": "Tarraparien pohjat",
+			"barcodeTemplates": "Viivakooditarrojen pohjat",
+			"spineTemplates": "Selkäkaistojen pohjat",
+			"slipTemplates": "Kuittien ja muistutuskirjeiden pohjat",
+			"languages": "Kielipaketit",
+			"logo": "Kirjaston logo"
+		}
+	}
+}

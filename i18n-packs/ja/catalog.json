@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "蔵書目録",
+		"search": "タイトル、著者、ISBNで検索…",
+		"new": "新規図書",
+		"empty": "絞り込み条件に一致する図書はありません。",
+		"countFiltered": "{{shown}}{{shown:plural; other:件が絞り込み条件に一致します;}}",
+		"clearFilters": "絞り込みを解除",
+		"filters": {
+			"kind": "種別",
+			"genre": "ジャンル",
+			"class": "分類",
+			"readingLevel": "読書レベル",
+			"itemType": "資料種別",
+			"series": "シリーズ",
+			"all": "すべて",
+			"allF": "すべて",
+			"withdrawn": "除籍された図書も表示"
+		},
+		"columns": {
+			"title": "タイトル",
+			"series": "シリーズ",
+			"author": "著者",
+			"year": "刊行年",
+			"isbn": "ISBN",
+			"classification": "分類",
+			"copies": "資料数",
+			"callNumber": "請求記号",
+			"acquiredAt": "受入"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "蔵書目録を検索",
+		"startHint": "タイトル、著者、出版社、コード、ISBNで検索するか、絞り込み条件で探してください。"
+	},
+	"kinds": {
+		"fiction": "小説",
+		"nonfiction": "非小説"
+	},
+	"fields": {
+		"title": "タイトル",
+		"subtitle": "副題",
+		"originalTitle": "原題",
+		"originalTitleHint": "翻訳書の場合のみ入力します。原語による著作のタイトルです。",
+		"responsibility": "責任表示（扉のとおり）",
+		"author": "著者",
+		"publisher": "出版社",
+		"publicationPlace": "出版地",
+		"publicationYear": "刊行年",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN（ISBNではない）",
+		"physicalDescription": "形態",
+		"series": "シリーズ",
+		"seriesNumber": "シリーズ内の番号",
+		"seriesHint": "例：ハリー・ポッター 3。入力中に、蔵書目録にあるシリーズが表示されます。",
+		"dewey": "デューイ十進分類法（SBNから）",
+		"kind": "種別",
+		"genre": "ジャンル",
+		"classCode": "分類",
+		"readingLevel": "読書レベル",
+		"subjects": "件名",
+		"notes": "メモ",
+		"authorHint": "姓、名の順に入力します。個人の著者がいない場合は、よく使う値を選んでください。",
+		"subjectsHint": "1行に1つ、または読点（、）で区切って入力します。",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "新規図書",
+		"editTitle": "書誌を編集",
+		"create": "書誌を保存",
+		"save": "変更を保存",
+		"identity": "書誌",
+		"publication": "出版情報",
+		"classification": "分類",
+		"more": "その他の情報",
+		"quickPicks": "よく使う値",
+		"unknownPublisher": "出版社不明",
+		"unknownPlace": "出版地不明",
+		"singleCopy": "資料 {{barcode}}",
+		"singleCopyHint": "書誌には資料が1冊だけあります。その資料のデータはここで編集し、書誌と一緒に保存されます。"
+	},
+	"picker": {
+		"kind": "どの種類の図書ですか？",
+		"fiction": "小説",
+		"nonfiction": "非小説",
+		"genre": "ジャンルを選んでください",
+		"class": "分類を選んでください",
+		"readingLevel": "読書レベル",
+		"anyClass": "なし",
+		"back": "主な分類に戻る",
+		"children": "{{label}}の下位の分類",
+		"selected": "選択中：{{label}}",
+		"parentOnly": "「{{label}}」を大まかな分類として使う",
+		"later": "後で分類",
+		"laterHint": "図書は「分類待ち」の一覧に入ります。分類されるまで、その資料は貸出できず、背ラベルも印刷されません。"
+	},
+	"detail": {
+		"heading": "図書の書誌",
+		"tabs": {
+			"copies": "資料",
+			"details": "詳細"
+		},
+		"copies": "{{total}}冊中、{{available}}{{available:plural; other:冊が利用可能;}}",
+		"noCopies": "資料がまだありません。貸出するには資料を追加してください。",
+		"seriesLink": "シリーズ「{{series}}」の図書をすべて表示",
+		"edit": "編集",
+		"delete": "書誌を削除",
+		"addCopies": "資料を追加",
+		"deleteTitle": "書誌「{{title}}」を削除しますか？",
+		"deleteDescription": "書誌は蔵書目録から消えます。資料がない場合にのみ削除できます。",
+		"deleted": "書誌を削除しました",
+		"hasItems": "書誌にはまだ{{count}}{{count:plural; other:冊の資料があります;}}。先に{{count:plural; other:それらを除籍するか削除してください;}}",
+		"columns": {
+			"barcode": "バーコード",
+			"callNumber": "請求記号",
+			"itemType": "資料種別",
+			"readingLevel": "レベル",
+			"status": "状態",
+			"borrower": "貸出先",
+			"acquisition": "受入日",
+			"labels": "ラベル"
+		},
+		"dueOn": "返却期限 {{date}}",
+		"identifiers": "識別情報",
+		"source": "取得元：{{source}}",
+		"created": "{{when}}作成",
+		"updated": "最終更新 {{when}}",
+		"onLoan": "貸出中"
+	},
+	"item": {
+		"addTitle": "資料を追加",
+		"copies": "資料数",
+		"itemType": "資料種別",
+		"callNumber": "請求記号",
+		"callNumberHint": "分類から提案されます。変更できます。",
+		"readingLevel": "資料のレベル",
+		"enumeration": "巻・号",
+		"acquisitionDate": "受入日",
+		"notes": "資料のメモ",
+		"notForLoan": "閲覧専用（貸出しない）",
+		"add": "追加",
+		"added": "{{count}}{{count:plural; other:冊を追加しました;}}：{{barcodes}}",
+		"editTitle": "資料 {{barcode}} を編集",
+		"save": "保存",
+		"saved": "資料を更新しました",
+		"status": "状態を変更",
+		"statusTitle": "資料 {{barcode}} の状態",
+		"newStatus": "新しい状態",
+		"reason": "理由（任意、記録されます）",
+		"statusSaved": "状態を更新しました",
+		"onLoan": "資料は貸出中です。先に返却を登録してください。",
+		"delete": "資料を削除",
+		"deleteTitle": "資料 {{barcode}} を削除しますか？",
+		"deleteDescription": "登録ミスの場合にのみ削除してください。一度でも貸し出した資料は削除できず、除籍が必要です。",
+		"deleted": "資料を削除しました",
+		"hasLoans": "資料には貸出の記録があります。削除せず、除籍してください。",
+		"labelsTitle": "資料 {{barcode}} のラベル"
+	},
+	"errors": {
+		"isbnInvalid": "ISBNが正しくありません（数字を確認してください）",
+		"isbnTaken": "このISBNの書誌はすでにあります",
+		"issnInvalid": "ISSNが正しくありません",
+		"eanInvalid": "EANが正しくありません",
+		"yearImplausible": "刊行年が妥当ではありません",
+		"genreRequired": "ジャンルを選んでください",
+		"genreUnknown": "ジャンルが設定にありません",
+		"genreNotForNonfiction": "非小説にはジャンルがありません",
+		"classCodeRequired": "分類は必須です",
+		"classCodeUnknown": "分類が設定にありません",
+		"classCodeNotForFiction": "小説には分類がありません",
+		"readingLevelNotAllowed": "ここには読書レベルを設定できません",
+		"readingLevelOutOfRange": "読書レベルが設定にありません",
+		"itemTypeUnknown": "資料種別が設定にありません",
+		"acquisitionDateInvalid": "日付が正しくありません（例：2026-04-01）",
+		"copiesOutOfRange": "一度に1冊から100冊まで"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "テスト用プロバイダー"
+		},
+		"errors": {
+			"unreachable": "サービスに接続できません。インターネット接続を確認し、後でもう一度お試しください。",
+			"timeout": "サービスが時間内に応答しませんでした。後でもう一度お試しください。",
+			"protocol": "サービスが予期しない応答を返しました。データは手入力できます。",
+			"http": "サービスがエラーで応答しました。後でもう一度お試しください。",
+			"rate_limited": "問い合わせが多すぎるため、サービスがリクエストを受け付けませんでした。後でもう一度お試しください。",
+			"not_configured": "サービスが設定されていません。設定項目が不足しています（例：APIキー）。",
+			"spawn": "このサーバーではyaz-clientプログラムを利用できません。管理者に連絡してください。"
+		},
+		"noHits": "{{provider}}からの結果はありません。",
+		"hits": "{{provider}}から{{count}}{{count:plural; other:件の結果;}}",
+		"fromCache": "キャッシュから"
+	},
+	"fastAdd": {
+		"title": "新規図書",
+		"steps": {
+			"code": "コード",
+			"lookup": "検索",
+			"form": "書誌と資料",
+			"done": "完了"
+		},
+		"code": {
+			"heading": "バーコードを読み取ってください",
+			"label": "ISBNまたはEAN",
+			"placeholder": "978…",
+			"material": "資料種別",
+			"noCode": "コードなし",
+			"noCodeHint": "タイトルと著者で検索するか、書誌を手入力してください。",
+			"manual": "手入力",
+			"notACode": "読み取ったコードはISBNでもEANでもありません。数字を確認するか、「コードなし」を選んでください。",
+			"eanNotIsbn": "EAN {{ean}} を読み取りました。ISBNではないため、書誌は手入力してください。",
+			"cameraNotIsbn": "ISBNではありません。図書のバーコードを枠内に合わせてください。"
+		},
+		"search": {
+			"heading": "タイトルと著者で検索",
+			"title": "タイトル",
+			"author": "著者",
+			"submit": "検索",
+			"empty": "少なくともタイトルか著者を入力してください。"
+		},
+		"duplicate": {
+			"heading": "このISBNはすでに蔵書目録にあります",
+			"copies": "{{count}}{{count:plural; other:冊;}}",
+			"addCopy": "資料を追加",
+			"open": "書誌を開く",
+			"another": "別のコードを読み取る"
+		},
+		"lookup": {
+			"searching": "{{providers}}で検索しています…",
+			"best": "最も詳しい",
+			"heading": "見つかった書誌",
+			"pick": "この書誌を使用",
+			"none": "書誌が見つかりませんでした。書誌は手入力できます。",
+			"manual": "手入力",
+			"bySearch": "タイトルで検索",
+			"retry": "再試行",
+			"another": "新しいコード",
+			"source": "情報源：{{provider}}",
+			"providerOk": "{{count}}{{count:plural; other:件の書誌;}}",
+			"providerCached": "キャッシュから",
+			"failed": "エラー"
+		},
+		"form": {
+			"heading": "書誌を確認して資料を追加",
+			"rescan": "別のコードを読み取る",
+			"bestOf": "見つかった{{count}}件のうち最も詳しい書誌です。資料と照らして、刊行年と内容を確認してください。",
+			"otherRecords": "その他の{{count:plural; other:書誌;}}（{{count}}件）",
+			"fromSource": "{{provider}}の書誌です。保存する前にデータを確認してください。",
+			"manualSource": "書誌は手入力されました。",
+			"copiesSection": "資料",
+			"copies": "資料数",
+			"itemType": "資料種別",
+			"callNumber": "請求記号",
+			"readingLevel": "資料のレベル",
+			"acquisitionDate": "受入日",
+			"save": "書誌と資料を保存",
+			"deweySuggested": "デューイ十進分類法の番号{{dewey}}から分類を提案しました。"
+		},
+		"done": {
+			"heading": "書誌を保存しました",
+			"summary": "「{{title}}」、資料{{count}}{{count:plural; other:冊;}}",
+			"summaryCopies": "「{{title}}」に資料を{{count}}{{count:plural; other:冊追加しました;}}",
+			"barcodes": "資料のバーコード",
+			"printLabels": "ラベルを印刷",
+			"addToList": "ラベルの一覧に追加",
+			"open": "書誌を開く",
+			"another": "続けて追加"
+		},
+		"cover": {
+			"title": "表紙",
+			"alt": "図書の表紙",
+			"searching": "オンラインで表紙を検索しています…",
+			"found": "{{provider}}で見つかりました。書誌と一緒に保存されます。違う場合は、図書自体の表紙を撮影してください。",
+			"photo": "表紙の写真。書誌と一緒に保存されます。",
+			"none": "オンラインで表紙が見つかりませんでした。撮影できます。",
+			"empty": "表紙がありません。撮影できます。",
+			"take": "表紙を撮影",
+			"replace": "写真に差し替え",
+			"remove": "取り除く",
+			"saving": "表紙を保存しています…",
+			"failed": "表紙は保存されませんでした。図書の書誌から追加できます。"
+		}
+	},
+	"cover": {
+		"title": "表紙",
+		"take": "表紙を撮影",
+		"upload": "ファイルをアップロード",
+		"change": "表紙を変更",
+		"delete": "表紙を削除",
+		"deleteTitle": "表紙を削除しますか？",
+		"deleteDescription": "画像はサーバーから削除されます。新しい画像を撮影できます。",
+		"shoot": "撮影",
+		"loading": "補正モジュールを読み込んでいます（{{loaded}} / {{total}} MB）。初回のみです。",
+		"loadingShort": "補正モジュールを読み込んでいます（{{loaded}} MB）。初回のみです。",
+		"loadFailed": "補正モジュールを読み込めませんでした。接続を確認して、もう一度お試しください。",
+		"detecting": "表紙の端を探しています…",
+		"notFound": "端を自動で見つけられませんでした。角を表紙の上までドラッグしてください。",
+		"adjustHint": "4つの角を表紙の端までドラッグしてから、補正してください。",
+		"straighten": "補正",
+		"result": "結果",
+		"use": "この表紙を使用",
+		"retake": "撮り直す",
+		"cancel": "取り消し",
+		"saved": "表紙を保存しました",
+		"deleted": "表紙を削除しました",
+		"placeholder": "表紙なし",
+		"alt": "{{title}}の表紙",
+		"cameraHint": "表紙全体が入るように枠に合わせてください。斜めでも構いません。撮影後に補正されます。",
+		"errors": {
+			"too_large": "ファイルが大きすぎます。上限は{{maxMb}} MBです。",
+			"not_an_image": "ファイルは読み取れる画像ではありません。",
+			"unsupported_format": "対応していない画像形式です（JPEG、PNG、WebP、HEICを使用してください）。",
+			"empty": "ファイルが選択されていません。"
+		},
+		"download": "表紙をダウンロード",
+		"downloading": "オンラインで表紙を検索しています…",
+		"downloaded": "{{provider}}から表紙をダウンロードしました",
+		"downloadNotFound": "このISBNの表紙はオンラインで見つかりませんでした。撮影できます。",
+		"downloadNoIsbn": "書誌にISBNがありません。表紙は撮影してください。"
+	},
+	"export": {
+		"copiesTotal": "資料数",
+		"copiesAvailable": "利用可能",
+		"callNumber": "請求記号",
+		"acquiredAt": "受入"
+	},
+	"import": {
+		"title": "蔵書目録を取り込む",
+		"upload": {
+			"file": "CSVファイル",
+			"hint": "資料1点につき1行です。図書の情報は、その資料の行に繰り返し入ります。タイトル、著者、出版社は必須です。下でダウンロードできるひな形の見出しを使い、必要な列を入れてください。Kohaから移行する場合は、管理者ガイドで説明されている書き出しを使ってください。",
+			"submit": "アップロード"
+		},
+		"mapping": {
+			"uncertain": "列が認識されませんでした。続ける前に、それぞれの列の項目を指定してください。",
+			"remembered": "このファイルの前回の取り込みで使った列を覚えています。",
+			"specialValues": "著者または出版社がない場合の特別な値（「{{author}}」、「{{publisher}}」）",
+			"specialValuesHint": "この選択がない場合、著者または出版社のない行はエラーになります。",
+			"validate": "ファイルを確認",
+			"without": {
+				"biblioKey": "biblio_key列がない場合、同じ図書の資料はISBNでまとめられます。ISBNのない行はそれぞれ別のタイトルになります。",
+				"barcode": "barcode列がない場合、資料のバーコードは自動で作られます。取り込み後にラベルを印刷してください。",
+				"classification": "classification列がない場合、図書は「分類待ち」の一覧に入ります。分類されるまで、その資料は貸出できません。"
+			}
+		},
+		"fields": {
+			"biblioKey": "タイトルのキー（biblionumber）",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "タイトル",
+			"subtitle": "副題",
+			"originalTitle": "原題",
+			"responsibility": "責任表示",
+			"author": "著者",
+			"publisher": "出版社",
+			"publicationPlace": "出版地",
+			"publicationYear": "刊行年",
+			"physicalDescription": "形態",
+			"series": "シリーズ",
+			"seriesNumber": "シリーズ内の番号",
+			"dewey": "デューイ十進分類法の番号",
+			"classification": "分類（ジャンルまたは件名、Kohaのccode）",
+			"readingLevel": "読書レベル",
+			"subjects": "件名",
+			"notes": "タイトルのメモ",
+			"barcode": "資料のバーコード",
+			"callNumber": "請求記号",
+			"itemType": "資料種別",
+			"enumeration": "巻",
+			"status": "状態",
+			"notForLoan": "貸出対象外",
+			"acquisitionDate": "受入日",
+			"itemNotes": "資料のメモ"
+		},
+		"preview": {
+			"ready": "エラーはありません。取り込みができます。",
+			"blocked": "ファイルのエラーを直してから、もう一度確認してください。エラーのあるファイルは取り込めません。",
+			"nothing": "ファイルのすべての資料がすでに蔵書目録にあります。取り込むものはありません。",
+			"titles": "{{new}}{{new:plural; other:件の新規書誌;}}、すでに蔵書目録にある{{existing}}件（資料が追加されます）",
+			"columns": {
+				"title": "タイトル",
+				"barcode": "バーコード",
+				"classification": "分類"
+			},
+			"question": {
+				"title": "同じタイトルの資料で読書レベルが異なる",
+				"text": "{{count}}{{count:plural; other:件の書誌;}}で、資料ごとに読書レベルが異なります。読書レベルは書誌ではなく資料ごとに持たせることができます。これは「資料ごとの読書レベル」の設定で、蔵書目録全体に適用され、すでにある書誌の読書レベルはその資料に移ります。",
+				"yes": "はい、資料ごとの読書レベルにする",
+				"no": "いいえ、エラーとして直す"
+			},
+			"commit": "取り込む",
+			"back": "列の指定に戻る",
+			"generatedBarcodes": "バーコードのない資料{{count}}{{count:plural; other:冊;}}：バーコードを自動で作成してから、ラベルを印刷します。",
+			"toClassify": "分類のない新規の書誌{{count}}{{count:plural; other:件;}}は、{{count:plural; other:「分類待ち」に入ります;}}。"
+		},
+		"reasons": {
+			"tooLong": "列{{column}}の文章が長すぎます（最大{{max}}文字）",
+			"isbnInvalid": "ISBNが正しくありません：「{{value}}」",
+			"classificationUnknown": "分類が設定にありません：「{{value}}」",
+			"barcodeInvalid": "バーコードに使用できない文字があります：「{{value}}」",
+			"barcodeCheckDigit": "バーコードの検査文字が正しくありません：「{{value}}」",
+			"barcodeDuplicateInFile": "このバーコードは{{line}}行目ですでに使われています",
+			"barcodeTaken": "バーコード{{value}}は、蔵書目録の別の資料にすでに割り当てられています",
+			"barcodeIsCard": "コード{{value}}は利用者カードの番号であるか、それに似ています。資料に利用者カードのコードは使えません",
+			"statusUnknown": "状態を認識できません：「{{value}}」（利用可能、紛失、破損、修理中、除籍）",
+			"notForLoanUnknown": "「貸出対象外」の値を認識できません：「{{value}}」（はい/いいえ）",
+			"dateInvalid": "日付が正しくありません：「{{value}}」（形式：YYYY-MM-DD または DD/MM/YYYY）",
+			"authorMissing": "著者がありません（「特別な値」を設定すると Anonimo になります）",
+			"publisherMissing": "出版社がありません（「特別な値」を設定すると s.n. になります）",
+			"titleMissing": "タイトルがありません",
+			"groupConflict": "行{{line}}と同じキーですが、タイトルが異なります",
+			"classQuestion": "資料の読書レベルが異なります（{{classes}}）：下の質問に答えてください",
+			"classDiffers": "資料ごとの読書レベルがオフのため、資料の読書レベルが異なります（{{classes}}）",
+			"copyExists": "資料はすでに蔵書目録にあるため、スキップされます",
+			"mergedIntoExisting": "蔵書目録にすでにある書誌に追加されます（同じキーまたは同じISBN）"
+		},
+		"done": {
+			"title": "蔵書目録を取り込みました",
+			"summary": "新規の書誌{{titlesCreated}}{{titlesCreated:plural; other:件;}}、資料{{copiesCreated}}{{copiesCreated:plural; other:冊;}}を追加しました（すでにあった書誌{{titlesMerged}}件、スキップした資料{{copiesSkipped}}冊）。",
+			"classPerItem": "資料ごとの読書レベルを有効にしました。",
+			"batch": "取り込み番号{{id}}：元のファイルは保存されています。",
+			"labels": "バーコードのない資料のラベルを印刷",
+			"open": "蔵書目録へ移動",
+			"again": "別のファイルを取り込む"
+		},
+		"columns": {
+			"title": {
+				"hint": "図書のタイトルです。"
+			},
+			"author": {
+				"hint": "姓、名の順。空欄はエラーになります（「特別な値」を設定した場合を除く）。"
+			},
+			"publisher": {
+				"hint": "出版社。空欄の扱いは著者と同じです。"
+			},
+			"biblioKey": {
+				"hint": "旧システムでのタイトルのコード（Kohaのbiblionumber）。資料をまとめて保持します。",
+				"missing": "資料はISBNでまとめられます"
+			},
+			"barcode": {
+				"hint": "資料にすでに付いているバーコード。",
+				"missing": "バーコードは自動で作られ、ラベルを印刷します"
+			},
+			"classification": {
+				"hint": "ジャンル（小説）または件名（非小説）のコード。",
+				"missing": "図書は「分類待ち」に入ります"
+			},
+			"readingLevel": {
+				"hint": "読書レベル（小説）。"
+			},
+			"isbn": {
+				"hint": "ISBN-10またはISBN-13。"
+			},
+			"issn": {
+				"hint": "雑誌の場合。"
+			},
+			"ean": {
+				"hint": "DVDなどの資料のEANコード。"
+			},
+			"subtitle": {
+				"hint": "副題。"
+			},
+			"originalTitle": {
+				"hint": "翻訳書のみ：原語のタイトル。"
+			},
+			"responsibility": {
+				"hint": "挿絵画家、翻訳者など。"
+			},
+			"publicationPlace": {
+				"hint": "出版地。"
+			},
+			"publicationYear": {
+				"hint": "刊行年。"
+			},
+			"physicalDescription": {
+				"hint": "ページ数、挿絵、判型。"
+			},
+			"series": {
+				"hint": "シリーズ（出版社の叢書ではない）。"
+			},
+			"seriesNumber": {
+				"hint": "シリーズ内の番号。"
+			},
+			"dewey": {
+				"hint": "デューイ十進分類法の番号。参考用のみ。"
+			},
+			"subjects": {
+				"hint": "セミコロン（;）またはコンマ（,）で区切ったキーワード。"
+			},
+			"notes": {
+				"hint": "タイトルのメモ。"
+			},
+			"callNumber": {
+				"hint": "請求記号。ない場合は提案されます。"
+			},
+			"itemType": {
+				"hint": "資料種別（図書、DVDなど）。ない場合は、設定の最初の資料種別になります。"
+			},
+			"enumeration": {
+				"hint": "巻。複数巻の著作の場合。"
+			},
+			"status": {
+				"hint": "利用可能、紛失、破損、修理中、除籍。"
+			},
+			"notForLoan": {
+				"hint": "閲覧専用の資料には1または「はい」。"
+			},
+			"acquisitionDate": {
+				"hint": "受入日。ない場合は今日の日付になります。"
+			},
+			"itemNotes": {
+				"hint": "資料のメモ。"
+			}
+		}
+	},
+	"batch": {
+		"selected": "選択した資料の内容を変更",
+		"title": "資料を変更",
+		"scope": "{{count}}{{count:plural; other:冊;}}",
+		"operation": "変更する項目",
+		"operations": {
+			"status": "状態",
+			"itemType": "資料種別",
+			"notForLoan": "貸出対象外",
+			"readingLevel": "資料のレベル",
+			"acquisitionDate": "受入日"
+		},
+		"value": "新しい値",
+		"yes": "はい",
+		"no": "いいえ",
+		"noClass": "レベルなし",
+		"reason": "理由",
+		"reasonHint": "紛失と除籍の場合は必須です。各資料の記録に残ります。",
+		"check": "確認",
+		"apply": "{{count}}{{count:plural; other:冊に適用;}}",
+		"plan": {
+			"changes": "{{count}}{{count:plural; other:冊が変わります;}}",
+			"onLoan": "貸出中の{{count}}{{count:plural; other:冊は変更されません（先に返却してください）;}}",
+			"unchanged": "すでに同じ値の{{count}}{{count:plural; other:冊;}}",
+			"notFound": "存在しなくなった{{count}}{{count:plural; other:冊;}}",
+			"notAllowed": "小説ではない{{count}}{{count:plural; other:冊;}}：読書レベルは適用されません",
+			"none": "変更する資料がありません。"
+		},
+		"excludedTitle": "変更されない資料",
+		"done": "{{count}}{{count:plural; other:冊を変更しました;}}",
+		"errors": {
+			"reasonRequired": "理由を入力してください。紛失と除籍では必須です。",
+			"itemTypeUnknown": "資料種別が設定にありません。",
+			"readingLevelNotAllowed": "資料ごとの読書レベルがオンになっていません。",
+			"readingLevelOutOfRange": "読書レベルが設定にありません。",
+			"dateInvalid": "日付が正しくありません。",
+			"statusUnknown": "状態が正しくありません。",
+			"classificationUnknown": "設定にあるジャンルまたは件名を選んでください。"
+		},
+		"reclassify": {
+			"button": "再分類",
+			"title": "選択した図書を再分類",
+			"scope": "{{count}}{{count:plural; other:件の書誌;}}",
+			"resuggest": "新しい分類から資料の請求記号を書き直す",
+			"labelsHint": "背ラベル（請求記号が変わる場合はラベルも）が、印刷待ちの一覧に戻ります。",
+			"changes": "{{count}}{{count:plural; other:件の書誌が変わります;}}",
+			"apply": "{{count}}{{count:plural; other:件の書誌を再分類;}}",
+			"done": "{{count}}{{count:plural; other:件の書誌を再分類しました;}}、請求記号{{calls}}{{calls:plural; other:件を書き直しました;}}"
+		}
+	},
+	"search": {
+		"suggest": "コード{{barcode}}は「{{title}}」の資料です。",
+		"openSuggest": "書誌を開く",
+		"available": "利用可能のみ",
+		"yearFrom": "刊行年（から）",
+		"yearTo": "刊行年（まで）",
+		"copiesAvailable": "{{total}}冊中{{available}}冊が利用可能",
+		"noCopies": "資料なし"
+	},
+	"inventory": {
+		"title": "蔵書点検",
+		"defaultName": "蔵書点検",
+		"emptyTitle": "蔵書点検は実施されていません",
+		"emptyHint": "蔵書点検を開始し、棚ごとに資料を読み取ってください。終了時に、一度も読み取られなかった資料は紛失として記録されます。",
+		"name": "蔵書点検の名称",
+		"start": "新規に蔵書点検",
+		"started": "{{when}}に開始",
+		"overall": "図書館全体",
+		"progress": "{{expected}}冊中{{seen}}冊（{{percent}}%）",
+		"counts": "{{scanned}}{{scanned:plural; other:冊を読み取り済み;}}・配架違い{{misplaced}}冊・再発見{{found}}冊",
+		"byShelf": "棚ごとの進捗",
+		"noShelf": "請求記号なし",
+		"scanTitle": "資料を読み取る",
+		"shelf": "棚",
+		"shelfHint": "例：B または 590。ほかの請求記号の資料は配架違いとして表示されます。",
+		"scanLabel": "資料のバーコード",
+		"camera": "カメラで読み取る",
+		"outcomes": {
+			"seen": "{{title}}（{{barcode}}）：読み取りました。",
+			"again": "{{title}}（{{barcode}}）：{{when}}にすでに読み取り済みです。",
+			"misplaced": "{{title}}（{{barcode}}）：配架違いです。請求記号に従って配架し直してください。",
+			"found": "{{title}}（{{barcode}}）：紛失扱いでしたが発見されました。再び利用可能になりました。",
+			"onLoan": "{{title}}（{{barcode}}）：貸出中です。貸出カウンターで返却を登録してください。",
+			"withdrawn": "{{title}}（{{barcode}}）：除籍された資料です。棚から取り除いてください。",
+			"unknown": "{{code}}：このバーコードの資料はありません。"
+		},
+		"missing": "まだ見つかっていない資料（{{count}}）",
+		"allShelves": "すべての棚",
+		"allTypes": "すべての資料種別",
+		"noneMissing": "予定されているすべての資料が読み取られました。",
+		"more": "ほか{{count}}{{count:plural; other:冊;}}があります。すべて見るには一覧を書き出してください。",
+		"close": "蔵書点検を終了",
+		"closeTitle": "蔵書点検を終了しますか？",
+		"closeHint": "一度も読み取られなかった資料{{count}}{{count:plural; other:冊;}}は紛失扱いになります。一週間以内であれば、取り消すために蔵書点検を再開できます。",
+		"closedTitle": "蔵書点検を終了しました",
+		"summary": "予定の{{expected}}{{expected:plural; other:冊;}}のうち{{seen}}冊を読み取り、紛失扱い{{lost}}冊、再発見{{found}}冊、貸出中{{onLoan}}冊、配架違い{{misplaced}}冊です。",
+		"history": "過去の蔵書点検",
+		"reopen": "再開",
+		"errors": {
+			"alreadyOpen": "すでに蔵書点検が実施中です。",
+			"notOpen": "この蔵書点検は終了しています。",
+			"notFound": "蔵書点検が見つかりません。",
+			"tooLate": "終了後一週間以内の場合にのみ再開できます。",
+			"badName": "蔵書点検の名称を入力してください。",
+			"badNotes": "蔵書点検のメモは500字以内にしてください。"
+		},
+		"cameraShelf": "棚 {{shelf}}",
+		"cameraDone": "完了"
+	},
+	"toClassify": {
+		"title": "分類待ち",
+		"label": "分類待ち",
+		"intro": "分類されずに登録された図書を、古いものから表示します。分類されるまで、その資料は貸出できません。",
+		"count": "分類待ちの図書{{count}}{{count:plural; other:冊;}}",
+		"empty": "分類待ちの図書はありません",
+		"emptyHint": "蔵書目録のすべての図書に、ジャンルまたは件名があります。",
+		"start": "分類を始める",
+		"classify": "分類する",
+		"badge": "分類待ち",
+		"badgeHint": "図書が分類されるまで、その資料は貸出できません。",
+		"columns": {
+			"title": "タイトル",
+			"author": "著者",
+			"publisher": "出版社",
+			"year": "刊行年",
+			"isbn": "ISBN",
+			"copies": "資料数",
+			"enteredOn": "登録日"
+		},
+		"flow": {
+			"title": "図書を分類",
+			"saveNext": "保存して次へ",
+			"save": "保存",
+			"skip": "スキップ",
+			"saved": "「{{title}}」を分類しました",
+			"end": "この回で分類する図書はもうありません。",
+			"backToList": "一覧に戻る",
+			"already": "この図書はすでに分類されています。",
+			"callNumber": "資料の請求記号",
+			"callNumberHint": "請求記号のない資料にはこれが付きます。その後、背ラベルを印刷できます。",
+			"dewey": "デューイ十進分類法の番号{{dewey}}は、件名{{code}}に対応します。",
+			"copies": "{{count}}{{count:plural; other:冊;}}",
+			"subjects": "件名",
+			"notes": "メモ"
+		}
+	}
+}

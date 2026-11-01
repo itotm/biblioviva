@@ -1,0 +1,90 @@
+{
+	"id": "reading-index-by-class",
+	"title": {
+		"it": "Indice di lettura per classe",
+		"en": "Reading index by class"
+	},
+	"description": {
+		"it": "Per ogni classe di oggi: studenti, lettori del periodo, quota di lettori e prestiti per studente.",
+		"en": "For each class of today: students, readers of the period, share of readers and loans per student."
+	},
+	"category": "patrons",
+	"params": [
+		{
+			"name": "from",
+			"label": {
+				"it": "Dal",
+				"en": "From"
+			},
+			"type": "date",
+			"required": true,
+			"default": "schoolYearStart"
+		},
+		{
+			"name": "to",
+			"label": {
+				"it": "Al",
+				"en": "To"
+			},
+			"type": "date",
+			"required": true,
+			"default": "today"
+		}
+	],
+	"sql": "SELECT pc.class_label AS class, COUNT(DISTINCT p.id) AS students, COUNT(DISTINCT l.patron_id) AS readers, ROUND(100.0 * COUNT(DISTINCT l.patron_id) / COUNT(DISTINCT p.id), 1) AS share, COUNT(l.id) AS loans, ROUND(1.0 * COUNT(l.id) / COUNT(DISTINCT p.id), 1) AS per_student FROM patron p JOIN patron_class pc ON pc.patron_id = p.id LEFT JOIN loan l ON l.patron_id = p.id AND date(l.issued_at) BETWEEN :from AND :to WHERE p.status = 'active' AND p.patron_type = 'student' GROUP BY pc.group_id, pc.level_code ORDER BY MIN(pc.level_position), pc.class_label",
+	"columns": [
+		{
+			"key": "class",
+			"label": {
+				"it": "Classe",
+				"en": "Class"
+			},
+			"type": "text"
+		},
+		{
+			"key": "students",
+			"label": {
+				"it": "Studenti",
+				"en": "Students"
+			},
+			"type": "int"
+		},
+		{
+			"key": "readers",
+			"label": {
+				"it": "Lettori",
+				"en": "Readers"
+			},
+			"type": "int"
+		},
+		{
+			"key": "share",
+			"label": {
+				"it": "Lettori sul totale",
+				"en": "Share of readers"
+			},
+			"type": "percent"
+		},
+		{
+			"key": "loans",
+			"label": {
+				"it": "Prestiti",
+				"en": "Loans"
+			},
+			"type": "int"
+		},
+		{
+			"key": "per_student",
+			"label": {
+				"it": "Prestiti per studente",
+				"en": "Loans per student"
+			},
+			"type": "number"
+		}
+	],
+	"chart": {
+		"type": "bar",
+		"x": "class",
+		"y": "share"
+	}
+}

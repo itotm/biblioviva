@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "Nyitott kölcsönzések",
+		"overdue": "Lejárt",
+		"issuedToday": "Ma kölcsönzött",
+		"returnedToday": "Ma visszavéve",
+		"withoutCard": "Nyomtatott olvasójegy nélküli olvasók",
+		"withoutPhoto": "Fénykép nélküli olvasók",
+		"toClassify": "Osztályozásra váró könyvek",
+		"pendingLabels": "Címke nélküli könyvek"
+	},
+	"tilesTitle": "A könyvtár ma",
+	"actions": {
+		"title": "Gyors műveletek"
+	},
+	"dueWeek": {
+		"title": "Ezen a héten esedékes",
+		"none": "Nincs olyan kölcsönzés, amelynek határideje legkésőbb {{day}}.",
+		"more": "és még {{count}} további",
+		"due": "határidő: {{date}}"
+	},
+	"inventory": {
+		"title": "Állományellenőrzés",
+		"continue": "Folytatás"
+	},
+	"install": {
+		"title": "Hozzáadás a főképernyőhöz",
+		"hint": "A BiblioViva a telefonon az ikonjára koppintva, teljes képernyőn, alkalmazásként nyílik meg.",
+		"install": "Telepítés",
+		"fromMenu": "Nyissa meg a Firefox ⋮ menüjét, és válassza a „Telepítés” vagy a „Hozzáadás a főképernyőhöz” lehetőséget.",
+		"later": "Most nem"
+	},
+	"upcoming": {
+		"title": "Közelgő dátumok",
+		"none": "Nincs dátum a következő {{days:plural; one:napban; other:{{days}} napban;}}.",
+		"more": "és még {{count}} további",
+		"open": "Naptár megnyitása"
+	}
+}

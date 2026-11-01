@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "Opslaan",
+		"cancel": "Annuleren",
+		"close": "Sluiten",
+		"confirm": "Bevestigen",
+		"delete": "Verwijderen",
+		"edit": "Bewerken",
+		"search": "Zoeken",
+		"export": "Exporteren",
+		"back": "Terug",
+		"retry": "Opnieuw proberen",
+		"backTo": "Terug naar {{page}}",
+		"more": "Meer acties"
+	},
+	"similar": {
+		"label": "Vergelijkbaar",
+		"count": "plus {{count}} vergelijkbare, gevonden door een typefout te corrigeren",
+		"hint": "Gevonden door een typefout te corrigeren: controleer of het de gezochte is."
+	},
+	"status": {
+		"loading": "Laden…",
+		"error": "Er is iets misgegaan"
+	},
+	"statuses": {
+		"item": {
+			"available": "Beschikbaar",
+			"onLoan": "In uitleen",
+			"lost": "Vermist",
+			"damaged": "Beschadigd",
+			"inRepair": "In reparatie",
+			"withdrawn": "Afgevoerd",
+			"notForLoan": "Alleen raadplegen"
+		},
+		"loan": {
+			"open": "Lopend",
+			"dueSoon": "Verloopt binnenkort",
+			"overdue": "Te laat",
+			"returned": "Teruggebracht"
+		},
+		"patron": {
+			"active": "Actief",
+			"anonymized": "Verwijderd"
+		},
+		"print": {
+			"pending": "Af te drukken",
+			"printed": "Afgedrukt"
+		}
+	},
+	"list": {
+		"selected": "{{count}} {{count:plural; one:geselecteerd; other:geselecteerd;}}"
+	},
+	"scan": {
+		"label": "Barcode",
+		"placeholder": "Scan of typ een code",
+		"submit": "Code zoeken",
+		"camera": "Camera",
+		"cameraTitle": "Scannen met de camera",
+		"errors": {
+			"empty": "Geen code ingevoerd.",
+			"item_check_digit": "De barcode van het exemplaar heeft een verkeerd controleteken: lees hem opnieuw.",
+			"card_check_digit": "Het nummer van de lenerspas heeft een verkeerd controleteken: lees het opnieuw.",
+			"isbn_check_digit": "De ISBN heeft een verkeerd controlecijfer: controleer de cijfers.",
+			"unrecognised": "Code niet herkend: controleer of de barcodescanner Code 39 en Code 128 leest."
+		},
+		"invalidRead": "Ongeldige code ({{code}}): lezen bezig.",
+		"invalidShort": "Ongeldige code, opnieuw lezen…",
+		"useAnyway": "{{code}} toch gebruiken"
+	},
+	"camera": {
+		"start": "Camera starten",
+		"stop": "Camera stoppen",
+		"switch": "Camera wisselen",
+		"torch": "Lamp",
+		"snapshot": "Foto maken",
+		"device": "Camera",
+		"starting": "De camera wordt gestart…",
+		"errors": {
+			"insecure": "De camera werkt alleen via een beveiligde verbinding (https): geopend via het lokale netwerk zonder Tailscale kan de app hem niet gebruiken. Gebruik de barcodescanner of upload een bestand, of open de app via het Tailscale-adres.",
+			"denied": "Toestemming geweigerd: sta het gebruik van de camera toe in de instellingen van de browser en probeer het opnieuw.",
+			"notFound": "Geen camera gevonden op dit apparaat.",
+			"busy": "De camera wordt al gebruikt door een andere app.",
+			"generic": "De camera kon niet worden gestart ({{message}}).",
+			"timeout": "De camera antwoordde niet. Controleer of de browser nog om toestemming vraagt, of die voor deze site eerder niet is geweigerd (pictogram naast het adres)."
+		},
+		"permissionHint": "Als de browser vraagt om toestemming de camera te gebruiken (meestal naast de adresbalk), kiest u “Toestaan”."
+	},
+	"clipboard": {
+		"failed": "Kopiëren niet gelukt: selecteer de tekst en kopieer hem met de hand."
+	},
+	"form": {
+		"errorsTitle": "Controleer de gemarkeerde velden",
+		"field": "Veld {{field}}"
+	},
+	"confirm": {
+		"title": "Bevestigen?"
+	},
+	"export": {
+		"csv": "CSV (spreadsheet, tekst)",
+		"ods": "ODS (LibreOffice / Excel)"
+	},
+	"demo": {
+		"panel": "Deze installatie bevat voorbeeldgegevens, geladen op {{when}}: {{patrons}} {{patrons:plural; one:lener; other:leners;}}, {{biblios}} {{biblios:plural; one:titelbeschrijving; other:titelbeschrijvingen;}}, {{items}} {{items:plural; one:exemplaar; other:exemplaren;}}, {{loans}} {{loans:plural; one:uitlening; other:uitleningen;}}. Alles is verzonnen: geen echte persoon."
+	},
+	"import": {
+		"header": "De eerste rij is een kop",
+		"column": "Kolom {{n}}",
+		"ignore": "— negeren —",
+		"counts": {
+			"new": "{{count}} {{count:plural; one:nieuwe; other:nieuwe;}}",
+			"update": "{{count}} bij te werken",
+			"unchanged": "{{count}} {{count:plural; one:ongewijzigd; other:ongewijzigd;}}",
+			"error": "{{count}} {{count:plural; one:fout; other:fouten;}}"
+		},
+		"onlyErrors": "Alleen fouten tonen",
+		"info": "{{rows}} {{rows:plural; one:rij; other:rijen;}} · codering {{encoding}} · scheidingsteken “{{delimiter}}”",
+		"steps": {
+			"upload": "Bestand",
+			"mapping": "Kolommen",
+			"preview": "Controleren",
+			"done": "Voltooid"
+		},
+		"line": "Regel",
+		"status": "Resultaat",
+		"reason": "Details",
+		"statuses": {
+			"new": "Nieuw",
+			"update": "Bijwerken",
+			"unchanged": "Ongewijzigd",
+			"error": "Fout"
+		},
+		"errors": {
+			"empty": "Het bestand is leeg.",
+			"tooLarge": "Het bestand is groter dan {{mb}} MB.",
+			"noRows": "Geen rijen gevonden in het bestand.",
+			"uploadGone": "Het geüploade bestand is niet meer beschikbaar: u moet het opnieuw uploaden.",
+			"notReady": "Het bestand bevat nog fouten: u moet het opnieuw controleren.",
+			"mappingIncomplete": "Verplichte kolommen ontbreken: {{columns}}."
+		},
+		"template": {
+			"title": "Het sjabloon van het bestand",
+			"hint": "Kies de kolommen: het sjabloon bevat alleen de kop en wordt één rij per keer ingevuld (ook een spreadsheet opgeslagen als CSV werkt).",
+			"required": "Verplicht",
+			"keys": "Sleutels",
+			"keysHint": "Ze herkennen wie of wat al is geregistreerd; ze mogen worden weggelaten.",
+			"optional": "Facultatief",
+			"download": "Het sjabloon downloaden",
+			"ifMissing": "Als het ontbreekt: {{text}}."
+		},
+		"groups": {
+			"required": "verplicht",
+			"key": "sleutel"
+		}
+	},
+	"words": {
+		"yes": "Ja",
+		"no": "Nee"
+	},
+	"password": {
+		"show": "Wachtwoord tonen",
+		"hide": "Wachtwoord verbergen"
+	},
+	"demoPublic": {
+		"language": "Taal",
+		"welcome": {
+			"title": "Welkom bij de demo van BiblioViva",
+			"beta": "Public beta",
+			"betaText": "BiblioViva is in public beta: de functies zijn stabiel, maar tot versie 1.0 is niet gegarandeerd dat een update compatibel blijft met de gegevens en instellingen van de vorige versie.",
+			"intro": "BiblioViva is het programma om de bibliotheek van een school te beheren: uitleningen en innames, catalogus, leners met foto's en lenerspassen, etiketten, afdrukken en rapporten. Dit is een openbare demo: alle functies zijn beschikbaar om uit te proberen.",
+			"contents": "Erin vindt u een verzonnen basisschool: {{patrons}} {{patrons:plural; one:leerling of leerkracht; other:leerlingen en leerkrachten;}}, {{biblios}} {{biblios:plural; one:titelbeschrijving; other:titelbeschrijvingen;}} en {{items}} {{items:plural; one:exemplaar; other:exemplaren;}}, met {{openLoans}} {{openLoans:plural; one:lopende uitlening; other:lopende uitleningen;}}, waarvan {{overdueLoans}} te laat. Namen en foto's zijn verzonnen: geen echte persoon.",
+			"reset": "Elke dag om {{time}} keert de demo terug naar de beginsituatie. Wijzigingen aan de configuratie kunt u uitproberen, maar ze worden niet bewaard.",
+			"examples": "In de demo worden tekst en foto's vervangen door een voorbeeld: elke handeling kunt u tot het einde uitproberen, maar wat u typt of fotografeert blijft niet bewaard en geen andere bezoeker ziet het. De imports accepteren alleen de voorbeeldbestanden die u kunt downloaden van de pagina van elke import.",
+			"accountsTitle": "Met welk account inloggen",
+			"accountsHint": "Zoals in de bibliotheek ziet elk account alleen het werk van zijn rol. Gebruikersnaam en wachtwoord vult u in het formulier hierboven in.",
+			"password": "Het wachtwoord is voor elk account hetzelfde:"
+		},
+		"accounts": {
+			"admin": {
+				"name": "Beheer",
+				"does": "ziet alles: naast het werk van de andere accounts ook de configuratie, de medewerkersaccounts, de back-ups, de klassen en de overgang naar het volgende schooljaar."
+			},
+			"prestiti": {
+				"name": "Uitleenbeheer",
+				"does": "de uitleenbalie: leent uit, neemt in en verlengt, volgt de te late uitleningen en drukt de herinneringen af."
+			},
+			"catalogo": {
+				"name": "Catalogisering",
+				"does": "boeken en exemplaren, titelbeschrijvingen opzoeken in SBN (hier gesimuleerd), omslagen, classificatie en etiketten."
+			},
+			"tessere": {
+				"name": "Lenerspassen en foto's",
+				"does": "leerlingen en leerkrachten, foto's en de fotoregistratie van de klassen, het afdrukken van de lenerspassen."
+			},
+			"report": {
+				"name": "Rapporten",
+				"does": "statistieken over uitleningen, catalogus en leners, export van tabellen."
+			}
+		},
+		"blocked": {
+			"config": "In de demo wordt de configuratie niet bewaard: alles kunt u uitproberen, maar wijzigingen worden niet opgeslagen.",
+			"restore": "In de demo is het terugzetten van een back-up uitgeschakeld: de demogegevens worden elke nacht vanzelf opnieuw aangemaakt.",
+			"configImport": "In de demo is het importeren van een configuratie uitgeschakeld: de configuratie van de demo is voor elke bezoeker dezelfde.",
+			"pictures": "De demo laadt geen klasfoto's op: probeer de fotoregistratie met de voorbeeldfoto van een klas.",
+			"sqlReports": "In de demo zijn rapporten in SQL uitgeschakeld; de begeleide rapporten zijn beschikbaar.",
+			"importSize": "In de demo mogen te importeren bestanden hoogstens 1 MB groot zijn.",
+			"printSize": "In de demo worden tegelijk hoogstens 3 vellen afgedrukt: kies minder exemplaren of minder leners.",
+			"importExample": "In de demo kunt u alleen het voorbeeldbestand importeren: het downloaden met de knop van het sjabloon en het ongewijzigd uploaden.",
+			"notesLimit": "In de demo kunnen er per dag maar enkele notities worden geschreven.",
+			"demoData": "In de demo blijven de voorbeeldgegevens staan tot de nachtelijke reset.",
+			"backups": "In de demo zijn handmatige back-ups uitgeschakeld: de demogegevens worden elke nacht vanzelf opnieuw aangemaakt.",
+			"archives": "In de demo worden archieven en back-ups niet gedownload: de gegevens en de configuratie van de demo worden elke nacht vanzelf opnieuw aangemaakt.",
+			"languagePacks": "In de demo worden taalpakketten niet gedownload: de demo heeft Italiaans en Engels."
+		},
+		"example": {
+			"note": "DEMO – notitie van {{when}}",
+			"comment": "Demonotitie van {{when}}",
+			"book": "Demoboek van {{when}}",
+			"wish": "Demowens van {{when}}",
+			"class": "Demoklas van {{when}}",
+			"printList": "Demolijst van {{when}}",
+			"inventory": "Demo-inventarisatie van {{when}}",
+			"reason": "Demo-reden van {{when}}",
+			"date": "Demodatum van {{when}}"
+		},
+		"replaced": "In de demo worden tekst en foto's vervangen door een voorbeeld: de opslag is gelukt, maar het voorbeeld blijft bewaard.",
+		"tooMany": "Te veel verzoeken in korte tijd: probeer het over een minuut opnieuw.",
+		"refused": {
+			"title": "Niet beschikbaar in de demo",
+			"busyTitle": "Te veel verzoeken",
+			"back": "Terug naar BiblioViva"
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"notFound": "Pagina niet gevonden",
+	"forbidden": "Deze pagina is niet beschikbaar voor het gebruikte account",
+	"unauthorized": "Meld u aan om door te gaan",
+	"generic": "Er is iets misgegaan ({{status}})",
+	"backHome": "Terug naar de startpagina"
+}

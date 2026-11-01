@@ -1,0 +1,66 @@
+{
+	"title": "Hlásenia",
+	"new": "Nové hlásenie",
+	"adminOnly": "Hlásenia archivuje a na prehľad pripína iba administrátor.",
+	"pinned": "Pripnuté",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Archivované: {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:hlásenie; few:hlásenia; other:hlásení;}}",
+	"archiveCount": "{{shown}} z {{total}} {{total:plural; one:archivovaného hlásenia; few:archivovaných hlásení; other:archivovaných hlásení;}}",
+	"actions": {
+		"label": "Úkony s hlásením",
+		"pin": "Pripnúť na prehľad",
+		"unpin": "Odopnúť",
+		"archive": "Archivovať",
+		"restore": "Obnoviť",
+		"delete": "Odstrániť",
+		"showAll": "Zobraziť všetko",
+		"showLess": "Zobraziť menej",
+		"more": "Zobraziť ďalšie"
+	},
+	"done": {
+		"added": "Hlásenie pridané",
+		"pinned": "Hlásenie pripnuté",
+		"unpinned": "Hlásenie odopnuté",
+		"archived": "Hlásenie archivované",
+		"restored": "Hlásenie obnovené",
+		"deleted": "Hlásenie odstránené"
+	},
+	"confirmDelete": {
+		"title": "Odstrániť hlásenie?",
+		"text": "Bude natrvalo vymazané a nedá sa obnoviť."
+	},
+	"form": {
+		"body": "Text",
+		"placeholder": "Napr. Skener pri pulte nečíta preukazy.",
+		"privacy": "Všetky účty čítajú hlásenia: neuvádzajte osobné údaje žiakov.",
+		"written": "Hlásenie sa nedá upraviť: v prípade chyby požiadajte administrátora, aby ho archivoval, a napíšte nové.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Farba",
+		"pinned": "Pripnúť na prehľad",
+		"pinnedHint": "Zobrazí sa všetkým na vrchu prehľadu (aj na výpožičnom pulte), kým sa neodopne alebo nearchivuje.",
+		"save": "Pridať"
+	},
+	"colors": {
+		"yellow": "Žltá",
+		"pink": "Ružová",
+		"green": "Zelená",
+		"blue": "Svetlomodrá",
+		"orange": "Oranžová"
+	},
+	"errors": {
+		"empty": "Napíšte text hlásenia.",
+		"tooLong": "Text je dlhší ako {{max}} {{max:plural; one:znak; few:znaky; other:znakov;}}.",
+		"color": "Vyberte jednu z farieb."
+	},
+	"empty": {
+		"open": "Žiadne otvorené hlásenia",
+		"openHint": "Žiadne otvorené hlásenia. Hlásenia odovzdávajú problémy a upozornenia kolegom a administrátorovi.",
+		"archived": "Žiadne archivované hlásenia"
+	},
+	"home": {
+		"title": "Hlásenia",
+		"open": "Otvoriť hlásenia"
+	},
+	"tile": "Otvorené hlásenia"
+}

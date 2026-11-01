@@ -1,0 +1,19 @@
+{
+	"title": "Tietoja",
+	"app": {
+		"version": "Versio",
+		"license": "Lisenssi",
+		"repository": "Lähdekoodi"
+	},
+	"deps": {
+		"title": "Käytetyt kirjastot",
+		"runtime": "Ajonaikaiset ({{count}})",
+		"development": "Vain kehitykseen ({{count}})",
+		"system": "Järjestelmäkomponentit",
+		"columns": {
+			"name": "Nimi",
+			"version": "Versio",
+			"license": "Lisenssi"
+		}
+	}
+}

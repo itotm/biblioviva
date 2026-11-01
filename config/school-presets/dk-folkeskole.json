@@ -1,0 +1,113 @@
+{
+	"id": "dk-folkeskole",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Folkeskole from the 0. klasse; after the 9. klasse most pupils leave, some stay for the optional 10. klasse (often at another school). Classes written 7.a or 7.A [VERIFY]. Lessons start in mid-August [VERIFY].",
+	"name": {
+		"it": "Scuola di base, dalla classe 0 alla 10 (Danimarca)",
+		"en": "Folkeskole, grades 0 to 10 (Denmark)",
+		"da": "Folkeskole, 0.–10. klasse (Danmark)"
+	},
+	"country": "DK",
+	"languages": ["da"],
+	"schoolYear": {
+		"start": "08-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "indskoling",
+				"name": "Indskoling"
+			},
+			{
+				"code": "mellemtrin",
+				"name": "Mellemtrin"
+			},
+			{
+				"code": "udskoling",
+				"name": "Udskoling"
+			}
+		],
+		"levels": [
+			{
+				"code": "0",
+				"label": "0.",
+				"name": "0. klasse (børnehaveklasse)",
+				"stage": "indskoling",
+				"aliases": ["Børnehaveklasse"]
+			},
+			{
+				"code": "1",
+				"label": "1.",
+				"name": "1. klasse",
+				"stage": "indskoling"
+			},
+			{
+				"code": "2",
+				"label": "2.",
+				"name": "2. klasse",
+				"stage": "indskoling"
+			},
+			{
+				"code": "3",
+				"label": "3.",
+				"name": "3. klasse",
+				"stage": "indskoling"
+			},
+			{
+				"code": "4",
+				"label": "4.",
+				"name": "4. klasse",
+				"stage": "mellemtrin"
+			},
+			{
+				"code": "5",
+				"label": "5.",
+				"name": "5. klasse",
+				"stage": "mellemtrin"
+			},
+			{
+				"code": "6",
+				"label": "6.",
+				"name": "6. klasse",
+				"stage": "mellemtrin"
+			},
+			{
+				"code": "7",
+				"label": "7.",
+				"name": "7. klasse",
+				"stage": "udskoling"
+			},
+			{
+				"code": "8",
+				"label": "8.",
+				"name": "8. klasse",
+				"stage": "udskoling"
+			},
+			{
+				"code": "9",
+				"label": "9.",
+				"name": "9. klasse",
+				"stage": "udskoling",
+				"next": [null, "10"]
+			},
+			{
+				"code": "10",
+				"label": "10.",
+				"name": "10. klasse",
+				"stage": "udskoling"
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Klasse",
+		"cardClass": "{class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"indskoling": ["a", "b", "c"],
+		"mellemtrin": ["a", "b", "c"],
+		"udskoling": ["a", "b", "c"]
+	},
+	"teacherGroup": "Lærere",
+	"readingLevels": []
+}

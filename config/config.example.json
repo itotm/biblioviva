@@ -1,0 +1,357 @@
+{
+	"_commentFolder": "This file is the core of the configuration folder (PLAN.md §3.6, Q78): the classification taxonomy lives in classification.json, label stocks in labels/stocks/<id>.json, yearly calendars in calendar.<year>.json, templates in {cards,labels,slips}/templates/<name>/. Fragments win over the same keys here.",
+	"library": {
+		"name": "Biblioteca dell'Istituto",
+		"contactEmail": "biblioteca@scuola.example",
+		"schoolYearStart": "09-01",
+		"schoolYearLabel": "span",
+		"timezone": "Europe/Rome",
+		"weekStart": "monday",
+		"itemTypes": [
+			{
+				"code": "libro",
+				"label": "Libro"
+			},
+			{
+				"code": "consultazione",
+				"label": "Consultazione",
+				"notForLoan": true
+			},
+			{
+				"code": "dvd",
+				"label": "DVD"
+			},
+			{
+				"code": "testo",
+				"label": "Testo scolastico"
+			},
+			{
+				"code": "rivista",
+				"label": "Rivista"
+			}
+		]
+	},
+	"school": {
+		"_comment": "Phase 12 (Q94): the levels of the school in order, grouped in stages, from the preset it-primaria (config/school-presets/). The classes themselves (1 A, 3 B, the teachers group) are data, created in Administration → Classes.",
+		"preset": "it-primaria",
+		"stages": [
+			{
+				"code": "primaria",
+				"name": "Primaria"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1",
+				"name": "Prima primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "2",
+				"label": "2",
+				"name": "Seconda primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "3",
+				"label": "3",
+				"name": "Terza primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "4",
+				"label": "4",
+				"name": "Quarta primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "5",
+				"label": "5",
+				"name": "Quinta primaria",
+				"stage": "primaria"
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Sezione",
+		"cardClass": "{word} {group}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"catalog": {
+		"_comment": "Q73: author and publisher are mandatory; these special values are offered as quick picks when there is no personal author or the publisher/place is unknown.",
+		"specialAuthors": ["Anonimo", "AA. VV."],
+		"unknownPublisher": "s.n.",
+		"unknownPlace": "s.l."
+	},
+	"barcodes": {
+		"_comment": "Phase 12 (Q90-Q93): new copies YYYY-CNNNN and new cards CNNNNNN with a mod-23 check letter (2026-E0267, U012345). The codes of the old system keep working: copies YYYY-NNNN, cards of 10 digits, plain numbers up to plainMaxLength digits [VERIFY at the Koha migration].",
+		"keyboardLayout": "it",
+		"cameraSound": "confirm",
+		"plainMaxLength": 9,
+		"item": {
+			"format": { "pattern": "YYYY-CNNNN", "check": "mod23" },
+			"legacy": [{ "pattern": "YYYY-NNNN", "check": "none" }],
+			"symbology": "code128"
+		},
+		"patron": {
+			"format": { "pattern": "CNNNNNN", "check": "mod23" },
+			"legacy": [{ "pattern": "NNNNNNNNNN", "check": "none" }],
+			"symbology": "code128",
+			"counterStart": "afterLegacyMax"
+		}
+	},
+	"circulation": {
+		"_commentRules": "Q13 resolved: students 15 days / 1 loan / 5 renewals, teachers 15 days / 4 loans / 5 renewals. Q68: DVDs 5 days and 1 renewal, whoever borrows them.",
+		"rules": {
+			"student": {
+				"loanDays": 15,
+				"maxLoans": 1,
+				"maxRenewals": 5,
+				"renewalDays": 15
+			},
+			"teacher": {
+				"loanDays": 15,
+				"maxLoans": 4,
+				"maxRenewals": 5,
+				"renewalDays": 15
+			}
+		},
+		"itemTypeOverrides": {
+			"dvd": {
+				"loanDays": 5,
+				"maxRenewals": 1,
+				"renewalDays": 5
+			}
+		},
+		"dueDateMode": "datedue",
+		"renewFrom": "today",
+		"allowRenewalWhenOverdue": true,
+		"overdueNotice": {
+			"template": "overdue-by-class",
+			"pageBreakPerGroup": false,
+			"minDays": 5
+		},
+		"blockIfOverdue": false,
+		"hardDueDate": null,
+		"receipts": false
+	},
+	"calendar": {
+		"weeklyClosedDays": [0, 6],
+		"autoItalianHolidays": true,
+		"holidays": ["2026-11-02"],
+		"closedRanges": [
+			{
+				"from": "2026-12-23",
+				"to": "2027-01-06",
+				"reason": "Vacanze di Natale"
+			},
+			{
+				"from": "2027-06-10",
+				"to": "2027-09-13",
+				"reason": "Chiusura estiva"
+			}
+		]
+	},
+	"z3950": {
+		"defaultTarget": "sbn",
+		"timeoutMs": 15000,
+		"maxRecordsIsbn": 20,
+		"maxRecordsSearch": 20,
+		"targets": [
+			{
+				"id": "sbn",
+				"name": "OPAC SBN",
+				"host": "opac.sbn.it",
+				"port": 2100,
+				"database": "nopac",
+				"syntax": "unimarc",
+				"charset": "utf-8",
+				"elements": "F"
+			}
+		]
+	},
+	"metadata": {
+		"_comment": "Q26 resolved: only the public OPAC SBN Z39.50 service by default. Optional providers: openlibrary, googlebooks, sbn-json (undocumented mobile gateway).",
+		"providers": ["sbn"],
+		"cacheDays": 30,
+		"timeoutMs": 8000
+	},
+	"performance": {
+		"_comment": "Q22, step 9.28: micro = one slow core and 512 MB; small = Raspberry Pi 4 with 2 GB and SD card (default); medium = old PC with a spinning hard disk; large = PC with plenty of RAM and SSD. Any key below overrides the profile default (the values of each profile: src/lib/shared/performance.ts).",
+		"profile": "small",
+		"sqliteCacheMb": null,
+		"sqliteMmapMb": null,
+		"walAutocheckpointPages": null,
+		"imageConcurrency": null,
+		"yazConcurrency": null,
+		"heavyConcurrency": null,
+		"argon2MemoryMb": null,
+		"smol": null
+	},
+	"cards": {
+		"_comment": "Defaults reproduce the library's current cards (docs/reference/cards): four units per A4, crop marks in the margins and gaps, one template for every patron type.",
+		"defaultTemplate": "default",
+		"templateByPatronType": {},
+		"layout": "side-by-side",
+		"duplex": {
+			"flip": "long-edge",
+			"backOffsetMm": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		"cardMm": {
+			"width": 85.6,
+			"height": 53.98
+		},
+		"bleedMm": 0,
+		"sheet": {
+			"paper": "A4",
+			"rows": 4,
+			"marginMm": 6,
+			"gapMm": 3,
+			"foldMarks": true,
+			"cutMarks": true,
+			"cutLines": null
+		},
+		"validityMonths": 12,
+		"showPhoto": true
+	},
+	"labels": {
+		"default": "pair",
+		"titleMaxChars": 30,
+		"monochrome": false,
+		"pair": {
+			"template": "pair-default",
+			"stock": "a4-70x48"
+		},
+		"barcode": {
+			"template": "barcode-default",
+			"stock": "a4-70x48"
+		},
+		"spine": {
+			"template": "spine-default",
+			"stock": "a4-70x48"
+		},
+		"_commentStocks": "Adhesive stocks live one per file in labels/stocks/<id>.json (Q78): copy a file to add a new stock."
+	},
+	"photos": {
+		"_comment": "enabled: false switches patron photos off altogether (9.38). Step 3.11: every patron photo is stored at exactly width × height (cropped at the centre when the browser has not cropped it) in `format` (jpeg or webp) with `quality` 1–100. required: false hides every reminder that photos are missing (they can still be taken and printed).",
+		"enabled": true,
+		"required": true,
+		"width": 480,
+		"height": 640,
+		"format": "webp",
+		"quality": 80,
+		"maxUploadBytes": 8000000,
+		"sheet": {
+			"_comment": "Phase 13: pictures with many faces for the photo census (the photographer's sheet, the class's cards on a table). maxUploadBytes: the largest file accepted; maxPixels: the longest side kept; maxFrames: at most this many photos per picture; minAspect / maxAspect: the height / width of a photo frame.",
+			"maxUploadBytes": 32000000,
+			"maxPixels": 4000,
+			"maxFrames": 60,
+			"minAspect": 1,
+			"maxAspect": 1.6
+		}
+	},
+	"covers": {
+		"_commentFormat": "enabled: false switches book covers off altogether (9.38). Step 3.11: covers keep their proportions (never cropped): `width` in pixels, optional `maxHeight`, `format` jpeg or webp, `quality` 1–100.",
+		"enabled": true,
+		"width": 600,
+		"maxHeight": null,
+		"format": "webp",
+		"quality": 80,
+		"maxUploadBytes": 12000000,
+		"_comment": "Q27: cover providers tried in this order, each with its own flag. Amazon has no API (may stop working); Google Books needs the GOOGLE_BOOKS_API_KEY environment variable, hence off by default.",
+		"providers": [
+			{ "id": "amazon", "enabled": true },
+			{ "id": "openlibrary", "enabled": true },
+			{ "id": "googlebooks", "enabled": false }
+		],
+		"country": "IT",
+		"minWidth": 300,
+		"autoFetch": true,
+		"timeoutMs": 6000
+	},
+	"privacy": {
+		"_comment": "Removal of a patron anonymizes it immediately (Q32/Q33); there is no retention timer.",
+		"auditRetentionMonths": 24
+	},
+	"backup": {
+		"cron": "0 3 * * *",
+		"catchUp": true,
+		"keepDays": 30,
+		"offsite": {
+			"enabled": false,
+			"remote": "/offsite/biblioviva-backups"
+		}
+	},
+	"security": {
+		"sessionDays": 14,
+		"loginMaxAttempts": 5,
+		"loginWindowMinutes": 15,
+		"auth": {
+			"mode": "config"
+		},
+		"_commentUsers": "Accounts are normally shared per role. passwordHash from `bun run auth:hash-password`; a plain `password` key is accepted with a warning. At least one active account must hold `admin`.",
+		"users": [
+			{
+				"username": "admin",
+				"displayName": "Amministratore",
+				"roles": ["admin"],
+				"passwordHash": "$argon2id$v=19$m=65536,t=2,p=1$REPLACE_ME",
+				"active": true
+			},
+			{
+				"username": "prestiti",
+				"displayName": "Gestione prestiti",
+				"roles": ["circulation"],
+				"password": "cambiami",
+				"active": true
+			},
+			{
+				"username": "catalogo",
+				"displayName": "Catalogazione",
+				"roles": ["cataloging"],
+				"password": "cambiami",
+				"active": true
+			},
+			{
+				"username": "tessere",
+				"displayName": "Tessere e foto",
+				"roles": ["membership"],
+				"password": "cambiami",
+				"active": true
+			},
+			{
+				"username": "report",
+				"displayName": "Report",
+				"roles": ["reporting"],
+				"password": "cambiami",
+				"active": true
+			}
+		],
+		"roles": {
+			"admin": ["*"],
+			"circulation": ["loans"],
+			"cataloging": ["catalog"],
+			"membership": ["patrons"],
+			"reporting": ["reports"]
+		}
+	},
+	"ui": {
+		"_comment": "locale: a built-in language (en, it) or the code of a language pack in CONFIG_DIR/i18n/<code>/ (validated at startup, English fills the gaps). theme: the colour set; dashboard: the sections of the start page (quick actions always first), each true or false. Both are chosen in Administration → Appearance and language.",
+		"locale": "en",
+		"theme": "ocean",
+		"dashboard": {
+			"quickActions": true,
+			"tiles": true,
+			"inventory": true,
+			"installHint": true,
+			"dueThisWeek": true,
+			"todayActivity": true
+		},
+		"checkoutIdleSeconds": 120,
+		"setupCompleted": true
+	}
+}

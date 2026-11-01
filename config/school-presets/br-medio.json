@@ -1,0 +1,86 @@
+{
+	"id": "br-medio",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Turmas numbered by year and number (601, 602; 1001 in the ensino médio) as in many public networks; many schools write 6º ano A instead: change the label template and the group names [VERIFY]. The school year starts in early February and is named by its year [VERIFY]. After the 9º ano a pupil goes on to the ensino médio or leaves.",
+	"name": {
+		"it": "Scuola fondamentale (anni finali) e media superiore (Brasile)",
+		"en": "Lower and upper secondary school, grade 6 to the 3rd série (Brazil)",
+		"pt-BR": "Ensino fundamental (anos finais) e ensino médio (Brasil)"
+	},
+	"country": "BR",
+	"languages": ["pt-BR"],
+	"schoolYear": {
+		"start": "02-01",
+		"label": "start"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "anos-finais",
+				"name": "Ensino fundamental, anos finais"
+			},
+			{
+				"code": "medio",
+				"name": "Ensino médio"
+			}
+		],
+		"levels": [
+			{
+				"code": "6",
+				"label": "6",
+				"name": "6º ano",
+				"stage": "anos-finais"
+			},
+			{
+				"code": "7",
+				"label": "7",
+				"name": "7º ano",
+				"stage": "anos-finais"
+			},
+			{
+				"code": "8",
+				"label": "8",
+				"name": "8º ano",
+				"stage": "anos-finais"
+			},
+			{
+				"code": "9",
+				"label": "9",
+				"name": "9º ano",
+				"stage": "anos-finais",
+				"next": ["M1", null]
+			},
+			{
+				"code": "M1",
+				"label": "1",
+				"name": "1ª série do ensino médio",
+				"stage": "medio",
+				"aliases": ["1ª série"]
+			},
+			{
+				"code": "M2",
+				"label": "2",
+				"name": "2ª série do ensino médio",
+				"stage": "medio",
+				"aliases": ["2ª série"]
+			},
+			{
+				"code": "M3",
+				"label": "3",
+				"name": "3ª série do ensino médio",
+				"stage": "medio",
+				"aliases": ["3ª série"]
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Turma",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"anos-finais": ["01", "02", "03"],
+		"medio": ["001", "002", "003"]
+	},
+	"teacherGroup": "Professores",
+	"readingLevels": []
+}

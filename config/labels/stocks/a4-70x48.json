@@ -1,0 +1,20 @@
+{
+	"id": "a4-70x48",
+	"name": "Etichette 70 × 48 mm (3 × 6, 18 per foglio)",
+	"paper": "A4",
+	"labelMm": {
+		"width": 70,
+		"height": 48
+	},
+	"columns": 3,
+	"rows": 6,
+	"marginMm": {
+		"top": 4,
+		"left": 0
+	},
+	"gapMm": {
+		"x": 0,
+		"y": 0
+	},
+	"cornerRadiusMm": 0
+}

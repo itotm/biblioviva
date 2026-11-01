@@ -1,0 +1,135 @@
+{
+	"id": "nl-voortgezet",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). After the brugklas a pupil goes on to vmbo (ends after year 4), havo (after 5) or vwo (after 6); after vmbo-tl some go on to havo 4. Track letters (m, h, v; also b, k, t, a, g) and the length of the brugklas (1 or 2 years, often havo/vwo or vmbo/havo) differ per school [VERIFY]. The legal school year starts on 1 August [VERIFY].",
+	"name": {
+		"it": "Scuola secondaria: brugklas, vmbo, havo, vwo (Paesi Bassi)",
+		"en": "Secondary school: brugklas, vmbo, havo, vwo (Netherlands)",
+		"nl": "Voortgezet onderwijs: brugklas, vmbo, havo en vwo"
+	},
+	"country": "NL",
+	"languages": ["nl"],
+	"schoolYear": {
+		"start": "08-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "brugklas",
+				"name": "Brugklas"
+			},
+			{
+				"code": "vmbo",
+				"name": "Vmbo (mavo)"
+			},
+			{
+				"code": "havo",
+				"name": "Havo"
+			},
+			{
+				"code": "vwo",
+				"name": "Vwo"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1",
+				"name": "Brugklas (leerjaar 1)",
+				"stage": "brugklas",
+				"next": ["H2", "M2", "V2"],
+				"aliases": ["brugklas", "b1"]
+			},
+			{
+				"code": "M2",
+				"label": "m2",
+				"name": "Vmbo 2",
+				"stage": "vmbo",
+				"aliases": ["mavo 2"]
+			},
+			{
+				"code": "M3",
+				"label": "m3",
+				"name": "Vmbo 3",
+				"stage": "vmbo",
+				"aliases": ["mavo 3"]
+			},
+			{
+				"code": "M4",
+				"label": "m4",
+				"name": "Vmbo 4",
+				"stage": "vmbo",
+				"next": [null, "H4"],
+				"aliases": ["mavo 4"]
+			},
+			{
+				"code": "H2",
+				"label": "h2",
+				"name": "Havo 2",
+				"stage": "havo"
+			},
+			{
+				"code": "H3",
+				"label": "h3",
+				"name": "Havo 3",
+				"stage": "havo"
+			},
+			{
+				"code": "H4",
+				"label": "h4",
+				"name": "Havo 4",
+				"stage": "havo"
+			},
+			{
+				"code": "H5",
+				"label": "h5",
+				"name": "Havo 5",
+				"stage": "havo",
+				"next": null
+			},
+			{
+				"code": "V2",
+				"label": "v2",
+				"name": "Vwo 2",
+				"stage": "vwo"
+			},
+			{
+				"code": "V3",
+				"label": "v3",
+				"name": "Vwo 3",
+				"stage": "vwo"
+			},
+			{
+				"code": "V4",
+				"label": "v4",
+				"name": "Vwo 4",
+				"stage": "vwo"
+			},
+			{
+				"code": "V5",
+				"label": "v5",
+				"name": "Vwo 5",
+				"stage": "vwo"
+			},
+			{
+				"code": "V6",
+				"label": "v6",
+				"name": "Vwo 6",
+				"stage": "vwo"
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Klas",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"brugklas": ["a", "b", "c", "d"],
+		"vmbo": ["a", "b"],
+		"havo": ["a", "b", "c"],
+		"vwo": ["a", "b"]
+	},
+	"teacherGroup": "Docenten",
+	"readingLevels": []
+}

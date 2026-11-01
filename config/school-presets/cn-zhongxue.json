@@ -1,0 +1,85 @@
+{
+	"id": "cn-zhongxue",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). 初中 and 高中 in one school (remove the stage a school does not have); after 初三 some pupils leave (中考, vocational schools), and the 高一 classes are formed anew. Classes written 初一(3)班 and 高一(3)班 [VERIFY]. The school year starts on 1 September [VERIFY].",
+	"name": {
+		"it": "Scuola secondaria, zhōngxué (Cina)",
+		"en": "Secondary school, zhongxue (China)",
+		"zh": "中学（初中、高中）"
+	},
+	"country": "CN",
+	"languages": ["zh"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "chuzhong",
+				"name": "初中",
+				"classLabel": "初{level}({group})班"
+			},
+			{
+				"code": "gaozhong",
+				"name": "高中",
+				"classLabel": "高{level}({group})班"
+			}
+		],
+		"levels": [
+			{
+				"code": "7",
+				"label": "一",
+				"name": "初中一年级",
+				"stage": "chuzhong",
+				"aliases": ["初一", "七年级", "7年级"]
+			},
+			{
+				"code": "8",
+				"label": "二",
+				"name": "初中二年级",
+				"stage": "chuzhong",
+				"aliases": ["初二", "八年级", "8年级"]
+			},
+			{
+				"code": "9",
+				"label": "三",
+				"name": "初中三年级",
+				"stage": "chuzhong",
+				"next": ["10", null],
+				"aliases": ["初三", "九年级", "9年级"]
+			},
+			{
+				"code": "10",
+				"label": "一",
+				"name": "高中一年级",
+				"stage": "gaozhong",
+				"aliases": ["高一"]
+			},
+			{
+				"code": "11",
+				"label": "二",
+				"name": "高中二年级",
+				"stage": "gaozhong",
+				"aliases": ["高二"]
+			},
+			{
+				"code": "12",
+				"label": "三",
+				"name": "高中三年级",
+				"stage": "gaozhong",
+				"aliases": ["高三"]
+			}
+		],
+		"classLabel": "{level}({group})班",
+		"groupWord": "班级",
+		"cardClass": "{class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "clear"
+	},
+	"groups": {
+		"chuzhong": ["1", "2", "3", "4"],
+		"gaozhong": ["1", "2", "3", "4"]
+	},
+	"teacherGroup": "教师",
+	"readingLevels": []
+}

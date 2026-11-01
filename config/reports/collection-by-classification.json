@@ -1,0 +1,74 @@
+{
+	"id": "collection-by-classification",
+	"title": {
+		"it": "Patrimonio per classificazione",
+		"en": "Collection by classification"
+	},
+	"description": {
+		"it": "Titoli e copie per genere (narrativa) e classe (saggistica), con i prestiti del periodo.",
+		"en": "Titles and copies by genre (fiction) and class (non-fiction), with the loans of the period."
+	},
+	"category": "books",
+	"params": [
+		{
+			"name": "from",
+			"label": {
+				"it": "Dal",
+				"en": "From"
+			},
+			"type": "date",
+			"required": true,
+			"default": "schoolYearStart"
+		},
+		{
+			"name": "to",
+			"label": {
+				"it": "Al",
+				"en": "To"
+			},
+			"type": "date",
+			"required": true,
+			"default": "today"
+		}
+	],
+	"sql": "WITH c AS (SELECT b.id AS biblio_id, b.kind AS kind, CASE WHEN b.kind = 'fiction' THEN b.genre_code ELSE b.class_code END AS code FROM biblio b), held AS (SELECT c.kind AS kind, c.code AS code, COUNT(DISTINCT c.biblio_id) AS titles, COUNT(i.id) AS copies FROM c JOIN item i ON i.biblio_id = c.biblio_id AND i.status <> 'withdrawn' GROUP BY 1, 2), lent AS (SELECT c.code AS code, COUNT(*) AS loans FROM loan l JOIN item i ON i.id = l.item_id JOIN c ON c.biblio_id = i.biblio_id WHERE date(l.issued_at) BETWEEN :from AND :to GROUP BY 1) SELECT held.code AS classification, held.titles AS titles, held.copies AS copies, COALESCE(lent.loans, 0) AS loans FROM held LEFT JOIN lent ON lent.code IS held.code ORDER BY held.kind, held.code",
+	"columns": [
+		{
+			"key": "classification",
+			"label": {
+				"it": "Classificazione",
+				"en": "Classification"
+			},
+			"type": "classification"
+		},
+		{
+			"key": "titles",
+			"label": {
+				"it": "Titoli",
+				"en": "Titles"
+			},
+			"type": "int"
+		},
+		{
+			"key": "copies",
+			"label": {
+				"it": "Copie",
+				"en": "Copies"
+			},
+			"type": "int"
+		},
+		{
+			"key": "loans",
+			"label": {
+				"it": "Prestiti",
+				"en": "Loans"
+			},
+			"type": "int"
+		}
+	],
+	"chart": {
+		"type": "bar",
+		"x": "classification",
+		"y": ["copies", "loans"]
+	}
+}

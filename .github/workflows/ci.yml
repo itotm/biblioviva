@@ -1,0 +1,82 @@
+name: ci
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+
+concurrency:
+    group: ci-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    ci:
+        runs-on: ubuntu-24.04
+        timeout-minutes: 30
+        steps:
+            - uses: actions/checkout@v7
+
+            - uses: oven-sh/setup-bun@v2
+              with:
+                  bun-version: 1.4.4
+
+            - uses: actions/setup-node@v6
+              with:
+                  node-version: 24
+
+            - name: Install dependencies (frozen lockfile)
+              run: bun install --frozen-lockfile
+
+            - name: Cache Playwright browsers
+              uses: actions/cache@v5
+              with:
+                  path: ~/.cache/ms-playwright
+                  key: playwright-${{ runner.os }}-${{ hashFiles('bun.lock') }}
+
+            - name: Install Chromium for Playwright
+              run: bunx playwright install --with-deps chromium
+
+            - name: Known vulnerabilities in the dependencies
+              run: bun audit
+
+            # one process at a time: GitHub's runners have little memory, and the type-aware ESLint
+            # (one TypeScript program per worker) ran out of it with the local parallelism
+            - name: Lint (prettier, eslint without parallel workers, SPDX headers)
+              run: bun run lint:ci
+              env:
+                  NODE_OPTIONS: --max-old-space-size=6144
+
+            - name: UI factoring audit
+              run: bun run ui:audit
+
+            - name: Language packs valid
+              run: bun run i18n:status
+
+            - name: Type check
+              run: bun run check
+
+            - name: Unit and component tests (coverage gate, one worker)
+              run: bun run test --maxWorkers=1
+
+            - name: Build
+              run: bun run build && bun run scripts/check-build.ts
+
+            - name: End-to-end tests (Chromium, desktop and mobile viewports, one worker)
+              run: bun run test:e2e
+              env:
+                  CI: "true"
+                  E2E_PREBUILT: "1"
+
+            # the summary page and the HTML reports (Vitest with coverage, Playwright), pass or fail
+            - name: Test report index
+              if: always()
+              run: bun run test:report
+
+            - name: Upload test reports
+              if: always()
+              uses: actions/upload-artifact@v6
+              with:
+                  name: test-reports
+                  path: test-reports
+                  if-no-files-found: ignore
+                  retention-days: 7

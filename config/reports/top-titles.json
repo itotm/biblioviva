@@ -1,0 +1,85 @@
+{
+	"id": "top-titles",
+	"title": {
+		"it": "Libri più prestati",
+		"en": "Most borrowed books"
+	},
+	"description": {
+		"it": "I titoli con più prestiti nel periodo.",
+		"en": "The titles with the most loans in the period."
+	},
+	"category": "books",
+	"params": [
+		{
+			"name": "from",
+			"label": {
+				"it": "Dal",
+				"en": "From"
+			},
+			"type": "date",
+			"required": true,
+			"default": "schoolYearStart"
+		},
+		{
+			"name": "to",
+			"label": {
+				"it": "Al",
+				"en": "To"
+			},
+			"type": "date",
+			"required": true,
+			"default": "today"
+		},
+		{
+			"name": "top",
+			"label": {
+				"it": "Quanti",
+				"en": "How many"
+			},
+			"type": "int",
+			"default": 20,
+			"min": 1,
+			"max": 200
+		}
+	],
+	"sql": "SELECT b.title AS title, b.author AS author, COUNT(*) AS loans, COUNT(DISTINCT l.patron_id) AS readers FROM loan l JOIN item i ON i.id = l.item_id JOIN biblio b ON b.id = i.biblio_id WHERE date(l.issued_at) BETWEEN :from AND :to GROUP BY b.id ORDER BY loans DESC, b.title LIMIT :top",
+	"columns": [
+		{
+			"key": "title",
+			"label": {
+				"it": "Titolo",
+				"en": "Title"
+			},
+			"type": "text"
+		},
+		{
+			"key": "author",
+			"label": {
+				"it": "Autore",
+				"en": "Author"
+			},
+			"type": "text"
+		},
+		{
+			"key": "loans",
+			"label": {
+				"it": "Prestiti",
+				"en": "Loans"
+			},
+			"type": "int"
+		},
+		{
+			"key": "readers",
+			"label": {
+				"it": "Lettori",
+				"en": "Readers"
+			},
+			"type": "int"
+		}
+	],
+	"chart": {
+		"type": "bar",
+		"x": "title",
+		"y": "loans"
+	}
+}

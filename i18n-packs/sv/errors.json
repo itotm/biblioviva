@@ -1,0 +1,7 @@
+{
+	"notFound": "Sidan hittades inte",
+	"forbidden": "Den här sidan är inte tillgänglig för det använda kontot",
+	"unauthorized": "Logga in för att fortsätta",
+	"generic": "Något gick fel ({{status}})",
+	"backHome": "Tillbaka till startsidan"
+}

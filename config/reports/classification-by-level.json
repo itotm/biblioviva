@@ -1,0 +1,25 @@
+{
+	"id": "classification-by-level",
+	"title": {
+		"it": "Generi letti per anno di classe",
+		"en": "Genres read by class year"
+	},
+	"description": {
+		"it": "Prestiti del periodo per genere o argomento (righe) e anno di classe dei lettori (colonne), con i totali.",
+		"en": "Loans of the period by genre or subject (rows) and the readers' class year (columns), with the totals."
+	},
+	"category": "books",
+	"query": {
+		"source": "loans",
+		"filters": [
+			{
+				"field": "period",
+				"ask": true
+			}
+		],
+		"rows": ["classification"],
+		"columns": "classYear",
+		"measures": ["loans"],
+		"totals": "both"
+	}
+}

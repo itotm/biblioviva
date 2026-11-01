@@ -1,0 +1,18 @@
+{
+	"id": "collection-age",
+	"title": {
+		"it": "Età del patrimonio",
+		"en": "Age of the collection"
+	},
+	"description": {
+		"it": "Copie e titoli per decennio di pubblicazione (le copie ritirate escluse): aiuta a decidere lo scarto.",
+		"en": "Copies and titles by decade of publication (withdrawn copies left out): it helps to decide what to weed."
+	},
+	"category": "books",
+	"query": {
+		"source": "items",
+		"rows": ["decade"],
+		"measures": ["copies", "titles"],
+		"chart": "bar"
+	}
+}

@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Lånere",
+		"new": "Ny låner",
+		"search": "Søg efter efternavn…",
+		"empty": "Ingen låner svarer til filtrene.",
+		"filters": {
+			"type": "Type",
+			"stage": "Skoletrin",
+			"level": "Årgang",
+			"status": "Status",
+			"all": "Alle",
+			"allF": "Alle"
+		},
+		"columns": {
+			"name": "Efternavn og fornavn",
+			"type": "Type",
+			"class": "Klasse",
+			"card": "Lånerkort"
+		},
+		"clearFilters": "Nulstil filtrene",
+		"countFiltered": "{{shown:plural; one:{{shown}} låner svarer; other:{{shown}} lånere svarer;}} til filtrene",
+		"printCards": "Udskriv lånerkort",
+		"printClassCards": "Udskriv lånerkort {{classLabel}}",
+		"removeSelected": "Fjern de valgte",
+		"removeTitle": "Skal {{count}} {{count:plural; one:låner; other:lånere;}} fjernes?",
+		"removeDescription": "For hver enkelt slettes straks og for altid fornavn og efternavn, kontakter, elevnummer, noter, lånerkortnummer og foto; type, klasse, parallel og lånehistorikken bliver til statistikken. Dem med åbne lån bliver i arkivet.",
+		"removed": "{{removed}} fjernet, {{kept}} med åbne lån beholdt i arkivet",
+		"status": {
+			"title": "Status",
+			"loans": "{{count}} i udlån",
+			"overdue": "{{count}} overskredet",
+			"noPhoto": "uden foto"
+		},
+		"startTitle": "Find en låner",
+		"startHint": "Søg efter navn eller lånerkort, eller brug filtrene."
+	},
+	"types": {
+		"student": "Elev",
+		"teacher": "Lærer"
+	},
+	"fields": {
+		"patronType": "Type",
+		"firstName": "Fornavn",
+		"lastName": "Efternavn",
+		"cardNumber": "Lånerkortnummer",
+		"cardNumberHint": "Tomt: tildeles automatisk.",
+		"externalId": "Elevnummer",
+		"email": "Email",
+		"emailHint": "Adressen som skolen tildeler eleven eller læreren: den bruges til meddelelser.",
+		"circulationNote": "Note til udlånsskranken",
+		"circulationNoteHint": "Vises tydeligt ved udlån.",
+		"notes": "Interne noter",
+		"status": "Status",
+		"openLoans": "Åbne lån",
+		"overdueLoans": "Overskredet",
+		"noCard": "intet lånerkort",
+		"none": "—",
+		"levelCode": "Årgang",
+		"groupId": "Parallel",
+		"classLabel": "Klasse",
+		"teacherGroup": "Lærergruppe"
+	},
+	"form": {
+		"createTitle": "Ny låner",
+		"editTitle": "Rediger låner",
+		"identity": "Oplysninger",
+		"school": "Klasse",
+		"contacts": "Kontakter",
+		"notes": "Noter",
+		"create": "Opret låner",
+		"save": "Gem ændringerne",
+		"classSelect": "Vælg…",
+		"defaultTeacherGroup": "Lærergruppen"
+	},
+	"errors": {
+		"emailInvalid": "Ugyldig email-adresse.",
+		"cardNumberInvalid": "Ugyldigt lånerkortnummer: kun cifre, store bogstaver og bindestreg, med det rigtige kontroltegn.",
+		"cardNumberTaken": "Lånerkortnummeret er allerede tildelt en anden låner.",
+		"cardNumberIsCopy": "Lånerkortnummeret er, eller ligner, stregkoden på et eksemplar: vælg et andet nummer.",
+		"externalIdTaken": "Elevnummeret er allerede tildelt en anden låner.",
+		"levelRequired": "En elev skal have en årgang.",
+		"levelUnknown": "Årgangen findes ikke blandt skolens årgange.",
+		"levelNotForTeachers": "En lærer har ingen årgang.",
+		"groupRequired": "En elev skal have en parallel.",
+		"groupUnknown": "Parallellen blev ikke fundet blandt de aktive klasser: klasser oprettes under Administration → Konfiguration → Klasser.",
+		"levelNotInGroup": "Denne parallel har ikke denne årgang: vælg en parallel for årgangen."
+	},
+	"detail": {
+		"heading": "Lånerprofil",
+		"tabs": {
+			"loans": "Åbne lån",
+			"history": "Historik",
+			"cards": "Lånerkort",
+			"notes": "Noter"
+		},
+		"noLoans": "Ingen åbne lån.",
+		"loanColumns": {
+			"due": "Afleveringsdato"
+		},
+		"overdue": "overskredet",
+		"card": "Lånerkort {{number}}",
+		"noNotes": "Ingen noter.",
+		"edit": "Rediger",
+		"created": "Oprettet den {{when}}",
+		"barcodeAlt": "Stregkode for lånerkort {{number}}",
+		"cardPrinted": "Lånerkort udskrevet den {{when}}.",
+		"cardNotPrinted": "Lånerkortet er endnu ikke udskrevet.",
+		"reassignCard": "Tildel nyt lånerkort",
+		"reassignTitle": "Skal der tildeles et nyt lånerkort?",
+		"reassignDescription": "Det nuværende nummer trækkes tilbage for altid, og det nye lånerkort skal udskrives.",
+		"cardReassigned": "Nyt lånerkort: {{number}}",
+		"printCard": "Udskriv lånerkort",
+		"markCardPrinted": "Markér som udskrevet",
+		"cardMarkedPrinted": "Lånerkort markeret som udskrevet",
+		"historyColumns": {
+			"issuedAt": "Udlånt den",
+			"dueDate": "Afleveringsdato",
+			"returnedAt": "Afleveret den",
+			"outcome": "Resultat",
+			"title": "Titel",
+			"author": "Forfatter",
+			"barcode": "Eksemplar",
+			"renewals": "Fornyelser",
+			"schoolYear": "Skoleår"
+		},
+		"outcome": {
+			"open": "Åbent",
+			"overdue": "Overskredet",
+			"returned": "Afleveret",
+			"returnedLate": "Afleveret for sent",
+			"lost": "Bortkommet"
+		},
+		"historyEmpty": "Ingen lån registreret.",
+		"historyCount": "{{count}} {{count:plural; one:lån; other:lån;}} i alt",
+		"notesEdit": "Rediger noterne",
+		"notesSaved": "Noter gemt",
+		"notesUnchanged": "Ingen ændring",
+		"notesHint": "Noten til udlånsskranken vises tydeligt, når der laves et lån; de øvrige noter bliver her.",
+		"remove": "Fjern {{type}}",
+		"removeTitle": "Skal {{name}} fjernes for altid?",
+		"removeDescription": "Slettes straks og for altid: fornavn og efternavn, email, elevnummer, noter, lånerkortnummer (trukket tilbage) og foto. Kun type, klasse og parallel samt lånehistorikken bliver til statistikken. Det kan ikke fortrydes.",
+		"removeOpenLoans": "Har {{count}} {{count:plural; one:åbent lån, som først skal afleveres eller markeres bortkommet; other:åbne lån, som først skal afleveres eller markeres bortkomne;}}.",
+		"removeClassSheets": "Personen er valgt til {{count}} {{count:plural; one:foto; other:fotos;}} i klassebillederne (fotoregistrering ud fra et billede): {{count:plural; one:den ramme bliver; other:de rammer bliver;}} dækket.",
+		"removed": "Låner fjernet: de personlige data er slettet.",
+		"removedInfo": "Fjernet den {{when}}. Kun data til statistikken bliver.",
+		"lostTitle": "Bortkomne bøger",
+		"lostHint": "Markeret som bortkommet, mens de var udlånt til denne låner. Hvis de dukker op igen, skal de scannes ved afleveringerne.",
+		"markLost": "Markér »{{title}}« som bortkommet",
+		"markLostTitle": "Skal »{{title}}« markeres som bortkommet?",
+		"markLostDescription": "Lånet lukkes, og eksemplaret vises som bortkommet. Dukker bogen op igen, registreres blot afleveringen, og den bliver igen til rådighed.",
+		"markLostReason": "Årsag (valgfri)",
+		"markLostConfirm": "Markér som bortkommet",
+		"markedLost": "»{{title}}« markeret som bortkommet."
+	},
+	"photo": {
+		"title": "Foto",
+		"take": "Tag foto",
+		"upload": "Upload fil",
+		"retake": "Tag igen",
+		"use": "Brug dette foto",
+		"cancel": "Annuller",
+		"delete": "Slet foto",
+		"deleteTitle": "Skal fotoet slettes?",
+		"deleteDescription": "Fotoet fjernes fra serveren; et nyt kan tages.",
+		"zoom": "Zoom",
+		"dragHint": "Træk for at indramme, og brug zoomet for at komme tættere på.",
+		"saved": "Foto gemt",
+		"deleted": "Foto slettet",
+		"placeholder": "Intet foto",
+		"alt": "Foto af {{name}}",
+		"errors": {
+			"too_large": "Filen er for stor: grænsen er {{maxMb}} MB.",
+			"not_an_image": "Filen er ikke et læsbart billede.",
+			"unsupported_format": "Billedformatet understøttes ikke (brug JPEG, PNG, WebP eller HEIC).",
+			"empty": "Ingen fil valgt."
+		},
+		"withForm": "Det gemmes sammen med låneren.",
+		"requiredHint": "Et foto er påkrævet: tag det nu, eller senere fra lånerens side.",
+		"optionalHint": "Fotoet kan tages nu eller senere fra lånerens side.",
+		"remove": "Fjern",
+		"notSaved": "Fotoet blev ikke gemt: tag det igen fra lånerens side.",
+		"retakePhoto": "Tag fotoet igen"
+	},
+	"census": {
+		"title": "Fotoregistrering",
+		"noGroup": "Uden klasse",
+		"stageOthers": "Uden skoletrin",
+		"progress": "{{done}} af {{total}} med foto",
+		"allDone": "Alle har et foto.",
+		"back": "Skift klasse eller liste",
+		"skip": "Spring over",
+		"done": "Færdig",
+		"saved": "Foto gemt: {{name}}",
+		"quickAdd": "Ny låner",
+		"quickAddHint": "Føjes til {{group}}, og fotoet er det næste.",
+		"create": "Tilføj og fotografér",
+		"findPerson": "Find efter efternavn",
+		"pickTarget": "Vælg en liste eller en klasse",
+		"listsTitle": "Listerne over lånere",
+		"classesTitle": "Klasser",
+		"nothingMissing": "Alle klasser og lister har deres fotos.",
+		"onlyMissing": "Kun klasser og lister, hvor mindst ét foto mangler, vises.",
+		"byCamera": "Én person ad gangen",
+		"sheets": {
+			"title": "Fra et billede med flere fotos",
+			"hint": "Billeder med flere fotos (fotografens tavle, kort på et bord, et ark med pasfotos): fotos findes automatisk og tildeles hver låner.",
+			"upload": "Upload billede",
+			"take": "Fotografér arket",
+			"uploading": "Sender billedet…",
+			"empty": "Intet billede for denne klasse eller liste.",
+			"item": "Billede af {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:foto fundet; other:fotos fundet;}} · {{saved}} gemt · {{pending}} mangler",
+			"notDetected": "Endnu ikke behandlet",
+			"demoScan": "Eksempel fra en scanner",
+			"demoPhoto": "Eksempel fra et foto",
+			"demoHint": "To måder at få klassens fotos: en scanning er flad, og fotoene er rektangler, højst drejede; et foto tages på skrå, og perspektivet forvrænger rammerne."
+		},
+		"sheet": {
+			"title": "Fotos fra et billede",
+			"back": "Tilbage til klassen",
+			"detecting": "Søger efter fotos i billedet…",
+			"found": "Fotos fundet: {{count}}. Vælg hvem hver enkelt er.",
+			"none": "Intet foto fundet. Med »Ret rammer« kan de tegnes i hånden.",
+			"pictureAlt": "Det uploadede billede, med fotorammerne nummereret",
+			"frame": "Foto {{n}}",
+			"choose": "Hvem er det?",
+			"nobody": "— Ingen —",
+			"takenBy": "{{name}} (allerede i foto {{n}})",
+			"hasPhoto": "har allerede et foto",
+			"noPhoto": "intet foto",
+			"ignore": "Ignorer",
+			"unignore": "Gendan",
+			"ignored": "Ignoreret: det er ingen i denne klasse eller liste.",
+			"saved": "Gemt som fotoet af {{name}}",
+			"edit": "Ret rammer",
+			"editDone": "Færdig med rettelserne",
+			"editHint": "Tryk på en ramme, og træk i hjørnerne; til et manglende foto bruges »Tilføj ramme«.",
+			"editHintScan": "Tryk på en ramme: træk i et hjørne for at gøre den større eller mindre, og i cirklen øverst for at dreje den; til et manglende foto bruges »Tilføj ramme«.",
+			"addFrame": "Tilføj ramme",
+			"addFrameHint": "Træk på billedet fra det ene hjørne af det manglende foto til det andet.",
+			"deleteFrame": "Slet ramme {{n}}",
+			"rotateFrame": "Drej rammen",
+			"kind": "Billedtype",
+			"kindPhoto": "Foto",
+			"kindScan": "Scanning",
+			"kindPhotoHint": "Taget på skrå: hvert hjørne af en ramme flytter sig selv, så det følger perspektivet.",
+			"kindScanHint": "Lavet med en scanner: rammerne forbliver rektangler og kan kun drejes.",
+			"kindAgain": "Så længe ingen låner er valgt, søges fotos igen, når typen skiftes.",
+			"save": "Gem fotos",
+			"saveTitle": "Skal de valgte fotos gemmes?",
+			"saveSummary": "Fotos der skal gemmes: {{count}}.",
+			"saveReplaces": "De erstatter det foto, der allerede findes, af: {{names}}.",
+			"saveUnassigned": "Rammer uden valgt person: {{count}} (de bliver, som de er).",
+			"savedToast": "Fotos gemt: {{count}}.",
+			"deleteSheet": "Slet billede",
+			"deleteSheetTitle": "Skal billedet slettes?",
+			"deleteSheetDescription": "Billedet og dets rammer slettes. De fotos, der allerede er gemt, bliver hos lånerne.",
+			"deletedToast": "Billedet er slettet.",
+			"progress": "{{label}}: {{done}} af {{total}} med foto",
+			"missingTitle": "Stadig uden foto",
+			"byCamera": "Fotografér dem én ad gangen",
+			"errors": {
+				"not_found": "Billedet blev ikke fundet.",
+				"set_not_found": "Klassen eller listen findes ikke længere.",
+				"empty": "Filen er tom.",
+				"too_large": "Billedet er for stort (højst {{maxMb}} MB).",
+				"not_an_image": "Filen er ikke et læsbart billede.",
+				"unsupported_format": "Formatet understøttes ikke: brug JPEG, PNG, WebP eller HEIC.",
+				"too_many_frames": "Højst {{maxFrames}} {{maxFrames:plural; one:foto; other:fotos;}} pr. billede.",
+				"bad_corners": "Rammen er ikke gyldig: hjørnerne skal danne en firkant inde i billedet.",
+				"already_detected": "Fotos i dette billede er allerede blevet søgt efter.",
+				"frame_saved": "Dette foto er allerede gemt.",
+				"frame_erased": "Dette foto tilhørte en fjernet låner: rammen er blevet dækket.",
+				"not_a_member": "Kun lånerne i klassen eller listen kan vælges.",
+				"patron_taken": "Allerede valgt til foto {{position}}: frigør den, før vedkommende vælges her.",
+				"confirm_replace": "{{count:plural; one:{{count}} foto erstatter et eksisterende; other:{{count}} fotos erstatter eksisterende;}}: bekræft for at fortsætte.",
+				"nothing_to_save": "Vælg mindst én låner, før du gemmer."
+			},
+			"erased": "Låner fjernet: rammen er blevet dækket i billedet."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "CSV-fil",
+			"submit": "Upload",
+			"hints": {
+				"students": "En CSV-fil med én række pr. elev, adskilt med ; eller , (en eksport fra et regneark går også). Brug overskrifterne fra skabelonen, som kan hentes nedenfor med de nødvendige kolonner.",
+				"teachers": "En CSV-fil med én række pr. lærer, adskilt med ; eller ,. Brug overskrifterne fra skabelonen, som kan hentes nedenfor med de nødvendige kolonner."
+			}
+		},
+		"mapping": {
+			"format": "Genkendt format",
+			"uncertain": "Formatet er ikke sikkert: kontrollér kolonnerne, før du fortsætter.",
+			"remembered": "Kolonnerne huskes fra den sidste import af denne fil.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "filens overskrift",
+				"unknown": "ukendt"
+			},
+			"mode": "Tilstand",
+			"modes": {
+				"upsert": "Tilføj og opdater",
+				"upsertHint": "Rækker der findes, opdaterer den eksisterende låner; de øvrige opretter nye lånere.",
+				"sync": {
+					"students": "Synkronisér elever",
+					"teachers": "Synkronisér lærere"
+				},
+				"syncHint": {
+					"students": "Filen er den fulde liste over elever: den, der mangler, vises i en liste (og fjernes efter bekræftelse). Lærerne berøres ikke.",
+					"teachers": "Filen er den fulde liste over lærere: den, der mangler, vises i en liste (og fjernes efter bekræftelse). Eleverne berøres ikke."
+				}
+			},
+			"duplicates": "Lånere der allerede findes",
+			"policies": {
+				"update": "Opdatér",
+				"skip": "Spring over",
+				"create": "Opret alligevel"
+			},
+			"validate": "Kontrollér filen",
+			"matchByName": {
+				"students": "Uden kolonnen external_id genkendes elever, der allerede findes i arkivet, på navn og klasse.",
+				"teachers": "Uden kolonnen external_id genkendes lærere, der allerede findes i arkivet, på navn."
+			}
+		},
+		"preview": {
+			"ready": "Ingen fejl: filen kan importeres.",
+			"blocked": "Ret fejlene i filen (eller i lånerne), og kontrollér igen: der importeres intet med fejl.",
+			"columns": {
+				"name": "Navn",
+				"class": "Klasse"
+			},
+			"changed": "Ændringer: {{fields}}",
+			"homonym": {
+				"pick": "Vælg låneren",
+				"create": "Opret en ny låner",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Navnefæller der skal afgøres"
+			},
+			"missing": {
+				"students": {
+					"title": "Elever i arkivet, men ikke i filen ({{count}})",
+					"remove": "Fjern disse elever fra arkivet (øjeblikkelig anonymisering)",
+					"noPermission": "Uden tilladelse til at fjerne lånere bliver de manglende elever i arkivet.",
+					"notRemoved": "{{count}} {{count:plural; one:manglende elev blev ikke fjernet, fordi eleven har; other:manglende elever blev ikke fjernet, fordi de har;}} åbne lån."
+				},
+				"teachers": {
+					"title": "Lærere i arkivet, men ikke i filen ({{count}})",
+					"remove": "Fjern disse lærere fra arkivet (øjeblikkelig anonymisering)",
+					"noPermission": "Uden tilladelse til at fjerne lånere bliver de manglende lærere i arkivet.",
+					"notRemoved": "{{count}} {{count:plural; one:manglende lærer blev ikke fjernet, fordi læreren har; other:manglende lærere blev ikke fjernet, fordi de har;}} åbne lån."
+				},
+				"hint": "Med synkroniseringen kan den, der ikke står i filen, fjernes: de personlige data slettes straks og for altid, og kun klasse og statistik bliver."
+			},
+			"commit": "Importer",
+			"back": "Tilbage til kolonnerne",
+			"generatedCards": "{{count}} {{count:plural; one:nyt lånerkort bliver; other:nye lånerkort bliver;}} oprettet: filen har ikke nummeret."
+		},
+		"reasons": {
+			"tooLong": "Teksten er for lang i kolonnen {{column}}: højst {{max}} {{max:plural; one:tegn; other:tegn;}}",
+			"nameRequired": "Fornavn eller efternavn mangler",
+			"emailInvalid": "Ugyldig email",
+			"cardNumberInvalid": "Ugyldigt lånerkortnummer",
+			"cardNumberTaken": "Lånerkortnummeret er allerede tildelt en anden låner",
+			"cardNumberIsCopy": "Lånerkortnummeret er lig med eller ligner stregkoden på et eksemplar",
+			"externalIdTaken": "Det eksterne id er allerede tildelt en anden låner",
+			"duplicateInFile": "Samme person står allerede på linje {{line}}",
+			"homonym": "{{count}} {{count:plural; one:navnefælle; other:navnefæller;}} i arkivet: vælg, hvem der skal opdateres",
+			"matchedTwice": "En anden række opdaterer allerede den samme låner",
+			"skipped": "Findes allerede: sprunget over",
+			"levelRequired": "Årgang mangler",
+			"levelUnknown": "Årgangen »{{value}}« hører ikke til skolen",
+			"groupRequired": "Parallel mangler",
+			"groupUnknown": "Parallellen »{{value}}« blev ikke fundet for denne årgang. Gyldige klasser: {{classes}} (klasser oprettes under Administration → Konfiguration → Klasser)",
+			"levelNotInGroup": "Parallellen »{{value}}« har ikke denne årgang. Gyldige klasser: {{classes}}",
+			"classUnknown": "Klassen »{{value}}« blev ikke fundet. Gyldige klasser: {{classes}}",
+			"teacherGroupUnknown": "Lærergruppen »{{value}}« blev ikke fundet. Gyldige grupper: {{classes}}"
+		},
+		"done": {
+			"title": "Importen er gennemført",
+			"summary": "Nye: {{created}}, opdaterede: {{updated}}, uændrede: {{unchanged}}, fjernede: {{removed}}.",
+			"printNew": "Udskriv lånerkortene til de nye lånere",
+			"census": "Fotoregistrering",
+			"again": "Importer en anden fil",
+			"batch": "Import nr. {{id}}: den oprindelige fil gemmes på serveren."
+		},
+		"fields": {
+			"firstName": "Fornavn",
+			"lastName": "Efternavn",
+			"class": "Klasse (årgang og parallel)",
+			"level": "Klasse (årgang)",
+			"section": "Parallel",
+			"group": "Lærergruppe",
+			"externalId": "Eksternt id",
+			"cardNumber": "Lånerkort",
+			"email": "Email"
+		},
+		"titles": {
+			"students": "Importer elever",
+			"teachers": "Importer lærere"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "Fornavnet."
+			},
+			"lastName": {
+				"hint": "Efternavnet."
+			},
+			"class": {
+				"hint": "Klassen i én kolonne, som 3A eller 3 A: den skal findes under Administration → Konfiguration → Klasser."
+			},
+			"level": {
+				"hint": "Årgangen (1, 2, 3…), med parallellen i kolonnen section."
+			},
+			"section": {
+				"hint": "Parallellen (A, B…): sammen med level angiver den klassen."
+			},
+			"cardNumber": {
+				"hint": "Lånerkortnummeret, hvis eleven allerede har et.",
+				"missing": "nye lånerkort oprettes"
+			},
+			"externalId": {
+				"hint": "Koden i skoleregistret.",
+				"missing": "lånere, der allerede findes, genkendes på navn og klasse"
+			},
+			"email": {
+				"hint": "Valgfri."
+			},
+			"group": {
+				"hint": "Lærergruppen; når den mangler, bruges standardgruppen."
+			}
+		},
+		"classForm": {
+			"label": "Klassen",
+			"class": "I én kolonne (class: 3A)",
+			"levelSection": "I to kolonner (level: 3, section: A)"
+		}
+	}
+}

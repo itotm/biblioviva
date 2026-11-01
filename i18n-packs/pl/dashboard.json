@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "Wypożyczenia w toku",
+		"overdue": "Po terminie",
+		"issuedToday": "Wypożyczone dzisiaj",
+		"returnedToday": "Zwrócone dzisiaj",
+		"withoutCard": "Czytelnicy bez wydrukowanej karty",
+		"withoutPhoto": "Czytelnicy bez zdjęcia",
+		"toClassify": "Książki do sklasyfikowania",
+		"pendingLabels": "Książki bez etykiet"
+	},
+	"tilesTitle": "Biblioteka dzisiaj",
+	"actions": {
+		"title": "Szybkie czynności"
+	},
+	"dueWeek": {
+		"title": "Terminy zwrotu w tym tygodniu",
+		"none": "Żadne wypożyczenie nie ma terminu zwrotu do {{day}}.",
+		"more": "i {{count}} więcej",
+		"due": "termin {{date}}"
+	},
+	"inventory": {
+		"title": "Skontrum",
+		"continue": "Kontynuuj"
+	},
+	"install": {
+		"title": "Dodaj do ekranu głównego",
+		"hint": "BiblioViva otwiera się jak aplikacja, na pełnym ekranie, z ikony w telefonie.",
+		"install": "Zainstaluj",
+		"fromMenu": "W menu ⋮ przeglądarki Firefox wybrać „Zainstaluj” albo „Dodaj do ekranu głównego”.",
+		"later": "Nie teraz"
+	},
+	"upcoming": {
+		"title": "Najbliższe terminy",
+		"none": "Brak terminów w ciągu {{days:plural; one:najbliższego dnia; few:najbliższych {{days}} dni; many:najbliższych {{days}} dni; other:najbliższych {{days}} dnia;}}.",
+		"more": "i {{count}} więcej",
+		"open": "Otwórz kalendarz"
+	}
+}

@@ -1,0 +1,60 @@
+{
+	"dashboard": "Yleisnäkymä",
+	"circulation": "Lainaus",
+	"catalog": "Luettelo",
+	"patrons": "Asiakkaat",
+	"printing": "Tulostus",
+	"notes": "Muistiinpanot",
+	"reports": "Raportit",
+	"admin": "Ylläpito",
+	"more": "Lisää",
+	"logout": "Kirjaudu ulos",
+	"help": "Ohje",
+	"about": "Tietoja",
+	"areas": {
+		"circulation": {
+			"label": "Lainaustiski",
+			"checkout": "Lainaus",
+			"checkin": "Palautus",
+			"loans": "Lainassa olevat nidet",
+			"overdues": "Muistutukset",
+			"wishlist": "Hankintatoiveet",
+			"calendar": "Kalenteri"
+		},
+		"catalog": {
+			"label": "Luettelon sivut",
+			"catalog": "Luettelo",
+			"inventory": "Inventointi",
+			"wishlist": "Hankintatoiveet",
+			"toClassify": "Luokittelematta"
+		},
+		"patrons": {
+			"label": "Asiakkaiden sivut",
+			"patrons": "Asiakkaat",
+			"census": "Valokuvakartoitus"
+		},
+		"notes": {
+			"label": "Muistiinpanojen sivut",
+			"open": "Avoimet",
+			"archived": "Arkistoidut"
+		},
+		"config": {
+			"label": "Asetusten sivut",
+			"overview": "Osiot",
+			"history": "Historia"
+		},
+		"templates": {
+			"label": "Tulostuspohjien sivut",
+			"edit": "Pohjat",
+			"previews": "Esikatselut"
+		},
+		"imports": {
+			"label": "Tuonnit",
+			"catalog": "Luettelo",
+			"students": "Oppilaat",
+			"teachers": "Opettajat",
+			"loans": "Lainat käynnissä",
+			"photos": "Asiakkaiden valokuvat"
+		}
+	}
+}

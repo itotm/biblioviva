@@ -1,0 +1,19 @@
+{
+	"title": "About",
+	"app": {
+		"version": "Version",
+		"license": "Licence",
+		"repository": "Source code"
+	},
+	"deps": {
+		"title": "Libraries used",
+		"runtime": "Runtime ({{count}})",
+		"development": "Development only ({{count}})",
+		"system": "System components",
+		"columns": {
+			"name": "Name",
+			"version": "Version",
+			"license": "Licence"
+		}
+	}
+}

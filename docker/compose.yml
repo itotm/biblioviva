@@ -1,0 +1,88 @@
+# BiblioViva with its Tailscale sidecar (PLAN.md step 8.3, Appendix E). Works with `docker compose`
+# and with `podman compose`. The app shares the sidecar's network namespace: it is reachable only
+# through the tailnet, at https://biblioviva.<tailnet>.ts.net, with a certificate tailscaled
+# obtains and renews by itself. Settings come from `.env` next to this file (see `.env.example`).
+services:
+    tailscale:
+        image: docker.io/tailscale/tailscale:v1.104.4
+        hostname: biblioviva # → https://biblioviva.<tailnet>.ts.net
+        environment:
+            # a reusable, tagged auth key (or an OAuth client secret with the auth_keys scope)
+            - TS_AUTHKEY=${TS_AUTHKEY:?set TS_AUTHKEY in .env}
+            - TS_EXTRA_ARGS=--advertise-tags=tag:biblioviva
+            # the node's name, passed explicitly so a re-authentication never changes it
+            - TS_HOSTNAME=biblioviva
+            - TS_STATE_DIR=/var/lib/tailscale
+            - TS_SERVE_CONFIG=/config/serve.json
+            # /healthz on :9002 inside the shared namespace, 200 once the node has a tailnet address
+            - TS_ENABLE_HEALTH_CHECK=true
+        volumes:
+            - ts-state:/var/lib/tailscale
+            # a directory mount, so edits to serve.json are picked up (Z: SELinux label, ignored elsewhere)
+            - ./tailscale:/config:ro,Z
+        healthcheck:
+            test: ["CMD", "wget", "-qO-", "http://127.0.0.1:9002/healthz"]
+            interval: 30s
+            timeout: 5s
+            retries: 3
+            start_period: 20s
+        restart: unless-stopped
+
+    app:
+        image: ${BIBLIOVIVA_IMAGE:-ghcr.io/itotm/biblioviva:latest}
+        network_mode: service:tailscale # no ports:, hostname: or networks: here
+        depends_on:
+            tailscale:
+                condition: service_healthy
+        environment:
+            # the public origin comes from the sidecar's forwarded headers (ADR-007): no ORIGIN
+            - PROTOCOL_HEADER=x-forwarded-proto
+            - HOST_HEADER=x-forwarded-host
+            - ADDRESS_HEADER=x-forwarded-for
+            - XFF_DEPTH=1
+            # optional: the Google Books providers (off by default) need a key; a secret, never in config
+            - GOOGLE_BOOKS_API_KEY=${GOOGLE_BOOKS_API_KEY:-}
+            # debug: every camera read and metadata lookup in `compose logs app` (never personal data)
+            - LOG_LEVEL=${LOG_LEVEL:-info}
+        volumes:
+            # configuration: config.json, templates, reports, images; owned by uid 1000
+            - ./config:/config:Z
+            - app-data:/data # database, photos and covers, imports
+            # the backups: a plain folder beside this file, to copy or to mount from a second disk
+            # or a USB drive; owned by uid 1000 (z: shared with the offsite service)
+            - ./backups:/backups:z
+        # performance.profile micro (one slow core, 512 MB): 256m; small (Raspberry Pi 4, 2 GB): 512m;
+        # medium (old PC, disk): 1g; large: 2g (the server sizes its heap after it)
+        mem_limit: ${MEM_LIMIT:-512m}
+        read_only: true
+        tmpfs: ["/tmp"]
+        security_opt: ["no-new-privileges:true"]
+        cap_drop: ["ALL"]
+        init: true
+        stop_grace_period: 35s
+        restart: unless-stopped
+
+    # optional second copy of the backups (Q35, ADR-049): `docker compose --profile offsite up -d`; by default into OFFSITE_DIR
+    # (a second disk, a USB drive, a folder of the school's server), or any rclone destination
+    offsite:
+        image: docker.io/rclone/rclone:1.75.2
+        profiles: ["offsite"]
+        volumes:
+            - ./backups:/backups:z
+            - ./rclone:/config/rclone:ro,Z # rclone.conf, only for a destination made with `rclone config`
+            - ${OFFSITE_DIR:-./offsite}:/offsite:z # the default destination: a folder of another disk
+        entrypoint: ["/bin/sh", "-c"]
+        command:
+            - |
+                while true; do
+                  sleep 3600
+                  if rclone sync /backups "$${OFFSITE_REMOTE:-/offsite/biblioviva-backups}" --min-age 1m; then s=ok; else s=error; fi
+                  echo "{\"status\":\"$$s\",\"at\":\"$$(date -Iseconds)\"}" > /backups/offsite.json
+                done
+        environment:
+            - OFFSITE_REMOTE=${OFFSITE_REMOTE:-/offsite/biblioviva-backups}
+        restart: unless-stopped
+
+volumes:
+    ts-state:
+    app-data:

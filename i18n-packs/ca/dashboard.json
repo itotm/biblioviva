@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "Préstecs en curs",
+		"overdue": "Endarrerits",
+		"issuedToday": "Prestats avui",
+		"returnedToday": "Retornats avui",
+		"withoutCard": "Usuaris sense carnet imprès",
+		"withoutPhoto": "Usuaris sense foto",
+		"toClassify": "Llibres per classificar",
+		"pendingLabels": "Llibres sense etiquetes"
+	},
+	"tilesTitle": "La biblioteca avui",
+	"actions": {
+		"title": "Accions ràpides"
+	},
+	"dueWeek": {
+		"title": "Per retornar aquesta setmana",
+		"none": "Cap préstec no ha de ser retornat fins al {{day}}.",
+		"more": "i {{count}} més",
+		"due": "per retornar el {{date}}"
+	},
+	"inventory": {
+		"title": "Inventari",
+		"continue": "Continua"
+	},
+	"install": {
+		"title": "Afegeix a la pantalla d'inici",
+		"hint": "BiblioViva s'obre com una aplicació, a pantalla completa, des de la icona del telèfon.",
+		"install": "Instal·la",
+		"fromMenu": "Obre el menú ⋮ de Firefox i tria «Instal·la» o «Afegeix a la pantalla d'inici».",
+		"later": "Ara no"
+	},
+	"upcoming": {
+		"title": "Properes dates",
+		"none": "Cap data {{days:plural; one:en el proper dia; other:en els propers {{days}} dies;}}.",
+		"more": "i {{count}} més",
+		"open": "Obre el calendari"
+	}
+}

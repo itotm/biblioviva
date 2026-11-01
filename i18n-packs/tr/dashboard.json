@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "Devam eden ödünçler",
+		"overdue": "Gecikmiş",
+		"issuedToday": "Bugün ödünç verilen",
+		"returnedToday": "Bugün iade edilen",
+		"withoutCard": "Basılı kartı olmayan üyeler",
+		"withoutPhoto": "Fotoğrafı olmayan üyeler",
+		"toClassify": "Sınıflandırılacak kitaplar",
+		"pendingLabels": "Etiketi olmayan kitaplar"
+	},
+	"tilesTitle": "Kütüphanenin bugünkü durumu",
+	"actions": {
+		"title": "Hızlı işlemler"
+	},
+	"dueWeek": {
+		"title": "Bu hafta iade tarihi yaklaşanlar",
+		"none": "{{day}} tarihine kadar iade tarihi gelen ödünç yok.",
+		"more": "ve {{count}} tane daha",
+		"due": "iade tarihi {{date}}"
+	},
+	"inventory": {
+		"title": "Sayım",
+		"continue": "Devam et"
+	},
+	"install": {
+		"title": "Ana ekrana ekle",
+		"hint": "BiblioViva, telefondaki simgeden tam ekran bir uygulama gibi açılır.",
+		"install": "Yükle",
+		"fromMenu": "Firefox'un ⋮ menüsünü açın ve “Yükle” ya da “Ana ekrana ekle” seçeneğini seçin.",
+		"later": "Şimdi değil"
+	},
+	"upcoming": {
+		"title": "Yaklaşan tarihler",
+		"none": "{{days:plural; one:Önümüzdeki gün; other:Önümüzdeki {{days}} gün;}} içinde tarih yok.",
+		"more": "ve {{count}} tane daha",
+		"open": "Takvimi aç"
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"title": "Acerca de",
+	"app": {
+		"version": "Versión",
+		"license": "Licencia",
+		"repository": "Código fuente"
+	},
+	"deps": {
+		"title": "Bibliotecas utilizadas",
+		"runtime": "En ejecución ({{count}})",
+		"development": "Solo para el desarrollo ({{count}})",
+		"system": "Componentes del sistema",
+		"columns": {
+			"name": "Nombre",
+			"version": "Versión",
+			"license": "Licencia"
+		}
+	}
+}

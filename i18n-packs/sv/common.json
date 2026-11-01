@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "Spara",
+		"cancel": "Avbryt",
+		"close": "Stäng",
+		"confirm": "Bekräfta",
+		"delete": "Ta bort",
+		"edit": "Redigera",
+		"search": "Sök",
+		"export": "Exportera",
+		"back": "Tillbaka",
+		"retry": "Försök igen",
+		"backTo": "Tillbaka till {{page}}",
+		"more": "Fler åtgärder"
+	},
+	"similar": {
+		"label": "Liknande",
+		"count": "plus {{count:plural; one:{{count}} liknande, hittad; other:{{count}} liknande, hittade;}} genom att rätta ett skrivfel",
+		"hint": "Träffen hittades genom att rätta ett skrivfel: kontrollera att det är den du sökte."
+	},
+	"status": {
+		"loading": "Läser in…",
+		"error": "Något gick fel"
+	},
+	"statuses": {
+		"item": {
+			"available": "Tillgänglig",
+			"onLoan": "Utlånad",
+			"lost": "Förlorad",
+			"damaged": "Skadad",
+			"inRepair": "Under reparation",
+			"withdrawn": "Utgallrad",
+			"notForLoan": "Endast på plats"
+		},
+		"loan": {
+			"open": "Pågående",
+			"dueSoon": "Förfaller snart",
+			"overdue": "Försenad",
+			"returned": "Återlämnad"
+		},
+		"patron": {
+			"active": "Aktiv",
+			"anonymized": "Borttagen"
+		},
+		"print": {
+			"pending": "Att skriva ut",
+			"printed": "Utskriven"
+		}
+	},
+	"list": {
+		"selected": "{{count}} {{count:plural; one:vald; other:valda;}}"
+	},
+	"scan": {
+		"label": "Streckkod",
+		"placeholder": "Skanna eller skriv in en kod",
+		"submit": "Sök kod",
+		"camera": "Kamera",
+		"cameraTitle": "Skanna med kameran",
+		"errors": {
+			"empty": "Ingen kod angiven.",
+			"item_check_digit": "Streckkoden på exemplaret har fel kontrolltecken: läs av den igen.",
+			"card_check_digit": "Lånekortets nummer har fel kontrolltecken: läs av det igen.",
+			"isbn_check_digit": "ISBN har fel kontrollsiffra: kontrollera siffrorna.",
+			"unrecognised": "Koden känns inte igen: kontrollera att läsaren läser Code 39 och Code 128."
+		},
+		"invalidRead": "Ogiltig kod ({{code}}): läsning pågår.",
+		"invalidShort": "Ogiltig kod, läser igen…",
+		"useAnyway": "Använd {{code}} ändå"
+	},
+	"camera": {
+		"start": "Starta kameran",
+		"stop": "Stoppa kameran",
+		"switch": "Byt kamera",
+		"torch": "Ficklampa",
+		"snapshot": "Ta foto",
+		"device": "Kamera",
+		"starting": "Startar kameran…",
+		"errors": {
+			"insecure": "Kameran fungerar bara över en säker anslutning (https): öppnad från det lokala nätverket utan Tailscale kan appen inte använda den. Använd streckkodsläsaren eller ladda upp en fil, eller öppna appen via dess Tailscale-adress.",
+			"denied": "Behörighet nekad: tillåt kameran i webbläsarens inställningar och försök igen.",
+			"notFound": "Ingen kamera hittades på den här enheten.",
+			"busy": "Kameran används redan av en annan app.",
+			"generic": "Kameran kunde inte startas ({{message}}).",
+			"timeout": "Kameran svarade inte. Kontrollera att webbläsaren inte fortfarande frågar efter behörighet, eller att den inte nekats tidigare för den här webbplatsen (ikonen nära adressen)."
+		},
+		"permissionHint": "Om webbläsaren frågar om behörighet att använda kameran (vanligtvis nära adressfältet), välj ”Tillåt”."
+	},
+	"clipboard": {
+		"failed": "Kunde inte kopiera: markera texten och kopiera den för hand."
+	},
+	"form": {
+		"errorsTitle": "Kontrollera de markerade fälten",
+		"field": "Fält {{field}}"
+	},
+	"confirm": {
+		"title": "Bekräfta?"
+	},
+	"export": {
+		"csv": "CSV (kalkylblad, text)",
+		"ods": "ODS (LibreOffice / Excel)"
+	},
+	"demo": {
+		"panel": "Den här installationen innehåller exempeldata inlästa {{when}}: {{patrons}} {{patrons:plural; one:låntagare; other:låntagare;}}, {{biblios}} {{biblios:plural; one:titel; other:titlar;}}, {{items}} {{items:plural; one:exemplar; other:exemplar;}}, {{loans}} {{loans:plural; one:lån; other:lån;}}. Allt är påhittat: ingen verklig person."
+	},
+	"import": {
+		"header": "Första raden är en rubrik",
+		"column": "Kolumn {{n}}",
+		"ignore": "— ignorera —",
+		"counts": {
+			"new": "Nya: {{count}}",
+			"update": "Att uppdatera: {{count}}",
+			"unchanged": "Oförändrade: {{count}}",
+			"error": "{{count}} {{count:plural; one:fel; other:fel;}}"
+		},
+		"onlyErrors": "Visa endast fel",
+		"info": "{{rows}} {{rows:plural; one:rad; other:rader;}} · kodning {{encoding}} · separator ”{{delimiter}}”",
+		"steps": {
+			"upload": "Fil",
+			"mapping": "Kolumner",
+			"preview": "Kontroll",
+			"done": "Klart"
+		},
+		"line": "Rad",
+		"status": "Resultat",
+		"reason": "Detaljer",
+		"statuses": {
+			"new": "Ny",
+			"update": "Uppdatera",
+			"unchanged": "Oförändrad",
+			"error": "Fel"
+		},
+		"errors": {
+			"empty": "Filen är tom.",
+			"tooLarge": "Filen är större än {{mb}} MB.",
+			"noRows": "Inga rader hittades i filen.",
+			"uploadGone": "Den uppladdade filen finns inte längre: ladda upp den igen.",
+			"notReady": "Filen innehåller fortfarande fel: kontrollera den igen.",
+			"mappingIncomplete": "De obligatoriska kolumnerna saknas: {{columns}}."
+		},
+		"template": {
+			"title": "Filens mall",
+			"hint": "Välj kolumnerna: mallen innehåller bara rubriken och fylls på en rad i taget (ett kalkylblad sparat som CSV fungerar också).",
+			"required": "Obligatoriska",
+			"keys": "Nycklar",
+			"keysHint": "De används för att känna igen det som redan finns; de kan utelämnas.",
+			"optional": "Valfria",
+			"download": "Hämta mallen",
+			"ifMissing": "Om den saknas: {{text}}."
+		},
+		"groups": {
+			"required": "obligatorisk",
+			"key": "nyckel"
+		}
+	},
+	"words": {
+		"yes": "Ja",
+		"no": "Nej"
+	},
+	"password": {
+		"show": "Visa lösenordet",
+		"hide": "Dölj lösenordet"
+	},
+	"demoPublic": {
+		"language": "Språk",
+		"welcome": {
+			"title": "Välkommen till demon av BiblioViva",
+			"beta": "Offentlig beta",
+			"betaText": "BiblioViva är i public beta: funktionerna är stabila, men fram till version 1.0 går det inte att garantera att en uppdatering fortfarande är kompatibel med data och inställningar från den föregående versionen.",
+			"intro": "BiblioViva är programmet för att sköta ett skolbibliotek: utlåning och återlämning, katalog, låntagare med foton och kort, etiketter, utskrifter och rapporter. Det här är en offentlig demo: alla funktioner går att prova.",
+			"contents": "Här finns en påhittad grundskola: {{patrons}} {{patrons:plural; one:elev eller lärare; other:elever och lärare;}}, {{biblios}} {{biblios:plural; one:titel; other:titlar;}} och {{items}} {{items:plural; one:exemplar; other:exemplar;}}, {{openLoans}} {{openLoans:plural; one:lån; other:lån;}} pågår, varav {{overdueLoans}} försenade. Namn och foton är påhittade: ingen verklig person.",
+			"reset": "Varje dag klockan {{time}} går demon tillbaka till hur den började. Ändringar av inställningarna kan provas men sparas inte.",
+			"examples": "I demon ersätts text och bilder med ett exempel: varje åtgärd kan provas till slutet, men det som skrivs eller fotograferas sparas inte och ingen annan besökare ser det. Importerna accepterar bara exempelfilerna, som hämtas från varje importsida.",
+			"accountsTitle": "Vilket konto du ska logga in med",
+			"accountsHint": "Som på biblioteket ser varje konto bara arbetet för sin roll. Användarnamn och lösenord skrivs i formuläret ovan.",
+			"password": "Lösenordet är detsamma för alla konton:"
+		},
+		"accounts": {
+			"admin": {
+				"name": "Administration",
+				"does": "ser allt: utöver de andra kontots arbete inställningarna, personalkontona, säkerhetskopiorna, klasserna och övergången till nästa läsår."
+			},
+			"prestiti": {
+				"name": "Utlåningshantering",
+				"does": "utlåningsdisken: lånar ut, tar emot återlämningar och förnyar, följer försenade lån och skriver ut påminnelserna."
+			},
+			"catalogo": {
+				"name": "Katalogisering",
+				"does": "böcker och exemplar, sökning av uppgifter i SBN (simulerad här), omslag, klassificering och etiketter."
+			},
+			"tessere": {
+				"name": "Kort och foton",
+				"does": "elever och lärare, foton och fotoregistreringen av klasserna, utskrift av lånekort."
+			},
+			"report": {
+				"name": "Rapporter",
+				"does": "statistik över lån, katalog och låntagare, export av tabeller."
+			}
+		},
+		"blocked": {
+			"config": "I demon sparas inte inställningarna: allt går att prova, men ändringarna skrivs inte.",
+			"restore": "I demon är återställning av säkerhetskopior avstängd: demons data skapas om av sig själva varje natt.",
+			"configImport": "I demon är import av inställningar avstängd: demons inställningar är desamma för alla besökare.",
+			"pictures": "I demon går det inte att ladda upp klassfoton: prova fotoregistreringen med exempelklassfotot.",
+			"sqlReports": "I demon är rapporter skrivna i SQL avstängda: prova de guidade rapporterna.",
+			"importSize": "I demon får importerade filer vara högst 1 MB.",
+			"printSize": "I demon skrivs högst 3 ark ut åt gången: välj färre exemplar eller färre låntagare.",
+			"importExample": "I demon importeras bara exempelfilen: hämta den med knappen för mallen och ladda upp den som den är.",
+			"notesLimit": "I demon kan bara några få anteckningar skrivas per dag.",
+			"demoData": "I demon finns exempeldata kvar tills den nattliga återställningen.",
+			"backups": "I demon är manuella säkerhetskopior avstängda: demons data skapas om av sig själva varje natt.",
+			"archives": "I demon hämtas inga arkiv eller säkerhetskopior: demons data och inställningar skapas om av sig själva varje natt.",
+			"languagePacks": "I demon hämtas inga språkpaket: demon har italienska och engelska."
+		},
+		"example": {
+			"note": "DEMO – anteckning från {{when}}",
+			"comment": "Demoanteckning från {{when}}",
+			"book": "Demobok från {{when}}",
+			"wish": "Demoinköpsförslag från {{when}}",
+			"class": "Demoklass från {{when}}",
+			"printList": "Demolista från {{when}}",
+			"inventory": "Demoinventering från {{when}}",
+			"reason": "Demoorsak från {{when}}",
+			"date": "Demodatum från {{when}}"
+		},
+		"replaced": "I demon ersätts text och bilder med ett exempel: sparandet gick igenom, men exemplet finns kvar.",
+		"tooMany": "För många förfrågningar på kort tid: försök igen om en minut.",
+		"refused": {
+			"title": "Inte tillgänglig i demon",
+			"busyTitle": "För många förfrågningar",
+			"back": "Tillbaka till BiblioViva"
+		}
+	}
+}

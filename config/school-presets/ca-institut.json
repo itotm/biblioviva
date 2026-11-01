@@ -1,0 +1,83 @@
+{
+	"id": "ca-institut",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). After 4t d'ESO a pupil goes on to batxillerat or leaves (cicles formatius usually in another school) [VERIFY the form of the class labels].",
+	"name": {
+		"it": "Secondaria e bachillerato, institut (Catalogna)",
+		"en": "Secondary school, ESO and batxillerat (Catalonia)",
+		"ca": "Institut, ESO i batxillerat (Catalunya)"
+	},
+	"country": "ES",
+	"languages": ["ca"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "eso",
+				"name": "Educació secundària obligatòria"
+			},
+			{
+				"code": "batxillerat",
+				"name": "Batxillerat"
+			}
+		],
+		"levels": [
+			{
+				"code": "E1",
+				"label": "1r ESO",
+				"name": "Primer d'ESO",
+				"stage": "eso",
+				"aliases": ["1º ESO"]
+			},
+			{
+				"code": "E2",
+				"label": "2n ESO",
+				"name": "Segon d'ESO",
+				"stage": "eso",
+				"aliases": ["2º ESO"]
+			},
+			{
+				"code": "E3",
+				"label": "3r ESO",
+				"name": "Tercer d'ESO",
+				"stage": "eso",
+				"aliases": ["3º ESO"]
+			},
+			{
+				"code": "E4",
+				"label": "4t ESO",
+				"name": "Quart d'ESO",
+				"stage": "eso",
+				"next": ["B1", null],
+				"aliases": ["4º ESO"]
+			},
+			{
+				"code": "B1",
+				"label": "1r Batx",
+				"name": "Primer de batxillerat",
+				"stage": "batxillerat",
+				"aliases": ["1º Bachillerato"]
+			},
+			{
+				"code": "B2",
+				"label": "2n Batx",
+				"name": "Segon de batxillerat",
+				"stage": "batxillerat",
+				"aliases": ["2º Bachillerato"]
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Grup",
+		"cardClass": "{class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"eso": ["A", "B", "C", "D"],
+		"batxillerat": ["A", "B"]
+	},
+	"teacherGroup": "Professorat",
+	"readingLevels": []
+}

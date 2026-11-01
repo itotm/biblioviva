@@ -1,0 +1,7 @@
+{
+	"name": "default",
+	"description": "Tessera standard senza foto: logo, nome della biblioteca, nome, classe e codice a barre sul fronte; illustrazione a tutta pagina sul retro",
+	"patronTypes": ["student", "teacher"],
+	"bleedMm": 0,
+	"barcode": { "widthMm": 40, "heightMm": 7, "text": false }
+}

@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "Open loans",
+		"overdue": "Overdue",
+		"issuedToday": "Lent today",
+		"returnedToday": "Returned today",
+		"withoutCard": "Patrons without a printed card",
+		"withoutPhoto": "Patrons without a photo",
+		"toClassify": "Books to classify",
+		"pendingLabels": "Books without labels"
+	},
+	"tilesTitle": "The library today",
+	"actions": {
+		"title": "Quick actions"
+	},
+	"dueWeek": {
+		"title": "Due this week",
+		"none": "No loan is due by {{day}}.",
+		"more": "and {{count}} more",
+		"due": "due {{date}}"
+	},
+	"inventory": {
+		"title": "Stocktaking",
+		"continue": "Continue"
+	},
+	"install": {
+		"title": "Add to the Home screen",
+		"hint": "BiblioViva opens like an app, full screen, from the icon on the phone.",
+		"install": "Install",
+		"fromMenu": "Open Firefox's ⋮ menu and choose “Install” or “Add to Home screen”.",
+		"later": "Not now"
+	},
+	"upcoming": {
+		"title": "Upcoming dates",
+		"none": "No dates in the next {{days:plural; one:day; other:{{days}} days;}}.",
+		"more": "and {{count}} more",
+		"open": "Open the calendar"
+	}
+}

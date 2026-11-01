@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Wydruki",
+		"newPatrons": "Nowa lista czytelników",
+		"newItems": "Nowa lista książek",
+		"newPatronsTitle": "Nowa lista czytelników",
+		"newItemsTitle": "Nowa lista książek",
+		"name": "Nazwa listy",
+		"defaultName": "Lista {{n}} z {{date}}",
+		"kind": "Rodzaj",
+		"kinds": {
+			"all": "Wszystkie",
+			"patrons": "Czytelnicy",
+			"items": "Książki"
+		},
+		"classes": "Klasy",
+		"classesHint": "Karty całej klasy, bez tworzenia jej listy.",
+		"classKind": "Klasa",
+		"count": "{{count}} {{count:plural; one:pozycja; few:pozycje; many:pozycji; other:pozycji;}}",
+		"empty": "Brak list. Listy tworzy się tutaj albo przyciskiem „Dodaj do listy” na stronach Czytelnicy i Katalog.",
+		"lastPrinted": "Wydrukowano {{when}}",
+		"neverPrinted": "Nigdy nie drukowana",
+		"open": "Otwórz",
+		"created": "Utworzono listę",
+		"deleted": "Usunięto listę",
+		"deleteTitle": "Usunąć listę „{{name}}”?",
+		"deleteDescription": "Pozycje znikają z listy; czytelnicy pozostają w archiwum."
+	},
+	"list": {
+		"rename": "Zmień nazwę",
+		"renamed": "Zmieniono nazwę listy",
+		"print": "Drukuj karty",
+		"markPrinted": "Oznacz jako wydrukowane",
+		"marked": "{{count:plural; one:{{count}} karta oznaczona jako wydrukowana; few:{{count}} karty oznaczone jako wydrukowane; many:{{count}} kart oznaczonych jako wydrukowane; other:{{count}} karty oznaczone jako wydrukowane;}}",
+		"clearAfter": "Opróżnij listę po wydruku",
+		"clear": "Opróżnij",
+		"cleared": "Opróżniono listę",
+		"clearTitle": "Opróżnić listę?",
+		"clearDescription": "Wszystkie pozycje znikają z listy; czytelnicy pozostają w archiwum.",
+		"delete": "Usuń",
+		"entries": "{{count}} {{count:plural; one:czytelnik; few:czytelnicy; many:czytelników; other:czytelnika;}} na liście",
+		"empty": "Lista jest pusta: czytelników dodaje się filtrami szybkimi, skanerem albo ze strony Czytelnicy.",
+		"remove": "Usuń z listy",
+		"moveUp": "Przesuń w górę",
+		"moveDown": "Przesuń w dół",
+		"dragHint": "Przeciągnąć pozycje, aby zmienić kolejność wydruku.",
+		"removed": "Usunięto z listy",
+		"columns": {
+			"position": "Nr",
+			"printed": "Karta wydrukowana"
+		},
+		"printedYes": "tak",
+		"printedNo": "nie",
+		"quick": {
+			"title": "Dodaj filtrami",
+			"hint": "Kto jest już na liście, nie zostanie dodany ponownie.",
+			"type": "Typ",
+			"any": "Dowolny",
+			"stage": "Etap szkoły",
+			"level": "Klasa",
+			"withoutPrintedCard": "Tylko ci, którym karta nigdy nie została wydrukowana",
+			"withoutPhoto": "Tylko ci bez zdjęcia",
+			"importBatch": "Import",
+			"anyBatch": "— brak —",
+			"batchLabel": "nr {{id}} · {{file}} · {{created}} {{created:plural; one:nowy; few:nowe; many:nowych; other:nowego;}}",
+			"createdAfter": "Utworzone od",
+			"add": "Dodaj do listy",
+			"added": "{{added}} {{added:plural; one:dodany; few:dodani; many:dodanych; other:dodanego;}}, {{skipped}} {{skipped:plural; one:już obecny; few:już obecni; many:już obecnych; other:już obecnego;}}",
+			"none": "Żaden czytelnik nie spełnia filtrów.",
+			"pendingLabels": "Etykiety do wydruku",
+			"pendingAny": "— wszystkie egzemplarze —",
+			"acquiredFrom": "Nabyte od",
+			"acquiredTo": "do",
+			"genre": "Gatunek",
+			"itemType": "Rodzaj egzemplarza",
+			"batchLabelItems": "nr {{id}} · {{file}} · {{created}} {{created:plural; one:egzemplarz; few:egzemplarze; many:egzemplarzy; other:egzemplarza;}}",
+			"noneItems": "Żaden egzemplarz nie spełnia filtrów.",
+			"addedItems": "{{added}} {{added:plural; one:dodany; few:dodane; many:dodanych; other:dodanego;}}, {{skipped}} {{skipped:plural; one:już obecny; few:już obecne; many:już obecnych; other:już obecnego;}}",
+			"nonfictionClass": "Klasa literatury faktu"
+		},
+		"scan": {
+			"title": "Dodaj skanerem",
+			"hint": "Zeskanować kartę każdego czytelnika: od razu trafia na listę. Karty już obecne na liście są pomijane.",
+			"added": "Dodano {{name}}",
+			"duplicate": "{{name}} jest już na liście",
+			"unknown": "Brak czytelnika z kartą {{card}}",
+			"notCard": "Zeskanowany kod nie jest kartą",
+			"hintItems": "Zeskanować kod kreskowy każdego egzemplarza, także idąc wzdłuż półki: egzemplarz od razu trafia na listę. Egzemplarze już obecne na liście są pomijane.",
+			"addedItem": "Dodano {{title}} ({{barcode}})",
+			"duplicateItem": "{{title}} ({{barcode}}) jest już na liście",
+			"unknownItem": "Brak egzemplarza z kodem {{barcode}}",
+			"notItem": "Zeskanowany kod nie jest egzemplarzem"
+		},
+		"printLabels": "Drukuj etykiety",
+		"markPrintedKind": "Etykiety wydrukowane",
+		"markedItems": "{{count:plural; one:{{count}} egzemplarz oznaczony jako wydrukowany; few:{{count}} egzemplarze oznaczone jako wydrukowane; many:{{count}} egzemplarzy oznaczonych jako wydrukowane; other:{{count}} egzemplarza oznaczonego jako wydrukowany;}}",
+		"entriesItems": "{{count}} {{count:plural; one:egzemplarz; few:egzemplarze; many:egzemplarzy; other:egzemplarza;}} na liście",
+		"emptyItems": "Lista jest pusta: egzemplarze dodaje się filtrami szybkimi, skanerem albo z katalogu.",
+		"clearDescriptionItems": "Wszystkie pozycje są usuwane; egzemplarze pozostają w katalogu."
+	},
+	"basket": {
+		"label": "Listy do wydruku",
+		"labelToPrint": "Listy do wydruku: {{count}} do wydrukowania",
+		"entry": "{{name}} ({{count}})",
+		"none": "Brak listy do wydruku",
+		"all": "Wszystkie listy"
+	},
+	"addTo": {
+		"button": "Dodaj do listy",
+		"selected": "Dodaj zaznaczonych do listy",
+		"title": "Dodaj do listy wydruku",
+		"existing": "Istniejąca lista",
+		"create": "Nowa lista",
+		"newName": "Nazwa nowej listy",
+		"confirm": "Dodaj",
+		"done": "{{added}} {{added:plural; one:dodana pozycja; few:dodane pozycje; many:dodanych pozycji; other:dodanej pozycji;}} do listy „{{name}}”, {{skipped}} {{skipped:plural; one:już obecna; few:już obecne; many:już obecnych; other:już obecnej;}}"
+	},
+	"labels": {
+		"title": "Drukuj etykiety",
+		"button": "Drukuj etykiety",
+		"selected": "Drukuj etykiety zaznaczonych",
+		"kind": "Rodzaj etykiety",
+		"kinds": {
+			"pair": "Para",
+			"barcode": "Tylko kod kreskowy",
+			"spine": "Tylko pasek grzbietowy"
+		},
+		"kindHints": {
+			"pair": "Pasek grzbietowy u góry i etykieta z kodem kreskowym pod spodem, jedna para na książkę (obecny wydruk).",
+			"barcode": "Tylko wewnętrzna etykieta z kodem kreskowym, do ponownego wydruku.",
+			"spine": "Tylko pasek grzbietowy, na przykład po zmianie klasyfikacji."
+		},
+		"stock": "Arkusz etykiet",
+		"start": "Pierwsza wolna pozycja",
+		"startHint": "Od 1 do {{max}}: pomija etykiety już użyte na arkuszu.",
+		"count": "{{count}} {{count:plural; one:egzemplarz; few:egzemplarze; many:egzemplarzy; other:egzemplarza;}}",
+		"unclassified": "{{count}} {{count:plural; one:egzemplarz książki; few:egzemplarze książek; many:egzemplarzy książek; other:egzemplarza książki;}} do sklasyfikowania: drukuje się wyłącznie etykiety z kodem kreskowym, a pasek grzbietowy po klasyfikacji.",
+		"pendingCount": "{{count}} {{count:plural; one:egzemplarz; few:egzemplarze; many:egzemplarzy; other:egzemplarza;}} z etykietami do wydrukowania",
+		"pages": "{{pages}} {{pages:plural; one:arkusz; few:arkusze; many:arkuszy; other:arkusza;}} (po {{perPage}} na arkusz)",
+		"print": "Otwórz wydruk",
+		"afterPrint": "Strona wydruku została otwarta w nowej karcie. Po wydrukowaniu oznaczyć etykiety jako wydrukowane.",
+		"markPrinted": "Oznacz jako wydrukowane",
+		"marked": "{{count:plural; one:{{count}} egzemplarz oznaczony jako wydrukowany; few:{{count}} egzemplarze oznaczone jako wydrukowane; many:{{count}} egzemplarzy oznaczonych jako wydrukowane; other:{{count}} egzemplarza oznaczonego jako wydrukowany;}}",
+		"status": {
+			"printed": "Etykiety wydrukowane",
+			"pending": "Etykiety do wydruku",
+			"partial": "Brakuje jednej etykiety"
+		}
+	},
+	"cards": {
+		"title": "Drukuj karty",
+		"count": "{{count}} {{count:plural; one:karta; few:karty; many:kart; other:karty;}}",
+		"afterPrint": "Strona wydruku została otwarta w nowej karcie. Po wydrukowaniu oznaczyć karty jako wydrukowane.",
+		"layout": "Jak drukować",
+		"layouts": {
+			"side-by-side": "Awers i rewers obok siebie",
+			"duplex": "Po obu stronach arkusza"
+		},
+		"window": "W oknie drukowania przeglądarki:",
+		"steps": {
+			"duplex": {
+				"long-edge": "wybrać „Dwustronnie”, odwracając wzdłuż dłuższej krawędzi;",
+				"short-edge": "wybrać „Dwustronnie”, odwracając wzdłuż krótszej krawędzi;"
+			},
+			"scale": "skala 100 % („Rzeczywisty rozmiar”, nie „Dopasuj do strony”);",
+			"margins": "marginesy: brak.",
+			"after": {
+				"side-by-side": {
+					"marks": "Następnie wyciąć każdą kartę, łącząc linijką znaczniki cięcia wokół kart, i zgiąć ją na pół wzdłuż krótszej krawędzi.",
+					"line": "Następnie wyciąć każdą kartę wzdłuż kolorowej linii wokół niej i zgiąć ją na pół wzdłuż krótszej krawędzi.",
+					"edge": "Następnie wyciąć każdą kartę wzdłuż jej krawędzi i zgiąć ją na pół wzdłuż krótszej krawędzi."
+				},
+				"duplex": {
+					"marks": "Następnie wyciąć karty, łącząc linijką znaczniki cięcia wokół awersów: rewers jest już za awersem (dziesięć na arkusz).",
+					"line": "Następnie wyciąć karty wzdłuż kolorowej linii wokół awersów: rewers jest już za awersem (dziesięć na arkusz).",
+					"edge": "Następnie wyciąć karty wzdłuż krawędzi awersów: rewers jest już za awersem (dziesięć na arkusz)."
+				}
+			}
+		},
+		"print": "Drukuj",
+		"calibrate": "Za pierwszym razem albo gdy rewersy nie trafiają za awersy:"
+	},
+	"words": {
+		"teacher": "Nauczyciel",
+		"title": "Tytuł",
+		"code": "Kod",
+		"dueBy": "Termin zwrotu",
+		"due": "Termin",
+		"name": "Imię i nazwisko",
+		"daysOverdue": "Dni po terminie",
+		"loanOn": "Wypożyczenie z {{date}} dla",
+		"overduesOn": "Monity biblioteki z {{date}}",
+		"toReturn": "Książki do zwrotu do biblioteki",
+		"enjoy": "Miłej lektury."
+	}
+}

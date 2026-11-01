@@ -1,0 +1,7 @@
+<div class="band compact">
+	<img class="pictogram" src="{{classification.image_url}}" alt="">
+	<div class="lines">
+		<div class="head">{{call.head}}</div>
+		<div class="sub">{{#classification.is_fiction}}{{call.rest}}{{/classification.is_fiction}}{{#classification.is_nonfiction}}{{classification.label}}{{/classification.is_nonfiction}}</div>
+	</div>
+</div>

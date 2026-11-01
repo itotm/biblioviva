@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "Salva",
+		"cancel": "Annulla",
+		"close": "Chiudi",
+		"confirm": "Conferma",
+		"delete": "Elimina",
+		"edit": "Modifica",
+		"search": "Cerca",
+		"export": "Esporta",
+		"back": "Indietro",
+		"retry": "Riprova",
+		"backTo": "Torna a {{page}}",
+		"more": "Altre azioni"
+	},
+	"similar": {
+		"label": "Simile",
+		"count": "più {{count:plural; one:{{count}} simile, trovato; other:{{count}} simili, trovati;}} correggendo un errore di battitura",
+		"hint": "Trovato correggendo un errore di battitura: verificare che sia quello cercato."
+	},
+	"status": {
+		"loading": "Caricamento…",
+		"error": "Si è verificato un errore"
+	},
+	"statuses": {
+		"item": {
+			"available": "Disponibile",
+			"onLoan": "In prestito",
+			"lost": "Smarrito",
+			"damaged": "Danneggiato",
+			"inRepair": "In riparazione",
+			"withdrawn": "Ritirato",
+			"notForLoan": "Consultazione"
+		},
+		"loan": {
+			"open": "In corso",
+			"dueSoon": "In scadenza",
+			"overdue": "In ritardo",
+			"returned": "Restituito"
+		},
+		"patron": {
+			"active": "Attivo",
+			"anonymized": "Rimosso"
+		},
+		"print": {
+			"pending": "Da stampare",
+			"printed": "Stampato"
+		}
+	},
+	"list": {
+		"selected": "{{count}} {{count:plural; one:selezionato; other:selezionati;}}"
+	},
+	"scan": {
+		"label": "Codice a barre",
+		"placeholder": "Scansiona o digita un codice",
+		"submit": "Cerca codice",
+		"camera": "Fotocamera",
+		"cameraTitle": "Scansiona con la fotocamera",
+		"errors": {
+			"empty": "Nessun codice inserito.",
+			"item_check_digit": "Il codice della copia ha un carattere di controllo errato: ripetere la lettura.",
+			"card_check_digit": "Il numero della tessera ha un carattere di controllo errato: ripetere la lettura.",
+			"isbn_check_digit": "L'ISBN ha una cifra di controllo errata: controllare le cifre.",
+			"unrecognised": "Codice non riconosciuto: verificare che lo scanner legga Code 39 e Code 128."
+		},
+		"invalidRead": "Codice non valido ({{code}}): lettura in corso.",
+		"invalidShort": "Codice non valido, nuova lettura…",
+		"useAnyway": "Usa comunque {{code}}"
+	},
+	"camera": {
+		"start": "Avvia fotocamera",
+		"stop": "Ferma fotocamera",
+		"switch": "Cambia fotocamera",
+		"torch": "Torcia",
+		"snapshot": "Scatta",
+		"device": "Fotocamera",
+		"starting": "Avvio della fotocamera…",
+		"errors": {
+			"insecure": "La fotocamera funziona solo con una connessione sicura (https): aperta dalla rete locale senza Tailscale, l'app non può usarla. Usare il lettore di codici a barre o caricare un file, oppure aprire l'app dall'indirizzo Tailscale.",
+			"denied": "Permesso negato: consentire l'uso della fotocamera nelle impostazioni del browser e riprovare.",
+			"notFound": "Nessuna fotocamera trovata su questo dispositivo.",
+			"busy": "La fotocamera è già in uso da un'altra app.",
+			"generic": "Impossibile avviare la fotocamera ({{message}}).",
+			"timeout": "La fotocamera non ha risposto. Controllare che il browser non stia ancora chiedendo il permesso, o che non sia stato negato in precedenza per questo sito (icona vicino all'indirizzo)."
+		},
+		"permissionHint": "Se il browser chiede il permesso di usare la fotocamera (di solito vicino alla barra dell'indirizzo), scegliere «Consenti»."
+	},
+	"clipboard": {
+		"failed": "Copia non riuscita: selezionare il testo e copiarlo a mano."
+	},
+	"form": {
+		"errorsTitle": "Controllare i campi segnalati",
+		"field": "Campo {{field}}"
+	},
+	"confirm": {
+		"title": "Confermare?"
+	},
+	"export": {
+		"csv": "CSV (foglio di calcolo, testo)",
+		"ods": "ODS (LibreOffice / Excel)"
+	},
+	"demo": {
+		"panel": "Questa installazione contiene dati dimostrativi caricati il {{when}}: {{patrons}} {{patrons:plural; one:utente; other:utenti;}}, {{biblios}} {{biblios:plural; one:titolo; other:titoli;}}, {{items}} {{items:plural; one:copia; other:copie;}}, {{loans}} {{loans:plural; one:prestito; other:prestiti;}}. Sono inventati: nessuna persona reale."
+	},
+	"import": {
+		"header": "La prima riga è un'intestazione",
+		"column": "Colonna {{n}}",
+		"ignore": "— ignora —",
+		"counts": {
+			"new": "{{count}} {{count:plural; one:nuovo; other:nuovi;}}",
+			"update": "{{count}} da aggiornare",
+			"unchanged": "{{count}} {{count:plural; one:invariato; other:invariati;}}",
+			"error": "{{count}} {{count:plural; one:errore; other:errori;}}"
+		},
+		"onlyErrors": "Mostra solo gli errori",
+		"info": "{{rows}} {{rows:plural; one:riga; other:righe;}} · codifica {{encoding}} · separatore «{{delimiter}}»",
+		"steps": {
+			"upload": "File",
+			"mapping": "Colonne",
+			"preview": "Verifica",
+			"done": "Completato"
+		},
+		"line": "Riga",
+		"status": "Esito",
+		"reason": "Dettagli",
+		"statuses": {
+			"new": "Nuovo",
+			"update": "Aggiorna",
+			"unchanged": "Invariato",
+			"error": "Errore"
+		},
+		"errors": {
+			"empty": "Il file è vuoto.",
+			"tooLarge": "Il file supera i {{mb}} MB.",
+			"noRows": "Nessuna riga trovata nel file.",
+			"uploadGone": "Il file caricato non è più disponibile: caricarlo di nuovo.",
+			"notReady": "Il file ha ancora errori: verificarlo di nuovo.",
+			"mappingIncomplete": "Mancano le colonne obbligatorie: {{columns}}."
+		},
+		"template": {
+			"title": "Il modello del file",
+			"hint": "Scegliere le colonne: il modello contiene solo l'intestazione e si riempie una riga per volta (anche con un foglio di calcolo, salvando in CSV).",
+			"required": "Obbligatorie",
+			"keys": "Chiavi",
+			"keysHint": "Servono a riconoscere chi o cosa c'è già; si possono lasciare fuori.",
+			"optional": "Facoltative",
+			"download": "Scarica il modello",
+			"ifMissing": "Se manca: {{text}}."
+		},
+		"groups": {
+			"required": "obbligatoria",
+			"key": "chiave"
+		}
+	},
+	"words": {
+		"yes": "Sì",
+		"no": "No"
+	},
+	"password": {
+		"show": "Mostra la password",
+		"hide": "Nascondi la password"
+	},
+	"demoPublic": {
+		"language": "Lingua",
+		"welcome": {
+			"title": "Benvenuto nella demo di BiblioViva",
+			"beta": "Public beta",
+			"betaText": "BiblioViva è in public beta: le funzioni sono stabili, ma fino alla versione 1.0 non è garantito che un aggiornamento resti compatibile con i dati e le impostazioni della versione precedente.",
+			"intro": "BiblioViva è il programma per gestire la biblioteca di una scuola: prestiti e restituzioni, catalogo, utenti con foto e tessere, etichette, stampe e report. Questa è una demo pubblica: tutte le funzioni sono disponibili per la prova.",
+			"contents": "Dentro trovi una scuola primaria inventata: {{patrons}} {{patrons:plural; one:alunno o docente; other:alunni e docenti;}}, {{biblios}} {{biblios:plural; one:titolo; other:titoli;}} e {{items}} {{items:plural; one:copia; other:copie;}}, {{openLoans}} {{openLoans:plural; one:prestito; other:prestiti;}} in corso, di cui {{overdueLoans}} in ritardo. Nomi e foto sono inventati: nessuna persona è reale.",
+			"reset": "Ogni giorno alle {{time}} la demo torna come all'inizio. Le modifiche alla configurazione si possono provare ma non vengono salvate.",
+			"examples": "Nella demo il testo e le foto vengono sostituiti da un esempio: ogni operazione si può provare fino in fondo, ma ciò che si scrive o si fotografa non resta e nessun altro visitatore lo vede. Gli import accettano solo i file di esempio, scaricabili dalla pagina di ogni import.",
+			"accountsTitle": "Con quale account entrare",
+			"accountsHint": "Come in biblioteca, ogni account vede solo il lavoro del suo ruolo. Nome utente e password si scrivono nel modulo qui sopra.",
+			"password": "La password è la stessa per tutti gli account:"
+		},
+		"accounts": {
+			"admin": {
+				"name": "Amministrazione",
+				"does": "vede tutto: oltre al lavoro degli altri account, la configurazione, gli account del personale, i backup, le classi e il passaggio all'anno successivo."
+			},
+			"prestiti": {
+				"name": "Gestione prestiti",
+				"does": "il banco prestiti: presta, restituisce e rinnova, segue i ritardi e stampa i solleciti."
+			},
+			"catalogo": {
+				"name": "Catalogazione",
+				"does": "libri e copie, ricerca dei dati da SBN (qui simulata), copertine, classificazione ed etichette."
+			},
+			"tessere": {
+				"name": "Tessere e foto",
+				"does": "alunni e docenti, foto e censimento fotografico delle classi, stampa delle tessere."
+			},
+			"report": {
+				"name": "Report",
+				"does": "statistiche su prestiti, catalogo e utenti, esportazione delle tabelle."
+			}
+		},
+		"blocked": {
+			"config": "Nella demo la configurazione non si salva: tutto si può provare, ma le modifiche non vengono scritte.",
+			"restore": "Nella demo il ripristino dei backup è disattivato: i dati della demo si ricreano da soli ogni notte.",
+			"configImport": "Nella demo l'importazione di una configurazione è disattivata: la configurazione della demo è la stessa per tutti i visitatori.",
+			"pictures": "Nella demo le foto di classe non si caricano: nel censimento prova con la foto di classe di esempio.",
+			"sqlReports": "Nella demo i report scritti in SQL sono disattivati; i report guidati sono disponibili.",
+			"importSize": "Nella demo i file da importare possono essere al massimo di 1 MB.",
+			"printSize": "Nella demo si stampano al massimo 3 fogli alla volta: scegliere meno copie o meno utenti.",
+			"importExample": "Nella demo si importa solo il file di esempio: scaricarlo con il pulsante del modello e caricarlo così com'è.",
+			"notesLimit": "Nella demo si possono scrivere solo poche segnalazioni al giorno.",
+			"demoData": "Nella demo i dati di prova restano fino all'azzeramento notturno.",
+			"backups": "Nella demo i backup manuali sono disattivati: i dati della demo si ricreano da soli ogni notte.",
+			"archives": "Nella demo gli archivi e i backup non si scaricano: i dati e la configurazione della demo si ricreano da soli ogni notte.",
+			"languagePacks": "Nella demo i pacchetti di lingua non si scaricano: la demo ha l'italiano e l'inglese."
+		},
+		"example": {
+			"note": "DEMO – segnalazione del {{when}}",
+			"comment": "Nota demo del {{when}}",
+			"book": "Libro demo del {{when}}",
+			"wish": "Desiderata demo del {{when}}",
+			"class": "Classe demo del {{when}}",
+			"printList": "Lista demo del {{when}}",
+			"inventory": "Inventario demo del {{when}}",
+			"reason": "Motivo demo del {{when}}",
+			"date": "Data demo del {{when}}"
+		},
+		"replaced": "Nella demo il testo e le foto vengono sostituiti da un esempio: il salvataggio è avvenuto, ma resta l'esempio.",
+		"tooMany": "Troppe richieste in poco tempo: riprovare tra un minuto.",
+		"refused": {
+			"title": "Non disponibile nella demo",
+			"busyTitle": "Troppe richieste",
+			"back": "Torna a BiblioViva"
+		}
+	}
+}

@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "Catalogue",
+		"search": "Search by title, author or ISBN…",
+		"new": "New book",
+		"empty": "No book matches the filters.",
+		"countFiltered": "{{shown}} {{shown:plural; one:title matches; other:titles match;}} the filters",
+		"clearFilters": "Clear filters",
+		"filters": {
+			"kind": "Kind",
+			"genre": "Genre",
+			"class": "Classification",
+			"readingLevel": "Level",
+			"itemType": "Material",
+			"series": "Series",
+			"all": "All",
+			"allF": "All",
+			"withdrawn": "Also show withdrawn books"
+		},
+		"columns": {
+			"title": "Title",
+			"series": "Series",
+			"author": "Author",
+			"year": "Year",
+			"isbn": "ISBN",
+			"classification": "Classification",
+			"copies": "Copies",
+			"callNumber": "Call number",
+			"acquiredAt": "Acquired"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "Search the catalogue",
+		"startHint": "Search by title, author, publisher, code or ISBN, or with the filters."
+	},
+	"kinds": {
+		"fiction": "Fiction",
+		"nonfiction": "Non-fiction"
+	},
+	"fields": {
+		"title": "Title",
+		"subtitle": "Subtitle",
+		"originalTitle": "Original title",
+		"originalTitleHint": "Only when the book is a translation: the title of the work in its original language.",
+		"responsibility": "Statement of responsibility (as on the title page)",
+		"author": "Author",
+		"publisher": "Publisher",
+		"publicationPlace": "Place",
+		"publicationYear": "Year",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN (not an ISBN)",
+		"physicalDescription": "Physical description",
+		"series": "Series",
+		"seriesNumber": "Number in the series",
+		"seriesHint": "For example Harry Potter and 3. The series already in the catalogue appear while typing.",
+		"dewey": "Dewey (from SBN)",
+		"kind": "Kind",
+		"genre": "Genre",
+		"classCode": "Classification",
+		"readingLevel": "Reading level",
+		"subjects": "Subjects",
+		"notes": "Notes",
+		"authorHint": "Surname, Name. Use the quick picks when there is no personal author.",
+		"subjectsHint": "One per line or comma-separated.",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "New book",
+		"editTitle": "Edit record",
+		"create": "Save the record",
+		"save": "Save changes",
+		"identity": "Record",
+		"publication": "Publication",
+		"classification": "Classification",
+		"more": "More",
+		"quickPicks": "Quick picks",
+		"unknownPublisher": "Unknown publisher",
+		"unknownPlace": "Unknown place",
+		"singleCopy": "Copy {{barcode}}",
+		"singleCopyHint": "The record has a single copy: its data is edited here and saved together with the record."
+	},
+	"picker": {
+		"kind": "What kind of book is it?",
+		"fiction": "Fiction",
+		"nonfiction": "Non-fiction",
+		"genre": "Pick the genre",
+		"class": "Pick the subject",
+		"readingLevel": "Reading level",
+		"anyClass": "None",
+		"back": "Back to the main subjects",
+		"children": "Subjects of {{label}}",
+		"selected": "Selected: {{label}}",
+		"parentOnly": "Use “{{label}}” in general",
+		"later": "Classify later",
+		"laterHint": "The book goes to the list “To classify”: its copies are not lent and its spine band is not printed until it is classified."
+	},
+	"detail": {
+		"heading": "Book record",
+		"tabs": {
+			"copies": "Copies",
+			"details": "Details"
+		},
+		"copies": "{{available}} available of {{total}}",
+		"noCopies": "No copy yet: add one to lend it.",
+		"seriesLink": "All the books of the series “{{series}}”",
+		"edit": "Edit",
+		"delete": "Delete record",
+		"addCopies": "Add copies",
+		"deleteTitle": "Delete the record “{{title}}”?",
+		"deleteDescription": "The record leaves the catalogue. Possible only without copies.",
+		"deleted": "Record deleted",
+		"hasItems": "The record still has {{count}} {{count:plural; one:copy; other:copies;}}: withdraw or delete {{count:plural; one:it; other:them;}} first.",
+		"columns": {
+			"barcode": "Barcode",
+			"callNumber": "Call number",
+			"itemType": "Material",
+			"readingLevel": "Level",
+			"status": "Status",
+			"borrower": "On loan to",
+			"acquisition": "Acquired on",
+			"labels": "Labels"
+		},
+		"dueOn": "due {{date}}",
+		"identifiers": "Identifiers",
+		"source": "Source: {{source}}",
+		"created": "Created on {{when}}",
+		"updated": "Last edited on {{when}}",
+		"onLoan": "On loan"
+	},
+	"item": {
+		"addTitle": "Add copies",
+		"copies": "Number of copies",
+		"itemType": "Material",
+		"callNumber": "Call number",
+		"callNumberHint": "Suggested from the classification; it can be changed.",
+		"readingLevel": "Level of the copy",
+		"enumeration": "Volume / number",
+		"acquisitionDate": "Acquisition date",
+		"notes": "Notes on the copy",
+		"notForLoan": "Reference only (not lent)",
+		"add": "Add",
+		"added": "{{count}} {{count:plural; one:copy; other:copies;}} added: {{barcodes}}",
+		"editTitle": "Edit copy {{barcode}}",
+		"save": "Save",
+		"saved": "Copy updated",
+		"status": "Change status",
+		"statusTitle": "Status of copy {{barcode}}",
+		"newStatus": "New status",
+		"reason": "Reason (optional, recorded)",
+		"statusSaved": "Status updated",
+		"onLoan": "The copy is on loan: record the return first.",
+		"delete": "Delete copy",
+		"deleteTitle": "Delete copy {{barcode}}?",
+		"deleteDescription": "Only for cataloguing mistakes: a copy that was ever lent cannot be deleted, withdraw it instead.",
+		"deleted": "Copy deleted",
+		"hasLoans": "The copy has recorded loans: withdraw it instead of deleting it.",
+		"labelsTitle": "Labels of copy {{barcode}}"
+	},
+	"errors": {
+		"isbnInvalid": "Invalid ISBN (check the digits)",
+		"isbnTaken": "A record with this ISBN already exists",
+		"issnInvalid": "Invalid ISSN",
+		"eanInvalid": "Invalid EAN",
+		"yearImplausible": "Implausible year",
+		"genreRequired": "Pick the genre",
+		"genreUnknown": "Genre not in the configuration",
+		"genreNotForNonfiction": "Non-fiction has no genre",
+		"classCodeRequired": "Pick the subject",
+		"classCodeUnknown": "Subject not in the configuration",
+		"classCodeNotForFiction": "Fiction has no subject",
+		"readingLevelNotAllowed": "The reading level is not expected here",
+		"readingLevelOutOfRange": "Reading level not in the configuration",
+		"itemTypeUnknown": "Material not in the configuration",
+		"acquisitionDateInvalid": "Invalid date (YYYY-MM-DD)",
+		"copiesOutOfRange": "1 to 100 copies at a time"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "Test provider"
+		},
+		"errors": {
+			"unreachable": "The service cannot be reached. Check the Internet connection and try again later.",
+			"timeout": "The service did not answer in time. Try again later.",
+			"protocol": "The service gave an unexpected answer. The data can be entered by hand.",
+			"http": "The service answered with an error. Try again later.",
+			"rate_limited": "The service refused the request because of too many queries. Try again later.",
+			"not_configured": "The service is not configured: a setting is missing (for example the API key).",
+			"spawn": "The yaz-client program is not available on this server. Tell the administrator."
+		},
+		"noHits": "No results from {{provider}}.",
+		"hits": "{{count}} {{count:plural; one:result; other:results;}} from {{provider}}",
+		"fromCache": "from cache"
+	},
+	"fastAdd": {
+		"title": "New book",
+		"steps": {
+			"code": "Code",
+			"lookup": "Lookup",
+			"form": "Record and copies",
+			"done": "Completed"
+		},
+		"code": {
+			"heading": "Scan the barcode",
+			"label": "ISBN or EAN",
+			"placeholder": "978…",
+			"material": "Material",
+			"noCode": "No code",
+			"noCodeHint": "Search by title and author, or fill in the record by hand.",
+			"manual": "Fill in by hand",
+			"notACode": "The code read is neither an ISBN nor an EAN: check the digits or choose “No code”.",
+			"eanNotIsbn": "EAN {{ean}} read: it is not an ISBN, so the record must be filled in by hand.",
+			"cameraNotIsbn": "Not an ISBN: frame the book's barcode"
+		},
+		"search": {
+			"heading": "Search by title and author",
+			"title": "Title",
+			"author": "Author",
+			"submit": "Search",
+			"empty": "Type at least the title or the author."
+		},
+		"duplicate": {
+			"heading": "This ISBN is already in the catalogue",
+			"copies": "{{count}} {{count:plural; one:copy; other:copies;}}",
+			"addCopy": "Add copy",
+			"open": "Open the record",
+			"another": "Scan another code"
+		},
+		"lookup": {
+			"searching": "Searching {{providers}}…",
+			"best": "Most complete",
+			"heading": "Records found",
+			"pick": "Use this record",
+			"none": "No record found. The record can be filled in by hand.",
+			"manual": "Enter by hand",
+			"bySearch": "Search by title",
+			"retry": "Retry",
+			"another": "New code",
+			"source": "Source: {{provider}}",
+			"providerOk": "{{count}} {{count:plural; one:record; other:records;}}",
+			"providerCached": "from cache",
+			"failed": "Error"
+		},
+		"form": {
+			"heading": "Check the record and add the copies",
+			"rescan": "Scan another code",
+			"bestOf": "The most complete of the {{count}} records found. Check the year and the description against the copy.",
+			"otherRecords": "Other {{count:plural; one:record; other:records;}} ({{count}})",
+			"fromSource": "Record from {{provider}}: check the data before saving.",
+			"manualSource": "Record filled in by hand.",
+			"copiesSection": "Copies",
+			"copies": "Number of copies",
+			"itemType": "Material",
+			"callNumber": "Call number",
+			"readingLevel": "Level of the copies",
+			"acquisitionDate": "Acquisition date",
+			"save": "Save record and copies",
+			"deweySuggested": "Subject proposed from Dewey number {{dewey}}."
+		},
+		"done": {
+			"heading": "Record saved",
+			"summary": "“{{title}}” with {{count}} {{count:plural; one:copy; other:copies;}}",
+			"summaryCopies": "{{count}} {{count:plural; one:copy; other:copies;}} added to “{{title}}”",
+			"barcodes": "Copy barcodes",
+			"printLabels": "Print labels",
+			"addToList": "Add to the labels list",
+			"open": "Open the record",
+			"another": "Add another"
+		},
+		"cover": {
+			"title": "Cover",
+			"alt": "Cover of the book",
+			"searching": "Looking for the cover online…",
+			"found": "Found on {{provider}}: it is saved with the record. If it is wrong, photograph the book's own.",
+			"photo": "Photo of the cover: it is saved with the record.",
+			"none": "No cover found online: it can be photographed.",
+			"empty": "No cover: it can be photographed.",
+			"take": "Photograph the cover",
+			"replace": "Replace with a photo",
+			"remove": "Remove",
+			"saving": "Saving the cover…",
+			"failed": "The cover was not saved: add it from the book's record."
+		}
+	},
+	"cover": {
+		"title": "Cover",
+		"take": "Photograph the cover",
+		"upload": "Upload a file",
+		"change": "Change cover",
+		"delete": "Remove cover",
+		"deleteTitle": "Remove the cover?",
+		"deleteDescription": "The image is deleted from the server; a new one can be photographed.",
+		"shoot": "Shoot",
+		"loading": "Loading the straightening module ({{loaded}} of {{total}} MB), on first use only.",
+		"loadingShort": "Loading the straightening module ({{loaded}} MB), on first use only.",
+		"loadFailed": "The straightening module could not be loaded. Check the connection and try again.",
+		"detecting": "Looking for the edges of the cover…",
+		"notFound": "Edges not found automatically: drag the corners onto the cover.",
+		"adjustHint": "Drag the four corners onto the edges of the cover, then straighten.",
+		"straighten": "Straighten",
+		"result": "Result",
+		"use": "Use this cover",
+		"retake": "Retake",
+		"cancel": "Cancel",
+		"saved": "Cover saved",
+		"deleted": "Cover removed",
+		"placeholder": "No cover",
+		"alt": "Cover of {{title}}",
+		"cameraHint": "Frame the whole cover, even at an angle: it is straightened after the shot.",
+		"errors": {
+			"too_large": "File too large: the limit is {{maxMb}} MB.",
+			"not_an_image": "The file is not a readable image.",
+			"unsupported_format": "Unsupported image format (use JPEG, PNG, WebP or HEIC).",
+			"empty": "No file selected."
+		},
+		"download": "Download cover",
+		"downloading": "Looking for the cover online…",
+		"downloaded": "Cover downloaded from {{provider}}",
+		"downloadNotFound": "No cover found online for this ISBN: it can be photographed.",
+		"downloadNoIsbn": "The record has no ISBN: the cover must be photographed."
+	},
+	"export": {
+		"copiesTotal": "Copies",
+		"copiesAvailable": "Available",
+		"callNumber": "Call number",
+		"acquiredAt": "Acquired"
+	},
+	"import": {
+		"title": "Import the catalogue",
+		"upload": {
+			"file": "CSV file",
+			"hint": "One row per copy: the fields of the title repeat on the rows of its copies. Title, author and publisher are required. Use the headers of the template, downloaded below with the columns needed. To move from Koha, use the export described in the administrator's guide.",
+			"submit": "Upload"
+		},
+		"mapping": {
+			"uncertain": "The columns were not recognised: pick the field of each one before continuing.",
+			"remembered": "Columns remembered from the last import of this file.",
+			"specialValues": "Special values when the author or the publisher is missing (“{{author}}”, “{{publisher}}”)",
+			"specialValuesHint": "Without this choice, rows without author or publisher are errors.",
+			"validate": "Check the file",
+			"without": {
+				"biblioKey": "Without the biblio_key column the copies of one book are grouped by ISBN; rows without an ISBN are a title each.",
+				"barcode": "Without the barcode column the barcodes of the copies are generated: print their labels after the import.",
+				"classification": "Without the classification column the books go to the list “To classify”: their copies are not lent until they are classified."
+			}
+		},
+		"fields": {
+			"biblioKey": "Title key (biblionumber)",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "Title",
+			"subtitle": "Subtitle",
+			"originalTitle": "Original title",
+			"responsibility": "Statement of responsibility",
+			"author": "Author",
+			"publisher": "Publisher",
+			"publicationPlace": "Place of publication",
+			"publicationYear": "Year",
+			"physicalDescription": "Physical description",
+			"series": "Series",
+			"seriesNumber": "Number in the series",
+			"dewey": "Dewey",
+			"classification": "Classification (genre or subject, Koha's ccode)",
+			"readingLevel": "Reading level",
+			"subjects": "Subjects",
+			"notes": "Title notes",
+			"barcode": "Copy barcode",
+			"callNumber": "Call number",
+			"itemType": "Material",
+			"enumeration": "Volume",
+			"status": "Status",
+			"notForLoan": "Not for loan",
+			"acquisitionDate": "Acquisition date",
+			"itemNotes": "Copy notes"
+		},
+		"preview": {
+			"ready": "No errors: the file can be imported.",
+			"blocked": "Fix the errors in the file and check again: nothing is imported with errors.",
+			"nothing": "Every copy in the file is already in the catalogue: there is nothing to import.",
+			"titles": "{{new}} new {{new:plural; one:title; other:titles;}}, {{existing}} already in the catalogue (their copies are added)",
+			"columns": {
+				"title": "Title",
+				"barcode": "Barcode",
+				"classification": "Classification"
+			},
+			"question": {
+				"title": "Copies of one title with different levels",
+				"text": "In {{count}} {{count:plural; one:title; other:titles;}} the copies have different reading levels. The level can live on each copy instead of the title: this is the “level per copy” setting, which applies to the whole catalogue and moves the level of the titles already there onto their copies.",
+				"yes": "Yes, level per copy",
+				"no": "No, they are errors to fix"
+			},
+			"commit": "Import",
+			"back": "Back to the columns",
+			"generatedBarcodes": "{{count}} {{count:plural; one:copy; other:copies;}} without a barcode: the barcode is generated, then the labels are printed.",
+			"toClassify": "{{count}} new {{count:plural; one:title without classification; other:titles without classification;}}: {{count:plural; one:it will go; other:they will go;}} to “To classify”."
+		},
+		"reasons": {
+			"tooLong": "Text too long in the column {{column}}: at most {{max}} characters",
+			"isbnInvalid": "Invalid ISBN: “{{value}}”",
+			"classificationUnknown": "Classification not in the configuration: “{{value}}”",
+			"barcodeInvalid": "Barcode with characters that are not allowed: “{{value}}”",
+			"barcodeCheckDigit": "Barcode with a wrong check character: “{{value}}”",
+			"barcodeDuplicateInFile": "Barcode already used on line {{line}}",
+			"barcodeTaken": "Barcode {{value}} already belongs to another copy in the catalogue",
+			"barcodeIsCard": "The code {{value}} is or looks like a card number: a copy cannot have a card's code",
+			"statusUnknown": "Status not recognised: “{{value}}” (available, lost, damaged, in repair, withdrawn)",
+			"notForLoanUnknown": "Value not recognised for “not for loan”: “{{value}}” (yes/no)",
+			"dateInvalid": "Invalid date: “{{value}}” (YYYY-MM-DD or DD/MM/YYYY)",
+			"authorMissing": "The author is missing (with “special values” it becomes Anonimo)",
+			"publisherMissing": "The publisher is missing (with “special values” it becomes s.n.)",
+			"titleMissing": "The title is missing",
+			"groupConflict": "Same key as line {{line}} but a different title",
+			"classQuestion": "Copies with different levels ({{classes}}): answer the question below",
+			"classDiffers": "Copies with different levels ({{classes}}) without level per copy",
+			"copyExists": "Copy already in the catalogue: skipped",
+			"mergedIntoExisting": "Added to the title already in the catalogue (same key or same ISBN)"
+		},
+		"done": {
+			"title": "Catalogue imported",
+			"summary": "{{titlesCreated}} new {{titlesCreated:plural; one:title; other:titles;}}, {{copiesCreated}} {{copiesCreated:plural; one:copy; other:copies;}} added ({{titlesMerged}} {{titlesMerged:plural; one:title; other:titles;}} already present, {{copiesSkipped}} {{copiesSkipped:plural; one:copy; other:copies;}} skipped).",
+			"classPerItem": "Level per copy has been turned on.",
+			"batch": "Import no. {{id}}: the original file is kept.",
+			"labels": "Print the labels of the copies without a barcode",
+			"open": "Go to the catalogue",
+			"again": "Import another file"
+		},
+		"columns": {
+			"title": {
+				"hint": "The title of the book."
+			},
+			"author": {
+				"hint": "Surname, First name; empty is an error, unless “special values”."
+			},
+			"publisher": {
+				"hint": "The publisher; empty as for the author."
+			},
+			"biblioKey": {
+				"hint": "The code of the title in the old program (Koha's biblionumber): it keeps the copies together.",
+				"missing": "copies are grouped by ISBN"
+			},
+			"barcode": {
+				"hint": "The barcode already on the copy.",
+				"missing": "the barcode is generated and the labels are printed"
+			},
+			"classification": {
+				"hint": "The code of the genre (fiction) or of the subject (non-fiction).",
+				"missing": "the book goes to “To classify”"
+			},
+			"readingLevel": {
+				"hint": "The reading level (fiction)."
+			},
+			"isbn": {
+				"hint": "ISBN-10 or ISBN-13."
+			},
+			"issn": {
+				"hint": "For periodicals."
+			},
+			"ean": {
+				"hint": "The EAN code of DVDs and other material."
+			},
+			"subtitle": {
+				"hint": "The subtitle."
+			},
+			"originalTitle": {
+				"hint": "Translations only: the title in the original language."
+			},
+			"responsibility": {
+				"hint": "Illustrators, translators…"
+			},
+			"publicationPlace": {
+				"hint": "The place of publication."
+			},
+			"publicationYear": {
+				"hint": "The year of publication."
+			},
+			"physicalDescription": {
+				"hint": "Pages, illustrations, size."
+			},
+			"series": {
+				"hint": "The series (not the publisher's collection)."
+			},
+			"seriesNumber": {
+				"hint": "The number in the series."
+			},
+			"dewey": {
+				"hint": "The Dewey number, for reference only."
+			},
+			"subjects": {
+				"hint": "Keywords separated by ; or ,."
+			},
+			"notes": {
+				"hint": "Notes of the title."
+			},
+			"callNumber": {
+				"hint": "The call number; proposed when missing."
+			},
+			"itemType": {
+				"hint": "The material (book, dvd…); the first configured one when missing."
+			},
+			"enumeration": {
+				"hint": "The volume, for works in several volumes."
+			},
+			"status": {
+				"hint": "available, lost, damaged, in repair, withdrawn."
+			},
+			"notForLoan": {
+				"hint": "1 or yes for reference copies."
+			},
+			"acquisitionDate": {
+				"hint": "The acquisition date; today when missing."
+			},
+			"itemNotes": {
+				"hint": "Notes of the copy."
+			}
+		}
+	},
+	"batch": {
+		"selected": "Change the copies of the selection",
+		"title": "Change the copies",
+		"scope": "{{count}} {{count:plural; one:copy; other:copies;}}",
+		"operation": "What to change",
+		"operations": {
+			"status": "Status",
+			"itemType": "Material",
+			"notForLoan": "Not for loan",
+			"readingLevel": "Level of the copy",
+			"acquisitionDate": "Acquisition date"
+		},
+		"value": "New value",
+		"yes": "Yes",
+		"no": "No",
+		"noClass": "No level",
+		"reason": "Reason",
+		"reasonHint": "Required for lost and withdrawn: it stays in the log of each copy.",
+		"check": "Check",
+		"apply": "Apply to {{count}} {{count:plural; one:copy; other:copies;}}",
+		"plan": {
+			"changes": "{{count}} {{count:plural; one:copy changes; other:copies change;}}",
+			"onLoan": "{{count}} on loan {{count:plural; one:stays as it is (return it; other:stay as they are (return them;}} first)",
+			"unchanged": "{{count}} already {{count:plural; one:has; other:have;}} this value",
+			"notFound": "{{count}} no longer {{count:plural; one:exists; other:exist;}}",
+			"notAllowed": "{{count}} {{count:plural; one:is; other:are;}} not fiction: the level does not apply",
+			"none": "No copy to change."
+		},
+		"excludedTitle": "Copies that stay as they are",
+		"done": "{{count}} {{count:plural; one:copy; other:copies;}} changed",
+		"errors": {
+			"reasonRequired": "Write the reason: it is required for lost and withdrawn.",
+			"itemTypeUnknown": "Material not in the configuration.",
+			"readingLevelNotAllowed": "Level per copy is not on.",
+			"readingLevelOutOfRange": "Reading level not in the configuration.",
+			"dateInvalid": "Invalid date.",
+			"statusUnknown": "Invalid status.",
+			"classificationUnknown": "Pick a genre or a subject of the configuration."
+		},
+		"reclassify": {
+			"button": "Reclassify",
+			"title": "Reclassify the selected titles",
+			"scope": "{{count}} {{count:plural; one:title; other:titles;}}",
+			"resuggest": "Rewrite the copies' call numbers from the new classification",
+			"labelsHint": "The spine bands (and the labels, if the call number changes) go back among those to print.",
+			"changes": "{{count}} {{count:plural; one:title changes; other:titles change;}}",
+			"apply": "Reclassify {{count}} {{count:plural; one:title; other:titles;}}",
+			"done": "{{count}} {{count:plural; one:title; other:titles;}} reclassified, {{calls}} {{calls:plural; one:call number; other:call numbers;}} rewritten"
+		}
+	},
+	"search": {
+		"suggest": "The code {{barcode}} is a copy of “{{title}}”.",
+		"openSuggest": "Open the record",
+		"available": "Available only",
+		"yearFrom": "Year from",
+		"yearTo": "Year to",
+		"copiesAvailable": "{{available}} of {{total}} available",
+		"noCopies": "No copies"
+	},
+	"inventory": {
+		"title": "Stocktaking",
+		"defaultName": "Stocktaking",
+		"emptyTitle": "No stocktaking in progress",
+		"emptyHint": "Start a campaign, then scan the copies shelf by shelf: at the end the ones never seen are marked as lost.",
+		"name": "Campaign name",
+		"start": "New campaign",
+		"started": "Started {{when}}",
+		"overall": "Whole library",
+		"progress": "{{seen}} of {{expected}} ({{percent}}%)",
+		"counts": "{{scanned}} {{scanned:plural; one:copy; other:copies;}} scanned · {{misplaced}} on the wrong shelf · {{found}} found again",
+		"byShelf": "Progress by shelf",
+		"noShelf": "No call number",
+		"scanTitle": "Scan the copies",
+		"shelf": "Shelf",
+		"shelfHint": "For example B or 590: copies with another call number are flagged as out of place.",
+		"scanLabel": "Copy barcode",
+		"camera": "Scan with the camera",
+		"outcomes": {
+			"seen": "{{title}} ({{barcode}}): seen.",
+			"again": "{{title}} ({{barcode}}): already scanned {{when}}.",
+			"misplaced": "{{title}} ({{barcode}}): on the wrong shelf; put it back as its call number says.",
+			"found": "{{title}} ({{barcode}}): it was lost and has been found; it is available again.",
+			"onLoan": "{{title}} ({{barcode}}): on loan; register the return at the desk.",
+			"withdrawn": "{{title}} ({{barcode}}): withdrawn copy, to be taken off the shelf.",
+			"unknown": "{{code}}: no copy has this barcode."
+		},
+		"missing": "Still missing ({{count}})",
+		"allShelves": "All shelves",
+		"allTypes": "All materials",
+		"noneMissing": "Every expected copy has been seen.",
+		"more": "and {{count}} more: export the list to see {{count:plural; one:it; other:them all;}}.",
+		"close": "Close stocktaking",
+		"closeTitle": "Close the stocktaking?",
+		"closeHint": "The {{count}} {{count:plural; one:copy; other:copies;}} never seen will be marked as lost. The campaign can be reopened within a week to undo it.",
+		"closedTitle": "Stocktaking closed",
+		"summary": "{{seen}} of {{expected}} {{expected:plural; one:copy; other:copies;}} seen, {{lost}} marked as lost, {{found}} found again, {{onLoan}} on loan, {{misplaced}} on the wrong shelf.",
+		"history": "Past campaigns",
+		"reopen": "Reopen",
+		"errors": {
+			"alreadyOpen": "A stocktaking is already in progress.",
+			"notOpen": "This stocktaking is closed.",
+			"notFound": "Stocktaking not found.",
+			"tooLate": "It can be reopened only within a week of closing.",
+			"badName": "Give the campaign a name.",
+			"badNotes": "The campaign's notes can be at most 500 characters."
+		},
+		"cameraShelf": "Shelf {{shelf}}",
+		"cameraDone": "Done"
+	},
+	"toClassify": {
+		"title": "To classify",
+		"label": "To classify",
+		"intro": "The books entered without classification, the oldest first. Their copies are not lent until they are classified.",
+		"count": "{{count}} {{count:plural; one:book; other:books;}} to classify",
+		"empty": "No book to classify",
+		"emptyHint": "Every book of the catalogue has a genre or a subject.",
+		"start": "Start classifying",
+		"classify": "Classify",
+		"badge": "To classify",
+		"badgeHint": "The copies are not lent until the book is classified.",
+		"columns": {
+			"title": "Title",
+			"author": "Author",
+			"publisher": "Publisher",
+			"year": "Year",
+			"isbn": "ISBN",
+			"copies": "Copies",
+			"enteredOn": "Entered on"
+		},
+		"flow": {
+			"title": "Classify the book",
+			"saveNext": "Save and next",
+			"save": "Save",
+			"skip": "Skip",
+			"saved": "“{{title}}” classified",
+			"end": "There are no more books to classify in this round.",
+			"backToList": "Back to the list",
+			"already": "This book is already classified.",
+			"callNumber": "Call number of the copies",
+			"callNumberHint": "The copies without a call number get this one; then the spine band can be printed.",
+			"dewey": "The Dewey number {{dewey}} points to the subject {{code}}.",
+			"copies": "{{count}} {{count:plural; one:copy; other:copies;}}",
+			"subjects": "Subjects",
+			"notes": "Notes"
+		}
+	}
+}

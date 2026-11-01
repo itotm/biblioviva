@@ -1,0 +1,58 @@
+{
+	"id": "it-infanzia",
+	"name": {
+		"it": "Scuola dell'infanzia",
+		"en": "Pre-school (Italy)"
+	},
+	"country": "IT",
+	"languages": ["it"],
+	"school": {
+		"stages": [
+			{
+				"code": "infanzia",
+				"name": "Infanzia"
+			}
+		],
+		"levels": [
+			{
+				"code": "I3",
+				"label": "3 anni",
+				"name": "Infanzia, 3 anni",
+				"stage": "infanzia"
+			},
+			{
+				"code": "I4",
+				"label": "4 anni",
+				"name": "Infanzia, 4 anni",
+				"stage": "infanzia"
+			},
+			{
+				"code": "I5",
+				"label": "5 anni",
+				"name": "Infanzia, 5 anni",
+				"stage": "infanzia"
+			}
+		],
+		"classLabel": "{group}",
+		"groupWord": "Sezione",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {},
+	"teacherGroup": "Docenti",
+	"readingLevels": [],
+	"mixedGroups": [
+		{
+			"name": "A",
+			"levels": ["I3", "I4", "I5"]
+		},
+		{
+			"name": "B",
+			"levels": ["I3", "I4", "I5"]
+		},
+		{
+			"name": "C",
+			"levels": ["I3", "I4", "I5"]
+		}
+	]
+}

@@ -1,0 +1,60 @@
+{
+	"dashboard": "仪表盘",
+	"circulation": "借阅",
+	"catalog": "目录",
+	"patrons": "读者",
+	"printing": "打印",
+	"notes": "备注",
+	"reports": "报表",
+	"admin": "系统管理",
+	"more": "更多",
+	"logout": "退出登录",
+	"help": "帮助",
+	"about": "关于",
+	"areas": {
+		"circulation": {
+			"label": "借还台页面",
+			"checkout": "借出",
+			"checkin": "归还",
+			"loans": "在借图书",
+			"overdues": "催还通知",
+			"wishlist": "荐购",
+			"calendar": "日历"
+		},
+		"catalog": {
+			"label": "目录页面",
+			"catalog": "目录",
+			"inventory": "盘点",
+			"wishlist": "荐购",
+			"toClassify": "待分类"
+		},
+		"patrons": {
+			"label": "读者页面",
+			"patrons": "读者",
+			"census": "照片信息采集"
+		},
+		"notes": {
+			"label": "备注页面",
+			"open": "未归档",
+			"archived": "已归档"
+		},
+		"config": {
+			"label": "配置页面",
+			"overview": "分区",
+			"history": "历史记录"
+		},
+		"templates": {
+			"label": "打印模板页面",
+			"edit": "模板",
+			"previews": "预览"
+		},
+		"imports": {
+			"label": "导入页面",
+			"catalog": "目录",
+			"students": "学生",
+			"teachers": "教师",
+			"loans": "在借记录",
+			"photos": "读者照片"
+		}
+	}
+}

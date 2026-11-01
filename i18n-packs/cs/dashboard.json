@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "Probíhající výpůjčky",
+		"overdue": "Po termínu",
+		"issuedToday": "Dnes půjčeno",
+		"returnedToday": "Dnes vráceno",
+		"withoutCard": "Čtenáři bez vytištěného průkazu",
+		"withoutPhoto": "Čtenáři bez fotografie",
+		"toClassify": "Knihy k zatřídění",
+		"pendingLabels": "Knihy bez štítků"
+	},
+	"tilesTitle": "Knihovna dnes",
+	"actions": {
+		"title": "Rychlé akce"
+	},
+	"dueWeek": {
+		"title": "Termíny vrácení tento týden",
+		"none": "Do {{day}} nevyprší žádná výpůjčka.",
+		"more": "a ještě {{count}} dalších",
+		"due": "termín {{date}}"
+	},
+	"inventory": {
+		"title": "Revize fondu",
+		"continue": "Pokračovat"
+	},
+	"install": {
+		"title": "Přidat na domovskou obrazovku",
+		"hint": "BiblioViva se otevírá jako aplikace, na celou obrazovku, z ikony v telefonu.",
+		"install": "Nainstalovat",
+		"fromMenu": "V nabídce ⋮ prohlížeče Firefox zvolte „Nainstalovat“ nebo „Přidat na domovskou obrazovku“.",
+		"later": "Teď ne"
+	},
+	"upcoming": {
+		"title": "Nadcházející termíny",
+		"none": "Nejsou žádné termíny {{days:plural; one:během následujícího dne; few:během následujících {{days}} dnů; other:během následujících {{days}} dnů;}}.",
+		"more": "a ještě {{count}} dalších",
+		"open": "Otevřít kalendář"
+	}
+}

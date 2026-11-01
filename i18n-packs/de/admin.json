@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "Verwaltung",
+		"sections": {
+			"config": {
+				"title": "Konfiguration",
+				"description": "Die Systematik und die Einstellungen der Bibliothek."
+			},
+			"audit": {
+				"title": "Vorgangsprotokoll",
+				"description": "Wer was getan hat: Anmeldungen, Änderungen, Importe."
+			},
+			"users": {
+				"title": "Personalkonten",
+				"description": "Personalkonten, Rollen und Berechtigungen."
+			},
+			"backups": {
+				"title": "Sicherungen",
+				"description": "Sicherungskopien der Datenbank und der Dateien."
+			},
+			"rollover": {
+				"title": "Klassenaufstieg",
+				"description": "Am Schuljahresende: Versetzungen, Wiederholende, Abgänge aus der letzten Klasse."
+			},
+			"exports": {
+				"title": "Exporte",
+				"description": "Nutzer, Katalog, Ausleihen und alle Daten als CSV- oder JSON-Dateien."
+			},
+			"imports": {
+				"title": "Importe",
+				"description": "Katalog, Nutzer, offene Ausleihen und Fotos: aus CSV-Dateien oder aus dem Koha-Auszug."
+			}
+		}
+	},
+	"audit": {
+		"title": "Vorgangsprotokoll",
+		"filters": {
+			"from": "Von",
+			"to": "Bis",
+			"user": "Konto",
+			"action": "Vorgang",
+			"all": "Alle"
+		},
+		"columns": {
+			"when": "Wann",
+			"user": "Konto",
+			"action": "Vorgang",
+			"entity": "Objekt",
+			"entityId": "ID",
+			"details": "Details"
+		},
+		"count": "{{shown}} von {{total}} {{total:plural; one:Eintrag; other:Einträgen;}}",
+		"empty": "Keine Einträge entsprechen diesen Filtern.",
+		"system": "System"
+	},
+	"users": {
+		"title": "Personalkonten",
+		"fields": {
+			"roles": "Rollen",
+			"permissions": "Berechtigungen",
+			"lastLogin": "Letzte Anmeldung",
+			"never": "nie"
+		},
+		"status": {
+			"active": "Aktiv",
+			"inactive": "Deaktiviert",
+			"plainPassword": "Passwort im Klartext in der Datei",
+			"notInConfig": "Aus der Konfiguration entfernt"
+		},
+		"hash": {
+			"title": "Passwort-Hash erzeugen",
+			"description": "Das zu vergebende Passwort eingeben: man erhält den argon2id-Hash, der in passwordHash eingefügt wird. Das Passwort wird nicht gespeichert.",
+			"password": "Passwort (mindestens {{min}} Zeichen)",
+			"generate": "Hash erzeugen",
+			"result": "Einzufügender Hash",
+			"copy": "Kopieren",
+			"copied": "Hash kopiert",
+			"tooShort": "Das Passwort muss mindestens {{min}} Zeichen lang sein.",
+			"disclosure": "Für alle, die die Dateien von Hand bearbeiten: Hash eines Passworts erzeugen"
+		},
+		"reload": {
+			"button": "Konfiguration neu laden",
+			"success": "Konfiguration neu geladen",
+			"successWithWarnings": "Konfiguration neu geladen mit {{count}} {{count:plural; one:Warnung; other:Warnungen;}}",
+			"failed": "Ungültige Konfiguration: Die bisherige bleibt aktiv",
+			"exampleSource": "Warnung: config.json existiert nicht, es wird die Beispielkonfiguration verwendet."
+		},
+		"new": "Neues Konto",
+		"newPassword": "Neues Passwort",
+		"permissionNames": {
+			"all": "Alles",
+			"loans": "Ausleihe",
+			"patrons": "Nutzer",
+			"patrons_import": "Nutzer importieren",
+			"catalog": "Katalog",
+			"catalog_import": "Katalog importieren",
+			"reports": "Berichte",
+			"anonymize": "Anonymisieren",
+			"admin": "Verwaltung"
+		},
+		"roles": {
+			"title": "Rollen und Berechtigungen",
+			"hint": "Eine Rolle ist eine Gruppe von Berechtigungen; jedes Konto hat eine oder mehrere Rollen. „Alles“ gewährt jede Berechtigung, auch die, die spätere Versionen bringen. Wird eine Rolle umbenannt, werden die Konten aktualisiert, die sie verwenden.",
+			"name": "Rolle",
+			"unused": "kein Konto",
+			"badName": "Buchstaben, Ziffern, Bindestriche und Unterstriche (höchstens 32).",
+			"add": "Rolle hinzufügen",
+			"saved": "Rollen gespeichert"
+		},
+		"auth": {
+			"title": "Anmeldung",
+			"config": "Man meldet sich mit den Konten dieser Seite an, meist je Rolle ein gemeinsames Konto (zum Beispiel „prestiti“ für die Theke).",
+			"database": "Man meldet sich mit persönlichen Konten an.",
+			"later": "Persönliche Konten, eines pro Person, sind für eine spätere Version geplant."
+		},
+		"dialog": {
+			"title": {
+				"new": "Neues Konto",
+				"edit": "{{name}} bearbeiten",
+				"password": "Neues Passwort für {{name}}"
+			},
+			"username": "Benutzername",
+			"usernameHint": "Kleinbuchstaben, Ziffern, Punkt, Bindestrich und Unterstrich (2 bis 32).",
+			"badUsername": "Nur Kleinbuchstaben, Ziffern, Punkt, Bindestrich und Unterstrich (2 bis 32).",
+			"displayName": "Angezeigter Name",
+			"active": "Aktives Konto (kann sich anmelden)",
+			"password": "Passwort (mindestens {{min}} Zeichen)",
+			"repeat": "Passwort wiederholen",
+			"mismatch": "Die beiden Passwörter stimmen nicht überein.",
+			"passwordHint": "Das Passwort wird nicht gespeichert: In der Konfiguration steht nur sein Hash. Wer mit diesem Konto angemeldet ist, muss sich erneut anmelden.",
+			"saved": {
+				"new": "Konto angelegt",
+				"edit": "Konto gespeichert",
+				"password": "Passwort geändert"
+			},
+			"removed": "Konto gelöscht",
+			"removeTitle": "{{name}} löschen?",
+			"removeHint": "Das Konto wird aus der Konfiguration entfernt; was es getan hat, bleibt unter seinem Namen im Protokoll. Der Vorgang lässt sich über den Konfigurationsverlauf rückgängig machen."
+		},
+		"errors": {
+			"badUsername": "Ungültiger Benutzername: {{details}}.",
+			"usernameTaken": "Der Benutzername {{details}} ist schon vergeben.",
+			"notFound": "Konto nicht gefunden: {{details}}.",
+			"noRoles": "Mindestens eine Rolle wählen.",
+			"unknownRole": "Unbekannte Rolle: {{details}}.",
+			"passwordTooShort": "Das Passwort ist zu kurz.",
+			"passwordRequired": "Ein neues Konto braucht ein Passwort.",
+			"lastAdmin": "Mindestens ein aktives Konto muss die Berechtigung für die Verwaltung behalten.",
+			"stillActive": "Das Konto vor dem Löschen deaktivieren.",
+			"badRole": "Ungültiger Rollenname: {{details}}.",
+			"roleTaken": "Zwei Rollen heißen {{details}}.",
+			"roleInUse": "Die Rolle wird von einigen Konten verwendet: {{details}}.",
+			"invalid": "Die Konfiguration wäre nicht gültig: {{details}}."
+		}
+	},
+	"backups": {
+		"title": "Sicherungen",
+		"runNow": "Jetzt sichern",
+		"created": "Sicherung angelegt: {{name}}",
+		"createdDeleted": "Sicherung angelegt: {{name}} ({{deleted}} {{deleted:plural; one:alte Sicherung gelöscht; other:alte Sicherungen gelöscht;}})",
+		"empty": "Noch keine Sicherungen. Die erste wird zum geplanten Zeitpunkt erstellt oder mit „Jetzt sichern“.",
+		"download": "Herunterladen",
+		"columns": {
+			"when": "Erstellt",
+			"size": "Größe"
+		},
+		"catchUp": {
+			"badge": "Beim Start nachgeholt",
+			"hint": "Die geplante Sicherung war ausgefallen (Computer aus): BiblioViva hat sie beim Start nachgeholt."
+		},
+		"offsite": {
+			"title": "Letzte externe Kopie",
+			"disabled": "Externe Kopie nicht eingerichtet. Sie wird mit dem Dienst „offsite“ (rclone) aktiviert, der in der Installationsanleitung beschrieben ist.",
+			"never": "Der Dienst ist aktiviert, hat aber noch kein Ergebnis geschrieben.",
+			"ok": "Letzte Kopie erfolgreich: {{when}}",
+			"error": "Letzte Kopie fehlgeschlagen: {{when}}",
+			"stale": "Die externe Kopie ist älter als zwei Tage: den Dienst „offsite“ prüfen.",
+			"remote": "Ziel: {{remote}}"
+		},
+		"restore": {
+			"title": "Wiederherstellung",
+			"button": "Wiederherstellen…",
+			"hint": "„Wiederherstellen…“ bei einer Sicherung der Liste wählen oder ein BiblioViva-Archiv hochladen (eine Sicherung, „Alles exportieren“ oder „Konfiguration exportieren“, bis zu {{maxMb}} MB; ein größeres wird in den Sicherungsordner des Servers kopiert oder mit bun run backup:restore wiederhergestellt). Zuerst wird alles geprüft, dann werden nur die gewählten Teile wiederhergestellt: Die übrigen bleiben unverändert.",
+			"upload": "Archiv hochladen",
+			"from": "Aus {{name}} vom {{date}}",
+			"count": "{{part}}: jetzt {{live}}, in der Sicherung {{archive}}",
+			"images": "Wiederherzustellende Bilder: {{photos}} {{photos:plural; one:Foto; other:Fotos;}}, {{covers}} {{covers:plural; one:Umschlag; other:Umschläge;}}.",
+			"gapsTitle": "Einige Daten blieben ohne das, worauf sie sich beziehen:",
+			"gap": "{{rows:plural; one:{{rows}} Zeile von „{{part}}“ verweist; other:{{rows}} Zeilen von „{{part}}“ verweisen;}} auf „{{needs}}“, das dann fehlen würde: „{{add}}“ zur Auswahl hinzufügen.",
+			"schema": "Die Sicherung stammt von einer anderen Version von BiblioViva (Tabellen {{tables}}): Sie kann hier nicht wiederhergestellt werden.",
+			"apply": "Wiederherstellen",
+			"confirmTitle": "Die gewählten Teile wiederherstellen?",
+			"confirmHint": "Die gewählten Daten und die Konfiguration werden durch die der Sicherung ersetzt. Die Konfiguration lässt sich über den Verlauf zurücknehmen; bei den Daten empfiehlt sich vorher eine Sicherung, wenn keine aktuelle vorhanden ist.",
+			"done": "Wiederherstellung abgeschlossen",
+			"notArchive": "Die Datei ist kein BiblioViva-Archiv."
+		},
+		"contents": {
+			"title": "Inhalt der Sicherung",
+			"database": "Datenbank: bei jedem Lauf eine vollständige Kopie (unten aufgeführt).",
+			"images": "Fotos und Umschläge: jede Nacht in den Ordner „uploads“ der Sicherung kopiert ({{photos}} {{photos:plural; one:Foto; other:Fotos;}}, {{covers}} {{covers:plural; one:Umschlag; other:Umschläge;}} im Moment).",
+			"imagesPending": "Fotos und Umschläge: die erste Kopie erfolgt beim nächsten Lauf ({{photos}} {{photos:plural; one:Foto; other:Fotos;}}, {{covers}} {{covers:plural; one:Umschlag; other:Umschläge;}} zu kopieren).",
+			"config": "Die Konfiguration (Vorlagen, Bilder, Einstellungen) ist nicht in der nächtlichen Sicherung: Um sie zu erhalten, „Alles exportieren“ verwenden."
+		},
+		"export": {
+			"button": "Alles exportieren",
+			"hint": "Eine einzige ZIP-Datei mit Datenbank, Fotos, Umschlägen und der gesamten Konfiguration (einschließlich Vorlagen und Bildern), bereit für die Wiederherstellung mit „bun run backup:restore“."
+		},
+		"createdMirror": "Sicherung angelegt: {{name}}; {{copied}} {{copied:plural; one:Bild; other:Bilder;}} kopiert",
+		"parts": {
+			"title": "Sicherung oder Export einzelner Teile",
+			"hint": "Auswählen, was enthalten sein soll: die Daten der Bibliothek, die Einstellungen jedes Abschnitts, die Vorlagen, die Bilder … „Sicherung anlegen“ speichert sie in der Liste unten, „Herunterladen“ lädt sie auf den Computer.",
+			"create": "Sicherung anlegen",
+			"download": "Herunterladen"
+		}
+	},
+	"demo": {
+		"clear": "Beispieldaten leeren",
+		"confirmTitle": "Die Beispieldaten leeren?",
+		"confirmDescription": "Die Nutzer, Bücher, Ausleihen und Fotos der Beispieldaten werden gelöscht. Die Klassen und die Gruppe der Lehrkräfte bleiben. Alle angemeldeten Konten werden abgemeldet.",
+		"cleared": "Beispieldaten entfernt. Bitte erneut anmelden.",
+		"clearedPassword": "Die Konten haben noch das Beispielpasswort „{{password}}“: jetzt unter Verwaltung → Personalkonten ändern."
+	},
+	"appearance": {
+		"title": "Erscheinungsbild und Sprache",
+		"current": "Aktuelles Farbschema: {{name}}",
+		"areas": {
+			"title": "Stil der Bereiche",
+			"hint": "Die obere Leiste nimmt die Farbe des Bereichs an, in dem gearbeitet wird (Ausleihe, Katalog, Nutzer …), in den Tönen des gewählten Farbschemas. Symbol und Name des Bereichs bleiben immer sichtbar.",
+			"styles": {
+				"tinted": "Getönte Leiste (empfohlen)",
+				"filled": "Gefüllte Leiste",
+				"accents": "Nur Akzente",
+				"none": "Keine Farbe"
+			},
+			"saved": "Stil der Bereiche gespeichert"
+		},
+		"colours": {
+			"title": "Farbschema"
+		},
+		"save": "Farben speichern",
+		"saved": "Farben gespeichert",
+		"unchanged": "Keine Änderungen zu speichern.",
+		"language": {
+			"title": "Sprache der Anwendung",
+			"hint": "Eine Sprache pro Installation: Sie gilt für das gesamte Personal.",
+			"save": "Sprache ändern",
+			"saved": "Sprache geändert: Die Seite wird neu geladen."
+		},
+		"logo": {
+			"title": "Logo der Bibliothek",
+			"hint": "Es erscheint oben links auf jeder Seite, neben dem Namen der Bibliothek. PNG, JPEG oder WebP; am besten mit transparentem Hintergrund.",
+			"upload": "Logo hochladen",
+			"replace": "Logo ändern",
+			"remove": "Logo entfernen",
+			"saved": "Logo gespeichert.",
+			"removed": "Logo entfernt.",
+			"none": "Kein Logo: Es wird ein allgemeines Symbol angezeigt.",
+			"preview": "Aktuelles Logo",
+			"errors": {
+				"empty": "Die Datei ist leer.",
+				"too_large": "Die Datei ist zu groß (höchstens {{maxMb}} MB).",
+				"not_an_image": "Die Datei ist kein Bild.",
+				"unsupported_format": "Format nicht akzeptiert: PNG, JPEG oder WebP verwenden."
+			}
+		},
+		"name": {
+			"title": "Name der Bibliothek",
+			"hint": "Erscheint oben links, auf dem Dashboard, auf den Ausdrucken und in der auf dem Telefon installierten App.",
+			"label": "Name",
+			"save": "Name speichern",
+			"saved": "Name der Bibliothek gespeichert",
+			"required": "Den Namen der Bibliothek eingeben."
+		},
+		"dashboard": {
+			"title": "Dashboard",
+			"hint": "Die Abschnitte der Startseite, für die ganze Bibliothek. Die Schnellaktionen stehen immer zuerst; innerhalb jedes Abschnitts sieht jedes Konto nur, was es tun darf.",
+			"save": "Dashboard speichern",
+			"saved": "Dashboard gespeichert",
+			"sections": {
+				"quickActions": "Schnellaktionen",
+				"tiles": "Die Bibliothek heute (Kacheln mit den Zahlen)",
+				"inventory": "Laufende Inventur",
+				"installHint": "Einladung, die App auf dem Startbildschirm zu installieren (Telefone)",
+				"dueThisWeek": "In dieser Woche fällig",
+				"upcomingDates": "Kommende Termine des Kalenders",
+				"todayActivity": "Heutige Ausleihen"
+			}
+		}
+	},
+	"templates": {
+		"title": "Druckvorlagen",
+		"reload": "Vorlagen neu laden",
+		"reloaded": "Vorlagen von der Festplatte neu eingelesen",
+		"kinds": {
+			"cards": "Ausweise",
+			"labels": "Etiketten",
+			"slips": "Mahnungen"
+		},
+		"list": {
+			"source": {
+				"builtin": "Mit der Anwendung geliefert",
+				"config": "In der Konfiguration"
+			},
+			"default": "Standard",
+			"status": {
+				"ok": "Gültig",
+				"error": "Fehler"
+			},
+			"folder": "Ordner",
+			"forTypes": "Für: {{types}}",
+			"emptyCards": "Keine Vorlage für Ausweise: den Ordner cards/templates der Konfiguration prüfen.",
+			"emptyLabels": "Noch keine Vorlage für Etiketten: sie kommen mit dem Druck der Katalogetiketten.",
+			"emptySlips": "Noch keine Vorlage für Mahnungen: sie kommt mit der Ausleihe."
+		},
+		"preview": {
+			"title": "Vorschau",
+			"front": "Vorderseite",
+			"back": "Rückseite",
+			"patron": "Anzuzeigender Nutzer",
+			"sample": "Beispielnutzer",
+			"real": "Echter Nutzer",
+			"search": "Echten Nutzer suchen",
+			"searchPlaceholder": "Nachname oder Vorname",
+			"noResults": "Kein Nutzer gefunden.",
+			"zoom": "Zoom",
+			"sheet": "Ganzes Blatt",
+			"sheetHint": "Eine A4-Seite mit dem Beispielnutzer, so wie sie gedruckt wird.",
+			"test": "Testseite drucken",
+			"broken": "Die Vorlage kann erst verwendet werden, wenn sie korrigiert ist:",
+			"size": "{{width}} × {{height}} mm bei Zoom {{zoom}}"
+		},
+		"test": {
+			"title": "Testseite für Ausweise",
+			"ruler": "Lineal 10 cm: Nach dem Druck muss es 100 mm messen (mit 100 % drucken, ohne „an Seite anpassen“)."
+		},
+		"calibration": {
+			"title": "Kalibrierungsseite für Etiketten",
+			"stock": "Etikettenbogen",
+			"print": "Kalibrierungsseite drucken",
+			"hint": "Auf normales Papier drucken und einen Etikettenbogen darauflegen, um die Ränder zu prüfen."
+		},
+		"howTo": {
+			"title": "So erstellt man eine Vorlage",
+			"steps": {
+				"step1": "Unter Konfiguration → Druckvorlagen bei einer Vorlage „Duplizieren“ wählen (zum Beispiel {{path}}) und ihr einen neuen Namen geben.",
+				"step2": "Mit „Bearbeiten“ gestalten oder den Code ändern; Bilder werden auf derselben Seite hochgeladen.",
+				"step3": "Hierher zurückkehren und die Vorschau prüfen: Ein unbekanntes Feld oder eine fehlende Datei wird gemeldet.",
+				"step4": "Um sie wirklich zu verwenden, in den Einstellungen für Ausweise oder Etiketten wählen."
+			}
+		},
+		"labels": {
+			"stocks": "Vorgesehen für: {{stocks}}",
+			"preview": "Vorschau von {{name}}",
+			"geometry": "Einheit von {{width}} × {{height}} mm · Variante {{variant}}",
+			"sheet": "Beispielbogen"
+		}
+	},
+	"loansImport": {
+		"title": "Offene Ausleihen importieren",
+		"upload": {
+			"hint": "Nur einmal zu verwenden, beim Wechsel von Koha: eine Zeile pro offener Ausleihe mit der Ausweisnummer des Nutzers und dem Barcode des Exemplars sowie, falls vorhanden, dem Ausleihdatum und dem Rückgabedatum. Zuerst Nutzer und Katalog importieren; die Vorlage mit den nötigen Spalten wird unten heruntergeladen.",
+			"submit": "Hochladen"
+		},
+		"mapping": {
+			"uncertain": "Vor dem Weitermachen die Spalten prüfen.",
+			"validate": "Datei prüfen",
+			"without": {
+				"issuedOn": "Ohne die Spalte issued_on werden die Ausleihen auf heute datiert.",
+				"dueOn": "Ohne die Spalte due_on wird das Rückgabedatum wie an der Theke berechnet, mit den Ausleihregeln und dem Kalender."
+			}
+		},
+		"fields": {
+			"cardNumber": "Ausweisnummer",
+			"barcode": "Barcode",
+			"issuedOn": "Ausleihdatum",
+			"dueOn": "Rückgabedatum"
+		},
+		"preview": {
+			"ready": "Keine Fehler: Die Ausleihen können importiert werden.",
+			"blocked": "Fehler beheben und erneut prüfen: Eine Datei mit Fehlern wird nicht importiert.",
+			"overdue": "{{count}} {{count:plural; one:Ausleihe ist; other:Ausleihen sind;}} bereits überfällig: {{count:plural; one:Diese wird importiert und erscheint; other:Diese werden importiert und erscheinen;}} unter den Überfälligen.",
+			"columns": {
+				"patron": "Nutzer",
+				"barcode": "Exemplar",
+				"issued": "Ausgeliehen",
+				"due": "Fällig"
+			},
+			"commit": "Ausleihen importieren",
+			"back": "Zurück zu den Spalten"
+		},
+		"reasons": {
+			"cardMissing": "Die Ausweisnummer fehlt",
+			"cardUnknown": "Kein Nutzer mit dem Ausweis {{value}}",
+			"barcodeMissing": "Der Barcode fehlt",
+			"barcodeUnknown": "Kein Exemplar mit dem Barcode {{value}}",
+			"alreadyOnLoan": "Exemplar {{value}} ist bereits ausgeliehen",
+			"itemWithdrawn": "Exemplar {{value}} ist ausgesondert",
+			"duplicateInFile": "Dasselbe Exemplar steht schon in Zeile {{line}}",
+			"issueDateInvalid": "Ungültiges Ausleihdatum: „{{value}}“",
+			"issueDateFuture": "Ausleihdatum in der Zukunft: {{value}}",
+			"dueDateInvalid": "Ungültiges Rückgabedatum: „{{value}}“",
+			"dueBeforeIssue": "Das Rückgabedatum liegt vor dem Ausleihdatum",
+			"overdue": "Schon überfällig seit {{date}}",
+			"itemUnclassified": "Exemplar {{value}} gehört zu einem Buch, das noch einzuordnen ist: Die Ausleihe wird importiert, aber an der Theke nicht ausgeliehen, solange das Buch nicht eingeordnet ist."
+		},
+		"done": {
+			"title": "Ausleihen importiert",
+			"summary": "{{created}} {{created:plural; one:Ausleihe; other:Ausleihen;}} importiert, davon {{overdue}} bereits überfällig.",
+			"batch": "Import Nr. {{id}}: Die Originaldatei bleibt erhalten.",
+			"again": "Eine weitere Datei importieren"
+		},
+		"columns": {
+			"cardNumber": "Die Ausweisnummer des Nutzers, bereits importiert.",
+			"barcode": "Der Barcode des Exemplars, bereits importiert.",
+			"issuedOn": "Das Ausleihdatum; wenn es fehlt, gilt heute.",
+			"dueOn": "Das Rückgabedatum; wenn es fehlt, wird es mit den Ausleihregeln berechnet."
+		}
+	},
+	"photosImport": {
+		"title": "Fotos der Nutzer importieren",
+		"hint": "Eine Datei pro Nutzer, benannt nach der Ausweisnummer (zum Beispiel 0000001240.jpg); die Verwaltungsanleitung beschreibt den Export, der sie erzeugt. Jedes Foto wird verkleinert und von versteckten Daten bereinigt; Dateien ohne passende Ausweisnummer werden aufgelistet.",
+		"replace": "Vorhandene Fotos ersetzen",
+		"zip": {
+			"title": "Aus einem ZIP-Archiv",
+			"file": "ZIP-Archiv mit den Fotos",
+			"submit": "Fotos importieren"
+		},
+		"folder": {
+			"title": "Aus dem Ordner des Servers",
+			"hint": "Die Dateien in {{path}} kopieren: derzeit {{count:plural; one:liegt {{count}} darin; other:liegen {{count}} darin;}}. Geeignet für viele Fotos, die als Archiv zu schwer zum Hochladen wären.",
+			"submit": "Aus dem Ordner importieren"
+		},
+		"summary": {
+			"title": "Ergebnis",
+			"text": "{{imported}} {{imported:plural; one:Foto; other:Fotos;}} importiert, {{replaced}} ersetzt, {{kept:plural; one:{{kept}} blieb unverändert; other:{{kept}} blieben unverändert;}} (Foto war bereits vorhanden), {{unmatched}} {{unmatched:plural; one:Datei; other:Dateien;}} ohne Nutzer, {{unreadable}} unlesbare {{unreadable:plural; one:Datei; other:Dateien;}}.",
+			"unreadable": "Nicht lesbare Bilder: {{files}}",
+			"unmatched": "Liste der Dateien ohne Nutzer herunterladen"
+		},
+		"errors": {
+			"notZip": "Die Datei ist kein gültiges ZIP-Archiv.",
+			"empty": "Das Archiv enthält keine Dateien."
+		},
+		"done": "Fotos importiert"
+	},
+	"rollover": {
+		"title": "Klassenaufstieg",
+		"subtitle": "Am Ende des Schuljahrs rücken alle Schülerinnen und Schüler ein Jahr weiter; wer das letzte Jahr abschließt, verlässt die Schule.",
+		"steps": {
+			"backup": "Sicherung",
+			"classes": "Klassen",
+			"leavers": "Abgänge",
+			"confirm": "Bestätigen",
+			"done": "Abgeschlossen"
+		},
+		"backup": {
+			"text": "Zuerst eine Sicherungskopie der Datenbank anlegen: Falls etwas schiefgeht, lässt sie sich unter Verwaltung → Sicherungen wiederherstellen.",
+			"create": "Sicherung anlegen",
+			"created": "Sicherung angelegt: {{name}}"
+		},
+		"classes": {
+			"text": "Jede Schülerin und jeder Schüler rückt mit der Klasse ein Jahr weiter. Markieren, wer das Jahr wiederholt und wer die Klasse wechselt.",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; one:Schüler; other:Schüler;}}",
+			"exceptions": "{{count}} {{count:plural; one:Ausnahme; other:Ausnahmen;}}",
+			"loans": "{{count}} mit ausgeliehenen Büchern",
+			"repeat": "Wiederholt",
+			"target": "Klasse",
+			"noGroup": "Keine Klasse",
+			"choose": "Klasse wählen…",
+			"fates": {
+				"advances": "Rückt auf",
+				"stays": "Bleibt",
+				"archived": "Endet"
+			},
+			"unplaced": "{{count}} {{count:plural; one:Schüler wartet; other:Schüler warten;}} auf die Wahl der Klasse.",
+			"none": "Keine Schülerinnen und Schüler rücken ins nächste Jahr auf.",
+			"nextYear": "Das folgende Jahr",
+			"leaves": "Verlässt die Schule"
+		},
+		"leavers": {
+			"text": "Die Daten der Schülerinnen und Schüler des letzten Jahres werden sofort und endgültig gelöscht, wenn sie die Schule verlassen (nur die Zahlen der Statistik bleiben). Den Haken entfernen bei allen, die bleiben, zum Beispiel bei jemandem, der das letzte Jahr wiederholt.",
+			"leaves": "Verlässt",
+			"openLoans": "{{count}} {{count:plural; one:Buch; other:Bücher;}} ausgeliehen",
+			"blocked": "{{count}} {{count:plural; one:abgehende Schülerin oder abgehender Schüler hat; other:abgehende Schülerinnen und Schüler haben;}} noch Bücher: Rückgabe verbuchen oder als verloren markieren, oder den Haken entfernen.",
+			"toCheckin": "Zu den Rückgaben",
+			"none": "Keine Schülerinnen und Schüler im letzten Jahr."
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; one:Schüler rückt; other:Schüler rücken;}} ein Jahr auf",
+			"repeat": "{{count}} {{count:plural; one:Schüler wiederholt; other:Schüler wiederholen;}} das Jahr",
+			"groupChanges": "{{count}} {{count:plural; one:Schüler wechselt; other:Schüler wechseln;}} die Klasse",
+			"closing": "{{count}} {{count:plural; one:Klasse endet und wird; other:Klassen enden und werden;}} archiviert",
+			"remove": "{{count}} {{count:plural; one:Schüler verlässt die Schule und seine Daten werden gelöscht; other:Schüler verlassen die Schule und ihre Daten werden gelöscht;}}",
+			"recent": "Der letzte Klassenaufstieg wurde am {{date}} durchgeführt, vor weniger als sechs Monaten. Ich bestätige, dass ich ihn erneut durchführen möchte.",
+			"run": "Klassen aufrücken"
+		},
+		"done": {
+			"title": "Klassenaufstieg abgeschlossen",
+			"advanced": "{{count}} {{count:plural; one:Klasse ist; other:Klassen sind;}} ein Jahr aufgerückt",
+			"archived": "{{count}} {{count:plural; one:Klasse; other:Klassen;}} archiviert",
+			"text": "Nächste Schritte: die neuen ersten Klassen anlegen, falls nötig, und die neuen Schülerinnen und Schüler mit der Synchronisation importieren.",
+			"import": "Neue Schülerinnen und Schüler importieren"
+		},
+		"errors": {
+			"blocked": "Einige abgehende Schülerinnen und Schüler haben noch Bücher in Ausleihe.",
+			"recent": "Bestätigung nötig: Der letzte Klassenaufstieg liegt nicht lange zurück.",
+			"no_backup": "Die Sicherung wurde nicht gefunden oder ist zu alt: sie im ersten Schritt neu anlegen.",
+			"invalid_group": "Eine gewählte Klasse existiert nicht oder nimmt den Jahrgang der Schülerin oder des Schülers nicht auf.",
+			"unplaced": "Einige Schülerinnen und Schüler haben noch keine Klasse: Klasse im Schritt Klassen wählen.",
+			"invalid_level": "Einer der gewählten Jahrgänge gehört nicht zu den möglichen: Seite neu laden."
+		},
+		"next": "Weiter",
+		"back": "Zurück"
+	},
+	"classes": {
+		"title": "Klassen",
+		"subtitle": "Die Klassen der Schule und die Gruppen der Lehrkräfte.",
+		"hint": "Die Jahrgänge und Schulstufen werden in den Einstellungen geändert:",
+		"structureLink": "Schule",
+		"new": "Neue Klassen",
+		"newTeachers": "Neue Gruppe der Lehrkräfte",
+		"teachers": "Lehrkräfte",
+		"mixed": "Klasse mit mehreren Jahrgängen",
+		"empty": "Keine Klassen",
+		"emptyHint": "Keine Klassen. Klassen werden mit „Neue Klassen“ angelegt, zum Beispiel die Jahrgänge 1 bis 5 und die Namen A-D.",
+		"archivedTitle": "{{count:plural; one:Archivierte Klasse; other:Archivierte Klassen;}} ({{count}})",
+		"archive": "Archivieren",
+		"archiveNotEmpty": "Noch Nutzer in der Klasse: nicht archivierbar",
+		"restore": "Wiederherstellen",
+		"archived": "Klasse {{name}} archiviert",
+		"restored": "Klasse {{name}} wiederhergestellt",
+		"columns": {
+			"class": "Klasse",
+			"levels": "Jahrgänge",
+			"patrons": "Nutzer"
+		},
+		"dialog": {
+			"title": {
+				"students": "Neue Klassen",
+				"teachers": "Neue Gruppe der Lehrkräfte",
+				"edit": "{{name}} bearbeiten"
+			},
+			"levels": "Jahrgänge",
+			"names": "Namen der Klassen",
+			"namesHint": "Durch Kommas getrennt; A-D steht für A, B, C, D. Ein Name darf Leerzeichen enthalten.",
+			"name": "Name",
+			"mixed": "Eine Klasse mit mehreren Jahrgängen, mit allen gewählten Jahrgängen",
+			"stage": "Schulstufe",
+			"anyStage": "Alle",
+			"notes": "Notizen",
+			"preview": "{{count}} {{count:plural; one:Klasse; other:Klassen;}} anzulegen:",
+			"previewEmpty": "Mindestens einen Jahrgang wählen und die Namen eingeben.",
+			"saved": {
+				"students": "{{count}} {{count:plural; one:Klasse angelegt; other:Klassen angelegt;}}",
+				"teachers": "Gruppe der Lehrkräfte angelegt",
+				"edit": "Klasse gespeichert"
+			}
+		},
+		"errors": {
+			"nameRequired": "Der Name ist erforderlich.",
+			"nameLong": "Der Name ist zu lang (höchstens 40 Zeichen).",
+			"levelsRequired": "Mindestens einen Jahrgang wählen.",
+			"levelUnknown": "Ein gewählter Jahrgang existiert nicht mehr.",
+			"levelsNotForTeachers": "Eine Gruppe der Lehrkräfte hat keine Jahrgänge.",
+			"nameTaken": "Für denselben Jahrgang gibt es schon eine Klasse mit diesem Namen.",
+			"levelInUse": "Einige Schülerinnen und Schüler der Klasse sind in einem Jahrgang, der entfernt würde.",
+			"notEmpty": "Die Klasse hat noch Nutzer.",
+			"notFound": "Die Klasse existiert nicht mehr."
+		}
+	},
+	"exports": {
+		"title": "Exporte",
+		"subtitle": "Die Daten der Bibliothek in Dateien zum Aufbewahren, zum erneuten Importieren oder zum Übertragen in ein anderes Programm.",
+		"items": {
+			"students": {
+				"title": "Schüler (CSV)",
+				"description": "Die aktiven Schülerinnen und Schüler im Importformat; wieder eingelesen werden sie unter Verwaltung → Importe → Schüler."
+			},
+			"teachers": {
+				"title": "Lehrkräfte (CSV)",
+				"description": "Die aktiven Lehrkräfte im Importformat; wieder eingelesen werden sie unter Verwaltung → Importe → Lehrkräfte."
+			},
+			"catalog": {
+				"title": "Katalog (CSV)",
+				"description": "Eine Zeile pro Exemplar mit den Daten des Buchs, im Importformat des Katalogs."
+			},
+			"open-loans": {
+				"title": "Offene Ausleihen (CSV)",
+				"description": "Ausweisnummer, Exemplar, Ausleihdatum und Rückgabedatum; wieder eingelesen werden sie unter Verwaltung → Importe → Offene Ausleihen."
+			},
+			"loans-history": {
+				"title": "Ausleihverlauf (CSV)",
+				"description": "Jede Ausleihe mit der Klasse und dem Abschnitt am Tag der Ausleihe."
+			},
+			"dump": {
+				"title": "Alle Daten (JSON)",
+				"description": "Nutzer, Katalog, Ausleihen und Listen in einer einzigen Datei, um auf eine andere Installation oder ein anderes Programm umzuziehen."
+			}
+		},
+		"download": "Herunterladen",
+		"patronNote": "Die Daten einer einzelnen Person (Auskunftsanfrage) werden von ihrer Seite heruntergeladen.",
+		"patronExport": "Die Daten der Person exportieren"
+	},
+	"imports": {
+		"title": "Importe",
+		"hint": "Wird beim Wechsel von Koha verwendet und, für die Nutzer, zu Beginn jedes Schuljahrs für die neuen Klassen. Jede Datei wird vollständig geprüft, bevor etwas importiert wird.",
+		"cards": {
+			"catalog": {
+				"title": "Katalog",
+				"description": "Bücher und Exemplare aus einer CSV-Datei oder dem Koha-Export."
+			},
+			"students": {
+				"title": "Schüler",
+				"description": "Die Klassen aus dem elektronischen Schulregister, zu jedem Schuljahr neu: Vorname, Nachname und Klasse."
+			},
+			"teachers": {
+				"title": "Lehrkräfte",
+				"description": "Die Lehrkräfte der Schule: Vorname und Nachname, mit ihrem Ausweis, sofern schon vorhanden."
+			},
+			"loans": {
+				"title": "Offene Ausleihen",
+				"description": "Die offenen Ausleihen, einmalig beim Wechsel von Koha importiert."
+			},
+			"photos": {
+				"title": "Fotos der Nutzer",
+				"description": "Die aus Koha exportierten Fotos, eines pro Ausweis."
+			}
+		}
+	},
+	"calibration": {
+		"title": "Doppelseitigen Druck kalibrieren",
+		"intro": "Damit die Ausweise auf beiden Seiten des Bogens bedruckt werden können, muss die Rückseite genau hinter der Vorderseite liegen. Jeder Drucker verschiebt die Rückseite ein wenig: Diese Prüfung misst einmal, wie viel.",
+		"current": "Wie das Blatt gewendet wird: {{flip}}. Aktuelle Verschiebung der Rückseiten: {{x}} mm waagerecht, {{y}} mm senkrecht.",
+		"steps": {
+			"print": "Das Kalibrierungsblatt mit der Schaltfläche unten drucken.",
+			"window": {
+				"long-edge": "Im Druckdialog „Beidseitig“ wählen, an der langen Kante wenden, Skalierung 100 % und keine Ränder.",
+				"short-edge": "Im Druckdialog „Beidseitig“ wählen, an der kurzen Kante wenden, Skalierung 100 % und keine Ränder."
+			},
+			"cut": "Auf der Seite mit der großen „1“ sorgfältig entlang der schwarzen Linie schneiden.",
+			"read": "Den Karton umdrehen: Auf Seite „2“ nachsehen, wo die Schnittkante die beiden Lineale kreuzt, und die zwei Zahlen ablesen (mit Vorzeichen: + oder −).",
+			"save": "Die beiden Zahlen unten eingeben und speichern: Die Verschiebung der Rückseiten wird korrigiert.",
+			"check": "Das Blatt zur Kontrolle erneut drucken: Die Schnittkante sollte jetzt beide Lineale bei 0 kreuzen."
+		},
+		"print": "Kalibrierungsblatt drucken",
+		"drawing": {
+			"title": "Was abzulesen ist",
+			"label": "Seite 2 nach dem Schneiden: Die Schnittkante kreuzt die Lineale",
+			"x": "waagerechtes Lineal",
+			"y": "senkrechtes Lineal",
+			"hint": "Die Schnittkante kreuzt jedes Lineal: Die Zahl dort ist der einzugebende Wert. Jeder Strich ist ein Millimeter, die Zahlen stehen alle fünf."
+		},
+		"fields": {
+			"x": "Waagerechtes Lineal (mm)",
+			"y": "Senkrechtes Lineal (mm)",
+			"hint": "Die Zahl, an der die Schnittkante liegt, mit Vorzeichen; 0, wenn sie auf der Null liegt."
+		},
+		"next": "Nach dem Speichern werden die Rückseiten {{x}} mm waagerecht und {{y}} mm senkrecht verschoben.",
+		"save": "Kalibrierung speichern",
+		"saved": "Kalibrierung gespeichert: Rückseiten um {{x}} mm waagerecht und {{y}} mm senkrecht verschoben.",
+		"open": "Doppelseitigen Druck kalibrieren",
+		"sheet": {
+			"title": "BiblioViva · Kalibrierung des doppelseitigen Drucks",
+			"cut": "Entlang der schwarzen Linie schneiden, dann den Karton umdrehen.",
+			"read": "Auf den beiden Linealen ablesen, wo die Schnittkante liegt."
+		}
+	}
+}

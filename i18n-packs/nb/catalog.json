@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "Katalog",
+		"search": "Søk etter tittel, forfatter eller ISBN…",
+		"new": "Ny bok",
+		"empty": "Ingen bok passer til filtrene.",
+		"countFiltered": "{{shown}} {{shown:plural; one:tittel passer; other:titler passer;}} til filtrene",
+		"clearFilters": "Nullstill filtrene",
+		"filters": {
+			"kind": "Type",
+			"genre": "Sjanger",
+			"class": "Klassifikasjon",
+			"readingLevel": "Nivå",
+			"itemType": "Materiale",
+			"series": "Serie",
+			"all": "Alle",
+			"allF": "Alle",
+			"withdrawn": "Vis også utrangerte bøker"
+		},
+		"columns": {
+			"title": "Tittel",
+			"series": "Serie",
+			"author": "Forfatter",
+			"year": "År",
+			"isbn": "ISBN",
+			"classification": "Klassifikasjon",
+			"copies": "Eksemplarer",
+			"callNumber": "Hyllesignatur",
+			"acquiredAt": "Anskaffet"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "Søk i katalogen",
+		"startHint": "Søk etter tittel, forfatter, forlag, kode eller ISBN, eller bruk filtrene."
+	},
+	"kinds": {
+		"fiction": "Skjønnlitteratur",
+		"nonfiction": "Faglitteratur"
+	},
+	"fields": {
+		"title": "Tittel",
+		"subtitle": "Undertittel",
+		"originalTitle": "Originaltittel",
+		"originalTitleHint": "Bare hvis boken er en oversettelse: tittelen på verket i originalspråket.",
+		"responsibility": "Ansvarsangivelse (slik den står på tittelbladet)",
+		"author": "Forfatter",
+		"publisher": "Forlag",
+		"publicationPlace": "Sted",
+		"publicationYear": "År",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN (ikke ISBN)",
+		"physicalDescription": "Fysisk beskrivelse",
+		"series": "Serie",
+		"seriesNumber": "Nummer i serien",
+		"seriesHint": "For eksempel Harry Potter og 3. Serier som allerede finnes i katalogen, vises mens du skriver.",
+		"dewey": "Dewey (fra SBN)",
+		"kind": "Type",
+		"genre": "Sjanger",
+		"classCode": "Klassifikasjon",
+		"readingLevel": "Lesenivå",
+		"subjects": "Emneord",
+		"notes": "Merknader",
+		"authorHint": "Etternavn, fornavn. Bruk hurtigvalgene når det ikke finnes en personlig forfatter.",
+		"subjectsHint": "Ett per linje, eller skilt med komma.",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "Ny bok",
+		"editTitle": "Rediger katalogpost",
+		"create": "Lagre katalogposten",
+		"save": "Lagre endringene",
+		"identity": "Katalogpost",
+		"publication": "Utgivelse",
+		"classification": "Klassifikasjon",
+		"more": "Flere opplysninger",
+		"quickPicks": "Hurtigvalg",
+		"unknownPublisher": "Ukjent forlag",
+		"unknownPlace": "Ukjent sted",
+		"singleCopy": "Eksemplar {{barcode}}",
+		"singleCopyHint": "Katalogposten har bare ett eksemplar: opplysningene om det redigeres her og lagres sammen med katalogposten."
+	},
+	"picker": {
+		"kind": "Hvilken type bok er det?",
+		"fiction": "Skjønnlitteratur",
+		"nonfiction": "Faglitteratur",
+		"genre": "Velg sjangeren",
+		"class": "Velg emnet",
+		"readingLevel": "Lesenivå",
+		"anyClass": "Ingen",
+		"back": "Tilbake til hovedemnene",
+		"children": "Emner under {{label}}",
+		"selected": "Valgt: {{label}}",
+		"parentOnly": "Bruk «{{label}}» generelt",
+		"later": "Klassifiser senere",
+		"laterHint": "Boken havner på listen «Til klassifisering»: eksemplarene lånes ikke ut, og ryggbåndet skrives ikke ut før boken er klassifisert."
+	},
+	"detail": {
+		"heading": "Katalogpost for boken",
+		"tabs": {
+			"copies": "Eksemplarer",
+			"details": "Detaljer"
+		},
+		"copies": "{{available}} {{available:plural; one:tilgjengelig; other:tilgjengelige;}} av {{total}}",
+		"noCopies": "Ingen eksemplarer ennå: legg til ett for å kunne låne det ut.",
+		"seriesLink": "Alle bøkene i serien «{{series}}»",
+		"edit": "Rediger",
+		"delete": "Slett katalogposten",
+		"addCopies": "Legg til eksemplarer",
+		"deleteTitle": "Slette katalogposten «{{title}}»?",
+		"deleteDescription": "Katalogposten forsvinner fra katalogen. Det er bare mulig når den ikke har eksemplarer.",
+		"deleted": "Katalogpost slettet",
+		"hasItems": "Katalogposten har fortsatt {{count}} {{count:plural; one:eksemplar; other:eksemplarer;}}: {{count:plural; one:det må først utrangeres eller slettes; other:de må først utrangeres eller slettes;}}.",
+		"columns": {
+			"barcode": "Strekkode",
+			"callNumber": "Hyllesignatur",
+			"itemType": "Materiale",
+			"readingLevel": "Nivå",
+			"status": "Status",
+			"borrower": "Utlånt til",
+			"acquisition": "Anskaffet",
+			"labels": "Etiketter"
+		},
+		"dueOn": "forfaller {{date}}",
+		"identifiers": "Identifikatorer",
+		"source": "Kilde: {{source}}",
+		"created": "Opprettet {{when}}",
+		"updated": "Sist endret {{when}}",
+		"onLoan": "Utlånt"
+	},
+	"item": {
+		"addTitle": "Legg til eksemplarer",
+		"copies": "Antall eksemplarer",
+		"itemType": "Materiale",
+		"callNumber": "Hyllesignatur",
+		"callNumberHint": "Foreslått ut fra klassifikasjonen; den kan endres.",
+		"readingLevel": "Nivå for eksemplaret",
+		"enumeration": "Bind / nummer",
+		"acquisitionDate": "Anskaffelsesdato",
+		"notes": "Merknader om eksemplaret",
+		"notForLoan": "Kun referanse (utlånes ikke)",
+		"add": "Legg til",
+		"added": "{{count}} {{count:plural; one:eksemplar lagt til; other:eksemplarer lagt til;}}: {{barcodes}}",
+		"editTitle": "Rediger eksemplar {{barcode}}",
+		"save": "Lagre",
+		"saved": "Eksemplaret er oppdatert",
+		"status": "Endre status",
+		"statusTitle": "Status for eksemplar {{barcode}}",
+		"newStatus": "Ny status",
+		"reason": "Årsak (valgfritt, registreres)",
+		"statusSaved": "Status oppdatert",
+		"onLoan": "Eksemplaret er utlånt: registrer innleveringen først.",
+		"delete": "Slett eksemplaret",
+		"deleteTitle": "Slette eksemplar {{barcode}}?",
+		"deleteDescription": "Bare ved feil i katalogiseringen: et eksemplar som har vært utlånt, kan ikke slettes, det må utrangeres.",
+		"deleted": "Eksemplar slettet",
+		"hasLoans": "Eksemplaret har registrerte utlån: det må utrangeres, ikke slettes.",
+		"labelsTitle": "Etiketter for eksemplar {{barcode}}"
+	},
+	"errors": {
+		"isbnInvalid": "Ugyldig ISBN (kontroller sifrene)",
+		"isbnTaken": "Det finnes allerede en katalogpost med dette ISBN",
+		"issnInvalid": "Ugyldig ISSN",
+		"eanInvalid": "Ugyldig EAN",
+		"yearImplausible": "Urimelig år",
+		"genreRequired": "Velg sjangeren",
+		"genreUnknown": "Sjangeren finnes ikke i innstillingene",
+		"genreNotForNonfiction": "Faglitteratur har ingen sjanger",
+		"classCodeRequired": "Velg emnet",
+		"classCodeUnknown": "Emnet finnes ikke i innstillingene",
+		"classCodeNotForFiction": "Skjønnlitteratur har ingen emner",
+		"readingLevelNotAllowed": "Lesenivå er ikke forventet her",
+		"readingLevelOutOfRange": "Lesenivået finnes ikke i innstillingene",
+		"itemTypeUnknown": "Materialet finnes ikke i innstillingene",
+		"acquisitionDateInvalid": "Ugyldig dato (ÅÅÅÅ-MM-DD)",
+		"copiesOutOfRange": "Fra 1 til 100 eksemplarer om gangen"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "Testleverandør"
+		},
+		"errors": {
+			"unreachable": "Tjenesten kan ikke nås. Kontroller internettforbindelsen og prøv igjen senere.",
+			"timeout": "Tjenesten svarte ikke i tide. Prøv igjen senere.",
+			"protocol": "Tjenesten ga et uventet svar. Opplysningene kan skrives inn for hånd.",
+			"http": "Tjenesten svarte med en feil. Prøv igjen senere.",
+			"rate_limited": "Tjenesten avviste forespørselen fordi det er gjort for mange søk. Prøv igjen senere.",
+			"not_configured": "Tjenesten er ikke konfigurert: en innstilling mangler (for eksempel API-nøkkelen).",
+			"spawn": "Programmet yaz-client finnes ikke på denne serveren. Si fra til administratoren."
+		},
+		"noHits": "Ingen resultater fra {{provider}}.",
+		"hits": "{{count}} {{count:plural; one:resultat; other:resultater;}} fra {{provider}}",
+		"fromCache": "fra mellomlageret"
+	},
+	"fastAdd": {
+		"title": "Ny bok",
+		"steps": {
+			"code": "Kode",
+			"lookup": "Oppslag",
+			"form": "Katalogpost og eksemplarer",
+			"done": "Fullført"
+		},
+		"code": {
+			"heading": "Skann strekkoden",
+			"label": "ISBN eller EAN",
+			"placeholder": "978…",
+			"material": "Materiale",
+			"noCode": "Uten kode",
+			"noCodeHint": "Søk etter tittel og forfatter, eller fyll ut katalogposten for hånd.",
+			"manual": "Fyll ut for hånd",
+			"notACode": "Koden som ble lest, er verken ISBN eller EAN: kontroller sifrene, eller velg «Uten kode».",
+			"eanNotIsbn": "EAN {{ean}} lest: det er ikke et ISBN, så katalogposten må fylles ut for hånd.",
+			"cameraNotIsbn": "Ikke et ISBN: rett kameraet mot strekkoden på boken"
+		},
+		"search": {
+			"heading": "Søk etter tittel og forfatter",
+			"title": "Tittel",
+			"author": "Forfatter",
+			"submit": "Søk",
+			"empty": "Skriv minst tittelen eller forfatteren."
+		},
+		"duplicate": {
+			"heading": "Dette ISBN finnes allerede i katalogen",
+			"copies": "{{count}} {{count:plural; one:eksemplar; other:eksemplarer;}}",
+			"addCopy": "Legg til eksemplar",
+			"open": "Åpne katalogposten",
+			"another": "Skann en annen kode"
+		},
+		"lookup": {
+			"searching": "Søker i {{providers}}…",
+			"best": "Mest fullstendig",
+			"heading": "Katalogposter funnet",
+			"pick": "Bruk denne katalogposten",
+			"none": "Ingen katalogpost funnet. Katalogposten kan fylles ut for hånd.",
+			"manual": "Skriv inn for hånd",
+			"bySearch": "Søk etter tittel",
+			"retry": "Prøv igjen",
+			"another": "Ny kode",
+			"source": "Kilde: {{provider}}",
+			"providerOk": "{{count}} {{count:plural; one:katalogpost; other:katalogposter;}}",
+			"providerCached": "fra mellomlageret",
+			"failed": "Feil"
+		},
+		"form": {
+			"heading": "Kontroller katalogposten og legg til eksemplarene",
+			"rescan": "Skann en annen kode",
+			"bestOf": "Den mest fullstendige av de {{count}} katalogpostene som ble funnet. Kontroller år og beskrivelse mot eksemplaret.",
+			"otherRecords": "Andre {{count:plural; one:katalogpost; other:katalogposter;}} ({{count}})",
+			"fromSource": "Katalogpost fra {{provider}}: kontroller opplysningene før du lagrer.",
+			"manualSource": "Katalogpost fylt ut for hånd.",
+			"copiesSection": "Eksemplarer",
+			"copies": "Antall eksemplarer",
+			"itemType": "Materiale",
+			"callNumber": "Hyllesignatur",
+			"readingLevel": "Nivå for eksemplarene",
+			"acquisitionDate": "Anskaffelsesdato",
+			"save": "Lagre katalogposten og eksemplarene",
+			"deweySuggested": "Emne foreslått ut fra Dewey-nummeret {{dewey}}."
+		},
+		"done": {
+			"heading": "Katalogposten er lagret",
+			"summary": "«{{title}}» med {{count}} {{count:plural; one:eksemplar; other:eksemplarer;}}",
+			"summaryCopies": "{{count}} {{count:plural; one:eksemplar lagt til; other:eksemplarer lagt til;}} til «{{title}}»",
+			"barcodes": "Strekkoder for eksemplarene",
+			"printLabels": "Skriv ut etiketter",
+			"addToList": "Legg til i etikettlisten",
+			"open": "Åpne katalogposten",
+			"another": "Legg til en til"
+		},
+		"cover": {
+			"title": "Omslag",
+			"alt": "Omslaget til boken",
+			"searching": "Søker etter omslaget på nettet…",
+			"found": "Funnet på {{provider}}: det lagres sammen med katalogposten. Hvis det er feil, fotografer bokens eget omslag.",
+			"photo": "Foto av omslaget: det lagres sammen med katalogposten.",
+			"none": "Fant ikke omslag på nettet: det kan fotograferes.",
+			"empty": "Ingen omslag: det kan fotograferes.",
+			"take": "Fotografer omslaget",
+			"replace": "Erstatt med et foto",
+			"remove": "Fjern",
+			"saving": "Lagrer omslaget…",
+			"failed": "Omslaget ble ikke lagret: det kan legges til fra bokens katalogpost."
+		}
+	},
+	"cover": {
+		"title": "Omslag",
+		"take": "Fotografer omslaget",
+		"upload": "Last opp en fil",
+		"change": "Endre omslaget",
+		"delete": "Fjern omslaget",
+		"deleteTitle": "Fjerne omslaget?",
+		"deleteDescription": "Bildet slettes fra serveren; et nytt kan fotograferes.",
+		"shoot": "Ta bilde",
+		"loading": "Laster inn modulen for retting ({{loaded}} av {{total}} MB), bare ved første bruk.",
+		"loadingShort": "Laster inn modulen for retting ({{loaded}} MB), bare ved første bruk.",
+		"loadFailed": "Modulen for retting kunne ikke lastes inn. Kontroller forbindelsen og prøv igjen.",
+		"detecting": "Finner kantene på omslaget…",
+		"notFound": "Kantene ble ikke funnet automatisk: dra hjørnene til omslaget.",
+		"adjustHint": "Dra de fire hjørnene til kantene på omslaget, og rett så opp.",
+		"straighten": "Rett opp",
+		"result": "Resultat",
+		"use": "Bruk dette omslaget",
+		"retake": "Ta på nytt",
+		"cancel": "Avbryt",
+		"saved": "Omslaget er lagret",
+		"deleted": "Omslaget er fjernet",
+		"placeholder": "Ingen omslag",
+		"alt": "Omslaget til {{title}}",
+		"cameraHint": "Ta med hele omslaget, også når det er skrått: det rettes opp etter opptaket.",
+		"errors": {
+			"too_large": "Filen er for stor: grensen er {{maxMb}} MB.",
+			"not_an_image": "Filen er ikke et lesbart bilde.",
+			"unsupported_format": "Bildeformatet støttes ikke (bruk JPEG, PNG, WebP eller HEIC).",
+			"empty": "Ingen fil valgt."
+		},
+		"download": "Last ned omslaget",
+		"downloading": "Søker etter omslaget på nettet…",
+		"downloaded": "Omslaget er lastet ned fra {{provider}}",
+		"downloadNotFound": "Fant ikke omslag på nettet for dette ISBN-nummeret: det kan fotograferes.",
+		"downloadNoIsbn": "Katalogposten har ikke ISBN: omslaget må fotograferes."
+	},
+	"export": {
+		"copiesTotal": "Eksemplarer",
+		"copiesAvailable": "Tilgjengelige",
+		"callNumber": "Hyllesignatur",
+		"acquiredAt": "Anskaffet"
+	},
+	"import": {
+		"title": "Importer katalogen",
+		"upload": {
+			"file": "CSV-fil",
+			"hint": "Én linje per eksemplar: opplysningene om tittelen gjentas på linjene for eksemplarene. Tittel, forfatter og forlag må være med. Bruk overskriftene i malen, som kan lastes ned under med de kolonnene som trengs. For å flytte fra Koha, bruk eksporten som beskrives i administratorveiledningen.",
+			"submit": "Last opp"
+		},
+		"mapping": {
+			"uncertain": "Kolonnene ble ikke gjenkjent: angi feltet for hver av dem før du går videre.",
+			"remembered": "Kolonnene er husket fra forrige import av denne filen.",
+			"specialValues": "Spesialverdier når forfatter eller forlag mangler («{{author}}», «{{publisher}}»)",
+			"specialValuesHint": "Uten dette valget er linjer uten forfatter eller forlag feil.",
+			"validate": "Kontroller filen",
+			"without": {
+				"biblioKey": "Uten kolonnen biblio_key grupperes eksemplarene av samme bok etter ISBN; linjer uten ISBN blir én tittel hver.",
+				"barcode": "Uten kolonnen barcode genereres strekkodene til eksemplarene: etter importen skrives etikettene ut.",
+				"classification": "Uten kolonnen classification havner bøkene på listen «Til klassifisering»: eksemplarene lånes ikke ut før de er klassifisert."
+			}
+		},
+		"fields": {
+			"biblioKey": "Nøkkel for tittelen (biblionumber)",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "Tittel",
+			"subtitle": "Undertittel",
+			"originalTitle": "Originaltittel",
+			"responsibility": "Ansvarsangivelse",
+			"author": "Forfatter",
+			"publisher": "Forlag",
+			"publicationPlace": "Utgivelsessted",
+			"publicationYear": "År",
+			"physicalDescription": "Fysisk beskrivelse",
+			"series": "Serie",
+			"seriesNumber": "Nummer i serien",
+			"dewey": "Dewey",
+			"classification": "Klassifikasjon (sjanger eller emne, Kohas ccode)",
+			"readingLevel": "Lesenivå",
+			"subjects": "Emneord",
+			"notes": "Merknader om tittelen",
+			"barcode": "Strekkode for eksemplaret",
+			"callNumber": "Hyllesignatur",
+			"itemType": "Materiale",
+			"enumeration": "Bind",
+			"status": "Status",
+			"notForLoan": "Ikke til utlån",
+			"acquisitionDate": "Anskaffelsesdato",
+			"itemNotes": "Merknader om eksemplaret"
+		},
+		"preview": {
+			"ready": "Ingen feil: importen kan gjennomføres.",
+			"blocked": "Rett feilene i filen og kontroller på nytt: ingenting importeres når det finnes feil.",
+			"nothing": "Alle eksemplarene i filen finnes allerede i katalogen: det er ingenting å importere.",
+			"titles": "{{new}} {{new:plural; one:ny tittel; other:nye titler;}}, {{existing}} finnes allerede i katalogen (eksemplarene legges til)",
+			"columns": {
+				"title": "Tittel",
+				"barcode": "Strekkode",
+				"classification": "Klassifikasjon"
+			},
+			"question": {
+				"title": "Eksemplarer av samme tittel med ulike nivåer",
+				"text": "I {{count}} {{count:plural; one:tittel; other:titler;}} har eksemplarene ulike lesenivåer. Nivået kan ligge på hvert eksemplar i stedet for på tittelen: dette er innstillingen «nivå per eksemplar», som gjelder for hele katalogen og flytter nivået for titlene som allerede finnes over til deres eksemplarer.",
+				"yes": "Ja, nivå per eksemplar",
+				"no": "Nei, det er feil som må rettes"
+			},
+			"commit": "Importer",
+			"back": "Tilbake til kolonnene",
+			"generatedBarcodes": "{{count}} {{count:plural; one:eksemplar; other:eksemplarer;}} uten strekkode: strekkoden genereres, og deretter skrives etikettene ut.",
+			"toClassify": "{{count}} {{count:plural; one:ny tittel uten klassifikasjon; other:nye titler uten klassifikasjon;}}: {{count:plural; one:den havner; other:de havner;}} i «Til klassifisering»."
+		},
+		"reasons": {
+			"tooLong": "For lang tekst i kolonnen {{column}}: høyst {{max}} tegn",
+			"isbnInvalid": "Ugyldig ISBN: «{{value}}»",
+			"classificationUnknown": "Klassifikasjonen finnes ikke i innstillingene: «{{value}}»",
+			"barcodeInvalid": "Strekkode med tegn som ikke er tillatt: «{{value}}»",
+			"barcodeCheckDigit": "Strekkode med feil kontrolltegn: «{{value}}»",
+			"barcodeDuplicateInFile": "Strekkoden er allerede brukt på linje {{line}}",
+			"barcodeTaken": "Strekkoden {{value}} tilhører allerede et annet eksemplar i katalogen",
+			"barcodeIsCard": "Koden {{value}} er, eller ligner, et lånekortnummer: et eksemplar kan ikke ha en lånekortkode",
+			"statusUnknown": "Status ikke gjenkjent: «{{value}}» (tilgjengelig, tapt, skadet, under reparasjon, utrangert)",
+			"notForLoanUnknown": "Verdi ikke gjenkjent for «ikke til utlån»: «{{value}}» (ja/nei)",
+			"dateInvalid": "Ugyldig dato: «{{value}}» (ÅÅÅÅ-MM-DD eller DD.MM.ÅÅÅÅ)",
+			"authorMissing": "Forfatteren mangler (med «spesialverdier» blir det «Anonym»)",
+			"publisherMissing": "Forlaget mangler (med «spesialverdier» blir det «u.f.»)",
+			"titleMissing": "Tittelen mangler",
+			"groupConflict": "Samme nøkkel som linje {{line}}, men en annen tittel",
+			"classQuestion": "Eksemplarer med ulike nivåer ({{classes}}): svar på spørsmålet nedenfor",
+			"classDiffers": "Eksemplarer med ulike nivåer ({{classes}}) uten nivå per eksemplar",
+			"copyExists": "Eksemplaret finnes allerede i katalogen: det hoppes over",
+			"mergedIntoExisting": "Lagt til tittelen som allerede finnes i katalogen (samme nøkkel eller samme ISBN)"
+		},
+		"done": {
+			"title": "Katalogen er importert",
+			"summary": "{{titlesCreated}} {{titlesCreated:plural; one:ny tittel; other:nye titler;}}, {{copiesCreated}} {{copiesCreated:plural; one:eksemplar lagt til; other:eksemplarer lagt til;}} ({{titlesMerged}} {{titlesMerged:plural; one:tittel fantes allerede; other:titler fantes allerede;}}, {{copiesSkipped}} {{copiesSkipped:plural; one:eksemplar hoppet over; other:eksemplarer hoppet over;}}).",
+			"classPerItem": "Nivå per eksemplar er slått på.",
+			"batch": "Import nr. {{id}}: originalfilen tas vare på.",
+			"labels": "Skriv ut etikettene for eksemplarene uten strekkode",
+			"open": "Gå til katalogen",
+			"again": "Importer en annen fil"
+		},
+		"columns": {
+			"title": {
+				"hint": "Tittelen på boken."
+			},
+			"author": {
+				"hint": "Etternavn, fornavn; tomt er en feil, med mindre «spesialverdier» er valgt."
+			},
+			"publisher": {
+				"hint": "Forlaget; tomt som for forfatteren."
+			},
+			"biblioKey": {
+				"hint": "Koden for tittelen i det gamle programmet (biblionumber i Koha): den holder eksemplarene sammen.",
+				"missing": "eksemplarene grupperes etter ISBN"
+			},
+			"barcode": {
+				"hint": "Strekkoden som allerede sitter på eksemplaret.",
+				"missing": "strekkoden genereres, og etikettene må skrives ut"
+			},
+			"classification": {
+				"hint": "Koden for sjangeren (skjønnlitteratur) eller emnet (faglitteratur).",
+				"missing": "boken havner i «Til klassifisering»"
+			},
+			"readingLevel": {
+				"hint": "Lesenivået (skjønnlitteratur)."
+			},
+			"isbn": {
+				"hint": "ISBN-10 eller ISBN-13."
+			},
+			"issn": {
+				"hint": "For periodika."
+			},
+			"ean": {
+				"hint": "EAN-koden til DVD-er og annet materiale."
+			},
+			"subtitle": {
+				"hint": "Undertittelen."
+			},
+			"originalTitle": {
+				"hint": "Bare for oversettelser: tittelen i originalspråket."
+			},
+			"responsibility": {
+				"hint": "Illustratører, oversettere…"
+			},
+			"publicationPlace": {
+				"hint": "Utgivelsesstedet."
+			},
+			"publicationYear": {
+				"hint": "Utgivelsesåret."
+			},
+			"physicalDescription": {
+				"hint": "Sider, illustrasjoner, format."
+			},
+			"series": {
+				"hint": "Serien (ikke forlagets samling)."
+			},
+			"seriesNumber": {
+				"hint": "Nummeret i serien."
+			},
+			"dewey": {
+				"hint": "Dewey-nummeret, bare til orientering."
+			},
+			"subjects": {
+				"hint": "Nøkkelord skilt med ; eller ,."
+			},
+			"notes": {
+				"hint": "Merknader om tittelen."
+			},
+			"callNumber": {
+				"hint": "Hyllesignaturen; foreslås når den mangler."
+			},
+			"itemType": {
+				"hint": "Materialet (bok, dvd…); det første konfigurerte når det mangler."
+			},
+			"enumeration": {
+				"hint": "Bindet, for verk i flere bind."
+			},
+			"status": {
+				"hint": "tilgjengelig, tapt, skadet, under reparasjon, utrangert."
+			},
+			"notForLoan": {
+				"hint": "1 eller ja for referanseeksemplarer."
+			},
+			"acquisitionDate": {
+				"hint": "Anskaffelsesdatoen; i dag når den mangler."
+			},
+			"itemNotes": {
+				"hint": "Merknader om eksemplaret."
+			}
+		}
+	},
+	"batch": {
+		"selected": "Endre eksemplarene i utvalget",
+		"title": "Endre eksemplarene",
+		"scope": "{{count}} {{count:plural; one:eksemplar; other:eksemplarer;}}",
+		"operation": "Hva skal endres",
+		"operations": {
+			"status": "Status",
+			"itemType": "Materiale",
+			"notForLoan": "Ikke til utlån",
+			"readingLevel": "Nivå for eksemplaret",
+			"acquisitionDate": "Anskaffelsesdato"
+		},
+		"value": "Ny verdi",
+		"yes": "Ja",
+		"no": "Nei",
+		"noClass": "Ingen nivå",
+		"reason": "Årsak",
+		"reasonHint": "Obligatorisk for tapte og utrangerte: den blir værende i loggen for hvert eksemplar.",
+		"check": "Kontroller",
+		"apply": "Bruk på {{count}} {{count:plural; one:eksemplar; other:eksemplarer;}}",
+		"plan": {
+			"changes": "{{count}} {{count:plural; one:eksemplar endres; other:eksemplarer endres;}}",
+			"onLoan": "{{count}} {{count:plural; one:på lån, blir uendret (lever den inn først); other:på lån, blir uendrede (lever dem inn først);}}",
+			"unchanged": "{{count}} {{count:plural; one:eksemplar har; other:eksemplarer har;}} allerede denne verdien",
+			"notFound": "{{count}} {{count:plural; one:eksemplar finnes; other:eksemplarer finnes;}} ikke lenger",
+			"notAllowed": "{{count}} {{count:plural; one:eksemplar er; other:eksemplarer er;}} ikke skjønnlitteratur: nivået gjelder ikke",
+			"none": "Ingen eksemplarer å endre."
+		},
+		"excludedTitle": "Eksemplarer som blir værende som de er",
+		"done": "{{count}} {{count:plural; one:eksemplar endret; other:eksemplarer endret;}}",
+		"errors": {
+			"reasonRequired": "Skriv årsaken: den er obligatorisk for tapte og utrangerte.",
+			"itemTypeUnknown": "Materialet finnes ikke i innstillingene.",
+			"readingLevelNotAllowed": "Nivå per eksemplar er ikke slått på.",
+			"readingLevelOutOfRange": "Lesenivået finnes ikke i innstillingene.",
+			"dateInvalid": "Ugyldig dato.",
+			"statusUnknown": "Ugyldig status.",
+			"classificationUnknown": "Velg en sjanger eller et emne fra innstillingene."
+		},
+		"reclassify": {
+			"button": "Klassifiser på nytt",
+			"title": "Klassifiser de valgte titlene på nytt",
+			"scope": "{{count}} {{count:plural; one:tittel; other:titler;}}",
+			"resuggest": "Skriv hyllesignaturene til eksemplarene på nytt ut fra den nye klassifikasjonen",
+			"labelsHint": "Ryggbåndene (og etikettene, hvis hyllesignaturen endres) havner igjen blant dem som skal skrives ut.",
+			"changes": "{{count}} {{count:plural; one:tittel endres; other:titler endres;}}",
+			"apply": "Klassifiser {{count}} {{count:plural; one:tittel; other:titler;}} på nytt",
+			"done": "{{count}} {{count:plural; one:tittel klassifisert på nytt; other:titler klassifisert på nytt;}}, {{calls}} {{calls:plural; one:hyllesignatur skrevet om; other:hyllesignaturer skrevet om;}}"
+		}
+	},
+	"search": {
+		"suggest": "Koden {{barcode}} er et eksemplar av «{{title}}».",
+		"openSuggest": "Åpne katalogposten",
+		"available": "Bare tilgjengelige",
+		"yearFrom": "År fra",
+		"yearTo": "År til",
+		"copiesAvailable": "{{available}} av {{total}} tilgjengelige",
+		"noCopies": "Ingen eksemplarer"
+	},
+	"inventory": {
+		"title": "Bokrevisjon",
+		"defaultName": "Bokrevisjon",
+		"emptyTitle": "Ingen bokrevisjon er i gang",
+		"emptyHint": "Start en kampanje, og les så eksemplarene hylle for hylle: når revisjonen avsluttes, merkes de som ikke er lest, som tapte.",
+		"name": "Navn på kampanjen",
+		"start": "Ny kampanje",
+		"started": "Startet {{when}}",
+		"overall": "Hele biblioteket",
+		"progress": "{{seen}} av {{expected}} ({{percent}} %)",
+		"counts": "{{scanned}} {{scanned:plural; one:eksemplar lest; other:eksemplarer lest;}} · {{misplaced}} på feil hylle · {{found}} {{found:plural; one:gjenfunnet; other:gjenfunnet;}}",
+		"byShelf": "Fremdrift per hylle",
+		"noShelf": "Uten hyllesignatur",
+		"scanTitle": "Skann eksemplarene",
+		"shelf": "Hylle",
+		"shelfHint": "For eksempel B eller 590: eksemplarer med en annen hyllesignatur blir merket som feilplassert.",
+		"scanLabel": "Strekkode for eksemplaret",
+		"camera": "Skann med kameraet",
+		"outcomes": {
+			"seen": "{{title}} ({{barcode}}): sett.",
+			"again": "{{title}} ({{barcode}}): allerede skannet {{when}}.",
+			"misplaced": "{{title}} ({{barcode}}): på feil hylle; sett den tilbake etter hyllesignaturen.",
+			"found": "{{title}} ({{barcode}}): den var tapt og er gjenfunnet; den er tilgjengelig igjen.",
+			"onLoan": "{{title}} ({{barcode}}): er utlånt; registrer innleveringen ved utlånsdisken.",
+			"withdrawn": "{{title}} ({{barcode}}): utrangert eksemplar, skal tas av hylla.",
+			"unknown": "{{code}}: ingen eksemplarer har denne strekkoden."
+		},
+		"missing": "Fortsatt å finne ({{count}})",
+		"allShelves": "Alle hyller",
+		"allTypes": "Alle materialer",
+		"noneMissing": "Alle forventede eksemplarer er sett.",
+		"more": "og {{count}} til: eksporter listen for å se {{count:plural; one:den; other:dem alle;}}.",
+		"close": "Avslutt bokrevisjonen",
+		"closeTitle": "Avslutte bokrevisjonen?",
+		"closeHint": "{{count}} {{count:plural; one:eksemplar; other:eksemplarer;}} som aldri er sett, blir merket som tapt. Kampanjen kan gjenåpnes innen en uke for å angre.",
+		"closedTitle": "Bokrevisjonen er avsluttet",
+		"summary": "{{seen}} av {{expected}} {{expected:plural; one:eksemplar; other:eksemplarer;}} sett, {{lost}} merket som tapt, {{found}} {{found:plural; one:gjenfunnet; other:gjenfunnet;}}, {{onLoan}} utlånt, {{misplaced}} på feil hylle.",
+		"history": "Tidligere kampanjer",
+		"reopen": "Gjenåpne",
+		"errors": {
+			"alreadyOpen": "Det er allerede en bokrevisjon i gang.",
+			"notOpen": "Denne bokrevisjonen er avsluttet.",
+			"notFound": "Bokrevisjonen finnes ikke.",
+			"tooLate": "Den kan bare gjenåpnes innen en uke etter avslutningen.",
+			"badName": "Gi kampanjen et navn.",
+			"badNotes": "Merknadene til kampanjen kan ha høyst 500 tegn."
+		},
+		"cameraShelf": "Hylle {{shelf}}",
+		"cameraDone": "Ferdig"
+	},
+	"toClassify": {
+		"title": "Til klassifisering",
+		"label": "Til klassifisering",
+		"intro": "Bøkene som er registrert uten klassifikasjon, de eldste først. Eksemplarene lånes ikke ut før de er klassifisert.",
+		"count": "{{count}} {{count:plural; one:bok; other:bøker;}} til klassifisering",
+		"empty": "Ingen bok å klassifisere",
+		"emptyHint": "Alle bøkene i katalogen har en sjanger eller et emne.",
+		"start": "Begynn å klassifisere",
+		"classify": "Klassifiser",
+		"badge": "Til klassifisering",
+		"badgeHint": "Eksemplarene lånes ikke ut før boken er klassifisert.",
+		"columns": {
+			"title": "Tittel",
+			"author": "Forfatter",
+			"publisher": "Forlag",
+			"year": "År",
+			"isbn": "ISBN",
+			"copies": "Eksemplarer",
+			"enteredOn": "Registrert"
+		},
+		"flow": {
+			"title": "Klassifiser boken",
+			"saveNext": "Lagre og neste",
+			"save": "Lagre",
+			"skip": "Hopp over",
+			"saved": "«{{title}}» er klassifisert",
+			"end": "Det er ikke flere bøker å klassifisere i denne runden.",
+			"backToList": "Tilbake til listen",
+			"already": "Denne boken er allerede klassifisert.",
+			"callNumber": "Hyllesignatur for eksemplarene",
+			"callNumberHint": "Eksemplarene uten hyllesignatur får denne; deretter kan ryggbåndet skrives ut.",
+			"dewey": "Dewey-nummeret {{dewey}} tilsvarer emnet {{code}}.",
+			"copies": "{{count}} {{count:plural; one:eksemplar; other:eksemplarer;}}",
+			"subjects": "Emneord",
+			"notes": "Merknader"
+		}
+	}
+}

@@ -1,0 +1,66 @@
+{
+	"title": "Segnalazioni",
+	"new": "Nuova segnalazione",
+	"adminOnly": "Solo l'amministratore archivia le segnalazioni e le mette in evidenza sulla dashboard.",
+	"pinned": "In evidenza",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Archiviata da {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:segnalazione; other:segnalazioni;}}",
+	"archiveCount": "{{shown}} di {{total}} {{total:plural; one:segnalazione archiviata; other:segnalazioni archiviate;}}",
+	"actions": {
+		"label": "Azioni sulla segnalazione",
+		"pin": "Metti in evidenza",
+		"unpin": "Togli dall'evidenza",
+		"archive": "Archivia",
+		"restore": "Ripristina",
+		"delete": "Elimina",
+		"showAll": "Mostra tutto",
+		"showLess": "Mostra meno",
+		"more": "Mostra altre"
+	},
+	"done": {
+		"added": "Segnalazione aggiunta",
+		"pinned": "Segnalazione messa in evidenza",
+		"unpinned": "Segnalazione tolta dall'evidenza",
+		"archived": "Segnalazione archiviata",
+		"restored": "Segnalazione ripristinata",
+		"deleted": "Segnalazione eliminata"
+	},
+	"confirmDelete": {
+		"title": "Eliminare la segnalazione?",
+		"text": "Viene cancellata per sempre e non si può recuperare."
+	},
+	"form": {
+		"body": "Testo",
+		"placeholder": "Es. Lo scanner del banco non legge le tessere.",
+		"privacy": "Le segnalazioni sono visibili a tutti gli account: non inserire dati personali degli alunni.",
+		"written": "Una segnalazione non si può modificare: in caso di errore, chiedere all'amministratore di archiviarla e scriverne un'altra.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Colore",
+		"pinned": "In evidenza sulla dashboard",
+		"pinnedHint": "Compare a tutti in cima alla dashboard (e al banco prestiti) finché non viene tolta dall'evidenza o archiviata.",
+		"save": "Aggiungi"
+	},
+	"colors": {
+		"yellow": "Giallo",
+		"pink": "Rosa",
+		"green": "Verde",
+		"blue": "Azzurro",
+		"orange": "Arancio"
+	},
+	"errors": {
+		"empty": "Il testo della segnalazione è obbligatorio.",
+		"tooLong": "Il testo supera i {{max}} caratteri.",
+		"color": "Scegliere uno dei colori."
+	},
+	"empty": {
+		"open": "Nessuna segnalazione aperta",
+		"openHint": "Nessuna segnalazione aperta. Le segnalazioni comunicano problemi e avvisi ai colleghi e all'amministratore.",
+		"archived": "Nessuna segnalazione archiviata"
+	},
+	"home": {
+		"title": "Segnalazioni",
+		"open": "Apri le segnalazioni"
+	},
+	"tile": "Segnalazioni aperte"
+}

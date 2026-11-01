@@ -1,0 +1,88 @@
+{
+	"id": "hr-osnovna",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Classes (razredni odjeli) written 5.a or 5. a [VERIFY].",
+	"name": {
+		"it": "Scuola di base, dal 1º all'8º anno (Croazia)",
+		"en": "Basic school, grades 1 to 8 (Croatia)",
+		"hr": "Osnovna škola (Hrvatska)"
+	},
+	"country": "HR",
+	"languages": ["hr"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "razredna",
+				"name": "Razredna nastava"
+			},
+			{
+				"code": "predmetna",
+				"name": "Predmetna nastava"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1.",
+				"name": "1. razred",
+				"stage": "razredna"
+			},
+			{
+				"code": "2",
+				"label": "2.",
+				"name": "2. razred",
+				"stage": "razredna"
+			},
+			{
+				"code": "3",
+				"label": "3.",
+				"name": "3. razred",
+				"stage": "razredna"
+			},
+			{
+				"code": "4",
+				"label": "4.",
+				"name": "4. razred",
+				"stage": "razredna"
+			},
+			{
+				"code": "5",
+				"label": "5.",
+				"name": "5. razred",
+				"stage": "predmetna"
+			},
+			{
+				"code": "6",
+				"label": "6.",
+				"name": "6. razred",
+				"stage": "predmetna"
+			},
+			{
+				"code": "7",
+				"label": "7.",
+				"name": "7. razred",
+				"stage": "predmetna"
+			},
+			{
+				"code": "8",
+				"label": "8.",
+				"name": "8. razred",
+				"stage": "predmetna"
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Razredni odjel",
+		"cardClass": "{class} razred",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"razredna": ["a", "b", "c"],
+		"predmetna": ["a", "b", "c"]
+	},
+	"teacherGroup": "Učitelji",
+	"readingLevels": []
+}

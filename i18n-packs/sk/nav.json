@@ -1,0 +1,60 @@
+{
+	"dashboard": "Prehľad",
+	"circulation": "Výpožičky",
+	"catalog": "Katalóg",
+	"patrons": "Čitatelia",
+	"printing": "Tlač",
+	"notes": "Hlásenia",
+	"reports": "Výkazy",
+	"admin": "Administrácia",
+	"more": "Viac",
+	"logout": "Odhlásiť sa",
+	"help": "Pomocník",
+	"about": "O aplikácii",
+	"areas": {
+		"circulation": {
+			"label": "Výpožičný pult",
+			"checkout": "Výpožičky",
+			"checkin": "Vrátenia",
+			"loans": "Vypožičané knihy",
+			"overdues": "Upomienky",
+			"wishlist": "Zoznam želaní",
+			"calendar": "Kalendár"
+		},
+		"catalog": {
+			"label": "Stránky katalógu",
+			"catalog": "Katalóg",
+			"inventory": "Revízia fondu",
+			"wishlist": "Zoznam želaní",
+			"toClassify": "Na klasifikáciu"
+		},
+		"patrons": {
+			"label": "Stránky čitateľov",
+			"patrons": "Čitatelia",
+			"census": "Fotoevidencia"
+		},
+		"notes": {
+			"label": "Stránky hlásení",
+			"open": "Otvorené",
+			"archived": "Archivované"
+		},
+		"config": {
+			"label": "Stránky konfigurácie",
+			"overview": "Sekcie",
+			"history": "História"
+		},
+		"templates": {
+			"label": "Stránky šablón tlače",
+			"edit": "Šablóny",
+			"previews": "Náhľady"
+		},
+		"imports": {
+			"label": "Importy",
+			"catalog": "Katalóg",
+			"students": "Žiaci",
+			"teachers": "Učitelia",
+			"loans": "Otvorené výpožičky",
+			"photos": "Fotografie čitateľov"
+		}
+	}
+}

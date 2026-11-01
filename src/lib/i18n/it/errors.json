@@ -1,0 +1,7 @@
+{
+	"notFound": "Pagina non trovata",
+	"forbidden": "Questa pagina non è disponibile per l'account in uso",
+	"unauthorized": "È necessario accedere per continuare",
+	"generic": "Si è verificato un errore ({{status}})",
+	"backHome": "Torna alla pagina iniziale"
+}

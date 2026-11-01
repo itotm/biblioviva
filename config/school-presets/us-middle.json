@@ -1,0 +1,47 @@
+{
+	"id": "us-middle",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md Phase 12, B2 of docs/studies/barcodes-and-school-classes.md).",
+	"name": {
+		"it": "Scuola media (USA)",
+		"en": "Middle school (USA)"
+	},
+	"country": "US",
+	"languages": ["en"],
+	"school": {
+		"stages": [
+			{
+				"code": "middle",
+				"name": "Middle school"
+			}
+		],
+		"levels": [
+			{
+				"code": "G6",
+				"label": "6",
+				"name": "Grade 6",
+				"stage": "middle"
+			},
+			{
+				"code": "G7",
+				"label": "7",
+				"name": "Grade 7",
+				"stage": "middle"
+			},
+			{
+				"code": "G8",
+				"label": "8",
+				"name": "Grade 8",
+				"stage": "middle"
+			}
+		],
+		"classLabel": "{level}-{group}",
+		"groupWord": "Homeroom",
+		"promotionWithinStage": "clear",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"middle": ["A", "B", "C"]
+	},
+	"teacherGroup": "Teachers",
+	"readingLevels": []
+}

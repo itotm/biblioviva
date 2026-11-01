@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "在借记录",
+		"overdue": "逾期",
+		"issuedToday": "今日借出",
+		"returnedToday": "今日归还",
+		"withoutCard": "未打印读者证的读者",
+		"withoutPhoto": "没有照片的读者",
+		"toClassify": "待分类图书",
+		"pendingLabels": "尚未贴标签的图书"
+	},
+	"tilesTitle": "今日图书馆",
+	"actions": {
+		"title": "快捷操作"
+	},
+	"dueWeek": {
+		"title": "本周到期",
+		"none": "{{day}}前没有到期的借阅。",
+		"more": "另有 {{count}} 项",
+		"due": "应还 {{date}}"
+	},
+	"inventory": {
+		"title": "盘点",
+		"continue": "继续"
+	},
+	"install": {
+		"title": "添加到主屏幕",
+		"hint": "BiblioViva 可以像应用一样，从手机上的图标全屏打开。",
+		"install": "安装",
+		"fromMenu": "打开 Firefox 的 ⋮ 菜单，选择“安装”或“添加到主屏幕”。",
+		"later": "暂不"
+	},
+	"upcoming": {
+		"title": "即将到来的日期",
+		"none": "未来 {{days:plural; other:{{days}} 天;}}内没有日期。",
+		"more": "另有 {{count}} 项",
+		"open": "打开日历"
+	}
+}

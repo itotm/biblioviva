@@ -1,0 +1,19 @@
+{
+	"title": "Over",
+	"app": {
+		"version": "Versie",
+		"license": "Licentie",
+		"repository": "Broncode"
+	},
+	"deps": {
+		"title": "Gebruikte bibliotheken",
+		"runtime": "Uitvoering ({{count}})",
+		"development": "Alleen voor de ontwikkeling ({{count}})",
+		"system": "Systeemcomponenten",
+		"columns": {
+			"name": "Naam",
+			"version": "Versie",
+			"license": "Licentie"
+		}
+	}
+}

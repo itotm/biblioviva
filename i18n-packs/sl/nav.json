@@ -1,0 +1,60 @@
+{
+	"dashboard": "Nadzorna plošča",
+	"circulation": "Izposoja",
+	"catalog": "Katalog",
+	"patrons": "Uporabniki",
+	"printing": "Tiskanje",
+	"notes": "Opombe",
+	"reports": "Poročila",
+	"admin": "Upravljanje",
+	"more": "Več",
+	"logout": "Odjava",
+	"help": "Pomoč",
+	"about": "O programu",
+	"areas": {
+		"circulation": {
+			"label": "Izposojevalni pult",
+			"checkout": "Izposoja",
+			"checkin": "Vrnitve",
+			"loans": "Knjige na izposoji",
+			"overdues": "Opomini",
+			"wishlist": "Seznam želja",
+			"calendar": "Koledar"
+		},
+		"catalog": {
+			"label": "Strani kataloga",
+			"catalog": "Katalog",
+			"inventory": "Inventura",
+			"wishlist": "Seznam želja",
+			"toClassify": "Za klasifikacijo"
+		},
+		"patrons": {
+			"label": "Strani uporabnikov",
+			"patrons": "Uporabniki",
+			"census": "Fotografski popis"
+		},
+		"notes": {
+			"label": "Strani opomb",
+			"open": "Odprte",
+			"archived": "Arhivirane"
+		},
+		"config": {
+			"label": "Strani nastavitev",
+			"overview": "Razdelki",
+			"history": "Zgodovina"
+		},
+		"templates": {
+			"label": "Strani predlog za tisk",
+			"edit": "Predloge",
+			"previews": "Predogledi"
+		},
+		"imports": {
+			"label": "Uvozi",
+			"catalog": "Katalog",
+			"students": "Učenci",
+			"teachers": "Učitelji",
+			"loans": "Aktivne izposoje",
+			"photos": "Fotografije uporabnikov"
+		}
+	}
+}

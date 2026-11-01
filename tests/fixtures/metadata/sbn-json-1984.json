@@ -1,0 +1,37 @@
+{
+	"numFound": 3,
+	"start": 0,
+	"rows": 5,
+	"briefRecords": [
+		{
+			"progressivoId": 0,
+			"codiceIdentificativo": "IT\\ICCU\\RMB\\0803390",
+			"isbn": "978-88-04-66823-7",
+			"autorePrincipale": "Orwell, George",
+			"titolo": "1984 / George Orwell ; traduzione di Stefano Manferlotti",
+			"pubblicazione": "Milano : Mondadori, 2019",
+			"livello": "Monografia",
+			"tipo": "Testo a stampa"
+		},
+		{
+			"progressivoId": 1,
+			"codiceIdentificativo": "IT\\ICCU\\NAP\\0838622",
+			"isbn": "978-88-04-66823-7",
+			"autorePrincipale": "Orwell, George",
+			"titolo": "1984 / George Orwell ; traduzione di Stefano Manferlotti",
+			"pubblicazione": "Milano : Mondadori, 2016",
+			"livello": "Monografia",
+			"tipo": "Testo a stampa"
+		},
+		{
+			"progressivoId": 2,
+			"codiceIdentificativo": "IT\\ICCU\\MOD\\1659333",
+			"isbn": "978-88-04-66823-7",
+			"autorePrincipale": "Orwell, George",
+			"titolo": "1984 / George Orwell ; traduzione di Stefano Manferlotti",
+			"pubblicazione": "Milano : Mondadori, 2016",
+			"livello": "Monografia",
+			"tipo": "Testo a stampa"
+		}
+	]
+}

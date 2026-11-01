@@ -1,0 +1,39 @@
+{
+	"title": "Rapporten",
+	"categories": {
+		"loans": "Uitleningen",
+		"books": "Boeken",
+		"patrons": "Leners",
+		"ops": "Activiteit"
+	},
+	"restricted": "Alleen beheerders",
+	"custom": "Van de school",
+	"chart": "Met grafiek",
+	"problemsTitle": "Rapportbestanden niet geladen",
+	"problemsHint": "Deze bestanden in de map van de rapporten bevatten een fout en worden niet weergegeven:",
+	"params": "Parameters",
+	"run": "Bijwerken",
+	"all": "Alle",
+	"from": "van",
+	"to": "tot",
+	"patronTypes": {
+		"student": "Leerlingen",
+		"teacher": "Leerkrachten"
+	},
+	"rows": "{{count}} {{count:plural; one:rij; other:rijen;}}",
+	"ms": "in {{ms}} ms",
+	"truncated": "Alleen de eerste {{count}} {{count:plural; one:rij wordt; other:rijen worden;}} getoond: beperk de parameters om alles te zien.",
+	"empty": "Geen resultaten met deze parameters.",
+	"print": "Afdrukken",
+	"printedOn": "Afgedrukt op {{date}}",
+	"errors": {
+		"required": "“{{label}}” ontbreekt.",
+		"invalid": "De waarde van “{{label}}” is niet geldig."
+	},
+	"back": "Alle rapporten",
+	"noParams": "Dit rapport heeft geen parameters.",
+	"special": {
+		"teachers": "Leerkrachten",
+		"total": "Totaal"
+	}
+}

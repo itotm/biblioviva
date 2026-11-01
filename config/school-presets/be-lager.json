@@ -1,0 +1,72 @@
+{
+	"id": "be-lager",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Lager onderwijs of a Flemish basisschool; the kleuterklassen are not included. Classes are written 3A, L3A or 3de leerjaar A depending on the school [VERIFY]. Lessons start on the last Monday of August; the boundary sits in the summer holidays [VERIFY].",
+	"name": {
+		"it": "Scuola primaria (Belgio, Comunità fiamminga)",
+		"en": "Primary school (Belgium, Flemish Community)",
+		"nl": "Lager onderwijs (Vlaanderen)",
+		"fr": "Enseignement primaire (Belgique, Communauté flamande)"
+	},
+	"country": "BE",
+	"languages": ["nl"],
+	"schoolYear": {
+		"start": "08-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "lager",
+				"name": "Lager onderwijs"
+			}
+		],
+		"levels": [
+			{
+				"code": "L1",
+				"label": "1",
+				"name": "1ste leerjaar",
+				"stage": "lager"
+			},
+			{
+				"code": "L2",
+				"label": "2",
+				"name": "2de leerjaar",
+				"stage": "lager"
+			},
+			{
+				"code": "L3",
+				"label": "3",
+				"name": "3de leerjaar",
+				"stage": "lager"
+			},
+			{
+				"code": "L4",
+				"label": "4",
+				"name": "4de leerjaar",
+				"stage": "lager"
+			},
+			{
+				"code": "L5",
+				"label": "5",
+				"name": "5de leerjaar",
+				"stage": "lager"
+			},
+			{
+				"code": "L6",
+				"label": "6",
+				"name": "6de leerjaar",
+				"stage": "lager"
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Klas",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"lager": ["A", "B", "C"]
+	},
+	"teacherGroup": "Leerkrachten",
+	"readingLevels": []
+}

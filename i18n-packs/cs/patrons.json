@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Čtenáři",
+		"new": "Nový čtenář",
+		"search": "Hledat podle příjmení…",
+		"empty": "Filtrům neodpovídá žádný čtenář.",
+		"filters": {
+			"type": "Typ",
+			"stage": "Stupeň",
+			"level": "Ročník",
+			"status": "Stav",
+			"all": "Všichni",
+			"allF": "Všechny"
+		},
+		"columns": {
+			"name": "Příjmení a jméno",
+			"type": "Typ",
+			"class": "Třída",
+			"card": "Průkaz"
+		},
+		"clearFilters": "Vynulovat filtry",
+		"countFiltered": "{{shown:plural; one:{{shown}} čtenář odpovídá; few:{{shown}} čtenáři odpovídají; other:{{shown}} čtenářů odpovídá;}} filtrům",
+		"printCards": "Vytisknout průkazy",
+		"printClassCards": "Vytisknout průkazy {{classLabel}}",
+		"removeSelected": "Odstranit vybrané",
+		"removeTitle": "Odstranit {{count}} {{count:plural; one:čtenáře; few:čtenáře; other:čtenářů;}}?",
+		"removeDescription": "U každého se okamžitě a nadobro smažou jméno a příjmení, kontakty, identifikátor žáka, poznámky, číslo průkazu a fotografie; typ, třída, sekce a historie výpůjček zůstávají pro statistiky. Čtenáři s probíhajícími výpůjčkami zůstanou v archivu.",
+		"removed": "{{removed}} {{removed:plural; one:odstraněn; few:odstraněni; other:odstraněno;}}, {{kept}} s výpůjčkami {{kept:plural; one:zůstal; few:zůstali; other:zůstalo;}} v archivu",
+		"status": {
+			"title": "Stav",
+			"loans": "{{count}} na výpůjčce",
+			"overdue": "{{count}} po termínu",
+			"noPhoto": "bez fotografie"
+		},
+		"startTitle": "Najděte čtenáře",
+		"startHint": "Hledejte podle jména, průkazu nebo pomocí filtrů."
+	},
+	"types": {
+		"student": "Žák",
+		"teacher": "Učitel"
+	},
+	"fields": {
+		"patronType": "Typ",
+		"firstName": "Jméno",
+		"lastName": "Příjmení",
+		"cardNumber": "Číslo průkazu",
+		"cardNumberHint": "Prázdné: přidělí se automaticky.",
+		"externalId": "Identifikátor žáka",
+		"email": "E-mail",
+		"emailHint": "Adresa, kterou škola přidělí žákovi nebo učiteli: budou na ni chodit oznámení.",
+		"circulationNote": "Poznámka pro výpůjční pult",
+		"circulationNoteHint": "Zobrazí se výrazně při výpůjčce.",
+		"notes": "Interní poznámky",
+		"status": "Stav",
+		"openLoans": "Probíhající výpůjčky",
+		"overdueLoans": "Po termínu",
+		"noCard": "bez průkazu",
+		"none": "—",
+		"levelCode": "Ročník",
+		"groupId": "Sekce",
+		"classLabel": "Třída",
+		"teacherGroup": "Skupina učitelů"
+	},
+	"form": {
+		"createTitle": "Nový čtenář",
+		"editTitle": "Upravit čtenáře",
+		"identity": "Osobní údaje",
+		"school": "Zařazení",
+		"contacts": "Kontakty",
+		"notes": "Poznámky",
+		"create": "Vytvořit čtenáře",
+		"save": "Uložit změny",
+		"classSelect": "Vyberte…",
+		"defaultTeacherGroup": "Skupina učitelů"
+	},
+	"errors": {
+		"emailInvalid": "Neplatná e-mailová adresa.",
+		"cardNumberInvalid": "Neplatné číslo průkazu: pouze číslice, velká písmena a pomlčka, se správným kontrolním znakem.",
+		"cardNumberTaken": "Číslo průkazu je již přiděleno jinému čtenáři.",
+		"cardNumberIsCopy": "Číslo průkazu je nebo vypadá jako čárový kód exempláře: zvolte jiné číslo.",
+		"externalIdTaken": "Identifikátor žáka je již přidělen jinému čtenáři.",
+		"levelRequired": "Pro žáka je povinný ročník.",
+		"levelUnknown": "Ročník není mezi ročníky školy.",
+		"levelNotForTeachers": "Učitel nemá ročník.",
+		"groupRequired": "Pro žáka je povinná sekce.",
+		"groupUnknown": "Sekce nenalezena mezi aktivními třídami: třídy se vytvářejí v Správa → Nastavení → Třídy.",
+		"levelNotInGroup": "Tato sekce nemá takový ročník: vyberte sekci daného ročníku."
+	},
+	"detail": {
+		"heading": "Karta čtenáře",
+		"tabs": {
+			"loans": "Probíhající výpůjčky",
+			"history": "Historie",
+			"cards": "Průkaz",
+			"notes": "Poznámky"
+		},
+		"noLoans": "Žádné probíhající výpůjčky.",
+		"loanColumns": {
+			"due": "Termín"
+		},
+		"overdue": "po termínu",
+		"card": "Průkaz {{number}}",
+		"noNotes": "Žádné poznámky.",
+		"edit": "Upravit",
+		"created": "Vytvořeno {{when}}",
+		"barcodeAlt": "Čárový kód průkazu {{number}}",
+		"cardPrinted": "Průkaz vytištěn {{when}}.",
+		"cardNotPrinted": "Průkaz ještě není vytištěn.",
+		"reassignCard": "Přiřadit průkaz znovu",
+		"reassignTitle": "Přiřadit nový průkaz?",
+		"reassignDescription": "Stávající číslo se navždy vyřadí a nový průkaz bude třeba vytisknout.",
+		"cardReassigned": "Nový průkaz: {{number}}",
+		"printCard": "Vytisknout průkaz",
+		"markCardPrinted": "Označit jako vytištěný",
+		"cardMarkedPrinted": "Průkaz označen jako vytištěný",
+		"historyColumns": {
+			"issuedAt": "Půjčeno",
+			"dueDate": "Termín",
+			"returnedAt": "Vráceno",
+			"outcome": "Výsledek",
+			"title": "Název",
+			"author": "Autor",
+			"barcode": "Exemplář",
+			"renewals": "Prodloužení",
+			"schoolYear": "Školní rok"
+		},
+		"outcome": {
+			"open": "Probíhá",
+			"overdue": "Po termínu",
+			"returned": "Vráceno",
+			"returnedLate": "Vráceno po termínu",
+			"lost": "Ztraceno"
+		},
+		"historyEmpty": "Není zaznamenána žádná výpůjčka.",
+		"historyCount": "{{count}} {{count:plural; one:výpůjčka; few:výpůjčky; other:výpůjček;}} celkem",
+		"notesEdit": "Upravit poznámky",
+		"notesSaved": "Poznámky uloženy",
+		"notesUnchanged": "Žádná změna",
+		"notesHint": "Poznámka pro výpůjční pult se zobrazí při výpůjčce; ostatní poznámky zůstanou zde.",
+		"remove": "Odstranit čtenáře typu {{type}}",
+		"removeTitle": "Trvale odstranit čtenáře: {{name}}?",
+		"removeDescription": "Okamžitě a nadobro se smažou: jméno a příjmení, e-mail, identifikátor, poznámky, číslo průkazu (vyřazeno) a fotografie. Zůstanou jen typ, třída a sekce a historie výpůjček pro statistiky. Nelze to vrátit zpět.",
+		"removeOpenLoans": "{{count:plural; one:Má {{count}} probíhající výpůjčku – nejprve ji vraťte, nebo ji označte jako ztracenou.; few:Má {{count}} probíhající výpůjčky – nejprve je vraťte, nebo je označte jako ztracené.; other:Má {{count}} probíhajících výpůjček – nejprve je vraťte, nebo je označte jako ztracené.;}}",
+		"removeClassSheets": "Byl vybrán pro {{count}} {{count:plural; one:fotografii; few:fotografie; other:fotografií;}} na snímcích třídy (fotoevidence ze snímku): {{count:plural; one:tento rámeček je zakryt; few:tyto rámečky jsou zakryty; other:tyto rámečky jsou zakryty;}}.",
+		"removed": "Čtenář odstraněn: osobní údaje byly smazány.",
+		"removedInfo": "Odstraněno {{when}}. Zůstanou jen údaje pro statistiky.",
+		"lostTitle": "Ztracené knihy",
+		"lostHint": "Označeno jako ztracené, když byly v výpůjčce tomuto čtenáři. Pokud se vrátí, zaevidujte je ve Vrácení.",
+		"markLost": "Označit „{{title}}“ jako ztracenou",
+		"markLostTitle": "Označit „{{title}}“ jako ztracenou?",
+		"markLostDescription": "Výpůjčka se uzavře a exemplář se eviduje jako ztracený. Pokud se kniha najde, zaevidujte její vrácení a bude zase k dispozici.",
+		"markLostReason": "Důvod (nepovinné)",
+		"markLostConfirm": "Označit jako ztracenou",
+		"markedLost": "„{{title}}“: exemplář označen jako ztracený."
+	},
+	"photo": {
+		"title": "Fotografie",
+		"take": "Pořídit fotografii",
+		"upload": "Nahrát soubor",
+		"retake": "Znovu",
+		"use": "Použít tuto fotografii",
+		"cancel": "Zrušit",
+		"delete": "Smazat fotografii",
+		"deleteTitle": "Smazat fotografii?",
+		"deleteDescription": "Fotografie se odstraní ze serveru; lze pořídit novou.",
+		"zoom": "Přiblížení",
+		"dragHint": "Přetažením upravte výřez, přiblížením zvětšete.",
+		"saved": "Fotografie uložena",
+		"deleted": "Fotografie smazána",
+		"placeholder": "Bez fotografie",
+		"alt": "Fotografie: {{name}}",
+		"errors": {
+			"too_large": "Soubor je příliš velký: limit je {{maxMb}} MB.",
+			"not_an_image": "Soubor není čitelný obrázek.",
+			"unsupported_format": "Nepodporovaný formát obrázku (použijte JPEG, PNG, WebP nebo HEIC).",
+			"empty": "Není vybrán žádný soubor."
+		},
+		"withForm": "Uloží se spolu s čtenářem.",
+		"requiredHint": "Fotografie je vyžadována: pořiďte ji hned, nebo později na stránce čtenáře.",
+		"optionalHint": "Fotografii lze pořídit hned, nebo později na stránce čtenáře.",
+		"remove": "Odebrat",
+		"notSaved": "Fotografie nebyla uložena: pořiďte ji znovu na stránce čtenáře.",
+		"retakePhoto": "Pořídit fotografii znovu"
+	},
+	"census": {
+		"title": "Fotoevidence",
+		"noGroup": "Bez třídy",
+		"stageOthers": "Bez stupně",
+		"progress": "{{done}} z {{total}} s fotografií",
+		"allDone": "Všichni mají fotografii.",
+		"back": "Změnit třídu nebo seznam",
+		"skip": "Přeskočit",
+		"done": "Hotovo",
+		"saved": "Fotografie uložena: {{name}}",
+		"quickAdd": "Nový čtenář",
+		"quickAddHint": "Bude přidán do skupiny {{group}}, jeho fotografie je další.",
+		"create": "Přidat a vyfotit",
+		"findPerson": "Najít podle příjmení",
+		"pickTarget": "Vyberte seznam nebo třídu",
+		"listsTitle": "Seznamy čtenářů",
+		"classesTitle": "Třídy",
+		"nothingMissing": "Všechny třídy a seznamy mají fotografie.",
+		"onlyMissing": "Zobrazí se jen třídy a seznamy, kde chybí alespoň jedna fotografie.",
+		"byCamera": "Jeden člověk po druhém",
+		"sheets": {
+			"title": "Z obrázku s více fotografiemi",
+			"hint": "Obrázky s několika fotografiemi (fotografův arch, průkazy na stole, list pasových fotografií): fotografie se najdou automaticky a přiřadí se každému čtenáři.",
+			"upload": "Nahrát obrázek",
+			"take": "Vyfotit arch",
+			"uploading": "Odesílání obrázku…",
+			"empty": "Pro tuto třídu nebo seznam není žádný obrázek.",
+			"item": "Obrázek z {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:nalezená fotografie; few:nalezené fotografie; other:nalezených fotografií;}} · {{saved}} {{saved:plural; one:uložena; few:uloženy; other:uloženo;}} · {{pending}} k vyřízení",
+			"notDetected": "Zatím nezpracováno",
+			"demoScan": "Ukázka ze skeneru",
+			"demoPhoto": "Ukázka z fotografie",
+			"demoHint": "Dva způsoby, jak získat fotografie třídy: sken leží naplocho, jeho fotografie jsou obdélníky nejvýše pootočené; fotografie se pořizuje pod úhlem, perspektiva deformuje rámečky."
+		},
+		"sheet": {
+			"title": "Fotografie z obrázku",
+			"back": "Zpět na třídu",
+			"detecting": "Hledání fotografií v obrázku…",
+			"found": "Nalezené fotografie: {{count}}. U každé vyberte, čí je.",
+			"none": "Žádná fotografie nenalezena. Pomocí „Opravit rámečky“ je lze nakreslit ručně.",
+			"pictureAlt": "Nahraný obrázek s očíslovanými rámečky fotografií",
+			"frame": "Fotografie {{n}}",
+			"choose": "Kdo je to?",
+			"nobody": "— Nikdo —",
+			"takenBy": "{{name}} (už na fotografii {{n}})",
+			"hasPhoto": "už má fotografii",
+			"noPhoto": "bez fotografie",
+			"ignore": "Ignorovat",
+			"unignore": "Obnovit",
+			"ignored": "Ignorováno: není to nikdo z této třídy nebo seznamu.",
+			"saved": "Uloženo jako fotografie: {{name}}",
+			"edit": "Opravit rámečky",
+			"editDone": "Hotovo s opravami",
+			"editHint": "Klepněte na rámeček a táhněte za jeho rohy; pro chybějící fotografii použijte „Přidat rámeček“.",
+			"editHintScan": "Klepněte na rámeček: táhnutím za roh jej zvětšíte nebo zmenšíte, kruhem nahoře jej otočíte; pro chybějící fotografii použijte „Přidat rámeček“.",
+			"addFrame": "Přidat rámeček",
+			"addFrameHint": "Táhněte po obrázku z jednoho rohu chybějící fotografie do druhého.",
+			"deleteFrame": "Smazat rámeček {{n}}",
+			"rotateFrame": "Otočit rámeček",
+			"kind": "Druh obrázku",
+			"kindPhoto": "Fotografie",
+			"kindScan": "Sken",
+			"kindPhotoHint": "Pořízeno pod úhlem: každý roh rámečku se pohybuje sám, aby sledoval perspektivu.",
+			"kindScanHint": "Pořízeno skenerem: rámečky zůstávají obdélníky a lze je jen otáčet.",
+			"kindAgain": "Dokud není vybrán žádný čtenář, změna druhu znovu vyhledá fotografie.",
+			"save": "Uložit fotografie",
+			"saveTitle": "Uložit vybrané fotografie?",
+			"saveSummary": "Fotografie k uložení: {{count}}.",
+			"saveReplaces": "Nahradí stávající fotografii u: {{names}}.",
+			"saveUnassigned": "Rámečky bez vybraného čtenáře: {{count}} (zůstanou beze změny).",
+			"savedToast": "Uloženy fotografie: {{count}}.",
+			"deleteSheet": "Smazat obrázek",
+			"deleteSheetTitle": "Smazat obrázek?",
+			"deleteSheetDescription": "Obrázek a jeho rámečky se smažou. Fotografie, které už byly uloženy, zůstanou čtenářům.",
+			"deletedToast": "Obrázek smazán.",
+			"progress": "{{label}}: {{done}} z {{total}} s fotografií",
+			"missingTitle": "Ještě bez fotografie",
+			"byCamera": "Vyfotit je jednoho po druhém",
+			"errors": {
+				"not_found": "Obrázek nenalezen.",
+				"set_not_found": "Třída nebo seznam již neexistuje.",
+				"empty": "Soubor je prázdný.",
+				"too_large": "Obrázek je příliš velký (nejvýše {{maxMb}} MB).",
+				"not_an_image": "Soubor není čitelný obrázek.",
+				"unsupported_format": "Nepodporovaný formát: použijte JPEG, PNG, WebP nebo HEIC.",
+				"too_many_frames": "Nejvýše {{maxFrames}} {{maxFrames:plural; one:fotografie; few:fotografie; other:fotografií;}} na obrázek.",
+				"bad_corners": "Rámeček není platný: jeho rohy musí tvořit čtyřúhelník uvnitř obrázku.",
+				"already_detected": "Fotografie tohoto obrázku již byly vyhledány.",
+				"frame_saved": "Tato fotografie již byla uložena.",
+				"frame_erased": "Tato fotografie patří odstraněnému čtenáři: rámeček byl zakryt.",
+				"not_a_member": "Lze vybrat jen čtenáře z této třídy nebo seznamu.",
+				"patron_taken": "Už vybrán pro fotografii {{position}}: před výběrem zde ho nejprve uvolněte.",
+				"confirm_replace": "{{count:plural; one:{{count}} fotografie nahrazuje stávající; few:{{count}} fotografie nahrazují stávající; other:{{count}} fotografií nahrazuje stávající;}}: potvrďte pro pokračování.",
+				"nothing_to_save": "Před uložením vyberte alespoň jednoho čtenáře."
+			},
+			"erased": "Čtenář odstraněn: rámeček byl v obrázku zakryt."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "Soubor CSV",
+			"submit": "Nahrát",
+			"hints": {
+				"students": "Soubor CSV s jedním řádkem na žáka, oddělený ; nebo , (funguje i export z tabulkového procesoru). Použijte záhlaví šablony, která se stáhne níže se sloupci, které jsou potřeba.",
+				"teachers": "Soubor CSV s jedním řádkem na učitele, oddělený ; nebo ,. Použijte záhlaví šablony, která se stáhne níže se sloupci, které jsou potřeba."
+			}
+		},
+		"mapping": {
+			"format": "Rozpoznaný formát",
+			"uncertain": "Formát není jistý: před pokračováním zkontrolujte sloupce.",
+			"remembered": "Sloupce zapamatované z poslední importace tohoto souboru.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "hlavička souboru",
+				"unknown": "neznámý"
+			},
+			"mode": "Režim",
+			"modes": {
+				"upsert": "Přidat a aktualizovat",
+				"upsertHint": "Nalezené řádky aktualizují existujícího čtenáře, ostatní vytvoří nové čtenáře.",
+				"sync": {
+					"students": "Synchronizovat žáky",
+					"teachers": "Synchronizovat učitele"
+				},
+				"syncHint": {
+					"students": "Soubor je úplný seznam žáků: kdo chybí, se vypíše (a po potvrzení odstraní). Učitelé se nemění.",
+					"teachers": "Soubor je úplný seznam učitelů: kdo chybí, se vypíše (a po potvrzení odstraní). Žáci se nemění."
+				}
+			},
+			"duplicates": "Čtenáři, kteří už existují",
+			"policies": {
+				"update": "Aktualizovat",
+				"skip": "Přeskočit",
+				"create": "Vytvořit přesto"
+			},
+			"validate": "Zkontrolovat soubor",
+			"matchByName": {
+				"students": "Bez sloupce external_id se žáci již v evidenci poznají podle jména a třídy.",
+				"teachers": "Bez sloupce external_id se učitelé již v evidenci poznají podle jména."
+			}
+		},
+		"preview": {
+			"ready": "Žádné chyby: soubor lze importovat.",
+			"blocked": "Opravte chyby v souboru (nebo u čtenářů) a zkontrolujte znovu: soubor s chybami se neimportuje.",
+			"columns": {
+				"name": "Jméno",
+				"class": "Třída"
+			},
+			"changed": "Změny: {{fields}}",
+			"homonym": {
+				"pick": "Vyberte čtenáře",
+				"create": "Vytvořit nového čtenáře",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Jmenovci k vyřešení"
+			},
+			"missing": {
+				"students": {
+					"title": "Žáci v evidenci, ale chybějící v souboru ({{count}})",
+					"remove": "Odstranit tyto žáky z evidence (okamžitá anonymizace)",
+					"noPermission": "Bez oprávnění odstraňovat čtenáře zůstanou chybějící žáci v evidenci.",
+					"notRemoved": "{{count}} {{count:plural; one:chybějící žák nebyl odstraněn, protože má; few:chybějící žáci nebyli odstraněni, protože mají; other:chybějících žáků nebylo odstraněno, protože mají;}} probíhající výpůjčky."
+				},
+				"teachers": {
+					"title": "Učitelé v evidenci, ale chybějící v souboru ({{count}})",
+					"remove": "Odstranit tyto učitele z evidence (okamžitá anonymizace)",
+					"noPermission": "Bez oprávnění odstraňovat čtenáře zůstanou chybějící učitelé v evidenci.",
+					"notRemoved": "{{count}} {{count:plural; one:chybějící učitel nebyl odstraněn, protože má; few:chybějící učitelé nebyli odstraněni, protože mají; other:chybějících učitelů nebylo odstraněno, protože mají;}} probíhající výpůjčky."
+				},
+				"hint": "Při synchronizaci lze odstranit každého, kdo není v souboru: osobní údaje se okamžitě a nadobro smažou, zůstanou jen třída a statistiky."
+			},
+			"commit": "Importovat",
+			"back": "Zpět na sloupce",
+			"generatedCards": "{{count}} {{count:plural; one:nový průkaz bude vygenerován; few:nové průkazy budou vygenerovány; other:nových průkazů bude vygenerováno;}}: v souboru není číslo."
+		},
+		"reasons": {
+			"tooLong": "Příliš dlouhý text ve sloupci {{column}}: nejvýše {{max}} {{max:plural; one:znak; few:znaky; other:znaků;}}",
+			"nameRequired": "Chybí jméno nebo příjmení",
+			"emailInvalid": "Neplatný e-mail",
+			"cardNumberInvalid": "Neplatné číslo průkazu",
+			"cardNumberTaken": "Číslo průkazu je již přiděleno jinému čtenáři",
+			"cardNumberIsCopy": "Číslo průkazu je stejné nebo podobné čárovému kódu exempláře",
+			"externalIdTaken": "Identifikátor žáka je již přidělen jinému čtenáři",
+			"duplicateInFile": "Stejný člověk již na řádku {{line}}",
+			"homonym": "{{count}} {{count:plural; one:jmenovec; few:jmenovci; other:jmenovců;}} v evidenci: vyberte, kterého aktualizovat",
+			"matchedTwice": "Jiný řádek již aktualizuje stejného čtenáře",
+			"skipped": "Již přítomen: přeskočeno",
+			"levelRequired": "Chybí ročník",
+			"levelUnknown": "Ročník „{{value}}“ není ročníkem školy",
+			"groupRequired": "Chybí sekce",
+			"groupUnknown": "Sekce „{{value}}“ pro tento ročník nenalezena. Platné třídy: {{classes}} (třídy se vytvářejí v Správa → Nastavení → Třídy)",
+			"levelNotInGroup": "Sekce „{{value}}“ takový ročník nemá. Platné třídy: {{classes}}",
+			"classUnknown": "Třída „{{value}}“ nenalezena. Platné třídy: {{classes}}",
+			"teacherGroupUnknown": "Skupina učitelů „{{value}}“ nenalezena. Platné skupiny: {{classes}}"
+		},
+		"done": {
+			"title": "Import dokončen",
+			"summary": "Nových: {{created}}, aktualizováno: {{updated}}, beze změny: {{unchanged}}, odstraněno: {{removed}}.",
+			"printNew": "Vytisknout průkazy nových čtenářů",
+			"census": "Fotoevidence",
+			"again": "Importovat další soubor",
+			"batch": "Importace č. {{id}}: původní soubor se uchovává na serveru."
+		},
+		"fields": {
+			"firstName": "Jméno",
+			"lastName": "Příjmení",
+			"class": "Třída (ročník a sekce)",
+			"level": "Třída (ročník)",
+			"section": "Sekce",
+			"group": "Skupina učitelů",
+			"externalId": "Identifikátor žáka",
+			"cardNumber": "Průkaz",
+			"email": "E-mail"
+		},
+		"titles": {
+			"students": "Importovat žáky",
+			"teachers": "Importovat učitele"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "Jméno."
+			},
+			"lastName": {
+				"hint": "Příjmení."
+			},
+			"class": {
+				"hint": "Třída v jednom sloupci, například 3A nebo 3 A: musí existovat v Správa → Nastavení → Třídy."
+			},
+			"level": {
+				"hint": "Ročník (1, 2, 3…), se sekcí ve sloupci section."
+			},
+			"section": {
+				"hint": "Sekce (A, B…): spolu se sloupcem level určuje třídu."
+			},
+			"cardNumber": {
+				"hint": "Číslo průkazu, pokud ho žák již má.",
+				"missing": "nové průkazy se vygenerují"
+			},
+			"externalId": {
+				"hint": "Kód ze školního registru.",
+				"missing": "čtenáři již přítomní se poznají podle jména a třídy"
+			},
+			"email": {
+				"hint": "Nepovinné."
+			},
+			"group": {
+				"hint": "Skupina učitelů; pokud chybí, použije se výchozí skupina."
+			}
+		},
+		"classForm": {
+			"label": "Třída",
+			"class": "V jednom sloupci (class: 3A)",
+			"levelSection": "Ve dvou sloupcích (level: 3, section: A)"
+		}
+	}
+}

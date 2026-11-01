@@ -1,0 +1,66 @@
+{
+	"title": "Meldinger",
+	"new": "Ny melding",
+	"adminOnly": "Bare administratoren arkiverer meldinger og setter dem øverst på oversikten.",
+	"pinned": "Fremhevet",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Arkivert av {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:melding; other:meldinger;}}",
+	"archiveCount": "{{shown}} av {{total}} {{total:plural; one:arkivert melding; other:arkiverte meldinger;}}",
+	"actions": {
+		"label": "Handlinger for meldingen",
+		"pin": "Fremhev på oversikten",
+		"unpin": "Fjern fremheving",
+		"archive": "Arkiver",
+		"restore": "Gjenopprett",
+		"delete": "Slett",
+		"showAll": "Vis alle",
+		"showLess": "Vis færre",
+		"more": "Vis flere"
+	},
+	"done": {
+		"added": "Melding lagt til",
+		"pinned": "Melding fremhevet",
+		"unpinned": "Fremhevingen er fjernet",
+		"archived": "Melding arkivert",
+		"restored": "Melding gjenopprettet",
+		"deleted": "Melding slettet"
+	},
+	"confirmDelete": {
+		"title": "Slette meldingen?",
+		"text": "Den slettes for godt og kan ikke gjenopprettes."
+	},
+	"form": {
+		"body": "Tekst",
+		"placeholder": "F.eks. Skanneren ved disken leser ikke kortene.",
+		"privacy": "Alle kontoer leser meldingene: ikke skriv personopplysninger om elever.",
+		"written": "En melding kan ikke endres: ved feil, be administratoren om å arkivere den og skriv en ny.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Farge",
+		"pinned": "Fremhevet på oversikten",
+		"pinnedHint": "Vises øverst på oversikten (og på utlånsdisken) for alle, til fremhevingen fjernes eller meldingen arkiveres.",
+		"save": "Legg til"
+	},
+	"colors": {
+		"yellow": "Gul",
+		"pink": "Rosa",
+		"green": "Grønn",
+		"blue": "Lyseblå",
+		"orange": "Oransje"
+	},
+	"errors": {
+		"empty": "Skriv teksten i meldingen.",
+		"tooLong": "Teksten er lengre enn {{max}} {{max:plural; one:tegn; other:tegn;}}.",
+		"color": "Velg en av fargene."
+	},
+	"empty": {
+		"open": "Ingen åpne meldinger",
+		"openHint": "Ingen åpne meldinger. Meldingene formidler problemer og varsler til kolleger og administratoren.",
+		"archived": "Ingen arkiverte meldinger"
+	},
+	"home": {
+		"title": "Meldinger",
+		"open": "Åpne meldingene"
+	},
+	"tile": "Åpne meldinger"
+}

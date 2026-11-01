@@ -1,0 +1,39 @@
+{
+	"title": "Poročila",
+	"categories": {
+		"loans": "Izposoja",
+		"books": "Knjige",
+		"patrons": "Uporabniki",
+		"ops": "Dejavnost"
+	},
+	"restricted": "Samo za skrbnike",
+	"custom": "Šolska",
+	"chart": "S grafikonom",
+	"problemsTitle": "Datoteke poročil niso naložene",
+	"problemsHint": "Te datoteke v mapi poročil imajo napako in niso na seznamu:",
+	"params": "Parametri",
+	"run": "Posodobi",
+	"all": "Vsi",
+	"from": "od",
+	"to": "do",
+	"patronTypes": {
+		"student": "Učenci",
+		"teacher": "Učitelji"
+	},
+	"rows": "{{count}} {{count:plural; one:vrstica; two:vrstici; few:vrstice; other:vrstic;}}",
+	"ms": "v {{ms}} ms",
+	"truncated": "{{count:plural; one:Prikazana je samo {{count}} vrstica. Za ogled vseh zožite parametre.; two:Prikazani sta samo {{count}} vrstici. Za ogled vseh zožite parametre.; few:Prikazane so samo {{count}} vrstice. Za ogled vseh zožite parametre.; other:Prikazanih je samo {{count}} vrstic. Za ogled vseh zožite parametre.;}}",
+	"empty": "Ni rezultatov pri teh parametrih.",
+	"print": "Natisni",
+	"printedOn": "Natisnjeno {{date}}",
+	"errors": {
+		"required": "Manjka „{{label}}“.",
+		"invalid": "Vrednost polja „{{label}}“ ni veljavna."
+	},
+	"back": "Vsa poročila",
+	"noParams": "To poročilo nima parametrov.",
+	"special": {
+		"teachers": "Učitelji",
+		"total": "Skupaj"
+	}
+}

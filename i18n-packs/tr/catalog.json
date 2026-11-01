@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "Katalog",
+		"search": "Başlık, yazar veya ISBN ile ara…",
+		"new": "Yeni kitap",
+		"empty": "Filtrelere uyan kitap yok.",
+		"countFiltered": "{{shown}} {{shown:plural; one:başlık; other:başlık;}} filtrelere uyuyor",
+		"clearFilters": "Filtreleri temizle",
+		"filters": {
+			"kind": "Kitap türü",
+			"genre": "Tür",
+			"class": "Sınıflandırma",
+			"readingLevel": "Düzey",
+			"itemType": "Materyal",
+			"series": "Seri",
+			"all": "Tümü",
+			"allF": "Tümü",
+			"withdrawn": "Ayıklanan kitapları da göster"
+		},
+		"columns": {
+			"title": "Başlık",
+			"series": "Seri",
+			"author": "Yazar",
+			"year": "Yıl",
+			"isbn": "ISBN",
+			"classification": "Sınıflandırma",
+			"copies": "Nüshalar",
+			"callNumber": "Yer numarası",
+			"acquiredAt": "Edinme tarihi"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "Kataloğu ara",
+		"startHint": "Başlık, yazar, yayınevi, kod veya ISBN ile arayın ya da filtreleri kullanın."
+	},
+	"kinds": {
+		"fiction": "Kurgu",
+		"nonfiction": "Kurgu dışı"
+	},
+	"fields": {
+		"title": "Başlık",
+		"subtitle": "Alt başlık",
+		"originalTitle": "Özgün başlık",
+		"originalTitleHint": "Yalnızca kitap bir çeviriyse: eserin özgün dildeki başlığı.",
+		"responsibility": "Sorumluluk beyanı (başlık sayfasında olduğu gibi)",
+		"author": "Yazar",
+		"publisher": "Yayınevi",
+		"publicationPlace": "Yer",
+		"publicationYear": "Yıl",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN (ISBN değil)",
+		"physicalDescription": "Fiziksel tanım",
+		"series": "Seri",
+		"seriesNumber": "Serideki numara",
+		"seriesHint": "Örneğin Harry Potter, 3. Yazarken kataloktaki seriler görünür.",
+		"dewey": "Dewey (SBN'den)",
+		"kind": "Kitap türü",
+		"genre": "Tür",
+		"classCode": "Sınıflandırma",
+		"readingLevel": "Okuma düzeyi",
+		"subjects": "Konular",
+		"notes": "Notlar",
+		"authorHint": "Soyadı, Adı. Kişisel yazar yoksa hazır değerleri kullanın.",
+		"subjectsHint": "Her satıra bir tane ya da virgülle ayrılmış.",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "Yeni kitap",
+		"editTitle": "Kaydı düzenle",
+		"create": "Kaydı kaydet",
+		"save": "Değişiklikleri kaydet",
+		"identity": "Kayıt",
+		"publication": "Yayın bilgileri",
+		"classification": "Sınıflandırma",
+		"more": "Diğer bilgiler",
+		"quickPicks": "Hazır değerler",
+		"unknownPublisher": "Bilinmeyen yayınevi",
+		"unknownPlace": "Bilinmeyen yer",
+		"singleCopy": "Nüsha {{barcode}}",
+		"singleCopyHint": "Kayıtta yalnızca bir nüsha var: bilgileri burada düzenlenir ve kayıtla birlikte kaydedilir."
+	},
+	"picker": {
+		"kind": "Bu kitap hangi türde?",
+		"fiction": "Kurgu",
+		"nonfiction": "Kurgu dışı",
+		"genre": "Türü seçin",
+		"class": "Konuyu seçin",
+		"readingLevel": "Okuma düzeyi",
+		"anyClass": "Yok",
+		"back": "Ana konulara dön",
+		"children": "{{label}} konuları",
+		"selected": "Seçilen: {{label}}",
+		"parentOnly": "Genel olarak “{{label}}” kullanın",
+		"later": "Sonra sınıflandır",
+		"laterHint": "Kitap “Sınıflandırılacaklar” listesine girer: sınıflandırılana kadar nüshaları ödünç verilmez ve sırt bandı basılmaz."
+	},
+	"detail": {
+		"heading": "Kitap kaydı",
+		"tabs": {
+			"copies": "Nüshalar",
+			"details": "Ayrıntılar"
+		},
+		"copies": "{{total}} nüshadan {{available}} tanesi mevcut",
+		"noCopies": "Henüz nüsha yok: ödünç vermek için bir tane ekleyin.",
+		"seriesLink": "“{{series}}” serisinin tüm kitapları",
+		"edit": "Düzenle",
+		"delete": "Kaydı sil",
+		"addCopies": "Nüsha ekle",
+		"deleteTitle": "“{{title}}” kaydı silinsin mi?",
+		"deleteDescription": "Kayıt katalogdan çıkar. Yalnızca nüsha yoksa mümkündür.",
+		"deleted": "Kayıt silindi",
+		"hasItems": "Kayıtta hâlâ {{count}} {{count:plural; one:nüsha; other:nüsha;}} var: önce {{count:plural; one:onu ayıklayın veya silin; other:bunları ayıklayın veya silin;}}.",
+		"columns": {
+			"barcode": "Barkod",
+			"callNumber": "Yer numarası",
+			"itemType": "Materyal",
+			"readingLevel": "Düzey",
+			"status": "Durum",
+			"borrower": "Ödünç alan",
+			"acquisition": "Edinme tarihi",
+			"labels": "Etiketler"
+		},
+		"dueOn": "son iade {{date}}",
+		"identifiers": "Tanımlayıcılar",
+		"source": "Kaynak: {{source}}",
+		"created": "{{when}} tarihinde oluşturuldu",
+		"updated": "Son değişiklik: {{when}}",
+		"onLoan": "Ödünçte"
+	},
+	"item": {
+		"addTitle": "Nüsha ekle",
+		"copies": "Nüsha sayısı",
+		"itemType": "Materyal",
+		"callNumber": "Yer numarası",
+		"callNumberHint": "Sınıflandırmadan önerilir; değiştirilebilir.",
+		"readingLevel": "Nüshanın düzeyi",
+		"enumeration": "Cilt / sayı",
+		"acquisitionDate": "Edinme tarihi",
+		"notes": "Nüsha notları",
+		"notForLoan": "Yalnızca başvuru (ödünç verilmez)",
+		"add": "Ekle",
+		"added": "{{count}} {{count:plural; one:nüsha eklendi; other:nüsha eklendi;}}: {{barcodes}}",
+		"editTitle": "Nüsha {{barcode}} düzenle",
+		"save": "Kaydet",
+		"saved": "Nüsha güncellendi",
+		"status": "Durumu değiştir",
+		"statusTitle": "Nüsha {{barcode}} durumu",
+		"newStatus": "Yeni durum",
+		"reason": "Neden (isteğe bağlı, kaydedilir)",
+		"statusSaved": "Durum güncellendi",
+		"onLoan": "Nüsha ödünçte: önce iadeyi kaydedin.",
+		"delete": "Nüshayı sil",
+		"deleteTitle": "Nüsha {{barcode}} silinsin mi?",
+		"deleteDescription": "Yalnızca katalog hataları için: ödünç verilmiş bir nüsha silinemez, ayıklanmalıdır.",
+		"deleted": "Nüsha silindi",
+		"hasLoans": "Nüshanın kayıtlı ödünçleri var: silmek yerine ayıklayın.",
+		"labelsTitle": "Nüsha {{barcode}} etiketleri"
+	},
+	"errors": {
+		"isbnInvalid": "Geçersiz ISBN (rakamları kontrol edin)",
+		"isbnTaken": "Bu ISBN ile zaten bir kayıt var",
+		"issnInvalid": "Geçersiz ISSN",
+		"eanInvalid": "Geçersiz EAN",
+		"yearImplausible": "Gerçekçi olmayan yıl",
+		"genreRequired": "Türü seçin",
+		"genreUnknown": "Tür yapılandırmada yok",
+		"genreNotForNonfiction": "Kurgu dışında tür yoktur",
+		"classCodeRequired": "Konuyu seçin",
+		"classCodeUnknown": "Konu yapılandırmada yok",
+		"classCodeNotForFiction": "Kurguda konu yoktur",
+		"readingLevelNotAllowed": "Burada okuma düzeyi öngörülmemiştir",
+		"readingLevelOutOfRange": "Okuma düzeyi yapılandırmada öngörülmemiş",
+		"itemTypeUnknown": "Materyal yapılandırmada öngörülmemiş",
+		"acquisitionDateInvalid": "Geçersiz tarih (YYYY-AA-GG)",
+		"copiesOutOfRange": "Bir seferde 1 ile 100 arasında nüsha"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "Deneme sağlayıcısı"
+		},
+		"errors": {
+			"unreachable": "Servise ulaşılamıyor. İnternet bağlantısını kontrol edip daha sonra yeniden deneyin.",
+			"timeout": "Servis zamanında yanıt vermedi. Daha sonra yeniden deneyin.",
+			"protocol": "Servis beklenmedik bir yanıt verdi. Veriler elle girilebilir.",
+			"http": "Servis bir hata ile yanıt verdi. Daha sonra yeniden deneyin.",
+			"rate_limited": "Servis çok fazla sorgu nedeniyle isteği reddetti. Daha sonra yeniden deneyin.",
+			"not_configured": "Servis yapılandırılmamış: bir ayar eksik (örneğin API anahtarı).",
+			"spawn": "Bu sunucuda yaz-client programı yok. Yöneticiye bildirin."
+		},
+		"noHits": "{{provider}} sonuç vermedi.",
+		"hits": "Kaynak {{provider}}: {{count}} {{count:plural; one:sonuç; other:sonuç;}}",
+		"fromCache": "önbellekten"
+	},
+	"fastAdd": {
+		"title": "Yeni kitap",
+		"steps": {
+			"code": "Kod",
+			"lookup": "Arama",
+			"form": "Kayıt ve nüshalar",
+			"done": "Tamamlandı"
+		},
+		"code": {
+			"heading": "Barkodu okutun",
+			"label": "ISBN veya EAN",
+			"placeholder": "978…",
+			"material": "Materyal",
+			"noCode": "Kodu yok",
+			"noCodeHint": "Başlık ve yazara göre arayın ya da kaydı elle doldurun.",
+			"manual": "Elle doldur",
+			"notACode": "Okunan kod ne ISBN ne de EAN: rakamları kontrol edin ya da “Kodu yok” seçin.",
+			"eanNotIsbn": "EAN {{ean}} okundu: bu bir ISBN değil, bu yüzden kayıt elle doldurulmalı.",
+			"cameraNotIsbn": "ISBN değil: kitabın barkodunu çerçeveye alın"
+		},
+		"search": {
+			"heading": "Başlık ve yazara göre ara",
+			"title": "Başlık",
+			"author": "Yazar",
+			"submit": "Ara",
+			"empty": "En az başlığı veya yazarı yazın."
+		},
+		"duplicate": {
+			"heading": "Bu ISBN kataloğda zaten var",
+			"copies": "{{count}} {{count:plural; one:nüsha; other:nüsha;}}",
+			"addCopy": "Nüsha ekle",
+			"open": "Kaydı aç",
+			"another": "Başka bir kod okutun"
+		},
+		"lookup": {
+			"searching": "{{providers}} üzerinde aranıyor…",
+			"best": "En eksiksiz",
+			"heading": "Bulunan kayıtlar",
+			"pick": "Bu kaydı kullan",
+			"none": "Kayıt bulunamadı. Kayıt elle doldurulabilir.",
+			"manual": "Elle gir",
+			"bySearch": "Başlığa göre ara",
+			"retry": "Yeniden dene",
+			"another": "Yeni kod",
+			"source": "Kaynak: {{provider}}",
+			"providerOk": "{{count}} {{count:plural; one:kayıt; other:kayıt;}}",
+			"providerCached": "önbellekten",
+			"failed": "Hata"
+		},
+		"form": {
+			"heading": "Kaydı kontrol edin ve nüshaları ekleyin",
+			"rescan": "Başka bir kod okutun",
+			"bestOf": "Bulunan {{count}} kayıt içinde en eksiksiz olan. Yılı ve açıklamayı nüshaya göre kontrol edin.",
+			"otherRecords": "{{count:plural; one:Diğer kayıt; other:Diğer kayıtlar;}} ({{count}})",
+			"fromSource": "Kaynak {{provider}}: kaydetmeden önce verileri kontrol edin.",
+			"manualSource": "Kayıt elle dolduruldu.",
+			"copiesSection": "Nüshalar",
+			"copies": "Nüsha sayısı",
+			"itemType": "Materyal",
+			"callNumber": "Yer numarası",
+			"readingLevel": "Nüshaların düzeyi",
+			"acquisitionDate": "Edinme tarihi",
+			"save": "Kaydı ve nüshaları kaydet",
+			"deweySuggested": "Dewey numarası {{dewey}} ile konu önerildi."
+		},
+		"done": {
+			"heading": "Kayıt kaydedildi",
+			"summary": "“{{title}}”, {{count}} {{count:plural; one:nüsha; other:nüsha;}} ile",
+			"summaryCopies": "{{count}} {{count:plural; one:nüsha eklendi; other:nüsha eklendi;}}: “{{title}}”",
+			"barcodes": "Nüsha barkodları",
+			"printLabels": "Etiketleri yazdır",
+			"addToList": "Etiket listesine ekle",
+			"open": "Kaydı aç",
+			"another": "Bir tane daha ekle"
+		},
+		"cover": {
+			"title": "Kapak",
+			"alt": "Kitabın kapağı",
+			"searching": "Kapak çevrimiçi aranıyor…",
+			"found": "{{provider}} üzerinde bulundu: kayıtla birlikte kaydedilir. Yanlışsa kitabın kendi kapağını fotoğraflayın.",
+			"photo": "Kapak fotoğrafı: kayıtla birlikte kaydedilir.",
+			"none": "Çevrimiçi kapak bulunamadı: fotoğraflanabilir.",
+			"empty": "Kapak yok: fotoğraflanabilir.",
+			"take": "Kapağı fotoğraflayın",
+			"replace": "Fotoğrafla değiştir",
+			"remove": "Kaldır",
+			"saving": "Kapak kaydediliyor…",
+			"failed": "Kapak kaydedilmedi: kitabın kaydından eklenebilir."
+		}
+	},
+	"cover": {
+		"title": "Kapak",
+		"take": "Kapağı fotoğraflayın",
+		"upload": "Dosya yükle",
+		"change": "Kapağı değiştir",
+		"delete": "Kapağı kaldır",
+		"deleteTitle": "Kapak kaldırılsın mı?",
+		"deleteDescription": "Görüntü sunucudan silinir; yerine yenisi fotoğraflanabilir.",
+		"shoot": "Çek",
+		"loading": "Düzeltme modülü yükleniyor ({{loaded}} / {{total}} MB), yalnızca ilk kullanımda.",
+		"loadingShort": "Düzeltme modülü yükleniyor ({{loaded}} MB), yalnızca ilk kullanımda.",
+		"loadFailed": "Düzeltme modülü yüklenemedi. Bağlantıyı kontrol edip yeniden deneyin.",
+		"detecting": "Kapağın kenarları aranıyor…",
+		"notFound": "Kenarlar otomatik bulunamadı: köşeleri kapağın üzerine sürükleyin.",
+		"adjustHint": "Dört köşeyi kapağın kenarlarına sürükleyin, sonra düzeltin.",
+		"straighten": "Düzelt",
+		"result": "Sonuç",
+		"use": "Bu kapağı kullan",
+		"retake": "Yeniden çek",
+		"cancel": "İptal",
+		"saved": "Kapak kaydedildi",
+		"deleted": "Kapak kaldırıldı",
+		"placeholder": "Kapak yok",
+		"alt": "Kapak: {{title}}",
+		"cameraHint": "Kapağın tamamını çerçeveye alın, eğik de olsa: çekimden sonra düzeltilir.",
+		"errors": {
+			"too_large": "Dosya çok büyük: sınır {{maxMb}} MB.",
+			"not_an_image": "Dosya okunabilir bir resim değil.",
+			"unsupported_format": "Desteklenmeyen resim biçimi (JPEG, PNG, WebP veya HEIC kullanın).",
+			"empty": "Dosya seçilmedi."
+		},
+		"download": "Kapağı indir",
+		"downloading": "Kapak çevrimiçi aranıyor…",
+		"downloaded": "Kapak şuradan indirildi: {{provider}}",
+		"downloadNotFound": "Bu ISBN için çevrimiçi kapak bulunamadı: fotoğraflanabilir.",
+		"downloadNoIsbn": "Kayıtta ISBN yok: kapak fotoğraflanmalı."
+	},
+	"export": {
+		"copiesTotal": "Nüshalar",
+		"copiesAvailable": "Mevcut",
+		"callNumber": "Yer numarası",
+		"acquiredAt": "Edinme tarihi"
+	},
+	"import": {
+		"title": "Kataloğu içe aktar",
+		"upload": {
+			"file": "CSV dosyası",
+			"hint": "Her satırda bir nüsha: bir başlığın bilgileri nüshalarının satırlarında tekrar eder. Başlık, yazar ve yayınevi zorunludur. Aşağıda indirilebilen şablonun başlıklarını, gerekli sütunlarla birlikte kullanın. Koha'dan geçmek için yönetici kılavuzunda anlatılan dışa aktarımı kullanın.",
+			"submit": "Yükle"
+		},
+		"mapping": {
+			"uncertain": "Sütunlar tanınmadı: devam etmeden önce her birinin alanını belirtin.",
+			"remembered": "Bu dosyanın son içe aktarımındaki sütunlar hatırlandı.",
+			"specialValues": "Yazar veya yayınevi eksik olduğunda özel değerler (“{{author}}”, “{{publisher}}”)",
+			"specialValuesHint": "Bu seçim yapılmazsa yazarı veya yayınevi olmayan satırlar hata sayılır.",
+			"validate": "Dosyayı denetle",
+			"without": {
+				"biblioKey": "biblio_key sütunu olmadan aynı kitabın nüshaları ISBN'e göre gruplanır; ISBN'si olmayan satırların her biri ayrı bir başlık olur.",
+				"barcode": "barcode sütunu olmadan nüshaların barkodları üretilir: içe aktarımdan sonra etiketlerini yazdırın.",
+				"classification": "classification sütunu olmadan kitaplar “Sınıflandırılacaklar” listesine girer: sınıflandırılana kadar nüshaları ödünç verilmez."
+			}
+		},
+		"fields": {
+			"biblioKey": "Başlık anahtarı (biblionumber)",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "Başlık",
+			"subtitle": "Alt başlık",
+			"originalTitle": "Özgün başlık",
+			"responsibility": "Sorumluluk beyanı",
+			"author": "Yazar",
+			"publisher": "Yayınevi",
+			"publicationPlace": "Yayın yeri",
+			"publicationYear": "Yıl",
+			"physicalDescription": "Fiziksel tanım",
+			"series": "Seri",
+			"seriesNumber": "Serideki numara",
+			"dewey": "Dewey",
+			"classification": "Sınıflandırma (tür veya konu, Koha'nın ccode'u)",
+			"readingLevel": "Okuma düzeyi",
+			"subjects": "Konular",
+			"notes": "Başlık notları",
+			"barcode": "Nüshanın barkodu",
+			"callNumber": "Yer numarası",
+			"itemType": "Materyal",
+			"enumeration": "Cilt",
+			"status": "Durum",
+			"notForLoan": "Ödünç verilmez",
+			"acquisitionDate": "Edinme tarihi",
+			"itemNotes": "Nüsha notları"
+		},
+		"preview": {
+			"ready": "Hata yok: içe aktarma yapılabilir.",
+			"blocked": "Dosyadaki hataları düzeltin ve yeniden denetleyin: hatalı dosya içe aktarılmaz.",
+			"nothing": "Dosyadaki tüm nüshalar zaten kataloğda: içe aktarılacak bir şey yok.",
+			"titles": "{{new}} {{new:plural; one:yeni başlık; other:yeni başlık;}}, {{existing}} zaten kataloğda (nüshaları eklenir)",
+			"columns": {
+				"title": "Başlık",
+				"barcode": "Barkod",
+				"classification": "Sınıflandırma"
+			},
+			"question": {
+				"title": "Aynı başlığın farklı düzeylerdeki nüshaları",
+				"text": "{{count}} {{count:plural; one:başlığın; other:başlığın;}} nüshalarında okuma düzeyleri farklı. Düzey başlık yerine her nüshada yazılabilir: bu, tüm katalog için geçerli olan ve kataloğdaki mevcut başlıkların düzeylerini nüshalarına taşıyan “nüsha başına düzey” ayarıdır.",
+				"yes": "Evet, nüsha başına düzey",
+				"no": "Hayır, düzeltilecek hatalar"
+			},
+			"commit": "İçe aktar",
+			"back": "Sütunlara dön",
+			"generatedBarcodes": "{{count}} {{count:plural; one:nüsha; other:nüsha;}} barkodsuz: barkod üretilir, sonra etiketler yazdırılır.",
+			"toClassify": "{{count}} {{count:plural; one:yeni başlık; other:yeni başlık;}} sınıflandırılmamış: {{count:plural; one:o; other:onlar;}} “Sınıflandırılacaklar” listesine girecek."
+		},
+		"reasons": {
+			"tooLong": "{{column}} sütununda metin çok uzun: en fazla {{max}} karakter",
+			"isbnInvalid": "Geçersiz ISBN: “{{value}}”",
+			"classificationUnknown": "Sınıflandırma yapılandırmada yok: “{{value}}”",
+			"barcodeInvalid": "Barkodda izin verilmeyen karakterler: “{{value}}”",
+			"barcodeCheckDigit": "Barkodun kontrol karakteri yanlış: “{{value}}”",
+			"barcodeDuplicateInFile": "Barkod {{line}}. satırda zaten kullanılmış",
+			"barcodeTaken": "{{value}} barkodu kataloktaki başka bir nüshaya ait",
+			"barcodeIsCard": "{{value}} kodu bir üye kartının numarası ya da ona benziyor: bir nüsha üye kartının kodunu taşıyamaz",
+			"statusUnknown": "Durum tanınmadı: “{{value}}” (mevcut, kayıp, hasarlı, onarımda, ayıklanmış)",
+			"notForLoanUnknown": "“Ödünç verilmez” için değer tanınmadı: “{{value}}” (evet/hayır)",
+			"dateInvalid": "Geçersiz tarih: “{{value}}” (YYYY-AA-GG veya GG.AA.YYYY)",
+			"authorMissing": "Yazar eksik (“özel değerler” ile Anonim olur)",
+			"publisherMissing": "Yayınevi eksik (“özel değerler” ile s.n. olur)",
+			"titleMissing": "Başlık eksik",
+			"groupConflict": "{{line}}. satırla aynı anahtar, ama başlık farklı",
+			"classQuestion": "Farklı düzeydeki nüshalar ({{classes}}): aşağıdaki soruyu yanıtlayın",
+			"classDiffers": "Nüsha başına düzey olmadan farklı düzeydeki nüshalar ({{classes}})",
+			"copyExists": "Nüsha zaten kataloğda: atlanır",
+			"mergedIntoExisting": "Zaten kataloğda olan başlığa eklendi (aynı anahtar veya aynı ISBN)"
+		},
+		"done": {
+			"title": "Katalog içe aktarıldı",
+			"summary": "{{titlesCreated}} {{titlesCreated:plural; one:yeni başlık; other:yeni başlık;}}, {{copiesCreated}} {{copiesCreated:plural; one:nüsha; other:nüsha;}} eklendi ({{titlesMerged}} {{titlesMerged:plural; one:başlık zaten vardı; other:başlık zaten vardı;}}, {{copiesSkipped}} {{copiesSkipped:plural; one:nüsha atlandı; other:nüsha atlandı;}}).",
+			"classPerItem": "Nüsha başına düzey etkinleştirildi.",
+			"batch": "{{id}} numaralı içe aktarım: özgün dosya saklanır.",
+			"labels": "Barkodsuz nüshaların etiketlerini yazdırın",
+			"open": "Kataloğa git",
+			"again": "Başka bir dosya içe aktar"
+		},
+		"columns": {
+			"title": {
+				"hint": "Kitabın başlığı."
+			},
+			"author": {
+				"hint": "Soyadı, Adı; boş bırakmak hatadır, “özel değerler” hariç."
+			},
+			"publisher": {
+				"hint": "Yayınevi; yazar gibi, boşsa hata."
+			},
+			"biblioKey": {
+				"hint": "Eski programdaki başlık kodu (Koha'nın biblionumber'ı): nüshaları bir arada tutar.",
+				"missing": "nüshalar ISBN'e göre gruplanır"
+			},
+			"barcode": {
+				"hint": "Nüshanın üzerinde zaten bulunan barkod.",
+				"missing": "barkod üretilir ve etiketler yazdırılır"
+			},
+			"classification": {
+				"hint": "Türün (kurgu) ya da konunun (kurgu dışı) kodu.",
+				"missing": "kitap “Sınıflandırılacaklar” listesine girer"
+			},
+			"readingLevel": {
+				"hint": "Okuma düzeyi (kurgu)."
+			},
+			"isbn": {
+				"hint": "ISBN-10 veya ISBN-13."
+			},
+			"issn": {
+				"hint": "Süreli yayınlar için."
+			},
+			"ean": {
+				"hint": "DVD ve diğer materyallerin EAN kodu."
+			},
+			"subtitle": {
+				"hint": "Alt başlık."
+			},
+			"originalTitle": {
+				"hint": "Yalnızca çeviriler için: başlık özgün dilde."
+			},
+			"responsibility": {
+				"hint": "Çizerler, çevirmenler…"
+			},
+			"publicationPlace": {
+				"hint": "Yayın yeri."
+			},
+			"publicationYear": {
+				"hint": "Yayın yılı."
+			},
+			"physicalDescription": {
+				"hint": "Sayfa, resim, boyut."
+			},
+			"series": {
+				"hint": "Seri (yayınevinin koleksiyonu değil)."
+			},
+			"seriesNumber": {
+				"hint": "Serideki sıra numarası."
+			},
+			"dewey": {
+				"hint": "Dewey numarası, yalnızca bilgi için."
+			},
+			"subjects": {
+				"hint": "Anahtar kelimeler, ; ya da , ile ayrılmış."
+			},
+			"notes": {
+				"hint": "Başlığın notları."
+			},
+			"callNumber": {
+				"hint": "Yer numarası; boşsa önerilir."
+			},
+			"itemType": {
+				"hint": "Materyal (kitap, dvd…); boşsa yapılandırılmış ilk materyal."
+			},
+			"enumeration": {
+				"hint": "Cilt, birden çok ciltli eserler için."
+			},
+			"status": {
+				"hint": "mevcut, kayıp, hasarlı, onarımda, ayıklanmış."
+			},
+			"notForLoan": {
+				"hint": "Başvuru nüshaları için 1 veya evet."
+			},
+			"acquisitionDate": {
+				"hint": "Edinme tarihi; boşsa bugün."
+			},
+			"itemNotes": {
+				"hint": "Nüshanın notları."
+			}
+		}
+	},
+	"batch": {
+		"selected": "Seçilenlerin nüshalarını değiştir",
+		"title": "Nüshaları değiştir",
+		"scope": "{{count}} {{count:plural; one:nüsha; other:nüsha;}}",
+		"operation": "Neyi değiştirmeli",
+		"operations": {
+			"status": "Durum",
+			"itemType": "Materyal",
+			"notForLoan": "Ödünç verilmez",
+			"readingLevel": "Nüshanın düzeyi",
+			"acquisitionDate": "Edinme tarihi"
+		},
+		"value": "Yeni değer",
+		"yes": "Evet",
+		"no": "Hayır",
+		"noClass": "Düzey yok",
+		"reason": "Neden",
+		"reasonHint": "Kayıp ve ayıklanmış nüshalar için zorunludur: her nüshanın kaydında kalır.",
+		"check": "Denetle",
+		"apply": "{{count}} {{count:plural; one:nüshaya; other:nüshaya;}} uygula",
+		"plan": {
+			"changes": "{{count}} {{count:plural; one:nüsha değişir; other:nüsha değişir;}}",
+			"onLoan": "{{count}} ödünçte: {{count:plural; one:olduğu gibi kalır (önce iade edilmeli); other:olduğu gibi kalır (önce iade edilmeli);}}",
+			"unchanged": "{{count}} {{count:plural; one:zaten bu değere sahip; other:zaten bu değere sahip;}}",
+			"notFound": "{{count}} {{count:plural; one:artık yok; other:artık yok;}}",
+			"notAllowed": "{{count}} {{count:plural; one:kurgu değil; other:kurgu değil;}}: düzey uygulanmaz",
+			"none": "Değiştirilecek nüsha yok."
+		},
+		"excludedTitle": "Olduğu gibi kalan nüshalar",
+		"done": "{{count}} {{count:plural; one:nüsha değiştirildi; other:nüsha değiştirildi;}}",
+		"errors": {
+			"reasonRequired": "Nedeni yazın: kayıp ve ayıklanmış nüshalar için zorunludur.",
+			"itemTypeUnknown": "Materyal yapılandırmada öngörülmemiş.",
+			"readingLevelNotAllowed": "Nüsha başına düzey etkin değil.",
+			"readingLevelOutOfRange": "Okuma düzeyi yapılandırmada öngörülmemiş.",
+			"dateInvalid": "Geçersiz tarih.",
+			"statusUnknown": "Geçersiz durum.",
+			"classificationUnknown": "Yapılandırmadan bir tür veya konu seçin."
+		},
+		"reclassify": {
+			"button": "Yeniden sınıflandır",
+			"title": "Seçilen başlıkları yeniden sınıflandır",
+			"scope": "{{count}} {{count:plural; one:başlık; other:başlık;}}",
+			"resuggest": "Nüshaların yer numaralarını yeni sınıflandırmaya göre yeniden yaz",
+			"labelsHint": "Sırt bantları (yer numarası değişirse etiketler de) yazdırılacaklar arasına geri döner.",
+			"changes": "{{count}} {{count:plural; one:başlık değişir; other:başlık değişir;}}",
+			"apply": "{{count}} {{count:plural; one:başlığı; other:başlığı;}} yeniden sınıflandır",
+			"done": "{{count}} {{count:plural; one:başlık yeniden sınıflandırıldı; other:başlık yeniden sınıflandırıldı;}}, {{calls}} {{calls:plural; one:yer numarası yeniden yazıldı; other:yer numarası yeniden yazıldı;}}"
+		}
+	},
+	"search": {
+		"suggest": "{{barcode}} kodu “{{title}}” kitabının bir nüshası.",
+		"openSuggest": "Kaydı aç",
+		"available": "Yalnızca mevcut olanlar",
+		"yearFrom": "Yıldan",
+		"yearTo": "Yıla kadar",
+		"copiesAvailable": "{{total}} nüshadan {{available}} tanesi mevcut",
+		"noCopies": "Nüsha yok"
+	},
+	"inventory": {
+		"title": "Sayım",
+		"defaultName": "Kütüphane sayımı",
+		"emptyTitle": "Devam eden sayım yok",
+		"emptyHint": "Bir kampanya başlatın, sonra nüshaları raf raf okutun: sonunda hiç görülmeyenler kayıp olarak işaretlenir.",
+		"name": "Kampanya adı",
+		"start": "Yeni kampanya",
+		"started": "{{when}} tarihinde başladı",
+		"overall": "Tüm kütüphane",
+		"progress": "{{seen}} / {{expected}} ({{percent}}%)",
+		"counts": "{{scanned}} {{scanned:plural; one:nüsha okundu; other:nüsha okundu;}} · {{misplaced}} yanlış rafta · {{found}} yeniden bulundu",
+		"byShelf": "Rafa göre ilerleme",
+		"noShelf": "Yer numarası yok",
+		"scanTitle": "Nüshaları okutun",
+		"shelf": "Raf",
+		"shelfHint": "Örneğin B veya 590: başka yer numarası olan nüshalar yanlış raf olarak işaretlenir.",
+		"scanLabel": "Nüshanın barkodu",
+		"camera": "Fotoğraf makinesiyle okutun",
+		"outcomes": {
+			"seen": "{{title}} ({{barcode}}): görüldü.",
+			"again": "{{title}} ({{barcode}}): {{when}} tarihinde zaten okunmuş.",
+			"misplaced": "{{title}} ({{barcode}}): yanlış rafta; yer numarasına göre yerine koyun.",
+			"found": "{{title}} ({{barcode}}): kayıp olarak işaretliydi ve bulundu; yeniden mevcut.",
+			"onLoan": "{{title}} ({{barcode}}): ödünçte görünüyor; iadeyi masada kaydedin.",
+			"withdrawn": "{{title}} ({{barcode}}): ayıklanmış nüsha, raftan çıkarılmalı.",
+			"unknown": "{{code}}: bu barkoda sahip bir nüsha yok."
+		},
+		"missing": "Hâlâ bulunamayanlar ({{count}})",
+		"allShelves": "Tüm raflar",
+		"allTypes": "Tüm materyaller",
+		"noneMissing": "Beklenen tüm nüshalar görüldü.",
+		"more": "ve {{count}} tane daha: {{count:plural; one:onu; other:hepsini;}} görmek için listeyi dışa aktarın.",
+		"close": "Sayımı kapat",
+		"closeTitle": "Sayım kapatılsın mı?",
+		"closeHint": "{{count}} {{count:plural; one:hiç görülmemiş nüsha; other:hiç görülmemiş nüsha;}} kayıp olarak işaretlenecek. Kampanya bir hafta içinde yeniden açılarak geri alınabilir.",
+		"closedTitle": "Sayım kapatıldı",
+		"summary": "{{expected}} {{expected:plural; one:nüshadan; other:nüshadan;}} {{seen}} tanesi görüldü, {{lost}} tanesi kayıp olarak işaretlendi, {{found}} tanesi yeniden bulundu, {{onLoan}} tanesi ödünçte, {{misplaced}} tanesi yanlış rafta.",
+		"history": "Önceki kampanyalar",
+		"reopen": "Yeniden aç",
+		"errors": {
+			"alreadyOpen": "Zaten devam eden bir sayım var.",
+			"notOpen": "Bu sayım kapatılmış.",
+			"notFound": "Sayım bulunamadı.",
+			"tooLate": "Yalnızca kapatıldıktan sonraki bir hafta içinde yeniden açılabilir.",
+			"badName": "Kampanyaya bir ad verin.",
+			"badNotes": "Kampanya notları en fazla 500 karakter olabilir."
+		},
+		"cameraShelf": "Raf {{shelf}}",
+		"cameraDone": "Bitti"
+	},
+	"toClassify": {
+		"title": "Sınıflandırılacaklar",
+		"label": "Sınıflandırılacaklar",
+		"intro": "Sınıflandırma olmadan girilen kitaplar, en eskisi önce. Sınıflandırılana kadar nüshaları ödünç verilmez.",
+		"count": "{{count}} {{count:plural; one:kitap; other:kitap;}} sınıflandırılacak",
+		"empty": "Sınıflandırılacak kitap yok",
+		"emptyHint": "Kataloğdaki tüm kitapların bir türü veya konusu var.",
+		"start": "Sınıflandırmaya başlayın",
+		"classify": "Sınıflandır",
+		"badge": "Sınıflandırılacak",
+		"badgeHint": "Kitap sınıflandırılana kadar nüshaları ödünç verilmez.",
+		"columns": {
+			"title": "Başlık",
+			"author": "Yazar",
+			"publisher": "Yayınevi",
+			"year": "Yıl",
+			"isbn": "ISBN",
+			"copies": "Nüshalar",
+			"enteredOn": "Girildiği tarih"
+		},
+		"flow": {
+			"title": "Kitabı sınıflandırın",
+			"saveNext": "Kaydet ve sonrakine geç",
+			"save": "Kaydet",
+			"skip": "Atla",
+			"saved": "“{{title}}” sınıflandırıldı",
+			"end": "Bu turda sınıflandırılacak başka kitap yok.",
+			"backToList": "Listeye dön",
+			"already": "Bu kitap zaten sınıflandırılmış.",
+			"callNumber": "Nüshaların yer numarası",
+			"callNumberHint": "Yer numarası olmayan nüshalar bunu alır; sonra sırt bandı yazdırılabilir.",
+			"dewey": "{{dewey}} Dewey numarası {{code}} konusuna karşılık gelir.",
+			"copies": "{{count}} {{count:plural; one:nüsha; other:nüsha;}}",
+			"subjects": "Konular",
+			"notes": "Notlar"
+		}
+	}
+}

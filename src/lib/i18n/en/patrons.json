@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Patrons",
+		"new": "New patron",
+		"search": "Search by surname…",
+		"empty": "No patron matches the filters.",
+		"filters": {
+			"type": "Type",
+			"stage": "Stage",
+			"level": "Year",
+			"status": "Status",
+			"all": "All",
+			"allF": "All"
+		},
+		"columns": {
+			"name": "Surname and name",
+			"type": "Type",
+			"class": "Class",
+			"card": "Card"
+		},
+		"clearFilters": "Clear filters",
+		"countFiltered": "{{shown:plural; one:{{shown}} patron matches; other:{{shown}} patrons match;}} the filters",
+		"printCards": "Print cards",
+		"printClassCards": "Print cards {{classLabel}}",
+		"removeSelected": "Remove selected",
+		"removeTitle": "Remove {{count}} {{count:plural; one:patron; other:patrons;}}?",
+		"removeDescription": "For each one, first name and surname, contacts, external id, notes, card number and photo are erased at once and for good; type, class, section and the loan history stay for statistics. Those with open loans are kept.",
+		"removed": "{{removed}} removed, {{kept}} with open loans kept",
+		"status": {
+			"title": "Status",
+			"loans": "{{count}} on loan",
+			"overdue": "{{count}} overdue",
+			"noPhoto": "no photo"
+		},
+		"startTitle": "Find a patron",
+		"startHint": "Search by name, card or with the filters."
+	},
+	"types": {
+		"student": "Student",
+		"teacher": "Teacher"
+	},
+	"fields": {
+		"patronType": "Type",
+		"firstName": "First name",
+		"lastName": "Surname",
+		"cardNumber": "Card number",
+		"cardNumberHint": "Empty: assigned automatically.",
+		"externalId": "Student id",
+		"email": "Email",
+		"emailHint": "The address the school gives the student or teacher: it will carry the notices.",
+		"circulationNote": "Note for the circulation desk",
+		"circulationNoteHint": "Shown prominently during checkout.",
+		"notes": "Internal notes",
+		"status": "Status",
+		"openLoans": "Open loans",
+		"overdueLoans": "Overdue",
+		"noCard": "no card",
+		"none": "—",
+		"levelCode": "Class",
+		"groupId": "Section",
+		"classLabel": "Class",
+		"teacherGroup": "Teachers group"
+	},
+	"form": {
+		"createTitle": "New patron",
+		"editTitle": "Edit patron",
+		"identity": "Identity",
+		"school": "Class",
+		"contacts": "Contacts",
+		"notes": "Notes",
+		"create": "Create patron",
+		"save": "Save changes",
+		"classSelect": "Choose…",
+		"defaultTeacherGroup": "The teachers group"
+	},
+	"errors": {
+		"emailInvalid": "Invalid email address.",
+		"cardNumberInvalid": "Invalid card number: digits, capital letters and dashes only, with the right check character.",
+		"cardNumberTaken": "Card number already assigned to another patron.",
+		"cardNumberIsCopy": "The card number is or looks like a copy barcode: choose another number.",
+		"externalIdTaken": "Student id already assigned to another patron.",
+		"levelRequired": "A student needs a class (the level).",
+		"levelUnknown": "Class not among the levels of the school.",
+		"levelNotForTeachers": "A teacher has no class.",
+		"groupRequired": "A student needs a section.",
+		"groupUnknown": "Section not found among the active classes: classes are created in Administration → Configuration → Classes.",
+		"levelNotInGroup": "This section has no such class: choose a section of the class."
+	},
+	"detail": {
+		"heading": "Patron record",
+		"tabs": {
+			"loans": "Open loans",
+			"history": "History",
+			"cards": "Card",
+			"notes": "Notes"
+		},
+		"noLoans": "No open loans.",
+		"loanColumns": {
+			"due": "Due"
+		},
+		"overdue": "overdue",
+		"card": "Card {{number}}",
+		"noNotes": "No notes.",
+		"edit": "Edit",
+		"created": "Created on {{when}}",
+		"barcodeAlt": "Barcode of card {{number}}",
+		"cardPrinted": "Card printed on {{when}}.",
+		"cardNotPrinted": "Card not printed yet.",
+		"reassignCard": "Reassign card",
+		"reassignTitle": "Assign a new card?",
+		"reassignDescription": "The current number is retired for good and the new card will need printing.",
+		"cardReassigned": "New card: {{number}}",
+		"printCard": "Print card",
+		"markCardPrinted": "Mark as printed",
+		"cardMarkedPrinted": "Card marked as printed",
+		"historyColumns": {
+			"issuedAt": "Issued on",
+			"dueDate": "Due",
+			"returnedAt": "Returned on",
+			"outcome": "Outcome",
+			"title": "Title",
+			"author": "Author",
+			"barcode": "Copy",
+			"renewals": "Renewals",
+			"schoolYear": "School year"
+		},
+		"outcome": {
+			"open": "Open",
+			"overdue": "Overdue",
+			"returned": "Returned",
+			"returnedLate": "Returned late",
+			"lost": "Lost"
+		},
+		"historyEmpty": "No loan recorded.",
+		"historyCount": "{{count}} {{count:plural; one:loan; other:loans;}} in total",
+		"notesEdit": "Edit notes",
+		"notesSaved": "Notes saved",
+		"notesUnchanged": "No change",
+		"notesHint": "The circulation note pops up at the desk when a loan is made; the other notes stay here.",
+		"remove": "Remove {{type}}",
+		"removeTitle": "Remove {{name}} for good?",
+		"removeDescription": "Erased at once and for good: first name and surname, email, external id, notes, card number (retired) and photo. Only type, class and section and the loan history stay, for statistics. This cannot be undone.",
+		"removeOpenLoans": "Has {{count}} open {{count:plural; one:loan: it must; other:loans: they must;}} be returned or marked lost first.",
+		"removeClassSheets": "They were chosen for {{count}} {{count:plural; one:photo; other:photos;}} in the class pictures (census from a picture): {{count:plural; one:that frame is; other:those frames are;}} covered.",
+		"removed": "Patron removed: personal data erased.",
+		"removedInfo": "Removed on {{when}}. Only the data for statistics remain.",
+		"lostTitle": "Lost books",
+		"lostHint": "Marked lost while on loan to this patron. If they come back, scan them at the returns desk.",
+		"markLost": "Mark “{{title}}” lost",
+		"markLostTitle": "Mark “{{title}}” as lost?",
+		"markLostDescription": "The loan closes and the copy shows as lost. If the book turns up, scan it at the returns desk and it becomes available again.",
+		"markLostReason": "Reason (optional)",
+		"markLostConfirm": "Mark lost",
+		"markedLost": "“{{title}}” marked as lost."
+	},
+	"photo": {
+		"title": "Photo",
+		"take": "Take photo",
+		"upload": "Upload file",
+		"retake": "Retake",
+		"use": "Use this photo",
+		"cancel": "Cancel",
+		"delete": "Delete photo",
+		"deleteTitle": "Delete the photo?",
+		"deleteDescription": "The photo is removed from the server; a new one can be taken.",
+		"zoom": "Zoom",
+		"dragHint": "Drag to frame, use the zoom to get closer.",
+		"saved": "Photo saved",
+		"deleted": "Photo deleted",
+		"placeholder": "No photo",
+		"alt": "Photo of {{name}}",
+		"errors": {
+			"too_large": "File too large: the limit is {{maxMb}} MB.",
+			"not_an_image": "The file is not a readable image.",
+			"unsupported_format": "Unsupported image format (use JPEG, PNG, WebP or HEIC).",
+			"empty": "No file selected."
+		},
+		"withForm": "It is saved with the patron.",
+		"requiredHint": "A photo is expected: take it now, or later from the patron's page.",
+		"optionalHint": "The photo can be taken now or later from the patron's page.",
+		"remove": "Remove",
+		"notSaved": "The photo was not saved: take it again from the patron's page.",
+		"retakePhoto": "Retake the photo"
+	},
+	"census": {
+		"title": "Photo census",
+		"noGroup": "Without a class",
+		"stageOthers": "No stage",
+		"progress": "{{done}} of {{total}} with a photo",
+		"allDone": "Everyone has a photo.",
+		"back": "Change class or list",
+		"skip": "Skip",
+		"done": "Done",
+		"saved": "Photo saved: {{name}}",
+		"quickAdd": "New patron",
+		"quickAddHint": "Added to {{group}}, their photo comes next.",
+		"create": "Add and photograph",
+		"findPerson": "Find by surname",
+		"pickTarget": "Choose a list or a class",
+		"listsTitle": "Patron lists",
+		"classesTitle": "Classes",
+		"nothingMissing": "Every class and list has its photos.",
+		"onlyMissing": "Only the classes and lists where at least one photo is missing are shown.",
+		"byCamera": "One person at a time",
+		"sheets": {
+			"title": "From a picture with many photos",
+			"hint": "Pictures with several photos (the photographer's sheet, cards on a table, a page of ID photos): the photos are found automatically and assigned to each patron.",
+			"upload": "Upload picture",
+			"take": "Photograph the sheet",
+			"uploading": "Sending the picture…",
+			"empty": "No picture for this class or list.",
+			"item": "Picture of {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:photo; other:photos;}} found · {{saved}} saved · {{pending}} to do",
+			"notDetected": "Not processed yet",
+			"demoScan": "Sample from a scanner",
+			"demoPhoto": "Sample from a photo",
+			"demoHint": "Two ways to get the class's photos: a scan lies flat, its photos are rectangles at most turned; a photo is taken at an angle, the perspective bends the frames."
+		},
+		"sheet": {
+			"title": "Photos from a picture",
+			"back": "Back to the class",
+			"detecting": "Looking for the photos in the picture…",
+			"found": "Photos found: {{count}}. Choose whose each one is.",
+			"none": "No photo found. With \"Correct frames\" they can be drawn by hand.",
+			"pictureAlt": "The uploaded picture, with the photo frames numbered",
+			"frame": "Photo {{n}}",
+			"choose": "Who is it?",
+			"nobody": "— Nobody —",
+			"takenBy": "{{name}} (already in photo {{n}})",
+			"hasPhoto": "already has a photo",
+			"noPhoto": "no photo",
+			"ignore": "Ignore",
+			"unignore": "Restore",
+			"ignored": "Ignored: it is nobody of this class or list.",
+			"saved": "Saved as the photo of {{name}}",
+			"edit": "Correct frames",
+			"editDone": "Done correcting",
+			"editHint": "Tap a frame and drag its corners; for a missing photo use \"Add frame\".",
+			"editHintScan": "Tap a frame: drag a corner to make it larger or smaller, the circle above it to turn it; for a missing photo use \"Add frame\".",
+			"addFrame": "Add frame",
+			"addFrameHint": "Drag on the picture from one corner of the missing photo to the other.",
+			"deleteFrame": "Delete frame {{n}}",
+			"rotateFrame": "Turn the frame",
+			"kind": "Kind of picture",
+			"kindPhoto": "Photo",
+			"kindScan": "Scan",
+			"kindPhotoHint": "Taken at an angle: each corner of a frame moves on its own, to follow the perspective.",
+			"kindScanHint": "Made with a scanner: the frames stay rectangles and can only be turned.",
+			"kindAgain": "Until a patron is chosen, changing the kind looks for the photos again.",
+			"save": "Save the photos",
+			"saveTitle": "Save the chosen photos?",
+			"saveSummary": "Photos to save: {{count}}.",
+			"saveReplaces": "They replace the existing photo of: {{names}}.",
+			"saveUnassigned": "Frames with nobody chosen: {{count}} (left as they are).",
+			"savedToast": "Photos saved: {{count}}.",
+			"deleteSheet": "Delete picture",
+			"deleteSheetTitle": "Delete the picture?",
+			"deleteSheetDescription": "The picture and its frames are deleted. The photos already saved stay with the patrons.",
+			"deletedToast": "Picture deleted.",
+			"progress": "{{label}}: {{done}} of {{total}} with a photo",
+			"missingTitle": "Still without a photo",
+			"byCamera": "Photograph them one by one",
+			"errors": {
+				"not_found": "Picture not found.",
+				"set_not_found": "The class or the list no longer exists.",
+				"empty": "The file is empty.",
+				"too_large": "The picture is too large (at most {{maxMb}} MB).",
+				"not_an_image": "The file is not a readable image.",
+				"unsupported_format": "Unsupported format: use JPEG, PNG, WebP or HEIC.",
+				"too_many_frames": "At most {{maxFrames}} {{maxFrames:plural; one:photo; other:photos;}} per picture.",
+				"bad_corners": "The frame is not valid: its corners must make a quadrilateral inside the picture.",
+				"already_detected": "The photos of this picture have already been looked for.",
+				"frame_saved": "This photo has already been saved.",
+				"frame_erased": "This photo belonged to a removed patron: the frame has been covered.",
+				"not_a_member": "Only the patrons of the class or the list can be chosen.",
+				"patron_taken": "Already chosen for photo {{position}}: free it before choosing them here.",
+				"confirm_replace": "{{count:plural; one:{{count}} photo replaces an existing one; other:{{count}} photos replace existing ones;}}: confirm to go on.",
+				"nothing_to_save": "Choose at least one patron before saving."
+			},
+			"erased": "Patron removed: the frame has been covered in the picture."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "CSV file",
+			"submit": "Upload",
+			"hints": {
+				"students": "A CSV file with one row per student, separated by ; or , (a spreadsheet export works too). Use the headers of the template, downloaded below with the columns needed.",
+				"teachers": "A CSV file with one row per teacher, separated by ; or ,. Use the headers of the template, downloaded below with the columns needed."
+			}
+		},
+		"mapping": {
+			"format": "Detected format",
+			"uncertain": "The format is not certain: check the columns before going on.",
+			"remembered": "Columns remembered from the last import of this file.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "the file's header",
+				"unknown": "unknown"
+			},
+			"mode": "Mode",
+			"modes": {
+				"upsert": "Add and update",
+				"upsertHint": "Rows that match update the existing patron, the others create new patrons.",
+				"sync": {
+					"students": "Synchronise students",
+					"teachers": "Synchronise teachers"
+				},
+				"syncHint": {
+					"students": "The file is the complete list of students: whoever is missing is listed (and removed, after confirmation). Teachers are not touched.",
+					"teachers": "The file is the complete list of teachers: whoever is missing is listed (and removed, after confirmation). Students are not touched."
+				}
+			},
+			"duplicates": "Patrons already present",
+			"policies": {
+				"update": "Update",
+				"skip": "Skip",
+				"create": "Create anyway"
+			},
+			"validate": "Check the file",
+			"matchByName": {
+				"students": "Without the external_id column, students on record are recognised by name and class.",
+				"teachers": "Without the external_id column, teachers on record are recognised by name."
+			}
+		},
+		"preview": {
+			"ready": "No errors: the file can be imported.",
+			"blocked": "Fix the errors in the file (or in the patrons) and check again: nothing is imported with errors.",
+			"columns": {
+				"name": "Name",
+				"class": "Class"
+			},
+			"changed": "Changes: {{fields}}",
+			"homonym": {
+				"pick": "Pick the patron",
+				"create": "Create a new patron",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Namesakes to resolve"
+			},
+			"missing": {
+				"students": {
+					"title": "Students on record but missing from the file ({{count}})",
+					"remove": "Remove these students from the records (immediate anonymisation)",
+					"noPermission": "Without the permission to remove patrons, the missing students stay on record.",
+					"notRemoved": "{{count}} missing {{count:plural; one:student; other:students;}} not removed because they have open loans."
+				},
+				"teachers": {
+					"title": "Teachers on record but missing from the file ({{count}})",
+					"remove": "Remove these teachers from the records (immediate anonymisation)",
+					"noPermission": "Without the permission to remove patrons, the missing teachers stay on record.",
+					"notRemoved": "{{count}} missing {{count:plural; one:teacher; other:teachers;}} not removed because they have open loans."
+				},
+				"hint": "With the synchronisation, whoever is not in the file can be removed: personal data are erased at once and for ever, only class and statistics remain."
+			},
+			"commit": "Import",
+			"back": "Back to the columns",
+			"generatedCards": "{{count}} new {{count:plural; one:card; other:cards;}} will be generated: the file has no number."
+		},
+		"reasons": {
+			"tooLong": "Text too long in the column {{column}}: at most {{max}} {{max:plural; one:character; other:characters;}}",
+			"nameRequired": "First name or surname missing",
+			"emailInvalid": "Invalid email",
+			"cardNumberInvalid": "Invalid card number",
+			"cardNumberTaken": "Card number already assigned to another patron",
+			"cardNumberIsCopy": "Card number equal or similar to a copy barcode",
+			"externalIdTaken": "External id already assigned to another patron",
+			"duplicateInFile": "Same person already on line {{line}}",
+			"homonym": "{{count}} {{count:plural; one:namesake; other:namesakes;}} in the archive: pick which one to update",
+			"matchedTwice": "Another row already updates the same patron",
+			"skipped": "Already present: skipped",
+			"levelRequired": "Class missing",
+			"levelUnknown": "Year “{{value}}” is not a year of the school",
+			"groupRequired": "Section missing",
+			"groupUnknown": "Section “{{value}}” not found for this year. Valid classes: {{classes}} (classes are created in Administration → Configuration → Classes)",
+			"levelNotInGroup": "Section “{{value}}” has no such year. Valid classes: {{classes}}",
+			"classUnknown": "Class “{{value}}” not found. Valid classes: {{classes}}",
+			"teacherGroupUnknown": "Teachers group “{{value}}” not found. Valid groups: {{classes}}"
+		},
+		"done": {
+			"title": "Import completed",
+			"summary": "{{created}} new, {{updated}} updated, {{unchanged}} unchanged, {{removed}} removed.",
+			"printNew": "Print the cards of the new patrons",
+			"census": "Photo census",
+			"again": "Import another file",
+			"batch": "Import no. {{id}}: the original file is kept on the server."
+		},
+		"fields": {
+			"firstName": "First name",
+			"lastName": "Surname",
+			"class": "Class (year and section)",
+			"level": "Class (year)",
+			"section": "Section",
+			"group": "Teachers group",
+			"externalId": "External id",
+			"cardNumber": "Card",
+			"email": "Email"
+		},
+		"titles": {
+			"students": "Import students",
+			"teachers": "Import teachers"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "The first name."
+			},
+			"lastName": {
+				"hint": "The surname."
+			},
+			"class": {
+				"hint": "The class in one column, like 3A or 3 A: it must exist in Administration → Configuration → Classes."
+			},
+			"level": {
+				"hint": "The year (1, 2, 3…), with the section in the section column."
+			},
+			"section": {
+				"hint": "The section (A, B…): with level it names the class."
+			},
+			"cardNumber": {
+				"hint": "The card number, when the student has one already.",
+				"missing": "new cards are generated"
+			},
+			"externalId": {
+				"hint": "The code of the school register.",
+				"missing": "patrons on record are recognised by name and class"
+			},
+			"email": {
+				"hint": "Optional."
+			},
+			"group": {
+				"hint": "The teachers group; when missing, the default group."
+			}
+		},
+		"classForm": {
+			"label": "The class",
+			"class": "In one column (class: 3A)",
+			"levelSection": "In two columns (level: 3, section: A)"
+		}
+	}
+}

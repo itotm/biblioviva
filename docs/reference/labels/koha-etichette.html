@@ -1,0 +1,672 @@
+<html>
+    <head>
+        <!-- Layout CSS -->
+        <style>
+            html, body, div, span, h1 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  width: 210mm;
+}
+
+.page {
+  padding-top: 4mm; /* Height from top of page to top of first label row */
+  margin-left: 0mm; /* Width of gap from left of page to left edge of first label column */
+
+  page-break-after: always;
+  clear: left;
+  display: block;
+}
+
+.label {
+  width: 70mm; /* Width of actual label */
+  height: 96mm; /* Height of actual label */
+  margin-right: 0mm; /* Distance between each column of labels */
+  padding-top: 0mm;
+
+  float: left;
+
+  text-align: center;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+
+  /* Uncomment for testing and debugging */
+ /* outline: 1px dotted red; */
+}
+
+.etichetta {
+  width: 70mm; /* Width of actual label */
+  height: 45mm; /* Height of actual label */
+  margin-right: 0mm; /* Distance between each column of labels */
+  padding-top: 3mm;
+
+ /* outline: 1px dotted blue; */
+}
+
+.page-break  {
+  clear: left;
+  display: block;
+  page-break-after: always;
+}
+
+.titolo {
+  font-size: 10pt;
+}
+
+.segnatura {
+  font-size: 10pt;
+font-weight: bold;
+margin-top: 3pt;
+margin-bottom: 5pt;
+}
+
+.titolo-barcode {
+  font-size: 12pt;
+font-style: italic;
+font-weight: normal;
+margin-bottom: 3pt;
+}
+
+.barcode {
+  font-size: 15pt;
+}
+
+img.categoria {
+ width: 20mm;
+ height: 20mm;
+  margin: 2mm;
+}
+
+img.barcode {
+ width: 50mm;
+ height: 15mm;
+  margin: 3mm;
+}
+            #editor-tools {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            @media print {
+                #toggleEdit {
+                        display: none !important;
+                }
+                #font-editor {
+                        display: none !important;
+                }
+                .editable {
+                    box-shadow: none;
+                }
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <!-- Printer profile CSS -->
+        <style>
+            
+        </style>
+    </head>
+
+    <body>
+        <div id="editor-tools">
+            <button id="toggleEdit"><i class="fa fa-lock" aria-hidden="true"></i></button>
+            <div id="font-editor" style="display: none;">
+                <label>Font Size: </label>
+                <select id="fontSize" >
+                    <option value="10">10px</option>
+                    <option value="11">11px</option>
+                    <option value="12">12px</option>
+                    <option value="13">13px</option>
+                    <option value="14">14px</option>
+                    <option value="15">15px</option>
+                    <option value="16">16px</option>
+                    <option value="17">17px</option>
+                    <option value="18">18px</option>
+                    <option value="19">19px</option>
+                    <option value="20">20px</option>
+                    <option value="20">21px</option>
+                    <option value="22">22px</option>
+                    <option value="23">23px</option>
+                    <option value="24">24px</option>
+                    <option value="25">25px</option>
+                    <option value="26">26px</option>
+                    <option value="27">27px</option>
+                    <option value="28">28px</option>
+                    <option value="29">29px</option>
+                    <option value="30">30px</option>
+                    <option value="31">31px</option>
+                    <option value="32">32px</option>
+                    <option value="33">33px</option>
+                    <option value="34">34px</option>
+                    <option value="35">35px</option>
+                    <option value="40">40px</option>
+                    <option value="45">45px</option>
+                </select>
+            </div>
+        </div>
+        <div id="editor">
+            <script>
+var categorieSaggistica = {
+    001: "Conoscenza",
+    004: "Informatica",
+    030: "Enciclopedie",
+    200: "Religione",
+    292: "Mitologia",
+    340: "Diritto",
+    380: "Economia",
+    390: "Folclore",
+    413: "Dizionario Straniero",
+    453: "Dizionario Italiano",
+    503: "Scienze",
+    505: "Serie Scienze",
+    507: "Esperimenti",
+    510: "Matematica",
+    520: "Astronomia",
+    530: "Fisica",
+    540: "Chimica",
+    550: "Terra",
+    551: "Meteorologia",
+    560: "Dinosauri",
+    570: "Natura",
+    574: "Ecologia",
+    577: "Ambienti",
+    580: "Vegetali",
+    590: "Animali",
+    600: "Tecnologia",
+    608: "Invenzioni",
+    610: "Medicina",
+    620: "Trasporti",
+    630: "Agricoltura",
+    641: "Cibo",
+    702: "Arte",
+    708: "Musei",
+    720: "Architettura",
+    730: "Scultura",
+    740: "Decorazione",
+    750: "Pittura",
+    760: "Grafica",
+    770: "Fotografia",
+    780: "Musica",
+    790: "Giochi",
+    792: "Teatro",
+    796: "Sport",
+    910: "Geografia",
+    912: "Atlanti",
+    913: "Esplorazioni",
+    914: "Europa",
+    915: "Asia",
+    916: "Africa",
+    917: "America",
+    919: "Italia",
+    920: "Biografie",
+    900: "Storia",
+    905: "Serie Storia",
+    930: "Civilità Antiche ",
+    940: "Storia Europea",
+    950: "Storia Asiatica",
+    960: "Storia Africana",
+    970: "Storia Americana",
+    990: "Storia Esplorazioni",
+    MMM: "Milano",
+};
+</script>
+
+    
+        
+        
+        <span class="page">
+    
+
+    <div class="label label1">
+		<div class="etichetta">
+			<div class="titolo">2026-0267</div>
+			<div id="titolo_0" class="titolo"></div>
+			<img class="categoria" id="img_0" />
+			<div id="divSegnatura3_0"></div>
+			<div id="divDescrizione_0"></div>
+		</div>
+		<div class="etichetta">
+			<div id="segnatura_barcode_0" class="segnatura"></div>
+			<div id="titolo_barcode_0" class="titolo-barcode"></div>
+			<img class="barcode" src="/cgi-bin/koha/svc/barcode?notext=1&barcode=*2026-0267*&type=Code39" />
+			<div class="barcode">2026-0267</div>
+		</div>
+    </div>
+
+<script>
+if("4"=="S") {
+var primaRiga = "B";
+var secondaRiga = categorieSaggistica[B].toUpperCase();
+} else {
+var primaRiga = "B 4 DEL".slice(0, 3).toUpperCase();
+var secondaRiga = "B 4 DEL".slice(4).toUpperCase();
+}
+
+document.getElementById("titolo_0").innerHTML="La casa segreta".substring(0, 30);
+document.getElementById("divSegnatura3_0").innerHTML=primaRiga;
+document.getElementById("divDescrizione_0").innerHTML=secondaRiga;
+document.getElementById("segnatura_barcode_0").innerHTML="B 4 DEL".toUpperCase();
+document.getElementById("titolo_barcode_0").innerHTML="La casa segreta".substring(0, 30);
+
+  var codice = "B";
+  if(/^\d/.test(codice))
+  {
+    codice = codice.charAt(0) + "00";
+  }
+document.getElementById("img_0").src="/intranet-tmpl/prog/img/itemtypeimg/biblioteca/" + codice + ".gif";
+</script>
+
+    
+    
+
+    
+
+    <div class="label label2">
+		<div class="etichetta">
+			<div class="titolo">2026-0268</div>
+			<div id="titolo_1" class="titolo"></div>
+			<img class="categoria" id="img_1" />
+			<div id="divSegnatura3_1"></div>
+			<div id="divDescrizione_1"></div>
+		</div>
+		<div class="etichetta">
+			<div id="segnatura_barcode_1" class="segnatura"></div>
+			<div id="titolo_barcode_1" class="titolo-barcode"></div>
+			<img class="barcode" src="/cgi-bin/koha/svc/barcode?notext=1&barcode=*2026-0268*&type=Code39" />
+			<div class="barcode">2026-0268</div>
+		</div>
+    </div>
+
+<script>
+if("3"=="S") {
+var primaRiga = "D";
+var secondaRiga = categorieSaggistica[D].toUpperCase();
+} else {
+var primaRiga = "D 3 DIC".slice(0, 3).toUpperCase();
+var secondaRiga = "D 3 DIC".slice(4).toUpperCase();
+}
+
+document.getElementById("titolo_1").innerHTML="Storie fantastiche delle vacanze".substring(0, 30);
+document.getElementById("divSegnatura3_1").innerHTML=primaRiga;
+document.getElementById("divDescrizione_1").innerHTML=secondaRiga;
+document.getElementById("segnatura_barcode_1").innerHTML="D 3 DIC".toUpperCase();
+document.getElementById("titolo_barcode_1").innerHTML="Storie fantastiche delle vacanze".substring(0, 30);
+
+  var codice = "D";
+  if(/^\d/.test(codice))
+  {
+    codice = codice.charAt(0) + "00";
+  }
+document.getElementById("img_1").src="/intranet-tmpl/prog/img/itemtypeimg/biblioteca/" + codice + ".gif";
+</script>
+
+    
+    
+
+    
+
+    <div class="label label3">
+		<div class="etichetta">
+			<div class="titolo">2026-0269</div>
+			<div id="titolo_2" class="titolo"></div>
+			<img class="categoria" id="img_2" />
+			<div id="divSegnatura3_2"></div>
+			<div id="divDescrizione_2"></div>
+		</div>
+		<div class="etichetta">
+			<div id="segnatura_barcode_2" class="segnatura"></div>
+			<div id="titolo_barcode_2" class="titolo-barcode"></div>
+			<img class="barcode" src="/cgi-bin/koha/svc/barcode?notext=1&barcode=*2026-0269*&type=Code39" />
+			<div class="barcode">2026-0269</div>
+		</div>
+    </div>
+
+<script>
+if("3"=="S") {
+var primaRiga = "E";
+var secondaRiga = categorieSaggistica[E].toUpperCase();
+} else {
+var primaRiga = "E 4 END".slice(0, 3).toUpperCase();
+var secondaRiga = "E 4 END".slice(4).toUpperCase();
+}
+
+document.getElementById("titolo_2").innerHTML="La notte dei desideri, ovvero Il satanarchibugiardinfernalcolico Grog di Magog".substring(0, 30);
+document.getElementById("divSegnatura3_2").innerHTML=primaRiga;
+document.getElementById("divDescrizione_2").innerHTML=secondaRiga;
+document.getElementById("segnatura_barcode_2").innerHTML="E 4 END".toUpperCase();
+document.getElementById("titolo_barcode_2").innerHTML="La notte dei desideri, ovvero Il satanarchibugiardinfernalcolico Grog di Magog".substring(0, 30);
+
+  var codice = "E";
+  if(/^\d/.test(codice))
+  {
+    codice = codice.charAt(0) + "00";
+  }
+document.getElementById("img_2").src="/intranet-tmpl/prog/img/itemtypeimg/biblioteca/" + codice + ".gif";
+</script>
+
+    
+    
+
+    
+
+    <div class="label label4">
+		<div class="etichetta">
+			<div class="titolo">2026-0270</div>
+			<div id="titolo_3" class="titolo"></div>
+			<img class="categoria" id="img_3" />
+			<div id="divSegnatura3_3"></div>
+			<div id="divDescrizione_3"></div>
+		</div>
+		<div class="etichetta">
+			<div id="segnatura_barcode_3" class="segnatura"></div>
+			<div id="titolo_barcode_3" class="titolo-barcode"></div>
+			<img class="barcode" src="/cgi-bin/koha/svc/barcode?notext=1&barcode=*2026-0270*&type=Code39" />
+			<div class="barcode">2026-0270</div>
+		</div>
+    </div>
+
+<script>
+if("3"=="S") {
+var primaRiga = "A";
+var secondaRiga = categorieSaggistica[A].toUpperCase();
+} else {
+var primaRiga = "A 3 SAN".slice(0, 3).toUpperCase();
+var secondaRiga = "A 3 SAN".slice(4).toUpperCase();
+}
+
+document.getElementById("titolo_3").innerHTML="Wonderlucy".substring(0, 30);
+document.getElementById("divSegnatura3_3").innerHTML=primaRiga;
+document.getElementById("divDescrizione_3").innerHTML=secondaRiga;
+document.getElementById("segnatura_barcode_3").innerHTML="A 3 SAN".toUpperCase();
+document.getElementById("titolo_barcode_3").innerHTML="Wonderlucy".substring(0, 30);
+
+  var codice = "A";
+  if(/^\d/.test(codice))
+  {
+    codice = codice.charAt(0) + "00";
+  }
+document.getElementById("img_3").src="/intranet-tmpl/prog/img/itemtypeimg/biblioteca/" + codice + ".gif";
+</script>
+
+    
+    
+
+    
+
+    <div class="label label5">
+		<div class="etichetta">
+			<div class="titolo">2026-0271</div>
+			<div id="titolo_4" class="titolo"></div>
+			<img class="categoria" id="img_4" />
+			<div id="divSegnatura3_4"></div>
+			<div id="divDescrizione_4"></div>
+		</div>
+		<div class="etichetta">
+			<div id="segnatura_barcode_4" class="segnatura"></div>
+			<div id="titolo_barcode_4" class="titolo-barcode"></div>
+			<img class="barcode" src="/cgi-bin/koha/svc/barcode?notext=1&barcode=*2026-0271*&type=Code39" />
+			<div class="barcode">2026-0271</div>
+		</div>
+    </div>
+
+<script>
+if("2"=="S") {
+var primaRiga = "D";
+var secondaRiga = categorieSaggistica[D].toUpperCase();
+} else {
+var primaRiga = "D 2 AAV".slice(0, 3).toUpperCase();
+var secondaRiga = "D 2 AAV".slice(4).toUpperCase();
+}
+
+document.getElementById("titolo_4").innerHTML="Orsaccio".substring(0, 30);
+document.getElementById("divSegnatura3_4").innerHTML=primaRiga;
+document.getElementById("divDescrizione_4").innerHTML=secondaRiga;
+document.getElementById("segnatura_barcode_4").innerHTML="D 2 AAV".toUpperCase();
+document.getElementById("titolo_barcode_4").innerHTML="Orsaccio".substring(0, 30);
+
+  var codice = "D";
+  if(/^\d/.test(codice))
+  {
+    codice = codice.charAt(0) + "00";
+  }
+document.getElementById("img_4").src="/intranet-tmpl/prog/img/itemtypeimg/biblioteca/" + codice + ".gif";
+</script>
+
+    
+    
+
+    
+
+    <div class="label label6">
+		<div class="etichetta">
+			<div class="titolo">2026-0272</div>
+			<div id="titolo_5" class="titolo"></div>
+			<img class="categoria" id="img_5" />
+			<div id="divSegnatura3_5"></div>
+			<div id="divDescrizione_5"></div>
+		</div>
+		<div class="etichetta">
+			<div id="segnatura_barcode_5" class="segnatura"></div>
+			<div id="titolo_barcode_5" class="titolo-barcode"></div>
+			<img class="barcode" src="/cgi-bin/koha/svc/barcode?notext=1&barcode=*2026-0272*&type=Code39" />
+			<div class="barcode">2026-0272</div>
+		</div>
+    </div>
+
+<script>
+if("2"=="S") {
+var primaRiga = "D";
+var secondaRiga = categorieSaggistica[D].toUpperCase();
+} else {
+var primaRiga = "D 2 AAV".slice(0, 3).toUpperCase();
+var secondaRiga = "D 2 AAV".slice(4).toUpperCase();
+}
+
+document.getElementById("titolo_5").innerHTML="Befana".substring(0, 30);
+document.getElementById("divSegnatura3_5").innerHTML=primaRiga;
+document.getElementById("divDescrizione_5").innerHTML=secondaRiga;
+document.getElementById("segnatura_barcode_5").innerHTML="D 2 AAV".toUpperCase();
+document.getElementById("titolo_barcode_5").innerHTML="Befana".substring(0, 30);
+
+  var codice = "D";
+  if(/^\d/.test(codice))
+  {
+    codice = codice.charAt(0) + "00";
+  }
+document.getElementById("img_5").src="/intranet-tmpl/prog/img/itemtypeimg/biblioteca/" + codice + ".gif";
+</script>
+
+    
+    
+
+    
+
+    <div class="label label7">
+		<div class="etichetta">
+			<div class="titolo">2026-0273</div>
+			<div id="titolo_6" class="titolo"></div>
+			<img class="categoria" id="img_6" />
+			<div id="divSegnatura3_6"></div>
+			<div id="divDescrizione_6"></div>
+		</div>
+		<div class="etichetta">
+			<div id="segnatura_barcode_6" class="segnatura"></div>
+			<div id="titolo_barcode_6" class="titolo-barcode"></div>
+			<img class="barcode" src="/cgi-bin/koha/svc/barcode?notext=1&barcode=*2026-0273*&type=Code39" />
+			<div class="barcode">2026-0273</div>
+		</div>
+    </div>
+
+<script>
+if("3"=="S") {
+var primaRiga = "L";
+var secondaRiga = categorieSaggistica[L].toUpperCase();
+} else {
+var primaRiga = "L 3 Mac".slice(0, 3).toUpperCase();
+var secondaRiga = "L 3 Mac".slice(4).toUpperCase();
+}
+
+document.getElementById("titolo_6").innerHTML="I classici delle barzellette".substring(0, 30);
+document.getElementById("divSegnatura3_6").innerHTML=primaRiga;
+document.getElementById("divDescrizione_6").innerHTML=secondaRiga;
+document.getElementById("segnatura_barcode_6").innerHTML="L 3 Mac".toUpperCase();
+document.getElementById("titolo_barcode_6").innerHTML="I classici delle barzellette".substring(0, 30);
+
+  var codice = "L";
+  if(/^\d/.test(codice))
+  {
+    codice = codice.charAt(0) + "00";
+  }
+document.getElementById("img_6").src="/intranet-tmpl/prog/img/itemtypeimg/biblioteca/" + codice + ".gif";
+</script>
+
+    
+    
+
+    
+
+    <div class="label label8">
+		<div class="etichetta">
+			<div class="titolo">2026-0274</div>
+			<div id="titolo_7" class="titolo"></div>
+			<img class="categoria" id="img_7" />
+			<div id="divSegnatura3_7"></div>
+			<div id="divDescrizione_7"></div>
+		</div>
+		<div class="etichetta">
+			<div id="segnatura_barcode_7" class="segnatura"></div>
+			<div id="titolo_barcode_7" class="titolo-barcode"></div>
+			<img class="barcode" src="/cgi-bin/koha/svc/barcode?notext=1&barcode=*2026-0274*&type=Code39" />
+			<div class="barcode">2026-0274</div>
+		</div>
+    </div>
+
+<script>
+if("5"=="S") {
+var primaRiga = "M";
+var secondaRiga = categorieSaggistica[M].toUpperCase();
+} else {
+var primaRiga = "M 5 Scri".slice(0, 3).toUpperCase();
+var secondaRiga = "M 5 Scri".slice(4).toUpperCase();
+}
+
+document.getElementById("titolo_7").innerHTML="Benvenuta alle medie, Nat".substring(0, 30);
+document.getElementById("divSegnatura3_7").innerHTML=primaRiga;
+document.getElementById("divDescrizione_7").innerHTML=secondaRiga;
+document.getElementById("segnatura_barcode_7").innerHTML="M 5 Scri".toUpperCase();
+document.getElementById("titolo_barcode_7").innerHTML="Benvenuta alle medie, Nat".substring(0, 30);
+
+  var codice = "M";
+  if(/^\d/.test(codice))
+  {
+    codice = codice.charAt(0) + "00";
+  }
+document.getElementById("img_7").src="/intranet-tmpl/prog/img/itemtypeimg/biblioteca/" + codice + ".gif";
+</script>
+
+    
+    
+
+    
+
+    <div class="label label9">
+		<div class="etichetta">
+			<div class="titolo">2026-0275</div>
+			<div id="titolo_8" class="titolo"></div>
+			<img class="categoria" id="img_8" />
+			<div id="divSegnatura3_8"></div>
+			<div id="divDescrizione_8"></div>
+		</div>
+		<div class="etichetta">
+			<div id="segnatura_barcode_8" class="segnatura"></div>
+			<div id="titolo_barcode_8" class="titolo-barcode"></div>
+			<img class="barcode" src="/cgi-bin/koha/svc/barcode?notext=1&barcode=*2026-0275*&type=Code39" />
+			<div class="barcode">2026-0275</div>
+		</div>
+    </div>
+
+<script>
+if("1"=="S") {
+var primaRiga = "A";
+var secondaRiga = categorieSaggistica[A].toUpperCase();
+} else {
+var primaRiga = "A 1 KNI".slice(0, 3).toUpperCase();
+var secondaRiga = "A 1 KNI".slice(4).toUpperCase();
+}
+
+document.getElementById("titolo_8").innerHTML="I compiti a casa".substring(0, 30);
+document.getElementById("divSegnatura3_8").innerHTML=primaRiga;
+document.getElementById("divDescrizione_8").innerHTML=secondaRiga;
+document.getElementById("segnatura_barcode_8").innerHTML="A 1 KNI".toUpperCase();
+document.getElementById("titolo_barcode_8").innerHTML="I compiti a casa".substring(0, 30);
+
+  var codice = "A";
+  if(/^\d/.test(codice))
+  {
+    codice = codice.charAt(0) + "00";
+  }
+document.getElementById("img_8").src="/intranet-tmpl/prog/img/itemtypeimg/biblioteca/" + codice + ".gif";
+</script>
+
+    </span>
+    
+
+
+        </div>
+    </body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $('#toggleEdit').click( function() {
+                $('#editor').attr('contenteditable', function(index, attr){
+                    return attr == 'true' ? null : 'true';
+                });
+
+                $('#toggleEdit .fa').toggleClass('fa-lock').toggleClass('fa-unlock');
+                $('#font-editor').toggle();
+        })
+
+        var activeFontSize;
+        var oDoc = document.getElementById("editor");
+        var style = document.createElement("style");
+        document.body.appendChild(style);
+        
+        function setFontSize(value){
+            $editor.focus();
+            document.execCommand("fontsize", false, 20);
+            activeFontSize = value;
+            createStyle();
+        }
+
+        function createStyle(){
+            style.innerHTML = '#editor font[size="7"]{font-size: '+activeFontSize+'px}';
+        }
+
+        function updateToolBar(args){
+            $fontSize.val(args.fontsize);
+        }
+
+        var $fontSize = $("#fontSize");
+        var $editor = $("#editor");
+
+        $fontSize.on("change", ()=>{
+            setFontSize($fontSize.val())
+        })
+
+        $editor.on("keyup mousedown", (e)=>{
+            try{
+                var fontsize = $(window.getSelection().getRangeAt(0).startContainer.parentNode).css("font-size")
+                fontsize = fontsize.replace("px", "");
+                updateToolBar({fontsize})
+            }catch(e){
+                console.log("exception", e)
+            }
+        })
+        oDoc.focus();
+        setFontSize(30);
+		
+    </script>
+</html>

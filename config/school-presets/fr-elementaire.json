@@ -1,0 +1,59 @@
+{
+	"id": "fr-elementaire",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md Phase 12, B2 of docs/studies/barcodes-and-school-classes.md).",
+	"name": {
+		"it": "Scuola elementare (Francia)",
+		"en": "Elementary school (France)"
+	},
+	"country": "FR",
+	"languages": ["fr"],
+	"school": {
+		"stages": [
+			{
+				"code": "elementaire",
+				"name": "École élémentaire"
+			}
+		],
+		"levels": [
+			{
+				"code": "CP",
+				"label": "CP",
+				"name": "Cours préparatoire",
+				"stage": "elementaire"
+			},
+			{
+				"code": "CE1",
+				"label": "CE1",
+				"name": "Cours élémentaire 1",
+				"stage": "elementaire"
+			},
+			{
+				"code": "CE2",
+				"label": "CE2",
+				"name": "Cours élémentaire 2",
+				"stage": "elementaire"
+			},
+			{
+				"code": "CM1",
+				"label": "CM1",
+				"name": "Cours moyen 1",
+				"stage": "elementaire"
+			},
+			{
+				"code": "CM2",
+				"label": "CM2",
+				"name": "Cours moyen 2",
+				"stage": "elementaire"
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Classe",
+		"promotionWithinStage": "clear",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"elementaire": ["A", "B"]
+	},
+	"teacherGroup": "Enseignants",
+	"readingLevels": []
+}

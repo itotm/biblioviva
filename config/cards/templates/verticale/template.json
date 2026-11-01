@@ -1,0 +1,8 @@
+{
+	"name": "verticale",
+	"description": "Tessera verticale: logo, nome della biblioteca, foto grande, nome, classe e codice a barre sul fronte; illustrazione a tutta pagina sul retro",
+	"patronTypes": ["student", "teacher"],
+	"cardMm": { "width": 53.98, "height": 85.6 },
+	"bleedMm": 0,
+	"barcode": { "widthMm": 40, "heightMm": 7, "text": false }
+}

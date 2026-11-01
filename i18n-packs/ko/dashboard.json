@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "진행 중인 대출",
+		"overdue": "연체",
+		"issuedToday": "오늘 대출",
+		"returnedToday": "오늘 반납",
+		"withoutCard": "인쇄한 이용증이 없는 이용자",
+		"withoutPhoto": "사진이 없는 이용자",
+		"toClassify": "분류할 도서",
+		"pendingLabels": "라벨이 없는 도서"
+	},
+	"tilesTitle": "오늘의 도서관",
+	"actions": {
+		"title": "빠른 작업"
+	},
+	"dueWeek": {
+		"title": "이번 주 반납 예정",
+		"none": "{{day}} 이전에 반납 예정인 대출이 없습니다.",
+		"more": "외 {{count}} 건",
+		"due": "{{date}} 반납 예정"
+	},
+	"inventory": {
+		"title": "장서 점검",
+		"continue": "계속"
+	},
+	"install": {
+		"title": "홈 화면에 추가",
+		"hint": "BiblioViva는 휴대폰의 아이콘으로 열리며, 앱처럼 전체 화면으로 표시됩니다.",
+		"install": "설치",
+		"fromMenu": "Firefox의 ⋮ 메뉴를 열고 “설치” 또는 “홈 화면에 추가”를 선택하십시오.",
+		"later": "나중에"
+	},
+	"upcoming": {
+		"title": "다가오는 날짜",
+		"none": "앞으로 {{days}} {{days:plural; other:일;}} 동안 예정된 날짜가 없습니다.",
+		"more": "외 {{count}} 건",
+		"open": "달력 열기"
+	}
+}

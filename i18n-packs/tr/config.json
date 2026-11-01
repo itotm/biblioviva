@@ -1,0 +1,1778 @@
+{
+	"home": {
+		"title": "Yapılandırma"
+	},
+	"leave": {
+		"title": "Kaydetmeden çıkılsın mı?",
+		"description": "Henüz kaydedilmemiş değişiklikler kaybolacak.",
+		"confirm": "Kaydetmeden çık"
+	},
+	"taxonomy": {
+		"title": "Sınıflandırma",
+		"intro": "Değişiklikler “Kaydet” düğmesine basılana kadar taslakta kalır; {{file}} dosyasının önceki sürümü saklanır.",
+		"invalid": "Bazı değerler geçerli değil (kırmızıyla işaretli): kaydedebilmek için bunları düzeltin.",
+		"orphans": "Katalogda sınıflandırmada bulunmayan kodları olan kitaplar var: {{codes}}. Bu kodları buraya ekleyin ya da bu kitapları katalogdan yeniden sınıflandırın.",
+		"unsaved": "Kaydedilmemiş değişiklikler",
+		"discard": "Değişiklikleri iptal et",
+		"saved": "Sınıflandırma kaydedildi",
+		"savedDetail": "{{records}} {{records:plural; one:kitap; other:kitap;}} taşındı, {{callNumbers}} {{callNumbers:plural; one:yer numarası; other:yer numarası;}} yeniden yazıldı, {{bands}} {{bands:plural; one:sırt bandı; other:sırt bandı;}} yeniden basılmalı.",
+		"tabs": {
+			"fiction": "Kurgu",
+			"nonfiction": "Kurgu dışı",
+			"dewey": "Dewey",
+			"options": "Seçenekler"
+		},
+		"addGenre": "Tür ekle",
+		"addClass": "Konu ekle",
+		"addSubclass": "Alt konu ekle",
+		"dragHint": "Satırları sürükleyerek sırasını değiştirin ya da okları kullanın. Sıra, katalogdaki seçeneklerde göründüğü sıradır.",
+		"pickGenre": "Düzenlemek için bir tür seçin",
+		"pickClass": "Düzenlemek için bir konu seçin",
+		"untitled": "Adsız",
+		"hasProblems": "Düzeltilecek",
+		"usageShort": "{{records}} {{records:plural; one:kitap; other:kitap;}}",
+		"moveUp": "Yukarı taşı",
+		"moveDown": "Aşağı taşı",
+		"panel": {
+			"genre": "Tür",
+			"class": "Konu",
+			"subclass": "Alt konu"
+		},
+		"fields": {
+			"code": "Kod",
+			"label": "Ad",
+			"color": "Renk",
+			"pictogram": "Piktogram",
+			"position": "Konum"
+		},
+		"renameNote": "Kod değişti: kaydedildiğinde {{records}} {{records:plural; one:kitap; other:kitap;}} {{from}} kodundan {{to}} koduna geçer ve yer numaraları güncellenir.",
+		"color": {
+			"inherit": "{{code}} rengini kullan",
+			"none": "Renk yok",
+			"hex": "Renk kodu"
+		},
+		"pictogram": {
+			"upload": "Görsel yükle",
+			"choose": "Görseller arasından seç",
+			"remove": "Görseli kaldır",
+			"own": "Kendi görseli. PNG, JPEG ya da WebP: PNG olarak kaydedilir.",
+			"missing": "{{name}} dosyası görseller klasöründe yok: etiketlerde renkli ve kodlu daire görünür.",
+			"inherited": "Kendi görseli olmadığı için {{code}} görselini kullanır.",
+			"placeholder": "Görsel yoksa etiketlerde renkli ve kodlu bir daire görünür.",
+			"gallery": "Sınıflandırmanın görselleri",
+			"errors": {
+				"empty": "Dosya boş.",
+				"too_large": "Görsel çok büyük (en fazla {{maxMb}} MB).",
+				"not_an_image": "Dosya bir görsel değil.",
+				"unsupported_format": "Biçim kabul edilmedi: PNG, JPEG ya da WebP kullanın."
+			}
+		},
+		"position": {
+			"top": "Ana konu",
+			"under": "{{code}} · {{label}} içinde",
+			"locked": "Alt konuları var: ana konu olarak kalır."
+		},
+		"usage": {
+			"new": "Yeni: henüz hiçbir kitap kullanmıyor.",
+			"none": "Bu kodu hiçbir kitap kullanmıyor.",
+			"some": "{{records}} {{records:plural; one:kitap; other:kitap;}} kullanıyor ({{copies}} {{copies:plural; one:nüsha; other:nüsha;}})."
+		},
+		"remove": {
+			"genre": "Türü sil",
+			"class": "Konuyu sil",
+			"confirmTitle": "{{code}} silinsin mi?",
+			"withSubclasses": "Bağlı {{count}} {{count:plural; one:alt konu; other:alt konu;}} da silinir.",
+			"inUse": "{{records}} {{records:plural; one:kitap; other:kitap;}} bu kodu kullanıyor: kaydedildiğinde nereye taşınacakları sorulur.",
+			"confirm": "Sil"
+		},
+		"preview": {
+			"title": "Sırt bandı önizlemesi",
+			"hint": "Örnek bir kitabın şu anda nasıl basılacağı, gerçek boyutta.",
+			"needsCode": "Kod geçerli olduğunda önizleme görünür."
+		},
+		"problems": {
+			"codeRequired": "Kod zorunludur.",
+			"codeFormat": "Yalnızca harf, rakam, nokta, kısa çizgi ya da alt çizgi kullanın (en fazla 32).",
+			"codeTaken": "Bu kod başka bir tür ya da konu tarafından zaten kullanılıyor.",
+			"labelRequired": "Ad zorunludur.",
+			"labelLong": "Ad çok uzun (en fazla 120 karakter).",
+			"colorFormat": "Rengi #rrggbb biçiminde yazın, örneğin #e8231b.",
+			"patternRequired": "Şema boş olamaz."
+		},
+		"dewey": {
+			"hint": "Bir kurgu dışı kitap Dewey numarasıyla geldiğinde (örneğin SBN’den), konusu bu tabloya göre önerilir: en uzun eşleşen önek geçerlidir.",
+			"probe": "Bir Dewey numarası deneyin",
+			"noMatch": "Hiçbir konu eşleşmiyor",
+			"empty": "Dewey eşleşmesi yok",
+			"prefix": "Dewey öneki",
+			"class": "Konu",
+			"add": "Eşleşme ekle",
+			"problems": {
+				"prefixFormat": "1 ila 3 rakam.",
+				"prefixTaken": "Önek tekrarlanıyor.",
+				"codeUnknown": "Bir konu seçin."
+			}
+		},
+		"options": {
+			"fictionByClass": "Kurgu okuma düzeyine göre ayrılır",
+			"fictionByClassHint": "Kurgu kitaplarına, uygun oldukları okuma düzeyi verilebilir (örneğin 4. sınıf): yer numarasında ve sırt bandında görünür.",
+			"classPerItem": "Okuma düzeyi her nüshada bulunur",
+			"classPerItemHint": "Aynı kitabın nüshaları farklı düzeylerin raflarında bulunduğunda gerekir. Aksi halde düzey kitapta bulunur.",
+			"toCopies": "Kaydedildiğinde her kitabın okuma düzeyi nüshalarına geçer.",
+			"toRecords": "Kaydedildiğinde nüshaların düzeyi kitaba geri döner; aynı kitabın nüshaları farklı düzeylerdeyse bu yapılamaz.",
+			"patterns": "Yer numarası şemaları",
+			"patternsHint": "Bundan sonra eklenen nüshalar için geçerlidir; mevcut yer numaraları değişmez. Yer tutucular: {{placeholders}}.",
+			"pattern": {
+				"fiction": "Kurgu",
+				"fictionWithClass": "İlişkili sınıfı olan kurgu",
+				"nonfiction": "Kurgu dışı"
+			},
+			"unknownPlaceholders": "Bilinmeyen yer tutucular: {{names}}.",
+			"example": "Örnek: {{example}}"
+		},
+		"save": {
+			"title": "Sınıflandırmayı kaydet",
+			"checking": "Katalogda neyin değiştiği kontrol ediliyor…",
+			"unchanged": "Kaydedilecek değişiklik yok.",
+			"errors": "Kaydetmeden önce bu sorunları düzeltin:",
+			"removedTitle": "Hâlâ kullanılan silinmiş kodlar",
+			"removedHint": "Silinen her kodun kitaplarının nereye taşınacağını seçin: yeni kod kitaplara, yer numaralarının başına ve sırt bantlarına yazılır.",
+			"moveTo": "{{code}} · {{label}}: {{records}} {{records:plural; one:kitap; other:kitap;}} ({{copies}} {{copies:plural; one:nüsha; other:nüsha;}}). Şuraya taşı",
+			"choose": "Seçin…",
+			"callNumbers": "{{count}} {{count:plural; one:yer numarası; other:yer numarası;}} silinmiş bir kodla başlıyor: baştaki kod değiştirilir (örneğin B 4 DEL, A 4 DEL olur).",
+			"bandsMoved": "Taşınan kitapların sırt bantları ve yer numarası değişen etiketler, basılacaklar arasına geri döner.",
+			"unused": "Silindi, hiçbir kitap kullanmıyor: {{codes}}.",
+			"reprint": "{{codes}} kodlu, adı, rengi ya da piktogramı değişen {{copies}} {{copies:plural; one:nüshanın; other:nüshanın;}} sırt bantlarını basılacak etiketler arasına geri koy",
+			"reprintHint": "Zaten yapıştırılmış bantlardaki fark önemli değilse bunu kapalı bırakın.",
+			"conflicts": "Nüshaları farklı sınıflarda olan {{count}} {{count:plural; one:kitap var; other:kitap var;}}: nüshalardan sınıfı kaldırmadan önce her kitabın tüm nüshalarına aynı sınıfı verin.",
+			"toCopies": "{{count}} {{count:plural; one:kitap; other:kitap;}} ilişkili sınıfı nüshalarına geçer.",
+			"toRecords": "{{count}} {{count:plural; one:başlık; other:başlık;}} için nüshaların sınıfı kitaba geri döner.",
+			"warnings": "{{count}} {{count:plural; one:uyarı; other:uyarı;}} (kaydetmeyi engellemezler)",
+			"levelsTitle": "Kitaplar taşınırken kaldırılan okuma düzeyleri",
+			"levelMoveTo": "{{code}} · {{label}} düzeyindeki kitaplar ({{records}} {{records:plural; one:başlık; other:başlık;}}, {{copies}} {{copies:plural; one:nüsha; other:nüsha;}}) şuraya taşınır",
+			"noLevel": "Düzey yok",
+			"levelsHint": "Nüshaların yer numarasındaki düzey onlarla birlikte değişir (örneğin B 4 DEL, B 5 DEL olur) ve etiketleri yeniden basılacaklar arasına geri döner."
+		},
+		"levels": {
+			"title": "Okuma düzeyleri",
+			"hint": "Sırayla, en kolaydan başlayarak. Kod kitaplara ve yer numarasına yazılır (örneğin B 4 DEL içindeki 4), ad seçeneklerde görünür. Kullanımda olan bir düzey kaldırılır ya da yeniden adlandırılırsa, kaydedilirken kitaplarının nereye taşınacağı sorulur.",
+			"code": "Düzey kodu",
+			"label": "Düzey adı",
+			"up": "Yukarı taşı",
+			"down": "Aşağı taşı",
+			"remove": "Düzeyi kaldır",
+			"add": "Düzey ekle"
+		}
+	},
+	"sections": {
+		"library": {
+			"title": "Kütüphane ve okul",
+			"description": "Ad, okul türü, sınıflar ve bölümler, eğitim öğretim yılı, saat dilimi."
+		},
+		"school": {
+			"title": "Okul",
+			"description": "Okulun kademeleri ve yılları, bir sınıfın nasıl yazıldığı, yıl sonunda sınıflara ne olacağı. Sınıfların kendisi Yönetim → Yapılandırma → Sınıflar bölümünde yönetilir."
+		},
+		"catalog": {
+			"title": "Katalog",
+			"description": "Bilinmeyen yazar, yayınevi ve yer için değerler."
+		},
+		"barcodes": {
+			"title": "Barkodlar",
+			"description": "Kartların ve nüshaların biçimi, eski kodlar, barkod türü."
+		},
+		"circulation": {
+			"title": "Ödünç verme",
+			"description": "Ödünç verme ve süre uzatma kuralları, iade tarihleri, hatırlatmalar, makbuzlar."
+		},
+		"calendar": {
+			"title": "Takvim",
+			"description": "Kapalı günler ve tatiller."
+		},
+		"z3950": {
+			"title": "Z39.50 (SBN)",
+			"description": "Kitap kayıtlarının geldiği sunucular."
+		},
+		"metadata": {
+			"title": "Kitap verileri",
+			"description": "ISBN ile ararken veri kaynakları."
+		},
+		"performance": {
+			"title": "Performans",
+			"description": "BiblioViva’nın çalıştığı bilgisayar ve buna bağlı ayarlar."
+		},
+		"classification": {
+			"title": "Sınıflandırma",
+			"description": "Türler, konular, piktogramlar, Dewey ve yer numaraları."
+		},
+		"cards": {
+			"title": "Üye kartları",
+			"description": "Üye kartlarının ve yazdırma sayfasının biçimi."
+		},
+		"labels": {
+			"title": "Etiketler",
+			"description": "Kitap etiketleri ve sırt bantları, yapışkan sayfalar."
+		},
+		"photos": {
+			"title": "Üye fotoğrafları",
+			"description": "Fotoğrafların boyutu ve biçimi."
+		},
+		"covers": {
+			"title": "Kapaklar",
+			"description": "Kapakların boyutu, biçimi ve kaynakları."
+		},
+		"privacy": {
+			"title": "Gizlilik",
+			"description": "İşlem günlüğünün ne kadar süre saklanacağı."
+		},
+		"backup": {
+			"title": "Yedekleme",
+			"description": "Yedeklerin zamanı ve saklama süresi, dış kopya."
+		},
+		"security": {
+			"title": "Güvenlik ve erişim",
+			"description": "Oturum süresi, giriş denemeleri, hesaplar ve roller."
+		},
+		"ui": {
+			"title": "Arayüz",
+			"description": "Ödünç masası ve eklenen diller; renkler, dil ve gösterge paneli “Görünüm ve dil” bölümünde."
+		}
+	},
+	"fields": {
+		"library": {
+			"name": {
+				"label": "Kütüphanenin adı",
+				"hint": "Sol üstte, kartlarda ve çıktılarda görünür."
+			},
+			"contactEmail": {
+				"label": "İletişim e-postası",
+				"hint": "İsteğe bağlı: bunu içeren çıktılarda görünür."
+			},
+			"schoolYearStart": {
+				"label": "Eğitim öğretim yılının başlangıcı",
+				"hint": "Ay ve gün AA-GG biçiminde (örneğin 09-01): istatistiklerde yılları ayırır."
+			},
+			"schoolYearLabel": {
+				"label": "Eğitim öğretim yılının adı",
+				"hint": "Eğitim öğretim yılının kartlarda, raporlarda ve sayfalarda nasıl görüneceği: iki yıl (2026/2027) ya da başladığı yıl (2026), Brezilya, Japonya ve Kore’de olduğu gibi."
+			},
+			"timezone": {
+				"label": "Saat dilimi",
+				"hint": "Dilimin adı, örneğin Europe/Rome: tarihler ve son tarihler bu dilimi izler, sunucunun saatini değil."
+			},
+			"weekStart": {
+				"label": "Haftanın ilk günü",
+				"hint": "Takvimlerde ve gösterge panelindeki “bu hafta”da haftaların başladığı gün. İlk başlatmada bunu dil belirler (İtalyanca için pazartesi, İngilizce için pazar)."
+			}
+		},
+		"school": {
+			"classLabel": {
+				"label": "Sınıf nasıl yazılır",
+				"hint": "{level} yıl, {group} sınıfın adı: “{level} {group}” 3 B verir, “{level}{group}” 3B verir. Bir kademenin kendi biçimi olabilir (Kademeler ve yıllar)."
+			},
+			"groupWord": {
+				"label": "Sınıf için kelime",
+				"hint": "Formlarda ve filtrelerde sınıf alanının adı ve kartta sınıf satırındaki {word} (Bölüm B, Sınıf B, Grup B)."
+			},
+			"cardClass": {
+				"label": "Kartta sınıf",
+				"hint": "Kartta yazdırılan sınıf satırı: {word} sınıf için kelime, {group} sınıfın adı, {level} yıl, {class} tüm sınıf. “{word} {group}” Bölüm B verir, “{class}” 3 B verir."
+			},
+			"teacherGroupName": {
+				"label": "Öğretmen grubunun adı",
+				"hint": "Başka bir grup seçilmediğinde bir öğretmenin katıldığı grup."
+			},
+			"promotionWithinStage": {
+				"label": "Yıl sonunda, aynı kademe içinde",
+				"hint": "Genellikle sınıf öğrencileriyle birlikte ilerler: 3 B, 4 B olur."
+			},
+			"promotionAcrossStages": {
+				"label": "Yıl sonunda, başka bir kademeye geçişte",
+				"hint": "Örneğin birleşik bir okulda ilkokul 5. sınıf ile ortaokul 1. sınıf arasında."
+			}
+		},
+		"catalog": {
+			"specialAuthors": {
+				"label": "Özel yazarlar",
+				"hint": "Her satıra bir tane: kişi yazarın yerine kabul edilen değerler (örneğin Anonim, AA. VV.)."
+			},
+			"unknownPublisher": {
+				"label": "Bilinmeyen yayınevi",
+				"hint": "Yayınevi belirtilmediğinde yazılacak değer."
+			},
+			"unknownPlace": {
+				"label": "Bilinmeyen yer",
+				"hint": "Yayın yeri belirtilmediğinde yazılacak değer."
+			}
+		},
+		"barcodes": {
+			"keyboardLayout": {
+				"label": "Bilgisayar klavyesi",
+				"hint": "Barkod okuyucuların bağlı olduğu bilgisayarların klavye düzeni: başka bir klavyeye ayarlanmış bir okuyucunun yanlış yazdığı karakterleri düzeltmek için kullanılır."
+			},
+			"cameraSound": {
+				"label": "Kamera sesi",
+				"hint": "Kamera bir üye kartını, bir nüshanın barkodunu ya da bir ISBN’i okuduğunda telefondan çıkan bip sesi. USB okuyucu kendi bipini çıkarır, buna gerek yoktur; ödünç masası sessiz kalır."
+			},
+			"patron": {
+				"symbology": {
+					"label": "Üye kartlarının barkod türü",
+					"hint": "Yeni kartlar için Code 128; Code 39 yalnızca kütüphanenin okuyucuları Code 128’i okuyamıyorsa."
+				}
+			},
+			"item": {
+				"symbology": {
+					"label": "Nüshaların barkod türü",
+					"hint": "Yeni etiketler için Code 128; Code 39 yalnızca kütüphanenin okuyucuları Code 128’i okuyamıyorsa."
+				}
+			}
+		},
+		"circulation": {
+			"rules": {
+				"student": {
+					"loanDays": {
+						"label": "Ödünç verme süresi (gün)",
+						"hint": "Öğrenciler için bir ödünç verme kaç gün sürer."
+					},
+					"maxLoans": {
+						"label": "En fazla ödünç kitap",
+						"hint": "Bir kişi aynı anda kaç kitap alabilir."
+					},
+					"maxRenewals": {
+						"label": "En fazla süre uzatma",
+						"hint": "Aynı ödünç verme kaç kez uzatılabilir (0 = hiçbir zaman)."
+					},
+					"renewalDays": {
+						"label": "Süre uzatma günleri",
+						"hint": "Her süre uzatmada kaç gün eklenir."
+					}
+				},
+				"teacher": {
+					"loanDays": {
+						"label": "Ödünç verme süresi (gün)",
+						"hint": "Öğretmenler için bir ödünç verme kaç gün sürer."
+					},
+					"maxLoans": {
+						"label": "En fazla ödünç kitap",
+						"hint": "Bir kişi aynı anda kaç kitap alabilir."
+					},
+					"maxRenewals": {
+						"label": "En fazla süre uzatma",
+						"hint": "Aynı ödünç verme kaç kez uzatılabilir (0 = hiçbir zaman)."
+					},
+					"renewalDays": {
+						"label": "Süre uzatma günleri",
+						"hint": "Her süre uzatmada kaç gün eklenir."
+					}
+				}
+			},
+			"dueDateMode": {
+				"label": "İade tarihinin hesabı",
+				"hint": "Ödünç verme süresinin, kütüphanenin kapalı olduğu günlere göre nasıl sayıldığı."
+			},
+			"renewFrom": {
+				"label": "Süre uzatma nereden başlar",
+				"hint": "Süre uzatma günlerinin hangi günden itibaren sayıldığı."
+			},
+			"allowRenewalWhenOverdue": {
+				"label": "Son tarihten sonra da süre uzatma",
+				"hint": "Süresi dolmuş bir ödünç verme uzatılabilir."
+			},
+			"overdueNotice": {
+				"template": {
+					"label": "Hatırlatma şablonu",
+					"hint": "Hatırlatmaların yazdırma şablonunun adı (slips/templates içindeki klasör)."
+				},
+				"pageBreakPerGroup": {
+					"label": "Sınıf başına bir sayfa",
+					"hint": "Her sınıf ayrı bir kâğıtta, öğretmene verilmek üzere; yazdırırken de değiştirilebilir."
+				},
+				"minDays": {
+					"label": "Hatırlatmadan önceki gecikme günleri",
+					"hint": "Bir ödünç verme, yalnızca bu kadar gecikmeden sonra hatırlatmalarda görünür (0 = hemen)."
+				}
+			},
+			"blockIfOverdue": {
+				"label": "Gecikmiş kitabı olanlara yeni ödünç yok",
+				"hint": "Gecikmiş bir kitabı olan kişi, o kitap iade edilene kadar başka kitap alamaz."
+			},
+			"hardDueDate": {
+				"label": "En geç iade tarihi",
+				"hint": "Hiçbir ödünç verme bu tarihten sonra sona ermez (örneğin derslerin bitiş tarihi). Boş: sınır yok."
+			},
+			"receipts": {
+				"label": "Ödünç verme makbuzu",
+				"hint": "Ödünç masasında makbuzu yazdırmak için düğmeyi gösterir."
+			}
+		},
+		"calendar": {
+			"autoItalianHolidays": {
+				"label": "İtalya ulusal tatilleri",
+				"hint": "Ulusal tatiller (Paskalya dahil) elle yazılmadan kapalı günler sayılır."
+			}
+		},
+		"z3950": {
+			"defaultTarget": {
+				"label": "Varsayılan sunucu",
+				"hint": "Aramalarda kullanılan Z39.50 sunucusunun kimliği."
+			},
+			"timeoutMs": {
+				"label": "Bekleme süresi sınırı (ms)",
+				"hint": "Bir Z39.50 araması kaç milisaniye sonra bırakılır."
+			},
+			"maxRecordsIsbn": {
+				"label": "ISBN başına sonuç",
+				"hint": "Bir ISBN aranırken en fazla kaç kayıt okunur (aynı ISBN her baskı için bir kayda sahip olabilir): en eksiksiz olan açılır."
+			},
+			"maxRecordsSearch": {
+				"label": "Arama başına sonuç",
+				"hint": "Başlığa ya da yazara göre ararken en fazla kaç kayıt okunur."
+			}
+		},
+		"metadata": {
+			"providers": {
+				"label": "Veri kaynakları",
+				"hint": "ISBN ile ararken kitap verilerinin nereden geldiği: seçilen kaynaklar birlikte sorgulanır."
+			},
+			"cacheDays": {
+				"label": "Aramaların hatırlanma günleri",
+				"hint": "Daha önce yapılmış bir arama, yeniden sormadan kaç gün boyunca tekrar kullanılır."
+			},
+			"timeoutMs": {
+				"label": "Bekleme süresi sınırı (ms)",
+				"hint": "Yanıt vermeyen bir kaynak kaç milisaniye sonra bırakılır."
+			}
+		},
+		"performance": {
+			"profile": {
+				"label": "Bilgisayar",
+				"hint": "BiblioViva’nın çalıştığı bilgisayara uygun varsayılan ayarlar."
+			},
+			"sqliteCacheMb": {
+				"label": "Veritabanı önbelleği (MB)",
+				"hint": "Boş: bilgisayara göre (8, 16, 64 ya da 256 MB)."
+			},
+			"sqliteMmapMb": {
+				"label": "Veritabanı bellek eşlemesi (MB)",
+				"hint": "Boş: bilgisayara göre (0, 0, 0 ya da 512 MB)."
+			},
+			"walAutocheckpointPages": {
+				"label": "Kontrol noktasından önceki sayfalar",
+				"hint": "Boş: bilgisayara göre (500, 1000, 2000 ya da 4000)."
+			},
+			"imageConcurrency": {
+				"label": "Birlikte işlenen görseller",
+				"hint": "Fotoğraflar, kapaklar, sınıf fotoğrafları ve logo aynı anda işlenir; diğerleri sırasını bekler. Boş: bilgisayara göre (1, 1, 2 ya da 4)."
+			},
+			"yazConcurrency": {
+				"label": "Birlikte yapılan Z39.50 aramaları",
+				"hint": "Aynı anda yapılan Z39.50 aramaları; diğerleri sırasını bekler. Boş: bilgisayara göre (1, 1, 2 ya da 2)."
+			},
+			"heavyConcurrency": {
+				"label": "Seferde yapılan basımlar ve dışa aktarımlar",
+				"hint": "Aynı anda hazırlanan basılacak sayfalar (üye kartları, etiketler, gecikme hatırlatmaları, makbuzlar, raporlar) ve dışa aktarımlar (CSV, ODS, arşivler, yedekler); diğerleri sırasını bekler, böylece ödünç masası hızlı kalır. Boş: bilgisayara göre (1, 1, 2 ya da 4)."
+			},
+			"argon2MemoryMb": {
+				"label": "Parolaları denetlemek için bellek (MB)",
+				"hint": "Bundan sonra belirlenen parolalara uygulanır. Boş: her bilgisayarda 16 MB (sistem hiçbir zaman İnternete açık değildir)."
+			},
+			"smol": {
+				"label": "Bellek tasarrufu",
+				"hint": "Daha az bellek, işlemci için biraz daha fazla iş. Otomatik: bilgisayara göre (en küçük bilgisayar ve Raspberry Pi için evet). Yeniden başlatmadan sonra geçerli olur."
+			}
+		},
+		"cards": {
+			"defaultTemplate": {
+				"label": "Üye kartı şablonu",
+				"hint": "Bir üye türünün kendi şablonu olmadığında kullanılan yazdırma şablonunun adı (cards/templates içindeki klasör)."
+			},
+			"layout": {
+				"label": "Üye kartlarının basımı",
+				"hint": "Ön ve arka yüz yan yana (kısa kenarından katlanarak) ya da kâğıdın iki yüzüne, iki yüzü de basan bir yazıcıyla. Her basımda yeniden seçilir."
+			},
+			"duplex": {
+				"flip": {
+					"label": "Kâğıt nasıl çevrilir",
+					"hint": "Yazıcının arka yüz için kâğıdı nasıl çevirdiği: uzun kenarından (kitap gibi) ya da kısa kenarından. Basım penceresindeki seçimle aynı olmalıdır."
+				},
+				"backOffsetMm": {
+					"x": {
+						"label": "Arka yüzlerin kayması, yatay (mm)",
+						"hint": "Kalibrasyon bulur: arka yüzlerin ön yüzlerin arkasına düşmesi için ne kadar kaydırılacağı."
+					},
+					"y": {
+						"label": "Arka yüzlerin kayması, dikey (mm)",
+						"hint": "Kalibrasyon bulur."
+					}
+				}
+			},
+			"cardMm": {
+				"width": {
+					"label": "Genişlik (mm)",
+					"hint": "Standart üye kartı 85,6 mm genişliğindedir."
+				},
+				"height": {
+					"label": "Yükseklik (mm)",
+					"hint": "Standart üye kartı 53,98 mm yüksekliğindedir."
+				}
+			},
+			"bleedMm": {
+				"label": "Taşma payı (mm)",
+				"hint": "Tam sayfa görsellerin çevresinde, kesilip atılan ek kenar boşluğu."
+			},
+			"sheet": {
+				"paper": {
+					"label": "Kâğıt boyutu",
+					"hint": "Üye kartlarının basıldığı kâğıt."
+				},
+				"rows": {
+					"label": "Sayfa başına üye kartı",
+					"hint": "Kaç üye kartı (ön ve arka yüz) alt alta: A4 kâğıtta 4 ya da 5."
+				},
+				"marginMm": {
+					"label": "Sayfa kenar boşluğu (mm)",
+					"hint": "Kartların etrafındaki beyaz boşluk."
+				},
+				"gapMm": {
+					"label": "Kartlar arası boşluk (mm)",
+					"hint": "Bir kart ile sonrakisi arasındaki mesafe."
+				},
+				"foldMarks": {
+					"label": "Katlama işaretleri",
+					"hint": "Kenar boşluklarında ve kartlar arasında kısa kesikli çizgiler: ön ve arka yüzün katlanacağı yerler."
+				},
+				"cutMarks": {
+					"label": "Kesim işaretleri",
+					"hint": "Kesim işaretleri: kenar boşluklarında ve kartlar arasında her kartın kenarlarını uzatan kısa çizgiler; cetvel ve maket bıçağıyla kesmek için."
+				}
+			},
+			"validityMonths": {
+				"label": "Geçerlilik (ay)",
+				"hint": "Basılmış bir üye kartı kaç ay geçerlidir. Boş: süresiz."
+			},
+			"showPhoto": {
+				"label": "Kartta fotoğraf",
+				"hint": "Üyenin fotoğrafını karta basar."
+			}
+		},
+		"labels": {
+			"default": {
+				"label": "Varsayılan etiketler",
+				"hint": "“Etiketleri yazdır” seçildiğinde ne basılır."
+			},
+			"titleMaxChars": {
+				"label": "Başlık harfleri",
+				"hint": "Etiketlerdeki başlık bu uzunlukta kesilir."
+			},
+			"monochrome": {
+				"label": "Siyah beyaz yazıcı",
+				"hint": "Alçak sırt bantlarında renkli bant tarama desenine dönüşür."
+			},
+			"pair": {
+				"template": {
+					"label": "Şablon",
+					"hint": "Çiftin yazdırma şablonunun adı (labels/templates içindeki klasör)."
+				},
+				"stock": {
+					"label": "Etiket sayfası",
+					"hint": "Kullanılan etiket sayfasının kimliği (labels/stocks içindeki dosya)."
+				}
+			},
+			"barcode": {
+				"template": {
+					"label": "Şablon",
+					"hint": "Barkod etiketinin yazdırma şablonunun adı (labels/templates içindeki klasör)."
+				},
+				"stock": {
+					"label": "Etiket sayfası",
+					"hint": "Kullanılan etiket sayfasının kimliği (labels/stocks içindeki dosya)."
+				}
+			},
+			"spine": {
+				"template": {
+					"label": "Şablon",
+					"hint": "Sırt bandının yazdırma şablonunun adı (labels/templates içindeki klasör)."
+				},
+				"stock": {
+					"label": "Etiket sayfası",
+					"hint": "Kullanılan etiket sayfasının kimliği (labels/stocks içindeki dosya)."
+				}
+			}
+		},
+		"photos": {
+			"enabled": {
+				"label": "Üye fotoğrafları",
+				"hint": "Açık: her üye için çekilen ya da yüklenen fotoğraflar, sayım, kartlardaki fotoğraflar. Kapalı: hiçbir yerde fotoğraf yok ve kartlar fotoğrafsız; kayıtlı fotoğraflar kalır ve yeniden açıldığında geri gelir."
+			},
+			"required": {
+				"label": "Fotoğraf zorunlu",
+				"hint": "Açık: gösterge paneli, üye listesi ve yazdırma listeleri fotoğrafı olmayanları gösterir. Kapalı: hatırlatma yok, ama fotoğraflar yine çekilebilir, yüklenebilir ve kartlara basılabilir."
+			},
+			"width": {
+				"label": "Genişlik (px)",
+				"hint": "Fotoğraflar bu genişlikte kaydedilir."
+			},
+			"height": {
+				"label": "Yükseklik (px)",
+				"hint": "Fotoğraflar bu yükseklikte kaydedilir (ortadan kırpılarak)."
+			},
+			"format": {
+				"label": "Dosya biçimi",
+				"hint": "JPEG her yerde çalışır; WebP daha az yer kaplar."
+			},
+			"quality": {
+				"label": "Kalite",
+				"hint": "1 ile 100 arası: yükseldikçe dosyalar büyür."
+			},
+			"maxUploadBytes": {
+				"label": "En büyük yüklenebilir boyut (bayt)",
+				"hint": "Daha büyük dosya reddedilir."
+			},
+			"sheet": {
+				"maxUploadBytes": {
+					"label": "En büyük dosya boyutu (bayt)",
+					"hint": "Çok sayıda fotoğraf içeren (resimden sayım) bundan büyük bir görsel reddedilir."
+				},
+				"maxPixels": {
+					"label": "Korunan en uzun kenar (px)",
+					"hint": "Görsel, en uzun kenarı bu değeri aşmayana kadar küçültülür."
+				},
+				"maxFrames": {
+					"label": "En fazla fotoğraf",
+					"hint": "Görsel daha fazlasını içerdiğinde en keskin olanlar tutulur."
+				},
+				"minAspect": {
+					"label": "Bir fotoğrafın en küçük oranı",
+					"hint": "Yükseklik bölü genişlik: 1 kare, 1,33 bir 3:4 vesikalık fotoğraf."
+				},
+				"maxAspect": {
+					"label": "Bir fotoğrafın en büyük oranı",
+					"hint": "Yükseklik bölü genişlik: daha uzun çerçeveler fotoğraf sayılmaz."
+				}
+			}
+		},
+		"covers": {
+			"enabled": {
+				"label": "Kitap kapakları",
+				"hint": "Açık: çevrimiçi aranan, fotoğraflanan ya da yüklenen ve katalogda gösterilen kapaklar. Kapalı: hiçbir yerde kapak yok; kayıtlı kapaklar kalır ve yeniden açıldığında geri gelir."
+			},
+			"width": {
+				"label": "Genişlik (px)",
+				"hint": "Kapaklar bu genişlikte kaydedilir."
+			},
+			"maxHeight": {
+				"label": "En büyük yükseklik (px)",
+				"hint": "Çok uzun kapaklar küçültülür. Boş: sınır yok."
+			},
+			"format": {
+				"label": "Dosya biçimi",
+				"hint": "JPEG her yerde çalışır; WebP daha az yer kaplar."
+			},
+			"quality": {
+				"label": "Kalite",
+				"hint": "1 ile 100 arası: yükseldikçe dosyalar büyür."
+			},
+			"maxUploadBytes": {
+				"label": "En büyük yüklenebilir boyut (bayt)",
+				"hint": "Daha büyük dosya reddedilir."
+			},
+			"country": {
+				"label": "Ülke",
+				"hint": "Kapak sağlayıcılarının kataloğunun ülkesi (iki harf, örneğin IT)."
+			},
+			"minWidth": {
+				"label": "En küçük genişlik (px)",
+				"hint": "Bundan dar indirilen kapaklar atılır."
+			},
+			"autoFetch": {
+				"label": "Kapağı kendiliğinden ara",
+				"hint": "“Yeni kitap” formunda, kayıt kontrol edilirken kapak çevrimiçi aranır ve kayıtla birlikte saklanır; yanlışsa bir fotoğrafla değiştirilir."
+			},
+			"timeoutMs": {
+				"label": "Bekleme süresi sınırı (ms)",
+				"hint": "Yanıt vermeyen bir sağlayıcı kaç milisaniye sonra bırakılır."
+			}
+		},
+		"privacy": {
+			"auditRetentionMonths": {
+				"label": "İşlem günlüğünün saklanma süresi (ay)",
+				"hint": "Günlüğün daha eski satırları silinir."
+			}
+		},
+		"backup": {
+			"cron": {
+				"label": "Yedekleme saati",
+				"hint": "cron biçiminde: dakika, saat, gün, ay, haftanın günü (0 3 * * * = her gece saat 3’te)."
+			},
+			"catchUp": {
+				"label": "Kaçırılırsa başlangıçta yedekle",
+				"hint": "Yedekleme saatinde bilgisayar kapalıysa BiblioViva, bir sonraki açılıştan bir dakika sonra yedek alır: birden fazla gün geçmiş olsa bile yalnızca bir tane."
+			},
+			"keepDays": {
+				"label": "Saklama süresi (gün)",
+				"hint": "Daha eski yedekler silinir."
+			},
+			"offsite": {
+				"enabled": {
+					"label": "Dış kopya kullanımda",
+					"hint": "Yedeklerin ikinci kopyasının (rclone, başka bir disk ya da başka bir hizmet üzerinde) kullanımda olduğunu belirtir."
+				},
+				"remote": {
+					"label": "Kopyanın hedefi",
+					"hint": "Kopyanın gideceği yer: başka bir diskteki bir klasör (/offsite/biblioviva-backups, varsayılan seçim) ya da rclone’da yapılandırılmış bir hedef, ad:klasör biçiminde."
+				}
+			}
+		},
+		"security": {
+			"sessionDays": {
+				"label": "Oturum süresi (gün)",
+				"hint": "Kaç gün sonra parolanın yeniden istendiği."
+			},
+			"loginMaxAttempts": {
+				"label": "Giriş denemeleri",
+				"hint": "Zorunlu bir beklemeden önce kaç yanlış deneme yapılabilir."
+			},
+			"loginWindowMinutes": {
+				"label": "Çok fazla denemeden sonra bekleme (dakika)",
+				"hint": "Çok fazla yanlış denemeden sonra girişin kaç dakika boyunca engelli kalacağı."
+			}
+		},
+		"ui": {
+			"checkoutIdleSeconds": {
+				"label": "Ödünç masası boşta kalma süresi (saniye)",
+				"hint": "Bu saniye kadar okutma olmazsa masa yeni bir üye için hazır hale gelir."
+			}
+		}
+	},
+	"options": {
+		"library": {
+			"weekStart": {
+				"monday": "Pazartesi",
+				"sunday": "Pazar",
+				"saturday": "Cumartesi"
+			},
+			"schoolYearLabel": {
+				"span": "İki yıl (2026/2027)",
+				"start": "Başladığı yıl (2026)"
+			}
+		},
+		"school": {
+			"promotionWithinStage": {
+				"keep": "Sınıf öğrencileriyle birlikte ilerler",
+				"clear": "Öğrenciler sınıfsız kalır"
+			},
+			"promotionAcrossStages": {
+				"keep": "Sınıf öğrencileriyle birlikte ilerler",
+				"clear": "Öğrenciler sınıfsız kalır",
+				"ask": "Her öğrencinin sınıfı seçilir"
+			}
+		},
+		"barcodes": {
+			"patron": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"item": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"keyboardLayout": {
+				"it": "İtalyanca",
+				"es": "İspanyolca",
+				"de": "Almanca",
+				"fr": "Fransızca",
+				"uk": "İngilizce (Birleşik Krallık)",
+				"us": "İngilizce (Amerika Birleşik Devletleri)"
+			},
+			"cameraSound": {
+				"off": "Ses yok",
+				"till": "Kasa",
+				"scanner": "Okuyucu",
+				"confirm": "Onay",
+				"arpeggio": "Arpej"
+			}
+		},
+		"circulation": {
+			"dueDateMode": {
+				"datedue": "Takvim günleri, sonra ilk açık gün",
+				"calendar": "Yalnızca açık günler",
+				"days": "Takvim günleri, kapanışlar dikkate alınmadan"
+			},
+			"renewFrom": {
+				"today": "Süre uzatma günü",
+				"dueDate": "Mevcut iade tarihi"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"sbn": "OPAC SBN (Z39.50)",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books",
+				"sbn-json": "OPAC SBN (web servisi)"
+			}
+		},
+		"performance": {
+			"profile": {
+				"micro": "Minimal bilgisayar: yavaş bir işlemci ve 512 MB (Raspberry Pi Zero 2, en küçük sunucu)",
+				"small": "2 GB belleğe sahip Raspberry Pi 4 ya da küçük bir bilgisayar",
+				"medium": "Sabit diskli eski PC",
+				"large": "SSD diskli PC"
+			}
+		},
+		"cards": {
+			"sheet": {
+				"paper": {
+					"A4": "A4"
+				}
+			},
+			"layout": {
+				"side-by-side": "Ön ve arka yüz yan yana",
+				"duplex": "Kâğıdın iki yüzünde"
+			},
+			"duplex": {
+				"flip": {
+					"long-edge": "Uzun kenarından",
+					"short-edge": "Kısa kenarından"
+				}
+			}
+		},
+		"labels": {
+			"default": {
+				"pair": "Çift: sırt bandı ve etiket",
+				"barcode": "Yalnızca barkod etiketi",
+				"spine": "Yalnızca sırt bandı"
+			}
+		},
+		"photos": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		},
+		"covers": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		}
+	},
+	"groups": {
+		"barcodes": {
+			"patron": {
+				"title": "Üye kartları"
+			},
+			"item": {
+				"title": "Kitap nüshaları"
+			}
+		},
+		"circulation": {
+			"rules": {
+				"title": "Ödünç verme kuralları",
+				"student": {
+					"title": "Öğrenciler için kurallar"
+				},
+				"teacher": {
+					"title": "Öğretmenler için kurallar"
+				}
+			},
+			"overdueNotice": {
+				"title": "Gecikme hatırlatmaları"
+			}
+		},
+		"cards": {
+			"cardMm": {
+				"title": "Kart boyutu"
+			},
+			"sheet": {
+				"title": "Basım sayfası"
+			},
+			"duplex": {
+				"title": "İki yüze basım",
+				"backOffsetMm": {
+					"title": "Arka yüzlerin kayması"
+				}
+			}
+		},
+		"labels": {
+			"pair": {
+				"title": "Çift: sırt bandı ve etiket"
+			},
+			"barcode": {
+				"title": "Yalnızca barkod etiketi"
+			},
+			"spine": {
+				"title": "Yalnızca sırt bandı"
+			}
+		},
+		"backup": {
+			"offsite": {
+				"title": "Dış kopya"
+			}
+		},
+		"photos": {
+			"sheet": {
+				"title": "Birçok fotoğraf içeren görseller (resimden sayım)"
+			}
+		}
+	},
+	"overview": {
+		"reload": "Yeniden yükle",
+		"reloaded": "Yapılandırma yeniden yüklendi",
+		"reloadFailed": "Dosyalarda hatalar var: önceki yapılandırma kullanılmaya devam eder.",
+		"valid": "Yapılandırma geçerli: {{count}} {{count:plural; one:dosya; other:dosya;}}.",
+		"example": "Yapılandırma henüz oluşturulmadı: örnek değerler kullanılıyor.",
+		"warnings": "{{count}} {{count:plural; one:uyarı; other:uyarı;}}",
+		"diskErrors": "Yapılandırma dosyalarında hatalar var: düzeltilene kadar kütüphane önceki sürümle çalışmaya devam eder.",
+		"diskChanged": "Dosyalar elle değiştirildi: değişiklikleri kullanmak için “Yeniden yükle” düğmesine basın.",
+		"sections": "Ayarlar",
+		"alsoFrom": "ve {{count}} {{count:plural; one:başka dosya; other:başka dosya;}}",
+		"editors": "Görünüm, sınıflar ve şablonlar",
+		"templates": "Yazdırma şablonları",
+		"templatesDescription": "Üye kartlarının, etiketlerin ve hatırlatmaların şablon klasörleri, görselleriyle birlikte.",
+		"reports": "Rapor kitaplığı",
+		"reportsDescription": "Hazır ve okul raporları: dene, indir, yükle, sil.",
+		"appearance": "Görünüm ve dil",
+		"appearanceDescription": "Kütüphanenin adı ve logosu, renkler, dil ve gösterge panelinin bölümleri.",
+		"classes": "Sınıflar",
+		"classesDescription": "Okulun sınıfları ve öğretmen grupları: oluştur, yeniden adlandır, arşivle."
+	},
+	"section": {
+		"tabs": {
+			"form": "Ayarlar",
+			"json": "JSON",
+			"label": "Şu biçimde düzenle"
+		},
+		"file": "{{file}} dosyasına kaydedilir",
+		"alsoFrom": "Ayrıca: {{files}}",
+		"general": "Genel",
+		"default": "Varsayılan: {{value}}",
+		"defaultNone": "Varsayılan: değer yok",
+		"defaultAuto": "Varsayılan: otomatik",
+		"usesDefault": "Varsayılanı kullanır",
+		"reset": "Varsayılana dön",
+		"willReset": "Kaydedildiğinde varsayılana döner.",
+		"auto": "Otomatik",
+		"none": "Tarih yok",
+		"yes": "Evet",
+		"no": "Hayır",
+		"fixed": "Sabit değer",
+		"range": "{{min}} ile {{max}} arası.",
+		"min": "En az {{min}}.",
+		"max": "En fazla {{max}}.",
+		"save": "Kaydet",
+		"discard": "Değişiklikleri iptal et",
+		"saved": "Ayarlar kaydedildi",
+		"unsaved": "Kaydedilmemiş değişiklikler",
+		"invalid": "Kaydetmeden önce işaretli değerleri düzeltin.",
+		"errors": "Kaydetme başarılı olmadı:",
+		"inUse": "Kaydetme, hâlâ kullanılmakta olan bir şeyi kaldıracak:",
+		"inUseKinds": {
+			"classification": "kod {{code}}: {{count}} {{count:plural; one:kitap; other:kitap;}}",
+			"itemType": "nüsha türü {{code}}: {{count}} {{count:plural; one:nüsha; other:nüsha;}}",
+			"level": "düzey {{code}}: {{count}} {{count:plural; one:öğrenci; other:öğrenci;}} ya da sınıf",
+			"readingLevel": "okuma düzeyi {{code}}: {{count}} {{count:plural; one:kitap; other:kitap;}}"
+		},
+		"patternError": "Geçersiz biçim.",
+		"numberError": "Tam bir sayı yazın.",
+		"required": "Zorunlu.",
+		"elsewhereTitle": "Bu bölümün diğer ayarları",
+		"elsewhereHint": "Bunlar özel bir düzenleyicide ya da JSON sekmesinde değiştirilir.",
+		"openEditor": "Aç",
+		"jsonOnly": "Şimdilik JSON sekmesinde",
+		"editorNames": {
+			"taxonomy": "Sınıflandırma",
+			"appearance": "Görünüm ve dil",
+			"wizard": "İlk çalıştırma sihirbazı",
+			"history": "Geçmiş",
+			"settings": "Ayarlar",
+			"schoolLevels": "Kademeler ve yıllar"
+		},
+		"json": {
+			"hint": "{{file}} dosyasında yazılı bölüm. _ ile başlayan anahtarlar açıklamadır ve dosyada kalır.",
+			"label": "Bölümün JSON içeriği",
+			"parseError": "Metin geçerli bir JSON değil: {{message}}",
+			"notObject": "Bölüm, süslü parantezler içinde bir JSON nesnesi olmalıdır.",
+			"valid": "Sorun yok.",
+			"checking": "Denetleniyor…",
+			"issues": "Düzeltilecek sorunlar:"
+		},
+		"playSound": "Dinle"
+	},
+	"history": {
+		"title": "Yapılandırma geçmişi",
+		"hint": "Buradan yapılan her değişiklik, dokunduğu dosyaların önceki sürümünü saklar (son 50 değişiklik).",
+		"empty": "Yönetimden şimdiye kadar yapılan bir değişiklik yok.",
+		"columns": {
+			"when": "Ne zaman",
+			"what": "Ne",
+			"files": "Dosyalar"
+		},
+		"revert": "Geri yükle",
+		"revertTitle": "Dosyalar bu değişiklikten önceki hâline geri yüklensin mi?",
+		"revertDescription": "Yalnızca bu değişiklikle ayarlanan değerler eski hâline döner. Geri yükleme de bir değişikliktir: geçmişte kalır ve geri alınabilir.",
+		"reverted": "Önceki sürüm geri yüklendi",
+		"refused": "Bu değişiklik config.json dosyasını oluşturdu: geri alınamaz.",
+		"conflict": "Geri yüklenemez: bu değişiklikten sonra {{keys}} yeniden değişti.",
+		"notFound": "Değişiklik artık geçmişte değil.",
+		"newFile": "yeni",
+		"actions": {
+			"revert": "{{when}} tarihli değişikliğin geri yüklenmesi",
+			"theme": "Renkler",
+			"locale": "Dil",
+			"logo": "Kütüphane logosu",
+			"setup": "İlk kurulum",
+			"section": "“{{section}}” bölümü",
+			"other": "Değişiklik ({{action}})"
+		}
+	},
+	"archive": {
+		"title": "Yapılandırma arşivi",
+		"hint": "Tüm yapılandırma tek bir dosyada: ayarlar, yazdırma şablonları, etiket sayfaları, piktogramlar, logo, raporlar ve diller (geçmiş hariç). Bir kopyasını tutmak ya da başka bir kuruluma taşımak için kullanılır. “Yapılandırmayı içe aktar” ayrıca bir yedeği ya da “Her şeyi dışa aktar” arşivini de kabul eder: bunlardan yalnızca yapılandırmayı alır, kütüphanenin verileri olduğu gibi kalır.",
+		"export": "Yapılandırmayı dışa aktar",
+		"import": "Yapılandırmayı içe aktar",
+		"checking": "Arşiv denetleniyor…",
+		"from": "{{date}} tarihli arşiv (sürüm {{version}})",
+		"fromLibrary": "{{date}} tarihli “{{library}}” arşivi (sürüm {{version}})",
+		"files": "{{added}} {{added:plural; one:yeni dosya; other:yeni dosya;}}, {{changed}} değişmiş, {{removed}} kaldırılmış, {{unchanged}} aynı.",
+		"fileList": "Dosya listesi",
+		"added": "yeni",
+		"changed": "değişmiş",
+		"removed": "kaldırılmış",
+		"sameValues": "Ayarlar aynı kalır.",
+		"sections": "Değişecek: {{sections}}.",
+		"errorsTitle": "Arşivde sorunlar var: içe aktarmadan önce düzeltilmeleri gerekir.",
+		"apply": "İçe aktar",
+		"confirmTitle": "Yapılandırma arşivdekiyle değiştirilsin mi?",
+		"confirmDescription": "Mevcut dosyalar geçmişte kalır: “Geri yükle” önceki yapılandırmayı geri getirir. Kütüphanenin verileri (kitaplar, üyeler, ödünç vermeler) değişmez.",
+		"imported": "Yapılandırma içe aktarıldı",
+		"failed": "İçe aktarma başarılı olmadı",
+		"errors": {
+			"too_large": "Arşiv çok büyük (en fazla {{maxMb}} MB).",
+			"not_zip": "Dosya geçerli bir ZIP arşivi değil.",
+			"not_archive": "Dosya bir BiblioViva arşivi değil.",
+			"too_many_files": "Arşivde çok fazla dosya var.",
+			"unsafe_path": "Arşivde izin verilmeyen bir yol var: {{name}}",
+			"link": "Arşivde izin verilmeyen bir bağlantı var: {{name}}",
+			"unknown_file": "Arşivde yapılandırmaya ait olmayan bir dosya var: {{name}}",
+			"no_config": "Arşivde yapılandırma yok (yalnızca kütüphane verileri var): Yönetim → Yedekleme bölümünden geri yüklenir."
+		},
+		"exportSome": "Seçilen bölümleri dışa aktar",
+		"chooseExport": "Dışa aktarılacakları seçin"
+	},
+	"blocks": {
+		"problems": {
+			"codeRequired": {
+				"itemTypes": "Kod zorunludur.",
+				"sections": "Şube zorunludur."
+			},
+			"codeFormat": {
+				"itemTypes": "Harfler, rakamlar, nokta, kısa çizgi veya alt çizgi (en fazla 32).",
+				"sections": "Büyük harfler veya rakamlar, en fazla 8."
+			},
+			"codeTaken": {
+				"itemTypes": "Kod tekrarlanıyor.",
+				"sections": "Şube tekrarlanıyor."
+			},
+			"labelRequired": {
+				"itemTypes": "Ad zorunludur.",
+				"sections": "Ad zorunludur."
+			}
+		},
+		"itemTypes": {
+			"title": "Nüsha türleri",
+			"hint": "Kitap, DVD, başvuru kitabı…: her nüshanın türü ödünç verme kurallarını belirler. Bir kodu değiştirmek, nüshalarını yeni koda taşır.",
+			"code": "Kod",
+			"label": "Ad",
+			"notForLoan": "Yalnızca başvuru",
+			"add": "Tür ekle",
+			"saved": "Nüsha türleri kaydedildi"
+		},
+		"move": {
+			"title": "Nereye gidecekler?",
+			"hint": {
+				"copies": "Kaldırılan bazı türlerin hâlâ nüshaları var: nüshaların taşınacağı türü seçin.",
+				"students": "Kaldırılan bazı şubelerde hâlâ öğrenciler var: öğrencilerin taşınacağı şubeyi seçin."
+			},
+			"row": {
+				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:nüsha; other:nüsha;}}. Şuraya taşı",
+				"students": "{{code}}: {{count}} {{count:plural; one:öğrenci; other:öğrenci;}}. Şuraya taşı"
+			},
+			"choose": "Seçin…",
+			"used": {
+				"copies": "Nüshalar",
+				"students": "Öğrenciler"
+			},
+			"count": {
+				"copies": "{{count}} {{count:plural; one:nüsha; other:nüsha;}}",
+				"students": "{{count}} {{count:plural; one:öğrenci; other:öğrenci;}}"
+			},
+			"done": {
+				"copies": "{{count}} {{count:plural; one:nüsha taşındı; other:nüsha taşındı;}}.",
+				"students": "{{count}} {{count:plural; one:öğrenci taşındı; other:öğrenci taşındı;}}."
+			}
+		},
+		"barcodes": {
+			"title": "Numaralandırma ve önizleme",
+			"counter": "Yeni kartların numaraları",
+			"afterLegacy": "Mevcut kartların en yüksek numarasından sonra",
+			"from": "Bu numaradan itibaren:",
+			"fromNumber": "Yeni kartların ilk numarası",
+			"counterHint": "Kullanılmış bir numara bir daha geri gelmez: seçilen numara daha düşükse sayım kaldığı yerden devam eder. Yeni nüshaların numarasında her zaman yıl ve sıra numarası bulunur.",
+			"nextCard": "Sonraki kart: {{code}}",
+			"nextItem": "Sonraki nüsha: {{code}}",
+			"overrides": "Bu yazdırma şablonları barkod türünü kendileri seçer, bu yüzden yukarıdaki ayar bunlar için geçerli değildir: {{templates}}.",
+			"saved": "Numaralandırma kaydedildi"
+		},
+		"itemTypeRules": {
+			"title": "Nüsha türüne göre kurallar",
+			"hint": "Her nüsha türü bir kuralı değiştirebilir: örneğin DVD'ler 5 gün için. Kurallar hem öğrenciler hem öğretmenler için geçerlidir.",
+			"inherit": "Boş: öğrenci ve öğretmen kuralı geçerlidir (grilerle: öğrenciler / öğretmenler).",
+			"saved": "Nüsha türüne göre kurallar kaydedildi"
+		},
+		"calendar": {
+			"title": "Kütüphane takvimi",
+			"weekly": "Her hafta kapalı günler",
+			"weeklyHint": "Renkle işaretlenen günler her hafta kapalıdır.",
+			"previous": "Önceki eğitim öğretim yılı",
+			"next": "Sonraki eğitim öğretim yılı",
+			"addNational": "{{year}} yılının resmî tatillerini ekle",
+			"autoOn": "Resmî tatiller zaten otomatik olarak kapalıdır. Açık bir güne tıklanırsa kapanır; elle kapatılmış bir gün ise yeniden açılır.",
+			"clickHint": "Açık bir güne tıklanırsa kapanır; elle kapatılmış bir gün ise yeniden açılır.",
+			"open": "açık",
+			"legend": {
+				"open": "Açık",
+				"weekly": "Haftalık kapanış",
+				"national": "Resmî tatil",
+				"holiday": "Kapalı (burada seçildi)",
+				"range": "Kapalı dönem"
+			},
+			"ranges": "Kapalı dönemler",
+			"from": "Başlangıç",
+			"to": "Bitiş",
+			"reason": "Neden",
+			"badRange": "Bitiş, başlangıçtan önce.",
+			"addRange": "Dönem ekle",
+			"saved": "Takvim kaydedildi"
+		},
+		"cardTemplates": {
+			"title": "Üye türüne göre şablon",
+			"hint": "Öğrenciler ve öğretmenler kartlarını, burada başka bir şablon seçilmedikçe, yukarıda seçilen varsayılan şablonla yazdırır.",
+			"student": "Öğrenci kartı",
+			"teacher": "Öğretmen kartı",
+			"asDefault": "Varsayılanla aynı ({{name}})",
+			"cutLines": "Her kartta renkli çerçeve",
+			"cutLinesOn": "Her karta renkli bir çerçeve çizer (genellikle gerekmez: kesme işaretleri yeterlidir)",
+			"color": "Renk",
+			"width": "Kalınlık (mm)",
+			"sample": "Kesme çizgisi örneği",
+			"saved": "Kart şablonları kaydedildi"
+		},
+		"stocks": {
+			"title": "Yapışkanlı etiket tabakaları",
+			"hint": "Üzerine yazdırılan etiket tabakalarının ölçüleri. Sağdaki çizim her sayıyı izler: tabakanın dışına taşan etiketler kırmızıdır. Kaydettikten sonra deneme sayfasını normal kağıda yazdırın ve etiket tabakasının üzerine koyun.",
+			"new": "Yeni",
+			"toFix": "Düzeltilecek",
+			"add": "Tabaka ekle",
+			"id": "Kod",
+			"name": "Ad",
+			"labelWidth": "Etiket genişliği (mm)",
+			"labelHeight": "Etiket yüksekliği (mm)",
+			"columns": "Sütunlar",
+			"rows": "Satırlar",
+			"marginTop": "Üst kenar boşluğu (mm)",
+			"marginLeft": "Sol kenar boşluğu (mm)",
+			"gapX": "Sütunlar arası boşluk (mm)",
+			"gapY": "Satırlar arası boşluk (mm)",
+			"radius": "Yuvarlak köşeler (mm)",
+			"calibration": "Deneme sayfasını yazdır",
+			"inUse": "Kullanıldığı yer: {{jobs}}. Silmek için önce yukarıdaki ayarlarda başka bir tabaka seçin.",
+			"saveFirst": "Deneme sayfasını yazdırmak için değişiklikleri kaydedin.",
+			"drawing": "{{columns}} {{columns:plural; one:sütun; other:sütun;}} ve {{rows}} {{rows:plural; one:satır; other:satır;}} etiket içeren A4 tabakasının çizimi",
+			"caption": "A4 tabakası · {{count}} {{count:plural; one:etiket; other:etiket;}}",
+			"saved": "Etiket tabakaları kaydedildi",
+			"problems": {
+				"id": "Kod harfler, rakamlar, kısa çizgiler ve alt çizgiler içerebilir.",
+				"duplicate": "Başka bir tabakada bu kod zaten var.",
+				"name": "Bir ad yazın.",
+				"numbers": "Ölçüleri kontrol edin: 0 ve üzeri sayılar, sıfırdan büyük etiketler, tam sütun ve satırlar.",
+				"width": "Etiketler {{mm}} mm yer kaplıyor: A4 tabakasının genişliğinden (210 mm) fazla.",
+				"height": "Etiketler {{mm}} mm yer kaplıyor: A4 tabakasının yüksekliğinden (297 mm) fazla.",
+				"pairRows": "Çift için satır sayısı çift olmalıdır (sırt bandı ve etiket üst üste)."
+			},
+			"errors": {
+				"duplicate": "İki tabakanın kodu aynı: {{details}}.",
+				"inUse": "Yazdırmak için kullanılan bir tabaka silinemez: {{details}}."
+			}
+		},
+		"backupSchedule": {
+			"title": "Sonraki yedeklemeler",
+			"invalid": "Saat geçerli bir cron ifadesi değil (beş alan: dakika, saat, gün, ay, haftanın günü).",
+			"never": "Bu ifadeyle yedekleme hiç başlamaz.",
+			"hint": "Saatler kütüphanenin saat dilimindedir ({{timezone}}). O saatte bilgisayar kapalıysa, “Kaçırılırsa açılışta yedekle” seçeneğiyle yedekleme bir sonraki açılışta yapılır; saat açık olma saatleri içine de taşınabilir."
+		},
+		"coverProviders": {
+			"off": "Kapaklar kapalıdır (yukarıdaki Kitap kapakları): hiçbir kaynağa sorulmaz.",
+			"title": "Kapaklar nereden alınır",
+			"hint": "Kaynaklar, kapağı bulana kadar bu sırayla denenir; her biri ayrı ayrı kapatılabilir.",
+			"names": {
+				"amazon": "Amazon",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books"
+			},
+			"googleKey": "Google Books bir API anahtarı gerektirir: “Kitap verileri” ayarlarına yazın; yoksa bu kaynak atlanır.",
+			"saved": "Kapak kaynakları kaydedildi"
+		},
+		"z3950Targets": {
+			"title": "Z39.50 katalogları",
+			"hint": "Kitap verilerinin alındığı kataloglar. “Bağlantıyı dene” girilen değerlerle gerçek bir arama yapar, değerleri kaydetmeden.",
+			"id": "Kod",
+			"name": "Ad",
+			"host": "Sunucu adresi",
+			"port": "Bağlantı noktası",
+			"database": "Veritabanı",
+			"syntax": "Kayıt biçimi",
+			"charset": "Karakter kodlaması",
+			"elements": "Öğeler",
+			"elementsHint": "Genellikle F (tam kayıt).",
+			"add": "Katalog ekle",
+			"isDefault": "Bu varsayılan katalogdur: silmeden önce yukarıdan başka bir katalog seçin.",
+			"saved": "Kataloglar kaydedildi",
+			"problems": {
+				"id": "Kod benzersiz olmalıdır: harfler, rakamlar, kısa çizgiler.",
+				"required": "Ad, veritabanı, kodlama ve öğeler zorunludur.",
+				"host": "Adres harfler, rakamlar, noktalar ve kısa çizgiler içerebilir.",
+				"words": "Veritabanı, kodlama ve öğeler her biri tek bir sözcük olmalıdır, boşluksuz.",
+				"port": "Bağlantı noktası 1 ile 65535 arasında bir sayıdır."
+			},
+			"test": {
+				"button": "Bağlantıyı dene",
+				"running": "Deneniyor…",
+				"ok": "Katalog yanıt veriyor: {{hits}} {{hits:plural; one:sonuç; other:sonuç;}}, {{ms}} ms içinde.",
+				"unreachable": "Katalog yanıt vermiyor: adresi, bağlantı noktasını ve veritabanını kontrol edin.",
+				"timeout": "Katalog zamanında yanıt vermedi.",
+				"protocol": "Katalog bir hatayla yanıt verdi: veritabanını, biçimi ve kodlamayı kontrol edin.",
+				"spawn": "Sunucuda yaz-client programı kullanılabilir değil."
+			}
+		},
+		"barcodeFormats": {
+			"title": "Kod biçimleri",
+			"hint": "Yeni nüshaların ve yeni kartların kodlarının nasıl yapılacağı. Zaten basılmış kodlar çalışmaya devam eder: değiştirilen bir biçim önceki biçimler arasında kalır.",
+			"preset": "Hazır biçimler",
+			"presets": {
+				"standard": "Standart (2026-E0267, U012345)",
+				"classic": "Klasik (2026-02678, 0000012344)",
+				"prefix": "Önünde harf (L-2602670, T0123455)",
+				"custom": "Özel"
+			},
+			"check": "Kontrol karakteri",
+			"checks": {
+				"mod23": "Harf (mod 23)",
+				"damm": "Rakam (Damm)",
+				"luhn": "Rakam (Luhn)"
+			},
+			"checkHint": "Yanlış okunan veya yazılan bir kodu fark eder. Harf en güvenli seçenektir ve kartları bir bakışta nüsha kodlarından ayırır.",
+			"advanced": "Gelişmiş: biçimleri tek tek",
+			"tokens": "YYYY veya YY = yıl, N = sıra numarasının rakamları, C = kontrol karakteri, {lib} = kütüphane kodu, - = kısa çizgi, tırnak içinde büyük harfler ('T'). I, O ve Q harfleri kullanılamaz.",
+			"pattern": {
+				"item": "Nüshaların biçimi",
+				"patron": "Kartların biçimi"
+			},
+			"libraryCode": "Kütüphane kodu",
+			"libraryCodeHint": "Yalnızca ayrı kurulumları olan birden fazla kütüphanenin farklı kodlara sahip olması gerektiğinde: biçimde {lib} ile birlikte kullanılır.",
+			"plainMaxLength": "Eski düz numaraların rakam sayısı",
+			"plainHint": "Önceki sistemin biçimsiz kart ve nüsha numaralarının en fazla kaç rakamı olduğu (yoksa 0).",
+			"plainLongest": "Arşivdeki en uzun düz numara {{digits}} {{digits:plural; one:rakam; other:rakam;}} içeriyor.",
+			"distinct": "Nüshalar ve kartlar karıştırılamaz.",
+			"confusable": "Bu biçimlerle nüshalar ve kartlar karıştırılabilir:",
+			"warnings": "{{count}} {{count:plural; one:uyarı; other:uyarı;}}",
+			"inUse": "{{pattern}} biçiminin arşivde hâlâ {{count}} {{count:plural; one:kod; other:kod;}} var: kaldırılamaz.",
+			"kinds": {
+				"item": "nüshalar",
+				"card": "kartlar"
+			},
+			"heading": {
+				"item": "Nüshalar",
+				"patron": "Kartlar"
+			},
+			"examples": "Yeni kodların örnekleri:",
+			"currentCount": "Bu biçimdeki kodlar arşivde: {{count}}",
+			"count": "{{count}} {{count:plural; one:kod; other:kod;}}",
+			"noCheck": "kontrolsüz",
+			"remove": "Kaldır",
+			"retired": "Eskiden kullanılan biçimler",
+			"legacy": "Önceki sistemin kodları",
+			"noLegacy": "Yok.",
+			"addLegacy": "Eski biçim ekle",
+			"try": "Bir kod dene",
+			"tryHint": "Buraya yazılan veya okutulan bir kod, kaydedilmeden önce bile yukarıdaki biçimlerle tanınır.",
+			"tried": {
+				"item": "{{value}}: bir nüshanın kodu",
+				"legacy_item": "{{value}}: eski bir nüshanın kodu",
+				"card": "{{value}}: bir kart numarası",
+				"isbn": "{{value}}: ISBN",
+				"ambiguous": "{{value}}: eski bir düz numara (nüshalar ve kartlar arasında aranır)",
+				"invalid": "{{value}}: tanınmadı veya kontrol karakteri yanlış"
+			},
+			"saved": "Kod biçimleri kaydedildi",
+			"patternErrors": {
+				"empty": "Boş biçim ({{kind}})",
+				"tooLong": "{{pattern}}: çok uzun",
+				"badToken": "{{pattern}}: beklenmeyen bir sembol içeriyor",
+				"badLetter": "{{pattern}}: harfe izin verilmiyor (yalnızca büyük harf, I, O ve Q hariç)",
+				"unclosedQuote": "{{pattern}}: kapanış tırnağı eksik",
+				"year": "{{pattern}}: yıl YYYY veya YY biçiminde yazılır",
+				"twoYears": "{{pattern}}: yıl iki kez geçiyor",
+				"twoCounters": "{{pattern}}: sıra numarası tek bir N grubu olmalıdır",
+				"noCounter": "{{pattern}}: sıra numarası (N) eksik",
+				"twoChecks": "{{pattern}}: kontrol karakteri iki kez geçiyor",
+				"checkWithoutAlgorithm": "{{pattern}}: bir C var ama hiçbir kontrol seçilmedi",
+				"algorithmWithoutCheck": "{{pattern}}: C eksik; C, kontrol karakterinin yeridir",
+				"noLibraryCode": "{{pattern}}: {lib} kullanıyor ama kütüphane kodu boş",
+				"badLibraryCode": "Kütüphane kodu yalnızca rakam ve büyük harf içerebilir (I, O ve Q hariç)"
+			},
+			"issues": {
+				"overlap": "{{pattern}} ({{kind}}) ve {{other}} ({{otherKind}}) aynı kodu verebilir, örneğin {{example}}",
+				"overlapWithoutDash": "{{pattern}} ({{kind}}) ve {{other}} ({{otherKind}}) tarayıcı kısa çizgiyi kaçırırsa karışır, örneğin {{example}}",
+				"overlapLegacy": "Eski {{pattern}} ({{kind}}) ve {{other}} ({{otherKind}}) kodları aynı biçimde: ikisinde de aranırlar",
+				"overlapPlain": "{{pattern}} ({{kind}}) eski bir düz numaraya eşit bir kod verebilir, örneğin {{example}}",
+				"overlapIsbn": "{{pattern}} ({{kind}}) bir ISBN'e eşit bir kod verebilir, örneğin {{example}}",
+				"overlapIsbn10": "{{pattern}} ({{kind}}) kısa çizgisiz yazılmış bir ISBN-10 biçimindedir: kart numarası geçerli olur",
+				"lookAlike": "{{pattern}} ({{kind}}) ve {{other}} ({{otherKind}}) birbirine fazla benziyor: en az 2 karakterlik bir uzunluk farkı, başka bir yerde bir harf ya da başka bir yerde bir kısa çizgi gerekir"
+			}
+		},
+		"schoolLevels": {
+			"title": "Kademeler ve yıllar",
+			"hint": "Okulun yılları, okunma sırasına göre ve kademelere ayrılmış. Kod öğrencilerde kalır: kullanımdaki bir yılı kaldırmak ya da kodunu değiştirmek, öğrencilerinin ve sınıflarının nereye taşınacağını sorar.",
+			"preset": "Hazır model",
+			"presetApply": "Bu modeli kullan",
+			"presetHint": "Aşağıdaki kademe ve yılların yerine modeldekiler konur; “Kaydet” basılana kadar hiçbir şey kaydedilmez.",
+			"custom": "Özel",
+			"stages": "Kademeler",
+			"stageCode": "Kod",
+			"stageName": "Ad",
+			"stageLabel": "Sınıfın nasıl yazıldığı",
+			"addStage": "Kademe ekle",
+			"stageLabelHint": "Bir kademenin “Sınıfın nasıl yazıldığı” alanı, okulun ayarı yerine kendi yıllarında geçerlidir; {group} yoksa sınıf yalnızca yılın adından oluşur (Q1, şubesiz). Boş bırakılırsa okulun geri kalanı gibi olur.",
+			"levels": "Yıllar",
+			"levelCode": "Kod",
+			"levelLabel": "Sınıfta",
+			"levelName": "Ad",
+			"levelStage": "Kademe",
+			"levelNext": "Sonraki yıl",
+			"levelAliases": "Diğer adlar",
+			"levelAliasesPlaceholder": "Virgülle ayrılmış",
+			"nextFollowing": "Bir sonraki yıl",
+			"nextLeaves": "Okuldan ayrılır",
+			"nextChoices": "Yıllar arasında seçim",
+			"choiceAdd": "Bir seçim ekle…",
+			"choiceRemove": "{{name}} kaldır",
+			"choiceDefault": "varsayılan",
+			"addLevel": "Yıl ekle",
+			"inUse": "Kullanımda",
+			"moveUp": "Yukarı taşı",
+			"moveDown": "Aşağı taşı",
+			"example": "Örnek: {{label}}",
+			"saved": "Kademeler ve yıllar kaydedildi",
+			"problems": {
+				"code": "Kodlar: harfler, rakamlar ve kısa çizgi (bir yıl için en fazla 8), hepsi farklı olmalı.",
+				"required": "Etiket ve ad zorunludur.",
+				"template": "Bir kademenin “Sınıfın nasıl yazıldığı” alanında {level} bulunmalıdır.",
+				"stageUsed": "Yılları olan bir kademe kaldırılamaz.",
+				"structure": "Yapı geçerli değil: {{details}}"
+			},
+			"move": {
+				"title": "Öğrenciler ve sınıflar nereye gidecek?",
+				"hint": "Kaldırılan bazı yıllarda hâlâ öğrenciler veya sınıflar var. Her biri için taşınacağı yılı seçin; ödünç verme işlemleri yapıldıkları sınıfı korur.",
+				"level": "{{name}}: {{pupils}} {{pupils:plural; one:öğrenci; other:öğrenci;}}, {{classes}} {{classes:plural; one:sınıf; other:sınıf;}}",
+				"choose": "Yılı seçin…",
+				"confirm": "Taşı ve kaydet",
+				"done": "{{pupils}} {{pupils:plural; one:öğrenci; other:öğrenci;}} ve {{classes}} {{classes:plural; one:sınıf; other:sınıf;}} taşındı."
+			}
+		}
+	},
+	"templates": {
+		"title": "Yazdırma şablonları",
+		"hint": "Kartların, etiketlerin, makbuzların ve hatırlatmaların şablon klasörleri. BiblioViva ile birlikte gelenler özelleştirilebilir (aynı adla bir kopya oluşturulur) veya başka bir adla çoğaltılabilir; bir kopyanın resimleri ve yazı tipleri buradan yüklenir. Her işlem yapılandırma geçmişinde görünür ve geri alınabilir.",
+		"source": {
+			"builtin": "BiblioViva ile birlikte gelen",
+			"customised": "Özelleştirilmiş",
+			"added": "Eklenen"
+		},
+		"broken": "Hatalar var",
+		"customise": "Özelleştir",
+		"duplicate": "Çoğalt",
+		"rename": "Yeniden adlandır",
+		"restore": "Orijinale dön",
+		"usedBy": "Kullanan: {{settings}}.",
+		"unused": "Hiçbir ayar tarafından kullanılmıyor.",
+		"assets": "Resimler ve yazı tipleri ({{count}})",
+		"noAssets": "Dosya yok.",
+		"usedIn": "{{files}} içinde kullanılıyor",
+		"assetUnused": "kullanılmıyor",
+		"upload": "Dosya yükle",
+		"uploadHint": "PNG, JPEG, WebP, GIF, SVG veya WOFF2, WOFF, TTF yazı tipleri; en fazla {{maxMb}} MB.",
+		"builtinAssets": "BiblioViva ile birlikte gelen bir şablonun resimlerini değiştirmek için önce şablonu özelleştirin.",
+		"files": "Şablon dosyaları ({{count}})",
+		"filesHint": "HTML ve CSS, görsel şablon düzenleyicisiyle düzenlenir.",
+		"done": {
+			"duplicate": "Şablon çoğaltıldı",
+			"customise": "Şablon özelleştirildi: kopyası değiştirilebilir",
+			"rename": "Şablonun adı değiştirildi",
+			"delete": "Şablon silindi",
+			"upload": "{{name}} yüklendi",
+			"removeAsset": "{{name}} silindi"
+		},
+		"errors": {
+			"notFound": "Şablon veya dosya bulunamadı.",
+			"badName": "Geçersiz ad: küçük harfler, rakamlar, kısa çizgiler ve alt çizgiler.",
+			"exists": "Bu adla bir şablon zaten var.",
+			"builtin": "BiblioViva ile birlikte gelen şablonlar değiştirilmez: özelleştirin veya çoğaltın.",
+			"inUse": "Şablon şunlar tarafından kullanılıyor: {{details}}. Önce başka bir şablon seçin.",
+			"badAsset": "“{{name}}” izin verilen bir dosya değil (PNG, JPEG, WebP, GIF, betik içermeyen SVG, WOFF2, WOFF, TTF).",
+			"assetTooLarge": "“{{name}}” çok büyük: en fazla {{maxMb}} MB.",
+			"assetInUse": "Dosya şurada kullanılıyor: {{details}}."
+		},
+		"dialog": {
+			"name": "Klasör adı",
+			"nameHint": "Küçük harfler, rakamlar, kısa çizgiler ve alt çizgiler.",
+			"badName": "Yalnızca küçük harfler, rakamlar, kısa çizgiler ve alt çizgiler kullanın.",
+			"taken": "Bu adla bir şablon zaten var.",
+			"duplicate": {
+				"title": "{{name}} şablonunu çoğalt",
+				"hint": "Tüm dosyalarıyla birlikte, değiştirilebilir bir kopya oluşturulur.",
+				"confirm": "Çoğalt"
+			},
+			"customise": {
+				"title": "{{name}} şablonunu özelleştir",
+				"hint": "Aynı adla bir kopya oluşturulur ve orijinalin yerini alır; orijinal, geri dönmek için kullanılabilir kalır.",
+				"confirm": "Özelleştir"
+			},
+			"rename": {
+				"title": "{{name}} şablonunu yeniden adlandır",
+				"hint": "Bu şablonu kullanan ayarlar yeni adı izler.",
+				"confirm": "Yeniden adlandır"
+			},
+			"delete": {
+				"title": "{{name}} şablonunu sil",
+				"hint": "Klasör ve dosyaları silinir; BiblioViva ile birlikte gelen bir şablonun kopyasıysa orijinal yeniden kullanılır. Geçmişten geri alınabilir.",
+				"confirm": "Sil"
+			}
+		},
+		"edit": "Düzenle"
+	},
+	"languages": {
+		"title": "Dil paketleri",
+		"hint": "BiblioViva'yı başka bir dilde kullanmak için: İngilizce veya İtalyanca örneği indirin, JSON dosyalarındaki metinleri çevirin; anahtarları ve çift süslü parantez içindeki yer tutucuları değiştirmeden bırakın, dilin adını pack.json dosyasına yazın ve zip dosyasını yükleyin. Hatalı bir paket yüklenmez; eksik metinler İngilizce görünür. Dil, Görünüm ve dil bölümünde seçilir.",
+		"none": "Yüklü paket yok.",
+		"valid": "Geçerli",
+		"errorsCount": "{{count}} {{count:plural; one:hata; other:hata;}}",
+		"warnings": "{{count}} {{count:plural; one:eksik veya fazla metin; other:eksik veya fazla metin;}}",
+		"inUse": "Kullanımda",
+		"download": "İndir",
+		"report": "Kontrol sonucu",
+		"upload": "Paket yükle (zip)",
+		"uploadHint": "pack.json ve dil dosyalarını içeren bir zip, dil koduna göre adlandırılmış bir klasörün içinde (örneğin de/); en fazla {{maxMb}} MB.",
+		"examples": "İndirilebilecek örnekler:",
+		"installed": "Dil yüklendi: {{name}}",
+		"removed": "Paket silindi",
+		"removeTitle": "{{code}} paketi silinsin mi?",
+		"removeHint": "Dil klasörü silinir. Yapılandırma geçmişinden geri alınabilir.",
+		"errors": {
+			"notAZip": "Dosya bir zip değil.",
+			"tooLarge": "Zip çok büyük: en fazla {{maxMb}} MB.",
+			"badLayout": "Zip yalnızca dilin .json dosyalarını içermelidir; dil koduna göre adlandırılmış tek bir klasörün içinde. {{details}}",
+			"badCode": "Geçersiz dil kodu: {{details}} (örneğin de, fr, pt-BR).",
+			"builtIn": "İngilizce ve İtalyanca zaten dahildir ve değiştirilmez.",
+			"invalid": "Paketin hataları var ve yüklenmedi: {{details}}",
+			"inUse": "Bu, kullanımdaki dil: önce başka bir dil seçin.",
+			"notFound": "Paket bulunamadı.",
+			"unavailable": "Dil listesi veya paket indirilemedi. İnternet bağlantısını kontrol edin ya da zip dosyasını elle yükleyin.",
+			"checksum": "İndirilen paket bozuk ve yüklenmedi. Yeniden deneyin."
+		},
+		"release": {
+			"title": "Yüklenecek diller",
+			"hint": "BiblioViva'nın bu sürümüyle yayımlanan diller. Liste internetten okunur ve her paket yüklenmeden önce denetlenir.",
+			"percent": "%{{percent}} çevrildi",
+			"machine": "Otomatik çeviri, bir ana dil konuşanı tarafından okunmadı",
+			"reviewed": "Çeviri bir ana dil konuşanı tarafından okundu",
+			"install": "Yükle",
+			"again": "Yeniden yükle",
+			"installedBadge": "Yüklü",
+			"page": "Sürüm sayfası: paketleri elle indirip aşağıya yüklemek için",
+			"unavailable": "Dil listesine ulaşılamıyor: internet bağlantısı yok ya da bu sürümün henüz bir listesi yok. Aşağıya zip yüklemek yine de çalışır."
+		}
+	},
+	"reports": {
+		"title": "Rapor kitaplığı",
+		"hint": "BiblioViva ile birlikte gelen raporlar ve okulun kendi raporları. Birini özelleştirmek için indirin, değiştirin ve yükleyin: aynı kodla (id) orijinalin yerini alır. Yüklenmeden önce biçim, sorgunun güvenliği ile kullandığı tablo ve sütunlar denetlenir. Rapor yazma kılavuzu docs/reports-authoring.md dosyasındadır.",
+		"upload": "Rapor yükle (JSON)",
+		"try": "Dene",
+		"download": "İndir",
+		"problems": "Bu dosyalar yüklenmez:",
+		"installed": "{{id}} raporu yüklendi",
+		"replaced": "{{id}} raporu değiştirildi",
+		"removed": "Dosya silindi",
+		"removeTitle": "{{file}} silinsin mi?",
+		"removeHint": "Dosya yapılandırmadan silinir. Geçmişten geri alınabilir.",
+		"restoreHint": "Okulun sürümü silinir: BiblioViva ile birlikte gelen rapor yeniden kullanılır. Geçmişten geri alınabilir.",
+		"origin": {
+			"builtin": "BiblioViva ile birlikte gelen",
+			"customised": "Özelleştirilmiş",
+			"added": "Eklenen"
+		},
+		"errors": {
+			"tooLarge": "Dosya çok büyük: en fazla {{maxKb}} KB.",
+			"badJson": "Dosya geçerli bir JSON değil: {{details}}",
+			"invalid": "Tanım geçerli değil: {{details}}",
+			"sql": "Sorgu bu veritabanında çalışmıyor: {{details}}",
+			"notFound": "Dosya bulunamadı.",
+			"reservedId": "“new” bir raporun kodu olamaz."
+		},
+		"new": "Yeni rapor",
+		"edit": "Düzenle",
+		"duplicate": "Çoğalt",
+		"editor": {
+			"editTitle": "Raporu düzenle",
+			"newTitle": "Yeni rapor",
+			"copySuffix": "kopya",
+			"builtinHint": "Bu, BiblioViva ile birlikte gelen bir rapordur: kaydetmek, aynı adla okulun özelleştirilmiş kopyasını oluşturur. Kitaplıktaki “Orijinale dön” bunu kaldırır.",
+			"id": "Rapor kodu",
+			"category": "Kategori",
+			"title": {
+				"it": "Başlık (İtalyanca)",
+				"en": "Başlık (İngilizce)"
+			},
+			"description": {
+				"it": "Açıklama (İtalyanca)",
+				"en": "Açıklama (İngilizce)"
+			},
+			"restricted": "Yalnızca yöneticiler",
+			"tabs": {
+				"label": "Düzenleme biçimi",
+				"guided": "Yönlendirmeli",
+				"sql": "SQL"
+			},
+			"sqlOnly": "Bu rapor SQL ile yazılmış: SQL sekmesinde düzenlenir.",
+			"source": "Veriler",
+			"rows": "Satırlar",
+			"rows2": "Satırlar, ikinci düzey",
+			"columns": "Sütunlar",
+			"columnsHint": "Sütunlarla rapor, toplamlı bir çapraz tabloya dönüşür.",
+			"none": "— yok —",
+			"totals": "Toplamlar",
+			"totalsOptions": {
+				"both": "Toplam satırı ve sütunu",
+				"rows": "Toplam sütunu",
+				"columns": "Toplam satırı",
+				"none": "Toplam yok"
+			},
+			"sort": "Sıralama",
+			"sortDimension": "Satırların sırasına göre",
+			"sortMeasure": "En yüksek değerden başlayarak",
+			"measures": "Değerler",
+			"oneMeasure": "Çapraz tablo tek bir değer gösterir.",
+			"filters": "Filtreler",
+			"filterModes": {
+				"off": "Filtre yok",
+				"ask": "Açılırken sorulur",
+				"fixed": "Sabit"
+			},
+			"value": "Değer",
+			"chart": "Grafik",
+			"charts": {
+				"bar": "Çubuklar",
+				"line": "Çizgiler",
+				"doughnut": "Halka"
+			},
+			"compiledHint": "Rehberli rapor bu SQL'e dönüşür. SQL'i elle yazmak için “SQL olarak düzenle” kullanın: bundan sonra rehberli düzenlemeye dönülemez.",
+			"previewFirst": "SQL'i görmek için “Önizleme” düğmesine basın.",
+			"convert": "SQL olarak düzenle",
+			"convertTitle": "Rapor SQL'e çevrilsin mi?",
+			"convertHint": "Rapor, aynı sütun ve parametrelere sahip bir SQL raporuna dönüşür. Artık yönlendirmeli sekmede düzenlenemez.",
+			"converted": "Rapor artık SQL'de",
+			"sqlHint": "Tek bir SELECT veya WITH deyimi; parametreler :ad biçiminde.",
+			"json": {
+				"params": "Parametreler (JSON)",
+				"columns": "Sütunlar (JSON)",
+				"chart": "Grafik (JSON, isteğe bağlı)",
+				"pivot": "Çapraz tablo (JSON, isteğe bağlı)"
+			},
+			"jsonHint": "Rapor kılavuzunda anlatılan biçimde.",
+			"preview": "Önizleme",
+			"runPreview": "Önizleme",
+			"previewHint": "Önizleme, raporu parametrelerinin varsayılan değerleriyle çalıştırır (en fazla 200 satır).",
+			"save": "Kaydet",
+			"saved": "“{{id}}” raporu kaydedildi",
+			"back": "Kitaplığa dön",
+			"jsonInvalid": "Kaydetmeden önce kırmızıyla işaretlenen JSON bölümlerini düzeltin."
+		}
+	},
+	"designer": {
+		"title": "{{name}} düzenle",
+		"design": "Tasarım",
+		"code": "Kod",
+		"preview": "Önizleme",
+		"front": "Ön yüz",
+		"back": "Arka yüz",
+		"faces": "Yüzler veya etiketler",
+		"zoom": "Yakınlaştırma",
+		"grid": "Izgara",
+		"gridSteps": {
+			"s0": "Yok (serbest)",
+			"s05": "0,5 mm",
+			"s1": "1 mm",
+			"s2": "2 mm",
+			"s25": "2,5 mm",
+			"s5": "5 mm",
+			"s10": "10 mm"
+		},
+		"files": "Dosyalar",
+		"problems": "Şablon bu haliyle yazdırılamaz:",
+		"saved": "Şablon kaydedildi",
+		"notEditable": "Bu şablon burada düzenlenemez: BiblioViva ile birlikte gelen şablonlar önce özelleştirilmelidir.",
+		"canvasHint": "Bir kutuya tıklayarak seçin, sürükleyerek taşıyın, köşesinden tutarak boyutunu değiştirin: konumlar ve boyutlar seçilen ızgaraya oturur. Klavyeyle oklar kutuyu ızgaranın bir adımı kadar taşır (Shift ile yaklaşık 5 mm, her zaman ızgaraya göre) ve Delete kutuyu siler.",
+		"flowHint": "Bu yüzün {{count}} {{count:plural; one:öğesi; other:öğesi;}} stil sayfası tarafından yerleştirilmiş (noktalı kontur): ilk taşımada hepsinin konumları, şu an bulundukları yerler olarak dosyaya yazılır.",
+		"lockedHint": "Bu yüzün {{count}} {{count:plural; one:parçası; other:parçası;}} bir Mustache bölümünün içinde yer alır: {{count:plural; one:o; other:onlar;}} “Kod” sekmesinde düzenlenir.",
+		"noStock": "Bu varyantı kullanan bir etiket tabakası yok: çizim önizleme olmadan gösterilir.",
+		"codeHint": "Çizim ve kod aynı dosyaları düzenler: burada yapılan her değişiklik çizimde de görünür, tersi de geçerlidir.",
+		"add": "Ekle",
+		"newText": "Metin",
+		"noImages": "Resim eklemek için önce şablonun resimleri arasında yükleyin.",
+		"types": {
+			"field": "Alan",
+			"text": "Metin",
+			"barcode": "Barkod",
+			"photo": "Fotoğraf",
+			"pictogram": "Piktogram",
+			"image": "Resim",
+			"box": "Kutu",
+			"html": "Serbest HTML",
+			"other": "Öğe"
+		},
+		"fields": {
+			"library_name": "Kütüphane adı",
+			"patron_first_name": "Ad",
+			"patron_last_name": "Soyad",
+			"patron_card_number": "Kart numarası",
+			"patron_class_label": "Sınıf ve şube",
+			"patron_level_label": "Sınıf (yıl)",
+			"patron_group": "Şube",
+			"school_year": "Eğitim öğretim yılı",
+			"issued_on": "Düzenlenme tarihi",
+			"valid_until": "Son geçerlilik tarihi",
+			"item_barcode": "Barkod (metin)",
+			"item_call_number": "Yer numarası",
+			"call_head": "Yer numarası: birinci satır",
+			"call_rest": "Yer numarası: ikinci satır",
+			"biblio_title_short": "Kısa başlık",
+			"biblio_author_short": "Kısa yazar adı",
+			"biblio_publication_year": "Yayın yılı",
+			"biblio_series": "Seri",
+			"biblio_series_number": "Seri içindeki numara",
+			"classification_code": "Sınıflandırma kodu",
+			"classification_label": "Sınıflandırma adı",
+			"classification_reading_level": "Okuma düzeyi",
+			"item_item_type": "Nüsha türü"
+		},
+		"field": "Alan",
+		"text": "Metin",
+		"image": "Resim",
+		"content": "HTML içeriği",
+		"contentHint": "Kutu çizimden taşınır ve biçimlendirilir; içeriği, şablon dosyalarındaki gibi Mustache alanlarıyla HTML olarak yazılır.",
+		"inherited": "Varsayılan",
+		"unplacedHint": "Bu öğe stil sayfası tarafından yerleştirilmiştir: taşındığında, onun konumu ve yüzün diğer öğelerinin konumları dosyaya yazılır.",
+		"geometry": {
+			"x": "X (mm)",
+			"y": "Y (mm)",
+			"w": "Genişlik",
+			"h": "Yükseklik"
+		},
+		"fontSize": "Boyut (pt)",
+		"font": "Yazı tipi",
+		"fonts": {
+			"sans": "Serifsiz",
+			"serif": "Serifli",
+			"mono": "Sabit genişlikli"
+		},
+		"bold": "Kalın",
+		"italic": "İtalik",
+		"uppercase": "Büyük harf",
+		"align": "Hizalama",
+		"aligns": {
+			"left": "Sol",
+			"center": "Orta",
+			"right": "Sağ"
+		},
+		"color": "Renk",
+		"border": "Kenarlık",
+		"borderColor": "Kenarlık rengi",
+		"fill": "Dolgu",
+		"fillColor": "Dolgu rengi",
+		"backward": "Geriye gönder",
+		"forward": "Öne getir",
+		"background": "Yüz arka planı",
+		"backgroundColor": "Arka plan rengi",
+		"backgroundImage": "Arka plan resmi",
+		"noImage": "Yok",
+		"chooseHint": "Değiştirmek için tasarımda bir kutu seçin.",
+		"modes": "Şablon görünümü",
+		"safeArea": "Güvenli alan: metinleri ve fotoğrafları kesikli çizginin içinde, kenardan 2 mm uzakta tutun (iki yüze yazdırılırken arka yüz bir milimetre kayabilir).",
+		"chooseBackground": "Bir arka plan seçin",
+		"uploadBackground": "Resim yükle",
+		"backgroundsTitle": "Hazır arka planlar",
+		"backgroundsHint": "Her arka plan karttan biraz taşar, her kenardan 3 mm: fazla kısım kesilip atılır.",
+		"backgroundAlt": "{{name}} arka planı",
+		"backgroundAdded": "Arka plan yüze eklendi: tutmak için kaydedin.",
+		"backgroundFailed": "Arka plan eklenmedi.",
+		"cardSize": "Kart boyutu",
+		"cardWidth": "Genişlik (mm)",
+		"cardHeight": "Yükseklik (mm)",
+		"cardRotate": "Döndür: dikey veya yatay",
+		"cardDefault": "Varsayılan boyuta dön ({{width}} × {{height}} mm)",
+		"cardDefaultHint": "Yapılandırmanın varsayılan boyutu (Yapılandırma → Kartlar): burada yalnızca bu şablon için değiştirilir.",
+		"cardTooLarge": "Boyutu {{width}} × {{height}} mm olan kart A4 tabakasına sığmaz: en fazla {{maxWidth}} × {{maxHeight}} mm, çünkü ön ve arka yüz kenar boşlukları içinde yan yana durur."
+	},
+	"parts": {
+		"groups": {
+			"data": "Kütüphane verileri",
+			"settings": "Ayarlar",
+			"config": "Sınıflandırma, şablonlar ve diğerleri"
+		},
+		"all": "Tümü",
+		"none": "Hiçbiri",
+		"accountsConfirm": {
+			"title": "Hesaplar ve parolalar da içe aktarılsın mı?",
+			"description": "Arşivdeki personel hesapları ve parolaları mevcut olanların yerini alır: şu an giriş yapan kişi bugünkü kimlik bilgileriyle artık giriş yapamaz. Gerekli değilse bu öğeyi işaretsiz bırakın.",
+			"confirm": "Hesapları da içe aktar"
+		},
+		"needs": "“{{part}}” geri yüklenebilmesi için ayrıca şunlara ihtiyaç duyar: {{needs}}.",
+		"data": {
+			"patrons": "Üyeler",
+			"catalog": "Katalog ve nüshalar",
+			"loans": "Ödünç verme ve geçmiş",
+			"printLists": "Yazdırma listeleri",
+			"photos": "Üye fotoğrafları",
+			"covers": "Kapaklar",
+			"notes": "Personel notları",
+			"dates": "Takvim tarihleri",
+			"audit": "Etkinlik günlüğü"
+		},
+		"config": {
+			"classification": "Sınıflandırma ve piktogramlar",
+			"stocks": "Etiket tabakaları",
+			"calendar": "Takvim",
+			"reports": "Raporlar",
+			"cardTemplates": "Kart şablonları",
+			"pairTemplates": "Etiket çifti şablonları",
+			"barcodeTemplates": "Barkod etiketi şablonları",
+			"spineTemplates": "Sırt bandı şablonları",
+			"slipTemplates": "Makbuz ve hatırlatma şablonları",
+			"languages": "Dil paketleri",
+			"logo": "Kütüphane logosu"
+		}
+	}
+}

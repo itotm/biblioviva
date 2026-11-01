@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "Amministrazione",
+		"sections": {
+			"config": {
+				"title": "Configurazione",
+				"description": "La classificazione e le impostazioni della biblioteca."
+			},
+			"audit": {
+				"title": "Registro operazioni",
+				"description": "Chi ha fatto cosa: accessi, modifiche, importazioni."
+			},
+			"users": {
+				"title": "Account del personale",
+				"description": "Account del personale, ruoli e permessi."
+			},
+			"backups": {
+				"title": "Backup",
+				"description": "Copie di sicurezza del database e dei file."
+			},
+			"rollover": {
+				"title": "Avanza di classe",
+				"description": "A fine anno: promozioni, ripetenti, uscite dall'ultima classe."
+			},
+			"exports": {
+				"title": "Esportazioni",
+				"description": "Utenti, catalogo, prestiti e tutti i dati in file CSV o JSON."
+			},
+			"imports": {
+				"title": "Importazioni",
+				"description": "Catalogo, utenti, prestiti in corso e foto: da file CSV o dall'estrazione di Koha."
+			}
+		}
+	},
+	"audit": {
+		"title": "Registro operazioni",
+		"filters": {
+			"from": "Dal",
+			"to": "Al",
+			"user": "Account",
+			"action": "Operazione",
+			"all": "Tutti"
+		},
+		"columns": {
+			"when": "Quando",
+			"user": "Account",
+			"action": "Operazione",
+			"entity": "Oggetto",
+			"entityId": "ID",
+			"details": "Dettagli"
+		},
+		"count": "{{shown}} di {{total}} {{total:plural; one:operazione; other:operazioni;}}",
+		"empty": "Nessuna operazione registrata con questi filtri.",
+		"system": "sistema"
+	},
+	"users": {
+		"title": "Account del personale",
+		"fields": {
+			"roles": "Ruoli",
+			"permissions": "Permessi",
+			"lastLogin": "Ultimo accesso",
+			"never": "mai"
+		},
+		"status": {
+			"active": "Attivo",
+			"inactive": "Disattivato",
+			"plainPassword": "Password in chiaro nel file",
+			"notInConfig": "Tolto dalla configurazione"
+		},
+		"hash": {
+			"title": "Genera hash password",
+			"description": "Inserire la password da assegnare: si ottiene l'hash argon2id da incollare in passwordHash. La password non viene salvata.",
+			"password": "Password (almeno {{min}} caratteri)",
+			"generate": "Genera hash",
+			"result": "Hash da incollare",
+			"copy": "Copia",
+			"copied": "Hash copiato",
+			"tooShort": "La password deve avere almeno {{min}} caratteri.",
+			"disclosure": "Per chi modifica i file a mano: generare l'hash di una password"
+		},
+		"reload": {
+			"button": "Ricarica configurazione",
+			"success": "Configurazione ricaricata",
+			"successWithWarnings": "Configurazione ricaricata con {{count}} {{count:plural; one:avviso; other:avvisi;}}",
+			"failed": "Configurazione non valida: resta attiva quella precedente",
+			"exampleSource": "Attenzione: config.json non esiste, è in uso la configurazione di esempio."
+		},
+		"new": "Nuovo account",
+		"newPassword": "Nuova password",
+		"permissionNames": {
+			"all": "Tutto",
+			"loans": "Prestiti",
+			"patrons": "Utenti",
+			"patrons_import": "Importa utenti",
+			"catalog": "Catalogo",
+			"catalog_import": "Importa catalogo",
+			"reports": "Report",
+			"anonymize": "Anonimizza",
+			"admin": "Amministrazione"
+		},
+		"roles": {
+			"title": "Ruoli e permessi",
+			"hint": "Un ruolo è un insieme di permessi; ogni account ha uno o più ruoli. «Tutto» dà ogni permesso, anche quelli che arriveranno con le prossime versioni. Rinominare un ruolo aggiorna gli account che lo usano.",
+			"name": "Ruolo",
+			"unused": "nessun account",
+			"badName": "Lettere, cifre, trattini e trattini bassi (al massimo 32).",
+			"add": "Aggiungi un ruolo",
+			"saved": "Ruoli salvati"
+		},
+		"auth": {
+			"title": "Accesso",
+			"config": "Si entra con gli account di questa pagina, di solito uno condiviso per ruolo (per esempio «prestiti» per il banco).",
+			"database": "Si entra con account personali.",
+			"later": "Gli account personali, uno per persona, sono previsti in una versione successiva."
+		},
+		"dialog": {
+			"title": {
+				"new": "Nuovo account",
+				"edit": "Modifica {{name}}",
+				"password": "Nuova password per {{name}}"
+			},
+			"username": "Nome utente",
+			"usernameHint": "Minuscole, cifre, punto, trattino e trattino basso (da 2 a 32).",
+			"badUsername": "Solo minuscole, cifre, punto, trattino e trattino basso (da 2 a 32).",
+			"displayName": "Nome mostrato",
+			"active": "Account attivo (può entrare)",
+			"password": "Password (almeno {{min}} caratteri)",
+			"repeat": "Ripeti la password",
+			"mismatch": "Le due password non coincidono.",
+			"passwordHint": "La password non viene salvata: nella configurazione si scrive solo il suo hash. Chi è collegato con questo account dovrà entrare di nuovo.",
+			"saved": {
+				"new": "Account creato",
+				"edit": "Account salvato",
+				"password": "Password cambiata"
+			},
+			"removed": "Account eliminato",
+			"removeTitle": "Eliminare {{name}}?",
+			"removeHint": "L'account esce dalla configurazione; le operazioni che ha fatto restano nel registro con il suo nome. Si può annullare dalla cronologia della configurazione."
+		},
+		"errors": {
+			"badUsername": "Nome utente non valido: {{details}}.",
+			"usernameTaken": "Il nome utente {{details}} è già usato.",
+			"notFound": "Account non trovato: {{details}}.",
+			"noRoles": "Scegliere almeno un ruolo.",
+			"unknownRole": "Ruolo sconosciuto: {{details}}.",
+			"passwordTooShort": "La password è troppo corta.",
+			"passwordRequired": "Un nuovo account ha bisogno di una password.",
+			"lastAdmin": "Deve restare almeno un account attivo con il permesso di amministrazione.",
+			"stillActive": "Disattiva l'account prima di eliminarlo.",
+			"badRole": "Nome di ruolo non valido: {{details}}.",
+			"roleTaken": "Due ruoli si chiamano {{details}}.",
+			"roleInUse": "Il ruolo è usato da qualche account: {{details}}.",
+			"invalid": "La configurazione non sarebbe valida: {{details}}."
+		}
+	},
+	"backups": {
+		"title": "Backup",
+		"runNow": "Esegui backup ora",
+		"created": "Backup creato: {{name}}",
+		"createdDeleted": "Backup creato: {{name}} ({{deleted}} {{deleted:plural; one:vecchio backup eliminato; other:vecchi backup eliminati;}})",
+		"empty": "Nessun backup. Il primo verrà creato all'orario pianificato oppure con «Esegui backup ora».",
+		"download": "Scarica",
+		"columns": {
+			"when": "Creato",
+			"size": "Dimensione"
+		},
+		"catchUp": {
+			"badge": "Recuperato all'avvio",
+			"hint": "Il backup programmato era saltato (computer spento): BiblioViva l'ha fatto all'avvio."
+		},
+		"offsite": {
+			"title": "Ultima copia esterna",
+			"disabled": "Copia esterna non configurata. Si attiva con il servizio «offsite» (rclone) descritto nella guida di installazione.",
+			"never": "Il servizio è abilitato ma non ha ancora scritto alcun esito.",
+			"ok": "Ultima copia riuscita: {{when}}",
+			"error": "Ultima copia fallita: {{when}}",
+			"stale": "La copia esterna è più vecchia di due giorni: controllare il servizio offsite.",
+			"remote": "Destinazione: {{remote}}"
+		},
+		"restore": {
+			"title": "Ripristino",
+			"button": "Ripristina…",
+			"hint": "Scegliere «Ripristina…» su un backup dell'elenco, oppure caricare un archivio di BiblioViva (un backup, «Esporta tutto» o «Esporta configurazione», fino a {{maxMb}} MB; uno più grande si copia nella cartella dei backup del server o si ripristina con bun run backup:restore). Prima si controlla tutto, poi si ripristinano solo le parti scelte: le altre restano come sono.",
+			"upload": "Carica un archivio",
+			"from": "Da {{name}} del {{date}}",
+			"count": "{{part}}: ora {{live}}, nel backup {{archive}}",
+			"images": "Immagini da ripristinare: {{photos}} foto, {{covers}} {{covers:plural; one:copertina; other:copertine;}}.",
+			"gapsTitle": "Così alcuni dati resterebbero senza ciò a cui si riferiscono:",
+			"gap": "{{rows:plural; one:{{rows}} riga di «{{part}}» si riferisce; other:{{rows}} righe di «{{part}}» si riferiscono;}} a «{{needs}}» che non ci sarebbero: aggiungere «{{add}}» alla scelta.",
+			"schema": "Il backup è di una versione diversa di BiblioViva (tabelle {{tables}}): non si può ripristinare qui.",
+			"apply": "Ripristina",
+			"confirmTitle": "Ripristinare le parti scelte?",
+			"confirmHint": "I dati e la configurazione scelti vengono sostituiti da quelli del backup. La configurazione si può riportare indietro dalla cronologia; per i dati conviene prima fare un backup, se non ce n'è uno recente.",
+			"done": "Ripristino completato",
+			"notArchive": "Il file non è un archivio di BiblioViva."
+		},
+		"contents": {
+			"title": "Cosa contiene il backup",
+			"database": "Database: una copia completa a ogni esecuzione (elenco qui sotto).",
+			"images": "Foto e copertine: copiate ogni notte nella cartella «uploads» del backup ({{photos}} foto, {{covers}} {{covers:plural; one:copertina; other:copertine;}} al momento).",
+			"imagesPending": "Foto e copertine: la prima copia avverrà alla prossima esecuzione ({{photos}} foto, {{covers}} {{covers:plural; one:copertina; other:copertine;}} da copiare).",
+			"config": "La configurazione (template, immagini, impostazioni) non è nel backup notturno: per averla usare «Esporta tutto»."
+		},
+		"export": {
+			"button": "Esporta tutto",
+			"hint": "Un unico file ZIP con database, foto, copertine e tutta la configurazione (template e immagini compresi), pronto per il ripristino con «bun run backup:restore»."
+		},
+		"createdMirror": "Backup creato: {{name}}; {{copied}} {{copied:plural; one:immagine copiata; other:immagini copiate;}}",
+		"parts": {
+			"title": "Backup o esportazione di alcune parti",
+			"hint": "Scegliere cosa includere: i dati della biblioteca, le impostazioni di ogni sezione, i template, le immagini… «Crea backup» lo salva nell'elenco qui sotto, «Scarica» lo scarica sul computer.",
+			"create": "Crea backup",
+			"download": "Scarica"
+		}
+	},
+	"demo": {
+		"clear": "Svuota dati dimostrativi",
+		"confirmTitle": "Svuotare i dati dimostrativi?",
+		"confirmDescription": "Gli utenti, i libri, i prestiti e le foto dimostrativi verranno cancellati. Le classi e il gruppo dei docenti restano. Tutti gli operatori verranno disconnessi.",
+		"cleared": "Dati dimostrativi rimossi. È necessario accedere di nuovo.",
+		"clearedPassword": "Gli account hanno ancora la password dimostrativa «{{password}}»: cambiarla subito da Amministrazione → Account del personale."
+	},
+	"appearance": {
+		"title": "Aspetto e lingua",
+		"current": "Set attuale: {{name}}",
+		"areas": {
+			"title": "Stile delle aree",
+			"hint": "La fascia in alto prende il colore dell'area in cui si lavora (Prestiti, Catalogo, Utenti…), nei toni del set di colori scelto. Icona e nome dell'area restano sempre visibili.",
+			"styles": {
+				"tinted": "Fascia tinta (consigliata)",
+				"filled": "Fascia piena",
+				"accents": "Solo accenti",
+				"none": "Nessun colore"
+			},
+			"saved": "Stile delle aree salvato"
+		},
+		"colours": {
+			"title": "Set di colori"
+		},
+		"save": "Salva i colori",
+		"saved": "Colori salvati",
+		"unchanged": "Nessuna modifica da salvare.",
+		"language": {
+			"title": "Lingua dell'applicazione",
+			"hint": "Una sola lingua per installazione: vale per tutto il personale.",
+			"save": "Cambia lingua",
+			"saved": "Lingua cambiata: la pagina viene ricaricata."
+		},
+		"logo": {
+			"title": "Logo della biblioteca",
+			"hint": "Compare in alto a sinistra in ogni pagina, accanto al nome della biblioteca. PNG, JPEG o WebP; meglio con lo sfondo trasparente.",
+			"upload": "Carica il logo",
+			"replace": "Cambia il logo",
+			"remove": "Rimuovi il logo",
+			"saved": "Logo salvato.",
+			"removed": "Logo rimosso.",
+			"none": "Nessun logo: si vede un'icona generica.",
+			"preview": "Logo attuale",
+			"errors": {
+				"empty": "Il file è vuoto.",
+				"too_large": "Il file è troppo grande (massimo {{maxMb}} MB).",
+				"not_an_image": "Il file non è un'immagine.",
+				"unsupported_format": "Formato non accettato: sono ammessi PNG, JPEG e WebP."
+			}
+		},
+		"name": {
+			"title": "Nome della biblioteca",
+			"hint": "Compare in alto a sinistra, sulla dashboard, sulle stampe e nell'app installata sul telefono.",
+			"label": "Nome",
+			"save": "Salva il nome",
+			"saved": "Nome della biblioteca salvato",
+			"required": "Il nome della biblioteca è obbligatorio."
+		},
+		"dashboard": {
+			"title": "Dashboard",
+			"hint": "Le sezioni della pagina iniziale, per tutta la biblioteca. Le azioni rapide stanno sempre in cima; dentro ogni sezione ciascun account vede solo ciò che può fare.",
+			"save": "Salva la dashboard",
+			"saved": "Dashboard salvata",
+			"sections": {
+				"quickActions": "Azioni rapide",
+				"tiles": "La biblioteca oggi (riquadri con i numeri)",
+				"inventory": "Inventario in corso",
+				"installHint": "Invito ad aggiungere l'app alla schermata Home (telefoni)",
+				"dueThisWeek": "In scadenza questa settimana",
+				"upcomingDates": "Prossime date del calendario",
+				"todayActivity": "Prestiti di oggi"
+			}
+		}
+	},
+	"templates": {
+		"title": "Template di stampa",
+		"reload": "Ricarica template",
+		"reloaded": "Template riletti dal disco",
+		"kinds": {
+			"cards": "Tessere",
+			"labels": "Etichette",
+			"slips": "Solleciti"
+		},
+		"list": {
+			"source": {
+				"builtin": "Fornito con l’app",
+				"config": "Nella configurazione"
+			},
+			"default": "Predefinito",
+			"status": {
+				"ok": "Valido",
+				"error": "Errore"
+			},
+			"folder": "Cartella",
+			"forTypes": "Per: {{types}}",
+			"emptyCards": "Nessun template per le tessere: controllare la cartella cards/templates della configurazione.",
+			"emptyLabels": "Nessun template di etichette: arriveranno con la stampa delle etichette del catalogo.",
+			"emptySlips": "Nessun template di sollecito: arriverà con la circolazione."
+		},
+		"preview": {
+			"title": "Anteprima",
+			"front": "Fronte",
+			"back": "Retro",
+			"patron": "Utente da mostrare",
+			"sample": "Utente di esempio",
+			"real": "Utente reale",
+			"search": "Cerca un utente reale",
+			"searchPlaceholder": "Cognome o nome",
+			"noResults": "Nessun utente trovato.",
+			"zoom": "Zoom",
+			"sheet": "Foglio intero",
+			"sheetHint": "Una pagina A4 con l'utente di esempio, così come verrà stampata.",
+			"test": "Stampa pagina di prova",
+			"broken": "Il template non può essere usato finché non viene corretto:",
+			"size": "{{width}} × {{height}} mm a zoom {{zoom}}"
+		},
+		"test": {
+			"title": "Pagina di prova tessere",
+			"ruler": "Righello 10 cm: dopo la stampa deve misurare 100 mm (stampa al 100 %, senza «adatta alla pagina»)."
+		},
+		"calibration": {
+			"title": "Pagina di calibrazione etichette",
+			"stock": "Supporto adesivo",
+			"print": "Stampa pagina di calibrazione",
+			"hint": "Stampare su carta comune e sovrapporre un foglio di etichette per controllare i margini."
+		},
+		"howTo": {
+			"title": "Come creare un template",
+			"steps": {
+				"step1": "In Configurazione → Template di stampa scegliere «Duplica» su un template (per esempio {{path}}) e dargli un nuovo nome.",
+				"step2": "Con «Modifica» disegnarlo o cambiarne il codice; le immagini si caricano nella stessa pagina.",
+				"step3": "Tornare qui e controllare l'anteprima: un campo sconosciuto o un file mancante viene segnalato.",
+				"step4": "Per usarlo, sceglierlo nelle impostazioni Tessere o Etichette."
+			}
+		},
+		"labels": {
+			"stocks": "Fogli previsti: {{stocks}}",
+			"preview": "Anteprima di {{name}}",
+			"geometry": "Unità di {{width}} × {{height}} mm · variante {{variant}}",
+			"sheet": "Foglio di esempio"
+		}
+	},
+	"loansImport": {
+		"title": "Importa i prestiti in corso",
+		"upload": {
+			"hint": "Da usare una volta sola, al passaggio da Koha: una riga per ogni prestito in corso con la tessera e il codice a barre della copia e, se ci sono, la data del prestito e la scadenza. Importare prima utenti e catalogo; il modello, con le colonne necessarie, si scarica qui sotto.",
+			"submit": "Carica"
+		},
+		"mapping": {
+			"uncertain": "Controllare le colonne prima di continuare.",
+			"validate": "Verifica il file",
+			"without": {
+				"issuedOn": "Senza la colonna issued_on i prestiti risultano fatti oggi.",
+				"dueOn": "Senza la colonna due_on la scadenza si calcola come al banco, con le regole di prestito e il calendario."
+			}
+		},
+		"fields": {
+			"cardNumber": "Tessera",
+			"barcode": "Codice a barre",
+			"issuedOn": "Data del prestito",
+			"dueOn": "Scadenza"
+		},
+		"preview": {
+			"ready": "Nessun errore: l'importazione dei prestiti è possibile.",
+			"blocked": "Correggere gli errori e verificare di nuovo: un file con errori non si importa.",
+			"overdue": "{{count}} {{count:plural; one:prestito è già scaduto; other:prestiti sono già scaduti;}}: {{count:plural; one:verrà importato e comparirà; other:verranno importati e compariranno;}} tra i ritardi.",
+			"columns": {
+				"patron": "Utente",
+				"barcode": "Copia",
+				"issued": "Prestito",
+				"due": "Scadenza"
+			},
+			"commit": "Importa i prestiti",
+			"back": "Torna alle colonne"
+		},
+		"reasons": {
+			"cardMissing": "Manca la tessera",
+			"cardUnknown": "Nessun utente con la tessera {{value}}",
+			"barcodeMissing": "Manca il codice a barre",
+			"barcodeUnknown": "Nessuna copia con il codice {{value}}",
+			"alreadyOnLoan": "La copia {{value}} è già in prestito",
+			"itemWithdrawn": "La copia {{value}} è ritirata",
+			"duplicateInFile": "Stessa copia già alla riga {{line}}",
+			"issueDateInvalid": "Data del prestito non valida: «{{value}}»",
+			"issueDateFuture": "Data del prestito nel futuro: {{value}}",
+			"dueDateInvalid": "Scadenza non valida: «{{value}}»",
+			"dueBeforeIssue": "La scadenza è prima della data del prestito",
+			"overdue": "Già scaduto il {{date}}",
+			"itemUnclassified": "La copia {{value}} è di un libro da classificare: il prestito si importa, ma al banco non si presta finché non è classificato"
+		},
+		"done": {
+			"title": "Prestiti importati",
+			"summary": "{{created}} {{created:plural; one:prestito importato; other:prestiti importati;}}, di cui {{overdue}} {{overdue:plural; one:già scaduto; other:già scaduti;}}.",
+			"batch": "Importazione n. {{id}}: il file originale è conservato.",
+			"again": "Importa un altro file"
+		},
+		"columns": {
+			"cardNumber": "Il numero della tessera dell'utente, già importato.",
+			"barcode": "Il codice a barre della copia, già importata.",
+			"issuedOn": "La data del prestito; se manca, oggi.",
+			"dueOn": "La scadenza; se manca, si calcola con le regole di prestito."
+		}
+	},
+	"photosImport": {
+		"title": "Importa le foto degli utenti",
+		"hint": "Un file per utente, chiamato con il numero di tessera (per esempio 0000001240.jpg): è quello che produce l'estrazione descritta nella guida dell'amministratore. Ogni foto viene ridimensionata e ripulita dei dati nascosti; i file che non corrispondono a nessuna tessera vengono elencati.",
+		"replace": "Sostituisci le foto già presenti",
+		"zip": {
+			"title": "Da un archivio ZIP",
+			"file": "Archivio ZIP con le foto",
+			"submit": "Importa le foto"
+		},
+		"folder": {
+			"title": "Dalla cartella del server",
+			"hint": "Copiare i file in {{path}} (ora {{count:plural; one:ce n'è {{count}}; other:ce ne sono {{count}};}}). Adatto a molte foto, che in un archivio sarebbero troppo pesanti da caricare.",
+			"submit": "Importa dalla cartella"
+		},
+		"summary": {
+			"title": "Esito",
+			"text": "{{imported}} {{imported:plural; one:foto importata; other:foto importate;}}, {{replaced}} {{replaced:plural; one:sostituita; other:sostituite;}}, {{kept}} {{kept:plural; one:lasciata com'era; other:lasciate com'erano;}} (foto già presente), {{unmatched}} file senza utente, {{unreadable}} file {{unreadable:plural; one:illeggibile; other:illeggibili;}}.",
+			"unreadable": "Non sono immagini leggibili: {{files}}",
+			"unmatched": "Scarica l'elenco dei file senza utente"
+		},
+		"errors": {
+			"notZip": "Il file non è un archivio ZIP valido.",
+			"empty": "L'archivio non contiene file."
+		},
+		"done": "Foto importate"
+	},
+	"rollover": {
+		"title": "Avanza di classe",
+		"subtitle": "A fine anno: tutti gli studenti passano all'anno successivo, chi finisce l'ultimo anno lascia la scuola.",
+		"steps": {
+			"backup": "Backup",
+			"classes": "Classi",
+			"leavers": "Uscite",
+			"confirm": "Conferma",
+			"done": "Completato"
+		},
+		"backup": {
+			"text": "Prima di tutto una copia di sicurezza del database: se qualcosa non va, si torna indietro da Amministrazione → Backup.",
+			"create": "Crea il backup",
+			"created": "Backup creato: {{name}}"
+		},
+		"classes": {
+			"text": "Ogni studente passa all'anno successivo con la sua classe. Segnare chi ripete l'anno e chi cambia classe.",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; one:studente; other:studenti;}}",
+			"exceptions": "{{count}} {{count:plural; one:eccezione; other:eccezioni;}}",
+			"loans": "{{count}} con libri in prestito",
+			"repeat": "Ripete",
+			"target": "Classe",
+			"noGroup": "Senza classe",
+			"choose": "Scegli la classe…",
+			"fates": {
+				"advances": "Avanza",
+				"stays": "Resta",
+				"archived": "Si chiude"
+			},
+			"unplaced": "{{count}} {{count:plural; one:studente aspetta; other:studenti aspettano;}} la scelta della classe.",
+			"none": "Nessuno studente che passa all'anno successivo.",
+			"nextYear": "L'anno dopo",
+			"leaves": "Esce dalla scuola"
+		},
+		"leavers": {
+			"text": "Gli studenti dell'ultimo anno lasciano la scuola: i loro dati vengono cancellati subito e per sempre (restano solo i numeri delle statistiche). Togliere la spunta a chi resta, per esempio chi ripete l'ultimo anno.",
+			"leaves": "Esce",
+			"openLoans": "{{count}} {{count:plural; one:libro; other:libri;}} in prestito",
+			"blocked": "{{count}} {{count:plural; one:studente che esce ha; other:studenti che escono hanno;}} ancora libri: registrare la restituzione o segnarli smarriti, oppure togliere la spunta.",
+			"toCheckin": "Vai a Restituzioni",
+			"none": "Nessuno studente all'ultimo anno."
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; one:studente passa; other:studenti passano;}} all'anno successivo",
+			"repeat": "{{count}} {{count:plural; one:ripete; other:ripetono;}} l'anno",
+			"groupChanges": "{{count}} {{count:plural; one:cambia; other:cambiano;}} classe",
+			"closing": "{{count}} {{count:plural; one:classe si chiude e viene archiviata; other:classi si chiudono e vengono archiviate;}}",
+			"remove": "{{count}} {{count:plural; one:lascia la scuola e i suoi dati vengono cancellati; other:lasciano la scuola e i loro dati vengono cancellati;}}",
+			"recent": "L'ultimo avanzamento è stato fatto il {{date}}, meno di sei mesi fa. Confermo di volerlo ripetere.",
+			"run": "Avanza di classe"
+		},
+		"done": {
+			"title": "Avanzamento completato",
+			"advanced": "{{count}} {{count:plural; one:classe è passata; other:classi sono passate;}} all'anno successivo",
+			"archived": "{{count}} {{count:plural; one:classe archiviata; other:classi archiviate;}}",
+			"text": "Passi successivi: creare le nuove classi prime, se necessarie, e importare i nuovi studenti con la sincronizzazione.",
+			"import": "Importa i nuovi studenti"
+		},
+		"errors": {
+			"blocked": "Qualche studente che esce ha ancora libri in prestito.",
+			"recent": "Serve la conferma: l'ultimo avanzamento è recente.",
+			"no_backup": "Il backup non è stato trovato o è troppo vecchio: rifallo dal primo passo.",
+			"invalid_group": "Una classe scelta non esiste o non ospita l'anno dello studente.",
+			"unplaced": "Alcuni studenti non hanno ancora la classe: sceglierla al passo Classi.",
+			"invalid_level": "Uno degli anni scelti non è tra quelli possibili: ricaricare la pagina."
+		},
+		"next": "Avanti",
+		"back": "Indietro"
+	},
+	"classes": {
+		"title": "Classi",
+		"subtitle": "Le classi della scuola e i gruppi dei docenti.",
+		"hint": "Gli anni e gli ordini di scuola si cambiano nelle impostazioni:",
+		"structureLink": "Scuola",
+		"new": "Nuove classi",
+		"newTeachers": "Nuovo gruppo docenti",
+		"teachers": "Docenti",
+		"mixed": "Pluriclasse",
+		"empty": "Nessuna classe",
+		"emptyHint": "Nessuna classe. Le classi si creano con Nuove classi, per esempio gli anni da 1 a 5 e i nomi A-D.",
+		"archivedTitle": "{{count:plural; one:Classe archiviata; other:Classi archiviate;}} ({{count}})",
+		"archive": "Archivia",
+		"archiveNotEmpty": "Ha ancora degli utenti: non si può archiviare",
+		"restore": "Ripristina",
+		"archived": "Classe {{name}} archiviata",
+		"restored": "Classe {{name}} ripristinata",
+		"columns": {
+			"class": "Classe",
+			"levels": "Anni",
+			"patrons": "Utenti"
+		},
+		"dialog": {
+			"title": {
+				"students": "Nuove classi",
+				"teachers": "Nuovo gruppo docenti",
+				"edit": "Modifica {{name}}"
+			},
+			"levels": "Anni",
+			"names": "Nomi delle classi",
+			"namesHint": "Separati da virgole; A-D vale A, B, C, D. Un nome può contenere spazi.",
+			"name": "Nome",
+			"mixed": "Una pluriclasse con tutti gli anni scelti",
+			"stage": "Ordine di scuola",
+			"anyStage": "Tutti",
+			"notes": "Note",
+			"preview": "{{count}} {{count:plural; one:classe; other:classi;}} da creare:",
+			"previewEmpty": "Scegliere almeno un anno e scrivere i nomi.",
+			"saved": {
+				"students": "{{count}} {{count:plural; one:classe creata; other:classi create;}}",
+				"teachers": "Gruppo docenti creato",
+				"edit": "Classe salvata"
+			}
+		},
+		"errors": {
+			"nameRequired": "Il nome è obbligatorio.",
+			"nameLong": "Il nome è troppo lungo (al massimo 40 caratteri).",
+			"levelsRequired": "Scegliere almeno un anno.",
+			"levelUnknown": "Un anno scelto non esiste più.",
+			"levelsNotForTeachers": "Un gruppo di docenti non ha anni.",
+			"nameTaken": "Esiste già una classe con questo nome per lo stesso anno.",
+			"levelInUse": "Degli studenti della classe sono in un anno che verrebbe tolto.",
+			"notEmpty": "La classe ha ancora degli utenti.",
+			"notFound": "La classe non esiste più."
+		}
+	},
+	"exports": {
+		"title": "Esportazioni",
+		"subtitle": "I dati della biblioteca in file da tenere, da reimportare o da portare in un altro programma.",
+		"items": {
+			"students": {
+				"title": "Studenti (CSV)",
+				"description": "Gli studenti attivi nel formato dell'importazione: si reimportano da Amministrazione → Importazioni → Studenti."
+			},
+			"teachers": {
+				"title": "Docenti (CSV)",
+				"description": "I docenti attivi nel formato dell'importazione: si reimportano da Amministrazione → Importazioni → Docenti."
+			},
+			"catalog": {
+				"title": "Catalogo (CSV)",
+				"description": "Una riga per copia con i dati del libro, nel formato dell'importazione del catalogo."
+			},
+			"open-loans": {
+				"title": "Prestiti in corso (CSV)",
+				"description": "Tessera, copia, data del prestito e scadenza: si reimportano da Amministrazione → Importazioni → Prestiti in corso."
+			},
+			"loans-history": {
+				"title": "Storico dei prestiti (CSV)",
+				"description": "Tutti i prestiti con la classe e la sezione del giorno del prestito."
+			},
+			"dump": {
+				"title": "Tutti i dati (JSON)",
+				"description": "Utenti, catalogo, prestiti e liste in un unico file, per passare a un'altra installazione o a un altro programma."
+			}
+		},
+		"download": "Scarica",
+		"patronNote": "I dati di una singola persona (richiesta di accesso) si scaricano dalla sua scheda.",
+		"patronExport": "Esporta i dati della persona"
+	},
+	"imports": {
+		"title": "Importazioni",
+		"hint": "Si usano al passaggio da Koha e, per gli utenti, a ogni inizio d'anno per le classi nuove. Ogni file viene controllato tutto prima di importare.",
+		"cards": {
+			"catalog": {
+				"title": "Catalogo",
+				"description": "Libri e copie da un file CSV o dall'esportazione di Koha."
+			},
+			"students": {
+				"title": "Studenti",
+				"description": "Le classi dal registro elettronico, a ogni inizio d'anno: nome, cognome e classe."
+			},
+			"teachers": {
+				"title": "Docenti",
+				"description": "I docenti della scuola: nome e cognome, con la tessera se c'è già."
+			},
+			"loans": {
+				"title": "Prestiti in corso",
+				"description": "I prestiti aperti, importati una volta sola al passaggio da Koha."
+			},
+			"photos": {
+				"title": "Foto degli utenti",
+				"description": "Le foto esportate da Koha, una per tessera."
+			}
+		}
+	},
+	"calibration": {
+		"title": "Calibra la stampa fronte-retro",
+		"intro": "Per stampare le tessere sui due lati del foglio il retro deve cadere esattamente dietro il fronte. Ogni stampante sposta un po' il retro: questa prova misura di quanto, una volta sola.",
+		"current": "Come gira il foglio: {{flip}}. Spostamento attuale dei retri: {{x}} mm in orizzontale, {{y}} mm in verticale.",
+		"steps": {
+			"print": "Stampare il foglio di calibrazione con il pulsante qui sotto.",
+			"window": {
+				"long-edge": "Nella finestra di stampa scegliere «Fronte-retro» capovolgendo sul lato lungo, la scala al 100 % e nessun margine.",
+				"short-edge": "Nella finestra di stampa scegliere «Fronte-retro» capovolgendo sul lato corto, la scala al 100 % e nessun margine."
+			},
+			"cut": "Sul lato con il grande «1» ritagliare con cura lungo la linea nera.",
+			"read": "Girare il cartoncino: sul lato «2» leggere i due numeri nel punto in cui il bordo tagliato attraversa i righelli (con il segno + o −).",
+			"save": "Scrivere i due numeri qui sotto e salvare: lo spostamento dei retri viene corretto.",
+			"check": "Ristampare il foglio per verificare: il bordo tagliato dovrebbe passare sullo 0 di entrambi i righelli."
+		},
+		"print": "Stampa il foglio di calibrazione",
+		"drawing": {
+			"title": "Che cosa leggere",
+			"label": "Il lato 2 dopo il taglio: il bordo tagliato attraversa i righelli",
+			"x": "righello orizzontale",
+			"y": "righello verticale",
+			"hint": "Il bordo tagliato attraversa ogni righello: il numero lì sotto è il valore da scrivere. Ogni tacca è un millimetro, i numeri sono ogni cinque."
+		},
+		"fields": {
+			"x": "Righello orizzontale (mm)",
+			"y": "Righello verticale (mm)",
+			"hint": "Il numero dove passa il bordo tagliato, con il segno; 0 se cade sullo zero."
+		},
+		"next": "Dopo il salvataggio lo spostamento dei retri sarà {{x}} mm in orizzontale e {{y}} mm in verticale.",
+		"save": "Salva la calibrazione",
+		"saved": "Calibrazione salvata: retri spostati di {{x}} mm in orizzontale e {{y}} mm in verticale.",
+		"open": "Calibra la stampa fronte-retro",
+		"sheet": {
+			"title": "BiblioViva · calibrazione della stampa fronte-retro",
+			"cut": "Ritagliare lungo la linea nera, poi girare il cartoncino.",
+			"read": "Leggere sui due righelli dove passa il bordo tagliato."
+		}
+	}
+}

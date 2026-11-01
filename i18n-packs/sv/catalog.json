@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "Katalog",
+		"search": "Sök på titel, författare eller ISBN…",
+		"new": "Ny bok",
+		"empty": "Ingen bok motsvarar filtren.",
+		"countFiltered": "{{shown}} {{shown:plural; one:titel motsvarar; other:titlar motsvarar;}} filtren",
+		"clearFilters": "Rensa filter",
+		"filters": {
+			"kind": "Typ",
+			"genre": "Genre",
+			"class": "Klassifikation",
+			"readingLevel": "Nivå",
+			"itemType": "Material",
+			"series": "Serie",
+			"all": "Alla",
+			"allF": "Alla",
+			"withdrawn": "Visa även utgallrade böcker"
+		},
+		"columns": {
+			"title": "Titel",
+			"series": "Serie",
+			"author": "Författare",
+			"year": "År",
+			"isbn": "ISBN",
+			"classification": "Klassifikation",
+			"copies": "Exemplar",
+			"callNumber": "Hyllsignum",
+			"acquiredAt": "Inköpt"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "Sök i katalogen",
+		"startHint": "Sök på titel, författare, förlag, kod eller ISBN, eller med filtren."
+	},
+	"kinds": {
+		"fiction": "Skönlitteratur",
+		"nonfiction": "Facklitteratur"
+	},
+	"fields": {
+		"title": "Titel",
+		"subtitle": "Undertitel",
+		"originalTitle": "Originaltitel",
+		"originalTitleHint": "Endast om boken är en översättning: verkets titel på originalspråket.",
+		"responsibility": "Upphovsangivelse (så som på titelsidan)",
+		"author": "Författare",
+		"publisher": "Förlag",
+		"publicationPlace": "Ort",
+		"publicationYear": "År",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN (inte ISBN)",
+		"physicalDescription": "Fysisk beskrivning",
+		"series": "Serie",
+		"seriesNumber": "Nummer i serien",
+		"seriesHint": "Till exempel Harry Potter och 3. Serierna som redan finns i katalogen visas medan du skriver.",
+		"dewey": "Dewey (från SBN)",
+		"kind": "Typ",
+		"genre": "Genre",
+		"classCode": "Klassifikation",
+		"readingLevel": "Läsnivå",
+		"subjects": "Ämnesord",
+		"notes": "Anteckningar",
+		"authorHint": "Efternamn, Förnamn. Använd snabbvalen när det inte finns någon personlig författare.",
+		"subjectsHint": "Ett per rad eller separerade med kommatecken.",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "Ny bok",
+		"editTitle": "Redigera post",
+		"create": "Spara posten",
+		"save": "Spara ändringarna",
+		"identity": "Post",
+		"publication": "Utgivning",
+		"classification": "Klassifikation",
+		"more": "Fler uppgifter",
+		"quickPicks": "Snabbval",
+		"unknownPublisher": "Okänt förlag",
+		"unknownPlace": "Okänd ort",
+		"singleCopy": "Exemplar {{barcode}}",
+		"singleCopyHint": "Posten har ett enda exemplar: dess uppgifter redigeras här och sparas tillsammans med posten."
+	},
+	"picker": {
+		"kind": "Vilken typ av bok är det?",
+		"fiction": "Skönlitteratur",
+		"nonfiction": "Facklitteratur",
+		"genre": "Välj genren",
+		"class": "Välj ämnet",
+		"readingLevel": "Läsnivå",
+		"anyClass": "Ingen",
+		"back": "Tillbaka till huvudämnena",
+		"children": "Ämnen inom {{label}}",
+		"selected": "Vald: {{label}}",
+		"parentOnly": "Använd ”{{label}}” i allmänhet",
+		"later": "Klassificera senare",
+		"laterHint": "Boken hamnar i listan ”Att klassificera”: dess exemplar lånas inte ut och ryggbandet skrivs inte ut förrän boken är klassificerad."
+	},
+	"detail": {
+		"heading": "Bokpost",
+		"tabs": {
+			"copies": "Exemplar",
+			"details": "Detaljer"
+		},
+		"copies": "Tillgängliga: {{available}} av {{total}}",
+		"noCopies": "Inga exemplar än: lägg till ett för att kunna låna ut.",
+		"seriesLink": "Alla böcker i serien ”{{series}}”",
+		"edit": "Redigera",
+		"delete": "Ta bort post",
+		"addCopies": "Lägg till exemplar",
+		"deleteTitle": "Ta bort posten ”{{title}}”?",
+		"deleteDescription": "Posten försvinner från katalogen. Det går bara om posten saknar exemplar.",
+		"deleted": "Posten borttagen",
+		"hasItems": "Posten har fortfarande {{count}} {{count:plural; one:exemplar; other:exemplar;}}: utgalla eller ta bort {{count:plural; one:det; other:dem;}} först.",
+		"columns": {
+			"barcode": "Streckkod",
+			"callNumber": "Hyllsignum",
+			"itemType": "Material",
+			"readingLevel": "Nivå",
+			"status": "Status",
+			"borrower": "Utlånat till",
+			"acquisition": "Inköpt den",
+			"labels": "Etiketter"
+		},
+		"dueOn": "återlämningsdatum {{date}}",
+		"identifiers": "Identifierare",
+		"source": "Källa: {{source}}",
+		"created": "Skapad den {{when}}",
+		"updated": "Senast ändrad den {{when}}",
+		"onLoan": "Utlånat"
+	},
+	"item": {
+		"addTitle": "Lägg till exemplar",
+		"copies": "Antal exemplar",
+		"itemType": "Material",
+		"callNumber": "Hyllsignum",
+		"callNumberHint": "Föreslaget utifrån klassifikationen; det går att ändra.",
+		"readingLevel": "Läsnivå för exemplaret",
+		"enumeration": "Volym / nummer",
+		"acquisitionDate": "Inköpsdatum",
+		"notes": "Anteckningar om exemplaret",
+		"notForLoan": "Endast referens (lånas inte ut)",
+		"add": "Lägg till",
+		"added": "{{count}} {{count:plural; one:exemplar tillagt; other:exemplar tillagda;}}: {{barcodes}}",
+		"editTitle": "Redigera exemplar {{barcode}}",
+		"save": "Spara",
+		"saved": "Exemplaret uppdaterat",
+		"status": "Ändra status",
+		"statusTitle": "Status för exemplar {{barcode}}",
+		"newStatus": "Ny status",
+		"reason": "Orsak (valfri, registreras)",
+		"statusSaved": "Status uppdaterad",
+		"onLoan": "Exemplaret är utlånat: registrera återlämningen först.",
+		"delete": "Ta bort exemplar",
+		"deleteTitle": "Ta bort exemplar {{barcode}}?",
+		"deleteDescription": "Endast för katalogiseringsfel: ett exemplar som har lånats ut kan inte tas bort, det ska utgallras.",
+		"deleted": "Exemplaret borttaget",
+		"hasLoans": "Exemplaret har registrerade lån: det ska utgallras, inte tas bort.",
+		"labelsTitle": "Etiketter för exemplar {{barcode}}"
+	},
+	"errors": {
+		"isbnInvalid": "Ogiltigt ISBN (kontrollera siffrorna)",
+		"isbnTaken": "Det finns redan en post med detta ISBN",
+		"issnInvalid": "Ogiltigt ISSN",
+		"eanInvalid": "Ogiltig EAN",
+		"yearImplausible": "Orimligt år",
+		"genreRequired": "Välj genren",
+		"genreUnknown": "Genren finns inte i inställningarna",
+		"genreNotForNonfiction": "Facklitteratur har ingen genre",
+		"classCodeRequired": "Välj ämnet",
+		"classCodeUnknown": "Ämnet finns inte i inställningarna",
+		"classCodeNotForFiction": "Skönlitteratur har inget ämne",
+		"readingLevelNotAllowed": "Läsnivå är inte avsedd här",
+		"readingLevelOutOfRange": "Läsnivån finns inte i inställningarna",
+		"itemTypeUnknown": "Materialet finns inte i inställningarna",
+		"acquisitionDateInvalid": "Ogiltigt datum (ÅÅÅÅ-MM-DD)",
+		"copiesOutOfRange": "1 till 100 exemplar åt gången"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "Testleverantör"
+		},
+		"errors": {
+			"unreachable": "Tjänsten går inte att nå. Kontrollera internetanslutningen och försök igen senare.",
+			"timeout": "Tjänsten svarade inte i tid. Försök igen senare.",
+			"protocol": "Tjänsten gav ett oväntat svar. Uppgifterna kan matas in för hand.",
+			"http": "Tjänsten svarade med ett fel. Försök igen senare.",
+			"rate_limited": "Tjänsten avvisade förfrågan på grund av för många sökningar. Försök igen senare.",
+			"not_configured": "Tjänsten är inte konfigurerad: en inställning saknas (till exempel API-nyckeln).",
+			"spawn": "Programmet yaz-client finns inte på den här servern. Meddela administratören."
+		},
+		"noHits": "Inga resultat från {{provider}}.",
+		"hits": "{{count}} {{count:plural; one:resultat; other:resultat;}} från {{provider}}",
+		"fromCache": "från cacheminnet"
+	},
+	"fastAdd": {
+		"title": "Ny bok",
+		"steps": {
+			"code": "Kod",
+			"lookup": "Sökning",
+			"form": "Post och exemplar",
+			"done": "Klart"
+		},
+		"code": {
+			"heading": "Skanna streckkoden",
+			"label": "ISBN eller EAN",
+			"placeholder": "978…",
+			"material": "Material",
+			"noCode": "Utan kod",
+			"noCodeHint": "Sök på titel och författare, eller fyll i posten för hand.",
+			"manual": "Fyll i för hand",
+			"notACode": "Koden som lästes är varken ett ISBN eller en EAN: kontrollera siffrorna eller välj ”Utan kod”.",
+			"eanNotIsbn": "EAN {{ean}} inläst: det är inte ett ISBN, så posten måste fyllas i för hand.",
+			"cameraNotIsbn": "Det är inte ett ISBN: rikta kameran mot bokens streckkod"
+		},
+		"search": {
+			"heading": "Sök på titel och författare",
+			"title": "Titel",
+			"author": "Författare",
+			"submit": "Sök",
+			"empty": "Skriv minst titeln eller författaren."
+		},
+		"duplicate": {
+			"heading": "Detta ISBN finns redan i katalogen",
+			"copies": "{{count}} {{count:plural; one:exemplar; other:exemplar;}}",
+			"addCopy": "Lägg till exemplar",
+			"open": "Öppna posten",
+			"another": "Skanna en annan kod"
+		},
+		"lookup": {
+			"searching": "Söker i {{providers}}…",
+			"best": "Mest komplett",
+			"heading": "Hittade poster",
+			"pick": "Använd denna post",
+			"none": "Ingen post hittades. Posten kan fyllas i för hand.",
+			"manual": "Ange för hand",
+			"bySearch": "Sök på titel",
+			"retry": "Försök igen",
+			"another": "Ny kod",
+			"source": "Källa: {{provider}}",
+			"providerOk": "{{count}} {{count:plural; one:post; other:poster;}}",
+			"providerCached": "från cacheminnet",
+			"failed": "Fel"
+		},
+		"form": {
+			"heading": "Kontrollera posten och lägg till exemplaren",
+			"rescan": "Skanna en annan kod",
+			"bestOf": "Den mest kompletta av de {{count}} hittade posterna. Kontrollera året och beskrivningen mot exemplaret.",
+			"otherRecords": "{{count:plural; one:Annan post; other:Andra poster;}} ({{count}})",
+			"fromSource": "Post från {{provider}}: kontrollera uppgifterna innan du sparar.",
+			"manualSource": "Posten är ifylld för hand.",
+			"copiesSection": "Exemplar",
+			"copies": "Antal exemplar",
+			"itemType": "Material",
+			"callNumber": "Hyllsignum",
+			"readingLevel": "Läsnivå för exemplaren",
+			"acquisitionDate": "Inköpsdatum",
+			"save": "Spara post och exemplar",
+			"deweySuggested": "Ämne föreslaget utifrån Dewey-numret {{dewey}}."
+		},
+		"done": {
+			"heading": "Posten sparad",
+			"summary": "”{{title}}” med {{count}} {{count:plural; one:exemplar; other:exemplar;}}",
+			"summaryCopies": "{{count}} {{count:plural; one:exemplar tillagt; other:exemplar tillagda;}} till ”{{title}}”",
+			"barcodes": "Exemplarens streckkoder",
+			"printLabels": "Skriv ut etiketter",
+			"addToList": "Lägg till i etikettlistan",
+			"open": "Öppna posten",
+			"another": "Lägg till en till"
+		},
+		"cover": {
+			"title": "Omslag",
+			"alt": "Omslaget till boken",
+			"searching": "Söker efter omslaget online…",
+			"found": "Hittat på {{provider}}: det sparas med posten. Om det är fel, fotografera bokens eget omslag.",
+			"photo": "Foto av omslaget: det sparas med posten.",
+			"none": "Inget omslag hittat online: det går att fotografera.",
+			"empty": "Inget omslag: det går att fotografera.",
+			"take": "Fotografera omslaget",
+			"replace": "Ersätt med ett foto",
+			"remove": "Ta bort",
+			"saving": "Sparar omslaget…",
+			"failed": "Omslaget sparades inte: det kan läggas till från bokens post."
+		}
+	},
+	"cover": {
+		"title": "Omslag",
+		"take": "Fotografera omslaget",
+		"upload": "Ladda upp en fil",
+		"change": "Byt omslag",
+		"delete": "Ta bort omslag",
+		"deleteTitle": "Ta bort omslaget?",
+		"deleteDescription": "Bilden raderas från servern; ett nytt omslag kan fotograferas.",
+		"shoot": "Ta bild",
+		"loading": "Läser in modulen för rätning ({{loaded}} av {{total}} MB), bara vid första användningen.",
+		"loadingShort": "Läser in modulen för rätning ({{loaded}} MB), bara vid första användningen.",
+		"loadFailed": "Modulen för rätning kunde inte läsas in. Kontrollera anslutningen och försök igen.",
+		"detecting": "Söker efter omslagets kanter…",
+		"notFound": "Kanterna hittades inte automatiskt: dra hörnen till omslagets kanter.",
+		"adjustHint": "Dra de fyra hörnen till omslagets kanter och rätta sedan upp bilden.",
+		"straighten": "Rätta upp",
+		"result": "Resultat",
+		"use": "Använd detta omslag",
+		"retake": "Ta om",
+		"cancel": "Avbryt",
+		"saved": "Omslaget sparat",
+		"deleted": "Omslaget borttaget",
+		"placeholder": "Inget omslag",
+		"alt": "Omslaget till {{title}}",
+		"cameraHint": "Rikta in hela omslaget, även snett: det rätas upp efter fotot.",
+		"errors": {
+			"too_large": "Filen är för stor: gränsen är {{maxMb}} MB.",
+			"not_an_image": "Filen är inte en läsbar bild.",
+			"unsupported_format": "Bildformatet stöds inte (JPEG, PNG, WebP och HEIC är tillåtna).",
+			"empty": "Ingen fil vald."
+		},
+		"download": "Hämta omslag",
+		"downloading": "Söker efter omslaget online…",
+		"downloaded": "Omslaget hämtat från {{provider}}",
+		"downloadNotFound": "Inget omslag hittades online för detta ISBN: det går att fotografera.",
+		"downloadNoIsbn": "Posten saknar ISBN: omslaget måste fotograferas."
+	},
+	"export": {
+		"copiesTotal": "Exemplar",
+		"copiesAvailable": "Tillgängliga",
+		"callNumber": "Hyllsignum",
+		"acquiredAt": "Inköpt"
+	},
+	"import": {
+		"title": "Importera katalogen",
+		"upload": {
+			"file": "CSV-fil",
+			"hint": "En rad per exemplar: uppgifterna om titeln upprepas på raderna för dess exemplar. Titel, författare och förlag krävs. Använd rubrikerna i mallen, som kan hämtas nedan med de kolumner som behövs. För flytt från Koha, använd exporten som beskrivs i administratörens guide.",
+			"submit": "Ladda upp"
+		},
+		"mapping": {
+			"uncertain": "Kolumnerna kändes inte igen: ange fältet för var och en innan du fortsätter.",
+			"remembered": "Kolumnerna har kommit ihåg från den senaste importen av denna fil.",
+			"specialValues": "Specialvärden när författare eller förlag saknas (”{{author}}”, ”{{publisher}}”)",
+			"specialValuesHint": "Utan detta val är rader utan författare eller förlag fel.",
+			"validate": "Kontrollera filen",
+			"without": {
+				"biblioKey": "Utan kolumnen biblio_key grupperas exemplaren av samma bok efter ISBN; rader utan ISBN är var sin titel.",
+				"barcode": "Utan kolumnen barcode genereras exemplarens streckkoder: efter importen skrivs etiketterna ut.",
+				"classification": "Utan kolumnen classification hamnar böckerna i listan ”Att klassificera”: deras exemplar lånas inte ut förrän de är klassificerade."
+			}
+		},
+		"fields": {
+			"biblioKey": "Titelnyckel (biblionumber)",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "Titel",
+			"subtitle": "Undertitel",
+			"originalTitle": "Originaltitel",
+			"responsibility": "Upphovsangivelse",
+			"author": "Författare",
+			"publisher": "Förlag",
+			"publicationPlace": "Utgivningsort",
+			"publicationYear": "År",
+			"physicalDescription": "Fysisk beskrivning",
+			"series": "Serie",
+			"seriesNumber": "Nummer i serien",
+			"dewey": "Dewey",
+			"classification": "Klassifikation (genre eller ämne, Kohas ccode)",
+			"readingLevel": "Läsnivå",
+			"subjects": "Ämnesord",
+			"notes": "Anteckningar om titeln",
+			"barcode": "Exemplarets streckkod",
+			"callNumber": "Hyllsignum",
+			"itemType": "Material",
+			"enumeration": "Volym",
+			"status": "Status",
+			"notForLoan": "Utlånas inte",
+			"acquisitionDate": "Inköpsdatum",
+			"itemNotes": "Anteckningar om exemplaret"
+		},
+		"preview": {
+			"ready": "Inga fel: filen kan importeras.",
+			"blocked": "Rätta felen i filen och kontrollera igen: en fil med fel importeras inte.",
+			"nothing": "Alla exemplar i filen finns redan i katalogen: det finns inget att importera.",
+			"titles": "{{new}} {{new:plural; one:ny titel; other:nya titlar;}}, {{existing}} finns redan i katalogen (deras exemplar läggs till)",
+			"columns": {
+				"title": "Titel",
+				"barcode": "Streckkod",
+				"classification": "Klassifikation"
+			},
+			"question": {
+				"title": "Exemplar av samma titel med olika läsnivåer",
+				"text": "I {{count}} {{count:plural; one:titel; other:titlar;}} har exemplaren olika läsnivåer. Nivån kan ligga på varje exemplar i stället för på titeln: detta är inställningen ”läsnivå per exemplar”, som gäller hela katalogen och flyttar nivån för de titlar som redan finns till deras exemplar.",
+				"yes": "Ja, läsnivå per exemplar",
+				"no": "Nej, de är fel som ska rättas"
+			},
+			"commit": "Importera",
+			"back": "Tillbaka till kolumnerna",
+			"generatedBarcodes": "{{count}} {{count:plural; one:exemplar; other:exemplar;}} utan streckkod: streckkoden genereras, sedan skrivs etiketterna ut.",
+			"toClassify": "{{count}} {{count:plural; one:ny titel; other:nya titlar;}} utan klassifikation: {{count:plural; one:den hamnar; other:de hamnar;}} i ”Att klassificera”."
+		},
+		"reasons": {
+			"tooLong": "För lång text i kolumnen {{column}}: högst {{max}} tecken",
+			"isbnInvalid": "Ogiltigt ISBN: ”{{value}}”",
+			"classificationUnknown": "Klassifikationen finns inte i inställningarna: ”{{value}}”",
+			"barcodeInvalid": "Streckkod med tecken som inte tillåts: ”{{value}}”",
+			"barcodeCheckDigit": "Streckkod med fel kontrolltecken: ”{{value}}”",
+			"barcodeDuplicateInFile": "Streckkoden används redan på rad {{line}}",
+			"barcodeTaken": "Streckkoden {{value}} tillhör redan ett annat exemplar i katalogen",
+			"barcodeIsCard": "Koden {{value}} är eller liknar ett lånekortsnummer: ett exemplar kan inte ha en lånekortskod",
+			"statusUnknown": "Status känns inte igen: ”{{value}}” (tillgänglig, borttappad, skadad, under reparation, utgallrad)",
+			"notForLoanUnknown": "Värdet för ”utlånas inte” känns inte igen: ”{{value}}” (ja/nej)",
+			"dateInvalid": "Ogiltigt datum: ”{{value}}” (ÅÅÅÅ-MM-DD eller DD/MM/ÅÅÅÅ)",
+			"authorMissing": "Författaren saknas (med ”specialvärden” blir det Anonimo)",
+			"publisherMissing": "Förlaget saknas (med ”specialvärden” blir det s.n.)",
+			"titleMissing": "Titeln saknas",
+			"groupConflict": "Samma nyckel som på rad {{line}} men en annan titel",
+			"classQuestion": "Exemplar med olika läsnivåer ({{classes}}): svara på frågan nedan",
+			"classDiffers": "Exemplar med olika läsnivåer ({{classes}}) utan läsnivå per exemplar",
+			"copyExists": "Exemplaret finns redan i katalogen: det hoppas över",
+			"mergedIntoExisting": "Lagt till den titel som redan finns i katalogen (samma nyckel eller samma ISBN)"
+		},
+		"done": {
+			"title": "Katalogen importerad",
+			"summary": "{{titlesCreated}} {{titlesCreated:plural; one:ny titel; other:nya titlar;}}, {{copiesCreated}} {{copiesCreated:plural; one:exemplar tillagt; other:exemplar tillagda;}} ({{titlesMerged}} {{titlesMerged:plural; one:titel fanns redan; other:titlar fanns redan;}}, {{copiesSkipped}} {{copiesSkipped:plural; one:exemplar hoppades över; other:exemplar hoppades över;}}).",
+			"classPerItem": "Läsnivå per exemplar har aktiverats.",
+			"batch": "Import nr {{id}}: originalfilen sparas.",
+			"labels": "Skriv ut etiketterna för exemplaren utan streckkod",
+			"open": "Gå till katalogen",
+			"again": "Importera en annan fil"
+		},
+		"columns": {
+			"title": {
+				"hint": "Bokens titel."
+			},
+			"author": {
+				"hint": "Efternamn, Förnamn; tomt är ett fel, om inte ”specialvärden” används."
+			},
+			"publisher": {
+				"hint": "Förlaget; tomt som för författaren."
+			},
+			"biblioKey": {
+				"hint": "Titelns kod i det gamla programmet (Kohas biblionumber): den håller ihop exemplaren.",
+				"missing": "exemplaren grupperas efter ISBN"
+			},
+			"barcode": {
+				"hint": "Streckkoden som redan finns på exemplaret.",
+				"missing": "streckkoden genereras och etiketterna skrivs ut"
+			},
+			"classification": {
+				"hint": "Koden för genren (skönlitteratur) eller för ämnet (facklitteratur).",
+				"missing": "boken hamnar i ”Att klassificera”"
+			},
+			"readingLevel": {
+				"hint": "Läsnivån (skönlitteratur)."
+			},
+			"isbn": {
+				"hint": "ISBN-10 eller ISBN-13."
+			},
+			"issn": {
+				"hint": "För tidskrifter."
+			},
+			"ean": {
+				"hint": "EAN-koden för DVD och annat material."
+			},
+			"subtitle": {
+				"hint": "Undertiteln."
+			},
+			"originalTitle": {
+				"hint": "Endast för översättningar: titeln på originalspråket."
+			},
+			"responsibility": {
+				"hint": "Illustratörer, översättare…"
+			},
+			"publicationPlace": {
+				"hint": "Utgivningsorten."
+			},
+			"publicationYear": {
+				"hint": "Utgivningsåret."
+			},
+			"physicalDescription": {
+				"hint": "Sidor, illustrationer, format."
+			},
+			"series": {
+				"hint": "Serien (inte förlagets samlingsnamn)."
+			},
+			"seriesNumber": {
+				"hint": "Numret i serien."
+			},
+			"dewey": {
+				"hint": "Dewey-numret, endast som referens."
+			},
+			"subjects": {
+				"hint": "Nyckelord åtskilda med ; eller ,."
+			},
+			"notes": {
+				"hint": "Anteckningar om titeln."
+			},
+			"callNumber": {
+				"hint": "Hyllsignumet; föreslås om det saknas."
+			},
+			"itemType": {
+				"hint": "Materialet (bok, dvd…); om det saknas används det första konfigurerade."
+			},
+			"enumeration": {
+				"hint": "Volymen, för verk i flera volymer."
+			},
+			"status": {
+				"hint": "tillgänglig, borttappad, skadad, under reparation, utgallrad."
+			},
+			"notForLoan": {
+				"hint": "1 eller ja för exemplar för referens."
+			},
+			"acquisitionDate": {
+				"hint": "Inköpsdatumet; om det saknas används dagens datum."
+			},
+			"itemNotes": {
+				"hint": "Anteckningar om exemplaret."
+			}
+		}
+	},
+	"batch": {
+		"selected": "Ändra exemplaren i urvalet",
+		"title": "Ändra exemplaren",
+		"scope": "{{count}} {{count:plural; one:exemplar; other:exemplar;}}",
+		"operation": "Vad ska ändras",
+		"operations": {
+			"status": "Status",
+			"itemType": "Material",
+			"notForLoan": "Utlånas inte",
+			"readingLevel": "Läsnivå för exemplaret",
+			"acquisitionDate": "Inköpsdatum"
+		},
+		"value": "Nytt värde",
+		"yes": "Ja",
+		"no": "Nej",
+		"noClass": "Ingen nivå",
+		"reason": "Orsak",
+		"reasonHint": "Krävs för borttappade och utgallrade: den finns kvar i registret för varje exemplar.",
+		"check": "Kontrollera",
+		"apply": "Tillämpa på {{count}} {{count:plural; one:exemplar; other:exemplar;}}",
+		"plan": {
+			"changes": "{{count}} {{count:plural; one:exemplar ändras; other:exemplar ändras;}}",
+			"onLoan": "{{count}} {{count:plural; one:utlånat exemplar ändras inte (ska lämnas tillbaka först); other:utlånade exemplar ändras inte (ska lämnas tillbaka först);}}",
+			"unchanged": "{{count}} {{count:plural; one:exemplar har; other:exemplar har;}} redan detta värde",
+			"notFound": "{{count}} {{count:plural; one:exemplar finns; other:exemplar finns;}} inte längre",
+			"notAllowed": "{{count}} {{count:plural; one:exemplar är; other:exemplar är;}} inte skönlitteratur: nivån gäller inte",
+			"none": "Inget exemplar att ändra."
+		},
+		"excludedTitle": "Exemplar som förblir oförändrade",
+		"done": "{{count}} {{count:plural; one:exemplar ändrat; other:exemplar ändrade;}}",
+		"errors": {
+			"reasonRequired": "Skriv orsaken: den krävs för borttappade och utgallrade.",
+			"itemTypeUnknown": "Materialet finns inte i inställningarna.",
+			"readingLevelNotAllowed": "Läsnivå per exemplar är inte aktiverat.",
+			"readingLevelOutOfRange": "Läsnivån finns inte i inställningarna.",
+			"dateInvalid": "Ogiltigt datum.",
+			"statusUnknown": "Ogiltig status.",
+			"classificationUnknown": "Välj en genre eller ett ämne från inställningarna."
+		},
+		"reclassify": {
+			"button": "Klassificera om",
+			"title": "Klassificera om de valda titlarna",
+			"scope": "{{count}} {{count:plural; one:titel; other:titlar;}}",
+			"resuggest": "Skriv om exemplarens hyllsignum utifrån den nya klassifikationen",
+			"labelsHint": "Ryggbanden (och etiketterna om hyllsignumet ändras) hamnar bland dem som ska skrivas ut.",
+			"changes": "{{count}} {{count:plural; one:titel ändras; other:titlar ändras;}}",
+			"apply": "Klassificera om {{count}} {{count:plural; one:titel; other:titlar;}}",
+			"done": "{{count}} {{count:plural; one:titel klassificerad om; other:titlar klassificerade om;}}, {{calls}} {{calls:plural; one:hyllsignum skrivet om; other:hyllsignum skrivna om;}}"
+		}
+	},
+	"search": {
+		"suggest": "Koden {{barcode}} är ett exemplar av ”{{title}}”.",
+		"openSuggest": "Öppna posten",
+		"available": "Endast tillgängliga",
+		"yearFrom": "År från",
+		"yearTo": "År till",
+		"copiesAvailable": "{{available}} av {{total}} tillgängliga",
+		"noCopies": "Inga exemplar"
+	},
+	"inventory": {
+		"title": "Inventering",
+		"defaultName": "Inventering",
+		"emptyTitle": "Ingen inventering pågår",
+		"emptyHint": "Starta en inventeringsomgång och läs sedan av exemplaren hylla för hylla: när den avslutas markeras de exemplar som aldrig lästs av som borttappade.",
+		"name": "Namn på inventeringsomgången",
+		"start": "Ny inventering",
+		"started": "Startad {{when}}",
+		"overall": "Hela biblioteket",
+		"progress": "{{seen}} av {{expected}} ({{percent}} %)",
+		"counts": "{{scanned}} {{scanned:plural; one:exemplar läst; other:exemplar lästa;}} · {{misplaced}} på fel plats · {{found}} återfunna",
+		"byShelf": "Framsteg per hylla",
+		"noShelf": "Utan hyllsignum",
+		"scanTitle": "Skanna exemplaren",
+		"shelf": "Hylla",
+		"shelfHint": "Till exempel B eller 590: exemplar med ett annat hyllsignum markeras som felplacerade.",
+		"scanLabel": "Exemplarets streckkod",
+		"camera": "Skanna med kameran",
+		"outcomes": {
+			"seen": "{{title}} ({{barcode}}): inläst.",
+			"again": "{{title}} ({{barcode}}): redan inläst {{when}}.",
+			"misplaced": "{{title}} ({{barcode}}): står på fel plats; ställ tillbaka exemplaret enligt hyllsignumet.",
+			"found": "{{title}} ({{barcode}}): exemplaret var borttappat och har återfunnits; det är tillgängligt igen.",
+			"onLoan": "{{title}} ({{barcode}}): är utlånat; registrera återlämningen vid utlåningsdisken.",
+			"withdrawn": "{{title}} ({{barcode}}): utgallrat exemplar, ska tas bort från hyllan.",
+			"unknown": "{{code}}: inget exemplar har denna streckkod."
+		},
+		"missing": "Saknas fortfarande ({{count}})",
+		"allShelves": "Alla hyllor",
+		"allTypes": "Alla material",
+		"noneMissing": "Alla förväntade exemplar har lästs av.",
+		"more": "och {{count}} till: exportera listan för att se {{count:plural; one:det; other:alla;}}.",
+		"close": "Avsluta inventeringen",
+		"closeTitle": "Avsluta inventeringen?",
+		"closeHint": "{{count}} {{count:plural; one:exemplar; other:exemplar;}} som aldrig lästs av markeras som borttappade. Inventeringen kan öppnas igen inom en vecka för att ångra det.",
+		"closedTitle": "Inventeringen avslutad",
+		"summary": "{{seen}} av {{expected}} {{expected:plural; one:exemplar; other:exemplar;}} lästa, {{lost}} markerade som borttappade, {{found}} återfunna, {{onLoan}} utlånade, {{misplaced}} på fel plats.",
+		"history": "Tidigare inventeringar",
+		"reopen": "Öppna igen",
+		"errors": {
+			"alreadyOpen": "Det pågår redan en inventering.",
+			"notOpen": "Denna inventering är avslutad.",
+			"notFound": "Inventeringen hittades inte.",
+			"tooLate": "Den kan bara öppnas igen inom en vecka efter avslutningen.",
+			"badName": "Ge inventeringsomgången ett namn.",
+			"badNotes": "Anteckningarna för inventeringen får vara högst 500 tecken."
+		},
+		"cameraShelf": "Hylla {{shelf}}",
+		"cameraDone": "Klart"
+	},
+	"toClassify": {
+		"title": "Att klassificera",
+		"label": "Att klassificera",
+		"intro": "Böckerna som lagts in utan klassifikation, äldst först. Deras exemplar lånas inte ut förrän de är klassificerade.",
+		"count": "{{count}} {{count:plural; one:bok; other:böcker;}} att klassificera",
+		"empty": "Ingen bok att klassificera",
+		"emptyHint": "Alla böcker i katalogen har en genre eller ett ämne.",
+		"start": "Börja klassificera",
+		"classify": "Klassificera",
+		"badge": "Att klassificera",
+		"badgeHint": "Exemplaren lånas inte ut förrän boken är klassificerad.",
+		"columns": {
+			"title": "Titel",
+			"author": "Författare",
+			"publisher": "Förlag",
+			"year": "År",
+			"isbn": "ISBN",
+			"copies": "Exemplar",
+			"enteredOn": "Inlagd den"
+		},
+		"flow": {
+			"title": "Klassificera boken",
+			"saveNext": "Spara och nästa",
+			"save": "Spara",
+			"skip": "Hoppa över",
+			"saved": "”{{title}}” klassificerad",
+			"end": "Det finns inga fler böcker att klassificera i den här omgången.",
+			"backToList": "Tillbaka till listan",
+			"already": "Den här boken är redan klassificerad.",
+			"callNumber": "Hyllsignum för exemplaren",
+			"callNumberHint": "Exemplar utan hyllsignum får detta; sedan kan ryggbandet skrivas ut.",
+			"dewey": "Dewey-numret {{dewey}} motsvarar ämnet {{code}}.",
+			"copies": "{{count}} {{count:plural; one:exemplar; other:exemplar;}}",
+			"subjects": "Ämnesord",
+			"notes": "Anteckningar"
+		}
+	}
+}

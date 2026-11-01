@@ -1,0 +1,11 @@
+{
+	"name": "spine-default",
+	"description": "Fascetta dorso da sola: pittogramma e segnatura; sugli adesivi bassi una banda colorata con classe e segnatura",
+	"kind": "spine",
+	"unit": { "cells": 1, "files": ["label.html"] },
+	"stocks": ["a4-70x48", "l7651", "a4-70x24"],
+	"variants": {
+		"full": { "minCellHeightMm": 40 },
+		"compact": { "maxCellHeightMm": 39.9, "files": ["label-compact.html"] }
+	}
+}

@@ -1,0 +1,75 @@
+{
+	"id": "es-eso",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md Phase 12, B2 of docs/studies/barcodes-and-school-classes.md). After 4º ESO the pupil chooses Bachillerato or leaves (9.41).",
+	"name": {
+		"en": "Secondary school, ESO and Bachillerato (Spain)",
+		"it": "Secondaria, ESO e Bachillerato (Spagna)",
+		"es": "Instituto: ESO y Bachillerato"
+	},
+	"country": "ES",
+	"languages": ["es"],
+	"school": {
+		"stages": [
+			{
+				"code": "eso",
+				"name": "Educación Secundaria Obligatoria"
+			},
+			{
+				"code": "bach",
+				"name": "Bachillerato"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1º ESO",
+				"name": "1º de ESO",
+				"stage": "eso"
+			},
+			{
+				"code": "2",
+				"label": "2º ESO",
+				"name": "2º de ESO",
+				"stage": "eso"
+			},
+			{
+				"code": "3",
+				"label": "3º ESO",
+				"name": "3º de ESO",
+				"stage": "eso"
+			},
+			{
+				"code": "4",
+				"label": "4º ESO",
+				"name": "4º de ESO",
+				"stage": "eso",
+				"next": ["B1", null]
+			},
+			{
+				"code": "B1",
+				"label": "1º Bach.",
+				"name": "1º de Bachillerato",
+				"stage": "bach",
+				"aliases": ["1º Bachillerato", "1 Bach"]
+			},
+			{
+				"code": "B2",
+				"label": "2º Bach.",
+				"name": "2º de Bachillerato",
+				"stage": "bach",
+				"next": null,
+				"aliases": ["2º Bachillerato", "2 Bach"]
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Grupo",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"eso": ["A", "B", "C", "D"],
+		"bach": ["A", "B"]
+	},
+	"teacherGroup": "Profesorado",
+	"readingLevels": []
+}

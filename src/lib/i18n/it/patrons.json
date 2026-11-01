@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Utenti",
+		"new": "Nuovo utente",
+		"search": "Cerca per cognome…",
+		"empty": "Nessun utente corrisponde ai filtri.",
+		"filters": {
+			"type": "Tipo",
+			"stage": "Ordine",
+			"level": "Classe",
+			"status": "Stato",
+			"all": "Tutti",
+			"allF": "Tutte"
+		},
+		"columns": {
+			"name": "Cognome e nome",
+			"type": "Tipo",
+			"class": "Classe",
+			"card": "Tessera"
+		},
+		"clearFilters": "Azzera filtri",
+		"countFiltered": "{{shown:plural; one:{{shown}} utente corrisponde; other:{{shown}} utenti corrispondono;}} ai filtri",
+		"printCards": "Stampa tessere",
+		"printClassCards": "Stampa tessere {{classLabel}}",
+		"removeSelected": "Rimuovi selezionati",
+		"removeTitle": "Rimuovere {{count}} {{count:plural; one:utente; other:utenti;}}?",
+		"removeDescription": "Per ognuno vengono cancellati subito e per sempre nome e cognome, contatti, matricola, note, numero di tessera e foto; restano tipo, classe, sezione e lo storico dei prestiti per le statistiche. Chi ha prestiti in corso viene lasciato in archivio.",
+		"removed": "{{removed}} {{removed:plural; one:rimosso; other:rimossi;}}, {{kept}} con prestiti in corso {{kept:plural; one:lasciato; other:lasciati;}} in archivio",
+		"status": {
+			"title": "Stato",
+			"loans": "{{count}} in prestito",
+			"overdue": "{{count}} in ritardo",
+			"noPhoto": "senza foto"
+		},
+		"startTitle": "Cerca un utente",
+		"startHint": "Ricerca per nome, tessera o con i filtri."
+	},
+	"types": {
+		"student": "Studente",
+		"teacher": "Docente"
+	},
+	"fields": {
+		"patronType": "Tipo",
+		"firstName": "Nome",
+		"lastName": "Cognome",
+		"cardNumber": "Numero tessera",
+		"cardNumberHint": "Vuoto: viene assegnato automaticamente.",
+		"externalId": "Matricola",
+		"email": "Email",
+		"emailHint": "L'indirizzo che la scuola assegna allo studente o al docente: servirà per gli avvisi.",
+		"circulationNote": "Nota per il banco prestiti",
+		"circulationNoteHint": "Compare in evidenza durante il prestito.",
+		"notes": "Note interne",
+		"status": "Stato",
+		"openLoans": "Prestiti in corso",
+		"overdueLoans": "In ritardo",
+		"noCard": "senza tessera",
+		"none": "—",
+		"levelCode": "Classe",
+		"groupId": "Sezione",
+		"classLabel": "Classe",
+		"teacherGroup": "Gruppo docenti"
+	},
+	"form": {
+		"createTitle": "Nuovo utente",
+		"editTitle": "Modifica utente",
+		"identity": "Anagrafica",
+		"school": "Classe",
+		"contacts": "Contatti",
+		"notes": "Note",
+		"create": "Crea utente",
+		"save": "Salva modifiche",
+		"classSelect": "Scegli…",
+		"defaultTeacherGroup": "Il gruppo dei docenti"
+	},
+	"errors": {
+		"emailInvalid": "Indirizzo email non valido.",
+		"cardNumberInvalid": "Numero di tessera non valido: solo cifre, lettere maiuscole e trattino, con il carattere di controllo giusto.",
+		"cardNumberTaken": "Numero di tessera già assegnato a un altro utente.",
+		"cardNumberIsCopy": "Il numero di tessera è o sembra il codice di una copia: scegliere un altro numero.",
+		"externalIdTaken": "Matricola già assegnata a un altro utente.",
+		"levelRequired": "Per uno studente la classe (il livello) è obbligatoria.",
+		"levelUnknown": "Classe non prevista dai livelli della scuola.",
+		"levelNotForTeachers": "Un docente non ha una classe.",
+		"groupRequired": "Per uno studente la sezione è obbligatoria.",
+		"groupUnknown": "Sezione non trovata tra le classi attive: le classi si creano in Amministrazione → Configurazione → Classi.",
+		"levelNotInGroup": "Questa sezione non ha questa classe: scegliere una sezione della classe."
+	},
+	"detail": {
+		"heading": "Scheda dell'utente",
+		"tabs": {
+			"loans": "Prestiti in corso",
+			"history": "Storico",
+			"cards": "Tessera",
+			"notes": "Note"
+		},
+		"noLoans": "Nessun prestito in corso.",
+		"loanColumns": {
+			"due": "Scadenza"
+		},
+		"overdue": "in ritardo",
+		"card": "Tessera {{number}}",
+		"noNotes": "Nessuna nota.",
+		"edit": "Modifica",
+		"created": "Creato il {{when}}",
+		"barcodeAlt": "Codice a barre della tessera {{number}}",
+		"cardPrinted": "Tessera stampata il {{when}}.",
+		"cardNotPrinted": "Tessera non ancora stampata.",
+		"reassignCard": "Riassegna tessera",
+		"reassignTitle": "Assegnare una nuova tessera?",
+		"reassignDescription": "Il numero attuale viene ritirato per sempre e la nuova tessera andrà stampata.",
+		"cardReassigned": "Nuova tessera: {{number}}",
+		"printCard": "Stampa tessera",
+		"markCardPrinted": "Segna come stampata",
+		"cardMarkedPrinted": "Tessera segnata come stampata",
+		"historyColumns": {
+			"issuedAt": "Prestato il",
+			"dueDate": "Scadenza",
+			"returnedAt": "Restituito il",
+			"outcome": "Esito",
+			"title": "Titolo",
+			"author": "Autore",
+			"barcode": "Copia",
+			"renewals": "Rinnovi",
+			"schoolYear": "Anno scolastico"
+		},
+		"outcome": {
+			"open": "In corso",
+			"overdue": "In ritardo",
+			"returned": "Restituito",
+			"returnedLate": "Restituito in ritardo",
+			"lost": "Smarrito"
+		},
+		"historyEmpty": "Nessun prestito registrato.",
+		"historyCount": "{{count}} {{count:plural; one:prestito; other:prestiti;}} in totale",
+		"notesEdit": "Modifica note",
+		"notesSaved": "Note salvate",
+		"notesUnchanged": "Nessuna modifica",
+		"notesHint": "La nota per il banco prestiti compare in evidenza al momento del prestito; le altre note restano qui.",
+		"remove": "Rimuovi {{type}}",
+		"removeTitle": "Rimuovere definitivamente {{name}}?",
+		"removeDescription": "Vengono cancellati subito e per sempre: nome e cognome, email, matricola, note, numero di tessera (ritirato) e foto. Restano solo tipo, classe e sezione e lo storico dei prestiti per le statistiche. L'operazione non si può annullare.",
+		"removeOpenLoans": "Ha {{count}} {{count:plural; one:prestito in corso: prima va restituito o segnato smarrito; other:prestiti in corso: prima vanno restituiti o segnati smarriti;}}.",
+		"removeClassSheets": "È stato scelto per {{count}} foto nelle immagini della classe (censimento da immagine): {{count:plural; one:quel riquadro viene coperto; other:quei riquadri vengono coperti;}}.",
+		"removed": "Utente rimosso: i dati personali sono stati cancellati.",
+		"removedInfo": "Rimosso il {{when}}. Restano solo i dati per le statistiche.",
+		"lostTitle": "Libri smarriti",
+		"lostHint": "Segnati come smarriti mentre erano in prestito a questo utente. Se tornano, vanno passati nelle restituzioni.",
+		"markLost": "Segna smarrito «{{title}}»",
+		"markLostTitle": "Segnare «{{title}}» come smarrito?",
+		"markLostDescription": "Il prestito si chiude e la copia risulta smarrita. Se il libro ricompare, basta registrarne la restituzione e torna disponibile.",
+		"markLostReason": "Motivo (facoltativo)",
+		"markLostConfirm": "Segna smarrito",
+		"markedLost": "«{{title}}» segnato come smarrito."
+	},
+	"photo": {
+		"title": "Foto",
+		"take": "Scatta foto",
+		"upload": "Carica file",
+		"retake": "Rifai",
+		"use": "Usa questa foto",
+		"cancel": "Annulla",
+		"delete": "Elimina foto",
+		"deleteTitle": "Eliminare la foto?",
+		"deleteDescription": "La foto viene cancellata dal server; se ne potrà scattare una nuova.",
+		"zoom": "Zoom",
+		"dragHint": "Trascinare per inquadrare, usare lo zoom per avvicinare.",
+		"saved": "Foto salvata",
+		"deleted": "Foto eliminata",
+		"placeholder": "Nessuna foto",
+		"alt": "Foto di {{name}}",
+		"errors": {
+			"too_large": "File troppo grande: il limite è {{maxMb}} MB.",
+			"not_an_image": "Il file non è un'immagine leggibile.",
+			"unsupported_format": "Formato immagine non supportato (sono ammessi JPEG, PNG, WebP e HEIC).",
+			"empty": "Nessun file selezionato."
+		},
+		"withForm": "Si salva insieme all'utente.",
+		"requiredHint": "La foto è richiesta: si può fare ora o in seguito dalla pagina dell'utente.",
+		"optionalHint": "La foto si può fare ora o in seguito dalla pagina dell'utente.",
+		"remove": "Togli",
+		"notSaved": "La foto non è stata salvata: rifalla dalla pagina dell'utente.",
+		"retakePhoto": "Rifai la foto"
+	},
+	"census": {
+		"title": "Censimento foto",
+		"noGroup": "Senza classe",
+		"stageOthers": "Senza ordine",
+		"progress": "{{done}} di {{total}} con foto",
+		"allDone": "Tutti hanno la foto.",
+		"back": "Cambia classe o lista",
+		"skip": "Salta",
+		"done": "Fine",
+		"saved": "Foto salvata: {{name}}",
+		"quickAdd": "Nuovo utente",
+		"quickAddHint": "Viene aggiunto a {{group}} e la sua foto è la prossima.",
+		"create": "Aggiungi e fotografa",
+		"findPerson": "Cerca per cognome",
+		"pickTarget": "Scegli una lista o una classe",
+		"listsTitle": "Liste di utenti",
+		"classesTitle": "Classi",
+		"nothingMissing": "Tutte le classi e le liste hanno le foto.",
+		"onlyMissing": "Compaiono solo le classi e le liste in cui manca almeno una foto.",
+		"byCamera": "Una persona alla volta",
+		"sheets": {
+			"title": "Da un'immagine con più foto",
+			"hint": "Immagini con più foto (tabellone del fotografo, tessere su un tavolo, foglio di fototessere): rilevamento automatico delle foto e assegnazione a ciascun utente.",
+			"upload": "Carica immagine",
+			"take": "Fotografa il foglio",
+			"uploading": "Invio dell'immagine…",
+			"empty": "Nessuna immagine per questa classe o lista.",
+			"item": "Immagine del {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:foto trovata; other:foto trovate;}} · {{saved}} {{saved:plural; one:salvata; other:salvate;}} · {{pending}} da fare",
+			"notDetected": "Da elaborare",
+			"demoScan": "Esempio da scanner",
+			"demoPhoto": "Esempio da foto",
+			"demoHint": "Due modi di avere le foto della classe: la scansione è piatta, le foto sono rettangoli al più ruotati; la foto è scattata di sbieco, la prospettiva deforma i riquadri."
+		},
+		"sheet": {
+			"title": "Foto da un'immagine",
+			"back": "Torna alla classe",
+			"detecting": "Ricerca delle foto nell'immagine…",
+			"found": "Foto trovate: {{count}}. Scegliere per ciascuna l'utente.",
+			"none": "Nessuna foto trovata. Con «Correggi riquadri» si possono disegnare a mano.",
+			"pictureAlt": "L'immagine caricata, con i riquadri delle foto numerati",
+			"frame": "Foto {{n}}",
+			"choose": "Chi è?",
+			"nobody": "— Nessuno —",
+			"takenBy": "{{name}} (già nella foto {{n}})",
+			"hasPhoto": "ha già una foto",
+			"noPhoto": "senza foto",
+			"ignore": "Ignora",
+			"unignore": "Ripristina",
+			"ignored": "Ignorata: non è nessuno di questa classe o lista.",
+			"saved": "Salvata come foto di {{name}}",
+			"edit": "Correggi riquadri",
+			"editDone": "Fine correzioni",
+			"editHint": "Toccare un riquadro e trascinarne gli angoli; per una foto mancante usare «Aggiungi riquadro».",
+			"editHintScan": "Toccare un riquadro: trascinare un angolo per allargarlo o stringerlo, il cerchio in alto per ruotarlo; per una foto mancante usare «Aggiungi riquadro».",
+			"addFrame": "Aggiungi riquadro",
+			"addFrameHint": "Trascinare sull'immagine da un angolo all'altro della foto mancante.",
+			"deleteFrame": "Elimina riquadro {{n}}",
+			"rotateFrame": "Ruota il riquadro",
+			"kind": "Tipo di immagine",
+			"kindPhoto": "Foto",
+			"kindScan": "Scansione",
+			"kindPhotoHint": "Fotografata di sbieco: ogni angolo di un riquadro si sposta da solo, per seguire la prospettiva.",
+			"kindScanHint": "Fatta con lo scanner: i riquadri restano rettangoli e si possono solo ruotare.",
+			"kindAgain": "Finché non è scelto nessun utente, cambiando tipo le foto vengono cercate di nuovo.",
+			"save": "Salva le foto",
+			"saveTitle": "Salvare le foto scelte?",
+			"saveSummary": "Foto da salvare: {{count}}.",
+			"saveReplaces": "Sostituiscono la foto che c'è già: {{names}}.",
+			"saveUnassigned": "Riquadri senza nessuno scelto: {{count}} (restano come sono).",
+			"savedToast": "Foto salvate: {{count}}.",
+			"deleteSheet": "Elimina immagine",
+			"deleteSheetTitle": "Eliminare l'immagine?",
+			"deleteSheetDescription": "L'immagine e i suoi riquadri vengono cancellati. Le foto già salvate restano agli utenti.",
+			"deletedToast": "Immagine eliminata.",
+			"progress": "{{label}}: {{done}} di {{total}} con foto",
+			"missingTitle": "Ancora senza foto",
+			"byCamera": "Fotografali uno per uno",
+			"errors": {
+				"not_found": "Immagine non trovata.",
+				"set_not_found": "La classe o la lista non esiste più.",
+				"empty": "Il file è vuoto.",
+				"too_large": "L'immagine è troppo grande (al massimo {{maxMb}} MB).",
+				"not_an_image": "Il file non è un'immagine leggibile.",
+				"unsupported_format": "Formato non supportato: sono ammessi JPEG, PNG, WebP e HEIC.",
+				"too_many_frames": "Al massimo {{maxFrames}} foto per immagine.",
+				"bad_corners": "Il riquadro non è valido: gli angoli devono formare un quadrilatero dentro l'immagine.",
+				"already_detected": "Le foto di questa immagine sono già state cercate.",
+				"frame_saved": "Questa foto è già stata salvata.",
+				"frame_erased": "Questa foto è di un utente rimosso: il riquadro è stato coperto.",
+				"not_a_member": "Si possono scegliere solo gli utenti della classe o della lista.",
+				"patron_taken": "Già scelto per la foto {{position}}: liberarla prima di sceglierlo qui.",
+				"confirm_replace": "{{count:plural; one:{{count}} foto sostituisce quella esistente; other:{{count}} foto sostituiscono quelle esistenti;}}: confermare per procedere.",
+				"nothing_to_save": "Scegliere almeno un utente prima di salvare."
+			},
+			"erased": "Utente rimosso: il riquadro è stato coperto nell'immagine."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "File CSV",
+			"submit": "Carica",
+			"hints": {
+				"students": "Un file CSV con una riga per studente, separato da ; o da , (anche esportato da un foglio di calcolo). Usare le intestazioni del modello, scaricabile qui sotto con le colonne necessarie.",
+				"teachers": "Un file CSV con una riga per docente, separato da ; o da ,. Usare le intestazioni del modello, scaricabile qui sotto con le colonne necessarie."
+			}
+		},
+		"mapping": {
+			"format": "Formato riconosciuto",
+			"uncertain": "Il formato non è certo: controllare le colonne prima di continuare.",
+			"remembered": "Colonne ricordate dall'ultima importazione di questo file.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "intestazione del file",
+				"unknown": "sconosciuto"
+			},
+			"mode": "Modalità",
+			"modes": {
+				"upsert": "Aggiungi e aggiorna",
+				"upsertHint": "Le righe trovate aggiornano l'utente esistente, le altre creano utenti nuovi.",
+				"sync": {
+					"students": "Sincronizza studenti",
+					"teachers": "Sincronizza docenti"
+				},
+				"syncHint": {
+					"students": "Il file è l'elenco completo degli studenti: chi manca viene elencato (e rimosso, dopo conferma). I docenti non vengono toccati.",
+					"teachers": "Il file è l'elenco completo dei docenti: chi manca viene elencato (e rimosso, dopo conferma). Gli studenti non vengono toccati."
+				}
+			},
+			"duplicates": "Utenti già presenti",
+			"policies": {
+				"update": "Aggiorna",
+				"skip": "Salta",
+				"create": "Crea comunque"
+			},
+			"validate": "Verifica il file",
+			"matchByName": {
+				"students": "Senza la colonna external_id gli studenti già in archivio si riconoscono per nome e classe.",
+				"teachers": "Senza la colonna external_id i docenti già in archivio si riconoscono per nome."
+			}
+		},
+		"preview": {
+			"ready": "Nessun errore: l'importazione è possibile.",
+			"blocked": "Correggere gli errori nel file (o negli utenti) e verificare di nuovo: un file con errori non si importa.",
+			"columns": {
+				"name": "Nome",
+				"class": "Classe"
+			},
+			"changed": "Cambia: {{fields}}",
+			"homonym": {
+				"pick": "Scegli l'utente",
+				"create": "Crea un nuovo utente",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Omonimi da risolvere"
+			},
+			"missing": {
+				"students": {
+					"title": "Studenti presenti in archivio ma assenti dal file ({{count}})",
+					"remove": "Rimuovi questi studenti dall'archivio (anonimizzazione immediata)",
+					"noPermission": "Senza il permesso di rimuovere utenti, gli studenti mancanti restano in archivio.",
+					"notRemoved": "{{count}} {{count:plural; one:studente mancante non rimosso perché ha; other:studenti mancanti non rimossi perché hanno;}} prestiti aperti."
+				},
+				"teachers": {
+					"title": "Docenti presenti in archivio ma assenti dal file ({{count}})",
+					"remove": "Rimuovi questi docenti dall'archivio (anonimizzazione immediata)",
+					"noPermission": "Senza il permesso di rimuovere utenti, i docenti mancanti restano in archivio.",
+					"notRemoved": "{{count}} {{count:plural; one:docente mancante non rimosso perché ha; other:docenti mancanti non rimossi perché hanno;}} prestiti aperti."
+				},
+				"hint": "Con la sincronizzazione chi non è nel file può essere rimosso: i dati personali vengono cancellati subito e per sempre, restano solo classe e statistiche."
+			},
+			"commit": "Importa",
+			"back": "Torna alle colonne",
+			"generatedCards": "{{count}} {{count:plural; one:tessera nuova sarà generata; other:tessere nuove saranno generate;}}: nel file non c'è il numero."
+		},
+		"reasons": {
+			"tooLong": "Testo troppo lungo nella colonna {{column}}: al massimo {{max}} {{max:plural; one:carattere; other:caratteri;}}",
+			"nameRequired": "Nome o cognome mancante",
+			"emailInvalid": "Email non valida",
+			"cardNumberInvalid": "Numero tessera non valido",
+			"cardNumberTaken": "Numero tessera già assegnato a un altro utente",
+			"cardNumberIsCopy": "Numero tessera uguale o simile al codice di una copia",
+			"externalIdTaken": "Matricola già assegnata a un altro utente",
+			"duplicateInFile": "Stessa persona già alla riga {{line}}",
+			"homonym": "{{count}} {{count:plural; one:omonimo; other:omonimi;}} in archivio: scegliere quale aggiornare",
+			"matchedTwice": "Un'altra riga aggiorna già lo stesso utente",
+			"skipped": "Già presente: saltato",
+			"levelRequired": "Classe mancante",
+			"levelUnknown": "Anno «{{value}}» non previsto dalla scuola",
+			"groupRequired": "Sezione mancante",
+			"groupUnknown": "Sezione «{{value}}» non trovata per questo anno. Classi valide: {{classes}} (le classi si creano in Amministrazione → Configurazione → Classi)",
+			"levelNotInGroup": "La sezione «{{value}}» non ha questo anno. Classi valide: {{classes}}",
+			"classUnknown": "Classe «{{value}}» non trovata. Classi valide: {{classes}}",
+			"teacherGroupUnknown": "Gruppo docenti «{{value}}» non trovato. Gruppi validi: {{classes}}"
+		},
+		"done": {
+			"title": "Importazione completata",
+			"summary": "{{created}} {{created:plural; one:nuovo; other:nuovi;}}, {{updated}} {{updated:plural; one:aggiornato; other:aggiornati;}}, {{unchanged}} {{unchanged:plural; one:invariato; other:invariati;}}, {{removed}} {{removed:plural; one:rimosso; other:rimossi;}}.",
+			"printNew": "Stampa le tessere dei nuovi",
+			"census": "Censimento foto",
+			"again": "Importa un altro file",
+			"batch": "Importazione n. {{id}}: il file originale è conservato sul server."
+		},
+		"fields": {
+			"firstName": "Nome",
+			"lastName": "Cognome",
+			"class": "Classe (anno e sezione)",
+			"level": "Classe (anno)",
+			"section": "Sezione",
+			"group": "Gruppo docenti",
+			"externalId": "Matricola",
+			"cardNumber": "Tessera",
+			"email": "Email"
+		},
+		"titles": {
+			"students": "Importa studenti",
+			"teachers": "Importa docenti"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "Il nome."
+			},
+			"lastName": {
+				"hint": "Il cognome."
+			},
+			"class": {
+				"hint": "La classe in una colonna, come 3A o 3 A: deve esistere in Amministrazione → Configurazione → Classi."
+			},
+			"level": {
+				"hint": "L'anno di corso (1, 2, 3…), con la sezione nella colonna section."
+			},
+			"section": {
+				"hint": "La sezione (A, B…): con level indica la classe."
+			},
+			"cardNumber": {
+				"hint": "Il numero della tessera, se lo studente ne ha già una.",
+				"missing": "le tessere nuove vengono generate"
+			},
+			"externalId": {
+				"hint": "Il codice del registro elettronico.",
+				"missing": "gli utenti già presenti si riconoscono per nome e classe"
+			},
+			"email": {
+				"hint": "Facoltativa."
+			},
+			"group": {
+				"hint": "Il gruppo docenti; se manca, il gruppo predefinito."
+			}
+		},
+		"classForm": {
+			"label": "La classe",
+			"class": "In una colonna (class: 3A)",
+			"levelSection": "In due colonne (level: 3, section: A)"
+		}
+	}
+}

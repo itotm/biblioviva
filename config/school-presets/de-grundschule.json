@@ -1,0 +1,53 @@
+{
+	"id": "de-grundschule",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md Phase 12, B2 of docs/studies/barcodes-and-school-classes.md).",
+	"name": {
+		"it": "Scuola primaria (Germania)",
+		"en": "Primary school (Germany)"
+	},
+	"country": "DE",
+	"languages": ["de"],
+	"school": {
+		"stages": [
+			{
+				"code": "grundschule",
+				"name": "Grundschule"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1",
+				"name": "Klasse 1",
+				"stage": "grundschule"
+			},
+			{
+				"code": "2",
+				"label": "2",
+				"name": "Klasse 2",
+				"stage": "grundschule"
+			},
+			{
+				"code": "3",
+				"label": "3",
+				"name": "Klasse 3",
+				"stage": "grundschule"
+			},
+			{
+				"code": "4",
+				"label": "4",
+				"name": "Klasse 4",
+				"stage": "grundschule"
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Klasse",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"grundschule": ["a", "b", "c"]
+	},
+	"teacherGroup": "Lehrkräfte",
+	"readingLevels": []
+}

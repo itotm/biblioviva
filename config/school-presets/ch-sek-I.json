@@ -1,0 +1,56 @@
+{
+	"id": "ch-sek-I",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Sekundarstufe I of the German-speaking cantons: some count 1.–3. Sek, others 7.–9. Klasse; the levels (Sek A, B, C, Real, Bezirksschule) differ by canton [VERIFY]. The school year starts in mid-August [VERIFY].",
+	"name": {
+		"it": "Secondaria di primo grado (Svizzera tedesca)",
+		"en": "Lower secondary school (German-speaking Switzerland)",
+		"de": "Sekundarstufe I (Deutschschweiz)"
+	},
+	"country": "CH",
+	"languages": ["de"],
+	"schoolYear": {
+		"start": "08-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "sek-I",
+				"name": "Sekundarstufe I"
+			}
+		],
+		"levels": [
+			{
+				"code": "S1",
+				"label": "1",
+				"name": "1. Sek (7. Schuljahr)",
+				"stage": "sek-I",
+				"aliases": ["1. Sek", "7. Klasse", "9H"]
+			},
+			{
+				"code": "S2",
+				"label": "2",
+				"name": "2. Sek (8. Schuljahr)",
+				"stage": "sek-I",
+				"aliases": ["2. Sek", "8. Klasse", "10H"]
+			},
+			{
+				"code": "S3",
+				"label": "3",
+				"name": "3. Sek (9. Schuljahr)",
+				"stage": "sek-I",
+				"aliases": ["3. Sek", "9. Klasse", "11H"]
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Klasse",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"sek-I": ["a", "b", "c"]
+	},
+	"teacherGroup": "Lehrpersonen",
+	"readingLevels": []
+}

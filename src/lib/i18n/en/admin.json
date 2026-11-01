@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "Administration",
+		"sections": {
+			"config": {
+				"title": "Configuration",
+				"description": "The classification and the settings of the library."
+			},
+			"audit": {
+				"title": "Audit log",
+				"description": "Who did what: logins, changes, imports."
+			},
+			"users": {
+				"title": "Staff accounts",
+				"description": "Staff accounts, roles and permissions."
+			},
+			"backups": {
+				"title": "Backups",
+				"description": "Safety copies of the database and files."
+			},
+			"rollover": {
+				"title": "Class upgrade",
+				"description": "At the end of the year: promotions, repeaters, leavers of the last class."
+			},
+			"exports": {
+				"title": "Exports",
+				"description": "Patrons, catalogue, loans and all the data as CSV or JSON files."
+			},
+			"imports": {
+				"title": "Imports",
+				"description": "Catalogue, patrons, open loans and photos: from CSV files or from the Koha extraction."
+			}
+		}
+	},
+	"audit": {
+		"title": "Audit log",
+		"filters": {
+			"from": "From",
+			"to": "To",
+			"user": "Account",
+			"action": "Action",
+			"all": "All"
+		},
+		"columns": {
+			"when": "When",
+			"user": "Account",
+			"action": "Action",
+			"entity": "Object",
+			"entityId": "ID",
+			"details": "Details"
+		},
+		"count": "{{shown}} of {{total}} {{total:plural; one:entry; other:entries;}}",
+		"empty": "No entries match these filters.",
+		"system": "system"
+	},
+	"users": {
+		"title": "Staff accounts",
+		"fields": {
+			"roles": "Roles",
+			"permissions": "Permissions",
+			"lastLogin": "Last login",
+			"never": "never"
+		},
+		"status": {
+			"active": "Active",
+			"inactive": "Deactivated",
+			"plainPassword": "Clear password in the file",
+			"notInConfig": "Removed from the configuration"
+		},
+		"hash": {
+			"title": "Generate password hash",
+			"description": "Enter the password to assign to get the argon2id hash to paste into passwordHash. The password is not stored.",
+			"password": "Password (at least {{min}} characters)",
+			"generate": "Generate hash",
+			"result": "Hash to paste",
+			"copy": "Copy",
+			"copied": "Hash copied",
+			"tooShort": "The password must have at least {{min}} characters.",
+			"disclosure": "For whoever edits the files by hand: hash a password"
+		},
+		"reload": {
+			"button": "Reload configuration",
+			"success": "Configuration reloaded",
+			"successWithWarnings": "Configuration reloaded with {{count}} {{count:plural; one:warning; other:warnings;}}",
+			"failed": "Invalid configuration: the previous one stays active",
+			"exampleSource": "Warning: config.json does not exist, the example configuration is in use."
+		},
+		"new": "New account",
+		"newPassword": "New password",
+		"permissionNames": {
+			"all": "Everything",
+			"loans": "Loans",
+			"patrons": "Patrons",
+			"patrons_import": "Import patrons",
+			"catalog": "Catalogue",
+			"catalog_import": "Import catalogue",
+			"reports": "Reports",
+			"anonymize": "Anonymize",
+			"admin": "Administration"
+		},
+		"roles": {
+			"title": "Roles and permissions",
+			"hint": "A role is a set of permissions; every account has one or more roles. “Everything” grants every permission, including those later versions will bring. Renaming a role updates the accounts using it.",
+			"name": "Role",
+			"unused": "no account",
+			"badName": "Letters, digits, hyphens and underscores (32 at most).",
+			"add": "Add a role",
+			"saved": "Roles saved"
+		},
+		"auth": {
+			"title": "Sign-in",
+			"config": "People sign in with the accounts of this page, usually one shared per role (for example “prestiti” for the desk).",
+			"database": "People sign in with personal accounts.",
+			"later": "Personal accounts, one per person, are planned for a later version."
+		},
+		"dialog": {
+			"title": {
+				"new": "New account",
+				"edit": "Edit {{name}}",
+				"password": "New password for {{name}}"
+			},
+			"username": "Username",
+			"usernameHint": "Lowercase letters, digits, dot, hyphen and underscore (2 to 32).",
+			"badUsername": "Use lowercase letters, digits, dot, hyphen and underscore (2 to 32).",
+			"displayName": "Name shown",
+			"active": "Active account (can sign in)",
+			"password": "Password (at least {{min}} characters)",
+			"repeat": "Repeat the password",
+			"mismatch": "The two passwords differ.",
+			"passwordHint": "The password is not saved: only its hash is written in the configuration. Whoever is signed in with this account will have to sign in again.",
+			"saved": {
+				"new": "Account created",
+				"edit": "Account saved",
+				"password": "Password changed"
+			},
+			"removed": "Account deleted",
+			"removeTitle": "Delete {{name}}?",
+			"removeHint": "The account leaves the configuration; what it did stays in the log under its name. It can be undone from the configuration history."
+		},
+		"errors": {
+			"badUsername": "Invalid username: {{details}}.",
+			"usernameTaken": "The username {{details}} is already used.",
+			"notFound": "Account not found: {{details}}.",
+			"noRoles": "Choose at least one role.",
+			"unknownRole": "Unknown role: {{details}}.",
+			"passwordTooShort": "The password is too short.",
+			"passwordRequired": "A new account needs a password.",
+			"lastAdmin": "At least one active account must keep the administration permission.",
+			"stillActive": "Deactivate the account before deleting it.",
+			"badRole": "Invalid role name: {{details}}.",
+			"roleTaken": "Two roles are named {{details}}.",
+			"roleInUse": "The role is used by some accounts: {{details}}.",
+			"invalid": "The configuration would not be valid: {{details}}."
+		}
+	},
+	"backups": {
+		"title": "Backups",
+		"runNow": "Back up now",
+		"created": "Backup created: {{name}}",
+		"createdDeleted": "Backup created: {{name}} ({{deleted}} old {{deleted:plural; one:backup; other:backups;}} deleted)",
+		"empty": "No backups yet. The first one runs at the scheduled time, or press “Back up now”.",
+		"download": "Download",
+		"columns": {
+			"when": "Created",
+			"size": "Size"
+		},
+		"catchUp": {
+			"badge": "Made up at start",
+			"hint": "The scheduled backup was missed (computer off): BiblioViva made it at start."
+		},
+		"offsite": {
+			"title": "Last off-site copy",
+			"disabled": "Off-site copy not configured. Enable it with the “offsite” (rclone) service described in the setup guide.",
+			"never": "The service is enabled but has not written any result yet.",
+			"ok": "Last copy succeeded: {{when}}",
+			"error": "Last copy failed: {{when}}",
+			"stale": "The off-site copy is older than two days: check the offsite service.",
+			"remote": "Destination: {{remote}}"
+		},
+		"restore": {
+			"title": "Restore",
+			"button": "Restore…",
+			"hint": "Choose “Restore…” on a backup of the list, or upload a BiblioViva archive (a backup, “Export everything” or “Export configuration”, up to {{maxMb}} MB; a larger one is copied into the server's backups folder or restored with bun run backup:restore). Everything is checked first, then only the chosen parts are restored: the others stay as they are.",
+			"upload": "Upload an archive",
+			"from": "From {{name}} of {{date}}",
+			"count": "{{part}}: now {{live}}, in the backup {{archive}}",
+			"images": "Images to restore: {{photos}} {{photos:plural; one:photo; other:photos;}}, {{covers}} {{covers:plural; one:cover; other:covers;}}.",
+			"gapsTitle": "Some data would be left without what it refers to:",
+			"gap": "{{rows:plural; one:{{rows}} row of “{{part}}” refers; other:{{rows}} rows of “{{part}}” refer;}} to “{{needs}}” that would not be there: add “{{add}}” to the choice.",
+			"schema": "The backup is from another version of BiblioViva (tables {{tables}}): it cannot be restored here.",
+			"apply": "Restore",
+			"confirmTitle": "Restore the chosen parts?",
+			"confirmHint": "The chosen data and configuration are replaced by those of the backup. The configuration can be taken back from the history; for the data, make a backup first when there is no recent one.",
+			"done": "Restore completed",
+			"notArchive": "The file is not a BiblioViva archive."
+		},
+		"contents": {
+			"title": "What the backup contains",
+			"database": "Database: a full copy at every run (listed below).",
+			"images": "Photos and covers: copied every night into the “uploads” folder of the backup ({{photos}} {{photos:plural; one:photo; other:photos;}}, {{covers}} {{covers:plural; one:cover; other:covers;}} right now).",
+			"imagesPending": "Photos and covers: the first copy happens at the next run ({{photos}} {{photos:plural; one:photo; other:photos;}}, {{covers}} {{covers:plural; one:cover; other:covers;}} to copy).",
+			"config": "The configuration (templates, images, settings) is not in the nightly backup: use “Export everything” to get it."
+		},
+		"export": {
+			"button": "Export everything",
+			"hint": "One ZIP file with the database, photos, covers and the whole configuration (templates and images included), ready for “bun run backup:restore”."
+		},
+		"createdMirror": "Backup created: {{name}}; {{copied}} {{copied:plural; one:image; other:images;}} copied",
+		"parts": {
+			"title": "Backup or export of some parts",
+			"hint": "Choose what to include: the library's data, the settings of each section, the templates, the images… “Create backup” keeps it in the list below, “Download” downloads it to the computer.",
+			"create": "Create backup",
+			"download": "Download"
+		}
+	},
+	"demo": {
+		"clear": "Clear sample data",
+		"confirmTitle": "Clear the sample data?",
+		"confirmDescription": "The patrons, books, loans and photos of the demo will be deleted. The classes and the teachers group stay. Every operator will be signed out.",
+		"cleared": "Sample data removed. Sign in again.",
+		"clearedPassword": "The accounts still have the demo password “{{password}}”: change it now in Administration → Staff accounts."
+	},
+	"appearance": {
+		"title": "Appearance and language",
+		"current": "Current set: {{name}}",
+		"areas": {
+			"title": "Area style",
+			"hint": "The top bar takes the colour of the area being worked in (Loans, Catalogue, Patrons…), in the tones of the chosen colour set. The area's icon and name always stay visible.",
+			"styles": {
+				"tinted": "Tinted bar (recommended)",
+				"filled": "Filled bar",
+				"accents": "Accents only",
+				"none": "No colour"
+			},
+			"saved": "Area style saved"
+		},
+		"colours": {
+			"title": "Colour set"
+		},
+		"save": "Save the colours",
+		"saved": "Colours saved",
+		"unchanged": "Nothing to save.",
+		"language": {
+			"title": "Application language",
+			"hint": "One language per installation: it applies to all staff.",
+			"save": "Change language",
+			"saved": "Language changed: the page reloads."
+		},
+		"logo": {
+			"title": "Library logo",
+			"hint": "Shown at the top left of every page, next to the library's name. PNG, JPEG or WebP; a transparent background works best.",
+			"upload": "Upload the logo",
+			"replace": "Change the logo",
+			"remove": "Remove the logo",
+			"saved": "Logo saved.",
+			"removed": "Logo removed.",
+			"none": "No logo: a generic icon is shown.",
+			"preview": "Current logo",
+			"errors": {
+				"empty": "The file is empty.",
+				"too_large": "The file is too large (at most {{maxMb}} MB).",
+				"not_an_image": "The file is not an image.",
+				"unsupported_format": "Format not accepted: use PNG, JPEG or WebP."
+			}
+		},
+		"name": {
+			"title": "Library name",
+			"hint": "Shown at the top left, on the dashboard, on printouts and in the app installed on a phone.",
+			"label": "Name",
+			"save": "Save the name",
+			"saved": "Library name saved",
+			"required": "Type the library's name."
+		},
+		"dashboard": {
+			"title": "Dashboard",
+			"hint": "The sections of the start page, for the whole library. The quick actions always come first; inside each section every account sees only what it may do.",
+			"save": "Save the dashboard",
+			"saved": "Dashboard saved",
+			"sections": {
+				"quickActions": "Quick actions",
+				"tiles": "The library today (tiles with the numbers)",
+				"inventory": "Stocktaking in progress",
+				"installHint": "Invitation to add the app to the Home screen (phones)",
+				"dueThisWeek": "Due this week",
+				"upcomingDates": "Upcoming dates of the calendar",
+				"todayActivity": "Today's loans"
+			}
+		}
+	},
+	"templates": {
+		"title": "Print templates",
+		"reload": "Reload templates",
+		"reloaded": "Templates re-read from disk",
+		"kinds": {
+			"cards": "Cards",
+			"labels": "Labels",
+			"slips": "Slips"
+		},
+		"list": {
+			"source": {
+				"builtin": "Shipped with the app",
+				"config": "In the configuration"
+			},
+			"default": "Default",
+			"status": {
+				"ok": "Valid",
+				"error": "Error"
+			},
+			"folder": "Folder",
+			"forTypes": "For: {{types}}",
+			"emptyCards": "No card template: check the cards/templates folder of the configuration.",
+			"emptyLabels": "No label template yet: they arrive with the catalogue label printing.",
+			"emptySlips": "No slip template yet: it arrives with circulation."
+		},
+		"preview": {
+			"title": "Preview",
+			"front": "Front",
+			"back": "Back",
+			"patron": "Patron to show",
+			"sample": "Sample patron",
+			"real": "Real patron",
+			"search": "Search a real patron",
+			"searchPlaceholder": "Surname or first name",
+			"noResults": "No patron found.",
+			"zoom": "Zoom",
+			"sheet": "Whole sheet",
+			"sheetHint": "One A4 page with the sample patron, as it will be printed.",
+			"test": "Print test page",
+			"broken": "The template cannot be used until it is fixed:",
+			"size": "{{width}} × {{height}} mm at zoom {{zoom}}"
+		},
+		"test": {
+			"title": "Card test page",
+			"ruler": "10 cm ruler: it must measure 100 mm after printing (print at 100 %, no “fit to page”)."
+		},
+		"calibration": {
+			"title": "Label calibration page",
+			"stock": "Adhesive stock",
+			"print": "Print calibration page",
+			"hint": "Print on plain paper and hold a sheet of labels over it to check the margins."
+		},
+		"howTo": {
+			"title": "How to create a template",
+			"steps": {
+				"step1": "In Configuration → Print templates choose “Duplicate” on a template (for example {{path}}) and give it a new name.",
+				"step2": "With “Edit” design it or change its code; images are uploaded on the same page.",
+				"step3": "Come back here and check the preview: an unknown field or a missing file is reported.",
+				"step4": "To use it for real, choose it in the Cards or Labels settings."
+			}
+		},
+		"labels": {
+			"stocks": "Designed for: {{stocks}}",
+			"preview": "Preview of {{name}}",
+			"geometry": "Unit of {{width}} × {{height}} mm · variant {{variant}}",
+			"sheet": "Sample sheet"
+		}
+	},
+	"loansImport": {
+		"title": "Import the open loans",
+		"upload": {
+			"hint": "To be used once, when moving from Koha: one row per open loan with the patron's card and the copy's barcode, and the loan and due dates when there are any. Import patrons and catalogue first; the template, with the columns needed, is downloaded below.",
+			"submit": "Upload"
+		},
+		"mapping": {
+			"uncertain": "Check the columns before continuing.",
+			"validate": "Check the file",
+			"without": {
+				"issuedOn": "Without the issued_on column the loans are dated today.",
+				"dueOn": "Without the due_on column the due date is computed as at the desk, with the loan rules and the calendar."
+			}
+		},
+		"fields": {
+			"cardNumber": "Card number",
+			"barcode": "Barcode",
+			"issuedOn": "Issue date",
+			"dueOn": "Due date"
+		},
+		"preview": {
+			"ready": "No errors: the loans can be imported.",
+			"blocked": "Fix the errors and check again: nothing is imported with errors.",
+			"overdue": "{{count}} {{count:plural; one:loan is; other:loans are;}} already overdue: {{count:plural; one:it is imported and shows; other:they are imported and show;}} up among the overdues.",
+			"columns": {
+				"patron": "Patron",
+				"barcode": "Copy",
+				"issued": "Issued",
+				"due": "Due"
+			},
+			"commit": "Import the loans",
+			"back": "Back to the columns"
+		},
+		"reasons": {
+			"cardMissing": "The card number is missing",
+			"cardUnknown": "No patron with card {{value}}",
+			"barcodeMissing": "The barcode is missing",
+			"barcodeUnknown": "No copy with barcode {{value}}",
+			"alreadyOnLoan": "Copy {{value}} is already on loan",
+			"itemWithdrawn": "Copy {{value}} is withdrawn",
+			"duplicateInFile": "Same copy already on line {{line}}",
+			"issueDateInvalid": "Invalid issue date: “{{value}}”",
+			"issueDateFuture": "Issue date in the future: {{value}}",
+			"dueDateInvalid": "Invalid due date: “{{value}}”",
+			"dueBeforeIssue": "The due date is before the issue date",
+			"overdue": "Already overdue since {{date}}",
+			"itemUnclassified": "Copy {{value}} belongs to a book to classify: the loan is imported, but the desk does not lend it until it is classified"
+		},
+		"done": {
+			"title": "Loans imported",
+			"summary": "{{created}} {{created:plural; one:loan; other:loans;}} imported, {{overdue}} of them already overdue.",
+			"batch": "Import no. {{id}}: the original file is kept.",
+			"again": "Import another file"
+		},
+		"columns": {
+			"cardNumber": "The patron's card number, already imported.",
+			"barcode": "The copy's barcode, already imported.",
+			"issuedOn": "The loan date; today when missing.",
+			"dueOn": "The due date; computed with the loan rules when missing."
+		}
+	},
+	"photosImport": {
+		"title": "Import the patron photos",
+		"hint": "One file per patron, named after the card number (for example 0000001240.jpg): the export described in the administrator's guide produces them. Every photo is resized and cleaned of hidden data; files that match no card are listed.",
+		"replace": "Replace the photos already present",
+		"zip": {
+			"title": "From a ZIP archive",
+			"file": "ZIP archive with the photos",
+			"submit": "Import the photos"
+		},
+		"folder": {
+			"title": "From the server folder",
+			"hint": "Copy the files into {{path}}: {{count:plural; one:there is {{count}} now; other:there are {{count}} now;}}. Suited to many photos, which would be too heavy to upload as an archive.",
+			"submit": "Import from the folder"
+		},
+		"summary": {
+			"title": "Result",
+			"text": "{{imported}} {{imported:plural; one:photo; other:photos;}} imported, {{replaced}} replaced, {{kept:plural; one:{{kept}} left as it was; other:{{kept}} left as they were;}} (photo already present), {{unmatched}} {{unmatched:plural; one:file; other:files;}} without a patron, {{unreadable}} unreadable {{unreadable:plural; one:file; other:files;}}.",
+			"unreadable": "Not readable images: {{files}}",
+			"unmatched": "Download the list of files without a patron"
+		},
+		"errors": {
+			"notZip": "The file is not a valid ZIP archive.",
+			"empty": "The archive contains no files."
+		},
+		"done": "Photos imported"
+	},
+	"rollover": {
+		"title": "Class upgrade",
+		"subtitle": "At the end of the year every student moves up one year, and whoever finishes the last year leaves the school.",
+		"steps": {
+			"backup": "Backup",
+			"classes": "Classes",
+			"leavers": "Leavers",
+			"confirm": "Confirm",
+			"done": "Completed"
+		},
+		"backup": {
+			"text": "First of all a safety copy of the database: if anything goes wrong, go back from Administration → Backups.",
+			"create": "Create the backup",
+			"created": "Backup created: {{name}}"
+		},
+		"classes": {
+			"text": "Every student moves up one year with their class. Mark who repeats the year and who changes class.",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; one:student; other:students;}}",
+			"exceptions": "{{count}} {{count:plural; one:exception; other:exceptions;}}",
+			"loans": "{{count}} with books on loan",
+			"repeat": "Repeats",
+			"target": "Class",
+			"noGroup": "No class",
+			"choose": "Pick the class…",
+			"fates": {
+				"advances": "Moves up",
+				"stays": "Stays",
+				"archived": "Closes"
+			},
+			"unplaced": "{{count}} {{count:plural; one:student waits; other:students wait;}} for their class to be picked.",
+			"none": "No students moving up a year.",
+			"nextYear": "The year after",
+			"leaves": "Leaves the school"
+		},
+		"leavers": {
+			"text": "The students of the last year leave the school: their data is erased at once and for good (only the numbers of the statistics remain). Untick whoever stays, for example a pupil repeating the last year.",
+			"leaves": "Leaves",
+			"openLoans": "{{count}} {{count:plural; one:book; other:books;}} on loan",
+			"blocked": "{{count}} {{count:plural; one:leaving student still has; other:leaving students still have;}} books: register the return or mark them lost, or untick them.",
+			"toCheckin": "Go to Returns",
+			"none": "No students in the last year."
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; one:student moves; other:students move;}} up one year",
+			"repeat": "{{count}} {{count:plural; one:repeats; other:repeat;}} the year",
+			"groupChanges": "{{count}} {{count:plural; one:changes; other:change;}} class",
+			"closing": "{{count}} {{count:plural; one:class closes and is; other:classes close and are;}} archived",
+			"remove": "{{count}} {{count:plural; one:leaves; other:leave;}} the school and their data is erased",
+			"recent": "The last upgrade ran on {{date}}, less than six months ago. I confirm I want to run it again.",
+			"run": "Upgrade classes"
+		},
+		"done": {
+			"title": "Upgrade completed",
+			"advanced": "{{count}} {{count:plural; one:class; other:classes;}} moved up one year",
+			"archived": "{{count}} {{count:plural; one:class; other:classes;}} archived",
+			"text": "Next steps: create the new first-year classes if needed, and import the new students with the synchronisation.",
+			"import": "Import the new students"
+		},
+		"errors": {
+			"blocked": "Some leaving students still have books on loan.",
+			"recent": "Confirmation needed: the last upgrade is recent.",
+			"no_backup": "The backup was not found or is too old: take it again from the first step.",
+			"invalid_group": "A chosen class does not exist or does not host the student's year.",
+			"unplaced": "Some students have no class yet: pick it in the Classes step.",
+			"invalid_level": "One of the chosen years is not among the possible ones: reload the page."
+		},
+		"next": "Next",
+		"back": "Back"
+	},
+	"classes": {
+		"title": "Classes",
+		"subtitle": "The classes of the school and the teachers groups.",
+		"hint": "The years and stages of the school are changed in the settings:",
+		"structureLink": "School",
+		"new": "New classes",
+		"newTeachers": "New teachers group",
+		"teachers": "Teachers",
+		"mixed": "Mixed-year class",
+		"empty": "No classes",
+		"emptyHint": "No classes. Classes are created with New classes, for example the years 1 to 5 and the names A-D.",
+		"archivedTitle": "Archived {{count:plural; one:class; other:classes;}} ({{count}})",
+		"archive": "Archive",
+		"archiveNotEmpty": "It still has patrons: it cannot be archived",
+		"restore": "Restore",
+		"archived": "Class {{name}} archived",
+		"restored": "Class {{name}} restored",
+		"columns": {
+			"class": "Class",
+			"levels": "Years",
+			"patrons": "Patrons"
+		},
+		"dialog": {
+			"title": {
+				"students": "New classes",
+				"teachers": "New teachers group",
+				"edit": "Edit {{name}}"
+			},
+			"levels": "Years",
+			"names": "Names of the classes",
+			"namesHint": "Separated by commas; A-D stands for A, B, C, D. A name may contain spaces.",
+			"name": "Name",
+			"mixed": "One mixed-year class with every year chosen",
+			"stage": "Stage",
+			"anyStage": "All",
+			"notes": "Notes",
+			"preview": "{{count}} {{count:plural; one:class; other:classes;}} to create:",
+			"previewEmpty": "Pick at least one year and type the names.",
+			"saved": {
+				"students": "{{count}} {{count:plural; one:class; other:classes;}} created",
+				"teachers": "Teachers group created",
+				"edit": "Class saved"
+			}
+		},
+		"errors": {
+			"nameRequired": "The name is required.",
+			"nameLong": "The name is too long (40 characters at most).",
+			"levelsRequired": "Pick at least one year.",
+			"levelUnknown": "A chosen year no longer exists.",
+			"levelsNotForTeachers": "A teachers group has no years.",
+			"nameTaken": "A class with this name already exists for the same year.",
+			"levelInUse": "Some students of the class are in a year that would be removed.",
+			"notEmpty": "The class still has patrons.",
+			"notFound": "The class no longer exists."
+		}
+	},
+	"exports": {
+		"title": "Exports",
+		"subtitle": "The library's data in files to keep, to import again or to take to another program.",
+		"items": {
+			"students": {
+				"title": "Students (CSV)",
+				"description": "The active students in the format of the import: they go back in from Administration → Imports → Students."
+			},
+			"teachers": {
+				"title": "Teachers (CSV)",
+				"description": "The active teachers in the format of the import: they go back in from Administration → Imports → Teachers."
+			},
+			"catalog": {
+				"title": "Catalogue (CSV)",
+				"description": "One row per copy with the book's data, in the catalogue import format."
+			},
+			"open-loans": {
+				"title": "Open loans (CSV)",
+				"description": "Card, copy, loan date and due date: they go back in from Administration → Imports → Open loans."
+			},
+			"loans-history": {
+				"title": "Loan history (CSV)",
+				"description": "Every loan with the class and section of the day of the loan."
+			},
+			"dump": {
+				"title": "All the data (JSON)",
+				"description": "Patrons, catalogue, loans and lists in one file, to move to another installation or program."
+			}
+		},
+		"download": "Download",
+		"patronNote": "One person's data (access request) is downloaded from their page.",
+		"patronExport": "Export the person's data"
+	},
+	"imports": {
+		"title": "Imports",
+		"hint": "Used when moving from Koha and, for the patrons, at the start of every school year for the new classes. Every file is checked in full before anything is imported.",
+		"cards": {
+			"catalog": {
+				"title": "Catalogue",
+				"description": "Books and copies from a CSV file or from the Koha export."
+			},
+			"students": {
+				"title": "Students",
+				"description": "The classes from the school register, every new school year: first name, surname and class."
+			},
+			"teachers": {
+				"title": "Teachers",
+				"description": "The teachers of the school: first name and surname, with their card when they have one."
+			},
+			"loans": {
+				"title": "Open loans",
+				"description": "The open loans, imported once at the switch from Koha."
+			},
+			"photos": {
+				"title": "Patron photos",
+				"description": "The photos exported from Koha, one per card."
+			}
+		}
+	},
+	"calibration": {
+		"title": "Calibrate two-sided printing",
+		"intro": "To print the cards on both sides of the sheet the back must fall exactly behind the front. Every printer moves the back a little: this test measures how much, once.",
+		"current": "How the sheet turns: {{flip}}. Shift of the backs in use: {{x}} mm across, {{y}} mm down.",
+		"steps": {
+			"print": "Print the calibration sheet with the button below.",
+			"window": {
+				"long-edge": "In the print window choose “Two-sided”, flipping on the long edge, scale 100 % and no margins.",
+				"short-edge": "In the print window choose “Two-sided”, flipping on the short edge, scale 100 % and no margins."
+			},
+			"cut": "On the side with the large “1”, cut carefully along the black line.",
+			"read": "Turn the card over: on side “2” look where the cut edge crosses the two rulers and read the two numbers (with their sign: + or −).",
+			"save": "Type the two numbers below and save: the shift of the backs is corrected.",
+			"check": "Print the sheet again to check: the cut edge should now cross both rulers on 0."
+		},
+		"print": "Print the calibration sheet",
+		"drawing": {
+			"title": "What to read",
+			"label": "Side 2 after the cut: the cut edge crosses the rulers",
+			"x": "horizontal ruler",
+			"y": "vertical ruler",
+			"hint": "The cut edge crosses each ruler: the number there is the value to type. Each tick is a millimetre, the numbers come every five."
+		},
+		"fields": {
+			"x": "Horizontal ruler (mm)",
+			"y": "Vertical ruler (mm)",
+			"hint": "The number where the cut edge falls, with its sign; 0 if it falls on zero."
+		},
+		"next": "After saving, the backs will be shifted {{x}} mm across and {{y}} mm down.",
+		"save": "Save the calibration",
+		"saved": "Calibration saved: backs shifted {{x}} mm across and {{y}} mm down.",
+		"open": "Calibrate two-sided printing",
+		"sheet": {
+			"title": "BiblioViva · calibration of two-sided printing",
+			"cut": "Cut along the black line, then turn the card over.",
+			"read": "Read on the two rulers where the cut edge falls."
+		}
+	}
+}

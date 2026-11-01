@@ -1,0 +1,39 @@
+{
+	"title": "Relatórios",
+	"categories": {
+		"loans": "Empréstimos",
+		"books": "Livros",
+		"patrons": "Utilizadores",
+		"ops": "Atividade"
+	},
+	"restricted": "Apenas administradores",
+	"custom": "Da escola",
+	"chart": "Com gráfico",
+	"problemsTitle": "Ficheiros de relatórios não carregados",
+	"problemsHint": "Estes ficheiros da pasta dos relatórios têm um erro e não aparecem na lista:",
+	"params": "Parâmetros",
+	"run": "Atualizar",
+	"all": "Todas",
+	"from": "de",
+	"to": "a",
+	"patronTypes": {
+		"student": "Alunos",
+		"teacher": "Professores"
+	},
+	"rows": "{{count}} {{count:plural; one:linha; other:linhas;}}",
+	"ms": "em {{ms}} ms",
+	"truncated": "{{count:plural; one:Só é mostrada a primeira linha; other:Só são mostradas as primeiras {{count}} linhas;}}. Restrinja os parâmetros para as ver todas.",
+	"empty": "Nenhum resultado com estes parâmetros.",
+	"print": "Imprimir",
+	"printedOn": "Impresso em {{date}}",
+	"errors": {
+		"required": "Falta «{{label}}».",
+		"invalid": "O valor de «{{label}}» não é válido."
+	},
+	"back": "Todos os relatórios",
+	"noParams": "Este relatório não tem parâmetros.",
+	"special": {
+		"teachers": "Professores",
+		"total": "Total"
+	}
+}

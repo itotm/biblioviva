@@ -1,0 +1,142 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later */
+/*
+ * The look shared by the mocks of other programs (ADR-046): plain, neutral pages that draw only
+ * what a step of the documentation needs, without logos or brand marks, in the type of the rest
+ * of the documentation. `bun run docs:shots` opens them from the disk and crops them to `.mock`.
+ * A text that depends on the reader's language is written twice, `.l-it` and `.l-en`; the page's
+ * address picks one (`?lang=en`).
+ */
+@font-face {
+	font-family: "Inter Variable";
+	font-style: normal;
+	font-display: block;
+	font-weight: 100 900;
+	src: url("../../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2")
+		format("woff2-variations");
+}
+@font-face {
+	font-family: "JetBrains Mono Variable";
+	font-style: normal;
+	font-display: block;
+	font-weight: 100 800;
+	src: url("../../node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2")
+		format("woff2-variations");
+}
+
+:root {
+	--ink: #1f2430;
+	--muted: #646b7a;
+	--line: #dfe2e8;
+	--soft: #f4f5f8;
+	--page: #ffffff;
+	--accent: #3b5bdb;
+	--accent-soft: #e7ecff;
+	--ok: #2b8a3e;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	background: #e9ebf0;
+	color: var(--ink);
+	font: 15px/1.45 "Inter Variable", sans-serif;
+}
+
+body {
+	padding: 24px;
+}
+
+code,
+.mono {
+	font-family: "JetBrains Mono Variable", monospace;
+	font-size: 0.92em;
+}
+
+html[data-lang="it"] .l-en,
+html[data-lang="en"] .l-it {
+	display: none;
+}
+
+.mock {
+	display: inline-block;
+	background: var(--page);
+	border: 1px solid var(--line);
+	border-radius: 10px;
+	box-shadow: 0 6px 24px rgb(20 24 40 / 12%);
+	overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+	font-weight: 650;
+	letter-spacing: -0.01em;
+}
+
+/* a switch, on or off */
+.switch {
+	display: inline-block;
+	flex: none;
+	width: 36px;
+	height: 20px;
+	border-radius: 10px;
+	background: #c5c9d3;
+	position: relative;
+}
+.switch::after {
+	content: "";
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: 0 1px 2px rgb(0 0 0 / 25%);
+}
+.switch.on {
+	background: var(--accent);
+}
+.switch.on::after {
+	left: 18px;
+}
+
+/* a field with its value */
+.field {
+	display: block;
+	border: 1px solid var(--line);
+	border-radius: 6px;
+	padding: 7px 10px;
+	background: #fff;
+	min-height: 36px;
+}
+.field.empty {
+	color: #a1a6b2;
+}
+
+.button {
+	display: inline-block;
+	border-radius: 6px;
+	padding: 7px 14px;
+	font-weight: 600;
+	border: 1px solid var(--line);
+	background: #fff;
+}
+.button.primary {
+	background: var(--accent);
+	border-color: var(--accent);
+	color: #fff;
+}
+
+.label {
+	font-weight: 600;
+}
+.hint {
+	color: var(--muted);
+	font-size: 13px;
+}

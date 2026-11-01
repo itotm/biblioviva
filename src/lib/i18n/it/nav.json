@@ -1,0 +1,60 @@
+{
+	"dashboard": "Dashboard",
+	"circulation": "Prestiti",
+	"catalog": "Catalogo",
+	"patrons": "Utenti",
+	"printing": "Stampe",
+	"notes": "Segnalazioni",
+	"reports": "Report",
+	"admin": "Amministrazione",
+	"more": "Altro",
+	"logout": "Esci",
+	"help": "Guida",
+	"about": "Informazioni",
+	"areas": {
+		"circulation": {
+			"label": "Banco prestiti",
+			"checkout": "Prestiti",
+			"checkin": "Restituzioni",
+			"loans": "Libri in prestito",
+			"overdues": "Solleciti",
+			"wishlist": "Lista desideri",
+			"calendar": "Calendario"
+		},
+		"catalog": {
+			"label": "Pagine del catalogo",
+			"catalog": "Catalogo",
+			"inventory": "Inventario",
+			"wishlist": "Lista desideri",
+			"toClassify": "Da classificare"
+		},
+		"patrons": {
+			"label": "Pagine degli utenti",
+			"patrons": "Utenti",
+			"census": "Censimento foto"
+		},
+		"notes": {
+			"label": "Pagine delle segnalazioni",
+			"open": "Aperte",
+			"archived": "Archiviate"
+		},
+		"config": {
+			"label": "Pagine della configurazione",
+			"overview": "Sezioni",
+			"history": "Cronologia"
+		},
+		"templates": {
+			"label": "Pagine dei template di stampa",
+			"edit": "Template",
+			"previews": "Anteprime"
+		},
+		"imports": {
+			"label": "Importazioni",
+			"catalog": "Catalogo",
+			"students": "Studenti",
+			"teachers": "Docenti",
+			"loans": "Prestiti in corso",
+			"photos": "Foto degli utenti"
+		}
+	}
+}

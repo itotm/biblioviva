@@ -1,0 +1,56 @@
+{
+	"id": "lost-damaged-items",
+	"title": {
+		"it": "Copie smarrite, danneggiate o in riparazione",
+		"en": "Lost, damaged or in-repair copies"
+	},
+	"description": {
+		"it": "Le copie da controllare o sostituire.",
+		"en": "Copies to check or replace."
+	},
+	"category": "books",
+	"params": [],
+	"sql": "SELECT i.status AS status, i.barcode AS barcode, b.title AS title, b.author AS author, date(i.updated_at) AS changed FROM item i JOIN biblio b ON b.id = i.biblio_id WHERE i.status IN ('lost', 'damaged', 'in_repair') ORDER BY i.status, b.title",
+	"columns": [
+		{
+			"key": "status",
+			"label": {
+				"it": "Stato",
+				"en": "Status"
+			},
+			"type": "itemStatus"
+		},
+		{
+			"key": "barcode",
+			"label": {
+				"it": "Copia",
+				"en": "Copy"
+			},
+			"type": "text"
+		},
+		{
+			"key": "title",
+			"label": {
+				"it": "Titolo",
+				"en": "Title"
+			},
+			"type": "text"
+		},
+		{
+			"key": "author",
+			"label": {
+				"it": "Autore",
+				"en": "Author"
+			},
+			"type": "text"
+		},
+		{
+			"key": "changed",
+			"label": {
+				"it": "Cambiato il",
+				"en": "Changed on"
+			},
+			"type": "date"
+		}
+	]
+}

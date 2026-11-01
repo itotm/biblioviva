@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Usuaris",
+		"new": "Nou usuari",
+		"search": "Cerca per cognom…",
+		"empty": "Cap usuari no coincideix amb els filtres.",
+		"filters": {
+			"type": "Tipus",
+			"stage": "Etapa",
+			"level": "Curs",
+			"status": "Estat",
+			"all": "Tots",
+			"allF": "Totes"
+		},
+		"columns": {
+			"name": "Cognom i nom",
+			"type": "Tipus",
+			"class": "Classe",
+			"card": "Carnet"
+		},
+		"clearFilters": "Esborra els filtres",
+		"countFiltered": "{{shown:plural; one:{{shown}} usuari coincideix; other:{{shown}} usuaris coincideixen;}} amb els filtres",
+		"printCards": "Imprimeix els carnets",
+		"printClassCards": "Imprimeix els carnets de {{classLabel}}",
+		"removeSelected": "Elimina els seleccionats",
+		"removeTitle": "Eliminar {{count}} {{count:plural; one:usuari; other:usuaris;}}?",
+		"removeDescription": "Per a cadascun s'esborren de seguida i per sempre el nom i el cognom, els contactes, la matrícula, les notes, el número de carnet i la foto; es mantenen el tipus, la classe, la secció i l'historial de préstecs per a les estadístiques. Els que tenen préstecs en curs es deixen a l'arxiu.",
+		"removed": "{{removed}} {{removed:plural; one:eliminat; other:eliminats;}}, {{kept}} {{kept:plural; one:amb préstecs en curs, mantingut a l'arxiu; other:amb préstecs en curs, mantinguts a l'arxiu;}}",
+		"status": {
+			"title": "Estat",
+			"loans": "{{count}} en préstec",
+			"overdue": "{{count}} amb retard",
+			"noPhoto": "sense foto"
+		},
+		"startTitle": "Cerca un usuari",
+		"startHint": "Cerca pel nom, el carnet o amb els filtres."
+	},
+	"types": {
+		"student": "Alumne",
+		"teacher": "Docent"
+	},
+	"fields": {
+		"patronType": "Tipus",
+		"firstName": "Nom",
+		"lastName": "Cognom",
+		"cardNumber": "Número de carnet",
+		"cardNumberHint": "Buit: s'assigna automàticament.",
+		"externalId": "Matrícula",
+		"email": "Correu electrònic",
+		"emailHint": "L'adreça que l'escola assigna a l'alumne o al docent: servirà per als avisos.",
+		"circulationNote": "Nota per al taulell de préstec",
+		"circulationNoteHint": "Es mostra destacada durant el préstec.",
+		"notes": "Notes internes",
+		"status": "Estat",
+		"openLoans": "Préstecs en curs",
+		"overdueLoans": "Endarrerits",
+		"noCard": "sense carnet",
+		"none": "—",
+		"levelCode": "Curs",
+		"groupId": "Secció",
+		"classLabel": "Classe",
+		"teacherGroup": "Grup de docents"
+	},
+	"form": {
+		"createTitle": "Nou usuari",
+		"editTitle": "Modifica l'usuari",
+		"identity": "Identitat",
+		"school": "Classe",
+		"contacts": "Contactes",
+		"notes": "Notes",
+		"create": "Crea l'usuari",
+		"save": "Desa els canvis",
+		"classSelect": "Tria…",
+		"defaultTeacherGroup": "El grup de docents"
+	},
+	"errors": {
+		"emailInvalid": "Adreça de correu electrònic no vàlida.",
+		"cardNumberInvalid": "Número de carnet no vàlid: només xifres, lletres majúscules i guió, amb el caràcter de control correcte.",
+		"cardNumberTaken": "Número de carnet ja assignat a un altre usuari.",
+		"cardNumberIsCopy": "El número de carnet és o sembla el codi de barres d'un exemplar: tria un altre número.",
+		"externalIdTaken": "Matrícula ja assignada a un altre usuari.",
+		"levelRequired": "Per a un alumne la classe (el curs) és obligatòria.",
+		"levelUnknown": "Classe no prevista pels cursos de l'escola.",
+		"levelNotForTeachers": "Un docent no té classe.",
+		"groupRequired": "Per a un alumne la secció és obligatòria.",
+		"groupUnknown": "Secció no trobada entre les classes actives: les classes es creen a Administració → Configuració → Classes.",
+		"levelNotInGroup": "Aquesta secció no té aquesta classe: tria una secció de la classe."
+	},
+	"detail": {
+		"heading": "Registre de l'usuari",
+		"tabs": {
+			"loans": "Préstecs en curs",
+			"history": "Historial",
+			"cards": "Carnet",
+			"notes": "Notes"
+		},
+		"noLoans": "Cap préstec en curs.",
+		"loanColumns": {
+			"due": "Devolució"
+		},
+		"overdue": "endarrerit",
+		"card": "Carnet {{number}}",
+		"noNotes": "Cap nota.",
+		"edit": "Modifica",
+		"created": "Creat el {{when}}",
+		"barcodeAlt": "Codi de barres del carnet {{number}}",
+		"cardPrinted": "Carnet imprès el {{when}}.",
+		"cardNotPrinted": "Carnet encara no imprès.",
+		"reassignCard": "Reassigna el carnet",
+		"reassignTitle": "Assignar un carnet nou?",
+		"reassignDescription": "El número actual es retira per sempre i el carnet nou s'haurà d'imprimir.",
+		"cardReassigned": "Carnet nou: {{number}}",
+		"printCard": "Imprimeix el carnet",
+		"markCardPrinted": "Marca com a imprès",
+		"cardMarkedPrinted": "Carnet marcat com a imprès",
+		"historyColumns": {
+			"issuedAt": "Prestat el",
+			"dueDate": "Devolució",
+			"returnedAt": "Retornat el",
+			"outcome": "Resultat",
+			"title": "Títol",
+			"author": "Autor",
+			"barcode": "Exemplar",
+			"renewals": "Renovacions",
+			"schoolYear": "Curs escolar"
+		},
+		"outcome": {
+			"open": "En curs",
+			"overdue": "Endarrerit",
+			"returned": "Retornat",
+			"returnedLate": "Retornat amb retard",
+			"lost": "Perdut"
+		},
+		"historyEmpty": "Cap préstec registrat.",
+		"historyCount": "{{count}} {{count:plural; one:préstec; other:préstecs;}} en total",
+		"notesEdit": "Modifica les notes",
+		"notesSaved": "Notes desades",
+		"notesUnchanged": "Cap canvi",
+		"notesHint": "La nota per al taulell de préstec es mostra destacada al moment del préstec; les altres notes es queden aquí.",
+		"remove": "Elimina {{type}}",
+		"removeTitle": "Eliminar per sempre {{name}}?",
+		"removeDescription": "S'esborren de seguida i per sempre: nom i cognom, correu electrònic, matrícula, notes, número de carnet (retirat) i foto. Només es queden el tipus, la classe i la secció i l'historial de préstecs, per a les estadístiques. L'operació no es pot desfer.",
+		"removeOpenLoans": "Té {{count}} {{count:plural; one:préstec en curs que s'ha de tornar o marcar abans com a perdut; other:préstecs en curs que s'han de tornar o marcar abans com a perduts;}}.",
+		"removeClassSheets": "Ha estat triat per a {{count}} {{count:plural; one:foto; other:fotos;}} de les imatges de la classe (cens a partir d'una imatge): {{count:plural; one:aquest marc queda cobert; other:aquests marcs queden coberts;}}.",
+		"removed": "Usuari eliminat: les dades personals s'han esborrat.",
+		"removedInfo": "Eliminat el {{when}}. Només es queden les dades per a les estadístiques.",
+		"lostTitle": "Llibres perduts",
+		"lostHint": "Marcats com a perduts mentre eren en préstec a aquest usuari. Si tornen, cal passar-los per les devolucions.",
+		"markLost": "Marca com a perdut «{{title}}»",
+		"markLostTitle": "Marcar «{{title}}» com a perdut?",
+		"markLostDescription": "El préstec es tanca i l'exemplar apareix com a perdut. Si el llibre reapareix, n'hi ha prou amb registrar-ne la devolució i torna a estar disponible.",
+		"markLostReason": "Motiu (facultatiu)",
+		"markLostConfirm": "Marca com a perdut",
+		"markedLost": "«{{title}}» marcat com a perdut."
+	},
+	"photo": {
+		"title": "Foto",
+		"take": "Fes una foto",
+		"upload": "Puja un fitxer",
+		"retake": "Repeteix",
+		"use": "Usa aquesta foto",
+		"cancel": "Cancel·la",
+		"delete": "Elimina la foto",
+		"deleteTitle": "Eliminar la foto?",
+		"deleteDescription": "La foto s'esborra del servidor; se'n podrà fer una de nova.",
+		"zoom": "Zoom",
+		"dragHint": "Arrossega per enquadrar, usa el zoom per acostar-te.",
+		"saved": "Foto desada",
+		"deleted": "Foto eliminada",
+		"placeholder": "Cap foto",
+		"alt": "Foto de {{name}}",
+		"errors": {
+			"too_large": "Fitxer massa gran: el límit és de {{maxMb}} MB.",
+			"not_an_image": "El fitxer no és una imatge llegible.",
+			"unsupported_format": "Format d'imatge no admès (fes servir JPEG, PNG, WebP o HEIC).",
+			"empty": "Cap fitxer seleccionat."
+		},
+		"withForm": "Es desa amb l'usuari.",
+		"requiredHint": "S'espera una foto: pots fer-la ara o més tard des de la pàgina de l'usuari.",
+		"optionalHint": "La foto es pot fer ara o més tard des de la pàgina de l'usuari.",
+		"remove": "Treu",
+		"notSaved": "La foto no s'ha desat: torna a fer-la des de la pàgina de l'usuari.",
+		"retakePhoto": "Torna a fer la foto"
+	},
+	"census": {
+		"title": "Cens de fotos",
+		"noGroup": "Sense classe",
+		"stageOthers": "Sense etapa",
+		"progress": "{{done}} de {{total}} amb foto",
+		"allDone": "Tots tenen la foto.",
+		"back": "Canvia la classe o la llista",
+		"skip": "Salta",
+		"done": "Fi",
+		"saved": "Foto desada: {{name}}",
+		"quickAdd": "Nou usuari",
+		"quickAddHint": "S'afegeix a {{group}} i la seva foto és la següent.",
+		"create": "Afegeix i fes-li la foto",
+		"findPerson": "Cerca pel cognom",
+		"pickTarget": "Tria una llista o una classe",
+		"listsTitle": "Llistes d'usuaris",
+		"classesTitle": "Classes",
+		"nothingMissing": "Totes les classes i llistes tenen les fotos.",
+		"onlyMissing": "Es mostren només les classes i les llistes on falta almenys una foto.",
+		"byCamera": "Una persona cada vegada",
+		"sheets": {
+			"title": "Des d'una imatge amb moltes fotos",
+			"hint": "Imatges amb diverses fotos (el full del fotògraf, carnets sobre una taula, una pàgina de fotografies de carnet): les fotos es troben automàticament i s'assignen a cada usuari.",
+			"upload": "Puja una imatge",
+			"take": "Fes una foto del foli",
+			"uploading": "S'està enviant la imatge…",
+			"empty": "Cap imatge per a aquesta classe o llista.",
+			"item": "Imatge del {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:foto trobada; other:fotos trobades;}} · {{saved}} {{saved:plural; one:desada; other:desades;}} · {{pending}} per fer",
+			"notDetected": "Encara no processada",
+			"demoScan": "Exemple des d'un escàner",
+			"demoPhoto": "Exemple des d'una foto",
+			"demoHint": "Dues maneres de tenir les fotos de la classe: l'escaneig és pla, les fotos són rectangles com a molt girats; la foto es fa de biaix, la perspectiva deforma els marcs."
+		},
+		"sheet": {
+			"title": "Fotos des d'una imatge",
+			"back": "Torna a la classe",
+			"detecting": "Cerca de les fotos a la imatge…",
+			"found": "Fotos trobades: {{count}}. Tria de qui és cadascuna.",
+			"none": "Cap foto trobada. Amb «Corregeix els marcs» es poden dibuixar a mà.",
+			"pictureAlt": "La imatge pujada, amb els marcs de les fotos numerats",
+			"frame": "Foto {{n}}",
+			"choose": "Qui és?",
+			"nobody": "— Ningú —",
+			"takenBy": "{{name}} (ja a la foto {{n}})",
+			"hasPhoto": "ja té una foto",
+			"noPhoto": "sense foto",
+			"ignore": "Ignora",
+			"unignore": "Restaura",
+			"ignored": "Ignorada: no és ningú d'aquesta classe o llista.",
+			"saved": "Desada com a foto de {{name}}",
+			"edit": "Corregeix els marcs",
+			"editDone": "Fi de les correccions",
+			"editHint": "Toca un marc i arrossega les cantonades; per a una foto que falta, usa «Afegeix un marc».",
+			"editHintScan": "Toca un marc: arrossega una cantonada per fer-lo més gran o més petit, el cercle de dalt per girar-lo; per a una foto que falta, usa «Afegeix un marc».",
+			"addFrame": "Afegeix un marc",
+			"addFrameHint": "Arrossega sobre la imatge des d'una cantonada de la foto que falta fins a l'altra.",
+			"deleteFrame": "Elimina el marc {{n}}",
+			"rotateFrame": "Gira el marc",
+			"kind": "Tipus d'imatge",
+			"kindPhoto": "Foto",
+			"kindScan": "Escaneig",
+			"kindPhotoHint": "Feta de biaix: cada cantonada d'un marc es mou per si sola, per seguir la perspectiva.",
+			"kindScanHint": "Feta amb l'escàner: els marcs es queden rectangles i només es poden girar.",
+			"kindAgain": "Mentre no s'ha triat cap usuari, si es canvia el tipus les fotos es tornen a cercar.",
+			"save": "Desa les fotos",
+			"saveTitle": "Desar les fotos triades?",
+			"saveSummary": "Fotos per desar: {{count}}.",
+			"saveReplaces": "Substitueixen la foto que ja hi ha de: {{names}}.",
+			"saveUnassigned": "Marcs sense ningú triat: {{count}} (es queden com són).",
+			"savedToast": "Fotos desades: {{count}}.",
+			"deleteSheet": "Elimina la imatge",
+			"deleteSheetTitle": "Eliminar la imatge?",
+			"deleteSheetDescription": "La imatge i els seus marcs s'esborren. Les fotos ja desades es queden amb els usuaris.",
+			"deletedToast": "Imatge eliminada.",
+			"progress": "{{label}}: {{done}} de {{total}} amb foto",
+			"missingTitle": "Encara sense foto",
+			"byCamera": "Fes-les una a una",
+			"errors": {
+				"not_found": "Imatge no trobada.",
+				"set_not_found": "La classe o la llista ja no existeix.",
+				"empty": "El fitxer és buit.",
+				"too_large": "La imatge és massa gran (com a màxim {{maxMb}} MB).",
+				"not_an_image": "El fitxer no és una imatge llegible.",
+				"unsupported_format": "Format no admès: fes servir JPEG, PNG, WebP o HEIC.",
+				"too_many_frames": "Com a màxim {{maxFrames}} {{maxFrames:plural; one:foto; other:fotos;}} per imatge.",
+				"bad_corners": "El marc no és vàlid: les cantonades han de formar un quadrilàter dins de la imatge.",
+				"already_detected": "Les fotos d'aquesta imatge ja s'han cercat.",
+				"frame_saved": "Aquesta foto ja s'ha desat.",
+				"frame_erased": "Aquesta foto és d'un usuari eliminat: el marc s'ha cobert.",
+				"not_a_member": "Només es poden triar els usuaris de la classe o de la llista.",
+				"patron_taken": "Ja triat per a la foto {{position}}: allibera-la abans de triar-lo aquí.",
+				"confirm_replace": "{{count:plural; one:{{count}} foto substitueix una de ja existent; other:{{count}} fotos substitueixen fotos ja existents;}}: confirma per continuar.",
+				"nothing_to_save": "Tria almenys un usuari abans de desar."
+			},
+			"erased": "Usuari eliminat: el marc s'ha cobert a la imatge."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "Fitxer CSV",
+			"submit": "Puja",
+			"hints": {
+				"students": "Un fitxer CSV amb una fila per alumne, separat per ; o per , (també va bé una exportació des d'un full de càlcul). Usa les capçaleres de la plantilla, que es descarrega a sota amb les columnes necessàries.",
+				"teachers": "Un fitxer CSV amb una fila per docent, separat per ; o per ,. Usa les capçaleres de la plantilla, que es descarrega a sota amb les columnes necessàries."
+			}
+		},
+		"mapping": {
+			"format": "Format reconegut",
+			"uncertain": "El format no és segur: revisa les columnes abans de continuar.",
+			"remembered": "Columnes recordades de la darrera importació d'aquest fitxer.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "l'encapçalament del fitxer",
+				"unknown": "desconegut"
+			},
+			"mode": "Mode",
+			"modes": {
+				"upsert": "Afegeix i actualitza",
+				"upsertHint": "Les files trobades actualitzen l'usuari existent; les altres creen usuaris nous.",
+				"sync": {
+					"students": "Sincronitza els alumnes",
+					"teachers": "Sincronitza els docents"
+				},
+				"syncHint": {
+					"students": "El fitxer és la llista completa dels alumnes: qui falta es llista (i s'elimina, després de confirmació). Els docents no es toquen.",
+					"teachers": "El fitxer és la llista completa dels docents: qui falta es llista (i s'elimina, després de confirmació). Els alumnes no es toquen."
+				}
+			},
+			"duplicates": "Usuaris ja presents",
+			"policies": {
+				"update": "Actualitza",
+				"skip": "Salta",
+				"create": "Crea igualment"
+			},
+			"validate": "Verifica el fitxer",
+			"matchByName": {
+				"students": "Sense la columna external_id, els alumnes ja a l'arxiu es reconeixen pel nom i la classe.",
+				"teachers": "Sense la columna external_id, els docents ja a l'arxiu es reconeixen pel nom."
+			}
+		},
+		"preview": {
+			"ready": "Cap error: el fitxer es pot importar.",
+			"blocked": "Corregeix els errors del fitxer (o dels usuaris) i verifica de nou: un fitxer amb errors no s'importa.",
+			"columns": {
+				"name": "Nom",
+				"class": "Classe"
+			},
+			"changed": "Canvis: {{fields}}",
+			"homonym": {
+				"pick": "Tria l'usuari",
+				"create": "Crea un usuari nou",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Homònims a resoldre"
+			},
+			"missing": {
+				"students": {
+					"title": "Alumnes a l'arxiu però absents del fitxer ({{count}})",
+					"remove": "Elimina aquests alumnes de l'arxiu (anonimització immediata)",
+					"noPermission": "Sense el permís per eliminar usuaris, els alumnes que falten es queden a l'arxiu.",
+					"notRemoved": "{{count}} {{count:plural; one:alumne que falta no eliminat perquè té; other:alumnes que falten no eliminats perquè en tenen;}} préstecs en curs."
+				},
+				"teachers": {
+					"title": "Docents a l'arxiu però absents del fitxer ({{count}})",
+					"remove": "Elimina aquests docents de l'arxiu (anonimització immediata)",
+					"noPermission": "Sense el permís per eliminar usuaris, els docents que falten es queden a l'arxiu.",
+					"notRemoved": "{{count}} {{count:plural; one:docent que falta no eliminat perquè té; other:docents que falten no eliminats perquè en tenen;}} préstecs en curs."
+				},
+				"hint": "Amb la sincronització, qui no és al fitxer es pot eliminar: les dades personals s'esborren de seguida i per sempre, només es queden la classe i les estadístiques."
+			},
+			"commit": "Importa",
+			"back": "Torna a les columnes",
+			"generatedCards": "{{count}} {{count:plural; one:carnet nou es generarà; other:carnets nous es generaran;}}: al fitxer no hi ha el número."
+		},
+		"reasons": {
+			"tooLong": "Text massa llarg a la columna {{column}}: com a màxim {{max}} {{max:plural; one:caràcter; other:caràcters;}}",
+			"nameRequired": "Falta el nom o el cognom",
+			"emailInvalid": "Correu electrònic no vàlid",
+			"cardNumberInvalid": "Número de carnet no vàlid",
+			"cardNumberTaken": "Número de carnet ja assignat a un altre usuari",
+			"cardNumberIsCopy": "Número de carnet igual o semblant al codi de barres d'un exemplar",
+			"externalIdTaken": "Matrícula ja assignada a un altre usuari",
+			"duplicateInFile": "La mateixa persona ja és a la línia {{line}}",
+			"homonym": "{{count}} {{count:plural; one:homònim; other:homònims;}} a l'arxiu: tria quin actualitzar",
+			"matchedTwice": "Una altra fila ja actualitza el mateix usuari",
+			"skipped": "Ja present: saltat",
+			"levelRequired": "Falta la classe",
+			"levelUnknown": "El curs «{{value}}» no és un curs de l'escola",
+			"groupRequired": "Falta la secció",
+			"groupUnknown": "Secció «{{value}}» no trobada per a aquest curs. Classes vàlides: {{classes}} (les classes es creen a Administració → Configuració → Classes)",
+			"levelNotInGroup": "La secció «{{value}}» no té aquest curs. Classes vàlides: {{classes}}",
+			"classUnknown": "Classe «{{value}}» no trobada. Classes vàlides: {{classes}}",
+			"teacherGroupUnknown": "Grup de docents «{{value}}» no trobat. Grups vàlids: {{classes}}"
+		},
+		"done": {
+			"title": "Importació completada",
+			"summary": "{{created}} {{created:plural; one:nou; other:nous;}}, {{updated}} {{updated:plural; one:actualitzat; other:actualitzats;}}, {{unchanged}} {{unchanged:plural; one:invariat; other:invariats;}}, {{removed}} {{removed:plural; one:eliminat; other:eliminats;}}.",
+			"printNew": "Imprimeix els carnets dels nous",
+			"census": "Cens de fotos",
+			"again": "Importa un altre fitxer",
+			"batch": "Importació núm. {{id}}: el fitxer original es conserva al servidor."
+		},
+		"fields": {
+			"firstName": "Nom",
+			"lastName": "Cognom",
+			"class": "Classe (curs i secció)",
+			"level": "Classe (curs)",
+			"section": "Secció",
+			"group": "Grup de docents",
+			"externalId": "Matrícula",
+			"cardNumber": "Carnet",
+			"email": "Correu electrònic"
+		},
+		"titles": {
+			"students": "Importa alumnes",
+			"teachers": "Importa docents"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "El nom."
+			},
+			"lastName": {
+				"hint": "El cognom."
+			},
+			"class": {
+				"hint": "La classe en una sola columna, com 3A o 3 A: ha d'existir a Administració → Configuració → Classes."
+			},
+			"level": {
+				"hint": "El curs (1, 2, 3…), amb la secció a la columna section."
+			},
+			"section": {
+				"hint": "La secció (A, B…): amb level indica la classe."
+			},
+			"cardNumber": {
+				"hint": "El número de carnet, si l'alumne ja en té un.",
+				"missing": "els carnets nous es generen"
+			},
+			"externalId": {
+				"hint": "El codi del registre escolar.",
+				"missing": "els usuaris ja presents es reconeixen pel nom i la classe"
+			},
+			"email": {
+				"hint": "Facultativa."
+			},
+			"group": {
+				"hint": "El grup de docents; si falta, el grup predeterminat."
+			}
+		},
+		"classForm": {
+			"label": "La classe",
+			"class": "En una columna (class: 3A)",
+			"levelSection": "En dues columnes (level: 3, section: A)"
+		}
+	}
+}

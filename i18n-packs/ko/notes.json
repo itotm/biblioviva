@@ -1,0 +1,66 @@
+{
+	"title": "메모",
+	"new": "새 메모",
+	"adminOnly": "관리자만 메모를 보관 처리하고 대시보드에 고정할 수 있습니다.",
+	"pinned": "고정됨",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "{{author}} 보관 · {{when}}",
+	"count": "{{count}} {{count:plural; other:건;}}",
+	"archiveCount": "보관된 메모 {{total}} {{total:plural; other:건;}} 중 {{shown}} 건 표시",
+	"actions": {
+		"label": "메모 작업",
+		"pin": "대시보드에 고정",
+		"unpin": "고정 해제",
+		"archive": "보관",
+		"restore": "복원",
+		"delete": "삭제",
+		"showAll": "모두 보기",
+		"showLess": "간략히 보기",
+		"more": "더 보기"
+	},
+	"done": {
+		"added": "메모를 추가했습니다.",
+		"pinned": "메모를 고정했습니다.",
+		"unpinned": "메모 고정을 해제했습니다.",
+		"archived": "메모를 보관했습니다.",
+		"restored": "메모를 복원했습니다.",
+		"deleted": "메모를 삭제했습니다."
+	},
+	"confirmDelete": {
+		"title": "메모를 삭제하시겠습니까?",
+		"text": "영구적으로 지워지며 복구할 수 없습니다."
+	},
+	"form": {
+		"body": "내용",
+		"placeholder": "예: 데스크의 바코드 스캐너가 이용증을 읽지 않습니다.",
+		"privacy": "모든 계정이 메모를 볼 수 있습니다. 학생의 개인 정보를 입력하지 마십시오.",
+		"written": "메모는 수정할 수 없습니다. 잘못 작성했다면 관리자에게 보관을 요청하고 새 메모를 작성하십시오.",
+		"counter": "{{count}}/{{max}}",
+		"color": "색상",
+		"pinned": "대시보드에 고정",
+		"pinnedHint": "고정을 해제하거나 보관할 때까지 대시보드(및 대출·반납 데스크) 맨 위에 모두에게 표시됩니다.",
+		"save": "추가"
+	},
+	"colors": {
+		"yellow": "노랑",
+		"pink": "분홍",
+		"green": "초록",
+		"blue": "하늘색",
+		"orange": "주황"
+	},
+	"errors": {
+		"empty": "메모 내용을 입력하십시오.",
+		"tooLong": "내용은 {{max}} {{max:plural; other:자;}} 이하로 입력하십시오.",
+		"color": "색상 중 하나를 선택하십시오."
+	},
+	"empty": {
+		"open": "열린 메모가 없습니다",
+		"openHint": "열린 메모가 없습니다. 메모는 문제와 알림을 동료와 관리자에게 전달합니다.",
+		"archived": "보관된 메모가 없습니다"
+	},
+	"home": {
+		"title": "메모",
+		"open": "메모 열기"
+	},
+	"tile": "열린 메모"
+}

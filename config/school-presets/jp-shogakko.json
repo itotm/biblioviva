@@ -1,0 +1,77 @@
+{
+	"id": "jp-shogakko",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Classes written 1年2組; some schools name them with letters or kana [VERIFY]. The school year (年度) starts on 1 April and is named by its starting year [VERIFY]. Classes are re-formed every one or two years (クラス替え) [VERIFY the promotion rule].",
+	"name": {
+		"it": "Scuola primaria, shōgakkō (Giappone)",
+		"en": "Elementary school, shogakko (Japan)",
+		"ja": "小学校（日本）"
+	},
+	"country": "JP",
+	"languages": ["ja"],
+	"schoolYear": {
+		"start": "04-01",
+		"label": "start"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "shogakko",
+				"name": "小学校"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1年",
+				"name": "第1学年",
+				"stage": "shogakko",
+				"aliases": ["1年生", "小1"]
+			},
+			{
+				"code": "2",
+				"label": "2年",
+				"name": "第2学年",
+				"stage": "shogakko",
+				"aliases": ["2年生", "小2"]
+			},
+			{
+				"code": "3",
+				"label": "3年",
+				"name": "第3学年",
+				"stage": "shogakko",
+				"aliases": ["3年生", "小3"]
+			},
+			{
+				"code": "4",
+				"label": "4年",
+				"name": "第4学年",
+				"stage": "shogakko",
+				"aliases": ["4年生", "小4"]
+			},
+			{
+				"code": "5",
+				"label": "5年",
+				"name": "第5学年",
+				"stage": "shogakko",
+				"aliases": ["5年生", "小5"]
+			},
+			{
+				"code": "6",
+				"label": "6年",
+				"name": "第6学年",
+				"stage": "shogakko",
+				"aliases": ["6年生", "小6"]
+			}
+		],
+		"classLabel": "{level}{group}組",
+		"groupWord": "組",
+		"cardClass": "{class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"shogakko": ["1", "2", "3"]
+	},
+	"teacherGroup": "教員",
+	"readingLevels": []
+}

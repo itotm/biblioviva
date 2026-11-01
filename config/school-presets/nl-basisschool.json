@@ -1,0 +1,83 @@
+{
+	"id": "nl-basisschool",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Groep 1 and 2 (kleuters) and combination groups (4/5) are often one class: add them as mixed groups; many schools name their groups (animals, colours) instead of letters. The legal school year starts on 1 August, lessons in mid-August or early September by region [VERIFY].",
+	"name": {
+		"it": "Scuola primaria, groep 1–8 (Paesi Bassi)",
+		"en": "Primary school, groep 1 to 8 (Netherlands)",
+		"nl": "Basisschool, groep 1 tot en met 8"
+	},
+	"country": "NL",
+	"languages": ["nl"],
+	"schoolYear": {
+		"start": "08-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "basis",
+				"name": "Basisschool"
+			}
+		],
+		"levels": [
+			{
+				"code": "G1",
+				"label": "1",
+				"name": "Groep 1",
+				"stage": "basis"
+			},
+			{
+				"code": "G2",
+				"label": "2",
+				"name": "Groep 2",
+				"stage": "basis"
+			},
+			{
+				"code": "G3",
+				"label": "3",
+				"name": "Groep 3",
+				"stage": "basis"
+			},
+			{
+				"code": "G4",
+				"label": "4",
+				"name": "Groep 4",
+				"stage": "basis"
+			},
+			{
+				"code": "G5",
+				"label": "5",
+				"name": "Groep 5",
+				"stage": "basis"
+			},
+			{
+				"code": "G6",
+				"label": "6",
+				"name": "Groep 6",
+				"stage": "basis"
+			},
+			{
+				"code": "G7",
+				"label": "7",
+				"name": "Groep 7",
+				"stage": "basis"
+			},
+			{
+				"code": "G8",
+				"label": "8",
+				"name": "Groep 8",
+				"stage": "basis"
+			}
+		],
+		"classLabel": "Groep {level}{group}",
+		"groupWord": "Klas",
+		"cardClass": "{class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"basis": ["a", "b"]
+	},
+	"teacherGroup": "Leerkrachten",
+	"readingLevels": []
+}

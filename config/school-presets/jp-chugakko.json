@@ -1,0 +1,56 @@
+{
+	"id": "jp-chugakko",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Classes written 1年2組; some schools name them with letters or kana [VERIFY]. The school year (年度) starts on 1 April and is named by its starting year [VERIFY]. Classes are usually re-formed every year (クラス替え), so the promotion clears them [VERIFY].",
+	"name": {
+		"it": "Secondaria di primo grado, chūgakkō (Giappone)",
+		"en": "Junior high school, chugakko (Japan)",
+		"ja": "中学校（日本）"
+	},
+	"country": "JP",
+	"languages": ["ja"],
+	"schoolYear": {
+		"start": "04-01",
+		"label": "start"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "chugakko",
+				"name": "中学校"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1年",
+				"name": "第1学年",
+				"stage": "chugakko",
+				"aliases": ["1年生", "中1"]
+			},
+			{
+				"code": "2",
+				"label": "2年",
+				"name": "第2学年",
+				"stage": "chugakko",
+				"aliases": ["2年生", "中2"]
+			},
+			{
+				"code": "3",
+				"label": "3年",
+				"name": "第3学年",
+				"stage": "chugakko",
+				"aliases": ["3年生", "中3"]
+			}
+		],
+		"classLabel": "{level}{group}組",
+		"groupWord": "組",
+		"cardClass": "{class}",
+		"promotionWithinStage": "clear",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"chugakko": ["1", "2", "3", "4"]
+	},
+	"teacherGroup": "教員",
+	"readingLevels": []
+}

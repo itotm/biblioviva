@@ -1,0 +1,7 @@
+{
+	"notFound": "Siden blev ikke fundet",
+	"forbidden": "Denne side er ikke tilgængelig for den anvendte konto",
+	"unauthorized": "Log ind for at fortsætte",
+	"generic": "Der opstod en fejl ({{status}})",
+	"backHome": "Tilbage til forsiden"
+}

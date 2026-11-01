@@ -1,0 +1,1778 @@
+{
+	"home": {
+		"title": "Configuration"
+	},
+	"leave": {
+		"title": "Leave without saving?",
+		"description": "The changes not saved yet will be lost.",
+		"confirm": "Leave without saving"
+	},
+	"taxonomy": {
+		"title": "Classification",
+		"intro": "Changes stay in a draft until “Save”; the previous version of {{file}} is kept.",
+		"invalid": "Some values are not valid (marked in red): fix them to be able to save.",
+		"orphans": "The catalogue has books with codes the classification does not contain: {{codes}}. Add these codes here or reclassify those books from the catalogue.",
+		"unsaved": "Unsaved changes",
+		"discard": "Discard changes",
+		"saved": "Classification saved",
+		"savedDetail": "{{records}} {{records:plural; one:book moved; other:books moved;}}, {{callNumbers}} {{callNumbers:plural; one:call number rewritten; other:call numbers rewritten;}}, {{bands}} {{bands:plural; one:spine band to print again; other:spine bands to print again;}}.",
+		"tabs": {
+			"fiction": "Fiction",
+			"nonfiction": "Non-fiction",
+			"dewey": "Dewey",
+			"options": "Options"
+		},
+		"addGenre": "Add a genre",
+		"addClass": "Add a subject",
+		"addSubclass": "Add a sub-subject",
+		"dragHint": "Drag the rows to change the order, or use the arrows. The order is the one of the choices in the catalogue.",
+		"pickGenre": "Choose a genre to edit it",
+		"pickClass": "Choose a subject to edit it",
+		"untitled": "Untitled",
+		"hasProblems": "To fix",
+		"usageShort": "{{records}} {{records:plural; one:book; other:books;}}",
+		"moveUp": "Move up",
+		"moveDown": "Move down",
+		"panel": {
+			"genre": "Genre",
+			"class": "Subject",
+			"subclass": "Sub-subject"
+		},
+		"fields": {
+			"code": "Code",
+			"label": "Name",
+			"color": "Colour",
+			"pictogram": "Pictogram",
+			"position": "Position"
+		},
+		"renameNote": "Code changed: on save {{records}} {{records:plural; one:book moves; other:books move;}} from {{from}} to {{to}} and their call numbers are updated.",
+		"color": {
+			"inherit": "Use the colour of {{code}}",
+			"none": "No colour",
+			"hex": "Colour code"
+		},
+		"pictogram": {
+			"upload": "Upload an image",
+			"choose": "Choose among the images",
+			"remove": "Remove the image",
+			"own": "Own image. PNG, JPEG or WebP: it is stored as PNG.",
+			"missing": "The file {{name}} is not in the images folder: the labels show the disc with the colour and the code.",
+			"inherited": "Without an image of its own it uses the one of {{code}}.",
+			"placeholder": "Without an image the labels show a disc with the colour and the code.",
+			"gallery": "Images of the classification",
+			"errors": {
+				"empty": "The file is empty.",
+				"too_large": "The image is too large (at most {{maxMb}} MB).",
+				"not_an_image": "The file is not an image.",
+				"unsupported_format": "Format not accepted: use PNG, JPEG or WebP."
+			}
+		},
+		"position": {
+			"top": "Main subject",
+			"under": "Inside {{code}} · {{label}}",
+			"locked": "It has sub-subjects: it stays a main subject."
+		},
+		"usage": {
+			"new": "New: no book uses it yet.",
+			"none": "No book uses this code.",
+			"some": "Used by {{records}} {{records:plural; one:book; other:books;}} ({{copies}} {{copies:plural; one:copy; other:copies;}})."
+		},
+		"remove": {
+			"genre": "Delete the genre",
+			"class": "Delete the subject",
+			"confirmTitle": "Delete {{code}}?",
+			"withSubclasses": "Its {{count}} {{count:plural; one:sub-subject is; other:sub-subjects are;}} deleted too.",
+			"inUse": "{{records}} {{records:plural; one:book uses; other:books use;}} this code: on save, where to move them is asked.",
+			"confirm": "Delete"
+		},
+		"preview": {
+			"title": "Spine band preview",
+			"hint": "A sample book as it would be printed now, at real size.",
+			"needsCode": "The preview appears when the code is valid."
+		},
+		"problems": {
+			"codeRequired": "The code is required.",
+			"codeFormat": "Use only letters, digits, dot, dash or underscore (32 at most).",
+			"codeTaken": "This code is already used by another genre or subject.",
+			"labelRequired": "The name is required.",
+			"labelLong": "The name is too long (120 characters at most).",
+			"colorFormat": "Write the colour as #rrggbb, for example #e8231b.",
+			"patternRequired": "The pattern cannot be empty."
+		},
+		"dewey": {
+			"hint": "When a non-fiction book comes with a Dewey number (for example from SBN), its subject is suggested by this table: the longest matching prefix wins.",
+			"probe": "Try a Dewey number",
+			"noMatch": "No subject matches",
+			"empty": "No Dewey mapping",
+			"prefix": "Dewey prefix",
+			"class": "Subject",
+			"add": "Add a mapping",
+			"problems": {
+				"prefixFormat": "1 to 3 digits.",
+				"prefixTaken": "Repeated prefix.",
+				"codeUnknown": "Choose a subject."
+			}
+		},
+		"options": {
+			"fictionByClass": "Fiction is divided by reading level",
+			"fictionByClassHint": "Fiction books can carry the reading level they suit (for example class 4): it shows in the call number and on the spine band.",
+			"classPerItem": "The reading level is on each copy",
+			"classPerItemHint": "Needed when copies of the same book sit on the shelves of different levels. Otherwise the level is on the book.",
+			"toCopies": "On save the reading level of each book moves to its copies.",
+			"toRecords": "On save the level of the copies goes back to the book; not possible when copies of the same book have different levels.",
+			"patterns": "Call number patterns",
+			"patternsHint": "They apply to the copies added from now on; existing call numbers do not change. Placeholders: {{placeholders}}.",
+			"pattern": {
+				"fiction": "Fiction",
+				"fictionWithClass": "Fiction with an associated class",
+				"nonfiction": "Non-fiction"
+			},
+			"unknownPlaceholders": "Unknown placeholders: {{names}}.",
+			"example": "Example: {{example}}"
+		},
+		"save": {
+			"title": "Save the classification",
+			"checking": "Checking what changes in the catalogue…",
+			"unchanged": "There are no changes to save.",
+			"errors": "Before saving fix these problems:",
+			"removedTitle": "Deleted codes still in use",
+			"removedHint": "Choose where to move the books of each deleted code: the new code goes on the books, at the start of their call numbers and on the spine bands.",
+			"moveTo": "{{code}} · {{label}}: {{records}} {{records:plural; one:book; other:books;}} ({{copies}} {{copies:plural; one:copy; other:copies;}}). Move to",
+			"choose": "Choose…",
+			"callNumbers": "{{count}} {{count:plural; one:call number starts; other:call numbers start;}} with a deleted code: the code at the start is replaced (for example B 4 DEL becomes A 4 DEL).",
+			"bandsMoved": "The spine bands of the moved books, and the labels whose call number changed, go back among those to print.",
+			"unused": "Deleted, used by no book: {{codes}}.",
+			"reprint": "Put back among the labels to print the spine bands of {{copies}} {{copies:plural; one:copy; other:copies;}} whose name, colour or pictogram changes ({{codes}})",
+			"reprintHint": "Leave it off if the difference on the bands already stuck on the books does not matter.",
+			"conflicts": "{{count}} {{count:plural; one:book has; other:books have;}} copies in different classes: give the same class to all the copies of each book before taking the class off the copies.",
+			"toCopies": "The associated class of {{count}} {{count:plural; one:book moves; other:books move;}} to their copies.",
+			"toRecords": "The class of the copies goes back to the book for {{count}} {{count:plural; one:title; other:titles;}}.",
+			"warnings": "{{count}} {{count:plural; one:warning; other:warnings;}} (they do not block the save)",
+			"levelsTitle": "Reading levels removed while books carry them",
+			"levelMoveTo": "The books of level {{code}} · {{label}} ({{records}} {{records:plural; one:title; other:titles;}}, {{copies}} {{copies:plural; one:copy; other:copies;}}) move to",
+			"noLevel": "No level",
+			"levelsHint": "The level in the copies' call numbers changes with them (for example B 4 DEL becomes B 5 DEL) and their labels go back among those to print."
+		},
+		"levels": {
+			"title": "Reading levels",
+			"hint": "In order, from the easiest. The code goes on the books and into the call number (for example 4 in B 4 DEL), the name shows in the choices. For a level in use that is removed or renamed, saving asks where its books move.",
+			"code": "Level code",
+			"label": "Level name",
+			"up": "Move up",
+			"down": "Move down",
+			"remove": "Remove the level",
+			"add": "Add a level"
+		}
+	},
+	"sections": {
+		"library": {
+			"title": "Library and school",
+			"description": "Name, school type, classes and sections, school year, time zone."
+		},
+		"school": {
+			"title": "School",
+			"description": "The stages and years of the school, how a class is written, what happens to the classes at the end of the year. The classes themselves are managed in Administration → Configuration → Classes."
+		},
+		"catalog": {
+			"title": "Catalogue",
+			"description": "Values for unknown author, publisher and place."
+		},
+		"barcodes": {
+			"title": "Barcodes",
+			"description": "Format of cards and copies, old codes, barcode type."
+		},
+		"circulation": {
+			"title": "Loans",
+			"description": "Loan and renewal rules, due dates, notices, receipts."
+		},
+		"calendar": {
+			"title": "Calendar",
+			"description": "Closed days and holidays."
+		},
+		"z3950": {
+			"title": "Z39.50 (SBN)",
+			"description": "The servers the book records come from."
+		},
+		"metadata": {
+			"title": "Book data",
+			"description": "The data sources when searching by ISBN."
+		},
+		"performance": {
+			"title": "Performance",
+			"description": "The computer BiblioViva runs on and the settings that depend on it."
+		},
+		"classification": {
+			"title": "Classification",
+			"description": "Genres, subjects, pictograms, Dewey and call numbers."
+		},
+		"cards": {
+			"title": "Cards",
+			"description": "Format of the cards and of the print sheet."
+		},
+		"labels": {
+			"title": "Labels",
+			"description": "Book labels and spine bands, adhesive sheets."
+		},
+		"photos": {
+			"title": "Patron photos",
+			"description": "Size and format of the photos."
+		},
+		"covers": {
+			"title": "Covers",
+			"description": "Size, format and sources of the covers."
+		},
+		"privacy": {
+			"title": "Privacy",
+			"description": "How long the audit log is kept."
+		},
+		"backup": {
+			"title": "Backup",
+			"description": "Time and retention of the backups, off-site copy."
+		},
+		"security": {
+			"title": "Security and access",
+			"description": "Session length, login attempts, accounts and roles."
+		},
+		"ui": {
+			"title": "Interface",
+			"description": "The circulation desk and the added languages; colours, language and dashboard are in “Appearance and language”."
+		}
+	},
+	"fields": {
+		"library": {
+			"name": {
+				"label": "Library name",
+				"hint": "Shown at the top left, on the cards and on the printouts."
+			},
+			"contactEmail": {
+				"label": "Contact email",
+				"hint": "Optional: shown on the printouts that include it."
+			},
+			"schoolYearStart": {
+				"label": "Start of the school year",
+				"hint": "Month and day as MM-DD (for example 09-01): it separates the years in the statistics."
+			},
+			"schoolYearLabel": {
+				"label": "Name of the school year",
+				"hint": "How the school year appears on cards, reports and pages: two years (2026/2027) or the year it starts (2026), as in Brazil, Japan and Korea."
+			},
+			"timezone": {
+				"label": "Time zone",
+				"hint": "Name of the zone, for example Europe/Rome: dates and due dates follow it, not the server clock."
+			},
+			"weekStart": {
+				"label": "First day of the week",
+				"hint": "The day weeks start from in the calendars and in the dashboard's “this week”. At the first start the language chooses it (Monday in Italian, Sunday in English)."
+			}
+		},
+		"school": {
+			"classLabel": {
+				"label": "How a class is written",
+				"hint": "{level} is the year, {group} the class's name: \"{level} {group}\" gives 3 B, \"{level}{group}\" gives 3B. A stage can have its own (Stages and years)."
+			},
+			"groupWord": {
+				"label": "Word for the class",
+				"hint": "The name of the class field in the forms and filters, and {word} in the class line of the card (Section B, Class B, Group B)."
+			},
+			"cardClass": {
+				"label": "Class on the card",
+				"hint": "The class line printed on the card: {word} is the word for the class, {group} the class's name, {level} the year, {class} the whole class. \"{word} {group}\" gives Section B, \"{class}\" gives 3 B."
+			},
+			"teacherGroupName": {
+				"label": "Name of the teachers group",
+				"hint": "The group a teacher joins when no other one is picked."
+			},
+			"promotionWithinStage": {
+				"label": "At the end of the year, within a stage",
+				"hint": "Usually the class moves up with its students: 3 B becomes 4 B."
+			},
+			"promotionAcrossStages": {
+				"label": "At the end of the year, into another stage",
+				"hint": "For example from year 5 of primary to year 1 of lower secondary in a comprehensive school."
+			}
+		},
+		"catalog": {
+			"specialAuthors": {
+				"label": "Special authors",
+				"hint": "One per line: the values accepted instead of a personal author (for example Anonimo, AA. VV.)."
+			},
+			"unknownPublisher": {
+				"label": "Unknown publisher",
+				"hint": "The value written when the publisher is not given."
+			},
+			"unknownPlace": {
+				"label": "Unknown place",
+				"hint": "The value written when the place of publication is not given."
+			}
+		},
+		"barcodes": {
+			"keyboardLayout": {
+				"label": "Computer keyboard",
+				"hint": "The keyboard layout of the computers the barcode scanners are plugged into: it is used to repair the characters a scanner set for another keyboard types wrong."
+			},
+			"cameraSound": {
+				"label": "Camera sound",
+				"hint": "The phone's beep when the camera reads a card, a copy's barcode or an ISBN. The USB scanner beeps by itself and needs none; the desk stays silent."
+			},
+			"patron": {
+				"symbology": {
+					"label": "Barcode type of the cards",
+					"hint": "Code 128 for new cards; Code 39 only if the library's scanners cannot read Code 128."
+				}
+			},
+			"item": {
+				"symbology": {
+					"label": "Barcode type of the copies",
+					"hint": "Code 128 for new labels; Code 39 only if the library's scanners cannot read Code 128."
+				}
+			}
+		},
+		"circulation": {
+			"rules": {
+				"student": {
+					"loanDays": {
+						"label": "Loan days",
+						"hint": "How many days a loan lasts for students."
+					},
+					"maxLoans": {
+						"label": "Most books on loan",
+						"hint": "How many books one can have at the same time."
+					},
+					"maxRenewals": {
+						"label": "Most renewals",
+						"hint": "How many times the same loan can be renewed (0 = never)."
+					},
+					"renewalDays": {
+						"label": "Renewal days",
+						"hint": "How many days each renewal adds."
+					}
+				},
+				"teacher": {
+					"loanDays": {
+						"label": "Loan days",
+						"hint": "How many days a loan lasts for teachers."
+					},
+					"maxLoans": {
+						"label": "Most books on loan",
+						"hint": "How many books one can have at the same time."
+					},
+					"maxRenewals": {
+						"label": "Most renewals",
+						"hint": "How many times the same loan can be renewed (0 = never)."
+					},
+					"renewalDays": {
+						"label": "Renewal days",
+						"hint": "How many days each renewal adds."
+					}
+				}
+			},
+			"dueDateMode": {
+				"label": "Due date computation",
+				"hint": "How the loan length is counted against the days the library is closed."
+			},
+			"renewFrom": {
+				"label": "Renewals start from",
+				"hint": "The day the renewal days are counted from."
+			},
+			"allowRenewalWhenOverdue": {
+				"label": "Renew after the due date too",
+				"hint": "A loan already overdue can be renewed."
+			},
+			"overdueNotice": {
+				"template": {
+					"label": "Notice template",
+					"hint": "The name of the print template of the notices (folder in slips/templates)."
+				},
+				"pageBreakPerGroup": {
+					"label": "One page per class",
+					"hint": "Each class on its own sheet, to hand to the teacher; it can also be changed when printing."
+				},
+				"minDays": {
+					"label": "Days late before a notice",
+					"hint": "A loan appears in the notices only after these days of delay (0 = at once)."
+				}
+			},
+			"blockIfOverdue": {
+				"label": "No new loans with overdue books",
+				"hint": "Whoever has an overdue book cannot borrow others until it is returned."
+			},
+			"hardDueDate": {
+				"label": "Latest due date",
+				"hint": "No loan is due after this date (for example the end of the lessons). Empty: no limit."
+			},
+			"receipts": {
+				"label": "Loan receipt",
+				"hint": "Shows the button that prints the receipt at the loans desk."
+			}
+		},
+		"calendar": {
+			"autoItalianHolidays": {
+				"label": "Italian national holidays",
+				"hint": "The national holidays (Easter included) are closed days without writing them by hand."
+			}
+		},
+		"z3950": {
+			"defaultTarget": {
+				"label": "Default server",
+				"hint": "The id of the Z39.50 server used for searches."
+			},
+			"timeoutMs": {
+				"label": "Waiting time limit (ms)",
+				"hint": "After how many milliseconds a Z39.50 search is given up."
+			},
+			"maxRecordsIsbn": {
+				"label": "Results per ISBN",
+				"hint": "How many records at most are read when searching an ISBN (one ISBN can have a record per reprint): the most complete one opens."
+			},
+			"maxRecordsSearch": {
+				"label": "Results per search",
+				"hint": "How many records at most are read when searching by title or author."
+			}
+		},
+		"metadata": {
+			"providers": {
+				"label": "Data sources",
+				"hint": "Where the book data comes from when searching by ISBN: the chosen sources are queried together."
+			},
+			"cacheDays": {
+				"label": "Days a search is remembered",
+				"hint": "For how many days a search already made is reused without asking again."
+			},
+			"timeoutMs": {
+				"label": "Waiting time limit (ms)",
+				"hint": "After how many milliseconds a source that does not answer is dropped."
+			}
+		},
+		"performance": {
+			"profile": {
+				"label": "Computer",
+				"hint": "The default settings that suit the computer BiblioViva runs on."
+			},
+			"sqliteCacheMb": {
+				"label": "Database cache (MB)",
+				"hint": "Empty: according to the computer (8, 16, 64 or 256 MB)."
+			},
+			"sqliteMmapMb": {
+				"label": "Database memory map (MB)",
+				"hint": "Empty: according to the computer (0, 0, 0 or 512 MB)."
+			},
+			"walAutocheckpointPages": {
+				"label": "Pages before a checkpoint",
+				"hint": "Empty: according to the computer (500, 1000, 2000 or 4000)."
+			},
+			"imageConcurrency": {
+				"label": "Images processed together",
+				"hint": "Photos, covers, class pictures and the logo processed at the same time; the others wait their turn. Empty: according to the computer (1, 1, 2 or 4)."
+			},
+			"yazConcurrency": {
+				"label": "Z39.50 searches together",
+				"hint": "Z39.50 searches at the same time; the others wait their turn. Empty: according to the computer (1, 1, 2 or 2)."
+			},
+			"heavyConcurrency": {
+				"label": "Prints and exports at a time",
+				"hint": "Sheets to print (cards, labels, overdue notices, receipts, reports) and exports (CSV, ODS, archives, backups) prepared at the same time; the others wait their turn, so the loan desk stays fast. Empty: according to the computer (1, 1, 2 or 4)."
+			},
+			"argon2MemoryMb": {
+				"label": "Memory to check passwords (MB)",
+				"hint": "Applies to the passwords set from then on. Empty: 16 MB on every computer (the system is never exposed to the Internet)."
+			},
+			"smol": {
+				"label": "Memory saving",
+				"hint": "Less memory, a little more work for the processor. Automatic: according to the computer (yes for the minimal computer and the Raspberry Pi). It applies after a restart."
+			}
+		},
+		"cards": {
+			"defaultTemplate": {
+				"label": "Card template",
+				"hint": "The name of the print template used when a patron type has none of its own (folder in cards/templates)."
+			},
+			"layout": {
+				"label": "Card printing",
+				"hint": "Front and back side by side (folded on the short edge) or on the two sides of the sheet, with a printer that prints both sides. Chosen again at every print."
+			},
+			"duplex": {
+				"flip": {
+					"label": "How the sheet turns",
+					"hint": "How the printer turns the sheet for the back: on its long edge (as a book) or its short edge. It must match the choice in the print window."
+				},
+				"backOffsetMm": {
+					"x": {
+						"label": "Shift of the backs, across (mm)",
+						"hint": "Found by the calibration: how far the backs move to fall behind the fronts."
+					},
+					"y": {
+						"label": "Shift of the backs, down (mm)",
+						"hint": "Found by the calibration."
+					}
+				}
+			},
+			"cardMm": {
+				"width": {
+					"label": "Width (mm)",
+					"hint": "The standard card is 85.6 mm wide."
+				},
+				"height": {
+					"label": "Height (mm)",
+					"hint": "The standard card is 53.98 mm high."
+				}
+			},
+			"bleedMm": {
+				"label": "Bleed (mm)",
+				"hint": "Extra margin around full-bleed images, cut away."
+			},
+			"sheet": {
+				"paper": {
+					"label": "Paper size",
+					"hint": "The sheet the cards are printed on."
+				},
+				"rows": {
+					"label": "Cards per sheet",
+					"hint": "How many cards (front and back) one under the other: 4 or 5 on an A4 sheet."
+				},
+				"marginMm": {
+					"label": "Sheet margin (mm)",
+					"hint": "The white space around the cards."
+				},
+				"gapMm": {
+					"label": "Space between cards (mm)",
+					"hint": "The distance between one card and the next."
+				},
+				"foldMarks": {
+					"label": "Fold marks",
+					"hint": "Short dashed lines in the margins and between the cards, where front and back are folded."
+				},
+				"cutMarks": {
+					"label": "Cut marks",
+					"hint": "Crop marks: short lines in the margins and between the cards that extend each card's edges, to cut with a ruler and a cutter."
+				}
+			},
+			"validityMonths": {
+				"label": "Validity (months)",
+				"hint": "For how many months a printed card is valid. Empty: it never expires."
+			},
+			"showPhoto": {
+				"label": "Photo on the card",
+				"hint": "Prints the patron's photo on the card."
+			}
+		},
+		"labels": {
+			"default": {
+				"label": "Default labels",
+				"hint": "What is printed when choosing “Print labels”."
+			},
+			"titleMaxChars": {
+				"label": "Title letters",
+				"hint": "The title on the labels is cut to this length."
+			},
+			"monochrome": {
+				"label": "Black-and-white printer",
+				"hint": "On the low spine bands the coloured band becomes a hatched pattern."
+			},
+			"pair": {
+				"template": {
+					"label": "Template",
+					"hint": "The name of the print template of the pair (folder in labels/templates)."
+				},
+				"stock": {
+					"label": "Adhesive sheet",
+					"hint": "The id of the label sheet used (file in labels/stocks)."
+				}
+			},
+			"barcode": {
+				"template": {
+					"label": "Template",
+					"hint": "The name of the print template of the barcode label (folder in labels/templates)."
+				},
+				"stock": {
+					"label": "Adhesive sheet",
+					"hint": "The id of the label sheet used (file in labels/stocks)."
+				}
+			},
+			"spine": {
+				"template": {
+					"label": "Template",
+					"hint": "The name of the print template of the spine band (folder in labels/templates)."
+				},
+				"stock": {
+					"label": "Adhesive sheet",
+					"hint": "The id of the label sheet used (file in labels/stocks)."
+				}
+			}
+		},
+		"photos": {
+			"enabled": {
+				"label": "Patron photos",
+				"hint": "On: photos taken or uploaded for each patron, the census, photos on the cards. Off: no photo anywhere and cards without a photo; the photos already saved stay and come back when it is switched on again."
+			},
+			"required": {
+				"label": "Photo required",
+				"hint": "On: the dashboard, the patron list and the print lists point out who has no photo. Off: no reminder, but photos can still be taken, uploaded and printed on the cards."
+			},
+			"width": {
+				"label": "Width (px)",
+				"hint": "Photos are stored at this width."
+			},
+			"height": {
+				"label": "Height (px)",
+				"hint": "Photos are stored at this height (centre crop)."
+			},
+			"format": {
+				"label": "File format",
+				"hint": "JPEG works everywhere; WebP takes less space."
+			},
+			"quality": {
+				"label": "Quality",
+				"hint": "From 1 to 100: higher means bigger files."
+			},
+			"maxUploadBytes": {
+				"label": "Largest upload (bytes)",
+				"hint": "A bigger file is refused."
+			},
+			"sheet": {
+				"maxUploadBytes": {
+					"label": "Largest file (bytes)",
+					"hint": "A picture with many photos (census from a picture) larger than this is refused."
+				},
+				"maxPixels": {
+					"label": "Longest side kept (px)",
+					"hint": "The picture is scaled down until its longest side is not larger than this."
+				},
+				"maxFrames": {
+					"label": "Photos at most",
+					"hint": "When the picture holds more, the sharpest ones are kept."
+				},
+				"minAspect": {
+					"label": "Smallest proportion of a photo",
+					"hint": "Height divided by width: 1 is a square, 1.33 a 3:4 ID photo."
+				},
+				"maxAspect": {
+					"label": "Largest proportion of a photo",
+					"hint": "Height divided by width: taller frames are not taken for photos."
+				}
+			}
+		},
+		"covers": {
+			"enabled": {
+				"label": "Book covers",
+				"hint": "On: covers looked up online, photographed or uploaded and shown in the catalogue. Off: no cover anywhere; the covers already saved stay and come back when it is switched on again."
+			},
+			"width": {
+				"label": "Width (px)",
+				"hint": "Covers are stored at this width."
+			},
+			"maxHeight": {
+				"label": "Largest height (px)",
+				"hint": "Very tall covers are scaled down. Empty: no limit."
+			},
+			"format": {
+				"label": "File format",
+				"hint": "JPEG works everywhere; WebP takes less space."
+			},
+			"quality": {
+				"label": "Quality",
+				"hint": "From 1 to 100: higher means bigger files."
+			},
+			"maxUploadBytes": {
+				"label": "Largest upload (bytes)",
+				"hint": "A bigger file is refused."
+			},
+			"country": {
+				"label": "Country",
+				"hint": "The country of the cover providers' catalogue (two letters, for example IT)."
+			},
+			"minWidth": {
+				"label": "Smallest width (px)",
+				"hint": "Downloaded covers narrower than this are discarded."
+			},
+			"autoFetch": {
+				"label": "Look for the cover by itself",
+				"hint": "In “New book” the cover is looked up online while the record is checked and is saved with it; if it is wrong, it is replaced with a photo."
+			},
+			"timeoutMs": {
+				"label": "Waiting time limit (ms)",
+				"hint": "After how many milliseconds a provider that does not answer is dropped."
+			}
+		},
+		"privacy": {
+			"auditRetentionMonths": {
+				"label": "Months of the audit log",
+				"hint": "Older rows of the log are deleted."
+			}
+		},
+		"backup": {
+			"cron": {
+				"label": "Backup time",
+				"hint": "In cron form: minute, hour, day, month, weekday (0 3 * * * = every night at 3)."
+			},
+			"catchUp": {
+				"label": "Backup at start if missed",
+				"hint": "If the computer was off at the backup time, BiblioViva makes the backup a minute after the next start: only one, even after several days."
+			},
+			"keepDays": {
+				"label": "Days kept",
+				"hint": "Older backups are deleted."
+			},
+			"offsite": {
+				"enabled": {
+					"label": "Off-site copy in use",
+					"hint": "Tells that the second copy of the backups (rclone, on another disk or another service) is in use."
+				},
+				"remote": {
+					"label": "Copy destination",
+					"hint": "Where the copy goes: a folder of another disk (/offsite/biblioviva-backups, the default) or a destination configured in rclone, written as name:folder."
+				}
+			}
+		},
+		"security": {
+			"sessionDays": {
+				"label": "Session length (days)",
+				"hint": "After how many days the password is asked again."
+			},
+			"loginMaxAttempts": {
+				"label": "Login attempts",
+				"hint": "How many wrong attempts before a forced pause."
+			},
+			"loginWindowMinutes": {
+				"label": "Pause after too many attempts (minutes)",
+				"hint": "For how many minutes logging in stays blocked after too many attempts."
+			}
+		},
+		"ui": {
+			"checkoutIdleSeconds": {
+				"label": "Loans desk idle time (seconds)",
+				"hint": "After these seconds without scans the desk gets ready for a new patron."
+			}
+		}
+	},
+	"options": {
+		"library": {
+			"weekStart": {
+				"monday": "Monday",
+				"sunday": "Sunday",
+				"saturday": "Saturday"
+			},
+			"schoolYearLabel": {
+				"span": "Two years (2026/2027)",
+				"start": "The year it starts (2026)"
+			}
+		},
+		"school": {
+			"promotionWithinStage": {
+				"keep": "The class moves up with its students",
+				"clear": "The students are left without a class"
+			},
+			"promotionAcrossStages": {
+				"keep": "The class moves up with its students",
+				"clear": "The students are left without a class",
+				"ask": "The class of every student is picked"
+			}
+		},
+		"barcodes": {
+			"patron": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"item": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"keyboardLayout": {
+				"it": "Italian",
+				"es": "Spanish",
+				"de": "German",
+				"fr": "French",
+				"uk": "English (United Kingdom)",
+				"us": "English (United States)"
+			},
+			"cameraSound": {
+				"off": "No sound",
+				"till": "Till",
+				"scanner": "Scanner",
+				"confirm": "Confirm",
+				"arpeggio": "Arpeggio"
+			}
+		},
+		"circulation": {
+			"dueDateMode": {
+				"datedue": "Calendar days, then the first open day",
+				"calendar": "Open days only",
+				"days": "Calendar days, ignoring closures"
+			},
+			"renewFrom": {
+				"today": "The day of the renewal",
+				"dueDate": "The current due date"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"sbn": "OPAC SBN (Z39.50)",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books",
+				"sbn-json": "OPAC SBN (web service)"
+			}
+		},
+		"performance": {
+			"profile": {
+				"micro": "Minimal computer: one slow processor and 512 MB (Raspberry Pi Zero 2, the smallest server)",
+				"small": "Raspberry Pi 4 with 2 GB or a small computer",
+				"medium": "Old PC with a hard disk",
+				"large": "PC with an SSD"
+			}
+		},
+		"cards": {
+			"sheet": {
+				"paper": {
+					"A4": "A4"
+				}
+			},
+			"layout": {
+				"side-by-side": "Front and back side by side",
+				"duplex": "On both sides of the sheet"
+			},
+			"duplex": {
+				"flip": {
+					"long-edge": "On the long edge",
+					"short-edge": "On the short edge"
+				}
+			}
+		},
+		"labels": {
+			"default": {
+				"pair": "Pair: spine band and label",
+				"barcode": "Barcode label only",
+				"spine": "Spine band only"
+			}
+		},
+		"photos": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		},
+		"covers": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		}
+	},
+	"groups": {
+		"barcodes": {
+			"patron": {
+				"title": "Patron cards"
+			},
+			"item": {
+				"title": "Book copies"
+			}
+		},
+		"circulation": {
+			"rules": {
+				"title": "Loan rules",
+				"student": {
+					"title": "Rules for students"
+				},
+				"teacher": {
+					"title": "Rules for teachers"
+				}
+			},
+			"overdueNotice": {
+				"title": "Overdue notices"
+			}
+		},
+		"cards": {
+			"cardMm": {
+				"title": "Card size"
+			},
+			"sheet": {
+				"title": "Print sheet"
+			},
+			"duplex": {
+				"title": "Printing on both sides",
+				"backOffsetMm": {
+					"title": "Shift of the backs"
+				}
+			}
+		},
+		"labels": {
+			"pair": {
+				"title": "Pair: spine band and label"
+			},
+			"barcode": {
+				"title": "Barcode label only"
+			},
+			"spine": {
+				"title": "Spine band only"
+			}
+		},
+		"backup": {
+			"offsite": {
+				"title": "Off-site copy"
+			}
+		},
+		"photos": {
+			"sheet": {
+				"title": "Pictures with many photos (census from a picture)"
+			}
+		}
+	},
+	"overview": {
+		"reload": "Reload",
+		"reloaded": "Configuration reloaded",
+		"reloadFailed": "The files have errors: the previous configuration stays in use.",
+		"valid": "The configuration is valid: {{count}} {{count:plural; one:file; other:files;}}.",
+		"example": "The configuration has not been created yet: the example values are used.",
+		"warnings": "{{count}} {{count:plural; one:warning; other:warnings;}}",
+		"diskErrors": "The configuration files have errors: the library keeps the previous version until they are fixed.",
+		"diskChanged": "The files were changed by hand: press “Reload” to use the changes.",
+		"sections": "Settings",
+		"alsoFrom": "and {{count}} {{count:plural; one:other file; other:other files;}}",
+		"editors": "Appearance, classes and templates",
+		"templates": "Print templates",
+		"templatesDescription": "Template folders of cards, labels and notices, with their images.",
+		"reports": "Reports library",
+		"reportsDescription": "Shipped and school reports: try, download, upload, delete.",
+		"appearance": "Appearance and language",
+		"appearanceDescription": "The library's name and logo, colours, language and the dashboard's sections.",
+		"classes": "Classes",
+		"classesDescription": "The school's classes and the teachers' groups: create, rename, archive."
+	},
+	"section": {
+		"tabs": {
+			"form": "Settings",
+			"json": "JSON",
+			"label": "Edit as"
+		},
+		"file": "Saved in {{file}}",
+		"alsoFrom": "Also from: {{files}}",
+		"general": "General",
+		"default": "Default: {{value}}",
+		"defaultNone": "Default: no value",
+		"defaultAuto": "Default: automatic",
+		"usesDefault": "Uses the default",
+		"reset": "Back to the default",
+		"willReset": "On save it goes back to the default.",
+		"auto": "Automatic",
+		"none": "No date",
+		"yes": "Yes",
+		"no": "No",
+		"fixed": "Fixed value",
+		"range": "From {{min}} to {{max}}.",
+		"min": "At least {{min}}.",
+		"max": "At most {{max}}.",
+		"save": "Save",
+		"discard": "Discard changes",
+		"saved": "Settings saved",
+		"unsaved": "Unsaved changes",
+		"invalid": "Fix the marked values before saving.",
+		"errors": "The save did not succeed:",
+		"inUse": "The save would take away something still in use:",
+		"inUseKinds": {
+			"classification": "code {{code}}: {{count}} {{count:plural; one:book; other:books;}}",
+			"itemType": "copy type {{code}}: {{count}} {{count:plural; one:copy; other:copies;}}",
+			"level": "level {{code}}: {{count}} {{count:plural; one:pupil; other:pupils;}} or classes",
+			"readingLevel": "reading level {{code}}: {{count}} {{count:plural; one:book; other:books;}}"
+		},
+		"patternError": "Invalid format.",
+		"numberError": "Write a whole number.",
+		"required": "Required.",
+		"elsewhereTitle": "Other settings of this section",
+		"elsewhereHint": "These are changed with a dedicated editor or in the JSON tab.",
+		"openEditor": "Open",
+		"jsonOnly": "In the JSON tab for now",
+		"editorNames": {
+			"taxonomy": "Classification",
+			"appearance": "Appearance and language",
+			"wizard": "The first-run wizard",
+			"history": "History",
+			"settings": "Settings",
+			"schoolLevels": "Stages and years"
+		},
+		"json": {
+			"hint": "The section as written in {{file}}. Keys starting with _ are comments and stay in the file.",
+			"label": "JSON content of the section",
+			"parseError": "The text is not valid JSON: {{message}}",
+			"notObject": "The section must be a JSON object in curly braces.",
+			"valid": "No problems.",
+			"checking": "Checking…",
+			"issues": "Problems to fix:"
+		},
+		"playSound": "Listen"
+	},
+	"history": {
+		"title": "Configuration history",
+		"hint": "Every change made from here keeps the previous version of the files it touches (the last 50 changes).",
+		"empty": "No change made from the administration yet.",
+		"columns": {
+			"when": "When",
+			"what": "What",
+			"files": "Files"
+		},
+		"revert": "Restore",
+		"revertTitle": "Restore the files as they were before this change?",
+		"revertDescription": "Only the values set by this change go back. The restore is a change too: it stays in the history and can be undone.",
+		"reverted": "Previous version restored",
+		"refused": "This change created config.json: it cannot be undone.",
+		"conflict": "It cannot be restored: after this change {{keys}} changed again.",
+		"notFound": "The change is no longer in the history.",
+		"newFile": "new",
+		"actions": {
+			"revert": "Restore of the change of {{when}}",
+			"theme": "Colours",
+			"locale": "Language",
+			"logo": "Library logo",
+			"setup": "First-run setup",
+			"section": "Section “{{section}}”",
+			"other": "Change ({{action}})"
+		}
+	},
+	"archive": {
+		"title": "Configuration archive",
+		"hint": "The whole configuration in one file: settings, print templates, adhesive sheets, pictograms, logo, reports and languages (not the history). Use it to keep a copy or to move it to another installation. “Import configuration” also takes a backup or an “Export everything” archive: it takes only the configuration from it, the library's data stays as it is.",
+		"export": "Export configuration",
+		"import": "Import configuration",
+		"checking": "Checking the archive…",
+		"from": "Archive of {{date}} (version {{version}})",
+		"fromLibrary": "Archive of “{{library}}” of {{date}} (version {{version}})",
+		"files": "{{added}} {{added:plural; one:new file; other:new files;}}, {{changed}} changed, {{removed}} removed, {{unchanged}} unchanged.",
+		"fileList": "List of files",
+		"added": "new",
+		"changed": "changed",
+		"removed": "removed",
+		"sameValues": "The settings stay the same.",
+		"sections": "Changing: {{sections}}.",
+		"errorsTitle": "The archive has problems: they must be fixed before importing it.",
+		"apply": "Import",
+		"confirmTitle": "Replace the configuration with the archive's?",
+		"confirmDescription": "The current files stay in the history: “Restore” brings back the previous configuration. The library's data (books, patrons, loans) does not change.",
+		"imported": "Configuration imported",
+		"failed": "The import did not succeed",
+		"errors": {
+			"too_large": "The archive is too large (at most {{maxMb}} MB).",
+			"not_zip": "The file is not a valid ZIP archive.",
+			"not_archive": "The file is not a BiblioViva archive.",
+			"too_many_files": "The archive holds too many files.",
+			"unsafe_path": "The archive holds a path that is not allowed: {{name}}",
+			"link": "The archive holds a link, which is not allowed: {{name}}",
+			"unknown_file": "The archive holds a file that is not part of the configuration: {{name}}",
+			"no_config": "The archive holds no configuration (only library data): it is restored from Administration → Backups."
+		},
+		"exportSome": "Export the chosen parts",
+		"chooseExport": "Choose what to export"
+	},
+	"blocks": {
+		"problems": {
+			"codeRequired": {
+				"itemTypes": "The code is required.",
+				"sections": "The section is required."
+			},
+			"codeFormat": {
+				"itemTypes": "Letters, digits, dot, dash or underscore (32 at most).",
+				"sections": "Capital letters or digits, 8 at most."
+			},
+			"codeTaken": {
+				"itemTypes": "Repeated code.",
+				"sections": "Repeated section."
+			},
+			"labelRequired": {
+				"itemTypes": "The name is required.",
+				"sections": "The name is required."
+			}
+		},
+		"itemTypes": {
+			"title": "Copy types",
+			"hint": "Book, DVD, reference…: the type of each copy decides its loan rules. Changing a code moves its copies to the new code.",
+			"code": "Code",
+			"label": "Name",
+			"notForLoan": "Reference only",
+			"add": "Add a type",
+			"saved": "Copy types saved"
+		},
+		"move": {
+			"title": "Where do they go?",
+			"hint": {
+				"copies": "Some removed types still have copies: choose the type to move them to.",
+				"students": "Some removed sections still have students: choose the section to move them to."
+			},
+			"row": {
+				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:copy; other:copies;}}. Move to",
+				"students": "{{code}}: {{count}} {{count:plural; one:student; other:students;}}. Move to"
+			},
+			"choose": "Choose…",
+			"used": {
+				"copies": "Copies",
+				"students": "Students"
+			},
+			"count": {
+				"copies": "{{count}} {{count:plural; one:copy; other:copies;}}",
+				"students": "{{count}} {{count:plural; one:student; other:students;}}"
+			},
+			"done": {
+				"copies": "{{count}} {{count:plural; one:copy moved; other:copies moved;}}.",
+				"students": "{{count}} {{count:plural; one:student moved; other:students moved;}}."
+			}
+		},
+		"barcodes": {
+			"title": "Numbering and preview",
+			"counter": "Numbers of the new cards",
+			"afterLegacy": "After the highest number of the cards that already exist",
+			"from": "From this number on:",
+			"fromNumber": "First number of the new cards",
+			"counterHint": "A number already used never comes back: if the chosen number is lower, the count goes on from where it got to. New copies always have the year and a running number.",
+			"nextCard": "Next card: {{code}}",
+			"nextItem": "Next copy: {{code}}",
+			"overrides": "These print templates choose the barcode type themselves, so the setting above does not apply to them: {{templates}}.",
+			"saved": "Numbering saved"
+		},
+		"itemTypeRules": {
+			"title": "Rules per copy type",
+			"hint": "Each copy type can change a rule: for example DVDs for 5 days. The rules apply to students and teachers alike.",
+			"inherit": "Empty: the rule of students and teachers applies (in grey: students / teachers).",
+			"saved": "Rules per copy type saved"
+		},
+		"calendar": {
+			"title": "Library calendar",
+			"weekly": "Days closed every week",
+			"weeklyHint": "The highlighted days are closed every week.",
+			"previous": "Previous school year",
+			"next": "Next school year",
+			"addNational": "Add the national holidays of {{year}}",
+			"autoOn": "The national holidays are already closed automatically. A click on an open day closes it; on a day closed by hand it opens it again.",
+			"clickHint": "A click on an open day closes it; on a day closed by hand it opens it again.",
+			"open": "open",
+			"legend": {
+				"open": "Open",
+				"weekly": "Weekly closing",
+				"national": "National holiday",
+				"holiday": "Closed (chosen here)",
+				"range": "Closed period"
+			},
+			"ranges": "Closed periods",
+			"from": "From",
+			"to": "To",
+			"reason": "Reason",
+			"badRange": "The end is before the start.",
+			"addRange": "Add a period",
+			"saved": "Calendar saved"
+		},
+		"cardTemplates": {
+			"title": "Template per patron type",
+			"hint": "Students and teachers print their card with the default template chosen above, unless another one is chosen here.",
+			"student": "Students' card",
+			"teacher": "Teachers' card",
+			"asDefault": "Same as the default ({{name}})",
+			"cutLines": "Coloured outline on each card",
+			"cutLinesOn": "Draw a coloured outline on each card (usually not needed: the crop marks are enough)",
+			"color": "Colour",
+			"width": "Width (mm)",
+			"sample": "Sample of the cut line",
+			"saved": "Card templates saved"
+		},
+		"stocks": {
+			"title": "Adhesive label sheets",
+			"hint": "The measures of the label sheets printed on. The drawing on the right follows every number: labels that go past the sheet are red. After saving, print the test page on plain paper and lay it over the label sheet.",
+			"new": "New",
+			"toFix": "To fix",
+			"add": "Add a sheet",
+			"id": "Code",
+			"name": "Name",
+			"labelWidth": "Label width (mm)",
+			"labelHeight": "Label height (mm)",
+			"columns": "Columns",
+			"rows": "Rows",
+			"marginTop": "Top margin (mm)",
+			"marginLeft": "Left margin (mm)",
+			"gapX": "Space between columns (mm)",
+			"gapY": "Space between rows (mm)",
+			"radius": "Rounded corners (mm)",
+			"calibration": "Print test page",
+			"inUse": "Used for: {{jobs}}. To delete it, first choose another sheet in the settings above.",
+			"saveFirst": "Save the changes to print the test page.",
+			"drawing": "Drawing of the A4 sheet with {{columns}} {{columns:plural; one:column; other:columns;}} and {{rows}} {{rows:plural; one:row; other:rows;}} of labels",
+			"caption": "A4 sheet · {{count}} {{count:plural; one:label; other:labels;}}",
+			"saved": "Label sheets saved",
+			"problems": {
+				"id": "The code may have letters, digits, hyphens and underscores.",
+				"duplicate": "Another sheet already has this code.",
+				"name": "Write a name.",
+				"numbers": "Check the measures: numbers from 0 up, labels bigger than zero, whole columns and rows.",
+				"width": "The labels take {{mm}} mm: more than the width of an A4 sheet (210 mm).",
+				"height": "The labels take {{mm}} mm: more than the height of an A4 sheet (297 mm).",
+				"pairRows": "The pair needs an even number of rows (spine band and label one above the other)."
+			},
+			"errors": {
+				"duplicate": "Two sheets have the same code: {{details}}.",
+				"inUse": "A sheet used for printing cannot be deleted: {{details}}."
+			}
+		},
+		"backupSchedule": {
+			"title": "Next backups",
+			"invalid": "The time is not a valid cron expression (five fields: minutes, hours, day, month, day of the week).",
+			"never": "With this expression the backup never starts.",
+			"hint": "Times in the library's time zone ({{timezone}}). If the computer is off at that time, with “Backup at start if missed” the backup is made at the next start; the time can also be moved into the opening hours."
+		},
+		"coverProviders": {
+			"off": "Covers are switched off (Book covers, above): no source is asked.",
+			"title": "Where covers come from",
+			"hint": "The sources are tried in this order until one finds the cover; each one can be switched off.",
+			"names": {
+				"amazon": "Amazon",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books"
+			},
+			"googleKey": "Google Books needs an API key: write it in the “Book data” settings, otherwise this source is skipped.",
+			"saved": "Cover sources saved"
+		},
+		"z3950Targets": {
+			"title": "Z39.50 catalogues",
+			"hint": "The catalogues book data comes from. “Test connection” runs a real search with the values typed, without saving them.",
+			"id": "Code",
+			"name": "Name",
+			"host": "Server address",
+			"port": "Port",
+			"database": "Database",
+			"syntax": "Record format",
+			"charset": "Character encoding",
+			"elements": "Elements",
+			"elementsHint": "Usually F (full record).",
+			"add": "Add a catalogue",
+			"isDefault": "This is the default catalogue: choose another one above before deleting it.",
+			"saved": "Catalogues saved",
+			"problems": {
+				"id": "The code must be unique: letters, digits, hyphens.",
+				"required": "Name, database, encoding and elements are required.",
+				"host": "The address may have letters, digits, dots and hyphens.",
+				"words": "Database, encoding and elements are one word each, without spaces.",
+				"port": "The port is a number from 1 to 65535."
+			},
+			"test": {
+				"button": "Test connection",
+				"running": "Testing…",
+				"ok": "The catalogue answers: {{hits}} {{hits:plural; one:result; other:results;}} in {{ms}} ms.",
+				"unreachable": "The catalogue does not answer: check address, port and database.",
+				"timeout": "The catalogue did not answer in time.",
+				"protocol": "The catalogue answered with an error: check database, format and encoding.",
+				"spawn": "The yaz-client program is not available on the server."
+			}
+		},
+		"barcodeFormats": {
+			"title": "Code formats",
+			"hint": "How the codes of new copies and new cards are made. Codes already printed keep working: a replaced format stays among the previous formats.",
+			"preset": "Ready formats",
+			"presets": {
+				"standard": "Standard (2026-E0267, U012345)",
+				"classic": "Classic (2026-02678, 0000012344)",
+				"prefix": "Letter in front (L-2602670, T0123455)",
+				"custom": "Custom"
+			},
+			"check": "Check character",
+			"checks": {
+				"mod23": "Letter (mod 23)",
+				"damm": "Digit (Damm)",
+				"luhn": "Digit (Luhn)"
+			},
+			"checkHint": "It spots a code read or typed wrong. The letter is the safest and makes cards look different from copy codes at a glance.",
+			"advanced": "Advanced: the formats one by one",
+			"tokens": "YYYY or YY = year, N = digits of the running number, C = check character, {lib} = library code, - = dash, capital letters in quotes ('T'). The letters I, O and Q are not allowed.",
+			"pattern": {
+				"item": "Format of the copies",
+				"patron": "Format of the cards"
+			},
+			"libraryCode": "Library code",
+			"libraryCodeHint": "Only when several libraries with separate installations must have different codes: used with {lib} in the format.",
+			"plainMaxLength": "Digits of the old plain numbers",
+			"plainHint": "The largest number of digits of the cards and copies of the previous system that have no format (0 if there are none).",
+			"plainLongest": "The longest plain number stored has {{digits}} {{digits:plural; one:digit; other:digits;}}.",
+			"distinct": "Copies and cards cannot be confused.",
+			"confusable": "With these formats copies and cards could be confused:",
+			"warnings": "{{count}} {{count:plural; one:warning; other:warnings;}}",
+			"inUse": "The format {{pattern}} still has {{count}} {{count:plural; one:code; other:codes;}} stored: it cannot be removed.",
+			"kinds": {
+				"item": "copies",
+				"card": "cards"
+			},
+			"heading": {
+				"item": "Copies",
+				"patron": "Cards"
+			},
+			"examples": "Examples of new codes:",
+			"currentCount": "Codes of this format stored: {{count}}",
+			"count": "{{count}} {{count:plural; one:code; other:codes;}}",
+			"noCheck": "no check",
+			"remove": "Remove",
+			"retired": "Formats used in the past",
+			"legacy": "Codes of the previous system",
+			"noLegacy": "None.",
+			"addLegacy": "Add an old format",
+			"try": "Try a code",
+			"tryHint": "A code typed or scanned here is recognised with the formats above, even before they are saved.",
+			"tried": {
+				"item": "{{value}}: a copy barcode",
+				"legacy_item": "{{value}}: an old copy barcode",
+				"card": "{{value}}: a card number",
+				"isbn": "{{value}}: an ISBN",
+				"ambiguous": "{{value}}: an old plain number (looked up among copies and cards)",
+				"invalid": "{{value}}: not recognised or wrong check character"
+			},
+			"saved": "Code formats saved",
+			"patternErrors": {
+				"empty": "Empty format ({{kind}})",
+				"tooLong": "{{pattern}}: too long",
+				"badToken": "{{pattern}}: contains an unexpected symbol",
+				"badLetter": "{{pattern}}: letter not allowed (capitals only, not I, O, Q)",
+				"unclosedQuote": "{{pattern}}: the closing quote is missing",
+				"year": "{{pattern}}: the year is written YYYY or YY",
+				"twoYears": "{{pattern}}: the year appears twice",
+				"twoCounters": "{{pattern}}: the running number must be one group of N",
+				"noCounter": "{{pattern}}: the running number (N) is missing",
+				"twoChecks": "{{pattern}}: the check character appears twice",
+				"checkWithoutAlgorithm": "{{pattern}}: there is a C but no check is chosen",
+				"algorithmWithoutCheck": "{{pattern}}: C, the place of the check character, is missing",
+				"noLibraryCode": "{{pattern}}: uses {lib} but the library code is empty",
+				"badLibraryCode": "The library code may contain digits and capital letters only (not I, O, Q)"
+			},
+			"issues": {
+				"overlap": "{{pattern}} ({{kind}}) and {{other}} ({{otherKind}}) can give the same code, e.g. {{example}}",
+				"overlapWithoutDash": "{{pattern}} ({{kind}}) and {{other}} ({{otherKind}}) get confused when the scanner loses the dash, e.g. {{example}}",
+				"overlapLegacy": "The old codes {{pattern}} ({{kind}}) and {{other}} ({{otherKind}}) have the same shape: they are looked up in both",
+				"overlapPlain": "{{pattern}} ({{kind}}) can give a code equal to an old plain number, e.g. {{example}}",
+				"overlapIsbn": "{{pattern}} ({{kind}}) can give a code equal to an ISBN, e.g. {{example}}",
+				"overlapIsbn10": "{{pattern}} ({{kind}}) has the shape of an ISBN-10 typed without hyphens: the card number wins",
+				"lookAlike": "{{pattern}} ({{kind}}) and {{other}} ({{otherKind}}) look too much alike: they need a length difference of at least 2 characters, a letter in another place or a dash elsewhere"
+			}
+		},
+		"schoolLevels": {
+			"title": "Stages and years",
+			"hint": "The years of the school in the order they are attended, grouped by stage. The code stays on the students: removing or recoding a year in use asks where its students and classes go.",
+			"preset": "Preset",
+			"presetApply": "Use this preset",
+			"presetHint": "Replaces the stages and years below with the preset's; nothing is saved until “Save”.",
+			"custom": "Custom",
+			"stages": "Stages",
+			"stageCode": "Code",
+			"stageName": "Name",
+			"stageLabel": "How the class is written",
+			"addStage": "Add a stage",
+			"stageLabelHint": "A stage's \"How the class is written\" applies to its years instead of the school's; without {group} the class is the year alone (Q1, no sections). Empty: as the rest of the school.",
+			"levels": "Years",
+			"levelCode": "Code",
+			"levelLabel": "In the class",
+			"levelName": "Name",
+			"levelStage": "Stage",
+			"levelNext": "The year after",
+			"levelAliases": "Other names",
+			"levelAliasesPlaceholder": "Separated by commas",
+			"nextFollowing": "The following year",
+			"nextLeaves": "Leaves the school",
+			"nextChoices": "A choice between years",
+			"choiceAdd": "Add a choice…",
+			"choiceRemove": "Remove {{name}}",
+			"choiceDefault": "default",
+			"addLevel": "Add a year",
+			"inUse": "In use",
+			"moveUp": "Move up",
+			"moveDown": "Move down",
+			"example": "Example: {{label}}",
+			"saved": "Stages and years saved",
+			"problems": {
+				"code": "Codes: letters, digits and hyphen (up to 8 for a year), all different.",
+				"required": "Label and name are required.",
+				"template": "A stage's \"How the class is written\" must contain {level}.",
+				"stageUsed": "A stage with years cannot be removed.",
+				"structure": "The structure is not valid: {{details}}"
+			},
+			"move": {
+				"title": "Where do the students and classes go?",
+				"hint": "Some removed years still have students or classes. Pick for each the year they move to; the loans keep the class they were made in.",
+				"level": "{{name}}: {{pupils}} {{pupils:plural; one:student; other:students;}}, {{classes}} {{classes:plural; one:class; other:classes;}}",
+				"choose": "Pick the year…",
+				"confirm": "Move and save",
+				"done": "Moved {{pupils}} {{pupils:plural; one:student; other:students;}} and {{classes}} {{classes:plural; one:class; other:classes;}}."
+			}
+		}
+	},
+	"templates": {
+		"title": "Print templates",
+		"hint": "The template folders of cards, labels, receipts and overdue notices. Those shipped with BiblioViva can be customised (a copy with the same name is made) or duplicated under another name; the images and fonts of a copy are uploaded here. Every operation appears in the configuration history and can be undone.",
+		"source": {
+			"builtin": "Shipped with BiblioViva",
+			"customised": "Customised",
+			"added": "Added"
+		},
+		"broken": "Has errors",
+		"customise": "Customise",
+		"duplicate": "Duplicate",
+		"rename": "Rename",
+		"restore": "Back to the original",
+		"usedBy": "Used by: {{settings}}.",
+		"unused": "Not used by any setting.",
+		"assets": "Images and fonts ({{count}})",
+		"noAssets": "No files.",
+		"usedIn": "used in {{files}}",
+		"assetUnused": "not used",
+		"upload": "Upload a file",
+		"uploadHint": "PNG, JPEG, WebP, GIF, SVG or WOFF2, WOFF, TTF fonts; at most {{maxMb}} MB.",
+		"builtinAssets": "To change the images of a template shipped with BiblioViva, customise it first.",
+		"files": "Template files ({{count}})",
+		"filesHint": "The HTML and CSS are edited with the visual template editor.",
+		"done": {
+			"duplicate": "Template duplicated",
+			"customise": "Template customised: its copy can be changed",
+			"rename": "Template renamed",
+			"delete": "Template deleted",
+			"upload": "{{name}} uploaded",
+			"removeAsset": "{{name}} deleted"
+		},
+		"errors": {
+			"notFound": "Template or file not found.",
+			"badName": "Invalid name: lowercase letters, digits, hyphens and underscores.",
+			"exists": "A template with this name already exists.",
+			"builtin": "Templates shipped with BiblioViva are not changed: customise or duplicate them.",
+			"inUse": "The template is used by: {{details}}. Choose another template first.",
+			"badAsset": "“{{name}}” is not an allowed file (PNG, JPEG, WebP, GIF, SVG without scripts, WOFF2, WOFF, TTF).",
+			"assetTooLarge": "“{{name}}” is too large: at most {{maxMb}} MB.",
+			"assetInUse": "The file is used in: {{details}}."
+		},
+		"dialog": {
+			"name": "Folder name",
+			"nameHint": "Lowercase letters, digits, hyphens and underscores.",
+			"badName": "Use only lowercase letters, digits, hyphens and underscores.",
+			"taken": "A template with this name already exists.",
+			"duplicate": {
+				"title": "Duplicate {{name}}",
+				"hint": "A copy with all its files is made, ready to be changed.",
+				"confirm": "Duplicate"
+			},
+			"customise": {
+				"title": "Customise {{name}}",
+				"hint": "A copy with the same name takes the place of the original; the original stays available to go back.",
+				"confirm": "Customise"
+			},
+			"rename": {
+				"title": "Rename {{name}}",
+				"hint": "The settings using this template will follow the new name.",
+				"confirm": "Rename"
+			},
+			"delete": {
+				"title": "Delete {{name}}",
+				"hint": "The folder and its files are deleted; if it is the copy of a template shipped with BiblioViva, the original is used again. It can be undone from the history.",
+				"confirm": "Delete"
+			}
+		},
+		"edit": "Edit"
+	},
+	"languages": {
+		"title": "Language packs",
+		"hint": "To use BiblioViva in another language: download the English or Italian example, translate the texts of the JSON files keeping the keys and the placeholders in double curly braces unchanged, write the language's name in pack.json and upload the zip. A pack with errors is not installed; missing texts show in English. The language is chosen in Appearance and language.",
+		"none": "No pack installed.",
+		"valid": "Valid",
+		"errorsCount": "{{count}} {{count:plural; one:error; other:errors;}}",
+		"warnings": "{{count}} {{count:plural; one:missing or extra text; other:missing or extra texts;}}",
+		"inUse": "In use",
+		"download": "Download",
+		"report": "Check result",
+		"upload": "Upload a pack (zip)",
+		"uploadHint": "A zip with pack.json and the language files, inside a folder named after the code (for example de/); at most {{maxMb}} MB.",
+		"examples": "Examples to download:",
+		"installed": "Language installed: {{name}}",
+		"removed": "Pack deleted",
+		"removeTitle": "Delete the pack {{code}}?",
+		"removeHint": "The language folder is deleted. It can be undone from the configuration history.",
+		"errors": {
+			"notAZip": "The file is not a zip.",
+			"tooLarge": "The zip is too large: at most {{maxMb}} MB.",
+			"badLayout": "The zip must hold only the language's .json files, inside one folder named after the language code. {{details}}",
+			"badCode": "Invalid language code: {{details}} (for example de, fr, pt-BR).",
+			"builtIn": "English and Italian are built in and are not replaced.",
+			"invalid": "The pack has errors and was not installed: {{details}}",
+			"inUse": "It is the language in use: choose another one first.",
+			"notFound": "Pack not found.",
+			"unavailable": "The language list or the pack could not be downloaded. Check the internet connection, or upload the zip by hand.",
+			"checksum": "The downloaded pack is damaged and was not installed. Try again."
+		},
+		"release": {
+			"title": "Languages to install",
+			"hint": "The languages published with this version of BiblioViva. The list is read from the internet and every pack is checked before it is installed.",
+			"percent": "{{percent}}% translated",
+			"machine": "Automatic translation, not read by a native speaker",
+			"reviewed": "Translation read by a native speaker",
+			"install": "Install",
+			"again": "Install again",
+			"installedBadge": "Installed",
+			"page": "Release page, to download the packs by hand and upload them below",
+			"unavailable": "The list of languages cannot be reached: there is no internet connection, or this version has no list yet. Uploading a zip below works all the same."
+		}
+	},
+	"reports": {
+		"title": "Reports library",
+		"hint": "The reports shipped with BiblioViva and the school's own. To customise one, download it, change it and upload it: with the same code (id) it takes the place of the original. Before it is installed, the format, the safety of the query and the tables and columns it uses are checked. The guide to writing reports is docs/reports-authoring.md.",
+		"upload": "Upload a report (JSON)",
+		"try": "Try",
+		"download": "Download",
+		"problems": "These files are not loaded:",
+		"installed": "Report {{id}} installed",
+		"replaced": "Report {{id}} replaced",
+		"removed": "File deleted",
+		"removeTitle": "Delete {{file}}?",
+		"removeHint": "The file is deleted from the configuration. It can be undone from the history.",
+		"restoreHint": "The school's version is deleted: the report shipped with BiblioViva is used again. It can be undone from the history.",
+		"origin": {
+			"builtin": "Shipped with BiblioViva",
+			"customised": "Customised",
+			"added": "Added"
+		},
+		"errors": {
+			"tooLarge": "The file is too large: at most {{maxKb}} KB.",
+			"badJson": "The file is not valid JSON: {{details}}",
+			"invalid": "The definition is not valid: {{details}}",
+			"sql": "The query does not work on this database: {{details}}",
+			"notFound": "File not found.",
+			"reservedId": "“new” cannot be the code of a report."
+		},
+		"new": "New report",
+		"edit": "Edit",
+		"duplicate": "Duplicate",
+		"editor": {
+			"editTitle": "Edit report",
+			"newTitle": "New report",
+			"copySuffix": "copy",
+			"builtinHint": "This is a built-in report: saving makes the school's customised copy, with the same name. \"Back to the original\" in the library removes it.",
+			"id": "Report code",
+			"category": "Category",
+			"title": {
+				"it": "Title (Italian)",
+				"en": "Title (English)"
+			},
+			"description": {
+				"it": "Description (Italian)",
+				"en": "Description (English)"
+			},
+			"restricted": "Administrators only",
+			"tabs": {
+				"label": "Editing mode",
+				"guided": "Guided",
+				"sql": "SQL"
+			},
+			"sqlOnly": "This report is written in SQL: edit it in the SQL tab.",
+			"source": "Data",
+			"rows": "Rows",
+			"rows2": "Rows, second level",
+			"columns": "Columns",
+			"columnsHint": "With columns the report becomes a pivot table, with the totals.",
+			"none": "— none —",
+			"totals": "Totals",
+			"totalsOptions": {
+				"both": "Total row and column",
+				"rows": "Total column",
+				"columns": "Total row",
+				"none": "No totals"
+			},
+			"sort": "Order",
+			"sortDimension": "In the order of the rows",
+			"sortMeasure": "Highest value first",
+			"measures": "Values",
+			"oneMeasure": "A pivot table shows one value.",
+			"filters": "Filters",
+			"filterModes": {
+				"off": "No filter",
+				"ask": "Asked when opened",
+				"fixed": "Fixed"
+			},
+			"value": "Value",
+			"chart": "Chart",
+			"charts": {
+				"bar": "Bars",
+				"line": "Lines",
+				"doughnut": "Doughnut"
+			},
+			"compiledHint": "The guided report becomes this SQL. To write it by hand use \"Edit as SQL\": there is no way back to the guided editing.",
+			"previewFirst": "Press \"Preview\" to see the SQL.",
+			"convert": "Edit as SQL",
+			"convertTitle": "Turn the report into SQL?",
+			"convertHint": "The report becomes an SQL report with the same columns and parameters. It can no longer be edited in the guided tab.",
+			"converted": "The report is now in SQL",
+			"sqlHint": "One SELECT or WITH statement, with the parameters as :name.",
+			"json": {
+				"params": "Parameters (JSON)",
+				"columns": "Columns (JSON)",
+				"chart": "Chart (JSON, optional)",
+				"pivot": "Pivot table (JSON, optional)"
+			},
+			"jsonHint": "In the format described in the report guide.",
+			"preview": "Preview",
+			"runPreview": "Preview",
+			"previewHint": "The preview runs the report with the default values of its parameters (200 rows at most).",
+			"save": "Save",
+			"saved": "Report “{{id}}” saved",
+			"back": "Back to the library",
+			"jsonInvalid": "Fix the JSON parts marked in red before saving."
+		}
+	},
+	"designer": {
+		"title": "Edit {{name}}",
+		"design": "Design",
+		"code": "Code",
+		"preview": "Preview",
+		"front": "Front",
+		"back": "Back",
+		"faces": "Faces or labels",
+		"zoom": "Zoom",
+		"grid": "Grid",
+		"gridSteps": {
+			"s0": "None (free)",
+			"s05": "0.5 mm",
+			"s1": "1 mm",
+			"s2": "2 mm",
+			"s25": "2.5 mm",
+			"s5": "5 mm",
+			"s10": "10 mm"
+		},
+		"files": "Files",
+		"problems": "The template cannot print like this:",
+		"saved": "Template saved",
+		"notEditable": "This template cannot be edited here: templates shipped with BiblioViva must be customised first.",
+		"canvasHint": "Click a box to choose it, drag it to move it, use its corner to resize it: places and sizes snap to the grid chosen. With the keyboard the arrows move it by one step of the grid (about 5 mm with Shift, always on the grid) and Delete removes it.",
+		"flowHint": "{{count}} {{count:plural; one:element of this face is; other:elements of this face are;}} laid out by the style sheet (dotted outline): on the first move the places of all of them are written into the file, where they are now.",
+		"lockedHint": "{{count}} {{count:plural; one:part of this face sits; other:parts of this face sit;}} inside a Mustache section: {{count:plural; one:it is; other:they are;}} edited in the “Code” tab.",
+		"noStock": "No label sheet uses this variant: the drawing is shown without a preview.",
+		"codeHint": "The drawing and the code edit the same files: every change made here shows in the drawing too, and the other way round.",
+		"add": "Add",
+		"newText": "Text",
+		"noImages": "To add images, upload them first among the template's images.",
+		"types": {
+			"field": "Field",
+			"text": "Text",
+			"barcode": "Barcode",
+			"photo": "Photo",
+			"pictogram": "Pictogram",
+			"image": "Image",
+			"box": "Box",
+			"html": "Free HTML",
+			"other": "Element"
+		},
+		"fields": {
+			"library_name": "Library name",
+			"patron_first_name": "First name",
+			"patron_last_name": "Last name",
+			"patron_card_number": "Card number",
+			"patron_class_label": "Class and section",
+			"patron_level_label": "Class (year)",
+			"patron_group": "Section",
+			"school_year": "School year",
+			"issued_on": "Issue date",
+			"valid_until": "Valid until",
+			"item_barcode": "Barcode (text)",
+			"item_call_number": "Call number",
+			"call_head": "Call number: first line",
+			"call_rest": "Call number: second line",
+			"biblio_title_short": "Short title",
+			"biblio_author_short": "Short author",
+			"biblio_publication_year": "Publication year",
+			"biblio_series": "Series",
+			"biblio_series_number": "Number in the series",
+			"classification_code": "Classification code",
+			"classification_label": "Class name",
+			"classification_reading_level": "Reading level",
+			"item_item_type": "Item type"
+		},
+		"field": "Field",
+		"text": "Text",
+		"image": "Image",
+		"content": "HTML content",
+		"contentHint": "The box is moved and styled from the drawing; its content is written in HTML with Mustache fields, as in the template files.",
+		"inherited": "Default",
+		"unplacedHint": "This element is laid out by the style sheet: moving it writes its place, and the places of the other elements of the face, into the file.",
+		"geometry": {
+			"x": "X (mm)",
+			"y": "Y (mm)",
+			"w": "Width",
+			"h": "Height"
+		},
+		"fontSize": "Size (pt)",
+		"font": "Typeface",
+		"fonts": {
+			"sans": "Sans serif",
+			"serif": "Serif",
+			"mono": "Monospace"
+		},
+		"bold": "Bold",
+		"italic": "Italic",
+		"uppercase": "Uppercase",
+		"align": "Alignment",
+		"aligns": {
+			"left": "Left",
+			"center": "Centre",
+			"right": "Right"
+		},
+		"color": "Colour",
+		"border": "Border",
+		"borderColor": "Border colour",
+		"fill": "Fill",
+		"fillColor": "Fill colour",
+		"backward": "Send backward",
+		"forward": "Bring forward",
+		"background": "Face background",
+		"backgroundColor": "Background colour",
+		"backgroundImage": "Background image",
+		"noImage": "None",
+		"chooseHint": "Choose a box on the design to change it.",
+		"modes": "Template view",
+		"safeArea": "Safe area: keep text and photos inside the dashed line, 2 mm from the edge (printed on both sides, the back may move by a millimetre).",
+		"chooseBackground": "Choose a background",
+		"uploadBackground": "Upload a picture",
+		"backgroundsTitle": "Ready-made backgrounds",
+		"backgroundsHint": "Every background runs a little past the card, 3 mm on each side: the extra part is cut away.",
+		"backgroundAlt": "Background {{name}}",
+		"backgroundAdded": "Background added to the face: save to keep it.",
+		"backgroundFailed": "The background was not added.",
+		"cardSize": "Card size",
+		"cardWidth": "Width (mm)",
+		"cardHeight": "Height (mm)",
+		"cardRotate": "Rotate: portrait or landscape",
+		"cardDefault": "Back to the default size ({{width}} × {{height}} mm)",
+		"cardDefaultHint": "This is the configuration's default size (Configuration → Cards): change it here for this template only.",
+		"cardTooLarge": "A {{width}} × {{height}} mm card does not fit the A4 sheet: at most {{maxWidth}} × {{maxHeight}} mm, because front and back stand side by side inside the margins."
+	},
+	"parts": {
+		"groups": {
+			"data": "Library data",
+			"settings": "Settings",
+			"config": "Classification, templates and more"
+		},
+		"all": "All",
+		"none": "None",
+		"accountsConfirm": {
+			"title": "Import the accounts and passwords too?",
+			"description": "The staff accounts and passwords in the archive replace the current ones: whoever signs in now will no longer be able to with today's credentials. If they are not needed, leave this part unticked.",
+			"confirm": "Import the accounts too"
+		},
+		"needs": "“{{part}}” also need {{needs}} to be restored.",
+		"data": {
+			"patrons": "Patrons",
+			"catalog": "Catalogue and copies",
+			"loans": "Loans and history",
+			"printLists": "Print lists",
+			"photos": "Patron photos",
+			"covers": "Covers",
+			"notes": "Staff notes",
+			"dates": "Calendar dates",
+			"audit": "Activity log"
+		},
+		"config": {
+			"classification": "Classification and pictograms",
+			"stocks": "Label sheets",
+			"calendar": "Calendar",
+			"reports": "Reports",
+			"cardTemplates": "Card templates",
+			"pairTemplates": "Label pair templates",
+			"barcodeTemplates": "Barcode label templates",
+			"spineTemplates": "Spine band templates",
+			"slipTemplates": "Receipt and notice templates",
+			"languages": "Language packs",
+			"logo": "Library logo"
+		}
+	}
+}

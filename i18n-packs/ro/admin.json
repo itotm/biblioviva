@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "Administrare",
+		"sections": {
+			"config": {
+				"title": "Configurare",
+				"description": "Clasificarea și setările bibliotecii."
+			},
+			"audit": {
+				"title": "Registrul operațiunilor",
+				"description": "Cine a făcut ce: autentificări, modificări, importuri."
+			},
+			"users": {
+				"title": "Conturi de personal",
+				"description": "Conturi de personal, roluri și permisiuni."
+			},
+			"backups": {
+				"title": "Copii de siguranță",
+				"description": "Copii de siguranță ale bazei de date și ale fișierelor."
+			},
+			"rollover": {
+				"title": "Trecerea claselor",
+				"description": "La sfârșitul anului: promovări, repetenți, plecări din ultima clasă."
+			},
+			"exports": {
+				"title": "Exporturi",
+				"description": "Cititori, catalog, împrumuturi și toate datele, în fișiere CSV sau JSON."
+			},
+			"imports": {
+				"title": "Importuri",
+				"description": "Catalog, cititori, împrumuturi în curs și fotografii: din fișiere CSV sau din extracția din Koha."
+			}
+		}
+	},
+	"audit": {
+		"title": "Registrul operațiunilor",
+		"filters": {
+			"from": "De la",
+			"to": "Până la",
+			"user": "Cont",
+			"action": "Operațiune",
+			"all": "Toate"
+		},
+		"columns": {
+			"when": "Când",
+			"user": "Cont",
+			"action": "Operațiune",
+			"entity": "Obiect",
+			"entityId": "ID",
+			"details": "Detalii"
+		},
+		"count": "{{shown}} din {{total}} {{total:plural; one:operațiune; few:operațiuni; other:de operațiuni;}}",
+		"empty": "Nicio operațiune înregistrată cu aceste filtre.",
+		"system": "sistem"
+	},
+	"users": {
+		"title": "Conturi de personal",
+		"fields": {
+			"roles": "Roluri",
+			"permissions": "Permisiuni",
+			"lastLogin": "Ultimul acces",
+			"never": "niciodată"
+		},
+		"status": {
+			"active": "Activ",
+			"inactive": "Dezactivat",
+			"plainPassword": "Parolă în clar în fișier",
+			"notInConfig": "Scos din configurare"
+		},
+		"hash": {
+			"title": "Generare hash de parolă",
+			"description": "Introduceți parola de atribuit: se obține hash-ul argon2id de lipit în passwordHash. Parola nu este salvată.",
+			"password": "Parolă (cel puțin {{min}} caractere)",
+			"generate": "Generați hash-ul",
+			"result": "Hash de lipit",
+			"copy": "Copiați",
+			"copied": "Hash copiat",
+			"tooShort": "Parola trebuie să aibă cel puțin {{min}} caractere.",
+			"disclosure": "Pentru cine modifică fișierele manual: generarea hash-ului unei parole"
+		},
+		"reload": {
+			"button": "Reîncărcați configurarea",
+			"success": "Configurare reîncărcată",
+			"successWithWarnings": "Configurare reîncărcată cu {{count}} {{count:plural; one:avertisment; few:avertismente; other:de avertismente;}}",
+			"failed": "Configurare nevalidă: rămâne activă cea precedentă",
+			"exampleSource": "Atenție: config.json nu există, este folosită configurarea de exemplu."
+		},
+		"new": "Cont nou",
+		"newPassword": "Parolă nouă",
+		"permissionNames": {
+			"all": "Tot",
+			"loans": "Împrumuturi",
+			"patrons": "Cititori",
+			"patrons_import": "Import cititori",
+			"catalog": "Catalog",
+			"catalog_import": "Import catalog",
+			"reports": "Rapoarte",
+			"anonymize": "Anonimizare",
+			"admin": "Administrare"
+		},
+		"roles": {
+			"title": "Roluri și permisiuni",
+			"hint": "Un rol este un ansamblu de permisiuni; fiecare cont are unul sau mai multe roluri. „Tot” acordă fiecare permisiune, inclusiv cele care vor veni în versiunile următoare. Redenumirea unui rol actualizează conturile care îl folosesc.",
+			"name": "Rol",
+			"unused": "niciun cont",
+			"badName": "Litere, cifre, cratime și caractere de subliniere (cel mult 32).",
+			"add": "Adăugați un rol",
+			"saved": "Roluri salvate"
+		},
+		"auth": {
+			"title": "Autentificare",
+			"config": "Personalul se autentifică cu conturile acestei pagini, de obicei unul comun pentru fiecare rol (de exemplu „împrumuturi” pentru ghișeu).",
+			"database": "Personalul se autentifică cu conturi personale.",
+			"later": "Conturile personale, unul pentru fiecare persoană, sunt prevăzute pentru o versiune următoare."
+		},
+		"dialog": {
+			"title": {
+				"new": "Cont nou",
+				"edit": "Modificare {{name}}",
+				"password": "Parolă nouă pentru {{name}}"
+			},
+			"username": "Nume de utilizator",
+			"usernameHint": "Litere mici, cifre, punct, cratimă și caracter de subliniere (de la 2 la 32).",
+			"badUsername": "Folosiți doar litere mici, cifre, punct, cratimă și caracter de subliniere (de la 2 la 32).",
+			"displayName": "Nume afișat",
+			"active": "Cont activ (se poate autentifica)",
+			"password": "Parolă (cel puțin {{min}} caractere)",
+			"repeat": "Repetați parola",
+			"mismatch": "Cele două parole nu coincid.",
+			"passwordHint": "Parola nu este salvată: în configurare se scrie doar hash-ul ei. Cine este conectat cu acest cont va trebui să se autentifice din nou.",
+			"saved": {
+				"new": "Cont creat",
+				"edit": "Cont salvat",
+				"password": "Parolă schimbată"
+			},
+			"removed": "Cont șters",
+			"removeTitle": "Ștergeți {{name}}?",
+			"removeHint": "Contul iese din configurare; operațiunile făcute de el rămân în registru, sub numele său. Se poate anula din istoricul configurării."
+		},
+		"errors": {
+			"badUsername": "Nume de utilizator nevalid: {{details}}.",
+			"usernameTaken": "Numele de utilizator {{details}} este deja folosit.",
+			"notFound": "Contul nu a fost găsit: {{details}}.",
+			"noRoles": "Alegeți cel puțin un rol.",
+			"unknownRole": "Rol necunoscut: {{details}}.",
+			"passwordTooShort": "Parola este prea scurtă.",
+			"passwordRequired": "Un cont nou are nevoie de o parolă.",
+			"lastAdmin": "Trebuie să rămână cel puțin un cont activ cu permisiunea de administrare.",
+			"stillActive": "Dezactivați contul înainte de a-l șterge.",
+			"badRole": "Nume de rol nevalid: {{details}}.",
+			"roleTaken": "Două roluri se numesc {{details}}.",
+			"roleInUse": "Rolul este folosit de unele conturi: {{details}}.",
+			"invalid": "Configurarea nu ar fi validă: {{details}}."
+		}
+	},
+	"backups": {
+		"title": "Copii de siguranță",
+		"runNow": "Faceți copia acum",
+		"created": "Copie de siguranță creată: {{name}}",
+		"createdDeleted": "Copie de siguranță creată: {{name}} ({{deleted}} {{deleted:plural; one:copie veche ștearsă; few:copii vechi șterse; other:de copii vechi șterse;}})",
+		"empty": "Nicio copie de siguranță încă. Prima se creează la ora programată sau cu „Creați copia de siguranță acum”.",
+		"download": "Descărcați",
+		"columns": {
+			"when": "Creată",
+			"size": "Dimensiune"
+		},
+		"catchUp": {
+			"badge": "Creată la pornire",
+			"hint": "Copia de siguranță programată a fost ratată (calculatorul era oprit): BiblioViva a creat-o la pornire."
+		},
+		"offsite": {
+			"title": "Ultima copie externă",
+			"disabled": "Copia externă nu este configurată. Se activează cu serviciul „offsite” (rclone) descris în ghidul de instalare.",
+			"never": "Serviciul este activat, dar nu a scris încă niciun rezultat.",
+			"ok": "Ultima copie a reușit: {{when}}",
+			"error": "Ultima copie a eșuat: {{when}}",
+			"stale": "Copia externă are mai mult de două zile: verificați serviciul offsite.",
+			"remote": "Destinație: {{remote}}"
+		},
+		"restore": {
+			"title": "Restaurare",
+			"button": "Restaurați…",
+			"hint": "Alegeți „Restaurați…” la o copie din listă sau încărcați o arhivă BiblioViva (o copie de siguranță, „Exportați tot” sau „Exportați configurarea”, până la {{maxMb}} MB; una mai mare se copiază în folderul de copii de siguranță al serverului sau se restaurează cu bun run backup:restore). Totul se verifică mai întâi, apoi se restaurează doar părțile alese: celelalte rămân cum sunt.",
+			"upload": "Încărcați o arhivă",
+			"from": "Din {{name}} din {{date}}",
+			"count": "{{part}}: acum {{live}}, în copia {{archive}}",
+			"images": "Imagini de restaurat: {{photos}} {{photos:plural; one:fotografie; few:fotografii; other:de fotografii;}}, {{covers}} {{covers:plural; one:copertă; few:coperte; other:de coperte;}}.",
+			"gapsTitle": "Unele date ar rămâne fără ceea ce se referă la ele:",
+			"gap": "{{rows:plural; one:{{rows}} rând din „{{part}}” se referă; few:{{rows}} rânduri din „{{part}}” se referă; other:{{rows}} de rânduri din „{{part}}” se referă;}} la „{{needs}}” care nu ar fi acolo: adăugați „{{add}}” la alegere.",
+			"schema": "Copia de siguranță provine dintr-o altă versiune de BiblioViva (tabelele {{tables}}): nu poate fi restaurată aici.",
+			"apply": "Restaurați",
+			"confirmTitle": "Restaurați părțile alese?",
+			"confirmHint": "Datele și configurarea alese sunt înlocuite cu cele din copia de siguranță. Configurarea poate fi readusă din istoric; pentru date, este bine să faceți mai întâi o copie de siguranță, dacă nu există una recentă.",
+			"done": "Restaurare finalizată",
+			"notArchive": "Fișierul nu este o arhivă BiblioViva."
+		},
+		"contents": {
+			"title": "Ce conține copia de siguranță",
+			"database": "Baza de date: o copie completă la fiecare rulare (lista de mai jos).",
+			"images": "Fotografii și coperte: copiate în fiecare noapte în folderul „uploads” al copiei de siguranță ({{photos}} {{photos:plural; one:fotografie; few:fotografii; other:de fotografii;}}, {{covers}} {{covers:plural; one:copertă; few:coperte; other:de coperte;}} chiar acum).",
+			"imagesPending": "Fotografii și coperte: prima copiere va avea loc la următoarea rulare ({{photos}} {{photos:plural; one:fotografie; few:fotografii; other:de fotografii;}}, {{covers}} {{covers:plural; one:copertă; few:coperte; other:de coperte;}} de copiat).",
+			"config": "Configurarea (șabloane, imagini, setări) nu se află în copia de siguranță de noapte: pentru a o avea, folosiți „Exportați tot”."
+		},
+		"export": {
+			"button": "Exportați tot",
+			"hint": "Un singur fișier ZIP cu baza de date, fotografiile, copertele și toată configurarea (inclusiv șabloanele și imaginile), gata pentru restaurarea cu „bun run backup:restore”."
+		},
+		"createdMirror": "Copie de siguranță creată: {{name}}; {{copied}} {{copied:plural; one:imagine copiată; few:imagini copiate; other:de imagini copiate;}}",
+		"parts": {
+			"title": "Copie de siguranță sau export pentru unele părți",
+			"hint": "Alegeți ce să includeți: datele bibliotecii, setările fiecărei secțiuni, șabloanele, imaginile… „Creați copia de siguranță” o salvează în lista de mai jos, „Descărcați” o descarcă pe calculator.",
+			"create": "Creați copia de siguranță",
+			"download": "Descărcați"
+		}
+	},
+	"demo": {
+		"clear": "Goliți datele demonstrative",
+		"confirmTitle": "Goliți datele demonstrative?",
+		"confirmDescription": "Cititorii, cărțile, împrumuturile și fotografiile demonstrative vor fi șterse. Clasele și grupul profesorilor rămân. Tot personalul va fi deconectat.",
+		"cleared": "Date demonstrative eliminate. Autentificați-vă din nou.",
+		"clearedPassword": "Conturile mai au parola demonstrativă „{{password}}”: schimbați-o acum din Administrare → Conturi de personal."
+	},
+	"appearance": {
+		"title": "Aspect și limbă",
+		"current": "Set actual: {{name}}",
+		"areas": {
+			"title": "Stilul zonelor",
+			"hint": "Bara de sus ia culoarea zonei în care se lucrează (Împrumuturi, Catalog, Cititori…), în nuanțele setului de culori ales. Pictograma și numele zonei rămân mereu vizibile.",
+			"styles": {
+				"tinted": "Bară colorată (recomandat)",
+				"filled": "Bară plină",
+				"accents": "Doar accente",
+				"none": "Fără culoare"
+			},
+			"saved": "Stilul zonelor salvat"
+		},
+		"colours": {
+			"title": "Set de culori"
+		},
+		"save": "Salvați culorile",
+		"saved": "Culori salvate",
+		"unchanged": "Nimic de salvat.",
+		"language": {
+			"title": "Limba aplicației",
+			"hint": "O singură limbă pentru fiecare instalare: se aplică întregului personal.",
+			"save": "Schimbați limba",
+			"saved": "Limbă schimbată: pagina se reîncarcă."
+		},
+		"logo": {
+			"title": "Logoul bibliotecii",
+			"hint": "Apare sus, în stânga fiecărei pagini, lângă numele bibliotecii. PNG, JPEG sau WebP; cel mai bine cu fundal transparent.",
+			"upload": "Încărcați logoul",
+			"replace": "Schimbați logoul",
+			"remove": "Eliminați logoul",
+			"saved": "Logo salvat.",
+			"removed": "Logo eliminat.",
+			"none": "Niciun logo: se vede o pictogramă generică.",
+			"preview": "Logoul actual",
+			"errors": {
+				"empty": "Fișierul este gol.",
+				"too_large": "Fișierul este prea mare (cel mult {{maxMb}} MB).",
+				"not_an_image": "Fișierul nu este o imagine.",
+				"unsupported_format": "Format neacceptat: folosiți PNG, JPEG sau WebP."
+			}
+		},
+		"name": {
+			"title": "Numele bibliotecii",
+			"hint": "Apare sus, în stânga, pe tabloul de bord, pe tipărituri și în aplicația instalată pe telefon.",
+			"label": "Nume",
+			"save": "Salvați numele",
+			"saved": "Numele bibliotecii salvat",
+			"required": "Scrieți numele bibliotecii."
+		},
+		"dashboard": {
+			"title": "Tabloul de bord",
+			"hint": "Secțiunile paginii de start, pentru întreaga bibliotecă. Acțiunile rapide stau mereu în frunte; în fiecare secțiune, fiecare cont vede doar ce poate face.",
+			"save": "Salvați tabloul de bord",
+			"saved": "Tablou de bord salvat",
+			"sections": {
+				"quickActions": "Acțiuni rapide",
+				"tiles": "Biblioteca azi (cartonașe cu cifre)",
+				"inventory": "Recolare în curs",
+				"installHint": "Invitație de a adăuga aplicația pe ecranul de start (telefoane)",
+				"dueThisWeek": "Scadente în această săptămână",
+				"upcomingDates": "Datele următoare din calendar",
+				"todayActivity": "Împrumuturile de azi"
+			}
+		}
+	},
+	"templates": {
+		"title": "Șabloane de tipărire",
+		"reload": "Reîncărcați șabloanele",
+		"reloaded": "Șabloane recitite de pe disc",
+		"kinds": {
+			"cards": "Legitimații",
+			"labels": "Etichete",
+			"slips": "Notificări"
+		},
+		"list": {
+			"source": {
+				"builtin": "Livrate cu aplicația",
+				"config": "În configurare"
+			},
+			"default": "Implicit",
+			"status": {
+				"ok": "Valid",
+				"error": "Eroare"
+			},
+			"folder": "Folder",
+			"forTypes": "Pentru: {{types}}",
+			"emptyCards": "Niciun șablon pentru legitimații: verificați folderul cards/templates din configurare.",
+			"emptyLabels": "Niciun șablon de etichete încă: vor apărea odată cu tipărirea etichetelor din catalog.",
+			"emptySlips": "Niciun șablon de notificare încă: va apărea odată cu împrumuturile."
+		},
+		"preview": {
+			"title": "Previzualizare",
+			"front": "Față",
+			"back": "Verso",
+			"patron": "Cititor pentru previzualizare",
+			"sample": "Cititor de exemplu",
+			"real": "Cititor real",
+			"search": "Căutați un cititor real",
+			"searchPlaceholder": "Nume de familie sau prenume",
+			"noResults": "Niciun cititor găsit.",
+			"zoom": "Zoom",
+			"sheet": "Foaie întreagă",
+			"sheetHint": "O pagină A4 cu cititorul de exemplu, așa cum va fi tipărită.",
+			"test": "Tipăriți pagina de probă",
+			"broken": "Șablonul nu poate fi folosit până nu este corectat:",
+			"size": "{{width}} × {{height}} mm la zoom {{zoom}}"
+		},
+		"test": {
+			"title": "Pagină de probă pentru legitimații",
+			"ruler": "Riglă de 10 cm: după tipărire trebuie să măsoare 100 mm (tipăriți la 100 %, fără „încadrare în pagină”)."
+		},
+		"calibration": {
+			"title": "Pagină de calibrare pentru etichete",
+			"stock": "Suport adeziv",
+			"print": "Tipăriți pagina de calibrare",
+			"hint": "Tipăriți pe hârtie obișnuită și suprapuneți o foaie de etichete pentru a verifica marginile."
+		},
+		"howTo": {
+			"title": "Cum se creează un șablon",
+			"steps": {
+				"step1": "În Configurare → Șabloane de tipărire alegeți „Duplică” la un șablon (de exemplu {{path}}) și dați-i un nume nou.",
+				"step2": "Cu „Modifică” îl proiectați sau îi schimbați codul; imaginile se încarcă pe aceeași pagină.",
+				"step3": "Reveniți aici și verificați previzualizarea: un câmp necunoscut sau un fișier lipsă este semnalat.",
+				"step4": "Pentru a-l folosi efectiv, alegeți-l în setările Legitimații sau Etichete."
+			}
+		},
+		"labels": {
+			"stocks": "Foi prevăzute: {{stocks}}",
+			"preview": "Previzualizarea {{name}}",
+			"geometry": "Unitate de {{width}} × {{height}} mm · varianta {{variant}}",
+			"sheet": "Foaie de exemplu"
+		}
+	},
+	"loansImport": {
+		"title": "Importați împrumuturile în curs",
+		"upload": {
+			"hint": "De folosit o singură dată, la trecerea din Koha: un rând pentru fiecare împrumut în curs, cu legitimația cititorului, codul de bare al exemplarului și, dacă există, datele împrumutului și ale termenului. Importați mai întâi cititorii și catalogul; modelul, cu coloanele necesare, se descarcă mai jos.",
+			"submit": "Încărcați"
+		},
+		"mapping": {
+			"uncertain": "Verificați coloanele înainte de a continua.",
+			"validate": "Verificați fișierul",
+			"without": {
+				"issuedOn": "Fără coloana issued_on, împrumuturile sunt considerate făcute azi.",
+				"dueOn": "Fără coloana due_on, termenul se calculează ca la ghișeu, cu regulile de împrumut și calendarul."
+			}
+		},
+		"fields": {
+			"cardNumber": "Legitimație",
+			"barcode": "Cod de bare",
+			"issuedOn": "Data împrumutului",
+			"dueOn": "Termen de restituire"
+		},
+		"preview": {
+			"ready": "Nicio eroare: împrumuturile pot fi importate.",
+			"blocked": "Corectați erorile și verificați din nou: nimic nu se importă cu erori.",
+			"overdue": "{{count}} {{count:plural; one:împrumut deja întârziat; few:împrumuturi deja întârziate; other:de împrumuturi deja întârziate;}}: {{count:plural; one:va fi importat și va apărea; few:vor fi importate și vor apărea; other:vor fi importate și vor apărea;}} printre întârzieri.",
+			"columns": {
+				"patron": "Cititor",
+				"barcode": "Exemplar",
+				"issued": "Împrumut",
+				"due": "Termen"
+			},
+			"commit": "Importați împrumuturile",
+			"back": "Înapoi la coloane"
+		},
+		"reasons": {
+			"cardMissing": "Lipsește legitimația",
+			"cardUnknown": "Niciun cititor cu legitimația {{value}}",
+			"barcodeMissing": "Lipsește codul de bare",
+			"barcodeUnknown": "Niciun exemplar cu codul {{value}}",
+			"alreadyOnLoan": "Exemplarul {{value}} este deja împrumutat",
+			"itemWithdrawn": "Exemplarul {{value}} este retras",
+			"duplicateInFile": "Același exemplar este deja pe rândul {{line}}",
+			"issueDateInvalid": "Data împrumutului nevalidă: „{{value}}”",
+			"issueDateFuture": "Data împrumutului în viitor: {{value}}",
+			"dueDateInvalid": "Termen nevalid: „{{value}}”",
+			"dueBeforeIssue": "Termenul este înainte de data împrumutului",
+			"overdue": "Deja întârziat din {{date}}",
+			"itemUnclassified": "Exemplarul {{value}} aparține unei cărți de clasificat: împrumutul se importă, dar la ghișeu nu se împrumută până la clasificare"
+		},
+		"done": {
+			"title": "Împrumuturi importate",
+			"summary": "{{created}} {{created:plural; one:împrumut importat; few:împrumuturi importate; other:de împrumuturi importate;}}, din care {{overdue}} {{overdue:plural; one:deja întârziat; few:deja întârziate; other:deja întârziate;}}.",
+			"batch": "Importul nr. {{id}}: fișierul original este păstrat.",
+			"again": "Importați un alt fișier"
+		},
+		"columns": {
+			"cardNumber": "Numărul legitimației cititorului, deja importat.",
+			"barcode": "Codul de bare al exemplarului, deja importat.",
+			"issuedOn": "Data împrumutului; azi, dacă lipsește.",
+			"dueOn": "Termenul; dacă lipsește, se calculează cu regulile de împrumut."
+		}
+	},
+	"photosImport": {
+		"title": "Importați fotografiile cititorilor",
+		"hint": "Un fișier pentru fiecare cititor, numit după numărul legitimației (de exemplu 0000001240.jpg): îl produce exportul descris în ghidul administratorului. Fiecare fotografie este redimensionată și curățată de datele ascunse; fișierele care nu corespund niciunei legitimații sunt listate.",
+		"replace": "Înlocuiți fotografiile deja prezente",
+		"zip": {
+			"title": "Dintr-o arhivă ZIP",
+			"file": "Arhivă ZIP cu fotografiile",
+			"submit": "Importați fotografiile"
+		},
+		"folder": {
+			"title": "Din folderul serverului",
+			"hint": "Copiați fișierele în {{path}}: {{count:plural; one:acum există {{count}}; few:acum sunt {{count}}; other:acum sunt {{count}};}}. Potrivit pentru multe fotografii, care într-o arhivă ar fi prea grele de încărcat.",
+			"submit": "Importați din folder"
+		},
+		"summary": {
+			"title": "Rezultat",
+			"text": "{{imported}} {{imported:plural; one:fotografie importată; few:fotografii importate; other:de fotografii importate;}}, {{replaced}} {{replaced:plural; one:înlocuită; few:înlocuite; other:înlocuite;}}, {{kept}} {{kept:plural; one:lăsată cum era; few:lăsate cum erau; other:lăsate cum erau;}} (fotografie deja prezentă), {{unmatched}} {{unmatched:plural; one:fișier fără cititor; few:fișiere fără cititor; other:de fișiere fără cititor;}}, {{unreadable}} {{unreadable:plural; one:fișier ilizibil; few:fișiere ilizibile; other:de fișiere ilizibile;}}.",
+			"unreadable": "Imagini ilizibile: {{files}}",
+			"unmatched": "Descărcați lista fișierelor fără cititor"
+		},
+		"errors": {
+			"notZip": "Fișierul nu este o arhivă ZIP validă.",
+			"empty": "Arhiva nu conține fișiere."
+		},
+		"done": "Fotografii importate"
+	},
+	"rollover": {
+		"title": "Trecerea claselor",
+		"subtitle": "La sfârșitul anului, fiecare elev trece în anul următor, iar cine termină ultimul an părăsește școala.",
+		"steps": {
+			"backup": "Copie de siguranță",
+			"classes": "Clase",
+			"leavers": "Plecări",
+			"confirm": "Confirmare",
+			"done": "Finalizat"
+		},
+		"backup": {
+			"text": "Înainte de toate, o copie de siguranță a bazei de date: dacă ceva nu merge, se revine din Administrare → Copii de siguranță.",
+			"create": "Creați copia de siguranță",
+			"created": "Copie de siguranță creată: {{name}}"
+		},
+		"classes": {
+			"text": "Fiecare elev trece în anul următor împreună cu clasa sa. Marcați cine repetă anul și cine schimbă clasa.",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; one:elev; few:elevi; other:de elevi;}}",
+			"exceptions": "{{count}} {{count:plural; one:excepție; few:excepții; other:de excepții;}}",
+			"loans": "{{count}} cu împrumuturi în curs",
+			"repeat": "Repetă",
+			"target": "Clasa",
+			"noGroup": "Fără clasă",
+			"choose": "Alegeți clasa…",
+			"fates": {
+				"advances": "Trece",
+				"stays": "Rămâne",
+				"archived": "Se închide"
+			},
+			"unplaced": "{{count}} {{count:plural; one:elev așteaptă; few:elevi așteaptă; other:de elevi așteaptă;}} alegerea clasei.",
+			"none": "Niciun elev nu trece în anul următor.",
+			"nextYear": "Anul următor",
+			"leaves": "Părăsește școala"
+		},
+		"leavers": {
+			"text": "Elevii anului terminal părăsesc școala: datele lor se șterg imediat și definitiv (rămân doar cifrele statisticilor). Debifați cine rămâne, de exemplu un elev care repetă ultimul an.",
+			"leaves": "Pleacă",
+			"openLoans": "{{count}} {{count:plural; one:carte împrumutată; few:cărți împrumutate; other:de cărți împrumutate;}}",
+			"blocked": "{{count}} {{count:plural; one:elev care pleacă are încă; few:elevi care pleacă au încă; other:de elevi care pleacă au încă;}} cărți: înregistrați restituirea sau marcați cărțile ca pierdute, ori scoateți bifa.",
+			"toCheckin": "Mergeți la Restituire",
+			"none": "Niciun elev în ultimul an."
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; one:elev trece; few:elevi trec; other:de elevi trec;}} în anul următor",
+			"repeat": "{{count}} {{count:plural; one:elev repetă; few:elevi repetă; other:de elevi repetă;}} anul",
+			"groupChanges": "{{count}} {{count:plural; one:elev schimbă; few:elevi schimbă; other:de elevi schimbă;}} clasa",
+			"closing": "{{count}} {{count:plural; one:clasă se închide și este arhivată; few:clase se închid și sunt arhivate; other:de clase se închid și sunt arhivate;}}",
+			"remove": "{{count}} {{count:plural; one:elev părăsește școala și datele sale se șterg; few:elevi părăsesc școala și datele lor se șterg; other:de elevi părăsesc școala și datele lor se șterg;}}",
+			"recent": "Ultima trecere a claselor a fost făcută la {{date}}, acum mai puțin de șase luni. Confirm că vreau să o repet.",
+			"run": "Treceți clasele"
+		},
+		"done": {
+			"title": "Trecere finalizată",
+			"advanced": "{{count}} {{count:plural; one:clasă a trecut; few:clase au trecut; other:de clase au trecut;}} în anul următor",
+			"archived": "{{count}} {{count:plural; one:clasă arhivată; few:clase arhivate; other:de clase arhivate;}}",
+			"text": "Pașii următori: creați clasele I noi, dacă este necesar, și importați elevii noi cu sincronizarea.",
+			"import": "Importați elevii noi"
+		},
+		"errors": {
+			"blocked": "Unii elevi care pleacă au încă împrumuturi în curs.",
+			"recent": "Este necesară confirmarea: ultima trecere a claselor este recentă.",
+			"no_backup": "Copia de siguranță nu a fost găsită sau este prea veche: faceți-o din nou de la primul pas.",
+			"invalid_group": "O clasă aleasă nu există sau nu găzduiește anul elevului.",
+			"unplaced": "Unii elevi nu au încă o clasă: alegeți-o la pasul Clase.",
+			"invalid_level": "Unul dintre anii aleși nu este printre cei posibili: reîncărcați pagina."
+		},
+		"next": "Înainte",
+		"back": "Înapoi"
+	},
+	"classes": {
+		"title": "Clase",
+		"subtitle": "Clasele școlii și grupurile profesorilor.",
+		"hint": "Anii și ordinele de școală se schimbă în setări:",
+		"structureLink": "Școala",
+		"new": "Clase noi",
+		"newTeachers": "Grup nou de profesori",
+		"teachers": "Profesori",
+		"mixed": "Pluriclasă",
+		"empty": "Nicio clasă",
+		"emptyHint": "Nicio clasă. Clasele se creează cu „Clase noi”, de exemplu anii de la 1 la 5 și numele A-D.",
+		"archivedTitle": "{{count:plural; one:Clasă arhivată; few:Clase arhivate; other:De clase arhivate;}} ({{count}})",
+		"archive": "Arhivați",
+		"archiveNotEmpty": "Are încă cititori: nu poate fi arhivată",
+		"restore": "Restaurați",
+		"archived": "Clasa {{name}} arhivată",
+		"restored": "Clasa {{name}} restaurată",
+		"columns": {
+			"class": "Clasa",
+			"levels": "Ani",
+			"patrons": "Cititori"
+		},
+		"dialog": {
+			"title": {
+				"students": "Clase noi",
+				"teachers": "Grup nou de profesori",
+				"edit": "Modificare {{name}}"
+			},
+			"levels": "Ani",
+			"names": "Numele claselor",
+			"namesHint": "Separate prin virgule; A-D înseamnă A, B, C, D. Un nume poate conține spații.",
+			"name": "Nume",
+			"mixed": "O pluriclasă cu toți anii aleși",
+			"stage": "Ciclu școlar",
+			"anyStage": "Toate",
+			"notes": "Note",
+			"preview": "{{count}} {{count:plural; one:clasă de creat; few:clase de creat; other:de clase de creat;}}:",
+			"previewEmpty": "Alegeți cel puțin un an și scrieți numele.",
+			"saved": {
+				"students": "{{count}} {{count:plural; one:clasă creată; few:clase create; other:de clase create;}}",
+				"teachers": "Grup de profesori creat",
+				"edit": "Clasă salvată"
+			}
+		},
+		"errors": {
+			"nameRequired": "Numele este obligatoriu.",
+			"nameLong": "Numele este prea lung (cel mult 40 de caractere).",
+			"levelsRequired": "Alegeți cel puțin un an.",
+			"levelUnknown": "Un an ales nu mai există.",
+			"levelsNotForTeachers": "Un grup de profesori nu are ani.",
+			"nameTaken": "Există deja o clasă cu acest nume pentru același an.",
+			"levelInUse": "Unii elevi ai clasei se află într-un an care ar fi eliminat.",
+			"notEmpty": "Clasa are încă cititori.",
+			"notFound": "Clasa nu mai există."
+		}
+	},
+	"exports": {
+		"title": "Exporturi",
+		"subtitle": "Datele bibliotecii în fișiere de păstrat, de reimportat sau de dus într-un alt program.",
+		"items": {
+			"students": {
+				"title": "Elevi (CSV)",
+				"description": "Elevii activi în formatul importului: se reimportă din Administrare → Importuri → Elevi."
+			},
+			"teachers": {
+				"title": "Profesori (CSV)",
+				"description": "Profesorii activi în formatul importului: se reimportă din Administrare → Importuri → Profesori."
+			},
+			"catalog": {
+				"title": "Catalog (CSV)",
+				"description": "Câte un rând pentru fiecare exemplar, cu datele cărții, în formatul importului de catalog."
+			},
+			"open-loans": {
+				"title": "Împrumuturi în curs (CSV)",
+				"description": "Legitimația, exemplarul, data împrumutului și termenul: se reimportă din Administrare → Importuri → Împrumuturi în curs."
+			},
+			"loans-history": {
+				"title": "Istoricul împrumuturilor (CSV)",
+				"description": "Fiecare împrumut, cu clasa și secțiunea din ziua împrumutului."
+			},
+			"dump": {
+				"title": "Toate datele (JSON)",
+				"description": "Cititori, catalog, împrumuturi și liste într-un singur fișier, pentru a trece la o altă instalare sau la alt program."
+			}
+		},
+		"download": "Descărcați",
+		"patronNote": "Datele unei singure persoane (cerere de acces) se descarcă din fișa ei.",
+		"patronExport": "Exportați datele persoanei"
+	},
+	"imports": {
+		"title": "Importuri",
+		"hint": "Se folosesc la trecerea din Koha și, pentru cititori, la fiecare început de an școlar pentru clasele noi. Fiecare fișier se verifică integral înainte de a importa ceva.",
+		"cards": {
+			"catalog": {
+				"title": "Catalog",
+				"description": "Cărți și exemplare dintr-un fișier CSV sau din exportul din Koha."
+			},
+			"students": {
+				"title": "Elevi",
+				"description": "Clasele din registrul electronic, la fiecare început de an școlar: prenume, nume și clasă."
+			},
+			"teachers": {
+				"title": "Profesori",
+				"description": "Profesorii școlii: prenume și nume, cu legitimația lor dacă există deja."
+			},
+			"loans": {
+				"title": "Împrumuturi în curs",
+				"description": "Împrumuturile deschise, importate o singură dată la trecerea din Koha."
+			},
+			"photos": {
+				"title": "Fotografiile cititorilor",
+				"description": "Fotografiile exportate din Koha, câte una pentru fiecare legitimație."
+			}
+		}
+	},
+	"calibration": {
+		"title": "Calibrați tipărirea față-verso",
+		"intro": "Pentru a tipări legitimațiile pe ambele fețe ale foii, versoul trebuie să cadă exact în spatele feței. Fiecare imprimantă mută puțin versoul: această probă măsoară cât, o singură dată.",
+		"current": "Cum se întoarce foaia: {{flip}}. Deplasarea actuală a versoului: {{x}} mm pe orizontală, {{y}} mm pe verticală.",
+		"steps": {
+			"print": "Tipăriți foaia de calibrare cu butonul de mai jos.",
+			"window": {
+				"long-edge": "În fereastra de tipărire alegeți „Față-verso” cu întoarcere pe latura lungă, scara la 100 % și fără margini.",
+				"short-edge": "În fereastra de tipărire alegeți „Față-verso” cu întoarcere pe latura scurtă, scara la 100 % și fără margini."
+			},
+			"cut": "Pe partea cu „1” mare, tăiați cu grijă de-a lungul liniei negre.",
+			"read": "Întoarceți cartonașul: pe partea „2”, citiți cele două numere în punctul unde marginea tăiată trece peste cele două rigle (cu semnul + sau −).",
+			"save": "Scrieți cele două numere de mai jos și salvați: deplasarea versoului se corectează.",
+			"check": "Tipăriți din nou foaia pentru verificare: marginea tăiată ar trebui să treacă acum prin 0 pe ambele rigle."
+		},
+		"print": "Tipăriți foaia de calibrare",
+		"drawing": {
+			"title": "Ce trebuie citit",
+			"label": "Partea 2 după tăiere: marginea tăiată trece peste rigle",
+			"x": "rigla orizontală",
+			"y": "rigla verticală",
+			"hint": "Marginea tăiată trece peste fiecare riglă: numărul de acolo este valoarea de scris. Fiecare reper este un milimetru, cifrele apar din cinci în cinci."
+		},
+		"fields": {
+			"x": "Rigla orizontală (mm)",
+			"y": "Rigla verticală (mm)",
+			"hint": "Numărul unde trece marginea tăiată, cu semnul; 0 dacă cade pe zero."
+		},
+		"next": "După salvare, deplasarea versoului va fi de {{x}} mm pe orizontală și {{y}} mm pe verticală.",
+		"save": "Salvați calibrarea",
+		"saved": "Calibrare salvată: versoul deplasat cu {{x}} mm pe orizontală și {{y}} mm pe verticală.",
+		"open": "Calibrați tipărirea față-verso",
+		"sheet": {
+			"title": "BiblioViva · calibrarea tipăririi față-verso",
+			"cut": "Tăiați de-a lungul liniei negre, apoi întoarceți cartonașul.",
+			"read": "Citiți pe cele două rigle unde trece marginea tăiată."
+		}
+	}
+}

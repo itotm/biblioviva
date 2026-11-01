@@ -1,0 +1,71 @@
+{
+	"id": "uk-primary",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md Phase 12, B2 of docs/studies/barcodes-and-school-classes.md).",
+	"name": {
+		"it": "Scuola primaria (Inghilterra)",
+		"en": "Primary school (England)"
+	},
+	"country": "GB",
+	"languages": ["en"],
+	"school": {
+		"stages": [
+			{
+				"code": "primary",
+				"name": "Primary"
+			}
+		],
+		"levels": [
+			{
+				"code": "R",
+				"label": "Reception",
+				"name": "Reception",
+				"stage": "primary"
+			},
+			{
+				"code": "Y1",
+				"label": "Year 1",
+				"name": "Year 1",
+				"stage": "primary"
+			},
+			{
+				"code": "Y2",
+				"label": "Year 2",
+				"name": "Year 2",
+				"stage": "primary"
+			},
+			{
+				"code": "Y3",
+				"label": "Year 3",
+				"name": "Year 3",
+				"stage": "primary"
+			},
+			{
+				"code": "Y4",
+				"label": "Year 4",
+				"name": "Year 4",
+				"stage": "primary"
+			},
+			{
+				"code": "Y5",
+				"label": "Year 5",
+				"name": "Year 5",
+				"stage": "primary"
+			},
+			{
+				"code": "Y6",
+				"label": "Year 6",
+				"name": "Year 6",
+				"stage": "primary"
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Class",
+		"promotionWithinStage": "clear",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"primary": ["A", "B"]
+	},
+	"teacherGroup": "Teachers",
+	"readingLevels": []
+}

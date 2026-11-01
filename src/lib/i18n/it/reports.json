@@ -1,0 +1,39 @@
+{
+	"title": "Report",
+	"categories": {
+		"loans": "Prestiti",
+		"books": "Libri",
+		"patrons": "Utenti",
+		"ops": "Attività"
+	},
+	"restricted": "Solo amministratori",
+	"custom": "Della scuola",
+	"chart": "Con grafico",
+	"problemsTitle": "File di report non caricati",
+	"problemsHint": "Questi file della cartella dei report hanno un errore e non compaiono nell'elenco:",
+	"params": "Parametri",
+	"run": "Aggiorna",
+	"all": "Tutte",
+	"from": "dal",
+	"to": "al",
+	"patronTypes": {
+		"student": "Studenti",
+		"teacher": "Docenti"
+	},
+	"rows": "{{count}} {{count:plural; one:riga; other:righe;}}",
+	"ms": "in {{ms}} ms",
+	"truncated": "{{count:plural; one:È mostrata solo la prima riga: per vedere tutto, restringere i parametri.; other:Sono mostrate solo le prime {{count}} righe: per vederle tutte, restringere i parametri.;}}",
+	"empty": "Nessun risultato con questi parametri.",
+	"print": "Stampa",
+	"printedOn": "Stampato il {{date}}",
+	"errors": {
+		"required": "Manca «{{label}}».",
+		"invalid": "Il valore di «{{label}}» non è valido."
+	},
+	"back": "Tutti i report",
+	"noParams": "Questo report non ha parametri.",
+	"special": {
+		"teachers": "Docenti",
+		"total": "Totale"
+	}
+}

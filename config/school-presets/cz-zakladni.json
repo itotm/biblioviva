@@ -1,0 +1,105 @@
+{
+	"id": "cz-zakladni",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). After the 5. and the 7. ročník some pupils leave for an eight- or six-year gymnázium; classes written 5. A or 5.A [VERIFY].",
+	"name": {
+		"it": "Scuola di base, dal 1º al 9º anno (Cechia)",
+		"en": "Basic school, grades 1 to 9 (Czechia)",
+		"cs": "Základní škola (Česko)"
+	},
+	"country": "CZ",
+	"languages": ["cs"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "1-stupen",
+				"name": "1. stupeň"
+			},
+			{
+				"code": "2-stupen",
+				"name": "2. stupeň"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1.",
+				"name": "1. ročník",
+				"stage": "1-stupen",
+				"aliases": ["1. třída"]
+			},
+			{
+				"code": "2",
+				"label": "2.",
+				"name": "2. ročník",
+				"stage": "1-stupen",
+				"aliases": ["2. třída"]
+			},
+			{
+				"code": "3",
+				"label": "3.",
+				"name": "3. ročník",
+				"stage": "1-stupen",
+				"aliases": ["3. třída"]
+			},
+			{
+				"code": "4",
+				"label": "4.",
+				"name": "4. ročník",
+				"stage": "1-stupen",
+				"aliases": ["4. třída"]
+			},
+			{
+				"code": "5",
+				"label": "5.",
+				"name": "5. ročník",
+				"stage": "1-stupen",
+				"next": ["6", null],
+				"aliases": ["5. třída"]
+			},
+			{
+				"code": "6",
+				"label": "6.",
+				"name": "6. ročník",
+				"stage": "2-stupen",
+				"aliases": ["6. třída"]
+			},
+			{
+				"code": "7",
+				"label": "7.",
+				"name": "7. ročník",
+				"stage": "2-stupen",
+				"next": ["8", null],
+				"aliases": ["7. třída"]
+			},
+			{
+				"code": "8",
+				"label": "8.",
+				"name": "8. ročník",
+				"stage": "2-stupen",
+				"aliases": ["8. třída"]
+			},
+			{
+				"code": "9",
+				"label": "9.",
+				"name": "9. ročník",
+				"stage": "2-stupen",
+				"aliases": ["9. třída"]
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Třída",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"1-stupen": ["A", "B", "C"],
+		"2-stupen": ["A", "B", "C"]
+	},
+	"teacherGroup": "Učitelé",
+	"readingLevels": []
+}

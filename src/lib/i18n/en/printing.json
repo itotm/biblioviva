@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Printing",
+		"newPatrons": "New patron list",
+		"newItems": "New book list",
+		"newPatronsTitle": "New list of patrons",
+		"newItemsTitle": "New list of books",
+		"name": "List name",
+		"defaultName": "List {{n}} of {{date}}",
+		"kind": "Kind",
+		"kinds": {
+			"all": "All",
+			"patrons": "Patrons",
+			"items": "Books"
+		},
+		"classes": "Classes",
+		"classesHint": "The cards of a whole class, without making a list of it.",
+		"classKind": "Class",
+		"count": "{{count}} {{count:plural; one:entry; other:entries;}}",
+		"empty": "No lists. Lists are created here or with “Add to a list” on the Patrons and Catalogue pages.",
+		"lastPrinted": "Printed on {{when}}",
+		"neverPrinted": "Never printed",
+		"open": "Open",
+		"created": "List created",
+		"deleted": "List deleted",
+		"deleteTitle": "Delete the list “{{name}}”?",
+		"deleteDescription": "The entries leave the list; the patrons stay in the archive."
+	},
+	"list": {
+		"rename": "Rename",
+		"renamed": "List renamed",
+		"print": "Print cards",
+		"markPrinted": "Mark as printed",
+		"marked": "{{count}} {{count:plural; one:card; other:cards;}} marked as printed",
+		"clearAfter": "Empty the list after printing",
+		"clear": "Empty",
+		"cleared": "List emptied",
+		"clearTitle": "Empty the list?",
+		"clearDescription": "Every entry leaves the list; the patrons stay in the archive.",
+		"delete": "Delete",
+		"entries": "{{count}} {{count:plural; one:patron; other:patrons;}} in the list",
+		"empty": "The list is empty: add patrons with the quick filters, the scanner or from the Patrons page.",
+		"remove": "Remove from the list",
+		"moveUp": "Move up",
+		"moveDown": "Move down",
+		"dragHint": "Drag the entries to change the print order.",
+		"removed": "Removed from the list",
+		"columns": {
+			"position": "No.",
+			"printed": "Card printed"
+		},
+		"printedYes": "yes",
+		"printedNo": "no",
+		"quick": {
+			"title": "Add with filters",
+			"hint": "Whoever is already in the list is not added twice.",
+			"type": "Type",
+			"any": "Any",
+			"stage": "Stage",
+			"level": "Year",
+			"withoutPrintedCard": "Only those whose card was never printed",
+			"withoutPhoto": "Only those without a photo",
+			"importBatch": "Import",
+			"anyBatch": "— none —",
+			"batchLabel": "no. {{id}} · {{file}} · {{created}} new",
+			"createdAfter": "Created from",
+			"add": "Add to the list",
+			"added": "{{added}} added, {{skipped}} already present",
+			"none": "No patron matches the filters.",
+			"pendingLabels": "Labels to print",
+			"pendingAny": "— every copy —",
+			"acquiredFrom": "Acquired from",
+			"acquiredTo": "to",
+			"genre": "Genre",
+			"itemType": "Copy type",
+			"batchLabelItems": "no. {{id}} · {{file}} · {{created}} {{created:plural; one:copy; other:copies;}}",
+			"noneItems": "No copy matches the filters.",
+			"addedItems": "{{added}} added, {{skipped}} already present",
+			"nonfictionClass": "Non-fiction class"
+		},
+		"scan": {
+			"title": "Add with the scanner",
+			"hint": "Scan each patron's card: it is added at once. Cards already in the list are ignored.",
+			"added": "{{name}} added",
+			"duplicate": "{{name}} is already in the list",
+			"unknown": "No patron with card {{card}}",
+			"notCard": "The scanned code is not a card",
+			"hintItems": "Scan the barcode of each copy (for example walking along the shelf): it is added at once. Copies already in the list are ignored.",
+			"addedItem": "{{title}} ({{barcode}}) added",
+			"duplicateItem": "{{title}} ({{barcode}}) is already in the list",
+			"unknownItem": "No copy with barcode {{barcode}}",
+			"notItem": "The scanned code is not a copy"
+		},
+		"printLabels": "Print labels",
+		"markPrintedKind": "Labels printed",
+		"markedItems": "{{count}} {{count:plural; one:copy; other:copies;}} marked as printed",
+		"entriesItems": "{{count}} {{count:plural; one:copy; other:copies;}} in the list",
+		"emptyItems": "The list is empty: add copies with the quick filters, with the scanner or from the catalogue.",
+		"clearDescriptionItems": "Every entry is removed; the copies stay in the catalogue."
+	},
+	"basket": {
+		"label": "Print lists",
+		"labelToPrint": "Print lists: {{count}} to print",
+		"entry": "{{name}} ({{count}})",
+		"none": "No list to print",
+		"all": "All lists"
+	},
+	"addTo": {
+		"button": "Add to a list",
+		"selected": "Add selected to a list",
+		"title": "Add to a print list",
+		"existing": "Existing list",
+		"create": "New list",
+		"newName": "Name of the new list",
+		"confirm": "Add",
+		"done": "{{added}} added to “{{name}}”, {{skipped}} already present"
+	},
+	"labels": {
+		"title": "Print labels",
+		"button": "Print labels",
+		"selected": "Print labels of the selection",
+		"kind": "Label kind",
+		"kinds": {
+			"pair": "Pair",
+			"barcode": "Barcode only",
+			"spine": "Spine band only"
+		},
+		"kindHints": {
+			"pair": "Spine band on top and barcode label below, one pair per book (the current printout).",
+			"barcode": "Only the internal barcode label, for reprints.",
+			"spine": "Only the spine band, for example after a reclassification."
+		},
+		"stock": "Label sheet",
+		"start": "First free position",
+		"startHint": "From 1 to {{max}}: skips the labels already used on the sheet.",
+		"count": "{{count}} {{count:plural; one:copy; other:copies;}}",
+		"unclassified": "{{count}} {{count:plural; one:copy of a book; other:copies of books;}} to classify: only {{count:plural; one:its; other:their;}} barcode label prints, the spine band after the classification.",
+		"pendingCount": "{{count}} {{count:plural; one:copy; other:copies;}} with labels to print",
+		"pages": "{{pages}} {{pages:plural; one:sheet; other:sheets;}} ({{perPage}} per sheet)",
+		"print": "Open the print page",
+		"afterPrint": "The print page opened in a new tab. Once the labels are printed, mark them as printed.",
+		"markPrinted": "Mark as printed",
+		"marked": "{{count}} {{count:plural; one:copy; other:copies;}} marked as printed",
+		"status": {
+			"printed": "Labels printed",
+			"pending": "Labels to print",
+			"partial": "One label missing"
+		}
+	},
+	"cards": {
+		"title": "Print cards",
+		"count": "{{count}} {{count:plural; one:card; other:cards;}}",
+		"afterPrint": "The print page opened in a new tab. Once the cards are printed, mark them as printed.",
+		"layout": "How to print",
+		"layouts": {
+			"side-by-side": "Front and back side by side",
+			"duplex": "On both sides of the sheet"
+		},
+		"window": "In the browser's print window:",
+		"steps": {
+			"duplex": {
+				"long-edge": "choose “Two-sided”, flipping on the long edge;",
+				"short-edge": "choose “Two-sided”, flipping on the short edge;"
+			},
+			"scale": "scale 100 % (“Actual size”, not “Fit to page”);",
+			"margins": "margins: none.",
+			"after": {
+				"side-by-side": {
+					"marks": "Then cut out each card by joining the crop marks around the cards with a ruler, and fold it in half on the short edge.",
+					"line": "Then cut out each card along the coloured line around it, and fold it in half on the short edge.",
+					"edge": "Then cut out each card along its edge, and fold it in half on the short edge."
+				},
+				"duplex": {
+					"marks": "Then cut out the cards by joining the crop marks around the fronts with a ruler: the back is behind the front already (ten per sheet).",
+					"line": "Then cut out the cards along the coloured line around the fronts: the back is behind the front already (ten per sheet).",
+					"edge": "Then cut out the cards along the edge of the fronts: the back is behind the front already (ten per sheet)."
+				}
+			}
+		},
+		"print": "Print",
+		"calibrate": "The first time, or when the backs do not fall behind the fronts:"
+	},
+	"words": {
+		"teacher": "Teacher",
+		"title": "Title",
+		"code": "Code",
+		"dueBy": "Return by",
+		"due": "Due",
+		"name": "Name",
+		"daysOverdue": "Days overdue",
+		"loanOn": "Loan of {{date}} to",
+		"overduesOn": "Library reminders of {{date}}",
+		"toReturn": "Books to return to the library",
+		"enjoy": "Enjoy your reading!"
+	}
+}

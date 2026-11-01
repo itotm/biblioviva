@@ -1,0 +1,39 @@
+{
+	"title": "Rapporter",
+	"categories": {
+		"loans": "Utlån",
+		"books": "Bøker",
+		"patrons": "Lånere",
+		"ops": "Aktivitet"
+	},
+	"restricted": "Bare for administratorer",
+	"custom": "Skolens",
+	"chart": "Med diagram",
+	"problemsTitle": "Rapportfiler som ikke er lastet",
+	"problemsHint": "Disse filene i rapportmappen har en feil og vises ikke i listen:",
+	"params": "Parametere",
+	"run": "Oppdater",
+	"all": "Alle",
+	"from": "fra",
+	"to": "til",
+	"patronTypes": {
+		"student": "Elever",
+		"teacher": "Lærere"
+	},
+	"rows": "{{count}} {{count:plural; one:rad; other:rader;}}",
+	"ms": "på {{ms}} ms",
+	"truncated": "{{count:plural; one:Bare den første raden vises. Snevr inn parametrene for å se alle.; other:Bare de første {{count}} radene vises. Snevr inn parametrene for å se alle.;}}",
+	"empty": "Ingen resultater med disse parametrene.",
+	"print": "Skriv ut",
+	"printedOn": "Skrevet ut {{date}}",
+	"errors": {
+		"required": "«{{label}}» mangler.",
+		"invalid": "Verdien i «{{label}}» er ikke gyldig."
+	},
+	"back": "Alle rapporter",
+	"noParams": "Denne rapporten har ingen parametere.",
+	"special": {
+		"teachers": "Lærere",
+		"total": "Totalt"
+	}
+}

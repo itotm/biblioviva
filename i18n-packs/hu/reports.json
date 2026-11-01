@@ -1,0 +1,39 @@
+{
+	"title": "Jelentések",
+	"categories": {
+		"loans": "Kölcsönzések",
+		"books": "Könyvek",
+		"patrons": "Olvasók",
+		"ops": "Tevékenység"
+	},
+	"restricted": "Csak adminisztrátoroknak",
+	"custom": "Az iskola saját",
+	"chart": "Diagrammal",
+	"problemsTitle": "Nem betöltött jelentésfájlok",
+	"problemsHint": "A jelentések mappájának ezek a fájljai hibásak, ezért nem szerepelnek a listában:",
+	"params": "Paraméterek",
+	"run": "Frissítés",
+	"all": "Összes",
+	"from": "Ettől",
+	"to": "Eddig",
+	"patronTypes": {
+		"student": "Tanulók",
+		"teacher": "Tanárok"
+	},
+	"rows": "{{count}} {{count:plural; one:sor; other:sor;}}",
+	"ms": "{{ms}} ms alatt",
+	"truncated": "Csak az első {{count}} {{count:plural; one:sor látható; other:sor látható;}}: a paraméterek szűkítésével láthatja mindet.",
+	"empty": "Nincs találat ezekkel a paraméterekkel.",
+	"print": "Nyomtatás",
+	"printedOn": "Nyomtatva: {{date}}",
+	"errors": {
+		"required": "Hiányzik: „{{label}}”.",
+		"invalid": "A(z) „{{label}}” értéke nem érvényes."
+	},
+	"back": "Összes jelentés",
+	"noParams": "Ennek a jelentésnek nincsenek paraméterei.",
+	"special": {
+		"teachers": "Tanárok",
+		"total": "Összesen"
+	}
+}

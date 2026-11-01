@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "Uložit",
+		"cancel": "Zrušit",
+		"close": "Zavřít",
+		"confirm": "Potvrdit",
+		"delete": "Smazat",
+		"edit": "Upravit",
+		"search": "Hledat",
+		"export": "Exportovat",
+		"back": "Zpět",
+		"retry": "Zkusit znovu",
+		"backTo": "Zpět na {{page}}",
+		"more": "Další akce"
+	},
+	"similar": {
+		"label": "Podobné",
+		"count": "a ještě {{count}} podobných, nalezených opravou překlepu",
+		"hint": "Nalezeno opravou překlepu: ověřte, zda je to ten hledaný."
+	},
+	"status": {
+		"loading": "Načítání…",
+		"error": "Došlo k chybě"
+	},
+	"statuses": {
+		"item": {
+			"available": "K dispozici",
+			"onLoan": "Vypůjčeno",
+			"lost": "Ztraceno",
+			"damaged": "Poškozeno",
+			"inRepair": "V opravě",
+			"withdrawn": "Vyřazeno",
+			"notForLoan": "Jen k prezenci"
+		},
+		"loan": {
+			"open": "Probíhá",
+			"dueSoon": "Blíží se termín",
+			"overdue": "Po termínu",
+			"returned": "Vráceno"
+		},
+		"patron": {
+			"active": "Aktivní",
+			"anonymized": "Odstraněn"
+		},
+		"print": {
+			"pending": "K tisku",
+			"printed": "Vytištěno"
+		}
+	},
+	"list": {
+		"selected": "Vybráno: {{count}}"
+	},
+	"scan": {
+		"label": "Čárový kód",
+		"placeholder": "Naskenujte nebo napište kód",
+		"submit": "Najít kód",
+		"camera": "Kamera",
+		"cameraTitle": "Naskenovat kamerou",
+		"errors": {
+			"empty": "Nebyl zadán žádný kód.",
+			"item_check_digit": "Čárový kód exempláře má chybný kontrolní znak: načtěte ho znovu.",
+			"card_check_digit": "Číslo průkazu má chybný kontrolní znak: načtěte ho znovu.",
+			"isbn_check_digit": "ISBN má chybnou kontrolní číslici: zkontrolujte číslice.",
+			"unrecognised": "Kód nebyl rozpoznán: ověřte, že čtečka čte Code 39 a Code 128."
+		},
+		"invalidRead": "Neplatný kód ({{code}}): načítání probíhá.",
+		"invalidShort": "Neplatný kód, načítání znovu…",
+		"useAnyway": "Přesto použít {{code}}"
+	},
+	"camera": {
+		"start": "Spustit kameru",
+		"stop": "Vypnout kameru",
+		"switch": "Přepnout kameru",
+		"torch": "Svítilna",
+		"snapshot": "Vyfotit",
+		"device": "Kamera",
+		"starting": "Spouštění kamery…",
+		"errors": {
+			"insecure": "Kamera funguje jen při zabezpečeném připojení (https): otevřeno z místní sítě bez Tailscale ji aplikace nemůže použít. Použijte čtečku čárových kódů nebo nahrajte soubor, případně otevřete aplikaci na adrese Tailscale.",
+			"denied": "Oprávnění zamítnuto: povolte kameru v nastavení prohlížeče a zkuste to znovu.",
+			"notFound": "Na tomto zařízení nebyla nalezena žádná kamera.",
+			"busy": "Kameru již používá jiná aplikace.",
+			"generic": "Kameru nelze spustit ({{message}}).",
+			"timeout": "Kamera neodpověděla. Zkontrolujte, zda prohlížeč ještě nežádá o oprávnění, nebo zda pro tento web nebylo dříve zamítnuto (ikona u adresy)."
+		},
+		"permissionHint": "Pokud prohlížeč žádá o oprávnění k použití kamery (obvykle u adresního řádku), zvolte „Povolit“."
+	},
+	"clipboard": {
+		"failed": "Kopírování se nezdařilo: označte text a zkopírujte ho ručně."
+	},
+	"form": {
+		"errorsTitle": "Zkontrolujte označená pole",
+		"field": "Pole {{field}}"
+	},
+	"confirm": {
+		"title": "Potvrdit?"
+	},
+	"export": {
+		"csv": "CSV (tabulka, text)",
+		"ods": "ODS (LibreOffice / Excel)"
+	},
+	"demo": {
+		"panel": "Tato instalace obsahuje ukázková data načtená {{when}}: {{patrons}} {{patrons:plural; one:čtenář; few:čtenáři; other:čtenářů;}}, {{biblios}} {{biblios:plural; one:titul; few:tituly; other:titulů;}}, {{items}} {{items:plural; one:exemplář; few:exempláře; other:exemplářů;}}, {{loans}} {{loans:plural; one:výpůjčka; few:výpůjčky; other:výpůjček;}}. Všechno je vymyšlené: žádná skutečná osoba."
+	},
+	"import": {
+		"header": "První řádek je záhlaví",
+		"column": "Sloupec {{n}}",
+		"ignore": "— ignorovat —",
+		"counts": {
+			"new": "Nových: {{count}}",
+			"update": "K aktualizaci: {{count}}",
+			"unchanged": "Beze změny: {{count}}",
+			"error": "{{count}} {{count:plural; one:chyba; few:chyby; other:chyb;}}"
+		},
+		"onlyErrors": "Zobrazit jen chyby",
+		"info": "{{rows}} {{rows:plural; one:řádek; few:řádky; other:řádků;}} · kódování {{encoding}} · oddělovač „{{delimiter}}“",
+		"steps": {
+			"upload": "Soubor",
+			"mapping": "Sloupce",
+			"preview": "Kontrola",
+			"done": "Dokončeno"
+		},
+		"line": "Řádek",
+		"status": "Výsledek",
+		"reason": "Podrobnosti",
+		"statuses": {
+			"new": "Nový",
+			"update": "Aktualizace",
+			"unchanged": "Beze změny",
+			"error": "Chyba"
+		},
+		"errors": {
+			"empty": "Soubor je prázdný.",
+			"tooLarge": "Soubor je větší než {{mb}} MB.",
+			"noRows": "V souboru nebyl nalezen žádný řádek.",
+			"uploadGone": "Nahraný soubor už není k dispozici: nahrajte ho znovu.",
+			"notReady": "Soubor má ještě chyby: zkontrolujte ho znovu.",
+			"mappingIncomplete": "Chybí povinné sloupce: {{columns}}."
+		},
+		"template": {
+			"title": "Šablona souboru",
+			"hint": "Vyberte sloupce: šablona obsahuje jen záhlaví a plní se po jednom řádku (funguje i tabulkový soubor uložený jako CSV).",
+			"required": "Povinné",
+			"keys": "Klíče",
+			"keysHint": "Slouží k rozpoznání toho, co už v evidenci je; mohou se vynechat.",
+			"optional": "Nepovinné",
+			"download": "Stáhnout šablonu",
+			"ifMissing": "Pokud chybí: {{text}}."
+		},
+		"groups": {
+			"required": "povinný",
+			"key": "klíč"
+		}
+	},
+	"words": {
+		"yes": "Ano",
+		"no": "Ne"
+	},
+	"password": {
+		"show": "Zobrazit heslo",
+		"hide": "Skrýt heslo"
+	},
+	"demoPublic": {
+		"language": "Jazyk",
+		"welcome": {
+			"title": "Vítejte v ukázce aplikace BiblioViva",
+			"beta": "Veřejná beta",
+			"betaText": "BiblioViva je ve veřejné betě: funkce jsou stabilní, ale až do verze 1.0 není zaručeno, že aktualizace zůstane kompatibilní s daty a nastavením předchozí verze.",
+			"intro": "BiblioViva je program pro správu školní knihovny: výpůjčky a vrácení, katalog, čtenáři s fotografiemi a průkazy, štítky, tisk a sestavy. Toto je veřejná ukázka: všechny funkce si můžete vyzkoušet.",
+			"contents": "Uvnitř je fiktivní základní škola: {{patrons}} {{patrons:plural; one:žák nebo učitel; few:žáci a učitelé; other:žáků a učitelů;}}, {{biblios}} {{biblios:plural; one:titul; few:tituly; other:titulů;}} a {{items}} {{items:plural; one:exemplář; few:exempláře; other:exemplářů;}}, {{openLoans}} {{openLoans:plural; one:výpůjčka; few:výpůjčky; other:výpůjček;}} v běhu, z toho {{overdueLoans}} po termínu. Jména a fotografie jsou vymyšlené: žádná skutečná osoba.",
+			"reset": "Každý den v {{time}} se ukázka vrátí do původního stavu. Změny nastavení lze vyzkoušet, ale neukládají se.",
+			"examples": "V ukázce se text a fotografie nahrazují příkladem: každou operaci lze vyzkoušet až do konce, ale to, co se napíše nebo vyfotí, se neuchová a žádný jiný návštěvník to nevidí. Importy přijímají jen ukázkové soubory, které lze stáhnout na stránce každého importu.",
+			"accountsTitle": "Kterým účtem se přihlásit",
+			"accountsHint": "Stejně jako v knihovně vidí každý účet jen práci své role. Uživatelské jméno a heslo zadejte do formuláře nahoře.",
+			"password": "Heslo je pro všechny účty stejné:"
+		},
+		"accounts": {
+			"admin": {
+				"name": "Správa",
+				"does": "vidí všechno: kromě práce ostatních účtů také nastavení, účty pracovníků, zálohy, třídy a přechod na další školní rok."
+			},
+			"prestiti": {
+				"name": "Správa výpůjček",
+				"does": "výpůjční pult: půjčuje, vrací a prodlužuje, sleduje výpůjčky po termínu a tiskne upomínky."
+			},
+			"catalogo": {
+				"name": "Katalogizace",
+				"does": "knihy a exempláře, vyhledávání údajů v SBN (zde simulováno), obálky, třídění a štítky."
+			},
+			"tessere": {
+				"name": "Průkazy a fotografie",
+				"does": "žáci a učitelé, fotografie a fotoevidence tříd, tisk průkazů."
+			},
+			"report": {
+				"name": "Sestavy",
+				"does": "statistiky výpůjček, katalogu a čtenářů, export tabulek."
+			}
+		},
+		"blocked": {
+			"config": "V ukázce se nastavení neukládá: vše lze vyzkoušet, ale změny se nezapíší.",
+			"restore": "V ukázce je obnovení záloh vypnuto: data ukázky se každou noc vytvoří znovu sama.",
+			"configImport": "V ukázce je import nastavení vypnut: nastavení ukázky je pro všechny návštěvníky stejné.",
+			"pictures": "Ukázka nenahrává fotografie tříd: ve fotoevidenci zkuste ukázkovou fotografii třídy.",
+			"sqlReports": "V ukázce jsou sestavy psané v SQL vypnuty: zkuste sestavy s průvodcem.",
+			"importSize": "V ukázce mohou importované soubory mít nejvýše 1 MB.",
+			"printSize": "V ukázce se najednou tiskne nejvýše 3 listy: zvolte méně kopií nebo méně čtenářů.",
+			"importExample": "V ukázce se importuje jen ukázkový soubor: stáhněte ho tlačítkem šablony a nahrajte ho beze změny.",
+			"notesLimit": "V ukázce lze denně napsat jen několik poznámek.",
+			"demoData": "V ukázce zůstávají zkušební data až do nočního vynulování.",
+			"backups": "V ukázce jsou ruční zálohy vypnuty: data ukázky se každou noc vytvoří znovu sama.",
+			"archives": "V ukázce se archivy a zálohy nestahují: data a nastavení ukázky se každou noc vytvoří znovu sama.",
+			"languagePacks": "V ukázce se jazykové balíčky nestahují: ukázka má italštinu a angličtinu."
+		},
+		"example": {
+			"note": "DEMO – poznámka z {{when}}",
+			"comment": "Ukázková poznámka z {{when}}",
+			"book": "Ukázková kniha z {{when}}",
+			"wish": "Ukázkové přání z {{when}}",
+			"class": "Ukázková třída z {{when}}",
+			"printList": "Ukázkový seznam z {{when}}",
+			"inventory": "Ukázková revize z {{when}}",
+			"reason": "Ukázkový důvod z {{when}}",
+			"date": "Ukázkové datum z {{when}}"
+		},
+		"replaced": "V ukázce se text a fotografie nahrazují příkladem: uložení proběhlo, ale zůstane příklad.",
+		"tooMany": "Příliš mnoho požadavků v krátké době: zkuste to znovu za minutu.",
+		"refused": {
+			"title": "V ukázce není k dispozici",
+			"busyTitle": "Příliš mnoho požadavků",
+			"back": "Zpět na BiblioViva"
+		}
+	}
+}

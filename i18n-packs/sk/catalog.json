@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "Katalóg",
+		"search": "Hľadajte podľa názvu, autora alebo ISBN…",
+		"new": "Nová kniha",
+		"empty": "Žiadna kniha nezodpovedá filtrom.",
+		"countFiltered": "{{shown}} {{shown:plural; one:názov zodpovedá; few:názvy zodpovedajú; other:názvov zodpovedá;}} filtrom",
+		"clearFilters": "Zrušiť filtre",
+		"filters": {
+			"kind": "Druh",
+			"genre": "Žáner",
+			"class": "Klasifikácia",
+			"readingLevel": "Úroveň",
+			"itemType": "Materiál",
+			"series": "Séria",
+			"all": "Všetky",
+			"allF": "Všetky",
+			"withdrawn": "Zobraziť aj vyradené knihy"
+		},
+		"columns": {
+			"title": "Názov",
+			"series": "Séria",
+			"author": "Autor",
+			"year": "Rok",
+			"isbn": "ISBN",
+			"classification": "Klasifikácia",
+			"copies": "Exempláre",
+			"callNumber": "Signatúra",
+			"acquiredAt": "Nadobudnutie"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "Hľadať v katalógu",
+		"startHint": "Hľadajte podľa názvu, autora, vydavateľa, kódu alebo ISBN, alebo použite filtre."
+	},
+	"kinds": {
+		"fiction": "Beletria",
+		"nonfiction": "Náučná literatúra"
+	},
+	"fields": {
+		"title": "Názov",
+		"subtitle": "Podnázov",
+		"originalTitle": "Pôvodný názov",
+		"originalTitleHint": "Iba ak ide o preklad: názov diela v pôvodnom jazyku.",
+		"responsibility": "Údaj o zodpovednosti (ako na titulnej strane)",
+		"author": "Autor",
+		"publisher": "Vydavateľ",
+		"publicationPlace": "Miesto",
+		"publicationYear": "Rok",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN (nie ISBN)",
+		"physicalDescription": "Fyzický opis",
+		"series": "Séria",
+		"seriesNumber": "Číslo v sérii",
+		"seriesHint": "Napríklad Harry Potter a 3. Počas písania sa zobrazia série, ktoré sú už v katalógu.",
+		"dewey": "Dewey (zo SBN)",
+		"kind": "Druh",
+		"genre": "Žáner",
+		"classCode": "Klasifikácia",
+		"readingLevel": "Čitateľská úroveň",
+		"subjects": "Témy",
+		"notes": "Poznámky",
+		"authorHint": "Priezvisko, meno. Rýchle voľby použite, keď nejde o osobného autora.",
+		"subjectsHint": "Jeden na riadok alebo oddelené čiarkou.",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "Nová kniha",
+		"editTitle": "Upraviť záznam",
+		"create": "Uložiť záznam",
+		"save": "Uložiť zmeny",
+		"identity": "Záznam",
+		"publication": "Vydanie",
+		"classification": "Klasifikácia",
+		"more": "Ďalšie údaje",
+		"quickPicks": "Rýchle voľby",
+		"unknownPublisher": "Neznámy vydavateľ",
+		"unknownPlace": "Neznáme miesto",
+		"singleCopy": "Exemplár {{barcode}}",
+		"singleCopyHint": "Záznam má jeden exemplár: jeho údaje sa upravujú tu a ukladajú sa spolu so záznamom."
+	},
+	"picker": {
+		"kind": "Aký druh knihy to je?",
+		"fiction": "Beletria",
+		"nonfiction": "Náučná literatúra",
+		"genre": "Vyberte žáner",
+		"class": "Vyberte tému",
+		"readingLevel": "Čitateľská úroveň",
+		"anyClass": "Žiadna",
+		"back": "Späť na hlavné témy",
+		"children": "Témy: {{label}}",
+		"selected": "Vybrané: {{label}}",
+		"parentOnly": "Použiť „{{label}}“ všeobecne",
+		"later": "Klasifikovať neskôr",
+		"laterHint": "Kniha sa zaradí do zoznamu „Na klasifikáciu“: jej exempláre sa nepožičiavajú a pásik na chrbte sa netlačí, kým sa nezaradí."
+	},
+	"detail": {
+		"heading": "Záznam knihy",
+		"tabs": {
+			"copies": "Exempláre",
+			"details": "Podrobnosti"
+		},
+		"copies": "{{available}} {{available:plural; one:dostupný; few:dostupné; other:dostupných;}} z {{total}}",
+		"noCopies": "Zatiaľ nie je žiadny exemplár: pridajte aspoň jeden, aby sa dal požičať.",
+		"seriesLink": "Všetky knihy série „{{series}}“",
+		"edit": "Upraviť",
+		"delete": "Odstrániť záznam",
+		"addCopies": "Pridať exempláre",
+		"deleteTitle": "Odstrániť záznam „{{title}}“?",
+		"deleteDescription": "Záznam zmizne z katalógu. Možné je to len bez exemplárov.",
+		"deleted": "Záznam bol odstránený",
+		"hasItems": "Záznam má ešte {{count}} {{count:plural; one:exemplár; few:exempláre; other:exemplárov;}}: najprv {{count:plural; one:ho; few:ich; other:ich;}} treba vyradiť alebo odstrániť.",
+		"columns": {
+			"barcode": "Čiarový kód",
+			"callNumber": "Signatúra",
+			"itemType": "Materiál",
+			"readingLevel": "Úroveň",
+			"status": "Stav",
+			"borrower": "Na výpožičke u",
+			"acquisition": "Nadobudnuté",
+			"labels": "Štítky"
+		},
+		"dueOn": "vrátiť do {{date}}",
+		"identifiers": "Identifikátory",
+		"source": "Zdroj: {{source}}",
+		"created": "Vytvorené {{when}}",
+		"updated": "Naposledy upravené {{when}}",
+		"onLoan": "Na výpožičke"
+	},
+	"item": {
+		"addTitle": "Pridať exempláre",
+		"copies": "Počet exemplárov",
+		"itemType": "Materiál",
+		"callNumber": "Signatúra",
+		"callNumberHint": "Navrhnutá podľa klasifikácie; možno ju zmeniť.",
+		"readingLevel": "Úroveň exemplára",
+		"enumeration": "Zväzok / číslo",
+		"acquisitionDate": "Dátum nadobudnutia",
+		"notes": "Poznámky k exemplári",
+		"notForLoan": "Len na prezenčné použitie (nepožičiava sa)",
+		"add": "Pridať",
+		"added": "{{count}} {{count:plural; one:exemplár pridaný; few:exempláre pridané; other:exemplárov pridaných;}}: {{barcodes}}",
+		"editTitle": "Upraviť exemplár {{barcode}}",
+		"save": "Uložiť",
+		"saved": "Exemplár bol upravený",
+		"status": "Zmeniť stav",
+		"statusTitle": "Stav exemplára {{barcode}}",
+		"newStatus": "Nový stav",
+		"reason": "Dôvod (nepovinný, zaznamená sa)",
+		"statusSaved": "Stav bol zmenený",
+		"onLoan": "Exemplár je na výpožičke: najprv zaznamenajte vrátenie.",
+		"delete": "Odstrániť exemplár",
+		"deleteTitle": "Odstrániť exemplár {{barcode}}?",
+		"deleteDescription": "Len pri chybe v katalogizácii: exemplár, ktorý sa niekedy požičal, sa nedá odstrániť, treba ho vyradiť.",
+		"deleted": "Exemplár bol odstránený",
+		"hasLoans": "Exemplár má zaznamenané výpožičky: treba ho vyradiť, nie odstrániť.",
+		"labelsTitle": "Štítky exemplára {{barcode}}"
+	},
+	"errors": {
+		"isbnInvalid": "Neplatné ISBN (skontrolujte číslice)",
+		"isbnTaken": "Záznam s týmto ISBN už existuje",
+		"issnInvalid": "Neplatné ISSN",
+		"eanInvalid": "Neplatný EAN",
+		"yearImplausible": "Nepravdepodobný rok",
+		"genreRequired": "Vyberte žáner",
+		"genreUnknown": "Žáner nie je v nastavení",
+		"genreNotForNonfiction": "Náučná literatúra nemá žáner",
+		"classCodeRequired": "Vyberte tému",
+		"classCodeUnknown": "Téma nie je v nastavení",
+		"classCodeNotForFiction": "Beletria nemá tému",
+		"readingLevelNotAllowed": "Čitateľská úroveň sa tu nepredpokladá",
+		"readingLevelOutOfRange": "Čitateľská úroveň nie je v nastavení",
+		"itemTypeUnknown": "Materiál nie je v nastavení",
+		"acquisitionDateInvalid": "Neplatný dátum (RRRR-MM-DD)",
+		"copiesOutOfRange": "Od 1 do 100 exemplárov naraz"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "Skúšobný zdroj"
+		},
+		"errors": {
+			"unreachable": "Služba nie je dostupná. Skontrolujte pripojenie k internetu a skúste to neskôr.",
+			"timeout": "Služba neodpovedala včas. Skúste to neskôr.",
+			"protocol": "Služba odpovedala neočakávane. Údaje možno zadať ručne.",
+			"http": "Služba odpovedala chybou. Skúste to neskôr.",
+			"rate_limited": "Služba odmietla požiadavku pre príliš veľa dopytov. Skúste to neskôr.",
+			"not_configured": "Služba nie je nastavená: chýba nastavenie (napríklad kľúč API).",
+			"spawn": "Program yaz-client nie je na tomto serveri dostupný. Informujte správcu."
+		},
+		"noHits": "Žiadne výsledky z {{provider}}.",
+		"hits": "{{count}} {{count:plural; one:výsledok; few:výsledky; other:výsledkov;}} z {{provider}}",
+		"fromCache": "z vyrovnávacej pamäte"
+	},
+	"fastAdd": {
+		"title": "Nová kniha",
+		"steps": {
+			"code": "Kód",
+			"lookup": "Vyhľadanie",
+			"form": "Záznam a exempláre",
+			"done": "Hotovo"
+		},
+		"code": {
+			"heading": "Načítajte čiarový kód",
+			"label": "ISBN alebo EAN",
+			"placeholder": "978…",
+			"material": "Materiál",
+			"noCode": "Bez kódu",
+			"noCodeHint": "Hľadajte podľa názvu a autora, alebo záznam vyplňte ručne.",
+			"manual": "Vyplniť ručne",
+			"notACode": "Načítaný kód nie je ISBN ani EAN: skontrolujte číslice, alebo zvoľte „Bez kódu“.",
+			"eanNotIsbn": "Načítaný EAN {{ean}}: nie je to ISBN, záznam sa preto musí vyplniť ručne.",
+			"cameraNotIsbn": "Nie je to ISBN: zamerajte čiarový kód knihy"
+		},
+		"search": {
+			"heading": "Hľadať podľa názvu a autora",
+			"title": "Názov",
+			"author": "Autor",
+			"submit": "Hľadať",
+			"empty": "Zadajte aspoň názov alebo autora."
+		},
+		"duplicate": {
+			"heading": "Toto ISBN je už v katalógu",
+			"copies": "{{count}} {{count:plural; one:exemplár; few:exempláre; other:exemplárov;}}",
+			"addCopy": "Pridať exemplár",
+			"open": "Otvoriť záznam",
+			"another": "Načítať iný kód"
+		},
+		"lookup": {
+			"searching": "Hľadanie v {{providers}}…",
+			"best": "Najúplnejší",
+			"heading": "Nájdené záznamy",
+			"pick": "Použiť tento záznam",
+			"none": "Nenašiel sa žiadny záznam. Záznam možno vyplniť ručne.",
+			"manual": "Zadať ručne",
+			"bySearch": "Hľadať podľa názvu",
+			"retry": "Skúsiť znova",
+			"another": "Nový kód",
+			"source": "Zdroj: {{provider}}",
+			"providerOk": "{{count}} {{count:plural; one:záznam; few:záznamy; other:záznamov;}}",
+			"providerCached": "z vyrovnávacej pamäte",
+			"failed": "Chyba"
+		},
+		"form": {
+			"heading": "Kontrola záznamu a pridanie exemplárov",
+			"rescan": "Načítať iný kód",
+			"bestOf": "Najúplnejší zo {{count}} nájdených záznamov. Skontrolujte rok a opis podľa exemplára.",
+			"otherRecords": "{{count:plural; one:Ďalší záznam; few:Ďalšie záznamy; other:Ďalších záznamov;}} ({{count}})",
+			"fromSource": "Záznam z {{provider}}: pred uložením skontrolujte údaje.",
+			"manualSource": "Záznam vyplnený ručne.",
+			"copiesSection": "Exempláre",
+			"copies": "Počet exemplárov",
+			"itemType": "Materiál",
+			"callNumber": "Signatúra",
+			"readingLevel": "Úroveň exemplárov",
+			"acquisitionDate": "Dátum nadobudnutia",
+			"save": "Uložiť záznam a exempláre",
+			"deweySuggested": "Téma navrhnutá podľa čísla Dewey {{dewey}}."
+		},
+		"done": {
+			"heading": "Záznam bol uložený",
+			"summary": "„{{title}}“ s {{count}} {{count:plural; one:exemplárom; few:exemplármi; other:exemplármi;}}",
+			"summaryCopies": "{{count}} {{count:plural; one:exemplár pridaný; few:exempláre pridané; other:exemplárov pridaných;}} k „{{title}}“",
+			"barcodes": "Čiarové kódy exemplárov",
+			"printLabels": "Tlačiť štítky",
+			"addToList": "Pridať do zoznamu štítkov",
+			"open": "Otvoriť záznam",
+			"another": "Pridať ďalší"
+		},
+		"cover": {
+			"title": "Obálka",
+			"alt": "Obálka knihy",
+			"searching": "Hľadanie obálky online…",
+			"found": "Nájdená v {{provider}}: uloží sa k záznamu. Ak je nesprávna, odfotografujte obálku knihy.",
+			"photo": "Fotografia obálky: uloží sa k záznamu.",
+			"none": "Obálka sa online nenašla: možno ju odfotografovať.",
+			"empty": "Žiadna obálka: možno ju odfotografovať.",
+			"take": "Odfotografovať obálku",
+			"replace": "Nahradiť fotografiou",
+			"remove": "Odstrániť",
+			"saving": "Ukladanie obálky…",
+			"failed": "Obálku sa nepodarilo uložiť: možno ju pridať zo záznamu knihy."
+		}
+	},
+	"cover": {
+		"title": "Obálka",
+		"take": "Odfotografovať obálku",
+		"upload": "Nahrať súbor",
+		"change": "Zmeniť obálku",
+		"delete": "Odstrániť obálku",
+		"deleteTitle": "Odstrániť obálku?",
+		"deleteDescription": "Obrázok sa vymaže zo servera; možno odfotografovať novú.",
+		"shoot": "Odfotiť",
+		"loading": "Načítava sa modul na narovnanie ({{loaded}} z {{total}} MB), len pri prvom použití.",
+		"loadingShort": "Načítava sa modul na narovnanie ({{loaded}} MB), len pri prvom použití.",
+		"loadFailed": "Modul na narovnanie sa nepodarilo načítať. Skontrolujte pripojenie a skúste to znova.",
+		"detecting": "Hľadanie okrajov obálky…",
+		"notFound": "Okraje sa nenašli automaticky: presuňte rohy na obálku.",
+		"adjustHint": "Presuňte štyri rohy na okraje obálky a potom ju narovnajte.",
+		"straighten": "Narovnať",
+		"result": "Výsledok",
+		"use": "Použiť túto obálku",
+		"retake": "Odfotiť znova",
+		"cancel": "Zrušiť",
+		"saved": "Obálka bola uložená",
+		"deleted": "Obálka bola odstránená",
+		"placeholder": "Žiadna obálka",
+		"alt": "Obálka knihy „{{title}}“",
+		"cameraHint": "Zamerajte celú obálku, aj šikmo: po snímke sa narovná.",
+		"errors": {
+			"too_large": "Súbor je príliš veľký: limit je {{maxMb}} MB.",
+			"not_an_image": "Súbor nie je čitateľný obrázok.",
+			"unsupported_format": "Nepodporovaný formát obrázka (použite JPEG, PNG, WebP alebo HEIC).",
+			"empty": "Nie je vybraný žiadny súbor."
+		},
+		"download": "Stiahnuť obálku",
+		"downloading": "Hľadanie obálky online…",
+		"downloaded": "Obálka stiahnutá z {{provider}}",
+		"downloadNotFound": "Pre tento ISBN sa online nenašla žiadna obálka: možno ju odfotografovať.",
+		"downloadNoIsbn": "Záznam nemá ISBN: obálka sa musí odfotografovať."
+	},
+	"export": {
+		"copiesTotal": "Exempláre",
+		"copiesAvailable": "Dostupné",
+		"callNumber": "Signatúra",
+		"acquiredAt": "Nadobudnutie"
+	},
+	"import": {
+		"title": "Import katalógu",
+		"upload": {
+			"file": "Súbor CSV",
+			"hint": "Jeden riadok na exemplár: údaje o názve sa opakujú na riadkoch jeho exemplárov. Povinné sú názov, autor a vydavateľ. Použite hlavičky šablóny, ktorú si môžete stiahnuť nižšie, s potrebnými stĺpcami. Pri migrácii z Koha použite export opísaný v príručke správcu.",
+			"submit": "Nahrať"
+		},
+		"mapping": {
+			"uncertain": "Stĺpce sa nerozpoznali: pred pokračovaním určte pole každého z nich.",
+			"remembered": "Stĺpce zapamätané z posledného importu tohto súboru.",
+			"specialValues": "Osobitné hodnoty, keď chýba autor alebo vydavateľ („{{author}}“, „{{publisher}}“)",
+			"specialValuesHint": "Bez tejto voľby sú riadky bez autora alebo vydavateľa chybami.",
+			"validate": "Overiť súbor",
+			"without": {
+				"biblioKey": "Bez stĺpca biblio_key sa exempláre tej istej knihy zoskupujú podľa ISBN; riadky bez ISBN predstavujú každý samostatný názov.",
+				"barcode": "Bez stĺpca barcode sa čiarové kódy exemplárov vygenerujú: po importe vytlačte ich štítky.",
+				"classification": "Bez stĺpca classification sa knihy zaradia do zoznamu „Na klasifikáciu“: ich exempláre sa nepožičiavajú, kým nie sú klasifikované."
+			}
+		},
+		"fields": {
+			"biblioKey": "Kľúč názvu (biblionumber)",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "Názov",
+			"subtitle": "Podnázov",
+			"originalTitle": "Pôvodný názov",
+			"responsibility": "Údaj o zodpovednosti",
+			"author": "Autor",
+			"publisher": "Vydavateľ",
+			"publicationPlace": "Miesto vydania",
+			"publicationYear": "Rok",
+			"physicalDescription": "Fyzický opis",
+			"series": "Séria",
+			"seriesNumber": "Číslo v sérii",
+			"dewey": "Dewey",
+			"classification": "Klasifikácia (žáner alebo téma, ccode v Koha)",
+			"readingLevel": "Čitateľská úroveň",
+			"subjects": "Témy",
+			"notes": "Poznámky k názvu",
+			"barcode": "Čiarový kód exemplára",
+			"callNumber": "Signatúra",
+			"itemType": "Materiál",
+			"enumeration": "Zväzok",
+			"status": "Stav",
+			"notForLoan": "Vylúčené z výpožičky",
+			"acquisitionDate": "Dátum nadobudnutia",
+			"itemNotes": "Poznámky k exemplári"
+		},
+		"preview": {
+			"ready": "Žiadne chyby: import je možný.",
+			"blocked": "Opravte chyby v súbore a overte ho znova: súbor s chybami sa neimportuje.",
+			"nothing": "Všetky exempláre v súbore sú už v katalógu: nie je čo importovať.",
+			"titles": "{{new}} {{new:plural; one:nový názov; few:nové názvy; other:nových názvov;}}, {{existing}} už v katalógu (ich exempláre sa pridajú)",
+			"columns": {
+				"title": "Názov",
+				"barcode": "Čiarový kód",
+				"classification": "Klasifikácia"
+			},
+			"question": {
+				"title": "Exempláre toho istého názvu s rôznymi úrovňami",
+				"text": "V {{count}} {{count:plural; one:názve; few:názvoch; other:názvoch;}} majú exempláre rôzne úrovne čítania. Úroveň môže byť na každom exemplári namiesto na názve: to je nastavenie „úroveň na exemplár“, ktoré platí pre celý katalóg a presunie úroveň názvov, ktoré už sú v katalógu, na ich exempláre.",
+				"yes": "Áno, úroveň na exemplár",
+				"no": "Nie, sú to chyby na opravu"
+			},
+			"commit": "Importovať",
+			"back": "Späť na stĺpce",
+			"generatedBarcodes": "{{count}} {{count:plural; one:exemplár; few:exempláre; other:exemplárov;}} bez čiarového kódu: kód sa vygeneruje a potom sa vytlačia štítky.",
+			"toClassify": "{{count}} {{count:plural; one:nový názov bez klasifikácie; few:nové názvy bez klasifikácie; other:nových názvov bez klasifikácie;}}: {{count:plural; one:pôjde; few:pôjdu; other:pôjdu;}} do „Na klasifikáciu“."
+		},
+		"reasons": {
+			"tooLong": "Text je príliš dlhý v stĺpci {{column}}: najviac {{max}} znakov",
+			"isbnInvalid": "Neplatné ISBN: „{{value}}“",
+			"classificationUnknown": "Klasifikácia nie je v nastavení: „{{value}}“",
+			"barcodeInvalid": "Čiarový kód s nepovolenými znakmi: „{{value}}“",
+			"barcodeCheckDigit": "Čiarový kód s nesprávnym kontrolným znakom: „{{value}}“",
+			"barcodeDuplicateInFile": "Čiarový kód už použitý na riadku {{line}}",
+			"barcodeTaken": "Čiarový kód {{value}} už patrí inému exemplári v katalógu",
+			"barcodeIsCard": "Kód {{value}} je alebo vyzerá ako číslo čitateľského preukazu: exemplár nemôže mať kód z preukazu",
+			"statusUnknown": "Stav sa nerozpoznal: „{{value}}“ (dostupný, stratený, poškodený, v oprave, vyradený)",
+			"notForLoanUnknown": "Hodnota pre „vylúčené z výpožičky“ sa nerozpoznala: „{{value}}“ (áno/nie)",
+			"dateInvalid": "Neplatný dátum: „{{value}}“ (RRRR-MM-DD alebo DD/MM/RRRR)",
+			"authorMissing": "Chýba autor (s „osobitnými hodnotami“ sa doplní Anonym)",
+			"publisherMissing": "Chýba vydavateľ (s „osobitnými hodnotami“ sa doplní s. n.)",
+			"titleMissing": "Chýba názov",
+			"groupConflict": "Rovnaký kľúč ako na riadku {{line}}, ale iný názov",
+			"classQuestion": "Exempláre s rôznymi úrovňami ({{classes}}): odpovedzte na otázku nižšie",
+			"classDiffers": "Exempláre s rôznymi úrovňami ({{classes}}) bez úrovne na exemplár",
+			"copyExists": "Exemplár už je v katalógu: preskočí sa",
+			"mergedIntoExisting": "Pridané k názvu, ktorý je už v katalógu (rovnaký kľúč alebo rovnaké ISBN)"
+		},
+		"done": {
+			"title": "Katalóg bol importovaný",
+			"summary": "{{titlesCreated}} {{titlesCreated:plural; one:nový názov; few:nové názvy; other:nových názvov;}}, {{copiesCreated}} {{copiesCreated:plural; one:exemplár pridaný; few:exempláre pridané; other:exemplárov pridaných;}} ({{titlesMerged}} {{titlesMerged:plural; one:názov už prítomný; few:názvy už prítomné; other:názvov už prítomných;}}, {{copiesSkipped}} {{copiesSkipped:plural; one:exemplár preskočený; few:exempláre preskočené; other:exemplárov preskočených;}}).",
+			"classPerItem": "Úroveň na exemplár bola zapnutá.",
+			"batch": "Import č. {{id}}: pôvodný súbor sa zachová.",
+			"labels": "Vytlačiť štítky exemplárov bez kódu",
+			"open": "Prejsť do katalógu",
+			"again": "Importovať ďalší súbor"
+		},
+		"columns": {
+			"title": {
+				"hint": "Názov knihy."
+			},
+			"author": {
+				"hint": "Priezvisko, meno; prázdne pole je chyba, ak nejde o „osobitné hodnoty“."
+			},
+			"publisher": {
+				"hint": "Vydavateľ; prázdne pole ako pri autorovi."
+			},
+			"biblioKey": {
+				"hint": "Kód názvu v starom programe (biblionumber v Koha): drží exempláre pohromade.",
+				"missing": "exempláre sa zoskupujú podľa ISBN"
+			},
+			"barcode": {
+				"hint": "Čiarový kód, ktorý už je na exemplári.",
+				"missing": "kód sa vygeneruje a štítky sa vytlačia"
+			},
+			"classification": {
+				"hint": "Kód žánru (beletria) alebo témy (náučná literatúra).",
+				"missing": "kniha sa zaradí do „Na klasifikáciu“"
+			},
+			"readingLevel": {
+				"hint": "Čitateľská úroveň (beletria)."
+			},
+			"isbn": {
+				"hint": "ISBN-10 alebo ISBN-13."
+			},
+			"issn": {
+				"hint": "Pre periodiká."
+			},
+			"ean": {
+				"hint": "Kód EAN DVD a iných materiálov."
+			},
+			"subtitle": {
+				"hint": "Podnázov."
+			},
+			"originalTitle": {
+				"hint": "Iba pre preklady: názov v pôvodnom jazyku."
+			},
+			"responsibility": {
+				"hint": "Ilustrátori, prekladatelia…"
+			},
+			"publicationPlace": {
+				"hint": "Miesto vydania."
+			},
+			"publicationYear": {
+				"hint": "Rok vydania."
+			},
+			"physicalDescription": {
+				"hint": "Strany, ilustrácie, formát."
+			},
+			"series": {
+				"hint": "Séria (nie edícia vydavateľa)."
+			},
+			"seriesNumber": {
+				"hint": "Číslo v sérii."
+			},
+			"dewey": {
+				"hint": "Číslo Dewey, len ako orientačné."
+			},
+			"subjects": {
+				"hint": "Kľúčové slová oddelené ; alebo ,."
+			},
+			"notes": {
+				"hint": "Poznámky k názvu."
+			},
+			"callNumber": {
+				"hint": "Signatúra; ak chýba, navrhne sa."
+			},
+			"itemType": {
+				"hint": "Materiál (kniha, DVD…); ak chýba, prvý z nastavených."
+			},
+			"enumeration": {
+				"hint": "Zväzok, pri dielach vo viacerých zväzkoch."
+			},
+			"status": {
+				"hint": "dostupný, stratený, poškodený, v oprave, vyradený."
+			},
+			"notForLoan": {
+				"hint": "1 alebo áno pri exemplároch na prezenčné použitie."
+			},
+			"acquisitionDate": {
+				"hint": "Dátum nadobudnutia; ak chýba, dnešný."
+			},
+			"itemNotes": {
+				"hint": "Poznámky k exemplári."
+			}
+		}
+	},
+	"batch": {
+		"selected": "Zmeniť exempláre výberu",
+		"title": "Zmeniť exempláre",
+		"scope": "{{count}} {{count:plural; one:exemplár; few:exempláre; other:exemplárov;}}",
+		"operation": "Čo zmeniť",
+		"operations": {
+			"status": "Stav",
+			"itemType": "Materiál",
+			"notForLoan": "Vylúčené z výpožičky",
+			"readingLevel": "Úroveň exemplára",
+			"acquisitionDate": "Dátum nadobudnutia"
+		},
+		"value": "Nová hodnota",
+		"yes": "Áno",
+		"no": "Nie",
+		"noClass": "Žiadna úroveň",
+		"reason": "Dôvod",
+		"reasonHint": "Povinné pri stratených a vyradených: zostáva v zázname každého exemplára.",
+		"check": "Skontrolovať",
+		"apply": "Použiť na {{count}} {{count:plural; one:exemplár; few:exempláre; other:exemplárov;}}",
+		"plan": {
+			"changes": "{{count}} {{count:plural; one:exemplár sa zmení; few:exempláre sa zmenia; other:exemplárov sa zmení;}}",
+			"onLoan": "{{count}} na výpožičke {{count:plural; one:zostáva tak, ako je (najprv ho treba vrátiť); few:zostávajú tak, ako sú (najprv ich treba vrátiť); other:zostáva tak, ako je (najprv ich treba vrátiť);}}",
+			"unchanged": "{{count}} {{count:plural; one:už má; few:už majú; other:už má;}} túto hodnotu",
+			"notFound": "{{count}} {{count:plural; one:už neexistuje; few:už neexistujú; other:už neexistuje;}}",
+			"notAllowed": "{{count}} {{count:plural; one:nie je beletria; few:nie sú beletria; other:nie je beletria;}}: úroveň sa neuplatňuje",
+			"none": "Žiadny exemplár na zmenu."
+		},
+		"excludedTitle": "Exempláre, ktoré zostávajú tak, ako sú",
+		"done": "{{count}} {{count:plural; one:exemplár zmenený; few:exempláre zmenené; other:exemplárov zmenených;}}",
+		"errors": {
+			"reasonRequired": "Napíšte dôvod: je povinný pri stratených a vyradených.",
+			"itemTypeUnknown": "Materiál nie je v nastavení.",
+			"readingLevelNotAllowed": "Úroveň na exemplár nie je zapnutá.",
+			"readingLevelOutOfRange": "Čitateľská úroveň nie je v nastavení.",
+			"dateInvalid": "Neplatný dátum.",
+			"statusUnknown": "Neplatný stav.",
+			"classificationUnknown": "Vyberte žáner alebo tému z nastavenia."
+		},
+		"reclassify": {
+			"button": "Preklasifikovať",
+			"title": "Preklasifikovať vybrané názvy",
+			"scope": "{{count}} {{count:plural; one:názov; few:názvy; other:názvov;}}",
+			"resuggest": "Prepísať signatúry exemplárov podľa novej klasifikácie",
+			"labelsHint": "Pásiky na chrbte (a štítky, ak sa zmení signatúra) sa vrátia medzi tie, ktoré sa majú vytlačiť.",
+			"changes": "{{count}} {{count:plural; one:názov sa zmení; few:názvy sa zmenia; other:názvov sa zmení;}}",
+			"apply": "Preklasifikovať {{count}} {{count:plural; one:názov; few:názvy; other:názvov;}}",
+			"done": "{{count}} {{count:plural; one:názov preklasifikovaný; few:názvy preklasifikované; other:názvov preklasifikovaných;}}, {{calls}} {{calls:plural; one:signatúra prepísaná; few:signatúry prepísané; other:signatúr prepísaných;}}"
+		}
+	},
+	"search": {
+		"suggest": "Kód {{barcode}} je exemplár názvu „{{title}}“.",
+		"openSuggest": "Otvoriť záznam",
+		"available": "Iba dostupné",
+		"yearFrom": "Rok od",
+		"yearTo": "Rok do",
+		"copiesAvailable": "{{available}} z {{total}} dostupných",
+		"noCopies": "Žiadne exempláre"
+	},
+	"inventory": {
+		"title": "Revízia fondu",
+		"defaultName": "Revízia fondu",
+		"emptyTitle": "Žiadna revízia nie je spustená",
+		"emptyHint": "Spustite kampaň a načítavajte exempláre po regáloch: na konci sa exempláre, ktoré sa nenačítali, označia ako stratené.",
+		"name": "Názov kampane",
+		"start": "Nová kampaň",
+		"started": "Spustená {{when}}",
+		"overall": "Celá knižnica",
+		"progress": "{{seen}} z {{expected}} ({{percent}} %)",
+		"counts": "{{scanned}} {{scanned:plural; one:exemplár načítaný; few:exempláre načítané; other:exemplárov načítaných;}} · {{misplaced}} na nesprávnom regáli · {{found}} {{found:plural; one:znovu nájdený; few:znovu nájdené; other:znovu nájdených;}}",
+		"byShelf": "Postup podľa regálov",
+		"noShelf": "Bez signatúry",
+		"scanTitle": "Načítajte exempláre",
+		"shelf": "Regál",
+		"shelfHint": "Napríklad B alebo 590: exempláre s inou signatúrou sa označia ako na nesprávnom regáli.",
+		"scanLabel": "Čiarový kód exemplára",
+		"camera": "Načítať fotoaparátom",
+		"outcomes": {
+			"seen": "{{title}} ({{barcode}}): načítaná.",
+			"again": "{{title}} ({{barcode}}): už načítaná {{when}}.",
+			"misplaced": "{{title}} ({{barcode}}): na nesprávnom regáli; vráťte ju podľa signatúry.",
+			"found": "{{title}} ({{barcode}}): bola stratená a je nájdená; je opäť dostupná.",
+			"onLoan": "{{title}} ({{barcode}}): je na výpožičke; zaznamenajte vrátenie pri pulte.",
+			"withdrawn": "{{title}} ({{barcode}}): vyradený exemplár, treba ho zo regálu odstrániť.",
+			"unknown": "{{code}}: žiadny exemplár nemá tento čiarový kód."
+		},
+		"missing": "Ešte treba nájsť ({{count}})",
+		"allShelves": "Všetky regály",
+		"allTypes": "Všetky materiály",
+		"noneMissing": "Všetky očakávané exempláre sú načítané.",
+		"more": "{{count:plural; one:a ešte jeden, úplný zoznam získate exportom; few:a ešte {{count}}, úplný zoznam získate exportom; other:a ešte {{count}}, úplný zoznam získate exportom;}}.",
+		"close": "Ukončiť revíziu",
+		"closeTitle": "Ukončiť revíziu?",
+		"closeHint": "{{count:plural; one:{{count}} exemplár, ktorý sa nikdy nenačítal, bude označený ako stratený; few:{{count}} exempláre, ktoré sa nikdy nenačítali, budú označené ako stratené; other:{{count}} exemplárov, ktoré sa nikdy nenačítali, bude označených ako stratených;}}. Revíziu možno do týždňa znova otvoriť, čím sa zmena zruší.",
+		"closedTitle": "Revízia bola ukončená",
+		"summary": "Načítaných {{seen}} z {{expected}} {{expected:plural; one:exemplára; few:exemplárov; other:exemplárov;}}, {{lost}} {{lost:plural; one:označený ako stratený; few:označené ako stratené; other:označených ako stratených;}}, {{found}} {{found:plural; one:znovu nájdený; few:znovu nájdené; other:znovu nájdených;}}, {{onLoan}} na výpožičke, {{misplaced}} na nesprávnom regáli.",
+		"history": "Predchádzajúce revízie",
+		"reopen": "Znova otvoriť",
+		"errors": {
+			"alreadyOpen": "Revízia už prebieha.",
+			"notOpen": "Táto revízia je ukončená.",
+			"notFound": "Revízia sa nenašla.",
+			"tooLate": "Znova otvoriť sa dá len do týždňa od ukončenia.",
+			"badName": "Zadajte názov kampane.",
+			"badNotes": "Poznámky ku kampani môžu mať najviac 500 znakov."
+		},
+		"cameraShelf": "Regál {{shelf}}",
+		"cameraDone": "Hotovo"
+	},
+	"toClassify": {
+		"title": "Na klasifikáciu",
+		"label": "Na klasifikáciu",
+		"intro": "Knihy zadané bez klasifikácie, od najstaršej. Ich exempláre sa nepožičiavajú, kým nie sú klasifikované.",
+		"count": "{{count}} {{count:plural; one:kniha; few:knihy; other:kníh;}} na klasifikáciu",
+		"empty": "Žiadna kniha na klasifikáciu",
+		"emptyHint": "Každá kniha v katalógu má žáner alebo tému.",
+		"start": "Začať klasifikovať",
+		"classify": "Klasifikovať",
+		"badge": "Na klasifikáciu",
+		"badgeHint": "Exempláre sa nepožičiavajú, kým kniha nie je klasifikovaná.",
+		"columns": {
+			"title": "Názov",
+			"author": "Autor",
+			"publisher": "Vydavateľ",
+			"year": "Rok",
+			"isbn": "ISBN",
+			"copies": "Exempláre",
+			"enteredOn": "Zadané dňa"
+		},
+		"flow": {
+			"title": "Klasifikovať knihu",
+			"saveNext": "Uložiť a ďalej",
+			"save": "Uložiť",
+			"skip": "Preskočiť",
+			"saved": "Kniha „{{title}}“ je klasifikovaná",
+			"end": "V tomto kole už nie sú ďalšie knihy na klasifikáciu.",
+			"backToList": "Späť na zoznam",
+			"already": "Táto kniha je už klasifikovaná.",
+			"callNumber": "Signatúra exemplárov",
+			"callNumberHint": "Exempláre bez signatúry ju dostanú; potom sa môže vytlačiť pásik na chrbte.",
+			"dewey": "Číslo Dewey {{dewey}} zodpovedá téme {{code}}.",
+			"copies": "{{count}} {{count:plural; one:exemplár; few:exempláre; other:exemplárov;}}",
+			"subjects": "Témy",
+			"notes": "Poznámky"
+		}
+	}
+}

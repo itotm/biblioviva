@@ -1,0 +1,53 @@
+{
+	"id": "us-high",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md Phase 12, B2 of docs/studies/barcodes-and-school-classes.md).",
+	"name": {
+		"it": "Scuola superiore (USA)",
+		"en": "High school (USA)"
+	},
+	"country": "US",
+	"languages": ["en"],
+	"school": {
+		"stages": [
+			{
+				"code": "high",
+				"name": "High school"
+			}
+		],
+		"levels": [
+			{
+				"code": "G9",
+				"label": "9",
+				"name": "Grade 9",
+				"stage": "high"
+			},
+			{
+				"code": "G10",
+				"label": "10",
+				"name": "Grade 10",
+				"stage": "high"
+			},
+			{
+				"code": "G11",
+				"label": "11",
+				"name": "Grade 11",
+				"stage": "high"
+			},
+			{
+				"code": "G12",
+				"label": "12",
+				"name": "Grade 12",
+				"stage": "high"
+			}
+		],
+		"classLabel": "{level}-{group}",
+		"groupWord": "Homeroom",
+		"promotionWithinStage": "clear",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"high": ["A", "B", "C"]
+	},
+	"teacherGroup": "Teachers",
+	"readingLevels": []
+}

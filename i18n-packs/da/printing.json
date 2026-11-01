@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Udskrivning",
+		"newPatrons": "Ny lånerliste",
+		"newItems": "Ny bogliste",
+		"newPatronsTitle": "Ny liste over lånere",
+		"newItemsTitle": "Ny liste over bøger",
+		"name": "Navn på listen",
+		"defaultName": "Liste {{n}} af {{date}}",
+		"kind": "Type",
+		"kinds": {
+			"all": "Alle",
+			"patrons": "Lånere",
+			"items": "Bøger"
+		},
+		"classes": "Klasser",
+		"classesHint": "Lånerkortene for en hel klasse, uden at oprette en liste.",
+		"classKind": "Klasse",
+		"count": "{{count}} {{count:plural; one:post; other:poster;}}",
+		"empty": "Ingen lister. Lister oprettes her eller med »Tilføj til liste« på siderne Lånere og Katalog.",
+		"lastPrinted": "Udskrevet den {{when}}",
+		"neverPrinted": "Aldrig udskrevet",
+		"open": "Åbn",
+		"created": "Liste oprettet",
+		"deleted": "Liste slettet",
+		"deleteTitle": "Slette listen »{{name}}«?",
+		"deleteDescription": "Posterne fjernes fra listen; lånerne bliver i arkivet."
+	},
+	"list": {
+		"rename": "Omdøb",
+		"renamed": "Liste omdøbt",
+		"print": "Udskriv kort",
+		"markPrinted": "Markér som udskrevet",
+		"marked": "{{count}} {{count:plural; one:kort; other:kort;}} markeret som udskrevet",
+		"clearAfter": "Tøm listen efter udskrivning",
+		"clear": "Tøm",
+		"cleared": "Liste tømt",
+		"clearTitle": "Tømme listen?",
+		"clearDescription": "Alle poster fjernes fra listen; lånerne bliver i arkivet.",
+		"delete": "Slet",
+		"entries": "{{count}} {{count:plural; one:låner; other:lånere;}} på listen",
+		"empty": "Listen er tom: tilføj lånere med hurtigfiltrene, med stregkodelæseren eller fra siden Lånere.",
+		"remove": "Fjern fra listen",
+		"moveUp": "Flyt op",
+		"moveDown": "Flyt ned",
+		"dragHint": "Træk posterne for at ændre udskrivningsrækkefølgen.",
+		"removed": "Fjernet fra listen",
+		"columns": {
+			"position": "Nr.",
+			"printed": "Kort udskrevet"
+		},
+		"printedYes": "ja",
+		"printedNo": "nej",
+		"quick": {
+			"title": "Tilføj med filtre",
+			"hint": "Den, der allerede er på listen, tilføjes ikke to gange.",
+			"type": "Type",
+			"any": "Alle",
+			"stage": "Skoletrin",
+			"level": "Årgang",
+			"withoutPrintedCard": "Kun dem, hvis kort aldrig er udskrevet",
+			"withoutPhoto": "Kun dem uden foto",
+			"importBatch": "Import",
+			"anyBatch": "— ingen —",
+			"batchLabel": "nr. {{id}} · {{file}} · {{created}} {{created:plural; one:ny; other:nye;}}",
+			"createdAfter": "Oprettet fra",
+			"add": "Tilføj til listen",
+			"added": "{{added}} {{added:plural; one:tilføjet; other:tilføjede;}}, {{skipped}} {{skipped:plural; one:allerede på listen; other:allerede på listen;}}",
+			"none": "Ingen låner svarer til filtrene.",
+			"pendingLabels": "Etiketter der skal udskrives",
+			"pendingAny": "— alle eksemplarer —",
+			"acquiredFrom": "Anskaffet fra",
+			"acquiredTo": "til",
+			"genre": "Genre",
+			"itemType": "Eksemplartype",
+			"batchLabelItems": "nr. {{id}} · {{file}} · {{created}} {{created:plural; one:nyt eksemplar; other:nye eksemplarer;}}",
+			"noneItems": "Intet eksemplar svarer til filtrene.",
+			"addedItems": "{{added}} {{added:plural; one:tilføjet; other:tilføjede;}}, {{skipped}} {{skipped:plural; one:allerede på listen; other:allerede på listen;}}",
+			"nonfictionClass": "Faglitteraturklasse"
+		},
+		"scan": {
+			"title": "Tilføj med stregkodelæseren",
+			"hint": "Scan hvert lånerkort: låneren tilføjes med det samme. Kort der allerede er på listen, ignoreres.",
+			"added": "{{name}} tilføjet",
+			"duplicate": "{{name}} er allerede på listen",
+			"unknown": "Ingen låner med kortet {{card}}",
+			"notCard": "Den læste kode er ikke et lånerkort",
+			"hintItems": "Scan stregkoden på hvert eksemplar, fx mens du går langs hylden: eksemplaret tilføjes med det samme. Eksemplarer der allerede er på listen, ignoreres.",
+			"addedItem": "{{title}} ({{barcode}}) tilføjet",
+			"duplicateItem": "{{title}} ({{barcode}}) er allerede på listen",
+			"unknownItem": "Intet eksemplar med stregkoden {{barcode}}",
+			"notItem": "Den læste kode er ikke et eksemplar"
+		},
+		"printLabels": "Udskriv etiketter",
+		"markPrintedKind": "Etiketter udskrevet",
+		"markedItems": "{{count}} {{count:plural; one:eksemplar; other:eksemplarer;}} markeret som udskrevet",
+		"entriesItems": "{{count}} {{count:plural; one:eksemplar; other:eksemplarer;}} på listen",
+		"emptyItems": "Listen er tom: tilføj eksemplarer med hurtigfiltrene, med stregkodelæseren eller fra kataloget.",
+		"clearDescriptionItems": "Alle poster fjernes; eksemplarerne bliver i kataloget."
+	},
+	"basket": {
+		"label": "Udskriftslister",
+		"labelToPrint": "Udskriftslister: {{count}} der skal udskrives",
+		"entry": "{{name}} ({{count}})",
+		"none": "Ingen liste der skal udskrives",
+		"all": "Alle lister"
+	},
+	"addTo": {
+		"button": "Tilføj til liste",
+		"selected": "Tilføj de valgte til en liste",
+		"title": "Tilføj til udskriftsliste",
+		"existing": "Eksisterende liste",
+		"create": "Ny liste",
+		"newName": "Navn på den nye liste",
+		"confirm": "Tilføj",
+		"done": "{{added}} {{added:plural; one:tilføjet; other:tilføjede;}} til »{{name}}«, {{skipped}} {{skipped:plural; one:allerede på listen; other:allerede på listen;}}"
+	},
+	"labels": {
+		"title": "Udskriv etiketter",
+		"button": "Udskriv etiketter",
+		"selected": "Udskriv etiketter for de valgte",
+		"kind": "Etiketttype",
+		"kinds": {
+			"pair": "Par",
+			"barcode": "Kun stregkode",
+			"spine": "Kun rygbånd"
+		},
+		"kindHints": {
+			"pair": "Rygbånd øverst og stregkodeetiket nedenunder, et par pr. bog (den nuværende udskrift).",
+			"barcode": "Kun den interne stregkodeetiket, til genudskrivninger.",
+			"spine": "Kun rygbåndet, fx efter en omklassificering."
+		},
+		"stock": "Etiketark",
+		"start": "Første ledige position",
+		"startHint": "Fra 1 til {{max}}: springer de etiketter over, der allerede er brugt på arket.",
+		"count": "{{count}} {{count:plural; one:eksemplar; other:eksemplarer;}}",
+		"unclassified": "{{count}} {{count:plural; one:eksemplar af en bog; other:eksemplarer af bøger;}} der skal klassificeres: der udskrives kun {{count:plural; one:dens; other:deres;}} stregkodeetiket, og rygbåndet efter klassificeringen.",
+		"pendingCount": "{{count}} {{count:plural; one:eksemplar; other:eksemplarer;}} med etiketter der skal udskrives",
+		"pages": "{{pages}} {{pages:plural; one:ark; other:ark;}} ({{perPage}} pr. ark)",
+		"print": "Åbn udskriftssiden",
+		"afterPrint": "Udskriftssiden er åbnet i en ny fane. Når etiketterne er udskrevet, markér dem som udskrevet.",
+		"markPrinted": "Markér som udskrevet",
+		"marked": "{{count}} {{count:plural; one:eksemplar; other:eksemplarer;}} markeret som udskrevet",
+		"status": {
+			"printed": "Etiketter udskrevet",
+			"pending": "Etiketter der skal udskrives",
+			"partial": "Mangler en etiket"
+		}
+	},
+	"cards": {
+		"title": "Udskriv kort",
+		"count": "{{count}} {{count:plural; one:kort; other:kort;}}",
+		"afterPrint": "Udskriftssiden er åbnet i en ny fane. Når kortene er udskrevet, markér dem som udskrevet.",
+		"layout": "Sådan udskrives",
+		"layouts": {
+			"side-by-side": "Forside og bagside side om side",
+			"duplex": "På begge sider af arket"
+		},
+		"window": "I browserens udskriftsvindue:",
+		"steps": {
+			"duplex": {
+				"long-edge": "vælg »Dobbeltsidet«, og vend på den lange kant;",
+				"short-edge": "vælg »Dobbeltsidet«, og vend på den korte kant;"
+			},
+			"scale": "skala 100 % (»Faktisk størrelse«, ikke »Tilpas til side«);",
+			"margins": "margener: ingen.",
+			"after": {
+				"side-by-side": {
+					"marks": "Klip derefter hvert kort ud ved at forbinde skærelinjerne rundt om kortene med en lineal, og fold det midt over langs den korte kant.",
+					"line": "Klip derefter hvert kort ud langs den farvede linje omkring det, og fold det midt over langs den korte kant.",
+					"edge": "Klip derefter hvert kort ud langs kanten, og fold det midt over langs den korte kant."
+				},
+				"duplex": {
+					"marks": "Klip derefter kortene ud ved at forbinde skærelinjerne rundt om forsiderne med en lineal: bagsiden er allerede bag forsiden (ti pr. ark).",
+					"line": "Klip derefter kortene ud langs den farvede linje omkring forsiderne: bagsiden er allerede bag forsiden (ti pr. ark).",
+					"edge": "Klip derefter kortene ud langs kanten af forsiderne: bagsiden er allerede bag forsiden (ti pr. ark)."
+				}
+			}
+		},
+		"print": "Udskriv",
+		"calibrate": "Første gang, eller hvis bagsiderne ikke falder bag forsiderne:"
+	},
+	"words": {
+		"teacher": "Lærer",
+		"title": "Titel",
+		"code": "Kode",
+		"dueBy": "Afleveres senest",
+		"due": "Frist",
+		"name": "Navn",
+		"daysOverdue": "Dage overskredet",
+		"loanOn": "Udlån af {{date}} til",
+		"overduesOn": "Bibliotekets rykkere af {{date}}",
+		"toReturn": "Bøger der skal afleveres til biblioteket",
+		"enjoy": "God læselyst."
+	}
+}

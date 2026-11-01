@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Impressió",
+		"newPatrons": "Nova llista d'usuaris",
+		"newItems": "Nova llista de llibres",
+		"newPatronsTitle": "Nova llista d'usuaris",
+		"newItemsTitle": "Nova llista de llibres",
+		"name": "Nom de la llista",
+		"defaultName": "Llista {{n}} del {{date}}",
+		"kind": "Tipus",
+		"kinds": {
+			"all": "Tots",
+			"patrons": "Usuaris",
+			"items": "Llibres"
+		},
+		"classes": "Classes",
+		"classesHint": "Els carnets de tota una classe, sense crear-ne la llista.",
+		"classKind": "Classe",
+		"count": "{{count}} {{count:plural; one:entrada; other:entrades;}}",
+		"empty": "Cap llista. Les llistes es creen aquí o amb «Afegeix a la llista» a les pàgines Usuaris i Catàleg.",
+		"lastPrinted": "Imprès el {{when}}",
+		"neverPrinted": "Mai impresa",
+		"open": "Obre",
+		"created": "Llista creada",
+		"deleted": "Llista eliminada",
+		"deleteTitle": "Eliminar la llista «{{name}}»?",
+		"deleteDescription": "Les entrades surten de la llista; els usuaris romanen a l'arxiu."
+	},
+	"list": {
+		"rename": "Reanomena",
+		"renamed": "Llista reanomenada",
+		"print": "Imprimeix carnets",
+		"markPrinted": "Marca com a impresos",
+		"marked": "{{count:plural; one:{{count}} carnet marcat com a imprès; other:{{count}} carnets marcats com a impresos;}}",
+		"clearAfter": "Buida la llista després de la impressió",
+		"clear": "Buida",
+		"cleared": "Llista buidada",
+		"clearTitle": "Buidar la llista?",
+		"clearDescription": "Totes les entrades surten de la llista; els usuaris romanen a l'arxiu.",
+		"delete": "Elimina",
+		"entries": "{{count}} {{count:plural; one:usuari; other:usuaris;}} a la llista",
+		"empty": "La llista és buida: els usuaris s'afegeixen amb els filtres ràpids, amb el lector o des de la pàgina Usuaris.",
+		"remove": "Treu de la llista",
+		"moveUp": "Mou amunt",
+		"moveDown": "Mou avall",
+		"dragHint": "Arrossega les entrades per canviar l'ordre d'impressió.",
+		"removed": "Tret de la llista",
+		"columns": {
+			"position": "Núm.",
+			"printed": "Carnet imprès"
+		},
+		"printedYes": "sí",
+		"printedNo": "no",
+		"quick": {
+			"title": "Afegeix amb els filtres",
+			"hint": "Qui ja és a la llista no s'afegeix dues vegades.",
+			"type": "Tipus",
+			"any": "Qualsevol",
+			"stage": "Ordre d'escola",
+			"level": "Curs",
+			"withoutPrintedCard": "Només qui encara no té el carnet imprès",
+			"withoutPhoto": "Només qui no té la foto",
+			"importBatch": "Importació",
+			"anyBatch": "— cap —",
+			"batchLabel": "núm. {{id}} · {{file}} · {{created}} {{created:plural; one:nou; other:nous;}}",
+			"createdAfter": "Creats des del",
+			"add": "Afegeix a la llista",
+			"added": "{{added}} {{added:plural; one:afegit; other:afegits;}}, {{skipped}} {{skipped:plural; one:ja present; other:ja presents;}}",
+			"none": "Cap usuari correspon als filtres.",
+			"pendingLabels": "Etiquetes per imprimir",
+			"pendingAny": "— totes les còpies —",
+			"acquiredFrom": "Adquirits des del",
+			"acquiredTo": "fins al",
+			"genre": "Gènere",
+			"itemType": "Tipus de còpia",
+			"batchLabelItems": "núm. {{id}} · {{file}} · {{created}} {{created:plural; one:còpia; other:còpies;}}",
+			"noneItems": "Cap còpia no correspon als filtres.",
+			"addedItems": "{{added}} {{added:plural; one:afegida; other:afegides;}}, {{skipped}} {{skipped:plural; one:ja present; other:ja presents;}}",
+			"nonfictionClass": "Classe de no ficció"
+		},
+		"scan": {
+			"title": "Afegeix amb el lector",
+			"hint": "Llegeix el carnet de cada usuari: s'afegeix a la llista de seguida. Els carnets ja presents a la llista s'ignoren.",
+			"added": "{{name}} afegit",
+			"duplicate": "{{name}} ja és a la llista",
+			"unknown": "Cap usuari amb el carnet {{card}}",
+			"notCard": "El codi llegit no és un carnet",
+			"hintItems": "Llegeix el codi de barres de cada còpia, també caminant al llarg de la prestatgeria: la còpia s'afegeix a la llista de seguida. Les còpies ja presents a la llista s'ignoren.",
+			"addedItem": "{{title}} ({{barcode}}) afegit",
+			"duplicateItem": "{{title}} ({{barcode}}) ja és a la llista",
+			"unknownItem": "Cap còpia amb el codi {{barcode}}",
+			"notItem": "El codi llegit no és una còpia"
+		},
+		"printLabels": "Imprimeix etiquetes",
+		"markPrintedKind": "Etiquetes impreses",
+		"markedItems": "{{count:plural; one:{{count}} còpia marcada com a impresa; other:{{count}} còpies marcades com a impreses;}}",
+		"entriesItems": "{{count}} {{count:plural; one:còpia; other:còpies;}} a la llista",
+		"emptyItems": "La llista és buida: les còpies s'afegeixen amb els filtres ràpids, amb el lector o des del catàleg.",
+		"clearDescriptionItems": "Totes les entrades es treuen; les còpies romanen al catàleg."
+	},
+	"basket": {
+		"label": "Llistes d'impressió",
+		"labelToPrint": "Llistes d'impressió: {{count}} per imprimir",
+		"entry": "{{name}} ({{count}})",
+		"none": "Cap llista per imprimir",
+		"all": "Totes les llistes"
+	},
+	"addTo": {
+		"button": "Afegeix a la llista",
+		"selected": "Afegeix els seleccionats a una llista",
+		"title": "Afegeix a una llista d'impressió",
+		"existing": "Llista existent",
+		"create": "Nova llista",
+		"newName": "Nom de la nova llista",
+		"confirm": "Afegeix",
+		"done": "{{added}} {{added:plural; one:afegit; other:afegits;}} a «{{name}}», {{skipped}} {{skipped:plural; one:ja present; other:ja presents;}}"
+	},
+	"labels": {
+		"title": "Imprimeix etiquetes",
+		"button": "Imprimeix etiquetes",
+		"selected": "Imprimeix les etiquetes dels seleccionats",
+		"kind": "Tipus d'etiqueta",
+		"kinds": {
+			"pair": "Parell",
+			"barcode": "Només codi de barres",
+			"spine": "Només banda del llom"
+		},
+		"kindHints": {
+			"pair": "Banda del llom a dalt i etiqueta amb el codi de barres a sota, un parell per llibre (la impressió actual).",
+			"barcode": "Només l'etiqueta interna amb el codi de barres, per a reimpressions.",
+			"spine": "Només la banda del llom, per exemple després d'una reclassificació."
+		},
+		"stock": "Full d'etiquetes",
+		"start": "Primera posició lliure",
+		"startHint": "De l'1 al {{max}}: salta les etiquetes ja usades al full.",
+		"count": "{{count}} {{count:plural; one:còpia; other:còpies;}}",
+		"unclassified": "{{count}} {{count:plural; one:còpia d'un llibre; other:còpies de llibres;}} per classificar: {{count:plural; one:s'imprimeix només la seva etiqueta; other:s'imprimeixen només les seves etiquetes;}} amb el codi de barres, la banda del llom després de la classificació.",
+		"pendingCount": "{{count}} {{count:plural; one:còpia; other:còpies;}} amb etiquetes per imprimir",
+		"pages": "{{pages}} {{pages:plural; one:full; other:fulls;}} ({{perPage}} per full)",
+		"print": "Obre la pàgina d'impressió",
+		"afterPrint": "La pàgina d'impressió s'ha obert en una pestanya nova. Un cop impreses les etiquetes, cal marcar-les com a impreses.",
+		"markPrinted": "Marca com a impreses",
+		"marked": "{{count:plural; one:{{count}} còpia marcada com a impresa; other:{{count}} còpies marcades com a impreses;}}",
+		"status": {
+			"printed": "Etiquetes impreses",
+			"pending": "Etiquetes per imprimir",
+			"partial": "Falta una etiqueta"
+		}
+	},
+	"cards": {
+		"title": "Imprimeix carnets",
+		"count": "{{count}} {{count:plural; one:carnet; other:carnets;}}",
+		"afterPrint": "La pàgina d'impressió s'ha obert en una pestanya nova. Un cop impresos els carnets, cal marcar-los com a impresos.",
+		"layout": "Com imprimir",
+		"layouts": {
+			"side-by-side": "Anvers i revers un al costat de l'altre",
+			"duplex": "A les dues cares del full"
+		},
+		"window": "A la finestra d'impressió del navegador:",
+		"steps": {
+			"duplex": {
+				"long-edge": "triar «Doble cara», girant pel costat llarg;",
+				"short-edge": "triar «Doble cara», girant pel costat curt;"
+			},
+			"scale": "escala al 100 % («Mida real», no «Ajusta a la pàgina»);",
+			"margins": "marges: cap.",
+			"after": {
+				"side-by-side": {
+					"marks": "Després, retallar cada carnet unint amb la regla els senyals de tall al voltant dels carnets, i plegar-lo per la meitat pel costat curt.",
+					"line": "Després, retallar cada carnet seguint la línia de color que hi ha al voltant, i plegar-lo per la meitat pel costat curt.",
+					"edge": "Després, retallar cada carnet seguint-ne la vora, i plegar-lo per la meitat pel costat curt."
+				},
+				"duplex": {
+					"marks": "Després, retallar els carnets unint amb la regla els senyals de tall al voltant dels anvers: el revers ja és darrere de l'anvers (deu per full).",
+					"line": "Després, retallar els carnets seguint la línia de color que hi ha al voltant dels anvers: el revers ja és darrere de l'anvers (deu per full).",
+					"edge": "Després, retallar els carnets seguint la vora dels anvers: el revers ja és darrere de l'anvers (deu per full)."
+				}
+			}
+		},
+		"print": "Imprimeix",
+		"calibrate": "La primera vegada, o si els revers no cauen darrere dels anvers:"
+	},
+	"words": {
+		"teacher": "Docent",
+		"title": "Títol",
+		"code": "Codi",
+		"dueBy": "Retornar abans del",
+		"due": "Devolució",
+		"name": "Nom",
+		"daysOverdue": "Dies d'endarreriment",
+		"loanOn": "Préstec del {{date}} a",
+		"overduesOn": "Reclamacions de la biblioteca del {{date}}",
+		"toReturn": "Llibres a retornar a la biblioteca",
+		"enjoy": "Bona lectura"
+	}
+}

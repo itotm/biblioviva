@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Nyomtatás",
+		"newPatrons": "Új olvasólista",
+		"newItems": "Új könyvlista",
+		"newPatronsTitle": "Új olvasólista",
+		"newItemsTitle": "Új könyvlista",
+		"name": "A lista neve",
+		"defaultName": "{{n}}. lista, {{date}}",
+		"kind": "Típus",
+		"kinds": {
+			"all": "Összes",
+			"patrons": "Olvasók",
+			"items": "Könyvek"
+		},
+		"classes": "Osztályok",
+		"classesHint": "Egy egész osztály olvasójegyei, a lista létrehozása nélkül.",
+		"classKind": "Osztály",
+		"count": "{{count}} {{count:plural; one:bejegyzés; other:bejegyzés;}}",
+		"empty": "Nincs lista. A listák itt hozhatók létre, vagy az Olvasók és a Katalógus oldalon a „Hozzáadás listához” művelettel.",
+		"lastPrinted": "Kinyomtatva: {{when}}",
+		"neverPrinted": "Még nem nyomtatták ki",
+		"open": "Megnyitás",
+		"created": "Lista létrehozva",
+		"deleted": "Lista törölve",
+		"deleteTitle": "Törli a(z) „{{name}}” listát?",
+		"deleteDescription": "A bejegyzések kikerülnek a listából; az olvasók az archívumban maradnak."
+	},
+	"list": {
+		"rename": "Átnevezés",
+		"renamed": "Lista átnevezve",
+		"print": "Olvasójegyek nyomtatása",
+		"markPrinted": "Megjelölés nyomtatottként",
+		"marked": "{{count}} {{count:plural; one:olvasójegy; other:olvasójegy;}} megjelölve nyomtatottként",
+		"clearAfter": "Lista ürítése nyomtatás után",
+		"clear": "Ürítés",
+		"cleared": "Lista kiürítve",
+		"clearTitle": "Kiüríti a listát?",
+		"clearDescription": "Minden bejegyzés kikerül; az olvasók az archívumban maradnak.",
+		"delete": "Törlés",
+		"entries": "{{count}} {{count:plural; one:olvasó; other:olvasó;}} a listában",
+		"empty": "A lista üres. Az olvasókat a gyors szűrőkkel, a vonalkódolvasóval vagy az Olvasók oldalról lehet hozzáadni.",
+		"remove": "Eltávolítás a listából",
+		"moveUp": "Feljebb",
+		"moveDown": "Lejjebb",
+		"dragHint": "A bejegyzések húzásával módosítható a nyomtatási sorrend.",
+		"removed": "Eltávolítva a listából",
+		"columns": {
+			"position": "Sorsz.",
+			"printed": "Olvasójegy nyomtatva"
+		},
+		"printedYes": "igen",
+		"printedNo": "nem",
+		"quick": {
+			"title": "Hozzáadás szűrőkkel",
+			"hint": "Aki már benne van a listában, nem kerül be kétszer.",
+			"type": "Típus",
+			"any": "Bármelyik",
+			"stage": "Iskolafok",
+			"level": "Évfolyam",
+			"withoutPrintedCard": "Csak akiknek még nincs nyomtatott olvasójegyük",
+			"withoutPhoto": "Csak akiknek nincs fényképük",
+			"importBatch": "Importálás",
+			"anyBatch": "— egyik sem —",
+			"batchLabel": "sz. {{id}} · {{file}} · {{created}} új",
+			"createdAfter": "Létrehozva ettől",
+			"add": "Hozzáadás a listához",
+			"added": "{{added}} hozzáadva, {{skipped}} már benne van",
+			"none": "Egyetlen olvasó sem felel meg a szűrőknek.",
+			"pendingLabels": "Nyomtatandó címkék",
+			"pendingAny": "— minden példány —",
+			"acquiredFrom": "Beszerezve ettől",
+			"acquiredTo": "eddig",
+			"genre": "Műfaj",
+			"itemType": "Példány típusa",
+			"batchLabelItems": "sz. {{id}} · {{file}} · {{created}} {{created:plural; one:példány; other:példány;}}",
+			"noneItems": "Egyetlen példány sem felel meg a szűrőknek.",
+			"addedItems": "{{added}} hozzáadva, {{skipped}} már benne van",
+			"nonfictionClass": "Ismeretterjesztő osztály"
+		},
+		"scan": {
+			"title": "Hozzáadás vonalkódolvasóval",
+			"hint": "Olvassa be minden olvasó olvasójegyét: azonnal bekerül a listába. A listában már szereplő olvasójegyek figyelmen kívül maradnak.",
+			"added": "{{name}} hozzáadva",
+			"duplicate": "{{name}} már benne van a listában",
+			"unknown": "Nincs olvasó ezzel az olvasójeggyel: {{card}}",
+			"notCard": "A beolvasott kód nem olvasójegy",
+			"hintItems": "Olvassa be minden példány vonalkódját, akár a polc mellett sétálva: a példány azonnal bekerül a listába. A listában már szereplő példányok figyelmen kívül maradnak.",
+			"addedItem": "{{title}} ({{barcode}}) hozzáadva",
+			"duplicateItem": "{{title}} ({{barcode}}) már benne van a listában",
+			"unknownItem": "Nincs példány ezzel a vonalkóddal: {{barcode}}",
+			"notItem": "A beolvasott kód nem példány"
+		},
+		"printLabels": "Címkék nyomtatása",
+		"markPrintedKind": "Címkék nyomtatva",
+		"markedItems": "{{count}} {{count:plural; one:példány; other:példány;}} megjelölve nyomtatottként",
+		"entriesItems": "{{count}} {{count:plural; one:példány; other:példány;}} a listában",
+		"emptyItems": "A lista üres. A példányokat a gyors szűrőkkel, a vonalkódolvasóval vagy a katalógusból lehet hozzáadni.",
+		"clearDescriptionItems": "Minden bejegyzés kikerül; a példányok a katalógusban maradnak."
+	},
+	"basket": {
+		"label": "Nyomtatási listák",
+		"labelToPrint": "Nyomtatási listák: {{count}} nyomtatandó",
+		"entry": "{{name}} ({{count}})",
+		"none": "Nincs nyomtatandó lista",
+		"all": "Összes lista"
+	},
+	"addTo": {
+		"button": "Hozzáadás listához",
+		"selected": "A kijelöltek hozzáadása listához",
+		"title": "Hozzáadás nyomtatási listához",
+		"existing": "Meglévő lista",
+		"create": "Új lista",
+		"newName": "Az új lista neve",
+		"confirm": "Hozzáadás",
+		"done": "{{added}} hozzáadva ide: „{{name}}”, {{skipped}} már benne van"
+	},
+	"labels": {
+		"title": "Címkék nyomtatása",
+		"button": "Címkék nyomtatása",
+		"selected": "A kijelöltek címkéinek nyomtatása",
+		"kind": "Címketípus",
+		"kinds": {
+			"pair": "Pár",
+			"barcode": "Csak vonalkód",
+			"spine": "Csak gerincsáv"
+		},
+		"kindHints": {
+			"pair": "Gerincsáv felül, alul vonalkódcímke, könyvenként egy pár (a jelenlegi nyomtatvány).",
+			"barcode": "Csak a belső vonalkódcímke, újranyomtatáshoz.",
+			"spine": "Csak a gerincsáv, például átosztályozás után."
+		},
+		"stock": "Címkelap",
+		"start": "Első szabad pozíció",
+		"startHint": "1 és {{max}} között: kihagyja a lapon már használt címkéket.",
+		"count": "{{count}} {{count:plural; one:példány; other:példány;}}",
+		"unclassified": "{{count}} {{count:plural; one:könyvpéldány; other:könyvpéldány;}} osztályozásra vár: csak a vonalkódcímke nyomtatódik ki, a gerincsáv az osztályozás után.",
+		"pendingCount": "{{count}} {{count:plural; one:példány; other:példány;}} nyomtatandó címkével",
+		"pages": "{{pages}} {{pages:plural; one:lap; other:lap;}} ({{perPage}} lapon)",
+		"print": "Nyomtatás megnyitása",
+		"afterPrint": "A nyomtatási oldal új lapon nyílt meg. A címkék kinyomtatása után jelölje meg őket nyomtatottként.",
+		"markPrinted": "Megjelölés nyomtatottként",
+		"marked": "{{count}} {{count:plural; one:példány; other:példány;}} megjelölve nyomtatottként",
+		"status": {
+			"printed": "Címkék kinyomtatva",
+			"pending": "Nyomtatandó címkék",
+			"partial": "Egy címke hiányzik"
+		}
+	},
+	"cards": {
+		"title": "Olvasójegyek nyomtatása",
+		"count": "{{count}} {{count:plural; one:olvasójegy; other:olvasójegy;}}",
+		"afterPrint": "A nyomtatási oldal új lapon nyílt meg. Az olvasójegyek kinyomtatása után jelölje meg őket nyomtatottként.",
+		"layout": "Nyomtatás módja",
+		"layouts": {
+			"side-by-side": "Előlap és hátlap egymás mellett",
+			"duplex": "A lap mindkét oldalára"
+		},
+		"window": "A böngésző nyomtatási ablakában:",
+		"steps": {
+			"duplex": {
+				"long-edge": "válassza a „Kétoldalas” lehetőséget, a hosszú oldalon átfordítva;",
+				"short-edge": "válassza a „Kétoldalas” lehetőséget, a rövid oldalon átfordítva;"
+			},
+			"scale": "méretarány 100 % („Valódi méret”, nem „Oldalhoz igazítás”);",
+			"margins": "margók: nincs.",
+			"after": {
+				"side-by-side": {
+					"marks": "Ezután minden olvasójegyet úgy vágjon ki, hogy a vonalzóval összeköti az olvasójegyek körüli vágásjeleket, és a rövid oldalánál félbehajtja.",
+					"line": "Ezután minden olvasójegyet vágjon ki az azt körülvevő színes vonal mentén, és hajtsa félbe a rövid oldalán.",
+					"edge": "Ezután minden olvasójegyet vágjon ki a szélük mentén, és hajtsa félbe a rövid oldalán."
+				},
+				"duplex": {
+					"marks": "Ezután vágja ki az olvasójegyeket: vonalzóval kösse össze az előlapok körüli vágásjeleket. A hátlap már az előlap mögött van (egy lapon tíz).",
+					"line": "Ezután vágja ki az olvasójegyeket az előlapok körüli színes vonal mentén: a hátlap már az előlap mögött van (egy lapon tíz).",
+					"edge": "Ezután vágja ki az olvasójegyeket az előlapok szélénél: a hátlap már az előlap mögött van (egy lapon tíz)."
+				}
+			}
+		},
+		"print": "Nyomtatás",
+		"calibrate": "Először, vagy ha a hátlapok nem az előlapok mögé esnek:"
+	},
+	"words": {
+		"teacher": "Tanár",
+		"title": "Cím",
+		"code": "Kód",
+		"dueBy": "Visszahozandó legkésőbb",
+		"due": "Határidő",
+		"name": "Név",
+		"daysOverdue": "Késésben lévő napok",
+		"loanOn": "Kölcsönzés ekkor: {{date}}, olvasó:",
+		"overduesOn": "A könyvtár felszólításai, ekkor: {{date}}",
+		"toReturn": "A könyvtárnak visszahozandó könyvek",
+		"enjoy": "Kellemes olvasást."
+	}
+}

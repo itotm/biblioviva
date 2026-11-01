@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "Katalog",
+		"search": "Søg efter titel, forfatter eller ISBN…",
+		"new": "Ny bog",
+		"empty": "Ingen bog svarer til filtrene.",
+		"countFiltered": "{{shown}} {{shown:plural; one:titel svarer; other:titler svarer;}} til filtrene",
+		"clearFilters": "Nulstil filtre",
+		"filters": {
+			"kind": "Type",
+			"genre": "Genre",
+			"class": "Klassifikation",
+			"readingLevel": "Niveau",
+			"itemType": "Materiale",
+			"series": "Serie",
+			"all": "Alle",
+			"allF": "Alle",
+			"withdrawn": "Vis også udsondrede bøger"
+		},
+		"columns": {
+			"title": "Titel",
+			"series": "Serie",
+			"author": "Forfatter",
+			"year": "År",
+			"isbn": "ISBN",
+			"classification": "Klassifikation",
+			"copies": "Eksemplarer",
+			"callNumber": "Opstillingsmærke",
+			"acquiredAt": "Erhvervet"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "Søg i katalogen",
+		"startHint": "Søg efter titel, forfatter, forlag, kode eller ISBN, eller brug filtrene."
+	},
+	"kinds": {
+		"fiction": "Skønlitteratur",
+		"nonfiction": "Faglitteratur"
+	},
+	"fields": {
+		"title": "Titel",
+		"subtitle": "Undertitel",
+		"originalTitle": "Originaltitel",
+		"originalTitleHint": "Kun hvis bogen er en oversættelse: værkets titel på originalsproget.",
+		"responsibility": "Ansvarsangivelse (som på titelbladet)",
+		"author": "Forfatter",
+		"publisher": "Forlag",
+		"publicationPlace": "Sted",
+		"publicationYear": "År",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN (ikke ISBN)",
+		"physicalDescription": "Fysisk beskrivelse",
+		"series": "Serie",
+		"seriesNumber": "Nummer i serien",
+		"seriesHint": "For eksempel Harry Potter og 3. Serier, der allerede findes i katalogen, vises, mens du skriver.",
+		"dewey": "Dewey (fra SBN)",
+		"kind": "Type",
+		"genre": "Genre",
+		"classCode": "Klassifikation",
+		"readingLevel": "Læseniveau",
+		"subjects": "Emneord",
+		"notes": "Noter",
+		"authorHint": "Efternavn, fornavn. Brug hurtigvalgene, når der ikke er en person som forfatter.",
+		"subjectsHint": "Et pr. linje eller adskilt af komma.",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "Ny bog",
+		"editTitle": "Rediger posten",
+		"create": "Gem posten",
+		"save": "Gem ændringerne",
+		"identity": "Post",
+		"publication": "Udgivelse",
+		"classification": "Klassifikation",
+		"more": "Flere oplysninger",
+		"quickPicks": "Hurtigvalg",
+		"unknownPublisher": "Ukendt forlag",
+		"unknownPlace": "Ukendt sted",
+		"singleCopy": "Eksemplar {{barcode}}",
+		"singleCopyHint": "Posten har kun ét eksemplar: dets oplysninger redigeres her og gemmes sammen med posten."
+	},
+	"picker": {
+		"kind": "Hvilken type bog er det?",
+		"fiction": "Skønlitteratur",
+		"nonfiction": "Faglitteratur",
+		"genre": "Vælg genren",
+		"class": "Vælg emnet",
+		"readingLevel": "Læseniveau",
+		"anyClass": "Ingen",
+		"back": "Tilbage til hovedemnerne",
+		"children": "Emner under {{label}}",
+		"selected": "Valgt: {{label}}",
+		"parentOnly": "Brug »{{label}}« generelt",
+		"later": "Klassificer senere",
+		"laterHint": "Bogen kommer på listen »Skal klassificeres«: dens eksemplarer udlånes ikke, og rygbåndet udskrives ikke, før den er klassificeret."
+	},
+	"detail": {
+		"heading": "Bogens post",
+		"tabs": {
+			"copies": "Eksemplarer",
+			"details": "Detaljer"
+		},
+		"copies": "{{available}} {{available:plural; one:ledigt; other:ledige;}} af {{total}}",
+		"noCopies": "Ingen eksemplarer endnu: for at kunne låne bogen skal du tilføje et.",
+		"seriesLink": "Alle bøger i serien »{{series}}«",
+		"edit": "Rediger",
+		"delete": "Slet posten",
+		"addCopies": "Tilføj eksemplarer",
+		"deleteTitle": "Slette posten »{{title}}«?",
+		"deleteDescription": "Posten forsvinder fra katalogen. Det er kun muligt uden eksemplarer.",
+		"deleted": "Post slettet",
+		"hasItems": "Posten har stadig {{count}} {{count:plural; one:eksemplar; other:eksemplarer;}}: udsondr eller slet {{count:plural; one:det; other:dem;}} først.",
+		"columns": {
+			"barcode": "Stregkode",
+			"callNumber": "Opstillingsmærke",
+			"itemType": "Materiale",
+			"readingLevel": "Niveau",
+			"status": "Status",
+			"borrower": "Udlånt til",
+			"acquisition": "Erhvervet den",
+			"labels": "Etiketter"
+		},
+		"dueOn": "afleveres senest {{date}}",
+		"identifiers": "Identifikatorer",
+		"source": "Kilde: {{source}}",
+		"created": "Oprettet den {{when}}",
+		"updated": "Sidst redigeret den {{when}}",
+		"onLoan": "Udlånt"
+	},
+	"item": {
+		"addTitle": "Tilføj eksemplarer",
+		"copies": "Antal eksemplarer",
+		"itemType": "Materiale",
+		"callNumber": "Opstillingsmærke",
+		"callNumberHint": "Foreslået ud fra klassifikationen; det kan ændres.",
+		"readingLevel": "Eksemplarets niveau",
+		"enumeration": "Bind / nummer",
+		"acquisitionDate": "Erhvervelsesdato",
+		"notes": "Noter om eksemplaret",
+		"notForLoan": "Kun til læsning på stedet (udlånes ikke)",
+		"add": "Tilføj",
+		"added": "{{count}} {{count:plural; one:eksemplar tilføjet; other:eksemplarer tilføjet;}}: {{barcodes}}",
+		"editTitle": "Rediger eksemplar {{barcode}}",
+		"save": "Gem",
+		"saved": "Eksemplar opdateret",
+		"status": "Skift status",
+		"statusTitle": "Status for eksemplar {{barcode}}",
+		"newStatus": "Ny status",
+		"reason": "Årsag (valgfri, registreres)",
+		"statusSaved": "Status opdateret",
+		"onLoan": "Eksemplaret er udlånt: registrér først afleveringen.",
+		"delete": "Slet eksemplar",
+		"deleteTitle": "Slette eksemplar {{barcode}}?",
+		"deleteDescription": "Kun ved fejl i registreringen: et eksemplar, der har været udlånt, kan ikke slettes, det skal udsondres i stedet.",
+		"deleted": "Eksemplar slettet",
+		"hasLoans": "Eksemplaret har registrerede udlån: det skal udsondres, ikke slettes.",
+		"labelsTitle": "Etiketter til eksemplar {{barcode}}"
+	},
+	"errors": {
+		"isbnInvalid": "Ugyldigt ISBN (kontrollér cifrene)",
+		"isbnTaken": "Der findes allerede en post med dette ISBN",
+		"issnInvalid": "Ugyldigt ISSN",
+		"eanInvalid": "Ugyldig EAN",
+		"yearImplausible": "Urimeligt år",
+		"genreRequired": "Vælg genren",
+		"genreUnknown": "Genren findes ikke i konfigurationen",
+		"genreNotForNonfiction": "Faglitteratur har ingen genre",
+		"classCodeRequired": "Vælg emnet",
+		"classCodeUnknown": "Emnet findes ikke i konfigurationen",
+		"classCodeNotForFiction": "Skønlitteratur har intet emne",
+		"readingLevelNotAllowed": "Læseniveauet er ikke forventet her",
+		"readingLevelOutOfRange": "Læseniveauet findes ikke i konfigurationen",
+		"itemTypeUnknown": "Materialet findes ikke i konfigurationen",
+		"acquisitionDateInvalid": "Ugyldig dato (ÅÅÅÅ-MM-DD)",
+		"copiesOutOfRange": "1 til 100 eksemplarer ad gangen"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "Testudbyder"
+		},
+		"errors": {
+			"unreachable": "Tjenesten kan ikke nås. Kontrollér internetforbindelsen, og prøv igen senere.",
+			"timeout": "Tjenesten svarede ikke i tide. Prøv igen senere.",
+			"protocol": "Tjenesten gav et uventet svar. Oplysningerne kan indtastes manuelt.",
+			"http": "Tjenesten svarede med en fejl. Prøv igen senere.",
+			"rate_limited": "Tjenesten afviste anmodningen, fordi der var for mange forespørgsler. Prøv igen senere.",
+			"not_configured": "Tjenesten er ikke konfigureret: en indstilling mangler (for eksempel API-nøglen).",
+			"spawn": "Programmet yaz-client er ikke tilgængeligt på denne server. Underret administratoren."
+		},
+		"noHits": "Ingen resultater fra {{provider}}.",
+		"hits": "{{count}} {{count:plural; one:resultat; other:resultater;}} fra {{provider}}",
+		"fromCache": "fra cachen"
+	},
+	"fastAdd": {
+		"title": "Ny bog",
+		"steps": {
+			"code": "Kode",
+			"lookup": "Søgning",
+			"form": "Post og eksemplarer",
+			"done": "Afsluttet"
+		},
+		"code": {
+			"heading": "Læs stregkoden",
+			"label": "ISBN eller EAN",
+			"placeholder": "978…",
+			"material": "Materiale",
+			"noCode": "Uden kode",
+			"noCodeHint": "Søg efter titel og forfatter, eller udfyld posten manuelt.",
+			"manual": "Udfyld manuelt",
+			"notACode": "Den læste kode er hverken et ISBN eller en EAN: kontrollér cifrene, eller vælg »Uden kode«.",
+			"eanNotIsbn": "EAN {{ean}} læst: det er ikke et ISBN, så posten skal udfyldes manuelt.",
+			"cameraNotIsbn": "Ikke et ISBN: ret kameraet mod bogens stregkode"
+		},
+		"search": {
+			"heading": "Søg efter titel og forfatter",
+			"title": "Titel",
+			"author": "Forfatter",
+			"submit": "Søg",
+			"empty": "Skriv mindst titlen eller forfatteren."
+		},
+		"duplicate": {
+			"heading": "Dette ISBN findes allerede i katalogen",
+			"copies": "{{count}} {{count:plural; one:eksemplar; other:eksemplarer;}}",
+			"addCopy": "Tilføj eksemplar",
+			"open": "Åbn posten",
+			"another": "Læs en anden kode"
+		},
+		"lookup": {
+			"searching": "Søger hos {{providers}}…",
+			"best": "Mest komplet",
+			"heading": "Fundne poster",
+			"pick": "Brug denne post",
+			"none": "Ingen post fundet. Posten kan udfyldes manuelt.",
+			"manual": "Indtast manuelt",
+			"bySearch": "Søg efter titel",
+			"retry": "Prøv igen",
+			"another": "Ny kode",
+			"source": "Kilde: {{provider}}",
+			"providerOk": "{{count}} {{count:plural; one:post; other:poster;}}",
+			"providerCached": "fra cachen",
+			"failed": "Fejl"
+		},
+		"form": {
+			"heading": "Kontrol af posten og tilføjelse af eksemplarer",
+			"rescan": "Læs en anden kode",
+			"bestOf": "Den mest komplette af de {{count}} fundne poster. Kontrollér år og beskrivelse mod eksemplaret.",
+			"otherRecords": "{{count:plural; one:Anden post; other:Andre poster;}} ({{count}})",
+			"fromSource": "Post fra {{provider}}: kontrollér oplysningerne, før du gemmer.",
+			"manualSource": "Post udfyldt manuelt.",
+			"copiesSection": "Eksemplarer",
+			"copies": "Antal eksemplarer",
+			"itemType": "Materiale",
+			"callNumber": "Opstillingsmærke",
+			"readingLevel": "Niveau for eksemplarerne",
+			"acquisitionDate": "Erhvervelsesdato",
+			"save": "Gem post og eksemplarer",
+			"deweySuggested": "Emne foreslået ud fra Dewey-nummeret {{dewey}}."
+		},
+		"done": {
+			"heading": "Post gemt",
+			"summary": "»{{title}}« med {{count}} {{count:plural; one:eksemplar; other:eksemplarer;}}",
+			"summaryCopies": "{{count}} {{count:plural; one:eksemplar tilføjet; other:eksemplarer tilføjet;}} til »{{title}}«",
+			"barcodes": "Eksemplarernes stregkoder",
+			"printLabels": "Udskriv etiketter",
+			"addToList": "Tilføj til listen med etiketter",
+			"open": "Åbn posten",
+			"another": "Tilføj en mere"
+		},
+		"cover": {
+			"title": "Omslag",
+			"alt": "Bogens omslag",
+			"searching": "Søger efter omslaget online…",
+			"found": "Fundet hos {{provider}}: det gemmes sammen med posten. Hvis det er forkert, så fotografér bogens eget omslag.",
+			"photo": "Foto af omslaget: det gemmes sammen med posten.",
+			"none": "Intet omslag fundet online: det kan fotograferes.",
+			"empty": "Intet omslag: det kan fotograferes.",
+			"take": "Fotografér omslaget",
+			"replace": "Erstat med et foto",
+			"remove": "Fjern",
+			"saving": "Gemmer omslaget…",
+			"failed": "Omslaget blev ikke gemt: det kan tilføjes fra bogens post."
+		}
+	},
+	"cover": {
+		"title": "Omslag",
+		"take": "Fotografér omslaget",
+		"upload": "Upload en fil",
+		"change": "Skift omslag",
+		"delete": "Fjern omslaget",
+		"deleteTitle": "Fjerne omslaget?",
+		"deleteDescription": "Billedet slettes fra serveren; et nyt kan fotograferes.",
+		"shoot": "Tag billede",
+		"loading": "Indlæser modulet til udretning ({{loaded}} af {{total}} MB), kun ved første brug.",
+		"loadingShort": "Indlæser modulet til udretning ({{loaded}} MB), kun ved første brug.",
+		"loadFailed": "Modulet til udretning kunne ikke indlæses. Kontrollér forbindelsen, og prøv igen.",
+		"detecting": "Søger efter omslagets kanter…",
+		"notFound": "Kanterne blev ikke fundet automatisk: træk hjørnerne hen til omslaget.",
+		"adjustHint": "Træk de fire hjørner hen til omslagets kanter, og ret derefter op.",
+		"straighten": "Ret op",
+		"result": "Resultat",
+		"use": "Brug dette omslag",
+		"retake": "Tag igen",
+		"cancel": "Annuller",
+		"saved": "Omslag gemt",
+		"deleted": "Omslag fjernet",
+		"placeholder": "Intet omslag",
+		"alt": "Omslag til {{title}}",
+		"cameraHint": "Ret kameraet mod hele omslaget, også skråt: det rettes op efter optagelsen.",
+		"errors": {
+			"too_large": "Filen er for stor: grænsen er {{maxMb}} MB.",
+			"not_an_image": "Filen er ikke et billede, der kan læses.",
+			"unsupported_format": "Billedformatet understøttes ikke (brug JPEG, PNG, WebP eller HEIC).",
+			"empty": "Ingen fil valgt."
+		},
+		"download": "Hent omslag",
+		"downloading": "Søger efter omslaget online…",
+		"downloaded": "Omslag hentet fra {{provider}}",
+		"downloadNotFound": "Intet omslag fundet online for dette ISBN: det kan fotograferes.",
+		"downloadNoIsbn": "Posten har intet ISBN: omslaget skal fotograferes."
+	},
+	"export": {
+		"copiesTotal": "Eksemplarer",
+		"copiesAvailable": "Ledige",
+		"callNumber": "Opstillingsmærke",
+		"acquiredAt": "Erhvervet"
+	},
+	"import": {
+		"title": "Importér katalogen",
+		"upload": {
+			"file": "CSV-fil",
+			"hint": "En række pr. eksemplar: titlens oplysninger gentages på rækkerne for dets eksemplarer. Titel, forfatter og forlag er påkrævet. Brug overskrifterne fra skabelonen, som kan hentes nedenfor med de nødvendige kolonner. Ved flytning fra Koha bruges eksporten, der er beskrevet i administratorvejledningen.",
+			"submit": "Upload"
+		},
+		"mapping": {
+			"uncertain": "Kolonnerne blev ikke genkendt: angiv feltet for hver af dem, før du fortsætter.",
+			"remembered": "Kolonner husket fra den sidste import af denne fil.",
+			"specialValues": "Særlige værdier, når forfatter eller forlag mangler (»{{author}}«, »{{publisher}}«)",
+			"specialValuesHint": "Uden dette valg er rækker uden forfatter eller forlag fejl.",
+			"validate": "Kontrollér filen",
+			"without": {
+				"biblioKey": "Uden kolonnen biblio_key grupperes eksemplarerne af samme bog efter ISBN; rækker uden ISBN er hver sin titel.",
+				"barcode": "Uden kolonnen barcode genereres eksemplarernes stregkoder: efter importen udskrives etiketterne.",
+				"classification": "Uden kolonnen classification kommer bøgerne på listen »Skal klassificeres«: deres eksemplarer udlånes ikke, før de er klassificeret."
+			}
+		},
+		"fields": {
+			"biblioKey": "Titelnøgle (biblionumber)",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "Titel",
+			"subtitle": "Undertitel",
+			"originalTitle": "Originaltitel",
+			"responsibility": "Ansvarsangivelse",
+			"author": "Forfatter",
+			"publisher": "Forlag",
+			"publicationPlace": "Udgivelsessted",
+			"publicationYear": "År",
+			"physicalDescription": "Fysisk beskrivelse",
+			"series": "Serie",
+			"seriesNumber": "Nummer i serien",
+			"dewey": "Dewey",
+			"classification": "Klassifikation (genre eller emne, Kohas ccode)",
+			"readingLevel": "Læseniveau",
+			"subjects": "Emneord",
+			"notes": "Titlens noter",
+			"barcode": "Eksemplarets stregkode",
+			"callNumber": "Opstillingsmærke",
+			"itemType": "Materiale",
+			"enumeration": "Bind",
+			"status": "Status",
+			"notForLoan": "Udlånes ikke",
+			"acquisitionDate": "Erhvervelsesdato",
+			"itemNotes": "Eksemplarets noter"
+		},
+		"preview": {
+			"ready": "Ingen fejl: importen er mulig.",
+			"blocked": "Ret fejlene i filen, og kontrollér igen: intet importeres, når der er fejl.",
+			"nothing": "Alle eksemplarerne i filen findes allerede i katalogen: der er intet at importere.",
+			"titles": "{{new}} {{new:plural; one:ny titel; other:nye titler;}}, {{existing}} allerede i katalogen (deres eksemplarer tilføjes)",
+			"columns": {
+				"title": "Titel",
+				"barcode": "Stregkode",
+				"classification": "Klassifikation"
+			},
+			"question": {
+				"title": "Eksemplarer af samme titel med forskellige niveauer",
+				"text": "I {{count}} {{count:plural; one:titel; other:titler;}} har eksemplarerne forskellige læseniveauer. Niveauet kan stå på hvert eksemplar i stedet for på titlen: det er indstillingen »niveau pr. eksemplar«, der gælder for hele katalogen og flytter niveauet for de titler, der allerede findes, over på deres eksemplarer.",
+				"yes": "Ja, niveau pr. eksemplar",
+				"no": "Nej, det er fejl, der skal rettes"
+			},
+			"commit": "Importér",
+			"back": "Tilbage til kolonnerne",
+			"generatedBarcodes": "{{count}} {{count:plural; one:eksemplar; other:eksemplarer;}} uden stregkode: stregkoden genereres, og derefter udskrives etiketterne.",
+			"toClassify": "{{count}} {{count:plural; one:ny titel; other:nye titler;}} uden klassifikation: {{count:plural; one:den kommer; other:de kommer;}} på »Skal klassificeres«."
+		},
+		"reasons": {
+			"tooLong": "Teksten er for lang i kolonnen {{column}}: højst {{max}} tegn",
+			"isbnInvalid": "Ugyldigt ISBN: »{{value}}«",
+			"classificationUnknown": "Klassifikationen findes ikke i konfigurationen: »{{value}}«",
+			"barcodeInvalid": "Stregkode med tegn, der ikke er tilladt: »{{value}}«",
+			"barcodeCheckDigit": "Stregkode med forkert kontroltegn: »{{value}}«",
+			"barcodeDuplicateInFile": "Stregkoden er allerede brugt på linje {{line}}",
+			"barcodeTaken": "Stregkoden {{value}} tilhører allerede et andet eksemplar i katalogen",
+			"barcodeIsCard": "Koden {{value}} er eller ligner et lånerkortnummer: et eksemplar kan ikke have en kode fra et lånerkort",
+			"statusUnknown": "Status ikke genkendt: »{{value}}« (ledig, bortkommet, beskadiget, under reparation, udsondret)",
+			"notForLoanUnknown": "Værdi ikke genkendt for »udlånes ikke«: »{{value}}« (ja/nej)",
+			"dateInvalid": "Ugyldig dato: »{{value}}« (ÅÅÅÅ-MM-DD eller DD/MM/ÅÅÅÅ)",
+			"authorMissing": "Forfatteren mangler (med »særlige værdier« bliver den Anonym)",
+			"publisherMissing": "Forlaget mangler (med »særlige værdier« bliver det s.n.)",
+			"titleMissing": "Titlen mangler",
+			"groupConflict": "Samme nøgle som linje {{line}}, men en anden titel",
+			"classQuestion": "Eksemplarer med forskellige niveauer ({{classes}}): svar på spørgsmålet nedenfor",
+			"classDiffers": "Eksemplarer med forskellige niveauer ({{classes}}) uden niveau pr. eksemplar",
+			"copyExists": "Eksemplaret findes allerede i katalogen: det springes over",
+			"mergedIntoExisting": "Føjet til titlen, der allerede findes i katalogen (samme nøgle eller samme ISBN)"
+		},
+		"done": {
+			"title": "Katalog importeret",
+			"summary": "{{titlesCreated}} {{titlesCreated:plural; one:ny titel; other:nye titler;}}, {{copiesCreated}} {{copiesCreated:plural; one:eksemplar tilføjet; other:eksemplarer tilføjet;}} ({{titlesMerged}} {{titlesMerged:plural; one:titel fandtes allerede; other:titler fandtes allerede;}}, {{copiesSkipped}} {{copiesSkipped:plural; one:eksemplar sprunget over; other:eksemplarer sprunget over;}}).",
+			"classPerItem": "Niveau pr. eksemplar er blevet aktiveret.",
+			"batch": "Import nr. {{id}}: den oprindelige fil er gemt.",
+			"labels": "Udskriv etiketterne til eksemplarerne uden stregkode",
+			"open": "Gå til katalogen",
+			"again": "Importér en anden fil"
+		},
+		"columns": {
+			"title": {
+				"hint": "Bogens titel."
+			},
+			"author": {
+				"hint": "Efternavn, fornavn; tomt er en fejl, medmindre der bruges »særlige værdier«."
+			},
+			"publisher": {
+				"hint": "Forlaget; tomt, som for forfatteren."
+			},
+			"biblioKey": {
+				"hint": "Titlens kode i det gamle program (Kohas biblionumber): den holder eksemplarerne sammen.",
+				"missing": "eksemplarerne grupperes efter ISBN"
+			},
+			"barcode": {
+				"hint": "Stregkoden, der allerede står på eksemplaret.",
+				"missing": "stregkoden genereres, og etiketterne skal udskrives"
+			},
+			"classification": {
+				"hint": "Koden for genren (skønlitteratur) eller emnet (faglitteratur).",
+				"missing": "bogen kommer på »Skal klassificeres«"
+			},
+			"readingLevel": {
+				"hint": "Læseniveauet (skønlitteratur)."
+			},
+			"isbn": {
+				"hint": "ISBN-10 eller ISBN-13."
+			},
+			"issn": {
+				"hint": "Til periodika."
+			},
+			"ean": {
+				"hint": "EAN-koden på dvd'er og andre materialer."
+			},
+			"subtitle": {
+				"hint": "Undertitlen."
+			},
+			"originalTitle": {
+				"hint": "Kun for oversættelser: titlen på originalsproget."
+			},
+			"responsibility": {
+				"hint": "Illustratorer, oversættere…"
+			},
+			"publicationPlace": {
+				"hint": "Udgivelsesstedet."
+			},
+			"publicationYear": {
+				"hint": "Udgivelsesåret."
+			},
+			"physicalDescription": {
+				"hint": "Sider, illustrationer, format."
+			},
+			"series": {
+				"hint": "Serien (ikke forlagets samling)."
+			},
+			"seriesNumber": {
+				"hint": "Nummeret i serien."
+			},
+			"dewey": {
+				"hint": "Dewey-nummeret, kun til reference."
+			},
+			"subjects": {
+				"hint": "Nøgleord adskilt af ; eller ,."
+			},
+			"notes": {
+				"hint": "Titlens noter."
+			},
+			"callNumber": {
+				"hint": "Opstillingsmærket; foreslås, hvis det mangler."
+			},
+			"itemType": {
+				"hint": "Materialet (bog, dvd…); hvis det mangler, bruges det første konfigurerede."
+			},
+			"enumeration": {
+				"hint": "Bindet, for værker i flere bind."
+			},
+			"status": {
+				"hint": "ledig, bortkommet, beskadiget, under reparation, udsondret."
+			},
+			"notForLoan": {
+				"hint": "1 eller ja for eksemplarer til læsning på stedet."
+			},
+			"acquisitionDate": {
+				"hint": "Erhvervelsesdatoen; hvis den mangler, i dag."
+			},
+			"itemNotes": {
+				"hint": "Noter om eksemplaret."
+			}
+		}
+	},
+	"batch": {
+		"selected": "Ændr eksemplarerne for de valgte",
+		"title": "Ændr eksemplarerne",
+		"scope": "{{count}} {{count:plural; one:eksemplar; other:eksemplarer;}}",
+		"operation": "Hvad skal ændres",
+		"operations": {
+			"status": "Status",
+			"itemType": "Materiale",
+			"notForLoan": "Udlånes ikke",
+			"readingLevel": "Eksemplarets niveau",
+			"acquisitionDate": "Erhvervelsesdato"
+		},
+		"value": "Ny værdi",
+		"yes": "Ja",
+		"no": "Nej",
+		"noClass": "Intet niveau",
+		"reason": "Årsag",
+		"reasonHint": "Påkrævet for bortkomne og udsondrede: den bliver i registret for hvert eksemplar.",
+		"check": "Kontrollér",
+		"apply": "Anvend på {{count}} {{count:plural; one:eksemplar; other:eksemplarer;}}",
+		"plan": {
+			"changes": "{{count}} {{count:plural; one:eksemplar ændres; other:eksemplarer ændres;}}",
+			"onLoan": "{{count}} {{count:plural; one:udlånt eksemplar bliver; other:udlånte eksemplarer bliver;}} uændret (skal afleveres først)",
+			"unchanged": "{{count}} {{count:plural; one:eksemplar har; other:eksemplarer har;}} allerede denne værdi",
+			"notFound": "{{count}} {{count:plural; one:eksemplar findes; other:eksemplarer findes;}} ikke længere",
+			"notAllowed": "{{count}} {{count:plural; one:eksemplar er; other:eksemplarer er;}} ikke skønlitteratur: niveauet gælder ikke",
+			"none": "Ingen eksemplarer at ændre."
+		},
+		"excludedTitle": "Eksemplarer, der bliver som de er",
+		"done": "{{count}} {{count:plural; one:eksemplar ændret; other:eksemplarer ændret;}}",
+		"errors": {
+			"reasonRequired": "Skriv årsagen: den er påkrævet for bortkomne og udsondrede.",
+			"itemTypeUnknown": "Materialet findes ikke i konfigurationen.",
+			"readingLevelNotAllowed": "Niveau pr. eksemplar er ikke aktiveret.",
+			"readingLevelOutOfRange": "Læseniveauet findes ikke i konfigurationen.",
+			"dateInvalid": "Ugyldig dato.",
+			"statusUnknown": "Ugyldig status.",
+			"classificationUnknown": "Vælg en genre eller et emne fra konfigurationen."
+		},
+		"reclassify": {
+			"button": "Omklassificér",
+			"title": "Omklassificér de valgte titler",
+			"scope": "{{count}} {{count:plural; one:titel; other:titler;}}",
+			"resuggest": "Omskriv eksemplarernes opstillingsmærker ud fra den nye klassifikation",
+			"labelsHint": "Rygbåndene (og etiketterne, hvis opstillingsmærket ændres) kommer tilbage blandt dem, der skal udskrives.",
+			"changes": "{{count}} {{count:plural; one:titel ændres; other:titler ændres;}}",
+			"apply": "Omklassificér {{count}} {{count:plural; one:titel; other:titler;}}",
+			"done": "{{count}} {{count:plural; one:titel omklassificeret; other:titler omklassificerede;}}, {{calls}} {{calls:plural; one:opstillingsmærke omskrevet; other:opstillingsmærker omskrevne;}}"
+		}
+	},
+	"search": {
+		"suggest": "Koden {{barcode}} er et eksemplar af »{{title}}«.",
+		"openSuggest": "Åbn posten",
+		"available": "Kun ledige",
+		"yearFrom": "År fra",
+		"yearTo": "År til",
+		"copiesAvailable": "{{available}} af {{total}} ledige",
+		"noCopies": "Ingen eksemplarer"
+	},
+	"inventory": {
+		"title": "Bestandsrevision",
+		"defaultName": "Bestandsrevision",
+		"emptyTitle": "Ingen bestandsrevision i gang",
+		"emptyHint": "Start en kampagne, og læs derefter eksemplarerne hylde for hylde: ved afslutningen markeres de eksemplarer, der aldrig er set, som bortkomne.",
+		"name": "Kampagnens navn",
+		"start": "Ny kampagne",
+		"started": "Startet {{when}}",
+		"overall": "Hele biblioteket",
+		"progress": "{{seen}} af {{expected}} ({{percent}} %)",
+		"counts": "{{scanned}} {{scanned:plural; one:eksemplar læst; other:eksemplarer læst;}} · {{misplaced}} på forkert hylde · {{found}} {{found:plural; one:genfundet; other:genfundne;}}",
+		"byShelf": "Fremdrift pr. hylde",
+		"noShelf": "Uden opstillingsmærke",
+		"scanTitle": "Læs eksemplarerne",
+		"shelf": "Hylde",
+		"shelfHint": "For eksempel B eller 590: eksemplarer med et andet opstillingsmærke markeres som stående forkert.",
+		"scanLabel": "Eksemplarets stregkode",
+		"camera": "Læs med kameraet",
+		"outcomes": {
+			"seen": "{{title}} ({{barcode}}): set.",
+			"again": "{{title}} ({{barcode}}): allerede læst {{when}}.",
+			"misplaced": "{{title}} ({{barcode}}): står på forkert hylde; sæt den tilbage ifølge opstillingsmærket.",
+			"found": "{{title}} ({{barcode}}): den var bortkommet og er genfundet; den er igen ledig.",
+			"onLoan": "{{title}} ({{barcode}}): er registreret som udlånt; registrér afleveringen ved skranken.",
+			"withdrawn": "{{title}} ({{barcode}}): udsondret eksemplar, skal fjernes fra hylden.",
+			"unknown": "{{code}}: intet eksemplar har denne stregkode."
+		},
+		"missing": "Mangler stadig ({{count}})",
+		"allShelves": "Alle hylder",
+		"allTypes": "Alle materialer",
+		"noneMissing": "Alle de forventede eksemplarer er set.",
+		"more": "og {{count}} mere: eksportér listen for at se {{count:plural; one:den; other:dem alle;}}.",
+		"close": "Afslut bestandsrevisionen",
+		"closeTitle": "Afslutte bestandsrevisionen?",
+		"closeHint": "{{count}} {{count:plural; one:eksemplar, som aldrig er set, vil; other:eksemplarer, som aldrig er set, vil;}} blive markeret som bortkommet. Kampagnen kan genåbnes inden for en uge for at fortryde det.",
+		"closedTitle": "Bestandsrevisionen er afsluttet",
+		"summary": "{{seen}} af {{expected}} {{expected:plural; one:eksemplar; other:eksemplarer;}} set, {{lost}} {{lost:plural; one:eksemplar; other:eksemplarer;}} markeret som bortkommet, {{found}} {{found:plural; one:genfundet; other:genfundne;}}, {{onLoan}} udlånt, {{misplaced}} på forkert hylde.",
+		"history": "Tidligere kampagner",
+		"reopen": "Genåbn",
+		"errors": {
+			"alreadyOpen": "Der er allerede en bestandsrevision i gang.",
+			"notOpen": "Denne bestandsrevision er afsluttet.",
+			"notFound": "Bestandsrevisionen blev ikke fundet.",
+			"tooLate": "Den kan kun genåbnes inden for en uge efter afslutningen.",
+			"badName": "Giv kampagnen et navn.",
+			"badNotes": "Kampagnens noter må højst være 500 tegn."
+		},
+		"cameraShelf": "Hylde {{shelf}}",
+		"cameraDone": "Færdig"
+	},
+	"toClassify": {
+		"title": "Skal klassificeres",
+		"label": "Skal klassificeres",
+		"intro": "De bøger, der er indført uden klassifikation, den ældste først. Deres eksemplarer udlånes ikke, før de er klassificeret.",
+		"count": "{{count}} {{count:plural; one:bog; other:bøger;}} skal klassificeres",
+		"empty": "Ingen bog skal klassificeres",
+		"emptyHint": "Alle bøgerne i katalogen har en genre eller et emne.",
+		"start": "Start klassificeringen",
+		"classify": "Klassificér",
+		"badge": "Skal klassificeres",
+		"badgeHint": "Eksemplarerne udlånes ikke, før bogen er klassificeret.",
+		"columns": {
+			"title": "Titel",
+			"author": "Forfatter",
+			"publisher": "Forlag",
+			"year": "År",
+			"isbn": "ISBN",
+			"copies": "Eksemplarer",
+			"enteredOn": "Indført den"
+		},
+		"flow": {
+			"title": "Klassificér bogen",
+			"saveNext": "Gem og næste",
+			"save": "Gem",
+			"skip": "Spring over",
+			"saved": "»{{title}}« klassificeret",
+			"end": "Der er ikke flere bøger at klassificere i denne runde.",
+			"backToList": "Tilbage til listen",
+			"already": "Denne bog er allerede klassificeret.",
+			"callNumber": "Opstillingsmærke for eksemplarerne",
+			"callNumberHint": "Eksemplarer uden opstillingsmærke får dette; derefter kan rygbåndet udskrives.",
+			"dewey": "Dewey-nummeret {{dewey}} svarer til emnet {{code}}.",
+			"copies": "{{count}} {{count:plural; one:eksemplar; other:eksemplarer;}}",
+			"subjects": "Emneord",
+			"notes": "Noter"
+		}
+	}
+}

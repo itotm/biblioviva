@@ -1,0 +1,39 @@
+{
+	"title": "Raportit",
+	"categories": {
+		"loans": "Lainat",
+		"books": "Kirjat",
+		"patrons": "Asiakkaat",
+		"ops": "Toiminta"
+	},
+	"restricted": "Vain ylläpitäjille",
+	"custom": "Koulun omat",
+	"chart": "Kaaviolla",
+	"problemsTitle": "Raporttitiedostoja ei ladattu",
+	"problemsHint": "Nämä raporttikansion tiedostot ovat virheellisiä eivätkä näy luettelossa:",
+	"params": "Parametrit",
+	"run": "Päivitä",
+	"all": "Kaikki",
+	"from": "alkaen",
+	"to": "asti",
+	"patronTypes": {
+		"student": "Oppilaat",
+		"teacher": "Opettajat"
+	},
+	"rows": "{{count}} {{count:plural; one:rivi; other:riviä;}}",
+	"ms": "ajassa {{ms}} ms",
+	"truncated": "{{count:plural; one:Näytetään vain ensimmäinen rivi, rajaa parametreja nähdäksesi kaikki.; other:Näytetään vain ensimmäiset {{count}} riviä, rajaa parametreja nähdäksesi kaikki.;}}",
+	"empty": "Ei tuloksia näillä parametreilla.",
+	"print": "Tulosta",
+	"printedOn": "Tulostettu {{date}}",
+	"errors": {
+		"required": "”{{label}}” puuttuu.",
+		"invalid": "Kentän ”{{label}}” arvo ei kelpaa."
+	},
+	"back": "Kaikki raportit",
+	"noParams": "Tällä raportilla ei ole parametreja.",
+	"special": {
+		"teachers": "Opettajat",
+		"total": "Yhteensä"
+	}
+}

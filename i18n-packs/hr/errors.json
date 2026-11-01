@@ -1,0 +1,7 @@
+{
+	"notFound": "Stranica nije pronađena",
+	"forbidden": "Ova stranica nije dostupna računu koji se koristi",
+	"unauthorized": "Za nastavak je potrebna prijava",
+	"generic": "Došlo je do pogreške ({{status}})",
+	"backHome": "Natrag na početnu stranicu"
+}

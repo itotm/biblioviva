@@ -1,0 +1,26 @@
+{
+	"id": "loans-by-class-section",
+	"title": {
+		"it": "Prestiti per classe e sezione",
+		"en": "Loans by class and section"
+	},
+	"description": {
+		"it": "Prestiti del periodo per anno di classe (righe) e sezione (colonne), con i totali; i docenti sono una riga e contano solo nel totale. La classe è quella del giorno del prestito.",
+		"en": "Loans of the period by class year (rows) and section (columns), with the totals; the teachers are one row and count in the total only. The class is the one of the day of the loan."
+	},
+	"category": "loans",
+	"query": {
+		"source": "loans",
+		"filters": [
+			{
+				"field": "period",
+				"ask": true
+			}
+		],
+		"rows": ["classYear"],
+		"columns": "section",
+		"measures": ["loans"],
+		"totals": "both",
+		"chart": "bar"
+	}
+}

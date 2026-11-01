@@ -1,0 +1,597 @@
+{
+	"_comment": "Scheme taken from the library's Koha CCODE list (docs/reference/classification): single-letter genres for fiction, Dewey-like codes grouped by hundred for non-fiction, one pictogram per genre and per hundred (children inherit). The shipped pictograms are generated (bun run pictograms:generate, step 11.14) in the colour of each node; replace them from the classification editor.",
+	"fictionByClass": true,
+	"readingLevels": [
+		{ "code": "1", "label": "1ª" },
+		{ "code": "2", "label": "2ª" },
+		{ "code": "3", "label": "3ª" },
+		{ "code": "4", "label": "4ª" },
+		{ "code": "5", "label": "5ª" }
+	],
+	"classPerItem": false,
+	"genres": [
+		{
+			"code": "A",
+			"label": "Romanzi e Racconti",
+			"image": "A.svg",
+			"color": "#e8231b"
+		},
+		{
+			"code": "B",
+			"label": "Romanzi Storici - Educazione Civica",
+			"image": "B.svg",
+			"color": "#2e7d32"
+		},
+		{
+			"code": "C",
+			"label": "Stampato Maiuscolo",
+			"image": "C.svg",
+			"color": "#f6e300"
+		},
+		{
+			"code": "D",
+			"label": "Avventura",
+			"image": "D.svg",
+			"color": "#a0522d"
+		},
+		{
+			"code": "E",
+			"label": "Fantasy",
+			"image": "E.svg",
+			"color": "#5e35b1"
+		},
+		{
+			"code": "F",
+			"label": "Miti e Leggende",
+			"image": "F.svg",
+			"color": "#f58220"
+		},
+		{
+			"code": "G",
+			"label": "Favole e Fiabe",
+			"image": "G.svg",
+			"color": "#1a237e"
+		},
+		{
+			"code": "H",
+			"label": "Fantascienza e Scienza",
+			"image": "H.svg",
+			"color": "#0d47a1"
+		},
+		{
+			"code": "I",
+			"label": "Gialli e Horror",
+			"image": "I.svg",
+			"color": "#fdd835"
+		},
+		{
+			"code": "L",
+			"label": "Racconti Umoristici",
+			"image": "L.svg",
+			"color": "#1b5e20"
+		},
+		{
+			"code": "M",
+			"label": "Fumetti",
+			"image": "M.svg",
+			"color": "#212121"
+		},
+		{
+			"code": "N",
+			"label": "Libri Game",
+			"image": "N.svg",
+			"color": "#9e9e9e"
+		},
+		{
+			"code": "P",
+			"label": "Lingua Straniera",
+			"image": "P.svg",
+			"color": "#1565c0"
+		},
+		{
+			"code": "R",
+			"label": "Poesia e Teatro",
+			"image": "R.svg",
+			"color": "#6a1b9a"
+		}
+	],
+	"nonfiction": [
+		{
+			"code": "000",
+			"label": "Generalità",
+			"image": "000.svg",
+			"color": "#f6c744",
+			"children": [
+				{
+					"code": "001",
+					"label": "Conoscenza"
+				},
+				{
+					"code": "004",
+					"label": "Informatica"
+				},
+				{
+					"code": "030",
+					"label": "Enciclopedie"
+				}
+			]
+		},
+		{
+			"code": "200",
+			"label": "Religione",
+			"image": "200.svg",
+			"color": "#e8231b",
+			"children": [
+				{
+					"code": "292",
+					"label": "Mitologia"
+				}
+			]
+		},
+		{
+			"code": "300",
+			"label": "Società",
+			"image": "300.svg",
+			"color": "#f7b6c8",
+			"children": [
+				{
+					"code": "340",
+					"label": "Diritto"
+				},
+				{
+					"code": "380",
+					"label": "Economia"
+				},
+				{
+					"code": "390",
+					"label": "Folclore"
+				}
+			]
+		},
+		{
+			"code": "400",
+			"label": "Lingue",
+			"image": "400.svg",
+			"color": "#a0522d",
+			"children": [
+				{
+					"code": "413",
+					"label": "Dizionario straniero"
+				},
+				{
+					"code": "453",
+					"label": "Dizionario italiano"
+				}
+			]
+		},
+		{
+			"code": "500",
+			"label": "Scienze",
+			"image": "500.svg",
+			"color": "#35bfef",
+			"children": [
+				{
+					"code": "503",
+					"label": "Scienze"
+				},
+				{
+					"code": "505",
+					"label": "Serie Scienze"
+				},
+				{
+					"code": "507",
+					"label": "Esperimenti"
+				},
+				{
+					"code": "510",
+					"label": "Matematica"
+				},
+				{
+					"code": "520",
+					"label": "Astronomia"
+				},
+				{
+					"code": "530",
+					"label": "Fisica"
+				},
+				{
+					"code": "540",
+					"label": "Chimica"
+				},
+				{
+					"code": "550",
+					"label": "Terra"
+				},
+				{
+					"code": "551",
+					"label": "Meteorologia"
+				},
+				{
+					"code": "560",
+					"label": "Dinosauri"
+				},
+				{
+					"code": "570",
+					"label": "Natura"
+				},
+				{
+					"code": "574",
+					"label": "Ecologia"
+				},
+				{
+					"code": "577",
+					"label": "Ambienti"
+				},
+				{
+					"code": "580",
+					"label": "Vegetali"
+				},
+				{
+					"code": "590",
+					"label": "Animali"
+				}
+			]
+		},
+		{
+			"code": "600",
+			"label": "Tecnologia",
+			"image": "600.svg",
+			"color": "#8dc21f",
+			"children": [
+				{
+					"code": "608",
+					"label": "Invenzioni"
+				},
+				{
+					"code": "610",
+					"label": "Medicina"
+				},
+				{
+					"code": "620",
+					"label": "Trasporti"
+				},
+				{
+					"code": "630",
+					"label": "Agricoltura"
+				},
+				{
+					"code": "641",
+					"label": "Cibo"
+				}
+			]
+		},
+		{
+			"code": "700",
+			"label": "Arte e tempo libero",
+			"image": "700.svg",
+			"color": "#f58220",
+			"children": [
+				{
+					"code": "702",
+					"label": "Arte"
+				},
+				{
+					"code": "708",
+					"label": "Musei"
+				},
+				{
+					"code": "720",
+					"label": "Architettura"
+				},
+				{
+					"code": "730",
+					"label": "Scultura"
+				},
+				{
+					"code": "740",
+					"label": "Decorazione"
+				},
+				{
+					"code": "750",
+					"label": "Pittura"
+				},
+				{
+					"code": "760",
+					"label": "Grafica"
+				},
+				{
+					"code": "770",
+					"label": "Fotografia"
+				},
+				{
+					"code": "780",
+					"label": "Musica"
+				},
+				{
+					"code": "790",
+					"label": "Giochi"
+				},
+				{
+					"code": "792",
+					"label": "Teatro"
+				},
+				{
+					"code": "796",
+					"label": "Sport"
+				}
+			]
+		},
+		{
+			"code": "900",
+			"label": "Storia e geografia",
+			"image": "900.svg",
+			"color": "#6a2c91",
+			"children": [
+				{
+					"code": "905",
+					"label": "Serie Storia"
+				},
+				{
+					"code": "910",
+					"label": "Geografia"
+				},
+				{
+					"code": "912",
+					"label": "Atlanti"
+				},
+				{
+					"code": "913",
+					"label": "Esplorazioni"
+				},
+				{
+					"code": "914",
+					"label": "Europa"
+				},
+				{
+					"code": "915",
+					"label": "Asia"
+				},
+				{
+					"code": "916",
+					"label": "Africa"
+				},
+				{
+					"code": "917",
+					"label": "America"
+				},
+				{
+					"code": "919",
+					"label": "Italia"
+				},
+				{
+					"code": "920",
+					"label": "Biografie"
+				},
+				{
+					"code": "930",
+					"label": "Civiltà antiche"
+				},
+				{
+					"code": "940",
+					"label": "Storia europea"
+				},
+				{
+					"code": "950",
+					"label": "Storia asiatica"
+				},
+				{
+					"code": "960",
+					"label": "Storia africana"
+				},
+				{
+					"code": "970",
+					"label": "Storia americana"
+				},
+				{
+					"code": "990",
+					"label": "Storia delle esplorazioni"
+				}
+			]
+		},
+		{
+			"code": "MMM",
+			"label": "Milano",
+			"image": "MMM.svg",
+			"color": "#d32f2f"
+		}
+	],
+	"deweyMap": [
+		{
+			"prefix": "004",
+			"code": "004"
+		},
+		{
+			"prefix": "00",
+			"code": "001"
+		},
+		{
+			"prefix": "03",
+			"code": "030"
+		},
+		{
+			"prefix": "0",
+			"code": "000"
+		},
+		{
+			"prefix": "29",
+			"code": "292"
+		},
+		{
+			"prefix": "2",
+			"code": "200"
+		},
+		{
+			"prefix": "34",
+			"code": "340"
+		},
+		{
+			"prefix": "38",
+			"code": "380"
+		},
+		{
+			"prefix": "39",
+			"code": "390"
+		},
+		{
+			"prefix": "3",
+			"code": "300"
+		},
+		{
+			"prefix": "4",
+			"code": "400"
+		},
+		{
+			"prefix": "50",
+			"code": "503"
+		},
+		{
+			"prefix": "51",
+			"code": "510"
+		},
+		{
+			"prefix": "52",
+			"code": "520"
+		},
+		{
+			"prefix": "53",
+			"code": "530"
+		},
+		{
+			"prefix": "54",
+			"code": "540"
+		},
+		{
+			"prefix": "551",
+			"code": "551"
+		},
+		{
+			"prefix": "55",
+			"code": "550"
+		},
+		{
+			"prefix": "56",
+			"code": "560"
+		},
+		{
+			"prefix": "57",
+			"code": "570"
+		},
+		{
+			"prefix": "58",
+			"code": "580"
+		},
+		{
+			"prefix": "59",
+			"code": "590"
+		},
+		{
+			"prefix": "5",
+			"code": "500"
+		},
+		{
+			"prefix": "61",
+			"code": "610"
+		},
+		{
+			"prefix": "62",
+			"code": "620"
+		},
+		{
+			"prefix": "63",
+			"code": "630"
+		},
+		{
+			"prefix": "64",
+			"code": "641"
+		},
+		{
+			"prefix": "6",
+			"code": "600"
+		},
+		{
+			"prefix": "70",
+			"code": "702"
+		},
+		{
+			"prefix": "72",
+			"code": "720"
+		},
+		{
+			"prefix": "73",
+			"code": "730"
+		},
+		{
+			"prefix": "74",
+			"code": "740"
+		},
+		{
+			"prefix": "75",
+			"code": "750"
+		},
+		{
+			"prefix": "76",
+			"code": "760"
+		},
+		{
+			"prefix": "77",
+			"code": "770"
+		},
+		{
+			"prefix": "78",
+			"code": "780"
+		},
+		{
+			"prefix": "792",
+			"code": "792"
+		},
+		{
+			"prefix": "796",
+			"code": "796"
+		},
+		{
+			"prefix": "79",
+			"code": "790"
+		},
+		{
+			"prefix": "7",
+			"code": "700"
+		},
+		{
+			"prefix": "91",
+			"code": "910"
+		},
+		{
+			"prefix": "92",
+			"code": "920"
+		},
+		{
+			"prefix": "93",
+			"code": "930"
+		},
+		{
+			"prefix": "94",
+			"code": "940"
+		},
+		{
+			"prefix": "95",
+			"code": "950"
+		},
+		{
+			"prefix": "96",
+			"code": "960"
+		},
+		{
+			"prefix": "97",
+			"code": "970"
+		},
+		{
+			"prefix": "9",
+			"code": "900"
+		}
+	],
+	"callNumber": {
+		"fiction": "{{genre}} {{author3}}",
+		"fictionWithClass": "{{genre}} {{class}} {{author3}}",
+		"nonfiction": "{{code}} {{author3}}"
+	}
+}

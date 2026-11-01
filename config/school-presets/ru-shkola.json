@@ -1,0 +1,112 @@
+{
+	"id": "ru-shkola",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Общеобразовательная школа 1–11; after the 9th class some pupils leave for a college. Group letters are Cyrillic. The school year starts on 1 September [VERIFY].",
+	"name": {
+		"it": "Scuola di istruzione generale, dalla 1ª all'11ª classe (Russia)",
+		"en": "General education school, grades 1 to 11 (Russia)",
+		"ru": "Общеобразовательная школа, 1–11 классы"
+	},
+	"country": "RU",
+	"languages": ["ru"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "nachalnoe",
+				"name": "Начальное общее образование"
+			},
+			{
+				"code": "osnovnoe",
+				"name": "Основное общее образование"
+			},
+			{
+				"code": "srednee",
+				"name": "Среднее общее образование"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1",
+				"name": "1 класс",
+				"stage": "nachalnoe"
+			},
+			{
+				"code": "2",
+				"label": "2",
+				"name": "2 класс",
+				"stage": "nachalnoe"
+			},
+			{
+				"code": "3",
+				"label": "3",
+				"name": "3 класс",
+				"stage": "nachalnoe"
+			},
+			{
+				"code": "4",
+				"label": "4",
+				"name": "4 класс",
+				"stage": "nachalnoe"
+			},
+			{
+				"code": "5",
+				"label": "5",
+				"name": "5 класс",
+				"stage": "osnovnoe"
+			},
+			{
+				"code": "6",
+				"label": "6",
+				"name": "6 класс",
+				"stage": "osnovnoe"
+			},
+			{
+				"code": "7",
+				"label": "7",
+				"name": "7 класс",
+				"stage": "osnovnoe"
+			},
+			{
+				"code": "8",
+				"label": "8",
+				"name": "8 класс",
+				"stage": "osnovnoe"
+			},
+			{
+				"code": "9",
+				"label": "9",
+				"name": "9 класс",
+				"stage": "osnovnoe",
+				"next": ["10", null]
+			},
+			{
+				"code": "10",
+				"label": "10",
+				"name": "10 класс",
+				"stage": "srednee"
+			},
+			{
+				"code": "11",
+				"label": "11",
+				"name": "11 класс",
+				"stage": "srednee"
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Класс",
+		"cardClass": "{class} класс",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"nachalnoe": ["А", "Б", "В", "Г"],
+		"osnovnoe": ["А", "Б", "В", "Г"],
+		"srednee": ["А", "Б"]
+	},
+	"teacherGroup": "Учителя",
+	"readingLevels": []
+}

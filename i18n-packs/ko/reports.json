@@ -1,0 +1,39 @@
+{
+	"title": "보고서",
+	"categories": {
+		"loans": "대출",
+		"books": "도서",
+		"patrons": "이용자",
+		"ops": "활동"
+	},
+	"restricted": "관리자만",
+	"custom": "학교 보고서",
+	"chart": "그래프 포함",
+	"problemsTitle": "보고서 파일을 불러오지 못함",
+	"problemsHint": "보고서 폴더의 다음 파일에 오류가 있어 목록에 나타나지 않습니다:",
+	"params": "조건",
+	"run": "새로 고침",
+	"all": "전체",
+	"from": "시작",
+	"to": "종료",
+	"patronTypes": {
+		"student": "학생",
+		"teacher": "교사"
+	},
+	"rows": "{{count}} {{count:plural; other:행;}}",
+	"ms": "{{ms}} ms 소요",
+	"truncated": "처음 {{count}} {{count:plural; other:행;}}만 표시됩니다. 모두 보려면 조건을 좁히십시오.",
+	"empty": "이 조건에 맞는 결과가 없습니다.",
+	"print": "인쇄",
+	"printedOn": "인쇄일: {{date}}",
+	"errors": {
+		"required": "“{{label}}” 항목이 비어 있습니다.",
+		"invalid": "“{{label}}” 항목의 값이 올바르지 않습니다."
+	},
+	"back": "모든 보고서",
+	"noParams": "이 보고서에는 조건이 없습니다.",
+	"special": {
+		"teachers": "교사",
+		"total": "합계"
+	}
+}

@@ -1,0 +1,76 @@
+{
+	"id": "pt-secundaria",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). After the 9.º year a pupil goes on to the secundário or leaves; the 10.º classes are formed by course (Ciências e Tecnologias, Línguas e Humanidades…), so the promotion across stages asks. The ano letivo starts on 1 September [VERIFY].",
+	"name": {
+		"it": "Scuola secondaria, dal 7º al 12º anno (Portogallo)",
+		"en": "Secondary school, grades 7 to 12 (Portugal)",
+		"pt-PT": "Escola secundária com 3.º ciclo, do 7.º ao 12.º ano (Portugal)"
+	},
+	"country": "PT",
+	"languages": ["pt-PT"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "3-ciclo",
+				"name": "3.º ciclo do ensino básico"
+			},
+			{
+				"code": "secundario",
+				"name": "Ensino secundário"
+			}
+		],
+		"levels": [
+			{
+				"code": "7",
+				"label": "7.º",
+				"name": "7.º ano",
+				"stage": "3-ciclo"
+			},
+			{
+				"code": "8",
+				"label": "8.º",
+				"name": "8.º ano",
+				"stage": "3-ciclo"
+			},
+			{
+				"code": "9",
+				"label": "9.º",
+				"name": "9.º ano",
+				"stage": "3-ciclo",
+				"next": ["10", null]
+			},
+			{
+				"code": "10",
+				"label": "10.º",
+				"name": "10.º ano",
+				"stage": "secundario"
+			},
+			{
+				"code": "11",
+				"label": "11.º",
+				"name": "11.º ano",
+				"stage": "secundario"
+			},
+			{
+				"code": "12",
+				"label": "12.º",
+				"name": "12.º ano",
+				"stage": "secundario"
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Turma",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"3-ciclo": ["A", "B", "C", "D"],
+		"secundario": ["A", "B", "C", "D"]
+	},
+	"teacherGroup": "Professores",
+	"readingLevels": []
+}

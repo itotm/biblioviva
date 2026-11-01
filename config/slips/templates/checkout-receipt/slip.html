@@ -1,0 +1,13 @@
+<section class="receipt">
+	<h1>{{library.name}}</h1>
+	<p>{{words.loan_on}} <strong>{{patron.full_name}}</strong>{{#patron.class_label}} ({{patron.class_label}}){{/patron.class_label}}</p>
+	<table>
+		<thead>
+			<tr><th>{{words.title}}</th><th>{{words.code}}</th><th>{{words.due_by}}</th></tr>
+		</thead>
+		<tbody>
+			{{#rows}}<tr><td>{{biblio.title}}<br><span class="author">{{biblio.author_short}}</span></td><td>{{item.barcode}}</td><td>{{due_date}}</td></tr>{{/rows}}
+		</tbody>
+	</table>
+	<p class="thanks">{{words.enjoy}}</p>
+</section>

@@ -1,0 +1,19 @@
+{
+	"title": "バージョン情報",
+	"app": {
+		"version": "バージョン",
+		"license": "ライセンス",
+		"repository": "ソースコード"
+	},
+	"deps": {
+		"title": "使用しているライブラリ",
+		"runtime": "実行時（{{count}}）",
+		"development": "開発時のみ（{{count}}）",
+		"system": "システムの構成要素",
+		"columns": {
+			"name": "名前",
+			"version": "バージョン",
+			"license": "ライセンス"
+		}
+	}
+}

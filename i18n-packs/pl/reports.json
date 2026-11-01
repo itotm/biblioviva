@@ -1,0 +1,39 @@
+{
+	"title": "Raporty",
+	"categories": {
+		"loans": "Wypożyczenia",
+		"books": "Książki",
+		"patrons": "Czytelnicy",
+		"ops": "Aktywność"
+	},
+	"restricted": "Tylko dla administratorów",
+	"custom": "Szkolne",
+	"chart": "Z wykresem",
+	"problemsTitle": "Nie wczytano plików raportów",
+	"problemsHint": "Te pliki z folderu raportów zawierają błąd i nie są wymienione na liście:",
+	"params": "Parametry",
+	"run": "Odśwież",
+	"all": "Wszystkie",
+	"from": "od",
+	"to": "do",
+	"patronTypes": {
+		"student": "Uczniowie",
+		"teacher": "Nauczyciele"
+	},
+	"rows": "{{count}} {{count:plural; one:wiersz; few:wiersze; many:wierszy; other:wiersza;}}",
+	"ms": "w {{ms}} ms",
+	"truncated": "Pokazano tylko {{count:plural; one:pierwszy wiersz; few:pierwsze {{count}} wiersze; many:pierwszych {{count}} wierszy; other:pierwszych {{count}} wiersza;}}: aby zobaczyć wszystkie, zawęzić parametry.",
+	"empty": "Brak wyników dla tych parametrów.",
+	"print": "Drukuj",
+	"printedOn": "Wydrukowano {{date}}",
+	"errors": {
+		"required": "Brakuje pola „{{label}}”.",
+		"invalid": "Wartość pola „{{label}}” jest nieprawidłowa."
+	},
+	"back": "Wszystkie raporty",
+	"noParams": "Ten raport nie ma parametrów.",
+	"special": {
+		"teachers": "Nauczyciele",
+		"total": "Razem"
+	}
+}

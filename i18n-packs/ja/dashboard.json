@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "貸出中",
+		"overdue": "延滞",
+		"issuedToday": "本日の貸出",
+		"returnedToday": "本日の返却",
+		"withoutCard": "カードが未印刷の利用者",
+		"withoutPhoto": "写真のない利用者",
+		"toClassify": "分類待ちの資料",
+		"pendingLabels": "ラベルのない資料"
+	},
+	"tilesTitle": "今日の図書館",
+	"actions": {
+		"title": "クイック操作"
+	},
+	"dueWeek": {
+		"title": "今週の返却期限",
+		"none": "{{day}}までに返却期限の貸出はありません。",
+		"more": "ほか{{count}}{{count:plural; other:件;}}",
+		"due": "{{date}}期限"
+	},
+	"inventory": {
+		"title": "蔵書点検",
+		"continue": "続ける"
+	},
+	"install": {
+		"title": "ホーム画面に追加",
+		"hint": "BiblioViva は、スマートフォンのアイコンから全画面のアプリとして開きます。",
+		"install": "インストール",
+		"fromMenu": "Firefox の ⋮ メニューを開き、「インストール」または「ホーム画面に追加」を選択してください。",
+		"later": "今はしない"
+	},
+	"upcoming": {
+		"title": "今後の予定",
+		"none": "今後{{days:plural; other:{{days}}日間;}}に予定はありません。",
+		"more": "ほか{{count}}{{count:plural; other:件;}}",
+		"open": "カレンダーを開く"
+	}
+}

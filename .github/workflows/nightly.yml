@@ -1,0 +1,44 @@
+name: nightly
+
+on:
+    schedule:
+        - cron: "0 2 * * *"
+    workflow_dispatch:
+    push:
+        tags: ["v*"]
+
+jobs:
+    slow-suites:
+        runs-on: ubuntu-24.04
+        timeout-minutes: 60
+        steps:
+            - uses: actions/checkout@v7
+
+            - uses: oven-sh/setup-bun@v2
+              with:
+                  bun-version: 1.4.4
+
+            - uses: actions/setup-node@v6
+              with:
+                  node-version: 24
+
+            - run: bun install --frozen-lockfile
+
+            - run: bunx playwright install --with-deps chromium
+
+            - name: Visual snapshots and slow end-to-end suites
+              # no suite carries these tags yet: an empty selection must not fail the night
+              run: bun run test:e2e -- --grep "@visual|@slow" --pass-with-no-tests
+              env:
+                  CI: "true"
+
+            - name: Dependency audit
+              run: bun audit || true
+
+            - name: Upload Playwright report
+              if: always()
+              uses: actions/upload-artifact@v6
+              with:
+                  name: nightly-playwright-report
+                  path: test-reports/playwright
+                  retention-days: 14

@@ -1,0 +1,39 @@
+{
+	"title": "Berichte",
+	"categories": {
+		"loans": "Ausleihen",
+		"books": "Bücher",
+		"patrons": "Nutzer",
+		"ops": "Aktivität"
+	},
+	"restricted": "Nur für die Verwaltung",
+	"custom": "Schuleigene",
+	"chart": "Mit Diagramm",
+	"problemsTitle": "Berichtsdateien nicht geladen",
+	"problemsHint": "Diese Dateien im Ordner der Berichte enthalten einen Fehler und werden nicht aufgeführt:",
+	"params": "Parameter",
+	"run": "Aktualisieren",
+	"all": "Alle",
+	"from": "vom",
+	"to": "bis",
+	"patronTypes": {
+		"student": "Schüler",
+		"teacher": "Lehrkräfte"
+	},
+	"rows": "{{count}} {{count:plural; one:Zeile; other:Zeilen;}}",
+	"ms": "in {{ms}} ms",
+	"truncated": "{{count:plural; one:Nur die erste Zeile wird angezeigt. Um alle zu sehen, die Parameter eingrenzen.; other:Nur die ersten {{count}} Zeilen werden angezeigt. Um alle zu sehen, die Parameter eingrenzen.;}}",
+	"empty": "Keine Ergebnisse mit diesen Parametern.",
+	"print": "Drucken",
+	"printedOn": "Gedruckt am {{date}}",
+	"errors": {
+		"required": "„{{label}}“ fehlt.",
+		"invalid": "Der Wert von „{{label}}“ ist nicht gültig."
+	},
+	"back": "Alle Berichte",
+	"noParams": "Dieser Bericht hat keine Parameter.",
+	"special": {
+		"teachers": "Lehrkräfte",
+		"total": "Gesamt"
+	}
+}

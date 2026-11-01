@@ -1,0 +1,20 @@
+{
+	"id": "a4-70x24",
+	"name": "Etichette 70 × 24 mm (3 × 12, mezza altezza)",
+	"paper": "A4",
+	"labelMm": {
+		"width": 70,
+		"height": 24
+	},
+	"columns": 3,
+	"rows": 12,
+	"marginMm": {
+		"top": 4,
+		"left": 0
+	},
+	"gapMm": {
+		"x": 0,
+		"y": 0
+	},
+	"cornerRadiusMm": 0
+}

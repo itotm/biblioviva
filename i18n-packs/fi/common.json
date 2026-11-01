@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "Tallenna",
+		"cancel": "Peruuta",
+		"close": "Sulje",
+		"confirm": "Vahvista",
+		"delete": "Poista",
+		"edit": "Muokkaa",
+		"search": "Hae",
+		"export": "Vie",
+		"back": "Takaisin",
+		"retry": "Yritä uudelleen",
+		"backTo": "Palaa sivulle {{page}}",
+		"more": "Muut toiminnot"
+	},
+	"similar": {
+		"label": "Samankaltaiset",
+		"count": "ja {{count}} {{count:plural; one:samankaltainen; other:samankaltaista;}}, löydetty korjaamalla kirjoitusvirhe",
+		"hint": "Löydetty korjaamalla kirjoitusvirhe: tarkista, että se on haettu."
+	},
+	"status": {
+		"loading": "Ladataan…",
+		"error": "Jokin meni pieleen"
+	},
+	"statuses": {
+		"item": {
+			"available": "Saatavilla",
+			"onLoan": "Lainassa",
+			"lost": "Kadonnut",
+			"damaged": "Vaurioitunut",
+			"inRepair": "Korjauksessa",
+			"withdrawn": "Poistettu kokoelmasta",
+			"notForLoan": "Vain kirjastossa"
+		},
+		"loan": {
+			"open": "Käynnissä",
+			"dueSoon": "Erääntymässä",
+			"overdue": "Myöhässä",
+			"returned": "Palautettu"
+		},
+		"patron": {
+			"active": "Aktiivinen",
+			"anonymized": "Poistettu"
+		},
+		"print": {
+			"pending": "Tulostettava",
+			"printed": "Tulostettu"
+		}
+	},
+	"list": {
+		"selected": "{{count}} {{count:plural; one:valittu; other:valittua;}}"
+	},
+	"scan": {
+		"label": "Viivakoodi",
+		"placeholder": "Skannaa tai kirjoita koodi",
+		"submit": "Hae koodi",
+		"camera": "Kamera",
+		"cameraTitle": "Skannaa kameralla",
+		"errors": {
+			"empty": "Koodia ei ole annettu.",
+			"item_check_digit": "Nidekoodin tarkistusmerkki on virheellinen: skannaa koodi uudelleen.",
+			"card_check_digit": "Kortin numeron tarkistusmerkki on virheellinen: skannaa koodi uudelleen.",
+			"isbn_check_digit": "ISBN:n tarkistenumero on virheellinen: tarkista numerot.",
+			"unrecognised": "Koodia ei tunnistettu: varmista, että lukija lukee koodit Code 39 ja Code 128."
+		},
+		"invalidRead": "Virheellinen koodi ({{code}}): luetaan.",
+		"invalidShort": "Virheellinen koodi, luetaan uudelleen…",
+		"useAnyway": "Käytä silti {{code}}"
+	},
+	"camera": {
+		"start": "Käynnistä kamera",
+		"stop": "Pysäytä kamera",
+		"switch": "Vaihda kameraa",
+		"torch": "Taskulamppu",
+		"snapshot": "Ota kuva",
+		"device": "Kamera",
+		"starting": "Kameraa käynnistetään…",
+		"errors": {
+			"insecure": "Kamera toimii vain suojatussa yhteydessä (https). Jos sovellus on avattu paikallisverkosta ilman Tailscalea, sovellus ei voi käyttää kameraa. Käytä viivakoodinlukijaa tai lataa tiedosto, tai avaa sovellus sen Tailscale-osoitteesta.",
+			"denied": "Lupa evätty: salli kameran käyttö selaimen asetuksista ja yritä uudelleen.",
+			"notFound": "Tästä laitteesta ei löytynyt kameraa.",
+			"busy": "Kamera on jo toisen sovelluksen käytössä.",
+			"generic": "Kameran käynnistys ei onnistunut ({{message}}).",
+			"timeout": "Kamera ei vastannut. Tarkista, ettei selain kysy vielä lupaa, eikä lupaa ole evätty aiemmin tälle sivustolle (kuvake osoitekentän lähellä)."
+		},
+		"permissionHint": "Jos selain pyytää lupaa kameran käyttöön (yleensä osoitepalkin lähellä), valitse ”Salli”."
+	},
+	"clipboard": {
+		"failed": "Kopiointi ei onnistunut: valitse teksti ja kopioi se käsin."
+	},
+	"form": {
+		"errorsTitle": "Tarkista korostetut kentät",
+		"field": "Kenttä {{field}}"
+	},
+	"confirm": {
+		"title": "Vahvistetaanko?"
+	},
+	"export": {
+		"csv": "CSV (taulukko, teksti)",
+		"ods": "ODS (LibreOffice / Excel)"
+	},
+	"demo": {
+		"panel": "Tässä asennuksessa on esimerkkitietoja, jotka on ladattu {{when}}: {{patrons}} {{patrons:plural; one:asiakas; other:asiakasta;}}, {{biblios}} {{biblios:plural; one:nimeke; other:nimekettä;}}, {{items}} {{items:plural; one:nide; other:nidettä;}}, {{loans}} {{loans:plural; one:laina; other:lainaa;}}. Kaikki tiedot on keksitty: ei oikeita henkilöitä."
+	},
+	"import": {
+		"header": "Ensimmäinen rivi on otsikkorivi",
+		"column": "Sarake {{n}}",
+		"ignore": "— ohita —",
+		"counts": {
+			"new": "{{count}} {{count:plural; one:uusi; other:uutta;}}",
+			"update": "{{count}} {{count:plural; one:päivitettävä; other:päivitettävää;}}",
+			"unchanged": "{{count}} {{count:plural; one:muuttumaton; other:muuttumatonta;}}",
+			"error": "{{count}} {{count:plural; one:virhe; other:virhettä;}}"
+		},
+		"onlyErrors": "Näytä vain virheet",
+		"info": "{{rows}} {{rows:plural; one:rivi; other:riviä;}} · koodaus {{encoding}} · erotin ”{{delimiter}}”",
+		"steps": {
+			"upload": "Tiedosto",
+			"mapping": "Sarakkeet",
+			"preview": "Tarkistus",
+			"done": "Valmis"
+		},
+		"line": "Rivi",
+		"status": "Tulos",
+		"reason": "Tiedot",
+		"statuses": {
+			"new": "Uusi",
+			"update": "Päivitetään",
+			"unchanged": "Ennallaan",
+			"error": "Virhe"
+		},
+		"errors": {
+			"empty": "Tiedosto on tyhjä.",
+			"tooLarge": "Tiedosto on suurempi kuin {{mb}} Mt.",
+			"noRows": "Tiedostosta ei löytynyt rivejä.",
+			"uploadGone": "Ladattu tiedosto ei ole enää saatavilla: lataa se uudelleen.",
+			"notReady": "Tiedostossa on yhä virheitä: tarkista se uudelleen.",
+			"mappingIncomplete": "Pakollisia sarakkeita puuttuu: {{columns}}."
+		},
+		"template": {
+			"title": "Tiedoston malli",
+			"hint": "Valitse sarakkeet: malli sisältää vain otsikkorivin, ja sitä täytetään yksi rivi kerrallaan (käy myös taulukkolaskennasta tallennettuna CSV-muodossa).",
+			"required": "Pakolliset",
+			"keys": "Tunnisteet",
+			"keysHint": "Niiden avulla tunnistetaan se, mikä on jo tallennettu. Ne voi jättää pois.",
+			"optional": "Valinnaiset",
+			"download": "Lataa malli",
+			"ifMissing": "Jos puuttuu: {{text}}."
+		},
+		"groups": {
+			"required": "pakollinen",
+			"key": "tunniste"
+		}
+	},
+	"words": {
+		"yes": "Kyllä",
+		"no": "Ei"
+	},
+	"password": {
+		"show": "Näytä salasana",
+		"hide": "Piilota salasana"
+	},
+	"demoPublic": {
+		"language": "Kieli",
+		"welcome": {
+			"title": "Tervetuloa BiblioVivan demoon",
+			"beta": "Julkinen beta",
+			"betaText": "BiblioViva on julkisessa betavaiheessa: toiminnot ovat vakaita, mutta versioon 1.0 asti ei ole taattua, että päivitys pysyy yhteensopivana edellisen version tietojen ja asetusten kanssa.",
+			"intro": "BiblioViva on ohjelma koulun kirjaston hoitamiseen: lainaukset ja palautukset, luettelo, asiakkaat valokuvineen ja kortteineen, etiketit, tulostukset ja raportit. Tämä on julkinen demo: kaikki toiminnot ovat käytettävissä kokeiluun.",
+			"contents": "Sisällä on kuvitteellinen ala-aste: {{patrons}} {{patrons:plural; one:oppilas tai opettaja; other:oppilasta ja opettajaa;}}, {{biblios}} {{biblios:plural; one:nimeke; other:nimekettä;}} ja {{items}} {{items:plural; one:nide; other:nidettä;}}, {{openLoans}} {{openLoans:plural; one:laina; other:lainaa;}} käynnissä, joista {{overdueLoans}} myöhässä. Nimet ja kuvat ovat keksittyjä: ei oikeita henkilöitä.",
+			"reset": "Joka päivä kello {{time}} demo palautuu alkutilaansa. Asetusten muutoksia voi kokeilla, mutta niitä ei tallenneta.",
+			"examples": "Demossa teksti ja kuvat korvataan esimerkillä: jokaista toimintoa voi kokeilla loppuun asti, mutta kirjoitettua tai valokuvattua ei säilytetä, eikä kukaan muu vierailija näe sitä. Tuonnit hyväksyvät vain esimerkkitiedostot, jotka voi ladata kunkin tuonnin sivulta.",
+			"accountsTitle": "Millä tunnuksella kirjautua",
+			"accountsHint": "Kuten kirjastossa, jokainen tunnus näkee vain oman tehtävänsä työn. Käyttäjätunnus ja salasana kirjoitetaan yllä olevaan lomakkeeseen.",
+			"password": "Salasana on sama kaikille tunnuksille:"
+		},
+		"accounts": {
+			"admin": {
+				"name": "Ylläpito",
+				"does": "näkee kaiken: muiden tunnusten työn lisäksi asetukset, henkilökunnan tunnukset, varmuuskopiot, luokat ja siirtymisen seuraavaan lukuvuoteen."
+			},
+			"prestiti": {
+				"name": "Lainausten hallinta",
+				"does": "lainaustiski: lainaa, palauttaa ja uusii, seuraa myöhässä olevia lainoja ja tulostaa muistutukset."
+			},
+			"catalogo": {
+				"name": "Luettelointi",
+				"does": "kirjat ja niteet, tietojen haku SBN:stä (täällä simuloitu), kansikuvat, luokitus ja etiketit."
+			},
+			"tessere": {
+				"name": "Kortit ja kuvat",
+				"does": "oppilaat ja opettajat, valokuvat ja luokkien valokuvakartoitus, korttien tulostus."
+			},
+			"report": {
+				"name": "Raportit",
+				"does": "tilastot lainoista, luettelosta ja asiakkaista sekä taulukoiden vienti."
+			}
+		},
+		"blocked": {
+			"config": "Demossa asetuksia ei tallenneta: kaikkea voi kokeilla, mutta muutoksia ei kirjoiteta.",
+			"restore": "Demossa varmuuskopion palautus on pois käytöstä: demon tiedot luodaan joka yö uudelleen itsestään.",
+			"configImport": "Demossa asetusten tuonti on pois käytöstä: demon asetukset ovat samat kaikille vierailijoille.",
+			"pictures": "Demossa luokkakuvia ei ladata: valokuvakartoituksessa kokeile esimerkkiluokan kuvaa.",
+			"sqlReports": "Demossa SQL-kielellä kirjoitetut raportit ovat pois käytöstä; ohjatut raportit ovat käytettävissä.",
+			"importSize": "Demossa tuotavien tiedostojen koko saa olla enintään 1 Mt.",
+			"printSize": "Demossa tulostetaan kerralla enintään 3 arkkia: valitse vähemmän kappaleita tai vähemmän asiakkaita.",
+			"importExample": "Demossa tuodaan vain esimerkkitiedosto: lataa se mallin painikkeella ja lataa se sellaisenaan.",
+			"notesLimit": "Demossa voi kirjoittaa vain muutaman muistiinpanon päivässä.",
+			"demoData": "Demossa esimerkkitiedot säilyvät yön nollaukseen asti.",
+			"backups": "Demossa manuaaliset varmuuskopiot ovat pois käytöstä: demon tiedot luodaan joka yö uudelleen itsestään.",
+			"archives": "Demossa arkistoja ja varmuuskopioita ei ladata: demon tiedot ja asetukset luodaan joka yö uudelleen.",
+			"languagePacks": "Demossa kielipaketteja ei ladata: demossa ovat käytettävissä italia ja englanti."
+		},
+		"example": {
+			"note": "DEMO – muistiinpano, {{when}}",
+			"comment": "Demomuistiinpano, {{when}}",
+			"book": "Demokirja, {{when}}",
+			"wish": "Demohankintatoive, {{when}}",
+			"class": "Demoluokka, {{when}}",
+			"printList": "Demolista, {{when}}",
+			"inventory": "Demoinventointi, {{when}}",
+			"reason": "Demoperuste, {{when}}",
+			"date": "Demopäivämäärä, {{when}}"
+		},
+		"replaced": "Demossa teksti ja kuvat korvataan esimerkillä: tallennus onnistui, mutta esimerkki jää.",
+		"tooMany": "Liian monta pyyntöä lyhyessä ajassa: yritä uudelleen minuutin kuluttua.",
+		"refused": {
+			"title": "Ei saatavilla demossa",
+			"busyTitle": "Liian monta pyyntöä",
+			"back": "Takaisin BiblioVivaan"
+		}
+	}
+}

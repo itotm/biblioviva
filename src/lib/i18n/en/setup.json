@@ -1,0 +1,226 @@
+{
+	"title": "First-time setup",
+	"intro": "Welcome to BiblioViva. In a few steps the library is ready: language, colours, school, codes and staff passwords.",
+	"stepOf": "Step {{step}} of {{total}}",
+	"next": "Next",
+	"back": "Back",
+	"finish": "Complete the setup",
+	"steps": {
+		"language": "Language",
+		"theme": "Colours",
+		"library": "Library",
+		"school": "School",
+		"codes": "Codes",
+		"passwords": "Passwords",
+		"demo": "Sample data",
+		"summary": "Summary"
+	},
+	"language": {
+		"title": "Which language should BiblioViva speak?",
+		"hint": "One language per installation: it applies to all staff and can be changed from Administration → Configuration → Appearance and language.",
+		"restore": {
+			"title": "Already have a BiblioViva backup?",
+			"hint": "To move BiblioViva to another computer, or to start again after a failure, there are no questions to answer: an archive made with “Export everything” is enough.",
+			"button": "Restore from a backup"
+		}
+	},
+	"theme": {
+		"title": "Choose the colours",
+		"hint": "Fifteen colour sets: they change colours only, never the shape. All light and readable in black and white too.",
+		"names": {
+			"ocean": "Ocean",
+			"forest": "Forest",
+			"grape": "Grape",
+			"sunset": "Sunset",
+			"cherry": "Cherry",
+			"lagoon": "Lagoon",
+			"silver": "Silver",
+			"graphite": "Graphite",
+			"apricot": "Apricot",
+			"indigo": "Indigo",
+			"mint": "Mint",
+			"rose": "Rose",
+			"sahara": "Sahara",
+			"wintry": "Wintry",
+			"olive": "Olive"
+		}
+	},
+	"library": {
+		"title": "The library",
+		"name": "Library name",
+		"namePlaceholder": "Rodari primary school library",
+		"schoolType": "School type",
+		"schoolTypeHint": "The years and the classes as the school uses them. They can be changed later in Administration → Configuration → School and Administration → Configuration → Classes.",
+		"photos": "Patron photos",
+		"photosHint": "Photos of students and teachers, taken or uploaded, and printed on the cards. Off: no photo anywhere and cards without a photo.",
+		"covers": "Book covers",
+		"coversHint": "Covers looked up online, photographed or uploaded, and shown in the catalogue. Off: no cover."
+	},
+	"school": {
+		"title": "The school",
+		"hint": "The type of school proposes the years, the classes and the reading levels. The classes are made right away; with the demo data they fill up with made-up students.",
+		"otherCountries": "Other countries",
+		"names": {
+			"perLevel": "{{stage}}: names of the classes, one per year",
+			"mixed": "{{stage}}: names of the sections, each with every year"
+		},
+		"namesHint": "Separated by commas; A-D stands for A, B, C, D. Empty: no classes.",
+		"namesInvalid": "Invalid names: type them separated by commas (40 at most).",
+		"classes": "{{count}} {{count:plural; one:class; other:classes;}} to make:",
+		"more": "and {{count}} more",
+		"classLabel": "How a class is written",
+		"teacherGroup": "Teachers group",
+		"teacherGroupHint": "Every teacher joins this group; more groups can be added later.",
+		"schoolYearStart": "Start of the school year",
+		"schoolYearStartHint": "Month and day as MM-DD (for example 09-01).",
+		"schoolYearStartInvalid": "Write the month and the day as MM-DD.",
+		"schoolYearLabel": "Name of the school year",
+		"schoolYearLabels": {
+			"span": "Two years (2026/2027)",
+			"start": "The year it starts (2026)"
+		},
+		"readingLevels": "Fiction shelved by reading level",
+		"readingLevelsHint": "Years, classes and reading levels can be changed later in Administration."
+	},
+	"codes": {
+		"title": "The codes",
+		"hint": "The barcode format of new copies and the one of new cards, each chosen on its own. The two shapes can never be confused: whoever reads a code knows at once whether it is a book or a card.",
+		"itemFormat": "Format of the copies",
+		"itemFormats": {
+			"standard": "Year, check and number (recommended)",
+			"classic": "Year and number, check at the end",
+			"prefix": "With the letter L in front"
+		},
+		"cardFormat": "Format of the cards",
+		"cardFormats": {
+			"standard": "Check and a 6-digit number (recommended)",
+			"classic": "10-digit number, check at the end",
+			"prefix": "With the letter T in front"
+		},
+		"check": "Check character",
+		"checks": {
+			"mod23": "A letter (mod 23)",
+			"luhn": "A digit (Luhn)",
+			"damm": "A digit (Damm)"
+		},
+		"layout": "Scanner keyboard",
+		"layoutHint": "The keyboard language of the computer the barcode scanners are plugged into: it repairs swapped characters. If yours is not listed, choose the closest one: it can be changed later in Configuration → Barcodes.",
+		"layouts": {
+			"it": "Italian",
+			"es": "Spanish",
+			"de": "German",
+			"fr": "French",
+			"uk": "English (United Kingdom)",
+			"us": "English (United States)"
+		},
+		"copy": "Copy of a book",
+		"card": "Card",
+		"verdict": "Copies and cards can never be confused.",
+		"refused": "With this choice copies and cards could be confused: pick another format.",
+		"later": "Formats, codes of older systems and numbering can be changed later in Configuration → Barcodes."
+	},
+	"passwords": {
+		"title": "Staff passwords",
+		"hint": "Five shared accounts, one per role. The proposed passwords are random and can be replaced. Note them down on the final step: they are shown only once.",
+		"accounts": {
+			"admin": "Administration (admin)",
+			"prestiti": "Loan management (prestiti)",
+			"catalogo": "Cataloguing (catalogo)",
+			"tessere": "Cards and photos (tessere)",
+			"report": "Reports (report)"
+		},
+		"regenerate": "Regenerate",
+		"tooShort": "At least 8 characters.",
+		"demo": "With the demo data every account uses the same easy password: “{{password}}”. Before using BiblioViva for real, change them in Administration → Staff accounts."
+	},
+	"demo": {
+		"title": "Sample data",
+		"hint": "Made-up students, books and loans to try the application. They are removed with one click from Administration when the real data comes in.",
+		"load": "Load sample data",
+		"hasData": "The database already contains data: sample data will not be loaded."
+	},
+	"summary": {
+		"title": "Summary",
+		"hint": "Check and confirm. The passwords appear only on this page: copy them before moving on.",
+		"language": "Language",
+		"theme": "Colours",
+		"library": "Library",
+		"photos": "Patron photos",
+		"covers": "Book covers",
+		"school": "School",
+		"classes": "Classes",
+		"classesValue": "{{count}} {{count:plural; one:class; other:classes;}} ({{first}}…) and the group {{teachers}}",
+		"readingLevels": "Reading levels",
+		"none": "None",
+		"codes": "Codes",
+		"demo": "Sample data",
+		"yes": "Yes",
+		"no": "No",
+		"later": "Later on, passwords are changed in Administration → Staff accounts.",
+		"working": "Saving…",
+		"error": "Configuration not saved: {{message}}"
+	},
+	"done": {
+		"title": "Setup completed",
+		"hint": "Keep these passwords somewhere safe: they will not be shown again.",
+		"demoLoaded": "Sample data loaded: {{patrons}} {{patrons:plural; one:patron; other:patrons;}}, {{biblios}} {{biblios:plural; one:title; other:titles;}}, {{items}} {{items:plural; one:copy; other:copies;}}, {{loans}} {{loans:plural; one:loan; other:loans;}}.",
+		"login": "Go to the login"
+	},
+	"generic": {
+		"stage": "School",
+		"level": "Level {{level}}",
+		"groupWord": "Section",
+		"teacherGroup": "Teachers"
+	},
+	"restore": {
+		"title": "Restore from a backup",
+		"hint": "Choose the archive made with “Export everything” (Administration → Backup). Maximum size: {{maxMb}} MB. The archive is checked before anything is restored.",
+		"choose": "Choose the archive",
+		"checking": "Checking the archive…",
+		"from": "Archive of the library “{{library}}”, made on {{date}}, version {{version}}.",
+		"fromAnonymous": "Archive made on {{date}}, version {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "Patrons",
+			"catalog": "Catalogue and copies",
+			"loans": "Loans and history",
+			"printLists": "Print lists",
+			"photos": "Patron photos",
+			"covers": "Covers",
+			"notes": "Staff notes",
+			"dates": "Calendar dates",
+			"audit": "Activity log",
+			"ui": "Interface",
+			"security": "Security and access",
+			"library": "Library and school"
+		},
+		"images": "Photos: {{photos}} · covers: {{covers}}",
+		"accounts": "Accounts that will be able to log in: {{accounts}}. The passwords are those of the archive.",
+		"warning": "The restore brings settings, data and pictures back as they were in the archive, all at once. Afterwards the setup wizard is no longer needed.",
+		"apply": "Restore",
+		"restoring": "Restoring…",
+		"cancel": "Cancel",
+		"back": "Back to the setup wizard",
+		"done": {
+			"title": "Restore completed",
+			"hint": "The library is as it was in the archive. To log in, use one of these accounts with the password it had in the archive:",
+			"login": "Go to the login"
+		},
+		"errors": {
+			"too_large": "The archive is too large (maximum {{maxMb}} MB).",
+			"not_zip": "The file is not a valid ZIP archive.",
+			"not_archive": "The file is not a BiblioViva archive: choose an archive made with “Export everything”.",
+			"too_many_files": "The archive contains too many files.",
+			"unsafe_path": "The archive contains a path that is not allowed: {{name}}",
+			"link": "The archive contains a link, which is not allowed: {{name}}",
+			"unknown_file": "The archive contains a file that is not part of BiblioViva: {{name}}",
+			"not_setup": "The setup wizard has already been completed: restoring is done from Administration → Backup.",
+			"newer_version": "The archive was made by a newer version of BiblioViva ({{name}}): install that version first.",
+			"missing_parts": "The archive is incomplete: {{name}} are missing. Choose an archive made with “Export everything”.",
+			"unfinished_setup": "The archive comes from an installation where the setup wizard had not been completed.",
+			"not_ready": "The archive has problems and cannot be restored: {{name}}",
+			"gone": "The checked archive is gone: choose it again.",
+			"failed": "The restore did not succeed."
+		}
+	}
+}

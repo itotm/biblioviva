@@ -1,0 +1,226 @@
+{
+	"title": "Eerste configuratie",
+	"intro": "Welkom bij BiblioViva. In enkele stappen is de bibliotheek klaar: taal, kleuren, school, codes en wachtwoorden van het personeel.",
+	"stepOf": "Stap {{step}} van {{total}}",
+	"next": "Volgende",
+	"back": "Terug",
+	"finish": "Configuratie voltooien",
+	"steps": {
+		"language": "Taal",
+		"theme": "Kleuren",
+		"library": "Bibliotheek",
+		"school": "School",
+		"codes": "Codes",
+		"passwords": "Wachtwoorden",
+		"demo": "Voorbeeldgegevens",
+		"summary": "Samenvatting"
+	},
+	"language": {
+		"title": "In welke taal moet BiblioViva werken?",
+		"hint": "Één taal per installatie: ze geldt voor het hele personeel en kan worden gewijzigd via Beheer → Configuratie → Uiterlijk en taal.",
+		"restore": {
+			"title": "Hebt u al een back-up van BiblioViva?",
+			"hint": "Om BiblioViva naar een andere computer te verplaatsen, of om opnieuw te beginnen na een storing, hoeft u geen vragen te beantwoorden: een archief gemaakt met “Alles exporteren” is voldoende.",
+			"button": "Terugzetten vanaf een back-up"
+		}
+	},
+	"theme": {
+		"title": "Kies de kleuren",
+		"hint": "Vijftien kleurenpaletten: ze wijzigen alleen de kleuren, nooit de vorm. Alle zijn licht en leesbaar, ook in zwart-wit.",
+		"names": {
+			"ocean": "Oceaan",
+			"forest": "Bos",
+			"grape": "Druif",
+			"sunset": "Zonsondergang",
+			"cherry": "Kers",
+			"lagoon": "Lagune",
+			"silver": "Zilver",
+			"graphite": "Grafiet",
+			"apricot": "Abrikoos",
+			"indigo": "Indigo",
+			"mint": "Munt",
+			"rose": "Roos",
+			"sahara": "Sahara",
+			"wintry": "Winters",
+			"olive": "Olijf"
+		}
+	},
+	"library": {
+		"title": "De bibliotheek",
+		"name": "Naam van de bibliotheek",
+		"namePlaceholder": "Bibliotheek van de basisschool Rodari",
+		"schoolType": "Schooltype",
+		"schoolTypeHint": "De jaren en de klassen zoals de school ze gebruikt. Ze kunnen later worden gewijzigd onder Beheer → Configuratie → School en Beheer → Configuratie → Klassen.",
+		"photos": "Foto's van leners",
+		"photosHint": "Foto's van leerlingen en leerkrachten, gemaakt of geüpload, en afgedrukt op de lenerspassen. Uit: nergens een foto en lenerspassen zonder foto.",
+		"covers": "Omslagen van boeken",
+		"coversHint": "Omslagen die online worden gezocht, gefotografeerd of geüpload, en getoond in de catalogus. Uit: geen omslag."
+	},
+	"school": {
+		"title": "De school",
+		"hint": "Het schooltype stelt de jaren, de klassen en de leesniveaus voor. De klassen worden meteen aangemaakt; met de voorbeeldgegevens worden ze gevuld met verzonnen leerlingen.",
+		"otherCountries": "Andere landen",
+		"names": {
+			"perLevel": "{{stage}}: namen van de klassen, één per jaar",
+			"mixed": "{{stage}}: namen van de afdelingen, elk met alle jaren"
+		},
+		"namesHint": "Gescheiden door komma's; A-D betekent A, B, C, D. Leeg: geen klassen.",
+		"namesInvalid": "Ongeldige namen: schrijf ze gescheiden door komma's (hoogstens 40).",
+		"classes": "{{count}} {{count:plural; one:klas; other:klassen;}} aan te maken:",
+		"more": "{{count:plural; one:en nog één; other:en nog {{count}};}}",
+		"classLabel": "Hoe de klas wordt geschreven",
+		"teacherGroup": "Groep van de leerkrachten",
+		"teacherGroupHint": "Elke leerkracht gaat in deze groep; andere groepen kunnen later worden toegevoegd.",
+		"schoolYearStart": "Begin van het schooljaar",
+		"schoolYearStartHint": "Maand en dag als MM-DD (bijvoorbeeld 09-01 voor 1 september).",
+		"schoolYearStartInvalid": "Schrijf de maand en de dag in de vorm MM-DD.",
+		"schoolYearLabel": "Naam van het schooljaar",
+		"schoolYearLabels": {
+			"span": "Twee jaren (2026/2027)",
+			"start": "Het jaar van begin (2026)"
+		},
+		"readingLevels": "Fictie gesorteerd op leesniveau",
+		"readingLevelsHint": "Jaren, klassen en leesniveaus kunnen later worden gewijzigd onder Beheer."
+	},
+	"codes": {
+		"title": "De codes",
+		"hint": "Het formaat van de barcodes van de nieuwe exemplaren en dat van de nieuwe lenerspassen, elk apart gekozen. De twee vormen kunnen nooit met elkaar worden verward: wie een code leest, weet meteen of het een boek of een lenerspas is.",
+		"itemFormat": "Formaat van de exemplaren",
+		"itemFormats": {
+			"standard": "Jaar, controle en nummer (aanbevolen)",
+			"classic": "Jaar en nummer, controle achteraan",
+			"prefix": "Met de letter L ervoor"
+		},
+		"cardFormat": "Formaat van de lenerspassen",
+		"cardFormats": {
+			"standard": "Controle en nummer van 6 cijfers (aanbevolen)",
+			"classic": "Nummer van 10 cijfers, controle achteraan",
+			"prefix": "Met de letter T ervoor"
+		},
+		"check": "Controleteken",
+		"checks": {
+			"mod23": "Een letter (mod 23)",
+			"luhn": "Een cijfer (Luhn)",
+			"damm": "Een cijfer (Damm)"
+		},
+		"layout": "Toetsenbord van de lezers",
+		"layoutHint": "De toetsenbordtaal van de computer waarop de barcodelezers zijn aangesloten: ze corrigeert verwisselde tekens. Staat de uwe er niet bij, kies de meest gelijkende: later te wijzigen onder Configuratie → Barcodes.",
+		"layouts": {
+			"it": "Italiaans",
+			"es": "Spaans",
+			"de": "Duits",
+			"fr": "Frans",
+			"uk": "Engels (Verenigd Koninkrijk)",
+			"us": "Engels (Verenigde Staten)"
+		},
+		"copy": "Exemplaar van een boek",
+		"card": "Lenerspas",
+		"verdict": "Exemplaren en lenerspassen kunnen nooit met elkaar worden verward.",
+		"refused": "Met deze keuze zouden exemplaren en lenerspassen met elkaar kunnen worden verward: kies een ander formaat.",
+		"later": "Formaten, codes van oudere systemen en nummering kunnen later worden gewijzigd onder Configuratie → Barcodes."
+	},
+	"passwords": {
+		"title": "Wachtwoorden van het personeel",
+		"hint": "Vijf gedeelde accounts, één per rol. De voorgestelde wachtwoorden zijn willekeurig gegenereerd en kunnen worden vervangen. Noteer ze in de laatste stap: ze worden maar één keer getoond.",
+		"accounts": {
+			"admin": "Beheer (admin)",
+			"prestiti": "Uitleenbeheer (prestiti)",
+			"catalogo": "Catalogisering (catalogo)",
+			"tessere": "Lenerspassen en foto's (tessere)",
+			"report": "Rapporten (report)"
+		},
+		"regenerate": "Opnieuw genereren",
+		"tooShort": "Minstens 8 tekens.",
+		"demo": "Met de voorbeeldgegevens gebruiken alle accounts hetzelfde, gemakkelijk te onthouden wachtwoord: “{{password}}”. Voordat u BiblioViva echt gaat gebruiken, wijzigt u ze onder Beheer → Medewerkersaccounts."
+	},
+	"demo": {
+		"title": "Voorbeeldgegevens",
+		"hint": "Verzonnen leerlingen, boeken en uitleningen om de toepassing uit te proberen. Ze worden met één klik onder Beheer verwijderd zodra de echte gegevens worden ingevoerd.",
+		"load": "Voorbeeldgegevens laden",
+		"hasData": "De database bevat al gegevens: de voorbeeldgegevens worden niet geladen."
+	},
+	"summary": {
+		"title": "Samenvatting",
+		"hint": "Controleer en bevestig. De wachtwoorden verschijnen alleen op deze pagina: kopieer ze voordat u verdergaat.",
+		"language": "Taal",
+		"theme": "Kleuren",
+		"library": "Bibliotheek",
+		"photos": "Foto's van leners",
+		"covers": "Omslagen van boeken",
+		"school": "School",
+		"classes": "Klassen",
+		"classesValue": "{{count}} {{count:plural; one:klas; other:klassen;}} ({{first}}…) en de groep {{teachers}}",
+		"readingLevels": "Leesniveaus",
+		"none": "Geen",
+		"codes": "Codes",
+		"demo": "Voorbeeldgegevens",
+		"yes": "Ja",
+		"no": "Nee",
+		"later": "Later worden de wachtwoorden gewijzigd onder Beheer → Medewerkersaccounts.",
+		"working": "Opslaan bezig…",
+		"error": "Configuratie niet opgeslagen: {{message}}"
+	},
+	"done": {
+		"title": "Configuratie voltooid",
+		"hint": "Bewaar deze wachtwoorden op een veilige plaats: ze worden niet opnieuw getoond.",
+		"demoLoaded": "Voorbeeldgegevens geladen: {{patrons}} {{patrons:plural; one:lener; other:leners;}}, {{biblios}} {{biblios:plural; one:titelbeschrijving; other:titelbeschrijvingen;}}, {{items}} {{items:plural; one:exemplaar; other:exemplaren;}}, {{loans}} {{loans:plural; one:uitlening; other:uitleningen;}}.",
+		"login": "Naar het inlogscherm"
+	},
+	"generic": {
+		"stage": "School",
+		"level": "Niveau {{level}}",
+		"groupWord": "Afdeling",
+		"teacherGroup": "Leerkrachten"
+	},
+	"restore": {
+		"title": "Terugzetten vanaf een back-up",
+		"hint": "Kies het archief gemaakt met “Alles exporteren” (Beheer → Back-up). Maximale grootte: {{maxMb}} MB. Het archief wordt gecontroleerd voordat er iets wordt teruggezet.",
+		"choose": "Kies het archief",
+		"checking": "Het archief wordt gecontroleerd…",
+		"from": "Archief van de bibliotheek “{{library}}”, gemaakt op {{date}}, versie {{version}}.",
+		"fromAnonymous": "Archief gemaakt op {{date}}, versie {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "Leners",
+			"catalog": "Catalogus en exemplaren",
+			"loans": "Uitleningen en historiek",
+			"printLists": "Afdruklijsten",
+			"photos": "Foto's van leners",
+			"covers": "Omslagen",
+			"notes": "Notities",
+			"dates": "Datums van de kalender",
+			"audit": "Logboek van de activiteiten",
+			"ui": "Interface",
+			"security": "Beveiliging en toegang",
+			"library": "Bibliotheek en school"
+		},
+		"images": "Foto's: {{photos}} · omslagen: {{covers}}",
+		"accounts": "Accounts die kunnen inloggen: {{accounts}}. De wachtwoorden zijn die van het archief.",
+		"warning": "Het terugzetten brengt in één keer instellingen, gegevens en afbeeldingen terug zoals ze in het archief stonden. Daarna is de installatiewizard niet meer nodig.",
+		"apply": "Terugzetten",
+		"restoring": "Bezig met terugzetten…",
+		"cancel": "Annuleren",
+		"back": "Terug naar de installatiewizard",
+		"done": {
+			"title": "Terugzetten voltooid",
+			"hint": "De bibliotheek is zoals ze in het archief stond. Om in te loggen gebruikt u een van deze accounts, met het wachtwoord dat het in het archief had:",
+			"login": "Naar het inlogscherm"
+		},
+		"errors": {
+			"too_large": "Het archief is te groot (maximaal {{maxMb}} MB).",
+			"not_zip": "Het bestand is geen geldig ZIP-archief.",
+			"not_archive": "Het bestand is geen archief van BiblioViva: kies een archief gemaakt met “Alles exporteren”.",
+			"too_many_files": "Het archief bevat te veel bestanden.",
+			"unsafe_path": "Het archief bevat een niet-toegestaan pad: {{name}}",
+			"link": "Het archief bevat een koppeling, die niet is toegestaan: {{name}}",
+			"unknown_file": "Het archief bevat een bestand dat niet bij BiblioViva hoort: {{name}}",
+			"not_setup": "De installatiewizard is al voltooid: terugzetten gebeurt via Beheer → Back-up.",
+			"newer_version": "Het archief is gemaakt door een nieuwere versie van BiblioViva ({{name}}): installeer eerst die versie.",
+			"missing_parts": "Het archief is onvolledig: {{name}} ontbreken. Kies een archief gemaakt met “Alles exporteren”.",
+			"unfinished_setup": "Het archief komt van een installatie waarin de installatiewizard niet was voltooid.",
+			"not_ready": "Het archief heeft problemen en kan niet worden teruggezet: {{name}}",
+			"gone": "Het gecontroleerde archief is er niet meer: kies het opnieuw.",
+			"failed": "Het terugzetten is niet gelukt."
+		}
+	}
+}

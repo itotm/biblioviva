@@ -1,0 +1,7 @@
+{
+	"notFound": "Sivua ei löytynyt",
+	"forbidden": "Tämä sivu ei ole käytettävissä nykyisellä tunnuksella",
+	"unauthorized": "Kirjaudu sisään jatkaaksesi",
+	"generic": "Jokin meni pieleen ({{status}})",
+	"backHome": "Takaisin etusivulle"
+}

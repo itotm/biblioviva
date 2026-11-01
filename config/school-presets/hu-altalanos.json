@@ -1,0 +1,98 @@
+{
+	"id": "hu-altalanos",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). After the 4. and the 6. évfolyam some pupils leave for an eight- or six-year gimnázium [VERIFY].",
+	"name": {
+		"it": "Scuola primaria e secondaria di primo grado (Ungheria)",
+		"en": "Primary and lower secondary school (Hungary)",
+		"hu": "Általános iskola (Magyarország)"
+	},
+	"country": "HU",
+	"languages": ["hu"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "also",
+				"name": "Alsó tagozat"
+			},
+			{
+				"code": "felso",
+				"name": "Felső tagozat"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1.",
+				"name": "1. évfolyam",
+				"stage": "also",
+				"aliases": ["1. osztály"]
+			},
+			{
+				"code": "2",
+				"label": "2.",
+				"name": "2. évfolyam",
+				"stage": "also",
+				"aliases": ["2. osztály"]
+			},
+			{
+				"code": "3",
+				"label": "3.",
+				"name": "3. évfolyam",
+				"stage": "also",
+				"aliases": ["3. osztály"]
+			},
+			{
+				"code": "4",
+				"label": "4.",
+				"name": "4. évfolyam",
+				"stage": "also",
+				"next": ["5", null],
+				"aliases": ["4. osztály"]
+			},
+			{
+				"code": "5",
+				"label": "5.",
+				"name": "5. évfolyam",
+				"stage": "felso",
+				"aliases": ["5. osztály"]
+			},
+			{
+				"code": "6",
+				"label": "6.",
+				"name": "6. évfolyam",
+				"stage": "felso",
+				"next": ["7", null],
+				"aliases": ["6. osztály"]
+			},
+			{
+				"code": "7",
+				"label": "7.",
+				"name": "7. évfolyam",
+				"stage": "felso",
+				"aliases": ["7. osztály"]
+			},
+			{
+				"code": "8",
+				"label": "8.",
+				"name": "8. évfolyam",
+				"stage": "felso",
+				"aliases": ["8. osztály"]
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Osztály",
+		"cardClass": "{class} osztály",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"also": ["a", "b", "c"],
+		"felso": ["a", "b", "c"]
+	},
+	"teacherGroup": "Pedagógusok",
+	"readingLevels": []
+}

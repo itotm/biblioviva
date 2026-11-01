@@ -1,0 +1,39 @@
+{
+	"title": "Informes",
+	"categories": {
+		"loans": "Préstecs",
+		"books": "Llibres",
+		"patrons": "Usuaris",
+		"ops": "Activitat"
+	},
+	"restricted": "Només administradors",
+	"custom": "De l'escola",
+	"chart": "Amb gràfic",
+	"problemsTitle": "Fitxers d'informe no carregats",
+	"problemsHint": "Aquests fitxers de la carpeta dels informes tenen un error i no apareixen a la llista:",
+	"params": "Paràmetres",
+	"run": "Actualitza",
+	"all": "Tots",
+	"from": "des de",
+	"to": "fins a",
+	"patronTypes": {
+		"student": "Alumnes",
+		"teacher": "Docents"
+	},
+	"rows": "{{count}} {{count:plural; one:fila; other:files;}}",
+	"ms": "en {{ms}} ms",
+	"truncated": "{{count:plural; one:Només es mostra la primera fila. Per veure-la, restringeix els paràmetres.; other:Només es mostren les primeres {{count}} files. Per veure-les totes, restringeix els paràmetres.;}}",
+	"empty": "Cap resultat amb aquests paràmetres.",
+	"print": "Imprimeix",
+	"printedOn": "Imprès el {{date}}",
+	"errors": {
+		"required": "Falta «{{label}}».",
+		"invalid": "El valor de «{{label}}» no és vàlid."
+	},
+	"back": "Tots els informes",
+	"noParams": "Aquest informe no té paràmetres.",
+	"special": {
+		"teachers": "Docents",
+		"total": "Total"
+	}
+}

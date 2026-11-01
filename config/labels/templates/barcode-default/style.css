@@ -1,0 +1,50 @@
+/* The bottom label of pair-default on its own; the compact variant fits cells lower than 30 mm. */
+.bc {
+	height: 100%;
+	box-sizing: border-box;
+	padding-top: 3mm;
+	text-align: center;
+	overflow: hidden;
+	font-family: Arial, Helvetica, "Liberation Sans", sans-serif;
+	font-weight: 700;
+	color: #000;
+}
+.bc .call {
+	font-size: 10pt;
+	margin: 3pt 0 5pt;
+}
+.bc .title {
+	font-size: 12pt;
+	font-style: italic;
+	font-weight: 400;
+	margin-bottom: 3pt;
+	white-space: nowrap;
+}
+.bc .svg svg {
+	display: block;
+	width: 50mm;
+	height: 15mm;
+	margin: 3mm auto;
+}
+.bc .num {
+	font-size: 15pt;
+}
+.bc.compact {
+	padding-top: 1.5mm;
+}
+.bc.compact .call {
+	font-size: 9pt;
+	margin: 0 0 1pt;
+	white-space: nowrap;
+}
+.bc.compact .call i {
+	font-weight: 400;
+}
+.bc.compact .svg svg {
+	width: 40mm;
+	height: 8mm;
+	margin: 1mm auto;
+}
+.bc.compact .num {
+	font-size: 11pt;
+}

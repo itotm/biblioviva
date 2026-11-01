@@ -1,0 +1,120 @@
+{
+	"id": "se-grundskola",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Grundskola F–9 (many schools are F–6 or 7–9: remove the other stages); classes written 7A or 7a, the förskoleklass FA [VERIFY]. Lessons start in mid-August [VERIFY].",
+	"name": {
+		"it": "Scuola di base, dalla förskoleklass al 9º anno (Svezia)",
+		"en": "Compulsory school, förskoleklass to grade 9 (Sweden)",
+		"sv": "Grundskola, förskoleklass–årskurs 9 (Sverige)"
+	},
+	"country": "SE",
+	"languages": ["sv"],
+	"schoolYear": {
+		"start": "08-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "forskoleklass",
+				"name": "Förskoleklass"
+			},
+			{
+				"code": "lagstadiet",
+				"name": "Lågstadiet"
+			},
+			{
+				"code": "mellanstadiet",
+				"name": "Mellanstadiet"
+			},
+			{
+				"code": "hogstadiet",
+				"name": "Högstadiet"
+			}
+		],
+		"levels": [
+			{
+				"code": "F",
+				"label": "F",
+				"name": "Förskoleklass",
+				"stage": "forskoleklass",
+				"aliases": ["Fsk", "F-klass"]
+			},
+			{
+				"code": "1",
+				"label": "1",
+				"name": "Årskurs 1",
+				"stage": "lagstadiet",
+				"aliases": ["Åk 1"]
+			},
+			{
+				"code": "2",
+				"label": "2",
+				"name": "Årskurs 2",
+				"stage": "lagstadiet",
+				"aliases": ["Åk 2"]
+			},
+			{
+				"code": "3",
+				"label": "3",
+				"name": "Årskurs 3",
+				"stage": "lagstadiet",
+				"aliases": ["Åk 3"]
+			},
+			{
+				"code": "4",
+				"label": "4",
+				"name": "Årskurs 4",
+				"stage": "mellanstadiet",
+				"aliases": ["Åk 4"]
+			},
+			{
+				"code": "5",
+				"label": "5",
+				"name": "Årskurs 5",
+				"stage": "mellanstadiet",
+				"aliases": ["Åk 5"]
+			},
+			{
+				"code": "6",
+				"label": "6",
+				"name": "Årskurs 6",
+				"stage": "mellanstadiet",
+				"aliases": ["Åk 6"]
+			},
+			{
+				"code": "7",
+				"label": "7",
+				"name": "Årskurs 7",
+				"stage": "hogstadiet",
+				"aliases": ["Åk 7"]
+			},
+			{
+				"code": "8",
+				"label": "8",
+				"name": "Årskurs 8",
+				"stage": "hogstadiet",
+				"aliases": ["Åk 8"]
+			},
+			{
+				"code": "9",
+				"label": "9",
+				"name": "Årskurs 9",
+				"stage": "hogstadiet",
+				"aliases": ["Åk 9"]
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Klass",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"forskoleklass": ["A", "B"],
+		"lagstadiet": ["A", "B", "C"],
+		"mellanstadiet": ["A", "B", "C"],
+		"hogstadiet": ["A", "B", "C"]
+	},
+	"teacherGroup": "Lärare",
+	"readingLevels": []
+}

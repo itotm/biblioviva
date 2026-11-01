@@ -1,0 +1,66 @@
+{
+	"title": "Megjegyzések",
+	"new": "Új megjegyzés",
+	"adminOnly": "Csak az adminisztrátor archiválja a megjegyzéseket, és emeli ki őket az irányítópulton.",
+	"pinned": "Kiemelve",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Archiválta: {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:megjegyzés; other:megjegyzés;}}",
+	"archiveCount": "{{shown}} / {{total}} archivált {{total:plural; one:megjegyzés; other:megjegyzés;}}",
+	"actions": {
+		"label": "Megjegyzés műveletei",
+		"pin": "Kiemelés az irányítópulton",
+		"unpin": "Kiemelés megszüntetése",
+		"archive": "Archiválás",
+		"restore": "Visszaállítás",
+		"delete": "Törlés",
+		"showAll": "Mind megjelenítése",
+		"showLess": "Kevesebb megjelenítése",
+		"more": "Továbbiak megjelenítése"
+	},
+	"done": {
+		"added": "Megjegyzés hozzáadva",
+		"pinned": "Megjegyzés kiemelve",
+		"unpinned": "Kiemelés megszüntetve",
+		"archived": "Megjegyzés archiválva",
+		"restored": "Megjegyzés visszaállítva",
+		"deleted": "Megjegyzés törölve"
+	},
+	"confirmDelete": {
+		"title": "Törli a megjegyzést?",
+		"text": "Véglegesen törlődik, és nem állítható vissza."
+	},
+	"form": {
+		"body": "Szöveg",
+		"placeholder": "Pl. A pultnál a vonalkódolvasó nem olvassa be az olvasójegyeket.",
+		"privacy": "Minden fiók olvassa a megjegyzéseket: ne írjon bele a tanulók személyes adatait.",
+		"written": "A megjegyzés nem módosítható: hiba esetén kérje meg az adminisztrátort, hogy archiválja, és írjon újat.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Szín",
+		"pinned": "Kiemelve az irányítópulton",
+		"pinnedHint": "Mindenki látja az irányítópult tetején (és a kölcsönzőpulton), amíg a kiemelést meg nem szüntetik, vagy a megjegyzést nem archiválják.",
+		"save": "Hozzáadás"
+	},
+	"colors": {
+		"yellow": "Sárga",
+		"pink": "Rózsaszín",
+		"green": "Zöld",
+		"blue": "Világoskék",
+		"orange": "Narancssárga"
+	},
+	"errors": {
+		"empty": "Írja be a megjegyzés szövegét.",
+		"tooLong": "A szöveg hosszabb, mint {{max}} {{max:plural; one:karakter; other:karakter;}}.",
+		"color": "Válasszon egy színt."
+	},
+	"empty": {
+		"open": "Nincs nyitott megjegyzés",
+		"openHint": "Nincs nyitott megjegyzés. A megjegyzésekkel problémákat és közleményeket lehet továbbítani a kollégáknak és az adminisztrátornak.",
+		"archived": "Nincs archivált megjegyzés"
+	},
+	"home": {
+		"title": "Megjegyzések",
+		"open": "Megjegyzések megnyitása"
+	},
+	"tile": "Nyitott megjegyzések"
+}

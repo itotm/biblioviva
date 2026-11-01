@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Stampe",
+		"newPatrons": "Nuova lista utenti",
+		"newItems": "Nuova lista libri",
+		"newPatronsTitle": "Nuova lista di utenti",
+		"newItemsTitle": "Nuova lista di libri",
+		"name": "Nome della lista",
+		"defaultName": "Lista {{n}} del {{date}}",
+		"kind": "Tipo",
+		"kinds": {
+			"all": "Tutte",
+			"patrons": "Utenti",
+			"items": "Libri"
+		},
+		"classes": "Classi",
+		"classesHint": "Le tessere di tutta una classe, senza crearne la lista.",
+		"classKind": "Classe",
+		"count": "{{count}} {{count:plural; one:voce; other:voci;}}",
+		"empty": "Nessuna lista. Le liste si creano qui o con «Aggiungi alla lista» nelle pagine Utenti e Catalogo.",
+		"lastPrinted": "Stampata il {{when}}",
+		"neverPrinted": "Mai stampata",
+		"open": "Apri",
+		"created": "Lista creata",
+		"deleted": "Lista eliminata",
+		"deleteTitle": "Eliminare la lista «{{name}}»?",
+		"deleteDescription": "Le voci vengono tolte dalla lista; gli utenti restano in archivio."
+	},
+	"list": {
+		"rename": "Rinomina",
+		"renamed": "Lista rinominata",
+		"print": "Stampa tessere",
+		"markPrinted": "Segna come stampate",
+		"marked": "{{count:plural; one:{{count}} tessera segnata come stampata; other:{{count}} tessere segnate come stampate;}}",
+		"clearAfter": "Svuota la lista dopo la stampa",
+		"clear": "Svuota",
+		"cleared": "Lista svuotata",
+		"clearTitle": "Svuotare la lista?",
+		"clearDescription": "Tutte le voci vengono tolte; gli utenti restano in archivio.",
+		"delete": "Elimina",
+		"entries": "{{count}} {{count:plural; one:utente; other:utenti;}} nella lista",
+		"empty": "La lista è vuota. Gli utenti si aggiungono con i filtri rapidi, con lo scanner o dalla pagina Utenti.",
+		"remove": "Togli dalla lista",
+		"moveUp": "Sposta su",
+		"moveDown": "Sposta giù",
+		"dragHint": "Trascinare le voci per cambiare l'ordine di stampa.",
+		"removed": "Tolto dalla lista",
+		"columns": {
+			"position": "N.",
+			"printed": "Tessera stampata"
+		},
+		"printedYes": "sì",
+		"printedNo": "no",
+		"quick": {
+			"title": "Aggiungi con i filtri",
+			"hint": "Chi è già nella lista non viene aggiunto due volte.",
+			"type": "Tipo",
+			"any": "Qualsiasi",
+			"stage": "Ordine di scuola",
+			"level": "Classe",
+			"withoutPrintedCard": "Solo chi non ha ancora la tessera stampata",
+			"withoutPhoto": "Solo chi non ha la foto",
+			"importBatch": "Importazione",
+			"anyBatch": "— nessuna —",
+			"batchLabel": "n. {{id}} · {{file}} · {{created}} {{created:plural; one:nuovo; other:nuovi;}}",
+			"createdAfter": "Creati dal",
+			"add": "Aggiungi alla lista",
+			"added": "{{added}} {{added:plural; one:aggiunto; other:aggiunti;}}, {{skipped}} {{skipped:plural; one:già presente; other:già presenti;}}",
+			"none": "Nessun utente corrisponde ai filtri.",
+			"pendingLabels": "Etichette da stampare",
+			"pendingAny": "— tutte le copie —",
+			"acquiredFrom": "Acquisite dal",
+			"acquiredTo": "al",
+			"genre": "Genere",
+			"itemType": "Tipo di copia",
+			"batchLabelItems": "n. {{id}} · {{file}} · {{created}} {{created:plural; one:copia; other:copie;}}",
+			"noneItems": "Nessuna copia corrisponde ai filtri.",
+			"addedItems": "{{added}} {{added:plural; one:aggiunta; other:aggiunte;}}, {{skipped}} {{skipped:plural; one:già presente; other:già presenti;}}",
+			"nonfictionClass": "Classe di saggistica"
+		},
+		"scan": {
+			"title": "Aggiungi con lo scanner",
+			"hint": "Leggere la tessera di ogni utente: viene aggiunto alla lista. Le tessere già presenti vengono ignorate.",
+			"added": "{{name}} aggiunto",
+			"duplicate": "{{name}} è già nella lista",
+			"unknown": "Nessun utente con la tessera {{card}}",
+			"notCard": "Il codice letto non è una tessera",
+			"hintItems": "Leggere il codice a barre di ogni copia, anche lungo lo scaffale: la copia viene aggiunta alla lista. Le copie già presenti vengono ignorate.",
+			"addedItem": "{{title}} ({{barcode}}) aggiunta",
+			"duplicateItem": "{{title}} ({{barcode}}) è già nella lista",
+			"unknownItem": "Nessuna copia con il codice {{barcode}}",
+			"notItem": "Il codice letto non è una copia"
+		},
+		"printLabels": "Stampa etichette",
+		"markPrintedKind": "Etichette stampate",
+		"markedItems": "{{count:plural; one:{{count}} copia segnata come stampata; other:{{count}} copie segnate come stampate;}}",
+		"entriesItems": "{{count}} {{count:plural; one:copia; other:copie;}} nella lista",
+		"emptyItems": "La lista è vuota. Le copie si aggiungono con i filtri rapidi, con lo scanner o dal catalogo.",
+		"clearDescriptionItems": "Tutte le voci vengono tolte; le copie restano in catalogo."
+	},
+	"basket": {
+		"label": "Liste di stampa",
+		"labelToPrint": "Liste di stampa: {{count}} da stampare",
+		"entry": "{{name}} ({{count}})",
+		"none": "Nessuna lista da stampare",
+		"all": "Tutte le liste"
+	},
+	"addTo": {
+		"button": "Aggiungi alla lista",
+		"selected": "Aggiungi selezionati alla lista",
+		"title": "Aggiungi alla lista di stampa",
+		"existing": "Lista esistente",
+		"create": "Nuova lista",
+		"newName": "Nome della nuova lista",
+		"confirm": "Aggiungi",
+		"done": "{{added}} {{added:plural; one:aggiunto; other:aggiunti;}} a «{{name}}», {{skipped}} {{skipped:plural; one:già presente; other:già presenti;}}"
+	},
+	"labels": {
+		"title": "Stampa etichette",
+		"button": "Stampa etichette",
+		"selected": "Stampa etichette dei selezionati",
+		"kind": "Tipo di etichetta",
+		"kinds": {
+			"pair": "Coppia",
+			"barcode": "Solo barcode",
+			"spine": "Solo fascetta"
+		},
+		"kindHints": {
+			"pair": "Fascetta per il dorso sopra e etichetta con il codice a barre sotto, una coppia per libro (la stampa attuale).",
+			"barcode": "Solo l'etichetta interna con il codice a barre, per ristampe.",
+			"spine": "Solo la fascetta per il dorso, per esempio dopo una riclassificazione."
+		},
+		"stock": "Foglio di etichette",
+		"start": "Prima posizione libera",
+		"startHint": "Da 1 a {{max}}: salta le etichette già usate sul foglio.",
+		"count": "{{count}} {{count:plural; one:copia; other:copie;}}",
+		"unclassified": "{{count}} {{count:plural; one:copia di un libro; other:copie di libri;}} da classificare: si stampa solo l'etichetta col codice a barre, la fascetta del dorso dopo la classificazione.",
+		"pendingCount": "{{count}} {{count:plural; one:copia; other:copie;}} con etichette da stampare",
+		"pages": "{{pages}} {{pages:plural; one:foglio; other:fogli;}} ({{perPage}} per foglio)",
+		"print": "Apri la stampa",
+		"afterPrint": "La pagina di stampa è aperta in una nuova scheda. Dopo la stampa, segnare le etichette come stampate.",
+		"markPrinted": "Segna come stampate",
+		"marked": "{{count:plural; one:{{count}} copia segnata come stampata; other:{{count}} copie segnate come stampate;}}",
+		"status": {
+			"printed": "Etichette stampate",
+			"pending": "Etichette da stampare",
+			"partial": "Manca una etichetta"
+		}
+	},
+	"cards": {
+		"title": "Stampa tessere",
+		"count": "{{count}} {{count:plural; one:tessera; other:tessere;}}",
+		"afterPrint": "La pagina di stampa è aperta in una nuova scheda. Dopo la stampa, segnare le tessere come stampate.",
+		"layout": "Come stampare",
+		"layouts": {
+			"side-by-side": "Fronte e retro affiancati",
+			"duplex": "Sui due lati del foglio"
+		},
+		"window": "Nella finestra di stampa del browser:",
+		"steps": {
+			"duplex": {
+				"long-edge": "scegliere «Fronte-retro», capovolgendo sul lato lungo;",
+				"short-edge": "scegliere «Fronte-retro», capovolgendo sul lato corto;"
+			},
+			"scale": "scala al 100 % («Dimensioni effettive», non «Adatta alla pagina»);",
+			"margins": "margini: nessuno.",
+			"after": {
+				"side-by-side": {
+					"marks": "Ritagliare poi ogni tessera unendo con il righello i segni di taglio intorno alle tessere e piegarla a metà sul lato corto.",
+					"line": "Ritagliare poi ogni tessera lungo la linea colorata che la contorna e piegarla a metà sul lato corto.",
+					"edge": "Ritagliare poi ogni tessera lungo il bordo e piegarla a metà sul lato corto."
+				},
+				"duplex": {
+					"marks": "Ritagliare poi le tessere unendo con il righello i segni di taglio intorno ai fronti: il retro è già dietro il fronte (dieci per foglio).",
+					"line": "Ritagliare poi le tessere lungo la linea colorata che contorna i fronti: il retro è già dietro il fronte (dieci per foglio).",
+					"edge": "Ritagliare poi le tessere lungo il bordo dei fronti: il retro è già dietro il fronte (dieci per foglio)."
+				}
+			}
+		},
+		"print": "Stampa",
+		"calibrate": "La prima volta, o se i retri non cadono dietro i fronti:"
+	},
+	"words": {
+		"teacher": "Docente",
+		"title": "Titolo",
+		"code": "Codice",
+		"dueBy": "Da restituire entro il",
+		"due": "Scadenza",
+		"name": "Nome",
+		"daysOverdue": "Giorni ritardo",
+		"loanOn": "Prestito del {{date}} a",
+		"overduesOn": "Solleciti biblioteca del {{date}}",
+		"toReturn": "Libri da restituire alla biblioteca",
+		"enjoy": "Buona lettura!"
+	}
+}

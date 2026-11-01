@@ -1,0 +1,99 @@
+{
+	"id": "si-osnovna",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Classes (oddelki) written 5. a or 5.a [VERIFY].",
+	"name": {
+		"it": "Scuola di base, dal 1º al 9º anno (Slovenia)",
+		"en": "Basic school, grades 1 to 9 (Slovenia)",
+		"sl": "Osnovna šola (Slovenija)"
+	},
+	"country": "SI",
+	"languages": ["sl"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "1-obdobje",
+				"name": "1. vzgojno-izobraževalno obdobje"
+			},
+			{
+				"code": "2-obdobje",
+				"name": "2. vzgojno-izobraževalno obdobje"
+			},
+			{
+				"code": "3-obdobje",
+				"name": "3. vzgojno-izobraževalno obdobje"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1.",
+				"name": "1. razred",
+				"stage": "1-obdobje"
+			},
+			{
+				"code": "2",
+				"label": "2.",
+				"name": "2. razred",
+				"stage": "1-obdobje"
+			},
+			{
+				"code": "3",
+				"label": "3.",
+				"name": "3. razred",
+				"stage": "1-obdobje"
+			},
+			{
+				"code": "4",
+				"label": "4.",
+				"name": "4. razred",
+				"stage": "2-obdobje"
+			},
+			{
+				"code": "5",
+				"label": "5.",
+				"name": "5. razred",
+				"stage": "2-obdobje"
+			},
+			{
+				"code": "6",
+				"label": "6.",
+				"name": "6. razred",
+				"stage": "2-obdobje"
+			},
+			{
+				"code": "7",
+				"label": "7.",
+				"name": "7. razred",
+				"stage": "3-obdobje"
+			},
+			{
+				"code": "8",
+				"label": "8.",
+				"name": "8. razred",
+				"stage": "3-obdobje"
+			},
+			{
+				"code": "9",
+				"label": "9.",
+				"name": "9. razred",
+				"stage": "3-obdobje"
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Oddelek",
+		"cardClass": "{class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"1-obdobje": ["a", "b", "c"],
+		"2-obdobje": ["a", "b", "c"],
+		"3-obdobje": ["a", "b", "c"]
+	},
+	"teacherGroup": "Učitelji",
+	"readingLevels": []
+}

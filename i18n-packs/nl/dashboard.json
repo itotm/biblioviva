@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "Lopende uitleningen",
+		"overdue": "Te laat",
+		"issuedToday": "Vandaag uitgeleend",
+		"returnedToday": "Vandaag teruggebracht",
+		"withoutCard": "Leners zonder afgedrukte lenerspas",
+		"withoutPhoto": "Leners zonder foto",
+		"toClassify": "Boeken te classificeren",
+		"pendingLabels": "Boeken zonder etiketten"
+	},
+	"tilesTitle": "De bibliotheek vandaag",
+	"actions": {
+		"title": "Snelle acties"
+	},
+	"dueWeek": {
+		"title": "Inleverdatum deze week",
+		"none": "Geen uitlening heeft een inleverdatum uiterlijk {{day}}.",
+		"more": "{{count:plural; one:en nog één; other:en nog {{count}};}}",
+		"due": "inleverdatum {{date}}"
+	},
+	"inventory": {
+		"title": "Inventarisatie",
+		"continue": "Doorgaan"
+	},
+	"install": {
+		"title": "Toevoegen aan het startscherm",
+		"hint": "BiblioViva opent zich als een app, op volledig scherm, via het pictogram op de telefoon.",
+		"install": "Installeren",
+		"fromMenu": "Het menu ⋮ van Firefox openen en “Installeren” of “Aan startscherm toevoegen” kiezen.",
+		"later": "Niet nu"
+	},
+	"upcoming": {
+		"title": "Komende data",
+		"none": "Geen data in de komende {{days:plural; one:dag; other:{{days}} dagen;}}.",
+		"more": "{{count:plural; one:en nog één; other:en nog {{count}};}}",
+		"open": "De kalender openen"
+	}
+}

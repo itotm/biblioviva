@@ -1,0 +1,63 @@
+{
+	"id": "at-volksschule",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). The school year starts on the first (Vienna, Lower Austria, Burgenland) or second Monday of September [VERIFY].",
+	"name": {
+		"it": "Scuola primaria, Volksschule (Austria)",
+		"en": "Primary school, Volksschule (Austria)",
+		"de": "Volksschule (Österreich)"
+	},
+	"country": "AT",
+	"languages": ["de"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "volksschule",
+				"name": "Volksschule"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1",
+				"name": "1. Klasse",
+				"stage": "volksschule",
+				"aliases": ["1. Schulstufe"]
+			},
+			{
+				"code": "2",
+				"label": "2",
+				"name": "2. Klasse",
+				"stage": "volksschule",
+				"aliases": ["2. Schulstufe"]
+			},
+			{
+				"code": "3",
+				"label": "3",
+				"name": "3. Klasse",
+				"stage": "volksschule",
+				"aliases": ["3. Schulstufe"]
+			},
+			{
+				"code": "4",
+				"label": "4",
+				"name": "4. Klasse",
+				"stage": "volksschule",
+				"aliases": ["4. Schulstufe"]
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Klasse",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"volksschule": ["a", "b", "c"]
+	},
+	"teacherGroup": "Lehrpersonen",
+	"readingLevels": []
+}

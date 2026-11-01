@@ -1,0 +1,19 @@
+{
+	"title": "정보",
+	"app": {
+		"version": "버전",
+		"license": "라이선스",
+		"repository": "소스 코드"
+	},
+	"deps": {
+		"title": "사용된 라이브러리",
+		"runtime": "실행 중 ({{count}})",
+		"development": "개발 전용 ({{count}})",
+		"system": "시스템 구성 요소",
+		"columns": {
+			"name": "이름",
+			"version": "버전",
+			"license": "라이선스"
+		}
+	}
+}

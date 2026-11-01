@@ -1,0 +1,20 @@
+{
+	"id": "patron-counts-by-class-section",
+	"title": {
+		"it": "Utenti per classe e sezione",
+		"en": "Patrons by class and section"
+	},
+	"description": {
+		"it": "Gli utenti attivi per anno di classe (righe) e sezione (colonne), con i totali; i docenti sono una riga.",
+		"en": "Active patrons by class year (rows) and section (columns), with the totals; the teachers are one row."
+	},
+	"category": "patrons",
+	"query": {
+		"source": "patrons",
+		"rows": ["classYear"],
+		"columns": "section",
+		"measures": ["patrons"],
+		"totals": "both",
+		"chart": "bar"
+	}
+}

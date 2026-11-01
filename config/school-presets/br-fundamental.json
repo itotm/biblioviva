@@ -1,0 +1,94 @@
+{
+	"id": "br-fundamental",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Turmas numbered by year and number (601, 602; 1001 in the ensino médio) as in many public networks; many schools write 6º ano A instead: change the label template and the group names [VERIFY]. The school year starts in early February and is named by its year [VERIFY].",
+	"name": {
+		"it": "Scuola fondamentale, dal 1º al 9º anno (Brasile)",
+		"en": "Fundamental school, grades 1 to 9 (Brazil)",
+		"pt-BR": "Ensino fundamental, do 1º ao 9º ano (Brasil)"
+	},
+	"country": "BR",
+	"languages": ["pt-BR"],
+	"schoolYear": {
+		"start": "02-01",
+		"label": "start"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "anos-iniciais",
+				"name": "Ensino fundamental, anos iniciais"
+			},
+			{
+				"code": "anos-finais",
+				"name": "Ensino fundamental, anos finais"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1",
+				"name": "1º ano",
+				"stage": "anos-iniciais"
+			},
+			{
+				"code": "2",
+				"label": "2",
+				"name": "2º ano",
+				"stage": "anos-iniciais"
+			},
+			{
+				"code": "3",
+				"label": "3",
+				"name": "3º ano",
+				"stage": "anos-iniciais"
+			},
+			{
+				"code": "4",
+				"label": "4",
+				"name": "4º ano",
+				"stage": "anos-iniciais"
+			},
+			{
+				"code": "5",
+				"label": "5",
+				"name": "5º ano",
+				"stage": "anos-iniciais"
+			},
+			{
+				"code": "6",
+				"label": "6",
+				"name": "6º ano",
+				"stage": "anos-finais"
+			},
+			{
+				"code": "7",
+				"label": "7",
+				"name": "7º ano",
+				"stage": "anos-finais"
+			},
+			{
+				"code": "8",
+				"label": "8",
+				"name": "8º ano",
+				"stage": "anos-finais"
+			},
+			{
+				"code": "9",
+				"label": "9",
+				"name": "9º ano",
+				"stage": "anos-finais"
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Turma",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"anos-iniciais": ["01", "02", "03"],
+		"anos-finais": ["01", "02", "03"]
+	},
+	"teacherGroup": "Professores",
+	"readingLevels": []
+}

@@ -1,0 +1,1778 @@
+{
+	"home": {
+		"title": "설정"
+	},
+	"leave": {
+		"title": "저장하지 않고 나가시겠습니까?",
+		"description": "아직 저장하지 않은 변경 사항은 사라집니다.",
+		"confirm": "저장하지 않고 나가기"
+	},
+	"taxonomy": {
+		"title": "분류",
+		"intro": "변경 사항은 “저장”을 누르기 전까지 초안으로 남습니다. 이전 버전 파일은 보관됩니다 ({{file}}).",
+		"invalid": "일부 값이 올바르지 않습니다(빨간색으로 표시됨). 저장하려면 먼저 고치십시오.",
+		"orphans": "목록에 없는 코드가 붙은 도서가 있습니다: {{codes}}. 이 코드를 여기에 추가하거나 목록에서 해당 도서의 분류를 다시 지정하십시오.",
+		"unsaved": "저장하지 않은 변경 사항",
+		"discard": "변경 사항 버리기",
+		"saved": "분류를 저장했습니다",
+		"savedDetail": "도서 {{records}} {{records:plural; other:권;}} 이동, 청구기호 {{callNumbers}} {{callNumbers:plural; other:개;}} 다시 작성, 다시 인쇄할 책등 띠라벨 {{bands}} {{bands:plural; other:개;}}.",
+		"tabs": {
+			"fiction": "소설",
+			"nonfiction": "비소설",
+			"dewey": "듀이 분류",
+			"options": "옵션"
+		},
+		"addGenre": "장르 추가",
+		"addClass": "주제 추가",
+		"addSubclass": "하위 주제 추가",
+		"dragHint": "행을 끌어서 순서를 바꾸거나 화살표를 사용하십시오. 순서는 도서 목록 선택지의 순서와 같습니다.",
+		"pickGenre": "편집할 장르를 선택하십시오",
+		"pickClass": "편집할 주제를 선택하십시오",
+		"untitled": "이름 없음",
+		"hasProblems": "수정 필요",
+		"usageShort": "{{records}} {{records:plural; other:권;}}",
+		"moveUp": "위로 이동",
+		"moveDown": "아래로 이동",
+		"panel": {
+			"genre": "장르",
+			"class": "주제",
+			"subclass": "하위 주제"
+		},
+		"fields": {
+			"code": "코드",
+			"label": "이름",
+			"color": "색상",
+			"pictogram": "픽토그램",
+			"position": "위치"
+		},
+		"renameNote": "코드 변경 {{from}} → {{to}}: 저장하면 도서 {{records}} {{records:plural; other:권;}} 이동하고 청구기호가 갱신됩니다.",
+		"color": {
+			"inherit": "{{code}} 색상 사용",
+			"none": "색상 없음",
+			"hex": "색상 코드"
+		},
+		"pictogram": {
+			"upload": "이미지 업로드",
+			"choose": "이미지 중에서 선택",
+			"remove": "이미지 삭제",
+			"own": "직접 만든 이미지. PNG, JPEG 또는 WebP 형식이며, PNG로 저장됩니다.",
+			"missing": "이미지 폴더에서 파일을 찾을 수 없습니다: {{name}}. 라벨에는 색상과 코드가 있는 원형 표시가 나타납니다.",
+			"inherited": "자체 이미지가 없으면 {{code}} 이미지를 사용합니다.",
+			"placeholder": "이미지가 없으면 라벨에는 색상과 코드가 있는 원형 표시가 나타납니다.",
+			"gallery": "분류 이미지",
+			"errors": {
+				"empty": "파일이 비어 있습니다.",
+				"too_large": "이미지가 너무 큽니다(최대 {{maxMb}} MB).",
+				"not_an_image": "이 파일은 이미지가 아닙니다.",
+				"unsupported_format": "허용되지 않는 형식입니다. PNG, JPEG 또는 WebP를 사용하십시오."
+			}
+		},
+		"position": {
+			"top": "주 주제",
+			"under": "{{code}} · {{label}} 하위",
+			"locked": "하위 주제가 있어 주 주제로 남습니다."
+		},
+		"usage": {
+			"new": "새 항목: 아직 이 코드를 쓰는 도서가 없습니다.",
+			"none": "이 코드를 쓰는 도서가 없습니다.",
+			"some": "도서 {{records}} {{records:plural; other:권;}} 사용 중 (소장본 {{copies}} {{copies:plural; other:권;}})."
+		},
+		"remove": {
+			"genre": "장르 삭제",
+			"class": "주제 삭제",
+			"confirmTitle": "삭제 확인: {{code}}",
+			"withSubclasses": "함께 삭제되는 하위 주제: {{count}} {{count:plural; other:개;}}.",
+			"inUse": "이 코드를 사용하는 도서가 {{records}} {{records:plural; other:권;}} 있습니다. 저장할 때 이동할 곳을 묻습니다.",
+			"confirm": "삭제"
+		},
+		"preview": {
+			"title": "책등 띠라벨 미리보기",
+			"hint": "지금 인쇄되는 모습을 실제 크기로 보여 주는 예시 도서입니다.",
+			"needsCode": "코드가 올바르면 미리보기가 나타납니다."
+		},
+		"problems": {
+			"codeRequired": "코드를 입력하십시오.",
+			"codeFormat": "문자, 숫자, 점, 하이픈 또는 밑줄만 사용하십시오(최대 32자).",
+			"codeTaken": "이 코드는 이미 다른 장르나 주제가 사용하고 있습니다.",
+			"labelRequired": "이름을 입력하십시오.",
+			"labelLong": "이름이 너무 깁니다(최대 120자).",
+			"colorFormat": "색상은 #rrggbb 형식으로 입력하십시오. 예: #e8231b.",
+			"patternRequired": "패턴은 비워 둘 수 없습니다."
+		},
+		"dewey": {
+			"hint": "비소설 도서에 듀이 번호가 있으면(예: SBN에서 가져온 경우) 이 표에 따라 주제가 제안됩니다. 가장 긴 일치 접두어가 우선합니다.",
+			"probe": "듀이 번호 시험",
+			"noMatch": "일치하는 주제가 없습니다",
+			"empty": "듀이 대응이 없습니다",
+			"prefix": "듀이 접두어",
+			"class": "주제",
+			"add": "대응 추가",
+			"problems": {
+				"prefixFormat": "1자리에서 3자리 숫자.",
+				"prefixTaken": "접두어가 중복되었습니다.",
+				"codeUnknown": "주제를 선택하십시오."
+			}
+		},
+		"options": {
+			"fictionByClass": "소설을 독서 수준별로 나눕니다",
+			"fictionByClassHint": "소설도 알맞은 독서 수준을 가질 수 있습니다(예: 4학년 수준). 청구기호와 책등 띠라벨에 표시됩니다.",
+			"classPerItem": "독서 수준을 소장본마다 지정합니다",
+			"classPerItemHint": "같은 도서의 소장본이 서로 다른 수준의 서가에 놓일 때 필요합니다. 그렇지 않으면 수준은 도서에 지정됩니다.",
+			"toCopies": "저장하면 각 도서의 독서 수준이 소장본으로 옮겨집니다.",
+			"toRecords": "저장하면 소장본의 독서 수준이 도서로 돌아갑니다. 같은 도서의 소장본 수준이 서로 다르면 할 수 없습니다.",
+			"patterns": "청구기호 패턴",
+			"patternsHint": "지금부터 추가되는 소장본에 적용되며, 기존 청구기호는 바뀌지 않습니다. 자리표시자: {{placeholders}}.",
+			"pattern": {
+				"fiction": "소설",
+				"fictionWithClass": "독서 수준이 있는 소설",
+				"nonfiction": "비소설"
+			},
+			"unknownPlaceholders": "알 수 없는 자리표시자: {{names}}.",
+			"example": "예: {{example}}"
+		},
+		"save": {
+			"title": "분류 저장",
+			"checking": "목록에서 바뀌는 내용을 확인하는 중…",
+			"unchanged": "저장할 변경 사항이 없습니다.",
+			"errors": "저장하기 전에 다음 문제를 해결하십시오:",
+			"removedTitle": "아직 사용 중인 삭제된 코드",
+			"removedHint": "삭제된 각 코드의 도서를 어디로 옮길지 선택하십시오. 새 코드는 도서와 청구기호 앞부분, 책등 띠라벨에 들어갑니다.",
+			"moveTo": "{{code}} · {{label}}: 도서 {{records}} {{records:plural; other:권;}} (소장본 {{copies}} {{copies:plural; other:권;}}). 이동할 곳:",
+			"choose": "선택…",
+			"callNumbers": "삭제된 코드로 시작하는 청구기호: {{count}} {{count:plural; other:개;}}. 앞부분 코드가 바뀝니다(예: B 4 DEL은 A 4 DEL이 됩니다).",
+			"bandsMoved": "옮겨지는 도서의 책등 띠라벨과 청구기호가 바뀌는 라벨은 다시 인쇄할 목록에 들어갑니다.",
+			"unused": "삭제됨, 사용하는 도서 없음: {{codes}}.",
+			"reprint": "다시 인쇄할 라벨 목록에 넣습니다. 이름, 색상 또는 픽토그램이 바뀌는 소장본: {{copies}} {{copies:plural; other:권;}} ({{codes}})",
+			"reprintHint": "이미 도서에 붙은 띠라벨의 차이가 중요하지 않으면 끄십시오.",
+			"conflicts": "독서 수준이 소장본마다 다른 도서: {{count}} {{count:plural; other:권;}}. 소장본의 독서 수준을 없애기 전에, 각 도서의 모든 소장본에 같은 독서 수준을 지정하십시오.",
+			"toCopies": "연결된 독서 수준을 소장본으로 옮기는 도서: {{count}} {{count:plural; other:권;}}.",
+			"toRecords": "소장본의 독서 수준이 도서로 돌아갑니다: 서명 {{count}} {{count:plural; other:종;}}.",
+			"warnings": "경고 {{count}} {{count:plural; other:건;}} (저장을 막지는 않습니다)",
+			"levelsTitle": "도서에 지정된 독서 수준이 삭제됩니다",
+			"levelMoveTo": "독서 수준 {{code}} · {{label}} 도서 (서명 {{records}} {{records:plural; other:종;}}, 소장본 {{copies}} {{copies:plural; other:권;}}) 이동할 곳:",
+			"noLevel": "수준 없음",
+			"levelsHint": "소장본의 청구기호에 있는 수준은 함께 바뀌고(예: B 4 DEL은 B 5 DEL이 됩니다), 해당 라벨은 다시 인쇄할 목록에 들어갑니다."
+		},
+		"levels": {
+			"title": "독서 수준",
+			"hint": "가장 쉬운 것부터 차례대로입니다. 코드는 도서와 청구기호에 들어가고(예: B 4 DEL에서 4), 이름은 선택지에 표시됩니다. 사용 중인 수준을 삭제하거나 이름을 바꾸면 저장할 때 해당 도서를 어디로 옮길지 묻습니다.",
+			"code": "수준 코드",
+			"label": "수준 이름",
+			"up": "위로 이동",
+			"down": "아래로 이동",
+			"remove": "수준 삭제",
+			"add": "수준 추가"
+		}
+	},
+	"sections": {
+		"library": {
+			"title": "도서관과 학교",
+			"description": "이름, 학교 유형, 학급과 과정, 학년도, 시간대."
+		},
+		"school": {
+			"title": "학교",
+			"description": "학교의 단계와 학년, 학급 표기 방식, 학년 말에 학급이 어떻게 되는지. 학급 자체는 관리 → 설정 → 학급에서 관리합니다."
+		},
+		"catalog": {
+			"title": "도서 목록",
+			"description": "저자, 출판사, 출판지를 알 수 없을 때 쓰는 값."
+		},
+		"barcodes": {
+			"title": "바코드",
+			"description": "카드와 소장본의 형식, 이전 코드, 바코드 종류."
+		},
+		"circulation": {
+			"title": "대출",
+			"description": "대출과 연장 규칙, 반납 예정일, 안내, 영수증."
+		},
+		"calendar": {
+			"title": "달력",
+			"description": "휴관일과 공휴일."
+		},
+		"z3950": {
+			"title": "Z39.50 (SBN)",
+			"description": "도서 서지 정보를 가져오는 서버."
+		},
+		"metadata": {
+			"title": "도서 정보",
+			"description": "ISBN으로 검색할 때의 데이터 출처."
+		},
+		"performance": {
+			"title": "성능",
+			"description": "BiblioViva가 실행되는 컴퓨터와 그에 따라 달라지는 설정."
+		},
+		"classification": {
+			"title": "분류",
+			"description": "장르, 주제, 픽토그램, 듀이, 청구기호."
+		},
+		"cards": {
+			"title": "카드",
+			"description": "카드와 인쇄 용지의 형식."
+		},
+		"labels": {
+			"title": "라벨",
+			"description": "도서 라벨과 책등 띠라벨, 접착 용지."
+		},
+		"photos": {
+			"title": "이용자 사진",
+			"description": "사진의 크기와 형식."
+		},
+		"covers": {
+			"title": "표지",
+			"description": "표지의 크기, 형식, 출처."
+		},
+		"privacy": {
+			"title": "개인정보",
+			"description": "감사 기록을 보관하는 기간."
+		},
+		"backup": {
+			"title": "백업",
+			"description": "백업 시기와 보관 기간, 외부 사본."
+		},
+		"security": {
+			"title": "보안과 접근",
+			"description": "세션 길이, 로그인 시도, 계정과 역할."
+		},
+		"ui": {
+			"title": "화면",
+			"description": "대출·반납 데스크와 추가된 언어. 색상, 언어와 대시보드는 “외관과 언어”에 있습니다."
+		}
+	},
+	"fields": {
+		"library": {
+			"name": {
+				"label": "도서관 이름",
+				"hint": "왼쪽 위, 카드와 인쇄물에 표시됩니다."
+			},
+			"contactEmail": {
+				"label": "연락처 이메일",
+				"hint": "선택 사항: 이메일이 포함된 인쇄물에 표시됩니다."
+			},
+			"schoolYearStart": {
+				"label": "학년도 시작일",
+				"hint": "월과 일을 MM-DD 형식으로 입력하십시오(예: 09-01). 통계에서 학년도를 나누는 기준입니다."
+			},
+			"schoolYearLabel": {
+				"label": "학년도 표시 방식",
+				"hint": "카드, 보고서와 화면에 학년도를 표시하는 방식: 두 해(2026/2027) 또는 시작 연도(2026). 브라질, 일본, 한국에서처럼 시작 연도만 표시할 수도 있습니다."
+			},
+			"timezone": {
+				"label": "시간대",
+				"hint": "시간대 이름, 예: Europe/Rome. 날짜와 반납 예정일은 서버 시계가 아니라 이 시간대를 따릅니다."
+			},
+			"weekStart": {
+				"label": "주의 첫날",
+				"hint": "달력과 대시보드의 “이번 주”에서 주가 시작하는 요일. 처음 시작할 때는 언어에 따라 정해집니다(이탈리아어는 월요일, 영어는 일요일)."
+			}
+		},
+		"school": {
+			"classLabel": {
+				"label": "학급 표기 방식",
+				"hint": "{level}: 학년, {group}: 학급 이름. “{level} {group}”이면 3 B, “{level}{group}”이면 3B가 됩니다. 단계마다 따로 지정할 수 있습니다(단계와 학년)."
+			},
+			"groupWord": {
+				"label": "학급을 가리키는 말",
+				"hint": "양식과 필터의 학급 필드 이름이며, 카드 학급 줄의 {word} 자리에 들어갑니다(예: 구역 B, 학급 B, 반 B)."
+			},
+			"cardClass": {
+				"label": "카드의 학급 줄",
+				"hint": "카드에 인쇄되는 학급 줄. {word}: 학급을 가리키는 말, {group}: 학급 이름, {level}: 학년, {class}: 학급 전체. “{word} {group}”이면 구역 B, “{class}”이면 3 B가 됩니다."
+			},
+			"teacherGroupName": {
+				"label": "교사 그룹 이름",
+				"hint": "다른 그룹을 고르지 않을 때 교사가 속하는 그룹입니다."
+			},
+			"promotionWithinStage": {
+				"label": "학년 말, 같은 단계 안에서",
+				"hint": "보통 학급은 학생과 함께 올라갑니다: 3 B가 4 B가 됩니다."
+			},
+			"promotionAcrossStages": {
+				"label": "학년 말, 다른 단계로",
+				"hint": "예: 종합 학교에서 초등학교 5학년이 중학교 1학년으로 올라가는 경우."
+			}
+		},
+		"catalog": {
+			"specialAuthors": {
+				"label": "특수 저자",
+				"hint": "한 줄에 하나씩: 개인 저자 대신 허용되는 값입니다(예: Anonimo, AA. VV.)."
+			},
+			"unknownPublisher": {
+				"label": "알 수 없는 출판사",
+				"hint": "출판사가 없을 때 적는 값입니다."
+			},
+			"unknownPlace": {
+				"label": "알 수 없는 출판지",
+				"hint": "출판지가 적혀 있지 않을 때 쓰는 값입니다."
+			}
+		},
+		"barcodes": {
+			"keyboardLayout": {
+				"label": "컴퓨터 키보드",
+				"hint": "바코드 스캐너가 연결된 컴퓨터의 키보드 배열입니다. 다른 키보드용으로 설정된 스캐너가 잘못 입력한 문자를 고치는 데 쓰입니다."
+			},
+			"cameraSound": {
+				"label": "카메라 소리",
+				"hint": "카메라가 카드, 소장본 바코드 또는 ISBN을 읽을 때 나는 휴대폰 신호음입니다. USB 스캐너는 스스로 소리를 내므로 필요 없으며, 데스크는 조용합니다."
+			},
+			"patron": {
+				"symbology": {
+					"label": "카드의 바코드 종류",
+					"hint": "새 카드는 Code 128을 사용합니다. 도서관의 스캐너가 Code 128을 읽지 못할 때만 Code 39를 사용하십시오."
+				}
+			},
+			"item": {
+				"symbology": {
+					"label": "소장본의 바코드 종류",
+					"hint": "새 라벨은 Code 128을 사용합니다. 도서관의 스캐너가 Code 128을 읽지 못할 때만 Code 39를 사용하십시오."
+				}
+			}
+		},
+		"circulation": {
+			"rules": {
+				"student": {
+					"loanDays": {
+						"label": "대출 일수",
+						"hint": "학생의 대출 기간(일)입니다."
+					},
+					"maxLoans": {
+						"label": "최대 대출 도서 수",
+						"hint": "한 번에 빌릴 수 있는 도서의 수입니다."
+					},
+					"maxRenewals": {
+						"label": "최대 연장 횟수",
+						"hint": "같은 대출을 연장할 수 있는 횟수입니다(0 = 연장 불가)."
+					},
+					"renewalDays": {
+						"label": "연장 일수",
+						"hint": "연장할 때마다 늘어나는 일수입니다."
+					}
+				},
+				"teacher": {
+					"loanDays": {
+						"label": "대출 일수",
+						"hint": "교사의 대출 기간(일)입니다."
+					},
+					"maxLoans": {
+						"label": "최대 대출 도서 수",
+						"hint": "한 번에 빌릴 수 있는 도서의 수입니다."
+					},
+					"maxRenewals": {
+						"label": "최대 연장 횟수",
+						"hint": "같은 대출을 연장할 수 있는 횟수입니다(0 = 연장 불가)."
+					},
+					"renewalDays": {
+						"label": "연장 일수",
+						"hint": "연장할 때마다 늘어나는 일수입니다."
+					}
+				}
+			},
+			"dueDateMode": {
+				"label": "반납 예정일 계산",
+				"hint": "대출 기간을 도서관 휴관일과 어떻게 비교하여 셀지 정합니다."
+			},
+			"renewFrom": {
+				"label": "연장 기산일",
+				"hint": "연장 일수를 세기 시작하는 날입니다."
+			},
+			"allowRenewalWhenOverdue": {
+				"label": "반납 예정일이 지난 뒤에도 연장",
+				"hint": "이미 연체된 대출도 연장할 수 있습니다."
+			},
+			"overdueNotice": {
+				"template": {
+					"label": "독촉장 서식",
+					"hint": "독촉장 인쇄 서식의 이름입니다(slips/templates 폴더)."
+				},
+				"pageBreakPerGroup": {
+					"label": "학급마다 한 쪽씩",
+					"hint": "각 학급을 따로 한 장에 인쇄하여 교사에게 전달할 수 있습니다. 인쇄할 때 바꿀 수도 있습니다."
+				},
+				"minDays": {
+					"label": "독촉장 발송 전 연체 일수",
+					"hint": "이 일수만큼 연체된 뒤에야 대출이 독촉장에 나타납니다(0 = 즉시)."
+				}
+			},
+			"blockIfOverdue": {
+				"label": "연체 도서가 있으면 새 대출 금지",
+				"hint": "연체된 도서가 있는 사람은 그 도서를 반납할 때까지 다른 도서를 빌릴 수 없습니다."
+			},
+			"hardDueDate": {
+				"label": "최종 반납 예정일",
+				"hint": "이 날짜 이후로는 반납 예정일이 정해지지 않습니다(예: 수업 종료일). 비워 두면 제한이 없습니다."
+			},
+			"receipts": {
+				"label": "대출 영수증",
+				"hint": "대출·반납 데스크에서 영수증을 인쇄하는 버튼을 표시합니다."
+			}
+		},
+		"calendar": {
+			"autoItalianHolidays": {
+				"label": "이탈리아 공휴일",
+				"hint": "공휴일(부활절 포함)은 직접 입력하지 않아도 휴관일이 됩니다."
+			}
+		},
+		"z3950": {
+			"defaultTarget": {
+				"label": "기본 서버",
+				"hint": "검색에 사용하는 Z39.50 서버의 ID입니다."
+			},
+			"timeoutMs": {
+				"label": "대기 시간 한도(ms)",
+				"hint": "Z39.50 검색을 포기하기까지의 밀리초 단위 시간입니다."
+			},
+			"maxRecordsIsbn": {
+				"label": "ISBN별 결과 수",
+				"hint": "ISBN으로 검색할 때 읽는 서지 정보의 최대 개수입니다(ISBN 하나에 재판마다 서지 정보가 있을 수 있습니다). 가장 완전한 것이 열립니다."
+			},
+			"maxRecordsSearch": {
+				"label": "검색별 결과 수",
+				"hint": "제목이나 저자로 검색할 때 읽는 서지 정보의 최대 개수입니다."
+			}
+		},
+		"metadata": {
+			"providers": {
+				"label": "데이터 출처",
+				"hint": "ISBN으로 검색할 때 도서 정보를 가져올 출처입니다. 선택한 출처는 함께 조회됩니다."
+			},
+			"cacheDays": {
+				"label": "검색 결과 보관 일수",
+				"hint": "이미 한 검색을 다시 묻지 않고 재사용하는 기간(일)입니다."
+			},
+			"timeoutMs": {
+				"label": "대기 시간 한도(ms)",
+				"hint": "응답이 없는 출처를 포기하기까지의 밀리초 단위 시간입니다."
+			}
+		},
+		"performance": {
+			"profile": {
+				"label": "컴퓨터",
+				"hint": "BiblioViva가 실행되는 컴퓨터에 맞는 기본 설정입니다."
+			},
+			"sqliteCacheMb": {
+				"label": "데이터베이스 캐시(MB)",
+				"hint": "비워 두면 컴퓨터에 따라 정해집니다(8, 16, 64 또는 256 MB)."
+			},
+			"sqliteMmapMb": {
+				"label": "데이터베이스 메모리 맵(MB)",
+				"hint": "비워 두면 컴퓨터에 따라 정해집니다(0, 0, 0 또는 512 MB)."
+			},
+			"walAutocheckpointPages": {
+				"label": "체크포인트 전 페이지 수",
+				"hint": "비워 두면 컴퓨터에 따라 정해집니다(500, 1000, 2000 또는 4000)."
+			},
+			"imageConcurrency": {
+				"label": "함께 처리하는 이미지",
+				"hint": "사진, 표지, 학급 사진과 로고를 동시에 처리합니다. 나머지는 차례를 기다립니다. 비워 두면 컴퓨터에 따라 정해집니다(1, 1, 2 또는 4)."
+			},
+			"yazConcurrency": {
+				"label": "함께 하는 Z39.50 검색",
+				"hint": "Z39.50 검색을 동시에 실행합니다. 나머지는 차례를 기다립니다. 비워 두면 컴퓨터에 따라 정해집니다(1, 1, 2 또는 2)."
+			},
+			"heavyConcurrency": {
+				"label": "한 번에 처리하는 인쇄와 내보내기",
+				"hint": "인쇄할 문서(카드, 라벨, 독촉장, 영수증, 보고서)와 내보내기(CSV, ODS, 보관 파일, 백업)를 동시에 준비하는 개수입니다. 나머지는 차례를 기다리므로 대출 데스크는 빠르게 유지됩니다. 비워 두면 컴퓨터에 따라 정해집니다(1, 1, 2 또는 4)."
+			},
+			"argon2MemoryMb": {
+				"label": "비밀번호 확인에 쓰는 메모리(MB)",
+				"hint": "이후에 설정하는 비밀번호에 적용됩니다. 비워 두면 모든 컴퓨터에서 16 MB입니다(시스템은 인터넷에 노출되지 않습니다)."
+			},
+			"smol": {
+				"label": "메모리 절약",
+				"hint": "메모리를 적게 쓰는 대신 프로세서가 조금 더 일합니다. 자동: 컴퓨터에 따라 정해집니다(최소 사양 컴퓨터와 라즈베리 파이에서는 켜짐). 다시 시작한 뒤에 적용됩니다."
+			}
+		},
+		"cards": {
+			"defaultTemplate": {
+				"label": "카드 서식",
+				"hint": "이용자 유형에 자체 서식이 없을 때 쓰는 인쇄 서식의 이름입니다(cards/templates 폴더)."
+			},
+			"layout": {
+				"label": "카드 인쇄",
+				"hint": "앞면과 뒷면을 나란히 인쇄하여 짧은 쪽으로 접거나, 양면 인쇄를 지원하는 프린터에서 용지의 두 면에 인쇄합니다. 인쇄할 때마다 다시 고릅니다."
+			},
+			"duplex": {
+				"flip": {
+					"label": "용지를 뒤집는 방식",
+					"hint": "프린터가 뒷면을 위해 용지를 뒤집는 방식: 긴 쪽(책처럼) 또는 짧은 쪽. 인쇄 창의 선택과 같아야 합니다."
+				},
+				"backOffsetMm": {
+					"x": {
+						"label": "뒷면 이동, 가로(mm)",
+						"hint": "보정으로 찾은 값입니다: 뒷면을 앞면에 맞추려고 옮기는 거리입니다."
+					},
+					"y": {
+						"label": "뒷면 이동, 세로(mm)",
+						"hint": "보정으로 찾은 값입니다."
+					}
+				}
+			},
+			"cardMm": {
+				"width": {
+					"label": "너비(mm)",
+					"hint": "표준 카드의 너비는 85.6 mm입니다."
+				},
+				"height": {
+					"label": "높이(mm)",
+					"hint": "표준 카드의 높이는 53.98 mm입니다."
+				}
+			},
+			"bleedMm": {
+				"label": "재단 여백(mm)",
+				"hint": "전체 면을 채우는 이미지 둘레의 여분 여백입니다. 잘려 나갑니다."
+			},
+			"sheet": {
+				"paper": {
+					"label": "용지 크기",
+					"hint": "카드를 인쇄할 용지입니다."
+				},
+				"rows": {
+					"label": "용지당 카드 수",
+					"hint": "카드(앞면과 뒷면)를 위아래로 몇 장 배열할지 정합니다. A4 용지에는 4 또는 5."
+				},
+				"marginMm": {
+					"label": "용지 여백(mm)",
+					"hint": "카드 둘레의 빈 공간입니다."
+				},
+				"gapMm": {
+					"label": "카드 사이 간격(mm)",
+					"hint": "한 카드와 다음 카드 사이의 거리입니다."
+				},
+				"foldMarks": {
+					"label": "접는 표시",
+					"hint": "여백과 카드 사이에 있는 짧은 점선으로, 앞면과 뒷면을 접는 자리를 표시합니다."
+				},
+				"cutMarks": {
+					"label": "자르는 표시",
+					"hint": "재단 표시: 여백과 카드 사이의 짧은 선으로, 각 카드의 가장자리를 이어 주어 자와 커터로 자를 수 있게 합니다."
+				}
+			},
+			"validityMonths": {
+				"label": "유효 기간(개월)",
+				"hint": "인쇄된 카드가 유효한 개월 수입니다. 비워 두면 만료되지 않습니다."
+			},
+			"showPhoto": {
+				"label": "카드의 사진",
+				"hint": "이용자의 사진을 카드에 인쇄합니다."
+			}
+		},
+		"labels": {
+			"default": {
+				"label": "기본 라벨",
+				"hint": "“라벨 인쇄”를 고를 때 인쇄되는 항목입니다."
+			},
+			"titleMaxChars": {
+				"label": "제목 글자 수",
+				"hint": "라벨의 제목은 이 길이로 잘립니다."
+			},
+			"monochrome": {
+				"label": "흑백 프린터",
+				"hint": "낮은 책등 띠라벨에서는 색상 띠가 사선 무늬로 바뀝니다."
+			},
+			"pair": {
+				"template": {
+					"label": "서식",
+					"hint": "한 쌍의 라벨을 인쇄하는 서식의 이름입니다(labels/templates 폴더)."
+				},
+				"stock": {
+					"label": "접착 용지",
+					"hint": "사용할 라벨 용지의 ID입니다(labels/stocks 폴더의 파일)."
+				}
+			},
+			"barcode": {
+				"template": {
+					"label": "서식",
+					"hint": "바코드 라벨의 인쇄 서식 이름입니다(labels/templates 폴더)."
+				},
+				"stock": {
+					"label": "접착 용지",
+					"hint": "사용할 라벨 용지의 ID입니다(labels/stocks 폴더의 파일)."
+				}
+			},
+			"spine": {
+				"template": {
+					"label": "서식",
+					"hint": "책등 띠라벨의 인쇄 서식 이름입니다(labels/templates 폴더)."
+				},
+				"stock": {
+					"label": "접착 용지",
+					"hint": "사용할 라벨 용지의 ID입니다(labels/stocks 폴더의 파일)."
+				}
+			}
+		},
+		"photos": {
+			"enabled": {
+				"label": "이용자 사진",
+				"hint": "켜짐: 이용자마다 찍거나 올린 사진, 사진 등록, 카드의 사진을 사용합니다. 꺼짐: 어디에도 사진이 없고 사진 없는 카드가 인쇄됩니다. 이미 저장된 사진은 남아 있다가 다시 켜면 돌아옵니다."
+			},
+			"required": {
+				"label": "사진 필수",
+				"hint": "켜짐: 대시보드, 이용자 목록과 인쇄 목록에서 사진이 없는 사람을 표시합니다. 꺼짐: 알림은 없지만 사진은 여전히 찍고, 올리고, 카드에 인쇄할 수 있습니다."
+			},
+			"width": {
+				"label": "너비(px)",
+				"hint": "사진은 이 너비로 저장됩니다."
+			},
+			"height": {
+				"label": "높이(px)",
+				"hint": "사진은 이 높이로 저장됩니다(가운데를 기준으로 자릅니다)."
+			},
+			"format": {
+				"label": "파일 형식",
+				"hint": "JPEG는 어디서나 열리며, WebP는 용량이 적습니다."
+			},
+			"quality": {
+				"label": "품질",
+				"hint": "1에서 100까지: 높을수록 파일이 커집니다."
+			},
+			"maxUploadBytes": {
+				"label": "최대 업로드 크기(바이트)",
+				"hint": "이보다 큰 파일은 거부됩니다."
+			},
+			"sheet": {
+				"maxUploadBytes": {
+					"label": "최대 파일 크기(바이트)",
+					"hint": "사진을 많이 담은 그림(그림에서 사진 등록)이 이보다 크면 거부됩니다."
+				},
+				"maxPixels": {
+					"label": "유지할 긴 변(px)",
+					"hint": "긴 변이 이 값을 넘지 않을 때까지 그림을 축소합니다."
+				},
+				"maxFrames": {
+					"label": "최대 사진 수",
+					"hint": "그림에 이보다 많은 사진이 있으면 가장 선명한 사진만 남깁니다."
+				},
+				"minAspect": {
+					"label": "사진의 최소 비율",
+					"hint": "높이를 너비로 나눈 값입니다: 1은 정사각형, 1.33은 3:4 증명사진입니다."
+				},
+				"maxAspect": {
+					"label": "사진의 최대 비율",
+					"hint": "높이를 너비로 나눈 값입니다: 이보다 세로로 긴 칸은 사진으로 보지 않습니다."
+				}
+			}
+		},
+		"covers": {
+			"enabled": {
+				"label": "도서 표지",
+				"hint": "켜짐: 온라인에서 찾거나, 촬영하거나, 올린 표지를 도서 목록에 표시합니다. 꺼짐: 어디에도 표지가 없습니다. 이미 저장된 표지는 남아 있다가 다시 켜면 돌아옵니다."
+			},
+			"width": {
+				"label": "너비(px)",
+				"hint": "표지는 이 너비로 저장됩니다."
+			},
+			"maxHeight": {
+				"label": "최대 높이(px)",
+				"hint": "지나치게 긴 표지는 축소됩니다. 비워 두면 제한이 없습니다."
+			},
+			"format": {
+				"label": "파일 형식",
+				"hint": "JPEG는 어디서나 열리며, WebP는 용량이 적습니다."
+			},
+			"quality": {
+				"label": "품질",
+				"hint": "1에서 100까지: 높을수록 파일이 커집니다."
+			},
+			"maxUploadBytes": {
+				"label": "최대 업로드 크기(바이트)",
+				"hint": "이보다 큰 파일은 거부됩니다."
+			},
+			"country": {
+				"label": "국가",
+				"hint": "표지 제공처 목록의 국가입니다(두 글자, 예: IT)."
+			},
+			"minWidth": {
+				"label": "최소 너비(px)",
+				"hint": "이보다 좁은 표지는 내려받은 뒤 버려집니다."
+			},
+			"autoFetch": {
+				"label": "표지 자동으로 찾기",
+				"hint": "“새 도서”에서는 서지 정보를 확인하는 동안 온라인에서 표지를 찾아 함께 저장합니다. 잘못된 표지이면 사진으로 바꾸십시오."
+			},
+			"timeoutMs": {
+				"label": "대기 시간 한도(ms)",
+				"hint": "응답이 없는 제공처를 포기하기까지의 밀리초 단위 시간입니다."
+			}
+		},
+		"privacy": {
+			"auditRetentionMonths": {
+				"label": "감사 기록 보관 개월 수",
+				"hint": "이보다 오래된 기록은 삭제됩니다."
+			}
+		},
+		"backup": {
+			"cron": {
+				"label": "백업 시각",
+				"hint": "cron 형식: 분, 시, 일, 월, 요일 (0 3 * * * = 매일 밤 3시)."
+			},
+			"catchUp": {
+				"label": "놓친 백업을 시작할 때 실행",
+				"hint": "백업 시각에 컴퓨터가 꺼져 있었다면, BiblioViva는 다음 시작 1분 뒤에 백업을 만듭니다. 며칠이 지나도 한 번만 만듭니다."
+			},
+			"keepDays": {
+				"label": "보관 일수",
+				"hint": "이보다 오래된 백업은 삭제됩니다."
+			},
+			"offsite": {
+				"enabled": {
+					"label": "외부 사본 사용",
+					"hint": "백업의 두 번째 사본(다른 디스크나 다른 서비스에 rclone으로 보관)을 사용하고 있음을 나타냅니다."
+				},
+				"remote": {
+					"label": "사본 대상",
+					"hint": "사본을 보낼 곳: 다른 디스크의 폴더(기본값 /offsite/biblioviva-backups) 또는 rclone에 설정한 대상(이름:폴더 형식)."
+				}
+			}
+		},
+		"security": {
+			"sessionDays": {
+				"label": "세션 길이(일)",
+				"hint": "이 일수가 지나면 비밀번호를 다시 묻습니다."
+			},
+			"loginMaxAttempts": {
+				"label": "로그인 시도 횟수",
+				"hint": "잘못된 시도가 이 횟수에 이르면 잠시 멈춥니다."
+			},
+			"loginWindowMinutes": {
+				"label": "시도가 너무 많을 때의 중지 시간(분)",
+				"hint": "시도가 너무 많은 뒤 로그인이 막혀 있는 시간(분)입니다."
+			}
+		},
+		"ui": {
+			"checkoutIdleSeconds": {
+				"label": "대출·반납 데스크 대기 시간(초)",
+				"hint": "이 초 동안 스캔이 없으면 데스크는 새 이용자를 맞을 준비를 합니다."
+			}
+		}
+	},
+	"options": {
+		"library": {
+			"weekStart": {
+				"monday": "월요일",
+				"sunday": "일요일",
+				"saturday": "토요일"
+			},
+			"schoolYearLabel": {
+				"span": "두 해 (2026/2027)",
+				"start": "시작 연도 (2026)"
+			}
+		},
+		"school": {
+			"promotionWithinStage": {
+				"keep": "학급이 학생과 함께 올라갑니다",
+				"clear": "학생은 학급 없이 남습니다"
+			},
+			"promotionAcrossStages": {
+				"keep": "학급이 학생과 함께 올라갑니다",
+				"clear": "학생은 학급 없이 남습니다",
+				"ask": "모든 학생의 학급을 고릅니다"
+			}
+		},
+		"barcodes": {
+			"patron": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"item": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"keyboardLayout": {
+				"it": "이탈리아어",
+				"es": "스페인어",
+				"de": "독일어",
+				"fr": "프랑스어",
+				"uk": "영어(영국)",
+				"us": "영어(미국)"
+			},
+			"cameraSound": {
+				"off": "소리 없음",
+				"till": "금전 등록기",
+				"scanner": "스캐너",
+				"confirm": "확인음",
+				"arpeggio": "아르페지오"
+			}
+		},
+		"circulation": {
+			"dueDateMode": {
+				"datedue": "달력 일수, 그다음 첫 개관일",
+				"calendar": "개관일만",
+				"days": "달력 일수, 휴관일 무시"
+			},
+			"renewFrom": {
+				"today": "연장하는 날",
+				"dueDate": "현재 반납 예정일"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"sbn": "OPAC SBN (Z39.50)",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books",
+				"sbn-json": "OPAC SBN (웹 서비스)"
+			}
+		},
+		"performance": {
+			"profile": {
+				"micro": "최소 사양 컴퓨터: 느린 프로세서 1개와 512 MB (라즈베리 파이 Zero 2, 가장 작은 서버)",
+				"small": "2 GB 라즈베리 파이 4 또는 작은 컴퓨터",
+				"medium": "하드디스크가 있는 구형 PC",
+				"large": "SSD가 있는 PC"
+			}
+		},
+		"cards": {
+			"sheet": {
+				"paper": {
+					"A4": "A4"
+				}
+			},
+			"layout": {
+				"side-by-side": "앞면과 뒷면을 나란히",
+				"duplex": "용지의 두 면에"
+			},
+			"duplex": {
+				"flip": {
+					"long-edge": "긴 쪽으로",
+					"short-edge": "짧은 쪽으로"
+				}
+			}
+		},
+		"labels": {
+			"default": {
+				"pair": "쌍: 책등 띠라벨과 라벨",
+				"barcode": "바코드 라벨만",
+				"spine": "책등 띠라벨만"
+			}
+		},
+		"photos": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		},
+		"covers": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		}
+	},
+	"groups": {
+		"barcodes": {
+			"patron": {
+				"title": "이용자 카드"
+			},
+			"item": {
+				"title": "도서 소장본"
+			}
+		},
+		"circulation": {
+			"rules": {
+				"title": "대출 규칙",
+				"student": {
+					"title": "학생 규칙"
+				},
+				"teacher": {
+					"title": "교사 규칙"
+				}
+			},
+			"overdueNotice": {
+				"title": "독촉장"
+			}
+		},
+		"cards": {
+			"cardMm": {
+				"title": "카드 크기"
+			},
+			"sheet": {
+				"title": "인쇄 용지"
+			},
+			"duplex": {
+				"title": "양면 인쇄",
+				"backOffsetMm": {
+					"title": "뒷면 이동"
+				}
+			}
+		},
+		"labels": {
+			"pair": {
+				"title": "쌍: 책등 띠라벨과 라벨"
+			},
+			"barcode": {
+				"title": "바코드 라벨만"
+			},
+			"spine": {
+				"title": "책등 띠라벨만"
+			}
+		},
+		"backup": {
+			"offsite": {
+				"title": "외부 사본"
+			}
+		},
+		"photos": {
+			"sheet": {
+				"title": "사진을 많이 담은 그림 (그림에서 사진 등록)"
+			}
+		}
+	},
+	"overview": {
+		"reload": "다시 불러오기",
+		"reloaded": "설정을 다시 불러왔습니다",
+		"reloadFailed": "파일에 오류가 있습니다. 이전 설정을 계속 사용합니다.",
+		"valid": "설정이 올바릅니다: 파일 {{count}} {{count:plural; other:개;}}.",
+		"example": "설정이 아직 만들어지지 않아 예시 값을 사용합니다.",
+		"warnings": "경고 {{count}} {{count:plural; other:건;}}",
+		"diskErrors": "설정 파일에 오류가 있습니다. 고칠 때까지 도서관은 이전 버전을 유지합니다.",
+		"diskChanged": "파일을 직접 고쳤습니다. 변경 사항을 쓰려면 “다시 불러오기”를 누르십시오.",
+		"sections": "설정",
+		"alsoFrom": "그리고 다른 파일 {{count}} {{count:plural; other:개;}}",
+		"editors": "외관, 학급과 서식",
+		"templates": "인쇄 서식",
+		"templatesDescription": "카드, 라벨, 독촉장의 서식 폴더와 그 이미지.",
+		"reports": "보고서 자료실",
+		"reportsDescription": "기본 제공 보고서와 학교 보고서: 시험, 내려받기, 올리기, 삭제.",
+		"appearance": "외관과 언어",
+		"appearanceDescription": "도서관의 이름과 로고, 색상, 언어와 대시보드의 구역.",
+		"classes": "학급",
+		"classesDescription": "학교의 학급과 교사 그룹: 만들기, 이름 바꾸기, 보관."
+	},
+	"section": {
+		"tabs": {
+			"form": "설정",
+			"json": "JSON",
+			"label": "다음 형식으로 편집"
+		},
+		"file": "저장 위치: {{file}}",
+		"alsoFrom": "함께 사용하는 파일: {{files}}",
+		"general": "일반",
+		"default": "기본값: {{value}}",
+		"defaultNone": "기본값: 값 없음",
+		"defaultAuto": "기본값: 자동",
+		"usesDefault": "기본값 사용",
+		"reset": "기본값으로 되돌리기",
+		"willReset": "저장하면 기본값으로 돌아갑니다.",
+		"auto": "자동",
+		"none": "날짜 없음",
+		"yes": "예",
+		"no": "아니요",
+		"fixed": "고정값",
+		"range": "범위: {{min}} ~ {{max}}.",
+		"min": "최솟값: {{min}}.",
+		"max": "최댓값: {{max}}.",
+		"save": "저장",
+		"discard": "변경 사항 버리기",
+		"saved": "설정을 저장했습니다",
+		"unsaved": "저장하지 않은 변경 사항",
+		"invalid": "저장하기 전에 표시된 값을 고치십시오.",
+		"errors": "저장하지 못했습니다:",
+		"inUse": "저장하면 아직 사용 중인 항목이 삭제됩니다:",
+		"inUseKinds": {
+			"classification": "코드 {{code}}: 도서 {{count}} {{count:plural; other:권;}}",
+			"itemType": "소장본 유형 {{code}}: 소장본 {{count}} {{count:plural; other:권;}}",
+			"level": "수준 {{code}}: 학생 {{count}} {{count:plural; other:명;}} 또는 학급",
+			"readingLevel": "독서 수준 {{code}}: 도서 {{count}} {{count:plural; other:권;}}"
+		},
+		"patternError": "형식이 올바르지 않습니다.",
+		"numberError": "정수를 입력하십시오.",
+		"required": "필수 항목입니다.",
+		"elsewhereTitle": "이 구역의 다른 설정",
+		"elsewhereHint": "이 설정은 별도의 편집기에서 바꾸거나 JSON 탭에서 바꿉니다.",
+		"openEditor": "열기",
+		"jsonOnly": "지금은 JSON 탭에서만",
+		"editorNames": {
+			"taxonomy": "분류",
+			"appearance": "외관과 언어",
+			"wizard": "첫 실행 마법사",
+			"history": "기록",
+			"settings": "설정",
+			"schoolLevels": "단계와 학년"
+		},
+		"json": {
+			"hint": "구역의 내용이며, 저장 파일은 {{file}}입니다. _로 시작하는 키는 주석이며 파일에 그대로 남습니다.",
+			"label": "구역의 JSON 내용",
+			"parseError": "올바른 JSON이 아닙니다: {{message}}",
+			"notObject": "구역은 중괄호로 묶인 JSON 객체여야 합니다.",
+			"valid": "문제가 없습니다.",
+			"checking": "확인하는 중…",
+			"issues": "고쳐야 할 문제:"
+		},
+		"playSound": "듣기"
+	},
+	"history": {
+		"title": "설정 기록",
+		"hint": "여기서 하는 모든 변경은 바뀐 파일의 이전 버전을 남깁니다(최근 50회 변경).",
+		"empty": "관리 화면에서 한 변경이 아직 없습니다.",
+		"columns": {
+			"when": "언제",
+			"what": "내용",
+			"files": "파일"
+		},
+		"revert": "복원",
+		"revertTitle": "이 변경 전의 파일로 복원하시겠습니까?",
+		"revertDescription": "이 변경에서 설정한 값만 되돌아갑니다. 복원도 하나의 변경이므로 기록에 남으며 되돌릴 수 있습니다.",
+		"reverted": "이전 버전을 복원했습니다",
+		"refused": "이 변경으로 config.json이 만들어졌으므로 되돌릴 수 없습니다.",
+		"conflict": "복원할 수 없습니다: 이 변경 뒤에 다음 항목이 다시 바뀌었습니다: {{keys}}.",
+		"notFound": "이 변경은 더 이상 기록에 없습니다.",
+		"newFile": "새 파일",
+		"actions": {
+			"revert": "변경 복원, {{when}}",
+			"theme": "색상",
+			"locale": "언어",
+			"logo": "도서관 로고",
+			"setup": "첫 설정",
+			"section": "구역 “{{section}}”",
+			"other": "변경 ({{action}})"
+		}
+	},
+	"archive": {
+		"title": "설정 보관 파일",
+		"hint": "설정 전체를 한 파일에 담습니다: 설정, 인쇄 서식, 접착 용지, 픽토그램, 로고, 보고서와 언어(기록은 제외). 사본을 보관하거나 다른 설치 환경으로 옮길 때 사용합니다. “설정 가져오기”는 백업이나 “모두 내보내기” 보관 파일도 받으며, 그 안의 설정만 가져오고 도서관의 데이터는 그대로 둡니다.",
+		"export": "설정 내보내기",
+		"import": "설정 가져오기",
+		"checking": "보관 파일을 확인하는 중…",
+		"from": "보관 파일, {{date}} (버전 {{version}})",
+		"fromLibrary": "“{{library}}” 보관 파일, {{date}} (버전 {{version}})",
+		"files": "{{added}} {{added:plural; other:개 새 파일;}}, 변경 {{changed}}, 삭제 {{removed}}, 그대로 {{unchanged}}.",
+		"fileList": "파일 목록",
+		"added": "새 파일",
+		"changed": "변경됨",
+		"removed": "삭제됨",
+		"sameValues": "설정 값은 그대로 유지됩니다.",
+		"sections": "바뀌는 구역: {{sections}}.",
+		"errorsTitle": "보관 파일에 문제가 있습니다. 가져오기 전에 고쳐야 합니다.",
+		"apply": "가져오기",
+		"confirmTitle": "설정을 보관 파일의 설정으로 바꾸시겠습니까?",
+		"confirmDescription": "현재 파일은 기록에 남습니다. “복원”을 누르면 이전 설정이 돌아옵니다. 도서관의 데이터(도서, 이용자, 대출)는 바뀌지 않습니다.",
+		"imported": "설정을 가져왔습니다",
+		"failed": "가져오지 못했습니다",
+		"errors": {
+			"too_large": "보관 파일이 너무 큽니다(최대 {{maxMb}} MB).",
+			"not_zip": "올바른 ZIP 보관 파일이 아닙니다.",
+			"not_archive": "BiblioViva 보관 파일이 아닙니다.",
+			"too_many_files": "보관 파일에 파일이 너무 많습니다.",
+			"unsafe_path": "보관 파일에 허용되지 않는 경로가 있습니다: {{name}}",
+			"link": "보관 파일에 허용되지 않는 링크가 있습니다: {{name}}",
+			"unknown_file": "보관 파일에 설정에 속하지 않는 파일이 있습니다: {{name}}",
+			"no_config": "이 보관 파일에는 설정이 없습니다(도서관 데이터만 있음). 관리 → 백업에서 복원하십시오."
+		},
+		"exportSome": "선택한 부분 내보내기",
+		"chooseExport": "내보낼 항목 선택"
+	},
+	"blocks": {
+		"problems": {
+			"codeRequired": {
+				"itemTypes": "코드를 입력해야 합니다.",
+				"sections": "구역을 입력해야 합니다."
+			},
+			"codeFormat": {
+				"itemTypes": "문자, 숫자, 점, 하이픈 또는 밑줄 (최대 32자).",
+				"sections": "대문자 또는 숫자, 최대 8자."
+			},
+			"codeTaken": {
+				"itemTypes": "중복된 코드입니다.",
+				"sections": "중복된 구역입니다."
+			},
+			"labelRequired": {
+				"itemTypes": "이름을 입력해야 합니다.",
+				"sections": "이름을 입력해야 합니다."
+			}
+		},
+		"itemTypes": {
+			"title": "소장본 유형",
+			"hint": "도서, DVD, 참고 자료…: 소장본 유형에 따라 각 소장본의 대출 규칙이 정해집니다. 코드를 바꾸면 그 코드의 소장본도 새 코드로 옮겨집니다.",
+			"code": "코드",
+			"label": "이름",
+			"notForLoan": "열람 전용",
+			"add": "유형 추가",
+			"saved": "소장본 유형이 저장되었습니다."
+		},
+		"move": {
+			"title": "옮길 곳",
+			"hint": {
+				"copies": "삭제한 유형 중 일부에 아직 소장본이 있습니다: 소장본을 옮길 유형을 선택하십시오.",
+				"students": "삭제한 구역 중 일부에 아직 학생이 있습니다: 학생을 옮길 구역을 선택하십시오."
+			},
+			"row": {
+				"copies": "{{code}} · {{label}}: 소장본 {{count}}{{count:plural; other:권;}}. 다음으로 이동",
+				"students": "{{code}}: 학생 {{count}}{{count:plural; other:명;}}. 다음 구역으로 이동"
+			},
+			"choose": "선택…",
+			"used": {
+				"copies": "소장본",
+				"students": "학생"
+			},
+			"count": {
+				"copies": "{{count}}{{count:plural; other:권;}}",
+				"students": "{{count}}{{count:plural; other:명;}}"
+			},
+			"done": {
+				"copies": "{{count}}{{count:plural; other:권을 옮겼습니다;}}.",
+				"students": "{{count}}{{count:plural; other:명을 옮겼습니다;}}."
+			}
+		},
+		"barcodes": {
+			"title": "번호 매기기와 미리보기",
+			"counter": "새 이용증의 번호",
+			"afterLegacy": "기존 이용증 중 가장 큰 번호 다음부터",
+			"from": "이 번호부터:",
+			"fromNumber": "새 이용증의 첫 번호",
+			"counterHint": "한 번 쓰인 번호는 다시 쓰지 않습니다: 선택한 번호가 더 작으면 지금까지 도달한 번호 다음부터 이어집니다. 새 소장본에는 항상 연도와 일련번호가 붙습니다.",
+			"nextCard": "다음 이용증: {{code}}",
+			"nextItem": "다음 소장본: {{code}}",
+			"overrides": "다음 인쇄 서식은 바코드 종류를 스스로 정하므로 위 설정이 적용되지 않습니다: {{templates}}.",
+			"saved": "번호 설정이 저장되었습니다."
+		},
+		"itemTypeRules": {
+			"title": "소장본 유형별 규칙",
+			"hint": "소장본 유형마다 규칙을 하나씩 바꿀 수 있습니다: 예를 들어 DVD는 5일 동안 대출합니다. 규칙은 학생과 교사 모두에게 적용됩니다.",
+			"inherit": "비워 두면 학생과 교사의 규칙이 적용됩니다 (회색으로: 학생 / 교사).",
+			"saved": "소장본 유형별 규칙이 저장되었습니다."
+		},
+		"calendar": {
+			"title": "도서관 달력",
+			"weekly": "매주 휴관하는 요일",
+			"weeklyHint": "강조된 요일은 매주 휴관합니다.",
+			"previous": "이전 학년도",
+			"next": "다음 학년도",
+			"addNational": "{{year}}년 법정 공휴일 추가",
+			"autoOn": "법정 공휴일은 이미 자동으로 휴관입니다. 열린 날을 클릭하면 닫히고, 직접 닫은 날을 클릭하면 다시 열립니다.",
+			"clickHint": "열린 날을 클릭하면 닫히고, 직접 닫은 날을 클릭하면 다시 열립니다.",
+			"open": "열림",
+			"legend": {
+				"open": "열림",
+				"weekly": "매주 휴관",
+				"national": "법정 공휴일",
+				"holiday": "휴관 (여기서 선택)",
+				"range": "휴관 기간"
+			},
+			"ranges": "휴관 기간",
+			"from": "시작",
+			"to": "끝",
+			"reason": "사유",
+			"badRange": "끝나는 날이 시작하는 날보다 앞섭니다.",
+			"addRange": "기간 추가",
+			"saved": "달력이 저장되었습니다."
+		},
+		"cardTemplates": {
+			"title": "이용자 유형별 서식",
+			"hint": "학생과 교사는 위에서 고른 기본 서식으로 이용증을 인쇄합니다. 다른 서식을 여기서 고르면 그 서식을 사용합니다.",
+			"student": "학생 이용증",
+			"teacher": "교사 이용증",
+			"asDefault": "기본값과 같음 ({{name}})",
+			"cutLines": "이용증마다 색 테두리",
+			"cutLinesOn": "이용증마다 색 테두리를 그립니다 (보통은 필요하지 않습니다: 자르기 표시로 충분합니다)",
+			"color": "색",
+			"width": "두께 (mm)",
+			"sample": "절단선 예시",
+			"saved": "이용증 서식이 저장되었습니다."
+		},
+		"stocks": {
+			"title": "접착 라벨 용지",
+			"hint": "인쇄할 라벨 용지의 치수입니다. 오른쪽 그림은 입력한 모든 값을 따릅니다: 용지를 벗어나는 라벨은 빨간색으로 표시됩니다. 저장한 뒤 시험 페이지를 일반 종이에 인쇄하여 라벨 용지 위에 겹쳐 보십시오.",
+			"new": "신규",
+			"toFix": "수정 필요",
+			"add": "용지 추가",
+			"id": "코드",
+			"name": "이름",
+			"labelWidth": "라벨 너비 (mm)",
+			"labelHeight": "라벨 높이 (mm)",
+			"columns": "열",
+			"rows": "행",
+			"marginTop": "위쪽 여백 (mm)",
+			"marginLeft": "왼쪽 여백 (mm)",
+			"gapX": "열 사이 간격 (mm)",
+			"gapY": "행 사이 간격 (mm)",
+			"radius": "모서리 둥글기 (mm)",
+			"calibration": "시험 페이지 인쇄",
+			"inUse": "사용처: {{jobs}}. 삭제하려면 먼저 위의 설정에서 다른 용지를 선택하십시오.",
+			"saveFirst": "시험 페이지를 인쇄하려면 먼저 변경 사항을 저장하십시오.",
+			"drawing": "A4 용지 그림, 라벨 {{columns}}{{columns:plural; other:열;}} × {{rows}}{{rows:plural; other:행;}}",
+			"caption": "A4 용지 · 라벨 {{count}}{{count:plural; other:개;}}",
+			"saved": "라벨 용지가 저장되었습니다.",
+			"problems": {
+				"id": "코드에는 문자, 숫자, 하이픈과 밑줄만 쓸 수 있습니다.",
+				"duplicate": "다른 용지가 이미 이 코드를 사용하고 있습니다.",
+				"name": "이름을 입력하십시오.",
+				"numbers": "치수를 확인하십시오: 0 이상의 숫자, 0보다 큰 라벨, 온전한 열과 행.",
+				"width": "라벨 너비의 합계: {{mm}} mm, A4 용지의 너비 (210 mm)보다 큽니다.",
+				"height": "라벨 높이의 합계: {{mm}} mm, A4 용지의 높이 (297 mm)보다 큽니다.",
+				"pairRows": "쌍을 이루려면 행 수가 짝수여야 합니다 (책등 띠와 라벨이 위아래로 놓입니다)."
+			},
+			"errors": {
+				"duplicate": "같은 코드를 가진 용지가 두 개 있습니다: {{details}}.",
+				"inUse": "인쇄에 사용하는 용지는 삭제할 수 없습니다: {{details}}."
+			}
+		},
+		"backupSchedule": {
+			"title": "다음 백업",
+			"invalid": "시간이 올바른 cron 식이 아닙니다 (다섯 개 항목: 분, 시, 일, 월, 요일).",
+			"never": "이 식에서는 백업이 시작되지 않습니다.",
+			"hint": "시간은 도서관의 시간대 ({{timezone}}) 기준입니다. 그 시각에 컴퓨터가 꺼져 있으면 “누락 시 시작할 때 백업” 설정에 따라 다음에 켤 때 백업이 이루어집니다. 시간을 개관 시간 안으로 옮길 수도 있습니다."
+		},
+		"coverProviders": {
+			"off": "표지가 꺼져 있습니다 (위의 도서 표지): 어떤 출처에도 묻지 않습니다.",
+			"title": "표지를 가져올 출처",
+			"hint": "출처는 이 순서대로 시도하며, 표지를 찾을 때까지 진행합니다. 출처마다 따로 끌 수 있습니다.",
+			"names": {
+				"amazon": "Amazon",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books"
+			},
+			"googleKey": "Google Books에는 API 키가 필요합니다: “도서 데이터” 설정에 입력하십시오. 입력하지 않으면 이 출처는 건너뜁니다.",
+			"saved": "표지 출처가 저장되었습니다."
+		},
+		"z3950Targets": {
+			"title": "Z39.50 도서 목록",
+			"hint": "도서 데이터를 가져올 도서 목록입니다. “연결 확인”은 입력한 값으로 실제 검색을 하며, 값을 저장하지는 않습니다.",
+			"id": "코드",
+			"name": "이름",
+			"host": "서버 주소",
+			"port": "포트",
+			"database": "데이터베이스",
+			"syntax": "레코드 형식",
+			"charset": "문자 인코딩",
+			"elements": "요소",
+			"elementsHint": "보통은 F (전체 레코드).",
+			"add": "도서 목록 추가",
+			"isDefault": "기본 도서 목록입니다: 삭제하려면 위에서 다른 목록을 먼저 선택하십시오.",
+			"saved": "도서 목록이 저장되었습니다.",
+			"problems": {
+				"id": "코드는 고유해야 합니다: 문자, 숫자, 하이픈.",
+				"required": "이름, 데이터베이스, 인코딩과 요소는 필수입니다.",
+				"host": "주소에는 문자, 숫자, 점과 하이픈만 쓸 수 있습니다.",
+				"words": "데이터베이스, 인코딩과 요소는 각각 띄어쓰기 없이 한 단어여야 합니다.",
+				"port": "포트는 1에서 65535 사이의 숫자입니다."
+			},
+			"test": {
+				"button": "연결 확인",
+				"running": "확인 중…",
+				"ok": "도서 목록이 응답했습니다: 검색 결과 {{hits}}{{hits:plural; other:건;}}, 소요 시간 {{ms}} ms.",
+				"unreachable": "도서 목록이 응답하지 않습니다: 주소, 포트와 데이터베이스를 확인하십시오.",
+				"timeout": "도서 목록이 제때 응답하지 않았습니다.",
+				"protocol": "도서 목록이 오류로 응답했습니다: 데이터베이스, 형식과 인코딩을 확인하십시오.",
+				"spawn": "서버에서 yaz-client 프로그램을 사용할 수 없습니다."
+			}
+		},
+		"barcodeFormats": {
+			"title": "코드 형식",
+			"hint": "새 소장본과 새 이용증의 코드를 만드는 방식입니다. 이미 인쇄된 코드는 계속 작동합니다: 바꾼 형식은 이전 형식 목록에 남습니다.",
+			"preset": "준비된 형식",
+			"presets": {
+				"standard": "표준 (2026-E0267, U012345)",
+				"classic": "클래식 (2026-02678, 0000012344)",
+				"prefix": "앞에 문자 (L-2602670, T0123455)",
+				"custom": "직접 설정"
+			},
+			"check": "검사 문자",
+			"checks": {
+				"mod23": "문자 (mod 23)",
+				"damm": "숫자 (Damm)",
+				"luhn": "숫자 (Luhn)"
+			},
+			"checkHint": "잘못 읽히거나 잘못 입력된 코드를 찾아냅니다. 문자가 가장 안전하며, 이용증을 소장본 코드와 한눈에 구별되게 합니다.",
+			"advanced": "고급: 형식 하나씩 설정",
+			"tokens": "YYYY 또는 YY = 연도, N = 일련번호의 자릿수, C = 검사 문자, {lib} = 도서관 코드, - = 하이픈, 따옴표 안의 대문자 ('T') = 그대로 쓰는 문자. 문자 I, O, Q는 쓸 수 없습니다.",
+			"pattern": {
+				"item": "소장본 형식",
+				"patron": "이용증 형식"
+			},
+			"libraryCode": "도서관 코드",
+			"libraryCodeHint": "설치본이 따로 있는 여러 도서관이 서로 다른 코드를 가져야 할 때만 사용합니다: 형식 안의 {lib} 자리에 들어갑니다.",
+			"plainMaxLength": "예전 단순 번호의 자릿수",
+			"plainHint": "형식이 없던 이전 시스템의 이용증과 소장본 번호 중 가장 긴 자릿수입니다 (없으면 0).",
+			"plainLongest": "기록된 단순 번호 중 가장 긴 번호는 {{digits}}{{digits:plural; other:자리;}}입니다.",
+			"distinct": "소장본과 이용증은 서로 혼동되지 않습니다.",
+			"confusable": "이 형식들에서는 소장본과 이용증이 혼동될 수 있습니다:",
+			"warnings": "{{count}}{{count:plural; other:건의 경고;}}",
+			"inUse": "형식 {{pattern}}에는 아직 저장된 코드가 {{count}}{{count:plural; other:개;}} 있어 삭제할 수 없습니다.",
+			"kinds": {
+				"item": "소장본",
+				"card": "이용증"
+			},
+			"heading": {
+				"item": "소장본",
+				"patron": "이용증"
+			},
+			"examples": "새 코드의 예:",
+			"currentCount": "이 형식으로 저장된 코드: {{count}}개",
+			"count": "{{count}}{{count:plural; other:개;}}",
+			"noCheck": "검사 문자 없음",
+			"remove": "제외",
+			"retired": "과거에 쓰던 형식",
+			"legacy": "이전 시스템의 코드",
+			"noLegacy": "없음.",
+			"addLegacy": "이전 형식 추가",
+			"try": "코드 시험",
+			"tryHint": "여기에 입력하거나 읽은 코드는 저장하기 전에도 위의 형식으로 인식됩니다.",
+			"tried": {
+				"item": "{{value}}: 소장본 코드",
+				"legacy_item": "{{value}}: 이전 소장본 코드",
+				"card": "{{value}}: 이용증 번호",
+				"isbn": "{{value}}: ISBN",
+				"ambiguous": "{{value}}: 예전 단순 번호 (소장본과 이용증 모두에서 찾음)",
+				"invalid": "{{value}}: 인식되지 않음 또는 검사 문자가 잘못됨"
+			},
+			"saved": "코드 형식이 저장되었습니다.",
+			"patternErrors": {
+				"empty": "빈 형식 ({{kind}})",
+				"tooLong": "{{pattern}}: 너무 깁니다.",
+				"badToken": "{{pattern}}: 예상하지 못한 기호가 있습니다.",
+				"badLetter": "{{pattern}}: 허용되지 않는 문자입니다 (대문자만, I, O, Q는 제외).",
+				"unclosedQuote": "{{pattern}}: 닫는 따옴표가 없습니다.",
+				"year": "{{pattern}}: 연도는 YYYY 또는 YY로 씁니다.",
+				"twoYears": "{{pattern}}: 연도가 두 번 나옵니다.",
+				"twoCounters": "{{pattern}}: 일련번호는 N이 하나로 이어진 묶음이어야 합니다.",
+				"noCounter": "{{pattern}}: 일련번호(N)가 없습니다.",
+				"twoChecks": "{{pattern}}: 검사 문자가 두 번 나옵니다.",
+				"checkWithoutAlgorithm": "{{pattern}}: C가 있지만 검사 방식을 고르지 않았습니다.",
+				"algorithmWithoutCheck": "{{pattern}}: 검사 문자의 자리인 C가 없습니다.",
+				"noLibraryCode": "{{pattern}}: {lib} 자리가 있지만 도서관 코드가 비어 있습니다.",
+				"badLibraryCode": "도서관 코드에는 숫자와 대문자만 쓸 수 있습니다 (I, O, Q는 제외)."
+			},
+			"issues": {
+				"overlap": "{{pattern}} ({{kind}}) 형식과 {{other}} ({{otherKind}}) 형식은 같은 코드를 만들 수 있습니다. 예: {{example}}",
+				"overlapWithoutDash": "{{pattern}} ({{kind}}) 형식과 {{other}} ({{otherKind}}) 형식은 스캐너가 하이픈을 놓치면 서로 혼동됩니다. 예: {{example}}",
+				"overlapLegacy": "이전 코드 {{pattern}} ({{kind}}) 형식과 {{other}} ({{otherKind}}) 형식은 모양이 같습니다: 두 저장소에서 모두 찾습니다.",
+				"overlapPlain": "{{pattern}} ({{kind}}) 형식은 예전 단순 번호와 같은 코드를 만들 수 있습니다. 예: {{example}}",
+				"overlapIsbn": "{{pattern}} ({{kind}}) 형식은 ISBN과 같은 코드를 만들 수 있습니다. 예: {{example}}",
+				"overlapIsbn10": "{{pattern}} ({{kind}}) 형식은 하이픈 없이 입력한 ISBN-10과 모양이 같습니다: 이용증 번호가 우선합니다.",
+				"lookAlike": "{{pattern}} ({{kind}}) 형식과 {{other}} ({{otherKind}}) 형식은 너무 비슷합니다: 길이가 2자 이상 달라야 하고, 문자가 다른 자리에 있거나, 하이픈이 다른 곳에 있어야 합니다."
+			}
+		},
+		"schoolLevels": {
+			"title": "학교 단계와 학년",
+			"hint": "학교의 학년을 다니는 순서대로, 학교 단계별로 묶었습니다. 코드는 학생에게 남습니다: 사용 중인 학년을 빼거나 코드를 바꾸면 학생과 학급을 어디로 옮길지 선택하게 됩니다.",
+			"preset": "모델",
+			"presetApply": "이 모델 사용",
+			"presetHint": "아래의 단계와 학년을 모델의 것으로 바꿉니다. “저장”을 누르기 전까지는 아무것도 저장되지 않습니다.",
+			"custom": "직접 설정",
+			"stages": "학교 단계",
+			"stageCode": "코드",
+			"stageName": "이름",
+			"stageLabel": "학급 표시 방식",
+			"addStage": "단계 추가",
+			"stageLabelHint": "단계의 “학급 표시 방식”은 학교 전체의 방식 대신 그 단계의 학년에 적용됩니다. {group}이 없으면 학급은 학년만으로 표시됩니다 (예: Q1, 반 구분 없음). 비워 두면 학교 전체와 같습니다.",
+			"levels": "학년",
+			"levelCode": "코드",
+			"levelLabel": "학급 안의 표시",
+			"levelName": "이름",
+			"levelStage": "단계",
+			"levelNext": "다음 학년",
+			"levelAliases": "다른 이름",
+			"levelAliasesPlaceholder": "쉼표로 구분",
+			"nextFollowing": "바로 다음 학년",
+			"nextLeaves": "학교를 떠남",
+			"nextChoices": "여러 학년 중 선택",
+			"choiceAdd": "선택 추가…",
+			"choiceRemove": "{{name}} 제외",
+			"choiceDefault": "기본값",
+			"addLevel": "학년 추가",
+			"inUse": "사용 중",
+			"moveUp": "위로 이동",
+			"moveDown": "아래로 이동",
+			"example": "예: {{label}}",
+			"saved": "단계와 학년이 저장되었습니다.",
+			"problems": {
+				"code": "코드: 문자, 숫자와 하이픈 (학년은 최대 8자), 모두 달라야 합니다.",
+				"required": "표시 방식과 이름은 필수입니다.",
+				"template": "단계의 “학급 표시 방식”에는 {level}이 들어 있어야 합니다.",
+				"stageUsed": "학년이 들어 있는 단계는 삭제할 수 없습니다.",
+				"structure": "구조가 올바르지 않습니다: {{details}}"
+			},
+			"move": {
+				"title": "학생과 학급을 어디로 옮길까요?",
+				"hint": "삭제한 학년 중 일부에 아직 학생이나 학급이 남아 있습니다. 각 학년마다 옮길 학년을 선택하십시오. 대출 기록에는 대출을 한 당시의 학급이 그대로 남습니다.",
+				"level": "{{name}}: 학생 {{pupils}}{{pupils:plural; other:명;}}, 학급 {{classes}}{{classes:plural; other:개;}}",
+				"choose": "학년 선택…",
+				"confirm": "옮기고 저장",
+				"done": "옮김: 학생 {{pupils}}{{pupils:plural; other:명;}}, 학급 {{classes}}{{classes:plural; other:개;}}."
+			}
+		}
+	},
+	"templates": {
+		"title": "인쇄 서식",
+		"hint": "이용증, 라벨, 영수증과 연체 독촉장의 서식 폴더입니다. BiblioViva와 함께 제공되는 서식은 개인화하거나 (같은 이름의 사본이 만들어집니다) 다른 이름으로 복제할 수 있습니다. 사본의 이미지와 글꼴은 여기서 업로드합니다. 모든 작업은 설정 기록에 나타나며 되돌릴 수 있습니다.",
+		"source": {
+			"builtin": "BiblioViva 기본 제공",
+			"customised": "개인화됨",
+			"added": "추가됨"
+		},
+		"broken": "오류 있음",
+		"customise": "개인화",
+		"duplicate": "복제",
+		"rename": "이름 변경",
+		"restore": "원본으로 되돌리기",
+		"usedBy": "사용처: {{settings}}.",
+		"unused": "어떤 설정에서도 사용하지 않습니다.",
+		"assets": "이미지와 글꼴 ({{count}}개)",
+		"noAssets": "파일이 없습니다.",
+		"usedIn": "사용처: {{files}}",
+		"assetUnused": "사용 안 함",
+		"upload": "파일 업로드",
+		"uploadHint": "PNG, JPEG, WebP, GIF, SVG 또는 WOFF2, WOFF, TTF 글꼴; 최대 {{maxMb}} MB.",
+		"builtinAssets": "BiblioViva 기본 제공 서식의 이미지를 바꾸려면 먼저 개인화하십시오.",
+		"files": "서식 파일 ({{count}}개)",
+		"filesHint": "HTML과 CSS 내용은 시각 서식 편집기에서 수정합니다.",
+		"done": {
+			"duplicate": "서식이 복제되었습니다.",
+			"customise": "서식을 개인화했습니다: 사본을 고칠 수 있습니다.",
+			"rename": "서식 이름이 바뀌었습니다.",
+			"delete": "서식이 삭제되었습니다.",
+			"upload": "업로드 완료: {{name}}",
+			"removeAsset": "삭제 완료: {{name}}"
+		},
+		"errors": {
+			"notFound": "서식 또는 파일을 찾을 수 없습니다.",
+			"badName": "잘못된 이름입니다: 소문자, 숫자, 하이픈과 밑줄만 쓸 수 있습니다.",
+			"exists": "이 이름의 서식이 이미 있습니다.",
+			"builtin": "BiblioViva 기본 제공 서식은 바꿀 수 없습니다: 개인화하거나 복제하십시오.",
+			"inUse": "이 서식을 사용하는 곳: {{details}}. 먼저 다른 서식을 선택하십시오.",
+			"badAsset": "“{{name}}” 파일은 허용되지 않습니다 (PNG, JPEG, WebP, GIF, 스크립트가 없는 SVG, WOFF2, WOFF, TTF만 가능합니다).",
+			"assetTooLarge": "“{{name}}” 파일이 너무 큽니다: 최대 {{maxMb}} MB.",
+			"assetInUse": "이 파일을 사용하는 곳: {{details}}."
+		},
+		"dialog": {
+			"name": "폴더 이름",
+			"nameHint": "소문자, 숫자, 하이픈과 밑줄.",
+			"badName": "소문자, 숫자, 하이픈과 밑줄만 쓰십시오.",
+			"taken": "이 이름의 서식이 이미 있습니다.",
+			"duplicate": {
+				"title": "{{name}} 복제",
+				"hint": "모든 파일이 들어 있는 사본이 만들어지며, 바로 고칠 수 있습니다.",
+				"confirm": "복제"
+			},
+			"customise": {
+				"title": "{{name}} 개인화",
+				"hint": "같은 이름의 사본이 원본을 대신합니다. 원본은 되돌아갈 수 있도록 남아 있습니다.",
+				"confirm": "개인화"
+			},
+			"rename": {
+				"title": "{{name}} 이름 변경",
+				"hint": "이 서식을 사용하는 설정은 새 이름을 따릅니다.",
+				"confirm": "이름 변경"
+			},
+			"delete": {
+				"title": "{{name}} 삭제",
+				"hint": "폴더와 그 파일이 삭제됩니다. BiblioViva 기본 제공 서식의 사본이라면 원본이 다시 사용됩니다. 기록에서 되돌릴 수 있습니다.",
+				"confirm": "삭제"
+			}
+		},
+		"edit": "편집"
+	},
+	"languages": {
+		"title": "언어 팩",
+		"hint": "BiblioViva를 다른 언어로 쓰려면: 영어 또는 이탈리아어 예시를 내려받고, JSON 파일의 글을 번역하되 키와 이중 중괄호 안의 자리표시자는 그대로 두십시오. pack.json에 언어 이름을 적고 zip 파일을 업로드하십시오. 오류가 있는 팩은 설치되지 않으며, 빠진 글은 영어로 표시됩니다. 언어는 외관 및 언어에서 고릅니다.",
+		"none": "설치된 팩이 없습니다.",
+		"valid": "유효함",
+		"errorsCount": "{{count}}{{count:plural; other:건의 오류;}}",
+		"warnings": "{{count}}{{count:plural; other:건의 누락 또는 초과 문구;}}",
+		"inUse": "사용 중",
+		"download": "내려받기",
+		"report": "검사 결과",
+		"upload": "팩 업로드 (zip)",
+		"uploadHint": "pack.json과 언어 파일이 들어 있는 zip으로, 언어 코드 이름의 폴더 안에 있어야 합니다 (예: de/). 최대 {{maxMb}} MB.",
+		"examples": "내려받을 예시:",
+		"installed": "설치된 언어: {{name}}",
+		"removed": "팩이 삭제되었습니다.",
+		"removeTitle": "팩 {{code}} 삭제하시겠습니까?",
+		"removeHint": "언어 폴더가 삭제됩니다. 설정 기록에서 되돌릴 수 있습니다.",
+		"errors": {
+			"notAZip": "파일이 zip 형식이 아닙니다.",
+			"tooLarge": "zip 파일이 너무 큽니다: 최대 {{maxMb}} MB.",
+			"badLayout": "zip에는 언어의 .json 파일만 있어야 하며, 언어 코드 이름의 폴더 하나 안에 들어 있어야 합니다. {{details}}",
+			"badCode": "잘못된 언어 코드입니다: {{details}} (예: de, fr, pt-BR).",
+			"builtIn": "영어와 이탈리아어는 이미 포함되어 있으며 교체되지 않습니다.",
+			"invalid": "팩에 오류가 있어 설치되지 않았습니다: {{details}}",
+			"inUse": "현재 사용 중인 언어입니다: 먼저 다른 언어를 선택하십시오.",
+			"notFound": "팩을 찾을 수 없습니다.",
+			"unavailable": "언어 목록이나 팩을 내려받을 수 없었습니다. 인터넷 연결을 확인하거나 zip 파일을 직접 업로드하십시오.",
+			"checksum": "내려받은 팩이 손상되어 설치되지 않았습니다. 다시 시도하십시오."
+		},
+		"release": {
+			"title": "설치할 언어",
+			"hint": "이 BiblioViva 버전과 함께 공개된 언어입니다. 목록은 인터넷에서 읽으며, 각 팩은 설치하기 전에 검사합니다.",
+			"percent": "{{percent}}% 번역됨",
+			"machine": "자동 번역, 원어민이 검토하지 않음",
+			"reviewed": "원어민이 검토한 번역",
+			"install": "설치",
+			"again": "다시 설치",
+			"installedBadge": "설치됨",
+			"page": "릴리스 페이지: 팩을 직접 내려받아 아래에 업로드할 수 있습니다",
+			"unavailable": "언어 목록에 접속할 수 없습니다: 인터넷 연결이 없거나 이 버전에는 아직 목록이 없습니다. 아래에서 zip 파일을 업로드하는 것은 그대로 가능합니다."
+		}
+	},
+	"reports": {
+		"title": "보고서 라이브러리",
+		"hint": "BiblioViva와 함께 제공되는 보고서와 학교에서 만든 보고서입니다. 하나를 개인화하려면 내려받아 고친 뒤 업로드하십시오: 같은 코드 (id)를 쓰면 원본을 대신합니다. 설치하기 전에 형식, 질의의 안전성, 그리고 사용하는 표와 열을 검사합니다. 보고서 작성 안내는 docs/reports-authoring.md에 있습니다.",
+		"upload": "보고서 업로드 (JSON)",
+		"try": "시험 실행",
+		"download": "내려받기",
+		"problems": "다음 파일은 불러오지 않습니다:",
+		"installed": "보고서 설치 완료: {{id}}",
+		"replaced": "보고서 교체 완료: {{id}}",
+		"removed": "파일이 삭제되었습니다.",
+		"removeTitle": "{{file}} 삭제하시겠습니까?",
+		"removeHint": "설정에서 파일이 삭제됩니다. 기록에서 되돌릴 수 있습니다.",
+		"restoreHint": "학교 버전이 삭제되며, BiblioViva와 함께 제공되는 보고서가 다시 사용됩니다. 기록에서 되돌릴 수 있습니다.",
+		"origin": {
+			"builtin": "BiblioViva 기본 제공",
+			"customised": "개인화됨",
+			"added": "추가됨"
+		},
+		"errors": {
+			"tooLarge": "파일이 너무 큽니다: 최대 {{maxKb}} KB.",
+			"badJson": "올바른 JSON 파일이 아닙니다: {{details}}",
+			"invalid": "정의가 올바르지 않습니다: {{details}}",
+			"sql": "이 데이터베이스에서는 질의가 작동하지 않습니다: {{details}}",
+			"notFound": "파일을 찾을 수 없습니다.",
+			"reservedId": "“new”는 보고서 코드로 쓸 수 없습니다."
+		},
+		"new": "새 보고서",
+		"edit": "편집",
+		"duplicate": "복제",
+		"editor": {
+			"editTitle": "보고서 편집",
+			"newTitle": "새 보고서",
+			"copySuffix": "사본",
+			"builtinHint": "BiblioViva 기본 보고서입니다: 저장하면 같은 이름으로 학교의 개인화 사본이 만들어집니다. 라이브러리의 “원본으로 되돌리기”는 이 사본을 삭제합니다.",
+			"id": "보고서 코드",
+			"category": "범주",
+			"title": {
+				"it": "제목 (이탈리아어)",
+				"en": "제목 (영어)"
+			},
+			"description": {
+				"it": "설명 (이탈리아어)",
+				"en": "설명 (영어)"
+			},
+			"restricted": "관리자만",
+			"tabs": {
+				"label": "편집 방식",
+				"guided": "안내형",
+				"sql": "SQL"
+			},
+			"sqlOnly": "이 보고서는 SQL로 작성되어 있습니다: SQL 탭에서 편집하십시오.",
+			"source": "데이터",
+			"rows": "행",
+			"rows2": "행, 두 번째 수준",
+			"columns": "열",
+			"columnsHint": "열을 넣으면 보고서가 교차표가 되며, 합계가 함께 나옵니다.",
+			"none": "— 없음 —",
+			"totals": "합계",
+			"totalsOptions": {
+				"both": "합계 행과 열",
+				"rows": "합계 열",
+				"columns": "합계 행",
+				"none": "합계 없음"
+			},
+			"sort": "정렬",
+			"sortDimension": "행의 순서대로",
+			"sortMeasure": "값이 큰 순서대로",
+			"measures": "값",
+			"oneMeasure": "교차표에는 값 하나만 표시됩니다.",
+			"filters": "필터",
+			"filterModes": {
+				"off": "필터 없음",
+				"ask": "열 때 묻기",
+				"fixed": "고정"
+			},
+			"value": "값",
+			"chart": "차트",
+			"charts": {
+				"bar": "막대",
+				"line": "선",
+				"doughnut": "도넛"
+			},
+			"compiledHint": "안내형 보고서는 이 SQL이 됩니다. 직접 쓰려면 “SQL로 편집”을 사용하십시오: 그 뒤에는 안내형 편집으로 돌아갈 수 없습니다.",
+			"previewFirst": "SQL을 보려면 “미리보기”를 누르십시오.",
+			"convert": "SQL로 편집",
+			"convertTitle": "보고서를 SQL로 바꾸시겠습니까?",
+			"convertHint": "보고서가 같은 열과 매개변수를 가진 SQL 보고서가 됩니다. 이후에는 안내형 탭에서 편집할 수 없습니다.",
+			"converted": "이제 이 보고서는 SQL입니다.",
+			"sqlHint": "SELECT 또는 WITH 문 하나이며, 매개변수는 :이름 형식으로 씁니다.",
+			"json": {
+				"params": "매개변수 (JSON)",
+				"columns": "열 (JSON)",
+				"chart": "차트 (JSON, 선택 사항)",
+				"pivot": "교차표 (JSON, 선택 사항)"
+			},
+			"jsonHint": "보고서 안내에 설명된 형식으로 작성하십시오.",
+			"preview": "미리보기",
+			"runPreview": "미리보기",
+			"previewHint": "미리보기는 매개변수의 기본값으로 보고서를 실행합니다 (최대 200행).",
+			"save": "저장",
+			"saved": "“{{id}}” 보고서가 저장되었습니다.",
+			"back": "라이브러리로 돌아가기",
+			"jsonInvalid": "저장하기 전에 빨간색으로 표시된 JSON 부분을 고치십시오."
+		}
+	},
+	"designer": {
+		"title": "{{name}} 편집",
+		"design": "디자인",
+		"code": "코드",
+		"preview": "미리보기",
+		"front": "앞면",
+		"back": "뒷면",
+		"faces": "면 또는 라벨",
+		"zoom": "확대",
+		"grid": "격자",
+		"gridSteps": {
+			"s0": "없음 (자유)",
+			"s05": "0.5 mm",
+			"s1": "1 mm",
+			"s2": "2 mm",
+			"s25": "2.5 mm",
+			"s5": "5 mm",
+			"s10": "10 mm"
+		},
+		"files": "파일",
+		"problems": "이 서식은 이렇게 인쇄할 수 없습니다:",
+		"saved": "서식이 저장되었습니다.",
+		"notEditable": "이 서식은 여기서 편집할 수 없습니다: BiblioViva 기본 제공 서식은 먼저 개인화해야 합니다.",
+		"canvasHint": "상자를 클릭하면 선택되고, 드래그하면 옮겨지며, 모서리로 크기를 바꿉니다: 위치와 크기는 선택한 격자에 맞춰집니다. 키보드에서는 화살표 키로 격자 한 칸씩 옮기고 (Shift와 함께 누르면 약 5 mm씩, 항상 격자에 맞춰짐), Delete 키로 지웁니다.",
+		"flowHint": "{{count}}{{count:plural; other:개의 요소가 이 면에서 스타일 시트에 의해 배치되어 있습니다 (점선 윤곽);}} 처음 옮기면 이 모든 요소의 위치가 현재 자리대로 파일에 기록됩니다.",
+		"lockedHint": "이 면의 Mustache 섹션 안에 있는 부분 {{count}}{{count:plural; other:개는 “코드” 탭에서 편집합니다;}}.",
+		"noStock": "이 변형을 사용하는 라벨 용지가 없어 미리보기 없이 그림만 표시됩니다.",
+		"codeHint": "그림과 코드는 같은 파일을 편집합니다: 여기서 한 변경은 그림에도 나타나고, 반대도 마찬가지입니다.",
+		"add": "추가",
+		"newText": "텍스트",
+		"noImages": "이미지를 추가하려면 먼저 서식의 이미지 목록에 업로드하십시오.",
+		"types": {
+			"field": "필드",
+			"text": "텍스트",
+			"barcode": "바코드",
+			"photo": "사진",
+			"pictogram": "픽토그램",
+			"image": "이미지",
+			"box": "상자",
+			"html": "자유 HTML",
+			"other": "요소"
+		},
+		"fields": {
+			"library_name": "도서관 이름",
+			"patron_first_name": "이름",
+			"patron_last_name": "성",
+			"patron_card_number": "이용증 번호",
+			"patron_class_label": "학급과 반",
+			"patron_level_label": "학급 (학년)",
+			"patron_group": "반",
+			"school_year": "학년도",
+			"issued_on": "발급일",
+			"valid_until": "유효 기한",
+			"item_barcode": "바코드 (텍스트)",
+			"item_call_number": "청구기호",
+			"call_head": "청구기호: 첫째 줄",
+			"call_rest": "청구기호: 둘째 줄",
+			"biblio_title_short": "짧은 제목",
+			"biblio_author_short": "짧은 저자명",
+			"biblio_publication_year": "출판연도",
+			"biblio_series": "총서",
+			"biblio_series_number": "총서 번호",
+			"classification_code": "분류 기호",
+			"classification_label": "분류명",
+			"classification_reading_level": "독서 수준",
+			"item_item_type": "소장본 유형"
+		},
+		"field": "필드",
+		"text": "텍스트",
+		"image": "이미지",
+		"content": "HTML 내용",
+		"contentHint": "상자는 그림에서 옮기고 서식을 지정합니다; 내용은 서식 파일에서와 같이 Mustache 필드가 들어간 HTML로 씁니다.",
+		"inherited": "기본값",
+		"unplacedHint": "이 요소는 스타일 시트가 배치합니다: 옮기면 그 위치와 면의 다른 요소들의 위치가 파일에 기록됩니다.",
+		"geometry": {
+			"x": "X (mm)",
+			"y": "Y (mm)",
+			"w": "너비",
+			"h": "높이"
+		},
+		"fontSize": "크기 (pt)",
+		"font": "글꼴",
+		"fonts": {
+			"sans": "산세리프",
+			"serif": "세리프",
+			"mono": "고정폭"
+		},
+		"bold": "굵게",
+		"italic": "기울임꼴",
+		"uppercase": "대문자",
+		"align": "정렬",
+		"aligns": {
+			"left": "왼쪽",
+			"center": "가운데",
+			"right": "오른쪽"
+		},
+		"color": "색",
+		"border": "테두리",
+		"borderColor": "테두리 색",
+		"fill": "채우기",
+		"fillColor": "채우기 색",
+		"backward": "뒤로 보내기",
+		"forward": "앞으로 가져오기",
+		"background": "면 배경",
+		"backgroundColor": "배경색",
+		"backgroundImage": "배경 이미지",
+		"noImage": "없음",
+		"chooseHint": "디자인에서 상자를 골라 편집하십시오.",
+		"modes": "서식 보기",
+		"safeArea": "안전 영역: 글과 사진을 점선 안, 가장자리에서 2 mm 안쪽에 두십시오 (앞뒤로 인쇄하면 뒷면이 1 mm 정도 움직일 수 있습니다).",
+		"chooseBackground": "배경 고르기",
+		"uploadBackground": "사진 업로드",
+		"backgroundsTitle": "준비된 배경",
+		"backgroundsHint": "모든 배경은 이용증 밖으로 각 변 3 mm씩 조금 넘칩니다: 넘친 부분은 잘라 냅니다.",
+		"backgroundAlt": "배경 {{name}}",
+		"backgroundAdded": "배경이 면에 추가되었습니다: 유지하려면 저장하십시오.",
+		"backgroundFailed": "배경이 추가되지 않았습니다.",
+		"cardSize": "이용증 크기",
+		"cardWidth": "너비 (mm)",
+		"cardHeight": "높이 (mm)",
+		"cardRotate": "회전: 세로 또는 가로",
+		"cardDefault": "기본 크기로 되돌리기 ({{width}} × {{height}} mm)",
+		"cardDefaultHint": "설정의 기본 크기입니다 (설정 → 이용증): 여기서는 이 서식에만 바꿉니다.",
+		"cardTooLarge": "{{width}} × {{height}} mm 이용증은 A4 용지에 들어가지 않습니다: 최대 {{maxWidth}} × {{maxHeight}} mm입니다. 앞면과 뒷면이 여백 안에 나란히 놓이기 때문입니다."
+	},
+	"parts": {
+		"groups": {
+			"data": "도서관 데이터",
+			"settings": "설정",
+			"config": "분류, 서식 등"
+		},
+		"all": "전체",
+		"none": "없음",
+		"accountsConfirm": {
+			"title": "계정과 비밀번호도 가져오시겠습니까?",
+			"description": "보관 파일의 직원 계정과 비밀번호가 현재 것을 대신합니다: 지금 로그인하는 사람은 오늘의 자격 증명으로는 더 이상 로그인할 수 없게 됩니다. 필요하지 않으면 이 항목을 선택하지 마십시오.",
+			"confirm": "계정도 가져오기"
+		},
+		"needs": "“{{part}}” 복원에는 다음도 필요합니다: {{needs}}.",
+		"data": {
+			"patrons": "이용자",
+			"catalog": "도서 목록과 소장본",
+			"loans": "대출과 기록",
+			"printLists": "인쇄 목록",
+			"photos": "이용자 사진",
+			"covers": "표지",
+			"notes": "직원 메모",
+			"dates": "달력 날짜",
+			"audit": "활동 기록"
+		},
+		"config": {
+			"classification": "분류와 픽토그램",
+			"stocks": "라벨 용지",
+			"calendar": "달력",
+			"reports": "보고서",
+			"cardTemplates": "이용증 서식",
+			"pairTemplates": "라벨 쌍 서식",
+			"barcodeTemplates": "바코드 라벨 서식",
+			"spineTemplates": "책등 띠라벨 서식",
+			"slipTemplates": "영수증과 안내문 서식",
+			"languages": "언어 팩",
+			"logo": "도서관 로고"
+		}
+	}
+}

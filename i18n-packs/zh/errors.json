@@ -1,0 +1,7 @@
+{
+	"notFound": "页面不存在",
+	"forbidden": "此页面不对当前账户开放",
+	"unauthorized": "请登录后继续",
+	"generic": "出现错误（{{status}}）",
+	"backHome": "返回首页"
+}

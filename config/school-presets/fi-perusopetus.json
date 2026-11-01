@@ -1,0 +1,103 @@
+{
+	"id": "fi-perusopetus",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Perusopetus 1–9 (many schools are alakoulu 1–6 or yläkoulu 7–9: remove the other stage); classes written 7A or 7a [VERIFY]. The school year (lukuvuosi) starts on 1 August, lessons in mid-August [VERIFY].",
+	"name": {
+		"it": "Scuola di base, dal 1º al 9º anno (Finlandia)",
+		"en": "Basic education, grades 1 to 9 (Finland)",
+		"fi": "Perusopetus, vuosiluokat 1–9 (Suomi)"
+	},
+	"country": "FI",
+	"languages": ["fi"],
+	"schoolYear": {
+		"start": "08-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "alakoulu",
+				"name": "Alakoulu (vuosiluokat 1–6)"
+			},
+			{
+				"code": "ylakoulu",
+				"name": "Yläkoulu (vuosiluokat 7–9)"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1",
+				"name": "1. luokka",
+				"stage": "alakoulu",
+				"aliases": ["1. vuosiluokka"]
+			},
+			{
+				"code": "2",
+				"label": "2",
+				"name": "2. luokka",
+				"stage": "alakoulu",
+				"aliases": ["2. vuosiluokka"]
+			},
+			{
+				"code": "3",
+				"label": "3",
+				"name": "3. luokka",
+				"stage": "alakoulu",
+				"aliases": ["3. vuosiluokka"]
+			},
+			{
+				"code": "4",
+				"label": "4",
+				"name": "4. luokka",
+				"stage": "alakoulu",
+				"aliases": ["4. vuosiluokka"]
+			},
+			{
+				"code": "5",
+				"label": "5",
+				"name": "5. luokka",
+				"stage": "alakoulu",
+				"aliases": ["5. vuosiluokka"]
+			},
+			{
+				"code": "6",
+				"label": "6",
+				"name": "6. luokka",
+				"stage": "alakoulu",
+				"aliases": ["6. vuosiluokka"]
+			},
+			{
+				"code": "7",
+				"label": "7",
+				"name": "7. luokka",
+				"stage": "ylakoulu",
+				"aliases": ["7. vuosiluokka"]
+			},
+			{
+				"code": "8",
+				"label": "8",
+				"name": "8. luokka",
+				"stage": "ylakoulu",
+				"aliases": ["8. vuosiluokka"]
+			},
+			{
+				"code": "9",
+				"label": "9",
+				"name": "9. luokka",
+				"stage": "ylakoulu",
+				"aliases": ["9. vuosiluokka"]
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Luokka",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"alakoulu": ["A", "B", "C"],
+		"ylakoulu": ["A", "B", "C"]
+	},
+	"teacherGroup": "Opettajat",
+	"readingLevels": []
+}

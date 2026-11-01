@@ -1,0 +1,1778 @@
+{
+	"home": {
+		"title": "Configurare"
+	},
+	"leave": {
+		"title": "Ieșiți fără să salvați?",
+		"description": "Modificările nesalvate încă vor fi pierdute.",
+		"confirm": "Ieșiți fără să salvați"
+	},
+	"taxonomy": {
+		"title": "Clasificare",
+		"intro": "Modificările rămân într-o ciornă până la „Salvați”; versiunea precedentă a {{file}} se păstrează.",
+		"invalid": "Unele valori nu sunt valide (marcate cu roșu): corectați-le pentru a putea salva.",
+		"orphans": "Catalogul conține cărți cu coduri pe care clasificarea nu le cuprinde: {{codes}}. Adăugați aceste coduri aici sau reclasificați acele cărți din catalog.",
+		"unsaved": "Modificări nesalvate",
+		"discard": "Renunțați la modificări",
+		"saved": "Clasificarea a fost salvată",
+		"savedDetail": "{{records}} {{records:plural; one:carte mutată; few:cărți mutate; other:de cărți mutate;}}, {{callNumbers}} {{callNumbers:plural; one:cotă rescrisă; few:cote rescrise; other:de cote rescrise;}}, {{bands}} {{bands:plural; one:bandă de cotor de tipărit din nou; few:benzi de cotor de tipărit din nou; other:de benzi de cotor de tipărit din nou;}}.",
+		"tabs": {
+			"fiction": "Ficțiune",
+			"nonfiction": "Non-ficțiune",
+			"dewey": "Dewey",
+			"options": "Opțiuni"
+		},
+		"addGenre": "Adăugați un gen",
+		"addClass": "Adăugați un subiect",
+		"addSubclass": "Adăugați un subsubiect",
+		"dragHint": "Trageți rândurile pentru a schimba ordinea sau folosiți săgețile. Ordinea este cea în care apar în alegerile din catalog.",
+		"pickGenre": "Alegeți un gen pentru a-l modifica",
+		"pickClass": "Alegeți un subiect pentru a-l modifica",
+		"untitled": "Fără nume",
+		"hasProblems": "De corectat",
+		"usageShort": "{{records}} {{records:plural; one:carte; few:cărți; other:de cărți;}}",
+		"moveUp": "Mutați în sus",
+		"moveDown": "Mutați în jos",
+		"panel": {
+			"genre": "Gen",
+			"class": "Subiect",
+			"subclass": "Subsubiect"
+		},
+		"fields": {
+			"code": "Cod",
+			"label": "Nume",
+			"color": "Culoare",
+			"pictogram": "Pictogramă",
+			"position": "Poziție"
+		},
+		"renameNote": "Cod modificat: la salvare {{records}} {{records:plural; one:carte trece; few:cărți trec; other:de cărți trec;}} de la {{from}} la {{to}}, iar cotele lor sunt actualizate.",
+		"color": {
+			"inherit": "Folosiți culoarea lui {{code}}",
+			"none": "Fără culoare",
+			"hex": "Codul culorii"
+		},
+		"pictogram": {
+			"upload": "Încărcați o imagine",
+			"choose": "Alegeți dintre imagini",
+			"remove": "Eliminați imaginea",
+			"own": "Imagine proprie. PNG, JPEG sau WebP: se salvează ca PNG.",
+			"missing": "Fișierul {{name}} nu se află în folderul imaginilor: pe etichete apare discul cu culoarea și codul.",
+			"inherited": "Fără o imagine proprie folosește cea a lui {{code}}.",
+			"placeholder": "Fără imagine: pe etichete apare un cerc cu culoarea și codul.",
+			"gallery": "Imaginile clasificării",
+			"errors": {
+				"empty": "Fișierul este gol.",
+				"too_large": "Imaginea este prea mare (cel mult {{maxMb}} MB).",
+				"not_an_image": "Fișierul nu este o imagine.",
+				"unsupported_format": "Format neacceptat: folosiți PNG, JPEG sau WebP."
+			}
+		},
+		"position": {
+			"top": "Subiect principal",
+			"under": "În {{code}} · {{label}}",
+			"locked": "Are subsubiecte: rămâne un subiect principal."
+		},
+		"usage": {
+			"new": "Nou: nicio carte nu îl folosește încă.",
+			"none": "Nicio carte nu folosește acest cod.",
+			"some": "Folosit de {{records}} {{records:plural; one:carte; few:cărți; other:de cărți;}} ({{copies}} {{copies:plural; one:exemplar; few:exemplare; other:de exemplare;}})."
+		},
+		"remove": {
+			"genre": "Ștergeți genul",
+			"class": "Ștergeți subiectul",
+			"confirmTitle": "Ștergeți {{code}}?",
+			"withSubclasses": "Se șterg și {{count}} {{count:plural; one:subsubiect legat; few:subsubiecte legate; other:de subsubiecte legate;}}.",
+			"inUse": "{{records}} {{records:plural; one:carte folosește; few:cărți folosesc; other:de cărți folosesc;}} acest cod: la salvare se alege unde să fie mutate.",
+			"confirm": "Ștergeți"
+		},
+		"preview": {
+			"title": "Previzualizarea benzii de cotor",
+			"hint": "O carte de exemplu, așa cum ar fi tipărită acum, la dimensiunea reală.",
+			"needsCode": "Previzualizarea apare când codul este valid."
+		},
+		"problems": {
+			"codeRequired": "Codul este obligatoriu.",
+			"codeFormat": "Folosiți doar litere, cifre, punct, liniuță sau liniuță de subliniere (cel mult 32).",
+			"codeTaken": "Acest cod este deja folosit de alt gen sau subiect.",
+			"labelRequired": "Numele este obligatoriu.",
+			"labelLong": "Numele este prea lung (cel mult 120 de caractere).",
+			"colorFormat": "Scrieți culoarea ca #rrggbb, de exemplu #e8231b.",
+			"patternRequired": "Modelul nu poate fi gol."
+		},
+		"dewey": {
+			"hint": "Când o carte de non-ficțiune vine cu un număr Dewey (de exemplu din SBN), subiectul îi este propus de acest tabel: se alege prefixul cel mai lung care corespunde.",
+			"probe": "Încercați un număr Dewey",
+			"noMatch": "Niciun subiect nu corespunde",
+			"empty": "Nicio corespondență Dewey",
+			"prefix": "Prefix Dewey",
+			"class": "Subiect",
+			"add": "Adăugați o corespondență",
+			"problems": {
+				"prefixFormat": "De la 1 la 3 cifre.",
+				"prefixTaken": "Prefix repetat.",
+				"codeUnknown": "Alegeți un subiect."
+			}
+		},
+		"options": {
+			"fictionByClass": "Ficțiunea este împărțită pe nivel de lectură",
+			"fictionByClassHint": "Cărțile de ficțiune pot avea nivelul de lectură la care sunt potrivite (de exemplu clasa a 4-a): apare în cotă și pe banda de cotor.",
+			"classPerItem": "Nivelul de lectură stă pe fiecare exemplar",
+			"classPerItemHint": "Este necesar când exemplare ale aceleiași cărți stau pe rafturile unor niveluri diferite. Altfel nivelul stă pe carte.",
+			"toCopies": "La salvare nivelul de lectură al fiecărei cărți trece la exemplarele sale.",
+			"toRecords": "La salvare nivelul exemplarelor revine la carte; nu se poate face când exemplare ale aceleiași cărți au niveluri diferite.",
+			"patterns": "Modelele cotei",
+			"patternsHint": "Se aplică exemplarelor adăugate de acum înainte; cotele existente nu se schimbă. Substituenți: {{placeholders}}.",
+			"pattern": {
+				"fiction": "Ficțiune",
+				"fictionWithClass": "Ficțiune cu clasă asociată",
+				"nonfiction": "Non-ficțiune"
+			},
+			"unknownPlaceholders": "Substituenți necunoscuți: {{names}}.",
+			"example": "Exemplu: {{example}}"
+		},
+		"save": {
+			"title": "Salvați clasificarea",
+			"checking": "Se verifică ce se schimbă în catalog…",
+			"unchanged": "Nu există modificări de salvat.",
+			"errors": "Înainte de a salva, corectați aceste probleme:",
+			"removedTitle": "Coduri șterse încă în uz",
+			"removedHint": "Alegeți unde să mutați cărțile fiecărui cod șters: noul cod se pune pe cărți, la începutul cotelor lor și pe benzile de cotor.",
+			"moveTo": "{{code}} · {{label}}: {{records}} {{records:plural; one:carte; few:cărți; other:de cărți;}} ({{copies}} {{copies:plural; one:exemplar; few:exemplare; other:de exemplare;}}). Mutați în",
+			"choose": "Alegeți…",
+			"callNumbers": "{{count}} {{count:plural; one:cotă începe; few:cote încep; other:de cote încep;}} cu un cod șters: codul de la început este înlocuit (de exemplu B 4 DEL devine A 4 DEL).",
+			"bandsMoved": "Benzile de cotor ale cărților mutate și etichetele cu cota schimbată revin printre cele de tipărit.",
+			"unused": "Șterse, nefolosite de nicio carte: {{codes}}.",
+			"reprint": "Se pun din nou printre etichetele de tipărit benzile de cotor pentru {{copies}} {{copies:plural; one:exemplar; few:exemplare; other:de exemplare;}} la care se schimbă numele, culoarea sau pictograma ({{codes}})",
+			"reprintHint": "Lăsați-o dezactivată dacă diferența de pe benzile deja lipite pe cărți nu contează.",
+			"conflicts": "{{count}} {{count:plural; one:carte are; few:cărți au; other:de cărți au;}} exemplare în clase diferite: înainte de a scoate clasa de pe exemplare, dați aceeași clasă tuturor exemplarelor fiecărei cărți.",
+			"toCopies": "Clasa asociată trece la exemplare pentru {{count}} {{count:plural; one:carte; few:cărți; other:de cărți;}}.",
+			"toRecords": "Clasa exemplarelor revine la carte pentru {{count}} {{count:plural; one:titlu; few:titluri; other:de titluri;}}.",
+			"warnings": "{{count}} {{count:plural; one:avertisment; few:avertismente; other:de avertismente;}} (nu blochează salvarea)",
+			"levelsTitle": "Niveluri de lectură eliminate cât timp cărțile le au",
+			"levelMoveTo": "Cărțile nivelului {{code}} · {{label}} ({{records}} {{records:plural; one:titlu; few:titluri; other:de titluri;}}, {{copies}} {{copies:plural; one:exemplar; few:exemplare; other:de exemplare;}}) trec la",
+			"noLevel": "Fără nivel",
+			"levelsHint": "În cota exemplarelor nivelul se schimbă împreună cu ele (de exemplu B 4 DEL devine B 5 DEL), iar etichetele lor revin printre cele de tipărit."
+		},
+		"levels": {
+			"title": "Niveluri de lectură",
+			"hint": "În ordine, de la cel mai ușor. Codul se pune pe cărți și în cotă (de exemplu 4 în B 4 DEL), numele apare printre alegeri. Pentru un nivel în uz care este eliminat sau redenumit, la salvare se întreabă unde trebuie mutate cărțile sale.",
+			"code": "Codul nivelului",
+			"label": "Numele nivelului",
+			"up": "Mutați în sus",
+			"down": "Mutați în jos",
+			"remove": "Eliminați nivelul",
+			"add": "Adăugați un nivel"
+		}
+	},
+	"sections": {
+		"library": {
+			"title": "Biblioteca și școala",
+			"description": "Nume, tip de școală, clase și secțiuni, an școlar, fus orar."
+		},
+		"school": {
+			"title": "Școala",
+			"description": "Ciclurile și anii școlii, cum se scrie clasa, ce se întâmplă cu clasele la sfârșitul anului. Clasele în sine se gestionează în Administrare → Configurare → Clase."
+		},
+		"catalog": {
+			"title": "Catalog",
+			"description": "Valori pentru autorul, editura și locul necunoscute."
+		},
+		"barcodes": {
+			"title": "Coduri de bare",
+			"description": "Formatul legitimațiilor și al exemplarelor, codurile vechi, tipul codului de bare."
+		},
+		"circulation": {
+			"title": "Împrumuturi",
+			"description": "Reguli de împrumut și de prelungire, termene, notificări, chitanțe."
+		},
+		"calendar": {
+			"title": "Calendar",
+			"description": "Zile de închidere și sărbători."
+		},
+		"z3950": {
+			"title": "Z39.50 (SBN)",
+			"description": "Serverele de unde vin înregistrările cărților."
+		},
+		"metadata": {
+			"title": "Datele cărților",
+			"description": "Sursele datelor la căutarea după ISBN."
+		},
+		"performance": {
+			"title": "Performanță",
+			"description": "Calculatorul pe care rulează BiblioViva și reglajele care depind de el."
+		},
+		"classification": {
+			"title": "Clasificare",
+			"description": "Genuri, subiecte, pictograme, Dewey și cote."
+		},
+		"cards": {
+			"title": "Legitimații",
+			"description": "Formatul legitimațiilor și al foii de tipărire."
+		},
+		"labels": {
+			"title": "Etichete",
+			"description": "Etichete și benzi de cotor ale cărților, foi adezive."
+		},
+		"photos": {
+			"title": "Fotografiile cititorilor",
+			"description": "Dimensiunea și formatul fotografiilor."
+		},
+		"covers": {
+			"title": "Coperte",
+			"description": "Dimensiunea, formatul și sursele copertelor."
+		},
+		"privacy": {
+			"title": "Confidențialitate",
+			"description": "Cât timp se păstrează registrul operațiunilor."
+		},
+		"backup": {
+			"title": "Copii de siguranță",
+			"description": "Ora și păstrarea copiilor de siguranță, copia externă."
+		},
+		"security": {
+			"title": "Securitate și acces",
+			"description": "Durata sesiunilor, încercările de autentificare, conturile și rolurile."
+		},
+		"ui": {
+			"title": "Interfață",
+			"description": "Postul de împrumuturi și limbile adăugate; culorile, limba și tabloul de bord sunt în „Aspect și limbă”."
+		}
+	},
+	"fields": {
+		"library": {
+			"name": {
+				"label": "Numele bibliotecii",
+				"hint": "Apare sus în stânga, pe legitimații și pe tipărituri."
+			},
+			"contactEmail": {
+				"label": "E-mail de contact",
+				"hint": "Facultativ: apare pe tipăriturile care o prevăd."
+			},
+			"schoolYearStart": {
+				"label": "Începutul anului școlar",
+				"hint": "Luna și ziua în forma LL-ZZ (de exemplu 09-01): separă anii în statistici."
+			},
+			"schoolYearLabel": {
+				"label": "Numele anului școlar",
+				"hint": "Cum apare anul școlar pe legitimații, rapoarte și pagini: doi ani (2026/2027) sau anul de început (2026), ca în Brazilia, Japonia și Coreea."
+			},
+			"timezone": {
+				"label": "Fus orar",
+				"hint": "Numele fusului, de exemplu Europe/Rome: datele și termenele urmează acest fus, nu ceasul serverului."
+			},
+			"weekStart": {
+				"label": "Prima zi a săptămânii",
+				"hint": "Ziua de la care încep săptămânile în calendare și în „săptămâna aceasta” din tabloul de bord. La prima pornire o alege limba (luni pentru italiană, duminică pentru engleză)."
+			}
+		},
+		"school": {
+			"classLabel": {
+				"label": "Cum se scrie clasa",
+				"hint": "{level} este anul, {group} numele clasei: „{level} {group}” dă 3 B, „{level}{group}” dă 3B. Un ciclu poate avea una proprie (Cicluri și ani)."
+			},
+			"groupWord": {
+				"label": "Cuvântul pentru clasă",
+				"hint": "Numele câmpului clasei din formulare și din filtre, și {word} în rândul clasei de pe legitimație (Secțiunea B, Clasa B, Grupa B)."
+			},
+			"cardClass": {
+				"label": "Clasa de pe legitimație",
+				"hint": "Rândul clasei tipărit pe legitimație: {word} este cuvântul pentru clasă, {group} numele clasei, {level} anul, {class} clasa întreagă. „{word} {group}” dă Secțiunea B, „{class}” dă 3 B."
+			},
+			"teacherGroupName": {
+				"label": "Numele grupului profesorilor",
+				"hint": "Grupul în care intră un profesor când nu se alege altul."
+			},
+			"promotionWithinStage": {
+				"label": "La sfârșitul anului, în cadrul aceluiași ciclu",
+				"hint": "De obicei clasa avansează împreună cu elevii săi: 3 B devine 4 B."
+			},
+			"promotionAcrossStages": {
+				"label": "La sfârșitul anului, în trecerea la alt ciclu",
+				"hint": "De exemplu din clasa a 5-a primară în clasa a 1-a gimnazială, într-o școală cu toate ciclurile."
+			}
+		},
+		"catalog": {
+			"specialAuthors": {
+				"label": "Autori speciali",
+				"hint": "Unul pe rând: valorile acceptate în locul unui autor personal (de exemplu Anonimo, AA. VV.)."
+			},
+			"unknownPublisher": {
+				"label": "Editura necunoscută",
+				"hint": "Valoarea scrisă când editura nu este indicată."
+			},
+			"unknownPlace": {
+				"label": "Loc necunoscut",
+				"hint": "Valoarea scrisă când locul publicării nu este indicat."
+			}
+		},
+		"barcodes": {
+			"keyboardLayout": {
+				"label": "Tastatura calculatoarelor",
+				"hint": "Dispunerea tastaturii calculatoarelor la care sunt conectate scanerele de coduri de bare: serve la corectarea caracterelor pe care un scaner setat pentru o altă tastatură le scrie greșit."
+			},
+			"cameraSound": {
+				"label": "Sunetul camerei",
+				"hint": "Bipul telefonului când camera citește o legitimație, codul unui exemplar sau un ISBN. Scanerul USB bipează singur și nu are nevoie de el; postul de împrumuturi rămâne tăcut."
+			},
+			"patron": {
+				"symbology": {
+					"label": "Tipul codului de bare al legitimațiilor",
+					"hint": "Code 128 pentru legitimațiile noi; Code 39 doar dacă scanerele bibliotecii nu citesc Code 128."
+				}
+			},
+			"item": {
+				"symbology": {
+					"label": "Tipul codului de bare al exemplarelor",
+					"hint": "Code 128 pentru etichetele noi; Code 39 doar dacă scanerele bibliotecii nu citesc Code 128."
+				}
+			}
+		},
+		"circulation": {
+			"rules": {
+				"student": {
+					"loanDays": {
+						"label": "Zile de împrumut",
+						"hint": "Câte zile durează un împrumut pentru elevi."
+					},
+					"maxLoans": {
+						"label": "Cele mai multe cărți împrumutate",
+						"hint": "Câte cărți poate avea cineva în același timp."
+					},
+					"maxRenewals": {
+						"label": "Cele mai multe prelungiri",
+						"hint": "De câte ori se poate prelungi același împrumut (0 = niciodată)."
+					},
+					"renewalDays": {
+						"label": "Zile de prelungire",
+						"hint": "Cu câte zile se lungește fiecare prelungire."
+					}
+				},
+				"teacher": {
+					"loanDays": {
+						"label": "Zile de împrumut",
+						"hint": "Câte zile durează un împrumut pentru profesori."
+					},
+					"maxLoans": {
+						"label": "Cele mai multe cărți împrumutate",
+						"hint": "Câte cărți poate avea cineva în același timp."
+					},
+					"maxRenewals": {
+						"label": "Cele mai multe prelungiri",
+						"hint": "De câte ori se poate prelungi același împrumut (0 = niciodată)."
+					},
+					"renewalDays": {
+						"label": "Zile de prelungire",
+						"hint": "Cu câte zile se lungește fiecare prelungire."
+					}
+				}
+			},
+			"dueDateMode": {
+				"label": "Calculul termenului",
+				"hint": "Cum se socotește durata împrumutului față de zilele în care biblioteca este închisă."
+			},
+			"renewFrom": {
+				"label": "Prelungirea pornește de la",
+				"hint": "Ziua de la care se socotesc zilele de prelungire."
+			},
+			"allowRenewalWhenOverdue": {
+				"label": "Prelungire și după termen",
+				"hint": "Se poate prelungi un împrumut deja întârziat."
+			},
+			"overdueNotice": {
+				"template": {
+					"label": "Modelul notificărilor",
+					"hint": "Numele modelului de tipărire al notificărilor (folder în slips/templates)."
+				},
+				"pageBreakPerGroup": {
+					"label": "O pagină pentru fiecare clasă",
+					"hint": "Fiecare clasă pe foaia sa, de dat profesorului; se poate schimba și la tipărire."
+				},
+				"minDays": {
+					"label": "Zile de întârziere înainte de notificare",
+					"hint": "Un împrumut apare în notificări numai după aceste zile de întârziere (0 = imediat)."
+				}
+			},
+			"blockIfOverdue": {
+				"label": "Niciun împrumut nou cu cărți întârziate",
+				"hint": "Cine are o carte întârziată nu poate lua alte cărți până nu o restituie."
+			},
+			"hardDueDate": {
+				"label": "Termen maxim",
+				"hint": "Niciun împrumut nu expiră după această dată (de exemplu sfârșitul cursurilor). Gol: nicio limită."
+			},
+			"receipts": {
+				"label": "Chitanța de împrumut",
+				"hint": "Arată la postul de împrumuturi butonul pentru tipărirea chitanței."
+			}
+		},
+		"calendar": {
+			"autoItalianHolidays": {
+				"label": "Sărbători naționale italiene",
+				"hint": "Sărbătorile naționale (inclusiv Paștele) sunt zile de închidere fără să le scrieți de mână."
+			}
+		},
+		"z3950": {
+			"defaultTarget": {
+				"label": "Server implicit",
+				"hint": "Identificatorul serverului Z39.50 folosit la căutări."
+			},
+			"timeoutMs": {
+				"label": "Limită de așteptare (ms)",
+				"hint": "După câte milisecunde o căutare Z39.50 este abandonată."
+			},
+			"maxRecordsIsbn": {
+				"label": "Rezultate pentru ISBN",
+				"hint": "Câte înregistrări se citesc cel mult când se caută un ISBN (un același ISBN poate avea câte una pentru fiecare reeditare): se deschide cea mai completă."
+			},
+			"maxRecordsSearch": {
+				"label": "Rezultate pentru căutare",
+				"hint": "Câte înregistrări se citesc cel mult când se caută după titlu sau autor."
+			}
+		},
+		"metadata": {
+			"providers": {
+				"label": "Surse de date",
+				"hint": "De unde vin datele cărților la căutarea după ISBN: sursele alese sunt interogate împreună."
+			},
+			"cacheDays": {
+				"label": "Zile în care căutările sunt ținute minte",
+				"hint": "Pentru câte zile o căutare deja făcută se refolosește fără să se întrebe din nou."
+			},
+			"timeoutMs": {
+				"label": "Limită de așteptare (ms)",
+				"hint": "După câte milisecunde o sursă care nu răspunde este lăsată deoparte."
+			}
+		},
+		"performance": {
+			"profile": {
+				"label": "Calculator",
+				"hint": "Reglajele implicite potrivite calculatorului pe care rulează BiblioViva."
+			},
+			"sqliteCacheMb": {
+				"label": "Cache-ul bazei de date (MB)",
+				"hint": "Gol: în funcție de calculator (8, 16, 64 sau 256 MB)."
+			},
+			"sqliteMmapMb": {
+				"label": "Harta de memorie a bazei de date (MB)",
+				"hint": "Gol: în funcție de calculator (0, 0, 0 sau 512 MB)."
+			},
+			"walAutocheckpointPages": {
+				"label": "Pagini înainte de un punct de control",
+				"hint": "Gol: în funcție de calculator (500, 1000, 2000 sau 4000)."
+			},
+			"imageConcurrency": {
+				"label": "Imagini prelucrate împreună",
+				"hint": "Fotografii, coperte, fotografii de clasă și logo prelucrate în același moment; celelalte așteaptă rândul. Gol: în funcție de calculator (1, 1, 2 sau 4)."
+			},
+			"yazConcurrency": {
+				"label": "Căutări Z39.50 împreună",
+				"hint": "Căutări Z39.50 în același timp; celelalte așteaptă rândul. Gol: în funcție de calculator (1, 1, 2 sau 2)."
+			},
+			"heavyConcurrency": {
+				"label": "Tipăriri și exportări o dată",
+				"hint": "Foi de tipărit (legitimații, etichete, notificări, chitanțe, rapoarte) și exportări (CSV, ODS, arhive, copii de siguranță) pregătite în același moment; celelalte așteaptă rândul, astfel încât postul de împrumuturi rămâne rapid. Gol: în funcție de calculator (1, 1, 2 sau 4)."
+			},
+			"argon2MemoryMb": {
+				"label": "Memorie pentru verificarea parolelor (MB)",
+				"hint": "Se aplică parolelor stabilite de atunci înainte. Gol: 16 MB pe orice calculator (sistemul nu este expus niciodată pe internet)."
+			},
+			"smol": {
+				"label": "Economie de memorie",
+				"hint": "Mai puțină memorie, puțin mai multă muncă pentru procesor. Automat: în funcție de calculator (da pentru calculatorul minim și Raspberry Pi). Se aplică după o repornire."
+			}
+		},
+		"cards": {
+			"defaultTemplate": {
+				"label": "Modelul legitimațiilor",
+				"hint": "Numele modelului de tipărire folosit când un tip de cititor nu are unul propriu (folder în cards/templates)."
+			},
+			"layout": {
+				"label": "Tipărirea legitimațiilor",
+				"hint": "Față și verso alăturate (de împăturit pe latura scurtă) sau pe cele două fețe ale foii, cu o imprimantă care tipărește față-verso. Se alege din nou la fiecare tipărire."
+			},
+			"duplex": {
+				"flip": {
+					"label": "Cum se întoarce foaia",
+					"hint": "Cum întoarce imprimanta foaia pentru verso: pe latura lungă (ca o carte) sau pe latura scurtă. Trebuie să fie aceeași aleasă în fereastra de tipărire."
+				},
+				"backOffsetMm": {
+					"x": {
+						"label": "Deplasarea versoului, pe orizontală (mm)",
+						"hint": "O găsește calibrarea: cu cât se mută versourile ca să cadă în spatele fețelor."
+					},
+					"y": {
+						"label": "Deplasarea versoului, pe verticală (mm)",
+						"hint": "O găsește calibrarea."
+					}
+				}
+			},
+			"cardMm": {
+				"width": {
+					"label": "Lățime (mm)",
+					"hint": "Legitimația standard are 85,6 mm lățime."
+				},
+				"height": {
+					"label": "Înălțime (mm)",
+					"hint": "Legitimația standard are 53,98 mm înălțime."
+				}
+			},
+			"bleedMm": {
+				"label": "Zonă de depășire (mm)",
+				"hint": "Margine în plus în jurul imaginilor pe toată pagina, de tăiat."
+			},
+			"sheet": {
+				"paper": {
+					"label": "Formatul foii",
+					"hint": "Foaia pe care se tipăresc legitimațiile."
+				},
+				"rows": {
+					"label": "Legitimații pe foaie",
+					"hint": "Câte legitimații (față și verso) una sub alta: 4 sau 5 pe o foaie A4."
+				},
+				"marginMm": {
+					"label": "Marginea foii (mm)",
+					"hint": "Spațiul alb din jurul legitimațiilor."
+				},
+				"gapMm": {
+					"label": "Spațiu între legitimații (mm)",
+					"hint": "Distanța dintre o legitimație și următoarea."
+				},
+				"foldMarks": {
+					"label": "Semne de împăturire",
+					"hint": "Linii scurte punctate în margini și între legitimații, unde se împăturesc fața și versoul."
+				},
+				"cutMarks": {
+					"label": "Semne de tăiere",
+					"hint": "Semne de tăiere: linii scurte în margini și între legitimații care prelungesc marginile fiecărei legitimații, pentru a tăia cu rigla și cutterul."
+				}
+			},
+			"validityMonths": {
+				"label": "Valabilitate (luni)",
+				"hint": "Pentru câte luni este valabilă o legitimație tipărită. Gol: nu expiră niciodată."
+			},
+			"showPhoto": {
+				"label": "Fotografie pe legitimație",
+				"hint": "Tipărește fotografia cititorului pe legitimație."
+			}
+		},
+		"labels": {
+			"default": {
+				"label": "Etichete implicite",
+				"hint": "Ce se tipărește când se alege „Tipăriți etichete”."
+			},
+			"titleMaxChars": {
+				"label": "Litere ale titlului",
+				"hint": "Titlul de pe etichete se taie la această lungime."
+			},
+			"monochrome": {
+				"label": "Imprimantă alb-negru",
+				"hint": "Pe benzile de cotor joase banda colorată devine o hașură."
+			},
+			"pair": {
+				"template": {
+					"label": "Model",
+					"hint": "Numele modelului de tipărire al perechii (folder în labels/templates)."
+				},
+				"stock": {
+					"label": "Foaie adezivă",
+					"hint": "Identificatorul foii de etichete folosite (fișier în labels/stocks)."
+				}
+			},
+			"barcode": {
+				"template": {
+					"label": "Model",
+					"hint": "Numele modelului de tipărire al etichetei cu codul de bare (folder în labels/templates)."
+				},
+				"stock": {
+					"label": "Foaie adezivă",
+					"hint": "Identificatorul foii de etichete folosite (fișier în labels/stocks)."
+				}
+			},
+			"spine": {
+				"template": {
+					"label": "Model",
+					"hint": "Numele modelului de tipărire al benzii de cotor (folder în labels/templates)."
+				},
+				"stock": {
+					"label": "Foaie adezivă",
+					"hint": "Identificatorul foii de etichete folosite (fișier în labels/stocks)."
+				}
+			}
+		},
+		"photos": {
+			"enabled": {
+				"label": "Fotografiile cititorilor",
+				"hint": "Activat: fotografii făcute sau încărcate pentru fiecare cititor, recensământul, fotografii pe legitimații. Dezactivat: nicio fotografie nicăieri și legitimații fără fotografie; fotografiile deja salvate rămân și revin când se reactivează."
+			},
+			"required": {
+				"label": "Fotografie obligatorie",
+				"hint": "Activat: tabloul de bord, lista cititorilor și listele de tipărire arată cine nu are fotografia. Dezactivat: niciun memento, dar fotografiile se pot face, încărca și tipări oricând pe legitimații."
+			},
+			"width": {
+				"label": "Lățime (px)",
+				"hint": "Fotografiile se salvează la această lățime."
+			},
+			"height": {
+				"label": "Înălțime (px)",
+				"hint": "Fotografiile se salvează la această înălțime (decupare la centru)."
+			},
+			"format": {
+				"label": "Formatul fișierelor",
+				"hint": "JPEG merge oriunde; WebP ocupă mai puțin spațiu."
+			},
+			"quality": {
+				"label": "Calitate",
+				"hint": "De la 1 la 100: mai mare înseamnă fișiere mai mari."
+			},
+			"maxUploadBytes": {
+				"label": "Cea mai mare dimensiune încărcabilă (octeți)",
+				"hint": "Un fișier mai mare este refuzat."
+			},
+			"sheet": {
+				"maxUploadBytes": {
+					"label": "Cea mai mare dimensiune a fișierului (octeți)",
+					"hint": "O imagine cu mai multe fotografii (recensământ dintr-o imagine) mai mare decât atât este refuzată."
+				},
+				"maxPixels": {
+					"label": "Latura cea mai mare păstrată (px)",
+					"hint": "Imaginea se micșorează până când latura cea mai lungă nu depășește această valoare."
+				},
+				"maxFrames": {
+					"label": "Cel mult fotografii",
+					"hint": "Dacă imaginea conține mai multe, se păstrează cele mai clare."
+				},
+				"minAspect": {
+					"label": "Proporția cea mai mică a unei fotografii",
+					"hint": "Înălțimea împărțită la lățime: 1 este un pătrat, 1,33 o fotografie de identitate 3:4."
+				},
+				"maxAspect": {
+					"label": "Proporția cea mai mare a unei fotografii",
+					"hint": "Înălțimea împărțită la lățime: cadrele mai alungite nu sunt luate drept fotografii."
+				}
+			}
+		},
+		"covers": {
+			"enabled": {
+				"label": "Copertele cărților",
+				"hint": "Activat: coperte căutate online, fotografiate sau încărcate și arătate în catalog. Dezactivat: nicio copertă nicăieri; cele deja salvate rămân și revin când se reactivează."
+			},
+			"width": {
+				"label": "Lățime (px)",
+				"hint": "Copertele se salvează la această lățime."
+			},
+			"maxHeight": {
+				"label": "Înălțime maximă (px)",
+				"hint": "Copertele foarte înalte se micșorează. Gol: nicio limită."
+			},
+			"format": {
+				"label": "Formatul fișierelor",
+				"hint": "JPEG merge oriunde; WebP ocupă mai puțin spațiu."
+			},
+			"quality": {
+				"label": "Calitate",
+				"hint": "De la 1 la 100: mai mare înseamnă fișiere mai mari."
+			},
+			"maxUploadBytes": {
+				"label": "Cea mai mare dimensiune încărcabilă (octeți)",
+				"hint": "Un fișier mai mare este refuzat."
+			},
+			"country": {
+				"label": "Țara",
+				"hint": "Țara catalogului furnizorilor de coperte (două litere, de exemplu IT)."
+			},
+			"minWidth": {
+				"label": "Lățimea minimă (px)",
+				"hint": "Copertele descărcate mai înguste decât atât sunt eliminate."
+			},
+			"autoFetch": {
+				"label": "Caută singură copertina",
+				"hint": "În „Carte nouă” copertea se caută online în timpul verificării înregistrării și se salvează împreună cu ea; dacă este greșită, se înlocuiește cu o fotografie."
+			},
+			"timeoutMs": {
+				"label": "Limită de așteptare (ms)",
+				"hint": "După câte milisecunde un furnizor care nu răspunde este lăsat deoparte."
+			}
+		},
+		"privacy": {
+			"auditRetentionMonths": {
+				"label": "Luni de registru al operațiunilor",
+				"hint": "Rândurile cele mai vechi ale registrului se șterg."
+			}
+		},
+		"backup": {
+			"cron": {
+				"label": "Ora copiei de siguranță",
+				"hint": "În forma cron: minut, oră, zi, lună, ziua săptămânii (0 3 * * * = în fiecare noapte la 3)."
+			},
+			"catchUp": {
+				"label": "Copie de siguranță la pornire dacă a fost ratată",
+				"hint": "Dacă la ora copiei calculatorul era oprit, BiblioViva face copia cu un minut după pornirea următoare: una singură, chiar și după mai multe zile."
+			},
+			"keepDays": {
+				"label": "Zile păstrate",
+				"hint": "Copiile de siguranță mai vechi se șterg."
+			},
+			"offsite": {
+				"enabled": {
+					"label": "Copie externă activă",
+					"hint": "Indică faptul că a doua copie a copiilor de siguranță (rclone, pe un alt disc sau alt serviciu) este în uz."
+				},
+				"remote": {
+					"label": "Destinația copiei",
+					"hint": "Unde ajunge copia: un folder al altui disc (/offsite/biblioviva-backups, varianta implicită) sau o destinație configurată în rclone, scrisă în forma nume:folder."
+				}
+			}
+		},
+		"security": {
+			"sessionDays": {
+				"label": "Durata sesiunii (zile)",
+				"hint": "După câte zile se cere din nou parola."
+			},
+			"loginMaxAttempts": {
+				"label": "Încercări de autentificare",
+				"hint": "Câte încercări greșite înainte de o pauză forțată."
+			},
+			"loginWindowMinutes": {
+				"label": "Pauză după prea multe încercări (minute)",
+				"hint": "Pentru câte minute autentificarea rămâne blocată după prea multe încercări."
+			}
+		},
+		"ui": {
+			"checkoutIdleSeconds": {
+				"label": "Pauza postului de împrumuturi (secunde)",
+				"hint": "După aceste secunde fără citiri postul se pregătește pentru un nou cititor."
+			}
+		}
+	},
+	"options": {
+		"library": {
+			"weekStart": {
+				"monday": "Luni",
+				"sunday": "Duminică",
+				"saturday": "Sâmbătă"
+			},
+			"schoolYearLabel": {
+				"span": "Doi ani (2026/2027)",
+				"start": "Anul de început (2026)"
+			}
+		},
+		"school": {
+			"promotionWithinStage": {
+				"keep": "Clasa avansează împreună cu elevii săi",
+				"clear": "Elevii rămân fără clasă"
+			},
+			"promotionAcrossStages": {
+				"keep": "Clasa avansează împreună cu elevii săi",
+				"clear": "Elevii rămân fără clasă",
+				"ask": "Se alege clasa fiecărui elev"
+			}
+		},
+		"barcodes": {
+			"patron": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"item": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"keyboardLayout": {
+				"it": "Italiană",
+				"es": "Spaniolă",
+				"de": "Germană",
+				"fr": "Franceză",
+				"uk": "Engleză (Regatul Unit)",
+				"us": "Engleză (Statele Unite)"
+			},
+			"cameraSound": {
+				"off": "Niciun sunet",
+				"till": "Casa de marcat",
+				"scanner": "Scaner",
+				"confirm": "Confirmare",
+				"arpeggio": "Arpegiu"
+			}
+		},
+		"circulation": {
+			"dueDateMode": {
+				"datedue": "Zile calendaristice, apoi prima zi deschisă",
+				"calendar": "Numai zilele deschise",
+				"days": "Zile calendaristice, fără a ține cont de închideri"
+			},
+			"renewFrom": {
+				"today": "Ziua prelungirii",
+				"dueDate": "Termenul actual"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"sbn": "OPAC SBN (Z39.50)",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books",
+				"sbn-json": "OPAC SBN (serviciu web)"
+			}
+		},
+		"performance": {
+			"profile": {
+				"micro": "Calculator minim: un procesor lent și 512 MB (Raspberry Pi Zero 2, cel mai mic server)",
+				"small": "Raspberry Pi 4 cu 2 GB sau calculator mic",
+				"medium": "Calculator vechi cu disc tradițional",
+				"large": "Calculator cu disc SSD"
+			}
+		},
+		"cards": {
+			"sheet": {
+				"paper": {
+					"A4": "A4"
+				}
+			},
+			"layout": {
+				"side-by-side": "Față și verso alăturate",
+				"duplex": "Pe ambele fețe ale foii"
+			},
+			"duplex": {
+				"flip": {
+					"long-edge": "Pe latura lungă",
+					"short-edge": "Pe latura scurtă"
+				}
+			}
+		},
+		"labels": {
+			"default": {
+				"pair": "Pereche: bandă de cotor și etichetă",
+				"barcode": "Doar etichetă cu codul de bare",
+				"spine": "Doar bandă de cotor"
+			}
+		},
+		"photos": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		},
+		"covers": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		}
+	},
+	"groups": {
+		"barcodes": {
+			"patron": {
+				"title": "Legitimațiile cititorilor"
+			},
+			"item": {
+				"title": "Exemplarele cărților"
+			}
+		},
+		"circulation": {
+			"rules": {
+				"title": "Reguli de împrumut",
+				"student": {
+					"title": "Reguli pentru elevi"
+				},
+				"teacher": {
+					"title": "Reguli pentru profesori"
+				}
+			},
+			"overdueNotice": {
+				"title": "Notificări de întârziere"
+			}
+		},
+		"cards": {
+			"cardMm": {
+				"title": "Dimensiunea legitimației"
+			},
+			"sheet": {
+				"title": "Foaia de tipărire"
+			},
+			"duplex": {
+				"title": "Tipărire pe ambele fețe",
+				"backOffsetMm": {
+					"title": "Deplasarea versoului"
+				}
+			}
+		},
+		"labels": {
+			"pair": {
+				"title": "Pereche: bandă de cotor și etichetă"
+			},
+			"barcode": {
+				"title": "Doar etichetă cu codul de bare"
+			},
+			"spine": {
+				"title": "Doar bandă de cotor"
+			}
+		},
+		"backup": {
+			"offsite": {
+				"title": "Copie externă"
+			}
+		},
+		"photos": {
+			"sheet": {
+				"title": "Imagini cu mai multe fotografii (recensământ dintr-o imagine)"
+			}
+		}
+	},
+	"overview": {
+		"reload": "Reîncărcați",
+		"reloaded": "Configurarea a fost reîncărcată",
+		"reloadFailed": "Fișierele au erori: rămâne în uz configurarea precedentă.",
+		"valid": "Configurarea este validă: {{count}} {{count:plural; one:fișier; few:fișiere; other:de fișiere;}}.",
+		"example": "Configurarea nu a fost încă creată: se folosesc valorile de exemplu.",
+		"warnings": "{{count}} {{count:plural; one:avertisment; few:avertismente; other:de avertismente;}}",
+		"diskErrors": "Fișierele configurării au erori: biblioteca continuă cu versiunea precedentă până când sunt corectate.",
+		"diskChanged": "Fișierele au fost modificate de mână: apăsați „Reîncărcați” pentru a folosi modificările.",
+		"sections": "Setări",
+		"alsoFrom": "și {{count}} {{count:plural; one:alt fișier; few:alte fișiere; other:de alte fișiere;}}",
+		"editors": "Aspect, clase și modele",
+		"templates": "Modele de tipărire",
+		"templatesDescription": "Folderele modelelor de legitimații, etichete și notificări, cu imaginile lor.",
+		"reports": "Biblioteca rapoartelor",
+		"reportsDescription": "Rapoarte furnizate și ale școlii: încercați, descărcați, încărcați, ștergeți.",
+		"appearance": "Aspect și limbă",
+		"appearanceDescription": "Numele și logoul bibliotecii, culorile, limba și secțiunile tabloului de bord.",
+		"classes": "Clase",
+		"classesDescription": "Clasele școlii și grupurile profesorilor: creați, redenumiți, arhivați."
+	},
+	"section": {
+		"tabs": {
+			"form": "Setări",
+			"json": "JSON",
+			"label": "Modifică ca"
+		},
+		"file": "Salvată în {{file}}",
+		"alsoFrom": "Și din: {{files}}",
+		"general": "Generale",
+		"default": "Implicit: {{value}}",
+		"defaultNone": "Implicit: nicio valoare",
+		"defaultAuto": "Implicit: automat",
+		"usesDefault": "Folosește valoarea implicită",
+		"reset": "Revenire la valoarea implicită",
+		"willReset": "La salvare revine la valoarea implicită.",
+		"auto": "Automat",
+		"none": "Nicio dată",
+		"yes": "Da",
+		"no": "Nu",
+		"fixed": "Valoare fixă",
+		"range": "De la {{min}} la {{max}}.",
+		"min": "Cel puțin {{min}}.",
+		"max": "Cel mult {{max}}.",
+		"save": "Salvați",
+		"discard": "Renunțați la modificări",
+		"saved": "Setările au fost salvate",
+		"unsaved": "Modificări nesalvate",
+		"invalid": "Corectați valorile marcate înainte de a salva.",
+		"errors": "Salvarea nu a reușit:",
+		"inUse": "Salvarea ar scoate ceva ce este încă în uz:",
+		"inUseKinds": {
+			"classification": "codul {{code}}: {{count}} {{count:plural; one:carte; few:cărți; other:de cărți;}}",
+			"itemType": "tipul de exemplar {{code}}: {{count}} {{count:plural; one:exemplar; few:exemplare; other:de exemplare;}}",
+			"level": "nivelul {{code}}: {{count}} {{count:plural; one:elev; few:elevi; other:de elevi;}} sau clase",
+			"readingLevel": "nivelul de lectură {{code}}: {{count}} {{count:plural; one:carte; few:cărți; other:de cărți;}}"
+		},
+		"patternError": "Format nevalid.",
+		"numberError": "Scrieți un număr întreg.",
+		"required": "Obligatoriu.",
+		"elsewhereTitle": "Alte setări ale acestei secțiuni",
+		"elsewhereHint": "Acestea se modifică cu un editor dedicat sau în fila JSON.",
+		"openEditor": "Deschideți",
+		"jsonOnly": "Deocamdată în fila JSON",
+		"editorNames": {
+			"taxonomy": "Clasificare",
+			"appearance": "Aspect și limbă",
+			"wizard": "Procedura inițială",
+			"history": "Istoric",
+			"settings": "Setări",
+			"schoolLevels": "Cicluri și ani"
+		},
+		"json": {
+			"hint": "Secțiunea așa cum este scrisă în {{file}}. Cheile care încep cu _ sunt comentarii și rămân în fișier.",
+			"label": "Conținutul JSON al secțiunii",
+			"parseError": "Textul nu este JSON valid: {{message}}",
+			"notObject": "Secțiunea trebuie să fie un obiect JSON între acolade.",
+			"valid": "Nicio problemă.",
+			"checking": "Se verifică…",
+			"issues": "Probleme de corectat:"
+		},
+		"playSound": "Ascultați"
+	},
+	"history": {
+		"title": "Istoricul configurării",
+		"hint": "Fiecare modificare făcută de aici păstrează versiunea precedentă a fișierelor pe care le atinge (ultimele 50 de modificări).",
+		"empty": "Nicio modificare făcută din administrare până acum.",
+		"columns": {
+			"when": "Când",
+			"what": "Ce",
+			"files": "Fișiere"
+		},
+		"revert": "Restaurați",
+		"revertTitle": "Restaurați fișierele cum erau înainte de această modificare?",
+		"revertDescription": "Revin ca înainte doar valorile schimbate de această modificare. Restaurarea este la rândul ei o modificare: rămâne în istoric și se poate anula.",
+		"reverted": "Versiunea precedentă a fost restaurată",
+		"refused": "Această modificare a creat config.json: nu se poate anula.",
+		"conflict": "Nu se poate restaura: după această modificare {{keys}} s-au schimbat din nou.",
+		"notFound": "Modificarea nu mai este în istoric.",
+		"newFile": "nou",
+		"actions": {
+			"revert": "Restaurarea modificării din {{when}}",
+			"theme": "Culori",
+			"locale": "Limbă",
+			"logo": "Logoul bibliotecii",
+			"setup": "Prima configurare",
+			"section": "Secțiunea „{{section}}”",
+			"other": "Modificare ({{action}})"
+		}
+	},
+	"archive": {
+		"title": "Arhiva configurării",
+		"hint": "Întreaga configurare într-un singur fișier: setări, modele de tipărire, foi adezive, pictograme, logo, rapoarte și limbi (nu istoricul). Serve la păstrarea unei copii sau la mutarea ei pe o altă instalare. „Importați configurarea” acceptă și o copie de siguranță sau o arhivă „Exportați tot”: ia din ea doar configurarea, datele bibliotecii rămân așa cum sunt.",
+		"export": "Exportați configurarea",
+		"import": "Importați configurarea",
+		"checking": "Se verifică arhiva…",
+		"from": "Arhiva din {{date}} (versiunea {{version}})",
+		"fromLibrary": "Arhiva „{{library}}” din {{date}} (versiunea {{version}})",
+		"files": "{{added}} {{added:plural; one:fișier nou; few:fișiere noi; other:de fișiere noi;}}, {{changed}} {{changed:plural; one:fișier modificat; few:fișiere modificate; other:de fișiere modificate;}}, {{removed}} {{removed:plural; one:fișier scos; few:fișiere scoase; other:de fișiere scoase;}}, {{unchanged}} {{unchanged:plural; one:fișier identic; few:fișiere identice; other:de fișiere identice;}}.",
+		"fileList": "Lista fișierelor",
+		"added": "nou",
+		"changed": "modificat",
+		"removed": "scos",
+		"sameValues": "Setările rămân aceleași.",
+		"sections": "Se schimbă: {{sections}}.",
+		"errorsTitle": "Arhiva are probleme: trebuie corectate înainte de a fi importată.",
+		"apply": "Importați",
+		"confirmTitle": "Înlocuiți configurarea cu cea din arhivă?",
+		"confirmDescription": "Fișierele de acum rămân în istoric: „Restaurați” readuce configurarea de dinainte. Datele bibliotecii (cărți, cititori, împrumuturi) nu se schimbă.",
+		"imported": "Configurarea a fost importată",
+		"failed": "Importarea nu a reușit",
+		"errors": {
+			"too_large": "Arhiva este prea mare (cel mult {{maxMb}} MB).",
+			"not_zip": "Fișierul nu este o arhivă ZIP validă.",
+			"not_archive": "Fișierul nu este o arhivă BiblioViva.",
+			"too_many_files": "Arhiva conține prea multe fișiere.",
+			"unsafe_path": "Arhiva conține o cale nepermisă: {{name}}",
+			"link": "Arhiva conține o legătură, care nu este permisă: {{name}}",
+			"unknown_file": "Arhiva conține un fișier care nu face parte din configurare: {{name}}",
+			"no_config": "Arhiva nu conține configurarea (doar date ale bibliotecii): se restaurează din Administrare → Copii de siguranță."
+		},
+		"exportSome": "Exportați părțile alese",
+		"chooseExport": "Alegeți ce să exportați"
+	},
+	"blocks": {
+		"problems": {
+			"codeRequired": {
+				"itemTypes": "Codul este obligatoriu.",
+				"sections": "Secțiunea este obligatorie."
+			},
+			"codeFormat": {
+				"itemTypes": "Litere, cifre, punct, liniuță sau liniuță de subliniere (cel mult 32).",
+				"sections": "Litere mari sau cifre, cel mult 8."
+			},
+			"codeTaken": {
+				"itemTypes": "Cod repetat.",
+				"sections": "Secțiune repetată."
+			},
+			"labelRequired": {
+				"itemTypes": "Numele este obligatoriu.",
+				"sections": "Numele este obligatoriu."
+			}
+		},
+		"itemTypes": {
+			"title": "Tipuri de exemplare",
+			"hint": "Carte, DVD, consultare…: tipul fiecărui exemplar stabilește regulile de împrumut. Schimbarea unui cod mută exemplarele sale pe noul cod.",
+			"code": "Cod",
+			"label": "Nume",
+			"notForLoan": "Doar consultare",
+			"add": "Adăugați un tip",
+			"saved": "Tipuri de exemplare salvate"
+		},
+		"move": {
+			"title": "Unde se mută?",
+			"hint": {
+				"copies": "Unele tipuri eliminate mai au încă exemplare: alegeți tipul pe care să le mutați.",
+				"students": "Unele secțiuni eliminate mai au încă elevi: alegeți secțiunea în care să-i mutați."
+			},
+			"row": {
+				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:exemplar; few:exemplare; other:de exemplare;}}. Mutați la",
+				"students": "{{code}}: {{count}} {{count:plural; one:elev; few:elevi; other:de elevi;}}. Mutați la"
+			},
+			"choose": "Alegeți…",
+			"used": {
+				"copies": "Exemplare",
+				"students": "Elevi"
+			},
+			"count": {
+				"copies": "{{count}} {{count:plural; one:exemplar; few:exemplare; other:de exemplare;}}",
+				"students": "{{count}} {{count:plural; one:elev; few:elevi; other:de elevi;}}"
+			},
+			"done": {
+				"copies": "{{count}} {{count:plural; one:exemplar mutat; few:exemplare mutate; other:de exemplare mutate;}}.",
+				"students": "{{count}} {{count:plural; one:elev mutat; few:elevi mutați; other:de elevi mutați;}}."
+			}
+		},
+		"barcodes": {
+			"title": "Numerotare și previzualizare",
+			"counter": "Numerele noilor legitimații",
+			"afterLegacy": "După cel mai mare număr al legitimațiilor care există deja",
+			"from": "De la acest număr încolo:",
+			"fromNumber": "Primul număr al noilor legitimații",
+			"counterHint": "Un număr deja folosit nu revine niciodată: dacă numărul ales este mai mic, numărarea continuă de unde s-a ajuns. Noile exemplare au întotdeauna anul și un număr de ordine.",
+			"nextCard": "Următoarea legitimație: {{code}}",
+			"nextItem": "Următorul exemplar: {{code}}",
+			"overrides": "Aceste șabloane de tipărire aleg singure tipul de cod, deci setarea de mai sus nu li se aplică: {{templates}}.",
+			"saved": "Numerotare salvată"
+		},
+		"itemTypeRules": {
+			"title": "Reguli pe tip de exemplar",
+			"hint": "Pentru fiecare tip de exemplar se poate schimba o regulă: de exemplu, DVD-urile pentru 5 zile. Regulile se aplică atât elevilor, cât și profesorilor.",
+			"inherit": "Gol: se aplică regula elevilor și profesorilor (cu gri: elevi / profesori).",
+			"saved": "Reguli pe tip de exemplar salvate"
+		},
+		"calendar": {
+			"title": "Calendarul bibliotecii",
+			"weekly": "Zile închise în fiecare săptămână",
+			"weeklyHint": "Zilele evidențiate sunt închise în fiecare săptămână.",
+			"previous": "Anul școlar precedent",
+			"next": "Anul școlar următor",
+			"addNational": "Adăugați sărbătorile naționale din {{year}}",
+			"autoOn": "Sărbătorile naționale sunt deja închise automat. Un clic pe o zi deschisă o închide; pe o zi închisă manual o redeschide.",
+			"clickHint": "Un clic pe o zi deschisă o închide; pe o zi închisă manual o redeschide.",
+			"open": "deschis",
+			"legend": {
+				"open": "Deschis",
+				"weekly": "Închidere săptămânală",
+				"national": "Sărbătoare națională",
+				"holiday": "Închis (ales aici)",
+				"range": "Perioadă de închidere"
+			},
+			"ranges": "Perioade de închidere",
+			"from": "De la",
+			"to": "Până la",
+			"reason": "Motiv",
+			"badRange": "Sfârșitul este înaintea începutului.",
+			"addRange": "Adăugați o perioadă",
+			"saved": "Calendar salvat"
+		},
+		"cardTemplates": {
+			"title": "Șablon pe tip de cititor",
+			"hint": "Elevii și profesorii își tipăresc legitimația cu șablonul implicit ales mai sus, dacă aici nu se alege altul.",
+			"student": "Legitimația elevilor",
+			"teacher": "Legitimația profesorilor",
+			"asDefault": "La fel ca cel implicit ({{name}})",
+			"cutLines": "Contur colorat pe fiecare legitimație",
+			"cutLinesOn": "Desenează un contur colorat pe fiecare legitimație (de obicei nu este necesar: ajung semnele de tăiere)",
+			"color": "Culoare",
+			"width": "Grosime (mm)",
+			"sample": "Exemplu al liniei de tăiere",
+			"saved": "Șabloane de legitimații salvate"
+		},
+		"stocks": {
+			"title": "Foi de etichete adezive",
+			"hint": "Dimensiunile foilor de etichete pe care se tipărește. Desenul din dreapta urmează fiecare număr: etichetele care ies din foaie sunt roșii. După salvare, tipăriți pagina de probă pe hârtie obișnuită și suprapuneți-o peste foaia de etichete.",
+			"new": "Nou",
+			"toFix": "De corectat",
+			"add": "Adăugați o foaie",
+			"id": "Cod",
+			"name": "Nume",
+			"labelWidth": "Lățimea etichetei (mm)",
+			"labelHeight": "Înălțimea etichetei (mm)",
+			"columns": "Coloane",
+			"rows": "Rânduri",
+			"marginTop": "Margine de sus (mm)",
+			"marginLeft": "Margine din stânga (mm)",
+			"gapX": "Spațiu între coloane (mm)",
+			"gapY": "Spațiu între rânduri (mm)",
+			"radius": "Colțuri rotunjite (mm)",
+			"calibration": "Tipărește pagina de probă",
+			"inUse": "Folosit pentru: {{jobs}}. Pentru a-l șterge, alegeți mai întâi o altă foaie în setările de mai sus.",
+			"saveFirst": "Salvați modificările pentru a tipări pagina de probă.",
+			"drawing": "Desenul foii A4 cu {{columns}} {{columns:plural; one:coloană; few:coloane; other:de coloane;}} și {{rows}} {{rows:plural; one:rând; few:rânduri; other:de rânduri;}} de etichete",
+			"caption": "Foaie A4 · {{count}} {{count:plural; one:etichetă; few:etichete; other:de etichete;}}",
+			"saved": "Foi de etichete salvate",
+			"problems": {
+				"id": "Codul poate avea litere, cifre, liniuțe și liniuțe de subliniere.",
+				"duplicate": "Altă foaie are deja acest cod.",
+				"name": "Scrieți un nume.",
+				"numbers": "Verificați dimensiunile: numere de la 0 în sus, etichete mai mari decât zero, coloane și rânduri întregi.",
+				"width": "Etichetele ocupă {{mm}} mm: mai mult decât lățimea foii A4 (210 mm).",
+				"height": "Etichetele ocupă {{mm}} mm: mai mult decât înălțimea foii A4 (297 mm).",
+				"pairRows": "Perechea are nevoie de un număr par de rânduri (banda de cotor și eticheta una sub alta)."
+			},
+			"errors": {
+				"duplicate": "Două foi au același cod: {{details}}.",
+				"inUse": "O foaie folosită pentru tipărire nu poate fi ștearsă: {{details}}."
+			}
+		},
+		"backupSchedule": {
+			"title": "Următoarele copii de siguranță",
+			"invalid": "Ora nu este o expresie cron validă (cinci câmpuri: minute, ore, zi, lună, zi a săptămânii).",
+			"never": "Cu această expresie, copia de siguranță nu pornește niciodată.",
+			"hint": "Orele sunt în fusul orar al bibliotecii ({{timezone}}). Dacă la acea oră calculatorul este oprit, cu „Copie de siguranță la pornire dacă a fost ratată” copia se face la următoarea pornire; ora poate fi mutată și în programul de deschidere."
+		},
+		"coverProviders": {
+			"off": "Copertele sunt dezactivate (Copertele cărților, mai sus): nicio sursă nu este consultată.",
+			"title": "De unde se descarcă copertele",
+			"hint": "Sursele se încearcă în această ordine până când una găsește coperta; fiecare se poate dezactiva separat.",
+			"names": {
+				"amazon": "Amazon",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books"
+			},
+			"googleKey": "Google Books necesită o cheie API, de scris în setările „Date despre cărți”; fără cheie, această sursă este omisă.",
+			"saved": "Surse ale copertelor salvate"
+		},
+		"z3950Targets": {
+			"title": "Cataloage Z39.50",
+			"hint": "Cataloagele din care se iau datele cărților. „Testați conexiunea” face o căutare reală cu valorile scrise, fără a le salva.",
+			"id": "Cod",
+			"name": "Nume",
+			"host": "Adresa serverului",
+			"port": "Port",
+			"database": "Bază de date",
+			"syntax": "Formatul înregistrărilor",
+			"charset": "Codificarea caracterelor",
+			"elements": "Elemente",
+			"elementsHint": "De obicei F (înregistrare completă).",
+			"add": "Adăugați un catalog",
+			"isDefault": "Este catalogul implicit: pentru a-l șterge, alegeți mai întâi altul mai sus.",
+			"saved": "Cataloage salvate",
+			"problems": {
+				"id": "Codul trebuie să fie unic: litere, cifre, liniuțe.",
+				"required": "Numele, baza de date, codificarea și elementele sunt obligatorii.",
+				"host": "Adresa poate avea litere, cifre, puncte și liniuțe.",
+				"words": "Baza de date, codificarea și elementele sunt câte un singur cuvânt, fără spații.",
+				"port": "Portul este un număr de la 1 la 65535."
+			},
+			"test": {
+				"button": "Testați conexiunea",
+				"running": "Se testează…",
+				"ok": "Catalogul răspunde: {{hits}} {{hits:plural; one:rezultat; few:rezultate; other:de rezultate;}} în {{ms}} ms.",
+				"unreachable": "Catalogul nu răspunde: verificați adresa, portul și baza de date.",
+				"timeout": "Catalogul nu a răspuns la timp.",
+				"protocol": "Catalogul a răspuns cu o eroare: verificați baza de date, formatul și codificarea.",
+				"spawn": "Programul yaz-client nu este disponibil pe server."
+			}
+		},
+		"barcodeFormats": {
+			"title": "Formatul codurilor",
+			"hint": "Cum sunt făcute codurile noilor exemplare și ale noilor legitimații. Codurile deja tipărite continuă să funcționeze: un format înlocuit rămâne printre formatele anterioare.",
+			"preset": "Formate gata făcute",
+			"presets": {
+				"standard": "Standard (2026-E0267, U012345)",
+				"classic": "Clasic (2026-02678, 0000012344)",
+				"prefix": "Cu literă în față (L-2602670, T0123455)",
+				"custom": "Personalizat"
+			},
+			"check": "Caracterul de control",
+			"checks": {
+				"mod23": "Literă (mod 23)",
+				"damm": "Cifră (Damm)",
+				"luhn": "Cifră (Luhn)"
+			},
+			"checkHint": "Recunoaște un cod citit sau scris greșit. Litera este cea mai sigură și face ca legitimațiile să se deosebească de la prima privire de codurile exemplarelor.",
+			"advanced": "Avansate: formatele unul câte unul",
+			"tokens": "YYYY sau YY = an, N = cifrele numărului de ordine, C = caracterul de control, {lib} = codul bibliotecii, - = liniuță, litere mari între ghilimele simple ('T'). Literele I, O și Q nu sunt admise.",
+			"pattern": {
+				"item": "Formatul exemplarelor",
+				"patron": "Formatul legitimațiilor"
+			},
+			"libraryCode": "Codul bibliotecii",
+			"libraryCodeHint": "Doar dacă mai multe biblioteci cu instalări separate trebuie să aibă coduri diferite: se folosește cu {lib} în format.",
+			"plainMaxLength": "Cifrele vechilor numere simple",
+			"plainHint": "Numărul maxim de cifre ale legitimațiilor și exemplarelor din sistemul anterior care nu au format (0 dacă nu există).",
+			"plainLongest": "Cel mai lung număr simplu din arhivă are {{digits}} {{digits:plural; one:cifră; few:cifre; other:de cifre;}}.",
+			"distinct": "Exemplarele și legitimațiile nu se pot confunda.",
+			"confusable": "Cu aceste formate, exemplarele și legitimațiile s-ar putea confunda:",
+			"warnings": "{{count}} {{count:plural; one:avertisment; few:avertismente; other:de avertismente;}}",
+			"inUse": "Formatul {{pattern}} are încă {{count}} {{count:plural; one:cod; few:coduri; other:de coduri;}} în arhivă: nu poate fi scos.",
+			"kinds": {
+				"item": "exemplare",
+				"card": "legitimații"
+			},
+			"heading": {
+				"item": "Exemplare",
+				"patron": "Legitimații"
+			},
+			"examples": "Exemple de coduri noi:",
+			"currentCount": "Coduri ale acestui format în arhivă: {{count}}",
+			"count": "{{count}} {{count:plural; one:cod; few:coduri; other:de coduri;}}",
+			"noCheck": "fără control",
+			"remove": "Eliminați",
+			"retired": "Formate folosite în trecut",
+			"legacy": "Coduri din sistemul anterior",
+			"noLegacy": "Niciunul.",
+			"addLegacy": "Adăugați un format vechi",
+			"try": "Încercați un cod",
+			"tryHint": "Un cod scris sau citit aici este recunoscut cu formatele de mai sus, chiar înainte de salvare.",
+			"tried": {
+				"item": "{{value}}: cod de exemplar",
+				"legacy_item": "{{value}}: vechi cod de exemplar",
+				"card": "{{value}}: număr de legitimație",
+				"isbn": "{{value}}: ISBN",
+				"ambiguous": "{{value}}: vechi număr simplu (se caută printre exemplare și legitimații)",
+				"invalid": "{{value}}: nerecunoscut sau cu caracter de control greșit"
+			},
+			"saved": "Formatele codurilor salvate",
+			"patternErrors": {
+				"empty": "Format gol ({{kind}})",
+				"tooLong": "{{pattern}}: prea lung",
+				"badToken": "{{pattern}}: conține un simbol neprevăzut",
+				"badLetter": "{{pattern}}: litera nu este admisă (doar majuscule, fără I, O, Q)",
+				"unclosedQuote": "{{pattern}}: lipsește ghilimeaua de închidere",
+				"year": "{{pattern}}: anul se scrie YYYY sau YY",
+				"twoYears": "{{pattern}}: anul apare de două ori",
+				"twoCounters": "{{pattern}}: numărul de ordine trebuie să fie un singur grup de N",
+				"noCounter": "{{pattern}}: lipsește numărul de ordine (N)",
+				"twoChecks": "{{pattern}}: caracterul de control apare de două ori",
+				"checkWithoutAlgorithm": "{{pattern}}: există un C, dar nu este ales niciun control",
+				"algorithmWithoutCheck": "{{pattern}}: lipsește C, poziția caracterului de control",
+				"noLibraryCode": "{{pattern}}: conține {lib}, dar codul bibliotecii este gol",
+				"badLibraryCode": "Codul bibliotecii poate conține doar cifre și litere mari (fără I, O, Q)"
+			},
+			"issues": {
+				"overlap": "{{pattern}} ({{kind}}) și {{other}} ({{otherKind}}) pot da același cod, de exemplu {{example}}",
+				"overlapWithoutDash": "{{pattern}} ({{kind}}) și {{other}} ({{otherKind}}) se confundă dacă scanerul pierde liniuța, de exemplu {{example}}",
+				"overlapLegacy": "Vechile coduri {{pattern}} ({{kind}}) și {{other}} ({{otherKind}}) au aceeași formă: se caută în ambele arhive",
+				"overlapPlain": "{{pattern}} ({{kind}}) poate da un cod egal cu un vechi număr simplu, de exemplu {{example}}",
+				"overlapIsbn": "{{pattern}} ({{kind}}) poate da un cod egal cu un ISBN, de exemplu {{example}}",
+				"overlapIsbn10": "{{pattern}} ({{kind}}) are forma unui ISBN-10 scris fără liniuțe: are prioritate numărul de legitimație",
+				"lookAlike": "{{pattern}} ({{kind}}) și {{other}} ({{otherKind}}) se aseamănă prea mult: e nevoie de cel puțin 2 caractere de diferență în lungime, de o literă în altă poziție sau de o liniuță în alt loc"
+			}
+		},
+		"schoolLevels": {
+			"title": "Cicluri și ani",
+			"hint": "Anii școlii în ordinea în care se parcurg, grupați pe cicluri. Codul rămâne pe elevi: scoțând sau recodificând un an în uz, se alege unde trec elevii și clasele lui.",
+			"preset": "Model",
+			"presetApply": "Folosiți acest model",
+			"presetHint": "Înlocuiește ciclurile și anii de mai jos cu cele ale modelului; nimic nu se salvează până la „Salvați”.",
+			"custom": "Personalizat",
+			"stages": "Cicluri",
+			"stageCode": "Cod",
+			"stageName": "Nume",
+			"stageLabel": "Cum se scrie clasa",
+			"addStage": "Adăugați un ciclu",
+			"stageLabelHint": "„Cum se scrie clasa” unui ciclu valorează pentru anii lui în locul celui al școlii; fără {group} clasa este doar anul (Q1, fără secțiuni). Gol: ca restul școlii.",
+			"levels": "Ani",
+			"levelCode": "Cod",
+			"levelLabel": "În clasă",
+			"levelName": "Nume",
+			"levelStage": "Ciclu",
+			"levelNext": "Anul următor",
+			"levelAliases": "Alte nume",
+			"levelAliasesPlaceholder": "Separate prin virgule",
+			"nextFollowing": "Anul următor",
+			"nextLeaves": "Iese din școală",
+			"nextChoices": "O alegere între mai mulți ani",
+			"choiceAdd": "Adăugați o alegere…",
+			"choiceRemove": "Eliminați {{name}}",
+			"choiceDefault": "implicit",
+			"addLevel": "Adăugați un an",
+			"inUse": "În uz",
+			"moveUp": "Mutați în sus",
+			"moveDown": "Mutați în jos",
+			"example": "Exemplu: {{label}}",
+			"saved": "Cicluri și ani salvați",
+			"problems": {
+				"code": "Coduri: litere, cifre și liniuța (până la 8 pentru un an), toate diferite.",
+				"required": "Eticheta și numele sunt obligatorii.",
+				"template": "„Cum se scrie clasa” unui ciclu trebuie să conțină {level}.",
+				"stageUsed": "Un ciclu cu ani nu poate fi eliminat.",
+				"structure": "Structura nu este validă: {{details}}"
+			},
+			"move": {
+				"title": "Unde trec elevii și clasele?",
+				"hint": "Unii ani eliminați au încă elevi sau clase. Alegeți pentru fiecare anul în care să fie mutați; împrumuturile păstrează clasa în care au fost făcute.",
+				"level": "{{name}}: {{pupils}} {{pupils:plural; one:elev; few:elevi; other:de elevi;}}, {{classes}} {{classes:plural; one:clasă; few:clase; other:de clase;}}",
+				"choose": "Alegeți anul…",
+				"confirm": "Mutați și salvați",
+				"done": "S-au mutat {{pupils}} {{pupils:plural; one:elev; few:elevi; other:de elevi;}} și {{classes}} {{classes:plural; one:clasă; few:clase; other:de clase;}}."
+			}
+		}
+	},
+	"templates": {
+		"title": "Șabloane de tipărire",
+		"hint": "Dosarele șabloanelor pentru legitimații, etichete, chitanțe și notificări de întârziere. Cele furnizate cu BiblioViva pot fi personalizate (se creează o copie cu același nume) sau duplicate cu alt nume; imaginile și fonturile unei copii se încarcă aici. Fiecare operațiune apare în istoricul configurării și poate fi anulată.",
+		"source": {
+			"builtin": "Furnizat cu BiblioViva",
+			"customised": "Personalizat",
+			"added": "Adăugat"
+		},
+		"broken": "Cu erori",
+		"customise": "Personalizați",
+		"duplicate": "Duplicați",
+		"rename": "Redenumiți",
+		"restore": "Reveniți la original",
+		"usedBy": "Folosit de: {{settings}}.",
+		"unused": "Nefolosit de nicio setare.",
+		"assets": "Imagini și fonturi ({{count}})",
+		"noAssets": "Niciun fișier.",
+		"usedIn": "folosit în {{files}}",
+		"assetUnused": "nefolosit",
+		"upload": "Încărcați un fișier",
+		"uploadHint": "Imagini PNG, JPEG, WebP, GIF, SVG sau fonturi WOFF2, WOFF, TTF; cel mult {{maxMb}} MB.",
+		"builtinAssets": "Pentru a schimba imaginile unui șablon furnizat cu BiblioViva, personalizați-l mai întâi.",
+		"files": "Fișierele șablonului ({{count}})",
+		"filesHint": "Conținutul HTML și CSS se modifică cu editorul vizual al șabloanelor.",
+		"done": {
+			"duplicate": "Șablon duplicat",
+			"customise": "Șablon personalizat: copia poate fi modificată",
+			"rename": "Șablon redenumit",
+			"delete": "Șablon șters",
+			"upload": "{{name}} încărcat",
+			"removeAsset": "{{name}} șters"
+		},
+		"errors": {
+			"notFound": "Șablonul sau fișierul nu a fost găsit.",
+			"badName": "Nume nevalid: litere mici, cifre, liniuțe și liniuțe de subliniere.",
+			"exists": "Există deja un șablon cu acest nume.",
+			"builtin": "Șabloanele furnizate cu BiblioViva nu se modifică: personalizați-le sau duplicați-le.",
+			"inUse": "Șablonul este folosit de: {{details}}. Alegeți mai întâi un alt șablon.",
+			"badAsset": "„{{name}}” nu este un fișier admis (PNG, JPEG, WebP, GIF, SVG fără scripturi, WOFF2, WOFF, TTF).",
+			"assetTooLarge": "„{{name}}” este prea mare: cel mult {{maxMb}} MB.",
+			"assetInUse": "Fișierul este folosit în: {{details}}."
+		},
+		"dialog": {
+			"name": "Numele dosarului",
+			"nameHint": "Litere mici, cifre, liniuțe și liniuțe de subliniere.",
+			"badName": "Folosiți doar litere mici, cifre, liniuțe și liniuțe de subliniere.",
+			"taken": "Există deja un șablon cu acest nume.",
+			"duplicate": {
+				"title": "Duplicați {{name}}",
+				"hint": "Se creează o copie cu toate fișierele sale, gata de modificat.",
+				"confirm": "Duplicați"
+			},
+			"customise": {
+				"title": "Personalizați {{name}}",
+				"hint": "Se creează o copie cu același nume, care ia locul originalului; originalul rămâne disponibil pentru a reveni.",
+				"confirm": "Personalizați"
+			},
+			"rename": {
+				"title": "Redenumiți {{name}}",
+				"hint": "Setările care folosesc acest șablon vor urma noul nume.",
+				"confirm": "Redenumiți"
+			},
+			"delete": {
+				"title": "Ștergeți {{name}}",
+				"hint": "Dosarul și fișierele sale se șterg; dacă este copia unui șablon furnizat cu BiblioViva, revine în uz originalul. Se poate anula din istoric.",
+				"confirm": "Ștergeți"
+			}
+		},
+		"edit": "Modificați"
+	},
+	"languages": {
+		"title": "Pachete de limbă",
+		"hint": "Pentru a folosi BiblioViva în altă limbă: descărcați exemplul în engleză sau în italiană, traduceți textele fișierelor JSON lăsând neschimbate cheile și marcajele între acolade duble, scrieți numele limbii în pack.json și încărcați zipul. Un pachet cu erori nu se instalează; textele lipsă se văd în engleză. Limba se alege în Aspect și limbă.",
+		"none": "Niciun pachet instalat.",
+		"valid": "Valid",
+		"errorsCount": "{{count}} {{count:plural; one:eroare; few:erori; other:de erori;}}",
+		"warnings": "{{count}} {{count:plural; one:text lipsă sau în plus; few:texte lipsă sau în plus; other:de texte lipsă sau în plus;}}",
+		"inUse": "În uz",
+		"download": "Descărcați",
+		"report": "Rezultatul verificării",
+		"upload": "Încărcați un pachet (zip)",
+		"uploadHint": "Un zip cu pack.json și fișierele limbii, într-un dosar cu codul limbii (de exemplu de/); cel mult {{maxMb}} MB.",
+		"examples": "Exemple de descărcat:",
+		"installed": "Limbă instalată: {{name}}",
+		"removed": "Pachet șters",
+		"removeTitle": "Ștergeți pachetul {{code}}?",
+		"removeHint": "Dosarul limbii se șterge. Se poate anula din istoricul configurării.",
+		"errors": {
+			"notAZip": "Fișierul nu este un zip.",
+			"tooLarge": "Zipul este prea mare: cel mult {{maxMb}} MB.",
+			"badLayout": "Zipul trebuie să conțină doar fișierele .json ale limbii, într-un singur dosar cu codul limbii. {{details}}",
+			"badCode": "Cod de limbă nevalid: {{details}} (de exemplu de, fr, pt-BR).",
+			"builtIn": "Engleza și italiana sunt deja incluse și nu se înlocuiesc.",
+			"invalid": "Pachetul are erori și nu a fost instalat: {{details}}",
+			"inUse": "Este limba în uz: alegeți mai întâi alta.",
+			"notFound": "Pachetul nu a fost găsit.",
+			"unavailable": "Nu s-a putut descărca lista limbilor sau pachetul. Verificați conexiunea la internet sau încărcați zipul manual.",
+			"checksum": "Pachetul descărcat este deteriorat și nu a fost instalat. Încercați din nou."
+		},
+		"release": {
+			"title": "Limbi de instalat",
+			"hint": "Limbile publicate cu această versiune a BiblioViva. Lista se citește de pe internet, iar fiecare pachet este verificat înainte de a fi instalat.",
+			"percent": "{{percent}}% tradus",
+			"machine": "Traducere automată, necitită de un vorbitor nativ",
+			"reviewed": "Traducere citită de un vorbitor nativ",
+			"install": "Instalați",
+			"again": "Instalați din nou",
+			"installedBadge": "Instalat",
+			"page": "Pagina versiunii, pentru a descărca pachetele manual și a le încărca mai jos",
+			"unavailable": "Lista limbilor nu poate fi accesată: lipsește conexiunea la internet sau această versiune nu are încă o listă. Încărcarea unui zip mai jos funcționează oricum."
+		}
+	},
+	"reports": {
+		"title": "Biblioteca rapoartelor",
+		"hint": "Rapoartele furnizate cu BiblioViva și cele ale școlii. Pentru a personaliza unul, descărcați-l, modificați-l și încărcați-l: cu același cod (id) ia locul originalului. Înainte de instalare se verifică formatul, siguranța interogării și tabelele și coloanele pe care le folosește. Ghidul pentru scrierea rapoartelor este în docs/reports-authoring.md.",
+		"upload": "Încărcați un raport (JSON)",
+		"try": "Încercați",
+		"download": "Descărcați",
+		"problems": "Aceste fișiere nu se încarcă:",
+		"installed": "Raportul {{id}} a fost instalat",
+		"replaced": "Raportul {{id}} a fost înlocuit",
+		"removed": "Fișier șters",
+		"removeTitle": "Ștergeți {{file}}?",
+		"removeHint": "Fișierul se șterge din configurare. Se poate anula din istoric.",
+		"restoreHint": "Versiunea școlii se șterge: revine în uz raportul furnizat cu BiblioViva. Se poate anula din istoric.",
+		"origin": {
+			"builtin": "Furnizat cu BiblioViva",
+			"customised": "Personalizat",
+			"added": "Adăugat"
+		},
+		"errors": {
+			"tooLarge": "Fișierul este prea mare: cel mult {{maxKb}} KB.",
+			"badJson": "Fișierul nu este un JSON valid: {{details}}",
+			"invalid": "Definiția nu este validă: {{details}}",
+			"sql": "Interogarea nu funcționează pe această bază de date: {{details}}",
+			"notFound": "Fișierul nu a fost găsit.",
+			"reservedId": "„new” nu poate fi codul unui raport."
+		},
+		"new": "Raport nou",
+		"edit": "Modificați",
+		"duplicate": "Duplicați",
+		"editor": {
+			"editTitle": "Modificați raportul",
+			"newTitle": "Raport nou",
+			"copySuffix": "copie",
+			"builtinHint": "Este un raport implicit: salvarea creează copia personalizată a școlii, cu același nume. «Reveniți la original» din bibliotecă o elimină.",
+			"id": "Codul raportului",
+			"category": "Categorie",
+			"title": {
+				"it": "Titlu (italiană)",
+				"en": "Titlu (engleză)"
+			},
+			"description": {
+				"it": "Descriere (italiană)",
+				"en": "Descriere (engleză)"
+			},
+			"restricted": "Doar pentru administratori",
+			"tabs": {
+				"label": "Mod de modificare",
+				"guided": "Ghidat",
+				"sql": "SQL"
+			},
+			"sqlOnly": "Acest raport este scris în SQL: se modifică în fila SQL.",
+			"source": "Date",
+			"rows": "Rânduri",
+			"rows2": "Rânduri, al doilea nivel",
+			"columns": "Coloane",
+			"columnsHint": "Cu coloanele, raportul devine un tabel cu dublă intrare, cu totaluri.",
+			"none": "— niciuna —",
+			"totals": "Totaluri",
+			"totalsOptions": {
+				"both": "Rând și coloană de totaluri",
+				"rows": "Coloana totalurilor",
+				"columns": "Rândul totalurilor",
+				"none": "Fără totaluri"
+			},
+			"sort": "Ordine",
+			"sortDimension": "În ordinea rândurilor",
+			"sortMeasure": "De la valoarea cea mai mare",
+			"measures": "Valori",
+			"oneMeasure": "Un tabel cu dublă intrare arată o singură valoare.",
+			"filters": "Filtre",
+			"filterModes": {
+				"off": "Fără filtru",
+				"ask": "Cerut la deschidere",
+				"fixed": "Fix"
+			},
+			"value": "Valoare",
+			"chart": "Grafic",
+			"charts": {
+				"bar": "Bare",
+				"line": "Linii",
+				"doughnut": "Inel"
+			},
+			"compiledHint": "Raportul ghidat devine acest SQL. Pentru a-l scrie de mână, folosiți „Modificați ca SQL”: după aceea nu se mai revine la modificarea ghidată.",
+			"previewFirst": "Apăsați „Previzualizare” pentru a vedea SQL-ul.",
+			"convert": "Modificați ca SQL",
+			"convertTitle": "Transformați raportul în SQL?",
+			"convertHint": "Raportul devine un raport SQL cu aceleași coloane și aceiași parametri. Nu se mai poate modifica în fila ghidată.",
+			"converted": "Raportul este acum în SQL",
+			"sqlHint": "O singură instrucțiune SELECT sau WITH, cu parametrii scriși ca :nume.",
+			"json": {
+				"params": "Parametri (JSON)",
+				"columns": "Coloane (JSON)",
+				"chart": "Grafic (JSON, opțional)",
+				"pivot": "Tabel cu dublă intrare (JSON, opțional)"
+			},
+			"jsonHint": "În formatul descris în ghidul rapoartelor.",
+			"preview": "Previzualizare",
+			"runPreview": "Previzualizare",
+			"previewHint": "Previzualizarea rulează raportul cu valorile implicite ale parametrilor (cel mult 200 de rânduri).",
+			"save": "Salvați",
+			"saved": "Raportul „{{id}}” a fost salvat",
+			"back": "Înapoi la bibliotecă",
+			"jsonInvalid": "Corectați părțile JSON marcate cu roșu înainte de salvare."
+		}
+	},
+	"designer": {
+		"title": "Modificați {{name}}",
+		"design": "Desen",
+		"code": "Cod",
+		"preview": "Previzualizare",
+		"front": "Față",
+		"back": "Verso",
+		"faces": "Fețe sau etichete",
+		"zoom": "Mărire",
+		"grid": "Grilă",
+		"gridSteps": {
+			"s0": "Niciuna (liberă)",
+			"s05": "0,5 mm",
+			"s1": "1 mm",
+			"s2": "2 mm",
+			"s25": "2,5 mm",
+			"s5": "5 mm",
+			"s10": "10 mm"
+		},
+		"files": "Fișiere",
+		"problems": "Șablonul nu se poate tipări așa:",
+		"saved": "Șablon salvat",
+		"notEditable": "Acest șablon nu se poate modifica aici: șabloanele furnizate cu BiblioViva trebuie personalizate mai întâi.",
+		"canvasHint": "Un clic pe o casetă o alege, trăgând-o o mutați, cu colțul o redimensionați: pozițiile și dimensiunile se aliniază la grila aleasă. Cu tastatura, săgețile o mută cu un pas de grilă (cu Shift cam 5 mm, mereu pe grilă), iar Delete o elimină.",
+		"flowHint": "{{count}} {{count:plural; one:element al acestei fețe este așezat; few:elemente ale acestei fețe sunt așezate; other:de elemente ale acestei fețe sunt așezate;}} de foaia de stil (contur punctat): la prima mutare, pozițiile tuturor se scriu în fișier, acolo unde se află acum.",
+		"lockedHint": "{{count}} {{count:plural; one:parte a acestei fețe stă; few:părți ale acestei fețe stau; other:de părți ale acestei fețe stau;}} într-o secțiune Mustache: {{count:plural; one:se modifică; few:se modifică; other:se modifică;}} în fila „Cod”.",
+		"noStock": "Nicio foaie de etichete nu folosește această variantă: desenul se vede fără previzualizare.",
+		"codeHint": "Desenul și codul modifică aceleași fișiere: orice modificare făcută aici apare și în desen, și invers.",
+		"add": "Adăugați",
+		"newText": "Text",
+		"noImages": "Pentru a adăuga imagini, încărcați-le mai întâi printre imaginile șablonului.",
+		"types": {
+			"field": "Câmp",
+			"text": "Text",
+			"barcode": "Cod de bare",
+			"photo": "Fotografie",
+			"pictogram": "Pictogramă",
+			"image": "Imagine",
+			"box": "Casetă",
+			"html": "HTML liber",
+			"other": "Element"
+		},
+		"fields": {
+			"library_name": "Numele bibliotecii",
+			"patron_first_name": "Prenume",
+			"patron_last_name": "Nume de familie",
+			"patron_card_number": "Numărul legitimației",
+			"patron_class_label": "Clasa și secțiunea",
+			"patron_level_label": "Clasa (anul)",
+			"patron_group": "Secțiunea",
+			"school_year": "Anul școlar",
+			"issued_on": "Data emiterii",
+			"valid_until": "Valabilă până la",
+			"item_barcode": "Cod de bare (text)",
+			"item_call_number": "Cota",
+			"call_head": "Cota: prima linie",
+			"call_rest": "Cota: a doua linie",
+			"biblio_title_short": "Titlu scurt",
+			"biblio_author_short": "Autor scurt",
+			"biblio_publication_year": "Anul publicării",
+			"biblio_series": "Serie",
+			"biblio_series_number": "Numărul din serie",
+			"classification_code": "Cod de clasificare",
+			"classification_label": "Numele clasificării",
+			"classification_reading_level": "Nivel de lectură",
+			"item_item_type": "Tip de exemplar"
+		},
+		"field": "Câmp",
+		"text": "Text",
+		"image": "Imagine",
+		"content": "Conținut HTML",
+		"contentHint": "Caseta se mută și se formatează din desen; conținutul se scrie în HTML cu câmpurile Mustache, ca în fișierele șablonului.",
+		"inherited": "Implicit",
+		"unplacedHint": "Acest element este așezat de foaia de stil: mutându-l, poziția lui și cea a celorlalte elemente ale acestei fețe se scriu în fișier.",
+		"geometry": {
+			"x": "X (mm)",
+			"y": "Y (mm)",
+			"w": "Lățime",
+			"h": "Înălțime"
+		},
+		"fontSize": "Dimensiune (pt)",
+		"font": "Font",
+		"fonts": {
+			"sans": "Fără serife",
+			"serif": "Cu serife",
+			"mono": "Monospațiat"
+		},
+		"bold": "Îngroșat",
+		"italic": "Cursiv",
+		"uppercase": "Majuscule",
+		"align": "Aliniere",
+		"aligns": {
+			"left": "Stânga",
+			"center": "Centru",
+			"right": "Dreapta"
+		},
+		"color": "Culoare",
+		"border": "Bordură",
+		"borderColor": "Culoarea bordurii",
+		"fill": "Umplere",
+		"fillColor": "Culoarea de umplere",
+		"backward": "Trimite în spate",
+		"forward": "Aduce în față",
+		"background": "Fundalul feței",
+		"backgroundColor": "Culoarea fundalului",
+		"backgroundImage": "Imagine de fundal",
+		"noImage": "Niciuna",
+		"chooseHint": "Alegeți o casetă din desen pentru a o modifica.",
+		"modes": "Vizualizarea șablonului",
+		"safeArea": "Zonă sigură: păstrați textele și fotografiile în interiorul liniei punctate, la 2 mm de margine (tipărind față și verso, versoul se poate deplasa cu un milimetru).",
+		"chooseBackground": "Alegeți un fundal",
+		"uploadBackground": "Încărcați o imagine",
+		"backgroundsTitle": "Fundaluri gata făcute",
+		"backgroundsHint": "Fiecare fundal trece puțin peste legitimație, cu 3 mm de fiecare parte: partea în plus se taie.",
+		"backgroundAlt": "Fundal {{name}}",
+		"backgroundAdded": "Fundal adăugat feței: salvați pentru a-l păstra.",
+		"backgroundFailed": "Fundalul nu a fost adăugat.",
+		"cardSize": "Formatul legitimației",
+		"cardWidth": "Lățime (mm)",
+		"cardHeight": "Înălțime (mm)",
+		"cardRotate": "Rotește: pe verticală sau pe orizontală",
+		"cardDefault": "Revenire la formatul implicit ({{width}} × {{height}} mm)",
+		"cardDefaultHint": "Acesta este formatul implicit al configurării (Configurare → Legitimații): aici se schimbă doar pentru acest șablon.",
+		"cardTooLarge": "O legitimație de {{width}} × {{height}} mm nu intră în foaia A4: cel mult {{maxWidth}} × {{maxHeight}} mm, pentru că fața și versoul stau alăturate în interiorul marginilor."
+	},
+	"parts": {
+		"groups": {
+			"data": "Datele bibliotecii",
+			"settings": "Setări",
+			"config": "Clasificare, șabloane și altele"
+		},
+		"all": "Toate",
+		"none": "Niciuna",
+		"accountsConfirm": {
+			"title": "Importați și conturile și parolele?",
+			"description": "Conturile personalului și parolele din arhivă înlocuiesc pe cele actuale: cine se autentifică acum nu va mai putea face acest lucru cu credențialele de astăzi. Dacă nu sunt necesare, lăsați această opțiune nebifată.",
+			"confirm": "Importați și conturile"
+		},
+		"needs": "„{{part}}” pentru a fi restaurate au nevoie și de: {{needs}}.",
+		"data": {
+			"patrons": "Cititori",
+			"catalog": "Catalogul și exemplarele",
+			"loans": "Împrumuturi și istoric",
+			"printLists": "Liste de tipărire",
+			"photos": "Fotografiile cititorilor",
+			"covers": "Copertele",
+			"notes": "Note ale personalului",
+			"dates": "Datele calendarului",
+			"audit": "Jurnalul activităților"
+		},
+		"config": {
+			"classification": "Clasificare și pictograme",
+			"stocks": "Foi de etichete",
+			"calendar": "Calendar",
+			"reports": "Rapoarte",
+			"cardTemplates": "Șabloanele legitimațiilor",
+			"pairTemplates": "Șabloanele perechilor de etichete",
+			"barcodeTemplates": "Șabloanele etichetelor cu cod de bare",
+			"spineTemplates": "Șabloanele benzilor de cotor",
+			"slipTemplates": "Șabloanele chitanțelor și notificărilor",
+			"languages": "Pachete de limbă",
+			"logo": "Logoul bibliotecii"
+		}
+	}
+}

@@ -1,0 +1,66 @@
+{
+	"title": "Notes",
+	"new": "Nouvelle note",
+	"adminOnly": "Seul l'administrateur archive les notes et les met en évidence sur le tableau de bord.",
+	"pinned": "En évidence",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Archivée par {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:note; other:notes;}}",
+	"archiveCount": "{{shown}} sur {{total}} {{total:plural; one:note archivée; other:notes archivées;}}",
+	"actions": {
+		"label": "Actions sur la note",
+		"pin": "Mettre en évidence",
+		"unpin": "Retirer",
+		"archive": "Archiver",
+		"restore": "Restaurer",
+		"delete": "Supprimer",
+		"showAll": "Tout afficher",
+		"showLess": "Afficher moins",
+		"more": "Afficher plus"
+	},
+	"done": {
+		"added": "Note ajoutée",
+		"pinned": "Note mise en évidence",
+		"unpinned": "Note retirée",
+		"archived": "Note archivée",
+		"restored": "Note restaurée",
+		"deleted": "Note supprimée"
+	},
+	"confirmDelete": {
+		"title": "Supprimer la note ?",
+		"text": "Elle est effacée définitivement et ne peut pas être récupérée."
+	},
+	"form": {
+		"body": "Texte",
+		"placeholder": "Ex. Le scanner de la banque de prêt ne lit pas les cartes.",
+		"privacy": "Tous les comptes lisent les notes : ne pas inscrire de données personnelles des élèves.",
+		"written": "Une note ne peut pas être modifiée : en cas d'erreur, demander à l'administrateur de l'archiver et en écrire une autre.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Couleur",
+		"pinned": "Mise en évidence sur le tableau de bord",
+		"pinnedHint": "Affichée à tous en haut du tableau de bord (et de la banque de prêt) jusqu'à ce qu'elle soit retirée de la mise en évidence ou archivée.",
+		"save": "Ajouter"
+	},
+	"colors": {
+		"yellow": "Jaune",
+		"pink": "Rose",
+		"green": "Vert",
+		"blue": "Bleu clair",
+		"orange": "Orange"
+	},
+	"errors": {
+		"empty": "Écrire le texte de la note.",
+		"tooLong": "Le texte dépasse {{max}} {{max:plural; one:caractère; other:caractères;}}.",
+		"color": "Choisir l'une des couleurs."
+	},
+	"empty": {
+		"open": "Aucune note ouverte",
+		"openHint": "Aucune note ouverte. Les notes transmettent aux collègues et à l'administrateur les problèmes et les avis.",
+		"archived": "Aucune note archivée"
+	},
+	"home": {
+		"title": "Notes",
+		"open": "Ouvrir les notes"
+	},
+	"tile": "Notes ouvertes"
+}

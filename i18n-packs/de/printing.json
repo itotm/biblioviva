@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Druck",
+		"newPatrons": "Neue Nutzerliste",
+		"newItems": "Neue Bücherliste",
+		"newPatronsTitle": "Neue Liste der Nutzer",
+		"newItemsTitle": "Neue Liste der Bücher",
+		"name": "Name der Liste",
+		"defaultName": "Liste {{n}} vom {{date}}",
+		"kind": "Art",
+		"kinds": {
+			"all": "Alle",
+			"patrons": "Nutzer",
+			"items": "Bücher"
+		},
+		"classes": "Klassen",
+		"classesHint": "Die Ausweise einer ganzen Klasse, ohne dafür eine Liste anzulegen.",
+		"classKind": "Klasse",
+		"count": "{{count}} {{count:plural; one:Eintrag; other:Einträge;}}",
+		"empty": "Keine Listen. Listen werden hier oder mit „Zur Liste hinzufügen“ auf den Seiten Nutzer und Katalog angelegt.",
+		"lastPrinted": "Gedruckt am {{when}}",
+		"neverPrinted": "Noch nie gedruckt",
+		"open": "Öffnen",
+		"created": "Liste angelegt",
+		"deleted": "Liste gelöscht",
+		"deleteTitle": "Die Liste „{{name}}“ löschen?",
+		"deleteDescription": "Die Einträge verlassen die Liste; die Nutzer bleiben im Archiv."
+	},
+	"list": {
+		"rename": "Umbenennen",
+		"renamed": "Liste umbenannt",
+		"print": "Ausweise drucken",
+		"markPrinted": "Als gedruckt markieren",
+		"marked": "{{count}} {{count:plural; one:Ausweis; other:Ausweise;}} als gedruckt markiert",
+		"clearAfter": "Liste nach dem Drucken leeren",
+		"clear": "Leeren",
+		"cleared": "Liste geleert",
+		"clearTitle": "Liste leeren?",
+		"clearDescription": "Jeder Eintrag verlässt die Liste; die Nutzer bleiben im Archiv.",
+		"delete": "Löschen",
+		"entries": "{{count}} {{count:plural; one:Nutzer; other:Nutzer;}} auf der Liste",
+		"empty": "Die Liste ist leer: Nutzer werden mit den Schnellfiltern, dem Scanner oder auf der Seite Nutzer hinzugefügt.",
+		"remove": "Von der Liste entfernen",
+		"moveUp": "Nach oben",
+		"moveDown": "Nach unten",
+		"dragHint": "Ziehen Sie die Einträge, um die Druckreihenfolge zu ändern.",
+		"removed": "Von der Liste entfernt",
+		"columns": {
+			"position": "Nr.",
+			"printed": "Ausweis gedruckt"
+		},
+		"printedYes": "ja",
+		"printedNo": "nein",
+		"quick": {
+			"title": "Mit Filtern hinzufügen",
+			"hint": "Wer bereits auf der Liste steht, wird nicht doppelt hinzugefügt.",
+			"type": "Art",
+			"any": "Beliebig",
+			"stage": "Schulstufe",
+			"level": "Jahrgang",
+			"withoutPrintedCard": "Nur wer noch keinen gedruckten Ausweis hat",
+			"withoutPhoto": "Nur wer kein Foto hat",
+			"importBatch": "Import",
+			"anyBatch": "— keiner —",
+			"batchLabel": "Nr. {{id}} · {{file}} · {{created}} neu",
+			"createdAfter": "Angelegt ab",
+			"add": "Zur Liste hinzufügen",
+			"added": "{{added}} hinzugefügt, {{skipped}} bereits vorhanden",
+			"none": "Kein Nutzer entspricht den Filtern.",
+			"pendingLabels": "Zu druckende Etiketten",
+			"pendingAny": "— alle Exemplare —",
+			"acquiredFrom": "Erworben von",
+			"acquiredTo": "bis",
+			"genre": "Genre",
+			"itemType": "Exemplarart",
+			"batchLabelItems": "Nr. {{id}} · {{file}} · {{created}} {{created:plural; one:Exemplar; other:Exemplare;}}",
+			"noneItems": "Kein Exemplar entspricht den Filtern.",
+			"addedItems": "{{added}} hinzugefügt, {{skipped}} bereits vorhanden",
+			"nonfictionClass": "Sachbuch-Systematik"
+		},
+		"scan": {
+			"title": "Mit dem Scanner hinzufügen",
+			"hint": "Lesen Sie den Ausweis jedes Nutzers: Er wird sofort hinzugefügt. Ausweise, die bereits auf der Liste stehen, werden ignoriert.",
+			"added": "{{name}} hinzugefügt",
+			"duplicate": "{{name}} steht bereits auf der Liste",
+			"unknown": "Kein Nutzer mit dem Ausweis {{card}}",
+			"notCard": "Der gelesene Code ist kein Ausweis",
+			"hintItems": "Lesen Sie den Barcode jedes Exemplars, auch entlang des Regals: Das Exemplar wird sofort zur Liste hinzugefügt. Bereits enthaltene Exemplare werden ignoriert.",
+			"addedItem": "{{title}} ({{barcode}}) hinzugefügt",
+			"duplicateItem": "{{title}} ({{barcode}}) steht bereits auf der Liste",
+			"unknownItem": "Kein Exemplar mit dem Barcode {{barcode}}",
+			"notItem": "Der gelesene Code ist kein Exemplar"
+		},
+		"printLabels": "Etiketten drucken",
+		"markPrintedKind": "Etiketten gedruckt",
+		"markedItems": "{{count}} {{count:plural; one:Exemplar; other:Exemplare;}} als gedruckt markiert",
+		"entriesItems": "{{count}} {{count:plural; one:Exemplar; other:Exemplare;}} auf der Liste",
+		"emptyItems": "Die Liste ist leer: Exemplare werden mit den Schnellfiltern, dem Scanner oder aus dem Katalog hinzugefügt.",
+		"clearDescriptionItems": "Jeder Eintrag wird entfernt; die Exemplare bleiben im Katalog."
+	},
+	"basket": {
+		"label": "Drucklisten",
+		"labelToPrint": "Drucklisten: {{count}} zu drucken",
+		"entry": "{{name}} ({{count}})",
+		"none": "Keine Liste zu drucken",
+		"all": "Alle Listen"
+	},
+	"addTo": {
+		"button": "Zur Liste hinzufügen",
+		"selected": "Ausgewählte zur Liste hinzufügen",
+		"title": "Zur Druckliste hinzufügen",
+		"existing": "Vorhandene Liste",
+		"create": "Neue Liste",
+		"newName": "Name der neuen Liste",
+		"confirm": "Hinzufügen",
+		"done": "{{added}} zu „{{name}}“ hinzugefügt, {{skipped}} bereits vorhanden"
+	},
+	"labels": {
+		"title": "Etiketten drucken",
+		"button": "Etiketten drucken",
+		"selected": "Etiketten der Auswahl drucken",
+		"kind": "Art des Etiketts",
+		"kinds": {
+			"pair": "Paar",
+			"barcode": "Nur Barcode",
+			"spine": "Nur Rückenschild"
+		},
+		"kindHints": {
+			"pair": "Rückenschild oben und Etikett mit dem Barcode darunter, ein Paar pro Buch (wie der bisherige Ausdruck).",
+			"barcode": "Nur das interne Etikett mit dem Barcode, für Nachdrucke.",
+			"spine": "Nur das Rückenschild, zum Beispiel nach einer Neueinordnung."
+		},
+		"stock": "Etikettenbogen",
+		"start": "Erste freie Position",
+		"startHint": "Von 1 bis {{max}}: überspringt die bereits auf dem Bogen verwendeten Etiketten.",
+		"count": "{{count}} {{count:plural; one:Exemplar; other:Exemplare;}}",
+		"unclassified": "{{count}} {{count:plural; one:Exemplar eines Buches; other:Exemplare von Büchern;}} noch einzuordnen: Gedruckt wird nur das Etikett mit dem Barcode, das Rückenschild erst nach der Einordnung.",
+		"pendingCount": "{{count}} {{count:plural; one:Exemplar; other:Exemplare;}} mit zu druckenden Etiketten",
+		"pages": "{{pages}} {{pages:plural; one:Blatt; other:Blätter;}} ({{perPage}} pro Blatt)",
+		"print": "Druckseite öffnen",
+		"afterPrint": "Die Druckseite ist in einer neuen Registerkarte geöffnet. Markieren Sie die Etiketten nach dem Drucken als gedruckt.",
+		"markPrinted": "Als gedruckt markieren",
+		"marked": "{{count}} {{count:plural; one:Exemplar; other:Exemplare;}} als gedruckt markiert",
+		"status": {
+			"printed": "Etiketten gedruckt",
+			"pending": "Etiketten zu drucken",
+			"partial": "Ein Etikett fehlt"
+		}
+	},
+	"cards": {
+		"title": "Ausweise drucken",
+		"count": "{{count}} {{count:plural; one:Ausweis; other:Ausweise;}}",
+		"afterPrint": "Die Druckseite ist in einer neuen Registerkarte geöffnet. Markieren Sie die Ausweise nach dem Drucken als gedruckt.",
+		"layout": "Druckart",
+		"layouts": {
+			"side-by-side": "Vorder- und Rückseite nebeneinander",
+			"duplex": "Auf beiden Seiten des Blattes"
+		},
+		"window": "Im Druckdialog des Browsers:",
+		"steps": {
+			"duplex": {
+				"long-edge": "„Beidseitig“ wählen, mit Wenden an der langen Kante;",
+				"short-edge": "„Beidseitig“ wählen, mit Wenden an der kurzen Kante;"
+			},
+			"scale": "Skalierung 100 % („Originalgröße“, nicht „An Seite anpassen“);",
+			"margins": "Ränder: keine.",
+			"after": {
+				"side-by-side": {
+					"marks": "Schneiden Sie dann jeden Ausweis aus, indem Sie die Schnittmarken um die Ausweise mit dem Lineal verbinden, und falten Sie ihn an der kurzen Kante in der Mitte.",
+					"line": "Schneiden Sie dann jeden Ausweis entlang der farbigen Linie um ihn aus und falten Sie ihn an der kurzen Kante in der Mitte.",
+					"edge": "Schneiden Sie dann jeden Ausweis entlang seines Randes aus und falten Sie ihn an der kurzen Kante in der Mitte."
+				},
+				"duplex": {
+					"marks": "Schneiden Sie dann die Ausweise aus, indem Sie die Schnittmarken um die Vorderseiten mit dem Lineal verbinden: Die Rückseite liegt schon hinter der Vorderseite (zehn pro Blatt).",
+					"line": "Schneiden Sie dann die Ausweise entlang der farbigen Linie um die Vorderseiten aus: Die Rückseite liegt schon hinter der Vorderseite (zehn pro Blatt).",
+					"edge": "Schneiden Sie dann die Ausweise entlang des Randes der Vorderseiten aus: Die Rückseite liegt schon hinter der Vorderseite (zehn pro Blatt)."
+				}
+			}
+		},
+		"print": "Drucken",
+		"calibrate": "Beim ersten Mal, oder wenn die Rückseiten nicht hinter den Vorderseiten landen:"
+	},
+	"words": {
+		"teacher": "Lehrkraft",
+		"title": "Titel",
+		"code": "Code",
+		"dueBy": "Rückgabe bis",
+		"due": "Rückgabedatum",
+		"name": "Name",
+		"daysOverdue": "Tage überfällig",
+		"loanOn": "Ausleihe vom {{date}} an",
+		"overduesOn": "Mahnungen der Bibliothek vom {{date}}",
+		"toReturn": "Bücher zur Rückgabe an die Bibliothek",
+		"enjoy": "Viel Freude beim Lesen."
+	}
+}

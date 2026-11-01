@@ -1,0 +1,226 @@
+{
+	"title": "Prvé nastavenie",
+	"intro": "Vitajte v programe BiblioViva. Za niekoľko krokov je knižnica pripravená: jazyk, farby, škola, kódy a heslá zamestnancov.",
+	"stepOf": "Krok {{step}} z {{total}}",
+	"next": "Ďalej",
+	"back": "Späť",
+	"finish": "Dokončiť nastavenie",
+	"steps": {
+		"language": "Jazyk",
+		"theme": "Farby",
+		"library": "Knižnica",
+		"school": "Škola",
+		"codes": "Kódy",
+		"passwords": "Heslá",
+		"demo": "Ukážkové údaje",
+		"summary": "Súhrn"
+	},
+	"language": {
+		"title": "Akým jazykom má BiblioViva hovoriť?",
+		"hint": "Jeden jazyk pre inštaláciu: platí pre všetkých zamestnancov a dá sa zmeniť v časti Administrácia → Konfigurácia → Vzhľad a jazyk.",
+		"restore": {
+			"title": "Už máte zálohu programu BiblioViva?",
+			"hint": "Ak chcete preniesť BiblioViva na iný počítač alebo začať znova po poruche, nemusíte odpovedať na otázky: stačí archív vytvorený pomocou „Exportovať všetko“.",
+			"button": "Obnoviť zo zálohy"
+		}
+	},
+	"theme": {
+		"title": "Vyberte farby",
+		"hint": "Pätnásť sád farieb: menia iba farby, nikdy tvar. Všetky sú svetlé a čitateľné aj čiernobielo.",
+		"names": {
+			"ocean": "Oceán",
+			"forest": "Les",
+			"grape": "Hrozno",
+			"sunset": "Západ slnka",
+			"cherry": "Čerešňa",
+			"lagoon": "Lagúna",
+			"silver": "Striebro",
+			"graphite": "Grafit",
+			"apricot": "Marhuľa",
+			"indigo": "Indigo",
+			"mint": "Mäta",
+			"rose": "Ruža",
+			"sahara": "Sahara",
+			"wintry": "Zima",
+			"olive": "Oliva"
+		}
+	},
+	"library": {
+		"title": "Knižnica",
+		"name": "Názov knižnice",
+		"namePlaceholder": "Knižnica základnej školy Rodari",
+		"schoolType": "Typ školy",
+		"schoolTypeHint": "Roky a triedy podľa používania školy. Neskôr ich možno zmeniť v časti Administrácia → Konfigurácia → Škola a Administrácia → Konfigurácia → Triedy.",
+		"photos": "Fotografie čitateľov",
+		"photosHint": "Fotografie žiakov a učiteľov, odfotené alebo nahrané, vytlačené na preukazoch. Vypnuté: nikde sa nezobrazujú fotografie a preukazy sú bez fotografie.",
+		"covers": "Obálky kníh",
+		"coversHint": "Obálky vyhľadané na internete, odfotené alebo nahrané a zobrazené v katalógu. Vypnuté: žiadna obálka."
+	},
+	"school": {
+		"title": "Škola",
+		"hint": "Typ školy navrhne roky, triedy a úrovne čítania. Triedy sa vytvoria hneď; s ukážkovými údajmi sa naplnia vymyslenými žiakmi.",
+		"otherCountries": "Iné krajiny",
+		"names": {
+			"perLevel": "{{stage}}: názvy tried, jeden pre každý ročník",
+			"mixed": "{{stage}}: názvy sekcií, každá so všetkými ročníkmi"
+		},
+		"namesHint": "Oddelené čiarkami; A-D znamená A, B, C, D. Prázdne: žiadne triedy.",
+		"namesInvalid": "Neplatné názvy: zapíšte ich oddelené čiarkami (najviac 40).",
+		"classes": "{{count}} {{count:plural; one:trieda; few:triedy; other:tried;}} na vytvorenie:",
+		"more": "a ešte {{count}}",
+		"classLabel": "Ako sa zapisuje trieda",
+		"teacherGroup": "Skupina učiteľov",
+		"teacherGroupHint": "Každý učiteľ vstúpi do tejto skupiny; ďalšie skupiny sa pridajú neskôr.",
+		"schoolYearStart": "Začiatok školského roka",
+		"schoolYearStartHint": "Mesiac a deň vo tvare MM-DD (napríklad 09-01).",
+		"schoolYearStartInvalid": "Mesiac a deň zapíšte vo tvare MM-DD.",
+		"schoolYearLabel": "Názov školského roka",
+		"schoolYearLabels": {
+			"span": "Dva roky (2026/2027)",
+			"start": "Rok začiatku (2026)"
+		},
+		"readingLevels": "Beletria zoradená podľa úrovne čítania",
+		"readingLevelsHint": "Roky, triedy a úrovne čítania sa neskôr dajú zmeniť v časti Administrácia."
+	},
+	"codes": {
+		"title": "Kódy",
+		"hint": "Formát čiarových kódov nových exemplárov a formát nových preukazov, každý zvolený samostatne. Obe podoby sa nedajú zameniť: kto prečíta kód, hneď vie, či ide o knihu alebo o preukaz.",
+		"itemFormat": "Formát exemplárov",
+		"itemFormats": {
+			"standard": "Rok, kontrolný znak a číslo (odporúčané)",
+			"classic": "Rok a číslo, kontrolný znak na konci",
+			"prefix": "S písmenom L na začiatku"
+		},
+		"cardFormat": "Formát preukazov",
+		"cardFormats": {
+			"standard": "Kontrolný znak a 6-miestne číslo (odporúčané)",
+			"classic": "10-miestne číslo, kontrolný znak na konci",
+			"prefix": "S písmenom T na začiatku"
+		},
+		"check": "Kontrolný znak",
+		"checks": {
+			"mod23": "Písmeno (mod 23)",
+			"luhn": "Číslica (Luhn)",
+			"damm": "Číslica (Damm)"
+		},
+		"layout": "Klávesnica čítačiek",
+		"layoutHint": "Jazyk klávesnice počítača, ku ktorému sú pripojené čítačky čiarových kódov: opravuje zamenené znaky. Ak vaša v zozname nie je, zvoľte najbližšiu: neskôr ju možno zmeniť v časti Konfigurácia → Čiarové kódy.",
+		"layouts": {
+			"it": "Talianska",
+			"es": "Španielska",
+			"de": "Nemecká",
+			"fr": "Francúzska",
+			"uk": "Anglická (Spojené kráľovstvo)",
+			"us": "Anglická (Spojené štáty)"
+		},
+		"copy": "Exemplár knihy",
+		"card": "Preukaz",
+		"verdict": "Exempláre a preukazy sa nedajú zameniť.",
+		"refused": "Pri tejto voľbe by sa exempláre a preukazy mohli zameniť: zvoľte iný formát.",
+		"later": "Formáty, kódy predchádzajúcich systémov a číslovanie sa neskôr dajú zmeniť v časti Konfigurácia → Čiarové kódy."
+	},
+	"passwords": {
+		"title": "Heslá zamestnancov",
+		"hint": "Päť zdieľaných účtov, jeden pre každú rolu. Navrhnuté heslá sú náhodné a dajú sa nahradiť. Zapíšte si ich v poslednom kroku: zobrazia sa iba raz.",
+		"accounts": {
+			"admin": "Administrácia (admin)",
+			"prestiti": "Správa výpožičiek (prestiti)",
+			"catalogo": "Katalogizácia (catalogo)",
+			"tessere": "Preukazy a fotografie (tessere)",
+			"report": "Výkazy (report)"
+		},
+		"regenerate": "Vygenerovať znova",
+		"tooShort": "Aspoň 8 znakov.",
+		"demo": "S ukážkovými údajmi všetky účty používajú to isté ľahko zapamätateľné heslo: „{{password}}“. Pred ostrým používaním programu BiblioViva ich zmeňte v časti Administrácia → Účty zamestnancov."
+	},
+	"demo": {
+		"title": "Ukážkové údaje",
+		"hint": "Vymyslení žiaci, knihy a výpožičky na vyskúšanie programu. Jedným kliknutím sa odstránia v časti Administrácia, keď sa zadajú skutočné údaje.",
+		"load": "Načítať ukážkové údaje",
+		"hasData": "Databáza už obsahuje údaje: ukážkové údaje sa nenačítajú."
+	},
+	"summary": {
+		"title": "Súhrn",
+		"hint": "Skontrolujte a potvrďte. Heslá sa zobrazia iba na tejto stránke: skopírujte ich, skôr než pokračujete.",
+		"language": "Jazyk",
+		"theme": "Farby",
+		"library": "Knižnica",
+		"photos": "Fotografie čitateľov",
+		"covers": "Obálky kníh",
+		"school": "Škola",
+		"classes": "Triedy",
+		"classesValue": "{{count}} {{count:plural; one:trieda; few:triedy; other:tried;}} ({{first}}…) a skupina {{teachers}}",
+		"readingLevels": "Úrovne čítania",
+		"none": "Žiadna",
+		"codes": "Kódy",
+		"demo": "Ukážkové údaje",
+		"yes": "Áno",
+		"no": "Nie",
+		"later": "Heslá sa neskôr menia v časti Administrácia → Účty zamestnancov.",
+		"working": "Ukladá sa…",
+		"error": "Konfigurácia nebola uložená: {{message}}"
+	},
+	"done": {
+		"title": "Nastavenie dokončené",
+		"hint": "Heslá uschovajte na bezpečnom mieste: nebudú zobrazené znova.",
+		"demoLoaded": "Ukážkové údaje načítané: {{patrons}} {{patrons:plural; one:čitateľ; few:čitatelia; other:čitateľov;}}, {{biblios}} {{biblios:plural; one:titul; few:tituly; other:titulov;}}, {{items}} {{items:plural; one:exemplár; few:exempláre; other:exemplárov;}}, {{loans}} {{loans:plural; one:výpožička; few:výpožičky; other:výpožičiek;}}.",
+		"login": "Prejsť na prihlásenie"
+	},
+	"generic": {
+		"stage": "Škola",
+		"level": "Ročník {{level}}",
+		"groupWord": "Sekcia",
+		"teacherGroup": "Učitelia"
+	},
+	"restore": {
+		"title": "Obnoviť zo zálohy",
+		"hint": "Vyberte archív vytvorený pomocou „Exportovať všetko“ (Administrácia → Záloha). Najväčšia veľkosť: {{maxMb}} MB. Archív sa skontroluje skôr, než sa čokoľvek obnoví.",
+		"choose": "Vybrať archív",
+		"checking": "Kontrola archívu…",
+		"from": "Archív knižnice „{{library}}“, vytvorený {{date}}, verzia {{version}}.",
+		"fromAnonymous": "Archív vytvorený {{date}}, verzia {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "Čitatelia",
+			"catalog": "Katalóg a exempláre",
+			"loans": "Výpožičky a história",
+			"printLists": "Zoznamy na tlač",
+			"photos": "Fotografie čitateľov",
+			"covers": "Obálky",
+			"notes": "Hlásenia",
+			"dates": "Dátumy kalendára",
+			"audit": "Záznam činnosti",
+			"ui": "Rozhranie",
+			"security": "Zabezpečenie a prístup",
+			"library": "Knižnica a škola"
+		},
+		"images": "Fotografie: {{photos}} · obálky: {{covers}}",
+		"accounts": "Účty, ktoré sa budú môcť prihlásiť: {{accounts}}. Heslá sú tie z archívu.",
+		"warning": "Obnovenie naraz vráti nastavenia, údaje a obrázky tak, ako boli v archíve. Potom už sprievodca nastavením nebude potrebný.",
+		"apply": "Obnoviť",
+		"restoring": "Obnovuje sa…",
+		"cancel": "Zrušiť",
+		"back": "Späť na sprievodcu nastavením",
+		"done": {
+			"title": "Obnovenie dokončené",
+			"hint": "Knižnica je taká, aká bola v archíve. Na prihlásenie použite jeden z týchto účtov s heslom, aké mal v archíve:",
+			"login": "Prejsť na prihlásenie"
+		},
+		"errors": {
+			"too_large": "Archív je príliš veľký (najviac {{maxMb}} MB).",
+			"not_zip": "Súbor nie je platný archív ZIP.",
+			"not_archive": "Súbor nie je archív programu BiblioViva: vyberte archív vytvorený pomocou „Exportovať všetko“.",
+			"too_many_files": "Archív obsahuje príliš veľa súborov.",
+			"unsafe_path": "Archív obsahuje nepovolenú cestu: {{name}}",
+			"link": "Archív obsahuje odkaz, ktorý nie je povolený: {{name}}",
+			"unknown_file": "Archív obsahuje súbor, ktorý nie je súčasťou programu BiblioViva: {{name}}",
+			"not_setup": "Sprievodca nastavením je už dokončený: obnovenie sa robí v časti Administrácia → Záloha.",
+			"newer_version": "Archív vytvorila novšia verzia programu BiblioViva ({{name}}): najprv nainštalujte túto verziu.",
+			"missing_parts": "Archív je neúplný: chýbajú {{name}}. Vyberte archív vytvorený pomocou „Exportovať všetko“.",
+			"unfinished_setup": "Archív pochádza z inštalácie, v ktorej sprievodca nastavením nebol dokončený.",
+			"not_ready": "Archív má problémy a nedá sa obnoviť: {{name}}",
+			"gone": "Skontrolovaný archív už nie je k dispozícii: vyberte ho znova.",
+			"failed": "Obnovenie sa nepodarilo."
+		}
+	}
+}

@@ -1,0 +1,89 @@
+/* Full variant: the top label of pair-default. */
+.band {
+	height: 100%;
+	box-sizing: border-box;
+	padding-top: 3mm;
+	text-align: center;
+	overflow: hidden;
+	font-family: Arial, Helvetica, "Liberation Sans", sans-serif;
+	font-weight: 700;
+	color: #000;
+}
+.band .code,
+.band .title {
+	font-size: 10pt;
+	line-height: 1.2;
+	white-space: nowrap;
+}
+.band .pictogram {
+	display: block;
+	width: 20mm;
+	height: 20mm;
+	margin: 2mm auto;
+	object-fit: contain;
+}
+.band .head,
+.band .sub {
+	font-size: 15pt;
+	line-height: 1.15;
+	text-transform: uppercase;
+}
+
+/* Compact variant for small spine stickers (cells lower than 40 mm): a colour stripe (hatched when
+   the printer is black and white, `labels.monochrome`), the pictogram, the call number and the
+   reading level in a ring. Colour is never the only cue: the pictogram and the text carry it too. */
+.spine {
+	display: grid;
+	grid-template-columns: 2.5mm auto 1fr auto;
+	align-items: center;
+	gap: 1.2mm;
+	padding: 1.2mm;
+	height: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	font-family: Arial, Helvetica, "Liberation Sans", sans-serif;
+	color: #000;
+}
+.spine .stripe {
+	background: var(--band, #999);
+	height: 100%;
+	border-radius: 0.5mm;
+}
+.spine.hatched .stripe {
+	background: repeating-linear-gradient(135deg, #000 0 0.4mm, #fff 0.4mm 1.2mm);
+}
+.spine .pictogram {
+	display: block;
+	height: 10mm;
+	width: 10mm;
+	object-fit: contain;
+}
+.spine .call {
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	font-weight: 700;
+	line-height: 1.05;
+}
+.spine .call .head {
+	font-size: 4.2mm;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+.spine .call .rest {
+	font-size: 4.2mm;
+	text-transform: uppercase;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: clip;
+}
+.spine .class {
+	font-size: 5mm;
+	font-weight: 800;
+	border: 0.35mm solid #000;
+	border-radius: 50%;
+	width: 7.5mm;
+	height: 7.5mm;
+	display: grid;
+	place-items: center;
+}

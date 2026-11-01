@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "Katalog",
+		"search": "Išči po naslovu, avtorju ali ISBN…",
+		"new": "Nova knjiga",
+		"empty": "Nobena knjiga ne ustreza filtrom.",
+		"countFiltered": "{{shown}} {{shown:plural; one:naslov ustreza; two:naslova ustrezata; few:naslovi ustrezajo; other:naslovov ustreza;}} filtrom",
+		"clearFilters": "Ponastavi filtre",
+		"filters": {
+			"kind": "Vrsta",
+			"genre": "Žanr",
+			"class": "Klasifikacija",
+			"readingLevel": "Bralna stopnja",
+			"itemType": "Gradivo",
+			"series": "Zbirka",
+			"all": "Vse",
+			"allF": "Vse",
+			"withdrawn": "Prikaži tudi izločene knjige"
+		},
+		"columns": {
+			"title": "Naslov",
+			"series": "Zbirka",
+			"author": "Avtor",
+			"year": "Leto",
+			"isbn": "ISBN",
+			"classification": "Klasifikacija",
+			"copies": "Izvodi",
+			"callNumber": "Signatura",
+			"acquiredAt": "Pridobljeno"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "Poišči v katalogu",
+		"startHint": "Išči po naslovu, avtorju, založbi, kodi ali ISBN ali uporabi filtre."
+	},
+	"kinds": {
+		"fiction": "Leposlovje",
+		"nonfiction": "Neleposlovje"
+	},
+	"fields": {
+		"title": "Naslov",
+		"subtitle": "Podnaslov",
+		"originalTitle": "Izvirni naslov",
+		"originalTitleHint": "Samo če je knjiga prevod: naslov dela v izvirnem jeziku.",
+		"responsibility": "Navedba odgovornosti (kot na naslovni strani)",
+		"author": "Avtor",
+		"publisher": "Založba",
+		"publicationPlace": "Kraj",
+		"publicationYear": "Leto",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN (ne ISBN)",
+		"physicalDescription": "Fizični opis",
+		"series": "Zbirka",
+		"seriesNumber": "Številka v zbirki",
+		"seriesHint": "Na primer Harry Potter in 3. Med pisanjem se prikažejo zbirke, ki so že v katalogu.",
+		"dewey": "Dewey (iz SBN)",
+		"kind": "Vrsta",
+		"genre": "Žanr",
+		"classCode": "Klasifikacija",
+		"readingLevel": "Bralna stopnja",
+		"subjects": "Predmetne oznake",
+		"notes": "Opombe",
+		"authorHint": "Priimek, Ime. Hitre izbire uporabite, kadar ni osebnega avtorja.",
+		"subjectsHint": "Ena na vrstico ali ločeno z vejicami.",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "Nova knjiga",
+		"editTitle": "Uredi zapis",
+		"create": "Shrani zapis",
+		"save": "Shrani spremembe",
+		"identity": "Zapis",
+		"publication": "Objava",
+		"classification": "Klasifikacija",
+		"more": "Drugi podatki",
+		"quickPicks": "Hitre izbire",
+		"unknownPublisher": "Neznana založba",
+		"unknownPlace": "Neznan kraj",
+		"singleCopy": "Izvod {{barcode}}",
+		"singleCopyHint": "Zapis ima en sam izvod: njegovi podatki se urejajo tukaj in shranijo skupaj z zapisom."
+	},
+	"picker": {
+		"kind": "Katera vrsta knjige je to?",
+		"fiction": "Leposlovje",
+		"nonfiction": "Neleposlovje",
+		"genre": "Izberite žanr",
+		"class": "Izberite temo",
+		"readingLevel": "Bralna stopnja",
+		"anyClass": "Brez",
+		"back": "Nazaj na glavne teme",
+		"children": "Teme: {{label}}",
+		"selected": "Izbrano: {{label}}",
+		"parentOnly": "Uporabi „{{label}}“ na splošno",
+		"later": "Klasificiraj pozneje",
+		"laterHint": "Knjiga gre na seznam „Za klasifikacijo“: njeni izvodi se ne izposojajo, trak na hrbtu pa se ne natisne, dokler ni klasificirana."
+	},
+	"detail": {
+		"heading": "Zapis knjige",
+		"tabs": {
+			"copies": "Izvodi",
+			"details": "Podrobnosti"
+		},
+		"copies": "{{available}} na voljo od {{total}}",
+		"noCopies": "Še ni izvodov: za izposojo jih je treba dodati.",
+		"seriesLink": "Vse knjige zbirke „{{series}}“",
+		"edit": "Uredi",
+		"delete": "Izbriši zapis",
+		"addCopies": "Dodaj izvode",
+		"deleteTitle": "Izbrisati zapis „{{title}}“?",
+		"deleteDescription": "Zapis izgine iz kataloga. Mogoče le brez izvodov.",
+		"deleted": "Zapis izbrisan",
+		"hasItems": "Zapis še vedno ima {{count}} {{count:plural; one:izvod; two:izvoda; few:izvodi; other:izvodov;}}: najprej {{count:plural; one:ga; two:ju; few:jih; other:jih;}} izločite ali izbrišite.",
+		"columns": {
+			"barcode": "Črtna koda",
+			"callNumber": "Signatura",
+			"itemType": "Gradivo",
+			"readingLevel": "Stopnja",
+			"status": "Stanje",
+			"borrower": "Izposojeno uporabniku",
+			"acquisition": "Pridobljeno",
+			"labels": "Nalepke"
+		},
+		"dueOn": "rok vrnitve {{date}}",
+		"identifiers": "Identifikatorji",
+		"source": "Vir: {{source}}",
+		"created": "Ustvarjen {{when}}",
+		"updated": "Zadnja sprememba {{when}}",
+		"onLoan": "Na izposoji"
+	},
+	"item": {
+		"addTitle": "Dodaj izvode",
+		"copies": "Število izvodov",
+		"itemType": "Gradivo",
+		"callNumber": "Signatura",
+		"callNumberHint": "Predlagana glede na klasifikacijo; lahko se spremeni.",
+		"readingLevel": "Bralna stopnja izvoda",
+		"enumeration": "Zvezek / številka",
+		"acquisitionDate": "Datum pridobitve",
+		"notes": "Opombe o izvodu",
+		"notForLoan": "Samo za branje na mestu (ne izposoja se)",
+		"add": "Dodaj",
+		"added": "{{count}} {{count:plural; one:izvod dodan; two:izvoda dodana; few:izvodi dodani; other:izvodov dodanih;}}: {{barcodes}}",
+		"editTitle": "Uredi izvod {{barcode}}",
+		"save": "Shrani",
+		"saved": "Izvod posodobljen",
+		"status": "Spremeni stanje",
+		"statusTitle": "Stanje izvoda {{barcode}}",
+		"newStatus": "Novo stanje",
+		"reason": "Razlog (neobvezno, se beleži)",
+		"statusSaved": "Stanje posodobljeno",
+		"onLoan": "Izvod je na izposoji: najprej zabeležite vrnitev.",
+		"delete": "Izbriši izvod",
+		"deleteTitle": "Izbrisati izvod {{barcode}}?",
+		"deleteDescription": "Samo za napake pri katalogizaciji: izvoda, ki je bil kdaj izposojen, ni mogoče izbrisati, treba ga je izločiti.",
+		"deleted": "Izvod izbrisan",
+		"hasLoans": "Izvod ima zabeležene izposoje: namesto brisanja ga je treba izločiti.",
+		"labelsTitle": "Nalepke izvoda {{barcode}}"
+	},
+	"errors": {
+		"isbnInvalid": "Neveljaven ISBN (preverite številke)",
+		"isbnTaken": "Zapis s tem ISBN že obstaja",
+		"issnInvalid": "Neveljaven ISSN",
+		"eanInvalid": "Neveljaven EAN",
+		"yearImplausible": "Neprimerno leto",
+		"genreRequired": "Izberite žanr",
+		"genreUnknown": "Žanra ni v nastavitvah",
+		"genreNotForNonfiction": "Neleposlovje nima žanra",
+		"classCodeRequired": "Izberite temo",
+		"classCodeUnknown": "Teme ni v nastavitvah",
+		"classCodeNotForFiction": "Leposlovje nima teme",
+		"readingLevelNotAllowed": "Bralna stopnja tukaj ni predvidena",
+		"readingLevelOutOfRange": "Bralne stopnje ni v nastavitvah",
+		"itemTypeUnknown": "Gradivo ni predvideno v nastavitvah",
+		"acquisitionDateInvalid": "Neveljaven datum (LLLL-MM-DD)",
+		"copiesOutOfRange": "Od 1 do 100 izvodov naenkrat"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "Preskusni ponudnik"
+		},
+		"errors": {
+			"unreachable": "Storitev ni dosegljiva. Preverite povezavo z internetom in poskusite pozneje.",
+			"timeout": "Storitev se ni odzvala pravočasno. Poskusite pozneje.",
+			"protocol": "Storitev je vrnila nepričakovan odgovor. Podatke je mogoče vnesti ročno.",
+			"http": "Storitev je vrnila napako. Poskusite pozneje.",
+			"rate_limited": "Storitev je zahtevo zavrnila zaradi preveč poizvedb. Poskusite pozneje.",
+			"not_configured": "Storitev ni nastavljena: manjka nastavitev (na primer ključ API).",
+			"spawn": "Program yaz-client na tem strežniku ni na voljo. Obvestite skrbnika."
+		},
+		"noHits": "Ni rezultatov iz {{provider}}.",
+		"hits": "{{count}} {{count:plural; one:zadetek; two:zadetka; few:zadetki; other:zadetkov;}} iz {{provider}}",
+		"fromCache": "iz predpomnilnika"
+	},
+	"fastAdd": {
+		"title": "Nova knjiga",
+		"steps": {
+			"code": "Koda",
+			"lookup": "Iskanje",
+			"form": "Zapis in izvodi",
+			"done": "Dokončano"
+		},
+		"code": {
+			"heading": "Preberite črtno kodo",
+			"label": "ISBN ali EAN",
+			"placeholder": "978…",
+			"material": "Gradivo",
+			"noCode": "Brez kode",
+			"noCodeHint": "Iščite po naslovu in avtorju ali zapis vnesite ročno.",
+			"manual": "Vnesi ročno",
+			"notACode": "Prebrana koda ni ISBN ne EAN: preverite številke ali izberite „Brez kode“.",
+			"eanNotIsbn": "Prebran EAN {{ean}}: ni ISBN, zato je treba zapis vnesti ročno.",
+			"cameraNotIsbn": "Ni ISBN: v okvir postavite črtno kodo knjige"
+		},
+		"search": {
+			"heading": "Iskanje po naslovu in avtorju",
+			"title": "Naslov",
+			"author": "Avtor",
+			"submit": "Išči",
+			"empty": "Vpišite vsaj naslov ali avtorja."
+		},
+		"duplicate": {
+			"heading": "Ta ISBN je že v katalogu",
+			"copies": "{{count}} {{count:plural; one:izvod; two:izvoda; few:izvodi; other:izvodov;}}",
+			"addCopy": "Dodaj izvod",
+			"open": "Odpri zapis",
+			"another": "Preberite drugo kodo"
+		},
+		"lookup": {
+			"searching": "Iskanje v {{providers}}…",
+			"best": "Najpopolnejši",
+			"heading": "Najdeni zapisi",
+			"pick": "Uporabi ta zapis",
+			"none": "Zapis ni najden. Zapis je mogoče vnesti ročno.",
+			"manual": "Vnesi ročno",
+			"bySearch": "Iskanje po naslovu",
+			"retry": "Poskusi znova",
+			"another": "Nova koda",
+			"source": "Vir: {{provider}}",
+			"providerOk": "{{count}} {{count:plural; one:zapis; two:zapisa; few:zapisi; other:zapisov;}}",
+			"providerCached": "iz predpomnilnika",
+			"failed": "Napaka"
+		},
+		"form": {
+			"heading": "Preverite zapis in dodajte izvode",
+			"rescan": "Preberite drugo kodo",
+			"bestOf": "Najpopolnejši od najdenih zapisov ({{count}}). Leto in opis preverite na izvodu.",
+			"otherRecords": "{{count:plural; one:Drugi zapis; two:Drugi zapisa; few:Drugi zapisi; other:Drugih zapisov;}} ({{count}})",
+			"fromSource": "Zapis iz {{provider}}: pred shranjevanjem preverite podatke.",
+			"manualSource": "Zapis vnesen ročno.",
+			"copiesSection": "Izvodi",
+			"copies": "Število izvodov",
+			"itemType": "Gradivo",
+			"callNumber": "Signatura",
+			"readingLevel": "Bralna stopnja izvodov",
+			"acquisitionDate": "Datum pridobitve",
+			"save": "Shrani zapis in izvode",
+			"deweySuggested": "Predmet predlagan iz Dewey številke {{dewey}}."
+		},
+		"done": {
+			"heading": "Zapis shranjen",
+			"summary": "„{{title}}“ z {{count}} {{count:plural; one:izvodom; two:izvodoma; few:izvodi; other:izvodi;}}",
+			"summaryCopies": "{{count}} {{count:plural; one:izvod dodan; two:izvoda dodana; few:izvodi dodani; other:izvodov dodanih;}} v „{{title}}“",
+			"barcodes": "Črtne kode izvodov",
+			"printLabels": "Natisni nalepke",
+			"addToList": "Dodaj na seznam nalepk",
+			"open": "Odpri zapis",
+			"another": "Dodaj drugega"
+		},
+		"cover": {
+			"title": "Platnica",
+			"alt": "Platnica knjige",
+			"searching": "Iskanje platnice na spletu…",
+			"found": "Najdena na {{provider}}: shrani se z zapisom. Če ni pravilna, fotografirajte platnico knjige.",
+			"photo": "Fotografija platnice: shrani se z zapisom.",
+			"none": "Na spletu ni najdena nobena platnica: možno jo je fotografirati.",
+			"empty": "Ni platnice: možno jo je fotografirati.",
+			"take": "Fotografiraj platnico",
+			"replace": "Zamenjaj s fotografijo",
+			"remove": "Odstrani",
+			"saving": "Shranjujem platnico…",
+			"failed": "Platnica ni shranjena: dodate jo lahko iz zapisa knjige."
+		}
+	},
+	"cover": {
+		"title": "Platnica",
+		"take": "Fotografiraj platnico",
+		"upload": "Naloži datoteko",
+		"change": "Spremeni platnico",
+		"delete": "Odstrani platnico",
+		"deleteTitle": "Odstraniti platnico?",
+		"deleteDescription": "Slika se izbriše s strežnika; novo platnico je mogoče fotografirati.",
+		"shoot": "Zajemi",
+		"loading": "Nalaganje modula za poravnavo ({{loaded}} od {{total}} MB), samo ob prvi uporabi.",
+		"loadingShort": "Nalaganje modula za poravnavo ({{loaded}} MB), samo ob prvi uporabi.",
+		"loadFailed": "Modula za poravnavo ni bilo mogoče naložiti. Preverite povezavo in poskusite znova.",
+		"detecting": "Iskanje robov platnice…",
+		"notFound": "Robovi niso bili samodejno najdeni: povlecite vogale na platnico.",
+		"adjustHint": "Povlecite štiri vogale na robove platnice, nato jo poravnajte.",
+		"straighten": "Poravnaj",
+		"result": "Rezultat",
+		"use": "Uporabi to platnico",
+		"retake": "Ponovi",
+		"cancel": "Prekliči",
+		"saved": "Platnica shranjena",
+		"deleted": "Platnica odstranjena",
+		"placeholder": "Brez platnice",
+		"alt": "Platnica knjige {{title}}",
+		"cameraHint": "Zajemite celotno platnico, tudi postrani: po zajemu se poravna.",
+		"errors": {
+			"too_large": "Datoteka je prevelika: največ {{maxMb}} MB.",
+			"not_an_image": "Datoteka ni berljiva slika.",
+			"unsupported_format": "Oblika slike ni podprta (dovoljeni so JPEG, PNG, WebP in HEIC).",
+			"empty": "Ni izbrane datoteke."
+		},
+		"download": "Prenesi platnico",
+		"downloading": "Iskanje platnice na spletu…",
+		"downloaded": "Platnica prenesena iz {{provider}}",
+		"downloadNotFound": "Na spletu za ta ISBN ni najdena nobena platnica: možno jo je fotografirati.",
+		"downloadNoIsbn": "Zapis nima ISBN: platnico je treba fotografirati."
+	},
+	"export": {
+		"copiesTotal": "Izvodi",
+		"copiesAvailable": "Na voljo",
+		"callNumber": "Signatura",
+		"acquiredAt": "Pridobljeno"
+	},
+	"import": {
+		"title": "Uvoz kataloga",
+		"upload": {
+			"file": "Datoteka CSV",
+			"hint": "Ena vrstica na izvod: podatki o naslovu se ponavljajo v vrsticah njegovih izvodov. Obvezni so naslov, avtor in založba. Uporabite glave predloge, ki jo prenesete spodaj s potrebnimi stolpci. Za selitev iz Koha uporabite izvoz, opisan v vodniku za skrbnika.",
+			"submit": "Naloži"
+		},
+		"mapping": {
+			"uncertain": "Stolpci niso prepoznani: pred nadaljevanjem določite polje vsakega.",
+			"remembered": "Stolpci, zapomnjeni ob zadnjem uvozu te datoteke.",
+			"specialValues": "Posebne vrednosti, kadar manjka avtor ali založba („{{author}}“, „{{publisher}}“)",
+			"specialValuesHint": "Brez te izbire so vrstice brez avtorja ali založbe napake.",
+			"validate": "Preveri datoteko",
+			"without": {
+				"biblioKey": "Brez stolpca biblio_key se izvodi iste knjige združijo po ISBN; vrstice brez ISBN so vsaka en naslov.",
+				"barcode": "Brez stolpca barcode se črtne kode izvodov ustvarijo: po uvozu natisnite nalepke.",
+				"classification": "Brez stolpca classification knjige gredo na seznam „Za klasifikacijo“: njihovi izvodi se ne izposojajo, dokler niso klasificirani."
+			}
+		},
+		"fields": {
+			"biblioKey": "Ključ naslova (biblionumber)",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "Naslov",
+			"subtitle": "Podnaslov",
+			"originalTitle": "Izvirni naslov",
+			"responsibility": "Navedba odgovornosti",
+			"author": "Avtor",
+			"publisher": "Založba",
+			"publicationPlace": "Kraj izdaje",
+			"publicationYear": "Leto",
+			"physicalDescription": "Fizični opis",
+			"series": "Zbirka",
+			"seriesNumber": "Številka v zbirki",
+			"dewey": "Dewey",
+			"classification": "Klasifikacija (žanr ali tema, ccode v Kohi)",
+			"readingLevel": "Bralna stopnja",
+			"subjects": "Predmetne oznake",
+			"notes": "Opombe naslova",
+			"barcode": "Črtna koda izvoda",
+			"callNumber": "Signatura",
+			"itemType": "Gradivo",
+			"enumeration": "Zvezek",
+			"status": "Stanje",
+			"notForLoan": "Izključeno iz izposoje",
+			"acquisitionDate": "Datum pridobitve",
+			"itemNotes": "Opombe izvoda"
+		},
+		"preview": {
+			"ready": "Napak ni: uvoz je mogoč.",
+			"blocked": "Odpravite napake v datoteki in ponovno preverite: z napakami se nič ne uvozi.",
+			"nothing": "Vsi izvodi v datoteki so že v katalogu: ni ničesar za uvoz.",
+			"titles": "{{new}} {{new:plural; one:nov naslov; two:nova naslova; few:novi naslovi; other:novih naslovov;}}, {{existing}} že v katalogu (njihovi izvodi se dodajo)",
+			"columns": {
+				"title": "Naslov",
+				"barcode": "Črtna koda",
+				"classification": "Klasifikacija"
+			},
+			"question": {
+				"title": "Izvodi istega naslova z različnimi stopnjami",
+				"text": "Izvodi se razlikujejo po bralni stopnji pri {{count}} {{count:plural; one:naslovu; two:naslovih; few:naslovih; other:naslovih;}}. Stopnja je lahko zapisana na vsakem izvodu namesto na naslovu: to je nastavitev „stopnja na izvod“, ki velja za ves katalog in prenese stopnje že obstoječih naslovov na njihove izvode.",
+				"yes": "Da, stopnja na izvod",
+				"no": "Ne, to so napake za popravek"
+			},
+			"commit": "Uvozi",
+			"back": "Nazaj na stolpce",
+			"generatedBarcodes": "{{count}} {{count:plural; one:izvod; two:izvoda; few:izvodi; other:izvodov;}} brez črtne kode: koda se ustvari, nato se natisnejo nalepke.",
+			"toClassify": "{{count}} {{count:plural; one:nov naslov; two:nova naslova; few:novi naslovi; other:novih naslovov;}} brez klasifikacije: {{count:plural; one:bo šel; two:bosta šla; few:bodo šli; other:bodo šli;}} na seznam „Za klasifikacijo“."
+		},
+		"reasons": {
+			"tooLong": "Predolgo besedilo v stolpcu {{column}}: največ {{max}} znakov",
+			"isbnInvalid": "Neveljaven ISBN: „{{value}}“",
+			"classificationUnknown": "Klasifikacije ni v nastavitvah: „{{value}}“",
+			"barcodeInvalid": "Črtna koda z nedovoljenimi znaki: „{{value}}“",
+			"barcodeCheckDigit": "Črtna koda z napačnim kontrolnim znakom: „{{value}}“",
+			"barcodeDuplicateInFile": "Črtna koda je že uporabljena v vrstici {{line}}",
+			"barcodeTaken": "Koda {{value}} že pripada drugemu izvodu v katalogu",
+			"barcodeIsCard": "Koda {{value}} je ali je videti kot številka izkaznice: izvod ne more imeti kode izkaznice",
+			"statusUnknown": "Stanje ni prepoznano: „{{value}}“ (na voljo, izgubljeno, poškodovano, v popravilu, izločeno)",
+			"notForLoanUnknown": "Vrednost za „izključeno iz izposoje“ ni prepoznana: „{{value}}“ (da/ne)",
+			"dateInvalid": "Neveljaven datum: „{{value}}“ (LLLL-MM-DD ali DD. MM. LLLL)",
+			"authorMissing": "Manjka avtor (z „posebnimi vrednostmi“ postane Anonimo)",
+			"publisherMissing": "Manjka založba (z „posebnimi vrednostmi“ postane s.n.)",
+			"titleMissing": "Manjka naslov",
+			"groupConflict": "Enak ključ kot v vrstici {{line}}, vendar drug naslov",
+			"classQuestion": "Izvodi z različnimi stopnjami ({{classes}}): odgovorite na vprašanje spodaj",
+			"classDiffers": "Izvodi z različnimi stopnjami ({{classes}}) brez stopnje na izvod",
+			"copyExists": "Izvod je že v katalogu: preskočen",
+			"mergedIntoExisting": "Dodano k naslovu, ki je že v katalogu (isti ključ ali isti ISBN)"
+		},
+		"done": {
+			"title": "Katalog uvožen",
+			"summary": "{{titlesCreated}} {{titlesCreated:plural; one:nov naslov; two:nova naslova; few:novi naslovi; other:novih naslovov;}}, {{copiesCreated}} {{copiesCreated:plural; one:izvod dodan; two:izvoda dodana; few:izvodi dodani; other:izvodov dodanih;}} ({{titlesMerged}} {{titlesMerged:plural; one:naslov je že prisoten; two:naslova sta že prisotna; few:naslovi so že prisotni; other:naslovov je že prisotnih;}}, {{copiesSkipped}} {{copiesSkipped:plural; one:izvod preskočen; two:izvoda preskočena; few:izvodi preskočeni; other:izvodov preskočenih;}}).",
+			"classPerItem": "Stopnja na izvod je bila vklopljena.",
+			"batch": "Uvoz št. {{id}}: izvirna datoteka je shranjena.",
+			"labels": "Natisnite nalepke izvodov brez črtne kode",
+			"open": "Pojdi v katalog",
+			"again": "Uvozi drugo datoteko"
+		},
+		"columns": {
+			"title": {
+				"hint": "Naslov knjige."
+			},
+			"author": {
+				"hint": "Priimek, ime; prazno je napaka, razen če so „posebne vrednosti“."
+			},
+			"publisher": {
+				"hint": "Založba; prazno kot pri avtorju."
+			},
+			"biblioKey": {
+				"hint": "Šifra naslova v starem programu (biblionumber v Kohi): drži izvode skupaj.",
+				"missing": "izvodi se združijo po ISBN"
+			},
+			"barcode": {
+				"hint": "Črtna koda, ki je že na izvodu.",
+				"missing": "črtna koda se ustvari in nalepke se natisnejo"
+			},
+			"classification": {
+				"hint": "Šifra žanra (leposlovje) ali teme (neleposlovje).",
+				"missing": "knjiga gre na seznam „Za klasifikacijo“"
+			},
+			"readingLevel": {
+				"hint": "Bralna stopnja (leposlovje)."
+			},
+			"isbn": {
+				"hint": "ISBN-10 ali ISBN-13."
+			},
+			"issn": {
+				"hint": "Za periodiko."
+			},
+			"ean": {
+				"hint": "Koda EAN za DVD in druga gradiva."
+			},
+			"subtitle": {
+				"hint": "Podnaslov."
+			},
+			"originalTitle": {
+				"hint": "Samo za prevode: naslov v izvirnem jeziku."
+			},
+			"responsibility": {
+				"hint": "Ilustratorji, prevajalci…"
+			},
+			"publicationPlace": {
+				"hint": "Kraj izdaje."
+			},
+			"publicationYear": {
+				"hint": "Leto izdaje."
+			},
+			"physicalDescription": {
+				"hint": "Strani, ilustracije, format."
+			},
+			"series": {
+				"hint": "Zbirka (ne založniška edicija)."
+			},
+			"seriesNumber": {
+				"hint": "Številka v zbirki."
+			},
+			"dewey": {
+				"hint": "Dewey številka, samo kot sklic."
+			},
+			"subjects": {
+				"hint": "Ključne besede, ločene s ; ali ,."
+			},
+			"notes": {
+				"hint": "Opombe naslova."
+			},
+			"callNumber": {
+				"hint": "Signatura; če manjka, se predlaga."
+			},
+			"itemType": {
+				"hint": "Gradivo (knjiga, DVD …); če manjka, prvo nastavljeno."
+			},
+			"enumeration": {
+				"hint": "Zvezek, pri delih v več zvezkih."
+			},
+			"status": {
+				"hint": "na voljo, izgubljeno, poškodovano, v popravilu, izločeno."
+			},
+			"notForLoan": {
+				"hint": "1 ali da za izvode za branje na mestu."
+			},
+			"acquisitionDate": {
+				"hint": "Datum pridobitve; če manjka, danes."
+			},
+			"itemNotes": {
+				"hint": "Opombe izvoda."
+			}
+		}
+	},
+	"batch": {
+		"selected": "Spremeni izvode izbranih",
+		"title": "Spremeni izvode",
+		"scope": "{{count}} {{count:plural; one:izvod; two:izvoda; few:izvodi; other:izvodov;}}",
+		"operation": "Kaj spremeniti",
+		"operations": {
+			"status": "Stanje",
+			"itemType": "Gradivo",
+			"notForLoan": "Izključeno iz izposoje",
+			"readingLevel": "Bralna stopnja izvoda",
+			"acquisitionDate": "Datum pridobitve"
+		},
+		"value": "Nova vrednost",
+		"yes": "Da",
+		"no": "Ne",
+		"noClass": "Brez stopnje",
+		"reason": "Razlog",
+		"reasonHint": "Obvezno za izgubljene in izločene: ostane v dnevniku vsakega izvoda.",
+		"check": "Preveri",
+		"apply": "Uporabi za {{count}} {{count:plural; one:izvod; two:izvoda; few:izvode; other:izvodov;}}",
+		"plan": {
+			"changes": "{{count}} {{count:plural; one:izvod se spremeni; two:izvoda se spremenita; few:izvodi se spremenijo; other:izvodov se spremeni;}}",
+			"onLoan": "{{count}} {{count:plural; one:izvod je na izposoji in ostane tak, kot je (najprej ga je treba vrniti); two:izvoda sta na izposoji in ostaneta tako, kot sta (najprej ju je treba vrniti); few:izvodi so na izposoji in ostanejo tako, kot so (najprej jih je treba vrniti); other:izvodov je na izposoji in ostane tako, kot je (najprej jih je treba vrniti);}}",
+			"unchanged": "{{count}} {{count:plural; one:izvod že ima; two:izvoda že imata; few:izvodi že imajo; other:izvodov že ima;}} to vrednost",
+			"notFound": "{{count}} {{count:plural; one:izvod ne obstaja več; two:izvoda ne obstajata več; few:izvodi ne obstajajo več; other:izvodov ne obstaja več;}}",
+			"notAllowed": "{{count}} {{count:plural; one:izvod ni leposlovje; two:izvoda nista leposlovje; few:izvodi niso leposlovje; other:izvodov ni leposlovje;}}: bralna stopnja se ne uporablja",
+			"none": "Noben izvod ni za spremembo."
+		},
+		"excludedTitle": "Izvodi, ki ostanejo nespremenjeni",
+		"done": "{{count}} {{count:plural; one:izvod spremenjen; two:izvoda spremenjena; few:izvodi spremenjeni; other:izvodov spremenjenih;}}",
+		"errors": {
+			"reasonRequired": "Zapišite razlog: obvezen je za izgubljene in izločene.",
+			"itemTypeUnknown": "Gradiva ni predvidenega v nastavitvah.",
+			"readingLevelNotAllowed": "Stopnja na izvod ni vklopljena.",
+			"readingLevelOutOfRange": "Bralne stopnje ni v nastavitvah.",
+			"dateInvalid": "Neveljaven datum.",
+			"statusUnknown": "Neveljavno stanje.",
+			"classificationUnknown": "Izberite žanr ali temo iz nastavitev."
+		},
+		"reclassify": {
+			"button": "Ponovno klasificiraj",
+			"title": "Ponovno klasificiraj izbrane naslove",
+			"scope": "{{count}} {{count:plural; one:naslov; two:naslova; few:naslovi; other:naslovov;}}",
+			"resuggest": "Signature izvodov zapišite na novo glede na novo klasifikacijo",
+			"labelsHint": "Trakovi na hrbtu (in nalepke, če se signatura spremeni) se vrnejo med tiste za tisk.",
+			"changes": "{{count}} {{count:plural; one:naslov se spremeni; two:naslova se spremenita; few:naslovi se spremenijo; other:naslovov se spremeni;}}",
+			"apply": "Ponovno klasificiraj {{count}} {{count:plural; one:naslov; two:naslova; few:naslove; other:naslovov;}}",
+			"done": "{{count}} {{count:plural; one:naslov ponovno klasificiran; two:naslova ponovno klasificirana; few:naslovi ponovno klasificirani; other:naslovov ponovno klasificiranih;}}, {{calls}} {{calls:plural; one:signatura prepisana; two:signaturi prepisani; few:signature prepisane; other:signatur prepisanih;}}"
+		}
+	},
+	"search": {
+		"suggest": "Koda {{barcode}} je izvod naslova „{{title}}“.",
+		"openSuggest": "Odpri zapis",
+		"available": "Samo na voljo",
+		"yearFrom": "Leto od",
+		"yearTo": "Leto do",
+		"copiesAvailable": "{{available}} od {{total}} na voljo",
+		"noCopies": "Ni izvodov"
+	},
+	"inventory": {
+		"title": "Inventura",
+		"defaultName": "Inventura",
+		"emptyTitle": "Nobena inventura ni v teku",
+		"emptyHint": "Začnite kampanjo in nato preberite izvode polico za polico: ob zaključku se izvodi, ki jih nismo nikoli videli, označijo kot izgubljeni.",
+		"name": "Ime kampanje",
+		"start": "Nova kampanja",
+		"started": "Začeta {{when}}",
+		"overall": "Vsa knjižnica",
+		"progress": "{{seen}} od {{expected}} ({{percent}} %)",
+		"counts": "{{scanned}} {{scanned:plural; one:izvod prebran; two:izvoda prebrana; few:izvodi prebrani; other:izvodov prebranih;}} · {{misplaced}} na napačnem mestu · {{found}} {{found:plural; one:izvod ponovno najden; two:izvoda ponovno najdena; few:izvodi ponovno najdeni; other:izvodov ponovno najdenih;}}",
+		"byShelf": "Napredek po policah",
+		"noShelf": "Brez signature",
+		"scanTitle": "Preberite izvode",
+		"shelf": "Polica",
+		"shelfHint": "Na primer B ali 590: izvodi z drugo signaturo so označeni kot na napačni polici.",
+		"scanLabel": "Črtna koda izvoda",
+		"camera": "Preberi s kamero",
+		"outcomes": {
+			"seen": "{{title}} ({{barcode}}): viden.",
+			"again": "{{title}} ({{barcode}}): že prebrano {{when}}.",
+			"misplaced": "{{title}} ({{barcode}}): na napačnem mestu; vrnite ga na pravo mesto po signaturi.",
+			"found": "{{title}} ({{barcode}}): je bil izgubljen in je bil ponovno najden; spet je na voljo.",
+			"onLoan": "{{title}} ({{barcode}}): na izposoji; vrnitev zabeležite na izposojevalnem pultu.",
+			"withdrawn": "{{title}} ({{barcode}}): izločen izvod, snemite ga s police.",
+			"unknown": "{{code}}: noben izvod nima te črtne kode."
+		},
+		"missing": "Še vedno manjkajo ({{count}})",
+		"allShelves": "Vse police",
+		"allTypes": "Vsa gradiva",
+		"noneMissing": "Vsi pričakovani izvodi so bili videni.",
+		"more": "in še {{count}} {{count:plural; one:izvod; two:izvoda; few:izvodi; other:izvodov;}}: izvozite seznam, da {{count:plural; one:ga; two:ju; few:jih; other:jih;}} vidite.",
+		"close": "Zaključi inventuro",
+		"closeTitle": "Zaključiti inventuro?",
+		"closeHint": "{{count}} {{count:plural; one:izvod, ki ga še nismo videli, bo označen kot izgubljen; two:izvoda, ki ju še nismo videli, bosta označena kot izgubljena; few:izvodi, ki jih še nismo videli, bodo označeni kot izgubljeni; other:izvodov, ki jih še nismo videli, bo označenih kot izgubljenih;}}. Kampanjo je mogoče znova odpreti v enem tednu in tako razveljaviti zaključek.",
+		"closedTitle": "Inventura zaključena",
+		"summary": "Videnih: {{seen}} od {{expected}} {{expected:plural; one:izvoda; two:izvodov; few:izvodov; other:izvodov;}}, {{lost}} {{lost:plural; one:izvod označen kot izgubljen; two:izvoda označena kot izgubljena; few:izvodi označeni kot izgubljeni; other:izvodov označenih kot izgubljenih;}}, {{found}} {{found:plural; one:izvod ponovno najden; two:izvoda ponovno najdena; few:izvodi ponovno najdeni; other:izvodov ponovno najdenih;}}, {{onLoan}} na izposoji, {{misplaced}} na napačnem mestu.",
+		"history": "Prejšnje kampanje",
+		"reopen": "Znova odpri",
+		"errors": {
+			"alreadyOpen": "Inventura je že v teku.",
+			"notOpen": "Ta inventura je zaključena.",
+			"notFound": "Inventura ni najdena.",
+			"tooLate": "Znova jo je mogoče odpreti le v enem tednu po zaključku.",
+			"badName": "Kampanji je treba dati ime.",
+			"badNotes": "Opombe kampanje so lahko dolge največ 500 znakov."
+		},
+		"cameraShelf": "Polica {{shelf}}",
+		"cameraDone": "Končano"
+	},
+	"toClassify": {
+		"title": "Za klasifikacijo",
+		"label": "Za klasifikacijo",
+		"intro": "Knjige, vnesene brez klasifikacije, od najstarejše. Njihovi izvodi se ne izposojajo, dokler niso klasificirani.",
+		"count": "{{count}} {{count:plural; one:knjiga; two:knjigi; few:knjige; other:knjig;}} za klasifikacijo",
+		"empty": "Ni knjig za klasifikacijo",
+		"emptyHint": "Vsaka knjiga v katalogu ima žanr ali temo.",
+		"start": "Začni klasificirati",
+		"classify": "Klasificiraj",
+		"badge": "Za klasifikacijo",
+		"badgeHint": "Izvodi se ne izposojajo, dokler knjiga ni klasificirana.",
+		"columns": {
+			"title": "Naslov",
+			"author": "Avtor",
+			"publisher": "Založba",
+			"year": "Leto",
+			"isbn": "ISBN",
+			"copies": "Izvodi",
+			"enteredOn": "Vneseno"
+		},
+		"flow": {
+			"title": "Klasificiraj knjigo",
+			"saveNext": "Shrani in naprej",
+			"save": "Shrani",
+			"skip": "Preskoči",
+			"saved": "„{{title}}“ je klasificirana.",
+			"end": "V tem krogu ni več knjig za klasifikacijo.",
+			"backToList": "Nazaj na seznam",
+			"already": "Ta knjiga je že klasificirana.",
+			"callNumber": "Signatura izvodov",
+			"callNumberHint": "Izvodi brez signature jo dobijo; nato se trak na hrbtu lahko natisne.",
+			"dewey": "Dewey številka {{dewey}} ustreza temi {{code}}.",
+			"copies": "{{count}} {{count:plural; one:izvod; two:izvoda; few:izvodi; other:izvodov;}}",
+			"subjects": "Predmetne oznake",
+			"notes": "Opombe"
+		}
+	}
+}

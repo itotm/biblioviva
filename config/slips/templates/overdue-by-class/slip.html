@@ -1,0 +1,11 @@
+<section class="group">
+	<h2>{{group.label}} - {{words.overdues_on}}</h2>
+	<table>
+		<thead>
+			<tr><th>{{words.name}}</th><th>{{words.title}}</th><th>{{words.days_overdue}}</th></tr>
+		</thead>
+		<tbody>
+			{{#rows}}<tr><td>{{patron.full_name}}</td><td>{{biblio.title}}</td><td>{{days_overdue}}</td></tr>{{/rows}}
+		</tbody>
+	</table>
+</section>

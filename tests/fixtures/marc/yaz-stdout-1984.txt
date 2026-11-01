@@ -1,0 +1,581 @@
+Connecting...OK.
+Sent initrequest.
+Connection accepted by v3 target.
+ID     : 81
+Name   : Metaproxy/YAZ
+Version: 1.20.0/5.31.1 c3cea881e3e7e80b069ddd1429994e58841acb14
+Options: search present scan namedResultSets
+Elapsed: 0.041672
+Sent searchRequest.
+Received SearchResponse.
+Search was a success.
+Number of hits: 3, setno 1
+records returned: 0
+Elapsed: 0.018000
+Sent presentRequest (1+1).
+Records: 1
+[nopac]Record type: Unimarc
+convert from utf-8 to utf-8
+03611nam0 22008533i 4500
+001 IT\ICCU\RMB\0803390
+003 http://id.sbn.it/bid/RMB0803390
+005 20240801172125.2
+010    $a 978-88-04-66823-7
+100    $a 20190504d2019    ||||0itac50      ba
+101    $a ita $c eng
+102    $a IT
+181  1 $6 z01 $a i  $b xxxe  
+182  1 $6 z01 $a n
+183  1 $6 z01 $a nc $2 RDAcarrier
+200 1  $a 1984 $f George Orwell $g traduzione di Stefano Manferlotti
+210    $a Milano $c Mondadori $d 2019
+215    $a XII, 341 p. $d 20 cm
+300    $a In appendice: I principi della neolingua
+330    $a L'azione si svolge in un futuro prossimo del mondo (l'anno 1984) in cui il potere si concentra in tre immensi superstati: Oceania, Eurasia ed Estasia. Al vertice del potere politico in Oceania c'è il Grande Fratello, onnisciente e infallibile, che nessuno ha visto di persona ma di cui ovunque sono visibili grandi manifesti. Il Ministero della Verità, nel quale lavora il personaggio principale, Smith, ha il compito di censurare libri e giornali non in linea con la politica ufficiale, di alterare la storia e di ridurre le possibilità espressive della lingua. Per quanto sia tenuto sotto controllo da telecamere, Smith comincia a condurre un'esistenza sovversiva. Scritto nel 1949, il libro è considerato una delle più lucide rappresentazioni del totalitarismo.
+410  0 $1 001IT\ICCU\BCT\0041474 $1 2001  $a Oscar moderni $v 36
+500 10 $a Nineteen eighty-four $3 IT\ICCU\CFI\0019267 $9 Orwell, George
+700  1 $a Orwell $b , George $3 IT\ICCU\CFIV\000470 $4 070
+702  1 $a Manferlotti $b , Stefano $3 IT\ICCU\CFIV\043925 $4 730
+790  1 $a Orvell $b , Džordž $3 IT\ICCU\BVEV\110943 $z Orwell, George
+790  1 $a Blair $b , Eric $f  <1903-1950> $3 IT\ICCU\CFIV\000923 $z Orwell, George
+790  1 $a Orwell $b , Dzoraz $3 IT\ICCU\CFIV\164194 $z Orwell, George
+790  1 $a Blair $b , Eric Arthur $3 IT\ICCU\CFIV\231242 $z Orwell, George
+790  1 $a Oruell $b , Dzordz $3 IT\ICCU\UMCV\284642 $z Orwell, George
+801  3 $a IT $b ICCU $c 20260914
+899    $1 AG0093 $2 AGR 26 $f P/G
+899    $1 AP0012 $2 UMC FM $f P/G
+899    $1 AV0005 $2 CAM AD $f P/G $q N
+899    $1 BL0033 $2 VIA LI $f P/G
+899    $1 BL0042 $2 VIA PV $f P/G
+899    $1 BL0050 $2 VIA QU $f P/G
+899    $1 BL0096 $2 VIA PN $f P/G
+899    $1 CA0200 $2 CAG CT $f P/G
+899    $1 CA0491 $2 CAG PI $f P/G
+899    $1 GE0649 $2 LIG AU $f P/G $q N
+899    $1 MC0267 $2 UMC LB $f P/G
+899    $1 MC0391 $2 UMC IB $f P/G
+899    $1 ME0406 $2 MES BA $f P/G
+899    $1 ME0447 $2 MES PR $f P/G
+899    $1 OR0062 $2 CAG 4D $f P/G
+899    $1 OR0094 $2 CAG LD $f P/G
+899    $1 PA0514 $2 PAL 74 $f P/G $q N
+899    $1 PA0556 $2 PAL 70 $f P/G $q N
+899    $1 RE0022 $2 RE2 03 $f P/G
+899    $1 RE0066 $2 RE2 24 $f P/G
+899    $1 RM0630 $2 RMB M1 $f P/G
+899    $1 RM1435 $2 RMB Z8 $f P/G
+899    $1 RM2027 $2 RMB N2 $f P/G
+899    $1 SS0024 $2 CAG JI $f P/G
+899    $1 TO0072 $2 BCT H3 $f P/G $e N $q N
+899    $1 TO0226 $2 BCT S1 $f G
+899    $1 TO0240 $2 BCT 01 $f G
+899    $1 TO0433 $2 BCT 5V $f P/G $e N $q N
+899    $1 TO0901 $2 BCT TI $f P/G
+899    $1 TP0008 $2 TPS ER $f P/G
+899    $1 TP0063 $2 TPS SN $f P/G
+899    $1 TS0098 $2 TSA MU $f P/G
+899    $1 TV0020 $2 VIA CH $f P/G
+899    $1 TV0048 $2 VIA GR $f P/G
+899    $1 TV0077 $2 VIA PR $f P/G
+899    $1 TV0080 $2 VIA PP $f P/G
+899    $1 TV0081 $2 VIA PT $f P/G
+899    $1 TV0094 $2 VIA SL $f P/G
+899    $1 TV0133 $2 VIA MO $f P/G
+899    $1 TV0134 $2 VIA PZ $f P/G
+899    $1 TV0144 $2 VIA VL $f P/G
+899    $1 VE0015 $2 VIA VM $f P/G
+899    $1 VE0110 $2 VIA WA $f P/G
+899    $1 VE0142 $2 VIA L1 $f P/G
+
+nextResultSetPosition = 2
+Elapsed: 0.017952
+Sent presentRequest (2+1).
+Records: 1
+[nopac]Record type: Unimarc
+convert from utf-8 to utf-8
+02524nam0 22007093i 4500
+001 IT\ICCU\NAP\0838622
+003 http://id.sbn.it/bid/NAP0838622
+005 20210713082856.7
+010    $a 978-88-04-66823-7
+100    $a 20190910d2016    ||||0itac50      ba
+101    $a ita $c eng
+102    $a IT
+181  1 $6 z01 $a i  $b xxxe  
+182  1 $6 z01 $a n
+183  1 $6 z01 $a nc $2 RDAcarrier
+200 1  $a 1984 $f George Orwell $g traduzione di Stefano Manferlotti
+210    $a Milano $c Mondadori $d 2016
+215    $a XII, 323 p. $d 20 cm
+300    $a In appendice: I principi della neolingua
+410  0 $1 001IT\ICCU\BCT\0041474 $1 2001  $a Oscar moderni $v 36
+500 10 $a Nineteen eighty-four $3 IT\ICCU\CFI\0019267 $9 Orwell, George
+517 1  $a Millenovecentottantaquattro. $9 IT\ICCU\RAV\0005818
+676    $a 823.912 $c NARRATIVA INGLESE, 1900-1945 $v 23
+700  1 $a Orwell $b , George $3 IT\ICCU\CFIV\000470 $4 070
+702  1 $a Manferlotti $b , Stefano $3 IT\ICCU\CFIV\043925 $4 730
+790  1 $a Orvell $b , Džordž $3 IT\ICCU\BVEV\110943 $z Orwell, George
+790  1 $a Blair $b , Eric $f  <1903-1950> $3 IT\ICCU\CFIV\000923 $z Orwell, George
+790  1 $a Orwell $b , Dzoraz $3 IT\ICCU\CFIV\164194 $z Orwell, George
+790  1 $a Blair $b , Eric Arthur $3 IT\ICCU\CFIV\231242 $z Orwell, George
+790  1 $a Oruell $b , Dzordz $3 IT\ICCU\UMCV\284642 $z Orwell, George
+801  3 $a IT $b ICCU $c 20260914
+899    $1 AL0310 $2 TO0 91 $f P/G $q N
+899    $1 AV0053 $2 NAP MN $f P/G $q N
+899    $1 BA0104 $2 BA1 37 $f P/G $q N
+899    $1 BA0540 $2 BA1 BS $f P/G $q N
+899    $1 FI0206 $2 RT1 OR $f P/G
+899    $1 MO0126 $2 MOD ST $f P/G
+899    $1 MO0345 $2 MOD WI $f P/G
+899    $1 NA0259 $2 CAM LC $f P/G $q N
+899    $1 NA0312 $2 NAP SC $f P/G $q N
+899    $1 NO0011 $2 TO0 D6 $f P/G $e N $q N
+899    $1 NO0048 $2 TO1 NR $f P/G $e N $q N
+899    $1 PA0017 $2 PAL 72 $f P/G $q N
+899    $1 PA0063 $2 PA1 CP $f P/G $q N
+899    $1 PC0013 $2 PIA CO $f P/G
+899    $1 PC0017 $2 PIA GR $f P/G
+899    $1 PC0042 $2 PIA SG $f P/G
+899    $1 RE0101 $2 RE2 81 $f P/G
+899    $1 RI0109 $2 RL1 B6 $f P/G
+899    $1 RM0013 $2 RL1 C6 $f P/G
+899    $1 RM0601 $2 RL1 M5 $f P/G
+899    $1 RM1600 $2 RMS EY $f P/G
+899    $1 RM2059 $2 DDS BA $f P/G $q N
+899    $1 RO0049 $2 ROV AC $f P/G
+899    $1 SA0099 $2 CAM S9 $f P/G $q N
+899    $1 TO0063 $2 TO1 DN $f P/G $e N $q N
+899    $1 TO0171 $2 TO1 RD $f P/G $e N $q N
+899    $1 TO0509 $2 BCT 5S $f P/G $e N $q N
+899    $1 VC0183 $2 TO0 A8 $f P/G $q N
+899    $1 VT0014 $2 RL1 K6 $f P/G
+899    $1 VT0022 $2 RL1 F7 $f P/G
+899    $1 VT0039 $2 RL1 YC $f P/G
+
+nextResultSetPosition = 3
+Elapsed: 0.017564
+Sent presentRequest (3+1).
+Records: 1
+[nopac]Record type: Unimarc
+convert from utf-8 to utf-8
+16422nam0 22050173i 4500
+001 IT\ICCU\MOD\1659333
+003 http://id.sbn.it/bid/MOD1659333
+005 20250826163301.5
+010    $a 978-88-04-66823-7
+100    $a 20160716d2016    ||||0itac50      ba
+101    $a ita $c eng
+102    $a IT
+181  1 $6 z01 $a i  $b xxxe  
+182  1 $6 z01 $a n
+183  1 $6 z01 $a nc $2 RDAcarrier
+200 1  $a 1984 $f George Orwell $g traduzione di Stefano Manferlotti
+210    $a Milano $c Mondadori $d 2016
+215    $a XII, 341 p. $d 20 cm
+330    $a L'azione si svolge in un futuro prossimo del mondo (l'anno 1984) in cui il potere si concentra in tre immensi superstati: Oceania, Eurasia ed Estasia. Al vertice del potere politico in Oceania c'è il Grande Fratello, onnisciente e infallibile, che nessuno ha visto di persona ma di cui ovunque sono visibili grandi manifesti. Il Ministero della Verità, nel quale lavora il personaggio principale, Smith, ha il compito di censurare libri e giornali non in linea con la politica ufficiale, di alterare la storia e di ridurre le possibilità espressive della lingua. Per quanto sia tenuto sotto controllo da telecamere, Smith comincia a condurre un'esistenza sovversiva. Scritto nel 1949, il libro è considerato una delle più lucide rappresentazioni del totalitarismo.
+410  0 $1 001IT\ICCU\BCT\0041474 $1 2001  $a Oscar moderni $v 36
+500 10 $a Nineteen eighty-four $3 IT\ICCU\CFI\0019267 $9 Orwell, George
+517 1  $a Millenovecentottantaquattro. $9 IT\ICCU\RAV\0005818
+676    $a 823.914 $c NARRATIVA INGLESE, 1945-1999 $v 23
+700  1 $a Orwell $b , George $3 IT\ICCU\CFIV\000470 $4 070
+702  1 $a Manferlotti $b , Stefano $3 IT\ICCU\CFIV\043925 $4 730
+790  1 $a Orvell $b , Džordž $3 IT\ICCU\BVEV\110943 $z Orwell, George
+790  1 $a Blair $b , Eric $f  <1903-1950> $3 IT\ICCU\CFIV\000923 $z Orwell, George
+790  1 $a Orwell $b , Dzoraz $3 IT\ICCU\CFIV\164194 $z Orwell, George
+790  1 $a Blair $b , Eric Arthur $3 IT\ICCU\CFIV\231242 $z Orwell, George
+790  1 $a Oruell $b , Dzordz $3 IT\ICCU\UMCV\284642 $z Orwell, George
+801  3 $a IT $b ICCU $c 20260914
+899    $1 AG0058 $2 AGR 29 $f P/G
+899    $1 AG0072 $2 AGR 21 $f P/G
+899    $1 AL0001 $2 TO0 36 $f P/G $q N
+899    $1 AL0002 $2 TO0 41 $f G $q N
+899    $1 AL0030 $2 TO0 UK $f P/G $q N
+899    $1 AL0087 $2 TO0 UU $f P/G $q N
+899    $1 AL0123 $2 TO0 37 $f P/G $q N
+899    $1 AL0166 $2 TO0 EA $f P/G $q N
+899    $1 AL0322 $2 TO0 EZ $f P/G $q N
+899    $1 AN0027 $2 URB CH $f P/G
+899    $1 AN0047 $2 URB BL $f P/G
+899    $1 AN0054 $2 URB B2 $f P/G
+899    $1 AN0061 $2 URB OV $f P/G
+899    $1 AN0069 $2 URB BS $f P/G
+899    $1 AN0083 $2 URB FT $f P/G
+899    $1 AN0187 $2 URB HH $f P/G
+899    $1 AN0331 $2 URB GA $f P/G
+899    $1 AN0336 $2 URB JD $f P/G
+899    $1 AP0025 $2 UMC MG $f P/G
+899    $1 AP0038 $2 UMC SB $f P/G
+899    $1 AP0054 $2 UMC SK $f P/G
+899    $1 AP0073 $2 UMC B1 $f P/G
+899    $1 AR0034 $2 ARE CO $f P
+899    $1 AR0042 $2 ARE SS $f P $e N
+899    $1 AR0056 $2 ARE SG $f P
+899    $1 AR0070 $2 ARE BA $f P $e N
+899    $1 AT0014 $2 TO0 S4 $f P/G $q N
+899    $1 AT0035 $2 TO0 S9 $f P/G $q N
+899    $1 AT0050 $2 TO0 S1 $f P/G $q N
+899    $1 AT0068 $2 TO0 SB $f P/G $q N
+899    $1 AV0007 $2 NAP AV $f P/G $q N
+899    $1 AV0169 $2 CAM GM $f P/G $q N
+899    $1 BA0088 $2 BA1 40 $f P/G $q N
+899    $1 BA0115 $2 BA1 17 $f P/G $q N
+899    $1 BA0144 $2 BA1 29 $f P/G $q N
+899    $1 BG0366 $2 PBG A9 $f P/G
+899    $1 BI0024 $2 BIA MO $f P/G
+899    $1 BI0025 $2 BIA BC $f P/G
+899    $1 BI0063 $2 BIA IT $f P/G
+899    $1 BL0009 $2 VIA CZ $f P/G
+899    $1 BL0032 $2 VIA LE $f P/G
+899    $1 BL0091 $2 VIA BF $f P/G
+899    $1 BO0003 $2 UBO AQ $f P/G
+899    $1 BO0180 $2 UBO CT $f P/G
+899    $1 BO0186 $2 UBO DI $f P/G
+899    $1 BO0187 $2 UBO DH $f P/G
+899    $1 BO0194 $2 UBO AZ $f P/G
+899    $1 BO0199 $2 UBO BC $f P/G
+899    $1 BO0204 $2 UBO LO $f P/G
+899    $1 BO0206 $2 UBO MF $f P/G
+899    $1 BO0207 $2 UBO FH $f P/G
+899    $1 BO0216 $2 UBO BQ $f P/G
+899    $1 BO0219 $2 UBO TC $f P/G
+899    $1 BO0222 $2 UBO EO $f P/G
+899    $1 BO0224 $2 UBO EN $f P/G
+899    $1 BO0239 $2 UBO DA $f P/G
+899    $1 BO0240 $2 UBO NG $f P/G
+899    $1 BO0245 $2 UBO PN $f P/G
+899    $1 BO0247 $2 UBO MP $f P/G
+899    $1 BO0250 $2 UBO EF $f P/G
+899    $1 BO0256 $2 UBO LA $f P/G
+899    $1 BO0259 $2 UBO RA $f P/G
+899    $1 BO0300 $2 UBO LS $f P/G
+899    $1 BO0302 $2 UBO SV $f P/G
+899    $1 BO0523 $2 UBO VS $f P/G
+899    $1 BO0537 $2 UBO OP $f P/G
+899    $1 BO0560 $2 UBO AP $f P/G
+899    $1 BO0563 $2 UBO SB $f P/G
+899    $1 BO0590 $2 UBO RC $f P/G
+899    $1 BR0012 $2 PUG PJ $f P/G
+899    $1 BR0015 $2 PUG PA $f P/G
+899    $1 CA0085 $2 CAG 5D $f P/G
+899    $1 CA0106 $2 CAG NO $f P/G
+899    $1 CA0118 $2 CAG 7L $f P/G
+899    $1 CA0124 $2 CAG 7V $f P/G
+899    $1 CA0200 $2 CAG CT $f P/G
+899    $1 CA0250 $2 CAG SP $f P/G
+899    $1 CA0320 $2 CAG 5C $f P/G
+899    $1 CA0322 $2 CAG 7C $f P/G
+899    $1 CA0491 $2 CAG PI $f P/G
+899    $1 CH0020 $2 ABR ME $f P/G
+899    $1 CN0014 $2 TO0 FV $f P/G $q N
+899    $1 CN0024 $2 TO0 F2 $f P/G $q N
+899    $1 CN0028 $2 TO0 MN $f P/G $q N
+899    $1 CN0037 $2 TO0 50 $f P/G $q N
+899    $1 CN0071 $2 TO0 F5 $f P/G $q N
+899    $1 CN0083 $2 TO0 D2 $f P/G $q N
+899    $1 CN0102 $2 TO0 GU $f P/G $q N
+899    $1 CN0149 $2 TO0 59 $f P/G $q N
+899    $1 CN0187 $2 TO0 HE $f P/G $q N
+899    $1 CN0250 $2 TO0 FX $f P/G $q N
+899    $1 CN0323 $2 TO0 D3 $f P/G $q N
+899    $1 CN0327 $2 TO0 N2 $f P/G $q N
+899    $1 CS0101 $2 RCA 51 $f P/G
+899    $1 CS0143 $2 CSA NC $f P/G $q N
+899    $1 CS0231 $2 CSA TC $f P/G $q N
+899    $1 CT0260 $2 CAT ZE $f P/G $q N
+899    $1 CZ0016 $2 RCA AC $f P/G
+899    $1 FC0011 $2 RAV CS $f P/G
+899    $1 FC0029 $2 RAV GT $f P/G
+899    $1 FC0038 $2 RAV MD $f P/G
+899    $1 FC0129 $2 RAV QB $f P/G
+899    $1 FC0136 $2 RAV PB $f P/G
+899    $1 FC0158 $2 RAV 2C $f P/G
+899    $1 FC0161 $2 RAV 2H $f P/G
+899    $1 FE0009 $2 PBE L8 $f P $e N
+899    $1 FE0038 $2 UFE GO $f P/G $q N
+899    $1 FE0039 $2 UFE IO $f P/G
+899    $1 FE0159 $2 UFE BL $f P/G
+899    $1 FG0007 $2 PUG 37 $f P/G
+899    $1 FG0037 $2 PUG 15 $f P/G
+899    $1 FG0054 $2 PUG 04 $f P/G
+899    $1 FG0085 $2 PUG 65 $f P/G
+899    $1 FG0108 $2 BA1 58 $f P/G $q N
+899    $1 FI0040 $2 RT1 AM $f P/G
+899    $1 FI0096 $2 RT1 AE $f P/G
+899    $1 FI0103 $2 RT1 AL $f P/G
+899    $1 FI0144 $2 RT1 AS $f P/G
+899    $1 FI0145 $2 RT1 AU $f P/G
+899    $1 FI0175 $2 RT1 AW $f P/G
+899    $1 FI0177 $2 RT1 AX $f P/G
+899    $1 FI0178 $2 RT1 AZ $f P/G
+899    $1 FI0254 $2 RT1 AP $f P/G
+899    $1 FI0329 $2 RT1 AF $f P/G
+899    $1 FI0339 $2 RT1 AK $f P/G
+899    $1 FI0410 $2 RT1 AB $f P/G
+899    $1 FI0623 $2 RT1 BT $f P/G
+899    $1 FM0002 $2 UMC OR $f P/G
+899    $1 FR0013 $2 RL1 O1 $f P/G
+899    $1 FR0021 $2 RL1 E1 $f P/G
+899    $1 FR0092 $2 RL1 B2 $f P/G
+899    $1 FR0124 $2 RL1 Y5 $f P/G
+899    $1 FR0177 $2 RL1 T3 $f P/G
+899    $1 GR0002 $2 GRO AR $f P/G
+899    $1 IM0002 $2 LI3 BG $f P/G
+899    $1 IM0019 $2 LIG 02 $f P/G $q N
+899    $1 IM0038 $2 LI3 VM $f P/G
+899    $1 LE0060 $2 PUG L5 $f P/G
+899    $1 LE0103 $2 PUG L6 $f P/G
+899    $1 LE0108 $2 PUG S5 $f P/G
+899    $1 LE0153 $2 PUG T9 $f P/G
+899    $1 LE0268 $2 PUG LS $f P/G
+899    $1 LI0002 $2 LIA CC $f P/G
+899    $1 LI0018 $2 LIA PI $f P/G
+899    $1 LI0020 $2 LIA PT $f P/G
+899    $1 LI0074 $2 LIA LA $f P/G
+899    $1 LI0083 $2 LIA RR $f P/G
+899    $1 LU0002 $2 LUA AC $f P/G
+899    $1 LU0006 $2 LUA BM $f P/G
+899    $1 LU0039 $2 LUA VM $f P/G
+899    $1 LU0046 $2 LUA PS $f P/G
+899    $1 LU0088 $2 LUA SI $f P/G
+899    $1 LU0089 $2 LUA FO $f P/G
+899    $1 LU0103 $2 LUA AG $f P/G
+899    $1 LU0125 $2 LUA CV $f P/G
+899    $1 MC0079 $2 UMC B4 $f P/G
+899    $1 MC0132 $2 UMC PP $f P/G
+899    $1 MC0264 $2 UMC AM $f P/G
+899    $1 MC0274 $2 UMC CK $f P/G
+899    $1 MC0394 $2 UMC IF $f P/G
+899    $1 MC0396 $2 UMC IJ $f P/G
+899    $1 ME0129 $2 MES SF $f P/G
+899    $1 ME0200 $2 MES ST $f P/G
+899    $1 ME0460 $2 MES AR $f P/G
+899    $1 MI0185 $2 MIL NB $f P/G $q N
+899    $1 MI1359 $2 MIL EL $f P/G $q N
+899    $1 MI1992 $2 PCM 01 $f P/G
+899    $1 MN0120 $2 LO1 14 $f P/G
+899    $1 MO0004 $2 MOD BP $f P/G
+899    $1 MO0008 $2 MOD CG $f P/G
+899    $1 MO0012 $2 MOD CR $f P/G
+899    $1 MO0014 $2 MOD CF $f P/G
+899    $1 MO0016 $2 MOD CA $f P/G
+899    $1 MO0019 $2 MOD CV $f P/G
+899    $1 MO0021 $2 MOD CN $f P/G
+899    $1 MO0023 $2 MOD FL $f P/G
+899    $1 MO0110 $2 MOD RV $f P/G
+899    $1 MO0111 $2 MOD RL $f P/G
+899    $1 MO0113 $2 MOD SC $f P/G
+899    $1 MO0115 $2 MOD SF $f P/G
+899    $1 MO0120 $2 MOD SA $f P/G
+899    $1 MO0125 $2 MOD SL $f P/G
+899    $1 MO0126 $2 MOD ST $f P/G
+899    $1 MO0130 $2 MOD FR $f P/G
+899    $1 MO0132 $2 MOD MA $f P/G
+899    $1 MS0007 $2 BMC TC $f P/G $e N $q N
+899    $1 MT0041 $2 BAS MR $f P/G
+899    $1 MT0055 $2 BAS RM $f P/G
+899    $1 NA0312 $2 NAP SC $f P/G $q N
+899    $1 NA0585 $2 CAM VQ $f P/G $q N
+899    $1 NA0652 $2 NAP 77 $f G $q N
+899    $1 NA0695 $2 NAP PG $f P/G $q N
+899    $1 NU0028 $2 CAG S1 $f P/G
+899    $1 NU0035 $2 CAG LO $f P/G
+899    $1 NU0043 $2 CAG 1N $f P/G
+899    $1 NU0053 $2 CAG OF $f P/G
+899    $1 NU0058 $2 CAG OE $f P/G
+899    $1 NU0082 $2 CAG NI $f P/G
+899    $1 NU0100 $2 CAG CI $f P/G
+899    $1 OR0010 $2 CAG 4L $f P/G
+899    $1 OR0020 $2 CAG D4 $f P/G
+899    $1 OR0024 $2 CAG 4M $f P/G
+899    $1 OR0094 $2 CAG LD $f P/G
+899    $1 OR0247 $2 CAG 6B $f P/G
+899    $1 PA0063 $2 PA1 CP $f P/G $q N
+899    $1 PD0090 $2 PUV 55 $f P/G
+899    $1 PD0357 $2 PUV 60 $f P/G
+899    $1 PD0392 $2 PUV 58 $f P/G
+899    $1 PE0018 $2 ABR R7 $f P/G
+899    $1 PG0001 $2 UM1 10 $f P/G
+899    $1 PG0032 $2 UM1 05 $f P/G
+899    $1 PG0168 $2 UM1 08 $f P/G
+899    $1 PG0172 $2 UM1 20 $f P/G
+899    $1 PG0180 $2 UM1 64 $f P/G
+899    $1 PG0188 $2 UM1 27 $f P/G
+899    $1 PG0230 $2 UM1 02 $f P/G
+899    $1 PG0435 $2 UM1 A9 $f P/G
+899    $1 PI0023 $2 PIS OP $f P/G $q N
+899    $1 PO0002 $2 RT1 DA $f P/G
+899    $1 PR0013 $2 PAR LE $f P/G
+899    $1 PR0020 $2 PAR BM $f P/G
+899    $1 PR0030 $2 PAR BG $f P/G
+899    $1 PR0031 $2 PAR BC $f P/G
+899    $1 PR0128 $2 PAR BP $f P/G
+899    $1 PR0156 $2 PAR CN $f P/G
+899    $1 PR0161 $2 PAR SB $f P/G
+899    $1 PR0206 $2 PAR BA $f P/G
+899    $1 PT0064 $2 PTA AH $f P/G
+899    $1 PU0033 $2 URB MF $f P/G
+899    $1 PU0072 $2 URB PA $f P/G
+899    $1 PU0082 $2 URB SH $f P/G
+899    $1 PU0143 $2 URB PM $f P/G
+899    $1 PU0230 $2 URB UI $f P/G
+899    $1 PV0023 $2 PAV 10 $f P/G
+899    $1 PV0071 $2 PAV 01 $f P/G
+899    $1 PV0152 $2 PAV 70 $f P/G
+899    $1 PV0199 $2 PAV 43 $f P/G
+899    $1 PZ0089 $2 BAS RI $f P/G
+899    $1 RA0002 $2 RAV BC $f P/G
+899    $1 RA0024 $2 RAV FU $f P/G
+899    $1 RA0025 $2 RAV CE $f P/G
+899    $1 RA0026 $2 RAV ML $f P/G
+899    $1 RA0036 $2 RAV CL $f P/G
+899    $1 RA0042 $2 RAV RU $f P/G
+899    $1 RA0071 $2 RAV SS $f P/G
+899    $1 RA0220 $2 RAV EL $f P/G
+899    $1 RA0227 $2 RAV 1D $f P/G $q N
+899    $1 RE0013 $2 RE2 32 $f P/G
+899    $1 RE0016 $2 RE2 12 $f P/G
+899    $1 RE0021 $2 RE2 02 $f P/G
+899    $1 RE0023 $2 RE2 06 $f P/G
+899    $1 RE0028 $2 RE2 11 $f P/G
+899    $1 RE0042 $2 RE2 42 $f P/G
+899    $1 RE0052 $2 RE2 PA $f P/G
+899    $1 RE0058 $2 RE2 23 $f P/G
+899    $1 RE0063 $2 RE2 27 $f P/G
+899    $1 RE0068 $2 RE2 19 $f P/G
+899    $1 RE0101 $2 RE2 81 $f P/G
+899    $1 RE0123 $2 RE2 86 $f P/G
+899    $1 RE0128 $2 RE2 SE $f P/G
+899    $1 RM0003 $2 RL1 YA $f P/G
+899    $1 RM0008 $2 RL1 C5 $f P/G
+899    $1 RM0267 $2 BVE CR $f P/G $q N
+899    $1 RM0291 $2 RMB L1 $f P/G
+899    $1 RM0605 $2 RL1 C8 $f P/G
+899    $1 RM0617 $2 RMB B1 $f P/G
+899    $1 RM0619 $2 RMB B3 $f P/G
+899    $1 RM0635 $2 RMB Q1 $f P/G
+899    $1 RM1107 $2 RL1 YV $f P/G
+899    $1 RM1115 $2 RL1 A6 $f P/G
+899    $1 RM1145 $2 RMB T1 $f P/G
+899    $1 RM1149 $2 RMB G1 $f P/G
+899    $1 RM1388 $2 LZ1 ZA $f P
+899    $1 RM1423 $2 RMS LN $f P/G
+899    $1 RM1452 $2 RMB L3 $f P/G
+899    $1 RM1888 $2 RMB E2 $f P/G
+899    $1 RN0010 $2 RAV GM $f P/G
+899    $1 RO0007 $2 ROV BE $f P/G
+899    $1 RO0014 $2 ROV CM $f P/G
+899    $1 RO0022 $2 ROV FU $f P/G
+899    $1 RO0024 $2 ROV FP $f P/G
+899    $1 RO0026 $2 ROV GB $f P/G
+899    $1 RO0027 $2 ROV GA $f P/G
+899    $1 RO0031 $2 ROV LE $f P/G
+899    $1 SA0146 $2 CAM OS $f P/G $q N
+899    $1 SA0263 $2 CAM NV $f P/G $q N
+899    $1 SA0321 $2 CAM CE $f P/G $q N
+899    $1 SP0043 $2 LIG AY $f P/G $q N
+899    $1 SP0106 $2 LIG 52 $f P/G $q N
+899    $1 SR0013 $2 SBS NT $f P/G
+899    $1 SR0094 $2 SBS CL $f P/G
+899    $1 SS0004 $2 CAG CA $f P/G
+899    $1 SS0009 $2 USS 46 $f P/G
+899    $1 SS0051 $2 USS 58 $f P/G
+899    $1 SS0115 $2 USS 60 $f P/G $4 1 v.
+899    $1 SS0117 $2 CAG JT $f P/G
+899    $1 SS0120 $2 USS 29 $f P/G
+899    $1 SS0172 $2 CAG JD $f P/G
+899    $1 TA0012 $2 PUG AG $f P/G
+899    $1 TA0014 $2 PUG AN $f P/G
+899    $1 TA0046 $2 PUG TA $f P/G
+899    $1 TA0048 $2 PUG AH $f P/G
+899    $1 TA0058 $2 PUG AI $f P/G
+899    $1 TE0024 $2 ABR R1 $f P/G
+899    $1 TO0008 $2 BCT 4A $f P/G $e N $q N
+899    $1 TO0009 $2 BCT DA $f P/G $e N $q N
+899    $1 TO0045 $2 BCT 5C $f P/G $e N $q N
+899    $1 TO0072 $2 BCT H3 $f P/G $e N $q N
+899    $1 TO0090 $2 BCT 4D $f P/G $e N $q N
+899    $1 TO0109 $2 BCT 4G $f P/G
+899    $1 TO0119 $2 TO1 LZ $f P/G $e N $q N
+899    $1 TO0135 $2 BCT M5 $f P/G $e N $q N
+899    $1 TO0143 $2 BCT 2O $f P/G $e N $q N
+899    $1 TO0162 $2 TO1 58 $f P/G $e N $q N
+899    $1 TO0170 $2 BCT S8 $f P/G $e N $q N
+899    $1 TO0191 $2 BCT 4R $f P/G $e N $q N
+899    $1 TO0214 $2 BCT 1M $f P/G $e N $q N
+899    $1 TO0215 $2 TO1 DC $f P/G $e N $q N
+899    $1 TO0217 $2 BCT 1P $f P/G $e N $q N
+899    $1 TO0226 $2 BCT S1 $f P/G
+899    $1 TO0240 $2 BCT 01 $f P/G
+899    $1 TO0270 $2 BCT TA $f P/G
+899    $1 TO0413 $2 BCT 4V $f P/G $e N $q N
+899    $1 TO0422 $2 TO1 D8 $f P/G $e N $q N
+899    $1 TO0428 $2 BCT 2I $f P/G $e N $q N
+899    $1 TO0449 $2 BCT TB $f P/G
+899    $1 TO0509 $2 BCT 5S $f P/G $e N $q N
+899    $1 TO0520 $2 TO1 RI $f P/G $e N $q N
+899    $1 TO0835 $2 BCT TN $f P/G
+899    $1 TO0881 $2 TO1 28 $f P/G $e N $q N
+899    $1 TO0885 $2 BCT D2 $f P/G $e N $q N
+899    $1 TO0965 $2 TO1 RX $f P/G $e N $q N
+899    $1 TO1022 $2 TO1 R2 $f P/G $e N $q N
+899    $1 TO1292 $2 TO1 HS $f P/G $e N $q N
+899    $1 TR0004 $2 UM1 21 $f P/G
+899    $1 TR0032 $2 UM1 09 $f P/G
+899    $1 TS0250 $2 TSA SD $f P/G
+899    $1 TS0289 $2 TSA U3 $f P/G
+899    $1 TV0003 $2 VIA AO $f P/G
+899    $1 TV0015 $2 VIA CF $f P/G
+899    $1 TV0022 $2 VIA C4 $f P/G
+899    $1 TV0025 $2 VIA CG $f P/G
+899    $1 TV0031 $2 VIA CR $f P/G
+899    $1 TV0033 $2 VIA CO $f P/G
+899    $1 TV0043 $2 VIA FR $f P/G
+899    $1 TV0045 $2 VIA GA $f P/G
+899    $1 TV0056 $2 VIA MD $f P/G
+899    $1 TV0066 $2 VIA OD $f P/G
+899    $1 TV0075 $2 VIA PS $f P/G
+899    $1 TV0078 $2 VIA BP $f P/G
+899    $1 TV0089 $2 VIA RV $f P/G
+899    $1 TV0092 $2 VIA RO $f P/G
+899    $1 TV0099 $2 VIA SZ $f P/G
+899    $1 TV0105 $2 VIA SI $f P/G
+899    $1 TV0107 $2 VIA SU $f P/G
+899    $1 TV0121 $2 VIA VV $f P/G
+899    $1 TV0126 $2 VIA ZE $f P/G
+899    $1 TV0133 $2 VIA MO $f P/G
+899    $1 TV0151 $2 VIA SH $f P/G
+899    $1 UD0052 $2 FVG 13 $f P/G
+899    $1 UD0061 $2 FVG 26 $f P/G
+899    $1 UD0092 $2 FVG 19 $f P/G
+899    $1 UD0133 $2 FRI LS $f P/G
+899    $1 UD0157 $2 FRI TM $f P/G
+899    $1 VA0116 $2 LO1 03 $f P/G
+899    $1 VC0020 $2 TO0 C9 $f P/G $e N $q N
+899    $1 VC0046 $2 TO0 D4 $f P/G $q N
+899    $1 VC0185 $2 TO0 AE $f P/G $q N
+899    $1 VE0009 $2 VIA V1 $f P/G
+899    $1 VE0016 $2 VIA MW $f P/G
+899    $1 VE0043 $2 VIA WR $f P/G
+899    $1 VE0110 $2 VIA WA $f P/G
+899    $1 VE0118 $2 VIA VW $f P/G
+899    $1 VE0122 $2 VIA DO $f P/G
+899    $1 VE0124 $2 VIA VJ $f P/G
+899    $1 VE0131 $2 VIA VP $f P/G
+899    $1 VE0132 $2 VIA VB $f P/G
+899    $1 VE0141 $2 VIA V9 $f P/G
+899    $1 VE0142 $2 VIA L1 $f P/G
+899    $1 VE0202 $2 VIA VZ $f P/G
+899    $1 VE0209 $2 VIA V2 $f P/G
+899    $1 VE0210 $2 VIA WB $f P/G
+899    $1 VE0367 $2 VIA WY $f P/G
+899    $1 VE0380 $2 VIA YA $f P/G
+899    $1 VT0002 $2 RL1 B4 $f P/G
+899    $1 VT0024 $2 RL1 N6 $f P/G
+899    $1 VT0053 $2 RL1 P8 $f P/G
+899    $1 VT0055 $2 RL1 D5 $f P/G
+899    $1 VT0116 $2 RL1 B3 $f P/G
+899    $1 VV0021 $2 RCA 47 $f P/G
+
+nextResultSetPosition = 4
+Elapsed: 0.039018
+See you later, alligator.

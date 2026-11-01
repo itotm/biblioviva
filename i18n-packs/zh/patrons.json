@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "读者",
+		"new": "新建读者",
+		"search": "按姓氏搜索…",
+		"empty": "没有符合筛选条件的读者。",
+		"filters": {
+			"type": "类型",
+			"stage": "学段",
+			"level": "年级",
+			"status": "状态",
+			"all": "全部",
+			"allF": "全部"
+		},
+		"columns": {
+			"name": "姓名",
+			"type": "类型",
+			"class": "班级",
+			"card": "读者证"
+		},
+		"clearFilters": "清除筛选",
+		"countFiltered": "{{shown:plural; other:{{shown}} 位读者符合筛选条件;}}",
+		"printCards": "打印读者证",
+		"printClassCards": "打印 {{classLabel}} 的读者证",
+		"removeSelected": "删除所选",
+		"removeTitle": "删除 {{count}} {{count:plural; other:位读者;}}？",
+		"removeDescription": "每位读者的名、姓、联系方式、外部编号、备注、读者证号和照片将立即且永久删除；类型、班级、组别和借阅历史保留用于统计。仍有未还借阅的读者将被保留。",
+		"removed": "已删除 {{removed}} 位，{{kept}} 位因有未还借阅而保留",
+		"status": {
+			"title": "状态",
+			"loans": "{{count}} 册在借",
+			"overdue": "{{count}} 册逾期",
+			"noPhoto": "无照片"
+		},
+		"startTitle": "查找读者",
+		"startHint": "按姓名、读者证号查找，或使用筛选条件。"
+	},
+	"types": {
+		"student": "学生",
+		"teacher": "教师"
+	},
+	"fields": {
+		"patronType": "类型",
+		"firstName": "名",
+		"lastName": "姓",
+		"cardNumber": "读者证号",
+		"cardNumberHint": "留空：将自动分配。",
+		"externalId": "学号",
+		"email": "电子邮件",
+		"emailHint": "学校为学生或教师提供的地址：通知将发送至此。",
+		"circulationNote": "服务台备注",
+		"circulationNoteHint": "办理借阅时醒目显示。",
+		"notes": "内部备注",
+		"status": "状态",
+		"openLoans": "未还借阅",
+		"overdueLoans": "逾期",
+		"noCard": "无读者证",
+		"none": "—",
+		"levelCode": "年级",
+		"groupId": "组别",
+		"classLabel": "班级",
+		"teacherGroup": "教师组"
+	},
+	"form": {
+		"createTitle": "新建读者",
+		"editTitle": "编辑读者",
+		"identity": "身份信息",
+		"school": "班级",
+		"contacts": "联系方式",
+		"notes": "备注",
+		"create": "创建读者",
+		"save": "保存更改",
+		"classSelect": "选择…",
+		"defaultTeacherGroup": "教师组"
+	},
+	"errors": {
+		"emailInvalid": "电子邮件地址无效。",
+		"cardNumberInvalid": "读者证号无效：只能包含数字、大写字母和连字符，并且校验字符必须正确。",
+		"cardNumberTaken": "该读者证号已分配给另一位读者。",
+		"cardNumberIsCopy": "该读者证号与复本条码相同或相似：请选择其他号码。",
+		"externalIdTaken": "该学号已分配给另一位读者。",
+		"levelRequired": "学生需要指定年级。",
+		"levelUnknown": "该年级不在学校的年级之中。",
+		"levelNotForTeachers": "教师没有班级。",
+		"groupRequired": "学生需要指定组别。",
+		"groupUnknown": "在有效班级中找不到该组别：班级请在 系统管理 → 配置 → 班级 中创建。",
+		"levelNotInGroup": "该组别中没有此年级：请选择属于该年级的组别。"
+	},
+	"detail": {
+		"heading": "读者记录",
+		"tabs": {
+			"loans": "未还借阅",
+			"history": "历史",
+			"cards": "读者证",
+			"notes": "备注"
+		},
+		"noLoans": "没有未还借阅。",
+		"loanColumns": {
+			"due": "应还"
+		},
+		"overdue": "已逾期",
+		"card": "读者证 {{number}}",
+		"noNotes": "没有备注。",
+		"edit": "编辑",
+		"created": "创建于 {{when}}",
+		"barcodeAlt": "读者证 {{number}} 的条码",
+		"cardPrinted": "读者证已于 {{when}} 打印。",
+		"cardNotPrinted": "读者证尚未打印。",
+		"reassignCard": "重新分配读者证",
+		"reassignTitle": "分配新的读者证？",
+		"reassignDescription": "当前号码将永久作废，新读者证需要打印。",
+		"cardReassigned": "新读者证：{{number}}",
+		"printCard": "打印读者证",
+		"markCardPrinted": "标记为已打印",
+		"cardMarkedPrinted": "读者证已标记为已打印",
+		"historyColumns": {
+			"issuedAt": "借出日期",
+			"dueDate": "应还",
+			"returnedAt": "归还日期",
+			"outcome": "结果",
+			"title": "书名",
+			"author": "作者",
+			"barcode": "复本",
+			"renewals": "续借次数",
+			"schoolYear": "学年"
+		},
+		"outcome": {
+			"open": "借出中",
+			"overdue": "逾期",
+			"returned": "已归还",
+			"returnedLate": "逾期归还",
+			"lost": "遗失"
+		},
+		"historyEmpty": "没有借阅记录。",
+		"historyCount": "共 {{count}} {{count:plural; other:笔借阅;}}",
+		"notesEdit": "编辑备注",
+		"notesSaved": "备注已保存",
+		"notesUnchanged": "没有更改",
+		"notesHint": "办理借阅时会弹出服务台备注；其他备注保留在此处。",
+		"remove": "删除{{type}}",
+		"removeTitle": "永久删除 {{name}}？",
+		"removeDescription": "将立即且永久删除：名、姓、电子邮件、外部编号、备注、读者证号（将作废）和照片。仅保留类型、班级、组别和借阅历史用于统计。此操作无法撤销。",
+		"removeOpenLoans": "尚有 {{count}} {{count:plural; other:笔未还借阅;}}，须先归还或标记为遗失。",
+		"removeClassSheets": "该读者在班级合照中被选为 {{count}} {{count:plural; other:张照片;}}（由照片进行的信息采集），相应的照片框将被遮盖。",
+		"removed": "读者已删除：个人数据已清除。",
+		"removedInfo": "删除于 {{when}}。仅保留用于统计的数据。",
+		"lostTitle": "遗失的图书",
+		"lostHint": "借给该读者期间被标记为遗失。如果找回，请在归还台扫描，即可重新变为可借。",
+		"markLost": "将“{{title}}”标记为遗失",
+		"markLostTitle": "将“{{title}}”标记为遗失？",
+		"markLostDescription": "借阅将结束，该复本显示为遗失。如果找到该书，请在归还台扫描，它将重新变为可借。",
+		"markLostReason": "原因（可选）",
+		"markLostConfirm": "标记为遗失",
+		"markedLost": "“{{title}}”已标记为遗失。"
+	},
+	"photo": {
+		"title": "照片",
+		"take": "拍照",
+		"upload": "上传文件",
+		"retake": "重拍",
+		"use": "使用此照片",
+		"cancel": "取消",
+		"delete": "删除照片",
+		"deleteTitle": "删除照片？",
+		"deleteDescription": "照片将从服务器中删除；之后可以重新拍摄。",
+		"zoom": "缩放",
+		"dragHint": "拖动以取景，使用缩放可以放大。",
+		"saved": "照片已保存",
+		"deleted": "照片已删除",
+		"placeholder": "无照片",
+		"alt": "{{name}} 的照片",
+		"errors": {
+			"too_large": "文件过大：上限为 {{maxMb}} MB。",
+			"not_an_image": "该文件不是可读取的图片。",
+			"unsupported_format": "不支持的图片格式（请使用 JPEG、PNG、WebP 或 HEIC）。",
+			"empty": "未选择文件。"
+		},
+		"withForm": "将随读者一起保存。",
+		"requiredHint": "需要照片：请现在拍摄，或稍后在读者页面中拍摄。",
+		"optionalHint": "可以现在拍摄，也可以稍后在读者页面中拍摄。",
+		"remove": "移除",
+		"notSaved": "照片未保存：请在读者页面重新拍摄。",
+		"retakePhoto": "重拍照片"
+	},
+	"census": {
+		"title": "照片信息采集",
+		"noGroup": "无班级",
+		"stageOthers": "无学段",
+		"progress": "已有照片 {{done}} / {{total}}",
+		"allDone": "所有人都已有照片。",
+		"back": "更改班级或名单",
+		"skip": "跳过",
+		"done": "完成",
+		"saved": "照片已保存：{{name}}",
+		"quickAdd": "新建读者",
+		"quickAddHint": "已加入 {{group}}，接下来拍摄照片。",
+		"create": "添加并拍照",
+		"findPerson": "按姓氏查找",
+		"pickTarget": "选择名单或班级",
+		"listsTitle": "读者名单",
+		"classesTitle": "班级",
+		"nothingMissing": "每个班级和名单都已有照片。",
+		"onlyMissing": "只显示仍缺少至少一张照片的班级和名单。",
+		"byCamera": "逐个拍摄",
+		"sheets": {
+			"title": "从包含多张照片的图片中提取",
+			"hint": "包含多张照片的图片（摄影师的照片单、桌上的读者证、一页证件照）：照片会被自动找到，并分配给每位读者。",
+			"upload": "上传图片",
+			"take": "拍摄照片单",
+			"uploading": "正在发送图片…",
+			"empty": "此班级或名单没有图片。",
+			"item": "{{date}} 的图片",
+			"counts": "找到 {{frames}} {{frames:plural; other:张照片;}} · 已保存 {{saved}} · 待处理 {{pending}}",
+			"notDetected": "尚未处理",
+			"demoScan": "来自扫描仪的示例",
+			"demoPhoto": "来自照片的示例",
+			"demoHint": "获取班级照片的两种方式：扫描件是平铺的，照片框为矩形，至多略有转动；拍摄的照片有角度，透视会使照片框变形。"
+		},
+		"sheet": {
+			"title": "图片中的照片",
+			"back": "返回班级",
+			"detecting": "正在图片中查找照片…",
+			"found": "找到的照片：{{count}} 张。请为每一张选择对应的读者。",
+			"none": "未找到照片。可以使用“修正照片框”手动绘制。",
+			"pictureAlt": "已上传的图片，照片框已编号",
+			"frame": "照片 {{n}}",
+			"choose": "这是谁？",
+			"nobody": "— 无 —",
+			"takenBy": "{{name}}（已在照片 {{n}} 中）",
+			"hasPhoto": "已有照片",
+			"noPhoto": "无照片",
+			"ignore": "忽略",
+			"unignore": "恢复",
+			"ignored": "已忽略：此人不属于该班级或名单。",
+			"saved": "已保存为 {{name}} 的照片",
+			"edit": "修正照片框",
+			"editDone": "修正完成",
+			"editHint": "点按照片框并拖动其角点；对于缺失的照片，请使用“添加照片框”。",
+			"editHintScan": "点按照片框：拖动角点可以放大或缩小，拖动其上方的圆点可以旋转；对于缺失的照片，请使用“添加照片框”。",
+			"addFrame": "添加照片框",
+			"addFrameHint": "在图片上从缺失照片的一个角拖动到另一个角。",
+			"deleteFrame": "删除照片框 {{n}}",
+			"rotateFrame": "旋转照片框",
+			"kind": "图片类型",
+			"kindPhoto": "照片",
+			"kindScan": "扫描件",
+			"kindPhotoHint": "拍摄时有角度：照片框的每个角各自移动，以适应透视。",
+			"kindScanHint": "由扫描仪制作：照片框保持为矩形，只能旋转。",
+			"kindAgain": "在选定读者之前，更改图片类型会重新查找照片。",
+			"save": "保存照片",
+			"saveTitle": "保存所选的照片？",
+			"saveSummary": "将保存的照片：{{count}} 张。",
+			"saveReplaces": "它们将替换以下读者现有的照片：{{names}}。",
+			"saveUnassigned": "未选择读者的照片框：{{count}} 个（保持不变）。",
+			"savedToast": "已保存照片：{{count}} 张。",
+			"deleteSheet": "删除图片",
+			"deleteSheetTitle": "删除图片？",
+			"deleteSheetDescription": "图片及其照片框将被删除。已保存的照片仍归读者所有。",
+			"deletedToast": "图片已删除。",
+			"progress": "{{label}}：已有照片 {{done}} / {{total}}",
+			"missingTitle": "仍缺少照片",
+			"byCamera": "逐个拍摄",
+			"errors": {
+				"not_found": "未找到图片。",
+				"set_not_found": "该班级或名单已不存在。",
+				"empty": "文件为空。",
+				"too_large": "图片过大（最大 {{maxMb}} MB）。",
+				"not_an_image": "该文件不是可读取的图片。",
+				"unsupported_format": "不支持的格式：请使用 JPEG、PNG、WebP 或 HEIC。",
+				"too_many_frames": "每张图片最多 {{maxFrames}} {{maxFrames:plural; other:张照片;}}。",
+				"bad_corners": "照片框无效：其角点必须构成位于图片内部的四边形。",
+				"already_detected": "该图片中的照片已经查找过。",
+				"frame_saved": "该照片已经保存。",
+				"frame_erased": "该照片所属的读者已被删除：照片框已被遮盖。",
+				"not_a_member": "只能选择该班级或名单中的读者。",
+				"patron_taken": "该读者已被选为照片 {{position}}：请先取消，再在此处选择。",
+				"confirm_replace": "{{count:plural; other:{{count}} 张照片将替换现有照片;}}，请确认后继续。",
+				"nothing_to_save": "保存前请至少选择一位读者。"
+			},
+			"erased": "读者已删除：照片框已在图片中被遮盖。"
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "CSV 文件",
+			"submit": "上传",
+			"hints": {
+				"students": "CSV 文件，每位学生一行，以分号或逗号分隔（电子表格导出的文件也可以）。请使用下方下载的模板中的列标题，其中包含所需的列。",
+				"teachers": "CSV 文件，每位教师一行，以分号或逗号分隔。请使用下方下载的模板中的列标题，其中包含所需的列。"
+			}
+		},
+		"mapping": {
+			"format": "识别出的格式",
+			"uncertain": "格式不确定：继续之前请检查各列。",
+			"remembered": "各列已根据此文件上次导入时的设置自动填入。",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "文件的标题行",
+				"unknown": "未知"
+			},
+			"mode": "模式",
+			"modes": {
+				"upsert": "添加并更新",
+				"upsertHint": "与已有记录匹配的行将更新现有读者，其他行则新建读者。",
+				"sync": {
+					"students": "同步学生",
+					"teachers": "同步教师"
+				},
+				"syncHint": {
+					"students": "该文件是完整的学生名单：未出现在文件中的学生会被列出（确认后删除）。教师不受影响。",
+					"teachers": "该文件是完整的教师名单：未出现在文件中的教师会被列出（确认后删除）。学生不受影响。"
+				}
+			},
+			"duplicates": "已存在的读者",
+			"policies": {
+				"update": "更新",
+				"skip": "跳过",
+				"create": "仍然新建"
+			},
+			"validate": "检查文件",
+			"matchByName": {
+				"students": "若没有 external_id 列，已有记录的学生将按姓名和班级识别。",
+				"teachers": "若没有 external_id 列，已有记录的教师将按姓名识别。"
+			}
+		},
+		"preview": {
+			"ready": "没有错误：可以导入该文件。",
+			"blocked": "请修正文件（或读者记录）中的错误后重新检查：有错误时不会导入任何内容。",
+			"columns": {
+				"name": "姓名",
+				"class": "班级"
+			},
+			"changed": "更改：{{fields}}",
+			"homonym": {
+				"pick": "选择读者",
+				"create": "新建读者",
+				"candidate": "{{name}}（{{group}}）",
+				"title": "需要确认的同名者"
+			},
+			"missing": {
+				"students": {
+					"title": "已有记录但未出现在文件中的学生（{{count}}）",
+					"remove": "从记录中删除这些学生（立即匿名化）",
+					"noPermission": "没有删除读者的权限：未出现在文件中的学生仍保留在记录中。",
+					"notRemoved": "{{count:plural; other:{{count}} 位未出现的学生因有未还借阅而未被删除;}}。"
+				},
+				"teachers": {
+					"title": "已有记录但未出现在文件中的教师（{{count}}）",
+					"remove": "从记录中删除这些教师（立即匿名化）",
+					"noPermission": "没有删除读者的权限：未出现在文件中的教师仍保留在记录中。",
+					"notRemoved": "{{count:plural; other:{{count}} 位未出现的教师因有未还借阅而未被删除;}}。"
+				},
+				"hint": "进行同步时，未出现在文件中的人员可以被删除：其个人数据将立即且永久清除，仅保留班级和统计数据。"
+			},
+			"commit": "导入",
+			"back": "返回各列",
+			"generatedCards": "将生成 {{count}} {{count:plural; other:张新读者证;}}，文件中没有号码。"
+		},
+		"reasons": {
+			"tooLong": "列 {{column}} 中的文本过长：最多 {{max}} {{max:plural; other:个字符;}}",
+			"nameRequired": "缺少名或姓",
+			"emailInvalid": "电子邮件无效",
+			"cardNumberInvalid": "读者证号无效",
+			"cardNumberTaken": "该读者证号已分配给另一位读者",
+			"cardNumberIsCopy": "读者证号与复本条码相同或相似",
+			"externalIdTaken": "该外部编号已分配给另一位读者",
+			"duplicateInFile": "同一人已出现在第 {{line}} 行",
+			"homonym": "档案中有 {{count}} {{count:plural; other:位同名者;}}：请选择要更新的那一位",
+			"matchedTwice": "另一行已在更新同一位读者",
+			"skipped": "已存在：已跳过",
+			"levelRequired": "缺少年级",
+			"levelUnknown": "“{{value}}”不是学校的年级",
+			"groupRequired": "缺少组别",
+			"groupUnknown": "该年级下找不到组别“{{value}}”。有效班级：{{classes}}（班级请在 系统管理 → 配置 → 班级 中创建）",
+			"levelNotInGroup": "组别“{{value}}”中没有此年级。有效班级：{{classes}}",
+			"classUnknown": "找不到班级“{{value}}”。有效班级：{{classes}}",
+			"teacherGroupUnknown": "找不到教师组“{{value}}”。有效的组：{{classes}}"
+		},
+		"done": {
+			"title": "导入完成",
+			"summary": "新增 {{created}} 位，更新 {{updated}} 位，未变更 {{unchanged}} 位，删除 {{removed}} 位。",
+			"printNew": "打印新读者的读者证",
+			"census": "照片信息采集",
+			"again": "导入另一个文件",
+			"batch": "导入编号 {{id}}：原始文件已保存在服务器上。"
+		},
+		"fields": {
+			"firstName": "名",
+			"lastName": "姓",
+			"class": "班级（年级和组别）",
+			"level": "班级（年级）",
+			"section": "组别",
+			"group": "教师组",
+			"externalId": "外部编号",
+			"cardNumber": "读者证",
+			"email": "电子邮件"
+		},
+		"titles": {
+			"students": "导入学生",
+			"teachers": "导入教师"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "名。"
+			},
+			"lastName": {
+				"hint": "姓。"
+			},
+			"class": {
+				"hint": "放在一列中的班级，如 3A 或 3 A：必须已存在于 系统管理 → 配置 → 班级 中。"
+			},
+			"level": {
+				"hint": "年级（1、2、3……），组别放在组别列中。"
+			},
+			"section": {
+				"hint": "组别（A、B……）：与年级一起确定班级。"
+			},
+			"cardNumber": {
+				"hint": "读者证号，适用于学生已有读者证的情况。",
+				"missing": "将生成新的读者证"
+			},
+			"externalId": {
+				"hint": "学校名册中的代码。",
+				"missing": "已有记录的读者将按姓名和班级识别"
+			},
+			"email": {
+				"hint": "可选。"
+			},
+			"group": {
+				"hint": "教师组；缺失时使用默认组。"
+			}
+		},
+		"classForm": {
+			"label": "班级",
+			"class": "放在一列中（班级：3A）",
+			"levelSection": "放在两列中（年级：3，组别：A）"
+		}
+	}
+}

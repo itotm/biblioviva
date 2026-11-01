@@ -1,0 +1,40 @@
+{
+	"id": "biblio-unknown-classification",
+	"title": {
+		"it": "Libri con classificazione sconosciuta",
+		"en": "Books with an unknown classification"
+	},
+	"description": {
+		"it": "Schede il cui genere o classe non esiste più nella configurazione: vanno riclassificate.",
+		"en": "Records whose genre or class no longer exists in the configuration: they need reclassifying."
+	},
+	"category": "books",
+	"params": [],
+	"sql": "SELECT b.title AS title, b.author AS author, CASE WHEN b.kind = 'fiction' THEN b.genre_code ELSE b.class_code END AS code FROM biblio b WHERE COALESCE(CASE WHEN b.kind = 'fiction' THEN b.genre_code ELSE b.class_code END, '') NOT IN (SELECT value FROM json_each(:classificationCodes)) ORDER BY b.title",
+	"columns": [
+		{
+			"key": "title",
+			"label": {
+				"it": "Titolo",
+				"en": "Title"
+			},
+			"type": "text"
+		},
+		{
+			"key": "author",
+			"label": {
+				"it": "Autore",
+				"en": "Author"
+			},
+			"type": "text"
+		},
+		{
+			"key": "code",
+			"label": {
+				"it": "Codice",
+				"en": "Code"
+			},
+			"type": "text"
+		}
+	]
+}

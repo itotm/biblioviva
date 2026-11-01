@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Tiskanje",
+		"newPatrons": "Nov seznam uporabnikov",
+		"newItems": "Nov seznam knjig",
+		"newPatronsTitle": "Nov seznam uporabnikov",
+		"newItemsTitle": "Nov seznam knjig",
+		"name": "Ime seznama",
+		"defaultName": "Seznam {{n}} z dne {{date}}",
+		"kind": "Vrsta",
+		"kinds": {
+			"all": "Vsi",
+			"patrons": "Uporabniki",
+			"items": "Knjige"
+		},
+		"classes": "Razredi",
+		"classesHint": "Izkaznice vseh učencev razreda, brez ustvarjanja seznama.",
+		"classKind": "Razred",
+		"count": "{{count}} {{count:plural; one:vnos; two:vnosa; few:vnosi; other:vnosov;}}",
+		"empty": "Ni seznamov. Seznami se ustvarijo tukaj ali z „Dodaj na seznam“ na straneh Uporabniki in Katalog.",
+		"lastPrinted": "Natisnjeno {{when}}",
+		"neverPrinted": "Še nikoli natisnjeno",
+		"open": "Odpri",
+		"created": "Seznam ustvarjen",
+		"deleted": "Seznam izbrisan",
+		"deleteTitle": "Izbrisati seznam „{{name}}“?",
+		"deleteDescription": "Vnosi zapustijo seznam; uporabniki ostanejo v evidenci."
+	},
+	"list": {
+		"rename": "Preimenuj",
+		"renamed": "Seznam preimenovan",
+		"print": "Natisni izkaznice",
+		"markPrinted": "Označi kot natisnjeno",
+		"marked": "{{count:plural; one:{{count}} izkaznica je označena kot natisnjena; two:{{count}} izkaznici sta označeni kot natisnjeni; few:{{count}} izkaznice so označene kot natisnjene; other:{{count}} izkaznic je označenih kot natisnjenih;}}",
+		"clearAfter": "Po tisku izprazni seznam",
+		"clear": "Izprazni",
+		"cleared": "Seznam izpraznjen",
+		"clearTitle": "Izprazniti seznam?",
+		"clearDescription": "Vsi vnosi zapustijo seznam; uporabniki ostanejo v evidenci.",
+		"delete": "Izbriši",
+		"entries": "{{count}} {{count:plural; one:uporabnik; two:uporabnika; few:uporabniki; other:uporabnikov;}} na seznamu",
+		"empty": "Seznam je prazen: uporabnike dodate s hitrimi filtri, z bralnikom ali s strani Uporabniki.",
+		"remove": "Odstrani s seznama",
+		"moveUp": "Premakni gor",
+		"moveDown": "Premakni dol",
+		"dragHint": "Povlecite vnose, da spremenite vrstni red tiskanja.",
+		"removed": "Odstranjeno s seznama",
+		"columns": {
+			"position": "Št.",
+			"printed": "Izkaznica natisnjena"
+		},
+		"printedYes": "da",
+		"printedNo": "ne",
+		"quick": {
+			"title": "Dodaj s filtri",
+			"hint": "Kdor je že na seznamu, ni dodan dvakrat.",
+			"type": "Vrsta",
+			"any": "Poljubna",
+			"stage": "Stopnja šole",
+			"level": "Letnik",
+			"withoutPrintedCard": "Samo tisti, ki še nimajo natisnjene izkaznice",
+			"withoutPhoto": "Samo tisti brez fotografije",
+			"importBatch": "Uvoz",
+			"anyBatch": "— brez —",
+			"batchLabel": "št. {{id}} · {{file}} · novih: {{created}}",
+			"createdAfter": "Ustvarjeni od",
+			"add": "Dodaj na seznam",
+			"added": "Dodano: {{added}}, že na seznamu: {{skipped}}",
+			"none": "Noben uporabnik ne ustreza filtrom.",
+			"pendingLabels": "Nalepke za tisk",
+			"pendingAny": "— vsi izvodi —",
+			"acquiredFrom": "Pridobljeni od",
+			"acquiredTo": "do",
+			"genre": "Žanr",
+			"itemType": "Vrsta izvoda",
+			"batchLabelItems": "št. {{id}} · {{file}} · {{created}} {{created:plural; one:izvod; two:izvoda; few:izvodi; other:izvodov;}}",
+			"noneItems": "Noben izvod ne ustreza filtrom.",
+			"addedItems": "Dodano: {{added}}, že na seznamu: {{skipped}}",
+			"nonfictionClass": "Razred neleposlovja"
+		},
+		"scan": {
+			"title": "Dodaj z bralnikom",
+			"hint": "Preberite izkaznico vsakega uporabnika: takoj se doda na seznam. Izkaznice, ki so že na seznamu, se prezrejo.",
+			"added": "{{name}} dodan",
+			"duplicate": "{{name}} je že na seznamu",
+			"unknown": "Ni uporabnika z izkaznico {{card}}",
+			"notCard": "Prebrana koda ni izkaznica",
+			"hintItems": "Preberite črtno kodo vsakega izvoda (na primer med hojo ob polici): takoj se doda na seznam. Izvodi, ki so že na seznamu, se prezrejo.",
+			"addedItem": "{{title}} ({{barcode}}) dodan",
+			"duplicateItem": "{{title}} ({{barcode}}) je že na seznamu",
+			"unknownItem": "Ni izvoda s črtno kodo {{barcode}}",
+			"notItem": "Prebrana koda ni izvod"
+		},
+		"printLabels": "Natisni nalepke",
+		"markPrintedKind": "Nalepke natisnjene",
+		"markedItems": "{{count:plural; one:{{count}} izvod je označen kot natisnjen; two:{{count}} izvoda sta označena kot natisnjena; few:{{count}} izvodi so označeni kot natisnjeni; other:{{count}} izvodov je označenih kot natisnjenih;}}",
+		"entriesItems": "{{count}} {{count:plural; one:izvod; two:izvoda; few:izvodi; other:izvodov;}} na seznamu",
+		"emptyItems": "Seznam je prazen: izvode dodate s hitrimi filtri, z bralnikom ali iz kataloga.",
+		"clearDescriptionItems": "Vsi vnosi se odstranijo; izvodi ostanejo v katalogu."
+	},
+	"basket": {
+		"label": "Seznami za tisk",
+		"labelToPrint": "Seznami za tisk: {{count}} za tisk",
+		"entry": "{{name}} ({{count}})",
+		"none": "Noben seznam ni za tisk",
+		"all": "Vsi seznami"
+	},
+	"addTo": {
+		"button": "Dodaj na seznam",
+		"selected": "Dodaj izbrane na seznam",
+		"title": "Dodaj na seznam za tisk",
+		"existing": "Obstoječi seznam",
+		"create": "Nov seznam",
+		"newName": "Ime novega seznama",
+		"confirm": "Dodaj",
+		"done": "Dodano: {{added}} v „{{name}}“, že na seznamu: {{skipped}}"
+	},
+	"labels": {
+		"title": "Natisni nalepke",
+		"button": "Natisni nalepke",
+		"selected": "Natisni nalepke izbranih",
+		"kind": "Vrsta nalepke",
+		"kinds": {
+			"pair": "Par",
+			"barcode": "Samo črtna koda",
+			"spine": "Samo trak na hrbtu"
+		},
+		"kindHints": {
+			"pair": "Trak na hrbtu zgoraj in nalepka s črtno kodo spodaj, en par za vsako knjigo (trenutni natis).",
+			"barcode": "Samo notranja nalepka s črtno kodo, za ponovni natis.",
+			"spine": "Samo trak na hrbtu, na primer po ponovni klasifikaciji."
+		},
+		"stock": "List nalepk",
+		"start": "Prvi prosti položaj",
+		"startHint": "Od 1 do {{max}}: preskoči nalepke, ki so na listu že uporabljene.",
+		"count": "{{count}} {{count:plural; one:izvod; two:izvoda; few:izvodi; other:izvodov;}}",
+		"unclassified": "{{count}} {{count:plural; one:izvod knjige; two:izvoda knjig; few:izvodi knjig; other:izvodov knjig;}} za klasifikacijo: natisne se samo {{count:plural; one:nalepka; two:nalepki; few:nalepke; other:nalepk;}} s črtno kodo, trak na hrbtu pa po klasifikaciji.",
+		"pendingCount": "{{count}} {{count:plural; one:izvod; two:izvoda; few:izvodi; other:izvodov;}} z nalepkami za tisk",
+		"pages": "{{pages}} {{pages:plural; one:list; two:lista; few:listi; other:listov;}} ({{perPage}} na list)",
+		"print": "Odpri stran za tisk",
+		"afterPrint": "Stran za tisk je odprta v novem zavihku. Ko so nalepke natisnjene, jih označite kot natisnjene.",
+		"markPrinted": "Označi kot natisnjene",
+		"marked": "{{count:plural; one:{{count}} izvod je označen kot natisnjen; two:{{count}} izvoda sta označena kot natisnjena; few:{{count}} izvodi so označeni kot natisnjeni; other:{{count}} izvodov je označenih kot natisnjenih;}}",
+		"status": {
+			"printed": "Nalepke natisnjene",
+			"pending": "Nalepke za tisk",
+			"partial": "Manjka ena nalepka"
+		}
+	},
+	"cards": {
+		"title": "Natisni izkaznice",
+		"count": "{{count}} {{count:plural; one:izkaznica; two:izkaznici; few:izkaznice; other:izkaznic;}}",
+		"afterPrint": "Stran za tisk je odprta v novem zavihku. Ko so izkaznice natisnjene, jih označite kot natisnjene.",
+		"layout": "Kako natisniti",
+		"layouts": {
+			"side-by-side": "Sprednja in zadnja stran druga ob drugi",
+			"duplex": "Na obeh straneh lista"
+		},
+		"window": "V oknu za tisk brskalnika:",
+		"steps": {
+			"duplex": {
+				"long-edge": "izberite „Obojestransko“, z obračanjem po daljšem robu;",
+				"short-edge": "izberite „Obojestransko“, z obračanjem po krajšem robu;"
+			},
+			"scale": "merilo 100 % („Dejanska velikost“, ne „Prilagodi strani“);",
+			"margins": "robovi: brez.",
+			"after": {
+				"side-by-side": {
+					"marks": "Nato izrežite vsako izkaznico tako, da z ravnilom povežete oznake za rezanje okoli izkaznic, in jo na krajšem robu prepognite na pol.",
+					"line": "Nato izrežite vsako izkaznico vzdolž barvne črte okoli nje in jo na krajšem robu prepognite na pol.",
+					"edge": "Nato izrežite vsako izkaznico ob robu in jo na krajšem robu prepognite na pol."
+				},
+				"duplex": {
+					"marks": "Nato izrežite izkaznice tako, da z ravnilom povežete oznake za rezanje okoli sprednjih strani: zadnja stran je že za sprednjo (deset na list).",
+					"line": "Nato izrežite izkaznice vzdolž barvne črte okoli sprednjih strani: zadnja stran je že za sprednjo (deset na list).",
+					"edge": "Nato izrežite izkaznice ob robu sprednjih strani: zadnja stran je že za sprednjo (deset na list)."
+				}
+			}
+		},
+		"print": "Natisni",
+		"calibrate": "Prvič ali če zadnje strani ne padejo za sprednje:"
+	},
+	"words": {
+		"teacher": "Učitelj",
+		"title": "Naslov",
+		"code": "Koda",
+		"dueBy": "Vrniti do",
+		"due": "Rok vrnitve",
+		"name": "Ime",
+		"daysOverdue": "Dni zamude",
+		"loanOn": "Izposoja z dne {{date}} za",
+		"overduesOn": "Opomini knjižnice z dne {{date}}",
+		"toReturn": "Knjige za vrnitev v knjižnico",
+		"enjoy": "Prijetno branje."
+	}
+}

@@ -1,0 +1,66 @@
+{
+	"title": "Note",
+	"new": "Notă nouă",
+	"adminOnly": "Doar administratorul arhivează notele și le pune în evidență pe tabloul de bord.",
+	"pinned": "În evidență",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Arhivată de {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:notă; few:note; other:de note;}}",
+	"archiveCount": "{{shown}} din {{total}} {{total:plural; one:notă arhivată; few:note arhivate; other:de note arhivate;}}",
+	"actions": {
+		"label": "Acțiuni asupra notei",
+		"pin": "Pune în evidență",
+		"unpin": "Scoate din evidență",
+		"archive": "Arhivează",
+		"restore": "Restaurează",
+		"delete": "Șterge",
+		"showAll": "Arată tot",
+		"showLess": "Arată mai puțin",
+		"more": "Arată mai multe"
+	},
+	"done": {
+		"added": "Notă adăugată",
+		"pinned": "Notă pusă în evidență",
+		"unpinned": "Notă scoasă din evidență",
+		"archived": "Notă arhivată",
+		"restored": "Notă restaurată",
+		"deleted": "Notă ștearsă"
+	},
+	"confirmDelete": {
+		"title": "Ștergeți nota?",
+		"text": "Este ștearsă definitiv și nu poate fi recuperată."
+	},
+	"form": {
+		"body": "Text",
+		"placeholder": "De ex. Scanerul de la ghișeu nu citește legitimațiile.",
+		"privacy": "Toate conturile citesc notele: nu scrieți date personale ale elevilor.",
+		"written": "O notă nu poate fi modificată: în caz de greșeală, cereți administratorului să o arhiveze și scrieți alta.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Culoare",
+		"pinned": "Pusă în evidență pe tabloul de bord",
+		"pinnedHint": "Este afișată tuturor în partea de sus a tabloului de bord (și a ghișeului de împrumut) până când este scoasă din evidență sau arhivată.",
+		"save": "Adaugă"
+	},
+	"colors": {
+		"yellow": "Galben",
+		"pink": "Roz",
+		"green": "Verde",
+		"blue": "Albastru deschis",
+		"orange": "Portocaliu"
+	},
+	"errors": {
+		"empty": "Scrieți textul notei.",
+		"tooLong": "Textul depășește {{max}} {{max:plural; one:caracter; few:caractere; other:de caractere;}}.",
+		"color": "Alegeți una dintre culori."
+	},
+	"empty": {
+		"open": "Nicio notă deschisă",
+		"openHint": "Nicio notă deschisă. Notele transmit probleme și avertismente colegilor și administratorului.",
+		"archived": "Nicio notă arhivată"
+	},
+	"home": {
+		"title": "Note",
+		"open": "Deschideți notele"
+	},
+	"tile": "Note deschise"
+}

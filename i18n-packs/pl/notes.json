@@ -1,0 +1,66 @@
+{
+	"title": "Notatki",
+	"new": "Nowa notatka",
+	"adminOnly": "Tylko administrator archiwizuje notatki i wyróżnia je na pulpicie.",
+	"pinned": "Wyróżnione",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Zarchiwizowana przez {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:notatka; few:notatki; many:notatek; other:notatki;}}",
+	"archiveCount": "{{shown}} z {{total}} {{total:plural; one:zarchiwizowanej notatki; few:zarchiwizowanych notatek; many:zarchiwizowanych notatek; other:zarchiwizowanej notatki;}}",
+	"actions": {
+		"label": "Działania dla notatki",
+		"pin": "Wyróżnij na pulpicie",
+		"unpin": "Usuń wyróżnienie",
+		"archive": "Zarchiwizuj",
+		"restore": "Przywróć",
+		"delete": "Usuń",
+		"showAll": "Pokaż wszystkie",
+		"showLess": "Pokaż mniej",
+		"more": "Pokaż więcej"
+	},
+	"done": {
+		"added": "Dodano notatkę",
+		"pinned": "Notatka wyróżniona",
+		"unpinned": "Usunięto wyróżnienie notatki",
+		"archived": "Notatka zarchiwizowana",
+		"restored": "Notatka przywrócona",
+		"deleted": "Notatka usunięta"
+	},
+	"confirmDelete": {
+		"title": "Usunąć notatkę?",
+		"text": "Zostanie usunięta na zawsze i nie będzie można jej odzyskać."
+	},
+	"form": {
+		"body": "Tekst",
+		"placeholder": "Np. Skaner przy stanowisku nie odczytuje kart.",
+		"privacy": "Notatki widzą wszystkie konta: nie wpisywać danych osobowych uczniów.",
+		"written": "Notatki nie można zmieniać: w razie błędu poprosić administratora o archiwizację i napisać nową.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Kolor",
+		"pinned": "Wyróżnij na pulpicie",
+		"pinnedHint": "Pokazywana wszystkim na górze pulpitu (i stanowiska wypożyczeń) do chwili usunięcia wyróżnienia lub zarchiwizowania.",
+		"save": "Dodaj"
+	},
+	"colors": {
+		"yellow": "Żółty",
+		"pink": "Różowy",
+		"green": "Zielony",
+		"blue": "Jasnoniebieski",
+		"orange": "Pomarańczowy"
+	},
+	"errors": {
+		"empty": "Wpisać tekst notatki.",
+		"tooLong": "Tekst jest dłuższy niż {{max}} {{max:plural; one:znak; few:znaki; many:znaków; other:znaku;}}.",
+		"color": "Wybrać jeden z kolorów."
+	},
+	"empty": {
+		"open": "Brak otwartych notatek",
+		"openHint": "Brak otwartych notatek. Notatki przekazują problemy i uwagi kolegom oraz administratorowi.",
+		"archived": "Brak zarchiwizowanych notatek"
+	},
+	"home": {
+		"title": "Notatki",
+		"open": "Otwórz notatki"
+	},
+	"tile": "Otwarte notatki"
+}

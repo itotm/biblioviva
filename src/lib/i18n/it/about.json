@@ -1,0 +1,19 @@
+{
+	"title": "Informazioni",
+	"app": {
+		"version": "Versione",
+		"license": "Licenza",
+		"repository": "Codice sorgente"
+	},
+	"deps": {
+		"title": "Librerie utilizzate",
+		"runtime": "In esecuzione ({{count}})",
+		"development": "Solo per lo sviluppo ({{count}})",
+		"system": "Componenti di sistema",
+		"columns": {
+			"name": "Nome",
+			"version": "Versione",
+			"license": "Licenza"
+		}
+	}
+}

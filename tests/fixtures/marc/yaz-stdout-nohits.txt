@@ -1,0 +1,20 @@
+Connecting...OK.
+Sent initrequest.
+Connection accepted by v3 target.
+ID     : 81
+Name   : Metaproxy/YAZ
+Version: 1.20.0/5.31.1 c3cea881e3e7e80b069ddd1429994e58841acb14
+Options: search present scan namedResultSets
+Elapsed: 0.035711
+Sent searchRequest.
+Received SearchResponse.
+Search was a success.
+Number of hits: 0, setno 1
+records returned: 0
+Elapsed: 0.021486
+Sent presentRequest (1+1).
+Diagnostic message(s) from database:
+    [13] Present request out of range -- v2 addinfo 'Requested start record 1, only 1 to 0 available (backend=172.16.1.56:2101/nopac)'
+nextResultSetPosition = 2
+Elapsed: 0.013395
+See you later, alligator.

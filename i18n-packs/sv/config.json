@@ -1,0 +1,1778 @@
+{
+	"home": {
+		"title": "Inställningar"
+	},
+	"leave": {
+		"title": "Lämna utan att spara?",
+		"description": "Ändringar som ännu inte är sparade går förlorade.",
+		"confirm": "Lämna utan att spara"
+	},
+	"taxonomy": {
+		"title": "Klassifikation",
+		"intro": "Ändringarna ligger som utkast tills du trycker på ”Spara”; den föregående versionen av {{file}} behålls.",
+		"invalid": "Vissa värden är ogiltiga (markerade i rött): rätta dem för att kunna spara.",
+		"orphans": "Katalogen har böcker med koder som klassifikationen inte innehåller: {{codes}}. Lägg till dessa koder här eller klassificera om böckerna från katalogen.",
+		"unsaved": "Osparade ändringar",
+		"discard": "Ångra ändringar",
+		"saved": "Klassifikationen är sparad",
+		"savedDetail": "{{records}} {{records:plural; one:bok flyttad; other:böcker flyttade;}}, {{callNumbers}} {{callNumbers:plural; one:hyllsignum skrivet om; other:hyllsignum skrivna om;}}, {{bands}} {{bands:plural; one:ryggband att skriva ut igen; other:ryggband att skriva ut igen;}}.",
+		"tabs": {
+			"fiction": "Skönlitteratur",
+			"nonfiction": "Facklitteratur",
+			"dewey": "Dewey",
+			"options": "Alternativ"
+		},
+		"addGenre": "Lägg till en genre",
+		"addClass": "Lägg till ett ämne",
+		"addSubclass": "Lägg till ett underämne",
+		"dragHint": "Dra raderna för att ändra ordningen, eller använd pilarna. Ordningen är den som gäller i katalogens val.",
+		"pickGenre": "Välj en genre för att redigera den",
+		"pickClass": "Välj ett ämne för att redigera det",
+		"untitled": "Utan namn",
+		"hasProblems": "Att rätta",
+		"usageShort": "{{records}} {{records:plural; one:bok; other:böcker;}}",
+		"moveUp": "Flytta upp",
+		"moveDown": "Flytta ned",
+		"panel": {
+			"genre": "Genre",
+			"class": "Ämne",
+			"subclass": "Underämne"
+		},
+		"fields": {
+			"code": "Kod",
+			"label": "Namn",
+			"color": "Färg",
+			"pictogram": "Pictogram",
+			"position": "Position"
+		},
+		"renameNote": "Koden har ändrats: vid sparandet {{records}} {{records:plural; one:bok flyttas; other:böcker flyttas;}} från {{from}} till {{to}}, och deras hyllsignum uppdateras.",
+		"color": {
+			"inherit": "Använd färgen för {{code}}",
+			"none": "Ingen färg",
+			"hex": "Färgkod"
+		},
+		"pictogram": {
+			"upload": "Ladda upp en bild",
+			"choose": "Välj bland bilderna",
+			"remove": "Ta bort bilden",
+			"own": "Egen bild. PNG, JPEG eller WebP: den sparas som PNG.",
+			"missing": "Filen {{name}} finns inte i bildmappen: på etiketterna visas cirkeln med färgen och koden.",
+			"inherited": "Utan egen bild används bilden för {{code}}.",
+			"placeholder": "Utan bild visas en cirkel med färgen och koden på etiketterna.",
+			"gallery": "Klassifikationens bilder",
+			"errors": {
+				"empty": "Filen är tom.",
+				"too_large": "Bilden är för stor (högst {{maxMb}} MB).",
+				"not_an_image": "Filen är inte en bild.",
+				"unsupported_format": "Formatet godtas inte: använd PNG, JPEG eller WebP."
+			}
+		},
+		"position": {
+			"top": "Huvudämne",
+			"under": "Inom {{code}} · {{label}}",
+			"locked": "Det har underämnen och förblir ett huvudämne."
+		},
+		"usage": {
+			"new": "Nytt: ingen bok använder det ännu.",
+			"none": "Ingen bok använder den här koden.",
+			"some": "Används av {{records}} {{records:plural; one:bok; other:böcker;}} ({{copies}} {{copies:plural; one:exemplar; other:exemplar;}})."
+		},
+		"remove": {
+			"genre": "Ta bort genren",
+			"class": "Ta bort ämnet",
+			"confirmTitle": "Ta bort {{code}}?",
+			"withSubclasses": "Dess {{count}} {{count:plural; one:underämne; other:underämnen;}} tas bort också.",
+			"inUse": "{{records}} {{records:plural; one:bok använder; other:böcker använder;}} den här koden: vid sparandet frågas vart de ska flyttas.",
+			"confirm": "Ta bort"
+		},
+		"preview": {
+			"title": "Förhandsgranskning av ryggbandet",
+			"hint": "En exempelbok så som den skrivs ut nu, i verklig storlek.",
+			"needsCode": "Förhandsgranskningen visas när koden är giltig."
+		},
+		"problems": {
+			"codeRequired": "Koden krävs.",
+			"codeFormat": "Använd bara bokstäver, siffror, punkt, bindestreck eller understreck (högst 32).",
+			"codeTaken": "Koden används redan av en annan genre eller ett annat ämne.",
+			"labelRequired": "Namnet krävs.",
+			"labelLong": "Namnet är för långt (högst 120 tecken).",
+			"colorFormat": "Skriv färgen som #rrggbb, till exempel #e8231b.",
+			"patternRequired": "Schemat får inte vara tomt."
+		},
+		"dewey": {
+			"hint": "När en bok i facklitteratur har ett Dewey-nummer (till exempel från SBN) föreslås dess ämne av den här tabellen: den längsta prefixmatchningen gäller.",
+			"probe": "Prova ett Dewey-nummer",
+			"noMatch": "Inget ämne stämmer",
+			"empty": "Ingen Dewey-koppling",
+			"prefix": "Dewey-prefix",
+			"class": "Ämne",
+			"add": "Lägg till en koppling",
+			"problems": {
+				"prefixFormat": "1 till 3 siffror.",
+				"prefixTaken": "Prefixet förekommer två gånger.",
+				"codeUnknown": "Välj ett ämne."
+			}
+		},
+		"options": {
+			"fictionByClass": "Skönlitteraturen delas efter läsnivå",
+			"fictionByClassHint": "Skönlitterära böcker kan få den läsnivå de passar för (till exempel klass 4): den syns i hyllsignum och på ryggbandet.",
+			"classPerItem": "Läsnivån finns på varje exemplar",
+			"classPerItemHint": "Behövs när exemplar av samma bok står i hyllor för olika nivåer. Annars finns nivån på boken.",
+			"toCopies": "Vid sparandet flyttas läsnivån för varje bok till dess exemplar.",
+			"toRecords": "Vid sparandet går exemplarens nivå tillbaka till boken; det går inte om exemplar av samma bok har olika nivåer.",
+			"patterns": "Mönster för hyllsignum",
+			"patternsHint": "De gäller för exemplar som läggs till från och med nu; befintliga hyllsignum ändras inte. Platshållare: {{placeholders}}.",
+			"pattern": {
+				"fiction": "Skönlitteratur",
+				"fictionWithClass": "Skönlitteratur med kopplad klass",
+				"nonfiction": "Facklitteratur"
+			},
+			"unknownPlaceholders": "Okända platshållare: {{names}}.",
+			"example": "Exempel: {{example}}"
+		},
+		"save": {
+			"title": "Spara klassifikationen",
+			"checking": "Kontrollerar vad som ändras i katalogen…",
+			"unchanged": "Det finns inga ändringar att spara.",
+			"errors": "Rätta dessa problem innan du sparar:",
+			"removedTitle": "Borttagna koder som fortfarande används",
+			"removedHint": "Välj vart böckerna för varje borttagen kod ska flyttas: den nya koden sätts på böckerna, först i deras hyllsignum och på ryggbanden.",
+			"moveTo": "{{code}} · {{label}}: {{records}} {{records:plural; one:bok; other:böcker;}} ({{copies}} {{copies:plural; one:exemplar; other:exemplar;}}). Flytta till",
+			"choose": "Välj…",
+			"callNumbers": "{{count}} {{count:plural; one:hyllsignum börjar; other:hyllsignum börjar;}} med en borttagen kod: koden i början ersätts (till exempel B 4 DEL blir A 4 DEL).",
+			"bandsMoved": "Ryggbanden för de flyttade böckerna, och etiketterna vars hyllsignum har ändrats, går tillbaka bland dem som ska skrivas ut.",
+			"unused": "Borttagna, används av ingen bok: {{codes}}.",
+			"reprint": "Lägg tillbaka bland etiketterna som ska skrivas ut ryggbanden för {{copies}} {{copies:plural; one:exemplar; other:exemplar;}} vars namn, färg eller pictogram ändras ({{codes}})",
+			"reprintHint": "Lämna det avstängt om skillnaden på banden som redan är fästa på böckerna inte spelar någon roll.",
+			"conflicts": "{{count}} {{count:plural; one:bok har; other:böcker har;}} exemplar i olika klasser: ge samma klass till alla exemplar av varje bok innan klassen tas bort från exemplaren.",
+			"toCopies": "Den kopplade klassen för {{count}} {{count:plural; one:bok flyttas; other:böcker flyttas;}} till deras exemplar.",
+			"toRecords": "Exemplarens klass går tillbaka till boken för {{count}} {{count:plural; one:titel; other:titlar;}}.",
+			"warnings": "{{count}} {{count:plural; one:varning; other:varningar;}} (de hindrar inte sparandet)",
+			"levelsTitle": "Läsnivåer borttagna medan böcker har dem",
+			"levelMoveTo": "Böckerna på nivån {{code}} · {{label}} ({{records}} {{records:plural; one:titel; other:titlar;}}, {{copies}} {{copies:plural; one:exemplar; other:exemplar;}}) flyttas till",
+			"noLevel": "Ingen nivå",
+			"levelsHint": "Nivån i exemplarens hyllsignum ändras med dem (till exempel B 4 DEL blir B 5 DEL) och deras etiketter går tillbaka bland dem som ska skrivas ut."
+		},
+		"levels": {
+			"title": "Läsnivåer",
+			"hint": "I ordning, från den enklaste. Koden sätts på böckerna och i hyllsignum (till exempel 4 i B 4 DEL), namnet visas bland valen. För en nivå som används och tas bort eller byter namn frågas vid sparandet vart dess böcker ska flyttas.",
+			"code": "Nivåkod",
+			"label": "Nivåns namn",
+			"up": "Flytta upp",
+			"down": "Flytta ned",
+			"remove": "Ta bort nivån",
+			"add": "Lägg till en nivå"
+		}
+	},
+	"sections": {
+		"library": {
+			"title": "Bibliotek och skola",
+			"description": "Namn, skoltyp, klasser och avdelningar, läsår, tidszon."
+		},
+		"school": {
+			"title": "Skola",
+			"description": "Skolans stadier och årskurser, hur en klass skrivs, vad som händer med klasserna vid årets slut. Klasserna själva hanteras under Administration → Inställningar → Klasser."
+		},
+		"catalog": {
+			"title": "Katalog",
+			"description": "Värden för okänd författare, förlag och ort."
+		},
+		"barcodes": {
+			"title": "Streckkoder",
+			"description": "Format på lånekort och exemplar, gamla koder, typ av streckkod."
+		},
+		"circulation": {
+			"title": "Utlåning",
+			"description": "Regler för lån och förnyelse, återlämningsdatum, påminnelser, kvitton."
+		},
+		"calendar": {
+			"title": "Kalender",
+			"description": "Stängningsdagar och helgdagar."
+		},
+		"z3950": {
+			"title": "Z39.50 (SBN)",
+			"description": "Servrarna som bokposterna kommer från."
+		},
+		"metadata": {
+			"title": "Bokdata",
+			"description": "Datakällorna när man söker på ISBN."
+		},
+		"performance": {
+			"title": "Prestanda",
+			"description": "Datorn som BiblioViva körs på och de inställningar som beror på den."
+		},
+		"classification": {
+			"title": "Klassifikation",
+			"description": "Genrer, ämnen, pictogram, Dewey och hyllsignum."
+		},
+		"cards": {
+			"title": "Lånekort",
+			"description": "Format på lånekorten och på utskriftsarket."
+		},
+		"labels": {
+			"title": "Etiketter",
+			"description": "Etiketter och ryggband för böcker, självhäftande ark."
+		},
+		"photos": {
+			"title": "Foton av låntagare",
+			"description": "Storlek och format på fotona."
+		},
+		"covers": {
+			"title": "Omslag",
+			"description": "Storlek, format och källor för omslagen."
+		},
+		"privacy": {
+			"title": "Integritet",
+			"description": "Hur länge loggen över åtgärderna sparas."
+		},
+		"backup": {
+			"title": "Säkerhetskopia",
+			"description": "Tid och bevarande av säkerhetskopiorna, kopia utanför datorn."
+		},
+		"security": {
+			"title": "Säkerhet och åtkomst",
+			"description": "Sessionernas längd, inloggningsförsök, konton och roller."
+		},
+		"ui": {
+			"title": "Gränssnitt",
+			"description": "Utlåningsdisken och de tillagda språken; färger, språk och översikten finns under ”Utseende och språk”."
+		}
+	},
+	"fields": {
+		"library": {
+			"name": {
+				"label": "Bibliotekets namn",
+				"hint": "Visas uppe till vänster, på lånekorten och på utskrifterna."
+			},
+			"contactEmail": {
+				"label": "Kontakt-e-post",
+				"hint": "Valfri: visas på de utskrifter som tar med den."
+			},
+			"schoolYearStart": {
+				"label": "Läsårets början",
+				"hint": "Månad och dag i formen MM-DD (till exempel 09-01): den skiljer åren åt i statistiken."
+			},
+			"schoolYearLabel": {
+				"label": "Läsårets namn",
+				"hint": "Så här visas läsåret på lånekort, rapporter och sidor: två år (2026/2027) eller året det börjar (2026), som i Brasilien, Japan och Korea."
+			},
+			"timezone": {
+				"label": "Tidszon",
+				"hint": "Zonens namn, till exempel Europe/Stockholm: datum och återlämningsdatum följer den, inte serverns klocka."
+			},
+			"weekStart": {
+				"label": "Veckans första dag",
+				"hint": "Dagen då veckorna börjar i kalendrarna och i översiktens ”Denna vecka”. Vid första starten väljer språket dagen: måndag på svenska, söndag på engelska."
+			}
+		},
+		"school": {
+			"classLabel": {
+				"label": "Hur klassen skrivs",
+				"hint": "{level} är årskursen, {group} klassens namn: ”{level} {group}” ger 3 B, ”{level}{group}” ger 3B. Ett stadium kan ha en egen (Stadier och årskurser)."
+			},
+			"groupWord": {
+				"label": "Ord för klassen",
+				"hint": "Namnet på klassfältet i formulär och filter, och {word} på klassraden på lånekortet (Sektion B, Klass B, Grupp B)."
+			},
+			"cardClass": {
+				"label": "Klass på lånekortet",
+				"hint": "Klassraden som skrivs ut på lånekortet: {word} är ordet för klassen, {group} klassens namn, {level} årskursen, {class} hela klassen. ”{word} {group}” ger Sektion B, ”{class}” ger 3 B."
+			},
+			"teacherGroupName": {
+				"label": "Namn på lärargruppen",
+				"hint": "Gruppen som en lärare hamnar i när ingen annan väljs."
+			},
+			"promotionWithinStage": {
+				"label": "Vid årets slut, inom samma stadium",
+				"hint": "Vanligtvis följer klassen med sina elever: 3 B blir 4 B."
+			},
+			"promotionAcrossStages": {
+				"label": "Vid årets slut, vid övergång till ett annat stadium",
+				"hint": "Till exempel från årskurs 6 på mellanstadiet till årskurs 7 på högstadiet, i en skola som har båda."
+			}
+		},
+		"catalog": {
+			"specialAuthors": {
+				"label": "Särskilda författare",
+				"hint": "En per rad: de värden som godtas i stället för en personlig författare (till exempel Anonym, AA. VV.)."
+			},
+			"unknownPublisher": {
+				"label": "Okänt förlag",
+				"hint": "Värdet som skrivs när förlaget inte anges."
+			},
+			"unknownPlace": {
+				"label": "Okänd ort",
+				"hint": "Värdet som skrivs när utgivningsorten inte anges."
+			}
+		},
+		"barcodes": {
+			"keyboardLayout": {
+				"label": "Datorns tangentbord",
+				"hint": "Tangentbordets layout på de datorer som streckkodsläsarna är anslutna till: den används för att rätta tecken som en läsare inställd för ett annat tangentbord skriver fel."
+			},
+			"cameraSound": {
+				"label": "Kameraljud",
+				"hint": "Telefonens pip när kameran läser ett lånekort, streckkoden på ett exemplar eller en ISBN. USB-läsaren piper av sig själv och behöver inget ljud; utlåningsdisken förblir tyst."
+			},
+			"patron": {
+				"symbology": {
+					"label": "Streckkodstyp på lånekorten",
+					"hint": "Code 128 för nya lånekort; Code 39 bara om bibliotekets läsare inte kan läsa Code 128."
+				}
+			},
+			"item": {
+				"symbology": {
+					"label": "Streckkodstyp på exemplaren",
+					"hint": "Code 128 för nya etiketter; Code 39 bara om bibliotekets läsare inte kan läsa Code 128."
+				}
+			}
+		},
+		"circulation": {
+			"rules": {
+				"student": {
+					"loanDays": {
+						"label": "Lånedagar",
+						"hint": "Hur många dagar ett lån varar för elever."
+					},
+					"maxLoans": {
+						"label": "Högst antal böcker på lån",
+						"hint": "Hur många böcker man kan ha samtidigt."
+					},
+					"maxRenewals": {
+						"label": "Högst antal förnyelser",
+						"hint": "Hur många gånger samma lån kan förnyas (0 = aldrig)."
+					},
+					"renewalDays": {
+						"label": "Dagar per förnyelse",
+						"hint": "Hur många dagar varje förnyelse lägger till."
+					}
+				},
+				"teacher": {
+					"loanDays": {
+						"label": "Lånedagar",
+						"hint": "Hur många dagar ett lån varar för lärare."
+					},
+					"maxLoans": {
+						"label": "Högst antal böcker på lån",
+						"hint": "Hur många böcker man kan ha samtidigt."
+					},
+					"maxRenewals": {
+						"label": "Högst antal förnyelser",
+						"hint": "Hur många gånger samma lån kan förnyas (0 = aldrig)."
+					},
+					"renewalDays": {
+						"label": "Dagar per förnyelse",
+						"hint": "Hur många dagar varje förnyelse lägger till."
+					}
+				}
+			},
+			"dueDateMode": {
+				"label": "Beräkning av återlämningsdatum",
+				"hint": "Hur lånetiden räknas i förhållande till de dagar biblioteket är stängt."
+			},
+			"renewFrom": {
+				"label": "Förnyelsen räknas från",
+				"hint": "Den dag från vilken förnyelsedagarna räknas."
+			},
+			"allowRenewalWhenOverdue": {
+				"label": "Förnyelse även efter återlämningsdatum",
+				"hint": "Ett lån som redan är försenat kan förnyas."
+			},
+			"overdueNotice": {
+				"template": {
+					"label": "Mall för påminnelser",
+					"hint": "Namnet på utskriftsmallen för påminnelserna (mapp i slips/templates)."
+				},
+				"pageBreakPerGroup": {
+					"label": "En sida per klass",
+					"hint": "Varje klass på sitt eget ark, att lämna till läraren; det kan också ändras vid utskriften."
+				},
+				"minDays": {
+					"label": "Dagar försenad innan en påminnelse",
+					"hint": "Ett lån tas med bland påminnelserna först efter så här många dagars försening (0 = direkt)."
+				}
+			},
+			"blockIfOverdue": {
+				"label": "Inga nya lån när böcker är försenade",
+				"hint": "Den som har en försenad bok kan inte låna fler förrän den lämnas tillbaka."
+			},
+			"hardDueDate": {
+				"label": "Sista återlämningsdatum",
+				"hint": "Inget lån förfaller efter det här datumet (till exempel lektionernas slut). Tomt: ingen gräns."
+			},
+			"receipts": {
+				"label": "Lånekvitto",
+				"hint": "Visar knappen som skriver ut kvittot vid utlåningsdisken."
+			}
+		},
+		"calendar": {
+			"autoItalianHolidays": {
+				"label": "Italienska nationella helgdagar",
+				"hint": "De nationella helgdagarna (påsken inräknad) är stängningsdagar utan att behöva skrivas in för hand."
+			}
+		},
+		"z3950": {
+			"defaultTarget": {
+				"label": "Standardserver",
+				"hint": "Identifieraren för Z39.50-servern som används vid sökningar."
+			},
+			"timeoutMs": {
+				"label": "Högsta väntetid (ms)",
+				"hint": "Efter hur många millisekunder en Z39.50-sökning avbryts."
+			},
+			"maxRecordsIsbn": {
+				"label": "Resultat per ISBN",
+				"hint": "Hur många poster högst som läses när man söker en ISBN (en och samma ISBN kan ha en post per tryckning): den mest kompletta öppnas."
+			},
+			"maxRecordsSearch": {
+				"label": "Resultat per sökning",
+				"hint": "Hur många poster högst som läses när man söker på titel eller författare."
+			}
+		},
+		"metadata": {
+			"providers": {
+				"label": "Datakällor",
+				"hint": "Varifrån bokdata kommer när man söker på ISBN: de valda källorna frågas samtidigt."
+			},
+			"cacheDays": {
+				"label": "Dagar som sökningarna minns",
+				"hint": "Hur många dagar en redan gjord sökning återanvänds utan att frågas igen."
+			},
+			"timeoutMs": {
+				"label": "Högsta väntetid (ms)",
+				"hint": "Efter hur många millisekunder en källa som inte svarar lämnas åt sidan."
+			}
+		},
+		"performance": {
+			"profile": {
+				"label": "Dator",
+				"hint": "Standardinställningarna som passar datorn som BiblioViva körs på."
+			},
+			"sqliteCacheMb": {
+				"label": "Cache för databasen (MB)",
+				"hint": "Tomt: efter datorn (8, 16, 64 eller 256 MB)."
+			},
+			"sqliteMmapMb": {
+				"label": "Minneskarta för databasen (MB)",
+				"hint": "Tomt: efter datorn (0, 0, 0 eller 512 MB)."
+			},
+			"walAutocheckpointPages": {
+				"label": "Sidor före en kontrollpunkt",
+				"hint": "Tomt: efter datorn (500, 1000, 2000 eller 4000)."
+			},
+			"imageConcurrency": {
+				"label": "Bilder som bearbetas samtidigt",
+				"hint": "Foton, omslag, klassfoton och logotypen bearbetas samtidigt; de övriga väntar på sin tur. Tomt: efter datorn (1, 1, 2 eller 4)."
+			},
+			"yazConcurrency": {
+				"label": "Z39.50-sökningar samtidigt",
+				"hint": "Z39.50-sökningar görs samtidigt; de övriga väntar på sin tur. Tomt: efter datorn (1, 1, 2 eller 2)."
+			},
+			"heavyConcurrency": {
+				"label": "Utskrifter och exporter åt gången",
+				"hint": "Ark att skriva ut (lånekort, etiketter, påminnelser, kvitton, rapporter) och exporter (CSV, ODS, arkiv, säkerhetskopior) förbereds samtidigt; de övriga väntar på sin tur, så att utlåningsdisken förblir snabb. Tomt: efter datorn (1, 1, 2 eller 4)."
+			},
+			"argon2MemoryMb": {
+				"label": "Minne för kontroll av lösenord (MB)",
+				"hint": "Gäller lösenord som sätts från och med nu. Tomt: 16 MB på varje dator (systemet exponeras aldrig mot internet)."
+			},
+			"smol": {
+				"label": "Minnesbesparing",
+				"hint": "Mindre minne, lite mer arbete för processorn. Automatiskt: efter datorn (ja för minimidatorn och Raspberry Pi). Gäller från nästa omstart."
+			}
+		},
+		"cards": {
+			"defaultTemplate": {
+				"label": "Mall för lånekort",
+				"hint": "Namnet på utskriftsmallen som används när en typ av låntagare inte har någon egen (mapp i cards/templates)."
+			},
+			"layout": {
+				"label": "Utskrift av lånekort",
+				"hint": "Fram- och baksida bredvid varandra (vikta längs den korta kanten) eller på arkets två sidor, med en skrivare som skriver på båda sidor. Väljs igen vid varje utskrift."
+			},
+			"duplex": {
+				"flip": {
+					"label": "Hur arket vänds",
+					"hint": "Hur skrivaren vänder arket för baksidan: längs dess långa kant (som en bok) eller längs dess korta kant. Den måste vara densamma som valet i utskriftsfönstret."
+				},
+				"backOffsetMm": {
+					"x": {
+						"label": "Förskjutning av baksidorna, i sidled (mm)",
+						"hint": "Hittas av kalibreringen: hur mycket baksidorna förskjuts för att hamna bakom framsidorna."
+					},
+					"y": {
+						"label": "Förskjutning av baksidorna, nedåt (mm)",
+						"hint": "Hittas av kalibreringen."
+					}
+				}
+			},
+			"cardMm": {
+				"width": {
+					"label": "Bredd (mm)",
+					"hint": "Standardlånekortet är 85,6 mm brett."
+				},
+				"height": {
+					"label": "Höjd (mm)",
+					"hint": "Standardlånekortet är 53,98 mm högt."
+				}
+			},
+			"bleedMm": {
+				"label": "Utfall (mm)",
+				"hint": "Extra marginal runt bilder som går ut till kanten; den skärs bort."
+			},
+			"sheet": {
+				"paper": {
+					"label": "Pappersformat",
+					"hint": "Arket som lånekorten skrivs ut på."
+				},
+				"rows": {
+					"label": "Lånekort per ark",
+					"hint": "Hur många lånekort (fram- och baksida) under varandra: 4 eller 5 på ett A4-ark."
+				},
+				"marginMm": {
+					"label": "Arkets marginal (mm)",
+					"hint": "Det vita utrymmet runt lånekorten."
+				},
+				"gapMm": {
+					"label": "Avstånd mellan lånekorten (mm)",
+					"hint": "Avståndet mellan ett lånekort och nästa."
+				},
+				"foldMarks": {
+					"label": "Vikmärken",
+					"hint": "Korta streckade linjer i marginalerna och mellan lånekorten, där fram- och baksida viks."
+				},
+				"cutMarks": {
+					"label": "Skärmärken",
+					"hint": "Beskärningsmärken: korta linjer i marginalerna och mellan lånekorten som förlänger varje lånekorts kanter, för att skära med linjal och skärkniv."
+				}
+			},
+			"validityMonths": {
+				"label": "Giltighet (månader)",
+				"hint": "Hur många månader ett utskrivet lånekort gäller. Tomt: utan utgångsdatum."
+			},
+			"showPhoto": {
+				"label": "Foto på lånekortet",
+				"hint": "Skriver ut låntagarens foto på lånekortet."
+			}
+		},
+		"labels": {
+			"default": {
+				"label": "Standardetiketter",
+				"hint": "Det som skrivs ut när man väljer ”Skriv ut etiketter”."
+			},
+			"titleMaxChars": {
+				"label": "Bokstäver i titeln",
+				"hint": "Titeln på etiketterna kapas till den här längden."
+			},
+			"monochrome": {
+				"label": "Svartvit skrivare",
+				"hint": "På de låga ryggbanden blir det färgade bandet ett streckmönster."
+			},
+			"pair": {
+				"template": {
+					"label": "Mall",
+					"hint": "Namnet på utskriftsmallen för paret (mapp i labels/templates)."
+				},
+				"stock": {
+					"label": "Självhäftande ark",
+					"hint": "Identifieraren för etikettarket som används (fil i labels/stocks)."
+				}
+			},
+			"barcode": {
+				"template": {
+					"label": "Mall",
+					"hint": "Namnet på utskriftsmallen för etiketten med streckkoden (mapp i labels/templates)."
+				},
+				"stock": {
+					"label": "Självhäftande ark",
+					"hint": "Identifieraren för etikettarket som används (fil i labels/stocks)."
+				}
+			},
+			"spine": {
+				"template": {
+					"label": "Mall",
+					"hint": "Namnet på utskriftsmallen för ryggbandet (mapp i labels/templates)."
+				},
+				"stock": {
+					"label": "Självhäftande ark",
+					"hint": "Identifieraren för etikettarket som används (fil i labels/stocks)."
+				}
+			}
+		},
+		"photos": {
+			"enabled": {
+				"label": "Foton av låntagare",
+				"hint": "På: foton tagna eller uppladdade för varje låntagare, fotoregistrering, foton på lånekorten. Av: inga foton någonstans och lånekort utan foto; de redan sparade fotona finns kvar och visas igen när funktionen slås på."
+			},
+			"required": {
+				"label": "Foto krävs",
+				"hint": "På: översikten, låntagarlistan och utskriftslistorna visar vem som saknar foto. Av: ingen påminnelse, men foton kan ändå tas, laddas upp och skrivas ut på lånekorten."
+			},
+			"width": {
+				"label": "Bredd (px)",
+				"hint": "Fotona sparas i den här bredden."
+			},
+			"height": {
+				"label": "Höjd (px)",
+				"hint": "Fotona sparas i den här höjden (beskärning i mitten)."
+			},
+			"format": {
+				"label": "Filformat",
+				"hint": "JPEG fungerar överallt; WebP tar mindre plats."
+			},
+			"quality": {
+				"label": "Kvalitet",
+				"hint": "Från 1 till 100: högre ger större filer."
+			},
+			"maxUploadBytes": {
+				"label": "Största uppladdning (byte)",
+				"hint": "En större fil avvisas."
+			},
+			"sheet": {
+				"maxUploadBytes": {
+					"label": "Största fil (byte)",
+					"hint": "En bild med flera foton (fotoregistrering från en bild) som är större än så avvisas."
+				},
+				"maxPixels": {
+					"label": "Längsta sida som behålls (px)",
+					"hint": "Bilden förminskas tills dess längsta sida inte längre är större än det här värdet."
+				},
+				"maxFrames": {
+					"label": "Högst antal foton",
+					"hint": "Om bilden innehåller fler behålls de skarpaste."
+				},
+				"minAspect": {
+					"label": "Lägsta proportion för ett foto",
+					"hint": "Höjd delat med bredd: 1 är en kvadrat, 1,33 är ett passfoto 3:4."
+				},
+				"maxAspect": {
+					"label": "Högsta proportion för ett foto",
+					"hint": "Höjd delat med bredd: ramar som är längre än så tas inte för foton."
+				}
+			}
+		},
+		"covers": {
+			"enabled": {
+				"label": "Bokomslag",
+				"hint": "På: omslag som söks på nätet, fotograferas eller laddas upp och visas i katalogen. Av: inga omslag någonstans; de redan sparade finns kvar och visas igen när funktionen slås på."
+			},
+			"width": {
+				"label": "Bredd (px)",
+				"hint": "Omslagen sparas i den här bredden."
+			},
+			"maxHeight": {
+				"label": "Högsta höjd (px)",
+				"hint": "Mycket höga omslag förminskas. Tomt: ingen gräns."
+			},
+			"format": {
+				"label": "Filformat",
+				"hint": "JPEG fungerar överallt; WebP tar mindre plats."
+			},
+			"quality": {
+				"label": "Kvalitet",
+				"hint": "Från 1 till 100: högre ger större filer."
+			},
+			"maxUploadBytes": {
+				"label": "Största uppladdning (byte)",
+				"hint": "En större fil avvisas."
+			},
+			"country": {
+				"label": "Land",
+				"hint": "Landet för leverantörernas omslagskatalog (två bokstäver, till exempel SE)."
+			},
+			"minWidth": {
+				"label": "Minsta bredd (px)",
+				"hint": "Nedladdade omslag som är smalare än så kasseras."
+			},
+			"autoFetch": {
+				"label": "Hitta omslaget av sig självt",
+				"hint": "I ”Ny bok” söks omslaget på nätet medan posten kontrolleras, och det sparas tillsammans med posten; om det är fel ersätts det med ett foto."
+			},
+			"timeoutMs": {
+				"label": "Högsta väntetid (ms)",
+				"hint": "Efter hur många millisekunder en leverantör som inte svarar lämnas åt sidan."
+			}
+		},
+		"privacy": {
+			"auditRetentionMonths": {
+				"label": "Månader i loggen över åtgärder",
+				"hint": "De äldre raderna i loggen raderas."
+			}
+		},
+		"backup": {
+			"cron": {
+				"label": "Tid för säkerhetskopian",
+				"hint": "I cron-form: minut, timme, dag, månad, veckodag (0 3 * * * = varje natt kl. 3)."
+			},
+			"catchUp": {
+				"label": "Säkerhetskopia vid start om den missades",
+				"hint": "Om datorn var avstängd när säkerhetskopian skulle göras, gör BiblioViva den en minut efter nästa start: bara en, även efter flera dagar."
+			},
+			"keepDays": {
+				"label": "Dagar som behålls",
+				"hint": "Äldre säkerhetskopior raderas."
+			},
+			"offsite": {
+				"enabled": {
+					"label": "Kopia utanför datorn används",
+					"hint": "Anger att den andra kopian av säkerhetskopiorna (rclone, på en annan disk eller i en annan tjänst) används."
+				},
+				"remote": {
+					"label": "Mål för kopian",
+					"hint": "Dit kopian går: en mapp på en annan disk (/offsite/biblioviva-backups, standardvalet) eller ett mål som är inställt i rclone, skrivet som namn:mapp."
+				}
+			}
+		},
+		"security": {
+			"sessionDays": {
+				"label": "Sessionens längd (dagar)",
+				"hint": "Efter hur många dagar lösenordet begärs igen."
+			},
+			"loginMaxAttempts": {
+				"label": "Inloggningsförsök",
+				"hint": "Hur många felaktiga försök som tillåts innan en tvungen paus."
+			},
+			"loginWindowMinutes": {
+				"label": "Paus efter för många försök (minuter)",
+				"hint": "Hur många minuter inloggningen förblir spärrad efter för många försök."
+			}
+		},
+		"ui": {
+			"checkoutIdleSeconds": {
+				"label": "Vila för utlåningsdisken (sekunder)",
+				"hint": "Efter så här många sekunder utan avläsningar blir disken redo för en ny låntagare."
+			}
+		}
+	},
+	"options": {
+		"library": {
+			"weekStart": {
+				"monday": "Måndag",
+				"sunday": "Söndag",
+				"saturday": "Lördag"
+			},
+			"schoolYearLabel": {
+				"span": "Två år (2026/2027)",
+				"start": "Året det börjar (2026)"
+			}
+		},
+		"school": {
+			"promotionWithinStage": {
+				"keep": "Klassen följer med sina elever",
+				"clear": "Eleverna blir kvar utan klass"
+			},
+			"promotionAcrossStages": {
+				"keep": "Klassen följer med sina elever",
+				"clear": "Eleverna blir kvar utan klass",
+				"ask": "Klassen för varje elev väljs"
+			}
+		},
+		"barcodes": {
+			"patron": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"item": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"keyboardLayout": {
+				"it": "Italiensk",
+				"es": "Spansk",
+				"de": "Tysk",
+				"fr": "Fransk",
+				"uk": "Engelsk (Storbritannien)",
+				"us": "Engelsk (USA)"
+			},
+			"cameraSound": {
+				"off": "Inget ljud",
+				"till": "Kassa",
+				"scanner": "Läsare",
+				"confirm": "Bekräftelse",
+				"arpeggio": "Arpeggio"
+			}
+		},
+		"circulation": {
+			"dueDateMode": {
+				"datedue": "Kalenderdagar, sedan första öppna dagen",
+				"calendar": "Bara öppna dagar",
+				"days": "Kalenderdagar, utan att räkna stängningarna"
+			},
+			"renewFrom": {
+				"today": "Dagen för förnyelsen",
+				"dueDate": "Det nuvarande återlämningsdatumet"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"sbn": "OPAC SBN (Z39.50)",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books",
+				"sbn-json": "OPAC SBN (webbtjänst)"
+			}
+		},
+		"performance": {
+			"profile": {
+				"micro": "Minimal dator: en långsam processor och 512 MB (Raspberry Pi Zero 2, den minsta servern)",
+				"small": "Raspberry Pi 4 med 2 GB eller en liten dator",
+				"medium": "Gammal dator med hårddisk",
+				"large": "Dator med SSD-disk"
+			}
+		},
+		"cards": {
+			"sheet": {
+				"paper": {
+					"A4": "A4"
+				}
+			},
+			"layout": {
+				"side-by-side": "Fram- och baksida bredvid varandra",
+				"duplex": "På båda sidor av arket"
+			},
+			"duplex": {
+				"flip": {
+					"long-edge": "Längs den långa kanten",
+					"short-edge": "Längs den korta kanten"
+				}
+			}
+		},
+		"labels": {
+			"default": {
+				"pair": "Par: ryggband och etikett",
+				"barcode": "Bara etikett med streckkoden",
+				"spine": "Bara ryggband"
+			}
+		},
+		"photos": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		},
+		"covers": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		}
+	},
+	"groups": {
+		"barcodes": {
+			"patron": {
+				"title": "Lånekort"
+			},
+			"item": {
+				"title": "Exemplar av böcker"
+			}
+		},
+		"circulation": {
+			"rules": {
+				"title": "Regler för lån",
+				"student": {
+					"title": "Regler för elever"
+				},
+				"teacher": {
+					"title": "Regler för lärare"
+				}
+			},
+			"overdueNotice": {
+				"title": "Påminnelser"
+			}
+		},
+		"cards": {
+			"cardMm": {
+				"title": "Storlek på lånekortet"
+			},
+			"sheet": {
+				"title": "Utskriftsark"
+			},
+			"duplex": {
+				"title": "Utskrift på båda sidor",
+				"backOffsetMm": {
+					"title": "Förskjutning av baksidorna"
+				}
+			}
+		},
+		"labels": {
+			"pair": {
+				"title": "Par: ryggband och etikett"
+			},
+			"barcode": {
+				"title": "Bara etikett med streckkoden"
+			},
+			"spine": {
+				"title": "Bara ryggband"
+			}
+		},
+		"backup": {
+			"offsite": {
+				"title": "Kopia utanför datorn"
+			}
+		},
+		"photos": {
+			"sheet": {
+				"title": "Bilder med många foton (fotoregistrering från en bild)"
+			}
+		}
+	},
+	"overview": {
+		"reload": "Ladda om",
+		"reloaded": "Inställningarna har laddats om",
+		"reloadFailed": "Filerna har fel: den tidigare inställningen fortsätter att användas.",
+		"valid": "Inställningarna är giltiga: {{count}} {{count:plural; one:fil; other:filer;}}.",
+		"example": "Inställningarna har ännu inte skapats: exempelvärdena används.",
+		"warnings": "{{count}} {{count:plural; one:varning; other:varningar;}}",
+		"diskErrors": "Inställningsfilerna har fel: biblioteket fortsätter med den tidigare versionen tills felen är rättade.",
+		"diskChanged": "Filerna har ändrats för hand: tryck på ”Ladda om” för att använda ändringarna.",
+		"sections": "Inställningar",
+		"alsoFrom": "och {{count}} {{count:plural; one:annan fil; other:andra filer;}}",
+		"editors": "Utseende, klasser och mallar",
+		"templates": "Utskriftsmallar",
+		"templatesDescription": "Mappar med mallar för lånekort, etiketter och påminnelser, med deras bilder.",
+		"reports": "Rapportbiblioteket",
+		"reportsDescription": "Levererade rapporter och skolans rapporter: prova, ladda ner, ladda upp, ta bort.",
+		"appearance": "Utseende och språk",
+		"appearanceDescription": "Bibliotekets namn och logotyp, färger, språk och översiktens avsnitt.",
+		"classes": "Klasser",
+		"classesDescription": "Skolans klasser och lärargrupperna: skapa, byt namn, arkivera."
+	},
+	"section": {
+		"tabs": {
+			"form": "Inställningar",
+			"json": "JSON",
+			"label": "Redigera som"
+		},
+		"file": "Sparad i {{file}}",
+		"alsoFrom": "Även från: {{files}}",
+		"general": "Allmänt",
+		"default": "Standard: {{value}}",
+		"defaultNone": "Standard: inget värde",
+		"defaultAuto": "Standard: automatiskt",
+		"usesDefault": "Använder standardvärdet",
+		"reset": "Återgå till standardvärdet",
+		"willReset": "Vid sparandet återgår det till standardvärdet.",
+		"auto": "Automatiskt",
+		"none": "Inget datum",
+		"yes": "Ja",
+		"no": "Nej",
+		"fixed": "Fast värde",
+		"range": "Från {{min}} till {{max}}.",
+		"min": "Minst {{min}}.",
+		"max": "Högst {{max}}.",
+		"save": "Spara",
+		"discard": "Ångra ändringar",
+		"saved": "Inställningarna är sparade",
+		"unsaved": "Osparade ändringar",
+		"invalid": "Rätta de markerade värdena innan du sparar.",
+		"errors": "Sparandet lyckades inte:",
+		"inUse": "Sparandet skulle ta bort något som fortfarande används:",
+		"inUseKinds": {
+			"classification": "kod {{code}}: {{count}} {{count:plural; one:bok; other:böcker;}}",
+			"itemType": "exemplartyp {{code}}: {{count}} {{count:plural; one:exemplar; other:exemplar;}}",
+			"level": "nivå {{code}}: {{count}} {{count:plural; one:elev; other:elever;}} eller klasser",
+			"readingLevel": "läsnivå {{code}}: {{count}} {{count:plural; one:bok; other:böcker;}}"
+		},
+		"patternError": "Ogiltigt format.",
+		"numberError": "Skriv ett heltal.",
+		"required": "Obligatoriskt.",
+		"elsewhereTitle": "Övriga inställningar i det här avsnittet",
+		"elsewhereHint": "Dessa ändras med en särskild redigerare eller i fliken JSON.",
+		"openEditor": "Öppna",
+		"jsonOnly": "För närvarande i fliken JSON",
+		"editorNames": {
+			"taxonomy": "Klassifikation",
+			"appearance": "Utseende och språk",
+			"wizard": "Startguiden",
+			"history": "Historik",
+			"settings": "Inställningar",
+			"schoolLevels": "Stadier och årskurser"
+		},
+		"json": {
+			"hint": "Avsnittet så som det är skrivet i {{file}}. Nycklar som börjar med _ är kommentarer och finns kvar i filen.",
+			"label": "JSON-innehållet i avsnittet",
+			"parseError": "Texten är inte giltig JSON: {{message}}",
+			"notObject": "Avsnittet måste vara ett JSON-objekt inom klammerparenteser.",
+			"valid": "Inga problem.",
+			"checking": "Kontrollerar…",
+			"issues": "Problem att rätta:"
+		},
+		"playSound": "Lyssna"
+	},
+	"history": {
+		"title": "Inställningarnas historik",
+		"hint": "Varje ändring som görs här sparar den föregående versionen av de filer den berör (de senaste 50 ändringarna).",
+		"empty": "Ingen ändring har gjorts från administrationen ännu.",
+		"columns": {
+			"when": "När",
+			"what": "Vad",
+			"files": "Filer"
+		},
+		"revert": "Återställ",
+		"revertTitle": "Återställa filerna som de var före den här ändringen?",
+		"revertDescription": "Bara de värden som ändrades av den här ändringen går tillbaka. Återställningen är i sig en ändring: den finns kvar i historiken och kan ångras.",
+		"reverted": "Den tidigare versionen är återställd",
+		"refused": "Den här ändringen skapade config.json: den kan inte ångras.",
+		"conflict": "Det går inte att återställa: efter den här ändringen har {{keys}} ändrats igen.",
+		"notFound": "Ändringen finns inte längre i historiken.",
+		"newFile": "ny",
+		"actions": {
+			"revert": "Återställning av ändringen från {{when}}",
+			"theme": "Färger",
+			"locale": "Språk",
+			"logo": "Bibliotekets logotyp",
+			"setup": "Första inställningen",
+			"section": "Avsnittet ”{{section}}”",
+			"other": "Ändring ({{action}})"
+		}
+	},
+	"archive": {
+		"title": "Inställningsarkivet",
+		"hint": "Hela inställningen i en enda fil: inställningar, utskriftsmallar, självhäftande ark, pictogram, logotyp, rapporter och språk (inte historiken). Den används för att behålla en kopia eller för att flytta den till en annan installation. ”Importera inställningar” godtar också en säkerhetskopia eller ett arkiv ”Exportera allt”: bara inställningen hämtas därifrån, bibliotekets data förblir som den är.",
+		"export": "Exportera inställningar",
+		"import": "Importera inställningar",
+		"checking": "Kontrollerar arkivet…",
+		"from": "Arkiv från {{date}} (version {{version}})",
+		"fromLibrary": "Arkiv för ”{{library}}” från {{date}} (version {{version}})",
+		"files": "{{added}} {{added:plural; one:ny fil; other:nya filer;}}, {{changed}} {{changed:plural; one:ändrad; other:ändrade;}}, {{removed}} {{removed:plural; one:borttagen; other:borttagna;}}, {{unchanged}} {{unchanged:plural; one:oförändrad; other:oförändrade;}}.",
+		"fileList": "Lista över filerna",
+		"added": "ny",
+		"changed": "ändrad",
+		"removed": "borttagen",
+		"sameValues": "Inställningarna förblir desamma.",
+		"sections": "Ändras: {{sections}}.",
+		"errorsTitle": "Arkivet har problem: de måste rättas innan det importeras.",
+		"apply": "Importera",
+		"confirmTitle": "Ersätta inställningen med arkivets?",
+		"confirmDescription": "De nuvarande filerna finns kvar i historiken: ”Återställ” ger tillbaka den tidigare inställningen. Bibliotekets data (böcker, låntagare, lån) ändras inte.",
+		"imported": "Inställningen är importerad",
+		"failed": "Importen lyckades inte",
+		"errors": {
+			"too_large": "Arkivet är för stort (högst {{maxMb}} MB).",
+			"not_zip": "Filen är inte ett giltigt ZIP-arkiv.",
+			"not_archive": "Filen är inte ett BiblioViva-arkiv.",
+			"too_many_files": "Arkivet innehåller för många filer.",
+			"unsafe_path": "Arkivet innehåller en sökväg som inte är tillåten: {{name}}",
+			"link": "Arkivet innehåller en länk, vilket inte är tillåtet: {{name}}",
+			"unknown_file": "Arkivet innehåller en fil som inte hör till inställningen: {{name}}",
+			"no_config": "Arkivet innehåller ingen inställning (bara bibliotekets data): det återställs från Administration → Säkerhetskopior."
+		},
+		"exportSome": "Exportera de valda delarna",
+		"chooseExport": "Välj vad som ska exporteras"
+	},
+	"blocks": {
+		"problems": {
+			"codeRequired": {
+				"itemTypes": "Koden är obligatorisk.",
+				"sections": "Sektionen är obligatorisk."
+			},
+			"codeFormat": {
+				"itemTypes": "Bokstäver, siffror, punkt, bindestreck eller understreck (högst 32).",
+				"sections": "Versaler eller siffror, högst 8."
+			},
+			"codeTaken": {
+				"itemTypes": "Koden finns redan.",
+				"sections": "Sektionen finns redan."
+			},
+			"labelRequired": {
+				"itemTypes": "Namnet är obligatoriskt.",
+				"sections": "Namnet är obligatoriskt."
+			}
+		},
+		"itemTypes": {
+			"title": "Typer av exemplar",
+			"hint": "Bok, DVD, uppslagsverk…: exemplarets typ avgör lånereglerna. Ändras en kod flyttas dess exemplar till den nya koden.",
+			"code": "Kod",
+			"label": "Namn",
+			"notForLoan": "Endast i biblioteket",
+			"add": "Lägg till en typ",
+			"saved": "Typer av exemplar sparade"
+		},
+		"move": {
+			"title": "Vart ska de?",
+			"hint": {
+				"copies": "Några borttagna typer har fortfarande exemplar: välj den typ de ska flyttas till.",
+				"students": "Några borttagna sektioner har fortfarande elever: välj den sektion de ska flyttas till."
+			},
+			"row": {
+				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:exemplar; other:exemplar;}}. Flytta till",
+				"students": "{{code}}: {{count}} {{count:plural; one:elev; other:elever;}}. Flytta till"
+			},
+			"choose": "Välj…",
+			"used": {
+				"copies": "Exemplar",
+				"students": "Elever"
+			},
+			"count": {
+				"copies": "{{count}} {{count:plural; one:exemplar; other:exemplar;}}",
+				"students": "{{count}} {{count:plural; one:elev; other:elever;}}"
+			},
+			"done": {
+				"copies": "{{count}} {{count:plural; one:exemplar flyttat; other:exemplar flyttade;}}.",
+				"students": "{{count}} {{count:plural; one:elev flyttad; other:elever flyttade;}}."
+			}
+		},
+		"barcodes": {
+			"title": "Numrering och förhandsgranskning",
+			"counter": "Numren på nya lånekort",
+			"afterLegacy": "Efter det högsta numret på de lånekort som redan finns",
+			"from": "Från och med detta nummer:",
+			"fromNumber": "Första numret på nya lånekort",
+			"counterHint": "Ett nummer som redan använts kommer aldrig tillbaka: om det valda numret är lägre fortsätter räkningen där den har nått. Nya exemplar har alltid året och ett löpnummer.",
+			"nextCard": "Nästa lånekort: {{code}}",
+			"nextItem": "Nästa exemplar: {{code}}",
+			"overrides": "Dessa utskriftsmallar väljer själva streckkodstyp, så inställningen ovan gäller inte för dem: {{templates}}.",
+			"saved": "Numrering sparad"
+		},
+		"itemTypeRules": {
+			"title": "Regler per typ av exemplar",
+			"hint": "Varje typ av exemplar kan ha en egen regel, till exempel DVD-skivor i 5 dagar. Reglerna gäller både elever och lärare.",
+			"inherit": "Tomt: regeln för elever och lärare gäller (i grått: elever / lärare).",
+			"saved": "Regler per typ av exemplar sparade"
+		},
+		"calendar": {
+			"title": "Bibliotekets kalender",
+			"weekly": "Dagar som stängs varje vecka",
+			"weeklyHint": "De markerade dagarna är stängda varje vecka.",
+			"previous": "Föregående läsår",
+			"next": "Nästa läsår",
+			"addNational": "Lägg till de allmänna helgdagarna {{year}}",
+			"autoOn": "De allmänna helgdagarna är redan stängda automatiskt. Ett klick på en öppen dag stänger den; på en dag som stängts för hand öppnas den igen.",
+			"clickHint": "Ett klick på en öppen dag stänger den; på en dag som stängts för hand öppnas den igen.",
+			"open": "öppet",
+			"legend": {
+				"open": "Öppet",
+				"weekly": "Veckostängning",
+				"national": "Allmän helgdag",
+				"holiday": "Stängt (valt här)",
+				"range": "Stängd period"
+			},
+			"ranges": "Stängda perioder",
+			"from": "Från",
+			"to": "Till",
+			"reason": "Anledning",
+			"badRange": "Slutet är före början.",
+			"addRange": "Lägg till en period",
+			"saved": "Kalendern sparad"
+		},
+		"cardTemplates": {
+			"title": "Mall per typ av låntagare",
+			"hint": "Elever och lärare skriver ut sitt lånekort med standardmallen som valts ovan, om inte en annan väljs här.",
+			"student": "Lånekort för elever",
+			"teacher": "Lånekort för lärare",
+			"asDefault": "Samma som standard ({{name}})",
+			"cutLines": "Färgad kontur på varje lånekort",
+			"cutLinesOn": "Rita en färgad kontur på varje lånekort (oftast behövs den inte: skärmärkena räcker)",
+			"color": "Färg",
+			"width": "Tjocklek (mm)",
+			"sample": "Exempel på skärlinjen",
+			"saved": "Mallar för lånekort sparade"
+		},
+		"stocks": {
+			"title": "Ark med självhäftande etiketter",
+			"hint": "Måtten på etikettarken som man skriver ut på. Ritningen till höger följer varje siffra: etiketter som går utanför arket visas i rött. Efter sparandet skrivs provsidan ut på vanligt papper och läggs över etikettarket.",
+			"new": "Ny",
+			"toFix": "Att rätta",
+			"add": "Lägg till ett ark",
+			"id": "Kod",
+			"name": "Namn",
+			"labelWidth": "Etikettens bredd (mm)",
+			"labelHeight": "Etikettens höjd (mm)",
+			"columns": "Kolumner",
+			"rows": "Rader",
+			"marginTop": "Marginal upptill (mm)",
+			"marginLeft": "Vänstermarginal (mm)",
+			"gapX": "Mellanrum mellan kolumnerna (mm)",
+			"gapY": "Mellanrum mellan raderna (mm)",
+			"radius": "Rundade hörn (mm)",
+			"calibration": "Skriv ut provsida",
+			"inUse": "Används för: {{jobs}}. För att ta bort det, välj först ett annat ark i inställningarna ovan.",
+			"saveFirst": "Spara ändringarna för att skriva ut provsidan.",
+			"drawing": "Ritning av A4-arket med {{columns}} {{columns:plural; one:kolumn; other:kolumner;}} och {{rows}} {{rows:plural; one:rad; other:rader;}} etiketter",
+			"caption": "A4-ark · {{count}} {{count:plural; one:etikett; other:etiketter;}}",
+			"saved": "Ark med etiketter sparade",
+			"problems": {
+				"id": "Koden får innehålla bokstäver, siffror, bindestreck och understreck.",
+				"duplicate": "Ett annat ark har redan den här koden.",
+				"name": "Skriv ett namn.",
+				"numbers": "Kontrollera måtten: tal från 0 och uppåt, etiketter större än noll, hela kolumner och rader.",
+				"width": "Etiketterna tar {{mm}} mm: mer än bredden på ett A4-ark (210 mm).",
+				"height": "Etiketterna tar {{mm}} mm: mer än höjden på ett A4-ark (297 mm).",
+				"pairRows": "Paret kräver ett jämnt antal rader (ryggband och etikett ovanpå varandra)."
+			},
+			"errors": {
+				"duplicate": "Två ark har samma kod: {{details}}.",
+				"inUse": "Ett ark som används för utskrift kan inte tas bort: {{details}}."
+			}
+		},
+		"backupSchedule": {
+			"title": "Nästa säkerhetskopior",
+			"invalid": "Tiden är inget giltigt cron-uttryck (fem fält: minuter, timmar, dag, månad, veckodag).",
+			"never": "Med detta uttryck startar säkerhetskopieringen aldrig.",
+			"hint": "Tiderna gäller i bibliotekets tidszon ({{timezone}}). Om datorn är avstängd vid den tiden görs säkerhetskopian vid nästa start, om ”Säkerhetskopiera vid start om missad” är valt; tiden kan också flyttas in i öppettiderna."
+		},
+		"coverProviders": {
+			"off": "Omslagen är avstängda (Bokomslag, ovan): ingen källa frågas.",
+			"title": "Varifrån omslagen hämtas",
+			"hint": "Källorna prövas i den här ordningen tills en hittar omslaget; var och en kan stängas av var för sig.",
+			"names": {
+				"amazon": "Amazon",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books"
+			},
+			"googleKey": "Google Books kräver en API-nyckel, som skrivs in under inställningarna ”Bokdata”; utan nyckel hoppas denna källa över.",
+			"saved": "Källor för omslag sparade"
+		},
+		"z3950Targets": {
+			"title": "Z39.50-kataloger",
+			"hint": "Katalogerna som bokuppgifterna hämtas från. ”Prova anslutning” gör en riktig sökning med de angivna värdena, utan att spara dem.",
+			"id": "Kod",
+			"name": "Namn",
+			"host": "Serveradress",
+			"port": "Port",
+			"database": "Databas",
+			"syntax": "Postformat",
+			"charset": "Teckenkodning",
+			"elements": "Element",
+			"elementsHint": "Oftast F (hela posten).",
+			"add": "Lägg till en katalog",
+			"isDefault": "Det här är standardkatalogen: för att ta bort den, välj först en annan här ovan.",
+			"saved": "Kataloger sparade",
+			"problems": {
+				"id": "Koden måste vara unik: bokstäver, siffror, bindestreck.",
+				"required": "Namn, databas, teckenkodning och element är obligatoriska.",
+				"host": "Adressen får innehålla bokstäver, siffror, punkter och bindestreck.",
+				"words": "Databas, teckenkodning och element är ett ord vardera, utan mellanslag.",
+				"port": "Porten är ett tal från 1 till 65535."
+			},
+			"test": {
+				"button": "Prova anslutning",
+				"running": "Provar…",
+				"ok": "Katalogen svarar: {{hits}} {{hits:plural; one:resultat; other:resultat;}} på {{ms}} ms.",
+				"unreachable": "Katalogen svarar inte: kontrollera adress, port och databas.",
+				"timeout": "Katalogen svarade inte i tid.",
+				"protocol": "Katalogen svarade med ett fel: kontrollera databas, format och teckenkodning.",
+				"spawn": "Programmet yaz-client är inte tillgängligt på servern."
+			}
+		},
+		"barcodeFormats": {
+			"title": "Kodformat",
+			"hint": "Hur koderna för nya exemplar och nya lånekort bildas. Koder som redan är tryckta fortsätter att fungera: ett utbytt format finns kvar bland de tidigare formaten.",
+			"preset": "Färdiga format",
+			"presets": {
+				"standard": "Standard (2026-E0267, U012345)",
+				"classic": "Klassisk (2026-02678, 0000012344)",
+				"prefix": "Med bokstav först (L-2602670, T0123455)",
+				"custom": "Anpassat"
+			},
+			"check": "Kontrolltecken",
+			"checks": {
+				"mod23": "Bokstav (mod 23)",
+				"damm": "Siffra (Damm)",
+				"luhn": "Siffra (Luhn)"
+			},
+			"checkHint": "Upptäcker en kod som lästs eller skrivits fel. Bokstaven är säkrast och gör lånekorten lätta att skilja från exemplarkoderna.",
+			"advanced": "Avancerat: formaten ett i taget",
+			"tokens": "YYYY eller YY = år, N = siffror i löpnumret, C = kontrolltecken, {lib} = bibliotekskod, - = bindestreck, versaler inom apostrofer ('T'). Bokstäverna I, O och Q är inte tillåtna.",
+			"pattern": {
+				"item": "Format för exemplar",
+				"patron": "Format för lånekort"
+			},
+			"libraryCode": "Bibliotekskod",
+			"libraryCodeHint": "Bara om flera bibliotek med separata installationer ska ha olika koder: används med {lib} i formatet.",
+			"plainMaxLength": "Siffror i de gamla enkla numren",
+			"plainHint": "Det största antalet siffror som lånekorten och exemplaren i det tidigare systemet har utan format (0 om det inte finns några).",
+			"plainLongest": "Det längsta enkla numret i arkivet har {{digits}} {{digits:plural; one:siffra; other:siffror;}}.",
+			"distinct": "Exemplar och lånekort kan aldrig förväxlas.",
+			"confusable": "Med dessa format skulle exemplar och lånekort kunna förväxlas:",
+			"warnings": "{{count}} {{count:plural; one:varning; other:varningar;}}",
+			"inUse": "Formatet {{pattern}} har fortfarande {{count}} {{count:plural; one:kod; other:koder;}} i arkivet: det kan inte tas bort.",
+			"kinds": {
+				"item": "exemplar",
+				"card": "lånekort"
+			},
+			"heading": {
+				"item": "Exemplar",
+				"patron": "Lånekort"
+			},
+			"examples": "Exempel på nya koder:",
+			"currentCount": "Koder i arkivet med detta format: {{count}}",
+			"count": "{{count}} {{count:plural; one:kod; other:koder;}}",
+			"noCheck": "utan kontroll",
+			"remove": "Ta bort",
+			"retired": "Format som använts tidigare",
+			"legacy": "Koder från det tidigare systemet",
+			"noLegacy": "Inga.",
+			"addLegacy": "Lägg till ett gammalt format",
+			"try": "Prova en kod",
+			"tryHint": "En kod som skrivs eller läses här känns igen med formaten ovan, även innan de sparats.",
+			"tried": {
+				"item": "{{value}}: streckkod för ett exemplar",
+				"legacy_item": "{{value}}: gammal streckkod för ett exemplar",
+				"card": "{{value}}: lånekortsnummer",
+				"isbn": "{{value}}: ISBN",
+				"ambiguous": "{{value}}: gammalt enkelt nummer (letas bland exemplar och lånekort)",
+				"invalid": "{{value}}: känns inte igen eller fel kontrolltecken"
+			},
+			"saved": "Kodformat sparade",
+			"patternErrors": {
+				"empty": "Tomt format ({{kind}})",
+				"tooLong": "{{pattern}}: för långt",
+				"badToken": "{{pattern}}: innehåller en oväntad symbol",
+				"badLetter": "{{pattern}}: bokstaven är inte tillåten (endast versaler, inte I, O, Q)",
+				"unclosedQuote": "{{pattern}}: slutapostrofen saknas",
+				"year": "{{pattern}}: året skrivs YYYY eller YY",
+				"twoYears": "{{pattern}}: året förekommer två gånger",
+				"twoCounters": "{{pattern}}: löpnumret måste vara en enda grupp av N",
+				"noCounter": "{{pattern}}: löpnumret (N) saknas",
+				"twoChecks": "{{pattern}}: kontrolltecknet förekommer två gånger",
+				"checkWithoutAlgorithm": "{{pattern}}: det finns ett C men ingen kontroll är vald",
+				"algorithmWithoutCheck": "{{pattern}}: C, kontrolltecknets plats, saknas",
+				"noLibraryCode": "{{pattern}}: använder {lib} men bibliotekskoden är tom",
+				"badLibraryCode": "Bibliotekskoden får bara innehålla siffror och versaler (inte I, O, Q)"
+			},
+			"issues": {
+				"overlap": "{{pattern}} ({{kind}}) och {{other}} ({{otherKind}}) kan ge samma kod, till exempel {{example}}",
+				"overlapWithoutDash": "{{pattern}} ({{kind}}) och {{other}} ({{otherKind}}) förväxlas om skannern tappar bindestrecket, till exempel {{example}}",
+				"overlapLegacy": "De gamla koderna {{pattern}} ({{kind}}) och {{other}} ({{otherKind}}) har samma form: de letas upp i båda arkiven",
+				"overlapPlain": "{{pattern}} ({{kind}}) kan ge en kod som är lika med ett gammalt enkelt nummer, till exempel {{example}}",
+				"overlapIsbn": "{{pattern}} ({{kind}}) kan ge en kod som är lika med en ISBN, till exempel {{example}}",
+				"overlapIsbn10": "{{pattern}} ({{kind}}) har formen av en ISBN-10 skriven utan bindestreck: lånekortsnumret gäller",
+				"lookAlike": "{{pattern}} ({{kind}}) och {{other}} ({{otherKind}}) liknar varandra för mycket: de måste skilja sig åt i längd med minst 2 tecken, ha en bokstav på en annan plats eller ett bindestreck på en annan plats"
+			}
+		},
+		"schoolLevels": {
+			"title": "Stadier och årskurser",
+			"hint": "Skolans årskurser i den ordning de går, grupperade efter stadium. Koden följer eleverna: när en årskurs som används tas bort eller får en ny kod väljs var dess elever och klasser ska flyttas.",
+			"preset": "Förinställning",
+			"presetApply": "Använd denna förinställning",
+			"presetHint": "Ersätter stadierna och årskurserna nedan med förinställningens; inget sparas förrän ”Spara”.",
+			"custom": "Anpassat",
+			"stages": "Stadier",
+			"stageCode": "Kod",
+			"stageName": "Namn",
+			"stageLabel": "Hur klassen skrivs",
+			"addStage": "Lägg till ett stadium",
+			"stageLabelHint": "”Hur klassen skrivs” för ett stadium gäller för dess årskurser i stället för skolans; utan {group} är klassen bara årskursen (Q1, utan sektioner). Tomt: som resten av skolan.",
+			"levels": "Årskurser",
+			"levelCode": "Kod",
+			"levelLabel": "I klassen",
+			"levelName": "Namn",
+			"levelStage": "Stadium",
+			"levelNext": "Årskursen efter",
+			"levelAliases": "Andra namn",
+			"levelAliasesPlaceholder": "Separerade med kommatecken",
+			"nextFollowing": "Följande årskurs",
+			"nextLeaves": "Lämnar skolan",
+			"nextChoices": "Ett val mellan flera årskurser",
+			"choiceAdd": "Lägg till ett val…",
+			"choiceRemove": "Ta bort {{name}}",
+			"choiceDefault": "standard",
+			"addLevel": "Lägg till en årskurs",
+			"inUse": "I bruk",
+			"moveUp": "Flytta upp",
+			"moveDown": "Flytta ner",
+			"example": "Exempel: {{label}}",
+			"saved": "Stadier och årskurser sparade",
+			"problems": {
+				"code": "Koder: bokstäver, siffror och bindestreck (upp till 8 för en årskurs), alla olika.",
+				"required": "Etikett och namn är obligatoriska.",
+				"template": "”Hur klassen skrivs” för ett stadium måste innehålla {level}.",
+				"stageUsed": "Ett stadium med årskurser kan inte tas bort.",
+				"structure": "Strukturen är inte giltig: {{details}}"
+			},
+			"move": {
+				"title": "Vart ska eleverna och klasserna?",
+				"hint": "Några borttagna årskurser har fortfarande elever eller klasser. Välj för var och en den årskurs de ska flyttas till; lånen behåller den klass de gjordes i.",
+				"level": "{{name}}: {{pupils}} {{pupils:plural; one:elev; other:elever;}}, {{classes}} {{classes:plural; one:klass; other:klasser;}}",
+				"choose": "Välj årskurs…",
+				"confirm": "Flytta och spara",
+				"done": "Flyttade {{pupils}} {{pupils:plural; one:elev; other:elever;}} och {{classes}} {{classes:plural; one:klass; other:klasser;}}."
+			}
+		}
+	},
+	"templates": {
+		"title": "Utskriftsmallar",
+		"hint": "Mapparna med mallar för lånekort, etiketter, kvitton och påminnelser. De som följer med BiblioViva kan anpassas (en kopia med samma namn görs) eller dupliceras under ett annat namn; bilderna och teckensnitten i en kopia läggs upp här. Varje åtgärd syns i inställningshistoriken och kan ångras.",
+		"source": {
+			"builtin": "Följer med BiblioViva",
+			"customised": "Anpassad",
+			"added": "Tillagd"
+		},
+		"broken": "Har fel",
+		"customise": "Anpassa",
+		"duplicate": "Duplicera",
+		"rename": "Byt namn",
+		"restore": "Tillbaka till originalet",
+		"usedBy": "Används av: {{settings}}.",
+		"unused": "Används inte av någon inställning.",
+		"assets": "Bilder och teckensnitt ({{count}})",
+		"noAssets": "Inga filer.",
+		"usedIn": "används i {{files}}",
+		"assetUnused": "används inte",
+		"upload": "Ladda upp en fil",
+		"uploadHint": "PNG, JPEG, WebP, GIF, SVG eller teckensnitt WOFF2, WOFF, TTF; högst {{maxMb}} MB.",
+		"builtinAssets": "För att ändra bilderna i en mall som följer med BiblioViva måste mallen först anpassas.",
+		"files": "Mallfiler ({{count}})",
+		"filesHint": "HTML och CSS redigeras med den visuella mallredigeraren.",
+		"done": {
+			"duplicate": "Mallen duplicerades",
+			"customise": "Mallen anpassades: kopian kan ändras",
+			"rename": "Mallen fick nytt namn",
+			"delete": "Mallen togs bort",
+			"upload": "{{name}} uppladdades",
+			"removeAsset": "Filen {{name}} togs bort"
+		},
+		"errors": {
+			"notFound": "Mallen eller filen hittades inte.",
+			"badName": "Ogiltigt namn: små bokstäver, siffror, bindestreck och understreck.",
+			"exists": "Det finns redan en mall med det här namnet.",
+			"builtin": "Mallar som följer med BiblioViva ändras inte: anpassa eller duplicera dem.",
+			"inUse": "Mallen används av: {{details}}. Välj först en annan mall.",
+			"badAsset": "”{{name}}” är inte en tillåten fil (PNG, JPEG, WebP, GIF, SVG utan skript, WOFF2, WOFF, TTF).",
+			"assetTooLarge": "”{{name}}” är för stor: högst {{maxMb}} MB.",
+			"assetInUse": "Filen används i: {{details}}."
+		},
+		"dialog": {
+			"name": "Mappnamn",
+			"nameHint": "Små bokstäver, siffror, bindestreck och understreck.",
+			"badName": "Använd bara små bokstäver, siffror, bindestreck och understreck.",
+			"taken": "Det finns redan en mall med det här namnet.",
+			"duplicate": {
+				"title": "Duplicera {{name}}",
+				"hint": "En kopia med alla sina filer görs, redo att ändras.",
+				"confirm": "Duplicera"
+			},
+			"customise": {
+				"title": "Anpassa {{name}}",
+				"hint": "En kopia med samma namn tar originalets plats; originalet finns kvar så att man kan gå tillbaka.",
+				"confirm": "Anpassa"
+			},
+			"rename": {
+				"title": "Byt namn på {{name}}",
+				"hint": "Inställningarna som använder mallen följer det nya namnet.",
+				"confirm": "Byt namn"
+			},
+			"delete": {
+				"title": "Ta bort {{name}}",
+				"hint": "Mappen och dess filer tas bort; om det är kopian av en mall som följer med BiblioViva används originalet igen. Det kan ångras i historiken.",
+				"confirm": "Ta bort"
+			}
+		},
+		"edit": "Redigera"
+	},
+	"languages": {
+		"title": "Språkpaket",
+		"hint": "För att använda BiblioViva på ett annat språk laddas det engelska eller italienska exemplet ner, texterna i JSON-filerna översätts (nycklarna och platshållarna inom dubbla klammerparenteser lämnas oförändrade), språkets namn skrivs i pack.json och zip-filen laddas upp. Ett paket med fel installeras inte; saknade texter visas på engelska. Språket väljs under Utseende och språk.",
+		"none": "Inget paket är installerat.",
+		"valid": "Giltigt",
+		"errorsCount": "{{count}} {{count:plural; one:fel; other:fel;}}",
+		"warnings": "{{count}} {{count:plural; one:saknad eller extra text; other:saknade eller extra texter;}}",
+		"inUse": "I bruk",
+		"download": "Ladda ner",
+		"report": "Resultat av kontrollen",
+		"upload": "Ladda upp ett paket (zip)",
+		"uploadHint": "En zip-fil med pack.json och språkfilerna, i en mapp med språkkoden som namn (till exempel de/); högst {{maxMb}} MB.",
+		"examples": "Exempel att ladda ner:",
+		"installed": "Språket installerades: {{name}}",
+		"removed": "Paketet togs bort",
+		"removeTitle": "Ta bort paketet {{code}}?",
+		"removeHint": "Språkmappen tas bort. Det kan ångras i inställningshistoriken.",
+		"errors": {
+			"notAZip": "Filen är inte en zip-fil.",
+			"tooLarge": "Zip-filen är för stor: högst {{maxMb}} MB.",
+			"badLayout": "Zip-filen får bara innehålla språkets .json-filer, i en enda mapp med språkkoden. {{details}}",
+			"badCode": "Ogiltig språkkod: {{details}} (till exempel de, fr, pt-BR).",
+			"builtIn": "Engelska och italienska ingår redan och ersätts inte.",
+			"invalid": "Paketet har fel och installerades inte: {{details}}",
+			"inUse": "Det är språket som används: välj först ett annat.",
+			"notFound": "Paketet hittades inte.",
+			"unavailable": "Listan över språk eller paketet kunde inte laddas ner. Kontrollera internetanslutningen, eller ladda upp zip-filen för hand.",
+			"checksum": "Det nedladdade paketet är skadat och installerades inte. Försök igen."
+		},
+		"release": {
+			"title": "Språk att installera",
+			"hint": "De språk som publicerats med den här versionen av BiblioViva. Listan läses från internet och varje paket kontrolleras innan det installeras.",
+			"percent": "{{percent}} % översatt",
+			"machine": "Automatisk översättning, inte läst av en modersmålstalare",
+			"reviewed": "Översättning läst av en modersmålstalare",
+			"install": "Installera",
+			"again": "Installera igen",
+			"installedBadge": "Installerad",
+			"page": "Sidan för utgåvan, för att ladda ner paketen för hand och ladda upp dem nedan",
+			"unavailable": "Listan över språk går inte att nå: det finns ingen internetanslutning, eller så saknar den här versionen ännu en lista. Att ladda upp en zip-fil nedan fungerar ändå."
+		}
+	},
+	"reports": {
+		"title": "Rapportbiblioteket",
+		"hint": "Rapporterna som följer med BiblioViva och skolans egna. För att anpassa en rapport: ladda ner den, ändra den och ladda upp den; med samma kod (id) tar den originalets plats. Innan den installeras kontrolleras formatet, säkerheten i frågan samt tabellerna och kolumnerna den använder. Guiden för att skriva rapporter finns i docs/reports-authoring.md.",
+		"upload": "Ladda upp en rapport (JSON)",
+		"try": "Prova",
+		"download": "Ladda ner",
+		"problems": "Dessa filer läses inte in:",
+		"installed": "Rapporten {{id}} installerad",
+		"replaced": "Rapporten {{id}} ersatt",
+		"removed": "Filen togs bort",
+		"removeTitle": "Ta bort {{file}}?",
+		"removeHint": "Filen tas bort från konfigurationen. Det kan ångras i historiken.",
+		"restoreHint": "Skolans version tas bort: rapporten som följer med BiblioViva används igen. Det kan ångras i historiken.",
+		"origin": {
+			"builtin": "Följer med BiblioViva",
+			"customised": "Anpassad",
+			"added": "Tillagd"
+		},
+		"errors": {
+			"tooLarge": "Filen är för stor: högst {{maxKb}} KB.",
+			"badJson": "Filen är inte giltig JSON: {{details}}",
+			"invalid": "Definitionen är inte giltig: {{details}}",
+			"sql": "Frågan fungerar inte i den här databasen: {{details}}",
+			"notFound": "Filen hittades inte.",
+			"reservedId": "”new” kan inte vara en rapports kod."
+		},
+		"new": "Ny rapport",
+		"edit": "Redigera",
+		"duplicate": "Duplicera",
+		"editor": {
+			"editTitle": "Redigera rapport",
+			"newTitle": "Ny rapport",
+			"copySuffix": "kopia",
+			"builtinHint": "Det här är en rapport som följer med BiblioViva: när den sparas skapas skolans anpassade kopia, med samma namn. ”Tillbaka till originalet” i biblioteket tar bort den.",
+			"id": "Rapportkod",
+			"category": "Kategori",
+			"title": {
+				"it": "Titel (italienska)",
+				"en": "Titel (engelska)"
+			},
+			"description": {
+				"it": "Beskrivning (italienska)",
+				"en": "Beskrivning (engelska)"
+			},
+			"restricted": "Endast för administratörer",
+			"tabs": {
+				"label": "Redigeringsläge",
+				"guided": "Guidad",
+				"sql": "SQL"
+			},
+			"sqlOnly": "Den här rapporten är skriven i SQL: den redigeras på fliken SQL.",
+			"source": "Data",
+			"rows": "Rader",
+			"rows2": "Rader, andra nivån",
+			"columns": "Kolumner",
+			"columnsHint": "Med kolumner blir rapporten en korstabell, med summorna.",
+			"none": "— ingen —",
+			"totals": "Summor",
+			"totalsOptions": {
+				"both": "Summarad och summakolumn",
+				"rows": "Summakolumn",
+				"columns": "Summarad",
+				"none": "Inga summor"
+			},
+			"sort": "Ordning",
+			"sortDimension": "I radernas ordning",
+			"sortMeasure": "Högsta värdet först",
+			"measures": "Värden",
+			"oneMeasure": "En korstabell visar ett enda värde.",
+			"filters": "Filter",
+			"filterModes": {
+				"off": "Inget filter",
+				"ask": "Frågas vid öppning",
+				"fixed": "Fast"
+			},
+			"value": "Värde",
+			"chart": "Diagram",
+			"charts": {
+				"bar": "Staplar",
+				"line": "Linjer",
+				"doughnut": "Ringdiagram"
+			},
+			"compiledHint": "Den guidade rapporten blir den här SQL-koden. För att skriva den för hand används ”Redigera som SQL”: därefter går det inte att gå tillbaka till den guidade redigeringen.",
+			"previewFirst": "Välj ”Förhandsgranska” för att se SQL-koden.",
+			"convert": "Redigera som SQL",
+			"convertTitle": "Ska rapporten göras om till SQL?",
+			"convertHint": "Rapporten blir en SQL-rapport med samma kolumner och parametrar. Den kan inte längre redigeras på den guidade fliken.",
+			"converted": "Rapporten är nu i SQL",
+			"sqlHint": "En enda SELECT- eller WITH-sats, med parametrarna som :namn.",
+			"json": {
+				"params": "Parametrar (JSON)",
+				"columns": "Kolumner (JSON)",
+				"chart": "Diagram (JSON, valfritt)",
+				"pivot": "Korstabell (JSON, valfritt)"
+			},
+			"jsonHint": "I formatet som beskrivs i guiden för rapporter.",
+			"preview": "Förhandsgranska",
+			"runPreview": "Förhandsgranska",
+			"previewHint": "Förhandsgranskningen kör rapporten med parametrarnas standardvärden (högst 200 rader).",
+			"save": "Spara",
+			"saved": "Rapporten ”{{id}}” sparades",
+			"back": "Tillbaka till biblioteket",
+			"jsonInvalid": "Rätta de JSON-delar som är markerade i rött innan sparandet."
+		}
+	},
+	"designer": {
+		"title": "Redigera {{name}}",
+		"design": "Utformning",
+		"code": "Kod",
+		"preview": "Förhandsgranska",
+		"front": "Framsida",
+		"back": "Baksida",
+		"faces": "Sidor eller etiketter",
+		"zoom": "Förstoring",
+		"grid": "Rutnät",
+		"gridSteps": {
+			"s0": "Ingen (fri)",
+			"s05": "0,5 mm",
+			"s1": "1 mm",
+			"s2": "2 mm",
+			"s25": "2,5 mm",
+			"s5": "5 mm",
+			"s10": "10 mm"
+		},
+		"files": "Filer",
+		"problems": "Mallen kan inte skrivas ut så här:",
+		"saved": "Mallen sparad",
+		"notEditable": "Den här mallen kan inte redigeras här: mallar som följer med BiblioViva måste först anpassas.",
+		"canvasHint": "Klicka på en ruta för att välja den, dra den för att flytta den och använd hörnet för att ändra storlek: lägen och mått fästs vid det valda rutnätet. Med tangentbordet flyttas den med piltangenterna ett steg i rutnätet (ungefär 5 mm med Skift, alltid på rutnätet) och Delete tar bort den.",
+		"flowHint": "{{count}} {{count:plural; one:element på den här sidan är placerat; other:element på den här sidan är placerade;}} av stilmallen (streckad kontur): vid den första förflyttningen skrivs alla deras lägen in i filen, där de ligger nu.",
+		"lockedHint": "{{count}} {{count:plural; one:del av den här sidan finns; other:delar av den här sidan finns;}} inne i en Mustache-sektion: {{count:plural; one:den redigeras; other:de redigeras;}} på fliken ”Kod”.",
+		"noStock": "Inget ark med etiketter använder den här varianten: ritningen visas utan förhandsgranskning.",
+		"codeHint": "Ritningen och koden redigerar samma filer: varje ändring som görs här visas även i ritningen, och tvärtom.",
+		"add": "Lägg till",
+		"newText": "Text",
+		"noImages": "För att lägga till bilder, ladda upp dem först bland mallens bilder.",
+		"types": {
+			"field": "Fält",
+			"text": "Text",
+			"barcode": "Streckkod",
+			"photo": "Foto",
+			"pictogram": "Pictogram",
+			"image": "Bild",
+			"box": "Ruta",
+			"html": "Fri HTML",
+			"other": "Element"
+		},
+		"fields": {
+			"library_name": "Bibliotekets namn",
+			"patron_first_name": "Förnamn",
+			"patron_last_name": "Efternamn",
+			"patron_card_number": "Lånekortsnummer",
+			"patron_class_label": "Klass och sektion",
+			"patron_level_label": "Klass (årskurs)",
+			"patron_group": "Sektion",
+			"school_year": "Läsår",
+			"issued_on": "Utfärdandedatum",
+			"valid_until": "Giltig till och med",
+			"item_barcode": "Streckkod (text)",
+			"item_call_number": "Hyllsignum",
+			"call_head": "Hyllsignum: första raden",
+			"call_rest": "Hyllsignum: andra raden",
+			"biblio_title_short": "Kort titel",
+			"biblio_author_short": "Kort författare",
+			"biblio_publication_year": "Utgivningsår",
+			"biblio_series": "Serie",
+			"biblio_series_number": "Nummer i serien",
+			"classification_code": "Klassifikationskod",
+			"classification_label": "Klassifikationens namn",
+			"classification_reading_level": "Läsnivå",
+			"item_item_type": "Typ av exemplar"
+		},
+		"field": "Fält",
+		"text": "Text",
+		"image": "Bild",
+		"content": "HTML-innehåll",
+		"contentHint": "Rutan flyttas och formateras i ritningen; innehållet skrivs i HTML med Mustache-fält, som i mallens filer.",
+		"inherited": "Standard",
+		"unplacedHint": "Det här elementet placeras av stilmallen: när det flyttas skrivs dess läge, och lägena för de övriga elementen på sidan, in i filen.",
+		"geometry": {
+			"x": "X (mm)",
+			"y": "Y (mm)",
+			"w": "Bredd",
+			"h": "Höjd"
+		},
+		"fontSize": "Storlek (pt)",
+		"font": "Teckensnitt",
+		"fonts": {
+			"sans": "Utan serifer",
+			"serif": "Med serifer",
+			"mono": "Fast teckenbredd"
+		},
+		"bold": "Fetstil",
+		"italic": "Kursiv",
+		"uppercase": "Versaler",
+		"align": "Justering",
+		"aligns": {
+			"left": "Vänster",
+			"center": "Centrerad",
+			"right": "Höger"
+		},
+		"color": "Färg",
+		"border": "Kantlinje",
+		"borderColor": "Kantlinjens färg",
+		"fill": "Fyllning",
+		"fillColor": "Fyllningens färg",
+		"backward": "Flytta bakåt",
+		"forward": "Flytta framåt",
+		"background": "Sidans bakgrund",
+		"backgroundColor": "Bakgrundsfärg",
+		"backgroundImage": "Bakgrundsbild",
+		"noImage": "Ingen",
+		"chooseHint": "Välj en ruta i ritningen för att ändra den.",
+		"modes": "Mallens vy",
+		"safeArea": "Säkert område: håll text och foton innanför den streckade linjen, 2 mm från kanten (vid utskrift på båda sidor kan baksidan förskjutas en millimeter).",
+		"chooseBackground": "Välj en bakgrund",
+		"uploadBackground": "Ladda upp en bild",
+		"backgroundsTitle": "Färdiga bakgrunder",
+		"backgroundsHint": "Varje bakgrund går lite utanför lånekortet, 3 mm på varje sida: den extra delen skärs bort.",
+		"backgroundAlt": "Bakgrund {{name}}",
+		"backgroundAdded": "Bakgrunden har lagts till på sidan: spara för att behålla den.",
+		"backgroundFailed": "Bakgrunden lades inte till.",
+		"cardSize": "Format för lånekort",
+		"cardWidth": "Bredd (mm)",
+		"cardHeight": "Höjd (mm)",
+		"cardRotate": "Vrid: stående eller liggande",
+		"cardDefault": "Tillbaka till standardformatet ({{width}} × {{height}} mm)",
+		"cardDefaultHint": "Det här är konfigurationens standardformat (Inställningar → Lånekort): här ändras det enbart för den här mallen.",
+		"cardTooLarge": "Ett lånekort på {{width}} × {{height}} mm ryms inte på A4-arket: högst {{maxWidth}} × {{maxHeight}} mm, eftersom framsidan och baksidan står sida vid sida inom marginalerna."
+	},
+	"parts": {
+		"groups": {
+			"data": "Bibliotekets data",
+			"settings": "Inställningar",
+			"config": "Klassificering, mallar och mer"
+		},
+		"all": "Alla",
+		"none": "Ingen",
+		"accountsConfirm": {
+			"title": "Importera även konton och lösenord?",
+			"description": "Personalkontona och lösenorden i arkivet ersätter de nuvarande: den som loggar in nu kommer inte längre att kunna göra det med dagens inloggningsuppgifter. Om de inte behövs lämnas det här alternativet avmarkerat.",
+			"confirm": "Importera även konton"
+		},
+		"needs": "”{{part}}” behöver även {{needs}} för att återställas.",
+		"data": {
+			"patrons": "Låntagare",
+			"catalog": "Katalog och exemplar",
+			"loans": "Lån och historik",
+			"printLists": "Utskriftslistor",
+			"photos": "Låntagarnas foton",
+			"covers": "Bokomslag",
+			"notes": "Personalens anteckningar",
+			"dates": "Kalenderdatum",
+			"audit": "Aktivitetslogg"
+		},
+		"config": {
+			"classification": "Klassificering och pictogram",
+			"stocks": "Ark med etiketter",
+			"calendar": "Kalender",
+			"reports": "Rapporter",
+			"cardTemplates": "Mallar för lånekort",
+			"pairTemplates": "Mallar för etikettpar",
+			"barcodeTemplates": "Mallar för streckkodsetiketter",
+			"spineTemplates": "Mallar för ryggband",
+			"slipTemplates": "Mallar för kvitton och påminnelser",
+			"languages": "Språkpaket",
+			"logo": "Bibliotekets logotyp"
+		}
+	}
+}

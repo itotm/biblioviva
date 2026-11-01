@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "Desa",
+		"cancel": "Cancel·la",
+		"close": "Tanca",
+		"confirm": "Confirma",
+		"delete": "Elimina",
+		"edit": "Modifica",
+		"search": "Cerca",
+		"export": "Exporta",
+		"back": "Enrere",
+		"retry": "Torna a provar",
+		"backTo": "Torna a {{page}}",
+		"more": "Més accions"
+	},
+	"similar": {
+		"label": "Similar",
+		"count": "més {{count:plural; one:{{count}} de semblant trobat; other:{{count}} de semblants trobats;}} en corregir un error en escriure",
+		"hint": "Trobat en corregir un error en escriure: cal verificar que sigui el buscat."
+	},
+	"status": {
+		"loading": "Carregant…",
+		"error": "S'ha produït un error"
+	},
+	"statuses": {
+		"item": {
+			"available": "Disponible",
+			"onLoan": "En préstec",
+			"lost": "Perdut",
+			"damaged": "Malmès",
+			"inRepair": "En reparació",
+			"withdrawn": "Retirat",
+			"notForLoan": "Només consulta"
+		},
+		"loan": {
+			"open": "En curs",
+			"dueSoon": "Per retornar aviat",
+			"overdue": "Endarrerit",
+			"returned": "Retornat"
+		},
+		"patron": {
+			"active": "Actiu",
+			"anonymized": "Eliminat"
+		},
+		"print": {
+			"pending": "Per imprimir",
+			"printed": "Imprès"
+		}
+	},
+	"list": {
+		"selected": "{{count}} {{count:plural; one:seleccionat; other:seleccionats;}}"
+	},
+	"scan": {
+		"label": "Codi de barres",
+		"placeholder": "Escaneja o escriu un codi",
+		"submit": "Cerca el codi",
+		"camera": "Càmera",
+		"cameraTitle": "Escaneja amb la càmera",
+		"errors": {
+			"empty": "No s'ha introduït cap codi.",
+			"item_check_digit": "El codi de la còpia té un caràcter de control erroni: cal tornar a llegir-lo.",
+			"card_check_digit": "El número del carnet té un caràcter de control erroni: cal tornar a llegir-lo.",
+			"isbn_check_digit": "L'ISBN té una xifra de control errònia: cal comprovar les xifres.",
+			"unrecognised": "Codi no reconegut: cal verificar que el lector llegeixi Code 39 i Code 128."
+		},
+		"invalidRead": "Codi no vàlid ({{code}}): lectura en curs.",
+		"invalidShort": "Codi no vàlid, nova lectura…",
+		"useAnyway": "Usa igualment {{code}}"
+	},
+	"camera": {
+		"start": "Inicia la càmera",
+		"stop": "Atura la càmera",
+		"switch": "Canvia la càmera",
+		"torch": "Llanterna",
+		"snapshot": "Fes una foto",
+		"device": "Càmera",
+		"starting": "S'està iniciant la càmera…",
+		"errors": {
+			"insecure": "La càmera funciona només amb una connexió segura (https): oberta des de la xarxa local sense Tailscale, l'aplicació no la pot fer servir. Cal usar el lector de codis de barres o carregar un fitxer, o bé obrir l'aplicació des de l'adreça de Tailscale.",
+			"denied": "Permís denegat: cal permetre l'ús de la càmera a la configuració del navegador i tornar a provar.",
+			"notFound": "No s'ha trobat cap càmera en aquest dispositiu.",
+			"busy": "La càmera ja és en ús per una altra aplicació.",
+			"generic": "No s'ha pogut iniciar la càmera ({{message}}).",
+			"timeout": "La càmera no ha respost. Cal comprovar que el navegador no estigui encara demanant el permís, o que no s'hagi denegat abans per a aquest lloc (icona a prop de l'adreça)."
+		},
+		"permissionHint": "Si el navegador demana el permís per fer servir la càmera (normalment a prop de la barra de l'adreça), cal triar «Permet»."
+	},
+	"clipboard": {
+		"failed": "No s'ha pogut copiar: cal seleccionar el text i copiar-lo a mà."
+	},
+	"form": {
+		"errorsTitle": "Cal revisar els camps marcats",
+		"field": "Camp {{field}}"
+	},
+	"confirm": {
+		"title": "Confirmar?"
+	},
+	"export": {
+		"csv": "CSV (full de càlcul, text)",
+		"ods": "ODS (LibreOffice / Excel)"
+	},
+	"demo": {
+		"panel": "Aquesta instal·lació conté dades de demostració carregades el {{when}}: {{patrons}} {{patrons:plural; one:usuari; other:usuaris;}}, {{biblios}} {{biblios:plural; one:títol; other:títols;}}, {{items}} {{items:plural; one:còpia; other:còpies;}}, {{loans}} {{loans:plural; one:préstec; other:préstecs;}}. Són inventades: cap persona real."
+	},
+	"import": {
+		"header": "La primera fila és una capçalera",
+		"column": "Columna {{n}}",
+		"ignore": "— ignora —",
+		"counts": {
+			"new": "{{count}} {{count:plural; one:nou; other:nous;}}",
+			"update": "{{count}} per actualitzar",
+			"unchanged": "{{count}} {{count:plural; one:inalterat; other:inalterats;}}",
+			"error": "{{count}} {{count:plural; one:error; other:errors;}}"
+		},
+		"onlyErrors": "Mostra només els errors",
+		"info": "{{rows}} {{rows:plural; one:fila; other:files;}} · codificació {{encoding}} · separador «{{delimiter}}»",
+		"steps": {
+			"upload": "Fitxer",
+			"mapping": "Columnes",
+			"preview": "Verificació",
+			"done": "Completat"
+		},
+		"line": "Línia",
+		"status": "Resultat",
+		"reason": "Detalls",
+		"statuses": {
+			"new": "Nou",
+			"update": "Actualitzar",
+			"unchanged": "Sense canvis",
+			"error": "Error"
+		},
+		"errors": {
+			"empty": "El fitxer és buit.",
+			"tooLarge": "El fitxer supera els {{mb}} MB.",
+			"noRows": "No s'ha trobat cap fila al fitxer.",
+			"uploadGone": "El fitxer carregat ja no és disponible: cal tornar a carregar-lo.",
+			"notReady": "El fitxer encara té errors: cal tornar a verificar-lo.",
+			"mappingIncomplete": "Falten les columnes obligatòries: {{columns}}."
+		},
+		"template": {
+			"title": "El model del fitxer",
+			"hint": "Cal triar les columnes: el model conté només la capçalera i s'omple una fila a la vegada (també amb un full de càlcul, desant-lo en CSV).",
+			"required": "Obligatòries",
+			"keys": "Claus",
+			"keysHint": "Serveixen a reconèixer qui o què ja hi és; es poden deixar fora.",
+			"optional": "Facultatives",
+			"download": "Descarrega el model",
+			"ifMissing": "Si manca: {{text}}."
+		},
+		"groups": {
+			"required": "obligatòria",
+			"key": "clau"
+		}
+	},
+	"words": {
+		"yes": "Sí",
+		"no": "No"
+	},
+	"password": {
+		"show": "Mostra la contrasenya",
+		"hide": "Amaga la contrasenya"
+	},
+	"demoPublic": {
+		"language": "Llengua",
+		"welcome": {
+			"title": "Benvingut a la demostració de BiblioViva",
+			"beta": "Beta pública",
+			"betaText": "BiblioViva és en beta pública: les funcions són estables, però fins a la versió 1.0 no es garanteix que una actualització sigui compatible amb les dades i la configuració de la versió anterior.",
+			"intro": "BiblioViva és el programa per gestionar la biblioteca d'una escola: préstecs i devolucions, catàleg, usuaris amb fotos i carnets, etiquetes, impressions i informes. Aquesta és una demostració pública: totes les funcions es poden provar.",
+			"contents": "Dins hi ha una escola primària inventada: {{patrons}} {{patrons:plural; one:alumne o docent; other:alumnes i docents;}}, {{biblios}} {{biblios:plural; one:títol; other:títols;}} i {{items}} {{items:plural; one:còpia; other:còpies;}}, {{openLoans}} {{openLoans:plural; one:préstec; other:préstecs;}} en curs, dels quals {{overdueLoans}} endarrerits. Els noms i les fotos són inventats: cap persona és real.",
+			"reset": "Cada dia a les {{time}} la demostració torna a com era a l'inici. Els canvis de configuració es poden provar, però no es desen.",
+			"examples": "A la demostració el text i les fotos es substitueixen per un exemple: cada operació es pot provar fins al final, però el que s'escriu o es fotografia no es conserva i cap altre visitant no ho veu. Les importacions accepten només els fitxers d'exemple, que es poden descarregar des de la pàgina de cada importació.",
+			"accountsTitle": "Amb quin compte entrar",
+			"accountsHint": "Com a la biblioteca, cada compte veu només la feina del seu rol. El nom d'usuari i la contrasenya s'escriuen al formulari d'aquí dalt.",
+			"password": "La contrasenya és la mateixa per a tots els comptes:"
+		},
+		"accounts": {
+			"admin": {
+				"name": "Administració",
+				"does": "ho veu tot: a més de la feina dels altres comptes, la configuració, els comptes del personal, les còpies de seguretat, les classes i el pas de curs."
+			},
+			"prestiti": {
+				"name": "Gestió de préstecs",
+				"does": "el taulell de préstec: presta, retorna i renova, segueix els préstecs endarrerits i imprimeix les reclamacions."
+			},
+			"catalogo": {
+				"name": "Catalogació",
+				"does": "llibres i còpies, cerca de registres a SBN (aquí simulada), cobertes, classificació i etiquetes."
+			},
+			"tessere": {
+				"name": "Carnets i fotos",
+				"does": "alumnes i docents, fotos i cens fotogràfic de les classes, impressió dels carnets."
+			},
+			"report": {
+				"name": "Informes",
+				"does": "estadístiques de préstecs, catàleg i usuaris, exportació de les taules."
+			}
+		},
+		"blocked": {
+			"config": "A la demostració la configuració no es desa: tot es pot provar, però els canvis no s'escriuen.",
+			"restore": "A la demostració la restauració de les còpies de seguretat està desactivada: les dades de la demostració es tornen a crear soles cada nit.",
+			"configImport": "A la demostració la importació de la configuració està desactivada: la configuració de la demostració és la mateixa per a tots els visitants.",
+			"pictures": "La demostració no carrega fotos de classe: al cens prova amb la foto de classe d'exemple.",
+			"sqlReports": "A la demostració els informes escrits en SQL estan desactivats; els informes guiats estan disponibles.",
+			"importSize": "A la demostració els fitxers a importar poden tenir com a màxim 1 MB.",
+			"printSize": "A la demostració s'imprimeixen com a màxim 3 fulls alhora: cal triar menys còpies o menys usuaris.",
+			"importExample": "A la demostració només s'importa el fitxer d'exemple: cal descarregar-lo amb el botó del model i carregar-lo tal com és.",
+			"notesLimit": "A la demostració només es poden escriure poques notes al dia.",
+			"demoData": "A la demostració les dades de prova es mantenen fins al reinici de cada nit.",
+			"backups": "A la demostració les còpies de seguretat manuals estan desactivades: les dades de la demostració es tornen a crear soles cada nit.",
+			"archives": "A la demostració els arxius i les còpies de seguretat no es descarreguen: les dades i la configuració de la demostració es tornen a crear soles cada nit.",
+			"languagePacks": "A la demostració els paquets d'idioma no es descarreguen: la demostració té l'italià i l'anglès."
+		},
+		"example": {
+			"note": "DEMO – nota del {{when}}",
+			"comment": "Nota demo del {{when}}",
+			"book": "Llibre demo del {{when}}",
+			"wish": "Desiderata demo del {{when}}",
+			"class": "Classe demo del {{when}}",
+			"printList": "Llista demo del {{when}}",
+			"inventory": "Inventari demo del {{when}}",
+			"reason": "Motiu demo del {{when}}",
+			"date": "Data demo del {{when}}"
+		},
+		"replaced": "A la demostració el text i les fotos es substitueixen per un exemple: s'ha desat, però es manté l'exemple.",
+		"tooMany": "Massa sol·licituds en poc temps: cal tornar a provar d'aquí a un minut.",
+		"refused": {
+			"title": "No disponible a la demostració",
+			"busyTitle": "Massa sol·licituds",
+			"back": "Torna a BiblioViva"
+		}
+	}
+}

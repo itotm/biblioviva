@@ -1,0 +1,39 @@
+{
+	"title": "Informes",
+	"categories": {
+		"loans": "Préstamos",
+		"books": "Libros",
+		"patrons": "Usuarios",
+		"ops": "Actividad"
+	},
+	"restricted": "Solo administradores",
+	"custom": "De la escuela",
+	"chart": "Con gráfico",
+	"problemsTitle": "Archivos de informes no cargados",
+	"problemsHint": "Estos archivos de la carpeta de informes tienen un error y no aparecen en la lista:",
+	"params": "Parámetros",
+	"run": "Actualizar",
+	"all": "Todas",
+	"from": "desde",
+	"to": "hasta",
+	"patronTypes": {
+		"student": "Alumnos",
+		"teacher": "Profesores"
+	},
+	"rows": "{{count}} {{count:plural; one:fila; other:filas;}}",
+	"ms": "en {{ms}} ms",
+	"truncated": "{{count:plural; one:Solo se muestra la primera fila. Para verlas todas, restrinja los parámetros.; other:Solo se muestran las primeras {{count}} filas. Para verlas todas, restrinja los parámetros.;}}",
+	"empty": "Ningún resultado con estos parámetros.",
+	"print": "Imprimir",
+	"printedOn": "Impreso el {{date}}",
+	"errors": {
+		"required": "Falta «{{label}}».",
+		"invalid": "El valor de «{{label}}» no es válido."
+	},
+	"back": "Todos los informes",
+	"noParams": "Este informe no tiene parámetros.",
+	"special": {
+		"teachers": "Profesores",
+		"total": "Total"
+	}
+}

@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "Salvează",
+		"cancel": "Anulează",
+		"close": "Închide",
+		"confirm": "Confirmă",
+		"delete": "Șterge",
+		"edit": "Modifică",
+		"search": "Caută",
+		"export": "Exportă",
+		"back": "Înapoi",
+		"retry": "Reîncearcă",
+		"backTo": "Înapoi la {{page}}",
+		"more": "Alte acțiuni"
+	},
+	"similar": {
+		"label": "Asemănătoare",
+		"count": "plus {{count}} asemănătoare, căutarea fiind corectată pentru o greșeală de tastare",
+		"hint": "Rezultat găsit corectând o greșeală de tastare: verificați că este cel căutat."
+	},
+	"status": {
+		"loading": "Se încarcă…",
+		"error": "A apărut o eroare"
+	},
+	"statuses": {
+		"item": {
+			"available": "Disponibil",
+			"onLoan": "Împrumutat",
+			"lost": "Pierdut",
+			"damaged": "Deteriorat",
+			"inRepair": "În reparație",
+			"withdrawn": "Retras din circulație",
+			"notForLoan": "Doar consultare"
+		},
+		"loan": {
+			"open": "În curs",
+			"dueSoon": "Scade curând",
+			"overdue": "Întârziat",
+			"returned": "Restituit"
+		},
+		"patron": {
+			"active": "Activ",
+			"anonymized": "Eliminat"
+		},
+		"print": {
+			"pending": "De tipărit",
+			"printed": "Tipărit"
+		}
+	},
+	"list": {
+		"selected": "{{count}} în selecție"
+	},
+	"scan": {
+		"label": "Cod de bare",
+		"placeholder": "Scanați sau tastați un cod",
+		"submit": "Căutați codul",
+		"camera": "Cameră",
+		"cameraTitle": "Scanați cu camera",
+		"errors": {
+			"empty": "Niciun cod introdus.",
+			"item_check_digit": "Codul de bare al exemplarului are un caracter de control greșit: scanați-l din nou.",
+			"card_check_digit": "Numărul legitimației are un caracter de control greșit: scanați-l din nou.",
+			"isbn_check_digit": "ISBN-ul are o cifră de control greșită: verificați cifrele.",
+			"unrecognised": "Codul nu este recunoscut: verificați că scanerul citește Code 39 și Code 128."
+		},
+		"invalidRead": "Cod nevalid ({{code}}): se citește.",
+		"invalidShort": "Cod nevalid, se citește din nou…",
+		"useAnyway": "Folosiți oricum {{code}}"
+	},
+	"camera": {
+		"start": "Porniți camera",
+		"stop": "Opriți camera",
+		"switch": "Schimbați camera",
+		"torch": "Lanterna",
+		"snapshot": "Fotografiați",
+		"device": "Cameră",
+		"starting": "Se pornește camera…",
+		"errors": {
+			"insecure": "Camera funcționează doar cu o conexiune sigură (https): deschisă din rețeaua locală fără Tailscale, aplicația nu o poate folosi. Folosiți scanerul de coduri de bare sau încărcați un fișier, ori deschideți aplicația de la adresa Tailscale.",
+			"denied": "Permisiune refuzată: permiteți folosirea camerei în setările browserului și reîncercați.",
+			"notFound": "Nu s-a găsit nicio cameră pe acest dispozitiv.",
+			"busy": "Camera este deja folosită de o altă aplicație.",
+			"generic": "Camera nu a putut fi pornită ({{message}}).",
+			"timeout": "Camera nu a răspuns. Verificați dacă browserul nu cere încă permisiunea sau dacă nu a fost refuzată mai devreme pentru acest site (pictograma de lângă adresă)."
+		},
+		"permissionHint": "Dacă browserul cere permisiunea de a folosi camera (de obicei lângă bara adresei), alegeți „Permite”."
+	},
+	"clipboard": {
+		"failed": "Copierea nu a reușit: selectați textul și copiați-l manual."
+	},
+	"form": {
+		"errorsTitle": "Verificați câmpurile evidențiate",
+		"field": "Câmpul {{field}}"
+	},
+	"confirm": {
+		"title": "Confirmați?"
+	},
+	"export": {
+		"csv": "CSV (foaie de calcul, text)",
+		"ods": "ODS (LibreOffice / Excel)"
+	},
+	"demo": {
+		"panel": "Această instalare conține date demonstrative încărcate la {{when}}: {{patrons}} {{patrons:plural; one:cititor; few:cititori; other:de cititori;}}, {{biblios}} {{biblios:plural; one:titlu; few:titluri; other:de titluri;}}, {{items}} {{items:plural; one:exemplar; few:exemplare; other:de exemplare;}}, {{loans}} {{loans:plural; one:împrumut; few:împrumuturi; other:de împrumuturi;}}. Sunt inventate: nicio persoană reală."
+	},
+	"import": {
+		"header": "Prima linie este un antet",
+		"column": "Coloana {{n}}",
+		"ignore": "— nu se folosește —",
+		"counts": {
+			"new": "{{count}} noi",
+			"update": "{{count}} de actualizat",
+			"unchanged": "{{count}} neschimbate",
+			"error": "{{count}} {{count:plural; one:eroare; few:erori; other:de erori;}}"
+		},
+		"onlyErrors": "Arată doar erorile",
+		"info": "{{rows}} {{rows:plural; one:rând; few:rânduri; other:de rânduri;}} · codificare {{encoding}} · separator „{{delimiter}}”",
+		"steps": {
+			"upload": "Fișier",
+			"mapping": "Coloane",
+			"preview": "Verificare",
+			"done": "Finalizat"
+		},
+		"line": "Rând",
+		"status": "Rezultat",
+		"reason": "Detalii",
+		"statuses": {
+			"new": "Nou",
+			"update": "Actualizare",
+			"unchanged": "Neschimbat",
+			"error": "Eroare"
+		},
+		"errors": {
+			"empty": "Fișierul este gol.",
+			"tooLarge": "Fișierul depășește {{mb}} MB.",
+			"noRows": "Nu s-a găsit niciun rând în fișier.",
+			"uploadGone": "Fișierul încărcat nu mai este disponibil: încărcați-l din nou.",
+			"notReady": "Fișierul mai are erori: verificați-l din nou.",
+			"mappingIncomplete": "Lipsesc coloanele obligatorii: {{columns}}."
+		},
+		"template": {
+			"title": "Modelul fișierului",
+			"hint": "Alegeți coloanele: modelul conține doar antetul și se completează câte un rând pe rând (funcționează și o foaie de calcul salvată în CSV).",
+			"required": "Obligatorii",
+			"keys": "Chei",
+			"keysHint": "Servesc la recunoașterea a ceea ce există deja; pot fi omise.",
+			"optional": "Facultative",
+			"download": "Descărcați modelul",
+			"ifMissing": "Dacă lipsește: {{text}}."
+		},
+		"groups": {
+			"required": "obligatorie",
+			"key": "cheie"
+		}
+	},
+	"words": {
+		"yes": "Da",
+		"no": "Nu"
+	},
+	"password": {
+		"show": "Arată parola",
+		"hide": "Ascunde parola"
+	},
+	"demoPublic": {
+		"language": "Limbă",
+		"welcome": {
+			"title": "Bun venit în demonstrația BiblioViva",
+			"beta": "Beta publică",
+			"betaText": "BiblioViva este în beta publică: funcțiile sunt stabile, dar până la versiunea 1.0 nu este garantat că o actualizare rămâne compatibilă cu datele și setările versiunii precedente.",
+			"intro": "BiblioViva este programul pentru gestionarea bibliotecii unei școli: împrumuturi și restituiri, catalog, cititori cu fotografii și legitimații, etichete, tipărire și rapoarte. Aceasta este o demonstrație publică: toate funcțiile pot fi încercate.",
+			"contents": "Înăuntru găsiți o școală primară inventată: {{patrons}} {{patrons:plural; one:elev sau profesor; few:elevi și profesori; other:de elevi și profesori;}}, {{biblios}} {{biblios:plural; one:titlu; few:titluri; other:de titluri;}} și {{items}} {{items:plural; one:exemplar; few:exemplare; other:de exemplare;}}, {{openLoans}} {{openLoans:plural; one:împrumut; few:împrumuturi; other:de împrumuturi;}} în curs, dintre care {{overdueLoans}} în întârziere. Numele și fotografiile sunt inventate: nicio persoană nu este reală.",
+			"reset": "În fiecare zi la {{time}} demonstrația revine la starea de la început. Modificările configurației pot fi încercate, dar nu se salvează.",
+			"examples": "În demonstrație textele și fotografiile sunt înlocuite cu un exemplu: fiecare operațiune poate fi încercată până la capăt, dar ceea ce se scrie sau se fotografiază nu rămâne și niciun alt vizitator nu îl vede. Importurile acceptă doar fișierele exemplu, descărcabile de pe pagina fiecărui import.",
+			"accountsTitle": "Cu ce cont să intrați",
+			"accountsHint": "Ca în bibliotecă, fiecare cont vede doar lucrul rolului său. Numele de utilizator și parola se scriu în formularul de mai sus.",
+			"password": "Parola este aceeași pentru toate conturile:"
+		},
+		"accounts": {
+			"admin": {
+				"name": "Administrare",
+				"does": "vede tot: pe lângă lucrul celorlalte conturi, configurarea, conturile de personal, copiile de siguranță, clasele și trecerea la anul școlar următor."
+			},
+			"prestiti": {
+				"name": "Gestionarea împrumuturilor",
+				"does": "ghișeul de împrumut: împrumută, restituie și prelungește, urmărește împrumuturile întârziate și tipărește notificările de întârziere."
+			},
+			"catalogo": {
+				"name": "Catalogare",
+				"does": "cărți și exemplare, căutarea datelor din SBN (simulată aici), coperte, clasificare și etichete."
+			},
+			"tessere": {
+				"name": "Legitimații și fotografii",
+				"does": "elevi și profesori, fotografii și recensământul fotografic al claselor, tipărirea legitimațiilor."
+			},
+			"report": {
+				"name": "Rapoarte",
+				"does": "statistici despre împrumuturi, catalog și cititori, export de tabele."
+			}
+		},
+		"blocked": {
+			"config": "În demonstrație configurarea nu se salvează: totul poate fi încercat, dar modificările nu se scriu.",
+			"restore": "În demonstrație restaurarea copiilor de siguranță este dezactivată: datele demonstrației se recreează singure în fiecare noapte.",
+			"configImport": "În demonstrație importul unei configurații este dezactivat: configurația demonstrației este aceeași pentru toți vizitatorii.",
+			"pictures": "Demonstrația nu încarcă fotografiile claselor: la recensământ încercați cu fotografia de exemplu a clasei.",
+			"sqlReports": "În demonstrație rapoartele scrise în SQL sunt dezactivate: încercați rapoartele ghidate.",
+			"importSize": "În demonstrație fișierele de importat pot avea cel mult 1 MB.",
+			"printSize": "În demonstrație se tipăresc cel mult 3 foi odată: alegeți mai puține exemplare sau mai puțini cititori.",
+			"importExample": "În demonstrație se importă doar fișierul de exemplu: descărcați-l cu butonul modelului și încărcați-l așa cum este.",
+			"notesLimit": "În demonstrație se pot scrie doar câteva note pe zi.",
+			"demoData": "În demonstrație datele demonstrative rămân până la resetarea de noapte.",
+			"backups": "În demonstrație copiile de siguranță manuale sunt dezactivate: datele demonstrației se recreează singure în fiecare noapte.",
+			"archives": "În demonstrație arhivele și copiile de siguranță nu se descarcă: datele și configurația demonstrației se recreează singure în fiecare noapte.",
+			"languagePacks": "În demonstrație pachetele de limbă nu se descarcă: demonstrația are limbile italiană și engleză."
+		},
+		"example": {
+			"note": "DEMO – notă din {{when}}",
+			"comment": "Notă demo din {{when}}",
+			"book": "Carte demo din {{when}}",
+			"wish": "Sugestie demo din {{when}}",
+			"class": "Clasă demo din {{when}}",
+			"printList": "Listă demo din {{when}}",
+			"inventory": "Recolare demo din {{when}}",
+			"reason": "Motiv demo din {{when}}",
+			"date": "Dată demo din {{when}}"
+		},
+		"replaced": "În demonstrație textul și fotografiile sunt înlocuite cu un exemplu: salvarea a reușit, dar rămâne exemplul.",
+		"tooMany": "Prea multe cereri în scurt timp: reîncercați peste un minut.",
+		"refused": {
+			"title": "Indisponibil în demonstrație",
+			"busyTitle": "Prea multe cereri",
+			"back": "Înapoi la BiblioViva"
+		}
+	}
+}

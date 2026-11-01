@@ -1,0 +1,77 @@
+{
+	"id": "kr-chodeung",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Classes written 1학년 2반 and re-formed every year, so the promotion clears them [VERIFY]. The school year (학년도) starts on 1 March and is named by its starting year [VERIFY].",
+	"name": {
+		"it": "Scuola primaria, chodeung hakgyo (Corea del Sud)",
+		"en": "Elementary school, chodeung hakgyo (South Korea)",
+		"ko": "초등학교 (대한민국)"
+	},
+	"country": "KR",
+	"languages": ["ko"],
+	"schoolYear": {
+		"start": "03-01",
+		"label": "start"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "chodeung",
+				"name": "초등학교"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1학년",
+				"name": "초등학교 1학년",
+				"stage": "chodeung",
+				"aliases": ["초1"]
+			},
+			{
+				"code": "2",
+				"label": "2학년",
+				"name": "초등학교 2학년",
+				"stage": "chodeung",
+				"aliases": ["초2"]
+			},
+			{
+				"code": "3",
+				"label": "3학년",
+				"name": "초등학교 3학년",
+				"stage": "chodeung",
+				"aliases": ["초3"]
+			},
+			{
+				"code": "4",
+				"label": "4학년",
+				"name": "초등학교 4학년",
+				"stage": "chodeung",
+				"aliases": ["초4"]
+			},
+			{
+				"code": "5",
+				"label": "5학년",
+				"name": "초등학교 5학년",
+				"stage": "chodeung",
+				"aliases": ["초5"]
+			},
+			{
+				"code": "6",
+				"label": "6학년",
+				"name": "초등학교 6학년",
+				"stage": "chodeung",
+				"aliases": ["초6"]
+			}
+		],
+		"classLabel": "{level} {group}반",
+		"groupWord": "반",
+		"cardClass": "{class}",
+		"promotionWithinStage": "clear",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"chodeung": ["1", "2", "3", "4"]
+	},
+	"teacherGroup": "교사",
+	"readingLevels": []
+}

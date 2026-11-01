@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "Katalógus",
+		"search": "Keresés cím, szerző vagy ISBN alapján…",
+		"new": "Új könyv",
+		"empty": "Egyetlen könyv sem felel meg a szűrőknek.",
+		"countFiltered": "{{shown}} {{shown:plural; one:cím felel meg; other:cím felel meg;}} a szűrőknek",
+		"clearFilters": "Szűrők törlése",
+		"filters": {
+			"kind": "Típus",
+			"genre": "Műfaj",
+			"class": "Osztályozás",
+			"readingLevel": "Szint",
+			"itemType": "Anyag",
+			"series": "Sorozat",
+			"all": "Mind",
+			"allF": "Mind",
+			"withdrawn": "A kivont könyvek megjelenítése is"
+		},
+		"columns": {
+			"title": "Cím",
+			"series": "Sorozat",
+			"author": "Szerző",
+			"year": "Év",
+			"isbn": "ISBN",
+			"classification": "Osztályozás",
+			"copies": "Példányok",
+			"callNumber": "Jelzet",
+			"acquiredAt": "Beszerzés"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "Keresés a katalógusban",
+		"startHint": "Keresés cím, szerző, kiadó, kód vagy ISBN alapján, illetve szűrőkkel."
+	},
+	"kinds": {
+		"fiction": "Szépirodalom",
+		"nonfiction": "Ismeretterjesztő"
+	},
+	"fields": {
+		"title": "Cím",
+		"subtitle": "Alcím",
+		"originalTitle": "Eredeti cím",
+		"originalTitleHint": "Csak fordítás esetén: a mű címe az eredeti nyelven.",
+		"responsibility": "Felelősségi közlés (a címlapon olvasható módon)",
+		"author": "Szerző",
+		"publisher": "Kiadó",
+		"publicationPlace": "Hely",
+		"publicationYear": "Év",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN (nem ISBN)",
+		"physicalDescription": "Fizikai leírás",
+		"series": "Sorozat",
+		"seriesNumber": "Szám a sorozatban",
+		"seriesHint": "Például: Harry Potter és 3. A gépelés közben megjelennek a katalógusban már szereplő sorozatok.",
+		"dewey": "Dewey (SBN-ből)",
+		"kind": "Típus",
+		"genre": "Műfaj",
+		"classCode": "Osztályozás",
+		"readingLevel": "Olvasási szint",
+		"subjects": "Tárgyszavak",
+		"notes": "Megjegyzések",
+		"authorHint": "Vezetéknév, keresztnév. Ha nincs személyi szerző, használja a gyors értékeket.",
+		"subjectsHint": "Soronként egy, vagy vesszővel elválasztva.",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "Új könyv",
+		"editTitle": "Rekord szerkesztése",
+		"create": "Rekord mentése",
+		"save": "Módosítások mentése",
+		"identity": "Rekord",
+		"publication": "Megjelenés",
+		"classification": "Osztályozás",
+		"more": "További adatok",
+		"quickPicks": "Gyors értékek",
+		"unknownPublisher": "Ismeretlen kiadó",
+		"unknownPlace": "Ismeretlen hely",
+		"singleCopy": "Példány: {{barcode}}",
+		"singleCopyHint": "A rekordnak egyetlen példánya van: az adatai itt szerkeszthetők, és a rekorddal együtt mentődnek."
+	},
+	"picker": {
+		"kind": "Milyen típusú könyv?",
+		"fiction": "Szépirodalom",
+		"nonfiction": "Ismeretterjesztő",
+		"genre": "Válassza ki a műfajt",
+		"class": "Válassza ki a témát",
+		"readingLevel": "Olvasási szint",
+		"anyClass": "Nincs",
+		"back": "Vissza a fő témakörökhöz",
+		"children": "{{label}} témakörei",
+		"selected": "Kiválasztva: {{label}}",
+		"parentOnly": "Általánosan használja: „{{label}}”",
+		"later": "Osztályozás később",
+		"laterHint": "A könyv az „Osztályozandók” listára kerül: példányai nem kölcsönözhetők, és gerincsávja sem nyomtatható ki, amíg nincs osztályozva."
+	},
+	"detail": {
+		"heading": "Könyv rekordja",
+		"tabs": {
+			"copies": "Példányok",
+			"details": "Részletek"
+		},
+		"copies": "{{available}} / {{total}} elérhető",
+		"noCopies": "Még nincs példány: a kölcsönzéshez vegyen fel legalább egyet.",
+		"seriesLink": "A(z) „{{series}}” sorozat összes könyve",
+		"edit": "Szerkesztés",
+		"delete": "Rekord törlése",
+		"addCopies": "Példányok hozzáadása",
+		"deleteTitle": "Törli a(z) „{{title}}” rekordot?",
+		"deleteDescription": "A rekord kikerül a katalógusból. Csak példányok nélkül lehetséges.",
+		"deleted": "Rekord törölve",
+		"hasItems": "A rekordnak még {{count}} {{count:plural; one:példánya; other:példánya;}} van: előbb vonja ki a forgalomból vagy törölje őket.",
+		"columns": {
+			"barcode": "Vonalkód",
+			"callNumber": "Jelzet",
+			"itemType": "Anyag",
+			"readingLevel": "Szint",
+			"status": "Állapot",
+			"borrower": "Kölcsönzi",
+			"acquisition": "Beszerzés dátuma",
+			"labels": "Címkék"
+		},
+		"dueOn": "határidő: {{date}}",
+		"identifiers": "Azonosítók",
+		"source": "Forrás: {{source}}",
+		"created": "Létrehozva: {{when}}",
+		"updated": "Utoljára módosítva: {{when}}",
+		"onLoan": "Kikölcsönözve"
+	},
+	"item": {
+		"addTitle": "Példányok hozzáadása",
+		"copies": "Példányok száma",
+		"itemType": "Anyag",
+		"callNumber": "Jelzet",
+		"callNumberHint": "A besorolásból javasolt; módosítható.",
+		"readingLevel": "A példány szintje",
+		"enumeration": "Kötet / szám",
+		"acquisitionDate": "Beszerzés dátuma",
+		"notes": "Megjegyzések a példányról",
+		"notForLoan": "Csak helyben használható (nem kölcsönözhető)",
+		"add": "Hozzáadás",
+		"added": "{{count}} {{count:plural; one:példány; other:példány;}} hozzáadva: {{barcodes}}",
+		"editTitle": "{{barcode}} példány szerkesztése",
+		"save": "Mentés",
+		"saved": "Példány frissítve",
+		"status": "Állapot módosítása",
+		"statusTitle": "{{barcode}} példány állapota",
+		"newStatus": "Új állapot",
+		"reason": "Indok (elhagyható, rögzítésre kerül)",
+		"statusSaved": "Állapot frissítve",
+		"onLoan": "A példány kölcsönzésben van: előbb rögzítse a visszavételt.",
+		"delete": "Példány törlése",
+		"deleteTitle": "Törli a(z) {{barcode}} példányt?",
+		"deleteDescription": "Csak katalogizálási hiba esetén: a kölcsönzött példány nem törölhető, hanem ki kell vonni a forgalomból.",
+		"deleted": "Példány törölve",
+		"hasLoans": "A példánynak rögzített kölcsönzései vannak: törlés helyett vonja ki a forgalomból.",
+		"labelsTitle": "{{barcode}} példány címkéi"
+	},
+	"errors": {
+		"isbnInvalid": "Érvénytelen ISBN (ellenőrizze a számjegyeket)",
+		"isbnTaken": "Ezzel az ISBN-nel már létezik rekord",
+		"issnInvalid": "Érvénytelen ISSN",
+		"eanInvalid": "Érvénytelen EAN",
+		"yearImplausible": "Nem valószerű évszám",
+		"genreRequired": "Válassza ki a műfajt",
+		"genreUnknown": "A műfaj nincs a beállításokban",
+		"genreNotForNonfiction": "Az ismeretterjesztésnek nincs műfaja",
+		"classCodeRequired": "Válassza ki a témát",
+		"classCodeUnknown": "A téma nincs a beállításokban",
+		"classCodeNotForFiction": "A szépirodalomnak nincs témája",
+		"readingLevelNotAllowed": "Itt nem várható olvasási szint",
+		"readingLevelOutOfRange": "Az olvasási szint nincs a beállításokban",
+		"itemTypeUnknown": "Az anyag nincs a beállításokban",
+		"acquisitionDateInvalid": "Érvénytelen dátum (ÉÉÉÉ-HH-NN)",
+		"copiesOutOfRange": "Egyszerre 1–100 példány"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "Teszt szolgáltató"
+		},
+		"errors": {
+			"unreachable": "A szolgáltatás nem érhető el. Ellenőrizze az internetkapcsolatot, és próbálja újra később.",
+			"timeout": "A szolgáltatás nem válaszolt időben. Próbálja újra később.",
+			"protocol": "A szolgáltatás váratlan választ adott. Az adatok kézzel is megadhatók.",
+			"http": "A szolgáltatás hibával válaszolt. Próbálja újra később.",
+			"rate_limited": "A szolgáltatás túl sok lekérdezés miatt visszautasította a kérést. Próbálja újra később.",
+			"not_configured": "A szolgáltatás nincs beállítva: hiányzik egy beállítás (például az API-kulcs).",
+			"spawn": "A yaz-client program nem érhető el ezen a kiszolgálón. Értesítse a rendszergazdát."
+		},
+		"noHits": "A(z) {{provider}} nem adott találatot.",
+		"hits": "{{count}} {{count:plural; one:találat; other:találat;}}: {{provider}}",
+		"fromCache": "gyorsítótárból"
+	},
+	"fastAdd": {
+		"title": "Új könyv",
+		"steps": {
+			"code": "Kód",
+			"lookup": "Keresés",
+			"form": "Rekord és példányok",
+			"done": "Kész"
+		},
+		"code": {
+			"heading": "Olvassa be a vonalkódot",
+			"label": "ISBN vagy EAN",
+			"placeholder": "978…",
+			"material": "Anyag",
+			"noCode": "Kód nélkül",
+			"noCodeHint": "Keressen cím és szerző alapján, vagy töltse ki kézzel a rekordot.",
+			"manual": "Kitöltés kézzel",
+			"notACode": "A beolvasott kód nem ISBN és nem EAN: ellenőrizze a számjegyeket, vagy válassza a „Kód nélkül” lehetőséget.",
+			"eanNotIsbn": "Beolvasott EAN: {{ean}}. Nem ISBN, ezért a rekordot kézzel kell kitölteni.",
+			"cameraNotIsbn": "Nem ISBN: a könyv vonalkódját helyezze a keretbe"
+		},
+		"search": {
+			"heading": "Keresés cím és szerző alapján",
+			"title": "Cím",
+			"author": "Szerző",
+			"submit": "Keresés",
+			"empty": "Legalább a címet vagy a szerzőt írja be."
+		},
+		"duplicate": {
+			"heading": "Ez az ISBN már szerepel a katalógusban",
+			"copies": "{{count}} {{count:plural; one:példány; other:példány;}}",
+			"addCopy": "Példány hozzáadása",
+			"open": "Rekord megnyitása",
+			"another": "Másik kód beolvasása"
+		},
+		"lookup": {
+			"searching": "Keresés folyamatban: {{providers}}…",
+			"best": "A legteljesebb",
+			"heading": "Talált rekordok",
+			"pick": "Ezt a rekordot használja",
+			"none": "Nincs találat. A rekord kézzel is kitölthető.",
+			"manual": "Kézi megadás",
+			"bySearch": "Keresés cím alapján",
+			"retry": "Újra",
+			"another": "Új kód",
+			"source": "Forrás: {{provider}}",
+			"providerOk": "{{count}} {{count:plural; one:rekord; other:rekord;}}",
+			"providerCached": "gyorsítótárból",
+			"failed": "Hiba"
+		},
+		"form": {
+			"heading": "A rekord ellenőrzése és a példányok hozzáadása",
+			"rescan": "Másik kód beolvasása",
+			"bestOf": "A(z) {{count}} talált rekord közül a legteljesebb. Az évet és a leírást vesse össze a példánnyal.",
+			"otherRecords": "{{count:plural; one:Egyéb rekord; other:Egyéb rekord;}} ({{count}})",
+			"fromSource": "A rekord forrása: {{provider}}. Mentés előtt ellenőrizze az adatokat.",
+			"manualSource": "A rekordot kézzel töltötték ki.",
+			"copiesSection": "Példányok",
+			"copies": "Példányok száma",
+			"itemType": "Anyag",
+			"callNumber": "Jelzet",
+			"readingLevel": "A példányok szintje",
+			"acquisitionDate": "Beszerzés dátuma",
+			"save": "Rekord és példányok mentése",
+			"deweySuggested": "A témát a(z) {{dewey}} Dewey-szám alapján javasoljuk."
+		},
+		"done": {
+			"heading": "Rekord mentve",
+			"summary": "„{{title}}”, {{count}} {{count:plural; one:példánnyal; other:példánnyal;}}",
+			"summaryCopies": "{{count}} {{count:plural; one:példány; other:példány;}} hozzáadva ehhez: „{{title}}”",
+			"barcodes": "Példányok vonalkódjai",
+			"printLabels": "Címkék nyomtatása",
+			"addToList": "Hozzáadás a címkelistához",
+			"open": "Rekord megnyitása",
+			"another": "Újabb hozzáadása"
+		},
+		"cover": {
+			"title": "Borító",
+			"alt": "A könyv borítója",
+			"searching": "Borító keresése az interneten…",
+			"found": "Forrás: {{provider}}. A rekorddal együtt mentődik. Ha hibás, fényképezze le a könyv saját borítóját.",
+			"photo": "A borító fényképe: a rekorddal együtt mentődik.",
+			"none": "Nincs borító az interneten: lefényképezhető.",
+			"empty": "Nincs borító: lefényképezhető.",
+			"take": "Borító lefényképezése",
+			"replace": "Csere fényképpel",
+			"remove": "Eltávolítás",
+			"saving": "Borító mentése…",
+			"failed": "A borítót nem sikerült menteni: a könyv rekordjából is hozzáadható."
+		}
+	},
+	"cover": {
+		"title": "Borító",
+		"take": "Borító lefényképezése",
+		"upload": "Fájl feltöltése",
+		"change": "Borító cseréje",
+		"delete": "Borító eltávolítása",
+		"deleteTitle": "Eltávolítja a borítót?",
+		"deleteDescription": "A képet a kiszolgáló törli; új borító fényképezhető.",
+		"shoot": "Fényképezés",
+		"loading": "Az egyenesítő modul betöltése: {{loaded}} / {{total}} MB, csak az első használatkor.",
+		"loadingShort": "Az egyenesítő modul betöltése: {{loaded}} MB, csak az első használatkor.",
+		"loadFailed": "Az egyenesítő modult nem sikerült betölteni. Ellenőrizze a kapcsolatot, és próbálja újra.",
+		"detecting": "A borító széleinek keresése…",
+		"notFound": "A széleket nem sikerült automatikusan megtalálni: húzza a sarkokat a borítóra.",
+		"adjustHint": "Húzza a négy sarkot a borító széleire, majd egyenesítse ki.",
+		"straighten": "Egyenesítés",
+		"result": "Eredmény",
+		"use": "Ezt a borítót használja",
+		"retake": "Újra",
+		"cancel": "Mégse",
+		"saved": "Borító mentve",
+		"deleted": "Borító eltávolítva",
+		"placeholder": "Nincs borító",
+		"alt": "{{title}} borítója",
+		"cameraHint": "Fotózza le az egész borítót, akár ferdén is: a felvétel után kiegyenesítjük.",
+		"errors": {
+			"too_large": "A fájl túl nagy: a határ {{maxMb}} MB.",
+			"not_an_image": "A fájl nem olvasható kép.",
+			"unsupported_format": "Nem támogatott képformátum (használjon JPEG, PNG, WebP vagy HEIC formátumot).",
+			"empty": "Nincs kiválasztott fájl."
+		},
+		"download": "Borító letöltése",
+		"downloading": "Borító keresése az interneten…",
+		"downloaded": "Borító letöltve: {{provider}}",
+		"downloadNotFound": "Nincs borító az interneten ehhez az ISBN-hez: lefényképezhető.",
+		"downloadNoIsbn": "A rekordnak nincs ISBN-je: a borítót le kell fényképezni."
+	},
+	"export": {
+		"copiesTotal": "Példányok",
+		"copiesAvailable": "Elérhető",
+		"callNumber": "Jelzet",
+		"acquiredAt": "Beszerzés"
+	},
+	"import": {
+		"title": "Katalógus importálása",
+		"upload": {
+			"file": "CSV-fájl",
+			"hint": "Soronként egy példány: a cím adatai ismétlődnek a példányai sorain. A cím, a szerző és a kiadó megadása kötelező. Használja a sablon fejléceit, amely lent letölthető a szükséges oszlopokkal. A Koháról való áttéréshez használja a rendszergazda útmutatójában leírt exportálást.",
+			"submit": "Feltöltés"
+		},
+		"mapping": {
+			"uncertain": "Az oszlopokat nem sikerült felismerni: a folytatás előtt adja meg mindegyik mezőjét.",
+			"remembered": "Az oszlopok megegyeznek ennek a fájlnak az utolsó importálásakor használtakkal.",
+			"specialValues": "Speciális értékek, ha hiányzik a szerző vagy a kiadó („{{author}}”, „{{publisher}}”)",
+			"specialValuesHint": "Ez a választás nélkül a szerző vagy a kiadó nélküli sorok hibának számítanak.",
+			"validate": "Fájl ellenőrzése",
+			"without": {
+				"biblioKey": "A biblio_key oszlop nélkül az azonos könyv példányai ISBN szerint csoportosulnak; az ISBN nélküli sorok külön-külön egy-egy címet jelentenek.",
+				"barcode": "A vonalkód oszlop nélkül a példányok vonalkódjai generálódnak: az importálás után nyomtassa ki a címkéiket.",
+				"classification": "Az osztályozás oszlop nélkül a könyvek az „Osztályozandók” listára kerülnek: példányaik nem kölcsönözhetők, amíg nincsenek osztályozva."
+			}
+		},
+		"fields": {
+			"biblioKey": "Címkulcs (biblionumber)",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "Cím",
+			"subtitle": "Alcím",
+			"originalTitle": "Eredeti cím",
+			"responsibility": "Felelősségi közlés",
+			"author": "Szerző",
+			"publisher": "Kiadó",
+			"publicationPlace": "Megjelenés helye",
+			"publicationYear": "Év",
+			"physicalDescription": "Fizikai leírás",
+			"series": "Sorozat",
+			"seriesNumber": "Szám a sorozatban",
+			"dewey": "Dewey",
+			"classification": "Osztályozás (műfaj vagy téma, Koha ccode)",
+			"readingLevel": "Olvasási szint",
+			"subjects": "Tárgyszavak",
+			"notes": "A cím megjegyzései",
+			"barcode": "Példány vonalkódja",
+			"callNumber": "Jelzet",
+			"itemType": "Anyag",
+			"enumeration": "Kötet",
+			"status": "Állapot",
+			"notForLoan": "Nem kölcsönözhető",
+			"acquisitionDate": "Beszerzés dátuma",
+			"itemNotes": "A példány megjegyzései"
+		},
+		"preview": {
+			"ready": "Nincs hiba: az importálás elvégezhető.",
+			"blocked": "Javítsa a fájl hibáit, és ellenőrizze újra: hibás fájl nem importálható.",
+			"nothing": "A fájl minden példánya már szerepel a katalógusban: nincs mit importálni.",
+			"titles": "{{new}} {{new:plural; one:új cím; other:új cím;}}, {{existing}} már szerepel a katalógusban (a példányai hozzáadódnak)",
+			"columns": {
+				"title": "Cím",
+				"barcode": "Vonalkód",
+				"classification": "Osztályozás"
+			},
+			"question": {
+				"title": "Ugyanannak a címnek különböző szintű példányai",
+				"text": "{{count}} {{count:plural; one:címnél; other:címnél;}} a példányok olvasási szintje eltér. A szint a cím helyett minden példányon is állhat: ez a „szint példányonként” beállítás, amely a teljes katalógusra vonatkozik, és a már meglévő címek szintjét a példányaikra helyezi át.",
+				"yes": "Igen, szint példányonként",
+				"no": "Nem, ezek javítandó hibák"
+			},
+			"commit": "Importálás",
+			"back": "Vissza az oszlopokhoz",
+			"generatedBarcodes": "{{count}} {{count:plural; one:vonalkód nélküli példány; other:vonalkód nélküli példány;}}: a vonalkód generálódik, utána a címkéket ki kell nyomtatni.",
+			"toClassify": "{{count}} {{count:plural; one:új cím; other:új cím;}} osztályozás nélkül: {{count:plural; one:ez az „Osztályozandók” listára kerül; other:ezek az „Osztályozandók” listára kerülnek;}}."
+		},
+		"reasons": {
+			"tooLong": "Túl hosszú szöveg a(z) {{column}} oszlopban: legfeljebb {{max}} karakter",
+			"isbnInvalid": "Érvénytelen ISBN: „{{value}}”",
+			"classificationUnknown": "Az osztályozás nincs a beállításokban: „{{value}}”",
+			"barcodeInvalid": "Nem engedélyezett karaktereket tartalmazó vonalkód: „{{value}}”",
+			"barcodeCheckDigit": "Hibás ellenőrző karaktert tartalmazó vonalkód: „{{value}}”",
+			"barcodeDuplicateInFile": "A vonalkód már szerepel a(z) {{line}}. sorban",
+			"barcodeTaken": "A(z) {{value}} vonalkód már másik példányhoz tartozik a katalógusban",
+			"barcodeIsCard": "A(z) {{value}} kód olyan, mint egy olvasójegy száma, vagy annak látszik: példány nem kaphat olvasójegy-kódot",
+			"statusUnknown": "Nem felismert állapot: „{{value}}” (elérhető, elveszett, sérült, javítás alatt, kivont)",
+			"notForLoanUnknown": "Nem felismert érték a „nem kölcsönözhető” mezőben: „{{value}}” (igen/nem)",
+			"dateInvalid": "Érvénytelen dátum: „{{value}}” (ÉÉÉÉ-HH-NN vagy NN.HH.ÉÉÉÉ)",
+			"authorMissing": "Hiányzik a szerző (a „speciális értékekkel” Anonim lesz)",
+			"publisherMissing": "Hiányzik a kiadó (a „speciális értékekkel” s.n. lesz)",
+			"titleMissing": "Hiányzik a cím",
+			"groupConflict": "Ugyanaz a kulcs, mint a(z) {{line}}. sorban, de más cím",
+			"classQuestion": "Eltérő szintű példányok ({{classes}}): válaszoljon az alábbi kérdésre",
+			"classDiffers": "Eltérő szintű példányok ({{classes}}), a „szint példányonként” beállítás nélkül",
+			"copyExists": "A példány már szerepel a katalógusban: kihagyva",
+			"mergedIntoExisting": "Hozzáadva a katalógusban már szereplő címhez (azonos kulcs vagy azonos ISBN)"
+		},
+		"done": {
+			"title": "Katalógus importálva",
+			"summary": "{{titlesCreated}} {{titlesCreated:plural; one:új cím; other:új cím;}}, {{copiesCreated}} {{copiesCreated:plural; one:példány; other:példány;}} hozzáadva ({{titlesMerged}} {{titlesMerged:plural; one:cím már szerepelt; other:cím már szerepelt;}}, {{copiesSkipped}} {{copiesSkipped:plural; one:példány kihagyva; other:példány kihagyva;}}).",
+			"classPerItem": "A szint példányonként beállítás be lett kapcsolva.",
+			"batch": "Importálás száma: {{id}}. Az eredeti fájl megmarad.",
+			"labels": "Nyomtassa ki a vonalkód nélküli példányok címkéit",
+			"open": "Ugrás a katalógusra",
+			"again": "Másik fájl importálása"
+		},
+		"columns": {
+			"title": {
+				"hint": "A könyv címe."
+			},
+			"author": {
+				"hint": "Vezetéknév, keresztnév; üresen hiba, kivéve a „speciális értékek” esetén."
+			},
+			"publisher": {
+				"hint": "A kiadó; üresen ugyanúgy, mint a szerzőnél."
+			},
+			"biblioKey": {
+				"hint": "A cím kódja a régi programban (Koha biblionumber): összetartja a példányokat.",
+				"missing": "a példányok ISBN szerint csoportosulnak"
+			},
+			"barcode": {
+				"hint": "A példányon már meglévő vonalkód.",
+				"missing": "a vonalkód generálódik, és a címkéket ki kell nyomtatni"
+			},
+			"classification": {
+				"hint": "A műfaj (szépirodalom) vagy a téma (ismeretterjesztés) kódja.",
+				"missing": "a könyv az „Osztályozandók” listára kerül"
+			},
+			"readingLevel": {
+				"hint": "Az olvasási szint (szépirodalom)."
+			},
+			"isbn": {
+				"hint": "ISBN-10 vagy ISBN-13."
+			},
+			"issn": {
+				"hint": "Folyóiratok esetén."
+			},
+			"ean": {
+				"hint": "DVD-k és más anyagok EAN-kódja."
+			},
+			"subtitle": {
+				"hint": "Az alcím."
+			},
+			"originalTitle": {
+				"hint": "Csak fordításoknál: a cím az eredeti nyelven."
+			},
+			"responsibility": {
+				"hint": "Illusztrátorok, fordítók…"
+			},
+			"publicationPlace": {
+				"hint": "A megjelenés helye."
+			},
+			"publicationYear": {
+				"hint": "A megjelenés éve."
+			},
+			"physicalDescription": {
+				"hint": "Oldalszám, illusztrációk, méret."
+			},
+			"series": {
+				"hint": "A sorozat (nem a kiadó gyűjteménye)."
+			},
+			"seriesNumber": {
+				"hint": "A szám a sorozatban."
+			},
+			"dewey": {
+				"hint": "A Dewey-szám, csak tájékoztató jelleggel."
+			},
+			"subjects": {
+				"hint": "Kulcsszavak, ; vagy , jellel elválasztva."
+			},
+			"notes": {
+				"hint": "A cím megjegyzései."
+			},
+			"callNumber": {
+				"hint": "A jelzet; ha hiányzik, javasoljuk."
+			},
+			"itemType": {
+				"hint": "Az anyag (könyv, DVD…); ha hiányzik, a beállított első."
+			},
+			"enumeration": {
+				"hint": "A kötet, többkötetes műveknél."
+			},
+			"status": {
+				"hint": "elérhető, elveszett, sérült, javítás alatt, kivont."
+			},
+			"notForLoan": {
+				"hint": "1 vagy igen a helyben használható példányoknál."
+			},
+			"acquisitionDate": {
+				"hint": "A beszerzés dátuma; ha hiányzik, a mai nap."
+			},
+			"itemNotes": {
+				"hint": "A példány megjegyzései."
+			}
+		}
+	},
+	"batch": {
+		"selected": "A kijelöltek példányainak módosítása",
+		"title": "Példányok módosítása",
+		"scope": "{{count}} {{count:plural; one:példány; other:példány;}}",
+		"operation": "Mit módosítson",
+		"operations": {
+			"status": "Állapot",
+			"itemType": "Anyag",
+			"notForLoan": "Nem kölcsönözhető",
+			"readingLevel": "A példány szintje",
+			"acquisitionDate": "Beszerzés dátuma"
+		},
+		"value": "Új érték",
+		"yes": "Igen",
+		"no": "Nem",
+		"noClass": "Nincs szint",
+		"reason": "Indok",
+		"reasonHint": "Elveszett és kivont példánynál kötelező: minden példány naplójában megmarad.",
+		"check": "Ellenőrzés",
+		"apply": "Alkalmazás {{count}} {{count:plural; one:példányra; other:példányra;}}",
+		"plan": {
+			"changes": "{{count}} {{count:plural; one:példány változik; other:példány változik;}}",
+			"onLoan": "{{count}} {{count:plural; one:kölcsönzött példány; other:kölcsönzött példány;}} változatlan marad (előbb rögzíteni kell a visszavételt)",
+			"unchanged": "{{count}} {{count:plural; one:példány; other:példány;}} már ezt az értéket tartalmazza",
+			"notFound": "{{count}} {{count:plural; one:példány; other:példány;}} már nem létezik",
+			"notAllowed": "{{count}} {{count:plural; one:példány; other:példány;}} nem szépirodalmi: a szint nem alkalmazható",
+			"none": "Nincs módosítandó példány."
+		},
+		"excludedTitle": "Változatlanul maradó példányok",
+		"done": "{{count}} {{count:plural; one:példány módosítva; other:példány módosítva;}}",
+		"errors": {
+			"reasonRequired": "Írja be az indokot: elveszett és kivont példánynál kötelező.",
+			"itemTypeUnknown": "Az anyag nincs a beállításokban.",
+			"readingLevelNotAllowed": "A szint példányonként beállítás nincs bekapcsolva.",
+			"readingLevelOutOfRange": "Az olvasási szint nincs a beállításokban.",
+			"dateInvalid": "Érvénytelen dátum.",
+			"statusUnknown": "Érvénytelen állapot.",
+			"classificationUnknown": "Válasszon a beállításokban szereplő műfajt vagy témát."
+		},
+		"reclassify": {
+			"button": "Átosztályozás",
+			"title": "A kijelölt címek átosztályozása",
+			"scope": "{{count}} {{count:plural; one:cím; other:cím;}}",
+			"resuggest": "A példányok jelzeteinek újraírása az új osztályozás szerint",
+			"labelsHint": "A gerincsávok (és a címkék, ha változik a jelzet) ismét a kinyomtatandók közé kerülnek.",
+			"changes": "{{count}} {{count:plural; one:cím változik; other:cím változik;}}",
+			"apply": "{{count}} {{count:plural; one:cím átosztályozása; other:cím átosztályozása;}}",
+			"done": "{{count}} {{count:plural; one:cím átosztályozva; other:cím átosztályozva;}}, {{calls}} {{calls:plural; one:jelzet újraírva; other:jelzet újraírva;}}"
+		}
+	},
+	"search": {
+		"suggest": "A(z) {{barcode}} kód a(z) „{{title}}” egyik példánya.",
+		"openSuggest": "Rekord megnyitása",
+		"available": "Csak az elérhetők",
+		"yearFrom": "Évtől",
+		"yearTo": "Évig",
+		"copiesAvailable": "{{available}} / {{total}} elérhető",
+		"noCopies": "Nincs példány"
+	},
+	"inventory": {
+		"title": "Állományellenőrzés",
+		"defaultName": "Állományellenőrzés",
+		"emptyTitle": "Nincs folyamatban állományellenőrzés",
+		"emptyHint": "Indítson kampányt, majd olvassa be a példányokat polcról polcra: a végén a be nem olvasott példányok elveszettként lesznek megjelölve.",
+		"name": "A kampány neve",
+		"start": "Új kampány",
+		"started": "Indítva: {{when}}",
+		"overall": "Az egész könyvtár",
+		"progress": "{{seen}} / {{expected}} ({{percent}}%)",
+		"counts": "{{scanned}} {{scanned:plural; one:példány beolvasva; other:példány beolvasva;}} · {{misplaced}} rossz polcon · {{found}} {{found:plural; one:újra megtalálva; other:újra megtalálva;}}",
+		"byShelf": "Haladás polconként",
+		"noShelf": "Jelzet nélkül",
+		"scanTitle": "Példányok beolvasása",
+		"shelf": "Polc",
+		"shelfHint": "Például B vagy 590: a más jelzetű példányok rossz polcon lévőként lesznek jelölve.",
+		"scanLabel": "A példány vonalkódja",
+		"camera": "Beolvasás fényképezőgéppel",
+		"outcomes": {
+			"seen": "{{title}} ({{barcode}}): beolvasva.",
+			"again": "{{title}} ({{barcode}}): már beolvasták ekkor: {{when}}.",
+			"misplaced": "{{title}} ({{barcode}}): rossz polcon van; a jelzete szerint helyezze vissza.",
+			"found": "{{title}} ({{barcode}}): elveszettnek volt jelölve, és megtalálták; ismét elérhető.",
+			"onLoan": "{{title}} ({{barcode}}): kölcsönzésben van; rögzítse a visszavételt a pultnál.",
+			"withdrawn": "{{title}} ({{barcode}}): kivont példány, a polcról le kell venni.",
+			"unknown": "{{code}}: egyetlen példánynak sincs ilyen vonalkódja."
+		},
+		"missing": "Még hiányzik ({{count}})",
+		"allShelves": "Minden polc",
+		"allTypes": "Minden anyag",
+		"noneMissing": "Minden várt példány be lett olvasva.",
+		"more": "és még {{count}} {{count:plural; one:db; other:db;}}: a teljes listát exportálással lehet megnézni.",
+		"close": "Állományellenőrzés lezárása",
+		"closeTitle": "Lezárja az állományellenőrzést?",
+		"closeHint": "A soha nem látott {{count}} {{count:plural; one:példány; other:példány;}} elveszettként lesz megjelölve. A kampány egy héten belül újranyitható a visszavonáshoz.",
+		"closedTitle": "Állományellenőrzés lezárva",
+		"summary": "{{seen}} {{seen:plural; one:példány látva; other:példány látva;}} a(z) {{expected}} {{expected:plural; one:példányból; other:példányból;}}, {{lost}} {{lost:plural; one:elveszettként megjelölve; other:elveszettként megjelölve;}}, {{found}} {{found:plural; one:újra megtalálva; other:újra megtalálva;}}, {{onLoan}} kölcsönzésben, {{misplaced}} rossz polcon.",
+		"history": "Korábbi kampányok",
+		"reopen": "Újranyitás",
+		"errors": {
+			"alreadyOpen": "Már van folyamatban lévő állományellenőrzés.",
+			"notOpen": "Ez az állományellenőrzés le van zárva.",
+			"notFound": "Az állományellenőrzés nem található.",
+			"tooLate": "Csak a lezárást követő egy héten belül lehet újranyitni.",
+			"badName": "Adjon nevet a kampánynak.",
+			"badNotes": "A kampány megjegyzései legfeljebb 500 karakterből állhatnak."
+		},
+		"cameraShelf": "{{shelf}} polc",
+		"cameraDone": "Kész"
+	},
+	"toClassify": {
+		"title": "Osztályozandók",
+		"label": "Osztályozandók",
+		"intro": "Az osztályozás nélkül felvett könyvek, a legrégebbiek elöl. Példányaik nem kölcsönözhetők, amíg nincsenek osztályozva.",
+		"count": "{{count}} {{count:plural; one:osztályozandó könyv; other:osztályozandó könyv;}}",
+		"empty": "Nincs osztályozandó könyv",
+		"emptyHint": "A katalógus minden könyvének van műfaja vagy témája.",
+		"start": "Osztályozás kezdése",
+		"classify": "Osztályozás",
+		"badge": "Osztályozandó",
+		"badgeHint": "A példányok nem kölcsönözhetők, amíg a könyv nincs osztályozva.",
+		"columns": {
+			"title": "Cím",
+			"author": "Szerző",
+			"publisher": "Kiadó",
+			"year": "Év",
+			"isbn": "ISBN",
+			"copies": "Példányok",
+			"enteredOn": "Felvétel dátuma"
+		},
+		"flow": {
+			"title": "A könyv osztályozása",
+			"saveNext": "Mentés és következő",
+			"save": "Mentés",
+			"skip": "Kihagyás",
+			"saved": "„{{title}}” osztályozva",
+			"end": "Ebben a körben nincs több osztályozandó könyv.",
+			"backToList": "Vissza a listához",
+			"already": "Ez a könyv már osztályozva van.",
+			"callNumber": "A példányok jelzete",
+			"callNumberHint": "A jelzet nélküli példányok ezt kapják; utána a gerincsáv kinyomtatható.",
+			"dewey": "A(z) {{dewey}} Dewey-szám a(z) {{code}} témának felel meg.",
+			"copies": "{{count}} {{count:plural; one:példány; other:példány;}}",
+			"subjects": "Tárgyszavak",
+			"notes": "Megjegyzések"
+		}
+	}
+}

@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Afdrukken",
+		"newPatrons": "Nieuwe lijst leners",
+		"newItems": "Nieuwe lijst boeken",
+		"newPatronsTitle": "Nieuwe lijst van leners",
+		"newItemsTitle": "Nieuwe lijst van boeken",
+		"name": "Naam van de lijst",
+		"defaultName": "Lijst {{n}} van {{date}}",
+		"kind": "Soort",
+		"kinds": {
+			"all": "Alle",
+			"patrons": "Leners",
+			"items": "Boeken"
+		},
+		"classes": "Klassen",
+		"classesHint": "De lenerspassen van een hele klas, zonder er een lijst van te maken.",
+		"classKind": "Klas",
+		"count": "{{count}} {{count:plural; one:vermelding; other:vermeldingen;}}",
+		"empty": "Geen lijsten. Lijsten maakt u hier of met “Aan een lijst toevoegen” op de pagina's Leners en Catalogus.",
+		"lastPrinted": "Afgedrukt op {{when}}",
+		"neverPrinted": "Nooit afgedrukt",
+		"open": "Openen",
+		"created": "Lijst aangemaakt",
+		"deleted": "Lijst verwijderd",
+		"deleteTitle": "De lijst “{{name}}” verwijderen?",
+		"deleteDescription": "De vermeldingen worden van de lijst verwijderd; de leners blijven in het archief."
+	},
+	"list": {
+		"rename": "Hernoemen",
+		"renamed": "Lijst hernoemd",
+		"print": "Lenerspassen afdrukken",
+		"markPrinted": "Markeren als afgedrukt",
+		"marked": "{{count:plural; one:{{count}} lenerspas gemarkeerd als afgedrukt; other:{{count}} lenerspassen gemarkeerd als afgedrukt;}}",
+		"clearAfter": "Lijst leegmaken na het afdrukken",
+		"clear": "Leegmaken",
+		"cleared": "Lijst leeggemaakt",
+		"clearTitle": "De lijst leegmaken?",
+		"clearDescription": "Elke vermelding wordt van de lijst verwijderd; de leners blijven in het archief.",
+		"delete": "Verwijderen",
+		"entries": "{{count}} {{count:plural; one:lener; other:leners;}} op de lijst",
+		"empty": "De lijst is leeg. Leners voegt u toe met de snelle filters, met de scanner of op de pagina Leners.",
+		"remove": "Van de lijst halen",
+		"moveUp": "Omhoog verplaatsen",
+		"moveDown": "Omlaag verplaatsen",
+		"dragHint": "Sleep de vermeldingen om de afdrukvolgorde te wijzigen.",
+		"removed": "Van de lijst gehaald",
+		"columns": {
+			"position": "Nr.",
+			"printed": "Lenerspas afgedrukt"
+		},
+		"printedYes": "ja",
+		"printedNo": "nee",
+		"quick": {
+			"title": "Toevoegen met filters",
+			"hint": "Wie al op de lijst staat, wordt niet tweemaal toegevoegd.",
+			"type": "Soort",
+			"any": "Willekeurig",
+			"stage": "Schoolniveau",
+			"level": "Leerjaar",
+			"withoutPrintedCard": "Alleen wie nog geen afgedrukte lenerspas heeft",
+			"withoutPhoto": "Alleen wie geen foto heeft",
+			"importBatch": "Import",
+			"anyBatch": "— geen —",
+			"batchLabel": "nr. {{id}} · {{file}} · {{created}} {{created:plural; one:nieuwe; other:nieuwe;}}",
+			"createdAfter": "Aangemaakt vanaf",
+			"add": "Aan de lijst toevoegen",
+			"added": "{{added}} {{added:plural; one:toegevoegd; other:toegevoegd;}}, {{skipped}} {{skipped:plural; one:al aanwezig; other:al aanwezig;}}",
+			"none": "Geen lener voldoet aan de filters.",
+			"pendingLabels": "Etiketten af te drukken",
+			"pendingAny": "— alle exemplaren —",
+			"acquiredFrom": "Verworven vanaf",
+			"acquiredTo": "tot",
+			"genre": "Genre",
+			"itemType": "Soort exemplaar",
+			"batchLabelItems": "nr. {{id}} · {{file}} · {{created}} {{created:plural; one:exemplaar; other:exemplaren;}}",
+			"noneItems": "Geen exemplaar voldoet aan de filters.",
+			"addedItems": "{{added}} {{added:plural; one:toegevoegd; other:toegevoegd;}}, {{skipped}} {{skipped:plural; one:al aanwezig; other:al aanwezig;}}",
+			"nonfictionClass": "Klas non-fictie"
+		},
+		"scan": {
+			"title": "Toevoegen met de scanner",
+			"hint": "Lees de lenerspas van elke lener: die wordt direct aan de lijst toegevoegd. Passen die al op de lijst staan, worden genegeerd.",
+			"added": "{{name}} toegevoegd",
+			"duplicate": "{{name}} staat al op de lijst",
+			"unknown": "Geen lener met lenerspas {{card}}",
+			"notCard": "De gelezen code is geen lenerspas",
+			"hintItems": "Lees de barcode van elk exemplaar, ook langs de plank: het exemplaar wordt direct aan de lijst toegevoegd. Exemplaren die al op de lijst staan, worden genegeerd.",
+			"addedItem": "{{title}} ({{barcode}}) toegevoegd",
+			"duplicateItem": "{{title}} ({{barcode}}) staat al op de lijst",
+			"unknownItem": "Geen exemplaar met barcode {{barcode}}",
+			"notItem": "De gelezen code is geen exemplaar"
+		},
+		"printLabels": "Etiketten afdrukken",
+		"markPrintedKind": "Etiketten afgedrukt",
+		"markedItems": "{{count:plural; one:{{count}} exemplaar gemarkeerd als afgedrukt; other:{{count}} exemplaren gemarkeerd als afgedrukt;}}",
+		"entriesItems": "{{count}} {{count:plural; one:exemplaar; other:exemplaren;}} op de lijst",
+		"emptyItems": "De lijst is leeg. Exemplaren voegt u toe met de snelle filters, met de scanner of vanuit de catalogus.",
+		"clearDescriptionItems": "Elke vermelding wordt verwijderd; de exemplaren blijven in de catalogus."
+	},
+	"basket": {
+		"label": "Afdruklijsten",
+		"labelToPrint": "Afdruklijsten: {{count}} af te drukken",
+		"entry": "{{name}} ({{count}})",
+		"none": "Geen lijst af te drukken",
+		"all": "Alle lijsten"
+	},
+	"addTo": {
+		"button": "Aan een lijst toevoegen",
+		"selected": "Geselecteerde toevoegen aan een lijst",
+		"title": "Toevoegen aan een afdruklijst",
+		"existing": "Bestaande lijst",
+		"create": "Nieuwe lijst",
+		"newName": "Naam van de nieuwe lijst",
+		"confirm": "Toevoegen",
+		"done": "{{added}} {{added:plural; one:toegevoegd; other:toegevoegd;}} aan “{{name}}”, {{skipped}} {{skipped:plural; one:al aanwezig; other:al aanwezig;}}"
+	},
+	"labels": {
+		"title": "Etiketten afdrukken",
+		"button": "Etiketten afdrukken",
+		"selected": "Etiketten van de selectie afdrukken",
+		"kind": "Soort etiket",
+		"kinds": {
+			"pair": "Paar",
+			"barcode": "Alleen barcode",
+			"spine": "Alleen rugband"
+		},
+		"kindHints": {
+			"pair": "Rugband boven en etiket met de barcode eronder, één paar per boek (de huidige afdruk).",
+			"barcode": "Alleen het interne etiket met de barcode, voor herdrukken.",
+			"spine": "Alleen de rugband, bijvoorbeeld na een herclassificatie."
+		},
+		"stock": "Etikettenvel",
+		"start": "Eerste vrije positie",
+		"startHint": "Van 1 tot {{max}}: slaat de etiketten over die al op het vel zijn gebruikt.",
+		"count": "{{count}} {{count:plural; one:exemplaar; other:exemplaren;}}",
+		"unclassified": "{{count}} {{count:plural; one:exemplaar van een boek; other:exemplaren van boeken;}} om te classificeren: {{count:plural; one:alleen het barcodeetiket wordt; other:alleen de barcodeetiketten worden;}} afgedrukt, de rugband na de classificatie.",
+		"pendingCount": "{{count}} {{count:plural; one:exemplaar; other:exemplaren;}} met af te drukken etiketten",
+		"pages": "{{pages}} {{pages:plural; one:vel; other:vellen;}} ({{perPage}} per vel)",
+		"print": "De afdrukpagina openen",
+		"afterPrint": "De afdrukpagina is geopend in een nieuw tabblad. Zodra de etiketten zijn afgedrukt, markeert u ze als afgedrukt.",
+		"markPrinted": "Markeren als afgedrukt",
+		"marked": "{{count:plural; one:{{count}} exemplaar gemarkeerd als afgedrukt; other:{{count}} exemplaren gemarkeerd als afgedrukt;}}",
+		"status": {
+			"printed": "Etiketten afgedrukt",
+			"pending": "Etiketten af te drukken",
+			"partial": "Eén etiket ontbreekt"
+		}
+	},
+	"cards": {
+		"title": "Lenerspassen afdrukken",
+		"count": "{{count}} {{count:plural; one:lenerspas; other:lenerspassen;}}",
+		"afterPrint": "De afdrukpagina is geopend in een nieuw tabblad. Zodra de lenerspassen zijn afgedrukt, markeert u ze als afgedrukt.",
+		"layout": "Hoe afdrukken",
+		"layouts": {
+			"side-by-side": "Voorkant en achterkant naast elkaar",
+			"duplex": "Op beide zijden van het vel"
+		},
+		"window": "In het afdrukvenster van de browser:",
+		"steps": {
+			"duplex": {
+				"long-edge": "“Dubbelzijdig” kiezen, omslaan langs de lange zijde;",
+				"short-edge": "“Dubbelzijdig” kiezen, omslaan langs de korte zijde;"
+			},
+			"scale": "schaal 100 % (“Werkelijke grootte”, niet “Aanpassen aan pagina”);",
+			"margins": "marges: geen.",
+			"after": {
+				"side-by-side": {
+					"marks": "Daarna elke lenerspas uitknippen door de snijmerken rond de passen met een liniaal te verbinden, en hem dubbel vouwen op de korte zijde.",
+					"line": "Daarna elke lenerspas uitknippen langs de gekleurde lijn eromheen, en hem dubbel vouwen op de korte zijde.",
+					"edge": "Daarna elke lenerspas uitknippen langs de rand, en hem dubbel vouwen op de korte zijde."
+				},
+				"duplex": {
+					"marks": "Daarna de lenerspassen uitknippen door de snijmerken rond de voorkanten met een liniaal te verbinden: de achterkant zit al achter de voorkant (tien per vel).",
+					"line": "Daarna de lenerspassen uitknippen langs de gekleurde lijn rond de voorkanten: de achterkant zit al achter de voorkant (tien per vel).",
+					"edge": "Daarna de lenerspassen uitknippen langs de rand van de voorkanten: de achterkant zit al achter de voorkant (tien per vel)."
+				}
+			}
+		},
+		"print": "Afdrukken",
+		"calibrate": "De eerste keer, of als de achterkanten niet achter de voorkanten vallen:"
+	},
+	"words": {
+		"teacher": "Leerkracht",
+		"title": "Titel",
+		"code": "Code",
+		"dueBy": "In te leveren vóór",
+		"due": "Inleverdatum",
+		"name": "Naam",
+		"daysOverdue": "Dagen te laat",
+		"loanOn": "Uitlening van {{date}} aan",
+		"overduesOn": "Herinneringen van de bibliotheek van {{date}}",
+		"toReturn": "Boeken om terug te brengen naar de bibliotheek",
+		"enjoy": "Veel leesplezier."
+	}
+}

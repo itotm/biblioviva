@@ -1,0 +1,7 @@
+{
+	"notFound": "Stránka sa nenašla",
+	"forbidden": "Táto stránka nie je dostupná pre používaný účet",
+	"unauthorized": "Na pokračovanie sa prihláste",
+	"generic": "Vyskytla sa chyba ({{status}})",
+	"backHome": "Späť na úvodnú stránku"
+}

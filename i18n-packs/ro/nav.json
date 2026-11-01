@@ -1,0 +1,60 @@
+{
+	"dashboard": "Tablou de bord",
+	"circulation": "Împrumuturi",
+	"catalog": "Catalog",
+	"patrons": "Cititori",
+	"printing": "Tipărire",
+	"notes": "Note",
+	"reports": "Rapoarte",
+	"admin": "Administrare",
+	"more": "Altele",
+	"logout": "Deconectare",
+	"help": "Ajutor",
+	"about": "Despre",
+	"areas": {
+		"circulation": {
+			"label": "Ghișeu de împrumut",
+			"checkout": "Împrumuturi",
+			"checkin": "Restituiri",
+			"loans": "Cărți împrumutate",
+			"overdues": "Notificări de întârziere",
+			"wishlist": "Sugestii de achiziție",
+			"calendar": "Calendar"
+		},
+		"catalog": {
+			"label": "Pagini ale catalogului",
+			"catalog": "Catalog",
+			"inventory": "Recolare",
+			"wishlist": "Sugestii de achiziție",
+			"toClassify": "De clasificat"
+		},
+		"patrons": {
+			"label": "Pagini ale cititorilor",
+			"patrons": "Cititori",
+			"census": "Recensământ foto"
+		},
+		"notes": {
+			"label": "Pagini ale notelor",
+			"open": "Deschise",
+			"archived": "Arhivate"
+		},
+		"config": {
+			"label": "Pagini ale configurării",
+			"overview": "Secțiuni",
+			"history": "Istoric"
+		},
+		"templates": {
+			"label": "Pagini ale șabloanelor de tipărire",
+			"edit": "Șabloane",
+			"previews": "Previzualizări"
+		},
+		"imports": {
+			"label": "Importuri",
+			"catalog": "Catalog",
+			"students": "Elevi",
+			"teachers": "Profesori",
+			"loans": "Împrumuturi în curs",
+			"photos": "Fotografiile cititorilor"
+		}
+	}
+}

@@ -1,0 +1,66 @@
+{
+	"title": "Bilješke",
+	"new": "Nova bilješka",
+	"adminOnly": "Samo administrator arhivira bilješke i ističe ih na nadzornoj ploči.",
+	"pinned": "Istaknuto",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Arhivirano: {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:bilješka; few:bilješke; other:bilješki;}}",
+	"archiveCount": "{{shown}} od {{total}} {{total:plural; one:arhivirana bilješka; few:arhivirane bilješke; other:arhiviranih bilješki;}}",
+	"actions": {
+		"label": "Radnje s bilješkom",
+		"pin": "Istakni na nadzornoj ploči",
+		"unpin": "Ukloni isticanje",
+		"archive": "Arhiviraj",
+		"restore": "Vrati",
+		"delete": "Izbriši",
+		"showAll": "Prikaži sve",
+		"showLess": "Prikaži manje",
+		"more": "Prikaži više"
+	},
+	"done": {
+		"added": "Bilješka je dodana",
+		"pinned": "Bilješka je istaknuta",
+		"unpinned": "Bilješka više nije istaknuta",
+		"archived": "Bilješka je arhivirana",
+		"restored": "Bilješka je vraćena",
+		"deleted": "Bilješka je izbrisana"
+	},
+	"confirmDelete": {
+		"title": "Izbrisati bilješku?",
+		"text": "Briše se zauvijek i ne može se vratiti."
+	},
+	"form": {
+		"body": "Tekst",
+		"placeholder": "Npr. Čitač na pultu ne čita iskaznice.",
+		"privacy": "Svi računi čitaju bilješke: nemojte upisivati osobne podatke učenika.",
+		"written": "Bilješka se ne može mijenjati: u slučaju pogreške zamolite administratora da je arhivira i napišite drugu.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Boja",
+		"pinned": "Istaknuto na nadzornoj ploči",
+		"pinnedHint": "Prikazuje se svima na vrhu nadzorne ploče (i na posudbenom pultu) dok se ne ukloni isticanje ili se ne arhivira.",
+		"save": "Dodaj"
+	},
+	"colors": {
+		"yellow": "Žuta",
+		"pink": "Ružičasta",
+		"green": "Zelena",
+		"blue": "Svijetloplava",
+		"orange": "Narančasta"
+	},
+	"errors": {
+		"empty": "Upišite tekst bilješke.",
+		"tooLong": "Tekst je dulji od {{max}} {{max:plural; one:znaka; few:znaka; other:znakova;}}.",
+		"color": "Odaberite jednu od boja."
+	},
+	"empty": {
+		"open": "Nema otvorenih bilješki",
+		"openHint": "Nema otvorenih bilješki. Bilješke prenose probleme i obavijesti kolegama i administratoru.",
+		"archived": "Nema arhiviranih bilješki"
+	},
+	"home": {
+		"title": "Bilješke",
+		"open": "Otvori bilješke"
+	},
+	"tile": "Otvorene bilješke"
+}

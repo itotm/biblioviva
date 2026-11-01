@@ -1,0 +1,226 @@
+{
+	"title": "İlk kurulum",
+	"intro": "BiblioViva'ya hoş geldiniz. Birkaç adımda kütüphane hazır olur: dil, renkler, okul, kodlar ve personel parolaları.",
+	"stepOf": "Adım {{step}} / {{total}}",
+	"next": "İleri",
+	"back": "Geri",
+	"finish": "Kurulumu tamamla",
+	"steps": {
+		"language": "Dil",
+		"theme": "Renkler",
+		"library": "Kütüphane",
+		"school": "Okul",
+		"codes": "Kodlar",
+		"passwords": "Parolalar",
+		"demo": "Örnek veriler",
+		"summary": "Özet"
+	},
+	"language": {
+		"title": "BiblioViva hangi dilde konuşsun?",
+		"hint": "Kurulum başına tek dil: tüm personel için geçerlidir ve Yönetim → Yapılandırma → Görünüm ve dil bölümünden değiştirilebilir.",
+		"restore": {
+			"title": "Zaten bir BiblioViva yedeğiniz var mı?",
+			"hint": "BiblioViva'yı başka bir bilgisayara taşımak ya da bir arızadan sonra yeniden başlamak için soru yanıtlamaya gerek yoktur: “Tümünü dışa aktar” ile oluşturulmuş bir arşiv yeterlidir.",
+			"button": "Yedekten geri yükle"
+		}
+	},
+	"theme": {
+		"title": "Renkleri seçin",
+		"hint": "On beş renk paleti: yalnızca renkleri değiştirirler, şekli asla. Hepsi açık renklidir ve siyah beyazda da okunaklıdır.",
+		"names": {
+			"ocean": "Okyanus",
+			"forest": "Orman",
+			"grape": "Üzüm",
+			"sunset": "Gün batımı",
+			"cherry": "Kiraz",
+			"lagoon": "Lagün",
+			"silver": "Gümüş",
+			"graphite": "Grafit",
+			"apricot": "Kayısı",
+			"indigo": "İndigo",
+			"mint": "Nane",
+			"rose": "Gül",
+			"sahara": "Sahara",
+			"wintry": "Kışlık",
+			"olive": "Zeytin"
+		}
+	},
+	"library": {
+		"title": "Kütüphane",
+		"name": "Kütüphanenin adı",
+		"namePlaceholder": "Rodari İlkokulu kütüphanesi",
+		"schoolType": "Okul türü",
+		"schoolTypeHint": "Yıllar ve sınıflar okulun kullandığı biçimde. Daha sonra Yönetim → Yapılandırma → Okul ve Yönetim → Yapılandırma → Sınıflar bölümlerinden değiştirilebilirler.",
+		"photos": "Üye fotoğrafları",
+		"photosHint": "Öğrencilerin ve öğretmenlerin çekilmiş ya da yüklenmiş fotoğrafları; kartlara basılır. Kapalıysa hiçbir yerde fotoğraf olmaz ve kartlar fotoğrafsız olur.",
+		"covers": "Kitap kapakları",
+		"coversHint": "Çevrimiçi aranan, fotoğrafı çekilen ya da yüklenen kapaklar; katalogda gösterilir. Kapalıysa kapak olmaz."
+	},
+	"school": {
+		"title": "Okul",
+		"hint": "Okul türü yılları, sınıfları ve okuma düzeylerini önerir. Sınıflar hemen oluşturulur; örnek verilerle sahte öğrencilerle doldurulurlar.",
+		"otherCountries": "Diğer ülkeler",
+		"names": {
+			"perLevel": "{{stage}}: sınıf adları, her yıl için bir tane",
+			"mixed": "{{stage}}: bölüm adları, her biri tüm yıllarla"
+		},
+		"namesHint": "Virgülle ayrılmış; A-D, A, B, C, D anlamına gelir. Boşsa: sınıf yok.",
+		"namesInvalid": "Geçersiz adlar: virgülle ayırarak yazın (en fazla 40).",
+		"classes": "{{count}} {{count:plural; one:sınıf; other:sınıf;}} oluşturulacak:",
+		"more": "ve {{count}} tane daha",
+		"classLabel": "Sınıf nasıl yazılır",
+		"teacherGroup": "Öğretmen grubu",
+		"teacherGroupHint": "Her öğretmen bu gruba girer; daha sonra başka gruplar eklenebilir.",
+		"schoolYearStart": "Eğitim yılının başlangıcı",
+		"schoolYearStartHint": "Ay ve gün AA-GG biçiminde (örneğin 09-01).",
+		"schoolYearStartInvalid": "Ayı ve günü AA-GG biçiminde yazın.",
+		"schoolYearLabel": "Eğitim yılının adı",
+		"schoolYearLabels": {
+			"span": "İki yıl (2026/2027)",
+			"start": "Başladığı yıl (2026)"
+		},
+		"readingLevels": "Kurgu kitapları okuma düzeyine göre ayrılır",
+		"readingLevelsHint": "Yıllar, sınıflar ve okuma düzeyleri daha sonra Yönetim bölümünden değiştirilebilir."
+	},
+	"codes": {
+		"title": "Kodlar",
+		"hint": "Yeni nüshaların barkod biçimi ve yeni kartların biçimi, her biri ayrı seçilir. İki biçim asla karıştırılamaz: kodu okuyan, bunun bir kitap mı yoksa kart mı olduğunu hemen anlar.",
+		"itemFormat": "Nüshaların biçimi",
+		"itemFormats": {
+			"standard": "Yıl, kontrol ve numara (önerilir)",
+			"classic": "Yıl ve numara, sonda kontrol",
+			"prefix": "Başta L harfi ile"
+		},
+		"cardFormat": "Kartların biçimi",
+		"cardFormats": {
+			"standard": "Kontrol ve 6 haneli numara (önerilir)",
+			"classic": "10 haneli numara, sonda kontrol",
+			"prefix": "Başta T harfi ile"
+		},
+		"check": "Kontrol karakteri",
+		"checks": {
+			"mod23": "Bir harf (mod 23)",
+			"luhn": "Bir rakam (Luhn)",
+			"damm": "Bir rakam (Damm)"
+		},
+		"layout": "Okuyucu klavyesi",
+		"layoutHint": "Barkod okuyucuların bağlı olduğu bilgisayarın klavye dili: karışan karakterleri düzeltir. Sizinki listede yoksa en benzeyeni seçin: daha sonra Yapılandırma → Barkodlar bölümünden değiştirilebilir.",
+		"layouts": {
+			"it": "İtalyanca",
+			"es": "İspanyolca",
+			"de": "Almanca",
+			"fr": "Fransızca",
+			"uk": "İngilizce (Birleşik Krallık)",
+			"us": "İngilizce (Amerika Birleşik Devletleri)"
+		},
+		"copy": "Bir kitabın nüshası",
+		"card": "Kart",
+		"verdict": "Nüshalar ve kartlar asla karıştırılamaz.",
+		"refused": "Bu seçimle nüshalar ve kartlar karışabilir: başka bir biçim seçin.",
+		"later": "Biçimler, eski sistemlerin kodları ve numaralandırma daha sonra Yapılandırma → Barkodlar bölümünden değiştirilebilir."
+	},
+	"passwords": {
+		"title": "Personel parolaları",
+		"hint": "Her rol için bir tane olmak üzere beş paylaşılan hesap. Önerilen parolalar rastgele üretilir ve değiştirilebilir. Son adımda not alın: yalnızca bir kez gösterilirler.",
+		"accounts": {
+			"admin": "Yönetim (admin)",
+			"prestiti": "Ödünç yönetimi (prestiti)",
+			"catalogo": "Kataloglama (catalogo)",
+			"tessere": "Kartlar ve fotoğraflar (tessere)",
+			"report": "Raporlar (report)"
+		},
+		"regenerate": "Yeniden üret",
+		"tooShort": "En az 8 karakter.",
+		"demo": "Örnek verilerle tüm hesaplar aynı kolay parolayı kullanır: “{{password}}”. BiblioViva'yı gerçekten kullanmadan önce Yönetim → Personel hesapları bölümünden değiştirin."
+	},
+	"demo": {
+		"title": "Örnek veriler",
+		"hint": "Uygulamayı denemek için uydurma öğrenciler, kitaplar ve ödünçler. Gerçek veriler girildiğinde Yönetim bölümünden tek tıkla silinirler.",
+		"load": "Örnek verileri yükle",
+		"hasData": "Veritabanında zaten veri var: örnek veriler yüklenmeyecek."
+	},
+	"summary": {
+		"title": "Özet",
+		"hint": "Kontrol edip onaylayın. Parolalar yalnızca bu sayfada görünür: ilerlemeden önce kopyalayın.",
+		"language": "Dil",
+		"theme": "Renkler",
+		"library": "Kütüphane",
+		"photos": "Üye fotoğrafları",
+		"covers": "Kitap kapakları",
+		"school": "Okul",
+		"classes": "Sınıflar",
+		"classesValue": "{{count}} {{count:plural; one:sınıf; other:sınıf;}} ({{first}}…) ve {{teachers}} grubu",
+		"readingLevels": "Okuma düzeyleri",
+		"none": "Yok",
+		"codes": "Kodlar",
+		"demo": "Örnek veriler",
+		"yes": "Evet",
+		"no": "Hayır",
+		"later": "Daha sonra parolalar Yönetim → Personel hesapları bölümünden değiştirilir.",
+		"working": "Kaydediliyor…",
+		"error": "Yapılandırma kaydedilmedi: {{message}}"
+	},
+	"done": {
+		"title": "Kurulum tamamlandı",
+		"hint": "Bu parolaları güvenli bir yerde saklayın: bir daha gösterilmeyecekler.",
+		"demoLoaded": "Örnek veriler yüklendi: {{patrons}} {{patrons:plural; one:üye; other:üye;}}, {{biblios}} {{biblios:plural; one:kitap; other:kitap;}}, {{items}} {{items:plural; one:nüsha; other:nüsha;}}, {{loans}} {{loans:plural; one:ödünç; other:ödünç;}}.",
+		"login": "Girişe git"
+	},
+	"generic": {
+		"stage": "Okul",
+		"level": "Düzey {{level}}",
+		"groupWord": "Bölüm",
+		"teacherGroup": "Öğretmenler"
+	},
+	"restore": {
+		"title": "Yedekten geri yükle",
+		"hint": "“Tümünü dışa aktar” ile oluşturulmuş arşivi seçin (Yönetim → Yedekleme). En büyük boyut: {{maxMb}} MB. Arşiv, bir şey geri yüklenmeden önce kontrol edilir.",
+		"choose": "Arşivi seçin",
+		"checking": "Arşiv kontrol ediliyor…",
+		"from": "“{{library}}” kütüphanesinin arşivi, {{date}} tarihinde oluşturulmuş, sürüm {{version}}.",
+		"fromAnonymous": "{{date}} tarihinde oluşturulmuş arşiv, sürüm {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "Üyeler",
+			"catalog": "Katalog ve nüshalar",
+			"loans": "Ödünçler ve geçmiş",
+			"printLists": "Yazdırma listeleri",
+			"photos": "Üye fotoğrafları",
+			"covers": "Kapaklar",
+			"notes": "Notlar",
+			"dates": "Takvim tarihleri",
+			"audit": "Etkinlik günlüğü",
+			"ui": "Arayüz",
+			"security": "Güvenlik ve erişim",
+			"library": "Kütüphane ve okul"
+		},
+		"images": "Fotoğraflar: {{photos}} · kapaklar: {{covers}}",
+		"accounts": "Giriş yapabilecek hesaplar: {{accounts}}. Parolalar arşivdekilerdir.",
+		"warning": "Geri yükleme, ayarları, verileri ve görüntüleri arşivdeki haliyle tek seferde geri getirir. Bundan sonra kurulum sihirbazına gerek kalmaz.",
+		"apply": "Geri yükle",
+		"restoring": "Geri yükleniyor…",
+		"cancel": "İptal",
+		"back": "Kurulum sihirbazına dön",
+		"done": {
+			"title": "Geri yükleme tamamlandı",
+			"hint": "Kütüphane arşivdeki haline döndü. Giriş yapmak için bu hesaplardan birini, arşivdeki parolasıyla kullanın:",
+			"login": "Girişe git"
+		},
+		"errors": {
+			"too_large": "Arşiv çok büyük (en fazla {{maxMb}} MB).",
+			"not_zip": "Dosya geçerli bir ZIP arşivi değil.",
+			"not_archive": "Dosya bir BiblioViva arşivi değil: “Tümünü dışa aktar” ile oluşturulmuş bir arşiv seçin.",
+			"too_many_files": "Arşiv çok fazla dosya içeriyor.",
+			"unsafe_path": "Arşiv izin verilmeyen bir yol içeriyor: {{name}}",
+			"link": "Arşiv izin verilmeyen bir bağlantı içeriyor: {{name}}",
+			"unknown_file": "Arşiv BiblioViva'ya ait olmayan bir dosya içeriyor: {{name}}",
+			"not_setup": "Kurulum sihirbazı zaten tamamlandı: geri yükleme Yönetim → Yedekleme bölümünden yapılır.",
+			"newer_version": "Arşiv BiblioViva'nın daha yeni bir sürümüyle oluşturulmuş ({{name}}): önce o sürümü kurun.",
+			"missing_parts": "Arşivde şu bölümler eksik: {{name}}. “Tümünü dışa aktar” ile oluşturulmuş bir arşiv seçin.",
+			"unfinished_setup": "Arşiv, kurulum sihirbazının tamamlanmadığı bir kurulumdan geliyor.",
+			"not_ready": "Arşivde sorunlar var ve geri yüklenemez: {{name}}",
+			"gone": "Kontrol edilen arşiv artık yok: yeniden seçin.",
+			"failed": "Geri yükleme tamamlanamadı."
+		}
+	}
+}

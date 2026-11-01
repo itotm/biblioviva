@@ -1,0 +1,60 @@
+{
+	"dashboard": "Översikt",
+	"circulation": "Utlåning",
+	"catalog": "Katalog",
+	"patrons": "Låntagare",
+	"printing": "Utskrifter",
+	"notes": "Anteckningar",
+	"reports": "Rapporter",
+	"admin": "Administration",
+	"more": "Mer",
+	"logout": "Logga ut",
+	"help": "Hjälp",
+	"about": "Om",
+	"areas": {
+		"circulation": {
+			"label": "Utlåningsdisken",
+			"checkout": "Låna ut",
+			"checkin": "Återlämning",
+			"loans": "Utlånade böcker",
+			"overdues": "Påminnelser",
+			"wishlist": "Inköpsförslag",
+			"calendar": "Kalender"
+		},
+		"catalog": {
+			"label": "Sidor för katalogen",
+			"catalog": "Katalog",
+			"inventory": "Inventering",
+			"wishlist": "Inköpsförslag",
+			"toClassify": "Att klassificera"
+		},
+		"patrons": {
+			"label": "Sidor för låntagare",
+			"patrons": "Låntagare",
+			"census": "Fotoregistrering"
+		},
+		"notes": {
+			"label": "Sidor för anteckningar",
+			"open": "Öppna",
+			"archived": "Arkiverade"
+		},
+		"config": {
+			"label": "Sidor för inställningarna",
+			"overview": "Avsnitt",
+			"history": "Historik"
+		},
+		"templates": {
+			"label": "Sidor för utskriftsmallar",
+			"edit": "Mallar",
+			"previews": "Förhandsgranskningar"
+		},
+		"imports": {
+			"label": "Importer",
+			"catalog": "Katalog",
+			"students": "Elever",
+			"teachers": "Lärare",
+			"loans": "Pågående lån",
+			"photos": "Foton av låntagare"
+		}
+	}
+}

@@ -1,0 +1,53 @@
+{
+	"id": "fr-college",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md Phase 12, B2 of docs/studies/barcodes-and-school-classes.md).",
+	"name": {
+		"it": "Collège, secondaria di primo grado (Francia)",
+		"en": "Lower secondary school (France)"
+	},
+	"country": "FR",
+	"languages": ["fr"],
+	"school": {
+		"stages": [
+			{
+				"code": "college",
+				"name": "Collège"
+			}
+		],
+		"levels": [
+			{
+				"code": "6E",
+				"label": "6e",
+				"name": "Sixième",
+				"stage": "college"
+			},
+			{
+				"code": "5E",
+				"label": "5e",
+				"name": "Cinquième",
+				"stage": "college"
+			},
+			{
+				"code": "4E",
+				"label": "4e",
+				"name": "Quatrième",
+				"stage": "college"
+			},
+			{
+				"code": "3E",
+				"label": "3e",
+				"name": "Troisième",
+				"stage": "college"
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Classe",
+		"promotionWithinStage": "clear",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"college": ["1", "2", "3", "4"]
+	},
+	"teacherGroup": "Enseignants",
+	"readingLevels": []
+}

@@ -1,0 +1,71 @@
+{
+	"id": "gr-dimotiko",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Sections (τμήματα) numbered Α1, Β2; the school year starts on 1 September, lessons in mid-September [VERIFY].",
+	"name": {
+		"it": "Scuola primaria, Dimotikó (Grecia)",
+		"en": "Primary school, Dimotiko (Greece)",
+		"el": "Δημοτικό σχολείο (Ελλάδα)"
+	},
+	"country": "GR",
+	"languages": ["el"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "dimotiko",
+				"name": "Δημοτικό"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "Α",
+				"name": "Α΄ Δημοτικού",
+				"stage": "dimotiko"
+			},
+			{
+				"code": "2",
+				"label": "Β",
+				"name": "Β΄ Δημοτικού",
+				"stage": "dimotiko"
+			},
+			{
+				"code": "3",
+				"label": "Γ",
+				"name": "Γ΄ Δημοτικού",
+				"stage": "dimotiko"
+			},
+			{
+				"code": "4",
+				"label": "Δ",
+				"name": "Δ΄ Δημοτικού",
+				"stage": "dimotiko"
+			},
+			{
+				"code": "5",
+				"label": "Ε",
+				"name": "Ε΄ Δημοτικού",
+				"stage": "dimotiko"
+			},
+			{
+				"code": "6",
+				"label": "ΣΤ",
+				"name": "ΣΤ΄ Δημοτικού",
+				"stage": "dimotiko"
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Τμήμα",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"dimotiko": ["1", "2", "3"]
+	},
+	"teacherGroup": "Εκπαιδευτικοί",
+	"readingLevels": []
+}

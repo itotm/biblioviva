@@ -1,0 +1,73 @@
+{
+	"id": "top-readers",
+	"title": {
+		"it": "Lettori più assidui",
+		"en": "Most active readers"
+	},
+	"description": {
+		"it": "Gli utenti con più prestiti nel periodo. Riservato agli amministratori.",
+		"en": "The patrons with the most loans in the period. Administrators only."
+	},
+	"category": "patrons",
+	"restricted": true,
+	"params": [
+		{
+			"name": "from",
+			"label": {
+				"it": "Dal",
+				"en": "From"
+			},
+			"type": "date",
+			"required": true,
+			"default": "schoolYearStart"
+		},
+		{
+			"name": "to",
+			"label": {
+				"it": "Al",
+				"en": "To"
+			},
+			"type": "date",
+			"required": true,
+			"default": "today"
+		},
+		{
+			"name": "top",
+			"label": {
+				"it": "Quanti",
+				"en": "How many"
+			},
+			"type": "int",
+			"default": 20,
+			"min": 1,
+			"max": 200
+		}
+	],
+	"sql": "SELECT p.last_name || ' ' || p.first_name AS patron, pc.class_label AS class, COUNT(*) AS loans FROM loan l JOIN patron p ON p.id = l.patron_id LEFT JOIN patron_class pc ON pc.patron_id = p.id WHERE date(l.issued_at) BETWEEN :from AND :to AND p.status = 'active' GROUP BY p.id ORDER BY loans DESC, patron LIMIT :top",
+	"columns": [
+		{
+			"key": "patron",
+			"label": {
+				"it": "Utente",
+				"en": "Patron"
+			},
+			"type": "text"
+		},
+		{
+			"key": "class",
+			"type": "text",
+			"label": {
+				"it": "Classe",
+				"en": "Class"
+			}
+		},
+		{
+			"key": "loans",
+			"label": {
+				"it": "Prestiti",
+				"en": "Loans"
+			},
+			"type": "int"
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "Igangværende udlån",
+		"overdue": "Overskredet",
+		"issuedToday": "Udlånt i dag",
+		"returnedToday": "Afleveret i dag",
+		"withoutCard": "Lånere uden udskrevet lånerkort",
+		"withoutPhoto": "Lånere uden foto",
+		"toClassify": "Bøger til klassificering",
+		"pendingLabels": "Bøger uden etiketter"
+	},
+	"tilesTitle": "Biblioteket i dag",
+	"actions": {
+		"title": "Hurtige handlinger"
+	},
+	"dueWeek": {
+		"title": "Forfalder denne uge",
+		"none": "Intet udlån forfalder inden {{day}}.",
+		"more": "og {{count}} mere",
+		"due": "forfalder {{date}}"
+	},
+	"inventory": {
+		"title": "Bestandsrevision",
+		"continue": "Fortsæt"
+	},
+	"install": {
+		"title": "Føj til startskærmen",
+		"hint": "BiblioViva åbnes som en app, på fuld skærm, fra ikonet på telefonen.",
+		"install": "Installer",
+		"fromMenu": "Åbn menuen ⋮ i Firefox og vælg »Installer« eller »Føj til startskærm«.",
+		"later": "Ikke nu"
+	},
+	"upcoming": {
+		"title": "Kommende datoer",
+		"none": "Ingen datoer i {{days:plural; one:den næste dag; other:de næste {{days}} dage;}}.",
+		"more": "og {{count}} mere",
+		"open": "Åbn kalenderen"
+	}
+}

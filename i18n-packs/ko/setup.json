@@ -1,0 +1,226 @@
+{
+	"title": "초기 설정",
+	"intro": "BiblioViva에 오신 것을 환영합니다. 몇 단계만 거치면 도서관을 사용할 준비가 됩니다: 언어, 색상, 학교, 코드와 직원 비밀번호를 설정합니다.",
+	"stepOf": "{{total}} 단계 중 {{step}} 단계",
+	"next": "다음",
+	"back": "이전",
+	"finish": "설정 완료",
+	"steps": {
+		"language": "언어",
+		"theme": "색상",
+		"library": "도서관",
+		"school": "학교",
+		"codes": "코드",
+		"passwords": "비밀번호",
+		"demo": "예시 데이터",
+		"summary": "요약"
+	},
+	"language": {
+		"title": "BiblioViva를 어떤 언어로 사용하시겠습니까?",
+		"hint": "설치본마다 언어는 하나이며 모든 직원에게 적용됩니다. 관리 → 설정 → 모양 및 언어에서 바꿀 수 있습니다.",
+		"restore": {
+			"title": "이미 BiblioViva 백업이 있습니까?",
+			"hint": "BiblioViva를 다른 컴퓨터로 옮기거나 장애 후 다시 시작하려면 질문에 답할 필요가 없습니다: “모두 내보내기”로 만든 아카이브 하나면 충분합니다.",
+			"button": "백업에서 복원"
+		}
+	},
+	"theme": {
+		"title": "색상을 고르십시오",
+		"hint": "색상 세트는 열다섯 가지입니다: 색만 바뀌고 모양은 바뀌지 않습니다. 모두 밝고, 흑백에서도 잘 보입니다.",
+		"names": {
+			"ocean": "바다",
+			"forest": "숲",
+			"grape": "포도",
+			"sunset": "노을",
+			"cherry": "체리",
+			"lagoon": "석호",
+			"silver": "은색",
+			"graphite": "흑연",
+			"apricot": "살구",
+			"indigo": "남색",
+			"mint": "민트",
+			"rose": "장미",
+			"sahara": "사하라",
+			"wintry": "겨울",
+			"olive": "올리브"
+		}
+	},
+	"library": {
+		"title": "도서관",
+		"name": "도서관 이름",
+		"namePlaceholder": "로다리 초등학교 도서관",
+		"schoolType": "학교 유형",
+		"schoolTypeHint": "학년과 학급은 학교가 쓰는 방식대로 정합니다. 나중에 관리 → 설정 → 학교 및 관리 → 설정 → 학급에서 바꿀 수 있습니다.",
+		"photos": "이용자 사진",
+		"photosHint": "학생과 교사의 사진으로, 촬영하거나 업로드하여 이용증에 인쇄합니다. 끄면 어디에도 사진이 나타나지 않으며 이용증에도 사진이 없습니다.",
+		"covers": "책 표지",
+		"coversHint": "온라인에서 찾거나 촬영하거나 업로드한 표지를 도서 목록에 표시합니다. 끄면 표지가 나타나지 않습니다."
+	},
+	"school": {
+		"title": "학교",
+		"hint": "학교 유형에 따라 학년, 학급과 독서 수준이 제안됩니다. 학급은 바로 만들어지며, 예시 데이터를 쓰면 가상의 학생들로 채워집니다.",
+		"otherCountries": "다른 나라",
+		"names": {
+			"perLevel": "{{stage}}: 학급 이름, 학년마다 하나씩",
+			"mixed": "{{stage}}: 반 이름, 각각 모든 학년 포함"
+		},
+		"namesHint": "쉼표로 구분합니다. A-D는 A, B, C, D를 뜻합니다. 비워 두면 학급이 없습니다.",
+		"namesInvalid": "이름이 올바르지 않습니다: 쉼표로 구분하여 입력하십시오 (최대 40개).",
+		"classes": "만들 학급 {{count}} {{count:plural; other:개;}}:",
+		"more": "외 {{count}} 개",
+		"classLabel": "학급 표기 방식",
+		"teacherGroup": "교사 그룹",
+		"teacherGroupHint": "모든 교사가 이 그룹에 들어갑니다. 나중에 다른 그룹을 추가할 수 있습니다.",
+		"schoolYearStart": "학년도 시작일",
+		"schoolYearStartHint": "월과 일을 MM-DD 형식으로 입력하십시오 (예: 09-01).",
+		"schoolYearStartInvalid": "월과 일을 MM-DD 형식으로 입력하십시오.",
+		"schoolYearLabel": "학년도 이름",
+		"schoolYearLabels": {
+			"span": "두 해 (2026/2027)",
+			"start": "시작 연도 (2026)"
+		},
+		"readingLevels": "독서 수준별로 배치하는 소설",
+		"readingLevelsHint": "학년, 학급과 독서 수준은 나중에 관리에서 바꿀 수 있습니다."
+	},
+	"codes": {
+		"title": "코드",
+		"hint": "새 소장본과 새 이용증의 바코드 형식이며, 각각 따로 고릅니다. 두 형식은 혼동될 수 없습니다: 읽은 코드가 도서인지 이용증인지 바로 알 수 있습니다.",
+		"itemFormat": "소장본 형식",
+		"itemFormats": {
+			"standard": "연도, 검증, 번호 (권장)",
+			"classic": "연도와 번호, 끝에 검증 문자",
+			"prefix": "앞에 글자 L"
+		},
+		"cardFormat": "이용증 형식",
+		"cardFormats": {
+			"standard": "검증 문자와 6자리 번호 (권장)",
+			"classic": "10자리 번호, 끝에 검증 문자",
+			"prefix": "앞에 글자 T"
+		},
+		"check": "검증 문자",
+		"checks": {
+			"mod23": "문자 하나 (mod 23)",
+			"luhn": "숫자 하나 (Luhn)",
+			"damm": "숫자 하나 (Damm)"
+		},
+		"layout": "바코드 리더 키보드",
+		"layoutHint": "바코드 리더를 연결한 컴퓨터의 키보드 언어입니다: 뒤바뀐 문자를 바로잡습니다. 목록에 없으면 가장 비슷한 것을 고르십시오: 나중에 설정 → 바코드에서 바꿀 수 있습니다.",
+		"layouts": {
+			"it": "이탈리아어",
+			"es": "스페인어",
+			"de": "독일어",
+			"fr": "프랑스어",
+			"uk": "영어 (영국)",
+			"us": "영어 (미국)"
+		},
+		"copy": "소장본",
+		"card": "이용증",
+		"verdict": "소장본과 이용증은 혼동될 수 없습니다.",
+		"refused": "이 선택으로는 소장본과 이용증이 혼동될 수 있습니다: 다른 형식을 고르십시오.",
+		"later": "형식, 이전 시스템의 코드와 번호 매기기는 나중에 설정 → 바코드에서 바꿀 수 있습니다."
+	},
+	"passwords": {
+		"title": "직원 비밀번호",
+		"hint": "역할마다 하나씩, 공용 계정 다섯 개입니다. 제안된 비밀번호는 무작위로 만들어졌으며 바꿀 수 있습니다. 마지막 단계에서 적어 두십시오: 한 번만 표시됩니다.",
+		"accounts": {
+			"admin": "관리 (admin)",
+			"prestiti": "대출 관리 (prestiti)",
+			"catalogo": "도서 목록 관리 (catalogo)",
+			"tessere": "이용증과 사진 (tessere)",
+			"report": "보고서 (report)"
+		},
+		"regenerate": "다시 만들기",
+		"tooShort": "최소 8자입니다.",
+		"demo": "예시 데이터와 함께 모든 계정은 기억하기 쉬운 같은 비밀번호를 씁니다: “{{password}}”. BiblioViva를 실제로 사용하기 전에 관리 → 직원 계정에서 바꾸십시오."
+	},
+	"demo": {
+		"title": "예시 데이터",
+		"hint": "BiblioViva를 시험해 볼 수 있도록 가상의 학생, 도서와 대출이 들어 있습니다. 실제 데이터가 들어올 때 관리에서 한 번의 클릭으로 지울 수 있습니다.",
+		"load": "예시 데이터 불러오기",
+		"hasData": "데이터베이스에 이미 데이터가 있습니다: 예시 데이터는 불러오지 않습니다."
+	},
+	"summary": {
+		"title": "요약",
+		"hint": "확인하고 승인하십시오. 비밀번호는 이 페이지에만 표시되니 다음으로 넘어가기 전에 복사하십시오.",
+		"language": "언어",
+		"theme": "색상",
+		"library": "도서관",
+		"photos": "이용자 사진",
+		"covers": "책 표지",
+		"school": "학교",
+		"classes": "학급",
+		"classesValue": "학급 {{count}} {{count:plural; other:개;}} ({{first}}…), 교사 그룹 {{teachers}}",
+		"readingLevels": "독서 수준",
+		"none": "없음",
+		"codes": "코드",
+		"demo": "예시 데이터",
+		"yes": "예",
+		"no": "아니요",
+		"later": "나중에 관리 → 직원 계정에서 비밀번호를 바꿀 수 있습니다.",
+		"working": "저장하는 중…",
+		"error": "설정을 저장하지 못했습니다: {{message}}"
+	},
+	"done": {
+		"title": "설정 완료",
+		"hint": "이 비밀번호들을 안전한 곳에 보관하십시오: 다시 표시되지 않습니다.",
+		"demoLoaded": "예시 데이터를 불러왔습니다: 이용자 {{patrons}} {{patrons:plural; other:명;}}, 도서 {{biblios}} {{biblios:plural; other:종;}}, 소장본 {{items}} {{items:plural; other:권;}}, 대출 {{loans}} {{loans:plural; other:건;}}.",
+		"login": "로그인 페이지로 이동"
+	},
+	"generic": {
+		"stage": "학교",
+		"level": "단계 {{level}}",
+		"groupWord": "반",
+		"teacherGroup": "교사"
+	},
+	"restore": {
+		"title": "백업에서 복원",
+		"hint": "“모두 내보내기”(관리 → 백업)로 만든 아카이브를 고르십시오. 최대 크기: {{maxMb}} MB. 복원하기 전에 아카이브를 검사합니다.",
+		"choose": "아카이브 고르기",
+		"checking": "아카이브를 검사하는 중…",
+		"from": "도서관 “{{library}}”의 아카이브, {{date}} 생성, 버전 {{version}}.",
+		"fromAnonymous": "{{date}} 생성된 아카이브, 버전 {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "이용자",
+			"catalog": "도서 목록과 소장본",
+			"loans": "대출과 기록",
+			"printLists": "인쇄 목록",
+			"photos": "이용자 사진",
+			"covers": "표지",
+			"notes": "메모",
+			"dates": "달력 날짜",
+			"audit": "활동 기록",
+			"ui": "인터페이스",
+			"security": "보안과 접근",
+			"library": "도서관과 학교"
+		},
+		"images": "사진: {{photos}} · 표지: {{covers}}",
+		"accounts": "로그인할 수 있는 계정: {{accounts}}. 비밀번호는 아카이브의 것입니다.",
+		"warning": "복원은 설정, 데이터와 이미지를 아카이브에 있던 그대로 한꺼번에 되돌립니다. 그 후에는 설정 마법사가 필요하지 않습니다.",
+		"apply": "복원",
+		"restoring": "복원하는 중…",
+		"cancel": "취소",
+		"back": "설정 마법사로 돌아가기",
+		"done": {
+			"title": "복원 완료",
+			"hint": "도서관은 아카이브에 있던 그대로입니다. 로그인하려면 아카이브에 있던 비밀번호로 다음 계정 중 하나를 사용하십시오:",
+			"login": "로그인 페이지로 이동"
+		},
+		"errors": {
+			"too_large": "아카이브가 너무 큽니다 (최대 {{maxMb}} MB).",
+			"not_zip": "파일이 올바른 ZIP 아카이브가 아닙니다.",
+			"not_archive": "BiblioViva 아카이브가 아닙니다: “모두 내보내기”로 만든 아카이브를 고르십시오.",
+			"too_many_files": "아카이브에 파일이 너무 많습니다.",
+			"unsafe_path": "아카이브에 허용되지 않은 경로가 있습니다: {{name}}",
+			"link": "아카이브에 허용되지 않은 링크가 있습니다: {{name}}",
+			"unknown_file": "아카이브에 BiblioViva의 파일이 아닌 파일이 있습니다: {{name}}",
+			"not_setup": "설정 마법사는 이미 완료되었습니다: 복원은 관리 → 백업에서 하십시오.",
+			"newer_version": "이 아카이브는 더 최신 버전의 BiblioViva({{name}})에서 만들어졌습니다: 먼저 그 버전을 설치하십시오.",
+			"missing_parts": "아카이브가 불완전합니다. 빠진 항목: {{name}}. “모두 내보내기”로 만든 아카이브를 고르십시오.",
+			"unfinished_setup": "이 아카이브는 설정 마법사를 끝내지 않은 설치본에서 왔습니다.",
+			"not_ready": "아카이브에 문제가 있어 복원할 수 없습니다: {{name}}",
+			"gone": "검사한 아카이브가 더 이상 없습니다: 다시 고르십시오.",
+			"failed": "복원에 실패했습니다."
+		}
+	}
+}

@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "Beheer",
+		"sections": {
+			"config": {
+				"title": "Configuratie",
+				"description": "De indeling en de instellingen van de bibliotheek."
+			},
+			"audit": {
+				"title": "Logboek",
+				"description": "Wie wat heeft gedaan: aanmeldingen, wijzigingen, importaties."
+			},
+			"users": {
+				"title": "Medewerkersaccounts",
+				"description": "Medewerkersaccounts, rollen en rechten."
+			},
+			"backups": {
+				"title": "Back-ups",
+				"description": "Veiligheidskopieën van de database en de bestanden."
+			},
+			"rollover": {
+				"title": "Klassenovergang",
+				"description": "Aan het eind van het jaar: overgangen naar een hogere klas, zittenblijvers, uitschrijvingen uit de laatste klas."
+			},
+			"exports": {
+				"title": "Exporteren",
+				"description": "Leners, catalogus, uitleningen en alle gegevens als CSV- of JSON-bestanden."
+			},
+			"imports": {
+				"title": "Importeren",
+				"description": "Catalogus, leners, lopende uitleningen en foto's: uit CSV-bestanden of uit de export van Koha."
+			}
+		}
+	},
+	"audit": {
+		"title": "Logboek",
+		"filters": {
+			"from": "Vanaf",
+			"to": "Tot",
+			"user": "Account",
+			"action": "Handeling",
+			"all": "Alle"
+		},
+		"columns": {
+			"when": "Wanneer",
+			"user": "Account",
+			"action": "Handeling",
+			"entity": "Object",
+			"entityId": "ID",
+			"details": "Details"
+		},
+		"count": "{{shown}} van {{total}} {{total:plural; one:vermelding; other:vermeldingen;}}",
+		"empty": "Er zijn met deze filters geen handelingen geregistreerd.",
+		"system": "systeem"
+	},
+	"users": {
+		"title": "Medewerkersaccounts",
+		"fields": {
+			"roles": "Rollen",
+			"permissions": "Rechten",
+			"lastLogin": "Laatste aanmelding",
+			"never": "nooit"
+		},
+		"status": {
+			"active": "Actief",
+			"inactive": "Gedeactiveerd",
+			"plainPassword": "Wachtwoord in leesbare tekst in het bestand",
+			"notInConfig": "Verwijderd uit de configuratie"
+		},
+		"hash": {
+			"title": "Wachtwoord-hash genereren",
+			"description": "Voer het wachtwoord in dat u wilt toekennen: u krijgt dan de argon2id-hash om in passwordHash te plakken. Het wachtwoord wordt niet opgeslagen.",
+			"password": "Wachtwoord (minstens {{min}} tekens)",
+			"generate": "Hash genereren",
+			"result": "Hash om te plakken",
+			"copy": "Kopiëren",
+			"copied": "Hash gekopieerd",
+			"tooShort": "Het wachtwoord moet minstens {{min}} tekens bevatten.",
+			"disclosure": "Voor wie de bestanden met de hand bewerkt: een wachtwoord hashen"
+		},
+		"reload": {
+			"button": "Configuratie opnieuw laden",
+			"success": "Configuratie opnieuw geladen",
+			"successWithWarnings": "Configuratie opnieuw geladen met {{count}} {{count:plural; one:waarschuwing; other:waarschuwingen;}}",
+			"failed": "Ongeldige configuratie: de vorige blijft actief",
+			"exampleSource": "Waarschuwing: config.json bestaat niet; de voorbeeldconfiguratie is in gebruik."
+		},
+		"new": "Nieuw account",
+		"newPassword": "Nieuw wachtwoord",
+		"permissionNames": {
+			"all": "Alles",
+			"loans": "Uitleen",
+			"patrons": "Leners",
+			"patrons_import": "Leners importeren",
+			"catalog": "Catalogus",
+			"catalog_import": "Catalogus importeren",
+			"reports": "Rapporten",
+			"anonymize": "Anonimiseren",
+			"admin": "Beheer"
+		},
+		"roles": {
+			"title": "Rollen en rechten",
+			"hint": "Een rol is een reeks rechten; elk account heeft een of meer rollen. “Alles” geeft elk recht, ook de rechten die latere versies zullen toevoegen. Een rol hernoemen werkt de accounts bij die haar gebruiken.",
+			"name": "Rol",
+			"unused": "geen account",
+			"badName": "Letters, cijfers, koppeltekens en underscores (maximaal 32).",
+			"add": "Een rol toevoegen",
+			"saved": "Rollen opgeslagen"
+		},
+		"auth": {
+			"title": "Aanmelding",
+			"config": "Medewerkers melden zich aan met de accounts van deze pagina, meestal één gedeeld account per rol (bijvoorbeeld “uitleen” voor de uitleenbalie).",
+			"database": "Medewerkers melden zich aan met persoonlijke accounts.",
+			"later": "Persoonlijke accounts, één per persoon, komen in een latere versie."
+		},
+		"dialog": {
+			"title": {
+				"new": "Nieuw account",
+				"edit": "{{name}} bewerken",
+				"password": "Nieuw wachtwoord voor {{name}}"
+			},
+			"username": "Gebruikersnaam",
+			"usernameHint": "Kleine letters, cijfers, punt, koppelteken en underscore (2 tot 32).",
+			"badUsername": "Gebruik alleen kleine letters, cijfers, punt, koppelteken en underscore (2 tot 32).",
+			"displayName": "Getoonde naam",
+			"active": "Actief account (kan zich aanmelden)",
+			"password": "Wachtwoord (minstens {{min}} tekens)",
+			"repeat": "Herhaal het wachtwoord",
+			"mismatch": "De twee wachtwoorden verschillen.",
+			"passwordHint": "Het wachtwoord wordt niet opgeslagen: in de configuratie wordt alleen de hash geschreven. Wie met dit account is aangemeld, moet opnieuw aanmelden.",
+			"saved": {
+				"new": "Account aangemaakt",
+				"edit": "Account opgeslagen",
+				"password": "Wachtwoord gewijzigd"
+			},
+			"removed": "Account verwijderd",
+			"removeTitle": "{{name}} verwijderen?",
+			"removeHint": "Het account verdwijnt uit de configuratie; de handelingen die het heeft verricht, blijven in het logboek onder zijn naam staan. Dit is terug te draaien via de geschiedenis van de configuratie."
+		},
+		"errors": {
+			"badUsername": "Ongeldige gebruikersnaam: {{details}}.",
+			"usernameTaken": "De gebruikersnaam {{details}} is al in gebruik.",
+			"notFound": "Account niet gevonden: {{details}}.",
+			"noRoles": "Kies minstens één rol.",
+			"unknownRole": "Onbekende rol: {{details}}.",
+			"passwordTooShort": "Het wachtwoord is te kort.",
+			"passwordRequired": "Een nieuw account heeft een wachtwoord nodig.",
+			"lastAdmin": "Er moet minstens één actief account blijven met het recht Beheer.",
+			"stillActive": "Deactiveer het account voordat u het verwijdert.",
+			"badRole": "Ongeldige rolnaam: {{details}}.",
+			"roleTaken": "Er zijn twee rollen met de naam {{details}}.",
+			"roleInUse": "De rol wordt gebruikt door enkele accounts: {{details}}.",
+			"invalid": "De configuratie zou niet geldig zijn: {{details}}."
+		}
+	},
+	"backups": {
+		"title": "Back-ups",
+		"runNow": "Nu een back-up maken",
+		"created": "Back-up gemaakt: {{name}}",
+		"createdDeleted": "Back-up gemaakt: {{name}} ({{deleted}} {{deleted:plural; one:oude back-up verwijderd; other:oude back-ups verwijderd;}})",
+		"empty": "Nog geen back-ups. De eerste wordt gemaakt op het geplande tijdstip, of met «Nu een back-up maken».",
+		"download": "Downloaden",
+		"columns": {
+			"when": "Gemaakt",
+			"size": "Grootte"
+		},
+		"catchUp": {
+			"badge": "Bij het opstarten gemaakt",
+			"hint": "De geplande back-up was overgeslagen (computer uit): BiblioViva heeft hem bij het opstarten gemaakt."
+		},
+		"offsite": {
+			"title": "Laatste externe kopie",
+			"disabled": "Externe kopie niet ingesteld. Activeer die met de dienst «offsite» (rclone) die in de installatiegids staat beschreven.",
+			"never": "De dienst is ingeschakeld, maar heeft nog geen resultaat opgeleverd.",
+			"ok": "Laatste kopie geslaagd: {{when}}",
+			"error": "Laatste kopie mislukt: {{when}}",
+			"stale": "De externe kopie is ouder dan twee dagen: controleer de dienst offsite.",
+			"remote": "Bestemming: {{remote}}"
+		},
+		"restore": {
+			"title": "Herstel",
+			"button": "Terugzetten…",
+			"hint": "Kies «Terugzetten…» bij een back-up uit de lijst, of upload een archief van BiblioViva (een back-up, «Alles exporteren» of «Configuratie exporteren», tot {{maxMb}} MB; een groter archief wordt gekopieerd naar de back-upmap van de server of teruggezet met bun run backup:restore). Eerst wordt alles gecontroleerd, daarna worden alleen de gekozen delen teruggezet: de andere blijven zoals ze zijn.",
+			"upload": "Een archief uploaden",
+			"from": "Van {{name}} van {{date}}",
+			"count": "{{part}}: nu {{live}}, in de back-up {{archive}}",
+			"images": "Af te beelden afbeeldingen: {{photos}} {{photos:plural; one:foto; other:foto's;}}, {{covers}} {{covers:plural; one:omslag; other:omslagen;}}.",
+			"gapsTitle": "Sommige gegevens zouden achterblijven zonder wat ze nodig hebben:",
+			"gap": "{{rows:plural; one:{{rows}} rij van “{{part}}” verwijst; other:{{rows}} rijen van “{{part}}” verwijzen;}} naar “{{needs}}” dat er dan niet zou zijn: voeg “{{add}}” toe aan de keuze.",
+			"schema": "De back-up komt van een andere versie van BiblioViva (tabellen {{tables}}): hij kan hier niet worden teruggezet.",
+			"apply": "Terugzetten",
+			"confirmTitle": "De gekozen delen terugzetten?",
+			"confirmHint": "De gekozen gegevens en configuratie worden vervangen door die van de back-up. De configuratie kan via de geschiedenis worden teruggehaald; voor de gegevens is het verstandig eerst een back-up te maken, als er geen recente is.",
+			"done": "Herstel voltooid",
+			"notArchive": "Het bestand is geen archief van BiblioViva."
+		},
+		"contents": {
+			"title": "Wat de back-up bevat",
+			"database": "Database: elke keer een volledige kopie (hieronder opgesomd).",
+			"images": "Foto's en omslagen: elke nacht gekopieerd naar de map «uploads» van de back-up ({{photos}} {{photos:plural; one:foto; other:foto's;}}, {{covers}} {{covers:plural; one:omslag; other:omslagen;}} op dit moment).",
+			"imagesPending": "Foto's en omslagen: de eerste kopie wordt gemaakt bij de volgende uitvoering ({{photos}} {{photos:plural; one:foto; other:foto's;}}, {{covers}} {{covers:plural; one:omslag; other:omslagen;}} te kopiëren).",
+			"config": "De configuratie (sjablonen, afbeeldingen, instellingen) zit niet in de nachtelijke back-up: gebruik «Alles exporteren» om die te krijgen."
+		},
+		"export": {
+			"button": "Alles exporteren",
+			"hint": "Eén ZIP-bestand met de database, foto's, omslagen en de volledige configuratie (inclusief sjablonen en afbeeldingen), klaar voor het terugzetten met «bun run backup:restore»."
+		},
+		"createdMirror": "Back-up gemaakt: {{name}}; {{copied}} {{copied:plural; one:afbeelding gekopieerd; other:afbeeldingen gekopieerd;}}",
+		"parts": {
+			"title": "Back-up of export van enkele delen",
+			"hint": "Kies wat erin moet: de gegevens van de bibliotheek, de instellingen van elk onderdeel, de sjablonen, de afbeeldingen… «Back-up maken» bewaart het in de lijst hieronder, «Downloaden» downloadt het naar de computer.",
+			"create": "Back-up maken",
+			"download": "Downloaden"
+		}
+	},
+	"demo": {
+		"clear": "Voorbeeldgegevens wissen",
+		"confirmTitle": "De voorbeeldgegevens wissen?",
+		"confirmDescription": "De leners, boeken, uitleningen en foto's van de demo worden verwijderd. De klassen en de groep leerkrachten blijven bestaan. Alle medewerkers worden afgemeld.",
+		"cleared": "Voorbeeldgegevens verwijderd. Meld u opnieuw aan.",
+		"clearedPassword": "De accounts hebben nog het demowachtwoord «{{password}}»: wijzig het nu via Beheer → Medewerkersaccounts."
+	},
+	"appearance": {
+		"title": "Uiterlijk en taal",
+		"current": "Huidige set: {{name}}",
+		"areas": {
+			"title": "Stijl van de gebieden",
+			"hint": "De bovenste balk krijgt de kleur van het gebied waarin u werkt (Uitleen, Catalogus, Leners…), in de tinten van de gekozen kleurenset. Het pictogram en de naam van het gebied blijven altijd zichtbaar.",
+			"styles": {
+				"tinted": "Getinte balk (aanbevolen)",
+				"filled": "Volle balk",
+				"accents": "Alleen accenten",
+				"none": "Geen kleur"
+			},
+			"saved": "Stijl van de gebieden opgeslagen"
+		},
+		"colours": {
+			"title": "Kleurenset"
+		},
+		"save": "Kleuren opslaan",
+		"saved": "Kleuren opgeslagen",
+		"unchanged": "Niets om op te slaan.",
+		"language": {
+			"title": "Taal van de applicatie",
+			"hint": "Eén taal per installatie: die geldt voor alle medewerkers.",
+			"save": "Taal wijzigen",
+			"saved": "Taal gewijzigd: de pagina wordt opnieuw geladen."
+		},
+		"logo": {
+			"title": "Logo van de bibliotheek",
+			"hint": "Wordt linksboven op elke pagina getoond, naast de naam van de bibliotheek. PNG, JPEG of WebP; het best met een transparante achtergrond.",
+			"upload": "Logo uploaden",
+			"replace": "Logo wijzigen",
+			"remove": "Logo verwijderen",
+			"saved": "Logo opgeslagen.",
+			"removed": "Logo verwijderd.",
+			"none": "Geen logo: er wordt een algemeen pictogram getoond.",
+			"preview": "Huidig logo",
+			"errors": {
+				"empty": "Het bestand is leeg.",
+				"too_large": "Het bestand is te groot (maximaal {{maxMb}} MB).",
+				"not_an_image": "Het bestand is geen afbeelding.",
+				"unsupported_format": "Indeling niet toegestaan: gebruik PNG, JPEG of WebP."
+			}
+		},
+		"name": {
+			"title": "Naam van de bibliotheek",
+			"hint": "Wordt linksboven getoond, op het dashboard, op afdrukken en in de app die op de telefoon is geïnstalleerd.",
+			"label": "Naam",
+			"save": "Naam opslaan",
+			"saved": "Naam van de bibliotheek opgeslagen",
+			"required": "Vul de naam van de bibliotheek in."
+		},
+		"dashboard": {
+			"title": "Dashboard",
+			"hint": "De onderdelen van de startpagina, voor de hele bibliotheek. De snelle acties staan altijd bovenaan; binnen elk onderdeel ziet elk account alleen wat het mag doen.",
+			"save": "Dashboard opslaan",
+			"saved": "Dashboard opgeslagen",
+			"sections": {
+				"quickActions": "Snelle acties",
+				"tiles": "De bibliotheek vandaag (tegels met de cijfers)",
+				"inventory": "Inventarisatie aan de gang",
+				"installHint": "Uitnodiging om de app aan het startscherm toe te voegen (telefoons)",
+				"dueThisWeek": "Deze week in te leveren",
+				"upcomingDates": "Komende data van de agenda",
+				"todayActivity": "Uitleningen van vandaag"
+			}
+		}
+	},
+	"templates": {
+		"title": "Afdruksjablonen",
+		"reload": "Sjablonen opnieuw laden",
+		"reloaded": "Sjablonen opnieuw ingelezen van de schijf",
+		"kinds": {
+			"cards": "Lenerspassen",
+			"labels": "Etiketten",
+			"slips": "Herinneringen"
+		},
+		"list": {
+			"source": {
+				"builtin": "Met de app meegeleverd",
+				"config": "In de configuratie"
+			},
+			"default": "Standaard",
+			"status": {
+				"ok": "Geldig",
+				"error": "Fout"
+			},
+			"folder": "Map",
+			"forTypes": "Voor: {{types}}",
+			"emptyCards": "Geen sjabloon voor de lenerspassen: controleer de map cards/templates van de configuratie.",
+			"emptyLabels": "Nog geen etikettensjabloon: die komen mee met het afdrukken van de catalogusetiketten.",
+			"emptySlips": "Nog geen sjabloon voor de herinnering: die komt mee met de uitleen."
+		},
+		"preview": {
+			"title": "Voorbeeld",
+			"front": "Voorkant",
+			"back": "Achterkant",
+			"patron": "Te tonen lener",
+			"sample": "Voorbeeldlener",
+			"real": "Echte lener",
+			"search": "Zoek een echte lener",
+			"searchPlaceholder": "Achternaam of voornaam",
+			"noResults": "Geen lener gevonden.",
+			"zoom": "Zoom",
+			"sheet": "Hele vel",
+			"sheetHint": "Een A4-pagina met de voorbeeldlener, zoals hij wordt afgedrukt.",
+			"test": "Proefpagina afdrukken",
+			"broken": "Het sjabloon kan niet worden gebruikt tot het is gecorrigeerd:",
+			"size": "{{width}} × {{height}} mm bij zoom {{zoom}}"
+		},
+		"test": {
+			"title": "Proefpagina lenerspassen",
+			"ruler": "Liniaal van 10 cm: na het afdrukken moet hij 100 mm meten (afdrukken op 100 %, zonder «aanpassen aan pagina»)."
+		},
+		"calibration": {
+			"title": "Kalibratiepagina voor etiketten",
+			"stock": "Etikettenvel",
+			"print": "Kalibratiepagina afdrukken",
+			"hint": "Druk af op gewoon papier en leg een vel etiketten erop om de marges te controleren."
+		},
+		"howTo": {
+			"title": "Een sjabloon maken",
+			"steps": {
+				"step1": "Kies in Configuratie → Afdruksjablonen «Dupliceren» bij een sjabloon (bijvoorbeeld {{path}}) en geef het een nieuwe naam.",
+				"step2": "Ontwerp het met «Bewerken» of wijzig de code; afbeeldingen worden op dezelfde pagina geüpload.",
+				"step3": "Keer hierheen terug en controleer het voorbeeld: een onbekend veld of een ontbrekend bestand wordt gemeld.",
+				"step4": "Om het echt te gebruiken, kiest u het in de instellingen Lenerspassen of Etiketten."
+			}
+		},
+		"labels": {
+			"stocks": "Geschikte vellen: {{stocks}}",
+			"preview": "Voorbeeld van {{name}}",
+			"geometry": "Eenheid van {{width}} × {{height}} mm · variant {{variant}}",
+			"sheet": "Voorbeeldvel"
+		}
+	},
+	"loansImport": {
+		"title": "Lopende uitleningen importeren",
+		"upload": {
+			"hint": "Eenmalig te gebruiken, bij de overstap van Koha: één regel per lopende uitlening met de lenerspas en de barcode van het exemplaar en, indien aanwezig, de datum van de uitlening en de inleverdatum. Importeer eerst leners en catalogus; het model met de nodige kolommen wordt hieronder gedownload.",
+			"submit": "Uploaden"
+		},
+		"mapping": {
+			"uncertain": "Controleer de kolommen voordat u verdergaat.",
+			"validate": "Controleer het bestand",
+			"without": {
+				"issuedOn": "Zonder de kolom issued_on worden de uitleningen als vandaag gedateerd.",
+				"dueOn": "Zonder de kolom due_on wordt de inleverdatum berekend zoals aan de uitleenbalie, met de uitleenregels en de kalender."
+			}
+		},
+		"fields": {
+			"cardNumber": "Lenerspas",
+			"barcode": "Barcode",
+			"issuedOn": "Datum van uitlening",
+			"dueOn": "Inleverdatum"
+		},
+		"preview": {
+			"ready": "Geen fouten: de uitleningen kunnen worden geïmporteerd.",
+			"blocked": "Verbeter de fouten en controleer opnieuw: een bestand met fouten wordt niet geïmporteerd.",
+			"overdue": "{{count}} {{count:plural; one:uitlening is; other:uitleningen zijn;}} al te laat: {{count:plural; one:die wordt geïmporteerd en verschijnt; other:die worden geïmporteerd en verschijnen;}} bij de te late uitleningen.",
+			"columns": {
+				"patron": "Lener",
+				"barcode": "Exemplaar",
+				"issued": "Uitlening",
+				"due": "Inleverdatum"
+			},
+			"commit": "Uitleningen importeren",
+			"back": "Terug naar de kolommen"
+		},
+		"reasons": {
+			"cardMissing": "De lenerspas ontbreekt",
+			"cardUnknown": "Geen lener met lenerspas {{value}}",
+			"barcodeMissing": "De barcode ontbreekt",
+			"barcodeUnknown": "Geen exemplaar met barcode {{value}}",
+			"alreadyOnLoan": "Exemplaar {{value}} is al uitgeleend",
+			"itemWithdrawn": "Exemplaar {{value}} is afgevoerd",
+			"duplicateInFile": "Hetzelfde exemplaar staat al op regel {{line}}",
+			"issueDateInvalid": "Ongeldige datum van uitlening: “{{value}}”",
+			"issueDateFuture": "Datum van uitlening in de toekomst: {{value}}",
+			"dueDateInvalid": "Ongeldige inleverdatum: “{{value}}”",
+			"dueBeforeIssue": "De inleverdatum ligt vóór de datum van uitlening",
+			"overdue": "Al te laat sinds {{date}}",
+			"itemUnclassified": "Exemplaar {{value}} hoort bij een boek dat nog geclassificeerd moet worden: de uitlening wordt geïmporteerd, maar aan de uitleenbalie wordt het niet uitgeleend zolang het niet is geclassificeerd"
+		},
+		"done": {
+			"title": "Uitleningen geïmporteerd",
+			"summary": "{{created}} {{created:plural; one:uitlening; other:uitleningen;}} geïmporteerd, waarvan {{overdue}} ervan al te laat.",
+			"batch": "Importatie nr. {{id}}: het oorspronkelijke bestand wordt bewaard.",
+			"again": "Een ander bestand importeren"
+		},
+		"columns": {
+			"cardNumber": "Het nummer van de lenerspas van de lener, al geïmporteerd.",
+			"barcode": "De barcode van het exemplaar, al geïmporteerd.",
+			"issuedOn": "De datum van uitlening; als die ontbreekt, vandaag.",
+			"dueOn": "De inleverdatum; als die ontbreekt, wordt die berekend met de uitleenregels."
+		}
+	},
+	"photosImport": {
+		"title": "Foto's van leners importeren",
+		"hint": "Één bestand per lener, genoemd naar het nummer van de lenerspas (bijvoorbeeld 0000001240.jpg): dat is wat de export uit de handleiding voor de beheerder oplevert. Elke foto wordt verkleind en ontdaan van verborgen gegevens; bestanden die bij geen enkele lenerspas horen, worden opgesomd.",
+		"replace": "De al aanwezige foto's vervangen",
+		"zip": {
+			"title": "Uit een ZIP-archief",
+			"file": "ZIP-archief met de foto's",
+			"submit": "Foto's importeren"
+		},
+		"folder": {
+			"title": "Uit de map van de server",
+			"hint": "Kopieer de bestanden naar {{path}}: {{count:plural; one:er is nu {{count}}; other:er zijn nu {{count}};}}. Geschikt voor veel foto's, die in een archief te zwaar zouden zijn om te uploaden.",
+			"submit": "Importeren uit de map"
+		},
+		"summary": {
+			"title": "Resultaat",
+			"text": "{{imported}} {{imported:plural; one:foto geïmporteerd; other:foto's geïmporteerd;}}, {{replaced}} vervangen, {{kept:plural; one:{{kept}} ongewijzigd gelaten; other:{{kept}} ongewijzigd gelaten;}} (foto al aanwezig), {{unmatched}} {{unmatched:plural; one:bestand; other:bestanden;}} zonder lener, {{unreadable}} {{unreadable:plural; one:onleesbaar bestand; other:onleesbare bestanden;}}.",
+			"unreadable": "Geen leesbare afbeeldingen: {{files}}",
+			"unmatched": "Download de lijst van bestanden zonder lener"
+		},
+		"errors": {
+			"notZip": "Het bestand is geen geldig ZIP-archief.",
+			"empty": "Het archief bevat geen bestanden."
+		},
+		"done": "Foto's geïmporteerd"
+	},
+	"rollover": {
+		"title": "Klassenovergang",
+		"subtitle": "Aan het eind van het jaar gaat elke leerling één jaar omhoog, en wie het laatste jaar afrondt, verlaat de school.",
+		"steps": {
+			"backup": "Back-up",
+			"classes": "Klassen",
+			"leavers": "Uitschrijvingen",
+			"confirm": "Bevestigen",
+			"done": "Voltooid"
+		},
+		"backup": {
+			"text": "Maak eerst een veiligheidskopie van de database: gaat er iets mis, dan kunt u teruggaan via Beheer → Back-ups.",
+			"create": "Back-up maken",
+			"created": "Back-up gemaakt: {{name}}"
+		},
+		"classes": {
+			"text": "Elke leerling gaat met zijn of haar klas één jaar omhoog. Geef aan wie het jaar overdoet en wie van klas wisselt.",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; one:leerling; other:leerlingen;}}",
+			"exceptions": "{{count}} {{count:plural; one:uitzondering; other:uitzonderingen;}}",
+			"loans": "{{count}} met boeken in uitleen",
+			"repeat": "Doet het jaar over",
+			"target": "Klas",
+			"noGroup": "Geen klas",
+			"choose": "Kies de klas…",
+			"fates": {
+				"advances": "Gaat omhoog",
+				"stays": "Blijft",
+				"archived": "Wordt afgesloten"
+			},
+			"unplaced": "{{count}} {{count:plural; one:leerling wacht; other:leerlingen wachten;}} op de keuze van de klas.",
+			"none": "Geen leerlingen die naar het volgende jaar gaan.",
+			"nextYear": "Het jaar erna",
+			"leaves": "Verlaat de school"
+		},
+		"leavers": {
+			"text": "De leerlingen van het laatste jaar verlaten de school: hun gegevens worden meteen en voorgoed gewist (alleen de cijfers voor de statistiek blijven). Haal het vinkje weg bij wie blijft, bijvoorbeeld een leerling die het laatste jaar overdoet.",
+			"leaves": "Verlaat",
+			"openLoans": "{{count}} {{count:plural; one:boek; other:boeken;}} in uitleen",
+			"blocked": "{{count}} {{count:plural; one:uitschrijvende leerling heeft nog; other:uitschrijvende leerlingen hebben nog;}} boeken: registreer de inname of markeer ze als vermist, of haal het vinkje weg.",
+			"toCheckin": "Ga naar Innames",
+			"none": "Geen leerlingen in het laatste jaar."
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; one:leerling gaat; other:leerlingen gaan;}} een jaar omhoog",
+			"repeat": "{{count}} {{count:plural; one:doet; other:doen;}} het jaar over",
+			"groupChanges": "{{count}} {{count:plural; one:wisselt; other:wisselen;}} van klas",
+			"closing": "{{count}} {{count:plural; one:klas wordt afgesloten en gearchiveerd; other:klassen worden afgesloten en gearchiveerd;}}",
+			"remove": "{{count}} {{count:plural; one:leerling verlaat; other:leerlingen verlaten;}} de school, en hun gegevens worden gewist",
+			"recent": "De laatste klassenovergang is uitgevoerd op {{date}}, minder dan zes maanden geleden. Ik bevestig dat ik hem opnieuw wil uitvoeren.",
+			"run": "Klassen doorschuiven"
+		},
+		"done": {
+			"title": "Klassenovergang voltooid",
+			"advanced": "{{count}} {{count:plural; one:klas is; other:klassen zijn;}} een jaar omhoog gegaan",
+			"archived": "{{count}} {{count:plural; one:klas gearchiveerd; other:klassen gearchiveerd;}}",
+			"text": "Volgende stappen: maak zo nodig de nieuwe eerste klassen aan en importeer de nieuwe leerlingen met de synchronisatie.",
+			"import": "Nieuwe leerlingen importeren"
+		},
+		"errors": {
+			"blocked": "Enkele uitschrijvende leerlingen hebben nog boeken in uitleen.",
+			"recent": "Bevestiging nodig: de laatste klassenovergang is recent.",
+			"no_backup": "De back-up is niet gevonden of is te oud: maak hem opnieuw vanaf de eerste stap.",
+			"invalid_group": "Een gekozen klas bestaat niet of biedt niet het leerjaar van de leerling aan.",
+			"unplaced": "Sommige leerlingen hebben nog geen klas: kies die bij de stap Klassen.",
+			"invalid_level": "Een van de gekozen leerjaren hoort niet bij de mogelijke: laad de pagina opnieuw."
+		},
+		"next": "Volgende",
+		"back": "Terug"
+	},
+	"classes": {
+		"title": "Klassen",
+		"subtitle": "De klassen van de school en de groepen leerkrachten.",
+		"hint": "De leerjaren en schoolsoorten worden gewijzigd in de instellingen:",
+		"structureLink": "School",
+		"new": "Nieuwe klassen",
+		"newTeachers": "Nieuwe groep leerkrachten",
+		"teachers": "Leerkrachten",
+		"mixed": "Combinatieklas",
+		"empty": "Geen klassen",
+		"emptyHint": "Geen klassen. Klassen maakt u aan met Nieuwe klassen, bijvoorbeeld de leerjaren 1 tot 5 en de namen A-D.",
+		"archivedTitle": "{{count:plural; one:Gearchiveerde klas; other:Gearchiveerde klassen;}} ({{count}})",
+		"archive": "Archiveren",
+		"archiveNotEmpty": "Er zijn nog leners in deze klas: archiveren kan niet",
+		"restore": "Herstellen",
+		"archived": "Klas {{name}} gearchiveerd",
+		"restored": "Klas {{name}} hersteld",
+		"columns": {
+			"class": "Klas",
+			"levels": "Leerjaren",
+			"patrons": "Leners"
+		},
+		"dialog": {
+			"title": {
+				"students": "Nieuwe klassen",
+				"teachers": "Nieuwe groep leerkrachten",
+				"edit": "{{name}} bewerken"
+			},
+			"levels": "Leerjaren",
+			"names": "Namen van de klassen",
+			"namesHint": "Gescheiden door komma's; A-D betekent A, B, C, D. Een naam mag spaties bevatten.",
+			"name": "Naam",
+			"mixed": "Eén combinatieklas met alle gekozen leerjaren",
+			"stage": "Schoolsoort",
+			"anyStage": "Alle",
+			"notes": "Notities",
+			"preview": "{{count}} {{count:plural; one:klas; other:klassen;}} aan te maken:",
+			"previewEmpty": "Kies minstens één leerjaar en vul de namen in.",
+			"saved": {
+				"students": "{{count}} {{count:plural; one:klas aangemaakt; other:klassen aangemaakt;}}",
+				"teachers": "Groep leerkrachten aangemaakt",
+				"edit": "Klas opgeslagen"
+			}
+		},
+		"errors": {
+			"nameRequired": "De naam is verplicht.",
+			"nameLong": "De naam is te lang (maximaal 40 tekens).",
+			"levelsRequired": "Kies minstens één leerjaar.",
+			"levelUnknown": "Een gekozen leerjaar bestaat niet meer.",
+			"levelsNotForTeachers": "Een groep leerkrachten heeft geen leerjaren.",
+			"nameTaken": "Er bestaat al een klas met deze naam voor hetzelfde leerjaar.",
+			"levelInUse": "Sommige leerlingen van de klas zitten in een leerjaar dat zou worden verwijderd.",
+			"notEmpty": "De klas heeft nog leners.",
+			"notFound": "De klas bestaat niet meer."
+		}
+	},
+	"exports": {
+		"title": "Exporteren",
+		"subtitle": "De gegevens van de bibliotheek in bestanden om te bewaren, opnieuw te importeren of mee te nemen naar een ander programma.",
+		"items": {
+			"students": {
+				"title": "Leerlingen (CSV)",
+				"description": "De actieve leerlingen in het formaat van de import: ze worden teruggeïmporteerd via Beheer → Importeren → Leerlingen."
+			},
+			"teachers": {
+				"title": "Leerkrachten (CSV)",
+				"description": "De actieve leerkrachten in het formaat van de import: ze worden teruggeïmporteerd via Beheer → Importeren → Leerkrachten."
+			},
+			"catalog": {
+				"title": "Catalogus (CSV)",
+				"description": "Eén regel per exemplaar met de gegevens van het boek, in het formaat van de catalogusimport."
+			},
+			"open-loans": {
+				"title": "Lopende uitleningen (CSV)",
+				"description": "Lenerspas, exemplaar, datum van uitlening en inleverdatum: ze worden teruggeïmporteerd via Beheer → Importeren → Lopende uitleningen."
+			},
+			"loans-history": {
+				"title": "Uitleengeschiedenis (CSV)",
+				"description": "Elke uitlening met het leerjaar en de klas van de dag van de uitlening."
+			},
+			"dump": {
+				"title": "Alle gegevens (JSON)",
+				"description": "Leners, catalogus, uitleningen en lijsten in één bestand, om over te gaan naar een andere installatie of een ander programma."
+			}
+		},
+		"download": "Downloaden",
+		"patronNote": "De gegevens van één persoon (verzoek tot inzage) downloadt u van de pagina van de lener.",
+		"patronExport": "De gegevens van de persoon exporteren"
+	},
+	"imports": {
+		"title": "Importeren",
+		"hint": "Gebruikt bij de overstap van Koha en, voor de leners, aan het begin van elk schooljaar voor de nieuwe klassen. Elk bestand wordt volledig gecontroleerd voordat er iets wordt geïmporteerd.",
+		"cards": {
+			"catalog": {
+				"title": "Catalogus",
+				"description": "Boeken en exemplaren uit een CSV-bestand of uit de export van Koha."
+			},
+			"students": {
+				"title": "Leerlingen",
+				"description": "De klassen uit het elektronische klassenregister, elk nieuw schooljaar: voornaam, achternaam en klas."
+			},
+			"teachers": {
+				"title": "Leerkrachten",
+				"description": "De leerkrachten van de school: voornaam en achternaam, met de lenerspas als die er al is."
+			},
+			"loans": {
+				"title": "Lopende uitleningen",
+				"description": "De openstaande uitleningen, eenmalig geïmporteerd bij de overstap van Koha."
+			},
+			"photos": {
+				"title": "Foto's van leners",
+				"description": "De foto's uit Koha, één per lenerspas."
+			}
+		}
+	},
+	"calibration": {
+		"title": "Dubbelzijdig afdrukken kalibreren",
+		"intro": "Om de passen op beide zijden van het vel af te drukken, moet de achterkant precies achter de voorkant vallen. Elke printer verschuift de achterkant een beetje: deze proef meet hoeveel, één keer.",
+		"current": "Zo wordt het vel omgedraaid: {{flip}}. Huidige verschuiving van de achterkanten: {{x}} mm horizontaal, {{y}} mm verticaal.",
+		"steps": {
+			"print": "Druk het kalibratievel af met de knop hieronder.",
+			"window": {
+				"long-edge": "Kies in het afdrukvenster «Dubbelzijdig», met omslaan langs de lange zijde, schaal 100 % en geen marges.",
+				"short-edge": "Kies in het afdrukvenster «Dubbelzijdig», met omslaan langs de korte zijde, schaal 100 % en geen marges."
+			},
+			"cut": "Knip aan de kant met de grote «1» zorgvuldig langs de zwarte lijn.",
+			"read": "Draai het kaartje om: lees op zijde «2» de twee getallen af op het punt waar de afgesneden rand de twee linialen kruist (met hun teken + of −).",
+			"save": "Vul hieronder de twee getallen in en sla op: de verschuiving van de achterkanten wordt gecorrigeerd.",
+			"check": "Druk het vel nog eens af om te controleren: de afgesneden rand moet nu op 0 van beide linialen liggen."
+		},
+		"print": "Kalibratievel afdrukken",
+		"drawing": {
+			"title": "Wat u moet aflezen",
+			"label": "Zijde 2 na het knippen: de afgesneden rand kruist de linialen",
+			"x": "horizontale liniaal",
+			"y": "verticale liniaal",
+			"hint": "De afgesneden rand kruist elke liniaal: het getal daar is de waarde om in te vullen. Elk streepje is een millimeter, de getallen staan om de vijf."
+		},
+		"fields": {
+			"x": "Horizontale liniaal (mm)",
+			"y": "Verticale liniaal (mm)",
+			"hint": "Het getal waar de afgesneden rand valt, met het teken; 0 als hij op nul valt."
+		},
+		"next": "Na het opslaan worden de achterkanten {{x}} mm horizontaal en {{y}} mm verticaal verschoven.",
+		"save": "Kalibratie opslaan",
+		"saved": "Kalibratie opgeslagen: achterkanten {{x}} mm horizontaal en {{y}} mm verticaal verschoven.",
+		"open": "Dubbelzijdig afdrukken kalibreren",
+		"sheet": {
+			"title": "BiblioViva · kalibratie van het dubbelzijdig afdrukken",
+			"cut": "Knip langs de zwarte lijn en draai daarna het kaartje om.",
+			"read": "Lees op de twee linialen af waar de afgesneden rand valt."
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"notFound": "Seite nicht gefunden",
+	"forbidden": "Diese Seite ist für das verwendete Konto nicht verfügbar",
+	"unauthorized": "Bitte anmelden, um fortzufahren",
+	"generic": "Ein Fehler ist aufgetreten ({{status}})",
+	"backHome": "Zurück zur Startseite"
+}

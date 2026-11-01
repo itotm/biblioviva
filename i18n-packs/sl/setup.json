@@ -1,0 +1,226 @@
+{
+	"title": "Prva nastavitev",
+	"intro": "Dobrodošli v programu BiblioViva. V nekaj korakih je knjižnica pripravljena: jezik, barve, šola, kode in gesla osebja.",
+	"stepOf": "Korak {{step}} od {{total}}",
+	"next": "Naprej",
+	"back": "Nazaj",
+	"finish": "Dokončaj nastavitev",
+	"steps": {
+		"language": "Jezik",
+		"theme": "Barve",
+		"library": "Knjižnica",
+		"school": "Šola",
+		"codes": "Kode",
+		"passwords": "Gesla",
+		"demo": "Predstavitveni podatki",
+		"summary": "Povzetek"
+	},
+	"language": {
+		"title": "Kateri jezik naj uporablja BiblioViva?",
+		"hint": "En jezik za vsako namestitev: velja za vse osebje in ga je mogoče spremeniti v Upravljanje → Nastavitve → Videz in jezik.",
+		"restore": {
+			"title": "Že imate varnostno kopijo programa BiblioViva?",
+			"hint": "Za prenos programa BiblioViva na drug računalnik ali za začetek znova po okvari ni treba odgovarjati na vprašanja: dovolj je arhiv, ustvarjen z „Izvozi vse“.",
+			"button": "Obnovi iz varnostne kopije"
+		}
+	},
+	"theme": {
+		"title": "Izberite barve",
+		"hint": "Petnajst barvnih shem: spreminjajo samo barve, nikoli obliko. Vse so svetle in berljive tudi v črno-belem.",
+		"names": {
+			"ocean": "Ocean",
+			"forest": "Gozd",
+			"grape": "Grozd",
+			"sunset": "Zahod",
+			"cherry": "Češnja",
+			"lagoon": "Laguna",
+			"silver": "Srebro",
+			"graphite": "Grafit",
+			"apricot": "Marelica",
+			"indigo": "Indigo",
+			"mint": "Meta",
+			"rose": "Roza",
+			"sahara": "Sahara",
+			"wintry": "Zima",
+			"olive": "Oliva"
+		}
+	},
+	"library": {
+		"title": "Knjižnica",
+		"name": "Ime knjižnice",
+		"namePlaceholder": "Knjižnica osnovne šole Rodari",
+		"schoolType": "Vrsta šole",
+		"schoolTypeHint": "Leta in razredi, kot jih uporablja šola. Pozneje jih je mogoče spremeniti v Upravljanje → Nastavitve → Šola in Upravljanje → Nastavitve → Razredi.",
+		"photos": "Fotografije uporabnikov",
+		"photosHint": "Fotografije učencev in učiteljev, posnete ali naložene, natisnjene na izkaznice. Izklopljeno: nikjer ni fotografij in izkaznice so brez fotografije.",
+		"covers": "Naslovnice knjig",
+		"coversHint": "Naslovnice, poiskane na spletu, fotografirane ali naložene, in prikazane v katalogu. Izklopljeno: nobene naslovnice."
+	},
+	"school": {
+		"title": "Šola",
+		"hint": "Vrsta šole predlaga leta, razrede in bralne stopnje. Razredi se ustvarijo takoj; s predstavitvenimi podatki se napolnijo z izmišljenimi učenci.",
+		"otherCountries": "Druge države",
+		"names": {
+			"perLevel": "{{stage}}: imena razredov, eno za vsako leto",
+			"mixed": "{{stage}}: imena oddelkov, vsak z vsemi leti"
+		},
+		"namesHint": "Ločeno z vejicami; A-D pomeni A, B, C, D. Prazno: ni razredov.",
+		"namesInvalid": "Neveljavna imena: vpišite jih, ločena z vejicami (največ 40).",
+		"classes": "{{count}} {{count:plural; one:razred; two:razreda; few:razredi; other:razredov;}} za ustvarjanje:",
+		"more": "in še {{count}}",
+		"classLabel": "Kako se zapiše razred",
+		"teacherGroup": "Skupina učiteljev",
+		"teacherGroupHint": "Vsak učitelj je v tej skupini; pozneje je mogoče dodati še druge skupine.",
+		"schoolYearStart": "Začetek šolskega leta",
+		"schoolYearStartHint": "Mesec in dan v obliki MM-DD (na primer 09-01).",
+		"schoolYearStartInvalid": "Mesec in dan zapišite v obliki MM-DD.",
+		"schoolYearLabel": "Ime šolskega leta",
+		"schoolYearLabels": {
+			"span": "Dve leti (2026/2027)",
+			"start": "Leto začetka (2026)"
+		},
+		"readingLevels": "Leposlovje razvrščeno po bralni stopnji",
+		"readingLevelsHint": "Leta, razredi in bralne stopnje se lahko pozneje spremenijo v Upravljanju."
+	},
+	"codes": {
+		"title": "Kode",
+		"hint": "Oblika črtnih kod novih izvodov in oblika novih izkaznic, izbrani vsaka zase. Obe obliki se ne moreta zamenjati: kdor prebere kodo, takoj ve, ali gre za knjigo ali za izkaznico.",
+		"itemFormat": "Oblika izvodov",
+		"itemFormats": {
+			"standard": "Leto, kontrolni znak in številka (priporočeno)",
+			"classic": "Leto in številka, kontrolni znak na koncu",
+			"prefix": "S črko L na začetku"
+		},
+		"cardFormat": "Oblika izkaznic",
+		"cardFormats": {
+			"standard": "Kontrolni znak in številka s 6 števkami (priporočeno)",
+			"classic": "Številka z 10 števkami, kontrolni znak na koncu",
+			"prefix": "S črko T na začetku"
+		},
+		"check": "Kontrolni znak",
+		"checks": {
+			"mod23": "Črka (mod 23)",
+			"luhn": "Števka (Luhn)",
+			"damm": "Števka (Damm)"
+		},
+		"layout": "Tipkovnica bralnikov",
+		"layoutHint": "Jezik tipkovnice računalnika, na katerega so priključeni bralniki črtnih kod: popravlja zamenjane znake. Če vaše tipkovnice ni na seznamu, izberite najbolj podobno: pozneje jo je mogoče spremeniti v Nastavitve → Črtne kode.",
+		"layouts": {
+			"it": "Italijanska",
+			"es": "Španska",
+			"de": "Nemška",
+			"fr": "Francoska",
+			"uk": "Angleška (Združeno kraljestvo)",
+			"us": "Angleška (ZDA)"
+		},
+		"copy": "Izvod knjige",
+		"card": "Izkaznica",
+		"verdict": "Izvodi in izkaznice se ne morejo zamenjati.",
+		"refused": "Pri tej izbiri bi se izvodi in izkaznice lahko zamenjali: izberite drugo obliko.",
+		"later": "Oblike, kode prejšnjih sistemov in številčenje je mogoče pozneje spremeniti v Nastavitve → Črtne kode."
+	},
+	"passwords": {
+		"title": "Gesla osebja",
+		"hint": "Pet skupnih računov, po eden za vsako vlogo. Predlagana gesla so naključna in jih je mogoče zamenjati. Zapišite jih na zadnjem koraku: prikažejo se samo enkrat.",
+		"accounts": {
+			"admin": "Upravljanje (admin)",
+			"prestiti": "Upravljanje izposoj (prestiti)",
+			"catalogo": "Katalogizacija (catalogo)",
+			"tessere": "Izkaznice in fotografije (tessere)",
+			"report": "Poročila (report)"
+		},
+		"regenerate": "Ustvari znova",
+		"tooShort": "Vsaj 8 znakov.",
+		"demo": "Z gesli predstavitvenih podatkov vsi računi uporabljajo isto preprosto geslo: „{{password}}“. Preden začnete program BiblioViva uporabljati zares, jih spremenite v Upravljanje → Računi osebja."
+	},
+	"demo": {
+		"title": "Predstavitveni podatki",
+		"hint": "Izmišljeni učenci, knjige in izposoje za preizkus programa. Z enim klikom jih v Upravljanju izbrišete, ko vnesete prave podatke.",
+		"load": "Naloži predstavitvene podatke",
+		"hasData": "Baza že vsebuje podatke: predstavitveni podatki se ne bodo naložili."
+	},
+	"summary": {
+		"title": "Povzetek",
+		"hint": "Preverite in potrdite. Gesla so prikazana samo na tej strani: prepišite jih, preden nadaljujete.",
+		"language": "Jezik",
+		"theme": "Barve",
+		"library": "Knjižnica",
+		"photos": "Fotografije uporabnikov",
+		"covers": "Naslovnice knjig",
+		"school": "Šola",
+		"classes": "Razredi",
+		"classesValue": "{{count}} {{count:plural; one:razred; two:razreda; few:razredi; other:razredov;}} ({{first}}…) in skupina {{teachers}}",
+		"readingLevels": "Bralne stopnje",
+		"none": "Nobena",
+		"codes": "Kode",
+		"demo": "Predstavitveni podatki",
+		"yes": "Da",
+		"no": "Ne",
+		"later": "Gesla se pozneje spremenijo v Upravljanje → Računi osebja.",
+		"working": "Shranjevanje…",
+		"error": "Nastavitve niso shranjene: {{message}}"
+	},
+	"done": {
+		"title": "Nastavitev je dokončana",
+		"hint": "Ta gesla shranite na varno: ne bodo več prikazana.",
+		"demoLoaded": "Naloženi predstavitveni podatki: {{patrons}} {{patrons:plural; one:uporabnik; two:uporabnika; few:uporabniki; other:uporabnikov;}}, {{biblios}} {{biblios:plural; one:naslov; two:naslova; few:naslovi; other:naslovov;}}, {{items}} {{items:plural; one:izvod; two:izvoda; few:izvodi; other:izvodov;}}, {{loans}} {{loans:plural; one:izposoja; two:izposoji; few:izposoje; other:izposoj;}}.",
+		"login": "Pojdi na prijavo"
+	},
+	"generic": {
+		"stage": "Šola",
+		"level": "Raven {{level}}",
+		"groupWord": "Oddelek",
+		"teacherGroup": "Učitelji"
+	},
+	"restore": {
+		"title": "Obnovitev iz varnostne kopije",
+		"hint": "Izberite arhiv, ustvarjen z „Izvozi vse“ (Upravljanje → Varnostna kopija). Največja velikost: {{maxMb}} MB. Arhiv se preveri, preden se kaj obnovi.",
+		"choose": "Izberite arhiv",
+		"checking": "Preverjanje arhiva…",
+		"from": "Arhiv knjižnice „{{library}}“, ustvarjen {{date}}, različica {{version}}.",
+		"fromAnonymous": "Arhiv, ustvarjen {{date}}, različica {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "Uporabniki",
+			"catalog": "Katalog in izvodi",
+			"loans": "Izposoje in zgodovina",
+			"printLists": "Seznami za tisk",
+			"photos": "Fotografije uporabnikov",
+			"covers": "Naslovnice",
+			"notes": "Opombe",
+			"dates": "Datumi koledarja",
+			"audit": "Dnevnik dejavnosti",
+			"ui": "Vmesnik",
+			"security": "Varnost in dostop",
+			"library": "Knjižnica in šola"
+		},
+		"images": "Fotografije: {{photos}} · naslovnice: {{covers}}",
+		"accounts": "Računi, ki se bodo lahko prijavili: {{accounts}}. Gesla so tista iz arhiva.",
+		"warning": "Obnovitev v enem koraku vrne nastavitve, podatke in slike, kakršni so bili v arhivu. Potem čarovnik za nastavitev ni več potreben.",
+		"apply": "Obnovi",
+		"restoring": "Obnavljanje…",
+		"cancel": "Prekliči",
+		"back": "Nazaj na čarovnika za nastavitev",
+		"done": {
+			"title": "Obnovitev je dokončana",
+			"hint": "Knjižnica je takšna, kot je bila v arhivu. Za prijavo uporabite enega od teh računov z geslom, ki ga je imel v arhivu:",
+			"login": "Pojdi na prijavo"
+		},
+		"errors": {
+			"too_large": "Arhiv je prevelik (največ {{maxMb}} MB).",
+			"not_zip": "Datoteka ni veljaven arhiv ZIP.",
+			"not_archive": "Datoteka ni arhiv programa BiblioViva: izberite arhiv, ustvarjen z „Izvozi vse“.",
+			"too_many_files": "Arhiv vsebuje preveč datotek.",
+			"unsafe_path": "Arhiv vsebuje nedovoljeno pot: {{name}}",
+			"link": "Arhiv vsebuje povezavo, ki ni dovoljena: {{name}}",
+			"unknown_file": "Arhiv vsebuje datoteko, ki ni del programa BiblioViva: {{name}}",
+			"not_setup": "Čarovnik za nastavitev je že dokončan: obnovitev se opravi v Upravljanje → Varnostna kopija.",
+			"newer_version": "Arhiv je ustvarila novejša različica programa BiblioViva ({{name}}): najprej namestite to različico.",
+			"missing_parts": "Arhiv je nepopoln: manjkajo {{name}}. Izberite arhiv, ustvarjen z „Izvozi vse“.",
+			"unfinished_setup": "Arhiv izvira iz namestitve, pri kateri čarovnik za nastavitev ni bil dokončan.",
+			"not_ready": "Arhiv ima težave in ga ni mogoče obnoviti: {{name}}",
+			"gone": "Preverjeni arhiv ni več na voljo: izberite ga znova.",
+			"failed": "Obnovitev ni uspela."
+		}
+	}
+}

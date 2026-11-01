@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "Ylläpito",
+		"sections": {
+			"config": {
+				"title": "Asetukset",
+				"description": "Luokitus ja kirjaston asetukset."
+			},
+			"audit": {
+				"title": "Tapahtumaloki",
+				"description": "Kuka teki mitä: kirjautumiset, muutokset, tuonnit."
+			},
+			"users": {
+				"title": "Henkilökunnan tunnukset",
+				"description": "Henkilökunnan tunnukset, roolit ja oikeudet."
+			},
+			"backups": {
+				"title": "Varmuuskopiot",
+				"description": "Tietokannan ja tiedostojen varmuuskopiot."
+			},
+			"rollover": {
+				"title": "Luokkasiirto",
+				"description": "Lukuvuoden lopussa: siirrot, luokalle jäävät, viimeisen luokan lähtijät."
+			},
+			"exports": {
+				"title": "Viennit",
+				"description": "Asiakkaat, luettelo, lainat ja kaikki tiedot CSV- tai JSON-tiedostoina."
+			},
+			"imports": {
+				"title": "Tuonnit",
+				"description": "Luettelo, asiakkaat, avoimet lainat ja kuvat: CSV-tiedostoista tai Kohan viennistä."
+			}
+		}
+	},
+	"audit": {
+		"title": "Tapahtumaloki",
+		"filters": {
+			"from": "Alkaen",
+			"to": "Asti",
+			"user": "Tunnus",
+			"action": "Toiminto",
+			"all": "Kaikki"
+		},
+		"columns": {
+			"when": "Milloin",
+			"user": "Tunnus",
+			"action": "Toiminto",
+			"entity": "Kohde",
+			"entityId": "ID",
+			"details": "Tiedot"
+		},
+		"count": "{{shown}} / {{total}} {{total:plural; one:merkintä; other:merkintää;}}",
+		"empty": "Näillä suodattimilla ei ole merkintöjä.",
+		"system": "järjestelmä"
+	},
+	"users": {
+		"title": "Henkilökunnan tunnukset",
+		"fields": {
+			"roles": "Roolit",
+			"permissions": "Oikeudet",
+			"lastLogin": "Viimeisin kirjautuminen",
+			"never": "ei koskaan"
+		},
+		"status": {
+			"active": "Aktiivinen",
+			"inactive": "Poistettu käytöstä",
+			"plainPassword": "Salasana selkokielisenä tiedostossa",
+			"notInConfig": "Poistettu asetuksista"
+		},
+		"hash": {
+			"title": "Luo salasanan tiiviste",
+			"description": "Kirjoita salasana, jonka haluat antaa: saat argon2id-tiivisteen, joka liitetään kenttään passwordHash. Salasanaa ei tallenneta.",
+			"password": "Salasana (vähintään {{min}} merkkiä)",
+			"generate": "Luo tiiviste",
+			"result": "Liitettävä tiiviste",
+			"copy": "Kopioi",
+			"copied": "Tiiviste kopioitu",
+			"tooShort": "Salasanassa on oltava vähintään {{min}} merkkiä.",
+			"disclosure": "Tiedostoja käsin muokkaavalle: salasanan tiivisteen luominen"
+		},
+		"reload": {
+			"button": "Lataa asetukset uudelleen",
+			"success": "Asetukset ladattu uudelleen",
+			"successWithWarnings": "Asetukset ladattu uudelleen: {{count}} {{count:plural; one:varoitus; other:varoitusta;}}",
+			"failed": "Virheelliset asetukset: edelliset asetukset pysyvät käytössä",
+			"exampleSource": "Varoitus: config.json-tiedostoa ei ole, käytössä on esimerkkiasetukset."
+		},
+		"new": "Uusi tunnus",
+		"newPassword": "Uusi salasana",
+		"permissionNames": {
+			"all": "Kaikki",
+			"loans": "Lainaus",
+			"patrons": "Asiakkaat",
+			"patrons_import": "Tuo asiakkaat",
+			"catalog": "Luettelo",
+			"catalog_import": "Tuo luettelo",
+			"reports": "Raportit",
+			"anonymize": "Anonymisointi",
+			"admin": "Ylläpito"
+		},
+		"roles": {
+			"title": "Roolit ja oikeudet",
+			"hint": "Rooli on joukko oikeuksia; jokaisella tunnuksella on yksi tai useampi rooli. ”Kaikki” antaa kaikki oikeudet, myös ne, jotka tulevat myöhempien versioiden mukana. Roolin nimen muuttaminen päivittää sitä käyttävät tunnukset.",
+			"name": "Rooli",
+			"unused": "ei tunnuksia",
+			"badName": "Kirjaimet, numerot, väliviivat ja alaviivat (enintään 32).",
+			"add": "Lisää rooli",
+			"saved": "Roolit tallennettu"
+		},
+		"auth": {
+			"title": "Kirjautuminen",
+			"config": "Kirjaudutaan tällä sivulla olevilla tunnuksilla, yleensä yksi yhteinen jokaiselle roolille (esimerkiksi ”lainaus” lainaustiskille).",
+			"database": "Kirjaudutaan henkilökohtaisilla tunnuksilla.",
+			"later": "Henkilökohtaiset tunnukset, yksi kullekin henkilölle, on suunniteltu myöhempään versioon."
+		},
+		"dialog": {
+			"title": {
+				"new": "Uusi tunnus",
+				"edit": "Muokkaa {{name}}",
+				"password": "Uusi salasana käyttäjälle {{name}}"
+			},
+			"username": "Käyttäjätunnus",
+			"usernameHint": "Pieniä kirjaimia, numeroita, pistettä, väliviivaa ja alaviivaa (2–32 merkkiä).",
+			"badUsername": "Käytä pieniä kirjaimia, numeroita, pistettä, väliviivaa ja alaviivaa (2–32 merkkiä).",
+			"displayName": "Näytettävä nimi",
+			"active": "Aktiivinen tunnus (voi kirjautua)",
+			"password": "Salasana (vähintään {{min}} merkkiä)",
+			"repeat": "Toista salasana",
+			"mismatch": "Salasanat eivät ole samat.",
+			"passwordHint": "Salasanaa ei tallenneta: asetuksiin kirjoitetaan vain sen tiiviste. Tällä tunnuksella kirjautuneiden on kirjauduttava uudelleen.",
+			"saved": {
+				"new": "Tunnus luotu",
+				"edit": "Tunnus tallennettu",
+				"password": "Salasana vaihdettu"
+			},
+			"removed": "Tunnus poistettu",
+			"removeTitle": "Poistetaanko {{name}}?",
+			"removeHint": "Tunnus poistuu asetuksista; sen tekemät toiminnot jäävät lokiin sen nimellä. Poiston voi kumota asetusten historiasta."
+		},
+		"errors": {
+			"badUsername": "Virheellinen käyttäjätunnus: {{details}}.",
+			"usernameTaken": "Käyttäjätunnus {{details}} on jo käytössä.",
+			"notFound": "Tunnusta ei löytynyt: {{details}}.",
+			"noRoles": "Valitse vähintään yksi rooli.",
+			"unknownRole": "Tuntematon rooli: {{details}}.",
+			"passwordTooShort": "Salasana on liian lyhyt.",
+			"passwordRequired": "Uusi tunnus tarvitsee salasanan.",
+			"lastAdmin": "Vähintään yhdellä aktiivisella tunnuksella on oltava ylläpito-oikeus.",
+			"stillActive": "Poista tunnus käytöstä ennen sen poistamista.",
+			"badRole": "Virheellinen roolin nimi: {{details}}.",
+			"roleTaken": "Kaksi roolia on nimetty {{details}}.",
+			"roleInUse": "Rooli on käytössä joillakin tunnuksilla: {{details}}.",
+			"invalid": "Asetukset eivät olisi kelvolliset: {{details}}."
+		}
+	},
+	"backups": {
+		"title": "Varmuuskopiot",
+		"runNow": "Tee varmuuskopio nyt",
+		"created": "Varmuuskopio tehty: {{name}}",
+		"createdDeleted": "Varmuuskopio tehty: {{name}} ({{deleted}} {{deleted:plural; one:vanha varmuuskopio poistettu; other:vanhaa varmuuskopiota poistettu;}})",
+		"empty": "Ei vielä varmuuskopioita. Ensimmäinen tehdään ajastettuna aikana tai painamalla ”Tee varmuuskopio nyt”.",
+		"download": "Lataa",
+		"columns": {
+			"when": "Luotu",
+			"size": "Koko"
+		},
+		"catchUp": {
+			"badge": "Tehty käynnistettäessä",
+			"hint": "Ajastettu varmuuskopio jäi väliin (tietokone oli sammuksissa): BiblioViva teki sen käynnistyessään."
+		},
+		"offsite": {
+			"title": "Viimeisin ulkoinen kopio",
+			"disabled": "Ulkoista kopiota ei ole määritetty. Se otetaan käyttöön asennusoppaassa kuvatulla ”offsite”-palvelulla (rclone).",
+			"never": "Palvelu on käytössä, mutta se ei ole vielä kirjannut tulosta.",
+			"ok": "Viimeisin kopio onnistui: {{when}}",
+			"error": "Viimeisin kopio epäonnistui: {{when}}",
+			"stale": "Ulkoinen kopio on yli kahden päivän vanha: tarkista offsite-palvelu.",
+			"remote": "Kohde: {{remote}}"
+		},
+		"restore": {
+			"title": "Palauttaminen varmuuskopiosta",
+			"button": "Palauta varmuuskopiosta…",
+			"hint": "Valitse luettelosta varmuuskopion kohdalta ”Palauta varmuuskopiosta…”, tai lataa BiblioViva-arkisto (varmuuskopio, ”Vie kaikki” tai ”Vie asetukset”, enintään {{maxMb}} Mt; suurempi kopioidaan palvelimen varmuuskopiokansioon tai palautetaan komennolla bun run backup:restore). Kaikki tarkistetaan ensin, sitten palautetaan vain valitut osat: muut jäävät ennalleen.",
+			"upload": "Lataa arkisto",
+			"from": "Varmuuskopio {{name}}, {{date}}",
+			"count": "{{part}}: nyt {{live}}, varmuuskopiossa {{archive}}",
+			"images": "Palautettavat kuvat: {{photos}} {{photos:plural; one:valokuva; other:valokuvaa;}}, {{covers}} {{covers:plural; one:kansikuva; other:kansikuvaa;}}.",
+			"gapsTitle": "Osa tiedoista jäisi ilman sitä, mihin ne viittaavat:",
+			"gap": "{{rows:plural; one:{{rows}} ”{{part}}”-rivi viittaa; other:{{rows}} ”{{part}}”-riviä viittaa;}} kohteeseen ”{{needs}}”, jota ei olisi: lisää ”{{add}}” valintaan.",
+			"schema": "Varmuuskopio on BiblioViva-version toisesta versiosta (taulut {{tables}}): sitä ei voi palauttaa tässä.",
+			"apply": "Palauta",
+			"confirmTitle": "Palautetaanko valitut osat?",
+			"confirmHint": "Valitut tiedot ja asetukset korvataan varmuuskopion vastaavilla. Asetukset voi palauttaa historiasta; tiedoista kannattaa tehdä ensin varmuuskopio, ellei ole tuoretta.",
+			"done": "Palautus valmis",
+			"notArchive": "Tiedosto ei ole BiblioViva-arkisto."
+		},
+		"contents": {
+			"title": "Mitä varmuuskopio sisältää",
+			"database": "Tietokanta: täydellinen kopio joka kerta (alla luettelo).",
+			"images": "Valokuvat ja kansikuvat: kopioidaan joka yö varmuuskopion kansioon ”uploads” ({{photos}} {{photos:plural; one:valokuva; other:valokuvaa;}}, {{covers}} {{covers:plural; one:kansikuva; other:kansikuvaa;}} tällä hetkellä).",
+			"imagesPending": "Valokuvat ja kansikuvat: ensimmäinen kopio tehdään seuraavassa ajossa ({{photos}} {{photos:plural; one:valokuva; other:valokuvaa;}}, {{covers}} {{covers:plural; one:kansikuva; other:kansikuvaa;}} kopioitavana).",
+			"config": "Asetuksia (tulostuspohjat, kuvat, asetukset) ei ole yöllisessä varmuuskopiossa: ne saa ”Vie kaikki” -toiminnolla."
+		},
+		"export": {
+			"button": "Vie kaikki",
+			"hint": "Yksi ZIP-tiedosto, jossa ovat tietokanta, valokuvat, kansikuvat ja koko asetukset (tulostuspohjat ja kuvat mukaan lukien), valmiina palautettavaksi komennolla ”bun run backup:restore”."
+		},
+		"createdMirror": "Varmuuskopio tehty: {{name}}; {{copied}} {{copied:plural; one:kuva kopioitiin; other:kuvaa kopioitiin;}}",
+		"parts": {
+			"title": "Varmuuskopio tai vienti joistakin osista",
+			"hint": "Valitse, mitä sisällytetään: kirjaston tiedot, kunkin osion asetukset, tulostuspohjat, kuvat… ”Luo varmuuskopio” tallentaa sen alla olevaan luetteloon, ”Lataa” lataa sen tietokoneelle.",
+			"create": "Luo varmuuskopio",
+			"download": "Lataa"
+		}
+	},
+	"demo": {
+		"clear": "Tyhjennä esimerkkitiedot",
+		"confirmTitle": "Tyhjennetäänkö esimerkkitiedot?",
+		"confirmDescription": "Esittelyn asiakkaat, kirjat, lainat ja valokuvat poistetaan. Luokat ja opettajaryhmä jäävät. Kaikki käyttäjät kirjataan ulos.",
+		"cleared": "Esimerkkitiedot poistettu. Kirjaudu uudelleen.",
+		"clearedPassword": "Tunnuksilla on yhä esittelysalasana ”{{password}}”: vaihda se heti kohdasta Ylläpito → Henkilökunnan tunnukset."
+	},
+	"appearance": {
+		"title": "Ulkoasu ja kieli",
+		"current": "Nykyinen väriteema: {{name}}",
+		"areas": {
+			"title": "Alueiden tyyli",
+			"hint": "Yläpalkki saa sen alueen värin, jolla työskennellään (Lainaus, Luettelo, Asiakkaat…), valitun väriteeman sävyissä. Alueen kuvake ja nimi näkyvät aina.",
+			"styles": {
+				"tinted": "Sävytetty palkki (suositus)",
+				"filled": "Täytetty palkki",
+				"accents": "Vain korostukset",
+				"none": "Ei väriä"
+			},
+			"saved": "Alueiden tyyli tallennettu"
+		},
+		"colours": {
+			"title": "Väriteema"
+		},
+		"save": "Tallenna värit",
+		"saved": "Värit tallennettu",
+		"unchanged": "Ei tallennettavaa.",
+		"language": {
+			"title": "Sovelluksen kieli",
+			"hint": "Yksi kieli asennusta kohden: se koskee koko henkilökuntaa.",
+			"save": "Vaihda kieli",
+			"saved": "Kieli vaihdettu: sivu ladataan uudelleen."
+		},
+		"logo": {
+			"title": "Kirjaston logo",
+			"hint": "Näkyy jokaisen sivun vasemmassa yläkulmassa kirjaston nimen vieressä. PNG, JPEG tai WebP; paras tulos läpinäkyvällä taustalla.",
+			"upload": "Lataa logo",
+			"replace": "Vaihda logo",
+			"remove": "Poista logo",
+			"saved": "Logo tallennettu.",
+			"removed": "Logo poistettu.",
+			"none": "Ei logoa: näkyy yleinen kuvake.",
+			"preview": "Nykyinen logo",
+			"errors": {
+				"empty": "Tiedosto on tyhjä.",
+				"too_large": "Tiedosto on liian suuri (enintään {{maxMb}} Mt).",
+				"not_an_image": "Tiedosto ei ole kuva.",
+				"unsupported_format": "Muotoa ei hyväksytä: käytä PNG-, JPEG- tai WebP-muotoa."
+			}
+		},
+		"name": {
+			"title": "Kirjaston nimi",
+			"hint": "Näkyy vasemmassa yläkulmassa, koontinäkymässä, tulosteissa ja puhelimeen asennetussa sovelluksessa.",
+			"label": "Nimi",
+			"save": "Tallenna nimi",
+			"saved": "Kirjaston nimi tallennettu",
+			"required": "Kirjoita kirjaston nimi."
+		},
+		"dashboard": {
+			"title": "Koontinäkymä",
+			"hint": "Aloitussivun osiot koko kirjastolle. Pikatoiminnot ovat aina ensimmäisinä; kunkin osion sisällä jokainen tunnus näkee vain ne, joihin sillä on oikeus.",
+			"save": "Tallenna koontinäkymä",
+			"saved": "Koontinäkymä tallennettu",
+			"sections": {
+				"quickActions": "Pikatoiminnot",
+				"tiles": "Kirjasto tänään (ruudut numeroineen)",
+				"inventory": "Käynnissä oleva inventointi",
+				"installHint": "Kehotus lisätä sovellus aloitusnäyttöön (puhelimet)",
+				"dueThisWeek": "Erääntyy tällä viikolla",
+				"upcomingDates": "Kalenterin lähipäivät",
+				"todayActivity": "Tämän päivän lainat"
+			}
+		}
+	},
+	"templates": {
+		"title": "Tulostuspohjat",
+		"reload": "Lataa pohjat uudelleen",
+		"reloaded": "Pohjat luettu uudelleen levyltä",
+		"kinds": {
+			"cards": "Kortit",
+			"labels": "Tarrat",
+			"slips": "Muistutukset"
+		},
+		"list": {
+			"source": {
+				"builtin": "Sovelluksen mukana",
+				"config": "Asetuksissa"
+			},
+			"default": "Oletus",
+			"status": {
+				"ok": "Kelvollinen",
+				"error": "Virhe"
+			},
+			"folder": "Kansio",
+			"forTypes": "Käyttö: {{types}}",
+			"emptyCards": "Ei korttipohjaa: tarkista asetusten kansio cards/templates.",
+			"emptyLabels": "Ei tarrapohjaa vielä: ne tulevat tarrojen tulostuksen mukana.",
+			"emptySlips": "Ei muistutuspohjaa vielä: se tulee lainauksen mukana."
+		},
+		"preview": {
+			"title": "Esikatselu",
+			"front": "Etupuoli",
+			"back": "Takapuoli",
+			"patron": "Näytettävä asiakas",
+			"sample": "Esimerkkiasiakas",
+			"real": "Oikea asiakas",
+			"search": "Etsi oikea asiakas",
+			"searchPlaceholder": "Sukunimi tai etunimi",
+			"noResults": "Asiakasta ei löytynyt.",
+			"zoom": "Zoomaus",
+			"sheet": "Koko arkki",
+			"sheetHint": "Yksi A4-sivu esimerkkiasiakkaalla, juuri niin kuin se tulostetaan.",
+			"test": "Tulosta testisivu",
+			"broken": "Pohjaa ei voi käyttää ennen kuin se on korjattu:",
+			"size": "{{width}} × {{height}} mm, zoomaus {{zoom}}"
+		},
+		"test": {
+			"title": "Korttien testisivu",
+			"ruler": "10 cm:n viivain: tulostuksen jälkeen sen on mitattava 100 mm (tulosta 100 %:n koossa, ilman ”sovita sivulle” -valintaa)."
+		},
+		"calibration": {
+			"title": "Tarrojen kalibrointisivu",
+			"stock": "Tarra-arkki",
+			"print": "Tulosta kalibrointisivu",
+			"hint": "Tulosta tavalliselle paperille ja pidä tarra-arkkia sen päällä marginaalien tarkistamiseksi."
+		},
+		"howTo": {
+			"title": "Pohjan luominen",
+			"steps": {
+				"step1": "Valitse kohdasta Asetukset → Tulostuspohjat pohja (esimerkiksi {{path}}), paina ”Monista” ja anna sille uusi nimi.",
+				"step2": "Muokkaa sitä painamalla ”Muokkaa”: piirrä pohja tai muuta sen koodia; kuvat ladataan samalla sivulla.",
+				"step3": "Palaa tänne ja tarkista esikatselu: tuntematon kenttä tai puuttuva tiedosto ilmoitetaan.",
+				"step4": "Käytä pohjaa oikeasti valitsemalla se Kortit- tai Tarrat-asetuksista."
+			}
+		},
+		"labels": {
+			"stocks": "Tarkoitettu arkeille: {{stocks}}",
+			"preview": "{{name}}: esikatselu",
+			"geometry": "Yksikkö {{width}} × {{height}} mm · variantti {{variant}}",
+			"sheet": "Esimerkkiarkki"
+		}
+	},
+	"loansImport": {
+		"title": "Tuo avoimet lainat",
+		"upload": {
+			"hint": "Käytetään kerran, siirryttäessä Kohasta: yksi rivi jokaista avointa lainaa kohden, jossa ovat asiakkaan kortin numero ja kopion viivakoodi sekä lainauspäivä ja eräpäivä, jos niitä on. Tuo ensin asiakkaat ja luettelo; malli, jossa tarvittavat sarakkeet ovat, ladataan alta.",
+			"submit": "Lataa"
+		},
+		"mapping": {
+			"uncertain": "Tarkista sarakkeet ennen jatkamista.",
+			"validate": "Tarkista tiedosto",
+			"without": {
+				"issuedOn": "Ilman saraketta issued_on lainat merkitään tänään lainatuiksi.",
+				"dueOn": "Ilman saraketta due_on eräpäivä lasketaan kuten lainaustiskillä, lainasäännöillä ja kalenterilla."
+			}
+		},
+		"fields": {
+			"cardNumber": "Kortin numero",
+			"barcode": "Viivakoodi",
+			"issuedOn": "Lainauspäivä",
+			"dueOn": "Eräpäivä"
+		},
+		"preview": {
+			"ready": "Ei virheitä: lainat voi tuoda.",
+			"blocked": "Korjaa virheet ja tarkista uudelleen: virheellisiä rivejä ei tuoda.",
+			"overdue": "{{count}} {{count:plural; one:laina on jo myöhässä; other:lainaa on jo myöhässä;}}: {{count:plural; one:se tuodaan ja näkyy; other:ne tuodaan ja näkyvät;}} myöhästyneiden luettelossa.",
+			"columns": {
+				"patron": "Asiakas",
+				"barcode": "Nide",
+				"issued": "Lainattu",
+				"due": "Eräpäivä"
+			},
+			"commit": "Tuo lainat",
+			"back": "Takaisin sarakkeisiin"
+		},
+		"reasons": {
+			"cardMissing": "Kortin numero puuttuu",
+			"cardUnknown": "Ei asiakasta kortin numerolla {{value}}",
+			"barcodeMissing": "Viivakoodi puuttuu",
+			"barcodeUnknown": "Ei nidettä viivakoodilla {{value}}",
+			"alreadyOnLoan": "Nide {{value}} on jo lainassa",
+			"itemWithdrawn": "Nide {{value}} on poistettu kokoelmasta",
+			"duplicateInFile": "Sama nide on jo rivillä {{line}}",
+			"issueDateInvalid": "Virheellinen lainauspäivä: ”{{value}}”",
+			"issueDateFuture": "Lainauspäivä on tulevaisuudessa: {{value}}",
+			"dueDateInvalid": "Virheellinen eräpäivä: ”{{value}}”",
+			"dueBeforeIssue": "Eräpäivä on ennen lainauspäivää",
+			"overdue": "Jo myöhässä, eräpäivä {{date}}",
+			"itemUnclassified": "Nide {{value}} kuuluu luokittelemattomaan kirjaan: laina tuodaan, mutta lainaustiskillä sitä ei lainata ennen luokittelua."
+		},
+		"done": {
+			"title": "Lainat tuotu",
+			"summary": "{{created}} {{created:plural; one:laina tuotu; other:lainaa tuotu;}}, joista {{overdue}} jo myöhässä.",
+			"batch": "Tuonti nro {{id}}: alkuperäinen tiedosto säilytetään.",
+			"again": "Tuo toinen tiedosto"
+		},
+		"columns": {
+			"cardNumber": "Asiakkaan kortin numero, joka on jo tuotu.",
+			"barcode": "Nide, jonka viivakoodi on jo tuotu.",
+			"issuedOn": "Lainauspäivä; jos se puuttuu, tämä päivä.",
+			"dueOn": "Eräpäivä; jos se puuttuu, lasketaan lainasäännöillä."
+		}
+	},
+	"photosImport": {
+		"title": "Tuo asiakkaiden valokuvat",
+		"hint": "Yksi tiedosto asiakasta kohden, nimetty kortin numeron mukaan (esimerkiksi 0000001240.jpg): ylläpitäjän oppaassa kuvattu vienti tuottaa ne. Jokainen kuva pienennetään ja siitä poistetaan piilotetut tiedot; kortteihin kuulumattomat tiedostot luetellaan.",
+		"replace": "Korvaa jo olemassa olevat valokuvat",
+		"zip": {
+			"title": "ZIP-arkistosta",
+			"file": "Valokuvat sisältävä ZIP-arkisto",
+			"submit": "Tuo valokuvat"
+		},
+		"folder": {
+			"title": "Palvelimen kansiosta",
+			"hint": "Kopioi tiedostot kansioon {{path}}: {{count:plural; one:nyt siellä on {{count}}; other:nyt siellä on {{count}};}}. Sopii moniin valokuviin, jotka olisivat liian raskaita ladattaviksi arkistona.",
+			"submit": "Tuo kansiosta"
+		},
+		"summary": {
+			"title": "Tulos",
+			"text": "{{imported}} {{imported:plural; one:valokuva tuotu; other:valokuvaa tuotu;}}, {{replaced}} {{replaced:plural; one:korvattu; other:korvattua;}}, {{kept:plural; one:{{kept}} jätettiin ennalleen; other:{{kept}} jätettiin ennalleen;}} (valokuva on jo olemassa), {{unmatched}} {{unmatched:plural; one:tiedosto ilman asiakasta; other:tiedostoa ilman asiakasta;}}, {{unreadable}} {{unreadable:plural; one:lukukelvoton tiedosto; other:lukukelvotonta tiedostoa;}}.",
+			"unreadable": "Lukukelvottomat kuvat: {{files}}",
+			"unmatched": "Lataa luettelo tiedostoista ilman asiakasta"
+		},
+		"errors": {
+			"notZip": "Tiedosto ei ole kelvollinen ZIP-arkisto.",
+			"empty": "Arkisto ei sisällä tiedostoja."
+		},
+		"done": "Valokuvat tuotu"
+	},
+	"rollover": {
+		"title": "Luokkasiirto",
+		"subtitle": "Lukuvuoden lopussa jokainen oppilas siirtyy seuraavalle vuosiluokalle, ja viimeisen vuosiluokan suorittaneet lähtevät koulusta.",
+		"steps": {
+			"backup": "Varmuuskopio",
+			"classes": "Luokat",
+			"leavers": "Lähtijät",
+			"confirm": "Vahvistus",
+			"done": "Valmis"
+		},
+		"backup": {
+			"text": "Ensin tehdään tietokannan varmuuskopio: jos jokin menee pieleen, palautus tehdään kohdasta Ylläpito → Varmuuskopiot.",
+			"create": "Luo varmuuskopio",
+			"created": "Varmuuskopio tehty: {{name}}"
+		},
+		"classes": {
+			"text": "Jokainen oppilas siirtyy seuraavalle vuosiluokalle luokkansa mukana. Merkitse, kuka jää luokalle ja kuka vaihtaa luokkaa.",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; one:oppilas; other:oppilasta;}}",
+			"exceptions": "{{count}} {{count:plural; one:poikkeus; other:poikkeusta;}}",
+			"loans": "{{count}} joilla on lainassa kirjoja",
+			"repeat": "Jää luokalle",
+			"target": "Luokka",
+			"noGroup": "Ei luokkaa",
+			"choose": "Valitse luokka…",
+			"fates": {
+				"advances": "Siirtyy",
+				"stays": "Jää",
+				"archived": "Päättyy"
+			},
+			"unplaced": "{{count}} {{count:plural; one:oppilas odottaa; other:oppilasta odottaa;}} luokan valintaa.",
+			"none": "Ei oppilaita, jotka siirtyvät seuraavalle vuosiluokalle.",
+			"nextYear": "Seuraava vuosi",
+			"leaves": "Lähtee koulusta"
+		},
+		"leavers": {
+			"text": "Viimeisen vuosiluokan oppilaat lähtevät koulusta: heidän tietonsa poistetaan heti ja lopullisesti (jäljelle jäävät vain tilastojen luvut). Poista rasti niiltä, jotka jäävät, esimerkiksi viimeisellä vuosiluokalla luokalle jäävä oppilas.",
+			"leaves": "Lähtee",
+			"openLoans": "{{count}} {{count:plural; one:kirja; other:kirjaa;}} lainassa",
+			"blocked": "{{count}} {{count:plural; one:koulusta lähtevällä oppilaalla on; other:koulusta lähtevillä oppilailla on;}} yhä kirjoja: kirjataan palautus tai merkitään kirjat kadonneiksi, tai poistetaan rasti.",
+			"toCheckin": "Siirry palautuksiin",
+			"none": "Ei oppilaita viimeisellä vuosiluokalla."
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; one:oppilas siirtyy; other:oppilasta siirtyy;}} seuraavalle vuosiluokalle",
+			"repeat": "{{count}} {{count:plural; one:oppilas jää; other:oppilasta jää;}} luokalle",
+			"groupChanges": "{{count}} {{count:plural; one:oppilas vaihtaa; other:oppilasta vaihtaa;}} luokkaa",
+			"closing": "{{count}} {{count:plural; one:luokka päättyy ja arkistoidaan; other:luokkaa päättyy ja arkistoidaan;}}",
+			"remove": "{{count}} {{count:plural; one:oppilas lähtee koulusta ja hänen tietonsa poistetaan; other:oppilasta lähtee koulusta ja heidän tietonsa poistetaan;}}",
+			"recent": "Viimeisin siirto tehtiin {{date}}, alle kuusi kuukautta sitten. Vahvistan haluavani tehdä sen uudelleen.",
+			"run": "Tee luokkasiirto"
+		},
+		"done": {
+			"title": "Luokkasiirto tehty",
+			"advanced": "{{count}} {{count:plural; one:luokka siirtyi; other:luokkaa siirtyi;}} seuraavalle vuosiluokalle",
+			"archived": "{{count}} {{count:plural; one:luokka arkistoitu; other:luokkaa arkistoitu;}}",
+			"text": "Seuraavaksi: luo tarvittaessa uudet ensimmäiset luokat ja tuo uudet oppilaat synkronoinnilla.",
+			"import": "Tuo uudet oppilaat"
+		},
+		"errors": {
+			"blocked": "Osalla lähtevistä oppilaista on yhä lainassa kirjoja.",
+			"recent": "Vahvistus tarvitaan: viimeisin siirto on tehty äskettäin.",
+			"no_backup": "Varmuuskopiota ei löytynyt tai se on liian vanha: tee se uudelleen ensimmäisestä vaiheesta.",
+			"invalid_group": "Valittu luokka ei ole olemassa tai ei ota vastaan oppilaan vuosiluokkaa.",
+			"unplaced": "Joillakin oppilailla ei ole vielä luokkaa: valitse se Luokat-vaiheessa.",
+			"invalid_level": "Yksi valituista vuosiluokista ei ole mahdollisten joukossa: lataa sivu uudelleen."
+		},
+		"next": "Seuraava",
+		"back": "Takaisin"
+	},
+	"classes": {
+		"title": "Luokat",
+		"subtitle": "Koulun luokat ja opettajaryhmät.",
+		"hint": "Koulun vuosiluokkia ja koulutusasteita muutetaan asetuksissa:",
+		"structureLink": "Koulu",
+		"new": "Uudet luokat",
+		"newTeachers": "Uusi opettajaryhmä",
+		"teachers": "Opettajat",
+		"mixed": "Monivuosiluokka",
+		"empty": "Ei luokkia",
+		"emptyHint": "Ei luokkia. Luokat luodaan painikkeella Uudet luokat, esimerkiksi vuosiluokat 1–5 ja nimet A–D.",
+		"archivedTitle": "{{count:plural; one:Arkistoitu luokka; other:Arkistoidut luokat;}} ({{count}})",
+		"archive": "Arkistoi",
+		"archiveNotEmpty": "Luokassa on yhä asiakkaita: sitä ei voi arkistoida",
+		"restore": "Palauta käyttöön",
+		"archived": "Luokka {{name}} arkistoitu",
+		"restored": "Luokka {{name}} palautettu käyttöön",
+		"columns": {
+			"class": "Luokka",
+			"levels": "Vuosiluokat",
+			"patrons": "Asiakkaat"
+		},
+		"dialog": {
+			"title": {
+				"students": "Uudet luokat",
+				"teachers": "Uusi opettajaryhmä",
+				"edit": "Muokkaa {{name}}"
+			},
+			"levels": "Vuosiluokat",
+			"names": "Luokkien nimet",
+			"namesHint": "Pilkuilla erotettuina; A-D tarkoittaa A, B, C, D. Nimi voi sisältää välilyöntejä.",
+			"name": "Nimi",
+			"mixed": "Yksi monivuosiluokka kaikilla valituilla vuosiluokilla",
+			"stage": "Koulutusaste",
+			"anyStage": "Kaikki",
+			"notes": "Muistiinpanot",
+			"preview": "{{count}} {{count:plural; one:luokka; other:luokkaa;}} luotavaksi:",
+			"previewEmpty": "Valitse vähintään yksi vuosiluokka ja kirjoita nimet.",
+			"saved": {
+				"students": "{{count}} {{count:plural; one:luokka luotu; other:luokkaa luotu;}}",
+				"teachers": "Opettajaryhmä luotu",
+				"edit": "Luokka tallennettu"
+			}
+		},
+		"errors": {
+			"nameRequired": "Nimi on pakollinen.",
+			"nameLong": "Nimi on liian pitkä (enintään 40 merkkiä).",
+			"levelsRequired": "Valitse vähintään yksi vuosiluokka.",
+			"levelUnknown": "Valittu vuosiluokka ei ole enää olemassa.",
+			"levelsNotForTeachers": "Opettajaryhmällä ei ole vuosiluokkia.",
+			"nameTaken": "Samalla vuosiluokalla on jo luokka tällä nimellä.",
+			"levelInUse": "Osa luokan oppilaista on vuosiluokalla, joka poistettaisiin.",
+			"notEmpty": "Luokassa on yhä asiakkaita.",
+			"notFound": "Luokkaa ei ole enää olemassa."
+		}
+	},
+	"exports": {
+		"title": "Viennit",
+		"subtitle": "Kirjaston tiedot tiedostoina, jotka säilytetään, tuodaan takaisin tai viedään toiseen ohjelmaan.",
+		"items": {
+			"students": {
+				"title": "Oppilaat (CSV)",
+				"description": "Aktiiviset oppilaat tuonnin muodossa: ne tuodaan takaisin kohdasta Ylläpito → Tuonnit → Oppilaat."
+			},
+			"teachers": {
+				"title": "Opettajat (CSV)",
+				"description": "Aktiiviset opettajat tuonnin muodossa: ne tuodaan takaisin kohdasta Ylläpito → Tuonnit → Opettajat."
+			},
+			"catalog": {
+				"title": "Luettelo (CSV)",
+				"description": "Yksi rivi nidettä kohden kirjan tiedoilla, luettelon tuonnin muodossa."
+			},
+			"open-loans": {
+				"title": "Avoimet lainat (CSV)",
+				"description": "Kortti, nide, lainauspäivä ja eräpäivä: ne tuodaan takaisin kohdasta Ylläpito → Tuonnit → Avoimet lainat."
+			},
+			"loans-history": {
+				"title": "Lainahistoria (CSV)",
+				"description": "Jokainen laina, mukana lainauspäivän luokka ja osasto."
+			},
+			"dump": {
+				"title": "Kaikki tiedot (JSON)",
+				"description": "Asiakkaat, luettelo, lainat ja listat yhdessä tiedostossa, siirtämistä varten toiseen asennukseen tai ohjelmaan."
+			}
+		},
+		"download": "Lataa",
+		"patronNote": "Yksittäisen henkilön tiedot (pääsypyyntö) ladataan hänen asiakastiedoistaan.",
+		"patronExport": "Vie henkilön tiedot"
+	},
+	"imports": {
+		"title": "Tuonnit",
+		"hint": "Käytetään siirryttäessä Kohasta ja asiakkaiden osalta jokaisen lukuvuoden alussa uusille luokille. Jokainen tiedosto tarkistetaan kokonaan ennen tuontia.",
+		"cards": {
+			"catalog": {
+				"title": "Luettelo",
+				"description": "Kirjat ja niteet CSV-tiedostosta tai Kohan viennistä."
+			},
+			"students": {
+				"title": "Oppilaat",
+				"description": "Luokat koulun sähköisestä rekisteristä, joka lukuvuoden alussa: etunimi, sukunimi ja luokka."
+			},
+			"teachers": {
+				"title": "Opettajat",
+				"description": "Koulun opettajat: etunimi ja sukunimi, mukana kortti, jos sellainen on jo."
+			},
+			"loans": {
+				"title": "Avoimet lainat",
+				"description": "Avoimet lainat, tuodaan kerran siirryttäessä Kohasta."
+			},
+			"photos": {
+				"title": "Asiakkaiden valokuvat",
+				"description": "Kohasta viedyt valokuvat, yksi per kortti."
+			}
+		}
+	},
+	"calibration": {
+		"title": "Kalibroi kaksipuolinen tulostus",
+		"intro": "Jotta kortit tulostuisivat arkin molemmille puolille, takapuolen on osuttava tarkalleen etupuolen taakse. Jokainen tulostin siirtää takapuolta hieman: tämä koe mittaa kuinka paljon, kerran.",
+		"current": "Arkin kääntyminen: {{flip}}. Takapuolien nykyinen siirtymä: {{x}} mm vaakasuunnassa, {{y}} mm pystysuunnassa.",
+		"steps": {
+			"print": "Tulosta kalibrointiarkki alla olevalla painikkeella.",
+			"window": {
+				"long-edge": "Valitse tulostusikkunassa ”Kaksipuolinen”, kääntäen pitkän reunan ympäri, mittakaava 100 % ja ei marginaaleja.",
+				"short-edge": "Valitse tulostusikkunassa ”Kaksipuolinen”, kääntäen lyhyen reunan ympäri, mittakaava 100 % ja ei marginaaleja."
+			},
+			"cut": "Leikkaa huolellisesti mustaa viivaa pitkin sivulta, jossa on iso ”1”.",
+			"read": "Käännä kortti: sivulla ”2” lue ne kaksi lukua, joissa leikattu reuna ylittää viivoittimet (merkkeineen + tai −).",
+			"save": "Kirjoita kaksi lukua alle ja tallenna: takapuolten siirtymä korjataan.",
+			"check": "Tulosta arkki uudelleen tarkistukseksi: leikatun reunan pitäisi nyt osua molempien viivoittimien nollaan."
+		},
+		"print": "Tulosta kalibrointiarkki",
+		"drawing": {
+			"title": "Mitä lukea",
+			"label": "Puoli 2 leikkauksen jälkeen: leikattu reuna ylittää viivoittimet",
+			"x": "vaakasuora viivoitin",
+			"y": "pystysuora viivoitin",
+			"hint": "Leikattu reuna ylittää jokaisen viivoittimen: siinä oleva luku on kirjoitettava arvo. Jokainen viiva on millimetri, luvut tulevat viiden välein."
+		},
+		"fields": {
+			"x": "Vaakasuora viivoitin (mm)",
+			"y": "Pystysuora viivoitin (mm)",
+			"hint": "Luku, johon leikattu reuna osuu merkkeineen; 0, jos se osuu nollaan."
+		},
+		"next": "Tallennuksen jälkeen takapuolten siirtymä on {{x}} mm vaakasuunnassa ja {{y}} mm pystysuunnassa.",
+		"save": "Tallenna kalibrointi",
+		"saved": "Kalibrointi tallennettu: takapuolia siirretty {{x}} mm vaakasuunnassa ja {{y}} mm pystysuunnassa.",
+		"open": "Kalibroi kaksipuolinen tulostus",
+		"sheet": {
+			"title": "BiblioViva · kaksipuolisen tulostuksen kalibrointi",
+			"cut": "Leikkaa mustaa viivaa pitkin ja käännä sitten kortti.",
+			"read": "Lue molemmilta viivoittimilta kohta, jossa leikattu reuna osuu."
+		}
+	}
+}

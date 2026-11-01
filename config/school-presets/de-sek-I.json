@@ -1,0 +1,65 @@
+{
+	"id": "de-sek-I",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md Phase 12, B2 of docs/studies/barcodes-and-school-classes.md).",
+	"name": {
+		"it": "Secondaria di primo grado (Germania)",
+		"en": "Lower secondary school (Germany)"
+	},
+	"country": "DE",
+	"languages": ["de"],
+	"school": {
+		"stages": [
+			{
+				"code": "sek-I",
+				"name": "Sekundarstufe I"
+			}
+		],
+		"levels": [
+			{
+				"code": "5",
+				"label": "5",
+				"name": "Klasse 5",
+				"stage": "sek-I"
+			},
+			{
+				"code": "6",
+				"label": "6",
+				"name": "Klasse 6",
+				"stage": "sek-I"
+			},
+			{
+				"code": "7",
+				"label": "7",
+				"name": "Klasse 7",
+				"stage": "sek-I"
+			},
+			{
+				"code": "8",
+				"label": "8",
+				"name": "Klasse 8",
+				"stage": "sek-I"
+			},
+			{
+				"code": "9",
+				"label": "9",
+				"name": "Klasse 9",
+				"stage": "sek-I"
+			},
+			{
+				"code": "10",
+				"label": "10",
+				"name": "Klasse 10",
+				"stage": "sek-I"
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Klasse",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"sek-I": ["a", "b", "c", "d"]
+	},
+	"teacherGroup": "Lehrkräfte",
+	"readingLevels": []
+}

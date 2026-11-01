@@ -1,0 +1,77 @@
+{
+	"id": "pl-podstawowa",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md Phase 12, B2 of docs/studies/barcodes-and-school-classes.md).",
+	"name": {
+		"it": "Scuola primaria (Polonia)",
+		"en": "Primary school (Poland)"
+	},
+	"country": "PL",
+	"languages": ["pl"],
+	"school": {
+		"stages": [
+			{
+				"code": "podstawowa",
+				"name": "Szkoła podstawowa"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "I",
+				"name": "Klasa I",
+				"stage": "podstawowa"
+			},
+			{
+				"code": "2",
+				"label": "II",
+				"name": "Klasa II",
+				"stage": "podstawowa"
+			},
+			{
+				"code": "3",
+				"label": "III",
+				"name": "Klasa III",
+				"stage": "podstawowa"
+			},
+			{
+				"code": "4",
+				"label": "IV",
+				"name": "Klasa IV",
+				"stage": "podstawowa"
+			},
+			{
+				"code": "5",
+				"label": "V",
+				"name": "Klasa V",
+				"stage": "podstawowa"
+			},
+			{
+				"code": "6",
+				"label": "VI",
+				"name": "Klasa VI",
+				"stage": "podstawowa"
+			},
+			{
+				"code": "7",
+				"label": "VII",
+				"name": "Klasa VII",
+				"stage": "podstawowa"
+			},
+			{
+				"code": "8",
+				"label": "VIII",
+				"name": "Klasa VIII",
+				"stage": "podstawowa"
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Klasa",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"podstawowa": ["a", "b", "c"]
+	},
+	"teacherGroup": "Nauczyciele",
+	"readingLevels": []
+}

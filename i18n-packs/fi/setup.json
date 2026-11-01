@@ -1,0 +1,226 @@
+{
+	"title": "Ensimmäinen määritys",
+	"intro": "Tervetuloa BiblioVivaan. Muutamassa vaiheessa kirjasto on valmis: kieli, värit, koulu, koodit ja henkilökunnan salasanat.",
+	"stepOf": "Vaihe {{step}}/{{total}}",
+	"next": "Seuraava",
+	"back": "Takaisin",
+	"finish": "Viimeistele määritys",
+	"steps": {
+		"language": "Kieli",
+		"theme": "Värit",
+		"library": "Kirjasto",
+		"school": "Koulu",
+		"codes": "Koodit",
+		"passwords": "Salasanat",
+		"demo": "Esimerkkitiedot",
+		"summary": "Yhteenveto"
+	},
+	"language": {
+		"title": "Millä kielellä BiblioViva puhuu?",
+		"hint": "Yksi kieli per asennus: se koskee koko henkilökuntaa, ja sitä voi muuttaa kohdasta Ylläpito → Asetukset → Ulkoasu ja kieli.",
+		"restore": {
+			"title": "Sinulla on jo BiblioVivan varmuuskopio?",
+			"hint": "Jos siirrät BiblioVivan toiselle tietokoneelle tai aloitat uudelleen vian jälkeen, kysymyksiin ei tarvitse vastata: riittää arkisto, joka on luotu kohdalla ”Vie kaikki”.",
+			"button": "Palauta varmuuskopiosta"
+		}
+	},
+	"theme": {
+		"title": "Valitse värit",
+		"hint": "Viisitoista väriteemaa: ne muuttavat vain värejä, eivät koskaan muotoa. Kaikki ovat vaaleita ja luettavia myös mustavalkoisina.",
+		"names": {
+			"ocean": "Valtameri",
+			"forest": "Metsä",
+			"grape": "Viinirypäle",
+			"sunset": "Auringonlasku",
+			"cherry": "Kirsikka",
+			"lagoon": "Laguuni",
+			"silver": "Hopea",
+			"graphite": "Grafiitti",
+			"apricot": "Aprikoosi",
+			"indigo": "Indigo",
+			"mint": "Minttu",
+			"rose": "Ruusu",
+			"sahara": "Sahara",
+			"wintry": "Talvi",
+			"olive": "Oliivi"
+		}
+	},
+	"library": {
+		"title": "Kirjasto",
+		"name": "Kirjaston nimi",
+		"namePlaceholder": "Rodarin ala-asteen kirjasto",
+		"schoolType": "Koulun tyyppi",
+		"schoolTypeHint": "Vuosiluokat ja luokat koulun käytännön mukaan. Niitä voi muuttaa myöhemmin kohdissa Ylläpito → Asetukset → Koulu ja Ylläpito → Asetukset → Luokat.",
+		"photos": "Asiakkaiden valokuvat",
+		"photosHint": "Oppilaiden ja opettajien valokuvat, otettu tai ladattu, ja tulostettu kortteihin. Pois päältä: ei valokuvia missään ja kortit ilman kuvaa.",
+		"covers": "Kirjojen kansikuvat",
+		"coversHint": "Verkosta haetut, valokuvatut tai ladatut kansikuvat, jotka näkyvät luettelossa. Pois päältä: ei kansikuvia."
+	},
+	"school": {
+		"title": "Koulu",
+		"hint": "Koulutyyppi ehdottaa vuosiluokat, luokat ja lukutasot. Luokat luodaan heti; esimerkkitiedoilla ne täytetään kuvitteellisilla oppilailla.",
+		"otherCountries": "Muut maat",
+		"names": {
+			"perLevel": "{{stage}}: luokkien nimet, yksi kullekin vuosiluokalle",
+			"mixed": "{{stage}}: osastojen nimet, joista kukin sisältää kaikki vuosiluokat"
+		},
+		"namesHint": "Erotettu pilkuilla. A-D tarkoittaa A, B, C, D. Tyhjä: ei luokkia.",
+		"namesInvalid": "Nimet eivät kelpaa: kirjoita ne pilkuilla erotettuina (enintään 40).",
+		"classes": "{{count}} {{count:plural; one:luokka; other:luokkaa;}} luotavaksi:",
+		"more": "ja {{count:plural; one:yksi lisää; other:{{count}} lisää;}}",
+		"classLabel": "Luokan kirjoitustapa",
+		"teacherGroup": "Opettajien ryhmä",
+		"teacherGroupHint": "Jokainen opettaja kuuluu tähän ryhmään. Muita ryhmiä voi lisätä myöhemmin.",
+		"schoolYearStart": "Lukuvuoden alku",
+		"schoolYearStartHint": "Kuukausi ja päivä muodossa KK-PP (esimerkiksi 09-01).",
+		"schoolYearStartInvalid": "Kirjoita kuukausi ja päivä muodossa KK-PP.",
+		"schoolYearLabel": "Lukuvuoden nimi",
+		"schoolYearLabels": {
+			"span": "Kaksi vuotta (2026/2027)",
+			"start": "Alkamisvuosi (2026)"
+		},
+		"readingLevels": "Kaunokirjallisuus lajiteltu lukutason mukaan",
+		"readingLevelsHint": "Vuosiluokat, luokat ja lukutasot voi muuttaa myöhemmin ylläpidosta."
+	},
+	"codes": {
+		"title": "Koodit",
+		"hint": "Uusien nidekoodien ja uusien korttien viivakoodin muoto, kumpikin erikseen valittuna. Kaksi muotoa eivät koskaan sekoitu: koodin lukija tietää heti, onko kyseessä kirja vai kortti.",
+		"itemFormat": "Nidekoodien muoto",
+		"itemFormats": {
+			"standard": "Vuosi, tarkistusmerkki ja numero (suositeltu)",
+			"classic": "Vuosi ja numero, tarkistusmerkki lopussa",
+			"prefix": "Kirjain L edessä"
+		},
+		"cardFormat": "Korttikoodien muoto",
+		"cardFormats": {
+			"standard": "Tarkistusmerkki ja 6-numeroinen numero (suositeltu)",
+			"classic": "10-numeroinen numero, tarkistusmerkki lopussa",
+			"prefix": "Kirjain T edessä"
+		},
+		"check": "Tarkistusmerkki",
+		"checks": {
+			"mod23": "Kirjain (mod 23)",
+			"luhn": "Numero (Luhn)",
+			"damm": "Numero (Damm)"
+		},
+		"layout": "Lukijoiden näppäimistö",
+		"layoutHint": "Sen tietokoneen näppäimistön kieli, johon viivakoodinlukijat on kytketty. Se korjaa vaihdetut merkit. Jos oma kieli puuttuu, valitse lähin. Sitä voi muuttaa myöhemmin kohdassa Asetukset → Viivakoodit.",
+		"layouts": {
+			"it": "Italialainen",
+			"es": "Espanjalainen",
+			"de": "Saksalainen",
+			"fr": "Ranskalainen",
+			"uk": "Englantilainen (Iso-Britannia)",
+			"us": "Englantilainen (Yhdysvallat)"
+		},
+		"copy": "Nide",
+		"card": "Kortti",
+		"verdict": "Nidekoodit ja korttikoodit eivät voi sekoittua.",
+		"refused": "Tällä valinnalla nidekoodit ja korttikoodit voisivat sekoittua: valitse toinen muoto.",
+		"later": "Muotoja, vanhojen järjestelmien koodeja ja numerointia voi muuttaa myöhemmin kohdassa Asetukset → Viivakoodit."
+	},
+	"passwords": {
+		"title": "Henkilökunnan salasanat",
+		"hint": "Viisi jaettua tunnusta, yksi per tehtävä. Ehdotetut salasanat luodaan satunnaisesti, ja niitä voi vaihtaa. Kirjoita ne muistiin viimeisessä vaiheessa: ne näytetään vain kerran.",
+		"accounts": {
+			"admin": "Ylläpito (admin)",
+			"prestiti": "Lainausten hallinta (prestiti)",
+			"catalogo": "Luettelointi (catalogo)",
+			"tessere": "Kortit ja kuvat (tessere)",
+			"report": "Raportit (report)"
+		},
+		"regenerate": "Luo uudelleen",
+		"tooShort": "Vähintään 8 merkkiä.",
+		"demo": "Esimerkkitiedoilla kaikki tunnukset käyttävät samaa helppoa salasanaa: ”{{password}}”. Ennen kuin BiblioVivaa käytetään oikeasti, vaihda salasanat kohdassa Ylläpito → Henkilökunnan tunnukset."
+	},
+	"demo": {
+		"title": "Esimerkkitiedot",
+		"hint": "Kuvitteellisia oppilaita, kirjoja ja lainoja sovelluksen kokeilemiseen. Ne poistetaan yhdellä napsautuksella kohdasta Ylläpito, kun oikeat tiedot otetaan käyttöön.",
+		"load": "Lataa esimerkkitiedot",
+		"hasData": "Tietokannassa on jo tietoja: esimerkkitietoja ei ladata."
+	},
+	"summary": {
+		"title": "Yhteenveto",
+		"hint": "Tarkista ja vahvista. Salasanat näkyvät vain tällä sivulla: kopioi ne ennen kuin jatkat.",
+		"language": "Kieli",
+		"theme": "Värit",
+		"library": "Kirjasto",
+		"photos": "Asiakkaiden valokuvat",
+		"covers": "Kirjojen kansikuvat",
+		"school": "Koulu",
+		"classes": "Luokat",
+		"classesValue": "{{count}} {{count:plural; one:luokka; other:luokkaa;}} ({{first}}…) ja ryhmä {{teachers}}",
+		"readingLevels": "Lukutasot",
+		"none": "Ei mitään",
+		"codes": "Koodit",
+		"demo": "Esimerkkitiedot",
+		"yes": "Kyllä",
+		"no": "Ei",
+		"later": "Salasanat voi myöhemmin vaihtaa kohdassa Ylläpito → Henkilökunnan tunnukset.",
+		"working": "Tallennetaan…",
+		"error": "Asetuksia ei tallennettu: {{message}}"
+	},
+	"done": {
+		"title": "Ensimmäinen määritys valmis",
+		"hint": "Säilytä nämä salasanat turvallisessa paikassa: niitä ei näytetä uudelleen.",
+		"demoLoaded": "Esimerkkitiedot ladattu: {{patrons}} {{patrons:plural; one:asiakas; other:asiakasta;}}, {{biblios}} {{biblios:plural; one:nimeke; other:nimekettä;}}, {{items}} {{items:plural; one:nide; other:nidettä;}}, {{loans}} {{loans:plural; one:laina; other:lainaa;}}.",
+		"login": "Siirry kirjautumiseen"
+	},
+	"generic": {
+		"stage": "Koulu",
+		"level": "Taso {{level}}",
+		"groupWord": "Osasto",
+		"teacherGroup": "Opettajat"
+	},
+	"restore": {
+		"title": "Palauta varmuuskopiosta",
+		"hint": "Valitse arkisto, joka on luotu kohdalla ”Vie kaikki” (Ylläpito → Varmuuskopio). Suurin sallittu koko on {{maxMb}} Mt. Arkisto tarkistetaan ennen kuin mitään palautetaan.",
+		"choose": "Valitse arkisto",
+		"checking": "Arkistoa tarkistetaan…",
+		"from": "Kirjaston ”{{library}}” arkisto, luotu {{date}}, versio {{version}}.",
+		"fromAnonymous": "Arkisto luotu {{date}}, versio {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "Asiakkaat",
+			"catalog": "Luettelo ja niteet",
+			"loans": "Lainat ja historia",
+			"printLists": "Tulostuslistat",
+			"photos": "Asiakkaiden valokuvat",
+			"covers": "Kansikuvat",
+			"notes": "Muistiinpanot",
+			"dates": "Kalenterin päivämäärät",
+			"audit": "Toimintaloki",
+			"ui": "Käyttöliittymä",
+			"security": "Turvallisuus ja käyttöoikeudet",
+			"library": "Kirjasto ja koulu"
+		},
+		"images": "Valokuvat: {{photos}} · kansikuvat: {{covers}}",
+		"accounts": "Tunnukset, jotka voivat kirjautua sisään: {{accounts}}. Salasanat ovat arkiston salasanoja.",
+		"warning": "Palautus tuo asetukset, tiedot ja kuvat takaisin samalla kertaa, kuten ne olivat arkistossa. Sen jälkeen ohjattua määritystä ei tarvita enää.",
+		"apply": "Palauta",
+		"restoring": "Palautetaan…",
+		"cancel": "Peruuta",
+		"back": "Takaisin ohjattuun määritykseen",
+		"done": {
+			"title": "Palautus valmis",
+			"hint": "Kirjasto on sellaisena kuin se oli arkistossa. Kirjautuaksesi käytä jotakin näistä tunnuksista sillä salasanalla, joka sillä oli arkistossa:",
+			"login": "Siirry kirjautumiseen"
+		},
+		"errors": {
+			"too_large": "Arkisto on liian suuri (enintään {{maxMb}} Mt).",
+			"not_zip": "Tiedosto ei ole kelvollinen ZIP-arkisto.",
+			"not_archive": "Tiedosto ei ole BiblioViva-arkisto: valitse arkisto, joka on luotu kohdalla ”Vie kaikki”.",
+			"too_many_files": "Arkisto sisältää liian monta tiedostoa.",
+			"unsafe_path": "Arkisto sisältää sallimattoman polun: {{name}}",
+			"link": "Arkisto sisältää linkin, jota ei sallita: {{name}}",
+			"unknown_file": "Arkisto sisältää tiedoston, joka ei kuulu BiblioVivaan: {{name}}",
+			"not_setup": "Ohjattu määritys on jo suoritettu: palautus tehdään kohdasta Ylläpito → Varmuuskopio.",
+			"newer_version": "Arkisto on luotu BiblioVivan uudemmalla versiolla ({{name}}): asenna ensin se versio.",
+			"missing_parts": "Arkisto on epätäydellinen. Puuttuvat osat: {{name}}. Valitse arkisto, joka on luotu kohdalla ”Vie kaikki”.",
+			"unfinished_setup": "Arkisto on peräisin asennuksesta, jossa ohjattua määritystä ei ollut suoritettu loppuun.",
+			"not_ready": "Arkistossa on ongelmia, eikä sitä voi palauttaa: {{name}}",
+			"gone": "Tarkistettu arkisto ei ole enää saatavilla: valitse se uudelleen.",
+			"failed": "Palautus ei onnistunut."
+		}
+	}
+}

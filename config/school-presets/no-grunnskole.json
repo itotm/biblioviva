@@ -1,0 +1,110 @@
+{
+	"id": "no-grunnskole",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Grunnskole 1–10 (many schools are barneskole 1–7 or ungdomsskole 8–10: remove the other stage); classes written 7A or 7a [VERIFY]. Lessons start in mid-August [VERIFY].",
+	"name": {
+		"it": "Scuola di base, dal 1º al 10º anno (Norvegia)",
+		"en": "Compulsory school, grades 1 to 10 (Norway)",
+		"nb": "Grunnskole, 1.–10. trinn (Norge)"
+	},
+	"country": "NO",
+	"languages": ["nb"],
+	"schoolYear": {
+		"start": "08-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "barnetrinn",
+				"name": "Barnetrinnet"
+			},
+			{
+				"code": "ungdomstrinn",
+				"name": "Ungdomstrinnet"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1",
+				"name": "1. trinn",
+				"stage": "barnetrinn",
+				"aliases": ["1. klasse"]
+			},
+			{
+				"code": "2",
+				"label": "2",
+				"name": "2. trinn",
+				"stage": "barnetrinn",
+				"aliases": ["2. klasse"]
+			},
+			{
+				"code": "3",
+				"label": "3",
+				"name": "3. trinn",
+				"stage": "barnetrinn",
+				"aliases": ["3. klasse"]
+			},
+			{
+				"code": "4",
+				"label": "4",
+				"name": "4. trinn",
+				"stage": "barnetrinn",
+				"aliases": ["4. klasse"]
+			},
+			{
+				"code": "5",
+				"label": "5",
+				"name": "5. trinn",
+				"stage": "barnetrinn",
+				"aliases": ["5. klasse"]
+			},
+			{
+				"code": "6",
+				"label": "6",
+				"name": "6. trinn",
+				"stage": "barnetrinn",
+				"aliases": ["6. klasse"]
+			},
+			{
+				"code": "7",
+				"label": "7",
+				"name": "7. trinn",
+				"stage": "barnetrinn",
+				"aliases": ["7. klasse"]
+			},
+			{
+				"code": "8",
+				"label": "8",
+				"name": "8. trinn",
+				"stage": "ungdomstrinn",
+				"aliases": ["8. klasse"]
+			},
+			{
+				"code": "9",
+				"label": "9",
+				"name": "9. trinn",
+				"stage": "ungdomstrinn",
+				"aliases": ["9. klasse"]
+			},
+			{
+				"code": "10",
+				"label": "10",
+				"name": "10. trinn",
+				"stage": "ungdomstrinn",
+				"aliases": ["10. klasse"]
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Klasse",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"barnetrinn": ["A", "B", "C"],
+		"ungdomstrinn": ["A", "B", "C"]
+	},
+	"teacherGroup": "Lærere",
+	"readingLevels": []
+}

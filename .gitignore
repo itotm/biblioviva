@@ -1,0 +1,41 @@
+# Dependencies and build output
+node_modules/
+.svelte-kit/
+build/
+dist/
+/home/biblioviva-home.zip
+*.tsbuildinfo
+
+# Local runtime data (CONFIG_DIR and DATA_DIR in development)
+local/
+*.db
+*.db-wal
+*.db-shm
+
+# Environment files (keep the example)
+.env
+.env.*
+!.env.example
+
+# Test artifacts
+site/.shots/
+site/dist/
+test-results/
+test-reports/
+tests/snapshots/**/*-actual.png
+tests/snapshots/**/*-diff.png
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+.output

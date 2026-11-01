@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "Administrasjon",
+		"sections": {
+			"config": {
+				"title": "Innstillinger",
+				"description": "Klassifikasjonen og innstillingene for biblioteket."
+			},
+			"audit": {
+				"title": "Operasjonslogg",
+				"description": "Hvem som gjorde hva: innlogginger, endringer, importeringer."
+			},
+			"users": {
+				"title": "Personalkontoer",
+				"description": "Personalkontoer, roller og tillatelser."
+			},
+			"backups": {
+				"title": "Sikkerhetskopier",
+				"description": "Sikkerhetskopier av databasen og filene."
+			},
+			"rollover": {
+				"title": "Klasseopprykk",
+				"description": "Ved slutten av skoleåret: opprykk, repetenter og elever som slutter i siste klasse."
+			},
+			"exports": {
+				"title": "Eksporteringer",
+				"description": "Lånere, katalog, utlån og alle dataene som CSV- eller JSON-filer."
+			},
+			"imports": {
+				"title": "Importeringer",
+				"description": "Katalog, lånere, pågående utlån og bilder: fra CSV-filer eller fra Koha-uttrekket."
+			}
+		}
+	},
+	"audit": {
+		"title": "Operasjonslogg",
+		"filters": {
+			"from": "Fra",
+			"to": "Til",
+			"user": "Konto",
+			"action": "Handling",
+			"all": "Alle"
+		},
+		"columns": {
+			"when": "Når",
+			"user": "Konto",
+			"action": "Handling",
+			"entity": "Objekt",
+			"entityId": "ID",
+			"details": "Detaljer"
+		},
+		"count": "{{shown}} av {{total}} {{total:plural; one:oppføring; other:oppføringer;}}",
+		"empty": "Ingen oppføringer samsvarer med disse filtrene.",
+		"system": "system"
+	},
+	"users": {
+		"title": "Personalkontoer",
+		"fields": {
+			"roles": "Roller",
+			"permissions": "Tillatelser",
+			"lastLogin": "Siste innlogging",
+			"never": "aldri"
+		},
+		"status": {
+			"active": "Aktiv",
+			"inactive": "Deaktivert",
+			"plainPassword": "Passord i klartekst i filen",
+			"notInConfig": "Fjernet fra innstillingene"
+		},
+		"hash": {
+			"title": "Generer passordhash",
+			"description": "Skriv inn passordet som skal tildeles, så får du argon2id-hashen som skal limes inn i passwordHash. Passordet lagres ikke.",
+			"password": "Passord (minst {{min}} tegn)",
+			"generate": "Generer hash",
+			"result": "Hash å lime inn",
+			"copy": "Kopier",
+			"copied": "Hash kopiert",
+			"tooShort": "Passordet må ha minst {{min}} tegn.",
+			"disclosure": "For den som redigerer filene for hånd: generer hashen til et passord"
+		},
+		"reload": {
+			"button": "Last inn innstillingene på nytt",
+			"success": "Innstillingene er lastet inn på nytt",
+			"successWithWarnings": "Innstillingene er lastet inn på nytt med {{count}} {{count:plural; one:advarsel; other:advarsler;}}",
+			"failed": "Ugyldige innstillinger: de forrige forblir aktive",
+			"exampleSource": "Advarsel: config.json finnes ikke, og eksempelinnstillingene er i bruk."
+		},
+		"new": "Ny konto",
+		"newPassword": "Nytt passord",
+		"permissionNames": {
+			"all": "Alt",
+			"loans": "Utlån",
+			"patrons": "Lånere",
+			"patrons_import": "Importer lånere",
+			"catalog": "Katalog",
+			"catalog_import": "Importer katalog",
+			"reports": "Rapporter",
+			"anonymize": "Anonymiser",
+			"admin": "Administrasjon"
+		},
+		"roles": {
+			"title": "Roller og tillatelser",
+			"hint": "En rolle er et sett med tillatelser, og hver konto har én eller flere roller. «Alt» gir alle tillatelsene, også dem som kommer i senere versjoner. Når du gir en rolle nytt navn, oppdateres kontoene som bruker den.",
+			"name": "Rolle",
+			"unused": "ingen konto",
+			"badName": "Bokstaver, siffer, bindestreker og understreker (høyst 32).",
+			"add": "Legg til en rolle",
+			"saved": "Rollene er lagret"
+		},
+		"auth": {
+			"title": "Innlogging",
+			"config": "Man logger inn med kontoene på denne siden, vanligvis én delt konto per rolle (for eksempel «utlån» for utlånsdisken).",
+			"database": "Man logger inn med personlige kontoer.",
+			"later": "Personlige kontoer, én per person, er planlagt til en senere versjon."
+		},
+		"dialog": {
+			"title": {
+				"new": "Ny konto",
+				"edit": "Rediger {{name}}",
+				"password": "Nytt passord for {{name}}"
+			},
+			"username": "Brukernavn",
+			"usernameHint": "Små bokstaver, siffer, punktum, bindestrek og understrek (2 til 32).",
+			"badUsername": "Bruk små bokstaver, siffer, punktum, bindestrek og understrek (2 til 32).",
+			"displayName": "Navn som vises",
+			"active": "Aktiv konto (kan logge inn)",
+			"password": "Passord (minst {{min}} tegn)",
+			"repeat": "Gjenta passordet",
+			"mismatch": "De to passordene er ulike.",
+			"passwordHint": "Passordet lagres ikke: i innstillingene skrives bare hashen. Den som er logget inn med denne kontoen, må logge inn på nytt.",
+			"saved": {
+				"new": "Konto opprettet",
+				"edit": "Konto lagret",
+				"password": "Passord endret"
+			},
+			"removed": "Konto slettet",
+			"removeTitle": "Slette {{name}}?",
+			"removeHint": "Kontoen fjernes fra innstillingene, men det den gjorde, står fortsatt i loggen under navnet. Det kan angres fra historikken for innstillingene."
+		},
+		"errors": {
+			"badUsername": "Ugyldig brukernavn: {{details}}.",
+			"usernameTaken": "Brukernavnet {{details}} er allerede i bruk.",
+			"notFound": "Fant ikke kontoen: {{details}}.",
+			"noRoles": "Velg minst én rolle.",
+			"unknownRole": "Ukjent rolle: {{details}}.",
+			"passwordTooShort": "Passordet er for kort.",
+			"passwordRequired": "En ny konto trenger et passord.",
+			"lastAdmin": "Minst én aktiv konto må beholde tillatelsen til administrasjon.",
+			"stillActive": "Deaktiver kontoen før du sletter den.",
+			"badRole": "Ugyldig rollenavn: {{details}}.",
+			"roleTaken": "To roller har navnet {{details}}.",
+			"roleInUse": "Rollen brukes av noen kontoer: {{details}}.",
+			"invalid": "Innstillingene ville ikke vært gyldige: {{details}}."
+		}
+	},
+	"backups": {
+		"title": "Sikkerhetskopier",
+		"runNow": "Ta sikkerhetskopi nå",
+		"created": "Sikkerhetskopi laget: {{name}}",
+		"createdDeleted": "Sikkerhetskopi laget: {{name}} ({{deleted}} {{deleted:plural; one:gammel sikkerhetskopi slettet; other:gamle sikkerhetskopier slettet;}})",
+		"empty": "Ingen sikkerhetskopier ennå. Den første lages til planlagt tid, eller du kan velge «Ta sikkerhetskopi nå».",
+		"download": "Last ned",
+		"columns": {
+			"when": "Laget",
+			"size": "Størrelse"
+		},
+		"catchUp": {
+			"badge": "Laget ved oppstart",
+			"hint": "Den planlagte sikkerhetskopien ble oversett (datamaskinen var slått av), så BiblioViva laget den ved oppstart."
+		},
+		"offsite": {
+			"title": "Siste kopi utenfor stedet",
+			"disabled": "Kopi utenfor stedet er ikke satt opp. Den slås på med tjenesten «offsite» (rclone) som er beskrevet i installasjonsveiledningen.",
+			"never": "Tjenesten er slått på, men har ikke skrevet noe resultat ennå.",
+			"ok": "Siste kopi lyktes: {{when}}",
+			"error": "Siste kopi mislyktes: {{when}}",
+			"stale": "Kopien utenfor stedet er eldre enn to dager: kontroller tjenesten offsite.",
+			"remote": "Mål: {{remote}}"
+		},
+		"restore": {
+			"title": "Gjenoppretting",
+			"button": "Gjenopprett…",
+			"hint": "Velg «Gjenopprett…» på en sikkerhetskopi i listen, eller last opp et arkiv fra BiblioViva (en sikkerhetskopi, «Eksporter alt» eller «Eksporter innstillinger», opptil {{maxMb}} MB; et større arkiv kopieres til sikkerhetskopimappen på serveren eller gjenopprettes med bun run backup:restore). Alt kontrolleres først, deretter gjenopprettes bare de valgte delene, og de andre forblir som de er.",
+			"upload": "Last opp et arkiv",
+			"from": "Fra {{name}} av {{date}}",
+			"count": "{{part}}: nå {{live}}, i sikkerhetskopien {{archive}}",
+			"images": "Bilder som skal gjenopprettes: {{photos}} {{photos:plural; one:bilde; other:bilder;}}, {{covers}} {{covers:plural; one:omslagsbilde; other:omslagsbilder;}}.",
+			"gapsTitle": "Noen data ville stå igjen uten det de viser til:",
+			"gap": "{{rows:plural; one:{{rows}} rad i «{{part}}» viser til; other:{{rows}} rader i «{{part}}» viser til;}} «{{needs}}» som ikke ville vært der: legg til «{{add}}» i valget.",
+			"schema": "Sikkerhetskopien er fra en annen versjon av BiblioViva (tabeller {{tables}}), så den kan ikke gjenopprettes her.",
+			"apply": "Gjenopprett",
+			"confirmTitle": "Gjenopprette de valgte delene?",
+			"confirmHint": "De valgte dataene og innstillingene erstattes med dem fra sikkerhetskopien. Innstillingene kan hentes tilbake fra historikken. For dataene bør du først lage en sikkerhetskopi, hvis det ikke finnes en nylig.",
+			"done": "Gjenoppretting fullført",
+			"notArchive": "Filen er ikke et arkiv fra BiblioViva."
+		},
+		"contents": {
+			"title": "Hva sikkerhetskopien inneholder",
+			"database": "Database: en fullstendig kopi ved hver kjøring (listen under).",
+			"images": "Bilder og omslag: kopieres hver natt til mappen «uploads» i sikkerhetskopien ({{photos}} {{photos:plural; one:bilde; other:bilder;}}, {{covers}} {{covers:plural; one:omslagsbilde; other:omslagsbilder;}} akkurat nå).",
+			"imagesPending": "Bilder og omslag: den første kopien lages ved neste kjøring ({{photos}} {{photos:plural; one:bilde; other:bilder;}}, {{covers}} {{covers:plural; one:omslagsbilde; other:omslagsbilder;}} å kopiere).",
+			"config": "Innstillingene (utskriftsmaler, bilder og valg) er ikke med i den nattlige sikkerhetskopien. Bruk «Eksporter alt» for å få dem."
+		},
+		"export": {
+			"button": "Eksporter alt",
+			"hint": "Én ZIP-fil med databasen, bildene, omslagene og hele innstillingene (inkludert utskriftsmaler og bilder), klar for «bun run backup:restore»."
+		},
+		"createdMirror": "Sikkerhetskopi laget: {{name}}; {{copied}} {{copied:plural; one:bilde kopiert; other:bilder kopiert;}}",
+		"parts": {
+			"title": "Sikkerhetskopi eller eksport av noen deler",
+			"hint": "Velg hva som skal være med: bibliotekets data, innstillingene for hver seksjon, malene, bildene … «Lag sikkerhetskopi» lagrer den i listen under, og «Last ned» laster den ned til datamaskinen.",
+			"create": "Lag sikkerhetskopi",
+			"download": "Last ned"
+		}
+	},
+	"demo": {
+		"clear": "Tøm eksempeldata",
+		"confirmTitle": "Tømme eksempeldataene?",
+		"confirmDescription": "Lånerne, bøkene, utlånene og bildene i eksempeldataene blir slettet. Klassene og lærergruppen består. Alle operatørene blir logget ut.",
+		"cleared": "Eksempeldataene er fjernet. Logg inn på nytt.",
+		"clearedPassword": "Kontoene har fortsatt eksempelpassordet «{{password}}»: endre det nå under Administrasjon → Personalkontoer."
+	},
+	"appearance": {
+		"title": "Utseende og språk",
+		"current": "Gjeldende sett: {{name}}",
+		"areas": {
+			"title": "Stil for områdene",
+			"hint": "Topplinjen får fargen til området du jobber i (Utlån, Katalog, Lånere …), i tonene til det valgte fargesettet. Områdets ikon og navn er alltid synlige.",
+			"styles": {
+				"tinted": "Tonet linje (anbefalt)",
+				"filled": "Fylt linje",
+				"accents": "Bare aksenter",
+				"none": "Ingen farge"
+			},
+			"saved": "Stil for områdene er lagret"
+		},
+		"colours": {
+			"title": "Fargesett"
+		},
+		"save": "Lagre fargene",
+		"saved": "Fargene er lagret",
+		"unchanged": "Ingenting å lagre.",
+		"language": {
+			"title": "Språk i applikasjonen",
+			"hint": "Ett språk per installasjon: det gjelder for hele personalet.",
+			"save": "Endre språk",
+			"saved": "Språket er endret: siden lastes inn på nytt."
+		},
+		"logo": {
+			"title": "Bibliotekets logo",
+			"hint": "Vises øverst til venstre på hver side, ved siden av bibliotekets navn. PNG, JPEG eller WebP; best med gjennomsiktig bakgrunn.",
+			"upload": "Last opp logoen",
+			"replace": "Endre logoen",
+			"remove": "Fjern logoen",
+			"saved": "Logoen er lagret.",
+			"removed": "Logoen er fjernet.",
+			"none": "Ingen logo: det vises et generisk ikon.",
+			"preview": "Gjeldende logo",
+			"errors": {
+				"empty": "Filen er tom.",
+				"too_large": "Filen er for stor (høyst {{maxMb}} MB).",
+				"not_an_image": "Filen er ikke et bilde.",
+				"unsupported_format": "Formatet godtas ikke: bruk PNG, JPEG eller WebP."
+			}
+		},
+		"name": {
+			"title": "Bibliotekets navn",
+			"hint": "Vises øverst til venstre, på dashbordet, på utskrifter og i appen som er installert på telefonen.",
+			"label": "Navn",
+			"save": "Lagre navnet",
+			"saved": "Bibliotekets navn er lagret",
+			"required": "Skriv inn bibliotekets navn."
+		},
+		"dashboard": {
+			"title": "Dashbord",
+			"hint": "Seksjonene på startsiden, for hele biblioteket. Hurtighandlingene står alltid først. Innenfor hver seksjon ser hver konto bare det den kan gjøre.",
+			"save": "Lagre dashbordet",
+			"saved": "Dashbordet er lagret",
+			"sections": {
+				"quickActions": "Hurtighandlinger",
+				"tiles": "Biblioteket i dag (flisene med tallene)",
+				"inventory": "Bokrevisjon pågår",
+				"installHint": "Invitasjon til å legge appen på startskjermen (telefoner)",
+				"dueThisWeek": "Forfaller denne uken",
+				"upcomingDates": "Kommende datoer i kalenderen",
+				"todayActivity": "Dagens utlån"
+			}
+		}
+	},
+	"templates": {
+		"title": "Utskriftsmaler",
+		"reload": "Last inn malene på nytt",
+		"reloaded": "Malene er lest inn fra disken på nytt",
+		"kinds": {
+			"cards": "Lånekort",
+			"labels": "Etiketter",
+			"slips": "Purringer"
+		},
+		"list": {
+			"source": {
+				"builtin": "Følger med appen",
+				"config": "I innstillingene"
+			},
+			"default": "Standard",
+			"status": {
+				"ok": "Gyldig",
+				"error": "Feil"
+			},
+			"folder": "Mappe",
+			"forTypes": "For: {{types}}",
+			"emptyCards": "Ingen mal for lånekort: kontroller mappen cards/templates i innstillingene.",
+			"emptyLabels": "Ingen etikettmal ennå: de kommer med utskrift av katalogetiketter.",
+			"emptySlips": "Ingen purremal ennå: den kommer med utlånsdelen."
+		},
+		"preview": {
+			"title": "Forhåndsvisning",
+			"front": "Forside",
+			"back": "Bakside",
+			"patron": "Låner som skal vises",
+			"sample": "Eksempellåner",
+			"real": "Ekte låner",
+			"search": "Søk etter en ekte låner",
+			"searchPlaceholder": "Etternavn eller fornavn",
+			"noResults": "Fant ingen låner.",
+			"zoom": "Zoom",
+			"sheet": "Hele arket",
+			"sheetHint": "En A4-side med eksempellåneren, slik den skal skrives ut.",
+			"test": "Skriv ut testside",
+			"broken": "Malen kan ikke brukes før den er rettet:",
+			"size": "{{width}} × {{height}} mm ved zoom {{zoom}}"
+		},
+		"test": {
+			"title": "Testside for lånekort",
+			"ruler": "Linjal på 10 cm: etter utskrift må den måle 100 mm (skriv ut med 100 %, uten «tilpass til siden»)."
+		},
+		"calibration": {
+			"title": "Kalibreringsside for etiketter",
+			"stock": "Klebeark",
+			"print": "Skriv ut kalibreringssiden",
+			"hint": "Skriv ut på vanlig papir og legg et ark med etiketter over for å kontrollere marginene."
+		},
+		"howTo": {
+			"title": "Slik lager du en mal",
+			"steps": {
+				"step1": "Under Innstillinger → Utskriftsmaler velger du «Dupliser» på en mal (for eksempel {{path}}) og gir den et nytt navn.",
+				"step2": "Med «Rediger» tegner du den om, eller endrer koden; bilder lastes opp på samme side.",
+				"step3": "Gå tilbake hit og kontroller forhåndsvisningen: et ukjent felt eller en manglende fil blir meldt.",
+				"step4": "For å bruke den på ordentlig velger du den i innstillingene for lånekort eller etiketter."
+			}
+		},
+		"labels": {
+			"stocks": "Beregnet for: {{stocks}}",
+			"preview": "Forhåndsvisning av {{name}}",
+			"geometry": "Enhet på {{width}} × {{height}} mm · variant {{variant}}",
+			"sheet": "Eksempelark"
+		}
+	},
+	"loansImport": {
+		"title": "Importer pågående utlån",
+		"upload": {
+			"hint": "Brukes én gang, ved overgang fra Koha: én rad for hvert pågående utlån, med lånekortet og strekkoden til eksemplaret og, hvis de finnes, utlånsdatoen og forfallsdatoen. Importer lånere og katalog først. Malen, med de nødvendige kolonnene, lastes ned under.",
+			"submit": "Last opp"
+		},
+		"mapping": {
+			"uncertain": "Kontroller kolonnene før du fortsetter.",
+			"validate": "Kontroller filen",
+			"without": {
+				"issuedOn": "Uten kolonnen issued_on blir utlånene datert i dag.",
+				"dueOn": "Uten kolonnen due_on beregnes forfallsdatoen som ved utlånsdisken, med utlånsreglene og kalenderen."
+			}
+		},
+		"fields": {
+			"cardNumber": "Lånekort",
+			"barcode": "Strekkode",
+			"issuedOn": "Utlånsdato",
+			"dueOn": "Forfallsdato"
+		},
+		"preview": {
+			"ready": "Ingen feil: utlånene kan importeres.",
+			"blocked": "Rett feilene og kontroller på nytt: ingenting importeres med feil.",
+			"overdue": "{{count}} {{count:plural; one:utlån er; other:utlån er;}} allerede forfalt: {{count:plural; one:det importeres og vises; other:de importeres og vises;}} blant de forfalte utlånene.",
+			"columns": {
+				"patron": "Låner",
+				"barcode": "Eksemplar",
+				"issued": "Utlån",
+				"due": "Forfall"
+			},
+			"commit": "Importer utlånene",
+			"back": "Tilbake til kolonnene"
+		},
+		"reasons": {
+			"cardMissing": "Lånekortet mangler",
+			"cardUnknown": "Ingen låner med lånekort {{value}}",
+			"barcodeMissing": "Strekkoden mangler",
+			"barcodeUnknown": "Ingen eksemplar med strekkode {{value}}",
+			"alreadyOnLoan": "Eksemplar {{value}} er allerede utlånt",
+			"itemWithdrawn": "Eksemplar {{value}} er utrangert",
+			"duplicateInFile": "Samme eksemplar står allerede på linje {{line}}",
+			"issueDateInvalid": "Ugyldig utlånsdato: «{{value}}»",
+			"issueDateFuture": "Utlånsdato i fremtiden: {{value}}",
+			"dueDateInvalid": "Ugyldig forfallsdato: «{{value}}»",
+			"dueBeforeIssue": "Forfallsdatoen er før utlånsdatoen",
+			"overdue": "Allerede forfalt siden {{date}}",
+			"itemUnclassified": "Eksemplar {{value}} tilhører en bok som skal klassifiseres: utlånet importeres, men ved utlånsdisken lånes det ikke ut før boken er klassifisert"
+		},
+		"done": {
+			"title": "Utlån importert",
+			"summary": "{{created}} {{created:plural; one:utlån ble importert; other:utlån ble importert;}}, derav {{overdue}} {{overdue:plural; one:allerede forfalt; other:allerede forfalt;}}.",
+			"batch": "Import nr. {{id}}: originalfilen er beholdt.",
+			"again": "Importer en annen fil"
+		},
+		"columns": {
+			"cardNumber": "Lånekortnummeret til låneren, som allerede er importert.",
+			"barcode": "Strekkoden til eksemplaret, som allerede er importert.",
+			"issuedOn": "Utlånsdatoen; i dag når den mangler.",
+			"dueOn": "Forfallsdatoen; beregnes med utlånsreglene når den mangler."
+		}
+	},
+	"photosImport": {
+		"title": "Importer lånernes bilder",
+		"hint": "Én fil per låner, navngitt etter lånekortnummeret (for eksempel 0000001240.jpg). Det er dette uttrekket beskrevet i administratorveiledningen produserer. Hvert bilde endres til riktig størrelse og renses for skjulte data. Filer som ikke samsvarer med noe lånekort, listes opp.",
+		"replace": "Erstatt bildene som allerede finnes",
+		"zip": {
+			"title": "Fra et ZIP-arkiv",
+			"file": "ZIP-arkiv med bildene",
+			"submit": "Importer bildene"
+		},
+		"folder": {
+			"title": "Fra mappen på serveren",
+			"hint": "Kopier filene til {{path}}: {{count:plural; one:det er nå {{count}}; other:det er nå {{count}};}}. Egnet for mange bilder, som ville vært for tunge å laste opp som arkiv.",
+			"submit": "Importer fra mappen"
+		},
+		"summary": {
+			"title": "Resultat",
+			"text": "{{imported}} {{imported:plural; one:bilde importert; other:bilder importert;}}, {{replaced}} {{replaced:plural; one:erstattet; other:erstattet;}}, {{kept}} {{kept:plural; one:latt være som det var; other:latt være som de var;}} (bilde allerede til stede), {{unmatched}} {{unmatched:plural; one:fil uten låner; other:filer uten låner;}}, {{unreadable}} {{unreadable:plural; one:uleselig fil; other:uleselige filer;}}.",
+			"unreadable": "Ikke lesbare bilder: {{files}}",
+			"unmatched": "Last ned listen over filer uten låner"
+		},
+		"errors": {
+			"notZip": "Filen er ikke et gyldig ZIP-arkiv.",
+			"empty": "Arkivet inneholder ingen filer."
+		},
+		"done": "Bilder importert"
+	},
+	"rollover": {
+		"title": "Klasseopprykk",
+		"subtitle": "Ved slutten av skoleåret rykker alle elevene opp ett årstrinn, og de som går ut fra siste årstrinn, forlater skolen.",
+		"steps": {
+			"backup": "Sikkerhetskopi",
+			"classes": "Klasser",
+			"leavers": "Avgang",
+			"confirm": "Bekreft",
+			"done": "Fullført"
+		},
+		"backup": {
+			"text": "Først og fremst en sikkerhetskopi av databasen: hvis noe går galt, går du tilbake fra Administrasjon → Sikkerhetskopier.",
+			"create": "Lag sikkerhetskopien",
+			"created": "Sikkerhetskopi laget: {{name}}"
+		},
+		"classes": {
+			"text": "Hver elev rykker opp ett årstrinn sammen med klassen sin. Merk hvem som tar om året, og hvem som bytter klasse.",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; one:elev; other:elever;}}",
+			"exceptions": "{{count}} {{count:plural; one:unntak; other:unntak;}}",
+			"loans": "{{count}} med bøker på utlån",
+			"repeat": "Tar om",
+			"target": "Klasse",
+			"noGroup": "Ingen klasse",
+			"choose": "Velg klassen …",
+			"fates": {
+				"advances": "Rykker opp",
+				"stays": "Blir",
+				"archived": "Avsluttes"
+			},
+			"unplaced": "{{count}} {{count:plural; one:elev venter; other:elever venter;}} på at klassen velges.",
+			"none": "Ingen elever rykker opp ett årstrinn.",
+			"nextYear": "Året etter",
+			"leaves": "Slutter på skolen"
+		},
+		"leavers": {
+			"text": "Elevene på siste årstrinn slutter på skolen: dataene deres slettes straks og for godt, og bare tallene i statistikken blir igjen. Fjern haken for den som blir, for eksempel en elev som tar siste årstrinn om igjen.",
+			"leaves": "Slutter",
+			"openLoans": "{{count}} {{count:plural; one:bok; other:bøker;}} på utlån",
+			"blocked": "{{count}} {{count:plural; one:eleven som slutter har; other:elevene som slutter har;}} fortsatt bøker: registrer innleveringen eller merk dem tapt, eller fjern haken.",
+			"toCheckin": "Gå til innleveringer",
+			"none": "Ingen elever på siste årstrinn."
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; one:elev rykker; other:elever rykker;}} opp ett årstrinn",
+			"repeat": "{{count}} {{count:plural; one:tar; other:tar;}} om året",
+			"groupChanges": "{{count}} {{count:plural; one:bytter; other:bytter;}} klasse",
+			"closing": "{{count}} {{count:plural; one:klasse avsluttes og arkiveres; other:klasser avsluttes og arkiveres;}}",
+			"remove": "{{count}} {{count:plural; one:slutter på skolen og dataene slettes; other:slutter på skolen og dataene slettes;}}",
+			"recent": "Forrige opprykk ble gjort {{date}}, for mindre enn seks måneder siden. Jeg bekrefter at jeg vil gjøre det om igjen.",
+			"run": "Rykk opp klassene"
+		},
+		"done": {
+			"title": "Opprykket er fullført",
+			"advanced": "{{count}} {{count:plural; one:klasse rykket; other:klasser rykket;}} opp ett årstrinn",
+			"archived": "{{count}} {{count:plural; one:klasse arkivert; other:klasser arkivert;}}",
+			"text": "Neste steg: opprett de nye første klassene om nødvendig, og importer de nye elevene med synkroniseringen.",
+			"import": "Importer de nye elevene"
+		},
+		"errors": {
+			"blocked": "Noen elever som slutter, har fortsatt bøker på utlån.",
+			"recent": "Bekreftelse kreves: forrige opprykk er nylig.",
+			"no_backup": "Sikkerhetskopien ble ikke funnet eller er for gammel: lag den på nytt fra første steg.",
+			"invalid_group": "En valgt klasse finnes ikke, eller den har ikke elevens årstrinn.",
+			"unplaced": "Noen elever har ikke klasse ennå: velg den i steget Klasser.",
+			"invalid_level": "Ett av de valgte årstrinnene er ikke blant de mulige: last inn siden på nytt."
+		},
+		"next": "Neste",
+		"back": "Tilbake"
+	},
+	"classes": {
+		"title": "Klasser",
+		"subtitle": "Skolens klasser og lærergruppene.",
+		"hint": "Årstrinnene og skoletrinnene endres i innstillingene:",
+		"structureLink": "Skole",
+		"new": "Nye klasser",
+		"newTeachers": "Ny lærergruppe",
+		"teachers": "Lærere",
+		"mixed": "Kombinert klasse",
+		"empty": "Ingen klasser",
+		"emptyHint": "Ingen klasser. Klasser opprettes med Nye klasser, for eksempel årstrinnene 1 til 5 og navnene A-D.",
+		"archivedTitle": "{{count:plural; one:Arkivert klasse; other:Arkiverte klasser;}} ({{count}})",
+		"archive": "Arkiver",
+		"archiveNotEmpty": "Den har fortsatt lånere: den kan ikke arkiveres",
+		"restore": "Gjenopprett",
+		"archived": "Klasse {{name}} arkivert",
+		"restored": "Klasse {{name}} gjenopprettet",
+		"columns": {
+			"class": "Klasse",
+			"levels": "Årstrinn",
+			"patrons": "Lånere"
+		},
+		"dialog": {
+			"title": {
+				"students": "Nye klasser",
+				"teachers": "Ny lærergruppe",
+				"edit": "Rediger {{name}}"
+			},
+			"levels": "Årstrinn",
+			"names": "Navn på klassene",
+			"namesHint": "Skilles med komma; A-D betyr A, B, C, D. Et navn kan inneholde mellomrom.",
+			"name": "Navn",
+			"mixed": "Én kombinert klasse med alle de valgte årstrinnene",
+			"stage": "Skoletrinn",
+			"anyStage": "Alle",
+			"notes": "Merknader",
+			"preview": "{{count}} {{count:plural; one:klasse; other:klasser;}} som skal opprettes:",
+			"previewEmpty": "Velg minst ett årstrinn og skriv inn navnene.",
+			"saved": {
+				"students": "{{count}} {{count:plural; one:klasse opprettet; other:klasser opprettet;}}",
+				"teachers": "Lærergruppe opprettet",
+				"edit": "Klassen er lagret"
+			}
+		},
+		"errors": {
+			"nameRequired": "Navnet er obligatorisk.",
+			"nameLong": "Navnet er for langt (høyst 40 tegn).",
+			"levelsRequired": "Velg minst ett årstrinn.",
+			"levelUnknown": "Et valgt årstrinn finnes ikke lenger.",
+			"levelsNotForTeachers": "En lærergruppe har ingen årstrinn.",
+			"nameTaken": "Det finnes allerede en klasse med dette navnet for samme årstrinn.",
+			"levelInUse": "Noen elever i klassen er på et årstrinn som ville blitt fjernet.",
+			"notEmpty": "Klassen har fortsatt lånere.",
+			"notFound": "Klassen finnes ikke lenger."
+		}
+	},
+	"exports": {
+		"title": "Eksporteringer",
+		"subtitle": "Bibliotekets data i filer som kan oppbevares, importeres på nytt eller tas med til et annet program.",
+		"items": {
+			"students": {
+				"title": "Elever (CSV)",
+				"description": "De aktive elevene i importformatet: de importeres inn igjen fra Administrasjon → Importeringer → Elever."
+			},
+			"teachers": {
+				"title": "Lærere (CSV)",
+				"description": "De aktive lærerne i importformatet: de importeres inn igjen fra Administrasjon → Importeringer → Lærere."
+			},
+			"catalog": {
+				"title": "Katalog (CSV)",
+				"description": "Én rad per eksemplar med bokens data, i importformatet for katalogen."
+			},
+			"open-loans": {
+				"title": "Pågående utlån (CSV)",
+				"description": "Lånekort, eksemplar, utlånsdato og forfallsdato: de importeres inn igjen fra Administrasjon → Importeringer → Pågående utlån."
+			},
+			"loans-history": {
+				"title": "Utlånshistorikk (CSV)",
+				"description": "Alle utlån med klassen og parallellen på utlånsdagen."
+			},
+			"dump": {
+				"title": "Alle dataene (JSON)",
+				"description": "Lånere, katalog, utlån og lister i én fil, for å flytte til en annen installasjon eller et annet program."
+			}
+		},
+		"download": "Last ned",
+		"patronNote": "Dataene til én enkelt person (innsynsforespørsel) lastes ned fra vedkommendes låneropplysninger.",
+		"patronExport": "Eksporter personens data"
+	},
+	"imports": {
+		"title": "Importeringer",
+		"hint": "Brukes ved overgang fra Koha, og for lånerne ved starten av hvert skoleår, for de nye klassene. Hver fil kontrolleres helt før noe importeres.",
+		"cards": {
+			"catalog": {
+				"title": "Katalog",
+				"description": "Bøker og eksemplarer fra en CSV-fil eller fra eksporten fra Koha."
+			},
+			"students": {
+				"title": "Elever",
+				"description": "Klassene fra det elektroniske klasseregisteret, hvert nytt skoleår: fornavn, etternavn og klasse."
+			},
+			"teachers": {
+				"title": "Lærere",
+				"description": "Skolens lærere: fornavn og etternavn, med lånekortet når de har et."
+			},
+			"loans": {
+				"title": "Pågående utlån",
+				"description": "De pågående utlånene, importert én gang ved overgangen fra Koha."
+			},
+			"photos": {
+				"title": "Lånernes bilder",
+				"description": "Bildene eksportert fra Koha, ett per lånekort."
+			}
+		}
+	},
+	"calibration": {
+		"title": "Kalibrer tosidig utskrift",
+		"intro": "For å skrive ut lånekortene på begge sider av arket må baksiden havne nøyaktig bak forsiden. Hver skriver flytter baksiden litt: denne testen måler hvor mye, én gang for alle.",
+		"current": "Slik vender arket: {{flip}}. Forskyvning av baksidene i bruk: {{x}} mm på tvers, {{y}} mm nedover.",
+		"steps": {
+			"print": "Skriv ut kalibreringsarket med knappen nedenfor.",
+			"window": {
+				"long-edge": "I utskriftsvinduet velger du «Tosidig», med vending om lang kant, skala 100 % og ingen marger.",
+				"short-edge": "I utskriftsvinduet velger du «Tosidig», med vending om kort kant, skala 100 % og ingen marger."
+			},
+			"cut": "På siden med den store «1» klipper du forsiktig langs den svarte linjen.",
+			"read": "Snu kartongen: på siden «2» leser du de to tallene der den klippede kanten krysser linjalene (med fortegn: + eller −).",
+			"save": "Skriv inn de to tallene nedenfor og lagre: forskyvningen av baksidene blir korrigert.",
+			"check": "Skriv ut arket på nytt for å kontrollere: den klippede kanten skal nå krysse begge linjalene på 0."
+		},
+		"print": "Skriv ut kalibreringsarket",
+		"drawing": {
+			"title": "Hva du skal lese",
+			"label": "Side 2 etter klippingen: den klippede kanten krysser linjalene",
+			"x": "vannrett linjal",
+			"y": "loddrett linjal",
+			"hint": "Den klippede kanten krysser hver linjal: tallet der er verdien som skal skrives inn. Hver strek er en millimeter, og tallene kommer for hver femte."
+		},
+		"fields": {
+			"x": "Vannrett linjal (mm)",
+			"y": "Loddrett linjal (mm)",
+			"hint": "Tallet der den klippede kanten havner, med fortegn; 0 hvis den havner på null."
+		},
+		"next": "Etter lagringen blir forskyvningen av baksidene {{x}} mm på tvers og {{y}} mm nedover.",
+		"save": "Lagre kalibreringen",
+		"saved": "Kalibreringen er lagret: baksidene er forskjøvet {{x}} mm på tvers og {{y}} mm nedover.",
+		"open": "Kalibrer tosidig utskrift",
+		"sheet": {
+			"title": "BiblioViva · kalibrering av tosidig utskrift",
+			"cut": "Klipp langs den svarte linjen, og snu kartongen.",
+			"read": "Les på de to linjalene der den klippede kanten havner."
+		}
+	}
+}

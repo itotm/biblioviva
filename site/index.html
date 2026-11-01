@@ -1,0 +1,179 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<html lang="it">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>BiblioViva — documentazione in arrivo</title>
+		<meta
+			name="description"
+			content="BiblioViva: la biblioteca scolastica, semplice. Software libero per catalogo, prestiti, utenti, tessere ed etichette. Documentazione in arrivo."
+		/>
+		<link rel="icon" href="logo.webp" type="image/webp" />
+		<style>
+			:root {
+				--blue: #0b5cc4;
+				--blue-dark: #083f86;
+				--ink: #1b2430;
+				--muted: #5b6573;
+				--bg: #f3f6fb;
+				--card: #ffffff;
+				--line: #dfe5ee;
+				color-scheme: light;
+			}
+			* {
+				box-sizing: border-box;
+			}
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				min-height: 100svh;
+				display: grid;
+				place-items: center;
+				padding: 24px 16px;
+				background:
+					radial-gradient(60rem 30rem at 10% -10%, #dbe9ff 0, transparent 60%),
+					radial-gradient(50rem 25rem at 110% 110%, #ffe9d6 0, transparent 60%), var(--bg);
+				font-family:
+					system-ui,
+					-apple-system,
+					"Segoe UI",
+					Roboto,
+					"Noto Sans",
+					sans-serif;
+				color: var(--ink);
+				line-height: 1.5;
+			}
+			main {
+				width: min(100%, 44rem);
+				background: var(--card);
+				border: 1px solid var(--line);
+				border-radius: 24px;
+				box-shadow:
+					0 1px 2px rgb(15 23 42 / 0.06),
+					0 12px 40px -12px rgb(15 23 42 / 0.25);
+				padding: clamp(24px, 5vw, 48px);
+				text-align: center;
+			}
+			img {
+				width: min(100%, 320px);
+				height: auto;
+				display: block;
+				margin: 0 auto 16px;
+			}
+			.badge {
+				display: inline-block;
+				padding: 4px 14px;
+				border-radius: 999px;
+				background: #e6f0ff;
+				color: var(--blue-dark);
+				font-weight: 700;
+				font-size: 0.9rem;
+				letter-spacing: 0.02em;
+				text-transform: uppercase;
+			}
+			h1 {
+				font-size: clamp(1.6rem, 4vw, 2.4rem);
+				line-height: 1.15;
+				margin: 16px 0 8px;
+			}
+			p {
+				margin: 0 0 12px;
+				color: var(--muted);
+				font-size: 1.05rem;
+			}
+			p.en {
+				font-size: 0.95rem;
+			}
+			.links {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 10px;
+				margin-top: 24px;
+			}
+			a.btn {
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+				padding: 12px 20px;
+				border-radius: 12px;
+				font-weight: 700;
+				text-decoration: none;
+				transition:
+					background-color 120ms ease,
+					transform 120ms ease;
+			}
+			a.btn:hover {
+				transform: translateY(-1px);
+			}
+			a.primary {
+				background: var(--blue);
+				color: #fff;
+			}
+			a.primary:hover {
+				background: var(--blue-dark);
+			}
+			a.ghost {
+				background: #eef2f7;
+				color: var(--ink);
+			}
+			a.ghost:hover {
+				background: #e2e8f0;
+			}
+			footer {
+				margin-top: 28px;
+				font-size: 0.85rem;
+				color: var(--muted);
+			}
+			footer a {
+				color: var(--blue-dark);
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<img src="logo.webp" alt="BiblioViva" width="320" height="120" />
+			<span class="badge">Documentazione in arrivo · Documentation coming soon</span>
+			<h1>La biblioteca scolastica, semplice.</h1>
+			<p>
+				BiblioViva è un software libero per gestire la biblioteca di una scuola: catalogo
+				con scansione dei codici, prestiti al banco, studenti e docenti, tessere ed
+				etichette. Nasce dall'esperienza sul campo di gestione di una biblioteca scolastica,
+				con l'idea di realizzare qualcosa di semplice, gratuito e usabile da chi non è un
+				tecnico.
+			</p>
+			<p class="en" lang="en">
+				BiblioViva is free software for running a school library: catalogue with barcode
+				scanning, loans at the desk, students and teachers, cards and labels. Born from
+				hands-on experience in school libraries, meant to be simple, usable by non-experts
+				and free.
+			</p>
+			<div class="links">
+				<a class="primary btn" href="https://biblioviva.org">biblioviva.org</a>
+				<a class="ghost btn" href="https://github.com/itotm/biblioviva"
+					>Il progetto su GitHub</a
+				>
+				<a
+					class="ghost btn"
+					href="https://github.com/itotm/biblioviva/blob/main/README.it.md"
+					>Leggi di più (italiano)</a
+				>
+				<a
+					class="ghost btn"
+					href="https://github.com/itotm/biblioviva/blob/main/README.md"
+					lang="en"
+					>Read more (English)</a
+				>
+			</div>
+			<footer>
+				Software libero, licenza
+				<a href="https://www.gnu.org/licenses/gpl-3.0.html">GPL-3.0-or-later</a> · La
+				documentazione arriverà con la versione 0.9.0.
+			</footer>
+		</main>
+	</body>
+</html>

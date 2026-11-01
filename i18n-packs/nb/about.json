@@ -1,0 +1,19 @@
+{
+	"title": "Om",
+	"app": {
+		"version": "Versjon",
+		"license": "Lisens",
+		"repository": "Kildekode"
+	},
+	"deps": {
+		"title": "Brukte biblioteker",
+		"runtime": "I kjøring ({{count}})",
+		"development": "Bare for utvikling ({{count}})",
+		"system": "Systemkomponenter",
+		"columns": {
+			"name": "Navn",
+			"version": "Versjon",
+			"license": "Lisens"
+		}
+	}
+}

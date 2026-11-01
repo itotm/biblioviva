@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "Mentés",
+		"cancel": "Mégse",
+		"close": "Bezárás",
+		"confirm": "Megerősítés",
+		"delete": "Törlés",
+		"edit": "Szerkesztés",
+		"search": "Keresés",
+		"export": "Exportálás",
+		"back": "Vissza",
+		"retry": "Újra",
+		"backTo": "Vissza ide: {{page}}",
+		"more": "További műveletek"
+	},
+	"similar": {
+		"label": "Hasonló",
+		"count": "plusz {{count}} hasonló, gépelési hiba javításával találva",
+		"hint": "Gépelési hiba javításával találva: ellenőrizze, hogy ez-e a keresett."
+	},
+	"status": {
+		"loading": "Betöltés…",
+		"error": "Hiba történt"
+	},
+	"statuses": {
+		"item": {
+			"available": "Elérhető",
+			"onLoan": "Kölcsönözve",
+			"lost": "Elveszett",
+			"damaged": "Megrongálódott",
+			"inRepair": "Javítás alatt",
+			"withdrawn": "Kivonva",
+			"notForLoan": "Csak helyben használható"
+		},
+		"loan": {
+			"open": "Folyamatban",
+			"dueSoon": "Hamarosan lejár",
+			"overdue": "Lejárt",
+			"returned": "Visszavéve"
+		},
+		"patron": {
+			"active": "Aktív",
+			"anonymized": "Eltávolítva"
+		},
+		"print": {
+			"pending": "Nyomtatásra vár",
+			"printed": "Kinyomtatva"
+		}
+	},
+	"list": {
+		"selected": "{{count}} kiválasztva"
+	},
+	"scan": {
+		"label": "Vonalkód",
+		"placeholder": "Olvassa be, vagy írja be a kódot",
+		"submit": "Kód keresése",
+		"camera": "Kamera",
+		"cameraTitle": "Beolvasás kamerával",
+		"errors": {
+			"empty": "Nincs kód megadva.",
+			"item_check_digit": "A példány vonalkódjának ellenőrző karaktere hibás: olvassa be újra.",
+			"card_check_digit": "Az olvasójegy számának ellenőrző karaktere hibás: olvassa be újra.",
+			"isbn_check_digit": "Az ISBN ellenőrző számjegye hibás: ellenőrizze a számjegyeket.",
+			"unrecognised": "A kód nem ismerhető fel: ellenőrizze, hogy a vonalkódolvasó olvassa-e a Code 39 és a Code 128 kódot."
+		},
+		"invalidRead": "Érvénytelen kód ({{code}}): olvasás folyamatban.",
+		"invalidShort": "Érvénytelen kód, újraolvasás…",
+		"useAnyway": "Használja mégis: {{code}}"
+	},
+	"camera": {
+		"start": "Kamera indítása",
+		"stop": "Kamera leállítása",
+		"switch": "Kamera váltása",
+		"torch": "Lámpa",
+		"snapshot": "Fotó készítése",
+		"device": "Kamera",
+		"starting": "A kamera indítása…",
+		"errors": {
+			"insecure": "A kamera csak biztonságos kapcsolaton (https) keresztül működik: a helyi hálózatról, a Tailscale nélkül megnyitott alkalmazás nem tudja használni. Használja a vonalkódolvasót, vagy töltsön fel egy fájlt, vagy nyissa meg az alkalmazást a Tailscale-címéről.",
+			"denied": "Nincs engedély: engedélyezze a kamerát a böngésző beállításaiban, majd próbálja újra.",
+			"notFound": "Ezen az eszközön nem található kamera.",
+			"busy": "A kamerát már használja egy másik alkalmazás.",
+			"generic": "A kamera nem indítható ({{message}}).",
+			"timeout": "A kamera nem válaszolt. Ellenőrizze, hogy a böngésző nem kér-e még engedélyt, és hogy nem tiltották-e le korábban ezen a webhelyen (a cím melletti ikon)."
+		},
+		"permissionHint": "Ha a böngésző engedélyt kér a kamera használatához (általában a címsor közelében), válassza az „Engedélyezés” lehetőséget."
+	},
+	"clipboard": {
+		"failed": "A másolás nem sikerült: jelölje ki a szöveget, és másolja kézzel."
+	},
+	"form": {
+		"errorsTitle": "Ellenőrizze a kiemelt mezőket",
+		"field": "{{field}} mező"
+	},
+	"confirm": {
+		"title": "Megerősíti?"
+	},
+	"export": {
+		"csv": "CSV (táblázatkezelő, szöveg)",
+		"ods": "ODS (LibreOffice / Excel)"
+	},
+	"demo": {
+		"panel": "Ez a telepítés a {{when}} betöltött mintaadatokat tartalmazza: {{patrons}} {{patrons:plural; one:olvasó; other:olvasó;}}, {{biblios}} {{biblios:plural; one:cím; other:cím;}}, {{items}} {{items:plural; one:példány; other:példány;}}, {{loans}} {{loans:plural; one:kölcsönzés; other:kölcsönzés;}}. Minden ki van találva: nincs valódi személy."
+	},
+	"import": {
+		"header": "Az első sor fejléc",
+		"column": "{{n}}. oszlop",
+		"ignore": "— kihagyás —",
+		"counts": {
+			"new": "{{count}} új",
+			"update": "{{count}} frissítendő",
+			"unchanged": "{{count}} változatlan",
+			"error": "{{count}} {{count:plural; one:hiba; other:hiba;}}"
+		},
+		"onlyErrors": "Csak a hibák megjelenítése",
+		"info": "{{rows}} {{rows:plural; one:sor; other:sor;}} · kódolás: {{encoding}} · elválasztó: „{{delimiter}}”",
+		"steps": {
+			"upload": "Fájl",
+			"mapping": "Oszlopok",
+			"preview": "Ellenőrzés",
+			"done": "Befejezve"
+		},
+		"line": "Sor",
+		"status": "Eredmény",
+		"reason": "Részletek",
+		"statuses": {
+			"new": "Új",
+			"update": "Frissítés",
+			"unchanged": "Változatlan",
+			"error": "Hiba"
+		},
+		"errors": {
+			"empty": "A fájl üres.",
+			"tooLarge": "A fájl nagyobb, mint {{mb}} MB.",
+			"noRows": "Nem található sor a fájlban.",
+			"uploadGone": "A feltöltött fájl már nem érhető el: töltse fel újra.",
+			"notReady": "A fájlban még vannak hibák: ellenőrizze újra.",
+			"mappingIncomplete": "Hiányoznak a kötelező oszlopok: {{columns}}."
+		},
+		"template": {
+			"title": "A fájl sablonja",
+			"hint": "Válassza ki az oszlopokat: a sablon csak a fejlécet tartalmazza, és soronként tölthető ki (táblázatkezelőből CSV-ként mentve is működik).",
+			"required": "Kötelező",
+			"keys": "Kulcsok",
+			"keysHint": "Ezek alapján ismerik fel a már meglévőket; ki lehet hagyni őket.",
+			"optional": "Opcionális",
+			"download": "Sablon letöltése",
+			"ifMissing": "Ha hiányzik: {{text}}."
+		},
+		"groups": {
+			"required": "kötelező",
+			"key": "kulcs"
+		}
+	},
+	"words": {
+		"yes": "Igen",
+		"no": "Nem"
+	},
+	"password": {
+		"show": "Jelszó megjelenítése",
+		"hide": "Jelszó elrejtése"
+	},
+	"demoPublic": {
+		"language": "Nyelv",
+		"welcome": {
+			"title": "Üdvözöljük a BiblioViva-demóban",
+			"beta": "Nyilvános béta",
+			"betaText": "A BiblioViva nyilvános béta verzió: a funkciók stabilak, de az 1.0-s verzióig nem garantált, hogy egy frissítés kompatibilis marad az előző verzió adataival és beállításaival.",
+			"intro": "A BiblioViva az iskolai könyvtár kezelésére szolgáló program: kölcsönzés és visszavétel, katalógus, olvasók fényképekkel és olvasójegyekkel, címkék, nyomtatás és jelentések. Ez egy nyilvános demó: minden funkció kipróbálható.",
+			"contents": "Benne egy kitalált általános iskola található: {{patrons}} {{patrons:plural; one:tanuló vagy tanár; other:tanuló és tanár;}}, {{biblios}} {{biblios:plural; one:cím; other:cím;}} és {{items}} {{items:plural; one:példány; other:példány;}}, ebből {{openLoans}} {{openLoans:plural; one:kölcsönzés; other:kölcsönzés;}} folyamatban, és ezek közül {{overdueLoans}} lejárt. Nevek és fényképek kitaláltak: nincs valódi személy.",
+			"reset": "Minden nap {{time}} órakor a demo visszaáll az eredeti állapotba. A beállítások módosíthatók kipróbálásra, de nem mentődnek.",
+			"examples": "A demóban a szöveg és a fényképek helyett egy példa jelenik meg: minden művelet végig kipróbálható, de az, amit beírnak vagy lefényképeznek, nem marad meg, és másik látogató sem látja. Az importok csak a példafájlokat fogadják el, amelyeket az egyes importok oldaláról lehet letölteni.",
+			"accountsTitle": "Melyik fiókkal lehet belépni",
+			"accountsHint": "Ahogy a könyvtárban, minden fiók csak a szerepkörének munkáját látja. A felhasználónevet és a jelszót a fenti űrlapon adja meg.",
+			"password": "A jelszó minden fiókhoz ugyanaz:"
+		},
+		"accounts": {
+			"admin": {
+				"name": "Adminisztráció",
+				"does": "mindent lát: a többi fiók munkáján kívül a beállításokat, a munkatársi fiókokat, a biztonsági mentéseket, az osztályokat és az évfolyamlépést a következő tanévre."
+			},
+			"prestiti": {
+				"name": "Kölcsönzéskezelés",
+				"does": "a kölcsönzőpult: kölcsönöz, visszavesz és meghosszabbít, követi a lejárt kölcsönzéseket, és nyomtatja a felszólításokat."
+			},
+			"catalogo": {
+				"name": "Katalogizálás",
+				"does": "példányok és könyvek, rekordkeresés az SBN-ből (itt szimulálva), borítók, osztályozás és címkék."
+			},
+			"tessere": {
+				"name": "Olvasójegyek és fényképek",
+				"does": "tanulók és tanárok, fényképek és az osztályok fényképes felvétele, az olvasójegyek nyomtatása."
+			},
+			"report": {
+				"name": "Jelentések",
+				"does": "statisztikák a kölcsönzésekről, a katalógusról és az olvasókról, táblázatok exportálása."
+			}
+		},
+		"blocked": {
+			"config": "A demóban a beállítások nem mentődnek: minden kipróbálható, de a módosítások nem íródnak ki.",
+			"restore": "A demóban a biztonsági mentés visszaállítása ki van kapcsolva: a demó adatai minden éjjel maguktól állnak elő újra.",
+			"configImport": "A demóban a beállítások importálása ki van kapcsolva: a demó beállítása minden látogató számára ugyanaz.",
+			"pictures": "A demóban osztályfotók nem tölthetők fel: a fényképes felvételnél próbálja ki a mintaként szolgáló osztályfotót.",
+			"sqlReports": "A demóban az SQL-ben írt jelentések ki vannak kapcsolva: próbálja ki az irányított jelentéseket.",
+			"importSize": "A demóban az importálandó fájlok mérete legfeljebb 1 MB lehet.",
+			"printSize": "A demóban egyszerre legfeljebb 3 lap nyomtatható: válasszon kevesebb példányt vagy kevesebb olvasót.",
+			"importExample": "A demóban csak a példafájl importálható: töltse le a sablon gombjával, és így, változtatás nélkül töltse fel.",
+			"notesLimit": "A demóban naponta csak néhány megjegyzés írható.",
+			"demoData": "A demóban a mintaadatok az éjszakai visszaállításig maradnak.",
+			"backups": "A demóban a kézi biztonsági mentések ki vannak kapcsolva: a demó adatai minden éjjel maguktól állnak elő újra.",
+			"archives": "A demóban az archívumok és a biztonsági mentések nem tölthetők le: a demó adatai és beállításai minden éjjel újra előállnak.",
+			"languagePacks": "A demóban a nyelvi csomagok nem tölthetők le: olasz és angol nyelv érhető el."
+		},
+		"example": {
+			"note": "DEMÓ – megjegyzés ({{when}})",
+			"comment": "Demó megjegyzés: {{when}}",
+			"book": "Demó könyv: {{when}}",
+			"wish": "Demó kívánság: {{when}}",
+			"class": "Demó osztály: {{when}}",
+			"printList": "Demó lista: {{when}}",
+			"inventory": "Demó állományellenőrzés: {{when}}",
+			"reason": "Demó indok: {{when}}",
+			"date": "Demó dátum: {{when}}"
+		},
+		"replaced": "A demóban a szöveg és a fényképek helyett egy példa jelenik meg: a mentés megtörtént, de a példa marad.",
+		"tooMany": "Túl sok kérés rövid idő alatt: próbálja újra egy perc múlva.",
+		"refused": {
+			"title": "Nem elérhető a demóban",
+			"busyTitle": "Túl sok kérés",
+			"back": "Vissza a BiblioViva honlapjára"
+		}
+	}
+}

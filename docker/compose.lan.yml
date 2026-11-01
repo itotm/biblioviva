@@ -1,0 +1,60 @@
+# BiblioViva in the basic local-network mode (PLAN.md step 8.8), for a school that does not use
+# Tailscale: the app alone, at http://<address of the host>:8080 from the school network. Plain
+# http, so browsers keep the camera (scanning, photos by camera), the installation as an app and
+# the offline cache for secure pages: a handheld scanner and file uploads do the same jobs; no
+# access from outside the school. Settings come from `.env` next to this file (see
+# `.env.example`; TS_AUTHKEY is not needed). The full mode is `compose.yml`.
+#   docker compose -f compose.lan.yml up -d
+services:
+    app:
+        image: ${BIBLIOVIVA_IMAGE:-ghcr.io/itotm/biblioviva:latest}
+        # the app's own port (3000) stays inside the container: the network reaches the front that
+        # stands in for the Tailscale sidecar (it sets the forwarded headers the app reads)
+        ports: ["${LAN_PORT:-8080}:8080"]
+        environment:
+            - LAN_PORT=8080
+            # optional: the Google Books providers (off by default) need a key; a secret, never in config
+            - GOOGLE_BOOKS_API_KEY=${GOOGLE_BOOKS_API_KEY:-}
+            # debug: every camera read and metadata lookup in `compose logs app` (never personal data)
+            - LOG_LEVEL=${LOG_LEVEL:-info}
+        volumes:
+            # configuration: config.json, templates, reports, images; owned by uid 1000
+            - ./config:/config:Z
+            - app-data:/data # database, photos and covers, imports
+            # the backups: a plain folder beside this file, to copy or to mount from a second disk
+            # or a USB drive; owned by uid 1000 (z: shared with the offsite service)
+            - ./backups:/backups:z
+        # performance.profile micro (one slow core, 512 MB): 256m; small (Raspberry Pi 4, 2 GB): 512m;
+        # medium (old PC, disk): 1g; large: 2g (the server sizes its heap after it)
+        mem_limit: ${MEM_LIMIT:-512m}
+        read_only: true
+        tmpfs: ["/tmp"]
+        security_opt: ["no-new-privileges:true"]
+        cap_drop: ["ALL"]
+        init: true
+        stop_grace_period: 35s
+        restart: unless-stopped
+
+    # optional second copy of the backups (Q35, ADR-049): `docker compose -f compose.lan.yml --profile offsite up -d`; by default into OFFSITE_DIR
+    # (a second disk, a USB drive, a folder of the school's server), or any rclone destination
+    offsite:
+        image: docker.io/rclone/rclone:1.75.2
+        profiles: ["offsite"]
+        volumes:
+            - ./backups:/backups:z
+            - ./rclone:/config/rclone:ro,Z # rclone.conf, only for a destination made with `rclone config`
+            - ${OFFSITE_DIR:-./offsite}:/offsite:z # the default destination: a folder of another disk
+        entrypoint: ["/bin/sh", "-c"]
+        command:
+            - |
+                while true; do
+                  sleep 3600
+                  if rclone sync /backups "$${OFFSITE_REMOTE:-/offsite/biblioviva-backups}" --min-age 1m; then s=ok; else s=error; fi
+                  echo "{\"status\":\"$$s\",\"at\":\"$$(date -Iseconds)\"}" > /backups/offsite.json
+                done
+        environment:
+            - OFFSITE_REMOTE=${OFFSITE_REMOTE:-/offsite/biblioviva-backups}
+        restart: unless-stopped
+
+volumes:
+    app-data:

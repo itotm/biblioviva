@@ -1,0 +1,103 @@
+{
+	"id": "ro-gimnaziala",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Școală gimnazială from the clasa pregătitoare to the a VIII-a; classes written a V-a B, I A [VERIFY].",
+	"name": {
+		"it": "Scuola primaria e secondaria di primo grado (Romania)",
+		"en": "Primary and lower secondary school (Romania)",
+		"ro": "Școală gimnazială (România)"
+	},
+	"country": "RO",
+	"languages": ["ro"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "primar",
+				"name": "Învățământ primar"
+			},
+			{
+				"code": "gimnazial",
+				"name": "Învățământ gimnazial"
+			}
+		],
+		"levels": [
+			{
+				"code": "0",
+				"label": "pregătitoare",
+				"name": "Clasa pregătitoare",
+				"stage": "primar",
+				"aliases": ["CP"]
+			},
+			{
+				"code": "1",
+				"label": "I",
+				"name": "Clasa I",
+				"stage": "primar",
+				"aliases": ["a I-a"]
+			},
+			{
+				"code": "2",
+				"label": "a II-a",
+				"name": "Clasa a II-a",
+				"stage": "primar",
+				"aliases": ["II"]
+			},
+			{
+				"code": "3",
+				"label": "a III-a",
+				"name": "Clasa a III-a",
+				"stage": "primar",
+				"aliases": ["III"]
+			},
+			{
+				"code": "4",
+				"label": "a IV-a",
+				"name": "Clasa a IV-a",
+				"stage": "primar",
+				"aliases": ["IV"]
+			},
+			{
+				"code": "5",
+				"label": "a V-a",
+				"name": "Clasa a V-a",
+				"stage": "gimnazial",
+				"aliases": ["V"]
+			},
+			{
+				"code": "6",
+				"label": "a VI-a",
+				"name": "Clasa a VI-a",
+				"stage": "gimnazial",
+				"aliases": ["VI"]
+			},
+			{
+				"code": "7",
+				"label": "a VII-a",
+				"name": "Clasa a VII-a",
+				"stage": "gimnazial",
+				"aliases": ["VII"]
+			},
+			{
+				"code": "8",
+				"label": "a VIII-a",
+				"name": "Clasa a VIII-a",
+				"stage": "gimnazial",
+				"aliases": ["VIII"]
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Clasa",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"primar": ["A", "B", "C"],
+		"gimnazial": ["A", "B", "C"]
+	},
+	"teacherGroup": "Cadre didactice",
+	"readingLevels": []
+}

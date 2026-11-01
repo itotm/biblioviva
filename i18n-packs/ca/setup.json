@@ -1,0 +1,226 @@
+{
+	"title": "Primera configuració",
+	"intro": "Benvingut a BiblioViva. En pocs passos la biblioteca és a punt: llengua, colors, escola, codis i contrasenyes del personal.",
+	"stepOf": "Pas {{step}} de {{total}}",
+	"next": "Següent",
+	"back": "Enrere",
+	"finish": "Completa la configuració",
+	"steps": {
+		"language": "Llengua",
+		"theme": "Colors",
+		"library": "Biblioteca",
+		"school": "Escola",
+		"codes": "Codis",
+		"passwords": "Contrasenyes",
+		"demo": "Dades de demostració",
+		"summary": "Resum"
+	},
+	"language": {
+		"title": "En quina llengua ha de parlar BiblioViva?",
+		"hint": "Una sola llengua per instal·lació: val per a tot el personal i es pot canviar des d'Administració → Configuració → Aspecte i llengua.",
+		"restore": {
+			"title": "Hi ha ja una còpia de seguretat de BiblioViva?",
+			"hint": "Per traslladar BiblioViva a un altre ordinador, o per començar de nou després d'una avaria, no cal respondre a les preguntes: n'hi ha prou amb un arxiu creat amb «Exporta-ho tot».",
+			"button": "Restaura des d'una còpia de seguretat"
+		}
+	},
+	"theme": {
+		"title": "Tria els colors",
+		"hint": "Quinze paletes de colors: canvien només els colors, mai la forma. Totes són clares i llegibles fins i tot en blanc i negre.",
+		"names": {
+			"ocean": "Oceà",
+			"forest": "Bosc",
+			"grape": "Raïm",
+			"sunset": "Posta de sol",
+			"cherry": "Cirera",
+			"lagoon": "Llacuna",
+			"silver": "Plata",
+			"graphite": "Grafit",
+			"apricot": "Albercoc",
+			"indigo": "Indi",
+			"mint": "Menta",
+			"rose": "Rosa",
+			"sahara": "Sàhara",
+			"wintry": "Hivernal",
+			"olive": "Oliva"
+		}
+	},
+	"library": {
+		"title": "La biblioteca",
+		"name": "Nom de la biblioteca",
+		"namePlaceholder": "Biblioteca de l'escola primària Rodari",
+		"schoolType": "Tipus d'escola",
+		"schoolTypeHint": "Els anys i les classes segons l'ús de l'escola. Es poden canviar després a Administració → Configuració → Escola i Administració → Configuració → Classes.",
+		"photos": "Fotos dels usuaris",
+		"photosHint": "Les fotos d'alumnes i docents, fetes o carregades, i impreses als carnets. Desactivat: cap foto enlloc i carnets sense foto.",
+		"covers": "Cobertes dels llibres",
+		"coversHint": "Les cobertes cercades en línia, fotografiades o carregades, i mostrades al catàleg. Desactivat: cap coberta."
+	},
+	"school": {
+		"title": "L'escola",
+		"hint": "El tipus d'escola proposa els anys, les classes i els nivells de lectura. Les classes es creen de seguida; amb les dades de demostració s'omplen d'alumnes inventats.",
+		"otherCountries": "Altres països",
+		"names": {
+			"perLevel": "{{stage}}: noms de les classes, una per any",
+			"mixed": "{{stage}}: noms de les seccions, cadascuna amb tots els anys"
+		},
+		"namesHint": "Separats per comes; A-D vol dir A, B, C, D. Buit: cap classe.",
+		"namesInvalid": "Noms no vàlids: cal escriure'ls separats per comes (40 com a màxim).",
+		"classes": "{{count}} {{count:plural; one:classe; other:classes;}} per crear:",
+		"more": "i {{count}} més",
+		"classLabel": "Com s'escriu la classe",
+		"teacherGroup": "Grup dels docents",
+		"teacherGroupHint": "Cada docent entra en aquest grup; altres grups es podran afegir després.",
+		"schoolYearStart": "Inici del curs escolar",
+		"schoolYearStartHint": "Mes i dia en forma MM-DD (per exemple 09-01).",
+		"schoolYearStartInvalid": "Cal escriure el mes i el dia en forma MM-DD.",
+		"schoolYearLabel": "Nom del curs escolar",
+		"schoolYearLabels": {
+			"span": "Dos anys (2026/2027)",
+			"start": "L'any d'inici (2026)"
+		},
+		"readingLevels": "Narrativa dividida per nivell de lectura",
+		"readingLevelsHint": "Els anys, les classes i els nivells de lectura es poden canviar després a Administració."
+	},
+	"codes": {
+		"title": "Els codis",
+		"hint": "El format dels codis de barres de les còpies noves i el dels carnets nous, cadascun triat per separat. Les dues formes no es poden confondre: qui llegeix un codi sap de seguida si és un llibre o un carnet.",
+		"itemFormat": "Format de les còpies",
+		"itemFormats": {
+			"standard": "Any, control i número (recomanat)",
+			"classic": "Any i número, control al final",
+			"prefix": "Amb la lletra L davant"
+		},
+		"cardFormat": "Format dels carnets",
+		"cardFormats": {
+			"standard": "Control i número de 6 xifres (recomanat)",
+			"classic": "Número de 10 xifres, control al final",
+			"prefix": "Amb la lletra T davant"
+		},
+		"check": "Caràcter de control",
+		"checks": {
+			"mod23": "Una lletra (mòdul 23)",
+			"luhn": "Una xifra (Luhn)",
+			"damm": "Una xifra (Damm)"
+		},
+		"layout": "Teclat dels lectors",
+		"layoutHint": "La llengua del teclat de l'ordinador al qual són connectats els lectors de codis: serveix a corregir els caràcters canviats. Si no hi és la pròpia, cal triar la més semblant: es pot canviar després a Configuració → Codis de barres.",
+		"layouts": {
+			"it": "Italià",
+			"es": "Espanyol",
+			"de": "Alemany",
+			"fr": "Francès",
+			"uk": "Anglès (Regne Unit)",
+			"us": "Anglès (Estats Units)"
+		},
+		"copy": "Còpia d'un llibre",
+		"card": "Carnet",
+		"verdict": "Les còpies i els carnets no es poden confondre.",
+		"refused": "Amb aquesta tria les còpies i els carnets es podrien confondre: cal triar un altre format.",
+		"later": "Els formats, els codis dels sistemes anteriors i la numeració es poden canviar després a Configuració → Codis de barres."
+	},
+	"passwords": {
+		"title": "Contrasenyes del personal",
+		"hint": "Cinc comptes compartits, un per rol. Les contrasenyes proposades són generades a l'atzar i es poden substituir. Cal anotar-les al pas final: es mostren només una vegada.",
+		"accounts": {
+			"admin": "Administració (admin)",
+			"prestiti": "Gestió de préstecs (prestiti)",
+			"catalogo": "Catalogació (catalogo)",
+			"tessere": "Carnets i fotos (tessere)",
+			"report": "Informes (report)"
+		},
+		"regenerate": "Regenera",
+		"tooShort": "Almenys 8 caràcters.",
+		"demo": "Amb les dades de demostració tots els comptes fan servir la mateixa contrasenya, fàcil de recordar: «{{password}}». Abans d'usar BiblioViva de debò, cal canviar-les a Administració → Comptes del personal."
+	},
+	"demo": {
+		"title": "Dades de demostració",
+		"hint": "Alumnes, llibres i préstecs inventats per provar l'aplicació. S'eliminen amb un clic des d'Administració quan s'introdueixen les dades reals.",
+		"load": "Carrega dades de demostració",
+		"hasData": "La base de dades ja conté dades: les dades de demostració no es carregaran."
+	},
+	"summary": {
+		"title": "Resum",
+		"hint": "Comprova i confirma. Les contrasenyes apareixen només en aquesta pàgina: cal copiar-les abans de continuar.",
+		"language": "Llengua",
+		"theme": "Colors",
+		"library": "Biblioteca",
+		"photos": "Fotos dels usuaris",
+		"covers": "Cobertes dels llibres",
+		"school": "Escola",
+		"classes": "Classes",
+		"classesValue": "{{count}} {{count:plural; one:classe; other:classes;}} ({{first}}…) i el grup {{teachers}}",
+		"readingLevels": "Nivells de lectura",
+		"none": "Cap",
+		"codes": "Codis",
+		"demo": "Dades de demostració",
+		"yes": "Sí",
+		"no": "No",
+		"later": "Més endavant les contrasenyes es canvien a Administració → Comptes del personal.",
+		"working": "Desada en curs…",
+		"error": "Configuració no desada: {{message}}"
+	},
+	"done": {
+		"title": "Configuració completada",
+		"hint": "Cal guardar aquestes contrasenyes en un lloc segur: no es tornaran a mostrar.",
+		"demoLoaded": "Dades de demostració carregades: {{patrons}} {{patrons:plural; one:usuari; other:usuaris;}}, {{biblios}} {{biblios:plural; one:títol; other:títols;}}, {{items}} {{items:plural; one:còpia; other:còpies;}}, {{loans}} {{loans:plural; one:préstec; other:préstecs;}}.",
+		"login": "Vés a l'accés"
+	},
+	"generic": {
+		"stage": "Escola",
+		"level": "Nivell {{level}}",
+		"groupWord": "Secció",
+		"teacherGroup": "Docents"
+	},
+	"restore": {
+		"title": "Restaura des d'una còpia de seguretat",
+		"hint": "Cal triar l'arxiu creat amb «Exporta-ho tot» (Administració → Còpia de seguretat). Mida màxima: {{maxMb}} MB. L'arxiu es comprova abans de restaurar res.",
+		"choose": "Tria l'arxiu",
+		"checking": "Comprovació de l'arxiu…",
+		"from": "Arxiu de la biblioteca «{{library}}», creat el {{date}}, versió {{version}}.",
+		"fromAnonymous": "Arxiu creat el {{date}}, versió {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "Usuaris",
+			"catalog": "Catàleg i còpies",
+			"loans": "Préstecs i historial",
+			"printLists": "Llistes d'impressió",
+			"photos": "Fotos dels usuaris",
+			"covers": "Cobertes",
+			"notes": "Notes",
+			"dates": "Dates del calendari",
+			"audit": "Registre de les activitats",
+			"ui": "Interfície",
+			"security": "Seguretat i accessos",
+			"library": "Biblioteca i escola"
+		},
+		"images": "Fotos: {{photos}} · cobertes: {{covers}}",
+		"accounts": "Comptes que podran accedir: {{accounts}}. Les contrasenyes són les de l'arxiu.",
+		"warning": "La restauració porta de cop configuració, dades i imatges tal com eren a l'arxiu. Després, la configuració guiada ja no serveix.",
+		"apply": "Restaura",
+		"restoring": "Restauració en curs…",
+		"cancel": "Cancel·la",
+		"back": "Torna a la configuració guiada",
+		"done": {
+			"title": "Restauració completada",
+			"hint": "La biblioteca és com era a l'arxiu. Per accedir, cal usar un d'aquests comptes, amb la contrasenya que tenia a l'arxiu:",
+			"login": "Vés a l'accés"
+		},
+		"errors": {
+			"too_large": "L'arxiu és massa gran (màxim {{maxMb}} MB).",
+			"not_zip": "El fitxer no és un arxiu ZIP vàlid.",
+			"not_archive": "El fitxer no és un arxiu de BiblioViva: cal triar un arxiu creat amb «Exporta-ho tot».",
+			"too_many_files": "L'arxiu conté massa fitxers.",
+			"unsafe_path": "L'arxiu conté un camí no admès: {{name}}",
+			"link": "L'arxiu conté un enllaç, que no és admès: {{name}}",
+			"unknown_file": "L'arxiu conté un fitxer que no forma part de BiblioViva: {{name}}",
+			"not_setup": "La configuració guiada ja s'ha completat: la restauració es fa des d'Administració → Còpia de seguretat.",
+			"newer_version": "L'arxiu l'ha creat una versió més recent de BiblioViva ({{name}}): cal instal·lar abans aquella versió.",
+			"missing_parts": "L'arxiu és incomplet: falten {{name}}. Cal triar un arxiu creat amb «Exporta-ho tot».",
+			"unfinished_setup": "L'arxiu prové d'una instal·lació on la configuració guiada no s'havia completat.",
+			"not_ready": "L'arxiu té problemes i no es pot restaurar: {{name}}",
+			"gone": "L'arxiu comprovat ja no hi és: cal tornar-lo a triar.",
+			"failed": "La restauració no ha tingut èxit."
+		}
+	}
+}

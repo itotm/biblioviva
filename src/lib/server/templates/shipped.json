@@ -1,0 +1,161 @@
+{
+	"cards-no-photo/default": {
+		"assets/background-d4.webp": [
+			"cd1812438de905b18dcb866c610d60450d2ea480b5725dc78a9c3113c34c5d0e"
+		],
+		"assets/logo.png": ["5bd035863dd3d10a632178eb6d85e3bbc385ab112581608dd1575cdd99644705"],
+		"back.html": ["82d59e7eb9389fa2806a1d2eb64a0a97af91bfe5170218931b8c6f27536e8ee6"],
+		"front.html": [
+			"1635a22fe64b0e2ac1f5c291f636970caa81265c7a89bde0c618776e2a546c71",
+			"b43a2065551b4b77954fdc6b4854773c8fe8ed2164f8f5c0c9280a9a15a9e717"
+		],
+		"style.css": ["11d8217d3575ac30338faa888ec23b191a0b58cc42f0561c4802ca694a62f270"],
+		"template.json": ["bc34723c9d3ee1ae2416ef535b6ba57abd29ba71033bf03c839031614e2781ae"]
+	},
+	"cards-no-photo/fronte-retro": {
+		"assets/background-c8.webp": [
+			"933aa2052617681ae4622cfd16950826f8c3bb6dc02528ee9554eec21dd70caf"
+		],
+		"assets/logo.png": ["5bd035863dd3d10a632178eb6d85e3bbc385ab112581608dd1575cdd99644705"],
+		"back.html": ["5ceb146f90cde7078966d667143b7ac06637c2b4dd957fe45712d1752bf7181f"],
+		"front.html": [
+			"2ece67206f26e3cfa0aa61ab413313c6a31214a7ed7af27349dbc4e3f8e39b95",
+			"85624de0a6a637b3fdf162fb32d1ba24fab9f3a42fa58a834229b5e62e22ffe9"
+		],
+		"style.css": ["16d24f0a478a8227a38ee8262583ed0aaa05d7f24a24db835522694a9ff42835"],
+		"template.json": ["b490b7fed099c49c71f66e54fc9cf414e3fea348096d357b09357458fb91507d"]
+	},
+	"cards-no-photo/verticale": {
+		"assets/background-h5.webp": [
+			"5a3b49cd515d2e7a286a63cd313dca8cc2e1798ebcc8ebc1958d6e52e797872e"
+		],
+		"assets/logo.png": ["5bd035863dd3d10a632178eb6d85e3bbc385ab112581608dd1575cdd99644705"],
+		"back.html": ["a4a17ecf2af31e8526fcb4704cc2af3aabfa26d6061f758082652fcc940cb1d9"],
+		"front.html": [
+			"54005cc89915fbe26585cb0d32b6ef0273168aa9157c9c4e05eef59fe8bced4f",
+			"b324e6c41ea1e1470eb4ac89cc20d5ab1e2520a29ecae79cffe534dd94f9931d"
+		],
+		"style.css": ["16d24f0a478a8227a38ee8262583ed0aaa05d7f24a24db835522694a9ff42835"],
+		"template.json": ["1d8ebf6db350ca014fe1f6af3c328c88741162dab78fb2fc5915f758ac38747f"]
+	},
+	"cards/default": {
+		"assets/background-d4.webp": [
+			"cd1812438de905b18dcb866c610d60450d2ea480b5725dc78a9c3113c34c5d0e"
+		],
+		"assets/logo.png": [
+			"52e2d285a12e92bc05576bc40717ad4556b9317c620f6309e7a4ae4a834c3115",
+			"5bd035863dd3d10a632178eb6d85e3bbc385ab112581608dd1575cdd99644705"
+		],
+		"assets/retro.jpg": ["b652d517b5cf394d9705954a714031c4b12053e4d9581136ae3919b6adf50926"],
+		"back.html": [
+			"79091cd47f973bf4c7297aaa52e98aaadd446887448464b3b50c6aa07bfae56e",
+			"82d59e7eb9389fa2806a1d2eb64a0a97af91bfe5170218931b8c6f27536e8ee6",
+			"c7690b4645323abac351426ddd45a9b9af8efb448a207ce2359dc94f9c247615"
+		],
+		"front.html": [
+			"4aac6c707aef6837918217ae6c2209156345a30d6668d26811149cf6a5d080e4",
+			"61442d3266f01564547af6b52509a2aa4364c01ead270d3b9fbf763c0597a548",
+			"983800d40b3f28136e7129c44e2ec358ea79bf2f6a8d75bdd7dc023ab02513ff",
+			"9c300dc96eba385b2d6119df149de0252dfa626aa2a6a6db36c32aa85ff1cf4b",
+			"c7c758d0fd7496c20de926f4941aacaafab5cc18d1986e7bdd9024f39f85a205"
+		],
+		"style.css": [
+			"11d8217d3575ac30338faa888ec23b191a0b58cc42f0561c4802ca694a62f270",
+			"19842a96592b37660e2f4fe14640c6aaded05befcd00fff00c3b435e698b4d20",
+			"28897f7eb3f804075cbd31c0a95084fa866cd7fb9c555027b19f6db43fff4a81",
+			"d055752d676b425dea76d6d5e5522adab3190c0027f6f6543a83ec7d67a5b9c0"
+		],
+		"template.json": [
+			"2a8ab15268ca48f0c316bcfbccaac9ffbcf02e693e2e9d336a0bc62e5f48de87",
+			"63688b243aec7008b59c3bcb2f066327d218748883a786a3d06c5dad443e10d6",
+			"ab50db08773c26c816e4fc71da172cd5e44493baf3cfdf36d4e9e38c7a5c2ac1"
+		]
+	},
+	"cards/fronte-retro": {
+		"assets/background-c8.webp": [
+			"933aa2052617681ae4622cfd16950826f8c3bb6dc02528ee9554eec21dd70caf"
+		],
+		"assets/logo.png": ["5bd035863dd3d10a632178eb6d85e3bbc385ab112581608dd1575cdd99644705"],
+		"back.html": ["5ceb146f90cde7078966d667143b7ac06637c2b4dd957fe45712d1752bf7181f"],
+		"front.html": [
+			"5571133d55f5921ea2d7128ba0ecd749403213e2c43a4c97090ebfd00c852c14",
+			"8122d43869b2ee656975ff71dfe939145327659332f0bfdb13c8947d65af0314"
+		],
+		"style.css": ["16d24f0a478a8227a38ee8262583ed0aaa05d7f24a24db835522694a9ff42835"],
+		"template.json": ["9bb2b0bd3815d6dbdd621f1a0bcc8700780e9f783d19d939d9e42ba4c8536900"]
+	},
+	"cards/verticale": {
+		"assets/background-h5.webp": [
+			"5a3b49cd515d2e7a286a63cd313dca8cc2e1798ebcc8ebc1958d6e52e797872e"
+		],
+		"assets/logo.png": ["5bd035863dd3d10a632178eb6d85e3bbc385ab112581608dd1575cdd99644705"],
+		"back.html": ["a4a17ecf2af31e8526fcb4704cc2af3aabfa26d6061f758082652fcc940cb1d9"],
+		"front.html": [
+			"b6d6992c1fbb78ef4dff39aea0a63f670f95d29806dc1781b65ae9c8bdad420a",
+			"db7527e0685e44fe142599e24a3add80808964bd83dcd0d35f5214c7dd7f9187"
+		],
+		"style.css": ["16d24f0a478a8227a38ee8262583ed0aaa05d7f24a24db835522694a9ff42835"],
+		"template.json": ["68a19ae8ac864a029307869fea592b7f172006889228fe9a3ec421c96fd81a86"]
+	},
+	"labels/barcode-default": {
+		"label-compact.html": ["3d3174f6ea952dadfbdd0aa8422ac3f3dbb0b3c6e38ad9af2078f539806eed9e"],
+		"label.html": ["3aa8e2f0b5880955a8279f39efa99bb39151b1e47e49bc99d8c8c57360769e56"],
+		"style.css": ["3fb242fed22e68678aab129040b372aa7dfc32f5dca4a664a2b21da1fdeb157f"],
+		"template.json": [
+			"0c9901250e0bffdfa9025842a8a224b2bd15e91a0c9a4e12157f1d57b5cfee27",
+			"9a81c51577fb5e97c57704b9f40cadc1e57709461866beeda9275cda11cafdc1"
+		]
+	},
+	"labels/pair-default": {
+		"bottom-compact.html": ["3d3174f6ea952dadfbdd0aa8422ac3f3dbb0b3c6e38ad9af2078f539806eed9e"],
+		"bottom.html": ["3aa8e2f0b5880955a8279f39efa99bb39151b1e47e49bc99d8c8c57360769e56"],
+		"style.css": ["96fcfa231e16b16628c987ad079a3363596cbae2cd2264cf7e1349acc7e941ec"],
+		"template.json": [
+			"7f32403fc7d18ae1f6c7cdb77df98cad043587abab4b39f93a7ded338cf7aba7",
+			"d0f7b4bb9be00834dc19afbed6b5750bf29d97b2e152fdf1747dc2df36c58e09"
+		],
+		"top-compact.html": ["9cf16104aa4b26ea698f1af6b55cf0c63b33d04d9a016a601f95024e3e3bdd3b"],
+		"top.html": ["89c68fd7fbd0a323c1ae7b6e9c333c8cf05bd49d1646bd056c8c3cda3404a005"]
+	},
+	"labels/spine-default": {
+		"label-compact.html": [
+			"8a63f92686304c4bd47e54a8f459529d8aeea7bf32ed3f7f356395cc5672f0f3",
+			"ada5a2298196795bf46b9fc1f43802fa0a8e04380b4db9d4eb9a1d71a6e61d10",
+			"c3c601d81bf584a690f39fcf15f8290e6713d13945740f9bb15a4d858546f889"
+		],
+		"label.html": ["89c68fd7fbd0a323c1ae7b6e9c333c8cf05bd49d1646bd056c8c3cda3404a005"],
+		"style.css": [
+			"4fd5a3d85df7703e78ff80aba982fc47b73edded39c7f79c37a768b58ef8a009",
+			"941561549253942441538409ab84494a30248c4f46fe54e566627b45857eba49",
+			"c1aba494e0e110527de5abdc3994ab9c71f4d42b09f577cd5bf0e212370fef4c"
+		],
+		"template.json": ["6ecd2aeff292c591f6cba4c84032a1953f9829fe65178fbe10d346daa0c9b7d2"]
+	},
+	"slips/checkout-receipt": {
+		"slip.html": [
+			"043fb35b0e4bd54752b2ba7d7a299de39b82a46d92196a1ef955fc7d73e083de",
+			"5d0be1e71ffb4f47aa50f942b234bc5eeddbe5ddcd9bc333f6228b571184bc6b"
+		],
+		"style.css": ["285d9c3149caee1502b5c676e3615f402ebd54b4c2fa8275e0b1576f9b9a16b5"],
+		"template.json": ["178a2893b0e4979a009def4bf9da75d264934b7053450741e39b83156b3758a7"]
+	},
+	"slips/overdue-by-class": {
+		"slip.html": [
+			"5974f5b08faf3f42bce43e8b21cbbafdb58a9c5e3323a3ea988603d7ea7ab8ef",
+			"ce0887e4b3667d5d7b153fa9c7b461ce237fba83938194661103f0e654d16f34"
+		],
+		"style.css": [
+			"c3e18806b105dd81e4d2d904648c6e92dfd71b2fb092e255f219c227bd699a0e",
+			"d50bb6efba3ae3e0604bf3a04b069b4283c0b51de34d600c359b4b10cf3f8bab"
+		],
+		"template.json": ["50fdcb87bd4b131e6e840df57991fcda994a9d6eef47c3d88e3ffb2155ecedfb"]
+	},
+	"slips/overdue-patron": {
+		"slip.html": [
+			"675977271aaecb63e9d11b98d213de5778aeca6cfcaa381de70e8ba1f6f06a0f",
+			"b4bfd2ec118daa79638138120a29e5aa96fe9d23ee3ce205cc205559db9c3d30"
+		],
+		"style.css": ["8e677fe70a205e892b33a2c4693a98f87defa5f2027f94d6edfbe04cd7898d8d"],
+		"template.json": ["8a32b7576f0a6d638fc94e0555027809ea7df7bdcb9bcfedcc7897a85fd44e5a"]
+	}
+}

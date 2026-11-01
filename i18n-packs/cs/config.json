@@ -1,0 +1,1778 @@
+{
+	"home": {
+		"title": "Nastavení"
+	},
+	"leave": {
+		"title": "Odejít bez uložení?",
+		"description": "Změny, které zatím nejsou uložené, se ztratí.",
+		"confirm": "Odejít bez uložení"
+	},
+	"taxonomy": {
+		"title": "Třídění",
+		"intro": "Změny zůstávají v konceptu až do kliknutí na „Uložit“; předchozí verze souboru {{file}} se zachová.",
+		"invalid": "Některé hodnoty nejsou platné (označené červeně): opravte je, aby šlo uložit.",
+		"orphans": "V katalogu jsou knihy s kódy, které třídění neobsahuje: {{codes}}. Přidejte tyto kódy sem, nebo ty knihy přetřiďte z katalogu.",
+		"unsaved": "Neuložené změny",
+		"discard": "Zrušit změny",
+		"saved": "Třídění uloženo",
+		"savedDetail": "{{records}} {{records:plural; one:přesunutá kniha; few:přesunuté knihy; other:přesunutých knih;}}, {{callNumbers}} {{callNumbers:plural; one:přepsaná signatura; few:přepsané signatury; other:přepsaných signatur;}}, {{bands}} {{bands:plural; one:hřbetní štítek k novému tisku; few:hřbetní štítky k novému tisku; other:hřbetních štítků k novému tisku;}}.",
+		"tabs": {
+			"fiction": "Beletrie",
+			"nonfiction": "Naučná literatura",
+			"dewey": "Dewey",
+			"options": "Možnosti"
+		},
+		"addGenre": "Přidat žánr",
+		"addClass": "Přidat téma",
+		"addSubclass": "Přidat podtéma",
+		"dragHint": "Přetáhněte řádky pro změnu pořadí, nebo použijte šipky. Pořadí je stejné jako v nabídce výběru v katalogu.",
+		"pickGenre": "Vyberte žánr k úpravě",
+		"pickClass": "Vyberte téma k úpravě",
+		"untitled": "Bez názvu",
+		"hasProblems": "K opravě",
+		"usageShort": "{{records}} {{records:plural; one:kniha; few:knihy; other:knih;}}",
+		"moveUp": "Posunout nahoru",
+		"moveDown": "Posunout dolů",
+		"panel": {
+			"genre": "Žánr",
+			"class": "Téma",
+			"subclass": "Podtéma"
+		},
+		"fields": {
+			"code": "Kód",
+			"label": "Název",
+			"color": "Barva",
+			"pictogram": "Piktogram",
+			"position": "Pozice"
+		},
+		"renameNote": "Kód změněn: při uložení {{records}} {{records:plural; one:kniha přejde; few:knihy přejdou; other:knih přejde;}} z {{from}} na {{to}} a jejich signatury se aktualizují.",
+		"color": {
+			"inherit": "Použít barvu {{code}}",
+			"none": "Bez barvy",
+			"hex": "Kód barvy"
+		},
+		"pictogram": {
+			"upload": "Nahrát obrázek",
+			"choose": "Vybrat z obrázků",
+			"remove": "Odebrat obrázek",
+			"own": "Vlastní obrázek. PNG, JPEG nebo WebP: uloží se jako PNG.",
+			"missing": "Soubor {{name}} není ve složce obrázků: na štítcích se zobrazí kruh s barvou a kódem.",
+			"inherited": "Bez vlastního obrázku se používá obrázek kódu {{code}}.",
+			"placeholder": "Bez obrázku se na štítcích zobrazí kruh s barvou a kódem.",
+			"gallery": "Obrázky třídění",
+			"errors": {
+				"empty": "Soubor je prázdný.",
+				"too_large": "Obrázek je příliš velký (nejvýše {{maxMb}} MB).",
+				"not_an_image": "Soubor není obrázek.",
+				"unsupported_format": "Formát není podporován: použijte PNG, JPEG nebo WebP."
+			}
+		},
+		"position": {
+			"top": "Hlavní téma",
+			"under": "Uvnitř {{code}} · {{label}}",
+			"locked": "Má podtémata: zůstává hlavním tématem."
+		},
+		"usage": {
+			"new": "Nové: žádná kniha to zatím nepoužívá.",
+			"none": "Žádná kniha nepoužívá tento kód.",
+			"some": "Použito u: {{records}} {{records:plural; one:kniha; few:knihy; other:knih;}} ({{copies}} {{copies:plural; one:exemplář; few:exempláře; other:exemplářů;}})."
+		},
+		"remove": {
+			"genre": "Smazat žánr",
+			"class": "Smazat téma",
+			"confirmTitle": "Smazat {{code}}?",
+			"withSubclasses": "Také jeho {{count}} {{count:plural; one:podtéma bude smazáno; few:podtémata budou smazána; other:podtémat bude smazáno;}}.",
+			"inUse": "{{records}} {{records:plural; one:kniha používá; few:knihy používají; other:knih používá;}} tento kód: při uložení se zvolí, kam je přesunout.",
+			"confirm": "Smazat"
+		},
+		"preview": {
+			"title": "Náhled hřbetního štítku",
+			"hint": "Ukázková kniha tak, jak by se vytiskla nyní, ve skutečné velikosti.",
+			"needsCode": "Náhled se zobrazí, když je kód platný."
+		},
+		"problems": {
+			"codeRequired": "Kód je povinný.",
+			"codeFormat": "Použijte jen písmena, číslice, tečku, pomlčku nebo podtržítko (nejvýše 32).",
+			"codeTaken": "Tento kód už používá jiný žánr nebo téma.",
+			"labelRequired": "Název je povinný.",
+			"labelLong": "Název je příliš dlouhý (nejvýše 120 znaků).",
+			"colorFormat": "Barvu zapište jako #rrggbb, například #e8231b.",
+			"patternRequired": "Schéma nemůže být prázdné."
+		},
+		"dewey": {
+			"hint": "Když kniha naučné literatury přijde s číslem Dewey (například ze SBN), navrhne se její téma podle této tabulky: platí nejdelší shodná předpona.",
+			"probe": "Vyzkoušejte číslo Dewey",
+			"noMatch": "Žádné téma neodpovídá",
+			"empty": "Žádná shoda Dewey",
+			"prefix": "Předpona Dewey",
+			"class": "Téma",
+			"add": "Přidat shodu",
+			"problems": {
+				"prefixFormat": "1 až 3 číslice.",
+				"prefixTaken": "Předpona se opakuje.",
+				"codeUnknown": "Vyberte téma."
+			}
+		},
+		"options": {
+			"fictionByClass": "Beletrie je rozdělena podle čtenářské úrovně",
+			"fictionByClassHint": "Knihám beletrie lze přiřadit čtenářskou úroveň, pro kterou jsou vhodné (například ročník 4): zobrazí se v signatuře a na hřbetním štítku.",
+			"classPerItem": "Čtenářská úroveň je u každého exempláře",
+			"classPerItemHint": "Potřeba, když exempláře téže knihy stojí v policích různých úrovní. Jinak úroveň patří knize.",
+			"toCopies": "Při uložení přejde čtenářská úroveň každé knihy na její exempláře.",
+			"toRecords": "Při uložení se úroveň exemplářů vrátí ke knize; nejde to, pokud exempláře téže knihy mají různé úrovně.",
+			"patterns": "Schémata signatury",
+			"patternsHint": "Platí pro exempláře přidané od teď; stávající signatury se nemění. Zástupné znaky: {{placeholders}}.",
+			"pattern": {
+				"fiction": "Beletrie",
+				"fictionWithClass": "Beletrie s přidruženým ročníkem",
+				"nonfiction": "Naučná literatura"
+			},
+			"unknownPlaceholders": "Neznámé zástupné znaky: {{names}}.",
+			"example": "Příklad: {{example}}"
+		},
+		"save": {
+			"title": "Uložit třídění",
+			"checking": "Kontroluje se, co se v katalogu změní…",
+			"unchanged": "Nejsou žádné změny k uložení.",
+			"errors": "Před uložením opravte tyto problémy:",
+			"removedTitle": "Smazané kódy stále v použití",
+			"removedHint": "Vyberte, kam přesunout knihy každého smazaného kódu: nový kód se zapíše na knihy, na začátek jejich signatur a na hřbetní štítky.",
+			"moveTo": "{{code}} · {{label}}: {{records}} {{records:plural; one:kniha; few:knihy; other:knih;}} ({{copies}} {{copies:plural; one:exemplář; few:exempláře; other:exemplářů;}}). Přesunout do",
+			"choose": "Vyberte…",
+			"callNumbers": "{{count}} {{count:plural; one:signatura začíná; few:signatury začínají; other:signatur začíná;}} smazaným kódem: kód na začátku se nahradí (například B 4 DEL se změní na A 4 DEL).",
+			"bandsMoved": "Hřbetní štítky přesunutých knih a štítky, jejichž signatura se změnila, se vrátí mezi ty k tisku.",
+			"unused": "Smazané, žádnou knihou nepoužívané: {{codes}}.",
+			"reprint": "Vrátit mezi štítky k tisku hřbetní štítky u {{copies}} {{copies:plural; one:exempláře; few:exemplářů; other:exemplářů;}}, u nichž se mění název, barva nebo piktogram ({{codes}})",
+			"reprintHint": "Nechte vypnuté, pokud rozdíl na hřbetních štítcích, které už jsou nalepené na knihách, nevadí.",
+			"conflicts": "{{count}} {{count:plural; one:kniha má; few:knihy mají; other:knih má;}} exempláře v různých třídách: než se třída odebere z exemplářů, dejte stejnou třídu všem exemplářům každé knihy.",
+			"toCopies": "Přidružená třída {{count}} {{count:plural; one:kniha přejde; few:knihy přejdou; other:knih přejde;}} na jejich exempláře.",
+			"toRecords": "Třída exemplářů se vrátí ke knize u {{count}} {{count:plural; one:titulu; few:titulů; other:titulů;}}.",
+			"warnings": "{{count}} {{count:plural; one:upozornění; few:upozornění; other:upozornění;}} (nebrání uložení)",
+			"levelsTitle": "Čtenářské úrovně odebrané u knih, které je mají",
+			"levelMoveTo": "Knihy úrovně {{code}} · {{label}} ({{records}} {{records:plural; one:titul; few:tituly; other:titulů;}}, {{copies}} {{copies:plural; one:exemplář; few:exempláře; other:exemplářů;}}) přejdou do",
+			"noLevel": "Bez úrovně",
+			"levelsHint": "Číslo úrovně v signatuře exemplářů se změní spolu s nimi (například B 4 DEL se změní na B 5 DEL) a jejich štítky se vrátí mezi ty k tisku."
+		},
+		"levels": {
+			"title": "Čtenářské úrovně",
+			"hint": "Od nejjednodušší, v pořadí. Kód se zapíše na knihy a do signatury (například 4 v B 4 DEL), název se zobrazí ve výběru. U úrovně v použití, která se odebere nebo přejmenuje, se při uložení zeptá, kam přesunout její knihy.",
+			"code": "Kód úrovně",
+			"label": "Název úrovně",
+			"up": "Posunout nahoru",
+			"down": "Posunout dolů",
+			"remove": "Odebrat úroveň",
+			"add": "Přidat úroveň"
+		}
+	},
+	"sections": {
+		"library": {
+			"title": "Knihovna a škola",
+			"description": "Název, typ školy, třídy a sekce, školní rok, časové pásmo."
+		},
+		"school": {
+			"title": "Škola",
+			"description": "Stupně a ročníky školy, jak se píše třída, co se stane s třídami na konci roku. Samotné třídy se spravují v Správa → Nastavení → Třídy."
+		},
+		"catalog": {
+			"title": "Katalog",
+			"description": "Hodnoty pro neznámého autora, nakladatele a místo."
+		},
+		"barcodes": {
+			"title": "Čárové kódy",
+			"description": "Formát průkazů a exemplářů, staré kódy, typ čárového kódu."
+		},
+		"circulation": {
+			"title": "Výpůjčky",
+			"description": "Pravidla výpůjček a prodloužení, termíny, upomínky, účtenky."
+		},
+		"calendar": {
+			"title": "Kalendář",
+			"description": "Dny zavření a svátky."
+		},
+		"z3950": {
+			"title": "Z39.50 (SBN)",
+			"description": "Servery, odkud přicházejí záznamy knih."
+		},
+		"metadata": {
+			"title": "Údaje o knihách",
+			"description": "Zdroje údajů při hledání podle ISBN."
+		},
+		"performance": {
+			"title": "Výkon",
+			"description": "Počítač, na kterém běží BiblioViva, a úpravy, které na něm závisí."
+		},
+		"classification": {
+			"title": "Třídění",
+			"description": "Žánry, témata, piktogramy, Dewey a signatury."
+		},
+		"cards": {
+			"title": "Průkazy",
+			"description": "Formát průkazů a tiskového listu."
+		},
+		"labels": {
+			"title": "Štítky",
+			"description": "Štítky a hřbetní štítky knih, samolepicí archy."
+		},
+		"photos": {
+			"title": "Fotografie čtenářů",
+			"description": "Velikost a formát fotografií."
+		},
+		"covers": {
+			"title": "Obálky",
+			"description": "Velikost, formát a zdroje obálek."
+		},
+		"privacy": {
+			"title": "Soukromí",
+			"description": "Jak dlouho se uchovává protokol operací."
+		},
+		"backup": {
+			"title": "Zálohy",
+			"description": "Čas a doba uchování záloh, externí kopie."
+		},
+		"security": {
+			"title": "Zabezpečení a přístupy",
+			"description": "Délka relací, pokusy o přihlášení, účty a role."
+		},
+		"ui": {
+			"title": "Rozhraní",
+			"description": "Výpůjční pult a přidané jazyky; barvy, jazyk a přehled jsou v „Vzhled a jazyk“."
+		}
+	},
+	"fields": {
+		"library": {
+			"name": {
+				"label": "Název knihovny",
+				"hint": "Zobrazí se vlevo nahoře, na průkazech a na tiscích."
+			},
+			"contactEmail": {
+				"label": "Kontaktní e-mail",
+				"hint": "Nepovinný: zobrazí se na tiscích, které ho obsahují."
+			},
+			"schoolYearStart": {
+				"label": "Začátek školního roku",
+				"hint": "Měsíc a den ve tvaru MM-DD (například 09-01): oddělují roky ve statistikách."
+			},
+			"schoolYearLabel": {
+				"label": "Název školního roku",
+				"hint": "Jak se školní rok zobrazí na průkazech, v sestavách a na stránkách: dva roky (2026/2027) nebo rok začátku (2026), jako v Brazílii, Japonsku a Koreji."
+			},
+			"timezone": {
+				"label": "Časové pásmo",
+				"hint": "Název pásma, například Europe/Rome: data a termíny se řídí tímto pásmem, ne hodinami serveru."
+			},
+			"weekStart": {
+				"label": "První den týdne",
+				"hint": "Den, od kterého týdny začínají v kalendářích a v přehledu „tento týden“. Při prvním spuštění ho zvolí jazyk (v italštině pondělí, v angličtině neděle)."
+			}
+		},
+		"school": {
+			"classLabel": {
+				"label": "Jak se píše třída",
+				"hint": "{level} je ročník, {group} název třídy: „{level} {group}“ dá 3 B, „{level}{group}“ dá 3B. Stupeň může mít vlastní (Stupně a ročníky)."
+			},
+			"groupWord": {
+				"label": "Slovo pro třídu",
+				"hint": "Název pole třídy ve formulářích a filtrech a {word} v řádku třídy na průkazu (Sekce B, Třída B, Skupina B)."
+			},
+			"cardClass": {
+				"label": "Třída na průkazu",
+				"hint": "Řádek třídy vytištěný na průkazu: {word} je slovo pro třídu, {group} název třídy, {level} ročník, {class} celá třída. „{word} {group}“ dá Sekce B, „{class}“ dá 3 B."
+			},
+			"teacherGroupName": {
+				"label": "Název skupiny učitelů",
+				"hint": "Skupina, do které se učitel zapíše, když není vybrána jiná."
+			},
+			"promotionWithinStage": {
+				"label": "Na konci roku v rámci stupně",
+				"hint": "Obvykle třída postoupí se svými žáky: 3 B se změní na 4 B."
+			},
+			"promotionAcrossStages": {
+				"label": "Na konci roku při přechodu do jiného stupně",
+				"hint": "Například z 5. ročníku prvního stupně do prvního ročníku druhého stupně v jedné škole."
+			}
+		},
+		"catalog": {
+			"specialAuthors": {
+				"label": "Zvláštní autoři",
+				"hint": "Jeden na řádek: hodnoty přijímané místo osobního autora (například Anonimo, AA. VV.)."
+			},
+			"unknownPublisher": {
+				"label": "Neznámý nakladatel",
+				"hint": "Hodnota, která se zapíše, když není nakladatel uveden."
+			},
+			"unknownPlace": {
+				"label": "Neznámé místo",
+				"hint": "Hodnota, která se zapíše, když není uvedeno místo vydání."
+			}
+		},
+		"barcodes": {
+			"keyboardLayout": {
+				"label": "Klávesnice počítače",
+				"hint": "Rozložení klávesnice počítačů, ke kterým jsou připojeny čtečky čárových kódů: slouží k opravě znaků, které čtečka nastavená pro jinou klávesnici píše špatně."
+			},
+			"cameraSound": {
+				"label": "Zvuk fotoaparátu",
+				"hint": "Pípnutí telefonu, když fotoaparát načte průkaz, čárový kód exempláře nebo ISBN. Čtečka čárových kódů (USB) pípá sama a nepotřebuje ho; výpůjční pult zůstává tichý."
+			},
+			"patron": {
+				"symbology": {
+					"label": "Typ čárového kódu průkazů",
+					"hint": "Code 128 pro nové průkazy; Code 39 jen tehdy, když čtečky knihovny Code 128 nečtou."
+				}
+			},
+			"item": {
+				"symbology": {
+					"label": "Typ čárového kódu exemplářů",
+					"hint": "Code 128 pro nové štítky; Code 39 jen tehdy, když čtečky knihovny Code 128 nečtou."
+				}
+			}
+		},
+		"circulation": {
+			"rules": {
+				"student": {
+					"loanDays": {
+						"label": "Dny výpůjčky",
+						"hint": "Kolik dní trvá výpůjčka pro žáky."
+					},
+					"maxLoans": {
+						"label": "Nejvíce knih na výpůjčce",
+						"hint": "Kolik knih může mít čtenář najednou."
+					},
+					"maxRenewals": {
+						"label": "Nejvíce prodloužení",
+						"hint": "Kolikrát se může tatáž výpůjčka prodloužit (0 = nikdy)."
+					},
+					"renewalDays": {
+						"label": "Dny prodloužení",
+						"hint": "Kolik dní přidá každé prodloužení."
+					}
+				},
+				"teacher": {
+					"loanDays": {
+						"label": "Dny výpůjčky",
+						"hint": "Kolik dní trvá výpůjčka pro učitele."
+					},
+					"maxLoans": {
+						"label": "Nejvíce knih na výpůjčce",
+						"hint": "Kolik knih může mít čtenář najednou."
+					},
+					"maxRenewals": {
+						"label": "Nejvíce prodloužení",
+						"hint": "Kolikrát se může tatáž výpůjčka prodloužit (0 = nikdy)."
+					},
+					"renewalDays": {
+						"label": "Dny prodloužení",
+						"hint": "Kolik dní přidá každé prodloužení."
+					}
+				}
+			},
+			"dueDateMode": {
+				"label": "Výpočet termínu vrácení",
+				"hint": "Jak se délka výpůjčky počítá vůči dnům zavření knihovny."
+			},
+			"renewFrom": {
+				"label": "Prodloužení počítá od",
+				"hint": "Den, od kterého se počítají dny prodloužení."
+			},
+			"allowRenewalWhenOverdue": {
+				"label": "Prodloužení i po termínu",
+				"hint": "Výpůjčku, která už je po termínu, lze prodloužit."
+			},
+			"overdueNotice": {
+				"template": {
+					"label": "Šablona upomínek",
+					"hint": "Název tiskové šablony upomínek (složka v slips/templates)."
+				},
+				"pageBreakPerGroup": {
+					"label": "Jedna stránka na třídu",
+					"hint": "Každá třída na vlastním listu, k předání učiteli; lze to změnit i při tisku."
+				},
+				"minDays": {
+					"label": "Dny zpoždění před upomínkou",
+					"hint": "Výpůjčka se v upomínkách objeví až po tolika dnech zpoždění (0 = hned)."
+				}
+			},
+			"blockIfOverdue": {
+				"label": "Žádné nové výpůjčky při knihách po termínu",
+				"hint": "Kdo má knihu po termínu, nemůže si půjčit další, dokud ji nevrátí."
+			},
+			"hardDueDate": {
+				"label": "Nejzazší termín vrácení",
+				"hint": "Žádná výpůjčka nemá termín po tomto datu (například konec vyučování). Prázdné: bez omezení."
+			},
+			"receipts": {
+				"label": "Potvrzení o výpůjčce",
+				"hint": "Zobrazí na výpůjčním pultu tlačítko pro tisk potvrzení."
+			}
+		},
+		"calendar": {
+			"autoItalianHolidays": {
+				"label": "Italské státní svátky",
+				"hint": "Státní svátky (včetně Velikonoc) jsou dny zavření, aniž by se musely zapisovat ručně."
+			}
+		},
+		"z3950": {
+			"defaultTarget": {
+				"label": "Výchozí server",
+				"hint": "Identifikátor serveru Z39.50 použitého pro vyhledávání."
+			},
+			"timeoutMs": {
+				"label": "Maximální doba čekání (ms)",
+				"hint": "Po kolika milisekundách se hledání Z39.50 vzdá."
+			},
+			"maxRecordsIsbn": {
+				"label": "Výsledky na ISBN",
+				"hint": "Kolik záznamů nejvýše se načte při hledání ISBN (jedno ISBN může mít záznam pro každý dotisk): otevře se nejúplnější."
+			},
+			"maxRecordsSearch": {
+				"label": "Výsledky na hledání",
+				"hint": "Kolik záznamů nejvýše se načte při hledání podle názvu nebo autora."
+			}
+		},
+		"metadata": {
+			"providers": {
+				"label": "Zdroje údajů",
+				"hint": "Odkud pocházejí údaje o knihách při hledání podle ISBN: vybrané zdroje se dotazují současně."
+			},
+			"cacheDays": {
+				"label": "Dny uchování hledání",
+				"hint": "Po kolik dní se už provedené hledání znovu použije bez dalšího dotazu."
+			},
+			"timeoutMs": {
+				"label": "Maximální doba čekání (ms)",
+				"hint": "Po kolika milisekundách se zdroj, který neodpovídá, vynechá."
+			}
+		},
+		"performance": {
+			"profile": {
+				"label": "Počítač",
+				"hint": "Výchozí nastavení vhodné pro počítač, na kterém běží BiblioViva."
+			},
+			"sqliteCacheMb": {
+				"label": "Mezipaměť databáze (MB)",
+				"hint": "Prázdné: podle počítače (8, 16, 64 nebo 256 MB)."
+			},
+			"sqliteMmapMb": {
+				"label": "Mapování paměti databáze (MB)",
+				"hint": "Prázdné: podle počítače (0, 0, 0 nebo 512 MB)."
+			},
+			"walAutocheckpointPages": {
+				"label": "Stránky před kontrolním bodem",
+				"hint": "Prázdné: podle počítače (500, 1000, 2000 nebo 4000)."
+			},
+			"imageConcurrency": {
+				"label": "Obrázky zpracovávané najednou",
+				"hint": "Fotografie, obálky, fotografie tříd a logo zpracovávané současně; ostatní čekají na řadu. Prázdné: podle počítače (1, 1, 2 nebo 4)."
+			},
+			"yazConcurrency": {
+				"label": "Hledání Z39.50 najednou",
+				"hint": "Hledání Z39.50 probíhající současně; ostatní čekají na řadu. Prázdné: podle počítače (1, 1, 2 nebo 2)."
+			},
+			"heavyConcurrency": {
+				"label": "Tisky a exporty najednou",
+				"hint": "Listy k tisku (průkazy, štítky, upomínky, potvrzení, reporty) a exporty (CSV, ODS, archivy, zálohy) připravované současně; ostatní čekají na řadu, takže výpůjční pult zůstává rychlý. Prázdné: podle počítače (1, 1, 2 nebo 4)."
+			},
+			"argon2MemoryMb": {
+				"label": "Paměť pro kontrolu hesel (MB)",
+				"hint": "Platí pro hesla nastavená od této chvíle. Prázdné: 16 MB na každém počítači (systém není nikdy vystaven internetu)."
+			},
+			"smol": {
+				"label": "Úspora paměti",
+				"hint": "Méně paměti, o něco více práce pro procesor. Automaticky: podle počítače (ano pro minimální počítač a Raspberry Pi). Platí po restartu."
+			}
+		},
+		"cards": {
+			"defaultTemplate": {
+				"label": "Šablona průkazů",
+				"hint": "Název tiskové šablony použité, když typ čtenáře žádnou vlastní nemá (složka v cards/templates)."
+			},
+			"layout": {
+				"label": "Tisk průkazů",
+				"hint": "Přední a zadní strana vedle sebe (složeno podél krátké hrany), nebo na obou stranách listu, s tiskárnou, která tiskne oboustranně. Volí se znovu při každém tisku."
+			},
+			"duplex": {
+				"flip": {
+					"label": "Jak se list otáčí",
+					"hint": "Jak tiskárna otočí list pro zadní stranu: podél dlouhé hrany (jako kniha), nebo podél krátké. Musí odpovídat volbě v okně tisku."
+				},
+				"backOffsetMm": {
+					"x": {
+						"label": "Posun zadních stran, vodorovně (mm)",
+						"hint": "Zjistí kalibrace: o kolik posunout zadní strany, aby padly za přední."
+					},
+					"y": {
+						"label": "Posun zadních stran, svisle (mm)",
+						"hint": "Zjistí kalibrace."
+					}
+				}
+			},
+			"cardMm": {
+				"width": {
+					"label": "Šířka (mm)",
+					"hint": "Standardní průkaz má šířku 85,6 mm."
+				},
+				"height": {
+					"label": "Výška (mm)",
+					"hint": "Standardní průkaz má výšku 53,98 mm."
+				}
+			},
+			"bleedMm": {
+				"label": "Přesah (mm)",
+				"hint": "Přídavný okraj kolem obrázků přes celou stranu, který se odřízne."
+			},
+			"sheet": {
+				"paper": {
+					"label": "Formát listu",
+					"hint": "List, na který se průkazy tisknou."
+				},
+				"rows": {
+					"label": "Průkazů na list",
+					"hint": "Kolik průkazů (přední a zadní strana) pod sebou: 4 nebo 5 na A4."
+				},
+				"marginMm": {
+					"label": "Okraj listu (mm)",
+					"hint": "Bílý prostor kolem průkazů."
+				},
+				"gapMm": {
+					"label": "Mezera mezi průkazy (mm)",
+					"hint": "Vzdálenost mezi jedním průkazem a dalším."
+				},
+				"foldMarks": {
+					"label": "Značky složení",
+					"hint": "Krátké čárkované čáry v okrajích a mezi průkazy, kde se skládá přední a zadní strana."
+				},
+				"cutMarks": {
+					"label": "Značky řezu",
+					"hint": "Ořezové značky: krátké čáry v okrajích a mezi průkazy, které prodlužují hrany každého průkazu, pro řez pravítkem a nožem."
+				}
+			},
+			"validityMonths": {
+				"label": "Platnost (měsíce)",
+				"hint": "Po kolik měsíců platí vytištěný průkaz. Prázdné: bez expirace."
+			},
+			"showPhoto": {
+				"label": "Fotografie na průkazu",
+				"hint": "Vytiskne na průkaz fotografii čtenáře."
+			}
+		},
+		"labels": {
+			"default": {
+				"label": "Výchozí štítky",
+				"hint": "Co se vytiskne, když se zvolí „Tisk štítků“."
+			},
+			"titleMaxChars": {
+				"label": "Písmena názvu",
+				"hint": "Název na štítcích se zkrátí na tuto délku."
+			},
+			"monochrome": {
+				"label": "Černobílá tiskárna",
+				"hint": "Na nízkých hřbetních štítcích se barevný pruh změní na šrafování."
+			},
+			"pair": {
+				"template": {
+					"label": "Šablona",
+					"hint": "Název tiskové šablony dvojice (složka v labels/templates)."
+				},
+				"stock": {
+					"label": "Samolepicí arch",
+					"hint": "Identifikátor použitého archu štítků (soubor v labels/stocks)."
+				}
+			},
+			"barcode": {
+				"template": {
+					"label": "Šablona",
+					"hint": "Název tiskové šablony štítku s kódem (složka v labels/templates)."
+				},
+				"stock": {
+					"label": "Samolepicí arch",
+					"hint": "Identifikátor použitého archu štítků (soubor v labels/stocks)."
+				}
+			},
+			"spine": {
+				"template": {
+					"label": "Šablona",
+					"hint": "Název tiskové šablony hřbetního štítku (složka v labels/templates)."
+				},
+				"stock": {
+					"label": "Samolepicí arch",
+					"hint": "Identifikátor použitého archu štítků (soubor v labels/stocks)."
+				}
+			}
+		},
+		"photos": {
+			"enabled": {
+				"label": "Fotografie čtenářů",
+				"hint": "Zapnuto: fotografie pořízené nebo nahrané pro každého čtenáře, fotoevidence, fotografie na průkazech. Vypnuto: nikde žádná fotografie a průkazy bez fotografie; už uložené fotografie zůstávají a vrátí se, až se funkce znovu zapne."
+			},
+			"required": {
+				"label": "Fotografie povinná",
+				"hint": "Zapnuto: přehled, seznam čtenářů a tiskové seznamy upozorňují, kdo nemá fotografii. Vypnuto: žádné připomínání, ale fotografie se stále mohou pořídit, nahrát a vytisknout na průkazy."
+			},
+			"width": {
+				"label": "Šířka (px)",
+				"hint": "Fotografie se ukládají v této šířce."
+			},
+			"height": {
+				"label": "Výška (px)",
+				"hint": "Fotografie se ukládají v této výšce (oříznuto na střed)."
+			},
+			"format": {
+				"label": "Formát souborů",
+				"hint": "JPEG funguje všude; WebP zabere méně místa."
+			},
+			"quality": {
+				"label": "Kvalita",
+				"hint": "Od 1 do 100: vyšší hodnota znamená větší soubory."
+			},
+			"maxUploadBytes": {
+				"label": "Největší nahrávaný soubor (bajty)",
+				"hint": "Větší soubor se odmítne."
+			},
+			"sheet": {
+				"maxUploadBytes": {
+					"label": "Největší soubor (bajty)",
+					"hint": "Obrázek s více fotografiemi (fotoevidence z obrázku), který je větší než tato hodnota, se odmítne."
+				},
+				"maxPixels": {
+					"label": "Zachovaná delší strana (px)",
+					"hint": "Obrázek se zmenšuje, dokud jeho delší strana nepřesáhne tuto hodnotu."
+				},
+				"maxFrames": {
+					"label": "Nejvýše fotografií",
+					"hint": "Když obrázek obsahuje více, zachovají se nejostřejší."
+				},
+				"minAspect": {
+					"label": "Nejmenší poměr stran fotografie",
+					"hint": "Výška dělená šířkou: 1 je čtverec, 1,33 fotografie pro průkaz 3:4."
+				},
+				"maxAspect": {
+					"label": "Největší poměr stran fotografie",
+					"hint": "Výška dělená šířkou: příliš protáhlé rámečky se nebudou brát za fotografie."
+				}
+			}
+		},
+		"covers": {
+			"enabled": {
+				"label": "Obálky knih",
+				"hint": "Zapnuto: obálky hledané online, fotografované nebo nahrané a zobrazené v katalogu. Vypnuto: nikde žádná obálka; už uložené zůstávají a vrátí se, až se funkce znovu zapne."
+			},
+			"width": {
+				"label": "Šířka (px)",
+				"hint": "Obálky se ukládají v této šířce."
+			},
+			"maxHeight": {
+				"label": "Největší výška (px)",
+				"hint": "Velmi vysoké obálky se zmenší. Prázdné: bez omezení."
+			},
+			"format": {
+				"label": "Formát souborů",
+				"hint": "JPEG funguje všude; WebP zabere méně místa."
+			},
+			"quality": {
+				"label": "Kvalita",
+				"hint": "Od 1 do 100: vyšší hodnota znamená větší soubory."
+			},
+			"maxUploadBytes": {
+				"label": "Největší nahrávaný soubor (bajty)",
+				"hint": "Větší soubor se odmítne."
+			},
+			"country": {
+				"label": "Země",
+				"hint": "Země katalogu poskytovatelů obálek (dvě písmena, například IT)."
+			},
+			"minWidth": {
+				"label": "Nejmenší šířka (px)",
+				"hint": "Stažené obálky užší než tato hodnota se zahodí."
+			},
+			"autoFetch": {
+				"label": "Hledat obálku samo",
+				"hint": "V „Nová kniha“ se obálka hledá online během kontroly záznamu a uloží se spolu s ním; pokud je špatná, nahradí se fotografií."
+			},
+			"timeoutMs": {
+				"label": "Maximální doba čekání (ms)",
+				"hint": "Po kolika milisekundách se poskytovatel, který neodpovídá, vynechá."
+			}
+		},
+		"privacy": {
+			"auditRetentionMonths": {
+				"label": "Měsíce protokolu operací",
+				"hint": "Starší řádky protokolu se smažou."
+			}
+		},
+		"backup": {
+			"cron": {
+				"label": "Čas zálohy",
+				"hint": "Ve tvaru cron: minuta, hodina, den, měsíc, den v týdnu (0 3 * * * = každou noc ve 3)."
+			},
+			"catchUp": {
+				"label": "Záloha při startu, pokud byla vynechána",
+				"hint": "Pokud byl počítač v čas zálohy vypnutý, BiblioViva udělá zálohu minutu po nejbližším zapnutí: jen jednu, i po několika dnech."
+			},
+			"keepDays": {
+				"label": "Dny uchování",
+				"hint": "Starší zálohy se smažou."
+			},
+			"offsite": {
+				"enabled": {
+					"label": "Externí kopie v použití",
+					"hint": "Označuje, že se používá druhá kopie záloh (rclone, na jiném disku nebo v jiné službě)."
+				},
+				"remote": {
+					"label": "Cíl kopie",
+					"hint": "Kam kopie půjde: složka na jiném disku (/offsite/biblioviva-backups, výchozí volba), nebo cíl nastavený v rclone ve tvaru název:složka."
+				}
+			}
+		},
+		"security": {
+			"sessionDays": {
+				"label": "Délka relace (dny)",
+				"hint": "Po kolika dnech se heslo vyžádá znovu."
+			},
+			"loginMaxAttempts": {
+				"label": "Pokusy o přihlášení",
+				"hint": "Kolik chybných pokusů před vynucenou pauzou."
+			},
+			"loginWindowMinutes": {
+				"label": "Pauza po příliš mnoha pokusech (minuty)",
+				"hint": "Na kolik minut zůstane přihlášení zablokováno po příliš mnoha pokusech."
+			}
+		},
+		"ui": {
+			"checkoutIdleSeconds": {
+				"label": "Pauza výpůjčního pultu (sekundy)",
+				"hint": "Po této době bez čtení se pult připraví pro nového čtenáře."
+			}
+		}
+	},
+	"options": {
+		"library": {
+			"weekStart": {
+				"monday": "Pondělí",
+				"sunday": "Neděle",
+				"saturday": "Sobota"
+			},
+			"schoolYearLabel": {
+				"span": "Dva roky (2026/2027)",
+				"start": "Rok začátku (2026)"
+			}
+		},
+		"school": {
+			"promotionWithinStage": {
+				"keep": "Třída postoupí se svými žáky",
+				"clear": "Žáci zůstanou bez třídy"
+			},
+			"promotionAcrossStages": {
+				"keep": "Třída postoupí se svými žáky",
+				"clear": "Žáci zůstanou bez třídy",
+				"ask": "Třída každého žáka se vybere"
+			}
+		},
+		"barcodes": {
+			"patron": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"item": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"keyboardLayout": {
+				"it": "Italská",
+				"es": "Španělská",
+				"de": "Německá",
+				"fr": "Francouzská",
+				"uk": "Anglická (Spojené království)",
+				"us": "Anglická (Spojené státy)"
+			},
+			"cameraSound": {
+				"off": "Bez zvuku",
+				"till": "Pokladna",
+				"scanner": "Čtečka",
+				"confirm": "Potvrzení",
+				"arpeggio": "Arpeggio"
+			}
+		},
+		"circulation": {
+			"dueDateMode": {
+				"datedue": "Kalendářní dny, poté první otevřený den",
+				"calendar": "Jen otevírací dny",
+				"days": "Kalendářní dny bez ohledu na zavření"
+			},
+			"renewFrom": {
+				"today": "Den prodloužení",
+				"dueDate": "Aktuální termín vrácení"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"sbn": "OPAC SBN (Z39.50)",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books",
+				"sbn-json": "OPAC SBN (webová služba)"
+			}
+		},
+		"performance": {
+			"profile": {
+				"micro": "Minimální počítač: pomalý procesor a 512 MB (Raspberry Pi Zero 2, nejmenší server)",
+				"small": "Raspberry Pi 4 s 2 GB nebo malý počítač",
+				"medium": "Starší PC s pevným diskem",
+				"large": "PC s SSD diskem"
+			}
+		},
+		"cards": {
+			"sheet": {
+				"paper": {
+					"A4": "A4"
+				}
+			},
+			"layout": {
+				"side-by-side": "Přední a zadní strana vedle sebe",
+				"duplex": "Na obou stranách listu"
+			},
+			"duplex": {
+				"flip": {
+					"long-edge": "Podél dlouhé hrany",
+					"short-edge": "Podél krátké hrany"
+				}
+			}
+		},
+		"labels": {
+			"default": {
+				"pair": "Dvojice: hřbetní štítek a štítek",
+				"barcode": "Jen štítek s kódem",
+				"spine": "Jen hřbetní štítek"
+			}
+		},
+		"photos": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		},
+		"covers": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		}
+	},
+	"groups": {
+		"barcodes": {
+			"patron": {
+				"title": "Čtenářské průkazy"
+			},
+			"item": {
+				"title": "Exempláře knih"
+			}
+		},
+		"circulation": {
+			"rules": {
+				"title": "Pravidla výpůjček",
+				"student": {
+					"title": "Pravidla pro žáky"
+				},
+				"teacher": {
+					"title": "Pravidla pro učitele"
+				}
+			},
+			"overdueNotice": {
+				"title": "Upomínky"
+			}
+		},
+		"cards": {
+			"cardMm": {
+				"title": "Velikost průkazu"
+			},
+			"sheet": {
+				"title": "Tiskový list"
+			},
+			"duplex": {
+				"title": "Tisk na obě strany",
+				"backOffsetMm": {
+					"title": "Posun zadních stran"
+				}
+			}
+		},
+		"labels": {
+			"pair": {
+				"title": "Dvojice: hřbetní štítek a štítek"
+			},
+			"barcode": {
+				"title": "Jen štítek s kódem"
+			},
+			"spine": {
+				"title": "Jen hřbetní štítek"
+			}
+		},
+		"backup": {
+			"offsite": {
+				"title": "Externí kopie"
+			}
+		},
+		"photos": {
+			"sheet": {
+				"title": "Obrázky s více fotografiemi (fotoevidence z obrázku)"
+			}
+		}
+	},
+	"overview": {
+		"reload": "Znovu načíst",
+		"reloaded": "Konfigurace znovu načtena",
+		"reloadFailed": "Soubory obsahují chyby: zůstává v použití předchozí konfigurace.",
+		"valid": "Konfigurace je platná: {{count}} {{count:plural; one:soubor; few:soubory; other:souborů;}}.",
+		"example": "Konfigurace ještě nebyla vytvořena: používají se ukázkové hodnoty.",
+		"warnings": "{{count}} {{count:plural; one:upozornění; few:upozornění; other:upozornění;}}",
+		"diskErrors": "Soubory konfigurace obsahují chyby: knihovna pokračuje s předchozí verzí, dokud nebudou opraveny.",
+		"diskChanged": "Soubory byly upraveny ručně: stiskněte „Znovu načíst“, aby se změny použily.",
+		"sections": "Nastavení",
+		"alsoFrom": "a {{count}} {{count:plural; one:další soubor; few:další soubory; other:dalších souborů;}}",
+		"editors": "Vzhled, třídy a šablony",
+		"templates": "Tiskové šablony",
+		"templatesDescription": "Složky šablon průkazů, štítků a upomínek se svými obrázky.",
+		"reports": "Knihovna reportů",
+		"reportsDescription": "Dodané a školní reporty: vyzkoušet, stáhnout, nahrát, smazat.",
+		"appearance": "Vzhled a jazyk",
+		"appearanceDescription": "Název a logo knihovny, barvy, jazyk a sekce přehledu.",
+		"classes": "Třídy",
+		"classesDescription": "Třídy školy a skupiny učitelů: vytvořit, přejmenovat, archivovat."
+	},
+	"section": {
+		"tabs": {
+			"form": "Nastavení",
+			"json": "JSON",
+			"label": "Upravit jako"
+		},
+		"file": "Uloženo v {{file}}",
+		"alsoFrom": "Také z: {{files}}",
+		"general": "Obecné",
+		"default": "Výchozí: {{value}}",
+		"defaultNone": "Výchozí: bez hodnoty",
+		"defaultAuto": "Výchozí: automaticky",
+		"usesDefault": "Používá výchozí hodnotu",
+		"reset": "Vrátit na výchozí",
+		"willReset": "Při uložení se vrátí na výchozí hodnotu.",
+		"auto": "Automaticky",
+		"none": "Žádné datum",
+		"yes": "Ano",
+		"no": "Ne",
+		"fixed": "Pevná hodnota",
+		"range": "Od {{min}} do {{max}}.",
+		"min": "Nejméně {{min}}.",
+		"max": "Nejvýše {{max}}.",
+		"save": "Uložit",
+		"discard": "Zrušit změny",
+		"saved": "Nastavení uloženo",
+		"unsaved": "Neuložené změny",
+		"invalid": "Před uložením opravte označené hodnoty.",
+		"errors": "Uložení se nezdařilo:",
+		"inUse": "Uložení by odstranilo něco, co je ještě v použití:",
+		"inUseKinds": {
+			"classification": "kód {{code}}: {{count}} {{count:plural; one:kniha; few:knihy; other:knih;}}",
+			"itemType": "typ exempláře {{code}}: {{count}} {{count:plural; one:exemplář; few:exempláře; other:exemplářů;}}",
+			"level": "úroveň {{code}}: {{count}} {{count:plural; one:žák; few:žáci; other:žáků;}} nebo třídy",
+			"readingLevel": "čtenářská úroveň {{code}}: {{count}} {{count:plural; one:kniha; few:knihy; other:knih;}}"
+		},
+		"patternError": "Neplatný tvar.",
+		"numberError": "Zapište celé číslo.",
+		"required": "Povinné.",
+		"elsewhereTitle": "Další nastavení této sekce",
+		"elsewhereHint": "Tato nastavení se mění v samostatném editoru nebo na kartě JSON.",
+		"openEditor": "Otevřít",
+		"jsonOnly": "Zatím na kartě JSON",
+		"editorNames": {
+			"taxonomy": "Třídění",
+			"appearance": "Vzhled a jazyk",
+			"wizard": "Úvodní průvodce",
+			"history": "Historie",
+			"settings": "Nastavení",
+			"schoolLevels": "Stupně a ročníky"
+		},
+		"json": {
+			"hint": "Sekce tak, jak je zapsána v {{file}}. Klíče začínající na _ jsou komentáře a zůstávají v souboru.",
+			"label": "Obsah sekce v JSON",
+			"parseError": "Text není platný JSON: {{message}}",
+			"notObject": "Sekce musí být objekt JSON ve složených závorkách.",
+			"valid": "Žádné problémy.",
+			"checking": "Kontroluje se…",
+			"issues": "Problémy k opravě:"
+		},
+		"playSound": "Poslechnout"
+	},
+	"history": {
+		"title": "Historie konfigurace",
+		"hint": "Každá změna provedená odsud uchová předchozí verzi souborů, kterých se týká (posledních 50 změn).",
+		"empty": "Správa zatím neprovedla žádnou změnu.",
+		"columns": {
+			"when": "Kdy",
+			"what": "Co",
+			"files": "Soubory"
+		},
+		"revert": "Obnovit",
+		"revertTitle": "Obnovit soubory tak, jak byly před touto změnou?",
+		"revertDescription": "Vrátí se jen hodnoty změněné touto změnou. Obnovení je také změna: zůstane v historii a dá se vrátit zpět.",
+		"reverted": "Předchozí verze obnovena",
+		"refused": "Tato změna vytvořila config.json: nelze ji vrátit zpět.",
+		"conflict": "Nelze obnovit: po této změně se znovu změnily {{keys}}.",
+		"notFound": "Změna už není v historii.",
+		"newFile": "nový",
+		"actions": {
+			"revert": "Obnovení změny z {{when}}",
+			"theme": "Barvy",
+			"locale": "Jazyk",
+			"logo": "Logo knihovny",
+			"setup": "Úvodní nastavení",
+			"section": "Sekce „{{section}}“",
+			"other": "Změna ({{action}})"
+		}
+	},
+	"archive": {
+		"title": "Archiv konfigurace",
+		"hint": "Celá konfigurace v jednom souboru: nastavení, tiskové šablony, samolepicí archy, piktogramy, logo, reporty a jazyky (ne historie). Slouží k uschování kopie nebo k přenesení na jinou instalaci. „Importovat konfiguraci“ přijme také zálohu nebo archiv „Exportovat vše“: z něj vezme jen konfiguraci, data knihovny zůstanou beze změny.",
+		"export": "Exportovat konfiguraci",
+		"import": "Importovat konfiguraci",
+		"checking": "Kontroluje se archiv…",
+		"from": "Archiv z {{date}} (verze {{version}})",
+		"fromLibrary": "Archiv knihovny „{{library}}“ z {{date}} (verze {{version}})",
+		"files": "{{added}} {{added:plural; one:nový soubor; few:nové soubory; other:nových souborů;}}, {{changed}} změněno, {{removed}} odebráno, {{unchanged}} beze změny.",
+		"fileList": "Seznam souborů",
+		"added": "nový",
+		"changed": "změněný",
+		"removed": "odebraný",
+		"sameValues": "Nastavení zůstane stejné.",
+		"sections": "Změní se: {{sections}}.",
+		"errorsTitle": "Archiv obsahuje problémy: před importem je nutné je opravit.",
+		"apply": "Importovat",
+		"confirmTitle": "Nahradit konfiguraci konfigurací z archivu?",
+		"confirmDescription": "Současné soubory zůstanou v historii: „Obnovit“ vrátí předchozí konfiguraci. Data knihovny (knihy, čtenáři, výpůjčky) se nezmění.",
+		"imported": "Konfigurace importována",
+		"failed": "Import se nezdařil",
+		"errors": {
+			"too_large": "Archiv je příliš velký (nejvýše {{maxMb}} MB).",
+			"not_zip": "Soubor není platný archiv ZIP.",
+			"not_archive": "Soubor není archiv BiblioViva.",
+			"too_many_files": "Archiv obsahuje příliš mnoho souborů.",
+			"unsafe_path": "Archiv obsahuje nepovolenou cestu: {{name}}",
+			"link": "Archiv obsahuje odkaz, který není povolen: {{name}}",
+			"unknown_file": "Archiv obsahuje soubor, který není součástí konfigurace: {{name}}",
+			"no_config": "Archiv neobsahuje konfiguraci (jen data knihovny): obnoví se z Správa → Zálohy."
+		},
+		"exportSome": "Exportovat vybrané části",
+		"chooseExport": "Vyberte, co exportovat"
+	},
+	"blocks": {
+		"problems": {
+			"codeRequired": {
+				"itemTypes": "Kód je povinný.",
+				"sections": "Paralelka je povinná."
+			},
+			"codeFormat": {
+				"itemTypes": "Písmena, číslice, tečka, pomlčka nebo podtržítko (nejvýše 32).",
+				"sections": "Velká písmena nebo číslice, nejvýše 8."
+			},
+			"codeTaken": {
+				"itemTypes": "Kód se opakuje.",
+				"sections": "Paralelka se opakuje."
+			},
+			"labelRequired": {
+				"itemTypes": "Název je povinný.",
+				"sections": "Název je povinný."
+			}
+		},
+		"itemTypes": {
+			"title": "Typy exemplářů",
+			"hint": "Kniha, DVD, příručka…: typ každého exempláře určuje pravidla výpůjčky. Změna kódu přesune jeho exempláře na nový kód.",
+			"code": "Kód",
+			"label": "Název",
+			"notForLoan": "Jen prezenčně",
+			"add": "Přidat typ",
+			"saved": "Typy exemplářů uloženy"
+		},
+		"move": {
+			"title": "Kam půjdou?",
+			"hint": {
+				"copies": "Některé odstraněné typy mají ještě exempláře: vyberte typ, na který je přesunout.",
+				"students": "Některé odstraněné paralelky mají ještě žáky: vyberte paralelku, do které je přesunout."
+			},
+			"row": {
+				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:exemplář; few:exempláře; other:exemplářů;}}. Přesunout na",
+				"students": "{{code}}: {{count}} {{count:plural; one:žák; few:žáci; other:žáků;}}. Přesunout do"
+			},
+			"choose": "Vyberte…",
+			"used": {
+				"copies": "Exempláře",
+				"students": "Žáci"
+			},
+			"count": {
+				"copies": "{{count}} {{count:plural; one:exemplář; few:exempláře; other:exemplářů;}}",
+				"students": "{{count}} {{count:plural; one:žák; few:žáci; other:žáků;}}"
+			},
+			"done": {
+				"copies": "{{count}} {{count:plural; one:exemplář přesunut; few:exempláře přesunuty; other:exemplářů přesunuto;}}.",
+				"students": "{{count}} {{count:plural; one:žák přesunut; few:žáci přesunuti; other:žáků přesunuto;}}."
+			}
+		},
+		"barcodes": {
+			"title": "Číslování a náhled",
+			"counter": "Čísla nových průkazů",
+			"afterLegacy": "Za nejvyšším číslem průkazů, které už existují",
+			"from": "Od tohoto čísla dál:",
+			"fromNumber": "První číslo nových průkazů",
+			"counterHint": "Použité číslo se už nikdy nevrátí: je-li zvolené číslo nižší, počítání pokračuje tam, kde se skončilo. Nové exempláře mají vždy rok a pořadové číslo.",
+			"nextCard": "Další průkaz: {{code}}",
+			"nextItem": "Další exemplář: {{code}}",
+			"overrides": "Tyto tiskové šablony si čárový kód volí samy, takže výše uvedené nastavení se na ně nevztahuje: {{templates}}.",
+			"saved": "Číslování uloženo"
+		},
+		"itemTypeRules": {
+			"title": "Pravidla podle typu exempláře",
+			"hint": "Ke každému typu exempláře lze změnit jedno pravidlo: například DVD na 5 dní. Pravidla platí stejně pro žáky i učitele.",
+			"inherit": "Prázdné: platí pravidlo žáků a učitelů (šedě: žáci / učitelé).",
+			"saved": "Pravidla podle typu exempláře uložena"
+		},
+		"calendar": {
+			"title": "Kalendář knihovny",
+			"weekly": "Dny zavřeno každý týden",
+			"weeklyHint": "Zvýrazněné dny jsou každý týden zavřené.",
+			"previous": "Předchozí školní rok",
+			"next": "Další školní rok",
+			"addNational": "Přidat státní svátky roku {{year}}",
+			"autoOn": "Státní svátky jsou už zavřené automaticky. Kliknutí na otevřený den jej zavře; na den zavřený ručně jej znovu otevře.",
+			"clickHint": "Kliknutí na otevřený den jej zavře; na den zavřený ručně jej znovu otevře.",
+			"open": "otevřeno",
+			"legend": {
+				"open": "Otevřeno",
+				"weekly": "Týdenní zavření",
+				"national": "Státní svátek",
+				"holiday": "Zavřeno (zvoleno zde)",
+				"range": "Období zavření"
+			},
+			"ranges": "Období zavření",
+			"from": "Od",
+			"to": "Do",
+			"reason": "Důvod",
+			"badRange": "Konec je před začátkem.",
+			"addRange": "Přidat období",
+			"saved": "Kalendář uložen"
+		},
+		"cardTemplates": {
+			"title": "Šablona podle typu čtenáře",
+			"hint": "Žáci a učitelé tisknou průkaz podle výchozí šablony zvolené výše, pokud zde není zvolena jiná.",
+			"student": "Průkazy žáků",
+			"teacher": "Průkazy učitelů",
+			"asDefault": "Stejná jako výchozí ({{name}})",
+			"cutLines": "Barevný obrys na každém průkazu",
+			"cutLinesOn": "Nakreslit barevný obrys na každý průkaz (obvykle není potřeba: stačí značky pro řezání)",
+			"color": "Barva",
+			"width": "Tloušťka (mm)",
+			"sample": "Ukázka řezné čáry",
+			"saved": "Šablony průkazů uloženy"
+		},
+		"stocks": {
+			"title": "Archy samolepících štítků",
+			"hint": "Rozměry archů samolepících štítků, na které se tiskne. Nákres vpravo sleduje každé číslo: štítky, které přesahují arch, jsou červeně. Po uložení vytiskněte zkušební stránku na obyčejný papír a položte ji přes arch se štítky.",
+			"new": "Nový",
+			"toFix": "K opravě",
+			"add": "Přidat arch",
+			"id": "Kód",
+			"name": "Název",
+			"labelWidth": "Šířka štítku (mm)",
+			"labelHeight": "Výška štítku (mm)",
+			"columns": "Sloupce",
+			"rows": "Řádky",
+			"marginTop": "Horní okraj (mm)",
+			"marginLeft": "Levý okraj (mm)",
+			"gapX": "Mezera mezi sloupci (mm)",
+			"gapY": "Mezera mezi řádky (mm)",
+			"radius": "Zaoblené rohy (mm)",
+			"calibration": "Vytisknout zkušební stránku",
+			"inUse": "Používá se pro: {{jobs}}. Pro odstranění nejprve vyberte jiný arch v nastavení výše.",
+			"saveFirst": "Uložte změny, aby bylo možné vytisknout zkušební stránku.",
+			"drawing": "Nákres archu A4 se štítky: {{columns}} {{columns:plural; one:sloupec; few:sloupce; other:sloupců;}} a {{rows}} {{rows:plural; one:řádek; few:řádky; other:řádků;}}",
+			"caption": "Arch A4 · {{count}} {{count:plural; one:štítek; few:štítky; other:štítků;}}",
+			"saved": "Archy štítků uloženy",
+			"problems": {
+				"id": "Kód může obsahovat písmena, číslice, pomlčky a podtržítka.",
+				"duplicate": "Jiný arch už má tento kód.",
+				"name": "Napište název.",
+				"numbers": "Zkontrolujte rozměry: čísla od 0 výš, štítky větší než nula, celé sloupce a řádky.",
+				"width": "Štítky zabírají {{mm}} mm: více než šířka archu A4 (210 mm).",
+				"height": "Štítky zabírají {{mm}} mm: více než výška archu A4 (297 mm).",
+				"pairRows": "Dvojice potřebuje sudý počet řádků (hřbetní štítek a štítek jeden nad druhým)."
+			},
+			"errors": {
+				"duplicate": "Dva archy mají stejný kód: {{details}}.",
+				"inUse": "Arch používaný k tisku nelze odstranit: {{details}}."
+			}
+		},
+		"backupSchedule": {
+			"title": "Další zálohy",
+			"invalid": "Čas není platný výraz cron (pět polí: minuty, hodiny, den, měsíc, den v týdnu).",
+			"never": "S tímto výrazem se záloha nikdy nespustí.",
+			"hint": "Časy v časovém pásmu knihovny ({{timezone}}). Je-li počítač v daný čas vypnutý, se zapnutou volbou „Záloha při spuštění, pokud byla zmeškána“ se záloha provede při příštím spuštění; čas lze také přesunout do otevírací doby."
+		},
+		"coverProviders": {
+			"off": "Obálky jsou vypnuté (Obálky knih výše): žádný zdroj se nedotazuje.",
+			"title": "Odkud stahovat obálky",
+			"hint": "Zdroje se zkoušejí v tomto pořadí, dokud jeden nenajde obálku; každý lze vypnout zvlášť.",
+			"names": {
+				"amazon": "Amazon",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books"
+			},
+			"googleKey": "Google Books vyžaduje klíč API, který se zapíše v nastavení „Údaje o knihách“; bez klíče se tento zdroj přeskočí.",
+			"saved": "Zdroje obálek uloženy"
+		},
+		"z3950Targets": {
+			"title": "Katalogy Z39.50",
+			"hint": "Katalogy, ze kterých se berou údaje o knihách. „Vyzkoušet připojení“ provede skutečné hledání se zadanými hodnotami, bez jejich uložení.",
+			"id": "Kód",
+			"name": "Název",
+			"host": "Adresa serveru",
+			"port": "Port",
+			"database": "Databáze",
+			"syntax": "Formát záznamů",
+			"charset": "Kódování znaků",
+			"elements": "Prvky",
+			"elementsHint": "Obvykle F (úplný záznam).",
+			"add": "Přidat katalog",
+			"isDefault": "Je to výchozí katalog: před jeho odstraněním vyberte jiný výše.",
+			"saved": "Katalogy uloženy",
+			"problems": {
+				"id": "Kód musí být jedinečný: písmena, číslice, pomlčky.",
+				"required": "Název, databáze, kódování a prvky jsou povinné.",
+				"host": "Adresa může obsahovat písmena, číslice, tečky a pomlčky.",
+				"words": "Databáze, kódování a prvky jsou vždy jedno slovo bez mezer.",
+				"port": "Port je číslo od 1 do 65535."
+			},
+			"test": {
+				"button": "Vyzkoušet připojení",
+				"running": "Probíhá zkouška…",
+				"ok": "Katalog odpovídá: {{hits}} {{hits:plural; one:výsledek; few:výsledky; other:výsledků;}} za {{ms}} ms.",
+				"unreachable": "Katalog neodpovídá: zkontrolujte adresu, port a databázi.",
+				"timeout": "Katalog neodpověděl včas.",
+				"protocol": "Katalog odpověděl chybou: zkontrolujte databázi, formát a kódování.",
+				"spawn": "Program yaz-client na serveru není k dispozici."
+			}
+		},
+		"barcodeFormats": {
+			"title": "Formáty kódů",
+			"hint": "Jak jsou tvořeny kódy nových exemplářů a nových průkazů. Již vytištěné kódy dál fungují: nahrazený formát zůstává mezi předchozími formáty.",
+			"preset": "Hotové formáty",
+			"presets": {
+				"standard": "Standardní (2026-E0267, U012345)",
+				"classic": "Klasický (2026-02678, 0000012344)",
+				"prefix": "S písmenem na začátku (L-2602670, T0123455)",
+				"custom": "Vlastní"
+			},
+			"check": "Kontrolní znak",
+			"checks": {
+				"mod23": "Písmeno (mod 23)",
+				"damm": "Číslice (Damm)",
+				"luhn": "Číslice (Luhn)"
+			},
+			"checkHint": "Odhalí kód načtený nebo napsaný chybně. Písmeno je nejbezpečnější a na první pohled odliší průkazy od kódů exemplářů.",
+			"advanced": "Pokročilé: formáty jeden po druhém",
+			"tokens": "YYYY nebo YY = rok, N = číslice pořadového čísla, C = kontrolní znak, {lib} = kód knihovny, - = pomlčka, velká písmena v apostrofech ('T'). Písmena I, O a Q nejsou povolena.",
+			"pattern": {
+				"item": "Formát exemplářů",
+				"patron": "Formát průkazů"
+			},
+			"libraryCode": "Kód knihovny",
+			"libraryCodeHint": "Jen pokud více knihoven s oddělenými instalacemi musí mít různé kódy: používá se s {lib} ve formátu.",
+			"plainMaxLength": "Počet číslic starých prostých čísel",
+			"plainHint": "Nejvyšší počet číslic u průkazů a exemplářů předchozího systému, které nemají formát (0, pokud žádné nejsou).",
+			"plainLongest": "Nejdelší uložené jednoduché číslo má {{digits}} {{digits:plural; one:číslici; few:číslice; other:číslic;}}.",
+			"distinct": "Exempláře a průkazy nelze zaměnit.",
+			"confusable": "S těmito formáty by se exempláře a průkazy mohly zaměnit:",
+			"warnings": "{{count}} {{count:plural; one:upozornění; few:upozornění; other:upozornění;}}",
+			"inUse": "Formát {{pattern}} má v archivu ještě {{count}} {{count:plural; one:kód; few:kódy; other:kódů;}}: nelze jej odstranit.",
+			"kinds": {
+				"item": "exempláře",
+				"card": "průkazy"
+			},
+			"heading": {
+				"item": "Exempláře",
+				"patron": "Průkazy"
+			},
+			"examples": "Příklady nových kódů:",
+			"currentCount": "Kódy tohoto formátu v archivu: {{count}}",
+			"count": "{{count}} {{count:plural; one:kód; few:kódy; other:kódů;}}",
+			"noCheck": "bez kontroly",
+			"remove": "Odebrat",
+			"retired": "Formáty používané dříve",
+			"legacy": "Kódy předchozího systému",
+			"noLegacy": "Žádné.",
+			"addLegacy": "Přidat starý formát",
+			"try": "Vyzkoušet kód",
+			"tryHint": "Kód zapsaný nebo načtený zde se rozpozná podle formátů výše, i před jejich uložením.",
+			"tried": {
+				"item": "{{value}}: kód exempláře",
+				"legacy_item": "{{value}}: starý kód exempláře",
+				"card": "{{value}}: číslo průkazu",
+				"isbn": "{{value}}: ISBN",
+				"ambiguous": "{{value}}: staré jednoduché číslo (hledá se mezi exempláři a průkazy)",
+				"invalid": "{{value}}: nerozpoznáno nebo chybný kontrolní znak"
+			},
+			"saved": "Formáty kódů uloženy",
+			"patternErrors": {
+				"empty": "Prázdný formát ({{kind}})",
+				"tooLong": "{{pattern}}: příliš dlouhý",
+				"badToken": "{{pattern}}: obsahuje neočekávaný znak",
+				"badLetter": "{{pattern}}: písmeno není povoleno (jen velká, ne I, O, Q)",
+				"unclosedQuote": "{{pattern}}: chybí uzavírací apostrof",
+				"year": "{{pattern}}: rok se píše YYYY nebo YY",
+				"twoYears": "{{pattern}}: rok se objevuje dvakrát",
+				"twoCounters": "{{pattern}}: pořadové číslo musí být jediná skupina N",
+				"noCounter": "{{pattern}}: chybí pořadové číslo (N)",
+				"twoChecks": "{{pattern}}: kontrolní znak se objevuje dvakrát",
+				"checkWithoutAlgorithm": "{{pattern}}: je tu C, ale není zvolena žádná kontrola",
+				"algorithmWithoutCheck": "{{pattern}}: chybí C, místo kontrolního znaku",
+				"noLibraryCode": "{{pattern}}: obsahuje {lib}, ale kód knihovny je prázdný",
+				"badLibraryCode": "Kód knihovny smí obsahovat jen číslice a velká písmena (ne I, O, Q)"
+			},
+			"issues": {
+				"overlap": "{{pattern}} ({{kind}}) a {{other}} ({{otherKind}}) mohou dát stejný kód, například {{example}}",
+				"overlapWithoutDash": "{{pattern}} ({{kind}}) a {{other}} ({{otherKind}}) se zaměňují, když čtečce vypadne pomlčka, například {{example}}",
+				"overlapLegacy": "Staré kódy {{pattern}} ({{kind}}) a {{other}} ({{otherKind}}) mají stejný tvar: hledají se v obou archivech",
+				"overlapPlain": "{{pattern}} ({{kind}}) může dát kód shodný se starším jednoduchým číslem, například {{example}}",
+				"overlapIsbn": "{{pattern}} ({{kind}}) může dát kód shodný s ISBN, například {{example}}",
+				"overlapIsbn10": "{{pattern}} ({{kind}}) má tvar ISBN-10 napsaného bez pomlček: platí číslo průkazu",
+				"lookAlike": "{{pattern}} ({{kind}}) a {{other}} ({{otherKind}}) si jsou příliš podobné: je potřeba rozdíl délky alespoň 2 znaky, písmeno na jiném místě nebo pomlčka jinde"
+			}
+		},
+		"schoolLevels": {
+			"title": "Stupně školy a ročníky",
+			"hint": "Ročníky školy v pořadí, v jakém se navštěvují, rozdělené podle stupňů školy. Kód zůstává u žáků: při odstranění nebo přečíslování ročníku, který se používá, se vybere, kam přejdou jeho žáci a třídy.",
+			"preset": "Předloha",
+			"presetApply": "Použít tuto předlohu",
+			"presetHint": "Nahradí stupně a ročníky níže těmi z předlohy; nic se neuloží, dokud nestisknete „Uložit“.",
+			"custom": "Vlastní",
+			"stages": "Stupně školy",
+			"stageCode": "Kód",
+			"stageName": "Název",
+			"stageLabel": "Jak se píše třída",
+			"addStage": "Přidat stupeň",
+			"stageLabelHint": "„Jak se píše třída“ u stupně platí pro jeho ročníky místo údaje za celou školu; bez {group} je třída jen ročník (Q1, bez paralelek). Prázdné: jako zbytek školy.",
+			"levels": "Ročníky",
+			"levelCode": "Kód",
+			"levelLabel": "Ve třídě",
+			"levelName": "Název",
+			"levelStage": "Stupeň",
+			"levelNext": "Následující ročník",
+			"levelAliases": "Další názvy",
+			"levelAliasesPlaceholder": "Oddělené čárkami",
+			"nextFollowing": "Následující ročník",
+			"nextLeaves": "Odchází ze školy",
+			"nextChoices": "Volba mezi ročníky",
+			"choiceAdd": "Přidat volbu…",
+			"choiceRemove": "Odebrat {{name}}",
+			"choiceDefault": "výchozí",
+			"addLevel": "Přidat ročník",
+			"inUse": "Používá se",
+			"moveUp": "Posunout nahoru",
+			"moveDown": "Posunout dolů",
+			"example": "Příklad: {{label}}",
+			"saved": "Stupně a ročníky uloženy",
+			"problems": {
+				"code": "Kódy: písmena, číslice a pomlčka (u ročníku nejvýše 8), všechny různé.",
+				"required": "Štítek a název jsou povinné.",
+				"template": "„Jak se píše třída“ u stupně musí obsahovat {level}.",
+				"stageUsed": "Stupeň s ročníky nelze odebrat.",
+				"structure": "Struktura není platná: {{details}}"
+			},
+			"move": {
+				"title": "Kam přejdou žáci a třídy?",
+				"hint": "Některé odebrané ročníky mají ještě žáky nebo třídy. U každého vyberte ročník, do kterého přejdou; výpůjčky si zachovávají třídu, ve které byly uskutečněny.",
+				"level": "{{name}}: {{pupils}} {{pupils:plural; one:žák; few:žáci; other:žáků;}}, {{classes}} {{classes:plural; one:třída; few:třídy; other:tříd;}}",
+				"choose": "Vyberte ročník…",
+				"confirm": "Přesunout a uložit",
+				"done": "Přesunuto: {{pupils}} {{pupils:plural; one:žák; few:žáci; other:žáků;}} a {{classes}} {{classes:plural; one:třída; few:třídy; other:tříd;}}."
+			}
+		}
+	},
+	"templates": {
+		"title": "Tiskové šablony",
+		"hint": "Složky šablon pro průkazy, štítky, potvrzení a upomínky. Šablony dodané s BiblioViva lze přizpůsobit (vytvoří se kopie se stejným názvem) nebo zduplikovat pod jiným názvem; obrázky a písma kopie se nahrávají sem. Každá operace se objeví v historii konfigurace a lze ji vzít zpět.",
+		"source": {
+			"builtin": "Dodáno s BiblioViva",
+			"customised": "Přizpůsobeno",
+			"added": "Přidáno"
+		},
+		"broken": "Obsahuje chyby",
+		"customise": "Přizpůsobit",
+		"duplicate": "Duplikovat",
+		"rename": "Přejmenovat",
+		"restore": "Zpět k originálu",
+		"usedBy": "Používá: {{settings}}.",
+		"unused": "Nepoužívá žádné nastavení.",
+		"assets": "Obrázky a písma ({{count}})",
+		"noAssets": "Žádné soubory.",
+		"usedIn": "použito v {{files}}",
+		"assetUnused": "nepoužito",
+		"upload": "Nahrát soubor",
+		"uploadHint": "Obrázky PNG, JPEG, WebP, GIF, SVG nebo písma WOFF2, WOFF, TTF; nejvýše {{maxMb}} MB.",
+		"builtinAssets": "Chcete-li změnit obrázky šablony dodané s BiblioViva, nejprve ji přizpůsobte.",
+		"files": "Soubory šablony ({{count}})",
+		"filesHint": "Obsah HTML a CSS se upravuje ve vizuálním editoru šablon.",
+		"done": {
+			"duplicate": "Šablona zduplikována",
+			"customise": "Šablona přizpůsobena: kopii lze upravit",
+			"rename": "Šablona přejmenována",
+			"delete": "Šablona odstraněna",
+			"upload": "Soubor {{name}} nahrán",
+			"removeAsset": "Soubor {{name}} odstraněn"
+		},
+		"errors": {
+			"notFound": "Šablona nebo soubor nenalezen.",
+			"badName": "Neplatný název: malá písmena, číslice, pomlčky a podtržítka.",
+			"exists": "Šablona s tímto názvem už existuje.",
+			"builtin": "Šablony dodané s BiblioViva se nemění: přizpůsobte je nebo je zduplikujte.",
+			"inUse": "Šablonu používá: {{details}}. Nejprve vyberte jinou šablonu.",
+			"badAsset": "„{{name}}“ není povolený soubor (PNG, JPEG, WebP, GIF, SVG bez skriptů, WOFF2, WOFF, TTF).",
+			"assetTooLarge": "„{{name}}“ je příliš velký: nejvýše {{maxMb}} MB.",
+			"assetInUse": "Soubor se používá v: {{details}}."
+		},
+		"dialog": {
+			"name": "Název složky",
+			"nameHint": "Malá písmena, číslice, pomlčky a podtržítka.",
+			"badName": "Používejte jen malá písmena, číslice, pomlčky a podtržítka.",
+			"taken": "Šablona s tímto názvem už existuje.",
+			"duplicate": {
+				"title": "Duplikovat {{name}}",
+				"hint": "Vytvoří se kopie se všemi jejími soubory, připravená k úpravám.",
+				"confirm": "Duplikovat"
+			},
+			"customise": {
+				"title": "Přizpůsobit {{name}}",
+				"hint": "Vytvoří se kopie se stejným názvem, která nahradí originál; originál zůstane k dispozici pro návrat.",
+				"confirm": "Přizpůsobit"
+			},
+			"rename": {
+				"title": "Přejmenovat {{name}}",
+				"hint": "Nastavení, která používají tuto šablonu, převezmou nový název.",
+				"confirm": "Přejmenovat"
+			},
+			"delete": {
+				"title": "Odstranit {{name}}",
+				"hint": "Složka a její soubory se odstraní; je-li to kopie šablony dodané s BiblioViva, znovu se použije originál. Lze to vzít zpět z historie.",
+				"confirm": "Odstranit"
+			}
+		},
+		"edit": "Upravit"
+	},
+	"languages": {
+		"title": "Jazykové balíčky",
+		"hint": "Pro použití BiblioViva v jiném jazyce: stáhněte anglický nebo italský příklad, přeložte texty souborů JSON a klíče i zástupné znaky ve dvojitých složených závorkách ponechte beze změny, do pack.json napište název jazyka a nahrajte zip. Balíček s chybami se nenainstaluje; chybějící texty se zobrazí anglicky. Jazyk se volí v části Vzhled a jazyk.",
+		"none": "Není nainstalován žádný balíček.",
+		"valid": "Platný",
+		"errorsCount": "{{count}} {{count:plural; one:chyba; few:chyby; other:chyb;}}",
+		"warnings": "{{count}} {{count:plural; one:chybějící nebo nadbytečný text; few:chybějící nebo nadbytečné texty; other:chybějících nebo nadbytečných textů;}}",
+		"inUse": "Používá se",
+		"download": "Stáhnout",
+		"report": "Výsledek kontroly",
+		"upload": "Nahrát balíček (zip)",
+		"uploadHint": "Zip s pack.json a soubory jazyka, uvnitř složky pojmenované podle kódu (například de/); nejvýše {{maxMb}} MB.",
+		"examples": "Příklady ke stažení:",
+		"installed": "Jazyk nainstalován: {{name}}",
+		"removed": "Balíček odstraněn",
+		"removeTitle": "Odstranit balíček {{code}}?",
+		"removeHint": "Složka jazyka se odstraní. Lze to vzít zpět z historie konfigurace.",
+		"errors": {
+			"notAZip": "Soubor není zip.",
+			"tooLarge": "Zip je příliš velký: nejvýše {{maxMb}} MB.",
+			"badLayout": "Zip smí obsahovat jen soubory .json jazyka, uvnitř jediné složky pojmenované podle kódu jazyka. {{details}}",
+			"badCode": "Neplatný kód jazyka: {{details}} (například de, fr, pt-BR).",
+			"builtIn": "Angličtina a italština jsou už zabudované a nenahrazují se.",
+			"invalid": "Balíček má chyby a nebyl nainstalován: {{details}}",
+			"inUse": "Je to jazyk, který se právě používá: nejprve vyberte jiný.",
+			"notFound": "Balíček nenalezen.",
+			"unavailable": "Seznam jazyků nebo balíček nešlo stáhnout. Zkontrolujte připojení k internetu, nebo nahrajte zip ručně.",
+			"checksum": "Stažený balíček je poškozený a nebyl nainstalován. Zkuste to znovu."
+		},
+		"release": {
+			"title": "Jazyky k instalaci",
+			"hint": "Jazyky zveřejněné s touto verzí BiblioViva. Seznam se načte z internetu a každý balíček se před instalací zkontroluje.",
+			"percent": "{{percent}} % přeloženo",
+			"machine": "Automatický překlad, nečetl rodilý mluvčí",
+			"reviewed": "Překlad přečetl rodilý mluvčí",
+			"install": "Nainstalovat",
+			"again": "Nainstalovat znovu",
+			"installedBadge": "Nainstalováno",
+			"page": "Stránka vydání, odkud si balíčky stáhnete ručně a nahrajete je níže",
+			"unavailable": "Seznam jazyků není dostupný: chybí připojení k internetu, nebo tato verze zatím seznam nemá. Nahrání zipu níže funguje i tak."
+		}
+	},
+	"reports": {
+		"title": "Knihovna sestav",
+		"hint": "Sestavy dodané s BiblioViva a sestavy školy. Chcete-li některou přizpůsobit, stáhněte ji, upravte a nahrajte: se stejným kódem (id) nahradí originál. Před instalací se kontroluje formát, bezpečnost dotazu a tabulky a sloupce, které používá. Návod k psaní sestav je v docs/reports-authoring.md.",
+		"upload": "Nahrát sestavu (JSON)",
+		"try": "Zkusit",
+		"download": "Stáhnout",
+		"problems": "Tyto soubory se nenačtou:",
+		"installed": "Sestava {{id}} nainstalována",
+		"replaced": "Sestava {{id}} nahrazena",
+		"removed": "Soubor odstraněn",
+		"removeTitle": "Odstranit {{file}}?",
+		"removeHint": "Soubor se odstraní z konfigurace. Lze to vzít zpět z historie.",
+		"restoreHint": "Verze školy se odstraní: znovu se použije sestava dodaná s BiblioViva. Lze to vzít zpět z historie.",
+		"origin": {
+			"builtin": "Dodáno s BiblioViva",
+			"customised": "Přizpůsobeno",
+			"added": "Přidáno"
+		},
+		"errors": {
+			"tooLarge": "Soubor je příliš velký: nejvýše {{maxKb}} KB.",
+			"badJson": "Soubor není platný JSON: {{details}}",
+			"invalid": "Definice není platná: {{details}}",
+			"sql": "Dotaz na této databázi nefunguje: {{details}}",
+			"notFound": "Soubor nenalezen.",
+			"reservedId": "„new“ nemůže být kódem sestavy."
+		},
+		"new": "Nová sestava",
+		"edit": "Upravit",
+		"duplicate": "Duplikovat",
+		"editor": {
+			"editTitle": "Upravit sestavu",
+			"newTitle": "Nová sestava",
+			"copySuffix": "kopie",
+			"builtinHint": "Je to sestava dodaná s BiblioViva: uložením vznikne přizpůsobená kopie školy se stejným názvem. „Zpět k originálu“ v knihovně ji odstraní.",
+			"id": "Kód sestavy",
+			"category": "Kategorie",
+			"title": {
+				"it": "Název (italsky)",
+				"en": "Název (anglicky)"
+			},
+			"description": {
+				"it": "Popis (italsky)",
+				"en": "Popis (anglicky)"
+			},
+			"restricted": "Pouze pro správce",
+			"tabs": {
+				"label": "Způsob úpravy",
+				"guided": "Vedené",
+				"sql": "SQL"
+			},
+			"sqlOnly": "Tato sestava je napsaná v SQL: upravuje se na záložce SQL.",
+			"source": "Data",
+			"rows": "Řádky",
+			"rows2": "Řádky, druhá úroveň",
+			"columns": "Sloupce",
+			"columnsHint": "Se sloupci se sestava změní na kontingenční tabulku se součty.",
+			"none": "— žádné —",
+			"totals": "Součty",
+			"totalsOptions": {
+				"both": "Řádek a sloupec součtů",
+				"rows": "Sloupec součtů",
+				"columns": "Řádek součtů",
+				"none": "Bez součtů"
+			},
+			"sort": "Řazení",
+			"sortDimension": "Podle pořadí řádků",
+			"sortMeasure": "Od nejvyšší hodnoty",
+			"measures": "Hodnoty",
+			"oneMeasure": "Kontingenční tabulka ukazuje jednu hodnotu.",
+			"filters": "Filtry",
+			"filterModes": {
+				"off": "Bez filtru",
+				"ask": "Dotaz při otevření",
+				"fixed": "Pevný"
+			},
+			"value": "Hodnota",
+			"chart": "Graf",
+			"charts": {
+				"bar": "Sloupce",
+				"line": "Čáry",
+				"doughnut": "Prstencový"
+			},
+			"compiledHint": "Vedená sestava se změní na tento SQL. Chcete-li ho napsat ručně, použijte „Upravit jako SQL“: zpět k vedené úpravě se pak nelze vrátit.",
+			"previewFirst": "Stiskněte „Náhled“, abyste viděli SQL.",
+			"convert": "Upravit jako SQL",
+			"convertTitle": "Převést sestavu na SQL?",
+			"convertHint": "Sestava se změní na SQL sestavu se stejnými sloupci a parametry. V záložce Vedené ji už nepůjde upravit.",
+			"converted": "Sestava je nyní v SQL",
+			"sqlHint": "Jeden příkaz SELECT nebo WITH, parametry jako :název.",
+			"json": {
+				"params": "Parametry (JSON)",
+				"columns": "Sloupce (JSON)",
+				"chart": "Graf (JSON, volitelné)",
+				"pivot": "Kontingenční tabulka (JSON, volitelné)"
+			},
+			"jsonHint": "Ve formátu popsaném v návodu k sestavám.",
+			"preview": "Náhled",
+			"runPreview": "Náhled",
+			"previewHint": "Náhled spustí sestavu s výchozími hodnotami parametrů (nejvýše 200 řádků).",
+			"save": "Uložit",
+			"saved": "Sestava „{{id}}“ uložena",
+			"back": "Zpět do knihovny",
+			"jsonInvalid": "Opravte části JSON označené červeně, než uložíte."
+		}
+	},
+	"designer": {
+		"title": "Upravit {{name}}",
+		"design": "Návrh",
+		"code": "Kód",
+		"preview": "Náhled",
+		"front": "Přední strana",
+		"back": "Zadní strana",
+		"faces": "Strany nebo štítky",
+		"zoom": "Zvětšení",
+		"grid": "Mřížka",
+		"gridSteps": {
+			"s0": "Žádná (volná)",
+			"s05": "0,5 mm",
+			"s1": "1 mm",
+			"s2": "2 mm",
+			"s25": "2,5 mm",
+			"s5": "5 mm",
+			"s10": "10 mm"
+		},
+		"files": "Soubory",
+		"problems": "Šablonu takto nelze vytisknout:",
+		"saved": "Šablona uložena",
+		"notEditable": "Tuto šablonu zde nelze upravit: šablony dodané s BiblioViva je nejprve třeba přizpůsobit.",
+		"canvasHint": "Kliknutím na rámeček jej vyberete, tažením jej přesunete, rohem změníte velikost: pozice a rozměry se přichytávají k zvolené mřížce. Klávesnicí šipky posouvají o jeden krok mřížky (s Shiftem asi 5 mm, vždy na mřížce) a Delete jej odstraní.",
+		"flowHint": "{{count}} {{count:plural; one:prvek této strany je rozmístěn; few:prvky této strany jsou rozmístěny; other:prvků této strany je rozmístěno;}} podle stylů CSS (tečkovaný obrys): při prvním posunu se pozice všech zapíší do souboru, tam kde jsou nyní.",
+		"lockedHint": "{{count}} {{count:plural; one:část této strany je; few:části této strany jsou; other:částí této strany je;}} uvnitř sekce Mustache: {{count:plural; one:upravuje se; few:upravují se; other:upravuje se;}} na záložce „Kód“.",
+		"noStock": "Žádný arch štítků nepoužívá tuto variantu: nákres se zobrazí bez náhledu.",
+		"codeHint": "Nákres a kód upravují stejné soubory: každá změna provedená zde se objeví i v nákresu a naopak.",
+		"add": "Přidat",
+		"newText": "Text",
+		"noImages": "Chcete-li přidat obrázky, nejprve je nahrajte mezi obrázky šablony.",
+		"types": {
+			"field": "Pole",
+			"text": "Text",
+			"barcode": "Čárový kód",
+			"photo": "Fotografie",
+			"pictogram": "Piktogram",
+			"image": "Obrázek",
+			"box": "Rámeček",
+			"html": "Volné HTML",
+			"other": "Prvek"
+		},
+		"fields": {
+			"library_name": "Název knihovny",
+			"patron_first_name": "Jméno",
+			"patron_last_name": "Příjmení",
+			"patron_card_number": "Číslo průkazu",
+			"patron_class_label": "Třída a paralelka",
+			"patron_level_label": "Třída (ročník)",
+			"patron_group": "Paralelka",
+			"school_year": "Školní rok",
+			"issued_on": "Datum vystavení",
+			"valid_until": "Platný do",
+			"item_barcode": "Čárový kód (text)",
+			"item_call_number": "Signatura",
+			"call_head": "Signatura: první řádek",
+			"call_rest": "Signatura: druhý řádek",
+			"biblio_title_short": "Krátký název",
+			"biblio_author_short": "Krátký autor",
+			"biblio_publication_year": "Rok vydání",
+			"biblio_series": "Edice",
+			"biblio_series_number": "Číslo v edici",
+			"classification_code": "Kód třídění",
+			"classification_label": "Název třídění",
+			"classification_reading_level": "Čtenářská úroveň",
+			"item_item_type": "Typ exempláře"
+		},
+		"field": "Pole",
+		"text": "Text",
+		"image": "Obrázek",
+		"content": "Obsah HTML",
+		"contentHint": "Rámeček se přesouvá a formátuje z nákresu; obsah se píše v HTML s poli Mustache, jako v souborech šablony.",
+		"inherited": "Výchozí",
+		"unplacedHint": "Tento prvek je rozmístěn styly CSS: při posunu se jeho pozice a pozice ostatních prvků této strany zapíší do souboru.",
+		"geometry": {
+			"x": "X (mm)",
+			"y": "Y (mm)",
+			"w": "Šířka",
+			"h": "Výška"
+		},
+		"fontSize": "Velikost (pt)",
+		"font": "Písmo",
+		"fonts": {
+			"sans": "Bezpatkové",
+			"serif": "Patkové",
+			"mono": "Neproporcionální"
+		},
+		"bold": "Tučné",
+		"italic": "Kurzíva",
+		"uppercase": "Velká písmena",
+		"align": "Zarovnání",
+		"aligns": {
+			"left": "Vlevo",
+			"center": "Na střed",
+			"right": "Vpravo"
+		},
+		"color": "Barva",
+		"border": "Ohraničení",
+		"borderColor": "Barva ohraničení",
+		"fill": "Výplň",
+		"fillColor": "Barva výplně",
+		"backward": "Přesunout dozadu",
+		"forward": "Přesunout dopředu",
+		"background": "Pozadí strany",
+		"backgroundColor": "Barva pozadí",
+		"backgroundImage": "Obrázek pozadí",
+		"noImage": "Žádný",
+		"chooseHint": "Vyberte na návrhu rámeček, který chcete upravit.",
+		"modes": "Zobrazení šablony",
+		"safeArea": "Bezpečná oblast: texty a fotografie držte uvnitř čárkované čáry, 2 mm od okraje (při tisku z obou stran se zadní strana může posunout o milimetr).",
+		"chooseBackground": "Vyberte pozadí",
+		"uploadBackground": "Nahrát obrázek",
+		"backgroundsTitle": "Hotová pozadí",
+		"backgroundsHint": "Každé pozadí přesahuje kartu o něco málo, 3 mm na každé straně: přebytek se odřízne.",
+		"backgroundAlt": "Pozadí {{name}}",
+		"backgroundAdded": "Pozadí přidáno ke straně: uložte, aby zůstalo.",
+		"backgroundFailed": "Pozadí nebylo přidáno.",
+		"cardSize": "Formát průkazu",
+		"cardWidth": "Šířka (mm)",
+		"cardHeight": "Výška (mm)",
+		"cardRotate": "Otočit: na výšku nebo na šířku",
+		"cardDefault": "Zpět na výchozí formát ({{width}} × {{height}} mm)",
+		"cardDefaultHint": "Toto je výchozí formát nastavení (Konfigurace → Průkazy): zde se mění jen pro tuto šablonu.",
+		"cardTooLarge": "Průkaz o rozměrech {{width}} × {{height}} mm se nevejde na arch A4: nejvýše {{maxWidth}} × {{maxHeight}} mm, protože přední a zadní strana stojí vedle sebe uvnitř okrajů."
+	},
+	"parts": {
+		"groups": {
+			"data": "Data knihovny",
+			"settings": "Nastavení",
+			"config": "Klasifikace, šablony a další"
+		},
+		"all": "Všechny",
+		"none": "Žádné",
+		"accountsConfirm": {
+			"title": "Importovat i účty a hesla?",
+			"description": "Účty pracovníků a jejich hesla obsažené v archivu nahradí stávající: kdo se teď přihlašuje, už se nebude moci přihlásit dnešními přístupovými údaji. Pokud nejsou potřeba, nechte tuto položku nezaškrtnutou.",
+			"confirm": "Importovat i účty"
+		},
+		"needs": "„{{part}}“ k obnovení potřebují také: {{needs}}.",
+		"data": {
+			"patrons": "Čtenáři",
+			"catalog": "Katalog a exempláře",
+			"loans": "Výpůjčky a historie",
+			"printLists": "Seznamy k tisku",
+			"photos": "Fotografie čtenářů",
+			"covers": "Obálky",
+			"notes": "Poznámky pracovníků",
+			"dates": "Data kalendáře",
+			"audit": "Záznam činností"
+		},
+		"config": {
+			"classification": "Klasifikace a piktogramy",
+			"stocks": "Archy štítků",
+			"calendar": "Kalendář",
+			"reports": "Sestavy",
+			"cardTemplates": "Šablony průkazů",
+			"pairTemplates": "Šablony dvojic štítků",
+			"barcodeTemplates": "Šablony štítků s čárovým kódem",
+			"spineTemplates": "Šablony hřbetních štítků",
+			"slipTemplates": "Šablony potvrzení a upomínek",
+			"languages": "Jazykové balíčky",
+			"logo": "Logo knihovny"
+		}
+	}
+}

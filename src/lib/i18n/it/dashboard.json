@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "Prestiti in corso",
+		"overdue": "In ritardo",
+		"issuedToday": "Prestati oggi",
+		"returnedToday": "Restituiti oggi",
+		"withoutCard": "Utenti senza tessera stampata",
+		"withoutPhoto": "Utenti senza foto",
+		"toClassify": "Libri da classificare",
+		"pendingLabels": "Libri senza etichette"
+	},
+	"tilesTitle": "La biblioteca oggi",
+	"actions": {
+		"title": "Azioni rapide"
+	},
+	"dueWeek": {
+		"title": "In scadenza questa settimana",
+		"none": "Nessun prestito scade entro {{day}}.",
+		"more": "{{count:plural; one:e un altro; other:e altri {{count}};}}",
+		"due": "scade {{date}}"
+	},
+	"inventory": {
+		"title": "Inventario",
+		"continue": "Continua"
+	},
+	"install": {
+		"title": "Aggiungi alla schermata Home",
+		"hint": "BiblioViva si apre come un'app, a schermo intero, dall'icona sul telefono.",
+		"install": "Installa",
+		"fromMenu": "Dal menu ⋮ di Firefox scegliere «Installa» oppure «Aggiungi alla schermata principale».",
+		"later": "Non ora"
+	},
+	"upcoming": {
+		"title": "Prossime date",
+		"none": "Nessuna data {{days:plural; one:nel prossimo giorno; other:nei prossimi {{days}} giorni;}}.",
+		"more": "{{count:plural; one:e un'altra; other:e altre {{count}};}}",
+		"open": "Apri il calendario"
+	}
+}

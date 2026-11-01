@@ -1,0 +1,39 @@
+{
+	"title": "Izvješća",
+	"categories": {
+		"loans": "Posudbe",
+		"books": "Knjige",
+		"patrons": "Korisnici",
+		"ops": "Aktivnost"
+	},
+	"restricted": "Samo administratori",
+	"custom": "Školska",
+	"chart": "S grafikonom",
+	"problemsTitle": "Datoteke izvješća nisu učitane",
+	"problemsHint": "Ove datoteke u mapi izvješća imaju pogrešku i ne pojavljuju se na popisu:",
+	"params": "Parametri",
+	"run": "Ažuriraj",
+	"all": "Sve",
+	"from": "od",
+	"to": "do",
+	"patronTypes": {
+		"student": "Učenici",
+		"teacher": "Nastavnici"
+	},
+	"rows": "{{count}} {{count:plural; one:redak; few:retka; other:redaka;}}",
+	"ms": "za {{ms}} ms",
+	"truncated": "{{count:plural; one:Prikazan je samo prvi redak. Za prikaz svih suzite parametre.; few:Prikazana su samo prva {{count}} retka. Za prikaz svih suzite parametre.; other:Prikazano je samo prvih {{count}} redaka. Za prikaz svih suzite parametre.;}}",
+	"empty": "Nema rezultata za ove parametre.",
+	"print": "Ispiši",
+	"printedOn": "Ispisano {{date}}",
+	"errors": {
+		"required": "Nedostaje „{{label}}“.",
+		"invalid": "Vrijednost polja „{{label}}“ nije valjana."
+	},
+	"back": "Sva izvješća",
+	"noParams": "Ovo izvješće nema parametara.",
+	"special": {
+		"teachers": "Nastavnici",
+		"total": "Ukupno"
+	}
+}

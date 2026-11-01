@@ -1,0 +1,39 @@
+{
+	"title": "报表",
+	"categories": {
+		"loans": "借阅",
+		"books": "图书",
+		"patrons": "读者",
+		"ops": "操作情况"
+	},
+	"restricted": "仅限管理员",
+	"custom": "学校自定义",
+	"chart": "含图表",
+	"problemsTitle": "未能加载的报表文件",
+	"problemsHint": "报表文件夹中以下文件有错误，未列出：",
+	"params": "参数",
+	"run": "更新",
+	"all": "全部",
+	"from": "从",
+	"to": "至",
+	"patronTypes": {
+		"student": "学生",
+		"teacher": "教师"
+	},
+	"rows": "{{count}} {{count:plural; other:行;}}",
+	"ms": "用时 {{ms}} 毫秒",
+	"truncated": "仅显示前 {{count}} {{count:plural; other:行;}}，请缩小参数范围以查看全部。",
+	"empty": "这些参数没有结果。",
+	"print": "打印",
+	"printedOn": "打印于 {{date}}",
+	"errors": {
+		"required": "缺少“{{label}}”。",
+		"invalid": "“{{label}}”的值无效。"
+	},
+	"back": "全部报表",
+	"noParams": "此报表没有参数。",
+	"special": {
+		"teachers": "教师",
+		"total": "合计"
+	}
+}

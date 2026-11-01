@@ -1,0 +1,60 @@
+{
+	"dashboard": "Painel",
+	"circulation": "Empréstimos",
+	"catalog": "Catálogo",
+	"patrons": "Usuários",
+	"printing": "Impressão",
+	"notes": "Anotações",
+	"reports": "Relatórios",
+	"admin": "Administração",
+	"more": "Mais",
+	"logout": "Sair",
+	"help": "Ajuda",
+	"about": "Sobre",
+	"areas": {
+		"circulation": {
+			"label": "Balcão de empréstimo",
+			"checkout": "Empréstimos",
+			"checkin": "Devoluções",
+			"loans": "Livros em empréstimo",
+			"overdues": "Avisos de atraso",
+			"wishlist": "Sugestões de aquisição",
+			"calendar": "Calendário"
+		},
+		"catalog": {
+			"label": "Páginas do catálogo",
+			"catalog": "Catálogo",
+			"inventory": "Inventário",
+			"wishlist": "Sugestões de aquisição",
+			"toClassify": "Para classificar"
+		},
+		"patrons": {
+			"label": "Páginas dos usuários",
+			"patrons": "Usuários",
+			"census": "Cadastro de fotos"
+		},
+		"notes": {
+			"label": "Páginas das anotações",
+			"open": "Abertas",
+			"archived": "Arquivadas"
+		},
+		"config": {
+			"label": "Páginas da configuração",
+			"overview": "Seções",
+			"history": "Histórico"
+		},
+		"templates": {
+			"label": "Páginas dos modelos de impressão",
+			"edit": "Modelos",
+			"previews": "Pré-visualizações"
+		},
+		"imports": {
+			"label": "Importações",
+			"catalog": "Catálogo",
+			"students": "Alunos",
+			"teachers": "Professores",
+			"loans": "Empréstimos em andamento",
+			"photos": "Fotos dos usuários"
+		}
+	}
+}

@@ -1,0 +1,66 @@
+{
+	"title": "Notas",
+	"new": "Nueva nota",
+	"adminOnly": "Solo el administrador archiva las notas y las destaca en el panel.",
+	"pinned": "Destacada",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Archivada por {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:nota; other:notas;}}",
+	"archiveCount": "{{shown}} de {{total}} {{total:plural; one:nota archivada; other:notas archivadas;}}",
+	"actions": {
+		"label": "Acciones sobre la nota",
+		"pin": "Destacar en el panel",
+		"unpin": "Quitar el destacado",
+		"archive": "Archivar",
+		"restore": "Restaurar",
+		"delete": "Eliminar",
+		"showAll": "Mostrar todo",
+		"showLess": "Mostrar menos",
+		"more": "Mostrar más"
+	},
+	"done": {
+		"added": "Nota añadida",
+		"pinned": "Nota destacada",
+		"unpinned": "Nota quitada del destacado",
+		"archived": "Nota archivada",
+		"restored": "Nota restaurada",
+		"deleted": "Nota eliminada"
+	},
+	"confirmDelete": {
+		"title": "¿Eliminar la nota?",
+		"text": "Se borra para siempre y no se puede recuperar."
+	},
+	"form": {
+		"body": "Texto",
+		"placeholder": "Ej. El lector del mostrador no lee los carnés.",
+		"privacy": "Todas las cuentas leen las notas: no escriba datos personales del alumnado.",
+		"written": "Una nota no se puede modificar: en caso de error, pida al administrador que la archive y escriba otra.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Color",
+		"pinned": "Destacada en el panel",
+		"pinnedHint": "Se muestra a todos en lo alto del panel (y del mostrador de préstamo) hasta que se quite el destacado o se archive.",
+		"save": "Añadir"
+	},
+	"colors": {
+		"yellow": "Amarillo",
+		"pink": "Rosa",
+		"green": "Verde",
+		"blue": "Azul claro",
+		"orange": "Naranja"
+	},
+	"errors": {
+		"empty": "Escriba el texto de la nota.",
+		"tooLong": "El texto es más largo de {{max}} {{max:plural; one:carácter; other:caracteres;}}.",
+		"color": "Elija uno de los colores."
+	},
+	"empty": {
+		"open": "No hay notas abiertas",
+		"openHint": "No hay notas abiertas. Las notas transmiten problemas y avisos a los colegas y al administrador.",
+		"archived": "No hay notas archivadas"
+	},
+	"home": {
+		"title": "Notas",
+		"open": "Abrir las notas"
+	},
+	"tile": "Notas abiertas"
+}

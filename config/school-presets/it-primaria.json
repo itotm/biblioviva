@@ -1,0 +1,79 @@
+{
+	"id": "it-primaria",
+	"name": {
+		"it": "Scuola primaria",
+		"en": "Primary school (Italy)"
+	},
+	"country": "IT",
+	"languages": ["it"],
+	"school": {
+		"stages": [
+			{
+				"code": "primaria",
+				"name": "Primaria"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1",
+				"name": "Prima primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "2",
+				"label": "2",
+				"name": "Seconda primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "3",
+				"label": "3",
+				"name": "Terza primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "4",
+				"label": "4",
+				"name": "Quarta primaria",
+				"stage": "primaria"
+			},
+			{
+				"code": "5",
+				"label": "5",
+				"name": "Quinta primaria",
+				"stage": "primaria"
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Sezione",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"primaria": ["A", "B", "C", "D"]
+	},
+	"teacherGroup": "Docenti",
+	"readingLevels": [
+		{
+			"code": "1",
+			"label": "1ª"
+		},
+		{
+			"code": "2",
+			"label": "2ª"
+		},
+		{
+			"code": "3",
+			"label": "3ª"
+		},
+		{
+			"code": "4",
+			"label": "4ª"
+		},
+		{
+			"code": "5",
+			"label": "5ª"
+		}
+	]
+}

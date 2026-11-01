@@ -1,0 +1,9 @@
+# Trying the stack without a tailnet (PLAN.md step 8.3): a busybox stands in for tailscaled — it
+# answers the health check on :9002 and publishes the app's port on the host — so
+#   TS_AUTHKEY=unused docker compose -f compose.yml -f compose.smoke.yml up -d
+# serves the app on http://127.0.0.1:3103 with the same volumes, limits and hardening.
+services:
+    tailscale:
+        image: docker.io/library/busybox:1.37
+        command: ["sh", "-c", "mkdir -p /www && echo ok > /www/healthz && httpd -f -p 9002 -h /www"]
+        ports: ["127.0.0.1:3103:3000"]

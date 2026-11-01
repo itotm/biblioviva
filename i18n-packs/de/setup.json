@@ -1,0 +1,226 @@
+{
+	"title": "Ersteinrichtung",
+	"intro": "Willkommen bei BiblioViva. In wenigen Schritten ist die Bibliothek bereit: Sprache, Farben, Schule, Codes und Passwörter des Personals.",
+	"stepOf": "Schritt {{step}} von {{total}}",
+	"next": "Weiter",
+	"back": "Zurück",
+	"finish": "Einrichtung abschließen",
+	"steps": {
+		"language": "Sprache",
+		"theme": "Farben",
+		"library": "Bibliothek",
+		"school": "Schule",
+		"codes": "Codes",
+		"passwords": "Passwörter",
+		"demo": "Beispieldaten",
+		"summary": "Zusammenfassung"
+	},
+	"language": {
+		"title": "In welcher Sprache soll BiblioViva sprechen?",
+		"hint": "Pro Installation gibt es nur eine Sprache. Die Sprache gilt für das gesamte Personal und kann unter Verwaltung → Konfiguration → Erscheinungsbild und Sprache geändert werden.",
+		"restore": {
+			"title": "Schon eine Sicherung von BiblioViva vorhanden?",
+			"hint": "Um BiblioViva auf einen anderen Computer zu übertragen oder nach einem Ausfall neu zu beginnen, müssen keine Fragen beantwortet werden: Ein mit „Alles exportieren“ erstelltes Archiv genügt.",
+			"button": "Aus einer Sicherung wiederherstellen"
+		}
+	},
+	"theme": {
+		"title": "Farben auswählen",
+		"hint": "Fünfzehn Farbschemas. Die Farbschemas ändern nur die Farben, nie die Form. Alle sind hell und auch in Schwarzweiß gut lesbar.",
+		"names": {
+			"ocean": "Ozean",
+			"forest": "Wald",
+			"grape": "Traube",
+			"sunset": "Sonnenuntergang",
+			"cherry": "Kirsche",
+			"lagoon": "Lagune",
+			"silver": "Silber",
+			"graphite": "Graphit",
+			"apricot": "Aprikose",
+			"indigo": "Indigo",
+			"mint": "Minze",
+			"rose": "Rose",
+			"sahara": "Sahara",
+			"wintry": "Winter",
+			"olive": "Olive"
+		}
+	},
+	"library": {
+		"title": "Die Bibliothek",
+		"name": "Name der Bibliothek",
+		"namePlaceholder": "Bibliothek der Grundschule Rodari",
+		"schoolType": "Schultyp",
+		"schoolTypeHint": "Die Jahrgangsstufen und Klassen so, wie die Schule sie verwendet. Ändern lässt sich das später unter Verwaltung → Konfiguration → Schule und Verwaltung → Konfiguration → Klassen.",
+		"photos": "Nutzerfotos",
+		"photosHint": "Fotos von Schülerinnen, Schülern und Lehrkräften, aufgenommen oder hochgeladen und auf die Ausweise gedruckt. Ausgeschaltet: Nirgends ein Foto, Ausweise ohne Foto.",
+		"covers": "Buchcover",
+		"coversHint": "Im Netz gesuchte, fotografierte oder hochgeladene Cover, die im Katalog angezeigt werden. Ausgeschaltet: kein Cover."
+	},
+	"school": {
+		"title": "Die Schule",
+		"hint": "Der Schultyp schlägt die Jahrgangsstufen, die Klassen und die Lesestufen vor. Die Klassen werden sofort angelegt; mit den Beispieldaten füllen sie sich mit erfundenen Schülerinnen und Schülern.",
+		"otherCountries": "Andere Länder",
+		"names": {
+			"perLevel": "{{stage}}: Namen der Klassen, eine pro Jahrgangsstufe",
+			"mixed": "{{stage}}: Namen der Zweige, jeder mit allen Jahrgangsstufen"
+		},
+		"namesHint": "Durch Kommas getrennt; A-D steht für A, B, C, D. Leer: keine Klassen.",
+		"namesInvalid": "Ungültige Namen: durch Kommas getrennt eingeben (höchstens 40).",
+		"classes": "{{count}} {{count:plural; one:Klasse; other:Klassen;}} anzulegen:",
+		"more": "und {{count}} weitere",
+		"classLabel": "Wie eine Klasse geschrieben wird",
+		"teacherGroup": "Gruppe der Lehrkräfte",
+		"teacherGroupHint": "Jede Lehrkraft tritt dieser Gruppe bei; weitere Gruppen lassen sich später hinzufügen.",
+		"schoolYearStart": "Beginn des Schuljahrs",
+		"schoolYearStartHint": "Monat und Tag als MM-TT (zum Beispiel 09-01).",
+		"schoolYearStartInvalid": "Monat und Tag als MM-TT schreiben.",
+		"schoolYearLabel": "Name des Schuljahrs",
+		"schoolYearLabels": {
+			"span": "Zwei Jahre (2026/2027)",
+			"start": "Das Jahr des Beginns (2026)"
+		},
+		"readingLevels": "Belletristik nach Lesestufe aufgestellt",
+		"readingLevelsHint": "Jahrgangsstufen, Klassen und Lesestufen lassen sich später in der Verwaltung ändern."
+	},
+	"codes": {
+		"title": "Die Codes",
+		"hint": "Das Barcodeformat der neuen Exemplare und das der neuen Ausweise, jeweils einzeln gewählt. Die beiden Formen können nie verwechselt werden: Wer einen Code liest, erkennt sofort, ob es ein Buch oder ein Ausweis ist.",
+		"itemFormat": "Format der Exemplare",
+		"itemFormats": {
+			"standard": "Jahr, Prüfzeichen und Nummer (empfohlen)",
+			"classic": "Jahr und Nummer, Prüfzeichen am Ende",
+			"prefix": "Mit dem Buchstaben L davor"
+		},
+		"cardFormat": "Format der Ausweise",
+		"cardFormats": {
+			"standard": "Prüfzeichen und sechsstellige Nummer (empfohlen)",
+			"classic": "Zehnstellige Nummer, Prüfzeichen am Ende",
+			"prefix": "Mit dem Buchstaben T davor"
+		},
+		"check": "Prüfzeichen",
+		"checks": {
+			"mod23": "Ein Buchstabe (mod 23)",
+			"luhn": "Eine Ziffer (Luhn)",
+			"damm": "Eine Ziffer (Damm)"
+		},
+		"layout": "Tastatur der Barcodescanner",
+		"layoutHint": "Das Tastaturlayout des Computers, an den die Barcodescanner angeschlossen sind: Es korrigiert vertauschte Zeichen. Ist Ihr Layout nicht aufgeführt, wählen Sie das ähnlichste: Es lässt sich später unter Konfiguration → Barcodes ändern.",
+		"layouts": {
+			"it": "Italienisch",
+			"es": "Spanisch",
+			"de": "Deutsch",
+			"fr": "Französisch",
+			"uk": "Englisch (Vereinigtes Königreich)",
+			"us": "Englisch (Vereinigte Staaten)"
+		},
+		"copy": "Exemplar eines Buches",
+		"card": "Ausweis",
+		"verdict": "Exemplare und Ausweise können niemals verwechselt werden.",
+		"refused": "Mit dieser Wahl könnten Exemplare und Ausweise verwechselt werden: ein anderes Format wählen.",
+		"later": "Formate, Codes älterer Systeme und Nummerierung lassen sich später unter Konfiguration → Barcodes ändern."
+	},
+	"passwords": {
+		"title": "Passwörter des Personals",
+		"hint": "Fünf gemeinsame Konten, eines pro Rolle. Die vorgeschlagenen Passwörter sind zufällig erzeugt und können ersetzt werden. Die Passwörter beim letzten Schritt notieren, denn sie werden nur einmal angezeigt.",
+		"accounts": {
+			"admin": "Verwaltung (admin)",
+			"prestiti": "Ausleihverwaltung (prestiti)",
+			"catalogo": "Katalogisierung (catalogo)",
+			"tessere": "Ausweise und Fotos (tessere)",
+			"report": "Berichte (report)"
+		},
+		"regenerate": "Neu erzeugen",
+		"tooShort": "Mindestens 8 Zeichen.",
+		"demo": "Mit den Beispieldaten verwenden alle Konten dasselbe leicht zu merkende Passwort: „{{password}}“. Vor dem echten Einsatz von BiblioViva die Passwörter unter Verwaltung → Personalkonten ändern."
+	},
+	"demo": {
+		"title": "Beispieldaten",
+		"hint": "Erfundene Schülerinnen, Schüler, Bücher und Ausleihen zum Ausprobieren der Anwendung. Die Beispieldaten lassen sich mit einem Klick unter Verwaltung löschen, sobald die echten Daten eingespielt werden.",
+		"load": "Beispieldaten laden",
+		"hasData": "Die Datenbank enthält bereits Daten: Die Beispieldaten werden nicht geladen."
+	},
+	"summary": {
+		"title": "Zusammenfassung",
+		"hint": "Prüfen und bestätigen. Die Passwörter erscheinen nur auf dieser Seite. Vor dem Weitergehen kopieren.",
+		"language": "Sprache",
+		"theme": "Farben",
+		"library": "Bibliothek",
+		"photos": "Nutzerfotos",
+		"covers": "Buchcover",
+		"school": "Schule",
+		"classes": "Klassen",
+		"classesValue": "{{count}} {{count:plural; one:Klasse; other:Klassen;}} ({{first}}…) und die Gruppe {{teachers}}",
+		"readingLevels": "Lesestufen",
+		"none": "Keine",
+		"codes": "Codes",
+		"demo": "Beispieldaten",
+		"yes": "Ja",
+		"no": "Nein",
+		"later": "Später werden die Passwörter unter Verwaltung → Personalkonten geändert.",
+		"working": "Wird gespeichert…",
+		"error": "Konfiguration nicht gespeichert: {{message}}"
+	},
+	"done": {
+		"title": "Einrichtung abgeschlossen",
+		"hint": "Diese Passwörter an einem sicheren Ort aufbewahren, denn sie werden nicht noch einmal angezeigt.",
+		"demoLoaded": "Beispieldaten geladen: {{patrons}} {{patrons:plural; one:Nutzer; other:Nutzer;}}, {{biblios}} {{biblios:plural; one:Titel; other:Titel;}}, {{items}} {{items:plural; one:Exemplar; other:Exemplare;}}, {{loans}} {{loans:plural; one:Ausleihe; other:Ausleihen;}}.",
+		"login": "Zur Anmeldung"
+	},
+	"generic": {
+		"stage": "Schule",
+		"level": "Stufe {{level}}",
+		"groupWord": "Zweig",
+		"teacherGroup": "Lehrkräfte"
+	},
+	"restore": {
+		"title": "Aus einer Sicherung wiederherstellen",
+		"hint": "Das mit „Alles exportieren“ erstellte Archiv auswählen (Verwaltung → Sicherung). Maximale Größe: {{maxMb}} MB. Das Archiv wird geprüft, bevor etwas wiederhergestellt wird.",
+		"choose": "Archiv auswählen",
+		"checking": "Archiv wird geprüft…",
+		"from": "Archiv der Bibliothek „{{library}}“, erstellt am {{date}}, Version {{version}}.",
+		"fromAnonymous": "Archiv, erstellt am {{date}}, Version {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "Nutzer",
+			"catalog": "Katalog und Exemplare",
+			"loans": "Ausleihen und Verlauf",
+			"printLists": "Drucklisten",
+			"photos": "Nutzerfotos",
+			"covers": "Cover",
+			"notes": "Notizen",
+			"dates": "Kalendertermine",
+			"audit": "Aktivitätsprotokoll",
+			"ui": "Oberfläche",
+			"security": "Sicherheit und Zugang",
+			"library": "Bibliothek und Schule"
+		},
+		"images": "Fotos: {{photos}} · Cover: {{covers}}",
+		"accounts": "Konten, die sich anmelden können: {{accounts}}. Die Passwörter sind die des Archivs.",
+		"warning": "Die Wiederherstellung bringt Einstellungen, Daten und Bilder auf einen Schlag so zurück, wie sie im Archiv waren. Danach wird der Einrichtungsassistent nicht mehr benötigt.",
+		"apply": "Wiederherstellen",
+		"restoring": "Wird wiederhergestellt…",
+		"cancel": "Abbrechen",
+		"back": "Zurück zum Einrichtungsassistenten",
+		"done": {
+			"title": "Wiederherstellung abgeschlossen",
+			"hint": "Die Bibliothek ist so, wie sie im Archiv war. Zum Anmelden eines dieser Konten verwenden, mit dem Passwort, das es im Archiv hatte:",
+			"login": "Zur Anmeldung"
+		},
+		"errors": {
+			"too_large": "Das Archiv ist zu groß (höchstens {{maxMb}} MB).",
+			"not_zip": "Die Datei ist kein gültiges ZIP-Archiv.",
+			"not_archive": "Die Datei ist kein BiblioViva-Archiv: ein mit „Alles exportieren“ erstelltes Archiv auswählen.",
+			"too_many_files": "Das Archiv enthält zu viele Dateien.",
+			"unsafe_path": "Das Archiv enthält einen nicht zulässigen Pfad: {{name}}",
+			"link": "Das Archiv enthält einen Link, der nicht zulässig ist: {{name}}",
+			"unknown_file": "Das Archiv enthält eine Datei, die nicht zu BiblioViva gehört: {{name}}",
+			"not_setup": "Der Einrichtungsassistent ist bereits abgeschlossen: Die Wiederherstellung erfolgt unter Verwaltung → Sicherung.",
+			"newer_version": "Das Archiv wurde mit einer neueren Version von BiblioViva erstellt ({{name}}): Zuerst diese Version installieren.",
+			"missing_parts": "Das Archiv ist unvollständig: Es fehlen {{name}}. Ein mit „Alles exportieren“ erstelltes Archiv auswählen.",
+			"unfinished_setup": "Das Archiv stammt aus einer Installation, in der der Einrichtungsassistent nicht abgeschlossen war.",
+			"not_ready": "Das Archiv hat Probleme und kann nicht wiederhergestellt werden: {{name}}",
+			"gone": "Das geprüfte Archiv ist nicht mehr da: erneut auswählen.",
+			"failed": "Die Wiederherstellung ist nicht gelungen."
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"title": "O programu",
+	"app": {
+		"version": "Verzija",
+		"license": "Licenca",
+		"repository": "Izvorni kod"
+	},
+	"deps": {
+		"title": "Korištene knjižnice",
+		"runtime": "U izvođenju ({{count}})",
+		"development": "Samo za razvoj ({{count}})",
+		"system": "Sistemske komponente",
+		"columns": {
+			"name": "Naziv",
+			"version": "Verzija",
+			"license": "Licenca"
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"name": "overdue-patron",
+	"description": "Promemoria per un utente: i suoi libri in ritardo, da consegnare al banco",
+	"kind": "overdue-patron",
+	"page": "A4 portrait",
+	"marginMm": 15
+}

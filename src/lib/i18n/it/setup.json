@@ -1,0 +1,226 @@
+{
+	"title": "Prima configurazione",
+	"intro": "Benvenuto in BiblioViva. In pochi passi la biblioteca è pronta: lingua, colori, scuola, codici e password del personale.",
+	"stepOf": "Passo {{step}} di {{total}}",
+	"next": "Avanti",
+	"back": "Indietro",
+	"finish": "Completa la configurazione",
+	"steps": {
+		"language": "Lingua",
+		"theme": "Colori",
+		"library": "Biblioteca",
+		"school": "Scuola",
+		"codes": "Codici",
+		"passwords": "Password",
+		"demo": "Dati di prova",
+		"summary": "Riepilogo"
+	},
+	"language": {
+		"title": "In che lingua deve parlare BiblioViva?",
+		"hint": "Una sola lingua per installazione: vale per tutto il personale e si può cambiare da Amministrazione → Configurazione → Aspetto e lingua.",
+		"restore": {
+			"title": "Hai già un backup di BiblioViva?",
+			"hint": "Per spostare BiblioViva su un altro computer, o per ricominciare dopo un guasto, non serve rispondere alle domande: basta un archivio creato con «Esporta tutto».",
+			"button": "Ripristina da un backup"
+		}
+	},
+	"theme": {
+		"title": "Scegli i colori",
+		"hint": "Quindici set di colori: cambiano solo i colori, mai la forma. Tutti chiari e leggibili anche in bianco e nero.",
+		"names": {
+			"ocean": "Oceano",
+			"forest": "Bosco",
+			"grape": "Uva",
+			"sunset": "Tramonto",
+			"cherry": "Ciliegia",
+			"lagoon": "Laguna",
+			"silver": "Argento",
+			"graphite": "Grafite",
+			"apricot": "Albicocca",
+			"indigo": "Indaco",
+			"mint": "Menta",
+			"rose": "Rosa",
+			"sahara": "Sahara",
+			"wintry": "Inverno",
+			"olive": "Oliva"
+		}
+	},
+	"library": {
+		"title": "La biblioteca",
+		"name": "Nome della biblioteca",
+		"namePlaceholder": "Biblioteca della scuola primaria Rodari",
+		"schoolType": "Tipo di scuola",
+		"schoolTypeHint": "Gli anni e le classi secondo l'uso della scuola. Si cambiano dopo in Amministrazione → Configurazione → Scuola e Amministrazione → Configurazione → Classi.",
+		"photos": "Foto degli utenti",
+		"photosHint": "Le foto di studenti e docenti, scattate o caricate, e stampate sulle tessere. Spento: nessuna foto da nessuna parte e tessere senza foto.",
+		"covers": "Copertine dei libri",
+		"coversHint": "Le copertine cercate in rete, fotografate o caricate, e mostrate nel catalogo. Spento: nessuna copertina."
+	},
+	"school": {
+		"title": "La scuola",
+		"hint": "Il tipo di scuola propone gli anni, le classi e i livelli di lettura. Le classi si creano subito; con i dati di prova vengono riempite di studenti inventati.",
+		"otherCountries": "Altri paesi",
+		"names": {
+			"perLevel": "{{stage}}: nomi delle classi, uno per anno",
+			"mixed": "{{stage}}: nomi delle sezioni, ognuna con tutti gli anni"
+		},
+		"namesHint": "Separati da virgole; A-D vale A, B, C, D. Vuoto: nessuna classe.",
+		"namesInvalid": "Nomi non validi: scriverli separati da virgole (al massimo 40).",
+		"classes": "{{count}} {{count:plural; one:classe; other:classi;}} da creare:",
+		"more": "{{count:plural; one:e un'altra; other:e altre {{count}};}}",
+		"classLabel": "Come si scrive la classe",
+		"teacherGroup": "Gruppo dei docenti",
+		"teacherGroupHint": "Ogni docente entra in questo gruppo; altri gruppi si aggiungono dopo.",
+		"schoolYearStart": "Inizio dell'anno scolastico",
+		"schoolYearStartHint": "Mese e giorno nella forma MM-GG (per esempio 09-01).",
+		"schoolYearStartInvalid": "Scrivere mese e giorno nella forma MM-GG.",
+		"schoolYearLabel": "Nome dell'anno scolastico",
+		"schoolYearLabels": {
+			"span": "Due anni (2026/2027)",
+			"start": "L'anno di inizio (2026)"
+		},
+		"readingLevels": "Libri di narrativa divisi per livello di lettura",
+		"readingLevelsHint": "Anni, classi e livelli di lettura si cambiano dopo in Amministrazione."
+	},
+	"codes": {
+		"title": "I codici",
+		"hint": "Il formato dei codici a barre delle nuove copie e quello delle nuove tessere, scelti ciascuno per conto suo. Le due forme non si possono confondere: chi legge un codice capisce subito se è un libro o una tessera.",
+		"itemFormat": "Formato delle copie",
+		"itemFormats": {
+			"standard": "Anno, controllo e numero (consigliato)",
+			"classic": "Anno e numero, controllo in fondo",
+			"prefix": "Con la lettera L davanti"
+		},
+		"cardFormat": "Formato delle tessere",
+		"cardFormats": {
+			"standard": "Controllo e numero di 6 cifre (consigliato)",
+			"classic": "Numero di 10 cifre, controllo in fondo",
+			"prefix": "Con la lettera T davanti"
+		},
+		"check": "Carattere di controllo",
+		"checks": {
+			"mod23": "Una lettera (mod 23)",
+			"luhn": "Una cifra (Luhn)",
+			"damm": "Una cifra (Damm)"
+		},
+		"layout": "Tastiera dei lettori",
+		"layoutHint": "La lingua della tastiera del computer a cui sono collegati i lettori di codici: serve a correggere i caratteri scambiati. Se manca la propria, scegliere la più simile: si può cambiare dopo in Configurazione → Codici a barre.",
+		"layouts": {
+			"it": "Italiana",
+			"es": "Spagnola",
+			"de": "Tedesca",
+			"fr": "Francese",
+			"uk": "Inglese (Regno Unito)",
+			"us": "Inglese (Stati Uniti)"
+		},
+		"copy": "Copia di un libro",
+		"card": "Tessera",
+		"verdict": "Copie e tessere non si possono confondere.",
+		"refused": "Con questa scelta copie e tessere si potrebbero confondere: scegliere un altro formato.",
+		"later": "Formati, codici dei sistemi precedenti e numerazione si cambiano dopo in Configurazione → Codici a barre."
+	},
+	"passwords": {
+		"title": "Password del personale",
+		"hint": "Cinque account condivisi, uno per ruolo. Le password proposte sono generate a caso e si possono sostituire. Annotarle al passo finale: vengono mostrate una sola volta.",
+		"accounts": {
+			"admin": "Amministrazione (admin)",
+			"prestiti": "Gestione prestiti (prestiti)",
+			"catalogo": "Catalogazione (catalogo)",
+			"tessere": "Tessere e foto (tessere)",
+			"report": "Report (report)"
+		},
+		"regenerate": "Rigenera",
+		"tooShort": "Almeno 8 caratteri.",
+		"demo": "Con i dati dimostrativi tutti gli account usano la stessa password, facile da ricordare: «{{password}}». Prima di usare BiblioViva davvero, cambiarle da Amministrazione → Account del personale."
+	},
+	"demo": {
+		"title": "Dati dimostrativi",
+		"hint": "Studenti, libri e prestiti inventati per provare l'applicazione. Si cancellano con un clic da Amministrazione quando si inseriscono i dati veri.",
+		"load": "Carica dati dimostrativi",
+		"hasData": "Il database contiene già dei dati: i dati dimostrativi non verranno caricati."
+	},
+	"summary": {
+		"title": "Riepilogo",
+		"hint": "Controllare e confermare. Le password compaiono solo in questa pagina: copiarle prima di proseguire.",
+		"language": "Lingua",
+		"theme": "Colori",
+		"library": "Biblioteca",
+		"photos": "Foto degli utenti",
+		"covers": "Copertine dei libri",
+		"school": "Scuola",
+		"classes": "Classi",
+		"classesValue": "{{count}} {{count:plural; one:classe; other:classi;}} ({{first}}…) e il gruppo {{teachers}}",
+		"readingLevels": "Livelli di lettura",
+		"none": "Nessuno",
+		"codes": "Codici",
+		"demo": "Dati dimostrativi",
+		"yes": "Sì",
+		"no": "No",
+		"later": "In seguito le password si cambiano in Amministrazione → Account del personale.",
+		"working": "Salvataggio in corso…",
+		"error": "Configurazione non salvata: {{message}}"
+	},
+	"done": {
+		"title": "Configurazione completata",
+		"hint": "Conservare queste password in un luogo sicuro: non verranno mostrate di nuovo.",
+		"demoLoaded": "Dati dimostrativi caricati: {{patrons}} {{patrons:plural; one:utente; other:utenti;}}, {{biblios}} {{biblios:plural; one:titolo; other:titoli;}}, {{items}} {{items:plural; one:copia; other:copie;}}, {{loans}} {{loans:plural; one:prestito; other:prestiti;}}.",
+		"login": "Vai all'accesso"
+	},
+	"generic": {
+		"stage": "Scuola",
+		"level": "Livello {{level}}",
+		"groupWord": "Sezione",
+		"teacherGroup": "Docenti"
+	},
+	"restore": {
+		"title": "Ripristina da un backup",
+		"hint": "Scegliere l'archivio creato con «Esporta tutto» (Amministrazione → Backup). Dimensione massima: {{maxMb}} MB. L'archivio viene controllato prima di ripristinare qualcosa.",
+		"choose": "Scegli l'archivio",
+		"checking": "Controllo dell'archivio…",
+		"from": "Archivio della biblioteca «{{library}}», creato il {{date}}, versione {{version}}.",
+		"fromAnonymous": "Archivio creato il {{date}}, versione {{version}}.",
+		"count": "{{part}}: {{count}}",
+		"parts": {
+			"patrons": "Utenti",
+			"catalog": "Catalogo e copie",
+			"loans": "Prestiti e storico",
+			"printLists": "Liste di stampa",
+			"photos": "Foto degli utenti",
+			"covers": "Copertine",
+			"notes": "Segnalazioni",
+			"dates": "Date del calendario",
+			"audit": "Registro delle attività",
+			"ui": "Interfaccia",
+			"security": "Sicurezza e accessi",
+			"library": "Biblioteca e scuola"
+		},
+		"images": "Foto: {{photos}} · copertine: {{covers}}",
+		"accounts": "Account che potranno accedere: {{accounts}}. Le password sono quelle dell'archivio.",
+		"warning": "Il ripristino porta in una volta sola impostazioni, dati e immagini com'erano nell'archivio. Dopo, la configurazione guidata non serve più.",
+		"apply": "Ripristina",
+		"restoring": "Ripristino in corso…",
+		"cancel": "Annulla",
+		"back": "Torna alla configurazione guidata",
+		"done": {
+			"title": "Ripristino completato",
+			"hint": "La biblioteca è com'era nell'archivio. Per accedere usare uno di questi account, con la password che aveva nell'archivio:",
+			"login": "Vai all'accesso"
+		},
+		"errors": {
+			"too_large": "L'archivio è troppo grande (massimo {{maxMb}} MB).",
+			"not_zip": "Il file non è un archivio ZIP valido.",
+			"not_archive": "Il file non è un archivio di BiblioViva: scegliere un archivio creato con «Esporta tutto».",
+			"too_many_files": "L'archivio contiene troppi file.",
+			"unsafe_path": "L'archivio contiene un percorso non ammesso: {{name}}",
+			"link": "L'archivio contiene un collegamento, non ammesso: {{name}}",
+			"unknown_file": "L'archivio contiene un file che non fa parte di BiblioViva: {{name}}",
+			"not_setup": "La configurazione guidata è già stata completata: il ripristino si fa da Amministrazione → Backup.",
+			"newer_version": "L'archivio è stato creato da una versione più recente di BiblioViva ({{name}}): installare prima quella versione.",
+			"missing_parts": "L'archivio è incompleto: mancano {{name}}. Scegliere un archivio creato con «Esporta tutto».",
+			"unfinished_setup": "L'archivio viene da un'installazione in cui la configurazione guidata non era stata completata.",
+			"not_ready": "L'archivio ha dei problemi e non si può ripristinare: {{name}}",
+			"gone": "L'archivio controllato non c'è più: sceglierlo di nuovo.",
+			"failed": "Il ripristino non è riuscito."
+		}
+	}
+}

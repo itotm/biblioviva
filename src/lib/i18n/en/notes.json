@@ -1,0 +1,66 @@
+{
+	"title": "Notes",
+	"new": "New note",
+	"adminOnly": "Only the administrator archives notes and pins them to the dashboard.",
+	"pinned": "Pinned",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Archived by {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:note; other:notes;}}",
+	"archiveCount": "{{shown}} of {{total}} archived {{total:plural; one:note; other:notes;}}",
+	"actions": {
+		"label": "Note actions",
+		"pin": "Pin to the dashboard",
+		"unpin": "Unpin",
+		"archive": "Archive",
+		"restore": "Restore",
+		"delete": "Delete",
+		"showAll": "Show all",
+		"showLess": "Show less",
+		"more": "Show more"
+	},
+	"done": {
+		"added": "Note added",
+		"pinned": "Note pinned",
+		"unpinned": "Note unpinned",
+		"archived": "Note archived",
+		"restored": "Note restored",
+		"deleted": "Note deleted"
+	},
+	"confirmDelete": {
+		"title": "Delete the note?",
+		"text": "It is erased for good and cannot be recovered."
+	},
+	"form": {
+		"body": "Text",
+		"placeholder": "E.g. The desk scanner does not read the cards.",
+		"privacy": "Every account reads the notes: do not write pupils' personal data.",
+		"written": "A note cannot be edited: in case of a mistake, ask the administrator to archive it and write another one.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Colour",
+		"pinned": "Pinned to the dashboard",
+		"pinnedHint": "Shown to everyone at the top of the dashboard (and of the circulation desk) until it is unpinned or archived.",
+		"save": "Add"
+	},
+	"colors": {
+		"yellow": "Yellow",
+		"pink": "Pink",
+		"green": "Green",
+		"blue": "Light blue",
+		"orange": "Orange"
+	},
+	"errors": {
+		"empty": "Write the text of the note.",
+		"tooLong": "The text is longer than {{max}} {{max:plural; one:character; other:characters;}}.",
+		"color": "Choose one of the colours."
+	},
+	"empty": {
+		"open": "No open notes",
+		"openHint": "No open notes. Notes pass problems and notices on to colleagues and the administrator.",
+		"archived": "No archived notes"
+	},
+	"home": {
+		"title": "Notes",
+		"open": "Open the notes"
+	},
+	"tile": "Open notes"
+}

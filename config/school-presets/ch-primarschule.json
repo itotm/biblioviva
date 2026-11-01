@@ -1,0 +1,77 @@
+{
+	"id": "ch-primarschule",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). German-speaking cantons; the Kindergarten (1H, 2H) is not included and mixed-age classes (Mehrjahrgangsklassen) are added as mixed groups. The school year starts in mid-August; the cantonal school year often runs from 1 August [VERIFY].",
+	"name": {
+		"it": "Scuola primaria (Svizzera tedesca)",
+		"en": "Primary school (German-speaking Switzerland)",
+		"de": "Primarschule (Deutschschweiz)"
+	},
+	"country": "CH",
+	"languages": ["de"],
+	"schoolYear": {
+		"start": "08-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "primar",
+				"name": "Primarstufe"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1",
+				"name": "1. Klasse",
+				"stage": "primar",
+				"aliases": ["3H"]
+			},
+			{
+				"code": "2",
+				"label": "2",
+				"name": "2. Klasse",
+				"stage": "primar",
+				"aliases": ["4H"]
+			},
+			{
+				"code": "3",
+				"label": "3",
+				"name": "3. Klasse",
+				"stage": "primar",
+				"aliases": ["5H"]
+			},
+			{
+				"code": "4",
+				"label": "4",
+				"name": "4. Klasse",
+				"stage": "primar",
+				"aliases": ["6H"]
+			},
+			{
+				"code": "5",
+				"label": "5",
+				"name": "5. Klasse",
+				"stage": "primar",
+				"aliases": ["7H"]
+			},
+			{
+				"code": "6",
+				"label": "6",
+				"name": "6. Klasse",
+				"stage": "primar",
+				"aliases": ["8H"]
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Klasse",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"primar": ["a", "b", "c"]
+	},
+	"teacherGroup": "Lehrpersonen",
+	"readingLevels": []
+}

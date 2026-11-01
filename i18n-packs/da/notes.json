@@ -1,0 +1,66 @@
+{
+	"title": "Noter",
+	"new": "Ny note",
+	"adminOnly": "Kun administratoren arkiverer noter og fremhæver dem på dashboardet.",
+	"pinned": "Fremhævet",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Arkiveret af {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:note; other:noter;}}",
+	"archiveCount": "{{shown}} af {{total}} {{total:plural; one:arkiveret note; other:arkiverede noter;}}",
+	"actions": {
+		"label": "Handlinger på noten",
+		"pin": "Fremhæv på dashboardet",
+		"unpin": "Fjern fremhævning",
+		"archive": "Arkivér",
+		"restore": "Gendan",
+		"delete": "Slet",
+		"showAll": "Vis alle",
+		"showLess": "Vis færre",
+		"more": "Vis flere"
+	},
+	"done": {
+		"added": "Note tilføjet",
+		"pinned": "Note fremhævet",
+		"unpinned": "Fremhævning fjernet",
+		"archived": "Note arkiveret",
+		"restored": "Note gendannet",
+		"deleted": "Note slettet"
+	},
+	"confirmDelete": {
+		"title": "Slette noten?",
+		"text": "Den slettes for altid og kan ikke gendannes."
+	},
+	"form": {
+		"body": "Tekst",
+		"placeholder": "F.eks. Scanneren ved skranken læser ikke kortene.",
+		"privacy": "Alle konti læser noterne: skriv ingen personlige oplysninger om elever.",
+		"written": "En note kan ikke redigeres. Ved en fejl skal administratoren arkivere den, og man skriver en ny.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Farve",
+		"pinned": "Fremhævet på dashboardet",
+		"pinnedHint": "Vises for alle øverst på dashboardet (og ved udlånsskranken), indtil fremhævningen fjernes, eller noten arkiveres.",
+		"save": "Tilføj"
+	},
+	"colors": {
+		"yellow": "Gul",
+		"pink": "Lyserød",
+		"green": "Grøn",
+		"blue": "Lyseblå",
+		"orange": "Orange"
+	},
+	"errors": {
+		"empty": "Skriv teksten til noten.",
+		"tooLong": "Teksten er længere end {{max}} {{max:plural; one:tegn; other:tegn;}}.",
+		"color": "Vælg en af farverne."
+	},
+	"empty": {
+		"open": "Ingen åbne noter",
+		"openHint": "Ingen åbne noter. Noter videregiver problemer og meddelelser til kolleger og administratoren.",
+		"archived": "Ingen arkiverede noter"
+	},
+	"home": {
+		"title": "Noter",
+		"open": "Åbn noterne"
+	},
+	"tile": "Åbne noter"
+}

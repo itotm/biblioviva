@@ -1,0 +1,39 @@
+{
+	"title": "Raporlar",
+	"categories": {
+		"loans": "Ödünçler",
+		"books": "Kitaplar",
+		"patrons": "Üyeler",
+		"ops": "Etkinlik"
+	},
+	"restricted": "Yalnızca yöneticiler",
+	"custom": "Okula özel",
+	"chart": "Grafikli",
+	"problemsTitle": "Rapor dosyaları yüklenmedi",
+	"problemsHint": "Rapor klasöründeki bu dosyalarda hata var, bu nedenle listelenmiyorlar:",
+	"params": "Parametreler",
+	"run": "Güncelle",
+	"all": "Tümü",
+	"from": "Başlangıç",
+	"to": "Bitiş",
+	"patronTypes": {
+		"student": "Öğrenciler",
+		"teacher": "Öğretmenler"
+	},
+	"rows": "{{count}} {{count:plural; one:satır; other:satır;}}",
+	"ms": "{{ms}} ms içinde",
+	"truncated": "{{count:plural; one:Yalnızca ilk satır gösteriliyor, tümünü görmek için parametreleri daraltın.; other:Yalnızca ilk {{count}} satır gösteriliyor, tümünü görmek için parametreleri daraltın.;}}",
+	"empty": "Bu parametrelerle sonuç yok.",
+	"print": "Yazdır",
+	"printedOn": "{{date}} tarihinde yazdırıldı",
+	"errors": {
+		"required": "“{{label}}” alanı eksik.",
+		"invalid": "“{{label}}” alanının değeri geçerli değil."
+	},
+	"back": "Tüm raporlar",
+	"noParams": "Bu raporun parametresi yok.",
+	"special": {
+		"teachers": "Öğretmenler",
+		"total": "Toplam"
+	}
+}

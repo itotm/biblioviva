@@ -1,0 +1,169 @@
+{
+	"_comment": "Backgrounds offered by the card designer (step 11.17): each picture is the card (85.6 x 54 mm, or 54 x 85.6 for a portrait one) plus 3 mm of bleed on every side (BACKGROUND_BLEED_MM in src/lib/shared/card-backgrounds.ts, which the designer and the printed cards follow).",
+	"backgrounds": [
+		{
+			"name": "a1",
+			"orientation": "landscape"
+		},
+		{
+			"name": "a2",
+			"orientation": "landscape"
+		},
+		{
+			"name": "a3",
+			"orientation": "landscape"
+		},
+		{
+			"name": "a5",
+			"orientation": "landscape"
+		},
+		{
+			"name": "a6",
+			"orientation": "landscape"
+		},
+		{
+			"name": "b1",
+			"orientation": "landscape"
+		},
+		{
+			"name": "b2",
+			"orientation": "landscape"
+		},
+		{
+			"name": "b3",
+			"orientation": "landscape"
+		},
+		{
+			"name": "b4",
+			"orientation": "landscape"
+		},
+		{
+			"name": "b5",
+			"orientation": "landscape"
+		},
+		{
+			"name": "b6",
+			"orientation": "landscape"
+		},
+		{
+			"name": "b7",
+			"orientation": "landscape"
+		},
+		{
+			"name": "b8",
+			"orientation": "landscape"
+		},
+		{
+			"name": "c1",
+			"orientation": "landscape"
+		},
+		{
+			"name": "c2",
+			"orientation": "landscape"
+		},
+		{
+			"name": "c3",
+			"orientation": "landscape"
+		},
+		{
+			"name": "c4",
+			"orientation": "landscape"
+		},
+		{
+			"name": "c5",
+			"orientation": "landscape"
+		},
+		{
+			"name": "c6",
+			"orientation": "landscape"
+		},
+		{
+			"name": "c7",
+			"orientation": "landscape"
+		},
+		{
+			"name": "c8",
+			"orientation": "landscape"
+		},
+		{
+			"name": "d2",
+			"orientation": "landscape"
+		},
+		{
+			"name": "d3",
+			"orientation": "landscape"
+		},
+		{
+			"name": "d4",
+			"orientation": "landscape"
+		},
+		{
+			"name": "d5",
+			"orientation": "landscape"
+		},
+		{
+			"name": "d7",
+			"orientation": "landscape"
+		},
+		{
+			"name": "e1",
+			"orientation": "landscape"
+		},
+		{
+			"name": "e2",
+			"orientation": "landscape"
+		},
+		{
+			"name": "e3",
+			"orientation": "landscape"
+		},
+		{
+			"name": "e5",
+			"orientation": "landscape"
+		},
+		{
+			"name": "f8",
+			"orientation": "portrait"
+		},
+		{
+			"name": "g1",
+			"orientation": "portrait"
+		},
+		{
+			"name": "g4",
+			"orientation": "portrait"
+		},
+		{
+			"name": "g8",
+			"orientation": "portrait"
+		},
+		{
+			"name": "g9",
+			"orientation": "portrait"
+		},
+		{
+			"name": "h1",
+			"orientation": "portrait"
+		},
+		{
+			"name": "h2",
+			"orientation": "portrait"
+		},
+		{
+			"name": "h3",
+			"orientation": "portrait"
+		},
+		{
+			"name": "h4",
+			"orientation": "portrait"
+		},
+		{
+			"name": "h5",
+			"orientation": "portrait"
+		},
+		{
+			"name": "h6",
+			"orientation": "portrait"
+		}
+	]
+}

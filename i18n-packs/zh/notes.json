@@ -1,0 +1,66 @@
+{
+	"title": "备注",
+	"new": "新建备注",
+	"adminOnly": "只有管理员可以归档备注，并将备注固定到仪表盘。",
+	"pinned": "已固定",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "由 {{author}} 归档 · {{when}}",
+	"count": "{{count}} {{count:plural; other:条备注;}}",
+	"archiveCount": "显示 {{shown}}，共 {{total}} {{total:plural; other:条已归档备注;}}",
+	"actions": {
+		"label": "备注操作",
+		"pin": "固定到仪表盘",
+		"unpin": "取消固定",
+		"archive": "归档",
+		"restore": "恢复",
+		"delete": "删除",
+		"showAll": "显示全部",
+		"showLess": "收起",
+		"more": "展开"
+	},
+	"done": {
+		"added": "已添加备注",
+		"pinned": "已固定备注",
+		"unpinned": "已取消固定",
+		"archived": "已归档备注",
+		"restored": "已恢复备注",
+		"deleted": "已删除备注"
+	},
+	"confirmDelete": {
+		"title": "删除备注？",
+		"text": "备注将被永久删除，无法恢复。"
+	},
+	"form": {
+		"body": "内容",
+		"placeholder": "例如：借还台的扫码枪读不出读者证。",
+		"privacy": "所有账户都能阅读备注：请勿写入学生的个人信息。",
+		"written": "备注写好后不能修改：如有错误，请让管理员归档后重新写一条。",
+		"counter": "{{count}}/{{max}}",
+		"color": "颜色",
+		"pinned": "固定到仪表盘",
+		"pinnedHint": "在仪表盘（以及借还台）顶部向所有人显示，直到取消固定或归档为止。",
+		"save": "添加"
+	},
+	"colors": {
+		"yellow": "黄色",
+		"pink": "粉色",
+		"green": "绿色",
+		"blue": "浅蓝色",
+		"orange": "橙色"
+	},
+	"errors": {
+		"empty": "请写入备注内容。",
+		"tooLong": "内容超过 {{max}} {{max:plural; other:个字符;}}。",
+		"color": "请选择一种颜色。"
+	},
+	"empty": {
+		"open": "没有未归档的备注",
+		"openHint": "没有未归档的备注。备注用于向同事和管理员传达问题和通知。",
+		"archived": "没有已归档的备注"
+	},
+	"home": {
+		"title": "备注",
+		"open": "打开备注"
+	},
+	"tile": "未归档备注"
+}

@@ -1,0 +1,28 @@
+{
+	"id": "loans-by-reading-level",
+	"title": {
+		"it": "Prestiti per livello di lettura",
+		"en": "Loans by reading level"
+	},
+	"description": {
+		"it": "Prestiti di narrativa del periodo per livello di lettura, dal titolo o dalla copia.",
+		"en": "Fiction loans of the period by reading level, from the title or the copy."
+	},
+	"category": "books",
+	"query": {
+		"source": "loans",
+		"filters": [
+			{
+				"field": "period",
+				"ask": true
+			},
+			{
+				"field": "kind",
+				"value": "fiction"
+			}
+		],
+		"rows": ["readingLevel"],
+		"measures": ["loans"],
+		"chart": "bar"
+	}
+}

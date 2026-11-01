@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Czytelnicy",
+		"new": "Nowy czytelnik",
+		"search": "Szukaj po nazwisku…",
+		"empty": "Żaden czytelnik nie pasuje do filtrów.",
+		"filters": {
+			"type": "Typ",
+			"stage": "Etap",
+			"level": "Rok nauki",
+			"status": "Stan",
+			"all": "Wszystkie",
+			"allF": "Wszystkie"
+		},
+		"columns": {
+			"name": "Nazwisko i imię",
+			"type": "Typ",
+			"class": "Klasa",
+			"card": "Karta"
+		},
+		"clearFilters": "Wyczyść filtry",
+		"countFiltered": "{{shown:plural; one:{{shown}} czytelnik pasuje; few:{{shown}} czytelnicy pasują; many:{{shown}} czytelników pasuje; other:{{shown}} czytelnika pasuje;}} do filtrów",
+		"printCards": "Drukuj karty",
+		"printClassCards": "Drukuj karty {{classLabel}}",
+		"removeSelected": "Usuń zaznaczonych",
+		"removeTitle": "Usunąć {{count}} {{count:plural; one:czytelnika; few:czytelników; many:czytelników; other:czytelnika;}}?",
+		"removeDescription": "Dla każdego z nich nazwisko i imię, kontakty, numer ucznia, uwagi, numer karty i zdjęcie są natychmiast i na zawsze usuwane; typ, klasa, oddział i historia wypożyczeń zostają do statystyk. Czytelnicy z wypożyczeniami w toku zostają w archiwum.",
+		"removed": "Usunięto: {{removed}}, zostawiono w archiwum z wypożyczeniami w toku: {{kept}}",
+		"status": {
+			"title": "Stan",
+			"loans": "{{count}} w wypożyczeniu",
+			"overdue": "{{count}} po terminie",
+			"noPhoto": "bez zdjęcia"
+		},
+		"startTitle": "Znajdź czytelnika",
+		"startHint": "Szukaj po nazwisku, karcie lub użyj filtrów."
+	},
+	"types": {
+		"student": "Uczeń",
+		"teacher": "Nauczyciel"
+	},
+	"fields": {
+		"patronType": "Typ",
+		"firstName": "Imię",
+		"lastName": "Nazwisko",
+		"cardNumber": "Numer karty",
+		"cardNumberHint": "Puste: przydzielany automatycznie.",
+		"externalId": "Numer ucznia",
+		"email": "E-mail",
+		"emailHint": "Adres, który szkoła przydziela uczniowi lub nauczycielowi: będzie służył do powiadomień.",
+		"circulationNote": "Uwaga dla stanowiska wypożyczeń",
+		"circulationNoteHint": "Wyświetlana w widoczny sposób przy wypożyczaniu.",
+		"notes": "Uwagi wewnętrzne",
+		"status": "Stan",
+		"openLoans": "Wypożyczenia w toku",
+		"overdueLoans": "Po terminie",
+		"noCard": "bez karty",
+		"none": "—",
+		"levelCode": "Rok nauki",
+		"groupId": "Oddział",
+		"classLabel": "Klasa",
+		"teacherGroup": "Grupa nauczycieli"
+	},
+	"form": {
+		"createTitle": "Nowy czytelnik",
+		"editTitle": "Edycja czytelnika",
+		"identity": "Dane osobowe",
+		"school": "Klasa",
+		"contacts": "Kontakty",
+		"notes": "Uwagi",
+		"create": "Utwórz czytelnika",
+		"save": "Zapisz zmiany",
+		"classSelect": "Wybierz…",
+		"defaultTeacherGroup": "Grupa nauczycieli"
+	},
+	"errors": {
+		"emailInvalid": "Nieprawidłowy adres e-mail.",
+		"cardNumberInvalid": "Nieprawidłowy numer karty: tylko cyfry, wielkie litery i myślnik, z właściwym znakiem kontrolnym.",
+		"cardNumberTaken": "Numer karty jest już przypisany innemu czytelnikowi.",
+		"cardNumberIsCopy": "Numer karty jest kodem kreskowym egzemplarza albo do niego podobny: wybierz inny numer.",
+		"externalIdTaken": "Numer ucznia jest już przypisany innemu czytelnikowi.",
+		"levelRequired": "Dla ucznia rok nauki jest obowiązkowy.",
+		"levelUnknown": "Klasa nie jest przewidziana przez poziomy szkoły.",
+		"levelNotForTeachers": "Nauczyciel nie ma klasy.",
+		"groupRequired": "Dla ucznia oddział jest obowiązkowy.",
+		"groupUnknown": "Oddziału nie znaleziono wśród aktywnych klas: klasy tworzy się w menu Administracja → Konfiguracja → Klasy.",
+		"levelNotInGroup": "W tym oddziale nie ma tego roku nauki: wybierz oddział właściwego roku."
+	},
+	"detail": {
+		"heading": "Kartoteka czytelnika",
+		"tabs": {
+			"loans": "Wypożyczenia w toku",
+			"history": "Historia",
+			"cards": "Karta",
+			"notes": "Uwagi"
+		},
+		"noLoans": "Brak wypożyczeń w toku.",
+		"loanColumns": {
+			"due": "Termin"
+		},
+		"overdue": "po terminie",
+		"card": "Karta {{number}}",
+		"noNotes": "Brak uwag.",
+		"edit": "Edytuj",
+		"created": "Utworzono {{when}}",
+		"barcodeAlt": "Kod kreskowy karty {{number}}",
+		"cardPrinted": "Karta wydrukowana {{when}}.",
+		"cardNotPrinted": "Karta jeszcze nie wydrukowana.",
+		"reassignCard": "Przypisz kartę ponownie",
+		"reassignTitle": "Przypisać nową kartę?",
+		"reassignDescription": "Obecny numer zostaje wycofany na zawsze, a nową kartę trzeba będzie wydrukować.",
+		"cardReassigned": "Nowa karta: {{number}}",
+		"printCard": "Drukuj kartę",
+		"markCardPrinted": "Oznacz jako wydrukowaną",
+		"cardMarkedPrinted": "Karta oznaczona jako wydrukowana",
+		"historyColumns": {
+			"issuedAt": "Wypożyczono",
+			"dueDate": "Termin",
+			"returnedAt": "Zwrócono",
+			"outcome": "Wynik",
+			"title": "Tytuł",
+			"author": "Autor",
+			"barcode": "Egzemplarz",
+			"renewals": "Prolongaty",
+			"schoolYear": "Rok szkolny"
+		},
+		"outcome": {
+			"open": "W toku",
+			"overdue": "Po terminie",
+			"returned": "Zwrócono",
+			"returnedLate": "Zwrócono po terminie",
+			"lost": "Zaginiony"
+		},
+		"historyEmpty": "Nie zarejestrowano żadnego wypożyczenia.",
+		"historyCount": "{{count}} {{count:plural; one:wypożyczenie; few:wypożyczenia; many:wypożyczeń; other:wypożyczenia;}} razem",
+		"notesEdit": "Edytuj uwagi",
+		"notesSaved": "Uwagi zapisane",
+		"notesUnchanged": "Bez zmian",
+		"notesHint": "Uwaga dla stanowiska wypożyczeń pojawia się w widoczny sposób przy wypożyczaniu; pozostałe uwagi zostają tutaj.",
+		"remove": "Usuń czytelnika ({{type}})",
+		"removeTitle": "Usunąć na zawsze: {{name}}?",
+		"removeDescription": "Natychmiast i na zawsze zostają usunięte: imię i nazwisko, e-mail, numer ucznia, uwagi, numer karty (wycofany) i zdjęcie. Zostają tylko typ, klasa, oddział i historia wypożyczeń do statystyk. Tej operacji nie można cofnąć.",
+		"removeOpenLoans": "Ma {{count}} {{count:plural; one:wypożyczenie w toku, które trzeba najpierw zwrócić lub oznaczyć jako zaginione; few:wypożyczenia w toku, które trzeba najpierw zwrócić lub oznaczyć jako zaginione; many:wypożyczeń w toku, które trzeba najpierw zwrócić lub oznaczyć jako zaginione; other:wypożyczenia w toku, które trzeba najpierw zwrócić lub oznaczyć jako zaginione;}}.",
+		"removeClassSheets": "Czytelnik został wybrany na {{count}} {{count:plural; one:zdjęcie; few:zdjęcia; many:zdjęć; other:zdjęcia;}} w obrazach klasy (spis z obrazu): {{count:plural; one:ten kadr zostaje zakryty; few:te kadry zostają zakryte; many:te kadry zostają zakryte; other:te kadry zostają zakryte;}}.",
+		"removed": "Czytelnik usunięty: dane osobowe zostały usunięte.",
+		"removedInfo": "Usunięto {{when}}. Zostają tylko dane do statystyk.",
+		"lostTitle": "Zaginione egzemplarze",
+		"lostHint": "Oznaczone jako zaginione, gdy były wypożyczone temu czytelnikowi. Jeśli się znajdą, trzeba je przyjąć na stanowisku zwrotów.",
+		"markLost": "Oznacz zaginięcie: „{{title}}”",
+		"markLostTitle": "Oznaczyć zaginięcie: „{{title}}”?",
+		"markLostDescription": "Wypożyczenie się zamyka, a egzemplarz zostaje oznaczony jako zaginiony. Jeśli książka się znajdzie, wystarczy zarejestrować jej zwrot na stanowisku zwrotów, a znów będzie dostępna.",
+		"markLostReason": "Powód (opcjonalnie)",
+		"markLostConfirm": "Oznacz jako zaginiony",
+		"markedLost": "Oznaczono zaginięcie: „{{title}}”."
+	},
+	"photo": {
+		"title": "Zdjęcie",
+		"take": "Zrób zdjęcie",
+		"upload": "Wgraj plik",
+		"retake": "Zrób ponownie",
+		"use": "Użyj tego zdjęcia",
+		"cancel": "Anuluj",
+		"delete": "Usuń zdjęcie",
+		"deleteTitle": "Usunąć zdjęcie?",
+		"deleteDescription": "Zdjęcie zostaje usunięte z serwera; można zrobić nowe.",
+		"zoom": "Powiększenie",
+		"dragHint": "Przeciągnij, aby kadrować, a powiększeniem zbliż.",
+		"saved": "Zdjęcie zapisane",
+		"deleted": "Zdjęcie usunięte",
+		"placeholder": "Brak zdjęcia",
+		"alt": "Zdjęcie: {{name}}",
+		"errors": {
+			"too_large": "Plik za duży: limit to {{maxMb}} MB.",
+			"not_an_image": "Plik nie jest czytelnym obrazem.",
+			"unsupported_format": "Nieobsługiwany format obrazu (użyj JPEG, PNG, WebP lub HEIC).",
+			"empty": "Nie wybrano pliku."
+		},
+		"withForm": "Zapisuje się razem z czytelnikiem.",
+		"requiredHint": "Zdjęcie jest wymagane: zrób je teraz albo później z kartoteki czytelnika.",
+		"optionalHint": "Zdjęcie można zrobić teraz albo później z kartoteki czytelnika.",
+		"remove": "Usuń",
+		"notSaved": "Zdjęcie nie zostało zapisane: zrób je ponownie z kartoteki czytelnika.",
+		"retakePhoto": "Zrób zdjęcie ponownie"
+	},
+	"census": {
+		"title": "Spis zdjęć",
+		"noGroup": "Bez klasy",
+		"stageOthers": "Bez etapu",
+		"progress": "{{done}} z {{total}} ze zdjęciem",
+		"allDone": "Wszyscy mają zdjęcie.",
+		"back": "Zmień klasę lub listę",
+		"skip": "Pomiń",
+		"done": "Gotowe",
+		"saved": "Zapisano zdjęcie: {{name}}",
+		"quickAdd": "Nowy czytelnik",
+		"quickAddHint": "Dodany do {{group}}, jego zdjęcie będzie następne.",
+		"create": "Dodaj i zrób zdjęcie",
+		"findPerson": "Znajdź po nazwisku",
+		"pickTarget": "Wybierz listę lub klasę",
+		"listsTitle": "Listy czytelników",
+		"classesTitle": "Klasy",
+		"nothingMissing": "Wszystkie klasy i listy mają swoje zdjęcia.",
+		"onlyMissing": "Pokazano tylko klasy i listy, w których brakuje co najmniej jednego zdjęcia.",
+		"byCamera": "Jedna osoba naraz",
+		"sheets": {
+			"title": "Z obrazu z wieloma zdjęciami",
+			"hint": "Obrazy z kilkoma zdjęciami (tablo fotografa, karty na stole, arkusz zdjęć legitymacyjnych): zdjęcia są wykrywane automatycznie i przypisywane każdemu czytelnikowi.",
+			"upload": "Wgraj obraz",
+			"take": "Sfotografuj arkusz",
+			"uploading": "Wysyłanie obrazu…",
+			"empty": "Brak obrazu dla tej klasy lub listy.",
+			"item": "Obraz z {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:zdjęcie znalezione; few:zdjęcia znalezione; many:zdjęć znalezionych; other:zdjęcia znalezionego;}} · {{saved}} {{saved:plural; one:zapisane; few:zapisane; many:zapisanych; other:zapisanego;}} · {{pending}} do zrobienia",
+			"notDetected": "Do przetworzenia",
+			"demoScan": "Przykład ze skanera",
+			"demoPhoto": "Przykład ze zdjęcia",
+			"demoHint": "Dwa sposoby uzyskania zdjęć klasy: skan leży płasko, jego zdjęcia są prostokątami co najwyżej obróconymi; zdjęcie jest zrobione pod kątem, a perspektywa zniekształca kadry."
+		},
+		"sheet": {
+			"title": "Zdjęcia z obrazu",
+			"back": "Wróć do klasy",
+			"detecting": "Szukanie zdjęć na obrazie…",
+			"found": "Znalezione zdjęcia: {{count}}. Wybierz przy każdym, czyje jest.",
+			"none": "Nie znaleziono zdjęcia. Przy „Popraw kadry” można je narysować ręcznie.",
+			"pictureAlt": "Wgrany obraz z ponumerowanymi kadrami zdjęć",
+			"frame": "Zdjęcie {{n}}",
+			"choose": "Czyje to?",
+			"nobody": "— Nikt —",
+			"takenBy": "{{name}} (już na zdjęciu {{n}})",
+			"hasPhoto": "ma już zdjęcie",
+			"noPhoto": "bez zdjęcia",
+			"ignore": "Ignoruj",
+			"unignore": "Przywróć",
+			"ignored": "Zignorowane: to nikt z tej klasy lub listy.",
+			"saved": "Zapisano jako zdjęcie: {{name}}",
+			"edit": "Popraw kadry",
+			"editDone": "Koniec poprawek",
+			"editHint": "Dotknij kadr i przeciągnij jego rogi; dla brakującego zdjęcia użyj „Dodaj kadr”.",
+			"editHintScan": "Dotknij kadr: przeciągnij róg, aby go powiększyć lub zmniejszyć, a koło nad nim, aby go obrócić; dla brakującego zdjęcia użyj „Dodaj kadr”.",
+			"addFrame": "Dodaj kadr",
+			"addFrameHint": "Przeciągnij po obrazie od jednego rogu brakującego zdjęcia do drugiego.",
+			"deleteFrame": "Usuń kadr {{n}}",
+			"rotateFrame": "Obróć kadr",
+			"kind": "Rodzaj obrazu",
+			"kindPhoto": "Zdjęcie",
+			"kindScan": "Skan",
+			"kindPhotoHint": "Zrobione pod kątem: każdy róg kadru porusza się osobno, aby odtworzyć perspektywę.",
+			"kindScanHint": "Zrobione skanerem: kadry pozostają prostokątami i można je tylko obracać.",
+			"kindAgain": "Dopóki nie wybrano czytelnika, zmiana rodzaju ponownie szuka zdjęć.",
+			"save": "Zapisz zdjęcia",
+			"saveTitle": "Zapisać wybrane zdjęcia?",
+			"saveSummary": "Zdjęcia do zapisania: {{count}}.",
+			"saveReplaces": "Zastępują dotychczasowe zdjęcie: {{names}}.",
+			"saveUnassigned": "Kadry bez wybranej osoby: {{count}} (pozostają bez zmian).",
+			"savedToast": "Zapisano zdjęcia: {{count}}.",
+			"deleteSheet": "Usuń obraz",
+			"deleteSheetTitle": "Usunąć obraz?",
+			"deleteSheetDescription": "Obraz i jego kadry zostają usunięte. Zdjęcia już zapisane pozostają czytelnikom.",
+			"deletedToast": "Obraz usunięty.",
+			"progress": "{{label}}: {{done}} z {{total}} ze zdjęciem",
+			"missingTitle": "Wciąż bez zdjęcia",
+			"byCamera": "Fotografuj ich jedno po drugim",
+			"errors": {
+				"not_found": "Nie znaleziono obrazu.",
+				"set_not_found": "Klasa lub lista już nie istnieje.",
+				"empty": "Plik jest pusty.",
+				"too_large": "Obraz jest za duży (najwyżej {{maxMb}} MB).",
+				"not_an_image": "Plik nie jest czytelnym obrazem.",
+				"unsupported_format": "Nieobsługiwany format: użyj JPEG, PNG, WebP lub HEIC.",
+				"too_many_frames": "Najwyżej {{maxFrames}} {{maxFrames:plural; one:zdjęcie; few:zdjęcia; many:zdjęć; other:zdjęcia;}} na obraz.",
+				"bad_corners": "Kadr jest nieprawidłowy: rogi muszą tworzyć czworokąt wewnątrz obrazu.",
+				"already_detected": "Zdjęcia tego obrazu zostały już wyszukane.",
+				"frame_saved": "To zdjęcie zostało już zapisane.",
+				"frame_erased": "To zdjęcie należało do usuniętego czytelnika: kadr został zakryty.",
+				"not_a_member": "Można wybrać tylko czytelników z klasy lub listy.",
+				"patron_taken": "Ta osoba jest już wybrana do zdjęcia {{position}}: najpierw zwolnij to zdjęcie, zanim wybierzesz tę osobę tutaj.",
+				"confirm_replace": "{{count:plural; one:{{count}} zdjęcie zastępuje istniejące; few:{{count}} zdjęcia zastępują istniejące; many:{{count}} zdjęć zastępuje istniejące; other:{{count}} zdjęcia zastępują istniejące;}}: potwierdź, aby kontynuować.",
+				"nothing_to_save": "Przed zapisem wybierz co najmniej jednego czytelnika."
+			},
+			"erased": "Czytelnik usunięty: kadr został zakryty na obrazie."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "Plik CSV",
+			"submit": "Wgraj",
+			"hints": {
+				"students": "Plik CSV z jednym wierszem na ucznia, oddzielony średnikiem (;) lub przecinkiem (,); działa też eksport z arkusza kalkulacyjnego. Użyj nagłówków szablonu, który można pobrać poniżej, z potrzebnymi kolumnami.",
+				"teachers": "Plik CSV z jednym wierszem na nauczyciela, oddzielony średnikiem (;) lub przecinkiem (,). Użyj nagłówków szablonu, który można pobrać poniżej, z potrzebnymi kolumnami."
+			}
+		},
+		"mapping": {
+			"format": "Rozpoznany format",
+			"uncertain": "Format nie jest pewny: sprawdź kolumny przed dalszym krokiem.",
+			"remembered": "Kolumny zapamiętane z ostatniego importu tego pliku.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "nagłówek pliku",
+				"unknown": "nieznany"
+			},
+			"mode": "Tryb",
+			"modes": {
+				"upsert": "Dodaj i aktualizuj",
+				"upsertHint": "Pasujące wiersze aktualizują istniejącego czytelnika, pozostałe tworzą nowych czytelników.",
+				"sync": {
+					"students": "Synchronizuj uczniów",
+					"teachers": "Synchronizuj nauczycieli"
+				},
+				"syncHint": {
+					"students": "Plik jest pełną listą uczniów: kto jest w nim nieobecny, zostaje wypisany (i usunięty po potwierdzeniu). Nauczyciele nie są ruszani.",
+					"teachers": "Plik jest pełną listą nauczycieli: kto jest w nim nieobecny, zostaje wypisany (i usunięty po potwierdzeniu). Uczniowie nie są ruszani."
+				}
+			},
+			"duplicates": "Czytelnicy już obecni",
+			"policies": {
+				"update": "Aktualizuj",
+				"skip": "Pomiń",
+				"create": "Utwórz mimo to"
+			},
+			"validate": "Sprawdź plik",
+			"matchByName": {
+				"students": "Bez kolumny external_id uczniowie już w archiwum są rozpoznawani po imieniu, nazwisku i klasie.",
+				"teachers": "Bez kolumny external_id nauczyciele już w archiwum są rozpoznawani po imieniu i nazwisku."
+			}
+		},
+		"preview": {
+			"ready": "Brak błędów: plik można zaimportować.",
+			"blocked": "Popraw błędy w pliku (albo u czytelników) i sprawdź ponownie: z błędami nic nie jest importowane.",
+			"columns": {
+				"name": "Imię i nazwisko",
+				"class": "Klasa"
+			},
+			"changed": "Zmiany: {{fields}}",
+			"homonym": {
+				"pick": "Wybierz czytelnika",
+				"create": "Utwórz nowego czytelnika",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Imienniki do rozstrzygnięcia"
+			},
+			"missing": {
+				"students": {
+					"title": "Uczniowie w archiwum, ale nieobecni w pliku ({{count}})",
+					"remove": "Usuń tych uczniów z archiwum (natychmiastowa anonimizacja)",
+					"noPermission": "Bez uprawnienia do usuwania czytelników zaginieni uczniowie pozostają w archiwum.",
+					"notRemoved": "{{count}} {{count:plural; one:brakujący uczeń nie został usunięty, ponieważ ma; few:brakujący uczniowie nie zostali usunięci, ponieważ mają; many:brakujących uczniów nie usunięto, ponieważ mają; other:brakującego ucznia nie usunięto, ponieważ ma;}} wypożyczenia w toku."
+				},
+				"teachers": {
+					"title": "Nauczyciele w archiwum, ale nieobecni w pliku ({{count}})",
+					"remove": "Usuń tych nauczycieli z archiwum (natychmiastowa anonimizacja)",
+					"noPermission": "Bez uprawnienia do usuwania czytelników zaginieni nauczyciele pozostają w archiwum.",
+					"notRemoved": "{{count}} {{count:plural; one:brakujący nauczyciel nie został usunięty, ponieważ ma; few:brakujący nauczyciele nie zostali usunięci, ponieważ mają; many:brakujących nauczycieli nie usunięto, ponieważ mają; other:brakującego nauczyciela nie usunięto, ponieważ ma;}} wypożyczenia w toku."
+				},
+				"hint": "Przy synchronizacji można usunąć każdego, kogo nie ma w pliku: dane osobowe są natychmiast i na zawsze usuwane, zostają tylko klasa i statystyki."
+			},
+			"commit": "Importuj",
+			"back": "Wróć do kolumn",
+			"generatedCards": "{{count}} {{count:plural; one:nowa karta zostanie wygenerowana; few:nowe karty zostaną wygenerowane; many:nowych kart zostanie wygenerowanych; other:nowej karty zostanie wygenerowanej;}}, bo w pliku nie ma numeru."
+		},
+		"reasons": {
+			"tooLong": "Tekst za długi w kolumnie {{column}}: najwyżej {{max}} {{max:plural; one:znak; few:znaki; many:znaków; other:znaku;}}",
+			"nameRequired": "Brak imienia lub nazwiska",
+			"emailInvalid": "Nieprawidłowy e-mail",
+			"cardNumberInvalid": "Nieprawidłowy numer karty",
+			"cardNumberTaken": "Numer karty jest już przypisany innemu czytelnikowi",
+			"cardNumberIsCopy": "Numer karty taki sam jak kod kreskowy egzemplarza albo do niego podobny",
+			"externalIdTaken": "Numer ucznia jest już przypisany innemu czytelnikowi",
+			"duplicateInFile": "Ta sama osoba już w wierszu {{line}}",
+			"homonym": "{{count}} {{count:plural; one:imiennik; few:imiennicy; many:imienników; other:imiennika;}} w archiwum: wybierz, którego zaktualizować",
+			"matchedTwice": "Inny wiersz już aktualizuje tego samego czytelnika",
+			"skipped": "Już obecny: pominięto",
+			"levelRequired": "Brak klasy",
+			"levelUnknown": "Rok „{{value}}” nie jest rokiem szkoły",
+			"groupRequired": "Brak oddziału",
+			"groupUnknown": "Nie znaleziono oddziału „{{value}}” dla tego roku. Prawidłowe klasy: {{classes}} (klasy tworzy się w menu Administracja → Konfiguracja → Klasy)",
+			"levelNotInGroup": "Oddział „{{value}}” nie ma takiego roku. Prawidłowe klasy: {{classes}}",
+			"classUnknown": "Nie znaleziono klasy „{{value}}”. Prawidłowe klasy: {{classes}}",
+			"teacherGroupUnknown": "Nie znaleziono grupy nauczycieli „{{value}}”. Prawidłowe grupy: {{classes}}"
+		},
+		"done": {
+			"title": "Import zakończony",
+			"summary": "{{created}} {{created:plural; one:nowy; few:nowi; many:nowych; other:nowego;}}, {{updated}} {{updated:plural; one:zaktualizowany; few:zaktualizowani; many:zaktualizowanych; other:zaktualizowanego;}}, {{unchanged}} {{unchanged:plural; one:niezmieniony; few:niezmienieni; many:niezmienionych; other:niezmienionego;}}, {{removed}} {{removed:plural; one:usunięty; few:usunięci; many:usuniętych; other:usuniętego;}}.",
+			"printNew": "Wydrukuj karty nowych czytelników",
+			"census": "Spis zdjęć",
+			"again": "Importuj inny plik",
+			"batch": "Import nr {{id}}: oryginalny plik zostaje zachowany na serwerze."
+		},
+		"fields": {
+			"firstName": "Imię",
+			"lastName": "Nazwisko",
+			"class": "Klasa (rok i oddział)",
+			"level": "Rok nauki",
+			"section": "Oddział",
+			"group": "Grupa nauczycieli",
+			"externalId": "Numer ucznia",
+			"cardNumber": "Karta",
+			"email": "E-mail"
+		},
+		"titles": {
+			"students": "Import uczniów",
+			"teachers": "Import nauczycieli"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "Imię."
+			},
+			"lastName": {
+				"hint": "Nazwisko."
+			},
+			"class": {
+				"hint": "Klasa w jednej kolumnie, na przykład 3A lub 3 A: musi istnieć w menu Administracja → Konfiguracja → Klasy."
+			},
+			"level": {
+				"hint": "Rok nauki (1, 2, 3…), z oddziałem w kolumnie section."
+			},
+			"section": {
+				"hint": "Oddział (A, B…): razem z level wskazuje klasę."
+			},
+			"cardNumber": {
+				"hint": "Numer karty, jeśli uczeń ją już ma.",
+				"missing": "nowe karty zostaną wygenerowane"
+			},
+			"externalId": {
+				"hint": "Kod z dziennika elektronicznego.",
+				"missing": "czytelnicy już obecni są rozpoznawani po imieniu, nazwisku i klasie"
+			},
+			"email": {
+				"hint": "Opcjonalny."
+			},
+			"group": {
+				"hint": "Grupa nauczycieli; gdy brak, grupa domyślna."
+			}
+		},
+		"classForm": {
+			"label": "Klasa",
+			"class": "W jednej kolumnie (class: 3A)",
+			"levelSection": "W dwóch kolumnach (level: 3, section: A)"
+		}
+	}
+}

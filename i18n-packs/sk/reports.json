@@ -1,0 +1,39 @@
+{
+	"title": "Výkazy",
+	"categories": {
+		"loans": "Výpožičky",
+		"books": "Knihy",
+		"patrons": "Čitatelia",
+		"ops": "Činnosť"
+	},
+	"restricted": "Iba pre administrátorov",
+	"custom": "Školské výkazy",
+	"chart": "S grafom",
+	"problemsTitle": "Súbory výkazov sa nenačítali",
+	"problemsHint": "Tieto súbory v priečinku výkazov obsahujú chybu a nie sú uvedené v zozname:",
+	"params": "Parametre",
+	"run": "Aktualizovať",
+	"all": "Všetky",
+	"from": "od",
+	"to": "do",
+	"patronTypes": {
+		"student": "Žiaci",
+		"teacher": "Učitelia"
+	},
+	"rows": "{{count}} {{count:plural; one:riadok; few:riadky; other:riadkov;}}",
+	"ms": "za {{ms}} ms",
+	"truncated": "{{count:plural; one:Zobrazený je len prvý riadok; few:Zobrazené sú len prvé {{count}} riadky; other:Zobrazených je len prvých {{count}} riadkov;}}: ak chcete vidieť všetky, sprísnite parametre.",
+	"empty": "Pre tieto parametre nie sú žiadne výsledky.",
+	"print": "Tlačiť",
+	"printedOn": "Vytlačené {{date}}",
+	"errors": {
+		"required": "Chýba „{{label}}“.",
+		"invalid": "Hodnota v poli „{{label}}“ nie je platná."
+	},
+	"back": "Všetky výkazy",
+	"noParams": "Tento výkaz nemá parametre.",
+	"special": {
+		"teachers": "Učitelia",
+		"total": "Spolu"
+	}
+}

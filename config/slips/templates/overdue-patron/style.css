@@ -1,0 +1,31 @@
+.slip {
+	font-family: Arial, Helvetica, "Liberation Sans", sans-serif;
+	font-size: 11pt;
+}
+.slip h2 {
+	font-size: 13pt;
+	font-weight: 700;
+	margin: 0 0 2mm;
+}
+.slip .when {
+	margin: 0 0 4mm;
+}
+.slip table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.slip th,
+.slip td {
+	border: 0.3mm solid #000;
+	padding: 1.5mm 2mm;
+	text-align: left;
+	vertical-align: top;
+}
+.slip th {
+	font-weight: 700;
+}
+.slip td:nth-child(2),
+.slip td:nth-child(3),
+.slip td:nth-child(4) {
+	white-space: nowrap;
+}

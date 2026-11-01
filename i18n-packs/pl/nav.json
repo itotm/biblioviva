@@ -1,0 +1,60 @@
+{
+	"dashboard": "Pulpit",
+	"circulation": "Wypożyczenia",
+	"catalog": "Katalog",
+	"patrons": "Czytelnicy",
+	"printing": "Wydruki",
+	"notes": "Notatki",
+	"reports": "Raporty",
+	"admin": "Administracja",
+	"more": "Więcej",
+	"logout": "Wyloguj się",
+	"help": "Pomoc",
+	"about": "Informacje",
+	"areas": {
+		"circulation": {
+			"label": "Stanowisko wypożyczeń",
+			"checkout": "Wypożyczenie",
+			"checkin": "Zwrot",
+			"loans": "Książki wypożyczone",
+			"overdues": "Monity",
+			"wishlist": "Propozycje zakupu",
+			"calendar": "Kalendarz"
+		},
+		"catalog": {
+			"label": "Strony katalogu",
+			"catalog": "Katalog",
+			"inventory": "Skontrum",
+			"wishlist": "Propozycje zakupu",
+			"toClassify": "Do sklasyfikowania"
+		},
+		"patrons": {
+			"label": "Strony czytelników",
+			"patrons": "Czytelnicy",
+			"census": "Spis ze zdjęciami"
+		},
+		"notes": {
+			"label": "Strony notatek",
+			"open": "Otwarte",
+			"archived": "Zarchiwizowane"
+		},
+		"config": {
+			"label": "Strony konfiguracji",
+			"overview": "Sekcje",
+			"history": "Historia"
+		},
+		"templates": {
+			"label": "Strony szablonów wydruku",
+			"edit": "Szablony",
+			"previews": "Podglądy"
+		},
+		"imports": {
+			"label": "Importy",
+			"catalog": "Katalog",
+			"students": "Uczniowie",
+			"teachers": "Nauczyciele",
+			"loans": "Wypożyczenia w toku",
+			"photos": "Zdjęcia czytelników"
+		}
+	}
+}

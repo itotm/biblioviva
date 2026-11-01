@@ -1,0 +1,24 @@
+{
+	"id": "loans-by-month",
+	"title": {
+		"it": "Prestiti per mese",
+		"en": "Loans by month"
+	},
+	"description": {
+		"it": "Prestiti e lettori di ogni mese del periodo.",
+		"en": "Loans and readers of each month of the period."
+	},
+	"category": "loans",
+	"query": {
+		"source": "loans",
+		"filters": [
+			{
+				"field": "period",
+				"ask": true
+			}
+		],
+		"rows": ["month"],
+		"measures": ["loans", "readers"],
+		"chart": "line"
+	}
+}

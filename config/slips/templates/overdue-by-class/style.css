@@ -1,0 +1,41 @@
+/* a class's table stays on one page: the next class starts on a new page rather than being
+   split by the page break; a class longer than a page breaks between rows, with its header again */
+.group {
+	margin: 0 0 14mm;
+	font-family: Arial, Helvetica, "Liberation Sans", sans-serif;
+	font-size: 10pt;
+	break-inside: avoid;
+	page-break-inside: avoid;
+}
+.group h2 {
+	font-size: 13pt;
+	font-weight: 700;
+	margin: 0 0 3mm;
+	break-after: avoid;
+	page-break-after: avoid;
+}
+.group thead {
+	display: table-header-group;
+}
+.group tr {
+	break-inside: avoid;
+	page-break-inside: avoid;
+}
+.group table {
+	width: 100%;
+	border-collapse: collapse;
+}
+.group th,
+.group td {
+	border: 0.3mm solid #000;
+	padding: 1.5mm 2mm;
+	text-align: left;
+	vertical-align: top;
+}
+.group th {
+	font-weight: 700;
+}
+.group td:last-child,
+.group th:last-child {
+	width: 28mm;
+}

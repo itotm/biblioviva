@@ -1,0 +1,668 @@
+{
+	"home": {
+		"title": "Správa",
+		"sections": {
+			"config": {
+				"title": "Nastavení",
+				"description": "Klasifikace a nastavení knihovny."
+			},
+			"audit": {
+				"title": "Protokol operací",
+				"description": "Kdo co udělal: přihlášení, změny, importy."
+			},
+			"users": {
+				"title": "Účty pracovníků",
+				"description": "Účty pracovníků, role a oprávnění."
+			},
+			"backups": {
+				"title": "Zálohy",
+				"description": "Bezpečnostní kopie databáze a souborů."
+			},
+			"rollover": {
+				"title": "Postup do vyšší třídy",
+				"description": "Na konci roku: postupy do vyššího ročníku, opakující žáci, odchody z poslední třídy."
+			},
+			"exports": {
+				"title": "Exporty",
+				"description": "Čtenáři, katalog, výpůjčky a všechna data v souborech CSV nebo JSON."
+			},
+			"imports": {
+				"title": "Importy",
+				"description": "Katalog, čtenáři, probíhající výpůjčky a fotografie: ze souborů CSV nebo z exportu z Koha."
+			}
+		}
+	},
+	"audit": {
+		"title": "Protokol operací",
+		"filters": {
+			"from": "Od",
+			"to": "Do",
+			"user": "Účet",
+			"action": "Operace",
+			"all": "Všechny"
+		},
+		"columns": {
+			"when": "Kdy",
+			"user": "Účet",
+			"action": "Operace",
+			"entity": "Objekt",
+			"entityId": "ID",
+			"details": "Podrobnosti"
+		},
+		"count": "{{shown}} z {{total}} {{total:plural; one:záznamu; few:záznamů; other:záznamů;}}",
+		"empty": "Těmto filtrům neodpovídá žádná operace.",
+		"system": "systém"
+	},
+	"users": {
+		"title": "Účty pracovníků",
+		"fields": {
+			"roles": "Role",
+			"permissions": "Oprávnění",
+			"lastLogin": "Poslední přihlášení",
+			"never": "nikdy"
+		},
+		"status": {
+			"active": "Aktivní",
+			"inactive": "Deaktivovaný",
+			"plainPassword": "Heslo v čitelné podobě v souboru",
+			"notInConfig": "Odstraněn z nastavení"
+		},
+		"hash": {
+			"title": "Vytvořit hash hesla",
+			"description": "Zadejte heslo, které chcete přiřadit: získá se hash argon2id, který se vloží do passwordHash. Heslo se neukládá.",
+			"password": "Heslo (alespoň {{min}} znaků)",
+			"generate": "Vytvořit hash",
+			"result": "Hash k vložení",
+			"copy": "Kopírovat",
+			"copied": "Hash zkopírován",
+			"tooShort": "Heslo musí mít alespoň {{min}} znaků.",
+			"disclosure": "Pro ty, kdo upravují soubory ručně: vytvořit hash hesla"
+		},
+		"reload": {
+			"button": "Znovu načíst nastavení",
+			"success": "Nastavení bylo znovu načteno",
+			"successWithWarnings": "Nastavení bylo znovu načteno s {{count}} {{count:plural; one:upozorněním; few:upozorněními; other:upozorněními;}}",
+			"failed": "Neplatné nastavení: zůstává aktivní předchozí",
+			"exampleSource": "Pozor: soubor config.json neexistuje, používá se ukázkové nastavení."
+		},
+		"new": "Nový účet",
+		"newPassword": "Nové heslo",
+		"permissionNames": {
+			"all": "Vše",
+			"loans": "Výpůjčky",
+			"patrons": "Čtenáři",
+			"patrons_import": "Importovat čtenáře",
+			"catalog": "Katalog",
+			"catalog_import": "Importovat katalog",
+			"reports": "Přehledy",
+			"anonymize": "Anonymizovat",
+			"admin": "Správa"
+		},
+		"roles": {
+			"title": "Role a oprávnění",
+			"hint": "Role je soubor oprávnění; každý účet má jednu nebo více rolí. „Vše“ přiděluje každé oprávnění, včetně těch, která přinesou další verze. Přejmenování role aktualizuje účty, které ji používají.",
+			"name": "Role",
+			"unused": "žádný účet",
+			"badName": "Písmena, číslice, pomlčky a podtržítka (nejvýše 32).",
+			"add": "Přidat roli",
+			"saved": "Role uloženy"
+		},
+		"auth": {
+			"title": "Přihlášení",
+			"config": "Lidé se přihlašují účty této stránky, obvykle jedním sdíleným pro každou roli (například „výpůjčky“ pro výpůjční pult).",
+			"database": "Lidé se přihlašují osobními účty.",
+			"later": "Osobní účty, jeden pro každou osobu, jsou plánovány na pozdější verzi."
+		},
+		"dialog": {
+			"title": {
+				"new": "Nový účet",
+				"edit": "Upravit {{name}}",
+				"password": "Nové heslo pro {{name}}"
+			},
+			"username": "Uživatelské jméno",
+			"usernameHint": "Malá písmena, číslice, tečka, pomlčka a podtržítko (2 až 32 znaků).",
+			"badUsername": "Používejte malá písmena, číslice, tečku, pomlčku a podtržítko (2 až 32 znaků).",
+			"displayName": "Zobrazované jméno",
+			"active": "Aktivní účet (může se přihlásit)",
+			"password": "Heslo (alespoň {{min}} znaků)",
+			"repeat": "Zopakujte heslo",
+			"mismatch": "Hesla se neshodují.",
+			"passwordHint": "Heslo se neukládá: do nastavení se zapisuje pouze jeho hash. Kdo je přihlášen tímto účtem, bude se muset znovu přihlásit.",
+			"saved": {
+				"new": "Účet vytvořen",
+				"edit": "Účet uložen",
+				"password": "Heslo změněno"
+			},
+			"removed": "Účet smazán",
+			"removeTitle": "Smazat {{name}}?",
+			"removeHint": "Účet je odstraněn z nastavení; operace, které provedl, zůstanou v protokolu pod jeho jménem. Lze to vrátit zpět z historie nastavení."
+		},
+		"errors": {
+			"badUsername": "Neplatné uživatelské jméno: {{details}}.",
+			"usernameTaken": "Uživatelské jméno {{details}} je již použito.",
+			"notFound": "Účet nenalezen: {{details}}.",
+			"noRoles": "Vyberte alespoň jednu roli.",
+			"unknownRole": "Neznámá role: {{details}}.",
+			"passwordTooShort": "Heslo je příliš krátké.",
+			"passwordRequired": "Nový účet potřebuje heslo.",
+			"lastAdmin": "Alespoň jeden aktivní účet musí zachovat oprávnění správy.",
+			"stillActive": "Před smazáním účet deaktivujte.",
+			"badRole": "Neplatný název role: {{details}}.",
+			"roleTaken": "Dvě role se jmenují {{details}}.",
+			"roleInUse": "Roli používají některé účty: {{details}}.",
+			"invalid": "Nastavení by nebylo platné: {{details}}."
+		}
+	},
+	"backups": {
+		"title": "Zálohy",
+		"runNow": "Zálohovat nyní",
+		"created": "Záloha vytvořena: {{name}}",
+		"createdDeleted": "Záloha vytvořena: {{name}} ({{deleted}} {{deleted:plural; one:stará záloha smazána; few:staré zálohy smazány; other:starých záloh smazáno;}})",
+		"empty": "Zatím žádné zálohy. První se vytvoří v naplánovaný čas, nebo stiskněte „Zálohovat nyní“.",
+		"download": "Stáhnout",
+		"columns": {
+			"when": "Vytvořeno",
+			"size": "Velikost"
+		},
+		"catchUp": {
+			"badge": "Vytvořeno při spuštění",
+			"hint": "Naplánovaná záloha byla vynechána (počítač byl vypnutý): BiblioViva ji vytvořila při spuštění."
+		},
+		"offsite": {
+			"title": "Poslední externí záloha",
+			"disabled": "Externí záloha není nastavena. Zapne se službou „offsite“ (rclone) popsanou v návodu k instalaci.",
+			"never": "Služba je zapnutá, ale zatím nezapsala žádný výsledek.",
+			"ok": "Poslední záloha proběhla úspěšně: {{when}}",
+			"error": "Poslední záloha selhala: {{when}}",
+			"stale": "Externí záloha je starší než dva dny: zkontrolujte službu offsite.",
+			"remote": "Cíl: {{remote}}"
+		},
+		"restore": {
+			"title": "Obnovení",
+			"button": "Obnovit…",
+			"hint": "Vyberte „Obnovit…“ u zálohy v seznamu, nebo nahrajte archiv BiblioViva (zálohu, „Exportovat vše“ nebo „Exportovat nastavení“, až {{maxMb}} MB; větší archiv se zkopíruje do složky záloh na serveru nebo se obnoví příkazem bun run backup:restore). Nejdřív se vše zkontroluje, potom se obnoví jen vybrané části: ostatní zůstanou beze změny.",
+			"upload": "Nahrát archiv",
+			"from": "Ze zálohy {{name}} z {{date}}",
+			"count": "{{part}}: nyní {{live}}, v záloze {{archive}}",
+			"images": "Obrázky k obnovení: {{photos}} {{photos:plural; one:fotografie; few:fotografie; other:fotografií;}}, {{covers}} {{covers:plural; one:obálka; few:obálky; other:obálek;}}.",
+			"gapsTitle": "Některá data by zůstala bez toho, k čemu se vztahují:",
+			"gap": "{{rows:plural; one:{{rows}} řádek „{{part}}“ se vztahuje; few:{{rows}} řádky „{{part}}“ se vztahují; other:{{rows}} řádků „{{part}}“ se vztahuje;}} k „{{needs}}“, která by tam nebyla: přidejte „{{add}}“ do výběru.",
+			"schema": "Záloha pochází z jiné verze BiblioViva (tabulky {{tables}}): zde se nedá obnovit.",
+			"apply": "Obnovit",
+			"confirmTitle": "Obnovit vybrané části?",
+			"confirmHint": "Vybraná data a nastavení se nahradí těmi ze zálohy. Nastavení lze vrátit z historie; u dat je lepší nejdřív vytvořit zálohu, pokud není žádná nedávná.",
+			"done": "Obnovení dokončeno",
+			"notArchive": "Soubor není archivem BiblioViva."
+		},
+		"contents": {
+			"title": "Co záloha obsahuje",
+			"database": "Databáze: úplná kopie při každém spuštění (seznam níže).",
+			"images": "Fotografie a obálky: každou noc se kopírují do složky „uploads“ zálohy ({{photos}} {{photos:plural; one:fotografie; few:fotografie; other:fotografií;}}, {{covers}} {{covers:plural; one:obálka; few:obálky; other:obálek;}} právě teď).",
+			"imagesPending": "Fotografie a obálky: první kopie proběhne při příštím spuštění ({{photos}} {{photos:plural; one:fotografie; few:fotografie; other:fotografií;}}, {{covers}} {{covers:plural; one:obálka; few:obálky; other:obálek;}} ke zkopírování).",
+			"config": "Nastavení (šablony, obrázky, volby) není v noční záloze: pro jeho získání použijte „Exportovat vše“."
+		},
+		"export": {
+			"button": "Exportovat vše",
+			"hint": "Jeden soubor ZIP s databází, fotografiemi, obálkami a celým nastavením (včetně šablon a obrázků), připravený pro obnovení příkazem „bun run backup:restore“."
+		},
+		"createdMirror": "Záloha vytvořena: {{name}}; zkopírováno {{copied}} {{copied:plural; one:obrázek; few:obrázky; other:obrázků;}}",
+		"parts": {
+			"title": "Záloha nebo export některých částí",
+			"hint": "Vyberte, co zahrnout: data knihovny, nastavení každé sekce, šablony, obrázky… „Vytvořit zálohu“ ji uloží do seznamu níže, „Stáhnout“ ji stáhne do počítače.",
+			"create": "Vytvořit zálohu",
+			"download": "Stáhnout"
+		}
+	},
+	"demo": {
+		"clear": "Vymazat ukázková data",
+		"confirmTitle": "Vymazat ukázková data?",
+		"confirmDescription": "Ukázkoví čtenáři, knihy, výpůjčky a fotografie budou smazány. Třídy a skupina učitelů zůstanou. Všichni pracovníci budou odhlášeni.",
+		"cleared": "Ukázková data odstraněna. Přihlaste se znovu.",
+		"clearedPassword": "Účty mají stále ukázkové heslo „{{password}}“: změňte ho hned v části Správa → Účty pracovníků."
+	},
+	"appearance": {
+		"title": "Vzhled a jazyk",
+		"current": "Aktuální barevná sada: {{name}}",
+		"areas": {
+			"title": "Styl oblastí",
+			"hint": "Horní pruh má barvu oblasti, ve které se pracuje (Výpůjčky, Katalog, Čtenáři…), v odstínech zvolené barevné sady. Ikona a název oblasti zůstávají vždy vidět.",
+			"styles": {
+				"tinted": "Tónovaný pruh (doporučeno)",
+				"filled": "Plný pruh",
+				"accents": "Jen zvýraznění",
+				"none": "Bez barvy"
+			},
+			"saved": "Styl oblastí uložen"
+		},
+		"colours": {
+			"title": "Barevná sada"
+		},
+		"save": "Uložit barvy",
+		"saved": "Barvy uloženy",
+		"unchanged": "Žádné změny k uložení.",
+		"language": {
+			"title": "Jazyk aplikace",
+			"hint": "Jeden jazyk pro každou instalaci: platí pro všechny pracovníky.",
+			"save": "Změnit jazyk",
+			"saved": "Jazyk změněn: stránka se znovu načte."
+		},
+		"logo": {
+			"title": "Logo knihovny",
+			"hint": "Zobrazuje se vlevo nahoře na každé stránce vedle názvu knihovny. PNG, JPEG nebo WebP; nejlépe s průhledným pozadím.",
+			"upload": "Nahrát logo",
+			"replace": "Změnit logo",
+			"remove": "Odebrat logo",
+			"saved": "Logo uloženo.",
+			"removed": "Logo odebráno.",
+			"none": "Bez loga: zobrazuje se obecná ikona.",
+			"preview": "Aktuální logo",
+			"errors": {
+				"empty": "Soubor je prázdný.",
+				"too_large": "Soubor je příliš velký (nejvýše {{maxMb}} MB).",
+				"not_an_image": "Soubor není obrázek.",
+				"unsupported_format": "Formát není přijat: použijte PNG, JPEG nebo WebP."
+			}
+		},
+		"name": {
+			"title": "Název knihovny",
+			"hint": "Zobrazuje se vlevo nahoře, na přehledu, na tiskovinách a v aplikaci nainstalované v telefonu.",
+			"label": "Název",
+			"save": "Uložit název",
+			"saved": "Název knihovny uložen",
+			"required": "Zadejte název knihovny."
+		},
+		"dashboard": {
+			"title": "Přehled",
+			"hint": "Sekce úvodní stránky pro celou knihovnu. Rychlé akce jsou vždy nahoře; uvnitř každé sekce vidí každý účet jen to, co smí dělat.",
+			"save": "Uložit přehled",
+			"saved": "Přehled uložen",
+			"sections": {
+				"quickActions": "Rychlé akce",
+				"tiles": "Knihovna dnes (dlaždice s čísly)",
+				"inventory": "Probíhající revize fondu",
+				"installHint": "Výzva k přidání aplikace na plochu (telefony)",
+				"dueThisWeek": "Termín vrácení tento týden",
+				"upcomingDates": "Blížící se data z kalendáře",
+				"todayActivity": "Dnešní výpůjčky"
+			}
+		}
+	},
+	"templates": {
+		"title": "Šablony tisku",
+		"reload": "Znovu načíst šablony",
+		"reloaded": "Šablony znovu načteny z disku",
+		"kinds": {
+			"cards": "Průkazy",
+			"labels": "Štítky",
+			"slips": "Upomínky"
+		},
+		"list": {
+			"source": {
+				"builtin": "Dodáno s aplikací",
+				"config": "V nastavení"
+			},
+			"default": "Výchozí",
+			"status": {
+				"ok": "Platná",
+				"error": "Chyba"
+			},
+			"folder": "Složka",
+			"forTypes": "Pro: {{types}}",
+			"emptyCards": "Žádná šablona průkazů: zkontrolujte složku cards/templates v nastavení.",
+			"emptyLabels": "Zatím žádná šablona štítků: přijdou s tiskem štítků z katalogu.",
+			"emptySlips": "Zatím žádná šablona upomínky: přijde s výpůjčkami."
+		},
+		"preview": {
+			"title": "Náhled",
+			"front": "Přední strana",
+			"back": "Zadní strana",
+			"patron": "Čtenář k zobrazení",
+			"sample": "Ukázkový čtenář",
+			"real": "Skutečný čtenář",
+			"search": "Hledat skutečného čtenáře",
+			"searchPlaceholder": "Příjmení nebo jméno",
+			"noResults": "Žádný čtenář nenalezen.",
+			"zoom": "Přiblížení",
+			"sheet": "Celý arch",
+			"sheetHint": "Jedna stránka A4 s ukázkovým čtenářem, tak jak bude vytištěna.",
+			"test": "Vytisknout zkušební stránku",
+			"broken": "Šablonu nelze použít, dokud se neopraví:",
+			"size": "{{width}} × {{height}} mm při přiblížení {{zoom}}"
+		},
+		"test": {
+			"title": "Zkušební stránka průkazů",
+			"ruler": "Pravítko 10 cm: po vytištění musí měřit 100 mm (tiskněte na 100 %, bez „přizpůsobit stránce“)."
+		},
+		"calibration": {
+			"title": "Stránka kalibrace štítků",
+			"stock": "Samolepicí podklad",
+			"print": "Vytisknout kalibrační stránku",
+			"hint": "Tiskněte na obyčejný papír a přiložte na něj arch štítků, abyste zkontrolovali okraje."
+		},
+		"howTo": {
+			"title": "Jak vytvořit šablonu",
+			"steps": {
+				"step1": "V části Nastavení → Šablony tisku zvolte u šablony (například {{path}}) „Duplikovat“ a dejte jí nový název.",
+				"step2": "Tlačítkem „Upravit“ ji nakreslete nebo změňte její kód; obrázky se nahrávají na téže stránce.",
+				"step3": "Vraťte se sem a zkontrolujte náhled: neznámé pole nebo chybějící soubor se oznámí.",
+				"step4": "Chcete-li ji použít naostro, zvolte ji v nastavení Průkazy nebo Štítky."
+			}
+		},
+		"labels": {
+			"stocks": "Určeno pro: {{stocks}}",
+			"preview": "Náhled šablony {{name}}",
+			"geometry": "Jednotka {{width}} × {{height}} mm · varianta {{variant}}",
+			"sheet": "Ukázkový arch"
+		}
+	},
+	"loansImport": {
+		"title": "Importovat probíhající výpůjčky",
+		"upload": {
+			"hint": "Použije se jen jednou, při přechodu z Koha: jeden řádek pro každou probíhající výpůjčku s číslem průkazu čtenáře a čárovým kódem exempláře a, pokud jsou, s datem výpůjčky a termínem vrácení. Nejdřív importujte čtenáře a katalog; šablona s potřebnými sloupci se stáhne níže.",
+			"submit": "Nahrát"
+		},
+		"mapping": {
+			"uncertain": "Před pokračováním zkontrolujte sloupce.",
+			"validate": "Zkontrolovat soubor",
+			"without": {
+				"issuedOn": "Bez sloupce issued_on se výpůjčky datují dnešním dnem.",
+				"dueOn": "Bez sloupce due_on se termín vrácení vypočítá jako u výpůjčního pultu, podle pravidel výpůjček a kalendáře."
+			}
+		},
+		"fields": {
+			"cardNumber": "Číslo průkazu",
+			"barcode": "Čárový kód",
+			"issuedOn": "Datum výpůjčky",
+			"dueOn": "Termín vrácení"
+		},
+		"preview": {
+			"ready": "Žádné chyby: výpůjčky lze importovat.",
+			"blocked": "Opravte chyby a zkontrolujte znovu: soubor s chybami se neimportuje.",
+			"overdue": "{{count}} {{count:plural; one:výpůjčka je; few:výpůjčky jsou; other:výpůjček je;}} již po termínu: {{count:plural; one:importuje se a zobrazí; few:importují se a zobrazí; other:importují se a zobrazí;}} mezi výpůjčkami po termínu.",
+			"columns": {
+				"patron": "Čtenář",
+				"barcode": "Exemplář",
+				"issued": "Výpůjčka",
+				"due": "Termín"
+			},
+			"commit": "Importovat výpůjčky",
+			"back": "Zpět na sloupce"
+		},
+		"reasons": {
+			"cardMissing": "Chybí číslo průkazu",
+			"cardUnknown": "Žádný čtenář s průkazem {{value}}",
+			"barcodeMissing": "Chybí čárový kód",
+			"barcodeUnknown": "Žádný exemplář s kódem {{value}}",
+			"alreadyOnLoan": "Exemplář {{value}} je již půjčen",
+			"itemWithdrawn": "Exemplář {{value}} je vyřazen",
+			"duplicateInFile": "Stejný exemplář již na řádku {{line}}",
+			"issueDateInvalid": "Neplatné datum výpůjčky: „{{value}}“",
+			"issueDateFuture": "Datum výpůjčky v budoucnosti: {{value}}",
+			"dueDateInvalid": "Neplatný termín vrácení: „{{value}}“",
+			"dueBeforeIssue": "Termín vrácení je před datem výpůjčky",
+			"overdue": "Už po termínu od {{date}}",
+			"itemUnclassified": "Exemplář {{value}} patří k nezatříděné knize: výpůjčka se importuje, ale u výpůjčního pultu se nepůjčí, dokud kniha nebude zatříděna."
+		},
+		"done": {
+			"title": "Výpůjčky importovány",
+			"summary": "Importováno {{created}} {{created:plural; one:výpůjčka; few:výpůjčky; other:výpůjček;}}, z toho {{overdue}} {{overdue:plural; one:už po termínu; few:už po termínu; other:už po termínu;}}.",
+			"batch": "Import č. {{id}}: původní soubor je uchován.",
+			"again": "Importovat další soubor"
+		},
+		"columns": {
+			"cardNumber": "Číslo průkazu čtenáře, již importované.",
+			"barcode": "Čárový kód exempláře, již importovaného.",
+			"issuedOn": "Datum výpůjčky; pokud chybí, dnešek.",
+			"dueOn": "Termín vrácení; pokud chybí, vypočítá se podle pravidel výpůjček."
+		}
+	},
+	"photosImport": {
+		"title": "Importovat fotografie čtenářů",
+		"hint": "Jeden soubor na čtenáře, pojmenovaný podle čísla průkazu (například 0000001240.jpg): vytvoří ho export popsaný v příručce správce. Každá fotografie se zmenší a zbaví skrytých dat; soubory, které neodpovídají žádnému průkazu, se vypíší.",
+		"replace": "Nahradit již existující fotografie",
+		"zip": {
+			"title": "Z archivu ZIP",
+			"file": "Archiv ZIP s fotografiemi",
+			"submit": "Importovat fotografie"
+		},
+		"folder": {
+			"title": "Ze složky serveru",
+			"hint": "Zkopírujte soubory do {{path}}: {{count:plural; one:zatím je {{count}}; few:zatím jsou {{count}}; other:zatím je {{count}};}}. Vhodné pro mnoho fotografií, které by jako archiv byly příliš těžké na nahrání.",
+			"submit": "Importovat ze složky"
+		},
+		"summary": {
+			"title": "Výsledek",
+			"text": "{{imported}} {{imported:plural; one:fotografie importována; few:fotografie importovány; other:fotografií importováno;}}, nahrazeno: {{replaced}}, {{kept:plural; one:{{kept}} ponechána; few:{{kept}} ponechány; other:{{kept}} ponecháno;}} beze změny (fotografie už byla přítomna), {{unmatched}} {{unmatched:plural; one:soubor bez čtenáře; few:soubory bez čtenáře; other:souborů bez čtenáře;}}, {{unreadable}} {{unreadable:plural; one:nečitelný soubor; few:nečitelné soubory; other:nečitelných souborů;}}.",
+			"unreadable": "Obrázky, které nelze přečíst: {{files}}",
+			"unmatched": "Stáhnout seznam souborů bez čtenáře"
+		},
+		"errors": {
+			"notZip": "Soubor není platný archiv ZIP.",
+			"empty": "Archiv neobsahuje žádné soubory."
+		},
+		"done": "Fotografie importovány"
+	},
+	"rollover": {
+		"title": "Postup do vyšší třídy",
+		"subtitle": "Na konci roku každý žák postoupí o ročník a ten, kdo dokončí poslední ročník, opouští školu.",
+		"steps": {
+			"backup": "Záloha",
+			"classes": "Třídy",
+			"leavers": "Odchody",
+			"confirm": "Potvrzení",
+			"done": "Dokončeno"
+		},
+		"backup": {
+			"text": "Nejprve bezpečnostní kopie databáze: pokud se něco pokazí, vraťte se přes Správa → Zálohy.",
+			"create": "Vytvořit zálohu",
+			"created": "Záloha vytvořena: {{name}}"
+		},
+		"classes": {
+			"text": "Každý žák postoupí o ročník se svou třídou. Označte, kdo ročník opakuje a kdo mění třídu.",
+			"group": "{{from}} → {{to}}",
+			"count": "{{count}} {{count:plural; one:žák; few:žáci; other:žáků;}}",
+			"exceptions": "{{count}} {{count:plural; one:výjimka; few:výjimky; other:výjimek;}}",
+			"loans": "{{count}} s knihami na výpůjčce",
+			"repeat": "Opakuje",
+			"target": "Třída",
+			"noGroup": "Bez třídy",
+			"choose": "Vyberte třídu…",
+			"fates": {
+				"advances": "Postupuje",
+				"stays": "Zůstává",
+				"archived": "Uzavírá se"
+			},
+			"unplaced": "{{count}} {{count:plural; one:žák čeká; few:žáci čekají; other:žáků čeká;}} na výběr třídy.",
+			"none": "Žádný žák nepostupuje do vyššího ročníku.",
+			"nextYear": "Následující ročník",
+			"leaves": "Opouští školu"
+		},
+		"leavers": {
+			"text": "Žáci posledního ročníku opouštějí školu: jejich údaje se okamžitě a nevratně smažou (zůstanou jen čísla ve statistikách). Odškrtněte ty, kdo zůstávají, například žáka, který opakuje poslední ročník.",
+			"leaves": "Odchází",
+			"openLoans": "{{count}} {{count:plural; one:kniha; few:knihy; other:knih;}} na výpůjčce",
+			"blocked": "{{count}} {{count:plural; one:odcházející žák ještě má; few:odcházející žáci ještě mají; other:odcházejících žáků ještě má;}} knihy: zapište vrácení nebo je označte jako ztracené, případně odškrtněte.",
+			"toCheckin": "Přejít na Vrácení",
+			"none": "Žádný žák v posledním ročníku."
+		},
+		"confirm": {
+			"promote": "{{count}} {{count:plural; one:žák postupuje; few:žáci postupují; other:žáků postupuje;}} do vyššího ročníku",
+			"repeat": "{{count}} {{count:plural; one:opakuje; few:opakují; other:opakuje;}} ročník",
+			"groupChanges": "{{count}} {{count:plural; one:mění; few:mění; other:mění;}} třídu",
+			"closing": "{{count}} {{count:plural; one:třída se uzavírá a archivuje; few:třídy se uzavírají a archivují; other:tříd se uzavírá a archivuje;}}",
+			"remove": "{{count}} {{count:plural; one:žák opouští školu a jeho údaje se smažou; few:žáci opouštějí školu a jejich údaje se smažou; other:žáků opouští školu a jejich údaje se smažou;}}",
+			"recent": "Poslední postup proběhl {{date}}, před méně než šesti měsíci. Potvrzuji, že jej chci spustit znovu.",
+			"run": "Postoupit třídy"
+		},
+		"done": {
+			"title": "Postup dokončen",
+			"advanced": "{{count}} {{count:plural; one:třída postoupila; few:třídy postoupily; other:tříd postoupilo;}} do vyššího ročníku",
+			"archived": "{{count}} {{count:plural; one:třída archivována; few:třídy archivovány; other:tříd archivováno;}}",
+			"text": "Další kroky: vytvořte v případě potřeby nové první třídy a importujte nové žáky pomocí synchronizace.",
+			"import": "Importovat nové žáky"
+		},
+		"errors": {
+			"blocked": "Někteří odcházející žáci mají ještě výpůjčky.",
+			"recent": "Je potřeba potvrzení: poslední postup proběhl nedávno.",
+			"no_backup": "Záloha nebyla nalezena nebo je příliš stará: pořiďte ji znovu od prvního kroku.",
+			"invalid_group": "Vybraná třída neexistuje nebo nepřijímá ročník žáka.",
+			"unplaced": "Někteří žáci ještě nemají třídu: vyberte ji v kroku Třídy.",
+			"invalid_level": "Jeden z vybraných ročníků není mezi možnými: načtěte stránku znovu."
+		},
+		"next": "Další",
+		"back": "Zpět"
+	},
+	"classes": {
+		"title": "Třídy",
+		"subtitle": "Třídy školy a skupiny učitelů.",
+		"hint": "Ročníky a stupně školy se mění v nastavení:",
+		"structureLink": "Škola",
+		"new": "Nové třídy",
+		"newTeachers": "Nová skupina učitelů",
+		"teachers": "Učitelé",
+		"mixed": "Smíšená třída",
+		"empty": "Žádné třídy",
+		"emptyHint": "Žádné třídy. Třídy se vytvářejí tlačítkem Nové třídy, například ročníky 1 až 5 a názvy A–D.",
+		"archivedTitle": "{{count:plural; one:Archivovaná třída; few:Archivované třídy; other:Archivovaných tříd;}} ({{count}})",
+		"archive": "Archivovat",
+		"archiveNotEmpty": "Ještě má čtenáře: nelze archivovat",
+		"restore": "Obnovit",
+		"archived": "Třída {{name}} archivována",
+		"restored": "Třída {{name}} obnovena",
+		"columns": {
+			"class": "Třída",
+			"levels": "Ročníky",
+			"patrons": "Čtenáři"
+		},
+		"dialog": {
+			"title": {
+				"students": "Nové třídy",
+				"teachers": "Nová skupina učitelů",
+				"edit": "Upravit {{name}}"
+			},
+			"levels": "Ročníky",
+			"names": "Názvy tříd",
+			"namesHint": "Oddělte čárkami; A–D znamená A, B, C, D. Název může obsahovat mezery.",
+			"name": "Název",
+			"mixed": "Jedna smíšená třída se všemi vybranými ročníky",
+			"stage": "Stupeň školy",
+			"anyStage": "Všechny",
+			"notes": "Poznámky",
+			"preview": "{{count}} {{count:plural; one:třída; few:třídy; other:tříd;}} k vytvoření:",
+			"previewEmpty": "Vyberte alespoň jeden ročník a napište názvy.",
+			"saved": {
+				"students": "{{count}} {{count:plural; one:třída vytvořena; few:třídy vytvořeny; other:tříd vytvořeno;}}",
+				"teachers": "Skupina učitelů vytvořena",
+				"edit": "Třída uložena"
+			}
+		},
+		"errors": {
+			"nameRequired": "Název je povinný.",
+			"nameLong": "Název je příliš dlouhý (nejvýše 40 znaků).",
+			"levelsRequired": "Vyberte alespoň jeden ročník.",
+			"levelUnknown": "Vybraný ročník již neexistuje.",
+			"levelsNotForTeachers": "Skupina učitelů nemá ročníky.",
+			"nameTaken": "Třída s tímto názvem pro stejný ročník již existuje.",
+			"levelInUse": "Někteří žáci třídy jsou v ročníku, který by se odstranil.",
+			"notEmpty": "Třída ještě má čtenáře.",
+			"notFound": "Třída již neexistuje."
+		}
+	},
+	"exports": {
+		"title": "Exporty",
+		"subtitle": "Údaje knihovny v souborech k uchování, k novému importu nebo k přenesení do jiného programu.",
+		"items": {
+			"students": {
+				"title": "Žáci (CSV)",
+				"description": "Aktivní žáci ve formátu importu: vrátí se zpět přes Správa → Importy → Žáci."
+			},
+			"teachers": {
+				"title": "Učitelé (CSV)",
+				"description": "Aktivní učitelé ve formátu importu: vrátí se zpět přes Správa → Importy → Učitelé."
+			},
+			"catalog": {
+				"title": "Katalog (CSV)",
+				"description": "Jeden řádek na exemplář s údaji o knize, ve formátu importu katalogu."
+			},
+			"open-loans": {
+				"title": "Probíhající výpůjčky (CSV)",
+				"description": "Průkaz, exemplář, datum výpůjčky a termín vrácení: vrátí se zpět přes Správa → Importy → Probíhající výpůjčky."
+			},
+			"loans-history": {
+				"title": "Historie výpůjček (CSV)",
+				"description": "Všechny výpůjčky s třídou a sekcí ke dni výpůjčky."
+			},
+			"dump": {
+				"title": "Všechna data (JSON)",
+				"description": "Čtenáři, katalog, výpůjčky a seznamy v jednom souboru, pro přenos do jiné instalace nebo programu."
+			}
+		},
+		"download": "Stáhnout",
+		"patronNote": "Údaje jedné osoby (žádost o přístup) se stahují z její karty čtenáře.",
+		"patronExport": "Exportovat údaje osoby"
+	},
+	"imports": {
+		"title": "Importy",
+		"hint": "Používají se při přechodu z Koha a u čtenářů na začátku každého školního roku pro nové třídy. Každý soubor se celý zkontroluje, než se cokoli importuje.",
+		"cards": {
+			"catalog": {
+				"title": "Katalog",
+				"description": "Knihy a exempláře ze souboru CSV nebo z exportu z Koha."
+			},
+			"students": {
+				"title": "Žáci",
+				"description": "Třídy ze školního registru při každém novém školním roce: jméno, příjmení a třída."
+			},
+			"teachers": {
+				"title": "Učitelé",
+				"description": "Učitelé školy: jméno a příjmení, s průkazem, pokud ho již mají."
+			},
+			"loans": {
+				"title": "Probíhající výpůjčky",
+				"description": "Probíhající výpůjčky, importované jednou při přechodu z Koha."
+			},
+			"photos": {
+				"title": "Fotografie čtenářů",
+				"description": "Fotografie exportované z Koha, jedna na průkaz."
+			}
+		}
+	},
+	"calibration": {
+		"title": "Kalibrovat oboustranný tisk",
+		"intro": "Aby se průkazy tiskly na obě strany listu, musí zadní strana přesně ležet za přední. Každá tiskárna zadní stranu mírně posune: tento test to změří jednou.",
+		"current": "Jak se list otáčí: {{flip}}. Aktuální posun zadních stran: {{x}} mm vodorovně, {{y}} mm svisle.",
+		"steps": {
+			"print": "Vytiskněte kalibrační list tlačítkem níže.",
+			"window": {
+				"long-edge": "V okně tisku zvolte „Oboustranný tisk“ s otáčením po delší straně, měřítko 100 % a žádné okraje.",
+				"short-edge": "V okně tisku zvolte „Oboustranný tisk“ s otáčením po kratší straně, měřítko 100 % a žádné okraje."
+			},
+			"cut": "Na straně s velkou „1“ opatrně vystřihněte podél černé čáry.",
+			"read": "Otočte kartičku: na straně „2“ se podívejte, kde okraj řezu protíná obě pravítka, a přečtěte obě čísla (včetně znaménka + nebo −).",
+			"save": "Napište obě čísla níže a uložte: posun zadních stran se opraví.",
+			"check": "Pro kontrolu list vytiskněte znovu: okraj řezu by nyní měl protínat obě pravítka na nule."
+		},
+		"print": "Vytisknout kalibrační list",
+		"drawing": {
+			"title": "Co číst",
+			"label": "Strana 2 po řezu: okraj řezu protíná pravítka",
+			"x": "vodorovné pravítko",
+			"y": "svislé pravítko",
+			"hint": "Okraj řezu protíná každé pravítko: číslo u něj je hodnota k zapsání. Každá rýska je jeden milimetr, čísla jsou po pěti."
+		},
+		"fields": {
+			"x": "Vodorovné pravítko (mm)",
+			"y": "Svislé pravítko (mm)",
+			"hint": "Číslo, kde prochází okraj řezu, se znaménkem; 0, pokud padne na nulu."
+		},
+		"next": "Po uložení bude posun zadních stran {{x}} mm vodorovně a {{y}} mm svisle.",
+		"save": "Uložit kalibraci",
+		"saved": "Kalibrace uložena: zadní strany posunuty o {{x}} mm vodorovně a {{y}} mm svisle.",
+		"open": "Kalibrovat oboustranný tisk",
+		"sheet": {
+			"title": "BiblioViva · kalibrace oboustranného tisku",
+			"cut": "Vystřihněte podél černé čáry a pak kartičku otočte.",
+			"read": "Na obou pravítkách přečtěte, kde prochází okraj řezu."
+		}
+	}
+}

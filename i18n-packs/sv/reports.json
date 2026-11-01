@@ -1,0 +1,39 @@
+{
+	"title": "Rapporter",
+	"categories": {
+		"loans": "Lån",
+		"books": "Böcker",
+		"patrons": "Låntagare",
+		"ops": "Aktivitet"
+	},
+	"restricted": "Endast administratörer",
+	"custom": "Skolans",
+	"chart": "Med diagram",
+	"problemsTitle": "Rapportfiler som inte lästes in",
+	"problemsHint": "Dessa filer i rapportmappen innehåller ett fel och visas inte i listan:",
+	"params": "Parametrar",
+	"run": "Uppdatera",
+	"all": "Alla",
+	"from": "från",
+	"to": "till",
+	"patronTypes": {
+		"student": "Elever",
+		"teacher": "Lärare"
+	},
+	"rows": "{{count}} {{count:plural; one:rad; other:rader;}}",
+	"ms": "på {{ms}} ms",
+	"truncated": "Endast {{count:plural; one:den första raden visas; other:de första {{count}} raderna visas;}}: begränsa parametrarna för att se alla.",
+	"empty": "Inga resultat med dessa parametrar.",
+	"print": "Skriv ut",
+	"printedOn": "Utskriven {{date}}",
+	"errors": {
+		"required": "”{{label}}” saknas.",
+		"invalid": "Värdet i ”{{label}}” är inte giltigt."
+	},
+	"back": "Alla rapporter",
+	"noParams": "Den här rapporten har inga parametrar.",
+	"special": {
+		"teachers": "Lärare",
+		"total": "Totalt"
+	}
+}

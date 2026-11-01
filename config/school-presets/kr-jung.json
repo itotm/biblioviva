@@ -1,0 +1,56 @@
+{
+	"id": "kr-jung",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Classes written 1학년 2반 and re-formed every year, so the promotion clears them [VERIFY]. The school year (학년도) starts on 1 March and is named by its starting year [VERIFY].",
+	"name": {
+		"it": "Secondaria di primo grado, jung hakgyo (Corea del Sud)",
+		"en": "Middle school, jung hakgyo (South Korea)",
+		"ko": "중학교 (대한민국)"
+	},
+	"country": "KR",
+	"languages": ["ko"],
+	"schoolYear": {
+		"start": "03-01",
+		"label": "start"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "jung",
+				"name": "중학교"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1학년",
+				"name": "중학교 1학년",
+				"stage": "jung",
+				"aliases": ["중1"]
+			},
+			{
+				"code": "2",
+				"label": "2학년",
+				"name": "중학교 2학년",
+				"stage": "jung",
+				"aliases": ["중2"]
+			},
+			{
+				"code": "3",
+				"label": "3학년",
+				"name": "중학교 3학년",
+				"stage": "jung",
+				"aliases": ["중3"]
+			}
+		],
+		"classLabel": "{level} {group}반",
+		"groupWord": "반",
+		"cardClass": "{class}",
+		"promotionWithinStage": "clear",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"jung": ["1", "2", "3", "4", "5"]
+	},
+	"teacherGroup": "교사",
+	"readingLevels": []
+}

@@ -1,0 +1,7 @@
+{
+	"notFound": "Sayfa bulunamadı",
+	"forbidden": "Bu sayfa, kullanılan hesap için erişilebilir değil",
+	"unauthorized": "Devam etmek için lütfen giriş yapın",
+	"generic": "Bir hata oluştu ({{status}})",
+	"backHome": "Başlangıç sayfasına dön"
+}

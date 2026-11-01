@@ -1,0 +1,226 @@
+{
+	"title": "首次设置",
+	"intro": "欢迎使用 BiblioViva。几个步骤之后，图书馆即可开始使用：语言、颜色、学校、代码和工作人员密码。",
+	"stepOf": "第 {{step}} 步，共 {{total}} 步",
+	"next": "下一步",
+	"back": "上一步",
+	"finish": "完成设置",
+	"steps": {
+		"language": "语言",
+		"theme": "颜色",
+		"library": "图书馆",
+		"school": "学校",
+		"codes": "代码",
+		"passwords": "密码",
+		"demo": "示例数据",
+		"summary": "汇总"
+	},
+	"language": {
+		"title": "BiblioViva 使用哪种语言？",
+		"hint": "每个安装只使用一种语言：适用于所有工作人员，可在“系统管理 → 配置 → 外观与语言”中更改。",
+		"restore": {
+			"title": "已有 BiblioViva 备份？",
+			"hint": "若要把 BiblioViva 迁移到另一台电脑，或在故障后重新开始，无需回答任何问题：使用“导出全部”制作的归档即可。",
+			"button": "从备份恢复"
+		}
+	},
+	"theme": {
+		"title": "选择颜色",
+		"hint": "十五套配色方案：只改变颜色，从不改变形状。所有配色都明亮，黑白状态下也清晰易读。",
+		"names": {
+			"ocean": "海洋",
+			"forest": "森林",
+			"grape": "葡萄",
+			"sunset": "日落",
+			"cherry": "樱桃",
+			"lagoon": "泻湖",
+			"silver": "银色",
+			"graphite": "石墨",
+			"apricot": "杏色",
+			"indigo": "靛蓝",
+			"mint": "薄荷",
+			"rose": "玫瑰",
+			"sahara": "撒哈拉",
+			"wintry": "冬日",
+			"olive": "橄榄"
+		}
+	},
+	"library": {
+		"title": "图书馆",
+		"name": "图书馆名称",
+		"namePlaceholder": "罗达里小学图书馆",
+		"schoolType": "学校类型",
+		"schoolTypeHint": "学年和班级按学校的实际情况设置。之后可在“系统管理 → 配置 → 学校”和“系统管理 → 配置 → 班级”中更改。",
+		"photos": "读者照片",
+		"photosHint": "学生和教师的照片，可拍摄或上传，并印在读者证上。关闭：任何地方都不显示照片，读者证也不带照片。",
+		"covers": "图书封面",
+		"coversHint": "在线查找、拍摄或上传的封面，显示在目录中。关闭：不显示封面。"
+	},
+	"school": {
+		"title": "学校",
+		"hint": "学校类型决定推荐的学年、班级和阅读等级。班级会立即生成；使用示例数据时，班级中会自动填入虚构的学生。",
+		"otherCountries": "其他国家",
+		"names": {
+			"perLevel": "{{stage}}：班级名称，每个年级一个",
+			"mixed": "{{stage}}：分组名称，每组包含所有年级"
+		},
+		"namesHint": "用逗号分隔；A-D 表示 A、B、C、D。留空：不设班级。",
+		"namesInvalid": "名称无效：请用逗号分隔输入（最多 40 个）。",
+		"classes": "将创建 {{count}} {{count:plural; other:个班级;}}：",
+		"more": "以及另外 {{count}} 个",
+		"classLabel": "班级的写法",
+		"teacherGroup": "教师组",
+		"teacherGroupHint": "每位教师都加入此组；之后可以添加更多组。",
+		"schoolYearStart": "学年开始日期",
+		"schoolYearStartHint": "按 MM-DD 格式填写月份和日期（例如 09-01）。",
+		"schoolYearStartInvalid": "请按 MM-DD 格式填写月份和日期。",
+		"schoolYearLabel": "学年名称",
+		"schoolYearLabels": {
+			"span": "两个年份（2026/2027）",
+			"start": "开始年份（2026）"
+		},
+		"readingLevels": "小说按阅读等级排架",
+		"readingLevelsHint": "年级、班级和阅读等级之后可在系统管理中更改。"
+	},
+	"codes": {
+		"title": "代码",
+		"hint": "新复本和新读者证的条码格式分别选择。两种格式绝不会混淆：看到条码就能立即分辨是图书还是读者证。",
+		"itemFormat": "复本格式",
+		"itemFormats": {
+			"standard": "年份、校验位和编号（推荐）",
+			"classic": "年份和编号，校验位在末尾",
+			"prefix": "前面加字母 L"
+		},
+		"cardFormat": "读者证格式",
+		"cardFormats": {
+			"standard": "校验位和 6 位数字（推荐）",
+			"classic": "10 位数字，校验位在末尾",
+			"prefix": "前面加字母 T"
+		},
+		"check": "校验字符",
+		"checks": {
+			"mod23": "一个字母（mod 23）",
+			"luhn": "一个数字（Luhn）",
+			"damm": "一个数字（Damm）"
+		},
+		"layout": "扫码枪键盘",
+		"layoutHint": "连接条码扫描枪的电脑所用的键盘语言：用于纠正互换的字符。如果列表中没有，请选择最接近的一项：之后可以在“配置 → 条码”中更改。",
+		"layouts": {
+			"it": "意大利语",
+			"es": "西班牙语",
+			"de": "德语",
+			"fr": "法语",
+			"uk": "英语（英国）",
+			"us": "英语（美国）"
+		},
+		"copy": "图书复本",
+		"card": "读者证",
+		"verdict": "复本与读者证绝不会混淆。",
+		"refused": "此选择可能使复本与读者证混淆：请选择其他格式。",
+		"later": "格式、旧系统的代码和编号之后可在“配置 → 条码”中更改。"
+	},
+	"passwords": {
+		"title": "工作人员密码",
+		"hint": "五个共用账户，每个角色一个。建议的密码为随机生成，可以替换。请在最后一步记下：密码只显示一次。",
+		"accounts": {
+			"admin": "系统管理（admin）",
+			"prestiti": "借阅管理（prestiti）",
+			"catalogo": "编目（catalogo）",
+			"tessere": "读者证与照片（tessere）",
+			"report": "报表（report）"
+		},
+		"regenerate": "重新生成",
+		"tooShort": "至少 8 个字符。",
+		"demo": "使用示例数据时，所有账户都使用同一个简单密码：“{{password}}”。正式使用 BiblioViva 之前，请在“系统管理 → 工作人员账户”中更改。"
+	},
+	"demo": {
+		"title": "示例数据",
+		"hint": "虚构的学生、图书和借阅记录，用于试用本应用。导入真实数据时，可在系统管理中一键删除。",
+		"load": "载入示例数据",
+		"hasData": "数据库中已有数据：不会载入示例数据。"
+	},
+	"summary": {
+		"title": "汇总",
+		"hint": "请检查并确认。密码只在本页显示：继续之前请先复制。",
+		"language": "语言",
+		"theme": "颜色",
+		"library": "图书馆",
+		"photos": "读者照片",
+		"covers": "图书封面",
+		"school": "学校",
+		"classes": "班级",
+		"classesValue": "{{count}} {{count:plural; other:个班级;}}（{{first}}…），以及组 {{teachers}}",
+		"readingLevels": "阅读等级",
+		"none": "无",
+		"codes": "代码",
+		"demo": "示例数据",
+		"yes": "是",
+		"no": "否",
+		"later": "之后可在“系统管理 → 工作人员账户”中更改密码。",
+		"working": "保存中…",
+		"error": "配置未保存：{{message}}"
+	},
+	"done": {
+		"title": "设置完成",
+		"hint": "请妥善保管这些密码：之后不会再次显示。",
+		"demoLoaded": "已载入示例数据：{{patrons}} {{patrons:plural; other:位读者;}}，{{biblios}} {{biblios:plural; other:种图书;}}，{{items}} {{items:plural; other:册;}}，{{loans}} {{loans:plural; other:笔借阅;}}。",
+		"login": "前往登录"
+	},
+	"generic": {
+		"stage": "学段",
+		"level": "第 {{level}} 年级",
+		"groupWord": "分组",
+		"teacherGroup": "教师"
+	},
+	"restore": {
+		"title": "从备份恢复",
+		"hint": "请选择使用“导出全部”制作的归档（系统管理 → 备份）。最大大小：{{maxMb}} MB。恢复前会先检查归档。",
+		"choose": "选择归档",
+		"checking": "正在检查归档…",
+		"from": "图书馆“{{library}}”的归档，制作于 {{date}}，版本 {{version}}。",
+		"fromAnonymous": "归档制作于 {{date}}，版本 {{version}}。",
+		"count": "{{part}}：{{count}}",
+		"parts": {
+			"patrons": "读者",
+			"catalog": "目录与复本",
+			"loans": "借阅与历史记录",
+			"printLists": "打印清单",
+			"photos": "读者照片",
+			"covers": "图书封面",
+			"notes": "工作人员备注",
+			"dates": "日历日期",
+			"audit": "活动日志",
+			"ui": "界面",
+			"security": "安全与访问",
+			"library": "图书馆与学校"
+		},
+		"images": "照片：{{photos}} · 封面：{{covers}}",
+		"accounts": "可以登录的账户：{{accounts}}。密码与归档中的相同。",
+		"warning": "恢复会一次性把归档中的设置、数据和图片全部还原。之后不再需要设置向导。",
+		"apply": "恢复",
+		"restoring": "正在恢复…",
+		"cancel": "取消",
+		"back": "返回设置向导",
+		"done": {
+			"title": "恢复完成",
+			"hint": "图书馆已恢复为归档时的状态。请使用以下账户之一登录，密码为归档中的密码：",
+			"login": "前往登录"
+		},
+		"errors": {
+			"too_large": "归档太大（最大 {{maxMb}} MB）。",
+			"not_zip": "该文件不是有效的 ZIP 归档。",
+			"not_archive": "该文件不是 BiblioViva 归档：请选择使用“导出全部”制作的归档。",
+			"too_many_files": "归档中的文件过多。",
+			"unsafe_path": "归档中含有不允许的路径：{{name}}",
+			"link": "归档中含有不允许的链接：{{name}}",
+			"unknown_file": "归档中含有不属于 BiblioViva 的文件：{{name}}",
+			"not_setup": "设置向导已经完成：恢复请在“系统管理 → 备份”中进行。",
+			"newer_version": "归档由更新版本的 BiblioViva 制作（{{name}}）：请先安装该版本。",
+			"missing_parts": "归档不完整：缺少 {{name}}。请选择使用“导出全部”制作的归档。",
+			"unfinished_setup": "该归档来自尚未完成设置向导的安装。",
+			"not_ready": "归档有问题，无法恢复：{{name}}",
+			"gone": "已检查的归档不存在了：请重新选择。",
+			"failed": "恢复未成功。"
+		}
+	}
+}

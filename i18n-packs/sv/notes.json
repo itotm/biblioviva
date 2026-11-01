@@ -1,0 +1,66 @@
+{
+	"title": "Anteckningar",
+	"new": "Ny anteckning",
+	"adminOnly": "Endast administratören arkiverar anteckningar och fäster dem på översikten.",
+	"pinned": "Fäst",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "Arkiverad av {{author}} · {{when}}",
+	"count": "{{count}} {{count:plural; one:anteckning; other:anteckningar;}}",
+	"archiveCount": "{{shown}} av {{total}} {{total:plural; one:arkiverad anteckning; other:arkiverade anteckningar;}}",
+	"actions": {
+		"label": "Åtgärder för anteckningen",
+		"pin": "Fäst på översikten",
+		"unpin": "Lossa",
+		"archive": "Arkivera",
+		"restore": "Återställ",
+		"delete": "Ta bort",
+		"showAll": "Visa alla",
+		"showLess": "Visa färre",
+		"more": "Visa fler"
+	},
+	"done": {
+		"added": "Anteckning tillagd",
+		"pinned": "Anteckning fäst",
+		"unpinned": "Anteckning lossad",
+		"archived": "Anteckning arkiverad",
+		"restored": "Anteckning återställd",
+		"deleted": "Anteckning borttagen"
+	},
+	"confirmDelete": {
+		"title": "Ta bort anteckningen?",
+		"text": "Den raderas för gott och kan inte återställas."
+	},
+	"form": {
+		"body": "Text",
+		"placeholder": "T.ex. Skannern vid disken läser inte korten.",
+		"privacy": "Alla konton läser anteckningarna: skriv inga personuppgifter om eleverna.",
+		"written": "En anteckning kan inte ändras. Vid ett fel ber administratören arkivera den och skriva en ny.",
+		"counter": "{{count}}/{{max}}",
+		"color": "Färg",
+		"pinned": "Fäst på översikten",
+		"pinnedHint": "Visas för alla överst på översikten (och vid utlåningsdisken) tills den lossas eller arkiveras.",
+		"save": "Lägg till"
+	},
+	"colors": {
+		"yellow": "Gul",
+		"pink": "Rosa",
+		"green": "Grön",
+		"blue": "Ljusblå",
+		"orange": "Orange"
+	},
+	"errors": {
+		"empty": "Skriv texten i anteckningen.",
+		"tooLong": "Texten är längre än {{max}} {{max:plural; one:tecken; other:tecken;}}.",
+		"color": "Välj en av färgerna."
+	},
+	"empty": {
+		"open": "Inga öppna anteckningar",
+		"openHint": "Inga öppna anteckningar. Anteckningar förmedlar problem och meddelanden till kollegerna och administratören.",
+		"archived": "Inga arkiverade anteckningar"
+	},
+	"home": {
+		"title": "Anteckningar",
+		"open": "Öppna anteckningarna"
+	},
+	"tile": "Öppna anteckningar"
+}

@@ -1,0 +1,53 @@
+{
+	"id": "gr-gymnasio",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Sections (τμήματα) numbered Α1, Β2; the Lykeio is a separate school. The school year starts on 1 September [VERIFY].",
+	"name": {
+		"it": "Secondaria di primo grado, Gymnásio (Grecia)",
+		"en": "Lower secondary school, Gymnasio (Greece)",
+		"el": "Γυμνάσιο (Ελλάδα)"
+	},
+	"country": "GR",
+	"languages": ["el"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "gymnasio",
+				"name": "Γυμνάσιο"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "Α",
+				"name": "Α΄ Γυμνασίου",
+				"stage": "gymnasio"
+			},
+			{
+				"code": "2",
+				"label": "Β",
+				"name": "Β΄ Γυμνασίου",
+				"stage": "gymnasio"
+			},
+			{
+				"code": "3",
+				"label": "Γ",
+				"name": "Γ΄ Γυμνασίου",
+				"stage": "gymnasio"
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Τμήμα",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"gymnasio": ["1", "2", "3"]
+	},
+	"teacherGroup": "Εκπαιδευτικοί",
+	"readingLevels": []
+}

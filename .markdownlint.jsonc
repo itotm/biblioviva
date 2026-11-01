@@ -1,0 +1,14 @@
+{
+	// markdownlint (editor extension and markdownlint-cli2): the project documents are long,
+	// table-heavy specifications written by hand; these rules would only produce noise on them.
+	"default": true,
+	"MD013": false, // line length: PLAN.md and the docs use long lines and wide tables on purpose
+	"MD060": false, // table column style: hand-written tables are not padded
+	"MD033": false, // inline HTML: used for <br> and <details> in the plan
+	"MD034": false, // bare URLs: reference links to official docs are written as-is
+	"MD040": false, // fenced code language: plain-text blocks (trees, layouts) have none
+	"MD031": false, // blank lines around fences inside list items
+	"MD032": false, // blank lines around lists inside tables/notes
+	"MD012": false, // multiple blank lines between sections
+	"MD010": { "code_blocks": false }, // hard tabs are allowed inside code blocks (project files use tabs)
+}

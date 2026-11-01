@@ -1,0 +1,24 @@
+{
+	"id": "loans-by-classification",
+	"title": {
+		"it": "Prestiti per genere o argomento",
+		"en": "Loans by genre or subject"
+	},
+	"description": {
+		"it": "Prestiti e lettori del periodo per genere (narrativa) e argomento (saggistica); i libri ancora da classificare sono una riga.",
+		"en": "Loans and readers of the period by genre (fiction) and subject (non-fiction); the books still to classify are one row."
+	},
+	"category": "books",
+	"query": {
+		"source": "loans",
+		"filters": [
+			{
+				"field": "period",
+				"ask": true
+			}
+		],
+		"rows": ["classification"],
+		"measures": ["loans", "readers"],
+		"chart": "bar"
+	}
+}

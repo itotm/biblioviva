@@ -1,0 +1,19 @@
+{
+	"title": "Névjegy",
+	"app": {
+		"version": "Verzió",
+		"license": "Licenc",
+		"repository": "Forráskód"
+	},
+	"deps": {
+		"title": "Felhasznált programkönyvtárak",
+		"runtime": "Futás közben ({{count}})",
+		"development": "Csak fejlesztéshez ({{count}})",
+		"system": "Rendszerkomponensek",
+		"columns": {
+			"name": "Név",
+			"version": "Verzió",
+			"license": "Licenc"
+		}
+	}
+}

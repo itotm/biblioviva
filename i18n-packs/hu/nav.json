@@ -1,0 +1,60 @@
+{
+	"dashboard": "Irányítópult",
+	"circulation": "Kölcsönzés",
+	"catalog": "Katalógus",
+	"patrons": "Olvasók",
+	"printing": "Nyomtatás",
+	"notes": "Megjegyzések",
+	"reports": "Jelentések",
+	"admin": "Adminisztráció",
+	"more": "Továbbiak",
+	"logout": "Kijelentkezés",
+	"help": "Súgó",
+	"about": "Névjegy",
+	"areas": {
+		"circulation": {
+			"label": "Kölcsönzőpult",
+			"checkout": "Kölcsönzés",
+			"checkin": "Visszavétel",
+			"loans": "Kölcsönzött könyvek",
+			"overdues": "Felszólítások",
+			"wishlist": "Kívánságlista",
+			"calendar": "Naptár"
+		},
+		"catalog": {
+			"label": "Katalógus oldalai",
+			"catalog": "Katalógus",
+			"inventory": "Állományellenőrzés",
+			"wishlist": "Kívánságlista",
+			"toClassify": "Osztályozásra vár"
+		},
+		"patrons": {
+			"label": "Olvasók oldalai",
+			"patrons": "Olvasók",
+			"census": "Fényképes felvétel"
+		},
+		"notes": {
+			"label": "Megjegyzések oldalai",
+			"open": "Nyitott",
+			"archived": "Archivált"
+		},
+		"config": {
+			"label": "Beállítások oldalai",
+			"overview": "Szakaszok",
+			"history": "Előzmények"
+		},
+		"templates": {
+			"label": "Nyomtatási sablonok oldalai",
+			"edit": "Sablonok",
+			"previews": "Előnézetek"
+		},
+		"imports": {
+			"label": "Importálások",
+			"catalog": "Katalógus",
+			"students": "Tanulók",
+			"teachers": "Tanárok",
+			"loans": "Nyitott kölcsönzések",
+			"photos": "Olvasók fényképei"
+		}
+	}
+}

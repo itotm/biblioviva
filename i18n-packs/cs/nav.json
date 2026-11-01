@@ -1,0 +1,60 @@
+{
+	"dashboard": "Přehled",
+	"circulation": "Výpůjčky",
+	"catalog": "Katalog",
+	"patrons": "Čtenáři",
+	"printing": "Tisk",
+	"notes": "Poznámky",
+	"reports": "Sestavy",
+	"admin": "Správa",
+	"more": "Více",
+	"logout": "Odhlásit se",
+	"help": "Nápověda",
+	"about": "O aplikaci",
+	"areas": {
+		"circulation": {
+			"label": "Výpůjční pult",
+			"checkout": "Půjčení",
+			"checkin": "Vrácení",
+			"loans": "Vypůjčené knihy",
+			"overdues": "Upomínky po termínu",
+			"wishlist": "Seznam přání",
+			"calendar": "Kalendář"
+		},
+		"catalog": {
+			"label": "Stránky katalogu",
+			"catalog": "Katalog",
+			"inventory": "Revize fondu",
+			"wishlist": "Seznam přání",
+			"toClassify": "K zatřídění"
+		},
+		"patrons": {
+			"label": "Stránky čtenářů",
+			"patrons": "Čtenáři",
+			"census": "Fotoevidence"
+		},
+		"notes": {
+			"label": "Stránky poznámek",
+			"open": "Otevřené",
+			"archived": "Archivované"
+		},
+		"config": {
+			"label": "Stránky nastavení",
+			"overview": "Oddíly",
+			"history": "Historie"
+		},
+		"templates": {
+			"label": "Stránky šablon tisku",
+			"edit": "Šablony",
+			"previews": "Náhledy"
+		},
+		"imports": {
+			"label": "Importy",
+			"catalog": "Katalog",
+			"students": "Žáci",
+			"teachers": "Učitelé",
+			"loans": "Probíhající výpůjčky",
+			"photos": "Fotografie čtenářů"
+		}
+	}
+}

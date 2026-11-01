@@ -1,0 +1,7 @@
+{
+	"notFound": "Pagina nu a fost găsită",
+	"forbidden": "Această pagină nu este disponibilă pentru contul utilizat",
+	"unauthorized": "Autentificați-vă pentru a continua",
+	"generic": "A apărut o eroare ({{status}})",
+	"backHome": "Înapoi la pagina de pornire"
+}

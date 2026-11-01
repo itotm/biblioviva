@@ -1,0 +1,60 @@
+{
+	"dashboard": "Dashboard",
+	"circulation": "Ausleihe",
+	"catalog": "Katalog",
+	"patrons": "Nutzer",
+	"printing": "Drucken",
+	"notes": "Notizen",
+	"reports": "Berichte",
+	"admin": "Verwaltung",
+	"more": "Mehr",
+	"logout": "Abmelden",
+	"help": "Hilfe",
+	"about": "Info",
+	"areas": {
+		"circulation": {
+			"label": "Ausleihtheke",
+			"checkout": "Ausleihe",
+			"checkin": "Rückgaben",
+			"loans": "Entliehene Medien",
+			"overdues": "Mahnungen",
+			"wishlist": "Wunschliste",
+			"calendar": "Kalender"
+		},
+		"catalog": {
+			"label": "Katalogseiten",
+			"catalog": "Katalog",
+			"inventory": "Inventur",
+			"wishlist": "Wunschliste",
+			"toClassify": "Noch einzuordnen"
+		},
+		"patrons": {
+			"label": "Nutzerseiten",
+			"patrons": "Nutzer",
+			"census": "Fotoerfassung"
+		},
+		"notes": {
+			"label": "Notizseiten",
+			"open": "Offen",
+			"archived": "Archiviert"
+		},
+		"config": {
+			"label": "Konfigurationsseiten",
+			"overview": "Abschnitte",
+			"history": "Verlauf"
+		},
+		"templates": {
+			"label": "Seiten der Druckvorlagen",
+			"edit": "Vorlagen",
+			"previews": "Vorschauen"
+		},
+		"imports": {
+			"label": "Importe",
+			"catalog": "Katalog",
+			"students": "Schüler",
+			"teachers": "Lehrkräfte",
+			"loans": "Laufende Ausleihen",
+			"photos": "Nutzerfotos"
+		}
+	}
+}

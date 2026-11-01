@@ -1,0 +1,1656 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Colori delle aree BiblioViva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Onest:wght@400;500;600&display=swap">
+<!--
+	SPDX-License-Identifier: GPL-3.0-or-later
+	Reference page of the area colours (step 9.16), for the documentation and its screenshots. The
+	colours come from src/lib/shared/theme-palette.ts through the generated block below, which
+	`bun run themes:generate` rewrites; the rest of the page is hand-written and needs no build.
+-->
+<style>
+	/* Layout: a worktable — sticky controls, the live mock of the app beside the seven bars, then
+	   every colour set, the hue table and the rules. The page chrome follows the viewer's theme;
+	   the mock is always the app's light look (BiblioViva has no dark mode). */
+	:root {
+		--bg: #f5f6f4;
+		--panel: #ffffff;
+		--ink: #1d2124;
+		--muted: #5c6469;
+		--line: #dfe3e1;
+		--accent: #2f5d8a;
+		--good: #1f7a4d;
+		--fair: #8a6a12;
+		--poor: #a3402e;
+		--display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+		--body: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+		--app: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+		--mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
+	}
+	@media (prefers-color-scheme: dark) {
+		:root:not([data-theme="light"]) {
+			--bg: #15191b; --panel: #1e2427; --ink: #e8ecea; --muted: #a2abb0; --line: #323a3e;
+			--accent: #8fb6e0; --good: #6fd39f; --fair: #e2c063; --poor: #f29a86; color-scheme: dark;
+		}
+	}
+	:root[data-theme="dark"] {
+		--bg: #15191b; --panel: #1e2427; --ink: #e8ecea; --muted: #a2abb0; --line: #323a3e;
+		--accent: #8fb6e0; --good: #6fd39f; --fair: #e2c063; --poor: #f29a86; color-scheme: dark;
+	}
+	* { box-sizing: border-box; }
+	body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
+	.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; display: grid; gap: 28px; }
+	h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+	h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -0.02em; }
+	h2 { font-size: 1.35rem; font-weight: 800; }
+	h3 { font-size: 1.05rem; font-weight: 600; }
+	p { margin: 0; max-width: 72ch; }
+	code { font-family: var(--mono); font-size: 0.86em; background: color-mix(in oklab, var(--line) 55%, transparent); padding: 1px 5px; border-radius: 5px; }
+	.lead { color: var(--muted); font-size: 1.05rem; }
+	.eyebrow { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.75rem; font-weight: 600; color: var(--muted); }
+	header.intro { display: grid; gap: 10px; }
+	.note { font-size: 0.85rem; color: var(--muted); }
+
+	/* controls */
+	.controls { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in oklab, var(--bg) 92%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); padding-block: 10px; display: grid; gap: 10px; }
+	.row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+	.label { font-size: 0.8rem; font-weight: 600; color: var(--muted); min-width: 56px; }
+	.seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--panel); }
+	.seg button { font: inherit; font-size: 0.9rem; border: 0; background: transparent; color: var(--ink); padding: 6px 12px; cursor: pointer; min-height: 36px; }
+	.seg button + button { border-left: 1px solid var(--line); }
+	.seg button[aria-pressed="true"] { background: var(--ink); color: var(--panel); font-weight: 600; }
+	button:focus-visible, select:focus-visible, tr:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+	.themes { display: flex; flex-wrap: wrap; gap: 6px; }
+	.chip { font: inherit; font-size: 0.82rem; display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px 4px 5px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; min-height: 32px; }
+	.chip[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); font-weight: 600; }
+	.dot { width: 18px; height: 18px; border-radius: 50%; display: inline-block; flex: none; }
+	select { font: inherit; font-size: 0.9rem; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); min-height: 36px; }
+
+	/* sections */
+	section { display: grid; gap: 14px; }
+	.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; min-width: 0; }
+	.two { display: grid; gap: 18px; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: start; }
+	@media (max-width: 900px) { .two { grid-template-columns: minmax(0, 1fr); } }
+
+	/* the app mock, with the app's own system font */
+	.shot { display: grid; gap: 12px; }
+	.app { font-family: var(--app); color: var(--s950); background: var(--s50); border-radius: 12px; overflow: hidden; border: 1px solid var(--s200); display: grid; grid-template-columns: 200px minmax(0, 1fr); min-height: 330px; }
+	.side { background: var(--s50); border-right: 1px solid var(--s200); padding: 12px 10px; display: grid; align-content: start; gap: 4px; }
+	.brand { font-weight: 800; color: var(--p700); font-size: 1rem; padding: 4px 6px 10px; border: 0; background: transparent; font-family: inherit; text-align: left; cursor: pointer; }
+	.nav { display: flex; align-items: center; gap: 9px; padding: 6px 8px; border-radius: 10px; font-weight: 600; font-size: 0.86rem; color: var(--s800); cursor: pointer; border: 0; background: transparent; font-family: inherit; text-align: left; }
+	.nav .tile { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; background: var(--p100); color: var(--p700); flex: none; }
+	.nav[aria-current="page"] { color: #fff; box-shadow: 0 1px 3px rgb(0 0 0 / 0.15); }
+	.nav[aria-current="page"] .tile { background: rgb(255 255 255 / 0.2); color: #fff; }
+	.main { display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+	.bar { display: flex; align-items: center; gap: 12px; padding: 12px 18px; min-height: 64px; }
+	.bar .icon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex: none; box-shadow: 0 1px 3px rgb(0 0 0 / 0.15); }
+	.bar .title { font-size: 1.45rem; font-weight: 700; line-height: 1.15; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+	.bar .trail { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+	.avatar { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 0.75rem; background: var(--p100); color: var(--p700); }
+	.content { padding: 16px 18px; display: grid; gap: 10px; align-content: start; }
+	.fake { height: 12px; border-radius: 6px; background: var(--s200); }
+	.card { background: #fff; border: 1px solid var(--s200); border-radius: 12px; padding: 12px; display: grid; gap: 8px; }
+	.btns { display: flex; gap: 8px; flex-wrap: wrap; }
+	.btn { padding: 6px 12px; border-radius: 9px; font-weight: 600; font-size: 0.82rem; }
+	.phone { font-family: var(--app); justify-self: center; width: min(100%, 360px); background: var(--s50); border: 1px solid var(--s200); border-radius: 14px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; padding: 6px; }
+	.tab { display: grid; justify-items: center; gap: 2px; padding: 6px 2px; border-radius: 10px; font-size: 0.7rem; font-weight: 600; color: var(--s800); min-width: 0; }
+	.tab span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+	@media (max-width: 640px) {
+		.app { grid-template-columns: 56px minmax(0, 1fr); }
+		.nav span.txt, .brand { display: none; }
+		.nav { justify-content: center; padding: 6px; }
+		.bar .title { font-size: 1.15rem; }
+		.bar .trail { display: none; }
+	}
+
+	/* the seven bars */
+	.bars { display: grid; gap: 8px; }
+	.mini { font-family: var(--app); display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 10px; min-height: 52px; border: 1px solid var(--s200); cursor: pointer; text-align: left; width: 100%; font-size: 1rem; }
+	.mini .icon { width: 32px; height: 32px; border-radius: 9px; display: grid; place-items: center; flex: none; }
+	.mini b { font-size: 1.05rem; }
+	.mini[aria-current="true"] { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+	/* checks */
+	.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+	.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; border: 1px solid currentColor; font-variant-numeric: tabular-nums; }
+	.pill.good { color: var(--good); } .pill.fair { color: var(--fair); } .pill.poor { color: var(--poor); }
+	.pill svg { width: 14px; height: 14px; flex: none; }
+
+	/* tables */
+	.scroll { overflow-x: auto; }
+	table.matrix { border-collapse: separate; border-spacing: 4px; font-size: 0.85rem; min-width: 820px; }
+	.matrix th { font-weight: 600; color: var(--muted); text-align: left; padding: 2px 6px; white-space: nowrap; font-size: 0.78rem; }
+	.matrix td.sw { width: 74px; height: 34px; border-radius: 8px; padding: 0; position: relative; }
+	.matrix td.sw span { position: absolute; inset: auto 0 0 0; height: 9px; border-radius: 0 0 8px 8px; }
+	.matrix tbody tr { cursor: pointer; }
+	.matrix tr.sel th.tn { color: var(--ink); }
+	.matrix tr.sel td.sw { box-shadow: 0 0 0 2px var(--ink); }
+	.matrix td.meta { white-space: nowrap; padding-left: 8px; }
+	table.hues { border-collapse: collapse; font-size: 0.9rem; min-width: 640px; width: 100%; }
+	.hues th, .hues td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+	.hues th { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+	.hues td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+	.hues .swatch { display: inline-block; width: 44px; height: 24px; border-radius: 6px; vertical-align: middle; }
+	ul.rules { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; max-width: 80ch; }
+	ol.history { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; max-width: 80ch; }
+	@media (prefers-reduced-motion: no-preference) { .bar, .mini, .nav, .icon, .tab { transition: background-color 0.25s, color 0.25s, box-shadow 0.25s; } }
+</style>
+
+<div class="wrap">
+	<header class="intro">
+		<div class="eyebrow" data-t="eyebrow"></div>
+		<h1 data-t="title"></h1>
+		<p class="lead" data-t="lead"></p>
+		<p class="note" data-t="source"></p>
+	</header>
+
+	<div class="controls" role="group" id="controls">
+		<div class="row">
+			<span class="label" data-t="lang"></span>
+			<div class="seg" id="lang-seg">
+				<button type="button" data-v="it" id="lang-it">Italiano</button>
+				<button type="button" data-v="en" id="lang-en">English</button>
+			</div>
+			<span class="label" data-t="style"></span>
+			<div class="seg" id="style-seg"></div>
+			<label class="label" for="vision" data-t="vision"></label>
+			<select id="vision"></select>
+		</div>
+		<div class="row"><span class="label" data-t="set"></span><div class="themes" id="themes"></div></div>
+	</div>
+
+	<section aria-labelledby="h-look">
+		<h2 id="h-look" data-t="look"></h2>
+		<div class="two">
+			<div class="panel shot">
+				<div id="app"></div>
+				<div class="phone" id="phone"></div>
+				<div class="pills" id="pills"></div>
+			</div>
+			<div class="panel" style="display:grid;gap:10px">
+				<h3 data-t="bars"></h3>
+				<div class="bars" id="bars"></div>
+				<p class="note" data-t="barsNote"></p>
+			</div>
+		</div>
+	</section>
+
+	<section aria-labelledby="h-matrix">
+		<h2 id="h-matrix" data-t="matrix"></h2>
+		<p class="note" data-t="matrixNote"></p>
+		<div class="panel scroll"><table class="matrix" id="matrix"></table></div>
+		<p class="note" data-t="distanceNote"></p>
+	</section>
+
+	<section aria-labelledby="h-hues">
+		<h2 id="h-hues" data-t="hues"></h2>
+		<p class="note" data-t="huesNote"></p>
+		<div class="panel scroll"><table class="hues" id="hues"></table></div>
+	</section>
+
+	<section aria-labelledby="h-rules">
+		<h2 id="h-rules" data-t="rules"></h2>
+		<div class="panel"><ul class="rules" id="rules"></ul></div>
+	</section>
+
+	<section aria-labelledby="h-history">
+		<h2 id="h-history" data-t="history"></h2>
+		<ol class="history" id="history"></ol>
+	</section>
+</div>
+
+<!-- generated:start -->
+<script id="bv-data" type="application/json">
+{
+	"areas": [
+		"circulation",
+		"catalog",
+		"patrons",
+		"printing",
+		"notes",
+		"reports",
+		"admin"
+	],
+	"styles": [
+		"tinted",
+		"filled",
+		"accents",
+		"none"
+	],
+	"hues": {
+		"circulation": {
+			"hue": 270,
+			"shift": 0
+		},
+		"catalog": {
+			"hue": 105,
+			"shift": 0.06
+		},
+		"patrons": {
+			"hue": 175,
+			"shift": 0.03
+		},
+		"printing": {
+			"hue": 0,
+			"shift": -0.07
+		},
+		"notes": {
+			"hue": 210,
+			"shift": -0.06
+		},
+		"reports": {
+			"hue": 320,
+			"shift": 0.035
+		},
+		"admin": {
+			"hue": 255,
+			"shift": -0.14,
+			"chroma": 0.03
+		}
+	},
+	"status": {
+		"success": {
+			"hue": 150,
+			"color": "#008130"
+		},
+		"warning": {
+			"hue": 78,
+			"color": "#a06200"
+		},
+		"error": {
+			"hue": 30,
+			"color": "#c83122"
+		}
+	},
+	"labels": {
+		"it": {
+			"areas": {
+				"dashboard": "Dashboard",
+				"circulation": "Prestiti",
+				"catalog": "Catalogo",
+				"patrons": "Utenti",
+				"printing": "Stampe",
+				"notes": "Segnalazioni",
+				"reports": "Report",
+				"admin": "Amministrazione"
+			},
+			"styles": {
+				"tinted": "Fascia tinta (consigliata)",
+				"filled": "Fascia piena",
+				"accents": "Solo accenti",
+				"none": "Nessun colore"
+			},
+			"themes": {
+				"ocean": "Oceano",
+				"forest": "Bosco",
+				"grape": "Uva",
+				"sunset": "Tramonto",
+				"cherry": "Ciliegia",
+				"lagoon": "Laguna",
+				"silver": "Argento",
+				"graphite": "Grafite",
+				"apricot": "Albicocca",
+				"indigo": "Indaco",
+				"mint": "Menta",
+				"rose": "Rosa",
+				"sahara": "Sahara",
+				"wintry": "Inverno",
+				"olive": "Oliva"
+			}
+		},
+		"en": {
+			"areas": {
+				"dashboard": "Dashboard",
+				"circulation": "Loans",
+				"catalog": "Catalogue",
+				"patrons": "Patrons",
+				"printing": "Printing",
+				"notes": "Notes",
+				"reports": "Reports",
+				"admin": "Administration"
+			},
+			"styles": {
+				"tinted": "Tinted bar (recommended)",
+				"filled": "Filled bar",
+				"accents": "Accents only",
+				"none": "No colour"
+			},
+			"themes": {
+				"ocean": "Ocean",
+				"forest": "Forest",
+				"grape": "Grape",
+				"sunset": "Sunset",
+				"cherry": "Cherry",
+				"lagoon": "Lagoon",
+				"silver": "Silver",
+				"graphite": "Graphite",
+				"apricot": "Apricot",
+				"indigo": "Indigo",
+				"mint": "Mint",
+				"rose": "Rose",
+				"sahara": "Sahara",
+				"wintry": "Wintry",
+				"olive": "Olive"
+			}
+		}
+	},
+	"themes": {
+		"ocean": {
+			"primary": {
+				"100": "#d3eaff",
+				"500": "#006edc",
+				"700": "#0049a2",
+				"800": "#003a82"
+			},
+			"secondary": "#b84d00",
+			"surface": {
+				"50": "#fcfdff",
+				"200": "#e1e5ea",
+				"800": "#292e34",
+				"950": "#0a0e11"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#e5f0ff",
+					"strong": "#4c66d3",
+					"nav": "#3c52b7",
+					"deep": "#30439a",
+					"text": "#25357c"
+				},
+				"catalog": {
+					"tint": "#f4f2d3",
+					"strong": "#948600",
+					"nav": "#7e7100",
+					"deep": "#6b6000",
+					"text": "#584f00"
+				},
+				"patrons": {
+					"tint": "#d5faee",
+					"strong": "#009874",
+					"nav": "#008161",
+					"deep": "#006d51",
+					"text": "#005841"
+				},
+				"printing": {
+					"tint": "#ffe5ef",
+					"strong": "#a3215a",
+					"nav": "#880747",
+					"deep": "#6f0037",
+					"text": "#560029"
+				},
+				"notes": {
+					"tint": "#d2f8ff",
+					"strong": "#007695",
+					"nav": "#00607d",
+					"deep": "#004d66",
+					"text": "#003b4f"
+				},
+				"reports": {
+					"tint": "#fde8ff",
+					"strong": "#a754b9",
+					"nav": "#8f41a0",
+					"deep": "#783587",
+					"text": "#622b6e"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#404b5b",
+					"nav": "#2e3947",
+					"deep": "#202a35",
+					"text": "#141b25"
+				}
+			}
+		},
+		"forest": {
+			"primary": {
+				"100": "#cde6d2",
+				"500": "#008039",
+				"700": "#00571e",
+				"800": "#004416"
+			},
+			"secondary": "#b05500",
+			"surface": {
+				"50": "#fdfefd",
+				"200": "#e1e6e1",
+				"800": "#2a2f2a",
+				"950": "#0b0e0b"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#e7f0ff",
+					"strong": "#4f66bb",
+					"nav": "#3e52a0",
+					"deep": "#324386",
+					"text": "#26346b"
+				},
+				"catalog": {
+					"tint": "#f3f2d9",
+					"strong": "#8b8200",
+					"nav": "#766d00",
+					"deep": "#645c00",
+					"text": "#514b00"
+				},
+				"patrons": {
+					"tint": "#dbf8ef",
+					"strong": "#008e71",
+					"nav": "#00785e",
+					"deep": "#00644d",
+					"text": "#00513e"
+				},
+				"printing": {
+					"tint": "#ffe8ef",
+					"strong": "#923156",
+					"nav": "#791e43",
+					"deep": "#621334",
+					"text": "#4a0a26"
+				},
+				"notes": {
+					"tint": "#d8f7fc",
+					"strong": "#006e86",
+					"nav": "#00596f",
+					"deep": "#00475a",
+					"text": "#003544"
+				},
+				"reports": {
+					"tint": "#faeafe",
+					"strong": "#9a5aa8",
+					"nav": "#834890",
+					"deep": "#6e3a79",
+					"text": "#592f62"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#3c4757",
+					"nav": "#2a3543",
+					"deep": "#1d2632",
+					"text": "#101821"
+				}
+			}
+		},
+		"grape": {
+			"primary": {
+				"100": "#ece1ff",
+				"500": "#854ece",
+				"700": "#5d2e96",
+				"800": "#4a2478"
+			},
+			"secondary": "#b53c7f",
+			"surface": {
+				"50": "#fefdff",
+				"200": "#e5e3e9",
+				"800": "#2f2d33",
+				"950": "#0e0c11"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#e5f0ff",
+					"strong": "#4c66d3",
+					"nav": "#3c52b7",
+					"deep": "#30439a",
+					"text": "#25357c"
+				},
+				"catalog": {
+					"tint": "#f4f2d3",
+					"strong": "#948600",
+					"nav": "#7e7100",
+					"deep": "#6b6000",
+					"text": "#584f00"
+				},
+				"patrons": {
+					"tint": "#d5faee",
+					"strong": "#009874",
+					"nav": "#008161",
+					"deep": "#006d51",
+					"text": "#005841"
+				},
+				"printing": {
+					"tint": "#ffe5ef",
+					"strong": "#a3215a",
+					"nav": "#880747",
+					"deep": "#6f0037",
+					"text": "#560029"
+				},
+				"notes": {
+					"tint": "#d2f8ff",
+					"strong": "#007695",
+					"nav": "#00607d",
+					"deep": "#004d66",
+					"text": "#003b4f"
+				},
+				"reports": {
+					"tint": "#fde8ff",
+					"strong": "#a754b9",
+					"nav": "#8f41a0",
+					"deep": "#783587",
+					"text": "#622b6e"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#404b5b",
+					"nav": "#2e3947",
+					"deep": "#202a35",
+					"text": "#141b25"
+				}
+			}
+		},
+		"sunset": {
+			"primary": {
+				"100": "#ffe0d1",
+				"500": "#bd4600",
+				"700": "#882700",
+				"800": "#6d1f00"
+			},
+			"secondary": "#ab448e",
+			"surface": {
+				"50": "#fffdfc",
+				"200": "#e9e3e0",
+				"800": "#332c28",
+				"950": "#110c09"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#e6f0ff",
+					"strong": "#5069ca",
+					"nav": "#3f54ae",
+					"deep": "#334593",
+					"text": "#273776"
+				},
+				"catalog": {
+					"tint": "#f3f2d6",
+					"strong": "#928600",
+					"nav": "#7c7100",
+					"deep": "#6a6000",
+					"text": "#574f00"
+				},
+				"patrons": {
+					"tint": "#d8f9ef",
+					"strong": "#009675",
+					"nav": "#007f61",
+					"deep": "#006b51",
+					"text": "#005742"
+				},
+				"printing": {
+					"tint": "#ffe6ef",
+					"strong": "#9d2c5a",
+					"nav": "#831847",
+					"deep": "#6b0d38",
+					"text": "#520629"
+				},
+				"notes": {
+					"tint": "#d5f8fe",
+					"strong": "#007490",
+					"nav": "#005f78",
+					"deep": "#004c62",
+					"text": "#003a4c"
+				},
+				"reports": {
+					"tint": "#fce9ff",
+					"strong": "#a359b3",
+					"nav": "#8b479a",
+					"deep": "#753a83",
+					"text": "#602f6a"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#404b5b",
+					"nav": "#2e3947",
+					"deep": "#202a35",
+					"text": "#141b25"
+				}
+			}
+		},
+		"cherry": {
+			"primary": {
+				"100": "#ffdcde",
+				"500": "#c72c4f",
+				"700": "#900a31",
+				"800": "#740926"
+			},
+			"secondary": "#9c6500",
+			"surface": {
+				"50": "#fffdfd",
+				"200": "#eae2e3",
+				"800": "#342b2c",
+				"950": "#110c0c"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#e5f0ff",
+					"strong": "#4c66d3",
+					"nav": "#3c52b7",
+					"deep": "#30439a",
+					"text": "#25357c"
+				},
+				"catalog": {
+					"tint": "#f4f2d3",
+					"strong": "#948600",
+					"nav": "#7e7100",
+					"deep": "#6b6000",
+					"text": "#584f00"
+				},
+				"patrons": {
+					"tint": "#d5faee",
+					"strong": "#009874",
+					"nav": "#008161",
+					"deep": "#006d51",
+					"text": "#005841"
+				},
+				"printing": {
+					"tint": "#ffe5ef",
+					"strong": "#a3215a",
+					"nav": "#880747",
+					"deep": "#6f0037",
+					"text": "#560029"
+				},
+				"notes": {
+					"tint": "#d2f8ff",
+					"strong": "#007695",
+					"nav": "#00607d",
+					"deep": "#004d66",
+					"text": "#003b4f"
+				},
+				"reports": {
+					"tint": "#fde8ff",
+					"strong": "#a754b9",
+					"nav": "#8f41a0",
+					"deep": "#783587",
+					"text": "#622b6e"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#404b5b",
+					"nav": "#2e3947",
+					"deep": "#202a35",
+					"text": "#141b25"
+				}
+			}
+		},
+		"lagoon": {
+			"primary": {
+				"100": "#ceeff1",
+				"500": "#008892",
+				"700": "#005e66",
+				"800": "#004b52"
+			},
+			"secondary": "#c13f29",
+			"surface": {
+				"50": "#fcfefe",
+				"200": "#dfe6e7",
+				"800": "#273030",
+				"950": "#080f0f"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#e8f0ff",
+					"strong": "#556cbb",
+					"nav": "#4458a1",
+					"deep": "#374887",
+					"text": "#2b396c"
+				},
+				"catalog": {
+					"tint": "#f3f2db",
+					"strong": "#8f860e",
+					"nav": "#7a7200",
+					"deep": "#676000",
+					"text": "#554f00"
+				},
+				"patrons": {
+					"tint": "#dcf7ef",
+					"strong": "#009276",
+					"nav": "#007b62",
+					"deep": "#006852",
+					"text": "#005442"
+				},
+				"printing": {
+					"tint": "#ffe8ef",
+					"strong": "#94395b",
+					"nav": "#7b2748",
+					"deep": "#641b38",
+					"text": "#4d1229"
+				},
+				"notes": {
+					"tint": "#daf6fb",
+					"strong": "#007287",
+					"nav": "#005c71",
+					"deep": "#004a5c",
+					"text": "#003847"
+				},
+				"reports": {
+					"tint": "#faeafd",
+					"strong": "#9c61aa",
+					"nav": "#854e92",
+					"deep": "#70417b",
+					"text": "#5b3464"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#404b5b",
+					"nav": "#2e3947",
+					"deep": "#202a35",
+					"text": "#141b25"
+				}
+			}
+		},
+		"silver": {
+			"primary": {
+				"100": "#eceff2",
+				"500": "#808a95",
+				"700": "#444b53",
+				"800": "#353b42"
+			},
+			"secondary": "#1479b0",
+			"surface": {
+				"50": "#fcfdff",
+				"200": "#e1e5ea",
+				"800": "#292e34",
+				"950": "#0a0e11"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#eaf0ff",
+					"strong": "#5b6eac",
+					"nav": "#495a93",
+					"deep": "#3b4a7b",
+					"text": "#2e3a63"
+				},
+				"catalog": {
+					"tint": "#f2f1df",
+					"strong": "#8c8638",
+					"nav": "#777127",
+					"deep": "#65601f",
+					"text": "#534f1b"
+				},
+				"patrons": {
+					"tint": "#e1f6ef",
+					"strong": "#228d77",
+					"nav": "#057763",
+					"deep": "#006453",
+					"text": "#045143"
+				},
+				"printing": {
+					"tint": "#ffeaef",
+					"strong": "#8a435b",
+					"nav": "#723148",
+					"deep": "#5d2539",
+					"text": "#47192a"
+				},
+				"notes": {
+					"tint": "#dff5f9",
+					"strong": "#006f80",
+					"nav": "#005a69",
+					"deep": "#004855",
+					"text": "#003742"
+				},
+				"reports": {
+					"tint": "#f8ebfa",
+					"strong": "#9668a1",
+					"nav": "#805589",
+					"deep": "#6b4674",
+					"text": "#57395e"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#404b5b",
+					"nav": "#2e3947",
+					"deep": "#202a35",
+					"text": "#141b25"
+				}
+			}
+		},
+		"graphite": {
+			"primary": {
+				"100": "#e6e8ea",
+				"500": "#434850",
+				"700": "#23272d",
+				"800": "#15181d"
+			},
+			"secondary": "#aa5b00",
+			"surface": {
+				"50": "#fefdfc",
+				"200": "#e9e3df",
+				"800": "#322c28",
+				"950": "#110c09"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#eaf0ff",
+					"strong": "#5b6eac",
+					"nav": "#495a93",
+					"deep": "#3b4a7b",
+					"text": "#2e3a63"
+				},
+				"catalog": {
+					"tint": "#f2f1df",
+					"strong": "#8c8638",
+					"nav": "#777127",
+					"deep": "#65601f",
+					"text": "#534f1b"
+				},
+				"patrons": {
+					"tint": "#e1f6ef",
+					"strong": "#228d77",
+					"nav": "#057763",
+					"deep": "#006453",
+					"text": "#045143"
+				},
+				"printing": {
+					"tint": "#ffeaef",
+					"strong": "#8a435b",
+					"nav": "#723148",
+					"deep": "#5d2539",
+					"text": "#47192a"
+				},
+				"notes": {
+					"tint": "#dff5f9",
+					"strong": "#006f80",
+					"nav": "#005a69",
+					"deep": "#004855",
+					"text": "#003742"
+				},
+				"reports": {
+					"tint": "#f8ebfa",
+					"strong": "#9668a1",
+					"nav": "#805589",
+					"deep": "#6b4674",
+					"text": "#57395e"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#404b5b",
+					"nav": "#2e3947",
+					"deep": "#202a35",
+					"text": "#141b25"
+				}
+			}
+		},
+		"apricot": {
+			"primary": {
+				"100": "#ffead5",
+				"500": "#b16000",
+				"700": "#803f00",
+				"800": "#683200"
+			},
+			"secondary": "#007aa8",
+			"surface": {
+				"50": "#fefdfc",
+				"200": "#e8e4df",
+				"800": "#322d27",
+				"950": "#100d09"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#e7f0ff",
+					"strong": "#566ec3",
+					"nav": "#455aa8",
+					"deep": "#384a8e",
+					"text": "#2c3b73"
+				},
+				"catalog": {
+					"tint": "#f3f2d9",
+					"strong": "#938a00",
+					"nav": "#7d7400",
+					"deep": "#6b6300",
+					"text": "#585200"
+				},
+				"patrons": {
+					"tint": "#dbf8ef",
+					"strong": "#009679",
+					"nav": "#008065",
+					"deep": "#006c54",
+					"text": "#005845"
+				},
+				"printing": {
+					"tint": "#ffe8ef",
+					"strong": "#9a385d",
+					"nav": "#81264a",
+					"deep": "#691b3b",
+					"text": "#52122c"
+				},
+				"notes": {
+					"tint": "#d8f7fc",
+					"strong": "#00768d",
+					"nav": "#006076",
+					"deep": "#004e61",
+					"text": "#003b4b"
+				},
+				"reports": {
+					"tint": "#faeafe",
+					"strong": "#a261b0",
+					"nav": "#8a4f98",
+					"deep": "#754181",
+					"text": "#603669"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#424e5e",
+					"nav": "#313b49",
+					"deep": "#232c38",
+					"text": "#161d27"
+				}
+			}
+		},
+		"indigo": {
+			"primary": {
+				"100": "#e0e6ff",
+				"500": "#5b60d7",
+				"700": "#3c3d9e",
+				"800": "#2f307f"
+			},
+			"secondary": "#a55e00",
+			"surface": {
+				"50": "#fdfdff",
+				"200": "#e3e4ea",
+				"800": "#2c2d34",
+				"950": "#0c0d12"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#e6f0ff",
+					"strong": "#4e67cf",
+					"nav": "#3d53b3",
+					"deep": "#314497",
+					"text": "#263679"
+				},
+				"catalog": {
+					"tint": "#f4f2d5",
+					"strong": "#938600",
+					"nav": "#7d7100",
+					"deep": "#6a6000",
+					"text": "#574f00"
+				},
+				"patrons": {
+					"tint": "#d6f9ef",
+					"strong": "#009775",
+					"nav": "#008061",
+					"deep": "#006c51",
+					"text": "#005841"
+				},
+				"printing": {
+					"tint": "#ffe6ef",
+					"strong": "#a0275a",
+					"nav": "#861147",
+					"deep": "#6d0538",
+					"text": "#540129"
+				},
+				"notes": {
+					"tint": "#d3f8ff",
+					"strong": "#007592",
+					"nav": "#005f7b",
+					"deep": "#004c64",
+					"text": "#003a4d"
+				},
+				"reports": {
+					"tint": "#fce8ff",
+					"strong": "#a556b6",
+					"nav": "#8d449d",
+					"deep": "#773785",
+					"text": "#612d6c"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#404b5b",
+					"nav": "#2e3947",
+					"deep": "#202a35",
+					"text": "#141b25"
+				}
+			}
+		},
+		"mint": {
+			"primary": {
+				"100": "#c8e2d8",
+				"500": "#007b5e",
+				"700": "#00533c",
+				"800": "#00402e"
+			},
+			"secondary": "#bd4238",
+			"surface": {
+				"50": "#fcfefd",
+				"200": "#e0e6e4",
+				"800": "#28302d",
+				"950": "#090f0d"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#e9f0ff",
+					"strong": "#5467aa",
+					"nav": "#425391",
+					"deep": "#354479",
+					"text": "#283560"
+				},
+				"catalog": {
+					"tint": "#f2f1de",
+					"strong": "#878028",
+					"nav": "#726c14",
+					"deep": "#605a0e",
+					"text": "#4e4a0d"
+				},
+				"patrons": {
+					"tint": "#dff6ef",
+					"strong": "#008971",
+					"nav": "#00735d",
+					"deep": "#00604d",
+					"text": "#004d3d"
+				},
+				"printing": {
+					"tint": "#ffe9ef",
+					"strong": "#873b55",
+					"nav": "#6f2943",
+					"deep": "#591d33",
+					"text": "#431225"
+				},
+				"notes": {
+					"tint": "#ddf5fa",
+					"strong": "#006a7c",
+					"nav": "#005566",
+					"deep": "#004352",
+					"text": "#00323e"
+				},
+				"reports": {
+					"tint": "#f8ebfb",
+					"strong": "#92609d",
+					"nav": "#7b4d86",
+					"deep": "#673f70",
+					"text": "#53325a"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#3a4655",
+					"nav": "#293441",
+					"deep": "#1c2530",
+					"text": "#0f1720"
+				}
+			}
+		},
+		"rose": {
+			"primary": {
+				"100": "#ffdde8",
+				"500": "#ba3a71",
+				"700": "#861d4d",
+				"800": "#6b173d"
+			},
+			"secondary": "#1d7d3e",
+			"surface": {
+				"50": "#fffdfd",
+				"200": "#e9e2e4",
+				"800": "#332b2e",
+				"950": "#110c0d"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#e6f0ff",
+					"strong": "#5069ca",
+					"nav": "#3f54ae",
+					"deep": "#334593",
+					"text": "#273776"
+				},
+				"catalog": {
+					"tint": "#f3f2d6",
+					"strong": "#928600",
+					"nav": "#7c7100",
+					"deep": "#6a6000",
+					"text": "#574f00"
+				},
+				"patrons": {
+					"tint": "#d8f9ef",
+					"strong": "#009675",
+					"nav": "#007f61",
+					"deep": "#006b51",
+					"text": "#005742"
+				},
+				"printing": {
+					"tint": "#ffe6ef",
+					"strong": "#9d2c5a",
+					"nav": "#831847",
+					"deep": "#6b0d38",
+					"text": "#520629"
+				},
+				"notes": {
+					"tint": "#d5f8fe",
+					"strong": "#007490",
+					"nav": "#005f78",
+					"deep": "#004c62",
+					"text": "#003a4c"
+				},
+				"reports": {
+					"tint": "#fce9ff",
+					"strong": "#a359b3",
+					"nav": "#8b479a",
+					"deep": "#753a83",
+					"text": "#602f6a"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#404b5b",
+					"nav": "#2e3947",
+					"deep": "#202a35",
+					"text": "#141b25"
+				}
+			}
+		},
+		"sahara": {
+			"primary": {
+				"100": "#ebdbc9",
+				"500": "#945a00",
+				"700": "#673800",
+				"800": "#512b00"
+			},
+			"secondary": "#008199",
+			"surface": {
+				"50": "#fefdfc",
+				"200": "#e7e4df",
+				"800": "#312d27",
+				"950": "#100d09"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#e9f0ff",
+					"strong": "#5569ac",
+					"nav": "#435593",
+					"deep": "#36457a",
+					"text": "#2a3661"
+				},
+				"catalog": {
+					"tint": "#f2f1de",
+					"strong": "#89822a",
+					"nav": "#736d17",
+					"deep": "#615c10",
+					"text": "#4f4b0f"
+				},
+				"patrons": {
+					"tint": "#dff6ef",
+					"strong": "#008a72",
+					"nav": "#00745e",
+					"deep": "#00614e",
+					"text": "#004e3f"
+				},
+				"printing": {
+					"tint": "#ffe9ef",
+					"strong": "#883c57",
+					"nav": "#702a44",
+					"deep": "#5a1e35",
+					"text": "#441326"
+				},
+				"notes": {
+					"tint": "#ddf5fa",
+					"strong": "#006b7d",
+					"nav": "#005667",
+					"deep": "#004553",
+					"text": "#00333f"
+				},
+				"reports": {
+					"tint": "#f8ebfb",
+					"strong": "#93619f",
+					"nav": "#7d4e87",
+					"deep": "#694072",
+					"text": "#54345c"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#3c4757",
+					"nav": "#2a3543",
+					"deep": "#1d2632",
+					"text": "#101821"
+				}
+			}
+		},
+		"wintry": {
+			"primary": {
+				"100": "#d4ecfb",
+				"500": "#007bb2",
+				"700": "#005480",
+				"800": "#004367"
+			},
+			"secondary": "#7e5db1",
+			"surface": {
+				"50": "#fcfeff",
+				"200": "#e0e5e9",
+				"800": "#282f33",
+				"950": "#090e11"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#e9f0ff",
+					"strong": "#576cb6",
+					"nav": "#45589c",
+					"deep": "#384883",
+					"text": "#2c3969"
+				},
+				"catalog": {
+					"tint": "#f2f2dc",
+					"strong": "#8e8622",
+					"nav": "#79720b",
+					"deep": "#666006",
+					"text": "#544f0a"
+				},
+				"patrons": {
+					"tint": "#def7ef",
+					"strong": "#009076",
+					"nav": "#007a62",
+					"deep": "#006652",
+					"text": "#005342"
+				},
+				"printing": {
+					"tint": "#ffe9ef",
+					"strong": "#903d5b",
+					"nav": "#782b48",
+					"deep": "#611f38",
+					"text": "#4b152a"
+				},
+				"notes": {
+					"tint": "#dcf6fb",
+					"strong": "#007185",
+					"nav": "#005c6e",
+					"deep": "#00495a",
+					"text": "#003845"
+				},
+				"reports": {
+					"tint": "#f9eafc",
+					"strong": "#9a63a7",
+					"nav": "#83518f",
+					"deep": "#6f4379",
+					"text": "#5a3662"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#404b5b",
+					"nav": "#2e3947",
+					"deep": "#202a35",
+					"text": "#141b25"
+				}
+			}
+		},
+		"olive": {
+			"primary": {
+				"100": "#d3dbc8",
+				"500": "#556e1c",
+				"700": "#344800",
+				"800": "#273700"
+			},
+			"secondary": "#b45000",
+			"surface": {
+				"50": "#fdfdfc",
+				"200": "#e5e5df",
+				"800": "#2e2e28",
+				"950": "#0d0e09"
+			},
+			"areas": {
+				"circulation": {
+					"tint": "#eaf0ff",
+					"strong": "#5466a4",
+					"nav": "#42538b",
+					"deep": "#354374",
+					"text": "#28345c"
+				},
+				"catalog": {
+					"tint": "#f2f1df",
+					"strong": "#857f30",
+					"nav": "#706a1f",
+					"deep": "#5e5917",
+					"text": "#4c4813"
+				},
+				"patrons": {
+					"tint": "#e1f6ef",
+					"strong": "#148670",
+					"nav": "#00705c",
+					"deep": "#005d4c",
+					"text": "#004a3c"
+				},
+				"printing": {
+					"tint": "#ffeaef",
+					"strong": "#823c54",
+					"nav": "#6b2a42",
+					"deep": "#551e32",
+					"text": "#401324"
+				},
+				"notes": {
+					"tint": "#dff5f9",
+					"strong": "#006778",
+					"nav": "#005362",
+					"deep": "#00414f",
+					"text": "#00303b"
+				},
+				"reports": {
+					"tint": "#f8ebfa",
+					"strong": "#8e6099",
+					"nav": "#784e82",
+					"deep": "#643f6d",
+					"text": "#503257"
+				},
+				"admin": {
+					"tint": "#edf0f5",
+					"strong": "#394554",
+					"nav": "#283240",
+					"deep": "#1b232f",
+					"text": "#0e151f"
+				}
+			}
+		}
+	}
+}
+</script>
+<!-- generated:end -->
+
+<script>
+(() => {
+	const DATA = JSON.parse(document.getElementById("bv-data").textContent);
+
+	// ---- the page's own words, in the two languages of the app
+	const T = {
+		it: {
+			eyebrow: "BiblioViva · riferimento grafico · passo 9.16",
+			title: "Colori delle aree",
+			lead: "La fascia in alto prende il colore dell'area in cui si lavora: Prestiti, Catalogo, Utenti, Stampe, Report, Amministrazione. Qui i colori sono esattamente quelli dell'app, nei quindici set di colori e nei quattro stili che si scelgono in Amministrazione → Aspetto e lingua.",
+			source: "I colori vengono da <code>src/lib/shared/theme-palette.ts</code>; <code>bun run themes:generate</code> aggiorna i temi dell'app e questa pagina insieme.",
+			options: "Scelte", lang: "Lingua", style: "Stile", vision: "Vista", set: "Set",
+			visions: { normal: "Normale", deutan: "Daltonismo verde (deuteranopia)", protan: "Daltonismo rosso (protanopia)", gray: "Bianco e nero" },
+			look: "Come appare",
+			bars: "Le sette fasce del set scelto",
+			barsNote: "Clicca una fascia o una voce del menu per vederla nell'anteprima. La Dashboard resta sempre neutra.",
+			mockTitles: { dashboard: "Buongiorno", circulation: "Banco prestiti", catalog: "Catalogo", patrons: "Utenti", printing: "Liste di stampa", reports: "Report", admin: "Amministrazione" },
+			more: "Altro", main: "Azione principale", second: "Secondaria", preview: "Menu dell'anteprima",
+			matrix: "In tutti i set di colori",
+			matrixNote: "Ogni riga è un set, ogni casella un'area: sopra la tinta della fascia, sotto il colore pieno (banda e icona). A destra la distanza fra le due aree più simili del set, la distanza dal colore di stato più vicino e il contrasto più basso del testo bianco. Clicca una riga per provarla sopra.",
+			distanceNote: "La distanza è la differenza percepita fra due colori (scala OKLab). Sopra 0,10 le aree si riconoscono a colpo d'occhio, fra 0,06 e 0,10 si distinguono affiancate, sotto 0,06 si confondono. I test dell'app chiedono almeno 0,08 fra due aree e 0,07 dai colori di stato, nella vista normale.",
+			th: { set: "Set", minArea: "Aree più vicine", status: "Dai colori di stato", white: "Testo bianco" },
+			grade: { good: "ben distinte", fair: "distinguibili", poor: "si confondono" },
+			hues: "Le tinte delle aree",
+			huesNote: "La tinta di ogni area è fissa, uguale in ogni set, così il colore di un'area si impara una volta sola. L'intensità segue il set; la luminosità è quella dell'area più metà di quella del set.",
+			hth: { area: "Area", color: "Colore (set scelto)", name: "Tinta", hue: "Tinta OKLCH", shift: "Luminosità", chroma: "Intensità" },
+			hueNames: { circulation: "indaco", catalog: "giallo", patrons: "verde giada", printing: "lampone", reports: "viola", admin: "antracite" },
+			fromSet: "dal set (0,10–0,17)",
+			rules: "Le regole",
+			ruleList: [
+				"<b>Tinta fissa, intensità dal set.</b> Intensità = intensità del colore principale del set × 0,9, fra 0,10 e 0,17: i set vivaci danno fasce vivaci, quelli tenui (Argento, Inverno, Sahara) fasce più delicate. Amministrazione fa eccezione: antracite, quasi grigio e scuro.",
+				"<b>Cinque toni per area.</b> <i>Tinta</i>: lo sfondo chiaro della fascia tinta e della voce scelta nella barra in basso del telefono. <i>Pieno</i> (500): la banda e l'icona della pagina. <i>Menu</i> (600): la voce scelta del menu laterale, testo bianco. <i>Profondo</i> (700): la fascia piena, testo bianco. <i>Testo</i> (800): le scritte sulla tinta.",
+				"<b>Sempre leggibili.</b> In ogni set: icona bianca sul pieno almeno 3:1, testo bianco sul menu e sulla fascia piena almeno 4,5:1, titolo scuro e testo dell'area sulla tinta almeno 4,5:1 (WCAG AA).",
+				"<b>Lontani dai colori di stato.</b> Rosso errore (tinta 30), ambra avviso (78) e verde riuscito (150) mantengono il loro significato: nessuna area si avvicina sotto 0,07, e due aree non scendono sotto 0,08.",
+				"<b>Mai solo il colore.</b> Icona e nome dell'area restano sempre nella fascia: chi non distingue i colori (prova la vista «daltonismo») non perde nulla.",
+				"<b>La Dashboard è neutra</b>, con il solo colore principale del set sull'icona; così non coincide con Prestiti nel set Oceano.",
+				"<b>Quattro stili</b> (<code>ui.areaStyle</code>): fascia tinta (consigliata), fascia piena, solo accenti, nessun colore. Lo stile vale per tutta l'installazione.",
+			],
+			history: "Storia",
+			historyList: [
+				"<b>4 ottobre 2026.</b> Scelta la proposta ibrida (tinta fissa, intensità dal set) e lo stile fascia tinta, sulla pagina delle proposte.",
+				"<b>5 ottobre 2026.</b> Su richiesta del proprietario, Catalogo più verso il giallo (tinta 100 → 105, luminosità −0,07 → +0,06) e Utenti più verso il verde (200 → 175, 0 → +0,03): il massimo consentito dalla distanza da ambra e verde di stato e dal contrasto del testo bianco.",
+			],
+			okStatus: "Lontane dai colori di stato", nearStatus: (a, s) => `${a} vicino al ${s}`,
+			statusNames: { error: "rosso errore", warning: "ambra avviso", success: "verde riuscito" },
+			pillAreas: (g, d, p) => `Aree ${g} · minimo ${d} (${p})`,
+			pillIcon: (r) => `Icona bianca sul pieno: minimo ${r}:1 (serve 3:1)`,
+			pillText: (r) => `Testo bianco su menu e fascia piena: minimo ${r}:1 (serve 4,5:1)`,
+			neutral: "neutra",
+		},
+		en: {
+			eyebrow: "BiblioViva · design reference · step 9.16",
+			title: "Area colours",
+			lead: "The top bar takes the colour of the area being worked in: Loans, Catalogue, Patrons, Printing, Reports, Administration. The colours here are exactly the app's, in the fifteen colour sets and the four styles chosen in Administration → Appearance and language.",
+			source: "The colours come from <code>src/lib/shared/theme-palette.ts</code>; <code>bun run themes:generate</code> updates the app's themes and this page together.",
+			options: "Options", lang: "Language", style: "Style", vision: "Vision", set: "Set",
+			visions: { normal: "Normal", deutan: "Green-blind (deuteranopia)", protan: "Red-blind (protanopia)", gray: "Black and white" },
+			look: "How it looks",
+			bars: "The seven bars of the chosen set",
+			barsNote: "Click a bar or a menu item to see it in the preview. The Dashboard always stays neutral.",
+			mockTitles: { dashboard: "Good morning", circulation: "Loan desk", catalog: "Catalogue", patrons: "Patrons", printing: "Print lists", reports: "Reports", admin: "Administration" },
+			more: "More", main: "Main action", second: "Secondary", preview: "Preview menu",
+			matrix: "In every colour set",
+			matrixNote: "Each row is a set, each cell an area: on top the tint of the bar, below the full colour (band and icon). On the right the distance between the two closest areas of the set, the distance from the nearest status colour and the lowest contrast of white text. Click a row to try it above.",
+			distanceNote: "The distance is the perceived difference between two colours (OKLab scale). Above 0.10 areas are told apart at a glance, between 0.06 and 0.10 side by side, below 0.06 they blur. The app's tests require at least 0.08 between two areas and 0.07 from the status colours, in normal vision.",
+			th: { set: "Set", minArea: "Closest areas", status: "From status colours", white: "White text" },
+			grade: { good: "clearly apart", fair: "distinguishable", poor: "blur together" },
+			hues: "The hues of the areas",
+			huesNote: "Each area has a fixed hue, the same in every set, so the colour of an area is learnt once. The chroma follows the set; the lightness is the area's offset plus half of the set's.",
+			hth: { area: "Area", color: "Colour (chosen set)", name: "Hue", hue: "OKLCH hue", shift: "Lightness", chroma: "Chroma" },
+			hueNames: { circulation: "indigo", catalog: "yellow", patrons: "jade green", printing: "raspberry", reports: "violet", admin: "anthracite" },
+			fromSet: "from the set (0.10–0.17)",
+			rules: "The rules",
+			ruleList: [
+				"<b>Fixed hue, chroma from the set.</b> Chroma = the set's primary chroma × 0.9, within 0.10 and 0.17: vivid sets give vivid bars, the soft ones (Silver, Wintry, Sahara) gentler ones. Administration is the exception: anthracite, nearly grey and dark.",
+				"<b>Five shades per area.</b> <i>Tint</i>: the light background of the tinted bar and of the current item in the phone's bottom bar. <i>Strong</i> (500): the band and the page icon. <i>Nav</i> (600): the current item of the sidebar, white text. <i>Deep</i> (700): the filled bar, white text. <i>Text</i> (800): writing on the tint.",
+				"<b>Always readable.</b> In every set: white icon on strong at least 3:1, white text on nav and on the filled bar at least 4.5:1, dark title and area text on the tint at least 4.5:1 (WCAG AA).",
+				"<b>Away from the status colours.</b> Error red (hue 30), warning amber (78) and success green (150) keep their meaning: no area comes closer than 0.07, and no two areas closer than 0.08.",
+				"<b>Never colour alone.</b> The area's icon and name always stay in the bar: viewers who cannot tell the colours apart (try the colour-blind views) lose nothing.",
+				"<b>The Dashboard is neutral</b>, with only the set's primary colour on its icon, so it never matches Loans in the Ocean set.",
+				"<b>Four styles</b> (<code>ui.areaStyle</code>): tinted bar (recommended), filled bar, accents only, no colour. The style applies to the whole installation.",
+			],
+			history: "History",
+			historyList: [
+				"<b>4 October 2026.</b> The hybrid proposal (fixed hue, chroma from the set) and the tinted style chosen on the proposals page.",
+				"<b>5 October 2026.</b> At the owner's request, Catalogue moved towards yellow (hue 100 → 105, lightness −0.07 → +0.06) and Patrons towards green (200 → 175, 0 → +0.03): as far as the distance from status amber and green and the contrast of white text allow.",
+			],
+			okStatus: "Away from the status colours", nearStatus: (a, s) => `${a} close to ${s}`,
+			statusNames: { error: "error red", warning: "warning amber", success: "success green" },
+			pillAreas: (g, d, p) => `Areas ${g} · minimum ${d} (${p})`,
+			pillIcon: (r) => `White icon on strong: minimum ${r}:1 (needs 3:1)`,
+			pillText: (r) => `White text on nav and filled bar: minimum ${r}:1 (needs 4.5:1)`,
+			neutral: "neutral",
+		},
+	};
+
+	// ---- colour maths on the generated hex values: sRGB ↔ linear, OKLab distance, WCAG contrast
+	const dec = (c) => (c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+	const enc = (x) => (x <= 0.0031308 ? 12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055);
+	const lin = (hex) => [1, 3, 5].map((i) => dec(parseInt(hex.slice(i, i + 2), 16) / 255));
+	function oklab([r, g, b]) {
+		const l = Math.cbrt(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b);
+		const m = Math.cbrt(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b);
+		const s = Math.cbrt(0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b);
+		return [0.2104542553 * l + 0.793617785 * m - 0.0040720468 * s,
+			1.9779984951 * l - 2.428592205 * m + 0.4505937099 * s,
+			0.0259040371 * l + 0.7827717662 * m - 0.808675766 * s];
+	}
+	// colour-vision simulation (Machado et al. 2009, severity 1) on linear sRGB
+	const SIM = {
+		deutan: [[0.367322, 0.860646, -0.227968], [0.280085, 0.672501, 0.047413], [-0.01182, 0.04294, 0.968881]],
+		protan: [[0.152286, 1.052583, -0.204868], [0.114503, 0.786281, 0.099216], [-0.003882, -0.048116, 1.051998]],
+	};
+	let vision = "normal";
+	function see(hex) {
+		const v = lin(hex);
+		if (vision === "gray") { const y = 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]; return [y, y, y]; }
+		const M = SIM[vision];
+		return M ? M.map((r) => Math.min(1, Math.max(0, r[0] * v[0] + r[1] * v[1] + r[2] * v[2]))) : v;
+	}
+	const shown = (hex) => (hex.startsWith("#") ? "#" + see(hex).map((x) => Math.round(enc(x) * 255).toString(16).padStart(2, "0")).join("") : hex);
+	const lum = (hex) => { const v = see(hex); return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]; };
+	const contrast = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
+	const dist = (a, b) => { const p = oklab(see(a)), q = oklab(see(b)); return Math.hypot(p[0] - q[0], p[1] - q[1], p[2] - q[2]); };
+
+	const ICONS = {
+		dashboard: '<rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/>',
+		circulation: '<path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/>',
+		catalog: '<rect width="8" height="18" x="3" y="3" rx="1"/><path d="M7 3v18"/><path d="M20.4 18.9c.2.5-.1 1.1-.6 1.3l-1.9.7c-.5.2-1.1-.1-1.3-.6L11.1 5.1c-.2-.5.1-1.1.6-1.3l1.9-.7c.5-.2 1.1.1 1.3.6Z"/>',
+		patrons: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+		printing: '<path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/>',
+		reports: '<path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16h8"/><path d="M7 11h12"/><path d="M7 6h3"/>',
+		admin: '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><circle cx="12" cy="11" r="3"/>',
+		more: '<circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/>',
+	};
+	const svg = (k, size = 20) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[k]}</svg>`;
+	const ICON_OK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+	const ICON_WARN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>';
+
+	const AREAS = DATA.areas;
+	const ALL = ["dashboard", ...AREAS];
+	const MOBILE = ["circulation", "catalog", "patrons"];
+
+	// ---- state, remembered in this browser only
+	let state = { lang: (navigator.language || "it").toLowerCase().startsWith("it") ? "it" : "en", style: "tinted", theme: "ocean", area: "catalog" };
+	try {
+		const saved = JSON.parse(localStorage.getItem("bv-area-colors-ref") || "null");
+		if (saved && DATA.themes[saved.theme] && T[saved.lang] && DATA.styles.includes(saved.style)) { state = { ...state, ...saved }; }
+	} catch { /* storage unavailable: defaults */ }
+	const save = () => { try { localStorage.setItem("bv-area-colors-ref", JSON.stringify(state)); } catch { /* ignore */ } };
+
+	const t = () => T[state.lang];
+	const L = () => DATA.labels[state.lang];
+	const fmt = (n, d = 2) => (state.lang === "it" ? n.toFixed(d).replace(".", ",") : n.toFixed(d));
+	const signed = (n) => (n === 0 ? "0" : (n > 0 ? "+" : "−") + fmt(Math.abs(n), Math.round(Math.abs(n) * 1000) % 10 ? 3 : 2));
+
+	/** The colours of an area in a set under the current style; null area colours = the neutral bar. */
+	function look(themeKey, area) {
+		const th = DATA.themes[themeKey];
+		const c = area !== "dashboard" && state.style !== "none" ? th.areas[area] : null;
+		const s = th.surface;
+		const neutral = { bg: s[50], ink: s[950], iconBg: th.primary[500], iconInk: "#ffffff", band: `inset 0 -1px 0 ${shown(s[200])}` };
+		const nav = c ? c.nav : th.primary[500];
+		const tab = c ? { bg: c.tint, ink: c.text } : { bg: th.primary[100], ink: th.primary[800] };
+		if (!c) { return { bar: neutral, nav, tab }; }
+		const bar = {
+			tinted: { bg: c.tint, ink: s[950], iconBg: c.strong, iconInk: "#ffffff", band: `inset 0 -5px 0 ${shown(c.strong)}` },
+			filled: { bg: c.deep, ink: "#ffffff", iconBg: "rgb(255 255 255 / 0.2)", iconInk: "#ffffff", band: "none" },
+			accents: { ...neutral, iconBg: c.strong, band: `inset 6px 0 0 ${shown(c.strong)}, inset 0 -1px 0 ${shown(s[200])}` },
+		}[state.style];
+		return { bar, nav, tab };
+	}
+
+	function setVars(el, themeKey) {
+		const th = DATA.themes[themeKey];
+		const v = { "--s50": th.surface[50], "--s200": th.surface[200], "--s800": th.surface[800], "--s950": th.surface[950], "--p100": th.primary[100], "--p500": th.primary[500], "--p700": th.primary[700] };
+		for (const [k, val] of Object.entries(v)) { el.style.setProperty(k, shown(val)); }
+	}
+
+	function metrics(themeKey) {
+		const th = DATA.themes[themeKey];
+		let min = Infinity, pair = null, near = { d: Infinity };
+		for (let i = 0; i < AREAS.length; i++) {
+			for (let j = i + 1; j < AREAS.length; j++) {
+				const d = dist(th.areas[AREAS[i]].strong, th.areas[AREAS[j]].strong);
+				if (d < min) { min = d; pair = [AREAS[i], AREAS[j]]; }
+			}
+			for (const [k, st] of Object.entries(DATA.status)) {
+				const d = dist(th.areas[AREAS[i]].strong, st.color);
+				if (d < near.d) { near = { d, area: AREAS[i], status: k }; }
+			}
+		}
+		const icon = Math.min(...AREAS.map((a) => contrast("#ffffff", th.areas[a].strong)));
+		const text = Math.min(...AREAS.flatMap((a) => [contrast("#ffffff", th.areas[a].nav), contrast("#ffffff", th.areas[a].deep)]));
+		return { min, pair, near, icon, text };
+	}
+	const grade = (d) => (d >= 0.1 ? "good" : d >= 0.06 ? "fair" : "poor");
+	const pill = (g, text) => `<span class="pill ${g}">${g === "good" ? ICON_OK : ICON_WARN}${text}</span>`;
+
+	function renderText() {
+		document.documentElement.lang = state.lang;
+		document.querySelectorAll("[data-t]").forEach((el) => { el.innerHTML = t()[el.dataset.t]; });
+		document.getElementById("controls").setAttribute("aria-label", t().options);
+		const sel = document.getElementById("vision");
+		sel.innerHTML = Object.entries(t().visions).map(([k, v]) => `<option value="${k}"${k === vision ? " selected" : ""}>${v}</option>`).join("");
+		document.getElementById("style-seg").innerHTML = DATA.styles.map((s) => `<button type="button" data-v="${s}" id="style-${s}" aria-pressed="${s === state.style}">${L().styles[s]}</button>`).join("");
+		document.querySelectorAll("#style-seg button").forEach((b) => b.addEventListener("click", () => { state.style = b.dataset.v; update(); }));
+		document.querySelectorAll("#lang-seg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === state.lang)));
+		document.getElementById("rules").innerHTML = t().ruleList.map((r) => `<li>${r}</li>`).join("");
+		document.getElementById("history").innerHTML = t().historyList.map((r) => `<li>${r}</li>`).join("");
+	}
+
+	function renderApp() {
+		const th = DATA.themes[state.theme];
+		const here = look(state.theme, state.area);
+		const b = here.bar;
+		const nav = AREAS.map((a) => {
+			const cur = a === state.area;
+			return `<button type="button" class="nav" data-area="${a}" ${cur ? 'aria-current="page"' : ""} style="${cur ? `background:${shown(look(state.theme, a).nav)}` : ""}" title="${L().areas[a]}"><span class="tile">${svg(a, 18)}</span><span class="txt">${L().areas[a]}</span></button>`;
+		}).join("");
+		const app = document.getElementById("app");
+		app.innerHTML = `<div class="app" id="app-frame">
+			<nav class="side" aria-label="${t().preview}"><button type="button" class="brand" data-area="dashboard">BiblioViva</button>${nav}</nav>
+			<div class="main">
+				<div class="bar" style="background:${shown(b.bg)};color:${shown(b.ink)};box-shadow:${b.band}">
+					<span class="icon" style="background:${shown(b.iconBg)};color:${b.iconInk}">${svg(state.area, 22)}</span>
+					<span class="title">${t().mockTitles[state.area]}</span>
+					<span class="trail"><span class="avatar">AD</span></span>
+				</div>
+				<div class="content">
+					<div class="card"><div class="fake" style="width:55%"></div><div class="fake" style="width:80%"></div>
+						<div class="btns"><span class="btn" style="background:var(--p500);color:#fff">${t().main}</span><span class="btn" style="background:var(--p100);color:var(--p700)">${t().second}</span></div></div>
+					<div class="card"><div class="fake" style="width:70%"></div><div class="fake" style="width:40%"></div></div>
+				</div>
+			</div></div>`;
+		setVars(document.getElementById("app-frame"), state.theme);
+		app.querySelectorAll("[data-area]").forEach((n) => n.addEventListener("click", () => { state.area = n.dataset.area; update(); }));
+
+		const phone = document.getElementById("phone");
+		phone.innerHTML = ["dashboard", ...MOBILE, "more"].map((a) => {
+			const cur = a === state.area;
+			const style = cur ? `background:${shown(here.tab.bg)};color:${shown(here.tab.ink)}` : "";
+			const name = a === "more" ? t().more : L().areas[a];
+			return `<div class="tab" style="${style}">${svg(a, 20)}<span>${name}</span></div>`;
+		}).join("");
+		setVars(phone, state.theme);
+
+		const m = metrics(state.theme);
+		const g = grade(m.min);
+		document.getElementById("pills").innerHTML = [
+			pill(g, t().pillAreas(t().grade[g], fmt(m.min), m.pair.map((a) => L().areas[a]).join(" / "))),
+			m.near.d >= 0.07 ? pill("good", t().okStatus) : pill("fair", t().nearStatus(L().areas[m.near.area], t().statusNames[m.near.status])),
+			pill(m.icon >= 3 ? "good" : "poor", t().pillIcon(fmt(m.icon))),
+			pill(m.text >= 4.5 ? "good" : "poor", t().pillText(fmt(m.text))),
+		].join("");
+	}
+
+	function renderBars() {
+		const bars = document.getElementById("bars");
+		bars.innerHTML = ALL.map((a) => {
+			const b = look(state.theme, a).bar;
+			return `<button type="button" class="mini" data-area="${a}" aria-current="${a === state.area}" style="background:${shown(b.bg)};color:${shown(b.ink)};box-shadow:${b.band}"><span class="icon" style="background:${shown(b.iconBg)};color:${b.iconInk}">${svg(a, 18)}</span><b>${L().areas[a]}</b></button>`;
+		}).join("");
+		setVars(bars, state.theme);
+		bars.querySelectorAll(".mini").forEach((n) => n.addEventListener("click", () => { state.area = n.dataset.area; update(); }));
+	}
+
+	function renderMatrix() {
+		const head = `<tr><th>${t().th.set}</th>${AREAS.map((a) => `<th>${L().areas[a]}</th>`).join("")}<th>${t().th.minArea}</th><th>${t().th.status}</th><th>${t().th.white}</th></tr>`;
+		const rows = Object.entries(DATA.themes).map(([k, th]) => {
+			const cells = AREAS.map((a) => `<td class="sw" style="background:${shown(th.areas[a].tint)}" title="${L().themes[k]} · ${L().areas[a]} ${th.areas[a].strong}"><span style="background:${shown(th.areas[a].strong)}"></span></td>`).join("");
+			const m = metrics(k);
+			const g = grade(m.min);
+			return `<tr data-theme="${k}" tabindex="0" class="${k === state.theme ? "sel" : ""}"><th class="tn">${L().themes[k]}</th>${cells}`
+				+ `<td class="meta">${pill(g, `${fmt(m.min)} · ${t().grade[g]}`)}</td>`
+				+ `<td class="meta">${pill(m.near.d >= 0.07 ? "good" : "fair", `${fmt(m.near.d)} · ${L().areas[m.near.area]}`)}</td>`
+				+ `<td class="meta">${pill(m.text >= 4.5 ? "good" : "poor", `${fmt(m.text)}:1`)}</td></tr>`;
+		}).join("");
+		const table = document.getElementById("matrix");
+		table.innerHTML = `<thead>${head}</thead><tbody>${rows}</tbody>`;
+		table.querySelectorAll("tbody tr").forEach((tr) => {
+			const pick = () => { state.theme = tr.dataset.theme; update(); };
+			tr.addEventListener("click", pick);
+			tr.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+		});
+	}
+
+	function renderHues() {
+		const h = t().hth;
+		const th = DATA.themes[state.theme];
+		const rows = AREAS.map((a) => {
+			const f = DATA.hues[a];
+			const c = th.areas[a];
+			return `<tr><td><b>${L().areas[a]}</b></td><td><span class="swatch" style="background:${shown(c.strong)}"></span> <code>${c.strong}</code></td><td>${t().hueNames[a]}</td><td class="num">${f.hue}</td><td class="num">${signed(f.shift)}</td><td class="num">${f.chroma === undefined ? t().fromSet : fmt(f.chroma)}</td></tr>`;
+		}).join("");
+		const status = Object.entries(DATA.status).map(([k, s]) => `<tr><td>${t().statusNames[k]}</td><td><span class="swatch" style="background:${shown(s.color)}"></span> <code>${s.color}</code></td><td></td><td class="num">${s.hue}</td><td></td><td></td></tr>`).join("");
+		document.getElementById("hues").innerHTML = `<thead><tr><th>${h.area}</th><th>${h.color}</th><th>${h.name}</th><th>${h.hue}</th><th>${h.shift}</th><th>${h.chroma}</th></tr></thead><tbody>${rows}${status}</tbody>`;
+	}
+
+	function renderThemes() {
+		const box = document.getElementById("themes");
+		box.innerHTML = Object.entries(DATA.themes).map(([k, th]) =>
+			`<button type="button" class="chip" data-theme="${k}" id="set-${k}" aria-pressed="${k === state.theme}"><span class="dot" style="background:linear-gradient(135deg, ${shown(th.primary[500])} 50%, ${shown(th.secondary)} 50%)"></span>${L().themes[k]}</button>`).join("");
+		box.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => { state.theme = b.dataset.theme; update(); }));
+	}
+
+	function update() {
+		renderText();
+		renderThemes();
+		renderApp();
+		renderBars();
+		renderMatrix();
+		renderHues();
+		save();
+	}
+
+	document.querySelectorAll("#lang-seg button").forEach((b) => b.addEventListener("click", () => { state.lang = b.dataset.v; update(); }));
+	document.getElementById("vision").addEventListener("change", (e) => { vision = e.target.value; update(); });
+	update();
+})();
+</script>

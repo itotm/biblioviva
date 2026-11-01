@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "Lainat käynnissä",
+		"overdue": "Myöhässä",
+		"issuedToday": "Lainattu tänään",
+		"returnedToday": "Palautettu tänään",
+		"withoutCard": "Asiakkaat ilman tulostettua korttia",
+		"withoutPhoto": "Asiakkaat ilman valokuvaa",
+		"toClassify": "Luokiteltavat kirjat",
+		"pendingLabels": "Kirjat ilman tarroja"
+	},
+	"tilesTitle": "Kirjasto tänään",
+	"actions": {
+		"title": "Pikatoiminnot"
+	},
+	"dueWeek": {
+		"title": "Erääntyy tällä viikolla",
+		"none": "Yhtään lainaa ei erää {{day}} mennessä.",
+		"more": "ja {{count:plural; one:yksi lisää; other:{{count}} lisää;}}",
+		"due": "eräpäivä {{date}}"
+	},
+	"inventory": {
+		"title": "Inventointi",
+		"continue": "Jatka"
+	},
+	"install": {
+		"title": "Lisää aloitusnäyttöön",
+		"hint": "BiblioViva avautuu kuten sovellus, koko näytöllä, puhelimen kuvakkeesta.",
+		"install": "Asenna",
+		"fromMenu": "Avaa Firefoxin ⋮-valikko ja valitse ”Asenna” tai ”Lisää aloitusnäyttöön”.",
+		"later": "Ei nyt"
+	},
+	"upcoming": {
+		"title": "Lähestyvät päivämäärät",
+		"none": "Seuraavan {{days:plural; one:päivän; other:{{days}} päivän;}} aikana ei ole päivämääriä.",
+		"more": "ja {{count:plural; one:yksi lisää; other:{{count}} lisää;}}",
+		"open": "Avaa kalenteri"
+	}
+}

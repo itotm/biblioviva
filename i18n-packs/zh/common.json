@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "保存",
+		"cancel": "取消",
+		"close": "关闭",
+		"confirm": "确认",
+		"delete": "删除",
+		"edit": "编辑",
+		"search": "搜索",
+		"export": "导出",
+		"back": "返回",
+		"retry": "重试",
+		"backTo": "返回{{page}}",
+		"more": "更多操作"
+	},
+	"similar": {
+		"label": "相似",
+		"count": "另有 {{count}} 个相似结果，是通过纠正输入错误找到的",
+		"hint": "这是通过纠正输入错误找到的：请确认是所要查找的那一条。"
+	},
+	"status": {
+		"loading": "加载中…",
+		"error": "出现错误"
+	},
+	"statuses": {
+		"item": {
+			"available": "可借",
+			"onLoan": "在借",
+			"lost": "遗失",
+			"damaged": "损坏",
+			"inRepair": "维修中",
+			"withdrawn": "已注销",
+			"notForLoan": "仅供馆内阅览"
+		},
+		"loan": {
+			"open": "未归还",
+			"dueSoon": "即将到期",
+			"overdue": "逾期",
+			"returned": "已归还"
+		},
+		"patron": {
+			"active": "有效",
+			"anonymized": "已删除"
+		},
+		"print": {
+			"pending": "待打印",
+			"printed": "已打印"
+		}
+	},
+	"list": {
+		"selected": "已选择 {{count}} 项"
+	},
+	"scan": {
+		"label": "条码",
+		"placeholder": "扫描或输入代码",
+		"submit": "查找代码",
+		"camera": "摄像头",
+		"cameraTitle": "用摄像头扫描",
+		"errors": {
+			"empty": "没有输入代码。",
+			"item_check_digit": "复本条码的校验字符有误：请重新扫描。",
+			"card_check_digit": "读者证号的校验字符有误：请重新扫描。",
+			"isbn_check_digit": "ISBN 的校验位有误：请核对数字。",
+			"unrecognised": "无法识别代码：请确认扫码枪能够读取 Code 39 和 Code 128。"
+		},
+		"invalidRead": "代码无效（{{code}}）：正在读取。",
+		"invalidShort": "代码无效，正在重新读取…",
+		"useAnyway": "仍使用 {{code}}"
+	},
+	"camera": {
+		"start": "启动摄像头",
+		"stop": "关闭摄像头",
+		"switch": "切换摄像头",
+		"torch": "手电筒",
+		"snapshot": "拍照",
+		"device": "摄像头",
+		"starting": "正在启动摄像头…",
+		"errors": {
+			"insecure": "摄像头只能在安全连接（https）下使用：若在没有 Tailscale 的本地网络中打开，应用无法使用摄像头。请使用条码扫描枪或上传文件，或通过 Tailscale 地址打开应用。",
+			"denied": "没有权限：请在浏览器设置中允许使用摄像头，然后重试。",
+			"notFound": "此设备上找不到摄像头。",
+			"busy": "摄像头已被其他应用占用。",
+			"generic": "无法启动摄像头（{{message}}）。",
+			"timeout": "摄像头没有响应。请检查浏览器是否仍在请求权限，或此前是否已对本网站拒绝了权限（地址栏附近的图标）。"
+		},
+		"permissionHint": "如果浏览器请求使用摄像头的权限（通常在地址栏附近），请选择“允许”。"
+	},
+	"clipboard": {
+		"failed": "无法复制：请选中文字后手动复制。"
+	},
+	"form": {
+		"errorsTitle": "请检查标出的字段",
+		"field": "字段 {{field}}"
+	},
+	"confirm": {
+		"title": "确认？"
+	},
+	"export": {
+		"csv": "CSV（电子表格，文本）",
+		"ods": "ODS（LibreOffice / Excel）"
+	},
+	"demo": {
+		"panel": "本安装包含于 {{when}} 载入的示例数据：{{patrons}} {{patrons:plural; other:位读者;}}，{{biblios}} {{biblios:plural; other:种图书;}}，{{items}} {{items:plural; other:册;}}，{{loans}} {{loans:plural; other:笔借阅;}}。所有内容均为虚构：不涉及任何真实的人。"
+	},
+	"import": {
+		"header": "第一行是标题行",
+		"column": "第 {{n}} 列",
+		"ignore": "— 忽略 —",
+		"counts": {
+			"new": "新增 {{count}}",
+			"update": "待更新 {{count}}",
+			"unchanged": "无变化 {{count}}",
+			"error": "{{count}} {{count:plural; other:个错误;}}"
+		},
+		"onlyErrors": "只显示错误",
+		"info": "{{rows}} {{rows:plural; other:行;}} · 编码 {{encoding}} · 分隔符“{{delimiter}}”",
+		"steps": {
+			"upload": "文件",
+			"mapping": "列",
+			"preview": "检查",
+			"done": "完成"
+		},
+		"line": "行",
+		"status": "结果",
+		"reason": "详情",
+		"statuses": {
+			"new": "新增",
+			"update": "更新",
+			"unchanged": "无变化",
+			"error": "错误"
+		},
+		"errors": {
+			"empty": "文件为空。",
+			"tooLarge": "文件超过 {{mb}} MB。",
+			"noRows": "文件中没有找到任何行。",
+			"uploadGone": "已上传的文件不再可用：请重新上传。",
+			"notReady": "文件仍有错误：请再次检查。",
+			"mappingIncomplete": "缺少必填列：{{columns}}。"
+		},
+		"template": {
+			"title": "文件模板",
+			"hint": "请选择列：模板只包含标题行，逐行填写（另存为 CSV 的电子表格也可以使用）。",
+			"required": "必填",
+			"keys": "关键字段",
+			"keysHint": "用于识别已有的记录；可以省略。",
+			"optional": "选填",
+			"download": "下载模板",
+			"ifMissing": "缺失时：{{text}}。"
+		},
+		"groups": {
+			"required": "必填",
+			"key": "关键"
+		}
+	},
+	"words": {
+		"yes": "是",
+		"no": "否"
+	},
+	"password": {
+		"show": "显示密码",
+		"hide": "隐藏密码"
+	},
+	"demoPublic": {
+		"language": "语言",
+		"welcome": {
+			"title": "欢迎使用 BiblioViva 演示版",
+			"beta": "公开测试版",
+			"betaText": "BiblioViva 目前是公开测试版：功能已经稳定，但在 1.0 版本之前，更新后不保证仍与上一版本的数据和设置兼容。",
+			"intro": "BiblioViva 是管理学校图书馆的程序：借还、目录、带照片和读者证的读者、标签、打印和报表。这是公开演示版：所有功能均可试用。",
+			"contents": "演示版中是一所虚构的小学：{{patrons}} {{patrons:plural; other:位学生和教师;}}，{{biblios}} {{biblios:plural; other:种图书;}}，{{items}} {{items:plural; other:册;}}，正在进行的 {{openLoans}} {{openLoans:plural; other:笔借阅;}}，其中 {{overdueLoans}} 笔逾期。姓名和照片均为虚构：不涉及任何真实的人。",
+			"reset": "每天 {{time}}，演示版会恢复到初始状态。可以尝试更改配置，但更改不会被保存。",
+			"examples": "在演示版中，文字和图片会被示例替换：每项操作都可以完整试用，但输入或拍摄的内容不会保留，其他访问者也看不到。导入功能只接受示例文件，可从各导入页面下载。",
+			"accountsTitle": "使用哪个账户登录",
+			"accountsHint": "与图书馆中一样，每个账户只看到其角色的工作内容。用户名和密码填写在上方的表单中。",
+			"password": "所有账户的密码相同："
+		},
+		"accounts": {
+			"admin": {
+				"name": "系统管理",
+				"does": "可以看到全部内容：除其他账户的工作外，还包括配置、工作人员账户、备份、班级以及升入下一学年。"
+			},
+			"prestiti": {
+				"name": "借阅管理",
+				"does": "借还台：借出、归还和续借，跟进逾期借阅并打印催还通知。"
+			},
+			"catalogo": {
+				"name": "编目",
+				"does": "图书和复本、从 SBN 查找书目记录（此处为模拟）、封面、分类和标签。"
+			},
+			"tessere": {
+				"name": "读者证与照片",
+				"does": "学生和教师、照片，以及各班的照片信息采集，打印读者证。"
+			},
+			"report": {
+				"name": "报表",
+				"does": "借阅、目录和读者的统计，表格导出。"
+			}
+		},
+		"blocked": {
+			"config": "演示版中不保存配置：可以全部试用，但更改不会被写入。",
+			"restore": "演示版中不能从备份恢复：演示数据每晚自动重新生成。",
+			"configImport": "演示版中不能导入配置：演示版的配置对所有访问者都相同。",
+			"pictures": "演示版不上传班级图片：请用示例班级图片试用信息采集。",
+			"sqlReports": "演示版中不能使用 SQL 编写的报表：请试用向导式报表。",
+			"importSize": "演示版中，导入的文件最大为 1 MB。",
+			"printSize": "演示版中一次最多打印 3 张纸：请选择较少的复本或读者。",
+			"importExample": "演示版只导入其示例文件：请使用“下载模板”按钮下载后，原样上传。",
+			"notesLimit": "演示版中每天只能写入少量备注。",
+			"demoData": "演示版中，示例数据会保留到每晚重置。",
+			"backups": "演示版中不能手动备份：演示数据每晚自动重新生成。",
+			"archives": "演示版中不能下载归档和备份：演示数据和配置每晚自动重新生成。",
+			"languagePacks": "演示版中不能下载语言包：演示版只有意大利语和英语。"
+		},
+		"example": {
+			"note": "演示 – {{when}} 的备注",
+			"comment": "{{when}} 的演示备注",
+			"book": "{{when}} 的演示图书",
+			"wish": "{{when}} 的演示荐购",
+			"class": "{{when}} 的演示班级",
+			"printList": "{{when}} 的演示清单",
+			"inventory": "{{when}} 的演示盘点",
+			"reason": "{{when}} 的演示原因",
+			"date": "{{when}} 的演示日期"
+		},
+		"replaced": "在演示版中，文字和图片会被示例替换：保存已完成，但保留的是示例内容。",
+		"tooMany": "短时间内请求过多：请一分钟后再试。",
+		"refused": {
+			"title": "演示版中不可用",
+			"busyTitle": "请求过多",
+			"back": "返回 BiblioViva"
+		}
+	}
+}

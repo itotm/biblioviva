@@ -1,0 +1,39 @@
+{
+	"title": "Rapoarte",
+	"categories": {
+		"loans": "Împrumuturi",
+		"books": "Cărți",
+		"patrons": "Cititori",
+		"ops": "Activitate"
+	},
+	"restricted": "Doar pentru administratori",
+	"custom": "Ale școlii",
+	"chart": "Cu grafic",
+	"problemsTitle": "Fișiere de raport neîncărcate",
+	"problemsHint": "Aceste fișiere din dosarul rapoartelor au o eroare și nu apar în listă:",
+	"params": "Parametri",
+	"run": "Actualizați",
+	"all": "Toate",
+	"from": "de la",
+	"to": "la",
+	"patronTypes": {
+		"student": "Elevi",
+		"teacher": "Profesori"
+	},
+	"rows": "{{count}} {{count:plural; one:rând; few:rânduri; other:de rânduri;}}",
+	"ms": "în {{ms}} ms",
+	"truncated": "{{count:plural; one:Este afișat doar primul rând. Restrângeți parametrii.; few:Sunt afișate doar primele {{count}} rânduri. Restrângeți parametrii.; other:Sunt afișate doar primele {{count}} de rânduri. Restrângeți parametrii.;}}",
+	"empty": "Niciun rezultat cu acești parametri.",
+	"print": "Tipărire",
+	"printedOn": "Tipărit la {{date}}",
+	"errors": {
+		"required": "Lipsește „{{label}}”.",
+		"invalid": "Valoarea câmpului „{{label}}” nu este validă."
+	},
+	"back": "Toate rapoartele",
+	"noParams": "Acest raport nu are parametri.",
+	"special": {
+		"teachers": "Profesori",
+		"total": "Total"
+	}
+}

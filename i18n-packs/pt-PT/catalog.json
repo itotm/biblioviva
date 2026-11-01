@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "Catálogo",
+		"search": "Pesquisar por título, autor ou ISBN…",
+		"new": "Novo livro",
+		"empty": "Nenhum livro corresponde aos filtros.",
+		"countFiltered": "{{shown}} {{shown:plural; one:título corresponde; other:títulos correspondem;}} aos filtros",
+		"clearFilters": "Limpar filtros",
+		"filters": {
+			"kind": "Tipo",
+			"genre": "Género",
+			"class": "Classificação",
+			"readingLevel": "Nível",
+			"itemType": "Material",
+			"series": "Série",
+			"all": "Todos",
+			"allF": "Todas",
+			"withdrawn": "Mostrar também os livros retirados"
+		},
+		"columns": {
+			"title": "Título",
+			"series": "Série",
+			"author": "Autor",
+			"year": "Ano",
+			"isbn": "ISBN",
+			"classification": "Classificação",
+			"copies": "Exemplares",
+			"callNumber": "Cota",
+			"acquiredAt": "Aquisição"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "Pesquisar no catálogo",
+		"startHint": "Pesquisar por título, autor, editora, código ou ISBN, ou com os filtros."
+	},
+	"kinds": {
+		"fiction": "Ficção",
+		"nonfiction": "Não ficção"
+	},
+	"fields": {
+		"title": "Título",
+		"subtitle": "Subtítulo",
+		"originalTitle": "Título original",
+		"originalTitleHint": "Só se o livro for uma tradução: o título da obra na língua original.",
+		"responsibility": "Menção de responsabilidade (como na folha de rosto)",
+		"author": "Autor",
+		"publisher": "Editora",
+		"publicationPlace": "Local",
+		"publicationYear": "Ano",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN (não é um ISBN)",
+		"physicalDescription": "Descrição física",
+		"series": "Série",
+		"seriesNumber": "Número na série",
+		"seriesHint": "Por exemplo Harry Potter e 3. As séries já presentes no catálogo aparecem enquanto se escreve.",
+		"dewey": "Dewey (do SBN)",
+		"kind": "Tipo",
+		"genre": "Género",
+		"classCode": "Classificação",
+		"readingLevel": "Nível de leitura",
+		"subjects": "Assuntos",
+		"notes": "Notas",
+		"authorHint": "Apelido, Nome. Use os valores rápidos quando não há um autor pessoal.",
+		"subjectsHint": "Um por linha ou separados por vírgula.",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "Novo livro",
+		"editTitle": "Editar registo",
+		"create": "Guardar o registo",
+		"save": "Guardar as alterações",
+		"identity": "Registo",
+		"publication": "Publicação",
+		"classification": "Classificação",
+		"more": "Mais dados",
+		"quickPicks": "Valores rápidos",
+		"unknownPublisher": "Editora desconhecida",
+		"unknownPlace": "Local desconhecido",
+		"singleCopy": "Exemplar {{barcode}}",
+		"singleCopyHint": "O registo tem um só exemplar: os seus dados editam-se aqui e guardam-se junto com o registo."
+	},
+	"picker": {
+		"kind": "Que tipo de livro é?",
+		"fiction": "Ficção",
+		"nonfiction": "Não ficção",
+		"genre": "Escolher o género",
+		"class": "Escolher o assunto",
+		"readingLevel": "Nível de leitura",
+		"anyClass": "Nenhuma",
+		"back": "Voltar aos assuntos principais",
+		"children": "Assuntos de {{label}}",
+		"selected": "Selecionado: {{label}}",
+		"parentOnly": "Usar «{{label}}» em geral",
+		"later": "Classificar mais tarde",
+		"laterHint": "O livro vai para a lista «Por classificar»: os seus exemplares não são emprestados e a faixa da lombada não é impressa enquanto não for classificado."
+	},
+	"detail": {
+		"heading": "Registo do livro",
+		"tabs": {
+			"copies": "Exemplares",
+			"details": "Detalhes"
+		},
+		"copies": "{{available}} {{available:plural; one:disponível; other:disponíveis;}} de {{total}}",
+		"noCopies": "Ainda não há exemplares: para o emprestar, é preciso acrescentar um.",
+		"seriesLink": "Todos os livros da série «{{series}}»",
+		"edit": "Editar",
+		"delete": "Eliminar registo",
+		"addCopies": "Acrescentar exemplares",
+		"deleteTitle": "Eliminar o registo «{{title}}»?",
+		"deleteDescription": "O registo sai do catálogo. Só é possível sem exemplares.",
+		"deleted": "Registo eliminado",
+		"hasItems": "O registo tem ainda {{count}} {{count:plural; one:exemplar; other:exemplares;}}: {{count:plural; one:é preciso retirá-lo ou eliminá-lo; other:é preciso retirá-los ou eliminá-los;}} primeiro.",
+		"columns": {
+			"barcode": "Código",
+			"callNumber": "Cota",
+			"itemType": "Material",
+			"readingLevel": "Nível",
+			"status": "Estado",
+			"borrower": "Emprestado a",
+			"acquisition": "Adquirido em",
+			"labels": "Etiquetas"
+		},
+		"dueOn": "vence a {{date}}",
+		"identifiers": "Identificadores",
+		"source": "Origem: {{source}}",
+		"created": "Criado em {{when}}",
+		"updated": "Última alteração em {{when}}",
+		"onLoan": "Emprestado"
+	},
+	"item": {
+		"addTitle": "Acrescentar exemplares",
+		"copies": "Número de exemplares",
+		"itemType": "Material",
+		"callNumber": "Cota",
+		"callNumberHint": "Sugerida a partir da classificação; pode ser alterada.",
+		"readingLevel": "Nível do exemplar",
+		"enumeration": "Volume / número",
+		"acquisitionDate": "Data de aquisição",
+		"notes": "Notas sobre o exemplar",
+		"notForLoan": "Só consulta (não se empresta)",
+		"add": "Acrescentar",
+		"added": "{{count}} {{count:plural; one:exemplar acrescentado; other:exemplares acrescentados;}}: {{barcodes}}",
+		"editTitle": "Editar o exemplar {{barcode}}",
+		"save": "Guardar",
+		"saved": "Exemplar atualizado",
+		"status": "Alterar estado",
+		"statusTitle": "Estado do exemplar {{barcode}}",
+		"newStatus": "Novo estado",
+		"reason": "Motivo (facultativo, fica registado)",
+		"statusSaved": "Estado atualizado",
+		"onLoan": "O exemplar está emprestado: registe primeiro a devolução.",
+		"delete": "Eliminar exemplar",
+		"deleteTitle": "Eliminar o exemplar {{barcode}}?",
+		"deleteDescription": "Só para erros de catalogação: um exemplar que já foi emprestado não pode ser eliminado, deve ser retirado.",
+		"deleted": "Exemplar eliminado",
+		"hasLoans": "O exemplar tem empréstimos registados: deve ser retirado, não eliminado.",
+		"labelsTitle": "Etiquetas do exemplar {{barcode}}"
+	},
+	"errors": {
+		"isbnInvalid": "ISBN inválido (verifique os algarismos)",
+		"isbnTaken": "Já existe um registo com este ISBN",
+		"issnInvalid": "ISSN inválido",
+		"eanInvalid": "EAN inválido",
+		"yearImplausible": "Ano não plausível",
+		"genreRequired": "Escolha o género",
+		"genreUnknown": "Género não existente na configuração",
+		"genreNotForNonfiction": "A não ficção não tem género",
+		"classCodeRequired": "Escolha o assunto",
+		"classCodeUnknown": "Assunto não existente na configuração",
+		"classCodeNotForFiction": "A ficção não tem assunto",
+		"readingLevelNotAllowed": "Aqui não se prevê o nível de leitura",
+		"readingLevelOutOfRange": "Nível de leitura não previsto pela configuração",
+		"itemTypeUnknown": "Material não previsto pela configuração",
+		"acquisitionDateInvalid": "Data inválida (AAAA-MM-DD)",
+		"copiesOutOfRange": "De 1 a 100 exemplares de cada vez"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "Fornecedor de teste"
+		},
+		"errors": {
+			"unreachable": "O serviço não está acessível. Verifique a ligação à Internet e tente mais tarde.",
+			"timeout": "O serviço não respondeu a tempo. Tente mais tarde.",
+			"protocol": "O serviço deu uma resposta inesperada. Os dados podem ser introduzidos manualmente.",
+			"http": "O serviço respondeu com um erro. Tente mais tarde.",
+			"rate_limited": "O serviço recusou o pedido por excesso de consultas. Tente mais tarde.",
+			"not_configured": "O serviço não está configurado: falta uma definição (por exemplo a chave da API).",
+			"spawn": "O programa yaz-client não está disponível neste servidor. Avise o administrador."
+		},
+		"noHits": "Nenhum resultado de {{provider}}.",
+		"hits": "{{count}} {{count:plural; one:resultado; other:resultados;}} de {{provider}}",
+		"fromCache": "da cache"
+	},
+	"fastAdd": {
+		"title": "Novo livro",
+		"steps": {
+			"code": "Código",
+			"lookup": "Pesquisa",
+			"form": "Registo e exemplares",
+			"done": "Concluído"
+		},
+		"code": {
+			"heading": "Ler o código de barras",
+			"label": "ISBN ou EAN",
+			"placeholder": "978…",
+			"material": "Material",
+			"noCode": "Sem código",
+			"noCodeHint": "Pesquisar pelo título e pelo autor, ou preencher o registo manualmente.",
+			"manual": "Preencher manualmente",
+			"notACode": "O código lido não é um ISBN nem um EAN: verifique os algarismos ou escolha «Sem código».",
+			"eanNotIsbn": "EAN {{ean}} lido: não é um ISBN, por isso o registo tem de ser preenchido manualmente.",
+			"cameraNotIsbn": "Não é um ISBN: enquadre o código de barras do livro"
+		},
+		"search": {
+			"heading": "Pesquisar pelo título e pelo autor",
+			"title": "Título",
+			"author": "Autor",
+			"submit": "Pesquisar",
+			"empty": "Escreva pelo menos o título ou o autor."
+		},
+		"duplicate": {
+			"heading": "Este ISBN já está no catálogo",
+			"copies": "{{count}} {{count:plural; one:exemplar; other:exemplares;}}",
+			"addCopy": "Acrescentar exemplar",
+			"open": "Abrir o registo",
+			"another": "Ler outro código"
+		},
+		"lookup": {
+			"searching": "Pesquisa em curso em {{providers}}…",
+			"best": "Mais completo",
+			"heading": "Registos encontrados",
+			"pick": "Usar este registo",
+			"none": "Nenhum registo encontrado. O registo pode ser preenchido manualmente.",
+			"manual": "Introduzir manualmente",
+			"bySearch": "Pesquisar pelo título",
+			"retry": "Tentar de novo",
+			"another": "Novo código",
+			"source": "Origem: {{provider}}",
+			"providerOk": "{{count}} {{count:plural; one:registo; other:registos;}}",
+			"providerCached": "da cache",
+			"failed": "Erro"
+		},
+		"form": {
+			"heading": "Verificar o registo e acrescentar os exemplares",
+			"rescan": "Ler outro código",
+			"bestOf": "O mais completo dos {{count}} registos encontrados. Verifique o ano e a descrição no exemplar.",
+			"otherRecords": "{{count:plural; one:Outro registo; other:Outros registos;}} ({{count}})",
+			"fromSource": "Registo de {{provider}}: verifique os dados antes de guardar.",
+			"manualSource": "Registo preenchido manualmente.",
+			"copiesSection": "Exemplares",
+			"copies": "Número de exemplares",
+			"itemType": "Material",
+			"callNumber": "Cota",
+			"readingLevel": "Nível dos exemplares",
+			"acquisitionDate": "Data de aquisição",
+			"save": "Guardar registo e exemplares",
+			"deweySuggested": "Assunto proposto a partir do número Dewey {{dewey}}."
+		},
+		"done": {
+			"heading": "Registo guardado",
+			"summary": "«{{title}}» com {{count}} {{count:plural; one:exemplar; other:exemplares;}}",
+			"summaryCopies": "{{count}} {{count:plural; one:exemplar acrescentado; other:exemplares acrescentados;}} a «{{title}}»",
+			"barcodes": "Códigos de barras dos exemplares",
+			"printLabels": "Imprimir etiquetas",
+			"addToList": "Acrescentar à lista de etiquetas",
+			"open": "Abrir o registo",
+			"another": "Acrescentar outro"
+		},
+		"cover": {
+			"title": "Capa",
+			"alt": "Capa do livro",
+			"searching": "Pesquisa da capa na Internet…",
+			"found": "Encontrada em {{provider}}: é guardada com o registo. Se estiver errada, fotografe a do próprio livro.",
+			"photo": "Fotografia da capa: é guardada com o registo.",
+			"none": "Nenhuma capa encontrada na Internet: pode ser fotografada.",
+			"empty": "Sem capa: pode ser fotografada.",
+			"take": "Fotografar a capa",
+			"replace": "Substituir por uma fotografia",
+			"remove": "Retirar",
+			"saving": "A guardar a capa…",
+			"failed": "A capa não foi guardada: pode ser acrescentada a partir do registo do livro."
+		}
+	},
+	"cover": {
+		"title": "Capa",
+		"take": "Fotografar a capa",
+		"upload": "Carregar um ficheiro",
+		"change": "Alterar capa",
+		"delete": "Remover capa",
+		"deleteTitle": "Remover a capa?",
+		"deleteDescription": "A imagem é eliminada do servidor; pode ser fotografada uma nova.",
+		"shoot": "Fotografar",
+		"loading": "A carregar o módulo de endireitamento ({{loaded}} de {{total}} MB), só na primeira utilização.",
+		"loadingShort": "A carregar o módulo de endireitamento ({{loaded}} MB), só na primeira utilização.",
+		"loadFailed": "Não foi possível carregar o módulo de endireitamento. Verifique a ligação e tente de novo.",
+		"detecting": "A procurar as margens da capa…",
+		"notFound": "Margens não encontradas automaticamente: arraste os cantos sobre a capa.",
+		"adjustHint": "Arraste os quatro cantos para as margens da capa e depois endireite.",
+		"straighten": "Endireitar",
+		"result": "Resultado",
+		"use": "Usar esta capa",
+		"retake": "Refazer",
+		"cancel": "Cancelar",
+		"saved": "Capa guardada",
+		"deleted": "Capa removida",
+		"placeholder": "Sem capa",
+		"alt": "Capa de {{title}}",
+		"cameraHint": "Enquadre a capa inteira, mesmo de lado: é endireitada depois da fotografia.",
+		"errors": {
+			"too_large": "Ficheiro demasiado grande: o limite é {{maxMb}} MB.",
+			"not_an_image": "O ficheiro não é uma imagem legível.",
+			"unsupported_format": "Formato de imagem não suportado (use JPEG, PNG, WebP ou HEIC).",
+			"empty": "Nenhum ficheiro selecionado."
+		},
+		"download": "Transferir capa",
+		"downloading": "Pesquisa da capa na Internet…",
+		"downloaded": "Capa transferida de {{provider}}",
+		"downloadNotFound": "Nenhuma capa encontrada na Internet para este ISBN: pode ser fotografada.",
+		"downloadNoIsbn": "O registo não tem ISBN: a capa tem de ser fotografada."
+	},
+	"export": {
+		"copiesTotal": "Exemplares",
+		"copiesAvailable": "Disponíveis",
+		"callNumber": "Cota",
+		"acquiredAt": "Aquisição"
+	},
+	"import": {
+		"title": "Importar o catálogo",
+		"upload": {
+			"file": "Ficheiro CSV",
+			"hint": "Uma linha por exemplar: os dados do título repetem-se nas linhas dos seus exemplares. Título, autor e editora são obrigatórios. Use os cabeçalhos do modelo, que pode ser transferido abaixo com as colunas necessárias. Para migrar do Koha, use a extração descrita no guia do administrador.",
+			"submit": "Carregar"
+		},
+		"mapping": {
+			"uncertain": "Colunas não reconhecidas: indique o campo de cada uma antes de continuar.",
+			"remembered": "Colunas memorizadas da última importação deste ficheiro.",
+			"specialValues": "Valores especiais quando faltam o autor ou a editora («{{author}}», «{{publisher}}»)",
+			"specialValuesHint": "Sem esta escolha, as linhas sem autor ou editora são erros.",
+			"validate": "Verificar o ficheiro",
+			"without": {
+				"biblioKey": "Sem a coluna biblio_key, os exemplares do mesmo livro agrupam-se pelo ISBN; as linhas sem ISBN são um título cada uma.",
+				"barcode": "Sem a coluna barcode, os códigos dos exemplares são gerados: depois da importação, imprima as etiquetas.",
+				"classification": "Sem a coluna classification, os livros vão para a lista «Por classificar»: os seus exemplares não são emprestados enquanto não forem classificados."
+			}
+		},
+		"fields": {
+			"biblioKey": "Chave do título (biblionumber)",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "Título",
+			"subtitle": "Subtítulo",
+			"originalTitle": "Título original",
+			"responsibility": "Menção de responsabilidade",
+			"author": "Autor",
+			"publisher": "Editora",
+			"publicationPlace": "Local de publicação",
+			"publicationYear": "Ano",
+			"physicalDescription": "Descrição física",
+			"series": "Série",
+			"seriesNumber": "Número na série",
+			"dewey": "Dewey",
+			"classification": "Classificação (género ou assunto, ccode do Koha)",
+			"readingLevel": "Nível de leitura",
+			"subjects": "Assuntos",
+			"notes": "Notas do título",
+			"barcode": "Código de barras do exemplar",
+			"callNumber": "Cota",
+			"itemType": "Material",
+			"enumeration": "Volume",
+			"status": "Estado",
+			"notForLoan": "Excluído do empréstimo",
+			"acquisitionDate": "Data de aquisição",
+			"itemNotes": "Notas do exemplar"
+		},
+		"preview": {
+			"ready": "Sem erros: a importação é possível.",
+			"blocked": "Corrija os erros no ficheiro e verifique de novo: nada é importado com erros.",
+			"nothing": "Todos os exemplares do ficheiro já estão no catálogo: não há nada a importar.",
+			"titles": "{{new}} {{new:plural; one:título novo; other:títulos novos;}}, {{existing}} já no catálogo (os seus exemplares são acrescentados)",
+			"columns": {
+				"title": "Título",
+				"barcode": "Código",
+				"classification": "Classificação"
+			},
+			"question": {
+				"title": "Exemplares do mesmo título com níveis diferentes",
+				"text": "Em {{count}} {{count:plural; one:título; other:títulos;}} os exemplares têm níveis de leitura diferentes. O nível pode ficar em cada exemplar em vez de no título: é a definição «nível por exemplar», que vale para todo o catálogo e passa o nível dos títulos já existentes para os seus exemplares.",
+				"yes": "Sim, nível por exemplar",
+				"no": "Não, são erros a corrigir"
+			},
+			"commit": "Importar",
+			"back": "Voltar às colunas",
+			"generatedBarcodes": "{{count}} {{count:plural; one:exemplar; other:exemplares;}} sem código: o código é gerado e depois são impressas as etiquetas.",
+			"toClassify": "{{count}} {{count:plural; one:título novo; other:títulos novos;}} sem classificação: {{count:plural; one:irá; other:irão;}} para «Por classificar»."
+		},
+		"reasons": {
+			"tooLong": "Texto demasiado longo na coluna {{column}}: no máximo {{max}} caracteres",
+			"isbnInvalid": "ISBN inválido: «{{value}}»",
+			"classificationUnknown": "Classificação não existente na configuração: «{{value}}»",
+			"barcodeInvalid": "Código de barras com caracteres não permitidos: «{{value}}»",
+			"barcodeCheckDigit": "Código de barras com o carácter de controlo errado: «{{value}}»",
+			"barcodeDuplicateInFile": "Código de barras já usado na linha {{line}}",
+			"barcodeTaken": "O código {{value}} já pertence a outro exemplar do catálogo",
+			"barcodeIsCard": "O código {{value}} é ou parece o número de um cartão: um exemplar não pode ter um código de cartão",
+			"statusUnknown": "Estado não reconhecido: «{{value}}» (disponível, perdido, danificado, em reparação, retirado)",
+			"notForLoanUnknown": "Valor não reconhecido para «excluído do empréstimo»: «{{value}}» (sim/não)",
+			"dateInvalid": "Data inválida: «{{value}}» (AAAA-MM-DD ou DD/MM/AAAA)",
+			"authorMissing": "Falta o autor (com «valores especiais» passa a Anónimo)",
+			"publisherMissing": "Falta a editora (com «valores especiais» passa a s.n.)",
+			"titleMissing": "Falta o título",
+			"groupConflict": "Mesma chave da linha {{line}}, mas título diferente",
+			"classQuestion": "Exemplares com níveis diferentes ({{classes}}): responda à pergunta abaixo",
+			"classDiffers": "Exemplares com níveis diferentes ({{classes}}) sem nível por exemplar",
+			"copyExists": "Exemplar já no catálogo: é ignorado",
+			"mergedIntoExisting": "Acrescentado ao título já no catálogo (mesma chave ou mesmo ISBN)"
+		},
+		"done": {
+			"title": "Catálogo importado",
+			"summary": "{{titlesCreated}} {{titlesCreated:plural; one:título novo; other:títulos novos;}}, {{copiesCreated}} {{copiesCreated:plural; one:exemplar acrescentado; other:exemplares acrescentados;}} ({{titlesMerged}} {{titlesMerged:plural; one:título já presente; other:títulos já presentes;}}, {{copiesSkipped}} {{copiesSkipped:plural; one:exemplar ignorado; other:exemplares ignorados;}}).",
+			"classPerItem": "O nível por exemplar foi ativado.",
+			"batch": "Importação n.º {{id}}: o ficheiro original fica guardado.",
+			"labels": "Imprimir as etiquetas dos exemplares sem código",
+			"open": "Ir para o catálogo",
+			"again": "Importar outro ficheiro"
+		},
+		"columns": {
+			"title": {
+				"hint": "O título do livro."
+			},
+			"author": {
+				"hint": "Apelido, Nome; deixado vazio é um erro, salvo «valores especiais»."
+			},
+			"publisher": {
+				"hint": "A editora; vazia como para o autor."
+			},
+			"biblioKey": {
+				"hint": "O código do título no programa antigo (biblionumber do Koha): mantém os exemplares juntos.",
+				"missing": "os exemplares agrupam-se pelo ISBN"
+			},
+			"barcode": {
+				"hint": "O código de barras que já está no exemplar.",
+				"missing": "o código é gerado e as etiquetas devem ser impressas"
+			},
+			"classification": {
+				"hint": "O código do género (ficção) ou do assunto (não ficção).",
+				"missing": "o livro vai para «Por classificar»"
+			},
+			"readingLevel": {
+				"hint": "O nível de leitura (ficção)."
+			},
+			"isbn": {
+				"hint": "ISBN-10 ou ISBN-13."
+			},
+			"issn": {
+				"hint": "Para as publicações periódicas."
+			},
+			"ean": {
+				"hint": "O código EAN de DVD e de outros materiais."
+			},
+			"subtitle": {
+				"hint": "O subtítulo."
+			},
+			"originalTitle": {
+				"hint": "Só para as traduções: o título na língua original."
+			},
+			"responsibility": {
+				"hint": "Ilustradores, tradutores…"
+			},
+			"publicationPlace": {
+				"hint": "O local de publicação."
+			},
+			"publicationYear": {
+				"hint": "O ano de publicação."
+			},
+			"physicalDescription": {
+				"hint": "Páginas, ilustrações, formato."
+			},
+			"series": {
+				"hint": "A série (não a coleção da editora)."
+			},
+			"seriesNumber": {
+				"hint": "O número na série."
+			},
+			"dewey": {
+				"hint": "O número Dewey, só como referência."
+			},
+			"subjects": {
+				"hint": "Palavras-chave separadas por ; ou ,."
+			},
+			"notes": {
+				"hint": "Notas do título."
+			},
+			"callNumber": {
+				"hint": "A cota; se faltar, é proposta."
+			},
+			"itemType": {
+				"hint": "O material (livro, dvd…); se faltar, o primeiro configurado."
+			},
+			"enumeration": {
+				"hint": "O volume, para as obras em vários volumes."
+			},
+			"status": {
+				"hint": "disponível, perdido, danificado, em reparação, retirado."
+			},
+			"notForLoan": {
+				"hint": "1 ou sim para os exemplares de consulta."
+			},
+			"acquisitionDate": {
+				"hint": "A data de aquisição; se faltar, a data de hoje."
+			},
+			"itemNotes": {
+				"hint": "Notas do exemplar."
+			}
+		}
+	},
+	"batch": {
+		"selected": "Alterar os exemplares dos selecionados",
+		"title": "Alterar os exemplares",
+		"scope": "{{count}} {{count:plural; one:exemplar; other:exemplares;}}",
+		"operation": "O que alterar",
+		"operations": {
+			"status": "Estado",
+			"itemType": "Material",
+			"notForLoan": "Excluído do empréstimo",
+			"readingLevel": "Nível do exemplar",
+			"acquisitionDate": "Data de aquisição"
+		},
+		"value": "Novo valor",
+		"yes": "Sim",
+		"no": "Não",
+		"noClass": "Nenhum nível",
+		"reason": "Motivo",
+		"reasonHint": "Obrigatório para perdidos e retirados: fica no registo de cada exemplar.",
+		"check": "Verificar",
+		"apply": "Aplicar a {{count}} {{count:plural; one:exemplar; other:exemplares;}}",
+		"plan": {
+			"changes": "{{count}} {{count:plural; one:exemplar altera-se; other:exemplares alteram-se;}}",
+			"onLoan": "{{count}} {{count:plural; one:emprestado fica como está (deve ser devolvido primeiro); other:emprestados ficam como estão (devem ser devolvidos primeiro);}}",
+			"unchanged": "{{count}} {{count:plural; one:já tem; other:já têm;}} este valor",
+			"notFound": "{{count}} {{count:plural; one:já não existe; other:já não existem;}}",
+			"notAllowed": "{{count}} {{count:plural; one:não é de ficção: o nível não se aplica; other:não são de ficção: o nível não se aplica;}}",
+			"none": "Nenhum exemplar a alterar."
+		},
+		"excludedTitle": "Exemplares que ficam como estão",
+		"done": "{{count}} {{count:plural; one:exemplar alterado; other:exemplares alterados;}}",
+		"errors": {
+			"reasonRequired": "Escreva o motivo: é obrigatório para perdidos e retirados.",
+			"itemTypeUnknown": "Material não previsto pela configuração.",
+			"readingLevelNotAllowed": "O nível por exemplar não está ativado.",
+			"readingLevelOutOfRange": "Nível de leitura não previsto pela configuração.",
+			"dateInvalid": "Data inválida.",
+			"statusUnknown": "Estado inválido.",
+			"classificationUnknown": "Escolha um género ou um assunto da configuração."
+		},
+		"reclassify": {
+			"button": "Reclassificar",
+			"title": "Reclassificar os títulos selecionados",
+			"scope": "{{count}} {{count:plural; one:título; other:títulos;}}",
+			"resuggest": "Reescrever as cotas dos exemplares a partir da nova classificação",
+			"labelsHint": "As faixas das lombadas (e as etiquetas, se a cota mudar) voltam a estar entre as que se imprimem.",
+			"changes": "{{count}} {{count:plural; one:título altera-se; other:títulos alteram-se;}}",
+			"apply": "Reclassificar {{count}} {{count:plural; one:título; other:títulos;}}",
+			"done": "{{count}} {{count:plural; one:título reclassificado; other:títulos reclassificados;}}, {{calls}} {{calls:plural; one:cota reescrita; other:cotas reescritas;}}"
+		}
+	},
+	"search": {
+		"suggest": "O código {{barcode}} é um exemplar de «{{title}}».",
+		"openSuggest": "Abrir o registo",
+		"available": "Só disponíveis",
+		"yearFrom": "Ano de",
+		"yearTo": "Ano a",
+		"copiesAvailable": "{{available}} de {{total}} disponíveis",
+		"noCopies": "Nenhum exemplar"
+	},
+	"inventory": {
+		"title": "Inventário",
+		"defaultName": "Inventário",
+		"emptyTitle": "Nenhum inventário em curso",
+		"emptyHint": "Inicie uma campanha e leia os exemplares estante a estante: no fim, os que nunca foram lidos ficam marcados como perdidos.",
+		"name": "Nome da campanha",
+		"start": "Nova campanha",
+		"started": "Iniciada em {{when}}",
+		"overall": "Toda a biblioteca",
+		"progress": "{{seen}} de {{expected}} ({{percent}}%)",
+		"counts": "{{scanned}} {{scanned:plural; one:exemplar lido; other:exemplares lidos;}} · {{misplaced}} fora do lugar · {{found}} {{found:plural; one:reencontrado; other:reencontrados;}}",
+		"byShelf": "Progresso por estante",
+		"noShelf": "Sem cota",
+		"scanTitle": "Ler os exemplares",
+		"shelf": "Estante",
+		"shelfHint": "Por exemplo B ou 590: os exemplares com outra cota são assinalados como fora do lugar.",
+		"scanLabel": "Código do exemplar",
+		"camera": "Ler com a câmara",
+		"outcomes": {
+			"seen": "{{title}} ({{barcode}}): visto.",
+			"again": "{{title}} ({{barcode}}): já lido {{when}}.",
+			"misplaced": "{{title}} ({{barcode}}): fora do lugar; deve ser colocado de novo segundo a cota.",
+			"found": "{{title}} ({{barcode}}): estava perdido e foi reencontrado; está de novo disponível.",
+			"onLoan": "{{title}} ({{barcode}}): consta como emprestado; registe a devolução no balcão.",
+			"withdrawn": "{{title}} ({{barcode}}): exemplar retirado, a retirar da estante.",
+			"unknown": "{{code}}: nenhum exemplar tem este código."
+		},
+		"missing": "Ainda por encontrar ({{count}})",
+		"allShelves": "Todas as estantes",
+		"allTypes": "Todos os materiais",
+		"noneMissing": "Todos os exemplares previstos foram vistos.",
+		"more": "e {{count}} {{count:plural; one:outro; other:outros;}}: para {{count:plural; one:o ver; other:os ver todos;}}, exporte a lista.",
+		"close": "Fechar inventário",
+		"closeTitle": "Fechar o inventário?",
+		"closeHint": "{{count}} {{count:plural; one:exemplar nunca visto será marcado como perdido; other:exemplares nunca vistos serão marcados como perdidos;}}. A campanha pode ser reaberta no prazo de uma semana para desfazer a operação.",
+		"closedTitle": "Inventário fechado",
+		"summary": "{{seen}} de {{expected}} {{expected:plural; one:exemplar visto; other:exemplares vistos;}}, {{lost}} {{lost:plural; one:marcado como perdido; other:marcados como perdidos;}}, {{found}} {{found:plural; one:reencontrado; other:reencontrados;}}, {{onLoan}} emprestados, {{misplaced}} fora do lugar.",
+		"history": "Campanhas anteriores",
+		"reopen": "Reabrir",
+		"errors": {
+			"alreadyOpen": "Já há um inventário em curso.",
+			"notOpen": "Este inventário está fechado.",
+			"notFound": "Inventário não encontrado.",
+			"tooLate": "Só pode ser reaberto no prazo de uma semana após o fecho.",
+			"badName": "Dê um nome à campanha.",
+			"badNotes": "As notas da campanha podem ter no máximo 500 caracteres."
+		},
+		"cameraShelf": "Estante {{shelf}}",
+		"cameraDone": "Concluído"
+	},
+	"toClassify": {
+		"title": "Por classificar",
+		"label": "Por classificar",
+		"intro": "Os livros introduzidos sem classificação, do mais antigo para o mais recente. Os seus exemplares não são emprestados enquanto não forem classificados.",
+		"count": "{{count}} {{count:plural; one:livro; other:livros;}} por classificar",
+		"empty": "Nenhum livro por classificar",
+		"emptyHint": "Todos os livros do catálogo têm um género ou um assunto.",
+		"start": "Começar a classificar",
+		"classify": "Classificar",
+		"badge": "Por classificar",
+		"badgeHint": "Os exemplares não são emprestados enquanto o livro não estiver classificado.",
+		"columns": {
+			"title": "Título",
+			"author": "Autor",
+			"publisher": "Editora",
+			"year": "Ano",
+			"isbn": "ISBN",
+			"copies": "Exemplares",
+			"enteredOn": "Introduzido em"
+		},
+		"flow": {
+			"title": "Classificar o livro",
+			"saveNext": "Guardar e seguinte",
+			"save": "Guardar",
+			"skip": "Saltar",
+			"saved": "«{{title}}» classificado",
+			"end": "Não há mais livros por classificar nesta ronda.",
+			"backToList": "Voltar à lista",
+			"already": "Este livro já está classificado.",
+			"callNumber": "Cota dos exemplares",
+			"callNumberHint": "Os exemplares sem cota ficam com esta; depois a faixa da lombada pode ser impressa.",
+			"dewey": "O número Dewey {{dewey}} corresponde ao assunto {{code}}.",
+			"copies": "{{count}} {{count:plural; one:exemplar; other:exemplares;}}",
+			"subjects": "Assuntos",
+			"notes": "Notas"
+		}
+	}
+}

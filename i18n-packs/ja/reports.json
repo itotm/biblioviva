@@ -1,0 +1,39 @@
+{
+	"title": "レポート",
+	"categories": {
+		"loans": "貸出",
+		"books": "資料",
+		"patrons": "利用者",
+		"ops": "活動状況"
+	},
+	"restricted": "管理者のみ",
+	"custom": "学校独自",
+	"chart": "グラフ付き",
+	"problemsTitle": "読み込めなかったレポートファイル",
+	"problemsHint": "次のレポートフォルダーのファイルにはエラーがあるため、一覧に表示されません：",
+	"params": "パラメーター",
+	"run": "更新",
+	"all": "すべて",
+	"from": "開始",
+	"to": "終了",
+	"patronTypes": {
+		"student": "児童生徒",
+		"teacher": "教員"
+	},
+	"rows": "{{count}}{{count:plural; other:行;}}",
+	"ms": "{{ms}} ミリ秒",
+	"truncated": "先頭の{{count}}{{count:plural; other:行;}}のみ表示しています。すべて見るには、パラメーターを絞り込んでください。",
+	"empty": "この条件の結果はありません。",
+	"print": "印刷",
+	"printedOn": "{{date}}に印刷",
+	"errors": {
+		"required": "「{{label}}」が入力されていません。",
+		"invalid": "「{{label}}」の値が正しくありません。"
+	},
+	"back": "すべてのレポート",
+	"noParams": "このレポートにはパラメーターがありません。",
+	"special": {
+		"teachers": "教員",
+		"total": "合計"
+	}
+}

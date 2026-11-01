@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Impresión",
+		"newPatrons": "Nueva lista de usuarios",
+		"newItems": "Nueva lista de libros",
+		"newPatronsTitle": "Nueva lista de usuarios",
+		"newItemsTitle": "Nueva lista de libros",
+		"name": "Nombre de la lista",
+		"defaultName": "Lista {{n}} del {{date}}",
+		"kind": "Tipo",
+		"kinds": {
+			"all": "Todas",
+			"patrons": "Usuarios",
+			"items": "Libros"
+		},
+		"classes": "Clases",
+		"classesHint": "Los carnés de toda una clase, sin crear una lista.",
+		"classKind": "Clase",
+		"count": "{{count}} {{count:plural; one:entrada; other:entradas;}}",
+		"empty": "No hay listas. Las listas se crean aquí o con «Añadir a la lista» en las páginas Usuarios y Catálogo.",
+		"lastPrinted": "Impresa el {{when}}",
+		"neverPrinted": "Nunca impresa",
+		"open": "Abrir",
+		"created": "Lista creada",
+		"deleted": "Lista eliminada",
+		"deleteTitle": "¿Eliminar la lista «{{name}}»?",
+		"deleteDescription": "Las entradas salen de la lista; los usuarios permanecen en el archivo."
+	},
+	"list": {
+		"rename": "Renombrar",
+		"renamed": "Lista renombrada",
+		"print": "Imprimir carnés",
+		"markPrinted": "Marcar como impresos",
+		"marked": "{{count}} {{count:plural; one:carné marcado como impreso; other:carnés marcados como impresos;}}",
+		"clearAfter": "Vaciar la lista después de imprimir",
+		"clear": "Vaciar",
+		"cleared": "Lista vaciada",
+		"clearTitle": "¿Vaciar la lista?",
+		"clearDescription": "Todas las entradas salen de la lista; los usuarios permanecen en el archivo.",
+		"delete": "Eliminar",
+		"entries": "{{count}} {{count:plural; one:usuario; other:usuarios;}} en la lista",
+		"empty": "La lista está vacía. Los usuarios se añaden con los filtros rápidos, con el lector de códigos de barras o desde la página Usuarios.",
+		"remove": "Quitar de la lista",
+		"moveUp": "Subir",
+		"moveDown": "Bajar",
+		"dragHint": "Arrastrar las entradas para cambiar el orden de impresión.",
+		"removed": "Quitado de la lista",
+		"columns": {
+			"position": "Nº",
+			"printed": "Carné impreso"
+		},
+		"printedYes": "sí",
+		"printedNo": "no",
+		"quick": {
+			"title": "Añadir con filtros",
+			"hint": "Quien ya está en la lista no se añade dos veces.",
+			"type": "Tipo",
+			"any": "Cualquiera",
+			"stage": "Etapa",
+			"level": "Curso",
+			"withoutPrintedCard": "Solo quien no tiene el carné impreso",
+			"withoutPhoto": "Solo quien no tiene foto",
+			"importBatch": "Importación",
+			"anyBatch": "— ninguna —",
+			"batchLabel": "n.º {{id}} · {{file}} · {{created}} {{created:plural; one:nuevo; other:nuevos;}}",
+			"createdAfter": "Creados desde",
+			"add": "Añadir a la lista",
+			"added": "{{added}} {{added:plural; one:añadido; other:añadidos;}}, {{skipped}} {{skipped:plural; one:ya presente; other:ya presentes;}}",
+			"none": "Ningún usuario corresponde a los filtros.",
+			"pendingLabels": "Etiquetas por imprimir",
+			"pendingAny": "— todos los ejemplares —",
+			"acquiredFrom": "Adquiridos desde",
+			"acquiredTo": "al",
+			"genre": "Género",
+			"itemType": "Tipo de ejemplar",
+			"batchLabelItems": "n.º {{id}} · {{file}} · {{created}} {{created:plural; one:ejemplar; other:ejemplares;}}",
+			"noneItems": "Ningún ejemplar corresponde a los filtros.",
+			"addedItems": "{{added}} {{added:plural; one:añadido; other:añadidos;}}, {{skipped}} {{skipped:plural; one:ya presente; other:ya presentes;}}",
+			"nonfictionClass": "Clase de no ficción"
+		},
+		"scan": {
+			"title": "Añadir con el lector",
+			"hint": "Leer el carné de cada usuario: se añade a la lista en el acto. Los carnés que ya están en la lista se ignoran.",
+			"added": "{{name}} añadido",
+			"duplicate": "{{name}} ya está en la lista",
+			"unknown": "Ningún usuario con el carné {{card}}",
+			"notCard": "El código leído no es un carné",
+			"hintItems": "Leer el código de barras de cada ejemplar, también a lo largo de la estantería: el ejemplar se añade a la lista en el acto. Los ejemplares que ya están en la lista se ignoran.",
+			"addedItem": "{{title}} ({{barcode}}) añadido",
+			"duplicateItem": "{{title}} ({{barcode}}) ya está en la lista",
+			"unknownItem": "Ningún ejemplar con el código de barras {{barcode}}",
+			"notItem": "El código leído no es un ejemplar"
+		},
+		"printLabels": "Imprimir etiquetas",
+		"markPrintedKind": "Etiquetas impresas",
+		"markedItems": "{{count}} {{count:plural; one:ejemplar marcado como impreso; other:ejemplares marcados como impresos;}}",
+		"entriesItems": "{{count}} {{count:plural; one:ejemplar; other:ejemplares;}} en la lista",
+		"emptyItems": "La lista está vacía. Los ejemplares se añaden con los filtros rápidos, con el lector de códigos de barras o desde el catálogo.",
+		"clearDescriptionItems": "Se quitan todas las entradas; los ejemplares permanecen en el catálogo."
+	},
+	"basket": {
+		"label": "Listas de impresión",
+		"labelToPrint": "Listas de impresión: {{count}} por imprimir",
+		"entry": "{{name}} ({{count}})",
+		"none": "Ninguna lista por imprimir",
+		"all": "Todas las listas"
+	},
+	"addTo": {
+		"button": "Añadir a una lista",
+		"selected": "Añadir los seleccionados a una lista",
+		"title": "Añadir a una lista de impresión",
+		"existing": "Lista existente",
+		"create": "Nueva lista",
+		"newName": "Nombre de la nueva lista",
+		"confirm": "Añadir",
+		"done": "{{added}} {{added:plural; one:añadido; other:añadidos;}} a «{{name}}», {{skipped}} {{skipped:plural; one:ya presente; other:ya presentes;}}"
+	},
+	"labels": {
+		"title": "Imprimir etiquetas",
+		"button": "Imprimir etiquetas",
+		"selected": "Imprimir etiquetas de los seleccionados",
+		"kind": "Tipo de etiqueta",
+		"kinds": {
+			"pair": "Pareja",
+			"barcode": "Solo código de barras",
+			"spine": "Solo tejuelo"
+		},
+		"kindHints": {
+			"pair": "Tejuelo arriba y etiqueta con el código de barras debajo, una pareja por libro (la impresión actual).",
+			"barcode": "Solo la etiqueta interna con el código de barras, para reimpresiones.",
+			"spine": "Solo el tejuelo, por ejemplo después de una reclasificación."
+		},
+		"stock": "Hoja de etiquetas",
+		"start": "Primera posición libre",
+		"startHint": "Del 1 al {{max}}: omite las etiquetas ya usadas en la hoja.",
+		"count": "{{count}} {{count:plural; one:ejemplar; other:ejemplares;}}",
+		"unclassified": "{{count}} {{count:plural; one:ejemplar de un libro; other:ejemplares de libros;}} por clasificar: solo {{count:plural; one:la etiqueta; other:las etiquetas;}} con el código de barras {{count:plural; one:se imprime; other:se imprimen;}}, y el tejuelo se imprime después de la clasificación.",
+		"pendingCount": "{{count}} {{count:plural; one:ejemplar; other:ejemplares;}} con etiquetas por imprimir",
+		"pages": "{{pages}} {{pages:plural; one:hoja; other:hojas;}} ({{perPage}} por hoja)",
+		"print": "Abrir la impresión",
+		"afterPrint": "La página de impresión se ha abierto en una nueva pestaña. Tras la impresión, marcar las etiquetas como impresas.",
+		"markPrinted": "Marcar como impresas",
+		"marked": "{{count}} {{count:plural; one:ejemplar marcado como impreso; other:ejemplares marcados como impresos;}}",
+		"status": {
+			"printed": "Etiquetas impresas",
+			"pending": "Etiquetas por imprimir",
+			"partial": "Falta una etiqueta"
+		}
+	},
+	"cards": {
+		"title": "Imprimir carnés",
+		"count": "{{count}} {{count:plural; one:carné; other:carnés;}}",
+		"afterPrint": "La página de impresión se ha abierto en una nueva pestaña. Tras la impresión, marcar los carnés como impresos.",
+		"layout": "Cómo imprimir",
+		"layouts": {
+			"side-by-side": "Anverso y reverso uno al lado del otro",
+			"duplex": "En las dos caras de la hoja"
+		},
+		"window": "En la ventana de impresión del navegador:",
+		"steps": {
+			"duplex": {
+				"long-edge": "elegir «A doble cara», volteando por el lado largo;",
+				"short-edge": "elegir «A doble cara», volteando por el lado corto;"
+			},
+			"scale": "escala al 100 % («Tamaño real», no «Ajustar a la página»);",
+			"margins": "márgenes: ninguno.",
+			"after": {
+				"side-by-side": {
+					"marks": "Después, recortar cada carné uniendo con una regla las marcas de corte que rodean los carnés, y doblarlo por la mitad por el lado corto.",
+					"line": "Después, recortar cada carné por la línea de color que lo rodea, y doblarlo por la mitad por el lado corto.",
+					"edge": "Después, recortar cada carné por su borde y doblarlo por la mitad por el lado corto."
+				},
+				"duplex": {
+					"marks": "Después, recortar los carnés uniendo con una regla las marcas de corte que rodean los anversos: el reverso ya está detrás del anverso (diez por hoja).",
+					"line": "Después, recortar los carnés por la línea de color que rodea los anversos: el reverso ya está detrás del anverso (diez por hoja).",
+					"edge": "Después, recortar los carnés por el borde de los anversos: el reverso ya está detrás del anverso (diez por hoja)."
+				}
+			}
+		},
+		"print": "Imprimir",
+		"calibrate": "La primera vez, o si los reversos no caen detrás de los anversos:"
+	},
+	"words": {
+		"teacher": "Profesor",
+		"title": "Título",
+		"code": "Código",
+		"dueBy": "Devolver antes del",
+		"due": "Vencimiento",
+		"name": "Nombre",
+		"daysOverdue": "Días de retraso",
+		"loanOn": "Préstamo del {{date}} a",
+		"overduesOn": "Avisos de la biblioteca del {{date}}",
+		"toReturn": "Libros que devolver a la biblioteca",
+		"enjoy": "Buena lectura."
+	}
+}

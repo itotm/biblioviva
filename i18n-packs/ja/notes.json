@@ -1,0 +1,66 @@
+{
+	"title": "メモ",
+	"new": "新しいメモ",
+	"adminOnly": "メモをアーカイブしたり、ダッシュボードに固定したりできるのは管理者のみです。",
+	"pinned": "固定",
+	"wrote": "{{author}} · {{when}}",
+	"archivedBy": "{{author}}によるアーカイブ · {{when}}",
+	"count": "{{count}}{{count:plural; other:件;}}",
+	"archiveCount": "アーカイブ済み{{total}}{{total:plural; other:件;}}のうち{{shown}}件",
+	"actions": {
+		"label": "メモの操作",
+		"pin": "ダッシュボードに固定",
+		"unpin": "固定を解除",
+		"archive": "アーカイブ",
+		"restore": "元に戻す",
+		"delete": "削除",
+		"showAll": "すべて表示",
+		"showLess": "表示を減らす",
+		"more": "もっと表示"
+	},
+	"done": {
+		"added": "メモを追加しました",
+		"pinned": "メモを固定しました",
+		"unpinned": "メモの固定を解除しました",
+		"archived": "メモをアーカイブしました",
+		"restored": "メモを元に戻しました",
+		"deleted": "メモを削除しました"
+	},
+	"confirmDelete": {
+		"title": "メモを削除しますか？",
+		"text": "完全に消去され、元に戻すことはできません。"
+	},
+	"form": {
+		"body": "本文",
+		"placeholder": "例：貸出カウンターのバーコードリーダーがカードを読み取れません。",
+		"privacy": "すべてのアカウントがメモを閲覧できます。児童生徒の個人情報は入力しないでください。",
+		"written": "メモは編集できません。誤りがある場合は、管理者にアーカイブを依頼し、新しいメモを書いてください。",
+		"counter": "{{count}}/{{max}}",
+		"color": "色",
+		"pinned": "ダッシュボードに固定",
+		"pinnedHint": "固定を解除するかアーカイブするまで、すべてのアカウントのダッシュボード（と貸出カウンター）の先頭に表示されます。",
+		"save": "追加"
+	},
+	"colors": {
+		"yellow": "黄",
+		"pink": "ピンク",
+		"green": "緑",
+		"blue": "水色",
+		"orange": "オレンジ"
+	},
+	"errors": {
+		"empty": "メモの本文を入力してください。",
+		"tooLong": "本文が{{max}}{{max:plural; other:文字;}}を超えています。",
+		"color": "色を選択してください。"
+	},
+	"empty": {
+		"open": "未処理のメモはありません",
+		"openHint": "未処理のメモはありません。メモでは、問題や連絡事項を同僚と管理者に伝えられます。",
+		"archived": "アーカイブ済みのメモはありません"
+	},
+	"home": {
+		"title": "メモ",
+		"open": "メモを開く"
+	},
+	"tile": "未処理のメモ"
+}

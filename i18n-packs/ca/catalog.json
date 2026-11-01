@@ -1,0 +1,667 @@
+{
+	"list": {
+		"title": "Catàleg",
+		"search": "Cerca per títol, autor o ISBN…",
+		"new": "Llibre nou",
+		"empty": "Cap llibre no correspon als filtres.",
+		"countFiltered": "{{shown}} {{shown:plural; one:títol correspon; other:títols corresponen;}} als filtres",
+		"clearFilters": "Esborra els filtres",
+		"filters": {
+			"kind": "Tipus",
+			"genre": "Gènere",
+			"class": "Classificació",
+			"readingLevel": "Nivell",
+			"itemType": "Material",
+			"series": "Sèrie",
+			"all": "Tots",
+			"allF": "Totes",
+			"withdrawn": "Mostra també els llibres retirats"
+		},
+		"columns": {
+			"title": "Títol",
+			"series": "Sèrie",
+			"author": "Autor",
+			"year": "Any",
+			"isbn": "ISBN",
+			"classification": "Classificació",
+			"copies": "Exemplars",
+			"callNumber": "Signatura",
+			"acquiredAt": "Adquisició"
+		},
+		"copiesCell": "{{available}} / {{total}}",
+		"startTitle": "Cerca al catàleg",
+		"startHint": "Cerca per títol, autor, editorial, codi o ISBN, o amb els filtres."
+	},
+	"kinds": {
+		"fiction": "Narrativa",
+		"nonfiction": "No ficció"
+	},
+	"fields": {
+		"title": "Títol",
+		"subtitle": "Subtítol",
+		"originalTitle": "Títol original",
+		"originalTitleHint": "Només si el llibre és una traducció: el títol de l'obra en la llengua original.",
+		"responsibility": "Menció de responsabilitat (com a la portada)",
+		"author": "Autor",
+		"publisher": "Editorial",
+		"publicationPlace": "Lloc",
+		"publicationYear": "Any",
+		"isbn": "ISBN",
+		"issn": "ISSN",
+		"ean": "EAN (no ISBN)",
+		"physicalDescription": "Descripció física",
+		"series": "Sèrie",
+		"seriesNumber": "Número dins de la sèrie",
+		"seriesHint": "Per exemple Harry Potter i 3. Mentre s'escriu apareixen les sèries que ja hi ha al catàleg.",
+		"dewey": "Dewey (de SBN)",
+		"kind": "Tipus",
+		"genre": "Gènere",
+		"classCode": "Classificació",
+		"readingLevel": "Nivell de lectura",
+		"subjects": "Matèries",
+		"notes": "Notes",
+		"authorHint": "Cognom, Nom. Fes servir els valors ràpids quan no hi ha un autor personal.",
+		"subjectsHint": "Un per línia o separats per comes.",
+		"none": "—"
+	},
+	"form": {
+		"createTitle": "Llibre nou",
+		"editTitle": "Modifica el registre",
+		"create": "Desa el registre",
+		"save": "Desa els canvis",
+		"identity": "Registre",
+		"publication": "Publicació",
+		"classification": "Classificació",
+		"more": "Més dades",
+		"quickPicks": "Valors ràpids",
+		"unknownPublisher": "Editorial desconeguda",
+		"unknownPlace": "Lloc desconegut",
+		"singleCopy": "Exemplar {{barcode}}",
+		"singleCopyHint": "El registre té un sol exemplar: les seves dades es modifiquen aquí i es desen juntament amb el registre."
+	},
+	"picker": {
+		"kind": "Quin tipus de llibre és?",
+		"fiction": "Narrativa",
+		"nonfiction": "No ficció",
+		"genre": "Tria el gènere",
+		"class": "Tria la matèria",
+		"readingLevel": "Nivell de lectura",
+		"anyClass": "Cap",
+		"back": "Torna a les matèries principals",
+		"children": "Matèries de {{label}}",
+		"selected": "Seleccionat: {{label}}",
+		"parentOnly": "Usa «{{label}}» en general",
+		"later": "Classifica més tard",
+		"laterHint": "El llibre passa a la llista «Per classificar»: els seus exemplars no es presten i la banda del llom no s'imprimeix fins que no es classifica."
+	},
+	"detail": {
+		"heading": "Registre del llibre",
+		"tabs": {
+			"copies": "Exemplars",
+			"details": "Detalls"
+		},
+		"copies": "{{available}} {{available:plural; one:disponible; other:disponibles;}} de {{total}}",
+		"noCopies": "Cap exemplar encara: per al préstec cal afegir-ne un.",
+		"seriesLink": "Tots els llibres de la sèrie «{{series}}»",
+		"edit": "Modifica",
+		"delete": "Elimina el registre",
+		"addCopies": "Afegeix exemplars",
+		"deleteTitle": "Eliminar el registre «{{title}}»?",
+		"deleteDescription": "El registre surt del catàleg. Només és possible si no té exemplars.",
+		"deleted": "Registre eliminat",
+		"hasItems": "El registre té encara {{count}} {{count:plural; one:exemplar; other:exemplars;}}: {{count:plural; one:cal retirar-lo o eliminar-lo; other:cal retirar-los o eliminar-los;}} abans.",
+		"columns": {
+			"barcode": "Codi de barres",
+			"callNumber": "Signatura",
+			"itemType": "Material",
+			"readingLevel": "Nivell",
+			"status": "Estat",
+			"borrower": "En préstec a",
+			"acquisition": "Adquirit el",
+			"labels": "Etiquetes"
+		},
+		"dueOn": "data de devolució {{date}}",
+		"identifiers": "Identificadors",
+		"source": "Origen: {{source}}",
+		"created": "Creat: {{when}}",
+		"updated": "Darrera modificació: {{when}}",
+		"onLoan": "En préstec"
+	},
+	"item": {
+		"addTitle": "Afegeix exemplars",
+		"copies": "Nombre d'exemplars",
+		"itemType": "Material",
+		"callNumber": "Signatura",
+		"callNumberHint": "Proposta a partir de la classificació; es pot canviar.",
+		"readingLevel": "Nivell de l'exemplar",
+		"enumeration": "Volum / número",
+		"acquisitionDate": "Data d'adquisició",
+		"notes": "Notes de l'exemplar",
+		"notForLoan": "Només consulta (no es presta)",
+		"add": "Afegeix",
+		"added": "{{count}} {{count:plural; one:exemplar afegit; other:exemplars afegits;}}: {{barcodes}}",
+		"editTitle": "Modifica l'exemplar {{barcode}}",
+		"save": "Desa",
+		"saved": "Exemplar actualitzat",
+		"status": "Canvia l'estat",
+		"statusTitle": "Estat de l'exemplar {{barcode}}",
+		"newStatus": "Nou estat",
+		"reason": "Motiu (opcional, registrat)",
+		"statusSaved": "Estat actualitzat",
+		"onLoan": "L'exemplar és en préstec: primer registra la devolució.",
+		"delete": "Elimina l'exemplar",
+		"deleteTitle": "Eliminar l'exemplar {{barcode}}?",
+		"deleteDescription": "Només per errors de catalogació: un exemplar que s'ha prestat alguna vegada no es pot eliminar, cal retirar-lo.",
+		"deleted": "Exemplar eliminat",
+		"hasLoans": "L'exemplar té préstecs registrats: cal retirar-lo, no eliminar-lo.",
+		"labelsTitle": "Etiquetes de l'exemplar {{barcode}}"
+	},
+	"errors": {
+		"isbnInvalid": "ISBN no vàlid (comprova les xifres)",
+		"isbnTaken": "Ja existeix un registre amb aquest ISBN",
+		"issnInvalid": "ISSN no vàlid",
+		"eanInvalid": "EAN no vàlid",
+		"yearImplausible": "Any no plausible",
+		"genreRequired": "Tria el gènere",
+		"genreUnknown": "Gènere que no és a la configuració",
+		"genreNotForNonfiction": "La no ficció no té gènere",
+		"classCodeRequired": "Tria la matèria",
+		"classCodeUnknown": "Matèria que no és a la configuració",
+		"classCodeNotForFiction": "La narrativa no té matèria",
+		"readingLevelNotAllowed": "Aquí no s'espera el nivell de lectura",
+		"readingLevelOutOfRange": "Nivell de lectura que no és a la configuració",
+		"itemTypeUnknown": "Material que no és a la configuració",
+		"acquisitionDateInvalid": "Data no vàlida (AAAA-MM-DD)",
+		"copiesOutOfRange": "De 1 a 100 exemplars cada vegada"
+	},
+	"lookup": {
+		"providers": {
+			"sbn": "OPAC SBN",
+			"sbn-json": "OPAC SBN (JSON)",
+			"openlibrary": "Open Library",
+			"googlebooks": "Google Books",
+			"mock": "Proveïdor de prova"
+		},
+		"errors": {
+			"unreachable": "No es pot arribar al servei. Comprova la connexió a Internet i torna-ho a provar més tard.",
+			"timeout": "El servei no ha respost a temps. Torna-ho a provar més tard.",
+			"protocol": "El servei ha donat una resposta inesperada. Les dades es poden introduir a mà.",
+			"http": "El servei ha respost amb un error. Torna-ho a provar més tard.",
+			"rate_limited": "El servei ha rebutjat la petició per massa consultes. Torna-ho a provar més tard.",
+			"not_configured": "El servei no està configurat: falta una opció (per exemple la clau API).",
+			"spawn": "El programa yaz-client no està disponible en aquest servidor. Avisa l'administrador."
+		},
+		"noHits": "Cap resultat de {{provider}}.",
+		"hits": "{{count}} {{count:plural; one:resultat; other:resultats;}} de {{provider}}",
+		"fromCache": "de la memòria cau"
+	},
+	"fastAdd": {
+		"title": "Llibre nou",
+		"steps": {
+			"code": "Codi",
+			"lookup": "Cerca",
+			"form": "Registre i exemplars",
+			"done": "Completat"
+		},
+		"code": {
+			"heading": "Llegeix el codi de barres",
+			"label": "ISBN o EAN",
+			"placeholder": "978…",
+			"material": "Material",
+			"noCode": "Sense codi",
+			"noCodeHint": "Cerca per títol i autor, o omple el registre a mà.",
+			"manual": "Omple a mà",
+			"notACode": "El codi llegit no és ni un ISBN ni un EAN: comprova les xifres o tria «Sense codi».",
+			"eanNotIsbn": "EAN {{ean}} llegit: no és un ISBN, per tant el registre s'ha d'omplir a mà.",
+			"cameraNotIsbn": "No és un ISBN: enquadra el codi de barres del llibre"
+		},
+		"search": {
+			"heading": "Cerca per títol i autor",
+			"title": "Títol",
+			"author": "Autor",
+			"submit": "Cerca",
+			"empty": "Escriu almenys el títol o l'autor."
+		},
+		"duplicate": {
+			"heading": "Aquest ISBN ja és al catàleg",
+			"copies": "{{count}} {{count:plural; one:exemplar; other:exemplars;}}",
+			"addCopy": "Afegeix un exemplar",
+			"open": "Obre el registre",
+			"another": "Llegeix un altre codi"
+		},
+		"lookup": {
+			"searching": "Cerca en curs a {{providers}}…",
+			"best": "La més completa",
+			"heading": "Registres trobats",
+			"pick": "Usa aquest registre",
+			"none": "Cap registre trobat. El registre es pot omplir a mà.",
+			"manual": "Introdueix a mà",
+			"bySearch": "Cerca per títol",
+			"retry": "Torna-ho a provar",
+			"another": "Nou codi",
+			"source": "Font: {{provider}}",
+			"providerOk": "{{count}} {{count:plural; one:registre; other:registres;}}",
+			"providerCached": "de la memòria cau",
+			"failed": "Error"
+		},
+		"form": {
+			"heading": "Comprova el registre i afegeix els exemplars",
+			"rescan": "Llegeix un altre codi",
+			"bestOf": "El més complet dels {{count}} registres trobats. Verifica l'any i la descripció amb l'exemplar.",
+			"otherRecords": "{{count:plural; one:Altre registre; other:Altres registres;}} ({{count}})",
+			"fromSource": "Registre de {{provider}}: comprova les dades abans de desar.",
+			"manualSource": "Registre introduït a mà.",
+			"copiesSection": "Exemplars",
+			"copies": "Nombre d'exemplars",
+			"itemType": "Material",
+			"callNumber": "Signatura",
+			"readingLevel": "Nivell dels exemplars",
+			"acquisitionDate": "Data d'adquisició",
+			"save": "Desa el registre i els exemplars",
+			"deweySuggested": "Matèria proposada a partir del número Dewey {{dewey}}."
+		},
+		"done": {
+			"heading": "Registre desat",
+			"summary": "«{{title}}» amb {{count}} {{count:plural; one:exemplar; other:exemplars;}}",
+			"summaryCopies": "{{count}} {{count:plural; one:exemplar afegit; other:exemplars afegits;}} a «{{title}}»",
+			"barcodes": "Codis de barres dels exemplars",
+			"printLabels": "Imprimeix les etiquetes",
+			"addToList": "Afegeix a la llista d'etiquetes",
+			"open": "Obre el registre",
+			"another": "Afegeix-ne un altre"
+		},
+		"cover": {
+			"title": "Coberta",
+			"alt": "Coberta del llibre",
+			"searching": "Cerca de la coberta en línia…",
+			"found": "Trobada a {{provider}}: es desa amb el registre. Si és errònia, fotografia la del llibre.",
+			"photo": "Foto de la coberta: es desa amb el registre.",
+			"none": "Cap coberta trobada en línia: es pot fotografiar.",
+			"empty": "Cap coberta: es pot fotografiar.",
+			"take": "Fotografia la coberta",
+			"replace": "Substitueix amb una foto",
+			"remove": "Treu",
+			"saving": "Desant la coberta…",
+			"failed": "La coberta no s'ha desat: es pot afegir des del registre del llibre."
+		}
+	},
+	"cover": {
+		"title": "Coberta",
+		"take": "Fotografia la coberta",
+		"upload": "Puja un fitxer",
+		"change": "Canvia la coberta",
+		"delete": "Elimina la coberta",
+		"deleteTitle": "Eliminar la coberta?",
+		"deleteDescription": "La imatge s'esborra del servidor; se'n podrà fotografiar una de nova.",
+		"shoot": "Fes la foto",
+		"loading": "Carregant el mòdul de redreçament ({{loaded}} de {{total}} MB), només en el primer ús.",
+		"loadingShort": "Carregant el mòdul de redreçament ({{loaded}} MB), només en el primer ús.",
+		"loadFailed": "No s'ha pogut carregar el mòdul de redreçament. Comprova la connexió i torna-ho a provar.",
+		"detecting": "Cerca de les vores de la coberta…",
+		"notFound": "Vores no trobades automàticament: arrossega els cantons sobre la coberta.",
+		"adjustHint": "Arrossega els quatre cantons sobre les vores de la coberta i després redreça.",
+		"straighten": "Redreça",
+		"result": "Resultat",
+		"use": "Usa aquesta coberta",
+		"retake": "Refés",
+		"cancel": "Cancel·la",
+		"saved": "Coberta desada",
+		"deleted": "Coberta eliminada",
+		"placeholder": "Cap coberta",
+		"alt": "Coberta de {{title}}",
+		"cameraHint": "Enquadra tota la coberta, fins i tot de través: es redreça després de la foto.",
+		"errors": {
+			"too_large": "Fitxer massa gran: el límit és de {{maxMb}} MB.",
+			"not_an_image": "El fitxer no és una imatge llegible.",
+			"unsupported_format": "Format d'imatge no admès (fes servir JPEG, PNG, WebP o HEIC).",
+			"empty": "Cap fitxer seleccionat."
+		},
+		"download": "Descarrega la coberta",
+		"downloading": "Cerca de la coberta en línia…",
+		"downloaded": "Coberta descarregada de {{provider}}",
+		"downloadNotFound": "Cap coberta trobada en línia per a aquest ISBN: es pot fotografiar.",
+		"downloadNoIsbn": "El registre no té ISBN: la coberta s'ha de fotografiar."
+	},
+	"export": {
+		"copiesTotal": "Exemplars",
+		"copiesAvailable": "Disponibles",
+		"callNumber": "Signatura",
+		"acquiredAt": "Adquisició"
+	},
+	"import": {
+		"title": "Importa el catàleg",
+		"upload": {
+			"file": "Fitxer CSV",
+			"hint": "Una fila per exemplar: les dades del títol es repeteixen a les files dels seus exemplars. Calen el títol, l'autor i l'editorial. Fes servir les capçaleres de la plantilla, que es pot descarregar més avall amb les columnes necessàries. Per migrar des de Koha, usa l'exportació descrita a la guia de l'administrador.",
+			"submit": "Puja"
+		},
+		"mapping": {
+			"uncertain": "No s'han reconegut les columnes: indica el camp de cadascuna abans de continuar.",
+			"remembered": "Columnes recordades de l'última importació d'aquest fitxer.",
+			"specialValues": "Valors especials quan falten l'autor o l'editorial («{{author}}», «{{publisher}}»)",
+			"specialValuesHint": "Sense aquesta opció, les files sense autor o editorial són errors.",
+			"validate": "Verifica el fitxer",
+			"without": {
+				"biblioKey": "Sense la columna biblio_key, els exemplars d'un mateix llibre s'agrupen per ISBN; les files sense ISBN són un títol cadascuna.",
+				"barcode": "Sense la columna barcode, els codis de barres dels exemplars es generen: després de la importació s'imprimeixen les etiquetes.",
+				"classification": "Sense la columna classification, els llibres van a la llista «Per classificar»: els seus exemplars no es presten fins que no estan classificats."
+			}
+		},
+		"fields": {
+			"biblioKey": "Clau del títol (biblionumber)",
+			"isbn": "ISBN",
+			"issn": "ISSN",
+			"ean": "EAN",
+			"title": "Títol",
+			"subtitle": "Subtítol",
+			"originalTitle": "Títol original",
+			"responsibility": "Menció de responsabilitat",
+			"author": "Autor",
+			"publisher": "Editorial",
+			"publicationPlace": "Lloc de publicació",
+			"publicationYear": "Any",
+			"physicalDescription": "Descripció física",
+			"series": "Sèrie",
+			"seriesNumber": "Número dins de la sèrie",
+			"dewey": "Dewey",
+			"classification": "Classificació (gènere o matèria, ccode de Koha)",
+			"readingLevel": "Nivell de lectura",
+			"subjects": "Matèries",
+			"notes": "Notes del títol",
+			"barcode": "Codi de barres de l'exemplar",
+			"callNumber": "Signatura",
+			"itemType": "Material",
+			"enumeration": "Volum",
+			"status": "Estat",
+			"notForLoan": "Exclòs del préstec",
+			"acquisitionDate": "Data d'adquisició",
+			"itemNotes": "Notes de l'exemplar"
+		},
+		"preview": {
+			"ready": "Cap error: la importació és possible.",
+			"blocked": "Corregeix els errors del fitxer i verifica de nou: no s'importa res amb errors.",
+			"nothing": "Tots els exemplars del fitxer ja són al catàleg: no hi ha res a importar.",
+			"titles": "{{new}} {{new:plural; one:títol nou; other:títols nous;}}, {{existing}} ja al catàleg (els seus exemplars s'afegeixen)",
+			"columns": {
+				"title": "Títol",
+				"barcode": "Codi de barres",
+				"classification": "Classificació"
+			},
+			"question": {
+				"title": "Exemplars del mateix títol amb nivells diferents",
+				"text": "En {{count}} {{count:plural; one:títol; other:títols;}} els exemplars tenen nivells de lectura diferents. El nivell pot anar a cada exemplar en lloc de al títol: és l'opció «nivell per exemplar», que val per a tot el catàleg i trasllada el nivell dels títols ja presents als seus exemplars.",
+				"yes": "Sí, nivell per exemplar",
+				"no": "No, són errors a corregir"
+			},
+			"commit": "Importa",
+			"back": "Torna a les columnes",
+			"generatedBarcodes": "{{count}} {{count:plural; one:exemplar; other:exemplars;}} sense codi: el codi es genera i després s'imprimeixen les etiquetes.",
+			"toClassify": "{{count}} {{count:plural; one:títol nou; other:títols nous;}} sense classificació: {{count:plural; one:anirà; other:aniran;}} a «Per classificar»."
+		},
+		"reasons": {
+			"tooLong": "Text massa llarg a la columna {{column}}: com a màxim {{max}} caràcters",
+			"isbnInvalid": "ISBN no vàlid: «{{value}}»",
+			"classificationUnknown": "Classificació que no és a la configuració: «{{value}}»",
+			"barcodeInvalid": "Codi de barres amb caràcters no admesos: «{{value}}»",
+			"barcodeCheckDigit": "Codi de barres amb un caràcter de control erroni: «{{value}}»",
+			"barcodeDuplicateInFile": "Codi de barres ja usat a la fila {{line}}",
+			"barcodeTaken": "El codi {{value}} ja és d'un altre exemplar del catàleg",
+			"barcodeIsCard": "El codi {{value}} és o sembla un número de carnet: un exemplar no pot tenir un codi de carnet",
+			"statusUnknown": "Estat no reconegut: «{{value}}» (disponible, perdut, danyat, en reparació, retirat)",
+			"notForLoanUnknown": "Valor no reconegut per a «exclòs del préstec»: «{{value}}» (sí/no)",
+			"dateInvalid": "Data no vàlida: «{{value}}» (AAAA-MM-DD o DD/MM/AAAA)",
+			"authorMissing": "Falta l'autor (amb «valors especials» esdevé Anonimo)",
+			"publisherMissing": "Falta l'editorial (amb «valors especials» esdevé s.n.)",
+			"titleMissing": "Falta el títol",
+			"groupConflict": "Mateixa clau que la fila {{line}} però títol diferent",
+			"classQuestion": "Exemplars amb nivells diferents ({{classes}}): respon la pregunta de sota",
+			"classDiffers": "Exemplars amb nivells diferents ({{classes}}) sense nivell per exemplar",
+			"copyExists": "Exemplar ja al catàleg: s'omet",
+			"mergedIntoExisting": "Afegit al títol ja al catàleg (mateixa clau o mateix ISBN)"
+		},
+		"done": {
+			"title": "Catàleg importat",
+			"summary": "{{titlesCreated}} {{titlesCreated:plural; one:títol nou; other:títols nous;}}, {{copiesCreated}} {{copiesCreated:plural; one:exemplar afegit; other:exemplars afegits;}} ({{titlesMerged}} {{titlesMerged:plural; one:títol ja present; other:títols ja presents;}}, {{copiesSkipped}} {{copiesSkipped:plural; one:exemplar omès; other:exemplars omesos;}}).",
+			"classPerItem": "El nivell per exemplar s'ha activat.",
+			"batch": "Importació núm. {{id}}: el fitxer original es conserva.",
+			"labels": "Imprimeix les etiquetes dels exemplars sense codi",
+			"open": "Vés al catàleg",
+			"again": "Importa un altre fitxer"
+		},
+		"columns": {
+			"title": {
+				"hint": "El títol del llibre."
+			},
+			"author": {
+				"hint": "Cognom, Nom; buit és un error, excepte amb «valors especials»."
+			},
+			"publisher": {
+				"hint": "L'editorial; buida com per a l'autor."
+			},
+			"biblioKey": {
+				"hint": "El codi del títol al programa antic (biblionumber de Koha): manté junts els exemplars.",
+				"missing": "els exemplars s'agrupen per ISBN"
+			},
+			"barcode": {
+				"hint": "El codi de barres ja present a l'exemplar.",
+				"missing": "el codi es genera i les etiquetes s'han d'imprimir"
+			},
+			"classification": {
+				"hint": "El codi del gènere (narrativa) o de la matèria (no ficció).",
+				"missing": "el llibre va a «Per classificar»"
+			},
+			"readingLevel": {
+				"hint": "El nivell de lectura (narrativa)."
+			},
+			"isbn": {
+				"hint": "ISBN-10 o ISBN-13."
+			},
+			"issn": {
+				"hint": "Per als periòdics."
+			},
+			"ean": {
+				"hint": "El codi EAN de DVD i d'altres materials."
+			},
+			"subtitle": {
+				"hint": "El subtítol."
+			},
+			"originalTitle": {
+				"hint": "Només per a traduccions: el títol en la llengua original."
+			},
+			"responsibility": {
+				"hint": "Il·lustradors, traductors…"
+			},
+			"publicationPlace": {
+				"hint": "El lloc de publicació."
+			},
+			"publicationYear": {
+				"hint": "L'any de publicació."
+			},
+			"physicalDescription": {
+				"hint": "Pàgines, il·lustracions, format."
+			},
+			"series": {
+				"hint": "La sèrie (no la col·lecció de l'editorial)."
+			},
+			"seriesNumber": {
+				"hint": "El número dins de la sèrie."
+			},
+			"dewey": {
+				"hint": "El número Dewey, només com a referència."
+			},
+			"subjects": {
+				"hint": "Paraules clau separades per ; o ,."
+			},
+			"notes": {
+				"hint": "Notes del títol."
+			},
+			"callNumber": {
+				"hint": "La signatura; si falta, se'n proposa una."
+			},
+			"itemType": {
+				"hint": "El material (llibre, dvd…); si falta, el primer configurat."
+			},
+			"enumeration": {
+				"hint": "El volum, per a obres en diversos volums."
+			},
+			"status": {
+				"hint": "disponible, perdut, danyat, en reparació, retirat."
+			},
+			"notForLoan": {
+				"hint": "1 o sí per als exemplars de consulta."
+			},
+			"acquisitionDate": {
+				"hint": "La data d'adquisició; si falta, avui."
+			},
+			"itemNotes": {
+				"hint": "Notes de l'exemplar."
+			}
+		}
+	},
+	"batch": {
+		"selected": "Modifica els exemplars de la selecció",
+		"title": "Modifica els exemplars",
+		"scope": "{{count}} {{count:plural; one:exemplar; other:exemplars;}}",
+		"operation": "Què canviar",
+		"operations": {
+			"status": "Estat",
+			"itemType": "Material",
+			"notForLoan": "Exclòs del préstec",
+			"readingLevel": "Nivell de l'exemplar",
+			"acquisitionDate": "Data d'adquisició"
+		},
+		"value": "Nou valor",
+		"yes": "Sí",
+		"no": "No",
+		"noClass": "Cap nivell",
+		"reason": "Motiu",
+		"reasonHint": "Obligatori per als perduts i els retirats: queda al registre de cada exemplar.",
+		"check": "Comprova",
+		"apply": "Aplica a {{count}} {{count:plural; one:exemplar; other:exemplars;}}",
+		"plan": {
+			"changes": "{{count}} {{count:plural; one:exemplar canvia; other:exemplars canvien;}}",
+			"onLoan": "{{count}} {{count:plural; one:exemplar en préstec, que resta com està (cal retornar-lo primer); other:exemplars en préstec, que resten com estan (cal retornar-los primer);}}",
+			"unchanged": "{{count}} {{count:plural; one:ja té; other:ja tenen;}} aquest valor",
+			"notFound": "{{count}} {{count:plural; one:ja no existeix; other:ja no existeixen;}}",
+			"notAllowed": "{{count}} {{count:plural; one:no és de narrativa; other:no són de narrativa;}}: el nivell no s'aplica",
+			"none": "Cap exemplar per canviar."
+		},
+		"excludedTitle": "Exemplars que queden com són",
+		"done": "{{count}} {{count:plural; one:exemplar modificat; other:exemplars modificats;}}",
+		"errors": {
+			"reasonRequired": "Escriu el motiu: és obligatori per als perduts i els retirats.",
+			"itemTypeUnknown": "Material que no és a la configuració.",
+			"readingLevelNotAllowed": "El nivell per exemplar no és actiu.",
+			"readingLevelOutOfRange": "Nivell de lectura que no és a la configuració.",
+			"dateInvalid": "Data no vàlida.",
+			"statusUnknown": "Estat no vàlid.",
+			"classificationUnknown": "Tria un gènere o una matèria de la configuració."
+		},
+		"reclassify": {
+			"button": "Reclassifica",
+			"title": "Reclassifica els títols seleccionats",
+			"scope": "{{count}} {{count:plural; one:títol; other:títols;}}",
+			"resuggest": "Reescriu les signatures dels exemplars segons la nova classificació",
+			"labelsHint": "Les bandes del llom (i les etiquetes si canvia la signatura) tornen a les que cal imprimir.",
+			"changes": "{{count}} {{count:plural; one:títol canvia; other:títols canvien;}}",
+			"apply": "Reclassifica {{count}} {{count:plural; one:títol; other:títols;}}",
+			"done": "{{count}} {{count:plural; one:títol reclassificat; other:títols reclassificats;}}, {{calls}} {{calls:plural; one:signatura reescrita; other:signatures reescrites;}}"
+		}
+	},
+	"search": {
+		"suggest": "El codi {{barcode}} és un exemplar de «{{title}}».",
+		"openSuggest": "Obre el registre",
+		"available": "Només disponibles",
+		"yearFrom": "Any des de",
+		"yearTo": "Any fins a",
+		"copiesAvailable": "{{available}} de {{total}} disponibles",
+		"noCopies": "Cap exemplar"
+	},
+	"inventory": {
+		"title": "Inventari",
+		"defaultName": "Inventari",
+		"emptyTitle": "Cap inventari en curs",
+		"emptyHint": "Comença una campanya i llegeix després els exemplars prestatge per prestatge: en tancar-la, els exemplars que no s'han llegit mai es marquen com a perduts.",
+		"name": "Nom de la campanya",
+		"start": "Nova campanya",
+		"started": "Iniciada: {{when}}",
+		"overall": "Tota la biblioteca",
+		"progress": "{{seen}} de {{expected}} ({{percent}}%)",
+		"counts": "{{scanned}} {{scanned:plural; one:exemplar llegit; other:exemplars llegits;}} · {{misplaced}} fora de lloc · {{found}} {{found:plural; one:retrobat; other:retrobats;}}",
+		"byShelf": "Progrés per prestatge",
+		"noShelf": "Sense signatura",
+		"scanTitle": "Llegeix els exemplars",
+		"shelf": "Prestatge",
+		"shelfHint": "Per exemple B o 590: els exemplars amb una altra signatura es marquen com a fora de lloc.",
+		"scanLabel": "Codi de l'exemplar",
+		"camera": "Llegeix amb la càmera",
+		"outcomes": {
+			"seen": "{{title}} ({{barcode}}): vist.",
+			"again": "{{title}} ({{barcode}}): ja llegit {{when}}.",
+			"misplaced": "{{title}} ({{barcode}}): fora de lloc; cal tornar-lo al lloc que indica la signatura.",
+			"found": "{{title}} ({{barcode}}): estava perdut i s'ha retrobat; és de nou disponible.",
+			"onLoan": "{{title}} ({{barcode}}): en préstec; registra la devolució al taulell.",
+			"withdrawn": "{{title}} ({{barcode}}): exemplar retirat, cal treure'l del prestatge.",
+			"unknown": "{{code}}: cap exemplar té aquest codi de barres."
+		},
+		"missing": "Encara per trobar ({{count}})",
+		"allShelves": "Tots els prestatges",
+		"allTypes": "Tots els materials",
+		"noneMissing": "Tots els exemplars esperats s'han vist.",
+		"more": "{{count:plural; one:i un altre; other:i {{count}} més;}}: per veure'n la llista completa, exporta-la.",
+		"close": "Tanca l'inventari",
+		"closeTitle": "Tancar l'inventari?",
+		"closeHint": "{{count:plural; one:L'exemplar mai vist serà marcat com a perdut; other:Els {{count}} exemplars mai vists seran marcats com a perduts;}}. La campanya es pot reobrir dins d'una setmana per desfer-ho.",
+		"closedTitle": "Inventari tancat",
+		"summary": "{{seen}} de {{expected}} {{expected:plural; one:exemplar vist; other:exemplars vists;}}, {{lost}} {{lost:plural; one:marcat com a perdut; other:marcats com a perduts;}}, {{found}} {{found:plural; one:retrobat; other:retrobats;}}, {{onLoan}} en préstec, {{misplaced}} fora de lloc.",
+		"history": "Campanyes anteriors",
+		"reopen": "Reobre",
+		"errors": {
+			"alreadyOpen": "Ja hi ha un inventari en curs.",
+			"notOpen": "Aquest inventari és tancat.",
+			"notFound": "Inventari no trobat.",
+			"tooLate": "Només es pot reobrir dins d'una setmana des del tancament.",
+			"badName": "Cal donar un nom a la campanya.",
+			"badNotes": "Les notes de la campanya poden tenir com a màxim 500 caràcters."
+		},
+		"cameraShelf": "Prestatge {{shelf}}",
+		"cameraDone": "Fet"
+	},
+	"toClassify": {
+		"title": "Per classificar",
+		"label": "Per classificar",
+		"intro": "Els llibres introduïts sense classificació, del més antic al més recent. Els seus exemplars no es presten fins que no estan classificats.",
+		"count": "{{count}} {{count:plural; one:llibre; other:llibres;}} per classificar",
+		"empty": "Cap llibre per classificar",
+		"emptyHint": "Tots els llibres del catàleg tenen un gènere o una matèria.",
+		"start": "Comença a classificar",
+		"classify": "Classifica",
+		"badge": "Per classificar",
+		"badgeHint": "Els exemplars no es presten fins que el llibre està classificat.",
+		"columns": {
+			"title": "Títol",
+			"author": "Autor",
+			"publisher": "Editorial",
+			"year": "Any",
+			"isbn": "ISBN",
+			"copies": "Exemplars",
+			"enteredOn": "Introduït el"
+		},
+		"flow": {
+			"title": "Classifica el llibre",
+			"saveNext": "Desa i següent",
+			"save": "Desa",
+			"skip": "Salta",
+			"saved": "«{{title}}» classificat",
+			"end": "No hi ha més llibres per classificar en aquesta ronda.",
+			"backToList": "Torna a la llista",
+			"already": "Aquest llibre ja està classificat.",
+			"callNumber": "Signatura dels exemplars",
+			"callNumberHint": "Els exemplars sense signatura reben aquesta; després es pot imprimir la banda del llom.",
+			"dewey": "El número Dewey {{dewey}} correspon a la matèria {{code}}.",
+			"copies": "{{count}} {{count:plural; one:exemplar; other:exemplars;}}",
+			"subjects": "Matèries",
+			"notes": "Notes"
+		}
+	}
+}

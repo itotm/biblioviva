@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "Spremi",
+		"cancel": "Odustani",
+		"close": "Zatvori",
+		"confirm": "Potvrdi",
+		"delete": "Izbriši",
+		"edit": "Uredi",
+		"search": "Pretraži",
+		"export": "Izvezi",
+		"back": "Natrag",
+		"retry": "Pokušaj ponovo",
+		"backTo": "Natrag na {{page}}",
+		"more": "Ostale radnje"
+	},
+	"similar": {
+		"label": "Slično",
+		"count": "još {{count}} {{count:plural; one:sličan, pronađen; few:slična, pronađena; other:sličnih, pronađenih;}} ispravljanjem tipkarske pogreške",
+		"hint": "Pronađeno ispravljanjem tipkarske pogreške: provjerite je li to ono što ste tražili."
+	},
+	"status": {
+		"loading": "Učitavanje…",
+		"error": "Došlo je do pogreške"
+	},
+	"statuses": {
+		"item": {
+			"available": "Dostupno",
+			"onLoan": "U posudbi",
+			"lost": "Izgubljeno",
+			"damaged": "Oštećeno",
+			"inRepair": "U popravku",
+			"withdrawn": "Otpisano",
+			"notForLoan": "Samo u knjižnici"
+		},
+		"loan": {
+			"open": "U tijeku",
+			"dueSoon": "Uskoro ističe",
+			"overdue": "U kašnjenju",
+			"returned": "Vraćeno"
+		},
+		"patron": {
+			"active": "Aktivan",
+			"anonymized": "Uklonjen"
+		},
+		"print": {
+			"pending": "Za ispis",
+			"printed": "Ispisano"
+		}
+	},
+	"list": {
+		"selected": "{{count}} {{count:plural; one:odabran; few:odabrana; other:odabranih;}}"
+	},
+	"scan": {
+		"label": "Crtični kod",
+		"placeholder": "Skenirajte ili upišite kod",
+		"submit": "Traži kod",
+		"camera": "Kamera",
+		"cameraTitle": "Skeniraj kamerom",
+		"errors": {
+			"empty": "Nije unesen kod.",
+			"item_check_digit": "Crtični kod primjerka ima pogrešan kontrolni znak: ponovo ga očitajte.",
+			"card_check_digit": "Broj iskaznice ima pogrešan kontrolni znak: ponovo ga očitajte.",
+			"isbn_check_digit": "ISBN ima pogrešnu kontrolnu znamenku: provjerite znamenke.",
+			"unrecognised": "Kod nije prepoznat: provjerite da čitač čita Code 39 i Code 128."
+		},
+		"invalidRead": "Nevaljan kod ({{code}}): čitanje u tijeku.",
+		"invalidShort": "Nevaljan kod, ponovno čitanje…",
+		"useAnyway": "Ipak koristi {{code}}"
+	},
+	"camera": {
+		"start": "Pokreni kameru",
+		"stop": "Zaustavi kameru",
+		"switch": "Promijeni kameru",
+		"torch": "Svjetiljka",
+		"snapshot": "Snimi",
+		"device": "Kamera",
+		"starting": "Pokretanje kamere…",
+		"errors": {
+			"insecure": "Kamera radi samo uz sigurnu vezu (https): ako je aplikacija otvorena iz lokalne mreže bez usluge Tailscale, ne može je koristiti. Upotrijebite čitač crtičnog koda ili učitajte datoteku, ili otvorite aplikaciju s adrese Tailscale.",
+			"denied": "Dopuštenje odbijeno: dopustite korištenje kamere u postavkama preglednika i pokušajte ponovo.",
+			"notFound": "Na ovom uređaju nije pronađena kamera.",
+			"busy": "Kameru već koristi druga aplikacija.",
+			"generic": "Kamera se nije mogla pokrenuti ({{message}}).",
+			"timeout": "Kamera nije odgovorila. Provjerite da preglednik još ne traži dopuštenje ili da nije bilo odbijeno ranije za ovu stranicu (ikona kraj adrese)."
+		},
+		"permissionHint": "Ako preglednik traži dopuštenje za korištenje kamere (obično kraj trake za adresu), odaberite „Dopusti“."
+	},
+	"clipboard": {
+		"failed": "Kopiranje nije uspjelo: označite tekst i kopirajte ga ručno."
+	},
+	"form": {
+		"errorsTitle": "Provjerite označena polja",
+		"field": "Polje {{field}}"
+	},
+	"confirm": {
+		"title": "Potvrditi?"
+	},
+	"export": {
+		"csv": "CSV (proračunska tablica, tekst)",
+		"ods": "ODS (LibreOffice / Excel)"
+	},
+	"demo": {
+		"panel": "Ova instalacija sadrži probne podatke učitane {{when}}: {{patrons}} {{patrons:plural; one:korisnik; few:korisnika; other:korisnika;}}, {{biblios}} {{biblios:plural; one:naslov; few:naslova; other:naslova;}}, {{items}} {{items:plural; one:primjerak; few:primjerka; other:primjeraka;}}, {{loans}} {{loans:plural; one:posudba; few:posudbe; other:posudbi;}}. Sve je izmišljeno: nema stvarne osobe."
+	},
+	"import": {
+		"header": "Prvi redak je zaglavlje",
+		"column": "Stupac {{n}}",
+		"ignore": "— zanemari —",
+		"counts": {
+			"new": "{{count}} {{count:plural; one:novi; few:novi; other:novih;}}",
+			"update": "{{count}} za ažuriranje",
+			"unchanged": "{{count}} bez promjena",
+			"error": "{{count}} {{count:plural; one:pogreška; few:pogreške; other:pogrešaka;}}"
+		},
+		"onlyErrors": "Prikaži samo pogreške",
+		"info": "{{rows}} {{rows:plural; one:redak; few:retka; other:redaka;}} · kodiranje {{encoding}} · separator „{{delimiter}}“",
+		"steps": {
+			"upload": "Datoteka",
+			"mapping": "Stupci",
+			"preview": "Provjera",
+			"done": "Dovršeno"
+		},
+		"line": "Redak",
+		"status": "Ishod",
+		"reason": "Pojedinosti",
+		"statuses": {
+			"new": "Novo",
+			"update": "Ažuriranje",
+			"unchanged": "Nepromijenjeno",
+			"error": "Pogreška"
+		},
+		"errors": {
+			"empty": "Datoteka je prazna.",
+			"tooLarge": "Datoteka je veća od {{mb}} MB.",
+			"noRows": "U datoteci nije pronađen nijedan redak.",
+			"uploadGone": "Učitana datoteka više nije dostupna: učitajte je ponovo.",
+			"notReady": "Datoteka još ima pogreške: provjerite je ponovo.",
+			"mappingIncomplete": "Nedostaju obavezni stupci: {{columns}}."
+		},
+		"template": {
+			"title": "Predložak datoteke",
+			"hint": "Odaberite stupce: predložak sadrži samo zaglavlje i puni se redak po redak (radi i s proračunskom tablicom spremljenom kao CSV).",
+			"required": "Obavezni",
+			"keys": "Ključevi",
+			"keysHint": "Služe za prepoznavanje onoga što već postoji; mogu se izostaviti.",
+			"optional": "Izborni",
+			"download": "Preuzmi predložak",
+			"ifMissing": "Ako nedostaje: {{text}}."
+		},
+		"groups": {
+			"required": "obavezna",
+			"key": "ključ"
+		}
+	},
+	"words": {
+		"yes": "Da",
+		"no": "Ne"
+	},
+	"password": {
+		"show": "Prikaži lozinku",
+		"hide": "Sakrij lozinku"
+	},
+	"demoPublic": {
+		"language": "Jezik",
+		"welcome": {
+			"title": "Dobro došli u demo verziju BiblioViva",
+			"beta": "Javna beta",
+			"betaText": "BiblioViva je u javnoj beti: funkcije su stabilne, ali do verzije 1.0 nije zajamčeno da će nadogradnja ostati kompatibilna s podacima i postavkama prethodne verzije.",
+			"intro": "BiblioViva je program za vođenje školske knjižnice: posudbe i povrati, katalog, korisnici s fotografijama i iskaznicama, naljepnice, ispisi i izvješća. Ovo je javna demo verzija: sve funkcije su dostupne za isprobavanje.",
+			"contents": "Unutra je izmišljena osnovna škola: {{patrons}} {{patrons:plural; one:učenik ili nastavnik; few:učenika i nastavnika; other:učenika i nastavnika;}}, {{biblios}} {{biblios:plural; one:naslov; few:naslova; other:naslova;}} i {{items}} {{items:plural; one:primjerak; few:primjerka; other:primjeraka;}}, {{openLoans}} {{openLoans:plural; one:posudba; few:posudbe; other:posudbi;}} u tijeku, od kojih {{overdueLoans}} u kašnjenju. Imena i fotografije su izmišljeni: nijedna osoba nije stvarna.",
+			"reset": "Svaki dan u {{time}} demo verzija se vraća na početno stanje. Promjene postavki mogu se isprobati, ali se ne spremaju.",
+			"examples": "U demo verziji tekst i fotografije zamjenjuju se primjerom: svaka se radnja može isprobati do kraja, ali ono što se upiše ili fotografira ne ostaje i nijedan drugi posjetitelj to ne vidi. Uvozi prihvaćaju samo primjerne datoteke, koje se preuzimaju sa stranice svakog uvoza.",
+			"accountsTitle": "S kojim računom se prijaviti",
+			"accountsHint": "Kao u knjižnici, svaki račun vidi samo posao svoje uloge. Korisničko ime i lozinka upisuju se u obrazac iznad.",
+			"password": "Lozinka je ista za sve račune:"
+		},
+		"accounts": {
+			"admin": {
+				"name": "Administracija",
+				"does": "vidi sve: osim posla ostalih računa, postavke, račune osoblja, sigurnosne kopije, razrede i prijelaz na sljedeću školsku godinu."
+			},
+			"prestiti": {
+				"name": "Upravljanje posudbama",
+				"does": "posudbeni pult: posuđuje, vraća i produljuje, prati kašnjenja i ispisuje opomene."
+			},
+			"catalogo": {
+				"name": "Katalogizacija",
+				"does": "knjige i primjerci, pretraga podataka iz SBN-a (ovdje simulirana), naslovnice, klasifikacija i naljepnice."
+			},
+			"tessere": {
+				"name": "Iskaznice i fotografije",
+				"does": "učenici i nastavnici, fotografije i fotografski popis razreda, ispis iskaznica."
+			},
+			"report": {
+				"name": "Izvješća",
+				"does": "statistike o posudbama, katalogu i korisnicima, izvoz tablica."
+			}
+		},
+		"blocked": {
+			"config": "U demo verziji postavke se ne spremaju: sve se može isprobati, ali se promjene ne zapisuju.",
+			"restore": "U demo verziji vraćanje sigurnosnih kopija je isključeno: podaci demo verzije stvaraju se sami svake noći.",
+			"configImport": "U demo verziji uvoz konfiguracije je isključen: konfiguracija demo verzije je ista za sve posjetitelje.",
+			"pictures": "Demo verzija ne učitava fotografije razreda: u popisu isprobajte s primjerom fotografije razreda.",
+			"sqlReports": "U demo verziji izvješća napisana u SQL-u su isključena: dostupna su vođena izvješća.",
+			"importSize": "U demo verziji datoteke za uvoz smiju biti najviše 1 MB.",
+			"printSize": "U demo verziji najviše 3 lista se ispisuju odjednom: odaberite manje primjeraka ili manje korisnika.",
+			"importExample": "U demo verziji uvozi se samo primjerna datoteka: preuzmite je gumbom za predložak i učitajte je takvu kakva je.",
+			"notesLimit": "U demo verziji može se napisati samo nekoliko bilješki dnevno.",
+			"demoData": "U demo verziji probni podaci ostaju do noćnog vraćanja na početno stanje.",
+			"backups": "U demo verziji ručne sigurnosne kopije su isključene: podaci demo verzije stvaraju se sami svake noći.",
+			"archives": "U demo verziji arhivi i sigurnosne kopije se ne preuzimaju: podaci i konfiguracija demo verzije stvaraju se sami svake noći.",
+			"languagePacks": "U demo verziji jezični paketi se ne preuzimaju: demo verzija ima talijanski i engleski."
+		},
+		"example": {
+			"note": "DEMO – bilješka od {{when}}",
+			"comment": "Demo bilješka od {{when}}",
+			"book": "Demo knjiga od {{when}}",
+			"wish": "Demo želja od {{when}}",
+			"class": "Demo razred od {{when}}",
+			"printList": "Demo popis od {{when}}",
+			"inventory": "Demo revizija od {{when}}",
+			"reason": "Demo razlog od {{when}}",
+			"date": "Demo datum od {{when}}"
+		},
+		"replaced": "U demo verziji tekst i fotografije zamjenjuju se primjerom: spremanje je uspjelo, ali ostaje primjer.",
+		"tooMany": "Previše zahtjeva u kratkom roku: pokušajte ponovo za minutu.",
+		"refused": {
+			"title": "Nije dostupno u demo verziji",
+			"busyTitle": "Previše zahtjeva",
+			"back": "Natrag na BiblioViva"
+		}
+	}
+}

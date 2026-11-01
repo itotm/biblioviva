@@ -1,0 +1,1778 @@
+{
+	"home": {
+		"title": "Configuratie"
+	},
+	"leave": {
+		"title": "Verlaten zonder op te slaan?",
+		"description": "De wijzigingen die nog niet zijn opgeslagen, gaan verloren.",
+		"confirm": "Verlaten zonder opslaan"
+	},
+	"taxonomy": {
+		"title": "Classificatie",
+		"intro": "Wijzigingen blijven in concept tot “Opslaan”; de vorige versie van {{file}} wordt bewaard.",
+		"invalid": "Sommige waarden zijn niet geldig (in rood aangegeven): corrigeer ze om te kunnen opslaan.",
+		"orphans": "De catalogus bevat boeken met codes die de classificatie niet kent: {{codes}}. Voeg deze codes hier toe of classificeer die boeken opnieuw vanuit de catalogus.",
+		"unsaved": "Niet-opgeslagen wijzigingen",
+		"discard": "Wijzigingen ongedaan maken",
+		"saved": "Classificatie opgeslagen",
+		"savedDetail": "{{records}} {{records:plural; one:boek verplaatst; other:boeken verplaatst;}}, {{callNumbers}} {{callNumbers:plural; one:signatuur herschreven; other:signaturen herschreven;}}, {{bands}} {{bands:plural; one:rugband opnieuw af te drukken; other:rugbanden opnieuw af te drukken;}}.",
+		"tabs": {
+			"fiction": "Fictie",
+			"nonfiction": "Non-fictie",
+			"dewey": "Dewey",
+			"options": "Opties"
+		},
+		"addGenre": "Een genre toevoegen",
+		"addClass": "Een onderwerp toevoegen",
+		"addSubclass": "Een subonderwerp toevoegen",
+		"dragHint": "Sleep de rijen om de volgorde te wijzigen, of gebruik de pijltjes. De volgorde is die van de keuzes in de catalogus.",
+		"pickGenre": "Kies een genre om het te bewerken",
+		"pickClass": "Kies een onderwerp om het te bewerken",
+		"untitled": "Zonder naam",
+		"hasProblems": "Te corrigeren",
+		"usageShort": "{{records}} {{records:plural; one:boek; other:boeken;}}",
+		"moveUp": "Omhoog verplaatsen",
+		"moveDown": "Omlaag verplaatsen",
+		"panel": {
+			"genre": "Genre",
+			"class": "Onderwerp",
+			"subclass": "Subonderwerp"
+		},
+		"fields": {
+			"code": "Code",
+			"label": "Naam",
+			"color": "Kleur",
+			"pictogram": "Pictogram",
+			"position": "Positie"
+		},
+		"renameNote": "Code gewijzigd: bij het opslaan {{records}} {{records:plural; one:boek verhuist; other:boeken verhuizen;}} van {{from}} naar {{to}} en worden hun signaturen bijgewerkt.",
+		"color": {
+			"inherit": "De kleur van {{code}} gebruiken",
+			"none": "Geen kleur",
+			"hex": "Kleurcode"
+		},
+		"pictogram": {
+			"upload": "Een afbeelding uploaden",
+			"choose": "Kies uit de afbeeldingen",
+			"remove": "De afbeelding verwijderen",
+			"own": "Eigen afbeelding. PNG, JPEG of WebP: wordt opgeslagen als PNG.",
+			"missing": "Het bestand {{name}} staat niet in de afbeeldingenmap: op de etiketten verschijnt de schijf met de kleur en de code.",
+			"inherited": "Zonder eigen afbeelding wordt die van {{code}} gebruikt.",
+			"placeholder": "Zonder afbeelding verschijnt op de etiketten een schijf met de kleur en de code.",
+			"gallery": "Afbeeldingen van de classificatie",
+			"errors": {
+				"empty": "Het bestand is leeg.",
+				"too_large": "De afbeelding is te groot (maximaal {{maxMb}} MB).",
+				"not_an_image": "Het bestand is geen afbeelding.",
+				"unsupported_format": "Indeling niet aanvaard: gebruik PNG, JPEG of WebP."
+			}
+		},
+		"position": {
+			"top": "Hoofdonderwerp",
+			"under": "Binnen {{code}} · {{label}}",
+			"locked": "Het heeft subonderwerpen: het blijft een hoofdonderwerp."
+		},
+		"usage": {
+			"new": "Nieuw: nog geen enkel boek gebruikt het.",
+			"none": "Geen enkel boek gebruikt deze code.",
+			"some": "Gebruikt door {{records}} {{records:plural; one:boek; other:boeken;}} ({{copies}} {{copies:plural; one:exemplaar; other:exemplaren;}})."
+		},
+		"remove": {
+			"genre": "Het genre verwijderen",
+			"class": "Het onderwerp verwijderen",
+			"confirmTitle": "{{code}} verwijderen?",
+			"withSubclasses": "Ook {{count}} {{count:plural; one:subonderwerp wordt; other:subonderwerpen worden;}} verwijderd.",
+			"inUse": "{{records}} {{records:plural; one:boek gebruikt; other:boeken gebruiken;}} deze code: bij het opslaan wordt gevraagd waar ze naartoe moeten.",
+			"confirm": "Verwijderen"
+		},
+		"preview": {
+			"title": "Voorbeeld van de rugband",
+			"hint": "Een voorbeeldboek zoals het nu zou worden afgedrukt, op ware grootte.",
+			"needsCode": "Het voorbeeld verschijnt wanneer de code geldig is."
+		},
+		"problems": {
+			"codeRequired": "De code is verplicht.",
+			"codeFormat": "Gebruik alleen letters, cijfers, punt, streepje of onderstreepteken (maximaal 32).",
+			"codeTaken": "Deze code wordt al gebruikt door een ander genre of onderwerp.",
+			"labelRequired": "De naam is verplicht.",
+			"labelLong": "De naam is te lang (maximaal 120 tekens).",
+			"colorFormat": "Schrijf de kleur als #rrggbb, bijvoorbeeld #e8231b.",
+			"patternRequired": "Het schema mag niet leeg zijn."
+		},
+		"dewey": {
+			"hint": "Wanneer een boek van non-fictie met een Dewey-nummer binnenkomt (bijvoorbeeld van SBN), wordt het onderwerp voorgesteld aan de hand van deze tabel: het langste overeenkomende voorvoegsel geldt.",
+			"probe": "Probeer een Dewey-nummer",
+			"noMatch": "Geen enkel onderwerp komt overeen",
+			"empty": "Geen Dewey-koppeling",
+			"prefix": "Dewey-voorvoegsel",
+			"class": "Onderwerp",
+			"add": "Een koppeling toevoegen",
+			"problems": {
+				"prefixFormat": "1 tot 3 cijfers.",
+				"prefixTaken": "Voorvoegsel herhaald.",
+				"codeUnknown": "Kies een onderwerp."
+			}
+		},
+		"options": {
+			"fictionByClass": "Fictie is ingedeeld naar leesniveau",
+			"fictionByClassHint": "Fictieboeken kunnen het leesniveau krijgen waarvoor ze geschikt zijn (bijvoorbeeld klas 4): het verschijnt in de signatuur en op de rugband.",
+			"classPerItem": "Het leesniveau staat op elk exemplaar",
+			"classPerItemHint": "Nodig wanneer exemplaren van hetzelfde boek in de rekken van verschillende niveaus staan. Anders staat het niveau op het boek.",
+			"toCopies": "Bij het opslaan gaat het leesniveau van elk boek naar zijn exemplaren.",
+			"toRecords": "Bij het opslaan keert het niveau van de exemplaren terug naar het boek; dat kan niet wanneer exemplaren van hetzelfde boek verschillende niveaus hebben.",
+			"patterns": "Schema's van de signatuur",
+			"patternsHint": "Ze gelden voor de exemplaren die vanaf nu worden toegevoegd; bestaande signaturen veranderen niet. Plaatshouders: {{placeholders}}.",
+			"pattern": {
+				"fiction": "Fictie",
+				"fictionWithClass": "Fictie met gekoppelde klas",
+				"nonfiction": "Non-fictie"
+			},
+			"unknownPlaceholders": "Onbekende plaatshouders: {{names}}.",
+			"example": "Voorbeeld: {{example}}"
+		},
+		"save": {
+			"title": "De classificatie opslaan",
+			"checking": "Controleren wat er in de catalogus verandert…",
+			"unchanged": "Er zijn geen wijzigingen om op te slaan.",
+			"errors": "Corrigeer deze problemen voordat u opslaat:",
+			"removedTitle": "Verwijderde codes die nog in gebruik zijn",
+			"removedHint": "Kies waar de boeken van elke verwijderde code naartoe moeten: de nieuwe code komt op de boeken, aan het begin van hun signaturen en op de rugbanden.",
+			"moveTo": "{{code}} · {{label}}: {{records}} {{records:plural; one:boek; other:boeken;}} ({{copies}} {{copies:plural; one:exemplaar; other:exemplaren;}}). Verplaats naar",
+			"choose": "Kies…",
+			"callNumbers": "{{count}} {{count:plural; one:signatuur begint; other:signaturen beginnen;}} met een verwijderde code: de code aan het begin wordt vervangen (bijvoorbeeld B 4 DEL wordt A 4 DEL).",
+			"bandsMoved": "De rugbanden van de verplaatste boeken en de etiketten waarvan de signatuur is veranderd, komen terug tussen die om af te drukken.",
+			"unused": "Verwijderd, door geen enkel boek gebruikt: {{codes}}.",
+			"reprint": "Zet terug tussen de af te drukken etiketten de rugbanden van {{copies}} {{copies:plural; one:exemplaar; other:exemplaren;}} waarvan de naam, kleur of pictogram verandert ({{codes}})",
+			"reprintHint": "Laat dit uit als het verschil op de rugbanden die al op de boeken zijn geplakt niet uitmaakt.",
+			"conflicts": "{{count}} {{count:plural; one:boek heeft; other:boeken hebben;}} exemplaren in verschillende klassen: geef alle exemplaren van elk boek dezelfde klas voordat u de klas van de exemplaren verwijdert.",
+			"toCopies": "De gekoppelde klas van {{count}} {{count:plural; one:boek gaat; other:boeken gaan;}} naar hun exemplaren.",
+			"toRecords": "De klas van de exemplaren keert voor {{count}} {{count:plural; one:titel; other:titels;}} terug naar het boek.",
+			"warnings": "{{count}} {{count:plural; one:waarschuwing; other:waarschuwingen;}} (ze blokkeren het opslaan niet)",
+			"levelsTitle": "Leesniveaus verwijderd terwijl boeken ze nog hebben",
+			"levelMoveTo": "De boeken van niveau {{code}} · {{label}} ({{records}} {{records:plural; one:titel; other:titels;}}, {{copies}} {{copies:plural; one:exemplaar; other:exemplaren;}}) gaan naar",
+			"noLevel": "Geen niveau",
+			"levelsHint": "Het niveau in de signaturen van de exemplaren verandert mee (bijvoorbeeld B 4 DEL wordt B 5 DEL) en hun etiketten komen terug tussen die om af te drukken."
+		},
+		"levels": {
+			"title": "Leesniveaus",
+			"hint": "In volgorde, van het eenvoudigste. De code komt op de boeken en in de signatuur (bijvoorbeeld 4 in B 4 DEL), de naam verschijnt in de keuzes. Bij een niveau in gebruik dat wordt verwijderd of hernoemd, wordt bij het opslaan gevraagd waar zijn boeken naartoe moeten.",
+			"code": "Niveaucode",
+			"label": "Naam van het niveau",
+			"up": "Omhoog verplaatsen",
+			"down": "Omlaag verplaatsen",
+			"remove": "Het niveau verwijderen",
+			"add": "Een niveau toevoegen"
+		}
+	},
+	"sections": {
+		"library": {
+			"title": "Bibliotheek en school",
+			"description": "Naam, type school, klassen en afdelingen, schooljaar, tijdzone."
+		},
+		"school": {
+			"title": "School",
+			"description": "De onderwijsniveaus en jaren van de school, hoe een klas wordt geschreven, wat er aan het eind van het jaar met de klassen gebeurt. De klassen zelf beheert u in Beheer → Configuratie → Klassen."
+		},
+		"catalog": {
+			"title": "Catalogus",
+			"description": "Waarden voor onbekende auteur, uitgever en plaats."
+		},
+		"barcodes": {
+			"title": "Barcodes",
+			"description": "Indeling van de lenerspassen en van de exemplaren, oude codes, type barcode."
+		},
+		"circulation": {
+			"title": "Uitleen",
+			"description": "Regels voor uitlening en verlenging, inleverdatums, herinneringen, ontvangstbewijzen."
+		},
+		"calendar": {
+			"title": "Kalender",
+			"description": "Sluitingsdagen en feestdagen."
+		},
+		"z3950": {
+			"title": "Z39.50 (SBN)",
+			"description": "De servers waar de titelbeschrijvingen van de boeken vandaan komen."
+		},
+		"metadata": {
+			"title": "Boekgegevens",
+			"description": "De gegevensbronnen bij het zoeken op ISBN."
+		},
+		"performance": {
+			"title": "Prestaties",
+			"description": "De computer waarop BiblioViva draait en de instellingen die ervan afhangen."
+		},
+		"classification": {
+			"title": "Classificatie",
+			"description": "Genres, onderwerpen, pictogrammen, Dewey en signaturen."
+		},
+		"cards": {
+			"title": "Lenerspassen",
+			"description": "Indeling van de lenerspassen en van het afdrukvel."
+		},
+		"labels": {
+			"title": "Etiketten",
+			"description": "Etiketten en rugbanden van de boeken, zelfklevende vellen."
+		},
+		"photos": {
+			"title": "Foto's van de leners",
+			"description": "Afmetingen en formaat van de foto's."
+		},
+		"covers": {
+			"title": "Omslagen",
+			"description": "Afmetingen, formaat en bronnen van de omslagen."
+		},
+		"privacy": {
+			"title": "Privacy",
+			"description": "Hoe lang het logboek van de handelingen wordt bewaard."
+		},
+		"backup": {
+			"title": "Back-up",
+			"description": "Tijdstip en bewaring van de back-ups, externe kopie."
+		},
+		"security": {
+			"title": "Beveiliging en toegang",
+			"description": "Duur van de sessies, aanmeldpogingen, accounts en rollen."
+		},
+		"ui": {
+			"title": "Interface",
+			"description": "De uitleenbalie en de toegevoegde talen; kleuren, taal en dashboard staan onder “Uiterlijk en taal”."
+		}
+	},
+	"fields": {
+		"library": {
+			"name": {
+				"label": "Naam van de bibliotheek",
+				"hint": "Verschijnt linksboven, op de lenerspassen en op de afdrukken."
+			},
+			"contactEmail": {
+				"label": "E-mail voor contact",
+				"hint": "Optioneel: verschijnt op de afdrukken die het vermelden."
+			},
+			"schoolYearStart": {
+				"label": "Begin van het schooljaar",
+				"hint": "Maand en dag als MM-DD (bijvoorbeeld 09-01): het scheidt de jaren in de statistieken."
+			},
+			"schoolYearLabel": {
+				"label": "Naam van het schooljaar",
+				"hint": "Hoe het schooljaar verschijnt op lenerspassen, rapporten en pagina's: twee jaren (2026/2027) of het jaar waarin het begint (2026), zoals in Brazilië, Japan en Korea."
+			},
+			"timezone": {
+				"label": "Tijdzone",
+				"hint": "Naam van de zone, bijvoorbeeld Europe/Rome: datums en inleverdatums volgen die, niet de klok van de server."
+			},
+			"weekStart": {
+				"label": "Eerste dag van de week",
+				"hint": "De dag waarop de weken beginnen in de kalenders en in “deze week” van het dashboard. Bij de eerste start kiest de taal die (maandag voor het Nederlands, zondag voor het Engels)."
+			}
+		},
+		"school": {
+			"classLabel": {
+				"label": "Hoe de klas wordt geschreven",
+				"hint": "{level} is het jaar, {group} de naam van de klas: “{level} {group}” geeft 3 B, “{level}{group}” geeft 3B. Een onderwijsniveau kan een eigen schrijfwijze hebben (Onderwijsniveaus en jaren)."
+			},
+			"groupWord": {
+				"label": "Woord voor de klas",
+				"hint": "De naam van het veld klas in de formulieren en filters, en {word} in de regel van de klas op de lenerspas (Sectie B, Klas B, Groep B)."
+			},
+			"cardClass": {
+				"label": "Klas op de lenerspas",
+				"hint": "De regel met de klas die op de lenerspas wordt afgedrukt: {word} is het woord voor de klas, {group} de naam van de klas, {level} het jaar, {class} de hele klas. “{word} {group}” geeft Sectie B, “{class}” geeft 3 B."
+			},
+			"teacherGroupName": {
+				"label": "Naam van de groep leerkrachten",
+				"hint": "De groep waarin een leerkracht terechtkomt wanneer er geen andere wordt gekozen."
+			},
+			"promotionWithinStage": {
+				"label": "Aan het eind van het jaar, binnen een onderwijsniveau",
+				"hint": "Meestal schuift de klas mee op met de leerlingen: de 3 B wordt de 4 B."
+			},
+			"promotionAcrossStages": {
+				"label": "Aan het eind van het jaar, naar een ander onderwijsniveau",
+				"hint": "Bijvoorbeeld van het 5e jaar van de basisschool naar het 1e jaar van het voortgezet onderwijs in een brede school."
+			}
+		},
+		"catalog": {
+			"specialAuthors": {
+				"label": "Bijzondere auteurs",
+				"hint": "Eén per regel: de waarden die in plaats van een persoonlijke auteur worden aanvaard (bijvoorbeeld Anonimo, AA. VV.)."
+			},
+			"unknownPublisher": {
+				"label": "Onbekende uitgever",
+				"hint": "De waarde die wordt geschreven wanneer de uitgever niet is opgegeven."
+			},
+			"unknownPlace": {
+				"label": "Onbekende plaats",
+				"hint": "De waarde die wordt geschreven wanneer de plaats van uitgave niet is opgegeven."
+			}
+		},
+		"barcodes": {
+			"keyboardLayout": {
+				"label": "Toetsenbord van de computer",
+				"hint": "De indeling van het toetsenbord van de computers waarop de barcodescanners zijn aangesloten: die wordt gebruikt om de tekens te herstellen die een scanner, ingesteld voor een ander toetsenbord, verkeerd schrijft."
+			},
+			"cameraSound": {
+				"label": "Geluid van de camera",
+				"hint": "Het piepje van de telefoon wanneer de camera een lenerspas, de barcode van een exemplaar of een ISBN leest. De USB-scanner piept vanzelf en heeft dat niet nodig; de uitleenbalie blijft stil."
+			},
+			"patron": {
+				"symbology": {
+					"label": "Type barcode van de lenerspassen",
+					"hint": "Code 128 voor nieuwe lenerspassen; Code 39 alleen als de scanners van de bibliotheek geen Code 128 kunnen lezen."
+				}
+			},
+			"item": {
+				"symbology": {
+					"label": "Type barcode van de exemplaren",
+					"hint": "Code 128 voor nieuwe etiketten; Code 39 alleen als de scanners van de bibliotheek geen Code 128 kunnen lezen."
+				}
+			}
+		},
+		"circulation": {
+			"rules": {
+				"student": {
+					"loanDays": {
+						"label": "Uitleendagen",
+						"hint": "Hoeveel dagen een uitlening duurt voor leerlingen."
+					},
+					"maxLoans": {
+						"label": "Meeste boeken in uitleen",
+						"hint": "Hoeveel boeken iemand tegelijk mag hebben."
+					},
+					"maxRenewals": {
+						"label": "Meeste verlengingen",
+						"hint": "Hoe vaak dezelfde uitlening kan worden verlengd (0 = nooit)."
+					},
+					"renewalDays": {
+						"label": "Verlengdagen",
+						"hint": "Hoeveel dagen elke verlenging erbij telt."
+					}
+				},
+				"teacher": {
+					"loanDays": {
+						"label": "Uitleendagen",
+						"hint": "Hoeveel dagen een uitlening duurt voor leerkrachten."
+					},
+					"maxLoans": {
+						"label": "Meeste boeken in uitleen",
+						"hint": "Hoeveel boeken iemand tegelijk mag hebben."
+					},
+					"maxRenewals": {
+						"label": "Meeste verlengingen",
+						"hint": "Hoe vaak dezelfde uitlening kan worden verlengd (0 = nooit)."
+					},
+					"renewalDays": {
+						"label": "Verlengdagen",
+						"hint": "Hoeveel dagen elke verlenging erbij telt."
+					}
+				}
+			},
+			"dueDateMode": {
+				"label": "Berekening van de inleverdatum",
+				"hint": "Hoe de duur van de uitlening wordt geteld ten opzichte van de dagen waarop de bibliotheek gesloten is."
+			},
+			"renewFrom": {
+				"label": "Verlenging begint vanaf",
+				"hint": "De dag vanaf wanneer de verlengdagen worden geteld."
+			},
+			"allowRenewalWhenOverdue": {
+				"label": "Ook na de inleverdatum verlengen",
+				"hint": "Een uitlening die al te laat is, kan worden verlengd."
+			},
+			"overdueNotice": {
+				"template": {
+					"label": "Model van de herinneringen",
+					"hint": "De naam van het afdrukmodel van de herinneringen (map in slips/templates)."
+				},
+				"pageBreakPerGroup": {
+					"label": "Één pagina per klas",
+					"hint": "Elke klas op een eigen vel, om aan de leerkracht te geven; dit kan ook bij het afdrukken worden gewijzigd."
+				},
+				"minDays": {
+					"label": "Dagen te laat voordat een herinnering volgt",
+					"hint": "Een uitlening verschijnt in de herinneringen pas na zoveel dagen vertraging (0 = meteen)."
+				}
+			},
+			"blockIfOverdue": {
+				"label": "Geen nieuwe uitleningen met boeken die te laat zijn",
+				"hint": "Wie een boek te laat heeft, kan geen andere boeken meenemen totdat het boek is ingeleverd."
+			},
+			"hardDueDate": {
+				"label": "Uiterste inleverdatum",
+				"hint": "Geen enkele uitlening loopt af na deze datum (bijvoorbeeld het einde van de lessen). Leeg: geen limiet."
+			},
+			"receipts": {
+				"label": "Ontvangstbewijs van uitlening",
+				"hint": "Toont aan de uitleenbalie de knop om het ontvangstbewijs af te drukken."
+			}
+		},
+		"calendar": {
+			"autoItalianHolidays": {
+				"label": "Italiaanse nationale feestdagen",
+				"hint": "De nationale feestdagen (Pasen inbegrepen) zijn sluitingsdagen zonder dat u ze zelf moet invoeren."
+			}
+		},
+		"z3950": {
+			"defaultTarget": {
+				"label": "Standaardserver",
+				"hint": "De identificatie van de Z39.50-server die voor zoekopdrachten wordt gebruikt."
+			},
+			"timeoutMs": {
+				"label": "Maximale wachttijd (ms)",
+				"hint": "Na hoeveel milliseconden een Z39.50-zoekopdracht wordt afgebroken."
+			},
+			"maxRecordsIsbn": {
+				"label": "Resultaten per ISBN",
+				"hint": "Hoeveel titelbeschrijvingen er maximaal worden gelezen bij het zoeken op een ISBN (één ISBN kan per herdruk een beschrijving hebben): de volledigste wordt geopend."
+			},
+			"maxRecordsSearch": {
+				"label": "Resultaten per zoekopdracht",
+				"hint": "Hoeveel titelbeschrijvingen er maximaal worden gelezen bij het zoeken op titel of auteur."
+			}
+		},
+		"metadata": {
+			"providers": {
+				"label": "Gegevensbronnen",
+				"hint": "Waar de gegevens van de boeken vandaan komen bij het zoeken op ISBN: de gekozen bronnen worden samen geraadpleegd."
+			},
+			"cacheDays": {
+				"label": "Dagen dat zoekopdrachten worden onthouden",
+				"hint": "Voor hoeveel dagen een eerder uitgevoerde zoekopdracht opnieuw wordt gebruikt zonder opnieuw te vragen."
+			},
+			"timeoutMs": {
+				"label": "Maximale wachttijd (ms)",
+				"hint": "Na hoeveel milliseconden een bron die niet antwoordt, wordt overgeslagen."
+			}
+		},
+		"performance": {
+			"profile": {
+				"label": "Computer",
+				"hint": "De standaardinstellingen die passen bij de computer waarop BiblioViva draait."
+			},
+			"sqliteCacheMb": {
+				"label": "Cache van de database (MB)",
+				"hint": "Leeg: volgens de computer (8, 16, 64 of 256 MB)."
+			},
+			"sqliteMmapMb": {
+				"label": "Geheugenafbeelding van de database (MB)",
+				"hint": "Leeg: volgens de computer (0, 0, 0 of 512 MB)."
+			},
+			"walAutocheckpointPages": {
+				"label": "Pagina's voordat een checkpoint volgt",
+				"hint": "Leeg: volgens de computer (500, 1000, 2000 of 4000)."
+			},
+			"imageConcurrency": {
+				"label": "Afbeeldingen samen verwerkt",
+				"hint": "Foto's, omslagen, klasfoto's en het logo worden tegelijk verwerkt; de andere wachten hun beurt. Leeg: volgens de computer (1, 1, 2 of 4)."
+			},
+			"yazConcurrency": {
+				"label": "Z39.50-zoekopdrachten samen",
+				"hint": "Z39.50-zoekopdrachten die tegelijk worden uitgevoerd; de andere wachten hun beurt. Leeg: volgens de computer (1, 1, 2 of 2)."
+			},
+			"heavyConcurrency": {
+				"label": "Afdrukken en exporten tegelijk",
+				"hint": "Vellen om af te drukken (lenerspassen, etiketten, herinneringen, ontvangstbewijzen, rapporten) en exporten (CSV, ODS, archieven, back-ups) die tegelijk worden voorbereid; de andere wachten hun beurt, zodat de uitleenbalie snel blijft. Leeg: volgens de computer (1, 1, 2 of 4)."
+			},
+			"argon2MemoryMb": {
+				"label": "Geheugen om wachtwoorden te controleren (MB)",
+				"hint": "Geldt voor de wachtwoorden die vanaf dat moment worden ingesteld. Leeg: 16 MB op elke computer (het systeem is nooit aan internet blootgesteld)."
+			},
+			"smol": {
+				"label": "Geheugenbesparing",
+				"hint": "Minder geheugen, iets meer werk voor de processor. Automatisch: volgens de computer (ja voor de minimale computer en de Raspberry Pi). Geldt na een herstart."
+			}
+		},
+		"cards": {
+			"defaultTemplate": {
+				"label": "Model van de lenerspassen",
+				"hint": "De naam van het afdrukmodel dat wordt gebruikt wanneer een lenertype er geen eigen heeft (map in cards/templates)."
+			},
+			"layout": {
+				"label": "Afdrukken van de lenerspassen",
+				"hint": "Voor- en achterkant naast elkaar (te vouwen aan de korte kant) of op de twee zijden van het vel, met een printer die aan beide kanten afdrukt. Wordt bij elke afdruk opnieuw gekozen."
+			},
+			"duplex": {
+				"flip": {
+					"label": "Hoe het vel wordt gedraaid",
+					"hint": "Hoe de printer het vel voor de achterkant draait: aan de lange rand (als een boek) of aan de korte rand. Dit moet overeenkomen met de keuze in het afdrukvenster."
+				},
+				"backOffsetMm": {
+					"x": {
+						"label": "Verschuiving van de achterkanten, horizontaal (mm)",
+						"hint": "Wordt door de kalibratie bepaald: hoeveel de achterkanten moeten worden verschoven zodat ze achter de voorkanten vallen."
+					},
+					"y": {
+						"label": "Verschuiving van de achterkanten, verticaal (mm)",
+						"hint": "Wordt door de kalibratie bepaald."
+					}
+				}
+			},
+			"cardMm": {
+				"width": {
+					"label": "Breedte (mm)",
+					"hint": "De standaard lenerspas is 85,6 mm breed."
+				},
+				"height": {
+					"label": "Hoogte (mm)",
+					"hint": "De standaard lenerspas is 53,98 mm hoog."
+				}
+			},
+			"bleedMm": {
+				"label": "Afloop (mm)",
+				"hint": "Extra marge rond de afbeeldingen tot de rand van het vel, die wordt weggesneden."
+			},
+			"sheet": {
+				"paper": {
+					"label": "Formaat van het vel",
+					"hint": "Het vel waarop de lenerspassen worden afgedrukt."
+				},
+				"rows": {
+					"label": "Lenerspassen per vel",
+					"hint": "Hoeveel lenerspassen (voor- en achterkant) er onder elkaar staan: 4 of 5 op een A4."
+				},
+				"marginMm": {
+					"label": "Marge van het vel (mm)",
+					"hint": "De witte ruimte rond de lenerspassen."
+				},
+				"gapMm": {
+					"label": "Ruimte tussen de lenerspassen (mm)",
+					"hint": "De afstand tussen de ene lenerspas en de volgende."
+				},
+				"foldMarks": {
+					"label": "Vouwmarkeringen",
+					"hint": "Korte stippellijnen in de marges en tussen de lenerspassen, waar de voor- en achterkant worden gevouwen."
+				},
+				"cutMarks": {
+					"label": "Snijmarkeringen",
+					"hint": "Snijkruisjes: korte lijnen in de marges en tussen de lenerspassen die de randen van elke lenerspas verlengen, om met liniaal en snijmes te snijden."
+				}
+			},
+			"validityMonths": {
+				"label": "Geldigheid (maanden)",
+				"hint": "Hoeveel maanden een afgedrukte lenerspas geldig is. Leeg: vervalt nooit."
+			},
+			"showPhoto": {
+				"label": "Foto op de lenerspas",
+				"hint": "Drukt de foto van de lener op de lenerspas af."
+			}
+		},
+		"labels": {
+			"default": {
+				"label": "Standaardetiketten",
+				"hint": "Wat wordt afgedrukt wanneer “Etiketten afdrukken” wordt gekozen."
+			},
+			"titleMaxChars": {
+				"label": "Letters van de titel",
+				"hint": "De titel op de etiketten wordt tot deze lengte afgekapt."
+			},
+			"monochrome": {
+				"label": "Zwart-witprinter",
+				"hint": "Op de lage rugbanden wordt de gekleurde band een arcering (streeppatroon)."
+			},
+			"pair": {
+				"template": {
+					"label": "Model",
+					"hint": "De naam van het afdrukmodel van het paar (map in labels/templates)."
+				},
+				"stock": {
+					"label": "Zelfklevend vel",
+					"hint": "De identificatie van het gebruikte vel etiketten (bestand in labels/stocks)."
+				}
+			},
+			"barcode": {
+				"template": {
+					"label": "Model",
+					"hint": "De naam van het afdrukmodel van het etiket met de barcode (map in labels/templates)."
+				},
+				"stock": {
+					"label": "Zelfklevend vel",
+					"hint": "De identificatie van het gebruikte vel etiketten (bestand in labels/stocks)."
+				}
+			},
+			"spine": {
+				"template": {
+					"label": "Model",
+					"hint": "De naam van het afdrukmodel van de rugband (map in labels/templates)."
+				},
+				"stock": {
+					"label": "Zelfklevend vel",
+					"hint": "De identificatie van het gebruikte vel etiketten (bestand in labels/stocks)."
+				}
+			}
+		},
+		"photos": {
+			"enabled": {
+				"label": "Foto's van de leners",
+				"hint": "Aan: foto's die voor elke lener worden gemaakt of geüpload, de fotoregistratie, foto's op de lenerspassen. Uit: nergens een foto en lenerspassen zonder foto; de al opgeslagen foto's blijven bewaard en komen terug wanneer dit weer wordt ingeschakeld."
+			},
+			"required": {
+				"label": "Foto verplicht",
+				"hint": "Aan: het dashboard, de lijst van leners en de afdruklijsten wijzen aan wie geen foto heeft. Uit: geen herinnering, maar foto's kunnen nog altijd worden gemaakt, geüpload en op de lenerspassen afgedrukt."
+			},
+			"width": {
+				"label": "Breedte (px)",
+				"hint": "Foto's worden opgeslagen met deze breedte."
+			},
+			"height": {
+				"label": "Hoogte (px)",
+				"hint": "Foto's worden opgeslagen met deze hoogte (bijgesneden in het midden)."
+			},
+			"format": {
+				"label": "Bestandsformaat",
+				"hint": "JPEG werkt overal; WebP neemt minder ruimte in."
+			},
+			"quality": {
+				"label": "Kwaliteit",
+				"hint": "Van 1 tot 100: hoger betekent grotere bestanden."
+			},
+			"maxUploadBytes": {
+				"label": "Grootste upload (bytes)",
+				"hint": "Een groter bestand wordt geweigerd."
+			},
+			"sheet": {
+				"maxUploadBytes": {
+					"label": "Grootste bestand (bytes)",
+					"hint": "Een afbeelding met veel foto's (fotoregistratie vanuit een afbeelding) die groter is dan dit, wordt geweigerd."
+				},
+				"maxPixels": {
+					"label": "Langste zijde behouden (px)",
+					"hint": "De afbeelding wordt verkleind totdat de langste zijde niet groter is dan deze waarde."
+				},
+				"maxFrames": {
+					"label": "Maximaal aantal foto's",
+					"hint": "Wanneer de afbeelding er meer bevat, worden de scherpste bewaard."
+				},
+				"minAspect": {
+					"label": "Kleinste verhouding van een foto",
+					"hint": "Hoogte gedeeld door breedte: 1 is een vierkant, 1,33 een pasfoto 3:4."
+				},
+				"maxAspect": {
+					"label": "Grootste verhouding van een foto",
+					"hint": "Hoogte gedeeld door breedte: langwerpigere kaders worden niet als foto's beschouwd."
+				}
+			}
+		},
+		"covers": {
+			"enabled": {
+				"label": "Omslagen van de boeken",
+				"hint": "Aan: omslagen die online worden gezocht, gefotografeerd of geüpload en getoond in de catalogus. Uit: nergens een omslag; de al opgeslagen omslagen blijven bewaard en komen terug wanneer dit weer wordt ingeschakeld."
+			},
+			"width": {
+				"label": "Breedte (px)",
+				"hint": "Omslagen worden opgeslagen met deze breedte."
+			},
+			"maxHeight": {
+				"label": "Maximale hoogte (px)",
+				"hint": "Zeer hoge omslagen worden verkleind. Leeg: geen limiet."
+			},
+			"format": {
+				"label": "Bestandsformaat",
+				"hint": "JPEG werkt overal; WebP neemt minder ruimte in."
+			},
+			"quality": {
+				"label": "Kwaliteit",
+				"hint": "Van 1 tot 100: hoger betekent grotere bestanden."
+			},
+			"maxUploadBytes": {
+				"label": "Grootste upload (bytes)",
+				"hint": "Een groter bestand wordt geweigerd."
+			},
+			"country": {
+				"label": "Land",
+				"hint": "Het land van de catalogus van de leveranciers van omslagen (twee letters, bijvoorbeeld IT)."
+			},
+			"minWidth": {
+				"label": "Kleinste breedte (px)",
+				"hint": "Gedownloade omslagen die smaller zijn dan dit, worden weggegooid."
+			},
+			"autoFetch": {
+				"label": "Zoek de omslag zelf",
+				"hint": "Bij “Nieuw boek” wordt de omslag online opgezocht terwijl de beschrijving wordt gecontroleerd, en wordt die samen met de beschrijving opgeslagen; als de omslag fout is, wordt hij vervangen door een foto."
+			},
+			"timeoutMs": {
+				"label": "Maximale wachttijd (ms)",
+				"hint": "Na hoeveel milliseconden een leverancier die niet antwoordt, wordt overgeslagen."
+			}
+		},
+		"privacy": {
+			"auditRetentionMonths": {
+				"label": "Maanden van het logboek",
+				"hint": "Oudere regels van het logboek worden verwijderd."
+			}
+		},
+		"backup": {
+			"cron": {
+				"label": "Tijdstip van de back-up",
+				"hint": "In cron-vorm: minuut, uur, dag, maand, dag van de week (0 3 * * * = elke nacht om 3 uur)."
+			},
+			"catchUp": {
+				"label": "Back-up bij het opstarten als die is overgeslagen",
+				"hint": "Als de computer op het tijdstip van de back-up uit stond, maakt BiblioViva de back-up een minuut na de eerstvolgende start: er wordt er maar één gemaakt, ook na meerdere dagen."
+			},
+			"keepDays": {
+				"label": "Bewaarde dagen",
+				"hint": "Oudere back-ups worden verwijderd."
+			},
+			"offsite": {
+				"enabled": {
+					"label": "Externe kopie in gebruik",
+					"hint": "Geeft aan dat de tweede kopie van de back-ups (rclone, op een andere schijf of een andere dienst) in gebruik is."
+				},
+				"remote": {
+					"label": "Bestemming van de kopie",
+					"hint": "Waar de kopie naartoe gaat: een map op een andere schijf (/offsite/biblioviva-backups, de standaardkeuze) of een bestemming die in rclone is ingesteld, in de vorm naam:map."
+				}
+			}
+		},
+		"security": {
+			"sessionDays": {
+				"label": "Duur van de sessie (dagen)",
+				"hint": "Na hoeveel dagen het wachtwoord opnieuw wordt gevraagd."
+			},
+			"loginMaxAttempts": {
+				"label": "Aanmeldpogingen",
+				"hint": "Hoeveel verkeerde pogingen er mogen zijn voordat er een verplichte pauze volgt."
+			},
+			"loginWindowMinutes": {
+				"label": "Pauze na te veel pogingen (minuten)",
+				"hint": "Gedurende hoeveel minuten het aanmelden geblokkeerd blijft na te veel pogingen."
+			}
+		},
+		"ui": {
+			"checkoutIdleSeconds": {
+				"label": "Pauze van de uitleenbalie (seconden)",
+				"hint": "Na zoveel seconden zonder scans wordt de uitleenbalie klaargezet voor een nieuwe lener."
+			}
+		}
+	},
+	"options": {
+		"library": {
+			"weekStart": {
+				"monday": "Maandag",
+				"sunday": "Zondag",
+				"saturday": "Zaterdag"
+			},
+			"schoolYearLabel": {
+				"span": "Twee jaren (2026/2027)",
+				"start": "Het jaar waarin het begint (2026)"
+			}
+		},
+		"school": {
+			"promotionWithinStage": {
+				"keep": "De klas schuift op met haar leerlingen",
+				"clear": "De leerlingen blijven zonder klas"
+			},
+			"promotionAcrossStages": {
+				"keep": "De klas schuift op met haar leerlingen",
+				"clear": "De leerlingen blijven zonder klas",
+				"ask": "De klas van elke leerling wordt gekozen"
+			}
+		},
+		"barcodes": {
+			"patron": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"item": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"keyboardLayout": {
+				"it": "Italiaans",
+				"es": "Spaans",
+				"de": "Duits",
+				"fr": "Frans",
+				"uk": "Engels (Verenigd Koninkrijk)",
+				"us": "Engels (Verenigde Staten)"
+			},
+			"cameraSound": {
+				"off": "Geen geluid",
+				"till": "Kassa",
+				"scanner": "Scanner",
+				"confirm": "Bevestiging",
+				"arpeggio": "Arpeggio"
+			}
+		},
+		"circulation": {
+			"dueDateMode": {
+				"datedue": "Kalenderdagen, daarna de eerste open dag",
+				"calendar": "Alleen open dagen",
+				"days": "Kalenderdagen, zonder rekening te houden met de sluitingen"
+			},
+			"renewFrom": {
+				"today": "De dag van de verlenging",
+				"dueDate": "De huidige inleverdatum"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"sbn": "OPAC SBN (Z39.50)",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books",
+				"sbn-json": "OPAC SBN (webservice)"
+			}
+		},
+		"performance": {
+			"profile": {
+				"micro": "Minimale computer: één trage processor en 512 MB (Raspberry Pi Zero 2, de kleinste server)",
+				"small": "Raspberry Pi 4 met 2 GB of een kleine computer",
+				"medium": "Oude pc met een harde schijf",
+				"large": "pc met een SSD"
+			}
+		},
+		"cards": {
+			"sheet": {
+				"paper": {
+					"A4": "A4"
+				}
+			},
+			"layout": {
+				"side-by-side": "Voor- en achterkant naast elkaar",
+				"duplex": "Op de twee zijden van het vel"
+			},
+			"duplex": {
+				"flip": {
+					"long-edge": "Aan de lange rand",
+					"short-edge": "Aan de korte rand"
+				}
+			}
+		},
+		"labels": {
+			"default": {
+				"pair": "Paar: rugband en etiket",
+				"barcode": "Alleen etiket met de barcode",
+				"spine": "Alleen rugband"
+			}
+		},
+		"photos": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		},
+		"covers": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		}
+	},
+	"groups": {
+		"barcodes": {
+			"patron": {
+				"title": "Lenerspassen"
+			},
+			"item": {
+				"title": "Exemplaren"
+			}
+		},
+		"circulation": {
+			"rules": {
+				"title": "Uitleenregels",
+				"student": {
+					"title": "Regels voor leerlingen"
+				},
+				"teacher": {
+					"title": "Regels voor leerkrachten"
+				}
+			},
+			"overdueNotice": {
+				"title": "Herinneringen"
+			}
+		},
+		"cards": {
+			"cardMm": {
+				"title": "Formaat van de lenerspas"
+			},
+			"sheet": {
+				"title": "Afdrukvel"
+			},
+			"duplex": {
+				"title": "Afdrukken aan beide zijden",
+				"backOffsetMm": {
+					"title": "Verschuiving van de achterkanten"
+				}
+			}
+		},
+		"labels": {
+			"pair": {
+				"title": "Paar: rugband en etiket"
+			},
+			"barcode": {
+				"title": "Alleen etiket met de barcode"
+			},
+			"spine": {
+				"title": "Alleen rugband"
+			}
+		},
+		"backup": {
+			"offsite": {
+				"title": "Externe kopie"
+			}
+		},
+		"photos": {
+			"sheet": {
+				"title": "Afbeeldingen met meerdere foto's (fotoregistratie vanuit een afbeelding)"
+			}
+		}
+	},
+	"overview": {
+		"reload": "Opnieuw laden",
+		"reloaded": "Configuratie opnieuw geladen",
+		"reloadFailed": "De bestanden bevatten fouten: de vorige configuratie blijft in gebruik.",
+		"valid": "De configuratie is geldig: {{count}} {{count:plural; one:bestand; other:bestanden;}}.",
+		"example": "De configuratie is nog niet aangemaakt: de voorbeeldwaarden worden gebruikt.",
+		"warnings": "{{count}} {{count:plural; one:waarschuwing; other:waarschuwingen;}}",
+		"diskErrors": "De configuratiebestanden bevatten fouten: de bibliotheek blijft met de vorige versie werken totdat ze zijn gecorrigeerd.",
+		"diskChanged": "De bestanden zijn met de hand gewijzigd: druk op “Opnieuw laden” om de wijzigingen te gebruiken.",
+		"sections": "Instellingen",
+		"alsoFrom": "en {{count}} {{count:plural; one:ander bestand; other:andere bestanden;}}",
+		"editors": "Uiterlijk, klassen en modellen",
+		"templates": "Afdruksjablonen",
+		"templatesDescription": "Mappen met de sjablonen van lenerspassen, etiketten en herinneringen, met hun afbeeldingen.",
+		"reports": "Rapportenbibliotheek",
+		"reportsDescription": "Meegeleverde en schoolrapporten: uitproberen, downloaden, uploaden, verwijderen.",
+		"appearance": "Uiterlijk en taal",
+		"appearanceDescription": "Naam en logo van de bibliotheek, kleuren, taal en de onderdelen van het dashboard.",
+		"classes": "Klassen",
+		"classesDescription": "De klassen van de school en de groepen van de leerkrachten: aanmaken, hernoemen, archiveren."
+	},
+	"section": {
+		"tabs": {
+			"form": "Instellingen",
+			"json": "JSON",
+			"label": "Bewerken als"
+		},
+		"file": "Opgeslagen in {{file}}",
+		"alsoFrom": "Ook uit: {{files}}",
+		"general": "Algemeen",
+		"default": "Standaard: {{value}}",
+		"defaultNone": "Standaard: geen waarde",
+		"defaultAuto": "Standaard: automatisch",
+		"usesDefault": "Gebruikt de standaardwaarde",
+		"reset": "Terug naar de standaardwaarde",
+		"willReset": "Bij het opslaan keert het terug naar de standaardwaarde.",
+		"auto": "Automatisch",
+		"none": "Geen datum",
+		"yes": "Ja",
+		"no": "Nee",
+		"fixed": "Vaste waarde",
+		"range": "Van {{min}} tot {{max}}.",
+		"min": "Ten minste {{min}}.",
+		"max": "Ten hoogste {{max}}.",
+		"save": "Opslaan",
+		"discard": "Wijzigingen ongedaan maken",
+		"saved": "Instellingen opgeslagen",
+		"unsaved": "Niet-opgeslagen wijzigingen",
+		"invalid": "Corrigeer de aangeduide waarden voordat u opslaat.",
+		"errors": "Het opslaan is niet gelukt:",
+		"inUse": "Het opslaan zou iets verwijderen dat nog in gebruik is:",
+		"inUseKinds": {
+			"classification": "code {{code}}: {{count}} {{count:plural; one:boek; other:boeken;}}",
+			"itemType": "type exemplaar {{code}}: {{count}} {{count:plural; one:exemplaar; other:exemplaren;}}",
+			"level": "niveau {{code}}: {{count}} {{count:plural; one:leerling; other:leerlingen;}} of klassen",
+			"readingLevel": "leesniveau {{code}}: {{count}} {{count:plural; one:boek; other:boeken;}}"
+		},
+		"patternError": "Ongeldig formaat.",
+		"numberError": "Schrijf een geheel getal.",
+		"required": "Verplicht.",
+		"elsewhereTitle": "Andere instellingen van deze sectie",
+		"elsewhereHint": "Deze worden gewijzigd met een eigen editor of in het tabblad JSON.",
+		"openEditor": "Openen",
+		"jsonOnly": "Voorlopig in het tabblad JSON",
+		"editorNames": {
+			"taxonomy": "Classificatie",
+			"appearance": "Uiterlijk en taal",
+			"wizard": "De installatiewizard",
+			"history": "Geschiedenis",
+			"settings": "Instellingen",
+			"schoolLevels": "Onderwijsniveaus en jaren"
+		},
+		"json": {
+			"hint": "De sectie zoals ze in {{file}} is geschreven. Sleutels die beginnen met _ zijn opmerkingen en blijven in het bestand.",
+			"label": "JSON-inhoud van de sectie",
+			"parseError": "De tekst is geen geldige JSON: {{message}}",
+			"notObject": "De sectie moet een JSON-object zijn tussen accolades.",
+			"valid": "Geen problemen.",
+			"checking": "Controleren…",
+			"issues": "Problemen om te corrigeren:"
+		},
+		"playSound": "Beluisteren"
+	},
+	"history": {
+		"title": "Geschiedenis van de configuratie",
+		"hint": "Elke wijziging die hier wordt gemaakt, bewaart de vorige versie van de bestanden die ze aanraakt (de laatste 50 wijzigingen).",
+		"empty": "Nog geen wijziging gemaakt vanuit het beheer.",
+		"columns": {
+			"when": "Wanneer",
+			"what": "Wat",
+			"files": "Bestanden"
+		},
+		"revert": "Herstellen",
+		"revertTitle": "De bestanden herstellen zoals ze waren vóór deze wijziging?",
+		"revertDescription": "Alleen de waarden die door deze wijziging zijn veranderd, keren terug. Het herstel is zelf ook een wijziging: het blijft in de geschiedenis staan en kan worden ongedaan gemaakt.",
+		"reverted": "Vorige versie hersteld",
+		"refused": "Deze wijziging heeft config.json aangemaakt: dat kan niet ongedaan worden gemaakt.",
+		"conflict": "Het kan niet worden hersteld: na deze wijziging zijn {{keys}} opnieuw veranderd.",
+		"notFound": "De wijziging staat niet meer in de geschiedenis.",
+		"newFile": "nieuw",
+		"actions": {
+			"revert": "Herstel van de wijziging van {{when}}",
+			"theme": "Kleuren",
+			"locale": "Taal",
+			"logo": "Logo van de bibliotheek",
+			"setup": "Eerste configuratie",
+			"section": "Sectie “{{section}}”",
+			"other": "Wijziging ({{action}})"
+		}
+	},
+	"archive": {
+		"title": "Archief van de configuratie",
+		"hint": "De volledige configuratie in één bestand: instellingen, afdruksjablonen, vellen met zelfklevende etiketten, pictogrammen, logo, rapporten en talen (niet de geschiedenis). Gebruik het om een kopie te bewaren of om haar naar een andere installatie te brengen. “Configuratie importeren” accepteert ook een back-up of een archief “Alles exporteren”: daaruit wordt alleen de configuratie overgenomen; de gegevens van de bibliotheek blijven zoals ze zijn.",
+		"export": "Configuratie exporteren",
+		"import": "Configuratie importeren",
+		"checking": "Het archief wordt gecontroleerd…",
+		"from": "Archief van {{date}} (versie {{version}})",
+		"fromLibrary": "Archief van “{{library}}” van {{date}} (versie {{version}})",
+		"files": "{{added}} {{added:plural; one:nieuw bestand; other:nieuwe bestanden;}}, {{changed}} gewijzigd, {{removed}} verwijderd, {{unchanged}} ongewijzigd.",
+		"fileList": "Lijst van bestanden",
+		"added": "nieuw",
+		"changed": "gewijzigd",
+		"removed": "verwijderd",
+		"sameValues": "De instellingen blijven dezelfde.",
+		"sections": "Wijzigt: {{sections}}.",
+		"errorsTitle": "Het archief heeft problemen: die moeten worden verholpen voordat het kan worden geïmporteerd.",
+		"apply": "Importeren",
+		"confirmTitle": "De configuratie vervangen door die van het archief?",
+		"confirmDescription": "De huidige bestanden blijven in de geschiedenis: “Herstellen” brengt de vorige configuratie terug. De gegevens van de bibliotheek (boeken, leners, uitleningen) veranderen niet.",
+		"imported": "Configuratie geïmporteerd",
+		"failed": "Het importeren is niet gelukt",
+		"errors": {
+			"too_large": "Het archief is te groot (maximaal {{maxMb}} MB).",
+			"not_zip": "Het bestand is geen geldig ZIP-archief.",
+			"not_archive": "Het bestand is geen archief van BiblioViva.",
+			"too_many_files": "Het archief bevat te veel bestanden.",
+			"unsafe_path": "Het archief bevat een pad dat niet is toegestaan: {{name}}",
+			"link": "Het archief bevat een koppeling, die niet is toegestaan: {{name}}",
+			"unknown_file": "Het archief bevat een bestand dat geen deel uitmaakt van de configuratie: {{name}}",
+			"no_config": "Het archief bevat geen configuratie (alleen gegevens van de bibliotheek): het wordt hersteld vanuit Beheer → Back-up."
+		},
+		"exportSome": "De gekozen onderdelen exporteren",
+		"chooseExport": "Kies wat u wilt exporteren"
+	},
+	"blocks": {
+		"problems": {
+			"codeRequired": {
+				"itemTypes": "De code is verplicht.",
+				"sections": "De sectie is verplicht."
+			},
+			"codeFormat": {
+				"itemTypes": "Letters, cijfers, punt, koppelteken of onderstreepteken (maximaal 32).",
+				"sections": "Hoofdletters of cijfers, maximaal 8."
+			},
+			"codeTaken": {
+				"itemTypes": "Code komt al voor.",
+				"sections": "Sectie komt al voor."
+			},
+			"labelRequired": {
+				"itemTypes": "De naam is verplicht.",
+				"sections": "De naam is verplicht."
+			}
+		},
+		"itemTypes": {
+			"title": "Typen exemplaren",
+			"hint": "Boek, dvd, naslagwerk…: het type van elk exemplaar bepaalt de uitleenregels. Een code wijzigen verplaatst de exemplaren naar de nieuwe code.",
+			"code": "Code",
+			"label": "Naam",
+			"notForLoan": "Alleen raadplegen",
+			"add": "Een type toevoegen",
+			"saved": "Typen exemplaren opgeslagen"
+		},
+		"move": {
+			"title": "Waarheen gaan ze?",
+			"hint": {
+				"copies": "Sommige verwijderde typen hebben nog exemplaren: kies het type waarnaar ze moeten worden verplaatst.",
+				"students": "Sommige verwijderde secties hebben nog leerlingen: kies de sectie waarnaar ze moeten worden verplaatst."
+			},
+			"row": {
+				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:exemplaar; other:exemplaren;}}. Verplaats naar",
+				"students": "{{code}}: {{count}} {{count:plural; one:leerling; other:leerlingen;}}. Verplaats naar"
+			},
+			"choose": "Kies…",
+			"used": {
+				"copies": "Exemplaren",
+				"students": "Leerlingen"
+			},
+			"count": {
+				"copies": "{{count}} {{count:plural; one:exemplaar; other:exemplaren;}}",
+				"students": "{{count}} {{count:plural; one:leerling; other:leerlingen;}}"
+			},
+			"done": {
+				"copies": "{{count}} {{count:plural; one:exemplaar verplaatst; other:exemplaren verplaatst;}}.",
+				"students": "{{count}} {{count:plural; one:leerling verplaatst; other:leerlingen verplaatst;}}."
+			}
+		},
+		"barcodes": {
+			"title": "Nummering en voorbeeld",
+			"counter": "Nummers van de nieuwe lenerspassen",
+			"afterLegacy": "Na het hoogste nummer van de lenerspassen die al bestaan",
+			"from": "Vanaf dit nummer:",
+			"fromNumber": "Eerste nummer van de nieuwe lenerspassen",
+			"counterHint": "Een nummer dat al is gebruikt komt nooit meer terug: is het gekozen nummer lager, dan gaat de telling verder waar ze is gebleven. Nieuwe exemplaren hebben altijd het jaar en een doorlopend nummer.",
+			"nextCard": "Volgende lenerspas: {{code}}",
+			"nextItem": "Volgend exemplaar: {{code}}",
+			"overrides": "Deze afdruksjablonen kiezen zelf het type barcode, dus de instelling hierboven geldt daarvoor niet: {{templates}}.",
+			"saved": "Nummering opgeslagen"
+		},
+		"itemTypeRules": {
+			"title": "Regels per type exemplaar",
+			"hint": "Bij elk type exemplaar kan een regel worden gewijzigd: bijvoorbeeld dvd’s voor 5 dagen. De regels gelden even goed voor leerlingen als voor leerkrachten.",
+			"inherit": "Leeg: de regel van leerlingen en leerkrachten geldt (in grijs: leerlingen / leerkrachten).",
+			"saved": "Regels per type exemplaar opgeslagen"
+		},
+		"calendar": {
+			"title": "Bibliotheekkalender",
+			"weekly": "Dagen die elke week gesloten zijn",
+			"weeklyHint": "De gemarkeerde dagen zijn elke week gesloten.",
+			"previous": "Vorig schooljaar",
+			"next": "Volgend schooljaar",
+			"addNational": "De nationale feestdagen van {{year}} toevoegen",
+			"autoOn": "De nationale feestdagen zijn al automatisch gesloten. Een klik op een open dag sluit hem; op een dag die met de hand is gesloten opent hij weer.",
+			"clickHint": "Een klik op een open dag sluit hem; op een dag die met de hand is gesloten opent hij weer.",
+			"open": "open",
+			"legend": {
+				"open": "Open",
+				"weekly": "Wekelijkse sluiting",
+				"national": "Nationale feestdag",
+				"holiday": "Gesloten (hier gekozen)",
+				"range": "Periode van sluiting"
+			},
+			"ranges": "Periodes van sluiting",
+			"from": "Van",
+			"to": "Tot",
+			"reason": "Reden",
+			"badRange": "Het einde ligt vóór het begin.",
+			"addRange": "Een periode toevoegen",
+			"saved": "Kalender opgeslagen"
+		},
+		"cardTemplates": {
+			"title": "Sjabloon per type lener",
+			"hint": "Leerlingen en leerkrachten drukken hun lenerspas af met het standaardsjabloon dat hierboven is gekozen, tenzij hier een ander wordt gekozen.",
+			"student": "Lenerspas van leerlingen",
+			"teacher": "Lenerspas van leerkrachten",
+			"asDefault": "Zelfde als de standaard ({{name}})",
+			"cutLines": "Gekleurde rand op elke lenerspas",
+			"cutLinesOn": "Teken een gekleurde rand op elke lenerspas (meestal niet nodig: de snijmerken volstaan)",
+			"color": "Kleur",
+			"width": "Dikte (mm)",
+			"sample": "Voorbeeld van de snijlijn",
+			"saved": "Sjablonen van lenerspassen opgeslagen"
+		},
+		"stocks": {
+			"title": "Vellen zelfklevende etiketten",
+			"hint": "De afmetingen van de vellen etiketten waarop wordt gedrukt. De tekening rechts volgt elk getal: etiketten die buiten het vel vallen zijn rood. Na het opslaan de proefpagina op gewoon papier afdrukken en over het vel etiketten leggen.",
+			"new": "Nieuw",
+			"toFix": "Te corrigeren",
+			"add": "Een vel toevoegen",
+			"id": "Code",
+			"name": "Naam",
+			"labelWidth": "Breedte van het etiket (mm)",
+			"labelHeight": "Hoogte van het etiket (mm)",
+			"columns": "Kolommen",
+			"rows": "Rijen",
+			"marginTop": "Marge boven (mm)",
+			"marginLeft": "Marge links (mm)",
+			"gapX": "Ruimte tussen de kolommen (mm)",
+			"gapY": "Ruimte tussen de rijen (mm)",
+			"radius": "Afgeronde hoeken (mm)",
+			"calibration": "Proefpagina afdrukken",
+			"inUse": "Gebruikt voor: {{jobs}}. Om het te verwijderen, kies eerst een ander vel in de instellingen hierboven.",
+			"saveFirst": "Sla de wijzigingen op om de proefpagina af te drukken.",
+			"drawing": "Tekening van het A4-vel met {{columns}} {{columns:plural; one:kolom; other:kolommen;}} en {{rows}} {{rows:plural; one:rij; other:rijen;}} etiketten",
+			"caption": "A4-vel · {{count}} {{count:plural; one:etiket; other:etiketten;}}",
+			"saved": "Vellen zelfklevende etiketten opgeslagen",
+			"problems": {
+				"id": "De code mag letters, cijfers, koppeltekens en onderstreeptekens bevatten.",
+				"duplicate": "Een ander vel heeft deze code al.",
+				"name": "Schrijf een naam.",
+				"numbers": "Controleer de afmetingen: getallen vanaf 0, etiketten groter dan nul, hele kolommen en rijen.",
+				"width": "De etiketten nemen {{mm}} mm in beslag: meer dan de breedte van een A4-vel (210 mm).",
+				"height": "De etiketten nemen {{mm}} mm in beslag: meer dan de hoogte van een A4-vel (297 mm).",
+				"pairRows": "Voor het paar is een even aantal rijen nodig (rugband en etiket het ene boven het andere)."
+			},
+			"errors": {
+				"duplicate": "Twee vellen hebben dezelfde code: {{details}}.",
+				"inUse": "Een vel dat wordt gebruikt om af te drukken kan niet worden verwijderd: {{details}}."
+			}
+		},
+		"backupSchedule": {
+			"title": "Volgende back-ups",
+			"invalid": "De tijd is geen geldige cron-expressie (vijf velden: minuten, uren, dag, maand, dag van de week).",
+			"never": "Met deze expressie start de back-up nooit.",
+			"hint": "Tijden in de tijdzone van de bibliotheek ({{timezone}}). Als de computer op dat moment uit staat, wordt met “Back-up bij start als gemist” de back-up gemaakt bij de volgende start; de tijd kan ook binnen de openingstijden worden verschoven."
+		},
+		"coverProviders": {
+			"off": "De omslagen zijn uitgeschakeld (Omslagen van boeken, hierboven): er wordt geen bron geraadpleegd.",
+			"title": "Waar de omslagen vandaan komen",
+			"hint": "De bronnen worden in deze volgorde geprobeerd tot er een omslag wordt gevonden; elke bron kan apart worden uitgeschakeld.",
+			"names": {
+				"amazon": "Amazon",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books"
+			},
+			"googleKey": "Google Books heeft een API-sleutel nodig: vul die in bij de instellingen “Boekgegevens”, anders wordt deze bron overgeslagen.",
+			"saved": "Bronnen van omslagen opgeslagen"
+		},
+		"z3950Targets": {
+			"title": "Z39.50-catalogi",
+			"hint": "De catalogi waaruit de boekgegevens komen. “Verbinding testen” voert een echte zoekopdracht uit met de ingevulde waarden, zonder ze op te slaan.",
+			"id": "Code",
+			"name": "Naam",
+			"host": "Adres van de server",
+			"port": "Poort",
+			"database": "Database",
+			"syntax": "Recordformaat",
+			"charset": "Tekencodering",
+			"elements": "Elementen",
+			"elementsHint": "Meestal F (volledige titelbeschrijving).",
+			"add": "Een catalogus toevoegen",
+			"isDefault": "Dit is de standaardcatalogus: kies eerst hierboven een andere voordat u hem verwijdert.",
+			"saved": "Catalogi opgeslagen",
+			"problems": {
+				"id": "De code moet uniek zijn: letters, cijfers, koppeltekens.",
+				"required": "Naam, database, codering en elementen zijn verplicht.",
+				"host": "Het adres mag letters, cijfers, punten en koppeltekens bevatten.",
+				"words": "Database, codering en elementen bestaan elk uit één woord, zonder spaties.",
+				"port": "De poort is een getal van 1 tot 65535."
+			},
+			"test": {
+				"button": "Verbinding testen",
+				"running": "Testen…",
+				"ok": "De catalogus antwoordt: {{hits}} {{hits:plural; one:resultaat; other:resultaten;}} in {{ms}} ms.",
+				"unreachable": "De catalogus antwoordt niet: controleer adres, poort en database.",
+				"timeout": "De catalogus heeft niet op tijd geantwoord.",
+				"protocol": "De catalogus antwoordt met een fout: controleer database, formaat en codering.",
+				"spawn": "Het programma yaz-client is niet beschikbaar op de server."
+			}
+		},
+		"barcodeFormats": {
+			"title": "Opmaak van de codes",
+			"hint": "Hoe de codes van nieuwe exemplaren en nieuwe lenerspassen worden opgebouwd. Codes die al zijn afgedrukt blijven werken: een vervangen opmaak blijft bij de eerdere opmaken.",
+			"preset": "Kant-en-klare opmaken",
+			"presets": {
+				"standard": "Standaard (2026-E0267, U012345)",
+				"classic": "Klassiek (2026-02678, 0000012344)",
+				"prefix": "Met letter ervoor (L-2602670, T0123455)",
+				"custom": "Aangepast"
+			},
+			"check": "Controleteken",
+			"checks": {
+				"mod23": "Letter (mod 23)",
+				"damm": "Cijfer (Damm)",
+				"luhn": "Cijfer (Luhn)"
+			},
+			"checkHint": "Het herkent een code die verkeerd is gelezen of ingetypt. De letter is het veiligst en maakt lenerspassen in één oogopslag te onderscheiden van codes van exemplaren.",
+			"advanced": "Geavanceerd: de opmaken één voor één",
+			"tokens": "YYYY of YY = jaar, N = cijfers van het doorlopende nummer, C = controleteken, {lib} = code van de bibliotheek, - = koppelteken, hoofdletters tussen enkele aanhalingstekens ('T'). De letters I, O en Q zijn niet toegestaan.",
+			"pattern": {
+				"item": "Opmaak van de exemplaren",
+				"patron": "Opmaak van de lenerspassen"
+			},
+			"libraryCode": "Code van de bibliotheek",
+			"libraryCodeHint": "Alleen als meerdere bibliotheken met afzonderlijke installaties verschillende codes moeten hebben: wordt gebruikt met {lib} in de opmaak.",
+			"plainMaxLength": "Cijfers van de oude losse nummers",
+			"plainHint": "Het grootste aantal cijfers van de lenerspassen en exemplaren van het vorige systeem die geen opmaak hebben (0 als er geen zijn).",
+			"plainLongest": "Het langste losse nummer in het archief heeft {{digits}} {{digits:plural; one:cijfer; other:cijfers;}}.",
+			"distinct": "Exemplaren en lenerspassen kunnen niet worden verwisseld.",
+			"confusable": "Met deze opmaken zouden exemplaren en lenerspassen verwisseld kunnen worden:",
+			"warnings": "{{count}} {{count:plural; one:waarschuwing; other:waarschuwingen;}}",
+			"inUse": "De opmaak {{pattern}} heeft nog {{count}} {{count:plural; one:code; other:codes;}} in het archief: hij kan niet worden verwijderd.",
+			"kinds": {
+				"item": "exemplaren",
+				"card": "lenerspassen"
+			},
+			"heading": {
+				"item": "Exemplaren",
+				"patron": "Lenerspassen"
+			},
+			"examples": "Voorbeelden van nieuwe codes:",
+			"currentCount": "Codes van deze opmaak in het archief: {{count}}",
+			"count": "{{count}} {{count:plural; one:code; other:codes;}}",
+			"noCheck": "zonder controle",
+			"remove": "Verwijderen",
+			"retired": "Opmaken die in het verleden zijn gebruikt",
+			"legacy": "Codes van het vorige systeem",
+			"noLegacy": "Geen.",
+			"addLegacy": "Een oude opmaak toevoegen",
+			"try": "Een code proberen",
+			"tryHint": "Een hier ingetypte of gescande code wordt herkend met de opmaken hierboven, ook voordat ze zijn opgeslagen.",
+			"tried": {
+				"item": "{{value}}: barcode van een exemplaar",
+				"legacy_item": "{{value}}: oude barcode van een exemplaar",
+				"card": "{{value}}: nummer van een lenerspas",
+				"isbn": "{{value}}: ISBN",
+				"ambiguous": "{{value}}: oud los nummer (wordt gezocht onder exemplaren en lenerspassen)",
+				"invalid": "{{value}}: niet herkend of verkeerd controleteken"
+			},
+			"saved": "Opmaak van de codes opgeslagen",
+			"patternErrors": {
+				"empty": "Lege opmaak ({{kind}})",
+				"tooLong": "{{pattern}}: te lang",
+				"badToken": "{{pattern}}: bevat een onverwacht symbool",
+				"badLetter": "{{pattern}}: letter niet toegestaan (alleen hoofdletters, niet I, O, Q)",
+				"unclosedQuote": "{{pattern}}: het sluitende aanhalingsteken ontbreekt",
+				"year": "{{pattern}}: het jaar wordt geschreven als YYYY of YY",
+				"twoYears": "{{pattern}}: het jaar komt twee keer voor",
+				"twoCounters": "{{pattern}}: het doorlopende nummer moet één groep N zijn",
+				"noCounter": "{{pattern}}: het doorlopende nummer (N) ontbreekt",
+				"twoChecks": "{{pattern}}: het controleteken komt twee keer voor",
+				"checkWithoutAlgorithm": "{{pattern}}: er staat een C, maar er is geen controle gekozen",
+				"algorithmWithoutCheck": "{{pattern}}: C, de plaats van het controleteken, ontbreekt",
+				"noLibraryCode": "{{pattern}}: gebruikt {lib}, maar de code van de bibliotheek is leeg",
+				"badLibraryCode": "De code van de bibliotheek mag alleen cijfers en hoofdletters bevatten (niet I, O, Q)"
+			},
+			"issues": {
+				"overlap": "{{pattern}} ({{kind}}) en {{other}} ({{otherKind}}) kunnen dezelfde code geven, bijvoorbeeld {{example}}",
+				"overlapWithoutDash": "{{pattern}} ({{kind}}) en {{other}} ({{otherKind}}) worden met elkaar verward als de scanner het koppelteken verliest, bijvoorbeeld {{example}}",
+				"overlapLegacy": "De oude codes {{pattern}} ({{kind}}) en {{other}} ({{otherKind}}) hebben dezelfde vorm: ze worden in beide archieven gezocht",
+				"overlapPlain": "{{pattern}} ({{kind}}) kan een code geven die gelijk is aan een oud los nummer, bijvoorbeeld {{example}}",
+				"overlapIsbn": "{{pattern}} ({{kind}}) kan een code geven die gelijk is aan een ISBN, bijvoorbeeld {{example}}",
+				"overlapIsbn10": "{{pattern}} ({{kind}}) heeft de vorm van een ISBN-10 zonder koppeltekens: het lenerspasnummer gaat voor",
+				"lookAlike": "{{pattern}} ({{kind}}) en {{other}} ({{otherKind}}) lijken te veel op elkaar: er is een verschil in lengte van minstens 2 tekens nodig, een letter op een andere plaats of een koppelteken op een andere plek"
+			}
+		},
+		"schoolLevels": {
+			"title": "Onderwijsniveaus en leerjaren",
+			"hint": "De leerjaren van de school in de volgorde waarin ze worden doorlopen, gegroepeerd per onderwijsniveau. De code blijft bij de leerlingen: bij het verwijderen of hercoderen van een leerjaar dat in gebruik is, wordt gevraagd waar de leerlingen en klassen naartoe gaan.",
+			"preset": "Voorinstelling",
+			"presetApply": "Deze voorinstelling gebruiken",
+			"presetHint": "Vervangt de onderwijsniveaus en leerjaren hieronder door die van de voorinstelling; niets wordt opgeslagen voordat “Opslaan” wordt gekozen.",
+			"custom": "Aangepast",
+			"stages": "Onderwijsniveaus",
+			"stageCode": "Code",
+			"stageName": "Naam",
+			"stageLabel": "Hoe de klas wordt geschreven",
+			"addStage": "Niveau toevoegen",
+			"stageLabelHint": "“Hoe de klas wordt geschreven” van een onderwijsniveau geldt voor de leerjaren ervan in plaats van die van de school; zonder {group} is de klas alleen het leerjaar (Q1, zonder secties). Leeg: zoals de rest van de school.",
+			"levels": "Leerjaren",
+			"levelCode": "Code",
+			"levelLabel": "In de klas",
+			"levelName": "Naam",
+			"levelStage": "Onderwijsniveau",
+			"levelNext": "Het leerjaar daarna",
+			"levelAliases": "Andere namen",
+			"levelAliasesPlaceholder": "Gescheiden door komma’s",
+			"nextFollowing": "Het volgende leerjaar",
+			"nextLeaves": "Verlaat de school",
+			"nextChoices": "Een keuze tussen leerjaren",
+			"choiceAdd": "Een keuze toevoegen…",
+			"choiceRemove": "{{name}} verwijderen",
+			"choiceDefault": "standaard",
+			"addLevel": "Een leerjaar toevoegen",
+			"inUse": "In gebruik",
+			"moveUp": "Omhoog",
+			"moveDown": "Omlaag",
+			"example": "Voorbeeld: {{label}}",
+			"saved": "Onderwijsniveaus en leerjaren opgeslagen",
+			"problems": {
+				"code": "Codes: letters, cijfers en koppelteken (maximaal 8 voor een leerjaar), allemaal verschillend.",
+				"required": "Label en naam zijn verplicht.",
+				"template": "“Hoe de klas wordt geschreven” van een onderwijsniveau moet {level} bevatten.",
+				"stageUsed": "Een onderwijsniveau met leerjaren kan niet worden verwijderd.",
+				"structure": "De structuur is niet geldig: {{details}}"
+			},
+			"move": {
+				"title": "Waarheen gaan de leerlingen en klassen?",
+				"hint": "Sommige verwijderde leerjaren hebben nog leerlingen of klassen. Kies voor elk het leerjaar waarnaar ze moeten; de uitleningen behouden de klas waarin ze zijn gedaan.",
+				"level": "{{name}}: {{pupils}} {{pupils:plural; one:leerling; other:leerlingen;}}, {{classes}} {{classes:plural; one:klas; other:klassen;}}",
+				"choose": "Kies het leerjaar…",
+				"confirm": "Verplaatsen en opslaan",
+				"done": "Verplaatst: {{pupils}} {{pupils:plural; one:leerling; other:leerlingen;}} en {{classes}} {{classes:plural; one:klas; other:klassen;}}."
+			}
+		}
+	},
+	"templates": {
+		"title": "Afdruksjablonen",
+		"hint": "De mappen van de sjablonen van lenerspassen, etiketten, kwitanties en herinneringen. Die welke bij BiblioViva zijn meegeleverd kunnen worden aangepast (er wordt een kopie met dezelfde naam gemaakt) of onder een andere naam gedupliceerd; de afbeeldingen en lettertypen van een kopie worden hier geüpload. Elke handeling verschijnt in de geschiedenis van de configuratie en kan ongedaan worden gemaakt.",
+		"source": {
+			"builtin": "Meegeleverd met BiblioViva",
+			"customised": "Aangepast",
+			"added": "Toegevoegd"
+		},
+		"broken": "Met fouten",
+		"customise": "Aanpassen",
+		"duplicate": "Dupliceren",
+		"rename": "Hernoemen",
+		"restore": "Terug naar het origineel",
+		"usedBy": "Gebruikt door: {{settings}}.",
+		"unused": "Wordt door geen enkele instelling gebruikt.",
+		"assets": "Afbeeldingen en lettertypen ({{count}})",
+		"noAssets": "Geen bestanden.",
+		"usedIn": "gebruikt in {{files}}",
+		"assetUnused": "niet gebruikt",
+		"upload": "Een bestand uploaden",
+		"uploadHint": "PNG-, JPEG-, WebP-, GIF- of SVG-bestanden, of lettertypen WOFF2, WOFF, TTF; maximaal {{maxMb}} MB.",
+		"builtinAssets": "Om de afbeeldingen van een sjabloon dat bij BiblioViva is meegeleverd te wijzigen, moet het eerst worden aangepast.",
+		"files": "Bestanden van het sjabloon ({{count}})",
+		"filesHint": "De inhoud van HTML en CSS wordt bewerkt met de visuele editor voor sjablonen.",
+		"done": {
+			"duplicate": "Sjabloon gedupliceerd",
+			"customise": "Sjabloon aangepast: de kopie kan worden gewijzigd",
+			"rename": "Sjabloon hernoemd",
+			"delete": "Sjabloon verwijderd",
+			"upload": "{{name}} geüpload",
+			"removeAsset": "{{name}} verwijderd"
+		},
+		"errors": {
+			"notFound": "Sjabloon of bestand niet gevonden.",
+			"badName": "Ongeldige naam: kleine letters, cijfers, koppeltekens en onderstreeptekens.",
+			"exists": "Er bestaat al een sjabloon met deze naam.",
+			"builtin": "De sjablonen die bij BiblioViva zijn meegeleverd worden niet gewijzigd: pas ze aan of dupliceer ze.",
+			"inUse": "Het sjabloon wordt gebruikt door: {{details}}. Kies eerst een ander sjabloon.",
+			"badAsset": "“{{name}}” is geen toegestaan bestand (PNG, JPEG, WebP, GIF, SVG zonder scripts, WOFF2, WOFF, TTF).",
+			"assetTooLarge": "“{{name}}” is te groot: maximaal {{maxMb}} MB.",
+			"assetInUse": "Het bestand wordt gebruikt in: {{details}}."
+		},
+		"dialog": {
+			"name": "Naam van de map",
+			"nameHint": "Kleine letters, cijfers, koppeltekens en onderstreeptekens.",
+			"badName": "Gebruik alleen kleine letters, cijfers, koppeltekens en onderstreeptekens.",
+			"taken": "Er bestaat al een sjabloon met deze naam.",
+			"duplicate": {
+				"title": "{{name}} dupliceren",
+				"hint": "Er wordt een kopie met al zijn bestanden gemaakt, klaar om te worden gewijzigd.",
+				"confirm": "Dupliceren"
+			},
+			"customise": {
+				"title": "{{name}} aanpassen",
+				"hint": "Er wordt een kopie met dezelfde naam gemaakt die de plaats van het origineel inneemt; het origineel blijft beschikbaar om terug te gaan.",
+				"confirm": "Aanpassen"
+			},
+			"rename": {
+				"title": "{{name}} hernoemen",
+				"hint": "De instellingen die dit sjabloon gebruiken volgen de nieuwe naam.",
+				"confirm": "Hernoemen"
+			},
+			"delete": {
+				"title": "{{name}} verwijderen",
+				"hint": "De map en de bestanden worden verwijderd; als het een kopie is van een sjabloon dat bij BiblioViva is meegeleverd, wordt weer het origineel gebruikt. Het kan ongedaan worden gemaakt via de geschiedenis.",
+				"confirm": "Verwijderen"
+			}
+		},
+		"edit": "Bewerken"
+	},
+	"languages": {
+		"title": "Taalpakketten",
+		"hint": "Om BiblioViva in een andere taal te gebruiken: het Engelse of Italiaanse voorbeeld downloaden, de teksten van de JSON-bestanden vertalen en de sleutels en de plaatshouders tussen dubbele accolades ongewijzigd laten, de naam van de taal in pack.json schrijven en de zip uploaden. Een pakket met fouten wordt niet geïnstalleerd; ontbrekende teksten verschijnen in het Engels. De taal wordt gekozen bij Weergave en taal.",
+		"none": "Geen taalpakket geïnstalleerd.",
+		"valid": "Geldig",
+		"errorsCount": "{{count}} {{count:plural; one:fout; other:fouten;}}",
+		"warnings": "{{count}} {{count:plural; one:ontbrekende of extra tekst; other:ontbrekende of extra teksten;}}",
+		"inUse": "In gebruik",
+		"download": "Downloaden",
+		"report": "Resultaat van de controle",
+		"upload": "Een pakket uploaden (zip)",
+		"uploadHint": "Een zip met pack.json en de taalbestanden, in een map met de code als naam (bijvoorbeeld de/); maximaal {{maxMb}} MB.",
+		"examples": "Voorbeelden om te downloaden:",
+		"installed": "Taal geïnstalleerd: {{name}}",
+		"removed": "Pakket verwijderd",
+		"removeTitle": "Het pakket {{code}} verwijderen?",
+		"removeHint": "De map van de taal wordt verwijderd. Het kan ongedaan worden gemaakt via de geschiedenis van de configuratie.",
+		"errors": {
+			"notAZip": "Het bestand is geen zip.",
+			"tooLarge": "De zip is te groot: maximaal {{maxMb}} MB.",
+			"badLayout": "De zip mag alleen de .json-bestanden van de taal bevatten, in één map met de code van de taal. {{details}}",
+			"badCode": "Ongeldige taalcode: {{details}} (bijvoorbeeld de, fr, pt-BR).",
+			"builtIn": "Engels en Italiaans zijn ingebouwd en worden niet vervangen.",
+			"invalid": "Het pakket heeft fouten en is niet geïnstalleerd: {{details}}",
+			"inUse": "Het is de taal die in gebruik is: kies eerst een andere.",
+			"notFound": "Pakket niet gevonden.",
+			"unavailable": "De lijst met talen of het pakket kon niet worden gedownload. Controleer de internetverbinding of upload de zip zelf.",
+			"checksum": "Het gedownloade pakket is beschadigd en is niet geïnstalleerd. Probeer het opnieuw."
+		},
+		"release": {
+			"title": "Talen om te installeren",
+			"hint": "De talen die bij deze versie van BiblioViva zijn gepubliceerd. De lijst wordt van internet gelezen en elk pakket wordt gecontroleerd voordat het wordt geïnstalleerd.",
+			"percent": "{{percent}}% vertaald",
+			"machine": "Automatische vertaling, niet gelezen door een moedertaalspreker",
+			"reviewed": "Vertaling gelezen door een moedertaalspreker",
+			"install": "Installeren",
+			"again": "Opnieuw installeren",
+			"installedBadge": "Geïnstalleerd",
+			"page": "Releasepagina, om de pakketten zelf te downloaden en hieronder te uploaden",
+			"unavailable": "De lijst met talen is niet bereikbaar: er is geen internetverbinding, of deze versie heeft nog geen lijst. Een zip hieronder uploaden werkt wel."
+		}
+	},
+	"reports": {
+		"title": "Bibliotheek van rapporten",
+		"hint": "De rapporten die bij BiblioViva zijn meegeleverd en die van de school zelf. Om er een aan te passen: downloaden, wijzigen en uploaden; met dezelfde code (id) neemt het de plaats van het origineel in. Voordat het wordt geïnstalleerd worden het formaat, de veiligheid van de query en de tabellen en kolommen die het gebruikt gecontroleerd. De handleiding voor het schrijven van rapporten staat in docs/reports-authoring.md.",
+		"upload": "Een rapport uploaden (JSON)",
+		"try": "Proberen",
+		"download": "Downloaden",
+		"problems": "Deze bestanden worden niet geladen:",
+		"installed": "Rapport {{id}} geïnstalleerd",
+		"replaced": "Rapport {{id}} vervangen",
+		"removed": "Bestand verwijderd",
+		"removeTitle": "{{file}} verwijderen?",
+		"removeHint": "Het bestand wordt uit de configuratie verwijderd. Het kan ongedaan worden gemaakt via de geschiedenis.",
+		"restoreHint": "De versie van de school wordt verwijderd: het rapport dat bij BiblioViva is meegeleverd wordt weer gebruikt. Het kan ongedaan worden gemaakt via de geschiedenis.",
+		"origin": {
+			"builtin": "Meegeleverd met BiblioViva",
+			"customised": "Aangepast",
+			"added": "Toegevoegd"
+		},
+		"errors": {
+			"tooLarge": "Het bestand is te groot: maximaal {{maxKb}} KB.",
+			"badJson": "Het bestand is geen geldige JSON: {{details}}",
+			"invalid": "De definitie is niet geldig: {{details}}",
+			"sql": "De query werkt niet op deze database: {{details}}",
+			"notFound": "Bestand niet gevonden.",
+			"reservedId": "“new” kan niet de code van een rapport zijn."
+		},
+		"new": "Nieuw rapport",
+		"edit": "Bewerken",
+		"duplicate": "Dupliceren",
+		"editor": {
+			"editTitle": "Rapport bewerken",
+			"newTitle": "Nieuw rapport",
+			"copySuffix": "kopie",
+			"builtinHint": "Dit is een ingebouwd rapport: opslaan maakt de aangepaste kopie van de school, met dezelfde naam. “Terug naar het origineel” in de bibliotheek verwijdert die.",
+			"id": "Code van het rapport",
+			"category": "Categorie",
+			"title": {
+				"it": "Titel (Italiaans)",
+				"en": "Titel (Engels)"
+			},
+			"description": {
+				"it": "Beschrijving (Italiaans)",
+				"en": "Beschrijving (Engels)"
+			},
+			"restricted": "Alleen voor beheerders",
+			"tabs": {
+				"label": "Bewerkingsmodus",
+				"guided": "Begeleid",
+				"sql": "SQL"
+			},
+			"sqlOnly": "Dit rapport is in SQL geschreven: het wordt bewerkt in het tabblad SQL.",
+			"source": "Gegevens",
+			"rows": "Rijen",
+			"rows2": "Rijen, tweede niveau",
+			"columns": "Kolommen",
+			"columnsHint": "Met kolommen wordt het rapport een draaitabel, met de totalen.",
+			"none": "— geen —",
+			"totals": "Totalen",
+			"totalsOptions": {
+				"both": "Rij en kolom met totalen",
+				"rows": "Kolom met totalen",
+				"columns": "Rij met totalen",
+				"none": "Geen totalen"
+			},
+			"sort": "Volgorde",
+			"sortDimension": "In de volgorde van de rijen",
+			"sortMeasure": "Hoogste waarde eerst",
+			"measures": "Waarden",
+			"oneMeasure": "Een draaitabel toont één waarde.",
+			"filters": "Filters",
+			"filterModes": {
+				"off": "Geen filter",
+				"ask": "Gevraagd bij het openen",
+				"fixed": "Vast"
+			},
+			"value": "Waarde",
+			"chart": "Grafiek",
+			"charts": {
+				"bar": "Staven",
+				"line": "Lijnen",
+				"doughnut": "Donut"
+			},
+			"compiledHint": "Het begeleide rapport wordt deze SQL. Om hem met de hand te schrijven, “Bewerken als SQL” gebruiken: daarna is er geen weg terug naar de begeleide bewerking.",
+			"previewFirst": "“Voorbeeld” kiezen om de SQL te zien.",
+			"convert": "Bewerken als SQL",
+			"convertTitle": "Het rapport omzetten naar SQL?",
+			"convertHint": "Het rapport wordt een SQL-rapport met dezelfde kolommen en parameters. Het kan daarna niet meer in het begeleide tabblad worden bewerkt.",
+			"converted": "Het rapport staat nu in SQL",
+			"sqlHint": "Eén SELECT- of WITH-instructie, met de parameters als :naam.",
+			"json": {
+				"params": "Parameters (JSON)",
+				"columns": "Kolommen (JSON)",
+				"chart": "Grafiek (JSON, optioneel)",
+				"pivot": "Draaitabel (JSON, optioneel)"
+			},
+			"jsonHint": "In de opmaak die beschreven staat in de handleiding voor rapporten.",
+			"preview": "Voorbeeld",
+			"runPreview": "Voorbeeld",
+			"previewHint": "Het voorbeeld voert het rapport uit met de standaardwaarden van de parameters (maximaal 200 rijen).",
+			"save": "Opslaan",
+			"saved": "Rapport “{{id}}” opgeslagen",
+			"back": "Terug naar de bibliotheek",
+			"jsonInvalid": "Corrigeer de JSON-delen die in rood zijn aangegeven voordat u opslaat."
+		}
+	},
+	"designer": {
+		"title": "{{name}} bewerken",
+		"design": "Ontwerp",
+		"code": "Code",
+		"preview": "Voorbeeld",
+		"front": "Voorkant",
+		"back": "Achterkant",
+		"faces": "Zijden of etiketten",
+		"zoom": "Zoom",
+		"grid": "Raster",
+		"gridSteps": {
+			"s0": "Geen (vrij)",
+			"s05": "0,5 mm",
+			"s1": "1 mm",
+			"s2": "2 mm",
+			"s25": "2,5 mm",
+			"s5": "5 mm",
+			"s10": "10 mm"
+		},
+		"files": "Bestanden",
+		"problems": "Het sjabloon kan zo niet worden afgedrukt:",
+		"saved": "Sjabloon opgeslagen",
+		"notEditable": "Dit sjabloon kan hier niet worden bewerkt: sjablonen die bij BiblioViva zijn meegeleverd moeten eerst worden aangepast.",
+		"canvasHint": "Klik op een vak om het te kiezen, sleep het om het te verplaatsen, gebruik de hoek om het te vergroten of te verkleinen: posities en maten vallen vast op het gekozen raster. Met het toetsenbord verplaatsen de pijltjes het één stap van het raster (met Shift ongeveer 5 mm, altijd op het raster) en Delete verwijdert het.",
+		"flowHint": "{{count}} {{count:plural; one:element van deze zijde wordt; other:elementen van deze zijde worden;}} door het stijlblad gepositioneerd (stippellijn): bij de eerste verplaatsing worden de posities van al die elementen naar het bestand geschreven, op de plaats waar ze nu staan.",
+		"lockedHint": "{{count}} {{count:plural; one:onderdeel van deze zijde staat; other:onderdelen van deze zijde staan;}} binnen een Mustache-sectie: {{count:plural; one:het wordt; other:ze worden;}} bewerkt in het tabblad “Code”.",
+		"noStock": "Geen enkel vel etiketten gebruikt deze variant: de tekening wordt zonder voorbeeld getoond.",
+		"codeHint": "Tekening en code bewerken dezelfde bestanden: elke wijziging die hier wordt gemaakt verschijnt ook in de tekening, en omgekeerd.",
+		"add": "Toevoegen",
+		"newText": "Tekst",
+		"noImages": "Om afbeeldingen toe te voegen, eerst uploaden onder de afbeeldingen van het sjabloon.",
+		"types": {
+			"field": "Veld",
+			"text": "Tekst",
+			"barcode": "Barcode",
+			"photo": "Foto",
+			"pictogram": "Pictogram",
+			"image": "Afbeelding",
+			"box": "Vak",
+			"html": "Vrije HTML",
+			"other": "Element"
+		},
+		"fields": {
+			"library_name": "Naam van de bibliotheek",
+			"patron_first_name": "Voornaam",
+			"patron_last_name": "Achternaam",
+			"patron_card_number": "Nummer van de lenerspas",
+			"patron_class_label": "Klas en sectie",
+			"patron_level_label": "Klas (leerjaar)",
+			"patron_group": "Sectie",
+			"school_year": "Schooljaar",
+			"issued_on": "Datum van uitgifte",
+			"valid_until": "Geldig tot",
+			"item_barcode": "Barcode (tekst)",
+			"item_call_number": "Signatuur",
+			"call_head": "Signatuur: eerste regel",
+			"call_rest": "Signatuur: tweede regel",
+			"biblio_title_short": "Korte titel",
+			"biblio_author_short": "Korte auteur",
+			"biblio_publication_year": "Jaar van uitgave",
+			"biblio_series": "Reeks",
+			"biblio_series_number": "Nummer in de reeks",
+			"classification_code": "Classificatiecode",
+			"classification_label": "Naam van de klas",
+			"classification_reading_level": "Leesniveau",
+			"item_item_type": "Type exemplaar"
+		},
+		"field": "Veld",
+		"text": "Tekst",
+		"image": "Afbeelding",
+		"content": "HTML-inhoud",
+		"contentHint": "Het vak wordt verplaatst en opgemaakt vanuit de tekening; de inhoud wordt in HTML geschreven met Mustache-velden, zoals in de bestanden van het sjabloon.",
+		"inherited": "Standaard",
+		"unplacedHint": "Dit element wordt gepositioneerd door het stijlblad: bij het verplaatsen worden de positie ervan en die van de andere elementen van de zijde naar het bestand geschreven.",
+		"geometry": {
+			"x": "X (mm)",
+			"y": "Y (mm)",
+			"w": "Breedte",
+			"h": "Hoogte"
+		},
+		"fontSize": "Grootte (pt)",
+		"font": "Lettertype",
+		"fonts": {
+			"sans": "Schreefloos",
+			"serif": "Met schreef",
+			"mono": "Vaste breedte"
+		},
+		"bold": "Vet",
+		"italic": "Cursief",
+		"uppercase": "Hoofdletters",
+		"align": "Uitlijning",
+		"aligns": {
+			"left": "Links",
+			"center": "Midden",
+			"right": "Rechts"
+		},
+		"color": "Kleur",
+		"border": "Rand",
+		"borderColor": "Kleur van de rand",
+		"fill": "Vulling",
+		"fillColor": "Kleur van de vulling",
+		"backward": "Naar achteren",
+		"forward": "Naar voren",
+		"background": "Achtergrond van de zijde",
+		"backgroundColor": "Achtergrondkleur",
+		"backgroundImage": "Achtergrondafbeelding",
+		"noImage": "Geen",
+		"chooseHint": "Kies een vak op de tekening om het te wijzigen.",
+		"modes": "Weergave van het sjabloon",
+		"safeArea": "Veilig gebied: houd tekst en foto’s binnen de stippellijn, 2 mm van de rand (bij dubbelzijdig afdrukken kan de achterzijde 1 mm verschuiven).",
+		"chooseBackground": "Kies een achtergrond",
+		"uploadBackground": "Een afbeelding uploaden",
+		"backgroundsTitle": "Kant-en-klare achtergronden",
+		"backgroundsHint": "Elke achtergrond loopt iets verder dan de lenerspas, 3 mm aan elke kant: het extra deel wordt weggesneden.",
+		"backgroundAlt": "Achtergrond {{name}}",
+		"backgroundAdded": "Achtergrond aan de zijde toegevoegd: opslaan om hem te bewaren.",
+		"backgroundFailed": "De achtergrond is niet toegevoegd.",
+		"cardSize": "Formaat van de lenerspas",
+		"cardWidth": "Breedte (mm)",
+		"cardHeight": "Hoogte (mm)",
+		"cardRotate": "Draaien: staand of liggend",
+		"cardDefault": "Terug naar het standaardformaat ({{width}} × {{height}} mm)",
+		"cardDefaultHint": "Dit is het standaardformaat van de configuratie (Configuratie → Lenerspassen): hier past u het alleen voor dit sjabloon aan.",
+		"cardTooLarge": "Een lenerspas van {{width}} × {{height}} mm past niet op het A4-vel: maximaal {{maxWidth}} × {{maxHeight}} mm, omdat voorzijde en achterzijde naast elkaar binnen de marges staan."
+	},
+	"parts": {
+		"groups": {
+			"data": "Gegevens van de bibliotheek",
+			"settings": "Instellingen",
+			"config": "Classificatie, sjablonen en meer"
+		},
+		"all": "Alles",
+		"none": "Geen",
+		"accountsConfirm": {
+			"title": "Ook de accounts en wachtwoorden importeren?",
+			"description": "De accounts van het personeel en de wachtwoorden in het archief vervangen de huidige: wie nu inlogt, kan dat daarna niet meer met de inloggegevens van vandaag. Als ze niet nodig zijn, laat u dit onderdeel niet aangevinkt.",
+			"confirm": "Ook de accounts importeren"
+		},
+		"needs": "“{{part}}” heeft om te worden hersteld ook {{needs}} nodig.",
+		"data": {
+			"patrons": "Leners",
+			"catalog": "Catalogus en exemplaren",
+			"loans": "Uitleningen en geschiedenis",
+			"printLists": "Afdruklijsten",
+			"photos": "Foto’s van de leners",
+			"covers": "Omslagen",
+			"notes": "Notities van het personeel",
+			"dates": "Datums van de kalender",
+			"audit": "Logboek van de activiteiten"
+		},
+		"config": {
+			"classification": "Classificatie en pictogrammen",
+			"stocks": "Vellen met etiketten",
+			"calendar": "Kalender",
+			"reports": "Rapporten",
+			"cardTemplates": "Sjablonen van de lenerspassen",
+			"pairTemplates": "Sjablonen van de etikettenparen",
+			"barcodeTemplates": "Sjablonen van de barcode-etiketten",
+			"spineTemplates": "Sjablonen van de rugbanden",
+			"slipTemplates": "Sjablonen van kwitanties en herinneringen",
+			"languages": "Taalpakketten",
+			"logo": "Logo van de bibliotheek"
+		}
+	}
+}

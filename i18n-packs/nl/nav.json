@@ -1,0 +1,60 @@
+{
+	"dashboard": "Dashboard",
+	"circulation": "Uitleen",
+	"catalog": "Catalogus",
+	"patrons": "Leners",
+	"printing": "Afdrukken",
+	"notes": "Notities",
+	"reports": "Rapporten",
+	"admin": "Beheer",
+	"more": "Meer",
+	"logout": "Uitloggen",
+	"help": "Help",
+	"about": "Over",
+	"areas": {
+		"circulation": {
+			"label": "Uitleenbalie",
+			"checkout": "Uitlenen",
+			"checkin": "Inname",
+			"loans": "Boeken in uitleen",
+			"overdues": "Herinneringen",
+			"wishlist": "Wensenlijst",
+			"calendar": "Kalender"
+		},
+		"catalog": {
+			"label": "Pagina's van de catalogus",
+			"catalog": "Catalogus",
+			"inventory": "Inventarisatie",
+			"wishlist": "Wensenlijst",
+			"toClassify": "Te classificeren"
+		},
+		"patrons": {
+			"label": "Pagina's van de leners",
+			"patrons": "Leners",
+			"census": "Fotoregistratie"
+		},
+		"notes": {
+			"label": "Pagina's van de notities",
+			"open": "Open",
+			"archived": "Gearchiveerd"
+		},
+		"config": {
+			"label": "Configuratiepagina's",
+			"overview": "Onderdelen",
+			"history": "Geschiedenis"
+		},
+		"templates": {
+			"label": "Pagina's van de afdruksjablonen",
+			"edit": "Sjablonen",
+			"previews": "Voorbeelden"
+		},
+		"imports": {
+			"label": "Importeren",
+			"catalog": "Catalogus",
+			"students": "Leerlingen",
+			"teachers": "Leerkrachten",
+			"loans": "Lopende uitleningen",
+			"photos": "Foto's van leners"
+		}
+	}
+}

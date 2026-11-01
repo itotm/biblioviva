@@ -1,0 +1,39 @@
+{
+	"tiles": {
+		"open": "Împrumuturi în curs",
+		"overdue": "Întârziate",
+		"issuedToday": "Împrumutate astăzi",
+		"returnedToday": "Restituite astăzi",
+		"withoutCard": "Cititori fără legitimație tipărită",
+		"withoutPhoto": "Cititori fără fotografie",
+		"toClassify": "Cărți de clasificat",
+		"pendingLabels": "Cărți fără etichete"
+	},
+	"tilesTitle": "Biblioteca astăzi",
+	"actions": {
+		"title": "Acțiuni rapide"
+	},
+	"dueWeek": {
+		"title": "Scadente în această săptămână",
+		"none": "Niciun împrumut nu scade până la {{day}}.",
+		"more": "și încă {{count}}",
+		"due": "scadent la {{date}}"
+	},
+	"inventory": {
+		"title": "Recolare",
+		"continue": "Continuați"
+	},
+	"install": {
+		"title": "Adăugați pe ecranul de pornire",
+		"hint": "BiblioViva se deschide ca o aplicație, pe tot ecranul, din pictograma de pe telefon.",
+		"install": "Instalați",
+		"fromMenu": "Deschideți meniul ⋮ din Firefox și alegeți „Instalare” sau „Adăugare pe ecranul de pornire”.",
+		"later": "Nu acum"
+	},
+	"upcoming": {
+		"title": "Date apropiate",
+		"none": "Nicio dată în {{days:plural; one:ziua următoare; few:următoarele {{days}} zile; other:următoarele {{days}} de zile;}}.",
+		"more": "și încă {{count}}",
+		"open": "Deschideți calendarul"
+	}
+}

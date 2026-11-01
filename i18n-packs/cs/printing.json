@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Tisk",
+		"newPatrons": "Nový seznam čtenářů",
+		"newItems": "Nový seznam knih",
+		"newPatronsTitle": "Nový seznam čtenářů",
+		"newItemsTitle": "Nový seznam knih",
+		"name": "Název seznamu",
+		"defaultName": "Seznam {{n}} z {{date}}",
+		"kind": "Druh",
+		"kinds": {
+			"all": "Všechny",
+			"patrons": "Čtenáři",
+			"items": "Knihy"
+		},
+		"classes": "Třídy",
+		"classesHint": "Průkazy celé třídy bez vytváření seznamu.",
+		"classKind": "Třída",
+		"count": "{{count}} {{count:plural; one:položka; few:položky; other:položek;}}",
+		"empty": "Žádné seznamy. Seznamy se vytvářejí tady nebo tlačítkem „Přidat do seznamu“ na stránkách Čtenáři a Katalog.",
+		"lastPrinted": "Vytištěno {{when}}",
+		"neverPrinted": "Dosud netištěno",
+		"open": "Otevřít",
+		"created": "Seznam vytvořen",
+		"deleted": "Seznam smazán",
+		"deleteTitle": "Smazat seznam „{{name}}“?",
+		"deleteDescription": "Položky ze seznamu zmizí; čtenáři zůstanou v evidenci."
+	},
+	"list": {
+		"rename": "Přejmenovat",
+		"renamed": "Seznam přejmenován",
+		"print": "Tisknout průkazy",
+		"markPrinted": "Označit jako vytištěné",
+		"marked": "{{count}} {{count:plural; one:průkaz označen jako vytištěný; few:průkazy označeny jako vytištěné; other:průkazů označeno jako vytištěných;}}",
+		"clearAfter": "Po tisku vyprázdnit seznam",
+		"clear": "Vyprázdnit",
+		"cleared": "Seznam vyprázdněn",
+		"clearTitle": "Vyprázdnit seznam?",
+		"clearDescription": "Všechny položky budou ze seznamu odstraněny; čtenáři zůstanou v evidenci.",
+		"delete": "Smazat",
+		"entries": "{{count}} {{count:plural; one:čtenář; few:čtenáři; other:čtenářů;}} v seznamu",
+		"empty": "Seznam je prázdný: čtenáře přidáte rychlými filtry, čtečkou nebo ze stránky Čtenáři.",
+		"remove": "Odebrat ze seznamu",
+		"moveUp": "Posunout nahoru",
+		"moveDown": "Posunout dolů",
+		"dragHint": "Přetažením položek změníte pořadí tisku.",
+		"removed": "Odebráno ze seznamu",
+		"columns": {
+			"position": "Č.",
+			"printed": "Průkaz vytištěn"
+		},
+		"printedYes": "ano",
+		"printedNo": "ne",
+		"quick": {
+			"title": "Přidat podle filtrů",
+			"hint": "Kdo už je v seznamu, nepřidá se znovu.",
+			"type": "Typ",
+			"any": "Libovolný",
+			"stage": "Stupeň školy",
+			"level": "Ročník",
+			"withoutPrintedCard": "Jen ti, kterým ještě nebyl vytištěn průkaz",
+			"withoutPhoto": "Jen ti bez fotografie",
+			"importBatch": "Import",
+			"anyBatch": "— žádný —",
+			"batchLabel": "č. {{id}} · {{file}} · nových: {{created}}",
+			"createdAfter": "Vytvořeno od",
+			"add": "Přidat do seznamu",
+			"added": "přidáno: {{added}}, už v seznamu: {{skipped}}",
+			"none": "Filtrům neodpovídá žádný čtenář.",
+			"pendingLabels": "Štítky k tisku",
+			"pendingAny": "— všechny exempláře —",
+			"acquiredFrom": "Nabyto od",
+			"acquiredTo": "do",
+			"genre": "Žánr",
+			"itemType": "Typ exempláře",
+			"batchLabelItems": "č. {{id}} · {{file}} · {{created}} {{created:plural; one:nový exemplář; few:nové exempláře; other:nových exemplářů;}}",
+			"noneItems": "Filtrům neodpovídá žádný exemplář.",
+			"addedItems": "přidáno: {{added}}, už v seznamu: {{skipped}}",
+			"nonfictionClass": "Třída naučné literatury"
+		},
+		"scan": {
+			"title": "Přidat čtečkou",
+			"hint": "Načtěte průkaz každého čtenáře: hned se přidá do seznamu. Průkazy, které už v seznamu jsou, se přeskočí.",
+			"added": "Přidáno: {{name}}",
+			"duplicate": "{{name}} už je v seznamu",
+			"unknown": "Žádný čtenář s průkazem {{card}}",
+			"notCard": "Načtený kód není průkaz",
+			"hintItems": "Načtěte čárový kód každého exempláře, třeba i při procházení regálem: exemplář se hned přidá do seznamu. Exempláře, které už v seznamu jsou, se přeskočí.",
+			"addedItem": "Přidáno: {{title}} ({{barcode}})",
+			"duplicateItem": "{{title}} ({{barcode}}) už je v seznamu",
+			"unknownItem": "Žádný exemplář s čárovým kódem {{barcode}}",
+			"notItem": "Načtený kód není exemplář"
+		},
+		"printLabels": "Tisknout štítky",
+		"markPrintedKind": "Štítky vytištěny",
+		"markedItems": "{{count}} {{count:plural; one:exemplář označen jako vytištěný; few:exempláře označeny jako vytištěné; other:exemplářů označeno jako vytištěných;}}",
+		"entriesItems": "{{count}} {{count:plural; one:exemplář; few:exempláře; other:exemplářů;}} v seznamu",
+		"emptyItems": "Seznam je prázdný: exempláře přidáte rychlými filtry, čtečkou nebo z katalogu.",
+		"clearDescriptionItems": "Všechny položky budou odstraněny; exempláře zůstanou v katalogu."
+	},
+	"basket": {
+		"label": "Seznamy k tisku",
+		"labelToPrint": "Seznamy k tisku: {{count}} k tisku",
+		"entry": "{{name}} ({{count}})",
+		"none": "Žádný seznam k tisku",
+		"all": "Všechny seznamy"
+	},
+	"addTo": {
+		"button": "Přidat do seznamu",
+		"selected": "Přidat vybrané do seznamu",
+		"title": "Přidat do seznamu k tisku",
+		"existing": "Existující seznam",
+		"create": "Nový seznam",
+		"newName": "Název nového seznamu",
+		"confirm": "Přidat",
+		"done": "Přidáno do „{{name}}“: {{added}}, už v seznamu: {{skipped}}"
+	},
+	"labels": {
+		"title": "Tisk štítků",
+		"button": "Tisknout štítky",
+		"selected": "Tisknout štítky vybraných",
+		"kind": "Druh štítku",
+		"kinds": {
+			"pair": "Dvojice",
+			"barcode": "Jen čárový kód",
+			"spine": "Jen hřbetní štítek"
+		},
+		"kindHints": {
+			"pair": "Hřbetní štítek nahoře a štítek s čárovým kódem dole, jedna dvojice na knihu (dosavadní tisk).",
+			"barcode": "Jen interní štítek s čárovým kódem, pro dotisk.",
+			"spine": "Jen hřbetní štítek, například po přetřídění."
+		},
+		"stock": "Arch štítků",
+		"start": "První volná pozice",
+		"startHint": "Od 1 do {{max}}: přeskočí štítky, které už jsou na archu použité.",
+		"count": "{{count}} {{count:plural; one:exemplář; few:exempláře; other:exemplářů;}}",
+		"unclassified": "{{count}} {{count:plural; one:exemplář knihy; few:exempláře knih; other:exemplářů knih;}} k zatřídění: vytiskne se jen {{count:plural; one:jeho; few:jejich; other:jejich;}} štítek s čárovým kódem, hřbetní štítek až po zatřídění.",
+		"pendingCount": "{{count}} {{count:plural; one:exemplář; few:exempláře; other:exemplářů;}} se štítky k tisku",
+		"pages": "{{pages}} {{pages:plural; one:arch; few:archy; other:archů;}} ({{perPage}} na arch)",
+		"print": "Otevřít tisk",
+		"afterPrint": "Stránka tisku se otevřela v nové záložce. Po vytištění štítky označte jako vytištěné.",
+		"markPrinted": "Označit jako vytištěné",
+		"marked": "{{count}} {{count:plural; one:exemplář označen jako vytištěný; few:exempláře označeny jako vytištěné; other:exemplářů označeno jako vytištěných;}}",
+		"status": {
+			"printed": "Štítky vytištěny",
+			"pending": "Štítky k tisku",
+			"partial": "Chybí jeden štítek"
+		}
+	},
+	"cards": {
+		"title": "Tisk průkazů",
+		"count": "{{count}} {{count:plural; one:průkaz; few:průkazy; other:průkazů;}}",
+		"afterPrint": "Stránka tisku se otevřela v nové záložce. Po vytištění průkazy označte jako vytištěné.",
+		"layout": "Způsob tisku",
+		"layouts": {
+			"side-by-side": "Přední a zadní strana vedle sebe",
+			"duplex": "Na obě strany listu"
+		},
+		"window": "V okně tisku prohlížeče:",
+		"steps": {
+			"duplex": {
+				"long-edge": "zvolte „Oboustranný tisk“ a otáčení po delší straně;",
+				"short-edge": "zvolte „Oboustranný tisk“ a otáčení po kratší straně;"
+			},
+			"scale": "měřítko 100 % („Skutečná velikost“, ne „Přizpůsobit stránce“);",
+			"margins": "okraje: žádné.",
+			"after": {
+				"side-by-side": {
+					"marks": "Poté každý průkaz vystřihněte spojením značek řezu kolem průkazů pravítkem a přeložte ho na půl podél kratší strany.",
+					"line": "Poté každý průkaz vystřihněte podél barevné čáry kolem něj a přeložte ho na půl podél kratší strany.",
+					"edge": "Poté každý průkaz vystřihněte podél jeho okraje a přeložte ho na půl podél kratší strany."
+				},
+				"duplex": {
+					"marks": "Poté průkazy vystřihněte spojením značek řezu kolem předních stran pravítkem: zadní strana je už za přední (deset na arch).",
+					"line": "Poté průkazy vystřihněte podél barevné čáry kolem předních stran: zadní strana je už za přední (deset na arch).",
+					"edge": "Poté průkazy vystřihněte podél okraje předních stran: zadní strana je už za přední (deset na arch)."
+				}
+			}
+		},
+		"print": "Tisknout",
+		"calibrate": "Poprvé, nebo pokud zadní strany nepadnou za přední:"
+	},
+	"words": {
+		"teacher": "Učitel",
+		"title": "Název",
+		"code": "Kód",
+		"dueBy": "Vrátit nejpozději",
+		"due": "Termín",
+		"name": "Jméno",
+		"daysOverdue": "Dní po termínu",
+		"loanOn": "Výpůjčka z {{date}} pro",
+		"overduesOn": "Upomínky knihovny z {{date}}",
+		"toReturn": "Knihy k vrácení do knihovny",
+		"enjoy": "Přejeme příjemné čtení."
+	}
+}

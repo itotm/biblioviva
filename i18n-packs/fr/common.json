@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "Enregistrer",
+		"cancel": "Annuler",
+		"close": "Fermer",
+		"confirm": "Confirmer",
+		"delete": "Supprimer",
+		"edit": "Modifier",
+		"search": "Rechercher",
+		"export": "Exporter",
+		"back": "Retour",
+		"retry": "Réessayer",
+		"backTo": "Retour à {{page}}",
+		"more": "Autres actions"
+	},
+	"similar": {
+		"label": "Similaire",
+		"count": "et {{count}} {{count:plural; one:autre similaire trouvé; other:autres similaires trouvés;}} en corrigeant une faute de frappe",
+		"hint": "Trouvé en corrigeant une faute de frappe : vérifier qu'il s'agit de celui recherché."
+	},
+	"status": {
+		"loading": "Chargement…",
+		"error": "Une erreur s'est produite"
+	},
+	"statuses": {
+		"item": {
+			"available": "Disponible",
+			"onLoan": "En prêt",
+			"lost": "Perdu",
+			"damaged": "Endommagé",
+			"inRepair": "En réparation",
+			"withdrawn": "Retiré",
+			"notForLoan": "Consultation sur place"
+		},
+		"loan": {
+			"open": "En cours",
+			"dueSoon": "À échéance proche",
+			"overdue": "En retard",
+			"returned": "Restitué"
+		},
+		"patron": {
+			"active": "Actif",
+			"anonymized": "Supprimé"
+		},
+		"print": {
+			"pending": "À imprimer",
+			"printed": "Imprimé"
+		}
+	},
+	"list": {
+		"selected": "{{count}} {{count:plural; one:sélectionné; other:sélectionnés;}}"
+	},
+	"scan": {
+		"label": "Code-barres",
+		"placeholder": "Scanner ou saisir un code",
+		"submit": "Rechercher le code",
+		"camera": "Caméra",
+		"cameraTitle": "Scanner avec la caméra",
+		"errors": {
+			"empty": "Aucun code saisi.",
+			"item_check_digit": "Le code-barres de l'exemplaire a un caractère de contrôle erroné : relire le code.",
+			"card_check_digit": "Le numéro de la carte a un caractère de contrôle erroné : relire le code.",
+			"isbn_check_digit": "L'ISBN a un chiffre de contrôle erroné : vérifier les chiffres.",
+			"unrecognised": "Code non reconnu : vérifier que la douchette lit les codes Code 39 et Code 128."
+		},
+		"invalidRead": "Code non valide ({{code}}) : lecture en cours.",
+		"invalidShort": "Code non valide, nouvelle lecture…",
+		"useAnyway": "Utiliser quand même {{code}}"
+	},
+	"camera": {
+		"start": "Démarrer la caméra",
+		"stop": "Arrêter la caméra",
+		"switch": "Changer de caméra",
+		"torch": "Lampe",
+		"snapshot": "Prendre la photo",
+		"device": "Caméra",
+		"starting": "Démarrage de la caméra…",
+		"errors": {
+			"insecure": "La caméra ne fonctionne qu'avec une connexion sécurisée (https) : ouverte depuis le réseau local sans Tailscale, l'application ne peut pas l'utiliser. Utiliser la douchette ou charger un fichier, ou ouvrir l'application depuis son adresse Tailscale.",
+			"denied": "Autorisation refusée : autoriser la caméra dans les paramètres du navigateur, puis réessayer.",
+			"notFound": "Aucune caméra trouvée sur cet appareil.",
+			"busy": "La caméra est déjà utilisée par une autre application.",
+			"generic": "Impossible de démarrer la caméra ({{message}}).",
+			"timeout": "La caméra ne répond pas. Vérifier que le navigateur ne demande pas encore l'autorisation, ou qu'elle n'a pas été refusée auparavant pour ce site (icône près de l'adresse)."
+		},
+		"permissionHint": "Si le navigateur demande l'autorisation d'utiliser la caméra (en général près de la barre d'adresse), choisir « Autoriser »."
+	},
+	"clipboard": {
+		"failed": "Copie impossible : sélectionner le texte et le copier à la main."
+	},
+	"form": {
+		"errorsTitle": "Vérifier les champs signalés",
+		"field": "Champ {{field}}"
+	},
+	"confirm": {
+		"title": "Confirmer ?"
+	},
+	"export": {
+		"csv": "CSV (tableur, texte)",
+		"ods": "ODS (LibreOffice / Excel)"
+	},
+	"demo": {
+		"panel": "Cette installation contient des données d'exemple chargées le {{when}} : {{patrons}} {{patrons:plural; one:lecteur; other:lecteurs;}}, {{biblios}} {{biblios:plural; one:titre; other:titres;}}, {{items}} {{items:plural; one:exemplaire; other:exemplaires;}}, {{loans}} {{loans:plural; one:prêt; other:prêts;}}. Tout est inventé : aucune personne réelle."
+	},
+	"import": {
+		"header": "La première ligne est un en-tête",
+		"column": "Colonne {{n}}",
+		"ignore": "— ignorer —",
+		"counts": {
+			"new": "{{count}} {{count:plural; one:nouveau; other:nouveaux;}}",
+			"update": "{{count}} à mettre à jour",
+			"unchanged": "{{count}} {{count:plural; one:inchangé; other:inchangés;}}",
+			"error": "{{count}} {{count:plural; one:erreur; other:erreurs;}}"
+		},
+		"onlyErrors": "Afficher uniquement les erreurs",
+		"info": "{{rows}} {{rows:plural; one:ligne; other:lignes;}} · encodage {{encoding}} · séparateur “{{delimiter}}”",
+		"steps": {
+			"upload": "Fichier",
+			"mapping": "Colonnes",
+			"preview": "Vérification",
+			"done": "Terminé"
+		},
+		"line": "Ligne",
+		"status": "Résultat",
+		"reason": "Détails",
+		"statuses": {
+			"new": "Nouveau",
+			"update": "Mise à jour",
+			"unchanged": "Inchangé",
+			"error": "Erreur"
+		},
+		"errors": {
+			"empty": "Le fichier est vide.",
+			"tooLarge": "Le fichier dépasse {{mb}} Mo.",
+			"noRows": "Aucune ligne trouvée dans le fichier.",
+			"uploadGone": "Le fichier chargé n'est plus disponible : le charger de nouveau.",
+			"notReady": "Le fichier contient encore des erreurs : le vérifier de nouveau.",
+			"mappingIncomplete": "Colonnes obligatoires manquantes : {{columns}}."
+		},
+		"template": {
+			"title": "Le modèle du fichier",
+			"hint": "Choisir les colonnes : le modèle ne contient que l'en-tête et se remplit une ligne à la fois (un tableur enregistré en CSV convient aussi).",
+			"required": "Obligatoires",
+			"keys": "Clés",
+			"keysHint": "Servent à reconnaître ce qui est déjà enregistré ; elles peuvent être omises.",
+			"optional": "Facultatives",
+			"download": "Télécharger le modèle",
+			"ifMissing": "Si absente : {{text}}."
+		},
+		"groups": {
+			"required": "obligatoire",
+			"key": "clé"
+		}
+	},
+	"words": {
+		"yes": "Oui",
+		"no": "Non"
+	},
+	"password": {
+		"show": "Afficher le mot de passe",
+		"hide": "Masquer le mot de passe"
+	},
+	"demoPublic": {
+		"language": "Langue",
+		"welcome": {
+			"title": "Bienvenue dans la démo de BiblioViva",
+			"beta": "Bêta publique",
+			"betaText": "BiblioViva est en bêta publique : les fonctions sont stables, mais jusqu'à la version 1.0 il n'est pas garanti qu'une mise à jour reste compatible avec les données et les réglages de la version précédente.",
+			"intro": "BiblioViva est le logiciel pour gérer la bibliothèque d'une école : prêts et retours, catalogue, lecteurs avec photos et cartes, étiquettes, impressions et rapports. Ceci est une démo publique : toutes les fonctions sont disponibles pour essai.",
+			"contents": "Vous y trouverez une école primaire fictive : {{patrons}} {{patrons:plural; one:élève ou enseignant; other:élèves et enseignants;}}, {{biblios}} {{biblios:plural; one:titre; other:titres;}} et {{items}} {{items:plural; one:exemplaire; other:exemplaires;}}, {{openLoans}} {{openLoans:plural; one:prêt; other:prêts;}} en cours, dont {{overdueLoans}} en retard. Les noms et les photos sont inventés : aucune personne réelle.",
+			"reset": "Chaque jour à {{time}}, la démo revient à son état initial. Les modifications de la configuration peuvent être essayées, mais elles ne sont pas enregistrées.",
+			"examples": "Dans la démo, le texte et les photos sont remplacés par un exemple : chaque opération peut être essayée jusqu'au bout, mais ce qui est saisi ou photographié n'est pas conservé et aucun autre visiteur ne le voit. Les imports n'acceptent que les fichiers d'exemple, à télécharger depuis la page de chaque import.",
+			"accountsTitle": "Quel compte utiliser pour se connecter",
+			"accountsHint": "Comme à la bibliothèque, chaque compte ne voit que le travail de son rôle. Le nom d'utilisateur et le mot de passe se saisissent dans le formulaire ci-dessus.",
+			"password": "Le mot de passe est le même pour tous les comptes :"
+		},
+		"accounts": {
+			"admin": {
+				"name": "Administration",
+				"does": "voit tout : outre le travail des autres comptes, la configuration, les comptes du personnel, les sauvegardes, les classes et le passage à l'année suivante."
+			},
+			"prestiti": {
+				"name": "Gestion des prêts",
+				"does": "le poste de prêt : prête, restitue et prolonge, suit les retards et imprime les relances."
+			},
+			"catalogo": {
+				"name": "Catalogage",
+				"does": "livres et exemplaires, recherche des données dans SBN (simulée ici), couvertures, classification et étiquettes."
+			},
+			"tessere": {
+				"name": "Cartes et photos",
+				"does": "élèves et enseignants, photos et recensement photographique des classes, impression des cartes."
+			},
+			"report": {
+				"name": "Rapports",
+				"does": "statistiques sur les prêts, le catalogue et les lecteurs, export des tableaux."
+			}
+		},
+		"blocked": {
+			"config": "Dans la démo, la configuration n'est pas enregistrée : tout peut être essayé, mais les modifications ne sont pas écrites.",
+			"restore": "Dans la démo, la restauration d'une sauvegarde est désactivée : les données de démonstration se recréent d'elles-mêmes chaque nuit.",
+			"configImport": "Dans la démo, l'importation d'une configuration est désactivée : la configuration de la démo est la même pour tous les visiteurs.",
+			"pictures": "Dans la démo, les photos de classe ne se chargent pas : pour le recensement, essayer avec la photo de classe d'exemple.",
+			"sqlReports": "Dans la démo, les rapports écrits en SQL sont désactivés ; les rapports guidés sont disponibles.",
+			"importSize": "Dans la démo, les fichiers à importer ne peuvent pas dépasser 1 Mo.",
+			"printSize": "Dans la démo, 3 feuilles au maximum s'impriment à la fois : choisir moins d'exemplaires ou moins de lecteurs.",
+			"importExample": "Dans la démo, seul le fichier d'exemple peut être importé : le télécharger avec le bouton du modèle et le charger tel quel.",
+			"notesLimit": "Dans la démo, seules quelques notes par jour peuvent être rédigées.",
+			"demoData": "Dans la démo, les données d'exemple restent jusqu'à la remise à zéro de nuit.",
+			"backups": "Dans la démo, les sauvegardes manuelles sont désactivées : les données de démonstration se recréent d'elles-mêmes chaque nuit.",
+			"archives": "Dans la démo, les archives et les sauvegardes ne se téléchargent pas : les données et la configuration de la démo se recréent d'elles-mêmes chaque nuit.",
+			"languagePacks": "Dans la démo, les packs de langue ne sont pas téléchargés : la démo propose l'italien et l'anglais."
+		},
+		"example": {
+			"note": "DÉMO – note du {{when}}",
+			"comment": "Note de démo du {{when}}",
+			"book": "Livre de démo du {{when}}",
+			"wish": "Suggestion de démo du {{when}}",
+			"class": "Classe de démo du {{when}}",
+			"printList": "Liste de démo du {{when}}",
+			"inventory": "Récolement de démo du {{when}}",
+			"reason": "Motif de démo du {{when}}",
+			"date": "Date de démo du {{when}}"
+		},
+		"replaced": "Dans la démo, le texte et les photos sont remplacés par un exemple : l'enregistrement a réussi, mais l'exemple reste.",
+		"tooMany": "Trop de demandes en peu de temps : réessayer dans une minute.",
+		"refused": {
+			"title": "Non disponible dans la démo",
+			"busyTitle": "Trop de demandes",
+			"back": "Retour à BiblioViva"
+		}
+	}
+}

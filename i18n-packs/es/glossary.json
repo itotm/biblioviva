@@ -1,0 +1,158 @@
+{
+	"_register": "Address the reader formally (usted) but avoid the pronoun: use the impersonal infinitive for buttons, menu entries and steps (\"Escanear el código\", \"Renovar\"), and the third-person usted imperative only where a sentence needs it (\"Pulse Intro para registrar la devolución\"); no exclamation marks, no tuteo (no \"tú\" forms, no voseo).",
+	"_quotes": "Spanish angular quotes « » for quoted titles and names (e.g. «{{title}}»); nested quotes use “ ”; the arrow → stays.",
+	"copy": {
+		"term": "ejemplar (m.)",
+		"note": "One physical copy of a book with its own barcode; this is the standard school-library term in Spain. Plural: ejemplares."
+	},
+	"record": {
+		"term": "ficha (f.)",
+		"note": "Catalogue entry of a title (ficha bibliográfica / registro). Use \"ficha\" for short labels; \"registro\" is more technical and clashes with \"registrar\" (to register a return)."
+	},
+	"patron": {
+		"term": "usuario (m.) / usuaria (f.)",
+		"note": "Spanish libraries say \"usuario\" (lector is less formal). Use the masculine generic in labels (\"Usuarios\"); never \"cliente\" or \"socio\"."
+	},
+	"card": {
+		"term": "carné (m.)",
+		"note": "Library card: \"carné de biblioteca\" in Spain; \"carnet\" is a variant spelling, use \"carné\". In Latin America \"credencial\" or \"tarjeta\" are also heard; \"carné\" is understood everywhere. Plural: carnés."
+	},
+	"loan": {
+		"term": "préstamo (m.)"
+	},
+	"return": {
+		"term": "devolución (f.)"
+	},
+	"renew": {
+		"term": "renovar",
+		"note": "Noun: renovación (f.)."
+	},
+	"overdue": {
+		"term": "retrasado / con retraso",
+		"note": "\"Préstamos con retraso\" for the list, \"{{days}} días de retraso\" for the count. Avoid \"vencido\" (sounds like expired) and \"moroso\" (implies fines, which the program never has)."
+	},
+	"reminder": {
+		"term": "aviso de devolución (m.)",
+		"note": "The printed slip asking for the return; \"reclamación\" is stronger and is used in Spain for the formal step, but \"aviso\" fits a school better. Short form: \"aviso\"."
+	},
+	"call number": {
+		"term": "signatura (f.)",
+		"note": "Standard term in Spain (\"signatura topográfica\"). In Latin America \"número de clasificación\" or \"clasificación topográfica\" is also used; \"signatura\" is understood by librarians everywhere."
+	},
+	"spine band": {
+		"term": "tejuelo (m.)",
+		"note": "In Spain \"tejuelo\" is the label on the spine carrying the signatura. If a descriptive form is needed: \"banda del lomo\" (lomo = spine)."
+	},
+	"label": {
+		"term": "etiqueta (f.)",
+		"note": "Adhesive label with a barcode: \"etiqueta de código de barras\" when it must be specific."
+	},
+	"barcode": {
+		"term": "código de barras (m.)"
+	},
+	"class": {
+		"term": "clase (f.) / curso (m.)",
+		"note": "A school class such as 3 B is \"grupo\" or \"clase\" in Spain and \"curso\" in Latin America. Use \"clase\" for the class patrons belong to; \"curso\" means the school year/grade (e.g. 3.º ESO), so keep it for the level only."
+	},
+	"group": {
+		"term": "grupo (m.)",
+		"note": "Used for a group of teachers and for the class group of the database; do not use \"grupo\" for the school class label alone (use \"clase\")."
+	},
+	"reading level": {
+		"term": "nivel de lectura (m.)"
+	},
+	"genre": {
+		"term": "género (m.)"
+	},
+	"classification": {
+		"term": "clasificación (f.)",
+		"note": "How fiction and non-fiction are sorted (CDU in Spain). Verb: clasificar."
+	},
+	"catalogue": {
+		"term": "catálogo (m.)"
+	},
+	"stocktaking": {
+		"term": "inventario (m.)",
+		"note": "Checking the shelves against the catalogue; in Spanish libraries this is \"expurgo\" only for weeding, so keep \"inventario\"."
+	},
+	"wish list": {
+		"term": "desideratas (f. pl.)",
+		"note": "Established library term in Spain for the books users ask the library to buy. Alternative for plain wording: \"lista de deseos\"."
+	},
+	"census": {
+		"term": "censo de fotos (m.)",
+		"note": "Registering patrons with their photo; \"censo fotográfico\" also works."
+	},
+	"class upgrade": {
+		"term": "cambio de curso (m.)",
+		"note": "Moving every class up a year at the end of the school year; also \"promoción de curso\". Here \"curso\" is the school year, not the class."
+	},
+	"anonymise": {
+		"term": "anonimizar",
+		"note": "Spelled with z in Spain and Latin America (\"anonimizar\", not \"anonimitzar\"). Erases the personal data for good."
+	},
+	"staff account": {
+		"term": "cuenta del personal (f.)",
+		"note": "A shared login per role. \"Personal\" here means staff, as in \"personal de la biblioteca\"."
+	},
+	"backup": {
+		"term": "copia de seguridad (f.)",
+		"note": "Preferred in Spain over the anglicism \"backup\" or the Latin American \"respaldo\"."
+	},
+	"restore": {
+		"term": "restaurar",
+		"note": "Noun: restauración (f.). Putting a backup back."
+	},
+	"language pack": {
+		"term": "paquete de idioma (m.)",
+		"note": "A translation of the interface. \"Idioma\" is the term for a language in the interface (not \"lengua\")."
+	},
+	"colour set": {
+		"term": "conjunto de colores (m.)",
+		"note": "A palette of the interface; \"paleta de colores\" is also fine and shorter."
+	},
+	"print list": {
+		"term": "lista de impresión (f.)"
+	},
+	"scanner": {
+		"term": "lector de códigos de barras (m.)",
+		"note": "The USB barcode reader that types like a keyboard. \"Escáner\" is a common short form; use \"lector\" in labels and \"escanear\" for the verb (to scan)."
+	},
+	"wizard": {
+		"term": "asistente (m.)",
+		"note": "The first-start sequence of questions; \"asistente de configuración\" in full."
+	},
+	"demo data": {
+		"term": "datos de ejemplo (m. pl.)"
+	},
+	"student": {
+		"term": "alumno (m.) / alumna (f.)",
+		"note": "Use the masculine generic in labels (\"Alumnos\"). \"Estudiante\" is more usual in Latin America and is gender-neutral; \"alumno\" is the school term in Spain."
+	},
+	"teacher": {
+		"term": "profesor (m.) / profesora (f.)",
+		"note": "Use the masculine generic in labels (\"Profesores\"). \"Docente\" is gender-neutral and common in Latin America; in Spain \"profesorado\" is the collective."
+	},
+	"school year": {
+		"term": "curso escolar (m.)",
+		"note": "In Spain \"curso escolar\" (2026/27); \"año escolar\" is the Latin American usage."
+	},
+	"administration": {
+		"term": "Administración (f.)"
+	},
+	"configuration": {
+		"term": "configuración (f.)"
+	},
+	"template": {
+		"term": "plantilla (f.)",
+		"note": "Print templates for cards, labels and slips."
+	},
+	"note": {
+		"term": "nota (f.)",
+		"note": "Notes for the desk and notes pages; \"anotación\" is more formal and longer."
+	},
+	"return desk / circulation desk": {
+		"term": "mostrador de préstamo (m.)",
+		"note": "The area label \"Circulation desk\" in the navigation; in Spain \"mostrador de préstamo\" or \"punto de préstamo\". The menu entry \"Loans\" stays \"Préstamos\" and \"Returns\" stays \"Devoluciones\"."
+	}
+}

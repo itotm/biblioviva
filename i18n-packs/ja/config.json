@@ -1,0 +1,1778 @@
+{
+	"home": {
+		"title": "設定"
+	},
+	"leave": {
+		"title": "保存せずに終了しますか？",
+		"description": "保存されていない変更は失われます。",
+		"confirm": "保存せずに終了"
+	},
+	"taxonomy": {
+		"title": "分類",
+		"intro": "変更は「保存」を押すまで下書きとして残ります。{{file}}の以前のバージョンは保管されます。",
+		"invalid": "正しくない値があります（赤で示されています）。保存するには修正してください。",
+		"orphans": "蔵書に、分類に含まれていないコードの図書があります：{{codes}}。ここでこれらのコードを追加するか、蔵書画面からそれらの図書を分類し直してください。",
+		"unsaved": "未保存の変更",
+		"discard": "変更を取り消し",
+		"saved": "分類を保存しました",
+		"savedDetail": "図書{{records}}{{records:plural; other:冊;}}を移動、請求記号{{callNumbers}}{{callNumbers:plural; other:件;}}を書き換え、背ラベル{{bands}}{{bands:plural; other:件;}}を再印刷対象にしました。",
+		"tabs": {
+			"fiction": "小説",
+			"nonfiction": "非小説",
+			"dewey": "Dewey",
+			"options": "オプション"
+		},
+		"addGenre": "ジャンルを追加",
+		"addClass": "主題を追加",
+		"addSubclass": "下位主題を追加",
+		"dragHint": "行をドラッグして順序を変えるか、矢印を使ってください。順序は蔵書の選択肢の順序と同じです。",
+		"pickGenre": "編集するジャンルを選んでください",
+		"pickClass": "編集する主題を選んでください",
+		"untitled": "無題",
+		"hasProblems": "修正が必要",
+		"usageShort": "{{records}}{{records:plural; other:冊;}}",
+		"moveUp": "上へ移動",
+		"moveDown": "下へ移動",
+		"panel": {
+			"genre": "ジャンル",
+			"class": "主題",
+			"subclass": "下位主題"
+		},
+		"fields": {
+			"code": "コード",
+			"label": "名前",
+			"color": "色",
+			"pictogram": "ピクトグラム",
+			"position": "位置"
+		},
+		"renameNote": "コードを変更しました。保存すると、{{records}}{{records:plural; other:冊;}}の図書が{{from}}から{{to}}へ移り、その請求記号も更新されます。",
+		"color": {
+			"inherit": "{{code}}の色を使う",
+			"none": "色なし",
+			"hex": "色コード"
+		},
+		"pictogram": {
+			"upload": "画像をアップロード",
+			"choose": "画像から選ぶ",
+			"remove": "画像を削除",
+			"own": "独自の画像。PNG、JPEG、WebP形式で、PNG形式として保存されます。",
+			"missing": "ファイル{{name}}が画像フォルダにありません。ラベルには色とコードの円が表示されます。",
+			"inherited": "独自の画像がない場合は、{{code}}の画像を使います。",
+			"placeholder": "画像がない場合、ラベルには色とコードの円が表示されます。",
+			"gallery": "分類の画像",
+			"errors": {
+				"empty": "ファイルが空です。",
+				"too_large": "画像が大きすぎます（最大{{maxMb}}MB）。",
+				"not_an_image": "ファイルは画像ではありません。",
+				"unsupported_format": "対応していない形式です。PNG、JPEG、WebPを使ってください。"
+			}
+		},
+		"position": {
+			"top": "主要な主題",
+			"under": "{{code}}・{{label}}の下",
+			"locked": "下位主題があるため、主要な主題のままです。"
+		},
+		"usage": {
+			"new": "新規：まだどの図書にも使われていません。",
+			"none": "このコードを使っている図書はありません。",
+			"some": "図書{{records}}{{records:plural; other:冊;}}で使用中（資料{{copies}}{{copies:plural; other:冊;}}）。"
+		},
+		"remove": {
+			"genre": "ジャンルを削除",
+			"class": "主題を削除",
+			"confirmTitle": "{{code}}を削除しますか？",
+			"withSubclasses": "その下位主題{{count}}{{count:plural; other:件;}}も削除されます。",
+			"inUse": "このコードを使っている図書が{{records}}{{records:plural; other:冊;}}あります。保存する際に、移動先を尋ねられます。",
+			"confirm": "削除"
+		},
+		"preview": {
+			"title": "背ラベルのプレビュー",
+			"hint": "現在の設定で、実寸で印刷される見本の図書です。",
+			"needsCode": "コードが正しくなると、プレビューが表示されます。"
+		},
+		"problems": {
+			"codeRequired": "コードを入力してください。",
+			"codeFormat": "使えるのは、文字、数字、ピリオド、ハイフン、アンダーバーだけです（最大32文字）。",
+			"codeTaken": "このコードは、別のジャンルまたは主題で既に使われています。",
+			"labelRequired": "名前を入力してください。",
+			"labelLong": "名前が長すぎます（最大120文字）。",
+			"colorFormat": "色は#rrggbb形式で入力してください（例：#e8231b）。",
+			"patternRequired": "パターンを空にすることはできません。"
+		},
+		"dewey": {
+			"hint": "ノンフィクションの図書にDewey番号（例：SBNから）が付いている場合、この表から主題が提案されます。最も長く一致する接頭辞が優先されます。",
+			"probe": "Dewey番号を試す",
+			"noMatch": "一致する主題がありません",
+			"empty": "Deweyの対応がありません",
+			"prefix": "Dewey接頭辞",
+			"class": "主題",
+			"add": "対応を追加",
+			"problems": {
+				"prefixFormat": "1～3桁の数字です。",
+				"prefixTaken": "接頭辞が重複しています。",
+				"codeUnknown": "主題を選んでください。"
+			}
+		},
+		"options": {
+			"fictionByClass": "小説を読書レベルで分ける",
+			"fictionByClassHint": "小説の図書には、適した読書レベル（例：4）を付けられます。請求記号と背ラベルに表示されます。",
+			"classPerItem": "読書レベルを資料ごとに設定する",
+			"classPerItemHint": "同じ図書の資料が、異なるレベルの書架に置かれる場合に必要です。そうでなければ、レベルは図書に付きます。",
+			"toCopies": "保存すると、各図書の読書レベルがその資料に移ります。",
+			"toRecords": "保存すると、資料の読書レベルが図書に戻ります。同じ図書の資料に異なるレベルがある場合はできません。",
+			"patterns": "請求記号のパターン",
+			"patternsHint": "今後追加される資料に適用されます。既存の請求記号は変わりません。使える記号：{{placeholders}}。",
+			"pattern": {
+				"fiction": "小説",
+				"fictionWithClass": "読書レベルの付いた小説",
+				"nonfiction": "非小説"
+			},
+			"unknownPlaceholders": "不明な記号：{{names}}。",
+			"example": "例：{{example}}"
+		},
+		"save": {
+			"title": "分類を保存",
+			"checking": "蔵書で何が変わるかを確認しています…",
+			"unchanged": "保存する変更はありません。",
+			"errors": "保存する前に、次の問題を修正してください：",
+			"removedTitle": "使用中の削除済みコード",
+			"removedHint": "削除された各コードの図書の移動先を選んでください。新しいコードは、図書、請求記号の先頭、背ラベルに付けられます。",
+			"moveTo": "{{code}}・{{label}}の図書{{records}}{{records:plural; other:冊;}}（資料{{copies}}{{copies:plural; other:冊;}}）の移動先",
+			"choose": "選択…",
+			"callNumbers": "削除されたコードで始まる請求記号が{{count}}{{count:plural; other:件;}}あります。先頭のコードは置き換えられます（例：B 4 DELはA 4 DELになります）。",
+			"bandsMoved": "移動された図書の背ラベル、および請求記号が変わったラベルは、再印刷対象に戻されます。",
+			"unused": "削除済みで、どの図書にも使われていないコード：{{codes}}。",
+			"reprint": "名前、色、ピクトグラムが変わる資料{{copies}}{{copies:plural; other:冊;}}（{{codes}}）の背ラベルを、印刷するラベルに戻す",
+			"reprintHint": "既に貼られた背ラベルの違いが問題でなければ、オフのままにしてください。",
+			"conflicts": "異なる主題を持つ資料がある図書が{{count}}{{count:plural; other:冊;}}あります。資料から主題を外す前に、各図書のすべての資料に同じ主題を設定してください。",
+			"toCopies": "{{count}}{{count:plural; other:冊;}}の図書の関連する主題が、その資料に移ります。",
+			"toRecords": "{{count}}{{count:plural; other:件;}}の書誌について、資料の主題が図書に戻ります。",
+			"warnings": "警告{{count}}{{count:plural; other:件;}}（保存は妨げられません）",
+			"levelsTitle": "図書に付いたまま削除される読書レベル",
+			"levelMoveTo": "レベル{{code}}・{{label}}の図書（書誌{{records}}{{records:plural; other:件;}}、資料{{copies}}{{copies:plural; other:冊;}}）の移動先",
+			"noLevel": "レベルなし",
+			"levelsHint": "資料の請求記号のレベルは資料と一緒に変わります（例：B 4 DELはB 5 DELになります）。そのラベルは印刷対象に戻されます。"
+		},
+		"levels": {
+			"title": "読書レベル",
+			"hint": "易しい順に並べます。コードは図書と請求記号に入ります（例：B 4 DELの4）。選択肢には名前が表示されます。使用中のレベルを削除または名前変更すると、保存時に図書の移動先を尋ねられます。",
+			"code": "レベルのコード",
+			"label": "レベルの名前",
+			"up": "上へ移動",
+			"down": "下へ移動",
+			"remove": "レベルを削除",
+			"add": "レベルを追加"
+		}
+	},
+	"sections": {
+		"library": {
+			"title": "図書館と学校",
+			"description": "名前、学校の種類、学級と組、年度、タイムゾーン。"
+		},
+		"school": {
+			"title": "学校",
+			"description": "学校段階と学年、学級の表記、年度末に学級がどうなるか。学級そのものは「管理 → 設定 → 学級」で管理します。"
+		},
+		"catalog": {
+			"title": "蔵書目録",
+			"description": "著者、出版社、発行地が不明な場合の値。"
+		},
+		"barcodes": {
+			"title": "バーコード",
+			"description": "カードと資料の形式、旧コード、バーコードの種類。"
+		},
+		"circulation": {
+			"title": "貸出",
+			"description": "貸出と延長の規則、返却期限、督促状、受領書。"
+		},
+		"calendar": {
+			"title": "カレンダー",
+			"description": "休館日と祝日。"
+		},
+		"z3950": {
+			"title": "Z39.50（SBN）",
+			"description": "図書の書誌データを取得するサーバー。"
+		},
+		"metadata": {
+			"title": "図書データ",
+			"description": "ISBNで検索する場合のデータの取得元。"
+		},
+		"performance": {
+			"title": "パフォーマンス",
+			"description": "BiblioVivaが動作するコンピューターと、それに応じて変わる設定。"
+		},
+		"classification": {
+			"title": "分類",
+			"description": "ジャンル、主題、ピクトグラム、Dewey、請求記号。"
+		},
+		"cards": {
+			"title": "カード",
+			"description": "カードと印刷シートの形式。"
+		},
+		"labels": {
+			"title": "ラベル",
+			"description": "図書のラベルと背ラベル、粘着シート。"
+		},
+		"photos": {
+			"title": "利用者の写真",
+			"description": "写真のサイズと形式。"
+		},
+		"covers": {
+			"title": "表紙",
+			"description": "表紙のサイズ、形式、取得元。"
+		},
+		"privacy": {
+			"title": "プライバシー",
+			"description": "操作記録（監査ログ）を保存する期間。"
+		},
+		"backup": {
+			"title": "バックアップ",
+			"description": "バックアップの時刻と保存期間、別の場所へのコピー。"
+		},
+		"security": {
+			"title": "セキュリティとアクセス",
+			"description": "セッションの長さ、ログインの試行回数、アカウントと役割。"
+		},
+		"ui": {
+			"title": "画面",
+			"description": "貸出カウンターの画面と追加された言語。色、言語、ダッシュボードは「外観と言語」にあります。"
+		}
+	},
+	"fields": {
+		"library": {
+			"name": {
+				"label": "図書館の名前",
+				"hint": "左上、カード、印刷物に表示されます。"
+			},
+			"contactEmail": {
+				"label": "連絡先メールアドレス",
+				"hint": "任意：記載する印刷物に表示されます。"
+			},
+			"schoolYearStart": {
+				"label": "年度の開始",
+				"hint": "月と日を MM-DD の形式で入力してください（例：09-01）。統計で年度を区切るために使われます。"
+			},
+			"schoolYearLabel": {
+				"label": "年度の表示名",
+				"hint": "年度をカード、帳票、画面にどう表示するか：2つの年（2026/2027）、または開始年だけ（2026。ブラジル、日本、韓国の形式）。"
+			},
+			"timezone": {
+				"label": "タイムゾーン",
+				"hint": "地域名（例：Europe/Rome）。日付と返却期限はこれに従い、サーバーの時計には従いません。"
+			},
+			"weekStart": {
+				"label": "週の始まり",
+				"hint": "カレンダーとダッシュボードの「今週」で、週が始まる曜日。最初の起動時には言語によって決まります（イタリア語では月曜日、英語では日曜日）。"
+			}
+		},
+		"school": {
+			"classLabel": {
+				"label": "学級の表記",
+				"hint": "{level} は学年、{group} は学級の名前です。「{level} {group}」は3 B、「{level}{group}」は3Bになります。学校段階ごとに別の表記を設定できます（学校段階と学年）。"
+			},
+			"groupWord": {
+				"label": "学級の呼び名",
+				"hint": "フォームとフィルターにおける学級の項目名、およびカードの学級の行にある{word}（例：Section B、Class B、Group B）。"
+			},
+			"cardClass": {
+				"label": "カードの学級",
+				"hint": "カードに印刷される学級の行。{word} は学級の呼び名、{group} は学級の名前、{level} は学年、{class} は学級全体です。「{word} {group}」は Section B、「{class}」は 3 B になります。"
+			},
+			"teacherGroupName": {
+				"label": "教員グループの名前",
+				"hint": "ほかに選ばれない場合に、教員が所属するグループ。"
+			},
+			"promotionWithinStage": {
+				"label": "年度末、同じ学校段階の中",
+				"hint": "通常、学級は生徒と一緒に進級します（例：3 Bは4 Bになります）。"
+			},
+			"promotionAcrossStages": {
+				"label": "年度末、別の学校段階へ",
+				"hint": "例：総合制学校の小学5年から中学1年へ。"
+			}
+		},
+		"catalog": {
+			"specialAuthors": {
+				"label": "特別な著者",
+				"hint": "1行に1つ：個人の著者の代わりに認められる値（例：Anonimo、AA. VV.）。"
+			},
+			"unknownPublisher": {
+				"label": "不明な出版社",
+				"hint": "出版社が記されていない場合に書かれる値。"
+			},
+			"unknownPlace": {
+				"label": "不明な発行地",
+				"hint": "発行地が記されていない場合に書かれる値。"
+			}
+		},
+		"barcodes": {
+			"keyboardLayout": {
+				"label": "コンピューターのキーボード",
+				"hint": "バーコードリーダーが接続されているコンピューターのキーボード配列。リーダーが別の配列用に入力した文字の誤りを直すために使われます。"
+			},
+			"cameraSound": {
+				"label": "カメラの音",
+				"hint": "カメラがカード、資料のバーコード、ISBNを読み取ったときに鳴る電話機の音。USBリーダーは自分で音を出すため必要ありません。カウンターでは音は鳴りません。"
+			},
+			"patron": {
+				"symbology": {
+					"label": "カードのバーコードの種類",
+					"hint": "新しいカードにはCode 128を使います。図書館のリーダーがCode 128を読めない場合のみCode 39を使ってください。"
+				}
+			},
+			"item": {
+				"symbology": {
+					"label": "資料のバーコードの種類",
+					"hint": "新しいラベルにはCode 128を使います。図書館のリーダーがCode 128を読めない場合のみCode 39を使ってください。"
+				}
+			}
+		},
+		"circulation": {
+			"rules": {
+				"student": {
+					"loanDays": {
+						"label": "貸出日数",
+						"hint": "児童生徒の貸出期間の日数。"
+					},
+					"maxLoans": {
+						"label": "貸出できる図書の最大数",
+						"hint": "同時に借りられる図書の数。"
+					},
+					"maxRenewals": {
+						"label": "延長の最大回数",
+						"hint": "同じ貸出を延長できる回数（0 = 延長不可）。"
+					},
+					"renewalDays": {
+						"label": "延長日数",
+						"hint": "延長のたびに加わる日数。"
+					}
+				},
+				"teacher": {
+					"loanDays": {
+						"label": "貸出日数",
+						"hint": "教員の貸出期間の日数。"
+					},
+					"maxLoans": {
+						"label": "貸出できる図書の最大数",
+						"hint": "同時に借りられる図書の数。"
+					},
+					"maxRenewals": {
+						"label": "延長の最大回数",
+						"hint": "同じ貸出を延長できる回数（0 = 延長不可）。"
+					},
+					"renewalDays": {
+						"label": "延長日数",
+						"hint": "延長のたびに加わる日数。"
+					}
+				}
+			},
+			"dueDateMode": {
+				"label": "返却期限の計算",
+				"hint": "貸出期間を、休館日を除いて数えるかどうか。"
+			},
+			"renewFrom": {
+				"label": "延長の起算日",
+				"hint": "延長日数を数え始める日。"
+			},
+			"allowRenewalWhenOverdue": {
+				"label": "返却期限を過ぎた後も延長する",
+				"hint": "すでに延滞している貸出も延長できます。"
+			},
+			"overdueNotice": {
+				"template": {
+					"label": "督促状のテンプレート",
+					"hint": "督促状の印刷テンプレートの名前（slips/templates内のフォルダ）。"
+				},
+				"pageBreakPerGroup": {
+					"label": "学級ごとに1ページ",
+					"hint": "学級ごとに別のシートにし、教員に渡せるようにします。印刷時に変更することもできます。"
+				},
+				"minDays": {
+					"label": "督促状を出すまでの延滞日数",
+					"hint": "この日数を超えて延滞した貸出のみ、督促状に載ります（0 = すぐに載せる）。"
+				}
+			},
+			"blockIfOverdue": {
+				"label": "延滞中の図書がある場合は新たに貸し出さない",
+				"hint": "延滞中の図書がある人は、それが返却されるまで別の図書を借りられません。"
+			},
+			"hardDueDate": {
+				"label": "返却期限の上限",
+				"hint": "どの貸出もこの日付を超えて期限にはなりません（例：授業の終わり）。空欄：上限なし。"
+			},
+			"receipts": {
+				"label": "貸出の受領書",
+				"hint": "貸出カウンターで受領書を印刷するボタンを表示します。"
+			}
+		},
+		"calendar": {
+			"autoItalianHolidays": {
+				"label": "イタリアの国民の祝日",
+				"hint": "国民の祝日（イースターを含む）は、手入力しなくても休館日になります。"
+			}
+		},
+		"z3950": {
+			"defaultTarget": {
+				"label": "既定のサーバー",
+				"hint": "検索に使うZ39.50サーバーのID。"
+			},
+			"timeoutMs": {
+				"label": "待機時間の上限（ミリ秒）",
+				"hint": "この時間を過ぎても応答がない場合、Z39.50の検索を打ち切ります（ミリ秒）。"
+			},
+			"maxRecordsIsbn": {
+				"label": "ISBNごとの結果数",
+				"hint": "ISBNで検索するときに読み取る書誌の最大数（1つのISBNに、版ごとの書誌がある場合があります）。最も詳しい書誌が開きます。"
+			},
+			"maxRecordsSearch": {
+				"label": "検索ごとの結果数",
+				"hint": "書名または著者で検索するときに読み取る書誌の最大数。"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"label": "データの取得元",
+				"hint": "ISBNで検索するときに図書データを取得する先。選んだ取得元はまとめて照会されます。"
+			},
+			"cacheDays": {
+				"label": "検索結果を記憶する日数",
+				"hint": "一度行った検索を、再び尋ねずに再利用する日数。"
+			},
+			"timeoutMs": {
+				"label": "待機時間の上限（ミリ秒）",
+				"hint": "この時間を過ぎても応答がない取得元は除外されます（ミリ秒）。"
+			}
+		},
+		"performance": {
+			"profile": {
+				"label": "コンピューター",
+				"hint": "BiblioVivaが動作するコンピューターに合った既定の設定。"
+			},
+			"sqliteCacheMb": {
+				"label": "データベースのキャッシュ（MB）",
+				"hint": "空欄：コンピューターに応じて決まります（8、16、64、256 MB）。"
+			},
+			"sqliteMmapMb": {
+				"label": "データベースのメモリマップ（MB）",
+				"hint": "空欄：コンピューターに応じて決まります（0、0、0、512 MB）。"
+			},
+			"walAutocheckpointPages": {
+				"label": "チェックポイントまでのページ数",
+				"hint": "空欄：コンピューターに応じて決まります（500、1000、2000、4000）。"
+			},
+			"imageConcurrency": {
+				"label": "同時に処理する画像の数",
+				"hint": "写真、表紙、分類の画像、ロゴを同時に処理する数。ほかは順番を待ちます。空欄：コンピューターに応じて決まります（1、1、2、4）。"
+			},
+			"yazConcurrency": {
+				"label": "同時に行うZ39.50の検索",
+				"hint": "同時に行うZ39.50の検索の数。ほかは順番を待ちます。空欄：コンピューターに応じて決まります（1、1、2、2）。"
+			},
+			"heavyConcurrency": {
+				"label": "同時に行う印刷と書き出し",
+				"hint": "同時に準備する印刷用のシート（カード、ラベル、督促状、受領書、帳票）と書き出し（CSV、ODS、アーカイブ、バックアップ）の数。ほかは順番を待つため、貸出カウンターは速いまま保たれます。空欄：コンピューターに応じて決まります（1、1、2、4）。"
+			},
+			"argon2MemoryMb": {
+				"label": "パスワードの確認に使うメモリ（MB）",
+				"hint": "以後に設定されるパスワードに適用されます。空欄：すべてのコンピューターで16 MB（システムはインターネットに公開されません）。"
+			},
+			"smol": {
+				"label": "メモリの節約",
+				"hint": "メモリを減らしますが、プロセッサーの作業が少し増えます。自動：コンピューターに応じて決まります（最小構成のコンピューターとRaspberry Piでは「はい」）。再起動後に適用されます。"
+			}
+		},
+		"cards": {
+			"defaultTemplate": {
+				"label": "カードのテンプレート",
+				"hint": "利用者の種類に固有のテンプレートがない場合に使う印刷テンプレートの名前（cards/templates内のフォルダ）。"
+			},
+			"layout": {
+				"label": "カードの印刷",
+				"hint": "表と裏を並べて印刷する（短い辺で折る）か、両面印刷に対応したプリンターで用紙の両面に印刷するか。印刷のたびに選び直せます。"
+			},
+			"duplex": {
+				"flip": {
+					"label": "用紙の返し方",
+					"hint": "裏面のためにプリンターが用紙をどう返すか：長い辺（書籍のように）または短い辺。印刷画面の選択と一致させてください。"
+				},
+				"backOffsetMm": {
+					"x": {
+						"label": "裏面のずれ、横方向（mm）",
+						"hint": "調整で求めた値：裏面を表面にぴったり重ねるために、裏面をどれだけ動かすか。"
+					},
+					"y": {
+						"label": "裏面のずれ、縦方向（mm）",
+						"hint": "調整で求めた値。"
+					}
+				}
+			},
+			"cardMm": {
+				"width": {
+					"label": "幅（mm）",
+					"hint": "標準的なカードの幅は85.6 mmです。"
+				},
+				"height": {
+					"label": "高さ（mm）",
+					"hint": "標準的なカードの高さは53.98 mmです。"
+				}
+			},
+			"bleedMm": {
+				"label": "裁ち落とし（mm）",
+				"hint": "縁まで印刷する画像の周囲の余白。裁断で取り除かれます。"
+			},
+			"sheet": {
+				"paper": {
+					"label": "用紙のサイズ",
+					"hint": "カードを印刷する用紙。"
+				},
+				"rows": {
+					"label": "1シートのカードの数",
+					"hint": "表と裏を含むカードを縦に並べる数：A4のシートでは4または5。"
+				},
+				"marginMm": {
+					"label": "シートの余白（mm）",
+					"hint": "カードの周囲の空白。"
+				},
+				"gapMm": {
+					"label": "カードの間隔（mm）",
+					"hint": "あるカードと次のカードとの距離。"
+				},
+				"foldMarks": {
+					"label": "折り目の印",
+					"hint": "表と裏を折る位置を示す、余白とカードの間の短い破線。"
+				},
+				"cutMarks": {
+					"label": "トンボ（裁断の印）",
+					"hint": "余白とカードの間の短い線で、各カードの端を延長し、定規とカッターで裁断するための印。"
+				}
+			},
+			"validityMonths": {
+				"label": "有効期間（月）",
+				"hint": "印刷したカードが有効な月数。空欄：期限はありません。"
+			},
+			"showPhoto": {
+				"label": "カードの写真",
+				"hint": "利用者の写真をカードに印刷します。"
+			}
+		},
+		"labels": {
+			"default": {
+				"label": "既定のラベル",
+				"hint": "「ラベルを印刷」を選んだときに印刷される内容。"
+			},
+			"titleMaxChars": {
+				"label": "書名の文字数",
+				"hint": "ラベルの書名はこの文字数で切り取られます。"
+			},
+			"monochrome": {
+				"label": "白黒プリンター",
+				"hint": "背ラベルの高さが低い場合、色の帯は斜線の模様になります。"
+			},
+			"pair": {
+				"template": {
+					"label": "テンプレート",
+					"hint": "ペアの印刷テンプレートの名前（labels/templates内のフォルダ）。"
+				},
+				"stock": {
+					"label": "ラベル用紙",
+					"hint": "使用するラベル用紙のID（labels/stocks内のファイル）。"
+				}
+			},
+			"barcode": {
+				"template": {
+					"label": "テンプレート",
+					"hint": "バーコードラベルの印刷テンプレートの名前（labels/templates内のフォルダ）。"
+				},
+				"stock": {
+					"label": "ラベル用紙",
+					"hint": "使用するラベル用紙のID（labels/stocks内のファイル）。"
+				}
+			},
+			"spine": {
+				"template": {
+					"label": "テンプレート",
+					"hint": "背ラベルの印刷テンプレートの名前（labels/templates内のフォルダ）。"
+				},
+				"stock": {
+					"label": "ラベル用紙",
+					"hint": "使用するラベル用紙のID（labels/stocks内のファイル）。"
+				}
+			}
+		},
+		"photos": {
+			"enabled": {
+				"label": "利用者の写真",
+				"hint": "オン：利用者ごとに撮影または取り込んだ写真、写真登録、カードの写真を使います。オフ：写真は表示されず、カードには写真が付きません。保存済みの写真は残り、再びオンにすると戻ります。"
+			},
+			"required": {
+				"label": "写真が必要",
+				"hint": "オン：ダッシュボード、利用者の一覧、印刷リストで写真のない人を示します。オフ：通知はしませんが、写真の撮影、取り込み、カードへの印刷はできます。"
+			},
+			"width": {
+				"label": "幅（px）",
+				"hint": "写真はこの幅で保存されます。"
+			},
+			"height": {
+				"label": "高さ（px）",
+				"hint": "写真はこの高さで保存されます（中央を切り抜き）。"
+			},
+			"format": {
+				"label": "ファイルの形式",
+				"hint": "JPEGはどこでも使えます。WebPは容量が小さくなります。"
+			},
+			"quality": {
+				"label": "画質",
+				"hint": "1から100まで：大きいほどファイルが大きくなります。"
+			},
+			"maxUploadBytes": {
+				"label": "アップロードの上限（バイト）",
+				"hint": "これより大きいファイルは受け付けられません。"
+			},
+			"sheet": {
+				"maxUploadBytes": {
+					"label": "ファイルサイズの上限（バイト）",
+					"hint": "多数の写真を含む画像（画像からの写真登録）で、これより大きいものは受け付けられません。"
+				},
+				"maxPixels": {
+					"label": "残す長辺の長さ（px）",
+					"hint": "長辺がこの長さ以下になるまで画像を縮小します。"
+				},
+				"maxFrames": {
+					"label": "写真の最大数",
+					"hint": "画像に含まれる写真がこれより多い場合は、ピントの合ったものを残します。"
+				},
+				"minAspect": {
+					"label": "写真の縦横比の最小値",
+					"hint": "高さを幅で割った値：1は正方形、1.33は3:4の証明写真。"
+				},
+				"maxAspect": {
+					"label": "写真の縦横比の最大値",
+					"hint": "高さを幅で割った値：これより縦長の枠は写真として扱いません。"
+				}
+			}
+		},
+		"covers": {
+			"enabled": {
+				"label": "図書の表紙",
+				"hint": "オン：オンラインで検索した、撮影した、または取り込んだ表紙を蔵書目録に表示します。オフ：表紙はどこにも表示されません。保存済みの表紙は残り、再びオンにすると戻ります。"
+			},
+			"width": {
+				"label": "幅（px）",
+				"hint": "表紙はこの幅で保存されます。"
+			},
+			"maxHeight": {
+				"label": "高さの上限（px）",
+				"hint": "非常に縦長の表紙は縮小されます。空欄：上限なし。"
+			},
+			"format": {
+				"label": "ファイルの形式",
+				"hint": "JPEGはどこでも使えます。WebPは容量が小さくなります。"
+			},
+			"quality": {
+				"label": "画質",
+				"hint": "1から100まで：大きいほどファイルが大きくなります。"
+			},
+			"maxUploadBytes": {
+				"label": "アップロードの上限（バイト）",
+				"hint": "これより大きいファイルは受け付けられません。"
+			},
+			"country": {
+				"label": "国",
+				"hint": "表紙の取得元の目録がある国（2文字、例：IT）。"
+			},
+			"minWidth": {
+				"label": "幅の最小値（px）",
+				"hint": "これより幅の狭い表紙は破棄されます。"
+			},
+			"autoFetch": {
+				"label": "表紙を自動で探す",
+				"hint": "「新規図書」では、書誌を確認する間にオンラインで表紙を探し、書誌と一緒に保存します。違っている場合は、写真に置き換えてください。"
+			},
+			"timeoutMs": {
+				"label": "待機時間の上限（ミリ秒）",
+				"hint": "この時間を過ぎても応答がない取得元は除外されます（ミリ秒）。"
+			}
+		},
+		"privacy": {
+			"auditRetentionMonths": {
+				"label": "操作記録の保存月数",
+				"hint": "これより古い操作記録は削除されます。"
+			}
+		},
+		"backup": {
+			"cron": {
+				"label": "バックアップの時刻",
+				"hint": "cron形式：分、時、日、月、曜日（0 3 * * * = 毎晩3時）。"
+			},
+			"catchUp": {
+				"label": "取り損ねたバックアップを起動時に行う",
+				"hint": "バックアップの時刻にコンピューターの電源が入っていなかった場合、次回の起動から1分後にバックアップを行います。数日後であっても1回だけです。"
+			},
+			"keepDays": {
+				"label": "保存日数",
+				"hint": "これより古いバックアップは削除されます。"
+			},
+			"offsite": {
+				"enabled": {
+					"label": "別の場所へのコピーを使用",
+					"hint": "バックアップの2つ目のコピー（rclone、別のディスクまたは別のサービス）を使用していることを示します。"
+				},
+				"remote": {
+					"label": "コピーの保存先",
+					"hint": "コピーの保存先：別のディスクのフォルダ（既定は /offsite/biblioviva-backups）、または「名前：フォルダ」の形式で書かれたrcloneの保存先。"
+				}
+			}
+		},
+		"security": {
+			"sessionDays": {
+				"label": "セッションの長さ（日）",
+				"hint": "この日数の経過後に、パスワードを再度尋ねます。"
+			},
+			"loginMaxAttempts": {
+				"label": "ログインの試行回数",
+				"hint": "強制的な一時停止までの誤った試行の回数。"
+			},
+			"loginWindowMinutes": {
+				"label": "試行回数超過後の一時停止（分）",
+				"hint": "試行回数を超えた後、ログインが禁止される分数。"
+			}
+		},
+		"ui": {
+			"checkoutIdleSeconds": {
+				"label": "貸出カウンターの待機時間（秒）",
+				"hint": "この秒数のあいだ読み取りがなければ、カウンターは次の利用者に備えます。"
+			}
+		}
+	},
+	"options": {
+		"library": {
+			"weekStart": {
+				"monday": "月曜日",
+				"sunday": "日曜日",
+				"saturday": "土曜日"
+			},
+			"schoolYearLabel": {
+				"span": "2つの年（2026/2027）",
+				"start": "開始年（2026）"
+			}
+		},
+		"school": {
+			"promotionWithinStage": {
+				"keep": "学級は生徒と一緒に進級する",
+				"clear": "生徒は学級なしのままになる"
+			},
+			"promotionAcrossStages": {
+				"keep": "学級は生徒と一緒に進級する",
+				"clear": "生徒は学級なしのままになる",
+				"ask": "生徒ごとに学級を選ぶ"
+			}
+		},
+		"barcodes": {
+			"patron": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"item": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"keyboardLayout": {
+				"it": "イタリア語",
+				"es": "スペイン語",
+				"de": "ドイツ語",
+				"fr": "フランス語",
+				"uk": "英語（英国）",
+				"us": "英語（米国）"
+			},
+			"cameraSound": {
+				"off": "音なし",
+				"till": "レジ",
+				"scanner": "スキャナー",
+				"confirm": "確認",
+				"arpeggio": "アルペジオ"
+			}
+		},
+		"circulation": {
+			"dueDateMode": {
+				"datedue": "暦日、その後の最初の開館日",
+				"calendar": "開館日のみ",
+				"days": "暦日（休館日を除かない）"
+			},
+			"renewFrom": {
+				"today": "延長した日",
+				"dueDate": "現在の返却期限"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"sbn": "OPAC SBN（Z39.50）",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books",
+				"sbn-json": "OPAC SBN（Webサービス）"
+			}
+		},
+		"performance": {
+			"profile": {
+				"micro": "最小構成のコンピューター：低速なプロセッサー1つと512 MB（Raspberry Pi Zero 2、最小のサーバー）",
+				"small": "2 GBのRaspberry Pi 4、または小型のコンピューター",
+				"medium": "ハードディスクの古いPC",
+				"large": "SSDのPC"
+			}
+		},
+		"cards": {
+			"sheet": {
+				"paper": {
+					"A4": "A4"
+				}
+			},
+			"layout": {
+				"side-by-side": "表と裏を並べて",
+				"duplex": "シートの両面"
+			},
+			"duplex": {
+				"flip": {
+					"long-edge": "長い辺で",
+					"short-edge": "短い辺で"
+				}
+			}
+		},
+		"labels": {
+			"default": {
+				"pair": "ペア：背ラベルとラベル",
+				"barcode": "バーコードラベルのみ",
+				"spine": "背ラベルのみ"
+			}
+		},
+		"photos": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		},
+		"covers": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		}
+	},
+	"groups": {
+		"barcodes": {
+			"patron": {
+				"title": "利用者カード"
+			},
+			"item": {
+				"title": "図書の資料"
+			}
+		},
+		"circulation": {
+			"rules": {
+				"title": "貸出の規則",
+				"student": {
+					"title": "児童生徒の規則"
+				},
+				"teacher": {
+					"title": "教員の規則"
+				}
+			},
+			"overdueNotice": {
+				"title": "延滞の督促状"
+			}
+		},
+		"cards": {
+			"cardMm": {
+				"title": "カードのサイズ"
+			},
+			"sheet": {
+				"title": "印刷シート"
+			},
+			"duplex": {
+				"title": "両面印刷",
+				"backOffsetMm": {
+					"title": "裏面のずれ"
+				}
+			}
+		},
+		"labels": {
+			"pair": {
+				"title": "ペア：背ラベルとラベル"
+			},
+			"barcode": {
+				"title": "バーコードラベルのみ"
+			},
+			"spine": {
+				"title": "背ラベルのみ"
+			}
+		},
+		"backup": {
+			"offsite": {
+				"title": "別の場所へのコピー"
+			}
+		},
+		"photos": {
+			"sheet": {
+				"title": "多数の写真を含む画像（画像からの写真登録）"
+			}
+		}
+	},
+	"overview": {
+		"reload": "再読み込み",
+		"reloaded": "設定を再読み込みしました",
+		"reloadFailed": "ファイルに誤りがあります：以前の設定が引き続き使われます。",
+		"valid": "設定は有効です：ファイル{{count}}{{count:plural; other:件;}}。",
+		"example": "設定はまだ作成されていません：例の値が使われています。",
+		"warnings": "警告{{count}}{{count:plural; other:件;}}",
+		"diskErrors": "設定ファイルに誤りがあります：修正されるまで、図書館は以前のバージョンを使い続けます。",
+		"diskChanged": "ファイルが手で変更されました：変更を使うには「再読み込み」を押してください。",
+		"sections": "設定",
+		"alsoFrom": "ほか{{count}}{{count:plural; other:件;}}のファイル",
+		"editors": "外観、学級、テンプレート",
+		"templates": "印刷テンプレート",
+		"templatesDescription": "カード、ラベル、督促状のテンプレートのフォルダと、その画像。",
+		"reports": "帳票ライブラリー",
+		"reportsDescription": "同梱の帳票と学校の帳票：試す、ダウンロードする、アップロードする、削除する。",
+		"appearance": "外観と言語",
+		"appearanceDescription": "図書館の名前とロゴ、色、言語、ダッシュボードの項目。",
+		"classes": "学級",
+		"classesDescription": "学校の学級と教員のグループ：作成、名前の変更、アーカイブ。"
+	},
+	"section": {
+		"tabs": {
+			"form": "設定",
+			"json": "JSON",
+			"label": "編集形式"
+		},
+		"file": "保存先：{{file}}",
+		"alsoFrom": "ほかの取得元：{{files}}",
+		"general": "一般",
+		"default": "既定値：{{value}}",
+		"defaultNone": "既定値：値なし",
+		"defaultAuto": "既定値：自動",
+		"usesDefault": "既定値を使用",
+		"reset": "既定値に戻す",
+		"willReset": "保存すると既定値に戻ります。",
+		"auto": "自動",
+		"none": "日付なし",
+		"yes": "はい",
+		"no": "いいえ",
+		"fixed": "固定値",
+		"range": "{{min}}から{{max}}まで。",
+		"min": "{{min}}以上。",
+		"max": "{{max}}以下。",
+		"save": "保存",
+		"discard": "変更を取り消し",
+		"saved": "設定を保存しました",
+		"unsaved": "未保存の変更",
+		"invalid": "保存する前に、マークの付いた値を修正してください。",
+		"errors": "保存できませんでした：",
+		"inUse": "保存すると、使用中のものが削除されてしまいます：",
+		"inUseKinds": {
+			"classification": "分類コード{{code}}：図書{{count}}{{count:plural; other:冊;}}",
+			"itemType": "資料の種類{{code}}：資料{{count}}{{count:plural; other:冊;}}",
+			"level": "レベル{{code}}：児童生徒{{count}}{{count:plural; other:人;}}または学級",
+			"readingLevel": "読書レベル{{code}}：図書{{count}}{{count:plural; other:冊;}}"
+		},
+		"patternError": "形式が正しくありません。",
+		"numberError": "整数を入力してください。",
+		"required": "必須です。",
+		"elsewhereTitle": "この項目のほかの設定",
+		"elsewhereHint": "これらは専用の編集画面、またはJSONの画面で変更します。",
+		"openEditor": "開く",
+		"jsonOnly": "今のところJSONの画面で",
+		"editorNames": {
+			"taxonomy": "分類",
+			"appearance": "外観と言語",
+			"wizard": "初回のセットアップウィザード",
+			"history": "変更履歴",
+			"settings": "設定",
+			"schoolLevels": "学校段階と学年"
+		},
+		"json": {
+			"hint": "{{file}}に書かれているとおりの項目。「_」で始まるキーはコメントで、ファイルに残ります。",
+			"label": "項目のJSONの内容",
+			"parseError": "正しいJSONではありません：{{message}}",
+			"notObject": "項目は、波かっこ { } で囲まれたJSONのオブジェクトでなければなりません。",
+			"valid": "問題はありません。",
+			"checking": "確認しています…",
+			"issues": "修正が必要な点："
+		},
+		"playSound": "試聴"
+	},
+	"history": {
+		"title": "設定の変更履歴",
+		"hint": "この画面からのすべての変更で、変更されたファイルの以前のバージョンを保管します（直近50件の変更）。",
+		"empty": "管理画面からの変更はまだありません。",
+		"columns": {
+			"when": "日時",
+			"what": "内容",
+			"files": "ファイル"
+		},
+		"revert": "復元",
+		"revertTitle": "この変更の前の状態にファイルを復元しますか？",
+		"revertDescription": "この変更で設定された値だけが元に戻ります。復元も変更なので、履歴に残り、取り消すことができます。",
+		"reverted": "以前のバージョンを復元しました",
+		"refused": "この変更で config.json が作成されたため、元に戻せません。",
+		"conflict": "復元できません：この変更の後に{{keys}}が再び変更されました。",
+		"notFound": "この変更はもう履歴にありません。",
+		"newFile": "新規",
+		"actions": {
+			"revert": "{{when}}の変更の復元",
+			"theme": "色",
+			"locale": "言語",
+			"logo": "図書館のロゴ",
+			"setup": "初回設定",
+			"section": "項目「{{section}}」",
+			"other": "変更（{{action}}）"
+		}
+	},
+	"archive": {
+		"title": "設定のアーカイブ",
+		"hint": "設定全体を1つのファイルにまとめます：設定、印刷テンプレート、ラベル用紙、ピクトグラム、ロゴ、帳票、言語（変更履歴は含みません）。コピーを残す場合や、別の設置先へ移す場合に使います。「設定を取り込む」では、バックアップや「すべてを書き出す」のアーカイブも使えます。そこからは設定だけが取り込まれ、図書館のデータはそのままです。",
+		"export": "設定を書き出す",
+		"import": "設定を取り込む",
+		"checking": "アーカイブを確認しています…",
+		"from": "{{date}}のアーカイブ（バージョン {{version}}）",
+		"fromLibrary": "{{date}}の「{{library}}」のアーカイブ（バージョン {{version}}）",
+		"files": "新しいファイル{{added}}{{added:plural; other:件;}}、変更{{changed}}件、削除{{removed}}件、変更なし{{unchanged}}件。",
+		"fileList": "ファイルの一覧",
+		"added": "新規",
+		"changed": "変更",
+		"removed": "削除",
+		"sameValues": "設定は変わりません。",
+		"sections": "変更される項目：{{sections}}。",
+		"errorsTitle": "アーカイブに問題があります。取り込む前に修正が必要です。",
+		"apply": "取り込む",
+		"confirmTitle": "設定をアーカイブのものに置き換えますか？",
+		"confirmDescription": "現在のファイルは履歴に残ります。「復元」を押すと以前の設定に戻せます。図書館のデータ（図書、利用者、貸出）は変わりません。",
+		"imported": "設定を取り込みました",
+		"failed": "取り込めませんでした",
+		"errors": {
+			"too_large": "アーカイブが大きすぎます（最大{{maxMb}}MB）。",
+			"not_zip": "ファイルは正しいZIPアーカイブではありません。",
+			"not_archive": "ファイルはBiblioVivaのアーカイブではありません。",
+			"too_many_files": "アーカイブに含まれるファイルが多すぎます。",
+			"unsafe_path": "許可されていないパスが含まれています：{{name}}",
+			"link": "許可されていないリンクが含まれています：{{name}}",
+			"unknown_file": "設定に含まれないファイルが含まれています：{{name}}",
+			"no_config": "設定が含まれていません（図書館のデータのみ）。管理 → バックアップから復元してください。"
+		},
+		"exportSome": "選んだ部分を書き出す",
+		"chooseExport": "書き出す内容を選択"
+	},
+	"blocks": {
+		"problems": {
+			"codeRequired": {
+				"itemTypes": "コードは必須です。",
+				"sections": "区分は必須です。"
+			},
+			"codeFormat": {
+				"itemTypes": "英字、数字、ピリオド、ハイフン、アンダースコア（32文字まで）。",
+				"sections": "英大文字または数字、8文字まで。"
+			},
+			"codeTaken": {
+				"itemTypes": "コードが重複しています。",
+				"sections": "区分が重複しています。"
+			},
+			"labelRequired": {
+				"itemTypes": "名称は必須です。",
+				"sections": "名称は必須です。"
+			}
+		},
+		"itemTypes": {
+			"title": "資料の種類",
+			"hint": "図書、DVD、参考図書など：資料の種類ごとに貸出のルールが決まります。コードを変更すると、その種類の資料は新しいコードに移ります。",
+			"code": "コード",
+			"label": "名称",
+			"notForLoan": "館内閲覧のみ",
+			"add": "種類を追加",
+			"saved": "資料の種類を保存しました"
+		},
+		"move": {
+			"title": "移動先はどこですか？",
+			"hint": {
+				"copies": "削除した種類の中には、まだ資料が残っているものがあります。移動先の種類を選んでください。",
+				"students": "削除した区分の中には、まだ児童生徒が残っているものがあります。移動先の区分を選んでください。"
+			},
+			"row": {
+				"copies": "{{code}} · {{label}}：{{count}}{{count:plural; other:冊;}}。移動先",
+				"students": "{{code}}：{{count}}{{count:plural; other:人;}}。移動先"
+			},
+			"choose": "選択…",
+			"used": {
+				"copies": "資料",
+				"students": "児童生徒"
+			},
+			"count": {
+				"copies": "{{count}}{{count:plural; other:冊;}}",
+				"students": "{{count}}{{count:plural; other:人;}}"
+			},
+			"done": {
+				"copies": "{{count}}{{count:plural; other:冊を移動しました;}}。",
+				"students": "{{count}}{{count:plural; other:人を移動しました;}}。"
+			}
+		},
+		"barcodes": {
+			"title": "番号とプレビュー",
+			"counter": "新しい利用者カードの番号",
+			"afterLegacy": "既存の利用者カードの最大番号の後から",
+			"from": "この番号から:",
+			"fromNumber": "新しい利用者カードの最初の番号",
+			"counterHint": "一度使われた番号は再び使われることはありません。選んだ番号が小さい場合は、すでに進んでいる所から番号を続けます。新しい資料には必ず年と連番が付きます。",
+			"nextCard": "次の利用者カード: {{code}}",
+			"nextItem": "次の資料: {{code}}",
+			"overrides": "これらの印刷テンプレートは自分でコードの種類を選ぶため、上の設定は適用されません: {{templates}}。",
+			"saved": "番号を保存しました"
+		},
+		"itemTypeRules": {
+			"title": "資料の種類ごとのルール",
+			"hint": "資料の種類ごとにルールを変更できます。例えばDVDは5日間にする、といった設定です。ルールは児童生徒にも教員にも同じように適用されます。",
+			"inherit": "空欄の場合は児童生徒と教員のルールが適用されます（灰色で表示: 児童生徒 / 教員）。",
+			"saved": "資料の種類ごとのルールを保存しました"
+		},
+		"calendar": {
+			"title": "図書館のカレンダー",
+			"weekly": "毎週の休館日",
+			"weeklyHint": "色が付いた日は毎週休館です。",
+			"previous": "前の年度",
+			"next": "次の年度",
+			"addNational": "{{year}}年の国民の祝日を追加",
+			"autoOn": "国民の祝日はすでに自動で休館になっています。開いている日をクリックすると休館になり、手動で休館にした日をクリックすると再び開館になります。",
+			"clickHint": "開いている日をクリックすると休館になり、手動で休館にした日をクリックすると再び開館になります。",
+			"open": "開館",
+			"legend": {
+				"open": "開館",
+				"weekly": "毎週の休館",
+				"national": "国民の祝日",
+				"holiday": "休館（ここで選択）",
+				"range": "休館期間"
+			},
+			"ranges": "休館期間",
+			"from": "開始",
+			"to": "終了",
+			"reason": "理由",
+			"badRange": "終了日が開始日より前になっています。",
+			"addRange": "期間を追加",
+			"saved": "カレンダーを保存しました"
+		},
+		"cardTemplates": {
+			"title": "利用者の種類ごとのテンプレート",
+			"hint": "児童生徒と教員は、上で選んだ既定のテンプレートで利用者カードを印刷します。ここで別のテンプレートを選んだ場合はそちらを使います。",
+			"student": "児童生徒の利用者カード",
+			"teacher": "教員の利用者カード",
+			"asDefault": "既定と同じ（{{name}}）",
+			"cutLines": "各カードの色付きの枠線",
+			"cutLinesOn": "各カードに色付きの枠線を描きます（通常は不要です。トンボで十分です）",
+			"color": "色",
+			"width": "太さ（mm）",
+			"sample": "切り取り線の見本",
+			"saved": "利用者カードのテンプレートを保存しました"
+		},
+		"stocks": {
+			"title": "粘着ラベルシート",
+			"hint": "印刷するラベルシートの寸法です。右の図は入力した数字に合わせて変わります。シートからはみ出すラベルは赤で示されます。保存したら、普通紙にテストページを印刷し、ラベルシートに重ねて確認してください。",
+			"new": "新規",
+			"toFix": "要修正",
+			"add": "シートを追加",
+			"id": "コード",
+			"name": "名称",
+			"labelWidth": "ラベルの幅（mm）",
+			"labelHeight": "ラベルの高さ（mm）",
+			"columns": "列",
+			"rows": "行",
+			"marginTop": "上の余白（mm）",
+			"marginLeft": "左の余白（mm）",
+			"gapX": "列の間隔（mm）",
+			"gapY": "行の間隔（mm）",
+			"radius": "角の丸み（mm）",
+			"calibration": "テストページを印刷",
+			"inUse": "使用中: {{jobs}}。削除するには、まず上の設定で別のシートを選んでください。",
+			"saveFirst": "テストページを印刷するには、変更を保存してください。",
+			"drawing": "A4シートの図: {{columns}}{{columns:plural; other:列;}}と{{rows}}{{rows:plural; other:行;}}のラベル",
+			"caption": "A4シート · {{count}}{{count:plural; other:枚;}}",
+			"saved": "ラベルシートを保存しました",
+			"problems": {
+				"id": "コードには英字、数字、ハイフン、アンダースコアを使えます。",
+				"duplicate": "別のシートがすでにこのコードを使っています。",
+				"name": "名称を入力してください。",
+				"numbers": "寸法を確認してください。0以上の数字、0より大きいラベル、整数の列と行を入力してください。",
+				"width": "ラベルの幅は{{mm}}mmになり、A4シートの幅（210mm）より大きくなります。",
+				"height": "ラベルの高さは{{mm}}mmになり、A4シートの高さ（297mm）より大きくなります。",
+				"pairRows": "ペアには偶数の行数が必要です（背ラベルとラベルを上下に配置するため）。"
+			},
+			"errors": {
+				"duplicate": "2つのシートのコードが同じです: {{details}}。",
+				"inUse": "印刷に使用中のシートは削除できません: {{details}}。"
+			}
+		},
+		"backupSchedule": {
+			"title": "次のバックアップ",
+			"invalid": "時刻が有効なcron式ではありません（5つの項目: 分、時、日、月、曜日）。",
+			"never": "この式では、バックアップは開始されません。",
+			"hint": "時刻は図書館のタイムゾーン（{{timezone}}）によります。その時刻にコンピューターの電源が入っていない場合、「スキップされたバックアップを起動時に実行」を選ぶと、次回の起動時にバックアップが作られます。時刻を開館時間の中に移すこともできます。"
+		},
+		"coverProviders": {
+			"off": "表紙は無効になっています（上の「図書の表紙」）。どの提供元にも問い合わせません。",
+			"title": "表紙の取得元",
+			"hint": "提供元は、表紙が見つかるまで記載の順に問い合わせます。各提供元は個別にオフにできます。",
+			"names": {
+				"amazon": "Amazon",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books"
+			},
+			"googleKey": "Google BooksにはAPIキーが必要です。「図書データ」の設定に入力してください。入力しない場合、この提供元は省略されます。",
+			"saved": "表紙の取得元を保存しました"
+		},
+		"z3950Targets": {
+			"title": "Z39.50の蔵書目録",
+			"hint": "図書データの取得元となる蔵書目録です。「接続を確認」は、入力した値で実際に検索を行いますが、保存はしません。",
+			"id": "コード",
+			"name": "名称",
+			"host": "サーバーのアドレス",
+			"port": "ポート",
+			"database": "データベース",
+			"syntax": "レコードの形式",
+			"charset": "文字コード",
+			"elements": "要素",
+			"elementsHint": "通常はF（完全なレコード）です。",
+			"add": "蔵書目録を追加",
+			"isDefault": "既定の蔵書目録です。削除するには、上で別の蔵書目録を選んでください。",
+			"saved": "蔵書目録を保存しました",
+			"problems": {
+				"id": "コードは一意である必要があります。英字、数字、ハイフンのみ使えます。",
+				"required": "名称、データベース、文字コード、要素は必須です。",
+				"host": "アドレスには英字、数字、ピリオド、ハイフンを使えます。",
+				"words": "データベース、文字コード、要素はそれぞれ空白を含まない1語で入力してください。",
+				"port": "ポートは1から65535までの数字です。"
+			},
+			"test": {
+				"button": "接続を確認",
+				"running": "確認中…",
+				"ok": "蔵書目録が応答しました: {{hits}}{{hits:plural; other:件;}}、{{ms}}ミリ秒。",
+				"unreachable": "蔵書目録が応答しません。アドレス、ポート、データベースを確認してください。",
+				"timeout": "蔵書目録が時間内に応答しませんでした。",
+				"protocol": "蔵書目録がエラーを返しました。データベース、形式、文字コードを確認してください。",
+				"spawn": "サーバーでyaz-clientプログラムを利用できません。"
+			}
+		},
+		"barcodeFormats": {
+			"title": "コードの形式",
+			"hint": "新しい資料と新しい利用者カードのコードの作り方です。すでに印刷されたコードは引き続き使えます。置き換えた形式は以前の形式の一覧に残ります。",
+			"preset": "定型の形式",
+			"presets": {
+				"standard": "標準（2026-E0267、U012345）",
+				"classic": "従来型（2026-02678、0000012344）",
+				"prefix": "先頭に文字（L-2602670、T0123455）",
+				"custom": "カスタム"
+			},
+			"check": "チェック文字",
+			"checks": {
+				"mod23": "文字（mod 23）",
+				"damm": "数字（Damm）",
+				"luhn": "数字（Luhn）"
+			},
+			"checkHint": "読み取りや入力を誤ったコードを見つけます。文字が最も安全で、利用者カードを資料のコードと一目で区別できます。",
+			"advanced": "詳細設定: 形式を1つずつ",
+			"tokens": "YYYYまたはYY=年、N=連番の桁数、C=チェック文字、{lib}=図書館コード、-=ハイフン、引用符（'T'）で囲んだ大文字=そのままの文字。文字I、O、Qは使えません。",
+			"pattern": {
+				"item": "資料の形式",
+				"patron": "利用者カードの形式"
+			},
+			"libraryCode": "図書館コード",
+			"libraryCodeHint": "複数の図書館がそれぞれ別のシステムを使い、コードを区別する必要がある場合にのみ使います。形式の中の{lib}と一緒に使います。",
+			"plainMaxLength": "旧来の単純な番号の桁数",
+			"plainHint": "形式のない旧システムの利用者カードと資料の番号の最大桁数です（ない場合は0）。",
+			"plainLongest": "登録されている単純な番号のうち最も長いものは{{digits}}{{digits:plural; other:桁;}}です。",
+			"distinct": "資料と利用者カードは区別できます。",
+			"confusable": "この形式では、資料と利用者カードが混同されるおそれがあります:",
+			"warnings": "{{count}}{{count:plural; other:件の警告;}}",
+			"inUse": "形式{{pattern}}には、まだ{{count}}{{count:plural; other:件;}}のコードが登録されています。削除できません。",
+			"kinds": {
+				"item": "資料",
+				"card": "利用者カード"
+			},
+			"heading": {
+				"item": "資料",
+				"patron": "利用者カード"
+			},
+			"examples": "新しいコードの例:",
+			"currentCount": "この形式で登録されているコード: {{count}}件",
+			"count": "{{count}}{{count:plural; other:件;}}",
+			"noCheck": "チェックなし",
+			"remove": "削除",
+			"retired": "過去に使われた形式",
+			"legacy": "旧システムのコード",
+			"noLegacy": "なし。",
+			"addLegacy": "旧形式を追加",
+			"try": "コードを試す",
+			"tryHint": "ここに入力または読み取ったコードは、保存する前でも上の形式で認識されます。",
+			"tried": {
+				"item": "{{value}}: 資料のコード",
+				"legacy_item": "{{value}}: 旧システムの資料のコード",
+				"card": "{{value}}: 利用者カードの番号",
+				"isbn": "{{value}}: ISBN",
+				"ambiguous": "{{value}}: 旧来の単純な番号（資料と利用者カードの両方から検索）",
+				"invalid": "{{value}}: 認識できないか、チェック文字が正しくありません"
+			},
+			"saved": "コードの形式を保存しました",
+			"patternErrors": {
+				"empty": "形式が空です（{{kind}}）",
+				"tooLong": "{{pattern}}: 長すぎます",
+				"badToken": "{{pattern}}: 使えない記号が含まれています",
+				"badLetter": "{{pattern}}: 使えない文字です（大文字のみ、I、O、Qは不可）",
+				"unclosedQuote": "{{pattern}}: 閉じの引用符がありません",
+				"year": "{{pattern}}: 年はYYYYまたはYYと書きます",
+				"twoYears": "{{pattern}}: 年が2回出てきます",
+				"twoCounters": "{{pattern}}: 連番はNの1つのまとまりでなければなりません",
+				"noCounter": "{{pattern}}: 連番（N）がありません",
+				"twoChecks": "{{pattern}}: チェック文字が2回出てきます",
+				"checkWithoutAlgorithm": "{{pattern}}: Cがありますが、チェックの方式が選ばれていません",
+				"algorithmWithoutCheck": "{{pattern}}: チェック文字の位置を示すCがありません",
+				"noLibraryCode": "{{pattern}}: {lib}を使っていますが、図書館コードが空です",
+				"badLibraryCode": "図書館コードには数字と大文字のみ使えます（I、O、Qは不可）"
+			},
+			"issues": {
+				"overlap": "{{pattern}}（{{kind}}）と{{other}}（{{otherKind}}）は同じコードになるおそれがあります。例: {{example}}",
+				"overlapWithoutDash": "{{pattern}}（{{kind}}）と{{other}}（{{otherKind}}）は、読み取り機がハイフンを読み落とすと混同されます。例: {{example}}",
+				"overlapLegacy": "旧コード{{pattern}}（{{kind}}）と{{other}}（{{otherKind}}）は同じ形なので、両方から検索されます",
+				"overlapPlain": "{{pattern}}（{{kind}}）が、旧来の単純な番号と同じコードになるおそれがあります。例: {{example}}",
+				"overlapIsbn": "{{pattern}}（{{kind}}）が、ISBNと同じコードになるおそれがあります。例: {{example}}",
+				"overlapIsbn10": "{{pattern}}（{{kind}}）は、ハイフンなしで入力されたISBN-10と同じ形をしています。この場合は利用者カードの番号が優先されます",
+				"lookAlike": "{{pattern}}（{{kind}}）と{{other}}（{{otherKind}}）は見た目が似すぎています。文字数に2文字以上の差を付けるか、別の位置に文字を置くか、別の位置にハイフンを置いてください"
+			}
+		},
+		"schoolLevels": {
+			"title": "段階と学年",
+			"hint": "学校の学年を、通う順に段階ごとにまとめたものです。コードは児童生徒に付いて回ります。使用中の学年を削除またはコード変更すると、その児童生徒と学級の移動先を尋ねられます。",
+			"preset": "定型",
+			"presetApply": "この定型を使う",
+			"presetHint": "下の段階と学年を、定型のものに置き換えます。「保存」を押すまで何も保存されません。",
+			"custom": "カスタム",
+			"stages": "段階",
+			"stageCode": "コード",
+			"stageName": "名称",
+			"stageLabel": "学級の表記",
+			"addStage": "段階を追加",
+			"stageLabelHint": "段階の「学級の表記」は、学校全体の表記の代わりに、その段階の学年に使われます。{group}がなければ、学級は学年だけになります（例: Q1、区分なし）。空欄の場合は、学校の他の部分と同じになります。",
+			"levels": "学年",
+			"levelCode": "コード",
+			"levelLabel": "学級での表記",
+			"levelName": "名称",
+			"levelStage": "段階",
+			"levelNext": "次の学年",
+			"levelAliases": "別の名称",
+			"levelAliasesPlaceholder": "カンマで区切って入力",
+			"nextFollowing": "直後の学年",
+			"nextLeaves": "学校を離れる",
+			"nextChoices": "学年の選択",
+			"choiceAdd": "選択肢を追加…",
+			"choiceRemove": "{{name}}を削除",
+			"choiceDefault": "既定",
+			"addLevel": "学年を追加",
+			"inUse": "使用中",
+			"moveUp": "上へ",
+			"moveDown": "下へ",
+			"example": "例: {{label}}",
+			"saved": "段階と学年を保存しました",
+			"problems": {
+				"code": "コード: 英字、数字、ハイフン（学年は8文字まで）。すべて異なっている必要があります。",
+				"required": "表記と名称は必須です。",
+				"template": "段階の「学級の表記」には{level}を含める必要があります。",
+				"stageUsed": "学年のある段階は削除できません。",
+				"structure": "構造が正しくありません: {{details}}"
+			},
+			"move": {
+				"title": "児童生徒と学級の移動先はどこですか？",
+				"hint": "削除した学年の中には、まだ児童生徒または学級が残っているものがあります。それぞれについて移動先の学年を選んでください。貸出は、行われた時点の学級を保持します。",
+				"level": "{{name}}: {{pupils}}{{pupils:plural; other:人;}}、{{classes}}{{classes:plural; other:学級;}}",
+				"choose": "学年を選ぶ…",
+				"confirm": "移動して保存",
+				"done": "{{pupils}}{{pupils:plural; other:人の児童生徒;}}と{{classes}}{{classes:plural; other:学級;}}を移動しました。"
+			}
+		}
+	},
+	"templates": {
+		"title": "印刷テンプレート",
+		"hint": "利用者カード、ラベル、領収書、督促状のテンプレートのフォルダーです。BiblioViva付属のものは、カスタマイズ（同じ名前のコピーが作られます）するか、別の名前で複製できます。コピーの画像とフォントは、ここでアップロードします。すべての操作は設定の履歴に記録され、元に戻せます。",
+		"source": {
+			"builtin": "BiblioViva付属",
+			"customised": "カスタマイズ済み",
+			"added": "追加"
+		},
+		"broken": "エラーあり",
+		"customise": "カスタマイズ",
+		"duplicate": "複製",
+		"rename": "名前を変更",
+		"restore": "元の状態に戻す",
+		"usedBy": "使用先: {{settings}}。",
+		"unused": "どの設定でも使われていません。",
+		"assets": "画像とフォント（{{count}}）",
+		"noAssets": "ファイルはありません。",
+		"usedIn": "使用先: {{files}}",
+		"assetUnused": "未使用",
+		"upload": "ファイルをアップロード",
+		"uploadHint": "PNG、JPEG、WebP、GIF、SVG、またはWOFF2、WOFF、TTFのフォント。最大{{maxMb}}MB。",
+		"builtinAssets": "BiblioViva付属のテンプレートの画像を変更するには、先にそのテンプレートをカスタマイズしてください。",
+		"files": "テンプレートのファイル（{{count}}）",
+		"filesHint": "HTMLとCSSは、ビジュアルテンプレートエディターで編集します。",
+		"done": {
+			"duplicate": "テンプレートを複製しました",
+			"customise": "テンプレートをカスタマイズしました。コピーは変更できます",
+			"rename": "テンプレートの名前を変更しました",
+			"delete": "テンプレートを削除しました",
+			"upload": "{{name}}をアップロードしました",
+			"removeAsset": "{{name}}を削除しました"
+		},
+		"errors": {
+			"notFound": "テンプレートまたはファイルが見つかりません。",
+			"badName": "名前が正しくありません: 小文字、数字、ハイフン、アンダースコアのみ使えます。",
+			"exists": "同じ名前のテンプレートがすでにあります。",
+			"builtin": "BiblioViva付属のテンプレートは変更できません。カスタマイズまたは複製してください。",
+			"inUse": "このテンプレートは次の場所で使われています: {{details}}。先に別のテンプレートを選んでください。",
+			"badAsset": "「{{name}}」は許可されていないファイルです（PNG、JPEG、WebP、GIF、スクリプトを含まないSVG、WOFF2、WOFF、TTF）。",
+			"assetTooLarge": "「{{name}}」は大きすぎます。最大{{maxMb}}MBです。",
+			"assetInUse": "このファイルは次で使われています: {{details}}。"
+		},
+		"dialog": {
+			"name": "フォルダー名",
+			"nameHint": "小文字、数字、ハイフン、アンダースコアのみ使えます。",
+			"badName": "小文字、数字、ハイフン、アンダースコアのみ使ってください。",
+			"taken": "同じ名前のテンプレートがすでにあります。",
+			"duplicate": {
+				"title": "{{name}}を複製",
+				"hint": "すべてのファイルを含むコピーを作成し、すぐに変更できるようにします。",
+				"confirm": "複製"
+			},
+			"customise": {
+				"title": "{{name}}をカスタマイズ",
+				"hint": "同じ名前のコピーが元のテンプレートに代わります。元のテンプレートは、戻せるように残されます。",
+				"confirm": "カスタマイズ"
+			},
+			"rename": {
+				"title": "{{name}}の名前を変更",
+				"hint": "このテンプレートを使っている設定は、新しい名前に従います。",
+				"confirm": "名前を変更"
+			},
+			"delete": {
+				"title": "{{name}}を削除",
+				"hint": "フォルダーとそのファイルが削除されます。BiblioViva付属テンプレートのコピーだった場合は、元のテンプレートが再び使われます。履歴から元に戻せます。",
+				"confirm": "削除"
+			}
+		},
+		"edit": "編集"
+	},
+	"languages": {
+		"title": "言語パック",
+		"hint": "BiblioVivaを別の言語で使うには、英語またはイタリア語の見本をダウンロードし、JSONファイルの文章を翻訳してください。キーと、二重の波括弧で囲まれた部分は変えないでください。言語の名前をpack.jsonに書き、zipファイルをアップロードします。エラーのあるパックはインストールされません。不足している文章は英語で表示されます。言語は「外観と言語」で選びます。",
+		"none": "言語パックはインストールされていません。",
+		"valid": "有効",
+		"errorsCount": "{{count}}{{count:plural; other:件のエラー;}}",
+		"warnings": "{{count}}{{count:plural; other:件の不足または余分な文章;}}",
+		"inUse": "使用中",
+		"download": "ダウンロード",
+		"report": "検査結果",
+		"upload": "パック（zip）をアップロード",
+		"uploadHint": "pack.jsonと言語のファイルを含むzipで、言語コードと同じ名前のフォルダーに入れます（例: de/）。最大{{maxMb}}MB。",
+		"examples": "ダウンロードできる見本:",
+		"installed": "言語をインストールしました: {{name}}",
+		"removed": "パックを削除しました",
+		"removeTitle": "パック{{code}}を削除しますか？",
+		"removeHint": "言語のフォルダーが削除されます。設定の履歴から元に戻せます。",
+		"errors": {
+			"notAZip": "ファイルはzipではありません。",
+			"tooLarge": "zipが大きすぎます。最大{{maxMb}}MBです。",
+			"badLayout": "zipには言語のJSONファイルだけを、言語コードと同じ名前の1つのフォルダーに入れる必要があります。{{details}}",
+			"badCode": "言語コードが正しくありません: {{details}}（例: de、fr、pt-BR）。",
+			"builtIn": "英語とイタリア語は組み込みのため、置き換えることはできません。",
+			"invalid": "パックにエラーがあるため、インストールされませんでした: {{details}}",
+			"inUse": "使用中の言語です。先に別の言語を選んでください。",
+			"notFound": "パックが見つかりません。",
+			"unavailable": "言語の一覧またはパックをダウンロードできませんでした。インターネット接続を確認するか、zipを手動でアップロードしてください。",
+			"checksum": "ダウンロードしたパックが壊れているため、インストールされませんでした。もう一度お試しください。"
+		},
+		"release": {
+			"title": "インストールできる言語",
+			"hint": "このバージョンのBiblioVivaで公開されている言語です。一覧はインターネットから読み込まれ、インストールの前に各パックが検査されます。",
+			"percent": "{{percent}}%翻訳済み",
+			"machine": "自動翻訳です。ネイティブ話者による確認は済んでいません",
+			"reviewed": "ネイティブ話者が確認した翻訳です",
+			"install": "インストール",
+			"again": "再インストール",
+			"installedBadge": "インストール済み",
+			"page": "リリースページ。パックを手動でダウンロードし、下の欄でアップロードできます",
+			"unavailable": "言語の一覧に接続できません。インターネット接続がないか、このバージョンにはまだ一覧がありません。下のzipのアップロードは引き続き使えます。"
+		}
+	},
+	"reports": {
+		"title": "レポートのライブラリ",
+		"hint": "BiblioViva付属のレポートと、学校独自のレポートです。1つを編集するには、ダウンロードして変更し、アップロードしてください。同じコード（id）を使うと、元のレポートに代わります。インストールの前に、形式、クエリの安全性、使用される表と列が検査されます。レポートの書き方のガイドはdocs/reports-authoring.mdにあります。",
+		"upload": "レポート（JSON）をアップロード",
+		"try": "試す",
+		"download": "ダウンロード",
+		"problems": "これらのファイルは読み込まれません:",
+		"installed": "レポート{{id}}をインストールしました",
+		"replaced": "レポート{{id}}を置き換えました",
+		"removed": "ファイルを削除しました",
+		"removeTitle": "{{file}}を削除しますか？",
+		"removeHint": "ファイルは設定から削除されます。履歴から元に戻せます。",
+		"restoreHint": "学校版が削除され、BiblioViva付属のレポートが再び使われます。履歴から元に戻せます。",
+		"origin": {
+			"builtin": "BiblioViva付属",
+			"customised": "カスタマイズ済み",
+			"added": "追加"
+		},
+		"errors": {
+			"tooLarge": "ファイルが大きすぎます。最大{{maxKb}}KBです。",
+			"badJson": "ファイルは正しいJSONではありません: {{details}}",
+			"invalid": "定義が正しくありません: {{details}}",
+			"sql": "このデータベースではクエリが動作しません: {{details}}",
+			"notFound": "ファイルが見つかりません。",
+			"reservedId": "「new」はレポートのコードに使えません。"
+		},
+		"new": "新しいレポート",
+		"edit": "編集",
+		"duplicate": "複製",
+		"editor": {
+			"editTitle": "レポートを編集",
+			"newTitle": "新しいレポート",
+			"copySuffix": "コピー",
+			"builtinHint": "これはBiblioViva付属のレポートです。保存すると、同じ名前の学校版のコピーが作られます。図書館の「元の状態に戻す」で削除できます。",
+			"id": "レポートのコード",
+			"category": "カテゴリー",
+			"title": {
+				"it": "タイトル（イタリア語）",
+				"en": "タイトル（英語）"
+			},
+			"description": {
+				"it": "説明（イタリア語）",
+				"en": "説明（英語）"
+			},
+			"restricted": "管理者のみ",
+			"tabs": {
+				"label": "編集モード",
+				"guided": "ガイド",
+				"sql": "SQL"
+			},
+			"sqlOnly": "このレポートはSQLで書かれています。SQLタブで編集してください。",
+			"source": "データ",
+			"rows": "行",
+			"rows2": "行（2段目）",
+			"columns": "列",
+			"columnsHint": "列を指定すると、レポートは合計付きのクロス集計表になります。",
+			"none": "— なし —",
+			"totals": "合計",
+			"totalsOptions": {
+				"both": "合計行と合計列",
+				"rows": "合計列",
+				"columns": "合計行",
+				"none": "合計なし"
+			},
+			"sort": "並び順",
+			"sortDimension": "行の順番どおり",
+			"sortMeasure": "値の大きい順",
+			"measures": "値",
+			"oneMeasure": "クロス集計表に表示される値は1つだけです。",
+			"filters": "フィルター",
+			"filterModes": {
+				"off": "フィルターなし",
+				"ask": "開くときに尋ねる",
+				"fixed": "固定"
+			},
+			"value": "値",
+			"chart": "グラフ",
+			"charts": {
+				"bar": "棒",
+				"line": "折れ線",
+				"doughnut": "ドーナツ"
+			},
+			"compiledHint": "ガイドで作成したレポートは、このSQLになります。手で書く場合は「SQLとして編集」を使ってください。その後は、ガイドでの編集に戻すことはできません。",
+			"previewFirst": "「プレビュー」を押すと、SQLが表示されます。",
+			"convert": "SQLとして編集",
+			"convertTitle": "レポートをSQLに変換しますか？",
+			"convertHint": "同じ列とパラメーターを持つSQLレポートになります。ガイドのタブではもう編集できなくなります。",
+			"converted": "レポートはSQLになりました",
+			"sqlHint": "1つのSELECT文またはWITH文。パラメーターは:名前の形で書きます。",
+			"json": {
+				"params": "パラメーター（JSON）",
+				"columns": "列（JSON）",
+				"chart": "グラフ（JSON、任意）",
+				"pivot": "クロス集計表（JSON、任意）"
+			},
+			"jsonHint": "レポートのガイドに記載された形式で書いてください。",
+			"preview": "プレビュー",
+			"runPreview": "プレビュー",
+			"previewHint": "プレビューは、パラメーターの既定値を使ってレポートを実行します（最大200行）。",
+			"save": "保存",
+			"saved": "レポート「{{id}}」を保存しました",
+			"back": "ライブラリに戻る",
+			"jsonInvalid": "保存する前に、赤で示されたJSONの部分を修正してください。"
+		}
+	},
+	"designer": {
+		"title": "{{name}}を編集",
+		"design": "デザイン",
+		"code": "コード",
+		"preview": "プレビュー",
+		"front": "表面",
+		"back": "裏面",
+		"faces": "面またはラベル",
+		"zoom": "拡大率",
+		"grid": "グリッド",
+		"gridSteps": {
+			"s0": "なし（自由）",
+			"s05": "0.5 mm",
+			"s1": "1 mm",
+			"s2": "2 mm",
+			"s25": "2.5 mm",
+			"s5": "5 mm",
+			"s10": "10 mm"
+		},
+		"files": "ファイル",
+		"problems": "このテンプレートは、この状態では印刷できません:",
+		"saved": "テンプレートを保存しました",
+		"notEditable": "このテンプレートはここでは編集できません。BiblioViva付属のテンプレートは、先にカスタマイズしてください。",
+		"canvasHint": "枠をクリックして選び、ドラッグして移動し、角を使って大きさを変えます。位置と大きさはグリッドに合わせて動きます。キーボードでは、矢印キーでグリッド1目盛りずつ動かせます（Shiftと一緒なら約5mm、常にグリッドに合わせて動きます）。Deleteキーで削除します。",
+		"flowHint": "この面の{{count}}{{count:plural; other:要素;}}は、スタイルシートで配置されています（点線の枠）。最初に動かすと、この面のすべての要素の現在の位置がファイルに書き込まれます。",
+		"lockedHint": "この面の{{count}}{{count:plural; other:箇所;}}は、Mustacheのセクションの中にあり、「コード」タブで編集されます。",
+		"noStock": "このバリエーションを使うラベルシートがありません。プレビューなしで図面を表示します。",
+		"codeHint": "図面とコードは同じファイルを編集します。ここで行った変更は図面にも反映され、その逆も同様です。",
+		"add": "追加",
+		"newText": "テキスト",
+		"noImages": "画像を追加するには、先にテンプレートの画像としてアップロードしてください。",
+		"types": {
+			"field": "項目",
+			"text": "テキスト",
+			"barcode": "バーコード",
+			"photo": "写真",
+			"pictogram": "ピクトグラム",
+			"image": "画像",
+			"box": "枠",
+			"html": "自由なHTML",
+			"other": "要素"
+		},
+		"fields": {
+			"library_name": "図書館名",
+			"patron_first_name": "名",
+			"patron_last_name": "姓",
+			"patron_card_number": "利用者カードの番号",
+			"patron_class_label": "学級と区分",
+			"patron_level_label": "学級（学年）",
+			"patron_group": "区分",
+			"school_year": "年度",
+			"issued_on": "発行日",
+			"valid_until": "有効期限",
+			"item_barcode": "バーコード（文字）",
+			"item_call_number": "請求記号",
+			"call_head": "請求記号: 1行目",
+			"call_rest": "請求記号: 2行目",
+			"biblio_title_short": "書名（略）",
+			"biblio_author_short": "著者名（略）",
+			"biblio_publication_year": "出版年",
+			"biblio_series": "叢書名",
+			"biblio_series_number": "叢書内の番号",
+			"classification_code": "分類コード",
+			"classification_label": "分類名",
+			"classification_reading_level": "読書レベル",
+			"item_item_type": "資料の種類"
+		},
+		"field": "項目",
+		"text": "テキスト",
+		"image": "画像",
+		"content": "HTMLの内容",
+		"contentHint": "枠の移動と装飾は図面で行います。その内容は、テンプレートのファイルと同じく、Mustacheの項目を使ったHTMLで書きます。",
+		"inherited": "既定",
+		"unplacedHint": "この要素はスタイルシートで配置されています。動かすと、その位置と、この面の他の要素の位置がファイルに書き込まれます。",
+		"geometry": {
+			"x": "X（mm）",
+			"y": "Y（mm）",
+			"w": "幅",
+			"h": "高さ"
+		},
+		"fontSize": "文字サイズ（pt）",
+		"font": "書体",
+		"fonts": {
+			"sans": "ゴシック体",
+			"serif": "明朝体",
+			"mono": "等幅"
+		},
+		"bold": "太字",
+		"italic": "斜体",
+		"uppercase": "大文字",
+		"align": "配置",
+		"aligns": {
+			"left": "左",
+			"center": "中央",
+			"right": "右"
+		},
+		"color": "色",
+		"border": "枠線",
+		"borderColor": "枠線の色",
+		"fill": "塗り",
+		"fillColor": "塗りの色",
+		"backward": "背面へ",
+		"forward": "前面へ",
+		"background": "面の背景",
+		"backgroundColor": "背景の色",
+		"backgroundImage": "背景画像",
+		"noImage": "なし",
+		"chooseHint": "図面で枠を選ぶと、変更できます。",
+		"modes": "テンプレートの表示",
+		"safeArea": "安全領域: 文字と写真は点線の内側に収めてください（端から2mm。両面に印刷され、裏面は1mmほどずれることがあります）。",
+		"chooseBackground": "背景を選ぶ",
+		"uploadBackground": "画像をアップロード",
+		"backgroundsTitle": "既製の背景",
+		"backgroundsHint": "どの背景もカードより少しはみ出します（各側3mm）。はみ出した部分は切り落とされます。",
+		"backgroundAlt": "背景{{name}}",
+		"backgroundAdded": "背景を面に追加しました。残すには保存してください。",
+		"backgroundFailed": "背景を追加できませんでした。",
+		"cardSize": "カードの大きさ",
+		"cardWidth": "幅（mm）",
+		"cardHeight": "高さ（mm）",
+		"cardRotate": "回転: 縦向きまたは横向き",
+		"cardDefault": "既定の大きさに戻す（{{width}} × {{height}}mm）",
+		"cardDefaultHint": "これは設定の既定の大きさです（設定 → カード）。ここで変更すると、このテンプレートだけに適用されます。",
+		"cardTooLarge": "{{width}} × {{height}}mmのカードはA4シートに収まりません。表と裏を余白の内側に並べるため、最大は{{maxWidth}} × {{maxHeight}}mmです。"
+	},
+	"parts": {
+		"groups": {
+			"data": "図書館のデータ",
+			"settings": "設定",
+			"config": "分類、テンプレートなど"
+		},
+		"all": "すべて",
+		"none": "なし",
+		"accountsConfirm": {
+			"title": "アカウントとパスワードも取り込みますか？",
+			"description": "アーカイブ内の職員アカウントとパスワードは、現在のものを置き換えます。今サインインしている人は、今のログイン情報ではサインインできなくなります。必要なければ、この項目のチェックを外したままにしてください。",
+			"confirm": "アカウントも取り込む"
+		},
+		"needs": "「{{part}}」を復元するには、{{needs}}も必要です。",
+		"data": {
+			"patrons": "利用者",
+			"catalog": "蔵書と資料",
+			"loans": "貸出と履歴",
+			"printLists": "印刷リスト",
+			"photos": "利用者の写真",
+			"covers": "表紙",
+			"notes": "職員メモ",
+			"dates": "カレンダーの日付",
+			"audit": "操作記録"
+		},
+		"config": {
+			"classification": "分類と背ラベルのピクトグラム",
+			"stocks": "ラベルシート",
+			"calendar": "カレンダー",
+			"reports": "レポート",
+			"cardTemplates": "利用者カードのテンプレート",
+			"pairTemplates": "ラベルのペアのテンプレート",
+			"barcodeTemplates": "バーコードラベルのテンプレート",
+			"spineTemplates": "背ラベルのテンプレート",
+			"slipTemplates": "領収書と通知のテンプレート",
+			"languages": "言語パック",
+			"logo": "図書館のロゴ"
+		}
+	}
+}

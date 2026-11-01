@@ -1,0 +1,236 @@
+{
+	"app": {
+		"name": "BiblioViva"
+	},
+	"actions": {
+		"save": "Shrani",
+		"cancel": "Prekliči",
+		"close": "Zapri",
+		"confirm": "Potrdi",
+		"delete": "Izbriši",
+		"edit": "Uredi",
+		"search": "Išči",
+		"export": "Izvozi",
+		"back": "Nazaj",
+		"retry": "Poskusi znova",
+		"backTo": "Nazaj na {{page}}",
+		"more": "Druga dejanja"
+	},
+	"similar": {
+		"label": "Podobno",
+		"count": "{{count:plural; one:in še en podoben, najden; two:in še dva podobna, najdena; few:in še {{count}} podobni, najdeni; other:in še {{count}} podobnih, najdenih;}} s popravkom tipkarske napake",
+		"hint": "Najdeno s popravkom tipkarske napake: preverite, ali je to tisti, ki ste ga iskali."
+	},
+	"status": {
+		"loading": "Nalaganje…",
+		"error": "Prišlo je do napake"
+	},
+	"statuses": {
+		"item": {
+			"available": "Na voljo",
+			"onLoan": "Na izposoji",
+			"lost": "Izgubljen",
+			"damaged": "Poškodovan",
+			"inRepair": "V popravilu",
+			"withdrawn": "Odpisan",
+			"notForLoan": "Samo v knjižnici"
+		},
+		"loan": {
+			"open": "Odprta",
+			"dueSoon": "Kmalu zapade",
+			"overdue": "V zamudi",
+			"returned": "Vrnjena"
+		},
+		"patron": {
+			"active": "Aktiven",
+			"anonymized": "Odstranjen"
+		},
+		"print": {
+			"pending": "Za tisk",
+			"printed": "Natisnjeno"
+		}
+	},
+	"list": {
+		"selected": "Izbranih: {{count}}"
+	},
+	"scan": {
+		"label": "Črtna koda",
+		"placeholder": "Preberite ali vtipkajte kodo",
+		"submit": "Poišči kodo",
+		"camera": "Kamera",
+		"cameraTitle": "Preberite s kamero",
+		"errors": {
+			"empty": "Koda ni vnesena.",
+			"item_check_digit": "Črtna koda izvoda ima napačen kontrolni znak: preberite jo znova.",
+			"card_check_digit": "Številka izkaznice ima napačen kontrolni znak: preberite jo znova.",
+			"isbn_check_digit": "ISBN ima napačno kontrolno števko: preverite števke.",
+			"unrecognised": "Koda ni prepoznana: preverite, ali bralnik bere Code 39 in Code 128."
+		},
+		"invalidRead": "Neveljavna koda ({{code}}): branje poteka.",
+		"invalidShort": "Neveljavna koda, ponovno branje…",
+		"useAnyway": "Vseeno uporabi {{code}}"
+	},
+	"camera": {
+		"start": "Zaženi kamero",
+		"stop": "Ustavi kamero",
+		"switch": "Preklopi kamero",
+		"torch": "Svetilka",
+		"snapshot": "Fotografiraj",
+		"device": "Kamera",
+		"starting": "Zagon kamere…",
+		"errors": {
+			"insecure": "Kamera deluje samo z varno povezavo (https): če je aplikacija odprta iz lokalnega omrežja brez Tailscale, je ne more uporabiti. Uporabite bralnik črtnih kod ali naložite datoteko, ali odprite aplikacijo na naslovu Tailscale.",
+			"denied": "Dovoljenje zavrnjeno: v nastavitvah brskalnika dovolite uporabo kamere in poskusite znova.",
+			"notFound": "Na tej napravi ni najdene nobene kamere.",
+			"busy": "Kamero že uporablja druga aplikacija.",
+			"generic": "Kamere ni mogoče zagnati ({{message}}).",
+			"timeout": "Kamera se ni odzvala. Preverite, ali brskalnik še ne zahteva dovoljenja oziroma ali ga za to spletno mesto prej niste zavrnili (ikona ob naslovu)."
+		},
+		"permissionHint": "Če brskalnik zahteva dovoljenje za uporabo kamere (običajno ob naslovni vrstici), izberite „Dovoli“."
+	},
+	"clipboard": {
+		"failed": "Kopiranje ni uspelo: označite besedilo in ga kopirajte ročno."
+	},
+	"form": {
+		"errorsTitle": "Preverite označena polja",
+		"field": "Polje {{field}}"
+	},
+	"confirm": {
+		"title": "Potrditi?"
+	},
+	"export": {
+		"csv": "CSV (preglednica, besedilo)",
+		"ods": "ODS (LibreOffice / Excel)"
+	},
+	"demo": {
+		"panel": "Ta namestitev vsebuje predstavitvene podatke, naloženi dne {{when}}: {{patrons}} {{patrons:plural; one:uporabnik; two:uporabnika; few:uporabniki; other:uporabnikov;}}, {{biblios}} {{biblios:plural; one:naslov; two:naslova; few:naslovi; other:naslovov;}}, {{items}} {{items:plural; one:izvod; two:izvoda; few:izvodi; other:izvodov;}}, {{loans}} {{loans:plural; one:izposoja; two:izposoji; few:izposoje; other:izposoj;}}. Vse je izmišljeno: nobena oseba ni resnična."
+	},
+	"import": {
+		"header": "Prva vrstica je glava",
+		"column": "Stolpec {{n}}",
+		"ignore": "— prezri —",
+		"counts": {
+			"new": "Novih: {{count}}",
+			"update": "{{count}} za posodobitev",
+			"unchanged": "Nespremenjenih: {{count}}",
+			"error": "{{count}} {{count:plural; one:napaka; two:napaki; few:napake; other:napak;}}"
+		},
+		"onlyErrors": "Prikaži samo napake",
+		"info": "{{rows}} {{rows:plural; one:vrstica; two:vrstici; few:vrstice; other:vrstic;}} · kodiranje {{encoding}} · ločilo „{{delimiter}}“",
+		"steps": {
+			"upload": "Datoteka",
+			"mapping": "Stolpci",
+			"preview": "Preverjanje",
+			"done": "Dokončano"
+		},
+		"line": "Vrstica",
+		"status": "Rezultat",
+		"reason": "Podrobnosti",
+		"statuses": {
+			"new": "Novo",
+			"update": "Posodobi",
+			"unchanged": "Nespremenjeno",
+			"error": "Napaka"
+		},
+		"errors": {
+			"empty": "Datoteka je prazna.",
+			"tooLarge": "Datoteka je večja od {{mb}} MB.",
+			"noRows": "V datoteki ni najdene nobene vrstice.",
+			"uploadGone": "Naložena datoteka ni več na voljo: naložite jo znova.",
+			"notReady": "Datoteka še vsebuje napake: preverite jo znova.",
+			"mappingIncomplete": "Manjkajo obvezni stolpci: {{columns}}."
+		},
+		"template": {
+			"title": "Predloga datoteke",
+			"hint": "Izberite stolpce: predloga vsebuje samo glavo in se polni po eno vrstico (deluje tudi preglednica, shranjena kot CSV).",
+			"required": "Obvezni",
+			"keys": "Ključi",
+			"keysHint": "Služijo za prepoznavanje tistega, kar je že v evidenci; lahko jih izpustite.",
+			"optional": "Neobvezni",
+			"download": "Prenesi predlogo",
+			"ifMissing": "Če manjka: {{text}}."
+		},
+		"groups": {
+			"required": "obvezen",
+			"key": "ključ"
+		}
+	},
+	"words": {
+		"yes": "Da",
+		"no": "Ne"
+	},
+	"password": {
+		"show": "Pokaži geslo",
+		"hide": "Skrij geslo"
+	},
+	"demoPublic": {
+		"language": "Jezik",
+		"welcome": {
+			"title": "Dobrodošli v predstavitvi programa BiblioViva",
+			"beta": "Javna beta",
+			"betaText": "BiblioViva je v javni beti: funkcije so stabilne, vendar do različice 1.0 ni zagotovljeno, da bo posodobitev ostala združljiva s podatki in nastavitvami prejšnje različice.",
+			"intro": "BiblioViva je program za vodenje šolske knjižnice: izposoje in vrnitve, katalog, uporabniki s fotografijami in izkaznicami, nalepke, tiskanje in poročila. To je javna predstavitev: vse funkcije lahko preizkusite.",
+			"contents": "V njej je izmišljena osnovna šola: {{patrons}} {{patrons:plural; one:učenec ali učitelj; two:učenca ali učitelja; few:učenci ali učitelji; other:učencev ali učiteljev;}}, {{biblios}} {{biblios:plural; one:naslov; two:naslova; few:naslovi; other:naslovov;}} in {{items}} {{items:plural; one:izvod; two:izvoda; few:izvodi; other:izvodov;}}, {{openLoans}} {{openLoans:plural; one:izposoja; two:izposoji; few:izposoje; other:izposoj;}} v teku, od tega {{overdueLoans}} v zamudi. Imena in fotografije so izmišljeni: nobena oseba ni resnična.",
+			"reset": "Vsak dan ob {{time}} se predstavitev vrne v začetno stanje. Spremembe nastavitev lahko preizkusite, vendar se ne shranijo.",
+			"examples": "V predstavitvi besedilo in fotografije nadomesti primer: vsako dejanje lahko preizkusite do konca, vendar vpisano ali fotografirano ne ostane in ga nihče drug ne vidi. Uvozi sprejmejo samo vzorčne datoteke, ki jih prenesete s strani vsakega uvoza.",
+			"accountsTitle": "S katerim računom se prijaviti",
+			"accountsHint": "Kot v knjižnici tudi tu vsak račun vidi samo delo svoje vloge. Uporabniško ime in geslo vpišite v obrazec zgoraj.",
+			"password": "Geslo je za vse račune enako:"
+		},
+		"accounts": {
+			"admin": {
+				"name": "Upravljanje",
+				"does": "vidi vse: poleg dela drugih računov nastavitve, račune osebja, varnostne kopije, razrede in prehod v naslednje šolsko leto."
+			},
+			"prestiti": {
+				"name": "Upravljanje izposoj",
+				"does": "izposojevalni pult: izposoja, vrača in podaljšuje, spremlja zamude ter tiska opomine."
+			},
+			"catalogo": {
+				"name": "Katalogizacija",
+				"does": "knjige in izvodi, iskanje podatkov iz SBN (tu simulirano), naslovnice, klasifikacija in nalepke."
+			},
+			"tessere": {
+				"name": "Izkaznice in fotografije",
+				"does": "učenci in učitelji, fotografije in fotografski popis razredov, tiskanje izkaznic."
+			},
+			"report": {
+				"name": "Poročila",
+				"does": "statistika izposoj, kataloga in uporabnikov, izvoz preglednic."
+			}
+		},
+		"blocked": {
+			"config": "V predstavitvi se nastavitve ne shranijo: vse lahko preizkusite, vendar spremembe niso zapisane.",
+			"restore": "V predstavitvi obnovitev varnostnih kopij ni na voljo: podatki predstavitve se vsako noč ustvarijo znova sami.",
+			"configImport": "V predstavitvi uvoz nastavitev ni na voljo: nastavitve predstavitve so enake za vse obiskovalce.",
+			"pictures": "V predstavitvi fotografij razreda ni mogoče naložiti: v popisu preizkusite s primerno fotografijo razreda.",
+			"sqlReports": "V predstavitvi poročila, napisana v SQL, niso na voljo; na voljo so vodena poročila.",
+			"importSize": "V predstavitvi so datoteke za uvoz lahko velike največ 1 MB.",
+			"printSize": "V predstavitvi se naenkrat natisne največ 3 listi: izberite manj izvodov ali manj uporabnikov.",
+			"importExample": "V predstavitvi se uvozi samo vzorčna datoteka: prenesite jo z gumbom za predlogo in jo naložite tako, kot je.",
+			"notesLimit": "V predstavitvi je mogoče napisati le nekaj opomb na dan.",
+			"demoData": "V predstavitvi predstavitveni podatki ostanejo do nočne ponastavitve.",
+			"backups": "V predstavitvi ročne varnostne kopije niso na voljo: podatki predstavitve se vsako noč ustvarijo znova sami.",
+			"archives": "V predstavitvi arhivi in varnostne kopije se ne prenašajo: podatki in nastavitve predstavitve se vsako noč ustvarijo znova.",
+			"languagePacks": "V predstavitvi jezikovni paketi se ne prenašajo: predstavitev ima italijanščino in angleščino."
+		},
+		"example": {
+			"note": "DEMO – opomba z dne {{when}}",
+			"comment": "Predstavitvena opomba z dne {{when}}",
+			"book": "Predstavitvena knjiga z dne {{when}}",
+			"wish": "Predstavitvena želja z dne {{when}}",
+			"class": "Predstavitveni razred z dne {{when}}",
+			"printList": "Predstavitveni seznam z dne {{when}}",
+			"inventory": "Predstavitvena inventura z dne {{when}}",
+			"reason": "Predstavitveni razlog z dne {{when}}",
+			"date": "Predstavitveni datum z dne {{when}}"
+		},
+		"replaced": "V predstavitvi besedilo in fotografije nadomesti primer: shranjevanje je uspelo, vendar ostane primer.",
+		"tooMany": "Preveč zahtevkov v kratkem času: poskusite znova čez minuto.",
+		"refused": {
+			"title": "Ni na voljo v predstavitvi",
+			"busyTitle": "Preveč zahtevkov",
+			"back": "Nazaj na BiblioViva"
+		}
+	}
+}

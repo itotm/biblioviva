@@ -1,0 +1,441 @@
+{
+	"list": {
+		"title": "Usuarios",
+		"new": "Nuevo usuario",
+		"search": "Buscar por apellido…",
+		"empty": "Ningún usuario coincide con los filtros.",
+		"filters": {
+			"type": "Tipo",
+			"stage": "Etapa",
+			"level": "Curso",
+			"status": "Estado",
+			"all": "Todos",
+			"allF": "Todas"
+		},
+		"columns": {
+			"name": "Apellidos y nombre",
+			"type": "Tipo",
+			"class": "Clase",
+			"card": "Carné"
+		},
+		"clearFilters": "Borrar filtros",
+		"countFiltered": "{{shown:plural; one:{{shown}} usuario coincide; other:{{shown}} usuarios coinciden;}} con los filtros",
+		"printCards": "Imprimir carnés",
+		"printClassCards": "Imprimir carnés {{classLabel}}",
+		"removeSelected": "Eliminar seleccionados",
+		"removeTitle": "¿Eliminar {{count}} {{count:plural; one:usuario; other:usuarios;}}?",
+		"removeDescription": "De cada uno se borran de inmediato y para siempre el nombre y los apellidos, los contactos, el número de matrícula, las notas, el número de carné y la foto; permanecen el tipo, la clase, la sección y el historial de préstamos para las estadísticas. Los que tienen préstamos en curso se conservan en el archivo.",
+		"removed": "{{removed}} {{removed:plural; one:eliminado; other:eliminados;}}, {{kept}} con préstamos en curso {{kept:plural; one:conservado; other:conservados;}} en la base de datos",
+		"status": {
+			"title": "Estado",
+			"loans": "{{count}} en préstamo",
+			"overdue": "{{count}} con retraso",
+			"noPhoto": "sin foto"
+		},
+		"startTitle": "Buscar un usuario",
+		"startHint": "Busque por nombre, carné o con los filtros."
+	},
+	"types": {
+		"student": "Alumno",
+		"teacher": "Profesor"
+	},
+	"fields": {
+		"patronType": "Tipo",
+		"firstName": "Nombre",
+		"lastName": "Apellido",
+		"cardNumber": "Número de carné",
+		"cardNumberHint": "Vacío: se asigna automáticamente.",
+		"externalId": "Número de matrícula",
+		"email": "Correo electrónico",
+		"emailHint": "La dirección que el centro asigna al alumno o al profesor: servirá para los avisos.",
+		"circulationNote": "Nota para el mostrador de préstamo",
+		"circulationNoteHint": "Se muestra destacada durante el préstamo.",
+		"notes": "Notas internas",
+		"status": "Estado",
+		"openLoans": "Préstamos en curso",
+		"overdueLoans": "Con retraso",
+		"noCard": "sin carné",
+		"none": "—",
+		"levelCode": "Curso",
+		"groupId": "Sección",
+		"classLabel": "Clase",
+		"teacherGroup": "Grupo de profesores"
+	},
+	"form": {
+		"createTitle": "Nuevo usuario",
+		"editTitle": "Modificar usuario",
+		"identity": "Datos personales",
+		"school": "Clase",
+		"contacts": "Contactos",
+		"notes": "Notas",
+		"create": "Crear usuario",
+		"save": "Guardar cambios",
+		"classSelect": "Elegir…",
+		"defaultTeacherGroup": "El grupo de profesores"
+	},
+	"errors": {
+		"emailInvalid": "Dirección de correo electrónico no válida.",
+		"cardNumberInvalid": "Número de carné no válido: solo cifras, letras mayúsculas y guion, con el carácter de control correcto.",
+		"cardNumberTaken": "Número de carné ya asignado a otro usuario.",
+		"cardNumberIsCopy": "El número de carné es o parece el código de barras de un ejemplar: elija otro número.",
+		"externalIdTaken": "Número de matrícula ya asignado a otro usuario.",
+		"levelRequired": "Para un alumno, el curso (el nivel) es obligatorio.",
+		"levelUnknown": "El curso no figura entre los niveles del centro.",
+		"levelNotForTeachers": "Un profesor no tiene clase.",
+		"groupRequired": "Para un alumno, la sección es obligatoria.",
+		"groupUnknown": "Sección no encontrada entre las clases activas: las clases se crean en Administración → Configuración → Clases.",
+		"levelNotInGroup": "Esta sección no tiene ese curso: elija una sección de ese curso."
+	},
+	"detail": {
+		"heading": "Ficha del usuario",
+		"tabs": {
+			"loans": "Préstamos en curso",
+			"history": "Historial",
+			"cards": "Carné",
+			"notes": "Notas"
+		},
+		"noLoans": "Ningún préstamo en curso.",
+		"loanColumns": {
+			"due": "Devolución"
+		},
+		"overdue": "con retraso",
+		"card": "Carné {{number}}",
+		"noNotes": "Ninguna nota.",
+		"edit": "Modificar",
+		"created": "Creado el {{when}}",
+		"barcodeAlt": "Código de barras del carné {{number}}",
+		"cardPrinted": "Carné impreso el {{when}}.",
+		"cardNotPrinted": "Carné todavía no impreso.",
+		"reassignCard": "Reasignar carné",
+		"reassignTitle": "¿Asignar un carné nuevo?",
+		"reassignDescription": "El número actual se retira para siempre y el carné nuevo deberá imprimirse.",
+		"cardReassigned": "Carné nuevo: {{number}}",
+		"printCard": "Imprimir carné",
+		"markCardPrinted": "Marcar como impreso",
+		"cardMarkedPrinted": "Carné marcado como impreso",
+		"historyColumns": {
+			"issuedAt": "Prestado el",
+			"dueDate": "Devolución",
+			"returnedAt": "Devuelto el",
+			"outcome": "Resultado",
+			"title": "Título",
+			"author": "Autor",
+			"barcode": "Ejemplar",
+			"renewals": "Renovaciones",
+			"schoolYear": "Curso escolar"
+		},
+		"outcome": {
+			"open": "En curso",
+			"overdue": "Con retraso",
+			"returned": "Devuelto",
+			"returnedLate": "Devuelto con retraso",
+			"lost": "Perdido"
+		},
+		"historyEmpty": "Ningún préstamo registrado.",
+		"historyCount": "{{count}} {{count:plural; one:préstamo; other:préstamos;}} en total",
+		"notesEdit": "Modificar notas",
+		"notesSaved": "Notas guardadas",
+		"notesUnchanged": "Sin cambios",
+		"notesHint": "La nota para el mostrador de préstamo aparece destacada al hacer un préstamo; las demás notas se quedan aquí.",
+		"remove": "Eliminar {{type}}",
+		"removeTitle": "¿Eliminar definitivamente a {{name}}?",
+		"removeDescription": "Se borran de inmediato y para siempre: nombre y apellido, correo electrónico, número de matrícula, notas, número de carné (retirado) y foto. Solo quedan el tipo, la clase, la sección y el historial de préstamos para las estadísticas. Esta operación no se puede deshacer.",
+		"removeOpenLoans": "Tiene {{count}} {{count:plural; one:préstamo en curso; other:préstamos en curso;}}. Antes hay que registrar la devolución de los libros o marcarlos como perdidos.",
+		"removeClassSheets": "Ha sido elegido para {{count}} {{count:plural; one:foto; other:fotos;}} de las imágenes de la clase (censo desde una imagen): {{count:plural; one:ese recuadro queda cubierto; other:esos recuadros quedan cubiertos;}}.",
+		"removed": "Usuario eliminado: los datos personales se han borrado.",
+		"removedInfo": "Eliminado el {{when}}. Solo quedan los datos para las estadísticas.",
+		"lostTitle": "Libros perdidos",
+		"lostHint": "Marcados como perdidos mientras estaban prestados a este usuario. Si reaparecen, regístrelos en Devoluciones.",
+		"markLost": "Marcar «{{title}}» como perdido",
+		"markLostTitle": "¿Marcar «{{title}}» como perdido?",
+		"markLostDescription": "El préstamo se cierra y el ejemplar aparece como perdido. Si el libro reaparece, basta con registrar su devolución y volverá a estar disponible.",
+		"markLostReason": "Motivo (opcional)",
+		"markLostConfirm": "Marcar como perdido",
+		"markedLost": "«{{title}}» marcado como perdido."
+	},
+	"photo": {
+		"title": "Foto",
+		"take": "Hacer foto",
+		"upload": "Cargar archivo",
+		"retake": "Repetir",
+		"use": "Usar esta foto",
+		"cancel": "Cancelar",
+		"delete": "Eliminar foto",
+		"deleteTitle": "¿Eliminar la foto?",
+		"deleteDescription": "La foto se borra del servidor; se podrá hacer una nueva.",
+		"zoom": "Zoom",
+		"dragHint": "Arrastre para encuadrar; use el zoom para acercar.",
+		"saved": "Foto guardada",
+		"deleted": "Foto eliminada",
+		"placeholder": "Sin foto",
+		"alt": "Foto de {{name}}",
+		"errors": {
+			"too_large": "Archivo demasiado grande: el límite es {{maxMb}} MB.",
+			"not_an_image": "El archivo no es una imagen legible.",
+			"unsupported_format": "Formato de imagen no admitido (use JPEG, PNG, WebP o HEIC).",
+			"empty": "No se ha seleccionado ningún archivo."
+		},
+		"withForm": "Se guarda junto con el usuario.",
+		"requiredHint": "Se necesita una foto: puede hacerla ahora o más tarde desde la ficha del usuario.",
+		"optionalHint": "La foto puede hacerse ahora o más tarde desde la ficha del usuario.",
+		"remove": "Quitar",
+		"notSaved": "La foto no se ha guardado: vuelva a hacerla desde la ficha del usuario.",
+		"retakePhoto": "Repetir la foto"
+	},
+	"census": {
+		"title": "Censo de fotos",
+		"noGroup": "Sin clase",
+		"stageOthers": "Sin etapa",
+		"progress": "{{done}} de {{total}} con foto",
+		"allDone": "Todos tienen foto.",
+		"back": "Cambiar clase o lista",
+		"skip": "Omitir",
+		"done": "Terminar",
+		"saved": "Foto guardada: {{name}}",
+		"quickAdd": "Nuevo usuario",
+		"quickAddHint": "Se añade a {{group}} y su foto será la siguiente.",
+		"create": "Añadir y fotografiar",
+		"findPerson": "Buscar por apellido",
+		"pickTarget": "Elija una lista o una clase",
+		"listsTitle": "Listas de usuarios",
+		"classesTitle": "Clases",
+		"nothingMissing": "Todas las clases y listas tienen sus fotos.",
+		"onlyMissing": "Se muestran solo las clases y listas en las que falta al menos una foto.",
+		"byCamera": "Una persona cada vez",
+		"sheets": {
+			"title": "Desde una imagen con varias fotos",
+			"hint": "Imágenes con varias fotos (la hoja del fotógrafo, carnés sobre una mesa, una página de fotos de carné): las fotos se detectan automáticamente y se asignan a cada usuario.",
+			"upload": "Cargar imagen",
+			"take": "Fotografiar la hoja",
+			"uploading": "Enviando la imagen…",
+			"empty": "No hay ninguna imagen para esta clase o lista.",
+			"item": "Imagen del {{date}}",
+			"counts": "{{frames}} {{frames:plural; one:foto encontrada; other:fotos encontradas;}} · {{saved}} {{saved:plural; one:guardada; other:guardadas;}} · {{pending}} por hacer",
+			"notDetected": "Sin procesar",
+			"demoScan": "Ejemplo de escáner",
+			"demoPhoto": "Ejemplo de foto",
+			"demoHint": "Dos formas de tener las fotos de la clase: el escaneado es plano, las fotos son rectángulos como mucho girados; la foto se toma de lado y la perspectiva deforma los recuadros."
+		},
+		"sheet": {
+			"title": "Fotos de una imagen",
+			"back": "Volver a la clase",
+			"detecting": "Buscando las fotos en la imagen…",
+			"found": "Fotos encontradas: {{count}}. Elija de quién es cada una.",
+			"none": "No se ha encontrado ninguna foto. Con «Corregir recuadros» se pueden dibujar a mano.",
+			"pictureAlt": "La imagen cargada, con los recuadros de las fotos numerados",
+			"frame": "Foto {{n}}",
+			"choose": "¿De quién es?",
+			"nobody": "— Nadie —",
+			"takenBy": "{{name}} (ya en la foto {{n}})",
+			"hasPhoto": "ya tiene foto",
+			"noPhoto": "sin foto",
+			"ignore": "Ignorar",
+			"unignore": "Restaurar",
+			"ignored": "Ignorada: no es nadie de esta clase o lista.",
+			"saved": "Guardada como foto de {{name}}",
+			"edit": "Corregir recuadros",
+			"editDone": "Terminar correcciones",
+			"editHint": "Toque un recuadro y arrastre sus esquinas; para una foto que falta use «Añadir recuadro».",
+			"editHintScan": "Toque un recuadro: arrastre una esquina para agrandarlo o reducirlo, y el círculo de arriba para girarlo; para una foto que falta use «Añadir recuadro».",
+			"addFrame": "Añadir recuadro",
+			"addFrameHint": "Arrastre sobre la imagen de una esquina a la otra de la foto que falta.",
+			"deleteFrame": "Eliminar recuadro {{n}}",
+			"rotateFrame": "Girar el recuadro",
+			"kind": "Tipo de imagen",
+			"kindPhoto": "Foto",
+			"kindScan": "Escaneado",
+			"kindPhotoHint": "Hecha de lado: cada esquina de un recuadro se mueve por su cuenta, para seguir la perspectiva.",
+			"kindScanHint": "Hecha con un escáner: los recuadros siguen siendo rectángulos y solo se pueden girar.",
+			"kindAgain": "Mientras no se haya elegido ningún usuario, al cambiar el tipo las fotos se buscan de nuevo.",
+			"save": "Guardar las fotos",
+			"saveTitle": "¿Guardar las fotos elegidas?",
+			"saveSummary": "Fotos que guardar: {{count}}.",
+			"saveReplaces": "Sustituyen la foto que ya tienen: {{names}}.",
+			"saveUnassigned": "Recuadros sin nadie elegido: {{count}} (se quedan como están).",
+			"savedToast": "Fotos guardadas: {{count}}.",
+			"deleteSheet": "Eliminar imagen",
+			"deleteSheetTitle": "¿Eliminar la imagen?",
+			"deleteSheetDescription": "La imagen y sus recuadros se eliminan. Las fotos ya guardadas siguen asignadas a los usuarios.",
+			"deletedToast": "Imagen eliminada.",
+			"progress": "{{label}}: {{done}} de {{total}} con foto",
+			"missingTitle": "Todavía sin foto",
+			"byCamera": "Fotografíelos uno por uno",
+			"errors": {
+				"not_found": "Imagen no encontrada.",
+				"set_not_found": "La clase o la lista ya no existe.",
+				"empty": "El archivo está vacío.",
+				"too_large": "La imagen es demasiado grande (como máximo {{maxMb}} MB).",
+				"not_an_image": "El archivo no es una imagen legible.",
+				"unsupported_format": "Formato no admitido: use JPEG, PNG, WebP o HEIC.",
+				"too_many_frames": "Como máximo {{maxFrames}} {{maxFrames:plural; one:foto; other:fotos;}} por imagen.",
+				"bad_corners": "El recuadro no es válido: sus esquinas deben formar un cuadrilátero dentro de la imagen.",
+				"already_detected": "Las fotos de esta imagen ya se han buscado.",
+				"frame_saved": "Esta foto ya se ha guardado.",
+				"frame_erased": "Esta foto es de un usuario eliminado: el recuadro se ha cubierto.",
+				"not_a_member": "Solo se pueden elegir los usuarios de la clase o de la lista.",
+				"patron_taken": "Ya elegido para la foto {{position}}: libérelo antes de elegirlo aquí.",
+				"confirm_replace": "{{count:plural; one:{{count}} foto sustituye a una existente; other:{{count}} fotos sustituyen a existentes;}}: confirme para continuar.",
+				"nothing_to_save": "Elija al menos un usuario antes de guardar."
+			},
+			"erased": "Usuario eliminado: el recuadro se ha cubierto en la imagen."
+		}
+	},
+	"import": {
+		"upload": {
+			"file": "Archivo CSV",
+			"submit": "Cargar",
+			"hints": {
+				"students": "Un archivo CSV con una fila por alumno, separado por ; o por , (también sirve una exportación de una hoja de cálculo). Use los encabezados de la plantilla, que se puede descargar más abajo con las columnas necesarias.",
+				"teachers": "Un archivo CSV con una fila por profesor, separado por ; o por ,. Use los encabezados de la plantilla, que se puede descargar más abajo con las columnas necesarias."
+			}
+		},
+		"mapping": {
+			"format": "Formato reconocido",
+			"uncertain": "El formato no es seguro: revise las columnas antes de continuar.",
+			"remembered": "Columnas recordadas de la última importación de este archivo.",
+			"formats": {
+				"simple": "first_name;last_name;level;section",
+				"combined": "first_name;last_name;class",
+				"names": "first_name;last_name",
+				"custom": "el encabezado del archivo",
+				"unknown": "desconocido"
+			},
+			"mode": "Modo",
+			"modes": {
+				"upsert": "Añadir y actualizar",
+				"upsertHint": "Las filas encontradas actualizan al usuario existente; las demás crean usuarios nuevos.",
+				"sync": {
+					"students": "Sincronizar alumnos",
+					"teachers": "Sincronizar profesores"
+				},
+				"syncHint": {
+					"students": "El archivo es la lista completa de alumnos: quien falte aparece en la lista (y se elimina, tras confirmar). Los profesores no se modifican.",
+					"teachers": "El archivo es la lista completa de profesores: quien falte aparece en la lista (y se elimina, tras confirmar). Los alumnos no se modifican."
+				}
+			},
+			"duplicates": "Usuarios ya presentes",
+			"policies": {
+				"update": "Actualizar",
+				"skip": "Omitir",
+				"create": "Crear igualmente"
+			},
+			"validate": "Verificar el archivo",
+			"matchByName": {
+				"students": "Sin la columna external_id, los alumnos que ya están en la base de datos se reconocen por nombre y clase.",
+				"teachers": "Sin la columna external_id, los profesores que ya están en la base de datos se reconocen por nombre."
+			}
+		},
+		"preview": {
+			"ready": "Ningún error: la importación es posible.",
+			"blocked": "Corrija los errores del archivo (o de los usuarios) y verifique de nuevo: no se importa nada con errores.",
+			"columns": {
+				"name": "Nombre",
+				"class": "Clase"
+			},
+			"changed": "Cambia: {{fields}}",
+			"homonym": {
+				"pick": "Elija el usuario",
+				"create": "Crear un usuario nuevo",
+				"candidate": "{{name}} ({{group}})",
+				"title": "Homónimos por resolver"
+			},
+			"missing": {
+				"students": {
+					"title": "Alumnos en la base de datos pero ausentes del archivo ({{count}})",
+					"remove": "Eliminar estos alumnos de la base de datos (anonimización inmediata)",
+					"noPermission": "Sin permiso para eliminar usuarios, los alumnos que faltan se quedan en la base de datos.",
+					"notRemoved": "{{count}} {{count:plural; one:alumno que falta no eliminado porque tiene; other:alumnos que faltan no eliminados porque tienen;}} préstamos en curso."
+				},
+				"teachers": {
+					"title": "Profesores en la base de datos pero ausentes del archivo ({{count}})",
+					"remove": "Eliminar estos profesores de la base de datos (anonimización inmediata)",
+					"noPermission": "Sin permiso para eliminar usuarios, los profesores que faltan se quedan en la base de datos.",
+					"notRemoved": "{{count}} {{count:plural; one:profesor que falta no eliminado porque tiene; other:profesores que faltan no eliminados porque tienen;}} préstamos en curso."
+				},
+				"hint": "Con la sincronización, quien no esté en el archivo puede eliminarse: los datos personales se borran de inmediato y para siempre; quedan solo la clase y las estadísticas."
+			},
+			"commit": "Importar",
+			"back": "Volver a las columnas",
+			"generatedCards": "{{count}} {{count:plural; one:carné nuevo se generará; other:carnés nuevos se generarán;}}: el archivo no tiene número."
+		},
+		"reasons": {
+			"tooLong": "Texto demasiado largo en la columna {{column}}: como máximo {{max}} {{max:plural; one:carácter; other:caracteres;}}",
+			"nameRequired": "Falta el nombre o el apellido",
+			"emailInvalid": "Correo electrónico no válido",
+			"cardNumberInvalid": "Número de carné no válido",
+			"cardNumberTaken": "Número de carné ya asignado a otro usuario",
+			"cardNumberIsCopy": "Número de carné igual o parecido al código de barras de un ejemplar",
+			"externalIdTaken": "Número de matrícula ya asignado a otro usuario",
+			"duplicateInFile": "La misma persona ya está en la línea {{line}}",
+			"homonym": "{{count}} {{count:plural; one:homónimo; other:homónimos;}} en la base de datos: elija cuál actualizar",
+			"matchedTwice": "Otra fila ya actualiza al mismo usuario",
+			"skipped": "Ya presente: omitido",
+			"levelRequired": "Falta el curso",
+			"levelUnknown": "El curso «{{value}}» no está previsto en el centro",
+			"groupRequired": "Falta la sección",
+			"groupUnknown": "Sección «{{value}}» no encontrada para este curso. Clases válidas: {{classes}} (las clases se crean en Administración → Configuración → Clases)",
+			"levelNotInGroup": "La sección «{{value}}» no tiene ese curso. Clases válidas: {{classes}}",
+			"classUnknown": "Clase «{{value}}» no encontrada. Clases válidas: {{classes}}",
+			"teacherGroupUnknown": "Grupo de profesores «{{value}}» no encontrado. Grupos válidos: {{classes}}"
+		},
+		"done": {
+			"title": "Importación completada",
+			"summary": "{{created}} {{created:plural; one:nuevo; other:nuevos;}}, {{updated}} {{updated:plural; one:actualizado; other:actualizados;}}, {{unchanged}} {{unchanged:plural; one:sin cambios; other:sin cambios;}}, {{removed}} {{removed:plural; one:eliminado; other:eliminados;}}.",
+			"printNew": "Imprimir los carnés de los nuevos",
+			"census": "Censo de fotos",
+			"again": "Importar otro archivo",
+			"batch": "Importación n. {{id}}: el archivo original se conserva en el servidor."
+		},
+		"fields": {
+			"firstName": "Nombre",
+			"lastName": "Apellido",
+			"class": "Clase (curso y sección)",
+			"level": "Clase (curso)",
+			"section": "Sección",
+			"group": "Grupo de profesores",
+			"externalId": "Número de matrícula",
+			"cardNumber": "Carné",
+			"email": "Correo electrónico"
+		},
+		"titles": {
+			"students": "Importar alumnos",
+			"teachers": "Importar profesores"
+		},
+		"columns": {
+			"firstName": {
+				"hint": "El nombre."
+			},
+			"lastName": {
+				"hint": "El apellido."
+			},
+			"class": {
+				"hint": "La clase en una columna, como 3A o 3 A: debe existir en Administración → Configuración → Clases."
+			},
+			"level": {
+				"hint": "El curso (1, 2, 3…), con la sección en la columna section."
+			},
+			"section": {
+				"hint": "La sección (A, B…): con level indica la clase."
+			},
+			"cardNumber": {
+				"hint": "El número del carné, si el alumno ya tiene uno.",
+				"missing": "los carnés nuevos se generan"
+			},
+			"externalId": {
+				"hint": "El código del registro del centro.",
+				"missing": "los usuarios ya presentes se reconocen por nombre y clase"
+			},
+			"email": {
+				"hint": "Opcional."
+			},
+			"group": {
+				"hint": "El grupo de profesores; si falta, el grupo predeterminado."
+			}
+		},
+		"classForm": {
+			"label": "La clase",
+			"class": "En una columna (class: 3A)",
+			"levelSection": "En dos columnas (level: 3, section: A)"
+		}
+	}
+}

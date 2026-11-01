@@ -1,0 +1,60 @@
+{
+	"dashboard": "Pano",
+	"circulation": "Ödünç işlemleri",
+	"catalog": "Katalog",
+	"patrons": "Üyeler",
+	"printing": "Yazdırma",
+	"notes": "Notlar",
+	"reports": "Raporlar",
+	"admin": "Yönetim",
+	"more": "Diğer",
+	"logout": "Çıkış yap",
+	"help": "Yardım",
+	"about": "Hakkında",
+	"areas": {
+		"circulation": {
+			"label": "Ödünç masası",
+			"checkout": "Ödünç verme",
+			"checkin": "İade",
+			"loans": "Ödünçteki kitaplar",
+			"overdues": "Hatırlatmalar",
+			"wishlist": "İstek listesi",
+			"calendar": "Takvim"
+		},
+		"catalog": {
+			"label": "Katalog sayfaları",
+			"catalog": "Katalog",
+			"inventory": "Sayım",
+			"wishlist": "İstek listesi",
+			"toClassify": "Sınıflandırılacaklar"
+		},
+		"patrons": {
+			"label": "Üye sayfaları",
+			"patrons": "Üyeler",
+			"census": "Fotoğraf çekimi"
+		},
+		"notes": {
+			"label": "Not sayfaları",
+			"open": "Açık",
+			"archived": "Arşivlenmiş"
+		},
+		"config": {
+			"label": "Yapılandırma sayfaları",
+			"overview": "Bölümler",
+			"history": "Geçmiş"
+		},
+		"templates": {
+			"label": "Yazdırma şablonu sayfaları",
+			"edit": "Şablonlar",
+			"previews": "Önizlemeler"
+		},
+		"imports": {
+			"label": "İçe aktarmalar",
+			"catalog": "Katalog",
+			"students": "Öğrenciler",
+			"teachers": "Öğretmenler",
+			"loans": "Devam eden ödünçler",
+			"photos": "Üye fotoğrafları"
+		}
+	}
+}

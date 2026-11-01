@@ -1,0 +1,19 @@
+{
+	"title": "Hakkında",
+	"app": {
+		"version": "Sürüm",
+		"license": "Lisans",
+		"repository": "Kaynak kodu"
+	},
+	"deps": {
+		"title": "Kullanılan kütüphaneler",
+		"runtime": "Çalışma zamanı ({{count}})",
+		"development": "Yalnızca geliştirme için ({{count}})",
+		"system": "Sistem bileşenleri",
+		"columns": {
+			"name": "Ad",
+			"version": "Sürüm",
+			"license": "Lisans"
+		}
+	}
+}

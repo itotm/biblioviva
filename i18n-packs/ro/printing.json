@@ -1,0 +1,196 @@
+{
+	"lists": {
+		"title": "Tipărire",
+		"newPatrons": "Listă nouă de cititori",
+		"newItems": "Listă nouă de cărți",
+		"newPatronsTitle": "Listă nouă de cititori",
+		"newItemsTitle": "Listă nouă de cărți",
+		"name": "Numele listei",
+		"defaultName": "Lista {{n}} din {{date}}",
+		"kind": "Tip",
+		"kinds": {
+			"all": "Toate",
+			"patrons": "Cititori",
+			"items": "Cărți"
+		},
+		"classes": "Clase",
+		"classesHint": "Legitimațiile unei clase întregi, fără a crea o listă a acesteia.",
+		"classKind": "Clasă",
+		"count": "{{count}} {{count:plural; one:intrare; few:intrări; other:de intrări;}}",
+		"empty": "Nicio listă. Listele se creează aici sau cu „Adaugă pe listă” din paginile Cititori și Catalog.",
+		"lastPrinted": "Tipărită la {{when}}",
+		"neverPrinted": "Niciodată tipărită",
+		"open": "Deschide",
+		"created": "Lista a fost creată",
+		"deleted": "Lista a fost ștearsă",
+		"deleteTitle": "Ștergeți lista „{{name}}”?",
+		"deleteDescription": "Intrările ies din listă; cititorii rămân în arhivă."
+	},
+	"list": {
+		"rename": "Redenumește",
+		"renamed": "Lista a fost redenumită",
+		"print": "Tipărește legitimațiile",
+		"markPrinted": "Marchează ca tipărite",
+		"marked": "{{count}} {{count:plural; one:legitimație marcată ca tipărită; few:legitimații marcate ca tipărite; other:de legitimații marcate ca tipărite;}}",
+		"clearAfter": "Golește lista după tipărire",
+		"clear": "Golește",
+		"cleared": "Lista a fost golită",
+		"clearTitle": "Goliți lista?",
+		"clearDescription": "Fiecare intrare iese din listă; cititorii rămân în arhivă.",
+		"delete": "Șterge",
+		"entries": "{{count}} {{count:plural; one:cititor; few:cititori; other:de cititori;}} în listă",
+		"empty": "Lista este goală: cititorii se adaugă cu filtrele rapide, cu scanerul sau din pagina Cititori.",
+		"remove": "Scoate din listă",
+		"moveUp": "Mută în sus",
+		"moveDown": "Mută în jos",
+		"dragHint": "Trageți intrările pentru a schimba ordinea de tipărire.",
+		"removed": "Scos din listă",
+		"columns": {
+			"position": "Nr.",
+			"printed": "Legitimație tipărită"
+		},
+		"printedYes": "da",
+		"printedNo": "nu",
+		"quick": {
+			"title": "Adaugă cu filtre",
+			"hint": "Cine este deja în listă nu se adaugă de două ori.",
+			"type": "Tip",
+			"any": "Oricare",
+			"stage": "Nivel de școlarizare",
+			"level": "An de studiu",
+			"withoutPrintedCard": "Doar cei a căror legitimație nu a fost încă tipărită",
+			"withoutPhoto": "Doar cei fără fotografie",
+			"importBatch": "Import",
+			"anyBatch": "— niciunul —",
+			"batchLabel": "nr. {{id}} · {{file}} · {{created}} noi",
+			"createdAfter": "Create începând cu",
+			"add": "Adaugă pe listă",
+			"added": "{{added}} adăugați, {{skipped}} deja prezenți",
+			"none": "Niciun cititor nu corespunde filtrelor.",
+			"pendingLabels": "Etichete de tipărit",
+			"pendingAny": "— toate exemplarele —",
+			"acquiredFrom": "Achiziționate de la",
+			"acquiredTo": "până la",
+			"genre": "Gen",
+			"itemType": "Tip de exemplar",
+			"batchLabelItems": "nr. {{id}} · {{file}} · {{created}} {{created:plural; one:exemplar; few:exemplare; other:de exemplare;}}",
+			"noneItems": "Niciun exemplar nu corespunde filtrelor.",
+			"addedItems": "{{added}} adăugate, {{skipped}} deja prezente",
+			"nonfictionClass": "Clasă de non-ficțiune"
+		},
+		"scan": {
+			"title": "Adaugă cu scanerul",
+			"hint": "Scanați legitimația fiecărui cititor: este adăugat imediat în listă. Legitimațiile deja prezente în listă sunt ignorate.",
+			"added": "{{name}} a fost adăugat",
+			"duplicate": "{{name}} este deja în listă",
+			"unknown": "Niciun cititor cu legitimația {{card}}",
+			"notCard": "Codul citit nu este o legitimație",
+			"hintItems": "Scanați codul de bare al fiecărui exemplar, de exemplu mergând de-a lungul raftului: exemplarul este adăugat imediat. Exemplarele deja prezente în listă sunt ignorate.",
+			"addedItem": "{{title}} ({{barcode}}) a fost adăugat",
+			"duplicateItem": "{{title}} ({{barcode}}) este deja în listă",
+			"unknownItem": "Niciun exemplar cu codul de bare {{barcode}}",
+			"notItem": "Codul citit nu este un exemplar"
+		},
+		"printLabels": "Tipărește etichetele",
+		"markPrintedKind": "Etichete tipărite",
+		"markedItems": "{{count}} {{count:plural; one:exemplar marcat ca tipărit; few:exemplare marcate ca tipărite; other:de exemplare marcate ca tipărite;}}",
+		"entriesItems": "{{count}} {{count:plural; one:exemplar; few:exemplare; other:de exemplare;}} în listă",
+		"emptyItems": "Lista este goală: exemplarele se adaugă cu filtrele rapide, cu scanerul sau din catalog.",
+		"clearDescriptionItems": "Fiecare intrare este scoasă; exemplarele rămân în catalog."
+	},
+	"basket": {
+		"label": "Liste de tipărire",
+		"labelToPrint": "Liste de tipărire: {{count}} de tipărit",
+		"entry": "{{name}} ({{count}})",
+		"none": "Nicio listă de tipărit",
+		"all": "Toate listele"
+	},
+	"addTo": {
+		"button": "Adaugă pe listă",
+		"selected": "Adaugă cele selectate pe listă",
+		"title": "Adaugă pe o listă de tipărire",
+		"existing": "Listă existentă",
+		"create": "Listă nouă",
+		"newName": "Numele listei noi",
+		"confirm": "Adaugă",
+		"done": "{{added}} adăugați la „{{name}}”, {{skipped}} deja prezenți"
+	},
+	"labels": {
+		"title": "Tipărește etichete",
+		"button": "Tipărește etichete",
+		"selected": "Tipărește etichetele selecției",
+		"kind": "Tip de etichetă",
+		"kinds": {
+			"pair": "Pereche",
+			"barcode": "Doar codul de bare",
+			"spine": "Doar banda de cotor"
+		},
+		"kindHints": {
+			"pair": "Banda de cotor sus și eticheta cu codul de bare jos, o pereche pentru fiecare carte (tipărirea actuală).",
+			"barcode": "Doar eticheta internă cu codul de bare, pentru retipăriri.",
+			"spine": "Doar banda de cotor, de exemplu după o reclasificare."
+		},
+		"stock": "Foaie de etichete",
+		"start": "Prima poziție liberă",
+		"startHint": "De la 1 la {{max}}: sare etichetele deja folosite pe foaie.",
+		"count": "{{count}} {{count:plural; one:exemplar; few:exemplare; other:de exemplare;}}",
+		"unclassified": "{{count:plural; one:un exemplar de carte; few:{{count}} exemplare de cărți; other:{{count}} de exemplare de cărți;}} de clasificat: se tipărește doar {{count:plural; one:eticheta cu codul de bare; few:etichetele cu codul de bare; other:etichetele cu codul de bare;}}, banda de cotor după clasificare.",
+		"pendingCount": "{{count}} {{count:plural; one:exemplar; few:exemplare; other:de exemplare;}} cu etichete de tipărit",
+		"pages": "{{pages}} {{pages:plural; one:foaie; few:foi; other:de foi;}} ({{perPage}} pe foaie)",
+		"print": "Deschide pagina de tipărire",
+		"afterPrint": "Pagina de tipărire s-a deschis într-o filă nouă. După tipărirea etichetelor, marcați-le ca tipărite.",
+		"markPrinted": "Marchează ca tipărite",
+		"marked": "{{count}} {{count:plural; one:exemplar marcat ca tipărit; few:exemplare marcate ca tipărite; other:de exemplare marcate ca tipărite;}}",
+		"status": {
+			"printed": "Etichete tipărite",
+			"pending": "Etichete de tipărit",
+			"partial": "Lipsește o etichetă"
+		}
+	},
+	"cards": {
+		"title": "Tipărește legitimații",
+		"count": "{{count}} {{count:plural; one:legitimație; few:legitimații; other:de legitimații;}}",
+		"afterPrint": "Pagina de tipărire s-a deschis într-o filă nouă. După tipărirea legitimațiilor, marcați-le ca tipărite.",
+		"layout": "Cum se tipărește",
+		"layouts": {
+			"side-by-side": "Față și verso alăturate",
+			"duplex": "Pe ambele fețe ale foii"
+		},
+		"window": "În fereastra de tipărire a browserului:",
+		"steps": {
+			"duplex": {
+				"long-edge": "alegeți „Pe două fețe”, răsturnând pe latura lungă;",
+				"short-edge": "alegeți „Pe două fețe”, răsturnând pe latura scurtă;"
+			},
+			"scale": "scala 100 % („Dimensiune reală”, nu „Potrivește la pagină”);",
+			"margins": "margini: niciuna.",
+			"after": {
+				"side-by-side": {
+					"marks": "Apoi decupați fiecare legitimație unind cu rigla semnele de tăiere din jurul legitimațiilor și îndoiți-o în două pe latura scurtă.",
+					"line": "Apoi decupați fiecare legitimație de-a lungul liniei colorate din jurul ei și îndoiți-o în două pe latura scurtă.",
+					"edge": "Apoi decupați fiecare legitimație de-a lungul marginii și îndoiți-o în două pe latura scurtă."
+				},
+				"duplex": {
+					"marks": "Apoi decupați legitimațiile unind cu rigla semnele de tăiere din jurul fețelor: versoul este deja în spatele feței (zece pe foaie).",
+					"line": "Apoi decupați legitimațiile de-a lungul liniei colorate care înconjoară fețele: versoul este deja în spatele feței (zece pe foaie).",
+					"edge": "Apoi decupați legitimațiile de-a lungul marginii fețelor: versoul este deja în spatele feței (zece pe foaie)."
+				}
+			}
+		},
+		"print": "Tipărește",
+		"calibrate": "Prima dată, sau dacă versourile nu cad în spatele fețelor:"
+	},
+	"words": {
+		"teacher": "Profesor",
+		"title": "Titlu",
+		"code": "Cod",
+		"dueBy": "De restituit până la",
+		"due": "Scadență",
+		"name": "Nume",
+		"daysOverdue": "Zile de întârziere",
+		"loanOn": "Împrumut din {{date}} către",
+		"overduesOn": "Notificări de întârziere ale bibliotecii din {{date}}",
+		"toReturn": "Cărți de restituit bibliotecii",
+		"enjoy": "Lectură plăcută."
+	}
+}

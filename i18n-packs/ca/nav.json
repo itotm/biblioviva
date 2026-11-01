@@ -1,0 +1,60 @@
+{
+	"dashboard": "Tauler",
+	"circulation": "Préstecs",
+	"catalog": "Catàleg",
+	"patrons": "Usuaris",
+	"printing": "Impressió",
+	"notes": "Notes",
+	"reports": "Informes",
+	"admin": "Administració",
+	"more": "Més",
+	"logout": "Tanca la sessió",
+	"help": "Ajuda",
+	"about": "Informació",
+	"areas": {
+		"circulation": {
+			"label": "Taulell de préstec",
+			"checkout": "Préstecs",
+			"checkin": "Devolucions",
+			"loans": "Llibres en préstec",
+			"overdues": "Reclamacions",
+			"wishlist": "Desiderates",
+			"calendar": "Calendari"
+		},
+		"catalog": {
+			"label": "Pàgines del catàleg",
+			"catalog": "Catàleg",
+			"inventory": "Inventari",
+			"wishlist": "Desiderates",
+			"toClassify": "Per classificar"
+		},
+		"patrons": {
+			"label": "Pàgines dels usuaris",
+			"patrons": "Usuaris",
+			"census": "Cens fotogràfic"
+		},
+		"notes": {
+			"label": "Pàgines de les notes",
+			"open": "Obertes",
+			"archived": "Arxivades"
+		},
+		"config": {
+			"label": "Pàgines de la configuració",
+			"overview": "Seccions",
+			"history": "Historial"
+		},
+		"templates": {
+			"label": "Pàgines de les plantilles d'impressió",
+			"edit": "Plantilles",
+			"previews": "Vistes prèvies"
+		},
+		"imports": {
+			"label": "Importacions",
+			"catalog": "Catàleg",
+			"students": "Alumnes",
+			"teachers": "Docents",
+			"loans": "Préstecs en curs",
+			"photos": "Fotos dels usuaris"
+		}
+	}
+}

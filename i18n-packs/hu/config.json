@@ -1,0 +1,1778 @@
+{
+	"home": {
+		"title": "Beállítások"
+	},
+	"leave": {
+		"title": "Mentés nélkül kilép?",
+		"description": "A még nem mentett módosítások elvesznek.",
+		"confirm": "Kilépés mentés nélkül"
+	},
+	"taxonomy": {
+		"title": "Osztályozás",
+		"intro": "A módosítások a „Mentés” gombig piszkozatban maradnak; a(z) {{file}} előző változata megmarad.",
+		"invalid": "Néhány érték nem érvényes (pirossal jelölve): javítsa ki őket a mentéshez.",
+		"orphans": "A katalógusban olyan könyvek vannak, amelyek olyan kódokat használnak, amelyek nincsenek benne az osztályozásban: {{codes}}. Adja hozzá ezeket a kódokat itt, vagy sorolja át ezeket a könyveket a katalógusból.",
+		"unsaved": "Mentetlen módosítások",
+		"discard": "Módosítások elvetése",
+		"saved": "Osztályozás elmentve",
+		"savedDetail": "{{records}} {{records:plural; one:könyv áthelyezve; other:könyv áthelyezve;}}, {{callNumbers}} {{callNumbers:plural; one:raktári jelzet átírva; other:raktári jelzet átírva;}}, {{bands}} {{bands:plural; one:gerincsáv újranyomtatandó; other:gerincsáv újranyomtatandó;}}.",
+		"tabs": {
+			"fiction": "Szépirodalom",
+			"nonfiction": "Ismeretterjesztő",
+			"dewey": "Dewey",
+			"options": "Lehetőségek"
+		},
+		"addGenre": "Műfaj hozzáadása",
+		"addClass": "Témakör hozzáadása",
+		"addSubclass": "Altémakör hozzáadása",
+		"dragHint": "A sorokat húzva változtathatja a sorrendet, vagy használja a nyilakat. A sorrend a katalógus választási lehetőségeinek sorrendje.",
+		"pickGenre": "Válasszon egy műfajt a szerkesztéséhez",
+		"pickClass": "Válasszon egy témakört a szerkesztéséhez",
+		"untitled": "Névtelen",
+		"hasProblems": "Javítandó",
+		"usageShort": "{{records}} {{records:plural; one:könyv; other:könyv;}}",
+		"moveUp": "Mozgatás felfelé",
+		"moveDown": "Mozgatás lefelé",
+		"panel": {
+			"genre": "Műfaj",
+			"class": "Témakör",
+			"subclass": "Altémakör"
+		},
+		"fields": {
+			"code": "Kód",
+			"label": "Név",
+			"color": "Szín",
+			"pictogram": "Piktogram",
+			"position": "Pozíció"
+		},
+		"renameNote": "A kód megváltozott: mentéskor {{records}} {{records:plural; one:könyv; other:könyv;}} átkerül a(z) {{from}} kódról a(z) {{to}} kódra, és a raktári jelzetük frissül.",
+		"color": {
+			"inherit": "A(z) {{code}} színét használja",
+			"none": "Szín nélkül",
+			"hex": "Színkód"
+		},
+		"pictogram": {
+			"upload": "Kép feltöltése",
+			"choose": "Választás a képek közül",
+			"remove": "Kép eltávolítása",
+			"own": "Saját kép. PNG, JPEG vagy WebP: PNG formátumban mentjük.",
+			"missing": "A(z) {{name}} fájl nincs a képek mappájában: a címkéken a szín és a kód körlapja jelenik meg.",
+			"inherited": "Saját kép nélkül a(z) {{code}} képét használja.",
+			"placeholder": "Kép nélkül a címkéken a szín és a kód körlapja jelenik meg.",
+			"gallery": "A besorolás képei",
+			"errors": {
+				"empty": "A fájl üres.",
+				"too_large": "A kép túl nagy (legfeljebb {{maxMb}} MB).",
+				"not_an_image": "A fájl nem kép.",
+				"unsupported_format": "A formátum nem fogadható el: használjon PNG, JPEG vagy WebP formátumot."
+			}
+		},
+		"position": {
+			"top": "Főtémakör",
+			"under": "Ezen belül: {{code}} · {{label}}",
+			"locked": "Altémakörei vannak: főtémakör marad."
+		},
+		"usage": {
+			"new": "Új: még egyetlen könyv sem használja.",
+			"none": "Egyetlen könyv sem használja ezt a kódot.",
+			"some": "{{records}} {{records:plural; one:könyv; other:könyv;}} használja ({{copies}} {{copies:plural; one:példány; other:példány;}})."
+		},
+		"remove": {
+			"genre": "Műfaj törlése",
+			"class": "Témakör törlése",
+			"confirmTitle": "Törli a(z) {{code}} kódot?",
+			"withSubclasses": "A hozzá tartozó {{count}} {{count:plural; one:altémakör; other:altémakör;}} is törlődik.",
+			"inUse": "{{records}} {{records:plural; one:könyv; other:könyv;}} használja ezt a kódot: mentéskor meg kell adni, hová helyezze át őket.",
+			"confirm": "Törlés"
+		},
+		"preview": {
+			"title": "A gerincsáv előnézete",
+			"hint": "Egy példakönyv úgy, ahogy most nyomtatódna, valódi méretben.",
+			"needsCode": "Az előnézet akkor jelenik meg, ha a kód érvényes."
+		},
+		"problems": {
+			"codeRequired": "A kód megadása kötelező.",
+			"codeFormat": "Csak betűk, számjegyek, pont, kötőjel vagy aláhúzás használható (legfeljebb 32).",
+			"codeTaken": "Ezt a kódot már használja egy másik műfaj vagy témakör.",
+			"labelRequired": "A név megadása kötelező.",
+			"labelLong": "A név túl hosszú (legfeljebb 120 karakter).",
+			"colorFormat": "A színt #rrggbb alakban írja, például #e8231b.",
+			"patternRequired": "A séma nem lehet üres."
+		},
+		"dewey": {
+			"hint": "Ha egy ismeretterjesztő könyv Dewey-számmal érkezik (például SBN-ből), a témakört ez a táblázat javasolja: a leghosszabb egyező előtag számít.",
+			"probe": "Próbáljon ki egy Dewey-számot",
+			"noMatch": "Nincs egyező témakör",
+			"empty": "Nincs Dewey-megfeleltetés",
+			"prefix": "Dewey-előtag",
+			"class": "Témakör",
+			"add": "Megfeleltetés hozzáadása",
+			"problems": {
+				"prefixFormat": "1–3 számjegy.",
+				"prefixTaken": "Ismétlődő előtag.",
+				"codeUnknown": "Válasszon témakört."
+			}
+		},
+		"options": {
+			"fictionByClass": "A szépirodalom olvasási szint szerint van osztva",
+			"fictionByClassHint": "A szépirodalmi könyvekhez hozzárendelhető az olvasási szint, amelynek megfelelnek (például a 4. évfolyam): megjelenik a raktári jelzetben és a gerincsávon.",
+			"classPerItem": "Az olvasási szint minden példányon szerepel",
+			"classPerItemHint": "Akkor kell, ha ugyanannak a könyvnek a példányai különböző szintű polcokon vannak. Ellenkező esetben a szint a könyvön van.",
+			"toCopies": "Mentéskor minden könyv olvasási szintje átkerül a példányaira.",
+			"toRecords": "Mentéskor a példányok szintje visszakerül a könyvre; ez nem lehetséges, ha ugyanannak a könyvnek a példányai különböző szintűek.",
+			"patterns": "Raktári jelzet sémái",
+			"patternsHint": "Ezek a mostantól hozzáadott példányokra vonatkoznak; a meglévő raktári jelzetek nem változnak. Helyőrzők: {{placeholders}}.",
+			"pattern": {
+				"fiction": "Szépirodalom",
+				"fictionWithClass": "Szépirodalom társított osztállyal",
+				"nonfiction": "Ismeretterjesztő"
+			},
+			"unknownPlaceholders": "Ismeretlen helyőrzők: {{names}}.",
+			"example": "Példa: {{example}}"
+		},
+		"save": {
+			"title": "Osztályozás mentése",
+			"checking": "Ellenőrzés: mi változik a katalógusban…",
+			"unchanged": "Nincs mentendő módosítás.",
+			"errors": "Mentés előtt javítsa ki ezeket a problémákat:",
+			"removedTitle": "Törölt kódok, amelyek még használatban vannak",
+			"removedHint": "Válassza ki, hová helyezze át az egyes törölt kódok könyveit: az új kód a könyvekre kerül, a raktári jelzetük elejére és a gerincsávokra.",
+			"moveTo": "{{code}} · {{label}}: {{records}} {{records:plural; one:könyv; other:könyv;}} ({{copies}} {{copies:plural; one:példány; other:példány;}}). Áthelyezés ide:",
+			"choose": "Válasszon…",
+			"callNumbers": "{{count}} {{count:plural; one:raktári jelzet; other:raktári jelzet;}} törölt kóddal kezdődik: a kezdő kód lecserélődik (például B 4 DEL helyett A 4 DEL lesz).",
+			"bandsMoved": "Az áthelyezett könyvek gerincsávjai, és a megváltozott raktári jelzetű címkék visszakerülnek a nyomtatandók közé.",
+			"unused": "Törölve, egyetlen könyv sem használja: {{codes}}.",
+			"reprint": "Tegye vissza a nyomtatandó címkék közé {{copies}} {{copies:plural; one:példány; other:példány;}} gerincsávjait, amelyek neve, színe vagy piktogramja változik ({{codes}})",
+			"reprintHint": "Kikapcsolva hagyandó, ha a könyveken már rögzített gerincsávok eltérése nem számít.",
+			"conflicts": "{{count}} {{count:plural; one:könyv; other:könyv;}} példányai különböző osztályba tartoznak: mielőtt az osztályt eltávolítaná a példányokról, adjon ugyanazt az osztályt minden könyv minden példányának.",
+			"toCopies": "{{count}} {{count:plural; one:könyv; other:könyv;}} társított osztálya a példányaira kerül.",
+			"toRecords": "A példányok osztálya {{count}} {{count:plural; one:cím; other:cím;}} esetében visszakerül a könyvre.",
+			"warnings": "{{count}} {{count:plural; one:figyelmeztetés; other:figyelmeztetés;}} (nem akadályozzák a mentést)",
+			"levelsTitle": "Olvasási szintek eltávolítva, amíg könyvek használják őket",
+			"levelMoveTo": "A(z) {{code}} · {{label}} szint könyvei ({{records}} {{records:plural; one:cím; other:cím;}}, {{copies}} {{copies:plural; one:példány; other:példány;}}) ide kerülnek:",
+			"noLevel": "Nincs szint",
+			"levelsHint": "A példányok raktári jelzetében a szint velük együtt változik (például B 4 DEL helyett B 5 DEL), és a címkéik visszakerülnek a nyomtatandók közé."
+		},
+		"levels": {
+			"title": "Olvasási szintek",
+			"hint": "Sorrendben, a legkönnyebbtől kezdve. A kód a könyvekre és a raktári jelzetbe kerül (például a 4 a B 4 DEL-ben), a név a választásokban jelenik meg. Használatban lévő szint eltávolítása vagy átnevezése esetén mentéskor meg kell adni, hová kerüljenek a szint könyvei.",
+			"code": "Szintkód",
+			"label": "Szint neve",
+			"up": "Mozgatás felfelé",
+			"down": "Mozgatás lefelé",
+			"remove": "Szint eltávolítása",
+			"add": "Szint hozzáadása"
+		}
+	},
+	"sections": {
+		"library": {
+			"title": "Könyvtár és iskola",
+			"description": "Név, iskolatípus, osztályok és szakaszok, tanév, időzóna."
+		},
+		"school": {
+			"title": "Iskola",
+			"description": "Az iskola iskolafokozatai és évfolyamai, az osztály írásmódja, és az osztályokkal történő teendők az év végén. Maguk az osztályok az Adminisztráció → Beállítások → Osztályok alatt kezelhetők."
+		},
+		"catalog": {
+			"title": "Katalógus",
+			"description": "Értékek ismeretlen szerző, kiadó és hely esetére."
+		},
+		"barcodes": {
+			"title": "Vonalkódok",
+			"description": "Olvasójegyek és példányok formátuma, régi kódok, vonalkód típusa."
+		},
+		"circulation": {
+			"title": "Kölcsönzés",
+			"description": "Kölcsönzési és hosszabbítási szabályok, határidők, felszólítások, nyugták."
+		},
+		"calendar": {
+			"title": "Naptár",
+			"description": "Zárva tartó napok és ünnepnapok."
+		},
+		"z3950": {
+			"title": "Z39.50 (SBN)",
+			"description": "Azok a kiszolgálók, ahonnan a könyvrekordok érkeznek."
+		},
+		"metadata": {
+			"title": "Könyvadatok",
+			"description": "Az adatforrások ISBN szerinti kereséskor."
+		},
+		"performance": {
+			"title": "Teljesítmény",
+			"description": "A számítógép, amelyen a BiblioViva fut, és az ettől függő beállítások."
+		},
+		"classification": {
+			"title": "Osztályozás",
+			"description": "Műfajok, témakörök, piktogramok, Dewey és raktári jelzetek."
+		},
+		"cards": {
+			"title": "Olvasójegyek",
+			"description": "Az olvasójegyek és a nyomtatási lap formátuma."
+		},
+		"labels": {
+			"title": "Címkék",
+			"description": "A könyvek címkéi és gerincsávjai, öntapadó lapok."
+		},
+		"photos": {
+			"title": "Olvasók fényképei",
+			"description": "A fényképek mérete és formátuma."
+		},
+		"covers": {
+			"title": "Borítók",
+			"description": "A borítók mérete, formátuma és forrásai."
+		},
+		"privacy": {
+			"title": "Adatvédelem",
+			"description": "Meddig őrzik a műveleti naplót."
+		},
+		"backup": {
+			"title": "Biztonsági mentés",
+			"description": "A biztonsági mentések időpontja és megőrzése, külső másolat."
+		},
+		"security": {
+			"title": "Biztonság és hozzáférés",
+			"description": "A munkamenetek hossza, bejelentkezési kísérletek, fiókok és szerepkörök."
+		},
+		"ui": {
+			"title": "Felület",
+			"description": "A kölcsönzőpult és a további nyelvek; a színek, a nyelv és az irányítópult a „Megjelenés és nyelv” alatt vannak."
+		}
+	},
+	"fields": {
+		"library": {
+			"name": {
+				"label": "A könyvtár neve",
+				"hint": "Bal felül jelenik meg, az olvasójegyeken és a nyomtatványokon."
+			},
+			"contactEmail": {
+				"label": "Kapcsolattartó e-mail-cím",
+				"hint": "Nem kötelező: azokon a nyomtatványokon jelenik meg, amelyek tartalmazzák."
+			},
+			"schoolYearStart": {
+				"label": "A tanév kezdete",
+				"hint": "Hónap és nap HH-NN alakban (például 09-01): ez választja el az éveket a statisztikákban."
+			},
+			"schoolYearLabel": {
+				"label": "A tanév neve",
+				"hint": "Ahogy a tanév megjelenik az olvasójegyeken, a jelentéseken és az oldalakon: két évvel (2026/2027) vagy a kezdő évvel (2026), ahogy Brazíliában, Japánban és Koreában."
+			},
+			"timezone": {
+				"label": "Időzóna",
+				"hint": "A zóna neve, például Europe/Rome: a dátumok és a határidők ehhez igazodnak, nem a szerver órájához."
+			},
+			"weekStart": {
+				"label": "A hét első napja",
+				"hint": "Az a nap, amellyel a hetek kezdődnek a naptárakban és az irányítópult „ezen a héten” részében. Az első indításkor a nyelv választja ki (olasz nyelv esetén hétfő, angol esetén vasárnap)."
+			}
+		},
+		"school": {
+			"classLabel": {
+				"label": "Az osztály írásmódja",
+				"hint": "{level} az évfolyam, {group} az osztály neve: „{level} {group}” 3 B-t ad, „{level}{group}” 3B-t. Egy iskolafokozatnak lehet saját írásmódja (Iskolafokozatok és évfolyamok)."
+			},
+			"groupWord": {
+				"label": "Az osztály szava",
+				"hint": "Az osztály mezőjének neve az űrlapokon és a szűrőkön, valamint a {word} az olvasójegy osztálysorában (Szakasz B, Osztály B, Csoport B)."
+			},
+			"cardClass": {
+				"label": "Az osztály az olvasójegyen",
+				"hint": "Az olvasójegyen nyomtatott osztálysor: {word} az osztály szava, {group} az osztály neve, {level} az évfolyam, {class} a teljes osztály. „{word} {group}” esetén Szakasz B, „{class}” esetén 3 B lesz az eredmény."
+			},
+			"teacherGroupName": {
+				"label": "A tanári csoport neve",
+				"hint": "Az a csoport, amelybe a tanár kerül, ha nem választanak másikat."
+			},
+			"promotionWithinStage": {
+				"label": "Év végén, ugyanabban az iskolafokozatban",
+				"hint": "Általában az osztály a tanulóival együtt lép tovább: a 3 B a 4 B lesz."
+			},
+			"promotionAcrossStages": {
+				"label": "Év végén, másik iskolafokozatba lépéskor",
+				"hint": "Például az általános iskola 5. évfolyamától a középiskola 1. évfolyamáig egy többfokozatú iskolában."
+			}
+		},
+		"catalog": {
+			"specialAuthors": {
+				"label": "Különleges szerzők",
+				"hint": "Soronként egy: a személyes szerző helyett elfogadott értékek (például Anonimo, AA. VV.)."
+			},
+			"unknownPublisher": {
+				"label": "Ismeretlen kiadó",
+				"hint": "Az az érték, amelyet akkor kell írni, ha a kiadó nincs megadva."
+			},
+			"unknownPlace": {
+				"label": "Ismeretlen hely",
+				"hint": "Az az érték, amelyet akkor kell írni, ha a kiadás helye nincs megadva."
+			}
+		},
+		"barcodes": {
+			"keyboardLayout": {
+				"label": "A számítógép billentyűzete",
+				"hint": "A számítógépek billentyűzetkiosztása, amelyekhez a vonalkódolvasók csatlakoznak: azokat a karaktereket javítja, amelyeket egy másik billentyűzetre állított olvasó rosszul ír."
+			},
+			"cameraSound": {
+				"label": "A kamera hangja",
+				"hint": "A telefon sípolása, amikor a kamera egy olvasójegyet, egy példány vonalkódját vagy egy ISBN-t olvas. Az USB-olvasó magától sípol, nincs rá szüksége; a kölcsönzőpult csendben marad."
+			},
+			"patron": {
+				"symbology": {
+					"label": "Az olvasójegyek vonalkódtípusa",
+					"hint": "Új olvasójegyekhez Code 128; a Code 39 csak akkor, ha a könyvtár olvasói nem olvassák a Code 128-at."
+				}
+			},
+			"item": {
+				"symbology": {
+					"label": "A példányok vonalkódtípusa",
+					"hint": "Új címkékhez Code 128; a Code 39 csak akkor, ha a könyvtár olvasói nem olvassák a Code 128-at."
+				}
+			}
+		},
+		"circulation": {
+			"rules": {
+				"student": {
+					"loanDays": {
+						"label": "Kölcsönzési napok",
+						"hint": "Hány napig tart egy kölcsönzés a tanulóknak."
+					},
+					"maxLoans": {
+						"label": "Legtöbb kölcsönzött könyv",
+						"hint": "Hány könyv lehet egyszerre valakinél."
+					},
+					"maxRenewals": {
+						"label": "Legtöbb hosszabbítás",
+						"hint": "Hányszor lehet ugyanazt a kölcsönzést meghosszabbítani (0 = soha)."
+					},
+					"renewalDays": {
+						"label": "Hosszabbítási napok",
+						"hint": "Hány nappal hosszabbodik meg a kölcsönzés minden hosszabbításkor."
+					}
+				},
+				"teacher": {
+					"loanDays": {
+						"label": "Kölcsönzési napok",
+						"hint": "Hány napig tart egy kölcsönzés a tanároknak."
+					},
+					"maxLoans": {
+						"label": "Legtöbb kölcsönzött könyv",
+						"hint": "Hány könyv lehet egyszerre valakinél."
+					},
+					"maxRenewals": {
+						"label": "Legtöbb hosszabbítás",
+						"hint": "Hányszor lehet ugyanazt a kölcsönzést meghosszabbítani (0 = soha)."
+					},
+					"renewalDays": {
+						"label": "Hosszabbítási napok",
+						"hint": "Hány nappal hosszabbodik meg a kölcsönzés minden hosszabbításkor."
+					}
+				}
+			},
+			"dueDateMode": {
+				"label": "A határidő számítása",
+				"hint": "Hogyan számítódik a kölcsönzés hossza a könyvtár zárva tartási napjaihoz képest."
+			},
+			"renewFrom": {
+				"label": "A hosszabbítás kezdete",
+				"hint": "Az a nap, amelytől a hosszabbítási napokat számítjuk."
+			},
+			"allowRenewalWhenOverdue": {
+				"label": "Hosszabbítás a határidő után is",
+				"hint": "Már lejárt kölcsönzés is meghosszabbítható."
+			},
+			"overdueNotice": {
+				"template": {
+					"label": "A felszólítások sablonja",
+					"hint": "A felszólítások nyomtatási sablonjának neve (mappa a slips/templates alatt)."
+				},
+				"pageBreakPerGroup": {
+					"label": "Egy oldal osztályonként",
+					"hint": "Minden osztály külön lapon, hogy átadható legyen a tanárnak; nyomtatáskor is lehet módosítani."
+				},
+				"minDays": {
+					"label": "Késési napok a felszólítás előtt",
+					"hint": "A kölcsönzés csak ennyi késés után jelenik meg a felszólításokban (0 = azonnal)."
+				}
+			},
+			"blockIfOverdue": {
+				"label": "Nincs új kölcsönzés lejárt könyvekkel",
+				"hint": "Aki lejárt könyvvel rendelkezik, nem vihet el másikat, amíg vissza nem adja."
+			},
+			"hardDueDate": {
+				"label": "Legkésőbbi határidő",
+				"hint": "Egyetlen kölcsönzés határideje sem lehet ez a dátum utáni (például a tanítás vége). Üresen: nincs korlát."
+			},
+			"receipts": {
+				"label": "Kölcsönzési nyugta",
+				"hint": "A kölcsönzőpulton megjeleníti a nyugta nyomtatásának gombját."
+			}
+		},
+		"calendar": {
+			"autoItalianHolidays": {
+				"label": "Olasz nemzeti ünnepek",
+				"hint": "A nemzeti ünnepek (a húsvét is) zárva tartó napok anélkül, hogy kézzel kellene beírni őket."
+			}
+		},
+		"z3950": {
+			"defaultTarget": {
+				"label": "Alapértelmezett kiszolgáló",
+				"hint": "A keresésekhez használt Z39.50-kiszolgáló azonosítója."
+			},
+			"timeoutMs": {
+				"label": "Várakozási időkorlát (ms)",
+				"hint": "Hány milliszekundum után marad abba egy Z39.50-keresés."
+			},
+			"maxRecordsIsbn": {
+				"label": "Találatok ISBN-enként",
+				"hint": "Legfeljebb hány rekord olvasódik be ISBN-keresésnél (egy ISBN-hez minden újranyomás külön rekordot kaphat): a legteljesebb nyílik meg."
+			},
+			"maxRecordsSearch": {
+				"label": "Találatok keresésenként",
+				"hint": "Legfeljebb hány rekord olvasódik be cím vagy szerző szerinti keresésnél."
+			}
+		},
+		"metadata": {
+			"providers": {
+				"label": "Adatforrások",
+				"hint": "Honnan jönnek a könyvadatok ISBN szerinti keresésnél: a kiválasztott forrásokat egyszerre kérdezi le."
+			},
+			"cacheDays": {
+				"label": "Napok, ameddig a keresések megmaradnak",
+				"hint": "Hány napig használják újra a már elvégzett keresést, anélkül hogy újra kérdeznének."
+			},
+			"timeoutMs": {
+				"label": "Várakozási időkorlát (ms)",
+				"hint": "Hány milliszekundum után hagyjuk figyelmen kívül a nem válaszoló forrást."
+			}
+		},
+		"performance": {
+			"profile": {
+				"label": "Számítógép",
+				"hint": "A BiblioViva futtatására használt számítógéphez illő alapbeállítások."
+			},
+			"sqliteCacheMb": {
+				"label": "Adatbázis-gyorsítótár (MB)",
+				"hint": "Üresen: a számítógép szerint (8, 16, 64 vagy 256 MB)."
+			},
+			"sqliteMmapMb": {
+				"label": "Adatbázis memóriatérképe (MB)",
+				"hint": "Üresen: a számítógép szerint (0, 0, 0 vagy 512 MB)."
+			},
+			"walAutocheckpointPages": {
+				"label": "Oldalak az ellenőrzőpont előtt",
+				"hint": "Üresen: a számítógép szerint (500, 1000, 2000 vagy 4000)."
+			},
+			"imageConcurrency": {
+				"label": "Egyszerre feldolgozott képek",
+				"hint": "Fényképek, borítók, osztályképek és a logó egyszerre dolgozódnak fel; a többi a sorára vár. Üresen: a számítógép szerint (1, 1, 2 vagy 4)."
+			},
+			"yazConcurrency": {
+				"label": "Z39.50-keresések egyszerre",
+				"hint": "Z39.50-keresések egyszerre futnak; a többi a sorára vár. Üresen: a számítógép szerint (1, 1, 2 vagy 2)."
+			},
+			"heavyConcurrency": {
+				"label": "Nyomtatások és exportok egyszerre",
+				"hint": "A nyomtatandó lapok (olvasójegyek, címkék, felszólítások, nyugták, jelentések) és az exportok (CSV, ODS, archívumok, biztonsági mentések) egyszerre készülnek elő; a többi a sorára vár, így a kölcsönzőpult gyors marad. Üresen: a számítógép szerint (1, 1, 2 vagy 4)."
+			},
+			"argon2MemoryMb": {
+				"label": "Memória a jelszavak ellenőrzéséhez (MB)",
+				"hint": "A mostantól beállított jelszavakra vonatkozik. Üresen: 16 MB minden számítógépen (a rendszer soha nincs kitéve az internetnek)."
+			},
+			"smol": {
+				"label": "Memóriatakarékosság",
+				"hint": "Kevesebb memória, egy kicsit több munka a processzornak. Automatikus: a számítógép szerint (igen a minimális számítógépen és a Raspberry Pi-n). Újraindítás után lép érvénybe."
+			}
+		},
+		"cards": {
+			"defaultTemplate": {
+				"label": "Olvasójegy-sablon",
+				"hint": "Annak a nyomtatási sablonnak a neve, amelyet akkor használunk, ha egy olvasótípusnak nincs saját sablonja (mappa a cards/templates alatt)."
+			},
+			"layout": {
+				"label": "Olvasójegyek nyomtatása",
+				"hint": "Elöl és hátul egymás mellett (a rövid élen hajtva), vagy a lap két oldalán, olyan nyomtatóval, amely kétoldalasan nyomtat. Minden nyomtatáskor újra lehet választani."
+			},
+			"duplex": {
+				"flip": {
+					"label": "Hogyan fordul a lap",
+					"hint": "Ahogy a nyomtató a lapot a hátoldalhoz megfordítja: a hosszú élen (mint egy könyv) vagy a rövid élen. Egyeznie kell a nyomtatási ablakban választottal."
+				},
+				"backOffsetMm": {
+					"x": {
+						"label": "A hátoldalak eltolása vízszintesen (mm)",
+						"hint": "A kalibrálás határozza meg: mennyit kell eltolni a hátoldalakat, hogy az elülső oldalak mögé kerüljenek."
+					},
+					"y": {
+						"label": "A hátoldalak eltolása függőlegesen (mm)",
+						"hint": "A kalibrálás határozza meg."
+					}
+				}
+			},
+			"cardMm": {
+				"width": {
+					"label": "Szélesség (mm)",
+					"hint": "A szabványos olvasójegy 85,6 mm széles."
+				},
+				"height": {
+					"label": "Magasság (mm)",
+					"hint": "A szabványos olvasójegy 53,98 mm magas."
+				}
+			},
+			"bleedMm": {
+				"label": "Túlnyúlás (mm)",
+				"hint": "A teljes oldalt betöltő képek körüli többlet margó, amelyet levágnak."
+			},
+			"sheet": {
+				"paper": {
+					"label": "Papírméret",
+					"hint": "Az a lap, amelyre az olvasójegyeket nyomtatják."
+				},
+				"rows": {
+					"label": "Olvasójegyek laponként",
+					"hint": "Hány olvasójegy (elöl és hátul) egymás alatt: 4 vagy 5 egy A4-es lapon."
+				},
+				"marginMm": {
+					"label": "A lap margója (mm)",
+					"hint": "Az olvasójegyek körüli fehér tér."
+				},
+				"gapMm": {
+					"label": "Távolság az olvasójegyek között (mm)",
+					"hint": "Egy olvasójegy és a következő közötti távolság."
+				},
+				"foldMarks": {
+					"label": "Hajtásjelek",
+					"hint": "Rövid szaggatott vonalak a margókon és az olvasójegyek között, ahol az elülső és a hátulsó oldalt hajtani kell."
+				},
+				"cutMarks": {
+					"label": "Vágásjelek",
+					"hint": "Vágójelek: rövid vonalak a margókon és az olvasójegyek között, amelyek meghosszabbítják az egyes olvasójegyek széleit, hogy vonalzóval és vágókéssel lehessen vágni."
+				}
+			},
+			"validityMonths": {
+				"label": "Érvényesség (hónap)",
+				"hint": "Hány hónapig érvényes egy kinyomtatott olvasójegy. Üresen: nem jár le."
+			},
+			"showPhoto": {
+				"label": "Fénykép az olvasójegyen",
+				"hint": "Az olvasó fényképét nyomtatja az olvasójegyre."
+			}
+		},
+		"labels": {
+			"default": {
+				"label": "Alapértelmezett címkék",
+				"hint": "Ami a „Címkék nyomtatása” választásakor nyomtatódik."
+			},
+			"titleMaxChars": {
+				"label": "A cím betűi",
+				"hint": "A címkéken lévő cím ennyi hosszúságúra lesz vágva."
+			},
+			"monochrome": {
+				"label": "Fekete-fehér nyomtató",
+				"hint": "Az alacsony gerincsávokon a színes sáv vonalkázott mintává válik."
+			},
+			"pair": {
+				"template": {
+					"label": "Sablon",
+					"hint": "A pár nyomtatási sablonjának neve (mappa a labels/templates alatt)."
+				},
+				"stock": {
+					"label": "Öntapadó lap",
+					"hint": "A használt címkelap azonosítója (fájl a labels/stocks alatt)."
+				}
+			},
+			"barcode": {
+				"template": {
+					"label": "Sablon",
+					"hint": "A vonalkódcímke nyomtatási sablonjának neve (mappa a labels/templates alatt)."
+				},
+				"stock": {
+					"label": "Öntapadó lap",
+					"hint": "A használt címkelap azonosítója (fájl a labels/stocks alatt)."
+				}
+			},
+			"spine": {
+				"template": {
+					"label": "Sablon",
+					"hint": "A gerincsáv nyomtatási sablonjának neve (mappa a labels/templates alatt)."
+				},
+				"stock": {
+					"label": "Öntapadó lap",
+					"hint": "A használt címkelap azonosítója (fájl a labels/stocks alatt)."
+				}
+			}
+		},
+		"photos": {
+			"enabled": {
+				"label": "Olvasók fényképei",
+				"hint": "Bekapcsolva: minden olvasóhoz készített vagy feltöltött fénykép, fényképes felvétel, fénykép az olvasójegyeken. Kikapcsolva: sehol nincs fénykép, és az olvasójegyek fénykép nélkül készülnek; a már mentett fényképek megmaradnak, és újra megjelennek, ha visszakapcsolják."
+			},
+			"required": {
+				"label": "Fénykép kötelező",
+				"hint": "Bekapcsolva: az irányítópult, az olvasók listája és a nyomtatási listák jelzik, kinek nincs fényképe. Kikapcsolva: nincs emlékeztető, de a fényképek továbbra is készíthetők, feltölthetők és az olvasójegyekre nyomtathatók."
+			},
+			"width": {
+				"label": "Szélesség (px)",
+				"hint": "A fényképek ilyen szélességgel mentődnek."
+			},
+			"height": {
+				"label": "Magasság (px)",
+				"hint": "A fényképek ilyen magassággal mentődnek (középre vágva)."
+			},
+			"format": {
+				"label": "Fájlformátum",
+				"hint": "A JPEG mindenhol működik; a WebP kevesebb helyet foglal."
+			},
+			"quality": {
+				"label": "Minőség",
+				"hint": "1-től 100-ig: minél magasabb, annál nagyobbak a fájlok."
+			},
+			"maxUploadBytes": {
+				"label": "Legnagyobb feltölthető méret (bájt)",
+				"hint": "A nagyobb fájlt a rendszer visszautasítja."
+			},
+			"sheet": {
+				"maxUploadBytes": {
+					"label": "Legnagyobb fájlméret (bájt)",
+					"hint": "A fényképes felvétel képből funkcióhoz használt, több fényképet tartalmazó kép, ha ennél nagyobb, visszautasításra kerül."
+				},
+				"maxPixels": {
+					"label": "Megtartott leghosszabb oldal (px)",
+					"hint": "A képet addig kicsinyítik, amíg a leghosszabb oldala nem haladja meg ezt az értéket."
+				},
+				"maxFrames": {
+					"label": "Legfeljebb fényképek száma",
+					"hint": "Ha a kép több fényképet tartalmaz, a legélesebbeket tartják meg."
+				},
+				"minAspect": {
+					"label": "Egy fénykép legkisebb aránya",
+					"hint": "Magasság osztva szélességgel: 1 a négyzet, 1,33 egy 3:4-es igazolványkép."
+				},
+				"maxAspect": {
+					"label": "Egy fénykép legnagyobb aránya",
+					"hint": "Magasság osztva szélességgel: a túl hosszúkás keretek nem számítanak fényképnek."
+				}
+			}
+		},
+		"covers": {
+			"enabled": {
+				"label": "Könyvborítók",
+				"hint": "Bekapcsolva: online keresett, fényképezett vagy feltöltött borítók, amelyek a katalógusban látszanak. Kikapcsolva: sehol nincs borító; a már mentett borítók megmaradnak, és újra megjelennek, ha visszakapcsolják."
+			},
+			"width": {
+				"label": "Szélesség (px)",
+				"hint": "A borítók ilyen szélességgel mentődnek."
+			},
+			"maxHeight": {
+				"label": "Legnagyobb magasság (px)",
+				"hint": "A túl magas borítókat kicsinyítik. Üresen: nincs korlát."
+			},
+			"format": {
+				"label": "Fájlformátum",
+				"hint": "A JPEG mindenhol működik; a WebP kevesebb helyet foglal."
+			},
+			"quality": {
+				"label": "Minőség",
+				"hint": "1-től 100-ig: minél magasabb, annál nagyobbak a fájlok."
+			},
+			"maxUploadBytes": {
+				"label": "Legnagyobb feltölthető méret (bájt)",
+				"hint": "A nagyobb fájlt a rendszer visszautasítja."
+			},
+			"country": {
+				"label": "Ország",
+				"hint": "A borítószolgáltatók katalógusának országa (két betű, például IT)."
+			},
+			"minWidth": {
+				"label": "Legkisebb szélesség (px)",
+				"hint": "Az ennél keskenyebb letöltött borítókat eldobják."
+			},
+			"autoFetch": {
+				"label": "A borítót magától keresi",
+				"hint": "Az „Új könyv” lapon a borítót online keresi a katalógusrekord ellenőrzése közben, és a rekorddal együtt menti; ha rossz, fényképre cserélik."
+			},
+			"timeoutMs": {
+				"label": "Várakozási időkorlát (ms)",
+				"hint": "Hány milliszekundum után hagyjuk figyelmen kívül a nem válaszoló szolgáltatót."
+			}
+		},
+		"privacy": {
+			"auditRetentionMonths": {
+				"label": "Műveleti napló hónapjai",
+				"hint": "A naplósorok régebbi részét törlik."
+			}
+		},
+		"backup": {
+			"cron": {
+				"label": "Biztonsági mentés időpontja",
+				"hint": "Cron alakban: perc, óra, nap, hónap, a hét napja (0 3 * * * = minden éjjel 3-kor)."
+			},
+			"catchUp": {
+				"label": "Kimaradt biztonsági mentés indításkor",
+				"hint": "Ha a biztonsági mentés időpontjában a számítógép ki volt kapcsolva, a BiblioViva a következő indítás után egy perccel készíti el a mentést: csak egyet, akkor is, ha több nap telt el."
+			},
+			"keepDays": {
+				"label": "Megőrzött napok",
+				"hint": "A régebbi biztonsági mentéseket törlik."
+			},
+			"offsite": {
+				"enabled": {
+					"label": "Külső másolat használatban",
+					"hint": "Jelzi, hogy a biztonsági mentések második másolata (rclone, másik lemezen vagy másik szolgáltatásnál) használatban van."
+				},
+				"remote": {
+					"label": "A másolat célja",
+					"hint": "Hová kerül a másolat: egy másik lemez mappája (/offsite/biblioviva-backups, az alapértelmezett), vagy az rclone-ban beállított cél, név:mappa alakban."
+				}
+			}
+		},
+		"security": {
+			"sessionDays": {
+				"label": "Munkamenet hossza (nap)",
+				"hint": "Hány nap után kell újra jelszóval belépni."
+			},
+			"loginMaxAttempts": {
+				"label": "Bejelentkezési kísérletek",
+				"hint": "Hány sikertelen kísérlet után következik kényszerített szünet."
+			},
+			"loginWindowMinutes": {
+				"label": "Szünet túl sok kísérlet után (perc)",
+				"hint": "Hány percig marad zárva a bejelentkezés túl sok kísérlet után."
+			}
+		},
+		"ui": {
+			"checkoutIdleSeconds": {
+				"label": "Kölcsönzőpult tétlenségi ideje (másodperc)",
+				"hint": "Ennyi másodperc leolvasás nélkül után a kölcsönzőpult készen áll a következő olvasóra."
+			}
+		}
+	},
+	"options": {
+		"library": {
+			"weekStart": {
+				"monday": "Hétfő",
+				"sunday": "Vasárnap",
+				"saturday": "Szombat"
+			},
+			"schoolYearLabel": {
+				"span": "Két év (2026/2027)",
+				"start": "A kezdő év (2026)"
+			}
+		},
+		"school": {
+			"promotionWithinStage": {
+				"keep": "Az osztály a tanulóival együtt lép tovább",
+				"clear": "A tanulók osztály nélkül maradnak"
+			},
+			"promotionAcrossStages": {
+				"keep": "Az osztály a tanulóival együtt lép tovább",
+				"clear": "A tanulók osztály nélkül maradnak",
+				"ask": "Minden tanuló osztályát kiválasztják"
+			}
+		},
+		"barcodes": {
+			"patron": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"item": {
+				"symbology": {
+					"code128": "Code 128",
+					"code39": "Code 39"
+				}
+			},
+			"keyboardLayout": {
+				"it": "Olasz",
+				"es": "Spanyol",
+				"de": "Német",
+				"fr": "Francia",
+				"uk": "Angol (Egyesült Királyság)",
+				"us": "Angol (Egyesült Államok)"
+			},
+			"cameraSound": {
+				"off": "Nincs hang",
+				"till": "Pénztár",
+				"scanner": "Vonalkódolvasó",
+				"confirm": "Megerősítés",
+				"arpeggio": "Arpeggio"
+			}
+		},
+		"circulation": {
+			"dueDateMode": {
+				"datedue": "Naptári napok, majd az első nyitva tartó nap",
+				"calendar": "Csak a nyitva tartó napok",
+				"days": "Naptári napok, a zárásokat figyelmen kívül hagyva"
+			},
+			"renewFrom": {
+				"today": "A hosszabbítás napja",
+				"dueDate": "A jelenlegi határidő"
+			}
+		},
+		"metadata": {
+			"providers": {
+				"sbn": "OPAC SBN (Z39.50)",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books",
+				"sbn-json": "OPAC SBN (webszolgáltatás)"
+			}
+		},
+		"performance": {
+			"profile": {
+				"micro": "Minimális számítógép: lassú processzor és 512 MB (Raspberry Pi Zero 2, a legkisebb kiszolgáló)",
+				"small": "Raspberry Pi 4 2 GB memóriával, vagy kis számítógép",
+				"medium": "Régi PC merevlemezzel",
+				"large": "PC SSD-vel"
+			}
+		},
+		"cards": {
+			"sheet": {
+				"paper": {
+					"A4": "A4"
+				}
+			},
+			"layout": {
+				"side-by-side": "Elöl és hátul egymás mellett",
+				"duplex": "A lap két oldalán"
+			},
+			"duplex": {
+				"flip": {
+					"long-edge": "A hosszú élen",
+					"short-edge": "A rövid élen"
+				}
+			}
+		},
+		"labels": {
+			"default": {
+				"pair": "Pár: gerincsáv és címke",
+				"barcode": "Csak vonalkódcímke",
+				"spine": "Csak gerincsáv"
+			}
+		},
+		"photos": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		},
+		"covers": {
+			"format": {
+				"jpeg": "JPEG",
+				"webp": "WebP"
+			}
+		}
+	},
+	"groups": {
+		"barcodes": {
+			"patron": {
+				"title": "Olvasójegyek"
+			},
+			"item": {
+				"title": "Könyvpéldányok"
+			}
+		},
+		"circulation": {
+			"rules": {
+				"title": "Kölcsönzési szabályok",
+				"student": {
+					"title": "Szabályok a tanulókra"
+				},
+				"teacher": {
+					"title": "Szabályok a tanárokra"
+				}
+			},
+			"overdueNotice": {
+				"title": "Felszólítások"
+			}
+		},
+		"cards": {
+			"cardMm": {
+				"title": "Az olvasójegy mérete"
+			},
+			"sheet": {
+				"title": "Nyomtatási lap"
+			},
+			"duplex": {
+				"title": "Kétoldalas nyomtatás",
+				"backOffsetMm": {
+					"title": "A hátoldalak eltolása"
+				}
+			}
+		},
+		"labels": {
+			"pair": {
+				"title": "Pár: gerincsáv és címke"
+			},
+			"barcode": {
+				"title": "Csak vonalkódcímke"
+			},
+			"spine": {
+				"title": "Csak gerincsáv"
+			}
+		},
+		"backup": {
+			"offsite": {
+				"title": "Külső másolat"
+			}
+		},
+		"photos": {
+			"sheet": {
+				"title": "Több fényképet tartalmazó képek (fényképes felvétel képből)"
+			}
+		}
+	},
+	"overview": {
+		"reload": "Újratöltés",
+		"reloaded": "Beállítások újratöltve",
+		"reloadFailed": "A fájlokban hibák vannak: a korábbi beállítás marad érvényben.",
+		"valid": "A beállítások érvényesek: {{count}} {{count:plural; one:fájl; other:fájl;}}.",
+		"example": "A beállítások még nincsenek létrehozva: a példaértékek érvényesek.",
+		"warnings": "{{count}} {{count:plural; one:figyelmeztetés; other:figyelmeztetés;}}",
+		"diskErrors": "A beállítási fájlokban hibák vannak: a könyvtár a korábbi változattal dolgozik, amíg ki nem javítják őket.",
+		"diskChanged": "A fájlokat kézzel módosították: nyomja meg az „Újratöltés” gombot a módosítások használatához.",
+		"sections": "Beállítások",
+		"alsoFrom": "és {{count}} {{count:plural; one:másik fájl; other:másik fájl;}}",
+		"editors": "Megjelenés, osztályok és sablonok",
+		"templates": "Nyomtatási sablonok",
+		"templatesDescription": "Az olvasójegyek, címkék és felszólítások sablonmappái, a képeikkel együtt.",
+		"reports": "Jelentéstár",
+		"reportsDescription": "Beépített és iskolai jelentések: kipróbálás, letöltés, feltöltés, törlés.",
+		"appearance": "Megjelenés és nyelv",
+		"appearanceDescription": "A könyvtár neve és logója, színei, nyelve és az irányítópult szakaszai.",
+		"classes": "Osztályok",
+		"classesDescription": "Az iskola osztályai és a tanári csoportok: létrehozás, átnevezés, archiválás."
+	},
+	"section": {
+		"tabs": {
+			"form": "Beállítások",
+			"json": "JSON",
+			"label": "Szerkesztés módja"
+		},
+		"file": "Mentve ide: {{file}}",
+		"alsoFrom": "Ezenkívül innen: {{files}}",
+		"general": "Általános",
+		"default": "Alapértelmezett: {{value}}",
+		"defaultNone": "Alapértelmezett: nincs érték",
+		"defaultAuto": "Alapértelmezett: automatikus",
+		"usesDefault": "Az alapértelmezettet használja",
+		"reset": "Visszaállítás az alapértelmezettre",
+		"willReset": "Mentéskor visszaáll az alapértelmezett értékre.",
+		"auto": "Automatikus",
+		"none": "Nincs dátum",
+		"yes": "Igen",
+		"no": "Nem",
+		"fixed": "Rögzített érték",
+		"range": "{{min}} és {{max}} között.",
+		"min": "Legalább {{min}}.",
+		"max": "Legfeljebb {{max}}.",
+		"save": "Mentés",
+		"discard": "Módosítások elvetése",
+		"saved": "Beállítások elmentve",
+		"unsaved": "Mentetlen módosítások",
+		"invalid": "Mentés előtt javítsa ki a megjelölt értékeket.",
+		"errors": "A mentés nem sikerült:",
+		"inUse": "A mentés olyan dolgot távolítana el, amely még használatban van:",
+		"inUseKinds": {
+			"classification": "{{code}} kód: {{count}} {{count:plural; one:könyv; other:könyv;}}",
+			"itemType": "{{code}} példánytípus: {{count}} {{count:plural; one:példány; other:példány;}}",
+			"level": "{{code}} szint: {{count}} {{count:plural; one:tanuló; other:tanuló;}} vagy osztály",
+			"readingLevel": "{{code}} olvasási szint: {{count}} {{count:plural; one:könyv; other:könyv;}}"
+		},
+		"patternError": "Érvénytelen formátum.",
+		"numberError": "Egész számot írjon.",
+		"required": "Kötelező.",
+		"elsewhereTitle": "Ennek a szakasznak más beállításai",
+		"elsewhereHint": "Ezeket külön szerkesztővel vagy a JSON fülön lehet módosítani.",
+		"openEditor": "Megnyitás",
+		"jsonOnly": "Egyelőre a JSON fülön",
+		"editorNames": {
+			"taxonomy": "Osztályozás",
+			"appearance": "Megjelenés és nyelv",
+			"wizard": "A kezdeti beállítási varázsló",
+			"history": "Előzmények",
+			"settings": "Beállítások",
+			"schoolLevels": "Iskolafokozatok és évfolyamok"
+		},
+		"json": {
+			"hint": "A szakasz úgy, ahogy a(z) {{file}} fájlban van megírva. Az _ karakterrel kezdődő kulcsok megjegyzések, és a fájlban maradnak.",
+			"label": "A szakasz JSON-tartalma",
+			"parseError": "A szöveg nem érvényes JSON: {{message}}",
+			"notObject": "A szakasznak kapcsos zárójelek közötti JSON-objektumnak kell lennie.",
+			"valid": "Nincs probléma.",
+			"checking": "Ellenőrzés…",
+			"issues": "Javítandó problémák:"
+		},
+		"playSound": "Meghallgatás"
+	},
+	"history": {
+		"title": "A beállítások előzményei",
+		"hint": "A felületről tett minden módosítás megőrzi az érintett fájlok korábbi változatát (az utolsó 50 módosítást).",
+		"empty": "Az adminisztrációból eddig nem történt módosítás.",
+		"columns": {
+			"when": "Mikor",
+			"what": "Mi",
+			"files": "Fájlok"
+		},
+		"revert": "Visszaállítás",
+		"revertTitle": "Visszaállítja a fájlokat a módosítás előtti állapotukra?",
+		"revertDescription": "Csak ennek a módosításnak az értékei térnek vissza. A visszaállítás maga is módosítás: megmarad az előzményekben, és visszavonható.",
+		"reverted": "A korábbi változat visszaállítva",
+		"refused": "Ez a módosítás hozta létre a config.json fájlt: nem vonható vissza.",
+		"conflict": "Nem állítható vissza: ez után a módosítás után újra módosultak a következők: {{keys}}.",
+		"notFound": "A módosítás már nincs meg az előzményekben.",
+		"newFile": "új",
+		"actions": {
+			"revert": "A(z) {{when}} időpontban tett módosítás visszaállítása",
+			"theme": "Színek",
+			"locale": "Nyelv",
+			"logo": "A könyvtár logója",
+			"setup": "Kezdeti beállítás",
+			"section": "„{{section}}” szakasz",
+			"other": "Módosítás ({{action}})"
+		}
+	},
+	"archive": {
+		"title": "A beállítások archívuma",
+		"hint": "A teljes beállítás egy fájlban: beállítások, nyomtatási sablonok, öntapadó lapok, piktogramok, logó, jelentések és nyelvek (az előzmények nélkül). Arra szolgál, hogy másolatot tartson belőle, vagy átvigye egy másik telepítésre. A „Beállítások importálása” gomb biztonsági mentést vagy „Mindent exportál” archívumot is elfogad: ebből csak a beállításokat veszi át, a könyvtár adatai változatlanok maradnak.",
+		"export": "Beállítások exportálása",
+		"import": "Beállítások importálása",
+		"checking": "Az archívum ellenőrzése…",
+		"from": "{{date}} napján készült archívum (verzió: {{version}})",
+		"fromLibrary": "„{{library}}” könyvtár {{date}} napján készült archívuma (verzió: {{version}})",
+		"files": "{{added}} {{added:plural; one:új fájl; other:új fájl;}}, {{changed}} módosult, {{removed}} eltávolítva, {{unchanged}} változatlan.",
+		"fileList": "Fájlok listája",
+		"added": "új",
+		"changed": "módosult",
+		"removed": "eltávolítva",
+		"sameValues": "A beállítások ugyanazok maradnak.",
+		"sections": "Módosul: {{sections}}.",
+		"errorsTitle": "Az archívumban hibák vannak: ezeket az importálás előtt ki kell javítani.",
+		"apply": "Importálás",
+		"confirmTitle": "Lecseréli a beállításokat az archívum beállításaira?",
+		"confirmDescription": "A jelenlegi fájlok megmaradnak az előzményekben: a „Visszaállítás” visszahozza a korábbi beállításokat. A könyvtár adatai (könyvek, olvasók, kölcsönzések) nem változnak.",
+		"imported": "Beállítások importálva",
+		"failed": "Az importálás nem sikerült",
+		"errors": {
+			"too_large": "Az archívum túl nagy (legfeljebb {{maxMb}} MB).",
+			"not_zip": "A fájl nem érvényes ZIP-archívum.",
+			"not_archive": "A fájl nem BiblioViva-archívum.",
+			"too_many_files": "Az archívum túl sok fájlt tartalmaz.",
+			"unsafe_path": "Az archívum nem megengedett elérési utat tartalmaz: {{name}}",
+			"link": "Az archívum nem megengedett hivatkozást tartalmaz: {{name}}",
+			"unknown_file": "Az archívum olyan fájlt tartalmaz, amely nem része a beállításoknak: {{name}}",
+			"no_config": "Az archívum nem tartalmaz beállításokat (csak könyvtári adatokat): ezt az Adminisztráció → Biztonsági mentés menüpontból lehet visszaállítani."
+		},
+		"exportSome": "A kiválasztott részek exportálása",
+		"chooseExport": "Válassza ki, mit exportáljon"
+	},
+	"blocks": {
+		"problems": {
+			"codeRequired": {
+				"itemTypes": "A kód megadása kötelező.",
+				"sections": "A tagozat megadása kötelező."
+			},
+			"codeFormat": {
+				"itemTypes": "Betűk, számjegyek, pont, kötőjel vagy aláhúzásjel (legfeljebb 32).",
+				"sections": "Nagybetűk vagy számjegyek, legfeljebb 8."
+			},
+			"codeTaken": {
+				"itemTypes": "Ismétlődő kód.",
+				"sections": "Ismétlődő tagozat."
+			},
+			"labelRequired": {
+				"itemTypes": "A név megadása kötelező.",
+				"sections": "A név megadása kötelező."
+			}
+		},
+		"itemTypes": {
+			"title": "Példánytípusok",
+			"hint": "Könyv, DVD, kézikönyv…: minden példány típusa határozza meg a kölcsönzési szabályokat. A kód módosítása a hozzá tartozó példányokat az új kódhoz rendeli.",
+			"code": "Kód",
+			"label": "Név",
+			"notForLoan": "Csak helyben használható",
+			"add": "Típus hozzáadása",
+			"saved": "Példánytípusok mentve"
+		},
+		"move": {
+			"title": "Hová kerülnek?",
+			"hint": {
+				"copies": "Néhány eltávolított típushoz még tartoznak példányok: válassza ki azt a típust, amelyre át kell helyezni őket.",
+				"students": "Néhány eltávolított tagozathoz még tartoznak tanulók: válassza ki azt a tagozatot, amelyre át kell helyezni őket."
+			},
+			"row": {
+				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:példány; other:példány;}}. Áthelyezés ide",
+				"students": "{{code}}: {{count}} {{count:plural; one:tanuló; other:tanuló;}}. Áthelyezés ide"
+			},
+			"choose": "Válasszon…",
+			"used": {
+				"copies": "Példányok",
+				"students": "Tanulók"
+			},
+			"count": {
+				"copies": "{{count}} {{count:plural; one:példány; other:példány;}}",
+				"students": "{{count}} {{count:plural; one:tanuló; other:tanuló;}}"
+			},
+			"done": {
+				"copies": "{{count}} {{count:plural; one:példány áthelyezve; other:példány áthelyezve;}}.",
+				"students": "{{count}} {{count:plural; one:tanuló áthelyezve; other:tanuló áthelyezve;}}."
+			}
+		},
+		"barcodes": {
+			"title": "Számozás és előnézet",
+			"counter": "Az új olvasójegyek számai",
+			"afterLegacy": "A már meglévő olvasójegyek legmagasabb száma után",
+			"from": "Ettől a számtól kezdve:",
+			"fromNumber": "Az új olvasójegyek első száma",
+			"counterHint": "A már használt szám soha nem tér vissza: ha a kiválasztott szám alacsonyabb, a számlálás onnan folytatódik, ahol tart. Az új példányok mindig tartalmazzák az évet és egy folyamatos számot.",
+			"nextCard": "Következő olvasójegy: {{code}}",
+			"nextItem": "Következő példány: {{code}}",
+			"overrides": "Ezek a nyomtatási sablonok maguk választják meg a vonalkód típusát, ezért a fenti beállítás rájuk nem vonatkozik: {{templates}}.",
+			"saved": "Számozás mentve"
+		},
+		"itemTypeRules": {
+			"title": "Szabályok példánytípusonként",
+			"hint": "Minden példánytípusnál módosítható egy szabály, például a DVD-k 5 napra kölcsönözhetők. A szabályok a tanulókra és a tanárokra egyaránt vonatkoznak.",
+			"inherit": "Üresen hagyva: a tanulókra és a tanárokra érvényes szabály vonatkozik (szürkével: tanulók / tanárok).",
+			"saved": "Szabályok példánytípusonként mentve"
+		},
+		"calendar": {
+			"title": "Könyvtári naptár",
+			"weekly": "Hetente zárva tartó napok",
+			"weeklyHint": "A kiemelt napok minden héten zárva vannak.",
+			"previous": "Előző tanév",
+			"next": "Következő tanév",
+			"addNational": "Az {{year}} évi nemzeti ünnepek hozzáadása",
+			"autoOn": "A nemzeti ünnepek már automatikusan zártak. Nyitott napra kattintva az zárul; kézzel zárt napra kattintva újra kinyílik.",
+			"clickHint": "Nyitott napra kattintva az zárul; kézzel zárt napra kattintva újra kinyílik.",
+			"open": "nyitva",
+			"legend": {
+				"open": "Nyitva",
+				"weekly": "Heti zárvatartás",
+				"national": "Nemzeti ünnep",
+				"holiday": "Zárva (itt választva)",
+				"range": "Zárvatartási időszak"
+			},
+			"ranges": "Zárvatartási időszakok",
+			"from": "Kezdete",
+			"to": "Vége",
+			"reason": "Ok",
+			"badRange": "A vége a kezdete előtt van.",
+			"addRange": "Időszak hozzáadása",
+			"saved": "Naptár mentve"
+		},
+		"cardTemplates": {
+			"title": "Sablon olvasótípusonként",
+			"hint": "A tanulók és a tanárok az olvasójegyet a fent kiválasztott alapértelmezett sablonnal nyomtatják, hacsak itt nem választanak másikat.",
+			"student": "Tanulói olvasójegy",
+			"teacher": "Tanári olvasójegy",
+			"asDefault": "Mint az alapértelmezett ({{name}})",
+			"cutLines": "Színes keret minden olvasójegyen",
+			"cutLinesOn": "Színes keret rajzolása minden olvasójegyre (általában nincs rá szükség: elég a vágójel)",
+			"color": "Szín",
+			"width": "Vastagság (mm)",
+			"sample": "A vágóvonal mintája",
+			"saved": "Olvasójegy-sablonok mentve"
+		},
+		"stocks": {
+			"title": "Öntapadó címkelapok",
+			"hint": "A nyomtatásra használt címkelapok méretei. A jobb oldali rajz minden számot követ: a lapról kilógó címkék pirosak. Mentés után nyomtassa ki a próbaoldalt sima papírra, és tartsa a címkelap fölé.",
+			"new": "Új",
+			"toFix": "Javítandó",
+			"add": "Lap hozzáadása",
+			"id": "Kód",
+			"name": "Név",
+			"labelWidth": "Címke szélessége (mm)",
+			"labelHeight": "Címke magassága (mm)",
+			"columns": "Oszlopok",
+			"rows": "Sorok",
+			"marginTop": "Felső margó (mm)",
+			"marginLeft": "Bal oldali margó (mm)",
+			"gapX": "Oszlopok közötti távolság (mm)",
+			"gapY": "Sorok közötti távolság (mm)",
+			"radius": "Lekerekített sarkok (mm)",
+			"calibration": "Próbaoldal nyomtatása",
+			"inUse": "Ehhez használják: {{jobs}}. A törléséhez először válasszon másik lapot a fenti beállításokban.",
+			"saveFirst": "A próbaoldal nyomtatásához mentse a módosításokat.",
+			"drawing": "Az A4-es lap rajza: {{columns}} {{columns:plural; one:oszlop; other:oszlop;}}, {{rows}} {{rows:plural; one:sor; other:sor;}} címkével",
+			"caption": "A4-es lap · {{count}} {{count:plural; one:címke; other:címke;}}",
+			"saved": "Címkelapok mentve",
+			"problems": {
+				"id": "A kód betűket, számjegyeket, kötőjeleket és aláhúzásjeleket tartalmazhat.",
+				"duplicate": "Másik lapnak már ez a kódja van.",
+				"name": "Írjon be egy nevet.",
+				"numbers": "Ellenőrizze a méreteket: 0-tól felfelé írt számok, nullánál nagyobb címkék, egész oszlopok és sorok.",
+				"width": "A címkék {{mm}} mm-t foglalnak: ez több, mint az A4-es lap szélessége (210 mm).",
+				"height": "A címkék {{mm}} mm-t foglalnak: ez több, mint az A4-es lap magassága (297 mm).",
+				"pairRows": "A párhoz páros számú sor kell (gerincsáv és címke egymás alatt)."
+			},
+			"errors": {
+				"duplicate": "Két lapnak ugyanaz a kódja: {{details}}.",
+				"inUse": "A nyomtatáshoz használt lap nem törölhető: {{details}}."
+			}
+		},
+		"backupSchedule": {
+			"title": "Következő biztonsági mentések",
+			"invalid": "Az időpont nem érvényes cron-kifejezés (öt mező: perc, óra, nap, hónap, a hét napja).",
+			"never": "Ezzel a kifejezéssel a biztonsági mentés soha nem indul el.",
+			"hint": "Az időpontok a könyvtár időzónájában ({{timezone}}) értendők. Ha a számítógép abban az időpontban ki van kapcsolva, a „Kihagyott mentés pótlása indításkor” beállítással a mentés a következő indításkor készül; az időpont a nyitvatartási időre is áthelyezhető."
+		},
+		"coverProviders": {
+			"off": "A borítók ki vannak kapcsolva (fent: Könyvborítók): egyik forrás sem lesz lekérdezve.",
+			"title": "Honnan származzanak a borítók",
+			"hint": "A forrásokat ebben a sorrendben próbálja a rendszer, amíg valamelyik meg nem találja a borítót; mindegyik külön kikapcsolható.",
+			"names": {
+				"amazon": "Amazon",
+				"openlibrary": "Open Library",
+				"googlebooks": "Google Books"
+			},
+			"googleKey": "A Google Books API-kulcsot igényel: írja be a „Könyvadatok” beállításai között, különben ezt a forrást kihagyjuk.",
+			"saved": "Borítóforrások mentve"
+		},
+		"z3950Targets": {
+			"title": "Z39.50 katalógusok",
+			"hint": "A katalógusok, ahonnan a könyvadatok származnak. A „Kapcsolat ellenőrzése” valódi keresést végez a megadott értékekkel, de nem menti azokat.",
+			"id": "Kód",
+			"name": "Név",
+			"host": "Szerver címe",
+			"port": "Port",
+			"database": "Adatbázis",
+			"syntax": "Rekordformátum",
+			"charset": "Karakterkódolás",
+			"elements": "Elemek",
+			"elementsHint": "Általában F (teljes rekord).",
+			"add": "Katalógus hozzáadása",
+			"isDefault": "Ez az alapértelmezett katalógus: a törléséhez előbb válasszon másikat a fenti listából.",
+			"saved": "Katalógusok mentve",
+			"problems": {
+				"id": "A kódnak egyedinek kell lennie: betűk, számjegyek, kötőjelek.",
+				"required": "A név, az adatbázis, a kódolás és az elemek megadása kötelező.",
+				"host": "A címben betűk, számjegyek, pontok és kötőjelek szerepelhetnek.",
+				"words": "Az adatbázis, a kódolás és az elemek egy-egy szóból állnak, szóköz nélkül.",
+				"port": "A port egy 1 és 65535 közötti szám."
+			},
+			"test": {
+				"button": "Kapcsolat ellenőrzése",
+				"running": "Ellenőrzés…",
+				"ok": "A katalógus válaszol: {{hits}} {{hits:plural; one:találat; other:találat;}}, {{ms}} ms alatt.",
+				"unreachable": "A katalógus nem válaszol: ellenőrizze a címet, a portot és az adatbázist.",
+				"timeout": "A katalógus nem válaszolt időben.",
+				"protocol": "A katalógus hibával válaszolt: ellenőrizze az adatbázist, a formátumot és a kódolást.",
+				"spawn": "A yaz-client program nem érhető el a szerveren."
+			}
+		},
+		"barcodeFormats": {
+			"title": "Kódok formátuma",
+			"hint": "Hogyan épülnek fel az új példányok és az új olvasójegyek kódjai. A már nyomtatott kódok továbbra is működnek: a lecserélt formátum a korábbi formátumok között marad.",
+			"preset": "Kész formátumok",
+			"presets": {
+				"standard": "Alapértelmezett (2026-E0267, U012345)",
+				"classic": "Klasszikus (2026-02678, 0000012344)",
+				"prefix": "Betűvel elöl (L-2602670, T0123455)",
+				"custom": "Egyéni"
+			},
+			"check": "Ellenőrző karakter",
+			"checks": {
+				"mod23": "Betű (mod 23)",
+				"damm": "Számjegy (Damm)",
+				"luhn": "Számjegy (Luhn)"
+			},
+			"checkHint": "Felismeri a rosszul beolvasott vagy beírt kódot. A betű a legbiztonságosabb, és első pillantásra megkülönbözteti az olvasójegyeket a példánykódoktól.",
+			"advanced": "Speciális: a formátumok egyenként",
+			"tokens": "YYYY vagy YY = év, N = a folyamatos szám számjegyei, C = ellenőrző karakter, {lib} = könyvtári kód, - = kötőjel, nagybetűk aposztrófok között ('T'). Az I, O és Q betűk nem megengedettek.",
+			"pattern": {
+				"item": "Példányok formátuma",
+				"patron": "Olvasójegyek formátuma"
+			},
+			"libraryCode": "Könyvtári kód",
+			"libraryCodeHint": "Csak akkor kell, ha több, külön telepítésű könyvtárnak eltérő kódja kell legyen: a formátumban a {lib} helyőrzővel együtt használják.",
+			"plainMaxLength": "A régi egyszerű számok számjegyei",
+			"plainHint": "A korábbi rendszer olvasójegyeinek és példányainak legtöbb számjegye, amelyek nem rendelkeznek formátummal (0, ha nincs ilyen).",
+			"plainLongest": "Az archívumban a leghosszabb egyszerű szám {{digits}} {{digits:plural; one:számjegyű; other:számjegyű;}}.",
+			"distinct": "Példányok és olvasójegyek nem téveszthetők össze.",
+			"confusable": "Ezekkel a formátumokkal a példányok és az olvasójegyek összetéveszthetők lennének:",
+			"warnings": "{{count}} {{count:plural; one:figyelmeztetés; other:figyelmeztetés;}}",
+			"inUse": "A(z) {{pattern}} formátumhoz még {{count}} {{count:plural; one:kód; other:kód;}} tartozik az archívumban: nem távolítható el.",
+			"kinds": {
+				"item": "példányok",
+				"card": "olvasójegyek"
+			},
+			"heading": {
+				"item": "Példányok",
+				"patron": "Olvasójegyek"
+			},
+			"examples": "Új kódok példái:",
+			"currentCount": "Ehhez a formátumhoz tartozó kódok az archívumban: {{count}}",
+			"count": "{{count}} {{count:plural; one:kód; other:kód;}}",
+			"noCheck": "ellenőrzés nélkül",
+			"remove": "Eltávolítás",
+			"retired": "Korábban használt formátumok",
+			"legacy": "A korábbi rendszer kódjai",
+			"noLegacy": "Nincs.",
+			"addLegacy": "Régi formátum hozzáadása",
+			"try": "Kód kipróbálása",
+			"tryHint": "Itt beírt vagy beolvasott kódot a rendszer a fenti formátumok szerint ismer fel, a mentés előtt is.",
+			"tried": {
+				"item": "{{value}}: példány vonalkódja",
+				"legacy_item": "{{value}}: régi példány vonalkódja",
+				"card": "{{value}}: olvasójegy száma",
+				"isbn": "{{value}}: ISBN",
+				"ambiguous": "{{value}}: régi egyszerű szám (példányok és olvasójegyek között keresve)",
+				"invalid": "{{value}}: nem ismerhető fel, vagy hibás az ellenőrző karakter"
+			},
+			"saved": "Kódformátumok mentve",
+			"patternErrors": {
+				"empty": "Üres formátum ({{kind}})",
+				"tooLong": "{{pattern}}: túl hosszú",
+				"badToken": "{{pattern}}: váratlan jelet tartalmaz",
+				"badLetter": "{{pattern}}: nem megengedett betű (csak nagybetű, az I, O, Q kivételével)",
+				"unclosedQuote": "{{pattern}}: hiányzik a záró aposztróf",
+				"year": "{{pattern}}: az évet YYYY vagy YY alakban kell írni",
+				"twoYears": "{{pattern}}: az év kétszer szerepel",
+				"twoCounters": "{{pattern}}: a folyamatos számnak egyetlen N-csoportnak kell lennie",
+				"noCounter": "{{pattern}}: hiányzik a folyamatos szám (N)",
+				"twoChecks": "{{pattern}}: az ellenőrző karakter kétszer szerepel",
+				"checkWithoutAlgorithm": "{{pattern}}: van C, de nincs ellenőrzés kiválasztva",
+				"algorithmWithoutCheck": "{{pattern}}: hiányzik a C, az ellenőrző karakter helye",
+				"noLibraryCode": "{{pattern}}: tartalmazza a {lib} részt, de a könyvtári kód üres",
+				"badLibraryCode": "A könyvtári kód csak számjegyeket és nagybetűket tartalmazhat (az I, O, Q kivételével)"
+			},
+			"issues": {
+				"overlap": "{{pattern}} ({{kind}}) és {{other}} ({{otherKind}}) ugyanazt a kódot adhatja, például: {{example}}",
+				"overlapWithoutDash": "{{pattern}} ({{kind}}) és {{other}} ({{otherKind}}) összetéveszthető, ha a leolvasó kihagyja a kötőjelet, például: {{example}}",
+				"overlapLegacy": "A régi {{pattern}} ({{kind}}) és {{other}} ({{otherKind}}) kódok alakja azonos: mindkét archívumban keresik őket",
+				"overlapPlain": "{{pattern}} ({{kind}}) egy régi egyszerű számmal egyenlő kódot adhat, például: {{example}}",
+				"overlapIsbn": "{{pattern}} ({{kind}}) egy ISBN-nel egyenlő kódot adhat, például: {{example}}",
+				"overlapIsbn10": "{{pattern}} ({{kind}}) kötőjelek nélkül beírt ISBN-10 alakú: az olvasójegy száma érvényesül",
+				"lookAlike": "{{pattern}} ({{kind}}) és {{other}} ({{otherKind}}) túlságosan hasonlítanak: legalább 2 karakter hosszkülönbség, egy másik helyen álló betű vagy egy másik helyen lévő kötőjel kell"
+			}
+		},
+		"schoolLevels": {
+			"title": "Iskolafokok és évfolyamok",
+			"hint": "Az iskola évfolyamai abban a sorrendben, ahogy végigjárják őket, iskolafokonként csoportosítva. A kód a tanulóknál marad: egy használatban lévő évfolyam eltávolításakor vagy átkódolásakor meg kell adni, hová kerüljenek a tanulói és az osztályai.",
+			"preset": "Minta",
+			"presetApply": "Minta használata",
+			"presetHint": "A lenti iskolafokokat és évfolyamokat a minta szerint cseréli ki; semmi nem mentődik a „Mentés” gombig.",
+			"custom": "Egyéni",
+			"stages": "Iskolafokok",
+			"stageCode": "Kód",
+			"stageName": "Név",
+			"stageLabel": "Az osztály jelölése",
+			"addStage": "Iskolafok hozzáadása",
+			"stageLabelHint": "Egy iskolafok „Az osztály jelölése” beállítása az ő évfolyamaira vonatkozik az iskola helyett; a {group} nélkül az osztály csak az évfolyam (például Q1, tagozatok nélkül). Üresen: mint az iskola többi része.",
+			"levels": "Évfolyamok",
+			"levelCode": "Kód",
+			"levelLabel": "Az osztályban",
+			"levelName": "Név",
+			"levelStage": "Iskolafok",
+			"levelNext": "A következő évfolyam",
+			"levelAliases": "Más nevek",
+			"levelAliasesPlaceholder": "Vesszővel elválasztva",
+			"nextFollowing": "A következő évfolyam",
+			"nextLeaves": "Kilép az iskolából",
+			"nextChoices": "Választás több évfolyam között",
+			"choiceAdd": "Választás hozzáadása…",
+			"choiceRemove": "{{name}} eltávolítása",
+			"choiceDefault": "alapértelmezett",
+			"addLevel": "Évfolyam hozzáadása",
+			"inUse": "Használatban",
+			"moveUp": "Feljebb",
+			"moveDown": "Lejjebb",
+			"example": "Példa: {{label}}",
+			"saved": "Iskolafokok és évfolyamok mentve",
+			"problems": {
+				"code": "Kódok: betűk, számjegyek és kötőjel (évfolyamnál legfeljebb 8), mind különbözők.",
+				"required": "A címke és a név megadása kötelező.",
+				"template": "Az iskolafok „Az osztály jelölése” beállításának tartalmaznia kell a {level} részt.",
+				"stageUsed": "Évfolyamokat tartalmazó iskolafok nem távolítható el.",
+				"structure": "A szerkezet nem érvényes: {{details}}"
+			},
+			"move": {
+				"title": "Hová kerülnek a tanulók és az osztályok?",
+				"hint": "Néhány eltávolított évfolyamnál még vannak tanulók vagy osztályok. Mindegyiknél válassza ki azt az évfolyamot, ahová át kell helyezni őket; a kölcsönzések megtartják azt az osztályt, amelyben készültek.",
+				"level": "{{name}}: {{pupils}} {{pupils:plural; one:tanuló; other:tanuló;}}, {{classes}} {{classes:plural; one:osztály; other:osztály;}}",
+				"choose": "Válasszon évfolyamot…",
+				"confirm": "Áthelyezés és mentés",
+				"done": "Áthelyezve: {{pupils}} {{pupils:plural; one:tanuló; other:tanuló;}} és {{classes}} {{classes:plural; one:osztály; other:osztály;}}."
+			}
+		}
+	},
+	"templates": {
+		"title": "Nyomtatási sablonok",
+		"hint": "A BiblioViva-val szállított sablonok mappái: olvasójegyek, címkék, nyugták és felszólítások. Ezek testreszabhatók (a rendszer azonos nevű másolatot készít), vagy más névvel duplikálhatók; egy másolat képeit és betűtípusait itt lehet feltölteni. Minden művelet megjelenik a konfiguráció előzményei között, és visszavonható.",
+		"source": {
+			"builtin": "A BiblioViva-val szállított",
+			"customised": "Testreszabott",
+			"added": "Hozzáadott"
+		},
+		"broken": "Hibás",
+		"customise": "Testreszabás",
+		"duplicate": "Duplikálás",
+		"rename": "Átnevezés",
+		"restore": "Vissza az eredetihez",
+		"usedBy": "Használja: {{settings}}.",
+		"unused": "Egyik beállítás sem használja.",
+		"assets": "Képek és betűtípusok ({{count}})",
+		"noAssets": "Nincs fájl.",
+		"usedIn": "használva ebben: {{files}}",
+		"assetUnused": "nincs használatban",
+		"upload": "Fájl feltöltése",
+		"uploadHint": "PNG, JPEG, WebP, GIF, SVG vagy WOFF2, WOFF, TTF betűtípus; legfeljebb {{maxMb}} MB.",
+		"builtinAssets": "A BiblioViva-val szállított sablon képeinek módosításához előbb testre kell szabni.",
+		"files": "Sablonfájlok ({{count}})",
+		"filesHint": "A HTML és a CSS tartalma a sablonok vizuális szerkesztőjében módosítható.",
+		"done": {
+			"duplicate": "Sablon duplikálva",
+			"customise": "Sablon testreszabva: a másolata módosítható",
+			"rename": "Sablon átnevezve",
+			"delete": "Sablon törölve",
+			"upload": "{{name}} feltöltve",
+			"removeAsset": "{{name}} törölve"
+		},
+		"errors": {
+			"notFound": "A sablon vagy a fájl nem található.",
+			"badName": "Érvénytelen név: kisbetűk, számjegyek, kötőjelek és aláhúzásjelek.",
+			"exists": "Már létezik sablon ezzel a névvel.",
+			"builtin": "A BiblioViva-val szállított sablonokat nem lehet módosítani: testre kell szabni vagy duplikálni őket.",
+			"inUse": "A sablont ezek használják: {{details}}. Előbb válasszon másik sablont.",
+			"badAsset": "„{{name}}” nem megengedett fájl (PNG, JPEG, WebP, GIF, script nélküli SVG, WOFF2, WOFF, TTF).",
+			"assetTooLarge": "„{{name}}” túl nagy: legfeljebb {{maxMb}} MB.",
+			"assetInUse": "A fájlt itt használják: {{details}}."
+		},
+		"dialog": {
+			"name": "Mappa neve",
+			"nameHint": "Kisbetűk, számjegyek, kötőjelek és aláhúzásjelek.",
+			"badName": "Csak kisbetűk, számjegyek, kötőjelek és aláhúzásjelek használhatók.",
+			"taken": "Már létezik sablon ezzel a névvel.",
+			"duplicate": {
+				"title": "{{name}} duplikálása",
+				"hint": "Készül egy másolat minden fájljával, módosításra kész állapotban.",
+				"confirm": "Duplikálás"
+			},
+			"customise": {
+				"title": "{{name}} testreszabása",
+				"hint": "Az azonos nevű másolat foglalja el az eredeti helyét; az eredeti megmarad, és vissza lehet térni hozzá.",
+				"confirm": "Testreszabás"
+			},
+			"rename": {
+				"title": "{{name}} átnevezése",
+				"hint": "A sablont használó beállítások követik az új nevet.",
+				"confirm": "Átnevezés"
+			},
+			"delete": {
+				"title": "{{name}} törlése",
+				"hint": "A mappa és a fájljai törlődnek; ha a BiblioViva-val szállított sablon másolata volt, ismét az eredeti lesz használatban. Az előzményekből visszavonható.",
+				"confirm": "Törlés"
+			}
+		},
+		"edit": "Szerkesztés"
+	},
+	"languages": {
+		"title": "Nyelvi csomagok",
+		"hint": "BiblioViva más nyelven való használatához: töltse le az angol vagy az olasz példát, fordítsa le a JSON fájlok szövegeit úgy, hogy a kulcsok és a dupla kapcsos zárójelek közötti helyőrzők változatlanok maradjanak, írja be a nyelv nevét a pack.json fájlba, majd töltse fel a zip fájlt. A hibás csomag nem települ; a hiányzó szövegek angolul látszanak. A nyelv a Megjelenés és nyelv menüpontban választható.",
+		"none": "Nincs telepített csomag.",
+		"valid": "Érvényes",
+		"errorsCount": "{{count}} {{count:plural; one:hiba; other:hiba;}}",
+		"warnings": "{{count}} {{count:plural; one:hiányzó vagy felesleges szöveg; other:hiányzó vagy felesleges szöveg;}}",
+		"inUse": "Használatban",
+		"download": "Letöltés",
+		"report": "Ellenőrzés eredménye",
+		"upload": "Csomag feltöltése (zip)",
+		"uploadHint": "Zip fájl a pack.json fájllal és a nyelv fájljaival, a nyelv kódjáról elnevezett mappában (például de/); legfeljebb {{maxMb}} MB.",
+		"examples": "Letölthető példák:",
+		"installed": "Nyelv telepítve: {{name}}",
+		"removed": "Csomag törölve",
+		"removeTitle": "Törli a(z) {{code}} csomagot?",
+		"removeHint": "A nyelv mappája törlődik. A konfiguráció előzményeiből visszavonható.",
+		"errors": {
+			"notAZip": "A fájl nem zip fájl.",
+			"tooLarge": "A zip fájl túl nagy: legfeljebb {{maxMb}} MB.",
+			"badLayout": "A zip fájlnak csak a nyelv .json fájljait kell tartalmaznia, egyetlen, a nyelv kódjáról elnevezett mappában. {{details}}",
+			"badCode": "Érvénytelen nyelvkód: {{details}} (például de, fr, pt-BR).",
+			"builtIn": "Az angol és az olasz nyelv beépített, nem cserélhetők le.",
+			"invalid": "A csomag hibákat tartalmaz, ezért nem lett telepítve: {{details}}",
+			"inUse": "Ez a használatban lévő nyelv: előbb válasszon másikat.",
+			"notFound": "A csomag nem található.",
+			"unavailable": "A nyelvlistát vagy a csomagot nem sikerült letölteni. Ellenőrizze az internetkapcsolatot, vagy töltse fel a zip fájlt kézzel.",
+			"checksum": "A letöltött csomag sérült, ezért nem lett telepítve. Próbálja újra."
+		},
+		"release": {
+			"title": "Telepítendő nyelvek",
+			"hint": "A BiblioViva ezzel a verziójával közzétett nyelvek. A lista az internetről olvasódik be, és minden csomagot ellenőriznek a telepítés előtt.",
+			"percent": "{{percent}}% lefordítva",
+			"machine": "Automatikus fordítás, anyanyelvi beszélő nem olvasta el",
+			"reviewed": "Anyanyelvi beszélő által átolvasott fordítás",
+			"install": "Telepítés",
+			"again": "Újratelepítés",
+			"installedBadge": "Telepítve",
+			"page": "A kiadás oldala: a csomagok kézi letöltéséhez és a lenti feltöltéshez",
+			"unavailable": "A nyelvlista nem érhető el: nincs internetkapcsolat, vagy ez a verzió még nem tartalmaz listát. A lenti zip-feltöltés így is működik."
+		}
+	},
+	"reports": {
+		"title": "Jelentéstár",
+		"hint": "A BiblioViva-val szállított jelentések és az iskola saját jelentései. Egy jelentés testreszabásához töltse le, módosítsa, majd töltse fel: azonos kóddal (azonosító) az eredetit váltja fel. Telepítés előtt a rendszer ellenőrzi a formátumot, a lekérdezés biztonságát, valamint a használt táblákat és oszlopokat. A jelentések írásának útmutatója a docs/reports-authoring.md fájlban található.",
+		"upload": "Jelentés feltöltése (JSON)",
+		"try": "Kipróbálás",
+		"download": "Letöltés",
+		"problems": "Ezek a fájlok nem töltődnek be:",
+		"installed": "A(z) {{id}} jelentés telepítve",
+		"replaced": "A(z) {{id}} jelentés lecserélve",
+		"removed": "Fájl törölve",
+		"removeTitle": "Törli a(z) {{file}} fájlt?",
+		"removeHint": "A fájl törlődik a konfigurációból. Az előzményekből visszavonható.",
+		"restoreHint": "Az iskola változata törlődik: ismét a BiblioViva-val szállított jelentés lesz használatban. Az előzményekből visszavonható.",
+		"origin": {
+			"builtin": "A BiblioViva-val szállított",
+			"customised": "Testreszabott",
+			"added": "Hozzáadott"
+		},
+		"errors": {
+			"tooLarge": "A fájl túl nagy: legfeljebb {{maxKb}} KB.",
+			"badJson": "A fájl nem érvényes JSON: {{details}}",
+			"invalid": "A definíció nem érvényes: {{details}}",
+			"sql": "A lekérdezés nem működik ezen az adatbázison: {{details}}",
+			"notFound": "A fájl nem található.",
+			"reservedId": "A „new” nem lehet jelentéskód."
+		},
+		"new": "Új jelentés",
+		"edit": "Szerkesztés",
+		"duplicate": "Duplikálás",
+		"editor": {
+			"editTitle": "Jelentés szerkesztése",
+			"newTitle": "Új jelentés",
+			"copySuffix": "másolat",
+			"builtinHint": "Ez beépített jelentés: a mentés az iskola testreszabott másolatát készíti el, azonos névvel. A jelentéstárban a „Vissza az eredetihez” művelet törli.",
+			"id": "Jelentéskód",
+			"category": "Kategória",
+			"title": {
+				"it": "Cím (olasz)",
+				"en": "Cím (angol)"
+			},
+			"description": {
+				"it": "Leírás (olasz)",
+				"en": "Leírás (angol)"
+			},
+			"restricted": "Csak adminisztrátoroknak",
+			"tabs": {
+				"label": "Szerkesztési mód",
+				"guided": "Vezetett",
+				"sql": "SQL"
+			},
+			"sqlOnly": "Ez a jelentés SQL-ben készült: az SQL lapon szerkessze.",
+			"source": "Adatok",
+			"rows": "Sorok",
+			"rows2": "Sorok, második szint",
+			"columns": "Oszlopok",
+			"columnsHint": "Oszlopok megadásával a jelentés kimutatássá alakul, összesítésekkel.",
+			"none": "— nincs —",
+			"totals": "Összesítések",
+			"totalsOptions": {
+				"both": "Összesítő sor és oszlop",
+				"rows": "Összesítő oszlop",
+				"columns": "Összesítő sor",
+				"none": "Nincs összesítés"
+			},
+			"sort": "Sorrend",
+			"sortDimension": "A sorok sorrendjében",
+			"sortMeasure": "A legnagyobb értéktől",
+			"measures": "Értékek",
+			"oneMeasure": "A kimutatás egy értéket jelenít meg.",
+			"filters": "Szűrők",
+			"filterModes": {
+				"off": "Nincs szűrő",
+				"ask": "Megnyitáskor kérdezi",
+				"fixed": "Rögzített"
+			},
+			"value": "Érték",
+			"chart": "Diagram",
+			"charts": {
+				"bar": "Oszlopok",
+				"line": "Vonalak",
+				"doughnut": "Gyűrűdiagram"
+			},
+			"compiledHint": "A vezetett jelentés ebből az SQL-ből készül. Kézzel való írásához használja az „Szerkesztés SQL-ként” gombot: utána nem lehet visszatérni a vezetett szerkesztéshez.",
+			"previewFirst": "Nyomja meg az „Előnézet” gombot az SQL megtekintéséhez.",
+			"convert": "Szerkesztés SQL-ként",
+			"convertTitle": "Átalakítja a jelentést SQL-re?",
+			"convertHint": "A jelentés SQL-jelentéssé alakul ugyanazokkal az oszlopokkal és paraméterekkel. A vezetett lapon többé nem szerkeszthető.",
+			"converted": "A jelentés most már SQL-ben van",
+			"sqlHint": "Egyetlen SELECT vagy WITH utasítás, a paraméterek :név alakban.",
+			"json": {
+				"params": "Paraméterek (JSON)",
+				"columns": "Oszlopok (JSON)",
+				"chart": "Diagram (JSON, opcionális)",
+				"pivot": "Kimutatás (JSON, opcionális)"
+			},
+			"jsonHint": "A jelentések útmutatójában leírt formátumban.",
+			"preview": "Előnézet",
+			"runPreview": "Előnézet",
+			"previewHint": "Az előnézet a paraméterek alapértelmezett értékeivel futtatja a jelentést (legfeljebb 200 sor).",
+			"save": "Mentés",
+			"saved": "A(z) „{{id}}” jelentés mentve",
+			"back": "Vissza a jelentéstárba",
+			"jsonInvalid": "Mentés előtt javítsa a pirossal jelölt JSON-részeket."
+		}
+	},
+	"designer": {
+		"title": "{{name}} szerkesztése",
+		"design": "Tervezés",
+		"code": "Kód",
+		"preview": "Előnézet",
+		"front": "Előlap",
+		"back": "Hátlap",
+		"faces": "Oldalak vagy címkék",
+		"zoom": "Nagyítás",
+		"grid": "Rács",
+		"gridSteps": {
+			"s0": "Nincs (szabad)",
+			"s05": "0,5 mm",
+			"s1": "1 mm",
+			"s2": "2 mm",
+			"s25": "2,5 mm",
+			"s5": "5 mm",
+			"s10": "10 mm"
+		},
+		"files": "Fájlok",
+		"problems": "A sablon így nem nyomtatható:",
+		"saved": "Sablon mentve",
+		"notEditable": "Ez a sablon itt nem szerkeszthető: a BiblioViva-val szállított sablonokat előbb testre kell szabni.",
+		"canvasHint": "Kattintson egy négyszögre a kiválasztásához, húzza az áthelyezéséhez, a sarkánál fogva méretezze. A helyek és a méretek a kiválasztott rácshoz igazodnak. Billentyűzettel a nyilak egy rácslépéssel mozgatják (Shift-tel körülbelül 5 mm, mindig a rácson), a Del törli.",
+		"flowHint": "{{count}} {{count:plural; one:elem; other:elem;}} ennek az oldalnak a stíluslap rendezi el (pontozott keret): az első áthelyezéskor mindegyik helye bekerül a fájlba, ahol most van.",
+		"lockedHint": "{{count}} {{count:plural; one:rész; other:rész;}} ennek az oldalnak egy Mustache-szakaszon belül áll, ezért {{count:plural; one:a „Kód” lapon szerkesztendő; other:a „Kód” lapon szerkesztendő;}}.",
+		"noStock": "Egyik címkelap sem használja ezt a változatot: a rajz előnézet nélkül látszik.",
+		"codeHint": "A rajz és a kód ugyanazokat a fájlokat szerkeszti: minden itt végzett módosítás megjelenik a rajzon is, és fordítva.",
+		"add": "Hozzáadás",
+		"newText": "Szöveg",
+		"noImages": "Képek hozzáadásához előbb töltse fel őket a sablon képei közé.",
+		"types": {
+			"field": "Mező",
+			"text": "Szöveg",
+			"barcode": "Vonalkód",
+			"photo": "Fotó",
+			"pictogram": "Piktogram",
+			"image": "Kép",
+			"box": "Doboz",
+			"html": "Szabad HTML",
+			"other": "Elem"
+		},
+		"fields": {
+			"library_name": "A könyvtár neve",
+			"patron_first_name": "Keresztnév",
+			"patron_last_name": "Vezetéknév",
+			"patron_card_number": "Olvasójegy száma",
+			"patron_class_label": "Osztály és tagozat",
+			"patron_level_label": "Osztály (évfolyam)",
+			"patron_group": "Tagozat",
+			"school_year": "Tanév",
+			"issued_on": "Kiállítás dátuma",
+			"valid_until": "Érvényes eddig",
+			"item_barcode": "Vonalkód (szöveg)",
+			"item_call_number": "Raktári jelzet",
+			"call_head": "Raktári jelzet: első sor",
+			"call_rest": "Raktári jelzet: második sor",
+			"biblio_title_short": "Rövid cím",
+			"biblio_author_short": "Rövid szerzőnév",
+			"biblio_publication_year": "Megjelenés éve",
+			"biblio_series": "Sorozat",
+			"biblio_series_number": "Szám a sorozatban",
+			"classification_code": "Osztályozási kód",
+			"classification_label": "Osztályozási csoport neve",
+			"classification_reading_level": "Olvasási szint",
+			"item_item_type": "Példánytípus"
+		},
+		"field": "Mező",
+		"text": "Szöveg",
+		"image": "Kép",
+		"content": "HTML-tartalom",
+		"contentHint": "A dobozt a rajzon lehet mozgatni és formázni; a tartalma HTML-ben íródik Mustache-mezőkkel, ahogy a sablon fájljaiban.",
+		"inherited": "Alapértelmezett",
+		"unplacedHint": "Ezt az elemet a stíluslap rendezi el: áthelyezésekor a helye és az oldal többi elemének helye bekerül a fájlba.",
+		"geometry": {
+			"x": "X (mm)",
+			"y": "Y (mm)",
+			"w": "Szélesség",
+			"h": "Magasság"
+		},
+		"fontSize": "Méret (pt)",
+		"font": "Betűtípus",
+		"fonts": {
+			"sans": "Antikva nélküli",
+			"serif": "Antikva",
+			"mono": "Fix szélességű"
+		},
+		"bold": "Félkövér",
+		"italic": "Dőlt",
+		"uppercase": "Nagybetűs",
+		"align": "Igazítás",
+		"aligns": {
+			"left": "Balra",
+			"center": "Középre",
+			"right": "Jobbra"
+		},
+		"color": "Szín",
+		"border": "Keret",
+		"borderColor": "Keret színe",
+		"fill": "Kitöltés",
+		"fillColor": "Kitöltés színe",
+		"backward": "Hátrébb",
+		"forward": "Előrébb",
+		"background": "Oldal háttere",
+		"backgroundColor": "Háttérszín",
+		"backgroundImage": "Háttérkép",
+		"noImage": "Nincs",
+		"chooseHint": "Válasszon egy dobozt a rajzon a módosításhoz.",
+		"modes": "Sablon nézete",
+		"safeArea": "Biztonságos terület: a szövegek és a fotók a szaggatott vonalon belül maradjanak, a széltől 2 mm-re (elöl-hátul nyomtatásnál a hátlap egy milliméterrel elcsúszhat).",
+		"chooseBackground": "Válasszon hátteret",
+		"uploadBackground": "Kép feltöltése",
+		"backgroundsTitle": "Kész hátterek",
+		"backgroundsHint": "Minden háttér kissé túlnyúlik az olvasójegyen, oldalanként 3 mm-rel: a többletet levágják.",
+		"backgroundAlt": "{{name}} háttér",
+		"backgroundAdded": "A háttér hozzáadva az oldalhoz: mentéssel megtartható.",
+		"backgroundFailed": "A hátteret nem sikerült hozzáadni.",
+		"cardSize": "Olvasójegy mérete",
+		"cardWidth": "Szélesség (mm)",
+		"cardHeight": "Magasság (mm)",
+		"cardRotate": "Forgatás: álló vagy fekvő",
+		"cardDefault": "Vissza az alapértelmezett mérethez ({{width}} × {{height}} mm)",
+		"cardDefaultHint": "Ez a beállítások alapértelmezett mérete (Beállítások → Olvasójegyek): itt csak ehhez a sablonhoz módosítható.",
+		"cardTooLarge": "A {{width}} × {{height}} mm-es olvasójegy nem fér az A4-es lapra: legfeljebb {{maxWidth}} × {{maxHeight}} mm, mert az elülső és a hátulsó oldal egymás mellett áll a margókon belül."
+	},
+	"parts": {
+		"groups": {
+			"data": "Könyvtári adatok",
+			"settings": "Beállítások",
+			"config": "Osztályozás, sablonok és egyebek"
+		},
+		"all": "Mind",
+		"none": "Egyik sem",
+		"accountsConfirm": {
+			"title": "Az archívumban lévő fiókokat és jelszavakat is importálja?",
+			"description": "Az archívumban lévő munkatársi fiókok és jelszavak felülírják a jelenlegieket: aki most belép, a mai hitelesítő adatokkal nem fog tudni. Ha nincs rájuk szükség, hagyja ki a jelölésből.",
+			"confirm": "Fiókok importálása is"
+		},
+		"needs": "„{{part}}” visszaállításához szükség van még: {{needs}}.",
+		"data": {
+			"patrons": "Olvasók",
+			"catalog": "Katalógus és példányok",
+			"loans": "Kölcsönzések és előzmények",
+			"printLists": "Nyomtatási listák",
+			"photos": "Olvasók fényképei",
+			"covers": "Borítók",
+			"notes": "Munkatársi jelzések",
+			"dates": "Naptári dátumok",
+			"audit": "Tevékenységnapló"
+		},
+		"config": {
+			"classification": "Osztályozás és piktogramok",
+			"stocks": "Címkelapok",
+			"calendar": "Naptár",
+			"reports": "Jelentések",
+			"cardTemplates": "Olvasójegy-sablonok",
+			"pairTemplates": "Címkepár-sablonok",
+			"barcodeTemplates": "Vonalkódcímke-sablonok",
+			"spineTemplates": "Gerincsáv-sablonok",
+			"slipTemplates": "Nyugta- és felszólítássablonok",
+			"languages": "Nyelvi csomagok",
+			"logo": "Könyvtári logó"
+		}
+	}
+}
