@@ -1,6 +1,6 @@
 {
 	"name": "biblioviva",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Lean, self-hosted library management for school libraries",
 	"license": "GPL-3.0-or-later",
 	"repository": {

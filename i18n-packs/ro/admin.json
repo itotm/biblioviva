@@ -244,7 +244,15 @@
 			"title": "Limba aplicației",
 			"hint": "O singură limbă pentru fiecare instalare: se aplică întregului personal.",
 			"save": "Schimbați limba",
-			"saved": "Limbă schimbată: pagina se reîncarcă."
+			"saved": "Limbă schimbată: pagina se reîncarcă.",
+			"add": {
+				"title": "Adăugare de limbă",
+				"hint": "Limbile publicate cu această versiune a BiblioViva se aleg din listă și se instalează cu un clic. Pentru un calculator fără internet sau pentru un pachet făcut manual, încărcați fișierul zip.",
+				"select": "Limbi disponibile pe GitHub",
+				"choose": "Alegeți o limbă",
+				"allInstalled": "Toate limbile publicate sunt deja instalate.",
+				"page": "Pagina versiunii pe GitHub, pentru descărcarea fișierelor zip"
+			}
 		},
 		"logo": {
 			"title": "Logoul bibliotecii",

@@ -244,7 +244,15 @@
 			"title": "Språk i applikasjonen",
 			"hint": "Ett språk per installasjon: det gjelder for hele personalet.",
 			"save": "Endre språk",
-			"saved": "Språket er endret: siden lastes inn på nytt."
+			"saved": "Språket er endret: siden lastes inn på nytt.",
+			"add": {
+				"title": "Legg til et språk",
+				"hint": "Språkene som er publisert med denne versjonen av BiblioViva velger du fra listen og installerer med ett klikk. For en datamaskin uten internett, eller for en språkpakke laget for hånd, last opp zip-filen.",
+				"select": "Språk tilgjengelig på GitHub",
+				"choose": "Velg et språk",
+				"allInstalled": "Alle publiserte språk er allerede installert.",
+				"page": "Utgivelsessiden på GitHub, for å laste ned zip-filene"
+			}
 		},
 		"logo": {
 			"title": "Bibliotekets logo",

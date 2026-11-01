@@ -244,7 +244,15 @@
 			"title": "Idioma de l'aplicació",
 			"hint": "Un sol idioma per instal·lació: val per a tot el personal.",
 			"save": "Canvia l'idioma",
-			"saved": "Idioma canviat: la pàgina es torna a carregar."
+			"saved": "Idioma canviat: la pàgina es torna a carregar.",
+			"add": {
+				"title": "Afegir un idioma",
+				"hint": "Els idiomes publicats amb aquesta versió de BiblioViva es trien de la llista i s'instal·len amb un clic. Per a un ordinador sense internet, o per a un paquet fet a mà, carregueu el zip.",
+				"select": "Idiomes disponibles a GitHub",
+				"choose": "Tria un idioma",
+				"allInstalled": "Tots els idiomes publicats ja estan instal·lats.",
+				"page": "Pàgina de la release a GitHub, per descarregar els zips"
+			}
 		},
 		"logo": {
 			"title": "Logo de la biblioteca",

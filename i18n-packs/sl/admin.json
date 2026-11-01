@@ -244,7 +244,15 @@
 			"title": "Jezik aplikacije",
 			"hint": "Vsaka namestitev ima en sam jezik: velja za vse osebje.",
 			"save": "Spremeni jezik",
-			"saved": "Jezik spremenjen: stran se znova naloži."
+			"saved": "Jezik spremenjen: stran se znova naloži.",
+			"add": {
+				"title": "Dodajanje jezika",
+				"hint": "Jeziki, objavljeni s to različico programa BiblioViva, se izberejo s seznama in namestijo z enim klikom. Za računalnik brez interneta ali za ročno pripravljen jezikovni paket naložite zip datoteko.",
+				"select": "Jeziki, ki so na voljo na GitHubu",
+				"choose": "Izberite jezik",
+				"allInstalled": "Vsi objavljeni jeziki so že nameščeni.",
+				"page": "Stran izdaje na GitHubu, za prenos zip datotek"
+			}
 		},
 		"logo": {
 			"title": "Logotip knjižnice",

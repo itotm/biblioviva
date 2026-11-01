@@ -25,18 +25,21 @@ installed.
 1. Log in to BiblioViva as `admin`.
 1. Open **Administration**.
 1. Open **Configuration**.
-1. In the **Settings** list open **Interface**.
-1. Scroll down to the **Language packs** panel.
-1. In the **Languages to install** section look for the language wanted. Each language shows its name, the percentage of
-   texts translated and the size of the pack.
-1. Press **Install** next to the language.
-1. Wait for the message "Language installed:" followed by the name. The pack appears among the installed ones with
-   **Valid** and, in the **Languages to install** section, with **Installed**.
+1. Open **Appearance and language**.
+1. In the **Application language** panel, under **Add a language**, open the **Languages available on GitHub** list and
+   choose the language wanted. The list holds only the languages not installed yet; under it you see the percentage of
+   texts translated and the kind of translation.
+1. Press **Install**.
+1. Wait for the message "Language installed:" followed by the name. The language is already chosen in the **Language**
+   list of the panel.
 1. To use the language, follow the steps of "Use the language" further down in this guide.
 
-If the language shows "Automatic translation, not read by a native speaker", the translation was made by a program and
-nobody who speaks that language has read it yet: it may contain mistakes or unnatural wording. It can be used all the
-same, and the texts can be corrected as described further on.
+If "Automatic translation, not read by a native speaker" appears, the translation was made by a program and nobody who
+speaks that language has read it yet: it may contain mistakes or unnatural wording. It can be used all the same, and the
+texts can be corrected as described further on.
+
+To replace a language that is already installed with the version in the list, open **Configuration**, **Interface**,
+scroll down to **Language packs** and press **Install again** in the **Languages to install** section.
 
 To replace an installed language with the version in the list, press **Install again**.
 
@@ -76,8 +79,10 @@ To replace an installed language with the version in the list, press **Install a
 1. Compress the language folder into a ZIP file, so that the file contains the folder and, inside it, the `.json` files.
    The system command is in the right-click menu on the folder [VERIFY: name of the compression command in the school's
    systems].
-1. In **Language packs** press **Upload a pack (zip)** and choose the file. The pack cannot exceed 5 MB.
-1. Wait for the message "Language installed:" followed by the name. The panel lists the pack with **Valid**. If texts are
+1. In **Appearance and language**, under **Add a language**, press **Upload a pack (zip)** and choose the file. The same
+   button is in **Configuration**, **Interface**, in the **Language packs** panel. The pack cannot exceed 5 MB.
+1. Wait for the message "Language installed:" followed by the name. In **Language packs** the pack is listed with
+   **Valid**. If texts are
    missing, the number of "missing or extra texts" appears next to it.
 
 If the pack has errors it is not installed: the message says which file and which key to correct. After the correction,
@@ -86,7 +91,8 @@ compress and upload the folder again: a pack with the same code replaces the pre
 ### Use the language
 
 1. Open **Administration**, **Configuration**, **Appearance and language**.
-1. In the **Application language** panel choose the new language in the **Language** list.
+1. In the **Application language** panel choose the new language in the **Language** list (after an installation it is
+   already chosen).
 1. Press **Change language**. The page reloads in the new language.
 
 ## Result
@@ -99,7 +105,7 @@ compress and upload the folder again: a pack with the same code replaces the pre
 
 - "The list of languages cannot be reached" appears: the computer that runs BiblioViva is not connected to the internet,
   or the installed version has no list yet. Uploading a ZIP pack, described further on, works all the same: download the
-  language's file from the BiblioViva release page (the **Release page** link under the list, or the address
+  language's file from the BiblioViva release page (the **Release page on GitHub, to download the zips** link under the list, or the address
   `https://github.com/itotm/biblioviva/releases`) on a computer with internet and upload it with **Upload a pack
   (zip)**.
 - "The downloaded pack is damaged and was not installed" appears: the file did not arrive whole. Press **Install** again.

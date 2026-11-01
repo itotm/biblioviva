@@ -244,7 +244,15 @@
 			"title": "Programmets sprog",
 			"hint": "Ét sprog pr. installation: det gælder for hele personalet.",
 			"save": "Skift sprog",
-			"saved": "Sproget er skiftet: siden genindlæses."
+			"saved": "Sproget er skiftet: siden genindlæses.",
+			"add": {
+				"title": "Tilføj et sprog",
+				"hint": "De sprog, der er udgivet med denne version af BiblioViva, vælges fra listen og installeres med ét klik. Til en computer uden internet eller en pakke lavet i hånden uploades zip-filen.",
+				"select": "Sprog tilgængelige på GitHub",
+				"choose": "Vælg et sprog",
+				"allInstalled": "Alle udgivne sprog er allerede installeret.",
+				"page": "Udgivelsessiden på GitHub, til download af zip-filerne"
+			}
 		},
 		"logo": {
 			"title": "Bibliotekets logo",

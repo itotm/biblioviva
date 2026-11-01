@@ -12,6 +12,7 @@ import { openDatabase, type Db } from "#lib/server/db/client.js";
 import { runMigrations } from "#lib/server/db/migrate.js";
 import { auditLog, biblio, patron, staffUser } from "#lib/server/db/schema.js";
 import { resetEnvCache } from "#lib/server/env.js";
+import { APP_VERSION } from "#lib/shared/version.js";
 import { PATRON_RULES } from "../../../../tests/helpers/school.js";
 import { catalogRules, createBiblio } from "./catalog.js";
 import { createExportStream, ArchiveReadError } from "./export-archive.js";
@@ -204,7 +205,7 @@ describe("restore from the first-run wizard", () => {
 		expect(isSetupMode(loadConfig(ctx.configDir))).toBe(true);
 
 		const check = await checkFirstRunRestore(ctx, archive);
-		expect(check.source).toMatchObject({ library: "Biblioteca Rodari", version: "0.1.0" });
+		expect(check.source).toMatchObject({ library: "Biblioteca Rodari", version: APP_VERSION });
 		expect(check.counts).toMatchObject({ catalog: 1, patrons: 1 });
 		expect(check.accounts).toEqual([...WIZARD_ACCOUNTS]);
 		// nothing is written before the operator confirms

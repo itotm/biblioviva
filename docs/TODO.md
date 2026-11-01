@@ -54,8 +54,7 @@ list is cleared at a release, and a new one takes the next.
   tablet and phone windows and the English pictures.
 - [ ] 9.36 The public repository from a snapshot, the start of the public beta (ADR-048): READMEs with the status, what
   BiblioViva does and does not do, Tailscale and the phone optional, the commands; the home page's beta notice; the
-  original logo back in `docs/reference/branding/` (C2PA stripped). Left: the archive, the snapshot, the settings;
-  `ONLINE.repo` on for the home page's GitHub links (then build and upload the home page again).
+  original logo back in `docs/reference/branding/` (C2PA stripped). Left: the archive, the snapshot, the settings.
 - [x] 9.42 What the documentation showed: demo data removed keeping the classes, labels and class cards marked
   printed, the segnatura edited by hand puts the spine band back to print, the accounts not imported without a confirmation, one
   name per account.
@@ -65,8 +64,8 @@ list is cleared at a release, and a new one takes the next.
 - [ ] 9.7 The documentation site on `docs.biblioviva.org`: `bun run site:build` / `site:serve` build it locally from
   `docs/` (ADR-043) with the search (Pagefind, ADR-045), the home page shows four real screenshots; the Pages workflow builds the
   pictures and the site, run by hand only (ADR-050); left: `site:check`, the figure switch, the PDFs, the first
-  publication (after 9.36; GitHub Pages is enabled with source "GitHub Actions", left: the custom domain `docs.biblioviva.org`, the `docs` CNAME in Cloudflare "DNS only", Enforce HTTPS, then Run workflow). `ONLINE.docs` is already on and the READMEs link `docs.biblioviva.org`: upload the home
-  page again once the site is online.
+  publication is done (`docs.biblioviva.org` is online). `ONLINE.docs` and `ONLINE.repo` are on: upload the home page
+  again (`home/biblioviva-home.zip`) for the GitHub link in the header and the Project column in the footer.
 - [ ] 9.3 Accessibility and UX review pass.
 - [ ] 9.4 Device checklist.
 - [x] 9.17 Public demo: running on `demo.biblioviva.org`.
@@ -87,9 +86,10 @@ list is cleared at a release, and a new one takes the next.
   plural forms, scripts; `"translation": "machine"`); the workflow that attaches the zips and the index to a release;
   the app side (the list of the release's packs, "Installa" and a link to the release page in Interfaccia → Pacchetti di
   lingua, refused in the public demo) and the guide `add-a-language`.
+  The language is added in Aspetto e lingua (a list of the release's languages, the zip upload), the release run with the
+  packs attached and the e2e against a local release are done.
   Open: a native speaker's reading of each pack; a Sonnet reading of what the checks flag (long texts, terms, register);
-  the translation of the messages added since (`i18n:sync`); the first release run with the packs attached; an e2e of the
-  install against a mocked release; the shot `admin/language-packs` with a list in it.
+  the translation of the messages added since each release (`i18n:sync`); the shot `admin/language-packs` with a list in it.
 
 ## Housekeeping
 

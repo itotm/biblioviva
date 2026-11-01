@@ -38,9 +38,8 @@ export const ADDRESSES = {
 	repo: "https://github.com/itotm/biblioviva",
 } as const;
 
-/** The sites that are online: the links to the others are left out of the pages. The
- * documentation waits for 9.7, the repository for its public start (9.36). */
-export const ONLINE: Record<"docs" | "repo", boolean> = { docs: true, repo: false };
+/** The sites that are online: the links to the others are left out of the pages. */
+export const ONLINE: Record<"docs" | "repo", boolean> = { docs: true, repo: true };
 
 // The language the visitor chose with a switch of biblioviva.org (the home page, the documentation, the
 // public demo), kept in the cookie `bv_lang` they share (ADR-047); without it the browser's first

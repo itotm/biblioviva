@@ -244,7 +244,15 @@
 			"title": "Sovelluksen kieli",
 			"hint": "Yksi kieli asennusta kohden: se koskee koko henkilökuntaa.",
 			"save": "Vaihda kieli",
-			"saved": "Kieli vaihdettu: sivu ladataan uudelleen."
+			"saved": "Kieli vaihdettu: sivu ladataan uudelleen.",
+			"add": {
+				"title": "Lisää kieli",
+				"hint": "BiblioViva-version kanssa julkaistut kielet valitaan luettelosta ja asennetaan yhdellä napsautuksella. Ilman internetyhteyttä olevalle tietokoneelle tai käsin tehdylle kielipaketille zip-tiedosto lähetetään sovellukseen.",
+				"select": "GitHubissa saatavilla olevat kielet",
+				"choose": "Valitse kieli",
+				"allInstalled": "Kaikki julkaistut kielet on jo asennettu.",
+				"page": "Julkaisun sivu GitHubissa, josta zip-tiedostot ladataan"
+			}
 		},
 		"logo": {
 			"title": "Kirjaston logo",

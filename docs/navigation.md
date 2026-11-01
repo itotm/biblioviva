@@ -406,7 +406,7 @@ class sections), `catalog`, `barcodes`, `circulation` (with the loan rules per i
 (adhesive stocks), `photos`, `covers` (cover sources), `privacy`, `backup` (with the schedule),
 `security`, `ui` (with the language packs); `classification` has its own editor. The overview
 shows two kinds of entries (9.13, round 25): first "Aspetto, classi e modelli" — Aspetto e lingua
-(the library's name and logo, colours, language, dashboard), Classi, Classificazione, Template di
+(the library's name and logo, colours, language with the languages of the release to install and the pack upload, dashboard), Classi, Classificazione, Template di
 stampa, Libreria dei report —, then "Impostazioni", one card per section. The administration home
 keeps only the configuration and the jobs on the data (accounts, activity log, backups, imports,
 exports, class upgrade); Aspetto e lingua and Classi go back to Configurazione. A section page

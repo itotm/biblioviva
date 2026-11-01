@@ -244,7 +244,15 @@
 			"title": "Programmets språk",
 			"hint": "Ett språk per installation: det gäller all personal.",
 			"save": "Byt språk",
-			"saved": "Språket bytt: sidan läses in igen."
+			"saved": "Språket bytt: sidan läses in igen.",
+			"add": {
+				"title": "Lägg till språk",
+				"hint": "Språk som publicerats med den här versionen av BiblioViva väljs i listan och installeras med ett klick. För en dator utan internet, eller för ett språkpaket som gjorts för hand, laddas en zip-fil upp.",
+				"select": "Språk som finns på GitHub",
+				"choose": "Välj ett språk",
+				"allInstalled": "Alla publicerade språk är redan installerade.",
+				"page": "Releasesidan på GitHub, för att ladda ner zip-filerna"
+			}
 		},
 		"logo": {
 			"title": "Bibliotekets logotyp",

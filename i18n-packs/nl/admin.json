@@ -244,7 +244,15 @@
 			"title": "Taal van de applicatie",
 			"hint": "Eén taal per installatie: die geldt voor alle medewerkers.",
 			"save": "Taal wijzigen",
-			"saved": "Taal gewijzigd: de pagina wordt opnieuw geladen."
+			"saved": "Taal gewijzigd: de pagina wordt opnieuw geladen.",
+			"add": {
+				"title": "Een taal toevoegen",
+				"hint": "De talen die bij deze versie van BiblioViva zijn gepubliceerd, kiest u uit de lijst en installeert u met één klik. Voor een computer zonder internet, of voor een met de hand gemaakt taalpakket, uploadt u de zip.",
+				"select": "Talen beschikbaar op GitHub",
+				"choose": "Een taal kiezen",
+				"allInstalled": "Alle gepubliceerde talen zijn al geïnstalleerd.",
+				"page": "Releasepagina op GitHub, om de zips te downloaden"
+			}
 		},
 		"logo": {
 			"title": "Logo van de bibliotheek",

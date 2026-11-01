@@ -95,8 +95,9 @@ export default defineConfig({
 			CONFIG_DIR: join(runDir, "config"),
 			METADATA_PROVIDER: "mock",
 			// the list of language packs (9.39) is read from the release on GitHub: the tests
-			// never go out, a closed local port answers "unavailable" at once
-			LANGUAGE_PACKS_BASE_URL: "http://127.0.0.1:9",
+			// never go out, a local port where nothing listens answers "unavailable" at once;
+			// the spec of the language page serves a release there while it runs
+			LANGUAGE_PACKS_BASE_URL: "http://127.0.0.1:4599",
 			BODY_SIZE_LIMIT: "16M",
 		},
 		port: 3000,

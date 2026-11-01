@@ -25,20 +25,21 @@ essere installato.
 1. Accedere a BiblioViva come `admin`.
 1. Aprire **Amministrazione**.
 1. Aprire **Configurazione**.
-1. Nell'elenco **Impostazioni** aprire **Interfaccia**.
-1. Scorrere fino al riquadro **Pacchetti di lingua**.
-1. Nella sezione **Lingue da installare** cercare la lingua desiderata. Per ogni lingua sono indicati il nome, la
-   percentuale dei testi tradotti e la dimensione del pacchetto.
-1. Premere **Installa** accanto alla lingua.
-1. Attendere il messaggio «Lingua installata:» seguito dal nome. Il pacchetto compare fra quelli installati con **Valido**
-   e, nella sezione **Lingue da installare**, con **Installato**.
+1. Aprire **Aspetto e lingua**.
+1. Nel riquadro **Lingua dell'applicazione**, sotto **Aggiungere una lingua**, aprire l'elenco **Lingue disponibili su
+   GitHub** e scegliere la lingua desiderata. Nell'elenco compaiono solo le lingue non ancora installate; sotto l'elenco
+   sono indicati la percentuale dei testi tradotti e il tipo di traduzione.
+1. Premere **Installa**.
+1. Attendere il messaggio «Lingua installata:» seguito dal nome. La lingua risulta già scelta nell'elenco **Lingua** del
+   riquadro.
 1. Per usare la lingua, seguire i passi di «Usare la lingua» più avanti in questa guida.
 
-Se accanto alla lingua c'è l'indicazione «Traduzione automatica, non letta da un madrelingua», la traduzione è stata
-fatta da un programma e nessuno che parla quella lingua l'ha ancora riletta: può contenere errori o parole poco
-naturali. Si può usare lo stesso e correggere i testi come descritto più avanti.
+Se compare l'indicazione «Traduzione automatica, non letta da un madrelingua», la traduzione è stata fatta da un
+programma e nessuno che parla quella lingua l'ha ancora riletta: può contenere errori o parole poco naturali. Si può
+usare lo stesso e correggere i testi come descritto più avanti.
 
-Per sostituire una lingua già installata con la versione dell'elenco, premere **Installa di nuovo**.
+Per sostituire una lingua già installata con la versione dell'elenco, aprire **Configurazione**, **Interfaccia**,
+scorrere fino a **Pacchetti di lingua** e premere **Installa di nuovo** nella sezione **Lingue da installare**.
 
 ### Scaricare un esempio
 
@@ -76,10 +77,11 @@ Per sostituire una lingua già installata con la versione dell'elenco, premere *
 1. Comprimere la cartella della lingua in un file ZIP, in modo che il file contenga la cartella e, dentro, i file
    `.json`. Il comando del sistema si trova nel menu del tasto destro sulla cartella [VERIFY: nome del comando di
    compressione nei sistemi della scuola].
-1. In **Pacchetti di lingua** premere **Carica un pacchetto (zip)** e scegliere il file. Il pacchetto non può superare i
-   5 MB.
-1. Attendere il messaggio «Lingua installata:» seguito dal nome. Il riquadro elenca il pacchetto con **Valido**. Se
-   mancano dei testi, accanto compare il numero dei «testi mancanti o in più».
+1. In **Aspetto e lingua**, sotto **Aggiungere una lingua**, premere **Carica un pacchetto (zip)** e scegliere il file.
+   Lo stesso pulsante c'è in **Configurazione**, **Interfaccia**, nel riquadro **Pacchetti di lingua**. Il pacchetto non
+   può superare i 5 MB.
+1. Attendere il messaggio «Lingua installata:» seguito dal nome. In **Pacchetti di lingua** il pacchetto è elencato con
+   **Valido**. Se mancano dei testi, accanto compare il numero dei «testi mancanti o in più».
 
 Se il pacchetto ha degli errori non viene installato: il messaggio dice quale file e quale chiave correggere. Dopo la
 correzione si ricomprime e si ricarica la cartella: un pacchetto con lo stesso codice sostituisce il precedente.
@@ -87,7 +89,8 @@ correzione si ricomprime e si ricarica la cartella: un pacchetto con lo stesso c
 ### Usare la lingua
 
 1. Aprire **Amministrazione**, **Configurazione**, **Aspetto e lingua**.
-1. Nel riquadro **Lingua dell'applicazione** scegliere la nuova lingua nell'elenco **Lingua**.
+1. Nel riquadro **Lingua dell'applicazione** scegliere la nuova lingua nell'elenco **Lingua** (dopo un'installazione è già
+   scelta).
 1. Premere **Cambia lingua**. La pagina si ricarica nella nuova lingua.
 
 ## Risultato
@@ -101,7 +104,7 @@ correzione si ricomprime e si ricarica la cartella: un pacchetto con lo stesso c
 - Compare «L'elenco delle lingue non è raggiungibile»: il computer di BiblioViva non è collegato a internet oppure la
   versione installata non ha ancora un elenco. Il caricamento di un pacchetto zip, descritto più avanti, funziona lo
   stesso: scaricare da un computer con internet il file della lingua dalla pagina della versione di BiblioViva (il
-  collegamento **Pagina della release** sotto l'elenco, oppure l'indirizzo `https://github.com/itotm/biblioviva/releases`) e
+  collegamento **Pagina della release su GitHub, per scaricare gli zip** sotto l'elenco, oppure l'indirizzo `https://github.com/itotm/biblioviva/releases`) e
   caricarlo con **Carica un pacchetto (zip)**.
 - Compare «Il pacchetto scaricato è danneggiato e non è stato installato»: il file non è arrivato per intero. Premere di
   nuovo **Installa**.

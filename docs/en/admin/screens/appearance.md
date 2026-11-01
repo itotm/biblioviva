@@ -37,6 +37,16 @@ One language per installation: it applies to all staff. The **Language** menu li
 installed language packs (see [Interface](configuration.md#interface) and the guide
 [Add a language](../guides/add-a-language.md)). **Change language** applies the choice and reloads the page.
 
+Under the menu, **Add a language** installs a new language without leaving the page:
+
+- the **Languages available on GitHub** list shows the languages published with the installed version of BiblioViva that
+  are not installed yet; **Install** downloads the pack, checks it and installs it, and the language is at once chosen
+  in the **Language** menu;
+- **Upload a pack (zip)** installs a ZIP downloaded by hand or prepared yourself (for a computer without internet);
+- the **Release page on GitHub, to download the zips** link opens the page the packs can be downloaded from.
+
+If the list cannot be reached (no internet) a warning appears and uploading the ZIP works all the same.
+
 ## Area style
 
 The top bar takes the colour of the area being worked in (Loans, Catalogue, Patrons…), in the tones of the chosen colour

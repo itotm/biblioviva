@@ -244,7 +244,15 @@
 			"title": "Az alkalmazás nyelve",
 			"hint": "Telepítésenként egy nyelv: minden munkatársra vonatkozik.",
 			"save": "Nyelv módosítása",
-			"saved": "A nyelv megváltozott: az oldal újratöltődik."
+			"saved": "A nyelv megváltozott: az oldal újratöltődik.",
+			"add": {
+				"title": "Nyelv hozzáadása",
+				"hint": "A BiblioViva ezen verziójával közzétett nyelvek a listából választhatók ki, és egy kattintással telepíthetők. Internet nélküli számítógép vagy kézzel készített nyelvi csomag esetén töltse fel a zip fájlt.",
+				"select": "A GitHubon elérhető nyelvek",
+				"choose": "Nyelv kiválasztása",
+				"allInstalled": "Az összes közzétett nyelv már telepítve van.",
+				"page": "A kiadás oldala a GitHubon, a zip fájlok letöltéséhez"
+			}
 		},
 		"logo": {
 			"title": "A könyvtár logója",

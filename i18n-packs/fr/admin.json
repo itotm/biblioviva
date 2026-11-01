@@ -244,7 +244,15 @@
 			"title": "Langue de l'application",
 			"hint": "Une seule langue par installation : elle vaut pour tout le personnel.",
 			"save": "Changer de langue",
-			"saved": "Langue changée : la page est rechargée."
+			"saved": "Langue changée : la page est rechargée.",
+			"add": {
+				"title": "Ajouter une langue",
+				"hint": "Les langues publiées avec cette version de BiblioViva se choisissent dans la liste et s'installent en un clic. Pour un ordinateur sans internet, ou un pack de langue réalisé à la main, téléversez le zip.",
+				"select": "Langues disponibles sur GitHub",
+				"choose": "Choisir une langue",
+				"allInstalled": "Toutes les langues publiées sont déjà installées.",
+				"page": "Page de la version sur GitHub, pour télécharger les zip"
+			}
 		},
 		"logo": {
 			"title": "Logo de la bibliothèque",

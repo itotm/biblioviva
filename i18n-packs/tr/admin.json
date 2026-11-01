@@ -244,7 +244,15 @@
 			"title": "Uygulama dili",
 			"hint": "Kurulum başına tek dil: tüm personel için geçerlidir.",
 			"save": "Dili değiştir",
-			"saved": "Dil değiştirildi: sayfa yeniden yüklenir."
+			"saved": "Dil değiştirildi: sayfa yeniden yüklenir.",
+			"add": {
+				"title": "Dil ekle",
+				"hint": "Bu BiblioViva sürümüyle yayımlanan diller listeden seçilir ve tek tıklamayla kurulur. İnternet bağlantısı olmayan bir bilgisayar ya da elle hazırlanmış bir dil paketi için zip dosyası yüklenir.",
+				"select": "GitHub üzerinde bulunan diller",
+				"choose": "Dil seç",
+				"allInstalled": "Yayımlanan dillerin tümü zaten kurulu.",
+				"page": "GitHub üzerindeki sürüm sayfası, zip dosyalarını indirmek için"
+			}
 		},
 		"logo": {
 			"title": "Kütüphane logosu",

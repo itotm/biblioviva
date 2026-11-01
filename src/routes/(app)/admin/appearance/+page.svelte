@@ -37,6 +37,7 @@
 	import Field from "#lib/ui/Field.svelte";
 	import Alert from "#lib/ui/Alert.svelte";
 	import FileButton from "#lib/ui/FileButton.svelte";
+	import LanguagePackAdd from "#lib/components/LanguagePackAdd.svelte";
 	import { ICON_SIZE, icons } from "#lib/ui/icons.js";
 	import QueryState from "#lib/ui/QueryState.svelte";
 
@@ -101,6 +102,11 @@
 	const currentLocale = $derived(appearance.current?.locale ?? null);
 	const localeChoice = $derived(localeDraft || currentLocale);
 	let changingLocale = $state(false);
+
+	async function packInstalled(code: string): Promise<void> {
+		await locales.refresh();
+		localeDraft = code;
+	}
 
 	async function changeLocale(): Promise<void> {
 		if (!localeChoice || localeChoice === currentLocale) {
@@ -330,6 +336,7 @@
 						data-testid="save-locale">{i18n.t("admin.appearance.language.save")}</Button
 					>
 				</Row>
+				<LanguagePackAdd oninstalled={packInstalled} />
 			</Card>
 
 			<Card gap="3" as="section" data-testid="areas-section">

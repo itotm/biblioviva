@@ -37,6 +37,16 @@ Una sola lingua per installazione: vale per tutto il personale. Il menu **Lingua
 pacchetti di lingua installati (vedere [Interfaccia](configuration.md#interfaccia) e la guida
 [Aggiungere una lingua](../guides/add-a-language.md)). **Cambia lingua** applica la scelta e ricarica la pagina.
 
+Sotto il menu, **Aggiungere una lingua** installa una lingua nuova senza uscire dalla pagina:
+
+- l'elenco **Lingue disponibili su GitHub** mostra le lingue pubblicate con la versione installata di BiblioViva che non
+  sono ancora installate; **Installa** scarica il pacchetto, lo controlla e lo installa, e la lingua risulta subito
+  scelta nel menu **Lingua**;
+- **Carica un pacchetto (zip)** installa uno zip scaricato a mano o preparato da sé (per un computer senza internet);
+- il collegamento **Pagina della release su GitHub, per scaricare gli zip** apre la pagina da cui scaricare i pacchetti.
+
+Se l'elenco non è raggiungibile (manca internet) compare un avviso e il caricamento dello zip funziona lo stesso.
+
 ## Stile delle aree
 
 La fascia in alto prende il colore dell'area in cui si lavora (Prestiti, Catalogo, Utenti…), nei toni del set di colori
