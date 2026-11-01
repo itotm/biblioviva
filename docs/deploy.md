@@ -444,8 +444,11 @@ repository can move (9.36) without touching the home page. [`home/README.md`](..
 files.
 
 **Documentation** (`site/`, `docs.biblioviva.org`): published to GitHub Pages by
-`.github/workflows/pages.yml` on every push to `main` that touches it (a "coming soon" page until
-step 9.7; GitHub Pages needs the repository to be public, step 9.36). One-time setup on GitHub:
+`.github/workflows/pages.yml`, only by hand: **Actions → pages → Run workflow**, on the release's tag (or on
+`main` for a correction of the text); a push never publishes it (ADR-050). The workflow builds the application,
+takes the pictures (`bun run docs:shots`) and builds the site (`bun run site:build`). GitHub Pages needs the
+repository to be public (step 9.36). One-time setup on GitHub, before the first run (without it the workflow
+stops at `configure-pages` with "Get Pages site failed ... Not Found"):
 **Settings → Pages → Source: GitHub Actions**, then **Custom domain: `docs.biblioviva.org`** (the
 `site/CNAME` file keeps it) and tick *Enforce HTTPS* once the certificate is issued. One DNS record
 in Cloudflare, "DNS only" (GitHub issues the certificate only when it sees its own address):

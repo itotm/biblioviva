@@ -36,8 +36,9 @@ jobs:
             - name: Install Chromium for Playwright
               run: bunx playwright install --with-deps chromium
 
+            # deepmerge (a dependency of the Svelte Vite plugin, build time only) has no patched release (ADR-052)
             - name: Known vulnerabilities in the dependencies
-              run: bun audit
+              run: bun audit --ignore GHSA-gcqx-w48m-w2h4
 
             # one process at a time: GitHub's runners have little memory, and the type-aware ESLint
             # (one TypeScript program per worker) ran out of it with the local parallelism

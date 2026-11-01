@@ -893,3 +893,16 @@ missing. The owner chose real plural forms (option B) and left the keyboard layo
 the index says how much of each pack is translated and missing messages show in English. The 22 packs beyond the three
 pilot languages are made the same way. Right-to-left languages stay out.
 
+
+## ADR-052 — Audit: `minimatch` overridden, one advisory without a fix ignored (2026-11-01)
+
+**Context.** `bun audit` in CI failed on two advisories in build-time dependencies: `minimatch` 10.2.6 (moderate, fixed
+from 11.0.1; required by ESLint and typescript-eslint) and `deepmerge` 4.3.1 (low, prototype poisoning in
+`mergeObject()`; no patched release exists, 4.3.1 is the last; required by `@sveltejs/vite-plugin-svelte`).
+
+**Decision.** `package.json` overrides `minimatch` to the exact version 11.0.3. The `deepmerge` advisory
+(`GHSA-gcqx-w48m-w2h4`) is ignored in the CI step (`bun audit --ignore`): it is not in the shipped image, and the plugin
+merges its own configuration, not input from users.
+
+**Consequences.** Remove the override when ESLint and typescript-eslint require `minimatch` 11 themselves, and the
+ignore when the plugin leaves `deepmerge` or a patched release appears. New advisories still fail the step.

@@ -65,7 +65,7 @@ list is cleared at a release, and a new one takes the next.
 - [ ] 9.7 The documentation site on `docs.biblioviva.org`: `bun run site:build` / `site:serve` build it locally from
   `docs/` (ADR-043) with the search (Pagefind, ADR-045), the home page shows four real screenshots; the Pages workflow builds the
   pictures and the site, run by hand only (ADR-050); left: `site:check`, the figure switch, the PDFs, the first
-  publication (after 9.36). `ONLINE.docs` is already on and the READMEs link `docs.biblioviva.org`: upload the home
+  publication (after 9.36; GitHub Pages is enabled with source "GitHub Actions", left: the custom domain `docs.biblioviva.org`, the `docs` CNAME in Cloudflare "DNS only", Enforce HTTPS, then Run workflow). `ONLINE.docs` is already on and the READMEs link `docs.biblioviva.org`: upload the home
   page again once the site is online.
 - [ ] 9.3 Accessibility and UX review pass.
 - [ ] 9.4 Device checklist.
