@@ -55,11 +55,22 @@ posto della classe compare «Docente».
 
 ## Possibili problemi
 
-- «Matricola già assegnata a un altro utente.»: il docente è probabilmente già inserito. Cercarlo in **Utenti**.
-- «Il numero di tessera è o sembra il codice di una copia: scegliere un altro numero.»: svuotare il campo
-  **Numero tessera**.
-- «La fotocamera funziona solo con una connessione sicura (https)…»: senza Tailscale usare **Carica file**.
-- La scheda **Foto** non compare: l'amministratore ha disattivato le foto.
+### La matricola è già assegnata
+
+Compare «Matricola già assegnata a un altro utente.»: il docente è probabilmente già inserito. Cercarlo in **Utenti**.
+
+### Il numero di tessera non è accettato
+
+Compare «Il numero di tessera è o sembra il codice di una copia: scegliere un altro numero.»: svuotare il campo
+**Numero tessera**.
+
+### La fotocamera richiede una connessione sicura
+
+Compare «La fotocamera funziona solo con una connessione sicura (https)…»: senza Tailscale usare **Carica file**.
+
+### La scheda Foto non compare
+
+L'amministratore ha disattivato le foto.
 
 ## Pagine correlate
 

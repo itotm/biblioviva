@@ -49,15 +49,33 @@ applies from now on. The **History** tab lists the past loans and does not chang
 
 ## Possible problems
 
-- "A student needs a class (the level)." and "A student needs a section.": choose the year and the section.
-- "Section not found among the active classes: classes are created in Administration → Configuration → Classes.": the
-  section does not exist yet. Ask the administrator to create it: [Set up the
-  classes](../../admin/guides/set-up-classes.md).
-- "This section has no such class: choose a section of the class.": choose the section again after choosing the year.
-- "Student id already assigned to another patron.": the student id belongs to another person; check that the same
-  patron was not entered twice.
-- "Invalid email address.": correct the address.
-- "No change": nothing was changed in the notes.
+### The year or the section of the student is missing
+
+"A student needs a class (the level)." and "A student needs a section." appear: choose the year and the section.
+
+### The section does not exist yet
+
+"Section not found among the active classes: classes are created in Administration → Configuration → Classes."
+appears: the section does not exist yet. Ask the administrator to create it:
+[Set up the classes](../../admin/guides/set-up-classes.md).
+
+### The section does not match the class
+
+"This section has no such class: choose a section of the class." appears: choose the section again after choosing the
+year.
+
+### The student id is already assigned
+
+"Student id already assigned to another patron." appears: the student id belongs to another person; check that the
+same patron was not entered twice.
+
+### The email address is not valid
+
+"Invalid email address." appears: correct the address.
+
+### Saving finds no change
+
+"No change" appears: nothing was changed in the notes.
 
 ## Related pages
 

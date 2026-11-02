@@ -112,24 +112,38 @@ Il terminale è pronto: i comandi dei passi successivi si incollano qui. Quando 
 
 ## Possibili problemi
 
-- "Connection refused" (connessione rifiutata): il PC o il Raspberry Pi non è ancora pronto, oppure SSH non è
-  attivo. Attendere alcuni minuti e riprovare. Se il messaggio resta, per il PC installare il server SSH
-  (`sudo apt install -y openssh-server`); per il Raspberry Pi ripetere la scrittura della scheda attivando SSH.
-- "Permission denied, please try again" (password sbagliata): digitare di nuovo la password con attenzione, badando
-  alla disposizione della tastiera (maiuscole, simboli). Dopo tre tentativi falliti il programma si ferma: ripetere
-  il comando.
-- "Could not resolve hostname biblioviva.local" (nome non trovato): il computer non risponde al nome. Controllare
-  che sia acceso e collegato alla stessa rete, poi usare l'indirizzo che mostra il router.
-- "Connection timed out": l'indirizzo non è quello del computer o il computer non è raggiungibile. Controllare
-  l'indirizzo nell'elenco del router.
-- "REMOTE HOST IDENTIFICATION HAS CHANGED": la scheda del Raspberry Pi è stata riscritta e il nome è già noto con
-  un'altra chiave. Eliminare la vecchia chiave con il comando seguente e ripetere il collegamento.
-
-  ```sh
-  ssh-keygen -R biblioviva.local
-  ```
-
 Altri problemi: [Problemi comuni](../../help/problems.md#collegamento-ssh-che-non-riesce).
+
+### Il collegamento è rifiutato
+
+Compare "Connection refused" (connessione rifiutata): il PC o il Raspberry Pi non è ancora pronto, oppure SSH non è
+attivo. Attendere alcuni minuti e riprovare. Se il messaggio resta, per il PC installare il server SSH
+(`sudo apt install -y openssh-server`); per il Raspberry Pi ripetere la scrittura della scheda attivando SSH.
+
+### La password viene rifiutata
+
+Compare "Permission denied, please try again" (password sbagliata): digitare di nuovo la password con attenzione,
+badando alla disposizione della tastiera (maiuscole, simboli). Dopo tre tentativi falliti il programma si ferma:
+ripetere il comando.
+
+### Il nome del computer non viene trovato
+
+Compare "Could not resolve hostname biblioviva.local" (nome non trovato): il computer non risponde al nome. Controllare
+che sia acceso e collegato alla stessa rete, poi usare l'indirizzo che mostra il router.
+
+### Il collegamento scade
+
+Compare "Connection timed out": l'indirizzo non è quello del computer o il computer non è raggiungibile. Controllare
+l'indirizzo nell'elenco del router.
+
+### Compare REMOTE HOST IDENTIFICATION HAS CHANGED
+
+Il messaggio è "REMOTE HOST IDENTIFICATION HAS CHANGED": la scheda del Raspberry Pi è stata riscritta e il nome è già
+noto con un'altra chiave. Eliminare la vecchia chiave con il comando seguente e ripetere il collegamento.
+
+```sh
+ssh-keygen -R biblioviva.local
+```
 
 ## Pagine correlate
 

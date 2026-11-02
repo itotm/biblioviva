@@ -75,16 +75,29 @@ status stay in the log.
 
 ## Possible problems
 
-- "The copy is on loan: record the return first." appears: a copy on loan cannot be withdrawn. Record the return, see
-  [Return a book](return-a-book.md), then change the status.
-- "The copy has recorded loans: withdraw it instead of deleting it." appears: a copy already lent cannot be deleted, so
-  as not to lose the history. Choose **Withdrawn**.
-- A withdrawn book is no longer found in the catalogue: tick **Also show withdrawn books**, see
-  [Find a book](find-a-book.md).
-- At the desk a copy is refused with "… is … and cannot be lent": the copy has a status that does not allow the loan.
-  Open the record of the book and check the status: if the book is back on the shelf choose **Available**.
-- Many copies are shown as lost after the stocktaking: the copies not read when the stocktaking is closed are marked
-  **Lost**; see [Do the stocktaking](stocktaking.md) for how to undo the closing within a week.
+### The copy is on loan
+
+"The copy is on loan: record the return first." appears: a copy on loan cannot be withdrawn. Record the return, see
+[Return a book](return-a-book.md), then change the status.
+
+### The copy has recorded loans
+
+"The copy has recorded loans: withdraw it instead of deleting it." appears: a copy already lent cannot be deleted, so as
+not to lose the history. Choose **Withdrawn**.
+
+### A withdrawn book is no longer found in the catalogue
+
+Tick **Also show withdrawn books**, see [Find a book](find-a-book.md).
+
+### A copy is refused at the desk
+
+At the desk a copy is refused with "… is … and cannot be lent": the copy has a status that does not allow the loan. Open
+the record of the book and check the status: if the book is back on the shelf choose **Available**.
+
+### Many copies show as lost after the stocktaking
+
+The copies not read when the stocktaking is closed are marked **Lost**; see [Do the stocktaking](stocktaking.md) for how
+to undo the closing within a week.
 
 ## Related pages
 

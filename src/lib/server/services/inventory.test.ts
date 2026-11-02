@@ -99,7 +99,6 @@ function library(): { db: Db; actor: { id: number }; codes: string[]; ids: numbe
 			db,
 			id,
 			{
-				itemType: "libro",
 				callNumber: "",
 				readingLevel: "",
 				enumeration: "",

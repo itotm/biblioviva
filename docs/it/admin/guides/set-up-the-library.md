@@ -63,14 +63,23 @@ Per una lingua che non è nell'elenco vedere [Aggiungere una lingua](add-a-langu
 
 ## Possibili problemi
 
-- Il pulsante **Salva il nome** resta spento: il nome è vuoto oppure uguale a quello già salvato. Il messaggio «Il nome
-  della biblioteca è obbligatorio.» compare quando il campo è vuoto.
-- Il logo viene rifiutato con «Formato non accettato: sono ammessi PNG, JPEG e WebP.»: convertire l'immagine in uno di
-  questi formati.
-- Il logo viene rifiutato con «Il file è troppo grande»: ridurre le dimensioni dell'immagine con un programma di
-  fotoritocco e riprovare.
-- Altre impostazioni della biblioteca, come l'email di contatto, il fuso orario e l'inizio dell'anno scolastico, sono
-  nella sezione **Biblioteca e scuola** della [configurazione](../screens/configuration.md).
+### Il pulsante Salva il nome resta spento
+
+Il nome è vuoto oppure uguale a quello già salvato. Il messaggio «Il nome della biblioteca è obbligatorio.» compare
+quando il campo è vuoto.
+
+### Il logo viene rifiutato per il formato
+
+Compare «Formato non accettato: sono ammessi PNG, JPEG e WebP.»: convertire l'immagine in uno di questi formati.
+
+### Il logo viene rifiutato perché troppo grande
+
+Compare «Il file è troppo grande»: ridurre le dimensioni dell'immagine con un programma di fotoritocco e riprovare.
+
+### Un'altra impostazione della biblioteca non si trova
+
+Altre impostazioni della biblioteca, come l'email di contatto, il fuso orario e l'inizio dell'anno scolastico, sono
+nella sezione **Biblioteca e scuola** della [configurazione](../screens/configuration.md).
 
 ## Pagine correlate
 

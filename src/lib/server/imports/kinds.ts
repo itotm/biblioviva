@@ -58,11 +58,13 @@ import {
 } from "./patrons.js";
 import { mapRows } from "./pipeline.js";
 
-/** The catalogue import's answers: the special values and the class-per-copy question. */
+/** The catalogue import's answers: the special values, the class-per-copy and the item-type questions. */
 export interface CatalogRun extends ImportRun<CatalogField> {
 	useSpecialValues: boolean;
 	/** The class-per-copy answer: omitted while not asked or not answered. */
 	enableClassPerItem?: boolean;
+	/** The item-type answer (Q139): omitted while not asked or not answered. */
+	useMajorityType?: boolean;
 }
 
 function catalogOptions(config: AppConfig, run: CatalogRun): CatalogImportOptions {
@@ -70,6 +72,7 @@ function catalogOptions(config: AppConfig, run: CatalogRun): CatalogImportOption
 		rules: catalogRules(config),
 		useSpecialValues: run.useSpecialValues,
 		enableClassPerItem: run.enableClassPerItem,
+		useMajorityType: run.useMajorityType,
 		today: todayIn(config.library.timezone),
 	};
 }

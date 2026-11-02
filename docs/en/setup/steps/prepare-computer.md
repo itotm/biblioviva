@@ -164,18 +164,29 @@ connection succeeds, the Raspberry Pi is on the network.
 <!-- variant: linux -->
 **With a Linux PC**
 
-- The PC does not appear in the router's list: check the network cable and that the system has started up to the login
-  prompt.
-- Forgotten user name or password: repeat the installation of the system.
+### The PC does not appear in the router's list
+
+Check the network cable and that the system has started up to the login prompt.
+
+### The PC's user name or password is forgotten
+
+Repeat the installation of the system.
 <!-- /variant -->
 <!-- variant: raspberry -->
 **With the Raspberry Pi**
 
-- The Raspberry Pi does not turn on (no light): check the power supply. A phone charger often is not enough: use a
-  power supply suited to the model.
-- After ten minutes the Raspberry Pi does not appear in the router's list: check the network cable (the lights of the
-  socket come on), then repeat the writing of the card, checking the settings.
-- Forgotten user name or password: repeat the writing of the card with Raspberry Pi Imager.
+### The Raspberry Pi does not turn on
+
+No light: check the power supply. A phone charger often is not enough: use a power supply suited to the model.
+
+### The Raspberry Pi does not appear in the router's list
+
+After ten minutes the Raspberry Pi does not appear in the router's list: check the network cable (the lights of the
+socket come on), then repeat the writing of the card, checking the settings.
+
+### The Raspberry Pi's user name or password is forgotten
+
+Repeat the writing of the card with Raspberry Pi Imager.
 <!-- /variant -->
 
 ## Related pages

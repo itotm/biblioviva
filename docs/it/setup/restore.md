@@ -118,18 +118,35 @@ sono quelli della copia, se questa conteneva la configurazione; altrimenti sono 
 
 ## Possibili problemi
 
-- «Il file non è un archivio di BiblioViva.»: il file scelto non è un file prodotto da BiblioViva. Scegliere un file
-  `.db` o `.zip` della cartella `backups`, oppure scaricare di nuovo la copia.
-- «Il backup è di una versione diversa di BiblioViva…»: il file è stato fatto da una versione che ha le tabelle
-  diverse. Installare la stessa versione (vedere «Restare su una versione» in [Aggiornare BiblioViva](update.md)),
-  ripristinare, poi aggiornare.
-- Dal primo avvio: «L'archivio è incompleto: mancano …»: il file non contiene tutte le parti di una biblioteca
-  (le impostazioni, gli account, gli utenti o il catalogo). Scegliere un archivio fatto con **Esporta tutto**.
-- Dal primo avvio: «L'archivio è stato creato da una versione più recente di BiblioViva…»: installare prima quella
-  versione, ripristinare, poi aggiornare.
-- Il ripristino segnala righe che «si riferiscono a … che non ci sarebbero»: aggiungere alla scelta la parte che il
-  messaggio nomina e ripetere.
-- Da terminale: «permission denied» a proposito di Docker: vedere [Installare BiblioViva](steps/install.md).
+### Il file non è un archivio di BiblioViva
+
+Compare il messaggio «Il file non è un archivio di BiblioViva.»: il file scelto non è un file prodotto da BiblioViva.
+Scegliere un file `.db` o `.zip` della cartella `backups`, oppure scaricare di nuovo la copia.
+
+### Il backup è di una versione diversa
+
+Compare il messaggio «Il backup è di una versione diversa di BiblioViva…»: il file è stato fatto da una versione che ha
+le tabelle diverse. Installare la stessa versione (vedere «Restare su una versione» in [Aggiornare
+BiblioViva](update.md)), ripristinare, poi aggiornare.
+
+### L'archivio è incompleto
+
+Dal primo avvio compare il messaggio «L'archivio è incompleto: mancano …»: il file non contiene tutte le parti di una
+biblioteca (le impostazioni, gli account, gli utenti o il catalogo). Scegliere un archivio fatto con **Esporta tutto**.
+
+### L'archivio viene da una versione più recente
+
+Dal primo avvio compare il messaggio «L'archivio è stato creato da una versione più recente di BiblioViva…»: installare
+prima quella versione, ripristinare, poi aggiornare.
+
+### Il ripristino segnala righe con riferimenti mancanti
+
+Il ripristino segnala righe che «si riferiscono a … che non ci sarebbero»: aggiungere alla scelta la parte che il
+messaggio nomina e ripetere.
+
+### Da terminale compare permission denied per Docker
+
+Da terminale compare «permission denied» a proposito di Docker: vedere [Installare BiblioViva](steps/install.md).
 
 ## Pagine correlate
 

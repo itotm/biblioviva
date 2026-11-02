@@ -95,22 +95,45 @@ the class counter, for example "12 of 14 with a photo", has gone up.
 
 ## Possible problems
 
-- "No photo found. With "Correct frames" they can be drawn by hand.": try the other kind of picture, **Photo** or
-  **Scan**; otherwise draw the frames with **Add frame**.
-- "The straightening module could not be loaded. Check the connection and try again.": the search for the photos uses a
-  component that the browser downloads the first time. Check the connection and reload the page.
-- "The picture is too large (at most N MB).", "Unsupported format: use JPEG, PNG, WebP or HEIC." and "The file is not a
-  readable image.": choose another file or reduce the picture.
-- "At most N photos per picture.": split the picture in two, for example half a class at a time. Each class can have
-  more pictures.
-- "Already chosen for photo N: free it before choosing them here.": the person is already assigned to another photo. Free
-  that one with **— Nobody —**.
-- "Choose at least one patron before saving.": the **Save the photos** button stays off until at least one photo has a
-  person.
-- "This photo belonged to a removed patron: the frame has been covered.": the person was removed from BiblioViva after
-  the choice. The frame is covered in the picture and cannot be used.
-- The list does not offer a person who is in the class: the menu shows only the patrons of the chosen class or list.
-  Check that they are entered in the right class, as explained in [Edit a patron's data](edit-a-patron.md).
+### No photo found
+
+"No photo found. With "Correct frames" they can be drawn by hand." appears: try the other kind of picture, **Photo** or
+**Scan**; otherwise draw the frames with **Add frame**.
+
+### The straightening module does not load
+
+"The straightening module could not be loaded. Check the connection and try again." appears: the search for the photos
+uses a component that the browser downloads the first time. Check the connection and reload the page.
+
+### The picture is not accepted
+
+"The picture is too large (at most N MB).", "Unsupported format: use JPEG, PNG, WebP or HEIC." or "The file is not a
+readable image." appears: choose another file or reduce the picture.
+
+### Too many photos in one picture
+
+"At most N photos per picture." appears: split the picture in two, for example half a class at a time. Each class can
+have more pictures.
+
+### The person is already assigned to another photo
+
+"Already chosen for photo N: free it before choosing them here." appears: the person is already assigned to another
+photo. Free that one with **— Nobody —**.
+
+### The photos cannot be saved
+
+"Choose at least one patron before saving." appears: the **Save the photos** button stays off until at least one photo
+has a person.
+
+### The photo is of a removed patron
+
+"This photo belonged to a removed patron: the frame has been covered." appears: the person was removed from BiblioViva
+after the choice. The frame is covered in the picture and cannot be used.
+
+### A person of the class is missing from the list
+
+The list does not offer a person who is in the class: the menu shows only the patrons of the chosen class or list. Check
+that they are entered in the right class, as explained in [Edit a patron's data](edit-a-patron.md).
 
 ## Related pages
 

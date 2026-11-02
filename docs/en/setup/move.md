@@ -86,12 +86,20 @@ The other computer serves BiblioViva at the same address (with Tailscale) or at 
 
 ## Possible problems
 
-- With Tailscale the computer is called `biblioviva-1` and the address is different: the old node was not deleted.
-  Delete it from the console; the other computer's name can be corrected from the same "Machines" page
-  [VERIFY: whether the name can be corrected from the console].
-- "The backup is from another version of BiblioViva…": the two computers have different versions. See
-  [Restart from a backup](restore.md).
-- The guided procedure does not complete or BiblioViva does not open: see [Install BiblioViva](steps/install.md).
+### With Tailscale the name and the address are different
+
+With Tailscale the computer is called `biblioviva-1` and the address is different: the old node was not deleted.
+Delete it from the console; the other computer's name can be corrected from the same "Machines" page
+[VERIFY: whether the name can be corrected from the console].
+
+### The backup is from another version
+
+The message "The backup is from another version of BiblioViva…" appears: the two computers have different versions. See
+[Restart from a backup](restore.md).
+
+### The guided procedure does not complete or BiblioViva does not open
+
+See [Install BiblioViva](steps/install.md).
 
 ## Related pages
 

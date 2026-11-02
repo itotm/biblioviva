@@ -8,7 +8,7 @@ import { createTestDb, sequenceValue } from "../../../../tests/helpers/db.js";
 import { getConfig, resetConfigCache } from "#lib/server/config/index.js";
 import { loadConfig } from "#lib/server/config/load.js";
 import type { Db } from "#lib/server/db/client.js";
-import { auditLog, item, staffUser } from "#lib/server/db/schema.js";
+import { auditLog, biblio, staffUser } from "#lib/server/db/schema.js";
 import { resetEnvCache } from "#lib/server/env.js";
 import { catalogRules, createBiblio } from "./catalog.js";
 import { addItems } from "./catalog-items.js";
@@ -50,37 +50,7 @@ function fixture(): { db: Db; actor: { id: number } } {
 		.values({ username: "admin", passwordHash: "x", roles: [] })
 		.returning({ id: staffUser.id })
 		.get();
-	const rules = catalogRules(getConfig());
-	const id = createBiblio(
-		db,
-		{
-			title: "Il gatto",
-			subtitle: "",
-			originalTitle: "",
-			responsibility: "",
-			author: "Perrault, Charles",
-			publisher: "Einaudi",
-			publicationPlace: "",
-			publicationYear: "",
-			isbn: "",
-			issn: "",
-			ean: "",
-			physicalDescription: "",
-			series: "",
-			seriesNumber: "",
-			dewey: "",
-			kind: "fiction",
-			genreCode: "B",
-			classCode: "",
-			readingLevel: "",
-			subjects: "",
-			notes: "",
-		},
-		actor,
-		rules,
-	);
 	const copy = {
-		itemType: "dvd",
 		callNumber: "",
 		readingLevel: "",
 		enumeration: "",
@@ -88,8 +58,44 @@ function fixture(): { db: Db; actor: { id: number } } {
 		notes: "",
 		notForLoan: false,
 	};
-	addItems(db, id, copy, 2, actor, rules, NOW);
-	addItems(db, id, { ...copy, itemType: "libro" }, 1, actor, rules, NOW);
+	const rules = catalogRules(getConfig());
+	// two DVDs and a book, one copy each: the type is the record's (9.45)
+	for (const [title, itemType] of [
+		["Il gatto", "dvd"],
+		["Il cane", "dvd"],
+		["Il topo", "libro"],
+	] as const) {
+		const id = createBiblio(
+			db,
+			{
+				title,
+				subtitle: "",
+				originalTitle: "",
+				responsibility: "",
+				author: "Perrault, Charles",
+				publisher: "Einaudi",
+				publicationPlace: "",
+				publicationYear: "",
+				isbn: "",
+				issn: "",
+				ean: "",
+				physicalDescription: "",
+				series: "",
+				seriesNumber: "",
+				dewey: "",
+				itemType,
+				kind: "fiction",
+				genreCode: "B",
+				classCode: "",
+				readingLevel: "",
+				subjects: "",
+				notes: "",
+			},
+			actor,
+			rules,
+		);
+		addItems(db, id, copy, 1, actor, rules, NOW);
+	}
 	return { db, actor };
 }
 
@@ -147,7 +153,7 @@ describe("item types", () => {
 		expect(getConfig().circulation.itemTypeOverrides).toEqual({
 			video: { loanDays: 5, maxRenewals: 1, renewalDays: 5 },
 		});
-		expect(db.select().from(item).where(eq(item.itemType, "video")).all()).toHaveLength(2);
+		expect(db.select().from(biblio).where(eq(biblio.itemType, "video")).all()).toHaveLength(2);
 		expect(
 			db.select().from(auditLog).where(eq(auditLog.action, "config.library")).get()?.details,
 		).toMatchObject({ moved: { dvd: "video" }, copies: 2 });

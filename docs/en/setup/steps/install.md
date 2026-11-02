@@ -241,67 +241,107 @@ again does no harm: the program recognises the installation already made and upd
 The program writes the error message and stops. After removing the cause, repeat the command of the first step of the
 procedure.
 
-- "This program runs on Linux only (Raspberry Pi OS, Debian or Ubuntu).": the command was pasted on the wrong
-  computer, for example one's own work computer. Paste it into the BiblioViva terminal, opened in the step
-  [Connect to the computer](terminal.md).
-- "The system is 32-bit (…): BiblioViva needs a 64-bit system. On a Raspberry Pi, install Raspberry Pi OS (64-bit).":
-  the microSD card holds a 32-bit system. Write it again with Raspberry Pi OS Lite (64-bit) as in the step
-  [Prepare the computer](prepare-computer.md); the command cannot work on a 32-bit system.
-- "System …: this program is tested on Raspberry Pi OS, Debian and Ubuntu. Going on…": a warning, not an error. The
-  computer has another Linux distribution (for example Fedora) and the program goes on; if the installation stops, see
-  the technical page [Deployment notes (technical)](../../../deploy.md).
-- "The sudo command is not available: run the program as an administrator or install sudo.": the computer does not have
-  `sudo`. Install it following the distribution's instructions, or connect as the `root` user and repeat the command.
-- "Docker was not installed: the program stops. Install it and run the program again.": `n` was answered to the
-  question, or the installation of Docker failed (for example for lack of internet). Repeat the command and answer `Y`;
-  if the error stays, install Docker with the [official guide](https://docs.docker.com/engine/install/) and repeat the
-  command.
-- "An answer is missing and there is no terminal to read it from: give …": the program is not in a window where one
-  can type (for example the command was launched from another program). Open the terminal as in the step
-  [Connect to the computer](terminal.md) and repeat the command. Alternatively the answers are given with the options
-  `--network tailscale` or `--network lan`, `--profile micro`, `--profile small`, `--profile medium` or
-  `--profile large`, `--key <key>` for the Tailscale key and `--yes` to install Docker without questions, for example:
+Other problems: [Common problems](../../help/problems.md#installation-that-stops).
 
-  ```sh
-  curl -fsSL https://raw.githubusercontent.com/itotm/biblioviva/main/setup.sh | bash -s -- --lang en --network lan --profile small
-  ```
+### The program says it runs on Linux only
 
-- "Invalid answer.": the answer is not among those allowed. Type one of the digits listed.
-- "Cannot download …: check the internet connection.": the computer cannot download a BiblioViva file. Check that the
-  cable or Wi-Fi work (for example with `ping -c 3 raspberrypi.com`), then repeat the command.
-- "BiblioViva does not answer yet. See the log with: cd … && docker compose logs": BiblioViva was started but does not
-  answer after 180 seconds. On a slow computer the start can take longer: wait two minutes and repeat the command,
-  which resumes from where it got to. If the message repeats, give the command the program suggests and read the last
-  lines; if Docker has just been installed and the command answers "permission denied", put `sudo` in front.
+The message "This program runs on Linux only (Raspberry Pi OS, Debian or Ubuntu)." appears: the command was pasted on
+the wrong computer, for example one's own work computer. Paste it into the BiblioViva terminal, opened in the step
+[Connect to the computer](terminal.md).
 
-  ```sh
-  cd ~/biblioviva && docker compose logs
-  ```
+### The system is 32-bit
+
+The message "The system is 32-bit (…): BiblioViva needs a 64-bit system. On a Raspberry Pi, install Raspberry Pi OS
+(64-bit)." appears: the microSD card holds a 32-bit system. Write it again with Raspberry Pi OS Lite (64-bit) as in the
+step [Prepare the computer](prepare-computer.md); the command cannot work on a 32-bit system.
+
+### The program warns that the system is not among those tested
+
+The message "System …: this program is tested on Raspberry Pi OS, Debian and Ubuntu. Going on…" appears: it is a
+warning, not an error. The computer has another Linux distribution (for example Fedora) and the program goes on; if the
+installation stops, see the technical page [Deployment notes (technical)](../../../deploy.md).
+
+### The sudo command is not available
+
+The message "The sudo command is not available: run the program as an administrator or install sudo." appears: the
+computer does not have `sudo`. Install it following the distribution's instructions, or connect as the `root` user and
+repeat the command.
+
+### Docker was not installed
+
+The message "Docker was not installed: the program stops. Install it and run the program again." appears: `n` was
+answered to the question, or the installation of Docker failed (for example for lack of internet). Repeat the command
+and answer `Y`; if the error stays, install Docker with the [official guide](https://docs.docker.com/engine/install/)
+and repeat the command.
+
+### An answer to a question is missing
+
+The message "An answer is missing and there is no terminal to read it from: give …" appears: the program is not in a
+window where one can type (for example the command was launched from another program). Open the terminal as in the step
+[Connect to the computer](terminal.md) and repeat the command. Alternatively the answers are given with the options
+`--network tailscale` or `--network lan`, `--profile micro`, `--profile small`, `--profile medium` or
+`--profile large`, `--key <key>` for the Tailscale key and `--yes` to install Docker without questions, for example:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/itotm/biblioviva/main/setup.sh | bash -s -- --lang en --network lan --profile small
+```
+
+### The program says the answer is not valid
+
+The message "Invalid answer." appears: the answer is not among those allowed. Type one of the digits listed.
+
+### The program cannot download a file
+
+The message "Cannot download …: check the internet connection." appears: the computer cannot download a BiblioViva
+file. Check that the cable or Wi-Fi work (for example with `ping -c 3 raspberrypi.com`), then repeat the command.
+
+### BiblioViva does not answer yet
+
+The message "BiblioViva does not answer yet. See the log with: cd … && docker compose logs" appears: BiblioViva was
+started but does not answer after 180 seconds. On a slow computer the start can take longer: wait two minutes and
+repeat the command, which resumes from where it got to. If the message repeats, give the command the program suggests
+and read the last lines; if Docker has just been installed and the command answers "permission denied", put `sudo` in
+front.
+
+```sh
+cd ~/biblioviva && docker compose logs
+```
 
 <!-- variant: tailscale -->
 **With Tailscale**
 
-- In the log of "BiblioViva does not answer yet", the words "requested tags … are invalid or not permitted" mean that
-  the `tagOwners` entry or the Tailscale key are not right: repeat the parts "Computer tag" and "Access key" of the step
-  [Prepare the network](network.md), then repeat the command.
-- "The Tailscale key must start with tskey-.": the pasted key is not valid. Paste the whole key, which begins with
-  `tskey-auth-` (see [Prepare the network](network.md)).
-- "The node is on the tailnet, but HTTPS certificates are off: turn them on in the DNS page of the Tailscale admin
-  console, then run the program again.": the computer joined the network, but the padlock is missing. In the "DNS" page
-  of the [admin console](https://login.tailscale.com/admin/dns) turn on "HTTPS Certificates", as described in the step
-  [Prepare the network](network.md), then repeat the command.
+### The log mentions invalid tags
+
+In the log of "BiblioViva does not answer yet", the words "requested tags … are invalid or not permitted" mean that the
+`tagOwners` entry or the Tailscale key are not right: repeat the parts "Computer tag" and "Access key" of the step
+[Prepare the network](network.md), then repeat the command.
+
+### The Tailscale key is not valid
+
+The message "The Tailscale key must start with tskey-." appears: the pasted key is not valid. Paste the whole key, which
+begins with `tskey-auth-` (see [Prepare the network](network.md)).
+
+### The HTTPS certificates are not on
+
+The message "The node is on the tailnet, but HTTPS certificates are off: turn them on in the DNS page of the Tailscale
+admin console, then run the program again." appears: the computer joined the network, but the padlock is missing. In the
+"DNS" page of the [admin console](https://login.tailscale.com/admin/dns) turn on "HTTPS Certificates", as described in
+the step [Prepare the network](network.md), then repeat the command.
 <!-- /variant -->
 <!-- variant: lan -->
 **With the local network**
 
-- Docker writes "port is already allocated" and the program stops: another program occupies port `8080`. Ask whoever
-  manages the computer to free it, or write another number after `LAN_PORT=` in the file `~/biblioviva/.env` and repeat
-  the command: the addresses change accordingly.
-- The address with the name (`biblioviva.local`) does not open from the other computers: use the numeric address the
-  program wrote. The check from the desk computer is in the step [Connect the devices](devices.md).
-<!-- /variant -->
+### Port 8080 is already in use
 
-Other problems: [Common problems](../../help/problems.md#installation-that-stops).
+Docker writes "port is already allocated" and the program stops: another program occupies port `8080`. Ask whoever
+manages the computer to free it, or write another number after `LAN_PORT=` in the file `~/biblioviva/.env` and repeat
+the command: the addresses change accordingly.
+
+### The address with the name does not open from the other computers
+
+The address with the name (`biblioviva.local`) does not open from the other computers: use the numeric address the
+program wrote. The check from the desk computer is in the step [Connect the devices](devices.md).
+<!-- /variant -->
 
 ## Related pages
 

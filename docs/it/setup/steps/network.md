@@ -163,21 +163,30 @@ cambiare al primo riavvio del computer, e va rifatta la ricerca descritta al pas
 <!-- variant: tailscale -->
 **Con Tailscale**
 
-- Il tag `tag:biblioviva` non compare tra quelli scelti nel modulo della chiave: la voce `tagOwners` non è stata salvata
-  o contiene un errore. Aprire di nuovo «Access controls» e controllare che il testo sia salvato.
-- Dopo l'installazione l'avviso «requested tags are invalid or not permitted» indica la stessa causa; la soluzione
-  tecnica è nella pagina [Deployment notes (technical)](../../../deploy.md) (in inglese).
-- Il nome della rete contiene il nome della scuola: nella pagina «DNS» il pulsante «Rename tailnet» permette di
-  scegliere un nome casuale tra quelli proposti. Farlo prima di attivare i certificati, perché cambiare il nome più
-  tardi interrompe i collegamenti già in uso. La pagina [Tailnet name](https://tailscale.com/kb/1217/tailnet-name)
-  descrive i limiti.
+### Il tag non compare tra quelli del modulo della chiave
+
+Il tag `tag:biblioviva` non compare tra quelli scelti nel modulo della chiave: la voce `tagOwners` non è stata salvata o
+contiene un errore. Aprire di nuovo «Access controls» e controllare che il testo sia salvato.
+
+### Dopo l'installazione compare un avviso sui tag
+
+Dopo l'installazione l'avviso «requested tags are invalid or not permitted» indica la stessa causa, cioè la voce
+`tagOwners` non salvata o con un errore; la soluzione tecnica è nella pagina [Deployment notes
+(technical)](../../../deploy.md) (in inglese).
+
+### Il nome della rete contiene il nome della scuola
+
+Nella pagina «DNS» il pulsante «Rename tailnet» permette di scegliere un nome casuale tra quelli proposti. Farlo prima
+di attivare i certificati, perché cambiare il nome più tardi interrompe i collegamenti già in uso. La pagina [Tailnet
+name](https://tailscale.com/kb/1217/tailnet-name) descrive i limiti.
 <!-- /variant -->
 <!-- variant: lan -->
 **Con la rete locale**
 
-- Chi gestisce la rete non sa che cosa sia una prenotazione DHCP: è una funzione del router, descritta nelle sue
-  impostazioni come «DHCP statico», «indirizzo riservato» o «prenotazione indirizzo». Il glossario ne dà una
-  spiegazione per chi non è del mestiere.
+### Chi gestisce la rete non sa che cosa sia una prenotazione DHCP
+
+È una funzione del router, descritta nelle sue impostazioni come «DHCP statico», «indirizzo riservato» o «prenotazione
+indirizzo». Il glossario ne dà una spiegazione per chi non è del mestiere.
 <!-- /variant -->
 
 ## Pagine correlate

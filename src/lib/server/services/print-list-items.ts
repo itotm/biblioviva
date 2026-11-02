@@ -53,7 +53,7 @@ export function itemsByQuickFilter(db: DbOrTx, filter: ItemQuickFilter): number[
 		conditions.push(inArray(biblio.classCode, filter.classCodes));
 	}
 	if (filter.itemType) {
-		conditions.push(eq(item.itemType, filter.itemType));
+		conditions.push(eq(biblio.itemType, filter.itemType));
 	}
 	if (filter.importBatchId !== undefined) {
 		const created = createdIdsOfBatch(db, filter.importBatchId, "createdItemIds");

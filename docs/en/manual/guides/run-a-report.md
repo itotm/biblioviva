@@ -60,15 +60,32 @@ in another browser, the same report opens again with the same values.
 
 ## Possible problems
 
-- "No results with these parameters.": there is nothing in the chosen period. Widen the period.
-- ""From" is missing." (or the name of another field): the field is mandatory and must be filled in.
-- "The value of "…" is not valid.": the date or the number has a value that is not allowed. Correct the field.
-- A report does not appear: it may be reserved to the administrator. The reports that show single readers, such as "Most
-  active readers", are visible only to the administrator.
-- A report made by the school does not appear in the list: it probably has an error. The administrator sees at the top of
-  the page the notice "Report files not loaded" with the reason.
-- The classes of the report are today's, while the loans keep the class of the day they were made: two reports can
-  therefore give different numbers for the same class, if the students have changed class.
+### No results with these parameters
+
+"No results with these parameters." appears: there is nothing in the chosen period. Widen the period.
+
+### A required field is missing
+
+""From" is missing." (or the name of another field) appears: the field is mandatory and must be filled in.
+
+### The value of a field is not valid
+
+"The value of "…" is not valid." appears: the date or the number has a value that is not allowed. Correct the field.
+
+### A report does not appear
+
+It may be reserved to the administrator. The reports that show single readers, such as "Most active readers", are
+visible only to the administrator.
+
+### A school report does not appear in the list
+
+It probably has an error. The administrator sees at the top of the page the notice "Report files not loaded" with the
+reason.
+
+### Two reports give different numbers for the same class
+
+The classes of the report are today's, while the loans keep the class of the day they were made: two reports can
+therefore give different numbers for the same class, if the students have changed class.
 
 ## Related pages
 

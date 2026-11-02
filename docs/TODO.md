@@ -72,14 +72,14 @@ list is cleared at a release, and a new one takes the next.
 - [ ] 9.4 Device checklist.
 - [x] 9.17 Public demo: running on `demo.biblioviva.org`.
 - [x] 9.40 A beep when the phone's camera reads a code (four sounds, Conferma by default, Q137).
-- [ ] 9.44 Authors as "Surname, Name" in the demo data (the seed draws "Name Surname"; the segnature follow).
-- [ ] 9.45 The item type belongs to the record: edited in "Modifica scheda", no longer on each copy; the segnatura
+- [x] 9.44 Authors as "Surname, Name" in the demo data (the seed draws "Name Surname"; the segnature follow).
+- [x] 9.45 The item type belongs to the record: edited in "Modifica scheda", no longer on each copy; the segnatura
   stays on the copy (Q139).
-- [ ] 9.46 Problem boxes everywhere in the documentation: every "Possibili problemi" as one box per problem, one life
+- [x] 9.46 Problem boxes everywhere in the documentation: every "Possibili problemi" as one box per problem, one life
   buoy on the heading (Q141).
-- [ ] 9.47 A help button that is seen: "Guida" with text in the top bar on the computer, a round button beside the
+- [x] 9.47 A help button that is seen: "Guida" with text in the top bar on the computer, a round button beside the
   title on the phone, in the primary colour (Q140).
-- [ ] 9.48 A language pack from the first-run wizard: installed on the first screen, the wizard goes on in it (Q142).
+- [x] 9.48 A language pack from the first-run wizard: installed on the first screen, the wizard goes on in it (Q142).
 - [ ] 9.6 Release 0.9.0, the first tagged release of the public beta (ADR-048).
 
 ## After 0.9.0

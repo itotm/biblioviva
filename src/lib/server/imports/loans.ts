@@ -109,7 +109,7 @@ export function validateLoanImport(
 			id: item.id,
 			barcode: item.barcode,
 			status: item.status,
-			itemType: item.itemType,
+			itemType: biblio.itemType,
 			kind: biblio.kind,
 		})
 		.from(item)

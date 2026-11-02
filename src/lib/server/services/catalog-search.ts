@@ -206,9 +206,7 @@ export function searchBiblios(
 		);
 	}
 	if (filters.itemType) {
-		conditions.push(
-			sql`exists (select 1 from item i where i.biblio_id = biblio.id and i.item_type = ${filters.itemType})`,
-		);
+		conditions.push(eq(biblio.itemType, filters.itemType));
 	}
 	if (filters.series) {
 		conditions.push(sql`${biblio.series} = ${filters.series} collate nocase`);
@@ -392,7 +390,6 @@ export interface ItemRow {
 	id: number;
 	barcode: string;
 	callNumber: string | null;
-	itemType: string;
 	readingLevel: string | null;
 	enumeration: string | null;
 	status: ItemStatus;
@@ -434,7 +431,6 @@ export function getBiblio(db: Db, id: number, rules: CatalogRules): BiblioDetail
 				id: i.id,
 				barcode: i.barcode,
 				callNumber: i.callNumber,
-				itemType: i.itemType,
 				readingLevel: i.readingLevel,
 				enumeration: i.enumeration,
 				status: i.status as ItemStatus,

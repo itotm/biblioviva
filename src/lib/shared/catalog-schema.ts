@@ -41,6 +41,11 @@ export const biblioFormSchema = v.object({
 	series: optionalText(200),
 	seriesNumber: optionalText(20),
 	dewey: optionalText(20),
+	/**
+	 * A code of `library.itemTypes`, for every copy (9.45). Empty or left out: the first configured
+	 * type for a new record, the record's own on an edit.
+	 */
+	itemType: v.optional(v.pipe(v.string(), v.trim(), v.maxLength(32))),
 	/** `""`: "Classifica dopo", the record waits in the list of books to classify (step 9.21). */
 	kind: v.optional(v.union([v.picklist(BIBLIO_KIND_VALUES), v.literal("")]), ""),
 	genreCode: optionalText(16),
@@ -58,7 +63,6 @@ export const biblioEditSchema = v.object({
 	...biblioFormSchema.entries,
 	/** When the record has exactly one copy its fields are edited on the same page (owner review). */
 	itemId: optionalText(12),
-	itemType: optionalText(32),
 	itemCallNumber: optionalText(40),
 	itemReadingLevel: optionalText(2),
 	itemEnumeration: optionalText(60),
@@ -77,7 +81,6 @@ export const ITEM_STATUS_VALUES = [
 export type ItemStatus = (typeof ITEM_STATUS_VALUES)[number];
 
 export const itemFormSchema = v.object({
-	itemType: v.pipe(v.string(), v.trim(), v.minLength(1), v.maxLength(32)),
 	callNumber: optionalText(40),
 	/** Per-copy class (only with `classPerItem`). */
 	readingLevel: optionalText(8),
@@ -121,7 +124,6 @@ export const fastAddSchema = v.object({
 	...biblioFormSchema.entries,
 	/** Number of copies as typed (`'1'`…`'100'`). */
 	copies: v.pipe(v.string(), v.regex(/^\d{1,3}$/)),
-	itemType: itemFormSchema.entries.itemType,
 	itemCallNumber: optionalText(40),
 	/** Per-copy class (only with `classPerItem`). */
 	itemReadingLevel: optionalText(2),

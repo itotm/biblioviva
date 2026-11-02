@@ -121,16 +121,29 @@ provided is in the technical page
 
 ## Possible problems
 
-- The scanner writes nothing: try another USB port and check that the field was clicked before reading. The scanner
-  must be connected to the circulation desk computer.
-- The scanner writes the code but BiblioViva does not accept it at the desk: the scanner must send the Enter key after
-  the code, because the code fields accept it only with Enter. The scanner's manual explains how to enable the Enter
-  suffix.
-- The scanner writes wrong characters in place of the hyphen: see the section on the keyboard, above, and the page
-  [Common problems](../../help/problems.md#scanner-that-types-strange-characters). The technical explanation is
-  in the page [Deployment notes (technical)](../../../deploy.md#installing-updating-logs-step-85).
-- The printed ruler measures less than 100 mm: the scale of the print window is not at 100 %.
-- The printout has dates and addresses at the edges of the sheet: the browser's headers and footers are on.
+### The scanner writes nothing
+
+Try another USB port and check that the field was clicked before reading. The scanner must be connected to the
+circulation desk computer.
+
+### The scanner writes the code but BiblioViva does not accept it
+
+At the desk the scanner must send the Enter key after the code, because the code fields accept it only with Enter. The
+scanner's manual explains how to enable the Enter suffix.
+
+### The scanner writes wrong characters in place of the hyphen
+
+See the section on the keyboard, above, and the page
+[Common problems](../../help/problems.md#scanner-that-types-strange-characters). The technical explanation is in the
+page [Deployment notes (technical)](../../../deploy.md#installing-updating-logs-step-85).
+
+### The printed ruler measures less than 100 mm
+
+The scale of the print window is not at 100 %.
+
+### The printout has dates and addresses at the edges of the sheet
+
+The browser's headers and footers are on.
 
 ## Related pages
 

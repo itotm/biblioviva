@@ -35,16 +35,30 @@ il ripristino è una modifica: compare nella cronologia e si può annullare a su
 
 ## Possibili problemi
 
-- Compare «Non si può ripristinare: dopo questa modifica sono cambiati di nuovo» seguito dai nomi dei valori: quegli
-  stessi valori sono stati cambiati ancora. Annullare prima le modifiche più recenti, dall'alto verso il basso.
-- Compare «Questa modifica ha creato config.json: non si può annullare.»: è la prima configurazione, scritta dal primo
-  avvio.
-- Compare «La modifica non è più nella cronologia.»: la cronologia tiene le ultime 50 modifiche e questa è stata
-  superata. Se esiste un archivio della configurazione, vedere [Esportare e importare la
-  configurazione](export-the-configuration.md).
-- L'elenco mostra «Nessuna modifica fatta dall'amministrazione finora.»: non c'è nulla da annullare.
-- Un'impostazione è stata cambiata modificando a mano i file della configurazione: quella modifica non è nella
-  cronologia.
+### Il valore è cambiato di nuovo
+
+Compare «Non si può ripristinare: dopo questa modifica sono cambiati di nuovo» seguito dai nomi dei valori: quegli
+stessi valori sono stati cambiati ancora. Annullare prima le modifiche più recenti, dall'alto verso il basso.
+
+### La modifica ha creato config.json
+
+Compare «Questa modifica ha creato config.json: non si può annullare.»: è la prima configurazione, scritta dal primo
+avvio.
+
+### La modifica non è più nella cronologia
+
+Compare «La modifica non è più nella cronologia.»: la cronologia tiene le ultime 50 modifiche e questa è stata
+superata. Se esiste un archivio della configurazione, vedere [Esportare e importare la
+configurazione](export-the-configuration.md).
+
+### L'elenco delle modifiche è vuoto
+
+L'elenco mostra «Nessuna modifica fatta dall'amministrazione finora.»: non c'è nulla da annullare.
+
+### Una modifica non compare nella cronologia
+
+Un'impostazione è stata cambiata modificando a mano i file della configurazione: quella modifica non è nella
+cronologia.
 
 ## Pagine correlate
 

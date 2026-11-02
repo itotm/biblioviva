@@ -5,6 +5,9 @@ Serve a chi amministra BiblioViva. Le lingue già tradotte si installano dall'el
 non è nell'elenco, o per un'installazione senza internet, si carica un pacchetto di traduzioni. In nessun caso occorre
 toccare il programma.
 
+Una lingua si può installare anche all'inizio, dalla prima schermata della configurazione guidata: la procedura è nella
+sezione [Lingua](../../setup/steps/first-run.md#lingua) del passo [Primo avvio](../../setup/steps/first-run.md).
+
 BiblioViva usa una sola lingua per tutta l'installazione. Un pacchetto è una cartella di file `.json` con i testi
 dell'interfaccia: si parte da una copia dell'inglese o dell'italiano e si traducono i testi.
 
@@ -101,25 +104,50 @@ correzione si ricomprime e si ricarica la cartella: un pacchetto con lo stesso c
 
 ## Possibili problemi
 
-- Compare «L'elenco delle lingue non è raggiungibile»: il computer di BiblioViva non è collegato a internet oppure la
-  versione installata non ha ancora un elenco. Il caricamento di un pacchetto zip, descritto più avanti, funziona lo
-  stesso: scaricare da un computer con internet il file della lingua dalla pagina della versione di BiblioViva (il
-  collegamento **Pagina della release su GitHub, per scaricare gli zip** sotto l'elenco, oppure l'indirizzo `https://github.com/itotm/biblioviva/releases`) e
-  caricarlo con **Carica un pacchetto (zip)**.
-- Compare «Il pacchetto scaricato è danneggiato e non è stato installato»: il file non è arrivato per intero. Premere di
-  nuovo **Installa**.
-- Compare «Lo zip deve contenere solo i file .json della lingua, dentro una sola cartella con il codice della lingua.»:
-  ricomprimere la cartella rinominata, non i singoli file, e senza altre cartelle o file dentro.
-- Compare «Codice di lingua non valido» seguito dal codice: il nome della cartella non è nella forma `de`, `fr` o
-  `pt-BR`.
-- Compare «L'inglese e l'italiano sono già inclusi e non si sostituiscono.»: la cartella ha ancora il nome `en` o `it`.
-- Compare «Il pacchetto ha errori e non è stato installato:» con un elenco: un file manca, un file non è un JSON valido
-  o una traduzione ha perso una parte fra graffe. Correggere il file indicato.
-- Il pulsante **Elimina** di un pacchetto è spento: è la lingua in uso. Scegliere prima un'altra lingua in **Aspetto e
-  lingua**.
-- Il pacchetto si può scaricare di nuovo con il pulsante **Scarica** della sua riga, per tenerne una copia o per
-  continuare la traduzione.
-- Eliminare un pacchetto si può annullare dalla [cronologia della configurazione](undo-a-configuration-change.md).
+### L'elenco delle lingue non è raggiungibile
+
+Compare «L'elenco delle lingue non è raggiungibile»: il computer di BiblioViva non è collegato a internet oppure la
+versione installata non ha ancora un elenco. Il caricamento di un pacchetto zip, descritto più avanti, funziona lo
+stesso: scaricare da un computer con internet il file della lingua dalla pagina della versione di BiblioViva (il
+collegamento **Pagina della release su GitHub, per scaricare gli zip** sotto l'elenco, oppure l'indirizzo
+`https://github.com/itotm/biblioviva/releases`) e caricarlo con **Carica un pacchetto (zip)**.
+
+### Il pacchetto scaricato è danneggiato
+
+Compare «Il pacchetto scaricato è danneggiato e non è stato installato»: il file non è arrivato per intero. Premere di
+nuovo **Installa**.
+
+### Lo zip non ha la struttura richiesta
+
+Compare «Lo zip deve contenere solo i file .json della lingua, dentro una sola cartella con il codice della lingua.»:
+ricomprimere la cartella rinominata, non i singoli file, e senza altre cartelle o file dentro.
+
+### Il codice di lingua non è valido
+
+Compare «Codice di lingua non valido» seguito dal codice: il nome della cartella non è nella forma `de`, `fr` o
+`pt-BR`.
+
+### L'inglese e l'italiano non si sostituiscono
+
+Compare «L'inglese e l'italiano sono già inclusi e non si sostituiscono.»: la cartella ha ancora il nome `en` o `it`.
+
+### Il pacchetto ha errori e non è stato installato
+
+Compare «Il pacchetto ha errori e non è stato installato:» con un elenco: un file manca, un file non è un JSON valido
+o una traduzione ha perso una parte fra graffe. Correggere il file indicato.
+
+### Il pulsante Elimina di un pacchetto è spento
+
+È la lingua in uso. Scegliere prima un'altra lingua in **Aspetto e lingua**.
+
+### Si vuole scaricare di nuovo un pacchetto
+
+Il pacchetto si può scaricare di nuovo con il pulsante **Scarica** della sua riga, per tenerne una copia o per
+continuare la traduzione.
+
+### Si vuole annullare l'eliminazione di un pacchetto
+
+Eliminare un pacchetto si può annullare dalla [cronologia della configurazione](undo-a-configuration-change.md).
 
 ## Pagine correlate
 

@@ -70,15 +70,26 @@ nella colonna `group` del file dei docenti.
 
 ## Possibili problemi
 
-- Compare «Esiste già una classe con questo nome per lo stesso anno.»: esiste una classe con lo stesso anno e lo stesso
-  nome, anche archiviata: aprire l'elenco «Classi archiviate» e ripristinarla, oppure scegliere un altro nome.
-- Il pulsante **Archivia** è spento: la classe ha ancora degli utenti. Spostarli in un'altra classe dalla scheda di
-  ciascuno, oppure attendere l'avanzamento di fine anno: le classi che restano vuote vengono archiviate da sole.
-- Compare «Degli studenti della classe sono in un anno che verrebbe tolto.»: si è tolto da una pluriclasse un anno in
-  cui ci sono ancora studenti. Rimettere la spunta all'anno.
-- L'anno che serve non compare tra le caselle: gli anni della scuola non si cambiano da questa pagina, ma dal
-  collegamento **Scuola** in cima alla pagina, nel riquadro **Ordini di scuola e anni**. Il modo in cui si
-  scrive la classe (`3 B` o `3B`) si cambia nella stessa sezione, nel campo **Come si scrive la classe**.
+### Esiste già una classe con questo nome
+
+Compare «Esiste già una classe con questo nome per lo stesso anno.»: esiste una classe con lo stesso anno e lo stesso
+nome, anche archiviata: aprire l'elenco «Classi archiviate» e ripristinarla, oppure scegliere un altro nome.
+
+### Il pulsante Archivia è spento
+
+La classe ha ancora degli utenti. Spostarli in un'altra classe dalla scheda di ciascuno, oppure attendere l'avanzamento
+di fine anno: le classi che restano vuote vengono archiviate da sole.
+
+### Degli studenti sono in un anno che verrebbe tolto
+
+Compare «Degli studenti della classe sono in un anno che verrebbe tolto.»: si è tolto da una pluriclasse un anno in
+cui ci sono ancora studenti. Rimettere la spunta all'anno.
+
+### L'anno che serve non compare
+
+L'anno che serve non compare tra le caselle: gli anni della scuola non si cambiano da questa pagina, ma dal
+collegamento **Scuola** in cima alla pagina, nel riquadro **Ordini di scuola e anni**. Il modo in cui si scrive la
+classe (`3 B` o `3B`) si cambia nella stessa sezione, nel campo **Come si scrive la classe**.
 
 ## Pagine correlate
 

@@ -92,19 +92,38 @@ account".
 
 ## Possible problems
 
-- "The username … is already used." appears: choose another name.
-- "At least one active account must keep the administration permission." appears: the last account that administers
-  cannot be deactivated, deleted or stripped of the permission. First give the **Administration** permission to another
-  account.
-- "Deactivate the account before deleting it." appears: follow the deactivation steps above.
-- The button to delete a role is off: the role is used by some account. First remove the role from those accounts with
-  **Edit**.
-- A card shows "Clear password in the file": the account was written by hand in the configuration files with a readable
-  password. Give it a password with **New password**, as described in [Change a password](change-a-password.md).
-- A card shows "Removed from the configuration": the account is no longer in the configuration files, and its
-  operations stay in the log. It can be neither edited nor deleted.
-- The **Reload configuration** button, at the top, makes BiblioViva reread the configuration files edited by hand. It is
-  needed only by those who edit them outside BiblioViva.
+### The username is already used
+
+"The username … is already used." appears: choose another name.
+
+### The last administrator cannot be removed
+
+"At least one active account must keep the administration permission." appears: the last account that administers
+cannot be deactivated, deleted or stripped of the permission. First give the **Administration** permission to another
+account.
+
+### The account must be deactivated before deleting it
+
+"Deactivate the account before deleting it." appears: follow the deactivation steps above.
+
+### The button to delete a role is off
+
+The role is used by some account. First remove the role from those accounts with **Edit**.
+
+### A card flags a clear password
+
+The account was written by hand in the configuration files with a readable password. Give it a password with **New
+password**, as described in [Change a password](change-a-password.md).
+
+### An account was removed from the configuration
+
+The account is no longer in the configuration files, and its operations stay in the log. It can be neither edited nor
+deleted.
+
+### The configuration files were edited by hand
+
+The **Reload configuration** button, at the top, makes BiblioViva reread the configuration files edited by hand. It is
+needed only by those who edit them outside BiblioViva.
 
 ## Related pages
 

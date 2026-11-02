@@ -166,18 +166,30 @@ connessione riesce, il Raspberry Pi è in rete.
 <!-- variant: linux -->
 **Con un PC Linux**
 
-- Il PC non compare nell'elenco del router: controllare il cavo di rete e che il sistema sia avviato fino alla
-  richiesta di accesso.
-- Dimenticato il nome utente o la password: ripetere l'installazione del sistema.
+### Il PC non compare nell'elenco del router
+
+Controllare il cavo di rete e che il sistema sia avviato fino alla richiesta di accesso.
+
+### Nome utente o password del PC dimenticati
+
+Ripetere l'installazione del sistema.
 <!-- /variant -->
 <!-- variant: raspberry -->
 **Con il Raspberry Pi**
 
-- Il Raspberry Pi non si accende (nessuna spia): controllare l'alimentatore. Un caricabatterie per telefono spesso
-  non basta: usare un alimentatore adatto al modello.
-- Dopo dieci minuti il Raspberry Pi non compare nell'elenco del router: controllare il cavo di rete (le spie della
-  presa si accendono), poi ripetere la scrittura della scheda controllando le impostazioni.
-- Dimenticato il nome utente o la password: ripetere la scrittura della scheda con Raspberry Pi Imager.
+### Il Raspberry Pi non si accende
+
+Nessuna spia: controllare l'alimentatore. Un caricabatterie per telefono spesso non basta: usare un alimentatore adatto
+al modello.
+
+### Il Raspberry Pi non compare nell'elenco del router
+
+Dopo dieci minuti il Raspberry Pi non compare nell'elenco del router: controllare il cavo di rete (le spie della presa
+si accendono), poi ripetere la scrittura della scheda controllando le impostazioni.
+
+### Nome utente o password del Raspberry Pi dimenticati
+
+Ripetere la scrittura della scheda con Raspberry Pi Imager.
 <!-- /variant -->
 
 ## Pagine correlate

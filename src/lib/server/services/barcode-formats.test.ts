@@ -51,7 +51,7 @@ function fixture(): { db: Db; actor: { id: number } } {
 		.returning({ id: biblio.id })
 		.get().id;
 	for (const barcode of ["2025-0042", "2026-0001", "12345", itemCode(2026, 1)]) {
-		db.insert(item).values({ biblioId, barcode, itemType: "libro" }).run();
+		db.insert(item).values({ biblioId, barcode }).run();
 	}
 	db.insert(patron)
 		.values({ firstName: "a", lastName: "b", patronType: "teacher", cardNumber: "0000001240" })

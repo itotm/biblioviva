@@ -60,15 +60,32 @@ in un altro browser lo stesso report si riapre con gli stessi valori.
 
 ## Possibili problemi
 
-- «Nessun risultato con questi parametri.»: nel periodo scelto non c'è nulla. Allargare il periodo.
-- «Manca «Dal».» (o il nome di un altro campo): il campo è obbligatorio e va compilato.
-- «Il valore di «…» non è valido.»: la data o il numero non hanno un valore ammesso. Correggere il campo.
-- Un report non compare: potrebbe essere riservato all'amministratore. I report che mostrano i singoli lettori, come
-  «Lettori più assidui», sono visibili solo a lui.
-- Un report fatto dalla scuola non compare nell'elenco: ha probabilmente un errore. L'amministratore vede in cima alla
-  pagina l'avviso «File di report non caricati» con il motivo.
-- Le classi del report sono quelle di oggi, mentre i prestiti conservano la classe del giorno in cui sono stati fatti:
-  due report possono quindi dare numeri diversi per la stessa classe, se gli alunni hanno cambiato classe.
+### Nessun risultato con questi parametri
+
+Compare «Nessun risultato con questi parametri.»: nel periodo scelto non c'è nulla. Allargare il periodo.
+
+### Manca un campo obbligatorio
+
+Compare «Manca «Dal».» (o il nome di un altro campo): il campo è obbligatorio e va compilato.
+
+### Il valore di un campo non è valido
+
+Compare «Il valore di «…» non è valido.»: la data o il numero non hanno un valore ammesso. Correggere il campo.
+
+### Un report non compare
+
+Potrebbe essere riservato all'amministratore. I report che mostrano i singoli lettori, come «Lettori più assidui», sono
+visibili solo a lui.
+
+### Un report della scuola non compare nell'elenco
+
+Ha probabilmente un errore. L'amministratore vede in cima alla pagina l'avviso «File di report non caricati» con il
+motivo.
+
+### Due report danno numeri diversi per la stessa classe
+
+Le classi del report sono quelle di oggi, mentre i prestiti conservano la classe del giorno in cui sono stati fatti: due
+report possono quindi dare numeri diversi per la stessa classe, se gli alunni hanno cambiato classe.
 
 ## Pagine correlate
 

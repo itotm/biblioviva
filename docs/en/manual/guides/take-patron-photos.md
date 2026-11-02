@@ -72,20 +72,40 @@ The photo appears in the record and on the cards printed from that moment.
 
 ## Possible problems
 
-- A class does not appear in the census: all its photos are already taken ("Every class and list has its photos.").
-  To retake a single photo use the patron's record.
-- "The camera only works over a secure connection (https)…": the local network without Tailscale does not allow the
-  camera. Use **Upload file**, or open BiblioViva from the Tailscale address.
-- "Permission denied: allow the camera in the browser settings and try again.": open the site settings in the browser
-  (the icon near the address), allow the camera and reload the page.
-- "No camera found on this device." and "The camera is already in use by another app.": connect the camera or close the
-  other program that uses it; otherwise use **Upload file**.
-- "The camera did not answer…": the browser may still be asking for permission, or the permission was denied earlier for
-  this site.
-- "File too large: the limit is … MB.", "The file is not a readable image." and "Unsupported image format (use JPEG, PNG,
-  WebP or HEIC).": choose another file.
-- The **Photo census** tab does not exist: the administrator has switched off the photos, as explained in [Switch off
-  the photos or the covers](../../admin/guides/switch-off-photos-or-covers.md).
+### A class does not appear in the census
+
+All its photos are already taken ("Every class and list has its photos."). To retake a single photo use the patron's
+record.
+
+### The camera needs a secure connection
+
+"The camera only works over a secure connection (https)…" appears: the local network without Tailscale does not allow
+the camera. Use **Upload file**, or open BiblioViva from the Tailscale address.
+
+### The camera permission is denied
+
+"Permission denied: allow the camera in the browser settings and try again." appears: open the site settings in the
+browser (the icon near the address), allow the camera and reload the page.
+
+### No camera found, or the camera is in use
+
+"No camera found on this device." or "The camera is already in use by another app." appears: connect the camera or close
+the other program that uses it; otherwise use **Upload file**.
+
+### The camera does not answer
+
+"The camera did not answer…" appears: the browser may still be asking for permission, or the permission was denied
+earlier for this site.
+
+### The file is not accepted
+
+"File too large: the limit is … MB.", "The file is not a readable image." or "Unsupported image format (use JPEG, PNG,
+WebP or HEIC)." appears: choose another file.
+
+### The Photo census tab is missing
+
+The **Photo census** tab does not exist: the administrator has switched off the photos, as explained in [Switch off the
+photos or the covers](../../admin/guides/switch-off-photos-or-covers.md).
 
 ## Related pages
 

@@ -74,19 +74,39 @@ qualche etichetta e confrontare i prestiti con il vecchio programma.
 
 ## Possibili problemi
 
-- Compare «Nessun utente con la tessera …»: il numero non corrisponde a nessun utente. Importare prima l'utente oppure
-  correggere il numero.
-- Compare «Nessuna copia con il codice …»: il codice non è in catalogo. Importare prima il catalogo oppure correggere il
-  codice.
-- Compare «La copia … è già in prestito»: la copia ha già un prestito in BiblioViva, o compare due volte nel file («Stessa
-  copia già alla riga …»). Togliere il doppione.
-- Compare «La copia … è ritirata»: una copia ritirata non si presta. Rimetterla disponibile dalla scheda del libro, oppure
-  togliere la riga.
-- Compare «Data del prestito nel futuro» o «La scadenza è prima della data del prestito»: correggere le date.
-- Compare «La copia … è di un libro da classificare»: il prestito viene importato, ma al banco quella copia non si presta
-  finché il libro non è classificato: vedere [Classificare i libri](../../manual/guides/classify-books.md).
-- Per chi arriva da Koha: i prestiti in corso si estraggono con una query già pronta, da eseguire il giorno del
-  passaggio: vedere [le istruzioni tecniche](../../../import/README.md).
+### Nessun utente con la tessera indicata
+
+Compare «Nessun utente con la tessera …»: il numero non corrisponde a nessun utente. Importare prima l'utente oppure
+correggere il numero.
+
+### Nessuna copia con il codice indicato
+
+Compare «Nessuna copia con il codice …»: il codice non è in catalogo. Importare prima il catalogo oppure correggere il
+codice.
+
+### La copia è già in prestito
+
+Compare «La copia … è già in prestito»: la copia ha già un prestito in BiblioViva, o compare due volte nel file
+(«Stessa copia già alla riga …»). Togliere il doppione.
+
+### La copia è ritirata
+
+Compare «La copia … è ritirata»: una copia ritirata non si presta. Rimetterla disponibile dalla scheda del libro, oppure
+togliere la riga.
+
+### Le date del prestito non sono corrette
+
+Compare «Data del prestito nel futuro» o «La scadenza è prima della data del prestito»: correggere le date.
+
+### La copia è di un libro da classificare
+
+Compare «La copia … è di un libro da classificare»: il prestito viene importato, ma al banco quella copia non si presta
+finché il libro non è classificato: vedere [Classificare i libri](../../manual/guides/classify-books.md).
+
+### I prestiti arrivano da Koha
+
+I prestiti in corso si estraggono con una query già pronta, da eseguire il giorno del passaggio: vedere
+[le istruzioni tecniche](../../../import/README.md).
 
 ## Pagine correlate
 

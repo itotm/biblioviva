@@ -75,17 +75,29 @@ La scheda del libro è aperta e le copie dicono dove sono e se si possono presta
 
 ## Possibili problemi
 
-- «Nessun libro corrisponde ai filtri.»: togliere un filtro, scrivere meno parole o solo il cognome dell'autore, oppure
-  premere **Azzera filtri**.
-- Il libro c'è ma non compare nell'elenco: se tutte le sue copie sono ritirate spuntare **Mostra anche i libri
-  ritirati**. Il filtro **Solo disponibili** nasconde i libri senza copie sullo scaffale.
-- La tabella non cambia mentre si scrive: la ricerca parte da 3 caratteri; un codice di sole cifre (un ISBN
-  o parte di esso) si cerca con qualsiasi lunghezza.
-- Il libro compare due volte: esistono due schede dello stesso titolo, per esempio perché una è stata scritta senza
-  ISBN. Aggiungere le copie a una sola e togliere l'altra scheda con [Correggere la scheda di un
-  libro](edit-a-record.md).
-- Il lettore non apre la scheda: il codice letto non è quello di una copia di BiblioViva né un ISBN presente in
-  catalogo. Controllare che il cursore sia nel campo di ricerca, poi provare a scrivere il titolo.
+### Nessun libro corrisponde ai filtri
+
+Compare «Nessun libro corrisponde ai filtri.»: togliere un filtro, scrivere meno parole o solo il cognome
+dell'autore, oppure premere **Azzera filtri**.
+
+### Il libro c'è ma non compare nell'elenco
+
+Se tutte le sue copie sono ritirate spuntare **Mostra anche i libri ritirati**. Il filtro **Solo disponibili** nasconde
+i libri senza copie sullo scaffale.
+
+### La tabella non cambia mentre si scrive
+
+La ricerca parte da 3 caratteri; un codice di sole cifre (un ISBN o parte di esso) si cerca con qualsiasi lunghezza.
+
+### Il libro compare due volte
+
+Esistono due schede dello stesso titolo, per esempio perché una è stata scritta senza ISBN. Aggiungere le copie a una
+sola e togliere l'altra scheda con [Correggere la scheda di un libro](edit-a-record.md).
+
+### Il lettore non apre la scheda
+
+Il codice letto non è quello di una copia di BiblioViva né un ISBN presente in catalogo. Controllare che il cursore
+sia nel campo di ricerca, poi provare a scrivere il titolo.
 
 ## Pagine correlate
 

@@ -26,6 +26,7 @@ CREATE TABLE `biblio` (
 	`series` text,
 	`series_number` text,
 	`dewey` text,
+	`item_type` text DEFAULT 'libro' NOT NULL,
 	`kind` text,
 	`genre_code` text,
 	`reading_level` text,
@@ -164,7 +165,6 @@ CREATE TABLE `item` (
 	`biblio_id` integer NOT NULL,
 	`barcode` text NOT NULL,
 	`call_number` text,
-	`item_type` text DEFAULT 'libro' NOT NULL,
 	`reading_level` text,
 	`enumeration` text,
 	`status` text DEFAULT 'available' NOT NULL,
@@ -365,6 +365,7 @@ CREATE INDEX `biblio_year` ON `biblio` (`publication_year`);--> statement-breakp
 CREATE INDEX `biblio_kind` ON `biblio` (`kind`);--> statement-breakpoint
 CREATE INDEX `biblio_genre` ON `biblio` (`genre_code`);--> statement-breakpoint
 CREATE INDEX `biblio_class` ON `biblio` (`class_code`);--> statement-breakpoint
+CREATE INDEX `biblio_item_type` ON `biblio` (`item_type`);--> statement-breakpoint
 CREATE INDEX `biblio_reading_level` ON `biblio` (`reading_level`);--> statement-breakpoint
 CREATE INDEX `calendar_event_dates` ON `calendar_event` (`starts_on`,`ends_on`);--> statement-breakpoint
 CREATE INDEX `class_group_kind` ON `class_group` (`kind`,`archived_at`);--> statement-breakpoint

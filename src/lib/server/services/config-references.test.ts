@@ -37,6 +37,7 @@ function fixture(): ReturnType<typeof createTestDb> {
 			series: "",
 			seriesNumber: "",
 			dewey: "",
+			itemType: "dvd",
 			kind: "fiction",
 			genreCode: "B",
 			classCode: "",
@@ -51,7 +52,6 @@ function fixture(): ReturnType<typeof createTestDb> {
 		db,
 		id,
 		{
-			itemType: "dvd",
 			callNumber: "",
 			readingLevel: "",
 			enumeration: "",
@@ -103,13 +103,13 @@ describe("reference guard", () => {
 		});
 		expect(referenceProblems(db, config, after)).toEqual([
 			{ kind: "classification", code: "B", count: 1 },
-			{ kind: "itemType", code: "dvd", count: 2 },
+			{ kind: "itemType", code: "dvd", count: 1 },
 			{ kind: "level", code: "5", count: 1 },
 			{ kind: "level", code: "2", count: 0 },
 			{ kind: "readingLevel", code: "3", count: 1 },
 		]);
 		expect(new ConfigInUseError(referenceProblems(db, config, after)).message).toContain(
-			"itemType dvd (2)",
+			"itemType dvd (1)",
 		);
 	});
 

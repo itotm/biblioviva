@@ -1360,8 +1360,26 @@ a.card:hover {
 .trouble summary::-webkit-details-marker {
 	display: none;
 }
-.trouble summary .i:first-child {
-	color: var(--warn);
+/* one icon only, on the heading of the section (9.46) */
+.trouble-head {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+.trouble-ico {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 12px;
+	background: color-mix(in srgb, var(--sec, var(--primary)) 14%, #fff);
+	color: var(--sec, var(--primary));
+}
+.trouble-ico .i {
+	width: 22px;
+	height: 22px;
 }
 .trouble summary .i:last-child {
 	margin-left: auto;
@@ -1376,7 +1394,7 @@ a.card:hover {
 	border-radius: 14px;
 }
 .trouble details > div {
-	padding: 0 16px 14px 48px;
+	padding: 0 16px 14px;
 }
 .trouble details > div p {
 	margin: 0 0 8px;

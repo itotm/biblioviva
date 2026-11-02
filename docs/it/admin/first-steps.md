@@ -79,12 +79,19 @@ propria scuola si saltano.
 
 ## Possibili problemi
 
-- Una voce non si sa se serve: saltarla. Le impostazioni proposte da BiblioViva sono adatte alla maggior parte delle
-  scuole e ogni modifica si può annullare dalla [cronologia della
-  configurazione](guides/undo-a-configuration-change.md).
-- Un'impostazione non si trova: la pagina [Configurazione](screens/configuration.md) elenca le sezioni, e
-  [Amministrazione](screens/admin.md) elenca le pagine dell'amministratore.
-- Una password è stata persa o BiblioViva non si apre: vedere [Problemi comuni](../help/problems.md).
+### Non si sa se una voce serve
+
+Saltarla. Le impostazioni proposte da BiblioViva sono adatte alla maggior parte delle scuole e ogni modifica si può
+annullare dalla [cronologia della configurazione](guides/undo-a-configuration-change.md).
+
+### Un'impostazione non si trova
+
+La pagina [Configurazione](screens/configuration.md) elenca le sezioni, e [Amministrazione](screens/admin.md) elenca le
+pagine dell'amministratore.
+
+### La password è persa o BiblioViva non si apre
+
+Vedere [Problemi comuni](../help/problems.md).
 
 ## Pagine correlate
 

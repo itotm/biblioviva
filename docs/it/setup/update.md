@@ -94,14 +94,20 @@ sono quelli di prima.
 
 ## Possibili problemi
 
-- Il comando risponde «permission denied» a proposito di Docker: il terminale va chiuso e riaperto dopo
-  l'installazione di Docker (vedere [Installare BiblioViva](steps/install.md)), oppure si antepone `sudo` ai comandi
-  `docker`.
-- «BiblioViva non risponde ancora»: attendere due minuti e rieseguire il comando; se il messaggio resta, la lettura
-  del registro è descritta in [Installare BiblioViva](steps/install.md#possibili-problemi).
-- Dopo l'aggiornamento qualcosa non va: ripristinare la copia fatta all'inizio, come in
-  [Ripartire da una copia di sicurezza](restore.md), e rimandare l'aggiornamento restando sulla versione di prima
-  come descritto sopra.
+### Il comando risponde permission denied per Docker
+
+Il comando risponde «permission denied» a proposito di Docker: il terminale va chiuso e riaperto dopo l'installazione
+di Docker (vedere [Installare BiblioViva](steps/install.md)), oppure si antepone `sudo` ai comandi `docker`.
+
+### BiblioViva non risponde ancora
+
+Compare il messaggio «BiblioViva non risponde ancora»: attendere due minuti e rieseguire il comando; se il messaggio
+resta, la lettura del registro è descritta in [Installare BiblioViva](steps/install.md#possibili-problemi).
+
+### Dopo l'aggiornamento qualcosa non va
+
+Ripristinare la copia fatta all'inizio, come in [Ripartire da una copia di sicurezza](restore.md), e rimandare
+l'aggiornamento restando sulla versione di prima come descritto sopra.
 
 ## Pagine correlate
 

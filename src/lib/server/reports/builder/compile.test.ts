@@ -121,7 +121,7 @@ describe("guided reports (9.20)", () => {
 
 	it("sorts by the measure and limits a top list", () => {
 		const out = compileQuery(q({ rows: ["itemType"], sort: "measure", limit: 5 }));
-		expect(out.sql).toMatch(/ORDER BY loans DESC, i\.item_type LIMIT 5$/);
+		expect(out.sql).toMatch(/ORDER BY loans DESC, b\.item_type LIMIT 5$/);
 	});
 
 	it("every dimension and measure of every source has both languages", () => {

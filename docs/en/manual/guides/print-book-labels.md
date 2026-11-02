@@ -92,21 +92,37 @@ desk the scanner reads the code of the label and opens the copy.
 
 ## Possible problems
 
-- The labels come out shifted relative to the sheet: the printout is not at 100 % or has the browser margins. Check the
-  browser print window: scale 100 %, margins none. The calibration page for the type of sheet is printed by the
-  administrator, see [Add a label sheet](../../admin/guides/add-a-label-stock.md).
-- The sheet was partly used and the printout overwrites it: write in **First free position** the number of the first
-  label still free.
-- "N copies of books to classify: only their barcode label prints, the spine band after the classification." appears: the
-  book is not classified. Classify it, then reprint the spine band with **Spine band only**.
-- **Open the print page** is grey and does not respond: there are no copies to print, or the label sheet is missing.
-  Check the line with the number of copies and the **Label sheet** field.
-- The scanner does not read the barcode of the label: check that the scanner reads Code 128 and Code 39, and that the
-  printout is not reduced or too light. See [Test the scanner and the printer](../../setup/steps/scanner-printer.md).
-- A spine band has text that is too long or the wrong pictogram: the spine band follows the classification and the call
-  number of the copy: correct them, see [Correct a book record](edit-a-record.md), and reprint with **Spine band only**.
-  The graphic template of the labels is edited by the administrator, see
-  [Edit the labels and the spine band](../../admin/guides/edit-label-templates.md).
+### The labels come out shifted on the sheet
+
+The printout is not at 100 % or has the browser margins. Check the browser print window: scale 100 %, margins none. The
+calibration page for the type of sheet is printed by the administrator, see [Add a label
+sheet](../../admin/guides/add-a-label-stock.md).
+
+### The sheet was already partly used
+
+The printout overwrites the labels already used: write in **First free position** the number of the first label still
+free.
+
+### There are copies still to be classified
+
+"N copies of books to classify: only their barcode label prints, the spine band after the classification." appears: the
+book is not classified. Classify it, then reprint the spine band with **Spine band only**.
+
+### The print page cannot be opened
+
+**Open the print page** is grey and does not respond: there are no copies to print, or the label sheet is missing. Check
+the line with the number of copies and the **Label sheet** field.
+
+### The scanner does not read the label's barcode
+
+Check that the scanner reads Code 128 and Code 39, and that the printout is not reduced or too light. See [Test the
+scanner and the printer](../../setup/steps/scanner-printer.md).
+
+### The spine band has too long a text or the wrong pictogram
+
+The spine band follows the classification and the call number of the copy: correct them, see [Correct a book
+record](edit-a-record.md), and reprint with **Spine band only**. The graphic template of the labels is edited by the
+administrator, see [Edit the labels and the spine band](../../admin/guides/edit-label-templates.md).
 
 ## Related pages
 

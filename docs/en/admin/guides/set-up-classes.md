@@ -70,15 +70,26 @@ column of the teachers file.
 
 ## Possible problems
 
-- "A class with this name already exists for the same year." appears: a class with the same year and the same name
-  exists, even an archived one: open the "Archived classes" list and restore it, or choose another name.
-- The **Archive** button is off: the class still has patrons. Move them to another class from each patron's
-  record, or wait for the end-of-year upgrade: classes left empty are archived automatically.
-- "Some students of the class are in a year that would be removed." appears: a year in which there are still students was
-  removed from a mixed-year class. Tick the year again.
-- The needed year is not among the boxes: the school's years cannot be changed from this page but from the
-  **School** link at the top of the page, in the **Stages and years** box. How the class is written (`3 B`
-  or `3B`) is changed in the same section, in the **How a class is written** field.
+### A class with this name already exists
+
+"A class with this name already exists for the same year." appears: a class with the same year and the same name
+exists, even an archived one: open the "Archived classes" list and restore it, or choose another name.
+
+### The Archive button is off
+
+The class still has patrons. Move them to another class from each patron's record, or wait for the end-of-year upgrade:
+classes left empty are archived automatically.
+
+### Some students are in a year that would be removed
+
+"Some students of the class are in a year that would be removed." appears: a year in which there are still students
+was removed from a mixed-year class. Tick the year again.
+
+### The needed year does not appear
+
+The needed year is not among the boxes: the school's years cannot be changed from this page but from the **School**
+link at the top of the page, in the **Stages and years** box. How the class is written (`3 B` or `3B`) is changed in
+the same section, in the **How a class is written** field.
 
 ## Related pages
 

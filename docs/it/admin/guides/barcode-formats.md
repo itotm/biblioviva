@@ -99,15 +99,25 @@ valide e non vanno ristampate: i loro codici sono riconosciuti anche se hanno un
 
 ## Possibili problemi
 
-- Il pulsante **Salva** è spento: il formato non è valido o i due formati si confondono. Leggere i messaggi sotto i
-  campi, che dicono quale parte correggere.
-- Compare «Il formato … ha ancora … codici in archivio: non si può togliere.»: si è cercato di togliere un formato che ha
-  ancora copie o tessere. Lasciare il formato nell'elenco: serve a riconoscere i codici già stampati.
-- Un codice letto dal lettore risulta «non riconosciuto o carattere di controllo errato»: il codice è stato letto
-  male, oppure il lettore è impostato per una tastiera diversa da quella scelta in **Tastiera dei computer**. Leggere di
-  nuovo l'etichetta; se capita spesso, correggere la tastiera.
-- Una tessera di un programma precedente non viene riconosciuta: aggiungere il suo formato tra i **Codici del
-  sistema precedente**.
+### Il pulsante Salva è spento
+
+Il formato non è valido o i due formati si confondono. Leggere i messaggi sotto i campi, che dicono quale parte
+correggere.
+
+### Un formato non si può togliere
+
+Compare «Il formato … ha ancora … codici in archivio: non si può togliere.»: si è cercato di togliere un formato che ha
+ancora copie o tessere. Lasciare il formato nell'elenco: serve a riconoscere i codici già stampati.
+
+### Il lettore dà un codice non riconosciuto
+
+Un codice letto dal lettore risulta «non riconosciuto o carattere di controllo errato»: il codice è stato letto male,
+oppure il lettore è impostato per una tastiera diversa da quella scelta in **Tastiera dei computer**. Leggere di nuovo
+l'etichetta; se capita spesso, correggere la tastiera.
+
+### Una tessera di un programma precedente non viene riconosciuta
+
+Aggiungere il suo formato tra i **Codici del sistema precedente**.
 
 ## Pagine correlate
 

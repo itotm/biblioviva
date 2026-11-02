@@ -95,14 +95,25 @@ be reprinted: their codes are recognised even if they have a different format.
 
 ## Possible problems
 
-- The **Save** button is off: the format is not valid or the two formats get confused. Read the messages
-  under the fields, which say which part to correct.
-- "The format … still has … codes stored: it cannot be removed." appears: an attempt was made to remove a format that still
-  has copies or cards. Leave the format in the list: it serves to recognise the codes already printed.
-- A code read by the scanner comes out "not recognised or wrong check character": the code was read badly, or the
-  scanner is set for a keyboard different from the one chosen in **Computer keyboard**. Read the label again; if it
-  happens often, correct the keyboard.
-- A card from a previous program is not recognised: add its format among the **Codes of the previous system**.
+### The Save button is off
+
+The format is not valid or the two formats get confused. Read the messages under the fields, which say which part to
+correct.
+
+### A format cannot be removed
+
+"The format … still has … codes stored: it cannot be removed." appears: an attempt was made to remove a format that
+still has copies or cards. Leave the format in the list: it serves to recognise the codes already printed.
+
+### The scanner gives a code that is not recognised
+
+A code read by the scanner comes out "not recognised or wrong check character": the code was read badly, or the
+scanner is set for a keyboard different from the one chosen in **Computer keyboard**. Read the label again; if it
+happens often, correct the keyboard.
+
+### A card from a previous program is not recognised
+
+Add its format among the **Codes of the previous system**.
 
 ## Related pages
 

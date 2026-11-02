@@ -74,11 +74,19 @@ can be skipped.
 
 ## Possible problems
 
-- It is not clear whether an item is needed: skip it. The settings proposed by BiblioViva suit most schools, and every
-  change can be undone from the [configuration history](guides/undo-a-configuration-change.md).
-- A setting cannot be found: the [Configuration](screens/configuration.md) page lists the sections, and
-  [Administration](screens/admin.md) lists the administrator's pages.
-- A password has been lost or BiblioViva does not open: see [Common problems](../help/problems.md).
+### It is not clear whether an item is needed
+
+Skip it. The settings proposed by BiblioViva suit most schools, and every change can be undone from the
+[configuration history](guides/undo-a-configuration-change.md).
+
+### A setting cannot be found
+
+The [Configuration](screens/configuration.md) page lists the sections, and [Administration](screens/admin.md) lists the
+administrator's pages.
+
+### The password is lost or BiblioViva does not open
+
+See [Common problems](../help/problems.md).
 
 ## Related pages
 

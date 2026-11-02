@@ -34,7 +34,7 @@ I nomi delle colonne sono in inglese e vanno lasciati come nel modello. Le princ
 | `reading_level` | il livello di lettura (narrativa) | facoltativa |
 
 Sono facoltative anche `isbn`, `subtitle`, `publication_place`, `publication_year`, `physical_description`, `series`,
-`series_number`, `subjects`, `notes`, `call_number` (la segnatura), `item_type` (il materiale: libro, DVD…), `status`,
+`series_number`, `subjects`, `notes`, `call_number` (la segnatura), `item_type` (il materiale: libro, DVD…, uno per titolo), `status`,
 `not_for_loan` (`sì` per le copie da consultazione), `acquisition_date` (`AAAA-MM-GG` o `GG/MM/AAAA`), `item_notes` e
 altre ancora: l'elenco completo è nel riquadro **Il modello del file**. Lo stato si scrive `available`, `lost`, `damaged`,
 `in_repair` o `withdrawn`; le parole italiane (disponibile, perso, danneggiato, in riparazione, ritirato) sono
@@ -70,6 +70,10 @@ finché qualcuno non lo classifica.
 1. Se copie dello stesso libro hanno livelli di lettura diversi, la pagina chiede se attivare il livello per copia.
    Premere **Sì, livello per copia** per tenere il livello su ogni copia: la scelta vale per tutto il catalogo e sposta
    sulle copie il livello dei libri già presenti. Premere **No, sono errori da correggere** per correggere il file.
+1. Se le copie di uno stesso titolo nuovo hanno materiali diversi, la pagina chiede **Copie dello stesso titolo con
+   materiali diversi**, in un riquadro giallo. Premere **Sì, il materiale più frequente** perché ogni titolo prenda il
+   materiale della maggior parte delle sue copie. Premere **No, sono errori da correggere** per correggere il file. Le
+   copie aggiunte a un titolo già in catalogo tengono il materiale di quel titolo.
 1. Se ci sono errori, correggere il file, premere **Torna alle colonne**, caricarlo di nuovo e verificare ancora. Con
    anche un solo errore **Importa** resta spento.
 
@@ -90,17 +94,41 @@ BiblioViva. Importare due volte lo stesso file non crea doppioni: le copie già 
 
 ## Possibili problemi
 
-- Compare «Classificazione non presente nella configurazione»: il codice scritto in `classification` non è né un genere né
-  un argomento. Correggere il file oppure aggiungere il codice: vedere
-  [Modificare la classificazione e i livelli di lettura](classification.md).
-- Compare «Il codice … è già di un'altra copia in catalogo»: lo stesso codice a barre è su due libri diversi. Correggere
-  il codice nel file.
-- Compare «Manca l'autore» o «Manca l'editore»: compilare la cella oppure spuntare i valori speciali.
-- Compare «ISBN non valido»: correggere l'ISBN o lasciare vuota la cella.
-- Compare «Tutte le copie del file sono già in catalogo: non c'è niente da importare.»: il file è già stato importato.
-- Per chi arriva da Koha: il catalogo si estrae con una query già pronta; il file prodotto è separato da tabulazioni e va
-  caricato com'è: vedere [le istruzioni tecniche](../../../import/README.md). I nomi delle colonne di Koha cambiano da
-  una versione all'altra: chi esegue la query li controlla prima.
+### La classificazione non è nella configurazione
+
+Compare «Classificazione non presente nella configurazione»: il codice scritto in `classification` non è né un genere
+né un argomento. Correggere il file oppure aggiungere il codice: vedere
+[Modificare la classificazione e i livelli di lettura](classification.md).
+
+### Il codice è già di un'altra copia
+
+Compare «Il codice … è già di un'altra copia in catalogo»: lo stesso codice a barre è su due libri diversi. Correggere
+il codice nel file.
+
+### Mancano l'autore o l'editore
+
+Compare «Manca l'autore» o «Manca l'editore»: compilare la cella oppure spuntare i valori speciali.
+
+### L'ISBN non è valido
+
+Compare «ISBN non valido»: correggere l'ISBN o lasciare vuota la cella.
+
+### Le copie di un titolo hanno materiali diversi
+
+Compare «Copie con materiali diversi (…): rispondere alla domanda qui sotto», oppure, dopo **No, sono errori da
+correggere**, «Copie con materiali diversi (…): il materiale è uno solo per titolo»: nel file le righe dello stesso
+libro portano in `item_type` materiali diversi, ma il materiale è uno solo per titolo. Rispondere **Sì, il materiale più
+frequente** oppure correggere `item_type` nel file, rendendolo uguale su tutte le righe del libro, e verificare di nuovo.
+
+### Tutte le copie sono già in catalogo
+
+Compare «Tutte le copie del file sono già in catalogo: non c'è niente da importare.»: il file è già stato importato.
+
+### Il catalogo arriva da Koha
+
+Il catalogo si estrae con una query già pronta; il file prodotto è separato da tabulazioni e va caricato com'è: vedere
+[le istruzioni tecniche](../../../import/README.md). I nomi delle colonne di Koha cambiano da una versione all'altra:
+chi esegue la query li controlla prima.
 
 ## Pagine correlate
 

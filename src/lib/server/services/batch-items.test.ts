@@ -230,11 +230,15 @@ describe("batch operations on copies", () => {
 			.from(item)
 			.where(eq(item.id, ids[0] ?? 0))
 			.get();
-		expect(first).toMatchObject({
-			itemType: "dvd",
-			notForLoan: 1,
-			acquisitionDate: "2021-05-05",
-		});
+		expect(first).toMatchObject({ notForLoan: 1, acquisitionDate: "2021-05-05" });
+		// the type is the record's (9.45): every copy of the title changes with it
+		expect(
+			db
+				.select({ itemType: biblio.itemType })
+				.from(biblio)
+				.where(eq(biblio.id, first?.biblioId ?? 0))
+				.get()?.itemType,
+		).toBe("dvd");
 		// the class of a copy exists only for fiction, and only with class per copy
 		const plan = planBatch(db, ids, { kind: "readingLevel", readingLevel: "4" }, perItem);
 		expect(plan.excluded.notAllowed).toBe(1);

@@ -88,15 +88,19 @@ Docker resta installato sul computer: non occorre rimuoverlo.
 
 ## Possibili problemi
 
-- «Permission denied» durante la cancellazione della cartella: alcuni file appartengono a un altro utente del computer.
-  Ripetere il comando con `sudo` davanti, controllando con cura il percorso prima di premere Invio.
+### Permission denied durante la cancellazione della cartella
 
-  ```sh
-  sudo rm -r ~/biblioviva
-  ```
+Compare «Permission denied» durante la cancellazione della cartella: alcuni file appartengono a un altro utente del
+computer. Ripetere il comando con `sudo` davanti, controllando con cura il percorso prima di premere Invio.
 
-- «permission denied» a proposito di Docker: chiudere il terminale e collegarsi di nuovo, oppure anteporre `sudo` ai
-  comandi `docker`.
+```sh
+sudo rm -r ~/biblioviva
+```
+
+### Docker risponde permission denied
+
+Il messaggio «permission denied» a proposito di Docker si risolve chiudendo il terminale e collegandosi di nuovo,
+oppure anteponendo `sudo` ai comandi `docker`.
 
 ## Pagine correlate
 

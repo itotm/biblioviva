@@ -17,8 +17,8 @@ a chi cataloga i libri.
 
    <!-- figure: catalog/new-book-code | La pagina Nuovo libro, pronta a leggere il codice ISBN -->
 
-1. In **Materiale** scegliere il tipo di materiale delle copie, se non è quello già selezionato (di norma **Libro**). Il
-   materiale vale per tutte le copie che si aggiungono con questa scheda.
+1. In **Materiale** scegliere il tipo di materiale del libro, se non è quello già selezionato (di norma **Libro**). Il
+   materiale è della scheda e vale per tutte le sue copie.
 1. Leggere con il lettore il codice a barre dell'ISBN, stampato sul retro del libro. Il cursore è già nel campo
    **ISBN o EAN**: il lettore inserisce il codice e conferma da solo.
 1. Attendere la ricerca. BiblioViva interroga OPAC SBN e apre la scheda più completa tra quelle trovate. Sopra la scheda
@@ -26,7 +26,8 @@ a chi cataloga i libri.
 1. Se la scheda non è quella del libro in mano, premere **Altre schede (N)**, scegliere un'altra scheda e premere
    **Usa questa scheda**.
 1. Controllare i dati nelle sezioni **Scheda** e **Pubblicazione**, confrontandoli con il frontespizio del libro:
-   **Titolo**, **Autore**, **Editore**, **Anno** e **Descrizione fisica**. L'autore si scrive come «Cognome, Nome».
+   **Titolo**, **Autore**, **Editore**, **Anno**, **Descrizione fisica** e **Materiale**. L'autore si scrive come
+   «Cognome, Nome».
 
    <!-- figure: catalog/new-book-form | La scheda trovata da OPAC SBN, con la copertina accanto al modulo -->
 
@@ -86,26 +87,49 @@ prima di andare sullo scaffale.
 
 ## Possibili problemi
 
-- Compare «Questo ISBN è già in catalogo»: il libro ha già una scheda. Per aggiungere altre copie seguire
-  [Aggiungere una copia a un libro già in catalogo](add-a-copy.md).
-- Compare «L'ISBN ha una cifra di controllo errata: controllare le cifre.»: la lettura è sbagliata o l'ISBN
-  stampato sul libro non è valido. Leggere di nuovo il codice; se l'errore resta, seguire
-  [Catalogare un libro senza ISBN](catalog-without-isbn.md).
-- Compare «Il codice letto non è un ISBN né un EAN»: il lettore ha letto un codice che non è quello del libro, per
-  esempio quello di un'etichetta. Leggere il codice a barre dell'ISBN, di norma sopra il prezzo.
-- «Nessuna scheda trovata. La scheda si può compilare a mano.»: OPAC SBN non conosce il libro. Premere **Cerca per
-  titolo** per cercare con titolo e autore, oppure **Inserisci a mano** per scrivere la scheda; vedere
-  [Catalogare un libro senza ISBN](catalog-without-isbn.md).
-- Compare «Il servizio non è raggiungibile. Controllare la connessione a Internet e riprovare più tardi.»: il computer
-  di BiblioViva non raggiunge OPAC SBN. Controllare la connessione e premere **Riprova**; in alternativa premere
-  **Inserisci a mano**.
-- Il salvataggio dice «Esiste già una scheda con questo ISBN»: un altro libro ha già quell'ISBN. Aprirlo da
-  **Catalogo** e aggiungere la copia da lì.
-- Il salvataggio dice «Il genere è obbligatorio» o «L'argomento è obbligatorio»: scegliere un genere (narrativa) o un
-  argomento (saggistica) nella sezione **Classificazione**, oppure **Classifica dopo**.
-- La scheda trovata ha un anno o una descrizione diversi dalla copia in mano: succede quando esistono più edizioni
-  dello stesso libro. Correggere i campi nel modulo prima di salvare, oppure scegliere un'altra scheda con
-  **Altre schede (N)**.
+### Il libro è già in catalogo
+
+Compare «Questo ISBN è già in catalogo»: il libro ha già una scheda. Per aggiungere altre copie seguire
+[Aggiungere una copia a un libro già in catalogo](add-a-copy.md).
+
+### L'ISBN ha una cifra di controllo errata
+
+Compare «L'ISBN ha una cifra di controllo errata: controllare le cifre.»: la lettura è sbagliata o l'ISBN stampato
+sul libro non è valido. Leggere di nuovo il codice; se l'errore resta, seguire
+[Catalogare un libro senza ISBN](catalog-without-isbn.md).
+
+### Il codice letto non è un ISBN
+
+Compare «Il codice letto non è un ISBN né un EAN»: il lettore ha letto un codice che non è quello del libro, per
+esempio quello di un'etichetta. Leggere il codice a barre dell'ISBN, di norma sopra il prezzo.
+
+### OPAC SBN non trova il libro
+
+Compare «Nessuna scheda trovata. La scheda si può compilare a mano.»: OPAC SBN non conosce il libro. Premere **Cerca
+per titolo** per cercare con titolo e autore, oppure **Inserisci a mano** per scrivere la scheda; vedere
+[Catalogare un libro senza ISBN](catalog-without-isbn.md).
+
+### Il servizio non è raggiungibile
+
+Compare «Il servizio non è raggiungibile. Controllare la connessione a Internet e riprovare più tardi.»: il computer
+di BiblioViva non raggiunge OPAC SBN. Controllare la connessione e premere **Riprova**; in alternativa premere
+**Inserisci a mano**.
+
+### Il salvataggio trova un ISBN già usato
+
+Il salvataggio dice «Esiste già una scheda con questo ISBN»: un altro libro ha già quell'ISBN. Aprirlo da
+**Catalogo** e aggiungere la copia da lì.
+
+### Mancano il genere o l'argomento
+
+Il salvataggio dice «Il genere è obbligatorio» o «L'argomento è obbligatorio»: scegliere un genere (narrativa) o un
+argomento (saggistica) nella sezione **Classificazione**, oppure **Classifica dopo**.
+
+### La scheda trovata non corrisponde alla copia
+
+La scheda trovata ha un anno o una descrizione diversi dalla copia in mano: succede quando esistono più edizioni
+dello stesso libro. Correggere i campi nel modulo prima di salvare, oppure scegliere un'altra scheda con
+**Altre schede (N)**.
 
 ## Pagine correlate
 

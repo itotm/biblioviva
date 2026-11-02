@@ -92,22 +92,38 @@ banco prestiti il lettore legge il codice dell'etichetta e apre la copia.
 
 ## Possibili problemi
 
-- Le etichette escono spostate rispetto al foglio: la stampa non è al 100 % oppure ha i margini del browser. Controllare
-  la finestra di stampa del browser: scala 100 %, margini nessuno. La pagina di calibrazione per il tipo di foglio la
-  stampa l'amministratore, vedere [Aggiungere un foglio di etichette](../../admin/guides/add-a-label-stock.md).
-- Il foglio è stato usato in parte e la stampa lo sovrascrive: scrivere in **Prima posizione libera** il numero della
-  prima etichetta ancora libera.
-- Compare «N copie di libri da classificare: si stampa solo l'etichetta col codice a barre, la fascetta del dorso dopo
-  la classificazione.»: il libro non è classificato. Classificarlo, poi ristampare la fascetta con **Solo fascetta**.
-- **Apri la stampa** è grigio e non risponde: non ci sono copie da stampare, oppure manca il foglio di etichette.
-  Controllare la riga con il numero di copie e il campo **Foglio di etichette**.
-- Il lettore non legge il codice a barre dell'etichetta: controllare che il lettore legga Code 128 e Code 39, e che la
-  stampa non sia ridotta o troppo chiara. Vedere [Provare il lettore e la
-  stampante](../../setup/steps/scanner-printer.md).
-- Una fascetta ha il testo troppo lungo o il pittogramma sbagliato: la fascetta segue la classificazione e la segnatura
-  della copia: correggerle, vedere [Correggere la scheda di un libro](edit-a-record.md), e ristampare con
-  **Solo fascetta**. Il modello grafico delle etichette lo modifica l'amministratore, vedere
-  [Modificare le etichette e la fascetta del dorso](../../admin/guides/edit-label-templates.md).
+### Le etichette escono spostate rispetto al foglio
+
+La stampa non è al 100 % oppure ha i margini del browser. Controllare la finestra di stampa del browser: scala 100 %,
+margini nessuno. La pagina di calibrazione per il tipo di foglio la stampa l'amministratore, vedere [Aggiungere un foglio
+di etichette](../../admin/guides/add-a-label-stock.md).
+
+### Il foglio è stato usato in parte
+
+La stampa sovrascrive le etichette già usate: scrivere in **Prima posizione libera** il numero della prima etichetta
+ancora libera.
+
+### Ci sono copie ancora da classificare
+
+Compare «N copie di libri da classificare: si stampa solo l'etichetta col codice a barre, la fascetta del dorso dopo la
+classificazione.»: il libro non è classificato. Classificarlo, poi ristampare la fascetta con **Solo fascetta**.
+
+### Non si può aprire la stampa
+
+Il pulsante **Apri la stampa** è grigio e non risponde: non ci sono copie da stampare, oppure manca il foglio di
+etichette. Controllare la riga con il numero di copie e il campo **Foglio di etichette**.
+
+### Il lettore non legge il codice a barre dell'etichetta
+
+Controllare che il lettore legga Code 128 e Code 39, e che la stampa non sia ridotta o troppo chiara. Vedere [Provare il
+lettore e la stampante](../../setup/steps/scanner-printer.md).
+
+### La fascetta ha il testo troppo lungo o il pittogramma sbagliato
+
+La fascetta segue la classificazione e la segnatura della copia: correggerle, vedere [Correggere la scheda di un
+libro](edit-a-record.md), e ristampare con **Solo fascetta**. Il modello grafico delle etichette lo modifica
+l'amministratore, vedere [Modificare le etichette e la fascetta del
+dorso](../../admin/guides/edit-label-templates.md).
 
 ## Pagine correlate
 

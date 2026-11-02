@@ -108,6 +108,8 @@ export const biblio = sqliteTable(
 		series: text("series"),
 		seriesNumber: text("series_number"),
 		dewey: text("dewey"),
+		/** A code of `library.itemTypes`, the same for every copy of the title (step 9.45, Q139). */
+		itemType: text("item_type").notNull().default("libro"),
 		/** `fiction` | `nonfiction`; null while the record waits to be classified (step 9.21, Q117). */
 		kind: text("kind"),
 		genreCode: text("genre_code"),
@@ -135,6 +137,7 @@ export const biblio = sqliteTable(
 		index("biblio_kind").on(t.kind),
 		index("biblio_genre").on(t.genreCode),
 		index("biblio_class").on(t.classCode),
+		index("biblio_item_type").on(t.itemType),
 		index("biblio_reading_level").on(t.readingLevel),
 		check("biblio_kind_check", sql`kind IS NULL OR ${inList("kind", BIBLIO_KINDS)}`),
 	],
@@ -149,7 +152,6 @@ export const item = sqliteTable(
 			.references(() => biblio.id, { onDelete: "restrict" }),
 		barcode: text("barcode").notNull(),
 		callNumber: text("call_number"),
-		itemType: text("item_type").notNull().default("libro"),
 		/** A code of `classification.readingLevels` (Phase 12.6). */
 		readingLevel: text("reading_level"),
 		enumeration: text("enumeration"),

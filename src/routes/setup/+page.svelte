@@ -37,6 +37,7 @@
 	import { ICON_SIZE, icons } from "#lib/ui/icons.js";
 	import logoMark from "#lib/assets/logo-mark.webp";
 	import FirstRunRestore from "#lib/components/FirstRunRestore.svelte";
+	import LanguagePackAdd from "#lib/components/LanguagePackAdd.svelte";
 	import ThemeSwatches from "#lib/components/ThemeSwatches.svelte";
 	import Steps from "#lib/ui/Steps.svelte";
 	import Button from "#lib/ui/Button.svelte";
@@ -54,6 +55,7 @@
 	const i18n = useI18n();
 	const RefreshIcon = icons.renew;
 	const RestoreIcon = icons.backup;
+	const LanguageIcon = icons.language;
 
 	// the demo choice comes before the passwords: with demo data they are simple and shared (9.13)
 	// the school and the codes come before the demo data, which are generated from them (12.8)
@@ -187,6 +189,15 @@
 	}
 	// the other way of the first screen (9.43): a library restored from a backup, no questions
 	let restoring = $state(false);
+	// another language, from the packs of the release (9.48): shown on request, so the list is read
+	// from GitHub only when it is wanted
+	let addingLanguage = $state(false);
+
+	/** A pack just installed becomes the wizard's language and the installation's (Q142). */
+	async function onPackInstalled(code: string): Promise<void> {
+		addingLanguage = false;
+		await chooseLocale(code);
+	}
 	let working = $state(false);
 	let errorMessage = $state<string | null>(null);
 	let done = $state<{ demo: Record<string, number> | null } | null>(null);
@@ -255,6 +266,24 @@
 		}
 	}
 </script>
+
+{#snippet offer(
+	testid: string,
+	key: "pack" | "restore",
+	icon: typeof RestoreIcon,
+	buttonId: string,
+	onclick: () => void,
+)}
+	<section class="space-y-3 border-t border-surface-200-800 pt-4" data-testid={testid}>
+		<h3 class="h4">{i18n.t(`setup.language.${key}.title`)}</h3>
+		<Hint>{i18n.t(`setup.language.${key}.hint`)}</Hint>
+		<Row>
+			<Button {icon} {onclick} data-testid={buttonId}
+				>{i18n.t(`setup.language.${key}.button`)}</Button
+			>
+		</Row>
+	</section>
+{/snippet}
 
 <svelte:head><title>{i18n.t("setup.title")} · {i18n.t("common.app.name")}</title></svelte:head>
 
@@ -335,21 +364,30 @@
 						</button>
 					{/each}
 				</Grid>
-				<section
-					class="space-y-3 border-t border-surface-200-800 pt-4"
-					data-testid="setup-restore-offer"
-				>
-					<h3 class="h4">{i18n.t("setup.language.restore.title")}</h3>
-					<Hint>{i18n.t("setup.language.restore.hint")}</Hint>
-					<Row>
-						<Button
-							icon={RestoreIcon}
-							onclick={() => (restoring = true)}
-							data-testid="setup-restore-start"
-							>{i18n.t("setup.language.restore.button")}</Button
-						>
-					</Row>
-				</section>
+				<!-- another language (9.48) and the restore (9.43): the two other ways of the first screen -->
+				{#if addingLanguage}
+					<section
+						class="border-t border-surface-200-800 pt-4"
+						data-testid="setup-language-offer"
+					>
+						<LanguagePackAdd setup oninstalled={onPackInstalled} />
+					</section>
+				{:else}
+					{@render offer(
+						"setup-language-offer",
+						"pack",
+						LanguageIcon,
+						"setup-language-add",
+						() => (addingLanguage = true),
+					)}
+				{/if}
+				{@render offer(
+					"setup-restore-offer",
+					"restore",
+					RestoreIcon,
+					"setup-restore-start",
+					() => (restoring = true),
+				)}
 			{:else if step === 1}
 				<h2 class="h3">{i18n.t("setup.theme.title")}</h2>
 				<p class="opacity-70">{i18n.t("setup.theme.hint")}</p>

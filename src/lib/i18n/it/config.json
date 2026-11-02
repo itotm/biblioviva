@@ -972,7 +972,7 @@
 		"inUse": "Il salvataggio toglierebbe qualcosa che è ancora in uso:",
 		"inUseKinds": {
 			"classification": "codice {{code}}: {{count}} {{count:plural; one:libro; other:libri;}}",
-			"itemType": "tipo di copia {{code}}: {{count}} {{count:plural; one:copia; other:copie;}}",
+			"itemType": "tipo di copia {{code}}: {{count}} {{count:plural; one:libro; other:libri;}}",
 			"level": "livello {{code}}: {{count}} {{count:plural; one:alunno; other:alunni;}} o classi",
 			"readingLevel": "livello di lettura {{code}}: {{count}} {{count:plural; one:libro; other:libri;}}"
 		},
@@ -1094,24 +1094,24 @@
 		"move": {
 			"title": "Dove vanno?",
 			"hint": {
-				"copies": "Alcuni tipi tolti hanno ancora delle copie: scegliere il tipo su cui spostarle.",
+				"copies": "Alcuni tipi tolti hanno ancora dei libri: scegliere il tipo su cui spostarli.",
 				"students": "Alcune sezioni tolte hanno ancora degli studenti: scegliere la sezione su cui spostarli."
 			},
 			"row": {
-				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:copia; other:copie;}}. Sposta su",
+				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:libro; other:libri;}}. Sposta su",
 				"students": "{{code}}: {{count}} {{count:plural; one:studente; other:studenti;}}. Sposta in"
 			},
 			"choose": "Scegli…",
 			"used": {
-				"copies": "Copie",
+				"copies": "Libri",
 				"students": "Studenti"
 			},
 			"count": {
-				"copies": "{{count}} {{count:plural; one:copia; other:copie;}}",
+				"copies": "{{count}} {{count:plural; one:libro; other:libri;}}",
 				"students": "{{count}} {{count:plural; one:studente; other:studenti;}}"
 			},
 			"done": {
-				"copies": "{{count}} {{count:plural; one:copia spostata; other:copie spostate;}}.",
+				"copies": "{{count}} {{count:plural; one:libro spostato; other:libri spostati;}}.",
 				"students": "{{count}} {{count:plural; one:studente spostato; other:studenti spostati;}}."
 			}
 		},

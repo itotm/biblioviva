@@ -92,20 +92,38 @@ usano, oppure «nessun account».
 
 ## Possibili problemi
 
-- Compare «Il nome utente … è già usato.»: scegliere un altro nome.
-- Compare «Deve restare almeno un account attivo con il permesso di amministrazione.»: non si può disattivare, eliminare
-  o privare del permesso l'ultimo account che amministra. Prima va dato il permesso **Amministrazione** a un altro
-  account.
-- Compare «Disattiva l'account prima di eliminarlo.»: seguire i passi di disattivazione sopra.
-- Il pulsante per eliminare un ruolo è spento: il ruolo è usato da qualche account. Togliere prima il ruolo a quegli
-  account con **Modifica**.
-- Una scheda mostra «Password in chiaro nel file»: l'account è stato scritto a mano nei file della configurazione con la
-  password leggibile. Assegnargli una password con **Nuova password**, come descritto in
-  [Cambiare una password](change-a-password.md).
-- Una scheda mostra «Tolto dalla configurazione»: l'account non è più nei file della configurazione, e le sue operazioni
-  restano nel registro. Non si può né modificare né eliminare.
-- Il pulsante **Ricarica configurazione**, in alto, fa rileggere i file della configurazione modificati a mano. Serve
-  soltanto a chi li modifica fuori da BiblioViva.
+### Il nome utente è già usato
+
+Compare «Il nome utente … è già usato.»: scegliere un altro nome.
+
+### Non si può togliere l'ultimo amministratore
+
+Compare «Deve restare almeno un account attivo con il permesso di amministrazione.»: non si può disattivare, eliminare
+o privare del permesso l'ultimo account che amministra. Prima va dato il permesso **Amministrazione** a un altro
+account.
+
+### L'account va disattivato prima di eliminarlo
+
+Compare «Disattiva l'account prima di eliminarlo.»: seguire i passi di disattivazione sopra.
+
+### Il pulsante per eliminare un ruolo è spento
+
+Il ruolo è usato da qualche account. Togliere prima il ruolo a quegli account con **Modifica**.
+
+### Una scheda segnala la password in chiaro
+
+L'account è stato scritto a mano nei file della configurazione con la password leggibile. Assegnargli una password con
+**Nuova password**, come descritto in [Cambiare una password](change-a-password.md).
+
+### Un account è stato tolto dalla configurazione
+
+L'account non è più nei file della configurazione, e le sue operazioni restano nel registro. Non si può né modificare
+né eliminare.
+
+### I file della configurazione sono stati modificati a mano
+
+Il pulsante **Ricarica configurazione**, in alto, fa rileggere i file della configurazione modificati a mano. Serve
+soltanto a chi li modifica fuori da BiblioViva.
 
 ## Pagine correlate
 

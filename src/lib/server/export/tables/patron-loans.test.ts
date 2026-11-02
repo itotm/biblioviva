@@ -42,7 +42,7 @@ describe("patron loans export", () => {
 			.get();
 		const copy = db
 			.insert(item)
-			.values({ biblioId: b.id, barcode: "2026-00011", itemType: "book" })
+			.values({ biblioId: b.id, barcode: "2026-00011" })
 			.returning({ id: item.id })
 			.get();
 		db.insert(loan)

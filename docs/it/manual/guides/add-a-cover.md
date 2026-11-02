@@ -74,20 +74,39 @@ La scheda del libro mostra la copertina a sinistra del titolo.
 
 ## Possibili problemi
 
-- «Nessuna copertina trovata online per questo ISBN: è possibile fotografarla.»: nessuno dei servizi consultati ha la
-  copertina. Fotografarla o caricare un file.
-- «La scheda non ha un ISBN: la copertina va fotografata.»: senza ISBN la ricerca in rete non è possibile. Fotografare
-  il libro.
-- Compare «La fotocamera funziona solo con una connessione sicura (https)…»: BiblioViva è aperto dalla rete locale
-  senza Tailscale: usare **Carica un file**.
-- Compare «Permesso negato…» o «Nessuna fotocamera trovata su questo dispositivo.»: consentire l'uso della fotocamera
-  nelle impostazioni del browser, oppure usare **Carica un file**.
-- Compare «File troppo grande» o «Formato immagine non supportato»: il file supera il limite indicato nell'avviso o non
-  è JPEG, PNG, WebP o HEIC. Ridurre l'immagine o salvarla in un altro formato.
-- «Impossibile caricare il modulo di raddrizzamento…»: il computer non ha raggiunto il file del programma di
-  raddrizzamento. Controllare la connessione e riprovare.
-- La copertina scaricata è del libro sbagliato: succede se l'ISBN della scheda è quello di un'altra edizione.
-  Sostituirla con **Cambia copertina**.
+### Nessuna copertina trovata online
+
+Compare «Nessuna copertina trovata online per questo ISBN: è possibile fotografarla.»: nessuno dei servizi consultati
+ha la copertina. Fotografarla o caricare un file.
+
+### La scheda non ha un ISBN
+
+Compare «La scheda non ha un ISBN: la copertina va fotografata.»: senza ISBN la ricerca in rete non è possibile.
+Fotografare il libro.
+
+### La fotocamera richiede una connessione sicura
+
+Compare «La fotocamera funziona solo con una connessione sicura (https)…»: BiblioViva è aperto dalla rete locale
+senza Tailscale: usare **Carica un file**.
+
+### Permesso negato o fotocamera non trovata
+
+Compare «Permesso negato…» o «Nessuna fotocamera trovata su questo dispositivo.»: consentire l'uso della fotocamera
+nelle impostazioni del browser, oppure usare **Carica un file**.
+
+### File troppo grande o formato non supportato
+
+Compare «File troppo grande» o «Formato immagine non supportato»: il file supera il limite indicato nell'avviso o non
+è JPEG, PNG, WebP o HEIC. Ridurre l'immagine o salvarla in un altro formato.
+
+### Il modulo di raddrizzamento non si carica
+
+Compare «Impossibile caricare il modulo di raddrizzamento…»: il computer non ha raggiunto il file del programma di
+raddrizzamento. Controllare la connessione e riprovare.
+
+### La copertina scaricata è del libro sbagliato
+
+Succede se l'ISBN della scheda è quello di un'altra edizione. Sostituirla con **Cambia copertina**.
 
 ## Pagine correlate
 

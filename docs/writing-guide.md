@@ -85,6 +85,13 @@ anchor.
 `## Procedura`, `## Verifica prima di proseguire` (what the reader must see before the next step, and what to do when
 it is not so), `## Possibili problemi` when there are any.
 
+**Possibili problemi** — on every kind of page, one `###` per problem, never a bulleted list: the heading is the
+symptom in a few words, as the reader recognises it (a short sentence or a noun phrase: «Il libro è già in
+catalogo», «L'ISBN ha una cifra di controllo errata»; no colon, no bold, no link, no full stop); the body quotes the
+message of the app in full, then the cause and the remedy. The site shows each problem as a box that opens with a
+click, with one icon on the section's heading only; `site:build` warns about a section still written as a list. The
+page Aiuto → Problemi comuni is made of problems only: each `##` is a box.
+
 **Technical page** — the English documents of `docs/` (deployment, configuration reference, templates, reports),
 written for technical readers as they are.
 

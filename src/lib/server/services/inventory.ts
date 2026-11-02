@@ -265,8 +265,9 @@ export function recordScan(
 /** The copies expected on the shelves: not lost or withdrawn, not on loan, not kept apart. */
 function expectedItems(db: DbOrTx): { id: number; callNumber: string; itemType: string }[] {
 	return db
-		.select({ id: item.id, callNumber: item.callNumber, itemType: item.itemType })
+		.select({ id: item.id, callNumber: item.callNumber, itemType: biblio.itemType })
 		.from(item)
+		.innerJoin(biblio, eq(biblio.id, item.biblioId))
 		.where(
 			and(
 				inArray(item.status, [...EXPECTED_STATUSES]),
@@ -390,7 +391,7 @@ export function missingItems(
 			title: biblio.title,
 			author: biblio.author,
 			callNumber: item.callNumber,
-			itemType: item.itemType,
+			itemType: biblio.itemType,
 			status: item.status,
 		})
 		.from(item)

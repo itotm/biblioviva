@@ -76,16 +76,30 @@ change](undo-a-configuration-change.md).
 
 ## Possible problems
 
-- It is not clear which side to choose in the print window. The page writes it above the list of steps, in the line "How
-  the sheet turns". If the printer turns the sheet in another way, change **How the sheet turns** in the **Cards**
-  section and repeat the calibration.
-- The values read are very large. Check that the print is at 100% and without added margins, and that the side of the
-  print window is the one indicated.
-- After saving, the cut edge is still not on 0. Repeat the reading and save the new numbers: the correction adds up.
-- The fields do not accept the number. Numbers from −20 to 20 mm are allowed, in steps of half a millimetre.
-- The page does not open. Only the `admin` account sees the calibration.
-- The correction is to be cancelled. Undo the change from the configuration history: [Undo a configuration
-  change](undo-a-configuration-change.md).
+### It is not clear which side to choose in the print window
+
+The page writes it above the list of steps, in the line "How the sheet turns". If the printer turns the sheet in
+another way, change **How the sheet turns** in the **Cards** section and repeat the calibration.
+
+### The values read are very large
+
+Check that the print is at 100% and without added margins, and that the side of the print window is the one indicated.
+
+### After saving, the cut edge is still not on 0
+
+Repeat the reading and save the new numbers: the correction adds up.
+
+### The fields do not accept the number
+
+Numbers from −20 to 20 mm are allowed, in steps of half a millimetre.
+
+### The page does not open
+
+Only the `admin` account sees the calibration.
+
+### The correction is to be cancelled
+
+Undo the change from the configuration history: [Undo a configuration change](undo-a-configuration-change.md).
 
 ## Related pages
 

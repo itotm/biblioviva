@@ -68,16 +68,29 @@ labels and stick them on: until the book has the code on its cover, it cannot be
 
 ## Possible problems
 
-- The search by title finds nothing: "No record found. The record can be filled in by hand." appears. Try with fewer
-  words or with the author's surname only (press **New code** and repeat **No code**), or fill in the record by hand.
-- "The service cannot be reached…" appears: the BiblioViva computer cannot reach OPAC SBN. Press **Retry** or fill in the
-  record by hand: data written by hand are as valid as those found.
-- Saving says "Implausible year": the year is not a number between 1450 and next year. Correct it or leave the field
-  empty.
-- Saving says "Invalid ISBN (check the digits)": the book has an ISBN but it was written wrongly. Read it again with the
-  scanner or correct the digits in the **ISBN** field.
-- Author and publisher are missing: they are mandatory. Use "Anonimo", "AA. VV.", "s.n." or "s.l.", which BiblioViva
-  recognises as allowed values.
+### The search by title finds nothing
+
+"No record found. The record can be filled in by hand." appears. Try with fewer words or with the author's surname
+only (press **New code** and repeat **No code**), or fill in the record by hand.
+
+### The service cannot be reached
+
+"The service cannot be reached…" appears: the BiblioViva computer cannot reach OPAC SBN. Press **Retry** or fill in the
+record by hand: data written by hand are as valid as those found.
+
+### The year is implausible
+
+Saving says "Implausible year": the year is not a number between 1450 and next year. Correct it or leave the field
+empty.
+
+### The ISBN is not valid
+
+Saving says "Invalid ISBN (check the digits)": the book has an ISBN but it was written wrongly. Read it again with the
+scanner or correct the digits in the **ISBN** field.
+
+### Author and publisher are missing
+
+They are mandatory. Use "Anonimo", "AA. VV.", "s.n." or "s.l.", which BiblioViva recognises as allowed values.
 
 ## Related pages
 

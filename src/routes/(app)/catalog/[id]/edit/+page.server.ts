@@ -28,7 +28,6 @@ export const load: PageServerLoad = ({ locals, params }) => {
 			? {
 					id: only.id,
 					barcode: only.barcode,
-					itemType: only.itemType,
 					callNumber: only.callNumber ?? "",
 					readingLevel: only.readingLevel ?? "",
 					enumeration: only.enumeration ?? "",
@@ -53,6 +52,7 @@ export const load: PageServerLoad = ({ locals, params }) => {
 			series: b.series ?? "",
 			seriesNumber: b.seriesNumber ?? "",
 			dewey: b.dewey ?? "",
+			itemType: b.itemType,
 			kind,
 			genreCode: b.genreCode ?? "",
 			classCode: b.classCode ?? "",

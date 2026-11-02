@@ -88,23 +88,40 @@ needed. A new stocktaking can be opened at any time.
 
 ## Possible problems
 
-- The code read says "no copy has this barcode": the book may have a label of
-  another system or have been catalogued without a BiblioViva label. Catalogue it or print its label, see
-  [Catalogue a new book](catalog-a-new-book.md).
-- "A stocktaking is already in progress." appears: only one campaign can be open at a time. Continue the open one or
-  close it.
-- "It can be reopened only within a week of closing." appears: the time has run out. The lost copies are set back to
-  **Available** by hand, one by one or with a bulk change, see
-  [Withdraw a lost or damaged copy](withdraw-a-copy.md).
-- A copy out of place gives "on the wrong shelf" but is on the right shelf: the **Shelf** field had stayed on the code of
-  the previous shelf: change it and read the copy again.
-- The computer switches off halfway through the stocktaking: nothing is lost, because the results read are saved. Open
-  **Stocktaking** again.
-- The copy on loan is shown as missing: copies on loan do not count among the missing ones. If the book is on the shelf
-  record the return at the desk, see [Return a book](return-a-book.md).
-- The phone camera is wanted instead of the scanner: it is an optional alternative that requires Tailscale (HTTPS), see
-  [Choose the network](../../setup/choose-network.md). In the "Scan the copies" panel press **Scan with the
-  camera**, frame the codes one after the other and press **Done** at the end.
+### The code read matches no copy
+
+The code read says "no copy has this barcode": the book may have a label of another system or have been catalogued
+without a BiblioViva label. Catalogue it or print its label, see [Catalogue a new book](catalog-a-new-book.md).
+
+### A stocktaking is already in progress
+
+"A stocktaking is already in progress." appears: only one campaign can be open at a time. Continue the open one or close
+it.
+
+### The stocktaking cannot be reopened
+
+"It can be reopened only within a week of closing." appears: the time has run out. The lost copies are set back to
+**Available** by hand, one by one or with a bulk change, see [Withdraw a lost or damaged copy](withdraw-a-copy.md).
+
+### A copy on the right shelf shows as out of place
+
+A copy out of place gives "on the wrong shelf" but is on the right shelf: the **Shelf** field had stayed on the code of
+the previous shelf: change it and read the copy again.
+
+### The computer switches off halfway through the stocktaking
+
+Nothing is lost, because the results read are saved. Open **Stocktaking** again.
+
+### The copy on loan is shown as missing
+
+Copies on loan do not count among the missing ones. If the book is on the shelf record the return at the desk, see
+[Return a book](return-a-book.md).
+
+### Using the phone camera instead of the scanner
+
+It is an optional alternative that requires Tailscale (HTTPS), see [Choose the network](../../setup/choose-network.md).
+In the "Scan the copies" panel press **Scan with the camera**, frame the codes one after the other and press **Done** at
+the end.
 
 ## Related pages
 

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // What a configuration change must not take away while the catalogue or the patrons use it
-// (Phase 11, Phase 12): a genre or class with books, an item type with copies, a level of the school
+// (Phase 11, Phase 12): a genre or class with books, an item type with books, a level of the school
 // with pupils or classes, a reading level with books. Only what the change removes counts, so a
 // problem that was already there never blocks an unrelated change. Every configuration change runs
 // the check (`commitConfigChange`): a problem puts the files back.
@@ -13,7 +13,7 @@ import { orphanCodes, taxonomyOf, taxonomyUsage } from "./taxonomy.js";
 export interface ReferenceProblem {
 	kind: "classification" | "itemType" | "level" | "readingLevel";
 	code: string;
-	/** Records (classification), copies (item types), pupils (levels) or books (reading levels). */
+	/** Records (classification and item types), pupils (levels) or books (reading levels). */
 	count: number;
 }
 
@@ -45,9 +45,9 @@ export function referenceProblems(
 	const typesAfter = new Set(after.library.itemTypes.map((t) => t.code));
 	const typesBefore = new Set(before.library.itemTypes.map((t) => t.code));
 	for (const t of db
-		.select({ code: item.itemType, n: count() })
-		.from(item)
-		.groupBy(item.itemType)
+		.select({ code: biblio.itemType, n: count() })
+		.from(biblio)
+		.groupBy(biblio.itemType)
 		.all()) {
 		if (typesBefore.has(t.code) && !typesAfter.has(t.code)) {
 			problems.push({ kind: "itemType", code: t.code, count: t.n });

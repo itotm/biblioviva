@@ -111,7 +111,6 @@ function setup(): Fixture {
 		db,
 		record,
 		{
-			itemType: "libro",
 			callNumber: "",
 			readingLevel: "",
 			enumeration: "",
@@ -276,7 +275,6 @@ describe("open loans import", () => {
 			db,
 			later,
 			{
-				itemType: "libro",
 				callNumber: "",
 				readingLevel: "",
 				enumeration: "",

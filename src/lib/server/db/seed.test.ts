@@ -2,6 +2,7 @@
 import { describe, expect, it } from "vitest";
 import { createTestDb } from "../../../../tests/helpers/db.js";
 import { nextItemBarcode } from "#lib/server/barcodes/items.js";
+import { author3 } from "#lib/shared/classification.js";
 import { recognise } from "#lib/shared/scan.js";
 import { todayActivity } from "#lib/server/services/loan-lists.js";
 import { schoolEmail, seedDatabase } from "./seed.js";
@@ -110,6 +111,25 @@ describe("seed", () => {
 				"SELECT MIN(n) AS n FROM (SELECT COUNT(*) AS n FROM print_list_entry GROUP BY list_id)",
 			),
 		).toBeGreaterThan(3);
+	});
+
+	it("writes every author as the catalogue does, surname first, and files the copies by it", () => {
+		const db = createTestDb();
+		seedDatabase(db, { patrons: 10, teachers: 2, biblios: 300, items: 320, loans: 30 });
+		const rows = db.$client
+			.query<{ author: string; call: string | null }, []>(
+				"SELECT b.author AS author, i.call_number AS call FROM biblio b JOIN item i ON i.biblio_id = b.id",
+			)
+			.all();
+		// "Surname, Name", or one word ("Plato"), or a special value
+		const special = new Set(["Anonimo", "AA. VV."]);
+		const wrong = rows.filter(
+			(r) => !special.has(r.author) && !/^([^,\s]+|[^,]+, [^,]+)$/.test(r.author),
+		);
+		expect(wrong).toEqual([]);
+		// the segnatura ends with the first three letters of the surname (9.44)
+		const misfiled = rows.filter((r) => !r.call?.endsWith(author3(r.author)));
+		expect(misfiled).toEqual([]);
 	});
 
 	it("is deterministic and refuses to run twice", () => {

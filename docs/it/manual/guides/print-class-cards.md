@@ -83,13 +83,23 @@ tessera si presta un libro: il lettore di codici a barre legge il codice della t
 
 ## Possibili problemi
 
-- Le tessere escono ridotte o non entrano nel foglio: la scala non è al 100 %. Riaprire la finestra di stampa con Ctrl+P
-  e scegliere «Dimensioni effettive».
-- I retri non cadono dietro i fronti: l'amministratore deve eseguire la calibrazione descritta in [Calibrare la stampa
-  fronte-retro](../../admin/guides/calibrate-duplex.md).
-- Alcuni alunni mancano nel foglio: le tessere di utenti rimossi o senza numero non vengono stampate.
-- La finestra «Stampa tessere» non offre l'aspetto desiderato: la grafica della tessera la modifica l'amministratore,
-  come spiega [Modificare il modello delle tessere](../../admin/guides/edit-the-card-template.md).
+### Le tessere escono ridotte o non entrano nel foglio
+
+La scala non è al 100 %. Riaprire la finestra di stampa con Ctrl+P e scegliere «Dimensioni effettive».
+
+### I retri non cadono dietro i fronti
+
+L'amministratore deve eseguire la calibrazione descritta in [Calibrare la stampa
+fronte-retro](../../admin/guides/calibrate-duplex.md).
+
+### Mancano alcuni alunni nel foglio
+
+Le tessere di utenti rimossi o senza numero non vengono stampate.
+
+### La finestra di stampa non offre l'aspetto desiderato
+
+Nella finestra «Stampa tessere» la grafica della tessera la modifica l'amministratore, come spiega [Modificare il modello
+delle tessere](../../admin/guides/edit-the-card-template.md).
 
 ## Pagine correlate
 

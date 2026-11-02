@@ -212,7 +212,8 @@ export function installPack(
 	code: string | null,
 	english: Dictionaries,
 	locale: string,
-	actor: AuditActor,
+	/** Null in the first-run wizard (9.48): no account exists yet. */
+	actor: AuditActor | null,
 	now = new Date(),
 ): { pack: PackView; change: ConfigChange } {
 	const checked = checkPackZip(zip, code, english, locale);

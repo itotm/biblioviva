@@ -393,6 +393,12 @@
 				"yes": "Sì, livello per copia",
 				"no": "No, sono errori da correggere"
 			},
+			"typeQuestion": {
+				"title": "Copie dello stesso titolo con materiali diversi",
+				"text": "In {{count}} {{count:plural; one:titolo; other:titoli;}} le copie hanno materiali diversi. Il materiale è uno per titolo: ogni titolo può prendere il materiale della maggior parte delle sue copie.",
+				"yes": "Sì, il materiale più frequente",
+				"no": "No, sono errori da correggere"
+			},
 			"commit": "Importa",
 			"back": "Torna alle colonne",
 			"generatedBarcodes": "{{count}} {{count:plural; one:copia; other:copie;}} senza codice: il codice viene generato, poi si stampano le etichette.",
@@ -416,6 +422,8 @@
 			"groupConflict": "Stessa chiave della riga {{line}} ma titolo diverso",
 			"classQuestion": "Copie con livelli diversi ({{classes}}): rispondi alla domanda qui sotto",
 			"classDiffers": "Copie con livelli diversi ({{classes}}) senza livello per copia",
+			"typeQuestion": "Copie con materiali diversi ({{types}}): rispondere alla domanda qui sotto",
+			"typeDiffers": "Copie con materiali diversi ({{types}}): il materiale è uno solo per titolo",
 			"copyExists": "Copia già in catalogo: viene saltata",
 			"mergedIntoExisting": "Aggiunta al titolo già in catalogo (stessa chiave o stesso ISBN)"
 		},
@@ -534,6 +542,7 @@
 		"yes": "Sì",
 		"no": "No",
 		"noClass": "Nessun livello",
+		"itemTypeHint": "Il materiale è del titolo: cambia per tutte le sue copie.",
 		"reason": "Motivo",
 		"reasonHint": "Obbligatorio per perse e ritirate: resta nel registro di ogni copia.",
 		"check": "Controlla",

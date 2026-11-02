@@ -305,7 +305,6 @@ describe("print lists", () => {
 			notes: "",
 		};
 		const copy = {
-			itemType: "libro",
 			callNumber: "",
 			readingLevel: "",
 			enumeration: "",
@@ -319,6 +318,7 @@ describe("print lists", () => {
 			{
 				...record,
 				title: "Animali",
+				itemType: "dvd",
 				kind: "nonfiction",
 				genreCode: "",
 				classCode: "590",
@@ -331,7 +331,7 @@ describe("print lists", () => {
 		const n = addItems(
 			db,
 			nonfictionId,
-			{ ...copy, itemType: "dvd", acquisitionDate: "2026-03-05" },
+			{ ...copy, acquisitionDate: "2026-03-05" },
 			1,
 			actor,
 			rules,

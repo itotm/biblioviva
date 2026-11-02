@@ -98,17 +98,34 @@ doppioni: tutte le righe risultano **Invariato**.
 
 ## Possibili problemi
 
-- Una classe non viene riconosciuta: la riga segnala che la classe non è stata trovata ed elenca le classi valide.
-  Creare la classe in **Classi** oppure correggere il nome nel file, poi verificare di nuovo.
-- Compare «Numero tessera già assegnato a un altro utente»: due persone hanno lo stesso numero di tessera, nel file o in
-  archivio. Correggere il numero nel file.
-- Compare «Numero tessera uguale o simile al codice di una copia»: il numero ha la forma del codice di un libro: le
-  tessere e le copie non possono mai essere confuse. Lasciare vuota la cella: BiblioViva genera il numero.
-- Una cella vuota non cancella niente: una tessera vuota nel file lascia all'alunno la tessera che ha già.
-- Il pulsante **Importa** non si attiva perché ci sono ancora righe con **Errore**: leggere la colonna **Dettagli**.
-- Per chi arriva da Koha: gli studenti si estraggono con una query già pronta, che produce un file con i nomi delle
-  colonne giusti e i numeri di tessera già in uso: vedere [le istruzioni tecniche](../../../import/README.md). I nomi
-  delle colonne di Koha cambiano da una versione all'altra: chi esegue la query li controlla prima.
+### Una classe non viene riconosciuta
+
+La riga segnala che la classe non è stata trovata ed elenca le classi valide. Creare la classe in **Classi** oppure
+correggere il nome nel file, poi verificare di nuovo.
+
+### Il numero di tessera è già assegnato
+
+Compare «Numero tessera già assegnato a un altro utente»: due persone hanno lo stesso numero di tessera, nel file o in
+archivio. Correggere il numero nel file.
+
+### Il numero di tessera sembra un codice di libro
+
+Compare «Numero tessera uguale o simile al codice di una copia»: il numero ha la forma del codice di un libro: le
+tessere e le copie non possono mai essere confuse. Lasciare vuota la cella: BiblioViva genera il numero.
+
+### Una cella vuota non cancella niente
+
+Una tessera vuota nel file lascia all'alunno la tessera che ha già.
+
+### Il pulsante Importa non si attiva
+
+Ci sono ancora righe con **Errore**: leggere la colonna **Dettagli**.
+
+### Gli studenti arrivano da Koha
+
+Gli studenti si estraggono con una query già pronta, che produce un file con i nomi delle colonne giusti e i numeri di
+tessera già in uso: vedere [le istruzioni tecniche](../../../import/README.md). I nomi delle colonne di Koha cambiano da
+una versione all'altra: chi esegue la query li controlla prima.
 
 ## Pagine correlate
 

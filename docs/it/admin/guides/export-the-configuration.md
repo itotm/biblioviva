@@ -61,17 +61,31 @@ rifiutato.
 
 ## Possibili problemi
 
-- Compare «Il file non è un archivio ZIP valido.» o «Il file non è un archivio di BiblioViva.»: scegliere un file
-  prodotto da BiblioViva.
-- Compare «L'archivio non contiene la configurazione (solo dati della biblioteca): si ripristina da Amministrazione →
-  Backup.»: il file è una copia dei dati, non della configurazione; vedere [Ripartire da una copia di
-  sicurezza](../../setup/restore.md).
-- Compare «L'archivio ha dei problemi: vanno corretti prima di importarlo.» con un elenco: ogni riga indica il file e la
-  chiave da correggere, per esempio un valore non valido o un codice usato da alcuni libri che sparirebbe. Correggere
-  l'archivio, oppure togliere la spunta alle parti che hanno il problema.
-- Compare «L'archivio è troppo grande»: il limite è indicato nel messaggio.
-- Chi lavora sul computer di BiblioViva può fare lo stesso dal terminale: i comandi sono nella pagina tecnica
-  [Deployment notes](../../../deploy.md).
+### Il file non è un archivio di BiblioViva
+
+Compare «Il file non è un archivio ZIP valido.» o «Il file non è un archivio di BiblioViva.»: scegliere un file
+prodotto da BiblioViva.
+
+### L'archivio non contiene la configurazione
+
+Compare «L'archivio non contiene la configurazione (solo dati della biblioteca): si ripristina da Amministrazione →
+Backup.»: il file è una copia dei dati, non della configurazione; vedere
+[Ripartire da una copia di sicurezza](../../setup/restore.md).
+
+### L'archivio ha dei problemi da correggere
+
+Compare «L'archivio ha dei problemi: vanno corretti prima di importarlo.» con un elenco: ogni riga indica il file e la
+chiave da correggere, per esempio un valore non valido o un codice usato da alcuni libri che sparirebbe. Correggere
+l'archivio, oppure togliere la spunta alle parti che hanno il problema.
+
+### L'archivio è troppo grande
+
+Compare «L'archivio è troppo grande»: il limite è indicato nel messaggio.
+
+### Si vuole fare lo stesso dal terminale
+
+Chi lavora sul computer di BiblioViva può fare lo stesso dal terminale: i comandi sono nella pagina tecnica
+[Deployment notes](../../../deploy.md).
 
 ## Pagine correlate
 

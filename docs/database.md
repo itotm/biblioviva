@@ -43,7 +43,7 @@ Technical reference of the BiblioViva database, for developers and coding agents
   hand-written, idempotent FTS5 statements (§4), and turns `foreign_keys` back on. `bun run db:migrate` does the same
   from the command line.
 - **Single migration until 1.0** (ADR-011, Q82). `drizzle/` holds exactly one migration,
-  currently `drizzle/20261029000000_initial/` (`migration.sql` + `snapshot.json`). When `schema.ts` changes, delete
+  currently `drizzle/20261102000000_initial/` (`migration.sql` + `snapshot.json`). When `schema.ts` changes, delete
   the folder, run `bun run db:generate` and rename the new folder to `<YYYYMMDD>000000_initial` (the day and a zero time); never add an incremental
   migration. Development databases are reset with `bun run dev:reset --yes` and reseeded (`bun run db:seed`,
   synthetic and deterministic data: 5 000 copies). A database in use during the 0.9.x field tests crosses a schema
@@ -128,6 +128,7 @@ erDiagram
         text series
         text series_number
         text dewey
+        text item_type
         text kind "fiction | nonfiction | NULL"
         text genre_code
         text reading_level
@@ -148,7 +149,6 @@ erDiagram
         integer biblio_id FK
         text barcode UK
         text call_number
-        text item_type
         text reading_level
         text enumeration
         text status "available | lost | damaged | in_repair | withdrawn"
@@ -468,6 +468,7 @@ One row per title, aligned with the Koha fast cataloguing framework (PLAN.md §4
 | `series` | text | yes | | narrative series (`Harry Potter`), never the UNIMARC 225/410 *collana* (Q84) |
 | `series_number` | text | yes | | number as printed (`3`, `3.5`, `II`) |
 | `dewey` | text | yes | | numeric part of 676$a, reference only |
+| `item_type` | text | no | `'libro'` | code from `library.itemTypes` (loan rules, not-for-loan), the same for every copy of the title (Q139); a new record takes the first configured type |
 | `kind` | text | yes | | CHECK `fiction`, `nonfiction`; NULL while the record waits to be classified (step 9.21): no genre, class or reading level then |
 | `genre_code` | text | yes | | fiction genre from `classification.genres` |
 | `reading_level` | text | yes | | fiction reading level, a code of `classification.readingLevels`; NULL when `classification.classPerItem` is on (then on `item`) |
@@ -486,7 +487,7 @@ One row per title, aligned with the Koha fast cataloguing framework (PLAN.md §4
 - **Unique:** `biblio_isbn` (`isbn`) — NULLs are distinct, so any number of records may have no ISBN.
 - **Indexes:** `biblio_author` (`author`), `biblio_series` (`series`), `biblio_year` (`publication_year`),
   `biblio_kind` (`kind`), `biblio_genre` (`genre_code`), `biblio_class` (`class_code`),
-  `biblio_reading_level` (`reading_level`).
+  `biblio_reading_level` (`reading_level`), `biblio_item_type` (`item_type`).
 - **Checks:** `biblio_kind_check` (`kind IS NULL OR kind IN ('fiction', 'nonfiction')`).
 - **Foreign keys:** `created_by`, `updated_by` → `staff_user.id` (no action).
 - **Rules (services, not constraints):** a record with a null `kind` is "da classificare" (Q117): its copies are refused
@@ -501,12 +502,11 @@ One row per title, aligned with the Koha fast cataloguing framework (PLAN.md §4
 | `id` | integer | no | autoincrement | PK |
 | `biblio_id` | integer | no | | FK `biblio.id` ON DELETE RESTRICT |
 | `barcode` | text | no | | the configured copy format for new copies (default `YYYY-CNNNN`); older formats, legacy plain counters and `YYYY-NNNN` kept as-is (§5.4) |
-| `call_number` | text | yes | | the "segnatura", e.g. `B 4 DEL` |
-| `item_type` | text | no | `'libro'` | code from `library.itemTypes` (loan rules, not-for-loan) |
+| `call_number` | text | yes | | the "segnatura", e.g. `B 4 DEL`; on the copy, because copies of one title can be shelved apart (Q139) |
 | `reading_level` | text | yes | | only when `classification.classPerItem` is on |
 | `enumeration` | text | yes | | issue designation of periodicals, e.g. `2026, n. 3` |
 | `status` | text | no | `'available'` | CHECK `available`, `lost`, `damaged`, `in_repair`, `withdrawn`; "on loan" is derived from open loans, never stored |
-| `not_for_loan` | integer | no | `0` | boolean, reference copies |
+| `not_for_loan` | integer | no | `0` | boolean, reference copies; set on every copy when the record takes a not-for-loan type |
 | `acquisition_date` | text | yes | | `YYYY-MM-DD` |
 | `notes` | text | yes | | |
 | `barcode_label_printed_at` | text | yes | | NULL = barcode label still to print |
@@ -1068,7 +1068,7 @@ CREATE VIRTUAL TABLE IF NOT EXISTS biblio_fts USING fts5(
 - Enumerations are `TEXT` with a named `CHECK … IN (…)`; the value lists are exported from `schema.ts`
   (`BIBLIO_KINDS`, `ITEM_STATUSES`, `PATRON_TYPES`, `PATRON_STATUSES`, `LOAN_EVENT_TYPES`, `IMPORT_KINDS`,
   `PRINT_LIST_KINDS`, `INVENTORY_STATUSES`). Changing a list changes the CHECK and therefore the single migration.
-- Values that come from the configuration (`item.item_type`, `biblio.genre_code`, `biblio.class_code`,
+- Values that come from the configuration (`biblio.item_type`, `biblio.genre_code`, `biblio.class_code`,
   `biblio.reading_level`, `patron.level_code`, `class_group_level.level_code`) are not constrained in the database;
   the services validate them, and a configuration change that would drop a code in use is refused.
 

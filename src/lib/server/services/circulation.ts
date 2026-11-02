@@ -77,7 +77,7 @@ export function openLoansOf(db: DbOrTx, patronId: number, today: string): DeskLo
 			itemId: item.id,
 			barcode: item.barcode,
 			title: biblio.title,
-			itemType: item.itemType,
+			itemType: biblio.itemType,
 			issuedAt: loan.issuedAt,
 			dueDate: loan.dueDate,
 			renewals: loan.renewals,
@@ -175,7 +175,7 @@ export function checkoutItem(
 			throw new DeskNotFoundError("patron", input.patronId);
 		}
 		const it = tx
-			.select({ i: item, title: biblio.title, kind: biblio.kind })
+			.select({ i: item, title: biblio.title, kind: biblio.kind, itemType: biblio.itemType })
 			.from(item)
 			.innerJoin(biblio, eq(biblio.id, item.biblioId))
 			.where(eq(item.id, input.itemId))
@@ -205,7 +205,7 @@ export function checkoutItem(
 					id: it.i.id,
 					status: it.i.status,
 					notForLoan: it.i.notForLoan === 1,
-					itemType: it.i.itemType,
+					itemType: it.itemType,
 					classified: it.kind !== null,
 				},
 				patronLoans: infos,
@@ -438,7 +438,7 @@ function renewIn(
 			l: loan,
 			title: biblio.title,
 			barcode: item.barcode,
-			itemType: item.itemType,
+			itemType: biblio.itemType,
 			patronType: patron.patronType,
 		})
 		.from(loan)

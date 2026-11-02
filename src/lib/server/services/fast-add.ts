@@ -27,7 +27,6 @@ export function fastAddBiblio(
 	}
 	const {
 		copies: _copies,
-		itemType,
 		itemCallNumber,
 		itemReadingLevel,
 		acquisitionDate,
@@ -45,7 +44,6 @@ export function fastAddBiblio(
 			tx,
 			biblioId,
 			{
-				itemType,
 				callNumber: itemCallNumber,
 				readingLevel: itemReadingLevel,
 				enumeration: "",

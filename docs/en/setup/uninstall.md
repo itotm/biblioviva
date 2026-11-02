@@ -87,15 +87,19 @@ Docker stays installed on the computer: it need not be removed.
 
 ## Possible problems
 
-- "Permission denied" while deleting the folder: some files belong to another user of the computer. Repeat the command
-  with `sudo` in front, checking the path with care before pressing Enter.
+### Permission denied while deleting the folder
 
-  ```sh
-  sudo rm -r ~/biblioviva
-  ```
+"Permission denied" appears while deleting the folder: some files belong to another user of the computer. Repeat the
+command with `sudo` in front, checking the path with care before pressing Enter.
 
-- "permission denied" about Docker: close the terminal and connect again, or put `sudo` in front of the `docker`
-  commands.
+```sh
+sudo rm -r ~/biblioviva
+```
+
+### Docker answers permission denied
+
+The message "permission denied" about Docker is solved by closing the terminal and connecting again, or by putting
+`sudo` in front of the `docker` commands.
 
 ## Related pages
 

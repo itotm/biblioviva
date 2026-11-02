@@ -102,6 +102,7 @@ export function checkOperation(op: BatchOperation, rules: CatalogRules): void {
 
 interface Current {
 	id: number;
+	biblioId: number;
 	barcode: string;
 	title: string;
 	kind: string | null;
@@ -129,11 +130,13 @@ function currentOf(db: DbOrTx, itemIds: readonly number[]): Map<number, Current>
 	for (const r of db
 		.select({
 			id: item.id,
+			biblioId: item.biblioId,
 			barcode: item.barcode,
 			title: biblio.title,
 			kind: biblio.kind,
 			status: item.status,
-			itemType: item.itemType,
+			// the type is the record's (9.45): changing it changes every copy of the title
+			itemType: biblio.itemType,
 			notForLoan: item.notForLoan,
 			readingLevel: item.readingLevel,
 			acquisitionDate: item.acquisitionDate,
@@ -261,12 +264,20 @@ export function applyBatch(
 						now,
 					);
 					continue;
-				case "itemType":
-					tx.update(item)
-						.set({ itemType: op.itemType, updatedAt: stamp })
+				case "itemType": {
+					const biblioId = tx
+						.select({ biblioId: item.biblioId })
+						.from(item)
 						.where(eq(item.id, row.itemId))
-						.run();
+						.get()?.biblioId;
+					if (biblioId !== undefined) {
+						tx.update(biblio)
+							.set({ itemType: op.itemType, updatedAt: stamp })
+							.where(eq(biblio.id, biblioId))
+							.run();
+					}
 					break;
+				}
 				case "notForLoan":
 					tx.update(item)
 						.set({ notForLoan: op.notForLoan ? 1 : 0, updatedAt: stamp })
@@ -439,6 +450,7 @@ export function applyReclassify(
 					series: r.series ?? "",
 					seriesNumber: r.seriesNumber ?? "",
 					dewey: r.dewey ?? "",
+					itemType: r.itemType,
 					kind: target.kind,
 					genreCode: target.kind === "fiction" ? target.genreCode : "",
 					classCode: target.kind === "nonfiction" ? target.classCode : "",

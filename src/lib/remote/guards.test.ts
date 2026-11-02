@@ -13,6 +13,10 @@ const ALLOW_SETUP_MODE = new Set([
 	"first-run-restore.remote.ts:checkRestoreArchive",
 	"first-run-restore.remote.ts:applyRestoreArchive",
 	"first-run-restore.remote.ts:discardRestoreArchive",
+	"setup-language.remote.ts:getSetupLanguagePacks",
+	"setup-language.remote.ts:getSetupReleasePacks",
+	"setup-language.remote.ts:installSetupReleasePack",
+	"setup-language.remote.ts:uploadSetupLanguagePack",
 ]);
 
 function remoteFunctions(file: string): { name: string; body: string }[] {

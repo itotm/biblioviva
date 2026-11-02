@@ -109,7 +109,7 @@ describe("copy barcodes", () => {
 			.returning({ id: biblio.id })
 			.get().id;
 		const copy = (barcode: string): void => {
-			db.insert(item).values({ biblioId, barcode, itemType: "libro" }).run();
+			db.insert(item).values({ biblioId, barcode }).run();
 		};
 		copy("2026-0042");
 		copy("2025-0900");

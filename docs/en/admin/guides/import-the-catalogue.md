@@ -34,7 +34,7 @@ The column names are in English and must be left as in the template. The main on
 | `reading_level` | the reading level (fiction) | optional |
 
 Also optional are `isbn`, `subtitle`, `publication_place`, `publication_year`, `physical_description`, `series`,
-`series_number`, `subjects`, `notes`, `call_number` (the call number), `item_type` (the material: book, DVD…), `status`,
+`series_number`, `subjects`, `notes`, `call_number` (the call number), `item_type` (the material: book, DVD…, one per title), `status`,
 `not_for_loan` (`sì` for reference copies), `acquisition_date` (`YYYY-MM-DD` or `DD/MM/YYYY`), `item_notes` and others:
 the complete list is in the **The template of the file** box. The status is written `available`, `lost`, `damaged`,
 `in_repair` or `withdrawn`; the Italian words (disponibile, perso, danneggiato, in riparazione, ritirato) are accepted.
@@ -69,6 +69,10 @@ classifies it.
 1. If copies of the same book have different reading levels, the page asks whether to switch on the level per copy.
    Press **Yes, level per copy** to keep the level on each copy: the choice applies to the whole catalogue and moves
    the level of the books already present onto their copies. Press **No, they are errors to fix** to correct the file.
+1. If the copies of one new title have different materials, the page asks **Copies of one title with different
+   materials**, in a yellow box. Press **Yes, the most frequent material** so that each title takes the material of most
+   of its copies. Press **No, they are errors to fix** to correct the file. Copies added to a title already in the
+   catalogue keep the material of that title.
 1. If there are errors, correct the file, press **Back to the columns**, upload it again and check once more. With even
    one error **Import** stays off.
 
@@ -89,17 +93,41 @@ computer. Importing the same file twice does not create duplicates: copies alrea
 
 ## Possible problems
 
-- "Classification not in the configuration" appears: the code written in `classification` is neither a genre nor a
-  subject. Correct the file or add the code: see [Change the classification and the reading levels](classification.md).
-- "Barcode … already belongs to another copy in the catalogue" appears: the same barcode is on two different books.
-  Correct the code in the file.
-- "The author is missing" or "The publisher is missing" appears: fill in the cell or tick the special values.
-- "Invalid ISBN" appears: correct the ISBN or leave the cell empty.
-- "Every copy in the file is already in the catalogue: there is nothing to import." appears: the file has already been
-  imported.
-- For those coming from Koha: the catalogue is extracted with a ready-made query; the file it produces is separated by
-  tabs and must be uploaded as it is: see [the technical instructions](../../../import/README.md). The names of Koha's
-  columns change from one version to another: whoever runs the query checks them first.
+### The classification is not in the configuration
+
+"Classification not in the configuration" appears: the code written in `classification` is neither a genre nor a
+subject. Correct the file or add the code: see [Change the classification and the reading levels](classification.md).
+
+### The barcode belongs to another copy
+
+"Barcode … already belongs to another copy in the catalogue" appears: the same barcode is on two different books.
+Correct the code in the file.
+
+### The author or the publisher is missing
+
+"The author is missing" or "The publisher is missing" appears: fill in the cell or tick the special values.
+
+### The ISBN is not valid
+
+"Invalid ISBN" appears: correct the ISBN or leave the cell empty.
+
+### The copies of a title have different materials
+
+"Copies of different materials (…): answer the question below" appears or, after **No, they are errors to fix**, "Copies
+of different materials (…): a title has one material only": in the file the rows of the same book carry different
+materials in `item_type`, but a title has one material only. Answer **Yes, the most frequent material** or correct
+`item_type` in the file, making it the same on all the rows of the book, and check again.
+
+### Every copy is already in the catalogue
+
+"Every copy in the file is already in the catalogue: there is nothing to import." appears: the file has already been
+imported.
+
+### The catalogue comes from Koha
+
+The catalogue is extracted with a ready-made query; the file it produces is separated by tabs and must be uploaded as
+it is: see [the technical instructions](../../../import/README.md). The names of Koha's columns change from one
+version to another: whoever runs the query checks them first.
 
 ## Related pages
 

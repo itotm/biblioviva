@@ -1,6 +1,6 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
-<!-- Item types on the "Biblioteca" settings page (step 11.4): one row per code with how many copies
-     use it; a changed code is a rename and its copies follow it; a removed code in use asks where
+<!-- Item types on the "Biblioteca" settings page (step 11.4): one row per code with how many books
+     use it; a changed code is a rename and its books follow it; a removed code in use asks where
      they go; saved as one change. (The school sections of before Phase 12 are classes now: groups
      of the database, managed in Amministrazione → Classi.) -->
 <script lang="ts">

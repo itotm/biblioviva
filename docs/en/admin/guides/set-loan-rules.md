@@ -89,12 +89,23 @@ Copy types are added and renamed in the **Library and school** section, in the *
 
 ## Possible problems
 
-- "Fix the marked values before saving." appears: a field has an invalid value, for example text instead of a number.
-  Correct the field marked in red.
-- "The save did not succeed:" appears with a list: the items say which key to correct.
-- The values of the rules per copy type show the message "At least 1.": days and books must be at least 1; only
-  renewals can be 0.
-- The page is left with unsaved changes: BiblioViva asks for confirmation before losing them.
+### A field has an invalid value
+
+"Fix the marked values before saving." appears: a field has an invalid value, for example text instead of a number.
+Correct the field marked in red.
+
+### The save did not succeed
+
+"The save did not succeed:" appears with a list: the items say which key to correct.
+
+### A rule value is too low
+
+The values of the rules per copy type show the message "At least 1.": days and books must be at least 1; only
+renewals can be 0.
+
+### The page is left with unsaved changes
+
+BiblioViva asks for confirmation before losing them.
 
 ## Related pages
 

@@ -123,13 +123,23 @@ profile)](../../../deploy.md#off-site-copies-optional-offsite-compose-profile).
 
 ## Possibili problemi
 
-- L'elenco non mostra copie recenti: il computer è rimasto spento a lungo oppure l'orario è stato cambiato. Premere
-  **Esegui backup ora** e controllare le impostazioni nella sezione **Backup** della configurazione.
-- Il comando `scp` non trova la cartella: controllare utente e indirizzo, e che la cartella `~/biblioviva/backups`
-  esista sul computer di BiblioViva.
-- Il file `.zip` scaricato è molto grande: le copertine pesano più del database. Usare una chiavetta con più spazio.
-- La pagina **Backup** non indica una «Ultima copia esterna»: la copia esterna è opzionale e non è attiva, salvo averla
-  configurata come descritto nella pagina tecnica indicata sopra.
+### L'elenco non mostra copie recenti
+
+Il computer è rimasto spento a lungo oppure l'orario è stato cambiato. Premere **Esegui backup ora** e controllare le
+impostazioni nella sezione **Backup** della configurazione.
+
+### Il comando scp non trova la cartella
+
+Controllare utente e indirizzo, e che la cartella `~/biblioviva/backups` esista sul computer di BiblioViva.
+
+### Il file zip scaricato è molto grande
+
+Le copertine pesano più del database. Usare una chiavetta con più spazio.
+
+### Manca l'ultima copia esterna
+
+La pagina **Backup** non indica una «Ultima copia esterna»: la copia esterna è opzionale e non è attiva, salvo averla
+configurata come descritto nella pagina tecnica indicata sopra.
 
 ## Pagine correlate
 

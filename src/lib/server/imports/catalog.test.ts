@@ -390,9 +390,10 @@ describe("commit", () => {
 			author: "Anonimo",
 			publisher: "s.n.",
 			classCode: "030",
+			// the type of the copies is the record's (9.45)
+			itemType: "consultazione",
 		});
 		expect(db.select().from(item).where(eq(item.barcode, "218")).get()).toMatchObject({
-			itemType: "consultazione",
 			notForLoan: 1,
 			enumeration: "vol. 1",
 		});
@@ -454,6 +455,44 @@ describe("commit", () => {
 			{ title: "Secondo", series: "Pepe Lampo", n: "2" },
 			{ title: "Terzo", series: null, n: null },
 		]);
+	});
+
+	it("asks which material a title takes when its copies differ (9.45, Q139)", () => {
+		const { db, actor } = setup();
+		const csv = writeCsv([
+			["biblio_key", "title", "author", "publisher", "classification", "item_type"],
+			["1", "Atlante", "A", "B", "A", "dvd"],
+			["1", "Atlante", "A", "B", "A", "consultazione"],
+			["1", "Atlante", "A", "B", "A", "consultazione"],
+			["2", "Fiabe", "A", "B", "A", ""],
+		]);
+		const asked = validateCatalogImport(db, inputsOf(csv), base);
+		expect(asked.typeQuestion).toBe(1);
+		expect(asked.canCommit).toBe(false);
+		expect(asked.rows[0]?.reasons).toEqual([
+			{ code: "typeQuestion", params: { types: "consultazione, dvd" } },
+		]);
+		const no = validateCatalogImport(db, inputsOf(csv), { ...base, useMajorityType: false });
+		expect(no.rows[0]?.reasons.map((r) => r.code)).toEqual(["typeDiffers"]);
+		expect(() => commit(db, actor, inputsOf(csv))).toThrow(ImportNotReadyError);
+		// yes: the record takes the type of most of its copies, a title without a type the first one
+		commit(db, actor, inputsOf(csv), { ...base, useMajorityType: true });
+		const types = db
+			.select({ title: biblio.title, itemType: biblio.itemType })
+			.from(biblio)
+			.all();
+		expect(types).toEqual([
+			{ title: "Atlante", itemType: "consultazione" },
+			{ title: "Fiabe", itemType: rules.itemTypes[0]?.code },
+		]);
+		// the type keeps the copies of a reference work from loans
+		expect(
+			db
+				.select({ n: item.notForLoan })
+				.from(item)
+				.all()
+				.map((r) => r.n),
+		).toEqual([1, 1, 1, 0]);
 	});
 
 	it("imports the original title of a translation (9.23)", () => {
@@ -522,7 +561,6 @@ describe("commit", () => {
 			db,
 			record,
 			{
-				itemType: "libro",
 				callNumber: "",
 				readingLevel: "",
 				enumeration: "",

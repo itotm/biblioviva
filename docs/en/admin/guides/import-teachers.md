@@ -64,14 +64,22 @@ duplicates.
 
 ## Possible problems
 
-- The group is not recognised: the row reports that the teachers group was not found and lists the valid groups. Create
-  the group with **New teachers group** in the **Classes** page, or correct the name in the file.
-- A teacher appears twice: the row reports that the same person is already at the indicated row: remove the duplicate
-  from the file.
-- Two teachers have the same first and last name: the page asks to choose which one to update, with **Pick the
-  patron**, or **Create a new patron**.
-- For those coming from Koha: teachers are extracted with a ready-made query: see
-  [the technical instructions](../../../import/README.md).
+### The group is not recognised
+
+The row reports that the teachers group was not found and lists the valid groups. Create the group with **New teachers
+group** in the **Classes** page, or correct the name in the file.
+
+### A teacher appears twice
+
+The row reports that the same person is already at the indicated row: remove the duplicate from the file.
+
+### Two teachers have the same name
+
+The page asks to choose which one to update, with **Pick the patron**, or **Create a new patron**.
+
+### The teachers come from Koha
+
+Teachers are extracted with a ready-made query: see [the technical instructions](../../../import/README.md).
 
 ## Related pages
 

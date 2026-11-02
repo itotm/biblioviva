@@ -94,14 +94,30 @@ Dashboard goes down.
 
 ## Possible problems
 
-- The **Add to the list** button of the filters panel is off: no filter has been chosen.
-- "No patron with card …" with the scanner: the number read belongs to nobody. Read the card again.
-- "The scanned code is not a card": another kind of code was read, for example that of a book.
-- "Print cards" is off: the list is empty. Add the patrons first.
-- The lists are missing in the **Printing** page: the account sees only the lists of its own kind. The book lists
-  require the permission to manage the catalogue.
-- The cards do not come out as expected: see the possible problems of [Print the cards of a
-  class](print-class-cards.md#possible-problems).
+### The button to add to the list is off
+
+The **Add to the list** button of the filters panel is off: no filter has been chosen.
+
+### No patron with the card read
+
+With the scanner, "No patron with card …" appears: the number read belongs to nobody. Read the card again.
+
+### The code read is not a card
+
+"The scanned code is not a card" appears: another kind of code was read, for example that of a book.
+
+### The button to print cards is off
+
+"Print cards" is off: the list is empty. Add the patrons first.
+
+### Lists are missing in the Printing page
+
+The lists are missing in the **Printing** page: the account sees only the lists of its own kind. The book lists require
+the permission to manage the catalogue.
+
+### The cards do not come out as expected
+
+See the possible problems of [Print the cards of a class](print-class-cards.md#possible-problems).
 
 ## Related pages
 

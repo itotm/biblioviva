@@ -35,14 +35,28 @@ change: it appears in the history and can itself be undone.
 
 ## Possible problems
 
-- "It cannot be restored: after this change" followed by the names of the values and "changed again" appears: those
-  same values were changed again. First undo the more recent changes, from the top down.
-- "This change created config.json: it cannot be undone." appears: it is the first configuration, written by the first
-  run.
-- "The change is no longer in the history." appears: the history keeps the last 50 changes and this one has been passed.
-  If a configuration archive exists, see [Export and import the configuration](export-the-configuration.md).
-- The list shows "No change made from the administration yet.": there is nothing to undo.
-- A setting was changed by editing the configuration files by hand: that change is not in the history.
+### The value was changed again
+
+"It cannot be restored: after this change" followed by the names of the values and "changed again" appears: those
+same values were changed again. First undo the more recent changes, from the top down.
+
+### The change created config.json
+
+"This change created config.json: it cannot be undone." appears: it is the first configuration, written by the first
+run.
+
+### The change is no longer in the history
+
+"The change is no longer in the history." appears: the history keeps the last 50 changes and this one has been passed.
+If a configuration archive exists, see [Export and import the configuration](export-the-configuration.md).
+
+### The list of changes is empty
+
+The list shows "No change made from the administration yet.": there is nothing to undo.
+
+### A change does not appear in the history
+
+A setting was changed by editing the configuration files by hand: that change is not in the history.
 
 ## Related pages
 

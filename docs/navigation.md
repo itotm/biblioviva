@@ -64,18 +64,19 @@ flowchart TB
     subgraph Desktop["Desktop (≥ md)"]
         direction TB
         SB["Sidebar<br/>library logo → Dashboard<br/>Prestiti · Catalogo · Utenti · Stampe · Segnalazioni · Report · Amministrazione<br/>BiblioViva version → Informazioni"]
-        TB["Top bar<br/>back arrow, page title (one row, same height everywhere) · help · print basket · account menu (Informazioni, Esci)"]
+        TB["Top bar<br/>back arrow, page title (one row, same height everywhere) · Guida button · print basket · account menu (Informazioni, Esci)"]
     end
     subgraph Phone["Phone (< md)"]
         direction TB
-        PT["Top bar<br/>library logo and name → Dashboard · page title with Back (second row) · help · print basket · account menu"]
+        PT["Top bar<br/>library logo and name → Dashboard · page title with Back and the round help button (second row) · print basket · account menu"]
         BB["Bottom bar<br/>Prestiti · Catalogo · Utenti · Altro (Stampe, Segnalazioni, Report, Amministrazione)<br/>Altro highlighted while one of its areas is open"]
     end
-    Help["Help icon (every account)"] -. "new tab, external" .-> Docs["docs.biblioviva.org/&lt;version&gt;/&lt;lang&gt;/manual/&lt;area&gt;/"]
+    Help["Guida button (every account)"] -. "new tab, external" .-> Docs["docs.biblioviva.org/&lt;version&gt;/&lt;lang&gt;/manual/&lt;area&gt;/"]
     Basket["Print basket (patrons or catalog)"] --> Lists["/print-lists and /print-lists/[id]"]
 ```
 
-The help icon (step 9.5b) opens the manual of the area the page belongs to on the documentation
+The help button (step 9.5b; a "Guida" button in the top bar on the computer, a round button right after the page
+title on the phone, step 9.47) opens the manual of the area the page belongs to on the documentation
 site, in the installation's language (`#lib/ui/help-links.ts`: the reference page of the area's main
 screen; the dashboard and the pages outside the areas open the dashboard's page, Amministrazione the
 administration section). The
@@ -450,7 +451,7 @@ account. The test reads this table.
 | Route | Page | Permission | Reached from |
 |---|---|---|---|
 | `/login` | Accedi | none | every page without a session |
-| `/setup` | Primo avvio (wizard; its first screen also offers "Ripristina da un backup", the restore of an "Esporta tutto" archive, step 9.43) | none, only before the first configuration; the restore is refused in the public demo | first start |
+| `/setup` | Primo avvio (wizard; its first screen also offers "Aggiungi una lingua", a language pack of the release or an uploaded zip that the wizard goes on in, step 9.48, and "Ripristina da un backup", the restore of an "Esporta tutto" archive, step 9.43) | none, only before the first configuration; the restore is refused in the public demo | first start |
 | `/dev/ui` | Style guide | none, development and test builds only | address |
 | `/` | Dashboard | any (a loans-only account is sent to the checkout desk) | login, library logo |
 | `/about` | Informazioni | any | account menu, sidebar footer |
@@ -625,6 +626,7 @@ flowchart LR
 ```mermaid
 flowchart LR
     A["First start"] --> B["/setup<br/>language, colours, library, school (classes),<br/>codes, demo data (generated from the school and the codes),<br/>passwords (five accounts, report included), summary"]
+    A -->|"first screen: Aggiungi una lingua"| L["/setup, first screen<br/>a pack of the release (download) or a zip (upload),<br/>then the wizard in that language"]
     A -->|"first screen: Ripristina da un backup"| R["/setup, restore view<br/>upload an Esporta tutto archive, check, Ripristina<br/>(configuration, data and pictures in one go)"]
     B --> C["/login"] --> D["Dashboard"]
     R -->|"Vai all'accesso: the archive's accounts"| C

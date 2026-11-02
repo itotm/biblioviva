@@ -32,14 +32,28 @@ dimostrativi, quando una password è stata persa o quando un collega lascia la s
 
 ## Possibili problemi
 
-- Compare «La password deve avere almeno 8 caratteri.»: scegliere una password più lunga.
-- Compare «Le due password non coincidono.»: riscrivere la password nel campo **Ripeti la password**.
-- Il pulsante **Salva** resta spento: uno dei due campi è vuoto o la password è troppo corta.
-- La password di `admin` è stata persa e non si riesce a entrare: serve una procedura tecnica, descritta nella pagina
-  [Deployment notes](../../../deploy.md#installing-updating-logs-step-85) (in inglese), alla voce «Forgotten admin
-  password». Per tutti gli altri account basta entrare con `admin` e seguire i passi sopra.
-- La scheda dell'account mostra «Password in chiaro nel file»: la password è scritta a mano nei file della
-  configurazione. Seguire i passi sopra per sostituirla con una password protetta.
+### La password è troppo corta
+
+Compare «La password deve avere almeno 8 caratteri.»: scegliere una password più lunga.
+
+### Le due password non coincidono
+
+Compare «Le due password non coincidono.»: riscrivere la password nel campo **Ripeti la password**.
+
+### Il pulsante Salva resta spento
+
+Uno dei due campi è vuoto o la password è troppo corta.
+
+### La password di admin è stata persa
+
+Se non si riesce a entrare, serve una procedura tecnica, descritta nella pagina
+[Deployment notes](../../../deploy.md#installing-updating-logs-step-85) (in inglese), alla voce «Forgotten admin
+password». Per tutti gli altri account basta entrare con `admin` e seguire i passi sopra.
+
+### L'account mostra «Password in chiaro nel file»
+
+La password è scritta a mano nei file della configurazione. Seguire i passi sopra per sostituirla con una password
+protetta.
 
 ## Pagine correlate
 

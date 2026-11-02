@@ -119,7 +119,7 @@ describe("anonymizePatron", () => {
 			.get();
 		const it1 = db
 			.insert(item)
-			.values({ biblioId: b.id, barcode: "2026-00011", itemType: "book" })
+			.values({ biblioId: b.id, barcode: "2026-00011" })
 			.returning({ id: item.id })
 			.get();
 		db.insert(loan)
@@ -164,7 +164,7 @@ describe("anonymizePatron", () => {
 			.get();
 		const it1 = db
 			.insert(item)
-			.values({ biblioId: b.id, barcode: "2026-00011", itemType: "book" })
+			.values({ biblioId: b.id, barcode: "2026-00011" })
 			.returning({ id: item.id })
 			.get();
 		db.insert(loan)

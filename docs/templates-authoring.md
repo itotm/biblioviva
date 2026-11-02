@@ -301,7 +301,7 @@ Three kinds ship, each with a built-in template and its own defaults in `labels.
 |---|---|
 | `{{item.barcode}}` | the copy's barcode (`2026-00427`, or a legacy number) |
 | `{{item.call_number}}` | the copy's call number (segnatura), or the suggested one when empty |
-| `{{item.item_type}}` | the item type code (`libro`, `dvd`, …) |
+| `{{item.item_type}}` | the item type code (`libro`, `dvd`, …), the record's: the same for every copy of the title |
 | `{{call.head}}`, `{{call.rest}}` | the call number split at its last token: `B 4` + `DEL`, `590` + `ROS`, `B` + `DEL` |
 | `{{biblio.title_short}}` | the title cut to `labels.titleMaxChars` characters (30) |
 | `{{biblio.author_short}}` | the part of the author before the comma (`Rossi`) |

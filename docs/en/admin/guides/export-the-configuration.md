@@ -59,16 +59,30 @@ the configuration is taken, the library's data stays as it is. A file that conta
 
 ## Possible problems
 
-- "The file is not a valid ZIP archive." or "The file is not a BiblioViva archive." appears: choose a file produced by
-  BiblioViva.
-- "The archive holds no configuration (only library data): it is restored from Administration → Backups." appears: the
-  file is a copy of the data, not of the configuration; see [Restart from a backup](../../setup/restore.md).
-- "The archive has problems: they must be fixed before importing it." appears with a list: each line gives the file and
-  the key to correct, for example an invalid value or a code used by books that would disappear. Correct the archive, or
-  untick the parts that have the problem.
-- "The archive is too large" appears: the limit is given in the message.
-- Whoever works on the BiblioViva computer can do the same from the terminal: the commands are in the technical page
-  [Deployment notes](../../../deploy.md).
+### The file is not a BiblioViva archive
+
+"The file is not a valid ZIP archive." or "The file is not a BiblioViva archive." appears: choose a file produced by
+BiblioViva.
+
+### The archive holds no configuration
+
+"The archive holds no configuration (only library data): it is restored from Administration → Backups." appears: the
+file is a copy of the data, not of the configuration; see [Restart from a backup](../../setup/restore.md).
+
+### The archive has problems to fix
+
+"The archive has problems: they must be fixed before importing it." appears with a list: each line gives the file and
+the key to correct, for example an invalid value or a code used by books that would disappear. Correct the archive, or
+untick the parts that have the problem.
+
+### The archive is too large
+
+"The archive is too large" appears: the limit is given in the message.
+
+### The same is to be done from the terminal
+
+Whoever works on the BiblioViva computer can do the same from the terminal: the commands are in the technical page
+[Deployment notes](../../../deploy.md).
 
 ## Related pages
 

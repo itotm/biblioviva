@@ -80,13 +80,23 @@ card a book is lent: the barcode scanner reads the code of the card at the circu
 
 ## Possible problems
 
-- The cards come out reduced or do not fit the sheet: the scale is not 100 %. Reopen the print window with Ctrl+P and
-  choose "Actual size".
-- The backs do not fall behind the fronts: the administrator must run the calibration described in [Calibrate two-sided
-  printing](../../admin/guides/calibrate-duplex.md).
-- Some students are missing from the sheet: the cards of removed patrons or of patrons without a number are not printed.
-- The "Print cards" window does not offer the look wanted: the card's graphics are edited by the administrator, as
-  explained in [Edit the card template](../../admin/guides/edit-the-card-template.md).
+### The cards come out reduced or do not fit the sheet
+
+The scale is not 100 %. Reopen the print window with Ctrl+P and choose "Actual size".
+
+### The backs do not fall behind the fronts
+
+The administrator must run the calibration described in [Calibrate two-sided
+printing](../../admin/guides/calibrate-duplex.md).
+
+### Some students are missing from the sheet
+
+The cards of removed patrons or of patrons without a number are not printed.
+
+### The print window does not offer the look wanted
+
+In the "Print cards" window the card's graphics are edited by the administrator, as explained in [Edit the card
+template](../../admin/guides/edit-the-card-template.md).
 
 ## Related pages
 

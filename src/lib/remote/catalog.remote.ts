@@ -164,7 +164,6 @@ export const updateBiblio = form(biblioEditSchema, async (raw, issue) => {
 	const {
 		id: rawId,
 		itemId,
-		itemType,
 		itemCallNumber,
 		itemReadingLevel,
 		itemEnumeration,
@@ -182,7 +181,6 @@ export const updateBiblio = form(biblioEditSchema, async (raw, issue) => {
 				input,
 				Number(itemId),
 				{
-					itemType,
 					callNumber: itemCallNumber,
 					readingLevel: itemReadingLevel,
 					enumeration: itemEnumeration,

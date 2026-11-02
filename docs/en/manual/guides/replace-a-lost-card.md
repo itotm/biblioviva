@@ -55,14 +55,25 @@ longer identifies anyone.
 
 ## Possible problems
 
-- The **Print card** button is missing: the patron has no card number, or has been removed. A removed person no longer
-  has a card; for a patron without a number press **Reassign card**.
-- The sheet comes out without the photo: the patron has no photo, or the administrator has switched off the photos. See
-  [Take the patrons' photos](take-patron-photos.md).
-- The backs do not fall behind the fronts, or the sizes are wrong: see the possible problems of [Print the cards of a
-  class](print-class-cards.md#possible-problems).
-- **Reassign card** was pressed by mistake: the previous number cannot be recovered. The new card must be printed and
-  handed over anyway.
+### The card cannot be printed
+
+The **Print card** button is missing: the patron has no card number, or has been removed. A removed person no longer has
+a card; for a patron without a number press **Reassign card**.
+
+### The sheet comes out without the photo
+
+The patron has no photo, or the administrator has switched off the photos. See [Take the patrons'
+photos](take-patron-photos.md).
+
+### The backs do not fall behind the fronts
+
+The backs do not fall behind the fronts, or the sizes are wrong: see the possible problems of [Print the cards of a
+class](print-class-cards.md#possible-problems).
+
+### The card was reassigned by mistake
+
+**Reassign card** was pressed by mistake: the previous number cannot be recovered. The new card must be printed and
+handed over anyway.
 
 ## Related pages
 

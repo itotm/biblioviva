@@ -141,23 +141,32 @@ If the address does not open, see the possible problems below and
 <!-- variant: tailscale -->
 **With Tailscale**
 
-- The browser does not find `biblioviva.<tailnet>.ts.net`: the Tailscale application is not active on the device, or it
-  is connected to another account, or MagicDNS is off on the "DNS" page of the console (step 3).
-- The padlock is missing or the browser reports an invalid certificate: the HTTPS certificates are not on in the "DNS"
-  page of the console (step 3).
+### The browser does not find BiblioViva's address
+
+The browser does not find `biblioviva.<tailnet>.ts.net`: the Tailscale application is not active on the device, or it is
+connected to another account, or MagicDNS is off on the "DNS" page of the console (step 3).
+
+### The padlock is missing or the certificate is not valid
+
+The padlock is missing or the browser reports an invalid certificate: the HTTPS certificates are not on in the "DNS"
+page of the console (step 3).
 <!-- /variant -->
 <!-- variant: lan -->
 **On the local network**
 
-- `biblioviva.local` does not open on a computer: use the address with the number. If it is no longer the one noted down
-  (the address was not reserved, see step 3), read it on the BiblioViva computer with the following command, which
-  prints the computer's addresses; the first is the same that the installation program writes at the end of step 4.
+### biblioviva.local does not open on a computer
 
-  ```sh
-  hostname -I
-  ```
-- The address with the number does not open from the other computers: port `8080` may be blocked in the network; ask
-  whoever manages it (step 3).
+Use the address with the number. If it is no longer the one noted down (the address was not reserved, see step 3), read
+it on the BiblioViva computer with the following command, which prints the computer's addresses; the first is the same
+that the installation program writes at the end of step 4.
+
+```sh
+hostname -I
+```
+
+### The address with the number does not open from the other computers
+
+Port `8080` may be blocked in the network; ask whoever manages it (step 3).
 <!-- /variant -->
 
 ## Related pages

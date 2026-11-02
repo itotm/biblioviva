@@ -5,6 +5,9 @@ for whoever administers BiblioViva. Languages that are already translated are in
 a language that is not in the list, or for an installation without internet, a translation pack is uploaded. In neither
 case is the program touched.
 
+A language can also be installed at the very start, from the first screen of the guided setup: the procedure is in the
+section [Language](../../setup/steps/first-run.md#language) of the step [First run](../../setup/steps/first-run.md).
+
 BiblioViva uses one language for the whole installation. A pack is a folder of `.json` files with the interface texts:
 start from a copy of English or Italian and translate the texts.
 
@@ -103,23 +106,48 @@ compress and upload the folder again: a pack with the same code replaces the pre
 
 ## Possible problems
 
-- "The list of languages cannot be reached" appears: the computer that runs BiblioViva is not connected to the internet,
-  or the installed version has no list yet. Uploading a ZIP pack, described further on, works all the same: download the
-  language's file from the BiblioViva release page (the **Release page on GitHub, to download the zips** link under the list, or the address
-  `https://github.com/itotm/biblioviva/releases`) on a computer with internet and upload it with **Upload a pack
-  (zip)**.
-- "The downloaded pack is damaged and was not installed" appears: the file did not arrive whole. Press **Install** again.
-- "The zip must hold only the language's .json files, inside one folder named after the language code." appears:
-  compress the renamed folder, not the single files, and with no other folders or files inside.
-- "Invalid language code" followed by the code appears: the folder name is not in the form `de`, `fr` or `pt-BR`.
-- "English and Italian are built in and are not replaced." appears: the folder is still named `en` or `it`.
-- "The pack has errors and was not installed:" appears with a list: a file is missing, a file is not valid JSON or a
-  translation has lost a part between braces. Correct the file indicated.
-- The **Delete** button of a pack is off: it is the language in use. First choose another language in **Appearance and
-  language**.
-- The pack can be downloaded again with the **Download** button on its row, to keep a copy or to continue the
-  translation.
-- Deleting a pack can be undone from the [configuration history](undo-a-configuration-change.md).
+### The list of languages cannot be reached
+
+"The list of languages cannot be reached" appears: the computer that runs BiblioViva is not connected to the internet,
+or the installed version has no list yet. Uploading a ZIP pack, described further on, works all the same: download the
+language's file from the BiblioViva release page (the **Release page on GitHub, to download the zips** link under the
+list, or the address `https://github.com/itotm/biblioviva/releases`) on a computer with internet and upload it with
+**Upload a pack (zip)**.
+
+### The downloaded pack is damaged
+
+"The downloaded pack is damaged and was not installed" appears: the file did not arrive whole. Press **Install** again.
+
+### The zip does not have the required structure
+
+"The zip must hold only the language's .json files, inside one folder named after the language code." appears:
+compress the renamed folder, not the single files, and with no other folders or files inside.
+
+### The language code is not valid
+
+"Invalid language code" followed by the code appears: the folder name is not in the form `de`, `fr` or `pt-BR`.
+
+### English and Italian are not replaced
+
+"English and Italian are built in and are not replaced." appears: the folder is still named `en` or `it`.
+
+### The pack has errors and was not installed
+
+"The pack has errors and was not installed:" appears with a list: a file is missing, a file is not valid JSON or a
+translation has lost a part between braces. Correct the file indicated.
+
+### The Delete button of a pack is off
+
+It is the language in use. First choose another language in **Appearance and language**.
+
+### A pack is to be downloaded again
+
+The pack can be downloaded again with the **Download** button on its row, to keep a copy or to continue the
+translation.
+
+### The deletion of a pack is to be undone
+
+Deleting a pack can be undone from the [configuration history](undo-a-configuration-change.md).
 
 ## Related pages
 

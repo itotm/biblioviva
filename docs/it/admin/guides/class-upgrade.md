@@ -98,16 +98,29 @@ L'operazione compare nel **Registro operazioni**.
 
 ## Possibili problemi
 
-- Compare «Qualche studente che esce ha ancora libri in prestito.»: registrare la restituzione dei libri, segnarli
-  smarriti, oppure togliere la spunta **Esce** a quello studente.
-- Compare «Il backup non è stato trovato o è troppo vecchio: rifallo dal primo passo.»: il backup vale per due ore.
-  Tornare al passo **Backup**, premere **Crea il backup** e ripetere i passi.
-- Compare «Alcuni studenti non hanno ancora la classe: sceglierla al passo Classi.»: tornare al passo **Classi** e
-  scegliere la classe per ciascuno.
-- Compare «Serve la conferma: l'ultimo avanzamento è recente.»: spuntare la casella di conferma nel passo **Conferma**.
-- Si è sbagliato qualcosa dopo l'avanzamento: ripristinare il backup fatto al primo passo da **Amministrazione**,
-  **Backup**: vedere [Fare e scaricare una copia di sicurezza](make-a-backup.md). Tutto ciò che si è fatto dopo il
-  backup va perso.
+### Qualche studente che esce ha ancora libri in prestito
+
+Compare «Qualche studente che esce ha ancora libri in prestito.»: registrare la restituzione dei libri, segnarli
+smarriti, oppure togliere la spunta **Esce** a quello studente.
+
+### Il backup non è stato trovato o è troppo vecchio
+
+Compare «Il backup non è stato trovato o è troppo vecchio: rifallo dal primo passo.»: il backup vale per due ore.
+Tornare al passo **Backup**, premere **Crea il backup** e ripetere i passi.
+
+### Alcuni studenti non hanno ancora la classe
+
+Compare «Alcuni studenti non hanno ancora la classe: sceglierla al passo Classi.»: tornare al passo **Classi** e
+scegliere la classe per ciascuno.
+
+### Serve la conferma perché l'ultimo avanzamento è recente
+
+Compare «Serve la conferma: l'ultimo avanzamento è recente.»: spuntare la casella di conferma nel passo **Conferma**.
+
+### Dopo l'avanzamento si è sbagliato qualcosa
+
+Ripristinare il backup fatto al primo passo da **Amministrazione**, **Backup**: vedere
+[Fare e scaricare una copia di sicurezza](make-a-backup.md). Tutto ciò che si è fatto dopo il backup va perso.
 
 ## Pagine correlate
 

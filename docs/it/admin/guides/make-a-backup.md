@@ -63,14 +63,27 @@ Il riquadro **Backup o esportazione di alcune parti** permette di salvare solo c
 
 ## Possibili problemi
 
-- L'elenco mostra «Nessun backup»: la prima copia nasce all'orario pianificato oppure con **Esegui backup ora**.
-- Una copia porta la scritta **Recuperato all'avvio**: era in programma di notte, il computer era spento e BiblioViva
-  l'ha fatta all'accensione successiva.
-- Il file `.zip` è molto grande: le copertine pesano più del database. Usare un supporto con più spazio.
-- L'orario e la durata delle copie si cambiano in **Amministrazione**, **Configurazione**, **Backup**, nei campi
-  **Orario del backup** e **Giorni di conservazione**.
-- Per rimettere i dati di una copia in BiblioViva vedere [Ripartire da una copia di
-  sicurezza](../../setup/restore.md).
+### L'elenco dei backup è vuoto
+
+L'elenco mostra «Nessun backup»: la prima copia nasce all'orario pianificato oppure con **Esegui backup ora**.
+
+### Una copia risulta recuperata all'avvio
+
+La copia era in programma di notte, il computer era spento e BiblioViva l'ha fatta all'accensione successiva.
+
+### Il file zip è molto grande
+
+Il file `.zip` è molto grande: le copertine pesano più del database. Usare un supporto con più spazio.
+
+### Si vuole cambiare l'orario o la durata delle copie
+
+L'orario e la durata delle copie si cambiano in **Amministrazione**, **Configurazione**, **Backup**, nei campi
+**Orario del backup** e **Giorni di conservazione**.
+
+### Si vogliono rimettere i dati di una copia
+
+Per rimettere i dati di una copia in BiblioViva vedere [Ripartire da una copia di
+sicurezza](../../setup/restore.md).
 
 ## Pagine correlate
 

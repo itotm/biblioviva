@@ -55,11 +55,22 @@ surname. Their record shows the type "Teacher" in place of the class and the car
 
 ## Possible problems
 
-- "Student id already assigned to another patron.": the teacher is probably already entered. Look for them in
-  **Patrons**.
-- "The card number is or looks like a copy barcode: choose another number.": empty the **Card number** field.
-- "The camera only works over a secure connection (https)…": without Tailscale use **Upload file**.
-- The **Photo** tab does not appear: the administrator has switched off the photos.
+### The student id is already assigned
+
+"Student id already assigned to another patron." appears: the teacher is probably already entered. Look for them in
+**Patrons**.
+
+### The card number is not accepted
+
+"The card number is or looks like a copy barcode: choose another number." appears: empty the **Card number** field.
+
+### The camera needs a secure connection
+
+"The camera only works over a secure connection (https)…" appears: without Tailscale use **Upload file**.
+
+### The Photo tab does not appear
+
+The administrator has switched off the photos.
 
 ## Related pages
 

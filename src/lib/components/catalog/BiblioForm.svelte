@@ -38,6 +38,7 @@
 	import Grid from "#lib/ui/Grid.svelte";
 	import Row from "#lib/ui/Row.svelte";
 	import Field from "#lib/ui/Field.svelte";
+	import Select from "#lib/ui/Select.svelte";
 	import { getSeriesNames } from "#lib/remote/catalog.remote.js";
 
 	interface FormApi {
@@ -63,6 +64,7 @@
 		specialAuthors: string[];
 		unknownPublisher: string;
 		unknownPlace: string;
+		itemTypes: { code: string; label: string }[];
 	}
 
 	interface Props {
@@ -298,6 +300,17 @@
 							autocomplete="off"
 						/></Field
 					>
+				</div>
+				<!-- the material of every copy of the title (9.45, Q139) -->
+				<div>
+					<Field label={i18n.t("catalog.item.itemType")}
+						><Select {...fields.itemType.as("select")} data-testid="biblio-item-type">
+							{#each options.itemTypes as t (t.code)}
+								<option value={t.code}>{t.label}</option>
+							{/each}
+						</Select></Field
+					>
+					{@render fieldError("itemType")}
 				</div>
 			</Grid>
 		</FormSection>

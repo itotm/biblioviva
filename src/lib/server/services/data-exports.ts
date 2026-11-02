@@ -133,7 +133,7 @@ export function* catalogCsv(sqlite: Database): Generator<string> {
 				b.publisher, b.publication_place, b.publication_year, b.physical_description, b.series, b.series_number, b.dewey,
 				COALESCE(b.genre_code, b.class_code) AS classification,
 				COALESCE(i.reading_level, b.reading_level) AS reading_level,
-				b.subjects, b.notes, i.barcode, i.call_number, i.item_type, i.enumeration, i.status,
+				b.subjects, b.notes, i.barcode, i.call_number, b.item_type, i.enumeration, i.status,
 				i.not_for_loan, i.acquisition_date, i.notes AS item_notes
 			FROM biblio b LEFT JOIN item i ON i.biblio_id = b.id ORDER BY b.id, i.id`,
 		)

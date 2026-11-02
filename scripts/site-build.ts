@@ -744,7 +744,24 @@ function cardIcon(url: string): string {
 	return "file-text";
 }
 
-function transformSections(html: string): string {
+/** The pieces of a problems section (each `<h3 id>…</h3>` and its body) as boxes that open. */
+function troubleBoxes(pieces: string[]): string {
+	const items = pieces
+		.map((piece) => {
+			const h = /^<h3 id="([^"]*)">([\s\S]*?)<\/h3>\n?([\s\S]*)$/.exec(piece);
+			if (!h) {
+				return piece;
+			}
+			return `<details id="${h[1]}"><summary>${h[2]}[[icon:chevron-down]]</summary><div>${h[3]}</div></details>`;
+		})
+		.join("\n");
+	return `<div class="trouble">${items}</div>`;
+}
+
+/** The page of the common problems, in every language. */
+const PROBLEMS_PAGES = ["/help/problems.md"];
+
+function transformSections(html: string, ctx: Ctx): string {
 	const parts = html.split(/(?=<h2 )/);
 	if (html.startsWith("<h2 ")) {
 		// A split on a zero-width match gives no empty first part.
@@ -781,19 +798,24 @@ function transformSections(html: string): string {
 						: "list-checks";
 				return `<div class="check"><p id="${id}">[[icon:${icon}]] ${headingHtml}</p>\n${content}</div>\n`;
 			}
-			if (H_PROBLEMS.has(key) && /<h3\b/.test(content)) {
+			if (H_PROBLEMS.has(key)) {
+				// one box per problem, one icon on the heading only (9.46, Q141)
+				const icon = `<h2 id="${id}" class="trouble-head"><span class="trouble-ico">[[icon:life-buoy]]</span>${headingHtml}</h2>\n`;
+				if (!/<h3\b/.test(content)) {
+					if (content.includes("<ul>")) {
+						warn(
+							`${relative(ROOT, ctx.src)}: "${plain(headingHtml)}" is a list, not one ### per problem`,
+						);
+					}
+					return icon + content;
+				}
 				const pieces = content.split(/(?=<h3 )/);
 				const intro = pieces[0]!.startsWith("<h3 ") ? "" : pieces.shift()!;
-				const items = pieces
-					.map((piece) => {
-						const h = /^<h3 id="([^"]*)">([\s\S]*?)<\/h3>\n?([\s\S]*)$/.exec(piece);
-						if (!h) {
-							return piece;
-						}
-						return `<details id="${h[1]}"><summary>[[icon:triangle-alert]] ${h[2]}[[icon:chevron-down]]</summary><div>${h[3]}</div></details>`;
-					})
-					.join("\n");
-				return `${head}${intro}<div class="trouble">${items}</div>\n`;
+				return `${icon}${intro}${troubleBoxes(pieces)}\n`;
+			}
+			if (PROBLEMS_PAGES.some((page) => ctx.src.endsWith(page)) && !H_RELATED.has(key)) {
+				// Aiuto → Problemi comuni: every problem of the page is a box (9.46)
+				return `${troubleBoxes([`<h3 id="${id}">${headingHtml}</h3>\n${content}`])}\n`;
 			}
 			if (H_RELATED.has(key)) {
 				const items = [...content.matchAll(/<li><a href="([^"]+)">([\s\S]*?)<\/a><\/li>/g)];
@@ -888,7 +910,7 @@ function markdown(src: string, ctx: Ctx): Rendered {
 		id: m[1]!,
 		text: plain(m[2]!),
 	}));
-	html = transformSections(html);
+	html = transformSections(html, ctx);
 	return { title, lead, body: html, toc };
 }
 

@@ -61,15 +61,25 @@ resta alla classe. Gli utenti rimossi si ritrovano in **Utenti** scegliendo il f
 
 ## Possibili problemi
 
-- «Ha N prestiti in corso: prima vanno restituiti o segnati smarriti.»: l'utente ha ancora dei libri. Restituirli al
-  banco prestiti o segnarli smarriti, poi ripetere la rimozione.
-- Il pulsante **Rimuovi studente** non c'è: l'account non ha il permesso di rimuovere gli utenti.
-  Entrare con l'account Amministrazione.
-- Rimozione di più utenti: gli utenti con prestiti in corso non vengono rimossi e restano in archivio, senza alcun
-  messaggio per ciascuno. Il numero finale dell'avviso li conta.
-- Si è rimosso l'utente sbagliato: non c'è modo di annullare. Se l'alunno esiste ancora si può inserirlo di nuovo come
-  utente nuovo, con un numero di tessera nuovo: vedere [Iscrivere un alunno](enrol-a-student.md). I prestiti passati non
-  tornano a suo nome.
+### L'utente ha ancora prestiti in corso
+
+Compare «Ha N prestiti in corso: prima vanno restituiti o segnati smarriti.»: l'utente ha ancora dei libri. Restituirli
+al banco prestiti o segnarli smarriti, poi ripetere la rimozione.
+
+### Manca il pulsante per rimuovere lo studente
+
+Il pulsante **Rimuovi studente** non c'è: l'account non ha il permesso di rimuovere gli utenti. Entrare con l'account
+Amministrazione.
+
+### Dopo una rimozione multipla alcuni utenti restano
+
+Rimuovendo più utenti insieme, quelli con prestiti in corso non vengono rimossi e restano in archivio, senza alcun
+messaggio per ciascuno. Il numero finale dell'avviso li conta.
+
+### È stato rimosso l'utente sbagliato
+
+Non c'è modo di annullare. Se l'alunno esiste ancora si può inserirlo di nuovo come utente nuovo, con un numero di
+tessera nuovo: vedere [Iscrivere un alunno](enrol-a-student.md). I prestiti passati non tornano a suo nome.
 
 ## Pagine correlate
 

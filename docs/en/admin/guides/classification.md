@@ -100,18 +100,37 @@ print. The save enters the configuration history: see [Undo a configuration chan
 
 ## Possible problems
 
-- "This code is already used by another genre or subject." appears: a code cannot be used twice, not even by a genre and
-  a subject. Choose another code.
-- "Write the colour as #rrggbb, for example #e8231b." appears: correct the colour code.
-- The **Save** button is off: the fields with an error are marked in red; correct them.
-- "The catalogue has books with codes the classification does not contain" appears: some books have a code that is not in
-  the classification. Add those codes here or reclassify those books from the catalogue.
-- The colour or pictogram of a sub-subject does not change: without a colour or an image of its own the sub-subject uses
-  those of its subject.
-- "The file is not an image." or "Format not accepted: use PNG, JPEG or WebP." appears: choose an image in one of these
-  formats. "The image is too large": reduce it and upload it again.
-- The save window reports books with copies in different classes: before removing the class from the copies, give the
-  same class to all the copies of each book.
+### The code is already used
+
+"This code is already used by another genre or subject." appears: a code cannot be used twice, not even by a genre and a
+subject. Choose another code.
+
+### The colour is not written correctly
+
+"Write the colour as #rrggbb, for example #e8231b." appears: correct the colour code.
+
+### The Save button is off
+
+The fields with an error are marked in red; correct them.
+
+### The catalogue has codes the classification does not contain
+
+"The catalogue has books with codes the classification does not contain" appears: some books have a code that is not in
+the classification. Add those codes here or reclassify those books from the catalogue.
+
+### The colour or pictogram of a sub-subject does not change
+
+Without a colour or an image of its own the sub-subject uses those of its subject.
+
+### The image is not accepted
+
+"The file is not an image." or "Format not accepted: use PNG, JPEG or WebP." appears: choose an image in one of these
+formats. "The image is too large": reduce it and upload it again.
+
+### Some books have copies in different classes
+
+The save window reports books with copies in different classes: before removing the class from the copies, give the same
+class to all the copies of each book.
 
 ## Related pages
 

@@ -62,16 +62,32 @@ dell'utente e sulla tessera. Il messaggio «Foto importate» conferma l'importaz
 
 ## Possibili problemi
 
-- I file senza utente sono molti: il nome del file non coincide con il numero di tessera: controllare l'elenco
-  scaricato e rinominare i file. Gli utenti devono essere già stati importati.
-- Compare «Il file non è un archivio ZIP valido.»: il file scelto non è uno ZIP. Creare l'archivio di nuovo.
-- Compare «L'archivio non contiene file.»: l'archivio è vuoto. Controllare di aver compresso i file e non una cartella
-  vuota.
-- Alcune foto non sono leggibili: l'**Esito** elenca i file che non sono immagini valide: sostituirli e importarli di
-  nuovo.
-- Una foto non cambia: l'utente aveva già una foto e **Sostituisci le foto già presenti** non era spuntata.
-- Per chi arriva da Koha: le foto si estraggono con una query già pronta, che scrive un file per utente con il numero di
-  tessera come nome: vedere [le istruzioni tecniche](../../../import/README.md).
+### Molti file risultano senza utente
+
+Il nome del file non coincide con il numero di tessera: controllare l'elenco scaricato e rinominare i file. Gli utenti
+devono essere già stati importati.
+
+### Il file scelto non è uno ZIP
+
+Compare «Il file non è un archivio ZIP valido.»: il file scelto non è uno ZIP. Creare l'archivio di nuovo.
+
+### L'archivio è vuoto
+
+Compare «L'archivio non contiene file.»: l'archivio è vuoto. Controllare di aver compresso i file e non una cartella
+vuota.
+
+### Alcune foto non sono leggibili
+
+L'**Esito** elenca i file che non sono immagini valide: sostituirli e importarli di nuovo.
+
+### Una foto non cambia
+
+L'utente aveva già una foto e **Sostituisci le foto già presenti** non era spuntata.
+
+### Le foto arrivano da Koha
+
+Le foto si estraggono con una query già pronta, che scrive un file per utente con il numero di tessera come nome:
+vedere [le istruzioni tecniche](../../../import/README.md).
 
 ## Pagine correlate
 

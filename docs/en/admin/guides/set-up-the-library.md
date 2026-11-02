@@ -63,13 +63,23 @@ For a language that is not in the list see [Add a language](add-a-language.md).
 
 ## Possible problems
 
-- The **Save the name** button stays off: the name is empty or the same as the one already saved. The message "Type the
-  library's name." appears when the field is empty.
-- The logo is rejected with "Format not accepted: use PNG, JPEG or WebP.": convert the image to one of these formats.
-- The logo is rejected with "The file is too large": reduce the size of the image with a photo-editing program and try
-  again.
-- Other library settings, such as the contact email, the time zone and the start of the school year, are in the
-  **Library and school** section of the [configuration](../screens/configuration.md).
+### The Save the name button stays off
+
+The name is empty or the same as the one already saved. The message "Type the library's name." appears when the field
+is empty.
+
+### The logo is rejected for its format
+
+"Format not accepted: use PNG, JPEG or WebP." appears: convert the image to one of these formats.
+
+### The logo is rejected as too large
+
+"The file is too large" appears: reduce the size of the image with a photo-editing program and try again.
+
+### Another library setting cannot be found
+
+Other library settings, such as the contact email, the time zone and the start of the school year, are in the
+**Library and school** section of the [configuration](../screens/configuration.md).
 
 ## Related pages
 

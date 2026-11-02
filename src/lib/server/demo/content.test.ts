@@ -261,7 +261,6 @@ describe("the examples of the public demo", () => {
 
 	it("give a copy the call number of the format, no volume, an example note", () => {
 		const input: ItemFormInput = {
-			itemType: "libro",
 			callNumber: "PAROLACCIA",
 			readingLevel: "",
 			enumeration: "vol. qualcosa",
@@ -270,7 +269,6 @@ describe("the examples of the public demo", () => {
 			notForLoan: false,
 		};
 		expect(demoItem(input, "B 4 DEL", undefined, now)).toMatchObject({
-			itemType: "libro",
 			callNumber: "B 4 DEL",
 			enumeration: "",
 			acquisitionDate: "2026-10-01",

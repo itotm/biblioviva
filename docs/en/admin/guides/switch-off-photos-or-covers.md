@@ -49,11 +49,22 @@ catalogue does not show them.
 
 ## Possible problems
 
-- The photos already saved are really to be deleted: switching the function off does not do it. Deletion is done patron
-  by patron [VERIFY: whether there is a way to delete all the photos at once].
-- The cards printed before the change still have the photo: reprint the cards without it.
-- "Fix the marked values before saving." appears: a field in the section has an invalid value. Correct it.
-- If the page is left with unsaved changes, BiblioViva asks for confirmation.
+### The photos already saved must be deleted
+
+Switching the function off does not do it. Deletion is done patron by patron [VERIFY: whether there is a way to delete
+all the photos at once].
+
+### The printed cards still have the photo
+
+The cards printed before the change still have the photo: reprint the cards without it.
+
+### A field has an invalid value
+
+"Fix the marked values before saving." appears: a field in the section has an invalid value. Correct it.
+
+### The page is left with unsaved changes
+
+BiblioViva asks for confirmation.
 
 ## Related pages
 

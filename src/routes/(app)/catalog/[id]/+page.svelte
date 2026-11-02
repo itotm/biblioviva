@@ -230,6 +230,11 @@
 							{formatSeries(b.series, b.seriesNumber)}
 						</a>
 					{/if}
+					<!-- the material is the record's, the same for every copy (9.45) -->
+					<Badge data-testid="item-type-badge"
+						>{data.options.itemTypes.find((t) => t.code === b.itemType)?.label ??
+							b.itemType}</Badge
+					>
 					{#if b.isbn}<Badge class="font-mono" data-testid="isbn-badge"
 							>{i18n.t("catalog.fields.isbn")} {b.isbn}</Badge
 						>{/if}

@@ -111,7 +111,8 @@ const classification = (book: string, item: string): Dimension[] => [
 		key: "itemType",
 		label: W("Materiale", "Material"),
 		type: "itemType",
-		expr: `${item}.item_type`,
+		// the record's (9.45)
+		expr: `${book}.item_type`,
 	},
 ];
 
@@ -226,7 +227,7 @@ export const SOURCES: Record<QuerySource, Source> = {
 			{
 				key: "itemType",
 				label: W("Materiale", "Material"),
-				def: { kind: "code", param: "itemType", column: "i.item_type" },
+				def: { kind: "code", param: "itemType", column: "b.item_type" },
 			},
 			{
 				key: "kind",
@@ -279,7 +280,7 @@ export const SOURCES: Record<QuerySource, Source> = {
 			{
 				key: "itemType",
 				label: W("Materiale", "Material"),
-				def: { kind: "code", param: "itemType", column: "i.item_type" },
+				def: { kind: "code", param: "itemType", column: "b.item_type" },
 			},
 			{
 				key: "kind",

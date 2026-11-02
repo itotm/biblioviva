@@ -82,14 +82,28 @@ its copies have the call number. A book just classified can be lent and its spin
 
 ## Possible problems
 
-- "Pick the genre" or "Pick the subject": saving requires the choice. Choose a genre or a subject, or **Classify later**.
-- The reading level does not appear: the library does not use levels, or assigns them to each copy (see above). The
-  administrator decides in [Change the classification and reading levels](../../admin/guides/classification.md).
-- A book finds no place among the genres or subjects: choose the closest one and make a note of it. The list of genres
-  and subjects is edited by the administrator.
-- A record already classified must be moved: the **Edit record** form changes the classification but does not rewrite
-  the call numbers of the copies. To update them use **Reclassify** as above.
-- "This book is already classified." appears: someone else has classified it in the meantime. Press **Skip**.
+### The genre or the subject is missing
+
+"Pick the genre" or "Pick the subject" appears: saving requires the choice. Choose a genre or a subject, or
+**Classify later**.
+
+### The reading level does not appear
+
+The library does not use levels, or assigns them to each copy (see above). The administrator decides in
+[Change the classification and reading levels](../../admin/guides/classification.md).
+
+### A book finds no place among the genres or subjects
+
+Choose the closest one and make a note of it. The list of genres and subjects is edited by the administrator.
+
+### A record already classified must be moved
+
+The **Edit record** form changes the classification but does not rewrite the call numbers of the copies. To update
+them use **Reclassify** as above.
+
+### The book is already classified
+
+"This book is already classified." appears: someone else has classified it in the meantime. Press **Skip**.
 
 ## Related pages
 

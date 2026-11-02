@@ -393,6 +393,12 @@
 				"yes": "Yes, level per copy",
 				"no": "No, they are errors to fix"
 			},
+			"typeQuestion": {
+				"title": "Copies of one title with different materials",
+				"text": "In {{count}} {{count:plural; one:title; other:titles;}} the copies have different materials. A title has one material: each title can take the material of most of its copies.",
+				"yes": "Yes, the most frequent material",
+				"no": "No, they are errors to fix"
+			},
 			"commit": "Import",
 			"back": "Back to the columns",
 			"generatedBarcodes": "{{count}} {{count:plural; one:copy; other:copies;}} without a barcode: the barcode is generated, then the labels are printed.",
@@ -416,6 +422,8 @@
 			"groupConflict": "Same key as line {{line}} but a different title",
 			"classQuestion": "Copies with different levels ({{classes}}): answer the question below",
 			"classDiffers": "Copies with different levels ({{classes}}) without level per copy",
+			"typeQuestion": "Copies of different materials ({{types}}): answer the question below",
+			"typeDiffers": "Copies of different materials ({{types}}): a title has one material only",
 			"copyExists": "Copy already in the catalogue: skipped",
 			"mergedIntoExisting": "Added to the title already in the catalogue (same key or same ISBN)"
 		},
@@ -534,6 +542,7 @@
 		"yes": "Yes",
 		"no": "No",
 		"noClass": "No level",
+		"itemTypeHint": "The material belongs to the title: it changes for all its copies.",
 		"reason": "Reason",
 		"reasonHint": "Required for lost and withdrawn: it stays in the log of each copy.",
 		"check": "Check",

@@ -31,14 +31,28 @@ when a password has been lost or when a colleague leaves the school. It is for w
 
 ## Possible problems
 
-- "The password must have at least 8 characters." appears: choose a longer password.
-- "The two passwords differ." appears: retype the password in the **Repeat the password** field.
-- The **Save** button stays off: one of the two fields is empty or the password is too short.
-- The password of `admin` has been lost and login is impossible: a technical procedure is needed, described in the page
-  [Deployment notes](../../../deploy.md#installing-updating-logs-step-85), under "Forgotten admin
-  password". For all the other accounts it is enough to log in with `admin` and follow the steps above.
-- The account card shows "Clear password in the file": the password is written by hand in the configuration files.
-  Follow the steps above to replace it with a protected password.
+### The password is too short
+
+"The password must have at least 8 characters." appears: choose a longer password.
+
+### The two passwords differ
+
+"The two passwords differ." appears: retype the password in the **Repeat the password** field.
+
+### The Save button stays off
+
+One of the two fields is empty or the password is too short.
+
+### The password of admin has been lost
+
+If login is impossible, a technical procedure is needed, described in the page
+[Deployment notes](../../../deploy.md#installing-updating-logs-step-85), under "Forgotten admin password". For all the
+other accounts it is enough to log in with `admin` and follow the steps above.
+
+### The account shows "Clear password in the file"
+
+The password is written by hand in the configuration files. Follow the steps above to replace it with a protected
+password.
 
 ## Related pages
 

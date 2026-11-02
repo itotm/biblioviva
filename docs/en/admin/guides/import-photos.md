@@ -61,16 +61,32 @@ card. The message "Photos imported" confirms the import from the folder.
 
 ## Possible problems
 
-- Many files have no patron: the file name does not match the card number: check the downloaded list and rename the
-  files. The patrons must already have been imported.
-- "The file is not a valid ZIP archive." appears: the chosen file is not a ZIP. Create the archive again.
-- "The archive contains no files." appears: the archive is empty. Check that the files were compressed and not an empty
-  folder.
-- Some photos are not readable: the **Result** lists the files that are not valid images: replace them and import them
-  again.
-- A photo does not change: the patron already had a photo and **Replace the photos already present** was not ticked.
-- For those coming from Koha: photos are extracted with a ready-made query, which writes one file per patron with the
-  card number as its name: see [the technical instructions](../../../import/README.md).
+### Many files have no patron
+
+The file name does not match the card number: check the downloaded list and rename the files. The patrons must already
+have been imported.
+
+### The chosen file is not a ZIP
+
+"The file is not a valid ZIP archive." appears: the chosen file is not a ZIP. Create the archive again.
+
+### The archive is empty
+
+"The archive contains no files." appears: the archive is empty. Check that the files were compressed and not an empty
+folder.
+
+### Some photos are not readable
+
+The **Result** lists the files that are not valid images: replace them and import them again.
+
+### A photo does not change
+
+The patron already had a photo and **Replace the photos already present** was not ticked.
+
+### The photos come from Koha
+
+Photos are extracted with a ready-made query, which writes one file per patron with the card number as its name: see
+[the technical instructions](../../../import/README.md).
 
 ## Related pages
 

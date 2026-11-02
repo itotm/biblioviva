@@ -73,20 +73,39 @@ The record of the book shows the cover to the left of the title.
 
 ## Possible problems
 
-- "No cover found online for this ISBN: it can be photographed.": none of the services consulted has the cover.
-  Photograph it or upload a file.
-- "The record has no ISBN: the cover must be photographed.": without an ISBN the online search is not possible.
-  Photograph the book.
-- "The camera only works over a secure connection (https)…" appears: BiblioViva is opened from the local network without
-  Tailscale: use **Upload a file**.
-- "Permission denied…" or "No camera found on this device." appears: allow the camera in the browser settings, or use
-  **Upload a file**.
-- "File too large" or "Unsupported image format" appears: the file exceeds the limit shown in the notice or is not JPEG,
-  PNG, WebP or HEIC. Reduce the image or save it in another format.
-- "The straightening module could not be loaded…": the computer did not reach the file of the straightening program.
-  Check the connection and try again.
-- The cover downloaded belongs to the wrong book: this happens if the ISBN of the record is the one of another edition.
-  Replace it with **Change cover**.
+### No cover found online
+
+"No cover found online for this ISBN: it can be photographed." appears: none of the services consulted has the cover.
+Photograph it or upload a file.
+
+### The record has no ISBN
+
+"The record has no ISBN: the cover must be photographed." appears: without an ISBN the online search is not possible.
+Photograph the book.
+
+### The camera needs a secure connection
+
+"The camera only works over a secure connection (https)…" appears: BiblioViva is opened from the local network without
+Tailscale: use **Upload a file**.
+
+### Permission denied or camera not found
+
+"Permission denied…" or "No camera found on this device." appears: allow the camera in the browser settings, or use
+**Upload a file**.
+
+### File too large or unsupported format
+
+"File too large" or "Unsupported image format" appears: the file exceeds the limit shown in the notice or is not JPEG,
+PNG, WebP or HEIC. Reduce the image or save it in another format.
+
+### The straightening module does not load
+
+"The straightening module could not be loaded…" appears: the computer did not reach the file of the straightening
+program. Check the connection and try again.
+
+### The downloaded cover belongs to the wrong book
+
+This happens if the ISBN of the record is the one of another edition. Replace it with **Change cover**.
 
 ## Related pages
 

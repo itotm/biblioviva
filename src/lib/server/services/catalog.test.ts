@@ -86,7 +86,6 @@ const nonfiction: BiblioFormInput = {
 	subjects: "animali, fattoria\nnatura",
 };
 const copy: ItemFormInput = {
-	itemType: "libro",
 	callNumber: "",
 	readingLevel: "",
 	enumeration: "",
@@ -196,28 +195,32 @@ describe("biblio validation (§3.17)", () => {
 			"readingLevel:readingLevelNotAllowed",
 		]);
 		// the copy carries the class only with the flag on
-		expect(codes(() => validateItem({ ...copy, readingLevel: "3" }, rules, "fiction"))).toEqual(
-			["readingLevel:readingLevelNotAllowed"],
-		);
-		expect(validateItem({ ...copy, readingLevel: "3" }, perItem, "fiction").readingLevel).toBe(
-			"3",
-		);
 		expect(
-			codes(() => validateItem({ ...copy, readingLevel: "3" }, perItem, "nonfiction")),
+			codes(() => validateItem({ ...copy, readingLevel: "3" }, rules, "fiction", "libro")),
 		).toEqual(["readingLevel:readingLevelNotAllowed"]);
 		expect(
-			codes(() => validateItem({ ...copy, readingLevel: "8" }, perItem, "fiction")),
+			validateItem({ ...copy, readingLevel: "3" }, perItem, "fiction", "libro").readingLevel,
+		).toBe("3");
+		expect(
+			codes(() =>
+				validateItem({ ...copy, readingLevel: "3" }, perItem, "nonfiction", "libro"),
+			),
+		).toEqual(["readingLevel:readingLevelNotAllowed"]);
+		expect(
+			codes(() => validateItem({ ...copy, readingLevel: "8" }, perItem, "fiction", "libro")),
 		).toEqual(["readingLevel:readingLevelOutOfRange"]);
-		expect(codes(() => validateItem({ ...copy, itemType: "vhs" }, rules, "fiction"))).toEqual([
+		// the type is the record's (9.45)
+		expect(codes(() => validateBiblio({ ...fiction, itemType: "vhs" }, rules))).toEqual([
 			"itemType:itemTypeUnknown",
 		]);
+		expect(validateBiblio(fiction, rules).itemType).toBe(rules.itemTypes[0]?.code);
 		expect(
-			codes(() => validateItem({ ...copy, acquisitionDate: "20/09/2026" }, rules, "fiction")),
+			codes(() =>
+				validateItem({ ...copy, acquisitionDate: "20/09/2026" }, rules, "fiction", "libro"),
+			),
 		).toEqual(["acquisitionDate:acquisitionDateInvalid"]);
-		// reference copies are not for loan by their item type
-		expect(
-			validateItem({ ...copy, itemType: "consultazione" }, rules, "fiction").notForLoan,
-		).toBe(true);
+		// the copies of a reference record are not for loan by the record's item type
+		expect(validateItem(copy, rules, "fiction", "consultazione").notForLoan).toBe(true);
 	});
 });
 
@@ -290,7 +293,7 @@ describe("catalog service", () => {
 		const now = new Date("2026-09-20T10:00:00Z");
 		const id = createBiblio(db, nonfiction, actor, rules);
 		// a legacy barcode of this year already exists: the new range starts above it
-		db.insert(item).values({ biblioId: id, barcode: "2026-0007", itemType: "libro" }).run();
+		db.insert(item).values({ biblioId: id, barcode: "2026-0007" }).run();
 		const { barcodes } = addItems(db, id, copy, 2, actor, rules, now);
 		expect(barcodes).toEqual([itemCode(2026, 8), itemCode(2026, 9)]);
 		const detail = getBiblio(db, id, rules);
@@ -420,9 +423,9 @@ describe("catalog service", () => {
 	it("searches by words of title, author or ISBN and filters by classification", () => {
 		const { db, actor } = setup();
 		const f = createBiblio(db, fiction, actor, rules);
-		const n = createBiblio(db, nonfiction, actor, rules);
+		const n = createBiblio(db, { ...nonfiction, itemType: "consultazione" }, actor, rules);
 		addItems(db, f, copy, 2, actor, rules);
-		addItems(db, n, { ...copy, itemType: "consultazione" }, 1, actor, rules);
+		addItems(db, n, copy, 1, actor, rules);
 		const all = searchBiblios(db, {}, rules);
 		expect(all.total).toBe(2);
 		expect(all.rows.map((r) => [r.title, r.copiesTotal, r.copiesAvailable])).toEqual([
@@ -571,9 +574,9 @@ describe("books to classify (step 9.21)", () => {
 		expect(data.classCode).toBeNull();
 		expect(data.readingLevel).toBeNull();
 		// a copy of it takes no class and gets no call number yet
-		expect(codes(() => validateItem({ ...copy, readingLevel: "3" }, rules, null))).toEqual([
-			"readingLevel:readingLevelNotAllowed",
-		]);
+		expect(
+			codes(() => validateItem({ ...copy, readingLevel: "3" }, rules, null, "libro")),
+		).toEqual(["readingLevel:readingLevelNotAllowed"]);
 		expect(suggestedCallNumber(rules, { ...data, author: "Rossi", title: "T" })).toBe("");
 	});
 
@@ -703,14 +706,44 @@ describe("updateBiblioWithItem", () => {
 	});
 });
 
+describe("the item type of the record (9.45, Q139)", () => {
+	it("is kept by an edit without it, changed for every copy, reference types keep them from loans", () => {
+		const { db, actor } = setup();
+		const id = createBiblio(db, { ...fiction, itemType: "dvd" }, actor, rules);
+		addItems(db, id, copy, 2, actor, rules);
+		// a form that does not send the type keeps the record's
+		expect(updateBiblio(db, id, { ...fiction, title: "Altro" }, actor, rules)).toEqual([
+			"title",
+		]);
+		expect(getBiblio(db, id, rules).itemType).toBe("dvd");
+		expect(
+			updateBiblio(
+				db,
+				id,
+				{ ...fiction, title: "Altro", itemType: "consultazione" },
+				actor,
+				rules,
+			),
+		).toEqual(["itemType"]);
+		const detail = getBiblio(db, id, rules);
+		expect(detail.itemType).toBe("consultazione");
+		expect(detail.items.map((i) => i.notForLoan)).toEqual([true, true]);
+	});
+});
+
 describe("filters on the copies, with record and copy ids that differ", () => {
 	it("item type, per-copy class and withdrawn copies are matched against their own record", () => {
 		const { db, actor } = setup();
 		// many copies first, so copy ids and record ids never coincide
 		const many = createBiblio(db, fiction, actor, rules);
 		addItems(db, many, copy, 5, actor, rules);
-		const dvd = createBiblio(db, { ...nonfiction, title: "Documentario" }, actor, rules);
-		const [dvdCopy] = addItems(db, dvd, { ...copy, itemType: "dvd" }, 1, actor, rules).ids;
+		const dvd = createBiblio(
+			db,
+			{ ...nonfiction, title: "Documentario", itemType: "dvd" },
+			actor,
+			rules,
+		);
+		const [dvdCopy] = addItems(db, dvd, copy, 1, actor, rules).ids;
 		const gone = createBiblio(db, { ...nonfiction, title: "Ritirato" }, actor, rules);
 		addItems(db, gone, copy, 2, actor, rules);
 		db.update(item).set({ status: "withdrawn" }).where(eq(item.biblioId, gone)).run();

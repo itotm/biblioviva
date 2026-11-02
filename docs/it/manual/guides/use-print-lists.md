@@ -96,14 +96,30 @@ La lista contiene gli utenti scelti, nell'ordine voluto. Le tessere stampate ris
 
 ## Possibili problemi
 
-- Il pulsante **Aggiungi alla lista** del pannello dei filtri è spento: nessun filtro è stato scelto.
-- «Nessun utente con la tessera …» con il lettore: il numero letto non appartiene a nessuno. Rileggere la tessera.
-- «Il codice letto non è una tessera»: è stato letto un altro tipo di codice, per esempio quello di un libro.
-- «Stampa tessere» è spento: la lista è vuota. Aggiungere prima gli utenti.
-- Le liste mancano nella pagina **Stampe**: l'account vede solo le liste del proprio tipo. Le liste di libri richiedono
-  il permesso di gestire il catalogo.
-- Le tessere non escono come previsto: vedere i possibili problemi di [Stampare le tessere di una
-  classe](print-class-cards.md#possibili-problemi).
+### Il pulsante di aggiunta alla lista è spento
+
+Il pulsante **Aggiungi alla lista** del pannello dei filtri è spento: nessun filtro è stato scelto.
+
+### Nessun utente con la tessera letta
+
+Con il lettore compare «Nessun utente con la tessera …»: il numero letto non appartiene a nessuno. Rileggere la tessera.
+
+### Il codice letto non è una tessera
+
+Compare «Il codice letto non è una tessera»: è stato letto un altro tipo di codice, per esempio quello di un libro.
+
+### Il pulsante di stampa delle tessere è spento
+
+«Stampa tessere» è spento: la lista è vuota. Aggiungere prima gli utenti.
+
+### Mancano delle liste nella pagina Stampe
+
+Le liste mancano nella pagina **Stampe**: l'account vede solo le liste del proprio tipo. Le liste di libri richiedono il
+permesso di gestire il catalogo.
+
+### Le tessere non escono come previsto
+
+Vedere i possibili problemi di [Stampare le tessere di una classe](print-class-cards.md#possibili-problemi).
 
 ## Pagine correlate
 

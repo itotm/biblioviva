@@ -101,16 +101,29 @@ To go back to the original template, in the list press **Back to the original** 
 
 ## Possible problems
 
-- The **Save** button is off. There are no changes, or the template cannot be printed: read the red box "The template
-  cannot print like this:" above the drawing.
-- The preview does not change. The preview updates shortly after each change. If it does not update, check that the
-  chosen variant is the one used by the label sheet.
-- A part of the label cannot be moved. Parts inside a code section are edited in the **Code** view; the drawing says so
-  under the label. For the code see [Print templates: authoring guide](../../../templates-authoring.md#labels).
-- The labels come out shifted on the sheet. The template is not the cause: the position depends on the sheet. Print the
-  calibration page and correct the margins: [Add a label sheet](add-a-label-stock.md).
-- The chosen sheet does not have the right number of rows for the pair. The pair uses two labels one above the other:
-  the sheet must have an even number of rows.
+### The Save button is off
+
+There are no changes, or the template cannot be printed: read the red box "The template cannot print like this:" above
+the drawing.
+
+### The preview does not change
+
+The preview updates shortly after each change. If it does not update, check that the chosen variant is the one used by
+the label sheet.
+
+### A part of the label cannot be moved
+
+Parts inside a code section are edited in the **Code** view; the drawing says so under the label. For the code see
+[Print templates: authoring guide](../../../templates-authoring.md#labels).
+
+### The labels come out shifted on the sheet
+
+The template is not the cause: the position depends on the sheet. Print the calibration page and correct the margins:
+[Add a label sheet](add-a-label-stock.md).
+
+### The sheet does not have the right number of rows for the pair
+
+The pair uses two labels one above the other: the sheet must have an even number of rows.
 
 ## Related pages
 

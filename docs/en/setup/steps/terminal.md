@@ -112,23 +112,37 @@ The terminal is ready: the commands of the following steps are pasted here. When
 
 ## Possible problems
 
-- "Connection refused": the PC or the Raspberry Pi is not ready yet, or SSH is not active. Wait a few minutes and try
-  again. If the message stays, for the PC install the SSH server (`sudo apt install -y openssh-server`); for the
-  Raspberry Pi repeat the writing of the card turning on SSH.
-- "Permission denied, please try again" (wrong password): type the password again with care, paying attention to the
-  keyboard layout (capitals, symbols). After three failed attempts the program stops: repeat the command.
-- "Could not resolve hostname biblioviva.local" (name not found): the computer does not answer to the name. Check that
-  it is on and connected to the same network, then use the address the router shows.
-- "Connection timed out": the address is not the computer's or the computer cannot be reached. Check the address in the
-  router's list.
-- "REMOTE HOST IDENTIFICATION HAS CHANGED": the Raspberry Pi's card was rewritten and the name is already known with
-  another key. Delete the old key with the following command and repeat the connection.
-
-  ```sh
-  ssh-keygen -R biblioviva.local
-  ```
-
 Other problems: [Common problems](../../help/problems.md#ssh-connection-that-fails).
+
+### The connection is refused
+
+"Connection refused" appears: the PC or the Raspberry Pi is not ready yet, or SSH is not active. Wait a few minutes and
+try again. If the message stays, for the PC install the SSH server (`sudo apt install -y openssh-server`); for the
+Raspberry Pi repeat the writing of the card turning on SSH.
+
+### The password is refused
+
+"Permission denied, please try again" (wrong password) appears: type the password again with care, paying attention to
+the keyboard layout (capitals, symbols). After three failed attempts the program stops: repeat the command.
+
+### The computer's name is not found
+
+"Could not resolve hostname biblioviva.local" (name not found) appears: the computer does not answer to the name. Check
+that it is on and connected to the same network, then use the address the router shows.
+
+### The connection times out
+
+"Connection timed out" appears: the address is not the computer's or the computer cannot be reached. Check the address
+in the router's list.
+
+### REMOTE HOST IDENTIFICATION HAS CHANGED appears
+
+The message is "REMOTE HOST IDENTIFICATION HAS CHANGED": the Raspberry Pi's card was rewritten and the name is already
+known with another key. Delete the old key with the following command and repeat the connection.
+
+```sh
+ssh-keygen -R biblioviva.local
+```
 
 ## Related pages
 

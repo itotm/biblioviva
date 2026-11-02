@@ -96,7 +96,6 @@ function library(name: string): { db: Db; actor: { id: number } } {
 		db,
 		b,
 		{
-			itemType: "libro",
 			callNumber: "",
 			readingLevel: "",
 			enumeration: "",

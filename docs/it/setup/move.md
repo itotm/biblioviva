@@ -88,12 +88,20 @@ L'altro computer serve BiblioViva allo stesso indirizzo (con Tailscale) o a un i
 
 ## Possibili problemi
 
-- Con Tailscale il computer si chiama `biblioviva-1` e l'indirizzo è diverso: il vecchio nodo non è stato eliminato.
-  Eliminarlo dalla console; il nome dell'altro computer si può correggere dalla stessa pagina «Machines»
-  [VERIFY: se il nome si può correggere dalla console].
-- «Il backup è di una versione diversa di BiblioViva…»: i due computer hanno versioni diverse. Vedere
-  [Ripartire da una copia di sicurezza](restore.md).
-- La procedura guidata non si completa o BiblioViva non si apre: vedere [Installare BiblioViva](steps/install.md).
+### Con Tailscale il nome e l'indirizzo sono diversi
+
+Con Tailscale il computer si chiama `biblioviva-1` e l'indirizzo è diverso: il vecchio nodo non è stato eliminato.
+Eliminarlo dalla console; il nome dell'altro computer si può correggere dalla stessa pagina «Machines»
+[VERIFY: se il nome si può correggere dalla console].
+
+### Il backup è di una versione diversa
+
+Compare il messaggio «Il backup è di una versione diversa di BiblioViva…»: i due computer hanno versioni diverse.
+Vedere [Ripartire da una copia di sicurezza](restore.md).
+
+### La procedura guidata non si completa o BiblioViva non si apre
+
+Vedere [Installare BiblioViva](steps/install.md).
 
 ## Pagine correlate
 

@@ -41,8 +41,8 @@ il codice a mano e premere Invio.
 Il pulsante della fotocamera accanto al campo è facoltativo: legge il codice dall'immagine e funziona solo con una
 connessione sicura (https), cioè con Tailscale. Con il lettore non serve.
 
-Sotto, la scelta **Materiale** indica che cosa si sta catalogando (libro, DVD…): le copie nascono di quel tipo.
-La scelta resta valida finché la pagina resta aperta, anche per i libri seguenti.
+Sotto, la scelta **Materiale** indica che cosa si sta catalogando (libro, DVD…): il materiale è proposto alla scheda
+e si può cambiare nel modulo. La scelta resta valida finché la pagina resta aperta, anche per i libri seguenti.
 
 Sotto una linea di separazione stanno due vie per il libro senza ISBN, con la nota «Ricerca per titolo e autore, oppure
 scheda compilata a mano»: **Senza codice** e **Compila a mano**.
@@ -73,8 +73,8 @@ che lo scanner legga Code 39 e Code 128.» compaiono sotto il campo quando la le
 Se l'ISBN è già in catalogo, la pagina non crea una scheda doppia. Mostra il titolo, l'autore, l'editore, l'anno e
 «N copie» sotto **Questo ISBN è già in catalogo**. Le scelte sono:
 
-- **Aggiungi copia**: aggiunge al libro il **Numero di copie** scritto nel campo (almeno una), del materiale scelto
-  nel primo passo, con la segnatura proposta. Si passa alla conferma [Scheda salvata](#scheda-salvata) (“N copie
+- **Aggiungi copia**: aggiunge al libro il **Numero di copie** scritto nel campo (almeno una), con la segnatura
+  proposta; il materiale è quello della scheda. Si passa alla conferma [Scheda salvata](#scheda-salvata) (“N copie
   aggiunte a «titolo»”).
 - **Apri la scheda**: apre la [Scheda del libro](book-record.md).
 - **Leggi un altro codice**: torna al primo passo.
@@ -134,7 +134,8 @@ scheda. L'amministratore può disattivare le copertine; in tal caso il riquadro 
 ### Dati del libro
 
 Il modulo ha le sezioni **Scheda**, **Pubblicazione**, **Classificazione** e **Altri dati**, con gli stessi campi e le
-stesse regole del modulo [Modifica scheda](book-record.md#modifica-scheda). Autore ed editore sono obbligatori: se il
+stesse regole del modulo [Modifica scheda](book-record.md#modifica-scheda). Il **Materiale** sta in **Pubblicazione**,
+dopo la **Descrizione fisica**, già impostato dal primo passo. Autore ed editore sono obbligatori: se il
 libro non li indica si usano i valori speciali dei pulsanti sotto il campo.
 
 ### Sezione Copie
@@ -142,7 +143,6 @@ libro non li indica si usano i valori speciali dei pulsanti sotto il campo.
 La sezione **Copie** crea le copie del libro nello stesso salvataggio:
 
 - **Numero di copie**: quante copie nuove, di norma 1;
-- **Materiale**: già impostato dal primo passo;
 - **Livello delle copie**, se la biblioteca registra il livello sulle copie;
 - **Segnatura**: viene proposta dalla classificazione e si aggiorna finché non si scrive la propria;
 - **Data di acquisizione**: di norma la data di oggi.

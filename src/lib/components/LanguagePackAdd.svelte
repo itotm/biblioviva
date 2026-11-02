@@ -3,7 +3,8 @@
      languages the release published on GitHub that are not installed yet, one button that
      downloads and installs the chosen one, and the upload of a pack zip (an installation without
      internet, a pack made by hand) with the link to the release page where the zips can be
-     downloaded. Every pack is checked like in the packs block of the settings (step 9.39). -->
+     downloaded. Every pack is checked like in the packs block of the settings (step 9.39). The
+     first-run wizard shows it too, with the functions of the setup mode (step 9.48). -->
 <script lang="ts">
 	import { useI18n } from "#lib/i18n/context.js";
 	import {
@@ -12,6 +13,12 @@
 		installReleasePack,
 		uploadLanguagePack,
 	} from "#lib/remote/integrations.remote.js";
+	import {
+		getSetupLanguagePacks,
+		getSetupReleasePacks,
+		installSetupReleasePack,
+		uploadSetupLanguagePack,
+	} from "#lib/remote/setup-language.remote.js";
 	import Alert from "#lib/ui/Alert.svelte";
 	import Badge from "#lib/ui/Badge.svelte";
 	import Button from "#lib/ui/Button.svelte";
@@ -27,13 +34,21 @@
 	interface Props {
 		/** Called with the code of a pack just installed, to refresh the list of languages. */
 		oninstalled?: (code: string) => void;
+		/** The first-run wizard (9.48): no account yet, the functions of the setup mode. */
+		setup?: boolean;
 	}
 
-	let { oninstalled }: Props = $props();
+	let { oninstalled, setup = false }: Props = $props();
 
 	const i18n = useI18n();
-	const data = getLanguagePacks();
-	const release = getReleasePacks();
+	// svelte-ignore state_referenced_locally
+	const data = setup ? getSetupLanguagePacks() : getLanguagePacks();
+	// svelte-ignore state_referenced_locally
+	const release = setup ? getSetupReleasePacks() : getReleasePacks();
+	// svelte-ignore state_referenced_locally
+	const upload = setup ? uploadSetupLanguagePack : uploadLanguagePack;
+	// svelte-ignore state_referenced_locally
+	const installRelease = setup ? installSetupReleasePack : installReleasePack;
 	const UploadIcon = icons.upload;
 	const DownloadIcon = icons.download;
 	const InfoIcon = icons.info;
@@ -51,7 +66,12 @@
 			: [],
 	);
 	const chosen = $derived(offered.find((p) => p.code === choice));
-	const uploadError = $derived(uploadLanguagePack.fields.pack.issues()?.[0]?.message);
+	/** A refusal of the setup mode, which answers with a code (the wizard's language is the page's). */
+	let refusedUpload = $state<string | null>(null);
+	const uploadError = $derived(refusedUpload ?? upload.fields.pack.issues()?.[0]?.message);
+
+	const refusalText = (code: string, details: string): string =>
+		i18n.t(`config.languages.errors.${code}`, { details, maxMb: data.current?.maxMb ?? "" });
 
 	function installedToast(name: string, warnings: number): void {
 		toaster.success({
@@ -69,18 +89,13 @@
 		const { code, nativeName } = chosen;
 		installing = true;
 		try {
-			const result = await installReleasePack({ code });
+			const result = await installRelease({ code });
 			if (result.ok) {
 				installedToast(nativeName, result.pack.warnings);
 				choice = "";
 				oninstalled?.(code);
 			} else {
-				toaster.error({
-					title: i18n.t(`config.languages.errors.${result.code}`, {
-						details: result.details,
-						maxMb: data.current?.maxMb ?? "",
-					}),
-				});
+				toaster.error({ title: refusalText(result.code, result.details) });
 			}
 		} finally {
 			installing = false;
@@ -94,12 +109,15 @@
 			return;
 		}
 		uploading = true;
+		refusedUpload = null;
 		try {
-			if (
-				(await submitFile(uploadLanguagePack, fileInput, file)) &&
-				uploadLanguagePack.result
-			) {
-				const pack = uploadLanguagePack.result.pack;
+			if ((await submitFile(upload, fileInput, file)) && upload.result) {
+				const result = upload.result;
+				if ("ok" in result && !result.ok) {
+					refusedUpload = refusalText(result.code, result.details);
+					return;
+				}
+				const pack = result.pack;
 				installedToast(pack.nativeName ?? pack.code, pack.warnings);
 				oninstalled?.(pack.code);
 			}
@@ -182,8 +200,8 @@
 		{/if}
 	{/if}
 
-	<form {...uploadLanguagePack} enctype="multipart/form-data" class="hidden" aria-hidden="true">
-		<input {...uploadLanguagePack.fields.pack.as("file")} bind:this={fileInput} />
+	<form {...upload} enctype="multipart/form-data" class="hidden" aria-hidden="true">
+		<input {...upload.fields.pack.as("file")} bind:this={fileInput} />
 	</form>
 	<input
 		type="file"

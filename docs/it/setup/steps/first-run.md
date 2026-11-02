@@ -60,6 +60,21 @@ personale.
 
 La lingua si cambia anche dopo, da **Amministrazione** → **Configurazione** → **Aspetto e lingua**.
 
+Per usare una lingua diversa dall'italiano e dall'inglese, già tradotta e pubblicata con questa versione di BiblioViva,
+si installa subito, dalla sezione «Serve un'altra lingua?» sotto la scelta della lingua:
+
+1. Premere **Aggiungi una lingua**. Compare il riquadro **Aggiungere una lingua**.
+1. Aprire l'elenco **Lingue disponibili su GitHub** e scegliere la lingua. Sotto l'elenco sono indicati la percentuale
+   dei testi tradotti e il tipo di traduzione.
+1. Premere **Installa**. A installazione conclusa la configurazione guidata passa subito in quella lingua, che risulta
+   già scelta.
+1. Premere **Avanti**.
+
+La lingua scelta diventa quella dell'installazione, valida per tutto il personale, e si cambia dopo da **Aspetto e
+lingua**. Per un computer senza internet, o per un pacchetto preparato da sé, **Carica un pacchetto (zip)** installa
+uno zip scaricato altrove. Le altre operazioni sono descritte nella guida [Aggiungere una
+lingua](../../admin/guides/add-a-language.md).
+
 Chi sposta BiblioViva su un altro computer, o ricomincia dopo un guasto, non risponde alle domande della configurazione
 guidata: sotto la scelta della lingua preme **Ripristina da un backup** e sceglie l'archivio fatto con **Esporta
 tutto**. La procedura è nella sezione [Dal primo avvio](../restore.md#dal-primo-avvio) di [Ripartire da una copia di
@@ -227,17 +242,33 @@ come.
 
 ## Possibili problemi
 
-- La pagina non si apre con Tailscale: il computer non ha Tailscale acceso e collegato all'account della scuola, oppure
-  la funzione dei nomi (MagicDNS) o dei certificati HTTPS non è attiva nella console di Tailscale. Il passo [Preparare
-  la rete](network.md) descrive entrambi i controlli.
-- La pagina non si apre con la rete locale: il computer non è sulla stessa rete di BiblioViva, oppure il nome
-  `biblioviva.local` non è riconosciuto. Usare l'indirizzo numerico del computer, come indicato sopra.
-- Una password è stata persa: le password non si rivedono. Entrando con `admin`, le altre si cambiano da
-  **Amministrazione** → **Account del personale**. Per la password di `admin` serve la procedura tecnica «Forgotten
-  admin password» della pagina [Deployment notes (technical)](../../../deploy.md#installing-updating-logs-step-85) (in
-  inglese).
-- Il pulsante **Avanti** non si accende: un campo del passo è vuoto o non valido. Il campo da correggere mostra un
-  avviso: per esempio la password di almeno 8 caratteri o l'inizio dell'anno nella forma `MM-GG`.
+### La pagina non si apre con Tailscale
+
+Il computer non ha Tailscale acceso e collegato all'account della scuola, oppure la funzione dei nomi (MagicDNS) o dei
+certificati HTTPS non è attiva nella console di Tailscale. Il passo [Preparare la rete](network.md) descrive entrambi i
+controlli.
+
+### La pagina non si apre con la rete locale
+
+Il computer non è sulla stessa rete di BiblioViva, oppure il nome `biblioviva.local` non è riconosciuto. Usare
+l'indirizzo numerico del computer, come indicato sopra.
+
+### Una password è stata persa
+
+Le password non si rivedono. Entrando con `admin`, le altre si cambiano da **Amministrazione** → **Account del
+personale**. Per la password di `admin` serve la procedura tecnica «Forgotten admin password» della pagina [Deployment
+notes (technical)](../../../deploy.md#installing-updating-logs-step-85) (in inglese).
+
+### L'elenco delle lingue non è raggiungibile
+
+Compare «L'elenco delle lingue non è raggiungibile»: il computer di BiblioViva non è collegato a internet. Scaricare da
+un computer con internet il file della lingua dalla pagina della versione di BiblioViva (il collegamento **Pagina della
+release su GitHub, per scaricare gli zip** sotto l'elenco) e caricarlo con **Carica un pacchetto (zip)**.
+
+### Il pulsante Avanti non si accende
+
+Un campo del passo è vuoto o non valido. Il campo da correggere mostra un avviso: per esempio la password di almeno 8
+caratteri o l'inizio dell'anno nella forma `MM-GG`.
 
 ## Pagine correlate
 

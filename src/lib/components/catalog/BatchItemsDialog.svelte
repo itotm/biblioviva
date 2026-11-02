@@ -148,6 +148,8 @@
 					<option value={t.code}>{t.label}</option>
 				{/each}
 			</Select>
+			<!-- the material is the record's (9.45): it changes for every copy of the titles -->
+			<Hint data-testid="batch-item-type-hint">{i18n.t("catalog.batch.itemTypeHint")}</Hint>
 		{:else if op === "notForLoan"}
 			<Select bind:value={notForLoan}>
 				<option value="1">{i18n.t("catalog.batch.yes")}</option>

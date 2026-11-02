@@ -50,17 +50,34 @@ cambio vale da ora in poi. La scheda **Storico** elenca i prestiti passati e non
 
 ## Possibili problemi
 
-- «Per uno studente la classe (il livello) è obbligatoria.» e «Per uno studente la sezione è obbligatoria.»: scegliere
-  l'anno e la sezione.
-- «Sezione non trovata tra le classi attive: le classi si creano in Amministrazione → Configurazione → Classi.»: la
-  sezione non esiste ancora. Chiedere all'amministratore di crearla: [Impostare le
-  classi](../../admin/guides/set-up-classes.md).
-- «Questa sezione non ha questa classe: scegliere una sezione della classe.»: scegliere di nuovo la sezione dopo aver
-  scelto l'anno.
-- «Matricola già assegnata a un altro utente.»: la matricola appartiene a un'altra persona; controllare di non avere
-  inserito due volte lo stesso utente.
-- «Indirizzo email non valido.»: correggere l'indirizzo.
-- «Nessuna modifica»: non è stato cambiato nulla nelle note.
+### Mancano l'anno o la sezione dello studente
+
+Compaiono «Per uno studente la classe (il livello) è obbligatoria.» e «Per uno studente la sezione è obbligatoria.»:
+scegliere l'anno e la sezione.
+
+### La sezione non esiste ancora
+
+Compare «Sezione non trovata tra le classi attive: le classi si creano in Amministrazione → Configurazione →
+Classi.»: la sezione non esiste ancora. Chiedere all'amministratore di crearla:
+[Impostare le classi](../../admin/guides/set-up-classes.md).
+
+### La sezione non corrisponde alla classe
+
+Compare «Questa sezione non ha questa classe: scegliere una sezione della classe.»: scegliere di nuovo la sezione
+dopo aver scelto l'anno.
+
+### La matricola è già assegnata
+
+Compare «Matricola già assegnata a un altro utente.»: la matricola appartiene a un'altra persona; controllare di non
+avere inserito due volte lo stesso utente.
+
+### L'indirizzo email non è valido
+
+Compare «Indirizzo email non valido.»: correggere l'indirizzo.
+
+### Il salvataggio non trova modifiche
+
+Compare «Nessuna modifica»: non è stato cambiato nulla nelle note.
 
 ## Pagine correlate
 

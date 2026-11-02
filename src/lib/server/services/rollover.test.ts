@@ -153,7 +153,6 @@ function setup(): Fixture {
 		db,
 		biblio,
 		{
-			itemType: "libro",
 			callNumber: "",
 			readingLevel: "",
 			enumeration: "",

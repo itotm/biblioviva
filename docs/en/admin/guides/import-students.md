@@ -99,17 +99,34 @@ duplicates: all the rows come out as **Unchanged**.
 
 ## Possible problems
 
-- A class is not recognised: the row reports that the class was not found and lists the valid classes. Create the class
-  in **Classes** or correct the name in the file, then check again.
-- "Card number already assigned to another patron" appears: two people have the same card number, in the file or in the
-  records. Correct the number in the file.
-- "Card number equal or similar to a copy barcode" appears: the number has the form of a book's code: cards and copies
-  can never be confused. Leave the cell empty: BiblioViva generates the number.
-- An empty cell erases nothing: an empty card in the file leaves the student with the card they already have.
-- The **Import** button does not become active because there are still rows with **Error**: read the **Details** column.
-- For those coming from Koha: students are extracted with a ready-made query, which produces a file with the right
-  column names and the card numbers already in use: see [the technical instructions](../../../import/README.md). The
-  names of Koha's columns change from one version to another: whoever runs the query checks them first.
+### A class is not recognised
+
+The row reports that the class was not found and lists the valid classes. Create the class in **Classes** or correct
+the name in the file, then check again.
+
+### The card number is already assigned
+
+"Card number already assigned to another patron" appears: two people have the same card number, in the file or in the
+records. Correct the number in the file.
+
+### The card number looks like a book code
+
+"Card number equal or similar to a copy barcode" appears: the number has the form of a book's code: cards and copies
+can never be confused. Leave the cell empty: BiblioViva generates the number.
+
+### An empty cell erases nothing
+
+An empty card in the file leaves the student with the card they already have.
+
+### The Import button does not become active
+
+There are still rows with **Error**: read the **Details** column.
+
+### The students come from Koha
+
+Students are extracted with a ready-made query, which produces a file with the right column names and the card numbers
+already in use: see [the technical instructions](../../../import/README.md). The names of Koha's columns change from
+one version to another: whoever runs the query checks them first.
 
 ## Related pages
 

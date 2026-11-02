@@ -80,22 +80,41 @@ stampano nei posti giusti del foglio. Ogni salvataggio è una modifica della con
 
 ## Possibili problemi
 
-- Il pulsante **Salva** è spento e un foglio porta l'indicazione «Da correggere». Una delle misure non è valida. Leggere
-  sotto i campi il motivo: il codice può avere lettere, cifre, trattini e trattini bassi; un altro foglio può avere già
-  lo stesso codice; il nome è obbligatorio; le misure sono numeri da 0 in su, con etichette più grandi di zero, e
-  colonne e righe sono numeri interi.
-- Compare «Le etichette occupano … mm: più della larghezza del foglio A4»: le colonne, la larghezza, gli spazi e il
-  margine a sinistra, sommati, superano 210 mm. Controllare le misure; lo stesso vale in altezza con 297 mm.
-- Compare «Per la coppia servono righe in numero pari»: il foglio è usato per la coppia di etichette: scegliere un
-  numero pari di righe oppure usare quel foglio solo per etichette singole.
-- Il foglio non si può eliminare: **Elimina** è spento per i fogli in uso: sotto le misure compare «Usato per …».
-  Scegliere prima un altro foglio nelle impostazioni dell'etichetta.
-- Il pulsante **Stampa pagina di prova** è spento. Prima salvare le modifiche; il pulsante vale per il foglio già
-  salvato.
-- I contorni stampati sono tutti spostati allo stesso modo. Sono i margini a essere sbagliati: correggere
-  **Margine in alto (mm)** e **Margine a sinistra (mm)**. Controllare anche che la stampa sia al 100 %.
-- Una colonna o una riga di contorni è spostata sempre di più. Sono gli spazi tra le etichette a essere sbagliati:
-  correggere **Spazio tra le colonne (mm)** e **Spazio tra le righe (mm)**.
+### Il pulsante Salva è spento e un foglio è «Da correggere»
+
+Una delle misure non è valida. Leggere sotto i campi il motivo: il codice può avere lettere, cifre, trattini e trattini
+bassi; un altro foglio può avere già lo stesso codice; il nome è obbligatorio; le misure sono numeri da 0 in su, con
+etichette più grandi di zero, e colonne e righe sono numeri interi. Il pulsante **Salva** è spento e il foglio porta
+l'indicazione «Da correggere».
+
+### Le etichette sono più larghe del foglio A4
+
+Compare «Le etichette occupano … mm: più della larghezza del foglio A4»: le colonne, la larghezza, gli spazi e il
+margine a sinistra, sommati, superano 210 mm. Controllare le misure; lo stesso vale in altezza con 297 mm.
+
+### Per la coppia servono righe in numero pari
+
+Compare «Per la coppia servono righe in numero pari»: il foglio è usato per la coppia di etichette: scegliere un
+numero pari di righe oppure usare quel foglio solo per etichette singole.
+
+### Il foglio non si può eliminare
+
+**Elimina** è spento per i fogli in uso: sotto le misure compare «Usato per …». Scegliere prima un altro foglio nelle
+impostazioni dell'etichetta.
+
+### Il pulsante Stampa pagina di prova è spento
+
+Il pulsante **Stampa pagina di prova** è spento. Prima salvare le modifiche; il pulsante vale per il foglio già salvato.
+
+### I contorni stampati sono tutti spostati allo stesso modo
+
+Sono i margini a essere sbagliati: correggere **Margine in alto (mm)** e **Margine a sinistra (mm)**. Controllare anche
+che la stampa sia al 100 %.
+
+### Una colonna o una riga di contorni è spostata sempre di più
+
+Sono gli spazi tra le etichette a essere sbagliati: correggere **Spazio tra le colonne (mm)** e **Spazio tra le righe
+(mm)**.
 
 ## Pagine correlate
 

@@ -90,7 +90,7 @@ Ctrl-click (or Shift-click) on the rows chooses several books. Above the list "N
 **Change the copies of the selection** opens a window, titled **Change the copies**, that changes one piece of data on all the copies of the chosen books. At the top the window shows "N copies". Proceed as follows:
 
 1. In **What to change** choose the data: **Status**, **Material**, **Not for loan**, **Acquisition date** and, when the library records the reading level on the copies, **Level of the copy**.
-1. In **New value** give the value. For the status the choices are **Available**, **Lost**, **Damaged**, **In repair** and **Withdrawn**.
+1. In **New value** give the value. For the status the choices are **Available**, **Lost**, **Damaged**, **In repair** and **Withdrawn**. For the material the choice has the hint "The material belongs to the title: it changes for all its copies." under it: the material is one per title, so it changes for all the copies of each chosen book.
 1. For the status, write the **Reason**. The reason is mandatory for lost and withdrawn copies and stays in the log of each copy.
 1. Press **Check**. The window says how many copies change ("N copies change") and which stay as they are: those on loan (they must be returned first), those that already have the value, those that no longer exist and, for the reading level, those of books that are not fiction. The list of the latter opens from **Copies that stay as they are**.
 1. Press "Apply to N copies". A message confirms "N copies changed".

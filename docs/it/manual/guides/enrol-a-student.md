@@ -69,26 +69,55 @@ prendere libri al banco.
 
 ## Possibili problemi
 
-- «Per uno studente la classe (il livello) è obbligatoria.» e «Per uno studente la sezione è obbligatoria.»: scegliere
-  l'anno e la sezione prima di premere **Crea utente**.
-- «Sezione non trovata tra le classi attive: le classi si creano in Amministrazione → Configurazione → Classi.»: la
-  classe non esiste. Chiedere all'amministratore di crearla, come spiegato in [Impostare le
-  classi](../../admin/guides/set-up-classes.md).
-- «Questa sezione non ha questa classe: scegliere una sezione della classe.»: l'anno e la sezione scelti non vanno
-  insieme. Scegliere di nuovo la sezione, tra quelle che l'elenco propone dopo la scelta dell'anno.
-- «Matricola già assegnata a un altro utente.»: l'alunno è probabilmente già inserito. Cercarlo in **Utenti** prima di
-  crearlo una seconda volta.
-- «Il numero di tessera è o sembra il codice di una copia: scegliere un altro numero.» o «Numero di tessera già
-  assegnato a un altro utente.»: svuotare il campo **Numero tessera** e lasciare che BiblioViva scelga il numero.
-- «Indirizzo email non valido.»: correggere l'indirizzo o svuotare il campo.
-- «La fotocamera funziona solo con una connessione sicura (https)…»: l'installazione senza Tailscale non può usare la
-  fotocamera. Premere **Carica file** e scegliere una foto già salvata sul computer.
-- «File troppo grande…» o «Formato immagine non supportato (sono ammessi JPEG, PNG, WebP e HEIC).»: scegliere un altro
-  file.
-- «La foto non è stata salvata: rifalla dalla pagina dell'utente.»: l'alunno è stato creato ma la foto no. Aprire la
-  scheda dell'utente e premere **Foto**.
-- La scheda **Foto** non compare: l'amministratore ha disattivato le foto, come spiega [Disattivare le foto o le
-  copertine](../../admin/guides/switch-off-photos-or-covers.md).
+### Mancano l'anno o la sezione
+
+Compaiono «Per uno studente la classe (il livello) è obbligatoria.» e «Per uno studente la sezione è obbligatoria.»:
+scegliere l'anno e la sezione prima di premere **Crea utente**.
+
+### La sezione non è tra le classi attive
+
+Compare «Sezione non trovata tra le classi attive: le classi si creano in Amministrazione → Configurazione →
+Classi.»: la classe non esiste. Chiedere all'amministratore di crearla, come spiegato in
+[Impostare le classi](../../admin/guides/set-up-classes.md).
+
+### La sezione non corrisponde alla classe
+
+Compare «Questa sezione non ha questa classe: scegliere una sezione della classe.»: l'anno e la sezione scelti non
+vanno insieme. Scegliere di nuovo la sezione, tra quelle che l'elenco propone dopo la scelta dell'anno.
+
+### La matricola è già assegnata
+
+Compare «Matricola già assegnata a un altro utente.»: l'alunno è probabilmente già inserito. Cercarlo in **Utenti**
+prima di crearlo una seconda volta.
+
+### Il numero di tessera non è accettato
+
+Compare «Il numero di tessera è o sembra il codice di una copia: scegliere un altro numero.» o «Numero di tessera già
+assegnato a un altro utente.»: svuotare il campo **Numero tessera** e lasciare che BiblioViva scelga il numero.
+
+### L'indirizzo email non è valido
+
+Compare «Indirizzo email non valido.»: correggere l'indirizzo o svuotare il campo.
+
+### La fotocamera richiede una connessione sicura
+
+Compare «La fotocamera funziona solo con una connessione sicura (https)…»: l'installazione senza Tailscale non può
+usare la fotocamera. Premere **Carica file** e scegliere una foto già salvata sul computer.
+
+### Il file della foto non è accettato
+
+Compare «File troppo grande…» o «Formato immagine non supportato (sono ammessi JPEG, PNG, WebP e HEIC).»: scegliere
+un altro file.
+
+### La foto non è stata salvata
+
+Compare «La foto non è stata salvata: rifalla dalla pagina dell'utente.»: l'alunno è stato creato ma la foto no.
+Aprire la scheda dell'utente e premere **Foto**.
+
+### La scheda Foto non compare
+
+L'amministratore ha disattivato le foto, come spiega
+[Disattivare le foto o le copertine](../../admin/guides/switch-off-photos-or-covers.md).
 
 ## Pagine correlate
 

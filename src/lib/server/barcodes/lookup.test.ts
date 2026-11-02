@@ -28,11 +28,7 @@ function setup(): { db: Db; student: number; card: string; copy: number; barcode
 		.returning({ id: biblio.id })
 		.get().id;
 	const barcode = itemCode(2026, 1);
-	const copy = db
-		.insert(item)
-		.values({ biblioId, barcode, itemType: "libro" })
-		.returning({ id: item.id })
-		.get().id;
+	const copy = db.insert(item).values({ biblioId, barcode }).returning({ id: item.id }).get().id;
 	return { db, student, card, copy, barcode };
 }
 

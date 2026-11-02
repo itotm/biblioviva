@@ -56,14 +56,25 @@ vecchia tessera non identifica più nessuno.
 
 ## Possibili problemi
 
-- Il pulsante **Stampa tessera** non c'è: l'utente non ha un numero di tessera, oppure è stato rimosso. Una persona
-  rimossa non ha più tessera; per un utente senza numero premere **Riassegna tessera**.
-- Il foglio esce senza la foto: l'utente non ha la foto, oppure l'amministratore ha disattivato le foto. Vedere [Fare le
-  foto degli utenti](take-patron-photos.md).
-- I retri non cadono dietro i fronti, o le misure non tornano: vedere i possibili problemi di [Stampare le tessere di
-  una classe](print-class-cards.md#possibili-problemi).
-- Si è premuto **Riassegna tessera** per sbaglio: il numero precedente non si recupera. La tessera nuova va comunque
-  stampata e consegnata.
+### Non si può stampare la tessera
+
+Il pulsante **Stampa tessera** non c'è: l'utente non ha un numero di tessera, oppure è stato rimosso. Una persona
+rimossa non ha più tessera; per un utente senza numero premere **Riassegna tessera**.
+
+### Il foglio esce senza la foto
+
+L'utente non ha la foto, oppure l'amministratore ha disattivato le foto. Vedere [Fare le foto degli
+utenti](take-patron-photos.md).
+
+### I retri non cadono dietro i fronti
+
+I retri non cadono dietro i fronti, o le misure non tornano: vedere i possibili problemi di [Stampare le tessere di una
+classe](print-class-cards.md#possibili-problemi).
+
+### La tessera è stata riassegnata per sbaglio
+
+Si è premuto **Riassegna tessera** per sbaglio: il numero precedente non si recupera. La tessera nuova va comunque
+stampata e consegnata.
 
 ## Pagine correlate
 

@@ -124,16 +124,29 @@ inglese).
 
 ## Possibili problemi
 
-- Il lettore non scrive nulla: provare un'altra porta USB e controllare di aver fatto clic nel campo prima di leggere.
-  Il lettore deve essere collegato al computer del banco prestiti.
-- Il lettore scrive il codice ma BiblioViva non lo accetta al banco: il lettore deve inviare il tasto Invio dopo il
-  codice, perché i campi dei codici lo accettano solo con Invio. Il manuale del lettore spiega come attivare il suffisso
-  Invio.
-- Il lettore scrive caratteri sbagliati al posto del trattino: vedere la sezione sulla tastiera, sopra, e la pagina
-  [Problemi comuni](../../help/problems.md#lettore-che-scrive-caratteri-strani). La spiegazione tecnica è nella
-  pagina [Deployment notes (technical)](../../../deploy.md#installing-updating-logs-step-85) (in inglese).
-- Il righello stampato misura meno di 100 mm: la scala della finestra di stampa non è al 100 %.
-- La stampa ha date e indirizzi ai bordi del foglio: le intestazioni e i piè di pagina del browser sono attivi.
+### Il lettore non scrive nulla
+
+Provare un'altra porta USB e controllare di aver fatto clic nel campo prima di leggere. Il lettore deve essere
+collegato al computer del banco prestiti.
+
+### Il lettore scrive il codice ma BiblioViva non lo accetta
+
+Al banco il lettore deve inviare il tasto Invio dopo il codice, perché i campi dei codici lo accettano solo con Invio.
+Il manuale del lettore spiega come attivare il suffisso Invio.
+
+### Il lettore scrive caratteri sbagliati al posto del trattino
+
+Vedere la sezione sulla tastiera, sopra, e la pagina
+[Problemi comuni](../../help/problems.md#lettore-che-scrive-caratteri-strani). La spiegazione tecnica è nella pagina [Deployment notes (technical)](../../../deploy.md#installing-updating-logs-step-85)
+(in inglese).
+
+### Il righello stampato misura meno di 100 mm
+
+La scala della finestra di stampa non è al 100 %.
+
+### La stampa ha date e indirizzi ai bordi del foglio
+
+Le intestazioni e i piè di pagina del browser sono attivi.
 
 ## Pagine correlate
 

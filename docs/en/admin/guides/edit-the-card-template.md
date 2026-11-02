@@ -121,20 +121,37 @@ template: the copy is deleted and the template shipped with BiblioViva is used a
 
 ## Possible problems
 
-- The **Customise** button is missing. The template is already customised or has been added: use **Edit**.
-- The **Save** button is off. Either there is no change to save, or the template cannot be printed. Read the red box
-  "The template cannot print like this:" above the drawing: it indicates the unknown field or the missing file.
-- The image does not upload. The file must be PNG, JPEG, WebP, GIF or SVG (without scripts), or a WOFF2, WOFF or TTF
-  font, and must not exceed the maximum size indicated under **Upload a file**.
-- A part of the card cannot be moved in the drawing. Parts inside a code section are edited in the **Code** view: the
-  drawing says so under the card. For the code see [Print templates: authoring
-  guide](../../../templates-authoring.md#editing-from-the-admin-ui-drawing-and-code).
-- The printed texts come out cut off or shifted. Keep them inside the dashed line. If the back does not fall behind the
-  front, calibrate the printing: [Calibrate two-sided printing](calibrate-duplex.md).
-- On leaving the page "Leave without saving?" appears. There are unsaved changes: press **Leave without saving** to lose
-  them, or stay and press **Save**.
-- The template cannot be deleted. A template used by a setting cannot be deleted: first choose another template in
-  **Configuration** → **Cards**.
+### The Customise button is missing
+
+The template is already customised or has been added: use **Edit**.
+
+### The Save button is off
+
+Either there is no change to save, or the template cannot be printed. Read the red box "The template cannot print like
+this:" above the drawing: it indicates the unknown field or the missing file.
+
+### The image does not upload
+
+The file must be PNG, JPEG, WebP, GIF or SVG (without scripts), or a WOFF2, WOFF or TTF font, and must not exceed the
+maximum size indicated under **Upload a file**.
+
+### A part of the card cannot be moved in the drawing
+
+Parts inside a code section are edited in the **Code** view: the drawing says so under the card. For the code see
+[Print templates: authoring guide](../../../templates-authoring.md#editing-from-the-admin-ui-drawing-and-code).
+
+### The printed texts come out cut off or shifted
+
+Keep them inside the dashed line. If the back does not fall behind the front, calibrate the printing:
+[Calibrate two-sided printing](calibrate-duplex.md).
+
+### On leaving the page "Leave without saving?" appears
+
+There are unsaved changes: press **Leave without saving** to lose them, or stay and press **Save**.
+
+### The template cannot be deleted
+
+A template used by a setting cannot be deleted: first choose another template in **Configuration** → **Cards**.
 
 ## Related pages
 

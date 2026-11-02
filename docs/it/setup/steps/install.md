@@ -242,71 +242,110 @@ procedura non fa danni: il programma riconosce l'installazione già fatta e la a
 Il programma scrive il messaggio di errore e si ferma. Dopo aver rimosso la causa, ripetere il comando del primo
 passo della procedura.
 
-- «Questo programma funziona solo su Linux (Raspberry Pi OS, Debian o Ubuntu).»: il comando è stato incollato sul
-  computer sbagliato, per esempio il proprio computer di lavoro. Incollarlo nel terminale di BiblioViva, aperto al
-  passo [Collegarsi al computer](terminal.md).
-- «Il sistema è a 32 bit (…): BiblioViva richiede un sistema a 64 bit. Su un Raspberry Pi, installare Raspberry Pi OS
-  (64-bit).»: la scheda microSD contiene un sistema a 32 bit. Scriverla di nuovo con Raspberry Pi OS Lite (64-bit)
-  come al passo [Preparare il computer](prepare-computer.md); il comando non può funzionare su un sistema a 32 bit.
-- «Sistema …: questo programma è provato su Raspberry Pi OS, Debian e Ubuntu. Si prosegue…»: avviso, non errore. Il
-  computer ha un'altra distribuzione di Linux (per esempio Fedora) e il programma prosegue; se l'installazione si
-  ferma, vedere la pagina tecnica [Deployment notes (technical)](../../../deploy.md).
-- «Il comando sudo non è disponibile: eseguire il programma come amministratore oppure installare sudo.»: il
-  computer non ha `sudo`. Installarlo con le istruzioni della distribuzione, oppure collegarsi come utente `root` e
-  ripetere il comando.
-- «Docker non è stato installato: il programma si ferma. Installarlo e rieseguire il programma.»: è stato risposto `n`
-  alla domanda, oppure l'installazione di Docker non è riuscita (per esempio per mancanza di internet). Ripetere il
-  comando e rispondere `S`; se l'errore resta, installare Docker con la
-  [guida ufficiale](https://docs.docker.com/engine/install/) e ripetere il comando.
-- «Manca la risposta a una domanda e non c'è un terminale da cui leggerla: indicare …»: il programma non è in
-  una finestra dove si può scrivere (per esempio il comando è stato lanciato da un altro programma). Aprire il
-  terminale come al passo [Collegarsi al computer](terminal.md) e ripetere il comando. In alternativa si danno le
-  risposte con le opzioni `--network tailscale` o `--network lan`, `--profile micro`, `--profile small`,
-  `--profile medium` o `--profile large`, `--key <chiave>` per la chiave di Tailscale e `--yes` per installare
-  Docker senza domande, per esempio:
+Altri problemi: [Problemi comuni](../../help/problems.md#installazione-che-si-ferma).
 
-  ```sh
-  curl -fsSL https://raw.githubusercontent.com/itotm/biblioviva/main/setup.sh | bash -s -- --lang it --network lan --profile small
-  ```
+### Il programma dice che funziona solo su Linux
 
-- «Risposta non valida.»: la risposta non è tra quelle ammesse. Digitare una delle cifre elencate.
-- «Impossibile scaricare …: controllare la connessione a internet.»: il computer non riesce a scaricare un file di
-  BiblioViva. Controllare che il cavo o il Wi-Fi funzionino (per esempio con `ping -c 3 raspberrypi.com`), poi
-  ripetere il comando.
-- «BiblioViva non risponde ancora. Vedere il registro con: cd … && docker compose logs»: BiblioViva è stato avviato
-  ma non risponde dopo 180 secondi. Su un computer lento l'avvio può richiedere più tempo: attendere due minuti e
-  ripetere il comando, che riprende da dove era arrivato. Se il messaggio si ripete, dare il comando che il
-  programma suggerisce e leggere le ultime righe; se Docker è stato appena installato e il comando risponde «permission
-  denied», anteporre `sudo`.
+Compare il messaggio «Questo programma funziona solo su Linux (Raspberry Pi OS, Debian o Ubuntu).»: il comando è stato
+incollato sul computer sbagliato, per esempio il proprio computer di lavoro. Incollarlo nel terminale di BiblioViva,
+aperto al passo [Collegarsi al computer](terminal.md).
 
-  ```sh
-  cd ~/biblioviva && docker compose logs
-  ```
+### Il sistema è a 32 bit
+
+Compare il messaggio «Il sistema è a 32 bit (…): BiblioViva richiede un sistema a 64 bit. Su un Raspberry Pi,
+installare Raspberry Pi OS (64-bit).»: la scheda microSD contiene un sistema a 32 bit. Scriverla di nuovo con Raspberry
+Pi OS Lite (64-bit) come al passo [Preparare il computer](prepare-computer.md); il comando non può funzionare su un
+sistema a 32 bit.
+
+### Il programma avvisa che il sistema non è tra quelli provati
+
+Compare il messaggio «Sistema …: questo programma è provato su Raspberry Pi OS, Debian e Ubuntu. Si prosegue…»: è un
+avviso, non un errore. Il computer ha un'altra distribuzione di Linux (per esempio Fedora) e il programma prosegue; se
+l'installazione si ferma, vedere la pagina tecnica [Deployment notes (technical)](../../../deploy.md).
+
+### Il comando sudo non è disponibile
+
+Compare il messaggio «Il comando sudo non è disponibile: eseguire il programma come amministratore oppure installare
+sudo.»: il computer non ha `sudo`. Installarlo con le istruzioni della distribuzione, oppure collegarsi come utente
+`root` e ripetere il comando.
+
+### Docker non è stato installato
+
+Compare il messaggio «Docker non è stato installato: il programma si ferma. Installarlo e rieseguire il programma.»: è
+stato risposto `n` alla domanda, oppure l'installazione di Docker non è riuscita (per esempio per mancanza di
+internet). Ripetere il comando e rispondere `S`; se l'errore resta, installare Docker con la [guida
+ufficiale](https://docs.docker.com/engine/install/) e ripetere il comando.
+
+### Manca la risposta a una domanda
+
+Compare il messaggio «Manca la risposta a una domanda e non c'è un terminale da cui leggerla: indicare …»: il programma
+non è in una finestra dove si può scrivere (per esempio il comando è stato lanciato da un altro programma). Aprire il
+terminale come al passo [Collegarsi al computer](terminal.md) e ripetere il comando. In alternativa si danno le
+risposte con le opzioni `--network tailscale` o `--network lan`, `--profile micro`, `--profile small`,
+`--profile medium` o `--profile large`, `--key <chiave>` per la chiave di Tailscale e `--yes` per installare
+Docker senza domande, per esempio:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/itotm/biblioviva/main/setup.sh | bash -s -- --lang it --network lan --profile small
+```
+
+### Il programma dice che la risposta non è valida
+
+Compare il messaggio «Risposta non valida.»: la risposta non è tra quelle ammesse. Digitare una delle cifre elencate.
+
+### Il programma non riesce a scaricare un file
+
+Compare il messaggio «Impossibile scaricare …: controllare la connessione a internet.»: il computer non riesce a
+scaricare un file di BiblioViva. Controllare che il cavo o il Wi-Fi funzionino (per esempio con
+`ping -c 3 raspberrypi.com`), poi ripetere il comando.
+
+### BiblioViva non risponde ancora
+
+Compare il messaggio «BiblioViva non risponde ancora. Vedere il registro con: cd … && docker compose logs»: BiblioViva
+è stato avviato ma non risponde dopo 180 secondi. Su un computer lento l'avvio può richiedere più tempo: attendere due
+minuti e ripetere il comando, che riprende da dove era arrivato. Se il messaggio si ripete, dare il comando che il
+programma suggerisce e leggere le ultime righe; se Docker è stato appena installato e il comando risponde «permission
+denied», anteporre `sudo`.
+
+```sh
+cd ~/biblioviva && docker compose logs
+```
 
 <!-- variant: tailscale -->
 **Con Tailscale**
 
-- Nel registro di «BiblioViva non risponde ancora», le parole «requested tags … are invalid or not permitted»
-  indicano che la voce `tagOwners` o la chiave di Tailscale non sono a posto: ripetere le parti «Etichetta del
-  computer» e «Chiave di accesso» del passo [Preparare la rete](network.md), poi ripetere il comando.
-- «La chiave di Tailscale deve iniziare con tskey-.»: la chiave incollata non è valida. Incollare la chiave intera, che
-  inizia con `tskey-auth-` (vedere [Preparare la rete](network.md)).
-- «Il nodo è nella tailnet, ma i certificati HTTPS non sono attivi: attivarli nella pagina DNS della console di
-  Tailscale, poi rieseguire il programma.»: il computer è entrato nella rete, ma manca il lucchetto. Nella pagina
-  «DNS» della [console di amministrazione](https://login.tailscale.com/admin/dns) attivare «HTTPS Certificates»,
-  come descritto nel passo [Preparare la rete](network.md), poi ripetere il comando.
+### Il registro parla di tag non validi
+
+Nel registro di «BiblioViva non risponde ancora», le parole «requested tags … are invalid or not permitted» indicano
+che la voce `tagOwners` o la chiave di Tailscale non sono a posto: ripetere le parti «Etichetta del computer» e «Chiave
+di accesso» del passo [Preparare la rete](network.md), poi ripetere il comando.
+
+### La chiave di Tailscale non è valida
+
+Compare il messaggio «La chiave di Tailscale deve iniziare con tskey-.»: la chiave incollata non è valida. Incollare la
+chiave intera, che inizia con `tskey-auth-` (vedere [Preparare la rete](network.md)).
+
+### I certificati HTTPS non sono attivi
+
+Compare il messaggio «Il nodo è nella tailnet, ma i certificati HTTPS non sono attivi: attivarli nella pagina DNS della
+console di Tailscale, poi rieseguire il programma.»: il computer è entrato nella rete, ma manca il lucchetto. Nella
+pagina «DNS» della [console di amministrazione](https://login.tailscale.com/admin/dns) attivare «HTTPS Certificates»,
+come descritto nel passo [Preparare la rete](network.md), poi ripetere il comando.
 <!-- /variant -->
 <!-- variant: lan -->
 **Con la rete locale**
 
-- Docker scrive «port is already allocated» (porta già in uso) e il programma si ferma: un altro programma occupa la
-  porta `8080`. Chiedere a chi gestisce il computer di liberarla, oppure scrivere un altro numero dopo `LAN_PORT=`
-  nel file `~/biblioviva/.env` e ripetere il comando: gli indirizzi cambiano di conseguenza.
-- L'indirizzo con il nome (`biblioviva.local`) non si apre dagli altri computer: usare l'indirizzo numerico che il
-  programma ha scritto. La verifica dal computer del banco è al passo [Collegare i dispositivi](devices.md).
-<!-- /variant -->
+### La porta 8080 è già in uso
 
-Altri problemi: [Problemi comuni](../../help/problems.md#installazione-che-si-ferma).
+Docker scrive «port is already allocated» (porta già in uso) e il programma si ferma: un altro programma occupa la porta
+`8080`. Chiedere a chi gestisce il computer di liberarla, oppure scrivere un altro numero dopo `LAN_PORT=` nel file
+`~/biblioviva/.env` e ripetere il comando: gli indirizzi cambiano di conseguenza.
+
+### L'indirizzo con il nome non si apre dagli altri computer
+
+L'indirizzo con il nome (`biblioviva.local`) non si apre dagli altri computer: usare l'indirizzo numerico che il
+programma ha scritto. La verifica dal computer del banco è al passo [Collegare i dispositivi](devices.md).
+<!-- /variant -->
 
 ## Pagine correlate
 

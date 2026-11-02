@@ -158,11 +158,27 @@ test.describe("app shell", () => {
 		await expect(page).toHaveURL(/\/login/);
 	});
 
-	test("the help icon opens the manual of the area", async ({ page }) => {
+	test("the help button opens the manual of the area", async ({ page, isMobile }) => {
 		await page.goto("/catalog");
 		await waitForHydration(page);
-		const help = page.getByTestId("help-link");
+		// the computer: "Guida" with its icon in the top bar; the phone: a round button of 44 px
+		// right after the page title (9.47, Q140)
+		const help = page.getByTestId(isMobile ? "help-link-mobile" : "help-link");
+		await expect(help).toBeVisible();
+		await expect(page.getByTestId(isMobile ? "help-link" : "help-link-mobile")).toBeHidden();
 		await expect(help).toHaveAccessibleName("Guida");
+		const box = await help.boundingBox();
+		if (isMobile) {
+			expect(box?.width).toBe(44);
+			expect(box?.height).toBe(44);
+			const title = await page.getByTestId("page-title").boundingBox();
+			expect(Math.abs((box?.x ?? 0) - ((title?.x ?? 0) + (title?.width ?? 0)))).toBeLessThan(
+				20,
+			);
+		} else {
+			await expect(help).toHaveText("Guida");
+			expect(box?.height).toBe(40);
+		}
 		await expect(help).toHaveAttribute("target", "_blank");
 		await expect(help).toHaveAttribute(
 			"href",

@@ -104,17 +104,29 @@ Per tornare al modello originale, nell'elenco premere **Torna all'originale** su
 
 ## Possibili problemi
 
-- Il pulsante **Salva** è spento. Non ci sono modifiche, oppure il modello non si può stampare: leggere il riquadro
-  rosso «Il template non si può stampare così» sopra il disegno.
-- L'anteprima non cambia. L'anteprima si aggiorna poco dopo ogni modifica. Se non si aggiorna, controllare che la
-  variante scelta sia quella usata dal foglio di etichette.
-- Una parte dell'etichetta non si può muovere. Le parti dentro una sezione di codice si modificano nella vista
-  **Codice**; il disegno lo segnala sotto l'etichetta. Per il codice vedere [Print templates: authoring
-  guide](../../../templates-authoring.md#labels).
-- Le etichette escono spostate sul foglio. Il modello non c'entra: la posizione dipende dal foglio. Stampare la pagina
-  di calibrazione e correggere i margini: [Aggiungere un foglio di etichette](add-a-label-stock.md).
-- Il foglio scelto non ha il numero di righe giusto per la coppia. La coppia usa due etichette una sopra l'altra: il
-  foglio deve avere un numero pari di righe.
+### Il pulsante Salva è spento
+
+Non ci sono modifiche, oppure il modello non si può stampare: leggere il riquadro rosso «Il template non si può stampare
+così» sopra il disegno.
+
+### L'anteprima non cambia
+
+L'anteprima si aggiorna poco dopo ogni modifica. Se non si aggiorna, controllare che la variante scelta sia quella usata
+dal foglio di etichette.
+
+### Una parte dell'etichetta non si può muovere
+
+Le parti dentro una sezione di codice si modificano nella vista **Codice**; il disegno lo segnala sotto l'etichetta. Per
+il codice vedere [Print templates: authoring guide](../../../templates-authoring.md#labels).
+
+### Le etichette escono spostate sul foglio
+
+Il modello non c'entra: la posizione dipende dal foglio. Stampare la pagina di calibrazione e correggere i margini:
+[Aggiungere un foglio di etichette](add-a-label-stock.md).
+
+### Il foglio non ha il numero di righe giusto per la coppia
+
+La coppia usa due etichette una sopra l'altra: il foglio deve avere un numero pari di righe.
 
 ## Pagine correlate
 

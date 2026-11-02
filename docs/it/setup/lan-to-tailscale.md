@@ -85,13 +85,20 @@ serve (foto degli utenti, copertine).
 
 ## Possibili problemi
 
-- Il programma non scrive «Cambio del modo di collegamento…» ma fa le domande dell'installazione iniziale: la cartella
-  `biblioviva` non è quella dell'utente con cui ci si è collegati. Usare lo stesso utente dell'installazione.
-- «Il nodo è nella tailnet, ma i certificati HTTPS non sono attivi…»: attivare «HTTPS Certificates» nella pagina «DNS»
-  della console di Tailscale e ripetere il comando (vedere [Installare
-  BiblioViva](steps/install.md#possibili-problemi)).
-- Il comando non accetta le opzioni: il testo `bash -s --` prima delle opzioni serve a passarle al programma;
-  copiare il comando per intero.
+### Il programma rifà le domande dell'installazione iniziale
+
+Il programma non scrive «Cambio del modo di collegamento…» ma fa le domande dell'installazione iniziale: la cartella
+`biblioviva` non è quella dell'utente con cui ci si è collegati. Usare lo stesso utente dell'installazione.
+
+### I certificati HTTPS non sono attivi
+
+Compare il messaggio «Il nodo è nella tailnet, ma i certificati HTTPS non sono attivi…». Attivare «HTTPS Certificates»
+nella pagina «DNS» della console di Tailscale e ripetere il comando (vedere [Installare
+BiblioViva](steps/install.md#possibili-problemi)).
+
+### Il comando non accetta le opzioni
+
+Il testo `bash -s --` prima delle opzioni serve a passarle al programma; copiare il comando per intero.
 
 ## Pagine correlate
 

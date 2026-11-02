@@ -48,11 +48,23 @@ catalogo non le mostra.
 
 ## Possibili problemi
 
-- Si vuole cancellare davvero le foto già salvate: spegnere la funzione non lo fa. L'eliminazione si fa utente per
-  utente [VERIFY: se esiste un modo per eliminare tutte le foto in una volta].
-- Le tessere stampate prima della modifica hanno ancora la foto: per toglierla, ristampare le tessere, che escono senza foto.
-- Compare «Correggere i valori segnati prima di salvare.»: un campo della sezione ha un valore non valido. Correggerlo.
-- Se si esce dalla pagina con modifiche non salvate, BiblioViva chiede una conferma.
+### Si vogliono cancellare le foto già salvate
+
+Spegnere la funzione non lo fa. L'eliminazione si fa utente per utente [VERIFY: se esiste un modo per eliminare tutte
+le foto in una volta].
+
+### Le tessere stampate hanno ancora la foto
+
+Le tessere stampate prima della modifica hanno ancora la foto: per toglierla, ristampare le tessere, che escono senza
+foto.
+
+### Un campo ha un valore non valido
+
+Compare «Correggere i valori segnati prima di salvare.»: un campo della sezione ha un valore non valido. Correggerlo.
+
+### Si esce dalla pagina con modifiche non salvate
+
+BiblioViva chiede una conferma.
 
 ## Pagine correlate
 

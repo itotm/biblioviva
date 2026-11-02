@@ -22,6 +22,7 @@ function freePort(): Promise<number> {
 /** Starts `bun ./build` on the folders of `dir` and waits until it answers; returns it and its address. */
 export async function startFreshServer(
 	dir: string,
+	extraEnv: Record<string, string> = {},
 ): Promise<{ server: ChildProcess; base: string }> {
 	const port = await freePort();
 	const url = `http://127.0.0.1:${port}`;
@@ -40,6 +41,7 @@ export async function startFreshServer(
 			DEV_UI: "",
 			// the size of a library's archive, as the container allows (docker/Dockerfile)
 			BODY_SIZE_LIMIT: "32M",
+			...extraEnv,
 		},
 		stdio: "ignore",
 	});

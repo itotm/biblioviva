@@ -88,23 +88,45 @@ with BiblioViva, **Back to the original**).
 
 ## Possible problems
 
-- Saving says "The definition is not valid". A datum is missing or not valid, usually the code (lower-case letters,
-  digits and dashes, at most 64 characters) or the title. The message indicates which.
-- Saving says "The query does not work on this database". The guided report was composed with a combination the
-  database cannot calculate. Go back to the **Guided** tab, remove the last choice and press **Preview** to see which
-  one causes it.
-- Saving says that "new" cannot be the code of a report. Choose another code.
-- The preview shows "No results with these parameters". The report is correct but the data are not there: widen the
-  period or remove a fixed filter.
-- The **Report code** field is off. The code of a report already saved cannot be changed. To have a different one, use
-  **Duplicate** from the library.
-- After **Edit as SQL** the report can no longer be edited with the **Guided** tab. **Edit as SQL** turns the report
-  into a hand-written one and there is no going back to guided editing. Use it only if really needed, reading first
-  [Reports: authoring guide](../../../reports-authoring.md).
-- The report does not appear in the list of another account. Check that **Administrators only** is not ticked and that
-  the account has the reports permission: [Manage staff accounts](manage-accounts.md).
-- A file in the library is in error. The library lists, at the top, the files that do not load, with the reason.
-  **Delete** removes the file from the configuration; the deletion can be undone from the history.
+### Saving says the definition is not valid
+
+Saving says "The definition is not valid". A datum is missing or not valid, usually the code (lower-case letters,
+digits and dashes, at most 64 characters) or the title. The message indicates which.
+
+### The query does not work on this database
+
+Saving says "The query does not work on this database". The guided report was composed with a combination the database
+cannot calculate. Go back to the **Guided** tab, remove the last choice and press **Preview** to see which one causes
+it.
+
+### "new" cannot be the code of a report
+
+Saving says that "new" cannot be the code of a report. Choose another code.
+
+### The preview shows no results
+
+The preview shows "No results with these parameters". The report is correct but the data are not there: widen the
+period or remove a fixed filter.
+
+### The Report code field is off
+
+The code of a report already saved cannot be changed. To have a different one, use **Duplicate** from the library.
+
+### The report can no longer be edited with the Guided tab
+
+After **Edit as SQL** the report can no longer be edited with the **Guided** tab. **Edit as SQL** turns the report into
+a hand-written one and there is no going back to guided editing. Use it only if really needed, reading first
+[Reports: authoring guide](../../../reports-authoring.md).
+
+### The report does not appear in the list of another account
+
+Check that **Administrators only** is not ticked and that the account has the reports permission:
+[Manage staff accounts](manage-accounts.md).
+
+### A file in the library is in error
+
+The library lists, at the top, the files that do not load, with the reason. **Delete** removes the file from the
+configuration; the deletion can be undone from the history.
 
 ## Related pages
 

@@ -38,6 +38,7 @@
 
 	let useSpecialValues = $state(false);
 	let enableClassPerItem = $state<boolean | undefined>(undefined);
+	let useMajorityType = $state<boolean | undefined>(undefined);
 	let labelDialog = $state(false);
 
 	const wizard = new ImportWizard({
@@ -45,13 +46,22 @@
 		validate: (run) => validateCatalogCsv(run),
 		commit: (run) => commitCatalogCsv(run),
 		spec: () => CATALOG_IMPORT,
-		run: () => ({ useSpecialValues, enableClassPerItem }),
+		run: () => ({ useSpecialValues, enableClassPerItem, useMajorityType }),
 		doneTitle: () => i18n.t("catalog.import.done.title"),
-		onUpload: () => (enableClassPerItem = undefined),
+		onUpload: () => {
+			enableClassPerItem = undefined;
+			useMajorityType = undefined;
+		},
 	});
 
 	async function answer(yes: boolean): Promise<void> {
 		enableClassPerItem = yes;
+		await wizard.validate();
+	}
+
+	/** The item-type question (Q139): the record takes the type of most of its copies. */
+	async function answerType(yes: boolean): Promise<void> {
+		useMajorityType = yes;
 		await wizard.validate();
 	}
 
@@ -192,6 +202,32 @@
 						disabled={wizard.busy}
 						data-testid="class-question-no"
 						>{i18n.t("catalog.import.preview.question.no")}</Button
+					>
+				</Row>
+			</Alert>
+		{/if}
+		{#if result.typeQuestion > 0}
+			<Alert tone="warning" as="div" padded data-testid="type-question" live={false}>
+				<p class="font-semibold">{i18n.t("catalog.import.preview.typeQuestion.title")}</p>
+				<p class="mt-1">
+					{i18n.t("catalog.import.preview.typeQuestion.text", {
+						count: result.typeQuestion,
+					})}
+				</p>
+				<Row class="mt-3">
+					<Button
+						variant={useMajorityType === true ? "primary" : "tonal"}
+						onclick={() => answerType(true)}
+						disabled={wizard.busy}
+						data-testid="type-question-yes"
+						>{i18n.t("catalog.import.preview.typeQuestion.yes")}</Button
+					>
+					<Button
+						variant={useMajorityType === false ? "error" : "tonal"}
+						onclick={() => answerType(false)}
+						disabled={wizard.busy}
+						data-testid="type-question-no"
+						>{i18n.t("catalog.import.preview.typeQuestion.no")}</Button
 					>
 				</Row>
 			</Alert>

@@ -88,22 +88,42 @@ nuovo inventario si può aprire quando si vuole.
 
 ## Possibili problemi
 
-- Il codice letto dice «nessuna copia ha questo codice»: il libro potrebbe
-  avere un'etichetta di un altro sistema o essere stato catalogato senza etichetta di BiblioViva. Catalogarlo o stampare
-  la sua etichetta, vedere [Catalogare un libro nuovo](catalog-a-new-book.md).
-- Compare «C'è già un inventario in corso.»: si può aprire una sola campagna per volta. Continuare quella aperta o
-  chiuderla.
-- Compare «Si può riaprire solo entro una settimana dalla chiusura.»: il tempo è scaduto. Le copie smarrite si
-  rimettono **Disponibile** a mano, una per una o con una modifica di massa, vedere
-  [Togliere una copia smarrita o rovinata](withdraw-a-copy.md).
-- Una copia fuori posto dà «fuori posto» ma è sullo scaffale giusto: il campo **Scaffale** era rimasto sulla sigla dello
-  scaffale precedente: cambiarlo e rileggere la copia.
-- Il computer si spegne a metà inventario: nulla va perso, perché gli esiti letti sono salvati. Riaprire **Inventario**.
-- La copia in prestito risulta mancante: le copie in prestito non si contano tra le mancanti. Se il libro è sullo
-  scaffale registrare la restituzione al banco, vedere [Restituire un libro](return-a-book.md).
-- Si vuole usare la fotocamera del telefono invece del lettore: è un'alternativa facoltativa che richiede Tailscale
-  (HTTPS), vedere [Scegliere la rete](../../setup/choose-network.md). Nel riquadro «Leggi le copie» premere
-  **Leggi con la fotocamera**, inquadrare i codici uno dopo l'altro e premere **Fine** al termine.
+### Il codice letto non corrisponde a nessuna copia
+
+Il codice letto dice «nessuna copia ha questo codice»: il libro potrebbe avere un'etichetta di un altro sistema o essere
+stato catalogato senza etichetta di BiblioViva. Catalogarlo o stampare la sua etichetta, vedere [Catalogare un libro
+nuovo](catalog-a-new-book.md).
+
+### C'è già un inventario in corso
+
+Compare «C'è già un inventario in corso.»: si può aprire una sola campagna per volta. Continuare quella aperta o
+chiuderla.
+
+### L'inventario non si può riaprire
+
+Compare «Si può riaprire solo entro una settimana dalla chiusura.»: il tempo è scaduto. Le copie smarrite si rimettono
+**Disponibile** a mano, una per una o con una modifica di massa, vedere [Togliere una copia smarrita o
+rovinata](withdraw-a-copy.md).
+
+### Una copia sullo scaffale giusto risulta fuori posto
+
+Una copia fuori posto dà «fuori posto» ma è sullo scaffale giusto: il campo **Scaffale** era rimasto sulla sigla dello
+scaffale precedente: cambiarlo e rileggere la copia.
+
+### Il computer si spegne a metà inventario
+
+Nulla va perso, perché gli esiti letti sono salvati. Riaprire **Inventario**.
+
+### La copia in prestito risulta mancante
+
+Le copie in prestito non si contano tra le mancanti. Se il libro è sullo scaffale registrare la restituzione al banco,
+vedere [Restituire un libro](return-a-book.md).
+
+### Usare la fotocamera del telefono al posto del lettore
+
+È un'alternativa facoltativa che richiede Tailscale (HTTPS), vedere [Scegliere la rete](../../setup/choose-network.md).
+Nel riquadro «Leggi le copie» premere **Leggi con la fotocamera**, inquadrare i codici uno dopo l'altro e premere
+**Fine** al termine.
 
 ## Pagine correlate
 

@@ -261,6 +261,10 @@ test.describe.serial("catalogue", () => {
 		await page.getByTestId("edit-biblio").click();
 		await waitForHydration(page);
 		await expect(page.getByTestId("edit-item-call-number")).toHaveValue("A ROS");
+		// the material is the record's, in the record's fields; the segnatura stays the copy's (9.45)
+		await expect(page.getByTestId("edit-item-type")).toHaveCount(0);
+		await expect(page.getByTestId("biblio-item-type")).toHaveValue("libro");
+		await page.getByTestId("biblio-item-type").selectOption("dvd");
 		await page.getByTestId("edit-item-call-number").fill("A ROS bis");
 		await page.getByTestId("edit-item-acquisition-date").fill("2026-01-15");
 		await page.getByLabel("Titolo", { exact: true }).fill(`${title} (ed.)`);
@@ -269,6 +273,7 @@ test.describe.serial("catalogue", () => {
 		await waitForHydration(page);
 		await expect(page.getByRole("heading", { level: 1 })).toHaveText(`${title} (ed.)`);
 		await expect(rows.first()).toContainText("A ROS bis");
+		await expect(page.getByTestId("item-type-badge")).toHaveText("DVD");
 		// a refused copy value leaves the record unchanged: the error sits on the copy field
 		await page.getByTestId("edit-biblio").click();
 		await waitForHydration(page);

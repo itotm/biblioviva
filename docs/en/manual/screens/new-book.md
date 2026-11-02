@@ -26,7 +26,7 @@ The **ISBN or EAN** field already has the cursor. Read with the barcode scanner 
 
 The camera button next to the field is optional: it reads the code from the image and works only with a secure connection (https), that is with Tailscale. With the scanner it is not needed.
 
-Below, the **Material** choice says what is being catalogued (book, DVD…): the copies are created of that type. The choice stays valid as long as the page stays open, also for the following books.
+Below, the **Material** choice says what is being catalogued (book, DVD…): the material is proposed to the record and can be changed in the form. The choice stays valid as long as the page stays open, also for the following books.
 
 Under a separator line are two ways for a book without an ISBN, with the note "Search by title and author, or fill in the record by hand.": **No code** and **Fill in by hand**.
 
@@ -52,7 +52,7 @@ The warnings "The ISBN has a wrong check digit: check the digits." and "Code not
 
 If the ISBN is already in the catalogue, the page does not create a duplicate record. It shows the title, the author, the publisher, the year and "N copies" under **This ISBN is already in the catalogue**. The choices are:
 
-- **Add copy**: adds to the book the **Number of copies** written in the field (at least one), of the material chosen in the first step, with the proposed call number. The page moves to the confirmation [Record saved](#record-saved) ("N copies added to “title”").
+- **Add copy**: adds to the book the **Number of copies** written in the field (at least one), with the proposed call number; the material is the one of the record. The page moves to the confirmation [Record saved](#record-saved) ("N copies added to “title”").
 - **Open the record**: opens the [Book record](book-record.md).
 - **Scan another code**: returns to the first step.
 
@@ -93,14 +93,13 @@ If covers are active, above the form the **Cover** box shows the image found onl
 
 ### Book data
 
-The form has the sections **Record**, **Publication**, **Classification** and **More**, with the same fields and the same rules as the form [Edit record](book-record.md#edit-record). Author and publisher are mandatory: if the book does not give them, use the special values of the buttons under the field.
+The form has the sections **Record**, **Publication**, **Classification** and **More**, with the same fields and the same rules as the form [Edit record](book-record.md#edit-record). The **Material** is in **Publication**, after the **Physical description**, already set from the first step. Author and publisher are mandatory: if the book does not give them, use the special values of the buttons under the field.
 
 ### Copies section
 
 The **Copies** section creates the copies of the book in the same save:
 
 - **Number of copies**: how many new copies, normally 1;
-- **Material**: already set from the first step;
 - **Level of the copies**, if the library records the level on the copies;
 - **Call number**: it is proposed from the classification and updates until a call number is typed in;
 - **Acquisition date**: normally today's date.

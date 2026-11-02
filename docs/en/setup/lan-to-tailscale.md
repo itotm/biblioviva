@@ -84,13 +84,20 @@ needed (patron photos, covers).
 
 ## Possible problems
 
-- The program does not write "Changing the way of connecting…" but asks the questions of the initial installation: the
-  `biblioviva` folder is not that of the user connected with. Use the same user as the installation.
-- "The node is on the tailnet, but HTTPS certificates are off…": turn on "HTTPS Certificates" on the "DNS" page of the
-  Tailscale console and run the command again (see [Install
-  BiblioViva](steps/install.md#possible-problems)).
-- The command does not accept the options: the text `bash -s --` before the options serves to pass them to the program;
-  copy the command in full.
+### The program asks the questions of the initial installation again
+
+The program does not write "Changing the way of connecting…" but asks the questions of the initial installation: the
+`biblioviva` folder is not that of the user connected with. Use the same user as the installation.
+
+### The HTTPS certificates are not active
+
+The message "The node is on the tailnet, but HTTPS certificates are off…" appears. Turn on "HTTPS Certificates" on the
+"DNS" page of the Tailscale console and run the command again (see [Install
+BiblioViva](steps/install.md#possible-problems)).
+
+### The command does not accept the options
+
+The text `bash -s --` before the options serves to pass them to the program; copy the command in full.
 
 ## Related pages
 

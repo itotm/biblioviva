@@ -163,6 +163,7 @@ function addDvd(db: Db, actor: { id: number }): void {
 			series: "",
 			seriesNumber: "",
 			dewey: "",
+			itemType: "dvd",
 			kind: "fiction",
 			genreCode: "B",
 			classCode: "",
@@ -177,7 +178,6 @@ function addDvd(db: Db, actor: { id: number }): void {
 		db,
 		id,
 		{
-			itemType: "dvd",
 			callNumber: "",
 			readingLevel: "",
 			enumeration: "",

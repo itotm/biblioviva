@@ -304,7 +304,6 @@
 				biblioId: existing.id,
 				copies: dupCopies,
 				item: {
-					itemType: material,
 					callNumber: "",
 					readingLevel: "",
 					enumeration: "",
@@ -524,16 +523,6 @@
 										>
 									{/each}
 								</div>
-								<Field label={i18n.t("catalog.fastAdd.form.itemType")}
-									><Select
-										{...fields.itemType?.as("select")}
-										data-testid="fast-item-type"
-									>
-										{#each options.itemTypes as t (t.code)}
-											<option value={t.code}>{t.label}</option>
-										{/each}
-									</Select></Field
-								>
 								{#if options.classPerItem && options.fictionByClass && state.kind === "fiction"}
 									<Field label={i18n.t("catalog.fastAdd.form.readingLevel")}
 										><Select {...fields.itemReadingLevel?.as("select")}>

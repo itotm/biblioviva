@@ -388,7 +388,6 @@ describe("the services of the public demo", () => {
 			db,
 			bookId,
 			{
-				itemType: config.library.itemTypes[0]?.code ?? "libro",
 				callNumber: "",
 				readingLevel: "",
 				enumeration: "",

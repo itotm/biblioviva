@@ -116,17 +116,36 @@ those of the backup, if it contained the configuration; otherwise they are those
 
 ## Possible problems
 
-- "The file is not a BiblioViva archive.": the chosen file is not a file produced by BiblioViva. Choose a `.db` or `.zip`
-  file from the `backups` folder, or download the backup again.
-- "The backup is from another version of BiblioViva…": the file was made by a version that has different tables. Install
-  the same version (see "Stay on a version" in [Update BiblioViva](update.md)), restore, then update.
-- From the first run: "The archive is incomplete: … are missing": the file does not contain every part of a library
-  (the settings, the accounts, the patrons or the catalogue). Choose an archive made with **Export everything**.
-- From the first run: "The archive was made by a newer version of BiblioViva…": install that version first, restore,
-  then update.
-- The restore reports rows that "refer to … that would not be there": add to the choice the part that the message names
-  and repeat.
-- From the terminal: "permission denied" about Docker: see [Install BiblioViva](steps/install.md).
+### The file is not a BiblioViva archive
+
+The message "The file is not a BiblioViva archive." appears: the chosen file is not a file produced by BiblioViva.
+Choose a `.db` or `.zip` file from the `backups` folder, or download the backup again.
+
+### The backup is from another version
+
+The message "The backup is from another version of BiblioViva…" appears: the file was made by a version that has
+different tables. Install the same version (see "Stay on a version" in [Update BiblioViva](update.md)), restore, then
+update.
+
+### The archive is incomplete
+
+From the first run the message "The archive is incomplete: … are missing" appears: the file does not contain every part
+of a library (the settings, the accounts, the patrons or the catalogue). Choose an archive made with **Export
+everything**.
+
+### The archive comes from a newer version
+
+From the first run the message "The archive was made by a newer version of BiblioViva…" appears: install that version
+first, restore, then update.
+
+### The restore reports rows with missing references
+
+The restore reports rows that "refer to … that would not be there": add to the choice the part that the message names
+and repeat.
+
+### From the terminal "permission denied" appears about Docker
+
+From the terminal "permission denied" appears about Docker: see [Install BiblioViva](steps/install.md).
 
 ## Related pages
 

@@ -92,12 +92,23 @@ I tipi di copia si aggiungono e si rinominano nella sezione **Biblioteca e scuol
 
 ## Possibili problemi
 
-- Compare «Correggere i valori segnati prima di salvare.»: un campo ha un valore non valido, per esempio un testo al
-  posto di un numero. Correggere il campo segnato in rosso.
-- Compare «Il salvataggio non è riuscito:» con un elenco: le voci dicono quale chiave correggere.
-- I valori delle regole per tipo di copia mostrano il messaggio «Almeno 1.»: i giorni e i libri devono essere almeno 1;
-  soltanto i rinnovi possono essere 0.
-- Si esce dalla pagina con modifiche non salvate: BiblioViva chiede una conferma prima di perderle.
+### Un campo ha un valore non valido
+
+Compare «Correggere i valori segnati prima di salvare.»: un campo ha un valore non valido, per esempio un testo al
+posto di un numero. Correggere il campo segnato in rosso.
+
+### Il salvataggio non è riuscito
+
+Compare «Il salvataggio non è riuscito:» con un elenco: le voci dicono quale chiave correggere.
+
+### Il valore di una regola è troppo basso
+
+I valori delle regole per tipo di copia mostrano il messaggio «Almeno 1.»: i giorni e i libri devono essere almeno 1;
+soltanto i rinnovi possono essere 0.
+
+### Si esce dalla pagina con modifiche non salvate
+
+BiblioViva chiede una conferma prima di perderle.
 
 ## Pagine correlate
 

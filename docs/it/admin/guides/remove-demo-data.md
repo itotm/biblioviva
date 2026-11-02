@@ -43,11 +43,16 @@ I dati dimostrativi non corrispondono ad alcuna persona reale. Sulla dashboard c
 
 ## Possibili problemi
 
-- Il pulsante **Svuota dati dimostrativi** non compare: i dati dimostrativi non ci sono, perché non sono stati caricati
-  al primo avvio o sono già stati tolti. Il pulsante manca anche nella demo pubblica, che si ricrea da sola.
-- Dopo la cancellazione si vuole tornare ai dati di prova: non è possibile da qui. Per ricominciare da capo serve la
-  procedura tecnica «Resetting an installation back to the first-run wizard» della pagina
-  [Deployment notes](../../../deploy.md#resetting-an-installation-back-to-the-first-run-wizard) (in inglese).
+### Il pulsante Svuota dati dimostrativi non compare
+
+I dati dimostrativi non ci sono, perché non sono stati caricati al primo avvio o sono già stati tolti. Il pulsante manca
+anche nella demo pubblica, che si ricrea da sola.
+
+### Dopo la cancellazione si vogliono i dati di prova
+
+Non è possibile da qui. Per ricominciare da capo serve la procedura tecnica «Resetting an installation back to the
+first-run wizard» della pagina
+[Deployment notes](../../../deploy.md#resetting-an-installation-back-to-the-first-run-wizard) (in inglese).
 
 ## Pagine correlate
 

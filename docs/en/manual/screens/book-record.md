@@ -24,6 +24,7 @@ Under the title are the marks:
 - the kind, **Fiction** or **Non-fiction**, and the classification with its name (with the reading level, if there is one);
 - if the book has no classification yet, the mark **To classify** (with the explanation "The copies are not lent until the book is classified.") and, with the cataloguing permission, the **Classify** button, which opens the page [Classify the book](to-classify.md#classify-the-book);
 - the series, with the number, as a button: it opens the [Catalogue](catalog.md) with all the books of the series, in order;
+- the material (book, DVD…), the same for all the copies;
 - the **ISBN**;
 - the copies, in the form "N available of M". Withdrawn copies are not counted in the total.
 
@@ -53,7 +54,6 @@ The columns are:
 
 - **Barcode**: the barcode of the copy, printed on the internal label;
 - **Call number**: see [Call number](#call-number);
-- **Material**: book, DVD or other;
 - **Level**: the reading level of the copy; it appears only if the library records it on the copies and not on the title;
 - **Status**: see [Copy statuses](#copy-statuses);
 - **On loan to**: see [Who has the copy](#who-has-the-copy);
@@ -62,7 +62,7 @@ The columns are:
 
 ### Call number
 
-The call number is the code written on the spine, which says where the copy goes back: for fiction the genre followed by the first letters of the author (for example `B DEL`), for non-fiction the number of the subject followed by the letters of the author (for example `590 ROS`). The exact form depends on the library's configuration. In the form of a copy the call number is proposed from the classification and can be changed by hand.
+The call number is the code written on the spine, which says where the copy goes back: for fiction the genre followed by the first letters of the author (for example `B DEL`), for non-fiction the number of the subject followed by the letters of the author (for example `590 ROS`). The exact form depends on the library's configuration. In the form of a copy the call number is proposed from the classification and can be changed by hand: copies of the same book can go in different places on the shelf.
 
 ### Copy statuses
 
@@ -102,7 +102,6 @@ At the right of each row, only with the cataloguing permission, are four icons; 
 The **Add copies** window creates one or more new copies of the book. It opens from **Add copies** in the record actions. The procedure is in [Add a copy to a book already in the catalogue](../guides/add-a-copy.md). The fields are:
 
 - **Number of copies**, from 1 to 100;
-- **Material**, the type of material;
 - **Call number**: left empty, it uses the one proposed from the classification (which appears in grey);
 - **Level of the copy**, if the library records it on the copies;
 - **Volume / number**, **Acquisition date** and **Notes on the copy**;
@@ -112,7 +111,7 @@ The **Add** button creates the copies and a message confirms "N copies added" wi
 
 ## Editing a copy
 
-The window "Edit copy", titled with the code of the copy, changes **Material**, **Call number**, **Level of the copy**, **Volume / number**, **Acquisition date**, **Notes on the copy** and **Reference only (not lent)**. The **Save** button confirms ("Copy updated"); **Cancel** exits.
+The window "Edit copy", titled with the code of the copy, changes **Call number**, **Level of the copy**, **Volume / number**, **Acquisition date**, **Notes on the copy** and **Reference only (not lent)**. The **Save** button confirms ("Copy updated"); **Cancel** exits.
 
 ## Changing the status of a copy
 
@@ -179,7 +178,8 @@ The fields of the **Publication** section:
 - **Year**, four digits;
 - **ISBN**;
 - **EAN (not an ISBN)**, for the materials that have an EAN without being books (a DVD);
-- **Physical description**, on a single line (pages, illustrations, format).
+- **Physical description**, on a single line (pages, illustrations, format);
+- **Material**, the type of material (book, DVD, reference…): it is one for the book and applies to all its copies. A material excluded from loans (for example reference) excludes all the copies from loans.
 
 ### Classification section
 
@@ -195,7 +195,7 @@ The **More** section is closed on opening, unless it already contains data. It c
 
 ### Single copy section
 
-If the book has a single copy, at the bottom of the form appears the section titled with the code of the copy ("Copy N"): "The record has a single copy: its data is edited here and saved together with the record." The fields are those of [Editing a copy](#editing-a-copy).
+If the book has a single copy, at the bottom of the form appears the section titled with the code of the copy ("Copy N"): "The record has a single copy: its data is edited here and saved together with the record." The fields are those of [Editing a copy](#editing-a-copy); the material is not there, because it is changed in the **Publication** section. With two or more copies the section does not appear.
 
 ## Form messages
 

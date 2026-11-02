@@ -17,8 +17,8 @@ is for whoever catalogues the books.
 
    <!-- figure: catalog/new-book-code | The New book page, ready to read the ISBN -->
 
-1. In **Material** choose the material of the copies, if it is not the one already selected (normally **Book**). The
-   material applies to all the copies added with this record.
+1. In **Material** choose the material of the book, if it is not the one already selected (normally **Book**). The
+   material belongs to the record and applies to all its copies.
 1. Read with the scanner the ISBN barcode, printed on the back of the book. The cursor is already in the **ISBN or EAN**
    field: the scanner enters the code and confirms by itself.
 1. Wait for the lookup. BiblioViva queries OPAC SBN and opens the most complete of the records found. Above the record
@@ -26,7 +26,8 @@ is for whoever catalogues the books.
 1. If the record is not the one of the book in hand, press **Other records (N)**, choose another record and press
    **Use this record**.
 1. Check the data in the sections **Record** and **Publication**, comparing them with the title page of the book:
-   **Title**, **Author**, **Publisher**, **Year** and **Physical description**. Write the author as "Surname, Name".
+   **Title**, **Author**, **Publisher**, **Year**, **Physical description** and **Material**. Write the author as
+   "Surname, Name".
 
    <!-- figure: catalog/new-book-form | The record found by OPAC SBN, with the cover next to the form -->
 
@@ -84,25 +85,48 @@ are not lent until it is classified. The copies need a label with the barcode be
 
 ## Possible problems
 
-- "This ISBN is already in the catalogue" appears: the book already has a record. To add more copies follow
-  [Add a copy to a book already in the catalogue](add-a-copy.md).
-- "The ISBN has a wrong check digit: check the digits." appears: the reading is wrong or the ISBN printed on the book is
-  not valid. Read the code again; if the error remains, follow
-  [Catalogue a book without an ISBN](catalog-without-isbn.md).
-- "The code read is neither an ISBN nor an EAN" appears: the scanner has read a code that is not the book's, for
-  example the one of a label. Read the ISBN barcode, normally above the price.
-- "No record found. The record can be filled in by hand.": OPAC SBN does not know the book. Press **Search by title** to
-  search with title and author, or **Enter by hand** to write the record; see
-  [Catalogue a book without an ISBN](catalog-without-isbn.md).
-- "The service cannot be reached. Check the Internet connection and try again later." appears: the BiblioViva computer
-  cannot reach OPAC SBN. Check the connection and press **Retry**; alternatively press **Enter by hand**.
-- Saving says "A record with this ISBN already exists": another book already has that ISBN. Open it from
-  **Catalogue** and add the copy from there.
-- Saving says "Pick the genre" or "Pick the subject": choose a genre (fiction) or a subject (non-fiction) in the
-  **Classification** section, or **Classify later**.
-- The record found has a year or a description different from the copy in hand: this happens when several editions of
-  the same book exist. Correct the fields in the form before saving, or choose another record with
-  **Other records (N)**.
+### The book is already in the catalogue
+
+"This ISBN is already in the catalogue" appears: the book already has a record. To add more copies follow
+[Add a copy to a book already in the catalogue](add-a-copy.md).
+
+### The ISBN has a wrong check digit
+
+"The ISBN has a wrong check digit: check the digits." appears: the reading is wrong or the ISBN printed on the book is
+not valid. Read the code again; if the error remains, follow
+[Catalogue a book without an ISBN](catalog-without-isbn.md).
+
+### The code read is not an ISBN
+
+"The code read is neither an ISBN nor an EAN" appears: the scanner has read a code that is not the book's, for
+example the one of a label. Read the ISBN barcode, normally above the price.
+
+### OPAC SBN does not find the book
+
+"No record found. The record can be filled in by hand." appears: OPAC SBN does not know the book. Press **Search by
+title** to search with title and author, or **Enter by hand** to write the record; see
+[Catalogue a book without an ISBN](catalog-without-isbn.md).
+
+### The service cannot be reached
+
+"The service cannot be reached. Check the Internet connection and try again later." appears: the BiblioViva computer
+cannot reach OPAC SBN. Check the connection and press **Retry**; alternatively press **Enter by hand**.
+
+### Saving finds an ISBN already in use
+
+Saving says "A record with this ISBN already exists": another book already has that ISBN. Open it from
+**Catalogue** and add the copy from there.
+
+### The genre or the subject is missing
+
+Saving says "Pick the genre" or "Pick the subject": choose a genre (fiction) or a subject (non-fiction) in the
+**Classification** section, or **Classify later**.
+
+### The record found does not match the copy
+
+The record found has a year or a description different from the copy in hand: this happens when several editions of
+the same book exist. Correct the fields in the form before saving, or choose another record with
+**Other records (N)**.
 
 ## Related pages
 

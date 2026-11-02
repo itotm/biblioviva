@@ -72,20 +72,40 @@ nella scheda e sulle tessere stampate da quel momento.
 
 ## Possibili problemi
 
-- Una classe non compare nel censimento: tutte le sue foto sono già fatte («Tutte le classi e le liste hanno le foto.»).
-  Per rifare una foto singola usare la scheda dell'utente.
-- «La fotocamera funziona solo con una connessione sicura (https)…»: la rete locale senza Tailscale non permette la
-  fotocamera. Usare **Carica file**, oppure aprire BiblioViva dall'indirizzo di Tailscale.
-- «Permesso negato: consentire l'uso della fotocamera nelle impostazioni del browser e riprovare.»: aprire le
-  impostazioni del sito nel browser (l'icona vicino all'indirizzo), consentire la fotocamera e ricaricare la pagina.
-- «Nessuna fotocamera trovata su questo dispositivo.» e «La fotocamera è già in uso da un'altra app.»: collegare la
-  fotocamera o chiudere l'altro programma che la usa; altrimenti usare **Carica file**.
-- «La fotocamera non ha risposto…»: il browser potrebbe ancora chiedere il permesso, o il permesso è stato negato in
-  precedenza per questo sito.
-- «File troppo grande: il limite è … MB.», «Il file non è un'immagine leggibile.» e «Formato immagine non supportato
-  (sono ammessi JPEG, PNG, WebP e HEIC).»: scegliere un altro file.
-- Non esiste la scheda **Censimento foto**: l'amministratore ha disattivato le foto, come spiega [Disattivare le foto o
-  le copertine](../../admin/guides/switch-off-photos-or-covers.md).
+### Una classe non compare nel censimento
+
+Tutte le sue foto sono già fatte («Tutte le classi e le liste hanno le foto.»). Per rifare una foto singola usare la
+scheda dell'utente.
+
+### La fotocamera richiede una connessione sicura
+
+Compare «La fotocamera funziona solo con una connessione sicura (https)…»: la rete locale senza Tailscale non permette
+la fotocamera. Usare **Carica file**, oppure aprire BiblioViva dall'indirizzo di Tailscale.
+
+### Il permesso della fotocamera è negato
+
+Compare «Permesso negato: consentire l'uso della fotocamera nelle impostazioni del browser e riprovare.»: aprire le
+impostazioni del sito nel browser (l'icona vicino all'indirizzo), consentire la fotocamera e ricaricare la pagina.
+
+### Nessuna fotocamera trovata o fotocamera già in uso
+
+Compaiono «Nessuna fotocamera trovata su questo dispositivo.» o «La fotocamera è già in uso da un'altra app.»: collegare
+la fotocamera o chiudere l'altro programma che la usa; altrimenti usare **Carica file**.
+
+### La fotocamera non risponde
+
+Compare «La fotocamera non ha risposto…»: il browser potrebbe ancora chiedere il permesso, o il permesso è stato negato
+in precedenza per questo sito.
+
+### Il file non viene accettato
+
+Compaiono «File troppo grande: il limite è … MB.», «Il file non è un'immagine leggibile.» o «Formato immagine non
+supportato (sono ammessi JPEG, PNG, WebP e HEIC).»: scegliere un altro file.
+
+### Manca la scheda Censimento foto
+
+Non esiste la scheda **Censimento foto**: l'amministratore ha disattivato le foto, come spiega [Disattivare le foto o le
+copertine](../../admin/guides/switch-off-photos-or-covers.md).
 
 ## Pagine correlate
 

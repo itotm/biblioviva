@@ -83,16 +83,28 @@ sue copie hanno la segnatura. Un libro appena classificato si può prestare e la
 
 ## Possibili problemi
 
-- «Il genere è obbligatorio» o «L'argomento è obbligatorio»: il salvataggio richiede la scelta. Scegliere genere o
-  argomento, oppure **Classifica dopo**.
-- Il livello di lettura non compare: la biblioteca non usa i livelli, oppure li assegna a ogni copia (vedere sopra).
-  L'amministratore decide in [Modificare la classificazione e i livelli di
-  lettura](../../admin/guides/classification.md).
-- Un libro non trova posto tra i generi o gli argomenti: scegliere il più vicino e annotarlo. L'elenco di generi e
-  argomenti lo modifica l'amministratore.
-- Una scheda già classificata va ricollocata: il modulo **Modifica scheda** cambia la classificazione ma non riscrive
-  le segnature delle copie. Per aggiornarle usare **Riclassifica** come sopra.
-- Compare «Questo libro è già classificato»: qualcun altro lo ha classificato nel frattempo. Premere **Salta**.
+### Mancano il genere o l'argomento
+
+Compare «Il genere è obbligatorio» o «L'argomento è obbligatorio»: il salvataggio richiede la scelta. Scegliere
+genere o argomento, oppure **Classifica dopo**.
+
+### Il livello di lettura non compare
+
+La biblioteca non usa i livelli, oppure li assegna a ogni copia (vedere sopra). L'amministratore decide in
+[Modificare la classificazione e i livelli di lettura](../../admin/guides/classification.md).
+
+### Un libro non trova posto tra i generi o gli argomenti
+
+Scegliere il più vicino e annotarlo. L'elenco di generi e argomenti lo modifica l'amministratore.
+
+### Una scheda già classificata va ricollocata
+
+Il modulo **Modifica scheda** cambia la classificazione ma non riscrive le segnature delle copie. Per aggiornarle
+usare **Riclassifica** come sopra.
+
+### Il libro è già classificato
+
+Compare «Questo libro è già classificato»: qualcun altro lo ha classificato nel frattempo. Premere **Salta**.
 
 ## Pagine correlate
 

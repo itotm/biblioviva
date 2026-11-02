@@ -235,8 +235,9 @@
 							<HeaderIcon size={ICON_SIZE.lg} aria-hidden="true" />
 						</IconTile>
 					{/if}
-					<!-- one line from tablets up (the whole title in its tooltip), two at most on a phone -->
-					<div class="min-w-0 flex-1">
+					<!-- one line from tablets up (the whole title in its tooltip), two at most on a phone,
+					     where the help button follows it (9.47) -->
+					<div class="min-w-0 md:flex-1">
 						<svelte:element
 							this={header.current?.titleTag ?? "h1"}
 							class="line-clamp-2 text-2xl leading-tight font-bold md:line-clamp-1 lg:text-[2rem]"
@@ -253,23 +254,36 @@
 						{/if}
 					</div>
 				{/if}
+				<!-- phones: the manual of this area, a round button beside the title (9.47, Q140) -->
+				<a
+					href={helpHref(data.docsBase, here)}
+					target="_blank"
+					rel="external noopener"
+					class="btn-icon size-11 shrink-0 rounded-full preset-filled-primary-500 shadow-[var(--bv-shadow-card)] transition-[filter] hover:brightness-110 md:hidden"
+					aria-label={i18n.t("nav.help")}
+					title={i18n.t("nav.help")}
+					data-testid="help-link-mobile"
+				>
+					<HelpIcon size={ICON_SIZE.lg} aria-hidden="true" />
+				</a>
 			</AppBar.Headline>
 			<AppBar.Trail class="ml-auto flex shrink-0 items-center gap-1">
 				{#if data.languages}
 					<!-- the public demo only: the visitor's language (Q120) -->
 					<LanguageSwitch languages={data.languages} current={data.locale} class="mr-1" />
 				{/if}
-				<!-- the manual of this area, on the documentation site (9.5b) -->
+				<!-- the manual of this area, on the documentation site (9.5b): a labelled button from
+				     tablets up, beside the title on phones (9.47, Q140) -->
 				<a
 					href={helpHref(data.docsBase, here)}
 					target="_blank"
 					rel="external noopener"
-					class="btn-icon hover:preset-tonal"
-					aria-label={i18n.t("nav.help")}
+					class="mr-1 btn hidden h-10 preset-filled-primary-500 shadow-[var(--bv-shadow-card)] transition-[filter] hover:brightness-110 md:inline-flex"
 					title={i18n.t("nav.help")}
 					data-testid="help-link"
 				>
 					<HelpIcon size={ICON_SIZE.md} aria-hidden="true" />
+					<span>{i18n.t("nav.help")}</span>
 				</a>
 				{#if data.user}
 					{#if hasPermission(data.user, "patrons") || hasPermission(data.user, "catalog")}

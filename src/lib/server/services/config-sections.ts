@@ -464,7 +464,7 @@ export function saveConfigWrites(
 	configDir: string,
 	section: string,
 	writes: readonly FileWrite[],
-	actor: AuditActor,
+	actor: AuditActor | null,
 	details: Json,
 	now = new Date(),
 ): ConfigChange {

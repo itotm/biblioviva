@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 import { existsSync, mkdtempSync, rmSync } from "node:fs";
+import { eq } from "drizzle-orm";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { strToU8, unzipSync, zipSync } from "fflate";
@@ -8,7 +9,7 @@ import { createTestDb } from "../../../../tests/helpers/db.js";
 import { NAMESPACES } from "#lib/i18n/index.js";
 import { resetConfigCache } from "#lib/server/config/index.js";
 import type { Db } from "#lib/server/db/client.js";
-import { staffUser } from "#lib/server/db/schema.js";
+import { auditLog, staffUser } from "#lib/server/db/schema.js";
 import { resetEnvCache } from "#lib/server/env.js";
 import type { Dictionaries } from "#lib/server/i18n/packs.js";
 import { builtInDictionaries } from "#lib/server/i18n/registry.js";
@@ -92,6 +93,17 @@ describe("language packs", () => {
 		expect(existsSync(join(dir, "i18n", "de"))).toBe(false);
 		// the removal is a change of the history like the installation
 		expect(change.action).toBe("config.ui");
+	});
+
+	it("installs a pack from the first-run wizard, before any account exists (9.48)", () => {
+		const { db } = database();
+		installPack(db, dir, germanZip(), null, english, "en", null);
+		expect(packFolders(dir)).toContain("de");
+		const row = db.select().from(auditLog).where(eq(auditLog.action, "config.ui")).get();
+		expect(row).toMatchObject({
+			userId: null,
+			details: { languagePack: "de", installed: true },
+		});
 	});
 
 	it("takes a zip without a folder when the code is given, and replaces a pack", () => {

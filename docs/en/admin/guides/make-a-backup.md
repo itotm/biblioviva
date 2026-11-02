@@ -63,13 +63,26 @@ The **Backup or export of some parts** panel allows saving only what is needed.
 
 ## Possible problems
 
-- The list shows "No backups yet.": the first one is made at the scheduled time or with **Back up now**.
-- A backup carries the label **Made up at start**: it was scheduled for the night, the computer was off and BiblioViva
-  made it at the next start-up.
-- The `.zip` file is very large: covers weigh more than the database. Use a medium with more space.
-- The time and the duration of the backups are changed in **Administration**, **Configuration**, **Backup**, in the
-  **Backup time** and **Days kept** fields.
-- To put the data of a backup back into BiblioViva see [Restart from a backup](../../setup/restore.md).
+### The list of backups is empty
+
+The list shows "No backups yet.": the first one is made at the scheduled time or with **Back up now**.
+
+### A backup is marked as made up at start
+
+The backup was scheduled for the night, the computer was off and BiblioViva made it at the next start-up.
+
+### The zip file is very large
+
+The `.zip` file is very large: covers weigh more than the database. Use a medium with more space.
+
+### The time or duration of the backups must change
+
+The time and the duration of the backups are changed in **Administration**, **Configuration**, **Backup**, in the
+**Backup time** and **Days kept** fields.
+
+### The data of a backup must be put back
+
+To put the data of a backup back into BiblioViva see [Restart from a backup](../../setup/restore.md).
 
 ## Related pages
 

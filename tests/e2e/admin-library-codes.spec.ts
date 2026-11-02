@@ -38,7 +38,8 @@ test.describe.serial("library codes and barcodes", () => {
 		await expect(page.getByRole("status").getByText("Tipi di copia salvati")).toBeVisible();
 		await reopen();
 		const cd = types.locator('[data-testid="code-row"][data-code="cd"]');
-		await expect(cd.getByTestId("code-usage")).toHaveText("0 copie");
+		// the books of the type: the type is the record's (9.45)
+		await expect(cd.getByTestId("code-usage")).toHaveText("0 libri");
 		await cd.getByTestId("code-input").fill("audio");
 		await save();
 		await reopen();

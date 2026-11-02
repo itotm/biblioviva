@@ -75,16 +75,29 @@ The record of the book is open and the copies say where they are and whether the
 
 ## Possible problems
 
-- "No book matches the filters.": remove a filter, write fewer words or only the author's surname, or press
-  **Clear filters**.
-- The book exists but does not appear in the list: if all its copies are withdrawn tick **Also show withdrawn books**.
-  The **Available only** filter hides the books without copies on the shelf.
-- The table does not change while typing: the search starts at 3 characters; a code of digits only (an ISBN or part of
-  it) is searched with any length.
-- The book appears twice: two records of the same title exist, for example because one was written without an ISBN. Add
-  the copies to only one and remove the other record with [Correct a book record](edit-a-record.md).
-- The scanner does not open the record: the code read is neither that of a BiblioViva copy nor an ISBN present in the
-  catalogue. Check that the cursor is in the search field, then try typing the title.
+### No book matches the filters
+
+"No book matches the filters." appears: remove a filter, write fewer words or only the author's surname, or press
+**Clear filters**.
+
+### The book exists but does not appear in the list
+
+If all its copies are withdrawn tick **Also show withdrawn books**. The **Available only** filter hides the books
+without copies on the shelf.
+
+### The table does not change while typing
+
+The search starts at 3 characters; a code of digits only (an ISBN or part of it) is searched with any length.
+
+### The book appears twice
+
+Two records of the same title exist, for example because one was written without an ISBN. Add the copies to only one
+and remove the other record with [Correct a book record](edit-a-record.md).
+
+### The scanner does not open the record
+
+The code read is neither that of a BiblioViva copy nor an ISBN present in the catalogue. Check that the cursor is in
+the search field, then try typing the title.
 
 ## Related pages
 

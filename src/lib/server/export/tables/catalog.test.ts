@@ -54,7 +54,6 @@ describe("catalog export", () => {
 			db,
 			novel,
 			{
-				itemType: "libro",
 				callNumber: "",
 				readingLevel: "",
 				enumeration: "",

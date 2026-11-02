@@ -2,8 +2,8 @@
 // Codes of the library that the catalogue and the patrons use (PLAN.md step 11.4): the item
 // types (`library.itemTypes`, with the loan rules of `circulation.itemTypeOverrides` that name
 // them). Like the classification (11.1), a draft is
-// planned first — how many copies or students each code has, which codes disappear and where their
-// copies or students go (a renamed code: to its new name) — and saved as one configuration change
+// planned first — how many books or students each code has, which codes disappear and where their
+// books or students go (a renamed code: to its new name) — and saved as one configuration change
 // with the database updates inside it. Also the barcode counters: the next card number and the
 // next copy barcode as a draft would produce them, without using them up.
 import { readFileSync } from "node:fs";
@@ -14,7 +14,7 @@ import type { AppConfig } from "#lib/server/config/schema.js";
 import type { ConfigIssue } from "#lib/server/config/validate.js";
 import type { ServerContext } from "#lib/server/context.js";
 import type { Db, DbOrTx } from "#lib/server/db/client.js";
-import { item } from "#lib/server/db/schema.js";
+import { biblio } from "#lib/server/db/schema.js";
 import { nextCardNumber, type CardCounterStart } from "#lib/server/barcodes/cards.js";
 import { nextItemBarcode } from "#lib/server/barcodes/items.js";
 import { codeTable } from "#lib/server/barcodes/table.js";
@@ -54,13 +54,13 @@ export class CodesNotReadyError extends Error {
 	}
 }
 
-/** Copies per item type. */
+/** Records per item type (the type is the record's, step 9.45). */
 export function itemTypeUsage(db: DbOrTx): Record<string, number> {
 	return Object.fromEntries(
 		db
-			.select({ code: item.itemType, n: sql<number>`count(*)` })
-			.from(item)
-			.groupBy(item.itemType)
+			.select({ code: biblio.itemType, n: sql<number>`count(*)` })
+			.from(biblio)
+			.groupBy(biblio.itemType)
 			.all()
 			.map((r) => [r.code, r.n]),
 	);
@@ -172,7 +172,7 @@ export function planItemTypes(
 }
 
 /**
- * Saves the item types: the copies of removed (or renamed) types move to their replacement, the
+ * Saves the item types: the books of removed (or renamed) types move to their replacement, the
  * loan rules of a renamed type follow it, all in one configuration change.
  */
 export function saveItemTypes(
@@ -195,9 +195,9 @@ export function saveItemTypes(
 			const moved: Record<string, string> = {};
 			for (const r of plan.removed) {
 				if (r.replacement !== null && r.count > 0) {
-					tx.update(item)
+					tx.update(biblio)
 						.set({ itemType: r.replacement, updatedAt: now.toISOString() })
-						.where(eq(item.itemType, r.code))
+						.where(eq(biblio.itemType, r.code))
 						.run();
 					copies += r.count;
 					moved[r.code] = r.replacement;

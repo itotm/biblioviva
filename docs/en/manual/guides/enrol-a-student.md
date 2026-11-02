@@ -68,25 +68,54 @@ not printed yet." until the card is marked as printed. With the card in hand, th
 
 ## Possible problems
 
-- "A student needs a class (the level)." and "A student needs a section.": choose the year and the section before
-  pressing **Create patron**.
-- "Section not found among the active classes: classes are created in Administration → Configuration → Classes.": the
-  class does not exist. Ask the administrator to create it, as explained in [Set up the
-  classes](../../admin/guides/set-up-classes.md).
-- "This section has no such class: choose a section of the class.": the year and the section chosen do not go
-  together. Choose the section again, among those the list offers after the year is chosen.
-- "Student id already assigned to another patron.": the student is probably already entered. Look for them in
-  **Patrons** before creating them a second time.
-- "The card number is or looks like a copy barcode: choose another number." or "Card number already assigned to another
-  patron.": empty the **Card number** field and let BiblioViva choose the number.
-- "Invalid email address.": correct the address or empty the field.
-- "The camera only works over a secure connection (https)…": the installation without Tailscale cannot use the camera.
-  Press **Upload file** and choose a photo already saved on the computer.
-- "File too large…" or "Unsupported image format (use JPEG, PNG, WebP or HEIC).": choose another file.
-- "The photo was not saved: take it again from the patron's page.": the student was created but the photo was not. Open
-  the patron's record and press **Photo**.
-- The **Photo** tab does not appear: the administrator has switched off the photos, as explained in [Switch off the
-  photos or the covers](../../admin/guides/switch-off-photos-or-covers.md).
+### The year or the section is missing
+
+"A student needs a class (the level)." and "A student needs a section." appear: choose the year and the section before
+pressing **Create patron**.
+
+### The section is not among the active classes
+
+"Section not found among the active classes: classes are created in Administration → Configuration → Classes."
+appears: the class does not exist. Ask the administrator to create it, as explained in
+[Set up the classes](../../admin/guides/set-up-classes.md).
+
+### The section does not match the class
+
+"This section has no such class: choose a section of the class." appears: the year and the section chosen do not go
+together. Choose the section again, among those the list offers after the year is chosen.
+
+### The student id is already assigned
+
+"Student id already assigned to another patron." appears: the student is probably already entered. Look for them in
+**Patrons** before creating them a second time.
+
+### The card number is not accepted
+
+"The card number is or looks like a copy barcode: choose another number." or "Card number already assigned to another
+patron." appears: empty the **Card number** field and let BiblioViva choose the number.
+
+### The email address is not valid
+
+"Invalid email address." appears: correct the address or empty the field.
+
+### The camera needs a secure connection
+
+"The camera only works over a secure connection (https)…" appears: the installation without Tailscale cannot use the
+camera. Press **Upload file** and choose a photo already saved on the computer.
+
+### The photo file is not accepted
+
+"File too large…" or "Unsupported image format (use JPEG, PNG, WebP or HEIC)." appears: choose another file.
+
+### The photo was not saved
+
+"The photo was not saved: take it again from the patron's page." appears: the student was created but the photo was
+not. Open the patron's record and press **Photo**.
+
+### The Photo tab does not appear
+
+The administrator has switched off the photos, as explained in
+[Switch off the photos or the covers](../../admin/guides/switch-off-photos-or-covers.md).
 
 ## Related pages
 

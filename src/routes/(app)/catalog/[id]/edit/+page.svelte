@@ -23,7 +23,6 @@
 			? {
 					...data.initial,
 					itemId: String(data.item.id),
-					itemType: data.item.itemType,
 					itemCallNumber: data.item.callNumber,
 					itemReadingLevel: data.item.readingLevel,
 					itemEnumeration: data.item.enumeration,
@@ -59,16 +58,6 @@
 					description={i18n.t("catalog.form.singleCopyHint")}
 				>
 					<Grid span>
-						<Field label={i18n.t("catalog.item.itemType")}
-							><Select
-								{...fields.itemType?.as("select")}
-								data-testid="edit-item-type"
-							>
-								{#each options.itemTypes as t (t.code)}
-									<option value={t.code}>{t.label}</option>
-								{/each}
-							</Select></Field
-						>
 						<div>
 							<Field label={i18n.t("catalog.item.callNumber")}
 								><Input

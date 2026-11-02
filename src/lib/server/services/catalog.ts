@@ -76,10 +76,10 @@ export type BiblioIssueCode =
 	| "classCodeUnknown"
 	| "classCodeNotForFiction"
 	| "readingLevelNotAllowed"
-	| "readingLevelOutOfRange";
+	| "readingLevelOutOfRange"
+	| "itemTypeUnknown";
 
 export type ItemIssueCode =
-	| "itemTypeUnknown"
 	| "readingLevelNotAllowed"
 	| "readingLevelOutOfRange"
 	| "acquisitionDateInvalid"
@@ -144,6 +144,8 @@ export interface BiblioData {
 	series: string | null;
 	seriesNumber: string | null;
 	dewey: string | null;
+	/** A code of `library.itemTypes`, the same for every copy (step 9.45). */
+	itemType: string;
 	/** Null while the record waits to be classified (step 9.21). */
 	kind: BiblioKind | null;
 	genreCode: string | null;
@@ -183,6 +185,11 @@ export function validateBiblio(
 		if (!Number.isInteger(publicationYear) || publicationYear < 1450 || publicationYear > max) {
 			issues.push({ field: "publicationYear", code: "yearImplausible" });
 		}
+	}
+	// no type chosen: the first of the configuration (step 9.45)
+	const itemType = blankToNull(input.itemType ?? "") ?? rules.itemTypes[0]?.code ?? "libro";
+	if (!rules.itemTypes.some((t) => t.code === itemType)) {
+		issues.push({ field: "itemType", code: "itemTypeUnknown" });
 	}
 	const genreCode = blankToNull(input.genreCode);
 	const classCode = blankToNull(input.classCode);
@@ -240,6 +247,7 @@ export function validateBiblio(
 			? blankToNull(input.seriesNumber ?? "")
 			: null,
 		dewey: blankToNull(input.dewey),
+		itemType,
 		kind: input.kind === "" ? null : input.kind,
 		genreCode: input.kind === "fiction" ? genreCode : null,
 		classCode: input.kind === "nonfiction" ? classCode : null,
@@ -351,6 +359,7 @@ const TRACKED: (keyof BiblioData)[] = [
 	"series",
 	"seriesNumber",
 	"dewey",
+	"itemType",
 	"kind",
 	"genreCode",
 	"classCode",
@@ -372,8 +381,10 @@ export function updateBiblio(
 		if (!existing) {
 			throw new BiblioNotFoundError(id);
 		}
+		// a form without the type keeps the record's (step 9.45)
+		const sent = { ...input, itemType: input.itemType || existing.itemType };
 		const data = validateBiblio(
-			demoBiblio(input, demoSpecial(rules), existing, now),
+			demoBiblio(sent, demoSpecial(rules), existing, now),
 			rules,
 			now,
 		);
@@ -390,6 +401,16 @@ export function updateBiblio(
 			.run();
 		if (existing.kind === null && data.kind !== null) {
 			fillCallNumbers(tx, id, data, rules, now);
+		}
+		// a type kept out of loans (reference books) keeps every copy of the title out (9.45)
+		if (
+			changed.includes("itemType") &&
+			rules.itemTypes.find((t) => t.code === data.itemType)?.notForLoan
+		) {
+			tx.update(item)
+				.set({ notForLoan: 1, updatedAt: now.toISOString() })
+				.where(eq(item.biblioId, id))
+				.run();
 		}
 		audit(tx, actor, "biblio.update", "biblio", id, { changed }, now);
 		return changed;

@@ -77,12 +77,19 @@ Per ritirare le modifiche non ancora salvate del riquadro, premere **Annulla mod
 
 ## Possibili problemi
 
-- Compare «La fine è prima dell'inizio.» su un periodo: correggere le date di **Dal** e **Al**. Il pulsante **Salva**
-  resta spento finché il periodo non è valido.
-- Un giorno non si lascia chiudere con un clic: è già chiuso per la settimana, perché è una festività nazionale o perché
-  cade in un periodo di chiusura.
-- Le date da ricordare del banco, come una lettura in classe, non sono giorni di chiusura e non cambiano le scadenze:
-  vedere [Calendario](../../manual/screens/calendar.md).
+### La fine di un periodo è prima dell'inizio
+
+Compare «La fine è prima dell'inizio.» su un periodo: correggere le date di **Dal** e **Al**. Il pulsante **Salva**
+resta spento finché il periodo non è valido.
+
+### Un giorno non si lascia chiudere con un clic
+
+Il giorno è già chiuso per la settimana, perché è una festività nazionale o perché cade in un periodo di chiusura.
+
+### Le date del banco non cambiano le scadenze
+
+Le date da ricordare del banco, come una lettura in classe, non sono giorni di chiusura e non cambiano le scadenze:
+vedere [Calendario](../../manual/screens/calendar.md).
 
 ## Pagine correlate
 

@@ -126,21 +126,39 @@ copia viene eliminata e torna in uso il modello fornito con BiblioViva.
 
 ## Possibili problemi
 
-- Il pulsante **Personalizza** manca. Il modello è già personalizzato o è stato aggiunto: usare **Modifica**.
-- Il pulsante **Salva** è spento. O non c'è nessuna modifica da salvare, oppure il modello non si può stampare. Leggere
-  il riquadro rosso «Il template non si può stampare così» sopra il disegno: indica il campo sconosciuto o il file
-  mancante.
-- L'immagine non si carica. Il file deve essere PNG, JPEG, WebP, GIF o SVG (senza script), oppure un carattere WOFF2,
-  WOFF o TTF, e non superare la dimensione massima indicata sotto **Carica un file**.
-- Una parte della tessera non si può muovere nel disegno. Le parti dentro una sezione di codice si modificano nella
-  vista **Codice**: il disegno lo segnala sotto la tessera. Per il codice vedere [Print templates: authoring
-  guide](../../../templates-authoring.md#editing-from-the-admin-ui-drawing-and-code).
-- Le scritte stampate escono tagliate o spostate. Tenerle dentro la linea tratteggiata. Se il retro non cade dietro al
-  fronte, calibrare la stampa: [Calibrare la stampa fronte-retro](calibrate-duplex.md).
-- Uscendo dalla pagina compare «Uscire senza salvare?». Ci sono modifiche non salvate: premere **Esci senza salvare**
-  per perderle, oppure restare e premere **Salva**.
-- Il modello non si può eliminare. Un modello usato da un'impostazione non si elimina: scegliere prima un altro modello
-  in **Configurazione** → **Tessere**.
+### Il pulsante Personalizza manca
+
+Il modello è già personalizzato o è stato aggiunto: usare **Modifica**.
+
+### Il pulsante Salva è spento
+
+O non c'è nessuna modifica da salvare, oppure il modello non si può stampare. Leggere il riquadro rosso «Il template non
+si può stampare così» sopra il disegno: indica il campo sconosciuto o il file mancante.
+
+### L'immagine non si carica
+
+Il file deve essere PNG, JPEG, WebP, GIF o SVG (senza script), oppure un carattere WOFF2, WOFF o TTF, e non superare la
+dimensione massima indicata sotto **Carica un file**.
+
+### Una parte della tessera non si può muovere nel disegno
+
+Le parti dentro una sezione di codice si modificano nella vista **Codice**: il disegno lo segnala sotto la tessera. Per
+il codice vedere [Print templates: authoring
+guide](../../../templates-authoring.md#editing-from-the-admin-ui-drawing-and-code).
+
+### Le scritte stampate escono tagliate o spostate
+
+Tenerle dentro la linea tratteggiata. Se il retro non cade dietro al fronte, calibrare la stampa:
+[Calibrare la stampa fronte-retro](calibrate-duplex.md).
+
+### Uscendo dalla pagina compare «Uscire senza salvare?»
+
+Ci sono modifiche non salvate: premere **Esci senza salvare** per perderle, oppure restare e premere **Salva**.
+
+### Il modello non si può eliminare
+
+Un modello usato da un'impostazione non si elimina: scegliere prima un altro modello in **Configurazione** →
+**Tessere**.
 
 ## Pagine correlate
 

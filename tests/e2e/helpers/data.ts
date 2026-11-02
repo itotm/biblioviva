@@ -64,7 +64,7 @@ export interface CreatedBook {
 }
 
 /**
- * A fiction record (genre B) with `copies` copies of an item type; returns their barcodes. With
+ * A fiction record (genre B) of an item type with `copies` copies; returns their barcodes. With
  * `later` the record is saved without classification ("Classifica dopo", step 9.21).
  */
 export async function createBook(
@@ -79,13 +79,14 @@ export async function createBook(
 	await page.getByLabel("Titolo", { exact: true }).fill(title);
 	await page.getByLabel("Autore", { exact: true }).fill("Prova, Anna");
 	await page.getByTestId("quick-publisher").click();
+	// the material is the record's (9.45)
+	await page.getByTestId("biblio-item-type").selectOption(itemType);
 	await page.getByTestId(later ? "kind-later" : "genre-B").click();
 	await page.getByTestId("biblio-submit").click();
 	await expect(page).toHaveURL(/\/catalog\/\d+$/);
 	await waitForHydration(page);
 	await (await pageAction(page, "add-copies")).click();
 	await page.getByTestId("add-copies-count").fill(String(copies));
-	await page.getByTestId("add-type").selectOption(itemType);
 	await page.getByTestId("confirm-button").click();
 	const rows = page.getByTestId("items-table").locator("tbody tr");
 	await expect(rows).toHaveCount(copies);

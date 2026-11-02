@@ -30,7 +30,6 @@ import {
 import { openLoanOf } from "./catalog-search.js";
 
 export interface ItemData {
-	itemType: string;
 	callNumber: string | null;
 	readingLevel: string | null;
 	enumeration: string | null;
@@ -44,12 +43,11 @@ export function validateItem(
 	rules: CatalogRules,
 	/** Null for a record still to classify (step 9.21). */
 	biblioKind: BiblioKind | null,
+	/** The record's item type (step 9.45): its rule may keep the copy from loans. */
+	recordType: string,
 ): ItemData {
 	const issues: CatalogIssue[] = [];
-	const type = rules.itemTypes.find((t) => t.code === input.itemType);
-	if (!type) {
-		issues.push({ field: "itemType", code: "itemTypeUnknown" });
-	}
+	const type = rules.itemTypes.find((t) => t.code === recordType);
 	const readingLevel = blankToNull(input.readingLevel);
 	if (readingLevel !== null) {
 		if (
@@ -70,7 +68,6 @@ export function validateItem(
 		throw new CatalogValidationError(issues);
 	}
 	return {
-		itemType: input.itemType,
 		callNumber: blankToNull(input.callNumber),
 		readingLevel,
 		enumeration: blankToNull(input.enumeration),
@@ -107,6 +104,7 @@ export function addItems(
 			demoItem(input, "", undefined, now),
 			rules,
 			record.kind as BiblioKind | null,
+			record.itemType,
 		);
 		const today = isoDateIn(now, rules.timezone);
 		const year = Number(zonedParts(now, rules.timezone).year);
@@ -122,7 +120,6 @@ export function addItems(
 					biblioId,
 					barcode,
 					callNumber,
-					itemType: data.itemType,
 					readingLevel: data.readingLevel,
 					enumeration: data.enumeration,
 					acquisitionDate: data.acquisitionDate ?? today,
@@ -136,21 +133,12 @@ export function addItems(
 			ids.push(row.id);
 			barcodes.push(barcode);
 		}
-		audit(
-			tx,
-			actor,
-			"item.create",
-			"biblio",
-			biblioId,
-			{ copies, itemType: data.itemType },
-			now,
-		);
+		audit(tx, actor, "item.create", "biblio", biblioId, { copies }, now);
 		return { ids, barcodes };
 	});
 }
 
 const ITEM_TRACKED: (keyof ItemData)[] = [
-	"itemType",
 	"callNumber",
 	"readingLevel",
 	"enumeration",
@@ -180,9 +168,9 @@ export function updateItem(
 			demoItem(input, suggested, existing, now),
 			rules,
 			(record?.kind ?? null) as BiblioKind | null,
+			record?.itemType ?? "",
 		);
 		const current: ItemData = {
-			itemType: existing.itemType,
 			callNumber: existing.callNumber,
 			readingLevel: existing.readingLevel,
 			enumeration: existing.enumeration,

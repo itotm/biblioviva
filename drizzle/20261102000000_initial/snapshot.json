@@ -1,7 +1,7 @@
 {
   "version": "7",
   "dialect": "sqlite",
-  "id": "1d2b898d-7fa8-47db-ab82-17c3d313d593",
+  "id": "79b25d90-afa9-472d-8fa9-ea0686eab63e",
   "prevIds": [
     "00000000-0000-0000-0000-000000000000"
   ],
@@ -333,6 +333,16 @@
       "notNull": false,
       "autoincrement": false,
       "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "biblio",
+      "name": "item_type",
+      "type": "text",
+      "notNull": true,
+      "autoincrement": false,
+      "default": "'libro'",
       "generated": null,
       "entityType": "columns"
     },
@@ -1183,16 +1193,6 @@
       "notNull": false,
       "autoincrement": false,
       "default": null,
-      "generated": null,
-      "entityType": "columns"
-    },
-    {
-      "table": "item",
-      "name": "item_type",
-      "type": "text",
-      "notNull": true,
-      "autoincrement": false,
-      "default": "'libro'",
       "generated": null,
       "entityType": "columns"
     },
@@ -2528,6 +2528,20 @@
       "columns": [
         {
           "value": "class_code",
+          "isExpression": false
+        }
+      ],
+      "isUnique": false,
+      "where": null,
+      "origin": "manual",
+      "entityType": "indexes"
+    },
+    {
+      "table": "biblio",
+      "name": "biblio_item_type",
+      "columns": [
+        {
+          "value": "item_type",
           "isExpression": false
         }
       ],

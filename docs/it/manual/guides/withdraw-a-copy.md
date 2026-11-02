@@ -75,17 +75,30 @@ stato restano nel registro.
 
 ## Possibili problemi
 
-- Compare «La copia è in prestito: prima registra la restituzione.»: una copia in prestito non si ritira. Registrare
-  la restituzione, vedere [Restituire un libro](return-a-book.md), poi cambiare lo stato.
-- Compare «La copia ha prestiti registrati: va ritirata, non eliminata.»: una copia già prestata non si elimina, per
-  non perdere lo storico. Scegliere **Ritirato**.
-- Un libro ritirato non si trova più in catalogo: spuntare **Mostra anche i libri ritirati**, vedere
-  [Cercare un libro](find-a-book.md).
-- Al banco una copia si rifiuta con «risulta … e non può essere prestato»: la copia ha uno stato che non permette il
-  prestito. Aprire la scheda del libro e controllare lo stato: se il libro è di nuovo sullo scaffale scegliere
-  **Disponibile**.
-- Molte copie risultano smarrite dopo l'inventario: le copie non lette alla chiusura dell'inventario sono segnate
-  **Smarrito**; vedere [Fare l'inventario](stocktaking.md) per come annullare la chiusura entro una settimana.
+### La copia è in prestito
+
+Compare «La copia è in prestito: prima registra la restituzione.»: una copia in prestito non si ritira. Registrare la
+restituzione, vedere [Restituire un libro](return-a-book.md), poi cambiare lo stato.
+
+### La copia ha prestiti registrati
+
+Compare «La copia ha prestiti registrati: va ritirata, non eliminata.»: una copia già prestata non si elimina, per non
+perdere lo storico. Scegliere **Ritirato**.
+
+### Un libro ritirato non si trova più in catalogo
+
+Spuntare **Mostra anche i libri ritirati**, vedere [Cercare un libro](find-a-book.md).
+
+### Al banco la copia viene rifiutata
+
+Al banco una copia si rifiuta con «risulta … e non può essere prestato»: la copia ha uno stato che non permette il
+prestito. Aprire la scheda del libro e controllare lo stato: se il libro è di nuovo sullo scaffale scegliere
+**Disponibile**.
+
+### Molte copie risultano smarrite dopo l'inventario
+
+Le copie non lette alla chiusura dell'inventario sono segnate **Smarrito**; vedere [Fare l'inventario](stocktaking.md)
+per come annullare la chiusura entro una settimana.
 
 ## Pagine correlate
 

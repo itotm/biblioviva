@@ -61,15 +61,25 @@ class. Removed patrons can be found in **Patrons** by choosing the **Status** â†
 
 ## Possible problems
 
-- "Has N open loans: they must be returned or marked lost first.": the patron still has books. Return them at the
-  circulation desk or mark them lost, then repeat the removal.
-- The **Remove student** button is missing: the account does not have the permission to remove patrons. Log in with the
-  "Administration" account.
-- Removing several patrons: patrons with open loans are not removed and stay in the archive, with no message for each of
-  them. The final number of the notice counts them.
-- The wrong patron was removed: there is no way to undo it. If the student still exists they can be entered again as a
-  new patron, with a new card number: see [Enrol a student](enrol-a-student.md). The past loans do not come back in
-  their name.
+### The patron still has open loans
+
+"Has N open loans: they must be returned or marked lost first." appears: the patron still has books. Return them at the
+circulation desk or mark them lost, then repeat the removal.
+
+### The button to remove the student is missing
+
+The **Remove student** button is missing: the account does not have the permission to remove patrons. Log in with the
+"Administration" account.
+
+### After removing several patrons some remain
+
+When several patrons are removed together, those with open loans are not removed and stay in the archive, with no
+message for each of them. The final number of the notice counts them.
+
+### The wrong patron was removed
+
+There is no way to undo it. If the student still exists they can be entered again as a new patron, with a new card
+number: see [Enrol a student](enrol-a-student.md). The past loans do not come back in their name.
 
 ## Related pages
 

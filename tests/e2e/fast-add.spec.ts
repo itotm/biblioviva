@@ -195,7 +195,7 @@ test.describe.serial("fast add", () => {
 		await scan(page, DVD_EAN);
 		await expect(page.getByTestId("stage-form")).toBeVisible();
 		await expect(page.getByLabel("EAN (non ISBN)", { exact: true })).toHaveValue(DVD_EAN);
-		await expect(page.getByTestId("fast-item-type")).toHaveValue("dvd");
+		await expect(page.getByTestId("biblio-item-type")).toHaveValue("dvd");
 
 		// a code that is neither is refused
 		await page.goto("/cataloging/new");

@@ -19,6 +19,8 @@ import { sequenceName } from "#lib/server/barcodes/counters.js";
 import { generateCode } from "#lib/shared/barcodes/pattern.js";
 import { DEFAULT_CODE_FORMATS } from "#lib/shared/barcodes/presets.js";
 import { buildCodeTable, type CodeTable } from "#lib/shared/barcodes/table.js";
+import { invertAuthorName } from "#lib/shared/author-name.js";
+import { author3 } from "#lib/shared/classification.js";
 import { schoolYearFor } from "#lib/shared/school-year.js";
 import { classLabel, levelOf, levelPosition, type SchoolStructure } from "#lib/shared/school.js";
 import { normalizeSearchText } from "#lib/shared/text.js";
@@ -338,6 +340,9 @@ export function seedDatabase(db: Db, options: SeedOptions = {}): SeedSummary {
 			author: string;
 			series: string | null;
 			seriesNumber: number | null;
+			itemType: string;
+			/** A reference work: its copies are kept from loans. */
+			reference: boolean;
 		}[] = [];
 		const usedIsbn = new Set<string>();
 		// one fiction record in twenty belongs to an invented series, numbered in order; no faker
@@ -371,7 +376,8 @@ export function seedDatabase(db: Db, options: SeedOptions = {}): SeedSummary {
 				usedIsbn.add(isbn);
 			}
 			const translation = fiction && i % 50 === 6 ? translations[(i / 50) | 0] : undefined;
-			const drawnAuthor = faker.book.author();
+			// stored as the catalogue writes it, "Surname, Name" (9.44)
+			const drawnAuthor = invertAuthorName(faker.book.author());
 			const author = translation?.[2] ?? drawnAuthor;
 			const series =
 				fiction && i % 20 === 3
@@ -405,6 +411,8 @@ export function seedDatabase(db: Db, options: SeedOptions = {}): SeedSummary {
 							)
 						: null,
 				classCode: fiction ? null : faker.helpers.arrayElement(o.classCodes),
+				// the type is the record's (9.45): a few DVDs and reference books
+				itemType: i % 41 === 7 ? referenceType : i % 40 === 5 ? dvdType : bookType,
 				dewey: fiction
 					? null
 					: String(faker.number.int({ min: 1, max: 999 })).padStart(3, "0"),
@@ -424,6 +432,8 @@ export function seedDatabase(db: Db, options: SeedOptions = {}): SeedSummary {
 				author,
 				series: series ?? null,
 				seriesNumber,
+				itemType: values.itemType ?? bookType,
+				reference: i % 41 === 7,
 			});
 		}
 		summary.biblios = biblioIds.length;
@@ -445,9 +455,7 @@ export function seedDatabase(db: Db, options: SeedOptions = {}): SeedSummary {
 			const barcode = generateCode(itemFormat, { counter: n, year });
 			// a few recent copies still wait for their labels
 			const labelsPending = year === 2026 && index % 5 === 0;
-			const cutter = must(b.author.split(/[\s,]+/)[0], "author")
-				.slice(0, 3)
-				.toUpperCase();
+			const cutter = author3(b.author);
 			const shelf = readingLevelOverride ?? b.readingLevel;
 			const callNumber =
 				b.kind === "fiction"
@@ -462,13 +470,7 @@ export function seedDatabase(db: Db, options: SeedOptions = {}): SeedSummary {
 						biblioId: b.id,
 						barcode,
 						callNumber,
-						itemType:
-							index % 40 === 0
-								? dvdType
-								: index % 41 === 0
-									? referenceType
-									: bookType,
-						notForLoan: index % 41 === 0 ? 1 : 0,
+						notForLoan: b.reference ? 1 : 0,
 						readingLevel: readingLevelOverride ?? null,
 						status:
 							index % 97 === 0 ? "lost" : index % 89 === 0 ? "damaged" : "available",

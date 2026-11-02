@@ -97,23 +97,46 @@ censimento il contatore della classe, per esempio «12 di 14 con foto», è sali
 
 ## Possibili problemi
 
-- «Nessuna foto trovata. Con «Correggi riquadri» si possono disegnare a mano.»: provare l'altro tipo di immagine,
-  **Foto** o **Scansione**; altrimenti disegnare i riquadri con **Aggiungi riquadro**.
-- «Impossibile caricare il modulo di raddrizzamento. Controllare la connessione e riprovare.»: la ricerca delle foto usa
-  un componente che il browser scarica la prima volta. Controllare la connessione e ricaricare la pagina.
-- «L'immagine è troppo grande (al massimo N MB).», «Formato non supportato: sono ammessi JPEG, PNG, WebP e HEIC.» e «Il
-  file non è un'immagine leggibile.»: scegliere un altro file o ridurre l'immagine.
-- «Al massimo N foto per immagine.»: dividere l'immagine in due, per esempio metà classe per volta. Ogni classe può
-  avere più immagini.
-- «Già scelto per la foto N: liberarla prima di sceglierlo qui.»: la persona è già assegnata a un'altra foto. Liberare
-  quella con **— Nessuno —**.
-- «Scegliere almeno un utente prima di salvare.»: il pulsante **Salva le foto** resta spento finché almeno una foto ha
-  una persona.
-- «Questa foto è di un utente rimosso: il riquadro è stato coperto.»: la persona è stata rimossa da BiblioViva dopo la
-  scelta. Il riquadro è coperto nell'immagine e non si può usare.
-- L'elenco non offre una persona che c'è in classe: nel menu compaiono solo gli utenti della classe o della lista
-  scelta. Controllare che sia inserita nella classe giusta, come spiega [Correggere i dati di un
-  utente](edit-a-patron.md).
+### Nessuna foto trovata
+
+Compare «Nessuna foto trovata. Con «Correggi riquadri» si possono disegnare a mano.»: provare l'altro tipo di immagine,
+**Foto** o **Scansione**; altrimenti disegnare i riquadri con **Aggiungi riquadro**.
+
+### Il modulo di raddrizzamento non si carica
+
+Compare «Impossibile caricare il modulo di raddrizzamento. Controllare la connessione e riprovare.»: la ricerca delle
+foto usa un componente che il browser scarica la prima volta. Controllare la connessione e ricaricare la pagina.
+
+### L'immagine non viene accettata
+
+Compaiono «L'immagine è troppo grande (al massimo N MB).», «Formato non supportato: sono ammessi JPEG, PNG, WebP e HEIC.»
+o «Il file non è un'immagine leggibile.»: scegliere un altro file o ridurre l'immagine.
+
+### Ci sono troppe foto in una sola immagine
+
+Compare «Al massimo N foto per immagine.»: dividere l'immagine in due, per esempio metà classe per volta. Ogni classe
+può avere più immagini.
+
+### La persona è già assegnata a un'altra foto
+
+Compare «Già scelto per la foto N: liberarla prima di sceglierlo qui.»: la persona è già assegnata a un'altra foto.
+Liberare quella con **— Nessuno —**.
+
+### Le foto non si possono salvare
+
+Compare «Scegliere almeno un utente prima di salvare.»: il pulsante **Salva le foto** resta spento finché almeno una foto
+ha una persona.
+
+### La foto è di un utente rimosso
+
+Compare «Questa foto è di un utente rimosso: il riquadro è stato coperto.»: la persona è stata rimossa da BiblioViva dopo
+la scelta. Il riquadro è coperto nell'immagine e non si può usare.
+
+### Una persona della classe manca nell'elenco
+
+L'elenco non offre una persona che c'è in classe: nel menu compaiono solo gli utenti della classe o della lista scelta.
+Controllare che sia inserita nella classe giusta, come spiega [Correggere i dati di un
+utente](edit-a-patron.md).
 
 ## Pagine correlate
 

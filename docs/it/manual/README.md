@@ -5,6 +5,10 @@ Le guide spiegano un compito dall'inizio alla fine, passo per passo; le pagine d
 schermata con le sue parti e i suoi messaggi. Il lettore di codici a barre USB è lo strumento normale per leggere
 tessere, copie e ISBN; il telefono è facoltativo.
 
+In ogni pagina di BiblioViva il pulsante **Guida** apre in una nuova scheda la pagina di questo manuale che descrive
+quella parte del programma: sul computer è in alto a destra, sul telefono è il pulsante rotondo con il punto di
+domanda accanto al titolo della pagina.
+
 ## Guide
 
 ### Prestiti

@@ -93,7 +93,7 @@ const CATALOG_LIMITS = maxLengths<CatalogImportColumn>({
 	subjects: record.subjects,
 	notes: record.notes,
 	callNumber: itemFormSchema.entries.callNumber,
-	itemType: itemFormSchema.entries.itemType,
+	itemType: record.itemType,
 	enumeration: itemFormSchema.entries.enumeration,
 	itemNotes: itemFormSchema.entries.notes,
 });
@@ -126,6 +126,12 @@ export interface CatalogImportOptions {
 	 * at commit, `false` turns the rows of those titles into errors, `undefined` = not answered yet.
 	 */
 	enableClassPerItem?: boolean;
+	/**
+	 * Answer to the item-type question (Q139): the type is the record's, so copies of one new
+	 * title with different types ask whether the record takes the type of most of them; `true`
+	 * does so, `false` turns the rows of those titles into errors, `undefined` = not answered yet.
+	 */
+	useMajorityType?: boolean;
 	/** Today in the library's time zone (acquisition date default). */
 	today: string;
 }
@@ -150,33 +156,46 @@ export interface CatalogImportResult {
 	generatedBarcodes: number;
 	/** The class-per-copy question: how many titles have copies in different classes (0 = no question). */
 	classPerItemQuestion: number;
+	/** The item-type question: how many new titles have copies of different types (0 = no question). */
+	typeQuestion: number;
 	canCommit: boolean;
 }
 
+interface Known {
+	id: number;
+	kind: BiblioKind | null;
+	itemType: string;
+}
+
 interface Snapshot {
-	byIsbn: Map<string, { id: number; kind: BiblioKind | null }>;
+	byIsbn: Map<string, Known>;
 	/** Records created by an earlier import, by their `biblio_key` (Koha's biblionumber). */
-	byKey: Map<string, { id: number; kind: BiblioKind | null }>;
+	byKey: Map<string, Known>;
 	/** barcode → record id */
 	barcodes: Map<string, number>;
 }
 
 function loadSnapshot(db: DbOrTx): Snapshot {
-	const byIsbn = new Map<string, { id: number; kind: BiblioKind | null }>();
+	const byIsbn = new Map<string, Known>();
 	for (const b of db
-		.select({ id: biblio.id, isbn: biblio.isbn, kind: biblio.kind })
+		.select({ id: biblio.id, isbn: biblio.isbn, kind: biblio.kind, itemType: biblio.itemType })
 		.from(biblio)
 		.where(sql`${biblio.isbn} IS NOT NULL`)
 		.all()) {
-		byIsbn.set(b.isbn ?? "", { id: b.id, kind: b.kind as BiblioKind | null });
+		byIsbn.set(b.isbn ?? "", { ...b, kind: b.kind as BiblioKind | null });
 	}
-	const byKey = new Map<string, { id: number; kind: BiblioKind | null }>();
+	const byKey = new Map<string, Known>();
 	for (const b of db
-		.select({ id: biblio.id, sourceId: biblio.sourceId, kind: biblio.kind })
+		.select({
+			id: biblio.id,
+			sourceId: biblio.sourceId,
+			kind: biblio.kind,
+			itemType: biblio.itemType,
+		})
 		.from(biblio)
 		.where(sql`${biblio.source} = 'import' AND ${biblio.sourceId} IS NOT NULL`)
 		.all()) {
-		byKey.set(b.sourceId ?? "", { id: b.id, kind: b.kind as BiblioKind | null });
+		byKey.set(b.sourceId ?? "", { ...b, kind: b.kind as BiblioKind | null });
 	}
 	const barcodes = new Map<string, number>();
 	for (const i of db
@@ -318,6 +337,7 @@ function biblioInputOf(
 	p: Prepared,
 	options: CatalogImportOptions,
 	readingLevel: string,
+	itemType: string,
 ): { input: BiblioFormInput | null; reasons: RowReason[] } {
 	const reasons: RowReason[] = [];
 	const i = p.input;
@@ -363,6 +383,7 @@ function biblioInputOf(
 			series: series?.series ?? i.series,
 			seriesNumber: series?.number ?? i.seriesNumber,
 			dewey: i.dewey,
+			itemType,
 			// no classification in the file: the title waits in the list "Da classificare" (9.21)
 			kind: p.kind ?? "",
 			genreCode: p.kind === "fiction" ? p.genreCode : "",
@@ -373,6 +394,17 @@ function biblioInputOf(
 		},
 		reasons,
 	};
+}
+
+/** The item types of the copies of one title, the most frequent first (the Q139 question). */
+function typesOf(members: readonly Prepared[], fallback: string): string[] {
+	const counts = new Map<string, number>();
+	for (const m of members) {
+		const t = m.input.itemType === "" ? fallback : m.input.itemType;
+		counts.set(t, (counts.get(t) ?? 0) + 1);
+	}
+	// a stable sort: on a tie the type met first in the file wins
+	return [...counts].sort((a, b) => b[1] - a[1]).map(([t]) => t);
 }
 
 /** Copies of one title spread over different classes (the §3.17 question). */
@@ -417,6 +449,8 @@ function validate(
 	const classPerItem =
 		scheme.classPerItem || (options.enableClassPerItem === true && questionTitles > 0);
 	const rules: CatalogRules = { ...options.rules, scheme: { ...scheme, classPerItem } };
+	const defaultType = rules.itemTypes[0]?.code ?? "libro";
+	let typeTitles = 0;
 
 	const seenBarcodes = new Map<string, number>();
 	const rows: CatalogImportRow[] = [];
@@ -436,6 +470,18 @@ function validate(
 				? snapshot.byKey.get(first.input.biblioKey)
 				: undefined) ?? (first.isbn ? snapshot.byIsbn.get(first.isbn) : undefined);
 		const groupReasons: RowReason[] = [];
+		// the type is the record's (Q139): an existing record keeps its own
+		const types = typesOf(members, defaultType);
+		if (!existing && types.length > 1) {
+			typeTitles++;
+			if (options.useMajorityType !== true) {
+				groupReasons.push({
+					code: options.useMajorityType === false ? "typeDiffers" : "typeQuestion",
+					params: { types: types.join(", ") },
+				});
+			}
+		}
+		const recordType = existing?.itemType ?? types[0] ?? defaultType;
 		const classes = classesOf(members);
 		if (classes.length > 1 && !classPerItem) {
 			groupReasons.push({
@@ -455,7 +501,7 @@ function validate(
 		let kind: BiblioKind | null = existing?.kind ?? first.kind;
 		if (!existing) {
 			const titleClass = classPerItem ? "" : (classes.find(Boolean) ?? "");
-			const built = biblioInputOf(first, options, titleClass);
+			const built = biblioInputOf(first, options, titleClass, recordType);
 			groupReasons.push(...built.reasons);
 			biblioInput = built.input;
 			if (biblioInput) {
@@ -517,10 +563,6 @@ function validate(
 			try {
 				itemData = validateItem(
 					{
-						itemType:
-							m.input.itemType === ""
-								? (rules.itemTypes[0]?.code ?? "libro")
-								: m.input.itemType,
 						callNumber: m.input.callNumber,
 						readingLevel: classPerItem && kind === "fiction" ? m.readingLevel : "",
 						enumeration: m.input.enumeration,
@@ -530,19 +572,14 @@ function validate(
 					},
 					rules,
 					kind,
+					recordType,
 				);
 			} catch (e) {
 				if (!(e instanceof CatalogValidationError)) {
 					throw e;
 				}
 				for (const issue of e.issues) {
-					reasons.push({
-						code: `catalog.${issue.code}`,
-						params:
-							issue.code === "itemTypeUnknown"
-								? { value: m.input.itemType }
-								: undefined,
-					});
+					reasons.push({ code: `catalog.${issue.code}` });
 				}
 			}
 			if (reasons.length > 0 || !itemData) {
@@ -579,6 +616,7 @@ function validate(
 		toClassify,
 		generatedBarcodes,
 		classPerItemQuestion: scheme.classPerItem ? 0 : questionTitles,
+		typeQuestion: typeTitles,
 		canCommit: canCommit(counts) && counts.new > 0,
 		prepared: titles,
 	};
@@ -631,7 +669,8 @@ export function commitCatalogImport(
 	const check = validate(db, inputs, options);
 	if (
 		!check.canCommit ||
-		(check.classPerItemQuestion > 0 && options.enableClassPerItem === undefined)
+		(check.classPerItemQuestion > 0 && options.enableClassPerItem === undefined) ||
+		(check.typeQuestion > 0 && options.useMajorityType === undefined)
 	) {
 		throw new ImportNotReadyError();
 	}
@@ -750,7 +789,6 @@ function writeCatalog(
 					callNumber:
 						copy.item.callNumber ??
 						(suggestedCallNumber(rules, record, copy.item.readingLevel) || null),
-					itemType: copy.item.itemType,
 					readingLevel: copy.item.readingLevel,
 					enumeration: copy.item.enumeration,
 					status: copy.status,

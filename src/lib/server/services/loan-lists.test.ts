@@ -92,7 +92,6 @@ function setup(): {
 		db,
 		record,
 		{
-			itemType: "libro",
 			callNumber: "",
 			readingLevel: "",
 			enumeration: "",

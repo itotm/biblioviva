@@ -65,14 +65,22 @@ doppioni.
 
 ## Possibili problemi
 
-- Il gruppo non viene riconosciuto: la riga segnala che il gruppo docenti non è stato trovato ed elenca i gruppi
-  validi. Creare il gruppo con **Nuovo gruppo docenti** nella pagina **Classi**, oppure correggere il nome nel file.
-- Un docente compare due volte: la riga segnala che la stessa persona è già alla riga indicata: togliere il doppione
-  dal file.
-- Due docenti hanno lo stesso nome e cognome: la pagina chiede di scegliere quale aggiornare, con **Scegli
-  l'utente**, oppure **Crea un nuovo utente**.
-- Per chi arriva da Koha: i docenti si estraggono con una query già pronta: vedere
-  [le istruzioni tecniche](../../../import/README.md).
+### Il gruppo non viene riconosciuto
+
+La riga segnala che il gruppo docenti non è stato trovato ed elenca i gruppi validi. Creare il gruppo con **Nuovo
+gruppo docenti** nella pagina **Classi**, oppure correggere il nome nel file.
+
+### Un docente compare due volte
+
+La riga segnala che la stessa persona è già alla riga indicata: togliere il doppione dal file.
+
+### Due docenti hanno lo stesso nome e cognome
+
+La pagina chiede di scegliere quale aggiornare, con **Scegli l'utente**, oppure **Crea un nuovo utente**.
+
+### I docenti arrivano da Koha
+
+I docenti si estraggono con una query già pronta: vedere [le istruzioni tecniche](../../../import/README.md).
 
 ## Pagine correlate
 

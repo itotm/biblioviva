@@ -157,20 +157,30 @@ might change at the computer's first restart, and the search described at step 6
 <!-- variant: tailscale -->
 **With Tailscale**
 
-- The tag `tag:biblioviva` does not appear among those chosen in the key form: the `tagOwners` entry was not saved or
-  contains an error. Open "Access controls" again and check that the text is saved.
-- After the installation the warning "requested tags are invalid or not permitted" points to the same cause; the
-  technical solution is in the page [Deployment notes (technical)](../../../deploy.md).
-- The network name contains the school's name: in the "DNS" page the "Rename tailnet" button allows choosing a random
-  name among those proposed. Do it before turning on the certificates, because changing the name later breaks the
-  connections already in use. The [Tailnet name](https://tailscale.com/kb/1217/tailnet-name) page describes the limits.
+### The tag does not appear among those in the key form
+
+The tag `tag:biblioviva` does not appear among those chosen in the key form: the `tagOwners` entry was not saved or
+contains an error. Open "Access controls" again and check that the text is saved.
+
+### After the installation a warning about tags appears
+
+After the installation the warning "requested tags are invalid or not permitted" points to the same cause, that is the
+`tagOwners` entry not saved or containing an error; the technical solution is in the page [Deployment notes
+(technical)](../../../deploy.md).
+
+### The network name contains the school's name
+
+In the "DNS" page the "Rename tailnet" button allows choosing a random name among those proposed. Do it before turning
+on the certificates, because changing the name later breaks the connections already in use. The [Tailnet
+name](https://tailscale.com/kb/1217/tailnet-name) page describes the limits.
 <!-- /variant -->
 <!-- variant: lan -->
 **With the local network**
 
-- Whoever manages the network does not know what a DHCP reservation is: it is a function of the router, described in
-  its settings as "static DHCP", "reserved address" or "address reservation". The glossary gives an explanation for
-  whoever is not of the trade.
+### Whoever manages the network does not know what a DHCP reservation is
+
+It is a function of the router, described in its settings as "static DHCP", "reserved address" or "address
+reservation". The glossary gives an explanation for whoever is not of the trade.
 <!-- /variant -->
 
 ## Related pages

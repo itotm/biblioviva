@@ -143,24 +143,32 @@ Se l'indirizzo non si apre, si vedano i possibili problemi qui sotto e
 <!-- variant: tailscale -->
 **Con Tailscale**
 
-- Il browser non trova `biblioviva.<tailnet>.ts.net`: l'applicazione di Tailscale non è attiva sul dispositivo, oppure
-  è collegata a un altro account, oppure MagicDNS è spento nella pagina «DNS» della console (passo 3).
-- Il lucchetto manca o il browser segnala un certificato non valido: i certificati HTTPS non sono attivi nella pagina
-  «DNS» della console (passo 3).
+### Il browser non trova l'indirizzo di BiblioViva
+
+Il browser non trova `biblioviva.<tailnet>.ts.net`: l'applicazione di Tailscale non è attiva sul dispositivo, oppure è
+collegata a un altro account, oppure MagicDNS è spento nella pagina «DNS» della console (passo 3).
+
+### Il lucchetto manca o il certificato non è valido
+
+Il lucchetto manca o il browser segnala un certificato non valido: i certificati HTTPS non sono attivi nella pagina
+«DNS» della console (passo 3).
 <!-- /variant -->
 <!-- variant: lan -->
 **Con la rete locale**
 
-- `biblioviva.local` non si apre su un computer: usare l'indirizzo con il numero. Se non è più quello annotato
-  (l'indirizzo non era riservato, vedere il passo 3), leggerlo sul computer di BiblioViva con il comando seguente, che
-  stampa gli indirizzi del computer; il primo è lo stesso che il programma di installazione scrive alla fine del
-  passo 4.
+### biblioviva.local non si apre su un computer
 
-  ```sh
-  hostname -I
-  ```
-- L'indirizzo con il numero non si apre dagli altri computer: la porta `8080` può essere bloccata nella rete; chiedere a
-  chi la gestisce (passo 3).
+Usare l'indirizzo con il numero. Se non è più quello annotato (l'indirizzo non era riservato, vedere il passo 3),
+leggerlo sul computer di BiblioViva con il comando seguente, che stampa gli indirizzi del computer; il primo è lo
+stesso che il programma di installazione scrive alla fine del passo 4.
+
+```sh
+hostname -I
+```
+
+### L'indirizzo con il numero non si apre dagli altri computer
+
+La porta `8080` può essere bloccata nella rete; chiedere a chi la gestisce (passo 3).
 <!-- /variant -->
 
 ## Pagine correlate

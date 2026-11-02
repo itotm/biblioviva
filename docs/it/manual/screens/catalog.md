@@ -125,7 +125,8 @@ le copie dei libri scelti. In alto la finestra indica «N copie». Si procede co
 1. In **Cosa cambiare** scegliere il dato: **Stato**, **Materiale**, **Escluso dal prestito**, **Data di acquisizione**
    e, quando la biblioteca registra il livello di lettura sulle copie, **Livello della copia**.
 1. In **Nuovo valore** indicare il valore. Per lo stato le scelte sono **Disponibile**, **Smarrito**, **Danneggiato**,
-   **In riparazione** e **Ritirato**.
+   **In riparazione** e **Ritirato**. Per il materiale la scelta ha sotto l'avviso «Il materiale è del titolo: cambia
+   per tutte le sue copie.»: il materiale è uno per titolo, quindi cambia per tutte le copie di ogni libro scelto.
 1. Per lo stato, scrivere il **Motivo**. Il motivo è obbligatorio per le copie smarrite e ritirate e resta nel registro
    di ogni copia.
 1. Premere **Controlla**. La finestra dice quante copie cambiano («N copie cambiano») e quali restano come sono: quelle

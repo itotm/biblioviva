@@ -61,7 +61,6 @@
 	let addOpen = $state(false);
 	let copies = $state(1);
 	const emptyItem = (): ItemFormInput => ({
-		itemType: options.itemTypes[0]?.code ?? "libro",
 		callNumber: "",
 		readingLevel: "",
 		enumeration: "",
@@ -115,7 +114,6 @@
 	let editDraft = $state<ItemFormInput>(emptyItem());
 	function openEdit(it: Copy): void {
 		editDraft = {
-			itemType: it.itemType,
 			callNumber: it.callNumber ?? "",
 			readingLevel: it.readingLevel ?? "",
 			enumeration: it.enumeration ?? "",
@@ -191,18 +189,10 @@
 			: it.status === "available" && it.notForLoan
 				? ITEM_STATUS.not_for_loan
 				: ITEM_STATUS[it.status];
-	const typeLabel = (code: string): string =>
-		options.itemTypes.find((t) => t.code === code)?.label ?? code;
 </script>
 
 {#snippet itemFields(model: ItemFormInput, prefix: string)}
 	<Grid from="sm" gap="3">
-		<Field label={i18n.t("catalog.item.itemType")}
-			><Select bind:value={model.itemType} data-testid="{prefix}-type">
-				{#each options.itemTypes as t (t.code)}<option value={t.code}>{t.label}</option
-					>{/each}
-			</Select></Field
-		>
 		<label class="label">
 			<span class="label-text">{i18n.t("catalog.item.callNumber")}</span>
 			<Input
@@ -254,7 +244,6 @@
 				<tr>
 					<th>{i18n.t("catalog.detail.columns.barcode")}</th>
 					<th>{i18n.t("catalog.detail.columns.callNumber")}</th>
-					<th>{i18n.t("catalog.detail.columns.itemType")}</th>
 					{#if perItemClass}<th>{i18n.t("catalog.detail.columns.readingLevel")}</th>{/if}
 					<th>{i18n.t("catalog.detail.columns.status")}</th>
 					<th>{i18n.t("catalog.detail.columns.borrower")}</th>
@@ -270,7 +259,6 @@
 					<tr class="border-t border-surface-200" data-testid="item-row-{it.barcode}">
 						<td class="p-2 font-mono">{it.barcode}</td>
 						<td class="p-2 font-mono">{it.callNumber ?? ""}</td>
-						<td class="p-2">{typeLabel(it.itemType)}</td>
 						{#if perItemClass}<td class="p-2">{it.readingLevel ?? ""}</td>{/if}
 						<td class="p-2"><StatusBadge status={statusOf(it)} /></td>
 						<td class="p-2">

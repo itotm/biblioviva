@@ -42,6 +42,8 @@ const runSchema = v.object({
 	useSpecialValues: v.optional(v.boolean(), false),
 	/** The class-per-copy answer: omitted while not asked or not answered. */
 	enableClassPerItem: v.optional(v.boolean()),
+	/** The item-type answer (Q139): omitted while not asked or not answered. */
+	useMajorityType: v.optional(v.boolean()),
 });
 
 /** The validate phase: repeatable, writes nothing. */

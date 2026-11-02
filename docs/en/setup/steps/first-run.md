@@ -57,6 +57,21 @@ The first screen may appear in English. BiblioViva speaks one language per insta
 
 The language can also be changed later, from **Administration** → **Configuration** → **Appearance and language**.
 
+To use a language other than Italian and English, already translated and published with this version of BiblioViva,
+install it right away, from the "Need another language?" section under the choice of language:
+
+1. Press **Add a language**. The **Add a language** panel appears.
+1. Open the **Languages available on GitHub** list and choose the language. Under the list you see the percentage of
+   texts translated and the kind of translation.
+1. Press **Install**. When the installation is over the guided setup switches to that language at once, and it is
+   already chosen.
+1. Press **Next**.
+
+The language chosen becomes the one of the installation, valid for all the staff, and can be changed later from
+**Appearance and language**. For a computer without internet, or for a pack prepared yourself, **Upload a pack (zip)**
+installs a ZIP downloaded elsewhere. The other operations are described in the guide [Add a
+language](../../admin/guides/add-a-language.md).
+
 Whoever moves BiblioViva to another computer, or starts again after a failure, does not answer the questions of the
 guided procedure: under the choice of language they press **Restore from a backup** and choose the archive made with
 **Export everything**. The procedure is in the section [From the first run](../restore.md#from-the-first-run) of
@@ -221,16 +236,33 @@ had already been completed: signing in requires the passwords chosen then. To st
 
 ## Possible problems
 
-- The page does not open with Tailscale: the computer does not have Tailscale switched on and connected to the school's
-  account, or the names feature (MagicDNS) or the HTTPS certificates are not on in the Tailscale console. The step
-  [Prepare the network](network.md) describes both checks.
-- The page does not open on the local network: the computer is not on the same network as BiblioViva, or the name
-  `biblioviva.local` is not recognised. Use the numeric address of the computer, as indicated above.
-- A password was lost: passwords cannot be seen again. Signing in with `admin`, the others are changed from
-  **Administration** → **Staff accounts**. For the password of `admin` the technical procedure "Forgotten admin
-  password" of the page [Deployment notes (technical)](../../../deploy.md#installing-updating-logs-step-85) is needed.
-- The **Next** button does not switch on: a field of the step is empty or not valid. The field to correct shows a
-  warning: for example the password of at least 8 characters or the start of the year in the form `MM-DD`.
+### The page does not open with Tailscale
+
+The computer does not have Tailscale switched on and connected to the school's account, or the names feature (MagicDNS)
+or the HTTPS certificates are not on in the Tailscale console. The step [Prepare the network](network.md) describes both
+checks.
+
+### The page does not open on the local network
+
+The computer is not on the same network as BiblioViva, or the name `biblioviva.local` is not recognised. Use the numeric
+address of the computer, as indicated above.
+
+### A password was lost
+
+Passwords cannot be seen again. Signing in with `admin`, the others are changed from **Administration** → **Staff
+accounts**. For the password of `admin` the technical procedure "Forgotten admin password" of the page [Deployment notes
+(technical)](../../../deploy.md#installing-updating-logs-step-85) is needed.
+
+### The list of languages cannot be reached
+
+"The list of languages cannot be reached" appears: the computer that runs BiblioViva is not connected to the internet.
+On a computer with internet, download the language's file from the BiblioViva release page (the **Release page on
+GitHub, to download the zips** link under the list) and upload it with **Upload a pack (zip)**.
+
+### The Next button does not switch on
+
+A field of the step is empty or not valid. The field to correct shows a warning: for example the password of at least 8
+characters or the start of the year in the form `MM-DD`.
 
 ## Related pages
 

@@ -78,17 +78,32 @@ annullare: [Annullare una modifica della configurazione](undo-a-configuration-ch
 
 ## Possibili problemi
 
-- Non si sa quale lato scegliere nella finestra di stampa. La pagina lo scrive sopra l'elenco dei passi, nella riga
-  «Come gira il foglio». Se la stampante gira il foglio in altro modo, cambiare **Come gira il foglio** nella sezione
-  **Tessere** e ripetere la calibrazione.
-- I valori letti sono molto grandi. Controllare che la stampa sia al 100 % e senza margini aggiunti, e che il lato della
-  finestra di stampa sia quello indicato.
-- Dopo il salvataggio il bordo tagliato non è ancora sullo 0. Ripetere la lettura e salvare i nuovi numeri: la
-  correzione si somma.
-- I campi non accettano il numero. Ammessi numeri da −20 a 20 mm, a passi di mezzo millimetro.
-- La pagina non si apre. La calibrazione la vede solo l'account `admin`.
-- Si vuole annullare la correzione. Annullare la modifica dalla cronologia della configurazione: [Annullare una modifica
-  della configurazione](undo-a-configuration-change.md).
+### Non si sa quale lato scegliere nella finestra di stampa
+
+La pagina lo scrive sopra l'elenco dei passi, nella riga «Come gira il foglio». Se la stampante gira il foglio in altro
+modo, cambiare **Come gira il foglio** nella sezione **Tessere** e ripetere la calibrazione.
+
+### I valori letti sono molto grandi
+
+Controllare che la stampa sia al 100 % e senza margini aggiunti, e che il lato della finestra di stampa sia quello
+indicato.
+
+### Dopo il salvataggio il bordo tagliato non è sullo 0
+
+Ripetere la lettura e salvare i nuovi numeri: la correzione si somma.
+
+### I campi non accettano il numero
+
+Ammessi numeri da −20 a 20 mm, a passi di mezzo millimetro.
+
+### La pagina non si apre
+
+La calibrazione la vede solo l'account `admin`.
+
+### Si vuole annullare la correzione
+
+Annullare la modifica dalla cronologia della configurazione: [Annullare una modifica della
+configurazione](undo-a-configuration-change.md).
 
 ## Pagine correlate
 

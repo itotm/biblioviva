@@ -69,17 +69,29 @@ etichette e incollarle: finché il libro non ha il codice sulla copertina, al ba
 
 ## Possibili problemi
 
-- La ricerca per titolo non trova niente: compare «Nessuna scheda trovata. La scheda si può compilare a mano.». Provare
-  con meno parole o con il solo cognome dell'autore (premere **Nuovo codice** e ripetere **Senza codice**), oppure
-  compilare la scheda a mano.
-- Compare «Il servizio non è raggiungibile…»: il computer di BiblioViva non raggiunge OPAC SBN. Premere **Riprova**
-  o compilare la scheda a mano: i dati scritti a mano sono validi quanto quelli trovati.
-- Il salvataggio dice «Anno non plausibile»: l'anno non è un numero compreso tra 1450 e l'anno prossimo. Correggerlo o
-  lasciare il campo vuoto.
-- Il salvataggio dice «ISBN non valido (controllare le cifre)»: il libro ha un ISBN ma è stato scritto male. Leggerlo di
-  nuovo con il lettore o correggere le cifre nel campo **ISBN**.
-- Autore ed editore mancano: sono obbligatori. Usare «Anonimo», «AA. VV.», «s.n.» o «s.l.», che BiblioViva
-  riconosce come valori ammessi.
+### La ricerca per titolo non trova niente
+
+Compare «Nessuna scheda trovata. La scheda si può compilare a mano.». Provare con meno parole o con il solo cognome
+dell'autore (premere **Nuovo codice** e ripetere **Senza codice**), oppure compilare la scheda a mano.
+
+### Il servizio non è raggiungibile
+
+Compare «Il servizio non è raggiungibile…»: il computer di BiblioViva non raggiunge OPAC SBN. Premere **Riprova** o
+compilare la scheda a mano: i dati scritti a mano sono validi quanto quelli trovati.
+
+### L'anno non è plausibile
+
+Il salvataggio dice «Anno non plausibile»: l'anno non è un numero compreso tra 1450 e l'anno prossimo. Correggerlo o
+lasciare il campo vuoto.
+
+### L'ISBN non è valido
+
+Il salvataggio dice «ISBN non valido (controllare le cifre)»: il libro ha un ISBN ma è stato scritto male. Leggerlo di
+nuovo con il lettore o correggere le cifre nel campo **ISBN**.
+
+### Autore ed editore mancano
+
+Sono obbligatori. Usare «Anonimo», «AA. VV.», «s.n.» o «s.l.», che BiblioViva riconosce come valori ammessi.
 
 ## Pagine correlate
 

@@ -124,13 +124,23 @@ profile)](../../../deploy.md#off-site-copies-optional-offsite-compose-profile).
 
 ## Possible problems
 
-- The list shows no recent backups: the computer stayed off for long or the time was changed. Press **Back up now** and
-  check the settings in the **Backup** section of the configuration.
-- The `scp` command does not find the folder: check the user and the address, and that the `~/biblioviva/backups` folder
-  exists on the BiblioViva computer.
-- The downloaded `.zip` file is very large: the covers weigh more than the database. Use a drive with more space.
-- The **Backups** page does not show a "Last off-site copy": the off-site copy is optional and not on, unless configured
-  as described in the technical page indicated above.
+### The list shows no recent backups
+
+The computer stayed off for long or the time was changed. Press **Back up now** and check the settings in the
+**Backup** section of the configuration.
+
+### The scp command does not find the folder
+
+Check the user and the address, and that the `~/biblioviva/backups` folder exists on the BiblioViva computer.
+
+### The downloaded zip file is very large
+
+The covers weigh more than the database. Use a drive with more space.
+
+### The last off-site copy is missing
+
+The **Backups** page does not show a "Last off-site copy": the off-site copy is optional and not on, unless configured
+as described in the technical page indicated above.
 
 ## Related pages
 

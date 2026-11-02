@@ -76,21 +76,39 @@ change](undo-a-configuration-change.md).
 
 ## Possible problems
 
-- The **Save** button is off and a sheet carries the "To fix" mark. One of the measures is not valid. Read the reason
-  under the fields: the code may have letters, digits, dashes and underscores; another sheet may already have the same
-  code; the name is required; the measures are numbers from 0 upwards, with labels larger than zero, and columns and
-  rows are whole numbers.
-- "The labels take … mm: more than the width of an A4 sheet" appears: the columns, the width, the spaces and the left
-  margin, added together, exceed 210 mm. Check the measures; the same applies to height with 297 mm.
-- "The pair needs an even number of rows" appears: the sheet is used for the pair of labels: choose an even number of
-  rows or use that sheet only for single labels.
-- The sheet cannot be deleted: **Delete** is off for sheets in use: under the measures "Used for …" appears. First
-  choose another sheet in the label settings.
-- The **Print test page** button is off. First save the changes; the button applies to the sheet already saved.
-- The printed outlines are all shifted in the same way. The margins are wrong: correct **Top margin (mm)** and **Left
-  margin (mm)**. Also check that the print is at 100%.
-- A column or row of outlines is shifted more and more. The spaces between labels are wrong: correct **Space between
-  columns (mm)** and **Space between rows (mm)**.
+### The Save button is off and a sheet is "To fix"
+
+One of the measures is not valid. Read the reason under the fields: the code may have letters, digits, dashes and
+underscores; another sheet may already have the same code; the name is required; the measures are numbers from 0
+upwards, with labels larger than zero, and columns and rows are whole numbers. The **Save** button is off and a sheet
+carries the "To fix" mark.
+
+### The labels are wider than the A4 sheet
+
+"The labels take … mm: more than the width of an A4 sheet" appears: the columns, the width, the spaces and the left
+margin, added together, exceed 210 mm. Check the measures; the same applies to height with 297 mm.
+
+### The pair needs an even number of rows
+
+"The pair needs an even number of rows" appears: the sheet is used for the pair of labels: choose an even number of
+rows or use that sheet only for single labels.
+
+### The sheet cannot be deleted
+
+**Delete** is off for sheets in use: under the measures "Used for …" appears. First choose another sheet in the label
+settings.
+
+### The Print test page button is off
+
+The **Print test page** button is off. First save the changes; the button applies to the sheet already saved.
+
+### The printed outlines are all shifted in the same way
+
+The margins are wrong: correct **Top margin (mm)** and **Left margin (mm)**. Also check that the print is at 100%.
+
+### A column or row of outlines is shifted more and more
+
+The spaces between labels are wrong: correct **Space between columns (mm)** and **Space between rows (mm)**.
 
 ## Related pages
 

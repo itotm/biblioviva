@@ -74,12 +74,19 @@ To withdraw the panel's changes not yet saved, press **Discard changes**.
 
 ## Possible problems
 
-- "The end is before the start." appears on a period: correct the **From** and **To** dates. The **Save** button stays
-  off until the period is valid.
-- A day cannot be closed with a click: it is already closed for the week, because it is a national holiday or because it
-  falls in a closing period.
-- The desk's dates to remember, such as a reading in class, are not closing days and do not change due dates: see
-  [Calendar](../../manual/screens/calendar.md).
+### The end of a period is before the start
+
+"The end is before the start." appears on a period: correct the **From** and **To** dates. The **Save** button stays
+off until the period is valid.
+
+### A day cannot be closed with a click
+
+The day is already closed for the week, because it is a national holiday or because it falls in a closing period.
+
+### The desk's dates do not change due dates
+
+The desk's dates to remember, such as a reading in class, are not closing days and do not change due dates: see
+[Calendar](../../manual/screens/calendar.md).
 
 ## Related pages
 

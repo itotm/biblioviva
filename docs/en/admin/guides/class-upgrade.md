@@ -96,15 +96,29 @@ The operation appears in the **Audit log**.
 
 ## Possible problems
 
-- "Some leaving students still have books on loan." appears: register the return of the books, mark them as lost, or
-  untick **Leaves** for that student.
-- "The backup was not found or is too old: take it again from the first step." appears: the backup is valid for two
-  hours. Go back to the **Backup** step, press **Create the backup** and repeat the steps.
-- "Some students have no class yet: pick it in the Classes step." appears: go back to the **Classes** step and choose
-  the class for each one.
-- "Confirmation needed: the last upgrade is recent." appears: tick the confirmation box in the **Confirm** step.
-- Something went wrong after the upgrade: restore the backup made at the first step from **Administration**,
-  **Backups**: see [Make and download a backup](make-a-backup.md). Everything done after the backup is lost.
+### Some leaving students still have books on loan
+
+"Some leaving students still have books on loan." appears: register the return of the books, mark them as lost, or
+untick **Leaves** for that student.
+
+### The backup was not found or is too old
+
+"The backup was not found or is too old: take it again from the first step." appears: the backup is valid for two hours.
+Go back to the **Backup** step, press **Create the backup** and repeat the steps.
+
+### Some students have no class yet
+
+"Some students have no class yet: pick it in the Classes step." appears: go back to the **Classes** step and choose the
+class for each one.
+
+### Confirmation is needed because the last upgrade is recent
+
+"Confirmation needed: the last upgrade is recent." appears: tick the confirmation box in the **Confirm** step.
+
+### Something went wrong after the upgrade
+
+Restore the backup made at the first step from **Administration**, **Backups**: see
+[Make and download a backup](make-a-backup.md). Everything done after the backup is lost.
 
 ## Related pages
 

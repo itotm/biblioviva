@@ -38,11 +38,16 @@ sample data": as long as it is there, the data is still the sample data.
 
 ## Possible problems
 
-- The **Clear sample data** button does not appear: there is no sample data, because it was not loaded at the first run
-  or has already been removed. The button is also missing in the public demo, which recreates itself.
-- If the sample data is wanted back after the deletion: it is not possible from here. To start over the technical procedure
-  "Resetting an installation back to the first-run wizard" in the page
-  [Deployment notes](../../../deploy.md#resetting-an-installation-back-to-the-first-run-wizard) is needed.
+### The Clear sample data button does not appear
+
+There is no sample data, because it was not loaded at the first run or has already been removed. The button is also
+missing in the public demo, which recreates itself.
+
+### The sample data is wanted back after the deletion
+
+It is not possible from here. To start over the technical procedure "Resetting an installation back to the first-run
+wizard" in the page
+[Deployment notes](../../../deploy.md#resetting-an-installation-back-to-the-first-run-wizard) is needed.
 
 ## Related pages
 

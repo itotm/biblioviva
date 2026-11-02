@@ -18,14 +18,16 @@ cambiare i dati di una singola copia e come eliminare una scheda inserita per er
 
 1. Correggere i campi. Nella sezione **Scheda**: **Titolo**, **Sottotitolo**, **Titolo originale**, **Autore**,
    **Responsabilità (come sul frontespizio)**, **Serie** e **Numero nella serie**. Nella sezione **Pubblicazione**:
-   **Editore**, **Luogo**, **Anno**, **ISBN**, **EAN (non ISBN)** e **Descrizione fisica**.
+   **Editore**, **Luogo**, **Anno**, **ISBN**, **EAN (non ISBN)**, **Descrizione fisica** e **Materiale**. Il materiale
+   (libro, DVD, consultazione…) è uno solo per il libro e vale per tutte le sue copie; se il materiale
+   è escluso dal prestito (per esempio la consultazione), tutte le copie non si prestano.
 1. Per correggere soggetti, note o numero Dewey aprire la sezione **Altri dati**.
 1. Per cambiare la classificazione correggerla nella sezione **Classificazione**; vedere sotto per le segnature.
 1. Premere **Salva le modifiche**. Si torna alla scheda del libro, con i dati nuovi. **Annulla** lascia tutto com'era.
 
 ### Cambiare i dati di una copia
 
-Una copia ha dati propri, distinti da quelli del libro: **Materiale**, **Segnatura**, **Livello della copia**,
+Una copia ha dati propri, distinti da quelli del libro: **Segnatura**, **Livello della copia**,
 **Volume / numero**, **Data di acquisizione**, **Note sulla copia** e **Solo consultazione (non si presta)**.
 
 1. Se il libro ha una sola copia, la sezione «Copia …» sta in fondo alla pagina **Modifica scheda**: i suoi dati si
@@ -34,9 +36,11 @@ Una copia ha dati propri, distinti da quelli del libro: **Materiale**, **Segnatu
    suggerimento dice «Modifica copia …»). Si apre una finestra con gli stessi campi.
 1. Correggere i campi e premere **Salva**. Un avviso conferma «Copia aggiornata».
 
-Per cambiare lo stesso dato su molte copie, per esempio la data di acquisizione o il materiale, selezionare i libri in
+Per cambiare lo stesso dato su molte copie, per esempio la data di acquisizione, selezionare i libri in
 **Catalogo** e premere **Modifica le copie dei selezionati**: vedere [Togliere una copia smarrita o
-rovinata](withdraw-a-copy.md#cambiare-lo-stato-di-molte-copie-insieme), dove lo strumento è descritto.
+rovinata](withdraw-a-copy.md#cambiare-lo-stato-di-molte-copie-insieme), dove lo strumento è descritto. Lo stesso
+pulsante cambia anche il materiale di molti libri insieme, scegliendo **Materiale** in **Cosa cambiare**: il materiale è del libro,
+quindi cambia per tutte le sue copie.
 
 ### Dopo avere cambiato classificazione o segnatura
 
@@ -62,17 +66,34 @@ prestiti già registrati non cambiano.
 
 ## Possibili problemi
 
-- Il salvataggio dice «Esiste già una scheda con questo ISBN»: un'altra scheda ha quell'ISBN, ed è probabile che il
-  libro sia stato catalogato due volte. Aprire l'altra scheda, aggiungere lì le copie e togliere la scheda doppia.
-- «ISBN non valido (controllare le cifre)», «ISSN non valido» o «EAN non valido»: le cifre non tornano. Confrontarle
-  con il libro e correggerle, oppure lasciare il campo vuoto.
-- «Anno non plausibile»: scrivere un anno tra 1450 e l'anno prossimo, oppure lasciare il campo vuoto.
-- Autore o editore non si possono lasciare vuoti: usare «Anonimo», «AA. VV.», «s.n.» o «s.l.» sotto i campi,
-  vedere [Catalogare un libro senza ISBN](catalog-without-isbn.md).
-- Compare «La scheda ha ancora N copie: prima vanno ritirate o eliminate.»: la scheda non si elimina finché ha copie.
-  Seguire il secondo punto dell'ultima procedura.
-- Compare «La copia ha prestiti registrati: va ritirata, non eliminata.»: una copia già prestata resta nello storico dei
-  prestiti: cambiare lo stato in **Ritirato**.
+### L'ISBN è già usato da un'altra scheda
+
+Il salvataggio dice «Esiste già una scheda con questo ISBN»: un'altra scheda ha quell'ISBN, ed è probabile che il
+libro sia stato catalogato due volte. Aprire l'altra scheda, aggiungere lì le copie e togliere la scheda doppia.
+
+### ISBN, ISSN o EAN non validi
+
+Compare «ISBN non valido (controllare le cifre)», «ISSN non valido» o «EAN non valido»: le cifre non tornano.
+Confrontarle con il libro e correggerle, oppure lasciare il campo vuoto.
+
+### L'anno non è plausibile
+
+Compare «Anno non plausibile»: scrivere un anno tra 1450 e l'anno prossimo, oppure lasciare il campo vuoto.
+
+### Autore o editore sono vuoti
+
+Non si possono lasciare vuoti: usare «Anonimo», «AA. VV.», «s.n.» o «s.l.» sotto i campi, vedere
+[Catalogare un libro senza ISBN](catalog-without-isbn.md).
+
+### La scheda ha ancora delle copie
+
+Compare «La scheda ha ancora N copie: prima vanno ritirate o eliminate.»: la scheda non si elimina finché ha copie.
+Seguire il secondo punto dell'ultima procedura.
+
+### La copia ha prestiti registrati
+
+Compare «La copia ha prestiti registrati: va ritirata, non eliminata.»: una copia già prestata resta nello storico dei
+prestiti: cambiare lo stato in **Ritirato**.
 
 ## Pagine correlate
 

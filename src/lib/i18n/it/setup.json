@@ -18,6 +18,11 @@
 	"language": {
 		"title": "In che lingua deve parlare BiblioViva?",
 		"hint": "Una sola lingua per installazione: vale per tutto il personale e si può cambiare da Amministrazione → Configurazione → Aspetto e lingua.",
+		"pack": {
+			"title": "Serve un'altra lingua?",
+			"hint": "Le altre lingue pubblicate con questa versione di BiblioViva si scaricano da GitHub, oppure si carica il loro zip. Una volta installata, la procedura continua in quella lingua e BiblioViva la usa per tutti.",
+			"button": "Aggiungi una lingua"
+		},
 		"restore": {
 			"title": "Hai già un backup di BiblioViva?",
 			"hint": "Per spostare BiblioViva su un altro computer, o per ricominciare dopo un guasto, non serve rispondere alle domande: basta un archivio creato con «Esporta tutto».",

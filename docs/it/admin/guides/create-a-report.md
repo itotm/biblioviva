@@ -91,23 +91,45 @@ con BiblioViva e personalizzato, **Torna all'originale**).
 
 ## Possibili problemi
 
-- Il salvataggio dice «La definizione non è valida». Manca o non è valido un dato, di solito il codice (lettere
-  minuscole, cifre e trattini, non più di 64 caratteri) o il titolo. Il messaggio indica quale.
-- Il salvataggio dice «La query non funziona su questo database». Il report guidato è stato composto con una
-  combinazione che il database non riesce a calcolare. Tornare alla scheda **Guidata**, togliere l'ultima scelta e
-  premere **Anteprima** per vedere quale la provoca.
-- Il salvataggio dice che «new» non può essere il codice di un report. Scegliere un altro codice.
-- L'anteprima mostra «Nessun risultato con questi parametri». Il report è corretto ma i dati non ci sono: allargare il
-  periodo o togliere un filtro fisso.
-- Il campo **Codice del report** è spento. Il codice di un report già salvato non si cambia. Per averne uno diverso,
-  usare **Duplica** dalla libreria.
-- Dopo **Modifica come SQL** il report non si modifica più con la scheda **Guidata**. **Modifica come SQL** trasforma il
-  report in un report scritto a mano e non si torna alla modifica guidata. Usarlo solo se serve davvero, leggendo prima
-  [Reports: authoring guide](../../../reports-authoring.md).
-- Il report non compare nell'elenco di un altro account. Verificare che non sia spuntato **Solo per gli amministratori**
-  e che l'account abbia il permesso dei report: [Gestire gli account del personale](manage-accounts.md).
-- Un file della libreria è in errore. La libreria elenca, in cima, i file che non si caricano, con il motivo.
-  **Elimina** toglie il file dalla configurazione; la cancellazione si può annullare dalla cronologia.
+### Il salvataggio dice che la definizione non è valida
+
+Il salvataggio dice «La definizione non è valida». Manca o non è valido un dato, di solito il codice (lettere
+minuscole, cifre e trattini, non più di 64 caratteri) o il titolo. Il messaggio indica quale.
+
+### La query non funziona su questo database
+
+Il salvataggio dice «La query non funziona su questo database». Il report guidato è stato composto con una combinazione
+che il database non riesce a calcolare. Tornare alla scheda **Guidata**, togliere l'ultima scelta e premere
+**Anteprima** per vedere quale la provoca.
+
+### «new» non può essere il codice di un report
+
+Il salvataggio dice che «new» non può essere il codice di un report. Scegliere un altro codice.
+
+### L'anteprima non mostra risultati
+
+L'anteprima mostra «Nessun risultato con questi parametri». Il report è corretto ma i dati non ci sono: allargare il
+periodo o togliere un filtro fisso.
+
+### Il campo Codice del report è spento
+
+Il codice di un report già salvato non si cambia. Per averne uno diverso, usare **Duplica** dalla libreria.
+
+### Il report non si modifica più con la scheda Guidata
+
+Dopo **Modifica come SQL** il report non si modifica più con la scheda **Guidata**. **Modifica come SQL** trasforma il
+report in un report scritto a mano e non si torna alla modifica guidata. Usarlo solo se serve davvero, leggendo prima
+[Reports: authoring guide](../../../reports-authoring.md).
+
+### Il report non compare nell'elenco di un altro account
+
+Verificare che non sia spuntato **Solo per gli amministratori** e che l'account abbia il permesso dei report:
+[Gestire gli account del personale](manage-accounts.md).
+
+### Un file della libreria è in errore
+
+La libreria elenca, in cima, i file che non si caricano, con il motivo. **Elimina** toglie il file dalla
+configurazione; la cancellazione si può annullare dalla cronologia.
 
 ## Pagine correlate
 

@@ -58,6 +58,7 @@ export function classifyBiblio(
 			series: b.series ?? "",
 			seriesNumber: b.seriesNumber ?? "",
 			dewey: b.dewey ?? "",
+			itemType: b.itemType,
 			...classification,
 			subjects: b.subjects.join("\n"),
 			notes: b.notes ?? "",

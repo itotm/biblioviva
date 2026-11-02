@@ -972,7 +972,7 @@
 		"inUse": "The save would take away something still in use:",
 		"inUseKinds": {
 			"classification": "code {{code}}: {{count}} {{count:plural; one:book; other:books;}}",
-			"itemType": "copy type {{code}}: {{count}} {{count:plural; one:copy; other:copies;}}",
+			"itemType": "copy type {{code}}: {{count}} {{count:plural; one:book; other:books;}}",
 			"level": "level {{code}}: {{count}} {{count:plural; one:pupil; other:pupils;}} or classes",
 			"readingLevel": "reading level {{code}}: {{count}} {{count:plural; one:book; other:books;}}"
 		},
@@ -1094,24 +1094,24 @@
 		"move": {
 			"title": "Where do they go?",
 			"hint": {
-				"copies": "Some removed types still have copies: choose the type to move them to.",
+				"copies": "Some removed types still have books: choose the type to move them to.",
 				"students": "Some removed sections still have students: choose the section to move them to."
 			},
 			"row": {
-				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:copy; other:copies;}}. Move to",
+				"copies": "{{code}} · {{label}}: {{count}} {{count:plural; one:book; other:books;}}. Move to",
 				"students": "{{code}}: {{count}} {{count:plural; one:student; other:students;}}. Move to"
 			},
 			"choose": "Choose…",
 			"used": {
-				"copies": "Copies",
+				"copies": "Books",
 				"students": "Students"
 			},
 			"count": {
-				"copies": "{{count}} {{count:plural; one:copy; other:copies;}}",
+				"copies": "{{count}} {{count:plural; one:book; other:books;}}",
 				"students": "{{count}} {{count:plural; one:student; other:students;}}"
 			},
 			"done": {
-				"copies": "{{count}} {{count:plural; one:copy moved; other:copies moved;}}.",
+				"copies": "{{count}} {{count:plural; one:book moved; other:books moved;}}.",
 				"students": "{{count}} {{count:plural; one:student moved; other:students moved;}}."
 			}
 		},

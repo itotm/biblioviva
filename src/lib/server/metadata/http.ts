@@ -2,6 +2,7 @@
 // Small helpers shared by the HTTP providers: a JSON GET with timeout, identifying User-Agent and
 // error mapping, plus the text normalisations the JSON sources need.
 import { MetadataError, type ProviderContext } from "./types.js";
+import { invertAuthorName } from "#lib/shared/author-name.js";
 
 export async function fetchJson(
 	ctx: ProviderContext,
@@ -46,13 +47,7 @@ export const clean = (s: string): string =>
 
 /** The catalogue writes personal names as `Surname, Name`; web sources use the natural order. */
 export function invertName(natural: string): string {
-	const s = clean(natural);
-	if (s.includes(",") || !s.includes(" ")) {
-		return s;
-	}
-	const parts = s.split(" ");
-	const surname = parts.pop() ?? "";
-	return `${surname}, ${parts.join(" ")}`;
+	return invertAuthorName(clean(natural));
 }
 
 export function yearOf(value: string | number | null | undefined): number | null {

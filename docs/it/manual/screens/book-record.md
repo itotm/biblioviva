@@ -35,6 +35,7 @@ Sotto il titolo si leggono i contrassegni:
   si prestano finché il libro non è classificato.») e, con il permesso del catalogo, il pulsante **Classifica**, che
   apre la pagina [Classifica il libro](to-classify.md#classifica-il-libro);
 - la serie, con il numero, come pulsante: apre il [Catalogo](catalog.md) con tutti i libri della serie, in ordine;
+- il materiale (libro, DVD…), lo stesso per tutte le copie;
 - l'**ISBN**;
 - le copie, nella forma «N disponibili su M». Le copie ritirate non si contano nel totale.
 
@@ -74,7 +75,6 @@ Le colonne sono:
 
 - **Codice**: il codice a barre della copia, stampato sull'etichetta interna;
 - **Segnatura**: vedere [Segnatura](#segnatura);
-- **Materiale**: libro, DVD o altro;
 - **Livello**: il livello di lettura della copia; compare solo se la biblioteca lo registra sulle copie e non sul
   titolo;
 - **Stato**: vedere [Stati della copia](#stati-della-copia);
@@ -87,7 +87,8 @@ Le colonne sono:
 La segnatura è la sigla scritta sul dorso, che dice dove va riposta la copia: per la narrativa il genere seguito dalle
 prime lettere dell'autore (per esempio `B DEL`), per la saggistica il numero dell'argomento seguito dalle lettere
 dell'autore (per esempio `590 ROS`). La forma esatta dipende dalla configurazione della biblioteca. Nel modulo di una
-copia la segnatura viene proposta dalla classificazione e si può cambiare a mano.
+copia la segnatura viene proposta dalla classificazione e si può cambiare a mano: copie dello stesso libro possono
+stare in posti diversi dello scaffale.
 
 ### Stati della copia
 
@@ -135,7 +136,6 @@ La finestra **Aggiungi copie** crea una o più copie nuove del libro. Si apre da
 scheda. La procedura è in [Aggiungere una copia a un libro già in catalogo](../guides/add-a-copy.md). I campi sono:
 
 - **Numero di copie**, da 1 a 100;
-- **Materiale**, il tipo di materiale;
 - **Segnatura**: lasciata vuota, usa quella proposta dalla classificazione (che compare in grigio);
 - **Livello della copia**, se la biblioteca lo registra sulle copie;
 - **Volume / numero**, **Data di acquisizione** e **Note sulla copia**;
@@ -146,7 +146,7 @@ delle copie sono assegnati da BiblioViva. Dopo l'aggiunta le etichette risultano
 
 ## Modifica di una copia
 
-La finestra «Modifica copia», intitolata con il codice della copia, cambia **Materiale**, **Segnatura**, **Livello
+La finestra «Modifica copia», intitolata con il codice della copia, cambia **Segnatura**, **Livello
 della copia**, **Volume / numero**, **Data di acquisizione**, **Note sulla copia** e **Solo consultazione (non si
 presta)**. Il pulsante **Salva** conferma («Copia aggiornata»); **Annulla** esce.
 
@@ -250,7 +250,9 @@ I campi della sezione **Pubblicazione**:
 - **Anno**, a quattro cifre;
 - **ISBN**;
 - **EAN (non ISBN)**, per i materiali che hanno un EAN senza essere libri (un DVD);
-- **Descrizione fisica**, in una riga sola (pagine, illustrazioni, formato).
+- **Descrizione fisica**, in una riga sola (pagine, illustrazioni, formato);
+- **Materiale**, il tipo di materiale (libro, DVD, consultazione…): è uno solo per il libro e vale per tutte le sue
+  copie. Un materiale escluso dal prestito (per esempio la consultazione) esclude dal prestito tutte le copie.
 
 ### Sezione Classificazione
 
@@ -274,7 +276,8 @@ La sezione **Altri dati** è chiusa all'apertura, a meno che non contenga già d
 
 Se il libro ha una sola copia, in fondo al modulo compare la sezione intitolata con il codice della copia («Copia N»):
 «La scheda ha una sola copia: i suoi dati si modificano qui e si salvano insieme alla scheda.» I campi sono quelli di
-[Modifica di una copia](#modifica-di-una-copia).
+[Modifica di una copia](#modifica-di-una-copia); il materiale non c'è, perché si cambia nella sezione
+**Pubblicazione**. Con due o più copie la sezione non compare.
 
 ## Messaggi del modulo
 

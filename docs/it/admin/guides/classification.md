@@ -105,18 +105,37 @@ stampare. Il salvataggio entra nella cronologia della configurazione: vedere
 
 ## Possibili problemi
 
-- Compare «Questo codice è già usato da un altro genere o argomento»: un codice non può essere usato due volte, nemmeno
-  da un genere e da un argomento. Scegliere un altro codice.
-- Compare «Il colore si scrive come #rrggbb, per esempio #e8231b»: correggere il codice del colore.
-- Il pulsante **Salva** è spento: i campi con un errore sono segnati in rosso; correggerli.
-- Compare «Nel catalogo ci sono libri con codici che la classificazione non contiene»: alcuni libri hanno un codice che
-  non è nella classificazione. Aggiungere quei codici qui oppure riclassificare quei libri dal catalogo.
-- Il colore o il pittogramma di un sottoargomento non cambia: senza un colore o un'immagine propri il sottoargomento
-  usa quelli del suo argomento.
-- Compare «Il file non è un'immagine» o «Formato non accettato: sono ammessi PNG, JPEG e WebP»: scegliere un'immagine in
-  uno di questi formati. «L'immagine è troppo grande»: ridurla e caricarla di nuovo.
-- La finestra di salvataggio segnala libri con copie in classi diverse: prima di togliere la classe dalle copie, dare la
-  stessa classe a tutte le copie di ogni libro.
+### Il codice è già usato
+
+Compare «Questo codice è già usato da un altro genere o argomento»: un codice non può essere usato due volte, nemmeno da
+un genere e da un argomento. Scegliere un altro codice.
+
+### Il colore non è scritto bene
+
+Compare «Il colore si scrive come #rrggbb, per esempio #e8231b»: correggere il codice del colore.
+
+### Il pulsante Salva è spento
+
+I campi con un errore sono segnati in rosso; correggerli.
+
+### Nel catalogo ci sono codici che la classificazione non contiene
+
+Compare «Nel catalogo ci sono libri con codici che la classificazione non contiene»: alcuni libri hanno un codice che
+non è nella classificazione. Aggiungere quei codici qui oppure riclassificare quei libri dal catalogo.
+
+### Il colore o il pittogramma di un sottoargomento non cambia
+
+Senza un colore o un'immagine propri il sottoargomento usa quelli del suo argomento.
+
+### L'immagine non viene accettata
+
+Compare «Il file non è un'immagine» o «Formato non accettato: sono ammessi PNG, JPEG e WebP»: scegliere un'immagine in
+uno di questi formati. «L'immagine è troppo grande»: ridurla e caricarla di nuovo.
+
+### Alcuni libri hanno copie in classi diverse
+
+La finestra di salvataggio segnala libri con copie in classi diverse: prima di togliere la classe dalle copie, dare la
+stessa classe a tutte le copie di ogni libro.
 
 ## Pagine correlate
 

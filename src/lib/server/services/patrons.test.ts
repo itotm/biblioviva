@@ -233,11 +233,8 @@ describe("patron service", () => {
 			.get();
 		const copies = ["2026-00011", "2026-00029", "2026-00037"].map(
 			(barcode) =>
-				db
-					.insert(item)
-					.values({ biblioId: b.id, barcode, itemType: "book" })
-					.returning({ id: item.id })
-					.get().id,
+				db.insert(item).values({ biblioId: b.id, barcode }).returning({ id: item.id }).get()
+					.id,
 		);
 		const loans = [
 			{
@@ -394,7 +391,7 @@ describe("today is the library's day", () => {
 			.get();
 		const copy = db
 			.insert(item)
-			.values({ biblioId: b.id, barcode: "2026-00011", itemType: "book" })
+			.values({ biblioId: b.id, barcode: "2026-00011" })
 			.returning({ id: item.id })
 			.get();
 		db.insert(loan)

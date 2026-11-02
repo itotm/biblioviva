@@ -73,18 +73,38 @@ the loans with the old program.
 
 ## Possible problems
 
-- "No patron with card …" appears: the number matches no patron. Import the patron first or correct the number.
-- "No copy with barcode …" appears: the barcode is not in the catalogue. Import the catalogue first or correct the
-  barcode.
-- "Copy … is already on loan" appears: the copy already has a loan in BiblioViva, or it appears twice in the file ("Same
-  copy already on line …"). Remove the duplicate.
-- "Copy … is withdrawn" appears: a withdrawn copy cannot be lent. Make it available again from the book's record, or
-  remove the row.
-- "Issue date in the future" or "The due date is before the issue date" appears: correct the dates.
-- "Copy … belongs to a book to classify" appears: the loan is imported, but at the desk that copy is not lent until the
-  book is classified: see [Classify books](../../manual/guides/classify-books.md).
-- For those coming from Koha: open loans are extracted with a ready-made query, to be run on the day of the switch: see
-  [the technical instructions](../../../import/README.md).
+### No patron with the given card
+
+"No patron with card …" appears: the number matches no patron. Import the patron first or correct the number.
+
+### No copy with the given barcode
+
+"No copy with barcode …" appears: the barcode is not in the catalogue. Import the catalogue first or correct the
+barcode.
+
+### The copy is already on loan
+
+"Copy … is already on loan" appears: the copy already has a loan in BiblioViva, or it appears twice in the file ("Same
+copy already on line …"). Remove the duplicate.
+
+### The copy is withdrawn
+
+"Copy … is withdrawn" appears: a withdrawn copy cannot be lent. Make it available again from the book's record, or
+remove the row.
+
+### The dates of the loan are not correct
+
+"Issue date in the future" or "The due date is before the issue date" appears: correct the dates.
+
+### The copy belongs to a book to classify
+
+"Copy … belongs to a book to classify" appears: the loan is imported, but at the desk that copy is not lent until the
+book is classified: see [Classify books](../../manual/guides/classify-books.md).
+
+### The loans come from Koha
+
+Open loans are extracted with a ready-made query, to be run on the day of the switch: see
+[the technical instructions](../../../import/README.md).
 
 ## Related pages
 
