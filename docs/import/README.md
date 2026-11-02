@@ -78,7 +78,8 @@ code that is both. A title without classification is imported and waits in Catal
 classify; its copies are not lent until it is classified. `reading_level` accepts the codes and
 labels of the configured scale and ignores Koha's `S`. `item_type` is read per copy, but the
 material is the record's: copies of one new title with different types ask whether the record takes
-the type of most of them (Q139). A `biblio_key` imported before, or an ISBN
+the type of most of them (Q139). `consultazione` (Koha's `REF`) is not a material: it marks that copy
+excluded from loans. A `biblio_key` imported before, or an ISBN
 already in the catalogue, adds the copies to that record; a barcode already in the catalogue on the
 same record is skipped (so the same file can be imported twice), on another record it is an error.
 An empty author or publisher is an error unless the operator ticks "usa i valori speciali"

@@ -972,7 +972,7 @@
 		"inUse": "The save would take away something still in use:",
 		"inUseKinds": {
 			"classification": "code {{code}}: {{count}} {{count:plural; one:book; other:books;}}",
-			"itemType": "copy type {{code}}: {{count}} {{count:plural; one:book; other:books;}}",
+			"itemType": "material {{code}}: {{count}} {{count:plural; one:book; other:books;}}",
 			"level": "level {{code}}: {{count}} {{count:plural; one:pupil; other:pupils;}} or classes",
 			"readingLevel": "reading level {{code}}: {{count}} {{count:plural; one:book; other:books;}}"
 		},
@@ -1083,13 +1083,13 @@
 			}
 		},
 		"itemTypes": {
-			"title": "Copy types",
-			"hint": "Book, DVD, reference…: the type of each copy decides its loan rules. Changing a code moves its copies to the new code.",
+			"title": "Materials",
+			"hint": "Book, DVD, magazine…: the material of each book applies to all its copies and decides their loan rules. Changing a code moves its books to the new code.",
 			"code": "Code",
 			"label": "Name",
-			"notForLoan": "Reference only",
-			"add": "Add a type",
-			"saved": "Copy types saved"
+			"notForLoan": "Not for loan",
+			"add": "Add a material",
+			"saved": "Materials saved"
 		},
 		"move": {
 			"title": "Where do they go?",
@@ -1128,10 +1128,10 @@
 			"saved": "Numbering saved"
 		},
 		"itemTypeRules": {
-			"title": "Rules per copy type",
-			"hint": "Each copy type can change a rule: for example DVDs for 5 days. The rules apply to students and teachers alike.",
+			"title": "Rules per material",
+			"hint": "Each material can change a rule: for example DVDs for 5 days. The rules apply to students and teachers alike.",
 			"inherit": "Empty: the rule of students and teachers applies (in grey: students / teachers).",
-			"saved": "Rules per copy type saved"
+			"saved": "Rules per material saved"
 		},
 		"calendar": {
 			"title": "Library calendar",
@@ -1676,7 +1676,7 @@
 			"classification_code": "Classification code",
 			"classification_label": "Class name",
 			"classification_reading_level": "Reading level",
-			"item_item_type": "Item type"
+			"item_item_type": "Material"
 		},
 		"field": "Field",
 		"text": "Text",

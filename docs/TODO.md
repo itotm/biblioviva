@@ -80,6 +80,10 @@ list is cleared at a release, and a new one takes the next.
 - [x] 9.47 A help button that is seen: "Guida" with text in the top bar on the computer, a round button beside the
   title on the phone, in the primary colour (Q140).
 - [x] 9.48 A language pack from the first-run wizard: installed on the first screen, the wizard goes on in it (Q142).
+- [x] 9.49 "Consultazione" is not a material: a reference copy is a copy excluded from loans; "Materiali" in the
+  interface.
+- [ ] 9.50 One segnatura per title, the level apart: edited in "Modifica scheda", copied to the copies with their
+  level (Q143, waiting for the owner's go-ahead).
 - [ ] 9.6 Release 0.9.0, the first tagged release of the public beta (ADR-048).
 
 ## After 0.9.0

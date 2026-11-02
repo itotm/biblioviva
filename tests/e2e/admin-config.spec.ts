@@ -121,7 +121,7 @@ test.describe.serial("configuration area", () => {
 		await text.fill(JSON.stringify(raw, null, "\t"));
 		await expect(page.getByTestId("section-json-valid")).toBeVisible();
 		await page.getByTestId("section-json-save").click();
-		await expect(page.getByTestId("config-in-use")).toContainText("tipo di copia libro");
+		await expect(page.getByTestId("config-in-use")).toContainText("materiale libro");
 		await page.getByTestId("section-json-discard").click();
 		await page.getByTestId("section-tab-form").click();
 		await expect(page.getByTestId("setting-library.name")).toHaveValue(/.+/);

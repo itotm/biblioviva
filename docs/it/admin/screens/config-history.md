@@ -36,6 +36,6 @@ Il ripristino può essere rifiutato. I messaggi sono questi.
 - «Non si può ripristinare: dopo questa modifica sono cambiati di nuovo …», con l'elenco delle chiavi. Per tornare
   indietro si annullano prima le modifiche più recenti.
 - «La modifica non è più nella cronologia.»
-- «Il salvataggio toglierebbe qualcosa che è ancora in uso», con l'elenco (per esempio un tipo di copia che ha ancora
-  copie, un codice di classificazione che ha ancora libri, un anno con studenti), quando il ripristino farebbe sparire
+- «Il salvataggio toglierebbe qualcosa che è ancora in uso», con l'elenco (per esempio un materiale che ha ancora
+  libri, un codice di classificazione che ha ancora libri, un anno con studenti), quando il ripristino farebbe sparire
   qualcosa che la biblioteca usa. In questo caso conviene prima spostare quelle voci.

@@ -35,7 +35,7 @@ The column names are in English and must be left as in the template. The main on
 
 Also optional are `isbn`, `subtitle`, `publication_place`, `publication_year`, `physical_description`, `series`,
 `series_number`, `subjects`, `notes`, `call_number` (the call number), `item_type` (the material: book, DVD…, one per title), `status`,
-`not_for_loan` (`sì` for reference copies), `acquisition_date` (`YYYY-MM-DD` or `DD/MM/YYYY`), `item_notes` and others:
+`not_for_loan` (`sì` for reference copies; `consultazione` in `item_type` also makes the copy a reference copy, without being the title's material), `acquisition_date` (`YYYY-MM-DD` or `DD/MM/YYYY`), `item_notes` and others:
 the complete list is in the **The template of the file** box. The status is written `available`, `lost`, `damaged`,
 `in_repair` or `withdrawn`; the Italian words (disponibile, perso, danneggiato, in riparazione, ritirato) are accepted.
 

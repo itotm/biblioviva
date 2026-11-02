@@ -10,7 +10,7 @@ export interface CodeRow {
 	originalCode: string | null;
 	code: string;
 	label: string;
-	/** Item types: "solo consultazione" (not for loan). */
+	/** Item types (materials): excluded from loans. */
 	flag: boolean;
 }
 

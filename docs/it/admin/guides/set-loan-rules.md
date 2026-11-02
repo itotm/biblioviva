@@ -4,7 +4,7 @@ Questa guida spiega come fissare quanto dura un prestito, quanti libri si posson
 rinnovare e che cosa succede quando un libro è in ritardo. Serve a chi amministra BiblioViva e vuole adattare le regole
 a quelle della biblioteca.
 
-Le regole sono due, una per gli *studenti* e una per i *docenti*. Per un tipo di copia (per esempio i DVD) si può
+Le regole sono due, una per gli *studenti* e una per i *docenti*. Per un materiale (per esempio i DVD) si può
 cambiare una regola sola, senza toccare le altre.
 
 - Tempo: circa 10 minuti.
@@ -72,22 +72,22 @@ Il gruppo **Solleciti** regola i fogli dei libri in ritardo.
 I valori sbagliati sono segnati in rosso e **Salva** aspetta che siano corretti. Per ritirare le modifiche non ancora
 salvate, premere **Annulla modifiche**.
 
-### Cambiare una regola per un tipo di copia
+### Cambiare una regola per un materiale
 
-Il riquadro **Regole per tipo di copia** sta in fondo alla stessa pagina. Ha una riga per ogni tipo di copia (per
+Il riquadro **Regole per materiale** sta in fondo alla stessa pagina. Ha una riga per ogni materiale (per
 esempio Libro e DVD) e le stesse quattro colonne. Le regole valgono sia per gli studenti sia per i docenti.
 
-1. Scrivere un valore nella colonna da cambiare, sulla riga del tipo di copia. Per i DVD, per esempio, 5 in **Giorni di
+1. Scrivere un valore nella colonna da cambiare, sulla riga del materiale. Per i DVD, per esempio, 5 in **Giorni di
    prestito**.
 1. Lasciare vuoto ciò che non cambia: vale la regola di studenti e docenti, che il campo mostra in grigio.
-1. Premere **Salva** nel riquadro. Compare il messaggio «Regole per tipo di copia salvate».
+1. Premere **Salva** nel riquadro. Compare il messaggio «Regole per materiale salvate».
 
-I tipi di copia si aggiungono e si rinominano nella sezione **Biblioteca e scuola**, nel riquadro **Tipi di copia**.
+I materiali si aggiungono e si rinominano nella sezione **Biblioteca e scuola**, nel riquadro **Materiali**.
 
 ## Risultato
 
-- Al Banco prestiti ogni nuovo prestito prende la durata e il limite di libri della regola dell'utente e del tipo di
-  copia.
+- Al Banco prestiti ogni nuovo prestito prende la durata e il limite di libri della regola dell'utente e del materiale
+  del libro.
 - I prestiti già in corso mantengono la scadenza che avevano.
 
 ## Possibili problemi
@@ -103,7 +103,7 @@ Compare «Il salvataggio non è riuscito:» con un elenco: le voci dicono quale 
 
 ### Il valore di una regola è troppo basso
 
-I valori delle regole per tipo di copia mostrano il messaggio «Almeno 1.»: i giorni e i libri devono essere almeno 1;
+I valori delle regole per materiale mostrano il messaggio «Almeno 1.»: i giorni e i libri devono essere almeno 1;
 soltanto i rinnovi possono essere 0.
 
 ### Si esce dalla pagina con modifiche non salvate

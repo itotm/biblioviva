@@ -390,8 +390,8 @@ describe("commit", () => {
 			author: "Anonimo",
 			publisher: "s.n.",
 			classCode: "030",
-			// the type of the copies is the record's (9.45)
-			itemType: "consultazione",
+			// Koha's reference type: a book whose copy is kept from loans (Q139)
+			itemType: "libro",
 		});
 		expect(db.select().from(item).where(eq(item.barcode, "218")).get()).toMatchObject({
 			notForLoan: 1,
@@ -462,16 +462,20 @@ describe("commit", () => {
 		const csv = writeCsv([
 			["biblio_key", "title", "author", "publisher", "classification", "item_type"],
 			["1", "Atlante", "A", "B", "A", "dvd"],
-			["1", "Atlante", "A", "B", "A", "consultazione"],
-			["1", "Atlante", "A", "B", "A", "consultazione"],
+			["1", "Atlante", "A", "B", "A", "rivista"],
+			["1", "Atlante", "A", "B", "A", "rivista"],
 			["2", "Fiabe", "A", "B", "A", ""],
+			// Koha's reference type is a copy excluded from loans, not a material
+			["3", "Enciclopedia", "A", "B", "A", "dvd"],
+			["3", "Enciclopedia", "A", "B", "A", "consultazione"],
 		]);
 		const asked = validateCatalogImport(db, inputsOf(csv), base);
 		expect(asked.typeQuestion).toBe(1);
 		expect(asked.canCommit).toBe(false);
 		expect(asked.rows[0]?.reasons).toEqual([
-			{ code: "typeQuestion", params: { types: "consultazione, dvd" } },
+			{ code: "typeQuestion", params: { types: "rivista, dvd" } },
 		]);
+		expect(asked.rows[4]?.status).toBe("new");
 		const no = validateCatalogImport(db, inputsOf(csv), { ...base, useMajorityType: false });
 		expect(no.rows[0]?.reasons.map((r) => r.code)).toEqual(["typeDiffers"]);
 		expect(() => commit(db, actor, inputsOf(csv))).toThrow(ImportNotReadyError);
@@ -482,17 +486,18 @@ describe("commit", () => {
 			.from(biblio)
 			.all();
 		expect(types).toEqual([
-			{ title: "Atlante", itemType: "consultazione" },
+			{ title: "Atlante", itemType: "rivista" },
 			{ title: "Fiabe", itemType: rules.itemTypes[0]?.code },
+			{ title: "Enciclopedia", itemType: "dvd" },
 		]);
-		// the type keeps the copies of a reference work from loans
+		// only the reference copy is kept from loans
 		expect(
 			db
 				.select({ n: item.notForLoan })
 				.from(item)
 				.all()
 				.map((r) => r.n),
-		).toEqual([1, 1, 1, 0]);
+		).toEqual([0, 0, 0, 0, 0, 1]);
 	});
 
 	it("imports the original title of a translation (9.23)", () => {

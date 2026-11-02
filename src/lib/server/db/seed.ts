@@ -121,7 +121,6 @@ const DEFAULTS: Required<Omit<SeedOptions, "codes" | "groups">> = {
 	readingLevels: ["1", "2", "3", "4", "5"],
 	itemTypes: [
 		{ code: "libro", notForLoan: false },
-		{ code: "consultazione", notForLoan: true },
 		{ code: "dvd", notForLoan: false },
 	],
 	country: "IT",
@@ -196,14 +195,10 @@ export function seedDatabase(db: Db, options: SeedOptions = {}): SeedSummary {
 	const classes =
 		groups ??
 		school.levels.flatMap((l) => o.groupNames.map((name) => ({ name, levels: [l.code] })));
-	// the copies: a loanable type for books and DVDs, a not-for-loan one for reference works
+	// the materials: books and a few DVDs; reference works are books whose copies are not lent
 	const types = o.itemTypes.map((t) => t.code);
 	const bookType = types.includes("libro") ? "libro" : (types[0] ?? "libro");
 	const dvdType = types.includes("dvd") ? "dvd" : bookType;
-	const referenceType =
-		o.itemTypes.find((t) => t.code === "consultazione")?.code ??
-		o.itemTypes.find((t) => t.notForLoan)?.code ??
-		bookType;
 	const cardFormat = codes.card.current;
 	const itemFormat = codes.item.current;
 	const seedYear = Number(o.today.slice(0, 4));
@@ -412,7 +407,7 @@ export function seedDatabase(db: Db, options: SeedOptions = {}): SeedSummary {
 						: null,
 				classCode: fiction ? null : faker.helpers.arrayElement(o.classCodes),
 				// the type is the record's (9.45): a few DVDs and reference books
-				itemType: i % 41 === 7 ? referenceType : i % 40 === 5 ? dvdType : bookType,
+				itemType: i % 40 === 5 ? dvdType : bookType,
 				dewey: fiction
 					? null
 					: String(faker.number.int({ min: 1, max: 999 })).padStart(3, "0"),

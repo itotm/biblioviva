@@ -113,7 +113,7 @@ For a list of books:
 - **Labels to print**: **Pair**, **Barcode only**, **Spine band only** or "— every copy —";
 - **Acquired from** and **to**: the range of acquisition dates;
 - **Genre** and **Non-fiction class**;
-- **Copy type**;
+- **Material**;
 - **Import**: the copies of a catalogue import, in the form "no. 3 · file name · N copies".
 
 ## Adding to the list from the catalogue or from the patrons

@@ -72,7 +72,7 @@
 			"acquiredFrom": "Acquired from",
 			"acquiredTo": "to",
 			"genre": "Genre",
-			"itemType": "Copy type",
+			"itemType": "Material",
 			"batchLabelItems": "no. {{id}} · {{file}} · {{created}} {{created:plural; one:copy; other:copies;}}",
 			"noneItems": "No copy matches the filters.",
 			"addedItems": "{{added}} added, {{skipped}} already present",

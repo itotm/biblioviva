@@ -115,6 +115,11 @@ const STATUS_WORDS = wordMap<ItemStatus>({
 });
 
 const TRUE_WORDS = new Set(["1", "si", "yes", "true", "x", "vero"]);
+/**
+ * Koha's reference type (`REF`, exported as `consultazione`) is not a material: such a copy is a
+ * copy of its title excluded from loans, and the title keeps its own material (Q139).
+ */
+const REFERENCE_WORDS = new Set(["consultazione", "reference", "ref"]);
 const FALSE_WORDS = new Set(["", "0", "no", "false", "falso"]);
 
 export interface CatalogImportOptions {
@@ -272,6 +277,8 @@ interface Prepared {
 	barcode: string;
 	status: ItemStatus;
 	notForLoan: boolean;
+	/** The material of the cell, `""` when empty or a reference word (then `notForLoan`). */
+	itemType: string;
 	acquisitionDate: string;
 }
 
@@ -307,6 +314,7 @@ function prepareRow(input: CatalogImportInput, options: CatalogImportOptions): P
 	if (!TRUE_WORDS.has(nfl) && !FALSE_WORDS.has(nfl)) {
 		reasons.push({ code: "notForLoanUnknown", params: { value: input.notForLoan } });
 	}
+	const reference = REFERENCE_WORDS.has(normalizeSearchText(input.itemType));
 	let acquisitionDate = options.today;
 	if (input.acquisitionDate !== "") {
 		const d = normalizeDate(input.acquisitionDate);
@@ -327,7 +335,8 @@ function prepareRow(input: CatalogImportInput, options: CatalogImportOptions): P
 		readingLevel: readingLevelOf(input.readingLevel, options.rules),
 		barcode,
 		status: status ?? "available",
-		notForLoan: TRUE_WORDS.has(nfl),
+		notForLoan: TRUE_WORDS.has(nfl) || reference,
+		itemType: reference ? "" : input.itemType,
 		acquisitionDate,
 	};
 }
@@ -396,12 +405,19 @@ function biblioInputOf(
 	};
 }
 
-/** The item types of the copies of one title, the most frequent first (the Q139 question). */
+/**
+ * The item types of the copies of one title, the most frequent first (the Q139 question); copies
+ * without a type (or of the reference type) count only when no copy has one.
+ */
 function typesOf(members: readonly Prepared[], fallback: string): string[] {
 	const counts = new Map<string, number>();
 	for (const m of members) {
-		const t = m.input.itemType === "" ? fallback : m.input.itemType;
-		counts.set(t, (counts.get(t) ?? 0) + 1);
+		if (m.itemType !== "") {
+			counts.set(m.itemType, (counts.get(m.itemType) ?? 0) + 1);
+		}
+	}
+	if (counts.size === 0) {
+		return [fallback];
 	}
 	// a stable sort: on a tie the type met first in the file wins
 	return [...counts].sort((a, b) => b[1] - a[1]).map(([t]) => t);

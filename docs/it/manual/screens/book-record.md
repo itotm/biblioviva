@@ -251,8 +251,9 @@ I campi della sezione **Pubblicazione**:
 - **ISBN**;
 - **EAN (non ISBN)**, per i materiali che hanno un EAN senza essere libri (un DVD);
 - **Descrizione fisica**, in una riga sola (pagine, illustrazioni, formato);
-- **Materiale**, il tipo di materiale (libro, DVD, consultazione…): è uno solo per il libro e vale per tutte le sue
-  copie. Un materiale escluso dal prestito (per esempio la consultazione) esclude dal prestito tutte le copie.
+- **Materiale**, il tipo di materiale (libro, DVD, rivista…): è uno solo per il libro e vale per tutte le sue
+  copie. Un materiale escluso dal prestito esclude dal prestito tutte le copie; una singola copia si tiene fuori dal
+  prestito con **Solo consultazione (non si presta)**.
 
 ### Sezione Classificazione
 

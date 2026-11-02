@@ -179,7 +179,7 @@ The fields of the **Publication** section:
 - **ISBN**;
 - **EAN (not an ISBN)**, for the materials that have an EAN without being books (a DVD);
 - **Physical description**, on a single line (pages, illustrations, format);
-- **Material**, the type of material (book, DVD, reference…): it is one for the book and applies to all its copies. A material excluded from loans (for example reference) excludes all the copies from loans.
+- **Material**, the type of material (book, DVD, magazine…): it is one for the book and applies to all its copies. A material excluded from loans excludes all the copies from loans; a single copy is kept from loans with **Reference only (not lent)**.
 
 ### Classification section
 

@@ -137,7 +137,7 @@ describe("checkout", () => {
 				id: 10,
 				status: "available",
 				notForLoan: true,
-				itemType: "consultazione",
+				itemType: "libro",
 				classified: true,
 			},
 		});

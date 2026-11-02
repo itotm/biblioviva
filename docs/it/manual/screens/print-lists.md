@@ -158,7 +158,7 @@ Per una lista di libri:
 - **Etichette da stampare**: **Coppia**, **Solo barcode**, **Solo fascetta** oppure «— tutte le copie —»;
 - **Acquisite dal** e **al**: l'intervallo delle date di acquisizione;
 - **Genere** e **Classe di saggistica**;
-- **Tipo di copia**;
+- **Materiale**;
 - **Importazione**: le copie di una importazione del catalogo, nella forma «n. 3 · nome del file · N copie».
 
 ## Aggiunta alla lista dal catalogo o dagli utenti

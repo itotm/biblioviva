@@ -972,7 +972,7 @@
 		"inUse": "Il salvataggio toglierebbe qualcosa che è ancora in uso:",
 		"inUseKinds": {
 			"classification": "codice {{code}}: {{count}} {{count:plural; one:libro; other:libri;}}",
-			"itemType": "tipo di copia {{code}}: {{count}} {{count:plural; one:libro; other:libri;}}",
+			"itemType": "materiale {{code}}: {{count}} {{count:plural; one:libro; other:libri;}}",
 			"level": "livello {{code}}: {{count}} {{count:plural; one:alunno; other:alunni;}} o classi",
 			"readingLevel": "livello di lettura {{code}}: {{count}} {{count:plural; one:libro; other:libri;}}"
 		},
@@ -1083,13 +1083,13 @@
 			}
 		},
 		"itemTypes": {
-			"title": "Tipi di copia",
-			"hint": "Libro, DVD, consultazione…: il tipo di ogni copia decide le regole di prestito. Cambiare un codice sposta le sue copie sul nuovo codice.",
+			"title": "Materiali",
+			"hint": "Libro, DVD, rivista…: il materiale di ogni libro vale per tutte le sue copie e decide le regole di prestito. Cambiare un codice sposta i suoi libri sul nuovo codice.",
 			"code": "Codice",
 			"label": "Nome",
-			"notForLoan": "Solo consultazione",
-			"add": "Aggiungi un tipo",
-			"saved": "Tipi di copia salvati"
+			"notForLoan": "Escluso dal prestito",
+			"add": "Aggiungi un materiale",
+			"saved": "Materiali salvati"
 		},
 		"move": {
 			"title": "Dove vanno?",
@@ -1128,10 +1128,10 @@
 			"saved": "Numerazione salvata"
 		},
 		"itemTypeRules": {
-			"title": "Regole per tipo di copia",
-			"hint": "Per ogni tipo di copia si può cambiare una regola: per esempio i DVD per 5 giorni. Le regole valgono sia per gli studenti sia per i docenti.",
+			"title": "Regole per materiale",
+			"hint": "Per ogni materiale si può cambiare una regola: per esempio i DVD per 5 giorni. Le regole valgono sia per gli studenti sia per i docenti.",
 			"inherit": "Vuoto: vale la regola di studenti e docenti (in grigio: studenti / docenti).",
-			"saved": "Regole per tipo di copia salvate"
+			"saved": "Regole per materiale salvate"
 		},
 		"calendar": {
 			"title": "Calendario della biblioteca",
@@ -1676,7 +1676,7 @@
 			"classification_code": "Codice di classificazione",
 			"classification_label": "Nome della classe",
 			"classification_reading_level": "Livello di lettura",
-			"item_item_type": "Tipo di copia"
+			"item_item_type": "Materiale"
 		},
 		"field": "Campo",
 		"text": "Testo",

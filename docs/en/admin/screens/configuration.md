@@ -78,7 +78,7 @@ Each tab of the "Settings" group opens a page with the settings of that section.
 - **Save** and **Discard changes** appear at the top right; with changes not yet saved **Unsaved changes** appears. An
   invalid value is marked and blocks **Save** (message "Fix the marked values before saving."). When leaving with unsaved
   changes the page asks for confirmation ("Leave without saving?").
-- If the save would take away something still in use (for example a copy type with copies, or a class with patrons) the
+- If the save would take away something still in use (for example a material with books, or a class with patrons) the
   page says so and does not save.
 - At the bottom, "Other settings of this section" lists the keys that are changed elsewhere, with the **Open** command
   towards the right editor, or "In the JSON tab for now".
@@ -88,8 +88,8 @@ The sections are below, in the order of the list.
 ### Library and school
 
 Name, contact and calendar of the school: **Library name**, **Contact email**, **Start of the school year**, **Name of
-the school year**, **Time zone**, **First day of the week**. It also holds the list of **Copy types** (book, DVD,
-reference…), which decides the loan rules: the code of a type is changed only by moving its copies to the new code. The
+the school year**, **Time zone**, **First day of the week**. It also holds the list of **Materials** (book, DVD,
+magazine…), which decides the loan rules: the code of a material is changed only by moving its books to the new code. The
 name and logo are changed more conveniently in [Appearance and language](appearance.md). Guide:
 [Set up the library](../guides/set-up-the-library.md).
 
@@ -120,7 +120,7 @@ earlier formats that keep working and the starting number of the new cards. Guid
 The loan rules: "Rules for students" and "Rules for teachers" (**Loan days**, **Most books on loan**, **Most renewals**,
 **Renewal days**), **Due date computation**, **Renewals start from**, **Renew after the due date too**, **No new loans
 with overdue books**, **Latest due date**, **Loan receipt** and, under "Overdue notices", **Notice template**, **One page
-per class** and **Days late before a notice**. The "Rules per copy type" editor changes a rule for a copy type (for
+per class** and **Days late before a notice**. The "Rules per material" editor changes a rule for a material (for
 example DVDs for 5 days). Guide: [Set the loan rules](../guides/set-loan-rules.md).
 
 ### Calendar

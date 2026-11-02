@@ -49,6 +49,11 @@ import type { Db } from "#lib/server/db/client.js";
 
 const config = parseConfig(exampleRaw()).config;
 const rules = catalogRules(config);
+/** The rules with a material kept from loans (a library may configure one, e.g. its atlases). */
+const withReference: CatalogRules = {
+	...rules,
+	itemTypes: [...rules.itemTypes, { code: "atlante", label: "Atlante", notForLoan: true }],
+};
 
 const fiction: BiblioFormInput = {
 	title: "Il gatto con gli stivali",
@@ -219,8 +224,8 @@ describe("biblio validation (§3.17)", () => {
 				validateItem({ ...copy, acquisitionDate: "20/09/2026" }, rules, "fiction", "libro"),
 			),
 		).toEqual(["acquisitionDate:acquisitionDateInvalid"]);
-		// the copies of a reference record are not for loan by the record's item type
-		expect(validateItem(copy, rules, "fiction", "consultazione").notForLoan).toBe(true);
+		// the copies of a record of a not-for-loan material are not for loan
+		expect(validateItem(copy, withReference, "fiction", "atlante").notForLoan).toBe(true);
 	});
 });
 
@@ -423,9 +428,9 @@ describe("catalog service", () => {
 	it("searches by words of title, author or ISBN and filters by classification", () => {
 		const { db, actor } = setup();
 		const f = createBiblio(db, fiction, actor, rules);
-		const n = createBiblio(db, { ...nonfiction, itemType: "consultazione" }, actor, rules);
+		const n = createBiblio(db, { ...nonfiction, itemType: "dvd" }, actor, rules);
 		addItems(db, f, copy, 2, actor, rules);
-		addItems(db, n, copy, 1, actor, rules);
+		addItems(db, n, { ...copy, notForLoan: true }, 1, actor, rules);
 		const all = searchBiblios(db, {}, rules);
 		expect(all.total).toBe(2);
 		expect(all.rows.map((r) => [r.title, r.copiesTotal, r.copiesAvailable])).toEqual([
@@ -443,7 +448,7 @@ describe("catalog service", () => {
 		expect(searchBiblios(db, { classCode: "590" }, rules).total).toBe(1);
 		expect(searchBiblios(db, { classCode: "600" }, rules).total).toBe(0);
 		expect(searchBiblios(db, { readingLevel: "2" }, rules).total).toBe(1);
-		expect(searchBiblios(db, { itemType: "consultazione" }, rules).total).toBe(1);
+		expect(searchBiblios(db, { itemType: "dvd" }, rules).total).toBe(1);
 		expect(searchBiblios(db, { sort: "author" }, rules).rows[0]?.id).toBe(f);
 		expect(searchBiblios(db, { sort: "year" }, rules).rows).toHaveLength(2);
 		expect(searchBiblios(db, { sort: "created", limit: 1 }, rules).rows).toHaveLength(1);
@@ -720,13 +725,13 @@ describe("the item type of the record (9.45, Q139)", () => {
 			updateBiblio(
 				db,
 				id,
-				{ ...fiction, title: "Altro", itemType: "consultazione" },
+				{ ...fiction, title: "Altro", itemType: "atlante" },
 				actor,
-				rules,
+				withReference,
 			),
 		).toEqual(["itemType"]);
 		const detail = getBiblio(db, id, rules);
-		expect(detail.itemType).toBe("consultazione");
+		expect(detail.itemType).toBe("atlante");
 		expect(detail.items.map((i) => i.notForLoan)).toEqual([true, true]);
 	});
 });

@@ -34,6 +34,6 @@ The restore may be refused. The messages are these.
 - "It cannot be restored: after this change … changed again.", with the list of keys. To go back, undo the more recent
   changes first.
 - "The change is no longer in the history."
-- "The save would take away something still in use", with the list (for example a copy type that still has copies, a
+- "The save would take away something still in use", with the list (for example a material that still has books, a
   classification code that still has books, a year with students), when the restore would make something the library
   uses disappear. In this case it is better to move those items first.

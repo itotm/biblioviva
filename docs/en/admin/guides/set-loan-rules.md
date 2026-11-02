@@ -4,7 +4,7 @@ This guide explains how to set how long a loan lasts, how many books can be out 
 renewed and what happens when a book is late. It is for whoever administers BiblioViva and wants to adapt the rules to
 those of the library.
 
-There are two rules, one for *students* and one for *teachers*. For one copy type (for example DVDs) a single rule can
+There are two rules, one for *students* and one for *teachers*. For one material (for example DVDs) a single rule can
 be changed without touching the others.
 
 - Time: about 10 minutes.
@@ -70,21 +70,21 @@ The **Overdue notices** group governs the sheets for overdue books.
 Wrong values are marked in red and **Save** waits until they are corrected. To withdraw the changes not yet saved, press
 **Discard changes**.
 
-### Change a rule for one copy type
+### Change a rule for one material
 
-The **Rules per copy type** panel is at the bottom of the same page. It has a row for each copy type (for example Book
+The **Rules per material** panel is at the bottom of the same page. It has a row for each material (for example Book
 and DVD) and the same four columns. The rules apply to both students and teachers.
 
-1. Type a value in the column to change, on the row of the copy type. For DVDs, for example, 5 in **Loan days**.
+1. Type a value in the column to change, on the row of the material. For DVDs, for example, 5 in **Loan days**.
 1. Leave empty whatever does not change: the rule for students and teachers applies, which the field shows in grey.
-1. Press **Save** in the panel. The message "Rules per copy type saved" appears.
+1. Press **Save** in the panel. The message "Rules per material saved" appears.
 
-Copy types are added and renamed in the **Library and school** section, in the **Copy types** panel.
+Materials are added and renamed in the **Library and school** section, in the **Materials** panel.
 
 ## Result
 
-- At the circulation desk each new loan takes the length and the book limit of the rule for the patron and the copy
-  type.
+- At the circulation desk each new loan takes the length and the book limit of the rule for the patron and the
+  book's material.
 - Loans already out keep the due date they had.
 
 ## Possible problems
@@ -100,7 +100,7 @@ Correct the field marked in red.
 
 ### A rule value is too low
 
-The values of the rules per copy type show the message "At least 1.": days and books must be at least 1; only
+The values of the rules per material show the message "At least 1.": days and books must be at least 1; only
 renewals can be 0.
 
 ### The page is left with unsaved changes

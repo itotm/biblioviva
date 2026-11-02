@@ -35,7 +35,7 @@ I nomi delle colonne sono in inglese e vanno lasciati come nel modello. Le princ
 
 Sono facoltative anche `isbn`, `subtitle`, `publication_place`, `publication_year`, `physical_description`, `series`,
 `series_number`, `subjects`, `notes`, `call_number` (la segnatura), `item_type` (il materiale: libro, DVD…, uno per titolo), `status`,
-`not_for_loan` (`sì` per le copie da consultazione), `acquisition_date` (`AAAA-MM-GG` o `GG/MM/AAAA`), `item_notes` e
+`not_for_loan` (`sì` per le copie da consultazione; anche `consultazione` in `item_type` rende la copia da consultazione, senza essere il materiale del titolo), `acquisition_date` (`AAAA-MM-GG` o `GG/MM/AAAA`), `item_notes` e
 altre ancora: l'elenco completo è nel riquadro **Il modello del file**. Lo stato si scrive `available`, `lost`, `damaged`,
 `in_repair` o `withdrawn`; le parole italiane (disponibile, perso, danneggiato, in riparazione, ritirato) sono
 accettate.

@@ -19,8 +19,9 @@ cambiare i dati di una singola copia e come eliminare una scheda inserita per er
 1. Correggere i campi. Nella sezione **Scheda**: **Titolo**, **Sottotitolo**, **Titolo originale**, **Autore**,
    **Responsabilità (come sul frontespizio)**, **Serie** e **Numero nella serie**. Nella sezione **Pubblicazione**:
    **Editore**, **Luogo**, **Anno**, **ISBN**, **EAN (non ISBN)**, **Descrizione fisica** e **Materiale**. Il materiale
-   (libro, DVD, consultazione…) è uno solo per il libro e vale per tutte le sue copie; se il materiale
-   è escluso dal prestito (per esempio la consultazione), tutte le copie non si prestano.
+   (libro, DVD, rivista…) è uno solo per il libro e vale per tutte le sue copie; se il materiale
+   è escluso dal prestito, tutte le copie non si prestano. Una singola copia si tiene fuori dal prestito con **Solo
+   consultazione (non si presta)**, nei dati della copia.
 1. Per correggere soggetti, note o numero Dewey aprire la sezione **Altri dati**.
 1. Per cambiare la classificazione correggerla nella sezione **Classificazione**; vedere sotto per le segnature.
 1. Premere **Salva le modifiche**. Si torna alla scheda del libro, con i dati nuovi. **Annulla** lascia tutto com'era.

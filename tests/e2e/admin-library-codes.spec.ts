@@ -35,7 +35,7 @@ test.describe.serial("library codes and barcodes", () => {
 		await types.getByTestId("code-input").last().fill("cd");
 		await types.getByTestId("label-input").last().fill("Compact disc");
 		await save();
-		await expect(page.getByRole("status").getByText("Tipi di copia salvati")).toBeVisible();
+		await expect(page.getByRole("status").getByText("Materiali salvati")).toBeVisible();
 		await reopen();
 		const cd = types.locator('[data-testid="code-row"][data-code="cd"]');
 		// the books of the type: the type is the record's (9.45)

@@ -37,7 +37,7 @@ test.describe.serial("circulation rules and calendar", () => {
 		await rivista.getByTestId("rule-loanDays").fill("15");
 		await save();
 		await expect(
-			page.getByRole("status").getByText("Regole per tipo di copia salvate"),
+			page.getByRole("status").getByText("Regole per materiale salvate"),
 		).toBeVisible();
 		await page.reload();
 		await waitForHydration(page);

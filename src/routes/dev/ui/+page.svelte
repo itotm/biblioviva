@@ -362,11 +362,11 @@
 			<Field label="Password (PasswordInput)"
 				><PasswordInput label="Password" autocomplete="off" value="biblioviva" /></Field
 			>
-			<Field label="Tipo copia"
+			<Field label="Materiale"
 				><Select>
 					<option>Libro</option>
 					<option>DVD</option>
-					<option>Consultazione</option>
+					<option>Rivista</option>
 				</Select></Field
 			>
 			<Field label="Note" span

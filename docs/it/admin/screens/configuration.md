@@ -79,7 +79,7 @@ allo stesso modo:
 - **Salva** e **Annulla modifiche** compaiono in alto a destra; con modifiche non ancora salvate compare **Modifiche non
   salvate**. Un valore non valido è segnato e blocca **Salva** (messaggio «Correggere i valori segnati prima di
   salvare.»). Uscendo con modifiche non salvate la pagina chiede conferma («Uscire senza salvare?»).
-- Se il salvataggio toglierebbe qualcosa che è ancora in uso (per esempio un tipo di copia con copie, o una classe con
+- Se il salvataggio toglierebbe qualcosa che è ancora in uso (per esempio un materiale con libri, o una classe con
   utenti) la pagina lo dice e non salva.
 - In fondo, «Altre impostazioni di questa sezione» elenca le chiavi che si modificano altrove, con il comando **Apri**
   verso l'editor giusto, oppure «Per ora nella scheda JSON».
@@ -90,8 +90,8 @@ Le sezioni sono qui sotto, nell'ordine dell'elenco.
 
 Nome, contatto e calendario della scuola: **Nome della biblioteca**, **Email di contatto**, **Inizio dell'anno
 scolastico**, **Nome dell'anno scolastico**, **Fuso orario**, **Primo giorno della settimana**. Contiene anche l'elenco
-dei **Tipi di copia** (libro, DVD, consultazione…), che decide le regole di prestito: il codice di un tipo si cambia
-solo spostando le sue copie sul nuovo codice. Il nome e il logo si cambiano più comodamente in [Aspetto e
+dei **Materiali** (libro, DVD, rivista…), che decide le regole di prestito: il codice di un materiale si cambia
+solo spostando i suoi libri sul nuovo codice. Il nome e il logo si cambiano più comodamente in [Aspetto e
 lingua](appearance.md). Guida: [Impostare la biblioteca](../guides/set-up-the-library.md).
 
 ### Scuola
@@ -122,7 +122,7 @@ Le regole di prestito: «Regole per gli studenti» e «Regole per i docenti» (*
 al massimo**, **Rinnovi al massimo**, **Giorni di rinnovo**), **Calcolo della scadenza**, **Il rinnovo parte da**,
 **Rinnovo anche dopo la scadenza**, **Niente nuovi prestiti con libri in ritardo**, **Scadenza massima**, **Ricevuta di
 prestito** e, sotto «Solleciti», **Modello dei solleciti**, **Una pagina per classe** e **Giorni di ritardo prima del
-sollecito**. L'editor «Regole per tipo di copia» cambia una regola per un tipo di copia (per esempio i DVD per 5
+sollecito**. L'editor «Regole per materiale» cambia una regola per un materiale (per esempio i DVD per 5
 giorni). Guida: [Impostare le regole dei prestiti](../guides/set-loan-rules.md).
 
 ### Calendario

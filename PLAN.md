@@ -1128,7 +1128,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Acceptance: Lighthouse PWA installability checks pass on the mobile project; an e2e test verifies the manifest, the registered worker and that `/healthz` and remote calls are never served from the cache; the OpenCV chunk is served from the cache on the second load of the cover page. (Lighthouse 12 has no PWA category, so the e2e test runs Chromium's own installability check through the DevTools protocol; the setup guide paragraph is written with the manuals in 9.5.)
   - Depends on: 3.7, 9.8
 
-- [ ] **9.6 Release v0.9.0, the first release of the public beta** (the complete version of this plan is 0.9.0, owner decision; Q133, ADR-048) — made from the public repository of 9.36, where the **public beta** has started (the READMEs and the home page say so), as its first tagged release: changelog, git tag, multi-arch image `ghcr.io/<owner>/biblioviva:0.9.0` + `latest`, GitHub release notes, the documentation site published by hand from the release's tag (§3.23; the same at every release), STATUS.md closed. Depends on: 9.1–9.5b, 9.7, 9.8, 9.9, 9.19–9.21, 9.36, 9.44–9.48 and the whole of Phases 11, 12 and 13 (required for the release, owner decision).
+- [ ] **9.6 Release v0.9.0, the first release of the public beta** (the complete version of this plan is 0.9.0, owner decision; Q133, ADR-048) — made from the public repository of 9.36, where the **public beta** has started (the READMEs and the home page say so), as its first tagged release: changelog, git tag, multi-arch image `ghcr.io/<owner>/biblioviva:0.9.0` + `latest`, GitHub release notes, the documentation site published by hand from the release's tag (§3.23; the same at every release), STATUS.md closed. Depends on: 9.1–9.5b, 9.7, 9.8, 9.9, 9.19–9.21, 9.36, 9.44–9.50 and the whole of Phases 11, 12 and 13 (required for the release, owner decision).
 
 - [ ] **9.10 Field testing towards 1.0.0** (owner decision; Q133) — the public beta: the school year 2026/27 at the school on 0.9.x, until the end of lessons in June 2027; 1.0.0 is released for the start of the school year 2027/28 (September 2027), when the library begins to use BiblioViva for real; every problem found becomes a fix released as 0.9.x (patch releases, changelog); 1.0.0 is tagged when the owner declares the field test over, after a run of `bun run test:browsers` (Chromium, Firefox, WebKit, Q110) whose failures are fixed or explained. Until then the database keeps a single regenerated migration (Q82); a schema change during the field test is carried by export and restore. From 1.0.0 an update never loses data: the migrations of 9.37.
 
@@ -1612,6 +1612,36 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
     the wizard in that language and finishes with `ui.locale` set to it; `bun run ci` green.
   - Depends on: 9.39, 1.11 (wizard)
 
+- [x] **9.49 "Consultazione" is not a material** (owner decision, Q139; required for 0.9.0)
+  - Context: the default materials mixed formats (libro, DVD, rivista) with a use, "consultazione" (not lent),
+    the source of copies of one title with different types in Koha's data.
+  - Tasks: "consultazione" out of the default materials (`config.example.json`, Appendix A, the seed, the test
+    configurations); a reference copy is a copy with "Solo consultazione (non si presta)"; the catalogue import reads an
+    `item_type` of `consultazione` / `reference` / `ref` (Koha's `REF`) as a copy excluded from loans that does not
+    count among the title's materials; the interface says "Materiali" / "Materiale" where it said "Tipi di copia" /
+    "Tipo di copia", and "Escluso dal prestito" for a material kept from loans; documentation updated (IT, EN).
+  - Acceptance: unit tests of the import (a reference copy, no question for it) and of the seed; `bun run ci` green.
+  - Depends on: 9.45
+
+- [ ] **9.50 One segnatura per title, the level apart** (owner request, Q143; required for 0.9.0)
+  - Context: the segnatura is a free string on each copy, editable copy by copy; two copies of one title can end with
+    different segnature by mistake. The only legitimate difference is the reading level of the copy, with the level
+    per copy (`classification.classPerItem`), and the level is the second token of the segnatura (`B 4 DEL`, the
+    convention already used when a level is renamed or removed, `moveLevelInCallNumbers`).
+  - Tasks (the default of Q143): the segnatura stays stored on each copy (labels, inventory, search unchanged) but is
+    edited once, in "Modifica scheda" (field **Segnatura**, proposed from the classification as now): saving writes it
+    to every copy; with the level per copy each copy gets it with its own level as second token (`B 4 DEL` → `B 3 DEL`
+    for a copy of level 3), and changing a copy's level changes that token. The copy dialog and "Aggiungi copie" no
+    longer edit the segnatura (new copies take the title's, with their level); the single-copy section of "Modifica
+    scheda" loses it. Copies that already differ beyond the level (data from Koha) are shown on the book page ("Le
+    copie hanno segnature diverse") and "Modifica scheda" proposes the most frequent; saving makes them one. The
+    catalogue import: copies of a new title with segnature that differ beyond the level ask, like the material,
+    whether the title takes the most frequent. A changed segnatura puts the spine bands of the copies back to print
+    (9.42).
+  - Acceptance: unit tests (record save to every copy, level token per copy, a level change, the import question);
+    the catalogue specs on both projects; documentation (IT, EN); `bun run ci` green.
+  - Depends on: 9.45
+
 ### Phase 10 — Post-v1 extensions (Koha-inspired; each needs owner approval)
 
 - [ ] **10.1 Personal staff accounts from the admin UI** (`security.auth.mode = 'database'`: create/edit users, roles, reset password, must-change-password flag, per-user locale; config accounts keep working alongside) — Q20.
@@ -2022,9 +2052,10 @@ Each item: **question — why it matters — default used until decided (and rec
 - [x] **Q136 — Which language packs (resolved, owner decision; step 9.39):** which languages are published as packs? — *Decision: French, Spanish, Portuguese of Portugal (`pt-PT`) and of Brazil (`pt-BR`), German, Dutch, Catalan, Romanian, Hungarian, Czech, Slovak, Polish, Slovenian, Croatian, Greek, Swedish, Norwegian Bokmål (`nb`), Danish, Finnish, Turkish, Russian, Ukrainian, Simplified Chinese, Japanese, Korean (25 packs besides the built-in Italian and English); Arabic and Hebrew wait until the interface can be laid out right to left.*
 - [x] **Q137 — A beep on a camera read (resolved, owner decision; step 9.40):** should the phone make a sound when its camera reads a code, against the silence of Q40? — *Decision: yes, a short beep generated in the browser (no audio file), only for the camera and only when a read is taken; four sounds to choose from in Amministrazione → Codici a barre (Cassa, Lettore, Conferma, Arpeggio) or none, Conferma by default. The desk itself stays silent.*
 - [x] **Q138 — Class names for the countries of the language packs (resolved, owner decision; step 9.41):** can the school structure write the classes and school years of every country of the packs (Q136)? — *Decision: yes, with seven changes, all accepted: a label template per stage that may leave out the group; a `next` of a level that can be a list of choices (or leaving) for paths that split; the start and the name of the school year proposed by the preset; the card's class line as a template and the fixed Italian words of the shipped cards and slips from the dictionaries; the order of classes in the installation's language; register matching with NFKC, more ignored marks and aliases per level; preset names in every language, the language's countries first, and presets for the countries that lack one.*
-- [x] **Q139 — The item type on the record (resolved, owner decision; step 9.45):** the item type and the segnatura moved from the copy to the record? — *Decision: only the item type, always the record's (one type per title; a reference copy is a copy "not for loan", which stays on the copy). The segnatura stays on the copy, because it can change from one copy to another. A change of type for many titles is a batch action on the selected records of the catalogue, no longer in "Modifica le copie"; the catalogue import asks, when the copies of one record have different types, whether to give the record the type of most of its copies, and refusing turns those rows into errors (§3.22).*
+- [x] **Q139 — The item type on the record (resolved, owner decision; step 9.45):** the item type and the segnatura moved from the copy to the record? — *Decision: only the item type — the **material** in the interface —, always the record's (one material per title: a book's copies are all books, a DVD's all DVDs; a reference copy is a copy "not for loan", a flag that stays on the copy, and "consultazione" is no longer a material, 9.49). The segnatura stays on the copy, because the level per copy changes it (Q143). A change of type for many titles is a batch action on the selected records of the catalogue, no longer in "Modifica le copie"; the catalogue import asks, when the copies of one record have different types, whether to give the record the type of most of its copies, and refusing turns those rows into errors (§3.22).*
 - [x] **Q140 — Where the help button goes (resolved, owner decision; step 9.47):** five placements were drawn in a mock (as today; a "Guida" button with text in the top bar's corner; a round button beside the page title; a "Guida" entry in the sidebar; a floating button). — *Decision: on the computer the "Guida" button with text in the top bar's corner, on the phone the round button beside the page title, both filled with the primary colour like the floating button of the mock.*
 - [x] **Q141 — The icon of the problem boxes (resolved, owner decision; step 9.46):** the warning triangle repeated on every box was ugly. — *Decision: one icon only, a life buoy in a tinted tile beside the heading "Possibili problemi"; the boxes carry their arrow only.*
+- [ ] **Q143 — One segnatura per title (open; step 9.50):** the segnatura is a free string with the level in the middle; how is it kept coherent among the copies of a title? — *Default: written once in "Modifica scheda" and copied to every copy, each with its own level as second token when the level is per copy; no longer edited copy by copy; differences already there shown and resolved on the next save; the import asks like for the material.*
 - [x] **Q142 — A language pack at the start (resolved, owner decision; step 9.48):** must a school whose language is a pack complete the wizard in Italian or English first? — *Decision: no; the wizard's first screen installs a pack of the release (or an uploaded zip), the wizard goes on in it and it becomes the installation's language. English and Italian stay the built-in choice for the wizard and the default.*
 
 ---
@@ -2043,7 +2074,6 @@ Each item: **question — why it matters — default used until decided (and rec
     "timezone": "Europe/Rome", "weekStart": "monday",
     "itemTypes": [
       { "code": "libro", "label": "Libro" },
-      { "code": "consultazione", "label": "Consultazione", "notForLoan": true },
       { "code": "dvd", "label": "DVD" },
       { "code": "testo", "label": "Testo scolastico" },
       { "code": "rivista", "label": "Rivista" }

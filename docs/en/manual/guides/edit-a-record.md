@@ -19,9 +19,9 @@ whoever catalogues the books.
 
 1. Correct the fields. In the **Record** section: **Title**, **Subtitle**, **Original title**, **Author**, **Statement of
    responsibility (as on the title page)**, **Series** and **Number in the series**. In the **Publication** section:
-   **Publisher**, **Place**, **Year**, **ISBN**, **EAN (not an ISBN)**, **Physical description** and **Material**. The material (book, DVD, reference…) is one for
-   the book and applies to all its copies; if the material is excluded from loans (for example reference), all the
-   copies are not lent.
+   **Publisher**, **Place**, **Year**, **ISBN**, **EAN (not an ISBN)**, **Physical description** and **Material**. The material (book, DVD, magazine…) is one for
+   the book and applies to all its copies; if the material is excluded from loans, all the
+   copies are not lent. A single copy is kept from loans with **Reference only (not lent)**, in the data of the copy.
 1. To correct subjects, notes or Dewey number open the **More** section.
 1. To change the classification correct it in the **Classification** section; see below for the call numbers.
 1. Press **Save changes**. The record of the book opens again, with the new data. **Cancel** leaves everything as it
