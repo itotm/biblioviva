@@ -1128,7 +1128,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Acceptance: Lighthouse PWA installability checks pass on the mobile project; an e2e test verifies the manifest, the registered worker and that `/healthz` and remote calls are never served from the cache; the OpenCV chunk is served from the cache on the second load of the cover page. (Lighthouse 12 has no PWA category, so the e2e test runs Chromium's own installability check through the DevTools protocol; the setup guide paragraph is written with the manuals in 9.5.)
   - Depends on: 3.7, 9.8
 
-- [ ] **9.6 Release v0.9.0, the first release of the public beta** (the complete version of this plan is 0.9.0, owner decision; Q133, ADR-048) — made from the public repository of 9.36, where the **public beta** has started (the READMEs and the home page say so), as its first tagged release: changelog, git tag, multi-arch image `ghcr.io/<owner>/biblioviva:0.9.0` + `latest`, GitHub release notes, the documentation site published by hand from the release's tag (§3.23; the same at every release), STATUS.md closed. Depends on: 9.1–9.5b, 9.7, 9.8, 9.9, 9.19–9.21, 9.36 and the whole of Phases 11, 12 and 13 (required for the release, owner decision).
+- [ ] **9.6 Release v0.9.0, the first release of the public beta** (the complete version of this plan is 0.9.0, owner decision; Q133, ADR-048) — made from the public repository of 9.36, where the **public beta** has started (the READMEs and the home page say so), as its first tagged release: changelog, git tag, multi-arch image `ghcr.io/<owner>/biblioviva:0.9.0` + `latest`, GitHub release notes, the documentation site published by hand from the release's tag (§3.23; the same at every release), STATUS.md closed. Depends on: 9.1–9.5b, 9.7, 9.8, 9.9, 9.19–9.21, 9.36, 9.44–9.48 and the whole of Phases 11, 12 and 13 (required for the release, owner decision).
 
 - [ ] **9.10 Field testing towards 1.0.0** (owner decision; Q133) — the public beta: the school year 2026/27 at the school on 0.9.x, until the end of lessons in June 2027; 1.0.0 is released for the start of the school year 2027/28 (September 2027), when the library begins to use BiblioViva for real; every problem found becomes a fix released as 0.9.x (patch releases, changelog); 1.0.0 is tagged when the owner declares the field test over, after a run of `bun run test:browsers` (Chromium, Firefox, WebKit, Q110) whose failures are fixed or explained. Until then the database keeps a single regenerated migration (Q82); a schema change during the field test is carried by export and restore. From 1.0.0 an update never loses data: the migrations of 9.37.
 
@@ -1522,6 +1522,95 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
     refused or completed as the restore service does); a Playwright spec that restores the demo's archive on a fresh
     server and logs in; `bun run ci` green.
   - Depends on: 9.35 (backups), 1.11 (wizard)
+
+- [ ] **9.44 Authors as "Surname, Name" in the demo data** (owner decision; required for 0.9.0)
+  - Context: the author of a record is always stored as `Surname, Name`, the form the Z39.50 servers send (§4.1; the
+    web providers' natural order is inverted by `invertName`, the form's hint says "Cognome, Nome"). The generated demo
+    data draws its authors with `faker.book.author()`, which writes `Name Surname` ("Ralph Ellison"), so the demo, the
+    public demo and the screenshots of the documentation show authors in the wrong order, and the segnatura of those
+    copies takes the first three letters of the first name instead of the surname.
+  - Tasks: the seed (`src/lib/server/db/seed.ts`) stores every drawn author as `Surname, Name` through the same
+    inversion the providers use (one shared helper, multi-word surnames as the providers treat them); the segnature of
+    the demo then follow from the surname; every other source of demo or example records checked for the same order
+    (wishes, the examples of `#lib/server/demo/`, the metadata mock, the import templates and examples of
+    `docs/import/`); the pages of `docs/` that quote a demo author or segnatura updated, both languages.
+  - Acceptance: a unit test of the seed fails on any author that is neither `Surname, Name` nor a special value of
+    `catalog.specialAuthors`, and checks that a copy's segnatura ends with the surname's three letters; `bun run ci`
+    green; the screenshots taken again by `docs:shots`.
+  - Depends on: 1.2 (seed)
+
+- [ ] **9.45 The item type belongs to the record** (owner decision, Q139; required for 0.9.0)
+  - Context: the item type (`library.itemTypes`: book, DVD…) is the same for every copy of a title, yet it is a column
+    of `item` and is edited copy by copy (the copy's dialog, the single-copy section of "Modifica scheda", "Modifica le
+    copie"). The owner wants it edited with the record. The segnatura stays on the copy: it can change from one copy to
+    another (Q139).
+  - Tasks:
+    - **Schema** (§4.1, §4.2, `docs/database.md`, the single migration regenerated, Q82): `biblio.item_type` NOT NULL
+      (the first configured type by default); `item.item_type` dropped.
+    - **Forms**: "Modifica scheda" and the new-book form gain the item type; the copy's dialog and "Aggiungi copie"
+      lose it; the single-copy section of "Modifica scheda" (shown when the record has exactly one copy, none with two
+      or more) keeps what is the copy's own: segnatura, reading level with `classPerItem`, enumeration, acquisition
+      date, notes, not for loan; "Modifica le copie" loses "Tipo di materiale", and the catalogue's batch actions on the
+      selected records offer the change of type instead.
+    - **Everything that reads it** from the record: loan rules and not-for-loan by type, the catalogue's filter and
+      column "Materiale", search, labels, inventory, print lists, exports and reports, fast-add, the import of the
+      catalogue and of the loans.
+    - **Imports** (§3.22): the catalogue import still reads `item_type` per row (one row per copy); copies of one record
+      with different types are found in validation and answered by a question (Q139), never written partly.
+    - The manual (`edit-a-record.md`, `add-a-copy.md`, `catalog-a-new-book.md`, the screens of the catalogue), the
+      admin guide of the import and `docs/navigation.md` updated, both languages; the shot list too.
+  - Acceptance: unit tests of the services touched (record update with the type, the copy update without it, the
+    import question, loan rules by the record's type, the batch change of type on records); the catalogue specs on both
+    Playwright projects (record with one copy: the type among the record's fields, the segnatura in the copy section;
+    two copies: no copy section); `bun run ci` green.
+  - Depends on: 3.1, 3.10, 9.42
+
+- [ ] **9.46 Problem boxes everywhere in the documentation** (owner request, Q141; required for 0.9.0)
+  - Context: the guides of the circulation desk write their "Possibili problemi" as one `###` heading per problem, and
+    the site turns each into a box that opens with a click (`scripts/site-build.ts`, `.trouble`); every other page (some
+    sixty in Italian, the same in English: Manuale, Amministrazione, Installazione) wrote them as a bulleted list
+    "symptom: cause and remedy", and every box repeated the warning triangle.
+  - Tasks: every "Possibili problemi" section of `docs/it/` and `docs/en/` written as one `###` per problem: the heading
+    is the symptom in a few words (a short sentence or a noun phrase, as in `lend-a-book.md`: «Il libro è già in
+    catalogo»), the body keeps the message quoted in full, the cause and the remedy; nothing else of the text changes.
+    The page Aiuto → Problemi comuni shows its problems as boxes too (their anchors kept, other pages link to them).
+    Written by Sonnet agents section by section, Italian first, after `docs/writing-guide.md` (method of 9.5); the
+    writing guide gains the rule. One icon only (Q141): a life buoy (`life-buoy`) in a tinted tile beside the heading
+    "Possibili problemi", the boxes with their arrow only; `site:build` warns when a "Possibili problemi" section is
+    still a list. A link to the anchor of a problem opens its box (Chromium opens a `<details>` reached by its
+    fragment; Firefox and WebKit [VERIFY]; where a browser does not, a few lines in the page's existing script).
+  - Acceptance: no "Possibili problemi" / "Possible problems" section written as a list (the build's warning count is
+    zero); the anchors of the boxes resolve (`site:check`); the two languages mirror each other; `bun run ci` green.
+  - Depends on: 9.5 (the drafts), 9.7 (the site)
+
+- [ ] **9.47 A help button that is seen** (owner request, Q140; required for 0.9.0)
+  - Context: the help icon of the top bar (9.5b) was a 20 px icon without text between the print basket and the
+    account, and it went unnoticed.
+  - Tasks (Q140): on the computer (from the `md` breakpoint up) a "Guida" button with the icon and the word, 40 px high,
+    in the top bar's corner where the icon was; on the phone a round button of 44 px with the icon only, right after the
+    page title; both filled with the primary colour (white icon and text, a soft shadow, a hover state); still
+    `rel="external"` and the same table of `#lib/ui/help-links.ts`; the style guide (`/dev/ui`), `docs/navigation.md`
+    and the pages of the manual that show or name the icon updated, both languages.
+  - Acceptance: the help button visible and labelled on the main pages of both Playwright projects (a spec checks its
+    place, size and link); axe clean; `bun run ci` green.
+  - Depends on: 9.5b
+
+- [ ] **9.48 A language pack from the first-run wizard** (owner request, Q142; required for 0.9.0)
+  - Context: a language pack (9.39) could be added only from Amministrazione → Aspetto e lingua, after the wizard had
+    been completed in Italian or English.
+  - Tasks: the first screen of the wizard, beside the languages already there (English, Italian, the packs already in
+    `CONFIG_DIR/i18n/`), offers **another language**: the packs of the release of this version (the same list,
+    download and check as Aspetto e lingua, `language-pack-releases.ts`) or a zip uploaded from the computer
+    (`installPack`); once installed the pack is chosen, the wizard goes on in it and it becomes the installation's
+    language (`ui.locale`). The choice of English or Italian keeps its meaning: the language of the wizard and the
+    default of the installation. The remote functions answer only before the first configuration (the same guard as
+    the wizard and its restore, 9.43), never in the public demo; without internet the list says so and the upload is
+    still there. The installation section (`steps/first-run.md`) and the admin guide (`add-a-language.md`) describe
+    it, both languages; `docs/navigation.md` too.
+  - Acceptance: unit tests of the guard (refused after the setup, refused in the demo) and of the installation from the
+    wizard; a Playwright spec that installs a pack from a local release in the wizard (as the e2e of 9.39 does), sees
+    the wizard in that language and finishes with `ui.locale` set to it; `bun run ci` green.
+  - Depends on: 9.39, 1.11 (wizard)
 
 ### Phase 10 — Post-v1 extensions (Koha-inspired; each needs owner approval)
 
@@ -1933,6 +2022,10 @@ Each item: **question — why it matters — default used until decided (and rec
 - [x] **Q136 — Which language packs (resolved, owner decision; step 9.39):** which languages are published as packs? — *Decision: French, Spanish, Portuguese of Portugal (`pt-PT`) and of Brazil (`pt-BR`), German, Dutch, Catalan, Romanian, Hungarian, Czech, Slovak, Polish, Slovenian, Croatian, Greek, Swedish, Norwegian Bokmål (`nb`), Danish, Finnish, Turkish, Russian, Ukrainian, Simplified Chinese, Japanese, Korean (25 packs besides the built-in Italian and English); Arabic and Hebrew wait until the interface can be laid out right to left.*
 - [x] **Q137 — A beep on a camera read (resolved, owner decision; step 9.40):** should the phone make a sound when its camera reads a code, against the silence of Q40? — *Decision: yes, a short beep generated in the browser (no audio file), only for the camera and only when a read is taken; four sounds to choose from in Amministrazione → Codici a barre (Cassa, Lettore, Conferma, Arpeggio) or none, Conferma by default. The desk itself stays silent.*
 - [x] **Q138 — Class names for the countries of the language packs (resolved, owner decision; step 9.41):** can the school structure write the classes and school years of every country of the packs (Q136)? — *Decision: yes, with seven changes, all accepted: a label template per stage that may leave out the group; a `next` of a level that can be a list of choices (or leaving) for paths that split; the start and the name of the school year proposed by the preset; the card's class line as a template and the fixed Italian words of the shipped cards and slips from the dictionaries; the order of classes in the installation's language; register matching with NFKC, more ignored marks and aliases per level; preset names in every language, the language's countries first, and presets for the countries that lack one.*
+- [x] **Q139 — The item type on the record (resolved, owner decision; step 9.45):** the item type and the segnatura moved from the copy to the record? — *Decision: only the item type, always the record's (one type per title; a reference copy is a copy "not for loan", which stays on the copy). The segnatura stays on the copy, because it can change from one copy to another. A change of type for many titles is a batch action on the selected records of the catalogue, no longer in "Modifica le copie"; the catalogue import asks, when the copies of one record have different types, whether to give the record the type of most of its copies, and refusing turns those rows into errors (§3.22).*
+- [x] **Q140 — Where the help button goes (resolved, owner decision; step 9.47):** five placements were drawn in a mock (as today; a "Guida" button with text in the top bar's corner; a round button beside the page title; a "Guida" entry in the sidebar; a floating button). — *Decision: on the computer the "Guida" button with text in the top bar's corner, on the phone the round button beside the page title, both filled with the primary colour like the floating button of the mock.*
+- [x] **Q141 — The icon of the problem boxes (resolved, owner decision; step 9.46):** the warning triangle repeated on every box was ugly. — *Decision: one icon only, a life buoy in a tinted tile beside the heading "Possibili problemi"; the boxes carry their arrow only.*
+- [x] **Q142 — A language pack at the start (resolved, owner decision; step 9.48):** must a school whose language is a pack complete the wizard in Italian or English first? — *Decision: no; the wizard's first screen installs a pack of the release (or an uploaded zip), the wizard goes on in it and it becomes the installation's language. English and Italian stay the built-in choice for the wizard and the default.*
 
 ---
 
