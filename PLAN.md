@@ -289,7 +289,7 @@ Docs: https://svelte.dev/docs/kit/remote-functions (experimental).
 
 ### 3.5 Authentication, sessions and roles
 
-- **Staff accounts are defined in `config.json`** (`security.users[]`, Q20 resolved): `username`, `passwordHash` (argon2id, produced by `bun run auth:hash-password`; a plain `password` is accepted too but `config:check` and the admin dashboard warn about it), `roles`, `active`, optional `displayName`. Accounts are normally **shared per role** (`admin`, `prestiti`, `catalogo`, `tessere`), so the audit trail records the account, not the person (Q69 resolved: no operator-name tracking, not even optional). On startup and on every config reload the accounts are mirrored into `staff_user` (`source = 'config'`, upsert by username; accounts removed from the file are deactivated), so sessions, audit and permission checks work identically in every mode. The general case with personal accounts managed from the admin UI (`security.auth.mode = 'database'`, `source = 'database'`, password change, must-change flag) is Phase 10.1; who did what beyond the account name is deliberately not tracked. Staff accounts are separate from patrons; patrons never log in (staff-only product). Password hashing: `Bun.password.hash(pw, { algorithm: 'argon2id' })` (defaults m=64 MiB, t=2, p=1). Verification `Bun.password.verify`.
+- **Staff accounts are defined in `config.json`** (`security.users[]`, Q20 resolved): `username`, `passwordHash` (argon2id, produced by `bun run auth:hash-password`; a plain `password` is accepted too but `config:check` and the admin dashboard warn about it), `roles`, `active`, optional `displayName`. Accounts are normally **shared per role** (`admin`, `prestiti`, `catalogo`, `tessere`), so the audit trail records the account, not the person (Q69 resolved: no operator-name tracking, not even optional). On startup and on every config reload the accounts are mirrored into `staff_user` (`source = 'config'`, upsert by username; accounts removed from the file are deactivated), so sessions, audit and permission checks work identically in every mode. Personal accounts, one per person with their roles, are made in the same file from Amministrazione → Account del personale; a password set by an administrator can be marked `mustChangePassword` (the person chooses their own at the first login, nothing else opens until then), and every account changes its own password from the account menu (step 9.51). Accounts kept in the database instead of the file (`security.auth.mode = 'database'`, `source = 'database'`) are Phase 10.1; who did what beyond the account name is deliberately not tracked. Staff accounts are separate from patrons; patrons never log in (staff-only product). Password hashing: `Bun.password.hash(pw, { algorithm: 'argon2id' })` (defaults m=64 MiB, t=2, p=1). Verification `Bun.password.verify`.
 - Sessions: random 32-byte token (`crypto.getRandomValues`), stored **hashed** (SHA-256) in `session`, cookie `bv_session` (`HttpOnly; Secure; SameSite=Lax; Path=/`), sliding expiration (`security.sessionDays`, default 14). `hooks.server.ts` resolves the cookie to `event.locals.user` on every request.
 - Login rate limiting: in-memory token bucket per IP and per username (5 attempts / 15 min), plus constant-time failure path.
 - **Permissions are configurable (Q10 resolved).** The code knows a fixed list of *permissions*; *roles* are named bundles of permissions defined in `config.json` (`security.roles`, Appendix A) and a staff user holds one or more roles. Every check in the code uses a permission name, never a role name, so the owner can reshape roles without code changes.
@@ -1674,7 +1674,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
     the file, the question); the catalogue and wizard specs on both projects; `bun run ci` green.
   - Depends on: 9.45
 
-- [ ] **9.51 Personal accounts beside the shared ones** (owner request, Q144; required for 0.9.0)
+- [x] **9.51 Personal accounts beside the shared ones** (owner request, Q144; required for 0.9.0)
   - Context: the wizard creates one shared account per role (Amministrazione, Gestione prestiti, Catalogazione,
     Tessere e foto, Report); Amministrazione → Account del personale already creates more accounts with one or more
     roles, and the roles are bundles of permissions edited on the same page (§3.5), so a person never gets single
@@ -1683,14 +1683,15 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Tasks: "Cambia password" in the account menu for every account (the current password, the new one twice; the
     configuration's hash rewritten, the account's other sessions closed); "Da cambiare al primo accesso" when an
     administrator creates an account or sets a new password (`must_change_password`, a page that asks for it before
-    any other); the account dialog proposes the role as the first field and the name of the person; the wizard's and
-    the admin guide's text on shared and personal accounts; the audit records the account as now (Q69).
+    any other: the page **Cambia password**, `/password`, outside the app's frame; every check of a permission is refused
+    until then); the wizard's and the admin guide's text on shared and personal accounts; the audit records the
+    account as now (Q69).
   - Acceptance: unit tests (own password change, the forced change, sessions closed); a Playwright spec (an
     administrator creates a personal account, the person logs in, must change the password, works with the role's
     permissions); documentation (IT, EN); `bun run ci` green.
   - Depends on: 11.7
 
-- [ ] **9.52 A loan right after a return** (owner request, Q145; required for 0.9.0)
+- [x] **9.52 A loan right after a return** (owner request, Q145; required for 0.9.0)
   - Context: a pupil often brings a book back with the next one already chosen; at the desk the operator returns the
     book, then reads the pupil's card to lend the new one.
   - Tasks (Q145): on the **Prestito** desk with no patron chosen, a copy on loan is returned there and then (with the
@@ -1705,19 +1706,21 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
     Restituzione desk); `bun run ci` green.
   - Depends on: 4.1, 4.2
 
-- [ ] **9.53 Database diagrams and the libraries in the technical documentation** (owner request, Q146; required for
+- [x] **9.53 Database diagrams and the libraries in the technical documentation** (owner request, Q146; required for
   0.9.0)
   - Context: `docs/database.md` draws the tables as Mermaid `erDiagram` blocks, which GitHub renders but the
     documentation site shows as code; the libraries in use are listed only on the app's Informazioni page.
   - Tasks (Q146): the diagrams of `docs/database.md` (all tables, catalogue, patrons and circulation, staff and audit,
     support tables, the smaller ones of the sections) checked against `schema.ts` (keys, relations, cardinality) and
-    rendered by `site:build` into SVG pictures in the page (Mermaid run in the build's browser, no script on the site;
-    a dev dependency with its ADR); a test fails when a table of `schema.ts` is missing from the diagrams. A technical
+    drawn into SVG pictures by `bun run docs:diagrams` (Mermaid in the build's browser, ADR-053; the Pages workflow
+    runs it before `site:build`, which puts the drawings in the pages; no script on the site); `docs/database.md`
+    joins the Tecnica section of the site; a test fails when a table or a column of `schema.ts` is missing from the
+    diagrams, or the diagrams draw one that does not exist. A technical
     page **Librerie** (`docs/libraries.md`: name, version, licence, home page; the build and runtime parts as on the
     Informazioni page) generated by `bun run deps:generate` with the inventory it already writes; the Informazioni page
     keeps the version and the licence and links that page of the documentation, in the installation's language, in
-    place of its tables. [VERIFY] the licence notices of the libraries still ship with the image without the
-    Informazioni tables.
+    place of its tables (the tables were a list, not the licence texts: the libraries' licence comments the bundle
+    keeps are unchanged).
   - Acceptance: the site shows the diagrams as pictures (`site:check`); the libraries page and the About link; the
     tests; `bun run ci` green.
   - Depends on: 9.7, 1.12
@@ -2137,9 +2140,9 @@ Each item: **question — why it matters — default used until decided (and rec
 - [x] **Q141 — The icon of the problem boxes (resolved, owner decision; step 9.46):** the warning triangle repeated on every box was ugly. — *Decision: one icon only, a life buoy in a tinted tile beside the heading "Possibili problemi"; the boxes carry their arrow only.*
 - [x] **Q143 — The segnatura (resolved, owner decision; step 9.50):** the segnatura is a free string with the level in the middle; how is it kept coherent among the copies of a title? — *Decision: it is computed, never typed whole: a scheme chosen in the wizard and in Amministrazione (the order: genre and level, level and genre, genre only, free; the end: the author's initials computed, proposed and editable per title, or nothing; the patterns editable by hand) makes it from the classification, the copy's level, the author and title, a text of the title and a text of the copy where the scheme has them. Every copy stores the result, recomputed by the server after each change; the free scheme keeps a string per copy for a library that wants it. The default is the library's own: `B 4 DEL`, the initials computed.*
 - [x] **Q142 — A language pack at the start (resolved, owner decision; step 9.48):** must a school whose language is a pack complete the wizard in Italian or English first? — *Decision: no; the wizard's first screen installs a pack of the release (or an uploaded zip), the wizard goes on in it and it becomes the installation's language. English and Italian stay the built-in choice for the wizard and the default.*
-- [ ] **Q144 — Personal accounts (open; step 9.51):** the wizard makes shared accounts per role; must a school be able to give each person an account, and assign permissions person by person? — *Default: personal accounts are made from Amministrazione → Account del personale with one or more **roles** (the profiles: bundles of permissions, edited on the same page), never with single permissions; the account menu changes one's own password, an administrator can ask for a change at the first login. The word stays "Ruoli".*
-- [ ] **Q145 — A loan right after a return (open; step 9.52):** a pupil returns a book and borrows another at once; must the return stand for reading the card? — *Default: yes on the Prestito desk (a copy on loan read with no patron chosen is returned and its borrower is chosen); the Restituzione desk offers "Presta a <nome>" after each return.*
-- [ ] **Q146 — Diagrams and libraries in the technical documentation (open; step 9.53):** *Default: the ER diagrams of `docs/database.md`, checked against the schema, become pictures on the site (rendered at build time); the libraries move to a generated technical page, linked from Informazioni in place of its tables.*
+- [x] **Q144 — Personal accounts (resolved, owner decision; step 9.51):** the wizard makes shared accounts per role; must a school be able to give each person an account, and assign permissions person by person? — *Decision: personal accounts are made from Amministrazione → Account del personale with one or more **roles** (the profiles: bundles of permissions, edited on the same page), never with single permissions; the account menu changes one's own password, an administrator can ask for a change at the first login. The word stays "Ruoli".*
+- [x] **Q145 — A loan right after a return (resolved, owner decision; step 9.52):** a pupil returns a book and borrows another at once; must the return stand for reading the card? — *Decision: yes on the Prestito desk (a copy on loan read with no patron chosen is returned and its borrower is chosen); the Restituzione desk offers "Presta a <nome>" after each return.*
+- [x] **Q146 — Diagrams and libraries in the technical documentation (resolved, owner decision; step 9.53):** *Decision: the ER diagrams of `docs/database.md`, checked against the schema, become pictures on the site (rendered at build time); the libraries move to a generated technical page, linked from Informazioni in place of its tables.*
 
 ---
 
@@ -2601,7 +2604,8 @@ Single source for the messages of the checkout and check-in desks. Every case ha
 
 | Reason code | Where | Italian message | Action button |
 |---|---|---|---|
-| `no_patron_selected` | checkout, an item barcode is scanned before a card | "È stato letto il libro *{title}* senza una tessera. Leggere prima la tessera dell'utente; per una restituzione aprire Restituzioni." | "Vai a Restituzioni" (keeps the barcode) |
+| `no_patron_selected` | checkout, the barcode of a copy not on loan is scanned before a card | "Il libro *{title}* non è in prestito: per prestarlo leggere prima la tessera dell'utente." | — |
+| `returned_now_lending` | checkout, the barcode of a copy on loan is scanned before a card: returned there, its borrower chosen (9.52) | "Restituito: *{title}*. Ora i libri letti si prestano a {name}." (with `returned_overdue` and `was_lost_now_found` when they apply) | — |
 | `card_on_checkin` | check-in, a card is scanned | "Questa è una tessera ({name}), non un libro. Qui si registrano solo le restituzioni: per un prestito aprire Prestiti." | "Vai a Prestiti con questo utente" |
 | `unknown_barcode` | both | "Codice {code} non trovato. Verificare la lettura dello scanner o digitare il codice: i codici dei libri hanno la forma {item}, i numeri delle tessere {card}." (examples of the configured formats, Phase 12) | "Riprova", "Cerca per titolo" |
 | `bad_check_digit` | both | "Il codice {code} non è valido: il carattere di controllo non corrisponde. Rileggere il codice o digitarlo." | "Riprova" |
@@ -2619,7 +2623,7 @@ Single source for the messages of the checkout and check-in desks. Every case ha
 | `duplicate_scan` | checkout session | "*{title}* è già nell'elenco di questo prestito." | — |
 | `not_on_loan` | check-in | "*{title}* non risulta in prestito: nessuna restituzione da registrare. Se era prestato senza registrazione, il libro è comunque disponibile." | — |
 | `already_returned_today` | check-in | "*{title}* è già stato restituito oggi alle {time}." | — |
-| `returned_overdue` | check-in | "Restituito. *{title}* era in ritardo di {days} giorni (scadenza {due})." | "Segna danneggiato" |
+| `returned_overdue` | check-in | "Restituito. *{title}* era in ritardo di {days} giorni (scadenza {due})." | "Presta a {name}" (the Loans page with that patron, 9.52), "Segna danneggiato" |
 | `was_lost_now_found` | check-in | "*{title}* era segnato come smarrito: ora torna disponibile." | "Conferma" |
 | `patron_has_overdues` | checkout (info, not blocking unless `blockIfOverdue`) | "{name} ha {n} libro/libri in ritardo: {titles}." | "Stampa promemoria" |
 | `calendar_closed_due_date` | checkout (info) | "La scadenza cade in un giorno di chiusura ed è stata spostata a {due}." | — |
@@ -2627,7 +2631,7 @@ Single source for the messages of the checkout and check-in desks. Every case ha
 | `session_idle_reset` | checkout | "Nessuna operazione da {n} minuti: il prestito di {name} è stato chiuso. Per continuare, leggere di nuovo la tessera." | — |
 | `undo_done` | checkout | "Annullato: *{title}* non è più in prestito a {name}." | — |
 
-Confirmations, which are not anomalies, use keys under `circulation.checkout.*` and `circulation.checkin.*` with their own codes in the page: `lent`, `renewed`, `returned`, `renewed_instead`, `marked_damaged`, and `checkin_pending` (a barcode carried over from the checkout desk waits in the field until the operator presses Enter).
+Confirmations, which are not anomalies, use keys under `circulation.checkout.*` and `circulation.checkin.*` with their own codes in the page: `lent`, `renewed`, `returned`, `renewed_instead`, `marked_damaged`, and `checkin_pending` (a barcode carried over from the checkout desk waits in the field until the operator presses Enter). The `returned` confirmation carries "Presta a {name}", the Loans page with its borrower (9.52).
 
 Rules: the loan limit and the "item on loan to someone else" cases are hard blocks with no override, because pupils often forget the book they already have and the return must always be registered explicitly by scanning the book (Q13, Q40); placeholders come from the DTO, HTML-escaped; titles are shortened to 40 characters; every message has a Playwright assertion on its exact text; adding a case means adding a row here first.
 

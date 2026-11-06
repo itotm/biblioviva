@@ -65,7 +65,8 @@
 			"active": "Active",
 			"inactive": "Deactivated",
 			"plainPassword": "Clear password in the file",
-			"notInConfig": "Removed from the configuration"
+			"notInConfig": "Removed from the configuration",
+			"mustChange": "Password to change at the first login"
 		},
 		"hash": {
 			"title": "Generate password hash",
@@ -111,7 +112,7 @@
 			"title": "Sign-in",
 			"config": "People sign in with the accounts of this page, usually one shared per role (for example “prestiti” for the desk).",
 			"database": "People sign in with personal accounts.",
-			"later": "Personal accounts, one per person, are planned for a later version."
+			"personal": "To give a person an account of their own: \"New account\", with their role and the password to change at the first login."
 		},
 		"dialog": {
 			"title": {
@@ -135,7 +136,9 @@
 			},
 			"removed": "Account deleted",
 			"removeTitle": "Delete {{name}}?",
-			"removeHint": "The account leaves the configuration; what it did stays in the log under its name. It can be undone from the configuration history."
+			"removeHint": "The account leaves the configuration; what it did stays in the log under its name. It can be undone from the configuration history.",
+			"mustChange": "To change at the first login",
+			"mustChangeHint": "For a person's account: at the first login they choose their own password, which the administrator does not know. Untick it for a shared account."
 		},
 		"errors": {
 			"badUsername": "Invalid username: {{details}}.",
@@ -150,7 +153,9 @@
 			"badRole": "Invalid role name: {{details}}.",
 			"roleTaken": "Two roles are named {{details}}.",
 			"roleInUse": "The role is used by some accounts: {{details}}.",
-			"invalid": "The configuration would not be valid: {{details}}."
+			"invalid": "The configuration would not be valid: {{details}}.",
+			"wrongPassword": "The current password is not right.",
+			"samePassword": "The new password is the same as the current one."
 		}
 	},
 	"backups": {

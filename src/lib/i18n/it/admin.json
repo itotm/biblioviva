@@ -65,7 +65,8 @@
 			"active": "Attivo",
 			"inactive": "Disattivato",
 			"plainPassword": "Password in chiaro nel file",
-			"notInConfig": "Tolto dalla configurazione"
+			"notInConfig": "Tolto dalla configurazione",
+			"mustChange": "Password da cambiare al primo accesso"
 		},
 		"hash": {
 			"title": "Genera hash password",
@@ -111,7 +112,7 @@
 			"title": "Accesso",
 			"config": "Si entra con gli account di questa pagina, di solito uno condiviso per ruolo (per esempio «prestiti» per il banco).",
 			"database": "Si entra con account personali.",
-			"later": "Gli account personali, uno per persona, sono previsti in una versione successiva."
+			"personal": "Per dare a una persona un account suo: «Nuovo account», con il suo ruolo e la password da cambiare al primo accesso."
 		},
 		"dialog": {
 			"title": {
@@ -135,7 +136,9 @@
 			},
 			"removed": "Account eliminato",
 			"removeTitle": "Eliminare {{name}}?",
-			"removeHint": "L'account esce dalla configurazione; le operazioni che ha fatto restano nel registro con il suo nome. Si può annullare dalla cronologia della configurazione."
+			"removeHint": "L'account esce dalla configurazione; le operazioni che ha fatto restano nel registro con il suo nome. Si può annullare dalla cronologia della configurazione.",
+			"mustChange": "Da cambiare al primo accesso",
+			"mustChangeHint": "Per l'account di una persona: al primo accesso sceglie la sua password, che l'amministratore non conosce. Toglierlo per un account condiviso."
 		},
 		"errors": {
 			"badUsername": "Nome utente non valido: {{details}}.",
@@ -150,7 +153,9 @@
 			"badRole": "Nome di ruolo non valido: {{details}}.",
 			"roleTaken": "Due ruoli si chiamano {{details}}.",
 			"roleInUse": "Il ruolo è usato da qualche account: {{details}}.",
-			"invalid": "La configurazione non sarebbe valida: {{details}}."
+			"invalid": "La configurazione non sarebbe valida: {{details}}.",
+			"wrongPassword": "La password attuale non è giusta.",
+			"samePassword": "La nuova password è uguale a quella attuale."
 		}
 	},
 	"backups": {

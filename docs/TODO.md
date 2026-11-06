@@ -84,12 +84,12 @@ list is cleared at a release, and a new one takes the next.
   interface.
 - [x] 9.50 The segnatura computed from a scheme chosen in the wizard (order: genre and level, level and genre, genre
   only, free; end: initials computed, editable or none); stored on the copies, recomputed by the server (Q143).
-- [ ] 9.51 Personal accounts beside the shared ones: own password change, change at the first login, roles as the
-  profiles (Q144, waiting for the owner's go-ahead).
-- [ ] 9.52 A loan right after a return: the return on the Prestito desk chooses the borrower; "Presta a" on the
-  Restituzione desk (Q145, waiting for the owner's go-ahead).
-- [ ] 9.53 Database diagrams as pictures on the site and the libraries in a technical page linked from Informazioni
-  (Q146, waiting for the owner's go-ahead).
+- [x] 9.51 Personal accounts beside the shared ones: own password change, change at the first login, roles as the
+  profiles (Q144).
+- [x] 9.52 A loan right after a return: the return on the Prestito desk chooses the borrower; "Presta a" on the
+  Restituzione desk (Q145).
+- [x] 9.53 Database diagrams as pictures on the site and the libraries in a technical page linked from Informazioni
+  (Q146).
 - [ ] 9.6 Release 0.9.0, the first tagged release of the public beta (ADR-048).
 
 ## After 0.9.0

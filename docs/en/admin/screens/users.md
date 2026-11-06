@@ -2,8 +2,9 @@
 
 The **Staff accounts** page lists the accounts with which the staff sign in to BiblioViva, the roles and permissions that
 govern them and the way people sign in. It is reserved for the `admin` account and opens from the **Staff accounts** tab of
-[Administration](admin.md). Normally there is one shared account per role: **Administration (admin)**, **Loan management
-(prestiti)**, **Cataloguing (catalogo)**, **Cards and photos (tessere)** and **Reports (report)**. The procedures are in
+[Administration](admin.md). The first run creates one shared account per role: **Administration (admin)**, **Loan
+management (prestiti)**, **Cataloguing (catalogo)**, **Cards and photos (tessere)** and **Reports (report)**; personal
+accounts, one per person with their role, are added here. The procedures are in
 the guides [Manage the staff accounts](../guides/manage-accounts.md) and
 [Change a password](../guides/change-a-password.md).
 
@@ -23,6 +24,12 @@ digits, dot, hyphen and underscore, 2 to 32 characters), the **Name shown**, the
 least eight characters) and its repetition are given. The "Active account (can sign in)" box decides whether the account can sign
 in. BiblioViva does not keep the password: it writes only its hash in the configuration.
 
+Under the password fields the **To change at the first login** box, ticked by default, carries the hint "For a person's
+account: at the first login they choose their own password, which the administrator does not know. Untick it for a
+shared account." The same box appears in the **New password** dialog. At the first login with that account BiblioViva
+opens only the **Change password** page, described in [Change your own
+password](../../manual/guides/change-my-password.md).
+
 ## Reload configuration
 
 The **Reload configuration** button re-reads the configuration files, useful when they have been changed by hand. If the
@@ -38,7 +45,8 @@ Each account has a card with:
 - the **Roles** of the account, the **Permissions** that result (for example Loans, Patrons, Catalogue, Reports,
   Administration) and the **Last login**, which for an account never used says "never";
 - a yellow warning when the password is written in clear in the file ("Clear password in the file") or when the account
-  still exists in the database but has been removed from the configuration ("Removed from the configuration").
+  still exists in the database but has been removed from the configuration ("Removed from the configuration");
+- the notice "Password to change at the first login", until the person has chosen their own password.
 
 The commands of the card are three.
 
@@ -73,7 +81,8 @@ the accounts that use it; a role used by an account cannot be deleted.
 ## Sign-in
 
 The "Sign-in" box explains how people sign in. With the accounts of the configuration, the normal case: "People sign in
-with the accounts of this page, usually one shared per role". There are no personal accounts, one per person.
+with the accounts of this page, usually one shared per role". Besides the shared accounts, personal accounts are
+created, one per person; each account changes its own password from the account menu.
 
 ## Generate password hash
 

@@ -16,7 +16,11 @@ avvio](../../setup/steps/first-run.md):
 | **Report (report)** | `report` | i report e le statistiche |
 
 Ogni account ha uno o più *ruoli*, e ogni ruolo è un insieme di *permessi*. Un account può fare solo ciò che i
-permessi dei suoi ruoli consentono. Non esistono account personali, uno per persona.
+permessi dei suoi ruoli consentono.
+
+Oltre agli account condivisi si creano gli account personali, uno per persona, ciascuno con il suo ruolo. A una persona
+si dà il ruolo adatto al suo lavoro, mai i singoli permessi. Il registro delle operazioni riporta il nome dell'account:
+con un account per persona si vede chi ha fatto che cosa.
 
 - Tempo: circa 5 minuti per account.
 - Account: `admin`.
@@ -42,11 +46,17 @@ permessi dei suoi ruoli consentono. Non esistono account personali, uno per pers
 1. Spuntare, sotto **Ruoli**, almeno un ruolo.
 1. Lasciare attiva la casella **Account attivo (può entrare)**.
 1. Scrivere la password nel campo **Password (almeno 8 caratteri)** e di nuovo nel campo **Ripeti la password**.
+1. Lasciare attiva la casella **Da cambiare al primo accesso** se l'account è di una persona: al primo accesso la persona
+   sceglie la sua password, che l'amministratore non conosce. Togliere la spunta per un account condiviso.
 1. Premere **Salva**. Compare il messaggio «Account creato».
 
 > [!IMPORTANT]
 > La password non si rivede più: BiblioViva ne conserva soltanto una forma protetta. Annotarla prima di premere
 > **Salva** e consegnarla di persona a chi usa l'account.
+
+Finché la persona non ha scelto la sua password, la scheda dell'account mostra «Password da cambiare al primo accesso».
+Al primo accesso BiblioViva apre soltanto la pagina **Cambia password**, come spiegato in [Cambiare la propria
+password](../../manual/guides/change-my-password.md).
 
 ### Modificare un account
 
@@ -87,6 +97,7 @@ usano, oppure «nessun account».
 ## Risultato
 
 - Il nuovo account entra dalla pagina **Accesso** con il suo nome utente e la sua password.
+- Un account con la casella **Da cambiare al primo accesso** attiva chiede subito una password scelta dalla persona.
 - Ogni account vede solo le pagine consentite dai suoi permessi.
 - Gli account disattivati o eliminati non entrano più.
 
@@ -110,6 +121,11 @@ Compare «Disattiva l'account prima di eliminarlo.»: seguire i passi di disatti
 
 Il ruolo è usato da qualche account. Togliere prima il ruolo a quegli account con **Modifica**.
 
+### La scheda dice «Password da cambiare al primo accesso»
+
+La persona non è ancora entrata con la password ricevuta, oppure non ha ancora scelto la sua. L'avviso scompare appena
+la persona cambia la password dalla pagina **Cambia password**.
+
 ### Una scheda segnala la password in chiaro
 
 L'account è stato scritto a mano nei file della configurazione con la password leggibile. Assegnargli una password con
@@ -128,6 +144,7 @@ soltanto a chi li modifica fuori da BiblioViva.
 ## Pagine correlate
 
 - [Cambiare una password](change-a-password.md)
+- [Cambiare la propria password](../../manual/guides/change-my-password.md)
 - [Account del personale](../screens/users.md)
 - [Esportare e importare la configurazione](export-the-configuration.md): l'archivio contiene gli account
 - [Primi passi dell'amministratore](../first-steps.md)

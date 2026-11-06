@@ -39,6 +39,7 @@
 	const moreCurrent = $derived(moreItems.some((i) => current(i.href)));
 	const UserIcon = icons.patron;
 	const LogoutIcon = icons.logout;
+	const KeyIcon = icons.card;
 	const MoreIcon = icons.menu;
 	const InfoIcon = icons.info;
 	const HelpIcon = icons.help;
@@ -305,6 +306,12 @@
 						<MenuPanel>
 							<MenuItem value="about" href="/about" icon={InfoIcon}
 								>{i18n.t("nav.about")}</MenuItem
+							>
+							<MenuItem
+								value="password"
+								href="/password"
+								icon={KeyIcon}
+								data-testid="menu-password">{i18n.t("nav.password")}</MenuItem
 							>
 							<MenuItem value="logout" icon={LogoutIcon} onclick={onLogout}
 								>{i18n.t("nav.logout")}</MenuItem

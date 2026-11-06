@@ -2,8 +2,9 @@
 
 La pagina **Account del personale** elenca gli account con cui il personale entra in BiblioViva, i ruoli e i permessi
 che li regolano e il modo in cui si accede. È riservata all'account `admin` e si apre dalla scheda **Account del
-personale** di [Amministrazione](admin.md). Di norma c'è un account condiviso per ciascun ruolo: **Amministrazione
-(admin)**, **Gestione prestiti (prestiti)**, **Catalogazione (catalogo)**, **Tessere e foto (tessere)** e **Report (report)**. Le procedure sono nelle guide
+personale** di [Amministrazione](admin.md). Il primo avvio crea un account condiviso per ciascun ruolo:
+**Amministrazione (admin)**, **Gestione prestiti (prestiti)**, **Catalogazione (catalogo)**, **Tessere e foto
+(tessere)** e **Report (report)**; gli account personali, uno per persona con il suo ruolo, si aggiungono qui. Le procedure sono nelle guide
 [Gestire gli account del personale](../guides/manage-accounts.md) e
 [Cambiare una password](../guides/change-a-password.md).
 
@@ -23,6 +24,12 @@ Il pulsante **Nuovo account** apre la finestra «Nuovo account». Per ogni accou
 uno), la password (almeno otto caratteri) e la sua ripetizione. La casella «Account attivo (può entrare)» decide se
 l'account può accedere. BiblioViva non conserva la password: nella configurazione scrive soltanto il suo hash.
 
+Sotto i campi della password la casella **Da cambiare al primo accesso**, attiva in partenza, ha il suggerimento «Per
+l'account di una persona: al primo accesso sceglie la sua password, che l'amministratore non conosce. Toglierlo per un
+account condiviso.» La stessa casella compare nella finestra **Nuova password**. Al primo accesso con quell'account
+BiblioViva apre soltanto la pagina **Cambia password**, descritta in [Cambiare la propria
+password](../../manual/guides/change-my-password.md).
+
 ## Ricarica configurazione
 
 Il pulsante **Ricarica configurazione** rilegge i file di configurazione, utile quando sono stati modificati a mano. Se la
@@ -38,7 +45,8 @@ Ogni account ha una scheda con:
 - i **Ruoli** dell'account, i **Permessi** che ne risultano (per esempio Prestiti, Utenti, Catalogo, Report,
   Amministrazione) e l'**Ultimo accesso**, che per un account mai usato dice «mai»;
 - un avviso giallo quando la password è scritta in chiaro nel file («Password in chiaro nel file») oppure quando l'account
-  esiste ancora nel database ma è stato tolto dalla configurazione («Tolto dalla configurazione»).
+  esiste ancora nel database ma è stato tolto dalla configurazione («Tolto dalla configurazione»);
+- l'avviso «Password da cambiare al primo accesso», finché la persona non ha scelto la sua password.
 
 I comandi della scheda sono tre.
 
@@ -72,7 +80,8 @@ Rinominare un ruolo aggiorna gli account che lo usano; un ruolo usato da un acco
 ## Accesso
 
 Il riquadro «Accesso» spiega come si entra. Con gli account della configurazione, il caso normale: «Si entra con gli
-account di questa pagina, di solito uno condiviso per ruolo». Non esistono account personali, uno per persona.
+account di questa pagina, di solito uno condiviso per ruolo». Accanto agli account condivisi si creano gli account
+personali, uno per persona; ogni account cambia da sé la propria password dal menu dell'account.
 
 ## Genera hash password
 

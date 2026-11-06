@@ -37,9 +37,11 @@ administrator has pinned therefore appear here, in a strip above the field. The 
 
 ## Patron field
 
-In the first phase the field is called **Card or patron's name**. There are two ways to choose the patron:
+In the first phase the field is called **Card or patron's name**. There are three ways to choose the patron:
 
 - read the card with the barcode scanner: the scanner sends the code and the Enter key, and the patron is chosen;
+- read the barcode of a book that is on loan: the book is returned and the patron who had it is chosen (see
+  [Return, then lend](#return-then-lend));
 - type part of the name in the field: from the third letter a list opens with the matching patrons (also for similar
   names), with the class and, if photos are on, the photo. Choose with the arrows and Enter, or by pressing the name;
   the Esc key empties the field.
@@ -87,6 +89,22 @@ The book has been lent and appears in **Books lent now**. The due date follows t
 [calendar](calendar.md). No action is required: scan the next book, or press **Done**. If the due date was corrected,
 one of the notices described in [Notices after a loan](#notices-after-a-loan) follows immediately.
 
+### Return, then lend
+
+> Returned: “`<title>`”. The books read now are lent to `<name>`.
+
+It appears in green when no patron is chosen and the code of a book that is on loan is read: BiblioViva records the
+return at once and chooses the patron who had the book, as if the patron's card had been read. The patron's record
+appears on the page and the field becomes **Scan the book**. The next book read is lent to that patron. If the book was
+late, the message “Returned. “`<title>`” was `<n>` days overdue (due `<date>`).” appears too; if it was marked as lost,
+the message [Lost book found](checkin.md#lost-book-found) appears too.
+
+The patron stays chosen until another card is read, **Done** is pressed or the page closes by itself after the idle time
+(see [Session closed for inactivity](#session-closed-for-inactivity)). If the patron has reached the loan limit or
+cannot borrow books, the desk says so as after reading the card (see
+[Loan limit reached](#loan-limit-reached)). For the procedure see
+[Return a book and lend another one at once](../guides/return-and-lend.md).
+
 ### Loan renewed
 
 > Renewed: “`<title>`”, new due date `<date>`
@@ -103,13 +121,14 @@ loan not renewed, the reason (see [Refused renewals](#refused-renewals)).
 
 ## Refused loans
 
-### Book scanned without a card
+### Book not on loan scanned without a card
 
-> The book “`<title>`” was scanned without a card. Scan the patron's card first; for a return, open Returns.
+> The book “`<title>`” is not on loan: to lend it, read the patron's card first.
 
-The code of a copy was read when no patron was chosen yet. If the book was to be lent, read the patron's card and then
-the book again. If instead the book is being returned, press **Go to Returns**: the page opens with the code already in
-the field, to be confirmed with Enter.
+The code of an available copy was read when no patron was chosen yet. Read the patron's card and then the book again.
+A book that is on loan, read with no patron chosen, is returned on the spot: see
+[Return, then lend](#return-then-lend). If the book was already returned today, the message
+[Book already returned today](checkin.md#book-already-returned-today) appears.
 
 ### Code not found
 
@@ -325,5 +344,6 @@ The window **Force the renewal?** works in the same way for a refused renewal: *
 - [Renew a loan](../guides/renew-a-loan.md)
 - [Lend to a patron who does not have the card with them](../guides/lend-without-card.md)
 - [Lend or return a copy without a label](../guides/book-without-label.md)
+- [Return a book and lend another one at once](../guides/return-and-lend.md)
 - [Returns](checkin.md)
 - [Books on loan](loans.md)

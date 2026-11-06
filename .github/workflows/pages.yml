@@ -55,6 +55,9 @@ jobs:
                   CI: "true"
                   E2E_PREBUILT: "1"
 
+            - name: Diagrams of the documentation, drawn by Mermaid
+              run: bun run docs:diagrams
+
             - name: Build the site and its search index
               run: bun run site:build
 

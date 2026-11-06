@@ -27,6 +27,8 @@ Banco prestiti con l'account Gestione prestiti.
    prestare.
 1. Se l'utente vuole tenere il libro, premere **Rinnova invece** nella riga del libro: il prestito viene rinnovato
    al posto della restituzione ([Rinnovare un prestito](renew-a-loan.md)).
+1. Se l'utente prende subito un altro libro, premere **Presta a `<nome>`** nel messaggio della restituzione
+   ([Restituire un libro e prestarne subito un altro](return-and-lend.md)).
 1. Rimettere i libri sugli scaffali secondo la segnatura scritta sull'etichetta.
 
 > [!NOTE]
@@ -76,6 +78,7 @@ Invio. La restituzione si registra solo con Invio.
 ## Pagine correlate
 
 - [Prestare un libro](lend-a-book.md)
+- [Restituire un libro e prestarne subito un altro](return-and-lend.md)
 - [Rinnovare un prestito](renew-a-loan.md)
 - [Prestare o restituire una copia senza etichetta](book-without-label.md)
 - [Stampare i solleciti](overdue-reminders.md)

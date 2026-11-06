@@ -61,6 +61,7 @@ export const saveStaffAccount = command(
 		roles: v.pipe(v.array(v.pipe(v.string(), v.maxLength(32))), v.maxLength(20)),
 		active: v.boolean(),
 		password: v.optional(v.pipe(v.string(), v.maxLength(256))),
+		mustChangePassword: v.optional(v.boolean(), false),
 	}),
 	async (draft) => {
 		const user = requireUser("admin");

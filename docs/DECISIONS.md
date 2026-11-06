@@ -906,3 +906,19 @@ merges its own configuration, not input from users.
 
 **Consequences.** Remove the override when ESLint and typescript-eslint require `minimatch` 11 themselves, and the
 ignore when the plugin leaves `deepmerge` or a patched release appears. New advisories still fail the step.
+
+## ADR-053 — Mermaid draws the diagrams of the documentation at build time (2026-11-06, owner, Q146)
+
+**Context.** `docs/database.md` and `docs/navigation.md` draw the database and the pages as Mermaid blocks. GitHub
+renders them, but the documentation site showed them as code. The owner wants well-made ER diagrams in the technical
+documentation.
+
+**Decision.** `mermaid` (exact version, a development dependency) draws every ```` ```mermaid ```` block of `docs/` into
+an SVG file in the build's browser: `bun run docs:diagrams` (Playwright, Chromium, the documentation's Inter font for
+the measures) writes `site/.diagrams/<hash of the code>.svg`, and `site:build` puts each drawing in its page in place
+of the code (the code stays where a drawing is missing, with a warning). The Pages workflow runs it before the build.
+The site carries no script for the diagrams and loads nothing from elsewhere. A unit test keeps the diagrams of
+`docs/database.md` in step with `schema.ts` (every table and column drawn, nothing drawn that does not exist).
+
+**Consequences.** One more development dependency with its own dependencies (none of it in the image). A diagram
+changed in the Markdown is drawn again by the next `docs:diagrams`; the files are not committed.

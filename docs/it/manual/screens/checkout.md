@@ -37,10 +37,12 @@ l'amministratore ha messo in evidenza compaiono quindi qui, in una fascia sopra 
 
 ## Campo dell'utente
 
-Nella prima fase il campo si chiama **Tessera o nome dell'utente**. Ci sono due modi per scegliere l'utente:
+Nella prima fase il campo si chiama **Tessera o nome dell'utente**. Ci sono tre modi per scegliere l'utente:
 
 - leggere la tessera con il lettore di codici a barre: il lettore invia il codice e il tasto Invio, e l'utente è
   scelto;
+- leggere il codice di un libro che è in prestito: il libro viene restituito e l'utente che lo aveva è scelto (vedere
+  [Restituzione e prestito successivo](#restituzione-e-prestito-successivo));
 - scrivere nel campo una parte del nome: dalla terza lettera si apre un elenco con gli utenti che corrispondono (anche
   per nomi simili), con la classe e, se le foto sono attive, la foto. Si sceglie con le frecce e Invio, oppure
   premendo sul nome; il tasto Esc svuota il campo.
@@ -90,6 +92,23 @@ biblioteca e il [calendario](calendar.md). Nessuna azione è richiesta: leggere 
 **Fine**. Se la scadenza è stata corretta, subito dopo compare uno degli avvisi descritti in
 [Avvisi dopo un prestito](#avvisi-dopo-un-prestito).
 
+### Restituzione e prestito successivo
+
+> Restituito: «`<titolo>`». Ora i libri letti si prestano a `<nome>`.
+
+Compare in verde quando nessun utente è scelto e si legge il codice di un libro che è in prestito: BiblioViva
+registra subito la restituzione e sceglie l'utente che aveva il libro, come se ne avesse letto la tessera. Nella pagina
+compare la scheda dell'utente e il campo diventa **Passa il libro**. Il libro successivo che si legge è prestato a
+quell'utente. Se il libro era in ritardo compare anche «Restituito. «`<titolo>`» era in ritardo di `<n>` giorni
+(scadenza `<data>`).»; se era segnato come smarrito compare anche il messaggio
+[Libro smarrito ritrovato](checkin.md#libro-smarrito-ritrovato).
+
+L'utente resta scelto finché si legge un'altra tessera, si preme **Fine** o la pagina si chiude da sola per inattività
+(vedere [Sessione chiusa per inattività](#sessione-chiusa-per-inattività)). Se l'utente ha raggiunto il limite di
+prestiti o non può prendere libri, il banco lo dice come dopo la lettura della tessera
+(vedere [Limite di prestiti raggiunto](#limite-di-prestiti-raggiunto)). Per la procedura vedere
+[Restituire un libro e prestarne subito un altro](../guides/return-and-lend.md).
+
 ### Prestito rinnovato
 
 > Rinnovato: «`<titolo>`», nuova scadenza `<data>`
@@ -106,14 +125,14 @@ ogni prestito non rinnovato, il motivo (vedere [Rinnovi rifiutati](#rinnovi-rifi
 
 ## Prestiti rifiutati
 
-### Libro letto senza tessera
+### Libro non in prestito letto senza tessera
 
-> È stato letto il libro «`<titolo>`» senza una tessera. Leggere prima la tessera dell'utente; per una restituzione
-> aprire Restituzioni.
+> Il libro «`<titolo>`» non è in prestito: per prestarlo leggere prima la tessera dell'utente.
 
-È stato letto il codice di una copia quando nessun utente era ancora scelto. Se si voleva prestare il libro, leggere la
-tessera dell'utente e poi di nuovo il libro. Se invece il libro viene restituito, premere **Vai a Restituzioni**: la
-pagina si apre con il codice già nel campo, da confermare con Invio.
+È stato letto il codice di una copia disponibile quando nessun utente era ancora scelto. Leggere la tessera
+dell'utente e poi di nuovo il libro. Un libro che è in prestito, letto senza utente scelto, si restituisce da solo:
+vedere [Restituzione e prestito successivo](#restituzione-e-prestito-successivo). Se il libro è già stato restituito
+oggi, compare il messaggio [Libro già restituito oggi](checkin.md#libro-già-restituito-oggi).
 
 ### Codice non trovato
 
@@ -337,5 +356,6 @@ La finestra **Forzare il rinnovo?** funziona allo stesso modo per un rinnovo rif
 - [Rinnovare un prestito](../guides/renew-a-loan.md)
 - [Prestare a chi non ha la tessera con sé](../guides/lend-without-card.md)
 - [Prestare o restituire una copia senza etichetta](../guides/book-without-label.md)
+- [Restituire un libro e prestarne subito un altro](../guides/return-and-lend.md)
 - [Restituzioni](checkin.md)
 - [Libri in prestito](loans.md)

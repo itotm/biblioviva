@@ -123,10 +123,11 @@
 		"printReminder": "Print a reminder",
 		"toCheckout": "Go to Loans with this patron",
 		"markDamaged": "Mark damaged",
-		"confirm": "Confirm"
+		"confirm": "Confirm",
+		"lendTo": "Lend to {{name}}"
 	},
 	"msg": {
-		"no_patron_selected": "The book “{{title}}” was scanned without a card. Scan the patron's card first; for a return, open Returns.",
+		"no_patron_selected": "The book “{{title}}” is not on loan: to lend it, read the patron's card first.",
 		"card_on_checkin": "This is a card ({{name}}), not a book. Only returns are registered here: for a loan open Loans.",
 		"unknown_barcode": "Code {{code}} not found. Check that the scanner read it correctly or type it: book codes look like {{item}}, card numbers like {{card}}.",
 		"bad_check_digit": "Code {{code}} looks mistyped (the check character does not match). Scan it again or type it.",
@@ -150,7 +151,8 @@
 		"calendar_closed_due_date": "The due date fell on a closed day and was moved to {{due}}.",
 		"hard_due_date_applied": "The due date was limited to {{due}}, the end of loans for this year.",
 		"session_idle_reset": "Nothing done for {{n}} {{n:plural; one:minute; other:minutes;}}: the loan of {{name}} was closed. Scan the card again.",
-		"undo_done": "Undone: “{{title}}” is no longer on loan to {{name}}."
+		"undo_done": "Undone: “{{title}}” is no longer on loan to {{name}}.",
+		"returned_now_lending": "Returned: “{{title}}”. The books read now are lent to {{name}}."
 	},
 	"today": {
 		"title": "Today's loans",

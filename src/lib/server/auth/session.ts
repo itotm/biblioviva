@@ -93,6 +93,7 @@ export function resolveSession(
 			displayName: staffUser.displayName,
 			roles: staffUser.roles,
 			active: staffUser.active,
+			mustChangePassword: staffUser.mustChangePassword,
 		})
 		.from(session)
 		.innerJoin(staffUser, eq(session.userId, staffUser.id))
@@ -118,6 +119,7 @@ export function resolveSession(
 			displayName: row.displayName ?? row.username,
 			roles: row.roles,
 			permissions: permissionsOf(row.roles, rolesConfig),
+			mustChangePassword: row.mustChangePassword === 1,
 		},
 	};
 }

@@ -185,6 +185,23 @@ changed right afterwards.
 Technical page: [Deployment notes (technical)](../../deploy.md#installing-updating-logs-step-85).
 [VERIFY: the way to change the administrator's password without editing the file, if there is one]
 
+## Change password page that does not let you go on
+
+On signing in, BiblioViva opens only the **Change password** page with the message "The password of this account was
+given by the administrator: choose your own before going on." Any other page leads back there.
+
+Cause: the account was created, or its password changed, with the **To change at the first login** box ticked. Until
+the person chooses their own password, BiblioViva opens no other page.
+
+1. Type in the **Current password** field the password received from the administrator.
+1. Type the chosen password in the **New password (at least 8 characters)** field.
+1. Type the same password again in the **Repeat the new password** field.
+1. Press **Save the password**. The message "Password changed" appears and BiblioViva opens.
+
+To leave without changing the password, press **Log out**. If the password received is not accepted ("The current
+password is not right."), ask the administrator for a new one, as described in
+[Change a password](../admin/guides/change-a-password.md).
+
 ## SSH connection that fails
 
 From one's own computer it is not possible to connect to BiblioViva's PC or Raspberry Pi with the terminal (SSH, see

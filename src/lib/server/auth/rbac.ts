@@ -81,6 +81,7 @@ export function authorizeAny(
 	permissions: readonly Permission[],
 ): AuthUser {
 	const known = authorize(user);
+	refuseUntilPasswordChanged(known);
 	if (!canAny(known, permissions)) {
 		throw new AuthError(403, `forbidden: ${permissions.join(" or ")}`);
 	}
@@ -92,8 +93,21 @@ export function authorize(user: AuthUser | null | undefined, permission?: Permis
 	if (!user) {
 		throw new AuthError(401, "unauthorized");
 	}
+	if (permission) {
+		refuseUntilPasswordChanged(user);
+	}
 	if (permission && !can(user, permission)) {
 		throw new AuthError(403, `forbidden: ${permission}`);
 	}
 	return user;
+}
+
+/**
+ * An account whose password was given by an administrator opens nothing but the change of its
+ * own password (9.51): every check of a permission is refused until then.
+ */
+function refuseUntilPasswordChanged(user: AuthUser): void {
+	if (user.mustChangePassword) {
+		throw new AuthError(403, "password change required");
+	}
 }

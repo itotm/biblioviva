@@ -56,5 +56,6 @@
 			"loans": "Open loans",
 			"photos": "Patron photos"
 		}
-	}
+	},
+	"password": "Change password"
 }

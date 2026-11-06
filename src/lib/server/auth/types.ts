@@ -8,4 +8,6 @@ export interface AuthUser {
 	displayName: string;
 	roles: string[];
 	permissions: Permission[];
+	/** The password was given by an administrator: nothing else opens until it is changed (9.51). */
+	mustChangePassword?: boolean;
 }

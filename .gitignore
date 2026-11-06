@@ -19,6 +19,7 @@ local/
 
 # Test artifacts
 site/.shots/
+site/.diagrams/
 site/dist/
 test-results/
 test-reports/

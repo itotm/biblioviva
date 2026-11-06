@@ -19,12 +19,15 @@ import {
 import { dirname, join, relative, resolve } from "node:path";
 import * as pagefind from "pagefind";
 import { webFonts } from "./web-fonts.ts";
+import { diagramHash } from "./diagrams.ts";
 
 const ROOT = join(import.meta.dir, "..");
 const DOCS = join(ROOT, "docs");
 const SITE = join(ROOT, "site");
 const DIST = join(SITE, "dist");
 const SHOTS = join(SITE, ".shots");
+/** The Mermaid diagrams drawn by `bun run docs:diagrams` (step 9.53), by the hash of their code. */
+const DIAGRAMS = join(SITE, ".diagrams");
 const LUCIDE = join(ROOT, "node_modules", "@lucide", "svelte", "dist", "icons");
 const REPO = "https://github.com/itotm/biblioviva";
 
@@ -108,6 +111,8 @@ const TECH_DOCS: [slug: string, file: string][] = [
 	["security", "security.md"],
 	["performance", "performance.md"],
 	["import", "import/README.md"],
+	["database", "database.md"],
+	["libraries", "libraries.md"],
 ];
 
 const TEXT: Record<Lang, Record<string, string>> = {
@@ -274,6 +279,7 @@ const H_RELATED = new Set(["pagine correlate", "related pages"]);
 
 const warnings: string[] = [];
 const missingFigures = new Set<string>();
+const missingDiagrams = new Set<string>();
 
 function warn(message: string): void {
 	warnings.push(message);
@@ -841,6 +847,21 @@ function markdown(src: string, ctx: Ctx): Rendered {
 		text = applyVariants(text, ctx.path.keep);
 	}
 	let html = Bun.markdown.html(text, { headings: { ids: true }, autolinks: true });
+
+	// Mermaid diagrams: the drawing of `docs:diagrams` in the page, the code when it is missing.
+	html = html.replace(
+		/<pre><code class="language-mermaid">([\s\S]*?)<\/code><\/pre>/g,
+		(block, code: string) => {
+			const hash = diagramHash(unesc(code));
+			const file = join(DIAGRAMS, `${hash}.svg`);
+			if (!existsSync(file)) {
+				missingDiagrams.add(hash);
+				return block;
+			}
+			const svg = readFileSync(file, "utf8").replace(/^<\?xml[^>]*>\s*/, "");
+			return `<figure class="diagram">${svg}</figure>`;
+		},
+	);
 
 	// Anchors as GitHub makes them (they work as they are in links written for GitHub).
 	const seen = new Map<string, number>();
@@ -1532,6 +1553,11 @@ async function main(): Promise<void> {
 	console.log(`site: ${count} pages in ${relative(ROOT, DIST)}/`);
 	if (missingFigures.size > 0) {
 		console.log(`site: ${missingFigures.size} pictures missing (placeholders shown)`);
+	}
+	if (missingDiagrams.size > 0) {
+		console.log(
+			`site: ${missingDiagrams.size} diagrams not drawn (shown as code; run bun run docs:diagrams)`,
+		);
 	}
 	if (warnings.length > 0) {
 		console.log(`site: ${warnings.length} warnings`);

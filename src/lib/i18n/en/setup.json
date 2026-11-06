@@ -126,7 +126,7 @@
 	},
 	"passwords": {
 		"title": "Staff passwords",
-		"hint": "Five shared accounts, one per role. The proposed passwords are random and can be replaced. Note them down on the final step: they are shown only once.",
+		"hint": "Five shared accounts, one per role. The proposed passwords are random and can be replaced. Note them down on the final step: they are shown only once. Personal accounts, one per person with their role, are added later in Administration → Staff accounts.",
 		"accounts": {
 			"admin": "Administration (admin)",
 			"prestiti": "Loan management (prestiti)",

@@ -60,6 +60,14 @@ describe("request guards", () => {
 		);
 	});
 
+	it("a password to change opens nothing but the change itself (9.51)", () => {
+		locals.user = { ...admin, mustChangePassword: true };
+		expect(requireUser()).toMatchObject({ username: "admin" });
+		expect(status(() => requireUser("admin"))).toBe(403);
+		expect(status(() => requireAnyUser(["loans", "admin"]))).toBe(403);
+		locals.user = admin;
+	});
+
 	it("requireSetupMode: 404 once the setup is completed", () => {
 		locals.setupMode = true;
 		expect(status(() => requireSetupMode())).toBeUndefined();

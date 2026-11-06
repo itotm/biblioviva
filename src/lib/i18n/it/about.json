@@ -7,13 +7,7 @@
 	},
 	"deps": {
 		"title": "Librerie utilizzate",
-		"runtime": "In esecuzione ({{count}})",
-		"development": "Solo per lo sviluppo ({{count}})",
-		"system": "Componenti di sistema",
-		"columns": {
-			"name": "Nome",
-			"version": "Versione",
-			"license": "Licenza"
-		}
+		"hint": "L'elenco delle librerie e dei programmi con cui è fatto BiblioViva, con le versioni e le licenze, è nella documentazione tecnica.",
+		"link": "Apri l'elenco delle librerie"
 	}
 }

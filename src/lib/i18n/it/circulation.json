@@ -123,10 +123,11 @@
 		"printReminder": "Stampa promemoria",
 		"toCheckout": "Vai a Prestiti con questo utente",
 		"markDamaged": "Segna danneggiato",
-		"confirm": "Conferma"
+		"confirm": "Conferma",
+		"lendTo": "Presta a {{name}}"
 	},
 	"msg": {
-		"no_patron_selected": "È stato letto il libro «{{title}}» senza una tessera. Leggere prima la tessera dell'utente; per una restituzione aprire Restituzioni.",
+		"no_patron_selected": "Il libro «{{title}}» non è in prestito: per prestarlo leggere prima la tessera dell'utente.",
 		"card_on_checkin": "Questa è una tessera ({{name}}), non un libro. Qui si registrano solo le restituzioni: per un prestito aprire Prestiti.",
 		"unknown_barcode": "Codice {{code}} non trovato. Verificare la lettura dello scanner o digitare il codice: i codici dei libri hanno la forma {{item}}, i numeri delle tessere {{card}}.",
 		"bad_check_digit": "Il codice {{code}} non è valido: il carattere di controllo non corrisponde. Rileggere il codice o digitarlo.",
@@ -150,7 +151,8 @@
 		"calendar_closed_due_date": "La scadenza cade in un giorno di chiusura ed è stata spostata a {{due}}.",
 		"hard_due_date_applied": "La scadenza è stata limitata al {{due}}, fine del prestito per quest'anno.",
 		"session_idle_reset": "Nessuna operazione da {{n}} {{n:plural; one:minuto; other:minuti;}}: il prestito di {{name}} è stato chiuso. Per continuare, leggere di nuovo la tessera.",
-		"undo_done": "Annullato: «{{title}}» non è più in prestito a {{name}}."
+		"undo_done": "Annullato: «{{title}}» non è più in prestito a {{name}}.",
+		"returned_now_lending": "Restituito: «{{title}}». Ora i libri letti si prestano a {{name}}."
 	},
 	"today": {
 		"title": "Prestiti di oggi",

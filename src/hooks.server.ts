@@ -28,6 +28,9 @@ const PUBLIC_PREFIXES = [
 	"/service-worker.js",
 ];
 
+/** The change of one's own password, the only page open while it is due (9.51). */
+const PASSWORD_PAGE = "/password";
+
 function isPublic(pathname: string): boolean {
 	if (PUBLIC_PREFIXES.some((p) => pathname === p || pathname.startsWith(p))) {
 		return true;
@@ -152,6 +155,19 @@ const serve: Handle = async ({ event, resolve }) => {
 			redirect(303, "/login");
 		}
 		redirect(303, `/login?redirectTo=${encodeURIComponent(pathname + event.url.search)}`);
+	}
+	// a password given by an administrator is changed before anything else opens (9.51); the
+	// remote functions refuse on their own (rbac)
+	if (
+		event.locals.user?.mustChangePassword &&
+		!event.isRemoteRequest &&
+		pathname !== PASSWORD_PAGE &&
+		!isPublic(pathname)
+	) {
+		if (pathname.startsWith("/media/")) {
+			return new Response("forbidden", { status: 403 });
+		}
+		redirect(303, PASSWORD_PAGE);
 	}
 
 	const render = (): Promise<Response> =>

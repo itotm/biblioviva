@@ -85,8 +85,9 @@ The message offers to renew the loan. Press **Renew** to renew it, **Cancel** to
 
 ### The book was read before the card
 
-The message asks to read the card first. If the book is being returned, press **Go to Returns**; otherwise read the
-card and then the book again.
+If the book is available, the message “The book “`<title>`” is not on loan: to lend it, read the patron's card first.”
+asks to read the card first: read the card and then the book again. If instead the book is on loan, it is returned on
+the spot and the patron who had it is chosen: see [Return a book and lend another one at once](return-and-lend.md).
 
 ### The code is not recognised
 
@@ -123,6 +124,7 @@ Click in the field and read again. If the scan produces nothing, type the code b
 ## Related pages
 
 - [Return a book](return-a-book.md)
+- [Return a book and lend another one at once](return-and-lend.md)
 - [Renew a loan](renew-a-loan.md)
 - [Lend to a patron who does not have the card with them](lend-without-card.md)
 - [Loans](../screens/checkout.md)

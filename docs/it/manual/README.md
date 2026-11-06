@@ -15,6 +15,7 @@ domanda accanto al titolo della pagina.
 
 - [Prestare un libro](guides/lend-a-book.md)
 - [Restituire un libro](guides/return-a-book.md)
+- [Restituire un libro e prestarne subito un altro](guides/return-and-lend.md)
 - [Rinnovare un prestito](guides/renew-a-loan.md)
 - [Prestare a chi non ha la tessera con sé](guides/lend-without-card.md)
 - [Prestare o restituire una copia senza etichetta](guides/book-without-label.md)
@@ -49,6 +50,10 @@ domanda accanto al titolo della pagina.
 - [Rimuovere un utente](guides/remove-a-patron.md)
 - [Usare le liste di stampa](guides/use-print-lists.md)
 - [Consultare un report](guides/run-a-report.md)
+
+### Il proprio account
+
+- [Cambiare la propria password](guides/change-my-password.md)
 
 ## Schermate
 

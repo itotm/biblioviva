@@ -192,6 +192,8 @@ Se il database contiene già dei dati, il passo lo segnala e i dati dimostrativi
 ### Password
 
 BiblioViva ha cinque account condivisi, uno per ruolo. Ciascuno entra con il proprio nome utente e la propria password.
+Gli account personali, uno per persona con il suo ruolo, si aggiungono dopo da **Amministrazione** → **Account del
+personale**.
 
 <!-- figure: setup/passwords | Il passo Password con i cinque account e le password proposte -->
 

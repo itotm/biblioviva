@@ -99,6 +99,73 @@ test.describe("admin staff accounts", () => {
 		await expect(card).toContainText("Tolto dalla configurazione");
 	});
 
+	test("a personal account changes the password it was given at the first login (9.51)", async ({
+		page,
+		browser,
+		isMobile,
+	}) => {
+		test.skip(isMobile, "the configuration is shared: one project changes it");
+		await page.goto("/admin/users");
+		await waitForHydration(page);
+		const dialog = page.getByTestId("account-dialog");
+		await page.getByTestId("account-new").click();
+		await dialog.getByTestId("account-username").fill("e2e-persona");
+		await dialog.getByTestId("account-display-name").fill("Anna Bianchi");
+		await dialog.getByTestId("account-role-circulation").check();
+		await dialog.getByTestId("account-password").fill("password-data-2026");
+		await dialog.getByTestId("account-password-repeat").fill("password-data-2026");
+		// a person's account: on by default
+		await expect(dialog.getByTestId("account-must-change-box")).toBeChecked();
+		await dialog.getByTestId("account-save").click();
+		await expect(page.getByRole("status").getByText("Account creato")).toBeVisible();
+		const card = page.getByTestId("account-e2e-persona");
+		await expect(card.getByTestId("account-must-change")).toBeVisible();
+
+		const context = await browser.newContext({
+			extraHTTPHeaders: { "x-forwarded-proto": "http" },
+			storageState: { cookies: [], origins: [] },
+		});
+		const other = await context.newPage();
+		const login = new LoginPage(other);
+		await login.goto();
+		await login.loginAs("e2e-persona", "password-data-2026");
+		// nothing else opens until the password is changed
+		await expect(other).toHaveURL(/\/password$/);
+		await expect(other.getByTestId("password-forced")).toBeVisible();
+		await other.goto("/catalog");
+		await expect(other).toHaveURL(/\/password$/);
+		await waitForHydration(other);
+		await expectAxeClean(other);
+		await other.getByTestId("password-current").fill("non-questa");
+		await other.getByTestId("password-new").fill("la-mia-password");
+		await other.getByTestId("password-repeat").fill("la-mia-password");
+		await other.getByTestId("password-save").click();
+		await expect(other.getByTestId("password-problem")).toHaveText(
+			"La password attuale non è giusta.",
+		);
+		await other.getByTestId("password-current").fill("password-data-2026");
+		await other.getByTestId("password-save").click();
+		// the desk account opens on the desk, with its own permissions
+		await expect(other).toHaveURL(/\/circulation\/checkout$/);
+		await waitForHydration(other);
+		await other.getByTestId("user-menu").click();
+		await other.getByTestId("menu-password").click();
+		await expect(other).toHaveURL(/\/password$/);
+		await expect(other.getByTestId("password-forced")).toHaveCount(0);
+		await context.close();
+
+		await page.reload();
+		await waitForHydration(page);
+		await expect(card.getByTestId("account-must-change")).toHaveCount(0);
+		await card.getByTestId("account-edit").click();
+		await dialog.getByTestId("account-active").uncheck();
+		await dialog.getByTestId("account-save").click();
+		await expect(card).toContainText("Disattivato");
+		await card.getByTestId("account-remove").click();
+		await page.getByTestId("confirm-dialog").getByTestId("confirm-button").click();
+		await expect(page.getByRole("status").getByText("Account eliminato")).toBeVisible();
+	});
+
 	test("roles: added, renamed and removed; a role in use kept", async ({ page, isMobile }) => {
 		await page.goto("/admin/users");
 		await waitForHydration(page);

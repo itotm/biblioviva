@@ -185,7 +185,8 @@ If the database already contains data, the step says so and the sample data are 
 
 ### Passwords
 
-BiblioViva has five shared accounts, one per role. Each signs in with its own username and password.
+BiblioViva has five shared accounts, one per role. Each signs in with its own username and password. Personal
+accounts, one per person with their role, are added later from **Administration** → **Staff accounts**.
 
 <!-- figure: setup/passwords | The Passwords step with the five accounts and the proposed passwords -->
 

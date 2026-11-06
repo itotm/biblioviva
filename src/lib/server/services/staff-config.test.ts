@@ -13,7 +13,10 @@ import { auditLog, staffUser } from "#lib/server/db/schema.js";
 import { resetEnvCache } from "#lib/server/env.js";
 import { setConfigKeys } from "./config-edit.js";
 import { revertConfigChange } from "../../../../tests/helpers/config.js";
+import { createSession, resolveSession } from "#lib/server/auth/session.js";
+import { session } from "#lib/server/db/schema.js";
 import {
+	changeOwnPassword,
 	helperPasswordHash,
 	removeAccount,
 	rolesView,
@@ -280,5 +283,79 @@ describe("roles", () => {
 			actor,
 		);
 		expect(Object.keys(getConfig().security.roles)).not.toContain("lettura");
+	});
+});
+
+describe("personal accounts (9.51)", () => {
+	it("marks a password given by an administrator to change at the first login", async () => {
+		const { db, actor } = await database();
+		await saveAccount(db, dir, draft({ mustChangePassword: true }), actor);
+		expect(file().security.users.find((u) => u.username === "biblioteca")).toMatchObject({
+			mustChangePassword: true,
+		});
+		// the flag is written only where it is set
+		expect(file().security.users.find((u) => u.username === "admin")).not.toHaveProperty(
+			"mustChangePassword",
+		);
+		const row = db.select().from(staffUser).where(eq(staffUser.username, "biblioteca")).get();
+		expect(row?.mustChangePassword).toBe(1);
+		const token = createSession(db, row?.id ?? 0, { days: 1 });
+		const roles = getConfig().security.roles;
+		expect(resolveSession(db, token, roles, 1)?.user.mustChangePassword).toBe(true);
+		// an edit without a new password keeps the flag
+		await saveAccount(
+			db,
+			dir,
+			draft({ originalUsername: "biblioteca", displayName: "Anna", password: undefined }),
+			actor,
+		);
+		expect(
+			db.select().from(staffUser).where(eq(staffUser.username, "biblioteca")).get()
+				?.mustChangePassword,
+		).toBe(1);
+	});
+
+	it("changes one's own password, closing the other sessions and clearing the flag", async () => {
+		const { db, actor } = await database();
+		await saveAccount(db, dir, draft({ mustChangePassword: true }), actor);
+		const row = db.select().from(staffUser).where(eq(staffUser.username, "biblioteca")).get();
+		const me = { id: row?.id ?? 0, username: "biblioteca" };
+		const here = createSession(db, me.id, { days: 1 });
+		const there = createSession(db, me.id, { days: 1 });
+		const roles = getConfig().security.roles;
+		const hereId = resolveSession(db, here, roles, 1)?.sessionId ?? null;
+		const code = async (current: string, next: string): Promise<string> => {
+			try {
+				await changeOwnPassword(db, dir, me, { current, next }, hereId);
+				return "ok";
+			} catch (e) {
+				return e instanceof StaffConfigError ? e.code : String(e);
+			}
+		};
+		expect(await code("sbagliata", "nuova-password-lunga")).toBe("wrongPassword");
+		expect(await code("una-password-lunga", "corta")).toBe("passwordTooShort");
+		expect(await code("una-password-lunga", "una-password-lunga")).toBe("samePassword");
+		expect(await code("una-password-lunga", "nuova-password-lunga")).toBe("ok");
+		const written = file().security.users.find((u) => u.username === "biblioteca");
+		expect(written).not.toHaveProperty("mustChangePassword");
+		expect(await verifyPassword("nuova-password-lunga", String(written?.passwordHash))).toBe(
+			true,
+		);
+		const after = db.select().from(staffUser).where(eq(staffUser.id, me.id)).get();
+		expect(after?.mustChangePassword).toBe(0);
+		// this session stays, the other device signs in again
+		expect(
+			resolveSession(db, here, getConfig().security.roles, 1)?.user.mustChangePassword,
+		).toBe(false);
+		expect(resolveSession(db, there, getConfig().security.roles, 1)).toBeNull();
+		expect(db.select().from(session).all()).toHaveLength(1);
+		expect(
+			db
+				.select()
+				.from(auditLog)
+				.where(eq(auditLog.action, "config.security.password_changed"))
+				.get()?.details,
+		).toMatchObject({ username: "biblioteca" });
+		expect(JSON.stringify(db.select().from(auditLog).all())).not.toContain("nuova-password");
 	});
 });

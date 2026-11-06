@@ -25,6 +25,8 @@ desk using the "Loan management" account.
 1. If a book is damaged, press **Mark damaged** in its row. The copy is marked as damaged but can still be lent.
 1. If the patron wants to keep the book, press **Renew instead** in the book's row: the loan is renewed instead of
    returned ([Renew a loan](renew-a-loan.md)).
+1. If the patron takes another book at once, press **Lend to `<name>`** in the return message
+   ([Return a book and lend another one at once](return-and-lend.md)).
 1. Put the books back on the shelves following the call number written on the label.
 
 > [!NOTE]
@@ -74,6 +76,7 @@ Enter. The return is recorded only with Enter.
 ## Related pages
 
 - [Lend a book](lend-a-book.md)
+- [Return a book and lend another one at once](return-and-lend.md)
 - [Renew a loan](renew-a-loan.md)
 - [Lend or return a copy without a label](book-without-label.md)
 - [Print the overdue notices](overdue-reminders.md)

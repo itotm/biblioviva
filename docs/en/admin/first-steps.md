@@ -18,6 +18,8 @@ can be skipped.
    real data.
 1. [Change a password](guides/change-a-password.md) and, if needed, [manage the staff
    accounts](guides/manage-accounts.md): after the sample data, the simple passwords must be replaced.
+1. [Create a personal account](guides/manage-accounts.md) for each colleague who does not use a shared account. With the
+   **To change at the first login** box ticked, the colleague chooses their own password.
 
 ### The library
 
@@ -63,7 +65,9 @@ can be skipped.
 ### After the settings
 
 1. [Create a report](guides/create-a-report.md), if statistics other than the supplied ones are needed. Optional.
-1. Give each colleague the password of their account and go on to the [Manual](../manual/README.md).
+1. Give each colleague the password of their account and go on to the [Manual](../manual/README.md). Each colleague can
+   then change their own password as explained in [Change your own
+   password](../manual/guides/change-my-password.md).
 
 ## Result
 

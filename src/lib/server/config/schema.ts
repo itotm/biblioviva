@@ -117,6 +117,8 @@ const user = v.pipe(
 		passwordHash: v.optional(v.string()),
 		password: v.optional(v.string()),
 		active: v.optional(v.boolean(), true),
+		/** The password given by an administrator: the person changes it at the first login (9.51). */
+		mustChangePassword: v.optional(v.boolean(), false),
 	}),
 	v.check((u) => Boolean(u.passwordHash || u.password), "passwordHash or password is required"),
 );

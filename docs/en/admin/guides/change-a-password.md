@@ -4,7 +4,8 @@ This guide explains how to give a staff account a new password: after the first 
 when a password has been lost or when a colleague leaves the school. It is for whoever administers BiblioViva.
 
 - Time: 2 minutes per account.
-- Account: `admin`. The other accounts do not change their own password.
+- Account: `admin`, to give another account a new password. Each account changes its own from the account menu: see
+  [Change your own password](../../manual/guides/change-my-password.md).
 - Requirements: the new password, at least 8 characters long, and a safe place to note it down.
 
 ## Procedure
@@ -16,6 +17,8 @@ when a password has been lost or when a colleague leaves the school. It is for w
 1. Press **New password** on the card. A window opens with the title "New password for" followed by the account's name.
 1. Type the password in the **Password (at least 8 characters)** field.
 1. Type the same password again in the **Repeat the password** field.
+1. Leave the **To change at the first login** box ticked for a person's account, so that the person chooses their own
+   password. Untick it for a shared account.
 1. Press **Save**. The message "Password changed" appears.
 
 <!-- figure: admin/account-password | The New password for prestiti window -->
@@ -28,6 +31,8 @@ when a password has been lost or when a colleague leaves the school. It is for w
 
 - The account logs in with the new password; the old one is no longer valid.
 - Whoever is logged in with that account at that moment must log in again.
+- With the **To change at the first login** box ticked, at the first login BiblioViva opens only the **Change password**
+  page and the account card shows "Password to change at the first login" until the person has chosen their own.
 
 ## Possible problems
 
@@ -57,5 +62,6 @@ password.
 ## Related pages
 
 - [Manage the staff accounts](manage-accounts.md)
+- [Change your own password](../../manual/guides/change-my-password.md)
 - [Remove the sample data](remove-demo-data.md)
 - [Staff accounts](../screens/users.md)

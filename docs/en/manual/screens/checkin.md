@@ -44,15 +44,16 @@ for the patron.
 
 > Returned: “`<title>`” (`<name>`).
 
-The book was on loan and was on time: it is now available and appears in **Books returned now**. No action is
-required: scan the next book.
+The book was on loan and was on time: it is now available and appears in **Books returned now**. The message has
+the **Lend to `<name>`** button, for the patron who had the book and takes another one (see
+[Buttons on each row](#buttons-on-each-row)). Otherwise no action is required: scan the next book.
 
 ### Late return
 
 > Returned. “`<title>`” was `<n>` days overdue (due `<date>`).
 
-The book was registered as returned, but the due date had passed. The message is yellow, with the **Mark damaged**
-button (see [Copy marked as damaged](#copy-marked-as-damaged)) to use if the returned book is damaged. If the patron
+The book was registered as returned, but the due date had passed. The message is yellow, with the **Lend to `<name>`**
+and **Mark damaged** buttons (see [Copy marked as damaged](#copy-marked-as-damaged)) to use if the returned book is damaged. If the patron
 has other overdue books, **Print a reminder** appears in the row.
 
 ### Lost book found
@@ -173,6 +174,9 @@ the book.
 
 ## Buttons on each row
 
+- **Lend to `<name>`**: appears in the message of every return. It opens [Loans](checkout.md) with the patron who had
+  the book already chosen, ready to receive the next book. See
+  [Return a book and lend another one at once](../guides/return-and-lend.md).
 - **Print a reminder**: appears if the patron still has other overdue books; opens the printable reminder in a new tab.
   See also [Print the overdue notices](../guides/overdue-reminders.md).
 - **Renew instead**: for the case of the patron who wanted to keep the book. Renews the loan just closed; results in
@@ -184,5 +188,6 @@ the book.
 
 - [Return a book](../guides/return-a-book.md)
 - [Renew a loan](../guides/renew-a-loan.md)
+- [Return a book and lend another one at once](../guides/return-and-lend.md)
 - [Loans](checkout.md)
 - [Books on loan](loans.md)

@@ -21,6 +21,8 @@ export interface AccountView {
 	plainPassword: boolean;
 	/** Present in config.json (false = removed from the file and therefore deactivated). */
 	inConfig: boolean;
+	/** The password given by an administrator is still to change at the first login (9.51). */
+	mustChangePassword: boolean;
 }
 
 export function listAccounts(db: Db, config: AppConfig): AccountView[] {
@@ -43,6 +45,7 @@ export function listAccounts(db: Db, config: AppConfig): AccountView[] {
 				lastLoginAt: row.lastLoginAt,
 				plainPassword: Boolean(cfg && !cfg.passwordHash && cfg.password),
 				inConfig: cfg !== undefined,
+				mustChangePassword: row.mustChangePassword === 1,
 			};
 		});
 }

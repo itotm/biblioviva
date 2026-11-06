@@ -58,6 +58,7 @@ export async function mirrorConfigUsers(db: Db, config: AppConfig): Promise<Mirr
 			displayName: u.displayName ?? null,
 			roles: u.roles,
 			active: u.active ? 1 : 0,
+			mustChangePassword: u.mustChangePassword ? 1 : 0,
 			source: "config" as const,
 			updatedAt: new Date().toISOString(),
 		};
@@ -73,7 +74,8 @@ export async function mirrorConfigUsers(db: Db, config: AppConfig): Promise<Mirr
 				existing.passwordHash !== values.passwordHash ||
 				existing.displayName !== values.displayName ||
 				JSON.stringify(existing.roles) !== JSON.stringify(values.roles) ||
-				existing.active !== values.active;
+				existing.active !== values.active ||
+				existing.mustChangePassword !== values.mustChangePassword;
 			if (changed) {
 				db.update(staffUser).set(values).where(eq(staffUser.id, existing.id)).run();
 				summary.updated.push(u.username);

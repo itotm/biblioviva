@@ -16,7 +16,11 @@ run](../../setup/steps/first-run.md):
 | **Reports (report)** | `report` | the reports and the statistics |
 
 Each account has one or more *roles*, and each role is a set of *permissions*. An account can do only what the
-permissions of its roles allow. There are no personal accounts, one per person.
+permissions of its roles allow.
+
+Besides the shared accounts, personal accounts are created, one per person, each with its role. A person is given the
+role that fits their work, never single permissions. The audit log shows the name of the account: with one account per
+person it shows who did what.
 
 - Time: about 5 minutes per account.
 - Account: `admin`.
@@ -42,11 +46,17 @@ permissions of its roles allow. There are no personal accounts, one per person.
 1. Tick at least one role under **Roles**.
 1. Leave the **Active account (can sign in)** box ticked.
 1. Type the password in the **Password (at least 8 characters)** field and again in the **Repeat the password** field.
+1. Leave the **To change at the first login** box ticked if the account is a person's: at the first login the person
+   chooses their own password, which the administrator does not know. Untick it for a shared account.
 1. Press **Save**. The message "Account created" appears.
 
 > [!IMPORTANT]
 > The password cannot be seen again: BiblioViva keeps only a protected form of it. Note it down before pressing **Save**
 > and hand it over in person to whoever uses the account.
+
+Until the person has chosen their own password, the account card shows "Password to change at the first login". At the
+first login BiblioViva opens only the **Change password** page, as explained in [Change your own
+password](../../manual/guides/change-my-password.md).
 
 ### Edit an account
 
@@ -87,6 +97,7 @@ account".
 ## Result
 
 - The new account logs in from the **Log in** page with its username and password.
+- An account with the **To change at the first login** box ticked asks at once for a password chosen by the person.
 - Each account sees only the pages its permissions allow.
 - Deactivated or deleted accounts can no longer log in.
 
@@ -110,6 +121,11 @@ account.
 
 The role is used by some account. First remove the role from those accounts with **Edit**.
 
+### The card says "Password to change at the first login"
+
+The person has not yet signed in with the password received, or has not yet chosen their own. The notice disappears as
+soon as the person changes the password on the **Change password** page.
+
 ### A card flags a clear password
 
 The account was written by hand in the configuration files with a readable password. Give it a password with **New
@@ -128,6 +144,7 @@ needed only by those who edit them outside BiblioViva.
 ## Related pages
 
 - [Change a password](change-a-password.md)
+- [Change your own password](../../manual/guides/change-my-password.md)
 - [Staff accounts](../screens/users.md)
 - [Export and import the configuration](export-the-configuration.md): the archive contains the accounts
 - [Administrator first steps](../first-steps.md)

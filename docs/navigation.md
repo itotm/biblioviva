@@ -64,7 +64,7 @@ flowchart TB
     subgraph Desktop["Desktop (≥ md)"]
         direction TB
         SB["Sidebar<br/>library logo → Dashboard<br/>Prestiti · Catalogo · Utenti · Stampe · Segnalazioni · Report · Amministrazione<br/>BiblioViva version → Informazioni"]
-        TB["Top bar<br/>back arrow, page title (one row, same height everywhere) · Guida button · print basket · account menu (Informazioni, Esci)"]
+        TB["Top bar<br/>back arrow, page title (one row, same height everywhere) · Guida button · print basket · account menu (Informazioni, Cambia password, Esci)"]
     end
     subgraph Phone["Phone (< md)"]
         direction TB
@@ -112,6 +112,7 @@ flowchart LR
     dash -->|"Importazioni (import holders without admin)"| imps["Importazioni<br/>/admin/imports<br/>(admin, catalog.import or patrons.import)"]:::oneof
     dash -. "tile Libri senza etichette (dialog)" .-> lbl["/print/labels/[kind]"]:::print
     shell -. "account menu, sidebar footer" .-> about["Informazioni<br/>/about"]:::any
+    shell -. "account menu" .-> password["Cambia password<br/>/password"]:::any
     classDef any fill:#f1f5f9,stroke:#64748b,color:#0f172a
     classDef loans fill:#dbeafe,stroke:#2563eb,color:#0f172a
     classDef catalog fill:#dcfce7,stroke:#16a34a,color:#0f172a
@@ -434,6 +435,7 @@ with the chosen columns (`<import>/template.csv?columns=…`, a file, not a page
 ```mermaid
 flowchart LR
     anyurl["Any page without a session"] -->|"redirect"| login["/login"]:::public
+    due["Any page while the password is to change"] -->|"redirect"| pw["/password"]:::any
     first["First start, no configuration"] -->|"redirect"| setup["/setup"]:::public
     login -->|"the page asked for, or"| dash["/"]:::any
     health["/healthz (monitoring)"]:::public
@@ -455,6 +457,7 @@ account. The test reads this table.
 | `/dev/ui` | Style guide | none, development and test builds only | address |
 | `/` | Dashboard | any (a loans-only account is sent to the checkout desk) | login, library logo |
 | `/about` | Informazioni | any | account menu, sidebar footer |
+| `/password` | Cambia password | any (the only page open while a password given by the administrator is still to change) | account menu; every page while the change is due |
 | `/circulation/checkout` | Prestiti (desk) | loans | sidebar, bottom bar, dashboard (Prestiti, tile), desk tabs, check-in (card scanned), login of a loans-only account |
 | `/circulation/checkin` | Restituzioni (desk) | loans | desk tabs, dashboard (Restituzioni, tile), checkout (Vai a Restituzioni), class upgrade |
 | `/circulation/loans` | Libri in prestito | loans | desk tabs, dashboard tile |

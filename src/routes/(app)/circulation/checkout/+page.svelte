@@ -6,7 +6,8 @@
      dialog in the middle of the page says so, the open loans can still be renewed. Every anomaly is
      explained with what to do, never with a sound. "Annulla ultimo" undoes the last loan of the
      session, "Fine" closes it; after `ui.checkoutIdleSeconds` without activity the session closes
-     by itself. -->
+     by itself. A copy on loan read before a card is returned here and its borrower is chosen, as
+     if the card had been read: a pupil brings a book back and borrows the next at once (9.52). -->
 <script lang="ts">
 	import DeskMessages from "#lib/components/circulation/DeskMessages.svelte";
 	import { resolve } from "$app/paths";
@@ -20,6 +21,7 @@
 	import { codeExamples } from "#lib/shared/barcodes/table.js";
 	import { deskTitles } from "#lib/shared/desk-titles.js";
 	import {
+		checkin,
 		checkout,
 		findPatronsAtDesk,
 		getDeskPatron,
@@ -209,6 +211,44 @@
 		}
 	}
 
+	/**
+	 * A copy read with no patron chosen (9.52): on loan, it is returned and its borrower becomes
+	 * the patron of the desk, as after the card; otherwise the card comes first.
+	 */
+	async function returnThenLend(itemId: number, title: string): Promise<void> {
+		const back = await checkin({ itemId });
+		const found = (t: string): DeskMessageData[] =>
+			back.kind !== "already_returned_today" && back.wasLost
+				? [deskMessage(i18n.t, "was_lost_now_found", { title: t })]
+				: [];
+		if (back.kind === "returned") {
+			const l = back.loan;
+			selectPatron(l.patronId);
+			show(
+				deskMessage(i18n.t, "returned_now_lending", { title: l.title, name: l.name }),
+				...(l.overdueDays > 0
+					? [
+							deskMessage(i18n.t, "returned_overdue", {
+								title: l.title,
+								days: l.overdueDays,
+								due: formatDate(l.dueDate),
+							}),
+						]
+					: []),
+				...found(l.title),
+			);
+		} else if (back.kind === "already_returned_today") {
+			show(
+				deskMessage(i18n.t, "already_returned_today", {
+					title: back.title,
+					time: back.time,
+				}),
+			);
+		} else {
+			show(noPatronSelected(i18n.t, title), ...found(title));
+		}
+	}
+
 	async function onScan(code: string): Promise<void> {
 		await withDeskScan(
 			(on) => {
@@ -224,7 +264,7 @@
 						return;
 					case "item": {
 						if (patronId === null) {
-							show(noPatronSelected(i18n.t, target.title, target.code));
+							await returnThenLend(target.itemId, target.title);
 							return;
 						}
 						const already = session.find((l) => l.itemId === target.itemId);

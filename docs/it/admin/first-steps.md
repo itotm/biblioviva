@@ -18,6 +18,8 @@ propria scuola si saltano.
    prima di inserire dati veri.
 1. [Cambiare una password](guides/change-a-password.md) e, se serve, [gestire gli account del
    personale](guides/manage-accounts.md): dopo i dati dimostrativi le password semplici vanno sostituite.
+1. [Creare un account personale](guides/manage-accounts.md) per ogni collega che non usa un account condiviso. Con la
+   casella **Da cambiare al primo accesso** attiva, il collega sceglie da sé la sua password.
 
 ### La biblioteca
 
@@ -68,7 +70,9 @@ propria scuola si saltano.
 ### Dopo le impostazioni
 
 1. [Creare un report](guides/create-a-report.md), se servono statistiche diverse da quelle fornite. Facoltativo.
-1. Consegnare a ogni collega la password del suo account e passare al [Manuale](../manual/README.md).
+1. Consegnare a ogni collega la password del suo account e passare al [Manuale](../manual/README.md). Ogni collega può
+   poi cambiare la propria password come spiegato in [Cambiare la propria
+   password](../manual/guides/change-my-password.md).
 
 ## Risultato
 

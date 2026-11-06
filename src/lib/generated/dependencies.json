@@ -246,7 +246,13 @@
 			"name": "globals",
 			"version": "17.14.0",
 			"license": "MIT",
-			"homepage": "sindresorhus/globals"
+			"homepage": "https://github.com/sindresorhus/globals"
+		},
+		{
+			"name": "mermaid",
+			"version": "12.2.0",
+			"license": "MIT",
+			"homepage": "https://github.com/mermaid-js/mermaid"
 		},
 		{
 			"name": "pagefind",

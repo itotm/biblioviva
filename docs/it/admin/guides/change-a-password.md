@@ -4,7 +4,8 @@ Questa guida spiega come dare una nuova password a un account del personale: dop
 dimostrativi, quando una password è stata persa o quando un collega lascia la scuola. Serve a chi amministra BiblioViva.
 
 - Tempo: 2 minuti per account.
-- Account: `admin`. Gli altri account non cambiano la propria password.
+- Account: `admin`, per dare una nuova password a un altro account. Ogni account cambia da sé la propria, dal menu
+  dell'account: vedere [Cambiare la propria password](../../manual/guides/change-my-password.md).
 - Occorrente: la nuova password, di almeno 8 caratteri, e un posto sicuro dove annotarla.
 
 ## Procedura
@@ -17,6 +18,8 @@ dimostrativi, quando una password è stata persa o quando un collega lascia la s
    dell'account.
 1. Scrivere la password nel campo **Password (almeno 8 caratteri)**.
 1. Scrivere di nuovo la stessa password nel campo **Ripeti la password**.
+1. Lasciare attiva la casella **Da cambiare al primo accesso** per l'account di una persona, che così sceglie la sua
+   password. Togliere la spunta per un account condiviso.
 1. Premere **Salva**. Compare il messaggio «Password cambiata».
 
 <!-- figure: admin/account-password | La finestra Nuova password per prestiti -->
@@ -29,6 +32,9 @@ dimostrativi, quando una password è stata persa o quando un collega lascia la s
 
 - L'account entra con la nuova password; la vecchia non vale più.
 - Chi è collegato con quell'account in quel momento deve entrare di nuovo.
+- Con la casella **Da cambiare al primo accesso** attiva, al primo accesso BiblioViva apre soltanto la pagina
+  **Cambia password** e la scheda dell'account mostra «Password da cambiare al primo accesso» finché la persona non ha
+  scelto la sua.
 
 ## Possibili problemi
 
@@ -58,5 +64,6 @@ protetta.
 ## Pagine correlate
 
 - [Gestire gli account del personale](manage-accounts.md)
+- [Cambiare la propria password](../../manual/guides/change-my-password.md)
 - [Togliere i dati dimostrativi](remove-demo-data.md)
 - [Account del personale](../screens/users.md)

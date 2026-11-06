@@ -184,6 +184,23 @@ provvisoria, da cambiare subito dopo.
 Pagina tecnica: [Deployment notes](../../deploy.md#installing-updating-logs-step-85) (in inglese).
 [VERIFY: il modo di cambiare la password dell'amministratore senza modificare il file, se esiste]
 
+## Pagina Cambia password che non lascia proseguire
+
+Entrando, BiblioViva apre soltanto la pagina **Cambia password** con il messaggio «La password di questo account è stata
+data dall'amministratore: prima di continuare, sceglierne una propria.» Qualsiasi altra pagina riporta lì.
+
+Causa: l'account è stato creato, o la sua password cambiata, con la casella **Da cambiare al primo accesso** attiva.
+Finché la persona non sceglie la sua password, BiblioViva non apre altre pagine.
+
+1. Scrivere nel campo **Password attuale** la password ricevuta dall'amministratore.
+1. Scrivere la password scelta nel campo **Nuova password (almeno 8 caratteri)**.
+1. Scrivere di nuovo la stessa password nel campo **Ripetere la nuova password**.
+1. Premere **Salva la password**. Compare il messaggio «Password cambiata» e BiblioViva si apre.
+
+Per uscire senza cambiare la password, premere **Esci**. Se la password ricevuta non è accettata («La password attuale
+non è giusta.»), chiedere all'amministratore di darne una nuova, come descritto in
+[Cambiare una password](../admin/guides/change-a-password.md).
+
 ## Collegamento SSH che non riesce
 
 Dal proprio computer non ci si collega al PC o al Raspberry Pi di BiblioViva con il terminale (SSH, vedere

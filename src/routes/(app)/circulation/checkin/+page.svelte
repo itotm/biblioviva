@@ -3,7 +3,8 @@
      stays focused for piles of books. Each return shows the patron, the loan dates and the days
      late (information only, there are no fines); "Rinnova invece" reopens and renews a book the
      pupil wanted to keep, "Segna danneggiato" flags a worn copy. A code coming from the checkout
-     desk (`?barcode=`) waits in the field: the return is confirmed here with Enter, never implicitly. -->
+     desk (`?barcode=`) waits in the field: the return is confirmed here with Enter, never implicitly.
+     After a return, "Presta a <nome>" opens the Loans page with its borrower (9.52). -->
 <script lang="ts">
 	import DeskMessages from "#lib/components/circulation/DeskMessages.svelte";
 	import { resolve } from "$app/paths";
@@ -24,6 +25,7 @@
 	import {
 		cardOnCheckin,
 		deskMessage,
+		lendToAction,
 		scanFailure,
 		withDeskScan,
 		type DeskMessageData,
@@ -130,6 +132,7 @@
 								"returned_overdue",
 								{ title: l.title, days: l.overdueDays, due: formatDate(l.dueDate) },
 								[
+									lendToAction(i18n.t, l.patronId, l.name),
 									{
 										label: i18n.t("circulation.actions.markDamaged"),
 										testid: "action-mark-damaged",
@@ -140,7 +143,9 @@
 									},
 								],
 							)
-						: deskMessage(i18n.t, "returned", { title: l.title, name: l.name });
+						: deskMessage(i18n.t, "returned", { title: l.title, name: l.name }, [
+								lendToAction(i18n.t, l.patronId, l.name),
+							]);
 				show(main, ...(result.wasLost ? [found(l.title)] : []));
 				return;
 			}

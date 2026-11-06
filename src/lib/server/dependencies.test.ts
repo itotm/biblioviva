@@ -1,9 +1,15 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { collectDependencies, DEPENDENCIES_FILE, SYSTEM_COMPONENTS } from "./dependencies.js";
+import {
+	collectDependencies,
+	DEPENDENCIES_FILE,
+	LIBRARIES_PAGE,
+	librariesPage,
+	SYSTEM_COMPONENTS,
+} from "./dependencies.js";
 
-describe("dependency inventory (About page)", () => {
+describe("dependency inventory (About page, libraries page)", () => {
 	it("lists every pinned package with licence and homepage, and the committed file is current", () => {
 		const data = collectDependencies();
 		expect(data.app).toMatchObject({ name: "biblioviva", license: "GPL-3.0-or-later" });
@@ -17,5 +23,10 @@ describe("dependency inventory (About page)", () => {
 		expect(data.system).toBe(SYSTEM_COMPONENTS);
 		// the committed file must be what the generator produces (run `bun run deps:generate`)
 		expect(JSON.parse(readFileSync(DEPENDENCIES_FILE, "utf8"))).toEqual(data);
+		// and so must the technical page of the documentation (9.53)
+		const page = librariesPage(data);
+		expect(page).toContain("| [papaparse](");
+		expect(page).toContain("## For development only");
+		expect(readFileSync(LIBRARIES_PAGE, "utf8")).toBe(page);
 	});
 });

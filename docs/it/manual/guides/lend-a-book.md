@@ -86,8 +86,10 @@ Il messaggio propone di rinnovare il prestito. Premere **Rinnova** per rinnovarl
 
 ### Il libro è stato letto prima della tessera
 
-Il messaggio chiede di leggere prima la tessera. Se il libro viene restituito, premere **Vai a Restituzioni**;
-altrimenti leggere la tessera e poi di nuovo il libro.
+Se il libro è disponibile, il messaggio «Il libro «`<titolo>`» non è in prestito: per prestarlo leggere prima la tessera
+dell'utente.» chiede di leggere prima la tessera: leggere la tessera e poi di nuovo il libro. Se invece il libro è in
+prestito, viene restituito subito e l'utente che lo aveva è scelto: vedere
+[Restituire un libro e prestarne subito un altro](return-and-lend.md).
 
 ### Il codice non viene riconosciuto
 
@@ -124,6 +126,7 @@ Fare clic nel campo e leggere di nuovo. Se la lettura non produce nulla, digitar
 ## Pagine correlate
 
 - [Restituire un libro](return-a-book.md)
+- [Restituire un libro e prestarne subito un altro](return-and-lend.md)
 - [Rinnovare un prestito](renew-a-loan.md)
 - [Prestare a chi non ha la tessera con sé](lend-without-card.md)
 - [Prestiti](../screens/checkout.md)

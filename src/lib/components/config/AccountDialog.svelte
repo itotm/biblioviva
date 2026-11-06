@@ -1,6 +1,7 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 <!-- A staff account created or edited, or given a new password (step 11.7): username, name shown,
-     roles, active; the password typed twice and sent once, written as a hash by the server. -->
+     roles, active; the password typed twice and sent once, written as a hash by the server, and
+     to change at the first login when the account is a person's (9.51, on by default). -->
 <script lang="ts">
 	import PasswordInput from "#lib/ui/PasswordInput.svelte";
 	import { useI18n } from "#lib/i18n/context.js";
@@ -43,6 +44,7 @@
 	let active = $state(true);
 	let password = $state("");
 	let repeat = $state("");
+	let mustChange = $state(true);
 	let pending = $state(false);
 	let problem = $state<string | null>(null);
 
@@ -54,6 +56,7 @@
 			active = account?.active ?? true;
 			password = "";
 			repeat = "";
+			mustChange = true;
 			problem = null;
 		}
 	});
@@ -90,7 +93,7 @@
 				displayName,
 				roles: chosen,
 				active,
-				...(askPassword ? { password } : {}),
+				...(askPassword ? { password, mustChangePassword: mustChange } : {}),
 			});
 			if (result.ok) {
 				open = false;
@@ -187,6 +190,12 @@
 				/>
 			</Field>
 			<Hint tone="faint">{i18n.t("admin.users.dialog.passwordHint")}</Hint>
+			<div class="space-y-1">
+				<Checkbox bind:checked={mustChange} data-testid="account-must-change-box"
+					>{i18n.t("admin.users.dialog.mustChange")}</Checkbox
+				>
+				<Hint tone="faint">{i18n.t("admin.users.dialog.mustChangeHint")}</Hint>
+			</div>
 		{/if}
 		{#if problem}
 			<Alert data-testid="account-problem">{problem}</Alert>

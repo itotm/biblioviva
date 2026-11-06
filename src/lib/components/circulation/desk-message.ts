@@ -60,6 +60,8 @@ export const DESK_TONE = {
 	already_returned_today: "info",
 	returned_overdue: "warning",
 	was_lost_now_found: "success",
+	// a copy on loan read at the checkout without a card: returned, its borrower chosen (9.52)
+	returned_now_lending: "success",
 	// a warning after a loan; the refusal, with `blockIfOverdue`, is an error
 	patron_has_overdues: "warning",
 	calendar_closed_due_date: "info",
@@ -165,16 +167,22 @@ export function scanFailure(
 			]);
 }
 
-/** A copy scanned at the checkout before a card: the way to the Returns page, with its code. */
-export function noPatronSelected(t: Translate, title: string, code: string): DeskMessageData {
-	return deskMessage(t, "no_patron_selected", { title }, [
-		{
-			label: t("circulation.actions.toCheckin"),
-			href: checkinHref(code),
-			variant: "primary",
-			testid: "action-to-checkin",
-		},
-	]);
+/**
+ * A copy not on loan scanned at the checkout before a card: the card first. (A copy on loan is
+ * returned there and its borrower chosen, 9.52.)
+ */
+export function noPatronSelected(t: Translate, title: string): DeskMessageData {
+	return deskMessage(t, "no_patron_selected", { title });
+}
+
+/** After a return at the check-in: the way to the Loans page with its borrower (9.52). */
+export function lendToAction(t: Translate, patronId: number, name: string): DeskAction {
+	return {
+		label: t("circulation.actions.lendTo", { name }),
+		href: checkoutHref(patronId),
+		variant: "primary",
+		testid: "action-lend-to",
+	};
 }
 
 /** A card scanned at the check-in: the way to the Loans page with that patron. */

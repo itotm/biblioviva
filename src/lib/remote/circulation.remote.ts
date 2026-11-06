@@ -134,6 +134,10 @@ export const renewAll = command(v.object({ patronId: id }), ({ patronId }) => {
 export const checkin = command(v.object({ itemId: id }), ({ itemId }) => {
 	const user = requireUser("loans");
 	const result = orNotFound(() => checkinItem(getDb(), getConfig(), itemId, user));
+	// the borrower may be chosen at the checkout right after (9.52): their loans as they are now
+	if (result.kind === "returned") {
+		void getDeskPatron(result.loan.patronId).refresh();
+	}
 	debugLog("desk", "checkin", {
 		itemId,
 		kind: result.kind,

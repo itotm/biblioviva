@@ -45,15 +45,16 @@ cambia nulla per l'utente.
 
 > Restituito: «`<titolo>`» (`<nome>`).
 
-Il libro era in prestito ed era in tempo: ora è disponibile e compare in **Libri restituiti adesso**. Nessuna azione è
-richiesta: leggere il libro successivo.
+Il libro era in prestito ed era in tempo: ora è disponibile e compare in **Libri restituiti adesso**. Il messaggio ha il
+pulsante **Presta a `<nome>`**, per l'utente che aveva il libro e ne prende un altro (vedere
+[Pulsanti di ogni riga](#pulsanti-di-ogni-riga)). Altrimenti nessuna azione è richiesta: leggere il libro successivo.
 
 ### Restituzione in ritardo
 
 > Restituito. «`<titolo>`» era in ritardo di `<n>` giorni (scadenza `<data>`).
 
-Il libro è stato registrato come restituito, ma la scadenza era passata. Il messaggio è giallo, con il pulsante
-**Segna danneggiato** (vedere [Copia segnata come danneggiata](#copia-segnata-come-danneggiata)) da usare se il libro
+Il libro è stato registrato come restituito, ma la scadenza era passata. Il messaggio è giallo, con i pulsanti
+**Presta a `<nome>`** e **Segna danneggiato** (vedere [Copia segnata come danneggiata](#copia-segnata-come-danneggiata)) da usare se il libro
 tornato è rovinato. Se l'utente ha altri libri in ritardo, nella riga compare **Stampa promemoria**.
 
 ### Libro smarrito ritrovato
@@ -178,6 +179,9 @@ del libro.
 
 ## Pulsanti di ogni riga
 
+- **Presta a `<nome>`**: compare nel messaggio di ogni restituzione. Apre [Prestiti](checkout.md) con l'utente che aveva
+  il libro già scelto, pronto a ricevere il libro successivo. Vedere
+  [Restituire un libro e prestarne subito un altro](../guides/return-and-lend.md).
 - **Stampa promemoria**: compare se l'utente ha ancora altri libri in ritardo; apre in una nuova scheda il promemoria
   stampabile. Vedere anche [Stampare i solleciti](../guides/overdue-reminders.md).
 - **Rinnova invece**: per il caso dell'utente che voleva tenere il libro. Rinnova il prestito appena chiuso; esiti in
@@ -189,5 +193,6 @@ del libro.
 
 - [Restituire un libro](../guides/return-a-book.md)
 - [Rinnovare un prestito](../guides/renew-a-loan.md)
+- [Restituire un libro e prestarne subito un altro](../guides/return-and-lend.md)
 - [Prestiti](checkout.md)
 - [Libri in prestito](loans.md)

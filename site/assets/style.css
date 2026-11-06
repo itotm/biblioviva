@@ -2311,3 +2311,19 @@ mark {
 .ver {
 	display: none;
 }
+
+/* The Mermaid diagrams drawn by `docs:diagrams` (step 9.53): their own width, scrolled across on a
+   narrow screen, on a light card. */
+.diagram {
+	margin: 1.25rem 0;
+	padding: 12px;
+	overflow-x: auto;
+	border: 1px solid var(--line, #e2e8f0);
+	border-radius: 12px;
+	background: #fff;
+}
+.diagram svg {
+	display: block;
+	max-width: none;
+	height: auto;
+}

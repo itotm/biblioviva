@@ -126,7 +126,7 @@
 	},
 	"passwords": {
 		"title": "Password del personale",
-		"hint": "Cinque account condivisi, uno per ruolo. Le password proposte sono generate a caso e si possono sostituire. Annotarle al passo finale: vengono mostrate una sola volta.",
+		"hint": "Cinque account condivisi, uno per ruolo. Le password proposte sono generate a caso e si possono sostituire. Annotarle al passo finale: vengono mostrate una sola volta. Account personali, uno per persona con il suo ruolo, si aggiungono dopo in Amministrazione → Account del personale.",
 		"accounts": {
 			"admin": "Amministrazione (admin)",
 			"prestiti": "Gestione prestiti (prestiti)",

@@ -11,6 +11,7 @@ import {
 	deskMessage,
 	lentMessages,
 	loanLimitMessage,
+	lendToAction,
 	noPatronSelected,
 	scanFailure,
 	withDeskScan,
@@ -70,6 +71,7 @@ describe("desk message table", () => {
 		already_returned_today: "info",
 		returned_overdue: "warning",
 		was_lost_now_found: "success",
+		returned_now_lending: "success",
 		patron_has_overdues: "warning",
 		calendar_closed_due_date: "info",
 		hard_due_date_applied: "info",
@@ -155,16 +157,23 @@ describe("scan failures (both desks)", () => {
 });
 
 describe("the ways between the desks", () => {
-	it("sends a copy scanned before a card to the Returns page with its code", () => {
-		const m = noPatronSelected(t, "Il gatto", "2026-A0001");
+	it("asks for the card first for a copy not on loan scanned before it (9.52)", () => {
+		const m = noPatronSelected(t, "Il gatto");
 		expect(m).toMatchObject({ code: "no_patron_selected", tone: "warning" });
 		expect(m.text).toBe('circulation.msg.no_patron_selected {"title":"Il gatto"}');
+		expect(actionsOf(m)).toEqual([]);
+	});
+
+	it("offers the Loans page with the borrower after a return (9.52)", () => {
+		const m = deskMessage(t, "returned", { title: "A", name: "Anna" }, [
+			lendToAction(t, 7, "Anna Rossi"),
+		]);
 		expect(actionsOf(m)).toEqual([
 			{
-				label: "circulation.actions.toCheckin",
-				href: "/circulation/checkin?barcode=2026-A0001",
+				label: 'circulation.actions.lendTo {"name":"Anna Rossi"}',
+				href: "/circulation/checkout?patron=7",
 				variant: "primary",
-				testid: "action-to-checkin",
+				testid: "action-lend-to",
 				callback: false,
 			},
 		]);

@@ -13,6 +13,7 @@
 	import LanguageSwitch from "#lib/components/LanguageSwitch.svelte";
 	import Row from "#lib/ui/Row.svelte";
 	import Badge from "#lib/ui/Badge.svelte";
+	import EntryScreen from "#lib/ui/EntryScreen.svelte";
 	import IconTile from "#lib/ui/IconTile.svelte";
 	import { ICON_SIZE, icons } from "#lib/ui/icons.js";
 	import { holdWait } from "#lib/ui/waits.svelte.js";
@@ -46,9 +47,7 @@
 
 <svelte:head><title>{i18n.t("auth.title")} · {i18n.t("common.app.name")}</title></svelte:head>
 
-<main
-	class="flex min-h-svh flex-col items-center justify-center gap-6 bg-gradient-to-b from-primary-100 via-surface-100 to-surface-100 p-4"
->
+<EntryScreen>
 	{#if languages}
 		<!-- the public demo only: the visitor's language (Q120) -->
 		<LanguageSwitch
@@ -164,4 +163,4 @@
 			</section>
 		</section>
 	{/if}
-</main>
+</EntryScreen>

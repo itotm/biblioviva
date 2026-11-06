@@ -217,6 +217,11 @@
 									: i18n.t("admin.users.status.notInConfig")}
 							</Alert>
 						{/if}
+						{#if account.mustChangePassword}
+							<Hint tone="primary" data-testid="account-must-change"
+								>{i18n.t("admin.users.status.mustChange")}</Hint
+							>
+						{/if}
 						{#if account.inConfig}
 							<Row gap="2" class="mt-auto">
 								<Button
@@ -257,7 +262,7 @@
 			<Card variant="outlined" gap="2" as="section" data-testid="auth-mode">
 				<h2 class="title-lg">{i18n.t("admin.users.auth.title")}</h2>
 				<p>{i18n.t(`admin.users.auth.${view.authMode}`)}</p>
-				<Hint tone="faint">{i18n.t("admin.users.auth.later")}</Hint>
+				<Hint tone="faint">{i18n.t("admin.users.auth.personal")}</Hint>
 			</Card>
 
 			<Disclosure

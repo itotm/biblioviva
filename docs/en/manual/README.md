@@ -15,6 +15,7 @@ next to the page title.
 
 - [Lend a book](guides/lend-a-book.md)
 - [Return a book](guides/return-a-book.md)
+- [Return a book and lend another one at once](guides/return-and-lend.md)
 - [Renew a loan](guides/renew-a-loan.md)
 - [Lend to a patron who does not have the card with them](guides/lend-without-card.md)
 - [Lend or return a copy without a label](guides/book-without-label.md)
@@ -49,6 +50,10 @@ next to the page title.
 - [Remove a patron](guides/remove-a-patron.md)
 - [Use the print lists](guides/use-print-lists.md)
 - [Consult a report](guides/run-a-report.md)
+
+### Your own account
+
+- [Change your own password](guides/change-my-password.md)
 
 ## Screens
 

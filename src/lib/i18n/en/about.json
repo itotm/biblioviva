@@ -7,13 +7,7 @@
 	},
 	"deps": {
 		"title": "Libraries used",
-		"runtime": "Runtime ({{count}})",
-		"development": "Development only ({{count}})",
-		"system": "System components",
-		"columns": {
-			"name": "Name",
-			"version": "Version",
-			"license": "Licence"
-		}
+		"hint": "The list of the libraries and programs BiblioViva is made with, with their versions and licences, is in the technical documentation.",
+		"link": "Open the list of the libraries"
 	}
 }

@@ -32,15 +32,11 @@ test.describe.serial("checkout desk", () => {
 		await waitForHydration(page);
 		await expectAxeClean(page);
 
-		// a book before the card
+		// a book not on loan before the card: the card first
 		await scan(page, c1);
 		await expect(message(page)).toHaveAttribute("data-code", "no_patron_selected");
 		await expect(page.getByTestId("desk-message-text").first()).toHaveText(
-			`È stato letto il libro «Libro del banco ${t}» senza una tessera. Leggere prima la tessera dell'utente; per una restituzione aprire Restituzioni.`,
-		);
-		await expect(page.getByTestId("action-to-checkin")).toHaveAttribute(
-			"href",
-			`/circulation/checkin?barcode=${encodeURIComponent(c1)}`,
+			`Il libro «Libro del banco ${t}» non è in prestito: per prestarlo leggere prima la tessera dell'utente.`,
 		);
 
 		// the card, then the first book
