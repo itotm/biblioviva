@@ -45,7 +45,7 @@ To add a stock or a template, copy a file or a folder and edit it. The defaults 
 | `library.schoolYearLabel` | `"span"` |  |
 | `library.timezone` | `"Europe/Rome"` |  |
 | `library.weekStart` | `"monday"` |  |
-| `library.itemTypes` | array of 5 object(s), e.g. `{"code":"libro","label":"Libro"}` |  |
+| `library.itemTypes` | array of 4 object(s), e.g. `{"code":"libro","label":"Libro"}` |  |
 | **`school`** | section | Phase 12 (Q94): the levels of the school in order, grouped in stages, from the preset it-primaria (config/school-presets/). The classes themselves (1 A, 3 B, the teachers group) are data, created in Administration → Classes. |
 | `school.preset` | `"it-primaria"` |  |
 | `school.stages` | array of 1 object(s), e.g. `{"code":"primaria","name":"Primaria"}` |  |
@@ -232,7 +232,8 @@ To add a stock or a template, copy a file or a folder and edit it. The defaults 
 | `classification.genres` | array of 14 object(s), e.g. `{"code":"A","label":"Romanzi e Racconti","image":"A.svg","color":"#e8231b"}` |  |
 | `classification.nonfiction` | array of 9 object(s), e.g. `{"code":"000","label":"Generalità","image":"000.svg","color":"#f6c744","children` |  |
 | `classification.deweyMap` | array of 48 object(s), e.g. `{"prefix":"004","code":"004"}` |  |
-| `classification.callNumber` | object |  |
+| `classification.callNumber` | object | The segnatura is computed from these patterns (Q143): genre, class (the reading level), code, author3 (the author's first three letters; the title's for a special author), title1, text (one written part per title, proposed by `text`), copytext (one per copy). The first-run wizard and Amministrazione → Configurazione → Classificazione choose them; every copy is recomputed when they change. |
 | `classification.callNumber.fiction` | `"{{genre}} {{author3}}"` |  |
 | `classification.callNumber.fictionWithClass` | `"{{genre}} {{class}} {{author3}}"` |  |
 | `classification.callNumber.nonfiction` | `"{{code}} {{author3}}"` |  |
+| `classification.callNumber.text` | `"author3"` |  |

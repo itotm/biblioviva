@@ -41,6 +41,11 @@ import { writeAtomic } from "#lib/server/runtime/fs.js";
 import { schoolOf } from "#lib/server/school/structure.js";
 import { resolvePerformance } from "#lib/shared/performance.js";
 import { wizardGroups } from "#lib/shared/setup-school.js";
+import {
+	callNumberScheme,
+	type CallNumberEnd,
+	type CallNumberOrder,
+} from "#lib/shared/classification.js";
 import { audit } from "./audit.js";
 import { todayIn } from "#lib/shared/dates.js";
 import { createGroups, defaultTeacherGroup } from "./class-groups.js";
@@ -74,6 +79,8 @@ export interface SchoolChoice {
 	classLabel: string;
 	/** Fiction shelved by reading level (Q96): the preset's levels, or one per level. */
 	readingLevels: boolean;
+	/** The scheme of the segnatura (Q143): its order and its end. */
+	callNumber?: { order: CallNumberOrder; end: CallNumberEnd };
 	/** The school year: its first day (`MM-DD`) and its name (9.41), proposed by the preset. */
 	schoolYearStart: string;
 	schoolYearLabel: SchoolYearLabel;
@@ -235,6 +242,10 @@ export function setupDrafts(
 		// the reading levels of the preset (step 12.6), in the classification's own file
 		"classification.readingLevels": levels,
 		"classification.fictionByClass": levels.length > 0,
+		"classification.callNumber": callNumberScheme(
+			input.school.callNumber?.order ?? "genreLevel",
+			input.school.callNumber?.end ?? "author",
+		),
 	});
 	return keyDrafts(configDir, loaded, patch);
 }

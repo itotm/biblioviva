@@ -12,18 +12,21 @@
 	import Row from "#lib/ui/Row.svelte";
 	import Select from "#lib/ui/Select.svelte";
 	import Field from "#lib/ui/Field.svelte";
+	import { isFreeScheme, schemeUses } from "#lib/shared/classification.js";
 
 	const { data } = $props();
 	const i18n = useI18n();
 	const form = $derived(updateBiblio.for(String(data.id)));
 	const options = $derived(data.options);
+	// the copy's own text of the segnatura, only where the scheme has it (Q143)
+	const copyText = $derived(schemeUses({ callNumber: options.callNumber }, "copytext"));
 	/** The record's fields plus, with a single copy, the copy's own (`item*` fields of the edit schema). */
 	const initial = $derived(
 		data.item
 			? {
 					...data.initial,
 					itemId: String(data.item.id),
-					itemCallNumber: data.item.callNumber,
+					itemCallText: data.item.callText,
 					itemReadingLevel: data.item.readingLevel,
 					itemEnumeration: data.item.enumeration,
 					itemAcquisitionDate: data.item.acquisitionDate,
@@ -58,15 +61,21 @@
 					description={i18n.t("catalog.form.singleCopyHint")}
 				>
 					<Grid span>
-						<div>
-							<Field label={i18n.t("catalog.item.callNumber")}
+						{#if copyText}
+							<Field
+								label={i18n.t(
+									isFreeScheme(options.callNumber)
+										? "catalog.item.callNumber"
+										: "catalog.item.callText",
+								)}
 								><Input
 									mono
-									{...fields.itemCallNumber?.as("text")}
-									data-testid="edit-item-call-number"
+									{...fields.itemCallText?.as("text")}
+									maxlength={40}
+									data-testid="edit-item-call-text"
 								/></Field
 							>
-						</div>
+						{/if}
 						{#if options.classPerItem && options.fictionByClass && state.kind === "fiction"}
 							<Field label={i18n.t("catalog.item.readingLevel")}
 								><Select {...fields.itemReadingLevel?.as("select")}>

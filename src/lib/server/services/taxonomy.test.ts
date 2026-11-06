@@ -18,6 +18,7 @@ import { getConfig, resetConfigCache } from "#lib/server/config/index.js";
 import { loadConfig } from "#lib/server/config/load.js";
 import type { AppConfig } from "#lib/server/config/schema.js";
 import type { ServerContext } from "#lib/server/context.js";
+import { callNumberScheme } from "#lib/shared/classification.js";
 import type { Db } from "#lib/server/db/client.js";
 import { auditLog, biblio, item, staffUser } from "#lib/server/db/schema.js";
 import { resetEnvCache } from "#lib/server/env.js";
@@ -66,7 +67,6 @@ const context = (db: Db, config: AppConfig): ServerContext => ({ db, config, con
 const NOW = new Date("2026-09-25T10:15:00Z");
 const copy = {
 	itemType: "libro",
-	callNumber: "",
 	readingLevel: "",
 	enumeration: "",
 	acquisitionDate: "2020-01-01",
@@ -130,18 +130,10 @@ function fixture(): Fixture {
 		actor,
 		rules,
 	);
-	const suggested = addItems(db, fiction, copy, 2, actor, rules).ids;
-	const handWritten = addItems(
-		db,
-		fiction,
-		{ ...copy, callNumber: "PER B" },
-		1,
-		actor,
-		rules,
-	).ids;
+	const fictionItems = addItems(db, fiction, copy, 3, actor, rules).ids;
 	const other = addItems(db, nonfiction, copy, 1, actor, rules).ids;
-	markLabelsPrinted(db, "pair", [...suggested, ...handWritten, ...other], NOW);
-	return { db, config, actor, fiction, nonfiction, fictionItems: [...suggested, ...handWritten] };
+	markLabelsPrinted(db, "pair", [...fictionItems, ...other], NOW);
+	return { db, config, actor, fiction, nonfiction, fictionItems };
 }
 
 const withoutGenre = (draft: TaxonomyDraft, code: string): TaxonomyDraft => ({
@@ -174,7 +166,7 @@ describe("plan", () => {
 		expect(plan.issues.filter((i) => i.level === "error")).toEqual([]);
 	});
 
-	it("asks where the books of a removed code go, and counts the call numbers to rewrite", () => {
+	it("asks where the books of a removed code go, and counts the call numbers that change", () => {
 		const { db, config } = fixture();
 		const draft = withoutGenre(taxonomyOf(config), "B");
 		const plan = planTaxonomy(context(db, config), draft);
@@ -182,9 +174,9 @@ describe("plan", () => {
 			expect.objectContaining({ kind: "fiction", code: "B", records: 1, copies: 3 }),
 		]);
 		expect(plan.removed[0]?.replacement).toBeNull();
-		expect(plan).toMatchObject({ ready: false, callNumbers: 2 });
+		expect(plan).toMatchObject({ ready: false, callNumbers: 3 });
 		const ready = planTaxonomy(context(db, config), draft, { B: "A" });
-		expect(ready).toMatchObject({ ready: true, callNumbers: 2 });
+		expect(ready).toMatchObject({ ready: true, callNumbers: 3 });
 		// a class is no place for a genre's books
 		const wrong = planTaxonomy(context(db, config), draft, { B: "590" });
 		expect(wrong.ready).toBe(false);
@@ -230,7 +222,7 @@ describe("plan", () => {
 });
 
 describe("save", () => {
-	it("writes the file, moves the books, rewrites call numbers and sends bands to print", () => {
+	it("writes the file, moves the books, computes the call numbers again and sends bands to print", () => {
 		const { db, config, actor, fiction, fictionItems } = fixture();
 		const draft = withoutGenre(taxonomyOf(config), "B");
 		const result = saveTaxonomy(
@@ -240,13 +232,14 @@ describe("save", () => {
 			actor,
 			NOW,
 		);
-		expect(result).toMatchObject({ records: 1, callNumbers: 2, bands: 3, moved: 0 });
+		expect(result).toMatchObject({ records: 1, callNumbers: 3, bands: 3, moved: 0 });
 		expect(db.select().from(biblio).where(eq(biblio.id, fiction)).get()?.genreCode).toBe("A");
 		const items = itemsOf(db, fiction);
-		expect(items.map((i) => i.callNumber)).toEqual(["A 3 PER", "A 3 PER", "PER B"]);
+		expect(items.map((i) => i.callNumber)).toEqual(["A 3 PER", "A 3 PER", "A 3 PER"]);
+		expect(items.map((i) => i.callHead)).toEqual(["A 3", "A 3", "A 3"]);
 		expect(items.every((i) => i.spineLabelPrintedAt === null)).toBe(true);
-		// the barcode label shows the call number: only the rewritten ones go back
-		expect(items.map((i) => i.barcodeLabelPrintedAt === null)).toEqual([true, true, false]);
+		// the barcode label shows the call number: it goes back too
+		expect(items.every((i) => i.barcodeLabelPrintedAt === null)).toBe(true);
 		expect(fictionItems).toHaveLength(3);
 
 		const file = JSON.parse(readFileSync(join(configDir, "classification.json"), "utf8")) as {
@@ -276,7 +269,7 @@ describe("save", () => {
 			replaced: { B: "A" },
 			removed: ["B"],
 			records: 1,
-			callNumbers: 2,
+			callNumbers: 3,
 		});
 	});
 
@@ -313,7 +306,7 @@ describe("save", () => {
 		expect(itemsOf(db, fiction).map((i) => i.callNumber)).toEqual([
 			"B 3 PER",
 			"B 3 PER",
-			"PER B",
+			"B 3 PER",
 		]);
 	});
 
@@ -399,14 +392,14 @@ describe("reading levels (Phase 12.6)", () => {
 			actor,
 			NOW,
 		);
-		expect(result.callNumbers).toBe(2);
+		expect(result.callNumbers).toBe(3);
 		expect(db.select().from(biblio).where(eq(biblio.id, fiction)).get()?.readingLevel).toBe(
 			"4",
 		);
 		const copies = itemsOf(db, fiction);
-		expect(copies.map((i) => i.callNumber)).toEqual(["B 4 PER", "B 4 PER", "PER B"]);
-		// the moved copies go back among the labels to print, the hand-written one stays
-		expect(copies.map((i) => i.spineLabelPrintedAt === null)).toEqual([true, true, false]);
+		expect(copies.map((i) => i.callNumber)).toEqual(["B 4 PER", "B 4 PER", "B 4 PER"]);
+		// the copies whose call number changed go back among the labels to print
+		expect(copies.every((i) => i.spineLabelPrintedAt === null)).toBe(true);
 		expect(
 			loadConfig(configDir).config.classification.readingLevels.map((l) => l.code),
 		).toEqual(["1", "2", "4", "5"]);
@@ -424,7 +417,7 @@ describe("reading levels (Phase 12.6)", () => {
 		expect(
 			db.select().from(biblio).where(eq(biblio.id, fiction)).get()?.readingLevel,
 		).toBeNull();
-		expect(itemsOf(db, fiction).map((i) => i.callNumber)).toEqual(["B PER", "B PER", "PER B"]);
+		expect(itemsOf(db, fiction).map((i) => i.callNumber)).toEqual(["B PER", "B PER", "B PER"]);
 
 		const saved = loadConfig(configDir).config;
 		db.update(biblio).set({ readingLevel: "2" }).where(eq(biblio.id, fiction)).run();
@@ -442,6 +435,45 @@ describe("reading levels (Phase 12.6)", () => {
 		expect(db.select().from(biblio).where(eq(biblio.id, fiction)).get()?.readingLevel).toBe(
 			"II",
 		);
+		expect(itemsOf(db, fiction).map((i) => i.callNumber)).toEqual([
+			"B II PER",
+			"B II PER",
+			"B II PER",
+		]);
+	});
+});
+
+describe("the scheme of the segnatura (Q143)", () => {
+	it("counts the copies a new order changes, then computes them again on save", () => {
+		const { db, config, actor, fiction, nonfiction } = fixture();
+		const draft = {
+			...taxonomyOf(config),
+			callNumber: callNumberScheme("levelGenre", "author"),
+		};
+		// the non-fiction copy keeps its segnatura: only the fiction ones change
+		expect(planTaxonomy(context(db, config), draft)).toMatchObject({
+			ready: true,
+			callNumbers: 3,
+		});
+		const result = saveTaxonomy(context(db, config), draft, {}, actor, NOW);
+		expect(result.callNumbers).toBe(3);
+		const copies = itemsOf(db, fiction);
+		expect(copies.map((i) => i.callNumber)).toEqual(["3 B PER", "3 B PER", "3 B PER"]);
+		expect(copies.map((i) => i.callHead)).toEqual(["3 B", "3 B", "3 B"]);
+		expect(copies.every((i) => i.barcodeLabelPrintedAt === null)).toBe(true);
+		expect(itemsOf(db, nonfiction).map((i) => i.callNumber)).toEqual(["590 PER"]);
+		expect(itemsOf(db, nonfiction)[0]?.barcodeLabelPrintedAt).not.toBeNull();
+	});
+
+	it("keeps the segnature as the copies' texts when the scheme becomes free", () => {
+		const { db, config, actor, fiction } = fixture();
+		const draft = { ...taxonomyOf(config), callNumber: callNumberScheme("free", "author") };
+		expect(planTaxonomy(context(db, config), draft).callNumbers).toBe(0);
+		expect(saveTaxonomy(context(db, config), draft, {}, actor, NOW).callNumbers).toBe(0);
+		const copies = itemsOf(db, fiction);
+		expect(copies.map((i) => i.callText)).toEqual(["B 3 PER", "B 3 PER", "B 3 PER"]);
+		expect(copies.map((i) => i.callNumber)).toEqual(["B 3 PER", "B 3 PER", "B 3 PER"]);
+		expect(copies.every((i) => i.spineLabelPrintedAt !== null)).toBe(true);
 	});
 });
 

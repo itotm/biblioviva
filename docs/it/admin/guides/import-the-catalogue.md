@@ -34,7 +34,7 @@ I nomi delle colonne sono in inglese e vanno lasciati come nel modello. Le princ
 | `reading_level` | il livello di lettura (narrativa) | facoltativa |
 
 Sono facoltative anche `isbn`, `subtitle`, `publication_place`, `publication_year`, `physical_description`, `series`,
-`series_number`, `subjects`, `notes`, `call_number` (la segnatura), `item_type` (il materiale: libro, DVD…, uno per titolo), `status`,
+`series_number`, `subjects`, `notes`, `call_number` (la segnatura, che BiblioViva calcola: vedere sotto), `item_type` (il materiale: libro, DVD…, uno per titolo), `status`,
 `not_for_loan` (`sì` per le copie da consultazione; anche `consultazione` in `item_type` rende la copia da consultazione, senza essere il materiale del titolo), `acquisition_date` (`AAAA-MM-GG` o `GG/MM/AAAA`), `item_notes` e
 altre ancora: l'elenco completo è nel riquadro **Il modello del file**. Lo stato si scrive `available`, `lost`, `damaged`,
 `in_repair` o `withdrawn`; le parole italiane (disponibile, perso, danneggiato, in riparazione, ritirato) sono
@@ -44,6 +44,12 @@ Le chiavi si possono lasciare fuori. Senza `biblio_key` le copie dello stesso li
 `barcode` BiblioViva genera il codice di ogni copia e alla fine si stampano le etichette. Un libro senza
 `classification` viene importato lo stesso, ma finisce nell'elenco **Da classificare** e le sue copie non si prestano
 finché qualcuno non lo classifica.
+
+La colonna `call_number` non viene copiata così com'è: BiblioViva calcola la segnatura di ogni copia dallo schema
+scelto in **Amministrazione** → **Configurazione** → **Classificazione** (vedere [Modificare la classificazione e i
+livelli di lettura](classification.md#scegliere-come-si-compone-la-segnatura)). Con la parte finale «Iniziali
+dell'autore, modificabili per titolo» il titolo prende dal file la parte dopo la classificazione, quella più frequente
+tra le sue copie. Con l'ordine «Libera: scritta a mano su ogni copia» ogni copia tiene la segnatura del file.
 
 > [!NOTE]
 > Il codice a barre di una copia non può avere la forma del numero di una tessera: le copie e le tessere non possono mai
@@ -74,6 +80,10 @@ finché qualcuno non lo classifica.
    materiali diversi**, in un riquadro giallo. Premere **Sì, il materiale più frequente** perché ogni titolo prenda il
    materiale della maggior parte delle sue copie. Premere **No, sono errori da correggere** per correggere il file. Le
    copie aggiunte a un titolo già in catalogo tengono il materiale di quel titolo.
+1. Se alcune copie hanno nel file una segnatura diversa da quella calcolata, la pagina chiede **Copie con una segnatura
+   diversa da quella calcolata**. Premere **Sì, la segnatura calcolata** perché quelle copie prendano la segnatura
+   calcolata: le loro etichette tornano tra quelle da stampare. Premere **No, sono errori da correggere** per correggere
+   il file.
 1. Se ci sono errori, correggere il file, premere **Torna alle colonne**, caricarlo di nuovo e verificare ancora. Con
    anche un solo errore **Importa** resta spento.
 
@@ -119,6 +129,14 @@ Compare «Copie con materiali diversi (…): rispondere alla domanda qui sotto»
 correggere**, «Copie con materiali diversi (…): il materiale è uno solo per titolo»: nel file le righe dello stesso
 libro portano in `item_type` materiali diversi, ma il materiale è uno solo per titolo. Rispondere **Sì, il materiale più
 frequente** oppure correggere `item_type` nel file, rendendolo uguale su tutte le righe del libro, e verificare di nuovo.
+
+### Le copie hanno una segnatura diversa da quella calcolata
+
+Compare «Segnatura nel file …, calcolata …: rispondere alla domanda qui sotto» oppure, dopo **No, sono errori da
+correggere**, «Segnatura nel file … diversa da quella calcolata …»: la segnatura scritta in `call_number` non coincide
+con quella che BiblioViva calcola dallo schema. Rispondere **Sì, la segnatura calcolata**, oppure correggere
+`call_number` nel file, oppure cambiare lo schema nella classificazione (con l'ordine «Libera: scritta a mano su ogni
+copia» il file viene tenuto com'è), e verificare di nuovo.
 
 ### Tutte le copie sono già in catalogo
 

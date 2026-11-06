@@ -80,7 +80,7 @@ export function classifiedCallNumber(
 	rules: CatalogRules,
 ): string {
 	const record = db
-		.select({ author: biblio.author, title: biblio.title })
+		.select({ author: biblio.author, title: biblio.title, callText: biblio.callText })
 		.from(biblio)
 		.where(eq(biblio.id, id))
 		.get();

@@ -74,7 +74,7 @@ Se l'ISBN è già in catalogo, la pagina non crea una scheda doppia. Mostra il t
 «N copie» sotto **Questo ISBN è già in catalogo**. Le scelte sono:
 
 - **Aggiungi copia**: aggiunge al libro il **Numero di copie** scritto nel campo (almeno una), con la segnatura
-  proposta; il materiale è quello della scheda. Si passa alla conferma [Scheda salvata](#scheda-salvata) (“N copie
+  del libro; il materiale è quello della scheda. Si passa alla conferma [Scheda salvata](#scheda-salvata) (“N copie
   aggiunte a «titolo»”).
 - **Apri la scheda**: apre la [Scheda del libro](book-record.md).
 - **Leggi un altro codice**: torna al primo passo.
@@ -134,7 +134,9 @@ scheda. L'amministratore può disattivare le copertine; in tal caso il riquadro 
 ### Dati del libro
 
 Il modulo ha le sezioni **Scheda**, **Pubblicazione**, **Classificazione** e **Altri dati**, con gli stessi campi e le
-stesse regole del modulo [Modifica scheda](book-record.md#modifica-scheda). Il **Materiale** sta in **Pubblicazione**,
+stesse regole del modulo [Modifica scheda](book-record.md#modifica-scheda). Sotto la scelta della classificazione sta la
+**Segnatura delle copie**, calcolata, che le copie prendono al salvataggio; con iniziali modificabili compare anche
+**Testo della segnatura**, vedere [Sezione Classificazione](book-record.md#sezione-classificazione). Il **Materiale** sta in **Pubblicazione**,
 dopo la **Descrizione fisica**, già impostato dal primo passo. Autore ed editore sono obbligatori: se il
 libro non li indica si usano i valori speciali dei pulsanti sotto il campo.
 
@@ -144,7 +146,8 @@ La sezione **Copie** crea le copie del libro nello stesso salvataggio:
 
 - **Numero di copie**: quante copie nuove, di norma 1;
 - **Livello delle copie**, se la biblioteca registra il livello sulle copie;
-- **Segnatura**: viene proposta dalla classificazione e si aggiorna finché non si scrive la propria;
+- **Segnatura**, solo con lo schema libero della biblioteca: si scrive a mano; negli altri schemi la segnatura è
+  calcolata e si legge in **Segnatura delle copie**, sotto la classificazione;
 - **Data di acquisizione**: di norma la data di oggi.
 
 Il pulsante **Salva scheda e copie** salva. **Annulla** torna al catalogo. Se un campo non è valido, il messaggio

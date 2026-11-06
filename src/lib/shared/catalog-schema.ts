@@ -52,6 +52,11 @@ export const biblioFormSchema = v.object({
 	classCode: optionalText(16),
 	/** Select value: `''` or `'1'`…`'5'` (only with `fictionByClass` and without `classPerItem`). */
 	readingLevel: optionalText(8),
+	/**
+	 * The title's written part of the segnatura, `{{text}}` (Q143), only when the scheme has it;
+	 * left out keeps the record's, the proposal (the author's initials) is stored as "follow it".
+	 */
+	callText: v.optional(v.pipe(v.string(), v.trim(), v.maxLength(40))),
 	/** One subject per line or comma-separated. */
 	subjects: optionalText(1000),
 	notes: optionalText(2000),
@@ -63,7 +68,7 @@ export const biblioEditSchema = v.object({
 	...biblioFormSchema.entries,
 	/** When the record has exactly one copy its fields are edited on the same page (owner review). */
 	itemId: optionalText(12),
-	itemCallNumber: optionalText(40),
+	itemCallText: v.optional(v.pipe(v.string(), v.trim(), v.maxLength(40))),
 	itemReadingLevel: optionalText(2),
 	itemEnumeration: optionalText(60),
 	itemAcquisitionDate: optionalText(10),
@@ -81,7 +86,8 @@ export const ITEM_STATUS_VALUES = [
 export type ItemStatus = (typeof ITEM_STATUS_VALUES)[number];
 
 export const itemFormSchema = v.object({
-	callNumber: optionalText(40),
+	/** The copy's written part of the segnatura, `{{copytext}}` (Q143); left out keeps the copy's. */
+	callText: v.optional(v.pipe(v.string(), v.trim(), v.maxLength(40))),
 	/** Per-copy class (only with `classPerItem`). */
 	readingLevel: optionalText(8),
 	enumeration: optionalText(60),
@@ -124,7 +130,7 @@ export const fastAddSchema = v.object({
 	...biblioFormSchema.entries,
 	/** Number of copies as typed (`'1'`…`'100'`). */
 	copies: v.pipe(v.string(), v.regex(/^\d{1,3}$/)),
-	itemCallNumber: optionalText(40),
+	itemCallText: v.optional(v.pipe(v.string(), v.trim(), v.maxLength(40))),
 	/** Per-copy class (only with `classPerItem`). */
 	itemReadingLevel: optionalText(2),
 	acquisitionDate: optionalText(10),

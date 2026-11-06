@@ -167,6 +167,21 @@ test.describe.serial("first-run wizard", () => {
 		await page.getByTestId("setup-stage-secondaria-I").fill("A, B");
 		await expect(page.getByTestId("setup-teacher-group")).toHaveValue("Docenti");
 		await expect(page.getByTestId("setup-reading-levels")).toBeChecked();
+		// the scheme of the segnatura (Q143): the library's own by default, then level first
+		const examples = page.getByTestId("setup-call-number-examples");
+		await expect(examples).toHaveText(/^Examples: B \S+ DEL · B DEL · 590 ROS$/);
+		await page.getByTestId("setup-call-number-order").selectOption("levelGenre");
+		await expect(examples).toHaveText(/^Examples: \S+ B DEL · B DEL · 590 ROS$/);
+		await page.getByTestId("setup-call-number-end").selectOption("none");
+		await expect(examples).toHaveText(/^Examples: \S+ B · B · 590$/);
+		await page.getByTestId("setup-call-number-end").selectOption("author");
+		// without reading levels only the orders without the level are offered
+		await page.getByTestId("setup-reading-levels").uncheck();
+		await expect(
+			page.getByTestId("setup-call-number-order").locator('option[value="levelGenre"]'),
+		).toHaveCount(0);
+		await page.getByTestId("setup-reading-levels").check();
+		await page.getByTestId("setup-call-number-order").selectOption("levelGenre");
 		await expectAxeClean(page);
 		await page.getByTestId("setup-next").click();
 
@@ -227,6 +242,9 @@ test.describe.serial("first-run wizard", () => {
 		await expect(page.getByTestId("setup-summary-classes")).toContainText("28 classes");
 		await expect(page.getByTestId("setup-summary-photos")).toHaveText("Yes");
 		await expect(page.getByTestId("setup-summary-covers")).toHaveText("Yes");
+		await expect(page.getByTestId("setup-summary-call-number")).toHaveText(
+			"Level, then genre · Author's initials, computed",
+		);
 		await expect(page.getByTestId("setup-step-summary")).toContainText("biblioviva");
 		await page.getByTestId("setup-finish").click();
 		await expect(page.getByTestId("setup-done")).toBeVisible({ timeout: 120_000 });
@@ -251,6 +269,13 @@ test.describe.serial("first-run wizard", () => {
 		expect(written.barcodes.item.format).toEqual({ pattern: "YYYY-CNNNN", check: "mod23" });
 		// the folder layout of §3.6: the default fragments are in place next to the wizard's config.json
 		expect(existsSync(join(runDir, "config", "classification.json"))).toBe(true);
+		const classification = JSON.parse(
+			readFileSync(join(runDir, "config", "classification.json"), "utf8"),
+		) as { callNumber: Record<string, string> };
+		expect(classification.callNumber).toMatchObject({
+			fictionWithClass: "{{class}} {{genre}} {{author3}}",
+			nonfiction: "{{code}} {{author3}}",
+		});
 		expect(existsSync(join(runDir, "config", "labels", "stocks", "a4-70x48.json"))).toBe(true);
 		expect(check).toContain("classification.json");
 

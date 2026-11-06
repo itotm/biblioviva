@@ -128,10 +128,19 @@ Il tipo di scuola propone gli anni, le classi e i livelli di lettura. Le classi 
    inizio, come «2026». In Italia si usano due anni.
 1. Lasciare attiva la casella **Libri di narrativa divisi per livello di lettura** se la biblioteca ordina i romanzi per
    livello. Sotto la casella compaiono i livelli che verranno creati.
+1. Lasciare in **Segnatura** la voce proposta, «Genere, poi livello», oppure scegliere un altro ordine. BiblioViva
+   calcola la segnatura di ogni copia dalla classificazione, dal livello e dall'autore; con «Libera: scritta a mano su
+   ogni copia» la segnatura si scrive invece su ogni copia. Senza livelli di lettura il menu offre soltanto «Genere,
+   senza livello» e «Libera: scritta a mano su ogni copia».
+1. Lasciare in **Parte finale** la voce proposta, «Iniziali dell'autore, calcolate», oppure sceglierne un'altra. Il menu
+   non compare con l'ordine libero.
+1. Controllare gli esempi sotto i menu, scritti come «Esempi: B 4 DEL · B DEL · 590 ROS».
 1. Premere **Avanti**.
 
 Anni, classi e livelli di lettura si cambiano dopo da **Amministrazione** → **Configurazione** → **Scuola** e da
-**Amministrazione** → **Configurazione** → **Classi**.
+**Amministrazione** → **Configurazione** → **Classi**. La segnatura si cambia da **Amministrazione** →
+**Configurazione** → **Classificazione**: vedere [Modificare la classificazione e i livelli di
+lettura](../../admin/guides/classification.md#scegliere-come-si-compone-la-segnatura).
 
 ### Codici
 
@@ -209,7 +218,7 @@ Con i dati dimostrativi attivi i campi non si modificano: tutti gli account usan
 
 <!-- figure: setup/summary | Il Riepilogo con le scelte e le password degli account -->
 
-1. Controllare il riepilogo: lingua, colori, biblioteca, classi, codici e dati di prova.
+1. Controllare il riepilogo: lingua, colori, biblioteca, classi, segnatura, codici e dati di prova.
 1. Copiare le password di tutti gli account, per esempio su un foglio di carta tenuto al sicuro.
 1. Premere **Completa la configurazione**. Durante il salvataggio il pulsante mostra «Salvataggio in corso…».
 

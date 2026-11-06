@@ -42,7 +42,7 @@ Five tabs open the dedicated editors, each on a page of its own.
   [Appearance and language](appearance.md). Guide: [Set up the library](../guides/set-up-the-library.md).
 - **Classes**: the classes of the school and the teachers' groups. See [Classes](classes.md). Guide:
   [Set up the classes](../guides/set-up-classes.md).
-- **Classification**: genres, subjects, pictograms, Dewey and call numbers, with the reading levels. Guide:
+- **Classification**: genres, subjects, pictograms, Dewey and the call number scheme, with the reading levels. Guide:
   [Change the classification and the reading levels](../guides/classification.md).
 - **Print templates**: the template folders of cards, labels, receipts and notices. See
   [Print templates](templates.md).

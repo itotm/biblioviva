@@ -764,7 +764,9 @@
 		"callNumber": {
 			"fiction": "{{genre}} {{author3}}",
 			"fictionWithClass": "{{genre}} {{class}} {{author3}}",
-			"nonfiction": "{{code}} {{author3}}"
+			"nonfiction": "{{code}} {{author3}}",
+			"_commentScheme": "The segnatura is computed from these patterns (Q143): genre, class (the reading level), code, author3 (the author's first three letters; the title's for a special author), title1, text (one written part per title, proposed by `text`), copytext (one per copy). The first-run wizard and Amministrazione → Configurazione → Classificazione choose them; every copy is recomputed when they change.",
+			"text": "author3"
 		}
 	},
 	"cards": {

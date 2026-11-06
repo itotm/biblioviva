@@ -41,9 +41,15 @@ is for whoever catalogues the books.
    genre or the subject. For fiction also choose the **Reading level**, if the library uses it. How to choose is
    explained in [Classify books](classify-books.md). If it is not yet known how to classify the book, choose
    **Classify later**.
-1. In the **Copies** section write the **Number of copies** (from 1 to 100) and check the **Call number**, which
-   BiblioViva suggests from the classification: for example `B 4 DEL` means genre B, reading level 4, author whose
-   surname starts with DEL. The call number can be corrected. The **Acquisition date** is today's.
+1. Check under the picker the **Call number of the copies**, which BiblioViva computes from the classification, the
+   level and the author: for example `B 4 DEL` means genre B, reading level 4, author whose surname starts with DEL.
+   For a book whose author is "Anonimo" or "AA. VV." the first letters of the title are used, skipping a leading
+   article. With **Classify later** "After the classification" appears. The form depends on the scheme the library has
+   chosen, see [Change the classification and the reading levels](../../admin/guides/classification.md).
+1. If the **Call number text** field appears, leave it empty to use the initials proposed from the author (in grey) or
+   write the letters wanted.
+1. In the **Copies** section write the **Number of copies** (from 1 to 100). With the library's free scheme the **Call
+   number** is typed here. The **Acquisition date** is today's.
 1. If the library has covers switched on, check the **Cover** panel next to the form: BiblioViva looks for it by itself,
    and the guide [Add the cover](add-a-cover.md) explains how to replace it with a photo.
 1. Press **Save record and copies**. The confirmation "Record saved" opens, with the **Copy barcodes** (for example

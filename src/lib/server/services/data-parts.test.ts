@@ -96,7 +96,6 @@ function library(name: string): { db: Db; actor: { id: number } } {
 		db,
 		b,
 		{
-			callNumber: "",
 			readingLevel: "",
 			enumeration: "",
 			acquisitionDate: "2020-01-01",

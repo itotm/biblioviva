@@ -92,7 +92,6 @@ function setup(): {
 		db,
 		record,
 		{
-			callNumber: "",
 			readingLevel: "",
 			enumeration: "",
 			acquisitionDate: "",

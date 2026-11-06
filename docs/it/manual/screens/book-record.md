@@ -85,10 +85,17 @@ Le colonne sono:
 ### Segnatura
 
 La segnatura è la sigla scritta sul dorso, che dice dove va riposta la copia: per la narrativa il genere seguito dalle
-prime lettere dell'autore (per esempio `B DEL`), per la saggistica il numero dell'argomento seguito dalle lettere
-dell'autore (per esempio `590 ROS`). La forma esatta dipende dalla configurazione della biblioteca. Nel modulo di una
-copia la segnatura viene proposta dalla classificazione e si può cambiare a mano: copie dello stesso libro possono
-stare in posti diversi dello scaffale.
+prime lettere dell'autore (per esempio `B DEL`, o `B 4 DEL` con il livello di lettura), per la saggistica il numero
+dell'argomento seguito dalle lettere dell'autore (per esempio `590 ROS`). Per un libro di autore «Anonimo» o «AA. VV.»
+le lettere sono le prime tre del titolo, saltando l'articolo iniziale. La forma esatta dipende dallo schema scelto dalla
+biblioteca, vedere [Modificare la classificazione e i livelli di lettura](../../admin/guides/classification.md).
+
+La segnatura la calcola BiblioViva e non si scrive per intero. Tutte le copie di un libro hanno la stessa segnatura; fa
+eccezione il livello di lettura quando la biblioteca lo assegna a ogni copia: allora ogni copia porta il suo. La
+segnatura segue i dati: correggendo la classificazione, l'autore o il titolo nel modulo [Modifica
+scheda](#modifica-scheda), o il livello di una copia, la segnatura delle copie cambia subito e la loro fascetta e la
+loro etichetta con il codice a barre tornano tra le etichette da stampare. Un libro non ancora classificato non ha
+segnatura.
 
 ### Stati della copia
 
@@ -136,7 +143,10 @@ La finestra **Aggiungi copie** crea una o più copie nuove del libro. Si apre da
 scheda. La procedura è in [Aggiungere una copia a un libro già in catalogo](../guides/add-a-copy.md). I campi sono:
 
 - **Numero di copie**, da 1 a 100;
-- **Segnatura**: lasciata vuota, usa quella proposta dalla classificazione (che compare in grigio);
+- **Segnatura**, mostrata ma non modificabile, con la nota «Calcolata da classificazione, livello e autore.»; solo con
+  lo schema libero della biblioteca è un campo da scrivere;
+- **Testo della segnatura**, solo con uno schema che prevede una parte scritta per ogni copia («La parte della segnatura
+  scritta per questa copia.»);
 - **Livello della copia**, se la biblioteca lo registra sulle copie;
 - **Volume / numero**, **Data di acquisizione** e **Note sulla copia**;
 - **Solo consultazione (non si presta)**, per le copie che non devono uscire.
@@ -146,9 +156,12 @@ delle copie sono assegnati da BiblioViva. Dopo l'aggiunta le etichette risultano
 
 ## Modifica di una copia
 
-La finestra «Modifica copia», intitolata con il codice della copia, cambia **Segnatura**, **Livello
-della copia**, **Volume / numero**, **Data di acquisizione**, **Note sulla copia** e **Solo consultazione (non si
-presta)**. Il pulsante **Salva** conferma («Copia aggiornata»); **Annulla** esce.
+La finestra «Modifica copia», intitolata con il codice della copia, cambia **Livello della copia**,
+**Volume / numero**, **Data di acquisizione**, **Note sulla copia** e **Solo consultazione (non si presta)**. La
+**Segnatura** vi compare senza poterla scrivere, con la nota «Calcolata da classificazione, livello e autore.»; i campi
+**Segnatura** (schema libero) e **Testo della segnatura** (parte scritta per ogni copia) ci sono solo con gli schemi che
+li prevedono, come in [Aggiunta di copie](#aggiunta-di-copie). Il pulsante **Salva** conferma («Copia aggiornata»);
+**Annulla** esce.
 
 ## Cambio di stato di una copia
 
@@ -267,6 +280,12 @@ La sezione **Classificazione** sceglie il tipo e l'argomento del libro.
 1. Per la saggistica, scegliere l'argomento tra le figure di **Scegli l'argomento**. Un argomento principale ha dei
    sottoargomenti: aprendolo si leggono gli «Argomenti di …» e si sceglie quello giusto, oppure il pulsante «Usa … in
    generale»; **Torna agli argomenti principali** riporta all'elenco.
+1. Sotto il selettore **Segnatura delle copie** mostra la segnatura calcolata, oppure «Dopo la classificazione» quando è
+   scelto **Classifica dopo**. La nota dice «Calcolata da classificazione, livello e autore; le copie la prendono al
+   salvataggio.»
+1. Solo se lo schema della biblioteca prevede iniziali modificabili compare il campo **Testo della segnatura**: vuoto,
+   usa le iniziali proposte dall'autore, mostrate in grigio («Vuoto: DEL, proposto dall'autore.»); scrivere altre lettere
+   per cambiarle.
 
 ### Sezione Altri dati
 
@@ -278,7 +297,7 @@ La sezione **Altri dati** è chiusa all'apertura, a meno che non contenga già d
 Se il libro ha una sola copia, in fondo al modulo compare la sezione intitolata con il codice della copia («Copia N»):
 «La scheda ha una sola copia: i suoi dati si modificano qui e si salvano insieme alla scheda.» I campi sono quelli di
 [Modifica di una copia](#modifica-di-una-copia); il materiale non c'è, perché si cambia nella sezione
-**Pubblicazione**. Con due o più copie la sezione non compare.
+**Pubblicazione**. La segnatura è un campo solo con gli schemi descritti in [Aggiunta di copie](#aggiunta-di-copie). Con due o più copie la sezione non compare.
 
 ## Messaggi del modulo
 

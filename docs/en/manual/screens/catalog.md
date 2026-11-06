@@ -99,7 +99,7 @@ A check is valid only for the choice made: when the value is changed, **Check** 
 
 ### Reclassifying
 
-**Reclassify** changes the genre or the subject of all the chosen books. The window **Reclassify the selected titles** shows "N titles" and asks for the **Kind** and then the **Genre** (with the **Level**, if used) or the **Classification**. The box "Rewrite the copies' call numbers from the new classification" makes the call numbers be rewritten; in this case the spine bands, and the labels if the call number changes, return among those to print. The **Check** button says how many titles change ("N titles change"); the button "Reclassify N titles" applies the change and a message confirms "N titles reclassified, N call numbers rewritten". The procedure is in [Classify books](../guides/classify-books.md).
+**Reclassify** changes the genre or the subject of all the chosen books. The window **Reclassify the selected titles** shows "N titles" and asks for the **Kind** and then the **Genre** (with the **Level**, if used) or the **Classification**. The window notes: "The call number of the copies follows the new classification. The spine bands (and the labels, if the call number changes) go back among those to print." The **Check** button says how many titles change ("N titles change"); the button "Reclassify N titles" applies the change and a message confirms "N titles reclassified, N call numbers rewritten". The procedure is in [Classify books](../guides/classify-books.md).
 
 ## Export
 

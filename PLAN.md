@@ -455,7 +455,7 @@ Two kinds of books with different rules, both configured in `config.json` (`clas
 - **Fiction (`kind = fiction`)**: a **genre** (`genre_code` from `classification.genres`; the library uses single-letter codes `A`…`R` from its Koha CCODE list, e.g. `A` Romanzi e Racconti, `D` Avventura, `M` Fumetti, each with its pictogram, see `docs/reference/classification/` (Q66 resolved); one genre per book, Q55) and, only when `classification.fictionByClass` is `true`, a **reading level** (`reading_level`, a code of `classification.readingLevels`, the library's own ordered scale of `{ code, label }`; default one level per primary class, `1`…`5`; Q53, Q96, Phase 12.6). Middle and high schools set the flag to `false` and the field disappears from forms, labels, filters and reports.
 - **Non-fiction (`kind = nonfiction`)**: a **local class code** (`class_code`) from a very simple Dewey-like taxonomy with **one or two levels** (`classification.nonfiction[]`, nodes `{ code, label, image, color?, children? }`; depth validated to ≤ 2). The Dewey number delivered by SBN (UNIMARC 676) is kept in `biblio.dewey` for reference and only *suggests* a local class through `classification.deweyMap` (longest prefix wins).
 - **Images**: every genre and every top-level taxonomy node has an image (`image` file name in `CONFIG_DIR/classification/images/`, PNG/SVG/WebP/GIF; placeholder pictograms ship in the repo and are copied on first run); a child node without `image` (or `color`) inherits its parent's, which is how the current labels work (one pictogram per Dewey hundred, e.g. `500` for `590 Animali`). Any node, parent or child, can be assigned to a book. They appear in the classification picker, as badges in catalog lists and detail pages, in search filters and on spine bands (inlined as data URLs at print time). The UI loads them through `/media/classification/[file]` (staff session).
-- **Call numbers** are suggested from the patterns in `classification.callNumber` (`fiction`, `fictionWithClass`, `nonfiction`) with placeholders `{{class}}`, `{{genre}}`, `{{code}}`, `{{author3}}`, `{{title1}}`; the suggestion is editable on each item (Q30). The defaults follow the scheme already on the shelves (Q30 resolved): the *segnatura* proper is the first three letters of the author's surname (`{{author3}}`, used to keep books in alphabetical order); the label adds the classification in front: fiction with reading class `{{genre}} {{class}} {{author3}}` → `B 4 DEL`, fiction without class `{{genre}} {{author3}}` → `B DEL`, non-fiction always `{{code}} {{author3}}` → `590 ROS`. This mirrors how the shelves are organised in this library (with classes: a shelf per class, books grouped by genre on the shelf and alphabetical within the genre; without classes: by genre, or by subject for non-fiction), but the patterns are configuration, not code, so another library can shelve differently. The label renderer splits a call number into `call.head` (the part produced by the classification placeholders) and `call.rest` (§3.12).
+- **Call numbers** (the *segnatura*) are **computed, never typed whole** (Q143): the scheme `classification.callNumber` has three patterns (`fiction`, `fictionWithClass` for a fiction copy with a reading level, `nonfiction`) and `text`. Computed placeholders: `{{genre}}`, `{{class}}` (the shelf mark of the copy's reading level: the record's, or the copy's with `classPerItem`), `{{code}}`, `{{author3}}` (the first three letters of the author's surname; of the title, past an article, for a special author of `catalog.specialAuthors`), `{{title1}}`; written placeholders: `{{text}}` (one per title, in "Modifica scheda"; empty follows the proposal named by `text`: `author3`, `title1` or `none`) and `{{copytext}}` (one per copy). The scheme is chosen in two questions, in the first-run wizard and in Amministrazione → Configurazione → Classificazione: the **order** — genre then level (`B 4 DEL`, the default and the library's own), level then genre (`4 B DEL`), genre without the level (`B DEL`; the only one besides the free one when fiction has no levels), free (`{{copytext}}`: typed on each copy) — and the **end** — the author's initials computed (the default, not editable), proposed and editable per title (`{{text}}`), or nothing; the classification page also edits the patterns by hand. The server stores the result on every copy with its shelf part (`item.call_number`, `item.call_head`: the classification placeholders it begins with) and computes it again after every change that can alter it (the record's classification, author, title or text; the copy's level or text; the codes and levels renamed; the scheme), sending the labels of a changed segnatura back to print. The default mirrors this library: books are shelved by section only (genre, and level when there is one; subject for non-fiction), the initials kept for the label. The label renderer prints `call.head` large and `call.rest` (the remainder) under it (§3.12).
 - **Reading level per copy (Q72)**: normally the reading level belongs to the record. This library keeps copies of the same title in different class shelves, which is logically wrong but practical, so `classification.classPerItem` (default `false`) moves the field to the item: when it is on, `item.reading_level` is used everywhere (labels, filters, reports, forms) and `biblio.reading_level` stays NULL; when it is off the opposite holds. The catalogue import detects copies of one title with different classes during validation and, when the flag is off, asks the operator whether to enable it (the answer is written to `config.json`, audited) before continuing; refusing turns those rows into errors.
 - **Validation**: codes unique per list; images must exist (startup warning, not fatal); a startup check and the report `biblio-unknown-classification` list records whose codes no longer exist in the configuration. The taxonomy is edited in Administration (taxonomy editor, 11.1, Q59) or in its JSON file.
 - **Everywhere else**: catalog filters by kind, genre, class (including children) and reading level (5.1); CSV import/export columns `kind`, `genre_code`, `class_code`, `reading_level` (3.9, 7.3); reports by genre and classification (6.3); batch reclassification (3.10).
@@ -563,6 +563,7 @@ Aligned with the fields the library actually fills in Koha's fast cataloguing fr
 | `genre_code` | text | fiction genre code from `classification.genres` |
 | `reading_level` | text | fiction reading level, a code of `classification.readingLevels` (Phase 12.6), only when `classification.fictionByClass`; **NULL when `classification.classPerItem` is on** (the class then lives on each item, Q72) |
 | `class_code` | text | non-fiction local class code (1–2 levels) from `classification.nonfiction` |
+| `call_text` | text | the title's written part of the segnatura, `{{text}}` (Q143); NULL follows the scheme's proposal (the author's initials), an empty string is no text |
 | `subjects` | text | JSON array (606); free keywords, searchable |
 | `notes` | text | general note (500$a / internal) |
 | `cover_path` | text | relative to uploads |
@@ -580,7 +581,9 @@ Dropped on purpose (Q73): contributors, edition, language, summary, separate pag
 | `id` | int PK | |
 | `biblio_id` | int FK NOT NULL | ON DELETE RESTRICT |
 | `barcode` | text UNIQUE NOT NULL | the configured copy format for items created in the app (default `YYYY-CNNNN`); older formats, legacy plain counters and `YYYY-NNNN` accepted as-is (§3.7) |
-| `call_number` | text | shelf mark ("segnatura" in the UI), e.g. `B 4 DEL` (Q30); on the copy, because copies of one title can be shelved apart (Q139) |
+| `call_number` | text | shelf mark ("segnatura" in the UI), e.g. `B 4 DEL`: computed by the server from the scheme (§3.17, Q143), never typed; on the copy, because the level per copy changes it (Q139); NULL while the record waits to be classified |
+| `call_head` | text | its shelf part (`B 4`): the spine band's large line and the inventory's shelf |
+| `call_text` | text | the copy's written part, `{{copytext}}` (Q143), only with a scheme that has it (the free one) |
 | `reading_level` | text | **only when `classification.classPerItem` is on** (Q72): the reading level this copy is shelved for; NULL otherwise (the biblio carries it) |
 | `enumeration` | text | issue designation for periodicals, e.g. `2026, n. 3` (Koha 952$h), Q75 |
 | `status` | text CHECK | `available` (default), `lost`, `damaged`, `in_repair`, `withdrawn` — "in repair" is a status, not a flag (Q73); "on loan" is derived from open loans, not stored (Q42) |
@@ -913,7 +916,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Depends on: 3.5
 
 - [x] **3.8 Book labels: pairs (spine band + barcode label), single labels, adhesive stock**
-  - Tasks: `services/labels.ts` reusing the template engine of 2.5 (folder templates, Mustache, `{{#asset}}`, data-URL inlining) with **stock-driven geometry**: `labels.stocks[]` from config (label mm, columns, rows, margins, gaps, radius, paper) → per-stock CSS grid with `@page`, **units** of one or more stacked cells (`unit.cells`, `unit.stack`), **start position** in units to skip used labels, outlines only on the calibration page; built-in templates **`pair-default`** (the default kind: spine band on top, barcode label below, one 70 × 96 mm unit per book on the `a4-70x48` stock, replicating `docs/reference/labels/koha-etichette.html` field by field — top: barcode text, short title, 20 mm pictogram, call number head and rest or non-fiction label in capitals; bottom: call number, italic title, 50 × 15 mm barcode, barcode text), `barcode-default` (barcode label alone) and `spine-default` (spine band alone, plus the compact colour-band variant for small stickers); `call.head`/`call.rest` splitting from the configured call number pattern; barcode rendering per template options (`barcode.symbology` `code39` | `code128`, `widthMm`, `heightMm`, `text: false`); print routes `(print)/print/labels/{pair|barcode|spine}` with `?ids=…|list=<id>|pending=1|from=&to=&stock=&start=`; **item print lists** on the engine of 2.8: "Aggiungi alla lista" on catalog rows, item rows and biblio pages (all copies at once), grid selection, quick filters (pending labels per kind, acquisition date range, genre or non-fiction class, import batch), scan mode with item barcodes (walking along the shelf); "Segna come stampate" sets `barcode_label_printed_at` / `spine_label_printed_at` (both for pairs); calibration page per stock with a 10 cm ruler, label and unit outlines; `bun run classification:import-images <dir>` copies the library's existing pictograms named by code (`B.gif`, `500.gif`, `MMM.gif`, …) into `CONFIG_DIR/classification/images/`, converting GIF to PNG with `Bun.Image` (verified: `new Bun.Image(bytes).png().bytes()`), and reports codes without an image; entry points: after fast-add (3.6), catalog selection (3.10), item page (reprint), dashboard tile; label templates listed in the preview page (2.5b) with a stock selector; `docs/templates-authoring.md` section on label stocks and units (how to measure a sheet: margins, gaps; how to use the calibration page).
+  - Tasks: `services/labels.ts` reusing the template engine of 2.5 (folder templates, Mustache, `{{#asset}}`, data-URL inlining) with **stock-driven geometry**: `labels.stocks[]` from config (label mm, columns, rows, margins, gaps, radius, paper) → per-stock CSS grid with `@page`, **units** of one or more stacked cells (`unit.cells`, `unit.stack`), **start position** in units to skip used labels, outlines only on the calibration page; built-in templates **`pair-default`** (the default kind: spine band on top, barcode label below, one 70 × 96 mm unit per book on the `a4-70x48` stock, replicating `docs/reference/labels/koha-etichette.html` field by field — top: barcode text, short title, 20 mm pictogram, call number head and rest or non-fiction label in capitals; bottom: call number, italic title, 50 × 15 mm barcode, barcode text), `barcode-default` (barcode label alone) and `spine-default` (spine band alone, plus the compact colour-band variant for small stickers); `call.head`/`call.rest` from the copy's stored segnatura and its shelf part (Q143); barcode rendering per template options (`barcode.symbology` `code39` | `code128`, `widthMm`, `heightMm`, `text: false`); print routes `(print)/print/labels/{pair|barcode|spine}` with `?ids=…|list=<id>|pending=1|from=&to=&stock=&start=`; **item print lists** on the engine of 2.8: "Aggiungi alla lista" on catalog rows, item rows and biblio pages (all copies at once), grid selection, quick filters (pending labels per kind, acquisition date range, genre or non-fiction class, import batch), scan mode with item barcodes (walking along the shelf); "Segna come stampate" sets `barcode_label_printed_at` / `spine_label_printed_at` (both for pairs); calibration page per stock with a 10 cm ruler, label and unit outlines; `bun run classification:import-images <dir>` copies the library's existing pictograms named by code (`B.gif`, `500.gif`, `MMM.gif`, …) into `CONFIG_DIR/classification/images/`, converting GIF to PNG with `Bun.Image` (verified: `new Bun.Image(bytes).png().bytes()`), and reports codes without an image; entry points: after fast-add (3.6), catalog selection (3.10), item page (reprint), dashboard tile; label templates listed in the preview page (2.5b) with a stock selector; `docs/templates-authoring.md` section on label stocks and units (how to measure a sheet: margins, gaps; how to use the calibration page).
   - Acceptance: geometry tests for the three stocks (position of cell *n* and of unit *n*, start offset in units, no overflow beyond the page, values in mm, rows not a multiple of `unit.cells` rejected); rendering tests (fields, escaping, pictogram inlined and inherited from the parent node, `call.head`/`call.rest` for `B 4 DEL` and `590 ROS`, non-fiction label in capitals, associated class hidden when the flag is off, title truncated to 30 characters, Code 128 (and Code 39 for the legacy option) SVGs decoded by `barcode-detector` in a unit test); Playwright visual snapshots of the three templates on their default stock, and the pair sheet reviewed side by side with `docs/reference/labels/koha-etichette.png` (same structure and proportions; pixel identity is not required); manual print on the real 70 × 48 mm sheet: barcodes scan with the library's scanner, pictogram centred on the spine, positions match the stock (recorded in STATUS.md).
   - Depends on: 3.1, 2.5, 2.8
 
@@ -1128,7 +1131,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Acceptance: Lighthouse PWA installability checks pass on the mobile project; an e2e test verifies the manifest, the registered worker and that `/healthz` and remote calls are never served from the cache; the OpenCV chunk is served from the cache on the second load of the cover page. (Lighthouse 12 has no PWA category, so the e2e test runs Chromium's own installability check through the DevTools protocol; the setup guide paragraph is written with the manuals in 9.5.)
   - Depends on: 3.7, 9.8
 
-- [ ] **9.6 Release v0.9.0, the first release of the public beta** (the complete version of this plan is 0.9.0, owner decision; Q133, ADR-048) — made from the public repository of 9.36, where the **public beta** has started (the READMEs and the home page say so), as its first tagged release: changelog, git tag, multi-arch image `ghcr.io/<owner>/biblioviva:0.9.0` + `latest`, GitHub release notes, the documentation site published by hand from the release's tag (§3.23; the same at every release), STATUS.md closed. Depends on: 9.1–9.5b, 9.7, 9.8, 9.9, 9.19–9.21, 9.36, 9.44–9.50 and the whole of Phases 11, 12 and 13 (required for the release, owner decision).
+- [ ] **9.6 Release v0.9.0, the first release of the public beta** (the complete version of this plan is 0.9.0, owner decision; Q133, ADR-048) — made from the public repository of 9.36, where the **public beta** has started (the READMEs and the home page say so), as its first tagged release: changelog, git tag, multi-arch image `ghcr.io/<owner>/biblioviva:0.9.0` + `latest`, GitHub release notes, the documentation site published by hand from the release's tag (§3.23; the same at every release), STATUS.md closed. Depends on: 9.1–9.5b, 9.7, 9.8, 9.9, 9.19–9.21, 9.36, 9.44–9.53 and the whole of Phases 11, 12 and 13 (required for the release, owner decision).
 
 - [ ] **9.10 Field testing towards 1.0.0** (owner decision; Q133) — the public beta: the school year 2026/27 at the school on 0.9.x, until the end of lessons in June 2027; 1.0.0 is released for the start of the school year 2027/28 (September 2027), when the library begins to use BiblioViva for real; every problem found becomes a fix released as 0.9.x (patch releases, changelog); 1.0.0 is tagged when the owner declares the field test over, after a run of `bun run test:browsers` (Chromium, Firefox, WebKit, Q110) whose failures are fixed or explained. Until then the database keeps a single regenerated migration (Q82); a schema change during the field test is carried by export and restore. From 1.0.0 an update never loses data: the migrations of 9.37.
 
@@ -1623,24 +1626,101 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Acceptance: unit tests of the import (a reference copy, no question for it) and of the seed; `bun run ci` green.
   - Depends on: 9.45
 
-- [ ] **9.50 One segnatura per title, the level apart** (owner request, Q143; required for 0.9.0)
-  - Context: the segnatura is a free string on each copy, editable copy by copy; two copies of one title can end with
-    different segnature by mistake. The only legitimate difference is the reading level of the copy, with the level
-    per copy (`classification.classPerItem`), and the level is the second token of the segnatura (`B 4 DEL`, the
-    convention already used when a level is renamed or removed, `moveLevelInCallNumbers`).
-  - Tasks (the default of Q143): the segnatura stays stored on each copy (labels, inventory, search unchanged) but is
-    edited once, in "Modifica scheda" (field **Segnatura**, proposed from the classification as now): saving writes it
-    to every copy; with the level per copy each copy gets it with its own level as second token (`B 4 DEL` → `B 3 DEL`
-    for a copy of level 3), and changing a copy's level changes that token. The copy dialog and "Aggiungi copie" no
-    longer edit the segnatura (new copies take the title's, with their level); the single-copy section of "Modifica
-    scheda" loses it. Copies that already differ beyond the level (data from Koha) are shown on the book page ("Le
-    copie hanno segnature diverse") and "Modifica scheda" proposes the most frequent; saving makes them one. The
-    catalogue import: copies of a new title with segnature that differ beyond the level ask, like the material,
-    whether the title takes the most frequent. A changed segnatura puts the spine bands of the copies back to print
-    (9.42).
-  - Acceptance: unit tests (record save to every copy, level token per copy, a level change, the import question);
-    the catalogue specs on both projects; documentation (IT, EN); `bun run ci` green.
+- [x] **9.50 The segnatura computed from a scheme** (owner request, Q143; required for 0.9.0)
+  - Context: the segnatura was a free string on each copy, suggested from the classification and edited copy by copy,
+    so two copies of one title could differ by mistake, and the level was written twice (in the copy's field and inside
+    the string, `B 4 DEL`), kept in step by rewriting the second word (`moveLevelInCallNumbers`). In the systems built
+    on MARC holdings (Alma, Evergreen) the call number belongs to the copies shelved together and is made of parts (the
+    classification, the item part, prefix and suffix); Koha keeps one string per copy and only suggests it.
+  - Tasks (Q143):
+    - **The scheme** (`classification.callNumber`): the three patterns `fiction`, `fictionWithClass`, `nonfiction` keep
+      their placeholders; computed parts `{{genre}}`, `{{class}}` (the shelf mark of the reading level), `{{code}}`,
+      `{{author3}}`, `{{title1}}`, written parts `{{text}}` (one per title) and `{{copytext}}` (one per copy); `text`
+      names what `{{text}}` proposes (`author3`, `title1`, `none`). The choice is made in two questions, in the
+      first-run wizard and in Amministrazione → Configurazione → Classificazione: **the order** — genre then level (`B 4 DEL`, the
+      default), level then genre (`4 B DEL`), genre without the level (`B DEL`, the only one offered with the levels off,
+      besides the free one), free (`{{copytext}}`: written on each copy) — and **the end** — the author's initials
+      computed (`{{author3}}`, not editable; the default), the initials proposed and editable per title, emptiable
+      (`{{text}}` with `author3`), nothing. Amministrazione also edits the three patterns by hand ("Personalizzato"),
+      with a preview on three demo books; an unknown placeholder is refused.
+    - **Storage** (§4.1, §4.2, `docs/database.md`, the single migration regenerated, Q82): `biblio.call_text` (the
+      `{{text}}` of the title; NULL follows the proposal, so the initials follow a corrected author; an empty string is
+      no text), `item.call_text` (the `{{copytext}}` of the copy), `item.call_number` and `item.call_head` computed by
+      the server and never written by hand (the whole segnatura; its shelf part, the classification placeholders it
+      begins with, which the spine band prints large and the inventory groups by). Labels, search, inventory, print
+      lists and exports read them as before. A record not yet classified has none (Q117).
+    - **One computation** (`#lib/shared/classification.ts`, a service that refreshes the copies of given records or of
+      all): after a record's save (classification, author, title, text), a copy's (level, copy text), the copies added,
+      the classify flow, the batch reclassification and level change, fast add, the catalogue import, the taxonomy save
+      (a code or a level renamed or removed, the level moved between record and copies, the scheme changed; its plan
+      counts the copies whose segnatura changes) and the seed. A changed segnatura puts the copy's labels back to print
+      (9.42). `moveLevelInCallNumbers` and the string rewriting of renamed codes go; the batch reclassification loses
+      "Ricalcola le segnature" (always so).
+    - **Forms**: the copy's dialog, "Aggiungi copie" and the single-copy section of "Modifica scheda" lose the
+      segnatura field and show the computed one; the field of the copy's text appears only when the scheme has
+      `{{copytext}}`; "Modifica scheda" and the new-book form show the segnatura, with the title's text field only when
+      the scheme has `{{text}}`.
+    - **Changing the scheme**: through the taxonomy plan ("N copie cambiano segnatura"); to the free scheme, the
+      segnature of the copies become their written text, so nothing changes until the operator edits them.
+    - **Catalogue import** (§3.22): with `{{text}}`, the title's text is read from the file's segnatura after its shelf
+      part (the most frequent among the copies); with the free scheme, the file's segnatura is the copy's text;
+      otherwise, copies whose segnatura in the file differs from the computed one are counted and the operator answers
+      once whether to use the computed one (refusing turns those rows into errors), as for the material.
+    - Documentation (IT, EN): the manual's pages that show or edit the segnatura, the admin guide of the
+      classification and of the import, the wizard's step, `docs/config-reference.md`, `docs/database.md`,
+      `docs/import/`.
+  - Acceptance: unit tests of the computation (every order and end, the levels off, free, the shelf part, NULL and
+    empty text), of the refresh after each change listed, of the scheme change plan and of the import (text read from
+    the file, the question); the catalogue and wizard specs on both projects; `bun run ci` green.
   - Depends on: 9.45
+
+- [ ] **9.51 Personal accounts beside the shared ones** (owner request, Q144; required for 0.9.0)
+  - Context: the wizard creates one shared account per role (Amministrazione, Gestione prestiti, Catalogazione,
+    Tessere e foto, Report); Amministrazione → Account del personale already creates more accounts with one or more
+    roles, and the roles are bundles of permissions edited on the same page (§3.5), so a person never gets single
+    permissions. What a personal account still lacks: changing one's own password, a password to change at the first
+    login, the wizard saying that personal accounts are possible.
+  - Tasks: "Cambia password" in the account menu for every account (the current password, the new one twice; the
+    configuration's hash rewritten, the account's other sessions closed); "Da cambiare al primo accesso" when an
+    administrator creates an account or sets a new password (`must_change_password`, a page that asks for it before
+    any other); the account dialog proposes the role as the first field and the name of the person; the wizard's and
+    the admin guide's text on shared and personal accounts; the audit records the account as now (Q69).
+  - Acceptance: unit tests (own password change, the forced change, sessions closed); a Playwright spec (an
+    administrator creates a personal account, the person logs in, must change the password, works with the role's
+    permissions); documentation (IT, EN); `bun run ci` green.
+  - Depends on: 11.7
+
+- [ ] **9.52 A loan right after a return** (owner request, Q145; required for 0.9.0)
+  - Context: a pupil often brings a book back with the next one already chosen; at the desk the operator returns the
+    book, then reads the pupil's card to lend the new one.
+  - Tasks (Q145): on the **Prestito** desk with no patron chosen, a copy on loan is returned there and then (with the
+    return's messages, Appendix I) and its borrower becomes the desk's patron, as if the card had been read: the next
+    copy read is lent to them; the patron stays until another card is read or the operator closes it, as after a
+    card. On the **Restituzione** desk each return shows "Presta a <nome>", which opens the Prestito desk with that
+    patron. A borrower who cannot borrow (blocked, the limit reached) is chosen anyway and the desk says why, as after
+    a card. The desk's guides and `docs/navigation.md` updated, both languages; the catalogue of Appendix I gains the
+    message.
+  - Acceptance: unit tests of the desk's state (return then loan, another card replaces the patron); a Playwright spec
+    on both projects (return by scanning on the Prestito desk, lend the next book without the card; "Presta a" from the
+    Restituzione desk); `bun run ci` green.
+  - Depends on: 4.1, 4.2
+
+- [ ] **9.53 Database diagrams and the libraries in the technical documentation** (owner request, Q146; required for
+  0.9.0)
+  - Context: `docs/database.md` draws the tables as Mermaid `erDiagram` blocks, which GitHub renders but the
+    documentation site shows as code; the libraries in use are listed only on the app's Informazioni page.
+  - Tasks (Q146): the diagrams of `docs/database.md` (all tables, catalogue, patrons and circulation, staff and audit,
+    support tables, the smaller ones of the sections) checked against `schema.ts` (keys, relations, cardinality) and
+    rendered by `site:build` into SVG pictures in the page (Mermaid run in the build's browser, no script on the site;
+    a dev dependency with its ADR); a test fails when a table of `schema.ts` is missing from the diagrams. A technical
+    page **Librerie** (`docs/libraries.md`: name, version, licence, home page; the build and runtime parts as on the
+    Informazioni page) generated by `bun run deps:generate` with the inventory it already writes; the Informazioni page
+    keeps the version and the licence and links that page of the documentation, in the installation's language, in
+    place of its tables. [VERIFY] the licence notices of the libraries still ship with the image without the
+    Informazioni tables.
+  - Acceptance: the site shows the diagrams as pictures (`site:check`); the libraries page and the About link; the
+    tests; `bun run ci` green.
+  - Depends on: 9.7, 1.12
 
 ### Phase 10 — Post-v1 extensions (Koha-inspired; each needs owner approval)
 
@@ -2055,8 +2135,11 @@ Each item: **question — why it matters — default used until decided (and rec
 - [x] **Q139 — The item type on the record (resolved, owner decision; step 9.45):** the item type and the segnatura moved from the copy to the record? — *Decision: only the item type — the **material** in the interface —, always the record's (one material per title: a book's copies are all books, a DVD's all DVDs; a reference copy is a copy "not for loan", a flag that stays on the copy, and "consultazione" is no longer a material, 9.49). The segnatura stays on the copy, because the level per copy changes it (Q143). A change of type for many titles is a batch action on the selected records of the catalogue, no longer in "Modifica le copie"; the catalogue import asks, when the copies of one record have different types, whether to give the record the type of most of its copies, and refusing turns those rows into errors (§3.22).*
 - [x] **Q140 — Where the help button goes (resolved, owner decision; step 9.47):** five placements were drawn in a mock (as today; a "Guida" button with text in the top bar's corner; a round button beside the page title; a "Guida" entry in the sidebar; a floating button). — *Decision: on the computer the "Guida" button with text in the top bar's corner, on the phone the round button beside the page title, both filled with the primary colour like the floating button of the mock.*
 - [x] **Q141 — The icon of the problem boxes (resolved, owner decision; step 9.46):** the warning triangle repeated on every box was ugly. — *Decision: one icon only, a life buoy in a tinted tile beside the heading "Possibili problemi"; the boxes carry their arrow only.*
-- [ ] **Q143 — One segnatura per title (open; step 9.50):** the segnatura is a free string with the level in the middle; how is it kept coherent among the copies of a title? — *Default: written once in "Modifica scheda" and copied to every copy, each with its own level as second token when the level is per copy; no longer edited copy by copy; differences already there shown and resolved on the next save; the import asks like for the material.*
+- [x] **Q143 — The segnatura (resolved, owner decision; step 9.50):** the segnatura is a free string with the level in the middle; how is it kept coherent among the copies of a title? — *Decision: it is computed, never typed whole: a scheme chosen in the wizard and in Amministrazione (the order: genre and level, level and genre, genre only, free; the end: the author's initials computed, proposed and editable per title, or nothing; the patterns editable by hand) makes it from the classification, the copy's level, the author and title, a text of the title and a text of the copy where the scheme has them. Every copy stores the result, recomputed by the server after each change; the free scheme keeps a string per copy for a library that wants it. The default is the library's own: `B 4 DEL`, the initials computed.*
 - [x] **Q142 — A language pack at the start (resolved, owner decision; step 9.48):** must a school whose language is a pack complete the wizard in Italian or English first? — *Decision: no; the wizard's first screen installs a pack of the release (or an uploaded zip), the wizard goes on in it and it becomes the installation's language. English and Italian stay the built-in choice for the wizard and the default.*
+- [ ] **Q144 — Personal accounts (open; step 9.51):** the wizard makes shared accounts per role; must a school be able to give each person an account, and assign permissions person by person? — *Default: personal accounts are made from Amministrazione → Account del personale with one or more **roles** (the profiles: bundles of permissions, edited on the same page), never with single permissions; the account menu changes one's own password, an administrator can ask for a change at the first login. The word stays "Ruoli".*
+- [ ] **Q145 — A loan right after a return (open; step 9.52):** a pupil returns a book and borrows another at once; must the return stand for reading the card? — *Default: yes on the Prestito desk (a copy on loan read with no patron chosen is returned and its borrower is chosen); the Restituzione desk offers "Presta a <nome>" after each return.*
+- [ ] **Q146 — Diagrams and libraries in the technical documentation (open; step 9.53):** *Default: the ER diagrams of `docs/database.md`, checked against the schema, become pictures on the site (rendered at build time); the libraries move to a generated technical page, linked from Informazioni in place of its tables.*
 
 ---
 
@@ -2258,7 +2341,8 @@ Each item: **question — why it matters — default used until decided (and rec
     "callNumber": {
       "fiction": "{{genre}} {{author3}}",
       "fictionWithClass": "{{genre}} {{class}} {{author3}}",
-      "nonfiction": "{{code}} {{author3}}"
+      "nonfiction": "{{code}} {{author3}}",
+      "text": "author3"
     }
   },
   "cards": {

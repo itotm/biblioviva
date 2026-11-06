@@ -11,7 +11,6 @@ import { ServiceError } from "#lib/server/errors.js";
 import { and, asc, eq, inArray, isNull, notInArray, sql } from "drizzle-orm";
 import type { Db, DbOrTx } from "#lib/server/db/client.js";
 import { biblio, inventory, inventoryScan, item, loan } from "#lib/server/db/schema.js";
-import { splitCallNumber } from "#lib/shared/classification.js";
 import type { CodeTable } from "#lib/shared/barcodes/table.js";
 import { recogniseScan } from "#lib/shared/scan.js";
 import { demoChoice, demoText } from "#lib/server/demo/content.js";
@@ -213,7 +212,8 @@ export function recordScan(
 			shelf?.trim() || null,
 			isDemoPublic() ? [...shelfHeads(tx)] : [],
 		);
-		const head = splitCallNumber(copy.i.callNumber ?? "").head;
+		// the shelf part of the segnatura, stored with it (Q143)
+		const head = copy.i.callHead ?? "";
 		const misplaced = context !== null && !onShelf(head, context);
 		tx.insert(inventoryScan)
 			.values({
@@ -263,9 +263,9 @@ export function recordScan(
 }
 
 /** The copies expected on the shelves: not lost or withdrawn, not on loan, not kept apart. */
-function expectedItems(db: DbOrTx): { id: number; callNumber: string; itemType: string }[] {
+function expectedItems(db: DbOrTx): { id: number; shelf: string; itemType: string }[] {
 	return db
-		.select({ id: item.id, callNumber: item.callNumber, itemType: biblio.itemType })
+		.select({ id: item.id, shelf: item.callHead, itemType: biblio.itemType })
 		.from(item)
 		.innerJoin(biblio, eq(biblio.id, item.biblioId))
 		.where(
@@ -276,7 +276,7 @@ function expectedItems(db: DbOrTx): { id: number; callNumber: string; itemType: 
 			),
 		)
 		.all()
-		.map((r) => ({ id: r.id, callNumber: r.callNumber ?? "", itemType: r.itemType }));
+		.map((r) => ({ id: r.id, shelf: r.shelf ?? "", itemType: r.itemType }));
 }
 
 function scansOf(
@@ -327,7 +327,7 @@ function tally(
 	let seen = 0;
 	const expected = expectedItems(db);
 	for (const e of expected) {
-		const shelf = splitCallNumber(e.callNumber).head;
+		const { shelf } = e;
 		const p = byShelf.get(shelf) ?? { shelf, expected: 0, seen: 0 };
 		p.expected++;
 		if (scans.has(e.id)) {
@@ -391,6 +391,7 @@ export function missingItems(
 			title: biblio.title,
 			author: biblio.author,
 			callNumber: item.callNumber,
+			callHead: item.callHead,
 			itemType: biblio.itemType,
 			status: item.status,
 		})
@@ -401,10 +402,10 @@ export function missingItems(
 		.all();
 	return rows
 		.filter((r) => expected.has(r.itemId))
-		.map((r) => ({
+		.map(({ callHead, ...r }) => ({
 			...r,
 			callNumber: r.callNumber ?? "",
-			shelf: splitCallNumber(r.callNumber ?? "").head,
+			shelf: callHead ?? "",
 		}))
 		.filter(
 			(r) =>
@@ -528,10 +529,10 @@ export function reopenInventory(
 function shelfHeads(db: DbOrTx): Set<string> {
 	return new Set(
 		db
-			.select({ c: item.callNumber })
+			.select({ c: item.callHead })
 			.from(item)
 			.all()
-			.map((r) => splitCallNumber(r.c ?? "").head)
+			.map((r) => r.c ?? "")
 			.filter(Boolean),
 	);
 }

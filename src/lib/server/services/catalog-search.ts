@@ -389,7 +389,10 @@ export function seriesNames(db: DbOrTx): string[] {
 export interface ItemRow {
 	id: number;
 	barcode: string;
+	/** The segnatura computed by the server (Q143). */
 	callNumber: string | null;
+	/** The copy's written part of it, `{{copytext}}`. */
+	callText: string | null;
 	readingLevel: string | null;
 	enumeration: string | null;
 	status: ItemStatus;
@@ -431,6 +434,7 @@ export function getBiblio(db: Db, id: number, rules: CatalogRules): BiblioDetail
 				id: i.id,
 				barcode: i.barcode,
 				callNumber: i.callNumber,
+				callText: i.callText,
 				readingLevel: i.readingLevel,
 				enumeration: i.enumeration,
 				status: i.status as ItemStatus,

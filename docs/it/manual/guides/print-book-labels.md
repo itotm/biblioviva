@@ -120,8 +120,8 @@ lettore e la stampante](../../setup/steps/scanner-printer.md).
 
 ### La fascetta ha il testo troppo lungo o il pittogramma sbagliato
 
-La fascetta segue la classificazione e la segnatura della copia: correggerle, vedere [Correggere la scheda di un
-libro](edit-a-record.md), e ristampare con **Solo fascetta**. Il modello grafico delle etichette lo modifica
+La fascetta segue la classificazione e la segnatura della copia, che BiblioViva calcola dai dati del libro: correggere
+la classificazione, l'autore o il titolo, vedere [Correggere la scheda di un libro](edit-a-record.md), e ristampare con **Solo fascetta**. Il modello grafico delle etichette lo modifica
 l'amministratore, vedere [Modificare le etichette e la fascetta del
 dorso](../../admin/guides/edit-label-templates.md).
 

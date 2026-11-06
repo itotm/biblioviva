@@ -37,7 +37,7 @@ can be skipped.
 1. [Choose the barcode formats](guides/barcode-formats.md): to be done before printing labels and cards, and in
    particular if the library already has codes printed by another system.
 1. [Change the classification and the reading levels](guides/classification.md): the genres, the subjects and the call
-   numbers.
+   number scheme.
 
 ### The printing
 

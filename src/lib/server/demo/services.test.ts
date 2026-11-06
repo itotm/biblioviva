@@ -300,7 +300,7 @@ describe("the services of the public demo", () => {
 		);
 		const copy = {
 			itemType: config.library.itemTypes[0]?.code ?? "libro",
-			callNumber: "SCRITTA",
+			callText: "SCRITTA A MANO",
 			readingLevel: "",
 			enumeration: "vol. scritto",
 			acquisitionDate: "",
@@ -310,9 +310,12 @@ describe("the services of the public demo", () => {
 		const { ids } = addItems(db, id, copy, 1, actor, rules, now);
 		const [itemId = 0] = ids;
 		const stored = db.select().from(item).where(eq(item.id, itemId)).get();
-		expect(stored?.callNumber).not.toBe("SCRITTA");
-		expect(stored).toMatchObject({ enumeration: null, notes: demoExample("comment", now) });
-		updateItem(db, itemId, { ...copy, callNumber: "ALTRA" }, actor, rules, now);
+		expect(stored).toMatchObject({
+			callText: null,
+			enumeration: null,
+			notes: demoExample("comment", now),
+		});
+		updateItem(db, itemId, { ...copy, callText: "ALTRA SCRITTA" }, actor, rules, now);
 		expect(db.select().from(item).where(eq(item.id, itemId)).get()?.callNumber).toBe(
 			stored?.callNumber,
 		);
@@ -388,7 +391,6 @@ describe("the services of the public demo", () => {
 			db,
 			bookId,
 			{
-				callNumber: "",
 				readingLevel: "",
 				enumeration: "",
 				acquisitionDate: "",

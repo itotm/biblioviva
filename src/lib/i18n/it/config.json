@@ -121,11 +121,19 @@
 			"toCopies": "Al salvataggio il livello di lettura di ogni libro passa alle sue copie.",
 			"toRecords": "Al salvataggio il livello delle copie torna sul libro; non si può fare se copie dello stesso libro hanno livelli diversi.",
 			"patterns": "Schemi della segnatura",
-			"patternsHint": "Valgono per le copie aggiunte da ora in poi; le segnature esistenti non cambiano. Segnaposto: {{placeholders}}.",
+			"schemeHint": "BiblioViva calcola la segnatura di ogni copia con questo schema. Cambiandolo, al salvataggio le segnature si calcolano di nuovo e le etichette che cambiano tornano tra quelle da stampare.",
 			"pattern": {
 				"fiction": "Narrativa",
 				"fictionWithClass": "Narrativa con classe associata",
 				"nonfiction": "Saggistica"
+			},
+			"handWritten": "Schemi scritti a mano",
+			"placeholdersHint": "Segnaposto: {{placeholders}}. text è un testo per titolo (in «Modifica scheda»), copytext un testo per copia.",
+			"textProposal": "Valore proposto per il testo del titolo",
+			"textProposals": {
+				"author3": "Iniziali dell'autore",
+				"title1": "Iniziale del titolo",
+				"none": "Nessuno"
 			},
 			"unknownPlaceholders": "Segnaposto sconosciuti: {{names}}.",
 			"example": "Esempio: {{example}}"
@@ -139,7 +147,7 @@
 			"removedHint": "Scegliere dove spostare i libri di ogni codice eliminato: il nuovo codice va sui libri, all'inizio delle loro segnature e sulle fascette.",
 			"moveTo": "{{code}} · {{label}}: {{records}} {{records:plural; one:libro; other:libri;}} ({{copies}} {{copies:plural; one:copia; other:copie;}}). Sposta in",
 			"choose": "Scegli…",
-			"callNumbers": "{{count}} {{count:plural; one:segnatura comincia; other:segnature cominciano;}} con un codice eliminato: il codice all'inizio viene sostituito (per esempio B 4 DEL diventa A 4 DEL).",
+			"callNumbers": "{{count}} {{count:plural; one:copia cambia; other:copie cambiano;}} segnatura: le loro etichette tornano tra quelle da stampare.",
 			"bandsMoved": "Le fascette dei libri spostati, e le etichette con la segnatura cambiata, tornano tra quelle da stampare.",
 			"unused": "Eliminati, non usati da nessun libro: {{codes}}.",
 			"reprint": "Rimetti tra le etichette da stampare le fascette di {{copies}} {{copies:plural; one:copia; other:copie;}} che cambiano nome, colore o pittogramma ({{codes}})",

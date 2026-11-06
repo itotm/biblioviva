@@ -1,7 +1,7 @@
 {
   "version": "7",
   "dialect": "sqlite",
-  "id": "79b25d90-afa9-472d-8fa9-ea0686eab63e",
+  "id": "c593357e-2233-48f6-bee8-960b0f3c6e65",
   "prevIds": [
     "00000000-0000-0000-0000-000000000000"
   ],
@@ -379,6 +379,16 @@
     {
       "table": "biblio",
       "name": "class_code",
+      "type": "text",
+      "notNull": false,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "biblio",
+      "name": "call_text",
       "type": "text",
       "notNull": false,
       "autoincrement": false,
@@ -1189,6 +1199,26 @@
     {
       "table": "item",
       "name": "call_number",
+      "type": "text",
+      "notNull": false,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "item",
+      "name": "call_head",
+      "type": "text",
+      "notNull": false,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "item",
+      "name": "call_text",
       "type": "text",
       "notNull": false,
       "autoincrement": false,

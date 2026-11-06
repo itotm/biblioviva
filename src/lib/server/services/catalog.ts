@@ -7,7 +7,7 @@
 // in `catalog-classify.ts`.
 import { blankToNull } from "#lib/shared/text.js";
 import { NotFoundError } from "#lib/server/errors.js";
-import { and, eq, isNull, ne } from "drizzle-orm";
+import { and, eq, ne } from "drizzle-orm";
 import type { Db, DbOrTx } from "#lib/server/db/client.js";
 import { biblio, item } from "#lib/server/db/schema.js";
 import { codeTable } from "#lib/server/barcodes/table.js";
@@ -15,11 +15,14 @@ import type { CodeTable } from "#lib/shared/barcodes/table.js";
 import type { AppConfig } from "#lib/server/config/schema.js";
 import type { BiblioFormInput, BiblioKind } from "#lib/shared/catalog-schema.js";
 import {
+	callTextProposal,
 	classOf,
 	genreOf,
+	schemeUses,
 	suggestCallNumber,
 	type ClassificationScheme,
 } from "#lib/shared/classification.js";
+import { refreshCallNumbers } from "./call-numbers.js";
 import { ean13Valid, toIsbn13 } from "#lib/shared/isbn.js";
 import { demoBiblio } from "#lib/server/demo/content.js";
 import { audit, type AuditActor } from "./audit.js";
@@ -48,6 +51,7 @@ export function catalogRules(config: AppConfig): CatalogRules {
 			callNumber: c.callNumber,
 			readingLevels: c.readingLevels,
 			deweyMap: c.deweyMap,
+			specialAuthors: config.catalog.specialAuthors,
 		},
 		itemTypes: config.library.itemTypes.map((t) => ({
 			code: t.code,
@@ -151,6 +155,8 @@ export interface BiblioData {
 	genreCode: string | null;
 	classCode: string | null;
 	readingLevel: string | null;
+	/** The title's `{{text}}` of the segnatura (Q143); null follows the scheme's proposal. */
+	callText: string | null;
 	subjects: string[];
 	notes: string | null;
 }
@@ -252,12 +258,30 @@ export function validateBiblio(
 		genreCode: input.kind === "fiction" ? genreCode : null,
 		classCode: input.kind === "nonfiction" ? classCode : null,
 		readingLevel: input.kind === "fiction" ? readingLevel : null,
+		callText: callTextOf(input, rules),
 		subjects: input.subjects
 			.split(/[\n,;]+/)
 			.map((s) => s.trim())
 			.filter(Boolean),
 		notes: blankToNull(input.notes),
 	};
+}
+
+/**
+ * The title's text of the segnatura as typed (Q143): empty or the scheme's proposal is stored as
+ * null, so it keeps following the author; a scheme without `{{text}}` keeps none.
+ */
+function callTextOf(input: BiblioFormInput, rules: CatalogRules): string | null {
+	if (input.callText === undefined || !schemeUses(rules.scheme, "text")) {
+		return null;
+	}
+	const typed = input.callText.replace(/\s+/g, " ").trim();
+	const proposal = callTextProposal(rules.scheme, {
+		author: input.author.trim(),
+		title: input.title.trim(),
+	});
+	// empty: the proposal, which then follows a corrected author
+	return typed === "" || typed === proposal ? null : typed;
 }
 
 function assertIsbnFree(db: DbOrTx, isbn: string | null, exceptId?: number): void {
@@ -364,6 +388,7 @@ const TRACKED: (keyof BiblioData)[] = [
 	"genreCode",
 	"classCode",
 	"readingLevel",
+	"callText",
 	"subjects",
 	"notes",
 ];
@@ -381,13 +406,17 @@ export function updateBiblio(
 		if (!existing) {
 			throw new BiblioNotFoundError(id);
 		}
-		// a form without the type keeps the record's (step 9.45)
+		// a form without the type keeps the record's (step 9.45), without the text its text (9.50)
 		const sent = { ...input, itemType: input.itemType || existing.itemType };
-		const data = validateBiblio(
+		const validated = validateBiblio(
 			demoBiblio(sent, demoSpecial(rules), existing, now),
 			rules,
 			now,
 		);
+		const data =
+			input.callText === undefined
+				? { ...validated, callText: existing.callText }
+				: validated;
 		assertIsbnFree(tx, data.isbn, id);
 		const changed = TRACKED.filter(
 			(k) => JSON.stringify(existing[k] ?? null) !== JSON.stringify(data[k] ?? null),
@@ -399,9 +428,8 @@ export function updateBiblio(
 			.set({ ...data, updatedBy: actor.id, updatedAt: now.toISOString() })
 			.where(eq(biblio.id, id))
 			.run();
-		if (existing.kind === null && data.kind !== null) {
-			fillCallNumbers(tx, id, data, rules, now);
-		}
+		// the segnatura follows the classification, the author, the title and the text (9.50)
+		refreshCallNumbers(tx, rules.scheme, [id], now);
 		// a type kept out of loans (reference books) keeps every copy of the title out (9.45)
 		if (
 			changed.includes("itemType") &&
@@ -415,30 +443,6 @@ export function updateBiblio(
 		audit(tx, actor, "biblio.update", "biblio", id, { changed }, now);
 		return changed;
 	});
-}
-
-/**
- * A record just classified (step 9.21): its copies without a call number get the suggested one,
- * which waited for the classification.
- */
-function fillCallNumbers(
-	tx: DbOrTx,
-	biblioId: number,
-	record: BiblioData,
-	rules: CatalogRules,
-	now: Date,
-): void {
-	for (const copy of tx
-		.select({ id: item.id, readingLevel: item.readingLevel })
-		.from(item)
-		.where(and(eq(item.biblioId, biblioId), isNull(item.callNumber)))
-		.all()) {
-		const callNumber = suggestedCallNumber(rules, record, copy.readingLevel) || null;
-		tx.update(item)
-			.set({ callNumber, updatedAt: now.toISOString() })
-			.where(eq(item.id, copy.id))
-			.run();
-	}
 }
 
 /** Refused while copies exist: withdraw or delete them first. */
@@ -461,7 +465,7 @@ export function deleteBiblio(db: Db, id: number, actor: AuditActor, now = new Da
 	});
 }
 
-/** The call number the forms propose for a copy of the record (§3.17). */
+/** The segnatura of a copy of the record as the forms show it (§3.17, Q143); "" to classify. */
 export function suggestedCallNumber(
 	rules: CatalogRules,
 	record: {
@@ -471,20 +475,20 @@ export function suggestedCallNumber(
 		readingLevel: string | null;
 		author: string;
 		title: string;
+		callText?: string | null;
 	},
 	itemReadingLevel: string | null = null,
+	copyText: string | null = null,
 ): string {
-	// the call number waits for the classification (step 9.21)
-	if (record.kind === null) {
-		return "";
-	}
 	return suggestCallNumber(rules.scheme, {
-		kind: record.kind as BiblioKind,
+		kind: record.kind,
 		genreCode: record.genreCode,
 		classCode: record.classCode,
 		readingLevel: rules.scheme.classPerItem ? itemReadingLevel : record.readingLevel,
 		author: record.author,
 		title: record.title,
+		text: record.callText ?? null,
+		copyText,
 	});
 }
 

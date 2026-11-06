@@ -31,11 +31,14 @@
 	import { CHECK_ALGORITHMS } from "#lib/shared/barcodes/check.js";
 	import { KEYBOARD_LAYOUTS } from "#lib/shared/barcodes/layouts.js";
 	import { CODE_PRESETS } from "#lib/shared/barcodes/presets.js";
+	import type { CallNumberEnd, CallNumberOrder } from "#lib/shared/classification.js";
 	import Badge from "#lib/ui/Badge.svelte";
 	import Checkbox from "#lib/ui/Checkbox.svelte";
+	import CodeText from "#lib/ui/CodeText.svelte";
 	import type { ThemeName } from "#lib/shared/theme-palette.js";
 	import { ICON_SIZE, icons } from "#lib/ui/icons.js";
 	import logoMark from "#lib/assets/logo-mark.webp";
+	import CallNumberSchemePicker from "#lib/components/CallNumberSchemePicker.svelte";
 	import FirstRunRestore from "#lib/components/FirstRunRestore.svelte";
 	import LanguagePackAdd from "#lib/components/LanguagePackAdd.svelte";
 	import ThemeSwatches from "#lib/components/ThemeSwatches.svelte";
@@ -91,6 +94,12 @@
 	let teacherGroupName = $state("");
 	let classTemplate = $state("{level} {group}");
 	let byReadingLevel = $state(true);
+	// the scheme of the segnatura (Q143): the library's own by default, `B 4 DEL`
+	let callOrder = $state<CallNumberOrder>("genreLevel");
+	let callEnd = $state<CallNumberEnd>("author");
+	const callOrderSent = $derived<CallNumberOrder>(
+		byReadingLevel || callOrder === "free" ? callOrder : "genre",
+	);
 	// the school year the country keeps (9.41): its first day and how it is named
 	let schoolYearStart = $state("09-01");
 	let schoolYearLabel = $state<"span" | "start">("span");
@@ -250,6 +259,7 @@
 					teacherGroupName: teacherGroupName.trim(),
 					classLabel: classTemplate,
 					readingLevels: byReadingLevel,
+					callNumber: { order: callOrderSent, end: callEnd },
 					schoolYearStart,
 					schoolYearLabel,
 				},
@@ -521,6 +531,17 @@
 					{/if}
 					<Hint tone="faint">{i18n.t("setup.school.readingLevelsHint")}</Hint>
 				</div>
+				<CallNumberSchemePicker
+					bind:order={callOrder}
+					bind:end={callEnd}
+					levels={byReadingLevel}
+					example={{
+						genre: "B",
+						level: readingLevels[3]?.code ?? readingLevels[0]?.code ?? "4",
+						classCode: "590",
+					}}
+					testid="setup-call-number"
+				/>
 			{:else if step === 4}
 				<h2 class="h3">{i18n.t("setup.codes.title")}</h2>
 				<p class="opacity-70">{i18n.t("setup.codes.hint")}</p>
@@ -566,12 +587,7 @@
 				>
 					{#each [{ key: "item", label: i18n.t("setup.codes.copy"), code: examples.item }, { key: "card", label: i18n.t("setup.codes.card"), code: examples.card }] as ex (ex.key)}
 						<dt class="opacity-70">{ex.label}</dt>
-						<dd
-							class="font-mono text-lg font-semibold"
-							data-testid="setup-example-{ex.key}"
-						>
-							{ex.code}
-						</dd>
+						<CodeText as="dd" data-testid="setup-example-{ex.key}">{ex.code}</CodeText>
 					{/each}
 				</dl>
 				{#if codeResult.issues.length === 0}
@@ -680,6 +696,14 @@
 						{readingLevels.length > 0
 							? readingLevels.map((l) => l.label).join(", ")
 							: i18n.t("setup.summary.none")}
+					</dd>
+					<dt class="opacity-70">{i18n.t("setup.summary.callNumber")}</dt>
+					<dd data-testid="setup-summary-call-number">
+						{i18n.t(
+							`catalog.callNumberScheme.orders.${callOrderSent}`,
+						)}{callOrderSent === "free"
+							? ""
+							: ` · ${i18n.t(`catalog.callNumberScheme.ends.${callEnd}`)}`}
 					</dd>
 					<dt class="opacity-70">{i18n.t("setup.summary.codes")}</dt>
 					<dd class="font-mono">{examples.item} · {examples.card}</dd>

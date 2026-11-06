@@ -39,6 +39,7 @@
 	let useSpecialValues = $state(false);
 	let enableClassPerItem = $state<boolean | undefined>(undefined);
 	let useMajorityType = $state<boolean | undefined>(undefined);
+	let useComputedCallNumbers = $state<boolean | undefined>(undefined);
 	let labelDialog = $state(false);
 
 	const wizard = new ImportWizard({
@@ -46,11 +47,17 @@
 		validate: (run) => validateCatalogCsv(run),
 		commit: (run) => commitCatalogCsv(run),
 		spec: () => CATALOG_IMPORT,
-		run: () => ({ useSpecialValues, enableClassPerItem, useMajorityType }),
+		run: () => ({
+			useSpecialValues,
+			enableClassPerItem,
+			useMajorityType,
+			useComputedCallNumbers,
+		}),
 		doneTitle: () => i18n.t("catalog.import.done.title"),
 		onUpload: () => {
 			enableClassPerItem = undefined;
 			useMajorityType = undefined;
+			useComputedCallNumbers = undefined;
 		},
 	});
 
@@ -62,6 +69,12 @@
 	/** The item-type question (Q139): the record takes the type of most of its copies. */
 	async function answerType(yes: boolean): Promise<void> {
 		useMajorityType = yes;
+		await wizard.validate();
+	}
+
+	/** The segnatura question (Q143): the copies take the segnatura computed from the scheme. */
+	async function answerCallNumbers(yes: boolean): Promise<void> {
+		useComputedCallNumbers = yes;
 		await wizard.validate();
 	}
 
@@ -97,6 +110,33 @@
 		})),
 	);
 </script>
+
+{#snippet question(
+	key: "typeQuestion" | "callNumberQuestion",
+	testid: string,
+	count: number,
+	value: boolean | undefined,
+	onanswer: (yes: boolean) => Promise<void>,
+)}
+	<Alert tone="warning" as="div" padded data-testid={testid} live={false}>
+		<p class="font-semibold">{i18n.t(`catalog.import.preview.${key}.title`)}</p>
+		<p class="mt-1">{i18n.t(`catalog.import.preview.${key}.text`, { count })}</p>
+		<Row class="mt-3">
+			<Button
+				variant={value === true ? "primary" : "tonal"}
+				onclick={() => onanswer(true)}
+				disabled={wizard.busy}
+				data-testid="{testid}-yes">{i18n.t(`catalog.import.preview.${key}.yes`)}</Button
+			>
+			<Button
+				variant={value === false ? "error" : "tonal"}
+				onclick={() => onanswer(false)}
+				disabled={wizard.busy}
+				data-testid="{testid}-no">{i18n.t(`catalog.import.preview.${key}.no`)}</Button
+			>
+		</Row>
+	</Alert>
+{/snippet}
 
 <ImportShell
 	{wizard}
@@ -207,30 +247,22 @@
 			</Alert>
 		{/if}
 		{#if result.typeQuestion > 0}
-			<Alert tone="warning" as="div" padded data-testid="type-question" live={false}>
-				<p class="font-semibold">{i18n.t("catalog.import.preview.typeQuestion.title")}</p>
-				<p class="mt-1">
-					{i18n.t("catalog.import.preview.typeQuestion.text", {
-						count: result.typeQuestion,
-					})}
-				</p>
-				<Row class="mt-3">
-					<Button
-						variant={useMajorityType === true ? "primary" : "tonal"}
-						onclick={() => answerType(true)}
-						disabled={wizard.busy}
-						data-testid="type-question-yes"
-						>{i18n.t("catalog.import.preview.typeQuestion.yes")}</Button
-					>
-					<Button
-						variant={useMajorityType === false ? "error" : "tonal"}
-						onclick={() => answerType(false)}
-						disabled={wizard.busy}
-						data-testid="type-question-no"
-						>{i18n.t("catalog.import.preview.typeQuestion.no")}</Button
-					>
-				</Row>
-			</Alert>
+			{@render question(
+				"typeQuestion",
+				"type-question",
+				result.typeQuestion,
+				useMajorityType,
+				answerType,
+			)}
+		{/if}
+		{#if result.callNumberQuestion > 0}
+			{@render question(
+				"callNumberQuestion",
+				"call-number-question",
+				result.callNumberQuestion,
+				useComputedCallNumbers,
+				answerCallNumbers,
+			)}
 		{/if}
 	{/snippet}
 	{#snippet doneInfo(summary)}

@@ -1,7 +1,8 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 <!-- Create/edit form of a bibliographic record (step 3.1), driven by a remote `form`
      (createBiblio / updateBiblio). The classification picker edits local state mirrored into
-     hidden fields so the remote form carries it. -->
+     hidden fields so the remote form carries it. Under it the segnatura the copies get (Q143),
+     computed as the server does, and the title's text when the scheme has one. -->
 <script module lang="ts">
 	/** One field of a remote `form` (the subset this component uses). */
 	export interface FieldApi {
@@ -28,10 +29,17 @@
 	import type { Snippet } from "svelte";
 	import { useI18n } from "#lib/i18n/context.js";
 	import type { BiblioFormInput } from "#lib/shared/catalog-schema.js";
+	import {
+		callTextProposal,
+		computeCallNumber,
+		schemeUses,
+		type CallNumberScheme,
+	} from "#lib/shared/classification.js";
 	import FormLayout from "#lib/ui/FormLayout.svelte";
 	import FormSection from "#lib/ui/FormSection.svelte";
 	import FormErrors from "#lib/components/FormErrors.svelte";
 	import ClassificationPicker from "./ClassificationPicker.svelte";
+	import CallNumberShown from "./CallNumberShown.svelte";
 	import Button from "#lib/ui/Button.svelte";
 	import Hint from "#lib/ui/Hint.svelte";
 	import Input from "#lib/ui/Input.svelte";
@@ -65,6 +73,7 @@
 		unknownPublisher: string;
 		unknownPlace: string;
 		itemTypes: { code: string; label: string }[];
+		callNumber: CallNumberScheme;
 	}
 
 	interface Props {
@@ -141,6 +150,34 @@
 	$effect(() => {
 		onstate?.(formState, fields);
 	});
+
+	// the segnatura (Q143): the title's text where the scheme has one, empty for the proposal;
+	// the copy's level and text from the copy fields of the same form (fast add, single copy)
+	const scheme = $derived({
+		callNumber: options.callNumber,
+		specialAuthors: options.specialAuthors,
+	});
+	const withText = $derived(schemeUses(scheme, "text"));
+	const proposal = $derived(callTextProposal(scheme, formState));
+	const copyField = (name: string): string => {
+		const v = fields[name]?.value();
+		return typeof v === "string" ? v : "";
+	};
+	const callNumber = $derived(
+		computeCallNumber(scheme, {
+			kind: kind === "" ? null : kind,
+			genreCode: kind === "fiction" ? genreCode : null,
+			classCode: kind === "nonfiction" ? classCode : null,
+			readingLevel:
+				kind !== "fiction"
+					? null
+					: (options.classPerItem ? copyField("itemReadingLevel") : readingLevel) || null,
+			author: formState.author,
+			title: formState.title,
+			text: withText ? text("callText").trim() || null : null,
+			copyText: copyField("itemCallText") || null,
+		}),
+	);
 </script>
 
 {#snippet fieldError(field: keyof BiblioFormInput)}
@@ -333,6 +370,26 @@
 				{@render fieldError("classCode")}
 				{@render fieldError("readingLevel")}
 			</div>
+			{#if withText}
+				<Field
+					label={i18n.t("catalog.fields.callText")}
+					hint={i18n.t("catalog.fields.callTextHint", { proposal: proposal || "—" })}
+					><Input
+						mono
+						{...fields.callText?.as("text")}
+						placeholder={proposal}
+						maxlength={40}
+						autocomplete="off"
+						data-testid="biblio-call-text"
+					/></Field
+				>
+			{/if}
+			<CallNumberShown
+				label={i18n.t("catalog.fields.callNumber")}
+				value={callNumber?.full ?? i18n.t("catalog.fields.callNumberLater")}
+				hint={i18n.t("catalog.fields.callNumberHint")}
+				testid="biblio-call-number"
+			/>
 		</FormSection>
 
 		<FormSection

@@ -295,17 +295,14 @@ describe("reclassification of records", () => {
 		expect(
 			copies.every((c) => c.spineLabelPrintedAt === null && c.barcodeLabelPrintedAt === null),
 		).toBe(true);
-		// the same target again, without rewriting call numbers: nothing changes
-		expect(
-			planReclassify(db, [fiction], { ...target, resuggestCallNumbers: false }, rules)
-				.changes,
-		).toBe(0);
+		// the same target again: nothing changes
+		expect(planReclassify(db, [fiction], target, rules).changes).toBe(0);
 		expect(() => planReclassify(db, [fiction], { ...target, genreCode: "ZZ" }, rules)).toThrow(
 			/classificationUnknown/,
 		);
 	});
 
-	it("keeps call numbers and barcode labels when not asked to rewrite them", () => {
+	it("computes the call numbers again: a changed one sends its barcode label back to print", () => {
 		const { db, actor, fiction } = setup();
 		db.update(item)
 			.set({
@@ -321,15 +318,14 @@ describe("reclassification of records", () => {
 				genreCode: "",
 				classCode: "590",
 				readingLevel: "",
-				resuggestCallNumbers: false,
 			},
 			rules,
 			actor,
 		);
 		const copies = db.select().from(item).where(eq(item.biblioId, fiction)).all();
-		expect(copies.map((c) => c.callNumber)).toEqual(["B 3 PER", "B 3 PER", "B 3 PER"]);
+		expect(copies.map((c) => c.callNumber)).toEqual(["590 PER", "590 PER", "590 PER"]);
 		expect(
-			copies.every((c) => c.spineLabelPrintedAt === null && c.barcodeLabelPrintedAt !== null),
+			copies.every((c) => c.spineLabelPrintedAt === null && c.barcodeLabelPrintedAt === null),
 		).toBe(true);
 		expect(db.select().from(patron).all()).toHaveLength(1);
 	});

@@ -27,7 +27,7 @@ A book enters this list when it is saved with **Classify later** (in the book fo
 
 The **Classify the book** page offers one book at a time. It opens from **Start classifying**, from a row of the list, from the **Classify** button of the [Book record](book-record.md) and from the circulation desk, when a copy was refused because the book is not classified. At the top the back button leads to the **To classify** list.
 
-<!-- figure: catalog/classify-flow | The Classify the book page with the choice of the genre and the proposed call number -->
+<!-- figure: catalog/classify-flow | The Classify the book page with the choice of the genre and the call number of the copies -->
 
 In the figure:
 
@@ -51,7 +51,7 @@ The choice is the same as in the book form (see [Classification section](book-re
 
 ### Call number of the copies
 
-As soon as the classification is chosen, the page writes **Call number of the copies** with the call number the copies will receive. The note explains: "The copies without a call number get this one; then the spine band can be printed."
+As soon as the classification is chosen, the page writes **Call number of the copies** with the call number the copies will receive, computed by BiblioViva from the classification, the level and the author. The note explains: "The copies take this call number; then the spine band can be printed."
 
 ### Buttons
 

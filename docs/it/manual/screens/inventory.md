@@ -40,13 +40,13 @@ pulsante **Continua**.
 
 Una barra mostra le copie viste su quelle attese per tutta la biblioteca («N su M», con la percentuale) e una riga
 riassume: «N copie lette · N fuori posto · N ritrovate». Aprendo **Avanzamento per scaffale** si vede la stessa barra
-per ogni scaffale, cioè per ogni gruppo di segnature uguali; le copie senza segnatura stanno sotto **Senza segnatura**.
+per ogni scaffale, cioè per ogni parte iniziale della segnatura (per esempio `B 4`); le copie senza segnatura stanno sotto **Senza segnatura**.
 
 ## Lettura delle copie
 
 Il riquadro **Leggi le copie** è la parte che si usa durante il lavoro.
 
-1. Nel campo **Scaffale** scrivere la sigla dello scaffale in lavorazione, per esempio `B` o `590`. Il campo suggerisce
+1. Nel campo **Scaffale** scrivere la sigla dello scaffale in lavorazione, per esempio `B`, `B 4` o `590`. Il campo suggerisce
    le sigle già note. Le copie lette la cui segnatura non corrisponde allo scaffale sono segnalate come fuori posto. Il
    campo può restare vuoto.
 1. Leggere con il lettore di codici a barre il codice della copia (l'etichetta sul libro). Il campo **Codice della

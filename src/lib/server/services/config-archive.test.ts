@@ -178,7 +178,6 @@ function addDvd(db: Db, actor: { id: number }): void {
 		db,
 		id,
 		{
-			callNumber: "",
 			readingLevel: "",
 			enumeration: "",
 			acquisitionDate: "2020-01-01",

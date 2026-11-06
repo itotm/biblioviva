@@ -29,7 +29,7 @@ riparazione**: non contano tra le mancanti le copie in prestito, ritirate, già 
 ### Leggere le copie
 
 1. Nel riquadro «Leggi le copie» scrivere nel campo **Scaffale** la sigla dello scaffale che si sta controllando, per
-   esempio `B` o `590` (la parte iniziale della segnatura). Le copie che hanno un'altra segnatura saranno segnalate come
+   esempio `B`, `B 4` o `590` (la parte iniziale della segnatura). Le copie che hanno un'altra segnatura saranno segnalate come
    fuori posto. Il campo si può lasciare vuoto.
 1. Leggere con il lettore il codice a barre di ogni copia, nell'ordine in cui stanno sullo scaffale. Il campo **Codice
    della copia** ha già il cursore e si svuota dopo ogni lettura.

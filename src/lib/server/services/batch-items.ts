@@ -17,7 +17,8 @@ import {
 import { classOf, genreOf } from "#lib/shared/classification.js";
 import { demoText } from "#lib/server/demo/content.js";
 import { audit, type AuditActor } from "./audit.js";
-import { suggestedCallNumber, validateBiblio, type CatalogRules } from "./catalog.js";
+import { validateBiblio, type CatalogRules } from "./catalog.js";
+import { refreshCallNumbers } from "./call-numbers.js";
 
 export type BatchOperation =
 	| { kind: "status"; status: ItemStatus; reason: string }
@@ -284,12 +285,22 @@ export function applyBatch(
 						.where(eq(item.id, row.itemId))
 						.run();
 					break;
-				case "readingLevel":
+				case "readingLevel": {
 					tx.update(item)
 						.set({ readingLevel: op.readingLevel, updatedAt: stamp })
 						.where(eq(item.id, row.itemId))
 						.run();
+					// the level is in the segnatura (Q143)
+					const owner = tx
+						.select({ biblioId: item.biblioId })
+						.from(item)
+						.where(eq(item.id, row.itemId))
+						.get();
+					if (owner) {
+						refreshCallNumbers(tx, rules.scheme, [owner.biblioId], now);
+					}
 					break;
+				}
 				case "acquisitionDate":
 					tx.update(item)
 						.set({ acquisitionDate: op.acquisitionDate, updatedAt: stamp })
@@ -328,8 +339,6 @@ export interface Reclassification {
 	classCode: string;
 	/** Associated class of the record ('' = none); ignored when `classPerItem` is on. */
 	readingLevel: string;
-	/** Rewrite the copies' call numbers from the configured patterns. */
-	resuggestCallNumbers: boolean;
 }
 
 export interface ReclassifyPlanRow {
@@ -407,10 +416,7 @@ export function planReclassify(
 			from,
 			to: toLabel,
 			copies: copies.get(id) ?? 0,
-			exclusion:
-				from === toLabel && r.kind === target.kind && !target.resuggestCallNumbers
-					? "unchanged"
-					: null,
+			exclusion: from === toLabel && r.kind === target.kind ? "unchanged" : null,
 		};
 	});
 	return { rows, changes: rows.filter((r) => r.exclusion === null).length };
@@ -484,27 +490,13 @@ export function applyReclassify(
 				{ changed: ["classification"], from: row.from, to: row.to, batch: true },
 				now,
 			);
-			// the spine band shows the classification: it has to be printed again; so does the
-			// barcode label when the call number changes
-			const record = { ...r, ...data };
-			for (const it of tx.select().from(item).where(eq(item.biblioId, r.id)).all()) {
-				const callNumber = target.resuggestCallNumbers
-					? suggestedCallNumber(rules, record, it.readingLevel)
-					: it.callNumber;
-				const newCall = callNumber !== it.callNumber;
-				tx.update(item)
-					.set({
-						callNumber,
-						spineLabelPrintedAt: null,
-						barcodeLabelPrintedAt: newCall ? null : it.barcodeLabelPrintedAt,
-						updatedAt: now.toISOString(),
-					})
-					.where(eq(item.id, it.id))
-					.run();
-				if (newCall) {
-					callNumbers++;
-				}
-			}
+			// the spine band shows the classification: it has to be printed again; the segnatura
+			// follows the classification (Q143), and the barcode label with it when it changes
+			tx.update(item)
+				.set({ spineLabelPrintedAt: null, updatedAt: now.toISOString() })
+				.where(eq(item.biblioId, r.id))
+				.run();
+			callNumbers += refreshCallNumbers(tx, rules.scheme, [r.id], now);
 		}
 		return { changed: plan.changes, callNumbers };
 	});

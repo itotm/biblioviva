@@ -62,7 +62,9 @@ The columns are:
 
 ### Call number
 
-The call number is the code written on the spine, which says where the copy goes back: for fiction the genre followed by the first letters of the author (for example `B DEL`), for non-fiction the number of the subject followed by the letters of the author (for example `590 ROS`). The exact form depends on the library's configuration. In the form of a copy the call number is proposed from the classification and can be changed by hand: copies of the same book can go in different places on the shelf.
+The call number is the code written on the spine, which says where the copy goes back: for fiction the genre followed by the first letters of the author (for example `B DEL`, or `B 4 DEL` with the reading level), for non-fiction the number of the subject followed by the letters of the author (for example `590 ROS`). For a book whose author is "Anonimo" or "AA. VV." the letters are the first three of the title, skipping a leading article. The exact form depends on the scheme the library has chosen, see [Change the classification and the reading levels](../../admin/guides/classification.md).
+
+BiblioViva computes the call number and it is not typed whole. All the copies of a book have the same call number; the exception is the reading level when the library assigns it to each copy: then each copy carries its own. The call number follows the data: when the classification, the author or the title is corrected in the form [Edit record](#edit-record), or the level of a copy, the call number of the copies changes at once and their spine band and barcode label go back among the labels to print. A book not yet classified has no call number.
 
 ### Copy statuses
 
@@ -102,7 +104,8 @@ At the right of each row, only with the cataloguing permission, are four icons; 
 The **Add copies** window creates one or more new copies of the book. It opens from **Add copies** in the record actions. The procedure is in [Add a copy to a book already in the catalogue](../guides/add-a-copy.md). The fields are:
 
 - **Number of copies**, from 1 to 100;
-- **Call number**: left empty, it uses the one proposed from the classification (which appears in grey);
+- **Call number**, shown but not editable, with the note "Computed from the classification, the level and the author."; only with the library's free scheme is it a field to type;
+- **Call number text**, only with a scheme that has a written part for each copy ("The part of the call number written for this copy.");
 - **Level of the copy**, if the library records it on the copies;
 - **Volume / number**, **Acquisition date** and **Notes on the copy**;
 - **Reference only (not lent)**, for the copies that must not go out.
@@ -111,7 +114,7 @@ The **Add** button creates the copies and a message confirms "N copies added" wi
 
 ## Editing a copy
 
-The window "Edit copy", titled with the code of the copy, changes **Call number**, **Level of the copy**, **Volume / number**, **Acquisition date**, **Notes on the copy** and **Reference only (not lent)**. The **Save** button confirms ("Copy updated"); **Cancel** exits.
+The window "Edit copy", titled with the code of the copy, changes **Level of the copy**, **Volume / number**, **Acquisition date**, **Notes on the copy** and **Reference only (not lent)**. The **Call number** appears in it but cannot be typed, with the note "Computed from the classification, the level and the author."; the fields **Call number** (free scheme) and **Call number text** (written part for each copy) are there only with the schemes that have them, as in [Adding copies](#adding-copies). The **Save** button confirms ("Copy updated"); **Cancel** exits.
 
 ## Changing the status of a copy
 
@@ -188,6 +191,8 @@ The **Classification** section chooses the kind and the subject of the book.
 1. At the question **What kind of book is it?** choose **Fiction**, **Non-fiction** or **Classify later**. With **Classify later** the book goes into the list [To classify](to-classify.md): its copies are not lent and the spine band is not printed until it is classified.
 1. For fiction, choose the genre among the pictures of **Pick the genre** and, if the library uses it, the **Reading level**.
 1. For non-fiction, choose the subject among the pictures of **Pick the subject**. A main subject has sub-subjects: opening it shows the "Subjects of …" and the right one is chosen, or the button "Use … in general"; **Back to the main subjects** returns to the list.
+1. Under the picker **Call number of the copies** shows the computed call number, or "After the classification" when **Classify later** is chosen. The note says "Computed from the classification, the level and the author; the copies take it on save."
+1. Only if the library's scheme has editable initials the field **Call number text** appears: empty, it uses the initials proposed from the author, shown in grey ("Empty: DEL, proposed from the author."); type other letters to change them.
 
 ### More section
 
@@ -195,7 +200,7 @@ The **More** section is closed on opening, unless it already contains data. It c
 
 ### Single copy section
 
-If the book has a single copy, at the bottom of the form appears the section titled with the code of the copy ("Copy N"): "The record has a single copy: its data is edited here and saved together with the record." The fields are those of [Editing a copy](#editing-a-copy); the material is not there, because it is changed in the **Publication** section. With two or more copies the section does not appear.
+If the book has a single copy, at the bottom of the form appears the section titled with the code of the copy ("Copy N"): "The record has a single copy: its data is edited here and saved together with the record." The fields are those of [Editing a copy](#editing-a-copy); the material is not there, because it is changed in the **Publication** section. The call number is a field only with the schemes described in [Adding copies](#adding-copies). With two or more copies the section does not appear.
 
 ## Form messages
 

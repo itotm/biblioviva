@@ -22,12 +22,12 @@ classification, material) stays a single one and is not written again.
 
 1. Write in the **Number of copies** field how many copies are added.
 1. Press **Add copy**. The confirmation opens, with the summary "N copies added to …" and the **Copy barcodes**. The
-   **Call number** of the new copies is suggested from the classification of the book; the material is the one of the record.
+   new copies take the **Call number** of the book, computed by BiblioViva; the material is the one of the record.
 1. To go on press **Add another** (the next book), **Print labels** or **Open the record**.
 
 ### Add the copy from the record of the book
 
-This method is for a book without an ISBN or when the call number, the level or other data of the copy need to be
+This method is for a book without an ISBN or when the level or other data of the copy need to be
 changed.
 
 1. Open **Catalogue** and search for the book, see [Find a book](find-a-book.md). Open its record.
@@ -37,10 +37,14 @@ changed.
    <!-- figure: catalog/add-copies-dialog | The Add copies window on the record of a book -->
 
 1. Write the **Number of copies** (from 1 to 100).
-1. Leave the **Call number** empty to use the one suggested from the classification (the suggestion is shown in grey in
-   the field), or write a different one. The call number is the code that says where the book goes on the shelf, for
-   example `B 4 DEL` or `590 ROS`.
-1. If the library assigns the reading level to each copy, choose the **Level of the copy**.
+1. Check the **Call number**, shown with the note "Computed from the classification, the level and the author.":
+   BiblioViva computes it by itself and it is not typed. It is the code that says where the book goes on the shelf, for
+   example `B 4 DEL` or `590 ROS`; its form depends on the scheme the library has chosen, see
+   [Change the classification and the reading levels](../../admin/guides/classification.md).
+1. If the **Call number text** field appears ("The part of the call number written for this copy."), write that part.
+   With the free scheme the field is called **Call number** and the whole call number is typed.
+1. If the library assigns the reading level to each copy, choose the **Level of the copy**: the call number of the copy
+   carries its own level.
 1. If the book is in several volumes, write the number in the **Volume / number** field.
 1. Check the **Acquisition date** and, if needed, write a note in **Notes on the copy**.
 1. If the copy must not leave the library, for example a volume to consult on the premises, tick **Reference only (not

@@ -116,6 +116,11 @@ export const biblio = sqliteTable(
 		/** A code of `classification.readingLevels` (Phase 12.6). */
 		readingLevel: text("reading_level"),
 		classCode: text("class_code"),
+		/**
+		 * The title's written part of the segnatura, `{{text}}` (Q143): NULL follows the scheme's
+		 * proposal (the author's initials), an empty string is no text.
+		 */
+		callText: text("call_text"),
 		subjects: text("subjects", { mode: "json" })
 			.$type<string[]>()
 			.notNull()
@@ -151,7 +156,14 @@ export const item = sqliteTable(
 			.notNull()
 			.references(() => biblio.id, { onDelete: "restrict" }),
 		barcode: text("barcode").notNull(),
+		/**
+		 * The segnatura, computed by the server from `classification.callNumber` and never typed
+		 * (Q143); null while the record waits to be classified. `call_head` is its shelf part.
+		 */
 		callNumber: text("call_number"),
+		callHead: text("call_head"),
+		/** The copy's written part of the segnatura, `{{copytext}}` (Q143). */
+		callText: text("call_text"),
 		/** A code of `classification.readingLevels` (Phase 12.6). */
 		readingLevel: text("reading_level"),
 		enumeration: text("enumeration"),

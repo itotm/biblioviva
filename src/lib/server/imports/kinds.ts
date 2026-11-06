@@ -65,6 +65,7 @@ export interface CatalogRun extends ImportRun<CatalogField> {
 	enableClassPerItem?: boolean;
 	/** The item-type answer (Q139): omitted while not asked or not answered. */
 	useMajorityType?: boolean;
+	useComputedCallNumbers?: boolean;
 }
 
 function catalogOptions(config: AppConfig, run: CatalogRun): CatalogImportOptions {
@@ -73,6 +74,7 @@ function catalogOptions(config: AppConfig, run: CatalogRun): CatalogImportOption
 		useSpecialValues: run.useSpecialValues,
 		enableClassPerItem: run.enableClassPerItem,
 		useMajorityType: run.useMajorityType,
+		useComputedCallNumbers: run.useComputedCallNumbers,
 		today: todayIn(config.library.timezone),
 	};
 }

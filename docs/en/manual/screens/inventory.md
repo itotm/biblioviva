@@ -30,13 +30,13 @@ The box at the top gives the name of the campaign, "Started" with the date and t
 
 ### Progress
 
-A bar shows the copies seen out of those expected for the whole library ("N of M", with the percentage) and a line sums up: "N copies scanned · N on the wrong shelf · N found again". Opening **Progress by shelf** shows the same bar for each shelf, that is for each group of equal call numbers; the copies without a call number are under **No call number**.
+A bar shows the copies seen out of those expected for the whole library ("N of M", with the percentage) and a line sums up: "N copies scanned · N on the wrong shelf · N found again". Opening **Progress by shelf** shows the same bar for each shelf, that is for each initial part of the call number (for example `B 4`); the copies without a call number are under **No call number**.
 
 ## Scanning the copies
 
 The **Scan the copies** box is the part used during the work.
 
-1. In the **Shelf** field write the code of the shelf being worked on, for example `B` or `590`. The field suggests the codes already known. The copies read whose call number does not match the shelf are flagged as out of place. The field can stay empty.
+1. In the **Shelf** field write the code of the shelf being worked on, for example `B`, `B 4` or `590`. The field suggests the codes already known. The copies read whose call number does not match the shelf are flagged as out of place. The field can stay empty.
 1. Read with the barcode scanner the code of the copy (the label on the book). The **Copy barcode** field already has the cursor and empties after each reading.
 1. Read the code of the next copy. The outcome appears immediately below (see [Scan outcomes](#scan-outcomes)).
 1. When moving to another shelf, change the content of **Shelf** and go on.

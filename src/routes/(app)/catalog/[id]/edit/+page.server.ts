@@ -28,7 +28,7 @@ export const load: PageServerLoad = ({ locals, params }) => {
 			? {
 					id: only.id,
 					barcode: only.barcode,
-					callNumber: only.callNumber ?? "",
+					callText: only.callText ?? "",
 					readingLevel: only.readingLevel ?? "",
 					enumeration: only.enumeration ?? "",
 					acquisitionDate: only.acquisitionDate ?? "",
@@ -57,6 +57,7 @@ export const load: PageServerLoad = ({ locals, params }) => {
 			genreCode: b.genreCode ?? "",
 			classCode: b.classCode ?? "",
 			readingLevel: b.readingLevel ?? "",
+			callText: b.callText ?? "",
 			subjects: b.subjects.join("\n"),
 			notes: b.notes ?? "",
 		},

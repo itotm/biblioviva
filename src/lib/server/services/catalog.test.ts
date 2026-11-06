@@ -91,7 +91,6 @@ const nonfiction: BiblioFormInput = {
 	subjects: "animali, fattoria\nnatura",
 };
 const copy: ItemFormInput = {
-	callNumber: "",
 	readingLevel: "",
 	enumeration: "",
 	acquisitionDate: "",
@@ -318,7 +317,7 @@ describe("catalog service", () => {
 		expect(copyOf(db, fid, added.ids[0]!).callNumber).toBe("G 4 PER");
 	});
 
-	it("gives the labels back to print when the segnatura is edited by hand (9.42)", () => {
+	it("gives the labels back to print when the segnatura changes (9.42, Q143)", () => {
 		const { db, actor } = setup();
 		const id = createBiblio(db, fiction, actor, rules);
 		const { ids } = addItems(db, id, copy, 1, actor, rules);
@@ -333,22 +332,13 @@ describe("catalog service", () => {
 			.where(eq(item.id, itemId))
 			.run();
 		const stored = copyOf(db, id, itemId);
-		const edit = {
-			...copy,
-			callNumber: stored.callNumber ?? "",
-			acquisitionDate: stored.acquisitionDate ?? "",
-		};
+		const edit = { ...copy, acquisitionDate: stored.acquisitionDate ?? "" };
 		// another field: the printed labels stay printed
 		updateItem(db, itemId, { ...edit, notes: "copertina rovinata" }, actor, rules);
 		expect(flags()).toEqual({ barcode: printed, spine: printed });
-		// the segnatura changes: the spine band and the label (it shows the segnatura) again
-		updateItem(
-			db,
-			itemId,
-			{ ...edit, notes: "copertina rovinata", callNumber: "G 2 PE" },
-			actor,
-			rules,
-		);
+		// a corrected author changes the segnatura: the spine band and the label again
+		updateBiblio(db, id, { ...fiction, author: "Rossi, Mario" }, actor, rules);
+		expect(copyOf(db, id, itemId).callNumber).toBe("G 2 ROS");
 		expect(flags()).toEqual({ barcode: null, spine: null });
 	});
 
@@ -360,22 +350,10 @@ describe("catalog service", () => {
 		// the edit form is prefilled with the stored values; here the acquisition date
 		const edit = { ...copy, acquisitionDate: copyOf(db, id, itemId).acquisitionDate ?? "" };
 		expect(
-			updateItem(
-				db,
-				itemId,
-				{ ...edit, callNumber: "G 2 PE", notes: "copertina rovinata" },
-				actor,
-				rules,
-			),
-		).toEqual(["callNumber", "notes"]);
+			updateItem(db, itemId, { ...edit, notes: "copertina rovinata" }, actor, rules),
+		).toEqual(["notes"]);
 		expect(
-			updateItem(
-				db,
-				itemId,
-				{ ...edit, callNumber: "G 2 PE", notes: "copertina rovinata" },
-				actor,
-				rules,
-			),
+			updateItem(db, itemId, { ...edit, notes: "copertina rovinata" }, actor, rules),
 		).toEqual([]);
 		setItemStatus(db, itemId, "damaged", "pagine strappate", actor);
 		expect(copyOf(db, id, itemId).status).toBe("damaged");
@@ -617,13 +595,9 @@ describe("books to classify (step 9.21)", () => {
 			actor,
 			rules,
 		);
-		addItems(db, id, copy, 2, actor, rules);
-		addItems(db, id, { ...copy, callNumber: "MIA" }, 1, actor, rules);
-		expect(getBiblio(db, id, rules).items.map((i) => i.callNumber)).toEqual([
-			null,
-			null,
-			"MIA",
-		]);
+		addItems(db, id, copy, 3, actor, rules);
+		// the segnatura waits for the classification
+		expect(getBiblio(db, id, rules).items.map((i) => i.callNumber)).toEqual([null, null, null]);
 		// what the flow shows before saving
 		const toNonfiction = {
 			kind: "nonfiction",
@@ -656,7 +630,7 @@ describe("books to classify (step 9.21)", () => {
 		expect(detail.kind).toBe("nonfiction");
 		expect(detail.subjects).toEqual(["animali", "fattoria"]);
 		expect(detail.notes).toBe("nota");
-		expect(detail.items.map((i) => i.callNumber)).toEqual(["590 ROS", "590 ROS", "MIA"]);
+		expect(detail.items.map((i) => i.callNumber)).toEqual(["590 ROS", "590 ROS", "590 ROS"]);
 		expect(listUnclassified(db)).toEqual([]);
 		expect(() =>
 			classifyBiblio(
@@ -681,13 +655,13 @@ describe("updateBiblioWithItem", () => {
 			id,
 			{ ...fiction, title: "Nuovo titolo" },
 			itemId,
-			{ ...copy, callNumber: "X 1 ABC", acquisitionDate: "2026-01-15" },
+			{ ...copy, acquisitionDate: "2026-01-15" },
 			actor,
 			rules,
 		);
-		expect(changed).toEqual({ biblio: ["title"], item: ["callNumber", "acquisitionDate"] });
+		expect(changed).toEqual({ biblio: ["title"], item: ["acquisitionDate"] });
 		expect(getBiblio(db, id, rules).items[0]).toMatchObject({
-			callNumber: "X 1 ABC",
+			callNumber: "G 2 PER",
 			acquisitionDate: "2026-01-15",
 		});
 		// a refused copy value rolls the record change back too

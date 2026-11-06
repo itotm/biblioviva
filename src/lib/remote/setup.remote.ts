@@ -5,6 +5,7 @@ import { assertNotDemo } from "#lib/server/demo/public.js";
 import { command } from "$app/server";
 import { error } from "@sveltejs/kit";
 import * as v from "valibot";
+import { CALL_NUMBER_ENDS, CALL_NUMBER_ORDERS } from "#lib/shared/classification.js";
 import { configCode, localeCode } from "#lib/shared/input-schemas.js";
 import { mirrorConfigUsers } from "#lib/server/auth/config-users.js";
 import { requireUser } from "#lib/server/auth/guard.js";
@@ -52,6 +53,12 @@ const setupSchema = v.object({
 		teacherGroupName: v.pipe(v.string(), v.trim(), v.minLength(1), v.maxLength(40)),
 		classLabel: v.pipe(v.string(), v.maxLength(40), v.includes("{group}")),
 		readingLevels: v.boolean(),
+		callNumber: v.optional(
+			v.object({
+				order: v.picklist(CALL_NUMBER_ORDERS),
+				end: v.picklist(CALL_NUMBER_ENDS),
+			}),
+		),
 		schoolYearStart: v.pipe(v.string(), v.regex(/^(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/)),
 		schoolYearLabel: v.picklist(SCHOOL_YEAR_LABELS),
 	}),

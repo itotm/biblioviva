@@ -1,4 +1,24 @@
 {
+	"callNumberScheme": {
+		"order": "Call number",
+		"orderHint": "How the call number is made: BiblioViva computes it from the classification, the level and the author.",
+		"orders": {
+			"genreLevel": "Genre, then level",
+			"levelGenre": "Level, then genre",
+			"genre": "Genre, without the level",
+			"free": "Free: typed on each copy"
+		},
+		"custom": "Custom",
+		"customHint": "The scheme is written by hand in the patterns below.",
+		"end": "End",
+		"ends": {
+			"author": "Author's initials, computed",
+			"text": "Author's initials, editable per title",
+			"none": "None"
+		},
+		"examples": "Examples: {{examples}}",
+		"freeHint": "Each copy has its call number typed on its page: BiblioViva does not compute it."
+	},
 	"list": {
 		"title": "Catalogue",
 		"search": "Search by title, author or ISBN…",
@@ -37,6 +57,11 @@
 		"nonfiction": "Non-fiction"
 	},
 	"fields": {
+		"callText": "Call number text",
+		"callTextHint": "Empty: {{proposal}}, proposed from the author.",
+		"callNumber": "Call number of the copies",
+		"callNumberLater": "After the classification",
+		"callNumberHint": "Computed from the classification, the level and the author; the copies take it on save.",
 		"title": "Title",
 		"subtitle": "Subtitle",
 		"originalTitle": "Original title",
@@ -132,7 +157,9 @@
 		"copies": "Number of copies",
 		"itemType": "Material",
 		"callNumber": "Call number",
-		"callNumberHint": "Suggested from the classification; it can be changed.",
+		"callNumberHint": "Computed from the classification, the level and the author.",
+		"callText": "Call number text",
+		"callTextHint": "The part of the call number written for this copy.",
 		"readingLevel": "Level of the copy",
 		"enumeration": "Volume / number",
 		"acquisitionDate": "Acquisition date",
@@ -399,6 +426,12 @@
 				"yes": "Yes, the most frequent material",
 				"no": "No, they are errors to fix"
 			},
+			"callNumberQuestion": {
+				"title": "Copies with a call number other than the computed one",
+				"text": "{{count}} {{count:plural; one:copy has; other:copies have;}} a call number in the file other than the one BiblioViva computes from the call number scheme (Administration → Configuration → Classification). The copies can take the computed call number: their labels go back among those to print.",
+				"yes": "Yes, the computed call number",
+				"no": "No, they are errors to fix"
+			},
 			"commit": "Import",
 			"back": "Back to the columns",
 			"generatedBarcodes": "{{count}} {{count:plural; one:copy; other:copies;}} without a barcode: the barcode is generated, then the labels are printed.",
@@ -424,6 +457,8 @@
 			"classDiffers": "Copies with different levels ({{classes}}) without level per copy",
 			"typeQuestion": "Copies of different materials ({{types}}): answer the question below",
 			"typeDiffers": "Copies of different materials ({{types}}): a title has one material only",
+			"callNumberQuestion": "Call number in the file \"{{value}}\", computed \"{{computed}}\": answer the question below",
+			"callNumberDiffers": "Call number in the file \"{{value}}\" other than the computed \"{{computed}}\"",
 			"copyExists": "Copy already in the catalogue: skipped",
 			"mergedIntoExisting": "Added to the title already in the catalogue (same key or same ISBN)"
 		},
@@ -504,7 +539,7 @@
 				"hint": "Notes of the title."
 			},
 			"callNumber": {
-				"hint": "The call number; proposed when missing."
+				"hint": "The call number in the file: it is compared with the one computed from the scheme (with the free scheme it is kept as it is)."
 			},
 			"itemType": {
 				"hint": "The material (book, dvd…); the first configured one when missing."
@@ -570,8 +605,7 @@
 			"button": "Reclassify",
 			"title": "Reclassify the selected titles",
 			"scope": "{{count}} {{count:plural; one:title; other:titles;}}",
-			"resuggest": "Rewrite the copies' call numbers from the new classification",
-			"labelsHint": "The spine bands (and the labels, if the call number changes) go back among those to print.",
+			"labelsHint": "The call number of the copies follows the new classification. The spine bands (and the labels, if the call number changes) go back among those to print.",
 			"changes": "{{count}} {{count:plural; one:title changes; other:titles change;}}",
 			"apply": "Reclassify {{count}} {{count:plural; one:title; other:titles;}}",
 			"done": "{{count}} {{count:plural; one:title; other:titles;}} reclassified, {{calls}} {{calls:plural; one:call number; other:call numbers;}} rewritten"
@@ -666,7 +700,7 @@
 			"backToList": "Back to the list",
 			"already": "This book is already classified.",
 			"callNumber": "Call number of the copies",
-			"callNumberHint": "The copies without a call number get this one; then the spine band can be printed.",
+			"callNumberHint": "The copies take this call number; then the spine band can be printed.",
 			"dewey": "The Dewey number {{dewey}} points to the subject {{code}}.",
 			"copies": "{{count}} {{count:plural; one:copy; other:copies;}}",
 			"subjects": "Subjects",

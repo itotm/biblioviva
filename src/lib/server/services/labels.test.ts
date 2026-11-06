@@ -479,7 +479,7 @@ describe("selection and jobs", () => {
 
 	it("renders a whole job from the database with the copies' own data", async () => {
 		const { db, actor, fictionId, nonfictionId } = seeded();
-		const a = addItems(db, fictionId, { ...copy, callNumber: "B 4 DEL" }, 1, actor, rules);
+		const a = addItems(db, fictionId, copy, 1, actor, rules);
 		const b = addItems(db, nonfictionId, copy, 1, actor, rules);
 		const job = await renderLabelsSheet(
 			{ db, config, configDir: temp() },

@@ -52,7 +52,7 @@ The warnings "The ISBN has a wrong check digit: check the digits." and "Code not
 
 If the ISBN is already in the catalogue, the page does not create a duplicate record. It shows the title, the author, the publisher, the year and "N copies" under **This ISBN is already in the catalogue**. The choices are:
 
-- **Add copy**: adds to the book the **Number of copies** written in the field (at least one), with the proposed call number; the material is the one of the record. The page moves to the confirmation [Record saved](#record-saved) ("N copies added to “title”").
+- **Add copy**: adds to the book the **Number of copies** written in the field (at least one), with the call number of the book; the material is the one of the record. The page moves to the confirmation [Record saved](#record-saved) ("N copies added to “title”").
 - **Open the record**: opens the [Book record](book-record.md).
 - **Scan another code**: returns to the first step.
 
@@ -93,7 +93,7 @@ If covers are active, above the form the **Cover** box shows the image found onl
 
 ### Book data
 
-The form has the sections **Record**, **Publication**, **Classification** and **More**, with the same fields and the same rules as the form [Edit record](book-record.md#edit-record). The **Material** is in **Publication**, after the **Physical description**, already set from the first step. Author and publisher are mandatory: if the book does not give them, use the special values of the buttons under the field.
+The form has the sections **Record**, **Publication**, **Classification** and **More**, with the same fields and the same rules as the form [Edit record](book-record.md#edit-record). Under the choice of the classification is the **Call number of the copies**, computed, which the copies take on save; with editable initials the **Call number text** also appears, see [Classification section](book-record.md#classification-section). The **Material** is in **Publication**, after the **Physical description**, already set from the first step. Author and publisher are mandatory: if the book does not give them, use the special values of the buttons under the field.
 
 ### Copies section
 
@@ -101,7 +101,7 @@ The **Copies** section creates the copies of the book in the same save:
 
 - **Number of copies**: how many new copies, normally 1;
 - **Level of the copies**, if the library records the level on the copies;
-- **Call number**: it is proposed from the classification and updates until a call number is typed in;
+- **Call number**, only with the library's free scheme: it is typed by hand; with the other schemes the call number is computed and is read in **Call number of the copies**, under the classification;
 - **Acquisition date**: normally today's date.
 
 The **Save record and copies** button saves. **Cancel** returns to the catalogue. If a field is not valid, the message appears under the field; the messages are those described in [Form messages](book-record.md#form-messages). For "1 to 100 copies at a time" the number of copies must be corrected.

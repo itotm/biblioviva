@@ -34,7 +34,7 @@ The column names are in English and must be left as in the template. The main on
 | `reading_level` | the reading level (fiction) | optional |
 
 Also optional are `isbn`, `subtitle`, `publication_place`, `publication_year`, `physical_description`, `series`,
-`series_number`, `subjects`, `notes`, `call_number` (the call number), `item_type` (the material: book, DVD…, one per title), `status`,
+`series_number`, `subjects`, `notes`, `call_number` (the call number, which BiblioViva computes: see below), `item_type` (the material: book, DVD…, one per title), `status`,
 `not_for_loan` (`sì` for reference copies; `consultazione` in `item_type` also makes the copy a reference copy, without being the title's material), `acquisition_date` (`YYYY-MM-DD` or `DD/MM/YYYY`), `item_notes` and others:
 the complete list is in the **The template of the file** box. The status is written `available`, `lost`, `damaged`,
 `in_repair` or `withdrawn`; the Italian words (disponibile, perso, danneggiato, in riparazione, ritirato) are accepted.
@@ -43,6 +43,12 @@ The keys can be left out. Without `biblio_key` the copies of the same book are g
 BiblioViva generates the code of each copy and at the end the labels are printed. A book without `classification` is
 imported all the same, but it ends up in the **To classify** list and its copies cannot be lent until someone
 classifies it.
+
+The `call_number` column is not copied as it is: BiblioViva computes the call number of each copy from the scheme chosen
+in **Administration** → **Configuration** → **Classification** (see [Change the classification and the reading
+levels](classification.md#choose-how-the-call-number-is-made)). With the end "Author's initials, editable per title"
+the title takes from the file the part after the classification, the most frequent among its copies. With the order
+"Free: typed on each copy" each copy keeps the call number of the file.
 
 > [!NOTE]
 > The barcode of a copy cannot have the form of a card number: copies and cards can never be confused (see
@@ -73,6 +79,9 @@ classifies it.
    materials**, in a yellow box. Press **Yes, the most frequent material** so that each title takes the material of most
    of its copies. Press **No, they are errors to fix** to correct the file. Copies added to a title already in the
    catalogue keep the material of that title.
+1. If some copies have in the file a call number other than the computed one, the page asks **Copies with a call number
+   other than the computed one**. Press **Yes, the computed call number** so that those copies take the computed call
+   number: their labels go back among those to print. Press **No, they are errors to fix** to correct the file.
 1. If there are errors, correct the file, press **Back to the columns**, upload it again and check once more. With even
    one error **Import** stays off.
 
@@ -117,6 +126,14 @@ Correct the code in the file.
 of different materials (…): a title has one material only": in the file the rows of the same book carry different
 materials in `item_type`, but a title has one material only. Answer **Yes, the most frequent material** or correct
 `item_type` in the file, making it the same on all the rows of the book, and check again.
+
+### The copies have a call number other than the computed one
+
+"Call number in the file …, computed …: answer the question below" appears or, after **No, they are errors to fix**,
+"Call number in the file … other than the computed …": the call number written in `call_number` does not match the one
+BiblioViva computes from the scheme. Answer **Yes, the computed call number**, or correct `call_number` in the file, or
+change the scheme in the classification (with the order "Free: typed on each copy" the file is kept as it is), and check
+again.
 
 ### Every copy is already in the catalogue
 

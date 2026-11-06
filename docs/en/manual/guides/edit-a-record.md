@@ -23,14 +23,19 @@ whoever catalogues the books.
    the book and applies to all its copies; if the material is excluded from loans, all the
    copies are not lent. A single copy is kept from loans with **Reference only (not lent)**, in the data of the copy.
 1. To correct subjects, notes or Dewey number open the **More** section.
-1. To change the classification correct it in the **Classification** section; see below for the call numbers.
+1. To change the classification correct it in the **Classification** section. Under the picker **Call number of the
+   copies** shows the new call number, computed by BiblioViva; see below for the call numbers.
+1. If the **Call number text** field appears, correct the letters of the call number, or leave it empty for the
+   initials proposed from the author (in grey).
 1. Press **Save changes**. The record of the book opens again, with the new data. **Cancel** leaves everything as it
    was.
 
 ### Change the data of a copy
 
-A copy has data of its own, distinct from those of the book: **Call number**, **Level of the copy**,
-**Volume / number**, **Acquisition date**, **Notes on the copy** and **Reference only (not lent)**.
+A copy has data of its own, distinct from those of the book: **Level of the copy**, **Volume / number**,
+**Acquisition date**, **Notes on the copy** and **Reference only (not lent)**. The **Call number** of the copy is shown
+but not typed, because BiblioViva computes it; a field to type appears only with the free scheme (**Call number**) or
+with a scheme that has a written part for each copy (**Call number text**).
 
 1. If the book has a single copy, the "Copy …" section is at the bottom of the **Edit record** page: its data are
    changed there and saved together with the record.
@@ -44,14 +49,14 @@ copy](withdraw-a-copy.md#change-the-status-of-many-copies-at-once), where the to
 changes the material of many books at once, by choosing **Material** in **What to change**: the material belongs to the book, so
 it changes for all its copies.
 
-### After changing the classification or the call number
+### After changing the classification, the author or the title
 
-Correcting the classification in the **Edit record** page does not rewrite the call numbers of the copies already
-created. To rewrite them, and to put the spine bands back among the labels to print, use **Reclassify**, see [Classify
-books](classify-books.md). If the call number of a copy is changed by hand, BiblioViva puts the spine band and the
-barcode label back among the labels to print by itself, as after **Reclassify**: the copy reappears in the **Books
-without labels** panel of the Dashboard and they are printed again as described in [Print book
-labels](print-book-labels.md).
+The call number of the copies follows the data of the book: when the classification, the author or the title is
+corrected in **Edit record** (the title counts for books whose author is "Anonimo" or "AA. VV."), or the level of a
+copy, BiblioViva computes the call number of the copies again at once. BiblioViva puts the spine band and the barcode
+label back among the labels to print by itself: the copy reappears in the **Books without labels** panel of the
+Dashboard and they are printed again as described in [Print book labels](print-book-labels.md). A book not yet
+classified has no call number: it gets one when it is classified, see [Classify books](classify-books.md).
 
 ### Delete a record entered by mistake
 

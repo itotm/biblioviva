@@ -239,6 +239,9 @@ function demoSubjects(sent: string, stored: readonly string[] | null | undefined
 }
 
 /** The record form as the demo stores it ("Libro demo del …" by "AA. VV."; the mock's data kept). */
+/** A written part of the segnatura the demo keeps: a few letters or digits (`DEL`, `R2`). */
+const CALL_CODE = /^[\p{L}\d]{0,6}$/u;
+
 export function demoBiblio(
 	input: BiblioFormInput,
 	special: { author: string; publisher: string },
@@ -274,17 +277,20 @@ export function demoBiblio(
 		dewey: demoShaped(input.dewey, was("dewey"), /^\d{3}(\.\d{1,8})?$/),
 		issn: demoShaped(input.issn, was("issn"), /^\d{4}-?\d{3}[\dXx]$/),
 		ean: demoShaped(input.ean, was("ean"), /^\d{8,14}$/),
+		// the text of the segnatura: a short code (initials) stays, any other text goes (Q143)
+		...(input.callText === undefined
+			? {}
+			: { callText: demoShaped(input.callText, was("callText"), CALL_CODE) }),
 	};
 }
 
 /**
- * The copy form as the demo stores it: the call number is the one the configured format gives
- * (`suggested`; empty lets the service suggest it), the volume emptied, a note replaced.
+ * The copy form as the demo stores it: the written part of the segnatura only as a short code
+ * (Q143), the volume emptied, a note replaced.
  */
 export function demoItem(
 	input: ItemFormInput,
-	suggested: string,
-	stored?: { callNumber: string | null; enumeration: string | null; notes: string | null },
+	stored?: { callText: string | null; enumeration: string | null; notes: string | null },
 	now = new Date(),
 ): ItemFormInput {
 	if (!isDemoPublic()) {
@@ -292,12 +298,9 @@ export function demoItem(
 	}
 	return {
 		...input,
-		callNumber: replaceText(
-			input.callNumber,
-			stored?.callNumber,
-			() => suggested,
-			new Set([suggested]),
-		),
+		...(input.callText === undefined
+			? {}
+			: { callText: demoShaped(input.callText, stored?.callText, CALL_CODE) }),
 		enumeration: demoBlank(input.enumeration, stored?.enumeration),
 		notes: demoText("comment", input.notes, stored?.notes, now),
 	};

@@ -81,8 +81,8 @@ test.describe.serial("classification editor", () => {
 		await expect(page.getByRole("status").getByText("Classificazione salvata")).toBeVisible();
 		await expect(page.getByTestId("taxonomy-dirty")).toHaveCount(0);
 
-		// the catalogue offers the genre with its pictogram: file the book under it, with a call
-		// number that starts with the code
+		// the catalogue offers the genre with its pictogram: file the book under it; its call
+		// number is computed with the code (Q143)
 		await page.goto(`${book.url}/edit`);
 		await waitForHydration(page);
 		const tile = page.getByTestId(`genre-${code}`);
@@ -95,10 +95,7 @@ test.describe.serial("classification editor", () => {
 		await page.getByTestId("biblio-submit").click();
 		await expect(page).toHaveURL(/\/catalog\/\d+$/);
 		await waitForHydration(page);
-		await page.getByTestId(`edit-item-${barcode}`).click();
-		await page.getByTestId("edit-call-number").fill(`${code} PRO`);
-		await page.getByTestId("confirm-button").click();
-		await expect(page.getByRole("status").getByText("Copia aggiornata")).toBeVisible();
+		await expect(page.getByTestId(`item-row-${barcode}`)).toContainText(`${code} PRO`);
 
 		// removing a genre in use asks where its books go
 		await page.goto("/admin/config/classification");
@@ -115,12 +112,12 @@ test.describe.serial("classification editor", () => {
 		await expect(dialog.getByTestId("taxonomy-save-confirm")).toBeDisabled();
 		await dialog.getByTestId(`replacement-${code}`).selectOption("B");
 		await expect(dialog.getByTestId("taxonomy-save-call-numbers")).toContainText(
-			"1 segnatura comincia",
+			"1 copia cambia segnatura",
 		);
 		await dialog.getByTestId("taxonomy-save-confirm").click();
 		await expect(page.getByRole("status").getByText("Classificazione salvata")).toBeVisible();
 
-		// the book is back in B with its call number rewritten
+		// the book is back in B with its call number computed again
 		await page.goto(book.url);
 		await waitForHydration(page);
 		await expect(page.getByTestId("classification-badge")).toContainText("B");
@@ -164,8 +161,8 @@ test.describe.serial("classification editor", () => {
 		await page.getByTestId("dewey-probe").fill("004.6");
 		await expect(page.getByTestId("dewey-probe-result")).toContainText("004");
 		await page.getByTestId("taxonomy-tab-options").click();
-		await expect(page.getByTestId("pattern-example-fictionWithClass")).toHaveText(
-			"Esempio: A 4 DEL",
+		await expect(page.getByTestId("option-call-number-examples")).toHaveText(
+			"Esempi: A 4 DEL · A DEL · 000 ROS",
 		);
 
 		// leaving asks first; staying keeps the draft, "Annulla modifiche" drops it
@@ -211,7 +208,7 @@ test.describe.serial("classification editor", () => {
 		await expect(page.getByTestId("classification-badge")).toContainText("6");
 		const bookUrl = page.url();
 		await (await pageAction(page, "add-copies")).click();
-		await expect(page.getByTestId("add-call-number")).toHaveAttribute("placeholder", "B 6 LIV");
+		await expect(page.getByTestId("add-call-number")).toContainText("B 6 LIV");
 		await page.getByTestId("confirm-button").click();
 		await expect(page.getByTestId("items-table").locator("tbody tr")).toHaveCount(1);
 		await expect(page.getByTestId("items-table")).toContainText("B 6 LIV");

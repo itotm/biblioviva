@@ -122,8 +122,11 @@ installazione come applicazione. L'altra via è Tailscale. Vedere [Scegliere la 
 
 ## Segnatura
 
-La sigla che dice dove sta un libro sugli scaffali, per esempio `B 4 DEL`. Compare sulla scheda della copia e sulla
-fascetta del dorso. In BiblioViva si usa sempre questa parola, e non «collocazione».
+La sigla che dice dove sta un libro sugli scaffali, per esempio `B 4 DEL`. BiblioViva la calcola dalla classificazione,
+dal livello di lettura e dalle prime tre lettere del cognome dell'autore; per un libro di autore «Anonimo» o «AA. VV.»
+usa le prime tre lettere del titolo. La forma dipende dallo schema scelto dalla biblioteca. Compare sulla scheda della
+copia e sulla fascetta del dorso. In BiblioViva si usa sempre questa parola, e non «collocazione». Vedere
+[Classificare i libri](../manual/guides/classify-books.md).
 
 ## Tailnet
 

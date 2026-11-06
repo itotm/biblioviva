@@ -99,7 +99,6 @@ function library(): { db: Db; actor: { id: number }; codes: string[]; ids: numbe
 			db,
 			id,
 			{
-				callNumber: "",
 				readingLevel: "",
 				enumeration: "",
 				acquisitionDate: "2020-01-01",
@@ -208,11 +207,11 @@ describe("inventory", () => {
 	it("orders the shelves in the installation's language (Ö after Z in Swedish)", () => {
 		const { db, ids } = library();
 		db.update(item)
-			.set({ callNumber: "Ö ROS" })
+			.set({ callNumber: "Ö ROS", callHead: "Ö" })
 			.where(eq(item.id, ids[0] ?? 0))
 			.run();
 		db.update(item)
-			.set({ callNumber: "Z ROS" })
+			.set({ callNumber: "Z ROS", callHead: "Z" })
 			.where(eq(item.id, ids[3] ?? 0))
 			.run();
 		expect(shelvesOf(db, "sv")).toEqual(["590", "B", "Z", "Ö"]);

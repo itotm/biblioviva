@@ -259,24 +259,26 @@ describe("the examples of the public demo", () => {
 		});
 	});
 
-	it("give a copy the call number of the format, no volume, an example note", () => {
+	it("give a copy only a short text of the segnatura, no volume, an example note", () => {
 		const input: ItemFormInput = {
-			callNumber: "PAROLACCIA",
+			callText: "PAROLACCIA LUNGA",
 			readingLevel: "",
 			enumeration: "vol. qualcosa",
 			acquisitionDate: "2026-10-01",
 			notes: "copia rovinata da Mario",
 			notForLoan: false,
 		};
-		expect(demoItem(input, "B 4 DEL", undefined, now)).toMatchObject({
-			callNumber: "B 4 DEL",
+		expect(demoItem(input, undefined, now)).toMatchObject({
+			callText: "",
 			enumeration: "",
 			acquisitionDate: "2026-10-01",
 			notes: demoExample("comment", now),
 		});
-		expect(demoItem({ ...input, callNumber: "B 4 DEL" }, "B 4 DEL").callNumber).toBe("B 4 DEL");
-		// a new copy: empty, the service suggests it
-		expect(demoItem(input, "").callNumber).toBe("");
+		// a short code (initials, a shelf number) stays
+		expect(demoItem({ ...input, callText: "R2" }).callText).toBe("R2");
+		// no text sent: none kept
+		const { callText: _t, ...noText } = input;
+		expect(demoItem(noText).callText).toBeUndefined();
 	});
 
 	it("keep a class section and replace any other group name, numbered in a batch", () => {

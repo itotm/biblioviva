@@ -21,6 +21,7 @@ import {
 } from "./catalog.js";
 import { ImportNotReadyError, mapRows, mappingComplete } from "./pipeline.js";
 import { CATALOG_FIELDS, CATALOG_IMPORT } from "#lib/shared/import-columns.js";
+import { callNumberScheme } from "#lib/shared/classification.js";
 
 const config = parseConfig(exampleRaw()).config;
 const rules = catalogRules(config);
@@ -500,6 +501,87 @@ describe("commit", () => {
 		).toEqual([0, 0, 0, 0, 0, 1]);
 	});
 
+	it("asks whether copies take the computed segnatura when the file's differs (9.50, Q143)", () => {
+		const { db, actor } = setup();
+		const csv = writeCsv([
+			[
+				"biblio_key",
+				"title",
+				"author",
+				"publisher",
+				"classification",
+				"barcode",
+				"call_number",
+			],
+			["1", "Pinocchio", "Collodi, Carlo", "B", "A", "100", "A COL"],
+			["1", "Pinocchio", "Collodi, Carlo", "B", "A", "101", "A PIN"],
+			["2", "Favole", "Rodari, Gianni", "B", "A", "102", ""],
+		]);
+		const asked = validateCatalogImport(db, inputsOf(csv), base);
+		expect(asked.callNumberQuestion).toBe(1);
+		expect(asked.canCommit).toBe(false);
+		expect(asked.rows.map((r) => r.status)).toEqual(["new", "error", "new"]);
+		expect(asked.rows[1]?.reasons).toEqual([
+			{ code: "callNumberQuestion", params: { value: "A PIN", computed: "A COL" } },
+		]);
+		const no = validateCatalogImport(db, inputsOf(csv), {
+			...base,
+			useComputedCallNumbers: false,
+		});
+		expect(no.rows[1]?.reasons.map((r) => r.code)).toEqual(["callNumberDiffers"]);
+		expect(() => commit(db, actor, inputsOf(csv))).toThrow(ImportNotReadyError);
+		commit(db, actor, inputsOf(csv), { ...base, useComputedCallNumbers: true });
+		const copies = db.select().from(item).all();
+		expect(copies.map((c) => c.callNumber)).toEqual(["A COL", "A COL", "A ROD"]);
+		// the old labels show another segnatura: that copy's are to print again
+		expect(copies.map((c) => c.barcodeLabelPrintedAt === null)).toEqual([false, true, false]);
+	});
+
+	it("reads the title's text and the copies' texts from the file's segnature (9.50, Q143)", () => {
+		const csv = writeCsv([
+			["biblio_key", "title", "author", "publisher", "classification", "call_number"],
+			["1", "Pinocchio", "Collodi, Carlo", "B", "A", "A COLL"],
+			["1", "Pinocchio", "Collodi, Carlo", "B", "A", "A COLL"],
+			["2", "Favole", "Rodari, Gianni", "B", "A", "A ROD"],
+		]);
+		const text = {
+			...rules,
+			scheme: { ...rules.scheme, callNumber: callNumberScheme("genreLevel", "text") },
+		};
+		const one = setup();
+		const read = validateCatalogImport(one.db, inputsOf(csv), { ...base, rules: text });
+		expect(read.callNumberQuestion).toBe(0);
+		commit(one.db, one.actor, inputsOf(csv), { ...base, rules: text });
+		// the proposal (the author's initials) is not stored: it follows the author
+		expect(one.db.select({ t: biblio.callText }).from(biblio).all()).toEqual([
+			{ t: "COLL" },
+			{ t: null },
+		]);
+		expect(
+			one.db
+				.select({ c: item.callNumber })
+				.from(item)
+				.all()
+				.map((r) => r.c),
+		).toEqual(["A COLL", "A COLL", "A ROD"]);
+		// the free scheme keeps each segnatura as it is, as the copy's text
+		const free = {
+			...rules,
+			scheme: { ...rules.scheme, callNumber: callNumberScheme("free", "author") },
+		};
+		const two = setup();
+		expect(
+			validateCatalogImport(two.db, inputsOf(csv), { ...base, rules: free })
+				.callNumberQuestion,
+		).toBe(0);
+		commit(two.db, two.actor, inputsOf(csv), { ...base, rules: free });
+		expect(two.db.select({ t: item.callText, c: item.callNumber }).from(item).all()).toEqual([
+			{ t: "A COLL", c: "A COLL" },
+			{ t: "A COLL", c: "A COLL" },
+			{ t: "A ROD", c: "A ROD" },
+		]);
+	});
+
 	it("imports the original title of a translation (9.23)", () => {
 		const { db, actor } = setup();
 		const csv = writeCsv([
@@ -566,7 +648,6 @@ describe("commit", () => {
 			db,
 			record,
 			{
-				callNumber: "",
 				readingLevel: "",
 				enumeration: "",
 				acquisitionDate: "",

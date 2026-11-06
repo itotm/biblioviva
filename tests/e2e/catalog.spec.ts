@@ -63,7 +63,9 @@ test.describe.serial("catalogue", () => {
 
 		await (await pageAction(page, "add-copies")).click();
 		await page.getByTestId("add-copies-count").fill("2");
-		await expect(page.getByTestId("add-call-number")).toHaveAttribute("placeholder", "G 2 PER");
+		// the segnatura is computed, not typed (Q143)
+		await expect(page.getByTestId("add-call-number")).toContainText("G 2 PER");
+		await expect(page.getByTestId("add-call-text")).toHaveCount(0);
 		await page.getByTestId("confirm-button").click();
 		await expect(page.getByRole("status").getByText("2 copie aggiunte")).toBeVisible();
 		const rows = page.getByTestId("items-table").locator("tbody tr");
@@ -167,7 +169,8 @@ test.describe.serial("catalogue", () => {
 
 		await (await pageAction(page, "add-copies")).click();
 		await page.getByTestId("add-copies-count").fill("2");
-		await expect(page.getByTestId("add-call-number")).toHaveAttribute("placeholder", "590 ANO");
+		// a book without a real author takes the initials of its title (Q143)
+		await expect(page.getByTestId("add-call-number")).toContainText("590 ANI");
 		await page.getByTestId("confirm-button").click();
 		await expect(page.getByRole("status").getByText("2 copie aggiunte")).toBeVisible();
 		const rows = page.getByTestId("items-table").locator("tbody tr");
@@ -184,19 +187,21 @@ test.describe.serial("catalogue", () => {
 		// a worn copy still circulates (ADR-012): both copies count as available
 		await expect(page.getByTestId("copies-badge")).toContainText("2 disponibili su 2");
 
-		// edit the copy's call number
+		// edit a copy: its segnatura is shown, computed (Q143)
 		await page.getByTestId(`edit-item-${barcode}`).click();
-		await page.getByTestId("edit-call-number").fill("590 ANO bis");
+		await expect(page.getByTestId("edit-call-number")).toContainText("590 ANI");
+		await page.getByTestId("edit-enumeration").fill("vol. 1");
 		await page.getByTestId("confirm-button").click();
 		await expect(page.getByRole("status").getByText("Copia aggiornata")).toBeVisible();
-		await expect(rows.first()).toContainText("590 ANO bis");
+		await expect(rows.first()).toContainText("590 ANI");
 
 		// edit the record: the picker is prefilled and the title changes
 		await page.getByTestId("edit-biblio").click();
 		await waitForHydration(page);
 		await expect(page.getByTestId("class-590")).toHaveAttribute("aria-checked", "true");
 		// two copies: no copy fields on the record page (they belong to each copy's dialog)
-		await expect(page.getByTestId("edit-item-call-number")).toHaveCount(0);
+		await expect(page.getByTestId("edit-item-acquisition-date")).toHaveCount(0);
+		await expect(page.getByTestId("biblio-call-number")).toContainText("590 ANI");
 		await page.getByLabel("Titolo", { exact: true }).fill(`${title} (2a ed.)`);
 		await page.getByTestId("biblio-submit").click();
 		await expect(page).toHaveURL(/\/catalog\/\d+$/);
@@ -260,19 +265,21 @@ test.describe.serial("catalogue", () => {
 		// a single copy is edited together with the record (owner review)
 		await page.getByTestId("edit-biblio").click();
 		await waitForHydration(page);
-		await expect(page.getByTestId("edit-item-call-number")).toHaveValue("A ROS");
-		// the material is the record's, in the record's fields; the segnatura stays the copy's (9.45)
+		// the material and the segnatura are the record's: the segnatura follows the author (Q143)
+		await expect(page.getByTestId("biblio-call-number")).toContainText("A ROS");
+		await expect(page.getByTestId("edit-item-call-text")).toHaveCount(0);
 		await expect(page.getByTestId("edit-item-type")).toHaveCount(0);
 		await expect(page.getByTestId("biblio-item-type")).toHaveValue("libro");
 		await page.getByTestId("biblio-item-type").selectOption("dvd");
-		await page.getByTestId("edit-item-call-number").fill("A ROS bis");
+		await page.getByLabel("Autore", { exact: true }).fill("Bianchi, Anna");
+		await expect(page.getByTestId("biblio-call-number")).toContainText("A BIA");
 		await page.getByTestId("edit-item-acquisition-date").fill("2026-01-15");
 		await page.getByLabel("Titolo", { exact: true }).fill(`${title} (ed.)`);
 		await page.getByTestId("biblio-submit").click();
 		await expect(page).toHaveURL(/\/catalog\/\d+$/);
 		await waitForHydration(page);
 		await expect(page.getByRole("heading", { level: 1 })).toHaveText(`${title} (ed.)`);
-		await expect(rows.first()).toContainText("A ROS bis");
+		await expect(rows.first()).toContainText("A BIA");
 		await expect(page.getByTestId("item-type-badge")).toHaveText("DVD");
 		// a refused copy value leaves the record unchanged: the error sits on the copy field
 		await page.getByTestId("edit-biblio").click();

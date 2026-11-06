@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // The copies of the catalogue (PLAN.md step 3.1): their validation, "Aggiungi copie" with barcodes
-// from the per-year sequence and the suggested call number, edits, status changes (withdrawing a
-// lent copy refused) and the deletion of a copy never lent. Plain functions `(db, …)`.
+// from the per-year sequence and the segnatura computed from the scheme (Q143), edits, status
+// changes (withdrawing a lent copy refused) and the deletion of a copy never lent. Plain functions
+// `(db, …)`.
 import { blankToNull } from "#lib/shared/text.js";
 import { eq } from "drizzle-orm";
 import type { Db, DbOrTx } from "#lib/server/db/client.js";
@@ -24,13 +25,15 @@ import {
 	type CatalogIssue,
 	ItemNotFoundError,
 	ItemOnLoanError,
-	suggestedCallNumber,
 	updateBiblio,
 } from "./catalog.js";
+import { refreshCallNumbers } from "./call-numbers.js";
+import { schemeUses } from "#lib/shared/classification.js";
 import { openLoanOf } from "./catalog-search.js";
 
 export interface ItemData {
-	callNumber: string | null;
+	/** The copy's `{{copytext}}` of the segnatura (Q143); undefined keeps the copy's. */
+	callText?: string | null;
 	readingLevel: string | null;
 	enumeration: string | null;
 	acquisitionDate: string | null;
@@ -68,7 +71,13 @@ export function validateItem(
 		throw new CatalogValidationError(issues);
 	}
 	return {
-		callNumber: blankToNull(input.callNumber),
+		// only a scheme with `{{copytext}}` has a text per copy (Q143)
+		callText:
+			input.callText === undefined
+				? undefined
+				: schemeUses(rules.scheme, "copytext")
+					? blankToNull(input.callText.replace(/\s+/g, " "))
+					: null,
 		readingLevel,
 		enumeration: blankToNull(input.enumeration),
 		acquisitionDate,
@@ -80,7 +89,7 @@ export function validateItem(
 
 /**
  * Adds `copies` items to a record in one transaction: barcodes in the configured format from this
- * year's sequence, the call number from the form or suggested, acquisition date today by default.
+ * year's sequence, the segnatura computed (Q143), acquisition date today by default.
  */
 export function addItems(
 	db: DbOrTx,
@@ -99,17 +108,15 @@ export function addItems(
 		if (!record) {
 			throw new BiblioNotFoundError(biblioId);
 		}
-		// the public demo: the suggested call number, no volume, its example note (Q121)
+		// the public demo: no written segnatura, no volume, its example note (Q121)
 		const data = validateItem(
-			demoItem(input, "", undefined, now),
+			demoItem(input, undefined, now),
 			rules,
 			record.kind as BiblioKind | null,
 			record.itemType,
 		);
 		const today = isoDateIn(now, rules.timezone);
 		const year = Number(zonedParts(now, rules.timezone).year);
-		const callNumber =
-			data.callNumber ?? (suggestedCallNumber(rules, record, data.readingLevel) || null);
 		const ids: number[] = [];
 		const barcodes: string[] = [];
 		for (let i = 0; i < copies; i++) {
@@ -119,7 +126,7 @@ export function addItems(
 				.values({
 					biblioId,
 					barcode,
-					callNumber,
+					callText: data.callText ?? null,
 					readingLevel: data.readingLevel,
 					enumeration: data.enumeration,
 					acquisitionDate: data.acquisitionDate ?? today,
@@ -133,13 +140,14 @@ export function addItems(
 			ids.push(row.id);
 			barcodes.push(barcode);
 		}
+		refreshCallNumbers(tx, rules.scheme, [biblioId], now);
 		audit(tx, actor, "item.create", "biblio", biblioId, { copies }, now);
 		return { ids, barcodes };
 	});
 }
 
 const ITEM_TRACKED: (keyof ItemData)[] = [
-	"callNumber",
+	"callText",
 	"readingLevel",
 	"enumeration",
 	"acquisitionDate",
@@ -161,17 +169,18 @@ export function updateItem(
 			throw new ItemNotFoundError(id);
 		}
 		const record = tx.select().from(biblio).where(eq(biblio.id, existing.biblioId)).get();
-		const suggested = record
-			? suggestedCallNumber(rules, record, input.readingLevel || existing.readingLevel)
-			: "";
-		const data = validateItem(
-			demoItem(input, suggested, existing, now),
+		const validated = validateItem(
+			demoItem(input, existing, now),
 			rules,
 			(record?.kind ?? null) as BiblioKind | null,
 			record?.itemType ?? "",
 		);
+		const data: ItemData = {
+			...validated,
+			callText: validated.callText === undefined ? existing.callText : validated.callText,
+		};
 		const current: ItemData = {
-			callNumber: existing.callNumber,
+			callText: existing.callText,
 			readingLevel: existing.readingLevel,
 			enumeration: existing.enumeration,
 			acquisitionDate: existing.acquisitionDate,
@@ -182,20 +191,16 @@ export function updateItem(
 		if (changed.length === 0) {
 			return [];
 		}
-		// a new segnatura is on the spine band and on the barcode label: both are to print again,
-		// as after a reclassification (9.42)
-		const relabel = changed.includes("callNumber")
-			? { spineLabelPrintedAt: null, barcodeLabelPrintedAt: null }
-			: {};
 		tx.update(item)
 			.set({
 				...data,
-				...relabel,
 				notForLoan: data.notForLoan ? 1 : 0,
 				updatedAt: now.toISOString(),
 			})
 			.where(eq(item.id, id))
 			.run();
+		// the level and the text are in the segnatura; a new one is to print again (9.42)
+		refreshCallNumbers(tx, rules.scheme, [existing.biblioId], now);
 		audit(tx, actor, "item.update", "item", id, { changed }, now);
 		return changed;
 	});

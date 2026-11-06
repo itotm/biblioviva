@@ -4,6 +4,7 @@
 import { command, form, query } from "$app/server";
 import { invalid } from "@sveltejs/kit";
 import * as v from "valibot";
+import { CALL_TEXT_PROPOSALS } from "#lib/shared/classification.js";
 import { megabytes } from "#lib/shared/bytes.js";
 import { uploadedFile } from "#lib/shared/input-schemas.js";
 import { requestLocale, tServer } from "#lib/i18n/server.js";
@@ -69,6 +70,7 @@ const draftSchema = v.object({
 		fiction: text(200),
 		fictionWithClass: text(200),
 		nonfiction: text(200),
+		text: v.picklist(CALL_TEXT_PROPOSALS),
 	}),
 });
 const replacementsSchema = v.pipe(

@@ -1,7 +1,9 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 <!-- The copies of a record (step 3.1, labels 3.8): each copy with its status, borrower and labels,
      and the copy actions with their dialogs (add copies, edit, change status with a reason,
-     delete). The record page opens "add copies" from its header through `openAdd`. -->
+     delete). The record page opens "add copies" from its header through `openAdd`. The segnatura
+     is computed by the server (Q143): the dialogs show it, and edit only the copy's text when the
+     scheme has one. -->
 <script lang="ts">
 	import { useI18n } from "#lib/i18n/context.js";
 	import {
@@ -14,12 +16,14 @@
 	} from "#lib/remote/catalog.remote.js";
 	import type { ClassificationOptions } from "#lib/server/services/catalog.js";
 	import type { ItemFormInput, ItemStatus } from "#lib/shared/catalog-schema.js";
+	import { isFreeScheme, schemeUses } from "#lib/shared/classification.js";
 	import { labelStatus } from "#lib/shared/copy-status.js";
 	import { useFormat } from "#lib/ui/format.js";
 	import { icons } from "#lib/ui/icons.js";
 	import { ITEM_STATUS, type StatusDef } from "#lib/ui/status.js";
 	import { toaster } from "#lib/ui/toaster.js";
 	import ConfirmDialog from "#lib/components/ConfirmDialog.svelte";
+	import CallNumberShown from "./CallNumberShown.svelte";
 	import PrintedBadge from "#lib/components/print-lists/PrintedBadge.svelte";
 	import Field from "#lib/ui/Field.svelte";
 	import Grid from "#lib/ui/Grid.svelte";
@@ -61,7 +65,7 @@
 	let addOpen = $state(false);
 	let copies = $state(1);
 	const emptyItem = (): ItemFormInput => ({
-		callNumber: "",
+		callText: "",
 		readingLevel: "",
 		enumeration: "",
 		acquisitionDate: "",
@@ -70,14 +74,9 @@
 	});
 	let draft = $state<ItemFormInput>(emptyItem());
 	let issues = $state<{ field: string; message: string }[]>([]);
-	const suggestion = $derived(
-		addOpen
-			? suggestCallNumber({
-					biblioId: biblio.id,
-					readingLevel: draft.readingLevel || null,
-				})
-			: null,
-	);
+	// the copy's own text of the segnatura, only where the scheme has it (Q143)
+	const copyText = $derived(schemeUses({ callNumber: options.callNumber }, "copytext"));
+	const freeScheme = $derived(isFreeScheme(options.callNumber));
 
 	/** Opens the "add copies" dialog with an empty copy. */
 	export function openAdd(): void {
@@ -91,10 +90,7 @@
 		const r = await addItems({
 			biblioId: biblio.id,
 			copies,
-			item: {
-				...draft,
-				callNumber: draft.callNumber || (suggestion?.current?.callNumber ?? ""),
-			},
+			item: draft,
 		});
 		if (!r.ok) {
 			issues = r.issues;
@@ -114,7 +110,7 @@
 	let editDraft = $state<ItemFormInput>(emptyItem());
 	function openEdit(it: Copy): void {
 		editDraft = {
-			callNumber: it.callNumber ?? "",
+			callText: it.callText ?? "",
 			readingLevel: it.readingLevel ?? "",
 			enumeration: it.enumeration ?? "",
 			acquisitionDate: it.acquisitionDate ?? "",
@@ -192,18 +188,32 @@
 </script>
 
 {#snippet itemFields(model: ItemFormInput, prefix: string)}
+	{@const preview = suggestCallNumber({
+		biblioId: biblio.id,
+		readingLevel: model.readingLevel || null,
+		copyText: model.callText || null,
+	})}
 	<Grid from="sm" gap="3">
-		<label class="label">
-			<span class="label-text">{i18n.t("catalog.item.callNumber")}</span>
-			<Input
-				mono
-				bind:value={model.callNumber}
-				placeholder={prefix === "add" ? (suggestion?.current?.callNumber ?? "") : ""}
-				data-testid="{prefix}-call-number"
+		{#if copyText}
+			<Field
+				label={i18n.t(freeScheme ? "catalog.item.callNumber" : "catalog.item.callText")}
+				hint={freeScheme ? undefined : i18n.t("catalog.item.callTextHint")}
+				><Input
+					mono
+					bind:value={model.callText}
+					maxlength={40}
+					data-testid="{prefix}-call-text"
+				/></Field
+			>
+		{/if}
+		{#if !freeScheme}
+			<CallNumberShown
+				label={i18n.t("catalog.item.callNumber")}
+				value={preview.current?.callNumber || "—"}
+				hint={i18n.t("catalog.item.callNumberHint")}
+				testid="{prefix}-call-number"
 			/>
-			{#if prefix === "add"}<Hint as="span">{i18n.t("catalog.item.callNumberHint")}</Hint
-				>{/if}
-		</label>
+		{/if}
 		{#if perItemClass}
 			<Field label={i18n.t("catalog.item.readingLevel")}
 				><Select bind:value={model.readingLevel} data-testid="{prefix}-reading-level">
@@ -215,7 +225,7 @@
 			>
 		{/if}
 		<Field label={i18n.t("catalog.item.enumeration")}
-			><Input bind:value={model.enumeration} /></Field
+			><Input bind:value={model.enumeration} data-testid="{prefix}-enumeration" /></Field
 		>
 		<Field label={i18n.t("catalog.item.acquisitionDate")}
 			><Input type="date" bind:value={model.acquisitionDate} /></Field

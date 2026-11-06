@@ -54,7 +54,6 @@ describe("catalog export", () => {
 			db,
 			novel,
 			{
-				callNumber: "",
 				readingLevel: "",
 				enumeration: "",
 				acquisitionDate: "",

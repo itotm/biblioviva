@@ -5,8 +5,9 @@
 //
 // `planTaxonomy` tells what a draft does to the catalogue before anything is written: a code in
 // use that disappears needs a replacement (a renamed code is replaced by its new name) — its
-// records move to it, the leading token of their copies' call numbers is rewritten and their
-// spine bands go back among the labels to print —; bands whose name, colour or pictogram changes
+// records move to it and their spine bands go back among the labels to print —; the copies whose
+// segnatura the draft changes are counted (renamed codes and levels, the level moved, a new
+// scheme of the segnatura: it is recomputed on save, Q143); bands whose name, colour or pictogram changes
 // can be sent to print again; moving the associated class between records and copies
 // (`classPerItem`) is refused while copies of one title sit in different classes. The database
 // work runs inside the configuration change, so a failure leaves both untouched.
@@ -17,7 +18,7 @@
 // them, so "Ripristina versione precedente" brings them back).
 import { existsSync, readFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
-import { and, eq, sql, type SQL } from "drizzle-orm";
+import { eq, sql, type SQL } from "drizzle-orm";
 import type { AppConfig } from "#lib/server/config/schema.js";
 import type { ConfigIssue } from "#lib/server/config/validate.js";
 import type { ServerContext } from "#lib/server/context.js";
@@ -26,9 +27,11 @@ import { biblio, item } from "#lib/server/db/schema.js";
 import {
 	classOf,
 	genreOf,
+	isFreeScheme,
 	type ClassificationScheme,
 	type ResolvedNode,
 } from "#lib/shared/classification.js";
+import { callNumberChanges, keepCallNumbersAsText, refreshCallNumbers } from "./call-numbers.js";
 import type { AuditActor } from "./audit.js";
 import { pictogramUrl } from "./classification-media.js";
 import { commitConfigChange } from "./config-commit.js";
@@ -278,24 +281,6 @@ function levelUsage(db: DbOrTx, code: string): CodeUsage {
 	};
 }
 
-/**
- * The call number of a fiction copy filed with a level carries it as its second token
- * (`B 4 DEL`): the token follows the level to its replacement, or goes with it.
- */
-function moveLevelInCallNumbers(tx: DbOrTx, from: string, to: string, at: string): number {
-	const token = sql`(' ' || ${from} || ' ')`;
-	const at2 = sql`instr(call_number, ' ')`;
-	const replacement = to === "" ? sql`' '` : sql`(' ' || ${to} || ' ')`;
-	return tx.run(
-		sql`UPDATE item SET
-			call_number = substr(call_number, 1, ${at2} - 1) || ${replacement} || substr(call_number, ${at2} + length(${token})),
-			spine_label_printed_at = NULL, barcode_label_printed_at = NULL, updated_at = ${at}
-			WHERE ${at2} > 0 AND substr(call_number, ${at2}, length(${token})) = ${token}
-			  AND (reading_level = ${from}
-			   OR biblio_id IN (SELECT id FROM biblio WHERE reading_level = ${from}))`,
-	).changes;
-}
-
 function recordsWithClass(db: DbOrTx, onCopies: boolean): number {
 	return onCopies
 		? (db
@@ -341,7 +326,7 @@ export interface TaxonomyPlan {
 	restyled: ({ kind: TaxonomyKind; code: string } & CodeUsage)[];
 	/** The associated class moves between records and copies. */
 	classPerItem: { to: boolean; records: number; conflicts: number } | null;
-	/** Copies whose call number starts with a removed code in use: rewritten on save. */
+	/** Copies whose segnatura the draft changes: recomputed on save (Q143). */
 	callNumbers: number;
 	/** The draft differs from the saved classification. */
 	changed: boolean;
@@ -385,10 +370,6 @@ function draftIssues(draft: TaxonomyDraft, configDir: string, dataDir: string): 
 	});
 	return issues;
 }
-
-/** Copies of the records filed under `code` whose call number starts with it. */
-const leadingCallNumber = (code: string): SQL =>
-	sql`(item.call_number = ${code} OR substr(item.call_number, 1, ${code.length + 1}) = ${`${code} `})`;
 
 const recordsUnder = (kind: TaxonomyKind, code: string): SQL =>
 	kind === "fiction"
@@ -448,19 +429,6 @@ export function planTaxonomy(
 		}
 	}
 
-	let callNumbers = 0;
-	for (const r of removed) {
-		if (r.records > 0) {
-			callNumbers +=
-				db
-					.select({ n: sql<number>`count(*)` })
-					.from(item)
-					.innerJoin(biblio, eq(biblio.id, item.biblioId))
-					.where(and(recordsUnder(r.kind, r.code), leadingCallNumber(r.code)))
-					.get()?.n ?? 0;
-		}
-	}
-
 	const levelsAfter = draft.readingLevels.map((l) => l.code.trim());
 	const removedLevels: RemovedLevel[] = current.readingLevels
 		.filter((l) => !levelsAfter.includes(l.code))
@@ -490,6 +458,14 @@ export function planTaxonomy(
 					records: recordsWithClass(db, current.classPerItem),
 					conflicts: draft.classPerItem ? 0 : classPerItemConflicts(db),
 				};
+	const callNumbers = countCallNumberChanges(
+		db,
+		draft,
+		config.catalog.specialAuthors,
+		removed,
+		removedLevels,
+		classPerItem,
+	);
 	const changed = JSON.stringify(sectionOf(current)) !== JSON.stringify(sectionOf(draft));
 	const ready =
 		changed &&
@@ -498,6 +474,53 @@ export function planTaxonomy(
 		!removedLevels.some((r) => r.records + r.copies > 0 && r.replacement === null) &&
 		(classPerItem?.conflicts ?? 0) === 0;
 	return { issues, removed, removedLevels, restyled, classPerItem, callNumbers, changed, ready };
+}
+
+/**
+ * The copies whose segnatura the draft changes: the stored ones against those computed with the
+ * draft's scheme, after the codes and levels it renames and the move of the level (Q143).
+ */
+function countCallNumberChanges(
+	db: DbOrTx,
+	draft: TaxonomyDraft,
+	specialAuthors: readonly string[],
+	removed: readonly RemovedCode[],
+	removedLevels: readonly RemovedLevel[],
+	classPerItem: TaxonomyPlan["classPerItem"],
+): number {
+	// a removed code in use moves to its replacement; until one is chosen its copies count as
+	// changing all the same (they will take some other code)
+	const codes = new Map(
+		removed
+			.filter((r) => r.replacement !== null || r.records > 0)
+			.map((r) => [r.code, r.replacement ?? `${r.code}\u0000`]),
+	);
+	const levels = new Map(
+		removedLevels
+			.filter((r) => r.replacement !== null)
+			.map((r) => [r.code, r.replacement === "" ? null : r.replacement]),
+	);
+	const level = (l: string | null): string | null =>
+		l !== null && levels.has(l) ? (levels.get(l) ?? null) : l;
+	const scheme = {
+		callNumber: draft.callNumber,
+		classPerItem: draft.classPerItem,
+		specialAuthors,
+	};
+	const free = isFreeScheme(draft.callNumber);
+	return callNumberChanges(db, scheme, "all", (r) => {
+		const itemLevel = level(r.readingLevel);
+		const recordLevel = level(r.biblioLevel);
+		return {
+			...r,
+			genreCode: r.genreCode === null ? null : (codes.get(r.genreCode) ?? r.genreCode),
+			classCode: r.classCode === null ? null : (codes.get(r.classCode) ?? r.classCode),
+			readingLevel: classPerItem?.to === true ? (itemLevel ?? recordLevel) : itemLevel,
+			biblioLevel: classPerItem?.to === false ? (recordLevel ?? itemLevel) : recordLevel,
+			// to the free scheme the segnature become the copies' texts (saveTaxonomy)
+			callText: free && r.callText === null ? r.callNumber : r.callText,
+		};
+	}).filter((c) => c.from !== c.full).length;
 }
 
 // --- Save -------------------------------------------------------------------------------------
@@ -528,7 +551,7 @@ const compactStamp = (now: Date): string =>
 /**
  * Saves the draft: staged pictograms become files, unreferenced ones go, the section is written to
  * its file, and — inside the same configuration change — the records of replaced codes move, their
- * call numbers and spine bands follow, restyled bands are sent to print again when asked, and the
+ * spine bands follow, the segnature are recomputed (Q143), restyled bands are sent to print again when asked, and the
  * associated classes move when `classPerItem` changes. Throws `TaxonomyNotReadyError` (nothing
  * written) when the plan is not ready.
  */
@@ -600,11 +623,6 @@ export function saveTaxonomy(
 				}
 				replaced[r.code] = r.replacement;
 				const under = sql`item.biblio_id IN (SELECT biblio.id FROM biblio WHERE ${recordsUnder(r.kind, r.code)})`;
-				result.callNumbers += tx.run(
-					sql`UPDATE item SET call_number = ${r.replacement} || substr(call_number, ${r.code.length + 1}),
-							barcode_label_printed_at = NULL, updated_at = ${at}
-							WHERE ${under} AND ${leadingCallNumber(r.code)}`,
-				).changes;
 				result.bands += tx.run(
 					sql`UPDATE item SET spine_label_printed_at = NULL, updated_at = ${at}
 							WHERE ${under} AND spine_label_printed_at IS NOT NULL`,
@@ -623,7 +641,6 @@ export function saveTaxonomy(
 				}
 				const to = r.replacement === "" ? null : r.replacement;
 				replaced[`${LEVEL_KEY}${r.code}`] = r.replacement;
-				result.callNumbers += moveLevelInCallNumbers(tx, r.code, r.replacement, at);
 				tx.run(
 					sql`UPDATE item SET reading_level = ${to}, updated_at = ${at} WHERE reading_level = ${r.code}`,
 				);
@@ -646,6 +663,17 @@ export function saveTaxonomy(
 					? moveClassesToItems(tx)
 					: moveClassesToRecords(tx);
 			}
+			// the segnatura follows the codes, the levels and the scheme (Q143); to the free
+			// scheme, the copies keep theirs as their written text
+			if (isFreeScheme(saved.callNumber) && !isFreeScheme(current.callNumber)) {
+				keepCallNumbersAsText(tx, now);
+			}
+			result.callNumbers = refreshCallNumbers(
+				tx,
+				{ ...schemeOf(saved), specialAuthors: config.catalog.specialAuthors },
+				"all",
+				now,
+			);
 			const before = codesOf(current);
 			const after = codesOf(saved);
 			return {

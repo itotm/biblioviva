@@ -15,11 +15,17 @@ La scelta è una sola, tra due strade:
 - saggistica: si sceglie un argomento (un numero come quelli Dewey, per esempio `590`), cercandolo in due livelli:
   prima l'argomento principale, poi un argomento più preciso.
 
-La segnatura è la sigla stampata sull'etichetta e sulla fascetta, che dice dove va il libro. Si ricava dalla
-classificazione e dalle prime tre lettere del cognome dell'autore. Esempi: `B 4 DEL` è un romanzo di genere B, livello
+La segnatura è la sigla stampata sull'etichetta e sulla fascetta, che dice dove va il libro. BiblioViva la calcola da
+sola dalla classificazione, dal livello di lettura e dalle prime tre lettere del cognome dell'autore: non si scrive per
+intero. Esempi: `B 4 DEL` è un romanzo di genere B, livello
 di lettura 4, di un autore il cui cognome inizia per DEL; `B DEL` è lo stesso libro in una biblioteca che non usa i
-livelli; `590 ROS` è un libro di saggistica dell'argomento 590 di un autore il cui cognome inizia per ROS. BiblioViva
-propone la segnatura da sola e si può correggere.
+livelli; `590 ROS` è un libro di saggistica dell'argomento 590 di un autore il cui cognome inizia per ROS.
+
+Se l'autore è «Anonimo» o «AA. VV.» si usano le prime tre lettere del titolo, saltando l'articolo iniziale: «Gli animali
+della fattoria» diventa `590 ANI` e «Enciclopedia dei ragazzi» diventa `030 ENC`. Tutte le copie di un libro hanno la
+stessa segnatura; fa eccezione il livello di lettura quando sta su ogni copia, perché allora ogni copia porta il suo. La
+forma dipende dallo schema scelto dalla biblioteca (per esempio con il livello prima del genere, `4 B DEL`), vedere
+[Modificare la classificazione e i livelli di lettura](../../admin/guides/classification.md). Un libro non ancora classificato non ha segnatura: la riceve quando viene classificato.
 
 Il livello di lettura è un codice che la biblioteca sceglie per i romanzi (nella configurazione di partenza da `1` a
 `5`) e non coincide con la classe dell'utente. Se il livello è assegnato a ogni copia e non al libro, si sceglie nel
@@ -69,11 +75,10 @@ modulo delle copie, vedere [Aggiungere una copia a un libro già in catalogo](ad
 1. Selezionare i libri con Ctrl + clic (o Maiusc + clic per un gruppo) sulle righe.
 1. Premere **Riclassifica**. Si apre la finestra «Riclassifica i titoli selezionati».
 1. Scegliere il **Tipo**, poi il **Genere** o la **Classificazione** e, per la narrativa, il **Livello**.
-1. Per aggiornare anche le segnature delle copie spuntare «Riscrivere le segnature delle copie secondo la nuova
-   classificazione».
 1. Premere **Controlla**. La finestra dice quanti titoli cambiano.
 1. Premere **Riclassifica** seguito dal numero di titoli. Un avviso conferma «… titoli riclassificati, … segnature
-   riscritte». Le fascette (e le etichette, se la segnatura è cambiata) tornano tra quelle da stampare: vedere
+   riscritte»: la segnatura delle copie segue la nuova classificazione. Le fascette (e le etichette, se la segnatura è
+   cambiata) tornano tra quelle da stampare: vedere
    [Stampare le etichette dei libri](print-book-labels.md).
 
 ## Risultato
@@ -99,8 +104,8 @@ Scegliere il più vicino e annotarlo. L'elenco di generi e argomenti lo modifica
 
 ### Una scheda già classificata va ricollocata
 
-Il modulo **Modifica scheda** cambia la classificazione ma non riscrive le segnature delle copie. Per aggiornarle
-usare **Riclassifica** come sopra.
+La segnatura delle copie segue la classificazione: correggerla in **Modifica scheda**, oppure per molti libri insieme
+con **Riclassifica** come sopra. Le fascette tornano tra quelle da stampare.
 
 ### Il libro è già classificato
 

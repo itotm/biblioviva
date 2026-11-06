@@ -108,23 +108,31 @@ export const getSeriesNames = query(() => {
 	return seriesNames(getDb());
 });
 
-/** The call number the item forms propose (§3.17). */
+/** The segnatura a copy of the record gets with a level and a text (§3.17, Q143): the forms' preview. */
 export const suggestCallNumber = query(
 	v.object({
 		biblioId: id,
 		readingLevel: v.optional(v.nullable(levelCodeOrEmpty), null),
+		copyText: v.optional(v.nullable(v.pipe(v.string(), v.maxLength(40))), null),
 	}),
-	({ biblioId, readingLevel }) => {
+	({ biblioId, readingLevel, copyText }) => {
 		requireAnyUser(CATALOG_READERS);
 		const record = orNotFound(() => getBiblio(getDb(), biblioId, rules()));
-		return { callNumber: suggestedCallNumber(rules(), record, readingLevel) };
+		return {
+			callNumber: suggestedCallNumber(
+				rules(),
+				record,
+				readingLevel,
+				copyText?.trim() || null,
+			),
+		};
 	},
 );
 
-/** Copy fields of the edit form carry an `item` prefix (`callNumber` → `itemCallNumber`). */
+/** Copy fields of the edit form carry an `item` prefix (`callText` → `itemCallText`). */
 const ITEM_FIELD_PREFIXED: Record<string, string> = {
 	itemType: "itemType",
-	callNumber: "itemCallNumber",
+	callText: "itemCallText",
 	readingLevel: "itemReadingLevel",
 	enumeration: "itemEnumeration",
 	acquisitionDate: "itemAcquisitionDate",
@@ -164,7 +172,7 @@ export const updateBiblio = form(biblioEditSchema, async (raw, issue) => {
 	const {
 		id: rawId,
 		itemId,
-		itemCallNumber,
+		itemCallText,
 		itemReadingLevel,
 		itemEnumeration,
 		itemAcquisitionDate,
@@ -181,7 +189,7 @@ export const updateBiblio = form(biblioEditSchema, async (raw, issue) => {
 				input,
 				Number(itemId),
 				{
-					callNumber: itemCallNumber,
+					callText: itemCallText,
 					readingLevel: itemReadingLevel,
 					enumeration: itemEnumeration,
 					acquisitionDate: itemAcquisitionDate,

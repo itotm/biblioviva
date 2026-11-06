@@ -44,6 +44,7 @@ const runSchema = v.object({
 	enableClassPerItem: v.optional(v.boolean()),
 	/** The item-type answer (Q139): omitted while not asked or not answered. */
 	useMajorityType: v.optional(v.boolean()),
+	useComputedCallNumbers: v.optional(v.boolean()),
 });
 
 /** The validate phase: repeatable, writes nothing. */

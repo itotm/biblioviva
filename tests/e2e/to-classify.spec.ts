@@ -33,7 +33,7 @@ test("classify later, in a flow, and the desk waits for it", async ({ page }) =>
 	await page.getByTestId("kind-later").click();
 	await expect(page.getByTestId("classify-later-hint")).toContainText("Da classificare");
 	// no call number before the classification
-	await expect(page.getByTestId("fast-call-number")).toHaveValue("");
+	await expect(page.getByTestId("biblio-call-number")).toContainText("Dopo la classificazione");
 	await page.getByTestId("biblio-submit").click();
 	await expect(page.getByTestId("stage-done")).toBeVisible();
 	await page.getByTestId("done-open").click();
@@ -67,7 +67,8 @@ test("classify later, in a flow, and the desk waits for it", async ({ page }) =>
 	await expect(page.getByTestId("classify-title")).toHaveText(first);
 	await expect(page.getByTestId("classify-save")).toBeDisabled();
 	await page.getByTestId("genre-B").click();
-	await expect(page.getByTestId("classify-call-number")).toContainText("B ANO");
+	// without a real author the initials are the title's (Q143)
+	await expect(page.getByTestId("classify-call-number")).toContainText("B DA");
 	await expectAxeClean(page);
 	await page.getByTestId("classify-save").click();
 	// the next book, or the end of the round when no other is left after it

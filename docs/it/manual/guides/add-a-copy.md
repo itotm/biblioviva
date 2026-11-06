@@ -22,12 +22,12 @@ classificazione, materiale) resta una sola e non si scrive di nuovo.
 
 1. Scrivere nel campo **Numero di copie** quante copie si aggiungono.
 1. Premere **Aggiungi copia**. Si apre la conferma, con il riepilogo «N copie aggiunte a …» e i **Codici delle copie**.
-   La **Segnatura** delle nuove copie viene proposta dalla classificazione del libro; il materiale è quello della scheda.
+   Le nuove copie hanno la **Segnatura** del libro, calcolata da BiblioViva; il materiale è quello della scheda.
 1. Per proseguire premere **Aggiungi un altro** (il libro successivo), **Stampa etichette** oppure **Apri la scheda**.
 
 ### Aggiungere la copia dalla scheda del libro
 
-Questo metodo serve per un libro senza ISBN o quando serve cambiare segnatura, livello o altri dati della copia.
+Questo metodo serve per un libro senza ISBN o quando serve cambiare il livello o altri dati della copia.
 
 1. Aprire **Catalogo** e cercare il libro, vedere [Cercare un libro](find-a-book.md). Aprire la sua scheda.
 1. Premere **Aggiungi copie**. Se la finestra del browser è stretta il pulsante sta nel menu delle altre azioni
@@ -36,10 +36,14 @@ Questo metodo serve per un libro senza ISBN o quando serve cambiare segnatura, l
    <!-- figure: catalog/add-copies-dialog | La finestra Aggiungi copie sulla scheda di un libro -->
 
 1. Scrivere il **Numero di copie** (da 1 a 100).
-1. Lasciare vuota la **Segnatura** per usare quella proposta dalla classificazione (la proposta si vede in grigio nel
-   campo), oppure scriverne una diversa. La segnatura è la sigla che dice dove va il libro sullo scaffale, per esempio
-   `B 4 DEL` o `590 ROS`.
-1. Se la biblioteca assegna il livello di lettura a ogni copia, scegliere il **Livello della copia**.
+1. Controllare la **Segnatura**, mostrata con la nota «Calcolata da classificazione, livello e autore.»: BiblioViva la
+   calcola da sola e non si scrive. È la sigla che dice dove va il libro sullo scaffale, per esempio `B 4 DEL` o
+   `590 ROS`; la forma dipende dallo schema scelto dalla biblioteca, vedere
+   [Modificare la classificazione e i livelli di lettura](../../admin/guides/classification.md).
+1. Se compare il campo **Testo della segnatura** («La parte della segnatura scritta per questa copia.»), scrivere quella
+   parte. Con lo schema libero il campo si chiama **Segnatura** e la segnatura si scrive per intero.
+1. Se la biblioteca assegna il livello di lettura a ogni copia, scegliere il **Livello della copia**: la segnatura della
+   copia porta il suo livello.
 1. Se il libro è in più volumi, scrivere il numero nel campo **Volume / numero**.
 1. Controllare la **Data di acquisizione** e, se serve, scrivere una nota in **Note sulla copia**.
 1. Se la copia non deve uscire dalla biblioteca, per esempio un volume da consultare in sede, spuntare **Solo

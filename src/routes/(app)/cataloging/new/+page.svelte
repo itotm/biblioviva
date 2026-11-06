@@ -17,15 +17,12 @@
 	import { checkIsbn, fastAdd, lookupMetadata } from "#lib/remote/cataloging.remote.js";
 	import type { BiblioDraft } from "#lib/server/metadata/types.js";
 	import type { BiblioFormInput } from "#lib/shared/catalog-schema.js";
-	import { suggestCallNumber, suggestClassFromDewey } from "#lib/shared/classification.js";
+	import { isFreeScheme, schemeUses, suggestClassFromDewey } from "#lib/shared/classification.js";
 	import { isoDateIn } from "#lib/shared/dates.js";
 	import { ean13Valid } from "#lib/shared/isbn.js";
 	import { formatSeries } from "#lib/shared/series.js";
 	import type { ScanKind } from "#lib/shared/scan.js";
-	import BiblioForm, {
-		type BiblioFormState,
-		type FieldApi,
-	} from "#lib/components/catalog/BiblioForm.svelte";
+	import BiblioForm from "#lib/components/catalog/BiblioForm.svelte";
 	import CodeStage from "#lib/components/cataloging/CodeStage.svelte";
 	import DoneStage from "#lib/components/cataloging/DoneStage.svelte";
 	import DuplicateStage from "#lib/components/cataloging/DuplicateStage.svelte";
@@ -257,11 +254,10 @@
 	function openForm(d: BiblioDraft | null, extra: Partial<BiblioFormInput> = {}): void {
 		candidate = d;
 		deweyClass = null;
-		lastSuggestion = "";
 		initial = {
 			copies: "1",
 			itemType: material,
-			itemCallNumber: "",
+			itemCallText: "",
 			itemReadingLevel: "",
 			acquisitionDate: isoDateIn(new Date(), data.timezone),
 			source: d?.source ?? "manual",
@@ -304,7 +300,6 @@
 				biblioId: existing.id,
 				copies: dupCopies,
 				item: {
-					callNumber: "",
 					readingLevel: "",
 					enumeration: "",
 					acquisitionDate: "",
@@ -331,37 +326,9 @@
 		}
 	}
 
-	// the call number field follows the suggestion until the operator types their own
-	let lastSuggestion = "";
-	function syncCallNumber(state: BiblioFormState, fields: Record<string, FieldApi>): void {
-		const next = suggestion(state, fields);
-		const current = fields.itemCallNumber?.value();
-		if (!current || current === lastSuggestion) {
-			fields.itemCallNumber?.set(next);
-		}
-		lastSuggestion = next;
-	}
-
-	function suggestion(state: BiblioFormState, fields: Record<string, FieldApi>): string {
-		const perItem = options.classPerItem && options.fictionByClass;
-		const itemClass = fields.itemReadingLevel?.value();
-		// the call number waits for the classification (step 9.21)
-		if (state.kind === "") {
-			return "";
-		}
-		return suggestCallNumber(options, {
-			kind: state.kind,
-			genreCode: state.genreCode || null,
-			classCode: state.classCode || null,
-			readingLevel: perItem
-				? typeof itemClass === "string" && itemClass
-					? itemClass
-					: null
-				: state.readingLevel || null,
-			author: state.author,
-			title: state.title,
-		});
-	}
+	// the copies' own text of the segnatura, only where the scheme has it (Q143); the record form
+	// shows the segnatura they get
+	const copyText = $derived(schemeUses({ callNumber: options.callNumber }, "copytext"));
 
 	const stepIndex = $derived(
 		stage === "done"
@@ -491,7 +458,6 @@
 					submitLabel={i18n.t("catalog.fastAdd.form.save")}
 					cancelHref="/catalog"
 					autofocus
-					onstate={syncCallNumber}
 					note={candidate
 						? i18n.t("catalog.fastAdd.form.fromSource", {
 								provider: providerName(candidate.source),
@@ -533,13 +499,21 @@
 										</Select></Field
 									>
 								{/if}
-								<Field label={i18n.t("catalog.fastAdd.form.callNumber")}
-									><Input
-										mono
-										{...fields.itemCallNumber?.as("text")}
-										data-testid="fast-call-number"
-									/></Field
-								>
+								{#if copyText}
+									<Field
+										label={i18n.t(
+											isFreeScheme(options.callNumber)
+												? "catalog.fastAdd.form.callNumber"
+												: "catalog.item.callText",
+										)}
+										><Input
+											mono
+											{...fields.itemCallText?.as("text")}
+											maxlength={40}
+											data-testid="fast-call-text"
+										/></Field
+									>
+								{/if}
 								<Field label={i18n.t("catalog.fastAdd.form.acquisitionDate")}
 									><Input
 										{...fields.acquisitionDate?.as("text")}

@@ -43,7 +43,7 @@ Technical reference of the BiblioViva database, for developers and coding agents
   hand-written, idempotent FTS5 statements (§4), and turns `foreign_keys` back on. `bun run db:migrate` does the same
   from the command line.
 - **Single migration until 1.0** (ADR-011, Q82). `drizzle/` holds exactly one migration,
-  currently `drizzle/20261102000000_initial/` (`migration.sql` + `snapshot.json`). When `schema.ts` changes, delete
+  currently `drizzle/20261106000000_initial/` (`migration.sql` + `snapshot.json`). When `schema.ts` changes, delete
   the folder, run `bun run db:generate` and rename the new folder to `<YYYYMMDD>000000_initial` (the day and a zero time); never add an incremental
   migration. Development databases are reset with `bun run dev:reset --yes` and reseeded (`bun run db:seed`,
   synthetic and deterministic data: 5 000 copies). A database in use during the 0.9.x field tests crosses a schema
@@ -133,6 +133,7 @@ erDiagram
         text genre_code
         text reading_level
         text class_code
+        text call_text
         text subjects "JSON array"
         text notes
         text cover_path
@@ -149,6 +150,8 @@ erDiagram
         integer biblio_id FK
         text barcode UK
         text call_number
+        text call_head
+        text call_text
         text reading_level
         text enumeration
         text status "available | lost | damaged | in_repair | withdrawn"
@@ -473,6 +476,7 @@ One row per title, aligned with the Koha fast cataloguing framework (PLAN.md §4
 | `genre_code` | text | yes | | fiction genre from `classification.genres` |
 | `reading_level` | text | yes | | fiction reading level, a code of `classification.readingLevels`; NULL when `classification.classPerItem` is on (then on `item`) |
 | `class_code` | text | yes | | non-fiction local class from `classification.nonfiction` |
+| `call_text` | text | yes | | the title's written part of the segnatura, `{{text}}` of the scheme (Q143); NULL follows the proposal (the author's initials), an empty string is no text |
 | `subjects` | text (JSON) | no | `'[]'` | JSON array of free keywords |
 | `notes` | text | yes | | |
 | `cover_path` | text | yes | | relative to `DATA_DIR`, e.g. `uploads/covers/07/1207-main-<version>.webp` |
@@ -502,7 +506,9 @@ One row per title, aligned with the Koha fast cataloguing framework (PLAN.md §4
 | `id` | integer | no | autoincrement | PK |
 | `biblio_id` | integer | no | | FK `biblio.id` ON DELETE RESTRICT |
 | `barcode` | text | no | | the configured copy format for new copies (default `YYYY-CNNNN`); older formats, legacy plain counters and `YYYY-NNNN` kept as-is (§5.4) |
-| `call_number` | text | yes | | the "segnatura", e.g. `B 4 DEL`; on the copy, because copies of one title can be shelved apart (Q139) |
+| `call_number` | text | yes | | the "segnatura", e.g. `B 4 DEL`: computed by the server from `classification.callNumber`, the record and the copy, never typed (Q143); on the copy, because the level per copy changes it (Q139); NULL while the record waits to be classified |
+| `call_head` | text | yes | | its shelf part (`B 4`): the spine band's large line, the inventory's shelf |
+| `call_text` | text | yes | | the copy's written part, `{{copytext}}` of the scheme (the free scheme); NULL otherwise |
 | `reading_level` | text | yes | | only when `classification.classPerItem` is on |
 | `enumeration` | text | yes | | issue designation of periodicals, e.g. `2026, n. 3` |
 | `status` | text | no | `'available'` | CHECK `available`, `lost`, `damaged`, `in_repair`, `withdrawn`; "on loan" is derived from open loans, never stored |

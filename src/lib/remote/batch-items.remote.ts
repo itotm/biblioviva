@@ -89,7 +89,6 @@ const reclassifySchema = v.object({
 	genreCode: v.optional(v.pipe(v.string(), v.maxLength(16)), ""),
 	classCode: v.optional(v.pipe(v.string(), v.maxLength(16)), ""),
 	readingLevel: v.optional(levelCodeOrEmpty, ""),
-	resuggestCallNumbers: v.optional(v.boolean(), false),
 });
 
 export const planRecordReclassify = command(reclassifySchema, ({ biblioIds, ...target }) => {

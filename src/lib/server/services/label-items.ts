@@ -52,6 +52,7 @@ const labelItemSelect = {
 	id: item.id,
 	barcode: item.barcode,
 	callNumber: item.callNumber,
+	callHead: item.callHead,
 	itemType: biblio.itemType,
 	readingLevel: item.readingLevel,
 	biblioId: item.biblioId,

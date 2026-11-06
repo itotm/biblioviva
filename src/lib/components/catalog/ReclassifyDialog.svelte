@@ -32,7 +32,6 @@
 	let genreCode = $state("");
 	let classCode = $state("");
 	let readingLevel = $state("");
-	let resuggestCallNumbers = $state(true);
 	let changes = $state<number | null>(null);
 	let problem = $state("");
 	let busy = $state(false);
@@ -43,7 +42,6 @@
 		genreCode,
 		classCode,
 		readingLevel,
-		resuggestCallNumbers,
 	});
 	// a check is valid only for the classification it was made for
 	let checkedFor = $state("");
@@ -141,10 +139,6 @@
 				</Field>
 			{/if}
 		</Grid>
-		<Row wrap={false} align="center" as="label">
-			<input type="checkbox" class="checkbox" bind:checked={resuggestCallNumbers} />
-			<span>{i18n.t("catalog.batch.reclassify.resuggest")}</span>
-		</Row>
 		<Hint>{i18n.t("catalog.batch.reclassify.labelsHint")}</Hint>
 	{/if}
 	{#if problem}

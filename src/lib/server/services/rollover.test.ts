@@ -153,7 +153,6 @@ function setup(): Fixture {
 		db,
 		biblio,
 		{
-			callNumber: "",
 			readingLevel: "",
 			enumeration: "",
 			acquisitionDate: "",

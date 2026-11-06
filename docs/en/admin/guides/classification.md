@@ -42,7 +42,7 @@ history.
 
 > [!NOTE]
 > Changing the **Code** of a genre or subject in use also renames the books that use it. On saving, the books move to the
-> new code and their call numbers are rewritten (for example `B 4 DEL` becomes `A 4 DEL`).
+> new code and BiblioViva computes again the call numbers of their copies (for example `B 4 DEL` becomes `A 4 DEL`).
 
 ### Add, order and delete
 
@@ -73,9 +73,63 @@ history.
 1. Tick **The reading level is on each copy** only if copies of the same book sit on shelves of different levels;
    otherwise the level is on the book. On saving, the level of each book passes to its copies (or goes back to the
    book, if there are no copies of different levels).
-1. In the **Call number patterns** group write the pattern of the call numbers for **Fiction**, **Fiction with an
-   associated class** and **Non-fiction**, with the placeholders listed above the fields. Under each pattern an example
-   appears. The pattern applies to copies added after saving; existing call numbers do not change.
+
+### Choose how the call number is made
+
+BiblioViva computes the call number of every copy from a scheme and never has it typed in full: each copy keeps it and
+BiblioViva computes it again after every change that concerns it (the classification, the author, the title, the level
+of a copy, the scheme itself). The labels whose call number changed go back among those to print. The scheme is made of
+two choices, also in the first-run wizard, in the **School** step.
+
+1. Open the **Options** tab and find the **Call number patterns** group. Under the group's title BiblioViva explains
+   that when the scheme changes, on save the call numbers are computed again and the labels that change go back among
+   those to print.
+1. In the **Call number** menu choose the order of the parts. Under the menu appears "How the call number is made:
+   BiblioViva computes it from the classification, the level and the author."
+1. In the **End** menu choose how the call number ends. The menu does not appear with the order "Free: typed on each
+   copy".
+1. Read the examples under the menus, written as "Examples: B 4 DEL · B DEL · 590 ROS": they change with the choices.
+
+The orders offered in the **Call number** menu:
+
+| Entry | Form | Example |
+|---|---|---|
+| "Genre, then level" (proposed) | genre, level, end | `B 4 DEL` |
+| "Level, then genre" | level, genre, end | `4 B DEL` |
+| "Genre, without the level" | genre, end | `B DEL` |
+| "Free: typed on each copy" | none: BiblioViva does not compute it | |
+
+For a non-fiction book the call number starts with the class, for example `590 ROS`. Without reading levels the menu
+offers only "Genre, without the level" and "Free: typed on each copy".
+
+The entries of the **End** menu:
+
+- "Author's initials, computed" (proposed): the first three letters of the surname, which cannot be edited.
+- "Author's initials, editable per title": the same, but the cataloguer can change them for each title in the **Call
+  number text** field of **Edit record**; left empty, the field uses the proposed initials.
+- "None": the call number has no end.
+
+> [!NOTE]
+> A book whose author is a special value (`Anonimo`, `AA. VV.`) takes the first three letters of the title, skipping a
+> leading article: "Enciclopedia dei ragazzi" becomes `030 ENC`.
+
+> [!NOTE]
+> Switching to the order "Free: typed on each copy" makes each copy keep the call number it has, as a text written by
+> hand: nothing changes until someone edits it on the copy's page. Under the menus appears "Each copy has its call number
+> typed on its page: BiblioViva does not compute it."
+
+### Write a pattern by hand
+
+For a call number different from the ones offered the pattern is written by hand. The order then shows the entry
+"Custom", with the sentence "The scheme is written by hand in the patterns below."
+
+1. In the **Call number patterns** group open the **Patterns written by hand** section.
+1. Write the pattern for **Fiction**, **Fiction with an associated class** and **Non-fiction**, with the placeholders
+   listed above the fields: `{{genre}}`, `{{class}}`, `{{code}}`, `{{author3}}`, `{{title1}}`, `{{text}}` and
+   `{{copytext}}`. The placeholder `text` is a text per title (in **Edit record**), `copytext` a text per copy. Under
+   each pattern an example appears.
+1. If a pattern uses `{{text}}`, **Value proposed for the title's text** appears: choose "Author's initials", "Title's
+   initial" or "None".
 
 ### Save
 
@@ -84,6 +138,9 @@ history.
    value in the **Choose…** menu. The new code goes on the books and at the start of their call numbers.
 1. If a reading level that has books was removed, the window asks in the same way which level the books move to, or
    **No level**.
+1. If call numbers change, the window counts them: "N copies change call number: their labels go back among those to
+   print." This also happens when a genre, a class or a level is renamed or removed, when the level moves between the
+   book and the copies, and when the scheme changes.
 1. To put back among the labels to print also the spine bands that change only in name, colour or pictogram, tick the
    box that proposes it. Leave it off if the difference on the bands already stuck on does not matter.
 1. Press **Save**. The message "Classification saved" appears, with the number of books moved, of call numbers
@@ -94,9 +151,9 @@ confirmation.
 
 ## Result
 
-The new classification applies at once in the catalogue, in the cataloguers' choices and on the labels. The books moved
-have the new code and call number; their spine bands, and the labels whose call number changed, go back among those to
-print. The save enters the configuration history: see [Undo a configuration change](undo-a-configuration-change.md).
+The saved classification applies at once in the catalogue, in the cataloguers' choices and on the labels. The books moved
+have the new code and the call number computed again; their spine bands, and the labels whose call number changed, go
+back among those to print. The save enters the configuration history: see [Undo a configuration change](undo-a-configuration-change.md).
 
 ## Possible problems
 
@@ -117,6 +174,18 @@ The fields with an error are marked in red; correct them.
 
 "The catalogue has books with codes the classification does not contain" appears: some books have a code that is not in
 the classification. Add those codes here or reclassify those books from the catalogue.
+
+### The pattern written by hand is not accepted
+
+"The pattern cannot be empty." or "Unknown placeholders: …" appears: each pattern must be written and may contain only
+the placeholders listed above the fields. Correct the pattern.
+
+### After saving many labels are to be printed
+
+The save window counted "N copies change call number: their labels go back among those to print.": with the new scheme,
+or with the code or level changed, the call number of those copies differs from the printed one. Print the labels from
+the **Books without labels** tile of the **Dashboard**, as described in [Print book
+labels](../../manual/guides/print-book-labels.md#print-the-missing-labels).
 
 ### The colour or pictogram of a sub-subject does not change
 

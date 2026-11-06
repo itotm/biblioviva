@@ -3,6 +3,7 @@
 // key per node (lists, drag and drop, selection) and the code each node had when it was loaded —
 // a changed code is a rename, and on save the records of the old code follow it. Nothing leaves
 // the page until "Salva"; `dirty` tells whether there is anything to save.
+import type { CallNumberScheme } from "#lib/shared/classification.js";
 import {
 	codeCounts,
 	deweyProblems,
@@ -67,7 +68,12 @@ export class TaxonomyEditor {
 	genres = $state<EditLeaf[]>([]);
 	nonfiction = $state<EditNode[]>([]);
 	deweyMap = $state<EditDewey[]>([]);
-	callNumber = $state({ fiction: "", fictionWithClass: "", nonfiction: "" });
+	callNumber = $state<CallNumberScheme>({
+		fiction: "",
+		fictionWithClass: "",
+		nonfiction: "",
+		text: "author3",
+	});
 	/** Key of the node shown in the side panel. */
 	selected = $state<string | null>(null);
 	#saved = $state("");
@@ -196,7 +202,11 @@ export class TaxonomyEditor {
 	);
 
 	readonly patternsMissing: boolean = $derived(
-		Object.values(this.callNumber).some((p) => p.trim() === ""),
+		[
+			this.callNumber.fiction,
+			this.callNumber.fictionWithClass,
+			this.callNumber.nonfiction,
+		].some((p) => p.trim() === ""),
 	);
 
 	/** Something blocks the save: a node, a Dewey row or an empty pattern has a problem. */

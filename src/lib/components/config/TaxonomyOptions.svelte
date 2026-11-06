@@ -2,11 +2,22 @@
 <!-- The options of the classification (step 11.1): fiction filed by reading level with the scale of
      levels (Phase 12.6: code printed in the call number, label shown; a level in use that goes away
      asks where its books move on save), the level on each copy instead of the record (Q72; moving
-     it is checked on save), and the call number patterns with an example built from the draft. New
-     patterns apply to the copies added from now on; existing call numbers are not rewritten. -->
+     it is checked on save), and the scheme of the segnatura (Q143): an order and an end, or the
+     patterns written by hand, with an example built from the draft. On save every segnatura is
+     computed again with the new scheme (the save dialog counts the copies that change). -->
 <script lang="ts">
 	import { useI18n } from "#lib/i18n/context.js";
-	import { suggestCallNumber } from "#lib/shared/classification.js";
+	import {
+		CALL_TEXT_PROPOSALS,
+		callNumberChoice,
+		callNumberScheme,
+		schemeUses,
+		suggestCallNumber,
+		type CallNumberEnd,
+		type CallNumberOrder,
+	} from "#lib/shared/classification.js";
+	import CallNumberSchemePicker from "#lib/components/CallNumberSchemePicker.svelte";
+	import Select from "#lib/ui/Select.svelte";
 	import { CALL_NUMBER_PLACEHOLDERS, unknownPlaceholders } from "#lib/shared/taxonomy.js";
 	import Card from "#lib/ui/Card.svelte";
 	import Checkbox from "#lib/ui/Checkbox.svelte";
@@ -34,6 +45,15 @@
 	const PATTERNS = ["fiction", "fictionWithClass", "nonfiction"] as const;
 
 	const scheme = $derived(editor.draft);
+	// the order and end the patterns come from; null when they were written by hand
+	const choice = $derived(callNumberChoice(editor.callNumber));
+	let handWritten = $state(false);
+	const exampleLevel = $derived(
+		editor.draft.readingLevels[3]?.code ?? editor.draft.readingLevels[0]?.code ?? "4",
+	);
+	function choose(order: CallNumberOrder, end: CallNumberEnd): void {
+		editor.callNumber = callNumberScheme(order, end);
+	}
 	const firstClass = $derived(
 		editor.draft.nonfiction.flatMap((n) => [n.code, ...n.children.map((c) => c.code)])[0] ?? "",
 	);
@@ -131,34 +151,74 @@
 		{/if}
 	</div>
 	<h3 class="font-semibold">{i18n.t("config.taxonomy.options.patterns")}</h3>
-	<Hint tone="faint">
-		{i18n.t("config.taxonomy.options.patternsHint", {
-			// escaped: the message format would read `{{genre}}` as a placeholder of its own
-			placeholders: CALL_NUMBER_PLACEHOLDERS.map((p) => `\\{\\{${p}\\}\\}`).join(" "),
-		})}
-	</Hint>
-	{#each PATTERNS as key (key)}
-		{@const unknown = unknownPlaceholders(editor.callNumber[key])}
-		<Field
-			label={i18n.t(`config.taxonomy.options.pattern.${key}`)}
-			errors={editor.callNumber[key].trim() === ""
-				? [i18n.t("config.taxonomy.problems.patternRequired")]
-				: []}
-			name="pattern-{key}"
+	<Hint tone="faint">{i18n.t("config.taxonomy.options.schemeHint")}</Hint>
+	<CallNumberSchemePicker
+		bind:order={
+			() => choice?.order ?? "genreLevel", (order) => choose(order, choice?.end ?? "author")
+		}
+		bind:end={
+			() => choice?.end ?? "author", (end) => choose(choice?.order ?? "genreLevel", end)
+		}
+		levels={editor.fictionByClass}
+		custom={choice === null}
+		example={{
+			genre: editor.draft.genres[0]?.code ?? "B",
+			level: exampleLevel,
+			classCode: firstClass || "590",
+		}}
+		testid="option-call-number"
+	/>
+	<details
+		class="space-y-3"
+		open={choice === null || handWritten}
+		ontoggle={(e) => (handWritten = e.currentTarget.open)}
+		data-testid="call-number-patterns"
+	>
+		<summary class="cursor-pointer font-semibold"
+			>{i18n.t("config.taxonomy.options.handWritten")}</summary
 		>
-			<Input mono bind:value={editor.callNumber[key]} data-testid="pattern-{key}" />
-			{#snippet after()}
-				{#if unknown.length > 0}
-					<Hint tone="error"
-						>{i18n.t("config.taxonomy.options.unknownPlaceholders", {
-							names: unknown.join(", "),
+		<Hint tone="faint">
+			{i18n.t("config.taxonomy.options.placeholdersHint", {
+				// escaped: the message format would read `{{genre}}` as a placeholder of its own
+				placeholders: CALL_NUMBER_PLACEHOLDERS.map((p) => `\\{\\{${p}\\}\\}`).join(" "),
+			})}
+		</Hint>
+		{#each PATTERNS as key (key)}
+			{@const unknown = unknownPlaceholders(editor.callNumber[key])}
+			<Field
+				label={i18n.t(`config.taxonomy.options.pattern.${key}`)}
+				errors={editor.callNumber[key].trim() === ""
+					? [i18n.t("config.taxonomy.problems.patternRequired")]
+					: []}
+				name="pattern-{key}"
+			>
+				<Input mono bind:value={editor.callNumber[key]} data-testid="pattern-{key}" />
+				{#snippet after()}
+					{#if unknown.length > 0}
+						<Hint tone="error"
+							>{i18n.t("config.taxonomy.options.unknownPlaceholders", {
+								names: unknown.join(", "),
+							})}</Hint
+						>
+					{/if}
+					<Hint tone="faint" data-testid="pattern-example-{key}"
+						>{i18n.t("config.taxonomy.options.example", {
+							example: example(key),
 						})}</Hint
 					>
-				{/if}
-				<Hint tone="faint" data-testid="pattern-example-{key}"
-					>{i18n.t("config.taxonomy.options.example", { example: example(key) })}</Hint
-				>
-			{/snippet}
-		</Field>
-	{/each}
+				{/snippet}
+			</Field>
+		{/each}
+		{#if schemeUses(editor.draft, "text")}
+			<Field label={i18n.t("config.taxonomy.options.textProposal")} name="text-proposal">
+				<Select bind:value={editor.callNumber.text} data-testid="pattern-text-proposal">
+					{#each CALL_TEXT_PROPOSALS as p (p)}
+						<option value={p}
+							>{i18n.t(`config.taxonomy.options.textProposals.${p}`)}</option
+						>
+					{/each}
+				</Select>
+			</Field>
+		{/if}
+	</details>
 </Card>

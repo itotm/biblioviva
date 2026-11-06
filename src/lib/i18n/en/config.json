@@ -121,11 +121,19 @@
 			"toCopies": "On save the reading level of each book moves to its copies.",
 			"toRecords": "On save the level of the copies goes back to the book; not possible when copies of the same book have different levels.",
 			"patterns": "Call number patterns",
-			"patternsHint": "They apply to the copies added from now on; existing call numbers do not change. Placeholders: {{placeholders}}.",
+			"schemeHint": "BiblioViva computes the call number of every copy with this scheme. When it changes, on save the call numbers are computed again and the labels that change go back among those to print.",
 			"pattern": {
 				"fiction": "Fiction",
 				"fictionWithClass": "Fiction with an associated class",
 				"nonfiction": "Non-fiction"
+			},
+			"handWritten": "Patterns written by hand",
+			"placeholdersHint": "Placeholders: {{placeholders}}. text is a text per title (in \"Edit record\"), copytext a text per copy.",
+			"textProposal": "Value proposed for the title's text",
+			"textProposals": {
+				"author3": "Author's initials",
+				"title1": "Title's initial",
+				"none": "None"
 			},
 			"unknownPlaceholders": "Unknown placeholders: {{names}}.",
 			"example": "Example: {{example}}"
@@ -139,7 +147,7 @@
 			"removedHint": "Choose where to move the books of each deleted code: the new code goes on the books, at the start of their call numbers and on the spine bands.",
 			"moveTo": "{{code}} · {{label}}: {{records}} {{records:plural; one:book; other:books;}} ({{copies}} {{copies:plural; one:copy; other:copies;}}). Move to",
 			"choose": "Choose…",
-			"callNumbers": "{{count}} {{count:plural; one:call number starts; other:call numbers start;}} with a deleted code: the code at the start is replaced (for example B 4 DEL becomes A 4 DEL).",
+			"callNumbers": "{{count}} {{count:plural; one:copy changes; other:copies change;}} call number: their labels go back among those to print.",
 			"bandsMoved": "The spine bands of the moved books, and the labels whose call number changed, go back among those to print.",
 			"unused": "Deleted, used by no book: {{codes}}.",
 			"reprint": "Put back among the labels to print the spine bands of {{copies}} {{copies:plural; one:copy; other:copies;}} whose name, colour or pictogram changes ({{codes}})",

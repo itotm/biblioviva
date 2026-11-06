@@ -44,7 +44,6 @@ const input = (over: Partial<FastAddInput> = {}): FastAddInput => ({
 	notes: "",
 	copies: "2",
 	itemType: "libro",
-	itemCallNumber: "",
 	itemReadingLevel: "",
 	acquisitionDate: "",
 	source: "sbn",
@@ -90,10 +89,11 @@ describe("fastAddBiblio", () => {
 			CatalogValidationError,
 		);
 		expect(db.select().from(biblio).all()).toHaveLength(0);
-		// typed source falls back to manual, explicit call number wins
+		// typed source falls back to manual; the call number is computed (a copy text is ignored
+		// by a scheme without one, Q143)
 		const r = fastAddBiblio(
 			db,
-			input({ source: "", sourceId: "", itemCallNumber: "X 1", copies: "1" }),
+			input({ source: "", sourceId: "", itemCallText: "X 1", copies: "1" }),
 			actor,
 			rules,
 		);
@@ -101,6 +101,9 @@ describe("fastAddBiblio", () => {
 			source: "manual",
 			sourceId: null,
 		});
-		expect(db.select().from(item).all()[0]?.callNumber).toBe("X 1");
+		expect(db.select().from(item).all()[0]).toMatchObject({
+			callNumber: expect.any(String),
+			callText: null,
+		});
 	});
 });

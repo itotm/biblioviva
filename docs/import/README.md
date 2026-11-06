@@ -79,7 +79,13 @@ classify; its copies are not lent until it is classified. `reading_level` accept
 labels of the configured scale and ignores Koha's `S`. `item_type` is read per copy, but the
 material is the record's: copies of one new title with different types ask whether the record takes
 the type of most of them (Q139). `consultazione` (Koha's `REF`) is not a material: it marks that copy
-excluded from loans. A `biblio_key` imported before, or an ISBN
+excluded from loans. `call_number` is not stored as it is: the segnatura is computed from the scheme
+`classification.callNumber` (Q143). With a scheme that has a written part per title (`{{text}}`), the
+title takes the part of the file's segnature after the computed head (the most frequent among its
+copies); with the free scheme each copy keeps its segnatura as its own text; copies whose segnatura in
+the file still differs from the computed one are counted, and the operator answers once whether they
+take the computed one (their labels then go back among those to print) or the rows are errors. A book
+without a real author (`Anonimo`, `AA. VV.`) takes the first letters of its title (`030 ENC`). A `biblio_key` imported before, or an ISBN
 already in the catalogue, adds the copies to that record; a barcode already in the catalogue on the
 same record is skipped (so the same file can be imported twice), on another record it is an error.
 An empty author or publisher is an error unless the operator ticks "usa i valori speciali"

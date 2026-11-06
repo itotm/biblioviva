@@ -40,6 +40,8 @@ export function seedOptionsFromConfig(
 		groups: choices.groups ?? (fromPreset.length > 0 ? fromPreset : undefined),
 		teacherGroupName: config.school.teacherGroupName,
 		readingLevels: config.classification.readingLevels.map((l) => l.code),
+		callNumber: config.classification.callNumber,
+		classPerItem: config.classification.classPerItem,
 		itemTypes: config.library.itemTypes.map((t) => ({
 			code: t.code,
 			notForLoan: t.notForLoan,

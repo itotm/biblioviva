@@ -155,6 +155,7 @@
 		"school": "Scuola",
 		"classes": "Classi",
 		"classesValue": "{{count}} {{count:plural; one:classe; other:classi;}} ({{first}}…) e il gruppo {{teachers}}",
+		"callNumber": "Segnatura",
 		"readingLevels": "Livelli di lettura",
 		"none": "Nessuno",
 		"codes": "Codici",

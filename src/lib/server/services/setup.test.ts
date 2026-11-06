@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
+import { callNumberScheme } from "#lib/shared/classification.js";
 import { TEST_CODES } from "../../../../tests/helpers/codes.js";
 import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -106,6 +107,7 @@ describe("setup service", () => {
 				teacherGroupName: "Professori",
 				classLabel: "{level}{group}",
 				readingLevels: false,
+				callNumber: { order: "genre", end: "text" },
 				schoolYearStart: "09-01",
 				schoolYearLabel: "span",
 			},
@@ -154,6 +156,8 @@ describe("setup service", () => {
 		// no reading levels: fiction is not shelved by level
 		expect(loaded.config.classification.readingLevels).toEqual([]);
 		expect(loaded.config.classification.fictionByClass).toBe(false);
+		// the scheme of the segnatura chosen in the "Scuola" step (Q143)
+		expect(loaded.config.classification.callNumber).toEqual(callNumberScheme("genre", "text"));
 		expect(
 			loaded.config.security.users.map((u) => [u.username, u.roles[0], u.passwordHash]),
 		).toEqual([
@@ -247,6 +251,10 @@ describe("setup service", () => {
 		// the fragment holds the language and the colour set: written there, not into config.json
 		expect(readJsonFile(join(configDir, "ui.json"))).toEqual({ theme: "ocean", locale: "it" });
 		expect(readJsonFile(join(configDir, "classification.json")).fictionByClass).toBe(true);
+		// no answer: the library's own scheme, `B 4 DEL`
+		expect(readJsonFile(join(configDir, "classification.json")).callNumber).toEqual(
+			callNumberScheme("genreLevel", "author"),
+		);
 		expect(loadConfig(configDir).config.ui.theme).toBe("ocean");
 
 		// the demo build writes the same files without a history

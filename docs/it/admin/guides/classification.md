@@ -44,7 +44,8 @@ cronologia della configurazione.
 
 > [!NOTE]
 > Cambiare il **Codice** di un genere o di un argomento in uso rinomina anche i libri che lo usano. Al salvataggio i libri
-> passano al codice nuovo e le loro segnature vengono riscritte (per esempio `B 4 DEL` diventa `A 4 DEL`).
+> passano al codice nuovo e BiblioViva calcola di nuovo le segnature delle loro copie (per esempio `B 4 DEL` diventa
+> `A 4 DEL`).
 
 ### Aggiungere, ordinare ed eliminare
 
@@ -77,9 +78,63 @@ cronologia della configurazione.
 1. Spuntare **Il livello di lettura sta su ogni copia** soltanto se copie dello stesso libro stanno in scaffali di
    livelli diversi; altrimenti il livello sta sul libro. Al salvataggio il livello di ogni libro passa alle sue copie
    (o torna sul libro, se non ci sono copie di livelli diversi).
-1. Nel gruppo **Schemi della segnatura** scrivere lo schema delle segnature per **Narrativa**, **Narrativa con classe
-   associata** e **Saggistica**, con i segnaposto elencati sopra i campi. Sotto ogni schema compare un esempio. Lo
-   schema vale per le copie aggiunte dopo il salvataggio; le segnature esistenti non cambiano.
+
+### Scegliere come si compone la segnatura
+
+BiblioViva calcola la segnatura di ogni copia da uno schema e non la scrive mai per intero: ogni copia la conserva e
+BiblioViva la calcola di nuovo dopo ogni modifica che la riguarda (la classificazione, l'autore, il titolo, il livello
+di una copia, lo schema stesso). Le etichette con una segnatura cambiata tornano tra quelle da stampare. Lo schema si
+compone con due scelte, anche nella configurazione guidata, nel passo **Scuola**.
+
+1. Aprire la scheda **Opzioni** e cercare il gruppo **Schemi della segnatura**. Sotto il titolo del gruppo BiblioViva
+   spiega che cambiando lo schema, al salvataggio, le segnature si calcolano di nuovo e le etichette che cambiano
+   tornano tra quelle da stampare.
+1. Nel menu **Segnatura** scegliere l'ordine delle parti. Sotto il menu compare «Come si compone la segnatura:
+   BiblioViva la calcola dalla classificazione, dal livello e dall'autore.»
+1. Nel menu **Parte finale** scegliere come finisce la segnatura. Il menu non compare con l'ordine «Libera: scritta a
+   mano su ogni copia».
+1. Leggere gli esempi sotto i menu, scritti come «Esempi: B 4 DEL · B DEL · 590 ROS»: cambiano insieme alle scelte.
+
+Gli ordini offerti nel menu **Segnatura**:
+
+| Voce | Forma | Esempio |
+|---|---|---|
+| «Genere, poi livello» (proposta) | genere, livello, parte finale | `B 4 DEL` |
+| «Livello, poi genere» | livello, genere, parte finale | `4 B DEL` |
+| «Genere, senza livello» | genere, parte finale | `B DEL` |
+| «Libera: scritta a mano su ogni copia» | nessuna: BiblioViva non la calcola | |
+
+Per un libro di saggistica la segnatura comincia con la classe, per esempio `590 ROS`. Senza livelli di lettura il menu
+offre soltanto «Genere, senza livello» e «Libera: scritta a mano su ogni copia».
+
+Le voci del menu **Parte finale**:
+
+- «Iniziali dell'autore, calcolate» (proposta): le prime tre lettere del cognome, che non si possono modificare.
+- «Iniziali dell'autore, modificabili per titolo»: la stessa cosa, ma chi cataloga può cambiarle per ogni titolo nel
+  campo **Testo della segnatura** di **Modifica scheda**; lasciato vuoto, il campo usa le iniziali proposte.
+- «Nessuna»: la segnatura non ha una parte finale.
+
+> [!NOTE]
+> Un libro il cui autore è un valore speciale (`Anonimo`, `AA. VV.`) prende le prime tre lettere del titolo, saltando un
+> articolo iniziale: «Enciclopedia dei ragazzi» diventa `030 ENC`.
+
+> [!NOTE]
+> Passando all'ordine «Libera: scritta a mano su ogni copia» ogni copia tiene la segnatura che ha, come testo scritto a
+> mano: non cambia nulla finché qualcuno non la modifica nella scheda della copia. Sotto i menu compare «Ogni copia ha
+> la segnatura scritta nella sua scheda: BiblioViva non la calcola.»
+
+### Scrivere uno schema a mano
+
+Per una segnatura diversa da quelle offerte si scrive lo schema a mano. L'ordine mostra allora la voce
+«Personalizzata», con la frase «Lo schema è scritto a mano negli schemi qui sotto.»
+
+1. Nel gruppo **Schemi della segnatura** aprire la sezione **Schemi scritti a mano**.
+1. Scrivere lo schema per **Narrativa**, **Narrativa con classe associata** e **Saggistica**, con i segnaposto elencati
+   sopra i campi: `{{genre}}`, `{{class}}`, `{{code}}`, `{{author3}}`, `{{title1}}`, `{{text}}` e `{{copytext}}`. Il
+   segnaposto `text` è un testo per titolo (in **Modifica scheda**), `copytext` un testo per copia. Sotto ogni schema
+   compare un esempio.
+1. Se uno schema usa `{{text}}`, compare **Valore proposto per il testo del titolo**: scegliere «Iniziali
+   dell'autore», «Iniziale del titolo» o «Nessuno».
 
 ### Salvare
 
@@ -88,6 +143,9 @@ cronologia della configurazione.
    codice il nuovo valore nel menu **Scegli…**. Il codice nuovo va sui libri e all'inizio delle loro segnature.
 1. Se si è tolto un livello di lettura con libri, la finestra chiede nello stesso modo a quale livello passano i
    libri, oppure **Nessun livello**.
+1. Se cambiano segnature, la finestra le conta: «N copie cambiano segnatura: le loro etichette tornano tra quelle da
+   stampare.» Succede anche rinominando o togliendo un genere, una classe o un livello, spostando il livello tra libro e
+   copie e cambiando lo schema.
 1. Per rimettere tra le etichette da stampare anche le fascette che cambiano solo nome, colore o pittogramma, spuntare la
    casella che lo propone. Lasciarla spenta se la differenza sulle fascette già attaccate non conta.
 1. Premere **Salva**. Compare il messaggio «Classificazione salvata», con il numero di libri spostati, di segnature
@@ -98,9 +156,9 @@ BiblioViva chiede conferma.
 
 ## Risultato
 
-La classificazione nuova vale subito nel catalogo, nelle scelte di chi cataloga e sulle etichette. I libri spostati hanno
-il codice e la segnatura nuovi; le loro fascette, e le etichette con la segnatura cambiata, tornano tra quelle da
-stampare. Il salvataggio entra nella cronologia della configurazione: vedere
+La classificazione salvata vale subito nel catalogo, nelle scelte di chi cataloga e sulle etichette. I libri spostati hanno
+il codice e la segnatura calcolata di nuovo; le loro fascette, e le etichette con la segnatura cambiata, tornano tra
+quelle da stampare. Il salvataggio entra nella cronologia della configurazione: vedere
 [Annullare una modifica della configurazione](undo-a-configuration-change.md).
 
 ## Possibili problemi
@@ -122,6 +180,18 @@ I campi con un errore sono segnati in rosso; correggerli.
 
 Compare «Nel catalogo ci sono libri con codici che la classificazione non contiene»: alcuni libri hanno un codice che
 non è nella classificazione. Aggiungere quei codici qui oppure riclassificare quei libri dal catalogo.
+
+### Lo schema scritto a mano non è accettato
+
+Compare «Lo schema non può essere vuoto.» oppure «Segnaposto sconosciuti: …»: ogni schema va scritto e può contenere
+soltanto i segnaposto elencati sopra i campi. Correggere lo schema.
+
+### Dopo il salvataggio molte etichette sono da stampare
+
+La finestra di salvataggio ha contato «N copie cambiano segnatura: le loro etichette tornano tra quelle da stampare.»:
+con il nuovo schema, o con il codice o il livello cambiato, la segnatura di quelle copie è diversa da quella stampata.
+Stampare le etichette dal riquadro **Libri senza etichette** della **Dashboard**, come descritto in [Stampare le
+etichette dei libri](../../manual/guides/print-book-labels.md#stampare-le-etichette-che-mancano).
 
 ### Il colore o il pittogramma di un sottoargomento non cambia
 

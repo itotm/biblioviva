@@ -15,11 +15,17 @@ The choice is one of two ways:
 - non-fiction: a subject is chosen (a number like the Dewey ones, for example `590`), looking for it in two levels:
   first the main subject, then a more precise subject.
 
-The call number is the code printed on the label and on the spine band, which says where the book goes. It is derived
-from the classification and from the first three letters of the author's surname. Examples: `B 4 DEL` is a novel of
+The call number is the code printed on the label and on the spine band, which says where the book goes. BiblioViva
+computes it by itself from the classification, the reading level and the first three letters of the author's surname:
+it is not typed whole. Examples: `B 4 DEL` is a novel of
 genre B, reading level 4, by an author whose surname starts with DEL; `B DEL` is the same book in a library that does
-not use levels; `590 ROS` is a non-fiction book of subject 590 by an author whose surname starts with ROS. BiblioViva
-suggests the call number by itself and it can be corrected.
+not use levels; `590 ROS` is a non-fiction book of subject 590 by an author whose surname starts with ROS.
+
+If the author is "Anonimo" or "AA. VV." the first three letters of the title are used, skipping a leading article:
+"Gli animali della fattoria" becomes `590 ANI` and "Enciclopedia dei ragazzi" becomes `030 ENC`. All the copies of a book
+have the same call number; the exception is the reading level when it is on each copy, because then each copy carries its
+own. The form depends on the scheme the library has chosen (for example with the level before the genre, `4 B DEL`), see
+[Change the classification and the reading levels](../../admin/guides/classification.md). A book not yet classified has no call number: it gets one when it is classified.
 
 The reading level is a code the library chooses for novels (in the starting configuration from `1` to `5`) and does not
 match the patron's class. If the level is assigned to each copy and not to the book, it is chosen in the form of the
@@ -69,10 +75,10 @@ copies, see [Add a copy to a book already in the catalogue](add-a-copy.md).
 1. Select the books with Ctrl + click (or Shift + click for a group) on the rows.
 1. Press **Reclassify**. The "Reclassify the selected titles" window opens.
 1. Choose the **Kind**, then the **Genre** or the **Classification** and, for fiction, the **Level**.
-1. To update the call numbers of the copies too, tick "Rewrite the copies' call numbers from the new classification".
 1. Press **Check**. The window says how many titles change.
 1. Press **Reclassify** followed by the number of titles. A notice confirms "… titles reclassified, … call numbers
-   rewritten". The spine bands (and the labels, if the call number has changed) go back among those to print: see
+   rewritten": the call number of the copies follows the new classification. The spine bands (and the labels, if the call
+   number has changed) go back among those to print: see
    [Print book labels](print-book-labels.md).
 
 ## Result
@@ -98,8 +104,8 @@ Choose the closest one and make a note of it. The list of genres and subjects is
 
 ### A record already classified must be moved
 
-The **Edit record** form changes the classification but does not rewrite the call numbers of the copies. To update
-them use **Reclassify** as above.
+The call number of the copies follows the classification: correct it in **Edit record**, or for many books together
+with **Reclassify** as above. The spine bands go back among those to print.
 
 ### The book is already classified
 

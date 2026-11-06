@@ -39,6 +39,7 @@
 	import Card from "#lib/ui/Card.svelte";
 	import Grid from "#lib/ui/Grid.svelte";
 	import Hint from "#lib/ui/Hint.svelte";
+	import CodeText from "#lib/ui/CodeText.svelte";
 	import Input from "#lib/ui/Input.svelte";
 	import Page from "#lib/ui/Page.svelte";
 	import Row from "#lib/ui/Row.svelte";
@@ -215,9 +216,10 @@
 	</section>
 
 	<section class="space-y-3">
-		<h2 class="h3">Text, alerts and badges (`Hint`, `Alert`, `Badge`, `Link`)</h2>
+		<h2 class="h3">Text, alerts and badges (`Hint`, `CodeText`, `Alert`, `Badge`, `Link`)</h2>
 		<Card variant="outlined" gap="3">
 			<Hint>Testo secondario (muted).</Hint>
+			<CodeText>B 4 DEL</CodeText>
 			<Hint tone="soft">Testo secondario (soft).</Hint>
 			<Hint tone="error">Errore di campo.</Hint>
 			<Hint tone="primary">96 titoli corrispondono ai filtri</Hint>

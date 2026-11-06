@@ -22,6 +22,8 @@ import { KEYBOARD_LAYOUTS } from "#lib/shared/barcodes/layouts.js";
 import { DEFAULT_SCAN_SOUND, SCAN_SOUNDS } from "#lib/shared/barcodes/scan-sounds.js";
 import { Z3950_HOST, Z3950_WORD } from "#lib/shared/z3950.js";
 import { DEFAULT_CHECK, DEFAULT_CODE_PRESET, presetFormats } from "#lib/shared/barcodes/presets.js";
+import { CALL_TEXT_PROPOSALS } from "#lib/shared/classification.js";
+import { unknownPlaceholders } from "#lib/shared/taxonomy.js";
 
 const label = v.pipe(v.string(), v.minLength(1), v.maxLength(120));
 const z3950Word = v.pipe(v.string(), v.regex(Z3950_WORD, "one word, without spaces"));
@@ -94,6 +96,16 @@ const labelStock = v.object({
 	gapMm: v.object({ x: mm, y: mm }),
 	cornerRadiusMm: v.optional(mm, 0),
 });
+
+/** A pattern of the segnatura: not empty, only the known placeholders (Q143). */
+const callPattern = v.pipe(
+	v.string(),
+	v.check((p) => p.trim() !== "", "the pattern is empty"),
+	v.check(
+		(p) => unknownPlaceholders(p).length === 0,
+		(issue) => `unknown placeholder ${unknownPlaceholders(issue.input).join(", ")}`,
+	),
+);
 
 const labelJob = v.object({ template: code, stock: code });
 
@@ -301,11 +313,13 @@ export const configSchema = v.object({
 			v.array(v.object({ prefix: v.pipe(v.string(), v.regex(/^\d{1,3}$/)), code })),
 			[],
 		),
+		/** The scheme of the segnatura (§3.17, Q143): three patterns and what `{{text}}` proposes. */
 		callNumber: v.optional(
 			v.object({
-				fiction: v.optional(v.string(), "{{genre}} {{author3}}"),
-				fictionWithClass: v.optional(v.string(), "{{genre}} {{class}} {{author3}}"),
-				nonfiction: v.optional(v.string(), "{{code}} {{author3}}"),
+				fiction: v.optional(callPattern, "{{genre}} {{author3}}"),
+				fictionWithClass: v.optional(callPattern, "{{genre}} {{class}} {{author3}}"),
+				nonfiction: v.optional(callPattern, "{{code}} {{author3}}"),
+				text: v.optional(v.picklist(CALL_TEXT_PROPOSALS), "author3"),
 			}),
 			{},
 		),

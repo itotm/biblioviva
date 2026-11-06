@@ -41,9 +41,15 @@ a chi cataloga i libri.
    genere o l'argomento. Per la narrativa scegliere anche il **Livello di lettura**, se la biblioteca lo usa. Il modo di
    scegliere è spiegato in [Classificare i libri](classify-books.md). Se non si sa ancora come classificare il libro,
    scegliere **Classifica dopo**.
-1. Nella sezione **Copie** scrivere il **Numero di copie** (da 1 a 100) e controllare la **Segnatura**, che BiblioViva
-   propone dalla classificazione: per esempio `B 4 DEL` indica genere B, livello di lettura 4, autore con il cognome che
-   inizia per DEL. La segnatura si può correggere. La **Data di acquisizione** è quella di oggi.
+1. Controllare sotto il selettore la **Segnatura delle copie**, che BiblioViva calcola dalla classificazione, dal
+   livello e dall'autore: per esempio `B 4 DEL` indica genere B, livello di lettura 4, autore con il cognome che inizia
+   per DEL. Per un libro di autore «Anonimo» o «AA. VV.» si usano le prime lettere del titolo, saltando l'articolo
+   iniziale. Con **Classifica dopo** compare «Dopo la classificazione». La forma dipende dallo schema scelto dalla
+   biblioteca, vedere [Modificare la classificazione e i livelli di lettura](../../admin/guides/classification.md).
+1. Se compare il campo **Testo della segnatura**, lasciarlo vuoto per usare le iniziali proposte dall'autore (in grigio)
+   oppure scrivere le lettere volute.
+1. Nella sezione **Copie** scrivere il **Numero di copie** (da 1 a 100). Con lo schema libero della biblioteca la
+   **Segnatura** si scrive qui. La **Data di acquisizione** è quella di oggi.
 1. Se la biblioteca ha attiva la copertina, controllare il riquadro **Copertina** accanto al modulo: BiblioViva la
    cerca da sola, e la guida [Aggiungere la copertina](add-a-cover.md) spiega come sostituirla con una foto.
 1. Premere **Salva scheda e copie**. Si apre la conferma «Scheda salvata», con i **Codici delle copie** (per esempio

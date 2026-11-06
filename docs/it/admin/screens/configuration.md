@@ -43,7 +43,7 @@ Cinque schede aprono gli editor dedicati, ciascuno in una pagina propria.
   [Aspetto e lingua](appearance.md). Guida: [Impostare la biblioteca](../guides/set-up-the-library.md).
 - **Classi**: le classi della scuola e i gruppi dei docenti. Vedere [Classi](classes.md). Guida:
   [Impostare le classi](../guides/set-up-classes.md).
-- **Classificazione**: generi, argomenti, pittogrammi, Dewey e segnature, con i livelli di lettura. Guida:
+- **Classificazione**: generi, argomenti, pittogrammi, Dewey e schema della segnatura, con i livelli di lettura. Guida:
   [Modificare la classificazione e i livelli di lettura](../guides/classification.md).
 - **Template di stampa**: le cartelle dei template di tessere, etichette, ricevute e solleciti. Vedere
   [Template di stampa](templates.md).

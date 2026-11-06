@@ -120,8 +120,8 @@ scanner and the printer](../../setup/steps/scanner-printer.md).
 
 ### The spine band has too long a text or the wrong pictogram
 
-The spine band follows the classification and the call number of the copy: correct them, see [Correct a book
-record](edit-a-record.md), and reprint with **Spine band only**. The graphic template of the labels is edited by the
+The spine band follows the classification and the call number of the copy, which BiblioViva computes from the data of the
+book: correct the classification, the author or the title, see [Correct a book record](edit-a-record.md), and reprint with **Spine band only**. The graphic template of the labels is edited by the
 administrator, see [Edit the labels and the spine band](../../admin/guides/edit-label-templates.md).
 
 ## Related pages

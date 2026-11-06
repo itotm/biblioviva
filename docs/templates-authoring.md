@@ -300,9 +300,9 @@ Three kinds ship, each with a built-in template and its own defaults in `labels.
 | Field | Content |
 |---|---|
 | `{{item.barcode}}` | the copy's barcode (`2026-00427`, or a legacy number) |
-| `{{item.call_number}}` | the copy's call number (segnatura), or the suggested one when empty |
+| `{{item.call_number}}` | the copy's call number (segnatura), computed from the scheme `classification.callNumber`; in a preview, the one a made-up copy gets |
 | `{{item.item_type}}` | the item type code (`libro`, `dvd`, …), the record's: the same for every copy of the title |
-| `{{call.head}}`, `{{call.rest}}` | the call number split at its last token: `B 4` + `DEL`, `590` + `ROS`, `B` + `DEL` |
+| `{{call.head}}`, `{{call.rest}}` | the call number split into its shelf part (the classification placeholders it begins with) and the rest: `B 4` + `DEL`, `590` + `ROS`, `4 B` + `DEL`; with the free scheme, at its last word |
 | `{{biblio.title_short}}` | the title cut to `labels.titleMaxChars` characters (30) |
 | `{{biblio.author_short}}` | the part of the author before the comma (`Rossi`) |
 | `{{biblio.publication_year}}` | the year, or empty |

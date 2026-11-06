@@ -52,7 +52,6 @@ function fixture(): ReturnType<typeof createTestDb> {
 		db,
 		id,
 		{
-			callNumber: "",
 			readingLevel: "",
 			enumeration: "",
 			acquisitionDate: "2020-01-01",

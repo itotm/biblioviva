@@ -124,10 +124,18 @@ The school type proposes the years, the classes and the reading levels. The clas
    it starts, as "2026". In Italy two years are used.
 1. Leave the **Fiction shelved by reading level** box ticked if the library arranges novels by level. Below the box
    appear the levels that will be created.
+1. Leave the proposed entry, "Genre, then level", in **Call number**, or choose another order. BiblioViva computes the
+   call number of each copy from the classification, the level and the author; with "Free: typed on each copy" the call
+   number is typed on each copy instead. Without reading levels the menu offers only "Genre, without the level" and
+   "Free: typed on each copy".
+1. Leave the proposed entry, "Author's initials, computed", in **End**, or choose another. The menu does not appear with
+   the free order.
+1. Check the examples under the menus, written as "Examples: B 4 DEL · B DEL · 590 ROS".
 1. Press **Next**.
 
 Years, classes and reading levels can be changed later in **Administration** → **Configuration** → **School** and in
-**Administration** → **Configuration** → **Classes**.
+**Administration** → **Configuration** → **Classes**. The call number is changed in **Administration** →
+**Configuration** → **Classification**: see [Change the classification and the reading levels](../../admin/guides/classification.md#choose-how-the-call-number-is-made).
 
 ### Codes
 
@@ -204,7 +212,7 @@ With the sample data on, the fields cannot be edited: all the accounts use the p
 
 <!-- figure: setup/summary | The Summary with the choices and the account passwords -->
 
-1. Check the summary: language, colours, library, classes, codes and sample data.
+1. Check the summary: language, colours, library, classes, call number, codes and sample data.
 1. Copy the passwords of all the accounts, for example on a sheet of paper kept safe.
 1. Press **Complete the setup**. While saving, the button shows "Saving…".
 

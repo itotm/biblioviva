@@ -142,8 +142,8 @@ senza cambiare nulla.
 
 **Riclassifica** cambia il genere o l'argomento di tutti i libri scelti. La finestra **Riclassifica i titoli
 selezionati** indica «N titoli» e chiede il **Tipo** e poi il **Genere** (con il **Livello**, se previsto) oppure la
-**Classificazione**. La casella «Riscrivere le segnature delle copie secondo la nuova classificazione» fa riscrivere le
-segnature; in questo caso le fascette del dorso, e le etichette se la segnatura cambia, tornano tra quelle da stampare.
+**Classificazione**. La finestra avvisa: «La segnatura delle copie segue la nuova classificazione. Le fascette (e le etichette, se cambia la
+segnatura) tornano tra quelle da stampare.»
 Il pulsante **Controlla** dice quanti titoli cambiano («N titoli cambiano»); il pulsante «Riclassifica N titoli» applica
 il cambio e un messaggio conferma «N titoli riclassificati, N segnature riscritte». La procedura è in
 [Classificare i libri](../guides/classify-books.md).

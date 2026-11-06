@@ -40,7 +40,7 @@ dell'elenco, dal pulsante **Classifica** della [Scheda del libro](book-record.md
 prestiti, quando una copia è stata rifiutata perché il libro non è classificato. In alto il pulsante di ritorno porta
 all'elenco **Da classificare**.
 
-<!-- figure: catalog/classify-flow | La pagina Classifica il libro con la scelta del genere e la segnatura proposta -->
+<!-- figure: catalog/classify-flow | La pagina Classifica il libro con la scelta del genere e la segnatura delle copie -->
 
 Nella figura:
 
@@ -69,8 +69,9 @@ l'argomento. **Salva e avanti** resta spento finché non è stato scelto un gene
 
 ### Segnatura delle copie
 
-Appena scelta la classificazione, la pagina scrive **Segnatura delle copie** con la segnatura che le copie riceveranno.
-La nota spiega: «Le copie senza segnatura prendono questa; poi la fascetta si può stampare.»
+Appena scelta la classificazione, la pagina scrive **Segnatura delle copie** con la segnatura che le copie riceveranno,
+calcolata da BiblioViva dalla classificazione, dal livello e dall'autore. La nota spiega: «Le copie prendono questa
+segnatura; poi la fascetta si può stampare.»
 
 ### Pulsanti
 

@@ -20,7 +20,8 @@ import { generateCode } from "#lib/shared/barcodes/pattern.js";
 import { DEFAULT_CODE_FORMATS } from "#lib/shared/barcodes/presets.js";
 import { buildCodeTable, type CodeTable } from "#lib/shared/barcodes/table.js";
 import { invertAuthorName } from "#lib/shared/author-name.js";
-import { author3 } from "#lib/shared/classification.js";
+import { callNumberScheme, type CallNumberScheme } from "#lib/shared/classification.js";
+import { refreshCallNumbers } from "#lib/server/services/call-numbers.js";
 import { schoolYearFor } from "#lib/shared/school-year.js";
 import { classLabel, levelOf, levelPosition, type SchoolStructure } from "#lib/shared/school.js";
 import { normalizeSearchText } from "#lib/shared/text.js";
@@ -71,6 +72,9 @@ export interface SeedOptions {
 	classCodes?: string[];
 	/** The formats of the generated codes (the configuration's; the default formats otherwise). */
 	codes?: CodeTable;
+	/** The scheme of the segnatura and where the level is (the configuration's; the default otherwise). */
+	callNumber?: CallNumberScheme;
+	classPerItem?: boolean;
 }
 
 export interface SeedSummary {
@@ -124,6 +128,8 @@ const DEFAULTS: Required<Omit<SeedOptions, "codes" | "groups">> = {
 		{ code: "dvd", notForLoan: false },
 	],
 	country: "IT",
+	callNumber: callNumberScheme("genreLevel", "author"),
+	classPerItem: false,
 	genres: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "L", "M", "N", "P", "R"],
 	classCodes: [
 		"001",
@@ -450,21 +456,12 @@ export function seedDatabase(db: Db, options: SeedOptions = {}): SeedSummary {
 			const barcode = generateCode(itemFormat, { counter: n, year });
 			// a few recent copies still wait for their labels
 			const labelsPending = year === 2026 && index % 5 === 0;
-			const cutter = author3(b.author);
-			const shelf = readingLevelOverride ?? b.readingLevel;
-			const callNumber =
-				b.kind === "fiction"
-					? shelf === null
-						? `${b.genre} ${cutter}`
-						: `${b.genre} ${shelf} ${cutter}`
-					: `${b.classCode} ${cutter}`;
 			const r = must(
 				db
 					.insert(item)
 					.values({
 						biblioId: b.id,
 						barcode,
-						callNumber,
 						notForLoan: b.reference ? 1 : 0,
 						readingLevel: readingLevelOverride ?? null,
 						status:
@@ -498,6 +495,8 @@ export function seedDatabase(db: Db, options: SeedOptions = {}): SeedSummary {
 					: undefined;
 			pushItem(b, index++, override);
 		}
+		// the segnatura computed from the scheme, as the server does after every change (Q143)
+		refreshCallNumbers(db, { callNumber: o.callNumber, classPerItem: o.classPerItem }, "all");
 		for (const [year, n] of counters) {
 			ensureAtLeast(db, sequenceName("item", itemFormat, year), n);
 		}

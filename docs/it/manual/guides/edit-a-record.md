@@ -23,13 +23,18 @@ cambiare i dati di una singola copia e come eliminare una scheda inserita per er
    è escluso dal prestito, tutte le copie non si prestano. Una singola copia si tiene fuori dal prestito con **Solo
    consultazione (non si presta)**, nei dati della copia.
 1. Per correggere soggetti, note o numero Dewey aprire la sezione **Altri dati**.
-1. Per cambiare la classificazione correggerla nella sezione **Classificazione**; vedere sotto per le segnature.
+1. Per cambiare la classificazione correggerla nella sezione **Classificazione**. Sotto il selettore **Segnatura delle
+   copie** mostra la nuova segnatura, calcolata da BiblioViva; vedere sotto per le segnature.
+1. Se compare il campo **Testo della segnatura**, correggere le lettere della segnatura, oppure lasciarlo vuoto per le
+   iniziali proposte dall'autore (in grigio).
 1. Premere **Salva le modifiche**. Si torna alla scheda del libro, con i dati nuovi. **Annulla** lascia tutto com'era.
 
 ### Cambiare i dati di una copia
 
-Una copia ha dati propri, distinti da quelli del libro: **Segnatura**, **Livello della copia**,
-**Volume / numero**, **Data di acquisizione**, **Note sulla copia** e **Solo consultazione (non si presta)**.
+Una copia ha dati propri, distinti da quelli del libro: **Livello della copia**, **Volume / numero**,
+**Data di acquisizione**, **Note sulla copia** e **Solo consultazione (non si presta)**. La **Segnatura** della copia si
+vede ma non si scrive, perché la calcola BiblioViva; un campo da scrivere compare solo con lo schema libero
+(**Segnatura**) o con uno schema che prevede una parte scritta per ogni copia (**Testo della segnatura**).
 
 1. Se il libro ha una sola copia, la sezione «Copia …» sta in fondo alla pagina **Modifica scheda**: i suoi dati si
    modificano lì e si salvano insieme alla scheda.
@@ -43,14 +48,14 @@ rovinata](withdraw-a-copy.md#cambiare-lo-stato-di-molte-copie-insieme), dove lo 
 pulsante cambia anche il materiale di molti libri insieme, scegliendo **Materiale** in **Cosa cambiare**: il materiale è del libro,
 quindi cambia per tutte le sue copie.
 
-### Dopo avere cambiato classificazione o segnatura
+### Dopo avere cambiato classificazione, autore o titolo
 
-La correzione della classificazione nella pagina **Modifica scheda** non riscrive le segnature delle copie già create.
-Per riscriverle, e per rimettere tra le etichette da stampare le fascette, usare **Riclassifica**, vedere [Classificare
-i libri](classify-books.md). Se si cambia a mano la segnatura di una copia, BiblioViva rimette da sola la fascetta e
-l'etichetta con il codice a barre tra le etichette da stampare, come dopo **Riclassifica**: la copia ricompare nel
-riquadro **Libri senza etichette** della Dashboard e si ristampano come descrive [Stampare le etichette dei
-libri](print-book-labels.md).
+La segnatura delle copie segue i dati del libro: correggendo in **Modifica scheda** la classificazione, l'autore o il
+titolo (il titolo conta per i libri di autore «Anonimo» o «AA. VV.»), oppure il livello di una copia, BiblioViva
+ricalcola subito la segnatura delle copie. BiblioViva rimette da sola la fascetta e l'etichetta con il codice a barre
+tra le etichette da stampare: la copia ricompare nel riquadro **Libri senza etichette** della Dashboard e si ristampano
+come descrive [Stampare le etichette dei libri](print-book-labels.md). Un libro non ancora classificato non ha
+segnatura: la riceve quando viene classificato, vedere [Classificare i libri](classify-books.md).
 
 ### Eliminare una scheda inserita per errore
 

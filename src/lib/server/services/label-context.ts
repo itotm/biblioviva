@@ -5,21 +5,24 @@
 import { renderBarcodeSvg, type Symbology } from "#lib/server/barcodes/render.js";
 import type { AppConfig } from "#lib/server/config/schema.js";
 import {
+	callNumberRest,
 	classificationOf,
 	classOf,
-	splitCallNumber,
+	computeCallNumber,
 	type ClassificationScheme,
 	type ResolvedNode,
 } from "#lib/shared/classification.js";
 import { authorShort, titleShort } from "#lib/shared/short-text.js";
-import { catalogRules, suggestedCallNumber } from "./catalog.js";
+import { catalogRules } from "./catalog.js";
 import { classificationImage, pictogramUrl } from "./classification-media.js";
 import type { LabelTemplateMeta } from "./label-templates.js";
 
 export interface LabelItem {
 	id: number;
 	barcode: string;
+	/** The stored segnatura and its shelf part (Q143); null for a made-up copy: computed. */
 	callNumber: string | null;
+	callHead?: string | null;
 	itemType: string;
 	readingLevel: string | null;
 	biblioId: number;
@@ -93,9 +96,14 @@ export function buildLabelContext(
 		author: it.author,
 		title: it.title,
 	};
-	const callNumber = it.callNumber ?? suggestedCallNumber(rules, record, it.readingLevel);
-	const node = classificationOf(rules.scheme, record);
 	const readingLevel = rules.scheme.classPerItem ? it.readingLevel : it.biblioReadingLevel;
+	const computed =
+		it.callNumber === null
+			? computeCallNumber(rules.scheme, { ...record, readingLevel })
+			: { full: it.callNumber, head: it.callHead ?? "" };
+	const callNumber = computed?.full ?? "";
+	const head = computed?.head ?? "";
+	const node = classificationOf(rules.scheme, record);
 	const barcode = renderBarcodeSvg(it.barcode, {
 		symbology: (meta.barcode.symbology ?? config.barcodes.item.symbology) as Symbology,
 		text: meta.barcode.text,
@@ -103,7 +111,7 @@ export function buildLabelContext(
 	});
 	return {
 		item: { barcode: it.barcode, call_number: callNumber, item_type: it.itemType },
-		call: splitCallNumber(callNumber),
+		call: { head, rest: callNumberRest(callNumber, head) },
 		biblio: {
 			title_short: titleShort(it.title, config.labels.titleMaxChars),
 			author_short: authorShort(it.author),

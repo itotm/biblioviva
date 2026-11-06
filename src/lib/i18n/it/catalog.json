@@ -1,4 +1,24 @@
 {
+	"callNumberScheme": {
+		"order": "Segnatura",
+		"orderHint": "Come si compone la segnatura: BiblioViva la calcola dalla classificazione, dal livello e dall'autore.",
+		"orders": {
+			"genreLevel": "Genere, poi livello",
+			"levelGenre": "Livello, poi genere",
+			"genre": "Genere, senza livello",
+			"free": "Libera: scritta a mano su ogni copia"
+		},
+		"custom": "Personalizzata",
+		"customHint": "Lo schema è scritto a mano negli schemi qui sotto.",
+		"end": "Parte finale",
+		"ends": {
+			"author": "Iniziali dell'autore, calcolate",
+			"text": "Iniziali dell'autore, modificabili per titolo",
+			"none": "Nessuna"
+		},
+		"examples": "Esempi: {{examples}}",
+		"freeHint": "Ogni copia ha la segnatura scritta nella sua scheda: BiblioViva non la calcola."
+	},
 	"list": {
 		"title": "Catalogo",
 		"search": "Cerca per titolo, autore o ISBN…",
@@ -37,6 +57,11 @@
 		"nonfiction": "Saggistica"
 	},
 	"fields": {
+		"callText": "Testo della segnatura",
+		"callTextHint": "Vuoto: {{proposal}}, proposto dall'autore.",
+		"callNumber": "Segnatura delle copie",
+		"callNumberLater": "Dopo la classificazione",
+		"callNumberHint": "Calcolata da classificazione, livello e autore; le copie la prendono al salvataggio.",
 		"title": "Titolo",
 		"subtitle": "Sottotitolo",
 		"originalTitle": "Titolo originale",
@@ -132,7 +157,9 @@
 		"copies": "Numero di copie",
 		"itemType": "Materiale",
 		"callNumber": "Segnatura",
-		"callNumberHint": "Proposta dalla classificazione; si può cambiare.",
+		"callNumberHint": "Calcolata da classificazione, livello e autore.",
+		"callText": "Testo della segnatura",
+		"callTextHint": "La parte della segnatura scritta per questa copia.",
 		"readingLevel": "Livello della copia",
 		"enumeration": "Volume / numero",
 		"acquisitionDate": "Data di acquisizione",
@@ -399,6 +426,12 @@
 				"yes": "Sì, il materiale più frequente",
 				"no": "No, sono errori da correggere"
 			},
+			"callNumberQuestion": {
+				"title": "Copie con una segnatura diversa da quella calcolata",
+				"text": "{{count}} {{count:plural; one:copia ha; other:copie hanno;}} nel file una segnatura diversa da quella che BiblioViva calcola dallo schema della segnatura (Amministrazione → Configurazione → Classificazione). Le copie possono prendere la segnatura calcolata: le loro etichette tornano tra quelle da stampare.",
+				"yes": "Sì, la segnatura calcolata",
+				"no": "No, sono errori da correggere"
+			},
 			"commit": "Importa",
 			"back": "Torna alle colonne",
 			"generatedBarcodes": "{{count}} {{count:plural; one:copia; other:copie;}} senza codice: il codice viene generato, poi si stampano le etichette.",
@@ -424,6 +457,8 @@
 			"classDiffers": "Copie con livelli diversi ({{classes}}) senza livello per copia",
 			"typeQuestion": "Copie con materiali diversi ({{types}}): rispondere alla domanda qui sotto",
 			"typeDiffers": "Copie con materiali diversi ({{types}}): il materiale è uno solo per titolo",
+			"callNumberQuestion": "Segnatura nel file «{{value}}», calcolata «{{computed}}»: rispondere alla domanda qui sotto",
+			"callNumberDiffers": "Segnatura nel file «{{value}}» diversa da quella calcolata «{{computed}}»",
 			"copyExists": "Copia già in catalogo: viene saltata",
 			"mergedIntoExisting": "Aggiunta al titolo già in catalogo (stessa chiave o stesso ISBN)"
 		},
@@ -504,7 +539,7 @@
 				"hint": "Note del titolo."
 			},
 			"callNumber": {
-				"hint": "La segnatura; se manca viene proposta."
+				"hint": "La segnatura nel file: si confronta con quella calcolata dallo schema (con lo schema libero si tiene così com'è)."
 			},
 			"itemType": {
 				"hint": "Il materiale (libro, dvd…); se manca, il primo configurato."
@@ -570,8 +605,7 @@
 			"button": "Riclassifica",
 			"title": "Riclassifica i titoli selezionati",
 			"scope": "{{count}} {{count:plural; one:titolo; other:titoli;}}",
-			"resuggest": "Riscrivere le segnature delle copie secondo la nuova classificazione",
-			"labelsHint": "Le fascette (e le etichette se cambia la segnatura) tornano tra quelle da stampare.",
+			"labelsHint": "La segnatura delle copie segue la nuova classificazione. Le fascette (e le etichette, se cambia la segnatura) tornano tra quelle da stampare.",
 			"changes": "{{count}} {{count:plural; one:titolo cambia; other:titoli cambiano;}}",
 			"apply": "Riclassifica {{count}} {{count:plural; one:titolo; other:titoli;}}",
 			"done": "{{count}} {{count:plural; one:titolo riclassificato; other:titoli riclassificati;}}, {{calls}} {{calls:plural; one:segnatura riscritta; other:segnature riscritte;}}"
@@ -666,7 +700,7 @@
 			"backToList": "Torna all'elenco",
 			"already": "Questo libro è già classificato.",
 			"callNumber": "Segnatura delle copie",
-			"callNumberHint": "Le copie senza segnatura prendono questa; poi la fascetta si può stampare.",
+			"callNumberHint": "Le copie prendono questa segnatura; poi la fascetta si può stampare.",
 			"dewey": "Il numero Dewey {{dewey}} corrisponde all'argomento {{code}}.",
 			"copies": "{{count}} {{count:plural; one:copia; other:copie;}}",
 			"subjects": "Soggetti",

@@ -28,6 +28,7 @@ const saved = (): TaxonomyDraft => ({
 		fiction: "{{genre}} {{author3}}",
 		fictionWithClass: "{{genre}} {{class}} {{author3}}",
 		nonfiction: "{{code}} {{author3}}",
+		text: "author3",
 	},
 });
 

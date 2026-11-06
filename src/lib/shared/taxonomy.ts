@@ -3,6 +3,7 @@
 // by the page and the service, and the inline checks the page shows before anything is sent (the
 // service validates again with the configuration schema).
 import { CONFIG_CODE, LEVEL_CODE } from "./input-schemas.js";
+import type { CallNumberScheme } from "./classification.js";
 
 export const TAXONOMY_KINDS = ["fiction", "nonfiction"] as const;
 export type TaxonomyKind = (typeof TAXONOMY_KINDS)[number];
@@ -33,7 +34,7 @@ export interface TaxonomyDraft {
 	genres: TaxonomyLeaf[];
 	nonfiction: TaxonomyNode[];
 	deweyMap: { prefix: string; code: string }[];
-	callNumber: { fiction: string; fictionWithClass: string; nonfiction: string };
+	callNumber: CallNumberScheme;
 }
 
 /** How much of the catalogue a code files: records and their copies. */
@@ -49,8 +50,19 @@ export const DRAFT_IMAGE = "draft:";
 export const LABEL_MAX = 120;
 export const HEX_COLOR = /^#[0-9a-fA-F]{6}$/;
 export const DEWEY_PREFIX = /^\d{1,3}$/;
-/** The placeholders of the call number patterns (§3.17). */
-export const CALL_NUMBER_PLACEHOLDERS = ["genre", "class", "code", "author3", "title1"] as const;
+/**
+ * The placeholders of the call number patterns (§3.17, Q143): computed (`genre`, `class`, `code`,
+ * `author3`, `title1`) and written (`text`, one per title; `copytext`, one per copy).
+ */
+export const CALL_NUMBER_PLACEHOLDERS = [
+	"genre",
+	"class",
+	"code",
+	"author3",
+	"title1",
+	"text",
+	"copytext",
+] as const;
 
 /** The URL that shows an image of the draft: a staged upload or a file of the images folder. */
 export function draftImageSrc(image: string): string {

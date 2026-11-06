@@ -20,8 +20,11 @@ strange characters](problems.md#scanner-that-types-strange-characters).
 
 ## Call number
 
-The code that says where a book stands on the shelves, for example `B 4 DEL`. It appears on the copy's record and on
-the spine band. BiblioViva always uses this word, and not "location".
+The code that says where a book stands on the shelves, for example `B 4 DEL`. BiblioViva computes it from the
+classification, the reading level and the first three letters of the author's surname; for a book whose author is
+"Anonimo" or "AA. VV." it uses the first three letters of the title. The form depends on the scheme the library has
+chosen. It appears on the copy's record and on the spine band. BiblioViva always uses this word, and not "location".
+See [Classify books](../manual/guides/classify-books.md).
 
 ## Card
 

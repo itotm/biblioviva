@@ -81,18 +81,14 @@ test.describe.serial("fast add", () => {
 		await page.getByTestId("genre-A").click();
 		await page.getByTestId("reading-level-3").click();
 		await page.getByTestId("fast-copies").fill("2");
-		// the call number ("Segnatura") and the acquisition date are prefilled (owner review)
-		await expect(page.getByTestId("fast-call-number")).toHaveValue(/^A 3 [A-Z]{3}$/);
+		// the segnatura the copies get is computed and shown (Q143); the acquisition date is
+		// prefilled (owner review)
+		await expect(page.getByTestId("biblio-call-number")).toContainText(/A 3 [A-Z]{3}/);
 		await expect(page.getByTestId("fast-acquisition-date")).toHaveValue(/^\d{4}-\d{2}-\d{2}$/);
-		// changing the class updates the suggestion; a typed value is kept
+		// changing the class changes it; there is nothing to type
 		await page.getByTestId("reading-level-2").click();
-		await expect(page.getByTestId("fast-call-number")).toHaveValue(/^A 2 [A-Z]{3}$/);
-		await page.getByTestId("fast-call-number").fill("X 9 ABC");
-		await page.getByTestId("reading-level-3").click();
-		await expect(page.getByTestId("fast-call-number")).toHaveValue("X 9 ABC");
-		await page.getByTestId("fast-call-number").fill("");
-		await page.getByTestId("reading-level-1").click();
-		await expect(page.getByTestId("fast-call-number")).toHaveValue(/^A 1 [A-Z]{3}$/);
+		await expect(page.getByTestId("biblio-call-number")).toContainText(/A 2 [A-Z]{3}/);
+		await expect(page.getByTestId("fast-call-text")).toHaveCount(0);
 		await page.getByTestId("reading-level-3").click();
 		await expectAxeClean(page);
 		await page.getByTestId("biblio-submit").click();

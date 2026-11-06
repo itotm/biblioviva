@@ -111,7 +111,6 @@ function setup(): Fixture {
 		db,
 		record,
 		{
-			callNumber: "",
 			readingLevel: "",
 			enumeration: "",
 			acquisitionDate: "",
@@ -275,7 +274,6 @@ describe("open loans import", () => {
 			db,
 			later,
 			{
-				callNumber: "",
 				readingLevel: "",
 				enumeration: "",
 				acquisitionDate: "",

@@ -37,8 +37,8 @@ propria scuola si saltano.
 
 1. [Scegliere i formati dei codici a barre](guides/barcode-formats.md): da fare prima di stampare etichette e tessere, e
    in particolare se la biblioteca ha già codici stampati da un altro sistema.
-1. [Modificare la classificazione e i livelli di lettura](guides/classification.md): i generi, gli argomenti e le
-   segnature.
+1. [Modificare la classificazione e i livelli di lettura](guides/classification.md): i generi, gli argomenti e lo schema
+   delle segnature.
 
 ### Le stampe
 

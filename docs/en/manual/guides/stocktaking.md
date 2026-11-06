@@ -29,7 +29,7 @@ withdrawn, already lost or reserved for reference do not count among the missing
 
 ### Scan the copies
 
-1. In the "Scan the copies" panel write in the **Shelf** field the code of the shelf being checked, for example `B` or
+1. In the "Scan the copies" panel write in the **Shelf** field the code of the shelf being checked, for example `B`, `B 4` or
    `590` (the initial part of the call number). The copies that have a different call number will be flagged as out of
    place. The field can be left empty.
 1. Read with the scanner the barcode of each copy, in the order in which they stand on the shelf. The **Copy barcode**
