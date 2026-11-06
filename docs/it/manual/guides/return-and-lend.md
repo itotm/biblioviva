@@ -15,6 +15,9 @@ porta insieme al banco. È per chi lavora al Banco prestiti con l'account Gestio
 1. Leggere il codice a barre del libro restituito. Il libro viene restituito e compare il messaggio «Restituito:
    «`<titolo>`». Ora i libri letti si prestano a `<nome>`.» Il campo diventa **Passa il libro** e a destra compare la
    scheda dell'utente che aveva il libro.
+
+   <!-- figure: circulation/checkout-return-lend | Il libro restituito e l'utente che lo aveva già scelto per il prestito -->
+
 1. Leggere il codice a barre del libro scelto dall'utente. Un messaggio conferma il prestito con la scadenza e il
    libro entra nell'elenco **Libri prestati adesso**.
 1. Leggere gli altri libri, se ce ne sono, uno dopo l'altro.
@@ -22,6 +25,8 @@ porta insieme al banco. È per chi lavora al Banco prestiti con l'account Gestio
 
 In alternativa si parte da **Restituzioni**: dopo la restituzione di un libro, premere **Presta a `<nome>`** nel
 messaggio. Si apre **Prestiti** con l'utente già scelto, pronto a ricevere il libro successivo.
+
+<!-- figure: circulation/checkin-done | Le restituzioni con il pulsante Presta a nel messaggio dell'ultimo libro -->
 
 > [!NOTE]
 > L'utente resta scelto finché si legge un'altra tessera, si preme **Fine** o la pagina si chiude da sola dopo i

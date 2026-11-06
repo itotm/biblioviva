@@ -203,6 +203,10 @@ async function inventoryScan(page: Page, code: string): Promise<void> {
 export const SHOTS: Shot[] = [
 	// ---- Amministrazione: pages that open as they are
 	screen("about/about", "admin", "/about"),
+	// one's own password, from the account menu (9.51)
+	screen("account/change-password", "prestiti", "/password", {
+		crop: "[data-testid=password-page]",
+	}),
 	screen("admin/appearance", "admin", "/admin/appearance"),
 	screen("admin/audit", "admin", "/admin/audit"),
 	screen("admin/backups", "admin", "/admin/backups"),
@@ -626,6 +630,19 @@ export const SHOTS: Shot[] = [
 				await deskScan(page, code);
 				await page.getByTestId("desk-session-list").locator("li").nth(i).waitFor();
 			}
+		},
+	}),
+	// a lent book read with no card: returned, its borrower chosen (9.52); lent again afterwards,
+	// so the check-in shots find it on loan
+	screen("circulation/checkout-return-lend", "prestiti", "/circulation/checkout", {
+		steps: async (page) => {
+			await deskScan(page, LENT.books[0]);
+			await page.getByTestId("desk-patron-name").waitFor();
+			await page.locator("[data-code=returned_now_lending]").waitFor();
+		},
+		after: async (page) => {
+			await deskScan(page, LENT.books[0]);
+			await page.locator("[data-code=lent]").first().waitFor();
 		},
 	}),
 	screen("circulation/checkin-returned", "prestiti", "/circulation/checkin", {

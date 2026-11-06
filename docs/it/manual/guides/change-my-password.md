@@ -12,6 +12,9 @@ usi BiblioViva, con qualsiasi account: ogni account cambia da sé la propria pas
 1. Premere in alto a destra il nome dell'account o, se lo schermo è stretto, l'icona della persona. Si apre il menu
    dell'account.
 1. Scegliere **Cambia password**. Si apre la pagina **Cambia password**.
+
+   <!-- figure: account/change-password | La pagina Cambia password con i tre campi -->
+
 1. Scrivere la password in uso nel campo **Password attuale**.
 1. Scrivere la nuova password nel campo **Nuova password (almeno 8 caratteri)**.
 1. Scrivere di nuovo la nuova password nel campo **Ripetere la nuova password**.

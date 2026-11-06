@@ -15,6 +15,9 @@ together to the desk. It is for staff at the circulation desk using the "Loan ma
 1. Read the barcode of the returned book. The book is returned and the message “Returned: “`<title>`”. The books read
    now are lent to `<name>`.” appears. The field becomes **Scan the book** and the record of the patron who had the
    book appears on the right.
+
+   <!-- figure: circulation/checkout-return-lend | The returned book and the patron who had it already chosen for the loan -->
+
 1. Read the barcode of the book the patron has chosen. A message confirms the loan with the due date and the book
    enters the **Books lent now** list.
 1. Read the other books, if there are any, one after the other.
@@ -22,6 +25,8 @@ together to the desk. It is for staff at the circulation desk using the "Loan ma
 
 Alternatively start from **Returns**: after the return of a book, press **Lend to `<name>`** in the message. **Loans**
 opens with the patron already chosen, ready to receive the next book.
+
+<!-- figure: circulation/checkin-done | The returns with the Lend to button in the message of the last book -->
 
 > [!NOTE]
 > The patron stays chosen until another card is read, **Done** is pressed or the page closes by itself after the idle
