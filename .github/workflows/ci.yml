@@ -1,9 +1,9 @@
 name: ci
 
+# Only by hand (Actions → ci → Run workflow): `bun run ci` runs on the developer machine before every
+# push, and a clean-environment run on GitHub is asked for when it is needed (ADR-054).
 on:
-    push:
-        branches: [main]
-    pull_request:
+    workflow_dispatch:
 
 concurrency:
     group: ci-${{ github.ref }}

@@ -104,7 +104,7 @@ In `.env` next to `compose.demo.yml` (see `docker/.env.example`):
 | `DEMO_NOTES_PER_DAY` | `5` | new staff notes per visitor address and day |
 | `DEMO_MEM_LIMIT` | `512m` | memory of the app's container |
 | `DEMO_CPUS` | `1` | CPUs of the app's container, never more than the host's `nproc` |
-| `BIBLIOVIVA_IMAGE` | `ghcr.io/itotm/biblioviva:latest` | the image; `:latest` exists once a release is tagged (`v*`), `:main` follows the main branch, a version tag pins a release |
+| `BIBLIOVIVA_IMAGE` | `ghcr.io/itotm/biblioviva:latest` | the image; `:latest` is the highest stable release, `:main` the last run of `publish` on the main branch, a version tag pins a release |
 | `LOG_LEVEL` | `info` | `debug` for the diagnostic log |
 
 The configuration of the demo itself is not a setting: it is the wizard's, rebuilt at every start.
@@ -254,9 +254,9 @@ docker compose -f compose.demo.yml logs -f app      # "[demo] public demo built"
   picture; the next morning, the reset has happened (`docker compose -f compose.demo.yml ps`
   shows the app restarted, `logs app` the build). A name typed for a new patron comes back as a
   made-up one, with the notification that the demo replaces text and pictures.
-- **New code of the app** reaches the demo through the image: `:main` is built by the `publish`
-  workflow a few minutes after a push to `main` (`docs/deploy.md`); then `pull` and `up -d` as
-  below.
+- **New code of the app** reaches the demo through the image: `:main` is built when the `publish`
+  workflow is run by hand on `main` (Actions → publish → Run workflow, `docs/deploy.md`, ADR-054); a push builds
+  nothing. When it has finished, `pull` and `up -d` as below.
 - **Update to a new release:** set the tag in `BIBLIOVIVA_IMAGE`, then
   `docker compose -f compose.demo.yml pull && docker compose -f compose.demo.yml up -d`. Nothing
   needs migrating: the demo is built again by the new version. When `compose.demo.yml` changes in
@@ -281,7 +281,7 @@ Check from the inside out; each line says what the symptom means and what to do.
 | Compose | `Range of CPUs is from 0.01 to N` | `DEMO_CPUS` above the host's CPUs: set it to `nproc` or less |
 | Compose | `set TUNNEL_TOKEN in .env` | `.env` is missing or not next to `compose.demo.yml` |
 | Pull | `denied`, `unauthorized` | `docker login ghcr.io` missing or the token lacks `read:packages` |
-| Pull | `manifest unknown`, `not found` | the tag does not exist: `:latest` only after a release, use `:main` |
+| Pull | `manifest unknown`, `not found` | the tag does not exist: `:latest` only after `publish` has run on a release tag, `:main` only after it has run on `main` |
 | App | `docker compose -f compose.demo.yml ps` shows `app` restarting, `Exited (137)` | out of memory: on a 1 GB instance add the swap file; `free -h` and `sudo dmesg -T` (lines with "Out of memory") confirm it |
 | App | stays `health: starting`, then `unhealthy` | `docker compose -f compose.demo.yml logs app` says why; `cloudflared` waits for a healthy app and does not start before |
 | Tunnel | the tunnel shows "Inactive" or "Down" in Cloudflare's dashboard | `docker compose -f compose.demo.yml logs cloudflared`: an invalid token (copy it again, only the string after `--token`), or the app is not healthy yet |

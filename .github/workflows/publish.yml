@@ -1,15 +1,15 @@
-# Container image for amd64 and arm64 (PLAN.md step 8.2), pushed to GHCR on tags `v*` and on main.
+# Container image for amd64 and arm64 (PLAN.md step 8.2), pushed to GHCR only by hand (Actions → publish →
+# Run workflow, ADR-054): on a tag `v*` for a release, on `main` for the `:main` image of the public demo.
 # Each platform builds on a native runner and pushes by digest; a last job joins the digests into
 # one manifest list with the tags. The Dockerfile's build stage always runs on the build host's
 # platform, so Bun is never emulated (it crashes under QEMU): where no arm64 runner is available,
 # set the repository variable ARM64_RUNNER to ubuntu-24.04 and only the runtime stage's apt-get
 # runs under QEMU.
+# Tags: `main` on the branch; `1.2.3`, `1.2` and the commit's `sha-…` on a tag; `latest` only when the tag
+# is the highest stable version `vX.Y.Z` of the repository (a pre-release or an older tag never gets it).
 name: publish
 
 on:
-    push:
-        tags: ["v*"]
-        branches: [main]
     workflow_dispatch:
 
 permissions:
@@ -104,16 +104,36 @@ jobs:
                   username: ${{ github.actor }}
                   password: ${{ secrets.GITHUB_TOKEN }}
 
+            # `latest` goes to the highest stable release tag, and only when this run is on that tag
+            - id: latest
+              env:
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  is_latest=false
+                  case "$GITHUB_REF" in
+                      refs/tags/v*)
+                          top=$(gh api "repos/$GITHUB_REPOSITORY/git/matching-refs/tags/v" --paginate \
+                              --jq '.[].ref | ltrimstr("refs/tags/")' \
+                              | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1)
+                          if [ "$GITHUB_REF_NAME" = "$top" ]; then
+                              is_latest=true
+                          fi
+                          echo "Highest stable tag: ${top:-none}; this run: $GITHUB_REF_NAME"
+                          ;;
+                  esac
+                  echo "is_latest=$is_latest" >> "$GITHUB_OUTPUT"
+
             - id: meta
               uses: docker/metadata-action@v6
               with:
                   images: ${{ env.IMAGE }}
-                  # `latest` follows the highest release tag; main gets `main`, every build its sha
+                  flavor: latest=false
                   tags: |
                       type=ref,event=branch
                       type=semver,pattern={{version}}
                       type=semver,pattern={{major}}.{{minor}}
                       type=sha
+                      type=raw,value=latest,enable=${{ steps.latest.outputs.is_latest == 'true' }}
 
             - name: Manifest list with both platforms
               working-directory: ${{ runner.temp }}/digests

@@ -193,6 +193,11 @@ and this file must be updated.
   decision, ADR-011). **From 1.0.0** (step 9.37) the single migration is the frozen baseline: every schema change is a
   new migration from `bun run db:generate`, committed with the change, and a released migration is never edited or
   deleted.
+- **GitHub workflows run only by hand** (owner rule, ADR-054): `ci`, `publish`, `i18n-packs`, `pages` and `slow` have a
+  manual trigger and nothing else; a push builds nothing. `bun run ci` runs locally, on its own, before every push.
+  The agent says when a workflow is needed (the `main` image after a push that the demo must get, `publish` +
+  `i18n-packs` + `pages` at a release, `slow` before one, `ci` for a clean-machine check) and **asks the owner before
+  starting it**; it never starts one unasked. `publish` gives `latest` only to the highest stable tag `vX.Y.Z`.
 - **TypeScript style:** tabs (4 columns), double quotes, trailing commas everywhere, and braces on every `if`/`else`/
   loop body even when it is one statement (`curly: all`). Prettier and ESLint enforce it: run `bun run lint`.
 - A step of PLAN.md is done only when its acceptance criteria hold, the required tests exist and `bun run ci` is green.

@@ -1,11 +1,10 @@
-name: nightly
+# SPDX-License-Identifier: GPL-3.0-or-later
+# The visual snapshots, the slow end-to-end suites and the dependency audit, only by hand
+# (Actions → slow → Run workflow), normally before a release (ADR-054).
+name: slow
 
 on:
-    schedule:
-        - cron: "0 2 * * *"
     workflow_dispatch:
-    push:
-        tags: ["v*"]
 
 jobs:
     slow-suites:
@@ -39,6 +38,6 @@ jobs:
               if: always()
               uses: actions/upload-artifact@v6
               with:
-                  name: nightly-playwright-report
+                  name: slow-playwright-report
                   path: test-reports/playwright
                   retention-days: 14

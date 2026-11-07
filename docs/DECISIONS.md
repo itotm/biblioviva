@@ -856,7 +856,7 @@ hand. The build takes every picture from the app and the site is meant to change
 
 **Decision.** The Pages workflow (`.github/workflows/pages.yml`) has only a manual trigger (Run workflow): the owner
 runs it on the release's tag after a release, or on `main` for a correction of the text. No push and no release
-publishes the documentation. The container images keep being built on every push (`publish.yml`).
+publishes the documentation.
 
 **Consequences.** A release does not update the documentation by itself: publishing it is one more step of the
 release, written in its checklist (9.6).
@@ -922,3 +922,21 @@ The site carries no script for the diagrams and loads nothing from elsewhere. A 
 
 **Consequences.** One more development dependency with its own dependencies (none of it in the image). A diagram
 changed in the Markdown is drawn again by the next `docs:diagrams`; the files are not committed.
+
+## ADR-054 — No workflow starts by itself; `latest` goes to the highest stable release (2026-11-07, owner)
+
+**Context.** `ci` ran on every push and pull request, `publish` on every push to `main` and every tag, `nightly` every
+night and on every tag, `i18n-packs` on every tag. `bun run ci` already runs the same checks on the developer machine
+before a push, and the rest only matters at a release or when the demo needs a new image. The `latest` tag was added by
+the metadata action's default to any stable tag, even an older one run again.
+
+**Decision.** Every workflow has only a manual trigger (Run workflow): `ci`, `publish`, `i18n-packs`, `pages`, and
+`slow` (the former `nightly`: the visual snapshots, the slow suites and the audit). `bun run ci` is run locally before
+every push. The coding agent says when one of them is needed (the `main` image for the demo after a push, `publish`,
+`i18n-packs`, `pages` and `slow` at a release, `ci` for a check on a clean machine) and asks the owner before starting
+it; it never starts one unasked. `publish` sets `latest` only when it runs on the highest stable tag `vX.Y.Z` of the
+repository (`flavor: latest=false` plus an explicit rule), so a pre-release or a tag run again never takes it.
+`i18n-packs` refuses to run outside a tag.
+
+**Consequences.** A push builds nothing: the demo's `:main` image is as old as the last run of `publish` on `main`. The
+release checklist (9.6) lists the runs: `publish`, `i18n-packs`, `pages` (and `slow`) on the tag.

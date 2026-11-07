@@ -707,7 +707,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Depends on: 0.5
 
 - [x] **0.7 CI workflow (lint, check, test, build)**
-  - Tasks: `.github/workflows/ci.yml` on push/PR: `oven-sh/setup-bun` (latest) → `bun install --frozen-lockfile` → `bun run ci` (lint, check, unit, component, chromium e2e) → `bun run build`; Playwright Chromium cached; a `nightly.yml` workflow runs the visual snapshots and the slow suites. Image publishing comes in Phase 8 (GitHub, Q23).
+  - Tasks: `.github/workflows/ci.yml`, started by hand only (ADR-054; `bun run ci` runs locally before every push): `oven-sh/setup-bun` → `bun install --frozen-lockfile` → the steps of `bun run ci` (lint, check, unit, component, chromium e2e) → `bun run build`; Playwright Chromium cached; a `slow.yml` workflow, also by hand, runs the visual snapshots and the slow suites. Image publishing comes in Phase 8 (GitHub, Q23).
   - Acceptance: CI green on the main branch.
   - Depends on: 0.6
 
@@ -1063,7 +1063,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Depends on: all previous phases (functional freeze for v1)
 
 - [x] **8.2 Multi-arch build and registry publishing**
-  - Tasks: local: `podman build --platform linux/amd64,linux/arm64 --manifest biblioviva:multi .` (uses QEMU only for the runtime stage's `apt-get`, never for Bun, because the build stage runs on `$BUILDPLATFORM`); CI: `.github/workflows/publish.yml` on tags `v*` and `main`: prefer native runners per platform (`ubuntu-24.04` + `ubuntu-24.04-arm`, free for public repos) via `docker/github-builder` reusable workflow or a two-job matrix + `buildx imagetools create`; fallback QEMU job documented; push to GHCR with `docker/metadata-action@v6` tags (`semver`, `sha`, `latest`); provenance attestation optional. Known issue: Bun crashes under QEMU (SIGILL) — never run `bun install`/`bun run build` emulated.
+  - Tasks: local: `podman build --platform linux/amd64,linux/arm64 --manifest biblioviva:multi .` (uses QEMU only for the runtime stage's `apt-get`, never for Bun, because the build stage runs on `$BUILDPLATFORM`); CI: `.github/workflows/publish.yml`, started by hand on a tag `v*` or on `main` (ADR-054): prefer native runners per platform (`ubuntu-24.04` + `ubuntu-24.04-arm`, free for public repos) via `docker/github-builder` reusable workflow or a two-job matrix + `buildx imagetools create`; fallback QEMU job documented; push to GHCR with `docker/metadata-action@v6` tags (`semver`, `sha`, `latest`); provenance attestation optional. Known issue: Bun crashes under QEMU (SIGILL) — never run `bun install`/`bun run build` emulated.
   - Acceptance: manifest list contains both platforms (`podman manifest inspect`); the arm64 image boots on an arm64 host (or under QEMU for a smoke `bun --version` only) — Q22.
   - Depends on: 8.1
 
@@ -1131,7 +1131,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Acceptance: Lighthouse PWA installability checks pass on the mobile project; an e2e test verifies the manifest, the registered worker and that `/healthz` and remote calls are never served from the cache; the OpenCV chunk is served from the cache on the second load of the cover page. (Lighthouse 12 has no PWA category, so the e2e test runs Chromium's own installability check through the DevTools protocol; the setup guide paragraph is written with the manuals in 9.5.)
   - Depends on: 3.7, 9.8
 
-- [ ] **9.6 Release v0.9.0, the first release of the public beta** (the complete version of this plan is 0.9.0, owner decision; Q133, ADR-048) — made from the public repository of 9.36, where the **public beta** has started (the READMEs and the home page say so), as its first tagged release: changelog, git tag, multi-arch image `ghcr.io/<owner>/biblioviva:0.9.0` + `latest`, GitHub release notes, the documentation site published by hand from the release's tag (§3.23; the same at every release), STATUS.md closed. Depends on: 9.1–9.5b, 9.7, 9.8, 9.9, 9.19–9.21, 9.36, 9.44–9.53 and the whole of Phases 11, 12 and 13 (required for the release, owner decision).
+- [ ] **9.6 Release v0.9.0, the first release of the public beta** (the complete version of this plan is 0.9.0, owner decision; Q133, ADR-048) — made from the public repository of 9.36, where the **public beta** has started (the READMEs and the home page say so), as its first tagged release: changelog, git tag, multi-arch image `ghcr.io/<owner>/biblioviva:0.9.0` + `latest` (`latest` goes to the highest stable tag only, ADR-054), GitHub release notes, the documentation site published by hand from the release's tag (§3.23; the same at every release), STATUS.md closed. No workflow starts by itself (ADR-054): on the tag the owner runs, when the coding agent proposes them, `publish`, `i18n-packs` and `pages`, and `slow` as a last check. Depends on: 9.1–9.5b, 9.7, 9.8, 9.9, 9.19–9.21, 9.36, 9.44–9.53 and the whole of Phases 11, 12 and 13 (required for the release, owner decision).
 
 - [ ] **9.10 Field testing towards 1.0.0** (owner decision; Q133) — the public beta: the school year 2026/27 at the school on 0.9.x, until the end of lessons in June 2027; 1.0.0 is released for the start of the school year 2027/28 (September 2027), when the library begins to use BiblioViva for real; every problem found becomes a fix released as 0.9.x (patch releases, changelog); 1.0.0 is tagged when the owner declares the field test over, after a run of `bun run test:browsers` (Chromium, Firefox, WebKit, Q110) whose failures are fixed or explained. Until then the database keeps a single regenerated migration (Q82); a schema change during the field test is carried by export and restore. From 1.0.0 an update never loses data: the migrations of 9.37.
 
@@ -2541,7 +2541,7 @@ The files named below are the reference; this appendix says what each one holds.
 
 Tailnet prerequisites: MagicDNS and HTTPS certificates enabled in the admin console (DNS page); `tag:biblioviva` declared in `tagOwners`; an OAuth client with the `auth_keys` scope (or a reusable, pre-authorised, tagged auth key). tailscaled obtains and renews the Let's Encrypt certificate itself and caches it in the state volume. The identity headers tailscaled injects (`Tailscale-User-Login`, …) are ignored by the app (Q20).
 
-The publish workflow is `.github/workflows/publish.yml` (8.2): one job per platform on native runners, then the multi-arch manifest on `ghcr.io`, with provenance attestations.
+The publish workflow is `.github/workflows/publish.yml` (8.2, started by hand): one job per platform on native runners, then the multi-arch manifest on `ghcr.io`, with provenance attestations.
 
 ## Appendix F — OPAC SBN Z39.50 parameters
 

@@ -2,7 +2,7 @@
 // `bun run ci` on a developer machine: the independent checks (lint, UI audit, unit tests, and the
 // type check followed by the build and its check) run side by side, then the end-to-end suite
 // starts on the build just made instead of building again. Each task's output is shown when it ends, the failed ones in
-// full. GitHub's workflow runs the same steps one by one (`.github/workflows/ci.yml`). At the end,
+// full. This is the check run before every push; GitHub's workflow (`.github/workflows/ci.yml`, started by hand) runs the same steps one by one. At the end,
 // pass or fail, `test-reports/index.html` sums up the runs and links their HTML reports (ADR-021).
 import { writeIndex } from "./test-report.js";
 

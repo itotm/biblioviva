@@ -1,14 +1,13 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# The language packs of a release (PLAN.md step 9.39, ADR-051): on a tag `v*` every pack of
-# `i18n-packs/` is checked, zipped (`biblioviva-i18n-<code>-<version>.zip`) and attached to the
-# GitHub release together with `biblioviva-i18n-index.json`, the list the app reads to offer them.
-# The release is created as a pre-release when it does not exist yet (the beta); its notes are the
-# owner's. Run by hand on a tag to attach the packs again.
+# The language packs of a release (PLAN.md step 9.39, ADR-051): run by hand on a tag (Actions → i18n-packs →
+# Run workflow, choosing the tag `v*`), it checks every pack of `i18n-packs/`, zips them
+# (`biblioviva-i18n-<code>-<version>.zip`) and attaches them to the GitHub release together with
+# `biblioviva-i18n-index.json`, the list the app reads to offer them. The release is created as a
+# pre-release when it does not exist yet (the beta); its notes are the owner's. Running it again
+# on the same tag replaces the files. Nothing starts it by itself (ADR-054).
 name: i18n-packs
 
 on:
-    push:
-        tags: ["v*"]
     workflow_dispatch:
 
 permissions:
@@ -19,6 +18,13 @@ jobs:
         runs-on: ubuntu-24.04
         timeout-minutes: 10
         steps:
+            - name: Only on a release tag
+              run: |
+                  case "$GITHUB_REF" in
+                      refs/tags/v*) ;;
+                      *) echo "::error::Run this workflow on a tag v*, not on $GITHUB_REF"; exit 1 ;;
+                  esac
+
             - uses: actions/checkout@v7
 
             - uses: oven-sh/setup-bun@v2

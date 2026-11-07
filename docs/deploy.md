@@ -138,10 +138,12 @@ packages. About 145 MB on amd64 and 155 MB on arm64, about 64 MB to download.
   linux/arm64 -p 3102:3000 biblioviva:multi` answers on `/healthz`. Under QEMU, BusyBox pipelines
   in `sh` fail with "applet not found" (binfmt does not keep `argv[0]`); on a real arm64 host they
   work.
-- Publishing: `.github/workflows/publish.yml` runs on tags `v*`, on `main` and by hand. Each
+- Publishing: `.github/workflows/publish.yml` runs by hand only (Actions → publish → Run workflow, ADR-054):
+  on a tag `v*` for a release, on `main` for the `:main` image. Each
   platform builds on a native runner (`ubuntu-24.04`, `ubuntu-24.04-arm`) and pushes by digest,
   then one job joins the digests into a manifest list on `ghcr.io/<owner>/biblioviva` with the tags
-  `main`, `sha-…`, and for releases `1.2.3`, `1.2` and `latest`. If arm64 runners are not available
+  `main` (on the branch), and on a tag `sha-…`, `1.2.3` and `1.2`; `latest` goes only to the highest
+  stable version tag `vX.Y.Z` of the repository (a pre-release or an older tag never gets it). If arm64 runners are not available
   to the repository, set the repository variable `ARM64_RUNNER` to `ubuntu-24.04`: the arm64 image
   is then built with QEMU for the YAZ and BusyBox stage only.
 - While the repository (and so the package) is private, a host must log in before pulling:
