@@ -238,14 +238,15 @@ the manual.
 Numbered here; if accepted they take the next free numbers of PLAN.md §11.
 
 - **QA1** — Accessibility target: WCAG 2.1 AA (the legal reference today) or **WCAG 2.2 AA** (the reference of the
-  new EN 301 549, little extra work)? *Proposal: 2.2 AA.*
+  new EN 301 549, little extra work)? *Answered: 2.2 AA (PLAN.md Q147, step 9.54, ADR-055).*
 - **QA2** — Keep the conformance page `docs/accessibility.md` (technical section, written with this study) with the
   state, the known gaps and how the project tests it? *Proposal: yes, updated with 9.3.*
 - **QA3** — The page for the head teacher and the DPO (§3.3), with ready texts for the record of processing and the
   information notice? *Proposal: yes, for 0.9.0.*
 - **QA4** — Optional inventory fields (inventory number, origin, value) and the two lists for the office (§4)? This
   reopens Q73 for the price. *Proposal: yes, optional and off by default.*
-- **QA5** — `publiccode.yml` and the Developers Italia listing after 9.36? *Proposal: yes.*
+- **QA5** — `publiccode.yml` and the Developers Italia listing after 9.36? *Answered: yes (PLAN.md Q148, step 9.55,
+  ADR-056).*
 - **QA6** — MARC export, and MARC import? *Proposal: export for 0.9.0, import after.*
 - **QA7** — A preset for accessible books (§8)? *Proposal: yes, small.*
 

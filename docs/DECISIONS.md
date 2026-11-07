@@ -940,3 +940,33 @@ repository (`flavor: latest=false` plus an explicit rule), so a pre-release or a
 
 **Consequences.** A push builds nothing: the demo's `:main` image is as old as the last run of `publish` on `main`. The
 release checklist (9.6) lists the runs: `publish`, `i18n-packs`, `pages` (and `slow`) on the tag.
+
+## ADR-055 — Accessibility target WCAG 2.2 AA (2026-11-07, owner, Q147)
+
+**Context.** An Italian state school is a public administration: Legge 4/2004 and the AgID guidelines require the
+requirements of EN 301 549 v3.2.1, i.e. WCAG 2.1 AA, also for applications used on an intranet, and an employee with a
+disability must be able to work with the tools of the job. EN 301 549 v4.1.1, published in 2026, moves to WCAG 2.2.
+The study `docs/studies/adoption.md` measured the gap.
+
+**Decision.** BiblioViva, its documentation site and its home page target **WCAG 2.2 AA** (which includes 2.1 AA).
+`docs/accessibility.md` is the conformance page: the target, how it is tested, what is met, the known limits. The
+open gaps are step 9.54. Required fields carry an asterisk after the label, read as «obbligatorio», explained by one
+line above the form (the default taken for Q147).
+
+**Consequences.** Every new screen is built to 2.2 AA: keyboard alternatives to dragging, visible focus not hidden by
+the sticky bars, targets of at least 24 px, the help in the same place, no cognitive test at login. The contrast test
+covers the field tokens; axe runs on more states. The manual checks (screen readers, zoom) are repeated before each
+release that changes the screens.
+
+## ADR-056 — `publiccode.yml` for the Developers Italia catalogue (2026-11-07, owner, Q148)
+
+**Context.** Administrations choosing software must consider open-source and reusable solutions (CAD art. 68–69);
+they look in the Developers Italia catalogue, filled by a crawler from the `publiccode.yml` file of public
+repositories.
+
+**Decision.** The repository carries a `publiccode.yml` (standard version `0`) with descriptions in Italian and English
+in the documentation's plain tone, checked by a unit test against the standard's mandatory keys and limits. The
+release checklist sets its `softwareVersion` and `releaseDate`. The owner registers the repository on Developers Italia
+once it is public (9.36).
+
+**Consequences.** One more file to keep in step with the README when BiblioViva changes what it does.
