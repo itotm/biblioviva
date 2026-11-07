@@ -244,12 +244,16 @@
 							<HeaderIcon size={ICON_SIZE.lg} aria-hidden="true" />
 						</IconTile>
 					{/if}
-					<!-- one line from tablets up (the whole title in its tooltip), two at most on a phone,
-					     where the help button follows it (9.47) -->
-					<div class="min-w-0 md:flex-1">
+					<!-- one line from tablets up (the whole title in its tooltip and in the page's own
+					     heading for screen readers); whole on a phone, where the help button follows it
+					     (9.47) and where a large zoom brings every window (WCAG 1.4.4) -->
+					<div
+						class="min-w-0 md:flex-1"
+						aria-hidden={header.current?.inPage ? "true" : undefined}
+					>
 						<svelte:element
 							this={header.current?.titleTag ?? "h1"}
-							class="line-clamp-2 text-2xl leading-tight font-bold md:line-clamp-1 lg:text-[2rem]"
+							class="text-2xl leading-tight font-bold break-words md:line-clamp-1 lg:text-[2rem]"
 							title={header.current?.title}
 							data-testid="page-title"
 						>

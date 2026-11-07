@@ -306,7 +306,10 @@
 						{#each inv.shelves as s (s)}<option value={s}></option>{/each}
 					</datalist>
 					{#if camera}
-						<CameraStage data-testid="inventory-camera-stage">
+						<CameraStage
+							data-testid="inventory-camera-stage"
+							onclose={() => (camera = false)}
+						>
 							<Row wrap={false} align="center" justify="between">
 								<h2 class="title-lg">
 									{shelf.trim()

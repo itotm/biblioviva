@@ -1,0 +1,105 @@
+# The description of BiblioViva for the catalogue of open-source software for the public administration
+# (Developers Italia, https://developers.italia.it): the publiccode.yml standard, https://yml.publiccode.tools.
+# Kept in step with the README; softwareVersion and releaseDate are set at each release (PLAN.md 9.6).
+publiccodeYmlVersion: "0"
+
+name: BiblioViva
+url: "https://github.com/itotm/biblioviva"
+landingURL: "https://biblioviva.org"
+logo: docs/reference/branding/biblioviva-logo.png
+
+platforms:
+    - web
+    - linux
+
+categories:
+    - integrated-library-system
+
+developmentStatus: beta
+softwareType: "standalone/web"
+
+intendedAudience:
+    scope:
+        - education
+    countries:
+        - it
+
+description:
+    it:
+        localisedName: BiblioViva
+        shortDescription: >-
+            Software per gestire la biblioteca di una scuola: prestiti, catalogo, utenti, tessere ed etichette.
+        documentation: "https://docs.biblioviva.org/it/"
+        longDescription: |
+            BiblioViva è un software libero per gestire la biblioteca di una scuola (fino a circa 10 000 libri e 1 000
+            utenti). Lo usa il personale della biblioteca dal browser di qualunque computer, tablet o telefono della scuola;
+            non ha un catalogo pubblico né account per studenti e famiglie.
+
+            Gira in un contenitore Docker su un computer della scuola, per esempio un vecchio PC con Linux o un Raspberry Pi,
+            e tiene i dati in un solo file SQLite: i dati degli utenti, in gran parte minorenni, restano a scuola. Si
+            raggiunge dalla rete locale della scuola oppure, a scelta, con Tailscale.
+
+            Il lettore di codici a barre USB legge tessere, copie e ISBN; la scheda di un libro si recupera dall'OPAC SBN.
+            Quasi tutte le scelte della biblioteca sono impostazioni: una configurazione guidata propone valori consigliati
+            (tipo di scuola, classi, formati dei codici a barre, regole di prestito, classificazione e livelli di lettura,
+            segnatura) che l'amministratore cambia in seguito dall'interfaccia. Interfaccia in italiano e in inglese, altre
+            lingue con pacchetti di traduzione.
+        features:
+            - Prestiti, restituzioni e rinnovi con il lettore di codici a barre
+            - Catalogazione dall'ISBN con l'OPAC SBN e le copertine
+            - Classificazione per generi, argomenti e livelli di lettura, con la segnatura calcolata
+            - Studenti e docenti organizzati per classi, anche pluriclassi, e avanzamento di classe
+            - Tessere con foto ed etichette dei libri da modelli di stampa modificabili
+            - Solleciti per classe, report e statistiche
+            - Importazione di utenti, catalogo e prestiti con controllo completo prima dell'importazione
+            - Inventario degli scaffali
+            - Copie di sicurezza automatiche ed esportazione della configurazione
+            - Rimozione degli utenti con anonimizzazione immediata
+    en:
+        localisedName: BiblioViva
+        shortDescription: >-
+            Software for running a school library: loans, catalogue, patrons, library cards and labels.
+        documentation: "https://docs.biblioviva.org/en/"
+        longDescription: |
+            BiblioViva is free software for running a school library (up to about 10 000 books and 1 000 patrons). The
+            library staff use it from the browser of any computer, tablet or phone of the school; it has no public
+            catalogue and no accounts for students or families.
+
+            It runs in a Docker container on a computer of the school, for example an old PC with Linux or a Raspberry Pi,
+            and keeps its data in one SQLite file: the patrons' data, mostly about minors, stay at school. It is reached
+            from the school's local network or, as a choice, through Tailscale.
+
+            The USB barcode scanner reads cards, copies and ISBNs; a book's record is fetched from OPAC SBN. Most of the
+            library's choices are settings: a first-run wizard proposes recommended values (school type, classes, barcode
+            formats, loan rules, classification and reading levels, call numbers) that the administrator changes later from
+            the interface. Interface in Italian and English, other languages through translation packs.
+        features:
+            - Loans, returns and renewals with the barcode scanner
+            - Cataloguing from the ISBN with OPAC SBN and covers
+            - Classification by genres, subjects and reading levels, with computed call numbers
+            - Students and teachers organised in classes, multi-grade classes included, and the class upgrade
+            - Library cards with photos and book labels from editable print templates
+            - Overdue notices by class, reports and statistics
+            - Imports of patrons, catalogue and loans, fully checked before anything is imported
+            - Shelf stocktaking
+            - Automatic backups and export of the configuration
+            - Removal of patrons with immediate anonymization
+
+legal:
+    license: GPL-3.0-or-later
+
+maintenance:
+    type: community
+    contacts:
+        - name: itotm
+
+localisation:
+    localisationReady: true
+    availableLanguages:
+        - it
+        - en
+
+dependsOn:
+    open:
+        - name: Docker
+          optional: false

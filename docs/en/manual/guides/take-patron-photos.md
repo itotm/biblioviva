@@ -33,6 +33,8 @@ class](photos-from-class-picture.md).
 
 1. Frame the face and press **Take photo**. Without a camera press **Upload file** and choose that person's file.
 1. Drag the image to put the face in the vertical frame and, if needed, get closer with **Zoom**.
+   As an alternative to dragging, tap the point to bring to the centre of the frame or, with the keyboard,
+   press Tab to choose the frame and move the image with the arrow keys (Shift for longer steps).
 1. Press **Use this photo**. The notice "Photo saved" appears with the name and the next person without a photo opens
    at once.
 1. Repeat from the shooting step until the last person. To go to the next person without photographing this one, press
@@ -52,6 +54,8 @@ and **First name** and press **Add and photograph**: the student is added to the
 
 1. Press **Take photo**, or **Upload file** to choose a file.
 1. Frame the face by dragging and with **Zoom**.
+   As an alternative to dragging, tap the point to bring to the centre of the frame or, with the keyboard,
+   press Tab to choose the frame and move the image with the arrow keys (Shift for longer steps).
 1. Press **Use this photo**. The notice "Photo saved" appears.
 
 To change a photo repeat the same procedure: the new one replaces the old one. To remove it, press **Delete photo** and

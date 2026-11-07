@@ -20,6 +20,11 @@ export interface PageHeaderData {
 	backLabel?: string;
 	/** `p` when the bar shows the kind of page and the page has its own heading (record pages). */
 	titleTag?: "h1" | "p";
+	/**
+	 * The page carries the same title as its first heading, for screen readers (`PageHeader`): the bar's
+	 * copy, which comes after the page in the DOM, is hidden from them (WCAG 1.3.2, 2.4.6).
+	 */
+	inPage?: boolean;
 }
 
 export class PageHeaderStore {

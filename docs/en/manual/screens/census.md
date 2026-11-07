@@ -45,6 +45,8 @@ Under the title **One person at a time** is the list of the people of the class,
 1. Frame the face of the patron. Alternatively press **Upload file** to choose an image already prepared.
 1. Press **Take photo**.
 1. Drag the image to frame, adjust the **Zoom** and press **Use this photo**. **Retake** repeats the shot.
+   As an alternative to dragging, tap the point to bring to the centre of the frame or, with the keyboard,
+   press Tab to choose the frame and move the image with the arrow keys (Shift for longer steps).
 1. A message says "Photo saved: name" and the page moves by itself to the next person without a photo.
 
 The camera is optional and works only with a secure connection (https), that is with Tailscale; without it, a file is uploaded for each person. On a phone the camera takes up the whole screen and stays on between one shot and the next.
@@ -94,8 +96,8 @@ The first time the picture opens, the browser looks for the photos: the page wri
 Above the picture a bar offers:
 
 - the kind of picture, **Photo** or **Scan**. **Photo** is for a picture taken at an angle: each corner of a frame moves on its own, to follow the perspective. **Scan** is for a picture made with a scanner: the frames stay rectangles and can only be turned. As long as no patron has been chosen, changing the kind looks for the photos again;
-- **Correct frames**, which shows the frames on the picture to correct them (then it becomes **Done correcting**). Tap a frame and drag its corners; in a scan, a corner makes the frame larger or smaller and the circle above it turns it;
-- **Add frame**, for a missing photo: drag on the picture from one corner of the photo to the other;
+- **Correct frames**, which shows the frames on the picture to correct them (then it becomes **Done correcting**). Tap a frame and drag its corners; in a scan, a corner makes the frame larger or smaller and the circle above it turns it. With the keyboard, Tab chooses a frame and Enter selects it; then Tab reaches its corners (in a scan, the circle too) and the arrow keys move them;
+- **Add frame**, for a missing photo: drag on the picture from one corner of the photo to the other, or tap the picture to add a frame of the usual size centred on that point; with the keyboard, Enter on the picture adds one in the middle;
 - **Delete frame N**, to remove a wrong frame (it appears after choosing it).
 
 ### Assigning the photos

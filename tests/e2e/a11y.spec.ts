@@ -40,6 +40,21 @@ const PAGES = [
 	"/about",
 ];
 
+/** The pages checked at 320 CSS pixels (WCAG 1.4.10): only grids may scroll on their own. */
+const REFLOW = [
+	"/",
+	"/circulation/checkout",
+	"/circulation/checkin",
+	"/patrons",
+	"/patrons/new",
+	"/catalog",
+	"/catalog/new",
+	"/print",
+	"/reports",
+	"/admin",
+	"/admin/config/library",
+];
+
 async function open(page: Page, path: string): Promise<void> {
 	await page.goto(path);
 	await waitForHydration(page);
@@ -108,6 +123,100 @@ test.describe("accessibility", () => {
 		await expect(skip).toBeVisible();
 		await page.keyboard.press("Enter");
 		await expect(page.locator("main#main")).toBeFocused();
+	});
+
+	test("the page's title is its first heading, the bar's copy hidden from screen readers", async ({
+		page,
+	}) => {
+		await open(page, "/admin");
+		await expect(page.locator("main#main h1").first()).toHaveText("Amministrazione");
+		await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
+		await expect(
+			page.getByTestId("page-title").locator("xpath=ancestor::*[@aria-hidden='true']"),
+		).toHaveCount(1);
+	});
+
+	test("required fields carry an asterisk explained above the form", async ({ page }) => {
+		await open(page, "/patrons/new");
+		await expect(page.getByTestId("required-note")).toBeVisible();
+		await expect(page.getByTestId("required-note")).toHaveText(
+			"I campi con * sono obbligatori.",
+		);
+		const mark = await page
+			.getByLabel("Cognome", { exact: true })
+			.evaluate(
+				(input) =>
+					getComputedStyle(
+						input.closest("label")?.querySelector(".label-text") ?? input,
+						"::after",
+					).content,
+			);
+		expect(mark).toContain("*");
+		// a form with its errors passes axe too
+		await page.getByTestId("patron-submit").click();
+		await expect(page.locator('[aria-invalid="true"]').first()).toBeVisible();
+		await expectAxeClean(page);
+	});
+
+	test("an open dialog passes axe", async ({ page }) => {
+		await open(page, "/dev/ui");
+		await page.getByRole("button", { name: "Apri dialogo" }).click();
+		await expect(page.getByRole("dialog")).toBeVisible();
+		await expectAxeClean(page);
+	});
+
+	test("the camera is a dialog on a phone and passes axe", async ({ page }) => {
+		await open(page, "/cataloging/new");
+		await page.getByRole("button", { name: "Fotocamera", exact: true }).click();
+		const stage = page.getByTestId("barcode-camera");
+		await expect(stage).toBeVisible();
+		if (page.viewportSize()?.width === 412) {
+			await expect(stage).toHaveAttribute("role", "dialog");
+			await expect(stage).toHaveAttribute("aria-modal", "true");
+			await expect(page.getByTestId("bottom-nav")).toHaveJSProperty("inert", true);
+			await expectAxeClean(page);
+			await page.keyboard.press("Escape");
+			await expect(stage).toHaveCount(0);
+			await expect(page.getByTestId("bottom-nav")).toHaveJSProperty("inert", false);
+		} else {
+			await expect(stage).not.toHaveAttribute("role", "dialog");
+			await expectAxeClean(page);
+		}
+	});
+
+	test("nothing is cut at 320 CSS pixels, the width of a 400 % zoom", async ({ page }) => {
+		test.setTimeout(120_000);
+		await page.setViewportSize({ width: 320, height: 640 });
+		for (const path of REFLOW) {
+			await open(page, path);
+			const cut = await page.evaluate(() => {
+				const scrolls = (el: Element): boolean => {
+					for (let p = el.parentElement; p && p !== document.body; p = p.parentElement) {
+						if (
+							["auto", "scroll", "hidden", "clip"].includes(
+								getComputedStyle(p).overflowX,
+							)
+						) {
+							return true;
+						}
+					}
+					return false;
+				};
+				return [...document.querySelectorAll("body *")]
+					.filter((el) => {
+						const r = el.getBoundingClientRect();
+						if (r.width === 0 || r.height === 0 || el.closest(".sr-only")) {
+							return false;
+						}
+						return (r.right > window.innerWidth + 1 || r.left < -1) && !scrolls(el);
+					})
+					.map(
+						(el) =>
+							`${el.tagName.toLowerCase()}[${el.getAttribute("data-testid") ?? el.className}]`,
+					);
+			});
+			expect(cut, path).toEqual([]);
+		}
 	});
 
 	test("no motion when the system asks for less", async ({ page }) => {

@@ -89,6 +89,22 @@ test.describe.serial("cover", () => {
 			expect(Math.abs(corner.y + corner.height / 2 - stage.y - 92 * scale)).toBeLessThan(12);
 		}
 		await expectAxeClean(page);
+		// without dragging (WCAG 2.5.7): the arrow keys move a corner, a tap brings the nearest one
+		const first = page.getByTestId("cover-corner-0");
+		const at = async (): Promise<{ x: number; y: number }> => ({
+			x: Number(await first.getAttribute("cx")),
+			y: Number(await first.getAttribute("cy")),
+		});
+		const start = await at();
+		await first.focus();
+		for (let i = 0; i < 5; i++) {
+			await page.keyboard.press("ArrowRight");
+		}
+		expect((await at()).x).toBeCloseTo(start.x + 10, 5);
+		await page.getByTestId("cover-stage").click({ position: { x: start.x - 20, y: start.y } });
+		// the click lands on a whole pixel
+		expect(Math.abs((await at()).x - (start.x - 20))).toBeLessThan(1.5);
+		expect(Math.abs((await at()).y - start.y)).toBeLessThan(1.5);
 
 		await page.getByTestId("cover-straighten").click();
 		await expect(page.getByTestId("cover-result")).toBeVisible();

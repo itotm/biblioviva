@@ -3,7 +3,8 @@
      choice, template variants… `fit` keeps it as wide as its content. With `options` it draws the
      toggles itself, the one whose value is `value` pressed, `onselect` called on a click; `radio`
      makes it a radio group (one choice of several), else each toggle reports its pressed state.
-     Children (toggles drawn by hand) follow the options. -->
+     Children (toggles drawn by hand) follow the options. The toggles go to a second row rather than
+     past the window's edge (WCAG 1.4.10). -->
 <script lang="ts" generics="V extends string | number">
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";
@@ -46,7 +47,7 @@
 
 <div
 	class={[
-		"flex gap-1 rounded-container border border-surface-200 bg-surface-100 p-1",
+		"flex max-w-full flex-wrap gap-1 rounded-container border border-surface-200 bg-surface-100 p-1",
 		fit ? "w-fit" : "",
 		className,
 	]

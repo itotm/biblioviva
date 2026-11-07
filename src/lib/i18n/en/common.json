@@ -93,7 +93,8 @@
 	},
 	"form": {
 		"errorsTitle": "Check the highlighted fields",
-		"field": "Field {{field}}"
+		"field": "Field {{field}}",
+		"requiredNote": "Fields marked with * are required."
 	},
 	"confirm": {
 		"title": "Confirm?"

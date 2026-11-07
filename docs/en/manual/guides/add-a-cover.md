@@ -52,7 +52,9 @@ cover the button is called **Change cover**.
 1. Wait for the search of the edges: "Looking for the edges of the cover…". The first time the straightening program is
    downloaded and the wait is longer, while "Loading the straightening module…" is shown.
 1. Check the four corners on the image. If they do not match the edges of the cover, drag them one by one onto the
-   edges, as the notice says: "Drag the four corners onto the edges of the cover, then straighten.".
+   edges, as the notice says: "Drag the four corners onto the edges of the cover, then straighten.". As an alternative,
+   tap the picture to bring the nearest corner there; with the keyboard, Tab chooses a corner and the arrow keys move
+   it (Shift for longer steps).
 1. Press **Straighten**. Under **Result** the straightened cover appears.
 1. If the result is right press **Use this cover**; otherwise press **Retake** and repeat from the check of the corners.
    The notice "Cover saved" confirms the saving.

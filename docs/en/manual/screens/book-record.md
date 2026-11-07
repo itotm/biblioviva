@@ -32,7 +32,7 @@ Under the title are the marks:
 
 With the cataloguing permission, under the cover are the buttons to change it (the procedure is in [Add the cover](../guides/add-a-cover.md)):
 
-- **Photograph the cover** (**Change cover** if the cover already exists) opens the panel to take the photo with the camera or to **Upload a file**. After the shot the cover is straightened: drag the four corners onto the edges, press **Straighten** and confirm with **Use this cover**; **Retake** repeats the shot and **Cancel** exits. The camera is optional and works only with a secure connection (https), that is with Tailscale; uploading a file works everywhere.
+- **Photograph the cover** (**Change cover** if the cover already exists) opens the panel to take the photo with the camera or to **Upload a file**. After the shot the cover is straightened: drag the four corners onto the edges (as an alternative, tap the picture to bring the nearest corner there or, with the keyboard, Tab chooses a corner and the arrow keys move it), press **Straighten** and confirm with **Use this cover**; **Retake** repeats the shot and **Cancel** exits. The camera is optional and works only with a secure connection (https), that is with Tailscale; uploading a file works everywhere.
 - **Download cover** looks for the cover online from the ISBN. The button appears only if the book has an ISBN. If it does not find it, the page warns ("No cover found online for this ISBN: it can be photographed.").
 - **Remove cover** asks for confirmation ("Remove the cover?") and deletes the image from the server.
 

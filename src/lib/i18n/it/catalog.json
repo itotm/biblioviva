@@ -327,6 +327,8 @@
 		"detecting": "Ricerca dei bordi della copertina…",
 		"notFound": "Bordi non trovati automaticamente: trascinare gli angoli sulla copertina.",
 		"adjustHint": "Trascinare i quattro angoli sui bordi della copertina, poi raddrizzare.",
+		"keyboardHint": "Senza trascinare: toccare l'immagine per portarvi l'angolo più vicino; con la tastiera, Tab sceglie un angolo e le frecce lo spostano.",
+		"corner": "Angolo {{n}}",
 		"straighten": "Raddrizza",
 		"result": "Risultato",
 		"use": "Usa questa copertina",

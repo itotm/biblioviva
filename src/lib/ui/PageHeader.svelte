@@ -5,7 +5,10 @@
      under the bar: the views, and the actions on their right, on a row of their own when the
      window is narrow (9.13, rounds 24 and 26). The browser tab shows the same title, written here
      so that server rendering has it too (the layout renders before the page, so on the server it
-     would read the bar's store still empty); `docTitle` when the tab should say something else. -->
+     would read the bar's store still empty); `docTitle` when the tab should say something else.
+     The bar comes after the page in the DOM (it renders what the page publishes), so the page's
+     heading for screen readers is here, at the top of the page, and the bar's copy is hidden from
+     them (WCAG 1.3.2, 2.4.6). -->
 <script lang="ts">
 	import type { ResolvedPathname } from "$app/types";
 	import { onDestroy, untrack, type Snippet } from "svelte";
@@ -54,7 +57,17 @@
 	const store = usePageHeader();
 	const token = Symbol("page-header");
 	const publish = (): void =>
-		store?.set(token, { title, brand, subtitle, icon, logo, backHref, backLabel });
+		store?.set(token, {
+			title,
+			brand,
+			subtitle,
+			icon,
+			logo,
+			backHref,
+			backLabel,
+			titleTag: "p",
+			inPage: true,
+		});
 	// published synchronously so server rendering already has it; the effect keeps it in sync
 	untrack(publish);
 	$effect(publish);
@@ -66,7 +79,12 @@
 	{#if store}<title>{docTitle ?? title} · {i18n.t("common.app.name")}</title>{/if}
 </svelte:head>
 
-{#if !store}
+{#if store}
+	<h1 class="sr-only" data-testid="page-heading">
+		{#if brand}{`${brand} `}{/if}{title}
+	</h1>
+	{#if subtitle}<p class="sr-only">{subtitle}</p>{/if}
+{:else}
 	<Row wrap={false} align="start" gap="3" as="header">
 		{#if backHref}
 			<BackButton href={backHref} label={backLabel ?? ""} />

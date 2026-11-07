@@ -1726,20 +1726,25 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
     tests; `bun run ci` green.
   - Depends on: 9.7, 1.12
 
-- [ ] **9.54 Accessibility to WCAG 2.2 AA** (owner decision, Q147; required for 0.9.0, carried out before the manual
+- [x] **9.54 Accessibility to WCAG 2.2 AA** (owner decision, Q147; required for 0.9.0, carried out before the manual
   checks and the walkthrough of 9.3)
   - Context: Legge 4/2004 and the AgID guidelines require of schools EN 301 549 v3.2.1, i.e. WCAG 2.1 AA, also for the
     applications of an intranet; EN 301 549 v4.1.1 moves to WCAG 2.2. The code audit of `docs/studies/adoption.md` §2
     fixed six gaps (skip link, grid keys, field errors, field contrast, focus outline, navigation names) and left six.
-  - Tasks: the top bar (title, help, account menu) before the page in the DOM, the look unchanged (reading and Tab
-    order, WCAG 1.3.2, 2.4.3); a visible mark on required fields — an asterisk after the label, read as «obbligatorio»
-    by screen readers, and one line «I campi con * sono obbligatori» above a form that has one (3.3.2; the default of
-    Q147); the photo crop moved with the arrow keys and the corner handles of the cover and class-picture crops focusable
-    and moved with the arrow keys (2.5.7, 2.1.1); the phone's full-screen camera a modal dialog (focus on open, Escape
-    closes, the page behind inert, focus back on close); page titles no longer cut at large zoom (1.4.4); axe also on
-    an open dialog, a form with errors and the camera overlay; a reflow check at 320 CSS px on the main pages (1.4.10:
-    nothing cut, only grids scroll on their own); `docs/accessibility.md` updated (target WCAG 2.2 AA, what is met,
-    the limits: titles in other languages carry no `lang` because the record has no language, Q73).
+  - Tasks: the page's title is the page's first heading (`PageHeader` writes it at the top of the page for screen
+    readers; the top bar, after the page in the DOM because it renders what the page publishes, keeps the visible copy
+    hidden from them: WCAG 1.3.2, 2.4.6); a visible mark on required fields — an asterisk after the label (CSS, silent
+    for screen readers, which hear the control's `required`) and one line «I campi con * sono obbligatori» above a
+    form that has one (3.3.2; the default of Q147); no drag needed (2.5.7, 2.1.1): the photo crop moves with a tap
+    (the point to the centre) and with the arrow keys, a cover's corners with a tap (the nearest corner) and with the
+    arrow keys, a class picture's frames are selected with Enter, their handles moved with the arrow keys and a frame
+    added with a tap or Enter; the phone's full-screen camera a modal dialog (focus on open, Escape closes, the page
+    behind inert, focus back on close); the page title whole on a phone (1.4.4); axe also on an open dialog, a form
+    with errors and the camera overlay; a reflow check at 320 CSS px on eleven main pages (1.4.10: filter selects and
+    segmented groups no wider than the window); `docs/accessibility.md` updated (target WCAG 2.2 AA, what is met, the
+    limits: the title on one line on a computer, the top bar's buttons after the page in the Tab order, titles in
+    other languages without `lang` because the record has no language, Q73); the guides of the photo, cover and
+    class-picture flows name the alternatives.
   - Acceptance: unit and component tests for each fix; the a11y e2e spec extended on both projects; `bun run ci` green.
     The checks with NVDA and Orca, at 200 % and 400 % zoom and with Windows contrast themes stay with 9.3 (the owner).
   - Depends on: 9.3 (automated part)

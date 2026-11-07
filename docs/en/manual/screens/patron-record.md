@@ -29,7 +29,7 @@ At the top are the surname and the name (in the form "Surname Name") and, below,
 
 If patron photos are active (the administrator can switch them off), on the left is the photo, or the placeholder "No photo". Under the photo are two buttons (not for a removed patron):
 
-- **Photo** opens a panel to take the photo. With **Take photo** the camera of the device is used; with **Upload file** an image already prepared is chosen. After the shot, drag the image to frame the face, adjust the **Zoom** and confirm with **Use this photo**; **Retake** repeats the shot, **Cancel** exits. A message confirms "Photo saved". The camera is optional and works only with a secure connection (https), that is with Tailscale; uploading a file works everywhere.
+- **Photo** opens a panel to take the photo. With **Take photo** the camera of the device is used; with **Upload file** an image already prepared is chosen. After the shot, drag the image to frame the face (as an alternative, tap the point to bring to the centre or, with the keyboard, press Tab and use the arrow keys, with Shift for longer steps), adjust the **Zoom** and confirm with **Use this photo**; **Retake** repeats the shot, **Cancel** exits. A message confirms "Photo saved". The camera is optional and works only with a secure connection (https), that is with Tailscale; uploading a file works everywhere.
 - **Delete photo** (if the photo exists) asks for confirmation ("Delete the photo?") and deletes it from the server.
 
 The photos of many patrons together are taken from the [Photo census](census.md). The procedure is in the guide [Take the patrons' photos](../guides/take-patron-photos.md).

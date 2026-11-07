@@ -327,6 +327,8 @@
 		"detecting": "Looking for the edges of the cover…",
 		"notFound": "Edges not found automatically: drag the corners onto the cover.",
 		"adjustHint": "Drag the four corners onto the edges of the cover, then straighten.",
+		"keyboardHint": "Without dragging: tap the picture to bring the nearest corner there; with the keyboard, Tab chooses a corner and the arrow keys move it.",
+		"corner": "Corner {{n}}",
 		"straighten": "Straighten",
 		"result": "Result",
 		"use": "Use this cover",

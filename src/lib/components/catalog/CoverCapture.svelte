@@ -3,7 +3,9 @@
 	Cover capture with perspective correction (PLAN.md step 3.7, Q6): camera or file, OpenCV.js
 	loaded on demand with a determinate progress, automatic detection of the cover's corners,
 	four draggable handles to fix them, warp to an upright rectangle, WebP at the configured width
-	handed to `oncover` (the page submits it through `uploadCover`).
+	handed to `oncover` (the page submits it through `uploadCover`). Without dragging (WCAG 2.5.7,
+	2.1.1): a tap on the picture brings the nearest corner there; each corner takes the focus and
+	moves with the arrow keys.
 -->
 <script lang="ts">
 	import { useI18n } from "#lib/i18n/context.js";
@@ -55,6 +57,8 @@
 	let stage = $state<HTMLDivElement>();
 	let result = $state<HTMLCanvasElement | null>(null);
 	let dragging: { index: number; pointerId: number } | null = null;
+	/** The arrow keys' step on a corner, in displayed pixels (Shift: five times as much). */
+	const KEY_STEP = 2;
 
 	/** Display size: fit the source inside the component's width, at most 560 px tall. */
 	function fit(img: HTMLImageElement): void {
@@ -142,6 +146,40 @@
 	function onPointerUp(): void {
 		dragging = null;
 	}
+	/** A tap on the picture, not on a corner: the nearest corner comes to the point tapped. */
+	function onStageClick(e: MouseEvent): void {
+		if (!stage || (e.target instanceof Element && e.target.closest("circle"))) {
+			return;
+		}
+		const rect = stage.getBoundingClientRect();
+		const p = clamp({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+		const distances = quad.map((q) => Math.hypot(q.x - p.x, q.y - p.y));
+		const nearest = distances.indexOf(Math.min(...distances));
+		const next = [...quad] as Quad;
+		next[nearest] = p;
+		quad = next;
+	}
+	function onCornerKey(index: number, e: KeyboardEvent): void {
+		const step = e.shiftKey ? KEY_STEP * 5 : KEY_STEP;
+		const moves: Record<string, [number, number]> = {
+			ArrowLeft: [-step, 0],
+			ArrowRight: [step, 0],
+			ArrowUp: [0, -step],
+			ArrowDown: [0, step],
+		};
+		const move = moves[e.key];
+		if (!move) {
+			return;
+		}
+		const corner = quad[index];
+		if (!corner) {
+			return;
+		}
+		e.preventDefault();
+		const next = [...quad] as Quad;
+		next[index] = clamp({ x: corner.x + move[0], y: corner.y + move[1] });
+		quad = next;
+	}
 
 	function straighten(): void {
 		if (!cv || !capture.source) {
@@ -213,6 +251,8 @@
 		<Hint data-testid="cover-detect-status">
 			{detected ? i18n.t("catalog.cover.adjustHint") : i18n.t("catalog.cover.notFound")}
 		</Hint>
+		<!-- a tap on the picture: the keyboard has the corners themselves (WCAG 2.5.7) -->
+		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 		<div
 			bind:this={stage}
 			class="relative mx-auto touch-none overflow-hidden rounded-container bg-surface-900 select-none"
@@ -223,6 +263,7 @@
 			onpointermove={onPointerMove}
 			onpointerup={onPointerUp}
 			onpointercancel={onPointerUp}
+			onclick={onStageClick}
 			data-testid="cover-stage"
 		>
 			<img
@@ -233,12 +274,10 @@
 				class="block"
 				draggable="false"
 			/>
-			<svg
-				class="overlay-fill"
-				viewBox="0 0 {display.width} {display.height}"
-				aria-hidden="true"
-			>
+			<!-- not hidden from screen readers: the corners in it take the focus -->
+			<svg class="overlay-fill" viewBox="0 0 {display.width} {display.height}">
 				<polygon
+					aria-hidden="true"
 					points={polygon}
 					fill="rgba(0, 120, 255, 0.15)"
 					stroke="#ffffff"
@@ -252,17 +291,20 @@
 						fill="rgba(255,255,255,0.9)"
 						stroke="var(--color-primary-500)"
 						stroke-width="3"
-						class="pointer-events-auto cursor-grab"
+						class="pointer-events-auto cursor-grab focus-visible:outline-4 focus-visible:outline-primary-500"
 						role="slider"
-						aria-label={String(i + 1)}
+						aria-label={i18n.t("catalog.cover.corner", { n: i + 1 })}
 						aria-valuenow={Math.round(p.x)}
-						tabindex="-1"
+						aria-valuetext="{Math.round(p.x)}, {Math.round(p.y)}"
+						tabindex="0"
 						onpointerdown={(e) => onPointerDown(i, e)}
+						onkeydown={(e) => onCornerKey(i, e)}
 						data-testid="cover-corner-{i}"
 					/>
 				{/each}
 			</svg>
 		</div>
+		<Hint data-testid="cover-keyboard-hint">{i18n.t("catalog.cover.keyboardHint")}</Hint>
 		<Row>
 			<Button
 				variant="primary"

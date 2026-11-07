@@ -33,6 +33,8 @@ classe](photos-from-class-picture.md).
 1. Inquadrare il viso e premere **Scatta foto**. Senza fotocamera premere **Carica file** e scegliere il file di quella
    persona.
 1. Trascinare l'immagine per mettere il viso nel riquadro verticale e, se serve, avvicinare con **Zoom**.
+   In alternativa al trascinamento, toccare il punto da portare al centro del riquadro oppure, con la tastiera,
+   premere Tab per scegliere il riquadro e spostare l'immagine con le frecce (Maiusc per passi più lunghi).
 1. Premere **Usa questa foto**. Compare l'avviso «Foto salvata» con il nome e si apre subito la persona successiva che
    non ha la foto.
 1. Ripetere dalla fase di scatto fino all'ultima persona. Per passare alla persona seguente senza fotografare questa,
@@ -52,6 +54,8 @@ prossima.
 
 1. Premere **Scatta foto**, oppure **Carica file** per scegliere un file.
 1. Inquadrare il viso con il trascinamento e **Zoom**.
+   In alternativa al trascinamento, toccare il punto da portare al centro del riquadro oppure, con la tastiera,
+   premere Tab per scegliere il riquadro e spostare l'immagine con le frecce (Maiusc per passi più lunghi).
 1. Premere **Usa questa foto**. Compare l'avviso «Foto salvata».
 
 Per cambiare una foto si ripete la stessa procedura: la nuova sostituisce la vecchia. Per toglierla, premere

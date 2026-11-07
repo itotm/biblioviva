@@ -8,6 +8,9 @@
 	rings over the picture, the frame's line hidden inside them, with a wider touch area than they
 	show. In `draw` mode a drag draws a new upright frame (`onadd`). Frames already saved, and the
 	frames of removed patrons (erased: painted over in the picture, Q106), cannot change.
+	Without dragging (WCAG 2.5.7, 2.1.1): a frame takes the focus and Enter selects it; its handles
+	take the focus and move with the arrow keys; in `draw` mode a tap, or Enter on the picture, adds
+	a frame of the usual size there (or in the middle).
 -->
 <script lang="ts" module>
 	/**
@@ -134,6 +137,79 @@
 		svg?.setPointerCapture(e.pointerId);
 	}
 
+	/** The arrow keys on a handle: the same change as a drag to the handle's place moved by a step. */
+	function onHandleKey(f: SheetFrame, index: number, e: KeyboardEvent): void {
+		const step = e.shiftKey ? unit * 2.5 : unit / 2;
+		const moves: Record<string, [number, number]> = {
+			ArrowLeft: [-step, 0],
+			ArrowRight: [step, 0],
+			ArrowUp: [0, -step],
+			ArrowDown: [0, step],
+		};
+		const move = moves[e.key];
+		const from = [...f.corners] as Quad;
+		const handle = handlesOf(from)[index];
+		if (!move || !handle) {
+			return;
+		}
+		e.preventDefault();
+		const p = {
+			x: Math.max(0, Math.min(width, handle.x + move[0])),
+			y: Math.max(0, Math.min(height, handle.y + move[1])),
+		};
+		onmove?.(f.id, moved(from, index, p));
+	}
+
+	/** The corners after the handle `index` has gone to `p` (a corner, or the turning handle). */
+	function moved(from: Quad, index: number, p: Point): Quad {
+		if (index === ROTATE) {
+			return rotateTowards(from, p);
+		}
+		if (kind === "scan") {
+			return resizeCorner(from, index, p);
+		}
+		const next = [...from] as Quad;
+		next[index] = p;
+		return next;
+	}
+
+	/** A new frame of the usual size (the frames already there, or a portrait 12 % wide) around `c`. */
+	function frameAround(c: Point): Quad {
+		const sizes = frames.map((f) => ({
+			w: Math.max(...f.corners.map((p) => p.x)) - Math.min(...f.corners.map((p) => p.x)),
+			h: Math.max(...f.corners.map((p) => p.y)) - Math.min(...f.corners.map((p) => p.y)),
+		}));
+		const middle = (values: number[], fallback: number): number =>
+			values.length > 0
+				? ([...values].sort((a, b) => a - b)[Math.floor(values.length / 2)] ?? fallback)
+				: fallback;
+		const w = middle(
+			sizes.map((x) => x.w),
+			unit * 12,
+		);
+		const h = middle(
+			sizes.map((x) => x.h),
+			unit * 16,
+		);
+		const x = Math.max(0, Math.min(width - w, c.x - w / 2));
+		const y = Math.max(0, Math.min(height - h, c.y - h / 2));
+		return rectQuad({ x, y }, { x: x + w, y: y + h });
+	}
+
+	function onPictureKey(e: KeyboardEvent): void {
+		if (mode === "draw" && e.target === svg && (e.key === "Enter" || e.key === " ")) {
+			e.preventDefault();
+			onadd?.(frameAround({ x: width / 2, y: height / 2 }));
+		}
+	}
+
+	function onFrameKey(f: SheetFrame, e: KeyboardEvent): void {
+		if (e.key === "Enter" || e.key === " ") {
+			e.preventDefault();
+			pick(f);
+		}
+	}
+
 	function onDown(e: PointerEvent): void {
 		if (mode !== "draw") {
 			return;
@@ -146,16 +222,7 @@
 	function onMove(e: PointerEvent): void {
 		if (dragging) {
 			const p = toPicture(e);
-			let next: Quad;
-			if (dragging.index === ROTATE) {
-				next = rotateTowards(dragging.from, p);
-			} else if (kind === "scan") {
-				next = resizeCorner(dragging.from, dragging.index, p);
-			} else {
-				next = [...dragging.from] as Quad;
-				next[dragging.index] = p;
-			}
-			dragging = { ...dragging, corners: next };
+			dragging = { ...dragging, corners: moved(dragging.from, dragging.index, p) };
 		} else if (drawing) {
 			drawing = { ...drawing, to: toPicture(e) };
 		}
@@ -171,9 +238,11 @@
 		} else if (drawing) {
 			const { from, to } = drawing;
 			drawing = null;
-			// a tap is not a frame: at least 2 % of the picture each way
+			// a frame drawn: at least 2 % of the picture each way; a tap adds one of the usual size
 			if (Math.abs(to.x - from.x) > 2 * unit && Math.abs(to.y - from.y) > 2 * unit) {
 				onadd?.(rectQuad(from, to));
+			} else if (Math.abs(to.x - from.x) < unit && Math.abs(to.y - from.y) < unit) {
+				onadd?.(frameAround(from));
 			}
 		}
 	}
@@ -199,6 +268,8 @@
 	data-kind={kind}
 >
 	<img {src} {alt} {width} {height} class="block h-auto w-full rounded-base" draggable="false" />
+	<!-- a widget of its own: in draw mode it takes the focus and Enter adds a frame (WCAG 2.5.7) -->
+	<!-- svelte-ignore a11y_no_noninteractive_tabindex, a11y_no_noninteractive_element_interactions -->
 	<svg
 		bind:this={svg}
 		class="overlay-fill {mode === 'draw'
@@ -209,6 +280,8 @@
 		viewBox="0 0 {width} {height}"
 		role="application"
 		aria-label={alt}
+		tabindex={mode === "draw" ? 0 : -1}
+		onkeydown={onPictureKey}
 		onpointerdown={onDown}
 		onpointermove={onMove}
 		onpointerup={onUp}
@@ -220,6 +293,7 @@
 			{@const editing = mode === "edit" && f.id === selected}
 			{@const handles = editing ? handlesOf(q) : []}
 			{@const label = labelOf(q, editing)}
+			{@const selectable = mode === "edit" && f.state !== "saved" && f.state !== "erased"}
 			{#if editing}
 				<!-- the frame's line stops at the handles: inside a ring only the picture shows -->
 				<mask id="{uid}-handles" maskUnits="userSpaceOnUse" x="0" y="0" {width} {height}>
@@ -234,7 +308,7 @@
 					{/each}
 				</mask>
 			{/if}
-			<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
+			<!-- a button while it can be selected (role and tabindex set below) -->
 			<polygon
 				points={points(q)}
 				fill={editing ? "rgba(250, 200, 0, 0.15)" : "transparent"}
@@ -244,10 +318,15 @@
 					? `${unit} ${unit}`
 					: undefined}
 				mask={editing ? `url(#${uid}-handles)` : undefined}
-				class={mode === "edit" && f.state !== "saved" && f.state !== "erased"
-					? "cursor-pointer"
-					: ""}
+				class={selectable ? "cursor-pointer focus-visible:outline-none" : ""}
+				role={selectable ? "button" : undefined}
+				tabindex={selectable ? 0 : undefined}
+				aria-label={selectable
+					? i18n.t("patrons.census.sheet.frame", { n: f.position })
+					: undefined}
+				aria-pressed={selectable ? f.id === selected : undefined}
 				onclick={() => pick(f)}
+				onkeydown={(e) => onFrameKey(f, e)}
 				data-testid="sheet-frame-{f.position}"
 			/>
 			{#if editing && kind === "scan"}
@@ -301,10 +380,12 @@
 					role="slider"
 					aria-label={i === ROTATE
 						? i18n.t("patrons.census.sheet.rotateFrame")
-						: String(i + 1)}
+						: i18n.t("patrons.census.sheet.corner", { n: i + 1 })}
 					aria-valuenow={Math.round(p.x)}
-					tabindex="-1"
+					aria-valuetext="{Math.round(p.x)}, {Math.round(p.y)}"
+					tabindex="0"
 					onpointerdown={(e) => startHandle(f, i, e)}
+					onkeydown={(e) => onHandleKey(f, i, e)}
 					data-testid={i === ROTATE ? "sheet-rotate" : `sheet-corner-${i}`}
 				/>
 			{/each}

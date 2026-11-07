@@ -14,6 +14,15 @@ test("the photo is taken with the form and saved with the patron", async ({ page
 	await page.getByTestId("new-photo-take").click();
 	await expect(page.getByTestId("photo-panel")).toBeVisible();
 	await page.getByTestId("photo-file").setInputFiles("tests/fixtures/images/portrait-exif.jpg");
+	// without dragging (WCAG 2.5.7): zoomed in, the arrow keys move the picture and a tap brings
+	// the point tapped to the centre of the frame (240 × 320)
+	await page.getByLabel("Zoom").fill("2");
+	const crop = page.getByTestId("photo-crop");
+	await crop.focus();
+	await page.keyboard.press("ArrowLeft");
+	await expect(crop).toHaveAttribute("data-offset", "-8,0");
+	await crop.click({ position: { x: 140, y: 160 } });
+	await expect(crop).toHaveAttribute("data-offset", "-28,0");
 	await page.getByTestId("photo-use").click();
 	await expect(page.getByTestId("photo-panel")).toHaveCount(0);
 	await expect(page.getByTestId("new-photo-image")).toBeVisible();

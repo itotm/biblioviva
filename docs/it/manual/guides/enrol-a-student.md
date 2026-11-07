@@ -45,6 +45,8 @@ foto degli utenti](take-patron-photos.md).
 1. Inquadrare il viso dell'alunno e premere **Scatta foto**. Senza fotocamera, o senza Tailscale, premere
    **Carica file** e scegliere un file con la foto.
 1. Trascinare l'immagine per mettere il viso nel riquadro verticale e, se serve, avvicinare con **Zoom**.
+   In alternativa al trascinamento, toccare il punto da portare al centro del riquadro oppure, con la tastiera,
+   premere Tab per scegliere il riquadro e spostare l'immagine con le frecce (Maiusc per passi più lunghi).
 1. Premere **Usa questa foto**. La scheda **Foto** mostra l'anteprima e la scritta «Si salva insieme all'utente.».
 
 Per sostituire la foto scelta premere **Rifai la foto**; per scartarla premere **Togli**.

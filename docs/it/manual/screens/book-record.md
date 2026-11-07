@@ -44,11 +44,12 @@ Sotto il titolo si leggono i contrassegni:
 Con il permesso del catalogo, sotto la copertina stanno i pulsanti per cambiarla (la procedura è in
 [Aggiungere la copertina](../guides/add-a-cover.md)):
 
-- **Fotografa la copertina** (**Cambia copertina** se la copertina c'è già) apre il pannello per scattare la foto con la
-  fotocamera o per **Carica un file**. Dopo lo scatto la copertina viene raddrizzata: si trascinano i quattro angoli
-  sui bordi, si preme **Raddrizza** e si conferma con **Usa questa copertina**; **Rifai** ripete lo scatto e
-  **Annulla** esce. La fotocamera è facoltativa e funziona solo con una connessione sicura (https), cioè con Tailscale;
-  caricare un file va bene ovunque.
+- **Fotografa la copertina** (**Cambia copertina** se la copertina c'è già) apre il pannello per scattare la foto con
+  la fotocamera o per **Carica un file**. Dopo lo scatto la copertina viene raddrizzata: si trascinano i quattro
+  angoli sui bordi (in alternativa si tocca l'immagine per portarvi l'angolo più vicino oppure, con la tastiera, Tab
+  sceglie un angolo e le frecce lo spostano), si preme **Raddrizza** e si conferma con **Usa questa copertina**;
+  **Rifai** ripete lo scatto e **Annulla** esce. La fotocamera è facoltativa e funziona solo con una connessione
+  sicura (https), cioè con Tailscale; caricare un file va bene ovunque.
 - **Scarica copertina** cerca la copertina online dall'ISBN. Il pulsante compare solo se il libro ha un ISBN. Se non la
   trova, la pagina avvisa («Nessuna copertina trovata online per questo ISBN: è possibile fotografarla.»).
 - **Rimuovi copertina** chiede conferma («Rimuovere la copertina?») e cancella l'immagine dal server.

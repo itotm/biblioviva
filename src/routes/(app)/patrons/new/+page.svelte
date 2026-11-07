@@ -124,7 +124,7 @@
 			{/snippet}
 		</MediaCard>
 		{#if camera}
-			<CameraStage data-testid="photo-panel">
+			<CameraStage data-testid="photo-panel" onclose={() => (camera = false)}>
 				<h2 class="h4">{i18n.t("patrons.photo.title")}</h2>
 				<PhotoCapture
 					onphoto={onPhoto}

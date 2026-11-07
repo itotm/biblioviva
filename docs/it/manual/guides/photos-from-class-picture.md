@@ -49,10 +49,12 @@ Ogni foto trovata è un riquadro numerato, disegnato sull'immagine.
 1. Se un riquadro è sbagliato o mancante, premere **Correggi riquadri**.
 1. Premere un riquadro per scegliere. Con il tipo **Foto** trascinare uno per uno gli angoli, fino a farli coincidere
    con gli angoli della foto. Con il tipo **Scansione** trascinare un angolo per allargare o stringere il riquadro, e il
-   cerchio sopra il riquadro per ruotarlo.
+   cerchio sopra il riquadro per ruotarlo. Con la tastiera, Tab sceglie un riquadro e Invio lo seleziona; poi Tab
+   raggiunge i suoi angoli (con il tipo **Scansione**, anche il cerchio) e le frecce li spostano.
 1. Per togliere un riquadro che non è una foto premerlo e poi premere **Elimina riquadro** con il suo numero.
 1. Per aggiungere una foto mancante premere **Aggiungi riquadro** e trascinare sull'immagine da un angolo all'altro
-   della foto.
+   della foto. In alternativa toccare l'immagine: compare un riquadro della misura abituale, centrato nel punto
+   toccato. Con la tastiera, premere Invio sull'immagine per aggiungerne uno al centro.
 1. Finita la correzione premere **Fine correzioni**.
 
 ### Assegnare le foto

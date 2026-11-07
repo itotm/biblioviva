@@ -2,6 +2,8 @@
 <!--
 	Portrait photo capture (step 2.3): camera (CameraCapture with a 3:4 guide) or file upload, then
 	crop by dragging/zooming inside a 3:4 frame, exported as a 480×640 WebP File for `uploadPhoto`.
+	Without dragging (WCAG 2.5.7, 2.1.1): a tap brings the point tapped to the centre, the arrow keys
+	move the picture while the frame has the focus.
 -->
 <script lang="ts">
 	import { useI18n } from "#lib/i18n/context.js";
@@ -50,7 +52,9 @@
 	let zoom = $state(1);
 	let offset = $state({ x: 0, y: 0 });
 	let canvas = $state<HTMLCanvasElement>();
-	let dragging: { x: number; y: number; ox: number; oy: number } | null = null;
+	let dragging: { x: number; y: number; ox: number; oy: number; moved: boolean } | null = null;
+	/** The arrow keys' step, in frame pixels (Shift: five times as much). */
+	const KEY_STEP = 8;
 	const FRAME_W = 240;
 	const FRAME_H = 320;
 
@@ -99,21 +103,60 @@
 		draw(zoom, offset.x, offset.y);
 	});
 
+	/** Moves the picture, keeping the frame full (the offset never goes past what is drawn). */
+	function moveBy(dx: number, dy: number): void {
+		const g = geometry({ w: FRAME_W, h: FRAME_H });
+		if (!g) {
+			return;
+		}
+		const maxX = (g.w - FRAME_W) / 2;
+		const maxY = (g.h - FRAME_H) / 2;
+		const clamp = (v: number, max: number): number => Math.max(-max, Math.min(max, v));
+		offset = { x: clamp(offset.x + dx, maxX), y: clamp(offset.y + dy, maxY) };
+	}
+
 	function onPointerDown(e: PointerEvent): void {
-		dragging = { x: e.clientX, y: e.clientY, ox: offset.x, oy: offset.y };
+		dragging = { x: e.clientX, y: e.clientY, ox: offset.x, oy: offset.y, moved: false };
 		(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
 	}
 	function onPointerMove(e: PointerEvent): void {
 		if (!dragging) {
 			return;
 		}
-		offset = {
-			x: dragging.ox + (e.clientX - dragging.x),
-			y: dragging.oy + (e.clientY - dragging.y),
-		};
+		const dx = e.clientX - dragging.x;
+		const dy = e.clientY - dragging.y;
+		if (Math.hypot(dx, dy) > 4) {
+			dragging.moved = true;
+		}
+		offset = { x: dragging.ox + dx, y: dragging.oy + dy };
 	}
-	function onPointerUp(): void {
+	function onPointerUp(e: PointerEvent): void {
+		const tap = dragging && !dragging.moved;
 		dragging = null;
+		if (tap && e.type === "pointerup") {
+			// a tap: the point tapped comes to the centre of the frame
+			const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+			const sx = FRAME_W / rect.width;
+			const sy = FRAME_H / rect.height;
+			moveBy(
+				FRAME_W / 2 - (e.clientX - rect.left) * sx,
+				FRAME_H / 2 - (e.clientY - rect.top) * sy,
+			);
+		}
+	}
+	function onKeyDown(e: KeyboardEvent): void {
+		const step = e.shiftKey ? KEY_STEP * 5 : KEY_STEP;
+		const moves: Record<string, [number, number]> = {
+			ArrowLeft: [-step, 0],
+			ArrowRight: [step, 0],
+			ArrowUp: [0, -step],
+			ArrowDown: [0, step],
+		};
+		const move = moves[e.key];
+		if (move) {
+			e.preventDefault();
+			moveBy(...move);
+		}
 	}
 
 	async function confirm(): Promise<void> {
@@ -178,6 +221,8 @@
 	{/if}
 	{#if capture.mode === "crop"}
 		<Hint>{i18n.t("patrons.photo.dragHint")}</Hint>
+		<!-- a widget of its own: focused, the arrow keys move the picture (WCAG 2.5.7, 2.1.1) -->
+		<!-- svelte-ignore a11y_no_interactive_element_to_noninteractive_role -->
 		<canvas
 			bind:this={canvas}
 			width={FRAME_W}
@@ -188,6 +233,11 @@
 			onpointermove={onPointerMove}
 			onpointerup={onPointerUp}
 			onpointercancel={onPointerUp}
+			onkeydown={onKeyDown}
+			tabindex="0"
+			role="application"
+			aria-label={i18n.t("patrons.photo.frame")}
+			data-offset="{Math.round(offset.x)},{Math.round(offset.y)}"
 			data-testid="photo-crop"
 		></canvas>
 		<Field label={i18n.t("patrons.photo.zoom")} class="max-w-60"

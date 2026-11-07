@@ -2,6 +2,7 @@
 <!-- Sections of fields with a sticky save bar; inline validation is done by the fields themselves (§3.18). -->
 <script lang="ts">
 	import type { Snippet } from "svelte";
+	import { useI18n } from "#lib/i18n/context.js";
 
 	interface Props {
 		/** Field sections: use <FormLayout.Section> markup (a <fieldset> with a legend) inside. */
@@ -16,12 +17,17 @@
 	}
 
 	const { children, actions, errors, onsubmit, ...rest }: Props = $props();
+	const i18n = useI18n();
 </script>
 
 <form {...rest} class="space-y-6" {onsubmit} novalidate data-testid="form-layout">
 	{#if errors}
 		<div role="alert">{@render errors()}</div>
 	{/if}
+	<!-- shown only when a field is required (app.css): the asterisk after its label (WCAG 3.3.2) -->
+	<p class="bv-required-note text-sm opacity-80" data-testid="required-note">
+		{i18n.t("common.form.requiredNote")}
+	</p>
 	<div class="space-y-6">{@render children()}</div>
 	{#if actions}
 		<div

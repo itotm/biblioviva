@@ -44,7 +44,8 @@ list is cleared at a release, and a new one takes the next.
   left in `docs/studies/adoption.md`: QA2 (the conformance page), QA3 (a page for the head teacher and the DPO), QA4
   (optional inventory fields for D.I. 129/2018), QA6 (MARC export), QA7 (a preset for accessible books); look at the
   darker field borders and placeholders and at the overview page `docs/it/features.md`.
-- [ ] **15. Accessibility by hand** (9.3, after 9.54): NVDA (Windows, Firefox or Chrome) and Orca (Linux) on the desk,
+- [ ] **15. Accessibility by hand** (9.3): look at the asterisks of the required fields and at the keyboard and tap
+  alternatives of the photo, cover and class-picture crops; NVDA (Windows, Firefox or Chrome) and Orca (Linux) on the desk,
   a form with errors, a grid, a dialog; the browser zoom at 200 % and 400 %; a Windows contrast theme.
 - [ ] **16. Developers Italia** (9.55, after 9.36): the contact of `publiccode.yml` (now the GitHub name `itotm`; a
   real name and an e-mail if wanted), a run of the official validator, then the registration on
@@ -78,8 +79,9 @@ list is cleared at a release, and a new one takes the next.
   publication is done (`docs.biblioviva.org` is online). `ONLINE.docs` and `ONLINE.repo` are on: upload the home page
   again (`home/biblioviva-home.zip`) for the GitHub link in the header and the Project column in the footer.
 - [ ] 9.3 Accessibility and UX review pass.
-- [ ] 9.54 Accessibility to WCAG 2.2 AA: the six open gaps of the audit, axe on more states, a reflow check (Q147).
-- [ ] 9.55 `publiccode.yml`, checked by a test; the Developers Italia listing after 9.36 (Q148).
+- [x] 9.54 Accessibility to WCAG 2.2 AA: the six open gaps of the audit, axe on more states, a reflow check (Q147).
+- [ ] 9.55 `publiccode.yml`: the file and its test are in; left: the official validator and the Developers Italia listing
+  after 9.36 (Q148, owner's check 16).
 - [ ] 9.4 Device checklist.
 - [x] 9.17 Public demo: running on `demo.biblioviva.org`.
 - [x] 9.40 A beep when the phone's camera reads a code (four sounds, Conferma by default, Q137).

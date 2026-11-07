@@ -62,6 +62,8 @@ Sotto il titolo **Una persona alla volta** sta l'elenco delle persone della clas
 1. Inquadrare il volto dell'utente. In alternativa premere **Carica file** per scegliere un'immagine già pronta.
 1. Premere **Scatta foto**.
 1. Trascinare l'immagine per inquadrare, regolare lo **Zoom** e premere **Usa questa foto**. **Rifai** ripete lo scatto.
+   In alternativa al trascinamento, toccare il punto da portare al centro del riquadro oppure, con la tastiera,
+   premere Tab per scegliere il riquadro e spostare l'immagine con le frecce (Maiusc per passi più lunghi).
 1. Un messaggio dice «Foto salvata: nome» e la pagina passa da sola alla persona seguente senza foto.
 
 La fotocamera è facoltativa e funziona solo con una connessione sicura (https), cioè con Tailscale; senza, si carica un
@@ -132,8 +134,11 @@ Sopra l'immagine una barra offre:
   vengono cercate di nuovo;
 - **Correggi riquadri**, che mostra i riquadri sull'immagine per correggerli (poi diventa **Fine correzioni**). Toccare
   un riquadro e trascinarne gli angoli; in una scansione, un angolo allarga o stringe il riquadro e il cerchio in alto
-  lo ruota;
-- **Aggiungi riquadro**, per una foto mancante: si trascina sull'immagine da un angolo all'altro della foto;
+  lo ruota. Con la tastiera, Tab sceglie un riquadro e Invio lo seleziona; poi Tab raggiunge i suoi angoli (in una
+  scansione, anche il cerchio) e le frecce li spostano;
+- **Aggiungi riquadro**, per una foto mancante: si trascina sull'immagine da un angolo all'altro della foto, oppure si
+  tocca l'immagine per aggiungere un riquadro della misura abituale centrato in quel punto; con la tastiera, Invio
+  sull'immagine ne aggiunge uno al centro;
 - **Elimina riquadro N**, per togliere un riquadro sbagliato (compare dopo averlo scelto).
 
 ### Assegnare le foto

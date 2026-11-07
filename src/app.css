@@ -75,6 +75,19 @@
 		outline: 2px solid var(--color-primary-700);
 		outline-offset: 2px;
 	}
+	/* A required field: an asterisk after its label, silent for screen readers (the control says
+	   it is required), and the note that explains it above a form that has one (WCAG 3.3.2). */
+	.label:has(:required) > .label-text::after {
+		content: " *" / "";
+		color: var(--color-error-700);
+		font-weight: 700;
+	}
+	.bv-required-note {
+		display: none;
+	}
+	form:has(.label :required) > .bv-required-note {
+		display: block;
+	}
 	::placeholder {
 		color: var(--field-placeholder);
 		opacity: 1;

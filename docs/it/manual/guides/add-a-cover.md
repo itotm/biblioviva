@@ -54,7 +54,9 @@ copertina il pulsante si chiama **Cambia copertina**.
 1. Attendere la ricerca dei bordi: «Ricerca dei bordi della copertina…». La prima volta il programma di raddrizzamento
    si scarica e l'attesa è più lunga, mentre si legge «Caricamento del modulo di raddrizzamento…».
 1. Controllare i quattro angoli sull'immagine. Se non coincidono con i bordi della copertina trascinarli uno per uno sui
-   bordi, come dice l'avviso «Trascinare i quattro angoli sui bordi della copertina, poi raddrizzare.».
+   bordi, come dice l'avviso «Trascinare i quattro angoli sui bordi della copertina, poi raddrizzare.». In alternativa
+   toccare l'immagine per portarvi l'angolo più vicino; con la tastiera, Tab sceglie un angolo e le frecce lo
+   spostano (Maiusc per passi più lunghi).
 1. Premere **Raddrizza**. Sotto **Risultato** compare la copertina dritta.
 1. Se il risultato è giusto premere **Usa questa copertina**; altrimenti premere **Rifai** e ripetere dal controllo
    degli angoli. L'avviso «Copertina salvata» conferma il salvataggio.

@@ -258,7 +258,7 @@
 	{/if}
 	{#if showCamera}
 		<!-- full screen on a phone, so the camera is never half off the screen (9.13) -->
-		<CameraStage data-testid="barcode-camera">
+		<CameraStage data-testid="barcode-camera" onclose={() => (showCamera = false)}>
 			{#await import("./ScannerOverlay.svelte") then { default: ScannerOverlay }}
 				<ScannerOverlay
 					accept={cameraAccept}

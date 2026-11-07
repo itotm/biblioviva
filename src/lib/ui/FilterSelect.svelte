@@ -19,9 +19,11 @@
 	let { label, all, value = $bindable(), onchange, children, ...rest }: Props = $props();
 </script>
 
-<label class="inline-block">
+<!-- never wider than the window: a long choice is cut in the closed select, whole in its list
+     (WCAG 1.4.10) -->
+<label class="inline-block max-w-full">
 	<span class="sr-only">{label}</span>
-	<Select auto bind:value aria-label={label} {onchange} {...rest}>
+	<Select auto class="max-w-full" bind:value aria-label={label} {onchange} {...rest}>
 		{#if all !== undefined}<option value="">{label}: {all}</option>{/if}
 		{@render children()}
 	</Select>

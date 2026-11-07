@@ -40,7 +40,7 @@
 	}
 </script>
 
-<CameraStage data-testid="cover-panel">
+<CameraStage data-testid="cover-panel" onclose={oncancel}>
 	<Row wrap={false} align="center" justify="between">
 		<h2 class="h4">{i18n.t("catalog.cover.title")}</h2>
 	</Row>

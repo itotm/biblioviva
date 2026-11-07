@@ -15,10 +15,10 @@
 
 | Area | Rule | Where BiblioViva stands | Proposal | Priority |
 |---|---|---|---|---|
-| Accessibility | Legge 4/2004, AgID guidelines → EN 301 549 v3.2.1 = WCAG 2.1 AA (also on intranets) | good base; six gaps fixed, six open (§2.3); conformance page `docs/accessibility.md` | close the gaps in 9.3, WCAG 2.2 AA as the target | **high** (0.9.0) |
+| Accessibility | Legge 4/2004, AgID guidelines → EN 301 549 v3.2.1 = WCAG 2.1 AA (also on intranets) | target WCAG 2.2 AA (Q147); the gaps of the audit closed (§2.3, step 9.54); conformance page `docs/accessibility.md` | the checks by hand of 9.3 | **high** (0.9.0) |
 | Data protection | GDPR, D.Lgs. 196/2003, Garante's school guidance | strong by design (data at school, anonymization, no logs of names) | a page for the head teacher and the DPO with the facts they must write down | **high** (0.9.0, docs only) |
 | School inventory | D.I. 129/2018 art. 31: library books are inventoried assets | not covered: no inventory number, no value, no acquisition source | optional inventory fields and the two lists the office needs | **medium**, owner decision |
-| Open source in the PA | CAD art. 68–69, AgID guidelines on acquisition and reuse | GPL, public repository | `publiccode.yml` and listing in the Developers Italia catalogue | **medium**, cheap |
+| Open source in the PA | CAD art. 68–69, AgID guidelines on acquisition and reuse | GPL, public repository; `publiccode.yml` (step 9.55, Q148) | the listing in the Developers Italia catalogue after 9.36 | **medium**, cheap |
 | Interoperability and exit | CAD art. 68 (portability), library practice | CSV/JSON exports, Z39.50 and UNIMARC import of records | MARC export (and import) of the catalogue | **medium** |
 | Security | AgID minimum ICT security measures (Circolare 2/2017) | accounts, roles, audit log, backups, updates | say so in the documentation; nothing to build | low |
 | Cloud | ACN regulation on cloud for the PA | self-hosted: not concerned | warn whoever would host it for schools | low |
@@ -69,7 +69,7 @@ contrast test on all fifteen colour sets.
 
 ### 2.3 Gaps, and what is already fixed
 
-Fixed with this study (in the working tree, tests included):
+Fixed with this study (tests included):
 
 | Gap | WCAG | Fix |
 |---|---|---|
@@ -80,28 +80,29 @@ Fixed with this study (in the working tree, tests included):
 | no global focus style (browser default only); weak focus on the list search | 2.4.7 | a 2 px primary outline on `:focus-visible`; a ring on the search box |
 | the phone's bottom bar labelled «Altro», the sidebar not a navigation landmark | 4.1.2 | both labelled «Menu principale» |
 
-Still open (medium effort, for step 9.3):
+Fixed in step 9.54 (Q147: target WCAG 2.2 AA):
 
-- the top bar (title, help, account menu) comes after the page in the DOM: the reading and Tab order differ from the
-  visual order (1.3.2, 2.4.3) — about ½ day, careful with the sticky layout;
-- required fields have no visible mark before an error (3.3.2) — a visible change, owner's choice of the mark
-  (asterisk with a note, or «(obbligatorio)»);
-- cropping a photo, a cover or a class picture is drag-only (2.5.7): arrow keys on the canvas and on the corner
-  handles — about 1 day;
-- the phone's full-screen camera is not a modal dialog (focus, Escape, `inert` behind) — small;
-- long page titles clamped to one or two lines at large zoom (1.4.4) — small;
-- book titles in another language have no `lang` (3.1.2) — needs a language field, which the lean model dropped
-  (Q73): accept as a documented limit.
+- the page's title is the first heading at the top of the page for screen readers; the top bar's copy, after the
+  page in the DOM, is hidden from them (1.3.2, 2.4.6);
+- required fields carry an asterisk after the label, explained by «I campi con * sono obbligatori» above the form
+  (3.3.2);
+- no drag needed (2.5.7, 2.1.1): the photo crop moves with a tap and the arrow keys, a cover's corners with a tap and
+  the arrow keys, a class picture's frames are selected with Enter, their handles moved with the arrow keys, a frame
+  added with a tap or Enter;
+- the phone's full-screen camera is a modal dialog (focus, Escape, the page behind inert);
+- the page title is whole on a phone, so at any large zoom (1.4.4); filter selects and segmented groups never wider
+  than the window, checked at 320 CSS px on eleven pages (1.4.10);
+- axe also on a form with errors, an open dialog and the camera.
+
+Accepted limits, written in `docs/accessibility.md`: the title on one line on a computer; the top bar's buttons
+after the page in the Tab order; titles in another language without `lang` (no language field, Q73).
 
 Manual checks no code review can replace: NVDA (Windows, Firefox/Chrome) and Orca (Linux) on the desk, forms with
 errors, grids, dialogs, toasts; zoom 200 % and 400 %; text spacing; Windows contrast themes (`forced-colors`).
 
-### 2.4 Proposal
+### 2.4 What is left
 
-Take the open items into step 9.3 with WCAG 2.2 AA as the target (QA1), extend axe to the states it does not see
-today (open dialogs, forms with errors, the camera overlay), run the manual screen-reader and zoom checks once
-before 0.9.0, and keep `docs/accessibility.md` as the project's conformance page (QA2). About **2–3 days** besides
-what is already fixed.
+The manual checks before 0.9.0 (9.3) and `docs/accessibility.md` kept as the project's conformance page (QA2).
 
 ## 3. Data protection
 
@@ -199,9 +200,9 @@ putting a **`publiccode.yml`** file at the root of its public repository (an OSI
 is one) and registering the organisation; a crawler then imports it. For BiblioViva it is the cheapest visibility
 there is among the people who choose software for schools.
 
-Proposal: add `publiccode.yml` (Italian and English descriptions, screenshots from the docs, the maintainer as
-contact, `softwareType: standalone/web`, categories `library-management` `[VERIFY: the category list]`), validate it
-with the official validator, and ask for the listing once the public repository exists (step 9.36). About **½ day**.
+Done in step 9.55 (Q148): `publiccode.yml` (standard version `0`, category `integrated-library-system`,
+`standalone/web`, descriptions in Italian and English, the maintainer as contact), checked by a unit test. Left to
+the owner: a run of the official validator and the listing once the public repository exists (9.36).
 
 ## 6. Interoperability and the way out
 

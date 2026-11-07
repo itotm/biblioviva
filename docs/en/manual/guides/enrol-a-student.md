@@ -45,6 +45,8 @@ patrons' photos](take-patron-photos.md).
 1. Frame the student's face and press **Take photo**. Without a camera, or without Tailscale, press **Upload file** and
    choose a file with the photo.
 1. Drag the image to put the face in the vertical frame and, if needed, get closer with **Zoom**.
+   As an alternative to dragging, tap the point to bring to the centre of the frame or, with the keyboard,
+   press Tab to choose the frame and move the image with the arrow keys (Shift for longer steps).
 1. Press **Use this photo**. The **Photo** tab shows the preview and the text "It is saved with the patron.".
 
 To replace the chosen photo press **Retake the photo**; to discard it press **Remove**.

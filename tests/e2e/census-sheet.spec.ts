@@ -249,6 +249,22 @@ test.describe("photo census from a class picture", () => {
 		await page.mouse.up();
 		await expect.poll(async () => (await pointsOf(9))[0]?.x).not.toBe(unturned[0]?.x);
 		expect(rightAngled(await pointsOf(9))).toBe(true);
+		// without dragging (WCAG 2.5.7): Enter on a frame selects it, the arrow keys move a corner,
+		// Enter on the picture in draw mode adds a frame of the usual size in the middle
+		await page.getByTestId("sheet-frame-9").focus();
+		await page.keyboard.press("Enter");
+		const unmoved = await pointsOf(9);
+		await page.getByTestId("sheet-corner-2").focus();
+		await page.keyboard.press("Shift+ArrowRight");
+		await expect
+			.poll(async () => (await pointsOf(9))[2]?.x ?? 0)
+			.toBeGreaterThan(unmoved[2]?.x ?? 0);
+		expect(rightAngled(await pointsOf(9))).toBe(true);
+		const rows = await page.getByTestId("sheet-frames").locator("li").count();
+		await page.getByTestId("sheet-add-frame").click();
+		await page.getByTestId("sheet-overlay").focus();
+		await page.keyboard.press("Enter");
+		await expect(page.getByTestId("sheet-frames").locator("li")).toHaveCount(rows + 1);
 		await page.getByTestId("sheet-edit").click();
 		await page.reload();
 		await waitForHydration(page);

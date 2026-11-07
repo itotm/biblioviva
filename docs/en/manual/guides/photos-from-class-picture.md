@@ -48,9 +48,12 @@ Each photo found is a numbered frame, drawn on the picture.
 1. If a frame is wrong or missing, press **Correct frames**.
 1. Press a frame to select it. With the **Photo** kind drag the corners one by one, until they coincide with the corners
    of the photo. With the **Scan** kind drag a corner to make the frame larger or smaller, and the circle above the frame
-   to turn it.
+   to turn it. With the keyboard, Tab chooses a frame and Enter selects it; then Tab reaches its corners (with the
+   **Scan** kind, the circle too) and the arrow keys move them.
 1. To remove a frame that is not a photo press it and then press **Delete frame** with its number.
 1. To add a missing photo press **Add frame** and drag on the picture from one corner of the photo to the other.
+   As an alternative, tap the picture: a frame of the usual size appears, centred on the point tapped. With the
+   keyboard, press Enter on the picture to add one in the middle.
 1. When the correction is finished press **Done correcting**.
 
 ### Assign the photos

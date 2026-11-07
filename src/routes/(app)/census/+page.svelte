@@ -315,7 +315,7 @@
 		</Hint>
 
 		{#if current}
-			<CameraStage data-testid="census-stage">
+			<CameraStage data-testid="census-stage" onclose={() => (currentId = null)}>
 				<Row wrap={false} align="center" justify="between">
 					<h2 class="h4" data-testid="census-current">
 						{patronSortName(current)}

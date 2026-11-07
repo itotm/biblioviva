@@ -38,10 +38,11 @@ Se le foto degli utenti sono attive (l'amministratore può disattivarle), a sini
 «Nessuna foto». Sotto la foto due pulsanti (non per un utente rimosso):
 
 - **Foto** apre un pannello per fare la foto. Con **Scatta foto** si usa la fotocamera del dispositivo; con **Carica
-  file** si sceglie un'immagine già pronta. Dopo lo scatto si trascina l'immagine per inquadrare il volto, si regola lo
-  **Zoom** e si conferma con **Usa questa foto**; **Rifai** ripete lo scatto, **Annulla** esce. Un messaggio conferma
-  «Foto salvata». La fotocamera è facoltativa e funziona solo con una connessione sicura (https), cioè con Tailscale;
-  caricare un file va bene ovunque.
+  file** si sceglie un'immagine già pronta. Dopo lo scatto si trascina l'immagine per inquadrare il volto (in
+  alternativa si tocca il punto da portare al centro oppure, con la tastiera, si preme Tab e si usano le frecce, con
+  Maiusc per passi più lunghi), si regola lo **Zoom** e si conferma con **Usa questa foto**; **Rifai** ripete lo
+  scatto, **Annulla** esce. Un messaggio conferma «Foto salvata». La fotocamera è facoltativa e funziona solo con una
+  connessione sicura (https), cioè con Tailscale; caricare un file va bene ovunque.
 - **Elimina foto** (se la foto c'è) chiede conferma («Eliminare la foto?») e la cancella dal server.
 
 Le foto di molti utenti insieme si fanno dal [Censimento foto](census.md). La procedura è nella guida

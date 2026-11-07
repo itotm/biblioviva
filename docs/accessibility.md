@@ -24,51 +24,54 @@ The light theme only (no dark mode) is a product rule and is not an accessibilit
 
 ## How it is tested
 
-- **axe** (`@axe-core/playwright`) on 29 main pages at both window sizes, in every e2e run: no serious or critical
-  violation (`tests/e2e/a11y.spec.ts`, helper `tests/e2e/helpers/axe.ts`).
+- **axe** (`@axe-core/playwright`) on 29 main pages at both window sizes, in every e2e run, and also on a form showing
+  its errors, an open dialog and the camera opened on a phone: no serious or critical violation
+  (`tests/e2e/a11y.spec.ts`, helper `tests/e2e/helpers/axe.ts`).
 - **Keyboard**: the circulation desk used with the keyboard alone, as with a USB scanner; the first Tab reaches the
-  link that skips to the page; the focus is visible; no motion when the system asks for less (same spec). The data
-  grid opens a row with Enter and moves with the arrows without opening (`src/lib/components/DataGrid.svelte.spec.ts`).
+  link that skips to the page; the focus is visible; the data grid opens a row with Enter and moves with the arrows
+  without opening (`src/lib/components/DataGrid.svelte.spec.ts`); the photo, cover and class-picture crops work with
+  the arrow keys and a tap (`tests/e2e/patron-new-photo.spec.ts`, `cover.spec.ts`, `census-sheet.spec.ts`).
+- **Reflow**: eleven main pages at 320 CSS pixels, the width of a 400 % zoom, with nothing past the window's edge
+  (grids scroll on their own).
 - **Contrast**: every colour set is checked in a unit test (`src/lib/ui/theme-contrast.test.ts`): text on every
   surface, filled and tonal colours at 4.5:1, the border of the fields at 3:1, the placeholder at 4.5:1.
 - **Forms**: a field's hint and errors are tied to its control (`aria-describedby`, `aria-invalid`;
-  `src/lib/ui/Field.svelte.spec.ts`).
+  `src/lib/ui/Field.svelte.spec.ts`); required fields carry an asterisk after the label, explained above the form.
+- **Motion**: nothing moves when the system asks for less motion.
 
 ## What is met
 
-- The language of the page follows the installation (`<html lang>`), every page has its own title, one `<main>`, a
-  skip link and labelled navigation.
+- The language of the page follows the installation (`<html lang>`); every page has its own title, one `<main>`, a
+  skip link and labelled navigation. The page's title is the first heading of the page: the top bar, which comes
+  after the page in the document, shows the same title hidden from screen readers.
 - The desk messages are announced (`aria-live`; `role="alert"` for errors, `role="status"` otherwise) and always say
   what happened with colour, icon and text; the scan field keeps the focus after each scan.
 - The camera is never required: every scan can be typed or read with a USB scanner; every photo or cover can be
-  uploaded as a file.
+  uploaded as a file. On a phone the full-screen camera is a modal dialog: the focus moves into it, the page behind is
+  inert, Escape closes it and the focus comes back.
+- Nothing needs a drag: the photo crop, the corners of a cover and the frames of a class picture move with the arrow
+  keys and with a tap; the print template designer has the arrow keys and numeric fields; lists have Move up and
+  Move down buttons (WCAG 2.5.7).
 - Dialogs trap and return the focus and close with Escape; icon buttons have a translated name; decorative icons
   are hidden from screen readers.
 - The login allows the password manager and pasting (`autocomplete`, no cognitive test: WCAG 3.3.8).
 - Sessions last days and slide with use: no time limit interrupts the work (WCAG 2.2.1).
 - Sizes in `rem`, zoom never disabled, 44 px touch targets on phones; the sticky bars leave room for the focused
-  element (WCAG 2.4.11).
-- The print template designer moves elements with the arrow keys and numeric fields as well as by dragging
-  (WCAG 2.5.7); the help button is in the same place on every page (WCAG 3.2.6).
+  element (WCAG 2.4.11); the help button is in the same place on every page (WCAG 3.2.6).
 - The documentation site and the home page have a skip link, `lang`, labelled navigation, visible focus and no
   motion when the system asks for less.
 
-## Known gaps
+## Known limits
 
-To be closed in step 9.3 of PLAN.md:
+- On a computer the top bar keeps the page's title on one line, the whole title in its tooltip and in the page's own
+  heading; on a phone, and so at any large zoom, the title is shown whole.
+- The Tab key reaches the menu, then the page, then the top bar's buttons (help, account): the order of the
+  document, since the bar shows what the page publishes.
+- A title in another language carries no `lang`: the record has no language field (PLAN.md Q73).
 
-- the top bar (page title, help, account menu) comes after the page in the DOM: a screen reader meets the title after
-  the content (WCAG 1.3.2, 2.4.3);
-- required fields carry no visible mark before an error (WCAG 3.3.2);
-- cropping a patron photo, a cover or a class picture is done by dragging only (WCAG 2.5.7, 2.1.1); uploading a file
-  is the alternative today;
-- the full-screen camera on a phone is not a modal dialog (focus, Escape);
-- a long page title is cut on one or two lines at large zoom (WCAG 1.4.4);
-- titles in another language carry no `lang` (WCAG 3.1.2).
-
-Still to be checked by hand: a screen reader (NVDA with Firefox or Chrome, Orca on Linux) on the desk, a form with
-errors, the grids, the dialogs and the notifications; zoom at 200 % and 400 % (320 CSS px); text spacing (WCAG
-1.4.12); Windows contrast themes (`forced-colors`).
+Checked by hand before each release that changes the screens (PLAN.md 9.3): a screen reader (NVDA with Firefox or
+Chrome, Orca on Linux) on the desk, a form with errors, the grids, the dialogs and the notifications; zoom at 200 %
+and 400 %; text spacing (WCAG 1.4.12); Windows contrast themes (`forced-colors`).
 
 ## For the school
 
