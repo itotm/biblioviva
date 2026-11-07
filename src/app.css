@@ -50,13 +50,34 @@
  */
 @layer base {
 	:root {
-		--field-placeholder: var(--color-surface-400);
+		/* WCAG 2.2 AA (theme-contrast.test.ts): the boundary of a field reaches 3:1 on white (1.4.11),
+		   the placeholder 4.5:1 (1.4.3); the placeholder stays lighter than the typed text. */
+		--field-border: var(--color-surface-500);
+		--field-placeholder: var(--color-surface-600);
 		--bv-shadow-card: 0 1px 2px rgb(15 23 42 / 0.06), 0 1px 3px rgb(15 23 42 / 0.1);
 		--bv-shadow-raised: 0 4px 6px -1px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.1);
 		--bv-control-height: 2.5rem;
 	}
 	html {
 		background-color: var(--color-surface-100);
+	}
+	/* A visible focus on every control reached with the keyboard (WCAG 2.4.7); the fields have
+	   their own ring. */
+	:where(
+		a,
+		button,
+		summary,
+		[role="button"],
+		[role="tab"],
+		[role="menuitem"],
+		[tabindex]
+	):focus-visible {
+		outline: 2px solid var(--color-primary-700);
+		outline-offset: 2px;
+	}
+	::placeholder {
+		color: var(--field-placeholder);
+		opacity: 1;
 	}
 	/* A grid without columns of its own has one column as wide as the page, never wider: a long
 	   title or a row that does not wrap shrinks with it instead of pushing the boxes past the right
@@ -109,7 +130,7 @@ body {
 	.select,
 	.textarea {
 		background-color: #ffffff;
-		--tw-ring-color: var(--color-surface-300);
+		--tw-ring-color: var(--field-border);
 		transition: box-shadow 120ms ease;
 	}
 	.input,
@@ -296,7 +317,7 @@ body {
 		background-color: #ffffff;
 		min-height: var(--bv-control-height);
 		border-radius: var(--radius-base);
-		box-shadow: inset 0 0 0 1px var(--color-surface-300);
+		box-shadow: inset 0 0 0 1px var(--field-border);
 		overflow: hidden;
 		transition: box-shadow 120ms ease;
 	}

@@ -44,7 +44,8 @@ Every page after the login sits in the same frame: on a desktop (from `md`, 768 
 on a phone the top bar and the **bottom bar**. An area the account has no permission for is not
 shown at all; Stampe and the print basket need `patrons` or `catalog` (cards or labels), Catalogo
 one of `loans`, `catalog`, `catalog.import` or `reports` (`CATALOG_READERS`: the cards' account
-does not see it).
+does not see it). The first stop of the Tab key is a link hidden until it has the focus, «Vai al contenuto», that
+skips the menu to the page's `<main id="main">`; the sidebar and the bottom bar are the «Menu principale».
 
 A page below an area has a **back button** that names its destination: it returns to the page the
 operator came from inside the app, like the browser's Back (the previous tab of an area included,

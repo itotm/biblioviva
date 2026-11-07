@@ -13,6 +13,7 @@ PLAN.md §3.23 is the source of these rules; this guide is the working version f
 | **Amministrazione** | `docs/it/admin/`, `docs/en/admin/` | the administrator's account: first steps, the work during the year and at its end | Italian, English mirror |
 | **Aiuto** | `docs/it/help/`, `docs/en/help/` | everyone: common problems, the glossary, how to ask for help | Italian, English mirror |
 | **Tecnica** | `docs/*.md` | whoever knows Docker, Linux and JSON | English only |
+| Overview (no section) | `docs/it/features.md`, `docs/en/features.md` | everyone who meets BiblioViva, the school deciding to adopt it too: what it does, area by area | Italian, English mirror |
 
 The page of a folder that opens it is its `README.md` (GitHub shows it). File names are English, lower case, words
 joined by `-` (`choose-network.md`); they become the paths of the site (`/0.9.0/it/install/choose-network/`), the
@@ -33,6 +34,10 @@ same in every language.
 
 - Serious and plain, neither chatty nor telegraphic. No jokes, no exclamation marks, no "facile", "semplicissimo",
   "basta un clic".
+- **Not promotional** (owner rule): say what the program does, never how good, flexible or fitting it is ("si adatta
+  alla biblioteca, e non il contrario", "nessuna biblioteca è costretta", "senza l'aiuto di un tecnico"). BiblioViva
+  is «un software» for a school library, never «il programma» of the school library, as if it were the only one.
+  Presenting BiblioViva is the home page's job.
 - **Never stress what the reader does not know** (owner rule): no "anche senza esperienza", "per chi non ha
   competenze informatiche", "anche senza aver mai usato un terminale", "non-technical", "even without experience".
   It reads as if the reader were taken for a fool. Where it must be said at all, say once that the guides are meant
@@ -91,6 +96,10 @@ catalogo», «L'ISBN ha una cifra di controllo errata»; no colon, no bold, no l
 message of the app in full, then the cause and the remedy. The site shows each problem as a box that opens with a
 click, with one icon on the section's heading only; `site:build` warns about a section still written as a list. The
 page Aiuto → Problemi comuni is made of problems only: each `##` is a box.
+
+**Overview** — the features page only: the settings first, then a short paragraph per area saying what can be done
+there; no steps, no figures and no lists of links (the site's header and side menu list the pages), a link only
+where the navigation would not lead the reader. When a feature is added, its area's paragraph names it.
 
 **Technical page** — the English documents of `docs/` (deployment, configuration reference, templates, reports),
 written for technical readers as they are.

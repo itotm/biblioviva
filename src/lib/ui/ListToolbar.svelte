@@ -37,7 +37,7 @@
 <Row column gap="3" data-testid="list-toolbar">
 	<Row align="center">
 		<label
-			class="input-group flex max-w-md grow items-center gap-2 rounded-base border border-surface-300 bg-white px-3 focus-within:border-primary-500"
+			class="input-group flex max-w-md grow items-center gap-2 rounded-base border border-(--field-border) bg-white px-3 focus-within:border-primary-500 focus-within:ring-1 focus-within:ring-primary-500"
 		>
 			<SearchIcon size={ICON_SIZE.md} aria-hidden="true" class="opacity-60" />
 			<input

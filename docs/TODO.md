@@ -40,6 +40,10 @@ list is cleared at a release, and a new one takes the next.
   domain, so this cannot be tried locally (Q120, ADR-047).
 - [x] **13. Three choices for the next steps**: the help button (Q140), the icon of the problem boxes (Q141), the item
   type on the record and the segnatura on the copy (Q139).
+- [ ] **14. Adoption study and accessibility**: read `docs/studies/adoption.md` and answer QA1–QA7 (WCAG 2.2 AA as the
+  target, the conformance page, a page for the head teacher and the DPO, optional inventory fields for D.I. 129/2018,
+  `publiccode.yml`, MARC export, a preset for accessible books); look at the darker field borders and placeholders
+  (contrast 3:1 and 4.5:1) and read the overview page `docs/it/features.md` (9.3).
 
 ## Steps left for 0.9.0, in the order of the plan
 

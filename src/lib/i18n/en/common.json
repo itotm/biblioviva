@@ -169,7 +169,7 @@
 			"title": "Welcome to the BiblioViva demo",
 			"beta": "Public beta",
 			"betaText": "BiblioViva is a public beta: the features are stable, but until version 1.0 an update is not guaranteed to stay compatible with the data and settings of the previous version.",
-			"intro": "BiblioViva is the program to run a school library: loans and returns, catalogue, patrons with photos and cards, labels, printing and reports. This is a public demo: every feature is available to try.",
+			"intro": "BiblioViva is software for running a school library: loans and returns, catalogue, patrons with photos and cards, labels, printing and reports. This is a public demo: every feature is available to try.",
 			"contents": "Inside there is a made-up primary school: {{patrons}} {{patrons:plural; one:pupil or teacher; other:pupils and teachers;}}, {{biblios}} {{biblios:plural; one:title; other:titles;}} and {{items}} {{items:plural; one:copy; other:copies;}}, {{openLoans}} {{openLoans:plural; one:loan; other:loans;}} in progress, {{overdueLoans}} of them overdue. Names and photos are made up: no real person.",
 			"reset": "Every day at {{time}} the demo goes back to how it started. Configuration changes can be tried but are not saved.",
 			"examples": "In the demo, text and pictures are replaced by an example: every operation can be tried to the end, but what is typed or photographed is not kept and no other visitor sees it. The imports accept only the example files, downloaded from the page of each import.",

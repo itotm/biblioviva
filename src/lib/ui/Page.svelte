@@ -21,10 +21,16 @@
 		"2xl": "max-w-7xl 2xl:max-w-[96rem] min-[112.5rem]:max-w-[120rem]",
 	} as const;
 	const classes = $derived(
-		["mx-auto p-4 md:p-8", WIDTH[width], gap === "8" ? "space-y-8" : "space-y-6", className]
+		[
+			"mx-auto p-4 outline-none md:p-8",
+			WIDTH[width],
+			gap === "8" ? "space-y-8" : "space-y-6",
+			className,
+		]
 			.filter(Boolean)
 			.join(" "),
 	);
 </script>
 
-<main class={classes}>{@render children()}</main>
+<!-- the target of the skip link of the app shell (WCAG 2.4.1) -->
+<main id="main" tabindex="-1" class={classes}>{@render children()}</main>

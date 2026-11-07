@@ -109,6 +109,7 @@ const TECH_DOCS: [slug: string, file: string][] = [
 	["templates-authoring", "templates-authoring.md"],
 	["reports-authoring", "reports-authoring.md"],
 	["security", "security.md"],
+	["accessibility", "accessibility.md"],
 	["performance", "performance.md"],
 	["import", "import/README.md"],
 	["database", "database.md"],
@@ -144,6 +145,8 @@ const TEXT: Record<Lang, Record<string, string>> = {
 		backToPath: "Torna al percorso",
 		pathDone: "Percorso completato",
 		overview: "Panoramica",
+		featuresGo: "Vai alle funzionalità",
+		featuresKicker: "Panoramica",
 		guides: "Guide",
 		screens: "Schermate",
 		choose: "Scegliere",
@@ -203,6 +206,8 @@ const TEXT: Record<Lang, Record<string, string>> = {
 		backToPath: "Back to the path",
 		pathDone: "Path completed",
 		overview: "Overview",
+		featuresGo: "Go to the features",
+		featuresKicker: "Overview",
 		guides: "Guides",
 		screens: "Screens",
 		choose: "Choosing",
@@ -411,9 +416,18 @@ function addPage(page: Page, registerSource = true): void {
 	}
 }
 
+/** The overview of every feature (`docs/<lang>/features.md`): one page outside the sections. */
+function featuresSrc(lang: Lang): string {
+	return join(DOCS, lang, "features.md");
+}
+
 function discover(): void {
 	for (const lang of LANGS) {
 		const base = (section: string): string => join(DOCS, lang, section);
+		if (existsSync(featuresSrc(lang))) {
+			fileUrl.set(`${lang}:${featuresSrc(lang)}`, `/${lang}/features/`);
+			urlSet.add(`/${lang}/features/`);
+		}
 		const manual = base("manual");
 		if (existsSync(manual)) {
 			addPage({
@@ -1430,6 +1444,47 @@ function buildTechIndex(lang: Lang): void {
 	writePage(page.url, docsPage({ page, rendered }));
 }
 
+/** The overview page: the features of BiblioViva, with the sections in the menu beside it. */
+function buildFeatures(lang: Lang): void {
+	const src = featuresSrc(lang);
+	if (!existsSync(src)) {
+		return;
+	}
+	const url = `/${lang}/features/`;
+	const rendered = markdown(readFileSync(src, "utf8"), { lang, src, fig: 0 });
+	const sections = sectionsOf(lang)
+		.map(
+			(s) =>
+				`<li><a href="${sectionHome(lang, s)}">[[icon:${SECTION_ICONS[s]}]] ${t(lang, s)}</a></li>`,
+		)
+		.join("");
+	const side = `<div class="side-group"><p class="side-title">[[icon:sliders-horizontal]] ${t(lang, "featuresKicker")}</p><ul><li><a href="${url}" aria-current="page">${esc(rendered.title)}</a></li></ul></div><div class="side-group"><p class="side-title">[[icon:layout-grid]] ${t(lang, "sections")}</p><ul>${sections}</ul></div>`;
+	const toc =
+		rendered.toc.length > 0
+			? `<p class="toc-title">${t(lang, "onThisPage")}</p><ul>${rendered.toc.map((e) => `<li><a href="#${e.id}">${esc(e.text)}</a></li>`).join("")}</ul>`
+			: "";
+	const crumbsNav = `<nav class="crumbs" data-pagefind-ignore aria-label="${t(lang, "path")}"><a href="/${lang}/">${t(lang, "docs")}</a>[[icon:chevron-right]]<span>${esc(rendered.title)}</span></nav>`;
+	const head = `<div class="page-head"><span class="kicker">[[icon:sliders-horizontal]] ${t(lang, "featuresKicker")}</span><h1>${esc(rendered.title)}</h1>${rendered.lead ? `<p class="lead">${rendered.lead}</p>` : ""}</div>`;
+	const body = `${header(lang, null, (to) => (urlSet.has(`/${to}/features/`) ? `/${to}/features/` : `/${to}/`))}<div class="docs" style="--sec:var(--primary)"><aside class="side"><details class="side-mobile"><summary>[[icon:list-checks]] ${t(lang, "sectionMenu")}</summary><nav>${side}</nav></details><nav class="side-desktop" aria-label="${t(lang, "sectionMenu")}">${side}</nav></aside><main class="content" id="main" data-pagefind-body>${crumbsNav}${head}${rendered.body}</main><aside class="toc">${toc}</aside></div>${footer(lang, src)}`;
+	writePage(
+		url,
+		withIcons(
+			shell(lang, `${rendered.title} — BiblioViva`, plain(rendered.lead).slice(0, 200), body),
+		),
+	);
+}
+
+/** The card of the overview page on the documentation home, above the sections. */
+function featuresCard(lang: Lang): string {
+	const src = featuresSrc(lang);
+	if (!existsSync(src)) {
+		return "";
+	}
+	const rendered = markdown(readFileSync(src, "utf8"), { lang, src, fig: 0 });
+	const lead = plain(rendered.lead);
+	return `<div class="roles" style="margin-bottom:14px"><a class="role" href="/${lang}/features/"><div class="ico">[[icon:sliders-horizontal]]</div><b>${esc(rendered.title)}</b><span>${esc(lead)}</span><span class="go">${t(lang, "featuresGo")} [[icon:arrow-right]]</span></a></div>`;
+}
+
 function buildHome(lang: Lang): void {
 	const roles = sectionsOf(lang)
 		.map((s) => {
@@ -1447,7 +1502,7 @@ function buildHome(lang: Lang): void {
 		lang,
 		t(lang, "homeTitle"),
 		t(lang, "homeLead"),
-		`<div class="roles">${roles}</div>`,
+		`${featuresCard(lang)}<div class="roles">${roles}</div>`,
 		(to) => `/${to}/`,
 	);
 	writePage(`/${lang}/`, html);
@@ -1543,6 +1598,7 @@ async function main(): Promise<void> {
 		}
 	}
 	for (const lang of LANGS) {
+		buildFeatures(lang);
 		buildHome(lang);
 		buildAz(lang);
 	}

@@ -60,6 +60,7 @@ Amministrazione.
 
 ## Pagine correlate
 
+- [Funzionalità di BiblioViva](../features.md)
 - [Manuale](../manual/README.md)
 - [Installazione](../setup/README.md)
 - [Aiuto](../help/README.md)

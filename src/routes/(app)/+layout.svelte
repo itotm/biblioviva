@@ -116,6 +116,12 @@
 	data-area={coloured ? here : undefined}
 	data-area-style={data.areaStyle}
 >
+	<!-- The first stop of the Tab key: past the menu, to the page (WCAG 2.4.1) -->
+	<a
+		href="#main"
+		class="sr-only z-50 rounded-base bg-surface-50 px-4 py-2 font-semibold text-primary-700 shadow-[var(--bv-shadow-raised)] focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
+		data-testid="skip-link">{i18n.t("nav.skip")}</a
+	>
 	<!-- Desktop sidebar -->
 	<aside
 		class="hidden md:sticky md:top-0 md:col-start-1 md:row-span-2 md:row-start-1 md:block md:h-svh md:self-start"
@@ -123,6 +129,8 @@
 	>
 		<Navigation
 			layout="sidebar"
+			role="navigation"
+			aria-label={i18n.t("nav.main")}
 			class="h-full w-64 overflow-y-auto border-r border-surface-200 bg-surface-50 p-3 shadow-[var(--bv-shadow-card)] lg:w-72"
 		>
 			<Navigation.Header class="mb-4 px-1 py-1">
@@ -327,7 +335,7 @@
 	<nav
 		class="bv-bottom-nav fixed inset-x-0 bottom-0 z-40 row-start-3 border-t border-surface-200 bg-surface-50 shadow-[0_-2px_8px_rgb(15_23_42/0.06)] md:hidden"
 		data-testid="bottom-nav"
-		aria-label={i18n.t("nav.more")}
+		aria-label={i18n.t("nav.main")}
 	>
 		<Navigation layout="bar">
 			<Navigation.Menu

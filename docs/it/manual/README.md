@@ -70,6 +70,7 @@ domanda accanto al titolo della pagina.
 
 ## Pagine correlate
 
+- [Funzionalità di BiblioViva](../features.md)
 - [Amministrazione](../admin/README.md)
 - [Installazione](../setup/README.md)
 - [Aiuto](../help/README.md)

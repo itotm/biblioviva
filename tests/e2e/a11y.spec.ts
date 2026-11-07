@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // Accessibility pass (PLAN.md step 9.3, automated part): axe on every main page at both window
 // sizes; the desk used with the keyboard alone, as with a USB scanner (the scan field has the
-// focus, Enter confirms); a visible focus indicator; no motion when the system asks for less.
+// focus, Enter confirms); a visible focus indicator; a link that skips the menu; no motion when the system asks for less.
 import { expect, test, type Page } from "@playwright/test";
 import { expectAxeClean } from "./helpers/axe.js";
 import { createBook, createPatron } from "./helpers/data.js";
@@ -98,6 +98,16 @@ test.describe("accessibility", () => {
 			});
 			expect(visible, `focus ${i + 1}`).toBe(true);
 		}
+	});
+
+	test("the first Tab reaches a link that skips to the page", async ({ page }) => {
+		await open(page, "/admin");
+		await page.keyboard.press("Tab");
+		const skip = page.getByTestId("skip-link");
+		await expect(skip).toBeFocused();
+		await expect(skip).toBeVisible();
+		await page.keyboard.press("Enter");
+		await expect(page.locator("main#main")).toBeFocused();
 	});
 
 	test("no motion when the system asks for less", async ({ page }) => {

@@ -7,6 +7,8 @@ import { buildThemeCss, THEMES } from "#lib/shared/theme-palette.js";
 
 const base = readFileSync("node_modules/@skeletonlabs/skeleton/src/base/theme.css", "utf8");
 const shared = readFileSync("src/lib/theme.css", "utf8");
+// the tokens of the form fields (`--field-border`, `--field-placeholder`) live in app.css
+const app = readFileSync("src/app.css", "utf8");
 
 /** Collects `--name: value;` declarations; later files override earlier ones. */
 function collectVars(...sources: string[]): Map<string, string> {
@@ -25,7 +27,7 @@ function useTheme(theme: (typeof THEMES)[number]): void {
 	const generated = readFileSync(`src/lib/themes/${theme}.css`, "utf8");
 	// the committed file must be what the palette produces (run `bun run themes:generate`)
 	expect(generated).toBe(buildThemeCss(theme));
-	vars = collectVars(base, shared, generated);
+	vars = collectVars(base, shared, generated, app);
 }
 
 function resolve(name: string, depth = 0): string {
@@ -77,6 +79,15 @@ describe.each(THEMES)("theme contrast (WCAG 2.2 AA): %s", (theme) => {
 		useTheme(theme);
 		expect(ratio("--color-primary-700", "--color-surface-50")).toBeGreaterThanOrEqual(4.5);
 		expect(ratio("--color-primary-600", "--color-surface-100")).toBeGreaterThanOrEqual(4.5);
+	});
+
+	// WCAG 1.4.11 (the boundary of a field, 3:1) and 1.4.3 (placeholder text, 4.5:1) on the white field
+	it("form fields: the border and the placeholder are readable on white", () => {
+		useTheme(theme);
+		const white = parseCssColor("#ffffff")!;
+		const on = (token: string): number => contrastRatio(parseCssColor(resolve(token))!, white);
+		expect(on("--field-border"), `${theme}: field border`).toBeGreaterThanOrEqual(3);
+		expect(on("--field-placeholder"), `${theme}: placeholder`).toBeGreaterThanOrEqual(4.5);
 	});
 
 	it("tonal badges (700 text on 100 background) are readable", () => {

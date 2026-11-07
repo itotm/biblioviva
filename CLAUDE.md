@@ -33,7 +33,8 @@ and this file must be updated.
   served by BiblioViva (ADR-039): the **home page** of `biblioviva.org` is `home/` (`it.html` and `en.html`, the same
   markup, built by `bun run home:build` into `home/dist/` and a zip uploaded by hand to Cloudflare Pages); the **documentation** of
   `docs.biblioviva.org` is built from the Markdown of `docs/` by the Bun script `scripts/site-build.ts` into
-  `site/dist/` (`bun run site:build`, `bun run site:serve` on port 5175; ADR-043), GitHub Pages, sections Manuale, Amministrazione, Installazione, Aiuto, Tecnica, not versioned (the current
+  `site/dist/` (`bun run site:build`, `bun run site:serve` on port 5175; ADR-043), GitHub Pages, sections Manuale, Amministrazione, Installazione, Aiuto, Tecnica, plus the overview of the features
+  (`docs/<lang>/features.md`), not versioned (the current
   release only, published by hand with the manual Pages workflow, normally after each release, ADR-042, ADR-050); the app's help icons open it in the installation's language;
   no accent stripe on the left of boxes. The
   documentation's tone is serious and plain (Italian instructions in the infinitive, headings as nouns, no jokes); the

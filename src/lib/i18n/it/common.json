@@ -169,7 +169,7 @@
 			"title": "Benvenuto nella demo di BiblioViva",
 			"beta": "Public beta",
 			"betaText": "BiblioViva è in public beta: le funzioni sono stabili, ma fino alla versione 1.0 non è garantito che un aggiornamento resti compatibile con i dati e le impostazioni della versione precedente.",
-			"intro": "BiblioViva è il programma per gestire la biblioteca di una scuola: prestiti e restituzioni, catalogo, utenti con foto e tessere, etichette, stampe e report. Questa è una demo pubblica: tutte le funzioni sono disponibili per la prova.",
+			"intro": "BiblioViva è un software per gestire la biblioteca di una scuola: prestiti e restituzioni, catalogo, utenti con foto e tessere, etichette, stampe e report. Questa è una demo pubblica: tutte le funzioni sono disponibili per la prova.",
 			"contents": "Dentro trovi una scuola primaria inventata: {{patrons}} {{patrons:plural; one:alunno o docente; other:alunni e docenti;}}, {{biblios}} {{biblios:plural; one:titolo; other:titoli;}} e {{items}} {{items:plural; one:copia; other:copie;}}, {{openLoans}} {{openLoans:plural; one:prestito; other:prestiti;}} in corso, di cui {{overdueLoans}} in ritardo. Nomi e foto sono inventati: nessuna persona è reale.",
 			"reset": "Ogni giorno alle {{time}} la demo torna come all'inizio. Le modifiche alla configurazione si possono provare ma non vengono salvate.",
 			"examples": "Nella demo il testo e le foto vengono sostituiti da un esempio: ogni operazione si può provare fino in fondo, ma ciò che si scrive o si fotografa non resta e nessun altro visitatore lo vede. Gli import accettano solo i file di esempio, scaricabili dalla pagina di ogni import.",
