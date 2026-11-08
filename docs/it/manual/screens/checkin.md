@@ -25,7 +25,7 @@ Il pulsante **Fotocamera** accanto al campo legge il codice con la fotocamera de
 solo se BiblioViva è aperto con una connessione sicura (https, cioè con Tailscale).
 
 Aprendo la pagina da un messaggio di [Prestiti](checkout.md) con il pulsante **Vai a Restituzioni**, il campo contiene
-già il codice del libro: la restituzione si registra solo premendo Invio, mai da sola (vedere
+già il codice del libro: la restituzione si registra solo premendo Invio o **Registra la restituzione**, mai da sola (vedere
 [Codice in attesa](#codice-in-attesa)).
 
 ## Messaggi del banco
@@ -81,10 +81,11 @@ pulsanti scompaiono. Il libro non risulta restituito.
 
 ### Codice in attesa
 
-> Premere Invio per registrare la restituzione del libro `<codice>`.
+> Premere Invio, o il pulsante qui sotto, per registrare la restituzione del libro `<codice>`.
 
 Compare quando la pagina è stata aperta da [Prestiti](checkout.md) con il codice già nel campo. La restituzione non è
-ancora registrata: premere Invio per confermarla.
+ancora registrata: premere Invio, oppure il pulsante **Registra la restituzione** del messaggio (sul telefono o con
+il mouse), per confermarla.
 
 ## Letture da spiegare
 

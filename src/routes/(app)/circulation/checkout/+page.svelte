@@ -38,6 +38,7 @@
 	import TodayActivity from "#lib/components/circulation/TodayActivity.svelte";
 	import {
 		checkoutRefusal,
+		deskCameraTakes,
 		deskMessage,
 		lentMessages,
 		loanLimitMessage,
@@ -327,7 +328,7 @@
 						label={i18n.t("circulation.checkout.scanPatron")}
 						placeholder={i18n.t("circulation.checkout.scanPatronPlaceholder")}
 						camera
-						cameraAccept={(r) => r.kind === "card" || r.kind === "ambiguous"}
+						cameraAccept={deskCameraTakes}
 						autofocus
 						disabled={busy}
 						patrons={findPatronsAtDesk}

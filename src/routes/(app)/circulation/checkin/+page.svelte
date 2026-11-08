@@ -3,7 +3,8 @@
      stays focused for piles of books. Each return shows the patron, the loan dates and the days
      late (information only, there are no fines); "Rinnova invece" reopens and renews a book the
      pupil wanted to keep, "Segna danneggiato" flags a worn copy. A code coming from the checkout
-     desk (`?barcode=`) waits in the field: the return is confirmed here with Enter, never implicitly.
+     desk (`?barcode=`) waits in the field: the return is confirmed here with Enter or the message's
+     button, never implicitly.
      After a return, "Presta a <nome>" opens the Loans page with its borrower (9.52). -->
 <script lang="ts">
 	import DeskMessages from "#lib/components/circulation/DeskMessages.svelte";
@@ -24,6 +25,7 @@
 	import AreaTabs from "#lib/components/AreaTabs.svelte";
 	import {
 		cardOnCheckin,
+		checkinPending,
 		deskMessage,
 		lendToAction,
 		scanFailure,
@@ -62,8 +64,16 @@
 	// svelte-ignore state_referenced_locally
 	let code = $state(data.barcode);
 	let returns = $state<Returned[]>([]);
+	// the code carried over from the Loans page: Enter, or the message's button, registers it
 	const pending = (barcode: string): DeskMessageData[] =>
-		barcode ? [deskMessage(i18n.t, "checkin_pending", { code: barcode })] : [];
+		barcode
+			? [
+					checkinPending(i18n.t, barcode, () => {
+						code = "";
+						void onScan(barcode);
+					}),
+				]
+			: [];
 	// svelte-ignore state_referenced_locally
 	let messages = $state<DeskMessageData[]>(pending(data.barcode));
 	let busy = $state(false);

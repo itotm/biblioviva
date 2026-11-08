@@ -71,7 +71,7 @@ a book (it happens with the numbers of the old system), choose **Card** or **Boo
 ### The code comes from the loans page
 
 Whoever pressed **Go to Returns** from **Loans** finds the code already written in the field, with the prompt to press
-Enter. The return is recorded only with Enter.
+Enter. The return is recorded only with Enter or with the message's **Register the return** button.
 
 ## Related pages
 

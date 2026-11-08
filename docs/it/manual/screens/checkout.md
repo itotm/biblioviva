@@ -196,7 +196,7 @@ prestito (compare «Rinnovato: …») oppure **Annulla** per lasciare le cose co
 > Restituzioni, poi tornare a Prestiti.
 
 La copia è registrata come prestata a un'altra persona: di solito è stata restituita senza leggere il codice. Premere
-**Vai a Restituzioni**: la pagina si apre con il codice già nel campo, e la restituzione si conferma lì con Invio; la
+**Vai a Restituzioni**: la pagina si apre con il codice già nel campo, e la restituzione si conferma lì con Invio o con **Registra la restituzione**; la
 pagina Prestiti non la registra da sola. Poi tornare a **Prestiti** e prestare il libro.
 
 ### Libro non ancora classificato

@@ -113,7 +113,7 @@ test.describe.serial("check-in desk", () => {
 		await expect(page.getByTestId("desk-message")).toHaveCount(0);
 
 		// from the checkout desk: a copy still lent to someone else goes to Returns with its code,
-		// and the return is confirmed there with Enter
+		// and the return is confirmed there with Enter or with the message's button
 		await page.goto(`/circulation/checkout?patron=${student.id}`);
 		await waitForHydration(page);
 		await deskScan(page, c2);
@@ -126,12 +126,30 @@ test.describe.serial("check-in desk", () => {
 		await expect(page).toHaveURL(/\/circulation\/checkin\?barcode=/);
 		await waitForHydration(page);
 		await expect(messageText(page)).toHaveText(
-			`Premere Invio per registrare la restituzione del libro ${c2}.`,
+			`Premere Invio, o il pulsante qui sotto, per registrare la restituzione del libro ${c2}.`,
 		);
 		await expect(field(page, CHECKIN)).toHaveValue(c2);
 		await expect(page.getByTestId("checkin-row")).toHaveCount(0);
 		await field(page, CHECKIN).press("Enter");
 		await expect(message(page)).toHaveAttribute("data-code", "returned", { timeout: 15_000 });
 		await expect(page.getByTestId("checkin-row")).toHaveCount(1);
+
+		// on a phone or with the mouse there is no Enter at hand: the message's button confirms it
+		await page.goto(`/circulation/checkout?patron=${teacher.id}`);
+		await waitForHydration(page);
+		await deskScan(page, c2);
+		await expect(message(page)).toHaveAttribute("data-code", "lent");
+		await page.goto(`/circulation/checkout?patron=${student.id}`);
+		await waitForHydration(page);
+		await deskScan(page, c2);
+		await expect(message(page)).toHaveAttribute("data-code", "item_on_loan_other_patron");
+		await page.getByTestId("action-to-checkin").click();
+		await expect(page).toHaveURL(/\/circulation\/checkin\?barcode=/);
+		await waitForHydration(page);
+		await expect(page.getByTestId("checkin-row")).toHaveCount(0);
+		await page.getByTestId("action-confirm-return").click();
+		await expect(message(page)).toHaveAttribute("data-code", "returned", { timeout: 15_000 });
+		await expect(page.getByTestId("checkin-row")).toHaveCount(1);
+		await expect(field(page, CHECKIN)).toHaveValue("");
 	});
 });

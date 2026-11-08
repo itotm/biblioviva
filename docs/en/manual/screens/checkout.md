@@ -191,7 +191,7 @@ The patron already has this copy: probably they bring it to keep it longer. Pres
 > back here for the new loan.
 
 The copy is registered as lent to another person: usually it was returned without reading the code. Press
-**Go to Returns**: the page opens with the code already in the field, and the return is confirmed there with Enter;
+**Go to Returns**: the page opens with the code already in the field, and the return is confirmed there with Enter or with **Register the return**;
 the Loans page does not register it by itself. Then go back to **Loans** and lend the book.
 
 ### Book not yet classified

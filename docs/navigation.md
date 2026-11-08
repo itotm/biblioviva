@@ -72,15 +72,18 @@ flowchart TB
         PT["Top bar<br/>library logo and name → Dashboard · page title with Back and the round help button (second row) · print basket · account menu"]
         BB["Bottom bar<br/>Prestiti · Catalogo · Utenti · Altro (Stampe, Segnalazioni, Report, Amministrazione)<br/>Altro highlighted while one of its areas is open"]
     end
-    Help["Guida button (every account)"] -. "new tab, external" .-> Docs["docs.biblioviva.org/&lt;version&gt;/&lt;lang&gt;/manual/&lt;area&gt;/"]
+    Help["Guida button (every account)"] -. "new tab, external" .-> Docs["docs.biblioviva.org/&lt;lang&gt;/…: the page of the screen in sight"]
     Basket["Print basket (patrons or catalog)"] --> Lists["/print-lists and /print-lists/[id]"]
 ```
 
 The help button (step 9.5b; a "Guida" button in the top bar on the computer, a round button right after the page
-title on the phone, step 9.47) opens the manual of the area the page belongs to on the documentation
-site, in the installation's language (`#lib/ui/help-links.ts`: the reference page of the area's main
-screen; the dashboard and the pages outside the areas open the dashboard's page, Amministrazione the
-administration section). The
+title on the phone, step 9.47) opens, on the documentation site and in the installation's language, the page that
+explains the screen in sight (step 9.67; `#lib/ui/help-links.ts`, one entry per route id): the reference page of the
+screen (Restituzioni → `manual/checkin/`, Nuovo libro → `manual/new-book/`), the section of a larger page for a
+screen that is part of one (Modifica utente → `manual/patron-record/#modifica-utente`, one section of the settings →
+`admin/screens/configuration/#<its heading>`), or the guide that explains the screen whole (each import, the
+classification editor, the calibration of the backs). A page without an entry opens the reference page of its
+area's main screen (the dashboard's for the pages outside the areas). The
 top bar has no search box: the catalogue is searched in its own page.
 
 ## 2. The areas

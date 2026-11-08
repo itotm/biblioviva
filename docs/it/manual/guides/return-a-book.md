@@ -73,7 +73,7 @@ sia a una tessera sia a un libro (succede con i numeri del vecchio sistema), sce
 ### Il codice arriva dalla pagina dei prestiti
 
 Chi ha premuto **Vai a Restituzioni** da **Prestiti** trova il codice già scritto nel campo, con l'invito a premere
-Invio. La restituzione si registra solo con Invio.
+Invio. La restituzione si registra solo con Invio o con il pulsante **Registra la restituzione** del messaggio.
 
 ## Pagine correlate
 

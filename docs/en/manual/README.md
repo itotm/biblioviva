@@ -5,8 +5,8 @@ labels. The guides explain a task from start to finish, step by step; the screen
 parts and its messages. The USB barcode scanner is the normal tool for reading cards, copies and ISBNs; the phone is
 optional.
 
-On every page of BiblioViva the **Help** button opens, in a new tab, the page of this manual that describes that part
-of the program: on the computer it is at the top right, on the phone it is the round button with the question mark
+On every page of BiblioViva the **Help** button opens, in a new tab, the page of the documentation that explains
+that very screen: on the computer it is at the top right, on the phone it is the round button with the question mark
 next to the page title.
 
 ## Guides

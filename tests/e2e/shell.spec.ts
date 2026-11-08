@@ -158,7 +158,7 @@ test.describe("app shell", () => {
 		await expect(page).toHaveURL(/\/login/);
 	});
 
-	test("the help button opens the manual of the area", async ({ page, isMobile }) => {
+	test("the help button opens the page of the screen in sight", async ({ page, isMobile }) => {
 		await page.goto("/catalog");
 		await waitForHydration(page);
 		// the computer: "Guida" with its icon in the top bar; the phone: a round button of 44 px
@@ -190,6 +190,20 @@ test.describe("app shell", () => {
 			"href",
 			/\/it\/manual\/dashboard\/$/,
 		);
+		// each screen its own page, or its section of a larger one (9.67)
+		const pages: [string, RegExp][] = [
+			["/circulation/checkin", /\/it\/manual\/checkin\/$/],
+			["/cataloging/new", /\/it\/manual\/new-book\/$/],
+			["/patrons/1/edit", /\/it\/manual\/patron-record\/#modifica-utente$/],
+			["/admin/config/circulation", /\/it\/admin\/screens\/configuration\/#prestiti$/],
+		];
+		for (const [url, href] of pages) {
+			await page.goto(url);
+			await waitForHydration(page);
+			await expect(
+				page.getByTestId(isMobile ? "help-link-mobile" : "help-link"),
+			).toHaveAttribute("href", href);
+		}
 	});
 
 	test("areas beyond the permissions are hidden", async ({ page, isMobile }) => {

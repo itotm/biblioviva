@@ -7,6 +7,7 @@ import { tick } from "svelte";
 import { resolve } from "$app/paths";
 import type { ResolvedPathname } from "$app/types";
 import type { ScanTarget } from "#lib/server/barcodes/lookup.js";
+import type { ScanResult } from "#lib/shared/scan.js";
 import type { CheckoutResult } from "#lib/server/services/circulation.js";
 
 export type DeskTone = "error" | "warning" | "info" | "success";
@@ -120,6 +121,29 @@ export function checkinHref(code?: string): ResolvedPathname {
 	return code
 		? resolve(`circulation/checkin?barcode=${encodeURIComponent(code)}`)
 		: resolve("circulation/checkin");
+}
+
+/**
+ * A copy's code carried over from the Loans page: the return waits for Enter or for this
+ * message's button (a phone or a mouse has no Enter at hand), never implicitly.
+ */
+export function checkinPending(t: Translate, code: string, confirm: () => void): DeskMessageData {
+	return deskMessage(t, "checkin_pending", { code }, [
+		{
+			label: t("circulation.checkin.confirmReturn"),
+			variant: "primary",
+			testid: "action-confirm-return",
+			onclick: confirm,
+		},
+	]);
+}
+
+/**
+ * The camera reads the Loans page takes before a patron is chosen: a card, or a copy, which is
+ * returned and its borrower chosen (9.52); an ISBN on the cover does not stop the scan.
+ */
+export function deskCameraTakes(result: ScanResult): boolean {
+	return result.kind !== "isbn" && result.kind !== "invalid";
 }
 
 /** The Loans page with a patron already chosen. */

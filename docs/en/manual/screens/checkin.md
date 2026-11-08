@@ -25,7 +25,7 @@ The **Camera** button next to the field reads the code with the phone's camera. 
 BiblioViva is opened over a secure connection (https, that is with Tailscale).
 
 When the page is opened from a message of [Loans](checkout.md) with the **Go to Returns** button, the field already
-contains the book's code: the return is registered only by pressing Enter, never by itself (see
+contains the book's code: the return is registered only by pressing Enter or **Register the return**, never by itself (see
 [Code waiting](#code-waiting)).
 
 ## Desk messages
@@ -80,10 +80,11 @@ disappear. The book does not count as returned.
 
 ### Code waiting
 
-> Press Enter to register the return of the book `<code>`.
+> Press Enter, or the button below, to register the return of the book `<code>`.
 
 Appears when the page was opened from [Loans](checkout.md) with the code already in the field. The return is not
-registered yet: press Enter to confirm it.
+registered yet: press Enter, or the message's **Register the return** button (on the phone or with the mouse), to
+confirm it.
 
 ## Scans to explain
 

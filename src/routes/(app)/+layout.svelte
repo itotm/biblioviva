@@ -14,7 +14,7 @@
 	import { logout } from "#lib/remote/auth.remote.js";
 	import { ICON_SIZE, icons } from "#lib/ui/icons.js";
 	import { areaOf, visibleNavItems } from "#lib/ui/nav.js";
-	import { helpHref } from "#lib/ui/help-links.js";
+	import { helpHref, helpTarget } from "#lib/ui/help-links.js";
 	import PrintBasket from "#lib/components/PrintBasket.svelte";
 	import LanguageSwitch from "#lib/components/LanguageSwitch.svelte";
 	import { providePageHeader } from "#lib/ui/page-header.svelte.js";
@@ -35,6 +35,13 @@
 	const here = $derived(areaOf(page.url.pathname));
 	const current = $derived((href: string) => here !== null && areaOf(href) === here);
 	const coloured = $derived(data.areaStyle !== "none" && here !== null);
+	// the help button opens the page that explains the screen in sight (9.67)
+	const help = $derived(
+		helpHref(
+			data.docsBase,
+			helpTarget(page.route.id, page.params as Record<string, string>, here),
+		),
+	);
 	// on a phone "Altro" stands for the areas behind it: it is highlighted when one is open (9.13, round 16)
 	const moreCurrent = $derived(moreItems.some((i) => current(i.href)));
 	const UserIcon = icons.patron;
@@ -267,9 +274,9 @@
 						{/if}
 					</div>
 				{/if}
-				<!-- phones: the manual of this area, a round button beside the title (9.47, Q140) -->
+				<!-- phones: the page of this screen in the manual, a round button beside the title (9.47, 9.67) -->
 				<a
-					href={helpHref(data.docsBase, here)}
+					href={help}
 					target="_blank"
 					rel="external noopener"
 					class="btn-icon size-11 shrink-0 rounded-full preset-filled-primary-500 shadow-[var(--bv-shadow-card)] transition-[filter] hover:brightness-110 md:hidden"
@@ -285,10 +292,10 @@
 					<!-- the public demo only: the visitor's language (Q120) -->
 					<LanguageSwitch languages={data.languages} current={data.locale} class="mr-1" />
 				{/if}
-				<!-- the manual of this area, on the documentation site (9.5b): a labelled button from
+				<!-- the page of this screen on the documentation site (9.5b, 9.67): a labelled button from
 				     tablets up, beside the title on phones (9.47, Q140) -->
 				<a
-					href={helpHref(data.docsBase, here)}
+					href={help}
 					target="_blank"
 					rel="external noopener"
 					class="mr-1 btn hidden h-10 preset-filled-primary-500 shadow-[var(--bv-shadow-card)] transition-[filter] hover:brightness-110 md:inline-flex"

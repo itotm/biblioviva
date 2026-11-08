@@ -5,7 +5,9 @@ import itCirculation from "#lib/i18n/it/circulation.json";
 import type { CheckoutResult } from "#lib/server/services/circulation.js";
 import {
 	cardOnCheckin,
+	checkinPending,
 	checkoutRefusal,
+	deskCameraTakes,
 	DESK_TONE,
 	deskKey,
 	deskMessage,
@@ -436,5 +438,38 @@ describe("withDeskScan", () => {
 			),
 		).rejects.toThrow("offline");
 		expect(steps).toEqual(["busy true", "busy false", "focus"]);
+	});
+});
+
+describe("the camera of the Prestito desk before the patron (9.52)", () => {
+	it("takes a card or a copy, which is returned and its borrower chosen; never an ISBN", () => {
+		const take = deskCameraTakes;
+		expect(take({ kind: "card", value: "C0000017" })).toBe(true);
+		expect(take({ kind: "ambiguous", value: "1240" })).toBe(true);
+		expect(take({ kind: "item", value: "2026-A0001" })).toBe(true);
+		expect(take({ kind: "legacy_item", value: "2026-0042" })).toBe(true);
+		expect(take({ kind: "isbn", value: "9788804668237" })).toBe(false);
+		expect(take({ kind: "invalid", value: "x", reason: "unrecognised" })).toBe(false);
+	});
+});
+
+describe("a return carried over from the Prestito desk", () => {
+	it("waits for Enter or for its button, never implicitly", () => {
+		const confirm = vi.fn();
+		const m = checkinPending(t, "2026-A0001", confirm);
+		expect(m).toMatchObject({ code: "checkin_pending", tone: "info" });
+		expect(m.text).toBe('circulation.checkin.pending {"code":"2026-A0001"}');
+		expect(actionsOf(m)).toEqual([
+			{
+				label: "circulation.checkin.confirmReturn",
+				href: undefined,
+				variant: "primary",
+				testid: "action-confirm-return",
+				newTab: undefined,
+				callback: true,
+			},
+		]);
+		void m.actions?.[0]?.onclick?.();
+		expect(confirm).toHaveBeenCalledOnce();
 	});
 });
