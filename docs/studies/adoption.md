@@ -1,7 +1,8 @@
 # Study — what a wide adoption in Italian schools requires
 
-> **Status:** STUDY. Not a plan: nothing here is approved or scheduled. The proposals that the owner accepts become
-> steps of PLAN.md and questions of §11.
+> **Status:** STUDY, decided. Every question of §9 is answered and every proposal is a step of PLAN.md: 9.54
+> (accessibility, done), 9.55 (`publiccode.yml`), 9.63 (the section Norme of the documentation, done), 9.64 (school
+> inventory), 9.65 (MARC), 9.66 (accessible books); the manual accessibility checks stay with 9.3.
 > **Audience:** the owner (what the law asks of a school that adopts BiblioViva, what is missing, cost) and a later
 > coding agent that may expand the chosen proposals into steps.
 > **Context:** BiblioViva is free software (GPL-3.0-or-later), installed by the school on its own computer, used by the
@@ -13,17 +14,17 @@
 
 ## 1. Summary
 
-| Area | Rule | Where BiblioViva stands | Proposal | Priority |
+| Area | Rule | Where BiblioViva stands | Decision (step) | When |
 |---|---|---|---|---|
-| Accessibility | Legge 4/2004, AgID guidelines → EN 301 549 v3.2.1 = WCAG 2.1 AA (also on intranets) | target WCAG 2.2 AA (Q147); the gaps of the audit closed (§2.3, step 9.54); conformance page `docs/accessibility.md` | the checks by hand of 9.3 | **high** (0.9.0) |
-| Data protection | GDPR, D.Lgs. 196/2003, Garante's school guidance | strong by design (data at school, anonymization, no logs of names) | a page for the head teacher and the DPO with the facts they must write down | **high** (0.9.0, docs only) |
-| School inventory | D.I. 129/2018 art. 31: library books are inventoried assets | not covered: no inventory number, no value, no acquisition source | optional inventory fields and the two lists the office needs | **medium**, owner decision |
-| Open source in the PA | CAD art. 68–69, AgID guidelines on acquisition and reuse | GPL, public repository; `publiccode.yml` (step 9.55, Q148) | the listing in the Developers Italia catalogue after 9.36 | **medium**, cheap |
-| Interoperability and exit | CAD art. 68 (portability), library practice | CSV/JSON exports, Z39.50 and UNIMARC import of records | MARC export (and import) of the catalogue | **medium** |
-| Security | AgID minimum ICT security measures (Circolare 2/2017) | accounts, roles, audit log, backups, updates | say so in the documentation; nothing to build | low |
-| Cloud | ACN regulation on cloud for the PA | self-hosted: not concerned | warn whoever would host it for schools | low |
+| Accessibility | Legge 4/2004, AgID guidelines → EN 301 549 v3.2.1 = WCAG 2.1 AA (also on intranets) | target WCAG 2.2 AA (Q147); the gaps of the audit closed (§2.3, step 9.54); conformance page `docs/accessibility.md` | the checks by hand of 9.3; the section Norme (9.63, done) | **high** (0.9.0) |
+| Data protection | GDPR, D.Lgs. 196/2003, Garante's school guidance | strong by design (data at school, anonymization, no logs of names) | the section Norme with the ready texts (9.63, done) | **high** (0.9.0, docs only) |
+| School inventory | D.I. 129/2018 art. 31: library books are inventoried assets | not covered: no inventory number, no value, no acquisition source | optional inventory fields and the two lists the office needs (9.64) | 0.9.0 (Q155) |
+| Open source in the PA | CAD art. 68–69, AgID guidelines on acquisition and reuse | GPL, public repository; `publiccode.yml` (step 9.55, Q148) | the listing in the Developers Italia catalogue after 9.36 (9.55) | 0.9.0 |
+| Interoperability and exit | CAD art. 68 (portability), library practice | CSV/JSON exports, Z39.50 and UNIMARC import of records | MARC export and import of the catalogue (9.65) | 0.9.0 (Q156) |
+| Security | AgID minimum ICT security measures (Circolare 2/2017) | accounts, roles, audit log, backups, updates | said in the section Norme (9.63, done) | done |
+| Cloud | ACN regulation on cloud for the PA | self-hosted: not concerned | said in the section Norme and in `docs/security.md` (done) | done |
 | European Accessibility Act | D.Lgs. 82/2022 | not concerned (not a consumer product or service) | none | — |
-| Inclusion | L. 170/2010 (DSA), L. 104/1992 | item types and reading levels are configurable | presets for accessible books (high readability, CAA symbols, audiobooks, large print) | low, cheap |
+| Inclusion | L. 170/2010 (DSA), L. 104/1992 | item types and reading levels are configurable | a list of accessible formats and a catalogue filter (9.66) | 0.9.0 (Q157) |
 
 ## 2. Accessibility
 

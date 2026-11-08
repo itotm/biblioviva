@@ -2095,6 +2095,8 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
     optional); two reports, **copies withdrawn in a period** (inventory number, title, reason, value: the annex to the
     discharge decree) and **copies entered in a period** (what the office registers); the inventory number in the
     stocktaking report (9.8), for the five-yearly check; schema in the single migration (ADR-011), `docs/database.md`.
+    The rule is read on the decree's own text before writing the page [VERIFY: D.I. 129/2018 art. 31, quoted so far
+    through schools' inventory regulations].
   - Docs: the page `school-inventory.md` of the section Norme (9.63), the copy's fields in the manual, the setting in
     the administration pages, both languages.
   - Acceptance: unit tests (numbering, uniqueness, reports), the copy form and the two reports in Playwright on both

@@ -150,7 +150,11 @@ list is cleared at a release, and a new one takes the next.
 ## Housekeeping
 
 - [ ] Rounds 27–32 of 9.13 are recorded only in [STATUS.md](STATUS.md): list them in the step like the others.
-- [ ] The `[VERIFY]` items of PLAN.md (28), each resolved when its step is reached.
+- [ ] The `[VERIFY]` items of PLAN.md (36), each resolved when its step is reached.
+- [ ] EN 301 549 v4.1.1 (WCAG 2.2): once it is cited in the Official Journal of the EU and AgID updates its
+  guidelines, say so in `docs/<lang>/compliance/accessibility.md` and `docs/accessibility.md` (adoption study §2.1).
+- [ ] Whether a school's accessibility statement must cover an internal tool such as BiblioViva: the AgID guidelines
+  do not say; ask AgID or a school's RTD, then update the page Accessibilità of the section Norme.
 - [ ] TypeScript 7: waits until `svelte-check` and `@sveltejs/kit` accept it (their peer range stops at 6).
 - [ ] At the next Raspberry Pi load test, measure again how long the print sheets wait with 10 users at once (the
   slowest took 60 s; the idle timeout is 120 s, [performance.md](performance.md)).

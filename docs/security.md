@@ -23,6 +23,10 @@ administrators find the operational part in the setup guides.
 - **Container.** The image runs as the unprivileged `bun` user (`USER bun`), with a read-only root
   file system (`read_only: true`), `no-new-privileges` and every capability dropped; only the three
   volumes (`/config`, `/data`, `/backups`) and a tmpfs are writable.
+- **Hosting for schools.** BiblioViva is installed on the school's own computer, so it is not a cloud service
+  that the school buys and the ACN rules on cloud services for the public administration do not concern it. Whoever
+  offered BiblioViva as a hosted service to schools would be a cloud provider (and a processor under GDPR art. 28):
+  the ACN qualification of the service would be theirs to obtain (`docs/<lang>/compliance/security.md`).
 - **Unauthenticated routes.** `/login`, `/healthz`, the static assets under `/_app/` and `/setup`
   while no account exists (`PUBLIC_PREFIXES` in `src/hooks.server.ts`); everything else redirects
   to the login page. Media (photos, covers, pictograms, template images) need a session too.
