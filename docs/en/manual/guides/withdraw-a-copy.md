@@ -8,8 +8,8 @@ shelf (withdrawn), for a single copy or for many together. It is for whoever cat
 - Requirements: the code of the copy, which is on the label of the book (if the book is missing, the copy is found from
   the record of the book, see [Find a book](find-a-book.md)).
 
-The copy is not deleted: it changes status and stays in the archive, with the reason, for the whole life of the
-catalogue. The statuses are these:
+The copy is not deleted: it changes status and stays in the archive for the whole life of the catalogue; the reason
+stays in the audit log for the months set in **Months of the audit log** (24 by default). The statuses are these:
 
 - **Available**: the copy is on the shelf and can be lent.
 - **Lost**: the copy cannot be found. It is not lent.
@@ -31,7 +31,7 @@ catalogue. The statuses are these:
 
 1. In **New status** choose **Lost**, **Damaged**, **In repair**, **Withdrawn** or **Available**.
 1. In **Reason (optional, recorded)** write why, for example "lost by a pupil" or "torn pages". The reason stays in the
-   operations log of that copy.
+   operations log of that copy, for the months set.
 1. Press **Change status**. A notice confirms "Status updated" and the row shows the new status.
 
 A copy on loan can be marked **Lost**: the loan is closed and the copy is shown as lost, also in the patron's record. A

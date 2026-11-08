@@ -34,6 +34,36 @@ Il Garante per la protezione dei dati personali ha pubblicato per le scuole il v
 che richiama gli stessi principi: solo i dati indispensabili, attenzione alle immagini dei minori, nessuna pubblicazione
 di dati personali.
 
+### Il Codice in materia di protezione dei dati personali
+
+In Italia il GDPR si applica insieme al Codice in materia di protezione dei dati personali (D.Lgs. 196/2003), che il
+D.Lgs. 101/2018 ha modificato per adeguarlo al regolamento. Due articoli del Codice sono utili alla biblioteca.
+
+- Art. 2-ter, la base giuridica del compito di interesse pubblico. Quando il trattamento si fonda sull'art. 6,
+  paragrafo 1, lettera e, del GDPR, la base giuridica prevista dall'art. 6, paragrafo 3, è una norma di legge o di
+  regolamento, o un atto amministrativo generale. Quale norma, regolamento o atto amministrativo generale sostenga il
+  trattamento dei dati per la biblioteca d'istituto è una valutazione del DPO della scuola: BiblioViva non la sostituisce,
+  e questa pagina non la fa.
+- Art. 2-quinquies, il consenso dei minori. Il minore che ha compiuto quattordici anni può dare il consenso al
+  trattamento dei propri dati in relazione all'offerta diretta di servizi della società dell'informazione; sotto i
+  quattordici anni il consenso lo dà chi esercita la responsabilità genitoriale. L'articolo non riguarda BiblioViva:
+  BiblioViva non offre alcun servizio agli alunni, che non vi hanno un account, e il trattamento non si fonda sul
+  consenso.
+
+### Le foto degli utenti
+
+La foto di un utente è un dato personale (art. 4, punto 1, del GDPR). Per le scuole il Garante raccomanda attenzione
+alle immagini dei minori, come nel vademecum già citato. Il GDPR tratta come dato biometrico, e quindi come categoria
+particolare di dati (art. 9), una fotografia solo quando è elaborata con mezzi tecnici che permettono di identificare
+una persona in modo univoco (art. 4, punto 14, e considerando 51); BiblioViva non fa riconoscimento dei volti.
+
+La Legge 633/1941 sul diritto d'autore regola anche il diritto all'immagine: il ritratto di una persona non può essere
+esposto, riprodotto o messo in commercio senza il suo consenso (art. 96), salvo i casi dell'art. 97, tra cui la
+riproduzione giustificata da scopi scientifici, didattici o culturali. Le due norme riguardano la pubblicazione e la
+diffusione di un ritratto, che BiblioViva non fa. La norma non dice espressamente se la stampa della foto sulla tessera
+dell'utente rientri nella riproduzione dell'art. 96: lo valuta la scuola con il DPO, insieme alla base del trattamento
+indicata sopra.
+
 ## Che cosa fa BiblioViva
 
 ### Dati conservati
@@ -65,6 +95,22 @@ personale](../admin/guides/manage-accounts.md)).
 
 BiblioViva non ha un catalogo pubblico né account per studenti o famiglie: nessun utente della biblioteca entra mai nel
 software.
+
+### Foto degli utenti
+
+- Le foto sono facoltative. L'interruttore **Foto degli utenti** della Configurazione le attiva o le spegne per
+  l'intera installazione; con le foto spente nessuna pagina ne mostra, non se ne scattano né se ne caricano e le schede
+  mostrano un'immagine neutra. La scuola può anche tenere le foto attive e togliere la richiesta (**Foto richiesta**): i
+  promemoria sulle foto mancanti scompaiono e la foto resta facoltativa.
+- Le foto si vedono solo con un account del personale che apre le schede o lavora al banco prestiti
+  (permessi «utenti» e «prestiti»); gli account di catalogazione e dei report non le vedono. Non esiste un indirizzo
+  pubblico della foto.
+- La foto è salvata dal software a dimensioni fisse (480 × 640 pixel, formato WebP, in modo predefinito), sul computer
+  della scuola.
+- Rimuovere un utente cancella la sua foto subito e senza possibilità di recupero (vedere «Per quanto tempo»).
+- La foto può comparire sulla tessera stampata, secondo il modello scelto: l'impostazione **Foto sulla tessera** la
+  toglie dalla stampa, e BiblioViva fornisce modelli di tessera senza la foto.
+- BiblioViva non pubblica le foto, non le invia ad altri servizi e non le confronta tra loro.
 
 ### Dove si trovano
 
@@ -229,7 +275,11 @@ Il paragrafo seguente si aggiunge all'informativa che la scuola dà a famiglie e
 
 - [Regolamento (UE) 2016/679 (GDPR)](https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=it), su EUR-Lex
 - [D.Lgs. 30 giugno 2003, n. 196](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-06-30;196),
-  Codice in materia di protezione dei dati personali, su Normattiva
+  Codice in materia di protezione dei dati personali (articoli 2-ter e 2-quinquies), su Normattiva
+- [D.Lgs. 10 agosto 2018, n. 101](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2018-08-10;101),
+  che adegua il Codice al GDPR, su Normattiva
+- [Legge 22 aprile 1941, n. 633](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1941-04-22;633),
+  sulla protezione del diritto d'autore, con il diritto all'immagine agli articoli 96 e 97, su Normattiva
 - [Scuola](https://www.garanteprivacy.it/temi/scuola), la pagina del Garante per la protezione dei dati personali, con
   il vademecum «La scuola a prova di privacy»
 - [Politica sulla privacy di Tailscale](https://tailscale.com/privacy-policy)
@@ -237,6 +287,6 @@ Il paragrafo seguente si aggiunge all'informativa che la scuola dà a famiglie e
 ## Pagine correlate
 
 - [Sicurezza](security.md)
-- [Funzionalità di BiblioViva](../features.md)
+- [Panoramica](../features.md)
 - [Fare e scaricare una copia di sicurezza](../admin/guides/make-a-backup.md)
 - [Scegliere la rete](../setup/choose-network.md)

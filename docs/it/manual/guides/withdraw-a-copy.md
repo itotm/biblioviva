@@ -8,8 +8,9 @@ tolta dallo scaffale (ritirata), per una copia sola o per molte insieme. Serve a
 - Occorrente: il codice della copia, che sta sull'etichetta del libro (se il libro manca, la copia si trova dalla scheda
   del libro, vedere [Cercare un libro](find-a-book.md)).
 
-La copia non si cancella: cambia stato e resta nell'archivio, con il motivo, per tutta la vita del catalogo. Gli stati
-sono questi:
+La copia non si cancella: cambia stato e resta nell'archivio per tutta la vita del catalogo; il motivo resta nel
+registro delle operazioni per i mesi impostati in **Mesi di registro delle operazioni** (24 di norma). Gli stati sono
+questi:
 
 - **Disponibile**: la copia sta sullo scaffale e si presta.
 - **Smarrito**: la copia non si trova. Non si presta.
@@ -31,7 +32,7 @@ sono questi:
 
 1. In **Nuovo stato** scegliere **Smarrito**, **Danneggiato**, **In riparazione**, **Ritirato** oppure **Disponibile**.
 1. In **Motivo (facoltativo, registrato)** scrivere perché, per esempio «perso da un alunno» o «pagine strappate». Il
-   motivo resta nel registro delle operazioni di quella copia.
+   motivo resta nel registro delle operazioni di quella copia, per i mesi impostati.
 1. Premere **Cambia stato**. Un avviso conferma «Stato aggiornato» e la riga mostra lo stato nuovo.
 
 Una copia in prestito si può segnare **Smarrito**: il prestito si chiude e la copia risulta smarrita, anche nella scheda

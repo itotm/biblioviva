@@ -1,9 +1,9 @@
 # Personal data protection
 
-This page covers Regulation (EU) 2016/679 (GDPR) and the Italian Personal Data Protection Code (D.Lgs. 196/2003), for
-the processing of the library patrons' data with BiblioViva. It is written for the head teacher, the DSGA and the DPO,
-and it contains two ready texts to copy: one for the record of processing activities and one for the information
-notice.
+This page covers Regulation (EU) 2016/679 (GDPR) and the Italian Personal Data Protection Code (D.Lgs. 196/2003, a
+legislative decree), for the processing of the library patrons' data with BiblioViva. It is written for the head
+teacher, the DSGA and the DPO, and it contains two ready texts to copy: one for the record of processing activities and
+one for the information notice.
 
 ## What the rule asks
 
@@ -33,6 +33,35 @@ written act (art. 28).
 The Italian data protection authority (Garante per la protezione dei dati personali) has published for schools the
 guide «La scuola a prova di privacy» («The school, privacy-proof»), which recalls the same principles: only the
 indispensable data, care with images of minors, no publication of personal data.
+
+### The Personal Data Protection Code
+
+In Italy the GDPR applies together with the Personal Data Protection Code (D.Lgs. 196/2003), which D.Lgs. 101/2018
+amended to bring it into line with the regulation. Two articles of the Code are useful to the library.
+
+- Art. 2-ter, the legal basis of the task carried out in the public interest. When the processing is founded on art. 6,
+  paragraph 1, point e, of the GDPR, the legal basis provided by art. 6, paragraph 3, is a law or a regulation, or a
+  general administrative act. Which law, regulation or general administrative act supports the processing of the data
+  for the school library is an evaluation for the school's DPO: BiblioViva does not replace it, and this page does not
+  make it.
+- Art. 2-quinquies, the consent of minors. A minor who is at least fourteen years old can consent to the processing of
+  their own data in relation to the direct offer of information society services; under fourteen, consent is given by
+  whoever holds parental responsibility. The article does not concern BiblioViva: BiblioViva offers no service to the
+  students, who have no account in it, and the processing is not founded on consent.
+
+### The patrons' photos
+
+A patron's photo is personal data (GDPR, art. 4, point 1). For schools the Garante recommends care with images of
+minors, as in the guide already cited. The GDPR treats a photograph as biometric data, and therefore as a special
+category of data (art. 9), only when it is processed by technical means that allow the unique identification of a person
+(art. 4, point 14, and recital 51); BiblioViva does no face recognition.
+
+Law 633/1941 on copyright (Legge 633/1941) also regulates the right to one's image: the portrait of a person may not be
+displayed, reproduced or put on the market without their consent (art. 96), except in the cases of art. 97, among them
+reproduction justified by scientific, educational or cultural purposes. The two rules concern the publication and
+dissemination of a portrait, which BiblioViva does not do. The rule does not say expressly whether printing the photo on
+the patron's card falls within the reproduction of art. 96: the school evaluates it with the DPO, together with the
+legal basis indicated above.
 
 ## What BiblioViva does
 
@@ -64,6 +93,22 @@ creates one account per person ([Manage the staff accounts](../admin/guides/mana
 
 BiblioViva has no public catalogue and no accounts for students or families: no library patron ever enters the
 software.
+
+### Patrons' photos
+
+- Photos are optional. The **Patron photos** switch in the Configuration turns them on or off for the whole
+  installation; with photos off, no page shows any, none are taken or uploaded, and the records show a neutral image.
+  The school can also keep photos on and remove the requirement (**Photo required**): the reminders about missing
+  photos disappear and the photo stays optional.
+- Photos are seen only with a staff account that opens the records or works at the circulation desk ("patrons" and
+  "loans" permissions); the cataloguing and reports accounts do not see them. There is no public address for a photo.
+- The photo is saved by the software at fixed dimensions (480 × 640 pixels, WebP format, by default), on the school's
+  computer.
+- Removing a patron deletes the patron's photo at once and without any possibility of recovery (see "How long").
+- The photo can appear on the printed card, according to the template chosen: the setting **Photo on the card** removes
+  it from the print, and BiblioViva supplies card templates without the photo.
+- BiblioViva does not publish the photos, does not send them to other services and does not compare them with each
+  other.
 
 ### Where they are
 
@@ -226,7 +271,11 @@ and completed.
 
 - [Regulation (EU) 2016/679 (GDPR)](https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=en), on EUR-Lex
 - [D.Lgs. 30 June 2003, no. 196](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-06-30;196),
-  Personal Data Protection Code, on Normattiva (in Italian)
+  Personal Data Protection Code (articles 2-ter and 2-quinquies), on Normattiva (in Italian)
+- [D.Lgs. 10 August 2018, no. 101](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2018-08-10;101),
+  which brings the Code into line with the GDPR, on Normattiva (in Italian)
+- [Law 22 April 1941, no. 633](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:regio.decreto:1941-04-22;633), on
+  the protection of copyright, with the right to one's image in articles 96 and 97, on Normattiva (in Italian)
 - [Scuola](https://www.garanteprivacy.it/temi/scuola), the page of the Garante per la protezione dei dati personali on
   schools, with the guide «La scuola a prova di privacy» (in Italian)
 - [Tailscale privacy policy](https://tailscale.com/privacy-policy)
@@ -234,6 +283,6 @@ and completed.
 ## Related pages
 
 - [Security](security.md)
-- [BiblioViva features](../features.md)
+- [Overview](../features.md)
 - [Make and download a backup](../admin/guides/make-a-backup.md)
 - [Choose the network](../setup/choose-network.md)

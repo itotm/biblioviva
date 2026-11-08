@@ -1,4 +1,4 @@
-# Funzionalità di BiblioViva
+# Panoramica
 
 BiblioViva è un software libero per gestire una biblioteca scolastica: lo usa il personale della biblioteca dal browser
 di qualunque computer, tablet o telefono della scuola. Questa pagina riassume ciò che fa.

@@ -59,7 +59,7 @@ settings; the guides explain one task at a time; the screen pages describe the p
 
 ## Related pages
 
-- [BiblioViva features](../features.md)
+- [Overview](../features.md)
 - [Manual](../manual/README.md)
 - [Installation](../setup/README.md)
 - [Help](../help/README.md)

@@ -1,4 +1,4 @@
-# BiblioViva features
+# Overview
 
 BiblioViva is free software for running a school library: the library staff use it from the browser of any computer,
 tablet or phone of the school. This page summarises what it does.

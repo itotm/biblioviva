@@ -163,8 +163,8 @@ The accounting regulation of state schools, **D.I. 129/2018**, art. 31, lists «
 the inventories of the school's assets (patrimonio indisponibile). The schools' own regulations (art. 29 c. 3) repeat
 the requirements of art. 31: each item is entered **in chronological order, with a progressive and uninterrupted
 number**, with what establishes its **origin** (purchase, gift), **place**, **condition** and **value** (the invoice
-price, or an estimate for a gift). Books of **classroom libraries** and periodicals are not inventoried; for them «la
-rilevazione avviene attraverso gli strumenti di gestione del prestito della biblioteca di istituto». Lost, stolen or
+price, or an estimate for a gift). Periodicals, the books meant for **classroom libraries** (art. 31 c. 6) and goods worth up to 200 euro (c. 5) are
+not inventoried. Lost, stolen or
 worn-out items leave the inventory only by a **decree of the head teacher** («provvedimento di discarico»); a
 commission checks the assets at least **every five years** and renews the inventories every ten.
 

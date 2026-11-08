@@ -2062,14 +2062,19 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Tasks:
     - **Documentation**: a sixth section **Norme** (`docs/<lang>/compliance/`, `/<lang>/compliance/<page>/`), before
       Tecnica in the top bar, written by the method of 9.5 (Italian first, English mirror; the kind «Norme page» of
-      `docs/writing-guide.md`): `README.md` (what the section is for, the table of the rules, once that the decisions
-      are the school's and its DPO's), `data-protection.md` (GDPR and D.Lgs. 196/2003: what BiblioViva stores, where,
+      `docs/writing-guide.md`), citing every rule that applies to a school adopting BiblioViva and how BiblioViva
+      implements each (owner): `README.md` (what the section is for, why the rules apply — a state school is a public
+      administration —, the table of every rule with what BiblioViva does, once that the decisions are the school's and
+      its DPO's), `data-protection.md` (GDPR and D.Lgs. 196/2003: what BiblioViva stores, where,
       for how long, who sees it, what leaves the school; the ready texts for the record of processing, art. 30, and
       for the information notice, art. 13), `accessibility.md` (Legge 4/2004, the AgID guidelines, EN 301 549, the
       target WCAG 2.2 AA of Q147, with the technical page `docs/accessibility.md`), `open-source.md` (CAD art. 68–69,
       the AgID guidelines on acquisition and reuse, the licence, `publiccode.yml` and the Developers Italia catalogue,
       the exports), `security.md` (the AgID minimum ICT security measures, GDPR art. 32, the ACN rules on cloud
-      services). `docs/<lang>/features.md` links the section.
+      services), `inclusion.md` (L. 170/2010, L. 104/1992), `school-inventory.md` (D.I. 129/2018, what BiblioViva
+      records today), `other-rules.md` (the rules checked that do not concern BiblioViva, or only in part: the
+      European Accessibility Act, NIS 2, SPID and CIE, pagoPA, copyright and the covers, the preservation of IT
+      documents). `docs/<lang>/features.md` links the section.
     - **PDF**: the whole section as one PDF per language (`/<lang>/compliance/biblioviva-norme.pdf`,
       `/<lang>/compliance/biblioviva-compliance.pdf`), printed by Chromium from a print page that `site:build` writes
       (`/<lang>/compliance/print/`: a cover with the release, the pages in the order of the section, each link written
@@ -2095,10 +2100,12 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
     optional); two reports, **copies withdrawn in a period** (inventory number, title, reason, value: the annex to the
     discharge decree) and **copies entered in a period** (what the office registers); the inventory number in the
     stocktaking report (9.8), for the five-yearly check; schema in the single migration (ADR-011), `docs/database.md`.
-    The rule is read on the decree's own text before writing the page [VERIFY: D.I. 129/2018 art. 31, quoted so far
-    through schools' inventory regulations].
-  - Docs: the page `school-inventory.md` of the section Norme (9.63), the copy's fields in the manual, the setting in
-    the administration pages, both languages.
+    The withdrawal of a copy keeps its date and reason on the copy itself (today the reason is only in the audit log,
+    which is purged after `privacy.auditRetentionMonths`), so the list of withdrawn copies covers any period. The
+    rule as read on the decree (art. 31: c. 1 lett. c the books, c. 2–3 the entries, c. 5–6 what is not inventoried,
+    c. 9 the checks; art. 33 the discharge) is in `docs/<lang>/compliance/school-inventory.md`.
+  - Docs: the page `school-inventory.md` and the table of the section Norme (9.63) say what BiblioViva records now,
+    the copy's fields in the manual, the setting in the administration pages, both languages.
   - Acceptance: unit tests (numbering, uniqueness, reports), the copy form and the two reports in Playwright on both
     projects; `bun run ci` green.
   - Depends on: 9.8, 9.63
@@ -2134,7 +2141,8 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
     caratteri grandi, tattile), one or more per record; a filter of the catalogue list, a badge on the record, a column
     of the import and the export, a report by format; the list editable in Amministrazione; schema in the single
     migration (ADR-011), `docs/database.md`.
-  - Docs: a line in the catalogue pages of the manual and in the settings, both languages.
+  - Docs: a line in the catalogue pages of the manual and in the settings, the page `inclusion.md` of the section
+    Norme, both languages.
   - Acceptance: unit tests (config, filter, import column); Playwright: a record marked and found by the filter;
     `bun run ci` green.
   - Depends on: 5.1

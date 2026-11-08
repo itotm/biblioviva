@@ -70,7 +70,7 @@ next to the page title.
 
 ## Related pages
 
-- [BiblioViva features](../features.md)
+- [Overview](../features.md)
 - [Administration](../admin/README.md)
 - [Installation](../setup/README.md)
 - [Help](../help/README.md)
