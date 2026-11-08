@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (kalkylblad, text)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Den här installationen innehåller exempeldata inlästa {{when}}: {{patrons}} {{patrons:plural; one:låntagare; other:låntagare;}}, {{biblios}} {{biblios:plural; one:titel; other:titlar;}}, {{items}} {{items:plural; one:exemplar; other:exemplar;}}, {{loans}} {{loans:plural; one:lån; other:lån;}}. Allt är påhittat: ingen verklig person."

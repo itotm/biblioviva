@@ -89,7 +89,8 @@ The patrons are mostly minors. The data stay on the school's computer, except fo
 chooses to download or to keep elsewhere. Using BiblioViva requires an account, and each account sees only what its role
 allows. Patron photos can be switched off altogether. The school remains the controller of the data (Regulation (EU)
 2016/679, GDPR): the internet lookups of a book's record and cover send only the book's ISBN, title or author, never
-data about patrons.
+data about patrons. What the rules ask of the school, and the ready texts for the record of processing and
+the notice, are in the section [Compliance](compliance/data-protection.md).
 
 ## Accessibility
 
@@ -97,7 +98,7 @@ BiblioViva can be used with the keyboard alone, with a screen reader or with a m
 bound to the requirements of Law 4/2004 and the AgID guidelines (WCAG 2.1 level AA); the project's target is WCAG 2.2
 AA, which includes them. The circulation desk works entirely with the keyboard and the barcode scanner, and its messages
 are read by screen readers; the camera is never indispensable. The state, the checks and the gaps still open are
-described in the technical page [Accessibility](../accessibility.md).
+described in the page [Accessibility](compliance/accessibility.md) of the section Compliance.
 
 ## Design choices
 

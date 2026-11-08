@@ -69,7 +69,7 @@ riepilogo «Rinnovati `<n>` prestiti su `<totale>`.», seguito, per ogni rinnovo
 ## Esportazione
 
 Sotto la tabella il menu **Esporta** scarica l'elenco mostrato (con la ricerca e i filtri attivi) come file CSV, per un
-foglio di calcolo, o ODS, per LibreOffice o Excel. Il file contiene anche la data del prestito.
+foglio di calcolo, o ODS, per LibreOffice. Il file contiene anche la data del prestito.
 
 ## Pagine correlate
 

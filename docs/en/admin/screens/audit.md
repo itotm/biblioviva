@@ -14,7 +14,7 @@ trace the origin of a change. It is reserved for the `admin` account and opens f
 ## Export
 
 The **Export** menu downloads the list, with the filters set, in the format "CSV (spreadsheet, text)" or "ODS
-(LibreOffice / Excel)".
+(LibreOffice)".
 
 ## Filters
 

@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (hoja de cálculo, texto)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Esta instalación contiene datos de ejemplo cargados el {{when}}: {{patrons}} {{patrons:plural; one:usuario; other:usuarios;}}, {{biblios}} {{biblios:plural; one:título; other:títulos;}}, {{items}} {{items:plural; one:ejemplar; other:ejemplares;}}, {{loans}} {{loans:plural; one:préstamo; other:préstamos;}}. Todo es inventado: ninguna persona real."

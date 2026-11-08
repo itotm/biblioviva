@@ -3,8 +3,8 @@
 # ADR-042, ADR-043), only by hand: Actions → pages → Run workflow, on the release's tag (or on main for a
 # correction of the text); a push never publishes it. The build takes the pictures from the app (`bun run docs:shots`, on the
 # built server like the end-to-end tests), then turns the Markdown of docs/ into site/dist/ with its
-# search index (`bun run site:build`). The home page (home/, biblioviva.org) is uploaded by hand to
-# Cloudflare Pages.
+# search index (`bun run site:build`) and prints the section Norme as a PDF (`bun run docs:pdf`).
+# The home page (home/, biblioviva.org) is uploaded by hand to Cloudflare Pages.
 name: pages
 
 on:
@@ -60,6 +60,11 @@ jobs:
 
             - name: Build the site and its search index
               run: bun run site:build
+
+            - name: The section Norme as a PDF, printed by Chromium
+              run: bun run docs:pdf
+              env:
+                  CI: "true"
 
             - uses: actions/configure-pages@v5
 

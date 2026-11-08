@@ -1,0 +1,91 @@
+/* The print page of the section Norme (`/<lang>/compliance/print/`, ADR-059): the look of the documentation
+   on A4 paper, printed to PDF by `bun run docs:pdf`. Only that page links this file. */
+
+@page {
+	size: A4;
+	margin: 18mm 17mm 20mm;
+}
+
+html {
+	font-size: 10pt;
+}
+
+body.print-doc {
+	background: #fff;
+	margin: 0;
+}
+
+.print-doc .cover {
+	min-height: 240mm;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	break-after: page;
+}
+.print-doc .cover img {
+	width: 26mm;
+	height: auto;
+	margin-bottom: 10mm;
+}
+.print-doc .cover .kicker {
+	color: var(--sec);
+	font-weight: 650;
+	margin: 0 0 4mm;
+}
+.print-doc .cover h1 {
+	font-size: 2.8rem;
+	letter-spacing: -0.025em;
+	margin: 0 0 6mm;
+}
+.print-doc .cover .lead {
+	font-size: 1.25rem;
+	color: var(--ink-2);
+	max-width: 140mm;
+	margin: 0 0 12mm;
+}
+.print-doc .cover .contents {
+	margin: 0 0 14mm;
+	padding-left: 1.4em;
+	font-size: 1.1rem;
+	line-height: 1.8;
+}
+.print-doc .cover .meta {
+	color: var(--muted);
+	margin: 0;
+}
+
+.print-doc .content {
+	max-width: none;
+	padding: 0;
+}
+.print-doc .chapter {
+	break-before: page;
+}
+.print-doc .chapter > h1 {
+	font-size: 2rem;
+	margin: 0 0 4mm;
+}
+.print-doc .content h2 {
+	margin-top: 9mm;
+	break-after: avoid;
+}
+.print-doc .content h3 {
+	break-after: avoid;
+}
+.print-doc .content a {
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-color: var(--line-2);
+}
+.print-doc table,
+.print-doc .note,
+.print-doc li {
+	break-inside: avoid;
+}
+.print-doc blockquote {
+	margin: 4mm 0;
+	padding: 3mm 5mm;
+	border: 1px solid var(--line-2);
+	border-radius: 3mm;
+	background: #fafafa;
+}

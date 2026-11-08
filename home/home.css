@@ -650,13 +650,18 @@ body.layout-home {
 .why span {
 	color: var(--ink-2);
 }
+.why.four {
+	grid-template-columns: repeat(4, 1fr);
+}
 @media (max-width: 860px) {
-	.why {
+	.why,
+	.why.four {
 		grid-template-columns: 1fr 1fr;
 	}
 }
 @media (max-width: 520px) {
-	.why {
+	.why,
+	.why.four {
 		grid-template-columns: 1fr;
 	}
 }

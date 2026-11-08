@@ -12,6 +12,7 @@ PLAN.md §3.23 is the source of these rules; this guide is the working version f
 | **Manuale** | `docs/it/manual/`, `docs/en/manual/` | whoever works at the desk, catalogues or makes the cards | Italian, English mirror |
 | **Amministrazione** | `docs/it/admin/`, `docs/en/admin/` | the administrator's account: first steps, the work during the year and at its end | Italian, English mirror |
 | **Aiuto** | `docs/it/help/`, `docs/en/help/` | everyone: common problems, the glossary, how to ask for help | Italian, English mirror |
+| **Norme** | `docs/it/compliance/`, `docs/en/compliance/` | the head teacher, the DSGA, the DPO and the Responsabile per la transizione digitale: what the rules ask of a school that adopts BiblioViva, what BiblioViva does about it and what is left to the school | Italian, English mirror |
 | **Tecnica** | `docs/*.md` | whoever knows Docker, Linux and JSON | English only |
 | Overview (no section) | `docs/it/features.md`, `docs/en/features.md` | everyone who meets BiblioViva, the school deciding to adopt it too: what it does, area by area | Italian, English mirror |
 
@@ -38,6 +39,9 @@ same in every language.
   alla biblioteca, e non il contrario", "nessuna biblioteca è costretta", "senza l'aiuto di un tecnico"). BiblioViva
   is «un software» for a school library, never «il programma» of the school library, as if it were the only one.
   Presenting BiblioViva is the home page's job.
+- **No proprietary programs named** (owner rule): name the format or the free program, never a proprietary one that
+  the reader might use («ODS (LibreOffice)», «un foglio di calcolo», never «Excel» or «Word»). Proprietary software
+  is named only where the reader must use it to follow the page (Windows, the browser, the Tailscale console).
 - **Never stress what the reader does not know** (owner rule): no "anche senza esperienza", "per chi non ha
   competenze informatiche", "anche senza aver mai usato un terminale", "non-technical", "even without experience".
   It reads as if the reader were taken for a fool. Where it must be said at all, say once that the guides are meant
@@ -100,6 +104,17 @@ page Aiuto → Problemi comuni is made of problems only: each `##` is a box.
 **Overview** — the features page only: the settings first, then a short paragraph per area saying what can be done
 there; no steps, no figures and no lists of links (the site's header and side menu list the pages), a link only
 where the navigation would not lead the reader. When a feature is added, its area's paragraph names it.
+
+**Norme page** — one area of rules ("Protezione dei dati personali"), for the school's offices.
+`# <area as a noun>`, the opening sentences (which rules, for whom), then: `## Che cosa chiede la norma` (the rule
+in plain words, with its article), `## Che cosa fa BiblioViva` (facts only, each checked in the code),
+`## Che cosa fa la scuola` (what stays to the school: a choice, a document, a check), the ready texts when the page
+has them (`## Testo per …`, a quotation the school copies and completes; the parts to fill in are in square brackets, `[nome]`, since angle
+brackets outside code would be read as HTML),
+`## Riferimenti` (links to the official texts: Normattiva, EUR-Lex, AgID, the Garante, ACN). The section's first page
+says once that the pages give facts for the school's evaluations and that the decisions are the school's and its
+DPO's; no other page repeats it. A fact the law leaves open is written as such ("la norma non lo prevede
+espressamente"), never stretched to an answer.
 
 **Technical page** — the English documents of `docs/` (deployment, configuration reference, templates, reports),
 written for technical readers as they are.

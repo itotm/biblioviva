@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-// CSV writer (§3.19): UTF-8 with BOM, `;` separator (Italian Excel/LibreOffice default), CRLF,
+// CSV writer (§3.19): UTF-8 with BOM, `;` separator (the default of spreadsheets set to Italian), CRLF,
 // dates as YYYY-MM-DD. Every field that needs it is quoted; quotes are doubled.
 import { toCell } from "./cells.js";
 import type { TableExport } from "./types.js";
@@ -12,7 +12,7 @@ export const FORMULA_START = /^[=+\-@\t\r]/;
 
 /**
  * One field. A text that a spreadsheet would read as a formula (`=`, `+`, `-`, `@`, tab, carriage
- * return first) gets a leading `'`, which Excel and LibreOffice show as plain text, and quotes;
+ * return first) gets a leading `'`, which spreadsheet programs show as plain text, and quotes;
  * numbers (`-3`) stay numbers. The imports drop that `'` again (`#lib/server/imports/csv.ts`).
  */
 export function csvField(text: string, kind: "text" | "number" = "text"): string {

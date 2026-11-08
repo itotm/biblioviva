@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (spreadsheet, tekst)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Deze installatie bevat voorbeeldgegevens, geladen op {{when}}: {{patrons}} {{patrons:plural; one:lener; other:leners;}}, {{biblios}} {{biblios:plural; one:titelbeschrijving; other:titelbeschrijvingen;}}, {{items}} {{items:plural; one:exemplaar; other:exemplaren;}}, {{loans}} {{loans:plural; one:uitlening; other:uitleningen;}}. Alles is verzonnen: geen echte persoon."

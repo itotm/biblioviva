@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (regneark, tekst)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Denne installation indeholder eksempeldata indlæst {{when}}: {{patrons}} {{patrons:plural; one:låner; other:lånere;}}, {{biblios}} {{biblios:plural; one:titel; other:titler;}}, {{items}} {{items:plural; one:eksemplar; other:eksemplarer;}}, {{loans}} {{loans:plural; one:udlån; other:udlån;}}. Alt er opdigtet: ingen rigtig person."

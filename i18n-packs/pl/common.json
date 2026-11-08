@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (arkusz kalkulacyjny, tekst)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Ta instalacja zawiera dane przykładowe wczytane {{when}}: {{patrons}} {{patrons:plural; one:czytelnik; few:czytelnicy; many:czytelników; other:czytelnika;}}, {{biblios}} {{biblios:plural; one:tytuł; few:tytuły; many:tytułów; other:tytułu;}}, {{items}} {{items:plural; one:egzemplarz; few:egzemplarze; many:egzemplarzy; other:egzemplarza;}}, {{loans}} {{loans:plural; one:wypożyczenie; few:wypożyczenia; many:wypożyczeń; other:wypożyczenia;}}. Wszystko jest zmyślone: nie ma w nim prawdziwych osób."

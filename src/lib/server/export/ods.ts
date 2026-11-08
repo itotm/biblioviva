@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // ODS writer (§3.19) with fflate: `mimetype` stored first and uncompressed (OpenDocument requirement),
 // `content.xml` with typed cells and column widths, `META-INF/manifest.xml`. Opens in LibreOffice
-// and Excel.
+// and the other spreadsheet programs.
 import { strToU8, zipSync } from "fflate";
 import { toCell } from "./cells.js";
 import type { ExportColumnType, TableExport } from "./types.js";

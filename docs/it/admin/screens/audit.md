@@ -14,7 +14,7 @@ registrate. Serve a ritrovare l'origine di una modifica. È riservato all'accoun
 ## Esporta
 
 Il menu **Esporta** scarica l'elenco, con i filtri impostati, in formato «CSV (foglio di calcolo, testo)» oppure «ODS
-(LibreOffice / Excel)».
+(LibreOffice)».
 
 ## Filtri
 

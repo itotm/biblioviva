@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (proračunska tablica, tekst)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Ova instalacija sadrži probne podatke učitane {{when}}: {{patrons}} {{patrons:plural; one:korisnik; few:korisnika; other:korisnika;}}, {{biblios}} {{biblios:plural; one:naslov; few:naslova; other:naslova;}}, {{items}} {{items:plural; one:primjerak; few:primjerka; other:primjeraka;}}, {{loans}} {{loans:plural; one:posudba; few:posudbe; other:posudbi;}}. Sve je izmišljeno: nema stvarne osobe."

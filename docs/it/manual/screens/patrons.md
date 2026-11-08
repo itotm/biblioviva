@@ -121,7 +121,7 @@ in corso lasciati in archivio».
 ## Esportazione
 
 Il menu **Esporta**, sotto l'elenco, scarica gli utenti trovati, con i filtri in uso, in **CSV (foglio di calcolo,
-testo)** oppure **ODS (LibreOffice / Excel)**.
+testo)** oppure **ODS (LibreOffice)**.
 
 ## Pagine correlate
 

@@ -68,7 +68,7 @@ the summary "`<n>` of `<total>` loans renewed.", followed, for each refused rene
 ## Export
 
 Under the table the **Export** menu downloads the list shown (with the active search and filters) as a CSV file, for a
-spreadsheet, or ODS, for LibreOffice or Excel. The file also contains the date of the loan.
+spreadsheet, or ODS, for LibreOffice. The file also contains the date of the loan.
 
 ## Related pages
 

@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (tabulka, text)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Tato instalace obsahuje ukázková data načtená {{when}}: {{patrons}} {{patrons:plural; one:čtenář; few:čtenáři; other:čtenářů;}}, {{biblios}} {{biblios:plural; one:titul; few:tituly; other:titulů;}}, {{items}} {{items:plural; one:exemplář; few:exempláře; other:exemplářů;}}, {{loans}} {{loans:plural; one:výpůjčka; few:výpůjčky; other:výpůjček;}}. Všechno je vymyšlené: žádná skutečná osoba."

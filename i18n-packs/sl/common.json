@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (preglednica, besedilo)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Ta namestitev vsebuje predstavitvene podatke, naloženi dne {{when}}: {{patrons}} {{patrons:plural; one:uporabnik; two:uporabnika; few:uporabniki; other:uporabnikov;}}, {{biblios}} {{biblios:plural; one:naslov; two:naslova; few:naslovi; other:naslovov;}}, {{items}} {{items:plural; one:izvod; two:izvoda; few:izvodi; other:izvodov;}}, {{loans}} {{loans:plural; one:izposoja; two:izposoji; few:izposoje; other:izposoj;}}. Vse je izmišljeno: nobena oseba ni resnična."

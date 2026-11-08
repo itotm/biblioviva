@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV（表計算、テキスト）",
-		"ods": "ODS（LibreOffice / Excel）"
+		"ods": "ODS（LibreOffice）"
 	},
 	"demo": {
 		"panel": "このインストールには{{when}}に読み込まれたサンプルデータがあります：利用者{{patrons}}{{patrons:plural; other:人;}}、書名{{biblios}}{{biblios:plural; other:件;}}、資料{{items}}{{items:plural; other:冊;}}、貸出{{loans}}{{loans:plural; other:件;}}。すべて架空のもので、実在の人物は含まれていません。"

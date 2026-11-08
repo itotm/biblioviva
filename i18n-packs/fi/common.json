@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (taulukko, teksti)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Tässä asennuksessa on esimerkkitietoja, jotka on ladattu {{when}}: {{patrons}} {{patrons:plural; one:asiakas; other:asiakasta;}}, {{biblios}} {{biblios:plural; one:nimeke; other:nimekettä;}}, {{items}} {{items:plural; one:nide; other:nidettä;}}, {{loans}} {{loans:plural; one:laina; other:lainaa;}}. Kaikki tiedot on keksitty: ei oikeita henkilöitä."

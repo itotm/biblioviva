@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (elektronik tablo, metin)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Bu kurulum {{when}} tarihinde yüklenen örnek veriler içerir: {{patrons}} {{patrons:plural; one:üye; other:üye;}}, {{biblios}} {{biblios:plural; one:kitap; other:kitap;}}, {{items}} {{items:plural; one:nüsha; other:nüsha;}}, {{loans}} {{loans:plural; one:ödünç; other:ödünç;}}. Hepsi uydurmadır: gerçek bir kişi yoktur."

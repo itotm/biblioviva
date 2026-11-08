@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (regneark, tekst)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Denne installasjonen inneholder eksempeldata lastet inn {{when}}: {{patrons}} {{patrons:plural; one:låner; other:lånere;}}, {{biblios}} {{biblios:plural; one:tittel; other:titler;}}, {{items}} {{items:plural; one:eksemplar; other:eksemplarer;}}, {{loans}} {{loans:plural; one:utlån; other:utlån;}}. Alt er oppdiktet: ingen virkelig person."

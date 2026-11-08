@@ -103,7 +103,7 @@ A check is valid only for the choice made: when the value is changed, **Check** 
 
 ## Export
 
-Under the list the **Export** menu downloads the search results, with the filters in use, in two formats: **CSV (spreadsheet, text)** or **ODS (LibreOffice / Excel)**. Besides the columns of the list, the file contains the number of copies and the number of available copies.
+Under the list the **Export** menu downloads the search results, with the filters in use, in two formats: **CSV (spreadsheet, text)** or **ODS (LibreOffice)**. Besides the columns of the list, the file contains the number of copies and the number of available copies.
 
 ## Related pages
 

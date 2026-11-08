@@ -33,11 +33,11 @@ and this file must be updated.
   served by BiblioViva (ADR-039): the **home page** of `biblioviva.org` is `home/` (`it.html` and `en.html`, the same
   markup, built by `bun run home:build` into `home/dist/` and a zip uploaded by hand to Cloudflare Pages); the **documentation** of
   `docs.biblioviva.org` is built from the Markdown of `docs/` by the Bun script `scripts/site-build.ts` into
-  `site/dist/` (`bun run site:build`, `bun run site:serve` on port 5175; ADR-043), GitHub Pages, sections Manuale, Amministrazione, Installazione, Aiuto, Tecnica, plus the overview of the features
+  `site/dist/` (`bun run site:build`, `bun run site:serve` on port 5175; ADR-043), GitHub Pages, sections Manuale, Amministrazione, Installazione, Aiuto, Norme (the rules a school answers to, with a PDF), Tecnica, plus the overview of the features
   (`docs/<lang>/features.md`), not versioned (the current
   release only, published by hand with the manual Pages workflow, normally after each release, ADR-042, ADR-050); the app's help icons open it in the installation's language;
   no accent stripe on the left of boxes. The
-  documentation's tone is serious and plain (Italian instructions in the infinitive, headings as nouns, no jokes); the
+  documentation's tone is serious and plain (Italian instructions in the infinitive, headings as nouns, no jokes); no proprietary programs named (the format or the free program: «ODS (LibreOffice)», never «Excel»), unless the reader must use one; the
   home page uses *tu*; the USB barcode scanner is the normal reader everywhere, the phone an optional extra.
 
 ## Stack (exact versions are pinned in `package.json`, see PLAN.md §2)
@@ -67,7 +67,7 @@ and this file must be updated.
   ODS export with `fflate`; charts with `chart.js` (bar, line, doughnut only, lazy-loaded).
 - Never add a dependency that is not in PLAN.md §2 without an ADR in `docs/DECISIONS.md`. Never use anything in the
   "Do not use" list (PLAN.md §2.8): Flowbite, daisyUI, Paraglide, svelte-i18n, Iconify, ApexCharts, sharp, exceljs/xlsx,
-  node-gyp add-ons, Lucia, dark-mode code paths.
+  node-gyp add-ons, Lucia, dark-mode code paths, Tauri, Electron, Flatpak.
 
 ## Dependency policy
 
@@ -105,7 +105,14 @@ and this file must be updated.
   (`/data`: SQLite database, uploads, imported files, temporary files; a named volume) and `BACKUP_DIR` (`/backups`:
   the backups, their copy of the pictures, `offsite.json`; the folder `./backups` beside the compose file). Only
   `backupsDir()` (`#lib/server/services/backup.ts`) knows where the backups are. In development all three live under
-  `./local/` (gitignored).
+  `./local/` (gitignored). In the native packages they are folders of the computer (PLAN.md §3.20) and the operator
+  chooses the backups folder (`backup.dir`, ADR-058).
+- **Container or native package** (Q149, ADR-057, PLAN.md §3.21): BiblioViva ships as the container image (servers,
+  Raspberry Pi) and as one executable per system built by `adapter-bun`'s `compile` option — a Windows installer that
+  runs it as a service, a Linux AppImage for a desk computer, a Debian package with a systemd service for a dedicated computer —, with the browser in app mode as its window. Code never
+  assumes a container: no `execve` or cgroup limits outside `scripts/start.ts`, no symbolic links, renames safe on
+  Windows, paths through `node:path`; `BV_PACKAGE` says which package the app runs in. macOS is not supported
+  (PLAN.md §3.21).
 - **School structure** (Phase 12, ADR-024): the stages and years are configuration (`school.*`, presets in
   `config/school-presets/`, read from the application); the **classes are groups of the database** (`class_group`,
   `class_group_level`: a pluriclasse hosts several years; teachers belong to a teachers group), permanent cohorts that

@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (full de càlcul, text)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Aquesta instal·lació conté dades de demostració carregades el {{when}}: {{patrons}} {{patrons:plural; one:usuari; other:usuaris;}}, {{biblios}} {{biblios:plural; one:títol; other:títols;}}, {{items}} {{items:plural; one:còpia; other:còpies;}}, {{loans}} {{loans:plural; one:préstec; other:préstecs;}}. Són inventades: cap persona real."

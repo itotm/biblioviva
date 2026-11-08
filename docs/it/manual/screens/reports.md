@@ -101,7 +101,7 @@ Un valore scritto male blocca il calcolo e un riquadro rosso dice quale campo va
 - **Stampa** apre in una nuova scheda del browser la versione da stampare del report, con la riga «Stampato il» e la
   data, e i parametri usati.
 - **Esporta** scarica la tabella, con i parametri in uso, in **CSV (foglio di calcolo, testo)** oppure **ODS
-  (LibreOffice / Excel)**.
+  (LibreOffice)**.
 
 ## Pagine correlate
 

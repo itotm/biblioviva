@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV（电子表格，文本）",
-		"ods": "ODS（LibreOffice / Excel）"
+		"ods": "ODS（LibreOffice）"
 	},
 	"demo": {
 		"panel": "本安装包含于 {{when}} 载入的示例数据：{{patrons}} {{patrons:plural; other:位读者;}}，{{biblios}} {{biblios:plural; other:种图书;}}，{{items}} {{items:plural; other:册;}}，{{loans}} {{loans:plural; other:笔借阅;}}。所有内容均为虚构：不涉及任何真实的人。"

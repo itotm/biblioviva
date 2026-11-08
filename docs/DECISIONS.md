@@ -629,7 +629,7 @@ the app's components; a change that breaks a picture's steps fails `bun run ci` 
 while a picture that only looks different is taken again at the next build. The pictures are bitmaps: they are not
 text in the PDF and blur when zoomed far in, and each release adds a few MB of pictures to the archive branch.
 
-## ADR-038 — Windows hosts through Docker Desktop (2026-10-26, Q130)
+## ADR-038 — Windows hosts through Docker Desktop (2026-10-26, Q130) — superseded by ADR-057
 
 **Context.** The plan supported Linux hosts only (Q63): a Raspberry Pi or a PC with Debian, Ubuntu or Fedora. In
 many schools the only computer available to the library is the desk PC, and it runs Windows; asking a school to
@@ -970,3 +970,72 @@ release checklist sets its `softwareVersion` and `releaseDate`. The owner regist
 once it is public (9.36).
 
 **Consequences.** One more file to keep in step with the README when BiblioViva changes what it does.
+
+## ADR-057 — BiblioViva installed natively on desk computers (2026-11-07, owner, Q149)
+
+**Context.** BiblioViva ran only as containers: on Linux hosts, and on Windows through Docker Desktop (ADR-038), which
+needs virtualization enabled in the BIOS (often locked on school PCs), a WSL 2 virtual machine that users report at
+1.5–3 GB of memory even idle, and a signed-in user. The owner asked for an installable program with the least use of
+the computer's resources. The study `docs/studies/installable.md` built a prototype: `adapter-bun`'s `compile` option
+puts the Bun runtime, the server and every page asset in one executable (133 MB on Linux, 139 MB on Windows, about
+50 MB compressed), cross-compiled from Linux, which starts with 70 MB of memory and serves the app as the container
+does.
+
+**Decision.** BiblioViva is also shipped as **one executable per system** (step 9.56; targets
+`bun-windows-x64-baseline`, `bun-linux-x64-baseline`, `bun-linux-arm64`). On **Windows** an NSIS installer puts it on
+the PC with `yaz-client.exe` and runs it as a **Windows service** (WinSW) from start-up (9.57); Docker Desktop is no
+longer a supported path. On **Linux** an **AppImage** serves a desk computer (9.58), and a **Debian package** with a systemd service a dedicated
+computer, a Raspberry Pi or a Linux PC, without Docker (9.62); neither updates itself, a notice says that a release
+exists (9.60), and no APT repository is built. **macOS is not supported:** the
+executable cross-compiles for it, but a program that macOS accepts needs Apple's signing and notarization (a yearly
+fee), a launchd service, its own `yaz-client` and a Mac to test on, for a platform few Italian school libraries use. The window is the browser in app
+mode (Edge on Windows, Chrome or Chromium when present on Linux, otherwise the default browser): `http://localhost` is
+a secure context, and the web manifest already lets it be installed as an app. **No Tauri** (it adds a web view of its
+own and a Rust toolchain, and saves no memory), **no Electron** (a bundled Chromium and an unused Node), **no Flatpak**
+(Flathub accepts neither console software nor prebuilt binaries). The advised host: the package of its system when the
+library has one computer; a dedicated computer that stays on, with Docker or the Debian package, when several computers use BiblioViva or it
+must answer while the desk computer is off (in a library with Windows PCs only, the installer on the PC that stays on).
+The container image and the Debian package are the ways for servers and the Raspberry Pi.
+
+**Consequences.** The code stops assuming a container: no `execve` and no cgroup limit at start (the hardware profile
+sets the heap), no symbolic links, renames safe on Windows, default folders per system, `BV_PACKAGE` naming the package
+the app runs in. The unit tests run on a Windows runner too, and each executable has a smoke test. NSIS, WinSW, YAZ for
+Windows and `appimagetool` are build inputs, not packages of `package.json`; their versions are pinned in PLAN.md §2.6.
+The installer is unsigned until the SignPath Foundation signs it (Q150, 9.61). The setup guide gains the `windows-*`
+and `appimage-*` paths, and `choose-computer.md` the choice of host.
+
+## ADR-058 — The backups folder is a setting in the native packages (2026-11-07, owner, Q151)
+
+**Context.** In the container the backups go to the `/backups` volume, the folder `./backups` beside the compose file,
+and the optional `offsite` service copies them elsewhere with rclone (1.9, 9.35). A native package has no compose file
+and no second container, and rclone would be one more program to explain to a school.
+
+**Decision.** In a native package the operator chooses the folder of the automatic backups in Configurazione → Backup
+(`backup.dir`: a second disk, a USB drive, a network folder), checked before it is saved; `backupsDir()` returns it
+when set and `BACKUP_DIR` otherwise, and stays the only place that knows the folder. The field is not shown in the
+container, where the folder is the volume. The Amministrazione page shows a reminder, "Backup da configurare", while no
+folder has been chosen or confirmed in a native package, or, in every installation, while the folder cannot be written
+or the last automatic backup failed. The `offsite` service stays with the container.
+
+**Consequences.** A backup on a USB drive depends on the drive being plugged in at the time of the backup: the reminder
+says so when it is not. The backups made before a change of folder stay in the old folder. The setting is a path of one
+computer, so the configuration archive treats it as a part an import on another computer can leave out (9.59).
+
+## ADR-059 — A documentation section for the rules, with a PDF (2026-11-08, owner, Q154)
+
+**Context.** A state school is a public administration: before adopting BiblioViva its head teacher, DSGA, DPO and
+Responsabile per la transizione digitale must know what data protection, accessibility, the CAD and the ICT security
+rules ask, and what BiblioViva does about each (`docs/studies/adoption.md`). Those facts were spread over technical
+pages in English and a study.
+
+**Decision.** A sixth section of the documentation, **Norme** (`docs/<lang>/compliance/`, `/<lang>/compliance/`),
+between Aiuto and Tecnica, written by the method of 9.5 with a kind of page of its own (what the rule asks, what
+BiblioViva does, what the school does, ready texts, references to the official texts). The whole section is also one
+PDF per language, printed by Chromium (`bun run docs:pdf`, Playwright on the built site) from a print page that
+`site:build` writes, and published with the site by the Pages workflow; the section's first page links it. The home
+page sums the section up after the part on the data that stay at school. The technical conformance page
+`docs/accessibility.md` stays in Tecnica, linked from the section.
+
+**Consequences.** Every change that alters a fact of these pages (what is stored, what leaves the school, the
+security measures, the exports) updates them in both languages, as any other page. The PDF is not committed: it is
+built with the site. No new dependency (Playwright is already the tool of `docs:shots` and `docs:diagrams`).

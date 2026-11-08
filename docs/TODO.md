@@ -18,7 +18,8 @@ list is cleared at a release, and a new one takes the next.
   Cloudflare Pages project made by direct upload, domain `biblioviva.org` ([deploy.md](deploy.md), 9.7). The links to the
   documentation and to GitHub are left out until those sites are online (`ONLINE` in `scripts/home-build.ts`).
 - [ ] **5. Fresh host walkthrough**: install on a new computer following only the documentation (8.5).
-- [ ] **6. Windows 11**: the acceptance of 9.34 on a real PC, once the step is built.
+- [ ] **6. Windows 11**: the acceptance of 9.57 on a real PC (the installer, the service answering with nobody signed
+  in, a newer installer keeping the data), once the step is built.
 - [x] **7. Open questions**: Q120 (one language per installation; only the public demo follows its visitor, ADR-047) and
   Q134 (Pagefind for the documentation's search) answered.
 - [ ] **8. Close the UI reviews** of 9.13 when nothing more is asked.
@@ -40,20 +41,32 @@ list is cleared at a release, and a new one takes the next.
   domain, so this cannot be tried locally (Q120, ADR-047).
 - [x] **13. Three choices for the next steps**: the help button (Q140), the icon of the problem boxes (Q141), the item
   type on the record and the segnatura on the copy (Q139).
-- [ ] **14. Adoption study and accessibility**: QA1 (WCAG 2.2 AA, 9.54) and QA5 (`publiccode.yml`, 9.55) answered;
-  left in `docs/studies/adoption.md`: QA2 (the conformance page), QA3 (a page for the head teacher and the DPO), QA4
-  (optional inventory fields for D.I. 129/2018), QA6 (MARC export), QA7 (a preset for accessible books); look at the
-  darker field borders and placeholders and at the overview page `docs/it/features.md`.
+- [ ] **14. Adoption study and accessibility**: every question answered (QA1 → 9.54, QA2 yes, QA3 → 9.63, QA4 → 9.64,
+  QA5 → 9.55, QA6 → 9.65, QA7 → 9.66); left: look at the darker field borders and placeholders, at the overview page
+  `docs/it/features.md`, and read the Italian pages of the section Norme (`docs/it/compliance/`, 9.63).
 - [ ] **15. Accessibility by hand** (9.3): look at the asterisks of the required fields and at the keyboard and tap
   alternatives of the photo, cover and class-picture crops; NVDA (Windows, Firefox or Chrome) and Orca (Linux) on the desk,
   a form with errors, a grid, a dialog; the browser zoom at 200 % and 400 %; a Windows contrast theme.
 - [ ] **16. Developers Italia** (9.55, after 9.36): the contact of `publiccode.yml` (now the GitHub name `itotm`; a
   real name and an e-mail if wanted), a run of the official validator, then the registration on
   developers.italia.it.
+- [ ] **17. A Linux desk computer**: the acceptance of 9.58 (the AppImage on Ubuntu 24.04 or Fedora), once the step is
+  built.
+- [ ] **18. A Raspberry Pi 4 with the `.deb`**: the acceptance of 9.62 and the measure against Docker, once the step is
+  built.
 
 ## Steps left for 0.9.0, in the order of the plan
 
-- [ ] 9.34 Windows: BiblioViva in Docker Desktop (`setup.ps1`, the Windows path of the guides).
+- [ ] 9.56 One executable for each system (`adapter-bun`'s `compile`, baseline targets, the helpers as subcommands,
+  the unit tests on Windows, a smoke test; Q149, ADR-057).
+- [ ] 9.57 Windows: an NSIS installer, BiblioViva as a service (WinSW), Edge in app mode, the Windows paths of the
+  guides; in place of 9.34 (Docker Desktop).
+- [ ] 9.58 Linux: an AppImage for a desk computer, the AppImage paths of the guides.
+- [ ] 9.59 The backups folder chosen in the native packages (`backup.dir`) and the reminder "Backup da configurare" in
+  Amministrazione (Q151, ADR-058).
+- [ ] 9.60 A notice on Informazioni when a new version is out, nothing installed automatically (Q152).
+- [ ] 9.62 Debian: a `.deb` with a systemd service for a dedicated computer, measured against Docker on a Raspberry
+  Pi 4 (Q153).
 - [ ] 8.7 Guided setup for non-technical administrators, Italian and English: `setup.sh` is in (Tailscale or the
   local network, the profile, the key; `scripts/setup-sh.test.ts`); the Italian installation section
   (`docs/it/setup/`) is written and reviewed, its English mirror written, waiting for the owner's reading; the mocks of
@@ -73,6 +86,8 @@ list is cleared at a release, and a new one takes the next.
 - [x] 9.43 Restore from the first-run wizard ("Ripristina da un backup" on its first screen).
 - [ ] 9.5b Help icons that open the manual on `docs.biblioviva.org` (the top bar's icon is in; the icons
   in the trickier spots and the anchors check wait for the manual).
+- [x] 9.67 The help button opens the page of the screen in sight (Restituzioni → the page of the returns, Nuovo
+  libro → the page of the new book, Modifica utente → its section), not the area's page.
 - [ ] 9.7 The documentation site on `docs.biblioviva.org`: `bun run site:build` / `site:serve` build it locally from
   `docs/` (ADR-043) with the search (Pagefind, ADR-045), the home page shows four real screenshots; the Pages workflow builds the
   pictures and the site, run by hand only (ADR-050); left: `site:check`, the figure switch, the PDFs, the first
@@ -82,6 +97,12 @@ list is cleared at a release, and a new one takes the next.
 - [x] 9.54 Accessibility to WCAG 2.2 AA: the six open gaps of the audit, axe on more states, a reflow check (Q147).
 - [ ] 9.55 `publiccode.yml`: the file and its test are in; left: the official validator and the Developers Italia listing
   after 9.36 (Q148, owner's check 16).
+- [x] 9.63 The section Norme of the documentation (data protection with ready texts, accessibility, open source,
+  security), its PDF, and the rules on the home page (Q154, ADR-059).
+- [ ] 9.64 The school inventory: inventory number, origin and value of the copies, off by default; the lists of the
+  copies withdrawn and entered in a period (Q155).
+- [ ] 9.65 MARC export and import; **Mostra tutti i libri** in the catalogue list (Q156).
+- [ ] 9.66 Accessible books: high readability, CAA, audiobook, large print, tactile; a filter of the catalogue (Q157).
 - [ ] 9.4 Device checklist.
 - [x] 9.17 Public demo: running on `demo.biblioviva.org`.
 - [x] 9.40 A beep when the phone's camera reads a code (four sounds, Conferma by default, Q137).
@@ -109,6 +130,8 @@ list is cleared at a release, and a new one takes the next.
 
 - [ ] 9.10 Field test at the school through the school year 2026/27; 1.0.0 for September 2027.
 - [ ] 9.37 Updates with database migrations from 1.0.0 (during the field test).
+- [ ] 9.61 The Windows installer signed by the SignPath Foundation (after 9.36 and a first release with the
+  installer; the owner applies, Q150).
 - [x] 9.41 Class names and school years for the countries of the language packs (a label template per stage, `next`
   with choices, the school year's start and name, the card's class line and the shipped cards and slips without
   Italian words, order and register matching per language, presets for every country; Q138).
@@ -127,7 +150,7 @@ list is cleared at a release, and a new one takes the next.
 ## Housekeeping
 
 - [ ] Rounds 27–32 of 9.13 are recorded only in [STATUS.md](STATUS.md): list them in the step like the others.
-- [ ] The `[VERIFY]` items of PLAN.md (22), each resolved when its step is reached.
+- [ ] The `[VERIFY]` items of PLAN.md (28), each resolved when its step is reached.
 - [ ] TypeScript 7: waits until `svelte-check` and `@sveltejs/kit` accept it (their peer range stops at 6).
 - [ ] At the next Raspberry Pi load test, measure again how long the print sheets wait with 10 users at once (the
   slowest took 60 s; the idle timeout is 120 s, [performance.md](performance.md)).

@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (foaie de calcul, text)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Această instalare conține date demonstrative încărcate la {{when}}: {{patrons}} {{patrons:plural; one:cititor; few:cititori; other:de cititori;}}, {{biblios}} {{biblios:plural; one:titlu; few:titluri; other:de titluri;}}, {{items}} {{items:plural; one:exemplar; few:exemplare; other:de exemplare;}}, {{loans}} {{loans:plural; one:împrumut; few:împrumuturi; other:de împrumuturi;}}. Sunt inventate: nicio persoană reală."

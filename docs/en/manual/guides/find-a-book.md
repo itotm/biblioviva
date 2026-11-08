@@ -66,7 +66,7 @@ The filters are above the table and can also be used without writing anything in
 
 ### Export the list
 
-1. Under the table press **Export** and choose **CSV (spreadsheet, text)** or **ODS (LibreOffice / Excel)**. The file
+1. Under the table press **Export** and choose **CSV (spreadsheet, text)** or **ODS (LibreOffice)**. The file
    contains the results of the search with the filters applied.
 
 ## Result

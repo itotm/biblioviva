@@ -80,7 +80,7 @@ A badly written value blocks the calculation and a red box says which field must
 ## Printing and export
 
 - **Print** opens in a new browser tab the printable version of the report, with the line "Printed on" and the date, and the parameters used.
-- **Export** downloads the table, with the parameters in use, in **CSV (spreadsheet, text)** or **ODS (LibreOffice / Excel)**.
+- **Export** downloads the table, with the parameters in use, in **CSV (spreadsheet, text)** or **ODS (LibreOffice)**.
 
 ## Related pages
 

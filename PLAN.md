@@ -5,7 +5,7 @@
 > **Language:** this document and all code/docs are in English; the product UI is in Italian.
 > **Open questions:** collected in §11, numbered `Q1…`; a question is ticked once the owner has answered it. New doubts get a new number there.
 
-BiblioViva is a lean, self-hosted library management system for a **school library** (up to ~10 000 books, ~1 000 patrons). It is inspired by Koha's bibliographic-record/item split and circulation model, but radically simplified. It is a **staff-only** tool (no public catalogue, no patron accounts). It runs as a single container (linux/amd64 and linux/arm64), is reachable over Tailscale with HTTPS (needed for phone cameras), and is built with Bun, TypeScript, Svelte 5 (runes only), SvelteKit 3 (remote functions), Tailwind CSS 4, Skeleton v5, and SVAR DataGrid, on top of Bun's built-in SQLite. The UI is available in Italian and English.
+BiblioViva is a lean, self-hosted library management system for a **school library** (up to ~10 000 books, ~1 000 patrons). It is inspired by Koha's bibliographic-record/item split and circulation model, but radically simplified. It is a **staff-only** tool (no public catalogue, no patron accounts). It runs as a single container (linux/amd64 and linux/arm64) or, on a Windows or Linux desk computer, as one installed program (§3.21), is reachable over Tailscale with HTTPS (needed for phone cameras), and is built with Bun, TypeScript, Svelte 5 (runes only), SvelteKit 3 (remote functions), Tailwind CSS 4, Skeleton v5, and SVAR DataGrid, on top of Bun's built-in SQLite. The UI is available in Italian and English.
 
 ---
 
@@ -55,7 +55,7 @@ BiblioViva is a lean, self-hosted library management system for a **school libra
 | Localization | Italian and English supported from the start; one language for the whole installation (UI and printed material), set in `ui.locale` by the first-run wizard or the configuration, no per-user setting (Q52); simple, non-invasive library (sveltekit-i18n) (§3.16). |
 | Audience | Staff only. No public or patron-facing interface: no OPAC, no self-service, no patron accounts (§3.15). |
 | Cards | HTML templates with in-app preview; credit-card size; barcode, photo, texts and background image; front and back printed side by side, then cut and folded on the short edge, 4–5 per A4 sheet, or on the two sides of the sheet by a printer that prints both sides, 10 per A4, with a calibration of the backs (§3.12, step 9.27, Q127). |
-| Platform | Web app, desktop + mobile. Container for x64 and arm64. Tailscale integration with HTTPS. |
+| Platform | Web app, desktop + mobile. Container for x64 and arm64; an installer for Windows and an AppImage for Linux desk computers (§3.21). Tailscale integration with HTTPS. |
 | Size | ≤ 10 000 books, ≤ 1 000 patrons; must be lean and fast. |
 
 ### 1.2 Non-negotiable technical constraints
@@ -149,6 +149,12 @@ Legend: ✅ verified from the npm registry or the official docs · ⚠️ decisi
 |---|---|---|
 | Base image `oven/bun` | **1.4.4-slim** (build stage) and **1.4.4-distroless** (runtime, Debian trixie) ✅ | Multi-arch (amd64+arm64), non-root user `bun` (uid 1000). Runtime: `yaz-client` with only its linked libraries and a static BusyBox shell, both from Debian trixie packages (ADR-020); healthcheck with `bun -e`. Alpine variant cannot install `yaz`. |
 | `tailscale/tailscale` | **v1.104.4** ✅ | Sidecar container with `tailscale serve` (HTTPS :443 → app :3000). |
+| Bun single executables | the pinned `bun` | The native packages (Q149, ADR-057): `adapter-bun`'s `compile` option puts the runtime, the server and the page assets in one file per target — `bun-windows-x64-baseline`, `bun-linux-x64-baseline`, `bun-linux-arm64` —, cross-compiled from Linux; the baseline targets run on CPUs without AVX2 (9.56). |
+| NSIS | 3.x [VERIFY: the latest stable] | The Windows installer, built on Linux with `makensis` (9.57). zlib licence. |
+| WinSW | 2.x [VERIFY: the latest stable 2.x; it needs the .NET Framework 4 that Windows 10 and 11 include] | BiblioViva as a Windows service (9.57). MIT. |
+| YAZ for Windows | **5.38.1** (Index Data, `pub/yaz/win64/`) [VERIFY: the DLLs `yaz-client.exe` needs] | `yaz-client.exe` in the Windows package (9.57). Revised BSD. |
+| `appimagetool` and the static type-2 runtime | [VERIFY: a pinned release] | The Linux AppImage (9.58); the target needs no `libfuse2`. |
+| `dpkg-deb` | the host's `dpkg` [VERIFY: on the CI runner and on the development machine] | The Debian package (9.62); `lintian` checks it. |
 | GitHub Actions | `docker/build-push-action@v7`, `setup-buildx@v4`, `setup-qemu@v4`, `login@v4`, `metadata@v6`, `actions/checkout@v7` ✅ | arm64 hosted runners (`ubuntu-24.04-arm`) are free for public repos. |
 
 ### 2.7 External services
@@ -162,7 +168,7 @@ Legend: ✅ verified from the npm registry or the official docs · ⚠️ decisi
 
 ### 2.8 Do not use (binding)
 
-`lucia` (deprecated), `@oslojs/crypto` (deprecated), `html5-qrcode` (maintenance mode), `node-zoom2` / any node-gyp add-on (breaks Bun and multi-arch), `apexcharts` (non-MIT license since 5.2), `exceljs` (stalled) and `xlsx` from npm (frozen at 0.18.5), `sharp` (native; `Bun.Image` replaces it), `jsmarc` (GPL-3, license mismatch, see Q24), `quagga` (dead), `@catdadcode/svelte-adapter-bun` (dead), `svelte.config.js` (removed in SvelteKit 3), `@inlang/paraglide-js` (rejected by the owner as too invasive), `flowbite-svelte`/`flowbite` (superseded by Skeleton, Q1), `svelte-i18n` (superseded by sveltekit-i18n, Q19), `daisyui` (CSS-only, less complete than Skeleton for interactive components; never mix two Tailwind design systems), `@iconify/*` and `unplugin-icons` (icons come directly from `@lucide/svelte`), `xlsx`/`exceljs` (exports are CSV and ODS, §3.19), any dark-mode code path (light theme only, §3.18).
+`lucia` (deprecated), `@oslojs/crypto` (deprecated), `html5-qrcode` (maintenance mode), `node-zoom2` / any node-gyp add-on (breaks Bun and multi-arch), `apexcharts` (non-MIT license since 5.2), `exceljs` (stalled) and `xlsx` from npm (frozen at 0.18.5), `sharp` (native; `Bun.Image` replaces it), `jsmarc` (GPL-3, license mismatch, see Q24), `quagga` (dead), `@catdadcode/svelte-adapter-bun` (dead), `svelte.config.js` (removed in SvelteKit 3), `@inlang/paraglide-js` (rejected by the owner as too invasive), `flowbite-svelte`/`flowbite` (superseded by Skeleton, Q1), `svelte-i18n` (superseded by sveltekit-i18n, Q19), `daisyui` (CSS-only, less complete than Skeleton for interactive components; never mix two Tailwind design systems), `@iconify/*` and `unplugin-icons` (icons come directly from `@lucide/svelte`), `xlsx`/`exceljs` (exports are CSV and ODS, §3.19), any dark-mode code path (light theme only, §3.18), Tauri, Electron and Flatpak for the native packages (the browser in app mode is the window; Flathub accepts neither console software nor prebuilt binaries; Q149, ADR-057).
 
 ---
 
@@ -235,6 +241,7 @@ biblioviva/
 │   └── {cards,labels,slips}/templates/<name>/  # template.json, the faces (front.html+back.html | top.html+bottom.html | label.html | slip.html), style.css, assets/; labels/stocks/*.json
 ├── local/                      # dev CONFIG_DIR and DATA_DIR (gitignored, §3.20)
 ├── docker/                     # Dockerfile, compose.yml, tailscale/serve.json, .env.example
+├── packaging/                  # the native packages (ADR-057): windows/ (the NSIS script, WinSW's XML, 9.57), appimage/ (AppRun, the desktop entry, 9.58); built into dist/ (gitignored)
 ├── scripts/                    # seed.ts, backup.ts, hash-password.ts, import-images.ts, z3950-test.ts
 ├── setup.sh                    # guided installer for non-technical administrators (8.7)
 ├── site/                       # documentation site (§3.23, 9.7): assets/ (the mock's stylesheet, logo), .shots/ (generated screenshots, gitignored), dist/ (the built site, gitignored), CNAME; built by scripts/site-build.ts
@@ -468,7 +475,7 @@ The owner's brief: Koha's interface is dated and complicated; BiblioViva must be
 
 - **Light only.** No dark mode, no `prefers-color-scheme` handling, `color-scheme: light` on `:root`. Colour comes from the Skeleton theme (primary, secondary, tertiary and semantic colours), from the classification colours and from coloured icon tiles; surfaces stay white or very light with clear elevation; text contrast ≥ 4.5:1 (WCAG 2.2 AA).
 - **Icons everywhere, consistently.** Lucide through its official Svelte package `@lucide/svelte`, one icon per concept (icon map `#lib/ui/icons.ts`, step 0.9); icons accompany labels and never replace them on primary actions; icon-only buttons carry `aria-label` and a tooltip.
-- **Task-first navigation.** At most seven areas in the sidebar (Prestiti, Catalogo, Utenti, Stampe, Segnalazioni, Report, Amministrazione; Segnalazioni added by step 9.18, owner), a dashboard with the day's numbers and quick actions, the circulation desk as one screen, a help button that opens the manual of the area (9.5b: "Guida" with its icon in the top bar on the computer, a round button beside the page title on the phone, in the primary colour, 9.47); each area searches in its own page (no search box in the top bar, owner). No nested menus with dozens of entries, no MARC editing screens, no settings jungle.
+- **Task-first navigation.** At most seven areas in the sidebar (Prestiti, Catalogo, Utenti, Stampe, Segnalazioni, Report, Amministrazione; Segnalazioni added by step 9.18, owner), a dashboard with the day's numbers and quick actions, the circulation desk as one screen, a help button that opens the page of the documentation explaining the screen in sight (9.5b, 9.67: "Guida" with its icon in the top bar on the computer, a round button beside the page title on the phone, in the primary colour, 9.47); each area searches in its own page (no search box in the top bar, owner). No nested menus with dozens of entries, no MARC editing screens, no settings jungle.
 - **Scan-first and keyboard-first at the desk.** One focused input, big colour + icon + text feedback (no sounds at the desk, Q40; the only sound of the application is the short beep of a camera read, Q137), undo instead of confirmation for reversible actions, shortcuts (F2 focuses the scan input, Enter confirms, Esc cancels), visible focus rings.
 - **Progressive disclosure and good defaults.** Essential fields first, advanced ones in collapsible sections; defaults everywhere (today, default item type, suggested call number, last used label stock); inline validation on blur with plain-language messages that say what to do; a sticky save bar on long forms.
 - **One pattern per job.** Every page is assembled from the documented patterns (`PageHeader`, `ListToolbar` + grid, `FormLayout`, `DetailLayout`, `EmptyState`, `StatusBadge`, `Toast`, `Dialog`); the living style guide `/dev/ui` is the reference. Lists: SVAR grid with search, filter chips, column presets and selection actions. Details: header card with photo or cover and key facts, then tabs.
@@ -482,22 +489,24 @@ The owner's brief: Koha's interface is dated and complicated; BiblioViva must be
 ### 3.19 Data tables and exports
 
 - **Why SVAR.** Skeleton ships only CSS table styles, no data grid. Alternatives reviewed: `@vincjo/datatables` 2.8.1 (headless toolkit for Svelte 5, MIT, needs every column, virtual scroll and export to be built by hand), TanStack Table (headless, Svelte 5 adapter still unstable), Tabulator (vanilla JS, rich exports, heavy, not Tailwind-friendly), AG Grid (no official Svelte package, enterprise features paid). SVAR `@svar-ui/svelte-grid` 2.7.3 remains the best fit: Svelte-5-native, MIT, virtual scrolling, inline editing, sorting and filtering, frozen columns, responsive and touch mode, keyboard navigation, built-in CSV export and print, localisable. It is wrapped once (`DataGrid.svelte`, step 0.4) so it could be replaced without touching pages.
-- **Every table exports.** The `ListToolbar` of every grid has an "Esporta" menu with **CSV** and **ODS** (LibreOffice/OpenDocument; opens in Excel too). Exports are produced **server-side** by `#lib/server/export/{csv.ts,ods.ts}` from the same query the grid is showing (current filters, sort and visible columns are sent along), so they are complete even when the grid is virtualised or paginated. CSV: UTF-8 with BOM, `;` separator, dates as `YYYY-MM-DD`; a text that a spreadsheet would run as a formula (`=`, `+`, `-`, `@`, tab, carriage return first) gets a leading `'` (numbers stay numbers), which the imports drop again. ODS: `content.xml` + `manifest.xml` + `mimetype` zipped with `fflate` (typed cells: numbers, dates, strings; a header row; column widths from the grid). Reports (Phase 6) use the same exporters. XLSX is not needed (Q34 resolved).
+- **Every table exports.** The `ListToolbar` of every grid has an "Esporta" menu with **CSV** and **ODS** (OpenDocument, LibreOffice). Exports are produced **server-side** by `#lib/server/export/{csv.ts,ods.ts}` from the same query the grid is showing (current filters, sort and visible columns are sent along), so they are complete even when the grid is virtualised or paginated. CSV: UTF-8 with BOM, `;` separator, dates as `YYYY-MM-DD`; a text that a spreadsheet would run as a formula (`=`, `+`, `-`, `@`, tab, carriage return first) gets a leading `'` (numbers stay numbers), which the imports drop again. ODS: `content.xml` + `manifest.xml` + `mimetype` zipped with `fflate` (typed cells: numbers, dates, strings; a header row; column widths from the grid). Reports (Phase 6) use the same exporters. XLSX is not needed (Q34 resolved).
 
 ### 3.20 Storage layout: three volumes
 
 | Volume | Env | Contents | Backup |
 |---|---|---|---|
 | `/config` | `CONFIG_DIR` | `config.json`, `<section>.json` fragments (`classification.json`, …), `calendar.*.json`, `labels/stocks/*.json`, `{cards,labels,slips}/templates/<name>/`, `classification/images/`, `reports/*.json` (§3.6); `serve.json` for Tailscale is **not** here (it belongs to the sidecar) | small, text: version it or copy it with any file backup |
-| `/data` | `DATA_DIR` | `db/biblioviva.db` (+ WAL files), `uploads/patrons/`, `uploads/covers/`, `uploads/class-sheets/` (Phase 13), `imports/<batch-id>/` (original imported files with a `meta.json`), `tmp/`; a **named volume** in the compose files (SQLite's locking needs a file system the container owns, 9.34) | database copies made by the app into `/backups` (`backup.cron`, default `0 3 * * *`, retention `backup.keepDays`) |
+| `/data` | `DATA_DIR` | `db/biblioviva.db` (+ WAL files), `uploads/patrons/`, `uploads/covers/`, `uploads/class-sheets/` (Phase 13), `imports/<batch-id>/` (original imported files with a `meta.json`), `tmp/`; a **named volume** in the compose files (SQLite's locking needs a file system the container owns) | database copies made by the app into `/backups` (`backup.cron`, default `0 3 * * *`, retention `backup.keepDays`) |
 | `/backups` | `BACKUP_DIR` | the database copies and the archives of chosen parts (`biblioviva-YYYYMMDD-HHmm.db`, `.zip`), `uploads/` (the copy of the pictures, 1.9b), `offsite.json` (the state of the off-site copy); the folder **`./backups` beside the compose file**, a plain folder the operator can see, copy, or mount from a second disk or a USB drive (step 9.35) | it is the backup: copied off-site by the `offsite` service or by hand |
 
-The backups have a volume of their own so that a data volume removed or damaged does not take them with it; `backupsDir()` (`#lib/server/services/backup.ts`) is the one place that knows the folder. The public demo sets `BACKUP_DIR=/data/backups`: its only backup (the class upgrade's) goes with its data at every start. The three directories are created on first run (`/config` populated with the defaults copied from the image when missing). A copy of a built-in print template whose every file is a version the application shipped was never edited: at every start the current built-in replaces it (`#lib/server/templates/upgrade.ts`, record of shipped versions written by `bun run templates:shipped`, ADR-031); edited copies are left alone. In development they live under `./local/` (`local/config`, `local/data`, `local/backups`; gitignored).
+The backups have a volume of their own so that a data volume removed or damaged does not take them with it; `backupsDir()` (`#lib/server/services/backup.ts`) is the one place that knows the folder. The public demo sets `BACKUP_DIR=/data/backups`: its only backup (the class upgrade's) goes with its data at every start. The three directories are created on first run (`/config` populated with the defaults copied from the image when missing). A copy of a built-in print template whose every file is a version the application shipped was never edited: at every start the current built-in replaces it (`#lib/server/templates/upgrade.ts`, record of shipped versions written by `bun run templates:shipped`, ADR-031); edited copies are left alone. In development they live under `./local/` (`local/config`, `local/data`, `local/backups`; gitignored). In the native packages (9.56–9.58, ADR-057) they are folders of the computer's own disk: on Windows `C:\ProgramData\BiblioViva\config`, `data` and `backups`; in the AppImage under `~/.local/share/biblioviva/` [VERIFY: the XDG folders for the configuration and the data]. There the operator chooses the folder of the automatic backups (`backup.dir`, step 9.59, ADR-058), which `backupsDir()` returns when it is set.
 
 ### 3.21 Target platforms (Q63)
 
 - **Supported by the plan:** `linux/amd64` and `linux/arm64` (64-bit Raspberry Pi OS, Debian, Fedora, Ubuntu…). Both are covered by the official `oven/bun` images and by the Debian `yaz` package.
-- **Windows (Q130, ADR-038):** Windows 10 and 11 64-bit run the same `linux/amd64` image in Docker Desktop with the WSL 2 back end (step 9.34), with named volumes only; the app has no Windows-specific code.
+- **Native packages (Q149, ADR-057):** the same server built by `adapter-bun`'s `compile` option as one executable per target (`bun-windows-x64-baseline`, `bun-linux-x64-baseline`, `bun-linux-arm64`), the shipped files inside it (9.56). **Windows** 10 (1809 or later) and 11, 64-bit: an installer puts the executable and `yaz-client.exe` on the PC and runs BiblioViva as a Windows service from start-up (9.57); Docker Desktop is not a supported path. **Linux**: an AppImage for a desk computer (9.58), and a Debian package with a systemd service (`.deb`, amd64 and arm64) for a dedicated computer, a Raspberry Pi or a Linux PC, beside Docker (9.62). The window is the browser in app mode (Edge on Windows): `http://localhost` is a secure context, so the camera works there without HTTPS. No Tauri, Electron or Flatpak (the study `docs/studies/installable.md`).
+- **Which host (Q149):** the library has **one computer**, used and switched off by its operator → the package for its system (the Windows installer or the AppImage). **Several computers** use BiblioViva, or it must answer while the desk computer is off → a dedicated computer that stays on, a Raspberry Pi or a Linux PC, with Docker or with the Debian package (what the guide advises on a Raspberry Pi follows the measure of 9.62); in a library that has only Windows PCs, the installer on the PC that stays on (its service answers from start-up, nobody signed in).
+- **macOS is not supported** (Q153): the executable cross-compiles for it, but a program that macOS accepts needs Apple's signing and notarization, a launchd service, its own copy of `yaz-client` and a Mac to test on, for a platform few Italian school libraries use.
 - **32-bit (`linux/386`, `linux/arm/v7`) cannot run Bun:** Bun ships no 32-bit builds at all, so neither the app nor `bun:sqlite` can start there. Node.js has no official 32-bit Linux builds either (only community "unofficial builds" for `armv7l` and `x86`). Supporting 32-bit would therefore mean a second runtime path on Node with reduced features: `node:sqlite` instead of `bun:sqlite` (Drizzle has a driver for both), `adapter-node` instead of `adapter-bun`, `node:crypto` scrypt instead of `Bun.password` argon2id, no server-side image re-encoding (`Bun.Image`; photos would be processed client-side only), a `setInterval` scheduler instead of `Bun.cron`, `child_process` instead of `Bun.spawn`. Estimated cost: a runtime facade plus a second CI matrix, and a permanently slower, less tested variant.
 - **Decision (Q63): 64-bit only.** Rationale kept for the record: a Raspberry Pi 3 or newer runs the 64-bit OS, and i386 machines are older than 2010. To keep the door open cheaply, every Bun-specific API is used through a tiny facade `#lib/server/runtime/` (password, image, scheduler, spawn, file) from Phase 1, so a Node runtime variant, should it ever be wanted, would touch only that folder.
 
@@ -526,7 +535,7 @@ The user manual, the guides and the presentation site show BiblioViva's screens 
 - **Publishing after a change (owner rule, ADR-050).** The site is published by hand only; so every change that alters what the documentation describes or shows (screens, quoted labels and messages, flows, settings, commands, installation, compose files) updates the pages of `docs/` and the shot list in the same commit, and the coding agent tells the owner that the site must be published again (and the home page built and uploaded again when it changed).
 - **When the pictures are taken.** `bun run ci` takes every picture of the list in Italian (a broken step fails it) and builds the site with them, an English page showing the Italian picture; the site build of the Pages workflow and of a release takes them in every language. The manual's PDF (9.5) is printed from the built site.
 - **Two sites (Q131, ADR-039).** The **home page** of `biblioviva.org` — the presentation, not versioned, Italian at `/` and English at `/en/` — is `home/`: two hand-written pages with the same markup in each language (`it.html`, `en.html`, a test keeps them mirrors), built by `bun run home:build` (`scripts/home-build.ts`: Lucide icons inlined as one sprite, the drawn screens, the addresses of the sites) into `home/dist/` and uploaded by hand to **Cloudflare Pages** (a direct-upload project: `bun run home:build` also writes `home/biblioviva-home.zip`, which the owner uploads; Cloudflare never builds from the repository); its one short script drives the scroll effects, and the page is complete and still without it or with reduced motion; a few inline lines in the head of the Italian page send a browser that prefers English, or neither language, to `/en/`, unless the visitor chose a language with a switch of `biblioviva.org` (the cookie `bv_lang` shared by the home page, the documentation and the public demo, ADR-047; the same switch in all three: a globe, then IT · EN); the links to the documentation and to the repository appear only once those sites are online (`ONLINE` in the build script: 9.7, 9.36). The **documentation** on `docs.biblioviva.org` is built by a Bun script, `scripts/site-build.ts` (`bun run site:build`; owner decision, ADR-043): the Markdown of `docs/` converted with `Bun.markdown` and a thin layer of its own (figures, notes and warnings, variant blocks, the pages of each installation path, links, the side menus read from the sections' READMEs), wrapped in the layout of the approved mock, written as plain files to `site/dist/` (gitignored) with the assets of `site/assets/` and the pictures of `site/.shots/`, and published by **GitHub Pages** (`site/CNAME`); `bun run site:serve` shows it locally (port 5175). No framework and no new dependency; the only scripts of the pages are the search and the few lines of the language switch (with the lines that open the box of a problem reached by its anchor, 9.46), and the root `/` opens the language of the cookie `bv_lang`, else the browser's. Neither site is **served by BiblioViva**: the app only links to them (9.5b); it keeps adapter-bun and server-side rendering, because it needs a server (sessions, database, remote functions).
-- **Sections of the documentation (owner).** Five, named as nouns in the top bar: **Manuale** (for whoever works at the desk, catalogues or makes the cards: step-by-step guides of the tasks — "Catalogare un libro nuovo", as many as the real situations of a school library need (the guides are the part readers use most) — and one reference page per screen, the target of the help icons), **Amministrazione** (the administrator's account: the first steps in order, one guide for each of its tasks, the reference of the administration pages), **Installazione** (for whoever installs, without experience: the choice of computer and network, the material, then a path of numbered steps in the manner of GOV.UK's step by step — every step visible at the side, the ones done ticked —, each ending with a check before going on; then updating, moving, starting again after a failure, the local-network mode), **Aiuto** (common problems, the glossary — copia, segnatura, tessera, tailnet… —, how to ask for help) and, last, **Tecnica** (for whoever knows: deployment, the configuration reference, commands, templates, reports, languages, security — the Markdown of `docs/` as it is, with the contents on the right). Four kinds of page, never mixed (Diátaxis): a guide (one task from start to end: time, permission, what is needed, numbered steps with pictures, the result, possible problems, related pages), a reference page (one screen: what it is for, permission, where it opens from, the picture with numbered callouts and their legend, its parts and messages with stable anchors), an installation step and a technical page. Paths are `/<lang>/<section>/<page>/#<anchor>` with English names in every language (`/it/guide/catalog-a-new-book/`, `/it/manual/checkout/#…`, `/it/install/raspberry-tailscale/3-network/`); the Markdown folders map onto them: each language has its folder `docs/<lang>/`, the sections are folders inside it, so a language is added by adding one folder (`docs/<lang>/manual/guides/<page>.md` → `/<lang>/guide/<page>/`, `docs/<lang>/manual/screens/<page>.md` → `/<lang>/manual/<page>/`, `docs/<lang>/admin/` → `/<lang>/admin/`, `docs/<lang>/setup/` → `/<lang>/install/`, `docs/<lang>/help/` → `/<lang>/help/`, the English documents of `docs/` → `/<lang>/tech/`). The documentation's home lists the sections with their main pages, frequent questions, what is new in the release and the PDFs. **Search** (Q134): Pagefind, a static index built with the site, one per language, its script loaded only when the search opens; without JavaScript the button leads to the A–Z index (a dependency, with its ADR when 9.7 adds it). Beside the sections, one **overview of the features** (`docs/<lang>/features.md`, at `/<lang>/features/`, a card at the top of the documentation's home and a link on the home page): the settings first (the recommended values of the wizard, changed later from Amministrazione), then a short paragraph per area saying what can be done there, in a plain tone that is not promotional and without lists of links (the site's navigation lists the pages).
+- **Sections of the documentation (owner).** Six, named as nouns in the top bar: **Manuale** (for whoever works at the desk, catalogues or makes the cards: step-by-step guides of the tasks — "Catalogare un libro nuovo", as many as the real situations of a school library need (the guides are the part readers use most) — and one reference page per screen, the target of the help icons), **Amministrazione** (the administrator's account: the first steps in order, one guide for each of its tasks, the reference of the administration pages), **Installazione** (for whoever installs, without experience: the choice of computer and network, the material, then a path of numbered steps in the manner of GOV.UK's step by step — every step visible at the side, the ones done ticked —, each ending with a check before going on; then updating, moving, starting again after a failure, the local-network mode), **Aiuto** (common problems, the glossary — copia, segnatura, tessera, tailnet… —, how to ask for help), **Norme** (for the head teacher, the DSGA, the DPO and the Responsabile per la transizione digitale: what the rules of the public administration ask — data protection with the ready texts for the record of processing and the notice, accessibility, open source, ICT security —, what BiblioViva does and what is left to the school; also one PDF per language, Q154) and, last, **Tecnica** (for whoever knows: deployment, the configuration reference, commands, templates, reports, languages, security — the Markdown of `docs/` as it is, with the contents on the right). Four kinds of page, never mixed (Diátaxis): a guide (one task from start to end: time, permission, what is needed, numbered steps with pictures, the result, possible problems, related pages), a reference page (one screen: what it is for, permission, where it opens from, the picture with numbered callouts and their legend, its parts and messages with stable anchors), an installation step and a technical page. Paths are `/<lang>/<section>/<page>/#<anchor>` with English names in every language (`/it/guide/catalog-a-new-book/`, `/it/manual/checkout/#…`, `/it/install/raspberry-tailscale/3-network/`); the Markdown folders map onto them: each language has its folder `docs/<lang>/`, the sections are folders inside it, so a language is added by adding one folder (`docs/<lang>/manual/guides/<page>.md` → `/<lang>/guide/<page>/`, `docs/<lang>/manual/screens/<page>.md` → `/<lang>/manual/<page>/`, `docs/<lang>/admin/` → `/<lang>/admin/`, `docs/<lang>/setup/` → `/<lang>/install/`, `docs/<lang>/help/` → `/<lang>/help/`, `docs/<lang>/compliance/` → `/<lang>/compliance/`, the English documents of `docs/` → `/<lang>/tech/`). The documentation's home lists the sections with their main pages, frequent questions, what is new in the release and the PDFs. **Search** (Q134): Pagefind, a static index built with the site, one per language, its script loaded only when the search opens; without JavaScript the button leads to the A–Z index (a dependency, with its ADR when 9.7 adds it). Beside the sections, one **overview of the features** (`docs/<lang>/features.md`, at `/<lang>/features/`, a card at the top of the documentation's home and a link on the home page): the settings first (the recommended values of the wizard, changed later from Amministrazione), then a short paragraph per area saying what can be done there, in a plain tone that is not promotional and without lists of links (the site's navigation lists the pages).
 - **Tone (owner).** The documentation is serious and plain, neither chatty nor telegraphic: in Italian the instructions are in the infinitive as Italian manuals write them ("Premere **Salva**", "Leggere l'ISBN con il lettore"), the headings are nouns ("Procedura", "Occorrente", "Risultato", "Possibili problemi", "Verifica prima di proseguire"), every page opens with complete sentences saying what it is for, never a joke or a colloquial aside; English mirrors it with the imperative ("Press **Save**"). The home page addresses the visitor as *tu*, in a slightly serious tone. Everywhere the USB barcode scanner is the normal reader of cards, books and ISBNs; the phone is an optional extra, never presented as required.
 - **One documentation, without versions (owner decision, ADR-042).** The site describes the current release only: it is built and published by hand with the manual Pages workflow, on the release's tag after each release (on `main` when only the text needs a correction; a push never publishes it, ADR-050), under `/<lang>/…` (e.g. `/it/manual/checkout/`: the same path in every language, so the language switch keeps the page), with the PDFs of the manual beside it (`/manual.it.pdf`, also attached to each release). There is no version selector, no path per release and no archive of old releases: old versions are not supported and an update is always painless (`setup.sh` again, or `docker compose pull`; the migrations run at start). The home page (`biblioviva.org`, Italian at `/`, English at `/en/`) always describes the current release too.
 - **Look (owner).** The site has the layout and look of the mock the owner approved (the header with the five sections, the search and the language switch; the side menu of the section; the breadcrumbs; the step boxes of the guides and of the installation paths; the figure switch; the notes and warnings), whose stylesheet is the starting point of `site/`; it reuses the app's colour sets and type, light only; boxes have no accent stripe on the left — the side menu, the notes and warnings and every other box use a full light border or a tinted background.
@@ -1088,11 +1097,11 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Tasks:
     - `setup.sh` (bash, POSIX-safe, idempotent, `curl -fsSL https://raw.githubusercontent.com/<owner>/biblioviva/main/setup.sh | bash` documented with the checksum next to it; written before the guide, which quotes its questions and messages): checks the OS (64-bit Linux, Raspberry Pi OS or Debian/Ubuntu), installs Docker Engine + compose plugin if missing (official convenience script, with a pause explaining what it does), asks in plain language **how the devices reach BiblioViva** — with Tailscale (the full option: HTTPS, camera, phones, from outside the school; a free account) or on the local network only (the basic option of 8.8: plain HTTP, no camera, no account) —, then the hardware profile (`small`/`medium`/`large`, with a one-line description each) and, with Tailscale only, the auth key (pasted); creates `~/biblioviva/` with the compose file of the chosen mode (`compose.yml` with the Tailscale sidecar and `tailscale/serve.json`, or `compose.lan.yml`), `.env`, `config/` and `backups/`; on the local network installs `avahi-daemon` where it is missing (so the computer answers to `<hostname>.local`), starts the stack, waits for the health check (with Tailscale, checks that the tailnet gives the node a certificate name and says to enable HTTPS certificates when it does not; the certificate itself is issued at the first opening) and prints the address to open: `https://biblioviva.<tailnet>.ts.net`, or `http://<hostname>.local:<port>` and the computer's network address on the local network, where the browser first-run wizard (1.11) asks for language, theme colour, library name, admin password and optional demo data; re-running it updates the image instead, and `--network tailscale|lan` moves an installation from one mode to the other keeping its volumes. Every question has its option (`--network`, `--profile`, `--key`, `--yes`), so it runs without a terminal too; whichever way is chosen, the stack's file is `~/biblioviva/compose.yml`, so the commands of the guides are the same for both. Italian and English messages (`LANG` detection, `--lang it|en`). Tested by `scripts/setup-sh.test.ts` (bash with stand-ins for docker, sudo, curl and the computer's commands on `PATH`: no new tool); end-to-end run recorded in STATUS.md on a Raspberry Pi and on a PC.
     - **The installation section** of the documentation (§3.23 Installazione), Markdown in `docs/it/setup/` and `docs/en/setup/` (same files, same headings and step numbers, Italian written first and English mirroring it; the mocks of other programs in `docs/mocks/`, ADR-046), written by the method of 9.5 (`docs/writing-guide.md`). Tailscale is never required: the guide presents the two ways side by side and the reader chooses.
-      - **Entry pages**: `README.md` (the section's first page, shown by GitHub for the folder: what the section is for, the two choices, the paths in a table with the time each takes), `choose-computer.md` (a Raspberry Pi 4/5 with 2 GB or more and a 32 GB card, an old PC with Linux, the desk PC with Windows (9.34); the hardware profiles in plain words; a dedicated computer or the desk computer itself), `choose-network.md` (Tailscale and the local network compared: what works — HTTPS, the camera, the phone, the app installed on the phone, use from outside the school —, what each needs — a free account and internet, or nothing —, the account model of Q70; the mode can be changed later), `material.md` (the computer, the USB barcode scanner, the printer, label stock and card sheets; a phone, optional; links to buy or download).
-      - **Paths**: one per computer and network — `raspberry-tailscale`, `raspberry-lan`, `linux-tailscale`, `linux-lan`, and with 9.34 `windows-tailscale`, `windows-lan` —, each a sequence of numbered steps in the manner of GOV.UK's step by step, every step ending with "Verifica prima di proseguire": prepare the computer (Raspberry Pi OS 64-bit Lite with Raspberry Pi Imager, hostname, user, Wi-Fi and SSH set in the imager; or Debian/Ubuntu on a PC), reach its terminal (SSH from another computer, or the computer's own terminal), with Tailscale prepare the tailnet (account, MagicDNS and HTTPS certificates, `tag:biblioviva` in the access controls with the exact JSON to paste, a reusable tagged auth key) or on the local network give the computer an address that does not change (a reservation on the router, asked of whoever manages the school's network, or the `.local` name), run `setup.sh` and answer its questions, the first-run wizard, connect the devices (Tailscale on each device with the school's account, or the address on the school network; the shared passwords handed to the colleagues), test the scanner and the printer (keyboard layout, "actual size / no scaling", the test pages, the checklist page `/admin/setup`), the backups (what is saved automatically, a copy on a USB stick or a NAS). Each step is one file in `docs/<lang>/setup/steps/`, shared by the paths that take it; where a step differs between paths, the file holds one block per variant between invisible markers (`<!-- variant: tailscale -->` … `<!-- /variant -->`, variants `raspberry`, `linux`, `windows`, `tailscale`, `lan`), each block opening with a visible label so that the file reads well on GitHub too, and the site keeps only the blocks of the path. Each path has a short page of its own, `docs/<lang>/setup/paths/<computer>-<network>.md`, a numbered list of links to its steps: GitHub readers follow it, and the site reads from it the order of the steps (the variants come from the path's name).
+      - **Entry pages**: `README.md` (the section's first page, shown by GitHub for the folder: what the section is for, the two choices, the paths in a table with the time each takes), `choose-computer.md` (the choice of Q149: the desk computer itself, with the installer for Windows of 9.57 or the AppImage for Linux of 9.58, when it is the library's only computer; a dedicated computer that stays on — a Raspberry Pi 4/5 with 2 GB or more and a 32 GB card, or an old PC with Linux, with Docker or with the Debian package of 9.62 — when several computers use BiblioViva or it must answer while the desk computer is off; the hardware profiles in plain words), `choose-network.md` (Tailscale and the local network compared: what works — HTTPS, the camera, the phone, the app installed on the phone, use from outside the school —, what each needs — a free account and internet, or nothing —, the account model of Q70; the mode can be changed later), `material.md` (the computer, the USB barcode scanner, the printer, label stock and card sheets; a phone, optional; links to buy or download).
+      - **Paths**: one per computer and network — `raspberry-tailscale`, `raspberry-lan`, `linux-tailscale`, `linux-lan`, with 9.57 `windows-tailscale`, `windows-lan`, with 9.58 `appimage-tailscale`, `appimage-lan`, and with 9.62 `deb-tailscale`, `deb-lan` —, each a sequence of numbered steps in the manner of GOV.UK's step by step, every step ending with "Verifica prima di proseguire": prepare the computer (Raspberry Pi OS 64-bit Lite with Raspberry Pi Imager, hostname, user, Wi-Fi and SSH set in the imager; or Debian/Ubuntu on a PC), reach its terminal (SSH from another computer, or the computer's own terminal), with Tailscale prepare the tailnet (account, MagicDNS and HTTPS certificates, `tag:biblioviva` in the access controls with the exact JSON to paste, a reusable tagged auth key) or on the local network give the computer an address that does not change (a reservation on the router, asked of whoever manages the school's network, or the `.local` name), run `setup.sh` and answer its questions, the first-run wizard, connect the devices (Tailscale on each device with the school's account, or the address on the school network; the shared passwords handed to the colleagues), test the scanner and the printer (keyboard layout, "actual size / no scaling", the test pages, the checklist page `/admin/setup`), the backups (what is saved automatically, a copy on a USB stick or a NAS). Each step is one file in `docs/<lang>/setup/steps/`, shared by the paths that take it; where a step differs between paths, the file holds one block per variant between invisible markers (`<!-- variant: tailscale -->` … `<!-- /variant -->`, variants `raspberry`, `linux`, `windows`, `appimage`, `deb`, `tailscale`, `lan`), each block opening with a visible label so that the file reads well on GitHub too, and the site keeps only the blocks of the path. Each path has a short page of its own, `docs/<lang>/setup/paths/<computer>-<network>.md`, a numbered list of links to its steps: GitHub readers follow it, and the site reads from it the order of the steps (the variants come from the path's name).
       - **After the installation**: `update.md` (re-run `setup.sh`, or `docker compose pull && docker compose up -d`), `move.md` (to another computer, with a backup), `restore.md` (start again after a failure, from a backup), `lan-to-tailscale.md` (from the basic to the full mode, `setup.sh --network tailscale`), `uninstall.md`; the common problems ("the address does not open", "the padlock is missing / the camera does not start", "the scanner types strange characters", "the printout is too small", "I forgot the admin password") and the glossary (tailnet, container, volume, backup) belong to the Aiuto section, linked from the steps.
-      - Screenshots are taken only of pages BiblioViva does not draw (the Tailscale admin console, Raspberry Pi Imager), as few as possible because the official pages are linked; BiblioViva's own screens (the first-run wizard, the checklist page) are generated figures (§3.23). The Windows paths are written with 9.34.
-    - `/admin/setup` first-run checklist page (permission `admin`, also linked from the dashboard while any item is red): configuration file valid; HTTPS and hostname detected from the request; hardware profile in use with a hint when the host looks stronger than `small`; accounts still using a plain password or the example password; backup schedule and last backup; printer test pages (cards, labels, calibration) with "print" buttons; camera test (opens the census page); scanner test (an input that shows what the scanner sends and detects the `'`/`-` layout problem); "Everything green" state. No configuration editing here (Phase 11), only status and links.
+      - Screenshots are taken only of pages BiblioViva does not draw (the Tailscale admin console, Raspberry Pi Imager), as few as possible because the official pages are linked; BiblioViva's own screens (the first-run wizard, the checklist page) are generated figures (§3.23). The Windows paths are written with 9.57, the AppImage paths with 9.58, the Debian ones with 9.62.
+    - `/admin/setup` first-run checklist page (permission `admin`, also linked from the dashboard while any item is red): configuration file valid; HTTPS and hostname detected from the request; hardware profile in use with a hint when the host looks stronger than `small`; accounts still using a plain password or the example password; backup schedule and last backup; printer test pages (cards, labels, calibration) with "print" buttons; camera test (opens the census page); scanner test (an input that shows what the scanner sends and detects the `'`/`-` layout problem); "Everything green" state. No configuration editing here (Phase 11), only status and links. The page knows the package it runs in (`BV_PACKAGE`, 9.56): on `localhost` plain HTTP is not red (the HTTPS check concerns the address the other devices use); in the Tailscale mode of a native package it checks that `tailscale serve` points to the app, where the container has its sidecar; the items of 9.59 (the backups folder chosen, writable, the last backup) are counted; the items that belong to Docker (the off-site copy) are left out there.
     - Q70 (Tailscale account model) answered in the guide: one school account used on every device (simplest, within the free plan) versus personal accounts invited to the tailnet.
   - Acceptance: a person who has never used a terminal completes the Italian guide on a fresh Raspberry Pi and reaches the login page from the desk computer (recorded in STATUS.md with the time taken); the English guide is a faithful mirror (headings and step numbers identical, checked by a script); `setup.sh` re-run is harmless; the checklist page turns green on a correctly installed system and each red item links to the right guide section; links validated by a CI job (`lychee` or equivalent) [VERIFY].
   - Depends on: 8.5
@@ -1115,7 +1124,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
 - [ ] **9.5 Documentation** — `docs/admin-guide.it.md` (Italian: installation summary, configuration, users, rollover, anonymization, backups), `docs/operator-guide.it.md` (Italian: circulation desk, census, cataloging with scanner, printing), `docs/config-reference.md`, `docs/reports-authoring.md`, `docs/templates-authoring.md`, `docs/deploy.md`, the setup guides of 8.7 refreshed with final screenshots, `README.md` and `README.it.md` linking to them. **User manual (owner request):** `docs/it/manual/` and `docs/en/manual/` (one Markdown file per chapter, English a faithful mirror), for non-technical readers, covering every screen in the order of a school year (first start, patrons and cards, census, catalogue, circulation desk, printing, reports, rollover, administration), illustrated with **screenshots generated from the app** (§3.23: the seeded demo data, desktop screens at 1280 px and phone screens at 412 px, each taken in both languages by `bun run docs:shots`), placed by markers in the Markdown; the admin and operator guides use the same pictures. The manual prints well to PDF (one H1 per chapter, numbered chapters, page breaks before chapters, figures with captions that never split across pages, no wide tables), and `bun run manual:pdf` prints the print page of the built site (every chapter in one page per language) to `manual.it.pdf` and `manual.en.pdf` with headless Chromium (Playwright, already a dev dependency: no new package); the PDFs are attached to each release, not committed.
   - Method (owner): the documentation is written section by section by coding agents (Sonnet; Haiku for mechanical checks), Italian first. `docs/writing-guide.md` is the brief every writer follows: the readers of each section, the tone of §3.23, the four kinds of page with their outline, the figure markers and the bold labels taken from the dictionaries, the scanner as the normal reader, links to the official pages, no dates or history, every fact checked in the code. For each section the page tree is agreed with the owner first; writers take one group of pages each (at most four at once) and hand over the Italian pages, the figures they need (entries for `docs/shots.ts`; third-party screenshots as a list for the owner) and the facts they could not check, marked [VERIFY]; a fresh agent reviews the pages against the code (commands, paths, labels, steps); the owner reads and corrects them; then the English mirror is written and checked for parity (headings, steps, markers, anchors), by an agent until `bun run site:check` exists. Order: the installation section (8.7), the site's tooling (`site:build`, `docs:shots`, `site:check`; 9.7), the Aiuto section (the glossary first), the manual chapter by chapter, the Amministrazione section (from `docs/admin-guide.*.md`), the Tecnica section (the English documents of `docs/`), the PDF.
 - [ ] **9.5b Contextual help: info icons that open the manual** (owner idea)
-  - Tasks: the user manual is the user-manual section of the public site (9.7, §3.23: one page per chapter, stable anchors per section); the icons open it on the site in the installation's language (`https://docs.biblioviva.org/<lang>/manual/<page>/#<section>`, `rel="external"`; one documentation, the current release's, §3.23), since BiblioViva does not serve the site (without internet, e.g. in the local-network mode of 8.8 on a network that is closed to the outside, the link simply does not open); the help icon of the top bar (`help` icon, tooltip "Guida", every page: the manual of the area, done) and small `HelpLink` icons in the trickier spots (fast-add stages, import wizard, cover capture, labels, backups, language packs) opens the matching manual page in a new tab; the mapping page → manual anchor lives in one table (`#lib/ui/help-links.ts`) so a renamed chapter is fixed in one place; `bun run site:check` checks that every anchor of the table exists in the generated HTML.
+  - Tasks: the user manual is the user-manual section of the public site (9.7, §3.23: one page per chapter, stable anchors per section); the icons open it on the site in the installation's language (`https://docs.biblioviva.org/<lang>/manual/<page>/#<section>`, `rel="external"`; one documentation, the current release's, §3.23), since BiblioViva does not serve the site (without internet, e.g. in the local-network mode of 8.8 on a network that is closed to the outside, the link simply does not open); the help icon of the top bar (`help` icon, tooltip "Guida", every page: the page that explains the screen, 9.67) and small `HelpLink` icons in the trickier spots (fast-add stages, import wizard, cover capture, labels, backups, language packs) opens the matching manual page in a new tab; the mapping page → manual anchor lives in one table (`#lib/ui/help-links.ts`) so a renamed chapter is fixed in one place; `bun run site:check` checks that every anchor of the table exists in the generated HTML.
   - Acceptance: every main page has a help icon; clicking it opens the right chapter in both languages; the anchors test fails on a broken link; the small icons of the trickier spots stay unobtrusive (secondary tone, no text next to the title); the top bar's help button is the visible one of 9.47.
   - Depends on: 9.5, 9.7
 
@@ -1132,7 +1141,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Acceptance: Lighthouse PWA installability checks pass on the mobile project; an e2e test verifies the manifest, the registered worker and that `/healthz` and remote calls are never served from the cache; the OpenCV chunk is served from the cache on the second load of the cover page. (Lighthouse 12 has no PWA category, so the e2e test runs Chromium's own installability check through the DevTools protocol; the setup guide paragraph is written with the manuals in 9.5.)
   - Depends on: 3.7, 9.8
 
-- [ ] **9.6 Release v0.9.0, the first release of the public beta** (the complete version of this plan is 0.9.0, owner decision; Q133, ADR-048) — made from the public repository of 9.36, where the **public beta** has started (the READMEs and the home page say so), as its first tagged release: changelog, git tag, multi-arch image `ghcr.io/<owner>/biblioviva:0.9.0` + `latest` (`latest` goes to the highest stable tag only, ADR-054), GitHub release notes, the documentation site published by hand from the release's tag (§3.23; the same at every release), `softwareVersion` and `releaseDate` of `publiccode.yml` set (9.55), STATUS.md closed. No workflow starts by itself (ADR-054): on the tag the owner runs, when the coding agent proposes them, `publish`, `i18n-packs` and `pages`, and `slow` as a last check. Depends on: 9.1–9.5b, 9.7, 9.8, 9.9, 9.19–9.21, 9.36, 9.44–9.55 and the whole of Phases 11, 12 and 13 (required for the release, owner decision).
+- [ ] **9.6 Release v0.9.0, the first release of the public beta** (the complete version of this plan is 0.9.0, owner decision; Q133, ADR-048) — made from the public repository of 9.36, where the **public beta** has started (the READMEs and the home page say so), as its first tagged release: changelog, git tag, multi-arch image `ghcr.io/<owner>/biblioviva:0.9.0` + `latest` (`latest` goes to the highest stable tag only, ADR-054), GitHub release notes, the documentation site published by hand from the release's tag (§3.23; the same at every release), `softwareVersion` and `releaseDate` of `publiccode.yml` set (9.55), STATUS.md closed. No workflow starts by itself (ADR-054): on the tag the owner runs, when the coding agent proposes them, `publish`, `i18n-packs` and `pages`, and `slow` as a last check. Depends on: 9.1–9.5b, 9.7, 9.8, 9.9, 9.19–9.21, 9.36, 9.44–9.60, 9.62–9.67 and the whole of Phases 11, 12 and 13 (required for the release, owner decision).
 
 - [ ] **9.10 Field testing towards 1.0.0** (owner decision; Q133) — the public beta: the school year 2026/27 at the school on 0.9.x, until the end of lessons in June 2027; 1.0.0 is released for the start of the school year 2027/28 (September 2027), when the library begins to use BiblioViva for real; every problem found becomes a fix released as 0.9.x (patch releases, changelog); 1.0.0 is tagged when the owner declares the field test over, after a run of `bun run test:browsers` (Chromium, Firefox, WebKit, Q110) whose failures are fixed or explained. Until then the database keeps a single regenerated migration (Q82); a schema change during the field test is carried by export and restore. From 1.0.0 an update never loses data: the migrations of 9.37.
 
@@ -1396,7 +1405,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Depends on: 9.31
 
 - [x] **9.33 A backup at start when the scheduled one was missed** (owner request, Q129; required for 0.9.0)
-  - Context: BiblioViva may run on the desk computer itself (one PC with Docker and the browser, Linux or Windows, 9.34), switched off at the end of the day. The scheduled backup of 1.9 (`Bun.cron(backup.cron)`, by default at night) then never runs, and nothing tells the operator.
+  - Context: BiblioViva may run on the desk computer itself (one PC with BiblioViva and the browser, Linux or Windows, 9.57–9.58), switched off at the end of the day. The scheduled backup of 1.9 (`Bun.cron(backup.cron)`, by default at night) then never runs, and nothing tells the operator.
   - Tasks:
     - **Catch-up at start**: when the server starts (`hooks.server.ts` `init`, beside the scheduler of 1.9), the backup service works out the last time `backup.cron` should have fired, in `library.timezone`, and compares it with the newest backup of the backups folder (`BACKUP_DIR`, 9.35); when that run is missing it runs **one** backup (never one per missed day), a minute after the start so the first pages are not slowed, through the same `backupNow` as the scheduled and the manual backup and through the limiter of heavy jobs of 9.32.
     - **Setting**: `backup.catchUp` (default on), editable in Configurazione → Backup beside the schedule, in the coverage map of 11.11 and in the configuration archive of 11.3.
@@ -1405,23 +1414,13 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Acceptance: unit tests for the missed-run calculation (daily and weekly expressions, the time zone and a change of daylight saving time, a host off for several days makes one backup, no backup when the newest one is after the last expected run, the setting off), for the delay and for the shared `backupNow`; the configuration reference and the coverage map updated; `bun run ci` green.
   - Depends on: 1.9, 9.32
 
-- [ ] **9.34 Windows: BiblioViva in Docker Desktop** (owner request, Q130, ADR-038; required for 0.9.0, carried out before the setup guide of 8.7 and the manuals of 9.5)
-  - Context: in many schools the desk computer runs Windows, and BiblioViva must run there too, possibly on that same PC. Docker Desktop with the WSL 2 back end runs the same `linux/amd64` image as a Linux host, so the app does not change; the work is in the deployment files, the setup script and the guide.
-  - Tasks:
-    - **Compose files unchanged**: `docker/compose.yml` (Tailscale sidecar, userspace networking) and `docker/compose.lan.yml` run in Docker Desktop as they are, checked on a real host. `/config` and `/data` are **named volumes**, kept inside the WSL 2 virtual machine, never bind mounts of Windows folders: SQLite's locking is not reliable on the Windows file share and the owner of the files (uid 1000) is not kept there [VERIFY on the host]. The backups (`/backups`, 9.35), which hold no live database, are the folder `backups` beside the compose file, a folder of the PC [VERIFY: written by uid 1000 through Docker Desktop]; the other Windows folder involved is where the operator saves the archives downloaded from the app.
-    - **`setup.ps1`** (PowerShell, beside the `setup.sh` of 8.7, idempotent like it): checks Windows 10 or 11 64-bit, virtualization and WSL 2; checks that Docker Desktop is installed and running, and otherwise links to Docker's official download and installation page (no silent installation); creates `%USERPROFILE%\biblioviva\` with the compose file, `.env` and `serve.json`; asks the same questions as `setup.sh` (network mode, hardware profile, Tailscale auth key); starts the stack and prints the address.
-    - **Running on a desk PC**: Docker Desktop set to start at sign-in, the services with `restart: unless-stopped`, so BiblioViva comes back after a restart of Windows; BiblioViva runs only while a user is signed in (Docker Desktop is not a Windows service), which the guide states; the backup at start of 9.33 covers the evenings the PC is off.
-    - **Hardware profile**: chosen from the PC as on Linux (`small` or `medium`); the memory given to the WSL 2 virtual machine (`.wslconfig`) is mentioned only if the profile needs more than the default [VERIFY].
-    - **Licence**: Docker Desktop's terms for a school [VERIFY]; the alternatives for a school that cannot use it (the Linux path of 8.7, or Podman Desktop [VERIFY]) are named in one line.
-    - **Docs**: §3.21 lists Windows; `docs/deploy.md` gains a Windows section (named volumes, sign-in, restore with the archive); the setup guide of 8.7 and the installation section of the site (9.7) gain the Windows path, with the hand-taken screenshots of Docker Desktop kept to a minimum.
-  - Acceptance: on a Windows 11 PC (an owner's check, recorded in `docs/STATUS.md` like 8.5): `setup.ps1` on a fresh Docker Desktop brings the stack up in both network modes; the login page opens in the browser of the same PC and, with Tailscale, from another device; after a restart of Windows and a sign-in BiblioViva is back with its data; a backup, a download of the full archive and a restore work; a second run of `setup.ps1` is harmless; `bun run ci` green.
-  - Depends on: 8.3, 8.8, 9.33
+- [x] ~~**9.34 Windows: BiblioViva in Docker Desktop**~~ — superseded by 9.57: an installer that runs BiblioViva natively, as a Windows service (Q149, ADR-057).
 
 - [x] **9.35 Backups in a volume of their own** (owner request; required for 0.9.0, carried out after 9.33 and before 9.34)
   - Context: the backups live in `DATA_DIR/backups`, inside the same volume as the database and the pictures they protect: a volume removed or damaged takes its backups with it, and an operator cannot copy them, or keep them on another disk, without knowing Docker. Until 0.9.0 every installation is a trial: nothing is moved for an existing one.
   - Tasks:
     - **Three volumes**: `/config` (`CONFIG_DIR`), `/data` (`DATA_DIR`: database, pictures, imports, temporary files) and `/backups` (`BACKUP_DIR`, new, declared in `src/env.ts`): the scheduled and manual backups, their copy of the pictures, the archives the helpers write, the state of the off-site copy (`offsite.json`), and what the backups page lists, downloads and restores. In development `./local/backups`.
-    - **Compose files**: `/backups` is the folder `./backups` beside the compose file (a plain folder the operator can see, copy, or mount from a second disk or a USB drive), `/data` stays a named volume (the database's locking, 9.34); the `offsite` service syncs `/backups`. On Windows (9.34) the same folder is a folder of the PC [VERIFY: written by uid 1000 through Docker Desktop], the database staying in its named volume.
+    - **Compose files**: `/backups` is the folder `./backups` beside the compose file (a plain folder the operator can see, copy, or mount from a second disk or a USB drive), `/data` stays a named volume (the database's locking); the `offsite` service syncs `/backups`.
     - **Docs**: §1, §3.20, 8.1, 8.2, Appendix E, CLAUDE.md ("three volumes"), `docs/deploy.md` (volumes, backups on a second disk, restore from `/backups`), the admin guides (it/en: where the backups are and how to keep a copy elsewhere), the demo (`docs/demo.md`) and the helpers' examples (`/backups/<file>`).
   - Acceptance: unit tests for the folder of the backups (scheduled, manual, archive, pictures, off-site state, list and download, restore of a stored backup, the catch-up of 9.33) taken from `BACKUP_DIR`; the e2e of the backups page green; the container started with the three volumes on Linux makes, lists and restores a backup in `./backups`; `bun run ci` green.
   - Depends on: 9.33
@@ -1764,6 +1763,380 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
     catalogue's crawler); `bun run ci` green.
   - Depends on: 9.36 (the listing only)
 
+- [ ] **9.56 One executable for each system** (owner decision, Q149, ADR-057; required for 0.9.0, carried out before
+  9.57 and 9.58)
+  - Context: the study `docs/studies/installable.md` showed that `adapter-bun`'s `compile` option builds the server,
+    the Bun runtime and every page asset into one file — 133 MB on Linux, 139 MB on Windows, about 50 MB compressed,
+    70 MB of memory idle —, for Linux and, cross-compiled from Linux, for Windows. The native packages of 9.57 and 9.58
+    are made from it; the container image stays as it is.
+  - Tasks:
+    - **Build**: `bun run build:exe [target…]` writes one executable per target into `dist/exe/`
+      (`bun-windows-x64-baseline`, `bun-linux-x64-baseline`, `bun-linux-arm64`; baseline so that CPUs without AVX2 run
+      it): `vite.config.ts` turns on the adapter's `compile` with the target and the output from the environment, and
+      leaves the container build unchanged. The shipped files read at runtime (the `config/` defaults, `drizzle/`,
+      `demo/`) are embedded (`--asset`) or read from the executable's folder; `EXAMPLE_CONFIG_DIR`, `MIGRATIONS_DIR` and
+      the demo portraits find them either way.
+    - **One program**: the helpers (`backup-restore`, `hash-password`, `config-check`, `config-export`,
+      `config-import`) become subcommands of the executable (`biblioviva restore <zip>`, …); with no subcommand it
+      serves.
+    - **Start**: no `process.execve` and no cgroup limit on a native host. The executable starts the server as its
+      child with the hardware profile's settings (`--smol`, `BUN_JSC_forceRAMSize` from the profile's memory,
+      `CONNECTION_IDLE_TIMEOUT`), passes the stop on, and starts it again when the profile changes [VERIFY:
+      `--compile-exec-argv` or `BUN_OPTIONS` instead of a child process].
+    - **Compression**: the adapter ignores `precompress` with `compile`; the text assets (CSS, JS, JSON, SVG) are
+      compressed on the fly or embedded precompressed, so a phone on Wi-Fi does not download the raw style sheet
+      [VERIFY: the cheaper of the two].
+    - **Portability**: the default folders per system (§3.20); `services/template-editor.ts` without a symbolic link (a
+      copy, or a directory junction on Windows); the three `rename` sites safe on Windows (a file open elsewhere is not
+      replaced); archive entries always with `/`; `YAZ_CLIENT` pointing to the packaged `yaz-client`; `BV_PACKAGE`
+      (`windows`, `appimage`, `deb`; absent in the container and in development; declared in `src/env.ts`) tells the app
+      which package it runs in.
+    - **Tests**: the unit tests on a Windows runner, a job of the manual `ci` workflow (ADR-054); a smoke test of each
+      executable (`scripts/exe-smoke.ts`: a fresh folder, `/healthz`, the first-run wizard, a page asset, `yaz-client`
+      found and `z3950:test` against the mock); the Playwright suite (project `desktop-chromium`) against the Linux
+      executable in a job of the same workflow and against the Windows one on the Windows runner [VERIFY: the suite
+      leans on the Linux fixtures (fontconfig, the fake camera); if the whole suite does not run on Windows, a subset
+      of it does — the login, the desk, a print preview]; `publish` attaches the executables to a release.
+    - **Measures**: the load test of 9.28–9.29 repeated on the Linux executable with the profiles `micro` and `small`
+      under a memory limit (`systemd-run -p MemoryMax=…`), the memory idle and under load, recorded in
+      `docs/performance.md` beside the container's; the same on Windows, an owner's check with 9.57.
+    - **Docs**: `docs/deploy.md` gains the native packages (build, folders, subcommands, `BV_PACKAGE`); the commands
+      in CLAUDE.md and in the READMEs' table of commands (`build:exe`). Nothing of the school's documentation changes
+      yet: it describes the packages from 9.57 and 9.58.
+  - Acceptance: the three executables built on Linux; the Linux one passes the smoke test locally, the Windows one on
+    the Windows runner; the unit tests green on Windows; the container image unchanged in size and behaviour; `bun run
+    ci` green.
+  - Depends on: 9.32
+
+- [ ] **9.57 Windows: an installer, BiblioViva as a service** (owner decision, Q149, ADR-057; required for 0.9.0,
+  in place of 9.34; carried out before the Windows paths of the setup guide of 8.7 and the manuals of 9.5)
+  - Context: in many schools the desk computer runs Windows. Docker Desktop needs virtualization in the BIOS, a WSL 2
+    virtual machine of 1.5–3 GB, and runs only while a user is signed in; the executable of 9.56 needs none of that.
+  - Tasks:
+    - **Installer** (NSIS, built on Linux with `makensis` from `packaging/windows/`; `bun run package:windows` into
+      `dist/`): Windows 10 1809 or
+      later, 64-bit; installs into `C:\Program Files\BiblioViva\` the executable, `yaz-client.exe` with its DLLs (from
+      Index Data's Windows build, revised BSD licence) and WinSW; creates `C:\ProgramData\BiblioViva\config`, `data`
+      and `backups`; asks the network mode (Tailscale or the local network), the hardware profile and the port, the
+      questions of `setup.sh`; its pages in Italian and English.
+    - **Service**: BiblioViva runs as a Windows service (WinSW) from start-up, whether a user is signed in or not,
+      started again when it stops; its log in `C:\ProgramData\BiblioViva\logs`, with a size limit; the account
+      `LocalService` with the rights on its folders [VERIFY: `LocalService` or `LocalSystem`, for a USB drive and a
+      network folder as the backups folder of 9.59].
+    - **Window**: a Start menu and desktop shortcut "BiblioViva" that opens `http://localhost:<port>` in Edge in app mode
+      (`msedge.exe --app=…`), the default browser when Edge is missing; the web manifest lets the operator install it
+      from Chrome too.
+    - **Network**: with the local network, an inbound firewall rule for the port, private networks only; with
+      Tailscale none: the guide has the operator install Tailscale for Windows from the official page and sign in with
+      the school's account, and the installer runs `tailscale serve --bg http://127.0.0.1:<port>` when Tailscale is
+      there (the checklist page of 8.7 says when it is missing) [VERIFY: `tailscale serve` from an installer run as
+      administrator].
+    - **Update and removal**: a newer installer over an older one stops the service, replaces the program, keeps the
+      folders and starts the service again; the uninstaller keeps the folders unless the operator ticks "remove the
+      data too"; "Modifica" in the Windows settings asks the questions again (network mode, profile, port).
+    - **Not signed in 0.9.0**: the guide explains SmartScreen's warning ("Ulteriori informazioni" → "Esegui comunque")
+      until 9.61.
+    - **Docs** (written by the method of 9.5 — Sonnet agents section by section after `docs/writing-guide.md`, Italian
+      first, English as a faithful mirror —, in the same commit as the code; the owner is told to publish the site and
+      the home page again, ADR-050):
+      - *Tecnica*: `docs/deploy.md` (the Windows package, the service and its account, the folders, the log, the
+        firewall rule, `tailscale serve` on the PC, a restore with `biblioviva restore`), `package:windows` in the
+        READMEs' table of commands.
+      - *Installazione* (`docs/<lang>/setup/`): `README.md` (the table of the paths, with the Windows ones and their
+        time), `choose-computer.md` (the choice of Q149, in place of "this guide does not describe Windows"),
+        `choose-network.md` (on the PC's own Tailscale client: the school's account signed in on the PC, no tagged
+        key), `material.md` (Windows 10 1809 or later, 64-bit); the paths `windows-tailscale` and `windows-lan` and
+        a `windows` block in each shared step they take (`prepare-computer`, `install` — the installer in place of the
+        terminal and `setup.sh` —, `network`, `devices`, `first-run`, `scanner-printer`, `backups`; `terminal` is not
+        part of these paths); a Windows block in `update.md` (the newer installer), `move.md`, `restore.md`,
+        `lan-to-tailscale.md` ("Modifica" in the Windows settings) and `uninstall.md` (the data kept or removed).
+      - *Aiuto*: `problems.md` (the address does not open; the service is stopped; the firewall asks or blocks; the
+        SmartScreen warning; Edge missing), `glossary.md` (servizio, installer, modalità app).
+      - *Pictures*: mocks of the installer's pages, of SmartScreen's warning and of the shortcut (ADR-046, in
+        `docs/mocks/`), in the shot list `docs/shots.ts`.
+      - *Facts said elsewhere* (the owner rule on documentation that goes stale): the READMEs (installation: the
+        Windows installer from the release page in place of "the Windows path with Docker Desktop is in
+        preparation"), the home page (`home/it.html`, `home/en.html`: the installation steps and "Basta un vecchio PC"),
+        the overview `docs/<lang>/features.md` ("BiblioViva gira su un computer con Linux…"), `publiccode.yml` (the
+        descriptions, the platforms `windows` and `linux`, the dependencies), the site's strings in
+        `scripts/site-build.ts` (the technical section "per chi conosce Docker e Linux").
+  - Acceptance: on a Windows 11 PC (an owner's check, recorded in `docs/STATUS.md`): the installer brings BiblioViva up
+    in both network modes; the login page opens from the shortcut and, with Tailscale, on a phone; after a restart of
+    Windows, with nobody signed in, BiblioViva answers on the phone; a backup, a download of the full archive and a
+    restore work; a newer installer keeps the data; the uninstaller keeps the folders; a second run is harmless; `bun
+    run ci` green.
+  - Depends on: 9.56, 8.8
+
+- [ ] **9.58 Linux: an AppImage for a desk computer** (owner decision, Q149, ADR-057; required for 0.9.0, carried out
+  after 9.56 and before the AppImage paths of 8.7)
+  - Context: when the library's only computer runs Linux and is a desk PC used and switched off by its operator, Docker
+    is more than it needs. An AppImage is one file to download and run, with no runtime to install. Flatpak is not used
+    (Flathub accepts neither console software nor prebuilt binaries). Several computers, or a computer that stays on,
+    keep the Docker paths (Q149).
+  - Tasks:
+    - **Package** (`packaging/appimage/`; `bun run package:appimage` into `dist/`, x86-64 and arm64): the executable of 9.56, `yaz-client`
+      with the libraries it links (collected as in the Dockerfile), `AppRun`, the icon and the desktop entry; built with
+      `appimagetool` and the static type-2 runtime, so the target needs no `libfuse2` (Ubuntu 24.04 and later ship
+      fuse3 only).
+    - **Launch**: `AppRun` sets the folders under `~/.local/share/biblioviva/` (§3.20), starts the server in the
+      background when it is not running and opens `http://localhost:<port>` in Chrome or Chromium in app mode when one
+      is installed, otherwise in the default browser; the first run asks the network mode, the profile and the port
+      [VERIFY: a small page of BiblioViva on the loopback, or the first-run wizard]; "Avvia BiblioViva all'accesso"
+      writes a systemd user unit or an entry in `~/.config/autostart`, and "Aggiungi al menu" a desktop entry.
+    - **Network**: with Tailscale, the operator installs the official client and the guide runs `tailscale serve --bg
+      http://127.0.0.1:<port>`; with the local network, the port as in 8.8 (a firewall rule only where the distribution
+      has one active).
+    - **Update**: a newer AppImage replaces the file; the data stay in their folders.
+    - **Docs** (by the method of 9.5, Italian first, in the same commit; the owner is told to publish the site and the
+      home page again):
+      - *Tecnica*: `docs/deploy.md` (the AppImage, its folders, the autostart, the libraries of `yaz-client`),
+        `package:appimage` in the READMEs' table of commands.
+      - *Installazione*: the paths `appimage-tailscale` and `appimage-lan` and an `appimage` block in each shared step
+        they take (`prepare-computer`: download the file and allow it to run; `install`; `network`; `devices`;
+        `first-run`; `scanner-printer`; `backups`); `README.md`, `choose-computer.md` and `material.md` with the
+        AppImage; an AppImage block in `update.md`, `move.md`, `restore.md`, `lan-to-tailscale.md` and
+        `uninstall.md`.
+      - *Aiuto*: `problems.md` (the file does not start: not executable, an old distribution without FUSE; the browser
+        opens on a blank page; BiblioViva not started after the sign-in), `glossary.md` (AppImage).
+      - *Pictures*: mocks of the file manager's "allow executing" and of the first-run questions if they are not a page
+        of BiblioViva (ADR-046).
+      - *Facts said elsewhere*: the READMEs, the home page, `docs/<lang>/features.md` and `publiccode.yml` name the
+        AppImage beside the Windows installer and Docker.
+  - Acceptance: on Ubuntu 24.04 and Fedora (an owner's check on one of them, the other in a virtual machine): the
+    AppImage starts with a double click, the login page opens, a phone reaches it with Tailscale, BiblioViva starts
+    again after a reboot and a sign-in, a backup and a restore work, a newer AppImage keeps the data; `bun run ci` green.
+  - Depends on: 9.56, 8.8
+
+- [ ] **9.59 The backups folder chosen in the native packages; a reminder in Amministrazione** (owner decision, Q151,
+  ADR-058; required for 0.9.0, carried out with 9.57, 9.58 and 9.62)
+  - Context: in the container the backups are the folder `./backups` beside the compose file, and the `offsite` service
+    (rclone) can copy them elsewhere (1.9). In a native package rclone makes no sense: the operator chooses the folder
+    of the automatic backups — a second disk, a USB drive, a network folder —, and BiblioViva reminds the administrator
+    while that choice is missing.
+  - Tasks:
+    - **Setting** `backup.dir` (an absolute path, empty by default), editable in Configurazione → Backup in a native
+      package only (`BV_PACKAGE` set; in the container the folder is the volume and the field is not shown), in the
+      coverage map of 11.11 and, as a part of its own that an import on another computer can leave out, in the
+      configuration archive of 11.3 [VERIFY: whether a path of this computer travels in the archive at all].
+      `backupsDir()` returns it when set, `BACKUP_DIR` otherwise; nothing else learns where the backups are.
+    - **Choosing**: a folder field checked before saving (it exists, BiblioViva can write there, the free space);
+      "Tieni la cartella predefinita" confirms the default folder on purpose; the backups already made stay where they
+      are, and the page says so with the old folder's path.
+    - **Reminder**: the Amministrazione page (`/admin`) shows a box "Backup da configurare", with a button to
+      Configurazione → Backup, while in a native package no folder has been chosen or confirmed, or (in every
+      installation) the folder cannot be written (a USB drive unplugged) or the last automatic backup failed; the
+      checklist page of 8.7 counts the same items. Colour, icon and text (§3.18).
+    - **No rclone in the native packages**: the off-site part of the backups page is hidden there.
+    - **Docs** (by the method of 9.5, Italian first, in the same commit; the owner is told to publish the site
+      again): the step `backups.md` of the setup guide (the `windows` and `appimage` blocks: choose the folder,
+      a USB drive left plugged in, a network folder; no off-site copy with rclone); the admin guide `make-a-backup.md`
+      and a guide on choosing the backups folder; `first-steps.md` (the reminder in Amministrazione); the Aiuto
+      problems ("Backup da configurare", the USB drive not plugged in, a network folder the service cannot write);
+      `docs/config-reference.md` (`backup.dir`); `docs/navigation.md` (the box's link); `docs/deploy.md`; the shots of
+      the reminder and of the folder field (the shots' server with `BV_PACKAGE` set).
+  - Acceptance: unit tests for `backupsDir()` with and without the setting, the folder check (missing, not writable,
+    full) and the reminder's conditions; e2e: the reminder shown and gone once a folder is confirmed (`BV_PACKAGE` set
+    in the test server), the field absent without it; `bun run ci` green.
+  - Depends on: 9.35, 9.56
+
+- [ ] **9.60 A notice when a new version is out** (owner decision, Q152; required for 0.9.0; it finds releases once
+  the public repository of 9.36 has them)
+  - Context: the native packages and the container are updated by hand; the administrator should know that a release
+    exists, and nothing should install itself.
+  - Tasks: the server asks GitHub's API once a day for the latest release of the public repository (from
+    `#lib/server/`, with a timeout, never from the browser: the CSP's `connect-src 'self'`), keeps the answer and
+    compares it with its own version (a pre-release is announced only to a pre-release); Informazioni (`/about`) shows
+    "È disponibile la versione X.Y.Z" with a link to the release notes and to the update guide of this installation
+    (`BV_PACKAGE`: the Windows installer, the AppImage, the Debian package, or `update.md` for Docker), and the Amministrazione page repeats
+    it in one line; nothing is downloaded or installed. Setting `updates.check` (on by default; editable in
+    Configurazione, in the coverage map and in the configuration archive); off and hidden in the public demo; no error
+    shown when GitHub does not answer. **Docs** (Italian first, in the same commit; the owner is told to publish the
+    site again): `update.md` of the setup guide (how the notice looks and where it leads), the Informazioni page in the
+    manual (`manual/screens/about.md`), `docs/config-reference.md` (`updates.check`), `docs/security.md` (the one request to GitHub, what it
+    carries: nothing about the library), `docs/navigation.md` (the links of the notice), the shot of Informazioni with
+    the notice.
+  - Acceptance: unit tests (the version comparison, pre-releases, the kept answer, a failed request, the setting off,
+    the demo); e2e with a mocked release: the notice on Informazioni and on Amministrazione, gone when the version is
+    current; `bun run ci` green.
+  - Depends on: 9.36, 9.56
+
+- [ ] **9.61 The Windows installer signed by the SignPath Foundation** (owner decision, Q150; not required for 0.9.0;
+  after the public repository of 9.36 and a first release with the installer, 9.6)
+  - Context: an unsigned installer meets SmartScreen's warning and, for executables compiled by Bun, sometimes an
+    antivirus false positive [VERIFY]. The SignPath Foundation signs open-source projects for free: an OSI licence,
+    builds from CI, a manual approval of each release, multi-factor authentication for every member, a project already
+    released in the form to be signed.
+  - Tasks: the application to the SignPath Foundation (the owner); the `publish` workflow, run by hand (ADR-054), sends
+    the installer and the executable to SignPath and attaches the signed files to the release after the owner's
+    approval there; the code-signing policy page SignPath asks for (who builds, who approves, the repository) in the
+    technical documentation; the guide drops the SmartScreen explanation, its mock and its Aiuto problem, in Italian
+    and English [VERIFY: whether SmartScreen still warns until the certificate gains reputation]; the owner is told to
+    publish the site again.
+  - Acceptance: a release whose installer and executable carry the SignPath Foundation's signature (the file's
+    properties on Windows, or `signtool verify`).
+  - Depends on: 9.36, 9.57, 9.6
+
+- [x] **9.67 The help button opens the page of the screen in sight** (owner request; required for 0.9.0)
+  - Context: the help button (9.5b, 9.47) opened the reference page of the area's main screen: on Restituzioni,
+    on Nuovo libro or on a patron's record it showed the page of Prestiti, of the catalogue or of the patrons, and the
+    reader had to look for the right one.
+  - Tasks: one table in `#lib/ui/help-links.ts` from each page of the app, by its SvelteKit route id
+    (`/(app)/circulation/checkin`, `/(app)/patrons/[id]/edit`…), to the page of the documentation that explains it,
+    with the anchor of its section where the screen is part of a larger page (Nuovo utente and Modifica utente in
+    the patron's record, the page of one list in Stampe, one report, the archived notes, the one section of the
+    settings by its key, the editor of a template); the reference page of the screen (`manual/<screen>/`,
+    `admin/screens/<screen>/`) first, a guide where the screen has no page of its own but one guide explains it
+    whole (each import, the classification editor, the calibration of the backs); the anchors are the headings'
+    anchors in each language of the documentation, so the table keeps one anchor per language. The two help buttons
+    of the shell (computer and phone) take the target of the current route; a page without an entry falls back to
+    the area's page, as before. `docs/navigation.md` and the manual's README say it, both languages.
+  - Acceptance: a unit test fails when a page of `src/routes/(app)/` has no entry, when a target page is missing
+    from `docs/it/` or `docs/en/`, or when an anchor is not a heading of that page in that language; `shell.spec.ts`
+    checks the link on Restituzioni, Nuovo libro and a patron's Modifica utente; `bun run ci` green.
+  - Depends on: 9.5b (the table), 9.5 (the pages of the manual)
+
+- [ ] **9.62 Debian: a `.deb` package with a systemd service** (owner decision, Q153, ADR-057; required for 0.9.0,
+  carried out after 9.56 and with 9.59)
+  - Context: a dedicated computer that stays on — a Raspberry Pi, a Linux PC in a cupboard — runs Docker today (8.7,
+    `setup.sh`). The Docker daemon costs memory on a Raspberry Pi with 2 GB; a Debian package runs the executable of
+    9.56 directly as a systemd service and is installed with the system's own tools. The container stays (the Tailscale
+    sidecar, the `offsite` service, the public demo); which of the two the guide advises on a Raspberry Pi follows the
+    measure below.
+  - Tasks:
+    - **Package** (`packaging/deb/`; `bun run package:deb` into `dist/`, with `dpkg-deb`, no other tool):
+      `biblioviva_X.Y.Z_amd64.deb` and `_arm64.deb` from the executables `bun-linux-x64-baseline` and
+      `bun-linux-arm64`: `/usr/bin/biblioviva`, the unit `/usr/lib/systemd/system/biblioviva.service`, and
+      `Depends: yaz` (Debian's package supplies `yaz-client`: nothing of it is bundled). Tailscale is not in Debian's
+      archive: the guide links its official page. Supported: Raspberry Pi OS 64-bit, Debian and Ubuntu releases whose
+      glibc runs Bun [VERIFY: the oldest].
+    - **Service**: the maintainer scripts create the system user `biblioviva` (no login, no shell) and the folders
+      `/var/lib/biblioviva/{config,data,backups}` [VERIFY: the configuration under `/etc/biblioviva` instead]; the unit
+      runs as that user with `Restart=always`, `NoNewPrivileges`, `PrivateTmp`, `ProtectHome` and `ProtectSystem=full`
+      rather than `strict`, so that the backups folder chosen in 9.59 (a USB drive under `/media` or `/mnt`) can be
+      written [VERIFY]; the service is enabled and started at the installation.
+    - **Settings**: it starts in the local-network mode of 8.8 on port 8080 with the `small` profile, and the first-run
+      wizard of the app is the first screen; `sudo biblioviva setup` (a subcommand of 9.56) asks the questions of
+      `setup.sh` — network mode, port, hardware profile — writes `/etc/default/biblioviva` (the unit's environment
+      file), runs `tailscale serve --bg http://127.0.0.1:<port>` in the Tailscale mode when the client is installed,
+      and restarts the service; the profile stays editable from the admin UI like any setting.
+    - **Update and removal**: a newer file installed with `apt install ./biblioviva_….deb` replaces the program and
+      restarts the service; the maintainer scripts never touch the folders. `apt remove` and `apt purge` keep
+      `/var/lib/biblioviva` (the guide says how to delete it by hand) [VERIFY: Debian policy for a service's data].
+      **No APT repository** is built: the installation never updates itself, and the notice of 9.60 (`BV_PACKAGE=deb`)
+      tells the administrator that a release exists and links to the update guide; a signed repository, which would
+      update BiblioViva with the system's own upgrades, is left out on purpose.
+    - **Window**: the browser of the computer, or of any device of the school's network; the package installs no
+      launcher.
+    - **Tests**: `lintian`; a job of the manual `ci` workflow (ADR-054) on GitHub's Ubuntu runners, amd64 and arm64
+      (the arm64 runners are free for public repositories, §2.6), installs the package, runs the smoke test of 9.56
+      against the service and goes through upgrade, remove and purge.
+    - **Measures**: on a Raspberry Pi 4 with 2 GB, the load test of 9.28–9.29 with the container and with the package;
+      the memory of the whole system, idle and under load; recorded in `docs/performance.md`, which decides what
+      `choose-computer.md` advises on a Raspberry Pi.
+    - **Docs** (by the method of 9.5, Italian first, in the same commit; the owner is told to publish the site and the
+      home page again):
+      - *Tecnica*: `docs/deploy.md` (the package, the unit, the folders, the environment file, `biblioviva setup`),
+        `package:deb` in the READMEs' table of commands.
+      - *Installazione*: `README.md`, `choose-computer.md`, `choose-network.md` and `material.md` with the package;
+        the paths `deb-tailscale` and `deb-lan` and a `deb` block in each shared step they take (a Raspberry Pi is
+        prepared with the `raspberry` block of `prepare-computer`, linked from the path), with `install` as `apt install`
+        and `biblioviva setup` in place of `setup.sh`; a `deb` block in `update.md`, `move.md`, `restore.md`,
+        `lan-to-tailscale.md` and `uninstall.md`.
+      - *Aiuto*: `problems.md` (the service is not running — `systemctl status biblioviva` and `journalctl -u
+        biblioviva` —, the port is taken, a USB drive is not mounted when the backup runs), `glossary.md` (pacchetto,
+        servizio).
+      - *Facts said elsewhere*: the READMEs, the home page, `docs/<lang>/features.md`, `publiccode.yml` and the site's
+        strings name the package beside Docker.
+  - Acceptance: on a Raspberry Pi 4 (an owner's check, recorded in `docs/STATUS.md`): `apt install ./biblioviva_….deb`
+    brings BiblioViva up and a second device reaches it in both network modes; after a restart of the computer it is
+    back; a backup, a download of the full archive and a restore work; a newer package keeps the data; `apt remove`
+    keeps the folders; the measure is in `docs/performance.md`; `bun run ci` green.
+  - Depends on: 9.56, 8.8
+
+- [x] **9.63 The section Norme of the documentation; the rules on the home page** (owner decision, Q154, ADR-059;
+  required for 0.9.0)
+  - Context: a school that adopts BiblioViva answers to the rules of the public administration (the study
+    `docs/studies/adoption.md`): data protection, accessibility, open source, ICT security. The head teacher, the DSGA,
+    the DPO and the Responsabile per la transizione digitale need the facts in one place, in their words, and a file
+    they can keep with the school's records.
+  - Tasks:
+    - **Documentation**: a sixth section **Norme** (`docs/<lang>/compliance/`, `/<lang>/compliance/<page>/`), before
+      Tecnica in the top bar, written by the method of 9.5 (Italian first, English mirror; the kind «Norme page» of
+      `docs/writing-guide.md`): `README.md` (what the section is for, the table of the rules, once that the decisions
+      are the school's and its DPO's), `data-protection.md` (GDPR and D.Lgs. 196/2003: what BiblioViva stores, where,
+      for how long, who sees it, what leaves the school; the ready texts for the record of processing, art. 30, and
+      for the information notice, art. 13), `accessibility.md` (Legge 4/2004, the AgID guidelines, EN 301 549, the
+      target WCAG 2.2 AA of Q147, with the technical page `docs/accessibility.md`), `open-source.md` (CAD art. 68–69,
+      the AgID guidelines on acquisition and reuse, the licence, `publiccode.yml` and the Developers Italia catalogue,
+      the exports), `security.md` (the AgID minimum ICT security measures, GDPR art. 32, the ACN rules on cloud
+      services). `docs/<lang>/features.md` links the section.
+    - **PDF**: the whole section as one PDF per language (`/<lang>/compliance/biblioviva-norme.pdf`,
+      `/<lang>/compliance/biblioviva-compliance.pdf`), printed by Chromium from a print page that `site:build` writes
+      (`/<lang>/compliance/print/`: a cover with the release, the pages in the order of the section, each link written
+      out); `bun run docs:pdf` (Playwright on `site:serve`) after `site:build`, a step of the Pages workflow; the
+      section's first page on the site carries the download link.
+    - **Home page**: after the section on the data that stay at school, a section on the rules (accessibility, data
+      protection, open source in the PA, security), each in a sentence, with the link to the section Norme and to the
+      PDF.
+  - Acceptance: the site builds the section in both languages with the same headings; the PDF opens and holds every
+  page; the home page's mirror test; `bun run ci` green; the owner reads the Italian pages.
+  - Depends on: 9.54, 9.55
+
+- [ ] **9.64 The school inventory of library books** (owner decision, Q155; required for 0.9.0)
+  - Context: D.I. 129/2018 art. 31 counts the library's books among the school's inventoried assets: each item in
+    chronological order with a progressive number, its origin, place, condition and value; a lost or worn-out item
+    leaves the inventory by a decree of the head teacher; the assets are checked at least every five years
+    (`docs/studies/adoption.md` §4). The library must hand the office what the office needs from it.
+  - Tasks: optional and off by default (`catalog.inventory.enabled`), so the lean model stays the default; the price
+    dropped by Q73 comes back as the copy's **value**, only with the inventory on. On the copy: **inventory number**
+    (unique when set; the form proposes the next number after the highest numeric one), **origin** (a configurable list
+    `catalog.inventory.origins`, by default purchase, gift, other) and **value** (euro, optional); the setting and the
+    list in Amministrazione (Phase 11 completeness rule); the import and export columns (`#lib/shared/import-columns.ts`,
+    optional); two reports, **copies withdrawn in a period** (inventory number, title, reason, value: the annex to the
+    discharge decree) and **copies entered in a period** (what the office registers); the inventory number in the
+    stocktaking report (9.8), for the five-yearly check; schema in the single migration (ADR-011), `docs/database.md`.
+  - Docs: the page `school-inventory.md` of the section Norme (9.63), the copy's fields in the manual, the setting in
+    the administration pages, both languages.
+  - Acceptance: unit tests (numbering, uniqueness, reports), the copy form and the two reports in Playwright on both
+    projects; `bun run ci` green.
+  - Depends on: 9.8, 9.63
+
+- [ ] **9.65 MARC export and import; the whole catalogue in the list** (owner decision, Q156; required for 0.9.0)
+  - Context: a school chooses more easily a software it can leave, and comes more easily from another: Koha,
+    SebinaNEXT, Clavis and the regional networks exchange MARC files (`docs/studies/adoption.md` §6). The parser and
+    the UNIMARC map exist (`#lib/server/marc/`).
+  - Tasks:
+    - **The whole catalogue**: the catalogue list, which loads nothing until a filter is set (Q83), gets a button
+      **Mostra tutti i libri** in place of the hint, so the whole catalogue can be seen and exported; the grid pages on
+      the server as it does for a filter.
+    - **Export**: UNIMARC and MARC21, in ISO 2709 and MARCXML, one record per title with its copies (995 in UNIMARC, 952
+      in MARC21, the fields Koha reads), from the **Esporta** menu of every list whose rows are books or copies (the
+      catalogue, the copies of a print list, the missing copies of a stocktaking campaign) [VERIFY: the lists in
+      the code]; the export engine of 1.9.
+    - **Import**: a MARC file (ISO 2709 or MARCXML, UNIMARC or MARC21, recognised from the file) in the catalogue
+      import, under the rules of §3.22: the whole file validated first, the questions asked (a genre or a class
+      missing, a code already in the catalogue), «Importa» only with zero errors, one transaction; the copies from
+      995/952 with their barcodes, recognised by the format table (Phase 12).
+  - Docs: the export formats and the import in the manual and in `docs/import/`; `open-source.md` of the section
+    Norme names MARC among the exports.
+  - Acceptance: unit tests on the writer and the reader (a round trip keeps every field the catalogue has; a file of
+    Koha and one of OPAC SBN as fixtures, synthetic); Playwright: show all, export, import a MARC file with a question;
+    `bun run ci` green.
+  - Depends on: 3.9, 7.3
+
+- [ ] **9.66 Accessible books** (owner decision, Q157; required for 0.9.0)
+  - Context: school librarians are asked for the books a pupil with dyslexia (L. 170/2010) or with a disability
+    (L. 104/1992) can read: high-readability editions, books in symbols (CAA), audiobooks, large print, tactile books
+    (`docs/studies/adoption.md` §8).
+  - Tasks: a configurable list `catalog.accessibleFormats` (by default alta leggibilità, in simboli (CAA), audiolibro,
+    caratteri grandi, tattile), one or more per record; a filter of the catalogue list, a badge on the record, a column
+    of the import and the export, a report by format; the list editable in Amministrazione; schema in the single
+    migration (ADR-011), `docs/database.md`.
+  - Docs: a line in the catalogue pages of the manual and in the settings, both languages.
+  - Acceptance: unit tests (config, filter, import column); Playwright: a record marked and found by the filter;
+    `bun run ci` green.
+  - Depends on: 5.1
+
 ### Phase 10 — Post-v1 extensions (Koha-inspired; each needs owner approval)
 
 - [ ] **10.1 Personal staff accounts from the admin UI** (`security.auth.mode = 'database'`: create/edit users, roles, reset password, must-change-password flag, per-user locale; config accounts keep working alongside) — Q20.
@@ -2095,10 +2468,10 @@ Each item: **question — why it matters — default used until decided (and rec
 - [x] **Q57 — Spine band content (resolved):** exactly as the current printout by default; anything else through the template.
 - [x] **Q58 — Kinds and materials (resolved):** two classification kinds (fiction, non-fiction) apply to every material. DVDs exist and are classified like books: they are an item type (`dvd` in `library.itemTypes`, which is generic and extensible), identified by their EAN in `biblio.ean` (§4.1, step 3.6). Loan rules for DVDs are Q68.
 - [x] **Q59 — Taxonomy editing (resolved):** JSON at first; the taxonomy editor is the first configuration screen to build (11.1); Phase 11 is required for the release (0.9.0) and starts with it.
-- [x] **Q60 — XLSX import (resolved):** CSV only, also after v1; an Excel file from the school register is converted by hand before importing. No spreadsheet reader will be added.
+- [x] **Q60 — XLSX import (resolved):** CSV only, also after v1; a spreadsheet file (XLSX) from the school register is saved as CSV by hand before importing. No spreadsheet reader will be added.
 - [x] **Q61 — Print lists (resolved):** shared, kept until deleted, "svuota dopo la stampa" as an option, no size limit.
 - [x] **Q62 — Icons (resolved):** Lucide through its official Svelte package `@lucide/svelte`; Iconify dropped.
-- [x] **Q63 — Platforms (resolved):** only `linux/amd64` and `linux/arm64` images, on Linux hosts and on Windows through Docker Desktop (Q130). No 32-bit support (Bun has no 32-bit builds, §3.21). The small runtime facade `#lib/server/runtime/` is kept as good hygiene, not as a commitment to a Node variant.
+- [x] **Q63 — Platforms (resolved):** only `linux/amd64` and `linux/arm64` images, on Linux hosts; native executables for Windows and Linux desk computers (Q149). No 32-bit support (Bun has no 32-bit builds, §3.21). The small runtime facade `#lib/server/runtime/` is kept as good hygiene, not as a commitment to a Node variant.
 - [x] **Q64 — Configuration UI scope (resolved, revised):** Phase 11 as listed, required for the release (0.9.0), complete (every setting editable from the UI) and with a single-archive export and import of the configuration.
 - [x] **Q65 — Barcode symbology (resolved):** **Code 128** for every new card and label (`barcodes.patron.symbology`, `barcodes.item.symbology`, template default); the existing Code 39 cards and labels keep working because scanning is symbology-agnostic (scanner and camera decode both).
 - [x] **Q66 — Genre letters (resolved):** the full list comes from Koha's CCODE authorized values (`docs/reference/classification/koha-ccode.csv`): A Romanzi e Racconti, B Romanzi Storici - Educazione Civica, C Stampato Maiuscolo, D Avventura, E Fantasy, F Miti e Leggende, G Favole e Fiabe, H Fantascienza e Scienza, I Gialli e Horror, L Racconti Umoristici, M Fumetti, N Libri Game, P Lingua Straniera, R Poesia e Teatro; MMM Milano is a non-fiction node. The letters are not initials. The library's pictogram sheet was an example only and is not kept in the repository (step 11.14): BiblioViva ships generated pictograms.
@@ -2118,7 +2491,7 @@ Each item: **question — why it matters — default used until decided (and rec
 - [x] **Q80 — Importing patron photos from Koha (resolved):** yes, in the Koha migration chapter. Koha keeps the pictures in the `patronimage` table (`borrowernumber`, `mimetype`, `imagefile` BLOB) [VERIFY on the school's Koha version]; the repo ships a documented `mysql` export that writes one file per patron **named after `borrowers.cardnumber`** (`<cardnumber>.jpg`, they are expected to be JPEG) into a folder, and BiblioViva imports that folder with a simple procedure (step 3.9b): match by card number, run each file through the census photo pipeline (WebP 480 × 640, EXIF dropped), report the unmatched ones. Photos and covers are always **files** under `DATA_DIR/uploads` (§3.10); the database stores only their paths — no binary blobs in SQLite.
 - [x] **Q81 — Language packs from the configuration folder (resolved):** yes. English stays built in as the base; the Italian dictionaries **stay in the repository** (`src/lib/i18n/it/`, tested with the parity rule) and are copied into `CONFIG_DIR/i18n/it/` at first run as the example to clone; any other language is a folder in `CONFIG_DIR/i18n/<code>/` validated before loading (same files, keys and placeholders as English, a `pack.json` with name and target version), rejected with a readable warning when invalid and merged over English key by key when valid (gaps logged, never a crash). The build-time "missing key fails the build" rule keeps applying to the built-in languages; for packs it becomes a runtime validation with fallback. Step 1.14.
 - [x] **Q82 — Database migrations until 1.0 (resolved):** no incremental migrations before the real 1.0, field tests included. The single migration of ADR-011 is regenerated from the schema at every change through 0.9.x as well; a database in use at the school during the field tests is carried across a schema change by exporting the data ("Esporta tutto" or the granular export of 11.12) and restoring it into a fresh database, never by a migration. Incremental migrations start at 1.0.0 (9.37: a backup before them, an upgrade test from every release).
-- [x] **Q83 — What the catalogue grid loads (resolved):** nothing until a filter is set: without filters there is no reason to see the whole catalogue. The grid loads when any filter is chosen or when the text search has at least 3 characters (a scanned barcode or ISBN still opens its record at once); the page shows a short hint in place of the grid otherwise. Implemented in 9.2.
+- [x] **Q83 — What the catalogue grid loads (resolved):** nothing until a filter is set, or until **Mostra tutti i libri** is pressed (Q156: the whole catalogue, to see and export it). The grid loads when any filter is chosen or when the text search has at least 3 characters (a scanned barcode or ISBN still opens its record at once); the page shows a short hint in place of the grid otherwise. Implemented in 9.2.
 - [x] **Q84 — Series (resolved):** the owner wants the series and the number in the series (Harry Potter, 3), reversing that part of Q73. SBN records carry the publisher's *collana* in UNIMARC 225/410, not the narrative series (no Salani Harry Potter record has one), so the series is typed by hand with suggestions from the catalogue, and a lookup fills it only from a real series (MARC 21 490/800/830); the collana is ignored. Step 9.14.
 - [x] **Q85 — Which record a lookup uses (resolved):** up to 20 records (one ISBN can have one per reprint); an ISBN lookup opens the form with the most complete record, with "Altre schede" to see and pick the others; a title/author search, where the candidates are different editions, shows the list ordered by completeness. This revises the "never pick for the operator" rule of 3.5–3.6 for ISBN lookups only. Step 9.14.
 - [x] **Q86 — Where the imports live (resolved):** the four imports (catalogue, patrons, open loans, patron photos) are gathered in Administration → Importazioni (`/admin/imports/…`), used when moving from Koha and, for the class lists, once a year by whoever runs the class upgrade; the Catalogo and Utenti pages no longer show an import button, and the default `cataloging` and `membership` roles lose `catalog.import` and `patrons.import`. Also settled with it, the layout rule of the page headers: the header holds the actions on the page (create, edit, print; one primary at most), the other pages of an area go in a row of choice buttons under the title (`AreaTabs`), as the circulation desk already did. 9.13 round 13.
@@ -2165,7 +2538,7 @@ Each item: **question — why it matters — default used until decided (and rec
 - [x] **Q127 — Cards on both sides of the sheet (resolved, owner decision; step 9.27):** the template designer stays as it is (front and back are separate faces). — *Decision: at every print the operator chooses side by side (as today, for printers without two-sided printing) or both sides with the printer's two-sided printing; the backs go at the mirrored places, moved by an offset measured with a calibration (a 150 × 100 mm sample card: cut along the outline on side 1, read the two rulers on side 2, type the two values).*
 - [x] **Q128 — Margins of the label stocks (resolved, owner decision):** the label sheets sold give the size of the labels exactly; between makers only the top margin changes (usually 3–4 mm). — *Decision: the stocks stay as they are, with the top and left margins; the bottom margin is what is left, no field for it.*
 - [x] **Q129 — A computer switched off at night (resolved, owner decision; step 9.33):** BiblioViva may run on the desk computer itself, switched off at the end of the day, so the nightly backup would never run. — *Decision: at start BiblioViva makes one backup when the last scheduled one was missed (on by default, `backup.catchUp`).*
-- [x] **Q130 — Windows (resolved, owner decision; step 9.34, ADR-038):** must BiblioViva run on a Windows PC? — *Decision: yes, in Docker Desktop with the WSL 2 back end, the same image as on Linux, with named volumes; a PowerShell setup script beside `setup.sh`, and the Windows path in the setup guide.*
+- [x] **Q130 — Windows (resolved, owner decision; superseded by Q149: a native installer, BiblioViva as a service, step 9.57, ADR-057):** must BiblioViva run on a Windows PC? — *Decision: yes, in Docker Desktop with the WSL 2 back end, the same image as on Linux, with named volumes; a PowerShell setup script beside `setup.sh`, and the Windows path in the setup guide.*
 - [x] **Q131 — Where the home page and the documentation live (resolved, owner decision; §3.23, 9.7, ADR-039):** one site or two, and on which host? — *Decision: two. The home page on `biblioviva.org`, uploaded by hand to Cloudflare Pages from `home/` (not versioned, Italian and English, one short script for the scroll effects); the documentation on `docs.biblioviva.org`, published by GitHub Pages from `site/` (versioned, sections Manuale, Amministrazione, Installazione, Aiuto, Tecnica); the public demo stays on `demo.biblioviva.org` (9.17). GitHub Pages serves one domain per repository, so the home page goes to the host the demo already uses.*
 - [x] **Q132 — Windows of the screenshots (resolved, owner decision; §3.23):** which sizes do the generated screenshots come in? — *Decision: three — computer 1280 × 800 at scale 1, tablet 834 × 1194 at scale 2 (an upright 11-inch tablet), phone 412 × 915 at scale 2; a figure with more than one has a Computer / Tablet / Telefono switch.*
 - [x] **Q133 — The way to 1.0.0 (resolved, owner decision; 9.6, 9.10, 9.36, 9.37):** how is BiblioViva published and when does it become 1.0.0? — *Decision: BiblioViva is published from a new public repository that starts from one snapshot commit (the private repository with the history becomes `biblioviva-archivio`), and the **public beta** starts with that publication (ADR-048); 0.9.0, the complete version, is its first tagged release, for the school year 2026/27, until June 2027; 1.0.0 comes for the start of the school year 2027/28 (September 2027), when the school uses it for real; from 1.0.0 every update carries the data forward with migrations (9.37).*
@@ -2188,6 +2561,44 @@ Each item: **question — why it matters — default used until decided (and rec
   line above the form explaining it.*
 - [x] **Q148 — `publiccode.yml` (resolved, owner decision; step 9.55):** describe BiblioViva for the Developers Italia
   catalogue? — *Decision: yes; the file now, the listing once the public repository exists.*
+- [x] **Q149 — An installable BiblioViva (resolved, owner decision; steps 9.56–9.58, ADR-057):** can BiblioViva be
+  installed on a desk computer like any other program, with the least use of its resources (the study
+  `docs/studies/installable.md`)? — *Decision: yes, as one executable built by `adapter-bun`'s `compile` option; no
+  Tauri (the window is the browser in app mode, Edge on Windows), no Electron, no Flatpak. On Windows an installer runs
+  BiblioViva as a service from start-up and replaces Docker Desktop (Q130). On Linux an AppImage, the advised choice
+  when the library has one computer; when several computers use BiblioViva, or it must answer while the desk computer
+  is off, a dedicated computer that stays on, with Docker or with the Debian package of Q153, stays the advised choice
+  (in a library with Windows PCs only, the installer on the PC that stays on).*
+- [x] **Q150 — Signing the Windows installer (resolved, owner decision; step 9.61):** how does the installer avoid
+  SmartScreen's warning? — *Decision: signed through the SignPath Foundation, free for open-source projects, applied
+  for once the public repository and a first release of the installer exist; until then the guide explains the
+  warning.*
+- [x] **Q151 — Backups in the native packages (resolved, owner decision; step 9.59, ADR-058):** the `offsite` service
+  (rclone) in a native package? — *Decision: no; the operator chooses the folder of the automatic backups
+  (`backup.dir`: a second disk, a USB drive, a network folder), and the Amministrazione page shows a reminder while the
+  backup is not configured.*
+- [x] **Q152 — New versions (resolved, owner decision; step 9.60):** how does an installation learn of a new release?
+  — *Decision: Informazioni says when a newer release exists and links to it and to the update guide; nothing is
+  downloaded or installed automatically.*
+- [x] **Q153 — A Debian package; macOS (resolved, owner decision; step 9.62, ADR-057):** a `.deb` beside the AppImage,
+  and a Mac package? — *Decision: a `.deb` for amd64 and arm64 with a systemd service, the way to install BiblioViva
+  on a dedicated Debian-family computer without Docker; no APT repository and no automatic update, only the notice of
+  9.60. macOS is not supported: the executable cross-compiles for it, but a program macOS accepts needs Apple's
+  signing and notarization (a yearly fee), a launchd service, its own `yaz-client` and a Mac to test on, for a platform
+  few Italian school libraries use (§3.21).*
+- [x] **Q154 — The rules in the documentation (resolved, owner decision; step 9.63, ADR-059):** a page for the head
+  teacher and the DPO (the study's QA3)? — *Decision: a section of its own, **Norme**, before Tecnica, with everything a
+  school's offices need (data protection with ready texts, accessibility, open source and `publiccode.yml`, security),
+  downloadable as a PDF; on the home page a section that sums it up, after the one on the data that stay at school.*
+- [x] **Q155 — The school inventory (resolved, owner decision; step 9.64):** the inventory number, origin and value of
+  the copies and the two lists for the office (QA4)? — *Decision: yes, before 0.9.0, optional and off by default; the
+  value is the price that Q73 dropped, kept only with the inventory on.*
+- [x] **Q156 — MARC (resolved, owner decision; step 9.65):** MARC export, and import (QA6)? — *Decision: both before
+  0.9.0; the catalogue list gets a button that shows the whole catalogue (an exception to Q83), so that all of it can
+  be exported, and the export menus of books and copies offer MARC.*
+- [x] **Q157 — Accessible books (resolved, owner decision; step 9.66):** a preset for high-readability, CAA, audiobook,
+  large-print and tactile books (QA7)? — *Decision: yes.* The conformance page `docs/accessibility.md` is kept and
+  updated at each pass of 9.3 (QA2, yes).
 
 ---
 

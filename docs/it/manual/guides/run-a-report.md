@@ -50,7 +50,7 @@ quali prestiti sono in ritardo.
 ### Salvare il report in un foglio di calcolo
 
 1. Premere **Esporta**.
-1. Scegliere «CSV (foglio di calcolo, testo)» oppure «ODS (LibreOffice / Excel)». Il browser scarica un file con le
+1. Scegliere «CSV (foglio di calcolo, testo)» oppure «ODS (LibreOffice)». Il browser scarica un file con le
    righe del report, con gli stessi parametri della pagina.
 
 ## Risultato

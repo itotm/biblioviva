@@ -101,7 +101,7 @@
 	},
 	"export": {
 		"csv": "CSV (spreadsheet, text)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "This installation holds sample data loaded on {{when}}: {{patrons}} {{patrons:plural; one:patron; other:patrons;}}, {{biblios}} {{biblios:plural; one:title; other:titles;}}, {{items}} {{items:plural; one:copy; other:copies;}}, {{loans}} {{loans:plural; one:loan; other:loans;}}. Everything is made up: no real person."

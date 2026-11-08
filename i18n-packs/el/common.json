@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (λογιστικό φύλλο, κείμενο)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Αυτή η εγκατάσταση περιέχει δεδομένα επίδειξης φορτωμένα στις {{when}}: {{patrons}} {{patrons:plural; one:αναγνώστης; other:αναγνώστες;}}, {{biblios}} {{biblios:plural; one:τίτλος; other:τίτλοι;}}, {{items}} {{items:plural; one:αντίτυπο; other:αντίτυπα;}}, {{loans}} {{loans:plural; one:δανεισμός; other:δανεισμοί;}}. Όλα είναι επινοημένα: κανένα πρόσωπο δεν είναι πραγματικό."

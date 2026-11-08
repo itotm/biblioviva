@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (táblázatkezelő, szöveg)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Ez a telepítés a {{when}} betöltött mintaadatokat tartalmazza: {{patrons}} {{patrons:plural; one:olvasó; other:olvasó;}}, {{biblios}} {{biblios:plural; one:cím; other:cím;}}, {{items}} {{items:plural; one:példány; other:példány;}}, {{loans}} {{loans:plural; one:kölcsönzés; other:kölcsönzés;}}. Minden ki van találva: nincs valódi személy."

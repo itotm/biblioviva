@@ -90,7 +90,7 @@ export function readCsv(bytes: Uint8Array): ParsedCsv & { encoding: CsvEncoding 
 	return { ...parseCsv(decoded.text), encoding: decoded.encoding };
 }
 
-/** Serialises rows with `;` and a BOM so Excel opens the file with the right accents. */
+/** Serialises rows with `;` and a BOM so spreadsheet programs open the file with the right accents. */
 export function writeCsv(rows: string[][]): string {
 	return `\ufeff${Papa.unparse(rows, { delimiter: ";", newline: "\r\n", escapeFormulae: true })}\r\n`;
 }

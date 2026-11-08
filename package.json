@@ -33,6 +33,7 @@
 		"test:e2e": "playwright test",
 		"docs:shots": "playwright test -c playwright.shots.config.ts && bun scripts/shots-webp.ts",
 		"docs:diagrams": "playwright test -c playwright.diagrams.config.ts",
+		"docs:pdf": "playwright test -c playwright.pdf.config.ts",
 		"test:browsers": "bun run scripts/test-browsers.ts",
 		"test:report": "bun run scripts/test-report.ts",
 		"ci": "bun run scripts/ci.ts",

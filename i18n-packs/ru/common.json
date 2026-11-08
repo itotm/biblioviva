@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (таблица, текст)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "В этой установке находятся примерные данные, загруженные {{when}}: {{patrons}} {{patrons:plural; one:читатель; few:читателя; many:читателей; other:читателя;}}, {{biblios}} {{biblios:plural; one:заглавие; few:заглавия; many:заглавий; other:заглавия;}}, {{items}} {{items:plural; one:экземпляр; few:экземпляра; many:экземпляров; other:экземпляра;}}, {{loans}} {{loans:plural; one:выдача; few:выдачи; many:выдач; other:выдачи;}}. Всё вымышлено: реальных людей здесь нет."

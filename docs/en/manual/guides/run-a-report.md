@@ -50,7 +50,7 @@ loans are overdue.
 ### Save the report in a spreadsheet
 
 1. Press **Export**.
-1. Choose "CSV (spreadsheet, text)" or "ODS (LibreOffice / Excel)". The browser downloads a file with the rows of the
+1. Choose "CSV (spreadsheet, text)" or "ODS (LibreOffice)". The browser downloads a file with the rows of the
    report, with the same parameters as the page.
 
 ## Result

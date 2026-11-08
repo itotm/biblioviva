@@ -83,7 +83,7 @@ Ctrl-click or Shift-click on the rows chooses several patrons. Above the list "N
 
 ## Export
 
-The **Export** menu, under the list, downloads the patrons found, with the filters in use, in **CSV (spreadsheet, text)** or **ODS (LibreOffice / Excel)**.
+The **Export** menu, under the list, downloads the patrons found, with the filters in use, in **CSV (spreadsheet, text)** or **ODS (LibreOffice)**.
 
 ## Related pages
 

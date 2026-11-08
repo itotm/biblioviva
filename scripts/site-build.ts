@@ -3,8 +3,9 @@
 // The documentation site (PLAN.md §3.23): `bun run site:build` turns the Markdown of `docs/` into plain
 // static files in `site/dist/`, in the look of `site/assets/style.css`. Each language has its folder,
 // `docs/<lang>/`, with the sections: Manuale (`manual/`), Amministrazione (`admin/`), Installazione (`setup/`:
-// pages and, for each path, one page per step) and Aiuto (`help/`); Tecnica is the English documents of
-// docs/. Markdown goes through `Bun.markdown.html`;
+// pages and, for each path, one page per step), Aiuto (`help/`) and Norme (`compliance/`, also one PDF per
+// language, printed by `bun run docs:pdf` from the print page written here); Tecnica is the English documents
+// of docs/. Markdown goes through `Bun.markdown.html`;
 // a thin layer adds figures, notes (GitHub alerts), variant blocks, the boxes of the guides and the links.
 import {
 	cpSync,
@@ -30,11 +31,15 @@ const SHOTS = join(SITE, ".shots");
 const DIAGRAMS = join(SITE, ".diagrams");
 const LUCIDE = join(ROOT, "node_modules", "@lucide", "svelte", "dist", "icons");
 const REPO = "https://github.com/itotm/biblioviva";
+const ORIGIN = "https://docs.biblioviva.org";
+const VERSION = (
+	JSON.parse(readFileSync(join(ROOT, "package.json"), "utf8")) as { version: string }
+).version;
 
 // ---------------------------------------------------------------- types and texts
 
 type Lang = "it" | "en";
-type SectionKey = "manual" | "admin" | "install" | "tech" | "help";
+type SectionKey = "manual" | "admin" | "install" | "tech" | "help" | "compliance";
 type Kind = "guide" | "screen" | "index" | "page" | "path" | "step" | "tech" | "generated";
 
 interface Page {
@@ -79,13 +84,14 @@ interface Ctx {
 }
 
 const LANGS: Lang[] = ["it", "en"];
-const SECTIONS: SectionKey[] = ["manual", "admin", "install", "help", "tech"];
+const SECTIONS: SectionKey[] = ["manual", "admin", "install", "help", "compliance", "tech"];
 const COLORS: Record<SectionKey, string> = {
 	manual: "var(--s-use)",
 	admin: "var(--s-admin)",
 	install: "var(--s-install)",
 	tech: "var(--s-tech)",
 	help: "var(--s-help)",
+	compliance: "var(--s-compliance)",
 };
 const SECTION_ICONS: Record<SectionKey, string> = {
 	manual: "book-open",
@@ -93,6 +99,7 @@ const SECTION_ICONS: Record<SectionKey, string> = {
 	install: "rocket",
 	tech: "terminal",
 	help: "life-buoy",
+	compliance: "scale",
 };
 const SECTION_PATH: Record<SectionKey, string> = {
 	manual: "manual",
@@ -100,6 +107,7 @@ const SECTION_PATH: Record<SectionKey, string> = {
 	install: "install",
 	tech: "tech",
 	help: "help",
+	compliance: "compliance",
 };
 
 // The technical documents of docs/: the same English page under both languages.
@@ -125,6 +133,7 @@ const TEXT: Record<Lang, Record<string, string>> = {
 		install: "Installazione",
 		tech: "Tecnica",
 		help: "Aiuto",
+		compliance: "Norme",
 		onThisPage: "In questa pagina",
 		sectionMenu: "Menu della sezione",
 		skip: "Vai al contenuto",
@@ -177,6 +186,16 @@ const TEXT: Record<Lang, Record<string, string>> = {
 		descTech:
 			"Per chi conosce Docker e Linux: distribuzione, configurazione, template e report.",
 		descHelp: "Problemi comuni, glossario e come chiedere aiuto.",
+		descCompliance:
+			"Per il dirigente scolastico e il DPO: protezione dei dati, accessibilità, software libero e sicurezza.",
+		pdfTitle: "La sezione in PDF",
+		pdfLead:
+			"Tutte le pagine della sezione in un unico file, da conservare con gli atti della scuola.",
+		pdfGo: "Scarica il PDF",
+		pdfName: "biblioviva-norme.pdf",
+		printLead:
+			"Che cosa chiedono le norme a una scuola che adotta BiblioViva, e che cosa fa BiblioViva per ciascuna.",
+		release: "Versione",
 	},
 	en: {
 		docs: "Documentation",
@@ -186,6 +205,7 @@ const TEXT: Record<Lang, Record<string, string>> = {
 		install: "Installation",
 		tech: "Technical",
 		help: "Help",
+		compliance: "Compliance",
 		onThisPage: "On this page",
 		sectionMenu: "Section menu",
 		skip: "Skip to content",
@@ -237,6 +257,15 @@ const TEXT: Record<Lang, Record<string, string>> = {
 		descTech:
 			"For people who know Docker and Linux: deployment, configuration, templates and reports.",
 		descHelp: "Common problems, the glossary and how to ask for help.",
+		descCompliance:
+			"For the head teacher and the DPO: data protection, accessibility, open source and security.",
+		pdfTitle: "The section as a PDF",
+		pdfLead: "Every page of the section in one file, to keep with the school's records.",
+		pdfGo: "Download the PDF",
+		pdfName: "biblioviva-compliance.pdf",
+		printLead:
+			"What the rules ask of a school that adopts BiblioViva, and what BiblioViva does about each.",
+		release: "Release",
 	},
 };
 
@@ -262,6 +291,12 @@ const FEATURED: Record<SectionKey, string[]> = {
 	],
 	tech: ["tech/deploy", "tech/config-reference", "tech/templates-authoring", "tech/security"],
 	help: ["help/problems", "help/glossary", "help/ask-for-help"],
+	compliance: [
+		"compliance/data-protection",
+		"compliance/accessibility",
+		"compliance/open-source",
+		"compliance/security",
+	],
 };
 
 // Installation: the order of the pages that are not paths.
@@ -505,6 +540,24 @@ function discover(): void {
 				addPage({
 					lang,
 					section: "help",
+					kind: f === "README.md" ? "index" : "page",
+					src,
+					url,
+					title: h1Of(src),
+				});
+			}
+		}
+		const compliance = base("compliance");
+		if (existsSync(compliance)) {
+			for (const f of listMd(compliance)) {
+				const src = join(compliance, f);
+				const url =
+					f === "README.md"
+						? `/${lang}/compliance/`
+						: `/${lang}/compliance/${f.slice(0, -3)}/`;
+				addPage({
+					lang,
+					section: "compliance",
 					kind: f === "README.md" ? "index" : "page",
 					src,
 					url,
@@ -1063,10 +1116,17 @@ function navGroups(lang: Lang, section: SectionKey): NavGroup[] {
 			"Primi passi": "clipboard-check",
 			"First steps": "clipboard-check",
 		});
-	} else if (section === "help") {
-		const all = pagesOf(lang, "help");
+	} else if (section === "help" || section === "compliance") {
+		const all = pagesOf(lang, section);
 		const index = all.find((p) => p.kind === "index");
-		const order = index ? readmeLinks(index.src).map((l) => l.file) : [];
+		// Aiuto lists its pages; Norme names them in the table of its first page, in that order.
+		const order = !index
+			? []
+			: section === "help"
+				? readmeLinks(index.src).map((l) => l.file)
+				: [...readFileSync(index.src, "utf8").matchAll(/\]\(([\w-]+\.md)\)/g)].map((m) =>
+						resolve(dirname(index.src), m[1]!),
+					);
 		const rest = all
 			.filter((p) => p.kind !== "index")
 			.sort(
@@ -1074,8 +1134,8 @@ function navGroups(lang: Lang, section: SectionKey): NavGroup[] {
 			);
 		groups = [
 			{
-				title: t(lang, "help"),
-				icon: "life-buoy",
+				title: t(lang, section),
+				icon: SECTION_ICONS[section],
 				items: [...(index ? [index] : []), ...rest].map((p) => ({
 					label: p.title,
 					url: p.url,
@@ -1407,7 +1467,89 @@ function buildRegular(page: Page): void {
 			},
 		);
 	}
+	if (page.section === "compliance" && page.kind === "index") {
+		extra += pdfBox(page.lang);
+	}
 	writePage(page.url, docsPage({ page, rendered, extra }));
+}
+
+/** The address of the section Norme as one PDF (printed by `bun run docs:pdf`, ADR-059). */
+function pdfUrl(lang: Lang): string {
+	return `/${lang}/compliance/${t(lang, "pdfName")}`;
+}
+
+function pdfBox(lang: Lang): string {
+	return `<div class="roles" style="margin-top:18px"><a class="role" href="${pdfUrl(lang)}" download><div class="ico">[[icon:file-down]]</div><b>${t(lang, "pdfTitle")}</b><span>${esc(t(lang, "pdfLead"))}</span><span class="go">${t(lang, "pdfGo")} [[icon:arrow-right]]</span></a></div>`;
+}
+
+/**
+ * The print page of the section Norme (`/<lang>/compliance/print/`), from which `bun run docs:pdf` prints
+ * the PDF: a cover, then every page of the section in the order of its menu. Links between the pages of
+ * the section become links inside the file (the ids of each page get its name in front), every other link
+ * the full address on the documentation site.
+ */
+function buildCompliancePrint(lang: Lang): void {
+	const order = navGroups(lang, "compliance")[0]?.items.map((i) => i.url) ?? [];
+	const list = order.map((u) => pageByUrl(u)).filter((p): p is Page => !!p);
+	if (list.length === 0) {
+		return;
+	}
+	const base = `/${lang}/compliance/`;
+	const chapterOf = (url: string): string | null => {
+		if (!url.startsWith(base)) {
+			return null;
+		}
+		const name = url.slice(base.length).replace(/\/$/, "");
+		return name === "" ? "readme" : name;
+	};
+	const chapters = list
+		.map((page) => {
+			const own = chapterOf(page.url)!;
+			const r = renderPage(page);
+			const body = `${r.lead ? `<p class="lead">${r.lead}</p>` : ""}${r.body}`
+				.replace(/ id="([^"]+)"/g, (_m, id: string) => ` id="${own}--${id}"`)
+				.replace(/ href="([^"]+)"/g, (_m, href: string) => {
+					if (href.startsWith("#")) {
+						return ` href="#${own}--${href.slice(1)}"`;
+					}
+					if (href.startsWith("/")) {
+						const [path, anchor] = href.split("#") as [string, string | undefined];
+						const chapter = chapterOf(path);
+						if (chapter) {
+							return ` href="#${chapter}${anchor ? `--${anchor}` : ""}"`;
+						}
+						return ` href="${ORIGIN}${href}"`;
+					}
+					return ` href="${href}"`;
+				});
+			return `<section class="chapter" id="${own}"><h1>${esc(page.title)}</h1>${body}</section>`;
+		})
+		.join("");
+	const contents = list
+		.map((p) => `<li><a href="#${chapterOf(p.url)!}">${esc(p.title)}</a></li>`)
+		.join("");
+	const title = t(lang, "compliance");
+	const html = `<!doctype html>
+<html lang="${lang}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="bv-pdf" content="${t(lang, "pdfName")}">
+<title>BiblioViva — ${esc(title)}</title>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/print.css">
+</head>
+<body class="print-doc" style="--sec:${COLORS.compliance}">
+<!--SPRITE-->
+<section class="cover"><img src="/assets/logo.webp" alt="" width="96" height="96"><p class="kicker">BiblioViva · ${t(lang, "docs")}</p><h1>${esc(title)}</h1><p class="lead">${esc(t(lang, "printLead"))}</p><ol class="contents">${contents}</ol><p class="meta">${t(lang, "release")} ${esc(VERSION)} · <a href="${ORIGIN}${base}">${ORIGIN.replace("https://", "")}${base}</a></p></section>
+<main class="content">${chapters}</main>
+</body>
+</html>
+`;
+	writePage(`${base}print/`, withIcons(html));
 }
 
 function buildStep(page: Page): void {
@@ -1598,6 +1740,7 @@ async function main(): Promise<void> {
 		}
 	}
 	for (const lang of LANGS) {
+		buildCompliancePrint(lang);
 		buildFeatures(lang);
 		buildHome(lang);
 		buildAz(lang);

@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (електронна таблиця, текст)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "Це встановлення містить демонстраційні дані, завантажені {{when}}: {{patrons}} {{patrons:plural; one:читач; few:читачі; many:читачів; other:читача;}}, {{biblios}} {{biblios:plural; one:запис; few:записи; many:записів; other:запису;}}, {{items}} {{items:plural; one:примірник; few:примірники; many:примірників; other:примірника;}}, {{loans}} {{loans:plural; one:видача; few:видачі; many:видач; other:видачі;}}. Усе вигадано: реальних людей немає."

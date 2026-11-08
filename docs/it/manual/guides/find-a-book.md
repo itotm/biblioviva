@@ -67,7 +67,7 @@ I filtri stanno sopra la tabella e si possono usare anche senza scrivere nulla n
 ### Esportare l'elenco
 
 1. Sotto la tabella premere **Esporta** e scegliere **CSV (foglio di calcolo, testo)** oppure
-   **ODS (LibreOffice / Excel)**. Il file contiene i risultati della ricerca con i filtri applicati.
+   **ODS (LibreOffice)**. Il file contiene i risultati della ricerca con i filtri applicati.
 
 ## Risultato
 

@@ -100,7 +100,7 @@
 	},
 	"export": {
 		"csv": "CSV (스프레드시트, 텍스트)",
-		"ods": "ODS (LibreOffice / Excel)"
+		"ods": "ODS (LibreOffice)"
 	},
 	"demo": {
 		"panel": "이 설치본에는 예시 데이터가 있습니다 (불러온 날짜: {{when}}): 이용자 {{patrons}} {{patrons:plural; other:명;}}, 도서 {{biblios}} {{biblios:plural; other:종;}}, 소장본 {{items}} {{items:plural; other:권;}}, 대출 {{loans}} {{loans:plural; other:건;}}. 모두 지어낸 내용이며 실제 인물은 없습니다."

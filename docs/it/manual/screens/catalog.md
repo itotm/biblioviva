@@ -151,7 +151,7 @@ il cambio e un messaggio conferma «N titoli riclassificati, N segnature riscrit
 ## Esportazione
 
 Sotto l'elenco il menu **Esporta** scarica i risultati della ricerca, con i filtri in uso, in due formati: **CSV
-(foglio di calcolo, testo)** oppure **ODS (LibreOffice / Excel)**. Il file contiene, oltre alle colonne dell'elenco, il
+(foglio di calcolo, testo)** oppure **ODS (LibreOffice)**. Il file contiene, oltre alle colonne dell'elenco, il
 numero delle copie e quello delle copie disponibili.
 
 ## Pagine correlate

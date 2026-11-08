@@ -90,7 +90,8 @@ Gli utenti sono in gran parte minorenni. I dati restano sul computer della scuol
 sceglie di scaricare o di tenere altrove. Per usare BiblioViva serve un account, e ogni account vede solo ciò che il suo
 ruolo consente. Le foto degli utenti si possono disattivare del tutto. La scuola resta titolare del trattamento dei dati
 (Regolamento UE 2016/679, GDPR): le ricerche in internet della scheda di un libro e della copertina inviano solo l'ISBN,
-il titolo o l'autore del libro, mai dati degli utenti.
+il titolo o l'autore del libro, mai dati degli utenti. Che cosa chiedono le norme alla scuola, e i testi pronti per il registro dei
+trattamenti e per l'informativa, sono nella sezione [Norme](compliance/data-protection.md).
 
 ## Accessibilità
 
@@ -98,7 +99,8 @@ BiblioViva si usa anche con la sola tastiera, con un lettore di schermo o con lo
 tenute ai requisiti della Legge 4/2004 e delle linee guida dell'AgID (WCAG 2.1 di livello AA); il progetto ha come
 obiettivo WCAG 2.2 AA, che li comprende. Il banco prestiti si usa interamente con la tastiera e il lettore di codici a
 barre, e i suoi messaggi sono letti dai lettori di schermo; la fotocamera non è mai indispensabile. Lo stato, le
-verifiche e i limiti ancora aperti sono descritti nella pagina tecnica [Accessibilità](../accessibility.md), in inglese.
+verifiche e i limiti ancora aperti sono descritti nella pagina [Accessibilità](compliance/accessibility.md) della
+sezione Norme.
 
 ## Scelte di progetto
 
