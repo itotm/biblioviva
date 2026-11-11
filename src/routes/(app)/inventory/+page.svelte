@@ -421,6 +421,14 @@
 											href={resolve(`catalog/${m.biblioId}`)}>{m.title}</a
 										>
 										<Hint as="span" mono>{m.barcode}</Hint>
+										{#if m.inventoryNumber}
+											<!-- the school inventory's number (9.64) -->
+											<Hint as="span" mono
+												>{i18n.t("catalog.inventory.inventoryNumber", {
+													number: m.inventoryNumber,
+												})}</Hint
+											>
+										{/if}
 									</li>
 								{/each}
 							</DividedList>

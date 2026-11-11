@@ -34,7 +34,9 @@ lista dei libri desiderati e il calendario con le chiusure, di cui le scadenze t
 Il catalogo registra i libri e le loro copie. Per un libro con l'ISBN la scheda viene cercata da sola; per uno senza
 ISBN si compila a mano. La copertina si cerca in rete o si carica. I libri si classificano per genere o argomento e si
 cercano per titolo, autore, ISBN o codice della copia. Il catalogo permette anche di togliere le copie smarrite o
-rovinate e di fare l'inventario, leggendo le copie con il lettore scaffale per scaffale.
+rovinate e di fare l'inventario, leggendo le copie con il lettore scaffale per scaffale. L'inventario della scuola è facoltativo:
+acceso, ogni copia ha anche il numero d'inventario, la provenienza e il valore, e due report elencano le copie entrate e
+le copie scaricate in un periodo.
 
 ## Utenti, classi e tessere
 

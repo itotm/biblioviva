@@ -41,8 +41,9 @@ nella configurazione o creato dall'amministratore. La norma non riguarda BiblioV
 
 L'articolo 5 del CAD obbliga le pubbliche amministrazioni ad accettare i pagamenti a loro favore con strumenti
 elettronici, tramite la piattaforma nazionale pagoPA. BiblioViva non gestisce pagamenti: non prevede multe, penali o
-altri importi per i ritardi o per i libri smarriti (di un ritardo si mostrano soltanto i giorni), e non registra il
-prezzo delle copie. La norma non riguarda BiblioViva.
+altri importi per i ritardi o per i libri smarriti (di un ritardo si mostrano soltanto i giorni), e il valore
+che con l'inventario della scuola si registra su ogni copia non dà luogo a nessun pagamento. La norma non riguarda
+BiblioViva.
 
 ## Diritto d'autore e copertine
 

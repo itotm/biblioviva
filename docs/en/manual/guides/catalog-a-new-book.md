@@ -50,6 +50,8 @@ is for whoever catalogues the books.
    write the letters wanted.
 1. In the **Copies** section write the **Number of copies** (from 1 to 100). With the library's free scheme the **Call
    number** is typed here. The **Acquisition date** is today's.
+1. With the school inventory on, choose the **Origin** and write the **Value (€)** of each copy. The inventory numbers
+   are assigned by BiblioViva, one after the other.
 1. If the library has covers switched on, check the **Cover** panel next to the form: BiblioViva looks for it by itself,
    and the guide [Add the cover](add-a-cover.md) explains how to replace it with a photo.
 1. Press **Save record and copies**. The confirmation "Record saved" opens, with the **Copy barcodes** (for example

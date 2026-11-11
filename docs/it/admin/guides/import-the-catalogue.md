@@ -35,10 +35,14 @@ I nomi delle colonne sono in inglese e vanno lasciati come nel modello. Le princ
 
 Sono facoltative anche `isbn`, `subtitle`, `publication_place`, `publication_year`, `physical_description`, `series`,
 `series_number`, `subjects`, `notes`, `call_number` (la segnatura, che BiblioViva calcola: vedere sotto), `item_type` (il materiale: libro, DVD…, uno per titolo), `status`,
-`not_for_loan` (`sì` per le copie da consultazione; anche `consultazione` in `item_type` rende la copia da consultazione, senza essere il materiale del titolo), `acquisition_date` (`AAAA-MM-GG` o `GG/MM/AAAA`), `item_notes` e
-altre ancora: l'elenco completo è nel riquadro **Il modello del file**. Lo stato si scrive `available`, `lost`, `damaged`,
+`not_for_loan` (`sì` per le copie da consultazione; anche `consultazione` in `item_type` rende la copia da consultazione, senza essere il materiale del titolo), `acquisition_date` (`AAAA-MM-GG` o `GG/MM/AAAA`), `item_notes`, `inventory_number` (il numero d'inventario),
+`origin` (la provenienza) e `value` (il valore in euro, `12.50` o `12,50`) e altre ancora: l'elenco completo è nel riquadro **Il modello del file**. Lo stato si scrive `available`, `lost`, `damaged`,
 `in_repair` o `withdrawn`; le parole italiane (disponibile, perso, danneggiato, in riparazione, ritirato) sono
 accettate.
+
+Le colonne `inventory_number`, `origin` e `value` riguardano l'inventario della scuola e vengono importate anche quando
+l'inventario è spento: nulla del file si perde, e i valori compaiono quando lo si accende. Un numero d'inventario è di una
+sola copia: la verifica rifiuta un numero scritto due volte nel file e un numero già dato a una copia del catalogo.
 
 Le chiavi si possono lasciare fuori. Senza `biblio_key` le copie dello stesso libro si raggruppano per ISBN; senza
 `barcode` BiblioViva genera il codice di ogni copia e alla fine si stampano le etichette. Un libro senza
@@ -114,6 +118,11 @@ né un argomento. Correggere il file oppure aggiungere il codice: vedere
 
 Compare «Il codice … è già di un'altra copia in catalogo»: lo stesso codice a barre è su due libri diversi. Correggere
 il codice nel file.
+
+### Il numero d'inventario è già usato
+
+Compare «Numero d'inventario già usato alla riga N» (il numero è scritto due volte nel file) oppure «Il numero d'inventario …
+è già di un'altra copia in catalogo». Correggere il numero nel file.
 
 ### Mancano l'autore o l'editore
 

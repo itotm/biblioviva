@@ -183,7 +183,7 @@
 		},
 		"catalog": {
 			"title": "Catalogo",
-			"description": "Valori per autore, editore e luogo sconosciuti."
+			"description": "Valori per autore, editore e luogo sconosciuti; l'inventario della scuola."
 		},
 		"barcodes": {
 			"title": "Codici a barre",
@@ -311,6 +311,16 @@
 			"unknownPlace": {
 				"label": "Luogo sconosciuto",
 				"hint": "Il valore da scrivere quando il luogo di pubblicazione non è indicato."
+			},
+			"inventory": {
+				"enabled": {
+					"label": "Inventario della scuola",
+					"hint": "Ogni copia ha il numero d'inventario, la provenienza e il valore; i report elencano le copie entrate e scaricate in un periodo."
+				},
+				"origins": {
+					"label": "Provenienze",
+					"hint": "Una per riga: le provenienze proposte nella scheda della copia (per esempio Acquisto, Dono)."
+				}
 			}
 		},
 		"barcodes": {
@@ -924,6 +934,11 @@
 		"photos": {
 			"sheet": {
 				"title": "Immagini con più foto (censimento da immagine)"
+			}
+		},
+		"catalog": {
+			"inventory": {
+				"title": "Inventario della scuola"
 			}
 		}
 	},

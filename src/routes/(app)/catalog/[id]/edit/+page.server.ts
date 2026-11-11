@@ -7,6 +7,7 @@ import { orNotFound } from "#lib/server/http/errors.js";
 import { catalogRules, classificationOptions } from "#lib/server/services/catalog.js";
 import { getBiblio } from "#lib/server/services/catalog-search.js";
 import type { BiblioFormInput } from "#lib/shared/catalog-schema.js";
+import { euroInput } from "#lib/shared/school-inventory.js";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = ({ locals, params }) => {
@@ -34,6 +35,9 @@ export const load: PageServerLoad = ({ locals, params }) => {
 					acquisitionDate: only.acquisitionDate ?? "",
 					notes: only.notes ?? "",
 					notForLoan: only.notForLoan,
+					inventoryNumber: only.inventoryNumber ?? "",
+					origin: only.origin ?? "",
+					value: euroInput(only.valueCents, getConfig().ui.locale),
 				}
 			: null,
 		initial: {

@@ -53,7 +53,7 @@ riferimenti ufficiali.
 
 | Norma | Che cosa chiede | Che cosa fa BiblioViva | Pagina |
 |---|---|---|---|
-| D.I. 129/2018, articolo 31 | Libri e materiale bibliografico fra i beni inventariati dalla scuola, con numero progressivo, origine, luogo, stato e valore | Non registra il numero d'inventario, il valore né la provenienza; registra la data di acquisizione e il ritiro della copia (il motivo nel registro delle operazioni) | [Inventario della scuola](school-inventory.md) |
+| D.I. 129/2018, articolo 31 | Libri e materiale bibliografico fra i beni inventariati dalla scuola, con numero progressivo, origine, luogo, stato e valore | Con l'inventario della scuola attivo (facoltativo) registra su ogni copia numero d'inventario, provenienza e valore, e offre gli elenchi delle copie entrate e scaricate in un periodo; registra la data di acquisizione e il ritiro della copia, con il giorno e il motivo; il registro d'inventario resta della scuola | [Inventario della scuola](school-inventory.md) |
 
 ### Software nella pubblica amministrazione
 

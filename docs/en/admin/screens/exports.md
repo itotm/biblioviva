@@ -20,7 +20,8 @@ The active teachers in the import format: they go back in from [Imports](imports
 
 ## Catalogue (CSV)
 
-One row per copy with the book's data, in the catalogue import format.
+One row per copy with the book's data, in the catalogue import format, including inventory number, origin and value
+(the value with a point, for example `12.50`).
 
 ## Open loans (CSV)
 

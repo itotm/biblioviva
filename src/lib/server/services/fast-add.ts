@@ -30,6 +30,8 @@ export function fastAddBiblio(
 		itemCallText,
 		itemReadingLevel,
 		acquisitionDate,
+		itemOrigin,
+		itemValue,
 		source,
 		sourceId,
 		...biblioInput
@@ -50,6 +52,9 @@ export function fastAddBiblio(
 				acquisitionDate,
 				notes: "",
 				notForLoan: false,
+				// the school inventory (9.64): the next numbers, the origin and value typed
+				origin: itemOrigin,
+				value: itemValue,
 			},
 			copies,
 			actor,

@@ -64,7 +64,7 @@ the students, on the teachers only.
 |---|---|
 | required | `title`, `author`, `publisher` |
 | keys | `biblio_key` (missing → copies grouped by ISBN, else one title per row), `barcode` (missing → generated, labels to print) |
-| optional | `classification` (missing → the title goes to "To classify"), `reading_level`, `isbn`, `issn`, `ean`, `subtitle`, `original_title` (only for a translation), `responsibility`, `publication_place`, `publication_year`, `physical_description`, `series`, `series_number`, `dewey`, `subjects`, `notes`, `call_number`, `item_type`, `enumeration`, `status`, `not_for_loan`, `acquisition_date`, `item_notes` |
+| optional | `classification` (missing → the title goes to "To classify"), `reading_level`, `isbn`, `issn`, `ean`, `subtitle`, `original_title` (only for a translation), `responsibility`, `publication_place`, `publication_year`, `physical_description`, `series`, `series_number`, `dewey`, `subjects`, `notes`, `call_number`, `item_type`, `enumeration`, `status`, `not_for_loan`, `acquisition_date`, `item_notes`, `inventory_number`, `origin`, `value` |
 
 | File | Content |
 |---|---|
@@ -96,6 +96,15 @@ to treat those rows as errors. Copies without a barcode get a new code in the cu
 their labels are offered for printing at the end; imported codes of the current format move the
 year's counter past them. Status words: `available`, `lost`, `damaged`, `in_repair`, `withdrawn`
 (the Italian words are read too).
+
+`inventory_number`, `origin` and `value` are the school inventory's columns (9.64,
+`catalog.inventory.enabled`), read per copy and stored even while the inventory is switched off, so
+nothing of the file is lost. `inventory_number` is unique: letters, digits and `. / -`, at most 20
+characters; a number used twice in the file is an error ("Inventory number already used on line N")
+and so is a number already given to a copy of the catalogue. `origin` is free text (the values of
+`catalog.inventory.origins` are the choices of the forms). `value` is the value in euro, `12.50` or
+`12,50`, not negative. The catalogue export writes the three columns, the value with a point
+(`12.50`), so that a file exported can be imported again.
 
 ## Open loans (Administration → Imports → Open loans, `/admin/imports/loans`, administrators, once)
 

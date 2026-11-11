@@ -53,6 +53,7 @@ The **Copies** tab, with the number of copies in brackets, lists the physical co
 The columns are:
 
 - **Barcode**: the barcode of the copy, printed on the internal label;
+- **Inventory**: it appears only with the school inventory on; see [School inventory](#school-inventory);
 - **Call number**: see [Call number](#call-number);
 - **Level**: the reading level of the copy; it appears only if the library records it on the copies and not on the title;
 - **Status**: see [Copy statuses](#copy-statuses);
@@ -76,7 +77,7 @@ Each copy has a status, shown with a colour, an icon and the text. The statuses 
 - **Lost**: the copy cannot be found. It cannot be lent or printed. If the copy turns up and is returned, it becomes available again.
 - **Damaged**: the copy is in bad condition but is still lent.
 - **In repair**: the copy is off the shelf to be repaired and is not lent.
-- **Withdrawn**: the copy has been removed from the collection. It is not lent and does not enter the lists or the labels.
+- **Withdrawn**: the copy has been removed from the collection. It is not lent and does not enter the lists or the labels. Under the status the table writes "Withdrawn on" with the date of the withdrawal and, after a dot, the reason.
 
 ### Who has the copy
 
@@ -89,6 +90,13 @@ The last column says how far the printing of the two labels of the copy has got 
 - **Labels printed**: both have been printed;
 - **One label missing**: only one has been printed;
 - **Labels to print**: none has been printed.
+
+### School inventory
+
+When the administrator switches on the **School inventory** (in **Configuration**, section **Catalogue**), the
+**Inventory** column shows the inventory number of the copy and, below it, the origin and the value (for example "Gift ·
+12.50 €"). The same three data are typed in the windows for adding and editing a copy. When the inventory is switched
+off the column and the fields disappear; the values stay and come back when it is switched on again.
 
 ### Actions on a copy
 
@@ -108,13 +116,14 @@ The **Add copies** window creates one or more new copies of the book. It opens f
 - **Call number text**, only with a scheme that has a written part for each copy ("The part of the call number written for this copy.");
 - **Level of the copy**, if the library records it on the copies;
 - **Volume / number**, **Acquisition date** and **Notes on the copy**;
+- with the school inventory on, **Inventory number**, **Origin** and **Value (€)** ("The price or the estimated value, for example 12.50."). The number is proposed by BiblioViva (the one after the last) and can be changed or emptied. With several copies the field is the number of the first one ("The number of the first copy; the others get the following numbers.") and must be digits only;
 - **Reference only (not lent)**, for the copies that must not go out.
 
 The **Add** button creates the copies and a message confirms "N copies added" with the new codes. The barcodes of the copies are assigned by BiblioViva. After the addition the labels show **Labels to print**.
 
 ## Editing a copy
 
-The window "Edit copy", titled with the code of the copy, changes **Level of the copy**, **Volume / number**, **Acquisition date**, **Notes on the copy** and **Reference only (not lent)**. The **Call number** appears in it but cannot be typed, with the note "Computed from the classification, the level and the author."; the fields **Call number** (free scheme) and **Call number text** (written part for each copy) are there only with the schemes that have them, as in [Adding copies](#adding-copies). The **Save** button confirms ("Copy updated"); **Cancel** exits.
+The window "Edit copy", titled with the code of the copy, changes **Level of the copy**, **Volume / number**, **Acquisition date**, **Notes on the copy** and **Reference only (not lent)**. The **Call number** appears in it but cannot be typed, with the note "Computed from the classification, the level and the author."; the fields **Call number** (free scheme) and **Call number text** (written part for each copy) are there only with the schemes that have them, as in [Adding copies](#adding-copies). With the school inventory on the window also changes **Inventory number**, **Origin** and **Value (€)**. The **Save** button confirms ("Copy updated"); **Cancel** exits.
 
 ## Changing the status of a copy
 
@@ -123,6 +132,8 @@ The window "Status of the copy", with the code of the copy in the title, is used
 1. In **New status** choose **Available**, **Lost**, **Damaged**, **In repair** or **Withdrawn**.
 1. In **Reason (optional, recorded)** write why, in a few words. The reason stays in the log of the copy.
 1. Press **Change status**. A message confirms "Status updated".
+
+With **Withdrawn** the copy keeps the day of the withdrawal and the reason on itself, with or without the school inventory: the table shows them under the status. If the copy goes back to another status, the day and the reason are cleared.
 
 If the copy is on loan, the change to **Withdrawn** is refused with the message "The copy is on loan: record the return first." The copy must first be returned on the [Returns](checkin.md) page. The change to **Lost**, on the other hand, is accepted and closes the loan.
 
@@ -200,7 +211,7 @@ The **More** section is closed on opening, unless it already contains data. It c
 
 ### Single copy section
 
-If the book has a single copy, at the bottom of the form appears the section titled with the code of the copy ("Copy N"): "The record has a single copy: its data is edited here and saved together with the record." The fields are those of [Editing a copy](#editing-a-copy); the material is not there, because it is changed in the **Publication** section. The call number is a field only with the schemes described in [Adding copies](#adding-copies). With two or more copies the section does not appear.
+If the book has a single copy, at the bottom of the form appears the section titled with the code of the copy ("Copy N"): "The record has a single copy: its data is edited here and saved together with the record." The fields are those of [Editing a copy](#editing-a-copy), including those of the school inventory when it is on; the material is not there, because it is changed in the **Publication** section. The call number is a field only with the schemes described in [Adding copies](#adding-copies). With two or more copies the section does not appear.
 
 ## Form messages
 
@@ -225,6 +236,10 @@ The form rejects invalid data with one of the following messages.
 ### Invalid ISSN or EAN
 
 "Invalid ISSN" and "Invalid EAN": the digits do not pass the check.
+
+### Invalid or already used inventory number
+
+"Invalid inventory number (letters, digits and . / -, at most 20)": the number has characters that are not allowed or is too long. "Inventory number already used by another copy": each number belongs to one copy only; write another number. "For several copies the inventory number must be digits only": when several copies are added together the number of the first one cannot contain letters.
 
 ### Invalid date
 

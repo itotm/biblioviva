@@ -47,6 +47,10 @@ changed.
    carries its own level.
 1. If the book is in several volumes, write the number in the **Volume / number** field.
 1. Check the **Acquisition date** and, if needed, write a note in **Notes on the copy**.
+1. With the school inventory on, check the **Inventory number**, which BiblioViva proposes (the one after the last): it
+   can be changed. With several copies the field is the number of the first one ("The number of the first copy; the
+   others get the following numbers.") and must be digits only. If the field is emptied the copies stay without a number.
+1. With the school inventory on, choose the **Origin** and write the **Value (€)**, for example 12.50.
 1. If the copy must not leave the library, for example a volume to consult on the premises, tick **Reference only (not
    lent)**.
 1. Press **Add**. A notice confirms "N copies added" with the assigned codes, and the copies appear in the **Copies**
@@ -66,6 +70,12 @@ the labels are printed.
 
 The book already has a record but it is not found by reading the ISBN: the record was written without an ISBN, or with
 a different ISBN (another edition). Search for it by title in **Catalogue** and use the second method.
+
+### The inventory number is refused
+
+"Inventory number already used by another copy" appears: each number belongs to one copy only. Write another number.
+"For several copies the inventory number must be digits only" appears: with several copies the number of the first one
+cannot contain letters.
 
 ### The number of copies is out of bounds
 

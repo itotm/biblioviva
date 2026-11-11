@@ -43,7 +43,7 @@ Technical reference of the BiblioViva database, for developers and coding agents
   hand-written, idempotent FTS5 statements (§4), and turns `foreign_keys` back on. `bun run db:migrate` does the same
   from the command line.
 - **Single migration until 1.0** (ADR-011, Q82). `drizzle/` holds exactly one migration,
-  currently `drizzle/20261106000000_initial/` (`migration.sql` + `snapshot.json`). When `schema.ts` changes, delete
+  currently `drizzle/20261111000000_initial/` (`migration.sql` + `snapshot.json`). When `schema.ts` changes, delete
   the folder, run `bun run db:generate` and rename the new folder to `<YYYYMMDD>000000_initial` (the day and a zero time); never add an incremental
   migration. Development databases are reset with `bun run dev:reset --yes` and reseeded (`bun run db:seed`,
   synthetic and deterministic data: 5 000 copies). A database in use during the 0.9.x field tests crosses a schema
@@ -158,6 +158,11 @@ erDiagram
         integer not_for_loan "0/1"
         text acquisition_date
         text notes
+        text inventory_number UK
+        text origin
+        integer value_cents
+        text withdrawn_on
+        text withdrawn_reason
         text barcode_label_printed_at
         text spine_label_printed_at
         text created_at
@@ -515,13 +520,19 @@ One row per title, aligned with the Koha fast cataloguing framework (PLAN.md §4
 | `not_for_loan` | integer | no | `0` | boolean, reference copies; set on every copy when the record takes a not-for-loan type |
 | `acquisition_date` | text | yes | | `YYYY-MM-DD` |
 | `notes` | text | yes | | |
+| `inventory_number` | text | yes | | the school inventory (9.64, `catalog.inventory.enabled`): the copy's number in the register, unique when set; new copies get the next one after the highest made of digits only |
+| `origin` | text | yes | | where the copy came from, a value of `catalog.inventory.origins` (or of an import) |
+| `value_cents` | integer | yes | | the copy's value in euro cents |
+| `withdrawn_on` | text | yes | | `YYYY-MM-DD` in `library.timezone`, set when the copy becomes `withdrawn` (cleared when it comes back): the list of the copies withdrawn in a period does not depend on the audit log, which is purged |
+| `withdrawn_reason` | text | yes | | the reason given with the withdrawal |
 | `barcode_label_printed_at` | text | yes | | NULL = barcode label still to print |
 | `spine_label_printed_at` | text | yes | | NULL = spine band still to print |
 | `created_at` | text | no | now | |
 | `updated_at` | text | no | now | |
 
-- **Unique:** `item_barcode` (`barcode`).
-- **Indexes:** `item_biblio` (`biblio_id`), `item_status` (`status`), `item_reading_level` (`reading_level`);
+- **Unique:** `item_barcode` (`barcode`), `item_inventory_number` (`inventory_number`; several NULLs allowed).
+- **Indexes:** `item_biblio` (`biblio_id`), `item_status` (`status`), `item_reading_level` (`reading_level`),
+  `item_withdrawn_on` (`withdrawn_on`);
   partial `item_spine_pending` (`biblio_id`) `WHERE spine_label_printed_at IS NULL` and
   `item_barcode_label_pending` (`biblio_id`) `WHERE barcode_label_printed_at IS NULL` (labels still to print).
 - **Checks:** `item_status_check`.

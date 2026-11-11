@@ -115,6 +115,7 @@ export function registerAllExports(): void {
 			title: await tServer(locale, "catalog.list.columns.title"),
 			author: await tServer(locale, "catalog.list.columns.author"),
 			itemType: await tServer(locale, "catalog.detail.columns.itemType"),
+			inventoryNumber: await tServer(locale, "catalog.item.inventoryNumber"),
 		};
 	});
 	registerWishlistExport(async () => {

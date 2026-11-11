@@ -53,7 +53,7 @@ references.
 
 | Rule | What it asks | What BiblioViva does | Page |
 |---|---|---|---|
-| D.I. 129/2018 (interministerial decree), article 31 | Books and bibliographic material among the assets inventoried by the school, with serial number, origin, place, condition and value | Does not record the inventory number, the value or the origin; records the date of acquisition and the withdrawal of the copy (the reason in the audit log) | [The school's inventory of assets](school-inventory.md) |
+| D.I. 129/2018 (interministerial decree), article 31 | Books and bibliographic material among the assets inventoried by the school, with serial number, origin, place, condition and value | With the school inventory on (optional) records on each copy the inventory number, origin and value, and offers the lists of the copies entered and withdrawn in a period; records the date of acquisition and the withdrawal of the copy, with its day and reason; the inventory register stays with the school | [The school's inventory of assets](school-inventory.md) |
 
 ### Software in public administration
 

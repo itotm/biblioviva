@@ -2089,7 +2089,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   page; the home page's mirror test; `bun run ci` green; the owner reads the Italian pages.
   - Depends on: 9.54, 9.55
 
-- [ ] **9.64 The school inventory of library books** (owner decision, Q155; required for 0.9.0)
+- [x] **9.64 The school inventory of library books** (owner decision, Q155; required for 0.9.0)
   - Context: D.I. 129/2018 art. 31 counts the library's books among the school's inventoried assets: each item in
     chronological order with a progressive number, its origin, place, condition and value; a lost or worn-out item
     leaves the inventory by a decree of the head teacher; the assets are checked at least every five years
@@ -2661,7 +2661,12 @@ Each item: **question — why it matters — default used until decided (and rec
     "_comment": "Q73: author and publisher are mandatory; these special values are offered as quick picks when there is no personal author or the publisher/place is unknown.",
     "specialAuthors": ["Anonimo", "AA. VV."],
     "unknownPublisher": "s.n.",
-    "unknownPlace": "s.l."
+    "unknownPlace": "s.l.",
+    "inventory": {
+      "_comment": "9.64 (Q155): the school inventory, off by default. On, a copy has its inventory number (the next one proposed), its origin from this list and its value in euro; the reports list the copies entered and withdrawn in a period.",
+      "enabled": false,
+      "origins": ["Acquisto", "Dono", "Altro"]
+    }
   },
   "barcodes": {
     "_comment": "Phase 12 (Q90-Q93): new copies YYYY-CNNNN and new cards CNNNNNN with a mod-23 check letter (2026-E0267, U012345). The codes of the old system keep working: copies YYYY-NNNN, cards of 10 digits, plain numbers up to plainMaxLength digits [VERIFY at the Koha migration].",

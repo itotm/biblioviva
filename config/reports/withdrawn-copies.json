@@ -1,0 +1,105 @@
+{
+	"id": "withdrawn-copies",
+	"title": {
+		"it": "Copie scaricate nel periodo",
+		"en": "Copies withdrawn in the period"
+	},
+	"description": {
+		"it": "Le copie ritirate dalla collezione tra le due date, con il motivo e il valore: l'elenco da allegare al decreto di discarico dell'inventario.",
+		"en": "The copies withdrawn from the collection between the two dates, with the reason and the value: the list to attach to the inventory's discharge decree."
+	},
+	"category": "books",
+	"params": [
+		{
+			"name": "from",
+			"label": {
+				"it": "Dal",
+				"en": "From"
+			},
+			"type": "date",
+			"required": true,
+			"default": "schoolYearStart"
+		},
+		{
+			"name": "to",
+			"label": {
+				"it": "Al",
+				"en": "To"
+			},
+			"type": "date",
+			"required": true,
+			"default": "today"
+		}
+	],
+	"sql": "SELECT i.inventory_number AS inventory_number, i.barcode AS barcode, b.title AS title, b.author AS author, i.withdrawn_on AS withdrawn_on, i.withdrawn_reason AS reason, i.origin AS origin, i.value_cents / 100.0 AS value FROM item i JOIN biblio b ON b.id = i.biblio_id WHERE i.status = 'withdrawn' AND i.withdrawn_on BETWEEN :from AND :to ORDER BY i.withdrawn_on, i.inventory_number, i.barcode",
+	"columns": [
+		{
+			"key": "inventory_number",
+			"label": {
+				"it": "Numero d'inventario",
+				"en": "Inventory number"
+			},
+			"type": "text"
+		},
+		{
+			"key": "barcode",
+			"label": {
+				"it": "Copia",
+				"en": "Copy"
+			},
+			"type": "text"
+		},
+		{
+			"key": "title",
+			"label": {
+				"it": "Titolo",
+				"en": "Title"
+			},
+			"type": "text"
+		},
+		{
+			"key": "author",
+			"label": {
+				"it": "Autore",
+				"en": "Author"
+			},
+			"type": "text"
+		},
+		{
+			"key": "withdrawn_on",
+			"label": {
+				"it": "Scaricata il",
+				"en": "Withdrawn on"
+			},
+			"type": "date"
+		},
+		{
+			"key": "reason",
+			"label": {
+				"it": "Motivo",
+				"en": "Reason"
+			},
+			"type": "text"
+		},
+		{
+			"key": "origin",
+			"label": {
+				"it": "Provenienza",
+				"en": "Origin"
+			},
+			"type": "text"
+		},
+		{
+			"key": "value",
+			"label": {
+				"it": "Valore (€)",
+				"en": "Value (€)"
+			},
+			"type": "number"
+		}
+	],
+	"defaultSort": {
+		"key": "withdrawn_on",
+		"dir": "asc"
+	}
+}

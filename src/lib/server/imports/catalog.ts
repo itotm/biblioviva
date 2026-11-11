@@ -104,6 +104,9 @@ const CATALOG_LIMITS = maxLengths<CatalogImportColumn>({
 	itemType: record.itemType,
 	enumeration: itemFormSchema.entries.enumeration,
 	itemNotes: itemFormSchema.entries.notes,
+	inventoryNumber: itemFormSchema.entries.inventoryNumber,
+	origin: itemFormSchema.entries.origin,
+	value: itemFormSchema.entries.value,
 });
 
 const STATUS_WORDS = wordMap<ItemStatus>({
@@ -194,6 +197,7 @@ interface Snapshot {
 	byKey: Map<string, Known>;
 	/** barcode → record id */
 	barcodes: Map<string, number>;
+	inventoryNumbers: Set<string>;
 }
 
 function loadSnapshot(db: DbOrTx): Snapshot {
@@ -225,7 +229,16 @@ function loadSnapshot(db: DbOrTx): Snapshot {
 		.all()) {
 		barcodes.set(i.barcode, i.biblioId);
 	}
-	return { byIsbn, byKey, barcodes };
+	// the inventory numbers already given (9.64): a file may not reuse one
+	const inventoryNumbers = new Set(
+		db
+			.select({ n: item.inventoryNumber })
+			.from(item)
+			.where(sql`${item.inventoryNumber} IS NOT NULL`)
+			.all()
+			.map((i) => i.n ?? ""),
+	);
+	return { byIsbn, byKey, barcodes, inventoryNumbers };
 }
 
 /**
@@ -526,6 +539,10 @@ function validate(
 	let callNumberCopies = 0;
 
 	const seenBarcodes = new Map<string, number>();
+	const seenInventory = new Map<string, number>();
+	// the inventory's columns are read whether or not it is switched on: nothing of the file is
+	// lost, and the copies show them once it is (9.64)
+	const itemRules: CatalogRules = { ...rules, inventory: { ...rules.inventory, enabled: true } };
 	const rows: CatalogImportRow[] = [];
 	const titles: PreparedTitle[] = [];
 	let newTitles = 0;
@@ -655,6 +672,24 @@ function validate(
 					reasons.push({ code: "barcodeIsCard", params: { value: m.barcode } });
 				}
 			}
+			const inventoryNumber = m.input.inventoryNumber.trim();
+			if (inventoryNumber !== "") {
+				const firstLine = seenInventory.get(inventoryNumber);
+				if (firstLine !== undefined) {
+					reasons.push({
+						code: "inventoryNumberDuplicateInFile",
+						params: { line: firstLine },
+					});
+				} else {
+					seenInventory.set(inventoryNumber, m.input.line);
+				}
+				if (snapshot.inventoryNumbers.has(inventoryNumber)) {
+					reasons.push({
+						code: "inventoryNumberTaken",
+						params: { value: inventoryNumber },
+					});
+				}
+			}
 			// the copy's text, where the scheme has one; then the file's segnatura is compared
 			const parts = record ? partsOf(record, levelOf(m)) : null;
 			const copyText = !schemeUses(scheme, "copytext")
@@ -689,8 +724,11 @@ function validate(
 						acquisitionDate: m.acquisitionDate,
 						notes: m.input.itemNotes,
 						notForLoan: m.notForLoan,
+						inventoryNumber: m.input.inventoryNumber,
+						origin: m.input.origin,
+						value: m.input.value,
 					},
-					rules,
+					itemRules,
 					kind,
 					recordType,
 				);
@@ -924,6 +962,9 @@ function writeCatalog(
 					notForLoan: copy.item.notForLoan ? 1 : 0,
 					acquisitionDate: copy.item.acquisitionDate ?? options.today,
 					notes: copy.item.notes,
+					inventoryNumber: copy.item.inventoryNumber ?? null,
+					origin: copy.item.origin ?? null,
+					valueCents: copy.item.valueCents ?? null,
 					barcodeLabelPrintedAt: printed ? now.toISOString() : null,
 					spineLabelPrintedAt:
 						!printed || record.kind === null ? null : now.toISOString(),

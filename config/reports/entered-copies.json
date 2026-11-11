@@ -1,0 +1,109 @@
+{
+	"id": "entered-copies",
+	"title": {
+		"it": "Copie entrate nel periodo",
+		"en": "Copies entered in the period"
+	},
+	"description": {
+		"it": "Le copie acquisite tra le due date, in ordine di numero d'inventario, con la provenienza e il valore: quello che la segreteria registra nell'inventario.",
+		"en": "The copies acquired between the two dates, in the order of their inventory numbers, with origin and value: what the school office records in the inventory."
+	},
+	"category": "books",
+	"params": [
+		{
+			"name": "from",
+			"label": {
+				"it": "Dal",
+				"en": "From"
+			},
+			"type": "date",
+			"required": true,
+			"default": "schoolYearStart"
+		},
+		{
+			"name": "to",
+			"label": {
+				"it": "Al",
+				"en": "To"
+			},
+			"type": "date",
+			"required": true,
+			"default": "today"
+		}
+	],
+	"sql": "SELECT i.inventory_number AS inventory_number, i.barcode AS barcode, b.title AS title, b.author AS author, b.publisher AS publisher, b.publication_year AS year, COALESCE(i.acquisition_date, date(i.created_at)) AS acquired_on, i.origin AS origin, i.value_cents / 100.0 AS value FROM item i JOIN biblio b ON b.id = i.biblio_id WHERE COALESCE(i.acquisition_date, date(i.created_at)) BETWEEN :from AND :to ORDER BY i.inventory_number IS NULL, length(i.inventory_number), i.inventory_number, acquired_on, i.barcode",
+	"columns": [
+		{
+			"key": "inventory_number",
+			"label": {
+				"it": "Numero d'inventario",
+				"en": "Inventory number"
+			},
+			"type": "text"
+		},
+		{
+			"key": "barcode",
+			"label": {
+				"it": "Copia",
+				"en": "Copy"
+			},
+			"type": "text"
+		},
+		{
+			"key": "title",
+			"label": {
+				"it": "Titolo",
+				"en": "Title"
+			},
+			"type": "text"
+		},
+		{
+			"key": "author",
+			"label": {
+				"it": "Autore",
+				"en": "Author"
+			},
+			"type": "text"
+		},
+		{
+			"key": "publisher",
+			"label": {
+				"it": "Editore",
+				"en": "Publisher"
+			},
+			"type": "text"
+		},
+		{
+			"key": "year",
+			"label": {
+				"it": "Anno",
+				"en": "Year"
+			},
+			"type": "int"
+		},
+		{
+			"key": "acquired_on",
+			"label": {
+				"it": "Acquisita il",
+				"en": "Acquired on"
+			},
+			"type": "date"
+		},
+		{
+			"key": "origin",
+			"label": {
+				"it": "Provenienza",
+				"en": "Origin"
+			},
+			"type": "text"
+		},
+		{
+			"key": "value",
+			"label": {
+				"it": "Valore (€)",
+				"en": "Value (€)"
+			},
+			"type": "number"
+		}
+	]
+}

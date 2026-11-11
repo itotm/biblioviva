@@ -57,7 +57,9 @@ withdrawn, already lost or reserved for reference do not count among the missing
 1. Open **Progress by shelf** for one bar per shelf, with the copies without a call number under "No call number".
 1. In the **Still missing (N)** panel read the copies not yet read, each with call number, title and barcode. The list
    is narrowed with **Shelf** (**All shelves**) and **Material** (**All materials**).
-1. To get the whole list, even when it is longer than the one shown ("and N more"), press "CSV" or "ODS".
+1. To get the whole list, even when it is longer than the one shown ("and N more"), press "CSV" or "ODS". With the school inventory on, each copy of the list carries "Inv." and the inventory
+   number, and the downloaded file has the **Inventory number** as its first column: it is the list for the physical
+   verification of the assets, at least every five years.
 
    <!-- figure: catalog/inventory-progress | The progress of the stocktaking and the list of the copies still to be found -->
 

@@ -1,7 +1,7 @@
 {
   "version": "7",
   "dialect": "sqlite",
-  "id": "c593357e-2233-48f6-bee8-960b0f3c6e65",
+  "id": "0134d45e-58a3-4781-b2b3-795308c3c2a2",
   "prevIds": [
     "00000000-0000-0000-0000-000000000000"
   ],
@@ -1279,6 +1279,56 @@
     {
       "table": "item",
       "name": "notes",
+      "type": "text",
+      "notNull": false,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "item",
+      "name": "inventory_number",
+      "type": "text",
+      "notNull": false,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "item",
+      "name": "origin",
+      "type": "text",
+      "notNull": false,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "item",
+      "name": "value_cents",
+      "type": "integer",
+      "notNull": false,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "item",
+      "name": "withdrawn_on",
+      "type": "text",
+      "notNull": false,
+      "autoincrement": false,
+      "default": null,
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "item",
+      "name": "withdrawn_reason",
       "type": "text",
       "notNull": false,
       "autoincrement": false,
@@ -2750,6 +2800,34 @@
         }
       ],
       "isUnique": true,
+      "where": null,
+      "origin": "manual",
+      "entityType": "indexes"
+    },
+    {
+      "table": "item",
+      "name": "item_inventory_number",
+      "columns": [
+        {
+          "value": "inventory_number",
+          "isExpression": false
+        }
+      ],
+      "isUnique": true,
+      "where": null,
+      "origin": "manual",
+      "entityType": "indexes"
+    },
+    {
+      "table": "item",
+      "name": "item_withdrawn_on",
+      "columns": [
+        {
+          "value": "withdrawn_on",
+          "isExpression": false
+        }
+      ],
+      "isUnique": false,
       "where": null,
       "origin": "manual",
       "entityType": "indexes"

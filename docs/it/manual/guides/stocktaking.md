@@ -58,7 +58,9 @@ riparazione**: non contano tra le mancanti le copie in prestito, ritirate, già 
    segnatura».
 1. Nel riquadro **Ancora da trovare (N)** leggere le copie non ancora lette, ognuna con segnatura, titolo e codice.
    L'elenco si restringe con **Scaffale** (**Tutti gli scaffali**) e **Materiale** (**Tutti i materiali**).
-1. Per avere l'elenco intero, anche quando è più lungo di quello mostrato («e altre N»), premere «CSV» oppure «ODS».
+1. Per avere l'elenco intero, anche quando è più lungo di quello mostrato («e altre N»), premere «CSV» oppure «ODS». Con l'inventario della scuola attivo ogni copia dell'elenco porta «Inv.» e il numero
+   d'inventario, e il file scaricato ha il **Numero d'inventario** come prima colonna: è l'elenco per la ricognizione
+   dei beni, almeno quinquennale.
 
    <!-- figure: catalog/inventory-progress | L'avanzamento dell'inventario e l'elenco delle copie ancora da trovare -->
 

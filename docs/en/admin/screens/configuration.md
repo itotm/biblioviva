@@ -107,6 +107,14 @@ The values to use when author, publisher or place are unknown: **Special authors
 place**. Author and publisher are always required in a record; these values are the quick choices. Use in the
 catalogue: [Catalogue a new book](../../manual/guides/catalog-a-new-book.md).
 
+The group "School inventory" has two settings. The switch **School inventory** ("Each copy has its inventory number,
+origin and value; the reports list the copies entered and withdrawn in a period.") is off by default: when on, each copy
+has three more data (inventory number, origin, value) in the windows and in the table of the copies, and the shelf
+stocktaking campaigns show the inventory number. Switching it off deletes nothing: the fields disappear, the values stay.
+The list **Origins** ("One per line: the origins offered in the copy's form (for example Purchase, Gift).") holds the
+choices for the origin; by default Purchase, Gift, Other. What the rule asks and what BiblioViva records: [The school's
+inventory of assets](../../compliance/school-inventory.md).
+
 ### Barcodes
 
 The format of the card and copy codes: **Computer keyboard**, **Camera sound** (optional, it applies only to reading with

@@ -521,6 +521,35 @@
 										data-testid="fast-acquisition-date"
 									/></Field
 								>
+								{#if options.inventory.enabled}
+									<!-- the school inventory (9.64): the copies get the next numbers -->
+									<Field label={i18n.t("catalog.item.origin")}
+										><Select
+											{...fields.itemOrigin?.as("select")}
+											data-testid="fast-origin"
+										>
+											<option value="">—</option>
+											{#each options.inventory.origins as o (o)}
+												<option value={o}>{o}</option>
+											{/each}
+										</Select></Field
+									>
+									<div>
+										<Field
+											label={i18n.t("catalog.item.value")}
+											hint={i18n.t("catalog.fastAdd.form.inventoryHint")}
+											><Input
+												{...fields.itemValue?.as("text")}
+												inputmode="decimal"
+												maxlength={16}
+												data-testid="fast-value"
+											/></Field
+										>
+										{#each fields.itemValue?.issues() ?? [] as issue (issue.message)}
+											<Hint tone="error" as="span">{issue.message}</Hint>
+										{/each}
+									</div>
+								{/if}
 							</Grid>
 						</FormSection>
 					{/snippet}

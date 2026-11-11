@@ -50,6 +50,8 @@ a chi cataloga i libri.
    oppure scrivere le lettere volute.
 1. Nella sezione **Copie** scrivere il **Numero di copie** (da 1 a 100). Con lo schema libero della biblioteca la
    **Segnatura** si scrive qui. La **Data di acquisizione** è quella di oggi.
+1. Con l'inventario della scuola attivo, scegliere la **Provenienza** e scrivere il **Valore (€)** di ogni copia. I numeri
+   d'inventario sono assegnati da BiblioViva, uno dopo l'altro.
 1. Se la biblioteca ha attiva la copertina, controllare il riquadro **Copertina** accanto al modulo: BiblioViva la
    cerca da sola, e la guida [Aggiungere la copertina](add-a-cover.md) spiega come sostituirla con una foto.
 1. Premere **Salva scheda e copie**. Si apre la conferma «Scheda salvata», con i **Codici delle copie** (per esempio

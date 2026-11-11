@@ -35,9 +35,14 @@ The column names are in English and must be left as in the template. The main on
 
 Also optional are `isbn`, `subtitle`, `publication_place`, `publication_year`, `physical_description`, `series`,
 `series_number`, `subjects`, `notes`, `call_number` (the call number, which BiblioViva computes: see below), `item_type` (the material: book, DVD…, one per title), `status`,
-`not_for_loan` (`sì` for reference copies; `consultazione` in `item_type` also makes the copy a reference copy, without being the title's material), `acquisition_date` (`YYYY-MM-DD` or `DD/MM/YYYY`), `item_notes` and others:
+`not_for_loan` (`sì` for reference copies; `consultazione` in `item_type` also makes the copy a reference copy, without being the title's material), `acquisition_date` (`YYYY-MM-DD` or `DD/MM/YYYY`), `item_notes`, `inventory_number` (the inventory number), `origin` and `value` (the value in euro, `12.50` or `12,50`) and others:
 the complete list is in the **The template of the file** box. The status is written `available`, `lost`, `damaged`,
 `in_repair` or `withdrawn`; the Italian words (disponibile, perso, danneggiato, in riparazione, ritirato) are accepted.
+
+The columns `inventory_number`, `origin` and `value` concern the school inventory and are imported even while the
+inventory is switched off: nothing of the file is lost, and the values appear when it is switched on. An inventory
+number belongs to one copy only: the check refuses a number written twice in the file and a number already given to a
+copy of the catalogue.
 
 The keys can be left out. Without `biblio_key` the copies of the same book are grouped by ISBN; without `barcode`
 BiblioViva generates the code of each copy and at the end the labels are printed. A book without `classification` is
@@ -111,6 +116,10 @@ subject. Correct the file or add the code: see [Change the classification and th
 
 "Barcode … already belongs to another copy in the catalogue" appears: the same barcode is on two different books.
 Correct the code in the file.
+
+### The inventory number is already used
+
+"Inventory number already used on line N" appears (the number is written twice in the file), or "The inventory number … already belongs to another copy in the catalogue". Correct the number in the file.
 
 ### The author or the publisher is missing
 

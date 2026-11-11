@@ -108,6 +108,15 @@ I valori da usare quando autore, editore o luogo sono sconosciuti: **Autori spec
 sconosciuto**. Autore ed editore sono sempre obbligatori in scheda; questi valori sono le scelte rapide. Uso nel
 catalogo: [Catalogare un libro nuovo](../../manual/guides/catalog-a-new-book.md).
 
+Il gruppo «Inventario della scuola» ha due impostazioni. L'interruttore **Inventario della scuola** («Ogni copia ha il
+numero d'inventario, la provenienza e il valore; i report elencano le copie entrate e scaricate in un periodo.») è spento
+in modo predefinito: acceso, ogni copia ha tre dati in più (numero d'inventario, provenienza, valore) nelle finestre e
+nella tabella delle copie, e le campagne di inventario degli scaffali mostrano il numero d'inventario. Spegnerlo non
+cancella nulla: i campi spariscono, i valori restano. L'elenco **Provenienze** («Una per riga: le provenienze proposte
+nella scheda della copia (per esempio Acquisto, Dono).») contiene le scelte per la provenienza; di norma Acquisto, Dono,
+Altro. Che cosa chiede la norma e che cosa registra BiblioViva: [Inventario dei beni della
+scuola](../../compliance/school-inventory.md).
+
 ### Codici a barre
 
 Il formato dei codici di tessere e copie: **Tastiera dei computer**, **Suono della fotocamera** (facoltativo, vale solo

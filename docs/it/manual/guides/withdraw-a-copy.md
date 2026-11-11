@@ -8,9 +8,10 @@ tolta dallo scaffale (ritirata), per una copia sola o per molte insieme. Serve a
 - Occorrente: il codice della copia, che sta sull'etichetta del libro (se il libro manca, la copia si trova dalla scheda
   del libro, vedere [Cercare un libro](find-a-book.md)).
 
-La copia non si cancella: cambia stato e resta nell'archivio per tutta la vita del catalogo; il motivo resta nel
-registro delle operazioni per i mesi impostati in **Mesi di registro delle operazioni** (24 di norma). Gli stati sono
-questi:
+La copia non si cancella: cambia stato e resta nell'archivio per tutta la vita del catalogo. Con lo stato **Ritirato** la
+copia tiene su di sé il giorno del ritiro e il motivo, che la scheda del libro mostra sotto lo stato («Scaricata il»
+con la data e il motivo); il motivo resta anche nel registro delle operazioni per i mesi impostati in **Mesi di
+registro delle operazioni** (24 di norma). Gli stati sono questi:
 
 - **Disponibile**: la copia sta sullo scaffale e si presta.
 - **Smarrito**: la copia non si trova. Non si presta.
@@ -72,7 +73,8 @@ L'eliminazione serve solo per gli errori di catalogazione e solo per una copia m
 
 La copia mostra il nuovo stato sulla scheda del libro e non si presta (tranne se **Disponibile** o **Danneggiato**).
 Lo stato **Ritirato** toglie la copia anche dal conteggio «N disponibili su M» del libro. Il motivo e chi ha cambiato lo
-stato restano nel registro.
+stato restano nel registro. L'elenco delle copie ritirate in un periodo è il report **Copie scaricate nel periodo**,
+nella categoria **Libri** dei **Report**, vedere [Report](../screens/reports.md).
 
 ## Possibili problemi
 

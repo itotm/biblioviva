@@ -43,7 +43,12 @@ afterAll(() => {
 });
 
 // reports that may legitimately be empty on the seed data
-const MAY_BE_EMPTY = new Set(["biblio-unknown-classification", "imports-history"]);
+// the seed withdraws no copy (the list of the copies withdrawn is tested in school-inventory.test.ts)
+const MAY_BE_EMPTY = new Set([
+	"biblio-unknown-classification",
+	"imports-history",
+	"withdrawn-copies",
+]);
 const decorations: Decorations = {
 	locale: "it",
 	scheme: catalogRules(config).scheme,
@@ -63,7 +68,7 @@ const decorations: Decorations = {
 describe("built-in reports", () => {
 	it("are all valid, bilingual and grouped in the four categories", () => {
 		expect(library.problems).toEqual([]);
-		expect(library.reports.length).toBe(21);
+		expect(library.reports.length).toBe(23);
 		// the reviews of 9.20 (Q116) and 9.13 round 24: the ones gone, reshaped and added
 		const ids = library.reports.map((r) => r.id);
 		for (const gone of [
@@ -86,6 +91,9 @@ describe("built-in reports", () => {
 			"classification-by-level",
 			"collection-age",
 			"loans-by-classification",
+			// the school inventory (9.64)
+			"withdrawn-copies",
+			"entered-copies",
 		]) {
 			expect(ids).toContain(added);
 		}

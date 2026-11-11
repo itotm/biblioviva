@@ -30,7 +30,9 @@ I report sono raggruppati in quattro categorie, ognuna con la sua icona: **Prest
 
 Ogni report è una scheda con il titolo e una breve descrizione. Un clic apre il report. Esempi: i prestiti in ritardo, i
 libri più prestati, la durata media dei prestiti, le copie mai prestate, il patrimonio per classificazione, l'indice di
-lettura per classe.
+lettura per classe. Due report elencano per un periodo le copie scaricate e le copie entrate, con il numero d'inventario,
+la provenienza e il valore: servono all'inventario della scuola, vedere [Inventario dei beni della
+scuola](../../compliance/school-inventory.md).
 
 ### Contrassegni
 

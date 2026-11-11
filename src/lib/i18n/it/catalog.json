@@ -143,7 +143,8 @@
 			"status": "Stato",
 			"borrower": "In prestito a",
 			"acquisition": "Acquisito il",
-			"labels": "Etichette"
+			"labels": "Etichette",
+			"inventory": "Inventario"
 		},
 		"dueOn": "scade il {{date}}",
 		"identifiers": "Identificativi",
@@ -181,7 +182,13 @@
 		"deleteDescription": "Solo per errori di catalogazione: una copia che è stata prestata non si può eliminare, va ritirata.",
 		"deleted": "Copia eliminata",
 		"hasLoans": "La copia ha prestiti registrati: va ritirata, non eliminata.",
-		"labelsTitle": "Etichette della copia {{barcode}}"
+		"labelsTitle": "Etichette della copia {{barcode}}",
+		"inventoryNumber": "Numero d'inventario",
+		"inventoryNumberSeries": "Il numero della prima copia; le altre hanno i numeri successivi.",
+		"origin": "Provenienza",
+		"value": "Valore (€)",
+		"valueHint": "Il prezzo o il valore stimato, per esempio 12,50.",
+		"withdrawnOn": "Scaricata il {{date}}"
 	},
 	"errors": {
 		"isbnInvalid": "ISBN non valido (controllare le cifre)",
@@ -199,7 +206,11 @@
 		"readingLevelOutOfRange": "Livello di lettura non previsto dalla configurazione",
 		"itemTypeUnknown": "Materiale non previsto dalla configurazione",
 		"acquisitionDateInvalid": "Data non valida (AAAA-MM-GG)",
-		"copiesOutOfRange": "Da 1 a 100 copie alla volta"
+		"copiesOutOfRange": "Da 1 a 100 copie alla volta",
+		"inventoryNumberInvalid": "Numero d'inventario non valido (lettere, cifre e . / -, al massimo 20)",
+		"inventoryNumberTaken": "Numero d'inventario già usato da un'altra copia",
+		"inventoryNumberSeries": "Per più copie il numero d'inventario deve essere fatto di sole cifre",
+		"valueInvalid": "Valore non valido (per esempio 12,50)"
 	},
 	"lookup": {
 		"providers": {
@@ -285,7 +296,8 @@
 			"readingLevel": "Livello delle copie",
 			"acquisitionDate": "Data di acquisizione",
 			"save": "Salva scheda e copie",
-			"deweySuggested": "Argomento proposto dal numero Dewey {{dewey}}."
+			"deweySuggested": "Argomento proposto dal numero Dewey {{dewey}}.",
+			"inventoryHint": "Il valore di ogni copia, per esempio 12,50; i numeri d'inventario sono i successivi."
 		},
 		"done": {
 			"heading": "Scheda salvata",
@@ -404,7 +416,10 @@
 			"status": "Stato",
 			"notForLoan": "Escluso dal prestito",
 			"acquisitionDate": "Data di acquisizione",
-			"itemNotes": "Note della copia"
+			"itemNotes": "Note della copia",
+			"inventoryNumber": "Numero d'inventario",
+			"origin": "Provenienza",
+			"value": "Valore (€)"
 		},
 		"preview": {
 			"ready": "Nessun errore: l'importazione è possibile.",
@@ -462,7 +477,9 @@
 			"callNumberQuestion": "Segnatura nel file «{{value}}», calcolata «{{computed}}»: rispondere alla domanda qui sotto",
 			"callNumberDiffers": "Segnatura nel file «{{value}}» diversa da quella calcolata «{{computed}}»",
 			"copyExists": "Copia già in catalogo: viene saltata",
-			"mergedIntoExisting": "Aggiunta al titolo già in catalogo (stessa chiave o stesso ISBN)"
+			"mergedIntoExisting": "Aggiunta al titolo già in catalogo (stessa chiave o stesso ISBN)",
+			"inventoryNumberDuplicateInFile": "Numero d'inventario già usato alla riga {{line}}",
+			"inventoryNumberTaken": "Il numero d'inventario {{value}} è già di un'altra copia in catalogo"
 		},
 		"done": {
 			"title": "Catalogo importato",
@@ -560,6 +577,15 @@
 			},
 			"itemNotes": {
 				"hint": "Note della copia."
+			},
+			"inventoryNumber": {
+				"hint": "Il numero d'inventario della copia, unico (inventario della scuola)."
+			},
+			"origin": {
+				"hint": "Da dove viene la copia: acquisto, dono, …"
+			},
+			"value": {
+				"hint": "Il valore della copia in euro, per esempio 12,50."
 			}
 		}
 	},
@@ -670,7 +696,8 @@
 			"badNotes": "Le note della campagna possono avere al massimo 500 caratteri."
 		},
 		"cameraShelf": "Scaffale {{shelf}}",
-		"cameraDone": "Fine"
+		"cameraDone": "Fine",
+		"inventoryNumber": "Inv. {{number}}"
 	},
 	"toClassify": {
 		"title": "Da classificare",

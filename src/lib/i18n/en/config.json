@@ -183,7 +183,7 @@
 		},
 		"catalog": {
 			"title": "Catalogue",
-			"description": "Values for unknown author, publisher and place."
+			"description": "Values for an unknown author, publisher and place; the school inventory."
 		},
 		"barcodes": {
 			"title": "Barcodes",
@@ -311,6 +311,16 @@
 			"unknownPlace": {
 				"label": "Unknown place",
 				"hint": "The value written when the place of publication is not given."
+			},
+			"inventory": {
+				"enabled": {
+					"label": "School inventory",
+					"hint": "Each copy has its inventory number, origin and value; the reports list the copies entered and withdrawn in a period."
+				},
+				"origins": {
+					"label": "Origins",
+					"hint": "One per line: the origins offered in the copy's form (for example Purchase, Gift)."
+				}
 			}
 		},
 		"barcodes": {
@@ -924,6 +934,11 @@
 		"photos": {
 			"sheet": {
 				"title": "Pictures with many photos (census from a picture)"
+			}
+		},
+		"catalog": {
+			"inventory": {
+				"title": "School inventory"
 			}
 		}
 	},

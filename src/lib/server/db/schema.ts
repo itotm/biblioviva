@@ -171,12 +171,28 @@ export const item = sqliteTable(
 		notForLoan: integer("not_for_loan").notNull().default(0),
 		acquisitionDate: text("acquisition_date"),
 		notes: text("notes"),
+		/**
+		 * The school inventory (step 9.64, `catalog.inventory`): the copy's number in the register,
+		 * unique when set; where it came from (a value of `catalog.inventory.origins`); its value in
+		 * euro cents. Written only with the inventory on, kept when it is switched off.
+		 */
+		inventoryNumber: text("inventory_number"),
+		origin: text("origin"),
+		valueCents: integer("value_cents"),
+		/**
+		 * The day the copy was withdrawn and why (9.64): kept on the copy, so the list of the copies
+		 * withdrawn in a period does not depend on the audit log, which is purged.
+		 */
+		withdrawnOn: text("withdrawn_on"),
+		withdrawnReason: text("withdrawn_reason"),
 		barcodeLabelPrintedAt: text("barcode_label_printed_at"),
 		spineLabelPrintedAt: text("spine_label_printed_at"),
 		...timestamps,
 	},
 	(t) => [
 		uniqueIndex("item_barcode").on(t.barcode),
+		uniqueIndex("item_inventory_number").on(t.inventoryNumber),
+		index("item_withdrawn_on").on(t.withdrawnOn),
 		index("item_biblio").on(t.biblioId),
 		index("item_status").on(t.status),
 		index("item_reading_level").on(t.readingLevel),

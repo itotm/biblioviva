@@ -373,6 +373,8 @@ export interface MissingItem {
 	shelf: string;
 	itemType: string;
 	status: string;
+	/** The school inventory's number (9.64), empty without one. */
+	inventoryNumber: string;
 }
 
 /** The expected copies not scanned yet, by call number; filtered by shelf and item type. */
@@ -394,6 +396,7 @@ export function missingItems(
 			callHead: item.callHead,
 			itemType: biblio.itemType,
 			status: item.status,
+			inventoryNumber: item.inventoryNumber,
 		})
 		.from(item)
 		.innerJoin(biblio, eq(biblio.id, item.biblioId))
@@ -405,6 +408,7 @@ export function missingItems(
 		.map(({ callHead, ...r }) => ({
 			...r,
 			callNumber: r.callNumber ?? "",
+			inventoryNumber: r.inventoryNumber ?? "",
 			shelf: callHead ?? "",
 		}))
 		.filter(

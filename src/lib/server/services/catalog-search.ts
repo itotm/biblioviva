@@ -401,6 +401,12 @@ export interface ItemRow {
 	notes: string | null;
 	barcodeLabelPrintedAt: string | null;
 	spineLabelPrintedAt: string | null;
+	/** The school inventory (9.64). */
+	inventoryNumber: string | null;
+	origin: string | null;
+	valueCents: number | null;
+	withdrawnOn: string | null;
+	withdrawnReason: string | null;
 	/** The open loan, when the copy is out. */
 	loan: { loanId: number; patronId: number; patronName: string; dueDate: string } | null;
 }
@@ -443,6 +449,11 @@ export function getBiblio(db: Db, id: number, rules: CatalogRules): BiblioDetail
 				notes: i.notes,
 				barcodeLabelPrintedAt: i.barcodeLabelPrintedAt,
 				spineLabelPrintedAt: i.spineLabelPrintedAt,
+				inventoryNumber: i.inventoryNumber,
+				origin: i.origin,
+				valueCents: i.valueCents,
+				withdrawnOn: i.withdrawnOn,
+				withdrawnReason: i.withdrawnReason,
 				loan: open
 					? {
 							loanId: open.loanId,

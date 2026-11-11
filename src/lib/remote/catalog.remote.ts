@@ -66,6 +66,7 @@ import {
 	uploadedFile,
 } from "#lib/shared/input-schemas.js";
 import { ISBN13_PATTERN } from "#lib/shared/isbn.js";
+import { nextInventoryNumber } from "#lib/server/services/school-inventory.js";
 import { CATALOG_READERS } from "#lib/shared/permissions.js";
 
 const rules = (): CatalogRules => catalogRules(getConfig());
@@ -138,6 +139,9 @@ const ITEM_FIELD_PREFIXED: Record<string, string> = {
 	acquisitionDate: "itemAcquisitionDate",
 	notes: "itemNotes",
 	notForLoan: "itemNotForLoan",
+	inventoryNumber: "itemInventoryNumber",
+	origin: "itemOrigin",
+	value: "itemValue",
 };
 
 /**
@@ -178,6 +182,9 @@ export const updateBiblio = form(biblioEditSchema, async (raw, issue) => {
 		itemAcquisitionDate,
 		itemNotes,
 		itemNotForLoan,
+		itemInventoryNumber,
+		itemOrigin,
+		itemValue,
 		...input
 	} = raw;
 	const biblioId = Number(rawId);
@@ -195,6 +202,9 @@ export const updateBiblio = form(biblioEditSchema, async (raw, issue) => {
 					acquisitionDate: itemAcquisitionDate,
 					notes: itemNotes,
 					notForLoan: itemNotForLoan,
+					inventoryNumber: itemInventoryNumber,
+					origin: itemOrigin,
+					value: itemValue,
 				},
 				user,
 				rules(),
@@ -225,6 +235,15 @@ export const deleteBiblio = command(v.object({ id }), ({ id: biblioId }) => {
 });
 
 const itemInput = v.object({ ...itemFormSchema.entries });
+
+/**
+ * The inventory number proposed for a new copy (9.64): the next one, with the inventory on (a
+ * command, so it is read again each time the dialog opens).
+ */
+export const proposeInventoryNumber = command(() => {
+	requireUser("catalog");
+	return rules().inventory.enabled ? nextInventoryNumber(getDb()) : null;
+});
 
 /** "Aggiungi copie": N items at once with sequential barcodes. */
 export const addItems = command(
@@ -275,7 +294,15 @@ export const setItemStatus = command(
 		const user = requireUser("catalog");
 		return refusing(
 			() => {
-				setItemStatusService(getDb(), itemId, status, reason || null, user);
+				setItemStatusService(
+					getDb(),
+					itemId,
+					status,
+					reason || null,
+					user,
+					new Date(),
+					getConfig().library.timezone,
+				);
 				void getBiblioDetail(biblioId).refresh();
 				return { ok: true as const };
 			},

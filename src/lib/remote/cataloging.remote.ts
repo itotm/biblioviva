@@ -102,7 +102,13 @@ export const fastAdd = form(fastAddSchema, async (input, issue) => {
 		if (e instanceof CatalogValidationError) {
 			invalid(
 				...(await formIssues("catalog", e.issues, issue, (field) =>
-					field in fastAddSchema.entries ? field : "title",
+					field in fastAddSchema.entries
+						? field
+						: field === "value"
+							? "itemValue"
+							: field === "inventoryNumber"
+								? "copies"
+								: "title",
 				)),
 			);
 		}

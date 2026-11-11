@@ -32,6 +32,13 @@
 					itemAcquisitionDate: data.item.acquisitionDate,
 					itemNotes: data.item.notes,
 					itemNotForLoan: data.item.notForLoan,
+					...(options.inventory.enabled
+						? {
+								itemInventoryNumber: data.item.inventoryNumber,
+								itemOrigin: data.item.origin,
+								itemValue: data.item.value,
+							}
+						: {}),
 				}
 			: data.initial,
 	);
@@ -106,6 +113,47 @@
 								>
 							{/each}
 						</div>
+						{#if options.inventory.enabled}
+							<div>
+								<Field label={i18n.t("catalog.item.inventoryNumber")}
+									><Input
+										mono
+										{...fields.itemInventoryNumber?.as("text")}
+										maxlength={20}
+										data-testid="edit-item-inventory-number"
+									/></Field
+								>
+								{#each fields.itemInventoryNumber?.issues() ?? [] as issue (issue.message)}
+									<Hint tone="error" as="span">{issue.message}</Hint>
+								{/each}
+							</div>
+							<Field label={i18n.t("catalog.item.origin")}
+								><Select {...fields.itemOrigin?.as("select")}>
+									<option value="">—</option>
+									{#each options.inventory.origins as o (o)}
+										<option value={o}>{o}</option>
+									{/each}
+									{#if data.item.origin && !options.inventory.origins.includes(data.item.origin)}
+										<option value={data.item.origin}>{data.item.origin}</option>
+									{/if}
+								</Select></Field
+							>
+							<div>
+								<Field
+									label={i18n.t("catalog.item.value")}
+									hint={i18n.t("catalog.item.valueHint")}
+									><Input
+										{...fields.itemValue?.as("text")}
+										inputmode="decimal"
+										maxlength={16}
+										data-testid="edit-item-value"
+									/></Field
+								>
+								{#each fields.itemValue?.issues() ?? [] as issue (issue.message)}
+									<Hint tone="error" as="span">{issue.message}</Hint>
+								{/each}
+							</div>
+						{/if}
 						<Field label={i18n.t("catalog.item.notes")} span
 							><Input {...fields.itemNotes?.as("text")} /></Field
 						>

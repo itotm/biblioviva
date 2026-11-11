@@ -116,6 +116,9 @@ export const CATALOG_EXPORT_HEADER = headersOf(CATALOG_IMPORT, [
 	"notForLoan",
 	"acquisitionDate",
 	"itemNotes",
+	"inventoryNumber",
+	"origin",
+	"value",
 ]);
 
 /**
@@ -134,7 +137,8 @@ export function* catalogCsv(sqlite: Database): Generator<string> {
 				COALESCE(b.genre_code, b.class_code) AS classification,
 				COALESCE(i.reading_level, b.reading_level) AS reading_level,
 				b.subjects, b.notes, i.barcode, i.call_number, b.item_type, i.enumeration, i.status,
-				i.not_for_loan, i.acquisition_date, i.notes AS item_notes
+				i.not_for_loan, i.acquisition_date, i.notes AS item_notes, i.inventory_number, i.origin,
+				i.value_cents
 			FROM biblio b LEFT JOIN item i ON i.biblio_id = b.id ORDER BY b.id, i.id`,
 		)
 		.iterate();
@@ -152,6 +156,10 @@ export function* catalogCsv(sqlite: Database): Generator<string> {
 				}
 				if (key === "not_for_loan") {
 					return r.barcode === null ? "" : r.not_for_loan ? "1" : "0";
+				}
+				if (key === "value") {
+					// euro with a point, as the import reads it back (9.64)
+					return r.value_cents === null ? "" : (Number(r.value_cents) / 100).toFixed(2);
 				}
 				return r[key];
 			}),

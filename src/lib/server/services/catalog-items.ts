@@ -4,7 +4,7 @@
 // changes (withdrawing a lent copy refused) and the deletion of a copy never lent. Plain functions
 // `(db, …)`.
 import { blankToNull } from "#lib/shared/text.js";
-import { eq } from "drizzle-orm";
+import { and, eq, inArray, ne } from "drizzle-orm";
 import type { Db, DbOrTx } from "#lib/server/db/client.js";
 import { biblio, item, loan, loanEvent } from "#lib/server/db/schema.js";
 import { nextItemBarcode } from "#lib/server/barcodes/items.js";
@@ -30,6 +30,8 @@ import {
 import { refreshCallNumbers } from "./call-numbers.js";
 import { schemeUses } from "#lib/shared/classification.js";
 import { openLoanOf } from "./catalog-search.js";
+import { inventorySeries, parseEuro, validInventoryNumber } from "#lib/shared/school-inventory.js";
+import { nextInventoryNumber } from "./school-inventory.js";
 
 export interface ItemData {
 	/** The copy's `{{copytext}}` of the segnatura (Q143); undefined keeps the copy's. */
@@ -39,6 +41,10 @@ export interface ItemData {
 	acquisitionDate: string | null;
 	notes: string | null;
 	notForLoan: boolean;
+	/** The school inventory (9.64): undefined keeps the copy's (always with the inventory off). */
+	inventoryNumber?: string | null;
+	origin?: string | null;
+	valueCents?: number | null;
 }
 
 export function validateItem(
@@ -67,6 +73,18 @@ export function validateItem(
 	if (acquisitionDate && !/^\d{4}-\d{2}-\d{2}$/.test(acquisitionDate)) {
 		issues.push({ field: "acquisitionDate", code: "acquisitionDateInvalid" });
 	}
+	// the school inventory (9.64): read only while it is on, else the copy keeps what it has
+	const on = rules.inventory.enabled;
+	const inventoryNumber =
+		on && input.inventoryNumber !== undefined ? blankToNull(input.inventoryNumber) : undefined;
+	if (inventoryNumber && !validInventoryNumber(inventoryNumber)) {
+		issues.push({ field: "inventoryNumber", code: "inventoryNumberInvalid" });
+	}
+	const origin = on && input.origin !== undefined ? blankToNull(input.origin) : undefined;
+	const valueCents = on && input.value !== undefined ? parseEuro(input.value) : undefined;
+	if (valueCents !== undefined && valueCents !== null && Number.isNaN(valueCents)) {
+		issues.push({ field: "value", code: "valueInvalid" });
+	}
 	if (issues.length > 0) {
 		throw new CatalogValidationError(issues);
 	}
@@ -84,7 +102,56 @@ export function validateItem(
 		notes: blankToNull(input.notes),
 		// the item type's rule (e.g. reference copies) unless the copy says otherwise
 		notForLoan: input.notForLoan || (type?.notForLoan ?? false),
+		inventoryNumber,
+		origin,
+		valueCents,
 	};
+}
+
+/** Refuses inventory numbers another copy has (`exceptId`: the copy being edited). */
+function assertInventoryNumbersFree(tx: DbOrTx, numbers: string[], exceptId?: number): void {
+	if (numbers.length === 0) {
+		return;
+	}
+	const clash = tx
+		.select({ id: item.id })
+		.from(item)
+		.where(
+			and(
+				inArray(item.inventoryNumber, numbers),
+				exceptId === undefined ? undefined : ne(item.id, exceptId),
+			),
+		)
+		.get();
+	if (clash || new Set(numbers).size !== numbers.length) {
+		throw new CatalogValidationError([
+			{ field: "inventoryNumber", code: "inventoryNumberTaken" },
+		]);
+	}
+}
+
+/**
+ * The inventory numbers of new copies (9.64): none with the inventory off; with it on, the
+ * number typed for the first copy (the next ones follow it) or the next free ones when none was
+ * sent; an empty field leaves the copies without.
+ */
+function newInventoryNumbers(
+	tx: DbOrTx,
+	rules: CatalogRules,
+	typed: string | null | undefined,
+	copies: number,
+): (string | null)[] {
+	if (!rules.inventory.enabled || typed === null) {
+		return Array.from({ length: copies }, () => null);
+	}
+	const series = inventorySeries(typed ?? nextInventoryNumber(tx), copies);
+	if (!series) {
+		throw new CatalogValidationError([
+			{ field: "inventoryNumber", code: "inventoryNumberSeries" },
+		]);
+	}
+	assertInventoryNumbersFree(tx, series);
+	return series;
 }
 
 /**
@@ -117,6 +184,7 @@ export function addItems(
 		);
 		const today = isoDateIn(now, rules.timezone);
 		const year = Number(zonedParts(now, rules.timezone).year);
+		const numbers = newInventoryNumbers(tx, rules, data.inventoryNumber, copies);
 		const ids: number[] = [];
 		const barcodes: string[] = [];
 		for (let i = 0; i < copies; i++) {
@@ -132,6 +200,9 @@ export function addItems(
 					acquisitionDate: data.acquisitionDate ?? today,
 					notes: data.notes,
 					notForLoan: data.notForLoan ? 1 : 0,
+					inventoryNumber: numbers[i] ?? null,
+					origin: data.origin ?? null,
+					valueCents: data.valueCents ?? null,
 					createdAt: now.toISOString(),
 					updatedAt: now.toISOString(),
 				})
@@ -153,6 +224,9 @@ const ITEM_TRACKED: (keyof ItemData)[] = [
 	"acquisitionDate",
 	"notes",
 	"notForLoan",
+	"inventoryNumber",
+	"origin",
+	"valueCents",
 ];
 
 export function updateItem(
@@ -175,10 +249,18 @@ export function updateItem(
 			(record?.kind ?? null) as BiblioKind | null,
 			record?.itemType ?? "",
 		);
+		const keep = <T>(sent: T | undefined, current: T): T =>
+			sent === undefined ? current : sent;
 		const data: ItemData = {
 			...validated,
-			callText: validated.callText === undefined ? existing.callText : validated.callText,
+			callText: keep(validated.callText, existing.callText),
+			inventoryNumber: keep(validated.inventoryNumber, existing.inventoryNumber),
+			origin: keep(validated.origin, existing.origin),
+			valueCents: keep(validated.valueCents, existing.valueCents),
 		};
+		if (data.inventoryNumber && data.inventoryNumber !== existing.inventoryNumber) {
+			assertInventoryNumbersFree(tx, [data.inventoryNumber], id);
+		}
 		const current: ItemData = {
 			callText: existing.callText,
 			readingLevel: existing.readingLevel,
@@ -186,6 +268,9 @@ export function updateItem(
 			acquisitionDate: existing.acquisitionDate,
 			notes: existing.notes,
 			notForLoan: existing.notForLoan === 1,
+			inventoryNumber: existing.inventoryNumber,
+			origin: existing.origin,
+			valueCents: existing.valueCents,
 		};
 		const changed = ITEM_TRACKED.filter((k) => (current[k] ?? null) !== (data[k] ?? null));
 		if (changed.length === 0) {
@@ -251,6 +336,8 @@ export function setItemStatus(
 	sentReason: string | null,
 	actor: AuditActor,
 	now = new Date(),
+	/** The library's zone: the day of a withdrawal (9.64). */
+	timezone = "UTC",
 ): void {
 	if (!ITEM_STATUS_VALUES.includes(status)) {
 		throw new CatalogValidationError([{ field: "status", code: "itemTypeUnknown" }]);
@@ -289,7 +376,21 @@ export function setItemStatus(
 				})
 				.run();
 		}
-		tx.update(item).set({ status, updatedAt: stamp }).where(eq(item.id, id)).run();
+		// a withdrawal keeps its day and reason on the copy (9.64), for the discharge list of any
+		// period; a copy back from withdrawn is in the collection again
+		const withdrawal =
+			status === "withdrawn"
+				? existing.status === "withdrawn"
+					? {}
+					: {
+							withdrawnOn: isoDateIn(now, timezone),
+							withdrawnReason: reason?.trim() || null,
+						}
+				: { withdrawnOn: null, withdrawnReason: null };
+		tx.update(item)
+			.set({ status, ...withdrawal, updatedAt: stamp })
+			.where(eq(item.id, id))
+			.run();
 		audit(
 			tx,
 			actor,

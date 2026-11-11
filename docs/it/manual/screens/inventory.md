@@ -106,7 +106,8 @@ pagina scrive «Tutte le copie attese sono state viste.»
 
 L'elenco mostra le prime copie; se sono di più, una riga dice «e altre N: per vederle tutte, esportare l'elenco». I
 pulsanti CSV e ODS scaricano l'elenco completo con i filtri scelti: è l'elenco da portare sugli scaffali per la
-ricerca finale.
+ricerca finale. Con l'inventario della scuola attivo ogni copia mostra «Inv.» e il numero d'inventario, e la prima colonna
+del file è il **Numero d'inventario**.
 
 ## Chiusura dell'inventario
 

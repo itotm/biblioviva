@@ -102,7 +102,8 @@ The **Copies** section creates the copies of the book in the same save:
 - **Number of copies**: how many new copies, normally 1;
 - **Level of the copies**, if the library records the level on the copies;
 - **Call number**, only with the library's free scheme: it is typed by hand; with the other schemes the call number is computed and is read in **Call number of the copies**, under the classification;
-- **Acquisition date**: normally today's date.
+- **Acquisition date**: normally today's date;
+- with the school inventory on, **Origin** and **Value (€)** ("The value of each copy, for example 12.50; the inventory numbers are the next ones."): the copies automatically get the inventory numbers after the last one.
 
 The **Save record and copies** button saves. **Cancel** returns to the catalogue. If a field is not valid, the message appears under the field; the messages are those described in [Form messages](book-record.md#form-messages). For "1 to 100 copies at a time" the number of copies must be corrected.
 

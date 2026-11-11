@@ -41,7 +41,18 @@ books. It is written for the head teacher and for the school's administrative ma
 ## What BiblioViva does
 
 BiblioViva is a catalogue and a loan system for the library. It is not the school's inventory register and does not
-replace it.
+replace it. With the **School inventory** switched on it does record, for each copy, the data that the school office
+enters in the register (inventory number, origin, value), and it provides the lists of the copies entered and withdrawn
+in a period. On this page «the school inventory» is the accounting inventory of art. 31; «the shelf inventory» is the
+check of the copies on the shelf, run with the campaigns of the **Stocktaking** page of the **Catalogue**.
+
+### The school inventory
+
+The school inventory is optional and is off by default. The administrator switches it on in **Administration**,
+**Configuration**, section **Catalogue**, in the group «School inventory», with the switch **School inventory**; in the
+same group the list **Origins** (one per line) holds the choices offered for the origin of a copy (by default Purchase,
+Gift, Other). Switching it off deletes nothing: the fields and the column disappear from the pages, the values stay and
+come back when it is switched on again.
 
 ### What it records for each copy
 
@@ -51,52 +62,76 @@ replace it.
 - The call number, the status (**Available**, **Lost**, **Damaged**, **In repair**, **Withdrawn**), the copy's notes
   and, for periodicals, the designation of the issue.
 - The material of the title (book, DVD, magazine…), according to the library's **Materials** list.
+- With the school inventory on, three more items: the **Inventory number**, the **Origin** and the **Value (€)**.
+- With the status **Withdrawn**, the day of the write-off and the reason.
 
-BiblioViva does not record the progressive inventory number, the origin (purchase, gift, other) or the value of a copy.
-It therefore does not produce the inventory in the form of art. 31, paragraph 2, and does not keep its numbering. The
-purchase data stay in the school's accounts.
+The **Inventory number** is unique: BiblioViva refuses a number already given to another copy. It is written with
+letters, digits and the signs `.`, `/`, `-`, up to 20 characters. When copies are added BiblioViva proposes the number
+after the highest one made of digits only (numbers with letters, kept from an earlier register, do not count; leading
+zeros are kept: after `000123` comes `000124`), and the number can be changed or emptied. The numbering is proposed, not
+imposed: that it is progressive and uninterrupted, as art. 31, paragraph 2 asks, is checked by the school. The **Value
+(€)** is the price or the estimated value, for example 12.50; the school sets it according to art. 32.
+
+BiblioViva does not keep the chronological register of changes of art. 31, paragraph 7, and does not produce the
+inventory in the form of the register. The purchase accounting documents stay in the school's accounts.
 
 ### Withdrawing a copy
 
 A copy that has been lent is not deleted: when it leaves the library it is marked **Withdrawn**, from its record or, for
 many copies together, from **Change the copies of the selection** in the **Catalogue**. The **Reason** is optional for a
 single copy and required when many copies are withdrawn together. A copy on loan cannot be withdrawn. A withdrawn copy
-is never lent and does not count among those expected on the shelf in the stocktaking. The procedure is in the guide
-[Withdraw a lost or damaged copy](../manual/guides/withdraw-a-copy.md).
+is never lent and does not count among those expected on the shelf in the stocktaking campaigns. The procedure is in the
+guide [Withdraw a lost or damaged copy](../manual/guides/withdraw-a-copy.md).
 
 Where the trace of the withdrawal stays:
 
 - The copy stays in the catalogue with the status **Withdrawn**, in the book's record. A book with all its copies
   withdrawn disappears from the searches of the **Catalogue** and comes back with **Also show withdrawn books**.
-- The change of status, with the reason, the account and the time, is a row of the **Audit log**, which the
+- The copy keeps the day of the withdrawal and the reason on itself, with or without the school inventory: the table of
+  the copies shows them under the status («Withdrawn on» followed by the date and the reason). If the copy goes back to
+  another status, the day and the reason are cleared.
+- The change of status, with the reason, the account and the time, is also a row of the **Audit log**, which the
   administrator consults, filters by **Action** and by dates, and exports. The rows older than the number of months
-  chosen (24 by default) are deleted (setting **Months of the audit log**): for a write-off decision that must stay in
-  the records, the school keeps the exported list itself.
-- BiblioViva does not produce a list of the copies withdrawn in a period, nor an attachment for the write-off decision.
+  chosen (24 by default) are deleted (setting **Months of the audit log**); the list of the copies withdrawn does not
+  depend on the log and covers any period.
 
-### Stocktaking campaigns
+### The lists for the inventory
+
+Two reports of the **Books** category of the **Reports**, with the parameters **From** and **To** (by default the start
+of the school year and today), are printed and exported as CSV or ODS like every report:
+
+- **Copies withdrawn in the period**: the copies withdrawn between the two dates, with **Inventory number**, **Copy**,
+  **Title**, **Author**, **Withdrawn on**, **Reason**, **Origin** and **Value (€)**. It is the list to attach to the
+  head teacher's write-off decision (art. 33).
+- **Copies entered in the period**: the copies acquired between the two dates, in the order of the inventory number, with
+  **Inventory number**, **Copy**, **Title**, **Author**, **Publisher**, **Year**, **Acquired on**, **Origin** and
+  **Value (€)**. It is what the school office enters in the inventory register (art. 31, paragraph 7: the increases).
+
+Two other reports: "Acquisitions by year" counts the copies that entered the library each year (it uses the acquisition
+date, and the date the copy was entered when the former is missing); "Lost, damaged or in-repair copies" lists the
+copies in those statuses and does not include the withdrawn ones.
+
+### The shelf inventory campaigns
 
 The **Stocktaking** page of the **Catalogue** runs the checking campaigns: every copy on the shelf is read with the
 barcode scanner, and at closing the copies never read are marked **Lost**. A campaign lasts as long as needed, even
 several days; it reports the copies out of place, the ones found again and the ones on loan, which do not count among
 the missing. The list of the copies still to be found can be downloaded as CSV or ODS, with the code, the call number and
-the title of each. At closing the page shows the summary: copies seen out of those expected, marked lost, found again, on
-loan, out of place. The procedure is in the guide [Do the stocktaking](../manual/guides/stocktaking.md).
+the title of each; with the school inventory on, the list shows «Inv.» and the number next to each copy and the export
+has the **Inventory number** as its first column. At closing the page shows the summary: copies seen out of those
+expected, marked lost, found again, on loan, out of place. The procedure is in the guide
+[Do the stocktaking](../manual/guides/stocktaking.md).
 
-The campaign ascertains which copies of the catalogue are on the shelf. It does not replace the physical verification of
-art. 31, paragraph 9, which concerns the school's accounting inventory, and it is not a write-off decision: marking a
-copy **Lost** does not remove it from the inventory.
+The campaign ascertains which copies of the catalogue are on the shelf: the list of the missing copies, with the
+inventory number, serves the physical verification, at least every five years, of art. 31, paragraph 9. The campaign is
+not, however, a write-off decision: marking a copy **Lost** does not remove it from the school inventory.
 
 ### Exports
 
 - **Catalogue (CSV)**, from **Exports** in Administration: one row per copy, withdrawn ones included, with barcode, call
-  number, title, author, publisher, year, ISBN, status, acquisition date and the copy's notes. It is the list to compare
-  with the school's inventory register.
+  number, title, author, publisher, year, ISBN, status, acquisition date, the copy's notes, inventory number, origin and
+  value. It is the list to compare with the school's inventory register.
 - The **Export** menu of the **Catalogue**: the search results, with the filters in use, as CSV or ODS.
-- The report "Acquisitions by year" (in the **Books** category of the **Reports**) counts the copies that entered the
-  library each year; it uses the acquisition date, and the date the copy was entered when the former is missing.
-- The report "Lost, damaged or in-repair copies" lists the copies in those statuses; it does not include the withdrawn
-  ones.
 
 ### Class libraries and periodicals
 
@@ -108,18 +143,21 @@ set by its regulation (art. 31, paragraph 6; art. 29, paragraph 3).
 
 ## What the school does
 
-- Keep the inventory register in its own accounting system, with the progressive number, the origin and the value of
-  each asset. BiblioViva does not record them.
+- Keep the inventory register in its own accounting system: the register of art. 31 belongs to the school and the DSGA,
+  even if BiblioViva records number, origin and value on each copy. Decide whether to switch on the school inventory in
+  BiblioViva and which **Origins** to offer.
 - Decide in the regulation for the management of assets how the books of the school library are inventoried and how the
   class libraries and the periodicals are kept.
+- Check that the numbering is progressive and uninterrupted, and set the value of each copy according to art. 32.
+- At the end of a period, enter in the register the copies of the report **Copies entered in the period**.
 - For the physical verification, at least every five years, run a campaign in **Stocktaking** and compare the list of the
-  copies, from the **Catalogue (CSV)**, with the inventory register. The school does the comparison: BiblioViva does not
-  run it.
+  missing copies, with the inventory numbers, and that of the **Catalogue (CSV)** with the inventory register. The school
+  does the comparison: BiblioViva does not run it.
 - For the write-off, adopt the head teacher's decision with the attachments required (report to the authorities, minutes
   of the committee, DSGA's report) and, once the decision is adopted, mark the copies **Withdrawn** in BiblioViva with
-  the **Reason** (for example the reference of the decision).
-- Keep the lists needed for the records: the export of the **Audit log** and that of the catalogue, before the older
-  rows of the log are deleted.
+  the **Reason** (for example the reference of the decision). Attach to the decision the report **Copies withdrawn in
+  the period**.
+- Keep the lists needed for the records, exported from the reports and from the catalogue.
 
 ## References
 
@@ -135,5 +173,7 @@ set by its regulation (art. 31, paragraph 6; art. 29, paragraph 3).
 - [Withdraw a lost or damaged copy](../manual/guides/withdraw-a-copy.md)
 - [Do the stocktaking](../manual/guides/stocktaking.md)
 - [Stocktaking](../manual/screens/inventory.md)
+- [Reports](../manual/screens/reports.md)
+- [Configuration](../admin/screens/configuration.md)
 - [Exports](../admin/screens/exports.md)
 - [Audit log](../admin/screens/audit.md)

@@ -33,7 +33,9 @@ wished-for books and the calendar with the closures, which the due dates take in
 The catalogue records the books and their copies. For a book with an ISBN the record is looked up automatically; for one
 without an ISBN it is filled in by hand. The cover is looked up online or uploaded. Books are classified by genre or
 subject and searched by title, author, ISBN or copy code. The catalogue also withdraws lost or damaged copies and does
-the stocktaking, reading the copies with the scanner shelf by shelf.
+the stocktaking, reading the copies with the scanner shelf by shelf. The school inventory is optional: when switched on,
+each copy also has an inventory number, an origin and a value, and two reports list the copies entered and the copies
+withdrawn in a period.
 
 ## Patrons, classes and cards
 

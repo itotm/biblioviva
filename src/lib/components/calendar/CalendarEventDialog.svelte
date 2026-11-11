@@ -3,6 +3,7 @@
      an optional note; "Elimina" when an existing date is edited. Every account reads the dates,
      so the dialog says not to write pupils' personal data. -->
 <script lang="ts">
+	import { untrack } from "svelte";
 	import ConfirmDialog from "#lib/components/ConfirmDialog.svelte";
 	import { useI18n } from "#lib/i18n/context.js";
 	import { removeCalendarEvent, saveCalendarEvent } from "#lib/remote/calendar.remote.js";
@@ -43,15 +44,20 @@
 	let saving = $state(false);
 	let confirmDelete = $state(false);
 
-	// every opening starts from the date edited, or from an empty one on the chosen day
+	// every opening starts from the date edited, or from an empty one on the chosen day; only the
+	// opening does: the page's dates reloaded after a save must not wipe what is being typed
+	let wasOpen = false;
 	$effect(() => {
-		if (open) {
-			title = edited?.title ?? "";
-			notes = edited?.notes ?? "";
-			startsOn = edited?.startsOn ?? day;
-			endsOn = edited?.endsOn ?? "";
-			problem = null;
+		if (open && !wasOpen) {
+			untrack(() => {
+				title = edited?.title ?? "";
+				notes = edited?.notes ?? "";
+				startsOn = edited?.startsOn ?? day;
+				endsOn = edited?.endsOn ?? "";
+				problem = null;
+			});
 		}
+		wasOpen = open;
 	});
 
 	async function save(e: SubmitEvent): Promise<void> {

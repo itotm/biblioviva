@@ -75,6 +75,7 @@ il libro non ha copie, la pagina scrive «Nessuna copia: per il prestito occorre
 Le colonne sono:
 
 - **Codice**: il codice a barre della copia, stampato sull'etichetta interna;
+- **Inventario**: compare solo con l'inventario della scuola attivo; vedere [Inventario della scuola](#inventario-della-scuola);
 - **Segnatura**: vedere [Segnatura](#segnatura);
 - **Livello**: il livello di lettura della copia; compare solo se la biblioteca lo registra sulle copie e non sul
   titolo;
@@ -110,7 +111,8 @@ Ogni copia ha uno stato, mostrato con un colore, un'icona e il testo. Gli stati 
   disponibile.
 - **Danneggiato**: la copia è rovinata ma si presta ancora.
 - **In riparazione**: la copia è fuori scaffale per essere riparata e non si presta.
-- **Ritirato**: la copia è stata tolta dalla collezione. Non si presta e non entra nelle liste né nelle etichette.
+- **Ritirato**: la copia è stata tolta dalla collezione. Non si presta e non entra nelle liste né nelle etichette. Sotto
+  lo stato la tabella scrive «Scaricata il» con la data del ritiro e, dopo un puntino, il motivo.
 
 ### Chi ha la copia
 
@@ -127,6 +129,13 @@ il codice a barre):
 - **Etichette stampate**: entrambe sono state stampate;
 - **Manca una etichetta**: ne è stata stampata una sola;
 - **Etichette da stampare**: nessuna è stata stampata.
+
+### Inventario della scuola
+
+Quando l'amministratore accende l'**Inventario della scuola** (in **Configurazione**, sezione **Catalogo**), la colonna
+**Inventario** mostra il numero d'inventario della copia e, sotto, la provenienza e il valore (per esempio «Dono · 12,50
+€»). Gli stessi tre dati si scrivono nelle finestre di aggiunta e di modifica della copia. Spegnendo l'inventario la
+colonna e i campi spariscono; i valori restano e ricompaiono riaccendendolo.
 
 ### Azioni su una copia
 
@@ -150,6 +159,10 @@ scheda. La procedura è in [Aggiungere una copia a un libro già in catalogo](..
   scritta per questa copia.»);
 - **Livello della copia**, se la biblioteca lo registra sulle copie;
 - **Volume / numero**, **Data di acquisizione** e **Note sulla copia**;
+- con l'inventario della scuola attivo, **Numero d'inventario**, **Provenienza** e **Valore (€)** («Il prezzo o il valore
+  stimato, per esempio 12,50.»). Il numero è proposto da BiblioViva (il successivo all'ultimo) e si può cambiare o
+  svuotare. Con più copie il campo vale per la prima («Il numero della prima copia; le altre hanno i numeri
+  successivi.») e deve essere fatto di sole cifre;
 - **Solo consultazione (non si presta)**, per le copie che non devono uscire.
 
 Il pulsante **Aggiungi** crea le copie e un messaggio conferma «N copie aggiunte» con i nuovi codici. I codici a barre
@@ -161,7 +174,8 @@ La finestra «Modifica copia», intitolata con il codice della copia, cambia **L
 **Volume / numero**, **Data di acquisizione**, **Note sulla copia** e **Solo consultazione (non si presta)**. La
 **Segnatura** vi compare senza poterla scrivere, con la nota «Calcolata da classificazione, livello e autore.»; i campi
 **Segnatura** (schema libero) e **Testo della segnatura** (parte scritta per ogni copia) ci sono solo con gli schemi che
-li prevedono, come in [Aggiunta di copie](#aggiunta-di-copie). Il pulsante **Salva** conferma («Copia aggiornata»);
+li prevedono, come in [Aggiunta di copie](#aggiunta-di-copie). Con l'inventario della scuola attivo la finestra cambia
+anche **Numero d'inventario**, **Provenienza** e **Valore (€)**. Il pulsante **Salva** conferma («Copia aggiornata»);
 **Annulla** esce.
 
 ## Cambio di stato di una copia
@@ -173,6 +187,9 @@ danneggiata, in riparazione o ritirata, o per rimetterla disponibile. La procedu
 1. In **Nuovo stato** scegliere **Disponibile**, **Smarrito**, **Danneggiato**, **In riparazione** o **Ritirato**.
 1. In **Motivo (facoltativo, registrato)** scrivere perché, in poche parole. Il motivo resta nel registro della copia.
 1. Premere **Cambia stato**. Un messaggio conferma «Stato aggiornato».
+
+Con **Ritirato** la copia tiene su di sé il giorno del ritiro e il motivo, con o senza inventario della scuola: la tabella
+li mostra sotto lo stato. Se la copia torna a un altro stato, il giorno e il motivo si cancellano.
 
 Se la copia è in prestito, il passaggio a **Ritirato** è rifiutato con il messaggio «La copia è in prestito: prima
 registra la restituzione.» Occorre prima restituirla nella pagina [Restituzioni](checkin.md). Il passaggio a
@@ -297,7 +314,7 @@ La sezione **Altri dati** è chiusa all'apertura, a meno che non contenga già d
 
 Se il libro ha una sola copia, in fondo al modulo compare la sezione intitolata con il codice della copia («Copia N»):
 «La scheda ha una sola copia: i suoi dati si modificano qui e si salvano insieme alla scheda.» I campi sono quelli di
-[Modifica di una copia](#modifica-di-una-copia); il materiale non c'è, perché si cambia nella sezione
+[Modifica di una copia](#modifica-di-una-copia), compresi quelli dell'inventario della scuola quando è attivo; il materiale non c'è, perché si cambia nella sezione
 **Pubblicazione**. La segnatura è un campo solo con gli schemi descritti in [Aggiunta di copie](#aggiunta-di-copie). Con due o più copie la sezione non compare.
 
 ## Messaggi del modulo
@@ -328,6 +345,13 @@ scelta non è coerente con il tipo.
 ### ISSN o EAN non valido
 
 «ISSN non valido» e «EAN non valido»: le cifre non superano il controllo.
+
+### Numero d'inventario non valido o già usato
+
+«Numero d'inventario non valido (lettere, cifre e . / -, al massimo 20)»: il numero ha caratteri non ammessi o è troppo
+lungo. «Numero d'inventario già usato da un'altra copia»: ogni numero è di una sola copia; occorre scrivere un altro
+numero. «Per più copie il numero d'inventario deve essere fatto di sole cifre»: aggiungendo più copie insieme il numero
+della prima non può contenere lettere.
 
 ### Data non valida
 

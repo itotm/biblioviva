@@ -33,7 +33,8 @@ whoever catalogues the books.
 ### Change the data of a copy
 
 A copy has data of its own, distinct from those of the book: **Level of the copy**, **Volume / number**,
-**Acquisition date**, **Notes on the copy** and **Reference only (not lent)**. The **Call number** of the copy is shown
+**Acquisition date**, **Notes on the copy** and **Reference only (not lent)**; with the school inventory on, also
+**Inventory number**, **Origin** and **Value (€)**. The **Call number** of the copy is shown
 but not typed, because BiblioViva computes it; a field to type appears only with the free scheme (**Call number**) or
 with a scheme that has a written part for each copy (**Call number text**).
 

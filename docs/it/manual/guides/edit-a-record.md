@@ -32,7 +32,8 @@ cambiare i dati di una singola copia e come eliminare una scheda inserita per er
 ### Cambiare i dati di una copia
 
 Una copia ha dati propri, distinti da quelli del libro: **Livello della copia**, **Volume / numero**,
-**Data di acquisizione**, **Note sulla copia** e **Solo consultazione (non si presta)**. La **Segnatura** della copia si
+**Data di acquisizione**, **Note sulla copia** e **Solo consultazione (non si presta)**; con l'inventario della scuola
+attivo anche **Numero d'inventario**, **Provenienza** e **Valore (€)**. La **Segnatura** della copia si
 vede ma non si scrive, perché la calcola BiblioViva; un campo da scrivere compare solo con lo schema libero
 (**Segnatura**) o con uno schema che prevede una parte scritta per ogni copia (**Testo della segnatura**).
 

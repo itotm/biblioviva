@@ -59,6 +59,8 @@ To add a stock or a template, copy a file or a folder and edit it. The defaults 
 | `catalog.specialAuthors` | array, e.g. `["Anonimo","AA. VV."]` |  |
 | `catalog.unknownPublisher` | `"s.n."` |  |
 | `catalog.unknownPlace` | `"s.l."` |  |
+| `catalog.inventory.enabled` | `false` | The school inventory (D.I. 129/2018, art. 31), off by default. On, each copy has an inventory number (unique; letters, digits and `. / -`, at most 20 characters; the next number is proposed), an origin and a value in euro; the reports "Copies entered in the period" and "Copies withdrawn in the period" list the copies of a period, and the stocktaking's missing list shows the numbers. Off, nothing is deleted: the fields and the column disappear, the values stay. |
+| `catalog.inventory.origins` | `["Acquisto","Dono","Altro"]` | The origins offered in the copy's form, one per entry. |
 | **`barcodes`** | section | Phase 12 (Q90-Q93): new copies YYYY-CNNNN and new cards CNNNNNN with a mod-23 check letter (2026-E0267, U012345). The codes of the old system keep working: copies YYYY-NNNN, cards of 10 digits, plain numbers up to plainMaxLength digits [VERIFY at the Koha migration]. |
 | `barcodes.keyboardLayout` | `"it"` |  |
 | `barcodes.cameraSound` | `"confirm"` |  |

@@ -148,7 +148,9 @@ La sezione **Copie** crea le copie del libro nello stesso salvataggio:
 - **Livello delle copie**, se la biblioteca registra il livello sulle copie;
 - **Segnatura**, solo con lo schema libero della biblioteca: si scrive a mano; negli altri schemi la segnatura è
   calcolata e si legge in **Segnatura delle copie**, sotto la classificazione;
-- **Data di acquisizione**: di norma la data di oggi.
+- **Data di acquisizione**: di norma la data di oggi;
+- con l'inventario della scuola attivo, **Provenienza** e **Valore (€)** («Il valore di ogni copia, per esempio 12,50; i
+  numeri d'inventario sono i successivi.»): le copie ricevono da sole i numeri d'inventario successivi all'ultimo.
 
 Il pulsante **Salva scheda e copie** salva. **Annulla** torna al catalogo. Se un campo non è valido, il messaggio
 compare sotto il campo; i messaggi sono quelli descritti in [Messaggi del modulo](book-record.md#messaggi-del-modulo). Per

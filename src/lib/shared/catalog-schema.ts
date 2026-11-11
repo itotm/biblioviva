@@ -74,6 +74,9 @@ export const biblioEditSchema = v.object({
 	itemAcquisitionDate: optionalText(10),
 	itemNotes: optionalText(500),
 	itemNotForLoan: v.optional(v.boolean(), false),
+	itemInventoryNumber: v.optional(v.pipe(v.string(), v.trim(), v.maxLength(20))),
+	itemOrigin: v.optional(v.pipe(v.string(), v.trim(), v.maxLength(60))),
+	itemValue: v.optional(v.pipe(v.string(), v.trim(), v.maxLength(16))),
 });
 
 export const ITEM_STATUS_VALUES = [
@@ -95,6 +98,14 @@ export const itemFormSchema = v.object({
 	acquisitionDate: optionalText(10),
 	notes: optionalText(500),
 	notForLoan: v.optional(v.boolean(), false),
+	/**
+	 * The school inventory (step 9.64), read only with `catalog.inventory.enabled`; left out keeps
+	 * the copy's. A new copy left without a number gets the next one; an empty one stays without.
+	 */
+	inventoryNumber: v.optional(v.pipe(v.string(), v.trim(), v.maxLength(20))),
+	origin: v.optional(v.pipe(v.string(), v.trim(), v.maxLength(60))),
+	/** In euro as typed (`12,50`). */
+	value: v.optional(v.pipe(v.string(), v.trim(), v.maxLength(16))),
 });
 export type ItemFormInput = v.InferOutput<typeof itemFormSchema>;
 
@@ -134,6 +145,9 @@ export const fastAddSchema = v.object({
 	/** Per-copy class (only with `classPerItem`). */
 	itemReadingLevel: optionalText(2),
 	acquisitionDate: optionalText(10),
+	/** The school inventory (9.64): the copies' origin and value (their numbers are the next ones). */
+	itemOrigin: v.optional(v.pipe(v.string(), v.trim(), v.maxLength(60))),
+	itemValue: v.optional(v.pipe(v.string(), v.trim(), v.maxLength(16))),
 	/** Metadata provider the record came from (`manual` when typed). */
 	source: optionalText(32),
 	sourceId: optionalText(64),

@@ -194,6 +194,21 @@ export const configSchema = v.object({
 			specialAuthors: v.optional(v.array(v.string()), ["Anonimo", "AA. VV."]),
 			unknownPublisher: v.optional(v.string(), "s.n."),
 			unknownPlace: v.optional(v.string(), "s.l."),
+			/**
+			 * The school inventory (step 9.64, Q155): off by default, so the lean model stays the
+			 * default; on, a copy has its inventory number, origin and value.
+			 */
+			inventory: v.optional(
+				v.object({
+					enabled: v.optional(v.boolean(), false),
+					/** Where a copy may come from, offered in the copy form. */
+					origins: v.optional(
+						v.array(v.pipe(v.string(), v.trim(), v.minLength(1), v.maxLength(60))),
+						["Acquisto", "Dono", "Altro"],
+					),
+				}),
+				{},
+			),
 		}),
 		{},
 	),

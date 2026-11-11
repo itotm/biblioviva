@@ -10,6 +10,7 @@
 		addItems,
 		deleteItem,
 		type getBiblioDetail,
+		proposeInventoryNumber,
 		setItemStatus,
 		suggestCallNumber,
 		updateItem,
@@ -18,6 +19,7 @@
 	import type { ItemFormInput, ItemStatus } from "#lib/shared/catalog-schema.js";
 	import { isFreeScheme, schemeUses } from "#lib/shared/classification.js";
 	import { labelStatus } from "#lib/shared/copy-status.js";
+	import { euroInput, formatEuro } from "#lib/shared/school-inventory.js";
 	import { useFormat } from "#lib/ui/format.js";
 	import { icons } from "#lib/ui/icons.js";
 	import { ITEM_STATUS, type StatusDef } from "#lib/ui/status.js";
@@ -60,6 +62,8 @@
 	const perItemClass = $derived(
 		options.classPerItem && options.fictionByClass && biblio.kind === "fiction",
 	);
+	// the school inventory (9.64): its fields and column only while it is on
+	const inventoryOn = $derived(options.inventory.enabled);
 
 	// --- add copies dialog
 	let addOpen = $state(false);
@@ -71,6 +75,7 @@
 		acquisitionDate: "",
 		notes: "",
 		notForLoan: false,
+		...(inventoryOn ? { inventoryNumber: "", origin: "", value: "" } : {}),
 	});
 	let draft = $state<ItemFormInput>(emptyItem());
 	let issues = $state<{ field: string; message: string }[]>([]);
@@ -84,6 +89,14 @@
 		copies = 1;
 		issues = [];
 		addOpen = true;
+		// the next inventory number, proposed and editable (9.64)
+		if (inventoryOn) {
+			void proposeInventoryNumber().then((next) => {
+				if (next !== null && draft.inventoryNumber === "") {
+					draft.inventoryNumber = next;
+				}
+			});
+		}
 	}
 
 	async function doAdd(): Promise<boolean> {
@@ -116,6 +129,13 @@
 			acquisitionDate: it.acquisitionDate ?? "",
 			notes: it.notes ?? "",
 			notForLoan: it.notForLoan,
+			...(inventoryOn
+				? {
+						inventoryNumber: it.inventoryNumber ?? "",
+						origin: it.origin ?? "",
+						value: euroInput(it.valueCents, fmt.locale),
+					}
+				: {}),
 		};
 		issues = [];
 		editItem = { id: it.id, barcode: it.barcode };
@@ -230,6 +250,39 @@
 		<Field label={i18n.t("catalog.item.acquisitionDate")}
 			><Input type="date" bind:value={model.acquisitionDate} /></Field
 		>
+		{#if inventoryOn}
+			<Field
+				label={i18n.t("catalog.item.inventoryNumber")}
+				hint={prefix === "add" && copies > 1
+					? i18n.t("catalog.item.inventoryNumberSeries")
+					: undefined}
+				><Input
+					mono
+					bind:value={model.inventoryNumber}
+					maxlength={20}
+					data-testid="{prefix}-inventory-number"
+				/></Field
+			>
+			<Field label={i18n.t("catalog.item.origin")}
+				><Select bind:value={model.origin} data-testid="{prefix}-origin">
+					<option value="">—</option>
+					{#each options.inventory.origins as o (o)}
+						<option value={o}>{o}</option>
+					{/each}
+					{#if model.origin && !options.inventory.origins.includes(model.origin)}
+						<option value={model.origin}>{model.origin}</option>
+					{/if}
+				</Select></Field
+			>
+			<Field label={i18n.t("catalog.item.value")} hint={i18n.t("catalog.item.valueHint")}
+				><Input
+					bind:value={model.value}
+					inputmode="decimal"
+					maxlength={16}
+					data-testid="{prefix}-value"
+				/></Field
+			>
+		{/if}
 		<Field label={i18n.t("catalog.item.notes")} class="sm:col-span-2"
 			><Input bind:value={model.notes} /></Field
 		>
@@ -253,6 +306,7 @@
 			<thead>
 				<tr>
 					<th>{i18n.t("catalog.detail.columns.barcode")}</th>
+					{#if inventoryOn}<th>{i18n.t("catalog.detail.columns.inventory")}</th>{/if}
 					<th>{i18n.t("catalog.detail.columns.callNumber")}</th>
 					{#if perItemClass}<th>{i18n.t("catalog.detail.columns.readingLevel")}</th>{/if}
 					<th>{i18n.t("catalog.detail.columns.status")}</th>
@@ -268,9 +322,30 @@
 					{@const labels = labelStatus(it)}
 					<tr class="border-t border-surface-200" data-testid="item-row-{it.barcode}">
 						<td class="p-2 font-mono">{it.barcode}</td>
+						{#if inventoryOn}
+							<td class="p-2" data-testid="item-inventory-{it.barcode}">
+								<span class="font-mono">{it.inventoryNumber ?? ""}</span>
+								{#if it.origin || it.valueCents !== null}
+									<Hint
+										>{[it.origin, formatEuro(it.valueCents, fmt.locale)]
+											.filter(Boolean)
+											.join(" · ")}</Hint
+									>
+								{/if}
+							</td>
+						{/if}
 						<td class="p-2 font-mono">{it.callNumber ?? ""}</td>
 						{#if perItemClass}<td class="p-2">{it.readingLevel ?? ""}</td>{/if}
-						<td class="p-2"><StatusBadge status={statusOf(it)} /></td>
+						<td class="p-2">
+							<StatusBadge status={statusOf(it)} />
+							{#if it.status === "withdrawn" && it.withdrawnOn}
+								<Hint data-testid="item-withdrawn-{it.barcode}"
+									>{i18n.t("catalog.item.withdrawnOn", {
+										date: fmt.day(it.withdrawnOn, "medium"),
+									})}{it.withdrawnReason ? ` · ${it.withdrawnReason}` : ""}</Hint
+								>
+							{/if}
+						</td>
 						<td class="p-2">
 							{#if it.loan}
 								{#if canOpenPatrons}

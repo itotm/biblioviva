@@ -20,7 +20,8 @@ I docenti attivi nel formato dell'importazione: si reimportano da [Importazioni]
 
 ## Catalogo (CSV)
 
-Una riga per copia con i dati del libro, nel formato dell'importazione del catalogo.
+Una riga per copia con i dati del libro, nel formato dell'importazione del catalogo, compresi numero d'inventario,
+provenienza e valore (il valore con il punto, per esempio `12.50`).
 
 ## Prestiti in corso (CSV)
 

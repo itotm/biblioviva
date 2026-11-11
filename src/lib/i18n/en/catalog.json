@@ -143,7 +143,8 @@
 			"status": "Status",
 			"borrower": "On loan to",
 			"acquisition": "Acquired on",
-			"labels": "Labels"
+			"labels": "Labels",
+			"inventory": "Inventory"
 		},
 		"dueOn": "due {{date}}",
 		"identifiers": "Identifiers",
@@ -181,7 +182,13 @@
 		"deleteDescription": "Only for cataloguing mistakes: a copy that was ever lent cannot be deleted, withdraw it instead.",
 		"deleted": "Copy deleted",
 		"hasLoans": "The copy has recorded loans: withdraw it instead of deleting it.",
-		"labelsTitle": "Labels of copy {{barcode}}"
+		"labelsTitle": "Labels of copy {{barcode}}",
+		"inventoryNumber": "Inventory number",
+		"inventoryNumberSeries": "The number of the first copy; the others get the following numbers.",
+		"origin": "Origin",
+		"value": "Value (€)",
+		"valueHint": "The price or the estimated value, for example 12.50.",
+		"withdrawnOn": "Withdrawn on {{date}}"
 	},
 	"errors": {
 		"isbnInvalid": "Invalid ISBN (check the digits)",
@@ -199,7 +206,11 @@
 		"readingLevelOutOfRange": "Reading level not in the configuration",
 		"itemTypeUnknown": "Material not in the configuration",
 		"acquisitionDateInvalid": "Invalid date (YYYY-MM-DD)",
-		"copiesOutOfRange": "1 to 100 copies at a time"
+		"copiesOutOfRange": "1 to 100 copies at a time",
+		"inventoryNumberInvalid": "Invalid inventory number (letters, digits and . / -, at most 20)",
+		"inventoryNumberTaken": "Inventory number already used by another copy",
+		"inventoryNumberSeries": "For several copies the inventory number must be digits only",
+		"valueInvalid": "Invalid value (for example 12.50)"
 	},
 	"lookup": {
 		"providers": {
@@ -285,7 +296,8 @@
 			"readingLevel": "Level of the copies",
 			"acquisitionDate": "Acquisition date",
 			"save": "Save record and copies",
-			"deweySuggested": "Subject proposed from Dewey number {{dewey}}."
+			"deweySuggested": "Subject proposed from Dewey number {{dewey}}.",
+			"inventoryHint": "The value of each copy, for example 12.50; the inventory numbers are the next ones."
 		},
 		"done": {
 			"heading": "Record saved",
@@ -404,7 +416,10 @@
 			"status": "Status",
 			"notForLoan": "Not for loan",
 			"acquisitionDate": "Acquisition date",
-			"itemNotes": "Copy notes"
+			"itemNotes": "Copy notes",
+			"inventoryNumber": "Inventory number",
+			"origin": "Origin",
+			"value": "Value (€)"
 		},
 		"preview": {
 			"ready": "No errors: the file can be imported.",
@@ -462,7 +477,9 @@
 			"callNumberQuestion": "Call number in the file \"{{value}}\", computed \"{{computed}}\": answer the question below",
 			"callNumberDiffers": "Call number in the file \"{{value}}\" other than the computed \"{{computed}}\"",
 			"copyExists": "Copy already in the catalogue: skipped",
-			"mergedIntoExisting": "Added to the title already in the catalogue (same key or same ISBN)"
+			"mergedIntoExisting": "Added to the title already in the catalogue (same key or same ISBN)",
+			"inventoryNumberDuplicateInFile": "Inventory number already used on line {{line}}",
+			"inventoryNumberTaken": "The inventory number {{value}} already belongs to another copy in the catalogue"
 		},
 		"done": {
 			"title": "Catalogue imported",
@@ -560,6 +577,15 @@
 			},
 			"itemNotes": {
 				"hint": "Notes of the copy."
+			},
+			"inventoryNumber": {
+				"hint": "The copy's inventory number, unique (school inventory)."
+			},
+			"origin": {
+				"hint": "Where the copy came from: purchase, gift, …"
+			},
+			"value": {
+				"hint": "The copy's value in euro, for example 12.50."
 			}
 		}
 	},
@@ -670,7 +696,8 @@
 			"badNotes": "The campaign's notes can be at most 500 characters."
 		},
 		"cameraShelf": "Shelf {{shelf}}",
-		"cameraDone": "Done"
+		"cameraDone": "Done",
+		"inventoryNumber": "Inv. {{number}}"
 	},
 	"toClassify": {
 		"title": "To classify",

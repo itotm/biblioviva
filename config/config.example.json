@@ -77,7 +77,12 @@
 		"_comment": "Q73: author and publisher are mandatory; these special values are offered as quick picks when there is no personal author or the publisher/place is unknown.",
 		"specialAuthors": ["Anonimo", "AA. VV."],
 		"unknownPublisher": "s.n.",
-		"unknownPlace": "s.l."
+		"unknownPlace": "s.l.",
+		"inventory": {
+			"_comment": "9.64 (Q155): the school inventory, off by default. On, a copy has its inventory number (the next one proposed), its origin from this list and its value in euro; the reports list the copies entered and withdrawn in a period.",
+			"enabled": false,
+			"origins": ["Acquisto", "Dono", "Altro"]
+		}
 	},
 	"barcodes": {
 		"_comment": "Phase 12 (Q90-Q93): new copies YYYY-CNNNN and new cards CNNNNNN with a mod-23 check letter (2026-E0267, U012345). The codes of the old system keep working: copies YYYY-NNNN, cards of 10 digits, plain numbers up to plainMaxLength digits [VERIFY at the Koha migration].",

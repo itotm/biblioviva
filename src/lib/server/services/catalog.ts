@@ -38,6 +38,8 @@ export interface CatalogRules {
 	locale: string;
 	/** The format table: barcodes of new copies (Phase 12). */
 	codes: CodeTable;
+	/** The school inventory (step 9.64): off by default; the origins offered for a copy. */
+	inventory: { enabled: boolean; origins: string[] };
 }
 
 export function catalogRules(config: AppConfig): CatalogRules {
@@ -64,6 +66,10 @@ export function catalogRules(config: AppConfig): CatalogRules {
 		timezone: config.library.timezone,
 		locale: config.ui.locale,
 		codes: codeTable(config),
+		inventory: {
+			enabled: config.catalog.inventory.enabled,
+			origins: config.catalog.inventory.origins,
+		},
 	};
 }
 
@@ -87,7 +93,11 @@ export type ItemIssueCode =
 	| "readingLevelNotAllowed"
 	| "readingLevelOutOfRange"
 	| "acquisitionDateInvalid"
-	| "copiesOutOfRange";
+	| "copiesOutOfRange"
+	| "inventoryNumberInvalid"
+	| "inventoryNumberTaken"
+	| "inventoryNumberSeries"
+	| "valueInvalid";
 
 export interface CatalogIssue {
 	field: string;
@@ -513,6 +523,8 @@ export interface ClassificationOptions {
 	specialAuthors: string[];
 	unknownPublisher: string;
 	unknownPlace: string;
+	/** The school inventory (9.64): the copy form shows its fields only when it is on. */
+	inventory: CatalogRules["inventory"];
 }
 
 /** What the pickers and filters need: genres, taxonomy, flags, item types, quick picks. */
@@ -545,5 +557,6 @@ export function classificationOptions(rules: CatalogRules): ClassificationOption
 		specialAuthors: rules.specialAuthors,
 		unknownPublisher: rules.unknownPublisher,
 		unknownPlace: rules.unknownPlace,
+		inventory: rules.inventory,
 	};
 }

@@ -46,6 +46,10 @@ Questo metodo serve per un libro senza ISBN o quando serve cambiare il livello o
    copia porta il suo livello.
 1. Se il libro è in più volumi, scrivere il numero nel campo **Volume / numero**.
 1. Controllare la **Data di acquisizione** e, se serve, scrivere una nota in **Note sulla copia**.
+1. Con l'inventario della scuola attivo, controllare il **Numero d'inventario**, che BiblioViva propone (il successivo
+   all'ultimo): si può cambiare. Con più copie il campo è il numero della prima («Il numero della prima copia; le altre
+   hanno i numeri successivi.») e deve essere fatto di sole cifre. Svuotando il campo le copie restano senza numero.
+1. Con l'inventario della scuola attivo, scegliere la **Provenienza** e scrivere il **Valore (€)**, per esempio 12,50.
 1. Se la copia non deve uscire dalla biblioteca, per esempio un volume da consultare in sede, spuntare **Solo
    consultazione (non si presta)**.
 1. Premere **Aggiungi**. Un avviso conferma «N copie aggiunte» con i codici assegnati, e le copie compaiono nella scheda
@@ -65,6 +69,12 @@ finché non si stampano le etichette.
 
 Il libro ha già la scheda ma non si trova leggendo l'ISBN: la scheda è stata scritta senza ISBN, oppure con un ISBN
 diverso (un'altra edizione). Cercarla per titolo in **Catalogo** e usare il secondo metodo.
+
+### Il numero d'inventario è rifiutato
+
+Compare «Numero d'inventario già usato da un'altra copia»: ogni numero è di una sola copia. Scrivere un altro numero.
+Compare «Per più copie il numero d'inventario deve essere fatto di sole cifre»: con più copie il numero della prima non
+può contenere lettere.
 
 ### Il numero di copie è fuori dai limiti
 

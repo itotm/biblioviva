@@ -79,7 +79,7 @@ Red: "code: no copy has this barcode." The code belongs to no copy of the catalo
 
 The box "Still missing (N)" lists the copies expected and not yet read, with the call number, the title (a link to the [Book record](book-record.md)) and the code. The list is narrowed with **Shelf** (**All shelves** or one shelf) and **Material** (**All materials** or one type). When everything has been read, the page writes "Every expected copy has been seen."
 
-The list shows the first copies; if there are more, a line says "and N more: export the list to see them all". The CSV and ODS buttons download the complete list with the chosen filters: it is the list to take to the shelves for the final search.
+The list shows the first copies; if there are more, a line says "and N more: export the list to see them all". The CSV and ODS buttons download the complete list with the chosen filters: it is the list to take to the shelves for the final search. With the school inventory on, each copy shows "Inv." and the inventory number, and the first column of the file is the **Inventory number**.
 
 ## Closing the stocktaking
 

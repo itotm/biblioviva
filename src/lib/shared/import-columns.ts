@@ -100,6 +100,9 @@ export const CATALOG_FIELDS = [
 	"notForLoan",
 	"acquisitionDate",
 	"itemNotes",
+	"inventoryNumber",
+	"origin",
+	"value",
 ] as const;
 export type CatalogField = (typeof CATALOG_FIELDS)[number];
 
@@ -139,6 +142,10 @@ export const CATALOG_IMPORT: ImportSpec<CatalogField> = {
 		optional("notForLoan", "not_for_loan"),
 		optional("acquisitionDate", "acquisition_date"),
 		optional("itemNotes", "item_notes"),
+		// the school inventory (9.64)
+		optional("inventoryNumber", "inventory_number"),
+		optional("origin", "origin"),
+		optional("value", "value"),
 	],
 };
 

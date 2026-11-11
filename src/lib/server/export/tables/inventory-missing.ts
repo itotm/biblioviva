@@ -3,6 +3,7 @@
 // filtered like the page (shelf, item type).
 import * as v from "valibot";
 import { textId } from "#lib/shared/input-schemas.js";
+import { getConfig } from "#lib/server/config/index.js";
 import { missingItems } from "#lib/server/services/inventory.js";
 import { registerExport } from "../registry.js";
 import type { ExportColumn } from "../types.js";
@@ -31,6 +32,8 @@ export function registerInventoryMissingExport(
 				name: `inventario-${params.inventory}-mancanti`,
 				timezone,
 				columns: [
+					// the school inventory's number, for the five-yearly check (9.64)
+					...(getConfig().catalog.inventory.enabled ? [col("inventoryNumber", 22)] : []),
 					col("callNumber", 26),
 					col("barcode", 26),
 					col("title", 70),

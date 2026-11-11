@@ -174,6 +174,11 @@ CREATE TABLE `item` (
 	`not_for_loan` integer DEFAULT 0 NOT NULL,
 	`acquisition_date` text,
 	`notes` text,
+	`inventory_number` text,
+	`origin` text,
+	`value_cents` integer,
+	`withdrawn_on` text,
+	`withdrawn_reason` text,
 	`barcode_label_printed_at` text,
 	`spine_label_printed_at` text,
 	`created_at` text DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now')) NOT NULL,
@@ -380,6 +385,8 @@ CREATE INDEX `class_photo_sheet_list` ON `class_photo_sheet` (`print_list_id`);-
 CREATE UNIQUE INDEX `inventory_scan_unique` ON `inventory_scan` (`inventory_id`,`item_id`);--> statement-breakpoint
 CREATE INDEX `inventory_scan_at` ON `inventory_scan` (`inventory_id`,`scanned_at`);--> statement-breakpoint
 CREATE UNIQUE INDEX `item_barcode` ON `item` (`barcode`);--> statement-breakpoint
+CREATE UNIQUE INDEX `item_inventory_number` ON `item` (`inventory_number`);--> statement-breakpoint
+CREATE INDEX `item_withdrawn_on` ON `item` (`withdrawn_on`);--> statement-breakpoint
 CREATE INDEX `item_biblio` ON `item` (`biblio_id`);--> statement-breakpoint
 CREATE INDEX `item_status` ON `item` (`status`);--> statement-breakpoint
 CREATE INDEX `item_reading_level` ON `item` (`reading_level`);--> statement-breakpoint

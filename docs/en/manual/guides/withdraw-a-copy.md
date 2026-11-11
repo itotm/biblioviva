@@ -8,8 +8,10 @@ shelf (withdrawn), for a single copy or for many together. It is for whoever cat
 - Requirements: the code of the copy, which is on the label of the book (if the book is missing, the copy is found from
   the record of the book, see [Find a book](find-a-book.md)).
 
-The copy is not deleted: it changes status and stays in the archive for the whole life of the catalogue; the reason
-stays in the audit log for the months set in **Months of the audit log** (24 by default). The statuses are these:
+The copy is not deleted: it changes status and stays in the archive for the whole life of the catalogue. With the status
+**Withdrawn** the copy keeps the day of the withdrawal and the reason on itself, and the record of the book shows them
+under the status ("Withdrawn on" with the date and the reason); the reason also stays in the audit log for the months
+set in **Months of the audit log** (24 by default). The statuses are these:
 
 - **Available**: the copy is on the shelf and can be lent.
 - **Lost**: the copy cannot be found. It is not lent.
@@ -71,7 +73,8 @@ Deletion is only for cataloguing mistakes and only for a copy that was never len
 
 The copy shows the new status on the record of the book and is not lent (unless **Available** or **Damaged**). The
 **Withdrawn** status also removes the copy from the "N available of M" count of the book. The reason and who changed the
-status stay in the log.
+status stay in the log. The list of the copies withdrawn in a period is the report **Copies withdrawn in the
+period** in the **Books** category of the **Reports**, see [Reports](../screens/reports.md).
 
 ## Possible problems
 

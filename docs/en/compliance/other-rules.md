@@ -41,8 +41,8 @@ configuration or created by the administrator. The rule does not concern BiblioV
 
 Article 5 of the CAD obliges public administrations to accept payments in their favour by electronic means, through the
 national platform pagoPA. BiblioViva handles no payments: it provides no fines, penalties or other amounts for delays
-or lost books (for a delay it shows only the days), and it does not record the price of the copies. The rule does not
-concern BiblioViva.
+or lost books (for a delay it shows only the days), and the value that the school inventory records on each copy gives rise to no payment. The rule does not concern
+BiblioViva.
 
 ## Copyright and covers
 
