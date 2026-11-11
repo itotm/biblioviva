@@ -5,6 +5,7 @@ import type { GenericSchema } from "valibot";
 import type { AuthUser } from "#lib/server/auth/types.js";
 import type { Db } from "#lib/server/db/client.js";
 import type { Permission } from "#lib/shared/permissions.js";
+import type { MarcSelection } from "#lib/server/services/marc-export.js";
 import type { TableExport } from "./types.js";
 
 export interface ExportDefinition<Params> {
@@ -18,6 +19,11 @@ export interface ExportDefinition<Params> {
 		user: AuthUser,
 		timezone: string,
 	) => TableExport | Promise<TableExport>;
+	/**
+	 * A list of books or copies (step 9.65): the titles or copies the MARC formats of its menu
+	 * export, and the file's name.
+	 */
+	marc?: (db: Db, params: Params) => { name: string; selection: MarcSelection };
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

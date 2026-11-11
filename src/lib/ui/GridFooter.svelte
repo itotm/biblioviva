@@ -10,13 +10,15 @@
 		/** Registered export table: renders the "Esporta" menu (CSV/ODS) with `exportParams`. */
 		exportTable?: string;
 		exportParams?: Record<string, string | number | undefined | null>;
+		/** The rows are books or copies: MARC in the export menu too (9.65). */
+		exportMarc?: boolean;
 		/** Text or badges shown on the left. */
 		status?: Snippet;
 		/** Other actions rendered before the export menu. */
 		actions?: Snippet;
 	}
 
-	const { exportTable, exportParams = {}, status, actions }: Props = $props();
+	const { exportTable, exportParams = {}, exportMarc = false, status, actions }: Props = $props();
 </script>
 
 <Row align="center" justify="between" data-testid="grid-footer">
@@ -25,6 +27,10 @@
 	</div>
 	<Row align="center">
 		{#if actions}{@render actions()}{/if}
-		{#if exportTable}<ExportMenu table={exportTable} params={exportParams} />{/if}
+		{#if exportTable}<ExportMenu
+				table={exportTable}
+				params={exportParams}
+				marc={exportMarc}
+			/>{/if}
 	</Row>
 </Row>

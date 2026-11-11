@@ -270,7 +270,11 @@
 						<PrintListEntries listId={d.list.id} rows={d.itemRows} {busy} {run}>
 							{#snippet entry(r)}<ItemEntry row={r} />{/snippet}
 						</PrintListEntries>
-						<GridFooter exportTable="list-items" exportParams={{ list: d.list.id }} />
+						<GridFooter
+							exportTable="list-items"
+							exportParams={{ list: d.list.id }}
+							exportMarc={d.list.kind === "items"}
+						/>
 					{:else}
 						<PrintListEntries listId={d.list.id} rows={d.rows} {busy} {run}>
 							{#snippet entry(r)}<PatronEntry row={r} />{/snippet}

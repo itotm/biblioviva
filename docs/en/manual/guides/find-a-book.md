@@ -13,7 +13,8 @@ catalogue.
 
 ### Search by typing
 
-1. Open **Catalogue**. The page is empty until a search is made: "Search the catalogue" appears.
+1. Open **Catalogue**. The page is empty until a search is made: "Search the catalogue" appears. To see the whole
+   catalogue press **Show all books**: the list shows 500 titles at a time, turned with **Next** and **Previous**.
 1. Write one or more words in the **Search by title, author or ISBN…** field. The order of the words does not matter,
    the beginning of a word is enough ("harr pott") and accents and capitals do not matter. The closest results come
    first.
@@ -70,7 +71,9 @@ The filters are above the table and can also be used without writing anything in
 ### Export the list
 
 1. Under the table press **Export** and choose **CSV (spreadsheet, text)** or **ODS (LibreOffice)**. The file
-   contains the results of the search with the filters applied.
+   contains all the results of the search with the filters applied, also those of the other pages. The choices that
+   begin with MARC or UNIMARC serve to take the catalogue to another library program: see
+   [Catalogue](../screens/catalog.md#export).
 
 ## Result
 

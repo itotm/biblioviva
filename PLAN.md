@@ -2112,7 +2112,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
     projects; `bun run ci` green.
   - Depends on: 9.8, 9.63
 
-- [ ] **9.65 MARC export and import; the whole catalogue in the list** (owner decision, Q156; required for 0.9.0)
+- [x] **9.65 MARC export and import; the whole catalogue in the list** (owner decision, Q156; required for 0.9.0)
   - Context: a school chooses more easily a software it can leave, and comes more easily from another: Koha,
     SebinaNEXT, Clavis and the regional networks exchange MARC files (`docs/studies/adoption.md` §6). The parser and
     the UNIMARC map exist (`#lib/server/marc/`).
@@ -2122,8 +2122,8 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
       the server as it does for a filter.
     - **Export**: UNIMARC and MARC21, in ISO 2709 and MARCXML, one record per title with its copies (995 in UNIMARC, 952
       in MARC21, the fields Koha reads), from the **Esporta** menu of every list whose rows are books or copies (the
-      catalogue, the copies of a print list, the missing copies of a stocktaking campaign) [VERIFY: the lists in
-      the code]; the export engine of 1.9.
+      catalogue, the copies of a print list, the missing copies of a stocktaking campaign); the export engine of
+      1.9.
     - **Import**: a MARC file (ISO 2709 or MARCXML, UNIMARC or MARC21, recognised from the file) in the catalogue
       import, under the rules of §3.22: the whole file validated first, the questions asked (a genre or a class
       missing, a code already in the catalogue), «Importa» only with zero errors, one transaction; the copies from

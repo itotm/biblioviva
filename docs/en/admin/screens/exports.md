@@ -24,6 +24,9 @@ One row per copy with the book's data, in the catalogue import format, including
 (the value with a point, for example `12.50`). The column `accessible_formats`, after `subjects`, holds the book's
 accessible formats separated by "; ": the import reads it back.
 
+The catalogue is also downloaded in MARC 21 and in UNIMARC, with its copies, from the **Export** menu of the
+[Catalogue](../../manual/screens/catalog.md#export).
+
 ## Open loans (CSV)
 
 Card, copy, loan date and due date: they go back in from [Imports](imports.md), **Open loans** item.

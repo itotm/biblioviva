@@ -52,7 +52,12 @@
 		},
 		"copiesCell": "{{available}} / {{total}}",
 		"startTitle": "Cerca nel catalogo",
-		"startHint": "Ricerca per titolo, autore, editore, codice o ISBN, oppure con i filtri."
+		"startHint": "Ricerca per titolo, autore, editore, codice o ISBN, oppure con i filtri.",
+		"showAll": "Mostra tutti i libri",
+		"countAll": "{{shown}} {{shown:plural; one:titolo; other:titoli;}} nel catalogo",
+		"pagePrevious": "Precedenti",
+		"pageNext": "Successivi",
+		"pageRange": "{{from}}–{{to}} di {{total}}"
 	},
 	"kinds": {
 		"fiction": "Narrativa",
@@ -378,8 +383,8 @@
 	"import": {
 		"title": "Importa il catalogo",
 		"upload": {
-			"file": "File CSV",
-			"hint": "Una riga per ogni copia: i dati del titolo si ripetono sulle righe delle sue copie. Servono titolo, autore ed editore. Usare le intestazioni del modello, scaricabile qui sotto con le colonne necessarie. Per la migrazione da Koha usare l'estrazione descritta nella guida dell'amministratore.",
+			"file": "File CSV o MARC",
+			"hint": "Una riga per ogni copia: i dati del titolo si ripetono sulle righe delle sue copie. Servono titolo, autore ed editore. Usare le intestazioni del modello, scaricabile qui sotto con le colonne necessarie. Per la migrazione da Koha usare l'estrazione descritta nella guida dell'amministratore. Si può caricare anche un file MARC (ISO 2709 o MARCXML, UNIMARC o MARC 21), riconosciuto da sé.",
 			"submit": "Carica"
 		},
 		"mapping": {

@@ -6,12 +6,13 @@ program. It is for whoever administers BiblioViva and is usually done once, at t
 - Time: 30 minutes to two hours, depending on the size of the catalogue and how clean the file is.
 - Account: `admin`. Another account can import the catalogue only if the role configuration grants it the **Import
   catalogue** permission.
-- Requirements: the catalogue in a spreadsheet, with one row for each copy.
+- Requirements: the catalogue in a spreadsheet, with one row for each copy, or a MARC file exported by another library
+  program.
 
 BiblioViva checks the whole file before writing anything and imports only if there are no errors: there are no
 half-done imports. The file is a *CSV*, that is a text file with one row per copy and the data separated by `;`, `,` or
 tab; every spreadsheet can save one. The data of the book (title, author, publisher…) are repeated on the rows of its
-copies.
+copies. A MARC file is uploaded the same way: see [Load a MARC file](#load-a-marc-file).
 
 ## Procedure
 
@@ -66,7 +67,7 @@ the title takes from the file the part after the classification, the most freque
 
 ### Upload the file
 
-1. In the **File** step, in the **CSV file** field, choose the file and press **Upload**.
+1. In the **File** step, in the **CSV or MARC file** field, choose the file and press **Upload**.
 1. In the **Columns** step check that each column is matched to the right field. Columns with the names of the template
    are recognised automatically; for the others choose the field in the menu, or **— ignore —** to leave them unused.
    The choice is remembered for the next import.
@@ -102,6 +103,48 @@ the title takes from the file the part after the classification, the most freque
 1. If some copies had no barcode, press **Print the labels of the copies without a barcode**: see
    [Print book labels](../../manual/guides/print-book-labels.md).
 1. Press **Go to the catalogue** to check the books.
+
+### Load a MARC file
+
+The catalogue can also be imported from a MARC file, the format in which library programs (Koha, SebinaNEXT, Clavis, the
+SBN catalogue) exchange records, and in which BiblioViva itself exports the catalogue. ISO 2709 files (`.mrc`, `.marc`,
+`.iso`) and MARCXML files (`.xml`) are accepted, in UNIMARC or in MARC 21. Nothing has to be chosen: BiblioViva
+recognises the kind from the file. The files must be in UTF-8, as Koha and SBN write them; an old MARC-8 file is not
+accepted.
+
+1. In the **File** step, in the **CSV or MARC file** field, choose the MARC file and press **Upload**.
+1. In the **Columns** step read, next to the file name, the line that summarises the content, for example "120 rows (one
+   per copy) · MARC 21 · MARCXML file".
+1. Check the columns, already matched because BiblioViva turns the file into the same rows as a CSV, with the header of
+   the English names, and go on as for a CSV: the check and **Import** do not change.
+
+All the rules of the CSV import hold: BiblioViva checks the whole file, asks the same questions (copies of one title with
+different reading levels or materials, call numbers other than the computed ones), offers the special values for a
+missing author or publisher, enables **Import** only with no errors, writes everything at once and keeps the original
+file.
+
+The row numbers of the check are those of the list "one per copy", not lines of the file: row 1 is the first copy of the
+first record.
+
+What is read from a file of another program:
+
+- of the title: title, subtitle, responsibility, author, publisher, place and year of publication, ISBN, ISSN, EAN,
+  physical description, series and number, Dewey class, subjects, notes and the original title of a translation. With
+  three or more personal authors the author is "AA. VV."; with none it is "Anonimo". Of the series, the book's own is
+  read, not the publisher's;
+- of the copies, from field 952 (MARC 21) or 995 (UNIMARC): barcode, call number, material and the collection code, which
+  BiblioViva reads as the classification (the code of a genre or a subject, as in the `classification` column of the
+  CSV). From field 952 the acquisition date, the volume, the notes, the exclusion from loan, the status (lost, damaged,
+  withdrawn), the inventory number, the origin and the value are read too.
+
+The barcodes are recognised according to the library's formats, so the codes of old systems keep working.
+
+A record without copies gives a row without a barcode: the import creates one copy with a generated code, as for a CSV
+row without `barcode`. A record of the SBN catalogue has neither copies nor classification: its titles go to the **To
+classify** list.
+
+A file exported by BiblioViva itself (the **Export** menu of the [Catalogue](../../manual/screens/catalog.md#export)) is
+read back with all the data, because it carries two local fields, which other programs ignore.
 
 ## Result
 
@@ -162,7 +205,8 @@ imported.
 
 The catalogue is extracted with a ready-made query; the file it produces is separated by tabs and must be uploaded as
 it is: see [the technical instructions](../../../import/README.md). The names of Koha's columns change from one
-version to another: whoever runs the query checks them first.
+version to another: whoever runs the query checks them first. Alternatively Koha exports the records in MARC 21 and the file is uploaded as
+described in [Load a MARC file](#load-a-marc-file).
 
 ## Related pages
 

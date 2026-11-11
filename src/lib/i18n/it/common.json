@@ -101,7 +101,11 @@
 	},
 	"export": {
 		"csv": "CSV (foglio di calcolo, testo)",
-		"ods": "ODS (LibreOffice)"
+		"ods": "ODS (LibreOffice)",
+		"marc21": "MARC 21 (ISO 2709, per Koha e altri programmi)",
+		"marc21-xml": "MARC 21 (MARCXML)",
+		"unimarc": "UNIMARC (ISO 2709, per le biblioteche italiane)",
+		"unimarc-xml": "UNIMARC (MARCXML)"
 	},
 	"demo": {
 		"panel": "Questa installazione contiene dati dimostrativi caricati il {{when}}: {{patrons}} {{patrons:plural; one:utente; other:utenti;}}, {{biblios}} {{biblios:plural; one:titolo; other:titoli;}}, {{items}} {{items:plural; one:copia; other:copie;}}, {{loans}} {{loans:plural; one:prestito; other:prestiti;}}. Sono inventati: nessuna persona reale."
@@ -154,7 +158,8 @@
 		"groups": {
 			"required": "obbligatoria",
 			"key": "chiave"
-		}
+		},
+		"infoMarc": "{{rows}} {{rows:plural; one:riga; other:righe;}} (una per copia) · file {{format}}"
 	},
 	"words": {
 		"yes": "Sì",

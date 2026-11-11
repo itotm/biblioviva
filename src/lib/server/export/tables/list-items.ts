@@ -35,6 +35,20 @@ export function registerListItemsExport(
 	registerExport("list-items", {
 		permission: "catalog",
 		schema: listItemsExportSchema,
+		// the copies of the list with their titles, in MARC (9.65)
+		marc(db, params) {
+			const listId = Number(params.list);
+			const list = getPrintList(db, listId);
+			return {
+				name: `lista-${listId}`,
+				selection: {
+					itemIds:
+						list.kind === "items"
+							? itemListRows(db, listId).map((r) => r.entityId)
+							: [],
+				},
+			};
+		},
 		async build(db, params, _user, timezone) {
 			const listId = Number(params.list);
 			const list = getPrintList(db, listId);

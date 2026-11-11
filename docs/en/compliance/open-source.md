@@ -59,6 +59,9 @@ describes the entries).
 
 - Lists in CSV, from **Administration** → **Exports**: students, teachers, catalogue (one row per copy), loans in
   progress and loan history. The first four are in the format of BiblioViva's imports.
+- The catalogue in MARC 21 and in UNIMARC, in ISO 2709 and in MARCXML, from the **Export** menu of the Catalogue (also
+  for a print list of copies and for the missing copies of a stocktaking): they are the formats in which library programs
+  exchange records.
 - A single JSON file with patrons, catalogue, loans and lists, «to move to another installation or program».
 - The data of a single person, in JSON, from the patron's record, to answer an access request.
 - The tables and reports that are downloaded from their lists, in CSV or in ODS (the open spreadsheet format of
@@ -68,8 +71,9 @@ describes the entries).
   archive with the database, the photos, the covers and the configuration. They are restored on another installation of
   BiblioViva.
 
-The catalogue is not exported in the MARC format, which many library programs read: to take it elsewhere, CSV is used,
-which the other program must be able to import.
+The catalogue is exported in the MARC 21 and UNIMARC formats, which many library programs read, and imported from a MARC
+file: a school can therefore leave BiblioViva or come to it from another program (Koha, SebinaNEXT, Clavis). Whether the
+destination program reads the fields of the copies as BiblioViva writes them is to be checked at the migration.
 
 ## What the school does
 

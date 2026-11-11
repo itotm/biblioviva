@@ -79,7 +79,7 @@ Red: "code: no copy has this barcode." The code belongs to no copy of the catalo
 
 The box "Still missing (N)" lists the copies expected and not yet read, with the call number, the title (a link to the [Book record](book-record.md)) and the code. The list is narrowed with **Shelf** (**All shelves** or one shelf) and **Material** (**All materials** or one type). When everything has been read, the page writes "Every expected copy has been seen."
 
-The list shows the first copies; if there are more, a line says "and N more: export the list to see them all". The CSV and ODS buttons download the complete list with the chosen filters: it is the list to take to the shelves for the final search. With the school inventory on, each copy shows "Inv." and the inventory number, and the first column of the file is the **Inventory number**.
+The list shows the first copies; if there are more, a line says "and N more: export the list to see them all". The **Export** menu downloads the complete list with the chosen filters, as **CSV (spreadsheet, text)** or **ODS (LibreOffice)**: it is the list to take to the shelves for the final search. The four MARC and UNIMARC choices (**MARC 21 (ISO 2709, for Koha and other programs)**, **MARC 21 (MARCXML)**, **UNIMARC (ISO 2709, for Italian libraries)** and **UNIMARC (MARCXML)**) download the same titles as MARC records, each with only the missing copies; see [Export](catalog.md#export) in the Catalogue. With the school inventory on, each copy shows "Inv." and the inventory number, and the first column of the file is the **Inventory number**.
 
 ## Closing the stocktaking
 

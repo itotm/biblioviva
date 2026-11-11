@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // Export of the catalogue grid with its filters (search, kind, genre, class, reading level, item
-// type, series, accessible format).
+// type, series, accessible format, years, availability, withdrawn), or the whole catalogue; in
+// CSV, ODS or MARC (step 9.65).
 import * as v from "valibot";
 import { levelCodeOrEmpty } from "#lib/shared/input-schemas.js";
 import { getConfig } from "#lib/server/config/index.js";
@@ -23,7 +24,14 @@ export const catalogExportSchema = v.object({
 	itemType: v.optional(v.pipe(v.string(), v.maxLength(32)), ""),
 	series: v.optional(v.pipe(v.string(), v.maxLength(200)), ""),
 	accessibleFormat: v.optional(v.pipe(v.string(), v.maxLength(40)), ""),
+	withdrawn: v.optional(v.picklist(["", "1"]), ""),
+	available: v.optional(v.picklist(["", "1"]), ""),
+	yearFrom: v.optional(v.pipe(v.string(), v.regex(/^\d{0,4}$/)), ""),
+	yearTo: v.optional(v.pipe(v.string(), v.regex(/^\d{0,4}$/)), ""),
 });
+
+/** The whole catalogue fits (≤ 10 000 titles, PLAN.md §1): no export is cut short. */
+const EVERY_TITLE = 1_000_000;
 
 export function catalogExportColumns(labels: Record<string, string>): ExportColumn[] {
 	return [
@@ -77,10 +85,19 @@ export function registerCatalogExport(
 ): void {
 	registerExport("catalog", {
 		schema: catalogExportSchema,
+		// the titles the grid shows, each with its copies (9.65)
+		marc(db, params) {
+			const rules = catalogRules(getConfig());
+			const rows = searchBiblios(db, { ...params, limit: EVERY_TITLE }, rules).rows;
+			return {
+				name: "catalog",
+				selection: { biblioIds: rows.filter((r) => !r.similar).map((r) => r.id) },
+			};
+		},
 		async build(db, params, _user, timezone) {
 			const rules = catalogRules(getConfig());
 			// the exact results only: an export never carries the approximate ones (9.24)
-			const rows = searchBiblios(db, { ...params, limit: 2000 }, rules).rows.filter(
+			const rows = searchBiblios(db, { ...params, limit: EVERY_TITLE }, rules).rows.filter(
 				(r) => !r.similar,
 			);
 			const l = await labels();

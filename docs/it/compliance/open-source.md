@@ -60,6 +60,9 @@ descrive le voci).
 
 - Elenchi in CSV, da **Amministrazione** → **Esportazioni**: alunni, docenti, catalogo (una riga per copia), prestiti
   in corso e storico dei prestiti. I primi quattro sono nel formato delle importazioni di BiblioViva.
+- Il catalogo in MARC 21 e in UNIMARC, in ISO 2709 e in MARCXML, dal menu **Esporta** del Catalogo (anche per una lista
+  di stampa di copie e per le copie mancanti di un inventario): sono i formati in cui i programmi di biblioteca si
+  scambiano i record.
 - Un unico file JSON con utenti, catalogo, prestiti e liste, «per passare a un'altra installazione o a un altro
   programma».
 - I dati di una singola persona, in JSON, dalla scheda dell'utente, per rispondere a una richiesta di accesso.
@@ -70,8 +73,9 @@ descrive le voci).
   archivio ZIP con il database, le foto, le copertine e la configurazione. Si ripristinano su un'altra installazione
   di BiblioViva.
 
-Il catalogo non si esporta nel formato MARC, che molti programmi di biblioteca leggono: per portarlo altrove si usa il
-CSV, che l'altro programma deve poter importare.
+Il catalogo si esporta nei formati MARC 21 e UNIMARC, che molti programmi di biblioteca leggono, e si importa da un file
+MARC: una scuola può quindi lasciare BiblioViva o arrivarci da un altro programma (Koha, SebinaNEXT, Clavis). Se il
+programma di destinazione legga i campi delle copie come BiblioViva li scrive va controllato al momento del passaggio.
 
 ## Che cosa fa la scuola
 

@@ -5,6 +5,9 @@
 import { can } from "#lib/server/auth/rbac.js";
 import { codeTable } from "#lib/server/barcodes/table.js";
 import type { AppConfig } from "#lib/server/config/schema.js";
+import { getConfig } from "#lib/server/config/index.js";
+import { marcToCatalogRows } from "#lib/server/marc/catalog-marc.js";
+import { marcFlavour, readMarcFile } from "#lib/server/marc/read.js";
 import { calendarRules } from "#lib/server/services/calendar.js";
 import { catalogRules } from "#lib/server/services/catalog.js";
 import { dueDateFor, resolveRule } from "#lib/server/services/circulation-rules.js";
@@ -94,6 +97,22 @@ export const CATALOG_IMPORT_KIND: ImportKind<
 	maxBytes: 20_000_000,
 	fallbackName: "catalog.csv",
 	detect: detectCatalogFormat,
+	// a MARC file (ISO 2709 or MARCXML, UNIMARC or MARC 21) read into the same rows (9.65)
+	read: (bytes) => {
+		const file = readMarcFile(bytes);
+		if (!file) {
+			return null;
+		}
+		const { catalog } = getConfig();
+		const flavour = marcFlavour(file.records);
+		return {
+			...marcToCatalogRows(file.records, flavour, {
+				specialAuthors: catalog.specialAuthors,
+				unknownPublisher: catalog.unknownPublisher,
+			}),
+			format: `${flavour === "unimarc" ? "UNIMARC" : "MARC 21"} · ${file.syntax === "marcxml" ? "MARCXML" : "ISO 2709"}`,
+		};
+	},
 	map: (rows, mapping, header, lines) => mapRows(rows, mapping, header, CATALOG_FIELDS, lines),
 	validate: (ctx, inputs, run) =>
 		validateCatalogImport(ctx.db, inputs, catalogOptions(ctx.config, run)),

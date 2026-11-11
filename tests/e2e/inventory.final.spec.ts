@@ -59,7 +59,8 @@ test.describe.serial("stocktaking", () => {
 		await expect(missing).not.toContainText("2026-T0003");
 		await expect(missing.locator("li").first()).toContainText(/D 1 /);
 		const downloading = page.waitForEvent("download");
-		await page.getByTestId("missing-export").click();
+		await page.getByTestId("inventory-missing").getByTestId("export-menu").click();
+		await page.getByRole("menuitem", { name: /^CSV/ }).getByRole("link").click();
 		const csv = readFileSync(await (await downloading).path(), "utf8");
 		expect(csv).not.toContain("2026-T0003");
 		expect(csv.split("\n").slice(1).filter(Boolean).length).toBeGreaterThan(0);

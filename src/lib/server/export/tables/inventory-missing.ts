@@ -20,6 +20,18 @@ export function registerInventoryMissingExport(
 	registerExport("inventory-missing", {
 		permission: "catalog",
 		schema: inventoryMissingSchema,
+		// the missing copies with their titles, in MARC (9.65)
+		marc(db, params) {
+			return {
+				name: `inventario-${params.inventory}-mancanti`,
+				selection: {
+					itemIds: missingItems(db, Number(params.inventory), {
+						shelf: params.shelf ?? null,
+						itemType: params.itemType ?? null,
+					}).map((m) => m.itemId),
+				},
+			};
+		},
 		async build(db, params, _user, timezone) {
 			const l = await labels();
 			const col = (id: string, widthMm: number): ExportColumn => ({

@@ -73,7 +73,7 @@ Above the entries, a line says "N patrons in the list" or "N copies in the list"
 
 The entries are in the order in which they will be printed. To change it, drag the entries ("Drag the entries to change the print order."), or use the **Move up** and **Move down** icons of the entry. The **Remove from the list** icon removes the entry; the patron or the copy stay in the archive. A patron entry also shows whether the card has already been printed (**Card printed**: yes or no); a book entry shows the status of the labels (**Labels printed**, **One label missing** or **Labels to print**). A click on the name opens the record of the patron or the book.
 
-For a list of books, under the entries the **Export** menu downloads the list as CSV or ODS.
+For a list of books, under the entries the **Export** menu downloads the list as CSV or ODS, or as MARC: the four choices **MARC 21 (ISO 2709, for Koha and other programs)**, **MARC 21 (MARCXML)**, **UNIMARC (ISO 2709, for Italian libraries)** and **UNIMARC (MARCXML)** download the titles of the list with only the copies that are in the list. The MARC files are described in [Export](catalog.md#export) in the Catalogue.
 
 At the bottom of the list are **Empty**, which removes all the entries after confirmation ("Empty the list?"), and **Delete**, which deletes the list.
 

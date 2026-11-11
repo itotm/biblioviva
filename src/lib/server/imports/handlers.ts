@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-// The steps every CSV import takes on the server (PLAN.md §3.22), whatever it imports: the upload
+// The steps every CSV import takes on the server (PLAN.md §3.22), whatever it imports (the catalogue
+// takes a MARC file too, read into the same rows, step 9.65): the upload
 // (refusals, the stored file, the detected format and the remembered mapping), the validate phase
 // and the commit phase over the stored file. Each import is an `ImportKind` (`./kinds.ts`); its
 // remote functions validate their input, call `requireUser` and hand over to these functions.
@@ -51,6 +52,20 @@ export interface UploadSpec<F extends string, D extends Detection<F>> {
 	/** The file's name when the browser sends none. */
 	fallbackName: string;
 	detect: (rows: readonly string[][]) => D;
+	/**
+	 * A file that is not a CSV, read into the rows of the import (a MARC file of the catalogue,
+	 * step 9.65): null when the bytes are not of that kind, so they are read as a CSV.
+	 */
+	read?: (bytes: Uint8Array) => { rows: string[][]; lines: number[]; format: string } | null;
+}
+
+/** The rows of a file: the kind's own reader when it recognises the bytes, else the CSV reader. */
+function readTable(
+	kind: Pick<UploadSpec<string, Detection<string>>, "read">,
+	bytes: Uint8Array,
+): { rows: string[][]; lines: number[]; encoding: string; delimiter: string; format?: string } {
+	const own = kind.read?.(bytes);
+	return own ? { ...own, encoding: "UTF-8", delimiter: "" } : readCsv(bytes);
 }
 
 /** One CSV import: its columns and upload, how its rows are read, validated and committed. */
@@ -91,6 +106,8 @@ export interface UploadOutcome<F extends string, D extends Detection<F>> {
 	remembered: boolean;
 	/** The first rows of the file, for the column mapping. */
 	sample: string[][];
+	/** A file that is not a CSV: its format as shown (`MARC 21 · MARCXML`). */
+	format?: string;
 }
 
 /** Why a validate or commit call did not run: the columns still missing, the file gone, errors left. */
@@ -119,7 +136,7 @@ export async function receiveUpload<F extends string, D extends Detection<F>>(
 	if (bytes.length > kind.maxBytes) {
 		return refusal("common.import.errors.tooLarge", { mb: kind.maxBytes / 1_000_000 });
 	}
-	const parsed = readCsv(bytes);
+	const parsed = readTable(kind, bytes);
 	if (parsed.rows.length === 0) {
 		return refusal("common.import.errors.noRows");
 	}
@@ -157,17 +174,18 @@ export async function receiveUpload<F extends string, D extends Detection<F>>(
 		mapping,
 		remembered: mapping === remembered,
 		sample: parsed.rows.slice(0, 6),
+		...(parsed.format ? { format: parsed.format } : {}),
 	};
 }
 
 /** The stored file of a run, read and mapped (`UploadNotFoundError` when it is gone). */
 function prepare<F extends string, I>(
-	kind: Pick<ImportKind<F, Detection<F>, I, ImportRun<F>, object, object>, "map">,
+	kind: Pick<ImportKind<F, Detection<F>, I, ImportRun<F>, object, object>, "map" | "read">,
 	dataDir: string,
 	run: ImportRun<F>,
 ): { upload: ReturnType<typeof readUpload>; signature: string; inputs: I[] } {
 	const upload = readUpload(dataDir, run.uploadId);
-	const parsed = readCsv(upload.bytes);
+	const parsed = readTable(kind, upload.bytes);
 	return {
 		upload,
 		signature: headerSignature(parsed.rows, run.header),

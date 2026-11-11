@@ -18,7 +18,7 @@ colonne sono descritti nel [riferimento tecnico delle importazioni](../../../imp
 
 ## Catalogo
 
-Libri e copie da un file CSV o dall'esportazione di un altro programma. Permesso: **Importa catalogo**. Guida:
+Libri e copie da un file CSV, da un file MARC (ISO 2709 o MARCXML, in UNIMARC o in MARC 21) o dall'esportazione di un altro programma. Permesso: **Importa catalogo**. Guida:
 [Importare il catalogo](../guides/import-the-catalogue.md).
 
 ## Studenti

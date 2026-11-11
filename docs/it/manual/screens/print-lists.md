@@ -105,7 +105,10 @@ toglie la voce; l'utente o la copia restano in archivio. Una voce di utente most
 stampata (**Tessera stampata**: sì o no); una voce di libro mostra lo stato delle etichette (**Etichette stampate**,
 **Manca una etichetta** o **Etichette da stampare**). Un clic sul nome apre la scheda dell'utente o del libro.
 
-Per una lista di libri, sotto le voci il menu **Esporta** scarica l'elenco in CSV o ODS.
+Per una lista di libri, sotto le voci il menu **Esporta** scarica l'elenco in CSV o ODS, oppure in MARC: le quattro scelte
+**MARC 21 (ISO 2709, per Koha e altri programmi)**, **MARC 21 (MARCXML)**, **UNIMARC (ISO 2709, per le biblioteche
+italiane)** e **UNIMARC (MARCXML)** scaricano i titoli della lista con le sole copie che sono nella lista. I file MARC
+sono descritti in [Esportazione](catalog.md#esportazione) nel Catalogo.
 
 In fondo alla lista stanno **Svuota**, che toglie tutte le voci dopo conferma («Svuotare la lista?»), e **Elimina**, che
 cancella la lista.

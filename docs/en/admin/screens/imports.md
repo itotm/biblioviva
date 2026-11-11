@@ -18,7 +18,7 @@ one to another. The complete procedures are in the guides listed below; the file
 
 ## Catalogue
 
-Books and copies from a CSV file or from the export of another program. Permission: **Import catalogue**. Guide:
+Books and copies from a CSV file, from a MARC file (ISO 2709 or MARCXML, in UNIMARC or in MARC 21) or from the export of another program. Permission: **Import catalogue**. Guide:
 [Import the catalogue](../guides/import-the-catalogue.md).
 
 ## Students

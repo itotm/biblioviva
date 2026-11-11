@@ -31,9 +31,14 @@ Il pulsante **Nuovo libro** (solo «Catalogazione» e «Amministrazione») apre 
 
 ## Ricerca
 
-All'apertura il catalogo non mostra nulla: la pagina chiede di cercare («Cerca nel catalogo»). L'elenco compare quando
-si scrive nel campo **Cerca per titolo, autore o ISBN…** almeno tre caratteri, oppure un codice di qualsiasi lunghezza
-fatto di sole cifre, oppure quando si sceglie un filtro.
+All'apertura il catalogo non mostra nulla: la pagina chiede di cercare («Cerca nel catalogo», con il testo «Ricerca per
+titolo, autore, editore, codice o ISBN, oppure con i filtri.»). L'elenco compare quando si scrive nel campo **Cerca per
+titolo, autore o ISBN…** almeno tre caratteri, oppure un codice di qualsiasi lunghezza fatto di sole cifre, oppure quando
+si sceglie un filtro.
+
+Il pulsante **Mostra tutti i libri** del riquadro iniziale elenca invece tutto il catalogo, senza cercare né filtrare. I
+libri le cui copie sono state tutte ritirate non compaiono, a meno che si spunti **Mostra anche i libri ritirati**. La
+ricerca e i filtri funzionano anche sull'elenco intero, e **Azzera filtri** riporta al riquadro iniziale.
 
 La ricerca trova le parole in qualsiasi ordine, anche iniziate soltanto (un prefisso), senza badare agli accenti. Cerca
 nel titolo, nel titolo originale delle traduzioni, nell'autore, nell'editore e nei codici. I risultati più vicini a
@@ -63,11 +68,12 @@ vengono mostrati.
   della serie nella [Scheda del libro](book-record.md).
 - **Mostra anche i libri ritirati**: include i libri le cui copie sono state ritirate.
 
-Il pulsante **Azzera filtri** compare appena un filtro è attivo e li toglie tutti.
+Il pulsante **Azzera filtri** compare appena un filtro è attivo e li toglie tutti: la pagina torna al riquadro iniziale.
 
 ## Risultati
 
-Sopra l'elenco una riga dice quanti libri corrispondono: «N titoli corrispondono ai filtri». Se la ricerca ha trovato
+Sopra l'elenco una riga dice quanti libri corrispondono: «N titoli corrispondono ai filtri», oppure, quando l'elenco è
+quello intero, «N titoli nel catalogo». Se la ricerca ha trovato
 anche titoli simili a quanto scritto (un errore di battitura corretto), la riga aggiunge «più N simili, trovati
 correggendo un errore di battitura». Il titolo trovato in questo modo porta il segno **Simile**: occorre verificare che
 sia quello cercato.
@@ -95,6 +101,12 @@ Le intestazioni **Titolo**, **Serie**, **Autore**, **Anno**, **Segnatura** e **A
 
 Un clic sulla riga apre la [Scheda del libro](book-record.md). Per scegliere più libri si usa il clic con il tasto
 Ctrl o Maiusc (vedere [Selezione di più libri](#selezione-di-più-libri)).
+
+## Pagine dell'elenco
+
+L'elenco mostra 500 titoli per volta, anche per una ricerca o un filtro con molti risultati. Sotto l'elenco, a sinistra,
+i pulsanti **Precedenti** e **Successivi** scorrono le pagine, e un'indicazione come «1–500 di 2340» dice quali titoli
+sono in vista. I pulsanti non compaiono quando i titoli stanno in una pagina sola.
 
 ## Messaggio sul codice di una copia
 
@@ -153,10 +165,30 @@ il cambio e un messaggio conferma «N titoli riclassificati, N segnature riscrit
 
 ## Esportazione
 
-Sotto l'elenco il menu **Esporta** scarica i risultati della ricerca, con i filtri in uso, in due formati: **CSV
-(foglio di calcolo, testo)** oppure **ODS (LibreOffice)**. Il file contiene, oltre alle colonne dell'elenco, il
-numero delle copie e quello delle copie disponibili. C'è anche la
-colonna **Formati accessibili**, con i formati del libro separati da «; ».
+Sotto l'elenco, a destra, il menu **Esporta** scarica tutti i titoli dell'elenco, con la ricerca e i filtri in uso e
+comprese le pagine che non sono in vista, non soltanto i 500 della pagina aperta. Le scelte sono:
+
+- **CSV (foglio di calcolo, testo)**;
+- **ODS (LibreOffice)**;
+- **MARC 21 (ISO 2709, per Koha e altri programmi)**;
+- **MARC 21 (MARCXML)**;
+- **UNIMARC (ISO 2709, per le biblioteche italiane)**;
+- **UNIMARC (MARCXML)**.
+
+Il file CSV o ODS contiene, oltre alle colonne dell'elenco, il numero delle copie e quello delle copie disponibili. C'è
+anche la colonna **Formati accessibili**, con i formati del libro separati da «; ».
+
+I file MARC hanno un record per titolo, con tutte le sue copie, in UTF-8: `.mrc` per l'ISO 2709, `.xml` per il
+MARCXML. Servono a portare il catalogo in un altro programma di biblioteca (Koha, SebinaNEXT, Clavis) o in un'altra
+installazione di BiblioViva, che li legge con tutti i dati; la procedura è in [Importare il
+catalogo](../../admin/guides/import-the-catalogue.md#caricare-un-file-marc). Le copie stanno nel campo 952 (MARC 21) o
+995 (UNIMARC), che Koha legge per le sue copie; i dati che solo BiblioViva ha stanno in due campi locali, che gli altri
+programmi ignorano. Il giorno e il motivo del ritiro di una copia non sono nel file.
+
+> [!NOTE]
+> Se Koha legga il campo 995 con questi sottocampi va controllato al momento del passaggio.
+
+Ogni scarico è registrato nel [Registro operazioni](../../admin/screens/audit.md), come ogni esportazione.
 
 ## Pagine correlate
 

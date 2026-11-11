@@ -47,6 +47,8 @@ export type Namespace = (typeof NAMESPACES)[number];
 export const NAMESPACE_ROUTES: Partial<Record<Namespace, RegExp[]>> = {
 	config: [/^\/admin(\/|$)/],
 	admin: [/^\/admin(\/|$)/, /^\/patrons\/\d+/],
+	// the first-run wizard's texts: the wizard, and the theme swatches of Aspetto (9.65)
+	setup: [/^\/setup(\/|$)/, /^\/admin(\/|$)/],
 };
 
 const loaders = LOCALES.flatMap((locale) =>

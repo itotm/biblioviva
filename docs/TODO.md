@@ -102,7 +102,7 @@ list is cleared at a release, and a new one takes the next.
   security), its PDF, and the rules on the home page (Q154, ADR-059).
 - [x] 9.64 The school inventory: inventory number, origin and value of the copies, off by default; the lists of the
   copies withdrawn and entered in a period (Q155).
-- [ ] 9.65 MARC export and import; **Mostra tutti i libri** in the catalogue list (Q156).
+- [x] 9.65 MARC export and import; **Mostra tutti i libri** in the catalogue list (Q156).
 - [x] 9.66 Accessible books: high readability, CAA, audiobook, large print, tactile; a filter of the catalogue (Q157).
 - [ ] 9.4 Device checklist.
 - [x] 9.17 Public demo: running on `demo.biblioviva.org`.

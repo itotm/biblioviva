@@ -59,7 +59,7 @@ references.
 
 | Rule | What it asks | What BiblioViva does | Page |
 |---|---|---|---|
-| CAD, articles 68 and 69 | Comparative evaluation before acquiring software; reuse of software developed for public administrations | Free software under the GPL-3.0-or-later licence, public code, no licence cost; exports in open formats | [Free software in public administration](open-source.md) |
+| CAD, articles 68 and 69 | Comparative evaluation before acquiring software; reuse of software developed for public administrations | Free software under the GPL-3.0-or-later licence, public code, no licence cost; exports in open formats, including the catalogue in MARC 21 and UNIMARC | [Free software in public administration](open-source.md) |
 | AgID guidelines on acquisition and reuse | How to make the evaluation and how to publish software for reuse | Has the `publiccode.yml` file in the repository, required for the Developers Italia catalogue | [Free software in public administration](open-source.md) |
 
 ### IT security

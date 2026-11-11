@@ -59,7 +59,7 @@ riferimenti ufficiali.
 
 | Norma | Che cosa chiede | Che cosa fa BiblioViva | Pagina |
 |---|---|---|---|
-| CAD, articoli 68 e 69 | Valutazione comparativa prima di acquisire un software; riuso del software sviluppato per la pubblica amministrazione | Software libero con licenza GPL-3.0-or-later, codice pubblico, nessun costo di licenza; esportazioni in formati aperti | [Software libero](open-source.md) |
+| CAD, articoli 68 e 69 | Valutazione comparativa prima di acquisire un software; riuso del software sviluppato per la pubblica amministrazione | Software libero con licenza GPL-3.0-or-later, codice pubblico, nessun costo di licenza; esportazioni in formati aperti, anche il catalogo in MARC 21 e UNIMARC | [Software libero](open-source.md) |
 | Linee guida AgID su acquisizione e riuso | Come fare la valutazione e come pubblicare il software da riusare | Ha il file `publiccode.yml` nel repository, richiesto per il catalogo di Developers Italia | [Software libero](open-source.md) |
 
 ### Sicurezza informatica

@@ -143,7 +143,7 @@
 	title={i18n.t("catalog.import.title")}
 	current="catalog"
 	upload={uploadCatalogCsv}
-	accept=".csv,.tsv,.txt,text/csv,text/tab-separated-values,text/plain"
+	accept=".csv,.tsv,.txt,.mrc,.marc,.iso,.xml,text/csv,text/tab-separated-values,text/plain,application/marc,application/xml,text/xml"
 	texts={{
 		uploadHint: i18n.t("catalog.import.upload.hint"),
 		file: i18n.t("catalog.import.upload.file"),

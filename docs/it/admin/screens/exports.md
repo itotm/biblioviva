@@ -24,6 +24,9 @@ Una riga per copia con i dati del libro, nel formato dell'importazione del catal
 provenienza e valore (il valore con il punto, per esempio `12.50`). La colonna `accessible_formats`, dopo `subjects`,
 porta i formati accessibili del libro separati da «; »: l'importazione la rilegge.
 
+Il catalogo si scarica anche in MARC 21 e in UNIMARC, con le copie, dal menu **Esporta** del
+[Catalogo](../../manual/screens/catalog.md#esportazione).
+
 ## Prestiti in corso (CSV)
 
 Tessera, copia, data del prestito e scadenza: si reimportano da [Importazioni](imports.md), voce **Prestiti in corso**.

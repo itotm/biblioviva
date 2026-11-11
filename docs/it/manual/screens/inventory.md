@@ -104,9 +104,12 @@ collegamento alla [Scheda del libro](book-record.md)) e il codice. L'elenco si r
 scaffali** oppure uno scaffale) e **Materiale** (**Tutti i materiali** oppure un tipo). Quando tutto è stato letto, la
 pagina scrive «Tutte le copie attese sono state viste.»
 
-L'elenco mostra le prime copie; se sono di più, una riga dice «e altre N: per vederle tutte, esportare l'elenco». I
-pulsanti CSV e ODS scaricano l'elenco completo con i filtri scelti: è l'elenco da portare sugli scaffali per la
-ricerca finale. Con l'inventario della scuola attivo ogni copia mostra «Inv.» e il numero d'inventario, e la prima colonna
+L'elenco mostra le prime copie; se sono di più, una riga dice «e altre N: per vederle tutte, esportare l'elenco». Il
+menu **Esporta** scarica l'elenco completo con i filtri scelti, in **CSV (foglio di calcolo, testo)** o in **ODS
+(LibreOffice)**: è l'elenco da portare sugli scaffali per la ricerca finale. Le quattro scelte MARC e UNIMARC
+(**MARC 21 (ISO 2709, per Koha e altri programmi)**, **MARC 21 (MARCXML)**, **UNIMARC (ISO 2709, per le biblioteche
+italiane)** e **UNIMARC (MARCXML)**) scaricano gli stessi titoli come record MARC, ciascuno con le sole copie mancanti;
+vedere [Esportazione](catalog.md#esportazione) nel Catalogo. Con l'inventario della scuola attivo ogni copia mostra «Inv.» e il numero d'inventario, e la prima colonna
 del file è il **Numero d'inventario**.
 
 ## Chiusura dell'inventario

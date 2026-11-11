@@ -112,6 +112,88 @@ the order of that list. A name that is not in the list is an error of the row ("
 configuration: “Braille”"), so the import stays blocked until the file or the list is corrected. The catalogue export
 writes the column after `subjects`, the formats joined by `; `, so that a file exported can be imported again.
 
+## Catalogue from a MARC file (same page, `/admin/imports/catalog`, step 9.65)
+
+The catalogue import also takes a MARC file: ISO 2709 (`.mrc`, `.marc`, `.iso`) or MARCXML (`.xml`), UNIMARC or MARC 21.
+The kind is recognised from the file itself (leader and fields), nothing is chosen. The file must be UTF-8 (Koha and SBN
+write UTF-8); a MARC-8 file is not supported. The records are turned into the rows of the CSV import, one row per copy
+with the title's fields repeated, under a generated header of the English column names, so the columns step has nothing
+to map and everything above holds: the whole file is validated first, the same questions are asked (reading levels,
+materials, segnature), the special values stand in for a missing author or publisher, "Import" needs zero errors, the
+commit is one transaction and the original file is kept. The line under the file name reads "N rows (one per copy) ·
+MARC 21 · MARCXML file". The row numbers of the preview are the rows of that list (one per copy), not lines of the file.
+`biblio_key` is field 001 of the record (`marc-N` when it has none), so the copies of one record stay together.
+
+**A file of another system** (no local field 959).
+
+| Row column | UNIMARC | MARC 21 |
+|---|---|---|
+| `title`, `subtitle`, `responsibility` | 200 `$a`, `$e`, `$f` | 245 `$a`, `$b`, `$c` |
+| `author` | 700, 701, 710 (the lookups' mapping, Appendix D) | 100 and 700; 110 when there is no 100 |
+| `publisher`, `publication_place`, `publication_year` | 210 `$c`, `$a`, `$d` | 264 (second indicator 1, else the first 264, else 260) `$b`, `$a`, `$c` |
+| `isbn`, `issn`, `ean` | 010, 011, 073 | 020, 022, 024 (first indicator 3) |
+| `physical_description` | 215 `$a` | 300 `$a` |
+| `series`, `series_number` | 461 `$a`, `$v` (the publisher's collana of 225 and 410 is left out, as in the SBN lookups) | 490 `$a`, `$v` (else 830) |
+| `dewey` | 676 | 082 |
+| `subjects` | 606 | 650 `$a` and `$x` |
+| `notes` | 300 | 500 |
+| `original_title` | 500 | 240 |
+| `item_type` | 995 `$r` | 942 `$c` (the copy's 952 `$y` wins) |
+
+Three or more personal authors give the special value for many authors (`catalog.specialAuthors[1]`, `AA. VV.`),
+none gives `catalog.specialAuthors[0]` (`Anonimo`); a missing publisher gives `catalog.unknownPublisher`. In MARC 21 the
+ISBD punctuation left at the end of a subfield (`/ : ; , =`) is removed. A record of SBN has no copies and no
+collection code: one row without a barcode (a generated copy), and the title waits in "To classify".
+
+The copies come from 952 (MARC 21) or 995 (UNIMARC), one row each:
+
+| Row column | 952 (MARC 21) | 995 (UNIMARC) |
+|---|---|---|
+| `barcode` | `$p` | `$f` |
+| `call_number` | `$o` | `$k` |
+| `item_type` | `$y` | `$r` |
+| `classification` | `$8` collection code | `$h` collection code |
+| `acquisition_date` | `$d` | |
+| `enumeration` (volume) | `$h` | |
+| `item_notes` | `$x` non-public note | `$u` |
+| `not_for_loan` | `$7` (any value from 1) | |
+| `status` | `$0` withdrawn, `$1` lost, `$4` damaged | |
+| `inventory_number`, `origin`, `value` | `$i`, `$e` (source of acquisition), `$g` (cost) | |
+
+A barcode goes through the format table (`#lib/shared/scan.ts`), so legacy codes keep working. The collection code is
+read as the CSV column `classification`: a genre code or a class code of BiblioViva's classification. A record without
+copies gives one row without a barcode, and the import then creates one copy with a generated barcode, as for a CSV row
+without `barcode`.
+
+**A file of BiblioViva** (it has the local fields 959 and 958) comes back whole, read exactly as it was written, without
+the clean-ups that the records of other systems need.
+
+- 959, once per title: `$a` kind, `$g` genre, `$c` class, `$l` reading level, `$t` material, `$f` accessible format
+  (repeated).
+- 958, once per copy: `$f` barcode, `$k` call number, `$l` reading level, `$h` volume, `$s` status, `$n` not for loan
+  (`1` or `0`), `$d` acquisition date, `$u` notes (one per line), `$i` inventory number, `$e` origin, `$g` value.
+
+When a record has 958 fields, they are read instead of 952 or 995.
+
+**The export** is the **Export** menu of three lists: the catalogue (the titles of the list with all their copies), a print
+list of copies (its titles with only the copies of the list) and the missing copies of a stocktaking campaign (the titles
+with only the missing copies). Four entries after CSV and ODS: MARC 21 ISO 2709 (`.mrc`), MARC 21 MARCXML (`.xml`),
+UNIMARC ISO 2709 and UNIMARC MARCXML, named like the other exports (`catalog-<date>-<time>-marc21.mrc`). One record per
+title, in UTF-8; the leader says UTF-8 and the kind of record, `001` is BiblioViva's record id, the UNIMARC `100` and the
+MARC 21 `008` are built from the day the record was created. The title's fields are those of the table above (UNIMARC:
+010, 011, 073, 100, 101 for a translation, 200, 210, 215, 300, 461, 500, 606, 676, 700; MARC 21: 008, 020, 022, 024, 082,
+100, 240, 245, 264, 300, 490, 500, 650, 942), plus 959. An unknown author (`catalog.specialAuthors[0]`) is written as no
+author at all. A note of several lines is one field per line.
+
+The copies are written in 952 (MARC 21) with the subfields of the table above, flags `1` when they apply: `$p` barcode,
+`$o` call number, `$y` item type, `$8` collection code (the genre, else the class), `$d` acquisition date, `$h`
+enumeration, `$x` non-public note, `$7` not for loan, `$1` lost, `$4` damaged, `$0` withdrawn, `$i` inventory number, `$e`
+source of acquisition, `$g` cost with a point. In UNIMARC they are written in 995 with `$f` barcode, `$k` call number,
+`$r` item type, `$h` collection code and `$u` notes. [VERIFY at the Koha migration: the subfields of 995 in the school's
+UNIMARC framework.] Each copy also has its 958. The withdrawal day and reason of a copy (9.64) are not exported, as the
+CSV import has no column for them. Other programs ignore 958 and 959. The download is recorded in the audit log like
+every export.
+
 ## Open loans (Administration → Imports → Open loans, `/admin/imports/loans`, administrators, once)
 
 | Group | Columns |

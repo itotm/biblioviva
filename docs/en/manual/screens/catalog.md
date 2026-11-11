@@ -23,7 +23,9 @@ The **New book** button (only "Cataloguing" and "Administration") opens the [New
 
 ## Search
 
-On opening, the catalogue shows nothing: the page asks for a search ("Search the catalogue"). The list appears when at least three characters are typed in the **Search by title, author or ISBN…** field, or a code made only of digits, of any length, or when a filter is chosen.
+On opening, the catalogue shows nothing: the page asks for a search ("Search the catalogue", with the text "Search by title, author, publisher, code or ISBN, or with the filters."). The list appears when at least three characters are typed in the **Search by title, author or ISBN…** field, or a code made only of digits, of any length, or when a filter is chosen.
+
+The **Show all books** button of the start box lists the whole catalogue instead, without searching or filtering. The books whose copies have all been withdrawn do not appear, unless **Also show withdrawn books** is ticked. The search and the filters also work on the whole list, and **Clear filters** goes back to the start box.
 
 The search finds the words in any order, even when only the beginning is typed (a prefix), regardless of accents. It searches the title, the original title of translations, the author, the publisher and the codes. The results closest to what was typed come first.
 
@@ -44,11 +46,11 @@ The filters narrow the search and also work alone, without text. Those that are 
 - **Series**: the books of a series. It appears only if the catalogue contains series. The filter can also be set from the series button in the [Book record](book-record.md).
 - **Also show withdrawn books**: includes the books whose copies have been withdrawn.
 
-The **Clear filters** button appears as soon as a filter is active and removes them all.
+The **Clear filters** button appears as soon as a filter is active and removes them all: the page goes back to the start box.
 
 ## Results
 
-Above the list a line says how many books match: "N titles match the filters". If the search also found titles similar to what was typed (a typing mistake corrected), the line adds "plus N similar, found by correcting a typing mistake". A title found this way carries the **Similar** mark: check that it is the one wanted.
+Above the list a line says how many books match: "N titles match the filters", or, when the list is the whole catalogue, "N titles in the catalogue". If the search also found titles similar to what was typed (a typing mistake corrected), the line adds "plus N similar, found by correcting a typing mistake". A title found this way carries the **Similar** mark: check that it is the one wanted.
 
 If nothing matches, the page writes "No book matches the filters."
 
@@ -69,6 +71,10 @@ Each row is a book (a title, not a copy). The columns are:
 The headings **Title**, **Series**, **Author**, **Year**, **Call number** and **Acquired** sort the list.
 
 A click on the row opens the [Book record](book-record.md). To choose several books, click with the Ctrl or Shift key (see [Selecting several books](#selecting-several-books)).
+
+## Pages of the list
+
+The list shows 500 titles at a time, also for a search or a filter with many results. Under the list, on the left, the **Previous** and **Next** buttons turn the pages, and an indication such as "1–500 of 2340" says which titles are in sight. The buttons do not appear when the titles fit in one page.
 
 ## Message about a copy code
 
@@ -104,7 +110,23 @@ A check is valid only for the choice made: when the value is changed, **Check** 
 
 ## Export
 
-Under the list the **Export** menu downloads the search results, with the filters in use, in two formats: **CSV (spreadsheet, text)** or **ODS (LibreOffice)**. Besides the columns of the list, the file contains the number of copies and the number of available copies. There is also the column **Accessible formats**, with the book's formats separated by "; ".
+Under the list, on the right, the **Export** menu downloads all the titles of the list, with the search and the filters in use and including the pages that are not in sight, not only the 500 of the open page. The choices are:
+
+- **CSV (spreadsheet, text)**;
+- **ODS (LibreOffice)**;
+- **MARC 21 (ISO 2709, for Koha and other programs)**;
+- **MARC 21 (MARCXML)**;
+- **UNIMARC (ISO 2709, for Italian libraries)**;
+- **UNIMARC (MARCXML)**.
+
+The CSV or ODS file contains, besides the columns of the list, the number of copies and the number of available copies. There is also the column **Accessible formats**, with the book's formats separated by "; ".
+
+The MARC files have one record per title, with all its copies, in UTF-8: `.mrc` for ISO 2709, `.xml` for MARCXML. They serve to take the catalogue to another library program (Koha, SebinaNEXT, Clavis) or to another BiblioViva installation, which reads them with all the data; the procedure is in [Import the catalogue](../../admin/guides/import-the-catalogue.md#load-a-marc-file). The copies are in field 952 (MARC 21) or 995 (UNIMARC), which Koha reads for its items; the data that only BiblioViva has are in two local fields, which other programs ignore. The day and the reason of the withdrawal of a copy are not in the file.
+
+> [!NOTE]
+> Whether Koha reads field 995 with these subfields is to be checked at the migration.
+
+Every download is recorded in the [Audit log](../../admin/screens/audit.md), like every export.
 
 ## Related pages
 

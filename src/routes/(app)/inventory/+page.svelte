@@ -6,8 +6,8 @@
      export; "Chiudi inventario" with the count first, then the summary. With no campaign: "Nuova
      campagna" and the closed ones, a recent one can be reopened. -->
 <script lang="ts">
-	import type { ResolvedPathname } from "$app/types";
 	import { resolve } from "$app/paths";
+	import ExportMenu from "#lib/components/ExportMenu.svelte";
 	import { page } from "$app/state";
 	import AreaTabs from "#lib/components/AreaTabs.svelte";
 	import { tick } from "svelte";
@@ -49,7 +49,6 @@
 	const AddIcon = icons.add;
 	const CameraIcon = icons.camera;
 	const CloseIcon = icons.confirm;
-	const ExportIcon = icons.export;
 	const ReopenIcon = icons.undo;
 
 	type Outcome = Awaited<ReturnType<typeof scanForInventory>> & { ok: true };
@@ -165,16 +164,12 @@
 					barcode: o.barcode,
 					when: o.firstAt ? fmt.dateTime(o.firstAt) : "",
 				});
-	const exportHref = (format: "csv" | "ods"): ResolvedPathname => {
-		const params: Record<string, string> = { inventory: String(current?.id ?? 0), format };
-		if (missingShelf !== null) {
-			params.shelf = missingShelf;
-		}
-		if (missingType) {
-			params.itemType = missingType;
-		}
-		return resolve(`export/inventory-missing?${new URLSearchParams(params).toString()}`);
-	};
+	// the export of the missing copies: CSV, ODS and MARC (9.65)
+	const exportParams = $derived({
+		inventory: String(current?.id ?? 0),
+		shelf: missingShelf ?? undefined,
+		itemType: missingType || undefined,
+	});
 </script>
 
 {#snippet bar(seen: number, expected: number, label: string, testid: string)}
@@ -365,16 +360,7 @@
 								count: missing?.current?.total ?? 0,
 							})}
 						</h2>
-						<Row gap="2">
-							<Button
-								size="sm"
-								icon={ExportIcon}
-								href={exportHref("csv")}
-								data-testid="missing-export">CSV</Button
-							>
-							<Button size="sm" icon={ExportIcon} href={exportHref("ods")}>ODS</Button
-							>
-						</Row>
+						<ExportMenu table="inventory-missing" params={exportParams} marc />
 					</Row>
 					<Row gap="3">
 						<Field label={i18n.t("catalog.inventory.shelf")}>

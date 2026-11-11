@@ -30,13 +30,15 @@ wished-for books and the calendar with the closures, which the due dates take in
 
 ## Catalogue
 
-The catalogue records the books and their copies. For a book with an ISBN the record is looked up automatically; for one
-without an ISBN it is filled in by hand. The cover is looked up online or uploaded. Books are classified by genre or
-subject and searched by title, author, ISBN or copy code. The catalogue also withdraws lost or damaged copies and does
-the stocktaking, reading the copies with the scanner shelf by shelf. The school inventory is optional: when switched on,
-each copy also has an inventory number, an origin and a value, and two reports list the copies entered and the copies
-withdrawn in a period. A book can have one or more accessible formats (high readability, symbols, audiobook, large
-print, tactile: the list is the school's): the catalogue filters them and a report lists the books of each format.
+The catalogue records the books and their copies. For a book with an ISBN the record is looked up automatically; for
+one without an ISBN it is filled in by hand. The cover is looked up online or uploaded. Books are classified by genre
+or subject and searched by title, author, ISBN or copy code, or listed all together. It is exported and imported also
+in MARC 21 and UNIMARC, to leave BiblioViva or to come to it from another library program. The catalogue also withdraws
+lost or damaged copies and does the stocktaking, reading the copies with the scanner shelf by shelf. The school
+inventory is optional: when switched on, each copy also has an inventory number, an origin and a value, and two reports
+list the copies entered and the copies withdrawn in a period. A book can have one or more accessible formats (high
+readability, symbols, audiobook, large print, tactile: the list is the school's): the catalogue filters them and a
+report lists the books of each format.
 
 ## Patrons, classes and cards
 

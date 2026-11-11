@@ -13,7 +13,9 @@ catalogo.
 
 ### Cercare scrivendo
 
-1. Aprire **Catalogo**. La pagina è vuota finché non si cerca: compare «Cerca nel catalogo».
+1. Aprire **Catalogo**. La pagina è vuota finché non si cerca: compare «Cerca nel catalogo». Per vedere tutto il
+   catalogo premere **Mostra tutti i libri**: l'elenco mostra 500 titoli per volta, che si scorrono con **Successivi** e
+   **Precedenti**.
 1. Scrivere nel campo **Cerca per titolo, autore o ISBN…** una o più parole. L'ordine delle parole non conta, l'inizio
    di una parola basta («harr pott») e gli accenti e le maiuscole non contano. I risultati più somiglianti vengono per
    primi.
@@ -70,7 +72,9 @@ I filtri stanno sopra la tabella e si possono usare anche senza scrivere nulla n
 ### Esportare l'elenco
 
 1. Sotto la tabella premere **Esporta** e scegliere **CSV (foglio di calcolo, testo)** oppure
-   **ODS (LibreOffice)**. Il file contiene i risultati della ricerca con i filtri applicati.
+   **ODS (LibreOffice)**. Il file contiene tutti i risultati della ricerca con i filtri applicati, anche quelli delle
+   altre pagine. Le scelte che cominciano con MARC o UNIMARC servono a portare il catalogo in un altro programma di
+   biblioteca: vedere [Catalogo](../screens/catalog.md#esportazione).
 
 ## Risultato
 

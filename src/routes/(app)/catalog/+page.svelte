@@ -1,6 +1,7 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 <!-- Catalogue grid (steps 3.1, 5.1): title, author, year, ISBN, classification with its pictogram,
-     copies on the shelf; full-text search (words in any order, prefixes, accents ignored, ranked),
+     copies on the shelf, 500 titles a page; «Mostra tutti i libri» lists the whole catalogue, and
+     Esporta gives it in CSV, ODS or MARC (9.65); full-text search (words in any order, prefixes, accents ignored, ranked),
      a scanned or typed copy barcode or ISBN opens the record, filters (classification, material,
      availability, years, withdrawn). `?q=` comes from the search box of the top bar. Ctrl/Shift
      clicks select records: print their labels or add every copy to a print list (step 3.8). -->
@@ -49,6 +50,7 @@
 	const ClearIcon = icons.close;
 	const PrintIcon = icons.print;
 	const EditIcon = icons.edit;
+	const ListIcon = icons.catalog;
 	const canEdit = $derived(hasPermission(data.user, "catalog"));
 	const options = getClassificationOptions();
 
@@ -65,6 +67,8 @@
 		series: string;
 		accessibleFormat: string;
 		withdrawn: boolean;
+		/** «Mostra tutti i libri»: the whole catalogue without a filter (9.65, an exception to Q83). */
+		all: boolean;
 	}
 	const filterState = new ListFilters<Filters>(
 		{
@@ -80,6 +84,7 @@
 			series: "",
 			accessibleFormat: "",
 			withdrawn: false,
+			all: false,
 		},
 		// the series link of a record page lands here with `?series=` (step 9.14)
 		{
@@ -95,8 +100,8 @@
 	let labelDialog = $state(false);
 	let batchDialog = $state(false);
 	let reclassifyDialog = $state(false);
-	// Q83: the grid loads nothing until a filter is set; a code (digits, a barcode or an ISBN)
-	// searches at any length
+	// Q83: the grid loads nothing until a filter is set or the whole catalogue is asked for; a code
+	// (digits, a barcode or an ISBN) searches at any length
 	const activeFilters = $derived({
 		q: searchText(f.q, DIGITS),
 		kind: f.kind,
@@ -112,7 +117,22 @@
 		yearTo: /^\d{4}$/.test(f.yearTo) ? f.yearTo : "",
 	});
 	const filtered = $derived(hasFilter(activeFilters));
-	const result = $derived(filtered ? searchBiblios(activeFilters) : null);
+	// the grid pages on the server, PAGE titles at a time; a change of the filters starts again
+	const PAGE = 500;
+	let pageIndex = $state(0);
+	let pagedFor = "";
+	$effect(() => {
+		const key = JSON.stringify(activeFilters);
+		if (key !== pagedFor) {
+			pagedFor = key;
+			pageIndex = 0;
+		}
+	});
+	const result = $derived(
+		filtered || f.all
+			? searchBiblios({ ...activeFilters, limit: PAGE, offset: pageIndex * PAGE })
+			: null,
+	);
 	// the top bar's search box lands here with `?q=`
 	$effect(() => {
 		const fromUrl = page.url.searchParams.get("q");
@@ -400,7 +420,7 @@
 			<Checkbox bind:checked={f.withdrawn} data-testid="show-withdrawn"
 				>{i18n.t("catalog.list.filters.withdrawn")}</Checkbox
 			>
-			{#if filtered}
+			{#if filtered || f.all}
 				<Button
 					icon={ClearIcon}
 					onclick={() => filterState.clear()}
@@ -429,13 +449,23 @@
 					title={i18n.t("catalog.list.startTitle")}
 					description={i18n.t("catalog.list.startHint")}
 					icon="search"
-				/>
+				>
+					{#snippet action()}
+						<Button
+							icon={ListIcon}
+							onclick={() => (f.all = true)}
+							data-testid="show-all">{i18n.t("catalog.list.showAll")}</Button
+						>
+					{/snippet}
+				</EmptyState>
 			</div>
 		{:else}
 			<QueryState query={result}>
 				{#snippet children(found)}
 					<Hint tone="primary" data-testid="biblio-count" aria-live="polite">
-						{i18n.t("catalog.list.countFiltered", { shown: found.total })}
+						{filtered
+							? i18n.t("catalog.list.countFiltered", { shown: found.total })
+							: i18n.t("catalog.list.countAll", { shown: found.total })}
 						{#if found.similar > 0}
 							· {i18n.t("common.similar.count", { count: found.similar })}
 						{/if}
@@ -482,7 +512,20 @@
 								}}
 							/>
 						</GridFrame>
-						<GridFooter exportTable="catalog" exportParams={activeFilters} />
+						<GridFooter exportTable="catalog" exportParams={activeFilters} exportMarc>
+							{#snippet status()}
+								{#if found.total > PAGE}
+									{#await import("#lib/ui/GridPager.svelte") then { default: GridPager }}
+										<GridPager
+											index={pageIndex}
+											size={PAGE}
+											total={found.total}
+											onpage={(i) => (pageIndex = i)}
+										/>
+									{/await}
+								{/if}
+							{/snippet}
+						</GridFooter>
 					{/if}
 				{/snippet}
 			</QueryState>

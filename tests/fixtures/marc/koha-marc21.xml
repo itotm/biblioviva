@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A synthetic Koha export (MARC 21, MARCXML with a namespace prefix): two titles, their copies in
+     952 as Koha writes them, the classification in the collection code (952$8). Made up for the
+     tests of step 9.65: no real record, no real library. -->
+<marc:collection xmlns:marc="http://www.loc.gov/MARC21/slim">
+  <marc:record>
+    <marc:leader>00512nam a22001697a 4500</marc:leader>
+    <marc:controlfield tag="001">101</marc:controlfield>
+    <marc:controlfield tag="008">250115s2019    it            000 0 ita d</marc:controlfield>
+    <marc:datafield ind1=" " ind2=" " tag="020">
+      <marc:subfield code="a">9788804719052 (brossura)</marc:subfield>
+    </marc:datafield>
+    <marc:datafield tag="100" ind1="1" ind2=" ">
+      <marc:subfield code="a">Pellegrini, Marta,</marc:subfield>
+    </marc:datafield>
+    <marc:datafield tag="245" ind1="1" ind2="0">
+      <marc:subfield code="a">Il faro sull'isola :</marc:subfield>
+      <marc:subfield code="b">racconto d'estate /</marc:subfield>
+      <marc:subfield code="c">Marta Pellegrini ; illustrazioni di Ugo Neri.</marc:subfield>
+    </marc:datafield>
+    <marc:datafield tag="264" ind1=" " ind2="1">
+      <marc:subfield code="a">Milano :</marc:subfield>
+      <marc:subfield code="b">Edizioni del Gabbiano,</marc:subfield>
+      <marc:subfield code="c">2019.</marc:subfield>
+    </marc:datafield>
+    <marc:datafield tag="300" ind1=" " ind2=" ">
+      <marc:subfield code="a">143 p. :</marc:subfield>
+    </marc:datafield>
+    <marc:datafield tag="490" ind1="0" ind2=" ">
+      <marc:subfield code="a">I gabbiani ;</marc:subfield>
+      <marc:subfield code="v">4</marc:subfield>
+    </marc:datafield>
+    <marc:datafield tag="650" ind1=" " ind2="4">
+      <marc:subfield code="a">Mare</marc:subfield>
+      <marc:subfield code="x">Narrativa per ragazzi</marc:subfield>
+    </marc:datafield>
+    <marc:datafield tag="942" ind1=" " ind2=" ">
+      <marc:subfield code="c">libro</marc:subfield>
+    </marc:datafield>
+    <marc:datafield tag="952" ind1=" " ind2=" ">
+      <marc:subfield code="a">SCUOLA</marc:subfield>
+      <marc:subfield code="8">A</marc:subfield>
+      <marc:subfield code="d">2020-03-02</marc:subfield>
+      <marc:subfield code="o">A PEL</marc:subfield>
+      <marc:subfield code="p">2020-0101</marc:subfield>
+      <marc:subfield code="y">libro</marc:subfield>
+      <marc:subfield code="i">4512</marc:subfield>
+      <marc:subfield code="e">Dono</marc:subfield>
+      <marc:subfield code="g">12.50</marc:subfield>
+    </marc:datafield>
+    <marc:datafield tag="952" ind1=" " ind2=" ">
+      <marc:subfield code="a">SCUOLA</marc:subfield>
+      <marc:subfield code="8">A</marc:subfield>
+      <marc:subfield code="o">A PEL</marc:subfield>
+      <marc:subfield code="p">2020-0102</marc:subfield>
+      <marc:subfield code="y">libro</marc:subfield>
+      <marc:subfield code="1">1</marc:subfield>
+      <marc:subfield code="x">Copertina strappata</marc:subfield>
+    </marc:datafield>
+  </marc:record>
+  <marc:record>
+    <marc:leader>00377nam a22001337a 4500</marc:leader>
+    <marc:controlfield tag="001">102</marc:controlfield>
+    <marc:datafield tag="020" ind1=" " ind2=" ">
+      <marc:subfield code="a">9788811000012</marc:subfield>
+    </marc:datafield>
+    <marc:datafield tag="110" ind1="2" ind2=" ">
+      <marc:subfield code="a">Società geografica scolastica.</marc:subfield>
+    </marc:datafield>
+    <marc:datafield tag="245" ind1="1" ind2="0">
+      <marc:subfield code="a">Atlante dei fiumi &amp; dei laghi</marc:subfield>
+    </marc:datafield>
+    <marc:datafield tag="260" ind1=" " ind2=" ">
+      <marc:subfield code="a">Torino :</marc:subfield>
+      <marc:subfield code="b">Carte &lt;Nuove&gt;,</marc:subfield>
+      <marc:subfield code="c">c2015.</marc:subfield>
+    </marc:datafield>
+    <marc:datafield tag="082" ind1="0" ind2="4">
+      <marc:subfield code="a">551.48</marc:subfield>
+    </marc:datafield>
+    <marc:datafield tag="952" ind1=" " ind2=" ">
+      <marc:subfield code="8">900</marc:subfield>
+      <marc:subfield code="o">900 SOC</marc:subfield>
+      <marc:subfield code="p">2016-0007</marc:subfield>
+      <marc:subfield code="y">libro</marc:subfield>
+      <marc:subfield code="7">1</marc:subfield>
+    </marc:datafield>
+  </marc:record>
+</marc:collection>

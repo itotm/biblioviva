@@ -52,7 +52,12 @@
 		},
 		"copiesCell": "{{available}} / {{total}}",
 		"startTitle": "Search the catalogue",
-		"startHint": "Search by title, author, publisher, code or ISBN, or with the filters."
+		"startHint": "Search by title, author, publisher, code or ISBN, or with the filters.",
+		"showAll": "Show all books",
+		"countAll": "{{shown}} {{shown:plural; one:title; other:titles;}} in the catalogue",
+		"pagePrevious": "Previous",
+		"pageNext": "Next",
+		"pageRange": "{{from}}–{{to}} of {{total}}"
 	},
 	"kinds": {
 		"fiction": "Fiction",
@@ -378,8 +383,8 @@
 	"import": {
 		"title": "Import the catalogue",
 		"upload": {
-			"file": "CSV file",
-			"hint": "One row per copy: the fields of the title repeat on the rows of its copies. Title, author and publisher are required. Use the headers of the template, downloaded below with the columns needed. To move from Koha, use the export described in the administrator's guide.",
+			"file": "CSV or MARC file",
+			"hint": "One row per copy: the fields of the title repeat on the rows of its copies. Title, author and publisher are required. Use the headers of the template, downloaded below with the columns needed. To move from Koha, use the export described in the administrator's guide. A MARC file (ISO 2709 or MARCXML, UNIMARC or MARC 21) can be uploaded too: it is recognised by itself.",
 			"submit": "Upload"
 		},
 		"mapping": {

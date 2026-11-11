@@ -5,7 +5,7 @@ Captured once, committed, **never containing personal data** (PLAN.md §7).
 | Folder | Contents | Used by |
 |---|---|---|
 | `config/` | minimal `config.json` for unit tests (`CONFIG_DIR` in the `server` Vitest project) | step 1.1 |
-| `marc/` | ISO 2709 records recorded from OPAC SBN | step 3.4 |
+| `marc/` | ISO 2709 records recorded from OPAC SBN; `koha-marc21.xml`, a synthetic Koha export (MARC 21, MARCXML, copies in 952) | steps 3.4, 9.65 |
 | `csv/` | student and catalogue import files (synthetic names) | steps 2.6, 3.9 |
 | `images/` | `portrait-exif.jpg` (synthetic drawing with EXIF Artist + GPS tags), `landscape.jpg`, `large-noise.jpg` (1.2 MB, over the e2e upload limit), `not-an-image.jpg`; `class-cards.jpg` and `portraits-sheet.jpg` (the demo class pictures of `docs/reference/demo/`, cartoon faces) with `*.frames.json`, the corners of every photo frame in reading order (the minimum-area rectangle of each coloured tile, measured once); `class-cards-photo.jpg` (the same sheet photographed at an angle, made by `scripts/make-class-photo.ts`, its frames carried through the projection) | steps 2.3, 3.7, 13.1 |
 | `barcodes/` | Code 128 / Code 39 / EAN-13 SVGs written by `barcodes.test.ts`, decoded in `scanner.svelte.spec.ts` | step 2.2 |

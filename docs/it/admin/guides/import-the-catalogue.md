@@ -6,12 +6,13 @@ programma. Serve a chi amministra BiblioViva; di solito si fa una volta, all'avv
 - Tempo: da 30 minuti a due ore, secondo la dimensione del catalogo e la pulizia del file.
 - Account: `admin`. Un altro account può importare il catalogo solo se la configurazione dei ruoli gli concede il
   permesso **Importa catalogo**.
-- Occorrente: il catalogo in un foglio di calcolo, con una riga per ogni copia.
+- Occorrente: il catalogo in un foglio di calcolo, con una riga per ogni copia, oppure un file MARC esportato da un altro
+  programma di biblioteca.
 
 BiblioViva controlla tutto il file prima di scrivere qualcosa e importa soltanto se non ci sono errori: non esistono
 importazioni a metà. Il file è un *CSV*, cioè un file di testo con una riga per copia e i dati separati da `;`, da `,`
 o da tabulazione; ogni foglio di calcolo lo sa salvare. I dati del libro (titolo, autore, editore…) si ripetono sulle
-righe delle sue copie.
+righe delle sue copie. Un file MARC si carica allo stesso modo: vedere [Caricare un file MARC](#caricare-un-file-marc).
 
 ## Procedura
 
@@ -66,7 +67,7 @@ tra le sue copie. Con l'ordine «Libera: scritta a mano su ogni copia» ogni cop
 
 ### Caricare il file
 
-1. Nel passo **File**, nel campo **File CSV**, scegliere il file e premere **Carica**.
+1. Nel passo **File**, nel campo **File CSV o MARC**, scegliere il file e premere **Carica**.
 1. Nel passo **Colonne** controllare che ogni colonna sia abbinata al campo giusto. Le colonne con i nomi del modello
    sono riconosciute da sole; per le altre scegliere il campo nel menu, oppure **— ignora —** per non usarle. La scelta
    viene ricordata per la prossima importazione.
@@ -103,6 +104,48 @@ tra le sue copie. Con l'ordine «Libera: scritta a mano su ogni copia» ogni cop
 1. Se alcune copie non avevano il codice a barre, premere **Stampa le etichette delle copie senza codice**: vedere
    [Stampare le etichette dei libri](../../manual/guides/print-book-labels.md).
 1. Premere **Vai al catalogo** per controllare i libri.
+
+### Caricare un file MARC
+
+Il catalogo si importa anche da un file MARC, il formato in cui i programmi di biblioteca (Koha, SebinaNEXT, Clavis, il
+catalogo SBN) si scambiano i record, e in cui BiblioViva stessa esporta il catalogo. Sono accettati i file ISO 2709
+(`.mrc`, `.marc`, `.iso`) e MARCXML (`.xml`), in UNIMARC o in MARC 21. Nulla va scelto: BiblioViva riconosce il tipo dal
+file. I file devono essere in UTF-8, come li scrivono Koha e SBN; un vecchio file in MARC-8 non è accettato.
+
+1. Nel passo **File**, nel campo **File CSV o MARC**, scegliere il file MARC e premere **Carica**.
+1. Nel passo **Colonne** leggere, accanto al nome del file, la riga che riassume il contenuto, per esempio «120 righe
+   (una per copia) · file MARC 21 · MARCXML».
+1. Controllare le colonne, già abbinate perché BiblioViva trasforma il file nelle stesse righe di un CSV, con
+   l'intestazione dei nomi inglesi, e proseguire come per un CSV: la verifica e **Importa** non cambiano.
+
+Valgono tutte le regole dell'importazione da CSV: BiblioViva controlla l'intero file, fa le stesse domande (copie dello
+stesso titolo con livelli di lettura o materiali diversi, segnature diverse da quelle calcolate), offre i valori speciali
+per l'autore o l'editore mancante, abilita **Importa** solo senza errori, scrive tutto in una volta e conserva il file
+originale.
+
+I numeri di riga della verifica sono quelli dell'elenco «una per copia», non righe del file: la riga 1 è la prima copia
+del primo record.
+
+Che cosa si legge da un file di un altro programma:
+
+- del titolo: titolo, sottotitolo, responsabilità, autore, editore, luogo e anno di pubblicazione, ISBN, ISSN, EAN,
+  descrizione fisica, collana e numero, classe Dewey, soggetti, note e titolo originale di una traduzione. Con tre o più
+  autori personali l'autore è «AA. VV.»; senza autori è «Anonimo». Della collana si legge quella del libro, non quella
+  dell'editore;
+- delle copie, dal campo 952 (MARC 21) o 995 (UNIMARC): codice a barre, segnatura, materiale e il codice della
+  collezione, che BiblioViva legge come classificazione (il codice di un genere o di un argomento, come nella colonna
+  `classification` del CSV). Dal campo 952 si leggono anche la data di acquisizione, il volume, le note, l'esclusione dal
+  prestito, lo stato (smarrita, danneggiata, ritirata), il numero d'inventario, la provenienza e il valore.
+
+I codici a barre sono riconosciuti secondo i formati della biblioteca, quindi anche i codici dei vecchi sistemi restano
+validi.
+
+Un record senza copie dà una riga senza codice a barre: l'importazione crea una copia con un codice generato, come per una
+riga di CSV senza `barcode`. Un record del catalogo SBN non ha né copie né classificazione: i suoi titoli vanno
+nell'elenco **Da classificare**.
+
+Un file esportato da BiblioViva stessa (menu **Esporta** del [Catalogo](../../manual/screens/catalog.md#esportazione))
+si rilegge con tutti i dati, perché porta due campi locali, che gli altri programmi ignorano.
 
 ## Risultato
 
@@ -166,7 +209,8 @@ Compare «Tutte le copie del file sono già in catalogo: non c'è niente da impo
 
 Il catalogo si estrae con una query già pronta; il file prodotto è separato da tabulazioni e va caricato com'è: vedere
 [le istruzioni tecniche](../../../import/README.md). I nomi delle colonne di Koha cambiano da una versione all'altra:
-chi esegue la query li controlla prima.
+chi esegue la query li controlla prima. In alternativa Koha esporta i record in MARC 21 e il file si carica come
+descritto in [Caricare un file MARC](#caricare-un-file-marc).
 
 ## Pagine correlate
 

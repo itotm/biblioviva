@@ -207,7 +207,10 @@
 	{:else if wizard.step === "mapping" && wizard.detection}
 		<Card padding="lg" gap="4" as="section" data-testid="mapping-step">
 			<Hint tone="soft" data-testid="upload-info">
-				<strong>{wizard.filename}</strong> — {i18n.t("common.import.info", wizard.info)}
+				<strong>{wizard.filename}</strong> —
+				{wizard.info.format
+					? i18n.t("common.import.infoMarc", wizard.info)
+					: i18n.t("common.import.info", wizard.info)}
 			</Hint>
 			{@render mappingInfo?.()}
 			{#if !wizard.detection.certain}

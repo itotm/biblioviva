@@ -67,7 +67,8 @@ export class ImportWizard<
 	step = $state<ImportStep>("upload");
 	uploadId = $state("");
 	filename = $state("");
-	info = $state({ rows: 0, encoding: "", delimiter: "" });
+	/** `format`: a file that is not a CSV (a MARC file of the catalogue, 9.65). */
+	info = $state({ rows: 0, encoding: "", delimiter: "", format: "" });
 	detection = $state<D | null>(null);
 	remembered = $state(false);
 	sample = $state<string[][]>([]);
@@ -103,7 +104,12 @@ export class ImportWizard<
 			handledUpload = r.uploadId;
 			this.uploadId = r.uploadId;
 			this.filename = r.filename;
-			this.info = { rows: r.rowCount, encoding: r.encoding, delimiter: r.delimiter };
+			this.info = {
+				rows: r.rowCount,
+				encoding: r.encoding,
+				delimiter: r.delimiter,
+				format: r.format ?? "",
+			};
 			this.detection = r.detection;
 			this.remembered = r.remembered;
 			this.sample = r.sample;

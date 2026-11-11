@@ -101,7 +101,11 @@
 	},
 	"export": {
 		"csv": "CSV (spreadsheet, text)",
-		"ods": "ODS (LibreOffice)"
+		"ods": "ODS (LibreOffice)",
+		"marc21": "MARC 21 (ISO 2709, for Koha and other programs)",
+		"marc21-xml": "MARC 21 (MARCXML)",
+		"unimarc": "UNIMARC (ISO 2709, for Italian libraries)",
+		"unimarc-xml": "UNIMARC (MARCXML)"
 	},
 	"demo": {
 		"panel": "This installation holds sample data loaded on {{when}}: {{patrons}} {{patrons:plural; one:patron; other:patrons;}}, {{biblios}} {{biblios:plural; one:title; other:titles;}}, {{items}} {{items:plural; one:copy; other:copies;}}, {{loans}} {{loans:plural; one:loan; other:loans;}}. Everything is made up: no real person."
@@ -154,7 +158,8 @@
 		"groups": {
 			"required": "required",
 			"key": "key"
-		}
+		},
+		"infoMarc": "{{rows}} {{rows:plural; one:row; other:rows;}} (one per copy) · {{format}} file"
 	},
 	"words": {
 		"yes": "Yes",

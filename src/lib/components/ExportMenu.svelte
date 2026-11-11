@@ -1,5 +1,6 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
-<!-- "Esporta" menu of every grid (§3.19): CSV and ODS links to /export/<table> with the current filters. -->
+<!-- "Esporta" menu of every grid (§3.19): CSV and ODS links to /export/<table> with the current
+     filters; a list of books or copies adds the four MARC formats (step 9.65). -->
 <script lang="ts">
 	import { resolve } from "$app/paths";
 	import { Menu } from "@skeletonlabs/skeleton-svelte";
@@ -13,15 +14,18 @@
 		table: string;
 		/** Current grid filters (empty values are dropped). */
 		params?: Record<string, string | number | undefined | null>;
+		/** The list's rows are books or copies: the MARC formats too (9.65). */
+		marc?: boolean;
 		class?: string;
 	}
 
-	const { table, params = {}, class: className = "" }: Props = $props();
+	const { table, params = {}, marc = false, class: className = "" }: Props = $props();
+	const MARC = ["marc21", "marc21-xml", "unimarc", "unimarc-xml"] as const;
 	const i18n = useI18n();
 	const ExportIcon = icons.export;
 	const MoreIcon = icons.more;
 
-	const href = $derived((format: "csv" | "ods") => {
+	const href = $derived((format: "csv" | "ods" | (typeof MARC)[number]) => {
 		const pairs = [`format=${format}`];
 		for (const [k, value] of Object.entries(params)) {
 			if (value !== undefined && value !== null && value !== "") {
@@ -41,5 +45,12 @@
 	<MenuPanel minWidth="44">
 		<MenuItem value="csv" href={href("csv")} download>{i18n.t("common.export.csv")}</MenuItem>
 		<MenuItem value="ods" href={href("ods")} download>{i18n.t("common.export.ods")}</MenuItem>
+		{#if marc}
+			{#each MARC as f (f)}
+				<MenuItem value={f} href={href(f)} download data-testid="export-{f}"
+					>{i18n.t(`common.export.${f}`)}</MenuItem
+				>
+			{/each}
+		{/if}
 	</MenuPanel>
 </Menu>
