@@ -6,6 +6,15 @@ BiblioViva runs on a dedicated computer that stays on during the library's openi
 browser of any computer, tablet or phone of the school. A computer switched off at night is not a problem: the backup
 that was due is made the next time it is switched on.
 
+## The path in a few questions
+
+The questions below put together the path that fits the library: they are answered one at a time, and the next one
+opens when the previous one has its answer. At the end appear what to install, what works, the steps with an
+indicative time and what is needed. Those who prefer to choose by themselves find the two choices and the table of
+the paths further down.
+
+<!-- setup-questions -->
+
 ## Two choices to make
 
 The installation depends on two choices, independent of each other.

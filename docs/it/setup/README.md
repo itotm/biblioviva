@@ -7,6 +7,15 @@ BiblioViva gira su un computer dedicato, che resta acceso durante l'apertura del
 browser di qualunque computer, tablet o telefono della scuola. Un computer spento di notte non è un problema: la copia
 di sicurezza che era in scadenza viene fatta all'accensione successiva.
 
+## Il percorso in poche domande
+
+Le domande seguenti compongono il percorso adatto alla biblioteca: si risponde a una domanda alla volta, e quella
+successiva si apre quando la precedente ha la sua risposta. Alla fine compaiono che cosa installare, che cosa
+funziona, i passi con il tempo indicativo e l'occorrente. Chi preferisce scegliere da sé trova le due scelte e la
+tabella dei percorsi più sotto.
+
+<!-- setup-questions -->
+
 ## Due scelte da fare
 
 L'installazione dipende da due scelte, indipendenti l'una dall'altra.

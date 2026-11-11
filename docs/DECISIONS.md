@@ -1039,3 +1039,22 @@ page sums the section up after the part on the data that stay at school. The tec
 **Consequences.** Every change that alters a fact of these pages (what is stored, what leaves the school, the
 security measures, the exports) updates them in both languages, as any other page. The PDF is not committed: it is
 built with the site. No new dependency (Playwright is already the tool of `docs:shots` and `docs:diagrams`).
+
+## ADR-060 — The installation questions; Docker advised with Tailscale (2026-11-11, owner, Q158)
+
+**Context.** With the native packages (ADR-057) the installation has many paths: the Windows installer, the
+AppImage, the Debian package and Docker, each with Tailscale or the local network. A table of paths and two pages of
+comparison ask the reader to understand all of them before choosing one.
+
+**Decision.** The first page of Installazione asks the questions one at a time, as selects that open when the
+previous one has its answer, and composes the path from the answers: the package, the network, the profile, what
+works, the steps with an estimated time, what is needed and the way to install. On a dedicated Linux computer the
+method is a question for experts with the advised answer chosen in advance: Docker with Tailscale, because the
+compose file with the Tailscale container is ready and shown to copy, as many projects show theirs; the Debian
+package on the local network, where no sidecar is needed. The logic is a TypeScript module of `scripts/` with unit
+tests, bundled by the site build; the flow is drawn in the technical page `docs/install-choices.md`.
+
+**Consequences.** The site carries a second small script (the first is the search). The Docker files shown are read
+from `docker/` at each build, so they never drift from the repository. A path whose page does not exist yet (the
+native packages before 9.57, 9.58 and 9.62) is shown with its steps and a note that its guide is being written. A
+change of the paths, the steps or the advice updates `logic.ts`, its tests and `docs/install-choices.md`.

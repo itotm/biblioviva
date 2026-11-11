@@ -113,6 +113,7 @@ const SECTION_PATH: Record<SectionKey, string> = {
 // The technical documents of docs/: the same English page under both languages.
 const TECH_DOCS: [slug: string, file: string][] = [
 	["deploy", "deploy.md"],
+	["install-choices", "install-choices.md"],
 	["config-reference", "config-reference.md"],
 	["templates-authoring", "templates-authoring.md"],
 	["reports-authoring", "reports-authoring.md"],
@@ -908,6 +909,45 @@ function transformSections(html: string, ctx: Ctx): string {
 		.join("");
 }
 
+/** The box of the installation questions (`scripts/setup-questions/`), with the data its script reads:
+ * the path pages of the language and the compose files of `docker/`, so the files to copy are always the
+ * ones of the repository. The hidden icons put their symbols in the page's sprite. */
+function setupQuestionsHtml(lang: Lang): string {
+	const paths: Record<string, { url: string; steps: Record<string, string> }> = {};
+	for (const p of installPaths.filter((x) => x.lang === lang)) {
+		paths[p.slug] = {
+			url: p.url,
+			steps: Object.fromEntries(p.steps.map((s) => [s.slug, s.url])),
+		};
+	}
+	const read = (f: string): string => readFileSync(join(ROOT, "docker", f), "utf8");
+	const data = {
+		lang,
+		paths,
+		files: {
+			compose: read("compose.yml"),
+			composeLan: read("compose.lan.yml"),
+			serve: read("tailscale/serve.json"),
+		},
+	};
+	const icons = [
+		"check",
+		"lock",
+		"info",
+		"triangle-alert",
+		"x",
+		"copy",
+		"file-code",
+		"route",
+		"printer",
+		"rotate-ccw",
+	]
+		.map((i) => `[[icon:${i}]]`)
+		.join("");
+	const json = JSON.stringify(data).replace(/</g, "\\u003c");
+	return `<div class="sq" id="setup-questions" data-pagefind-ignore><span hidden>${icons}</span></div><script type="application/json" id="setup-questions-data">${json}</script><script src="/assets/setup-questions.js" defer></script>\n`;
+}
+
 function markdown(src: string, ctx: Ctx): Rendered {
 	let text = src;
 	if (ctx.path) {
@@ -928,6 +968,11 @@ function markdown(src: string, ctx: Ctx): Rendered {
 			const svg = readFileSync(file, "utf8").replace(/^<\?xml[^>]*>\s*/, "");
 			return `<figure class="diagram">${svg}</figure>`;
 		},
+	);
+
+	// The installation questions (step 8.7): the box their script fills, on the first page of Installazione.
+	html = html.replace(/(?:<p>\s*)?<!--\s*setup-questions\s*-->(?:\s*<\/p>)?/, () =>
+		setupQuestionsHtml(ctx.lang),
 	);
 
 	// Anchors as GitHub makes them (they work as they are in links written for GitHub).
@@ -1705,8 +1750,19 @@ const ROOT_PAGE = `<!doctype html>
 <a href="/it/">BiblioViva</a>
 `;
 
-function buildAssets(): void {
+async function buildAssets(): Promise<void> {
 	cpSync(join(SITE, "assets"), join(DIST, "assets"), { recursive: true });
+	// The script of the installation questions, from its TypeScript (scripts/setup-questions/).
+	const bundle = await Bun.build({
+		entrypoints: [join(ROOT, "scripts", "setup-questions", "client.ts")],
+		outdir: join(DIST, "assets"),
+		naming: "setup-questions.js",
+		target: "browser",
+		minify: true,
+	});
+	if (!bundle.success) {
+		throw new Error(`setup-questions.js: ${bundle.logs.map((l) => l.message).join("\n")}`);
+	}
 	for (const [path, bytes] of webFonts("assets/fonts/")) {
 		mkdirSync(dirname(join(DIST, path)), { recursive: true });
 		writeFileSync(join(DIST, path), bytes);
@@ -1745,7 +1801,7 @@ async function main(): Promise<void> {
 		buildHome(lang);
 		buildAz(lang);
 	}
-	buildAssets();
+	await buildAssets();
 	await buildSearch();
 
 	const count = pages.length + LANGS.length * 2;

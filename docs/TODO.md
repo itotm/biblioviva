@@ -70,8 +70,9 @@ list is cleared at a release, and a new one takes the next.
 - [ ] 8.7 Guided setup for non-technical administrators, Italian and English: `setup.sh` is in (Tailscale or the
   local network, the profile, the key; `scripts/setup-sh.test.ts`); the Italian installation section
   (`docs/it/setup/`) is written and reviewed, its English mirror written, waiting for the owner's reading; the mocks of
-  Tailscale, Raspberry Pi Imager and the phone are in `docs/mocks/` (ADR-046); left: the `/admin/setup` checklist page
-  and the runs on a PC and a Raspberry Pi.
+  Tailscale, Raspberry Pi Imager and the phone are in `docs/mocks/` (ADR-046); the installation questions on the
+  section's first page compose the reader's path (Q158, ADR-060; the flow in Tecnica, `install-choices.md`); left: the
+  `/admin/setup` checklist page and the runs on a PC and a Raspberry Pi.
 - [ ] 9.5 Documentation and the user manual: the Italian drafts of Manuale (30 guides, 19 screens),
   Amministrazione (first steps, 25 guides, 13 screens) and Aiuto are written, Aiuto in English too; left: the owner's
   reading; reviewed against the code and reviewed again for the text (the four sections, IT and EN); English mirrors written;
@@ -90,9 +91,9 @@ list is cleared at a release, and a new one takes the next.
   libro → the page of the new book, Modifica utente → its section), not the area's page.
 - [ ] 9.7 The documentation site on `docs.biblioviva.org`: `bun run site:build` / `site:serve` build it locally from
   `docs/` (ADR-043) with the search (Pagefind, ADR-045), the home page shows four real screenshots; the Pages workflow builds the
-  pictures and the site, run by hand only (ADR-050); left: `site:check`, the figure switch, the PDFs, the first
-  publication is done (`docs.biblioviva.org` is online). `ONLINE.docs` and `ONLINE.repo` are on: upload the home page
-  again (`home/biblioviva-home.zip`) for the GitHub link in the header and the Project column in the footer.
+  pictures and the site, run by hand only (ADR-050); `docs.biblioviva.org` is online and the home page uploaded with
+  the GitHub link and the Project column (`ONLINE.docs`, `ONLINE.repo`); left: `site:check`, the figure switch, the
+  PDFs.
 - [ ] 9.3 Accessibility and UX review pass.
 - [x] 9.54 Accessibility to WCAG 2.2 AA: the six open gaps of the audit, axe on more states, a reflow check (Q147).
 - [ ] 9.55 `publiccode.yml`: the file and its test are in; left: the official validator and the Developers Italia listing
