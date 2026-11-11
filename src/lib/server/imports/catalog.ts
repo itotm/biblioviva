@@ -7,6 +7,7 @@
 // titles without classification left to classify (9.21); the commit phase in one transaction with
 // an `import_batch` row (§3.22).
 import { parseSeries } from "#lib/shared/series.js";
+import { joinFormats, matchFormats, splitFormats } from "#lib/shared/accessible-formats.js";
 import { eq, sql } from "drizzle-orm";
 import type { Db, DbOrTx } from "#lib/server/db/client.js";
 import { biblio, item } from "#lib/server/db/schema.js";
@@ -99,6 +100,7 @@ const CATALOG_LIMITS = maxLengths<CatalogImportColumn>({
 	seriesNumber: record.seriesNumber,
 	dewey: record.dewey,
 	subjects: record.subjects,
+	accessibleFormats: record.accessibleFormats,
 	notes: record.notes,
 	callNumber: itemFormSchema.entries.enumeration,
 	itemType: record.itemType,
@@ -431,6 +433,14 @@ function biblioInputOf(
 	if (i.title === "") {
 		reasons.push({ code: "titleMissing" });
 	}
+	// the accessible formats of the list only (9.66)
+	const formats = matchFormats(
+		splitFormats(i.accessibleFormats),
+		options.rules.accessibleFormats,
+	);
+	for (const value of formats.unknown) {
+		reasons.push({ code: "accessibleFormatUnknown", params: { value } });
+	}
 	if (reasons.length > 0) {
 		return { input: null, reasons };
 	}
@@ -461,6 +471,7 @@ function biblioInputOf(
 			classCode: p.kind === "nonfiction" ? p.classCode : "",
 			readingLevel: p.kind === "fiction" ? readingLevel : "",
 			subjects: i.subjects,
+			accessibleFormats: joinFormats(formats.formats),
 			notes: i.notes,
 		},
 		reasons,

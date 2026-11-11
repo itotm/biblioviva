@@ -125,6 +125,11 @@ export const biblio = sqliteTable(
 			.$type<string[]>()
 			.notNull()
 			.default(sql`'[]'`),
+		/** Accessible formats (step 9.66): names of `catalog.accessibleFormats`, in its order. */
+		accessibleFormats: text("accessible_formats", { mode: "json" })
+			.$type<string[]>()
+			.notNull()
+			.default(sql`'[]'`),
 		notes: text("notes"),
 		coverPath: text("cover_path"),
 		coverSource: text("cover_source"),

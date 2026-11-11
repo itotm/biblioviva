@@ -8,6 +8,7 @@ import { catalogRules, classificationOptions } from "#lib/server/services/catalo
 import { getBiblio } from "#lib/server/services/catalog-search.js";
 import type { BiblioFormInput } from "#lib/shared/catalog-schema.js";
 import { euroInput } from "#lib/shared/school-inventory.js";
+import { joinFormats } from "#lib/shared/accessible-formats.js";
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = ({ locals, params }) => {
@@ -63,6 +64,7 @@ export const load: PageServerLoad = ({ locals, params }) => {
 			readingLevel: b.readingLevel ?? "",
 			callText: b.callText ?? "",
 			subjects: b.subjects.join("\n"),
+			accessibleFormats: joinFormats(b.accessibleFormats),
 			notes: b.notes ?? "",
 		},
 	};

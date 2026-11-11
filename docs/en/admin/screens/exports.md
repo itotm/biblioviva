@@ -21,7 +21,8 @@ The active teachers in the import format: they go back in from [Imports](imports
 ## Catalogue (CSV)
 
 One row per copy with the book's data, in the catalogue import format, including inventory number, origin and value
-(the value with a point, for example `12.50`).
+(the value with a point, for example `12.50`). The column `accessible_formats`, after `subjects`, holds the book's
+accessible formats separated by "; ": the import reads it back.
 
 ## Open loans (CSV)
 

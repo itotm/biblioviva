@@ -27,6 +27,7 @@
 	} from "#lib/remote/catalog.remote.js";
 	import { pictogramSrc } from "#lib/shared/classification.js";
 	import { formatSeries } from "#lib/shared/series.js";
+	import { ANY_ACCESSIBLE_FORMAT } from "#lib/shared/accessible-formats.js";
 	import DataGrid, { type GridColumn } from "#lib/components/DataGrid.svelte";
 	import AddToPrintList from "#lib/components/AddToPrintList.svelte";
 	import Hint from "#lib/ui/Hint.svelte";
@@ -62,6 +63,7 @@
 		readingLevel: string;
 		itemType: string;
 		series: string;
+		accessibleFormat: string;
 		withdrawn: boolean;
 	}
 	const filterState = new ListFilters<Filters>(
@@ -76,6 +78,7 @@
 			readingLevel: "",
 			itemType: "",
 			series: "",
+			accessibleFormat: "",
 			withdrawn: false,
 		},
 		// the series link of a record page lands here with `?series=` (step 9.14)
@@ -102,6 +105,7 @@
 		readingLevel: f.readingLevel,
 		itemType: f.itemType,
 		series: f.series,
+		accessibleFormat: f.accessibleFormat,
 		withdrawn: f.withdrawn ? ("1" as const) : ("" as const),
 		available: f.available ? ("1" as const) : ("" as const),
 		yearFrom: /^\d{4}$/.test(f.yearFrom) ? f.yearFrom : "",
@@ -373,6 +377,22 @@
 						<option value={f.series}>{f.series}</option>
 					{/if}
 					{#each seriesNames.current ?? [] as name (name)}
+						<option value={name}>{name}</option>
+					{/each}
+				</FilterSelect>
+			{/if}
+			<!-- accessible books (9.66): one format, or any of them -->
+			{#if (options.current?.accessibleFormats ?? []).length > 0 || f.accessibleFormat}
+				<FilterSelect
+					label={i18n.t("catalog.list.filters.accessibleFormat")}
+					{all}
+					bind:value={f.accessibleFormat}
+					data-testid="filter-accessible"
+				>
+					<option value={ANY_ACCESSIBLE_FORMAT}
+						>{i18n.t("catalog.list.filters.anyAccessibleFormat")}</option
+					>
+					{#each options.current?.accessibleFormats ?? [] as name (name)}
 						<option value={name}>{name}</option>
 					{/each}
 				</FilterSelect>

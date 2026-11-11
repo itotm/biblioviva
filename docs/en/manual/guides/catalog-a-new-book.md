@@ -48,6 +48,9 @@ is for whoever catalogues the books.
    chosen, see [Change the classification and the reading levels](../../admin/guides/classification.md).
 1. If the **Call number text** field appears, leave it empty to use the initials proposed from the author (in grey) or
    write the letters wanted.
+1. If the book exists in a format accessible to pupils with dyslexia or a disability (for example high readability or
+   large print), tick the boxes of the group **Accessible formats**, under the call number. More than one can be
+   ticked; the group does not appear if the library has no list of formats.
 1. In the **Copies** section write the **Number of copies** (from 1 to 100). With the library's free scheme the **Call
    number** is typed here. The **Acquisition date** is today's.
 1. With the school inventory on, choose the **Origin** and write the **Value (€)** of each copy. The inventory numbers

@@ -24,6 +24,7 @@ import { Z3950_HOST, Z3950_WORD } from "#lib/shared/z3950.js";
 import { DEFAULT_CHECK, DEFAULT_CODE_PRESET, presetFormats } from "#lib/shared/barcodes/presets.js";
 import { CALL_TEXT_PROPOSALS } from "#lib/shared/classification.js";
 import { unknownPlaceholders } from "#lib/shared/taxonomy.js";
+import { DEFAULT_ACCESSIBLE_FORMATS } from "#lib/shared/accessible-formats.js";
 
 const label = v.pipe(v.string(), v.minLength(1), v.maxLength(120));
 const z3950Word = v.pipe(v.string(), v.regex(Z3950_WORD, "one word, without spaces"));
@@ -208,6 +209,17 @@ export const configSchema = v.object({
 					),
 				}),
 				{},
+			),
+			/**
+			 * Accessible books (step 9.66, Q157): the formats a record may have, for the pupils
+			 * with dyslexia or a disability; one or more per record, an empty list hides them.
+			 */
+			accessibleFormats: v.optional(
+				v.pipe(
+					v.array(v.pipe(v.string(), v.trim(), v.minLength(1), v.maxLength(40))),
+					v.maxLength(20),
+				),
+				[...DEFAULT_ACCESSIBLE_FORMATS],
 			),
 		}),
 		{},

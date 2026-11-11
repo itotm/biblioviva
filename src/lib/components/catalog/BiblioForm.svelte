@@ -48,6 +48,8 @@
 	import Field from "#lib/ui/Field.svelte";
 	import Select from "#lib/ui/Select.svelte";
 	import { getSeriesNames } from "#lib/remote/catalog.remote.js";
+	import Checkbox from "#lib/ui/Checkbox.svelte";
+	import { joinFormats, splitFormats } from "#lib/shared/accessible-formats.js";
 
 	interface FormApi {
 		fields: Record<keyof BiblioFormInput | "id", FieldApi> &
@@ -70,6 +72,8 @@
 			children: { code: string; label: string; image: string | null; color: string | null }[];
 		}[];
 		specialAuthors: string[];
+		/** Accessible books (9.66): the formats offered; empty hides them. */
+		accessibleFormats?: string[];
 		unknownPublisher: string;
 		unknownPlace: string;
 		itemTypes: { code: string; label: string }[];
@@ -120,6 +124,19 @@
 	let classCode = $state(initial?.classCode ?? "");
 	// svelte-ignore state_referenced_locally
 	let readingLevel = $state(initial?.readingLevel ?? "");
+	// the accessible formats (9.66): the boxes mirrored into one hidden field
+	// svelte-ignore state_referenced_locally
+	let formats = $state<string[]>(splitFormats(initial?.accessibleFormats ?? ""));
+	// a format taken off the list stays offered while the record has it
+	const formatChoices = $derived([
+		...(options.accessibleFormats ?? []),
+		...formats.filter((f) => !(options.accessibleFormats ?? []).includes(f)),
+	]);
+	function toggleFormat(format: string, on: boolean): void {
+		formats = on
+			? formatChoices.filter((f) => f === format || formats.includes(f))
+			: formats.filter((f) => f !== format);
+	}
 
 	$effect(() => {
 		if (initial) {
@@ -390,6 +407,23 @@
 				hint={i18n.t("catalog.fields.callNumberHint")}
 				testid="biblio-call-number"
 			/>
+			{#if formatChoices.length > 0}
+				<fieldset class="md:col-span-2" data-testid="biblio-accessible-formats">
+					<legend class="label-text">{i18n.t("catalog.fields.accessibleFormats")}</legend>
+					<input {...fields.accessibleFormats.as("hidden", joinFormats(formats))} />
+					<Row gap="3" class="mt-1">
+						{#each formatChoices as f (f)}
+							<Checkbox
+								checked={formats.includes(f)}
+								onchange={(e) => toggleFormat(f, e.currentTarget.checked)}
+								data-testid="accessible-format-{f}">{f}</Checkbox
+							>
+						{/each}
+					</Row>
+					<Hint as="span">{i18n.t("catalog.fields.accessibleFormatsHint")}</Hint>
+					{@render fieldError("accessibleFormats")}
+				</fieldset>
+			{/if}
 		</FormSection>
 
 		<FormSection

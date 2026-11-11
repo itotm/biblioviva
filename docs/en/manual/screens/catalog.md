@@ -38,6 +38,7 @@ The filters narrow the search and also work alone, without text. Those that are 
 - **Classification**: the subjects of non-fiction, with their sub-subjects. It does not appear for fiction and for books to classify. The empty choice is **All**.
 - **Level**: the reading level. It appears only if the library records the reading level.
 - **Material**: the type of material (book, DVD…), according to the library's list.
+- **Accessible format**: the books suited to pupils with dyslexia or a disability. It appears only if the **Accessible formats** list of the Configuration is not empty. The choices are **All** (no filter), **Any accessible format** (the books with at least one format) and one format of the list, for example "Audiobook".
 - **Available only**: keeps the books with at least one available copy.
 - **Year from** and **Year to**: the range of publication years, four digits.
 - **Series**: the books of a series. It appears only if the catalogue contains series. The filter can also be set from the series button in the [Book record](book-record.md).
@@ -103,7 +104,7 @@ A check is valid only for the choice made: when the value is changed, **Check** 
 
 ## Export
 
-Under the list the **Export** menu downloads the search results, with the filters in use, in two formats: **CSV (spreadsheet, text)** or **ODS (LibreOffice)**. Besides the columns of the list, the file contains the number of copies and the number of available copies.
+Under the list the **Export** menu downloads the search results, with the filters in use, in two formats: **CSV (spreadsheet, text)** or **ODS (LibreOffice)**. Besides the columns of the list, the file contains the number of copies and the number of available copies. There is also the column **Accessible formats**, with the book's formats separated by "; ".
 
 ## Related pages
 

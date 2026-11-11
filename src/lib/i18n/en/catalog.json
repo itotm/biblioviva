@@ -35,7 +35,9 @@
 			"series": "Series",
 			"all": "All",
 			"allF": "All",
-			"withdrawn": "Also show withdrawn books"
+			"withdrawn": "Also show withdrawn books",
+			"accessibleFormat": "Accessible format",
+			"anyAccessibleFormat": "Any accessible format"
 		},
 		"columns": {
 			"title": "Title",
@@ -87,7 +89,9 @@
 		"notes": "Notes",
 		"authorHint": "Surname, Name. Use the quick picks when there is no personal author.",
 		"subjectsHint": "One per line or comma-separated.",
-		"none": "—"
+		"none": "—",
+		"accessibleFormats": "Accessible formats",
+		"accessibleFormatsHint": "For pupils with dyslexia or a disability; more than one may be chosen."
 	},
 	"form": {
 		"createTitle": "New book",
@@ -151,7 +155,8 @@
 		"source": "Source: {{source}}",
 		"created": "Created on {{when}}",
 		"updated": "Last edited on {{when}}",
-		"onLoan": "On loan"
+		"onLoan": "On loan",
+		"accessibleFormat": "Accessible book: {{format}}"
 	},
 	"item": {
 		"addTitle": "Add copies",
@@ -210,7 +215,8 @@
 		"inventoryNumberInvalid": "Invalid inventory number (letters, digits and . / -, at most 20)",
 		"inventoryNumberTaken": "Inventory number already used by another copy",
 		"inventoryNumberSeries": "For several copies the inventory number must be digits only",
-		"valueInvalid": "Invalid value (for example 12.50)"
+		"valueInvalid": "Invalid value (for example 12.50)",
+		"accessibleFormatUnknown": "Accessible format not in the configuration"
 	},
 	"lookup": {
 		"providers": {
@@ -419,7 +425,8 @@
 			"itemNotes": "Copy notes",
 			"inventoryNumber": "Inventory number",
 			"origin": "Origin",
-			"value": "Value (€)"
+			"value": "Value (€)",
+			"accessibleFormats": "Accessible formats"
 		},
 		"preview": {
 			"ready": "No errors: the file can be imported.",
@@ -479,7 +486,8 @@
 			"copyExists": "Copy already in the catalogue: skipped",
 			"mergedIntoExisting": "Added to the title already in the catalogue (same key or same ISBN)",
 			"inventoryNumberDuplicateInFile": "Inventory number already used on line {{line}}",
-			"inventoryNumberTaken": "The inventory number {{value}} already belongs to another copy in the catalogue"
+			"inventoryNumberTaken": "The inventory number {{value}} already belongs to another copy in the catalogue",
+			"accessibleFormatUnknown": "Accessible format not in the configuration: “{{value}}”"
 		},
 		"done": {
 			"title": "Catalogue imported",
@@ -586,6 +594,9 @@
 			},
 			"value": {
 				"hint": "The copy's value in euro, for example 12.50."
+			},
+			"accessibleFormats": {
+				"hint": "The title's accessible formats, separated by semicolons (for example Audiobook; Large print), as in the configuration's list."
 			}
 		}
 	},

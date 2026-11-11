@@ -59,6 +59,11 @@ export const biblioFormSchema = v.object({
 	callText: v.optional(v.pipe(v.string(), v.trim(), v.maxLength(40))),
 	/** One subject per line or comma-separated. */
 	subjects: optionalText(1000),
+	/**
+	 * Accessible formats (9.66), names of `catalog.accessibleFormats` joined by `|`; left out keeps
+	 * the record's.
+	 */
+	accessibleFormats: v.optional(v.pipe(v.string(), v.maxLength(1000))),
 	notes: optionalText(2000),
 });
 export type BiblioFormInput = v.InferOutput<typeof biblioFormSchema>;
@@ -128,6 +133,8 @@ export const biblioFiltersSchema = v.object({
 	withdrawn: v.optional(v.picklist(["", "1"]), ""),
 	/** `1`: only records with a copy on the shelf now (available, lendable, not on loan). */
 	available: v.optional(v.picklist(["", "1"]), ""),
+	/** An accessible format (9.66), `*` for any of them. */
+	accessibleFormat: v.optional(v.pipe(v.string(), v.maxLength(40)), ""),
 	yearFrom: v.optional(v.pipe(v.string(), v.regex(/^\d{0,4}$/)), ""),
 	yearTo: v.optional(v.pipe(v.string(), v.regex(/^\d{0,4}$/)), ""),
 	sort: v.optional(v.picklist(BIBLIO_SORTS), "relevance"),

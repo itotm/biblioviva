@@ -107,6 +107,7 @@ export const CATALOG_EXPORT_HEADER = headersOf(CATALOG_IMPORT, [
 	"classification",
 	"readingLevel",
 	"subjects",
+	"accessibleFormats",
 	"notes",
 	"barcode",
 	"callNumber",
@@ -136,23 +137,28 @@ export function* catalogCsv(sqlite: Database): Generator<string> {
 				b.publisher, b.publication_place, b.publication_year, b.physical_description, b.series, b.series_number, b.dewey,
 				COALESCE(b.genre_code, b.class_code) AS classification,
 				COALESCE(i.reading_level, b.reading_level) AS reading_level,
-				b.subjects, b.notes, i.barcode, i.call_number, b.item_type, i.enumeration, i.status,
+				b.subjects, b.accessible_formats, b.notes, i.barcode, i.call_number, b.item_type, i.enumeration, i.status,
 				i.not_for_loan, i.acquisition_date, i.notes AS item_notes, i.inventory_number, i.origin,
 				i.value_cents
 			FROM biblio b LEFT JOIN item i ON i.biblio_id = b.id ORDER BY b.id, i.id`,
 		)
 		.iterate();
 	for (const r of rows) {
-		let subjects = "";
-		try {
-			subjects = (JSON.parse(String(r.subjects ?? "[]")) as string[]).join("; ");
-		} catch {
-			subjects = "";
-		}
+		const list = (json: string | number | null | undefined): string => {
+			try {
+				return (JSON.parse(String(json ?? "[]")) as string[]).join("; ");
+			} catch {
+				return "";
+			}
+		};
+		const subjects = list(r.subjects);
 		yield line(
 			CATALOG_EXPORT_HEADER.map((key) => {
 				if (key === "subjects") {
 					return subjects;
+				}
+				if (key === "accessible_formats") {
+					return list(r.accessible_formats);
 				}
 				if (key === "not_for_loan") {
 					return r.barcode === null ? "" : r.not_for_loan ? "1" : "0";

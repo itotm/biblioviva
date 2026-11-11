@@ -35,7 +35,8 @@ without an ISBN it is filled in by hand. The cover is looked up online or upload
 subject and searched by title, author, ISBN or copy code. The catalogue also withdraws lost or damaged copies and does
 the stocktaking, reading the copies with the scanner shelf by shelf. The school inventory is optional: when switched on,
 each copy also has an inventory number, an origin and a value, and two reports list the copies entered and the copies
-withdrawn in a period.
+withdrawn in a period. A book can have one or more accessible formats (high readability, symbols, audiobook, large
+print, tactile: the list is the school's): the catalogue filters them and a report lists the books of each format.
 
 ## Patrons, classes and cards
 

@@ -49,6 +49,7 @@
 	const DownloadIcon = icons.download;
 	const EditIcon = icons.edit;
 	const SeriesIcon = icons.series;
+	const AccessibleIcon = icons.accessible;
 	const ToClassifyIcon = icons.toClassify;
 	const DeleteIcon = icons.delete;
 	const AddIcon = icons.add;
@@ -230,6 +231,15 @@
 							{formatSeries(b.series, b.seriesNumber)}
 						</a>
 					{/if}
+					<!-- the accessible formats of the book (9.66) -->
+					{#each b.accessibleFormats as f (f)}
+						<Badge
+							tone="success"
+							icon={AccessibleIcon}
+							title={i18n.t("catalog.detail.accessibleFormat", { format: f })}
+							data-testid="accessible-badge">{f}</Badge
+						>
+					{/each}
 					<!-- the material is the record's, the same for every copy (9.45) -->
 					<Badge data-testid="item-type-badge"
 						>{data.options.itemTypes.find((t) => t.code === b.itemType)?.label ??

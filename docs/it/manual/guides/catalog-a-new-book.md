@@ -48,6 +48,9 @@ a chi cataloga i libri.
    biblioteca, vedere [Modificare la classificazione e i livelli di lettura](../../admin/guides/classification.md).
 1. Se compare il campo **Testo della segnatura**, lasciarlo vuoto per usare le iniziali proposte dall'autore (in grigio)
    oppure scrivere le lettere volute.
+1. Se il libro esiste in un formato accessibile per gli alunni con DSA o con disabilità (per esempio alta leggibilità o
+   caratteri grandi), spuntare le caselle del gruppo **Formati accessibili**, sotto la segnatura. Se ne possono
+   spuntare più d'una; il gruppo non compare se la biblioteca non ha un elenco di formati.
 1. Nella sezione **Copie** scrivere il **Numero di copie** (da 1 a 100). Con lo schema libero della biblioteca la
    **Segnatura** si scrive qui. La **Data di acquisizione** è quella di oggi.
 1. Con l'inventario della scuola attivo, scegliere la **Provenienza** e scrivere il **Valore (€)** di ogni copia. I numeri

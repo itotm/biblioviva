@@ -2,6 +2,7 @@
 // One icon per concept (PLAN.md §3.18). Import icons only from here so the whole app stays
 // consistent; each entry is a per-icon Lucide import, so only used icons are bundled.
 import type { Component } from "svelte";
+import Accessibility from "@lucide/svelte/icons/accessibility";
 import AlarmClock from "@lucide/svelte/icons/alarm-clock";
 import Archive from "@lucide/svelte/icons/archive";
 import ArchiveRestore from "@lucide/svelte/icons/archive-restore";
@@ -119,6 +120,8 @@ export const icons = {
 	series: Library,
 	/** the books the library would like to have (9.15) */
 	wishlist: BookHeart,
+	/** an accessible book: high readability, symbols, audiobook… (9.66) */
+	accessible: Accessibility,
 	barcode: Barcode,
 	card: BadgeCheck,
 	/** the school's email address of a patron (9.22) */

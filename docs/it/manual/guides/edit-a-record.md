@@ -27,6 +27,8 @@ cambiare i dati di una singola copia e come eliminare una scheda inserita per er
    copie** mostra la nuova segnatura, calcolata da BiblioViva; vedere sotto per le segnature.
 1. Se compare il campo **Testo della segnatura**, correggere le lettere della segnatura, oppure lasciarlo vuoto per le
    iniziali proposte dall'autore (in grigio).
+1. Per segnare o togliere i formati accessibili del libro (per esempio alta leggibilità o caratteri grandi), spuntare o
+   togliere le caselle del gruppo **Formati accessibili**, sotto la segnatura.
 1. Premere **Salva le modifiche**. Si torna alla scheda del libro, con i dati nuovi. **Annulla** lascia tutto com'era.
 
 ### Cambiare i dati di una copia

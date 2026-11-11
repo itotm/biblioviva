@@ -32,7 +32,10 @@ Ogni report è una scheda con il titolo e una breve descrizione. Un clic apre il
 libri più prestati, la durata media dei prestiti, le copie mai prestate, il patrimonio per classificazione, l'indice di
 lettura per classe. Due report elencano per un periodo le copie scaricate e le copie entrate, con il numero d'inventario,
 la provenienza e il valore: servono all'inventario della scuola, vedere [Inventario dei beni della
-scuola](../../compliance/school-inventory.md).
+scuola](../../compliance/school-inventory.md). Il report «Libri accessibili per formato», nella categoria **Libri**,
+elenca per un periodo (**Dal** e **Al**, di norma dall'inizio dell'anno scolastico a oggi) un libro per ogni formato
+accessibile, in ordine di formato e di titolo, con le colonne **Formato**, **Titolo**, **Autore**, **Segnatura**,
+**Copie** (senza le ritirate) e **Prestiti** del periodo. Come ogni report, si stampa e si esporta.
 
 ### Contrassegni
 

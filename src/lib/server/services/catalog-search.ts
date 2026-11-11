@@ -37,6 +37,7 @@ import {
 	type Closeness,
 } from "#lib/shared/fuzzy.js";
 import { BiblioNotFoundError, type BiblioData, type CatalogRules } from "./catalog.js";
+import { ANY_ACCESSIBLE_FORMAT } from "#lib/shared/accessible-formats.js";
 
 export type CatalogHit =
 	/** A copy's barcode or a record's ISBN, unambiguous: the page opens the record. */
@@ -123,6 +124,8 @@ export interface BiblioListRow {
 	genreCode: string | null;
 	classCode: string | null;
 	readingLevel: string | null;
+	/** Accessible formats (9.66). */
+	accessibleFormats: string[];
 	copiesTotal: number;
 	copiesAvailable: number;
 	hasCover: boolean;
@@ -151,7 +154,7 @@ const copiesAvailableSql = sql<number>`(select count(*) from item i where ${onSh
  * author, responsibility, publisher, subjects, ISBN and series with FTS5 — every word a prefix,
  * diacritics ignored, ranked by bm25 with the titles and the author first —, an ISBN typed or scanned matches the record exactly; filters
  * (kind, genre, class with its children, associated class, item type, availability, year range,
- * withdrawn) and sort.
+ * accessible format, withdrawn) and sort.
  */
 export function searchBiblios(
 	db: Db,
@@ -211,6 +214,14 @@ export function searchBiblios(
 	if (filters.series) {
 		conditions.push(sql`${biblio.series} = ${filters.series} collate nocase`);
 	}
+	// accessible books (9.66): one format, or `*` for any
+	if (filters.accessibleFormat === ANY_ACCESSIBLE_FORMAT) {
+		conditions.push(sql`json_array_length(${biblio.accessibleFormats}) > 0`);
+	} else if (filters.accessibleFormat) {
+		conditions.push(
+			sql`exists (select 1 from json_each(${biblio.accessibleFormats}) where value = ${filters.accessibleFormat})`,
+		);
+	}
 	// withdrawn books leave the search results (step 4.8): a record whose copies are all
 	// withdrawn shows up only when asked for; a record without copies stays visible
 	if (filters.withdrawn !== "1") {
@@ -258,6 +269,7 @@ export function searchBiblios(
 		genreCode: biblio.genreCode,
 		classCode: biblio.classCode,
 		readingLevel: biblio.readingLevel,
+		accessibleFormats: biblio.accessibleFormats,
 		coverPath: biblio.coverPath,
 		createdAt: biblio.createdAt,
 		copiesTotal: copiesTotalSql,

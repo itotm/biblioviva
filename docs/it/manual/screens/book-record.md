@@ -36,6 +36,9 @@ Sotto il titolo si leggono i contrassegni:
   apre la pagina [Classifica il libro](to-classify.md#classifica-il-libro);
 - la serie, con il numero, come pulsante: apre il [Catalogo](catalog.md) con tutti i libri della serie, in ordine;
 - il materiale (libro, DVD…), lo stesso per tutte le copie;
+- i formati accessibili, se il libro ne ha: un contrassegno verde con l'icona dell'accessibilità (una piccola figura) per
+  ciascun formato, accanto al materiale; il suggerimento dice «Libro accessibile: » seguito dal formato. L'elenco dei
+  formati è nella Configurazione (vedere [Configurazione](../../admin/screens/configuration.md));
 - l'**ISBN**;
 - le copie, nella forma «N disponibili su M». Le copie ritirate non si contano nel totale.
 
@@ -304,6 +307,10 @@ La sezione **Classificazione** sceglie il tipo e l'argomento del libro.
 1. Solo se lo schema della biblioteca prevede iniziali modificabili compare il campo **Testo della segnatura**: vuoto,
    usa le iniziali proposte dall'autore, mostrate in grigio («Vuoto: DEL, proposto dall'autore.»); scrivere altre lettere
    per cambiarle.
+1. Sotto la segnatura il gruppo **Formati accessibili** ha una casella per ogni formato dell'elenco della
+   Configurazione; il suggerimento dice «Per gli alunni con DSA o con disabilità; se ne possono scegliere più d'uno.» Il
+   gruppo non compare se l'elenco è vuoto. Un formato tolto dall'elenco resta, e si vede nel modulo, sui libri che già lo
+   hanno; non si può più dare ad altri.
 
 ### Sezione Altri dati
 

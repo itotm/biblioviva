@@ -35,7 +35,9 @@
 			"series": "Serie",
 			"all": "Tutti",
 			"allF": "Tutte",
-			"withdrawn": "Mostra anche i libri ritirati"
+			"withdrawn": "Mostra anche i libri ritirati",
+			"accessibleFormat": "Formato accessibile",
+			"anyAccessibleFormat": "Qualsiasi formato accessibile"
 		},
 		"columns": {
 			"title": "Titolo",
@@ -87,7 +89,9 @@
 		"notes": "Note",
 		"authorHint": "Cognome, Nome. I valori rapidi servono quando non c'è un autore personale.",
 		"subjectsHint": "Uno per riga o separati da virgola.",
-		"none": "—"
+		"none": "—",
+		"accessibleFormats": "Formati accessibili",
+		"accessibleFormatsHint": "Per gli alunni con DSA o con disabilità; se ne possono scegliere più d'uno."
 	},
 	"form": {
 		"createTitle": "Nuovo libro",
@@ -151,7 +155,8 @@
 		"source": "Origine: {{source}}",
 		"created": "Creata il {{when}}",
 		"updated": "Ultima modifica il {{when}}",
-		"onLoan": "In prestito"
+		"onLoan": "In prestito",
+		"accessibleFormat": "Libro accessibile: {{format}}"
 	},
 	"item": {
 		"addTitle": "Aggiungi copie",
@@ -210,7 +215,8 @@
 		"inventoryNumberInvalid": "Numero d'inventario non valido (lettere, cifre e . / -, al massimo 20)",
 		"inventoryNumberTaken": "Numero d'inventario già usato da un'altra copia",
 		"inventoryNumberSeries": "Per più copie il numero d'inventario deve essere fatto di sole cifre",
-		"valueInvalid": "Valore non valido (per esempio 12,50)"
+		"valueInvalid": "Valore non valido (per esempio 12,50)",
+		"accessibleFormatUnknown": "Formato accessibile non previsto dalla configurazione"
 	},
 	"lookup": {
 		"providers": {
@@ -419,7 +425,8 @@
 			"itemNotes": "Note della copia",
 			"inventoryNumber": "Numero d'inventario",
 			"origin": "Provenienza",
-			"value": "Valore (€)"
+			"value": "Valore (€)",
+			"accessibleFormats": "Formati accessibili"
 		},
 		"preview": {
 			"ready": "Nessun errore: l'importazione è possibile.",
@@ -479,7 +486,8 @@
 			"copyExists": "Copia già in catalogo: viene saltata",
 			"mergedIntoExisting": "Aggiunta al titolo già in catalogo (stessa chiave o stesso ISBN)",
 			"inventoryNumberDuplicateInFile": "Numero d'inventario già usato alla riga {{line}}",
-			"inventoryNumberTaken": "Il numero d'inventario {{value}} è già di un'altra copia in catalogo"
+			"inventoryNumberTaken": "Il numero d'inventario {{value}} è già di un'altra copia in catalogo",
+			"accessibleFormatUnknown": "Formato accessibile non previsto dalla configurazione: «{{value}}»"
 		},
 		"done": {
 			"title": "Catalogo importato",
@@ -586,6 +594,9 @@
 			},
 			"value": {
 				"hint": "Il valore della copia in euro, per esempio 12,50."
+			},
+			"accessibleFormats": {
+				"hint": "I formati accessibili del titolo, separati da punto e virgola (per esempio Audiolibro; Caratteri grandi), come nell'elenco della configurazione."
 			}
 		}
 	},

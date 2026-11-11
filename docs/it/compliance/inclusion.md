@@ -55,12 +55,15 @@ Per aiutare chi sceglie un libro per un alunno, il catalogo offre:
 - I soggetti. Il campo **Soggetti** della scheda di un libro contiene parole chiave scelte dalla scuola, e la ricerca del
   catalogo le trova.
 - La **Descrizione fisica** e le note del libro, campi di testo liberi.
+- I formati accessibili. La scheda di un libro può avere uno o più formati accessibili (alta leggibilità, in simboli per
+  la comunicazione aumentativa e alternativa, audiolibro, caratteri grandi, tattile). L'elenco dei formati è della
+  scuola: l'amministratore lo modifica nel campo **Formati accessibili** della sezione **Catalogo** della
+  Configurazione. Il filtro **Formato accessibile** del catalogo trova i libri con un formato o con uno qualsiasi, e il
+  report «Libri accessibili per formato» elenca i libri di ogni formato, con le copie e i prestiti del periodo. I
+  referenti per l'inclusione possono così trovare che cosa prestare a un alunno con un DSA o con una disabilità.
 
-BiblioViva non ha un campo dedicato al formato accessibile di un libro: alta leggibilità, caratteri grandi, simboli per
-la comunicazione aumentativa e alternativa, formato digitale per la sintesi vocale. La scuola può esprimerlo con un
-materiale proprio, con un soggetto adottato da tutti (per esempio «alta leggibilità») o con la **Descrizione fisica**.
-Tra questi, solo il materiale ha un filtro del catalogo e regole di prestito proprie; il soggetto si trova con la
-ricerca; la descrizione fisica è un testo da leggere sulla scheda.
+I formati accessibili sono un dato del libro, non dell'alunno: BiblioViva non registra nulla sugli alunni che li
+usano. Con l'elenco dei formati vuoto il catalogo non li mostra.
 
 BiblioViva non conserva i file dei libri digitali né li legge ad alta voce: registra la copia fisica o il supporto
 (per esempio un CD) e il suo prestito.
@@ -69,8 +72,8 @@ BiblioViva non conserva i file dei libri digitali né li legge ad alta voce: reg
 
 - Decidere con i referenti per l'inclusione se la biblioteca fa parte degli strumenti previsti dal piano per l'inclusione
   e dai piani didattici personalizzati, e quali materiali accessibili acquisire.
-- Scegliere come distinguere nel catalogo i materiali accessibili: un materiale dedicato, un soggetto, una descrizione
-  fisica; poi usare sempre lo stesso modo.
+- Scegliere i formati accessibili dell'elenco della Configurazione e assegnarli ai libri che li hanno; per i materiali
+  di tipo diverso dal libro, per esempio i supporti sonori, si può anche usare un materiale dedicato.
 - Mettere a disposizione del personale con disabilità la tecnologia assistiva di cui ha bisogno al banco, come detto nella
   pagina [Accessibilità](accessibility.md).
 - Non registrare in BiblioViva diagnosi o condizioni di salute degli alunni, nemmeno nelle note: sono categorie

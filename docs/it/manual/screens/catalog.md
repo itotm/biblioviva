@@ -54,6 +54,9 @@ vengono mostrati.
   libri da classificare. Il valore di scelta vuoto è **Tutte**.
 - **Livello**: il livello di lettura. Compare solo se la biblioteca registra il livello di lettura.
 - **Materiale**: il tipo di materiale (libro, DVD…), secondo l'elenco della biblioteca.
+- **Formato accessibile**: i libri adatti agli alunni con DSA o con disabilità. Compare solo se l'elenco **Formati
+  accessibili** della Configurazione non è vuoto. Le scelte sono **Tutti** (nessun filtro), **Qualsiasi formato
+  accessibile** (i libri con almeno un formato) e un formato dell'elenco, per esempio «Audiolibro».
 - **Solo disponibili**: tiene i libri con almeno una copia disponibile.
 - **Anno da** e **Anno a**: l'intervallo degli anni di pubblicazione, a quattro cifre.
 - **Serie**: i libri di una serie. Compare solo se nel catalogo ci sono serie. Il filtro si imposta anche dal pulsante
@@ -152,7 +155,8 @@ il cambio e un messaggio conferma «N titoli riclassificati, N segnature riscrit
 
 Sotto l'elenco il menu **Esporta** scarica i risultati della ricerca, con i filtri in uso, in due formati: **CSV
 (foglio di calcolo, testo)** oppure **ODS (LibreOffice)**. Il file contiene, oltre alle colonne dell'elenco, il
-numero delle copie e quello delle copie disponibili.
+numero delle copie e quello delle copie disponibili. C'è anche la
+colonna **Formati accessibili**, con i formati del libro separati da «; ».
 
 ## Pagine correlate
 

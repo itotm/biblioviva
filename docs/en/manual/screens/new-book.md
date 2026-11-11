@@ -93,7 +93,7 @@ If covers are active, above the form the **Cover** box shows the image found onl
 
 ### Book data
 
-The form has the sections **Record**, **Publication**, **Classification** and **More**, with the same fields and the same rules as the form [Edit record](book-record.md#edit-record). Under the choice of the classification is the **Call number of the copies**, computed, which the copies take on save; with editable initials the **Call number text** also appears, see [Classification section](book-record.md#classification-section). The **Material** is in **Publication**, after the **Physical description**, already set from the first step. Author and publisher are mandatory: if the book does not give them, use the special values of the buttons under the field.
+The form has the sections **Record**, **Publication**, **Classification** and **More**, with the same fields and the same rules as the form [Edit record](book-record.md#edit-record). Under the choice of the classification is the **Call number of the copies**, computed, which the copies take on save; with editable initials the **Call number text** also appears, see [Classification section](book-record.md#classification-section). Under the call number the group **Accessible formats** has a box for each format of the Configuration's list; the ones that apply to the book are ticked, and the group is missing if the list is empty. The **Material** is in **Publication**, after the **Physical description**, already set from the first step. Author and publisher are mandatory: if the book does not give them, use the special values of the buttons under the field.
 
 ### Copies section
 

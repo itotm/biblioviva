@@ -60,6 +60,7 @@ export function registerAllExports(): void {
 		labels.kind = await tServer(locale, "catalog.list.filters.kind");
 		labels.readingLevel = await tServer(locale, "catalog.fields.readingLevel");
 		labels.originalTitle = await tServer(locale, "catalog.fields.originalTitle");
+		labels.accessibleFormats = await tServer(locale, "catalog.fields.accessibleFormats");
 		labels.callNumber = await tServer(locale, "catalog.export.callNumber");
 		labels.acquiredAt = await tServer(locale, "catalog.export.acquiredAt");
 		labels.copiesTotal = await tServer(locale, "catalog.export.copiesTotal");

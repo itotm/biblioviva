@@ -44,6 +44,9 @@ I filtri stanno sopra la tabella e si possono usare anche senza scrivere nulla n
 1. Per la narrativa scegliere il **Genere**; per la saggistica la **Classificazione** (argomento). Se la biblioteca usa
    i livelli di lettura compare anche **Livello**.
 1. Scegliere il **Materiale** (libro, DVD…) e, se serve, la **Serie**.
+1. Per trovare i libri adatti agli alunni con DSA o con disabilità scegliere un **Formato accessibile**: **Qualsiasi
+   formato accessibile** per tutti i libri che ne hanno uno, oppure un formato dell'elenco. Il filtro compare solo se la
+   biblioteca ha un elenco di formati.
 1. Spuntare **Solo disponibili** per vedere i libri che hanno almeno una copia sullo scaffale.
 1. Scrivere un anno in **Anno da** e in **Anno a**, entrambi con quattro cifre, per limitare le date di pubblicazione.
 1. Per vedere anche i libri le cui copie sono tutte ritirate spuntare **Mostra anche i libri ritirati**.

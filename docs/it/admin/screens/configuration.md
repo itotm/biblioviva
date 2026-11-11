@@ -117,6 +117,15 @@ nella scheda della copia (per esempio Acquisto, Dono).») contiene le scelte per
 Altro. Che cosa chiede la norma e che cosa registra BiblioViva: [Inventario dei beni della
 scuola](../../compliance/school-inventory.md).
 
+L'elenco **Formati accessibili** («Uno per riga: i formati che un libro può avere per gli alunni con DSA o con disabilità
+(alta leggibilità, in simboli, audiolibro…). Con l'elenco vuoto il catalogo non li mostra.») contiene i nomi dei formati
+che la scheda di un libro può avere; di norma Alta leggibilità, In simboli (CAA), Audiolibro, Caratteri grandi, Tattile.
+I nomi sono al massimo 20, di 40 caratteri ciascuno. Svuotando l'elenco spariscono le caselle della scheda e il filtro
+del catalogo. Un formato tolto dall'elenco resta sui libri che già lo hanno, e si vede ancora nel loro modulo, ma non si
+può più dare ad altri. Uso: [Catalogare un libro nuovo](../../manual/guides/catalog-a-new-book.md) e [Cercare un
+libro](../../manual/guides/find-a-book.md). Che cosa chiedono le norme sull'inclusione e che cosa registra BiblioViva:
+[Inclusione](../../compliance/inclusion.md).
+
 ### Codici a barre
 
 Il formato dei codici di tessere e copie: **Tastiera dei computer**, **Suono della fotocamera** (facoltativo, vale solo

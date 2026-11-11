@@ -92,6 +92,7 @@ export const CATALOG_FIELDS = [
 	"seriesNumber",
 	"dewey",
 	"subjects",
+	"accessibleFormats",
 	"notes",
 	"callNumber",
 	"itemType",
@@ -134,6 +135,8 @@ export const CATALOG_IMPORT: ImportSpec<CatalogField> = {
 		optional("seriesNumber", "series_number"),
 		optional("dewey", "dewey"),
 		optional("subjects", "subjects"),
+		// accessible books (9.66)
+		optional("accessibleFormats", "accessible_formats"),
 		optional("notes", "notes"),
 		optional("callNumber", "call_number"),
 		optional("itemType", "item_type"),

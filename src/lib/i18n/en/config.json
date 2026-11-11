@@ -321,6 +321,10 @@
 					"label": "Origins",
 					"hint": "One per line: the origins offered in the copy's form (for example Purchase, Gift)."
 				}
+			},
+			"accessibleFormats": {
+				"label": "Accessible formats",
+				"hint": "One per line: the formats a book may have for pupils with dyslexia or a disability (high readability, symbols, audiobook…). With an empty list the catalogue does not show them."
 			}
 		},
 		"barcodes": {

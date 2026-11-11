@@ -46,7 +46,7 @@ riferimenti ufficiali.
 
 | Norma | Che cosa chiede | Che cosa fa BiblioViva | Pagina |
 |---|---|---|---|
-| Legge 170/2010 (disturbi specifici di apprendimento) | Alla scuola, didattica e strumenti adatti agli alunni con DSA | Livelli di lettura e tipi di materiale configurabili; interfaccia accessibile | [Inclusione](inclusion.md) |
+| Legge 170/2010 (disturbi specifici di apprendimento) | Alla scuola, didattica e strumenti adatti agli alunni con DSA | Livelli di lettura, tipi di materiale e formati accessibili dei libri configurabili; interfaccia accessibile | [Inclusione](inclusion.md) |
 | Legge 104/1992 (persone con disabilità) | Alla scuola, l'integrazione e il diritto allo studio degli alunni con disabilità | Come sopra | [Inclusione](inclusion.md) |
 
 ### Inventario dei beni

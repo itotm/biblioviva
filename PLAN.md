@@ -2135,7 +2135,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
     `bun run ci` green.
   - Depends on: 3.9, 7.3
 
-- [ ] **9.66 Accessible books** (owner decision, Q157; required for 0.9.0)
+- [x] **9.66 Accessible books** (owner decision, Q157; required for 0.9.0)
   - Context: school librarians are asked for the books a pupil with dyslexia (L. 170/2010) or with a disability
     (L. 104/1992) can read: high-readability editions, books in symbols (CAA), audiobooks, large print, tactile books
     (`docs/studies/adoption.md` §8).
@@ -2666,7 +2666,14 @@ Each item: **question — why it matters — default used until decided (and rec
       "_comment": "9.64 (Q155): the school inventory, off by default. On, a copy has its inventory number (the next one proposed), its origin from this list and its value in euro; the reports list the copies entered and withdrawn in a period.",
       "enabled": false,
       "origins": ["Acquisto", "Dono", "Altro"]
-    }
+    },
+    "accessibleFormats": [
+      "Alta leggibilità",
+      "In simboli (CAA)",
+      "Audiolibro",
+      "Caratteri grandi",
+      "Tattile"
+    ]
   },
   "barcodes": {
     "_comment": "Phase 12 (Q90-Q93): new copies YYYY-CNNNN and new cards CNNNNNN with a mod-23 check letter (2026-E0267, U012345). The codes of the old system keep working: copies YYYY-NNNN, cards of 10 digits, plain numbers up to plainMaxLength digits [VERIFY at the Koha migration].",

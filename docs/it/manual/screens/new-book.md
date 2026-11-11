@@ -136,7 +136,9 @@ scheda. L'amministratore può disattivare le copertine; in tal caso il riquadro 
 Il modulo ha le sezioni **Scheda**, **Pubblicazione**, **Classificazione** e **Altri dati**, con gli stessi campi e le
 stesse regole del modulo [Modifica scheda](book-record.md#modifica-scheda). Sotto la scelta della classificazione sta la
 **Segnatura delle copie**, calcolata, che le copie prendono al salvataggio; con iniziali modificabili compare anche
-**Testo della segnatura**, vedere [Sezione Classificazione](book-record.md#sezione-classificazione). Il **Materiale** sta in **Pubblicazione**,
+**Testo della segnatura**, vedere [Sezione Classificazione](book-record.md#sezione-classificazione). Sotto la
+segnatura il gruppo **Formati accessibili** ha una casella per ogni formato dell'elenco della Configurazione; si
+spuntano quelle che valgono per il libro, e il gruppo manca se l'elenco è vuoto. Il **Materiale** sta in **Pubblicazione**,
 dopo la **Descrizione fisica**, già impostato dal primo passo. Autore ed editore sono obbligatori: se il
 libro non li indica si usano i valori speciali dei pulsanti sotto il campo.
 

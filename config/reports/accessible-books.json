@@ -1,0 +1,85 @@
+{
+	"id": "accessible-books",
+	"title": {
+		"it": "Libri accessibili per formato",
+		"en": "Accessible books by format"
+	},
+	"description": {
+		"it": "I titoli ad alta leggibilità, in simboli, audiolibri, a caratteri grandi o tattili, per formato, con le copie e i prestiti del periodo: per gli alunni con DSA o con disabilità.",
+		"en": "The high-readability, symbol, audiobook, large-print or tactile titles, by format, with the copies and the loans of the period: for pupils with dyslexia or a disability."
+	},
+	"category": "books",
+	"params": [
+		{
+			"name": "from",
+			"label": {
+				"it": "Dal",
+				"en": "From"
+			},
+			"type": "date",
+			"required": true,
+			"default": "schoolYearStart"
+		},
+		{
+			"name": "to",
+			"label": {
+				"it": "Al",
+				"en": "To"
+			},
+			"type": "date",
+			"required": true,
+			"default": "today"
+		}
+	],
+	"sql": "SELECT f.value AS format, b.title AS title, b.author AS author, (SELECT group_concat(DISTINCT i.call_number) FROM item i WHERE i.biblio_id = b.id AND i.status <> 'withdrawn') AS call_number, (SELECT COUNT(*) FROM item i WHERE i.biblio_id = b.id AND i.status <> 'withdrawn') AS copies, (SELECT COUNT(*) FROM loan l JOIN item i ON i.id = l.item_id WHERE i.biblio_id = b.id AND date(l.issued_at) BETWEEN :from AND :to) AS loans FROM biblio b, json_each(b.accessible_formats) f ORDER BY f.value, b.title",
+	"columns": [
+		{
+			"key": "format",
+			"label": {
+				"it": "Formato",
+				"en": "Format"
+			},
+			"type": "text"
+		},
+		{
+			"key": "title",
+			"label": {
+				"it": "Titolo",
+				"en": "Title"
+			},
+			"type": "text"
+		},
+		{
+			"key": "author",
+			"label": {
+				"it": "Autore",
+				"en": "Author"
+			},
+			"type": "text"
+		},
+		{
+			"key": "call_number",
+			"label": {
+				"it": "Segnatura",
+				"en": "Call number"
+			},
+			"type": "text"
+		},
+		{
+			"key": "copies",
+			"label": {
+				"it": "Copie",
+				"en": "Copies"
+			},
+			"type": "int"
+		},
+		{
+			"key": "loans",
+			"label": {
+				"it": "Prestiti",
+				"en": "Loans"
+			},
+			"type": "int"
+		}
+	]
+}

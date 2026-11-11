@@ -44,6 +44,9 @@ The filters are above the table and can also be used without writing anything in
 1. For fiction choose the **Genre**; for non-fiction the **Classification** (subject). If the library uses reading
    levels, **Level** also appears.
 1. Choose the **Material** (book, DVD…) and, if needed, the **Series**.
+1. To find the books suited to pupils with dyslexia or a disability choose an **Accessible format**: **Any accessible
+   format** for all the books that have one, or one format of the list. The filter appears only if the library has a list
+   of formats.
 1. Tick **Available only** to see the books that have at least one copy on the shelf.
 1. Write a year in **Year from** and in **Year to**, both with four digits, to limit the publication dates.
 1. To see also the books whose copies are all withdrawn tick **Also show withdrawn books**.

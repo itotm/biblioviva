@@ -36,13 +36,18 @@ I nomi delle colonne sono in inglese e vanno lasciati come nel modello. Le princ
 Sono facoltative anche `isbn`, `subtitle`, `publication_place`, `publication_year`, `physical_description`, `series`,
 `series_number`, `subjects`, `notes`, `call_number` (la segnatura, che BiblioViva calcola: vedere sotto), `item_type` (il materiale: libro, DVD…, uno per titolo), `status`,
 `not_for_loan` (`sì` per le copie da consultazione; anche `consultazione` in `item_type` rende la copia da consultazione, senza essere il materiale del titolo), `acquisition_date` (`AAAA-MM-GG` o `GG/MM/AAAA`), `item_notes`, `inventory_number` (il numero d'inventario),
-`origin` (la provenienza) e `value` (il valore in euro, `12.50` o `12,50`) e altre ancora: l'elenco completo è nel riquadro **Il modello del file**. Lo stato si scrive `available`, `lost`, `damaged`,
+`origin` (la provenienza), `value` (il valore in euro, `12.50` o `12,50`) e `accessible_formats` (i formati accessibili del titolo) e altre ancora: l'elenco completo è nel riquadro **Il modello del file**. Lo stato si scrive `available`, `lost`, `damaged`,
 `in_repair` o `withdrawn`; le parole italiane (disponibile, perso, danneggiato, in riparazione, ritirato) sono
 accettate.
 
 Le colonne `inventory_number`, `origin` e `value` riguardano l'inventario della scuola e vengono importate anche quando
 l'inventario è spento: nulla del file si perde, e i valori compaiono quando lo si accende. Un numero d'inventario è di una
 sola copia: la verifica rifiuta un numero scritto due volte nel file e un numero già dato a una copia del catalogo.
+
+La colonna `accessible_formats` contiene i formati accessibili del titolo, separati da punto e virgola (per esempio
+`Audiolibro; Caratteri grandi`), come nell'elenco **Formati accessibili** della Configurazione. I nomi si confrontano
+con l'elenco senza badare a maiuscole e accenti. Un formato che non è nell'elenco è un errore della riga: l'importazione
+resta bloccata finché non si correggono il file o l'elenco.
 
 Le chiavi si possono lasciare fuori. Senza `biblio_key` le copie dello stesso libro si raggruppano per ISBN; senza
 `barcode` BiblioViva genera il codice di ogni copia e alla fine si stampano le etichette. Un libro senza
@@ -123,6 +128,12 @@ il codice nel file.
 
 Compare «Numero d'inventario già usato alla riga N» (il numero è scritto due volte nel file) oppure «Il numero d'inventario …
 è già di un'altra copia in catalogo». Correggere il numero nel file.
+
+### Il formato accessibile non è nell'elenco
+
+Compare «Formato accessibile non previsto dalla configurazione: «Braille»» (il nome è quello scritto nel file): un nome
+di `accessible_formats` non è tra i formati dell'elenco **Formati accessibili**. Correggere il nome nel file oppure
+aggiungerlo all'elenco, in **Amministrazione** → **Configurazione** → **Catalogo**, e verificare di nuovo.
 
 ### Mancano l'autore o l'editore
 

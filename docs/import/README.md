@@ -64,7 +64,7 @@ the students, on the teachers only.
 |---|---|
 | required | `title`, `author`, `publisher` |
 | keys | `biblio_key` (missing → copies grouped by ISBN, else one title per row), `barcode` (missing → generated, labels to print) |
-| optional | `classification` (missing → the title goes to "To classify"), `reading_level`, `isbn`, `issn`, `ean`, `subtitle`, `original_title` (only for a translation), `responsibility`, `publication_place`, `publication_year`, `physical_description`, `series`, `series_number`, `dewey`, `subjects`, `notes`, `call_number`, `item_type`, `enumeration`, `status`, `not_for_loan`, `acquisition_date`, `item_notes`, `inventory_number`, `origin`, `value` |
+| optional | `classification` (missing → the title goes to "To classify"), `reading_level`, `isbn`, `issn`, `ean`, `subtitle`, `original_title` (only for a translation), `responsibility`, `publication_place`, `publication_year`, `physical_description`, `series`, `series_number`, `dewey`, `subjects`, `accessible_formats`, `notes`, `call_number`, `item_type`, `enumeration`, `status`, `not_for_loan`, `acquisition_date`, `item_notes`, `inventory_number`, `origin`, `value` |
 
 | File | Content |
 |---|---|
@@ -105,6 +105,12 @@ and so is a number already given to a copy of the catalogue. `origin` is free te
 `catalog.inventory.origins` are the choices of the forms). `value` is the value in euro, `12.50` or
 `12,50`, not negative. The catalogue export writes the three columns, the value with a point
 (`12.50`), so that a file exported can be imported again.
+
+`accessible_formats` (9.66) holds the title's accessible formats, separated by semicolons
+(`Audiolibro; Caratteri grandi`), matched to `catalog.accessibleFormats` ignoring case and accents and stored in
+the order of that list. A name that is not in the list is an error of the row ("Accessible format not in the
+configuration: “Braille”"), so the import stays blocked until the file or the list is corrected. The catalogue export
+writes the column after `subjects`, the formats joined by `; `, so that a file exported can be imported again.
 
 ## Open loans (Administration → Imports → Open loans, `/admin/imports/loans`, administrators, once)
 

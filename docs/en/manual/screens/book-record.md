@@ -25,6 +25,7 @@ Under the title are the marks:
 - if the book has no classification yet, the mark **To classify** (with the explanation "The copies are not lent until the book is classified.") and, with the cataloguing permission, the **Classify** button, which opens the page [Classify the book](to-classify.md#classify-the-book);
 - the series, with the number, as a button: it opens the [Catalogue](catalog.md) with all the books of the series, in order;
 - the material (book, DVD…), the same for all the copies;
+- the accessible formats, if the book has any: a green badge with the accessibility icon (a little person) for each format, next to the material; the tooltip reads "Accessible book: " followed by the format. The list of formats is in the Configuration (see [Configuration](../../admin/screens/configuration.md));
 - the **ISBN**;
 - the copies, in the form "N available of M". Withdrawn copies are not counted in the total.
 
@@ -204,6 +205,7 @@ The **Classification** section chooses the kind and the subject of the book.
 1. For non-fiction, choose the subject among the pictures of **Pick the subject**. A main subject has sub-subjects: opening it shows the "Subjects of …" and the right one is chosen, or the button "Use … in general"; **Back to the main subjects** returns to the list.
 1. Under the picker **Call number of the copies** shows the computed call number, or "After the classification" when **Classify later** is chosen. The note says "Computed from the classification, the level and the author; the copies take it on save."
 1. Only if the library's scheme has editable initials the field **Call number text** appears: empty, it uses the initials proposed from the author, shown in grey ("Empty: DEL, proposed from the author."); type other letters to change them.
+1. Under the call number the group **Accessible formats** has a box for each format of the Configuration's list; the hint says "For pupils with dyslexia or a disability; more than one may be chosen." The group does not appear if the list is empty. A format taken off the list stays, and is shown in the form, on the books that already have it; it can no longer be given to others.
 
 ### More section
 

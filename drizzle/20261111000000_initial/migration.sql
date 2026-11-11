@@ -33,6 +33,7 @@ CREATE TABLE `biblio` (
 	`class_code` text,
 	`call_text` text,
 	`subjects` text DEFAULT '[]' NOT NULL,
+	`accessible_formats` text DEFAULT '[]' NOT NULL,
 	`notes` text,
 	`cover_path` text,
 	`cover_source` text,

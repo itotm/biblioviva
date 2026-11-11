@@ -53,12 +53,15 @@ To help whoever chooses a book for a student, the catalogue offers:
 - The subjects. The **Subjects** field of a book's record holds keywords chosen by the school, and the catalogue search
   finds them.
 - The **Physical description** and the book's notes, free-text fields.
+- The accessible formats. A book's record can have one or more accessible formats (high legibility, symbols for
+  augmentative and alternative communication, audiobook, large print, tactile). The list of formats is the school's: the
+  administrator edits it in the **Accessible formats** field of the **Catalogue** section of the Configuration. The
+  **Accessible format** filter of the catalogue finds the books with one format or with any, and the “Accessible books
+  by format” report lists the books of each format, with the copies and the loans of the period. The inclusion
+  officers can thus find what to lend to a pupil with a DSA or a disability.
 
-BiblioViva has no field dedicated to the accessible format of a book: high legibility, large print, symbols for
-augmentative and alternative communication, digital format for speech synthesis. The school can express it with a
-material of its own, with a subject adopted by everyone (for example "high legibility") or with the **Physical
-description**. Of these, only the material has a catalogue filter and loan rules of its own; the subject is found with the
-search; the physical description is a text to read on the record.
+The accessible formats are data of the book, not of the student: BiblioViva records nothing about the students who use
+them. With the list of formats empty the catalogue does not show them.
 
 BiblioViva does not keep the files of digital books and does not read them aloud: it records the physical copy or the
 medium (for example a CD) and its loan.
@@ -67,8 +70,8 @@ medium (for example a CD) and its loan.
 
 - Decide with the inclusion officers whether the library is among the tools provided by the inclusion plan and by the
   personalised learning plans, and which accessible materials to acquire.
-- Choose how to distinguish the accessible materials in the catalogue: a dedicated material, a subject, a physical
-  description; then always use the same way.
+- Choose the accessible formats of the list in the Configuration and assign them to the books that have them; for
+  materials other than books, for example sound media, a dedicated material can also be used.
 - Provide the staff with disabilities with the assistive technology they need at the desk, as said in the page
   [Accessibility](accessibility.md).
 - Do not record in BiblioViva diagnoses or health conditions of the students, not even in the notes: they are special

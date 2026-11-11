@@ -245,15 +245,24 @@ const CALL_CODE = /^[\p{L}\d]{0,6}$/u;
 export function demoBiblio(
 	input: BiblioFormInput,
 	special: { author: string; publisher: string },
-	stored?: Partial<Record<Exclude<keyof BiblioFormInput, "subjects">, string | number | null>> & {
+	// the accessible formats are names of the configured list (9.66): nothing a visitor writes
+	stored?: Partial<
+		Record<
+			Exclude<keyof BiblioFormInput, "subjects" | "accessibleFormats">,
+			string | number | null
+		>
+	> & {
 		subjects?: readonly string[] | null;
+		accessibleFormats?: readonly string[] | null;
 	},
 	now = new Date(),
 ): BiblioFormInput {
 	if (!isDemoPublic()) {
 		return input;
 	}
-	const was = (field: Exclude<keyof BiblioFormInput, "subjects">): string | null => {
+	const was = (
+		field: Exclude<keyof BiblioFormInput, "subjects" | "accessibleFormats">,
+	): string | null => {
 		const value = stored?.[field];
 		return value === undefined || value === null ? null : String(value);
 	};

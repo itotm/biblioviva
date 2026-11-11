@@ -46,7 +46,7 @@ references.
 
 | Rule | What it asks | What BiblioViva does | Page |
 |---|---|---|---|
-| Law 170/2010 (specific learning disorders) | From the school, teaching and tools suited to pupils with specific learning disorders | Configurable reading levels and types of material; accessible interface | [Inclusion](inclusion.md) |
+| Law 170/2010 (specific learning disorders) | From the school, teaching and tools suited to pupils with specific learning disorders | Configurable reading levels, types of material and accessible formats of books; accessible interface | [Inclusion](inclusion.md) |
 | Law 104/1992 (persons with disabilities) | From the school, the integration and the right to education of pupils with disabilities | As above | [Inclusion](inclusion.md) |
 
 ### Asset inventory

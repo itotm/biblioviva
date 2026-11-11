@@ -22,7 +22,7 @@ The reports are grouped in four categories, each with its icon: **Loans**, **Boo
 
 ### Report cards
 
-Each report is a card with the title and a short description. A click opens the report. Examples: overdue loans, most borrowed books, average duration of loans, copies never lent, holdings by classification, reading index by class. Two reports list, for a period, the copies withdrawn and the copies entered, with the inventory number, the origin and the value: they serve the school inventory, see [The school's inventory of assets](../../compliance/school-inventory.md).
+Each report is a card with the title and a short description. A click opens the report. Examples: overdue loans, most borrowed books, average duration of loans, copies never lent, holdings by classification, reading index by class. Two reports list, for a period, the copies withdrawn and the copies entered, with the inventory number, the origin and the value: they serve the school inventory, see [The school's inventory of assets](../../compliance/school-inventory.md). The report "Accessible books by format", in the **Books** category, lists for a period (**From** and **To**, by default from the start of the school year to today) one row per book and accessible format, ordered by format and title, with the columns **Format**, **Title**, **Author**, **Call number**, **Copies** (not counting the withdrawn ones) and **Loans** of the period. Like every report, it can be printed and exported.
 
 ### Marks
 

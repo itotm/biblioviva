@@ -36,7 +36,9 @@ ISBN si compila a mano. La copertina si cerca in rete o si carica. I libri si cl
 cercano per titolo, autore, ISBN o codice della copia. Il catalogo permette anche di togliere le copie smarrite o
 rovinate e di fare l'inventario, leggendo le copie con il lettore scaffale per scaffale. L'inventario della scuola è facoltativo:
 acceso, ogni copia ha anche il numero d'inventario, la provenienza e il valore, e due report elencano le copie entrate e
-le copie scaricate in un periodo.
+le copie scaricate in un periodo. Un libro può avere uno o più formati accessibili (alta leggibilità, in simboli,
+audiolibro, caratteri grandi, tattile: l'elenco è della scuola): il catalogo li filtra e un report elenca i libri di
+ogni formato.
 
 ## Utenti, classi e tessere
 

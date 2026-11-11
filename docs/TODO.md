@@ -103,7 +103,7 @@ list is cleared at a release, and a new one takes the next.
 - [x] 9.64 The school inventory: inventory number, origin and value of the copies, off by default; the lists of the
   copies withdrawn and entered in a period (Q155).
 - [ ] 9.65 MARC export and import; **Mostra tutti i libri** in the catalogue list (Q156).
-- [ ] 9.66 Accessible books: high readability, CAA, audiobook, large print, tactile; a filter of the catalogue (Q157).
+- [x] 9.66 Accessible books: high readability, CAA, audiobook, large print, tactile; a filter of the catalogue (Q157).
 - [ ] 9.4 Device checklist.
 - [x] 9.17 Public demo: running on `demo.biblioviva.org`.
 - [x] 9.40 A beep when the phone's camera reads a code (four sounds, Conferma by default, Q137).

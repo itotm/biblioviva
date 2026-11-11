@@ -68,7 +68,7 @@ const decorations: Decorations = {
 describe("built-in reports", () => {
 	it("are all valid, bilingual and grouped in the four categories", () => {
 		expect(library.problems).toEqual([]);
-		expect(library.reports.length).toBe(23);
+		expect(library.reports.length).toBe(24);
 		// the reviews of 9.20 (Q116) and 9.13 round 24: the ones gone, reshaped and added
 		const ids = library.reports.map((r) => r.id);
 		for (const gone of [
@@ -94,6 +94,8 @@ describe("built-in reports", () => {
 			// the school inventory (9.64)
 			"withdrawn-copies",
 			"entered-copies",
+			// accessible books (9.66)
+			"accessible-books",
 		]) {
 			expect(ids).toContain(added);
 		}

@@ -1,7 +1,7 @@
 {
   "version": "7",
   "dialect": "sqlite",
-  "id": "0134d45e-58a3-4781-b2b3-795308c3c2a2",
+  "id": "2712bf21-b29b-404d-a5e5-3bd6d42e0ecb",
   "prevIds": [
     "00000000-0000-0000-0000-000000000000"
   ],
@@ -399,6 +399,16 @@
     {
       "table": "biblio",
       "name": "subjects",
+      "type": "text",
+      "notNull": true,
+      "autoincrement": false,
+      "default": "'[]'",
+      "generated": null,
+      "entityType": "columns"
+    },
+    {
+      "table": "biblio",
+      "name": "accessible_formats",
       "type": "text",
       "notNull": true,
       "autoincrement": false,

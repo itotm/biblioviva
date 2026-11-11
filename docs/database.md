@@ -135,6 +135,7 @@ erDiagram
         text class_code
         text call_text
         text subjects "JSON array"
+        text accessible_formats "JSON array"
         text notes
         text cover_path
         text cover_source
@@ -483,6 +484,7 @@ One row per title, aligned with the Koha fast cataloguing framework (PLAN.md §4
 | `class_code` | text | yes | | non-fiction local class from `classification.nonfiction` |
 | `call_text` | text | yes | | the title's written part of the segnatura, `{{text}}` of the scheme (Q143); NULL follows the proposal (the author's initials), an empty string is no text |
 | `subjects` | text (JSON) | no | `'[]'` | JSON array of free keywords |
+| `accessible_formats` | text (JSON) | no | `'[]'` | Accessible formats (9.66): names of `catalog.accessibleFormats`, in the list's order; the catalogue filter reads them with `json_each` |
 | `notes` | text | yes | | |
 | `cover_path` | text | yes | | relative to `DATA_DIR`, e.g. `uploads/covers/07/1207-main-<version>.webp` |
 | `cover_source` | text | yes | | provenance: `photo`, `upload`, `googlebooks`, `amazon`, `openlibrary`, `mock` (`CoverSource` in `covers.ts`) |
@@ -1091,8 +1093,8 @@ CREATE VIRTUAL TABLE IF NOT EXISTS biblio_fts USING fts5(
 
 ### 5.3 JSON columns
 
-Declared with `text(…, { mode: "json" })`, stored as JSON text, parsed by Drizzle: `biblio.subjects` (string array,
-default `'[]'`), `staff_user.roles` (string array, default `'[]'`), `loan_event.details`, `audit_log.details`,
+Declared with `text(…, { mode: "json" })`, stored as JSON text, parsed by Drizzle: `biblio.subjects` and
+`biblio.accessible_formats` (string arrays, default `'[]'`), `staff_user.roles` (string array, default `'[]'`), `loan_event.details`, `audit_log.details`,
 `import_batch.summary`, `inventory.summary` (objects, nullable), `metadata_cache.payload` (provider answer),
 `class_photo_frame.corners` (four points).
 

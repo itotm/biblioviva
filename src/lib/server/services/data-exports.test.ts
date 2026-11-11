@@ -104,7 +104,7 @@ describe("exports that go back in", () => {
 		expect(CATALOG_EXPORT_HEADER.join(";")).toBe(
 			"biblio_key;isbn;issn;ean;title;subtitle;original_title;responsibility;author;publisher;" +
 				"publication_place;publication_year;physical_description;series;series_number;dewey;" +
-				"classification;reading_level;subjects;notes;barcode;call_number;item_type;" +
+				"classification;reading_level;subjects;accessible_formats;notes;barcode;call_number;item_type;" +
 				"enumeration;status;not_for_loan;acquisition_date;item_notes;inventory_number;origin;value",
 		);
 		expect(OPEN_LOANS_EXPORT_HEADER.join(";")).toBe("card_number;barcode;issued_on;due_on");

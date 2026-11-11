@@ -321,6 +321,10 @@
 					"label": "Provenienze",
 					"hint": "Una per riga: le provenienze proposte nella scheda della copia (per esempio Acquisto, Dono)."
 				}
+			},
+			"accessibleFormats": {
+				"label": "Formati accessibili",
+				"hint": "Uno per riga: i formati che un libro può avere per gli alunni con DSA o con disabilità (alta leggibilità, in simboli, audiolibro…). Con l'elenco vuoto il catalogo non li mostra."
 			}
 		},
 		"barcodes": {

@@ -27,6 +27,8 @@ whoever catalogues the books.
    copies** shows the new call number, computed by BiblioViva; see below for the call numbers.
 1. If the **Call number text** field appears, correct the letters of the call number, or leave it empty for the
    initials proposed from the author (in grey).
+1. To mark or remove the book's accessible formats (for example high readability or large print), tick or untick the
+   boxes of the group **Accessible formats**, under the call number.
 1. Press **Save changes**. The record of the book opens again, with the new data. **Cancel** leaves everything as it
    was.
 

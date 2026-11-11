@@ -25,6 +25,7 @@ import {
 import { refreshCallNumbers } from "./call-numbers.js";
 import { ean13Valid, toIsbn13 } from "#lib/shared/isbn.js";
 import { demoBiblio } from "#lib/server/demo/content.js";
+import { matchFormats, splitFormats } from "#lib/shared/accessible-formats.js";
 import { audit, type AuditActor } from "./audit.js";
 
 export interface CatalogRules {
@@ -40,6 +41,8 @@ export interface CatalogRules {
 	codes: CodeTable;
 	/** The school inventory (step 9.64): off by default; the origins offered for a copy. */
 	inventory: { enabled: boolean; origins: string[] };
+	/** Accessible books (step 9.66): the formats a record may have; empty hides them. */
+	accessibleFormats: string[];
 }
 
 export function catalogRules(config: AppConfig): CatalogRules {
@@ -70,6 +73,7 @@ export function catalogRules(config: AppConfig): CatalogRules {
 			enabled: config.catalog.inventory.enabled,
 			origins: config.catalog.inventory.origins,
 		},
+		accessibleFormats: config.catalog.accessibleFormats,
 	};
 }
 
@@ -87,7 +91,8 @@ export type BiblioIssueCode =
 	| "classCodeNotForFiction"
 	| "readingLevelNotAllowed"
 	| "readingLevelOutOfRange"
-	| "itemTypeUnknown";
+	| "itemTypeUnknown"
+	| "accessibleFormatUnknown";
 
 export type ItemIssueCode =
 	| "readingLevelNotAllowed"
@@ -168,6 +173,8 @@ export interface BiblioData {
 	/** The title's `{{text}}` of the segnatura (Q143); null follows the scheme's proposal. */
 	callText: string | null;
 	subjects: string[];
+	/** Accessible formats (step 9.66), names of the list in its order. */
+	accessibleFormats: string[];
 	notes: string | null;
 }
 
@@ -241,6 +248,14 @@ export function validateBiblio(
 			issues.push({ field: "readingLevel", code: "readingLevelNotAllowed" });
 		}
 	}
+	// the formats of the list only, in its order and spelling (9.66)
+	const formats = matchFormats(
+		splitFormats(input.accessibleFormats ?? ""),
+		rules.accessibleFormats,
+	);
+	if (formats.unknown.length > 0) {
+		issues.push({ field: "accessibleFormats", code: "accessibleFormatUnknown" });
+	}
 	if (issues.length > 0) {
 		throw new CatalogValidationError(issues);
 	}
@@ -273,6 +288,7 @@ export function validateBiblio(
 			.split(/[\n,;]+/)
 			.map((s) => s.trim())
 			.filter(Boolean),
+		accessibleFormats: formats.formats,
 		notes: blankToNull(input.notes),
 	};
 }
@@ -400,6 +416,7 @@ const TRACKED: (keyof BiblioData)[] = [
 	"readingLevel",
 	"callText",
 	"subjects",
+	"accessibleFormats",
 	"notes",
 ];
 
@@ -418,15 +435,27 @@ export function updateBiblio(
 		}
 		// a form without the type keeps the record's (step 9.45), without the text its text (9.50)
 		const sent = { ...input, itemType: input.itemType || existing.itemType };
+		// a format taken off the list stays on the records that have it (9.66)
+		const formatRules: CatalogRules = {
+			...rules,
+			accessibleFormats: [
+				...rules.accessibleFormats,
+				...existing.accessibleFormats.filter((f) => !rules.accessibleFormats.includes(f)),
+			],
+		};
 		const validated = validateBiblio(
 			demoBiblio(sent, demoSpecial(rules), existing, now),
-			rules,
+			formatRules,
 			now,
 		);
-		const data =
-			input.callText === undefined
-				? { ...validated, callText: existing.callText }
-				: validated;
+		// a form without the formats (a classification flow, a batch) keeps the record's
+		const data = {
+			...validated,
+			...(input.callText === undefined ? { callText: existing.callText } : {}),
+			...(input.accessibleFormats === undefined
+				? { accessibleFormats: existing.accessibleFormats }
+				: {}),
+		};
 		assertIsbnFree(tx, data.isbn, id);
 		const changed = TRACKED.filter(
 			(k) => JSON.stringify(existing[k] ?? null) !== JSON.stringify(data[k] ?? null),
@@ -525,6 +554,8 @@ export interface ClassificationOptions {
 	unknownPlace: string;
 	/** The school inventory (9.64): the copy form shows its fields only when it is on. */
 	inventory: CatalogRules["inventory"];
+	/** Accessible books (9.66): the formats of the form's boxes and of the catalogue's filter. */
+	accessibleFormats: string[];
 }
 
 /** What the pickers and filters need: genres, taxonomy, flags, item types, quick picks. */
@@ -558,5 +589,6 @@ export function classificationOptions(rules: CatalogRules): ClassificationOption
 		unknownPublisher: rules.unknownPublisher,
 		unknownPlace: rules.unknownPlace,
 		inventory: rules.inventory,
+		accessibleFormats: rules.accessibleFormats,
 	};
 }

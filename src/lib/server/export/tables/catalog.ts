@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // Export of the catalogue grid with its filters (search, kind, genre, class, reading level, item
-// type, series).
+// type, series, accessible format).
 import * as v from "valibot";
 import { levelCodeOrEmpty } from "#lib/shared/input-schemas.js";
 import { getConfig } from "#lib/server/config/index.js";
@@ -22,6 +22,7 @@ export const catalogExportSchema = v.object({
 	readingLevel: v.optional(levelCodeOrEmpty, ""),
 	itemType: v.optional(v.pipe(v.string(), v.maxLength(32)), ""),
 	series: v.optional(v.pipe(v.string(), v.maxLength(200)), ""),
+	accessibleFormat: v.optional(v.pipe(v.string(), v.maxLength(40)), ""),
 });
 
 export function catalogExportColumns(labels: Record<string, string>): ExportColumn[] {
@@ -49,6 +50,12 @@ export function catalogExportColumns(labels: Record<string, string>): ExportColu
 			label: labels.readingLevel ?? "readingLevel",
 			type: "number",
 			widthMm: 14,
+		},
+		{
+			id: "accessibleFormats",
+			label: labels.accessibleFormats ?? "accessibleFormats",
+			type: "string",
+			widthMm: 40,
 		},
 		{
 			id: "copiesTotal",
@@ -96,6 +103,7 @@ export function registerCatalogExport(
 							? `${node.code} ${node.label}`
 							: (r.genreCode ?? r.classCode),
 						readingLevel: r.readingLevel,
+						accessibleFormats: r.accessibleFormats.join("; "),
 						callNumber: r.callNumbers,
 						acquiredAt: r.acquiredAt,
 						copiesTotal: r.copiesTotal,

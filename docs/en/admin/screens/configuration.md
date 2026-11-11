@@ -115,6 +115,15 @@ The list **Origins** ("One per line: the origins offered in the copy's form (for
 choices for the origin; by default Purchase, Gift, Other. What the rule asks and what BiblioViva records: [The school's
 inventory of assets](../../compliance/school-inventory.md).
 
+The list **Accessible formats** ("One per line: the formats a book may have for pupils with dyslexia or a disability
+(high readability, symbols, audiobook…). With an empty list the catalogue does not show them.") holds the names of the
+formats that a book's record may have; by default High readability, Symbols (AAC), Audiobook, Large print, Tactile. The
+names are at most 20, of 40 characters each. Emptying the list removes the boxes of the record and the filter of the
+catalogue. A format taken off the list stays on the books that already have it, and is still shown in their form, but can
+no longer be given to others. Use: [Catalogue a new book](../../manual/guides/catalog-a-new-book.md) and [Find a
+book](../../manual/guides/find-a-book.md). What the inclusion rules ask and what BiblioViva records:
+[Inclusion](../../compliance/inclusion.md).
+
 ### Barcodes
 
 The format of the card and copy codes: **Computer keyboard**, **Camera sound** (optional, it applies only to reading with

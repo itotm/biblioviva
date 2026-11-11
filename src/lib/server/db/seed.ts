@@ -42,6 +42,7 @@ import {
 	wish,
 } from "./schema.js";
 import { ensureAtLeast } from "./sequence.js";
+import { DEFAULT_ACCESSIBLE_FORMATS } from "#lib/shared/accessible-formats.js";
 
 export interface SeedOptions {
 	seed?: number;
@@ -418,6 +419,11 @@ export function seedDatabase(db: Db, options: SeedOptions = {}): SeedSummary {
 					? null
 					: String(faker.number.int({ min: 1, max: 999 })).padStart(3, "0"),
 				subjects: fiction ? [] : [faker.word.noun(), faker.word.noun()],
+				// a few accessible books (9.66), without drawing from faker so the rest stays the same
+				accessibleFormats:
+					fiction && i % 25 === 11
+						? [DEFAULT_ACCESSIBLE_FORMATS[Math.floor(i / 25) % 2 === 0 ? 0 : 3]]
+						: [],
 				source: "import",
 			};
 			const r = must(
