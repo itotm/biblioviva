@@ -1,0 +1,56 @@
+{
+	"id": "kr-godeung",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). 고등학교 (general, special-purpose 특목고 and autonomous 자사고, three years): classes written 1학년 2반, as in kr-jung, and re-formed every year, so the promotion clears them [VERIFY]. The vocational (특성화고) schools may use other names for the years [VERIFY]. Pupils come from the 3학년 of kr-jung after the school assignment (고교 배정) or an entrance examination, so there is no link between the two presets. The school year (학년도) starts on 1 March and is named by its starting year, as in kr-jung [VERIFY]. After the 3학년 a pupil leaves.",
+	"name": {
+		"it": "Secondaria di secondo grado, godeung hakgyo (Corea del Sud)",
+		"en": "High school, godeung hakgyo (South Korea)",
+		"ko": "고등학교 (대한민국)"
+	},
+	"country": "KR",
+	"languages": ["ko"],
+	"schoolYear": {
+		"start": "03-01",
+		"label": "start"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "godeung",
+				"name": "고등학교"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1학년",
+				"name": "고등학교 1학년",
+				"stage": "godeung",
+				"aliases": ["고1"]
+			},
+			{
+				"code": "2",
+				"label": "2학년",
+				"name": "고등학교 2학년",
+				"stage": "godeung",
+				"aliases": ["고2"]
+			},
+			{
+				"code": "3",
+				"label": "3학년",
+				"name": "고등학교 3학년",
+				"stage": "godeung",
+				"aliases": ["고3"]
+			}
+		],
+		"classLabel": "{level} {group}반",
+		"groupWord": "반",
+		"cardClass": "{class}",
+		"promotionWithinStage": "clear",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"godeung": ["1", "2", "3", "4", "5", "6"]
+	},
+	"teacherGroup": "교사",
+	"readingLevels": []
+}

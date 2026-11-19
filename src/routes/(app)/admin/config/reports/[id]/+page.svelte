@@ -30,9 +30,9 @@
 				<Alert>{i18n.t(`config.reports.errors.${d.code}`)}</Alert>
 			{:else}
 				{#if d.origin === "builtin"}
-					<Hint tone="soft" data-testid="editor-builtin-hint"
-						>{i18n.t("config.reports.editor.builtinHint")}</Hint
-					>
+					<Hint tone="soft" data-testid="editor-builtin-hint">
+						{i18n.t("config.reports.editor.builtinHint")}
+					</Hint>
 				{/if}
 				{#key data.id}
 					<ReportEditor initial={d.draft} isNew={false} />

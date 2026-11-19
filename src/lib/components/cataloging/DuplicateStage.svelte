@@ -9,6 +9,7 @@
 	import Card from "#lib/ui/Card.svelte";
 	import Field from "#lib/ui/Field.svelte";
 	import Input from "#lib/ui/Input.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
 	import Row from "#lib/ui/Row.svelte";
 
 	interface Props {
@@ -29,7 +30,10 @@
 </script>
 
 <Card padding="lg" gap="4" as="section" data-testid="stage-duplicate">
-	<h2 class="h4">{i18n.t("catalog.fastAdd.duplicate.heading")}</h2>
+	<Row wrap={false} align="center" gap="1">
+		<h2 class="h4">{i18n.t("catalog.fastAdd.duplicate.heading")}</h2>
+		<HelpLink spot="fastAddDuplicate" topic={i18n.t("catalog.fastAdd.duplicate.heading")} />
+	</Row>
 	<Row align="start" gap="4" class="rounded-lg bg-surface-50 p-4">
 		<span class="rounded-full bg-primary-50 p-3 text-primary-500">
 			<BookIcon size={ICON_SIZE.xl} aria-hidden="true" />
@@ -49,26 +53,28 @@
 		</div>
 	</Row>
 	<Row align="end" gap="3">
-		<Field label={i18n.t("catalog.fastAdd.form.copies")} class="w-32"
-			><Input
+		<Field label={i18n.t("catalog.fastAdd.form.copies")} class="w-32">
+			<Input
 				type="number"
 				min={1}
 				max={100}
 				bind:value={copies}
 				data-testid="duplicate-count"
-			/></Field
-		>
+			/>
+		</Field>
 		<Button
 			variant="primary"
 			icon={AddIcon}
 			disabled={busy}
 			onclick={onadd}
-			data-testid="duplicate-add">{i18n.t("catalog.fastAdd.duplicate.addCopy")}</Button
+			data-testid="duplicate-add"
 		>
+			{i18n.t("catalog.fastAdd.duplicate.addCopy")}
+		</Button>
 		<Button href="/catalog/{existing.id}">{i18n.t("catalog.fastAdd.duplicate.open")}</Button>
-		<Button icon={BackIcon} onclick={onback} data-testid="duplicate-back"
-			>{i18n.t("catalog.fastAdd.duplicate.another")}</Button
-		>
+		<Button icon={BackIcon} onclick={onback} data-testid="duplicate-back">
+			{i18n.t("catalog.fastAdd.duplicate.another")}
+		</Button>
 	</Row>
 	{#each issues as issue (issue.field)}
 		<p class="text-error-700" role="alert">{issue.message}</p>

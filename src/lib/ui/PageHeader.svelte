@@ -100,8 +100,9 @@
 		{/if}
 		<div>
 			<h1 class="h2">
-				{#if brand}<span class="mr-3 font-extrabold text-primary-700">{brand}</span
-					>{/if}{title}
+				{#if brand}<span class="mr-3 font-extrabold text-primary-700">
+						{brand}
+					</span>{/if}{title}
 			</h1>
 			{#if subtitle}
 				<p class="opacity-70">{subtitle}</p>
@@ -124,8 +125,10 @@
 				align="center"
 				justify="end"
 				class="bv-page-actions min-w-0 flex-auto"
-				data-testid="page-actions">{@render actions()}</Row
+				data-testid="page-actions"
 			>
+				{@render actions()}
+			</Row>
 		{/if}
 	</Card>
 {/if}

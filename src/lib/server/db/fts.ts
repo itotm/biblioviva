@@ -4,7 +4,7 @@
 import type { Database } from "bun:sqlite";
 import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 import { sql, type SQL } from "drizzle-orm";
-import { normalizeSearchText } from "#lib/shared/text.js";
+import { foldForSearch, normalizeSearchText } from "#lib/shared/text.js";
 
 export const FTS_COLUMNS = [
 	"title",
@@ -19,9 +19,31 @@ export const FTS_COLUMNS = [
 ] as const;
 
 const cols = FTS_COLUMNS.join(", ");
-const newCols = FTS_COLUMNS.map((c) => `new.${c}`).join(", ");
-const oldCols = FTS_COLUMNS.map((c) => `old.${c}`).join(", ");
+/** The SQL function the triggers fold every indexed column with (`foldForSearch`). */
+export const FOLD_FUNCTION = "bv_fold";
+const folded = (prefix: string): string =>
+	FTS_COLUMNS.map((c) => `${FOLD_FUNCTION}(${prefix}.${c})`).join(", ");
+const newCols = folded("new");
+const oldCols = folded("old");
 
+/**
+ * Registers the fold on a connection. The triggers of the index call it, so every connection that
+ * writes to `biblio` registers it first (`openDatabase`, the copies pruned before an export): a
+ * tool without it, such as the `sqlite3` shell, is refused with "no such function" instead of
+ * indexing the text unfolded.
+ */
+export function registerSearchFunctions(sqlite: Database): void {
+	sqlite.function(FOLD_FUNCTION, { deterministic: true }, (value) =>
+		value === null || value === undefined ? null : foldForSearch(String(value)),
+	);
+}
+
+/**
+ * The index holds the folded text (`foldForSearch`: marks, tatweel and letter variants of Arabic and
+ * Hebrew gone, Latin accents gone) and the query is folded the same way (`ftsMatch`), so a plain
+ * word finds its vocalised form and the other way round. The table is external content: the text
+ * lives in `biblio`, only the index is folded.
+ */
 export const FTS_STATEMENTS = [
 	`CREATE VIRTUAL TABLE IF NOT EXISTS biblio_fts USING fts5(${cols}, content='biblio', content_rowid='id', tokenize='unicode61 remove_diacritics 2')`,
 	`CREATE TRIGGER IF NOT EXISTS biblio_fts_ai AFTER INSERT ON biblio BEGIN
@@ -48,16 +70,31 @@ export function assertFts5(sqlite: Database): void {
 	}
 }
 
+const FTS_OBJECTS = ["biblio_fts", "biblio_fts_ai", "biblio_fts_ad", "biblio_fts_au"];
+const squeeze = (statement: string): string => statement.replace(/\s+/g, " ").trim();
+
 /**
- * Creates the index and its triggers; an index built with other columns (a database made before
- * a column was added, such as the original title of step 9.23) is dropped, made again and filled.
+ * Creates the index and its triggers. An index whose definition differs from the statements above
+ * (other columns, another tokenizer, another fold: the text SQLite keeps of the table and of each
+ * trigger is compared) is dropped, made again and filled.
  */
 export function applyFtsMigration(sqlite: Database): void {
-	const existing = sqlite
-		.query<{ name: string }, []>("SELECT name FROM pragma_table_info('biblio_fts')")
-		.all()
-		.map((c) => c.name);
-	const stale = existing.length > 0 && existing.join(",") !== FTS_COLUMNS.join(",");
+	registerSearchFunctions(sqlite);
+	const existing = new Map(
+		sqlite
+			.query<{ name: string; sql: string }, []>(
+				`SELECT name, sql FROM sqlite_master WHERE name IN (${FTS_OBJECTS.map((n) => `'${n}'`).join(", ")})`,
+			)
+			.all()
+			.map((r) => [r.name, squeeze(r.sql)]),
+	);
+	const stale =
+		existing.size > 0 &&
+		FTS_STATEMENTS.some(
+			(statement, i) =>
+				existing.get(FTS_OBJECTS[i] ?? "") !==
+				squeeze(statement.replace(" IF NOT EXISTS", "")),
+		);
 	if (stale) {
 		for (const trigger of ["biblio_fts_ai", "biblio_fts_ad", "biblio_fts_au"]) {
 			sqlite.run(`DROP TRIGGER IF EXISTS ${trigger}`);
@@ -72,9 +109,14 @@ export function applyFtsMigration(sqlite: Database): void {
 	}
 }
 
-/** Rebuilds the index from the content table (after imports or repairs). */
+/**
+ * Rebuilds the index from the content table (after imports or repairs): the folded text of every
+ * record, as the triggers write it (FTS5's own `rebuild` would index the text as it is stored).
+ */
 export function rebuildFts(sqlite: Database): void {
-	sqlite.run("INSERT INTO biblio_fts(biblio_fts) VALUES ('rebuild')");
+	registerSearchFunctions(sqlite);
+	sqlite.run("INSERT INTO biblio_fts(biblio_fts) VALUES ('delete-all')");
+	sqlite.run(`INSERT INTO biblio_fts(rowid, ${cols}) SELECT id, ${folded("biblio")} FROM biblio`);
 }
 
 /** The columns where a search forgives typing mistakes (step 9.24): titles and authors. */
@@ -122,7 +164,8 @@ export const biblioFts = sqliteTable("biblio_fts", {
 
 /**
  * The MATCH expression of a search box text (step 5.1): every word a prefix (`calv* cosmic*`),
- * all required, diacritics and punctuation dropped ("Città" = "citta", "dell'arte" = "dell arte");
+ * all required, folded as the index is (`foldForSearch`) and punctuation dropped ("Città" =
+ * "citta", "dell'arte" = "dell arte", "أحمد" = "احمد", "שָׁלוֹם" = "שלום");
  * null when nothing searchable is left.
  */
 export function ftsMatch(text: string): string | null {

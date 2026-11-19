@@ -109,17 +109,18 @@
 					icon={CameraIcon}
 					onclick={() => (camera = true)}
 					data-testid="new-photo-take"
-					>{photo
-						? i18n.t("patrons.photo.retakePhoto")
-						: i18n.t("patrons.photo.take")}</Button
 				>
+					{photo ? i18n.t("patrons.photo.retakePhoto") : i18n.t("patrons.photo.take")}
+				</Button>
 				{#if photo}
 					<Button
 						size="sm"
 						icon={RemoveIcon}
 						onclick={() => (photo = null)}
-						data-testid="new-photo-remove">{i18n.t("patrons.photo.remove")}</Button
+						data-testid="new-photo-remove"
 					>
+						{i18n.t("patrons.photo.remove")}
+					</Button>
 				{/if}
 			{/snippet}
 		</MediaCard>

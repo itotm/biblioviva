@@ -182,8 +182,10 @@
 		icon={SoundIcon}
 		disabled={value === "off"}
 		onclick={() => playSound(value)}
-		data-testid="play-camera-sound">{i18n.t("config.section.playSound")}</Button
+		data-testid="play-camera-sound"
 	>
+		{i18n.t("config.section.playSound")}
+	</Button>
 {/snippet}
 
 <Page width="xl">
@@ -197,23 +199,27 @@
 		{#snippet actions()}
 			{#if tab === "form"}
 				{#if dirty}
-					<Badge tone="warning" data-testid="section-dirty"
-						>{i18n.t("config.section.unsaved")}</Badge
-					>
+					<Badge tone="warning" data-testid="section-dirty">
+						{i18n.t("config.section.unsaved")}
+					</Badge>
 				{/if}
 				<Button
 					icon={UndoIcon}
 					onclick={() => current && load(current)}
 					disabled={!dirty || saving}
-					data-testid="section-discard">{i18n.t("config.section.discard")}</Button
+					data-testid="section-discard"
 				>
+					{i18n.t("config.section.discard")}
+				</Button>
 				<Button
 					variant="primary"
 					icon={SaveIcon}
 					onclick={save}
 					disabled={!dirty || invalid || saving}
-					data-testid="section-save">{i18n.t("config.section.save")}</Button
+					data-testid="section-save"
 				>
+					{i18n.t("config.section.save")}
+				</Button>
 			{/if}
 		{/snippet}
 	</PageHeader>
@@ -225,9 +231,9 @@
 	{:else}
 		<Hint>{i18n.t(`config.sections.${current.section}.description`)}</Hint>
 		{#if current.alsoFrom.length > 0}
-			<Hint tone="faint" data-testid="section-also-from"
-				>{i18n.t("config.section.alsoFrom", { files: current.alsoFrom.join(", ") })}</Hint
-			>
+			<Hint tone="faint" data-testid="section-also-from">
+				{i18n.t("config.section.alsoFrom", { files: current.alsoFrom.join(", ") })}
+			</Hint>
 		{/if}
 		{#each current.warnings as w, i (i)}
 			<Alert tone="warning" live={false}><code>{w.path}</code>: {w.message}</Alert>
@@ -246,9 +252,9 @@
 		{#if tab === "form"}
 			<div class="space-y-6">
 				{#if invalid}
-					<Alert tone="warning" data-testid="section-invalid"
-						>{i18n.t("config.section.invalid")}</Alert
-					>
+					<Alert tone="warning" data-testid="section-invalid">
+						{i18n.t("config.section.invalid")}
+					</Alert>
 				{/if}
 				{#if otherErrors.length > 0}
 					<Alert as="div" data-testid="section-errors">
@@ -345,21 +351,21 @@
 									<Row align="center" gap="3">
 										<code class="text-sm">{e.key}</code>
 										{#if "editor" in e.coverage && e.href}
-											<Link href={e.href}
-												>{i18n.t("config.section.openEditor")}: {i18n.t(
+											<Link href={e.href}>
+												{i18n.t("config.section.openEditor")}: {i18n.t(
 													`config.section.editorNames.${e.coverage.editor}`,
-												)}</Link
-											>
+												)}
+											</Link>
 										{:else if "editor" in e.coverage}
-											<Hint as="span"
-												>{i18n.t(
+											<Hint as="span">
+												{i18n.t(
 													`config.section.editorNames.${e.coverage.editor}`,
-												)}</Hint
-											>
+												)}
+											</Hint>
 										{:else}
-											<Hint as="span" tone="faint"
-												>{i18n.t("config.section.jsonOnly")}</Hint
-											>
+											<Hint as="span" tone="faint">
+												{i18n.t("config.section.jsonOnly")}
+											</Hint>
 										{/if}
 									</Row>
 								</li>

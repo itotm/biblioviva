@@ -236,6 +236,9 @@ appears.
 - After signing in, the **Dashboard** opens, titled with the library name chosen in the Library step. With the sample
   data, a notice at the top of the page reminds that the installation contains them.
 - The passwords of the five accounts are noted down in a safe place.
+- **Administration** → **Installation check** shows what is left to tidy up (the sample data's passwords, the backups,
+  the address). The page is described in [Installation check](../../admin/screens/setup.md); the checks to fix are
+  looked at one at a time, without hurry, in the steps that follow.
 
 When the guided setup does not open, see the possible problems below and the page
 [Common problems](../../help/problems.md#address-that-does-not-open). If instead the login page opens, the setup

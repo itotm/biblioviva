@@ -2,6 +2,7 @@
 import { describe, expect, it } from "vitest";
 import {
 	author3,
+	callTextProposal,
 	callNumberChoice,
 	callNumberRest,
 	callNumberScheme,
@@ -324,5 +325,105 @@ describe("the initials of a book without a real author (Q143)", () => {
 		expect(title3("L'isola del tesoro")).toBe("ISO");
 		expect(title3("Le")).toBe("LE");
 		expect(computeCallNumber(rules, { ...parts, author: "Rossi, Anna" })?.full).toBe("030 ROS");
+	});
+});
+
+describe("the author's letters in every script", () => {
+	it("keeps the Latin results as they were", () => {
+		const cases: [string, string][] = [
+			["Delitto, Anna", "DEL"],
+			["Éluard, Paul", "ELU"],
+			["Núñez José", "NUN"],
+			["Mc'Donald", "MCD"],
+			["O'Brien, Flann", "OBR"],
+			["Łukasz, Jan", "UKA"],
+			["Ørsted", "RST"],
+			["Al-Ṣāliḥ, Mohamed", "ALS"],
+			["Rossi,Anna", "ROS"],
+			["AA. VV.", "AA"],
+			["De", "DE"],
+			["  Verne  Jules", "VER"],
+			["123", ""],
+			["", ""],
+		];
+		for (const [input, expected] of cases) {
+			expect(author3(input), input).toBe(expected);
+		}
+	});
+
+	it("keeps Cyrillic and Greek letters, upper-cased, without accents", () => {
+		expect(author3("Достоевский, Фёдор")).toBe("ДОС");
+		expect(author3("Толстой Лев")).toBe("ТОЛ");
+		expect(author3("Йов")).toBe("ЙОВ");
+		expect(author3("Ёлкин")).toBe("ЁЛК");
+		expect(author3("Їжак")).toBe("ЇЖА");
+		expect(author3("Καζαντζάκης, Νίκος")).toBe("ΚΑΖ");
+		expect(author3("Ομηρος")).toBe("ΟΜΗ");
+		expect(author3("Όμηρος")).toBe("ΟΜΗ");
+	});
+
+	it("keeps Arabic letters without marks, past the article", () => {
+		expect(author3("محفوظ، نجيب")).toBe("محف");
+		expect(author3("مَحْفُوظ")).toBe("محف");
+		expect(author3("المنفلوطي، مصطفى")).toBe("منف");
+		expect(author3("أَحمد")).toBe("احم");
+		expect(author3("والبدر")).toBe("بدر");
+		expect(author3("بالمنذر")).toBe("منذ");
+		expect(author3("كـتـاب")).toBe("كتا");
+		// too little would be left: the article stays
+		expect(author3("الله")).toBe("الل");
+		expect(author3("والي")).toBe("وال");
+		expect(author3("بالي")).toBe("بال");
+		expect(author3("ال")).toBe("ال");
+	});
+
+	it("keeps Hebrew letters without points; a surname keeps its first ה, a title skips the article", () => {
+		expect(author3("עוז, עמוס")).toBe("עוז");
+		expect(author3("עמוס עוז")).toBe("עמו");
+		expect(author3("שָׁלוֹם")).toBe("שלו");
+		// a surname that begins with ה (הנדיב, הרצל) is not an article
+		expect(author3("הנדיב")).toBe("הנד");
+		expect(author3("הרצל, תאודור")).toBe("הרצ");
+		expect(title3("הנסיך הקטן")).toBe("נסי");
+		expect(title3("הם")).toBe("הם");
+		expect(title3("הלל")).toBe("הלל");
+	});
+
+	it("takes the first two characters of a name in Chinese, Japanese or Korean script", () => {
+		expect(author3("村上春樹")).toBe("村上");
+		expect(author3("村上 春樹")).toBe("村上");
+		expect(author3("毛，泽东")).toBe("毛");
+		expect(author3("夏目、漱石")).toBe("夏目");
+		expect(author3("ムラカミ")).toBe("ムラ");
+		expect(author3("한강")).toBe("한강");
+		expect(author3("김영하")).toBe("김영");
+	});
+
+	it("files a title past its Latin article, or its Arabic and Hebrew one", () => {
+		expect(title3("Il gatto con gli stivali")).toBe("GAT");
+		expect(title3("الأطفال والحرب")).toBe("اطف");
+		expect(title3("Война и мир")).toBe("ВОЙ");
+		expect(title3("שלום עליכם")).toBe("שלו");
+	});
+
+	it("computes the segnatura and the title's first character for any script", () => {
+		const rules = {
+			callNumber: callNumberScheme("genreLevel", "author"),
+			specialAuthors: ["Anonimo"],
+		};
+		const parts = {
+			kind: "fiction",
+			genreCode: "B",
+			classCode: null,
+			readingLevel: "4",
+			author: "Достоевский, Фёдор",
+			title: "Преступление и наказание",
+		} as const;
+		expect(computeCallNumber(rules, parts)?.full).toBe("B 4 ДОС");
+		expect(computeCallNumber(rules, { ...parts, author: "محفوظ، نجيب" })?.full).toBe("B 4 محف");
+		expect(computeCallNumber(rules, { ...parts, author: "Anonimo" })?.full).toBe("B 4 ПРЕ");
+		const title1 = { callNumber: { ...rules.callNumber, text: "title1" as const } };
+		expect(callTextProposal(title1, { author: "x", title: "𠮷野家" })).toBe("𠮷");
+		expect(callTextProposal(title1, { author: "x", title: "il gatto" })).toBe("I");
 	});
 });

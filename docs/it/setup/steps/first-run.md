@@ -243,6 +243,10 @@ schermata **Configurazione completata**.
 - Dopo l'accesso si apre la **Dashboard**, intitolata con il nome della biblioteca scelto nel passo Biblioteca. Con i
   dati dimostrativi un avviso in cima alla pagina ricorda che l'installazione ne contiene.
 - Le password dei cinque account sono annotate in un luogo sicuro.
+- **Amministrazione** → **Controllo installazione** mostra che cosa resta da sistemare (le password dei dati
+  dimostrativi, i backup, l'indirizzo). La pagina è descritta in
+  [Controllo installazione](../../admin/screens/setup.md); i controlli da correggere si guardano uno alla volta,
+  senza fretta, nei passi che seguono.
 
 Quando la configurazione guidata non si apre, si vedano i possibili problemi qui sotto e la pagina
 [Problemi comuni](../../help/problems.md#indirizzo-che-non-si-apre). Se invece si apre la pagina di accesso, la

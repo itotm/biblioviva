@@ -14,7 +14,7 @@ import {
 	fakerPL,
 	type Faker,
 } from "@faker-js/faker";
-import { eq, sql } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { sequenceName } from "#lib/server/barcodes/counters.js";
 import { generateCode } from "#lib/shared/barcodes/pattern.js";
 import { DEFAULT_CODE_FORMATS } from "#lib/shared/barcodes/presets.js";
@@ -26,6 +26,7 @@ import { schoolYearFor } from "#lib/shared/school-year.js";
 import { classLabel, levelOf, levelPosition, type SchoolStructure } from "#lib/shared/school.js";
 import { normalizeSearchText } from "#lib/shared/text.js";
 import type { Db } from "./client.js";
+import { rebuildFts } from "./fts.js";
 import {
 	biblio,
 	calendarEvent,
@@ -848,6 +849,6 @@ export function seedDatabase(db: Db, options: SeedOptions = {}): SeedSummary {
 		])
 		.run();
 
-	db.run(sql`INSERT INTO biblio_fts(biblio_fts) VALUES ('rebuild')`);
+	rebuildFts(db.$client);
 	return summary;
 }

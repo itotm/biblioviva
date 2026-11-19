@@ -153,8 +153,9 @@
 	{:else if !plan}
 		<Hint>{i18n.t("config.taxonomy.save.checking")}</Hint>
 	{:else if !plan.changed}
-		<Hint data-testid="taxonomy-save-unchanged">{i18n.t("config.taxonomy.save.unchanged")}</Hint
-		>
+		<Hint data-testid="taxonomy-save-unchanged">
+			{i18n.t("config.taxonomy.save.unchanged")}
+		</Hint>
 	{:else}
 		{#if errors.length > 0}
 			<Alert as="div" padded data-testid="taxonomy-save-errors">
@@ -190,11 +191,11 @@
 					</Field>
 				{/each}
 				{#if plan.callNumbers > 0}
-					<Hint tone="primary" data-testid="taxonomy-save-call-numbers"
-						>{i18n.t("config.taxonomy.save.callNumbers", {
+					<Hint tone="primary" data-testid="taxonomy-save-call-numbers">
+						{i18n.t("config.taxonomy.save.callNumbers", {
 							count: plan.callNumbers,
-						})}</Hint
-					>
+						})}
+					</Hint>
 				{/if}
 				<Hint tone="primary">{i18n.t("config.taxonomy.save.bandsMoved")}</Hint>
 			</section>
@@ -218,9 +219,9 @@
 							data-testid="level-replacement-{r.code}"
 						>
 							<option value="">{i18n.t("config.taxonomy.save.choose")}</option>
-							<option value={NO_LEVEL}
-								>{i18n.t("config.taxonomy.save.noLevel")}</option
-							>
+							<option value={NO_LEVEL}>
+								{i18n.t("config.taxonomy.save.noLevel")}
+							</option>
 							{#each draft?.readingLevels ?? [] as l (l.code)}
 								<option value={l.code}>{l.code} · {l.label}</option>
 							{/each}
@@ -231,39 +232,39 @@
 			</section>
 		{/if}
 		{#if unused.length > 0}
-			<Hint data-testid="taxonomy-save-unused"
-				>{i18n.t("config.taxonomy.save.unused", {
+			<Hint data-testid="taxonomy-save-unused">
+				{i18n.t("config.taxonomy.save.unused", {
 					codes: unused.map((r) => r.code).join(", "),
-				})}</Hint
-			>
+				})}
+			</Hint>
 		{/if}
 		{#if plan.restyled.length > 0}
 			<div class="space-y-1">
-				<Checkbox bind:checked={reprint} data-testid="taxonomy-save-reprint"
-					>{i18n.t("config.taxonomy.save.reprint", {
+				<Checkbox bind:checked={reprint} data-testid="taxonomy-save-reprint">
+					{i18n.t("config.taxonomy.save.reprint", {
 						copies: restyledCopies,
 						codes: plan.restyled.map((r) => r.code).join(", "),
-					})}</Checkbox
-				>
+					})}
+				</Checkbox>
 				<Hint tone="faint">{i18n.t("config.taxonomy.save.reprintHint")}</Hint>
 			</div>
 		{/if}
 		{#if plan.classPerItem}
 			{#if conflicts > 0}
-				<Alert data-testid="taxonomy-save-conflicts"
-					>{i18n.t("config.taxonomy.save.conflicts", {
+				<Alert data-testid="taxonomy-save-conflicts">
+					{i18n.t("config.taxonomy.save.conflicts", {
 						count: conflicts,
-					})}</Alert
-				>
+					})}
+				</Alert>
 			{:else}
-				<Hint tone="primary" data-testid="taxonomy-save-class-move"
-					>{i18n.t(
+				<Hint tone="primary" data-testid="taxonomy-save-class-move">
+					{i18n.t(
 						plan.classPerItem.to
 							? "config.taxonomy.save.toCopies"
 							: "config.taxonomy.save.toRecords",
 						{ count: plan.classPerItem.records },
-					)}</Hint
-				>
+					)}
+				</Hint>
 			{/if}
 		{/if}
 		{#if warnings.length > 0}
@@ -281,15 +282,17 @@
 		{/if}
 	{/if}
 	<Row justify="end" as="footer">
-		<Button onclick={() => (open = false)} disabled={saving}
-			>{i18n.t("common.actions.cancel")}</Button
-		>
+		<Button onclick={() => (open = false)} disabled={saving}>
+			{i18n.t("common.actions.cancel")}
+		</Button>
 		<Button
 			variant="primary"
 			icon={SaveIcon}
 			onclick={save}
 			disabled={!canSave || saving}
-			data-testid="taxonomy-save-confirm">{i18n.t("common.actions.save")}</Button
+			data-testid="taxonomy-save-confirm"
 		>
+			{i18n.t("common.actions.save")}
+		</Button>
 	</Row>
 </Modal>

@@ -60,9 +60,9 @@
 			role="group"
 			aria-label={i18n.t("common.list.selected", { count: selectedCount })}
 		>
-			<span class="text-sm font-semibold"
-				>{i18n.t("common.list.selected", { count: selectedCount })}</span
-			>
+			<span class="text-sm font-semibold">
+				{i18n.t("common.list.selected", { count: selectedCount })}
+			</span>
 			{@render selectionActions()}
 		</Row>
 	{:else if filters}

@@ -99,9 +99,9 @@
 {#if ended}
 	<EmptyState title={i18n.t("catalog.toClassify.flow.end")} icon="toClassify">
 		{#snippet action()}
-			<Button variant="primary" icon={ListIcon} href="/catalog/to-classify"
-				>{i18n.t("catalog.toClassify.flow.backToList")}</Button
-			>
+			<Button variant="primary" icon={ListIcon} href="/catalog/to-classify">
+				{i18n.t("catalog.toClassify.flow.backToList")}
+			</Button>
 		{/snippet}
 	</EmptyState>
 {:else if target.current && options.current}
@@ -170,9 +170,9 @@
 			{#if callNumber?.current}
 				<div data-testid="classify-call-number">
 					<p>
-						<span class="label-text"
-							>{i18n.t("catalog.toClassify.flow.callNumber")}:</span
-						>
+						<span class="label-text">
+							{i18n.t("catalog.toClassify.flow.callNumber")}:
+						</span>
 						<strong class="font-mono">{callNumber.current}</strong>
 					</p>
 					<Hint>{i18n.t("catalog.toClassify.flow.callNumberHint")}</Hint>
@@ -193,17 +193,21 @@
 				icon={SaveIcon}
 				onclick={save}
 				disabled={busy || !chosen}
-				data-testid="classify-save">{i18n.t("catalog.toClassify.flow.saveNext")}</Button
+				data-testid="classify-save"
 			>
+				{i18n.t("catalog.toClassify.flow.saveNext")}
+			</Button>
 		{/if}
 		<Button
 			icon={SkipIcon}
 			onclick={() => next(t.next)}
 			disabled={busy}
-			data-testid="classify-skip">{i18n.t("catalog.toClassify.flow.skip")}</Button
+			data-testid="classify-skip"
 		>
-		<Button icon={ListIcon} href="/catalog/to-classify"
-			>{i18n.t("catalog.toClassify.flow.backToList")}</Button
-		>
+			{i18n.t("catalog.toClassify.flow.skip")}
+		</Button>
+		<Button icon={ListIcon} href="/catalog/to-classify">
+			{i18n.t("catalog.toClassify.flow.backToList")}
+		</Button>
 	</Row>
 {/if}

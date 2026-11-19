@@ -158,6 +158,7 @@
 <Modal
 	bind:open
 	title={i18n.t("printing.labels.title")}
+	help="labelsPrint"
 	onclose={close}
 	width="lg"
 	data-testid="label-print-dialog"
@@ -237,17 +238,19 @@
 			</Hint>
 		{/if}
 		<Row justify="end" as="footer">
-			<Button onclick={close} disabled={busy} data-testid="label-close"
-				>{i18n.t("common.actions.close")}</Button
-			>
+			<Button onclick={close} disabled={busy} data-testid="label-close">
+				{i18n.t("common.actions.close")}
+			</Button>
 			{#if opened && canMark}
 				<Button
 					variant="success-tonal"
 					icon={CheckIcon}
 					onclick={mark}
 					disabled={busy}
-					data-testid="label-mark-printed">{i18n.t("printing.labels.markPrinted")}</Button
+					data-testid="label-mark-printed"
 				>
+					{i18n.t("printing.labels.markPrinted")}
+				</Button>
 			{/if}
 			<Button
 				variant="primary"
@@ -258,8 +261,10 @@
 				onclick={onPrint}
 				class={(total ?? 1) === 0 || !stock ? "pointer-events-none opacity-50" : ""}
 				aria-disabled={(total ?? 1) === 0 || !stock}
-				data-testid="label-print">{i18n.t("printing.labels.print")}</Button
+				data-testid="label-print"
 			>
+				{i18n.t("printing.labels.print")}
+			</Button>
 		</Row>
 	{/if}
 </Modal>

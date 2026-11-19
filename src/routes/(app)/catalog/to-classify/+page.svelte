@@ -43,8 +43,10 @@
 					variant="primary"
 					icon={StartIcon}
 					href={resolve(`catalog/to-classify/${first}`)}
-					data-testid="classify-start">{i18n.t("catalog.toClassify.start")}</Button
+					data-testid="classify-start"
 				>
+					{i18n.t("catalog.toClassify.start")}
+				</Button>
 			{/if}
 		{/snippet}
 		{#snippet views()}

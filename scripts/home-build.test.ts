@@ -16,7 +16,7 @@ function skeleton(html: string): string[] {
 	);
 }
 
-/** A folder of pictures laid out like `site/.shots/` (`<lang>/<area>/<name>.webp`), with the pictures
+/** A folder of pictures laid out like `site/.shots/` (`<lang>/<area>/<name>.<window>.webp`), with the pictures
  * the Italian page asks for (when `names` is given, only those; nothing for an empty list). */
 function shotsFolder(langs: string[], names?: string[]): string {
 	const dir = mkdtempSync(join(tmpdir(), "bv-home-shots-"));
@@ -29,7 +29,7 @@ function shotsFolder(langs: string[], names?: string[]): string {
 		].map((m) => m[1] ?? "");
 	for (const lang of langs) {
 		for (const name of wanted) {
-			const file = join(dir, lang, `${name}.webp`);
+			const file = join(dir, lang, `${name}.computer.webp`);
 			mkdirSync(dirname(file), { recursive: true });
 			writeFileSync(file, `picture ${lang} ${name}`);
 		}

@@ -28,8 +28,10 @@
 {#snippet pill()}
 	<span
 		class="badge border border-surface-200 bg-surface-50 text-surface-900"
-		data-testid="form-section-title">{title}</span
+		data-testid="form-section-title"
 	>
+		{title}
+	</span>
 {/snippet}
 
 {#if collapsible}

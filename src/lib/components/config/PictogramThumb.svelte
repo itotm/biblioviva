@@ -38,6 +38,8 @@
 		]} inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-surface-800 font-bold text-white [text-shadow:0_0_2px_#1f2937]"
 		style="background-color: {color ?? '#64748b'}"
 		aria-hidden="true"
-		data-testid="pictogram-placeholder">{code.slice(0, 4)}</span
+		data-testid="pictogram-placeholder"
 	>
+		{code.slice(0, 4)}
+	</span>
 {/if}

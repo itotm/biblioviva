@@ -1,5 +1,6 @@
-/* The print page of the section Norme (`/<lang>/compliance/print/`, ADR-059): the look of the documentation
-   on A4 paper, printed to PDF by `bun run docs:pdf`. Only that page links this file. */
+/* The print pages (`/<lang>/compliance/print/`, ADR-059, printed by `bun run docs:pdf`, and `/<lang>/manual/print/`,
+   step 9.5, printed by `bun run manual:pdf`): the look of the documentation on A4 paper. Only those pages
+   link this file; the manual's has `print-numbered` on its body. */
 
 @page {
 	size: A4;
@@ -77,6 +78,16 @@ body.print-doc {
 	text-decoration: underline;
 	text-decoration-color: var(--line-2);
 }
+/* a figure on paper shows one picture, the computer's (else the first), and no switch */
+.print-doc .fig-switch {
+	display: none;
+}
+.print-doc .fig-win {
+	display: none !important;
+}
+.print-doc .fig-win.fig-print {
+	display: block !important;
+}
 .print-doc table,
 .print-doc .note,
 .print-doc li {
@@ -88,4 +99,146 @@ body.print-doc {
 	border: 1px solid var(--line-2);
 	border-radius: 3mm;
 	background: #fafafa;
+}
+
+/* The manual: numbered chapters, the cover and the contents on pages of their own, figures that never
+   split, tables that wrap instead of running off the page, the boxes of the problems open. */
+.print-numbered {
+	counter-reset: toc chapter;
+}
+.print-numbered .cover .preface {
+	max-width: 140mm;
+	margin: 0 0 12mm;
+}
+.print-numbered .cover .preface p {
+	margin: 0 0 3mm;
+	color: var(--ink-2);
+}
+.print-numbered .toc-page {
+	break-after: page;
+}
+.print-numbered .toc-page > h1 {
+	font-size: 2rem;
+	margin: 0 0 6mm;
+}
+.print-numbered .toc-page h2 {
+	font-size: 1.25rem;
+	margin: 6mm 0 1mm;
+	color: var(--sec);
+	break-after: avoid;
+}
+.print-numbered .toc-page h3 {
+	font-size: 0.8rem;
+	margin: 3mm 0 0;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--muted);
+	break-after: avoid;
+}
+.print-numbered .contents {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 0.95rem;
+	line-height: 1.55;
+	columns: 2;
+	column-gap: 10mm;
+}
+.print-numbered .contents li {
+	counter-increment: toc;
+	break-inside: avoid;
+	margin: 0;
+}
+.print-numbered .contents li::before {
+	content: counter(toc) ".";
+	display: inline-block;
+	min-width: 2.1em;
+	color: var(--muted);
+	font-variant-numeric: tabular-nums;
+}
+.print-numbered .contents a {
+	text-decoration: none;
+}
+.print-numbered .chapter > .kicker {
+	display: block;
+	margin: 0 0 2mm;
+	color: var(--sec);
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+.print-numbered .chapter > h1::before {
+	counter-increment: chapter;
+	content: counter(chapter) ".\00a0";
+	color: var(--sec);
+}
+.print-numbered .chapter > .lead {
+	font-size: 1.05rem;
+}
+.print-numbered .fig {
+	break-inside: avoid;
+	margin: 5mm 0;
+	padding: 3mm;
+	border-radius: 3mm;
+}
+.print-numbered .fig img {
+	max-height: 160mm;
+	width: auto;
+	max-width: 100%;
+	margin: 0 auto;
+}
+.print-numbered .fig figcaption {
+	margin-top: 2mm;
+	font-size: 0.85rem;
+}
+.print-numbered .ph {
+	break-inside: avoid;
+}
+.print-numbered .tw {
+	overflow: visible;
+	border: 0;
+	border-radius: 0;
+}
+.print-numbered table {
+	width: 100%;
+	break-inside: auto;
+	font-size: 0.85rem;
+}
+.print-numbered thead {
+	display: table-header-group;
+}
+.print-numbered tr {
+	break-inside: avoid;
+}
+.print-numbered th,
+.print-numbered td {
+	vertical-align: top;
+	overflow-wrap: anywhere;
+}
+.print-numbered pre {
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+	break-inside: avoid;
+}
+.print-numbered code {
+	overflow-wrap: anywhere;
+}
+.print-numbered .steps > li {
+	break-inside: auto;
+}
+.print-numbered .trouble details {
+	break-inside: avoid;
+}
+.print-numbered .trouble summary {
+	cursor: default;
+}
+.print-numbered .trouble summary .i:last-child {
+	display: none;
+}
+.print-numbered .done,
+.print-numbered .check,
+.print-numbered .cards,
+.print-numbered .card {
+	break-inside: avoid;
 }

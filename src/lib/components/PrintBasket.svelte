@@ -30,8 +30,10 @@
 		{#if toPrint > 0}
 			<span
 				class="absolute -top-1 -right-1 min-w-5 rounded-full bg-primary-500 px-1 text-center text-xs font-bold text-primary-contrast-500"
-				data-testid="print-basket-count">{toPrint}</span
+				data-testid="print-basket-count"
 			>
+				{toPrint}
+			</span>
 		{/if}
 	</Menu.Trigger>
 	<MenuPanel minWidth="56">

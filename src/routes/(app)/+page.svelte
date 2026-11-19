@@ -139,6 +139,8 @@
 	const inventory = $derived(data.stats.inventory);
 	const InventoryIcon = icons.inventory;
 	const DemoIcon = icons.damaged;
+	const SetupIcon = icons.lost;
+	const CheckIcon = icons.checklist;
 </script>
 
 <Page width="xl">
@@ -148,6 +150,22 @@
 		docTitle={i18n.t("nav.dashboard")}
 		logo={logoMark}
 	/>
+	{#if data.setupErrors > 0}
+		<!-- the administrator's reminder while an item of the installation check is red (8.7) -->
+		<Alert tone="error" padded as="div" icon={SetupIcon} data-testid="setup-reminder">
+			<p class="font-semibold">{i18n.t("dashboard.setup.title")}</p>
+			<p>{i18n.t("dashboard.setup.text", { errors: data.setupErrors })}</p>
+			<Button
+				class="mt-2"
+				size="sm"
+				icon={CheckIcon}
+				href="/admin/setup"
+				data-testid="setup-reminder-link"
+			>
+				{i18n.t("dashboard.setup.open")}
+			</Button>
+		</Alert>
+	{/if}
 	{#if data.demo}
 		<!-- the only warning of the demo data (9.13, round 24: no badge in the top bar) -->
 		<Alert tone="warning" padded as="div" icon={DemoIcon} data-testid="demo-counts">
@@ -171,8 +189,10 @@
 						icon={icons[a.icon]}
 						href={a.href}
 						variant={a.key === "checkout" ? "primary" : "tonal"}
-						data-testid="quick-{a.key}">{i18n.t(a.label)}</Button
+						data-testid="quick-{a.key}"
 					>
+						{i18n.t(a.label)}
+					</Button>
 				{/each}
 			</Row>
 		</Card>
@@ -299,8 +319,9 @@
 					icon={InventoryIcon}
 					href="/inventory"
 					data-testid="inventory-continue"
-					>{i18n.t("dashboard.inventory.continue")}</Button
 				>
+					{i18n.t("dashboard.inventory.continue")}
+				</Button>
 			</Row>
 		</Card>
 	{/if}
@@ -318,11 +339,11 @@
 						{i18n.t("dashboard.dueWeek.title")} ({due.total})
 					</Row>
 					{#if due.loans.length === 0}
-						<Hint
-							>{i18n.t("dashboard.dueWeek.none", {
+						<Hint>
+							{i18n.t("dashboard.dueWeek.none", {
 								day: fmt.day(due.weekEnd, { weekday: "long" }),
-							})}</Hint
-						>
+							})}
+						</Hint>
 					{:else}
 						<DividedList>
 							{#each due.loans as l (l.loanId)}
@@ -336,11 +357,11 @@
 							{/each}
 						</DividedList>
 						{#if due.total > due.loans.length}
-							<Hint
-								>{i18n.t("dashboard.dueWeek.more", {
+							<Hint>
+								{i18n.t("dashboard.dueWeek.more", {
 									count: due.total - due.loans.length,
-								})}</Hint
-							>
+								})}
+							</Hint>
 						{/if}
 					{/if}
 				</Card>

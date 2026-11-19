@@ -148,11 +148,11 @@
 								data-testid="role-name"
 							/>
 							{#if problemText}<Hint tone="error">{problemText}</Hint>{/if}
-							<Hint tone="faint" class="block"
-								>{r.usedBy.length > 0
+							<Hint tone="faint" class="block">
+								{r.usedBy.length > 0
 									? r.usedBy.join(", ")
-									: i18n.t("admin.users.roles.unused")}</Hint
-							>
+									: i18n.t("admin.users.roles.unused")}
+							</Hint>
 						</td>
 						{#each GRANTS as p (p)}
 							<td class="text-center">
@@ -186,20 +186,22 @@
 	</div>
 	{#if problem}<Alert data-testid="roles-problem">{problem}</Alert>{/if}
 	<Row justify="between" align="center">
-		<Button icon={AddIcon} onclick={add} data-testid="role-add"
-			>{i18n.t("admin.users.roles.add")}</Button
-		>
+		<Button icon={AddIcon} onclick={add} data-testid="role-add">
+			{i18n.t("admin.users.roles.add")}
+		</Button>
 		<Row>
-			<Button icon={UndoIcon} onclick={load} disabled={!dirty || pending}
-				>{i18n.t("config.section.discard")}</Button
-			>
+			<Button icon={UndoIcon} onclick={load} disabled={!dirty || pending}>
+				{i18n.t("config.section.discard")}
+			</Button>
 			<Button
 				variant="primary"
 				icon={SaveIcon}
 				onclick={save}
 				disabled={!dirty || invalid || pending}
-				data-testid="roles-save">{i18n.t("config.section.save")}</Button
+				data-testid="roles-save"
 			>
+				{i18n.t("config.section.save")}
+			</Button>
 		</Row>
 	</Row>
 </Card>

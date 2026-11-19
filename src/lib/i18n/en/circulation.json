@@ -52,7 +52,14 @@
 		"renewAll": "Renew all",
 		"renewedAll": "{{n}} of {{total}} {{total:plural; one:loan; other:loans;}} renewed.",
 		"overrideTitle": "Force the renewal?",
-		"overrideConfirm": "Renew anyway"
+		"overrideConfirm": "Renew anyway",
+		"early": {
+			"title": "Early renewal",
+			"confirm": "Renew anyway",
+			"manyIntro": "These loans have not yet passed half of the loan period:",
+			"manyLine": "“{{title}}”: on loan for {{elapsed}} of {{period}} {{period:plural; one:day; other:days;}}, due {{due}}",
+			"manyOutro": "“Renew anyway” renews all the loans in the request, these included; “Cancel” renews none."
+		}
 	},
 	"loans": {
 		"title": "Books on loan",
@@ -143,6 +150,7 @@
 		"renewal_limit_reached": "“{{title}}” has already been renewed {{n}} {{n:plural; one:time; other:times;}}, the maximum. It must be returned.",
 		"renewal_overdue_blocked": "“{{title}}” is {{days}} {{days:plural; one:day; other:days;}} overdue and the rules do not allow a renewal.",
 		"renewal_hard_due_date": "“{{title}}” cannot be renewed: it is already due on {{due}}, the last loan day of this year.",
+		"renewal_early": "“{{title}}” has been on loan for {{elapsed}} of {{period}} {{period:plural; one:day; other:days;}}: half of the loan period has not passed yet (due {{due}}). Renewing moves the due date to {{newDue}}.",
 		"duplicate_scan": "“{{title}}” is already in the list of this loan.",
 		"not_on_loan": "“{{title}}” is not on loan: there is no return to register. If it was lent without registration, the book is available anyway.",
 		"already_returned_today": "“{{title}}” was already returned today at {{time}}.",

@@ -133,8 +133,10 @@
 				href="/print/reports/{data.id}?{query(shown)}"
 				target="_blank"
 				rel="noopener"
-				data-testid="report-print">{i18n.t("reports.print")}</Button
+				data-testid="report-print"
 			>
+				{i18n.t("reports.print")}
+			</Button>
 			<ExportMenu table="report" params={{ id: data.id, ...shown }} />
 		{/snippet}
 	</PageHeader>
@@ -196,12 +198,12 @@
 											<option value="">{i18n.t("reports.all")}</option>
 										{/if}
 										{#if p.type === "patronType"}
-											<option value="student"
-												>{i18n.t("reports.patronTypes.student")}</option
-											>
-											<option value="teacher"
-												>{i18n.t("reports.patronTypes.teacher")}</option
-											>
+											<option value="student">
+												{i18n.t("reports.patronTypes.student")}
+											</option>
+											<option value="teacher">
+												{i18n.t("reports.patronTypes.teacher")}
+											</option>
 										{:else}
 											{#each p.options as o (o.value)}
 												<option value={o.value}>{o.label}</option>
@@ -215,8 +217,10 @@
 							type="submit"
 							variant="primary"
 							icon={RunIcon}
-							data-testid="report-run">{i18n.t("reports.run")}</Button
+							data-testid="report-run"
 						>
+							{i18n.t("reports.run")}
+						</Button>
 					</form>
 				{/if}
 			</Card>
@@ -238,9 +242,9 @@
 								<Hint as="span">{i18n.t("reports.ms", { ms: r.ms })}</Hint>
 							</Row>
 							{#if r.truncated}
-								<Alert tone="warning" padded data-testid="report-truncated"
-									>{i18n.t("reports.truncated", { count: r.rows.length })}</Alert
-								>
+								<Alert tone="warning" padded data-testid="report-truncated">
+									{i18n.t("reports.truncated", { count: r.rows.length })}
+								</Alert>
 							{/if}
 							{#if chartData}
 								<Card as="section" gap="3">

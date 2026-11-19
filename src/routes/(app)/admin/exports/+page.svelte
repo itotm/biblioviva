@@ -34,15 +34,17 @@
 	{#each KINDS as kind (kind)}
 		<Card as="section" gap="3" data-testid="export-{kind}">
 			<Row justify="between" align="center" wrap={false} gap="4">
-				<TitleHint title={i18n.t(`admin.exports.items.${kind}.title`)} class="min-w-0"
-					>{i18n.t(`admin.exports.items.${kind}.description`)}</TitleHint
-				>
+				<TitleHint title={i18n.t(`admin.exports.items.${kind}.title`)} class="min-w-0">
+					{i18n.t(`admin.exports.items.${kind}.description`)}
+				</TitleHint>
 				<Button
 					icon={DownloadIcon}
 					href="/admin/exports/{kind}"
 					download
-					data-testid="download-{kind}">{i18n.t("admin.exports.download")}</Button
+					data-testid="download-{kind}"
 				>
+					{i18n.t("admin.exports.download")}
+				</Button>
 			</Row>
 		</Card>
 	{/each}

@@ -125,16 +125,19 @@
 							<Button
 								size="sm"
 								onclick={() => (photoMode = !photoMode)}
-								data-testid="photo-toggle">{i18n.t("patrons.photo.title")}</Button
+								data-testid="photo-toggle"
 							>
+								{i18n.t("patrons.photo.title")}
+							</Button>
 							{#if p.hasPhoto}
 								<Button
 									size="sm"
 									variant="error-tonal"
 									onclick={() => (confirmDeletePhoto = true)}
 									data-testid="photo-delete"
-									>{i18n.t("patrons.photo.delete")}</Button
 								>
+									{i18n.t("patrons.photo.delete")}
+								</Button>
 							{/if}
 						</Row>
 					{/if}
@@ -165,22 +168,23 @@
 							icon={EmailIcon}
 							title={i18n.t("patrons.fields.email")}
 							data-testid="patron-email"
-							><a href="mailto:{p.email}" rel="external" class="hover:underline"
-								>{p.email}</a
-							></Badge
 						>
+							<a href="mailto:{p.email}" rel="external" class="hover:underline">
+								{p.email}
+							</a>
+						</Badge>
 					{/if}
 					{#if p.status === "anonymized" && p.anonymizedAt}
-						<Badge data-testid="anonymized-info"
-							>{i18n.t("patrons.detail.removedInfo", {
+						<Badge data-testid="anonymized-info">
+							{i18n.t("patrons.detail.removedInfo", {
 								when: fmt.date(p.anonymizedAt, "medium"),
-							})}</Badge
-						>
+							})}
+						</Badge>
 					{/if}
 					{#if p.circulationNote}
-						<Badge tone="warning" data-testid="circulation-note"
-							>{p.circulationNote}</Badge
-						>
+						<Badge tone="warning" data-testid="circulation-note">
+							{p.circulationNote}
+						</Badge>
 					{/if}
 				{/snippet}
 				{#snippet actions()}
@@ -258,19 +262,18 @@
 				{/if}
 				<Tabs defaultValue="loans">
 					<Tabs.List>
-						<Tabs.Trigger value="loans"
-							>{i18n.t("patrons.detail.tabs.loans")} ({p.openLoans
-								.length})</Tabs.Trigger
-						>
-						<Tabs.Trigger value="history"
-							>{i18n.t("patrons.detail.tabs.history")}</Tabs.Trigger
-						>
-						<Tabs.Trigger value="cards"
-							>{i18n.t("patrons.detail.tabs.cards")}</Tabs.Trigger
-						>
-						<Tabs.Trigger value="notes"
-							>{i18n.t("patrons.detail.tabs.notes")}</Tabs.Trigger
-						>
+						<Tabs.Trigger value="loans">
+							{i18n.t("patrons.detail.tabs.loans")} ({p.openLoans.length})
+						</Tabs.Trigger>
+						<Tabs.Trigger value="history">
+							{i18n.t("patrons.detail.tabs.history")}
+						</Tabs.Trigger>
+						<Tabs.Trigger value="cards">
+							{i18n.t("patrons.detail.tabs.cards")}
+						</Tabs.Trigger>
+						<Tabs.Trigger value="notes">
+							{i18n.t("patrons.detail.tabs.notes")}
+						</Tabs.Trigger>
 					</Tabs.List>
 					<Tabs.Content value="loans" class="py-4">
 						<PatronLoansTab

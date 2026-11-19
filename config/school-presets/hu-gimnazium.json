@@ -1,0 +1,63 @@
+{
+	"id": "hu-gimnazium",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Gimnázium (four years, the 9. to the 12. évfolyam), written 9.a like hu-altalanos; many schools write 9.A with a capital, and the entry year of a language-preparatory class is 9.Ny (nyelvi előkészítő évfolyam) with a thirteenth year (13. évfolyam) [VERIFY]. The six-year (from the 7.) and eight-year (from the 5.) gimnázium keep the pupils in one school: add the levels 5 to 8 of hu-altalanos [VERIFY]. Technikum and szakképző iskola (vocational, five years since the 2020 reform) are not covered [VERIFY]. The school year starts on 1 September, as in hu-altalanos [VERIFY]. After the 12. évfolyam a pupil leaves (érettségi).",
+	"name": {
+		"it": "Secondaria di secondo grado, gimnázium (Ungheria)",
+		"en": "Upper secondary school, gimnázium (Hungary)",
+		"hu": "Gimnázium (Magyarország)"
+	},
+	"country": "HU",
+	"languages": ["hu"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "gimnazium",
+				"name": "Gimnázium"
+			}
+		],
+		"levels": [
+			{
+				"code": "9",
+				"label": "9.",
+				"name": "9. évfolyam",
+				"stage": "gimnazium",
+				"aliases": ["9. osztály"]
+			},
+			{
+				"code": "10",
+				"label": "10.",
+				"name": "10. évfolyam",
+				"stage": "gimnazium",
+				"aliases": ["10. osztály"]
+			},
+			{
+				"code": "11",
+				"label": "11.",
+				"name": "11. évfolyam",
+				"stage": "gimnazium",
+				"aliases": ["11. osztály"]
+			},
+			{
+				"code": "12",
+				"label": "12.",
+				"name": "12. évfolyam",
+				"stage": "gimnazium",
+				"aliases": ["12. osztály"]
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Osztály",
+		"cardClass": "{class} osztály",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"gimnazium": ["a", "b", "c", "d"]
+	},
+	"teacherGroup": "Pedagógusok",
+	"readingLevels": []
+}

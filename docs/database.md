@@ -553,7 +553,7 @@ Students and teachers only; staff are not patrons.
 | `external_id` | text | yes | | stable id from the school register, matches imports |
 | `first_name` | text | no | | |
 | `last_name` | text | no | | |
-| `search_name` | text | no | `''` | `normalizeSearchText("<last> <first>")`: lower case, diacritics and punctuation dropped, for prefix search |
+| `search_name` | text | no | `''` | `normalizeSearchText("<last> <first>")`: the search fold (marks dropped, Arabic variants unified, lower case) and punctuation dropped, for prefix search; recomputed at start-up for the rows written by another fold (`refreshPatronSearchNames`) |
 | `patron_type` | text | no | | CHECK `student`, `teacher` |
 | `class_group_id` | integer | yes | | FK `class_group.id`: the class of a student, the group of a teacher (Phase 12); NULL when the class upgrade left a student without one |
 | `level_code` | text | yes | | the student's year, a code of `school.levels` hosted by the group; NULL for teachers |
@@ -1041,16 +1041,26 @@ CREATE VIRTUAL TABLE IF NOT EXISTS biblio_fts USING fts5(
 ```
 
 - **External content** table: the text lives in `biblio`; `biblio_fts.rowid` is `biblio.id`. `subjects` is indexed as
-  its raw JSON text (the tokenizer drops the brackets and quotes).
-- **Triggers:** `biblio_fts_ai` (AFTER INSERT: insert the new row), `biblio_fts_ad` (AFTER DELETE: the FTS5 `'delete'`
-  command with the old values), `biblio_fts_au` (AFTER UPDATE: `'delete'` with the old values, then insert the new).
-- **Rebuild:** `rebuildFts()` runs `INSERT INTO biblio_fts(biblio_fts) VALUES ('rebuild')` (after imports or repairs).
-  At start-up an index whose columns differ from `FTS_COLUMNS` (a database made before a column was added) is
-  dropped with its triggers, made again and rebuilt.
+  its raw JSON text (the tokenizer drops the brackets and quotes). The Drizzle schema is untouched by the fold below:
+  `biblio` has no extra column.
+- **The index holds folded text.** The triggers write `bv_fold(<column>)` for every indexed column, never the column
+  itself; `bv_fold` is `foldForSearch` (`#lib/shared/text.ts`: NFKD, every combining mark dropped, tatweel dropped,
+  the variants of alef, yeh, kaf and heh unified, Arabic-Indic and Persian digits made Latin, lower case) registered as
+  an SQL function on the connection (`registerSearchFunctions`, called by `openDatabase` and wherever a copy of the
+  database is written). A connection without it (the `sqlite3` shell) cannot write to `biblio`: it is refused with
+  `no such function: bv_fold`. The rows of the content table keep the text as typed.
+- **Triggers:** `biblio_fts_ai` (AFTER INSERT: insert the folded new row), `biblio_fts_ad` (AFTER DELETE: the FTS5
+  `'delete'` command with the folded old values), `biblio_fts_au` (AFTER UPDATE: `'delete'` with the folded old values,
+  then insert the folded new).
+- **Rebuild:** `rebuildFts()` empties the index (`'delete-all'`) and fills it from `biblio` with the same fold, after
+  imports or repairs (FTS5's own `'rebuild'` would index the unfolded text). At start-up `applyFtsMigration()` compares
+  the text SQLite keeps of the table and of the three triggers with the current statements; an index with another
+  definition (columns, tokenizer, fold) is dropped with its triggers, made again and rebuilt.
 - **Words of the index** (9.24, ADR-036): `searchVocabulary()` reads the words of `title`, `original_title` and
   `author` through `temp.biblio_fts_words`, a `fts5vocab(main, biblio_fts, col)` table of the connection's temporary
   schema (never stored in the file), for the search that forgives typing mistakes.
-- **Query:** `ftsMatch(text)` normalises the text (`normalizeSearchText`: diacritics and punctuation dropped), keeps
+- **Query:** `ftsMatch(text)` normalises the text with the same fold (`normalizeSearchText`: `foldForSearch`, then
+  punctuation dropped; `أحمد` finds `احمد`, `كتاب` finds `كِتَابُ`, `שלום` finds `שָׁלוֹם`), keeps
   at most 12 words and makes every word a required prefix: `"calv"* "cosmic"*`. NULL when nothing is left.
 - **Rank** (`ftsRank`): `bm25(biblio_fts, 10.0, 10.0, 4.0, 8.0, 2.0, 1.0, 3.0, 1.0, 6.0)`, i.e.
 

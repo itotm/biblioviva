@@ -236,22 +236,23 @@
 						void saveName();
 					}}
 				>
-					<Field label={i18n.t("admin.appearance.name.label")} class="max-w-md grow"
-						><Input
+					<Field label={i18n.t("admin.appearance.name.label")} class="max-w-md grow">
+						<Input
 							value={name}
 							oninput={(e) => (nameDraft = e.currentTarget.value)}
 							maxlength={120}
 							required
 							data-testid="library-name"
-						/></Field
-					>
+						/>
+					</Field>
 					<Button
 						type="submit"
 						variant="primary"
 						disabled={savingName || !name.trim() || name.trim() === currentName}
 						data-testid="save-library-name"
-						>{i18n.t("admin.appearance.name.save")}</Button
 					>
+						{i18n.t("admin.appearance.name.save")}
+					</Button>
 				</Row>
 			</Card>
 
@@ -280,20 +281,22 @@
 							accept="image/png,image/jpeg,image/webp"
 							onchange={onLogo}
 							data-testid="logo-file"
-							>{i18n.t(
+						>
+							{i18n.t(
 								appearance.current?.logo
 									? "admin.appearance.logo.replace"
 									: "admin.appearance.logo.upload",
-							)}</FileButton
-						>
+							)}
+						</FileButton>
 						{#if appearance.current?.logo}
 							<Button
 								variant="error-tonal"
 								icon={RemoveIcon}
 								onclick={dropLogo}
 								data-testid="logo-remove"
-								>{i18n.t("admin.appearance.logo.remove")}</Button
 							>
+								{i18n.t("admin.appearance.logo.remove")}
+							</Button>
 						{/if}
 					</Row>
 				</Row>
@@ -318,8 +321,8 @@
 				<h2 class="font-semibold">{i18n.t("admin.appearance.language.title")}</h2>
 				<Hint>{i18n.t("admin.appearance.language.hint")}</Hint>
 				<Row align="end">
-					<Field label={i18n.t("setup.steps.language")} class="max-w-xs grow"
-						><Select
+					<Field label={i18n.t("setup.steps.language")} class="max-w-xs grow">
+						<Select
 							value={localeChoice ?? ""}
 							onchange={(e) => (localeDraft = e.currentTarget.value)}
 							data-testid="locale-select"
@@ -327,14 +330,16 @@
 							{#each locales.current ?? [] as l (l.code)}
 								<option value={l.code}>{l.name}</option>
 							{/each}
-						</Select></Field
-					>
+						</Select>
+					</Field>
 					<Button
 						variant="primary"
 						onclick={changeLocale}
 						disabled={changingLocale || !localeChoice || localeChoice === currentLocale}
-						data-testid="save-locale">{i18n.t("admin.appearance.language.save")}</Button
+						data-testid="save-locale"
 					>
+						{i18n.t("admin.appearance.language.save")}
+					</Button>
 				</Row>
 				<LanguagePackAdd oninstalled={packInstalled} />
 			</Card>
@@ -360,9 +365,9 @@
 								: 'border-surface-200 hover:border-primary-300'}"
 							data-testid="area-style-{style}"
 						>
-							<span class="block font-semibold"
-								>{i18n.t(`admin.appearance.areas.styles.${style}`)}</span
-							>
+							<span class="block font-semibold">
+								{i18n.t(`admin.appearance.areas.styles.${style}`)}
+							</span>
 							{#each PREVIEW_AREAS as area (area.key)}
 								{@const Icon = area.icon}
 								<span
@@ -405,10 +410,9 @@
 						onclick={save}
 						disabled={saving || !selected}
 						data-testid="save-theme"
-						>{saving
-							? i18n.t("common.status.loading")
-							: i18n.t("admin.appearance.save")}</Button
 					>
+						{saving ? i18n.t("common.status.loading") : i18n.t("admin.appearance.save")}
+					</Button>
 				</Row>
 			</Card>
 
@@ -425,10 +429,9 @@
 									onchange={(e) =>
 										toggleSection(section, e.currentTarget.checked)}
 									data-testid="dashboard-{section}"
-									>{i18n.t(
-										`admin.appearance.dashboard.sections.${section}`,
-									)}</Checkbox
 								>
+									{i18n.t(`admin.appearance.dashboard.sections.${section}`)}
+								</Checkbox>
 							</li>
 						{/each}
 					</ul>
@@ -438,8 +441,9 @@
 							onclick={saveSections}
 							disabled={savingSections || !sectionsDraft}
 							data-testid="save-dashboard"
-							>{i18n.t("admin.appearance.dashboard.save")}</Button
 						>
+							{i18n.t("admin.appearance.dashboard.save")}
+						</Button>
 					</Row>
 				</Card>
 			{/if}

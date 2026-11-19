@@ -2,12 +2,18 @@
 // The shot list of the documentation (PLAN.md §3.23): one entry for each figure marker
 // `<!-- figure: <name> | <caption> -->` of the Markdown pages. `bun run docs:shots` takes them all
 // (tests/docs/shots.spec.ts) on the e2e setup: the deterministic demo data, the fixed fonts, the
-// default colours, one of the shared accounts of tests/fixtures/e2e/config.json.
+// default colours, one of the shared accounts of tests/fixtures/e2e/config.json. Each entry is
+// taken in every language of the site and in the windows it names; the steps look for texts of
+// the interface through `ctx.t` (the dictionaries), never as typed words.
 import type { Locator, Page } from "@playwright/test";
 import { deskField, deskScan } from "../tests/e2e/helpers/desk.js";
 import { waitForHydration } from "../tests/e2e/helpers/hydration.js";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { WINDOW_SIZES, WINDOWS, type Window } from "./shot-windows.js";
+import type { Translate } from "./shots-text.js";
+
+export { WINDOWS, WINDOW_SIZES, type Window } from "./shot-windows.js";
 
 /** The shared accounts of the test configuration and their passwords. */
 export const ACCOUNTS = {
@@ -24,7 +30,15 @@ export type ShotAccount = Account | "anonymous";
 /** Where the Playwright run leaves the PNG files, out of the repository (`scripts/shots-webp.ts` converts them). */
 export const PNG_DIR = process.env.BV_SHOTS_PNG_DIR ?? join(tmpdir(), "biblioviva-docs-shots");
 
-export type Window = "computer";
+/** What a step knows about the pass it runs in. */
+export interface ShotContext {
+	/** The interface language of the picture (`it`, `en`). */
+	lang: string;
+	/** The window of the picture. */
+	window: Window;
+	/** A text of the interface in that language (a key of the dictionaries, `common.actions.close`). */
+	t: Translate;
+}
 
 export interface Shot {
 	/** `<area>/<picture>`, the name of the figure marker. */
@@ -33,11 +47,14 @@ export interface Shot {
 	/** The page opened first (the language is added by the runner). */
 	path: string;
 	/** Brings the screen to its state: a scan, a dialog opened, a menu unfolded. */
-	steps?: (page: Page) => Promise<void>;
+	steps?: (page: Page, ctx: ShotContext) => Promise<void>;
 	/** Puts the data back as the shot found it (after the picture), for the shots that add something. */
-	after?: (page: Page) => Promise<void>;
+	after?: (page: Page, ctx: ShotContext) => Promise<void>;
 	/** A selector to crop the picture to (a dialog, a panel); the whole window when missing. */
-	crop?: string | ((page: Page) => Locator);
+	crop?: string | ((page: Page, ctx: ShotContext) => Locator);
+	/** A selector scrolled to the top of the window, in the tablet and the phone (the part the picture is about lies below the fold). */
+	focus?: string;
+	/** The windows the picture is taken in: a screen in all three, a detail (a crop) in the computer. */
 	windows: Window[];
 	/** The shot takes longer than the others (an image is analysed in the browser). */
 	slow?: boolean;
@@ -48,14 +65,18 @@ export interface Shot {
 }
 
 const computer: Window[] = ["computer"];
+const allWindows: Window[] = [...WINDOWS];
 
-/** A page taken as it opens. */
+/**
+ * A page taken as it opens, or a detail of it when it names the element to crop to. A screen is
+ * taken in all three windows, a detail in the computer window unless `windows` says more.
+ */
 const screen = (
 	name: string,
 	account: ShotAccount,
 	path: string,
-	more: Pick<Shot, "steps" | "crop" | "after" | "slow"> = {},
-): Shot => ({ name, account, path, windows: computer, ...more });
+	more: Pick<Shot, "steps" | "crop" | "focus" | "after" | "slow"> & { windows?: Window[] } = {},
+): Shot => ({ name, account, path, ...more, windows: more.windows ?? (more.crop ? computer : allWindows) });
 
 /** A picture of the wizard, taken on a server without configuration. */
 const wizard = (name: string, steps: Shot["steps"]): Shot => ({
@@ -63,7 +84,7 @@ const wizard = (name: string, steps: Shot["steps"]): Shot => ({
 	account: "admin",
 	path: "/setup",
 	steps,
-	windows: computer,
+	windows: allWindows,
 	wizard: true,
 });
 
@@ -76,6 +97,17 @@ const mock = (name: string): Shot => ({
 	windows: computer,
 	mock: true,
 });
+
+/** The language's own name, as the wizard's first step writes it ("Italiano", "English"). */
+function languageName(lang: string): string {
+	const name = new Intl.DisplayNames([lang], { type: "language" }).of(lang) ?? lang;
+	return name.charAt(0).toLocaleUpperCase(lang) + name.slice(1);
+}
+
+/** A page address with the language of the picture (the tests' `?lang=` override). */
+export function withLang(path: string, { lang }: Pick<ShotContext, "lang">): string {
+	return `${path}${path.includes("?") ? "&" : "?"}lang=${lang}`;
+}
 
 /** Opens a header action, from its row or from the "Altre azioni" menu. */
 async function action(page: Page, testid: string): Promise<void> {
@@ -90,20 +122,20 @@ const section = (page: Page, title: string): Locator =>
 	page.locator("section, div").filter({ has: page.getByRole("heading", { name: title }) }).last();
 
 /** Closes the "Limite di prestiti raggiunto" dialog that a full patron's card opens at the desk. */
-async function closeLimitDialog(page: Page): Promise<void> {
+async function closeLimitDialog(page: Page, { t }: ShotContext): Promise<void> {
 	const dialog = page.getByRole("dialog");
 	if (await dialog.isVisible({ timeout: 1500 }).catch(() => false)) {
-		await dialog.getByRole("button", { name: "Chiudi" }).last().click();
+		await dialog.getByRole("button", { name: t("common.actions.close") }).last().click();
 		await dialog.waitFor({ state: "hidden" });
 	}
 }
 
 /** A record without copies and without classification ("Classifica dopo"), added by hand; returns its id. */
-async function addLaterRecord(page: Page, title: string): Promise<number> {
-	await page.goto("/catalog/new");
+async function addLaterRecord(page: Page, title: string, ctx: ShotContext): Promise<number> {
+	await page.goto(withLang("/catalog/new", ctx));
 	await waitForHydration(page);
-	await page.getByLabel("Titolo", { exact: true }).fill(title);
-	await page.getByLabel("Autore", { exact: true }).fill("Prova, Anna");
+	await page.getByLabel(ctx.t("catalog.fields.title"), { exact: true }).fill(title);
+	await page.getByLabel(ctx.t("catalog.fields.author"), { exact: true }).fill("Prova, Anna");
 	await page.getByTestId("quick-publisher").click();
 	await page.getByTestId("kind-later").click();
 	await page.getByTestId("biblio-submit").click();
@@ -113,14 +145,14 @@ async function addLaterRecord(page: Page, title: string): Promise<number> {
 }
 
 /** Deletes a record added by a shot, with its copies. */
-async function removeRecord(page: Page, id: number): Promise<void> {
-	await page.goto(`/catalog/${id}`);
+async function removeRecord(page: Page, id: number, ctx: ShotContext): Promise<void> {
+	await page.goto(withLang(`/catalog/${id}`, ctx));
 	await waitForHydration(page);
 	const deleteItems = page.locator('[data-testid^="delete-item-"]');
 	while ((await deleteItems.count()) > 0) {
 		await deleteItems.first().click();
 		await page.getByTestId("confirm-button").click();
-		await page.getByRole("status").getByText("Copia eliminata").first().waitFor();
+		await page.getByRole("status").getByText(ctx.t("catalog.item.deleted")).first().waitFor();
 		await page.waitForTimeout(300);
 	}
 	await action(page, "delete-biblio");
@@ -133,18 +165,21 @@ let addedRecord = 0;
 let sheetPage = "";
 
 /** Uploads the picture of a class's cards and waits for the frames; returns the address of its page. */
-async function uploadSheet(page: Page): Promise<string> {
+async function uploadSheet(page: Page, { t }: ShotContext): Promise<string> {
 	await page.getByTestId("sheet-upload").setInputFiles("tests/fixtures/images/class-cards.jpg");
 	await page.waitForURL(/\/census\/sheets\/\d+$/, { timeout: 30_000 });
 	await waitForHydration(page);
-	await page.getByTestId("sheet-found").getByText("Foto trovate: 10").waitFor({ timeout: 60_000 });
+	await page
+		.getByTestId("sheet-found")
+		.getByText(t("patrons.census.sheet.found", { count: 10 }).split(".")[0] ?? "")
+		.waitFor({ timeout: 60_000 });
 	await page.getByTestId("sheet-frames").locator("li").nth(9).waitFor();
 	return new URL(page.url()).pathname;
 }
 
 /** Opens the sheet page of the first census shot. */
-async function openSheet(page: Page): Promise<void> {
-	await page.goto(sheetPage);
+async function openSheet(page: Page, ctx: ShotContext): Promise<void> {
+	await page.goto(withLang(sheetPage, ctx));
 	await waitForHydration(page);
 	await page.getByTestId("sheet-frames").locator("li").nth(9).waitFor();
 }
@@ -161,8 +196,13 @@ const OVERDUE = ["2026-V0005", "2025-B0006"] as const;
 const SHELF_D = ["2019-P0126", "2020-P0131", "2025-M0223", "2026-T0003", "2026-T0003", "2024-T0016"];
 
 /** Two returns at the check-in desk: a book in time and one late. */
-async function returnTwo(page: Page, inTime: string, late: string): Promise<void> {
-	const field = page.getByRole("textbox", { name: "Passa il codice del libro restituito" });
+async function returnTwo(
+	page: Page,
+	{ t }: ShotContext,
+	inTime: string,
+	late: string,
+): Promise<void> {
+	const field = page.getByRole("textbox", { name: t("circulation.checkin.scan") });
 	for (const code of [late, inTime]) {
 		await field.fill(code);
 		await field.press("Enter");
@@ -179,17 +219,18 @@ async function missingOf(page: Page, shelf: string, itemType: string): Promise<v
 }
 
 /** A window as tall as the page, for a screen whose parts are explained together. */
-async function wholePage(page: Page): Promise<void> {
+async function wholePage(page: Page, ctx: ShotContext): Promise<void> {
+	const { width, height: windowHeight } = WINDOW_SIZES[ctx.window];
 	const height = await page.evaluate(() => document.documentElement.scrollHeight);
-	await page.setViewportSize({ width: 1280, height: Math.max(800, height) });
+	await page.setViewportSize({ width, height: Math.max(windowHeight, height) });
 	await page.evaluate(() => window.scrollTo(0, 0));
 }
 
 /** A copy read in the stocktaking's field, which keeps the focus for the next one. */
-async function inventoryScan(page: Page, code: string): Promise<void> {
+async function inventoryScan(page: Page, { t }: ShotContext, code: string): Promise<void> {
 	const first = page.getByTestId("inventory-result").first();
 	const before = (await first.count()) > 0 ? ((await first.textContent()) ?? "") : "";
-	const field = page.getByRole("textbox", { name: "Codice della copia" });
+	const field = page.getByRole("textbox", { name: t("catalog.inventory.scanLabel") });
 	await field.fill(code);
 	await field.press("Enter");
 	// the newest result comes first: wait until it is this one
@@ -223,7 +264,7 @@ export const SHOTS: Shot[] = [
 	screen("admin/config-photos", "admin", "/admin/config/photos"),
 	screen("admin/configuration", "admin", "/admin/config"),
 	screen("admin/config-archive", "admin", "/admin/config", {
-		crop: (page) => section(page, "Archivio della configurazione"),
+		crop: (page, { t }) => section(page, t("config.archive.title")),
 	}),
 	screen("admin/barcode-formats", "admin", "/admin/config/barcodes", {
 		crop: "[data-testid=block-barcode-formats]",
@@ -240,17 +281,27 @@ export const SHOTS: Shot[] = [
 	screen("admin/imports", "admin", "/admin/imports"),
 	screen("admin/reports-library", "admin", "/admin/config/reports"),
 	screen("admin/rollover-classes", "admin", "/admin/rollover"),
+	// the installation check, whole, with a reading in the scanner test: the dash typed as `'`
+	screen("admin/setup", "admin", "/admin/setup", {
+		steps: async (page, ctx) => {
+			const field = page.getByTestId("scanner-field");
+			await field.fill(OVERDUE[0].replace("-", "'"));
+			await field.press("Enter");
+			await page.getByTestId("scanner-verdict").waitFor();
+			await wholePage(page, ctx);
+		},
+	}),
 	screen("admin/templates", "admin", "/admin/config/templates"),
 	screen("admin/templates-list", "admin", "/admin/config/templates"),
 	screen("admin/templates-labels", "admin", "/admin/config/templates"),
 	screen("admin/users", "admin", "/admin/users"),
 	screen("admin/card-designer", "admin", "/admin/config/templates/cards/default"),
 	screen("admin/card-preview", "admin", "/admin/config/templates/cards/default"),
-	screen("admin/label-designer", "admin", "/admin/config/templates/pair/default"),
-	screen("admin/label-preview", "admin", "/admin/config/templates/pair/default"),
+	screen("admin/label-designer", "admin", "/admin/config/templates/labels/pair-default"),
+	screen("admin/label-preview", "admin", "/admin/config/templates/labels/pair-default"),
 	screen("admin/report-editor", "admin", "/admin/config/reports", {
-		steps: async (page) => {
-			await page.getByRole("link", { name: "Modifica" }).first().click();
+		steps: async (page, { t }) => {
+			await page.getByRole("link", { name: t("config.reports.edit") }).first().click();
 			await page.waitForURL(/\/admin\/config\/reports\/.+/);
 			await page.getByRole("heading", { level: 1 }).waitFor();
 		},
@@ -303,23 +354,23 @@ export const SHOTS: Shot[] = [
 	screen("catalog/inventory-empty", "catalogo", "/inventory"),
 	// a book added "Classifica dopo" waits in the list and in the flow; it is deleted after the picture
 	screen("catalog/to-classify-list", "catalogo", "/catalog/to-classify", {
-		steps: async (page) => {
-			addedRecord = await addLaterRecord(page, "Il giardino dei ciliegi");
-			await page.goto("/catalog/to-classify");
+		steps: async (page, ctx) => {
+			addedRecord = await addLaterRecord(page, "Il giardino dei ciliegi", ctx);
+			await page.goto(withLang("/catalog/to-classify", ctx));
 			await waitForHydration(page);
 			await page.getByTestId("classify-start").waitFor();
 		},
-		after: async (page) => removeRecord(page, addedRecord),
+		after: async (page, ctx) => removeRecord(page, addedRecord, ctx),
 	}),
 	screen("catalog/classify-flow", "catalogo", "/catalog/to-classify", {
-		steps: async (page) => {
-			addedRecord = await addLaterRecord(page, "Il giardino dei ciliegi");
-			await page.goto(`/catalog/to-classify/${addedRecord}`);
+		steps: async (page, ctx) => {
+			addedRecord = await addLaterRecord(page, "Il giardino dei ciliegi", ctx);
+			await page.goto(withLang(`/catalog/to-classify/${addedRecord}`, ctx));
 			await waitForHydration(page);
 			await page.getByTestId("genre-B").click();
 			await page.getByTestId("classify-call-number").waitFor();
 		},
-		after: async (page) => removeRecord(page, addedRecord),
+		after: async (page, ctx) => removeRecord(page, addedRecord, ctx),
 	}),
 	screen("catalog/new-book-done", "catalogo", "/cataloging/new", {
 		steps: async (page) => {
@@ -335,10 +386,10 @@ export const SHOTS: Shot[] = [
 			await page.getByTestId("biblio-submit").click();
 			await page.getByTestId("stage-done").waitFor();
 		},
-		after: async (page) => {
+		after: async (page, ctx) => {
 			await page.getByTestId("done-open").click();
-			await page.waitForURL(/\/catalog\/\d+$/);
-			await removeRecord(page, Number(page.url().split("/").pop()));
+			await page.waitForURL(/\/catalog\/\d+(\?|$)/);
+			await removeRecord(page, Number(new URL(page.url()).pathname.split("/").pop()), ctx);
 		},
 	}),
 	screen("catalog/record-copies", "catalogo", "/catalog/117"),
@@ -369,24 +420,24 @@ export const SHOTS: Shot[] = [
 		},
 	}),
 	screen("catalog/new-book-form", "catalogo", "/cataloging/new", {
-		steps: async (page) => {
-			const input = page.getByLabel("ISBN o EAN");
+		steps: async (page, { t }) => {
+			const input = page.getByLabel(t("catalog.fastAdd.code.label"));
 			await input.fill("9788807580017");
 			await input.press("Enter");
 			await page.getByTestId("stage-form").waitFor();
 		},
 	}),
 	screen("catalog/new-book-cover", "catalogo", "/cataloging/new", {
-		steps: async (page) => {
-			const input = page.getByLabel("ISBN o EAN");
+		steps: async (page, { t }) => {
+			const input = page.getByLabel(t("catalog.fastAdd.code.label"));
 			await input.fill("9788807580017");
 			await input.press("Enter");
 			await page.getByTestId("stage-form").waitFor();
 		},
 	}),
 	screen("catalog/new-book-duplicate", "catalogo", "/cataloging/new", {
-		steps: async (page) => {
-			const input = page.getByLabel("ISBN o EAN");
+		steps: async (page, { t }) => {
+			const input = page.getByLabel(t("catalog.fastAdd.code.label"));
 			await input.fill("9780255295888");
 			await input.press("Enter");
 			await page.getByTestId("stage-duplicate").waitFor();
@@ -419,46 +470,49 @@ export const SHOTS: Shot[] = [
 		},
 	}),
 	screen("circulation/checkout-patron", "prestiti", "/circulation/checkout", {
-		steps: async (page) => {
+		steps: async (page, ctx) => {
 			// a student with a book on loan: the card shows it with its due date
 			await deskField(page).fill("campus");
 			const results = page.getByTestId("desk-scan-results");
 			await results.waitFor();
 			await deskField(page).press("Enter");
 			await page.getByTestId("desk-patron-name").waitFor();
-			await closeLimitDialog(page);
+			await closeLimitDialog(page, ctx);
 			await page.getByTestId("desk-patron-loans").waitFor();
 		},
+		// the card is below the fold of a tablet and a phone: the picture starts at it
+		focus: "[data-testid=desk-patron]",
 	}),
 	screen("circulation/checkout-renew", "prestiti", "/circulation/checkout", {
-		steps: async (page) => {
+		steps: async (page, ctx) => {
 			// the teacher has four books: the card is full, the dialog is closed, Rinnova stays
 			await deskScan(page, TEACHER_CARD);
 			await page.getByTestId("desk-patron-name").waitFor();
-			await closeLimitDialog(page);
+			await closeLimitDialog(page, ctx);
 			await page.getByTestId("desk-renew-all").waitFor();
 		},
 		// the card is taller than the window: the picture takes the whole card
 		crop: "[data-testid=desk-patron]",
+		windows: ["computer", "phone"],
 	}),
 	screen("circulation/checkin-start", "prestiti", "/circulation/checkin"),
 	screen("circulation/loans-start", "prestiti", "/circulation/loans"),
 	screen("circulation/loans-search-surname", "prestiti", "/circulation/loans", {
-		steps: async (page) => {
-			await page.getByLabel("Cerca").fill("palumbo");
+		steps: async (page, { t }) => {
+			await page.getByLabel(t("common.actions.search")).fill("palumbo");
 			await page.getByTestId("data-grid").waitFor();
 		},
 	}),
 	screen("circulation/loans-overdue", "prestiti", "/circulation/loans", {
-		steps: async (page) => {
-			await page.getByLabel("Cerca").fill("messina");
+		steps: async (page, { t }) => {
+			await page.getByLabel(t("common.actions.search")).fill("messina");
 			await page.getByTestId("overdue-only").check();
 			await page.getByText(/Messina/).first().waitFor();
 		},
 	}),
 	screen("circulation/loans-filtered", "prestiti", "/circulation/loans", {
-		steps: async (page) => {
-			await page.getByLabel("Cerca").fill("messina");
+		steps: async (page, { t }) => {
+			await page.getByLabel(t("common.actions.search")).fill("messina");
 			await page.getByTestId("overdue-only").check();
 			await page.getByText(/Messina/).first().waitFor();
 		},
@@ -467,23 +521,23 @@ export const SHOTS: Shot[] = [
 
 	// ---- Utenti, stampe, censimento
 	screen("patrons/list", "tessere", "/patrons", {
-		steps: async (page) => {
+		steps: async (page, { t }) => {
 			// a class chosen: the patrons of the 2nd year
-			await page.getByLabel("Classe", { exact: true }).selectOption({ index: 2 });
+			await page.getByLabel(t("patrons.list.filters.level"), { exact: true }).selectOption({ index: 2 });
 			await page.getByTestId("data-grid").waitFor();
 		},
 	}),
 	screen("patrons/new-student", "tessere", "/patrons/new"),
 	screen("patrons/new-teacher", "tessere", "/patrons/new", {
-		steps: async (page) => {
-			await page.getByRole("radio", { name: "Docente" }).check();
+		steps: async (page, { t }) => {
+			await page.getByRole("radio", { name: t("patrons.types.teacher") }).check();
 		},
 	}),
 	screen("patrons/edit-form", "tessere", "/patrons/12/edit"),
 	screen("patrons/record-loans", "tessere", "/patrons", {
-		steps: async (page) => {
+		steps: async (page, { t }) => {
 			// a student with a book on loan
-			await page.getByLabel("Cerca").fill("campus");
+			await page.getByLabel(t("common.actions.search")).fill("campus");
 			await page.getByTestId("data-grid").getByText(/Campus/).first().click();
 			await page.waitForURL(/\/patrons\/\d+$/);
 			await waitForHydration(page);
@@ -491,8 +545,8 @@ export const SHOTS: Shot[] = [
 		},
 	}),
 	screen("patrons/card-tab", "tessere", "/patrons/12", {
-		steps: async (page) => {
-			await page.getByRole("tab", { name: "Tessera" }).click();
+		steps: async (page, { t }) => {
+			await page.getByRole("tab", { name: t("patrons.detail.tabs.cards") }).click();
 		},
 	}),
 	screen("census/start", "tessere", "/census"),
@@ -552,6 +606,7 @@ export const SHOTS: Shot[] = [
 			await page.waitForTimeout(500);
 		},
 		crop: "[data-testid=cover-panel]",
+		windows: ["computer", "phone"],
 	}),
 
 	// ---- census (read-only until the class picture is uploaded; the sheet is deleted after the last shot)
@@ -575,6 +630,7 @@ export const SHOTS: Shot[] = [
 			await page.waitForTimeout(800);
 		},
 		crop: "[data-testid=census-stage]",
+		windows: ["computer", "phone"],
 	}),
 	screen("census/class-sheets", "tessere", "/census?group=7", {
 		steps: async (page) => {
@@ -583,19 +639,19 @@ export const SHOTS: Shot[] = [
 		crop: "[data-testid=class-sheets]",
 	}),
 	screen("census/sheet-frames", "tessere", "/census?group=7", {
-		steps: async (page) => {
-			sheetPage = await uploadSheet(page);
+		steps: async (page, ctx) => {
+			sheetPage = await uploadSheet(page, ctx);
 		},
 		slow: true,
 	}),
 	screen("patrons/census-sheet", "tessere", "/census?group=7", {
-		steps: async (page) => {
-			await openSheet(page);
+		steps: async (page, ctx) => {
+			await openSheet(page, ctx);
 		},
 	}),
 	screen("census/sheet-save", "tessere", "/census?group=7", {
-		steps: async (page) => {
-			await openSheet(page);
+		steps: async (page, ctx) => {
+			await openSheet(page, ctx);
 			for (const position of [1, 2, 3]) {
 				await page.getByTestId(`sheet-choose-${position}`).selectOption({ index: position });
 			}
@@ -603,8 +659,11 @@ export const SHOTS: Shot[] = [
 			await page.getByRole("alertdialog").waitFor();
 		},
 		crop: "[role=alertdialog]",
-		after: async (page) => {
-			await page.getByRole("alertdialog").getByRole("button", { name: "Annulla" }).click();
+		after: async (page, { t }) => {
+			await page
+				.getByRole("alertdialog")
+				.getByRole("button", { name: t("common.actions.cancel") })
+				.click();
 			await page.getByTestId("sheet-delete").click();
 			await page.getByTestId("confirm-button").click();
 			await page.getByTestId("class-sheets-empty").waitFor();
@@ -646,31 +705,36 @@ export const SHOTS: Shot[] = [
 		},
 	}),
 	screen("circulation/checkin-returned", "prestiti", "/circulation/checkin", {
-		steps: async (page) => returnTwo(page, LENT.books[0], OVERDUE[0]),
+		steps: async (page, ctx) => returnTwo(page, ctx, LENT.books[0], OVERDUE[0]),
 		crop: "[data-testid=checkin-session]",
+		windows: ["computer", "phone"],
 	}),
 	screen("circulation/checkin-done", "prestiti", "/circulation/checkin", {
-		steps: async (page) => returnTwo(page, LENT.books[1], OVERDUE[1]),
+		steps: async (page, ctx) => returnTwo(page, ctx, LENT.books[1], OVERDUE[1]),
 	}),
 	// a campaign started and left open (closing it would mark every copy not read as lost)
 	screen("catalog/inventory-scan", "catalogo", "/inventory", {
-		steps: async (page) => {
+		steps: async (page, ctx) => {
 			await page.getByTestId("inventory-name").fill("Inventario di fine anno");
 			await page.getByTestId("inventory-start").click();
 			await page.getByTestId("inventory-current").waitFor();
 			await page.getByTestId("inventory-shelf").fill("D");
 			for (const code of SHELF_D) {
-				await inventoryScan(page, code);
+				await inventoryScan(page, ctx, code);
 			}
-			await page.getByTestId("inventory-current").getByText("1 fuori posto").waitFor();
+			// the counts line is "<read> · <misplaced> · <found>": the middle part says one is misplaced
+			const misplaced = ctx
+				.t("catalog.inventory.counts", { scanned: SHELF_D.length, misplaced: 1, found: 0 })
+				.split(" · ")[1];
+			await page.getByTestId("inventory-current").getByText(misplaced ?? "").waitFor();
 			await missingOf(page, "D 1", "dvd");
-			await wholePage(page);
+			await wholePage(page, ctx);
 		},
 	}),
 	screen("catalog/inventory-progress", "catalogo", "/inventory", {
-		steps: async (page) => {
+		steps: async (page, ctx) => {
 			await missingOf(page, "D 3", "dvd");
-			await wholePage(page);
+			await wholePage(page, ctx);
 		},
 	}),
 
@@ -681,22 +745,22 @@ export const SHOTS: Shot[] = [
 	mock("phone/install-app"),
 
 	// ---- the first-run wizard (tests/docs/wizard.spec.ts): in this order, each step goes on from the one before
-	wizard("setup/language", async (page) => {
-		await page.getByRole("radio", { name: "Italiano" }).click();
-		await page.getByRole("heading", { level: 1, name: "Prima configurazione" }).waitFor();
+	wizard("setup/language", async (page, { lang, t }) => {
+		await page.getByRole("radio", { name: languageName(lang) }).click();
+		await page.getByRole("heading", { level: 1, name: t("setup.title") }).waitFor();
 	}),
 	wizard("setup/theme", async (page) => {
 		await page.getByTestId("setup-next").click();
 		await page.getByTestId("setup-step-theme").waitFor();
 	}),
-	wizard("setup/library", async (page) => {
+	wizard("setup/library", async (page, { t }) => {
 		await page.getByTestId("setup-next").click();
-		await page.getByLabel("Nome della biblioteca").fill("Biblioteca dell'Istituto");
+		await page.getByLabel(t("setup.library.name")).fill("Biblioteca dell'Istituto");
 	}),
-	wizard("setup/school", async (page) => {
+	wizard("setup/school", async (page, { t }) => {
 		await page.getByTestId("setup-next").click();
 		await page.getByTestId("setup-step-school").waitFor();
-		await page.getByLabel("Tipo di scuola").selectOption("it-primaria");
+		await page.getByLabel(t("setup.library.schoolType")).selectOption("it-primaria");
 	}),
 	wizard("setup/codes", async (page) => {
 		await page.getByTestId("setup-next").click();

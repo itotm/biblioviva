@@ -3,7 +3,8 @@
 # ADR-042, ADR-043), only by hand: Actions → pages → Run workflow, on the release's tag (or on main for a
 # correction of the text); a push never publishes it. The build takes the pictures from the app (`bun run docs:shots`, on the
 # built server like the end-to-end tests), then turns the Markdown of docs/ into site/dist/ with its
-# search index (`bun run site:build`) and prints the section Norme as a PDF (`bun run docs:pdf`).
+# search index (`bun run site:build`, after `bun run site:check`) and prints the section Norme and the
+# manual as PDFs (`bun run docs:pdf`, `bun run manual:pdf`).
 # The home page (home/, biblioviva.org) is uploaded by hand to Cloudflare Pages.
 name: pages
 
@@ -28,7 +29,7 @@ jobs:
 
             - uses: oven-sh/setup-bun@v2
               with:
-                  bun-version: 1.4.4
+                  bun-version: 1.4.5
 
             - uses: actions/setup-node@v6
               with:
@@ -58,11 +59,19 @@ jobs:
             - name: Diagrams of the documentation, drawn by Mermaid
               run: bun run docs:diagrams
 
+            - name: Check the documentation (markers, labels, languages, links, help targets, diagrams)
+              run: bun run site:check --drawn
+
             - name: Build the site and its search index
               run: bun run site:build
 
             - name: The section Norme as a PDF, printed by Chromium
               run: bun run docs:pdf
+              env:
+                  CI: "true"
+
+            - name: The manual as a PDF per language, printed by Chromium
+              run: bun run manual:pdf
               env:
                   CI: "true"
 

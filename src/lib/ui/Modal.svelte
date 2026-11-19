@@ -8,12 +8,15 @@
 	import type { Snippet } from "svelte";
 	import DialogFrame from "./DialogFrame.svelte";
 	import DialogHeader from "./DialogHeader.svelte";
+	import type { HelpSpot } from "./help-spots.js";
 
 	interface Props {
 		open: boolean;
 		title: string;
 		/** Shown after the title, muted (e.g. "· 32 copie"). */
 		note?: string;
+		/** The part of the documentation that explains the dialog (a key of `HELP_SPOTS`). */
+		help?: HelpSpot;
 		onclose?: () => void;
 		width?: "md" | "lg" | "xl";
 		animated?: boolean;
@@ -26,6 +29,7 @@
 		open = $bindable(),
 		title,
 		note,
+		help,
 		onclose,
 		width,
 		animated,
@@ -47,7 +51,7 @@
 	{#if open}
 		<Portal>
 			<DialogFrame {width} {animated} {scroll} {...rest}>
-				<DialogHeader {title} {note} />
+				<DialogHeader {title} {note} {help} />
 				{@render children()}
 			</DialogFrame>
 		</Portal>

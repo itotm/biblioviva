@@ -57,8 +57,9 @@
 			class="self-start text-sm font-semibold underline underline-offset-2 hover:no-underline"
 			aria-expanded={expanded}
 			onclick={() => (expanded = !expanded)}
-			>{expanded ? i18n.t("notes.actions.showLess") : i18n.t("notes.actions.showAll")}</button
 		>
+			{expanded ? i18n.t("notes.actions.showLess") : i18n.t("notes.actions.showAll")}
+		</button>
 	{/if}
 	<footer class="mt-auto space-y-0.5 pt-1 text-sm text-surface-800">
 		<p data-testid="note-author">

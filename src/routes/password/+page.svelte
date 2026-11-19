@@ -60,8 +60,9 @@
 	}
 </script>
 
-<svelte:head><title>{i18n.t("auth.change.title")} · {i18n.t("common.app.name")}</title></svelte:head
->
+<svelte:head>
+	<title>{i18n.t("auth.change.title")} · {i18n.t("common.app.name")}</title>
+</svelte:head>
 
 <EntryScreen>
 	<section
@@ -73,9 +74,9 @@
 			<Hint>{data.displayName}</Hint>
 		</header>
 		{#if data.forced}
-			<Alert tone="warning" data-testid="password-forced"
-				>{i18n.t("auth.change.forced")}</Alert
-			>
+			<Alert tone="warning" data-testid="password-forced">
+				{i18n.t("auth.change.forced")}
+			</Alert>
 		{/if}
 		{#if data.demoPublic}
 			<Alert tone="warning">{i18n.t("auth.change.demo")}</Alert>
@@ -89,36 +90,38 @@
 				}
 			}}
 		>
-			<Field label={i18n.t("auth.change.current")}
-				><PasswordInput
+			<Field label={i18n.t("auth.change.current")}>
+				<PasswordInput
 					label={i18n.t("auth.change.current")}
 					bind:value={current}
 					autocomplete="current-password"
 					data-testid="password-current"
-				/></Field
-			>
+				/>
+			</Field>
 			<Field
 				label={i18n.t("auth.change.new", { min: data.minPassword })}
 				errors={tooShort
 					? [i18n.t("auth.change.errors.passwordTooShort", { min: data.minPassword })]
 					: []}
-				><PasswordInput
+			>
+				<PasswordInput
 					label={i18n.t("auth.change.new", { min: data.minPassword })}
 					bind:value={password}
 					autocomplete="new-password"
 					data-testid="password-new"
-				/></Field
-			>
+				/>
+			</Field>
 			<Field
 				label={i18n.t("auth.change.repeat")}
 				errors={mismatch ? [i18n.t("auth.change.errors.mismatch")] : []}
-				><PasswordInput
+			>
+				<PasswordInput
 					label={i18n.t("auth.change.repeat")}
 					bind:value={repeat}
 					autocomplete="new-password"
 					data-testid="password-repeat"
-				/></Field
-			>
+				/>
+			</Field>
 			<Hint tone="faint">{i18n.t("auth.change.hint")}</Hint>
 			{#if problem}
 				<Alert data-testid="password-problem">{problem}</Alert>
@@ -134,8 +137,10 @@
 					type="submit"
 					icon={SaveIcon}
 					disabled={!ready || pending || data.demoPublic}
-					data-testid="password-save">{i18n.t("auth.change.save")}</Button
+					data-testid="password-save"
 				>
+					{i18n.t("auth.change.save")}
+				</Button>
 			</Row>
 		</form>
 	</section>

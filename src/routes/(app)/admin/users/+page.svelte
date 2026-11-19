@@ -143,16 +143,18 @@
 				icon={AddIcon}
 				onclick={() => openDialog("new", null)}
 				disabled={!accounts.current}
-				data-testid="account-new">{i18n.t("admin.users.new")}</Button
+				data-testid="account-new"
 			>
-			<Button onclick={onReload} disabled={reloading} data-testid="reload-config"
-				><ReloadIcon
+				{i18n.t("admin.users.new")}
+			</Button>
+			<Button onclick={onReload} disabled={reloading} data-testid="reload-config">
+				<ReloadIcon
 					size={ICON_SIZE.md}
 					aria-hidden="true"
 					class={reloading ? "animate-spin" : ""}
 				/>
-				<span>{i18n.t("admin.users.reload.button")}</span></Button
-			>
+				<span>{i18n.t("admin.users.reload.button")}</span>
+			</Button>
 		{/snippet}
 	</PageHeader>
 
@@ -184,13 +186,13 @@
 								<Hint>{account.username}</Hint>
 							</div>
 							{#if account.active}
-								<Badge tone="success" filled icon={ActiveIcon}
-									>{i18n.t("admin.users.status.active")}</Badge
-								>
+								<Badge tone="success" filled icon={ActiveIcon}>
+									{i18n.t("admin.users.status.active")}
+								</Badge>
 							{:else}
-								<Badge tone="neutral" filled icon={InactiveIcon}
-									>{i18n.t("admin.users.status.inactive")}</Badge
-								>
+								<Badge tone="neutral" filled icon={InactiveIcon}>
+									{i18n.t("admin.users.status.inactive")}
+								</Badge>
 							{/if}
 						</Row>
 						<dl class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-sm">
@@ -218,9 +220,9 @@
 							</Alert>
 						{/if}
 						{#if account.mustChangePassword}
-							<Hint tone="primary" data-testid="account-must-change"
-								>{i18n.t("admin.users.status.mustChange")}</Hint
-							>
+							<Hint tone="primary" data-testid="account-must-change">
+								{i18n.t("admin.users.status.mustChange")}
+							</Hint>
 						{/if}
 						{#if account.inConfig}
 							<Row gap="2" class="mt-auto">
@@ -229,15 +231,17 @@
 									icon={EditIcon}
 									onclick={() => openDialog("edit", account)}
 									data-testid="account-edit"
-									>{i18n.t("common.actions.edit")}</Button
 								>
+									{i18n.t("common.actions.edit")}
+								</Button>
 								<Button
 									size="sm"
 									icon={KeyIcon}
 									onclick={() => openDialog("password", account)}
 									data-testid="account-password-button"
-									>{i18n.t("admin.users.newPassword")}</Button
 								>
+									{i18n.t("admin.users.newPassword")}
+								</Button>
 								{#if !account.active}
 									<Button
 										size="sm"
@@ -248,8 +252,9 @@
 											removeOpen = true;
 										}}
 										data-testid="account-remove"
-										>{i18n.t("common.actions.delete")}</Button
 									>
+										{i18n.t("common.actions.delete")}
+									</Button>
 								{/if}
 							</Row>
 						{/if}
@@ -284,30 +289,30 @@
 						{i18n.t("admin.users.hash.title")}
 					</h2>
 					<Hint>{i18n.t("admin.users.hash.description")}</Hint>
-					<Field label={i18n.t("admin.users.hash.password", { min: MIN })}
-						><Input
+					<Field label={i18n.t("admin.users.hash.password", { min: MIN })}>
+						<Input
 							type="text"
 							autocomplete="off"
 							spellcheck={false}
 							bind:value={password}
 							minlength={MIN}
 							required
-						/></Field
-					>
-					<Button variant="primary" type="submit" disabled={hashing}
-						>{hashing
+						/>
+					</Field>
+					<Button variant="primary" type="submit" disabled={hashing}>
+						{hashing
 							? i18n.t("common.status.loading")
-							: i18n.t("admin.users.hash.generate")}</Button
-					>
+							: i18n.t("admin.users.hash.generate")}
+					</Button>
 					{#if hash}
-						<Field label={i18n.t("admin.users.hash.result")}
-							><textarea
+						<Field label={i18n.t("admin.users.hash.result")}>
+							<textarea
 								class="textarea font-mono text-xs"
 								rows="3"
 								readonly
 								value={hash}
-								data-testid="hash-output"></textarea></Field
-						>
+								data-testid="hash-output"></textarea>
+						</Field>
 						<Button onclick={copyHash}>{i18n.t("admin.users.hash.copy")}</Button>
 					{/if}
 				</Card>

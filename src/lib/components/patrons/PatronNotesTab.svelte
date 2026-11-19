@@ -67,28 +67,28 @@
 		data-testid="notes-form"
 	>
 		<Hint>{i18n.t("patrons.detail.notesHint")}</Hint>
-		<Field label={i18n.t("patrons.fields.circulationNote")}
-			><Input
+		<Field label={i18n.t("patrons.fields.circulationNote")}>
+			<Input
 				maxlength={500}
 				bind:value={circulationNoteDraft}
 				data-testid="circulation-note-input"
-			/></Field
-		>
-		<Field label={i18n.t("patrons.fields.notes")}
-			><textarea
+			/>
+		</Field>
+		<Field label={i18n.t("patrons.fields.notes")}>
+			<textarea
 				class="textarea"
 				rows="4"
 				maxlength="2000"
 				bind:value={notesDraft}
-				data-testid="notes-input"></textarea></Field
-		>
+				data-testid="notes-input"></textarea>
+		</Field>
 		<Row>
-			<Button variant="primary" type="submit" disabled={busy} data-testid="save-notes"
-				>{i18n.t("common.actions.save")}</Button
-			>
-			<Button onclick={() => (notesMode = false)} disabled={busy}
-				>{i18n.t("common.actions.cancel")}</Button
-			>
+			<Button variant="primary" type="submit" disabled={busy} data-testid="save-notes">
+				{i18n.t("common.actions.save")}
+			</Button>
+			<Button onclick={() => (notesMode = false)} disabled={busy}>
+				{i18n.t("common.actions.cancel")}
+			</Button>
 		</Row>
 	</form>
 {:else}
@@ -104,9 +104,9 @@
 		<p class="opacity-70">{i18n.t("patrons.detail.noNotes")}</p>
 	{/if}
 	{#if p.status !== "anonymized"}
-		<Button icon={EditIcon} onclick={openNotes} data-testid="edit-notes"
-			>{i18n.t("patrons.detail.notesEdit")}</Button
-		>
+		<Button icon={EditIcon} onclick={openNotes} data-testid="edit-notes">
+			{i18n.t("patrons.detail.notesEdit")}
+		</Button>
 	{/if}
 {/if}
 <p class="mt-4 text-xs opacity-60">

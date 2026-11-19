@@ -5,7 +5,7 @@
 // uploaded by hand to a static host (Cloudflare Pages, direct upload). The
 // pages carry macros: `[[icon:name]]` an inline Lucide icon (one sprite per page), `[[words:…]]`
 // the sentence that lights up word by word, `[[shot:name|title|area|view]]` a computer screen shown
-// by the documentation's picture `site/.shots/<lang>/<name>.webp` (made by `bun run docs:shots`; the
+// by the documentation's picture `site/.shots/<lang>/<name>.computer.webp` (made by `bun run docs:shots`; the
 // Italian one when the language has none), drawn as `[[wfd:area|view|title]]` when the picture is
 // missing, `[[wfp:…]]` a drawn phone screen, `[[lang]]` the language switch, `[[shelfmini]]` four spines with their bands, `[[site:docs]]…[[/site]]`
 // a piece kept only while that site is online (`ONLINE`; `[[site:!docs]]` a piece kept only while
@@ -17,6 +17,7 @@ import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { zipSync } from "fflate";
+import { WINDOW_SIZES } from "../docs/shot-windows.ts";
 import { webFonts } from "./web-fonts.ts";
 
 const ROOT = fileURLToPath(new URL("..", import.meta.url));
@@ -24,7 +25,7 @@ const SOURCE = join(ROOT, "home");
 const LUCIDE = join(ROOT, "node_modules/@lucide/svelte/dist/icons");
 const SHOTS = join(ROOT, "site/.shots");
 /** The size of the documentation's computer pictures (`docs:shots`, window "computer"). */
-const SHOT_SIZE = { width: 1280, height: 800 } as const;
+const SHOT_SIZE = WINDOW_SIZES.computer;
 
 export const LANGS = ["it", "en"] as const;
 export type HomeLang = (typeof LANGS)[number];
@@ -128,7 +129,7 @@ function shotPath(library: ShotLibrary, lang: HomeLang, name: string): string | 
 		if (library.used.has(path)) {
 			return path;
 		}
-		const file = join(library.dir, l, `${name}.webp`);
+		const file = join(library.dir, l, `${name}.computer.webp`);
 		if (existsSync(file)) {
 			library.used.set(path, new Uint8Array(readFileSync(file)));
 			return path;

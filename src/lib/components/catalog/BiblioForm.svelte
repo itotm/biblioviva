@@ -214,63 +214,61 @@
 	<FormLayout {...form as Record<string, unknown>}>
 		<FormSection title={i18n.t("catalog.form.identity")}>
 			<div>
-				<Field label={i18n.t("catalog.fields.title")}
-					><Input
-						{...fields.title.as("text")}
-						required
-						autocomplete="off"
-						{autofocus}
-					/></Field
-				>
+				<Field label={i18n.t("catalog.fields.title")}>
+					<Input {...fields.title.as("text")} required autocomplete="off" {autofocus} />
+				</Field>
 				{@render fieldError("title")}
 			</div>
 			<div>
-				<Field label={i18n.t("catalog.fields.subtitle")}
-					><Input {...fields.subtitle.as("text")} autocomplete="off" /></Field
-				>
+				<Field label={i18n.t("catalog.fields.subtitle")}>
+					<Input {...fields.subtitle.as("text")} autocomplete="off" />
+				</Field>
 			</div>
 			<!-- the original title of a translation (step 9.23) -->
 			<div>
 				<Field
 					label={i18n.t("catalog.fields.originalTitle")}
 					hint={i18n.t("catalog.fields.originalTitleHint")}
-					><Input {...fields.originalTitle.as("text")} autocomplete="off" /></Field
 				>
+					<Input {...fields.originalTitle.as("text")} autocomplete="off" />
+				</Field>
 			</div>
 			<Grid span>
 				<div>
-					<Field label={i18n.t("catalog.fields.author")}
-						><Input {...fields.author.as("text")} required autocomplete="off" /></Field
-					>
+					<Field label={i18n.t("catalog.fields.author")}>
+						<Input {...fields.author.as("text")} required autocomplete="off" />
+					</Field>
 					<Hint as="span">{i18n.t("catalog.fields.authorHint")}</Hint>
 					<Row gap="1" class="mt-1">
 						{#each options.specialAuthors as a (a)}
 							<Button
 								size="sm"
 								onclick={() => setField("author", a)}
-								data-testid="quick-author-{a}">{a}</Button
+								data-testid="quick-author-{a}"
 							>
+								{a}
+							</Button>
 						{/each}
 					</Row>
 					{@render fieldError("author")}
 				</div>
 				<div>
-					<Field label={i18n.t("catalog.fields.responsibility")}
-						><Input {...fields.responsibility.as("text")} autocomplete="off" /></Field
-					>
+					<Field label={i18n.t("catalog.fields.responsibility")}>
+						<Input {...fields.responsibility.as("text")} autocomplete="off" />
+					</Field>
 				</div>
 			</Grid>
 			<!-- series and number in the series (step 9.14): typed once, then suggested -->
 			<Grid cols="3" span>
 				<div class="md:col-span-2">
-					<Field label={i18n.t("catalog.fields.series")}
-						><Input
+					<Field label={i18n.t("catalog.fields.series")}>
+						<Input
 							{...fields.series.as("text")}
 							list="{uid}-series"
 							autocomplete="off"
 							data-testid="biblio-series"
-						/></Field
-					>
+						/>
+					</Field>
 					<datalist id="{uid}-series">
 						{#each seriesNames.current ?? [] as name (name)}
 							<option value={name}></option>
@@ -279,14 +277,14 @@
 					<Hint as="span">{i18n.t("catalog.fields.seriesHint")}</Hint>
 				</div>
 				<div>
-					<Field label={i18n.t("catalog.fields.seriesNumber")}
-						><Input
+					<Field label={i18n.t("catalog.fields.seriesNumber")}>
+						<Input
 							{...fields.seriesNumber.as("text")}
 							maxlength={20}
 							autocomplete="off"
 							data-testid="biblio-series-number"
-						/></Field
-					>
+						/>
+					</Field>
 				</div>
 			</Grid>
 		</FormSection>
@@ -294,76 +292,73 @@
 		<FormSection title={i18n.t("catalog.form.publication")}>
 			<Grid cols="3" span>
 				<div>
-					<Field label={i18n.t("catalog.fields.publisher")}
-						><Input
-							{...fields.publisher.as("text")}
-							required
-							autocomplete="off"
-						/></Field
-					>
+					<Field label={i18n.t("catalog.fields.publisher")}>
+						<Input {...fields.publisher.as("text")} required autocomplete="off" />
+					</Field>
 					<Button
 						size="sm"
 						class="mt-1"
 						onclick={() => setField("publisher", options.unknownPublisher)}
 						title={i18n.t("catalog.form.unknownPublisher")}
-						data-testid="quick-publisher">{options.unknownPublisher}</Button
+						data-testid="quick-publisher"
 					>
+						{options.unknownPublisher}
+					</Button>
 					{@render fieldError("publisher")}
 				</div>
 				<div>
-					<Field label={i18n.t("catalog.fields.publicationPlace")}
-						><Input {...fields.publicationPlace.as("text")} autocomplete="off" /></Field
-					>
+					<Field label={i18n.t("catalog.fields.publicationPlace")}>
+						<Input {...fields.publicationPlace.as("text")} autocomplete="off" />
+					</Field>
 					<Button
 						size="sm"
 						class="mt-1"
 						onclick={() => setField("publicationPlace", options.unknownPlace)}
 						title={i18n.t("catalog.form.unknownPlace")}
-						data-testid="quick-place">{options.unknownPlace}</Button
+						data-testid="quick-place"
 					>
+						{options.unknownPlace}
+					</Button>
 				</div>
 				<div>
-					<Field label={i18n.t("catalog.fields.publicationYear")}
-						><Input
+					<Field label={i18n.t("catalog.fields.publicationYear")}>
+						<Input
 							{...fields.publicationYear.as("text")}
 							inputmode="numeric"
 							maxlength={4}
 							autocomplete="off"
-						/></Field
-					>
+						/>
+					</Field>
 					{@render fieldError("publicationYear")}
 				</div>
 			</Grid>
 			<Grid cols="3" span>
 				<div>
-					<Field label={i18n.t("catalog.fields.isbn")}
-						><Input mono {...fields.isbn.as("text")} autocomplete="off" /></Field
-					>
+					<Field label={i18n.t("catalog.fields.isbn")}>
+						<Input mono {...fields.isbn.as("text")} autocomplete="off" />
+					</Field>
 					{@render fieldError("isbn")}
 				</div>
 				<div>
-					<Field label={i18n.t("catalog.fields.ean")}
-						><Input mono {...fields.ean.as("text")} autocomplete="off" /></Field
-					>
+					<Field label={i18n.t("catalog.fields.ean")}>
+						<Input mono {...fields.ean.as("text")} autocomplete="off" />
+					</Field>
 					{@render fieldError("ean")}
 				</div>
 				<div>
-					<Field label={i18n.t("catalog.fields.physicalDescription")}
-						><Input
-							{...fields.physicalDescription.as("text")}
-							autocomplete="off"
-						/></Field
-					>
+					<Field label={i18n.t("catalog.fields.physicalDescription")}>
+						<Input {...fields.physicalDescription.as("text")} autocomplete="off" />
+					</Field>
 				</div>
 				<!-- the material of every copy of the title (9.45, Q139) -->
 				<div>
-					<Field label={i18n.t("catalog.item.itemType")}
-						><Select {...fields.itemType.as("select")} data-testid="biblio-item-type">
+					<Field label={i18n.t("catalog.item.itemType")}>
+						<Select {...fields.itemType.as("select")} data-testid="biblio-item-type">
 							{#each options.itemTypes as t (t.code)}
 								<option value={t.code}>{t.label}</option>
 							{/each}
-						</Select></Field
-					>
+						</Select>
+					</Field>
 					{@render fieldError("itemType")}
 				</div>
 			</Grid>
@@ -391,15 +386,16 @@
 				<Field
 					label={i18n.t("catalog.fields.callText")}
 					hint={i18n.t("catalog.fields.callTextHint", { proposal: proposal || "—" })}
-					><Input
+				>
+					<Input
 						mono
 						{...fields.callText?.as("text")}
 						placeholder={proposal}
 						maxlength={40}
 						autocomplete="off"
 						data-testid="biblio-call-text"
-					/></Field
-				>
+					/>
+				</Field>
 			{/if}
 			<CallNumberShown
 				label={i18n.t("catalog.fields.callNumber")}
@@ -416,8 +412,10 @@
 							<Checkbox
 								checked={formats.includes(f)}
 								onchange={(e) => toggleFormat(f, e.currentTarget.checked)}
-								data-testid="accessible-format-{f}">{f}</Checkbox
+								data-testid="accessible-format-{f}"
 							>
+								{f}
+							</Checkbox>
 						{/each}
 					</Row>
 					<Hint as="span">{i18n.t("catalog.fields.accessibleFormatsHint")}</Hint>
@@ -433,14 +431,14 @@
 		>
 			<Grid span>
 				<div>
-					<Field label={i18n.t("catalog.fields.dewey")}
-						><Input mono {...fields.dewey.as("text")} autocomplete="off" /></Field
-					>
+					<Field label={i18n.t("catalog.fields.dewey")}>
+						<Input mono {...fields.dewey.as("text")} autocomplete="off" />
+					</Field>
 				</div>
 				<div>
-					<Field label={i18n.t("catalog.fields.issn")}
-						><Input mono {...fields.issn.as("text")} autocomplete="off" /></Field
-					>
+					<Field label={i18n.t("catalog.fields.issn")}>
+						<Input mono {...fields.issn.as("text")} autocomplete="off" />
+					</Field>
 					{@render fieldError("issn")}
 				</div>
 			</Grid>
@@ -452,10 +450,9 @@
 				</label>
 			</div>
 			<div class="md:col-span-2">
-				<Field label={i18n.t("catalog.fields.notes")}
-					><textarea {...fields.notes.as("text")} class="textarea" rows="3"
-					></textarea></Field
-				>
+				<Field label={i18n.t("catalog.fields.notes")}>
+					<textarea {...fields.notes.as("text")} class="textarea" rows="3"></textarea>
+				</Field>
 			</div>
 		</FormSection>
 
@@ -470,8 +467,9 @@
 				type="submit"
 				disabled={api.pending > 0}
 				data-testid="biblio-submit"
-				>{api.pending > 0 ? i18n.t("common.status.loading") : submitLabel}</Button
 			>
+				{api.pending > 0 ? i18n.t("common.status.loading") : submitLabel}
+			</Button>
 		{/snippet}
 	</FormLayout>
 </div>

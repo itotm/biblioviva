@@ -189,9 +189,9 @@
 	</CameraCapture>
 	{#if offered}
 		{@const code = offered}
-		<Button icon={UseIcon} onclick={() => take(code)} data-testid="scan-use-anyway"
-			>{i18n.t("common.scan.useAnyway", { code: code.value })}</Button
-		>
+		<Button icon={UseIcon} onclick={() => take(code)} data-testid="scan-use-anyway">
+			{i18n.t("common.scan.useAnyway", { code: code.value })}
+		</Button>
 	{/if}
 	{#if loading}
 		<Loading size="sm" />

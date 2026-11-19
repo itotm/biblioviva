@@ -130,9 +130,9 @@
 			</BulletList>
 		</Alert>
 	{:else}
-		<Hint tone="primary" data-testid="section-json-valid"
-			>{i18n.t("config.section.json.valid")}</Hint
-		>
+		<Hint tone="primary" data-testid="section-json-valid">
+			{i18n.t("config.section.json.valid")}
+		</Hint>
 	{/if}
 	{#if inUse.length > 0}
 		<InUseList problems={inUse} />
@@ -142,14 +142,18 @@
 			icon={UndoIcon}
 			onclick={() => (text = saved)}
 			disabled={!dirty || saving}
-			data-testid="section-json-discard">{i18n.t("config.section.discard")}</Button
+			data-testid="section-json-discard"
 		>
+			{i18n.t("config.section.discard")}
+		</Button>
 		<Button
 			variant="primary"
 			icon={SaveIcon}
 			onclick={save}
 			disabled={!dirty || saving || "error" in parsed || errors.length > 0}
-			data-testid="section-json-save">{i18n.t("config.section.save")}</Button
+			data-testid="section-json-save"
 		>
+			{i18n.t("config.section.save")}
+		</Button>
 	</Row>
 </div>

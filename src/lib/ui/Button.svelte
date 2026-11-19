@@ -80,12 +80,14 @@
 		{target}
 		rel="external noopener"
 		class={classes}
-		{...rest as HTMLAnchorAttributes}>{@render content()}</a
+		{...rest as HTMLAnchorAttributes}
 	>
+		{@render content()}
+	</a>
 {:else if href !== undefined}
-	<a {href} {download} {target} {rel} class={classes} {...rest as HTMLAnchorAttributes}
-		>{@render content()}</a
-	>
+	<a {href} {download} {target} {rel} class={classes} {...rest as HTMLAnchorAttributes}>
+		{@render content()}
+	</a>
 {:else}
 	<button {type} class={classes} {...rest}>{@render content()}</button>
 {/if}

@@ -9,7 +9,7 @@
 >
 	import type { Snippet } from "svelte";
 	import type { ResolvedPathname } from "$app/types";
-	import AreaTabs, { type AreaKey } from "#lib/components/AreaTabs.svelte";
+	import AreaTabs from "#lib/components/AreaTabs.svelte";
 	import DataGrid, { type GridColumn, type GridRow } from "#lib/components/DataGrid.svelte";
 	import ColumnMapper from "#lib/components/imports/ColumnMapper.svelte";
 	import ImportVerdict from "#lib/components/imports/ImportVerdict.svelte";
@@ -27,6 +27,8 @@
 	import Button from "#lib/ui/Button.svelte";
 	import Card from "#lib/ui/Card.svelte";
 	import Field from "#lib/ui/Field.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
+	import { type ImportHelpKind, importSpot } from "#lib/ui/help-spots.js";
 	import Hint from "#lib/ui/Hint.svelte";
 	import Input from "#lib/ui/Input.svelte";
 	import Page from "#lib/ui/Page.svelte";
@@ -70,8 +72,8 @@
 	interface Props {
 		wizard: ImportWizard<F, D, E, V, S>;
 		title: string;
-		/** The tab of the imports area. */
-		current: AreaKey<"imports">;
+		/** The import: its tab of the imports area, and the guide its help icon opens. */
+		current: ImportHelpKind;
 		upload: UploadForm;
 		/** The file types the file field offers. */
 		accept: string;
@@ -154,12 +156,22 @@
 		{/snippet}
 	</PageHeader>
 
-	<Steps
-		steps={IMPORT_STEPS.map((key) => ({ key, label: i18n.t(`common.import.steps.${key}`) }))}
-		current={IMPORT_STEPS.indexOf(wizard.step)}
-		label={title}
-		testid="import-steps"
-	/>
+	<!-- the guide of this import at the part that explains the step in sight -->
+	<Row align="center" gap="1">
+		<Steps
+			steps={IMPORT_STEPS.map((key) => ({
+				key,
+				label: i18n.t(`common.import.steps.${key}`),
+			}))}
+			current={IMPORT_STEPS.indexOf(wizard.step)}
+			label={title}
+			testid="import-steps"
+		/>
+		<HelpLink
+			spot={importSpot(current, wizard.step)}
+			topic={`${title}: ${i18n.t(`common.import.steps.${wizard.step}`)}`}
+		/>
+	</Row>
 
 	{#if wizard.step === "upload"}
 		<Card padding="lg" gap="4" as="section">
@@ -171,14 +183,14 @@
 				data-testid="upload-form"
 			>
 				{@render uploadFields?.()}
-				<Field label={texts.file} class="max-w-lg"
-					><Input
+				<Field label={texts.file} class="max-w-lg">
+					<Input
 						{...upload.fields.file.as("file")}
 						{accept}
 						required
 						data-testid="csv-file"
-					/></Field
-				>
+					/>
+				</Field>
 				{#if upload.fields.file.issues()?.length}
 					<Hint tone="error" role="alert" data-testid="upload-error">
 						{upload.fields.file.issues()?.[0]?.message}
@@ -190,10 +202,9 @@
 						type="submit"
 						disabled={upload.pending > 0}
 						data-testid="upload-submit"
-						>{upload.pending > 0
-							? i18n.t("common.status.loading")
-							: texts.upload}</Button
 					>
+						{upload.pending > 0 ? i18n.t("common.status.loading") : texts.upload}
+					</Button>
 				</Row>
 			</form>
 		</Card>
@@ -223,11 +234,11 @@
 				fields={mapperFields}
 			/>
 			{#if !wizard.mappingComplete}
-				<Hint tone="error" role="alert" data-testid="mapping-incomplete"
-					>{i18n.t("common.import.errors.mappingIncomplete", {
+				<Hint tone="error" role="alert" data-testid="mapping-incomplete">
+					{i18n.t("common.import.errors.mappingIncomplete", {
 						columns: wizard.missingText,
-					})}</Hint
-				>
+					})}
+				</Hint>
 			{/if}
 			{@render mappingOptions?.()}
 			<Row>
@@ -236,8 +247,9 @@
 					onclick={wizard.validate}
 					disabled={wizard.busy || !wizard.mappingComplete}
 					data-testid="validate"
-					>{wizard.busy ? i18n.t("common.status.loading") : texts.validate}</Button
 				>
+					{wizard.busy ? i18n.t("common.status.loading") : texts.validate}
+				</Button>
 				<Button onclick={wizard.restart}>{texts.again}</Button>
 			</Row>
 		</Card>
@@ -268,11 +280,12 @@
 					onclick={wizard.commit}
 					disabled={wizard.busy || !result.canCommit}
 					data-testid="commit"
-					>{wizard.busy ? i18n.t("common.status.loading") : texts.commit}</Button
 				>
-				<Button icon={BackIcon} onclick={() => (wizard.step = "mapping")}
-					>{texts.back}</Button
-				>
+					{wizard.busy ? i18n.t("common.status.loading") : texts.commit}
+				</Button>
+				<Button icon={BackIcon} onclick={() => (wizard.step = "mapping")}>
+					{texts.back}
+				</Button>
 			</Row>
 		</section>
 	{:else if wizard.step === "done" && wizard.summary}

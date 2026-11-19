@@ -116,6 +116,13 @@ describe("school presets", () => {
 		expect(labels("cn-zhongxue")).toContain("高一(3)班");
 		expect(labels("jp-shogakko")).toContain("1年2組");
 		expect(labels("kr-chodeung")).toContain("1학년 2반");
+		// the upper secondary schools of the same countries
+		expect(labels("gr-lykeio")).toContain("Β2");
+		expect(labels("ro-liceu")).toContain("a X-a B");
+		expect(labels("ro-liceu")).toContain("a XII-a D");
+		expect(labels("hu-gimnazium")).toContain("9.a");
+		expect(labels("jp-kotogakko")).toContain("3年2組");
+		expect(labels("kr-godeung")).toContain("2학년 3반");
 	});
 
 	it("skips an invalid file with a warning, and a missing folder", () => {

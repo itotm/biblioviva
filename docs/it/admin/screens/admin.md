@@ -1,14 +1,14 @@
 # Amministrazione
 
 La pagina **Amministrazione** raccoglie la configurazione della biblioteca e i lavori sui dati: account, registro delle
-operazioni, copie di sicurezza, importazioni, avanzamento di classe ed esportazioni. È riservata all'account `admin`. Si
+operazioni, copie di sicurezza, importazioni, avanzamento di classe, esportazioni e il controllo dell'installazione. È riservata all'account `admin`. Si
 apre dalla barra laterale (sul telefono dalla voce **Altro**) e dalla **Dashboard**; le altre pagine di questa sezione
 hanno in alto il pulsante **Indietro**, che riporta qui.
 
-<!-- figure: admin/home | La pagina Amministrazione con le sette schede -->
+<!-- figure: admin/home | La pagina Amministrazione con le otto schede -->
 
 1. Titolo della pagina.
-2. Le schede dei sette ambiti, ciascuna con un titolo e una riga di spiegazione.
+2. Le schede degli otto ambiti, ciascuna con un titolo e una riga di spiegazione.
 3. Il pulsante **Svuota dati dimostrativi**, presente soltanto in un'installazione con i dati dimostrativi.
 
 ## Configurazione
@@ -46,6 +46,12 @@ Apre [Avanza di classe](rollover.md), la procedura guidata di fine anno. Guida:
 ## Esportazioni
 
 Apre le [Esportazioni](exports.md): utenti, catalogo, prestiti e tutti i dati in file CSV o JSON.
+
+## Controllo installazione
+
+Apre il [Controllo installazione](setup.md): lo stato del file di configurazione, dell'indirizzo, del profilo del
+computer, delle password e dei backup, e le prove con la stampante, la fotocamera e il lettore. Finché un controllo è da
+correggere, la **Dashboard** dell'account `admin` lo ricorda.
 
 ## Svuota dati dimostrativi
 

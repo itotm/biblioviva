@@ -3,7 +3,7 @@
 # build host's platform (Bun crashes under QEMU); the other stages run on the target platform but
 # never run Bun. The server bundle is self-contained: every package is bundled (vite.config.ts), so
 # there are no node_modules at runtime (verified in 8.1, again with adapter-bun 1.0).
-FROM --platform=$BUILDPLATFORM docker.io/oven/bun:1.4.4-slim AS build
+FROM --platform=$BUILDPLATFORM docker.io/oven/bun:1.4.5-slim AS build
 WORKDIR /app
 COPY package.json bun.lock ./
 RUN bun install --frozen-lockfile --ignore-scripts
@@ -22,7 +22,7 @@ RUN bun build scripts/backup-restore.ts scripts/hash-password.ts scripts/config-
 # YAZ and a BusyBox shell from Debian trixie, the release the distroless base is built from: only
 # yaz-client and the libraries it links are kept (glibc is already in the base), not the whole
 # `yaz` package with its ICU data (ADR-020)
-FROM docker.io/oven/bun:1.4.4-distroless AS base
+FROM docker.io/oven/bun:1.4.5-distroless AS base
 FROM docker.io/library/debian:trixie-slim AS system
 RUN apt-get update \
  && apt-get install -y --no-install-recommends yaz busybox-static \

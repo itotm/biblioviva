@@ -31,7 +31,7 @@
 	data-testid="loading"
 >
 	<Spinner size={size === "sm" ? "md" : "wait"} />
-	<span class="font-semibold {size === 'sm' ? '' : 'text-lg'}"
-		>{i18n.t("common.status.loading")}</span
-	>
+	<span class="font-semibold {size === 'sm' ? '' : 'text-lg'}">
+		{i18n.t("common.status.loading")}
+	</span>
 </div>

@@ -19,7 +19,8 @@ name, the logo, the colours and the language; photos and covers, which can be sw
 profile of the computer.
 
 The whole configuration is exported and imported as one archive, and every change made from Administration can be
-undone.
+undone. An installation check page says whether the configuration file, the address, the passwords and the backups are
+in order, and guides the tests with the printer, the camera and the barcode scanner.
 
 ## Circulation desk
 

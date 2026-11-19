@@ -22,6 +22,7 @@
 	import Button from "#lib/ui/Button.svelte";
 	import Card from "#lib/ui/Card.svelte";
 	import FileButton from "#lib/ui/FileButton.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
 	import Hint from "#lib/ui/Hint.svelte";
 	import Row from "#lib/ui/Row.svelte";
 	import { icons } from "#lib/ui/icons.js";
@@ -129,7 +130,10 @@
 </script>
 
 <Card variant="outlined" gap="3" as="section" data-testid="restore-panel">
-	<h2 class="title-lg">{i18n.t("admin.backups.restore.title")}</h2>
+	<Row wrap={false} align="center" gap="1">
+		<h2 class="title-lg">{i18n.t("admin.backups.restore.title")}</h2>
+		<HelpLink spot="backupRestore" topic={i18n.t("admin.backups.restore.title")} />
+	</Row>
 	<Hint>{i18n.t("admin.backups.restore.hint", { maxMb: maxUploadMb })}</Hint>
 	<Row>
 		<FileButton
@@ -137,8 +141,10 @@
 			accept=".zip,application/zip"
 			onchange={onFile}
 			disabled={checking || restoring}
-			data-testid="restore-upload">{i18n.t("admin.backups.restore.upload")}</FileButton
+			data-testid="restore-upload"
 		>
+			{i18n.t("admin.backups.restore.upload")}
+		</FileButton>
 	</Row>
 	<form {...uploadRestoreArchive} enctype="multipart/form-data" class="hidden" aria-hidden="true">
 		<input {...uploadRestoreArchive.fields.archive.as("file")} bind:this={input} />
@@ -209,11 +215,11 @@
 				</Alert>
 			{/if}
 			{#if c.data.schema.length > 0}
-				<Alert data-testid="restore-schema"
-					>{i18n.t("admin.backups.restore.schema", {
+				<Alert data-testid="restore-schema">
+					{i18n.t("admin.backups.restore.schema", {
 						tables: c.data.schema.join(", "),
-					})}</Alert
-				>
+					})}
+				</Alert>
 			{/if}
 			{#if c.config}
 				<Hint data-testid="restore-config">
@@ -237,16 +243,18 @@
 				{/if}
 			{/if}
 			<Row justify="end">
-				<Button icon={CancelIcon} onclick={cancel} disabled={restoring}
-					>{i18n.t("common.actions.cancel")}</Button
-				>
+				<Button icon={CancelIcon} onclick={cancel} disabled={restoring}>
+					{i18n.t("common.actions.cancel")}
+				</Button>
 				<Button
 					variant="primary"
 					icon={RestoreIcon}
 					onclick={() => (confirm = true)}
 					disabled={!c.ready || checking || restoring || selected.length === 0}
-					data-testid="restore-apply">{i18n.t("admin.backups.restore.apply")}</Button
+					data-testid="restore-apply"
 				>
+					{i18n.t("admin.backups.restore.apply")}
+				</Button>
 			</Row>
 		</section>
 	{/if}

@@ -20,6 +20,8 @@ can be skipped.
    accounts](guides/manage-accounts.md): after the sample data, the simple passwords must be replaced.
 1. [Create a personal account](guides/manage-accounts.md) for each colleague who does not use a shared account. With the
    **To change at the first login** box ticked, the colleague chooses their own password.
+1. Open [Installation check](screens/setup.md): it lists what is still to fix (the sample data's passwords, the backups,
+   the address). It is checked again after each group of steps.
 
 ### The library
 

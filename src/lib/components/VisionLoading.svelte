@@ -22,16 +22,16 @@
 <div class="space-y-2" aria-live="polite" data-testid={testid}>
 	<Row wrap={false} align="center" as="p">
 		<Spinner />
-		<span
-			>{progress.total
+		<span>
+			{progress.total
 				? i18n.t("catalog.cover.loading", {
 						loaded: megabytes(progress.loaded),
 						total: megabytes(progress.total),
 					})
 				: i18n.t("catalog.cover.loadingShort", {
 						loaded: megabytes(progress.loaded),
-					})}</span
-		>
+					})}
+		</span>
 	</Row>
 	<progress
 		class="progress w-full max-w-md"

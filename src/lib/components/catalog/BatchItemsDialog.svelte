@@ -138,8 +138,9 @@
 		{#if op === "status"}
 			<Select bind:value={status} data-testid="batch-status">
 				{#each ITEM_STATUS_VALUES as s (s)}
-					<option value={s}>{i18n.t(`common.statuses.item.${STATUS_KEY[s] ?? s}`)}</option
-					>
+					<option value={s}>
+						{i18n.t(`common.statuses.item.${STATUS_KEY[s] ?? s}`)}
+					</option>
 				{/each}
 			</Select>
 		{:else if op === "itemType"}
@@ -176,25 +177,25 @@
 	{/if}
 	{#if planned}
 		<div class="space-y-2" data-testid="batch-plan">
-			<Hint tone="primary"
-				>{planned.changes > 0
+			<Hint tone="primary">
+				{planned.changes > 0
 					? i18n.t("catalog.batch.plan.changes", { count: planned.changes })
-					: i18n.t("catalog.batch.plan.none")}</Hint
-			>
+					: i18n.t("catalog.batch.plan.none")}
+			</Hint>
 			{#each ["onLoan", "unchanged", "notFound", "notAllowed"] as const as k (k)}
 				{#if planned.excluded[k] > 0}
-					<Hint data-testid="batch-excluded-{k}"
-						>{i18n.t(`catalog.batch.plan.${k}`, {
+					<Hint data-testid="batch-excluded-{k}">
+						{i18n.t(`catalog.batch.plan.${k}`, {
 							count: planned.excluded[k],
-						})}</Hint
-					>
+						})}
+					</Hint>
 				{/if}
 			{/each}
 			{#if excludedRows.length > 0}
 				<details>
-					<summary class="cursor-pointer text-sm hover:underline"
-						>{i18n.t("catalog.batch.excludedTitle")}</summary
-					>
+					<summary class="cursor-pointer text-sm hover:underline">
+						{i18n.t("catalog.batch.excludedTitle")}
+					</summary>
 					<ul class="mt-1 max-h-40 overflow-y-auto text-sm">
 						{#each excludedRows as r (r.itemId)}
 							<li>
@@ -218,12 +219,13 @@
 				onclick={apply}
 				disabled={busy}
 				data-testid="batch-apply"
-				>{i18n.t("catalog.batch.apply", { count: planned.changes })}</Button
 			>
+				{i18n.t("catalog.batch.apply", { count: planned.changes })}
+			</Button>
 		{:else}
-			<Button variant="primary" onclick={check} disabled={busy} data-testid="batch-check"
-				>{i18n.t("catalog.batch.check")}</Button
-			>
+			<Button variant="primary" onclick={check} disabled={busy} data-testid="batch-check">
+				{i18n.t("catalog.batch.check")}
+			</Button>
 		{/if}
 	</Row>
 </Modal>

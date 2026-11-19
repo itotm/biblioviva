@@ -28,14 +28,16 @@
 </script>
 
 {#if onundo}
-	<Button icon={UndoIcon} onclick={onundo} disabled={!dirty || saving}
-		>{i18n.t("config.section.discard")}</Button
-	>
+	<Button icon={UndoIcon} onclick={onundo} disabled={!dirty || saving}>
+		{i18n.t("config.section.discard")}
+	</Button>
 {/if}
 <Button
 	variant="primary"
 	icon={SaveIcon}
 	onclick={onsave}
 	disabled={!dirty || invalid || saving}
-	data-testid={testid}>{i18n.t("config.section.save")}</Button
+	data-testid={testid}
 >
+	{i18n.t("config.section.save")}
+</Button>

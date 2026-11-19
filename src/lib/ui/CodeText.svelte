@@ -13,6 +13,6 @@
 	const { as = "p", children, ...rest }: Props = $props();
 </script>
 
-<svelte:element this={as} class="font-mono text-lg font-semibold" {...rest}
-	>{@render children()}</svelte:element
->
+<svelte:element this={as} class="font-mono text-lg font-semibold" {...rest}>
+	{@render children()}
+</svelte:element>

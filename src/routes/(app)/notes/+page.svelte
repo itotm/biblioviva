@@ -53,8 +53,10 @@
 				variant="primary"
 				icon={AddIcon}
 				onclick={() => (adding = true)}
-				data-testid="note-new">{t("new")}</Button
+				data-testid="note-new"
 			>
+				{t("new")}
+			</Button>
 		{/snippet}
 		{#snippet views()}
 			<AreaTabs area="notes" current="open" />
@@ -69,9 +71,9 @@
 		{#snippet empty()}
 			<EmptyState title={t("empty.open")} description={t("empty.openHint")} icon="notes">
 				{#snippet action()}
-					<Button variant="primary" icon={AddIcon} onclick={() => (adding = true)}
-						>{t("new")}</Button
-					>
+					<Button variant="primary" icon={AddIcon} onclick={() => (adding = true)}>
+						{t("new")}
+					</Button>
 				{/snippet}
 			</EmptyState>
 		{/snippet}
@@ -97,15 +99,19 @@
 				() => pinNote({ id: note.id, pinned: !note.pinned }),
 				note.pinned ? "unpinned" : "pinned",
 			)}
-		data-testid="note-pin">{note.pinned ? t("actions.unpin") : t("actions.pin")}</Button
+		data-testid="note-pin"
 	>
+		{note.pinned ? t("actions.unpin") : t("actions.pin")}
+	</Button>
 	<Button
 		size="sm"
 		icon={ArchiveIcon}
 		disabled={busy === note.id}
 		onclick={() => run(note, () => archiveNote({ id: note.id }), "archived")}
-		data-testid="note-archive">{t("actions.archive")}</Button
+		data-testid="note-archive"
 	>
+		{t("actions.archive")}
+	</Button>
 {/snippet}
 
 <NoteDialog bind:open={adding} canPin={data.isAdmin} onadded={() => void list.refresh()} />

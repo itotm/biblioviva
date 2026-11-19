@@ -10,6 +10,7 @@
 	import Button from "#lib/ui/Button.svelte";
 	import Card from "#lib/ui/Card.svelte";
 	import Hint from "#lib/ui/Hint.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
 	import Row from "#lib/ui/Row.svelte";
 
 	interface Props {
@@ -37,7 +38,10 @@
 </script>
 
 <Card padding="lg" gap="4" as="section" data-testid="stage-code">
-	<h2 class="h4">{i18n.t("catalog.fastAdd.code.heading")}</h2>
+	<Row wrap={false} align="center" gap="1">
+		<h2 class="h4">{i18n.t("catalog.fastAdd.code.heading")}</h2>
+		<HelpLink spot="fastAddCode" topic={i18n.t("catalog.fastAdd.code.heading")} />
+	</Row>
 	<BarcodeInput
 		label={i18n.t("catalog.fastAdd.code.label")}
 		placeholder={i18n.t("catalog.fastAdd.code.placeholder")}
@@ -75,11 +79,11 @@
 	</fieldset>
 	<Row align="center" class="border-t border-surface-200 pt-4">
 		<Hint as="span">{i18n.t("catalog.fastAdd.code.noCodeHint")}</Hint>
-		<Button icon={SearchIcon} onclick={onsearch} data-testid="no-code"
-			>{i18n.t("catalog.fastAdd.code.noCode")}</Button
-		>
-		<Button icon={EditIcon} onclick={onmanual} data-testid="manual-entry"
-			>{i18n.t("catalog.fastAdd.code.manual")}</Button
-		>
+		<Button icon={SearchIcon} onclick={onsearch} data-testid="no-code">
+			{i18n.t("catalog.fastAdd.code.noCode")}
+		</Button>
+		<Button icon={EditIcon} onclick={onmanual} data-testid="manual-entry">
+			{i18n.t("catalog.fastAdd.code.manual")}
+		</Button>
 	</Row>
 </Card>

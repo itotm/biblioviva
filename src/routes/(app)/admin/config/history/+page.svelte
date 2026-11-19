@@ -119,17 +119,17 @@
 						{#each changes as change (change.id)}
 							<tr class="border-t border-surface-200" data-testid="history-row">
 								<td class="p-2 whitespace-nowrap">{fmt.dateTime(change.at)}</td>
-								<td class="p-2" data-testid="history-action"
-									>{describe(change.action)}</td
-								>
+								<td class="p-2" data-testid="history-action">
+									{describe(change.action)}
+								</td>
 								<td class="p-2">
 									{#each change.files as f (f.path)}
-										<span class="block font-mono text-xs"
-											>{f.path}{#if !f.existed}
+										<span class="block font-mono text-xs">
+											{f.path}{#if !f.existed}
 												<span class="font-sans opacity-70">
-													({i18n.t("config.history.newFile")})</span
-												>{/if}</span
-										>
+													({i18n.t("config.history.newFile")})
+												</span>{/if}
+										</span>
 									{/each}
 								</td>
 								<td class="p-2 text-right">
@@ -142,8 +142,9 @@
 										}}
 										disabled={pending}
 										data-testid="history-revert"
-										>{i18n.t("config.history.revert")}</Button
 									>
+										{i18n.t("config.history.revert")}
+									</Button>
 								</td>
 							</tr>
 						{/each}

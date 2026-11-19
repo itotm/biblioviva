@@ -27,20 +27,24 @@
 		icon={PreviousIcon}
 		disabled={index === 0}
 		onclick={() => onpage(index - 1)}
-		data-testid="page-previous">{i18n.t("catalog.list.pagePrevious")}</Button
+		data-testid="page-previous"
 	>
-	<span data-testid="page-range"
-		>{i18n.t("catalog.list.pageRange", {
+		{i18n.t("catalog.list.pagePrevious")}
+	</Button>
+	<span data-testid="page-range">
+		{i18n.t("catalog.list.pageRange", {
 			from: index * size + 1,
 			to: Math.min(total, (index + 1) * size),
 			total,
-		})}</span
-	>
+		})}
+	</span>
 	<Button
 		size="sm"
 		icon={NextIcon}
 		disabled={(index + 1) * size >= total}
 		onclick={() => onpage(index + 1)}
-		data-testid="page-next">{i18n.t("catalog.list.pageNext")}</Button
+		data-testid="page-next"
 	>
+		{i18n.t("catalog.list.pageNext")}
+	</Button>
 </Row>

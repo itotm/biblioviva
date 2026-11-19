@@ -104,33 +104,39 @@
 					<Button
 						size="sm"
 						onclick={() => all(list, true)}
-						data-testid="parts-{group}-all">{i18n.t("config.parts.all")}</Button
+						data-testid="parts-{group}-all"
 					>
+						{i18n.t("config.parts.all")}
+					</Button>
 					<Button
 						size="sm"
 						onclick={() => all(list, false)}
-						data-testid="parts-{group}-none">{i18n.t("config.parts.none")}</Button
+						data-testid="parts-{group}-none"
 					>
+						{i18n.t("config.parts.none")}
+					</Button>
 				</Row>
 				<div class="grid gap-x-4 gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
 					{#each list as id (id)}
 						<Checkbox
 							checked={selected.includes(id)}
 							onchange={(e) => toggle(id, e.currentTarget.checked)}
-							data-testid="part-{id}">{partLabel(id)}</Checkbox
+							data-testid="part-{id}"
 						>
+							{partLabel(id)}
+						</Checkbox>
 					{/each}
 				</div>
 			</fieldset>
 		{/each}
 	{/key}
 	{#each missing as m (m.part)}
-		<Hint tone="error-soft" data-testid="parts-needs"
-			>{i18n.t("config.parts.needs", {
+		<Hint tone="error-soft" data-testid="parts-needs">
+			{i18n.t("config.parts.needs", {
 				part: partLabel(`data:${m.part}`),
 				needs: m.wanted.map((n) => partLabel(`data:${n}`)).join(", "),
-			})}</Hint
-		>
+			})}
+		</Hint>
 	{/each}
 </div>
 

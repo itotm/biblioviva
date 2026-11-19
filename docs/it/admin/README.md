@@ -55,7 +55,7 @@ Amministrazione.
 - [Account del personale](screens/users.md), [Aspetto e lingua](screens/appearance.md), [Classi](screens/classes.md),
   [Avanza di classe](screens/rollover.md)
 - [Backup](screens/backups.md), [Esportazioni](screens/exports.md), [Importazioni](screens/imports.md),
-  [Registro operazioni](screens/audit.md)
+  [Registro operazioni](screens/audit.md), [Controllo installazione](screens/setup.md)
 - [Template di stampa](screens/templates.md), [Libreria dei report](screens/reports-library.md)
 
 ## Pagine correlate

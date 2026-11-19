@@ -86,8 +86,10 @@
 				href={resolve("print/cards/calibration")}
 				target="_blank"
 				rel="noopener"
-				data-testid="calibration-print">{t("print")}</Button
+				data-testid="calibration-print"
 			>
+				{t("print")}
+			</Button>
 		</Row>
 	</Card>
 
@@ -169,8 +171,10 @@
 					variant="primary"
 					icon={SaveIcon}
 					disabled={saving}
-					data-testid="calibration-save">{t("save")}</Button
+					data-testid="calibration-save"
 				>
+					{t("save")}
+				</Button>
 			</Row>
 		</form>
 	</Card>

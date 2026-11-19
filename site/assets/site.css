@@ -234,11 +234,12 @@
 	}
 }
 
-/* a picture that is not there yet: a plain wireframe with its caption below */
+/* the pictures of a figure: at their own size (the width and height attributes), never wider than the column */
 .fig img {
 	display: block;
-	width: 100%;
+	max-width: 100%;
 	height: auto;
+	margin: 0 auto;
 	border-radius: 10px;
 	border: 1px solid var(--line-2);
 	background: #fff;

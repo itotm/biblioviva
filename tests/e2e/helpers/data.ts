@@ -122,6 +122,6 @@ export async function importLoans(
 	await expect(page.getByTestId("preview-verdict")).toContainText("Nessun errore");
 	await page.getByTestId("commit").click();
 	await expect(page.getByTestId("done-summary")).toContainText(
-		`${rows.length} prestiti importati`,
+		rows.length === 1 ? "1 prestito importato" : `${rows.length} prestiti importati`,
 	);
 }

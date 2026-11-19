@@ -72,8 +72,10 @@
 		download={a.download}
 		onclick={a.onclick}
 		disabled={a.disabled}
-		data-testid={testid}>{a.label}</Button
+		data-testid={testid}
 	>
+		{a.label}
+	</Button>
 {/snippet}
 
 <div
@@ -99,8 +101,10 @@
 					tone={a.danger ? "error" : undefined}
 					disabled={a.disabled}
 					onclick={a.onclick}
-					data-testid={a.testid}>{a.label}</MenuItem
+					data-testid={a.testid}
 				>
+					{a.label}
+				</MenuItem>
 			{/each}
 		</MoreMenu>
 	{/if}

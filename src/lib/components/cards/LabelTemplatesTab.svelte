@@ -81,30 +81,30 @@
 				>
 					<Row align="center" as="span">
 						<span class="title-lg">{t.name}</span>
-						{#if t.labelKind}<Badge tone="secondary"
-								>{i18n.t(`printing.labels.kinds.${t.labelKind}`)}</Badge
-							>{/if}
+						{#if t.labelKind}<Badge tone="secondary">
+								{i18n.t(`printing.labels.kinds.${t.labelKind}`)}
+							</Badge>{/if}
 						<Badge>{i18n.t(`admin.templates.list.source.${t.source}`)}</Badge>
-						{#if t.isDefault}<Badge tone="primary"
-								>{i18n.t("admin.templates.list.default")}</Badge
-							>{/if}
-						{#if t.error}<Badge tone="error" filled
-								>{i18n.t("admin.templates.list.status.error")}</Badge
-							>{:else}<Badge tone="success"
-								>{i18n.t("admin.templates.list.status.ok")}</Badge
-							>{/if}
+						{#if t.isDefault}<Badge tone="primary">
+								{i18n.t("admin.templates.list.default")}
+							</Badge>{/if}
+						{#if t.error}<Badge tone="error" filled>
+								{i18n.t("admin.templates.list.status.error")}
+							</Badge>{:else}<Badge tone="success">
+								{i18n.t("admin.templates.list.status.ok")}
+							</Badge>{/if}
 					</Row>
-					{#if t.description}<Hint as="span" tone="soft" class="mt-1 block"
-							>{t.description}</Hint
-						>{/if}
-					{#if t.stocks.length > 0}<Hint as="span" class="mt-1 block"
-							>{i18n.t("admin.templates.labels.stocks", {
+					{#if t.description}<Hint as="span" tone="soft" class="mt-1 block">
+							{t.description}
+						</Hint>{/if}
+					{#if t.stocks.length > 0}<Hint as="span" class="mt-1 block">
+							{i18n.t("admin.templates.labels.stocks", {
 								stocks: t.stocks.join(", "),
-							})}</Hint
-						>{/if}
-					{#if t.error}<Hint tone="error-soft" mono as="span" class="mt-2 block"
-							>{t.error}</Hint
-						>{/if}
+							})}
+						</Hint>{/if}
+					{#if t.error}<Hint tone="error-soft" mono as="span" class="mt-2 block">
+							{t.error}
+						</Hint>{/if}
 				</SelectCard>
 			{/each}
 		</section>
@@ -170,15 +170,19 @@
 					href={labelSheetUrl}
 					target="_blank"
 					rel="noopener"
-					data-testid="label-sheet-link">{i18n.t("admin.templates.labels.sheet")}</Button
+					data-testid="label-sheet-link"
 				>
+					{i18n.t("admin.templates.labels.sheet")}
+				</Button>
 				<Button
 					icon={PrintIcon}
 					href="/print/labels/calibration?stock={labelStockId}&kind={selectedLabelStatus?.labelKind ??
 						'pair'}"
 					target="_blank"
-					rel="noopener">{i18n.t("admin.templates.calibration.print")}</Button
+					rel="noopener"
 				>
+					{i18n.t("admin.templates.calibration.print")}
+				</Button>
 			</Row>
 		</Card>
 	</div>
@@ -200,7 +204,9 @@
 			href="/print/labels/calibration?stock={stockId}"
 			target="_blank"
 			rel="noopener"
-			data-testid="calibration-link">{i18n.t("admin.templates.calibration.print")}</Button
+			data-testid="calibration-link"
 		>
+			{i18n.t("admin.templates.calibration.print")}
+		</Button>
 	</Row>
 </Card>

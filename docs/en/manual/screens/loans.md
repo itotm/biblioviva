@@ -63,7 +63,9 @@ Selecting one or more rows with the checkbox at the start of the row, in place o
 with the **Renew selected** button. The button renews the chosen loans, one after the other, and under the bar appears
 the summary "`<n>` of `<total>` loans renewed.", followed, for each refused renewal, by the reason, with the buttons
 **Return** and, for the administrator, **Force (admin only)**. The reasons are explained in
-[Refused renewals](checkout.md#refused-renewals) of Loans.
+[Refused renewals](checkout.md#refused-renewals) of Loans. If some of the chosen loans have an early renewal, before
+any book is renewed the window **Early renewal** appears and lists them: **Renew anyway** renews all the chosen loans,
+**Cancel** renews none (see [Early renewal](checkout.md#early-renewal) of Loans).
 
 ## Export
 

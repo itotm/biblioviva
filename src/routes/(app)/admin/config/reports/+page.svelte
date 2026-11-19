@@ -95,14 +95,18 @@
 				variant="primary"
 				icon={AddIcon}
 				href="/admin/config/reports/new"
-				data-testid="report-new">{i18n.t("config.reports.new")}</Button
+				data-testid="report-new"
 			>
+				{i18n.t("config.reports.new")}
+			</Button>
 			<Button
 				icon={UploadIcon}
 				onclick={() => picker?.click()}
 				disabled={uploading}
-				data-testid="report-upload">{i18n.t("config.reports.upload")}</Button
+				data-testid="report-upload"
 			>
+				{i18n.t("config.reports.upload")}
+			</Button>
 		{/snippet}
 	</PageHeader>
 	<Hint>{i18n.t("config.reports.hint")}</Hint>
@@ -151,8 +155,9 @@
 												removeOpen = true;
 											}}
 											data-testid="problem-remove"
-											>{i18n.t("common.actions.delete")}</Button
 										>
+											{i18n.t("common.actions.delete")}
+										</Button>
 									{/if}
 								</Row>
 							</li>
@@ -177,12 +182,13 @@
 													? "secondary"
 													: "success"}
 											data-testid="report-origin"
-											>{i18n.t(`config.reports.origin.${r.origin}`)}</Badge
 										>
+											{i18n.t(`config.reports.origin.${r.origin}`)}
+										</Badge>
 										{#if r.restricted}
-											<Badge tone="warning"
-												>{i18n.t("reports.restricted")}</Badge
-											>
+											<Badge tone="warning">
+												{i18n.t("reports.restricted")}
+											</Badge>
 										{/if}
 									</Row>
 								</div>
@@ -193,24 +199,28 @@
 										icon={EditIcon}
 										href={resolve(`admin/config/reports/${r.id}`)}
 										data-testid="report-edit"
-										>{i18n.t("config.reports.edit")}</Button
 									>
+										{i18n.t("config.reports.edit")}
+									</Button>
 									<Button
 										size="sm"
 										icon={CopyIcon}
 										href={resolve(`admin/config/reports/new?from=${r.id}`)}
 										data-testid="report-duplicate"
-										>{i18n.t("config.reports.duplicate")}</Button
 									>
-									<Button size="sm" icon={RunIcon} href="/reports/{r.id}"
-										>{i18n.t("config.reports.try")}</Button
-									>
+										{i18n.t("config.reports.duplicate")}
+									</Button>
+									<Button size="sm" icon={RunIcon} href="/reports/{r.id}">
+										{i18n.t("config.reports.try")}
+									</Button>
 									<Button
 										size="sm"
 										icon={DownloadIcon}
 										href={resolve(`admin/config/reports/${r.id}/file.json`)}
-										download>{i18n.t("config.reports.download")}</Button
+										download
 									>
+										{i18n.t("config.reports.download")}
+									</Button>
 									{#if r.file}
 										{@const file = r.file}
 										<Button
@@ -225,12 +235,13 @@
 												removeOpen = true;
 											}}
 											data-testid="report-remove"
-											>{i18n.t(
+										>
+											{i18n.t(
 												r.origin === "customised"
 													? "config.templates.restore"
 													: "common.actions.delete",
-											)}</Button
-										>
+											)}
+										</Button>
 									{/if}
 								</Row>
 							</Row>

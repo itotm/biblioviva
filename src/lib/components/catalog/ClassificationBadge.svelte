@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 <!-- The classification of a record as a badge: pictogram, code and label (§3.17). -->
 <script lang="ts">
-	import { pictogramSrc } from "#lib/shared/classification.js";
+	import { pictogramSrc } from "#lib/shared/pictogram-src.js";
 
 	interface Props {
 		node: { code: string; label: string; image?: string | null; color?: string | null } | null;

@@ -7,6 +7,7 @@
 	import { useI18n } from "#lib/i18n/context.js";
 	import { uploadCover } from "#lib/remote/catalog.remote.js";
 	import Alert from "#lib/ui/Alert.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
 	import Row from "#lib/ui/Row.svelte";
 	import { submitFile } from "#lib/ui/submit-file.js";
 	import CameraStage from "../CameraStage.svelte";
@@ -42,7 +43,10 @@
 
 <CameraStage data-testid="cover-panel" onclose={oncancel}>
 	<Row wrap={false} align="center" justify="between">
-		<h2 class="h4">{i18n.t("catalog.cover.title")}</h2>
+		<Row wrap={false} align="center" gap="1">
+			<h2 class="h4">{i18n.t("catalog.cover.title")}</h2>
+			<HelpLink spot="coverCapture" topic={i18n.t("catalog.cover.title")} />
+		</Row>
 	</Row>
 	{#await import("./CoverCapture.svelte") then { default: CoverCapture }}
 		<CoverCapture

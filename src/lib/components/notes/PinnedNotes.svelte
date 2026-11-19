@@ -28,9 +28,9 @@
 				<PinIcon size={ICON_SIZE.md} aria-hidden="true" />
 				{i18n.t("notes.home.title")}
 			</Row>
-			<Button size="sm" icon={icons.notes} href="/notes" data-testid="pinned-notes-open"
-				>{i18n.t("notes.home.open")}</Button
-			>
+			<Button size="sm" icon={icons.notes} href="/notes" data-testid="pinned-notes-open">
+				{i18n.t("notes.home.open")}
+			</Button>
 		</Row>
 		<NoteGrid narrow>
 			{#each notes as note (note.id)}

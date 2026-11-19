@@ -205,9 +205,9 @@
 					</Field>
 				</Grid>
 				{#if issues.length > 0}
-					<Alert as="div"
-						>{#each issues as p (p)}<p>{p}</p>{/each}</Alert
-					>
+					<Alert as="div">
+						{#each issues as p (p)}<p>{p}</p>{/each}
+					</Alert>
 				{/if}
 				<Row align="center" gap="2">
 					<Button
@@ -215,35 +215,38 @@
 						onclick={() => test(r)}
 						disabled={r.testing || issues.length > 0}
 						data-testid="target-test"
-						>{r.testing
-							? i18n.t("config.blocks.z3950Targets.test.running")
-							: i18n.t("config.blocks.z3950Targets.test.button")}</Button
 					>
+						{r.testing
+							? i18n.t("config.blocks.z3950Targets.test.running")
+							: i18n.t("config.blocks.z3950Targets.test.button")}
+					</Button>
 					<Button
 						icon={RemoveIcon}
 						variant="error-outlined"
 						disabled={rows.length === 1 || t.id === defaultTarget}
 						onclick={() => (rows = rows.filter((x) => x.key !== r.key))}
-						data-testid="target-remove">{i18n.t("common.actions.delete")}</Button
+						data-testid="target-remove"
 					>
+						{i18n.t("common.actions.delete")}
+					</Button>
 					{#if t.id === defaultTarget}
-						<Hint as="span" tone="faint"
-							>{i18n.t("config.blocks.z3950Targets.isDefault")}</Hint
-						>
+						<Hint as="span" tone="faint">
+							{i18n.t("config.blocks.z3950Targets.isDefault")}
+						</Hint>
 					{/if}
 				</Row>
 				{#if r.test}
-					<Alert tone={r.test.ok ? "success" : "error"} data-testid="target-test-result"
-						>{r.test.text}</Alert
-					>
+					<Alert tone={r.test.ok ? "success" : "error"} data-testid="target-test-result">
+						{r.test.text}
+					</Alert>
 				{/if}
 			</Fieldbox>
 		{/each}
 		{#if editor.problem}<Alert>{editor.problem}</Alert>{/if}
 		<Row justify="between" align="center">
-			<Button icon={AddIcon} onclick={add} data-testid="target-add"
-				>{i18n.t("config.blocks.z3950Targets.add")}</Button
-			>
+			<Button icon={AddIcon} onclick={add} data-testid="target-add">
+				{i18n.t("config.blocks.z3950Targets.add")}
+			</Button>
 			<Row>
 				<DraftActions
 					{dirty}

@@ -25,9 +25,9 @@
 	const i18n = useI18n();
 </script>
 
-<a href={resolve(`patrons/${row.entityId}`)} class="font-semibold hover:underline"
-	>{patronSortName(row)}</a
->
+<a href={resolve(`patrons/${row.entityId}`)} class="font-semibold hover:underline">
+	{patronSortName(row)}
+</a>
 <ClassBadge
 	label={row.classLabel}
 	fallback={row.patronType === "teacher" ? i18n.t("patrons.types.teacher") : ""}

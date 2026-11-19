@@ -158,13 +158,13 @@
 	{#snippet mappingInfo()}
 		<p class="text-sm">
 			{i18n.t("patrons.import.mapping.format")}:
-			<strong data-testid="detected-format"
-				>{i18n.t(`patrons.import.mapping.formats.${wizard.detection?.format}`)}</strong
-			>
+			<strong data-testid="detected-format">
+				{i18n.t(`patrons.import.mapping.formats.${wizard.detection?.format}`)}
+			</strong>
 			{#if wizard.remembered}
-				<span class="block text-sm text-primary-700" data-testid="mapping-remembered"
-					>{i18n.t("patrons.import.mapping.remembered")}</span
-				>
+				<span class="block text-sm text-primary-700" data-testid="mapping-remembered">
+					{i18n.t("patrons.import.mapping.remembered")}
+				</span>
 			{/if}
 		</p>
 	{/snippet}
@@ -191,20 +191,21 @@
 						title={m === "sync"
 							? i18n.t(`patrons.import.mapping.modes.sync.${audience}`)
 							: i18n.t("patrons.import.mapping.modes.upsert")}
-						>{m === "sync"
-							? i18n.t(`patrons.import.mapping.modes.syncHint.${audience}`)
-							: i18n.t("patrons.import.mapping.modes.upsertHint")}</TitleHint
 					>
+						{m === "sync"
+							? i18n.t(`patrons.import.mapping.modes.syncHint.${audience}`)
+							: i18n.t("patrons.import.mapping.modes.upsertHint")}
+					</TitleHint>
 				</Row>
 			{/each}
 		</fieldset>
-		<Field label={i18n.t("patrons.import.mapping.duplicates")} class="max-w-xs"
-			><Select bind:value={duplicatePolicy} data-testid="duplicate-policy">
+		<Field label={i18n.t("patrons.import.mapping.duplicates")} class="max-w-xs">
+			<Select bind:value={duplicatePolicy} data-testid="duplicate-policy">
 				{#each ["update", "skip", "create"] as p (p)}
 					<option value={p}>{i18n.t(`patrons.import.mapping.policies.${p}`)}</option>
 				{/each}
-			</Select></Field
-		>
+			</Select>
+		</Field>
 	{/snippet}
 	{#snippet previewInfo(result)}
 		{#if result.generatedCards > 0}
@@ -223,7 +224,8 @@
 					<Field
 						label="{i18n.t('common.import.line')}
 							{row.line}: {patronSortName(row.data)} ({row.classLabel})"
-						><Select
+					>
+						<Select
 							class="max-w-md"
 							value={resolutions[String(row.line)] ?? ""}
 							onchange={(e) => {
@@ -236,8 +238,9 @@
 							}}
 							data-testid="homonym-{row.line}"
 						>
-							<option value="">{i18n.t("patrons.import.preview.homonym.pick")}</option
-							>
+							<option value="">
+								{i18n.t("patrons.import.preview.homonym.pick")}
+							</option>
 							{#each row.candidates ?? [] as c (c.id)}
 								<option value={c.id}>
 									{i18n.t("patrons.import.preview.homonym.candidate", {
@@ -246,15 +249,15 @@
 									})}
 								</option>
 							{/each}
-							<option value="create"
-								>{i18n.t("patrons.import.preview.homonym.create")}</option
-							>
-						</Select></Field
-					>
+							<option value="create">
+								{i18n.t("patrons.import.preview.homonym.create")}
+							</option>
+						</Select>
+					</Field>
 				{/each}
-				<Button onclick={wizard.validate} disabled={wizard.busy}
-					>{i18n.t("patrons.import.mapping.validate")}</Button
-				>
+				<Button onclick={wizard.validate} disabled={wizard.busy}>
+					{i18n.t("patrons.import.mapping.validate")}
+				</Button>
 			</Card>
 		{/if}
 
@@ -274,11 +277,11 @@
 							<span class="font-semibold">{patronSortName(m)}</span>
 							<span class="opacity-70">{groupOf(m)}</span>
 							{#if m.openLoans > 0}
-								<span class="text-warning-800"
-									>{i18n.t("patrons.import.preview.missing.openLoans", {
+								<span class="text-warning-800">
+									{i18n.t("patrons.import.preview.missing.openLoans", {
 										count: m.openLoans,
-									})}</span
-								>
+									})}
+								</span>
 							{/if}
 						</Row>
 					{/each}
@@ -291,9 +294,9 @@
 							bind:checked={removeMissing}
 							data-testid="remove-missing"
 						/>
-						<span class="font-semibold text-error-800"
-							>{i18n.t(`patrons.import.preview.missing.${audience}.remove`)}</span
-						>
+						<span class="font-semibold text-error-800">
+							{i18n.t(`patrons.import.preview.missing.${audience}.remove`)}
+						</span>
 					</Row>
 				{:else}
 					<Hint>
@@ -319,8 +322,10 @@
 				variant="primary"
 				icon={PrintIcon}
 				onclick={() => (cardDialog = true)}
-				data-testid="print-new">{i18n.t("patrons.import.done.printNew")}</Button
+				data-testid="print-new"
 			>
+				{i18n.t("patrons.import.done.printNew")}
+			</Button>
 			<CardPrintDialog
 				bind:open={cardDialog}
 				query={`ids=${summary.createdIds.join(",")}`}

@@ -58,26 +58,27 @@
 		onsubmit={(e) => e.preventDefault()}
 		data-testid="audit-filters"
 	>
-		<Field label={i18n.t("admin.audit.filters.from")}
-			><Input type="date" bind:value={from} /></Field
-		>
-		<Field label={i18n.t("admin.audit.filters.to")}><Input type="date" bind:value={to} /></Field
-		>
+		<Field label={i18n.t("admin.audit.filters.from")}>
+			<Input type="date" bind:value={from} />
+		</Field>
+		<Field label={i18n.t("admin.audit.filters.to")}>
+			<Input type="date" bind:value={to} />
+		</Field>
 		{#await getAuditOptions() then options}
-			<Field label={i18n.t("admin.audit.filters.user")}
-				><Select bind:value={userId} data-testid="audit-user">
+			<Field label={i18n.t("admin.audit.filters.user")}>
+				<Select bind:value={userId} data-testid="audit-user">
 					<option value="">{i18n.t("admin.audit.filters.all")}</option>
-					{#each options.users as u (u.id)}<option value={String(u.id)}
-							>{u.username}</option
-						>{/each}
-				</Select></Field
-			>
-			<Field label={i18n.t("admin.audit.filters.action")}
-				><Select bind:value={action} data-testid="audit-action">
+					{#each options.users as u (u.id)}<option value={String(u.id)}>
+							{u.username}
+						</option>{/each}
+				</Select>
+			</Field>
+			<Field label={i18n.t("admin.audit.filters.action")}>
+				<Select bind:value={action} data-testid="audit-action">
 					<option value="">{i18n.t("admin.audit.filters.all")}</option>
 					{#each options.actions as a (a)}<option value={a}>{a}</option>{/each}
-				</Select></Field
-			>
+				</Select>
+			</Field>
 		{/await}
 	</form>
 

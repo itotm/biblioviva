@@ -196,20 +196,16 @@
 					}}
 					data-testid="rename-form"
 				>
-					<Field label={i18n.t("printing.lists.name")} class="max-w-md grow"
-						><Input
-							bind:value={nameDraft}
-							maxlength={80}
-							data-testid="rename-input"
-						/></Field
-					>
+					<Field label={i18n.t("printing.lists.name")} class="max-w-md grow">
+						<Input bind:value={nameDraft} maxlength={80} data-testid="rename-input" />
+					</Field>
 					<!-- an empty name is refused before it reaches the server -->
-					<Button variant="primary" type="submit" disabled={busy || !nameDraft.trim()}
-						>{i18n.t("common.actions.save")}</Button
-					>
-					<Button onclick={() => (renaming = false)}
-						>{i18n.t("common.actions.cancel")}</Button
-					>
+					<Button variant="primary" type="submit" disabled={busy || !nameDraft.trim()}>
+						{i18n.t("common.actions.save")}
+					</Button>
+					<Button onclick={() => (renaming = false)}>
+						{i18n.t("common.actions.cancel")}
+					</Button>
 				</Row>
 			{/if}
 
@@ -227,12 +223,12 @@
 								data-testid="mark-kind"
 							>
 								<option value="pair">{i18n.t("printing.labels.kinds.pair")}</option>
-								<option value="barcode"
-									>{i18n.t("printing.labels.kinds.barcode")}</option
-								>
-								<option value="spine"
-									>{i18n.t("printing.labels.kinds.spine")}</option
-								>
+								<option value="barcode">
+									{i18n.t("printing.labels.kinds.barcode")}
+								</option>
+								<option value="spine">
+									{i18n.t("printing.labels.kinds.spine")}
+								</option>
 							</Select>
 						{/if}
 						<Row
@@ -254,8 +250,10 @@
 							icon={CheckIcon}
 							onclick={markPrinted}
 							disabled={busy || entries === 0}
-							data-testid="mark-printed">{i18n.t("printing.list.markPrinted")}</Button
+							data-testid="mark-printed"
 						>
+							{i18n.t("printing.list.markPrinted")}
+						</Button>
 					</Row>
 					{#if entries === 0}
 						<EmptyState
@@ -286,15 +284,19 @@
 							icon={ClearIcon}
 							onclick={() => (confirmClear = true)}
 							disabled={busy || entries === 0}
-							data-testid="clear-list">{i18n.t("printing.list.clear")}</Button
+							data-testid="clear-list"
 						>
+							{i18n.t("printing.list.clear")}
+						</Button>
 						<Button
 							variant="error-tonal"
 							icon={DeleteIcon}
 							onclick={() => (confirmDelete = true)}
 							disabled={busy}
-							data-testid="delete-list">{i18n.t("printing.list.delete")}</Button
+							data-testid="delete-list"
 						>
+							{i18n.t("printing.list.delete")}
+						</Button>
 					</Row>
 				</Card>
 

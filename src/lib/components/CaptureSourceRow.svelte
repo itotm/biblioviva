@@ -38,10 +38,12 @@
 		icon={icons.camera}
 		onclick={onshoot}
 		disabled={shootDisabled}
-		data-testid={shootTestid}>{shootLabel}</Button
+		data-testid={shootTestid}
 	>
-	<FileButton icon={icons.upload} accept="image/*" onchange={onfile} data-testid={uploadTestid}
-		>{uploadLabel}</FileButton
-	>
+		{shootLabel}
+	</Button>
+	<FileButton icon={icons.upload} accept="image/*" onchange={onfile} data-testid={uploadTestid}>
+		{uploadLabel}
+	</FileButton>
 	{#if oncancel}<Button onclick={oncancel}>{cancelLabel}</Button>{/if}
 </Row>

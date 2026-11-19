@@ -89,17 +89,17 @@
 	{#snippet mappingOptions()}
 		{#each ["issuedOn", "dueOn"] as const as key (key)}
 			{#if !wizard.mapping.includes(key)}
-				<Hint data-testid="missing-{key}"
-					>{i18n.t(`admin.loansImport.mapping.without.${key}`)}</Hint
-				>
+				<Hint data-testid="missing-{key}">
+					{i18n.t(`admin.loansImport.mapping.without.${key}`)}
+				</Hint>
 			{/if}
 		{/each}
 	{/snippet}
 	{#snippet previewInfo(result)}
 		{#if result.overdue > 0}
-			<Hint tone="primary" data-testid="overdue-count"
-				>{i18n.t("admin.loansImport.preview.overdue", { count: result.overdue })}</Hint
-			>
+			<Hint tone="primary" data-testid="overdue-count">
+				{i18n.t("admin.loansImport.preview.overdue", { count: result.overdue })}
+			</Hint>
 		{/if}
 	{/snippet}
 </ImportShell>

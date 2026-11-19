@@ -78,11 +78,9 @@
 		<ScanIcon size={ICON_SIZE.md} aria-hidden="true" />
 		{i18n.t("printing.list.scan.title")}
 	</Row>
-	<Hint
-		>{i18n.t(
-			kind === "items" ? "printing.list.scan.hintItems" : "printing.list.scan.hint",
-		)}</Hint
-	>
+	<Hint>
+		{i18n.t(kind === "items" ? "printing.list.scan.hintItems" : "printing.list.scan.hint")}
+	</Hint>
 	<BarcodeInput
 		onscan={(code, value) =>
 			void (kind === "items" ? onScanItem(code, value) : onScanCard(code, value))}

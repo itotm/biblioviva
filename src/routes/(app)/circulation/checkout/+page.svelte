@@ -32,6 +32,7 @@
 	import BarcodeInput from "#lib/components/BarcodeInput.svelte";
 	import DeskMessage from "#lib/components/circulation/DeskMessage.svelte";
 	import AreaTabs from "#lib/components/AreaTabs.svelte";
+	import EarlyRenewalDialog from "#lib/components/circulation/EarlyRenewalDialog.svelte";
 	import OverrideDialog from "#lib/components/circulation/OverrideDialog.svelte";
 	import PatronPanel from "#lib/components/circulation/PatronPanel.svelte";
 	import PinnedNotes from "#lib/components/notes/PinnedNotes.svelte";
@@ -119,6 +120,7 @@
 		formatDate,
 		canOverride: () => data.canOverride,
 		show,
+		focus: () => scanner?.focus(),
 		patronId: () => patronId,
 	});
 
@@ -346,9 +348,9 @@
 									max: patron?.current?.maxLoans ?? 0,
 								})}
 							</p>
-							<Button size="sm" variant="primary" icon={DoneIcon} onclick={finish}
-								>{i18n.t("circulation.checkout.finish")}</Button
-							>
+							<Button size="sm" variant="primary" icon={DoneIcon} onclick={finish}>
+								{i18n.t("circulation.checkout.finish")}
+							</Button>
 						</div>
 					</Alert>
 				{:else}
@@ -377,8 +379,9 @@
 								onclick={undo}
 								disabled={session.length === 0}
 								data-testid="desk-undo"
-								>{i18n.t("circulation.checkout.undo")}</Button
 							>
+								{i18n.t("circulation.checkout.undo")}
+							</Button>
 							{#if data.receipts}
 								<Button
 									size="sm"
@@ -395,8 +398,9 @@
 									target="_blank"
 									rel="noopener"
 									data-testid="desk-receipt"
-									>{i18n.t("circulation.checkout.receipt")}</Button
 								>
+									{i18n.t("circulation.checkout.receipt")}
+								</Button>
 							{/if}
 							<Button
 								size="sm"
@@ -404,8 +408,9 @@
 								icon={DoneIcon}
 								onclick={finish}
 								data-testid="desk-finish"
-								>{i18n.t("circulation.checkout.finish")}</Button
 							>
+								{i18n.t("circulation.checkout.finish")}
+							</Button>
 						</Row>
 					</Row>
 					{#if session.length === 0}
@@ -415,11 +420,11 @@
 							{#each session as l (l.loanId)}
 								<Row as="li" justify="between" align="center" class="py-2">
 									<span class="font-semibold">{l.title}</span>
-									<Hint as="span"
-										>{i18n.t("circulation.checkout.due", {
+									<Hint as="span">
+										{i18n.t("circulation.checkout.due", {
 											date: formatDate(l.dueDate),
-										})}</Hint
-									>
+										})}
+									</Hint>
 								</Row>
 							{/each}
 						</DividedList>
@@ -459,9 +464,9 @@
 			<DeskMessage message={limitPopup} />
 		{/if}
 		<Row justify="end">
-			<Button onclick={closeLimit} data-testid="desk-limit-close"
-				>{i18n.t("common.actions.close")}</Button
-			>
+			<Button onclick={closeLimit} data-testid="desk-limit-close">
+				{i18n.t("common.actions.close")}
+			</Button>
 		</Row>
 	</Modal>
 	<OverrideDialog
@@ -471,6 +476,7 @@
 		onconfirm={confirmOverride}
 		oncancel={() => (overrideItem = null)}
 	/>
+	<EarlyRenewalDialog ask={renewals.early} />
 	<OverrideDialog
 		open={renewals.pending !== null}
 		title={i18n.t("circulation.renewals.overrideTitle")}

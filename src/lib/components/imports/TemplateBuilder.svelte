@@ -98,14 +98,14 @@
 		onchange={(e) => toggle(c.field, e.currentTarget.checked)}
 		data-testid="template-column-{c.header}"
 	>
-		<TitleHint title="{c.label} · {c.header}"
-			>{[
+		<TitleHint title="{c.label} · {c.header}">
+			{[
 				c.hint ?? "",
 				c.missing ? i18n.t("common.import.template.ifMissing", { text: c.missing }) : "",
 			]
 				.filter(Boolean)
-				.join(" ")}</TitleHint
-		>
+				.join(" ")}
+		</TitleHint>
 	</Checkbox>
 {/snippet}
 
@@ -140,11 +140,9 @@
 		{@const list = optional.filter((c) => c.group === group)}
 		{#if list.length}
 			<fieldset class="space-y-2">
-				<legend class="label-text"
-					>{i18n.t(
-						`common.import.template.${group === "key" ? "keys" : "optional"}`,
-					)}</legend
-				>
+				<legend class="label-text">
+					{i18n.t(`common.import.template.${group === "key" ? "keys" : "optional"}`)}
+				</legend>
 				{#if group === "key"}<Hint>{i18n.t("common.import.template.keysHint")}</Hint>{/if}
 				{#each list as c (c.field)}
 					{@render columnRow(c, false)}
@@ -157,10 +155,12 @@
 			icon={DownloadIcon}
 			href={href(headers.join(","))}
 			download
-			data-testid="template-download">{i18n.t("common.import.template.download")}</Button
+			data-testid="template-download"
 		>
-		<code class="text-xs break-all opacity-70" data-testid="template-preview"
-			>{headers.join(";")}</code
-		>
+			{i18n.t("common.import.template.download")}
+		</Button>
+		<code class="text-xs break-all opacity-70" data-testid="template-preview">
+			{headers.join(";")}
+		</code>
 	</Row>
 </Card>

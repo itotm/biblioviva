@@ -21,6 +21,8 @@ import { dirname, join, relative, resolve } from "node:path";
 import * as pagefind from "pagefind";
 import { webFonts } from "./web-fonts.ts";
 import { diagramHash } from "./diagrams.ts";
+import { esc, FIGURE_MARKER_SOURCE, plain, slug, unesc } from "./docs-markup.ts";
+import { figureFrames, figurePictures } from "./site-figures.ts";
 
 const ROOT = join(import.meta.dir, "..");
 const DOCS = join(ROOT, "docs");
@@ -136,6 +138,7 @@ const TEXT: Record<Lang, Record<string, string>> = {
 		help: "Aiuto",
 		compliance: "Norme",
 		onThisPage: "In questa pagina",
+		contents: "Indice",
 		sectionMenu: "Menu della sezione",
 		skip: "Vai al contenuto",
 		index: "Indice A–Z",
@@ -144,6 +147,10 @@ const TEXT: Record<Lang, Record<string, string>> = {
 		close: "Chiudi",
 		site: "Sito di BiblioViva",
 		figure: "Figura",
+		windowGroup: "Schermo",
+		windowComputer: "Computer",
+		windowTablet: "Tablet",
+		windowPhone: "Telefono",
 		note: "Nota",
 		important: "Importante",
 		warning: "Attenzione",
@@ -196,6 +203,9 @@ const TEXT: Record<Lang, Record<string, string>> = {
 		pdfName: "biblioviva-norme.pdf",
 		printLead:
 			"Che cosa chiedono le norme a una scuola che adotta BiblioViva, e che cosa fa BiblioViva per ciascuna.",
+		manualPdfTitle: "Il manuale in PDF",
+		manualPdfLead:
+			"Tutte le guide e le schermate del manuale in un unico file, da stampare o da tenere vicino al banco prestiti.",
 		release: "Versione",
 	},
 	en: {
@@ -208,6 +218,7 @@ const TEXT: Record<Lang, Record<string, string>> = {
 		help: "Help",
 		compliance: "Compliance",
 		onThisPage: "On this page",
+		contents: "Contents",
 		sectionMenu: "Section menu",
 		skip: "Skip to content",
 		index: "A–Z index",
@@ -216,6 +227,10 @@ const TEXT: Record<Lang, Record<string, string>> = {
 		close: "Close",
 		site: "BiblioViva website",
 		figure: "Figure",
+		windowGroup: "Screen",
+		windowComputer: "Computer",
+		windowTablet: "Tablet",
+		windowPhone: "Phone",
 		note: "Note",
 		important: "Important",
 		warning: "Warning",
@@ -266,6 +281,9 @@ const TEXT: Record<Lang, Record<string, string>> = {
 		pdfName: "biblioviva-compliance.pdf",
 		printLead:
 			"What the rules ask of a school that adopts BiblioViva, and what BiblioViva does about each.",
+		manualPdfTitle: "The manual as a PDF",
+		manualPdfLead:
+			"Every guide and screen of the manual in one file, to print or to keep beside the circulation desk.",
 		release: "Release",
 	},
 };
@@ -326,30 +344,6 @@ function warn(message: string): void {
 	warnings.push(message);
 }
 
-function esc(text: string): string {
-	return text
-		.replace(/&/g, "&amp;")
-		.replace(/</g, "&lt;")
-		.replace(/>/g, "&gt;")
-		.replace(/"/g, "&quot;");
-}
-
-function unesc(text: string): string {
-	return text
-		.replace(/&lt;/g, "<")
-		.replace(/&gt;/g, ">")
-		.replace(/&quot;/g, '"')
-		.replace(/&#39;/g, "'")
-		.replace(/&#x27;/g, "'")
-		.replace(/&amp;/g, "&");
-}
-
-function plain(html: string): string {
-	return unesc(html.replace(/<[^>]+>/g, ""))
-		.replace(/\s+/g, " ")
-		.trim();
-}
-
 function t(lang: Lang, key: string): string {
 	return TEXT[lang][key] ?? key;
 }
@@ -366,14 +360,6 @@ function listMd(dir: string): string[] {
 function h1Of(file: string): string {
 	const m = /^# (.+)$/m.exec(readFileSync(file, "utf8"));
 	return m ? m[1]!.trim() : file;
-}
-
-// The anchor GitHub makes from a heading: lower case, punctuation dropped, spaces to hyphens.
-function slug(text: string): string {
-	return text
-		.toLowerCase()
-		.replace(/[^\p{L}\p{N}\p{M} _-]/gu, "")
-		.replace(/ /g, "-");
 }
 
 function writePage(url: string, html: string): void {
@@ -733,21 +719,27 @@ function applyVariants(src: string, keep: string[]): string {
 	);
 }
 
+/** Makes the ids of the switches unique on a page that holds several figures (the print page). */
+let figureSeq = 0;
+
 function figureHtml(name: string, caption: string, ctx: Ctx): string {
 	ctx.fig += 1;
 	const n = ctx.fig;
-	// a screen of BiblioViva and a mock of another program alike: taken by `docs:shots` (ADR-046)
-	let src: string | null = null;
-	for (const lang of ctx.lang === "it" ? ["it"] : [ctx.lang, "it"]) {
-		if (existsSync(join(SHOTS, lang, `${name}.webp`))) {
-			src = `/shots/${lang}/${name}.webp`;
-			break;
-		}
-	}
+	figureSeq += 1;
+	// a screen of BiblioViva and a mock of another program alike: taken by `docs:shots` (ADR-046),
+	// one picture for each window it was taken in, in the page's language or else in Italian
+	const pictures = figurePictures(SHOTS, ctx.lang, name);
 	const label = esc(caption);
 	let frame: string;
-	if (src) {
-		frame = `<div class="fig-frames"><div class="fig-desktop"><img src="${src}" alt="${label}" loading="lazy"></div></div>`;
+	if (pictures.length > 0) {
+		frame = figureFrames(`fw${String(figureSeq)}`, caption, pictures, {
+			group: t(ctx.lang, "windowGroup"),
+			windows: {
+				computer: t(ctx.lang, "windowComputer"),
+				tablet: t(ctx.lang, "windowTablet"),
+				phone: t(ctx.lang, "windowPhone"),
+			},
+		});
 	} else {
 		missingFigures.add(name);
 		frame = `<div class="fig-frames"><div class="ph" role="img" data-pagefind-ignore aria-label="${label}"><div class="ph-chrome"><i></i><i></i><i></i></div><div class="ph-body"><span class="ph-lines"></span>[[icon:image]]<b>${esc(t(ctx.lang, "missingPicture"))}</b><code>${esc(name)}</code></div></div></div>`;
@@ -990,7 +982,7 @@ function markdown(src: string, ctx: Ctx): Rendered {
 
 	// Figures and screenshots.
 	html = html.replace(
-		/(?:<p>\s*)?<!--\s*(figure|screenshot):\s*([^|]*?)\s*(?:\|\s*([\s\S]*?))?\s*-->(?:\s*<\/p>)?/g,
+		new RegExp(`(?:<p>\\s*)?${FIGURE_MARKER_SOURCE}(?:\\s*</p>)?`, "g"),
 		(_m, _kind: string, name: string, caption: string | undefined) =>
 			figureHtml(name.trim(), (caption ?? name).trim(), ctx),
 	);
@@ -1513,26 +1505,160 @@ function buildRegular(page: Page): void {
 		);
 	}
 	if (page.section === "compliance" && page.kind === "index") {
-		extra += pdfBox(page.lang);
+		extra += pdfBox(page.lang, compliancePdf(page.lang), "pdfTitle", "pdfLead");
+	}
+	if (page.section === "manual" && page.kind === "index") {
+		extra += pdfBox(page.lang, manualPdf(page.lang), "manualPdfTitle", "manualPdfLead");
 	}
 	writePage(page.url, docsPage({ page, rendered, extra }));
 }
 
-/** The address of the section Norme as one PDF (printed by `bun run docs:pdf`, ADR-059). */
-function pdfUrl(lang: Lang): string {
-	return `/${lang}/compliance/${t(lang, "pdfName")}`;
+/** The section Norme as one PDF (printed by `bun run docs:pdf`, ADR-059), in the section's folder. */
+function compliancePdf(lang: Lang): string {
+	return `${lang}/compliance/${t(lang, "pdfName")}`;
 }
 
-function pdfBox(lang: Lang): string {
-	return `<div class="roles" style="margin-top:18px"><a class="role" href="${pdfUrl(lang)}" download><div class="ico">[[icon:file-down]]</div><b>${t(lang, "pdfTitle")}</b><span>${esc(t(lang, "pdfLead"))}</span><span class="go">${t(lang, "pdfGo")} [[icon:arrow-right]]</span></a></div>`;
+/** The manual as one PDF (printed by `bun run manual:pdf`, step 9.5), at the root of the site. */
+function manualPdf(lang: Lang): string {
+	return `manual.${lang}.pdf`;
+}
+
+function pdfBox(lang: Lang, pdf: string, title: string, lead: string): string {
+	return `<div class="roles" style="margin-top:18px"><a class="role" href="/${pdf}" download><div class="ico">[[icon:file-down]]</div><b>${t(lang, title)}</b><span>${esc(t(lang, lead))}</span><span class="go">${t(lang, "pdfGo")} [[icon:arrow-right]]</span></a></div>`;
+}
+
+interface PrintChapter {
+	page: Page;
+	id: string;
+	/** A line above the title (the kind of page and its group). */
+	kicker?: string;
+	/** The part of the contents the chapter is listed under, and a label inside it. */
+	part?: string;
+	group?: string;
+}
+
+/** A print page (`/<lang>/<section>/print/`): a PDF made of the pages of a section, one chapter each. */
+interface PrintSpec {
+	lang: Lang;
+	/** The pages, in the order of the file; each one is a chapter. */
+	chapters: PrintChapter[];
+	/** The id of the chapter a path of the site is, null for a path outside the file. */
+	chapterOf: (path: string) => string | null;
+	section: SectionKey;
+	title: string;
+	lead: string;
+	/** Text of the cover under the lead (already HTML). */
+	preface?: string;
+	/** The file `bun run docs:pdf` or `manual:pdf` writes, relative to `site/dist/`. */
+	pdf: string;
+	/** The address printed on the cover, below the release. */
+	address: string;
+	/** The chapters get numbers, and the contents come on their own page grouped in parts. */
+	numbered: boolean;
 }
 
 /**
- * The print page of the section Norme (`/<lang>/compliance/print/`), from which `bun run docs:pdf` prints
- * the PDF: a cover, then every page of the section in the order of its menu. Links between the pages of
- * the section become links inside the file (the ids of each page get its name in front), every other link
- * the full address on the documentation site.
+ * The print page of a section, from which the PDF is printed: a cover, the contents, then every page
+ * of the section as a chapter. Links between the pages of the file become links inside it (the ids
+ * of each chapter get its name in front), every other link the full address on the documentation
+ * site; the boxes of the problems are open and the pictures are numbered through the whole file.
  */
+function buildPrintPage(spec: PrintSpec): void {
+	const { lang, chapterOf } = spec;
+	let figure = 0;
+	const rewrite = (html: string, own: string): string =>
+		html
+			.replace(/ id="([^"]+)"/g, (_m, id: string) => ` id="${own}--${id}"`)
+			.replace(/ href="([^"]+)"/g, (_m, href: string) => {
+				if (href.startsWith("#")) {
+					return ` href="#${own}--${href.slice(1)}"`;
+				}
+				if (href.startsWith("/")) {
+					const [path, anchor] = href.split("#") as [string, string | undefined];
+					const chapter = chapterOf(path);
+					if (chapter) {
+						return ` href="#${chapter}${anchor ? `--${anchor}` : ""}"`;
+					}
+					return ` href="${ORIGIN}${href}"`;
+				}
+				return ` href="${href}"`;
+			})
+			.replace(/<details\b/g, "<details open")
+			.replace(/ loading="lazy"/g, "")
+			.replace(
+				/<figure class="fig" id="[^"]*">([\s\S]*?)<span class="fig-n">([^<]*?) \d+\.<\/span>/g,
+				(_m, frames: string, label: string) => {
+					figure += 1;
+					return `<figure class="fig" id="fig-${figure}">${frames}<span class="fig-n">${label} ${figure}.</span>`;
+				},
+			);
+	const chapters = spec.chapters
+		.map(({ page, id, kicker }) => {
+			const r = renderPage(page);
+			const body = rewrite(`${r.lead ? `<p class="lead">${r.lead}</p>` : ""}${r.body}`, id);
+			const above = kicker ? `<p class="kicker">${esc(kicker)}</p>` : "";
+			return `<section class="chapter" id="${id}">${above}<h1>${esc(page.title)}</h1>${body}</section>`;
+		})
+		.join("");
+	// The contents: a list of links, in parts when the chapters have them.
+	const item = (c: PrintChapter): string =>
+		`<li><a href="#${c.id}">${esc(c.page.title)}</a></li>`;
+	let contents = "";
+	if (spec.numbered) {
+		let part: string | undefined;
+		let group: string | undefined;
+		for (const c of spec.chapters) {
+			if (contents === "" || c.part !== part || c.group !== group) {
+				contents += contents === "" ? "" : "</ol>";
+				if (c.part !== part) {
+					contents += `<h2>${esc(c.part ?? "")}</h2>`;
+				}
+				if (c.group) {
+					contents += `<h3>${esc(c.group)}</h3>`;
+				}
+				contents += '<ol class="contents">';
+				part = c.part;
+				group = c.group;
+			}
+			contents += item(c);
+		}
+		contents += "</ol>";
+	} else {
+		contents = `<ol class="contents">${spec.chapters.map(item).join("")}</ol>`;
+	}
+	const meta = `<p class="meta">${t(lang, "release")} ${esc(VERSION)} · <a href="${ORIGIN}${spec.address}">${ORIGIN.replace("https://", "")}${spec.address}</a></p>`;
+	const head = `<img src="/assets/logo.webp" alt="" width="96" height="96"><p class="kicker">BiblioViva · ${t(lang, "docs")}</p><h1>${esc(spec.title)}</h1><p class="lead">${esc(spec.lead)}</p>`;
+	const cover = spec.numbered
+		? `<section class="cover">${head}${spec.preface ?? ""}${meta}</section><section class="toc-page"><h1>${t(lang, "contents")}</h1>${contents}</section>`
+		: `<section class="cover">${head}${contents}${meta}</section>`;
+	const html = `<!doctype html>
+<html lang="${lang}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="bv-pdf" content="${spec.pdf}">
+<title>BiblioViva — ${esc(spec.title)}</title>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/print.css">
+</head>
+<body class="print-doc${spec.numbered ? " print-numbered" : ""}" style="--sec:${COLORS[spec.section]}">
+<!--SPRITE-->
+${cover}
+<main class="content">${chapters}</main>
+</body>
+</html>
+`;
+	const url = `/${lang}/${SECTION_PATH[spec.section]}/print/`;
+	if (urlSet.has(url)) {
+		warn(`${url}: a page of the section has the address of its print page`);
+	}
+	writePage(url, withIcons(html));
+}
+
+/** The print page of the section Norme: the pages in the order of its menu, each its own name. */
 function buildCompliancePrint(lang: Lang): void {
 	const order = navGroups(lang, "compliance")[0]?.items.map((i) => i.url) ?? [];
 	const list = order.map((u) => pageByUrl(u)).filter((p): p is Page => !!p);
@@ -1547,54 +1673,66 @@ function buildCompliancePrint(lang: Lang): void {
 		const name = url.slice(base.length).replace(/\/$/, "");
 		return name === "" ? "readme" : name;
 	};
-	const chapters = list
-		.map((page) => {
-			const own = chapterOf(page.url)!;
-			const r = renderPage(page);
-			const body = `${r.lead ? `<p class="lead">${r.lead}</p>` : ""}${r.body}`
-				.replace(/ id="([^"]+)"/g, (_m, id: string) => ` id="${own}--${id}"`)
-				.replace(/ href="([^"]+)"/g, (_m, href: string) => {
-					if (href.startsWith("#")) {
-						return ` href="#${own}--${href.slice(1)}"`;
-					}
-					if (href.startsWith("/")) {
-						const [path, anchor] = href.split("#") as [string, string | undefined];
-						const chapter = chapterOf(path);
-						if (chapter) {
-							return ` href="#${chapter}${anchor ? `--${anchor}` : ""}"`;
-						}
-						return ` href="${ORIGIN}${href}"`;
-					}
-					return ` href="${href}"`;
-				});
-			return `<section class="chapter" id="${own}"><h1>${esc(page.title)}</h1>${body}</section>`;
-		})
-		.join("");
-	const contents = list
-		.map((p) => `<li><a href="#${chapterOf(p.url)!}">${esc(p.title)}</a></li>`)
-		.join("");
-	const title = t(lang, "compliance");
-	const html = `<!doctype html>
-<html lang="${lang}">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<meta name="bv-pdf" content="${t(lang, "pdfName")}">
-<title>BiblioViva — ${esc(title)}</title>
-<link rel="stylesheet" href="/assets/fonts/fonts.css">
-<link rel="stylesheet" href="/assets/style.css">
-<link rel="stylesheet" href="/assets/site.css">
-<link rel="stylesheet" href="/assets/print.css">
-</head>
-<body class="print-doc" style="--sec:${COLORS.compliance}">
-<!--SPRITE-->
-<section class="cover"><img src="/assets/logo.webp" alt="" width="96" height="96"><p class="kicker">BiblioViva · ${t(lang, "docs")}</p><h1>${esc(title)}</h1><p class="lead">${esc(t(lang, "printLead"))}</p><ol class="contents">${contents}</ol><p class="meta">${t(lang, "release")} ${esc(VERSION)} · <a href="${ORIGIN}${base}">${ORIGIN.replace("https://", "")}${base}</a></p></section>
-<main class="content">${chapters}</main>
-</body>
-</html>
-`;
-	writePage(`${base}print/`, withIcons(html));
+	buildPrintPage({
+		lang,
+		chapters: list.map((page) => ({ page, id: chapterOf(page.url)! })),
+		chapterOf,
+		section: "compliance",
+		title: t(lang, "compliance"),
+		lead: t(lang, "printLead"),
+		pdf: compliancePdf(lang),
+		address: base,
+		numbered: false,
+	});
+}
+
+/**
+ * The print page of the manual: the guides and the screens of `docs/<lang>/manual/` in the order of its
+ * README (the guides by their groups, then the screens), numbered. The first paragraphs of the README
+ * are the preface of the cover. Amministrazione is its own section for its own readers and is not part
+ * of the file.
+ */
+function buildManualPrint(lang: Lang): void {
+	const index = pages.find(
+		(p) => p.lang === lang && p.section === "manual" && p.kind === "index",
+	);
+	const chapters: PrintChapter[] = [];
+	for (const group of navGroups(lang, "manual").slice(1)) {
+		for (const it of group.items) {
+			const page = pageByUrl(it.url);
+			if (!page || page.kind === "index") {
+				continue;
+			}
+			chapters.push({
+				page,
+				id: page.url.slice(`/${lang}/`.length).replace(/\/$/, "").replaceAll("/", "-"),
+				kicker: [t(lang, page.kind === "guide" ? "guideKicker" : "screenKicker"), it.sub]
+					.filter(Boolean)
+					.join(" · "),
+				part: group.title,
+				group: it.sub,
+			});
+		}
+	}
+	if (!index || chapters.length === 0) {
+		return;
+	}
+	const byUrl = new Map(chapters.map((c) => [c.page.url, c.id]));
+	// What the README says before its first list is the preface of the cover.
+	const r = renderPage(index);
+	const intro = (r.body.split(/<h2\b/)[0] ?? "").trim();
+	buildPrintPage({
+		lang,
+		chapters,
+		chapterOf: (path) => byUrl.get(path) ?? null,
+		section: "manual",
+		title: index.title,
+		lead: plain(r.lead),
+		preface: intro ? `<div class="preface">${intro}</div>` : "",
+		pdf: manualPdf(lang),
+		address: `/${lang}/manual/`,
+		numbered: true,
+	});
 }
 
 function buildStep(page: Page): void {
@@ -1797,6 +1935,7 @@ async function main(): Promise<void> {
 	}
 	for (const lang of LANGS) {
 		buildCompliancePrint(lang);
+		buildManualPrint(lang);
 		buildFeatures(lang);
 		buildHome(lang);
 		buildAz(lang);
@@ -1825,4 +1964,23 @@ async function main(): Promise<void> {
 	}
 }
 
-await main();
+/** What `site-check.ts` reads: the pages the build finds and renders, and its own warnings. */
+export {
+	DOCS,
+	discover,
+	featuresSrc,
+	LANGS,
+	navGroups,
+	pages,
+	renderPage,
+	ROOT,
+	SECTIONS,
+	warnings,
+	type Lang,
+	type Page,
+	type SectionKey,
+};
+
+if (import.meta.main) {
+	await main();
+}

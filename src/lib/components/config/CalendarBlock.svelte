@@ -210,8 +210,10 @@
 										aria-label="{longDate(iso)}: {describe(reason)}"
 										title={describe(reason)}
 										onclick={() => toggle(iso)}
-										data-day={iso}>{Number(iso.slice(8))}</button
+										data-day={iso}
 									>
+										{Number(iso.slice(8))}
+									</button>
 								{/if}
 							</td>
 						{/each}
@@ -239,9 +241,13 @@
 						aria-pressed={weekly.includes(d)}
 						onclick={() => toggleWeekly(d)}
 						data-testid="weekly-{d}"
-						><span class="sm:hidden" aria-hidden="true">{dayName(d, "short")}</span
-						><span class="sr-only sm:not-sr-only">{dayName(d, "long")}</span></button
 					>
+						<span class="sm:hidden" aria-hidden="true">{dayName(d, "short")}</span><span
+							class="sr-only sm:not-sr-only"
+						>
+							{dayName(d, "long")}
+						</span>
+					</button>
 				{/each}
 			</SegmentedGroup>
 			<Hint tone="faint">{i18n.t("config.blocks.calendar.weeklyHint")}</Hint>
@@ -270,10 +276,11 @@
 				disabled={autoHolidays}
 				class="h-auto whitespace-normal max-sm:w-full"
 				data-testid="calendar-add-national"
-				>{i18n.t("config.blocks.calendar.addNational", {
-					year: `${year}/${year + 1}`,
-				})}</Button
 			>
+				{i18n.t("config.blocks.calendar.addNational", {
+					year: `${year}/${year + 1}`,
+				})}
+			</Button>
 		</Row>
 		<Hint tone="faint">
 			{autoHolidays
@@ -331,9 +338,9 @@
 										data-testid="range-to"
 									/>
 									{#if r.from && r.to && r.from > r.to}
-										<Hint tone="error"
-											>{i18n.t("config.blocks.calendar.badRange")}</Hint
-										>
+										<Hint tone="error">
+											{i18n.t("config.blocks.calendar.badRange")}
+										</Hint>
 									{/if}
 								</td>
 								<td>
@@ -363,9 +370,9 @@
 				</Table>
 			</div>
 		{/if}
-		<Button icon={AddIcon} onclick={addRange} data-testid="range-add"
-			>{i18n.t("config.blocks.calendar.addRange")}</Button
-		>
+		<Button icon={AddIcon} onclick={addRange} data-testid="range-add">
+			{i18n.t("config.blocks.calendar.addRange")}
+		</Button>
 		{#if editor.problem}
 			<Alert>{editor.problem}</Alert>
 		{/if}

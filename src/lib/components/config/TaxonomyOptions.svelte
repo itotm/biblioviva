@@ -77,9 +77,9 @@
 
 <Card gap="4" data-testid="taxonomy-options">
 	<div class="space-y-1">
-		<Checkbox bind:checked={editor.fictionByClass} data-testid="option-fiction-by-class"
-			>{i18n.t("config.taxonomy.options.fictionByClass")}</Checkbox
-		>
+		<Checkbox bind:checked={editor.fictionByClass} data-testid="option-fiction-by-class">
+			{i18n.t("config.taxonomy.options.fictionByClass")}
+		</Checkbox>
 		<Hint tone="faint">{i18n.t("config.taxonomy.options.fictionByClassHint")}</Hint>
 	</div>
 	{#if editor.fictionByClass}
@@ -131,23 +131,25 @@
 				variant="tonal"
 				icon={AddIcon}
 				onclick={() => editor.addLevel()}
-				data-testid="reading-level-add">{i18n.t("config.taxonomy.levels.add")}</Button
+				data-testid="reading-level-add"
 			>
+				{i18n.t("config.taxonomy.levels.add")}
+			</Button>
 		</section>
 	{/if}
 	<div class="space-y-1">
-		<Checkbox bind:checked={editor.classPerItem} data-testid="option-class-per-item"
-			>{i18n.t("config.taxonomy.options.classPerItem")}</Checkbox
-		>
+		<Checkbox bind:checked={editor.classPerItem} data-testid="option-class-per-item">
+			{i18n.t("config.taxonomy.options.classPerItem")}
+		</Checkbox>
 		<Hint tone="faint">{i18n.t("config.taxonomy.options.classPerItemHint")}</Hint>
 		{#if editor.classPerItem !== savedClassPerItem}
-			<Hint tone="primary" data-testid="option-class-per-item-note"
-				>{i18n.t(
+			<Hint tone="primary" data-testid="option-class-per-item-note">
+				{i18n.t(
 					editor.classPerItem
 						? "config.taxonomy.options.toCopies"
 						: "config.taxonomy.options.toRecords",
-				)}</Hint
-			>
+				)}
+			</Hint>
 		{/if}
 	</div>
 	<h3 class="font-semibold">{i18n.t("config.taxonomy.options.patterns")}</h3>
@@ -174,9 +176,9 @@
 		ontoggle={(e) => (handWritten = e.currentTarget.open)}
 		data-testid="call-number-patterns"
 	>
-		<summary class="cursor-pointer font-semibold"
-			>{i18n.t("config.taxonomy.options.handWritten")}</summary
-		>
+		<summary class="cursor-pointer font-semibold">
+			{i18n.t("config.taxonomy.options.handWritten")}
+		</summary>
 		<Hint tone="faint">
 			{i18n.t("config.taxonomy.options.placeholdersHint", {
 				// escaped: the message format would read `{{genre}}` as a placeholder of its own
@@ -195,17 +197,17 @@
 				<Input mono bind:value={editor.callNumber[key]} data-testid="pattern-{key}" />
 				{#snippet after()}
 					{#if unknown.length > 0}
-						<Hint tone="error"
-							>{i18n.t("config.taxonomy.options.unknownPlaceholders", {
+						<Hint tone="error">
+							{i18n.t("config.taxonomy.options.unknownPlaceholders", {
 								names: unknown.join(", "),
-							})}</Hint
-						>
+							})}
+						</Hint>
 					{/if}
-					<Hint tone="faint" data-testid="pattern-example-{key}"
-						>{i18n.t("config.taxonomy.options.example", {
+					<Hint tone="faint" data-testid="pattern-example-{key}">
+						{i18n.t("config.taxonomy.options.example", {
 							example: example(key),
-						})}</Hint
-					>
+						})}
+					</Hint>
 				{/snippet}
 			</Field>
 		{/each}
@@ -213,9 +215,9 @@
 			<Field label={i18n.t("config.taxonomy.options.textProposal")} name="text-proposal">
 				<Select bind:value={editor.callNumber.text} data-testid="pattern-text-proposal">
 					{#each CALL_TEXT_PROPOSALS as p (p)}
-						<option value={p}
-							>{i18n.t(`config.taxonomy.options.textProposals.${p}`)}</option
-						>
+						<option value={p}>
+							{i18n.t(`config.taxonomy.options.textProposals.${p}`)}
+						</option>
 					{/each}
 				</Select>
 			</Field>

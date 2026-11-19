@@ -220,9 +220,9 @@
 		</IconTile>
 		<span class="min-w-0">
 			<span class="title-lg block truncate">{c.title}</span>
-			<Hint as="span" class="block"
-				>{i18n.t("patrons.census.progress", { done: c.done, total: c.total })}</Hint
-			>
+			<Hint as="span" class="block">
+				{i18n.t("patrons.census.progress", { done: c.done, total: c.total })}
+			</Hint>
 		</span>
 	</button>
 {/snippet}
@@ -301,17 +301,13 @@
 	{:else}
 		<!-- the class in the page, not as a subtitle that moves the page (9.13, round 19) -->
 		<Hint tone="primary">
-			<strong data-testid="census-class"
-				>{listKey !== undefined
-					? (listTile?.name ?? "")
-					: group
-						? groupLabel(group)
-						: ""}</strong
-			>
+			<strong data-testid="census-class">
+				{listKey !== undefined ? (listTile?.name ?? "") : group ? groupLabel(group) : ""}
+			</strong>
 			·
-			<span data-testid="census-progress"
-				>{i18n.t("patrons.census.progress", { done: withPhoto, total: list.length })}</span
-			>
+			<span data-testid="census-progress">
+				{i18n.t("patrons.census.progress", { done: withPhoto, total: list.length })}
+			</span>
 		</Hint>
 
 		{#if current}
@@ -324,13 +320,17 @@
 						<Button
 							size="sm"
 							onclick={() => (currentId = nextWithoutPhoto(currentId))}
-							data-testid="census-skip">{i18n.t("patrons.census.skip")}</Button
+							data-testid="census-skip"
 						>
+							{i18n.t("patrons.census.skip")}
+						</Button>
 						<Button
 							size="sm"
 							onclick={() => (currentId = null)}
-							data-testid="census-done">{i18n.t("patrons.census.done")}</Button
+							data-testid="census-done"
 						>
+							{i18n.t("patrons.census.done")}
+						</Button>
 					</Row>
 				</Row>
 				<PatronPhotoPanel
@@ -368,8 +368,9 @@
 								class="h-16 w-12 shrink-0 rounded-base object-cover ring-1 ring-surface-200"
 							/>
 							<span class="min-w-0 grow">
-								<span class="block truncate font-semibold">{patronSortName(p)}</span
-								>
+								<span class="block truncate font-semibold">
+									{patronSortName(p)}
+								</span>
 							</span>
 							<CameraIcon
 								size={ICON_SIZE.md}
@@ -395,8 +396,10 @@
 					<Button
 						icon={AddIcon}
 						onclick={() => (quickAdd = true)}
-						data-testid="census-quick-add">{i18n.t("patrons.census.quickAdd")}</Button
+						data-testid="census-quick-add"
 					>
+						{i18n.t("patrons.census.quickAdd")}
+					</Button>
 				{:else}
 					<h2 class="h4">{i18n.t("patrons.census.quickAdd")}</h2>
 					<Hint>
@@ -411,33 +414,35 @@
 							void createAndShoot();
 						}}
 					>
-						<Field label={i18n.t("patrons.fields.lastName")}
-							><Input
+						<Field label={i18n.t("patrons.fields.lastName")}>
+							<Input
 								type="text"
 								bind:value={quickLast}
 								required
 								autocomplete="off"
 								data-testid="quick-last"
-							/></Field
-						>
-						<Field label={i18n.t("patrons.fields.firstName")}
-							><Input
+							/>
+						</Field>
+						<Field label={i18n.t("patrons.fields.firstName")}>
+							<Input
 								type="text"
 								bind:value={quickFirst}
 								required
 								autocomplete="off"
 								data-testid="quick-first"
-							/></Field
-						>
+							/>
+						</Field>
 						{#if group && group.levels.length > 1}
-							<Field label={i18n.t("patrons.fields.levelCode")}
-								><Select bind:value={quickLevel} required data-testid="quick-level">
+							<Field label={i18n.t("patrons.fields.levelCode")}>
+								<Select bind:value={quickLevel} required data-testid="quick-level">
 									<option value=""></option>
 									{#each groupsQuery.current?.options.levels.filter( (l) => group.levels.includes(l.code) ) ?? [] as l (l.code)}<option
-											value={l.code}>{l.name}</option
-										>{/each}
-								</Select></Field
-							>
+											value={l.code}
+										>
+											{l.name}
+										</option>{/each}
+								</Select>
+							</Field>
 						{/if}
 						{#each quickErrors as message (message)}
 							<p class="text-sm text-error-700 sm:col-span-2" role="alert">
@@ -445,12 +450,12 @@
 							</p>
 						{/each}
 						<Row wrap={false} class="sm:col-span-2">
-							<Button variant="primary" type="submit" data-testid="quick-create"
-								>{i18n.t("patrons.census.create")}</Button
-							>
-							<Button onclick={() => (quickAdd = false)}
-								>{i18n.t("common.actions.cancel")}</Button
-							>
+							<Button variant="primary" type="submit" data-testid="quick-create">
+								{i18n.t("patrons.census.create")}
+							</Button>
+							<Button onclick={() => (quickAdd = false)}>
+								{i18n.t("common.actions.cancel")}
+							</Button>
 						</Row>
 					</Grid>
 				{/if}

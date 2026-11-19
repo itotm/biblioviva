@@ -98,10 +98,11 @@
 				icon={AddIcon}
 				onclick={() => (kind === "fiction" ? ed.addGenre() : ed.addClass())}
 				data-testid="taxonomy-add-{kind}"
-				>{i18n.t(
-					kind === "fiction" ? "config.taxonomy.addGenre" : "config.taxonomy.addClass",
-				)}</Button
 			>
+				{i18n.t(
+					kind === "fiction" ? "config.taxonomy.addGenre" : "config.taxonomy.addClass",
+				)}
+			</Button>
 			<Hint tone="faint">{i18n.t("config.taxonomy.dragHint")}</Hint>
 		</Card>
 		{#if wide.current}
@@ -132,23 +133,27 @@
 	>
 		{#snippet actions()}
 			{#if editor?.dirty}
-				<Badge tone="warning" data-testid="taxonomy-dirty"
-					>{i18n.t("config.taxonomy.unsaved")}</Badge
-				>
+				<Badge tone="warning" data-testid="taxonomy-dirty">
+					{i18n.t("config.taxonomy.unsaved")}
+				</Badge>
 			{/if}
 			<Button
 				icon={UndoIcon}
 				onclick={discard}
 				disabled={!editor?.dirty}
-				data-testid="taxonomy-discard">{i18n.t("config.taxonomy.discard")}</Button
+				data-testid="taxonomy-discard"
 			>
+				{i18n.t("config.taxonomy.discard")}
+			</Button>
 			<Button
 				variant="primary"
 				icon={SaveIcon}
 				onclick={() => (saveOpen = true)}
 				disabled={!editor?.dirty || editor.invalid}
-				data-testid="taxonomy-save">{i18n.t("common.actions.save")}</Button
+				data-testid="taxonomy-save"
 			>
+				{i18n.t("common.actions.save")}
+			</Button>
 		{/snippet}
 	</PageHeader>
 
@@ -158,13 +163,13 @@
 		<Loading />
 	{:else}
 		{@const data = source.current}
-		<Hint data-testid="taxonomy-file"
-			>{i18n.t("config.taxonomy.intro", { file: data.file })}</Hint
-		>
+		<Hint data-testid="taxonomy-file">
+			{i18n.t("config.taxonomy.intro", { file: data.file })}
+		</Hint>
 		{#if editor.dirty && editor.invalid}
-			<Alert tone="warning" data-testid="taxonomy-invalid"
-				>{i18n.t("config.taxonomy.invalid")}</Alert
-			>
+			<Alert tone="warning" data-testid="taxonomy-invalid">
+				{i18n.t("config.taxonomy.invalid")}
+			</Alert>
 		{/if}
 		{#if data.orphans.length > 0}
 			<Alert tone="warning" data-testid="taxonomy-orphans">
@@ -179,20 +184,18 @@
 			data-testid="taxonomy-tabs"
 		>
 			<Tabs.List>
-				<Tabs.Trigger value="fiction" data-testid="taxonomy-tab-fiction"
-					>{i18n.t("config.taxonomy.tabs.fiction")} ({count("fiction")})</Tabs.Trigger
-				>
-				<Tabs.Trigger value="nonfiction" data-testid="taxonomy-tab-nonfiction"
-					>{i18n.t("config.taxonomy.tabs.nonfiction")} ({count(
-						"nonfiction",
-					)})</Tabs.Trigger
-				>
-				<Tabs.Trigger value="dewey" data-testid="taxonomy-tab-dewey"
-					>{i18n.t("config.taxonomy.tabs.dewey")} ({editor.deweyMap.length})</Tabs.Trigger
-				>
-				<Tabs.Trigger value="options" data-testid="taxonomy-tab-options"
-					>{i18n.t("config.taxonomy.tabs.options")}</Tabs.Trigger
-				>
+				<Tabs.Trigger value="fiction" data-testid="taxonomy-tab-fiction">
+					{i18n.t("config.taxonomy.tabs.fiction")} ({count("fiction")})
+				</Tabs.Trigger>
+				<Tabs.Trigger value="nonfiction" data-testid="taxonomy-tab-nonfiction">
+					{i18n.t("config.taxonomy.tabs.nonfiction")} ({count("nonfiction")})
+				</Tabs.Trigger>
+				<Tabs.Trigger value="dewey" data-testid="taxonomy-tab-dewey">
+					{i18n.t("config.taxonomy.tabs.dewey")} ({editor.deweyMap.length})
+				</Tabs.Trigger>
+				<Tabs.Trigger value="options" data-testid="taxonomy-tab-options">
+					{i18n.t("config.taxonomy.tabs.options")}
+				</Tabs.Trigger>
 			</Tabs.List>
 			<Tabs.Content value="fiction" class="py-4">
 				{@render tree("fiction", editor, data)}

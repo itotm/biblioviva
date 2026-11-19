@@ -64,7 +64,10 @@ Selezionando una o più righe con la casella a inizio riga, al posto dei filtri 
 pulsante **Rinnova selezionati**. Il pulsante rinnova i prestiti scelti, uno dopo l'altro, e sotto la barra compare il
 riepilogo «Rinnovati `<n>` prestiti su `<totale>`.», seguito, per ogni rinnovo rifiutato, dal motivo, con i pulsanti
 **Restituisci** e, per l'amministratore, **Forza (solo admin)**. I motivi sono spiegati in
-[Rinnovi rifiutati](checkout.md#rinnovi-rifiutati) di Prestiti.
+[Rinnovi rifiutati](checkout.md#rinnovi-rifiutati) di Prestiti. Se tra i prestiti scelti ce ne sono con rinnovo
+anticipato, prima di rinnovare qualsiasi libro compare la finestra **Rinnovo anticipato**, che li elenca:
+**Rinnova comunque** rinnova tutti i prestiti scelti, **Annulla** non ne rinnova nessuno
+(vedere [Rinnovo anticipato](checkout.md#rinnovo-anticipato) di Prestiti).
 
 ## Esportazione
 

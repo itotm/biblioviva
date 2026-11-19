@@ -88,9 +88,9 @@
 					data-testid="min-days"
 				/>
 			</Field>
-			<Checkbox bind:checked={pageBreak} data-testid="page-break"
-				>{i18n.t("circulation.overdues.pageBreak")}</Checkbox
-			>
+			<Checkbox bind:checked={pageBreak} data-testid="page-break">
+				{i18n.t("circulation.overdues.pageBreak")}
+			</Checkbox>
 		</Row>
 		<Hint>{i18n.t("circulation.overdues.minDaysHint")}</Hint>
 		<Row>
@@ -101,14 +101,18 @@
 				disabled={chosen.length === 0}
 				target="_blank"
 				rel="noopener"
-				data-testid="print-notices">{i18n.t("circulation.overdues.print")}</Button
+				data-testid="print-notices"
 			>
+				{i18n.t("circulation.overdues.print")}
+			</Button>
 			<Button
 				icon={DoneIcon}
 				onclick={() => (confirmMark = true)}
 				disabled={chosenLoans.length === 0}
-				data-testid="mark-notices">{i18n.t("circulation.overdues.markPrinted")}</Button
+				data-testid="mark-notices"
 			>
+				{i18n.t("circulation.overdues.markPrinted")}
+			</Button>
 		</Row>
 	</Card>
 
@@ -131,28 +135,29 @@
 				<Card gap="3" as="section" data-testid="overdue-group" data-group={g.key}>
 					<Row justify="between" align="center">
 						<h2 class="text-lg font-bold">{g.label}</h2>
-						<Badge tone="error" filled
-							>{i18n.t("circulation.overdues.groupCount", {
+						<Badge tone="error" filled>
+							{i18n.t("circulation.overdues.groupCount", {
 								count: g.rows.length,
-							})}</Badge
-						>
+							})}
+						</Badge>
 					</Row>
 					<Checkbox
 						checked={!excluded.includes(g.key)}
 						onchange={(e) => toggle(g.key, e.currentTarget.checked)}
 						data-testid="group-{g.key}"
-						>{i18n.t("circulation.overdues.selected")}</Checkbox
 					>
+						{i18n.t("circulation.overdues.selected")}
+					</Checkbox>
 					<DividedList>
 						{#each g.rows as r (r.loanId)}
 							<Row as="li" justify="between" align="center" class="py-2">
-								<TitleHint title={patronFullName(r)} class="min-w-0"
-									>{r.title}{r.lastNoticeAt
+								<TitleHint title={patronFullName(r)} class="min-w-0">
+									{r.title}{r.lastNoticeAt
 										? ` · ${i18n.t("circulation.overdues.lastNotice", {
 												date: fmt.dateTime(r.lastNoticeAt),
 											})}`
-										: ""}</TitleHint
-								>
+										: ""}
+								</TitleHint>
 								<StatusBadge
 									size="sm"
 									status={LOAN_STATUS.overdue}

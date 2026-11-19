@@ -29,6 +29,10 @@
 			"imports": {
 				"title": "Imports",
 				"description": "Catalogue, patrons, open loans and photos: from CSV files or from the Koha extraction."
+			},
+			"setup": {
+				"title": "Installation check",
+				"description": "Address, passwords, backups, printers and scanner: what is in order and what is not."
 			}
 		}
 	},
@@ -676,6 +680,142 @@
 			"title": "BiblioViva · calibration of two-sided printing",
 			"cut": "Cut along the black line, then turn the card over.",
 			"read": "Read on the two rulers where the cut edge falls."
+		}
+	},
+	"checklist": {
+		"title": "Installation check",
+		"subtitle": "What BiblioViva finds out by itself, and the tests to do with the printer, the camera and the scanner.",
+		"recheck": "Check again",
+		"summary": {
+			"ok": "All in order: no check reports a problem. The tests with the printer, the camera and the scanner remain.",
+			"warning": "{{warnings:plural; one:One check to look at; other:{{warnings}} checks to look at;}}.",
+			"error": "{{errors:plural; one:One check to fix; other:{{errors}} checks to fix;}}."
+		},
+		"checks": {
+			"title": "Checks",
+			"intro": "BiblioViva checks these items by itself. For each item that is not in order the page of Administration where it is fixed and the page of the guide that explains it are linked."
+		},
+		"items": {
+			"config": "Configuration file",
+			"address": "Address and HTTPS",
+			"profile": "Computer and profile",
+			"accounts": "Account passwords",
+			"backup": "Backups"
+		},
+		"fix": {
+			"config": "Configuration",
+			"history": "Configuration history",
+			"performance": "Performance",
+			"users": "Staff accounts",
+			"backups": "Backups",
+			"backupSettings": "Backup schedule",
+			"guide": "Guide",
+			"guideOf": "Guide: {{item}}"
+		},
+		"findings": {
+			"config": {
+				"valid": "The configuration file is valid.",
+				"example": "The file config.json is missing: BiblioViva uses the example configuration, because the guided setup was not completed.",
+				"invalid": "The file on disk is not valid ({{count:plural; one:one error; other:{{count}} errors;}}): the server still uses the last valid configuration, but would not start at the next restart.",
+				"warnings": "The configuration has {{count:plural; one:one warning; other:{{count}} warnings;}}."
+			},
+			"address": {
+				"https": "The page is open over HTTPS on {{host}}: the camera and the installation as an app work.",
+				"local": "The page is open over plain HTTP on {{host}}, that is on BiblioViva's own computer: that is fine here. The HTTPS check concerns the address the other devices use: open this page from one of them.",
+				"lan": "The page is open over plain HTTP on {{host}}: this is the basic mode on the local network, without Tailscale. Everything works with the barcode scanner, but the camera and the installation as an app do not.",
+				"plainHttp": "The page is open over plain HTTP on {{host}} and BiblioViva is not in the basic local-network mode: the address is not Tailscale's secure one (https://…ts.net). Over plain HTTP the camera does not work and passwords travel in the clear on the network."
+			},
+			"profile": {
+				"ok": "Profile in use: {{profile}}. The computer has {{memory}} GB of memory and {{cpus}} processors.",
+				"weaker": "The profile needs at least {{needed}} GB of memory and the computer has {{memory}}: choose a lighter profile.",
+				"stronger": "The computer can do more: with {{memory}} GB of memory, {{cpus}} processors and this disk the profile \"{{suggested}}\" would make better use of it.",
+				"diskSd": "The data is on an SD card: the right profile is \"{{sdProfile}}\", even with plenty of memory.",
+				"diskHdd": "The data is on a spinning disk: the right profile is \"{{hddProfile}}\".",
+				"diskSsd": "The data is on an SSD.",
+				"diskUnknown": "The kind of disk cannot be seen from here: on an SD card the right profile is \"{{sdProfile}}\", on a spinning disk \"{{hddProfile}}\"."
+			},
+			"accounts": {
+				"ok": "No password in clear in the file and none equal to the example one ({{count:plural; one:one active account; other:{{count}} active accounts;}}).",
+				"example": "{{count:plural; one:One account still has; other:{{count}} accounts still have;}} a password everyone knows, the example one or the demo data's: {{names}}. Anyone who knows it can log in.",
+				"plain": "{{count:plural; one:One account has; other:{{count}} accounts have;}} the password written in clear in config.json: {{names}}. It works, but it should be replaced."
+			},
+			"backup": {
+				"demo": "The public demo keeps no backups.",
+				"folder": "The backups folder cannot be used, so backups are not written.",
+				"scheduleInvalid": "The backup schedule \"{{cron}}\" is not valid: the automatic backups do not run.",
+				"notScheduled": "The automatic backups are not running (schedule \"{{cron}}\"): restart BiblioViva.",
+				"schedule": "Automatic backup on the schedule \"{{cron}}\"; the next one runs {{nextAt}}.",
+				"none": "No backup yet: the first one runs at the scheduled time, or at once with the \"Run backup now\" button.",
+				"late": "The last backup is {{name}}, of {{lastAt}}: the one of the last scheduled time is missing. A computer that was off at that moment makes it at start, if the catch-up setting is on.",
+				"stale": "The last backup is {{days}} days old ({{lastAt}}): make a backup now and find out why the automatic ones do not run.",
+				"last": "Last backup: {{name}}, {{lastAt}}.",
+				"offsiteNone": "The off-site copy is on, but has not written its status yet: the \"offsite\" service may not be started.",
+				"offsiteError": "The last off-site copy ended with the result \"{{status}}\".",
+				"offsiteStale": "The last off-site copy is of {{lastAt}}: it has stopped for more than two days.",
+				"offsiteOk": "Last successful off-site copy: {{lastAt}}."
+			}
+		},
+		"tests": {
+			"title": "Tests",
+			"intro": "These tests are done by hand: BiblioViva cannot know how the printer prints or how the scanner types.",
+			"cards": {
+				"title": "Card test page",
+				"description": "Empty units with cut and fold marks and a 10 cm ruler."
+			},
+			"labels": {
+				"title": "Label sample sheet",
+				"description": "Labels with the barcodes of made-up copies: they also serve to try the scanner."
+			},
+			"labelCalibration": {
+				"title": "Label calibration page",
+				"description": "The outlines of the adhesive label sheet, to lay over a real sheet."
+			},
+			"duplex": {
+				"title": "Two-sided calibration sheet",
+				"description": "For cards printed on both sides: it tells how far the back is shifted."
+			},
+			"printers": {
+				"title": "Printer",
+				"hint": "Print at 100 %, without \"Fit to page\": the 10 cm ruler must measure 100 mm.",
+				"print": "Print"
+			},
+			"camera": {
+				"title": "Camera",
+				"description": "The button opens the Photo census, which uses the camera: the browser asks for permission the first time.",
+				"descriptionNoPhotos": "Patron photos are switched off: the button opens New book, where the camera reads the ISBN barcode.",
+				"open": "Try the camera",
+				"unavailable": "On this address the camera is not available: a secure page (HTTPS) is needed."
+			},
+			"scanner": {
+				"title": "Barcode scanner",
+				"description": "Click in the field and read a code with the scanner, for example that of a label of the sample sheet. Below appear what the scanner typed and how BiblioViva understands it.",
+				"label": "Code read by the scanner",
+				"placeholder": "Read a code with the scanner",
+				"clear": "Clear",
+				"waiting": "No reading yet.",
+				"typed": "The scanner typed",
+				"code": "BiblioViva reads it as",
+				"kind": "Type",
+				"enter": "Enter key",
+				"enterYes": "Received after the code.",
+				"enterNo": "Not received: switch on the Enter suffix in the scanner (the scanner's manual explains how).",
+				"enterWaiting": "Not received yet.",
+				"kinds": {
+					"item": "Copy",
+					"legacy_item": "Copy (code of a previous program)",
+					"card": "Card",
+					"isbn": "ISBN",
+					"ambiguous": "Number that may be a copy or a card",
+					"invalid": "Not recognised"
+				},
+				"verdict": {
+					"ok": "Correct reading: the keyboard and the scanner agree.",
+					"pair": "\"{{typed}}\" in place of \"{{meant}}\"",
+					"mishap": "The scanner typed {{pairs}}: the keyboard of the computers declared to BiblioViva is \"{{layout}}\" and does not match the scanner's. BiblioViva corrects the reading, but the two should match: change it in Configuration, Barcodes, \"Computer keyboard\" field.",
+					"mishapOther": "The scanner typed the code differently from how it is printed: the keyboard of the computers declared to BiblioViva is \"{{layout}}\" and does not match the scanner's. BiblioViva corrects it, but the two should match: change it in Configuration, Barcodes, \"Computer keyboard\" field.",
+					"strange": "The code has characters a barcode does not have ({{chars}}): the computer's keyboard does not match the scanner's, or the scanner reads a type of code BiblioViva does not know."
+				}
+			}
 		}
 	}
 }

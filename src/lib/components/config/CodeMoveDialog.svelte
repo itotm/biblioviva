@@ -64,23 +64,25 @@
 			<Select bind:value={choices[r.code]} data-testid="move-{r.code}">
 				<option value="">{i18n.t("config.blocks.move.choose")}</option>
 				{#each targets as t (t.code)}
-					<option value={t.code}
-						>{t.code === t.label ? t.code : `${t.code} · ${t.label}`}</option
-					>
+					<option value={t.code}>
+						{t.code === t.label ? t.code : `${t.code} · ${t.label}`}
+					</option>
 				{/each}
 			</Select>
 		</Field>
 	{/each}
 	<Row justify="end" as="footer">
-		<Button onclick={() => (open = false)} disabled={pending}
-			>{i18n.t("common.actions.cancel")}</Button
-		>
+		<Button onclick={() => (open = false)} disabled={pending}>
+			{i18n.t("common.actions.cancel")}
+		</Button>
 		<Button
 			variant="primary"
 			icon={SaveIcon}
 			onclick={() => onconfirm({ ...choices })}
 			disabled={!complete || pending}
-			data-testid="move-confirm">{i18n.t("common.actions.save")}</Button
+			data-testid="move-confirm"
 		>
+			{i18n.t("common.actions.save")}
+		</Button>
 	</Row>
 </Modal>

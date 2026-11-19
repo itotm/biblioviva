@@ -47,9 +47,9 @@
 		<MenuItem value="ods" href={href("ods")} download>{i18n.t("common.export.ods")}</MenuItem>
 		{#if marc}
 			{#each MARC as f (f)}
-				<MenuItem value={f} href={href(f)} download data-testid="export-{f}"
-					>{i18n.t(`common.export.${f}`)}</MenuItem
-				>
+				<MenuItem value={f} href={href(f)} download data-testid="export-{f}">
+					{i18n.t(`common.export.${f}`)}
+				</MenuItem>
 			{/each}
 		{/if}
 	</MenuPanel>

@@ -47,8 +47,10 @@
 						target={a.newTab ? "_blank" : undefined}
 						rel={a.newTab ? "noopener" : undefined}
 						onclick={a.onclick}
-						data-testid={a.testid}>{a.label}</Button
+						data-testid={a.testid}
 					>
+						{a.label}
+					</Button>
 				{/each}
 			</Row>
 		{/if}

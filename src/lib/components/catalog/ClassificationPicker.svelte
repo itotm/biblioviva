@@ -14,7 +14,7 @@
 	import Row from "#lib/ui/Row.svelte";
 	import SegmentedGroup from "#lib/ui/SegmentedGroup.svelte";
 	import SelectCard from "#lib/ui/SelectCard.svelte";
-	import { pictogramSrc } from "#lib/shared/classification.js";
+	import { pictogramSrc } from "#lib/shared/pictogram-src.js";
 
 	interface Leaf {
 		code: string;
@@ -131,9 +131,9 @@
 	</fieldset>
 
 	{#if kind === ""}
-		<Hint tone="soft" data-testid="classify-later-hint"
-			>{i18n.t("catalog.picker.laterHint")}</Hint
-		>
+		<Hint tone="soft" data-testid="classify-later-hint">
+			{i18n.t("catalog.picker.laterHint")}
+		</Hint>
 	{:else if kind === "fiction"}
 		<fieldset>
 			<Legend>{i18n.t("catalog.picker.genre")}</Legend>
@@ -191,8 +191,10 @@
 								classCode = "";
 							}
 						}}
-						data-testid="picker-back">{i18n.t("catalog.picker.back")}</Button
+						data-testid="picker-back"
 					>
+						{i18n.t("catalog.picker.back")}
+					</Button>
 					<ToggleButton
 						pressed={classCode === parentNode.code}
 						outlined

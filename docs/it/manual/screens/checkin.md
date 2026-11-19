@@ -143,7 +143,9 @@ ripetere la lettura.»
 ## Rinnovo rifiutato
 
 Se **Rinnova invece** non è consentito, al posto della conferma compare uno dei tre messaggi seguenti, senza pulsanti:
-il libro resta restituito e la riga non cambia.
+il libro resta restituito e la riga non cambia. Se invece il libro è in prestito da meno della metà del periodo, compare
+la finestra **Rinnovo anticipato** (vedere [Rinnovo anticipato](checkout.md#rinnovo-anticipato)): **Rinnova comunque**
+completa il rinnovo, **Annulla** lascia il libro restituito.
 
 ### Limite di rinnovi raggiunto
 

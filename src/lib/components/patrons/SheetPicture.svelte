@@ -358,8 +358,10 @@
 				text-anchor="middle"
 				dominant-baseline="central"
 				fill="white"
-				class="pointer-events-none">{f.position}</text
+				class="pointer-events-none"
 			>
+				{f.position}
+			</text>
 			{#each handles as p, i (i)}
 				<circle
 					cx={p.x}

@@ -63,8 +63,10 @@
 			{size}
 			class={toggleClass}
 			onclick={() => onselect?.(o.value)}
-			data-testid={o.testid}>{o.label}</ToggleButton
+			data-testid={o.testid}
 		>
+			{o.label}
+		</ToggleButton>
 	{/each}
 	{@render children?.()}
 </div>

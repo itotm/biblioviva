@@ -297,23 +297,23 @@
 				hint={i18n.t("config.blocks.schoolLevels.presetHint")}
 			>
 				<Select bind:value={chosenPreset} data-testid="school-preset">
-					<option value=""
-						>{preset === "custom"
+					<option value="">
+						{preset === "custom"
 							? i18n.t("config.blocks.schoolLevels.custom")
-							: (data.current.presets.find((p) => p.id === preset)?.name ??
-								preset)}</option
-					>
-					{#each data.current.presets as p (p.id)}<option value={p.id}
-							>{p.name} ({p.country})</option
-						>{/each}
+							: (data.current.presets.find((p) => p.id === preset)?.name ?? preset)}
+					</option>
+					{#each data.current.presets as p (p.id)}<option value={p.id}>
+							{p.name} ({p.country})
+						</option>{/each}
 				</Select>
 			</Field>
 			<Button
 				onclick={applyPreset}
 				disabled={chosenPreset === ""}
 				data-testid="school-preset-apply"
-				>{i18n.t("config.blocks.schoolLevels.presetApply")}</Button
 			>
+				{i18n.t("config.blocks.schoolLevels.presetApply")}
+			</Button>
 		</Row>
 
 		<section class="space-y-2">
@@ -331,41 +331,41 @@
 					<tbody>
 						{#each stages as s (s.key)}
 							<tr data-testid="stage-{s.code}">
-								<td class="w-40"
-									><Input
+								<td class="w-40">
+									<Input
 										mono
 										bind:value={s.code}
 										maxlength={32}
 										aria-label={i18n.t("config.blocks.schoolLevels.stageCode")}
-									/></td
-								>
-								<td
-									><Input
+									/>
+								</td>
+								<td>
+									<Input
 										bind:value={s.name}
 										maxlength={120}
 										aria-label={i18n.t("config.blocks.schoolLevels.stageName")}
-									/></td
-								>
-								<td class="w-48"
-									><Input
+									/>
+								</td>
+								<td class="w-48">
+									<Input
 										mono
 										bind:value={s.classLabel}
 										maxlength={40}
 										placeholder={data.current.classLabel}
 										aria-label={i18n.t("config.blocks.schoolLevels.stageLabel")}
 										data-testid="stage-label-{s.code}"
-									/></td
-								>
-								<td class="w-12"
-									><IconButton
+									/>
+								</td>
+								<td class="w-12">
+									<IconButton
 										icon={RemoveIcon}
 										label={i18n.t("common.actions.delete")}
 										disabled={stages.length === 1 ||
 											levels.some((l) => l.stage === s.code)}
 										onclick={() =>
 											(stages = stages.filter((x) => x.key !== s.key))}
-									/></td
-								>
+									/>
+								</td>
 							</tr>
 						{/each}
 					</tbody>
@@ -376,8 +376,10 @@
 				icon={AddIcon}
 				onclick={() =>
 					(stages = [...stages, { key: nextKey++, code: "", name: "", classLabel: "" }])}
-				data-testid="stage-add">{i18n.t("config.blocks.schoolLevels.addStage")}</Button
+				data-testid="stage-add"
 			>
+				{i18n.t("config.blocks.schoolLevels.addStage")}
+			</Button>
 			<Hint tone="faint">{i18n.t("config.blocks.schoolLevels.stageLabelHint")}</Hint>
 		</section>
 
@@ -406,65 +408,61 @@
 										maxlength={8}
 										aria-label={i18n.t("config.blocks.schoolLevels.levelCode")}
 									/>
-									{#if used.has(l.code)}<Badge tone="primary" class="mt-1"
-											>{i18n.t("config.blocks.schoolLevels.inUse")}</Badge
-										>{/if}
+									{#if used.has(l.code)}<Badge tone="primary" class="mt-1">
+											{i18n.t("config.blocks.schoolLevels.inUse")}
+										</Badge>{/if}
 								</td>
-								<td class="w-28"
-									><Input
+								<td class="w-28">
+									<Input
 										bind:value={l.label}
 										maxlength={20}
 										aria-label={i18n.t("config.blocks.schoolLevels.levelLabel")}
-									/></td
-								>
-								<td
-									><Input
+									/>
+								</td>
+								<td>
+									<Input
 										bind:value={l.name}
 										maxlength={120}
 										aria-label={i18n.t("config.blocks.schoolLevels.levelName")}
-									/></td
-								>
-								<td
-									><Select
+									/>
+								</td>
+								<td>
+									<Select
 										bind:value={l.stage}
 										aria-label={i18n.t("config.blocks.schoolLevels.levelStage")}
 									>
-										{#each stages as s (s.key)}<option value={s.code}
-												>{s.name || s.code}</option
-											>{/each}
-									</Select></td
-								>
-								<td class="min-w-48 space-y-1"
-									><Select
+										{#each stages as s (s.key)}<option value={s.code}>
+												{s.name || s.code}
+											</option>{/each}
+									</Select>
+								</td>
+								<td class="min-w-48 space-y-1">
+									<Select
 										bind:value={l.next}
 										aria-label={i18n.t("config.blocks.schoolLevels.levelNext")}
 										data-testid="level-next-{l.code}"
 									>
-										<option value={FOLLOWING}
-											>{i18n.t(
-												"config.blocks.schoolLevels.nextFollowing",
-											)}</option
-										>
-										<option value={LEAVES}
-											>{i18n.t(
-												"config.blocks.schoolLevels.nextLeaves",
-											)}</option
-										>
-										<option value={CHOICES}
-											>{i18n.t(
-												"config.blocks.schoolLevels.nextChoices",
-											)}</option
-										>
+										<option value={FOLLOWING}>
+											{i18n.t("config.blocks.schoolLevels.nextFollowing")}
+										</option>
+										<option value={LEAVES}>
+											{i18n.t("config.blocks.schoolLevels.nextLeaves")}
+										</option>
+										<option value={CHOICES}>
+											{i18n.t("config.blocks.schoolLevels.nextChoices")}
+										</option>
 										{#each levels.filter((x) => x.key !== l.key && x.code) as x (x.key)}<option
-												value={x.code}>{x.name || x.code}</option
-											>{/each}
+												value={x.code}
+											>
+												{x.name || x.code}
+											</option>{/each}
 									</Select>
 									{#if l.next === CHOICES}
 										<!-- the choices in order, the first the default (9.41) -->
 										<Row gap="1" data-testid="level-choices-{l.code}">
 											{#each l.choices as c, ci (c)}
-												<Badge tone={ci === 0 ? "primary" : undefined}
-													>{levelName(c)}{#if ci === 0}&nbsp;·
+												<Badge tone={ci === 0 ? "primary" : undefined}>
+													{levelName(c)}{#if ci === 0}&nbsp;·
 														{i18n.t(
 															"config.blocks.schoolLevels.choiceDefault",
 														)}{/if}<button
@@ -477,9 +475,11 @@
 														onclick={() =>
 															(l.choices = l.choices.filter(
 																(x) => x !== c,
-															))}>×</button
-													></Badge
-												>
+															))}
+													>
+														×
+													</button>
+												</Badge>
 											{/each}
 										</Row>
 										<Select
@@ -496,24 +496,24 @@
 											)}
 											data-testid="level-choice-add-{l.code}"
 										>
-											<option value=""
-												>{i18n.t(
-													"config.blocks.schoolLevels.choiceAdd",
-												)}</option
-											>
-											{#if !l.choices.includes(LEAVES)}<option value={LEAVES}
-													>{i18n.t(
+											<option value="">
+												{i18n.t("config.blocks.schoolLevels.choiceAdd")}
+											</option>
+											{#if !l.choices.includes(LEAVES)}<option value={LEAVES}>
+													{i18n.t(
 														"config.blocks.schoolLevels.nextLeaves",
-													)}</option
-												>{/if}
+													)}
+												</option>{/if}
 											{#each levels.filter((x) => x.key !== l.key && x.code && !l.choices.includes(x.code)) as x (x.key)}<option
-													value={x.code}>{x.name || x.code}</option
-												>{/each}
+													value={x.code}
+												>
+													{x.name || x.code}
+												</option>{/each}
 										</Select>
-									{/if}</td
-								>
-								<td class="min-w-40"
-									><Input
+									{/if}
+								</td>
+								<td class="min-w-40">
+									<Input
 										bind:value={l.aliases}
 										maxlength={200}
 										placeholder={i18n.t(
@@ -523,8 +523,8 @@
 											"config.blocks.schoolLevels.levelAliases",
 										)}
 										data-testid="level-aliases-{l.code}"
-									/></td
-								>
+									/>
+								</td>
 								<td class="w-36">
 									<Row wrap={false} gap="1">
 										<IconButton
@@ -553,33 +553,33 @@
 					</tbody>
 				</Table>
 			</div>
-			<Button size="sm" icon={AddIcon} onclick={addLevel} data-testid="level-add"
-				>{i18n.t("config.blocks.schoolLevels.addLevel")}</Button
-			>
+			<Button size="sm" icon={AddIcon} onclick={addLevel} data-testid="level-add">
+				{i18n.t("config.blocks.schoolLevels.addLevel")}
+			</Button>
 			{#if example}
-				<Hint tone="faint" data-testid="school-example"
-					>{i18n.t("config.blocks.schoolLevels.example", { label: example })}</Hint
-				>
+				<Hint tone="faint" data-testid="school-example">
+					{i18n.t("config.blocks.schoolLevels.example", { label: example })}
+				</Hint>
 			{/if}
 		</section>
 
-		{#if codeProblem}<Alert data-testid="school-problem"
-				>{i18n.t("config.blocks.schoolLevels.problems.code")}</Alert
-			>{/if}
-		{#if requiredProblem}<Alert data-testid="school-problem"
-				>{i18n.t("config.blocks.schoolLevels.problems.required")}</Alert
-			>{/if}
-		{#if templateProblem}<Alert data-testid="school-problem"
-				>{i18n.t("config.blocks.schoolLevels.problems.template")}</Alert
-			>{/if}
-		{#if structure.length > 0}<Alert data-testid="school-problem"
-				>{i18n.t("config.blocks.schoolLevels.problems.structure", {
+		{#if codeProblem}<Alert data-testid="school-problem">
+				{i18n.t("config.blocks.schoolLevels.problems.code")}
+			</Alert>{/if}
+		{#if requiredProblem}<Alert data-testid="school-problem">
+				{i18n.t("config.blocks.schoolLevels.problems.required")}
+			</Alert>{/if}
+		{#if templateProblem}<Alert data-testid="school-problem">
+				{i18n.t("config.blocks.schoolLevels.problems.template")}
+			</Alert>{/if}
+		{#if structure.length > 0}<Alert data-testid="school-problem">
+				{i18n.t("config.blocks.schoolLevels.problems.structure", {
 					details: structure.join("; "),
-				})}</Alert
-			>{/if}
-		{#if editor.failure && editor.failure.issues.length > 0}<Alert as="div"
-				>{#each editor.failure.issues as p (p)}<p>{p}</p>{/each}</Alert
-			>{/if}
+				})}
+			</Alert>{/if}
+		{#if editor.failure && editor.failure.issues.length > 0}<Alert as="div">
+				{#each editor.failure.issues as p (p)}<p>{p}</p>{/each}
+			</Alert>{/if}
 		{#if editor.failure && editor.failure.inUse.length > 0}<InUseList
 				problems={editor.failure.inUse}
 			/>{/if}
@@ -614,27 +614,28 @@
 						hint={r.classes.join(", ")}
 					>
 						<Select bind:value={moves[r.code]} data-testid="school-move-{r.code}">
-							<option value=""
-								>{i18n.t("config.blocks.schoolLevels.move.choose")}</option
-							>
-							{#each draft.levels as l (l.code)}<option value={l.code}
-									>{l.name || l.code}</option
-								>{/each}
+							<option value="">
+								{i18n.t("config.blocks.schoolLevels.move.choose")}
+							</option>
+							{#each draft.levels as l (l.code)}<option value={l.code}>
+									{l.name || l.code}
+								</option>{/each}
 						</Select>
 					</Field>
 				{/each}
 				<Row justify="end" as="footer">
-					<Button onclick={() => (movePlan = null)} disabled={editor.saving}
-						>{i18n.t("common.actions.cancel")}</Button
-					>
+					<Button onclick={() => (movePlan = null)} disabled={editor.saving}>
+						{i18n.t("common.actions.cancel")}
+					</Button>
 					<Button
 						variant="primary"
 						icon={SaveIcon}
 						onclick={() => save(true)}
 						disabled={!movesReady || editor.saving}
 						data-testid="school-move-confirm"
-						>{i18n.t("config.blocks.schoolLevels.move.confirm")}</Button
 					>
+						{i18n.t("config.blocks.schoolLevels.move.confirm")}
+					</Button>
 				</Row>
 			{/if}
 		</Modal>

@@ -1,0 +1,55 @@
+{
+	"id": "gr-lykeio",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Γενικό Λύκειο (the general upper secondary school, three years after the Gymnasio, which is a separate school: gr-gymnasio). Sections (τμήματα) numbered Α1, Β2, Γ3 like the Gymnasio's; some schools write them Α΄1 or with letters, and the Β΄ and Γ΄ classes may be formed by track (Γ΄: Ανθρωπιστικές, Θετικές, Τεχνολογικές, Οικονομίας) [VERIFY]. The vocational ΕΠΑΛ and the evening Lykeio are not covered (change the levels and the label template). The Latin look-alikes A and B are accepted for Α and Β in register files [VERIFY]. The school year starts on 1 September, as in gr-gymnasio [VERIFY]. After the Γ΄ a pupil leaves (Πανελλαδικές exams).",
+	"name": {
+		"it": "Secondaria di secondo grado, Lýkeio (Grecia)",
+		"en": "Upper secondary school, Lykeio (Greece)",
+		"el": "Γενικό Λύκειο (Ελλάδα)"
+	},
+	"country": "GR",
+	"languages": ["el"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "lykeio",
+				"name": "Γενικό Λύκειο"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "Α",
+				"name": "Α΄ Λυκείου",
+				"stage": "lykeio",
+				"aliases": ["A"]
+			},
+			{
+				"code": "2",
+				"label": "Β",
+				"name": "Β΄ Λυκείου",
+				"stage": "lykeio",
+				"aliases": ["B"]
+			},
+			{
+				"code": "3",
+				"label": "Γ",
+				"name": "Γ΄ Λυκείου",
+				"stage": "lykeio"
+			}
+		],
+		"classLabel": "{level}{group}",
+		"groupWord": "Τμήμα",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"lykeio": ["1", "2", "3", "4"]
+	},
+	"teacherGroup": "Εκπαιδευτικοί",
+	"readingLevels": []
+}

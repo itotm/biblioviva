@@ -13,6 +13,7 @@
 	import Card from "#lib/ui/Card.svelte";
 	import EmptyState from "#lib/ui/EmptyState.svelte";
 	import Grid from "#lib/ui/Grid.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
 	import Hint from "#lib/ui/Hint.svelte";
 	import QueryState from "#lib/ui/QueryState.svelte";
 	import Row from "#lib/ui/Row.svelte";
@@ -57,35 +58,39 @@
 		{#snippet loading()}
 			<Card class="flex items-center gap-3" aria-live="polite" data-testid="lookup-progress">
 				<Spinner size="lg" />
-				<span>{i18n.t("catalog.fastAdd.lookup.searching", { providers: searchingOn })}</span
-				>
+				<span>
+					{i18n.t("catalog.fastAdd.lookup.searching", { providers: searchingOn })}
+				</span>
 			</Card>
 		{/snippet}
 		{#snippet children(found)}
-			<Row as="ul" class="text-sm" data-testid="provider-status">
-				{#each found.providers as p (p.provider)}
-					<Badge
-						as="li"
-						tone={p.error ? "error" : "success"}
-						title={p.error ? i18n.t(`catalog.lookup.errors.${p.error}`) : undefined}
-						data-testid="provider-{p.provider}"
-					>
-						{#if p.error}
-							<ErrorIcon size={ICON_SIZE.sm} aria-hidden="true" />
-						{:else}
-							<CheckIcon size={ICON_SIZE.sm} aria-hidden="true" />
-						{/if}
-						<span
-							>{p.name}: {p.error
-								? i18n.t("catalog.fastAdd.lookup.failed")
-								: i18n.t("catalog.fastAdd.lookup.providerOk", {
-										count: p.count,
-									})}{p.cached
-								? ` (${i18n.t("catalog.fastAdd.lookup.providerCached")})`
-								: ""}</span
+			<Row align="center">
+				<Row as="ul" class="text-sm" data-testid="provider-status">
+					{#each found.providers as p (p.provider)}
+						<Badge
+							as="li"
+							tone={p.error ? "error" : "success"}
+							title={p.error ? i18n.t(`catalog.lookup.errors.${p.error}`) : undefined}
+							data-testid="provider-{p.provider}"
 						>
-					</Badge>
-				{/each}
+							{#if p.error}
+								<ErrorIcon size={ICON_SIZE.sm} aria-hidden="true" />
+							{:else}
+								<CheckIcon size={ICON_SIZE.sm} aria-hidden="true" />
+							{/if}
+							<span>
+								{p.name}: {p.error
+									? i18n.t("catalog.fastAdd.lookup.failed")
+									: i18n.t("catalog.fastAdd.lookup.providerOk", {
+											count: p.count,
+										})}{p.cached
+									? ` (${i18n.t("catalog.fastAdd.lookup.providerCached")})`
+									: ""}
+							</span>
+						</Badge>
+					{/each}
+				</Row>
+				<HelpLink spot="fastAddLookup" topic={i18n.t("catalog.fastAdd.steps.lookup")} />
 			</Row>
 			{#each found.providers.filter((p) => p.error) as p (p.provider)}
 				<p class="card preset-tonal-error px-4 py-2 text-sm" role="alert">
@@ -128,13 +133,14 @@
 									tone="success"
 									class="self-start"
 									data-testid="candidate-best"
-									>{i18n.t("catalog.fastAdd.lookup.best")}</Badge
 								>
+									{i18n.t("catalog.fastAdd.lookup.best")}
+								</Badge>
 							{/if}
 							{#if c.series}
-								<Hint data-testid="candidate-series"
-									>{formatSeries(c.series, c.seriesNumber)}</Hint
-								>
+								<Hint data-testid="candidate-series">
+									{formatSeries(c.series, c.seriesNumber)}
+								</Hint>
 							{/if}
 							<Hint>
 								{[c.publicationPlace, c.publisher]
@@ -156,8 +162,9 @@
 									onclick={() => onpick(c)}
 									autofocus={i === 0}
 									data-testid="pick-candidate"
-									>{i18n.t("catalog.fastAdd.lookup.pick")}</Button
 								>
+									{i18n.t("catalog.fastAdd.lookup.pick")}
+								</Button>
 							</div>
 						</Card>
 					{/each}
@@ -166,21 +173,21 @@
 		{/snippet}
 	</QueryState>
 	<Row>
-		<Button icon={EditIcon} onclick={onmanual} data-testid="lookup-manual"
-			>{i18n.t("catalog.fastAdd.lookup.manual")}</Button
-		>
+		<Button icon={EditIcon} onclick={onmanual} data-testid="lookup-manual">
+			{i18n.t("catalog.fastAdd.lookup.manual")}
+		</Button>
 		{#if byIsbn}
-			<Button icon={SearchIcon} onclick={onsearch}
-				>{i18n.t("catalog.fastAdd.lookup.bySearch")}</Button
-			>
+			<Button icon={SearchIcon} onclick={onsearch}>
+				{i18n.t("catalog.fastAdd.lookup.bySearch")}
+			</Button>
 		{/if}
 		{#if lookup.current?.providers.some((p) => p.error)}
-			<Button icon={RetryIcon} onclick={onretry} data-testid="lookup-retry"
-				>{i18n.t("catalog.fastAdd.lookup.retry")}</Button
-			>
+			<Button icon={RetryIcon} onclick={onretry} data-testid="lookup-retry">
+				{i18n.t("catalog.fastAdd.lookup.retry")}
+			</Button>
 		{/if}
-		<Button icon={BackIcon} onclick={onback} data-testid="lookup-back"
-			>{i18n.t("catalog.fastAdd.lookup.another")}</Button
-		>
+		<Button icon={BackIcon} onclick={onback} data-testid="lookup-back">
+			{i18n.t("catalog.fastAdd.lookup.another")}
+		</Button>
 	</Row>
 </section>

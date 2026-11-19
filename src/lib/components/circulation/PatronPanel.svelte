@@ -54,11 +54,12 @@
 				<span
 					class="badge {full ? 'preset-filled-warning-500' : 'preset-tonal'}"
 					data-testid="desk-patron-count"
-					>{i18n.t("circulation.checkout.loans", {
+				>
+					{i18n.t("circulation.checkout.loans", {
 						n: patron.loans.length,
 						max: patron.maxLoans,
-					})}</span
-				>
+					})}
+				</span>
 			</Row>
 		</div>
 	</Row>
@@ -90,17 +91,18 @@
 								})}
 								onclick={() => onrenew(l.loanId)}
 								data-testid="desk-renew"
-								>{i18n.t("circulation.actions.renew")}</Button
 							>
+								{i18n.t("circulation.actions.renew")}
+							</Button>
 						{/if}
 					</Row>
 				</Row>
 			{/each}
 		</DividedList>
 		{#if onrenewall && patron.loans.length > 1}
-			<Button size="sm" icon={RenewIcon} onclick={onrenewall} data-testid="desk-renew-all"
-				>{i18n.t("circulation.renewals.renewAll")}</Button
-			>
+			<Button size="sm" icon={RenewIcon} onclick={onrenewall} data-testid="desk-renew-all">
+				{i18n.t("circulation.renewals.renewAll")}
+			</Button>
 		{/if}
 	{/if}
 </Card>

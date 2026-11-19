@@ -117,8 +117,10 @@
 					variant="primary"
 					icon={AddIcon}
 					onclick={() => open(null)}
-					data-testid="calendar-new">{t("newDate")}</Button
+					data-testid="calendar-new"
 				>
+					{t("newDate")}
+				</Button>
 			{/if}
 		{/snippet}
 		{#snippet views()}
@@ -134,16 +136,20 @@
 				size="sm"
 				icon={BackIcon}
 				href={resolve(`calendar?year=${data.prev.year}`)}
-				data-testid="calendar-prev">{data.prev.label}</Button
+				data-testid="calendar-prev"
 			>
+				{data.prev.label}
+			</Button>
 			<h2 class="title-lg" data-testid="calendar-year">
 				{i18n.t("circulation.calendar.schoolYear", { year: data.label })}
 			</h2>
 			<Button
 				size="sm"
 				href={resolve(`calendar?year=${data.next.year}`)}
-				data-testid="calendar-next">{data.next.label}</Button
+				data-testid="calendar-next"
 			>
+				{data.next.label}
+			</Button>
 		</Row>
 		<Hint>
 			{i18n.t("circulation.calendar.settings", {
@@ -167,8 +173,10 @@
 				<li class="flex items-center gap-1">
 					<span
 						class="inline-flex size-4 items-center justify-center rounded text-xs {l.look}"
-						aria-hidden="true">{l.sample}</span
+						aria-hidden="true"
 					>
+						{l.sample}
+					</span>
 					{l.label}
 				</li>
 			{/each}
@@ -181,15 +189,15 @@
 			<Card gap="2" as="section" data-testid="month-{m.month}">
 				<Row justify="between" align="center" as="h2" class="font-semibold capitalize">
 					<span>{monthName(m.month)}</span>
-					<Hint as="span"
-						>{i18n.t("circulation.calendar.openDays", { count: m.openDays })}</Hint
-					>
+					<Hint as="span">
+						{i18n.t("circulation.calendar.openDays", { count: m.openDays })}
+					</Hint>
 				</Row>
 				<div class="grid grid-cols-7 gap-0.5 text-center text-xs">
 					{#each weekdays as w (w)}
-						<span class="py-1 font-semibold opacity-60" data-testid="weekday-header"
-							>{dayName(w)}</span
-						>
+						<span class="py-1 font-semibold opacity-60" data-testid="weekday-header">
+							{dayName(w)}
+						</span>
 					{/each}
 					{#each Array.from({ length: lead }) as _, i (i)}
 						<span></span>
@@ -206,8 +214,9 @@
 							data-date={d.date}
 							data-closed={d.closed?.kind ?? "open"}
 							data-marked={marked ? "date" : undefined}
-							>{Number(d.date.slice(8))}</span
 						>
+							{Number(d.date.slice(8))}
+						</span>
 					{/each}
 				</div>
 				{@const closures = closuresOf(m.month)}
@@ -238,12 +247,14 @@
 											class="text-left font-semibold hover:underline"
 											aria-label={t("edit", { title: e.title })}
 											onclick={() => open(e)}
-											data-testid="calendar-date">{e.title}</button
+											data-testid="calendar-date"
 										>
+											{e.title}
+										</button>
 									{:else}
-										<span class="font-semibold" data-testid="calendar-date"
-											>{e.title}</span
-										>
+										<span class="font-semibold" data-testid="calendar-date">
+											{e.title}
+										</span>
 									{/if}
 									<Hint as="span" class="block">{when(e)}</Hint>
 									{#if e.notes}

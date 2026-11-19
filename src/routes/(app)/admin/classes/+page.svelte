@@ -107,9 +107,9 @@
 					<tr data-testid="class-row-{g.id}">
 						<td class="font-semibold">
 							{g.label}
-							{#if g.levels.length > 1}<Badge tone="secondary" class="ml-1"
-									>{i18n.t("admin.classes.mixed")}</Badge
-								>{/if}
+							{#if g.levels.length > 1}<Badge tone="secondary" class="ml-1">
+									{i18n.t("admin.classes.mixed")}
+								</Badge>{/if}
 							{#if g.notes}<Hint as="span" class="block">{g.notes}</Hint>{/if}
 						</td>
 						<td>{g.kind === "teachers" ? "—" : levelNames(g)}</td>
@@ -161,14 +161,18 @@
 			<Button
 				icon={TeacherIcon}
 				onclick={() => open("teachers")}
-				data-testid="classes-new-teachers">{i18n.t("admin.classes.newTeachers")}</Button
+				data-testid="classes-new-teachers"
 			>
+				{i18n.t("admin.classes.newTeachers")}
+			</Button>
 			<Button
 				variant="primary"
 				icon={AddIcon}
 				onclick={() => open("students")}
-				data-testid="classes-new">{i18n.t("admin.classes.new")}</Button
+				data-testid="classes-new"
 			>
+				{i18n.t("admin.classes.new")}
+			</Button>
 		{/snippet}
 	</PageHeader>
 

@@ -148,8 +148,10 @@
 							as="span"
 							live={false}
 							class="mt-2 block"
-							data-testid="template-error">{t.error}</Alert
+							data-testid="template-error"
 						>
+							{t.error}
+						</Alert>
 					{/if}
 				</SelectCard>
 			{/each}
@@ -202,29 +204,33 @@
 						icon={SheetIcon}
 						aria-pressed={showSheet}
 						onclick={() => (showSheet = !showSheet)}
-						data-testid="sheet-toggle">{i18n.t("admin.templates.preview.sheet")}</Button
+						data-testid="sheet-toggle"
 					>
+						{i18n.t("admin.templates.preview.sheet")}
+					</Button>
 					<Button
 						variant="primary"
 						icon={PrintIcon}
 						href={testUrl}
 						target="_blank"
 						rel="noopener"
-						data-testid="test-page">{i18n.t("admin.templates.preview.test")}</Button
+						data-testid="test-page"
 					>
+						{i18n.t("admin.templates.preview.test")}
+					</Button>
 				</Row>
 			</Row>
 
 			{#if patronMode === "real"}
 				<div class="space-y-2">
-					<Field label={i18n.t("admin.templates.preview.search")}
-						><Input
+					<Field label={i18n.t("admin.templates.preview.search")}>
+						<Input
 							type="search"
 							bind:value={q}
 							placeholder={i18n.t("admin.templates.preview.searchPlaceholder")}
 							data-testid="patron-search"
-						/></Field
-					>
+						/>
+					</Field>
 					{#if patronLabel}
 						<p class="text-sm" data-testid="patron-picked">
 							{i18n.t("admin.templates.preview.real")}:

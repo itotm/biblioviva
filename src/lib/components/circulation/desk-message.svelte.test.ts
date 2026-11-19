@@ -68,6 +68,7 @@ describe("desk message table", () => {
 		renewal_limit_reached: "error",
 		renewal_overdue_blocked: "error",
 		renewal_hard_due_date: "error",
+		renewal_early: "warning",
 		duplicate_scan: "info",
 		not_on_loan: "info",
 		already_returned_today: "info",

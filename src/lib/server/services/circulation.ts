@@ -26,6 +26,7 @@ import {
 	resolveRule,
 	type CheckoutRefusal,
 	type OpenLoanInfo,
+	type RenewalDecision,
 	type RenewalRefusal,
 } from "./circulation-rules.js";
 import { deskTitles, shortTitle } from "#lib/shared/desk-titles.js";
@@ -362,24 +363,45 @@ export type RenewResult =
 			reason: RenewalRefusal;
 			/** An administrator may force it with a reason (limit and overdue block only). */
 			overridable: boolean;
+			/**
+			 * What the message says. For `renewal_early`: `elapsed` and `period` in days, `due`
+			 * (the current due date) and `newDue`.
+			 */
 			params: Record<string, string | number>;
 	  };
+
+export type RenewFailure = Extract<RenewResult, { ok: false }>;
+
+/**
+ * The answer of a renewal of several loans: done, each loan with its own result, or, when some
+ * of them are early renewals and the request did not confirm them, nothing renewed and the early
+ * ones listed (`renewal_early`) for the question "Rinnova comunque?".
+ */
+export type RenewManyResult =
+	{ kind: "done"; results: RenewResult[] } | { kind: "early"; early: RenewFailure[] };
+
+export interface RenewOptions {
+	/** The operator confirmed the warning of an early renewal (`renewal_early`). */
+	confirmEarly?: boolean;
+}
 
 /**
  * Renews an open loan with the rules of 4.2 (`renew` event, renewal count, new due date). With
  * `override` (administrators) the renewal limit and the overdue block are skipped and the reason
- * is stored in an `override` event and in the audit log.
+ * is stored in an `override` event and in the audit log. A renewal before half of the loan period
+ * has passed comes back as `renewal_early` until `confirmEarly` is given (any account).
  */
 export function renewLoan(
 	db: Db,
 	config: AppConfig,
-	input: { loanId: number; override?: { reason: string } },
+	input: { loanId: number; override?: { reason: string } } & RenewOptions,
 	actor: AuditActor,
 	now = new Date(),
 ): RenewResult {
-	return db.transaction((tx) =>
-		renewIn(tx, config, input.loanId, actor, now, false, input.override),
-	);
+	return db.transaction((tx) => {
+		const plan = planRenewal(tx, config, input.loanId, now, false, input);
+		return "result" in plan ? plan.result : applyRenewal(tx, plan, actor, now, input.override);
+	});
 }
 
 /**
@@ -392,7 +414,8 @@ export function renewAllLoans(
 	patronId: number,
 	actor: AuditActor,
 	now = new Date(),
-): RenewResult[] {
+	options: RenewOptions = {},
+): RenewManyResult {
 	return db.transaction((tx) => {
 		const exists = tx
 			.select({ id: patron.id })
@@ -402,16 +425,53 @@ export function renewAllLoans(
 		if (!exists) {
 			throw new DeskNotFoundError("patron", patronId);
 		}
-		return openLoansOf(tx, patronId, libraryToday(config, now)).map((l) =>
-			renewIn(tx, config, l.loanId, actor, now, false),
-		);
+		const loanIds = openLoansOf(tx, patronId, libraryToday(config, now)).map((l) => l.loanId);
+		return renewMany(tx, config, loanIds, actor, now, options);
 	});
+}
+
+/** The selection of the loans grid: each open loan with its own decision, as "Rinnova tutti". */
+export function renewSelectedLoans(
+	db: Db,
+	config: AppConfig,
+	loanIds: readonly number[],
+	actor: AuditActor,
+	now = new Date(),
+	options: RenewOptions = {},
+): RenewManyResult {
+	return db.transaction((tx) => renewMany(tx, config, loanIds, actor, now, options));
+}
+
+/**
+ * Several loans in one request: when some would be early renewals and the request did not confirm
+ * them, nothing is renewed and the early ones come back, so the operator answers once for all
+ * ("Annulla" renews none); confirmed, every loan is renewed or refused on its own rules.
+ */
+function renewMany(
+	tx: DbOrTx,
+	config: AppConfig,
+	loanIds: readonly number[],
+	actor: AuditActor,
+	now: Date,
+	options: RenewOptions,
+): RenewManyResult {
+	const plans = loanIds.map((id) => planRenewal(tx, config, id, now, false, options));
+	const early = plans.flatMap((p) =>
+		"result" in p && p.result.reason === "renewal_early" ? [p.result] : [],
+	);
+	if (early.length > 0) {
+		return { kind: "early", early };
+	}
+	return {
+		kind: "done",
+		results: plans.map((p) => ("result" in p ? p.result : applyRenewal(tx, p, actor, now))),
+	};
 }
 
 /**
  * "Rinnova invece" at the check-in desk: a loan returned today by mistake (the pupil wanted to keep
- * the book) is reopened and renewed in one step. When the rules refuse the renewal, the return
- * stays registered.
+ * the book) is reopened and renewed in one step. When the rules refuse the renewal, or the early
+ * renewal waits for its confirmation, the return stays registered.
  */
 export function renewInsteadOfReturn(
 	db: Db,
@@ -419,19 +479,35 @@ export function renewInsteadOfReturn(
 	loanId: number,
 	actor: AuditActor,
 	now = new Date(),
+	options: RenewOptions = {},
 ): RenewResult {
-	return db.transaction((tx) => renewIn(tx, config, loanId, actor, now, true));
+	return db.transaction((tx) => {
+		const plan = planRenewal(tx, config, loanId, now, true, options);
+		return "result" in plan ? plan.result : applyRenewal(tx, plan, actor, now);
+	});
 }
 
-function renewIn(
+type RenewalOk = Extract<RenewalDecision, { ok: true }>;
+
+/** A renewal decided but not yet written, or the refusal to answer with. */
+type RenewalPlan =
+	| { result: RenewFailure }
+	| {
+			loanId: number;
+			reopen: boolean;
+			row: { l: typeof loan.$inferSelect; barcode: string };
+			title: string;
+			decision: RenewalOk;
+	  };
+
+function planRenewal(
 	tx: DbOrTx,
 	config: AppConfig,
 	loanId: number,
-	actor: AuditActor,
 	now: Date,
 	reopen: boolean,
-	override?: { reason: string },
-): RenewResult {
+	options: { override?: { reason: string } } & RenewOptions,
+): RenewalPlan {
 	const today = libraryToday(config, now);
 	const row = tx
 		.select({
@@ -466,27 +542,43 @@ function renewIn(
 		{
 			patronType: row.patronType,
 			itemType: row.itemType,
+			// the period runs from the last renewal, or from the loan
+			periodStart: libraryToday(config, new Date(row.l.lastRenewedAt ?? row.l.issuedAt)),
 			dueDate: row.l.dueDate,
 			renewals: row.l.renewals,
 			today,
 		},
-		{ override: override !== undefined },
+		{ override: options.override !== undefined, confirmEarly: options.confirmEarly },
 	);
 	if (!decision.ok) {
 		return {
-			ok: false,
-			loanId,
-			barcode: row.barcode,
-			reason: decision.reason,
-			overridable: decision.overridable,
-			params: {
-				title,
-				n: row.l.renewals,
-				days: decision.days ?? 0,
-				due: row.l.dueDate,
+			result: {
+				ok: false,
+				loanId,
+				barcode: row.barcode,
+				reason: decision.reason,
+				overridable: decision.overridable,
+				params: {
+					title,
+					n: row.l.renewals,
+					days: decision.days ?? 0,
+					due: row.l.dueDate,
+					...(decision.early ?? {}),
+				},
 			},
 		};
 	}
+	return { loanId, reopen, row, title, decision };
+}
+
+function applyRenewal(
+	tx: DbOrTx,
+	plan: Exclude<RenewalPlan, { result: unknown }>,
+	actor: AuditActor,
+	now: Date,
+	override?: { reason: string },
+): RenewResult {
+	const { loanId, reopen, row, title, decision } = plan;
 	const stamp = now.toISOString();
 	if (reopen) {
 		tx.delete(loanEvent)

@@ -293,6 +293,22 @@ Le regole della biblioteca non permettono di rinnovare un libro già scaduto. Ch
 La data massima dei prestiti non lascia spazio a un rinnovo. Che fare: far restituire il libro (**Restituisci**). Questo
 rifiuto non si può forzare.
 
+## Rinnovo anticipato
+
+Un rinnovo chiesto prima che sia passata metà del periodo del prestito non è rifiutato: una finestra al centro della
+pagina chiede conferma. Il periodo parte dalla data del prestito o, se il libro è già stato rinnovato, dall'ultimo
+rinnovo, e arriva alla scadenza.
+
+> «`<titolo>`» è in prestito da `<n>` giorni su `<giorni del periodo>`: non è ancora passata metà del periodo del
+> prestito (scadenza `<data>`). Rinnovando, la nuova scadenza sarà il `<data>`.
+
+La finestra si intitola **Rinnovo anticipato**. Che fare: premere **Rinnova comunque** per rinnovare, oppure **Annulla**
+(o Esc) per lasciare il prestito com'è; il cursore torna nel campo di lettura. Con la tastiera il pulsante già
+selezionato è **Annulla**, così un Invio inviato per sbaglio dal lettore non rinnova nulla. Chi ha l'account Gestione
+prestiti può confermare; l'avviso vale anche per l'amministratore. Con **Rinnova tutti** (e **Rinnova selezionati** in
+**Libri in prestito**) la finestra elenca i libri con rinnovo anticipato e si risponde una volta sola: **Rinnova
+comunque** rinnova tutti i prestiti richiesti, anche quelli non anticipati; **Annulla** non ne rinnova nessuno.
+
 ## Altri messaggi
 
 ### Sessione chiusa per inattività

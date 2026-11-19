@@ -11,6 +11,7 @@
 // part or in `TABLES_THAT_NEVER_TRAVEL`, which a test checks.
 import { Database } from "bun:sqlite";
 import type { Db } from "#lib/server/db/client.js";
+import { registerSearchFunctions } from "#lib/server/db/fts.js";
 import { DATA_PARTS, type DataPart } from "#lib/shared/archive-parts.js";
 
 /** The rows of a part: whole tables, or the rows of shared tables matching a condition. */
@@ -144,6 +145,7 @@ const isDbPart = (p: DataPart): p is keyof typeof PART_ROWS => p in PART_ROWS;
  */
 export function pruneSnapshot(path: string, parts: readonly DataPart[]): void {
 	const db = new Database(path);
+	registerSearchFunctions(db);
 	try {
 		db.run("PRAGMA foreign_keys = OFF");
 		db.run("DELETE FROM session");

@@ -43,6 +43,7 @@
 	import Button from "#lib/ui/Button.svelte";
 	import Card from "#lib/ui/Card.svelte";
 	import Grid from "#lib/ui/Grid.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
 	import Hint from "#lib/ui/Hint.svelte";
 	import Input from "#lib/ui/Input.svelte";
 	import Page from "#lib/ui/Page.svelte";
@@ -419,10 +420,13 @@
 		<section class="space-y-4" data-testid="stage-form">
 			<!-- a wrong code read by the camera is one tap away from a new try (9.13, round 9) -->
 			<Row align="center" justify="between">
-				<h2 class="h4">{i18n.t("catalog.fastAdd.form.heading")}</h2>
-				<Button icon={ScanIcon} onclick={reset} data-testid="form-rescan"
-					>{i18n.t("catalog.fastAdd.form.rescan")}</Button
-				>
+				<Row wrap={false} align="center" gap="1">
+					<h2 class="h4">{i18n.t("catalog.fastAdd.form.heading")}</h2>
+					<HelpLink spot="fastAddForm" topic={i18n.t("catalog.fastAdd.form.heading")} />
+				</Row>
+				<Button icon={ScanIcon} onclick={reset} data-testid="form-rescan">
+					{i18n.t("catalog.fastAdd.form.rescan")}
+				</Button>
 			</Row>
 			{#if codeMessage}
 				<p class="text-warning-700" role="status" data-testid="form-code-message">
@@ -434,17 +438,19 @@
 					class="flex flex-wrap items-center justify-between gap-2"
 					data-testid="best-of"
 				>
-					<span>{i18n.t("catalog.fastAdd.form.bestOf", { count: autoPicked.count })}</span
-					>
+					<span>
+						{i18n.t("catalog.fastAdd.form.bestOf", { count: autoPicked.count })}
+					</span>
 					<Button
 						size="sm"
 						icon={OthersIcon}
 						onclick={() => (stage = "lookup")}
 						data-testid="other-records"
-						>{i18n.t("catalog.fastAdd.form.otherRecords", {
-							count: autoPicked.count - 1,
-						})}</Button
 					>
+						{i18n.t("catalog.fastAdd.form.otherRecords", {
+							count: autoPicked.count - 1,
+						})}
+					</Button>
 				</Card>
 			{/if}
 			{#if coversOn()}
@@ -473,31 +479,33 @@
 						<FormSection title={i18n.t("catalog.fastAdd.form.copiesSection")}>
 							<Grid cols="3" span>
 								<div>
-									<Field label={i18n.t("catalog.fastAdd.form.copies")}
-										><Input
+									<Field label={i18n.t("catalog.fastAdd.form.copies")}>
+										<Input
 											{...fields.copies?.as("text")}
 											inputmode="numeric"
 											maxlength={3}
 											data-testid="fast-copies"
-										/></Field
-									>
+										/>
+									</Field>
 									{#each fields.copies?.issues() ?? [] as issue (issue.message)}
 										<Hint
 											tone="error"
 											as="span"
-											data-testid="field-error-copies">{issue.message}</Hint
+											data-testid="field-error-copies"
 										>
+											{issue.message}
+										</Hint>
 									{/each}
 								</div>
 								{#if options.classPerItem && options.fictionByClass && state.kind === "fiction"}
-									<Field label={i18n.t("catalog.fastAdd.form.readingLevel")}
-										><Select {...fields.itemReadingLevel?.as("select")}>
+									<Field label={i18n.t("catalog.fastAdd.form.readingLevel")}>
+										<Select {...fields.itemReadingLevel?.as("select")}>
 											<option value="">—</option>
 											{#each options.readingLevels as l (l.code)}
 												<option value={l.code}>{l.label}</option>
 											{/each}
-										</Select></Field
-									>
+										</Select>
+									</Field>
 								{/if}
 								{#if copyText}
 									<Field
@@ -506,25 +514,26 @@
 												? "catalog.fastAdd.form.callNumber"
 												: "catalog.item.callText",
 										)}
-										><Input
+									>
+										<Input
 											mono
 											{...fields.itemCallText?.as("text")}
 											maxlength={40}
 											data-testid="fast-call-text"
-										/></Field
-									>
+										/>
+									</Field>
 								{/if}
-								<Field label={i18n.t("catalog.fastAdd.form.acquisitionDate")}
-									><Input
+								<Field label={i18n.t("catalog.fastAdd.form.acquisitionDate")}>
+									<Input
 										{...fields.acquisitionDate?.as("text")}
 										type="date"
 										data-testid="fast-acquisition-date"
-									/></Field
-								>
+									/>
+								</Field>
 								{#if options.inventory.enabled}
 									<!-- the school inventory (9.64): the copies get the next numbers -->
-									<Field label={i18n.t("catalog.item.origin")}
-										><Select
+									<Field label={i18n.t("catalog.item.origin")}>
+										<Select
 											{...fields.itemOrigin?.as("select")}
 											data-testid="fast-origin"
 										>
@@ -532,19 +541,20 @@
 											{#each options.inventory.origins as o (o)}
 												<option value={o}>{o}</option>
 											{/each}
-										</Select></Field
-									>
+										</Select>
+									</Field>
 									<div>
 										<Field
 											label={i18n.t("catalog.item.value")}
 											hint={i18n.t("catalog.fastAdd.form.inventoryHint")}
-											><Input
+										>
+											<Input
 												{...fields.itemValue?.as("text")}
 												inputmode="decimal"
 												maxlength={16}
 												data-testid="fast-value"
-											/></Field
-										>
+											/>
+										</Field>
 										{#each fields.itemValue?.issues() ?? [] as issue (issue.message)}
 											<Hint tone="error" as="span">{issue.message}</Hint>
 										{/each}

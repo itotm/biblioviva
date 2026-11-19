@@ -22,6 +22,7 @@
 	import Button from "#lib/ui/Button.svelte";
 	import Card from "#lib/ui/Card.svelte";
 	import Disclosure from "#lib/ui/Disclosure.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
 	import Hint from "#lib/ui/Hint.svelte";
 	import Row from "#lib/ui/Row.svelte";
 	import { formatBytes } from "#lib/shared/bytes.js";
@@ -122,13 +123,18 @@
 			href={url}
 			rel="external noreferrer"
 			target="_blank"
-			data-testid="release-page">{i18n.t("config.languages.release.page")}</a
+			data-testid="release-page"
 		>
+			{i18n.t("config.languages.release.page")}
+		</a>
 	</p>
 {/snippet}
 
 <Card variant="outlined" gap="3" id="language-packs" data-testid="block-languagePacks">
-	<h2 class="title-lg">{i18n.t("config.languages.title")}</h2>
+	<Row wrap={false} align="center" gap="1">
+		<h2 class="title-lg">{i18n.t("config.languages.title")}</h2>
+		<HelpLink spot="languagePacks" topic={i18n.t("config.languages.title")} />
+	</Row>
 	<Hint>{i18n.t("config.languages.hint")}</Hint>
 	<form {...uploadLanguagePack} enctype="multipart/form-data" class="hidden" aria-hidden="true">
 		<input {...uploadLanguagePack.fields.pack.as("file")} bind:this={fileInput} />
@@ -161,27 +167,27 @@
 								</p>
 								<Row gap="1">
 									{#if p.valid}
-										<Badge tone="success"
-											>{i18n.t("config.languages.valid")}</Badge
-										>
+										<Badge tone="success">
+											{i18n.t("config.languages.valid")}
+										</Badge>
 									{:else}
-										<Badge tone="error"
-											>{i18n.t("config.languages.errorsCount", {
+										<Badge tone="error">
+											{i18n.t("config.languages.errorsCount", {
 												count: p.errors,
-											})}</Badge
-										>
+											})}
+										</Badge>
 									{/if}
 									{#if p.warnings > 0}
-										<Badge tone="warning"
-											>{i18n.t("config.languages.warnings", {
+										<Badge tone="warning">
+											{i18n.t("config.languages.warnings", {
 												count: p.warnings,
-											})}</Badge
-										>
+											})}
+										</Badge>
 									{/if}
 									{#if p.inUse}
-										<Badge tone="primary"
-											>{i18n.t("config.languages.inUse")}</Badge
-										>
+										<Badge tone="primary">
+											{i18n.t("config.languages.inUse")}
+										</Badge>
 									{/if}
 								</Row>
 							</div>
@@ -190,8 +196,10 @@
 									size="sm"
 									icon={DownloadIcon}
 									href="/admin/config/languages/{p.code}"
-									download>{i18n.t("config.languages.download")}</Button
+									download
 								>
+									{i18n.t("config.languages.download")}
+								</Button>
 								<Button
 									size="sm"
 									variant="error-outlined"
@@ -202,8 +210,9 @@
 										removeOpen = true;
 									}}
 									data-testid="pack-remove"
-									>{i18n.t("common.actions.delete")}</Button
 								>
+									{i18n.t("common.actions.delete")}
+								</Button>
 							</Row>
 						</Row>
 						{#if p.problems.length > 0}
@@ -252,22 +261,18 @@
 									</Hint>
 									<Row gap="1">
 										{#if p.translation === "machine"}
-											<Badge tone="warning" icon={InfoIcon}
-												>{i18n.t("config.languages.release.machine")}</Badge
-											>
+											<Badge tone="warning" icon={InfoIcon}>
+												{i18n.t("config.languages.release.machine")}
+											</Badge>
 										{:else}
-											<Badge tone="success" icon={OkIcon}
-												>{i18n.t(
-													"config.languages.release.reviewed",
-												)}</Badge
-											>
+											<Badge tone="success" icon={OkIcon}>
+												{i18n.t("config.languages.release.reviewed")}
+											</Badge>
 										{/if}
 										{#if done}
-											<Badge tone="primary" icon={OkIcon}
-												>{i18n.t(
-													"config.languages.release.installedBadge",
-												)}</Badge
-											>
+											<Badge tone="primary" icon={OkIcon}>
+												{i18n.t("config.languages.release.installedBadge")}
+											</Badge>
 										{/if}
 									</Row>
 								</div>
@@ -277,12 +282,13 @@
 									disabled={installing !== null}
 									onclick={() => install(p.code, p.nativeName)}
 									data-testid="release-install"
-									>{i18n.t(
+								>
+									{i18n.t(
 										done
 											? "config.languages.release.again"
 											: "config.languages.release.install",
-									)}</Button
-								>
+									)}
+								</Button>
 							</Row>
 						</li>
 					{/each}
@@ -300,18 +306,20 @@
 				icon={UploadIcon}
 				onclick={() => picker?.click()}
 				disabled={uploading}
-				data-testid="pack-upload">{i18n.t("config.languages.upload")}</Button
+				data-testid="pack-upload"
 			>
-			<Hint as="span" tone="faint"
-				>{i18n.t("config.languages.uploadHint", { maxMb: data.current.maxMb })}</Hint
-			>
+				{i18n.t("config.languages.upload")}
+			</Button>
+			<Hint as="span" tone="faint">
+				{i18n.t("config.languages.uploadHint", { maxMb: data.current.maxMb })}
+			</Hint>
 		</Row>
 		<Row gap="2" align="center">
 			<Hint as="span">{i18n.t("config.languages.examples")}</Hint>
 			{#each data.current.folders.filter((f) => !data.current?.packs.some((p) => p.code === f)) as f (f)}
-				<Button size="sm" icon={DownloadIcon} href="/admin/config/languages/{f}" download
-					>{f}</Button
-				>
+				<Button size="sm" icon={DownloadIcon} href="/admin/config/languages/{f}" download>
+					{f}
+				</Button>
 			{/each}
 		</Row>
 	{:else}

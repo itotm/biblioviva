@@ -38,7 +38,7 @@ export type CheckoutRefusal =
 	| "patron_has_overdues";
 
 export type RenewalRefusal =
-	"renewal_limit_reached" | "renewal_overdue_blocked" | "renewal_hard_due_date";
+	"renewal_limit_reached" | "renewal_overdue_blocked" | "renewal_hard_due_date" | "renewal_early";
 
 /** Refusals an administrator may override with a reason (Appendix I); never the others. */
 export const OVERRIDABLE: ReadonlySet<CheckoutRefusal> = new Set([
@@ -186,6 +186,11 @@ export function canCheckout(
 export interface RenewalInput {
 	patronType: string;
 	itemType: string;
+	/**
+	 * The day the current period of the loan began: the last renewal, or the loan itself when it
+	 * was never renewed (a day in the library's time zone).
+	 */
+	periodStart: string;
 	dueDate: string;
 	renewals: number;
 	today: string;
@@ -199,21 +204,51 @@ export type RenewalDecision =
 			/** The renewal would not move the due date (e.g. on the day of the loan): nothing to do. */
 			unchanged: boolean;
 	  }
-	| { ok: false; reason: RenewalRefusal; overridable: boolean; max?: number; days?: number };
+	| {
+			ok: false;
+			reason: RenewalRefusal;
+			overridable: boolean;
+			max?: number;
+			days?: number;
+			/** For `renewal_early`: the days gone, the period's days and the new due date. */
+			early?: EarlyRenewal;
+	  };
+
+/** What an early renewal tells the desk: how far into the period the loan is, the new due date. */
+export interface EarlyRenewal {
+	elapsed: number;
+	period: number;
+	newDue: string;
+}
+
+/**
+ * A renewal is early when less than half of the current period has passed: exactly half is not
+ * early (`2 * elapsed < period`). The period runs from `periodStart` to the current due date.
+ */
+export function isEarlyRenewal(
+	input: Pick<RenewalInput, "periodStart" | "dueDate" | "today">,
+): boolean {
+	return (
+		2 * daysBetween(input.periodStart, input.today) <
+		daysBetween(input.periodStart, input.dueDate)
+	);
+}
 
 /**
  * Can the loan be renewed today, and until when (`circulation.renewFrom`: today or the due date).
- * With `override` (administrators) the renewal limit and the overdue block are skipped.
+ * With `override` (administrators) the renewal limit and the overdue block are skipped. A renewal
+ * before half of the period has passed waits for `confirmEarly`, from any account: the
+ * administrator's override does not skip it.
  */
 export function canRenew(
 	config: AppConfig,
 	cal: CalendarRules,
 	input: RenewalInput,
-	options: { override?: boolean } = {},
+	options: { override?: boolean; confirmEarly?: boolean } = {},
 ): RenewalDecision {
 	const refuse = (
 		reason: RenewalRefusal,
-		extra: { max?: number; days?: number } = {},
+		extra: { max?: number; days?: number; early?: EarlyRenewal } = {},
 	): RenewalDecision => ({
 		ok: false,
 		reason,
@@ -243,6 +278,15 @@ export function canRenew(
 			dueDate: { due: input.dueDate, moved: false, capped: false },
 			unchanged: true,
 		};
+	}
+	if (!options.confirmEarly && isEarlyRenewal(input)) {
+		return refuse("renewal_early", {
+			early: {
+				elapsed: daysBetween(input.periodStart, input.today),
+				period: daysBetween(input.periodStart, input.dueDate),
+				newDue: dueDate.due,
+			},
+		});
 	}
 	return { ok: true, rule, dueDate, unchanged: false };
 }

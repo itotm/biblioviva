@@ -59,8 +59,9 @@
 {#if query.error}
 	{#if mode === "notFound"}
 		<EmptyState title={i18n.t("errors.notFound")} icon="empty">
-			{#snippet action()}<Button href={back}>{i18n.t("common.actions.back")}</Button
-				>{/snippet}
+			{#snippet action()}<Button href={back}>
+					{i18n.t("common.actions.back")}
+				</Button>{/snippet}
 		</EmptyState>
 	{:else}
 		<Alert>{errorText ?? i18n.t("common.status.error")}</Alert>

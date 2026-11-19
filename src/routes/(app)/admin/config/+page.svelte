@@ -74,8 +74,10 @@
 				icon={ReloadIcon}
 				onclick={reload}
 				disabled={reloading}
-				data-testid="config-reload">{i18n.t("config.overview.reload")}</Button
+				data-testid="config-reload"
 			>
+				{i18n.t("config.overview.reload")}
+			</Button>
 		{/snippet}
 		{#snippet views()}
 			<AreaTabs area="config" current="overview" />
@@ -96,15 +98,15 @@
 					</BulletList>
 				</Alert>
 			{:else if o.disk.changed}
-				<Alert tone="info" padded data-testid="config-disk-changed"
-					>{i18n.t("config.overview.diskChanged")}</Alert
-				>
+				<Alert tone="info" padded data-testid="config-disk-changed">
+					{i18n.t("config.overview.diskChanged")}
+				</Alert>
 			{:else if o.source === "example"}
 				<Alert tone="warning" padded>{i18n.t("config.overview.example")}</Alert>
 			{:else}
-				<Alert tone="success" padded live={false} data-testid="config-valid"
-					>{i18n.t("config.overview.valid", { count: o.files.length })}</Alert
-				>
+				<Alert tone="success" padded live={false} data-testid="config-valid">
+					{i18n.t("config.overview.valid", { count: o.files.length })}
+				</Alert>
 			{/if}
 			{#if o.warnings.length > 0}
 				<Disclosure

@@ -54,6 +54,8 @@ list is cleared at a release, and a new one takes the next.
   built.
 - [ ] **18. A Raspberry Pi 4 with the `.deb`**: the acceptance of 9.62 and the measure against Docker, once the step is
   built.
+- [x] **19. Right-to-left languages**: Q167 and Q169 answered (the phase waits for the SVAR grid; the two defects of
+  non-Latin names fixed now, 9.69); the other questions of `docs/studies/rtl.md` wait with the phase.
 
 ## Steps left for 0.9.0, in the order of the plan
 
@@ -71,13 +73,14 @@ list is cleared at a release, and a new one takes the next.
   local network, the profile, the key; `scripts/setup-sh.test.ts`); the Italian installation section
   (`docs/it/setup/`) is written and reviewed, its English mirror written, waiting for the owner's reading; the mocks of
   Tailscale, Raspberry Pi Imager and the phone are in `docs/mocks/` (ADR-046); the installation questions on the
-  section's first page compose the reader's path (Q158, ADR-060; the flow in Tecnica, `install-choices.md`); left: the
-  `/admin/setup` checklist page and the runs on a PC and a Raspberry Pi.
+  section's first page compose the reader's path (Q158, ADR-060; the flow in Tecnica, `install-choices.md`); the
+  checklist page `/admin/setup` (**Controllo installazione**) is in; left: the runs on a PC and a Raspberry Pi, and its
+  items of the native packages (9.56–9.59).
 - [ ] 9.5 Documentation and the user manual: the Italian drafts of Manuale (30 guides, 19 screens),
   Amministrazione (first steps, 25 guides, 13 screens) and Aiuto are written, Aiuto in English too; left: the owner's
   reading; reviewed against the code and reviewed again for the text (the four sections, IT and EN); English mirrors written;
-  `docs:shots` takes all 116 computer pictures (112 of the app, 4 mocks of other programs), none missing; left: the
-  tablet and phone windows and the English pictures.
+  `docs:shots` takes every picture in the three windows and both languages (310 a language: 118 computer, 94
+  tablet, 98 phone), none missing; `bun run manual:pdf` prints the manual; left: attaching the PDFs to each release.
 - [ ] 9.36 The public repository from a snapshot, the start of the public beta (ADR-048): READMEs with the status, what
   BiblioViva does and does not do, Tailscale and the phone optional, the commands; the home page's beta notice; the
   original logo back in `docs/reference/branding/` (C2PA stripped). Left: the archive, the snapshot, the settings.
@@ -85,15 +88,16 @@ list is cleared at a release, and a new one takes the next.
   printed, the segnatura edited by hand puts the spine band back to print, the accounts not imported without a confirmation, one
   name per account.
 - [x] 9.43 Restore from the first-run wizard ("Ripristina da un backup" on its first screen).
-- [ ] 9.5b Help icons that open the manual on `docs.biblioviva.org` (the top bar's icon is in; the icons
-  in the trickier spots and the anchors check wait for the manual).
+- [x] 9.5b Help icons that open the manual on `docs.biblioviva.org`: the top bar's button, the small icons in the
+  trickier spots (`HELP_SPOTS`), every target checked by `help-links.test.ts` and `site:check`.
 - [x] 9.67 The help button opens the page of the screen in sight (Restituzioni → the page of the returns, Nuovo
   libro → the page of the new book, Modifica utente → its section), not the area's page.
 - [ ] 9.7 The documentation site on `docs.biblioviva.org`: `bun run site:build` / `site:serve` build it locally from
   `docs/` (ADR-043) with the search (Pagefind, ADR-045), the home page shows four real screenshots; the Pages workflow builds the
   pictures and the site, run by hand only (ADR-050); `docs.biblioviva.org` is online and the home page uploaded with
-  the GitHub link and the Project column (`ONLINE.docs`, `ONLINE.repo`); left: `site:check`, the figure switch, the
-  PDFs.
+  the GitHub link and the Project column (`ONLINE.docs`, `ONLINE.repo`); `site:check` (in `bun run ci`), the figure
+  switch Computer / Tablet / Telefono and the manual's PDFs are in; left: the Italian pictures in `bun run ci`, the
+  Lighthouse checks of the acceptance.
 - [ ] 9.3 Accessibility and UX review pass.
 - [x] 9.54 Accessibility to WCAG 2.2 AA: the six open gaps of the audit, axe on more states, a reflow check (Q147).
 - [ ] 9.55 `publiccode.yml`: the file and its test are in; left: the official validator and the Developers Italia listing
@@ -125,10 +129,16 @@ list is cleared at a release, and a new one takes the next.
   Restituzione desk (Q145).
 - [x] 9.53 Database diagrams as pictures on the site and the libraries in a technical page linked from Informazioni
   (Q146).
+- [x] 9.69 Non-Latin names in the search and the segnatura: the search fold (Arabic and Hebrew marks), the
+  catalogue's index, the author's letters by Unicode letters (Q169).
+- [x] 9.68 A warning before an early renewal: **Rinnova comunque** or **Annulla** when less than half of the loan's
+  period has passed (Q159).
 - [ ] 9.6 Release 0.9.0, the first tagged release of the public beta (ADR-048).
 
 ## After 0.9.0
 
+- [ ] Phase 14, right-to-left languages (14.1–14.13), once the SVAR grid supports right to left (Q167): logical layout and a lint guard, direction, bidirectional
+  text, the grid, digits, fonts, print, search and segnatura for non-Latin scripts, scanners, the Arabic and Hebrew packs.
 - [ ] 9.10 Field test at the school through the school year 2026/27; 1.0.0 for September 2027.
 - [ ] 9.37 Updates with database migrations from 1.0.0 (during the field test).
 - [ ] 9.61 The Windows installer signed by the SignPath Foundation (after 9.36 and a first release with the
@@ -136,7 +146,8 @@ list is cleared at a release, and a new one takes the next.
 - [x] 9.41 Class names and school years for the countries of the language packs (a label template per stage, `next`
   with choices, the school year's start and name, the card's class line and the shipped cards and slips without
   Italian words, order and register matching per language, presets for every country; Q138).
-- [ ] Presets still missing for 9.39: the upper secondary schools of Greece, Romania, Hungary, Japan and Korea.
+- [x] The upper secondary presets of Greece, Romania, Hungary, Japan and Korea (`gr-lykeio`, `ro-liceu`,
+  `hu-gimnazium`, `jp-kotogakko`, `kr-godeung`), [VERIFY] like the others (owner's check 10).
 - [ ] 9.39 Language packs downloaded from each release and installed from Aspetto e lingua (25 languages, Q136).
   Done: real plural forms (ADR-051); the tools (`i18n:work`, `i18n:status`, `i18n:sync`, `i18n:release`), the glossaries
   and **all 25 packs** (automatic translation by Haiku from the glossaries, checked by the tools: keys, placeholders,

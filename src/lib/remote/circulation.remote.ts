@@ -24,11 +24,12 @@ import {
 	renewAllLoans,
 	renewInsteadOfReturn,
 	renewLoan,
+	renewSelectedLoans,
 	undoCheckout,
 } from "#lib/server/services/circulation.js";
 import { getTodayActivity } from "./loans.remote.js";
 
-import { dbId as id, scannedCode } from "#lib/shared/input-schemas.js";
+import { dbId as id, dbIds, scannedCode } from "#lib/shared/input-schemas.js";
 
 /** The administrator's reason for forcing a checkout or a renewal (Appendix I, step 4.5). */
 const overrideReason = v.optional(
@@ -94,8 +95,19 @@ export const undoLastCheckout = command(v.object({ loanId: id, patronId: id }), 
 	return result;
 });
 
+/**
+ * The operator's answer to the warning of an early renewal (less than half of the loan period
+ * gone): any account with `loans` may give it, the administrator's override does not replace it.
+ */
+const confirmEarly = v.optional(v.boolean());
+
 export const renew = command(
-	v.object({ loanId: id, patronId: v.optional(id), override: overrideReason }),
+	v.object({
+		loanId: id,
+		patronId: v.optional(id),
+		override: overrideReason,
+		confirmEarly,
+	}),
 	(input) => {
 		const user = requireUser("loans");
 		if (input.override && !can(user, "admin")) {
@@ -105,7 +117,11 @@ export const renew = command(
 			renewLoan(
 				getDb(),
 				getConfig(),
-				{ loanId: input.loanId, override: input.override },
+				{
+					loanId: input.loanId,
+					override: input.override,
+					confirmEarly: input.confirmEarly,
+				},
 				user,
 			),
 		);
@@ -123,13 +139,36 @@ export const renew = command(
 	},
 );
 
-/** "Rinnova tutti": every open loan of the patron, each with its own decision. */
-export const renewAll = command(v.object({ patronId: id }), ({ patronId }) => {
-	const user = requireUser("loans");
-	const results = orNotFound(() => renewAllLoans(getDb(), getConfig(), patronId, user));
-	void getDeskPatron(patronId).refresh();
-	return results;
-});
+/**
+ * "Rinnova tutti": every open loan of the patron, each with its own decision; with early
+ * renewals among them nothing is done until `confirmEarly` (see `renewAllLoans`).
+ */
+export const renewAll = command(
+	v.object({ patronId: id, confirmEarly }),
+	({ patronId, confirmEarly: confirmed }) => {
+		const user = requireUser("loans");
+		const result = orNotFound(() =>
+			renewAllLoans(getDb(), getConfig(), patronId, user, new Date(), {
+				confirmEarly: confirmed,
+			}),
+		);
+		void getDeskPatron(patronId).refresh();
+		return result;
+	},
+);
+
+/** The selection of the loans grid, renewed together (same rules as "Rinnova tutti"). */
+export const renewMany = command(
+	v.object({ loanIds: v.pipe(dbIds(1000), v.minLength(1)), confirmEarly }),
+	({ loanIds, confirmEarly: confirmed }) => {
+		const user = requireUser("loans");
+		return orNotFound(() =>
+			renewSelectedLoans(getDb(), getConfig(), loanIds, user, new Date(), {
+				confirmEarly: confirmed,
+			}),
+		);
+	},
+);
 
 export const checkin = command(v.object({ itemId: id }), ({ itemId }) => {
 	const user = requireUser("loans");
@@ -147,10 +186,17 @@ export const checkin = command(v.object({ itemId: id }), ({ itemId }) => {
 	return result;
 });
 
-export const renewInstead = command(v.object({ loanId: id }), ({ loanId }) => {
-	const user = requireUser("loans");
-	return orNotFound(() => renewInsteadOfReturn(getDb(), getConfig(), loanId, user));
-});
+export const renewInstead = command(
+	v.object({ loanId: id, confirmEarly }),
+	({ loanId, confirmEarly: confirmed }) => {
+		const user = requireUser("loans");
+		return orNotFound(() =>
+			renewInsteadOfReturn(getDb(), getConfig(), loanId, user, new Date(), {
+				confirmEarly: confirmed,
+			}),
+		);
+	},
+);
 
 /** "Segna danneggiato" on a copy just returned: it keeps circulating (ADR-012), flagged. */
 export const markReturnedDamaged = command(v.object({ itemId: id }), ({ itemId }) => {

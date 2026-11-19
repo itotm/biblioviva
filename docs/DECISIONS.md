@@ -1058,3 +1058,17 @@ tests, bundled by the site build; the flow is drawn in the technical page `docs/
 from `docker/` at each build, so they never drift from the repository. A path whose page does not exist yet (the
 native packages before 9.57, 9.58 and 9.62) is shown with its steps and a note that its guide is being written. A
 change of the paths, the steps or the advice updates `logic.ts`, its tests and `docs/install-choices.md`.
+
+## ADR-061 — The JavaScript budget of the core pages is 275 KB (2026-11-19, owner)
+
+**Context.** The budget of §3.14 was ours, not a constraint from outside: 250 KB of JavaScript, gzipped, on the
+dashboard, the two desks, the patrons and the catalogue. Skeleton 5.0.5 (newer Zag machines) adds about 5 KB to
+every page, and the catalogue and the patrons, the heaviest pages, went past 250 KB; holding a library back to stay
+under a number of our own costs its fixes.
+
+**Decision.** The budget is 275 KB. The heavy parts still load only where they are used (the barcode reader,
+OpenCV, the charts), and the shared modules stay split so a page does not load what it does not show (the tables of
+the help icons and of the installation check, the address of a pictogram apart from the classification code).
+
+**Consequences.** `tests/e2e/perf-budget.spec.ts` checks 275 KB; `docs/performance.md` lists the measured weights;
+the catalogue and the patrons are at about 254 KB, so new features have room before the next review of the number.

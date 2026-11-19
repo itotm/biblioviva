@@ -257,9 +257,9 @@
 				onselect={(p) => choosePreset(p, check === "none" ? "mod23" : check)}
 			>
 				{#if preset === "custom"}
-					<ToggleButton role="radio" pressed={true} data-testid="format-preset-custom"
-						>{i18n.t("config.blocks.barcodeFormats.presets.custom")}</ToggleButton
-					>
+					<ToggleButton role="radio" pressed={true} data-testid="format-preset-custom">
+						{i18n.t("config.blocks.barcodeFormats.presets.custom")}
+					</ToggleButton>
 				{/if}
 			</SegmentedGroup>
 		</div>
@@ -305,11 +305,9 @@
 									data-testid="format-{key}-check"
 								>
 									{#each CHECK_ALGORITHMS as c (c)}
-										<option value={c}
-											>{i18n.t(
-												`config.blocks.barcodeFormats.checks.${c}`,
-											)}</option
-										>
+										<option value={c}>
+											{i18n.t(`config.blocks.barcodeFormats.checks.${c}`)}
+										</option>
 									{/each}
 								</Select>
 							</Row>
@@ -434,18 +432,18 @@
 								})}
 							</Hint>
 							{#if k.retired.length > 0}
-								<span class="label-text"
-									>{i18n.t("config.blocks.barcodeFormats.retired")}</span
-								>
+								<span class="label-text">
+									{i18n.t("config.blocks.barcodeFormats.retired")}
+								</span>
 								{@render usageList(key, "retired", k.retired)}
 							{/if}
-							<span class="label-text"
-								>{i18n.t("config.blocks.barcodeFormats.legacy")}</span
-							>
+							<span class="label-text">
+								{i18n.t("config.blocks.barcodeFormats.legacy")}
+							</span>
 							{#if k.legacy.length === 0}
-								<Hint tone="faint"
-									>{i18n.t("config.blocks.barcodeFormats.noLegacy")}</Hint
-								>
+								<Hint tone="faint">
+									{i18n.t("config.blocks.barcodeFormats.noLegacy")}
+								</Hint>
 							{/if}
 							{@render usageList(key, "legacy", k.legacy)}
 							<Row>
@@ -462,8 +460,9 @@
 									onclick={() => addLegacy(key)}
 									disabled={newLegacy[key].trim() === ""}
 									data-testid="format-{key}-legacy-add"
-									>{i18n.t("config.blocks.barcodeFormats.addLegacy")}</Button
 								>
+									{i18n.t("config.blocks.barcodeFormats.addLegacy")}
+								</Button>
 							</Row>
 						</section>
 					{/each}

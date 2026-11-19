@@ -14,7 +14,7 @@
 </script>
 
 {#if shown}
-	<span class="badge preset-tonal-primary font-semibold {className}" data-testid="class-badge"
-		>{shown}</span
-	>
+	<span class="badge preset-tonal-primary font-semibold {className}" data-testid="class-badge">
+		{shown}
+	</span>
 {/if}

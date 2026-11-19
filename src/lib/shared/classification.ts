@@ -91,18 +91,7 @@ export function classOf(scheme: ClassificationScheme, code: string): ResolvedNod
 	return null;
 }
 
-/**
- * The URL of a genre's or class's pictogram (§3.17), versioned by its image file and colour so a
- * change made in the classification editor shows at once despite the browser cache.
- */
-export function pictogramSrc(node: {
-	code: string;
-	image?: string | null;
-	color?: string | null;
-}): string {
-	const version = node.image ?? node.color ?? "";
-	return `/media/classification/${encodeURIComponent(node.code)}${version ? `?v=${encodeURIComponent(version)}` : ""}`;
-}
+export { pictogramSrc } from "./pictogram-src.js";
 
 /** The code and every descendant code (for "class including children" filters). */
 export function classCodesUnder(scheme: ClassificationScheme, code: string): string[] {
@@ -148,15 +137,73 @@ export function suggestClassFromDewey(
 	return best && classOf(scheme, best.code) ? best.code : null;
 }
 
-/** First three letters of the author's surname, upper-cased (`Delitto, Anna` → `DEL`). */
+/**
+ * Where the surname ends: spaces, the comma, the Arabic comma `،`, the full-width comma `，` and the
+ * ideographic comma `、`.
+ */
+const SURNAME_END = /[,،，、\s]+/;
+/** Names of Chinese, Japanese and Korean script: a whole name is two to four characters. */
+const CJK_LETTER = /^[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u;
+/** The Arabic article and its prefixed forms (`وال`, `بال`), longest first. */
+const ARABIC_ARTICLES = ["وال", "بال", "ال"];
+/** The Hebrew article. */
+const HEBREW_ARTICLE = "ה";
+/** Letters left for the cutter after a leading article is skipped. */
+const MIN_AFTER_ARTICLE = 3;
+
+/** The letters of a word for the cutter: Latin as ASCII (accents dropped), any other script as it is. */
+function cutterLetters(word: string): string[] {
+	return Array.from(
+		word
+			.normalize("NFD")
+			// every mark (accents, tonos, tashkeel, niqqud) and the tatweel, but the voicing marks of
+			// kana and the letters й, ё and ї of Cyrillic, which are letters of their own
+			.replace(/(?![゙゚])(?:(?<![иИ])̆|(?<![еЕіІ])̈|(?![̆̈])\p{M})|ـ/gu, "")
+			.normalize("NFC"),
+	).filter((c) => (/\p{Script=Latin}/u.test(c) ? /[A-Za-z]/.test(c) : /\p{L}/u.test(c)));
+}
+
+/**
+ * The letters of a word past the Arabic article, or past the Hebrew one in a title (a Hebrew
+ * surname may begin with ה: הרצל), when enough remain after it.
+ */
+function pastArticle(letters: string[], inTitle: boolean): string[] {
+	const word = letters.join("");
+	// [VERIFY with a native librarian] the articles skipped and how many letters must remain
+	const article = /^\p{Script=Arabic}/u.test(word)
+		? ARABIC_ARTICLES.find((a) => word.startsWith(a))
+		: inTitle && /^\p{Script=Hebrew}/u.test(word) && word.startsWith(HEBREW_ARTICLE)
+			? HEBREW_ARTICLE
+			: undefined;
+	return article && letters.length - article.length >= MIN_AFTER_ARTICLE
+		? letters.slice(article.length)
+		: letters;
+}
+
+/**
+ * The cutter of the segnatura: the first three letters of the author's surname (the first word),
+ * upper-cased (`Delitto, Anna` → `DEL`, `Éluard` → `ELU`, `Достоевский` → `ДОС`, `Καζαντζάκης` →
+ * `ΚΑΖ`). Latin letters lose their accents and keep ASCII only; other scripts keep their letters
+ * (Greek without tonos, Hebrew without points, Arabic without tashkeel and tatweel). A leading
+ * Arabic article (`ال`, `وال`, `بال`) is skipped when at least three letters follow (`المنفلوطي` →
+ * `منف`); the Hebrew article `ה` only in a title (`title3`). Chinese, Japanese and Korean names give two characters (`村上春樹` →
+ * `村上`): a surname is one or two of them, three would cut a name in the middle.
+ */
 export function author3(author: string): string {
-	const surname = author.split(/[,\s]+/).find((part) => part.length > 0) ?? "";
-	return surname
-		.normalize("NFD")
-		.replace(/[̀-ͯ]/g, "")
-		.replace(/[^A-Za-z]/g, "")
-		.slice(0, 3)
-		.toUpperCase();
+	return cutter(author, false);
+}
+
+/** The cutter of a name or of a title's first word (`inTitle`: the Hebrew article is skipped too). */
+function cutter(text: string, inTitle: boolean): string {
+	const surname = text.split(SURNAME_END).find((part) => part.length > 0) ?? "";
+	const letters = pastArticle(cutterLetters(surname), inTitle);
+	const length = CJK_LETTER.test(letters[0] ?? "") ? 2 : 3;
+	return letters.slice(0, length).join("").toUpperCase();
+}
+
+/** The first character of a title, upper-cased (a whole character, not half of a surrogate pair). */
+function firstChar(title: string): string {
+	return (Array.from(title.trim())[0] ?? "").toUpperCase();
 }
 
 /** What `{{text}}` proposes for a title that has no text of its own (Q143). */
@@ -246,7 +293,7 @@ export function title3(title: string): string {
 		.filter(Boolean);
 	const first =
 		words.length > 1 && ARTICLES.has((words[0] ?? "").toLowerCase()) ? words[1] : words[0];
-	return author3(first ?? "");
+	return cutter(first ?? "", true);
 }
 
 /** The initials of the segnatura: the author's, or the title's for a special author (Anonimo). */
@@ -297,7 +344,7 @@ export function callTextProposal(
 	return proposal === "author3"
 		? initialsOf(scheme, record)
 		: proposal === "title1"
-			? record.title.trim().charAt(0).toUpperCase()
+			? firstChar(record.title)
 			: "";
 }
 
@@ -322,7 +369,7 @@ function valuesOf(scheme: CallNumberRules, parts: CallNumberParts): Record<strin
 		class: parts.readingLevel ?? "",
 		code: parts.classCode ?? "",
 		author3: initialsOf(scheme, parts),
-		title1: parts.title.trim().charAt(0).toUpperCase(),
+		title1: firstChar(parts.title),
 		text: (parts.text ?? callTextProposal(scheme, parts)).trim(),
 		copytext: (parts.copyText ?? "").trim(),
 	};

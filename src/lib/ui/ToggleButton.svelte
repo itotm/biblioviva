@@ -35,5 +35,7 @@
 	class="btn {size === 'sm' ? 'btn-sm' : ''} {pressed
 		? 'preset-filled-primary-500'
 		: off} {className}"
-	{...rest}>{@render children()}</button
+	{...rest}
 >
+	{@render children()}
+</button>

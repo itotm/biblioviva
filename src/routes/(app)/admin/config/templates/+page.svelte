@@ -211,9 +211,9 @@
 			<Tabs value={kind} onValueChange={(e) => (kind = tabValue(e.value))}>
 				<Tabs.List>
 					{#each ["cards", "labels", "slips"] as const as k (k)}
-						<Tabs.Trigger value={k} data-testid="templates-tab-{k}"
-							>{i18n.t(`admin.templates.kinds.${k}`)}</Tabs.Trigger
-						>
+						<Tabs.Trigger value={k} data-testid="templates-tab-{k}">
+							{i18n.t(`admin.templates.kinds.${k}`)}
+						</Tabs.Trigger>
 					{/each}
 				</Tabs.List>
 				{#each ["cards", "labels", "slips"] as const as k (k)}
@@ -232,21 +232,20 @@
 														? "secondary"
 														: "success"}
 												data-testid="template-source"
-												>{i18n.t(
-													`config.templates.source.${t.source === "builtin" ? "builtin" : t.overridesBuiltin ? "customised" : "added"}`,
-												)}</Badge
 											>
+												{i18n.t(
+													`config.templates.source.${t.source === "builtin" ? "builtin" : t.overridesBuiltin ? "customised" : "added"}`,
+												)}
+											</Badge>
 											{#if t.labelKind}
-												<Badge tone="primary"
-													>{i18n.t(
-														`printing.labels.kinds.${t.labelKind}`,
-													)}</Badge
-												>
+												<Badge tone="primary">
+													{i18n.t(`printing.labels.kinds.${t.labelKind}`)}
+												</Badge>
 											{/if}
 											{#if t.error}
-												<Badge tone="error"
-													>{i18n.t("config.templates.broken")}</Badge
-												>
+												<Badge tone="error">
+													{i18n.t("config.templates.broken")}
+												</Badge>
 											{/if}
 										</Row>
 									</div>
@@ -256,30 +255,34 @@
 												icon={RenameIcon}
 												onclick={() => ask("customise", t)}
 												data-testid="template-customise"
-												>{i18n.t("config.templates.customise")}</Button
 											>
+												{i18n.t("config.templates.customise")}
+											</Button>
 										{/if}
 										<Button
 											icon={CopyIcon}
 											onclick={() => ask("duplicate", t)}
 											data-testid="template-duplicate"
-											>{i18n.t("config.templates.duplicate")}</Button
 										>
+											{i18n.t("config.templates.duplicate")}
+										</Button>
 										{#if t.source === "config"}
 											<Button
 												icon={RenameIcon}
 												variant="primary"
 												href="/admin/config/templates/{t.kind}/{t.name}"
 												data-testid="template-edit"
-												>{i18n.t("config.templates.edit")}</Button
 											>
+												{i18n.t("config.templates.edit")}
+											</Button>
 											{#if !t.overridesBuiltin}
 												<Button
 													icon={RenameIcon}
 													onclick={() => ask("rename", t)}
 													data-testid="template-rename"
-													>{i18n.t("config.templates.rename")}</Button
 												>
+													{i18n.t("config.templates.rename")}
+												</Button>
 											{/if}
 											<Button
 												icon={RemoveIcon}
@@ -288,12 +291,13 @@
 													!t.overridesBuiltin}
 												onclick={() => ask("delete", t)}
 												data-testid="template-delete"
-												>{i18n.t(
+											>
+												{i18n.t(
 													t.overridesBuiltin
 														? "config.templates.restore"
 														: "common.actions.delete",
-												)}</Button
-											>
+												)}
+											</Button>
 										{/if}
 									</Row>
 								</div>
@@ -315,9 +319,9 @@
 									data-testid="template-assets"
 								>
 									{#if t.assets.length === 0}
-										<Hint tone="faint"
-											>{i18n.t("config.templates.noAssets")}</Hint
-										>
+										<Hint tone="faint">
+											{i18n.t("config.templates.noAssets")}
+										</Hint>
 									{:else}
 										<ul class="grid gap-2 sm:grid-cols-2">
 											{#each t.assets as a (a.file)}
@@ -335,15 +339,16 @@
 													{:else}
 														<span
 															class="flex size-12 shrink-0 items-center justify-center rounded-base bg-surface-100 font-mono text-xs"
-															>{a.file.split(".").pop()}</span
 														>
+															{a.file.split(".").pop()}
+														</span>
 													{/if}
 													<div class="min-w-0 flex-1">
 														<p class="font-mono text-sm break-all">
 															{a.file}
 														</p>
-														<Hint as="span" tone="faint" class="block"
-															>{formatBytes(a.bytes, fmt.locale)} · {a
+														<Hint as="span" tone="faint" class="block">
+															{formatBytes(a.bytes, fmt.locale)} · {a
 																.usedIn.length > 0
 																? i18n.t(
 																		"config.templates.usedIn",
@@ -355,8 +360,8 @@
 																	)
 																: i18n.t(
 																		"config.templates.assetUnused",
-																	)}</Hint
-														>
+																	)}
+														</Hint>
 													</div>
 													{#if t.source === "config"}
 														<IconButton
@@ -380,18 +385,19 @@
 												onclick={() => pick(t)}
 												disabled={uploading}
 												data-testid="asset-upload"
-												>{i18n.t("config.templates.upload")}</Button
 											>
-											<Hint as="span" tone="faint"
-												>{i18n.t("config.templates.uploadHint", {
+												{i18n.t("config.templates.upload")}
+											</Button>
+											<Hint as="span" tone="faint">
+												{i18n.t("config.templates.uploadHint", {
 													maxMb: f.maxAssetMb,
-												})}</Hint
-											>
+												})}
+											</Hint>
 										</Row>
 									{:else}
-										<Hint tone="faint"
-											>{i18n.t("config.templates.builtinAssets")}</Hint
-										>
+										<Hint tone="faint">
+											{i18n.t("config.templates.builtinAssets")}
+										</Hint>
 									{/if}
 								</Disclosure>
 								<Disclosure

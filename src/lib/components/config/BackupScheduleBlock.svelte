@@ -29,9 +29,9 @@
 <Card variant="outlined" gap="2" data-testid="block-backupSchedule">
 	<h2 class="title-lg">{i18n.t("config.blocks.backupSchedule.title")}</h2>
 	{#if runs === null}
-		<Hint tone="error" data-testid="backup-next-invalid"
-			>{i18n.t("config.blocks.backupSchedule.invalid")}</Hint
-		>
+		<Hint tone="error" data-testid="backup-next-invalid">
+			{i18n.t("config.blocks.backupSchedule.invalid")}
+		</Hint>
 	{:else if runs.length === 0}
 		<Hint>{i18n.t("config.blocks.backupSchedule.never")}</Hint>
 	{:else}
@@ -41,7 +41,7 @@
 			{/each}
 		</ol>
 	{/if}
-	<Hint tone="faint"
-		>{i18n.t("config.blocks.backupSchedule.hint", { timezone: fmt.timezone })}</Hint
-	>
+	<Hint tone="faint">
+		{i18n.t("config.blocks.backupSchedule.hint", { timezone: fmt.timezone })}
+	</Hint>
 </Card>

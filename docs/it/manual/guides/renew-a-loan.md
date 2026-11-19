@@ -58,6 +58,14 @@ messaggio dice quanti giorni di ritardo ha il libro. Premere **Restituisci**.
 Se l'amministratore ha fissato una scadenza massima (per esempio la fine delle lezioni), non si può andare oltre. Il
 messaggio dà la data; premere **Restituisci**.
 
+### Compare la finestra «Rinnovo anticipato»
+
+Il libro è in prestito da meno della metà del periodo (il periodo parte dal prestito o dall'ultimo rinnovo): la finestra
+lo dice con i giorni trascorsi e la scadenza. Per rinnovare comunque, premere **Rinnova comunque**. Per lasciare tutto
+com'è, premere **Annulla**: il prestito non cambia. Con **Rinnova tutti** o **Rinnova selezionati** la finestra elenca i
+libri interessati: **Rinnova comunque** rinnova tutti i prestiti richiesti, **Annulla** non ne rinnova nessuno. Anche
+l'amministratore deve confermare.
+
 ### L'amministratore vuole rinnovare comunque
 
 Per l'account Amministrazione, i messaggi di rinnovo non consentito hanno anche **Forza (solo admin)** (non per la

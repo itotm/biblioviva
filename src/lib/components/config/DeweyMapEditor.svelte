@@ -84,9 +84,9 @@
 									data-testid="dewey-prefix"
 								/>
 								{#each problems as p (p)}
-									<Hint tone="error"
-										>{i18n.t(`config.taxonomy.dewey.problems.${p}`)}</Hint
-									>
+									<Hint tone="error">
+										{i18n.t(`config.taxonomy.dewey.problems.${p}`)}
+									</Hint>
 								{/each}
 							</td>
 							<td class="align-top">
@@ -121,7 +121,7 @@
 			</Table>
 		</div>
 	{/if}
-	<Button icon={AddIcon} onclick={() => editor.addDewey()} data-testid="dewey-add"
-		>{i18n.t("config.taxonomy.dewey.add")}</Button
-	>
+	<Button icon={AddIcon} onclick={() => editor.addDewey()} data-testid="dewey-add">
+		{i18n.t("config.taxonomy.dewey.add")}
+	</Button>
 </Card>

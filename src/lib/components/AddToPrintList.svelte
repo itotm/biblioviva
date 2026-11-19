@@ -104,8 +104,10 @@
 		icon={ListIcon}
 		onclick={() => (open = true)}
 		disabled={disabled || (entityIds.length === 0 && biblioIds.length === 0)}
-		data-testid="add-to-list">{label ?? i18n.t("printing.addTo.button")}</Button
+		data-testid="add-to-list"
 	>
+		{label ?? i18n.t("printing.addTo.button")}
+	</Button>
 {/if}
 
 <ConfirmDialog
@@ -126,9 +128,9 @@
 				data-testid="add-to-list-select"
 			>
 				{#each candidates as l (l.id)}
-					<option value={l.id}
-						>{l.name} ({i18n.t("printing.lists.count", { count: l.count })})</option
-					>
+					<option value={l.id}>
+						{l.name} ({i18n.t("printing.lists.count", { count: l.count })})
+					</option>
 				{/each}
 			</Select>
 		{/if}

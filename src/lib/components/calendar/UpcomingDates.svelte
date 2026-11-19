@@ -45,16 +45,16 @@
 			{/each}
 		</DividedList>
 		{#if upcoming.total > upcoming.events.length}
-			<Hint
-				>{i18n.t("dashboard.upcoming.more", {
+			<Hint>
+				{i18n.t("dashboard.upcoming.more", {
 					count: upcoming.total - upcoming.events.length,
-				})}</Hint
-			>
+				})}
+			</Hint>
 		{/if}
 	{/if}
 	<Row>
-		<Button icon={CalendarIcon} href="/calendar" data-testid="upcoming-open"
-			>{i18n.t("dashboard.upcoming.open")}</Button
-		>
+		<Button icon={CalendarIcon} href="/calendar" data-testid="upcoming-open">
+			{i18n.t("dashboard.upcoming.open")}
+		</Button>
 	</Row>
 </Card>

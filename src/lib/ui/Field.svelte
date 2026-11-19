@@ -74,7 +74,9 @@
 			tone="error"
 			class="block"
 			id="{uid}-error-{i}"
-			data-testid={name ? `field-error-${name}` : undefined}>{message}</Hint
+			data-testid={name ? `field-error-${name}` : undefined}
 		>
+			{message}
+		</Hint>
 	{/each}
 </div>

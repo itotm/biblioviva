@@ -52,7 +52,14 @@
 		"renewAll": "Rinnova tutti",
 		"renewedAll": "{{n:plural; one:Rinnovato {{n}} prestito; other:Rinnovati {{n}} prestiti;}} su {{total}}.",
 		"overrideTitle": "Forzare il rinnovo?",
-		"overrideConfirm": "Rinnova comunque"
+		"overrideConfirm": "Rinnova comunque",
+		"early": {
+			"title": "Rinnovo anticipato",
+			"confirm": "Rinnova comunque",
+			"manyIntro": "Questi prestiti non hanno ancora superato metà del periodo di prestito:",
+			"manyLine": "«{{title}}»: in prestito da {{elapsed}} {{elapsed:plural; one:giorno; other:giorni;}} su {{period}}, scadenza {{due}}",
+			"manyOutro": "«Rinnova comunque» rinnova tutti i prestiti richiesti, anche questi; «Annulla» non ne rinnova nessuno."
+		}
 	},
 	"loans": {
 		"title": "Libri in prestito",
@@ -143,6 +150,7 @@
 		"renewal_limit_reached": "«{{title}}» è già stato rinnovato {{n}} {{n:plural; one:volta; other:volte;}}, il massimo. Deve essere restituito.",
 		"renewal_overdue_blocked": "«{{title}}» è in ritardo di {{days}} {{days:plural; one:giorno; other:giorni;}} e le regole non consentono il rinnovo.",
 		"renewal_hard_due_date": "«{{title}}» non si può rinnovare: la scadenza è già il {{due}}, l'ultimo giorno di prestito di quest'anno.",
+		"renewal_early": "«{{title}}» è in prestito da {{elapsed}} {{elapsed:plural; one:giorno; other:giorni;}} su {{period}}: non è ancora passata metà del periodo del prestito (scadenza {{due}}). Rinnovando, la nuova scadenza sarà il {{newDue}}.",
 		"duplicate_scan": "«{{title}}» è già nell'elenco di questo prestito.",
 		"not_on_loan": "«{{title}}» non risulta in prestito: nessuna restituzione da registrare. Se era prestato senza registrazione, il libro è comunque disponibile.",
 		"already_returned_today": "«{{title}}» è già stato restituito oggi alle {{time}}.",

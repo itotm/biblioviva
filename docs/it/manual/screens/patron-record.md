@@ -75,7 +75,9 @@ Per gli account che hanno anche il banco prestiti (di norma «Amministrazione»)
 
 Un rinnovo rifiutato spiega perché con un messaggio nella pagina, lo stesso del banco prestiti (vedere [Rinnovi
 rifiutati](checkout.md#rinnovi-rifiutati)); per «Amministrazione» la finestra **Forzare il rinnovo?** permette di
-procedere comunque con **Rinnova comunque**, scrivendo un motivo.
+procedere comunque con **Rinnova comunque**, scrivendo un motivo. Un rinnovo chiesto prima di metà del periodo del
+prestito, per un libro o con **Rinnova tutti**, apre la finestra **Rinnovo anticipato** con **Rinnova comunque** e
+**Annulla** (vedere [Rinnovo anticipato](checkout.md#rinnovo-anticipato)).
 
 ### Segnalazione di un libro smarrito
 

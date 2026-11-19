@@ -127,8 +127,11 @@ written for technical readers as they are.
   of its own, with the language `sh`, one command per block, nothing in it that the reader must not type (no `$`
   prompt, no output). The output, when the reader must check it, goes in a separate block without a language.
 - **Labels of the interface in bold**, exactly as in the dictionaries: "Premere **Salva**". Bold is for labels only;
-  emphasis is rare and in italics. The site check fails when a bold text is not a label of that language. The
-  labels of other programs (Raspberry Pi Imager, the Tailscale console, the router) go in quotation marks:
+  emphasis is rare and in italics. `bun run site:check` fails when a bold text is not a label of that language: a
+  text of its dictionaries or the name of a built-in report or of one of its columns, compared with the case but
+  without a final colon, dot or ellipsis, and with a count written as `(N)` after the name of a tab; the label that
+  opens a variant block is not checked, and the rare other case is a line with its reason in
+  `scripts/site-check-exceptions.ts`. The labels of other programs (Raspberry Pi Imager, the Tailscale console, the router) go in quotation marks:
   "Choose OS", «Genera chiave».
 - **Notes and warnings** are GitHub alerts, and only these three:
 

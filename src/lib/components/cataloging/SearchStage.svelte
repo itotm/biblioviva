@@ -9,6 +9,7 @@
 	import Field from "#lib/ui/Field.svelte";
 	import Grid from "#lib/ui/Grid.svelte";
 	import Input from "#lib/ui/Input.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
 	import Row from "#lib/ui/Row.svelte";
 
 	interface Props {
@@ -35,7 +36,10 @@
 </script>
 
 <Card padding="lg" gap="4" as="section" data-testid="stage-search">
-	<h2 class="h4">{i18n.t("catalog.fastAdd.search.heading")}</h2>
+	<Row wrap={false} align="center" gap="1">
+		<h2 class="h4">{i18n.t("catalog.fastAdd.search.heading")}</h2>
+		<HelpLink spot="fastAddSearch" topic={i18n.t("catalog.fastAdd.search.heading")} />
+	</Row>
 	<Grid
 		as="form"
 		onsubmit={(e) => {
@@ -43,22 +47,22 @@
 			onsearch();
 		}}
 	>
-		<Field label={i18n.t("catalog.fastAdd.search.title")}
-			><Input bind:value={title} autofocus data-testid="search-title" /></Field
-		>
-		<Field label={i18n.t("catalog.fastAdd.search.author")}
-			><Input bind:value={author} data-testid="search-author" /></Field
-		>
+		<Field label={i18n.t("catalog.fastAdd.search.title")}>
+			<Input bind:value={title} autofocus data-testid="search-title" />
+		</Field>
+		<Field label={i18n.t("catalog.fastAdd.search.author")}>
+			<Input bind:value={author} data-testid="search-author" />
+		</Field>
 		{#if error}
 			<p class="text-error-700 md:col-span-2" role="alert">{error}</p>
 		{/if}
 		<Row class="md:col-span-2">
-			<Button variant="primary" icon={SearchIcon} type="submit" data-testid="search-submit"
-				>{i18n.t("catalog.fastAdd.search.submit")}</Button
-			>
-			<Button icon={EditIcon} onclick={onmanual}
-				>{i18n.t("catalog.fastAdd.code.manual")}</Button
-			>
+			<Button variant="primary" icon={SearchIcon} type="submit" data-testid="search-submit">
+				{i18n.t("catalog.fastAdd.search.submit")}
+			</Button>
+			<Button icon={EditIcon} onclick={onmanual}>
+				{i18n.t("catalog.fastAdd.code.manual")}
+			</Button>
 			<Button icon={BackIcon} onclick={onback}>{i18n.t("common.actions.back")}</Button>
 		</Row>
 	</Grid>

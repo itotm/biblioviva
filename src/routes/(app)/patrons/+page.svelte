@@ -131,9 +131,9 @@
 <Page width="2xl">
 	<PageHeader title={i18n.t("patrons.list.title")} icon="patrons">
 		{#snippet actions()}
-			<Button variant="primary" icon={AddIcon} href="/patrons/new" data-testid="new-patron"
-				>{i18n.t("patrons.list.new")}</Button
-			>
+			<Button variant="primary" icon={AddIcon} href="/patrons/new" data-testid="new-patron">
+				{i18n.t("patrons.list.new")}
+			</Button>
 		{/snippet}
 		{#snippet views()}
 			<AreaTabs area="patrons" current="patrons" />
@@ -151,8 +151,10 @@
 				variant="primary"
 				icon={PrintIcon}
 				onclick={() => (cardDialog = true)}
-				data-testid="print-selected-cards">{i18n.t("patrons.list.printCards")}</Button
+				data-testid="print-selected-cards"
 			>
+				{i18n.t("patrons.list.printCards")}
+			</Button>
 			<AddToPrintList
 				entityIds={selectedIds.map(Number)}
 				label={i18n.t("printing.addTo.selected")}
@@ -164,8 +166,10 @@
 					variant="error-tonal"
 					icon={RemoveIcon}
 					onclick={() => (confirmRemove = true)}
-					data-testid="remove-selected">{i18n.t("patrons.list.removeSelected")}</Button
+					data-testid="remove-selected"
 				>
+					{i18n.t("patrons.list.removeSelected")}
+				</Button>
 			{/if}
 		{/snippet}
 		{#snippet actions()}
@@ -174,10 +178,11 @@
 					icon={PrintIcon}
 					onclick={() => (cardDialog = true)}
 					data-testid="print-class-cards"
-					>{i18n.t("patrons.list.printClassCards", {
-						classLabel: chosenGroup.label,
-					})}</Button
 				>
+					{i18n.t("patrons.list.printClassCards", {
+						classLabel: chosenGroup.label,
+					})}
+				</Button>
 			{/if}
 		{/snippet}
 		{#snippet filters()}
@@ -204,9 +209,9 @@
 					}}
 					data-testid="filter-stage"
 				>
-					{#each options.current?.stages ?? [] as st (st.code)}<option value={st.code}
-							>{stageLabel}: {st.name}</option
-						>{/each}
+					{#each options.current?.stages ?? [] as st (st.code)}<option value={st.code}>
+							{stageLabel}: {st.name}
+						</option>{/each}
 				</FilterSelect>
 			{/if}
 			<FilterSelect
@@ -215,20 +220,20 @@
 				bind:value={f.levelCode}
 				onchange={() => (f.groupId = "")}
 			>
-				{#each levelChoices as l (l.code)}<option value={l.code}
-						>{levelLabel}: {l.label}</option
-					>{/each}
+				{#each levelChoices as l (l.code)}<option value={l.code}>
+						{levelLabel}: {l.label}
+					</option>{/each}
 			</FilterSelect>
 			<FilterSelect
 				label={groupWord}
 				all={i18n.t("patrons.list.filters.allF")}
 				bind:value={f.groupId}
 			>
-				{#each groupChoices as g (g.id)}<option value={String(g.id)}
-						>{groupWord}: {f.levelCode !== "" && g.levels.length === 1
+				{#each groupChoices as g (g.id)}<option value={String(g.id)}>
+						{groupWord}: {f.levelCode !== "" && g.levels.length === 1
 							? g.name
-							: g.label}</option
-					>{/each}
+							: g.label}
+					</option>{/each}
 			</FilterSelect>
 			<FilterSelect label={i18n.t("patrons.list.filters.status")} {all} bind:value={f.status}>
 				<option value="active">{i18n.t("common.statuses.patron.active")}</option>
@@ -238,8 +243,10 @@
 				<Button
 					icon={ClearIcon}
 					onclick={() => filterState.clear()}
-					data-testid="clear-filters">{i18n.t("patrons.list.clearFilters")}</Button
+					data-testid="clear-filters"
 				>
+					{i18n.t("patrons.list.clearFilters")}
+				</Button>
 			{/if}
 		{/snippet}
 	</ListToolbar>

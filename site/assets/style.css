@@ -1412,25 +1412,48 @@ a.card:hover {
 .fig-frames {
 	position: relative;
 }
-.fig-desktop {
-	position: relative;
-}
-.fig-phone {
+/* One picture for each window the screen was taken in (Computer, Tablet, Telefono): only one is
+   shown. The reader's pick (a radio button of the switch) wins; until there is one, the window
+   closest to the reader's screen, which the build marks with `fig-on-wide|medium|narrow`. A
+   figure with a single window has no switch and always shows its picture. */
+.fig-win {
 	display: none;
-	max-width: 260px;
 	margin: 0 auto;
 }
-.fig-only-phone .fig-phone {
+.fig-single .fig-win,
+.fig:has(.fig-radio-computer:checked) .fig-win-computer,
+.fig:has(.fig-radio-tablet:checked) .fig-win-tablet,
+.fig:has(.fig-radio-phone:checked) .fig-win-phone {
 	display: block;
 }
-.fig:has(input[value="phone"]:checked) .fig-desktop {
-	display: none;
-}
-.fig:has(input[value="phone"]:checked) .fig-phone {
-	display: block;
+.fig:has(.fig-radio:checked) .fig-win {
 	animation: pop 0.35s ease;
 }
+@media (min-width: 1100px) {
+	.fig:not(:has(.fig-radio:checked)) .fig-win.fig-on-wide {
+		display: block;
+	}
+}
+@media (min-width: 640px) and (max-width: 1099.98px) {
+	.fig:not(:has(.fig-radio:checked)) .fig-win.fig-on-medium {
+		display: block;
+	}
+}
+@media (max-width: 639.98px) {
+	.fig:not(:has(.fig-radio:checked)) .fig-win.fig-on-narrow {
+		display: block;
+	}
+}
+/* a picture is shown at the size it was taken (a scale 2 one at half its pixels), no bigger
+   than its column; tablets and phones are upright, so they stay narrower than the text */
+.fig .fig-win-tablet img {
+	max-width: min(100%, 600px);
+}
+.fig .fig-win-phone img {
+	max-width: min(100%, 360px);
+}
 .fig-switch {
+	position: relative;
 	display: inline-flex;
 	gap: 3px;
 	padding: 3px;
@@ -1466,6 +1489,28 @@ a.card:hover {
 .fig-switch input:focus-visible + label {
 	outline: 2px solid var(--primary);
 	outline-offset: 2px;
+}
+/* before the reader picks one, the label of the window shown is filled too */
+@media (min-width: 1100px) {
+	.fig:not(:has(.fig-radio:checked)) .fig-switch label.fig-on-wide {
+		background: var(--sec);
+		color: #fff;
+	}
+}
+@media (min-width: 640px) and (max-width: 1099.98px) {
+	.fig:not(:has(.fig-radio:checked)) .fig-switch label.fig-on-medium {
+		background: var(--sec);
+		color: #fff;
+	}
+}
+@media (max-width: 639.98px) {
+	.fig:not(:has(.fig-radio:checked)) .fig-switch label.fig-on-narrow {
+		background: var(--sec);
+		color: #fff;
+	}
+	.fig-switch label {
+		min-height: 40px;
+	}
 }
 .fig figcaption {
 	margin-top: 10px;

@@ -122,17 +122,19 @@
 		<Hint tone="soft" data-testid="card-after-print">{t("afterPrint")}</Hint>
 	{/if}
 	<Row justify="end" as="footer">
-		<Button onclick={() => (open = false)} disabled={busy} data-testid="card-print-close"
-			>{i18n.t("common.actions.close")}</Button
-		>
+		<Button onclick={() => (open = false)} disabled={busy} data-testid="card-print-close">
+			{i18n.t("common.actions.close")}
+		</Button>
 		{#if opened && markGroupId !== undefined}
 			<Button
 				variant="success-tonal"
 				icon={CheckIcon}
 				onclick={mark}
 				disabled={busy}
-				data-testid="card-mark-printed">{i18n.t("printing.list.markPrinted")}</Button
+				data-testid="card-mark-printed"
 			>
+				{i18n.t("printing.list.markPrinted")}
+			</Button>
 		{/if}
 		<Button
 			variant="primary"
@@ -140,7 +142,9 @@
 			href={target}
 			target="_blank"
 			onclick={() => (opened = true)}
-			data-testid="card-print">{t("print")}</Button
+			data-testid="card-print"
 		>
+			{t("print")}
+		</Button>
 	</Row>
 </Modal>

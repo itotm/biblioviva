@@ -35,7 +35,7 @@ export const SYSTEM_COMPONENTS: SystemComponent[] = [
 	// runtime and SQLite driver
 	{
 		name: "Bun",
-		version: "1.4.4",
+		version: "1.4.5",
 		license: "MIT",
 		homepage: "https://bun.com",
 	},
@@ -70,7 +70,7 @@ export const SYSTEM_COMPONENTS: SystemComponent[] = [
 	// container base image
 	{
 		name: "Debian trixie distroless (oven/bun image)",
-		version: "1.4.4-distroless",
+		version: "1.4.5-distroless",
 		license: "various (Debian)",
 		homepage: "https://hub.docker.com/r/oven/bun",
 	},

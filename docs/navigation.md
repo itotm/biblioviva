@@ -86,6 +86,12 @@ classification editor, the calibration of the backs). A page without an entry op
 area's main screen (the dashboard's for the pages outside the areas). The
 top bar has no search box: the catalogue is searched in its own page.
 
+Small help icons (`HelpLink`, `#lib/ui/HelpLink.svelte`) stand beside the headings that are trickier than the rest of
+their page: the stages of Nuovo libro, the cover camera, the label printing dialog, the steps of each import, the
+photo import, Backup (contents, parts, off-site copy, restore), the sheets of labels and the language packs. Each
+opens in a new tab the section of the documentation that explains it; the targets are the entries of `HELP_SPOTS`
+in `#lib/ui/help-spots.ts`, checked against `docs/<lang>/` by `help-links.test.ts`.
+
 ## 2. The areas
 
 ### 2.1 Overview
@@ -113,6 +119,7 @@ flowchart LR
     dash -->|"pinned notes: Apri le segnalazioni, tile Segnalazioni aperte (admin)"| notes
     circ -->|"pinned notes (loans-only account): Apri le segnalazioni"| notes
     dash -->|"Amministrazione"| adm
+    dash -->|"Apri il controllo dell'installazione (admin, while a check is red)"| setup["Controllo installazione<br/>/admin/setup"]:::admin
     dash -->|"Importazioni (import holders without admin)"| imps["Importazioni<br/>/admin/imports<br/>(admin, catalog.import or patrons.import)"]:::oneof
     dash -. "tile Libri senza etichette (dialog)" .-> lbl["/print/labels/[kind]"]:::print
     shell -. "account menu, sidebar footer" .-> about["Informazioni<br/>/about"]:::any
@@ -358,6 +365,7 @@ flowchart LR
     adm --> roll["Avanza di classe<br/>/admin/rollover"]:::admin
     classes -->|"Scuola (anni e ordini)"| sect
     adm --> exp["Esportazioni<br/>/admin/exports"]:::admin
+    adm --> setup["Controllo installazione<br/>/admin/setup"]:::admin
 
     subgraph Config["Configurazione"]
         conf <-->|"area tabs: Sezioni · Cronologia"| hist["Cronologia<br/>/admin/config/history"]:::admin
@@ -415,7 +423,7 @@ shows two kinds of entries (9.13, round 25): first "Aspetto, classi e modelli" �
 (the library's name and logo, colours, language with the languages of the release to install and the pack upload, dashboard), Classi, Classificazione, Template di
 stampa, Libreria dei report —, then "Impostazioni", one card per section. The administration home
 keeps only the configuration and the jobs on the data (accounts, activity log, backups, imports,
-exports, class upgrade); Aspetto e lingua and Classi go back to Configurazione. A section page
+exports, class upgrade) and the installation check; Aspetto e lingua and Classi go back to Configurazione. A section page
 lists the settings edited elsewhere with an "open editor" link (classification, templates,
 history, Aspetto e lingua, Account del personale, another section) and switches between
 "Impostazioni" and "JSON"; the area's own first tab is "Sezioni".
@@ -425,6 +433,19 @@ Both print-template pages are titled "Template di stampa" and form one area of t
 Configurazione card opens Template. The template editor of a card offers the shipped backgrounds
 ("Scegli uno sfondo", a dialog with those of the face's orientation) and the upload of a picture
 (step 11.17).
+
+The installation check (`/admin/setup`, step 8.7) is status and links, nothing edited: five items — the
+configuration file (read again from the disk, with the loader's warnings), the address and HTTPS (read from the request:
+plain HTTP on `localhost` is not red, in the basic local-network mode it is amber because the camera does not work, on
+any other address it is red), the computer against the hardware profile (a hint when the host looks stronger), the
+passwords of the active accounts (in clear in the file: amber; the example or demo password: red) and the backups (the
+folder, the schedule, the newest database copy, a backup made at start counts; the off-site copy when it is on) —,
+each green, amber or red with its icon and word, linking the page of Amministrazione that fixes it (Configurazione and
+its history, Prestazioni, Account del personale, Backup and the backup schedule) and the page of the documentation that
+explains it; then the tests done by hand: the printer's test pages (card test page, label sample sheet, label
+calibration page, two-sided calibration sheet, each with "Stampa" in a new tab), the camera (opens `/census`, or
+`/cataloging/new` with photos off; spent on plain HTTP outside the computer itself) and a scanner field that shows what
+the scanner typed, how the desk reads it, whether Enter came and the keyboard-layout mishap.
 
 The imports hub shows each account only the imports it may run: an administrator all five, an
 account with `catalog.import` or `patrons.import` only its own (such an account reaches the hub
@@ -512,6 +533,7 @@ account. The test reads this table.
 | `/admin/imports/loans` | Importa i prestiti in corso | admin | Importazioni, imports area tabs |
 | `/admin/imports/photos` | Importa le foto degli utenti | admin | Importazioni, imports area tabs |
 | `/admin/rollover` | Avanza di classe | admin | Amministrazione |
+| `/admin/setup` | Controllo installazione | admin | Amministrazione, dashboard (a reminder with "Apri il controllo dell'installazione" while an item is red, `admin` only; not in the public demo) |
 | `/admin/users` | Account del personale | admin | Amministrazione, section pages (open editor) |
 | `/print/cards` | Tessere (sheet; `layout=side-by-side` or `duplex`) | patrons | the card print dialog of the patrons list (selection, class), the patron page, the patron import and the print lists; template previews |
 | `/print/cards/[id]` | Tessera di un utente | patrons | address only (redirects to `?ids=`) |

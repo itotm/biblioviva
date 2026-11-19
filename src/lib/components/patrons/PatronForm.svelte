@@ -128,23 +128,15 @@
 			</fieldset>
 			<Grid>
 				<div>
-					<Field label={labels.lastName}
-						><Input
-							{...fields.lastName.as("text")}
-							required
-							autocomplete="off"
-						/></Field
-					>
+					<Field label={labels.lastName}>
+						<Input {...fields.lastName.as("text")} required autocomplete="off" />
+					</Field>
 					{@render fieldError("lastName")}
 				</div>
 				<div>
-					<Field label={labels.firstName}
-						><Input
-							{...fields.firstName.as("text")}
-							required
-							autocomplete="off"
-						/></Field
-					>
+					<Field label={labels.firstName}>
+						<Input {...fields.firstName.as("text")} required autocomplete="off" />
+					</Field>
 					{@render fieldError("firstName")}
 				</div>
 			</Grid>
@@ -153,36 +145,34 @@
 		<FormSection title={i18n.t("patrons.form.school")}>
 			<Grid>
 				<div>
-					<Field label={labels.levelCode}
-						><Select {...fields.levelCode.as("select")} disabled={!isStudent}>
-							<option value=""
-								>{isStudent
+					<Field label={labels.levelCode}>
+						<Select {...fields.levelCode.as("select")} disabled={!isStudent}>
+							<option value="">
+								{isStudent
 									? i18n.t("patrons.form.classSelect")
-									: i18n.t("patrons.fields.none")}</option
-							>
-							{#each rules.levels as l (l.code)}<option value={l.code}
-									>{l.name}</option
-								>{/each}
-						</Select></Field
-					>
+									: i18n.t("patrons.fields.none")}
+							</option>
+							{#each rules.levels as l (l.code)}<option value={l.code}>
+									{l.name}
+								</option>{/each}
+						</Select>
+					</Field>
 					{@render fieldError("levelCode")}
 				</div>
 				<div>
-					<Field label={isStudent ? rules.groupWord : labels.teacherGroup}
-						><Select {...fields.groupId.as("select")}>
-							<option value=""
-								>{isStudent
+					<Field label={isStudent ? rules.groupWord : labels.teacherGroup}>
+						<Select {...fields.groupId.as("select")}>
+							<option value="">
+								{isStudent
 									? i18n.t("patrons.form.classSelect")
-									: i18n.t("patrons.form.defaultTeacherGroup")}</option
-							>
+									: i18n.t("patrons.form.defaultTeacherGroup")}
+							</option>
 							<!-- once the year is chosen a class of that year only is its section (`B`) -->
-							{#each groupChoices as g (g.id)}<option value={String(g.id)}
-									>{level !== "" && g.levels.length === 1
-										? g.name
-										: g.label}</option
-								>{/each}
-						</Select></Field
-					>
+							{#each groupChoices as g (g.id)}<option value={String(g.id)}>
+									{level !== "" && g.levels.length === 1 ? g.name : g.label}
+								</option>{/each}
+						</Select>
+					</Field>
 					{@render fieldError("groupId")}
 				</div>
 			</Grid>
@@ -196,9 +186,9 @@
 					{@render fieldError("cardNumber")}
 				</div>
 				<div>
-					<Field label={labels.externalId}
-						><Input {...fields.externalId.as("text")} autocomplete="off" /></Field
-					>
+					<Field label={labels.externalId}>
+						<Input {...fields.externalId.as("text")} autocomplete="off" />
+					</Field>
 					{@render fieldError("externalId")}
 				</div>
 			</Grid>
@@ -211,9 +201,9 @@
 		>
 			<Grid>
 				<div>
-					<Field label={labels.email} hint={i18n.t("patrons.fields.emailHint")}
-						><Input {...fields.email.as("email")} autocomplete="off" /></Field
-					>
+					<Field label={labels.email} hint={i18n.t("patrons.fields.emailHint")}>
+						<Input {...fields.email.as("email")} autocomplete="off" />
+					</Field>
 					{@render fieldError("email")}
 				</div>
 			</Grid>
@@ -233,10 +223,9 @@
 				{@render fieldError("circulationNote")}
 			</div>
 			<div>
-				<Field label={labels.notes}
-					><textarea {...fields.notes.as("text")} class="textarea" rows="3"
-					></textarea></Field
-				>
+				<Field label={labels.notes}>
+					<textarea {...fields.notes.as("text")} class="textarea" rows="3"></textarea>
+				</Field>
 				{@render fieldError("notes")}
 			</div>
 		</FormSection>
@@ -248,8 +237,9 @@
 				type="submit"
 				disabled={api.pending > 0}
 				data-testid="patron-submit"
-				>{api.pending > 0 ? i18n.t("common.status.loading") : submitLabel}</Button
 			>
+				{api.pending > 0 ? i18n.t("common.status.loading") : submitLabel}
+			</Button>
 		{/snippet}
 	</FormLayout>
 </div>

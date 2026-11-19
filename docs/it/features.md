@@ -20,7 +20,8 @@ adesive; i report; il nome, il logo, i colori e la lingua; le foto e le copertin
 il profilo di prestazioni del computer.
 
 Tutta la configurazione si esporta e si importa come un unico archivio, e ogni modifica fatta da Amministrazione si può
-annullare.
+annullare. Una pagina di controllo dell'installazione dice se il file di configurazione, l'indirizzo, le password e i
+backup sono a posto, e guida le prove con la stampante, la fotocamera e il lettore di codici a barre.
 
 ## Banco prestiti
 

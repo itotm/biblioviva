@@ -101,8 +101,9 @@
 					id="note-counter"
 					class="shrink-0 tabular-nums"
 					data-testid="note-counter"
-					>{t("form.counter", { count: length, max: NOTE_MAX_LENGTH })}</Hint
 				>
+					{t("form.counter", { count: length, max: NOTE_MAX_LENGTH })}
+				</Hint>
 			</Row>
 		</div>
 
@@ -134,9 +135,9 @@
 
 		{#if canPin}
 			<div>
-				<Checkbox bind:checked={pinned} data-testid="note-pinned-input"
-					>{t("form.pinned")}</Checkbox
-				>
+				<Checkbox bind:checked={pinned} data-testid="note-pinned-input">
+					{t("form.pinned")}
+				</Checkbox>
 				<Hint class="ml-7">{t("form.pinnedHint")}</Hint>
 			</div>
 		{/if}
@@ -146,16 +147,18 @@
 			<Alert data-testid="note-problem">{problem}</Alert>
 		{/if}
 		<Row justify="end" as="footer">
-			<Button onclick={() => (open = false)} disabled={saving}
-				>{i18n.t("common.actions.cancel")}</Button
-			>
+			<Button onclick={() => (open = false)} disabled={saving}>
+				{i18n.t("common.actions.cancel")}
+			</Button>
 			<Button
 				type="submit"
 				variant="primary"
 				icon={AddIcon}
 				disabled={saving}
-				data-testid="note-save">{t("form.save")}</Button
+				data-testid="note-save"
 			>
+				{t("form.save")}
+			</Button>
 		</Row>
 	</form>
 </Modal>

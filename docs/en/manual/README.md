@@ -7,7 +7,8 @@ optional.
 
 On every page of BiblioViva the **Help** button opens, in a new tab, the page of the documentation that explains
 that very screen: on the computer it is at the top right, on the phone it is the round button with the question mark
-next to the page title.
+next to the page title. Beside some trickier headings (the stages of **New book**, the imports, the labels, the
+backups) a small question-mark icon opens the section of the page that explains them.
 
 ## Guides
 

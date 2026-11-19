@@ -143,9 +143,9 @@
 			{/each}
 		</BulletList>
 		<Row>
-			<Button variant="primary" href="/login" data-testid="go-login"
-				>{i18n.t("setup.restore.done.login")}</Button
-			>
+			<Button variant="primary" href="/login" data-testid="go-login">
+				{i18n.t("setup.restore.done.login")}
+			</Button>
 		</Row>
 	</Card>
 {:else}
@@ -165,8 +165,10 @@
 				accept=".zip,application/zip"
 				onchange={onFile}
 				disabled={checking || restoring}
-				data-testid="restore-upload">{i18n.t("setup.restore.choose")}</FileButton
+				data-testid="restore-upload"
 			>
+				{i18n.t("setup.restore.choose")}
+			</FileButton>
 		</Row>
 		<form
 			{...checkRestoreArchive}
@@ -211,38 +213,39 @@
 					{/each}
 				</BulletList>
 				{#if c.photos + c.covers > 0}
-					<Hint
-						>{i18n.t("setup.restore.images", {
+					<Hint>
+						{i18n.t("setup.restore.images", {
 							photos: c.photos,
 							covers: c.covers,
-						})}</Hint
-					>
+						})}
+					</Hint>
 				{/if}
 				<p data-testid="restore-accounts">
 					{i18n.t("setup.restore.accounts", { accounts: c.accounts.join(", ") })}
 				</p>
 				<Alert as="div" tone="warning">{i18n.t("setup.restore.warning")}</Alert>
 				<Row justify="end">
-					<Button icon={CancelIcon} onclick={cancel} disabled={restoring}
-						>{i18n.t("setup.restore.cancel")}</Button
-					>
+					<Button icon={CancelIcon} onclick={cancel} disabled={restoring}>
+						{i18n.t("setup.restore.cancel")}
+					</Button>
 					<Button
 						variant="primary"
 						icon={RestoreIcon}
 						onclick={restore}
 						disabled={restoring}
 						data-testid="restore-apply"
-						>{restoring
-							? i18n.t("setup.restore.restoring")
-							: i18n.t("setup.restore.apply")}</Button
 					>
+						{restoring
+							? i18n.t("setup.restore.restoring")
+							: i18n.t("setup.restore.apply")}
+					</Button>
 				</Row>
 			</section>
 		{/if}
 	</Card>
 	<Row as="footer" align="center" justify="between" gap="0" wrap={false}>
-		<Button icon={BackIcon} onclick={back} disabled={restoring} data-testid="restore-back"
-			>{i18n.t("setup.restore.back")}</Button
-		>
+		<Button icon={BackIcon} onclick={back} disabled={restoring} data-testid="restore-back">
+			{i18n.t("setup.restore.back")}
+		</Button>
 	</Row>
 {/if}

@@ -57,8 +57,10 @@
 				icon={ReloadIcon}
 				onclick={reload}
 				disabled={reloading}
-				data-testid="reload-templates">{i18n.t("admin.templates.reload")}</Button
+				data-testid="reload-templates"
 			>
+				{i18n.t("admin.templates.reload")}
+			</Button>
 		{/snippet}
 		{#snippet views()}
 			<AreaTabs area="templates" current="previews" />
@@ -69,15 +71,15 @@
 		{#snippet children(o)}
 			<Tabs value={kind} onValueChange={(e) => (kind = tabValue(e.value))}>
 				<Tabs.List>
-					<Tabs.Trigger value="cards"
-						>{i18n.t("admin.templates.kinds.cards")}</Tabs.Trigger
-					>
-					<Tabs.Trigger value="labels"
-						>{i18n.t("admin.templates.kinds.labels")}</Tabs.Trigger
-					>
-					<Tabs.Trigger value="slips"
-						>{i18n.t("admin.templates.kinds.slips")}</Tabs.Trigger
-					>
+					<Tabs.Trigger value="cards">
+						{i18n.t("admin.templates.kinds.cards")}
+					</Tabs.Trigger>
+					<Tabs.Trigger value="labels">
+						{i18n.t("admin.templates.kinds.labels")}
+					</Tabs.Trigger>
+					<Tabs.Trigger value="slips">
+						{i18n.t("admin.templates.kinds.slips")}
+					</Tabs.Trigger>
 				</Tabs.List>
 
 				<Tabs.Content value="cards" class="space-y-6">
@@ -99,12 +101,12 @@
 							{#each o.slips as t (t.name)}
 								<Card as="li" data-testid="template-slips-{t.name}">
 									<span class="title-lg">{t.name}</span>
-									<Badge
-										>{i18n.t(`admin.templates.list.source.${t.source}`)}</Badge
-									>
-									{#if t.error}<Hint tone="error-soft" mono class="mt-2"
-											>{t.error}</Hint
-										>{/if}
+									<Badge>
+										{i18n.t(`admin.templates.list.source.${t.source}`)}
+									</Badge>
+									{#if t.error}<Hint tone="error-soft" mono class="mt-2">
+											{t.error}
+										</Hint>{/if}
 								</Card>
 							{/each}
 						</ul>

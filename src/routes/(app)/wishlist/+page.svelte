@@ -200,12 +200,12 @@
 	<Card as="form" gap="3" onsubmit={save} data-testid="wish-form">
 		<h2 class="h4">{editing ? t("form.edit") : t("form.new")}</h2>
 		<Grid cols="3" span>
-			<Field label={t("form.title")} class="md:col-span-2"
-				><Input bind:value={title} maxlength={300} data-testid="wish-title" /></Field
-			>
-			<Field label={t("form.author")}
-				><Input bind:value={author} maxlength={200} data-testid="wish-author" /></Field
-			>
+			<Field label={t("form.title")} class="md:col-span-2">
+				<Input bind:value={title} maxlength={300} data-testid="wish-title" />
+			</Field>
+			<Field label={t("form.author")}>
+				<Input bind:value={author} maxlength={200} data-testid="wish-author" />
+			</Field>
 			<Field label={t("form.series")} class="md:col-span-2">
 				<Input
 					bind:value={series}
@@ -220,27 +220,23 @@
 					{/each}
 				</datalist>
 			</Field>
-			<Field label={t("form.seriesNumber")}
-				><Input
-					bind:value={seriesNumber}
-					maxlength={20}
-					data-testid="wish-series-number"
-				/></Field
-			>
-			<Field label={t("form.note")} hint={t("form.noteHint")} class="md:col-span-2"
-				><Input bind:value={note} maxlength={500} data-testid="wish-note" /></Field
-			>
+			<Field label={t("form.seriesNumber")}>
+				<Input bind:value={seriesNumber} maxlength={20} data-testid="wish-series-number" />
+			</Field>
+			<Field label={t("form.note")} hint={t("form.noteHint")} class="md:col-span-2">
+				<Input bind:value={note} maxlength={500} data-testid="wish-note" />
+			</Field>
 			{#if data.canSetRequester}
 				<div>
 					{#if requester}
 						<Field label={t("form.requester")}>
 							<Row align="center" gap="2" wrap={false}>
-								<span class="font-semibold" data-testid="wish-requester"
-									>{requester.name}</span
-								>
-								<Button size="sm" onclick={() => (requester = null)}
-									>{t("form.requesterRemove")}</Button
-								>
+								<span class="font-semibold" data-testid="wish-requester">
+									{requester.name}
+								</span>
+								<Button size="sm" onclick={() => (requester = null)}>
+									{t("form.requesterRemove")}
+								</Button>
 							</Row>
 						</Field>
 					{:else}
@@ -266,14 +262,14 @@
 							<li>
 								{#if b.similar}<SimilarBadge />{/if}
 								<Link href="/catalog/{b.id}">{b.title}</Link> · {b.author}
-								<span class="opacity-70"
-									>· {b.copiesTotal === 0
+								<span class="opacity-70">
+									· {b.copiesTotal === 0
 										? t("similar.noCopies")
 										: t("similar.copies", {
 												available: b.copiesAvailable,
 												total: b.copiesTotal,
-											})}</span
-								>
+											})}
+								</span>
 							</li>
 						{/each}
 					</ul>
@@ -283,21 +279,22 @@
 					<ul class="space-y-1" data-testid="wish-similar-wishes">
 						{#each found.wishes as w (w.id)}
 							<li class="flex flex-wrap items-center gap-2">
-								<span
-									>{[w.title, w.author, formatSeries(w.series, w.seriesNumber)]
+								<span>
+									{[w.title, w.author, formatSeries(w.series, w.seriesNumber)]
 										.filter(Boolean)
 										.join(" · ")}
-									<span class="opacity-70"
-										>({t("similar.requests", { count: w.requests })})</span
-									></span
-								>
+									<span class="opacity-70">
+										({t("similar.requests", { count: w.requests })})
+									</span>
+								</span>
 								<Button
 									size="sm"
 									icon={RequestIcon}
 									onclick={() => addRequests([w.id])}
 									data-testid="wish-similar-request"
-									>{t("similar.addRequest")}</Button
 								>
+									{t("similar.addRequest")}
+								</Button>
 							</li>
 						{/each}
 					</ul>
@@ -310,8 +307,10 @@
 				variant="primary"
 				icon={editing ? SaveIcon : AddIcon}
 				disabled={saving}
-				data-testid="wish-save">{editing ? t("form.save") : t("form.add")}</Button
+				data-testid="wish-save"
 			>
+				{editing ? t("form.save") : t("form.add")}
+			</Button>
 			{#if editing}
 				<Button onclick={clearForm} data-testid="wish-cancel">{t("form.cancel")}</Button>
 			{/if}
@@ -328,8 +327,10 @@
 				size="sm"
 				icon={RequestIcon}
 				onclick={() => addRequests(selected.map((w) => w.id))}
-				data-testid="wish-add-request">{t("actions.addRequest")}</Button
+				data-testid="wish-add-request"
 			>
+				{t("actions.addRequest")}
+			</Button>
 			{#if data.canCatalog && selected.length === 1 && selected[0]}
 				{@const one = selected[0]}
 				<Button
@@ -337,16 +338,20 @@
 					variant="primary"
 					icon={CatalogueIcon}
 					onclick={() => catalogue(one)}
-					data-testid="wish-catalogue">{t("actions.catalogue")}</Button
+					data-testid="wish-catalogue"
 				>
+					{t("actions.catalogue")}
+				</Button>
 			{/if}
 			<Button
 				size="sm"
 				variant="error-tonal"
 				icon={DeleteIcon}
 				onclick={() => (confirmRemove = true)}
-				data-testid="wish-remove">{t("actions.remove")}</Button
+				data-testid="wish-remove"
 			>
+				{t("actions.remove")}
+			</Button>
 		{/snippet}
 		{#snippet filters()}
 			<FilterSelect label={t("list.sort")} bind:value={sort} data-testid="wish-sort">
@@ -362,9 +367,9 @@
 			{#snippet empty()}
 				<EmptyState title={t("list.empty")} icon="wishlist" />
 			{/snippet}
-			<Hint tone="count" data-testid="wish-count"
-				>{t("list.count", { count: rows.length })}</Hint
-			>
+			<Hint tone="count" data-testid="wish-count">
+				{t("list.count", { count: rows.length })}
+			</Hint>
 			<GridFrame data-testid="wish-grid">
 				<DataGrid
 					data={gridRows}

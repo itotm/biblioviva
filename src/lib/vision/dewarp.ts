@@ -640,6 +640,8 @@ export function detectQuad(
 	const minAreaRatio = options.minAreaRatio ?? 0.15;
 	const maxSide = options.maxSide ?? 800;
 	const scale = Math.min(1, maxSide / Math.max(image.width, image.height));
+	// OpenCV reads only the `data`, `width` and `height` of the image, whatever made it
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-class-instance-assignment
 	const src = cv.matFromImageData(image);
 	const small = new cv.Mat();
 	const blurred = new cv.Mat();

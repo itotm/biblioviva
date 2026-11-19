@@ -21,6 +21,7 @@
 	import StatusBadge from "#lib/ui/StatusBadge.svelte";
 	import TitleHint from "#lib/ui/TitleHint.svelte";
 	import ConfirmDialog from "../ConfirmDialog.svelte";
+	import EarlyRenewalDialog from "../circulation/EarlyRenewalDialog.svelte";
 	import OverrideDialog from "../circulation/OverrideDialog.svelte";
 	import type { DeskMessageData } from "../circulation/desk-message.js";
 	import { Renewals } from "../circulation/renewals.svelte.js";
@@ -84,24 +85,28 @@
 				href={resolve(`print/overdues?patron=${p.id}`)}
 				target="_blank"
 				rel="noopener"
-				data-testid="print-reminder">{i18n.t("circulation.actions.printReminder")}</Button
+				data-testid="print-reminder"
 			>
+				{i18n.t("circulation.actions.printReminder")}
+			</Button>
 		{/if}
 		{#if canRenew && p.openLoans.length > 1}
 			<Button
 				size="sm"
 				icon={RenewIcon}
 				onclick={() => renewals.all(p.id)}
-				data-testid="renew-all">{i18n.t("circulation.renewals.renewAll")}</Button
+				data-testid="renew-all"
 			>
+				{i18n.t("circulation.renewals.renewAll")}
+			</Button>
 		{/if}
 		<DividedList data-testid="open-loans">
 			{#each p.openLoans as l (l.loanId)}
 				<Row align="center" gap="3" as="li" class="py-2">
-					<TitleHint title={l.title} class="grow"
-						>{l.author} ·
-						<span class="font-mono">{l.barcode}</span></TitleHint
-					>
+					<TitleHint title={l.title} class="grow">
+						{l.author} ·
+						<span class="font-mono">{l.barcode}</span>
+					</TitleHint>
 					<span class="text-sm {l.overdue ? 'font-semibold text-error-700' : ''}">
 						{i18n.t("patrons.detail.loanColumns.due")}: {fmt.day(
 							l.dueDate,
@@ -156,6 +161,7 @@
 	{/if}
 </div>
 
+<EarlyRenewalDialog ask={renewals.early} />
 <OverrideDialog
 	open={renewals.pending !== null}
 	title={i18n.t("circulation.renewals.overrideTitle")}

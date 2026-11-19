@@ -145,8 +145,10 @@
 								? (field.options ?? []).filter((x) => x === o || chosen.includes(x))
 								: chosen.filter((x) => x !== o),
 						)}
-					disabled={resetting}>{option(o)}</Checkbox
+					disabled={resetting}
 				>
+					{option(o)}
+				</Checkbox>
 			{/each}
 		</Row>
 	{:else if field.kind === "lines"}
@@ -185,8 +187,10 @@
 				<Checkbox
 					checked={value === null}
 					onchange={(e) => onchange(e.currentTarget.checked ? null : "")}
-					disabled={resetting}>{i18n.t("config.section.none")}</Checkbox
+					disabled={resetting}
 				>
+					{i18n.t("config.section.none")}
+				</Checkbox>
 			{/if}
 		</Row>
 	{:else}
@@ -217,8 +221,10 @@
 			checked={value === true}
 			onchange={(e) => onchange(e.currentTarget.checked)}
 			disabled={resetting}
-			data-testid={id}><span class="label-text">{label}</span></Checkbox
+			data-testid={id}
 		>
+			<span class="label-text">{label}</span>
+		</Checkbox>
 	{:else if field.kind === "choices" || field.kind === "date" || field.kind === "fixed"}
 		<fieldset class="space-y-1">
 			<legend class="label-text">{label}</legend>
@@ -241,21 +247,23 @@
 	{#if resetting}
 		<Row align="center" gap="2">
 			<Hint as="span" tone="primary">{i18n.t("config.section.willReset")}</Hint>
-			<Button size="sm" onclick={() => onreset(false)}
-				>{i18n.t("common.actions.cancel")}</Button
-			>
+			<Button size="sm" onclick={() => onreset(false)}>
+				{i18n.t("common.actions.cancel")}
+			</Button>
 		</Row>
 	{:else if custom}
 		<Button
 			size="sm"
 			icon={ResetIcon}
 			onclick={() => onreset(true)}
-			data-testid="reset-{field.path}">{i18n.t("config.section.reset")}</Button
+			data-testid="reset-{field.path}"
 		>
+			{i18n.t("config.section.reset")}
+		</Button>
 	{/if}
 	{#each messages as message (message)}
-		<Hint as="span" tone="error" class="block" data-testid="field-error-{field.path}"
-			>{message}</Hint
-		>
+		<Hint as="span" tone="error" class="block" data-testid="field-error-{field.path}">
+			{message}
+		</Hint>
 	{/each}
 </div>

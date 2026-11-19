@@ -35,5 +35,10 @@
 		"none": "Nessuna data {{days:plural; one:nel prossimo giorno; other:nei prossimi {{days}} giorni;}}.",
 		"more": "{{count:plural; one:e un'altra; other:e altre {{count}};}}",
 		"open": "Apri il calendario"
+	},
+	"setup": {
+		"title": "L'installazione ha qualcosa da correggere",
+		"text": "{{errors:plural; one:Un controllo non è a posto; other:{{errors}} controlli non sono a posto;}}: indirizzo, password, backup o file di configurazione.",
+		"open": "Apri il controllo dell'installazione"
 	}
 }

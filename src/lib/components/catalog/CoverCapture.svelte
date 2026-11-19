@@ -310,8 +310,10 @@
 				variant="primary"
 				icon={StraightenIcon}
 				onclick={straighten}
-				data-testid="cover-straighten">{i18n.t("catalog.cover.straighten")}</Button
+				data-testid="cover-straighten"
 			>
+				{i18n.t("catalog.cover.straighten")}
+			</Button>
 			<Button icon={RetryIcon} onclick={reset}>{i18n.t("catalog.cover.retake")}</Button>
 			{#if oncancel}<Button onclick={oncancel}>{i18n.t("catalog.cover.cancel")}</Button>{/if}
 		</Row>
@@ -339,14 +341,15 @@
 				onclick={confirm}
 				disabled={pending}
 				data-testid="cover-use"
-				>{pending ? i18n.t("common.status.loading") : i18n.t("catalog.cover.use")}</Button
 			>
-			<Button icon={RetryIcon} onclick={() => (capture.mode = "adjust")} disabled={pending}
-				>{i18n.t("catalog.cover.retake")}</Button
-			>
-			{#if oncancel}<Button onclick={oncancel} disabled={pending}
-					>{i18n.t("catalog.cover.cancel")}</Button
-				>{/if}
+				{pending ? i18n.t("common.status.loading") : i18n.t("catalog.cover.use")}
+			</Button>
+			<Button icon={RetryIcon} onclick={() => (capture.mode = "adjust")} disabled={pending}>
+				{i18n.t("catalog.cover.retake")}
+			</Button>
+			{#if oncancel}<Button onclick={oncancel} disabled={pending}>
+					{i18n.t("catalog.cover.cancel")}
+				</Button>{/if}
 		</Row>
 	{:else}
 		{@render sourceRow(false)}

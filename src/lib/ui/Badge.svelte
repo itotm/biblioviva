@@ -54,9 +54,6 @@
 	);
 </script>
 
-<svelte:element this={as} class={classes} {...rest}
-	>{#if Icon}<Icon
-			size={ICON_SIZE.sm}
-			aria-hidden="true"
-		/>{/if}{@render children()}</svelte:element
->
+<svelte:element this={as} class={classes} {...rest}>
+	{#if Icon}<Icon size={ICON_SIZE.sm} aria-hidden="true" />{/if}{@render children()}
+</svelte:element>

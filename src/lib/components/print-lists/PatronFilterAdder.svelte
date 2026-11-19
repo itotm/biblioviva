@@ -79,8 +79,8 @@
 </script>
 
 {#if o.stages.length > 1}
-	<Field label={i18n.t("printing.list.quick.stage")}
-		><Select
+	<Field label={i18n.t("printing.list.quick.stage")}>
+		<Select
 			bind:value={stage}
 			onchange={() => {
 				level = "";
@@ -90,35 +90,38 @@
 		>
 			<option value="">{i18n.t("printing.list.quick.any")}</option>
 			{#each o.stages as st (st.code)}<option value={st.code}>{st.name}</option>{/each}
-		</Select></Field
-	>
+		</Select>
+	</Field>
 {/if}
 <Grid cols="2" from="sm" gap="2">
-	<Field label={i18n.t("printing.list.quick.level")}
-		><Select bind:value={level} onchange={() => (group = "")} data-testid="quick-level">
+	<Field label={i18n.t("printing.list.quick.level")}>
+		<Select bind:value={level} onchange={() => (group = "")} data-testid="quick-level">
 			<option value="">{i18n.t("printing.list.quick.any")}</option>
 			{#each o.levels.filter((l) => stage === "" || l.stage === stage) as l (l.code)}<option
-					value={l.code}>{l.label}</option
-				>{/each}
-		</Select></Field
-	>
-	<Field label={o.groupWord}
-		><Select bind:value={group} data-testid="quick-class">
+					value={l.code}
+				>
+					{l.label}
+				</option>{/each}
+		</Select>
+	</Field>
+	<Field label={o.groupWord}>
+		<Select bind:value={group} data-testid="quick-class">
 			<option value="">{i18n.t("printing.list.quick.any")}</option>
 			{#each o.groups.filter((g) => (level === "" || g.levels.includes(level)) && (stage === "" || g.stage === stage || g.levels.some( (code) => o.levels.some((l) => l.code === code && l.stage === stage) ))) as g (g.id)}<option
 					value={String(g.id)}
-					>{level !== "" && g.levels.length === 1 ? g.name : g.label}</option
-				>{/each}
-		</Select></Field
-	>
+				>
+					{level !== "" && g.levels.length === 1 ? g.name : g.label}
+				</option>{/each}
+		</Select>
+	</Field>
 </Grid>
-<Field label={i18n.t("printing.list.quick.type")}
-	><Select bind:value={patronType} data-testid="quick-type">
+<Field label={i18n.t("printing.list.quick.type")}>
+	<Select bind:value={patronType} data-testid="quick-type">
 		<option value="">{i18n.t("printing.list.quick.any")}</option>
 		<option value="student">{i18n.t("patrons.types.student")}</option>
 		<option value="teacher">{i18n.t("patrons.types.teacher")}</option>
-	</Select></Field
->
+	</Select>
+</Field>
 <Row wrap={false} align="center" as="label" class="text-sm">
 	<input type="checkbox" class="checkbox" bind:checked={noCard} data-testid="quick-no-card" />
 	{i18n.t("printing.list.quick.withoutPrintedCard")}
@@ -129,8 +132,8 @@
 		{i18n.t("printing.list.quick.withoutPhoto")}
 	</Row>
 {/if}
-<Field label={i18n.t("printing.list.quick.importBatch")}
-	><Select bind:value={batch} data-testid="quick-batch">
+<Field label={i18n.t("printing.list.quick.importBatch")}>
+	<Select bind:value={batch} data-testid="quick-batch">
 		<option value="">{i18n.t("printing.list.quick.anyBatch")}</option>
 		{#each batches as b (b.id)}
 			<option value={String(b.id)}>
@@ -141,11 +144,11 @@
 				})}
 			</option>
 		{/each}
-	</Select></Field
->
-<Field label={i18n.t("printing.list.quick.createdAfter")}
-	><Input type="date" bind:value={createdAfter} /></Field
->
-<Button variant="primary" onclick={add} disabled={busy || !active} data-testid="quick-add"
-	>{i18n.t("printing.list.quick.add")}</Button
->
+	</Select>
+</Field>
+<Field label={i18n.t("printing.list.quick.createdAfter")}>
+	<Input type="date" bind:value={createdAfter} />
+</Field>
+<Button variant="primary" onclick={add} disabled={busy || !active} data-testid="quick-add">
+	{i18n.t("printing.list.quick.add")}
+</Button>

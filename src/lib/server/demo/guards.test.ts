@@ -88,6 +88,8 @@ async function refused(feature: DemoFeature, run: () => unknown): Promise<void> 
 }
 
 const report = (file: string): Uint8Array => readFileSync(join("config/reports", file));
+// a stand-in never touched: the guard refuses before any query
+// eslint-disable-next-line @typescript-eslint/no-unsafe-class-instance-assignment
 const noDb = {} as Db;
 
 describe("the public demo refuses", () => {

@@ -138,7 +138,9 @@ and scan again. A notice also appears under the field: "The copy barcode has a w
 ## Refused renewal
 
 If **Renew instead** is not allowed, one of the three following messages appears in place of the confirmation, without
-buttons: the book stays returned and the row does not change.
+buttons: the book stays returned and the row does not change. If instead the book has been on loan for less than half of the
+period, the window **Early renewal** appears (see [Early renewal](checkout.md#early-renewal)): **Renew anyway**
+completes the renewal, **Cancel** leaves the book returned.
 
 ### Renewal limit reached
 

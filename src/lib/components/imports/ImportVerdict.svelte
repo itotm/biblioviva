@@ -35,9 +35,9 @@
 	{#each statuses as s (s)}
 		<Badge tone={TONE[s]}>{i18n.t(`common.import.counts.${s}`, { count: counts[s] })}</Badge>
 	{/each}
-	<Badge tone={counts.error ? "error" : "neutral"}
-		>{i18n.t("common.import.counts.error", { count: counts.error })}</Badge
-	>
+	<Badge tone={counts.error ? "error" : "neutral"}>
+		{i18n.t("common.import.counts.error", { count: counts.error })}
+	</Badge>
 	<Row wrap={false} align="center" as="label" class="ml-auto text-sm">
 		<input type="checkbox" class="checkbox" bind:checked={onlyErrors} />
 		{i18n.t("common.import.onlyErrors")}

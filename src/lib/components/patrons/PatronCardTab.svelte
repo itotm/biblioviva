@@ -75,14 +75,18 @@
 			variant="primary"
 			icon={PrintIcon}
 			onclick={() => (cardDialog = true)}
-			data-testid="print-card">{i18n.t("patrons.detail.printCard")}</Button
+			data-testid="print-card"
 		>
+			{i18n.t("patrons.detail.printCard")}
+		</Button>
 		<Button
 			icon={CheckIcon}
 			onclick={doMarkPrinted}
 			disabled={busy}
-			data-testid="mark-card-printed">{i18n.t("patrons.detail.markCardPrinted")}</Button
+			data-testid="mark-card-printed"
 		>
+			{i18n.t("patrons.detail.markCardPrinted")}
+		</Button>
 	</Row>
 {/if}
 {#if p.status !== "anonymized"}
@@ -90,8 +94,10 @@
 		icon={CardIcon}
 		onclick={() => (confirmReassign = true)}
 		disabled={busy}
-		data-testid="reassign-card">{i18n.t("patrons.detail.reassignCard")}</Button
+		data-testid="reassign-card"
 	>
+		{i18n.t("patrons.detail.reassignCard")}
+	</Button>
 {/if}
 
 <ConfirmDialog

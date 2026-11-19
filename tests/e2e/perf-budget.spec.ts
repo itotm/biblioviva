@@ -1,17 +1,17 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // Size budget of the core pages (PLAN.md §3.14, step 9.2): the JavaScript a page loads — measured
-// gzipped, as it travels — stays within 250 KB on the dashboard, the circulation desk, the patrons
+// gzipped, as it travels — stays within 275 KB (ADR-061) on the dashboard, the circulation desk, the patrons
 // and the catalogue; the barcode reader and OpenCV are never part of it (lazy chunks).
 import { gzipSync } from "node:zlib";
 import { expect, test } from "@playwright/test";
 import { waitForHydration } from "./helpers/hydration.js";
 
-const BUDGET = 250 * 1024;
+const BUDGET = 275 * 1024;
 const PAGES = ["/", "/circulation/checkout", "/circulation/checkin", "/patrons", "/catalog"];
 
 test.describe("size budget", () => {
 	for (const path of PAGES) {
-		test(`${path} loads at most 250 KB of JavaScript`, async ({ page, isMobile }) => {
+		test(`${path} loads at most 275 KB of JavaScript`, async ({ page, isMobile }) => {
 			test.skip(isMobile, "the same bundles on both viewports");
 			const scripts = new Map<string, number>();
 			page.on("response", async (response) => {

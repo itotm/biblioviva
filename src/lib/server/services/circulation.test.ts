@@ -22,6 +22,7 @@ import {
 	renewAllLoans,
 	renewInsteadOfReturn,
 	renewLoan,
+	renewSelectedLoans,
 	undoCheckout,
 } from "./circulation.js";
 import { createPatron } from "./patrons.js";
@@ -350,13 +351,176 @@ describe("undo and renewal", () => {
 			checkoutItem(db, config, { patronId: teacher, itemId: it.id }, actor, NOW);
 		}
 		db.update(loan).set({ renewals: 5 }).where(eq(loan.itemId, items[2]!.id)).run();
-		const results = renewAllLoans(db, config, teacher, actor, new Date("2026-10-05T08:00:00Z"));
+		const done = renewAllLoans(db, config, teacher, actor, new Date("2026-10-05T08:00:00Z"));
+		const results = done.kind === "done" ? done.results : [];
 		expect(results.map((r) => (r.ok ? "ok" : r.reason))).toEqual([
 			"ok",
 			"ok",
 			"renewal_limit_reached",
 		]);
 		expect(() => renewAllLoans(db, config, 999, actor, NOW)).toThrow(DeskNotFoundError);
+	});
+});
+
+describe("early renewal", () => {
+	// lent on Friday 25 September: due Monday 12 October, a period of 17 days
+	function lent(f: Fixture, patronId: number, count = 1): number[] {
+		return f.items.slice(0, count).map((it) => {
+			const r = checkoutItem(f.db, config, { patronId, itemId: it.id }, f.actor, NOW);
+			return r.ok ? r.loan.loanId : 0;
+		});
+	}
+	const renewedCount = (db: Db, loanId: number): number =>
+		db.select().from(loan).where(eq(loan.id, loanId)).get()?.renewals ?? -1;
+
+	it("asks for the confirmation before half of the period, and changes nothing", () => {
+		const f = setup();
+		const [loanId = 0] = lent(f, f.teacher);
+		// 5 of 17 days gone
+		const early = renewLoan(
+			f.db,
+			config,
+			{ loanId },
+			f.actor,
+			new Date("2026-09-30T08:00:00Z"),
+		);
+		expect(early).toMatchObject({
+			ok: false,
+			loanId,
+			reason: "renewal_early",
+			overridable: false,
+			params: {
+				title: "Il gatto con gli stivali e altre storie…",
+				elapsed: 5,
+				period: 17,
+				due: "2026-10-12",
+				newDue: "2026-10-15",
+			},
+		});
+		expect(renewedCount(f.db, loanId)).toBe(0);
+		expect(
+			f.db
+				.select()
+				.from(loanEvent)
+				.all()
+				.map((e) => e.type),
+		).toEqual(["issue"]);
+	});
+
+	it("the confirmation performs the renewal, for any account: the override does not replace it", () => {
+		const f = setup();
+		const [loanId = 0] = lent(f, f.teacher);
+		const day = new Date("2026-09-30T08:00:00Z");
+		// 5 of 17 days gone: early; the reason of an override is not enough
+		expect(
+			renewLoan(f.db, config, { loanId, override: { reason: "gita" } }, f.actor, day),
+		).toMatchObject({ ok: false, reason: "renewal_early" });
+		expect(renewLoan(f.db, config, { loanId, confirmEarly: true }, f.actor, day)).toMatchObject(
+			{ ok: true, renewals: 1, dueDate: "2026-10-15" },
+		);
+		expect(renewedCount(f.db, loanId)).toBe(1);
+	});
+
+	it("counts a renewed loan from its last renewal", () => {
+		const f = setup();
+		const [loanId = 0] = lent(f, f.teacher);
+		// 10 of 17 days: past half, renewed until 20 October (a period of 15 days from 5 October)
+		expect(
+			renewLoan(f.db, config, { loanId }, f.actor, new Date("2026-10-05T08:00:00Z")),
+		).toMatchObject({ ok: true, dueDate: "2026-10-20" });
+		// 3 of 15 days since the renewal: early, though 13 days have passed since the loan
+		expect(
+			renewLoan(f.db, config, { loanId }, f.actor, new Date("2026-10-08T08:00:00Z")),
+		).toMatchObject({
+			ok: false,
+			reason: "renewal_early",
+			params: { elapsed: 3, period: 15, due: "2026-10-20" },
+		});
+		// 8 of 15 days since the renewal: more than half
+		expect(
+			renewLoan(f.db, config, { loanId }, f.actor, new Date("2026-10-13T08:00:00Z")),
+		).toMatchObject({ ok: true, renewals: 2 });
+	});
+
+	it("keeps the other refusals first, and says nothing when there is nothing to renew", () => {
+		const f = setup();
+		const [loanId = 0] = lent(f, f.teacher);
+		f.db.update(loan).set({ renewals: 5 }).run();
+		expect(
+			renewLoan(f.db, config, { loanId }, f.actor, new Date("2026-09-27T08:00:00Z")),
+		).toMatchObject({ reason: "renewal_limit_reached" });
+		f.db.update(loan).set({ renewals: 0 }).run();
+		// on the day of the loan the renewal would not move the due date
+		expect(renewLoan(f.db, config, { loanId }, f.actor, NOW)).toMatchObject({
+			ok: true,
+			renewals: 0,
+			dueDate: "2026-10-12",
+		});
+	});
+
+	it("a renewal of several loans waits for one answer: none renewed until it is confirmed", () => {
+		const f = setup();
+		const [first = 0] = lent(f, f.teacher);
+		// a second copy lent on 30 September, due 15 October
+		const day = new Date("2026-09-30T08:00:00Z");
+		const second = checkoutItem(
+			f.db,
+			config,
+			{ patronId: f.teacher, itemId: f.items[1]!.id },
+			f.actor,
+			day,
+		);
+		const secondId = second.ok ? second.loan.loanId : 0;
+		const later = new Date("2026-10-04T08:00:00Z");
+		// the first loan is past half (9 of 17 days), the second is early (4 of 15)
+		const asked = renewAllLoans(f.db, config, f.teacher, f.actor, later);
+		expect(asked.kind).toBe("early");
+		expect(asked.kind === "early" ? asked.early.map((r) => r.loanId) : []).toEqual([secondId]);
+		expect(renewedCount(f.db, first)).toBe(0);
+		expect(renewedCount(f.db, secondId)).toBe(0);
+		const done = renewAllLoans(f.db, config, f.teacher, f.actor, later, { confirmEarly: true });
+		expect(done.kind === "done" ? done.results.map((r) => r.ok) : []).toEqual([true, true]);
+		expect(renewedCount(f.db, first)).toBe(1);
+		expect(renewedCount(f.db, secondId)).toBe(1);
+	});
+
+	it("the selection of the grid follows the same rule", () => {
+		const f = setup();
+		const [first = 0, second = 0] = lent(f, f.teacher, 2);
+		const early = renewSelectedLoans(
+			f.db,
+			config,
+			[first, second],
+			f.actor,
+			new Date("2026-09-28T08:00:00Z"),
+		);
+		expect(early.kind === "early" ? early.early.length : 0).toBe(2);
+		expect(renewedCount(f.db, first) + renewedCount(f.db, second)).toBe(0);
+		// a refusal of another kind is not a question: the rest is renewed without asking
+		f.db.update(loan).set({ renewals: 5 }).where(eq(loan.id, second)).run();
+		const day = new Date("2026-10-05T08:00:00Z");
+		const done = renewSelectedLoans(f.db, config, [first, second], f.actor, day);
+		expect(
+			done.kind === "done" ? done.results.map((r) => (r.ok ? "ok" : r.reason)) : [],
+		).toEqual(["ok", "renewal_limit_reached"]);
+	});
+
+	it("renews instead of returning only after the confirmation: the return stays meanwhile", () => {
+		const f = setup();
+		const [loanId = 0] = lent(f, f.teacher);
+		const day = new Date("2026-09-30T08:00:00Z");
+		checkinItem(f.db, config, f.items[0]!.id, f.actor, day);
+		expect(renewInsteadOfReturn(f.db, config, loanId, f.actor, day)).toMatchObject({
+			ok: false,
+			reason: "renewal_early",
+		});
+		expect(
+			f.db.select().from(loan).where(eq(loan.id, loanId)).get()?.returnedAt,
+		).not.toBeNull();
+		expect(
+			renewInsteadOfReturn(f.db, config, loanId, f.actor, day, { confirmEarly: true }),
+		).toMatchObject({ ok: true, renewals: 1 });
+		expect(f.db.select().from(loan).where(eq(loan.id, loanId)).get()?.returnedAt).toBeNull();
 	});
 });
 

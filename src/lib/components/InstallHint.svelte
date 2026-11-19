@@ -31,12 +31,14 @@
 					variant="primary"
 					icon={InstallIcon}
 					onclick={() => installPrompt.install()}
-					data-testid="install-app">{i18n.t("dashboard.install.install")}</Button
+					data-testid="install-app"
 				>
+					{i18n.t("dashboard.install.install")}
+				</Button>
 			{/if}
-			<Button onclick={() => installPrompt.dismiss()} data-testid="install-later"
-				>{i18n.t("dashboard.install.later")}</Button
-			>
+			<Button onclick={() => installPrompt.dismiss()} data-testid="install-later">
+				{i18n.t("dashboard.install.later")}
+			</Button>
 		</Row>
 	</Card>
 {/if}

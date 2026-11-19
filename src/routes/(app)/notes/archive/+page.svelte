@@ -63,9 +63,9 @@
 			<EmptyState title={t("empty.archived")} icon="archive" />
 		{/snippet}
 		{#snippet children(archived)}
-			<Hint tone="count" data-testid="notes-count"
-				>{t("archiveCount", { shown: notes.length, total: archived.total })}</Hint
-			>
+			<Hint tone="count" data-testid="notes-count">
+				{t("archiveCount", { shown: notes.length, total: archived.total })}
+			</Hint>
 			<NoteGrid data-testid="notes-grid">
 				{#each notes as note (note.id)}
 					<li>
@@ -75,9 +75,9 @@
 			</NoteGrid>
 			{#if notes.length < archived.total}
 				<div class="text-center">
-					<Button onclick={() => (limit += PAGE)} data-testid="notes-more"
-						>{t("actions.more")}</Button
-					>
+					<Button onclick={() => (limit += PAGE)} data-testid="notes-more">
+						{t("actions.more")}
+					</Button>
 				</div>
 			{/if}
 		{/snippet}
@@ -106,14 +106,18 @@
 		icon={RestoreIcon}
 		disabled={busy === note.id}
 		onclick={() => run(note, () => unarchiveNote({ id: note.id }), "restored")}
-		data-testid="note-restore">{t("actions.restore")}</Button
+		data-testid="note-restore"
 	>
+		{t("actions.restore")}
+	</Button>
 	<Button
 		size="sm"
 		variant="error-tonal"
 		icon={DeleteIcon}
 		disabled={busy === note.id}
 		onclick={() => (deleting = note)}
-		data-testid="note-delete">{t("actions.delete")}</Button
+		data-testid="note-delete"
 	>
+		{t("actions.delete")}
+	</Button>
 {/snippet}

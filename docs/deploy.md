@@ -108,7 +108,7 @@ No names, photos or card numbers are written: ids, codes, sizes and flags only. 
 `docker/Dockerfile` builds a self-contained image: the adapter-bun bundle (no `node_modules`),
 the shipped defaults (`config/`) and the migrations (`drizzle/`) under `/app`, `yaz-client` for
 Z39.50, user `bun` (uid 1000), volumes `/config`, `/data` and `/backups`, a `HEALTHCHECK` on `/healthz`. The
-runtime is `oven/bun:1.4.4-distroless` (ADR-020): no apt and no Debian userland, only
+runtime is `oven/bun:1.4.5-distroless` (ADR-020): no apt and no Debian userland, only
 `yaz-client` with the libraries it links and a static BusyBox, both taken from the Debian trixie
 packages. About 145 MB on amd64 and 155 MB on arm64, about 64 MB to download.
 

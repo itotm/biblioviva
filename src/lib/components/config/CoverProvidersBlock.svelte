@@ -66,9 +66,9 @@
 	<h2 class="title-lg">{i18n.t("config.blocks.coverProviders.title")}</h2>
 	<Hint>{i18n.t("config.blocks.coverProviders.hint")}</Hint>
 	{#if !coversOn()}
-		<Alert tone="info" padded live={false} data-testid="cover-providers-off"
-			>{i18n.t("config.blocks.coverProviders.off")}</Alert
-		>
+		<Alert tone="info" padded live={false} data-testid="cover-providers-off">
+			{i18n.t("config.blocks.coverProviders.off")}
+		</Alert>
 	{/if}
 	{#if data.current}
 		<ol class="space-y-2">
@@ -78,9 +78,13 @@
 					data-testid="provider-{p.id}"
 				>
 					<span class="w-6 text-center font-semibold">{i + 1}</span>
-					<Checkbox bind:checked={p.enabled} class="flex-1" data-testid="provider-enabled"
-						>{i18n.t(`config.blocks.coverProviders.names.${p.id}`)}</Checkbox
+					<Checkbox
+						bind:checked={p.enabled}
+						class="flex-1"
+						data-testid="provider-enabled"
 					>
+						{i18n.t(`config.blocks.coverProviders.names.${p.id}`)}
+					</Checkbox>
 					<IconButton
 						icon={MoveIcon}
 						label={i18n.t("config.taxonomy.moveUp")}
@@ -102,9 +106,9 @@
 			{/each}
 		</ol>
 		{#if list.some((p) => p.id === "googlebooks" && p.enabled) && !data.current.googleKey}
-			<Alert tone="warning" data-testid="google-key-missing"
-				>{i18n.t("config.blocks.coverProviders.googleKey")}</Alert
-			>
+			<Alert tone="warning" data-testid="google-key-missing">
+				{i18n.t("config.blocks.coverProviders.googleKey")}
+			</Alert>
 		{/if}
 		{#if editor.problem}<Alert>{editor.problem}</Alert>{/if}
 		<Row justify="end">

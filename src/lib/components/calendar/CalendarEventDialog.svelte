@@ -159,22 +159,26 @@
 					icon={DeleteIcon}
 					onclick={() => (confirmDelete = true)}
 					disabled={saving}
-					data-testid="calendar-delete">{t("form.delete")}</Button
+					data-testid="calendar-delete"
 				>
+					{t("form.delete")}
+				</Button>
 			{:else}
 				<span></span>
 			{/if}
 			<Row wrap={false} justify="end">
-				<Button onclick={() => (open = false)} disabled={saving}
-					>{i18n.t("common.actions.cancel")}</Button
-				>
+				<Button onclick={() => (open = false)} disabled={saving}>
+					{i18n.t("common.actions.cancel")}
+				</Button>
 				<Button
 					type="submit"
 					variant="primary"
 					icon={SaveIcon}
 					disabled={saving}
-					data-testid="calendar-save">{t("form.save")}</Button
+					data-testid="calendar-save"
 				>
+					{t("form.save")}
+				</Button>
 			</Row>
 		</Row>
 	</form>

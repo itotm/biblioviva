@@ -6,17 +6,17 @@ come with the device checklist (9.4).
 
 ## Page weight
 
-The budget is **250 KB of JavaScript, gzipped, on the core pages**; `tests/e2e/perf-budget.spec.ts`
+The budget is **275 KB of JavaScript, gzipped, on the core pages** (ADR-061); `tests/e2e/perf-budget.spec.ts`
 measures every script a page loads and fails above it (and if the barcode reader or OpenCV appear:
 they load only when a camera flow starts).
 
 | Page | Scripts | JavaScript (gzip) |
 |---|---|---|
-| Dashboard | 51 | 144 KB |
-| Circulation: checkout | 54 | 149 KB |
-| Circulation: check-in | 45 | 132 KB |
-| Patrons | 47 | 179 KB |
-| Catalogue | 56 | 192 KB |
+| Dashboard | 82 | 214 KB |
+| Circulation: checkout | 93 | 224 KB |
+| Circulation: check-in | 82 | 215 KB |
+| Patrons | 89 | 254 KB |
+| Catalogue | 88 | 254 KB |
 
 What changed in 9.2 to make the pages lighter:
 

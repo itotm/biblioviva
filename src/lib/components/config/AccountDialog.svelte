@@ -157,17 +157,19 @@
 								(chosen = e.currentTarget.checked
 									? [...chosen, r]
 									: chosen.filter((x) => x !== r))}
-							data-testid="account-role-{r}">{r}</Checkbox
+							data-testid="account-role-{r}"
 						>
+							{r}
+						</Checkbox>
 					{/each}
 				</Row>
 				{#if chosen.length === 0}
 					<Hint tone="error">{i18n.t("admin.users.errors.noRoles")}</Hint>
 				{/if}
 			</fieldset>
-			<Checkbox bind:checked={active} data-testid="account-active"
-				>{i18n.t("admin.users.dialog.active")}</Checkbox
-			>
+			<Checkbox bind:checked={active} data-testid="account-active">
+				{i18n.t("admin.users.dialog.active")}
+			</Checkbox>
 		{/if}
 		{#if askPassword}
 			<Field
@@ -191,9 +193,9 @@
 			</Field>
 			<Hint tone="faint">{i18n.t("admin.users.dialog.passwordHint")}</Hint>
 			<div class="space-y-1">
-				<Checkbox bind:checked={mustChange} data-testid="account-must-change-box"
-					>{i18n.t("admin.users.dialog.mustChange")}</Checkbox
-				>
+				<Checkbox bind:checked={mustChange} data-testid="account-must-change-box">
+					{i18n.t("admin.users.dialog.mustChange")}
+				</Checkbox>
 				<Hint tone="faint">{i18n.t("admin.users.dialog.mustChangeHint")}</Hint>
 			</div>
 		{/if}
@@ -201,16 +203,18 @@
 			<Alert data-testid="account-problem">{problem}</Alert>
 		{/if}
 		<Row justify="end" as="footer">
-			<Button onclick={() => (open = false)} disabled={pending}
-				>{i18n.t("common.actions.cancel")}</Button
-			>
+			<Button onclick={() => (open = false)} disabled={pending}>
+				{i18n.t("common.actions.cancel")}
+			</Button>
 			<Button
 				variant="primary"
 				type="submit"
 				icon={SaveIcon}
 				disabled={!ready || pending}
-				data-testid="account-save">{i18n.t("config.section.save")}</Button
+				data-testid="account-save"
 			>
+				{i18n.t("config.section.save")}
+			</Button>
 		</Row>
 	</form>
 </Modal>

@@ -942,6 +942,8 @@ function scoreFrames(
 export function detectFrames(cv: CvModule, image: ImageData, options: FrameOptions = {}): Frame[] {
 	const o = { ...FRAME_DEFAULTS, ...options };
 	const scale = Math.min(1, o.maxSide / Math.max(image.width, image.height));
+	// OpenCV reads only the `data`, `width` and `height` of the image, whatever made it
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-class-instance-assignment
 	const src = cv.matFromImageData(image);
 	const small = new cv.Mat();
 	const blurred = new cv.Mat();

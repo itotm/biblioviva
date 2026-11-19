@@ -39,6 +39,13 @@ export const PRINT_STATUS = {
 	printed: { tone: "success", icon: "print", key: "print.printed" },
 } as const satisfies Record<string, StatusDef>;
 
+/** The states of the installation check (8.7): green, amber and red, each with an icon and a word. */
+export const CHECK_STATUS = {
+	ok: { tone: "success", icon: "available", key: "check.ok" },
+	warning: { tone: "warning", icon: "damaged", key: "check.warning" },
+	error: { tone: "error", icon: "lost", key: "check.error" },
+} as const satisfies Record<string, StatusDef>;
+
 /** Colour and icon of a state whose text the caller writes (a sentence, a count). */
 export type StatusLook = Omit<StatusDef, "key">;
 

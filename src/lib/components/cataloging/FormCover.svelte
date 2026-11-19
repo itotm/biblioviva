@@ -66,17 +66,18 @@
 			icon={CameraIcon}
 			onclick={() => (choice.camera = true)}
 			data-testid="form-cover-photo"
-			>{cover
-				? i18n.t("catalog.fastAdd.cover.replace")
-				: i18n.t("catalog.fastAdd.cover.take")}</Button
 		>
+			{cover ? i18n.t("catalog.fastAdd.cover.replace") : i18n.t("catalog.fastAdd.cover.take")}
+		</Button>
 		{#if cover}
 			<Button
 				size="sm"
 				icon={RemoveIcon}
 				onclick={() => choice.clear()}
-				data-testid="form-cover-remove">{i18n.t("catalog.fastAdd.cover.remove")}</Button
+				data-testid="form-cover-remove"
 			>
+				{i18n.t("catalog.fastAdd.cover.remove")}
+			</Button>
 		{/if}
 	{/snippet}
 </MediaCard>

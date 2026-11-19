@@ -26,6 +26,7 @@
 	import Button from "#lib/ui/Button.svelte";
 	import Badge from "#lib/ui/Badge.svelte";
 	import Card from "#lib/ui/Card.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
 	import Hint from "#lib/ui/Hint.svelte";
 	import Page from "#lib/ui/Page.svelte";
 	import Row from "#lib/ui/Row.svelte";
@@ -131,23 +132,30 @@
 						href={refuseDownload ? undefined : "/admin/backups/export"}
 						onclick={refuseDownload}
 						title={i18n.t("admin.backups.export.hint")}
-						data-testid="export-all">{i18n.t("admin.backups.export.button")}</Button
+						data-testid="export-all"
 					>
+						{i18n.t("admin.backups.export.button")}
+					</Button>
 					<Button
 						icon={BackupIcon}
 						variant="primary"
 						onclick={onRun}
 						disabled={running}
 						data-testid="run-backup"
-						>{running
-							? i18n.t("common.status.loading")
-							: i18n.t("admin.backups.runNow")}</Button
 					>
+						{running ? i18n.t("common.status.loading") : i18n.t("admin.backups.runNow")}
+					</Button>
 				{/snippet}
 			</PageHeader>
 
 			<Card variant="outlined" gap="2" as="section" data-testid="backup-contents">
-				<h2 class="h4">{i18n.t("admin.backups.contents.title")}</h2>
+				<Row wrap={false} align="center" gap="1">
+					<h2 class="h4">{i18n.t("admin.backups.contents.title")}</h2>
+					<HelpLink
+						spot="backupContents"
+						topic={i18n.t("admin.backups.contents.title")}
+					/>
+				</Row>
 				<ul class="space-y-1 text-sm">
 					<Row wrap={false} align="start" as="li">
 						{@render lineIcon(BackupIcon)}
@@ -155,8 +163,8 @@
 					</Row>
 					<Row wrap={false} align="start" as="li">
 						{@render lineIcon(PhotoIcon)}
-						<span data-testid="backup-images"
-							>{view.mirror.photos + view.mirror.covers > 0 ||
+						<span data-testid="backup-images">
+							{view.mirror.photos + view.mirror.covers > 0 ||
 							view.uploads.photos + view.uploads.covers === 0
 								? i18n.t("admin.backups.contents.images", {
 										photos: view.mirror.photos,
@@ -165,21 +173,24 @@
 								: i18n.t("admin.backups.contents.imagesPending", {
 										photos: view.uploads.photos,
 										covers: view.uploads.covers,
-									})}</span
-						>
+									})}
+						</span>
 					</Row>
 					<Row wrap={false} align="start" as="li">
 						{@render lineIcon(ExportIcon)}
-						<span
-							>{i18n.t("admin.backups.contents.config")}
-							{i18n.t("admin.backups.export.hint")}</span
-						>
+						<span>
+							{i18n.t("admin.backups.contents.config")}
+							{i18n.t("admin.backups.export.hint")}
+						</span>
 					</Row>
 				</ul>
 			</Card>
 
 			<Card variant="outlined" gap="3" as="section" data-testid="backup-parts">
-				<h2 class="h4">{i18n.t("admin.backups.parts.title")}</h2>
+				<Row wrap={false} align="center" gap="1">
+					<h2 class="h4">{i18n.t("admin.backups.parts.title")}</h2>
+					<HelpLink spot="backupParts" topic={i18n.t("admin.backups.parts.title")} />
+				</Row>
 				<Hint>{i18n.t("admin.backups.parts.hint")}</Hint>
 				<PartsPicker parts={view.parts} bind:selected={() => parts, (v) => (chosen = v)} />
 				<Row justify="end">
@@ -193,15 +204,19 @@
 										`admin/backups/export?parts=${encodeURIComponent(parts.join(","))}`,
 									)}
 						onclick={refuseDownload}
-						data-testid="export-parts">{i18n.t("admin.backups.parts.download")}</Button
+						data-testid="export-parts"
 					>
+						{i18n.t("admin.backups.parts.download")}
+					</Button>
 					<Button
 						icon={BackupIcon}
 						variant="primary"
 						onclick={onArchive}
 						disabled={archiving || parts.length === 0}
-						data-testid="archive-backup">{i18n.t("admin.backups.parts.create")}</Button
+						data-testid="archive-backup"
 					>
+						{i18n.t("admin.backups.parts.create")}
+					</Button>
 				</Row>
 			</Card>
 
@@ -219,20 +234,26 @@
 						: "never"}
 			>
 				{#if view.offsiteEnabled && view.offsite?.status === "ok" && !view.offsite.stale}
-					<span class="rounded-container bg-success-100 p-2 text-success-800"
-						><CloudOkIcon size={ICON_SIZE.lg} aria-hidden="true" /></span
-					>
+					<span class="rounded-container bg-success-100 p-2 text-success-800">
+						<CloudOkIcon size={ICON_SIZE.lg} aria-hidden="true" />
+					</span>
 				{:else if view.offsiteEnabled}
-					<span class="rounded-container bg-warning-100 p-2 text-warning-900"
-						><WarnIcon size={ICON_SIZE.lg} aria-hidden="true" /></span
-					>
+					<span class="rounded-container bg-warning-100 p-2 text-warning-900">
+						<WarnIcon size={ICON_SIZE.lg} aria-hidden="true" />
+					</span>
 				{:else}
-					<span class="rounded-container bg-surface-100 p-2 text-surface-600"
-						><CloudOffIcon size={ICON_SIZE.lg} aria-hidden="true" /></span
-					>
+					<span class="rounded-container bg-surface-100 p-2 text-surface-600">
+						<CloudOffIcon size={ICON_SIZE.lg} aria-hidden="true" />
+					</span>
 				{/if}
 				<div class="space-y-1">
-					<h2 class="font-semibold">{i18n.t("admin.backups.offsite.title")}</h2>
+					<Row wrap={false} align="center" gap="1">
+						<h2 class="font-semibold">{i18n.t("admin.backups.offsite.title")}</h2>
+						<HelpLink
+							spot="backupOffsite"
+							topic={i18n.t("admin.backups.offsite.title")}
+						/>
+					</Row>
 					{#if !view.offsiteEnabled}
 						<Hint>{i18n.t("admin.backups.offsite.disabled")}</Hint>
 					{:else if !view.offsite}
@@ -284,8 +305,9 @@
 										icon={CatchUpIcon}
 										title={i18n.t("admin.backups.catchUp.hint")}
 										data-testid="backup-catch-up"
-										>{i18n.t("admin.backups.catchUp.badge")}</Badge
 									>
+										{i18n.t("admin.backups.catchUp.badge")}
+									</Badge>
 								{/if}
 								<span class="block text-xs opacity-70">
 									{i18n.t("admin.backups.columns.when")}: {fmt.dateTime(
@@ -303,14 +325,17 @@
 									? undefined
 									: `/admin/backups/download/${b.name}`}
 								download={refuseDownload ? undefined : b.name}
-								onclick={refuseDownload}>{i18n.t("admin.backups.download")}</Button
+								onclick={refuseDownload}
 							>
+								{i18n.t("admin.backups.download")}
+							</Button>
 							<Button
 								icon={RestoreIcon}
 								onclick={() => startRestore(b.name)}
 								data-testid="backup-restore"
-								>{i18n.t("admin.backups.restore.button")}</Button
 							>
+								{i18n.t("admin.backups.restore.button")}
+							</Button>
 						</Row>
 					{/each}
 				</ul>

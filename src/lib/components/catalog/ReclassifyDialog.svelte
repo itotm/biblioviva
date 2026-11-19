@@ -145,11 +145,11 @@
 		<Alert data-testid="reclassify-problem">{problem}</Alert>
 	{/if}
 	{#if planned !== null}
-		<Hint tone="primary" data-testid="reclassify-plan"
-			>{planned > 0
+		<Hint tone="primary" data-testid="reclassify-plan">
+			{planned > 0
 				? i18n.t("catalog.batch.reclassify.changes", { count: planned })
-				: i18n.t("catalog.batch.plan.none")}</Hint
-		>
+				: i18n.t("catalog.batch.plan.none")}
+		</Hint>
 	{/if}
 	<Row justify="end" as="footer">
 		<Button onclick={close} disabled={busy}>{i18n.t("common.actions.close")}</Button>
@@ -160,12 +160,18 @@
 				onclick={apply}
 				disabled={busy}
 				data-testid="reclassify-apply"
-				>{i18n.t("catalog.batch.reclassify.apply", { count: planned })}</Button
 			>
+				{i18n.t("catalog.batch.reclassify.apply", { count: planned })}
+			</Button>
 		{:else}
-			<Button variant="primary" onclick={check} disabled={busy} data-testid="reclassify-check"
-				>{i18n.t("catalog.batch.check")}</Button
+			<Button
+				variant="primary"
+				onclick={check}
+				disabled={busy}
+				data-testid="reclassify-check"
 			>
+				{i18n.t("catalog.batch.check")}
+			</Button>
 		{/if}
 	</Row>
 </Modal>

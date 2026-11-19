@@ -176,13 +176,13 @@
 	<div class="space-y-1" data-testid={testid}>
 		<Row justify="between" align="center" class="text-sm">
 			<span class="font-semibold">{label}</span>
-			<span
-				>{i18n.t("catalog.inventory.progress", {
+			<span>
+				{i18n.t("catalog.inventory.progress", {
 					seen,
 					expected,
 					percent: percent(seen, expected),
-				})}</span
-			>
+				})}
+			</span>
 		</Row>
 		<div
 			class="h-3 overflow-hidden rounded-full bg-surface-200"
@@ -240,19 +240,20 @@
 					<Row justify="between" align="center">
 						<div>
 							<h2 class="title-lg">{current.name}</h2>
-							<Hint as="span"
-								>{i18n.t("catalog.inventory.started", {
+							<Hint as="span">
+								{i18n.t("catalog.inventory.started", {
 									when: fmt.dateTime(current.startedAt),
-								})}</Hint
-							>
+								})}
+							</Hint>
 						</div>
 						<Button
 							variant="error-outlined"
 							icon={CloseIcon}
 							onclick={() => (closeOpen = true)}
 							data-testid="inventory-close"
-							>{i18n.t("catalog.inventory.close")}</Button
 						>
+							{i18n.t("catalog.inventory.close")}
+						</Button>
 					</Row>
 					{@render bar(
 						progress.seen,
@@ -268,9 +269,9 @@
 						})}
 					</Hint>
 					<details data-testid="inventory-shelves">
-						<summary class="cursor-pointer text-sm font-semibold hover:underline"
-							>{i18n.t("catalog.inventory.byShelf")}</summary
-						>
+						<summary class="cursor-pointer text-sm font-semibold hover:underline">
+							{i18n.t("catalog.inventory.byShelf")}
+						</summary>
 						<div class="mt-2 space-y-2">
 							{#each progress.shelves as s (s.shelf)}
 								{@render bar(
@@ -317,8 +318,9 @@
 									size="sm"
 									onclick={() => (camera = false)}
 									data-testid="inventory-camera-done"
-									>{i18n.t("catalog.inventory.cameraDone")}</Button
 								>
+									{i18n.t("catalog.inventory.cameraDone")}
+								</Button>
 							</Row>
 							{#await import("#lib/components/ScannerOverlay.svelte") then { default: ScannerOverlay }}
 								<ScannerOverlay
@@ -345,8 +347,9 @@
 								camera = true;
 							}}
 							data-testid="inventory-camera"
-							>{i18n.t("catalog.inventory.camera")}</Button
 						>
+							{i18n.t("catalog.inventory.camera")}
+						</Button>
 					{/if}
 					{#if !camera}
 						{@render lastResults()}
@@ -375,9 +378,9 @@
 							>
 								<option value="*">{i18n.t("catalog.inventory.allShelves")}</option>
 								{#each progress.shelves as s (s.shelf)}
-									<option value={s.shelf}
-										>{s.shelf || i18n.t("catalog.inventory.noShelf")}</option
-									>
+									<option value={s.shelf}>
+										{s.shelf || i18n.t("catalog.inventory.noShelf")}
+									</option>
 								{/each}
 							</Select>
 						</Field>
@@ -404,26 +407,28 @@
 										<span class="font-mono text-sm">{m.callNumber}</span>
 										<a
 											class="font-semibold hover:underline"
-											href={resolve(`catalog/${m.biblioId}`)}>{m.title}</a
+											href={resolve(`catalog/${m.biblioId}`)}
 										>
+											{m.title}
+										</a>
 										<Hint as="span" mono>{m.barcode}</Hint>
 										{#if m.inventoryNumber}
 											<!-- the school inventory's number (9.64) -->
-											<Hint as="span" mono
-												>{i18n.t("catalog.inventory.inventoryNumber", {
+											<Hint as="span" mono>
+												{i18n.t("catalog.inventory.inventoryNumber", {
 													number: m.inventoryNumber,
-												})}</Hint
-											>
+												})}
+											</Hint>
 										{/if}
 									</li>
 								{/each}
 							</DividedList>
 							{#if missing.current.total > missing.current.items.length}
-								<Hint tone="faint"
-									>{i18n.t("catalog.inventory.more", {
+								<Hint tone="faint">
+									{i18n.t("catalog.inventory.more", {
 										count: missing.current.total - missing.current.items.length,
-									})}</Hint
-								>
+									})}
+								</Hint>
 							{/if}
 						{/if}
 					{/if}
@@ -455,8 +460,9 @@
 								type="submit"
 								icon={AddIcon}
 								data-testid="inventory-start"
-								>{i18n.t("catalog.inventory.start")}</Button
 							>
+								{i18n.t("catalog.inventory.start")}
+							</Button>
 						</form>
 					{/snippet}
 				</EmptyState>
@@ -473,9 +479,9 @@
 						<span>
 							<span class="font-semibold">{h.name}</span>
 							{#if h.summary}
-								<Hint as="span" class="block"
-									>{i18n.t("catalog.inventory.summary", h.summary)}</Hint
-								>
+								<Hint as="span" class="block">
+									{i18n.t("catalog.inventory.summary", h.summary)}
+								</Hint>
 							{/if}
 						</span>
 						{#if h.canReopen}
@@ -484,8 +490,9 @@
 								icon={ReopenIcon}
 								onclick={() => reopen(h.id)}
 								data-testid="inventory-reopen"
-								>{i18n.t("catalog.inventory.reopen")}</Button
 							>
+								{i18n.t("catalog.inventory.reopen")}
+							</Button>
 						{/if}
 					</li>
 				{/each}

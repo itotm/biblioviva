@@ -7,7 +7,9 @@ tessere, copie e ISBN; il telefono è facoltativo.
 
 In ogni pagina di BiblioViva il pulsante **Guida** apre in una nuova scheda la pagina della documentazione che spiega
 proprio quella schermata: sul computer è in alto a destra, sul telefono è il pulsante rotondo con il punto di
-domanda accanto al titolo della pagina.
+domanda accanto al titolo della pagina. Accanto ad alcuni titoli più delicati (le fasi di **Nuovo libro**, le
+importazioni, le etichette, i backup) una piccola icona con il punto di domanda apre la sezione della pagina che li
+spiega.
 
 ## Guide
 

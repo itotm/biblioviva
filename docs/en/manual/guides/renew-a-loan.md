@@ -58,6 +58,14 @@ how many days late the book is. Press **Return**.
 If the administrator has set a latest due date (for example the end of lessons), it cannot be exceeded. The message
 gives the date; press **Return**.
 
+### The "Early renewal" window appears
+
+The book has been on loan for less than half of the period (the period starts on the loan or on the last renewal): the
+window gives the days gone and the due date. To renew all the same, press **Renew anyway**. To leave everything as it
+is, press **Cancel**: the loan does not change. With **Renew all** or **Renew selected** the window lists the books
+concerned: **Renew anyway** renews all the requested loans, **Cancel** renews none. The administrator has to confirm
+too.
+
 ### The administrator wants to renew anyway
 
 For the "Administration" account, the messages of renewal not allowed also have **Force (admin only)** (not for the

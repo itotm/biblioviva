@@ -126,14 +126,18 @@
 				variant={value === true ? "primary" : "tonal"}
 				onclick={() => onanswer(true)}
 				disabled={wizard.busy}
-				data-testid="{testid}-yes">{i18n.t(`catalog.import.preview.${key}.yes`)}</Button
+				data-testid="{testid}-yes"
 			>
+				{i18n.t(`catalog.import.preview.${key}.yes`)}
+			</Button>
 			<Button
 				variant={value === false ? "error" : "tonal"}
 				onclick={() => onanswer(false)}
 				disabled={wizard.busy}
-				data-testid="{testid}-no">{i18n.t(`catalog.import.preview.${key}.no`)}</Button
+				data-testid="{testid}-no"
 			>
+				{i18n.t(`catalog.import.preview.${key}.no`)}
+			</Button>
 		</Row>
 	</Alert>
 {/snippet}
@@ -176,17 +180,17 @@
 >
 	{#snippet mappingInfo()}
 		{#if wizard.remembered}
-			<Hint tone="primary" data-testid="mapping-remembered"
-				>{i18n.t("catalog.import.mapping.remembered")}</Hint
-			>
+			<Hint tone="primary" data-testid="mapping-remembered">
+				{i18n.t("catalog.import.mapping.remembered")}
+			</Hint>
 		{/if}
 	{/snippet}
 	{#snippet mappingOptions()}
 		{#each ["biblioKey", "barcode", "classification"] as const as key (key)}
 			{#if !wizard.mapping.includes(key)}
-				<Hint data-testid="missing-key-{key}"
-					>{i18n.t(`catalog.import.mapping.without.${key}`)}</Hint
-				>
+				<Hint data-testid="missing-key-{key}">
+					{i18n.t(`catalog.import.mapping.without.${key}`)}
+				</Hint>
 			{/if}
 		{/each}
 		<Row wrap={false} align="start" as="label">
@@ -200,8 +204,10 @@
 				title={i18n.t("catalog.import.mapping.specialValues", {
 					author: data.specialAuthor,
 					publisher: data.unknownPublisher,
-				})}>{i18n.t("catalog.import.mapping.specialValuesHint")}</TitleHint
+				})}
 			>
+				{i18n.t("catalog.import.mapping.specialValuesHint")}
+			</TitleHint>
 		</Row>
 	{/snippet}
 	{#snippet previewInfo(result)}
@@ -234,15 +240,17 @@
 						onclick={() => answer(true)}
 						disabled={wizard.busy}
 						data-testid="class-question-yes"
-						>{i18n.t("catalog.import.preview.question.yes")}</Button
 					>
+						{i18n.t("catalog.import.preview.question.yes")}
+					</Button>
 					<Button
 						variant={enableClassPerItem === false ? "error" : "tonal"}
 						onclick={() => answer(false)}
 						disabled={wizard.busy}
 						data-testid="class-question-no"
-						>{i18n.t("catalog.import.preview.question.no")}</Button
 					>
+						{i18n.t("catalog.import.preview.question.no")}
+					</Button>
 				</Row>
 			</Alert>
 		{/if}
@@ -267,9 +275,9 @@
 	{/snippet}
 	{#snippet doneInfo(summary)}
 		{#if summary.classPerItemEnabled}
-			<Hint tone="primary" data-testid="done-class-per-item"
-				>{i18n.t("catalog.import.done.classPerItem")}</Hint
-			>
+			<Hint tone="primary" data-testid="done-class-per-item">
+				{i18n.t("catalog.import.done.classPerItem")}
+			</Hint>
 		{/if}
 	{/snippet}
 	{#snippet doneActions(summary)}
@@ -279,12 +287,14 @@
 				variant="primary"
 				icon={PrintIcon}
 				onclick={() => (labelDialog = true)}
-				data-testid="done-labels">{i18n.t("catalog.import.done.labels")}</Button
+				data-testid="done-labels"
 			>
+				{i18n.t("catalog.import.done.labels")}
+			</Button>
 		{/if}
-		<Button icon={CatalogIcon} href="/catalog" data-testid="done-open"
-			>{i18n.t("catalog.import.done.open")}</Button
-		>
+		<Button icon={CatalogIcon} href="/catalog" data-testid="done-open">
+			{i18n.t("catalog.import.done.open")}
+		</Button>
 		<LabelPrintDialog
 			bind:open={labelDialog}
 			ids={summary.generatedItemIds}

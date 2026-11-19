@@ -17,6 +17,7 @@
 	import AreaTabs from "#lib/components/AreaTabs.svelte";
 	import OverrideDialog from "#lib/components/circulation/OverrideDialog.svelte";
 	import type { DeskMessageData } from "#lib/components/circulation/desk-message.js";
+	import EarlyRenewalDialog from "#lib/components/circulation/EarlyRenewalDialog.svelte";
 	import { Renewals } from "#lib/components/circulation/renewals.svelte.js";
 	import { patronSortName } from "#lib/shared/patron-name.js";
 	import { icons } from "#lib/ui/icons.js";
@@ -160,8 +161,10 @@
 				variant="primary"
 				icon={RenewIcon}
 				onclick={() => renewals.many(selectedIds.map(Number))}
-				data-testid="renew-selected">{i18n.t("circulation.loans.renewSelected")}</Button
+				data-testid="renew-selected"
 			>
+				{i18n.t("circulation.loans.renewSelected")}
+			</Button>
 		{/snippet}
 		{#snippet filters()}
 			<FilterSelect
@@ -178,18 +181,22 @@
 				bind:value={f.group}
 			>
 				{#each options.current?.options.groups ?? [] as g (g.id)}<option
-						value={String(g.id)}>{g.label}</option
-					>{/each}
+						value={String(g.id)}
+					>
+						{g.label}
+					</option>{/each}
 			</FilterSelect>
-			<Checkbox bind:checked={f.overdueOnly} data-testid="overdue-only"
-				>{i18n.t("circulation.loans.overdueOnly")}</Checkbox
-			>
+			<Checkbox bind:checked={f.overdueOnly} data-testid="overdue-only">
+				{i18n.t("circulation.loans.overdueOnly")}
+			</Checkbox>
 			{#if filtered}
 				<Button
 					icon={ClearIcon}
 					onclick={() => filterState.clear()}
-					data-testid="clear-filters">{i18n.t("circulation.loans.clearFilters")}</Button
+					data-testid="clear-filters"
 				>
+					{i18n.t("circulation.loans.clearFilters")}
+				</Button>
 			{/if}
 		{/snippet}
 	</ListToolbar>
@@ -240,6 +247,7 @@
 		{/if}
 	</div>
 
+	<EarlyRenewalDialog ask={renewals.early} />
 	<OverrideDialog
 		open={renewals.pending !== null}
 		title={i18n.t("circulation.renewals.overrideTitle")}

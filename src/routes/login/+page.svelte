@@ -72,8 +72,8 @@
 
 		<form {...login} class="space-y-4" data-testid="login-form">
 			<input {...login.fields.redirectTo.as("hidden", redirectTo)} />
-			<Field label={i18n.t("auth.username")}
-				><Input
+			<Field label={i18n.t("auth.username")}>
+				<Input
 					{...login.fields.username.as("text")}
 					autocomplete="username"
 					autocapitalize="none"
@@ -81,16 +81,16 @@
 					spellcheck={false}
 					required
 					autofocus
-				/></Field
-			>
-			<Field label={i18n.t("auth.password")}
-				><PasswordInput
+				/>
+			</Field>
+			<Field label={i18n.t("auth.password")}>
+				<PasswordInput
 					label={i18n.t("auth.password")}
 					{...login.fields.password.as("password")}
 					autocomplete="current-password"
 					required
-				/></Field
-			>
+				/>
+			</Field>
 
 			{#if result?.error}
 				<Alert data-testid="login-error">
@@ -102,11 +102,9 @@
 				</Alert>
 			{/if}
 
-			<Button variant="primary" full type="submit" disabled={login.pending > 0}
-				>{login.pending > 0
-					? i18n.t("common.status.loading")
-					: i18n.t("auth.submit")}</Button
-			>
+			<Button variant="primary" full type="submit" disabled={login.pending > 0}>
+				{login.pending > 0 ? i18n.t("common.status.loading") : i18n.t("auth.submit")}
+			</Button>
 		</form>
 	</section>
 
@@ -119,9 +117,9 @@
 		>
 			<Row wrap justify="between" gap="2">
 				<h2 class="h3">{i18n.t("common.demoPublic.welcome.title")}</h2>
-				<Badge tone="warning" icon={icons.beta} data-testid="demo-beta"
-					>{i18n.t("common.demoPublic.welcome.beta")}</Badge
-				>
+				<Badge tone="warning" icon={icons.beta} data-testid="demo-beta">
+					{i18n.t("common.demoPublic.welcome.beta")}
+				</Badge>
 			</Row>
 			<p>{i18n.t("common.demoPublic.welcome.intro")}</p>
 			<p>{i18n.t("common.demoPublic.welcome.betaText")}</p>
@@ -148,9 +146,9 @@
 							<p>
 								<span class="font-mono font-semibold">{account}</span>
 								·
-								<strong
-									>{i18n.t(`common.demoPublic.accounts.${account}.name`)}</strong
-								>:
+								<strong>
+									{i18n.t(`common.demoPublic.accounts.${account}.name`)}
+								</strong>:
 								{i18n.t(`common.demoPublic.accounts.${account}.does`)}
 							</p>
 						</Row>

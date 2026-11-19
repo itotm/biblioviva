@@ -240,16 +240,9 @@
 			data-offset="{Math.round(offset.x)},{Math.round(offset.y)}"
 			data-testid="photo-crop"
 		></canvas>
-		<Field label={i18n.t("patrons.photo.zoom")} class="max-w-60"
-			><input
-				type="range"
-				min="1"
-				max="3"
-				step="0.05"
-				bind:value={zoom}
-				class="w-full"
-			/></Field
-		>
+		<Field label={i18n.t("patrons.photo.zoom")} class="max-w-60">
+			<input type="range" min="1" max="3" step="0.05" bind:value={zoom} class="w-full" />
+		</Field>
 		<Row>
 			<Button
 				icon={OkIcon}
@@ -257,14 +250,15 @@
 				onclick={confirm}
 				disabled={pending}
 				data-testid="photo-use"
-				>{pending ? i18n.t("common.status.loading") : i18n.t("patrons.photo.use")}</Button
 			>
-			<Button icon={RetryIcon} onclick={reset} disabled={pending}
-				>{i18n.t("patrons.photo.retake")}</Button
-			>
-			{#if oncancel}<Button onclick={oncancel} disabled={pending}
-					>{i18n.t("patrons.photo.cancel")}</Button
-				>{/if}
+				{pending ? i18n.t("common.status.loading") : i18n.t("patrons.photo.use")}
+			</Button>
+			<Button icon={RetryIcon} onclick={reset} disabled={pending}>
+				{i18n.t("patrons.photo.retake")}
+			</Button>
+			{#if oncancel}<Button onclick={oncancel} disabled={pending}>
+					{i18n.t("patrons.photo.cancel")}
+				</Button>{/if}
 		</Row>
 	{:else if capture.mode === "idle"}
 		{@render sourceRow(false)}

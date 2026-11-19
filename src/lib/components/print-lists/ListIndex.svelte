@@ -122,16 +122,20 @@
 					variant="primary"
 					icon={PatronsIcon}
 					onclick={() => startNew("patrons")}
-					data-testid="new-patron-list">{i18n.t("printing.lists.newPatrons")}</Button
+					data-testid="new-patron-list"
 				>
+					{i18n.t("printing.lists.newPatrons")}
+				</Button>
 			{/if}
 			{#if canItems}
 				<Button
 					variant={canPatrons ? "tonal" : "primary"}
 					icon={BooksIcon}
 					onclick={() => startNew("items")}
-					data-testid="new-item-list">{i18n.t("printing.lists.newItems")}</Button
+					data-testid="new-item-list"
 				>
+					{i18n.t("printing.lists.newItems")}
+				</Button>
 			{/if}
 		{/snippet}
 		{#snippet views()}
@@ -164,8 +168,10 @@
 						<a
 							href={resolve(`print-lists/${l.id}`)}
 							class="text-lg font-bold text-primary-700 hover:underline"
-							data-testid="open-list-{l.id}">{l.name}</a
+							data-testid="open-list-{l.id}"
 						>
+							{l.name}
+						</a>
 						<Row align="center" class="text-sm">
 							<Badge tone="primary">{i18n.t(`printing.lists.kinds.${l.kind}`)}</Badge>
 							<Badge>{i18n.t("printing.lists.count", { count: l.count })}</Badge>
@@ -186,15 +192,17 @@
 								variant="primary"
 								icon={OpenIcon}
 								href={resolve(`print-lists/${l.id}`)}
-								>{i18n.t("printing.lists.open")}</Button
 							>
+								{i18n.t("printing.lists.open")}
+							</Button>
 							<Button
 								variant="error-tonal"
 								icon={DeleteIcon}
 								onclick={() => (confirmDelete = { id: l.id, name: l.name })}
 								data-testid="delete-list-{l.id}"
-								>{i18n.t("common.actions.delete")}</Button
 							>
+								{i18n.t("common.actions.delete")}
+							</Button>
 						</Row>
 					</Card>
 				{/each}
@@ -219,14 +227,14 @@
 							>
 								<span class="text-lg font-bold">{g.label}</span>
 								<Row align="center" class="text-sm">
-									<Badge tone="secondary"
-										>{i18n.t("printing.lists.classKind")}</Badge
-									>
-									<Badge
-										>{i18n.t("printing.lists.count", {
+									<Badge tone="secondary">
+										{i18n.t("printing.lists.classKind")}
+									</Badge>
+									<Badge>
+										{i18n.t("printing.lists.count", {
 											count: g.total,
-										})}</Badge
-									>
+										})}
+									</Badge>
 								</Row>
 								<Row>
 									<Button
@@ -240,8 +248,9 @@
 											printDialog = true;
 										}}
 										data-testid="print-class-cards"
-										>{i18n.t("printing.list.print")}</Button
 									>
+										{i18n.t("printing.list.print")}
+									</Button>
 								</Row>
 							</Card>
 						{/each}
@@ -262,14 +271,14 @@
 		onconfirm={create}
 		oncancel={() => (newKind = null)}
 	>
-		<Field label={i18n.t("printing.lists.name")}
-			><Input
+		<Field label={i18n.t("printing.lists.name")}>
+			<Input
 				bind:value={newName}
 				placeholder={proposed}
 				maxlength={80}
 				data-testid="new-list-name"
-			/></Field
-		>
+			/>
+		</Field>
 	</ConfirmDialog>
 	<ConfirmDialog
 		open={confirmDelete !== null}

@@ -20,6 +20,8 @@ propria scuola si saltano.
    personale](guides/manage-accounts.md): dopo i dati dimostrativi le password semplici vanno sostituite.
 1. [Creare un account personale](guides/manage-accounts.md) per ogni collega che non usa un account condiviso. Con la
    casella **Da cambiare al primo accesso** attiva, il collega sceglie da sé la sua password.
+1. Aprire [Controllo installazione](screens/setup.md): elenca che cosa è ancora da correggere (le password dei dati
+   dimostrativi, i backup, l'indirizzo). Si torna a ricontrollarla dopo ogni gruppo di passi.
 
 ### La biblioteca
 

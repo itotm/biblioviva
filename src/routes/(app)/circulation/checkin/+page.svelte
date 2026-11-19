@@ -23,6 +23,8 @@
 	import BarcodeInput from "#lib/components/BarcodeInput.svelte";
 	import ClassBadge from "#lib/components/ClassBadge.svelte";
 	import AreaTabs from "#lib/components/AreaTabs.svelte";
+	import EarlyRenewalDialog from "#lib/components/circulation/EarlyRenewalDialog.svelte";
+	import { EarlyRenewalAsk } from "#lib/components/circulation/renewals.svelte.js";
 	import {
 		cardOnCheckin,
 		checkinPending,
@@ -93,8 +95,19 @@
 		show(deskMessage(i18n.t, "marked_damaged", { title: row.loan.title }));
 	}
 
-	async function renewRow(row: Returned): Promise<void> {
-		const r = await renewInstead({ loanId: row.loan.loanId });
+	// the book returned stays returned while the warning of an early renewal waits for its answer
+	const earlyAsk = new EarlyRenewalAsk({
+		t: (key, params) => i18n.t(key, params),
+		formatDate,
+		focus: () => scanner?.focus(),
+	});
+
+	async function renewRow(row: Returned, confirmEarly?: boolean): Promise<void> {
+		const r = await renewInstead({ loanId: row.loan.loanId, confirmEarly });
+		if (!r.ok && r.reason === "renewal_early") {
+			earlyAsk.ask([r], () => renewRow(row, true), false);
+			return;
+		}
 		if (r.ok) {
 			row.renewedUntil = r.dueDate;
 			show(
@@ -273,13 +286,13 @@
 										label={l.classLabel}
 										fallback={i18n.t("circulation.checkout.teacher")}
 									/>
-									<Hint as="span"
-										>{i18n.t("circulation.checkin.lentOn", {
+									<Hint as="span">
+										{i18n.t("circulation.checkin.lentOn", {
 											date: formatDate(l.issuedOn),
 										})} · {i18n.t("circulation.checkin.dueOn", {
 											date: formatDate(l.dueDate),
-										})}</Hint
-									>
+										})}
+									</Hint>
 								</Row>
 								<Row gap="2">
 									{#if row.renewedUntil}
@@ -320,24 +333,27 @@
 											target="_blank"
 											rel="noopener"
 											data-testid="checkin-reminder"
-											>{i18n.t("circulation.actions.printReminder")}</Button
 										>
+											{i18n.t("circulation.actions.printReminder")}
+										</Button>
 									{/if}
 									<Button
 										size="sm"
 										icon={RenewIcon}
 										onclick={() => renewRow(row)}
 										data-testid="checkin-renew"
-										>{i18n.t("circulation.checkin.renewInstead")}</Button
 									>
+										{i18n.t("circulation.checkin.renewInstead")}
+									</Button>
 									{#if !row.damaged}
 										<Button
 											size="sm"
 											icon={DamagedIcon}
 											onclick={() => markDamaged(row)}
 											data-testid="checkin-damaged"
-											>{i18n.t("circulation.actions.markDamaged")}</Button
 										>
+											{i18n.t("circulation.actions.markDamaged")}
+										</Button>
 									{/if}
 								</Row>
 							{/if}
@@ -347,4 +363,5 @@
 			{/if}
 		</Card>
 	</div>
+	<EarlyRenewalDialog ask={earlyAsk} />
 </Page>

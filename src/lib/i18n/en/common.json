@@ -16,6 +16,9 @@
 		"backTo": "Back to {{page}}",
 		"more": "More actions"
 	},
+	"help": {
+		"link": "Help: {{topic}}"
+	},
 	"similar": {
 		"label": "Similar",
 		"count": "plus {{count}} similar, found by correcting a typing mistake",
@@ -48,6 +51,11 @@
 		"print": {
 			"pending": "To print",
 			"printed": "Printed"
+		},
+		"check": {
+			"ok": "OK",
+			"warning": "To review",
+			"error": "To fix"
 		}
 	},
 	"list": {

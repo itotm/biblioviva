@@ -288,9 +288,9 @@
 		<h3 class="h4">{i18n.t(`setup.language.${key}.title`)}</h3>
 		<Hint>{i18n.t(`setup.language.${key}.hint`)}</Hint>
 		<Row>
-			<Button {icon} {onclick} data-testid={buttonId}
-				>{i18n.t(`setup.language.${key}.button`)}</Button
-			>
+			<Button {icon} {onclick} data-testid={buttonId}>
+				{i18n.t(`setup.language.${key}.button`)}
+			</Button>
 		</Row>
 	</section>
 {/snippet}
@@ -328,9 +328,9 @@
 				</p>
 			{/if}
 			<Hint>{i18n.t("setup.summary.later")}</Hint>
-			<Button variant="primary" href="/login" data-testid="go-login"
-				>{i18n.t("setup.done.login")}</Button
-			>
+			<Button variant="primary" href="/login" data-testid="go-login">
+				{i18n.t("setup.done.login")}
+			</Button>
 		</Card>
 	{:else if restoring}
 		<FirstRunRestore maxUploadMb={data.maxUploadMb} onback={() => (restoring = false)} />
@@ -408,25 +408,25 @@
 				/>
 			{:else if step === 2}
 				<h2 class="h3">{i18n.t("setup.library.title")}</h2>
-				<Field label={i18n.t("setup.library.name")}
-					><Input
+				<Field label={i18n.t("setup.library.name")}>
+					<Input
 						type="text"
 						bind:value={libraryName}
 						placeholder={i18n.t("setup.library.namePlaceholder")}
 						required
 						maxlength={120}
-					/></Field
-				>
+					/>
+				</Field>
 				<div class="space-y-1">
-					<Checkbox bind:checked={photos} data-testid="setup-photos"
-						>{i18n.t("setup.library.photos")}</Checkbox
-					>
+					<Checkbox bind:checked={photos} data-testid="setup-photos">
+						{i18n.t("setup.library.photos")}
+					</Checkbox>
 					<Hint>{i18n.t("setup.library.photosHint")}</Hint>
 				</div>
 				<div class="space-y-1">
-					<Checkbox bind:checked={covers} data-testid="setup-covers"
-						>{i18n.t("setup.library.covers")}</Checkbox
-					>
+					<Checkbox bind:checked={covers} data-testid="setup-covers">
+						{i18n.t("setup.library.covers")}
+					</Checkbox>
 					<Hint>{i18n.t("setup.library.coversHint")}</Hint>
 				</div>
 			{:else if step === 3}
@@ -435,7 +435,8 @@
 				<Field
 					label={i18n.t("setup.library.schoolType")}
 					hint={i18n.t("setup.library.schoolTypeHint")}
-					><Select
+				>
+					<Select
 						value={schoolPreset}
 						onchange={(e) => choosePreset(e.currentTarget.value)}
 						data-testid="setup-school-preset"
@@ -447,8 +448,8 @@
 								{/each}
 							</optgroup>
 						{/each}
-					</Select></Field
-				>
+					</Select>
+				</Field>
 				{#each preset?.stages ?? [] as st (st.code)}
 					{@const readable = namesOf(st.code) !== null}
 					<Field
@@ -457,76 +458,80 @@
 						})}
 						hint={i18n.t("setup.school.namesHint")}
 						errors={readable ? [] : [i18n.t("setup.school.namesInvalid")]}
-						><Input
+					>
+						<Input
 							bind:value={stageNames[st.code]}
 							maxlength={200}
 							autocomplete="off"
 							data-testid="setup-stage-{st.code}"
-						/></Field
-					>
+						/>
+					</Field>
 				{/each}
 				<div class="space-y-1" data-testid="setup-classes">
 					<Hint>{i18n.t("setup.school.classes", { count: groups.length })}</Hint>
 					<Row gap="1">
-						{#each groupLabels.slice(0, 40) as label, i (i)}<Badge>{label}</Badge
-							>{/each}
-						{#if groupLabels.length > 40}<Badge
-								>{i18n.t("setup.school.more", {
+						{#each groupLabels.slice(0, 40) as label, i (i)}<Badge>
+								{label}
+							</Badge>{/each}
+						{#if groupLabels.length > 40}<Badge>
+								{i18n.t("setup.school.more", {
 									count: groupLabels.length - 40,
-								})}</Badge
-							>{/if}
+								})}
+							</Badge>{/if}
 					</Row>
 				</div>
 				<Grid from="sm" gap="3">
-					<Field label={i18n.t("setup.school.classLabel")}
-						><Select bind:value={classTemplate} data-testid="setup-class-label">
+					<Field label={i18n.t("setup.school.classLabel")}>
+						<Select bind:value={classTemplate} data-testid="setup-class-label">
 							{#each preset ? classLabelChoices(preset) : [] as template (template)}
 								<option value={template}>{labelExample(template)}</option>
 							{/each}
-						</Select></Field
-					>
+						</Select>
+					</Field>
 					<Field
 						label={i18n.t("setup.school.teacherGroup")}
 						hint={i18n.t("setup.school.teacherGroupHint")}
-						><Input
+					>
+						<Input
 							bind:value={teacherGroupName}
 							maxlength={40}
 							data-testid="setup-teacher-group"
-						/></Field
-					>
+						/>
+					</Field>
 					<Field
 						label={i18n.t("setup.school.schoolYearStart")}
 						hint={i18n.t("setup.school.schoolYearStartHint")}
 						errors={MONTH_DAY.test(schoolYearStart)
 							? []
 							: [i18n.t("setup.school.schoolYearStartInvalid")]}
-						><Input
+					>
+						<Input
 							bind:value={schoolYearStart}
 							maxlength={5}
 							mono
 							data-testid="setup-school-year-start"
-						/></Field
-					>
-					<Field label={i18n.t("setup.school.schoolYearLabel")}
-						><Select bind:value={schoolYearLabel} data-testid="setup-school-year-label">
-							<option value="span"
-								>{i18n.t("setup.school.schoolYearLabels.span")}</option
-							>
-							<option value="start"
-								>{i18n.t("setup.school.schoolYearLabels.start")}</option
-							>
-						</Select></Field
-					>
+						/>
+					</Field>
+					<Field label={i18n.t("setup.school.schoolYearLabel")}>
+						<Select bind:value={schoolYearLabel} data-testid="setup-school-year-label">
+							<option value="span">
+								{i18n.t("setup.school.schoolYearLabels.span")}
+							</option>
+							<option value="start">
+								{i18n.t("setup.school.schoolYearLabels.start")}
+							</option>
+						</Select>
+					</Field>
 				</Grid>
 				<div class="space-y-1">
-					<Checkbox bind:checked={byReadingLevel} data-testid="setup-reading-levels"
-						>{i18n.t("setup.school.readingLevels")}</Checkbox
-					>
+					<Checkbox bind:checked={byReadingLevel} data-testid="setup-reading-levels">
+						{i18n.t("setup.school.readingLevels")}
+					</Checkbox>
 					{#if readingLevels.length > 0}
 						<Row gap="1">
-							{#each readingLevels as l (l.code)}<Badge tone="primary"
-									>{l.label}</Badge
-								>{/each}
+							{#each readingLevels as l (l.code)}<Badge tone="primary">
+									{l.label}
+								</Badge>{/each}
 						</Row>
 					{/if}
 					<Hint tone="faint">{i18n.t("setup.school.readingLevelsHint")}</Hint>
@@ -546,31 +551,32 @@
 				<h2 class="h3">{i18n.t("setup.codes.title")}</h2>
 				<p class="opacity-70">{i18n.t("setup.codes.hint")}</p>
 				<Grid from="sm" gap="3">
-					<Field label={i18n.t("setup.codes.itemFormat")}
-						><Select bind:value={itemPreset} data-testid="setup-code-item">
+					<Field label={i18n.t("setup.codes.itemFormat")}>
+						<Select bind:value={itemPreset} data-testid="setup-code-item">
 							{#each CODE_PRESETS as p (p)}
 								<option value={p}>{i18n.t(`setup.codes.itemFormats.${p}`)}</option>
 							{/each}
-						</Select></Field
-					>
-					<Field label={i18n.t("setup.codes.cardFormat")}
-						><Select bind:value={cardPreset} data-testid="setup-code-card">
+						</Select>
+					</Field>
+					<Field label={i18n.t("setup.codes.cardFormat")}>
+						<Select bind:value={cardPreset} data-testid="setup-code-card">
 							{#each CODE_PRESETS as p (p)}
 								<option value={p}>{i18n.t(`setup.codes.cardFormats.${p}`)}</option>
 							{/each}
-						</Select></Field
-					>
-					<Field label={i18n.t("setup.codes.check")}
-						><Select bind:value={codeCheck} data-testid="setup-code-check">
+						</Select>
+					</Field>
+					<Field label={i18n.t("setup.codes.check")}>
+						<Select bind:value={codeCheck} data-testid="setup-code-check">
 							{#each CHECK_ALGORITHMS as c (c)}
 								<option value={c}>{i18n.t(`setup.codes.checks.${c}`)}</option>
 							{/each}
-						</Select></Field
-					>
+						</Select>
+					</Field>
 					<Field
 						label={i18n.t("setup.codes.layout")}
 						hint={i18n.t("setup.codes.layoutHint")}
-						><Select
+					>
+						<Select
 							bind:value={codeLayout}
 							onchange={() => (layoutPicked = true)}
 							data-testid="setup-code-layout"
@@ -578,8 +584,8 @@
 							{#each KEYBOARD_LAYOUTS as l (l)}
 								<option value={l}>{i18n.t(`setup.codes.layouts.${l}`)}</option>
 							{/each}
-						</Select></Field
-					>
+						</Select>
+					</Field>
 				</Grid>
 				<dl
 					class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2"
@@ -591,9 +597,9 @@
 					{/each}
 				</dl>
 				{#if codeResult.issues.length === 0}
-					<Alert tone="success" data-testid="setup-code-verdict"
-						>{i18n.t("setup.codes.verdict")}</Alert
-					>
+					<Alert tone="success" data-testid="setup-code-verdict">
+						{i18n.t("setup.codes.verdict")}
+					</Alert>
 				{:else}
 					<Alert data-testid="setup-code-verdict">{i18n.t("setup.codes.refused")}</Alert>
 				{/if}
@@ -628,9 +634,9 @@
 				{/if}
 				{#each data.accounts as account (account)}
 					<label class="label">
-						<span class="label-text"
-							>{i18n.t(`setup.passwords.accounts.${String(account)}`)}</span
-						>
+						<span class="label-text">
+							{i18n.t(`setup.passwords.accounts.${String(account)}`)}
+						</span>
 						<span class="input-group joined grid-cols-[1fr_auto]">
 							<input
 								class="ig-input font-mono"
@@ -656,9 +662,9 @@
 								<RefreshIcon size={ICON_SIZE.sm} aria-hidden="true" />
 							</button>
 						</span>
-						{#if passwords[account].trim().length < 8}<Hint tone="error" as="span"
-								>{i18n.t("setup.passwords.tooShort")}</Hint
-							>{/if}
+						{#if passwords[account].trim().length < 8}<Hint tone="error" as="span">
+								{i18n.t("setup.passwords.tooShort")}
+							</Hint>{/if}
 					</label>
 				{/each}
 			{:else}
@@ -727,23 +733,28 @@
 			<Button
 				onclick={() => (step -= 1)}
 				disabled={step === 0 || working}
-				data-testid="setup-back">{i18n.t("setup.back")}</Button
+				data-testid="setup-back"
 			>
+				{i18n.t("setup.back")}
+			</Button>
 			{#if step < STEPS.length - 1}
 				<Button
 					variant="primary"
 					onclick={() => (step += 1)}
 					disabled={!stepValid}
-					data-testid="setup-next">{i18n.t("setup.next")}</Button
+					data-testid="setup-next"
 				>
+					{i18n.t("setup.next")}
+				</Button>
 			{:else}
 				<Button
 					variant="primary"
 					onclick={finish}
 					disabled={working}
 					data-testid="setup-finish"
-					>{working ? i18n.t("setup.summary.working") : i18n.t("setup.finish")}</Button
 				>
+					{working ? i18n.t("setup.summary.working") : i18n.t("setup.finish")}
+				</Button>
 			{/if}
 		</Row>
 	{/if}

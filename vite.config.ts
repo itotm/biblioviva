@@ -102,6 +102,8 @@ export default defineConfig({
 			reportsDirectory: "test-reports/vitest/coverage",
 			thresholds: { lines: 95 },
 		},
+		// half the processors: with more threads the timed tests (search speed, image work) starve
+		maxWorkers: "50%",
 		projects: [
 			{
 				extends: "./vite.config.ts",
@@ -146,6 +148,9 @@ export default defineConfig({
 				test: {
 					name: "server",
 					environment: "node",
+					// worker threads: Vitest's process pool starts a watchdog that calls
+					// `child.channel.unref()`, which Bun's child processes do not have
+					pool: "threads",
 					include: [
 						"src/lib/server/**/*.{test,spec}.ts",
 						"src/lib/shared/**/*.{test,spec}.ts",

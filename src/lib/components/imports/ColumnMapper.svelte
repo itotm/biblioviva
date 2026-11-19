@@ -42,22 +42,22 @@
 			<tr>
 				{#each mapping as value, index (index)}
 					<th class="p-2 text-left align-top font-normal">
-						<Field label={i18n.t("common.import.column", { n: index + 1 })}
-							><Select
+						<Field label={i18n.t("common.import.column", { n: index + 1 })}>
+							<Select
 								value={value ?? ""}
 								onchange={(e) => setColumn(index, e.currentTarget.value)}
 								data-testid="map-column-{index}"
 							>
 								<option value="">{i18n.t("common.import.ignore")}</option>
 								{#each fields as f (f.value)}
-									<option value={f.value}
-										>{f.label}{f.group && f.group !== "optional"
+									<option value={f.value}>
+										{f.label}{f.group && f.group !== "optional"
 											? ` · ${i18n.t(`common.import.groups.${f.group}`)}`
-											: ""}</option
-									>
+											: ""}
+									</option>
 								{/each}
-							</Select></Field
-						>
+							</Select>
+						</Field>
 					</th>
 				{/each}
 			</tr>

@@ -38,6 +38,7 @@
 	import Badge from "#lib/ui/Badge.svelte";
 	import Card from "#lib/ui/Card.svelte";
 	import Grid from "#lib/ui/Grid.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
 	import Hint from "#lib/ui/Hint.svelte";
 	import CodeText from "#lib/ui/CodeText.svelte";
 	import Input from "#lib/ui/Input.svelte";
@@ -196,7 +197,7 @@
 	</header>
 
 	<section class="space-y-3" data-testid="ui-components">
-		<h2 class="h3">Buttons (`Button`, `IconButton`, `FileButton`)</h2>
+		<h2 class="h3">Buttons (`Button`, `IconButton`, `FileButton`, `HelpLink`)</h2>
 		<Row align="center">
 			<Button variant="primary" icon={icons.loan}>Registra prestito</Button>
 			<Button variant="primary-tonal">Rinnova</Button>
@@ -212,6 +213,11 @@
 			<IconButton icon={icons.edit} label="Modifica" variant="tonal" size="sm" />
 			<IconButton icon={icons.delete} label="Elimina" variant="error" size="sm" />
 			<FileButton icon={icons.upload} accept="image/*">Carica file</FileButton>
+			<!-- the small help icon beside a heading (9.5b): quiet, the section of the manual in a new tab -->
+			<Row wrap={false} align="center" gap="1">
+				<span class="font-semibold">Passo Codice</span>
+				<HelpLink spot="fastAddCode" topic="Passo Codice" />
+			</Row>
 		</Row>
 	</section>
 
@@ -270,9 +276,9 @@
 		<Grid cols="2" gap="3">
 			<SelectCard selected={true}>
 				<span class="title-lg">SelectCard selezionata</span>
-				<Hint as="span" tone="soft" class="mt-1 block"
-					>Bordo e sfondo pieni, mai una sottolineatura.</Hint
-				>
+				<Hint as="span" tone="soft" class="mt-1 block">
+					Bordo e sfondo pieni, mai una sottolineatura.
+				</Hint>
 			</SelectCard>
 			<SelectCard selected={false}>
 				<span class="title-lg">SelectCard</span>
@@ -288,9 +294,9 @@
 					padding="3"
 					onclick={() => (radioChoice = c)}
 				>
-					<IconTile size="size-10" class="bg-primary-100 text-primary-700"
-						><BookIcon size={ICON_SIZE.lg} aria-hidden="true" /></IconTile
-					>
+					<IconTile size="size-10" class="bg-primary-100 text-primary-700">
+						<BookIcon size={ICON_SIZE.lg} aria-hidden="true" />
+					</IconTile>
 					<span class="font-semibold">SelectCard radio · {c}</span>
 				</SelectCard>
 			{/each}
@@ -361,19 +367,19 @@
 		<h2 class="h3">Form inputs</h2>
 		<Grid>
 			<Field label="Cognome"><Input type="text" placeholder="Rossi" /></Field>
-			<Field label="Password (PasswordInput)"
-				><PasswordInput label="Password" autocomplete="off" value="biblioviva" /></Field
-			>
-			<Field label="Materiale"
-				><Select>
+			<Field label="Password (PasswordInput)">
+				<PasswordInput label="Password" autocomplete="off" value="biblioviva" />
+			</Field>
+			<Field label="Materiale">
+				<Select>
 					<option>Libro</option>
 					<option>DVD</option>
 					<option>Rivista</option>
-				</Select></Field
-			>
-			<Field label="Note" span
-				><textarea class="textarea" rows="2" placeholder="Note interne"></textarea></Field
-			>
+				</Select>
+			</Field>
+			<Field label="Note" span>
+				<textarea class="textarea" rows="2" placeholder="Note interne"></textarea>
+			</Field>
 		</Grid>
 	</section>
 
@@ -388,9 +394,9 @@
 			<Combobox.Label class="label-text">Utente</Combobox.Label>
 			<Combobox.Control class="flex gap-1">
 				<Combobox.Input class="input" />
-				<Combobox.Trigger class="btn-icon preset-tonal" aria-label="Apri elenco"
-					>▾</Combobox.Trigger
-				>
+				<Combobox.Trigger class="btn-icon preset-tonal" aria-label="Apri elenco">
+					▾
+				</Combobox.Trigger>
 			</Combobox.Control>
 			<Portal>
 				<Combobox.Positioner>
@@ -436,12 +442,12 @@
 							</Row>
 							<Dialog.Description>Il libro tornerà disponibile.</Dialog.Description>
 							<Row justify="end" as="footer">
-								<Dialog.CloseTrigger class="btn preset-tonal"
-									>Annulla</Dialog.CloseTrigger
-								>
-								<Dialog.CloseTrigger class="btn preset-filled-primary-500"
-									>Conferma</Dialog.CloseTrigger
-								>
+								<Dialog.CloseTrigger class="btn preset-tonal">
+									Annulla
+								</Dialog.CloseTrigger>
+								<Dialog.CloseTrigger class="btn preset-filled-primary-500">
+									Conferma
+								</Dialog.CloseTrigger>
 							</Row>
 						</Dialog.Content>
 					</Dialog.Positioner>
@@ -477,8 +483,10 @@
 					});
 					toaster.info({ title: "Informazione", description: "Lista aggiornata." });
 				}}
-				data-testid="toast-kinds">Info, avviso, errore</Button
+				data-testid="toast-kinds"
 			>
+				Info, avviso, errore
+			</Button>
 		</Row>
 	</section>
 
@@ -624,9 +632,11 @@
 			data-testid="dev-media-card"
 		>
 			{#snippet media()}<div class="h-28 w-20 rounded-base bg-surface-200"></div>{/snippet}
-			{#snippet actions()}<Button size="sm">Sostituisci con una foto</Button><Button size="sm"
-					>Togli</Button
-				>{/snippet}
+			{#snippet actions()}<Button size="sm">Sostituisci con una foto</Button><Button
+					size="sm"
+				>
+					Togli
+				</Button>{/snippet}
 		</MediaCard>
 		<DetailLayout heading="Scheda dell'utente" title="Rossi Anna" subtitle="Studente">
 			{#snippet media()}<div class="h-32 w-24 rounded-base bg-surface-200"></div>{/snippet}
@@ -640,8 +650,9 @@
 					description="Passa un libro al banco per registrarne uno."
 					icon="loan"
 				>
-					{#snippet action()}<Button variant="primary">Registra prestito</Button
-						>{/snippet}
+					{#snippet action()}<Button variant="primary">
+							Registra prestito
+						</Button>{/snippet}
 				</EmptyState>
 			</Grid>
 		</DetailLayout>
@@ -777,13 +788,13 @@
 			</div>
 			<div class="space-y-3">
 				<Row align="center">
-					<Button variant="error" onclick={() => (confirmOpen = true)}
-						>Elimina copia…</Button
-					>
+					<Button variant="error" onclick={() => (confirmOpen = true)}>
+						Elimina copia…
+					</Button>
 					<Hint as="span" data-testid="confirm-count">Confermate: {confirmed}</Hint>
-					<Button onclick={() => (showCamera = !showCamera)}
-						>{showCamera ? "Nascondi fotocamera" : "Mostra fotocamera"}</Button
-					>
+					<Button onclick={() => (showCamera = !showCamera)}>
+						{showCamera ? "Nascondi fotocamera" : "Mostra fotocamera"}
+					</Button>
 				</Row>
 				<ConfirmDialog
 					bind:open={confirmOpen}
@@ -811,8 +822,9 @@
 						showScanner = !showScanner;
 					}}
 					data-testid="toggle-scanner"
-					>{showScanner ? "Chiudi scanner continuo" : "Scanner continuo"}</Button
 				>
+					{showScanner ? "Chiudi scanner continuo" : "Scanner continuo"}
+				</Button>
 				{#if showScanner}
 					<ScannerOverlay
 						onscan={(r) => {

@@ -32,8 +32,10 @@
 					<Link
 						href="https://www.gnu.org/licenses/gpl-3.0.html"
 						target="_blank"
-						rel="external noopener">{data.app.license}</Link
+						rel="external noopener"
 					>
+						{data.app.license}
+					</Link>
 				</dd>
 				<dt class="font-semibold">{i18n.t("about.app.repository")}</dt>
 				<dd>
@@ -41,8 +43,10 @@
 						href={data.app.repository}
 						target="_blank"
 						rel="external noopener"
-						class="text-primary-700 hover:underline">{data.app.repository}</a
+						class="text-primary-700 hover:underline"
 					>
+						{data.app.repository}
+					</a>
 				</dd>
 			</dl>
 		</div>
@@ -51,8 +55,8 @@
 	<Card padding="none" gap="2" as="section" class="p-6" data-testid="about-libraries">
 		<h2 class="text-xl font-bold">{i18n.t("about.deps.title")}</h2>
 		<Hint>{i18n.t("about.deps.hint")}</Hint>
-		<Link href={data.librariesHref} target="_blank" rel="external noopener"
-			>{i18n.t("about.deps.link")}</Link
-		>
+		<Link href={data.librariesHref} target="_blank" rel="external noopener">
+			{i18n.t("about.deps.link")}
+		</Link>
 	</Card>
 </Page>

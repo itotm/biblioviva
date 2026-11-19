@@ -16,6 +16,9 @@
 		"backTo": "Torna a {{page}}",
 		"more": "Altre azioni"
 	},
+	"help": {
+		"link": "Guida: {{topic}}"
+	},
 	"similar": {
 		"label": "Simile",
 		"count": "più {{count:plural; one:{{count}} simile, trovato; other:{{count}} simili, trovati;}} correggendo un errore di battitura",
@@ -48,6 +51,11 @@
 		"print": {
 			"pending": "Da stampare",
 			"printed": "Stampato"
+		},
+		"check": {
+			"ok": "A posto",
+			"warning": "Da guardare",
+			"error": "Da correggere"
 		}
 	},
 	"list": {

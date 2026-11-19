@@ -113,6 +113,22 @@ un foglio non previsto è nella pagina tecnica
 [Print templates: authoring guide](../../../templates-authoring.md#measuring-a-sheet-and-checking-the-output) (in
 inglese).
 
+### Controllare tutto dalla pagina di controllo
+
+La pagina **Controllo installazione** raccoglie le stesse prove in un posto solo e dice anche se l'indirizzo, le
+password e i backup sono a posto. Si può usare al posto dei tre passi precedenti oppure per ripeterli.
+
+1. Aprire **Amministrazione** → **Controllo installazione**.
+1. Nel riquadro **Lettore di codici a barre** fare clic nel campo **Codice letto dal lettore** e leggere con il lettore il
+   codice di un'etichetta stampata. Sotto il campo deve comparire «Lettura corretta: la tastiera e il lettore
+   concordano.» Se compare un'altra frase, seguirla.
+1. Nel riquadro **Stampante** premere **Stampa** accanto a **Pagina di prova delle tessere**. La pagina si apre in una nuova
+   scheda: stamparla con le impostazioni della sezione [Impostare la finestra di stampa](#impostare-la-finestra-di-stampa).
+1. Ripetere con **Pagina di calibrazione delle etichette**.
+1. Leggere nella parte alta della pagina il riepilogo. Le righe da correggere hanno un pulsante **Guida**.
+
+La pagina è descritta in [Controllo installazione](../../admin/screens/setup.md).
+
 ## Verifica prima di proseguire
 
 - Un codice letto dal lettore compare nel campo di ricerca uguale a quello stampato, con il trattino e senza altri
@@ -121,6 +137,9 @@ inglese).
   misurano meno o più, la finestra di stampa ha ridotto o ingrandito la pagina: tornare a [Impostare la finestra di
   stampa](#impostare-la-finestra-di-stampa).
 - I contorni della pagina di calibrazione coincidono con le etichette del foglio vero.
+- La pagina **Controllo installazione** non ha più controlli da correggere (rossi). I controlli da guardare (gialli)
+  sono ammessi: per esempio la modalità di base sulla rete locale è sempre da guardare, perché la fotocamera non
+  funziona.
 
 ## Possibili problemi
 

@@ -54,7 +54,7 @@ settings; the guides explain one task at a time; the screen pages describe the p
 - [Staff accounts](screens/users.md), [Appearance and language](screens/appearance.md), [Classes](screens/classes.md),
   [Class upgrade](screens/rollover.md)
 - [Backups](screens/backups.md), [Exports](screens/exports.md), [Imports](screens/imports.md),
-  [Audit log](screens/audit.md)
+  [Audit log](screens/audit.md), [Installation check](screens/setup.md)
 - [Print templates](screens/templates.md), [Reports library](screens/reports-library.md)
 
 ## Related pages

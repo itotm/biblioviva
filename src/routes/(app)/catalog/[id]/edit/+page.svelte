@@ -75,60 +75,62 @@
 										? "catalog.item.callNumber"
 										: "catalog.item.callText",
 								)}
-								><Input
+							>
+								<Input
 									mono
 									{...fields.itemCallText?.as("text")}
 									maxlength={40}
 									data-testid="edit-item-call-text"
-								/></Field
-							>
+								/>
+							</Field>
 						{/if}
 						{#if options.classPerItem && options.fictionByClass && state.kind === "fiction"}
-							<Field label={i18n.t("catalog.item.readingLevel")}
-								><Select {...fields.itemReadingLevel?.as("select")}>
+							<Field label={i18n.t("catalog.item.readingLevel")}>
+								<Select {...fields.itemReadingLevel?.as("select")}>
 									<option value="">{i18n.t("catalog.picker.anyClass")}</option>
 									{#each options.readingLevels as l (l.code)}
 										<option value={l.code}>{l.label}</option>
 									{/each}
-								</Select></Field
-							>
+								</Select>
+							</Field>
 						{/if}
-						<Field label={i18n.t("catalog.item.enumeration")}
-							><Input {...fields.itemEnumeration?.as("text")} /></Field
-						>
+						<Field label={i18n.t("catalog.item.enumeration")}>
+							<Input {...fields.itemEnumeration?.as("text")} />
+						</Field>
 						<div>
-							<Field label={i18n.t("catalog.item.acquisitionDate")}
-								><Input
+							<Field label={i18n.t("catalog.item.acquisitionDate")}>
+								<Input
 									{...fields.itemAcquisitionDate?.as("text")}
 									type="date"
 									data-testid="edit-item-acquisition-date"
-								/></Field
-							>
+								/>
+							</Field>
 							{#each fields.itemAcquisitionDate?.issues() ?? [] as issue (issue.message)}
 								<Hint
 									tone="error"
 									as="span"
 									data-testid="field-error-itemAcquisitionDate"
-									>{issue.message}</Hint
 								>
+									{issue.message}
+								</Hint>
 							{/each}
 						</div>
 						{#if options.inventory.enabled}
 							<div>
-								<Field label={i18n.t("catalog.item.inventoryNumber")}
-									><Input
+								<Field label={i18n.t("catalog.item.inventoryNumber")}>
+									<Input
 										mono
 										{...fields.itemInventoryNumber?.as("text")}
 										maxlength={20}
 										data-testid="edit-item-inventory-number"
-									/></Field
-								>
+									/>
+								</Field>
 								{#each fields.itemInventoryNumber?.issues() ?? [] as issue (issue.message)}
 									<Hint tone="error" as="span">{issue.message}</Hint>
 								{/each}
 							</div>
-							<Field label={i18n.t("catalog.item.origin")}
-								><Select {...fields.itemOrigin?.as("select")}>
+							<Field label={i18n.t("catalog.item.origin")}>
+								<Select {...fields.itemOrigin?.as("select")}>
 									<option value="">—</option>
 									{#each options.inventory.origins as o (o)}
 										<option value={o}>{o}</option>
@@ -136,27 +138,28 @@
 									{#if data.item.origin && !options.inventory.origins.includes(data.item.origin)}
 										<option value={data.item.origin}>{data.item.origin}</option>
 									{/if}
-								</Select></Field
-							>
+								</Select>
+							</Field>
 							<div>
 								<Field
 									label={i18n.t("catalog.item.value")}
 									hint={i18n.t("catalog.item.valueHint")}
-									><Input
+								>
+									<Input
 										{...fields.itemValue?.as("text")}
 										inputmode="decimal"
 										maxlength={16}
 										data-testid="edit-item-value"
-									/></Field
-								>
+									/>
+								</Field>
 								{#each fields.itemValue?.issues() ?? [] as issue (issue.message)}
 									<Hint tone="error" as="span">{issue.message}</Hint>
 								{/each}
 							</div>
 						{/if}
-						<Field label={i18n.t("catalog.item.notes")} span
-							><Input {...fields.itemNotes?.as("text")} /></Field
-						>
+						<Field label={i18n.t("catalog.item.notes")} span>
+							<Input {...fields.itemNotes?.as("text")} />
+						</Field>
 						<Row wrap={false} align="center" as="label" class="md:col-span-2">
 							<input {...fields.itemNotForLoan?.as("checkbox")} class="checkbox" />
 							<span>{i18n.t("catalog.item.notForLoan")}</span>

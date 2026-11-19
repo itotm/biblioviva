@@ -309,13 +309,15 @@
 				<Button
 					icon={torchOn ? TorchOffIcon : TorchIcon}
 					aria-pressed={torchOn}
-					onclick={toggleTorch}>{i18n.t("common.camera.torch")}</Button
+					onclick={toggleTorch}
 				>
+					{i18n.t("common.camera.torch")}
+				</Button>
 			{/if}
 			{#if snapshotButton}
-				<Button variant="primary" icon={StartIcon} onclick={takeSnapshot}
-					>{i18n.t("common.camera.snapshot")}</Button
-				>
+				<Button variant="primary" icon={StartIcon} onclick={takeSnapshot}>
+					{i18n.t("common.camera.snapshot")}
+				</Button>
 			{/if}
 			{#if showDevices && devices.length > 1}
 				<label class="label ml-auto flex items-center gap-2">
@@ -326,17 +328,17 @@
 						onchange={(e) => switchDevice(e.currentTarget.value)}
 					>
 						{#each devices as d, i (d.deviceId)}
-							<option value={d.deviceId}
-								>{d.label || `${i18n.t("common.camera.device")} ${i + 1}`}</option
-							>
+							<option value={d.deviceId}>
+								{d.label || `${i18n.t("common.camera.device")} ${i + 1}`}
+							</option>
 						{/each}
 					</Select>
 				</label>
 			{/if}
 		{:else if !starting && !error}
-			<Button variant="primary" icon={StartIcon} onclick={start}
-				>{i18n.t("common.camera.start")}</Button
-			>
+			<Button variant="primary" icon={StartIcon} onclick={start}>
+				{i18n.t("common.camera.start")}
+			</Button>
 		{/if}
 	</Row>
 </div>

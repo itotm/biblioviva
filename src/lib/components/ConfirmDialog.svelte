@@ -85,9 +85,9 @@
 				{#if description}<Dialog.Description>{description}</Dialog.Description>{/if}
 				{#if children}{@render children()}{/if}
 				<Row justify="end" as="footer">
-					<Button onclick={cancel} disabled={busy}
-						>{cancelLabel ?? i18n.t("common.actions.cancel")}</Button
-					>
+					<Button onclick={cancel} disabled={busy}>
+						{cancelLabel ?? i18n.t("common.actions.cancel")}
+					</Button>
 					<button
 						type="button"
 						class="btn {tone === 'error'

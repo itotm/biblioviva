@@ -218,13 +218,14 @@
 			<Field
 				label={i18n.t(freeScheme ? "catalog.item.callNumber" : "catalog.item.callText")}
 				hint={freeScheme ? undefined : i18n.t("catalog.item.callTextHint")}
-				><Input
+			>
+				<Input
 					mono
 					bind:value={model.callText}
 					maxlength={40}
 					data-testid="{prefix}-call-text"
-				/></Field
-			>
+				/>
+			</Field>
 		{/if}
 		{#if !freeScheme}
 			<CallNumberShown
@@ -235,36 +236,37 @@
 			/>
 		{/if}
 		{#if perItemClass}
-			<Field label={i18n.t("catalog.item.readingLevel")}
-				><Select bind:value={model.readingLevel} data-testid="{prefix}-reading-level">
+			<Field label={i18n.t("catalog.item.readingLevel")}>
+				<Select bind:value={model.readingLevel} data-testid="{prefix}-reading-level">
 					<option value="">{i18n.t("catalog.picker.anyClass")}</option>
 					{#each options.readingLevels as l (l.code)}
 						<option value={l.code}>{l.label}</option>
 					{/each}
-				</Select></Field
-			>
+				</Select>
+			</Field>
 		{/if}
-		<Field label={i18n.t("catalog.item.enumeration")}
-			><Input bind:value={model.enumeration} data-testid="{prefix}-enumeration" /></Field
-		>
-		<Field label={i18n.t("catalog.item.acquisitionDate")}
-			><Input type="date" bind:value={model.acquisitionDate} /></Field
-		>
+		<Field label={i18n.t("catalog.item.enumeration")}>
+			<Input bind:value={model.enumeration} data-testid="{prefix}-enumeration" />
+		</Field>
+		<Field label={i18n.t("catalog.item.acquisitionDate")}>
+			<Input type="date" bind:value={model.acquisitionDate} />
+		</Field>
 		{#if inventoryOn}
 			<Field
 				label={i18n.t("catalog.item.inventoryNumber")}
 				hint={prefix === "add" && copies > 1
 					? i18n.t("catalog.item.inventoryNumberSeries")
 					: undefined}
-				><Input
+			>
+				<Input
 					mono
 					bind:value={model.inventoryNumber}
 					maxlength={20}
 					data-testid="{prefix}-inventory-number"
-				/></Field
-			>
-			<Field label={i18n.t("catalog.item.origin")}
-				><Select bind:value={model.origin} data-testid="{prefix}-origin">
+				/>
+			</Field>
+			<Field label={i18n.t("catalog.item.origin")}>
+				<Select bind:value={model.origin} data-testid="{prefix}-origin">
 					<option value="">—</option>
 					{#each options.inventory.origins as o (o)}
 						<option value={o}>{o}</option>
@@ -272,20 +274,20 @@
 					{#if model.origin && !options.inventory.origins.includes(model.origin)}
 						<option value={model.origin}>{model.origin}</option>
 					{/if}
-				</Select></Field
-			>
-			<Field label={i18n.t("catalog.item.value")} hint={i18n.t("catalog.item.valueHint")}
-				><Input
+				</Select>
+			</Field>
+			<Field label={i18n.t("catalog.item.value")} hint={i18n.t("catalog.item.valueHint")}>
+				<Input
 					bind:value={model.value}
 					inputmode="decimal"
 					maxlength={16}
 					data-testid="{prefix}-value"
-				/></Field
-			>
+				/>
+			</Field>
 		{/if}
-		<Field label={i18n.t("catalog.item.notes")} class="sm:col-span-2"
-			><Input bind:value={model.notes} /></Field
-		>
+		<Field label={i18n.t("catalog.item.notes")} class="sm:col-span-2">
+			<Input bind:value={model.notes} />
+		</Field>
 		<Row wrap={false} align="center" as="label" class="sm:col-span-2">
 			<input type="checkbox" class="checkbox" bind:checked={model.notForLoan} />
 			<span>{i18n.t("catalog.item.notForLoan")}</span>
@@ -312,9 +314,9 @@
 					<th>{i18n.t("catalog.detail.columns.status")}</th>
 					<th>{i18n.t("catalog.detail.columns.borrower")}</th>
 					<th>{i18n.t("catalog.detail.columns.labels")}</th>
-					{#if canEdit}<th class="p-2"
-							><span class="sr-only">{i18n.t("common.actions.edit")}</span></th
-						>{/if}
+					{#if canEdit}<th class="p-2">
+							<span class="sr-only">{i18n.t("common.actions.edit")}</span>
+						</th>{/if}
 				</tr>
 			</thead>
 			<tbody>
@@ -326,11 +328,11 @@
 							<td class="p-2" data-testid="item-inventory-{it.barcode}">
 								<span class="font-mono">{it.inventoryNumber ?? ""}</span>
 								{#if it.origin || it.valueCents !== null}
-									<Hint
-										>{[it.origin, formatEuro(it.valueCents, fmt.locale)]
+									<Hint>
+										{[it.origin, formatEuro(it.valueCents, fmt.locale)]
 											.filter(Boolean)
-											.join(" · ")}</Hint
-									>
+											.join(" · ")}
+									</Hint>
 								{/if}
 							</td>
 						{/if}
@@ -339,35 +341,35 @@
 						<td class="p-2">
 							<StatusBadge status={statusOf(it)} />
 							{#if it.status === "withdrawn" && it.withdrawnOn}
-								<Hint data-testid="item-withdrawn-{it.barcode}"
-									>{i18n.t("catalog.item.withdrawnOn", {
+								<Hint data-testid="item-withdrawn-{it.barcode}">
+									{i18n.t("catalog.item.withdrawnOn", {
 										date: fmt.day(it.withdrawnOn, "medium"),
-									})}{it.withdrawnReason ? ` · ${it.withdrawnReason}` : ""}</Hint
-								>
+									})}{it.withdrawnReason ? ` · ${it.withdrawnReason}` : ""}
+								</Hint>
 							{/if}
 						</td>
 						<td class="p-2">
 							{#if it.loan}
 								{#if canOpenPatrons}
-									<Link href="/patrons/{it.loan.patronId}"
-										>{it.loan.patronName}</Link
-									>
+									<Link href="/patrons/{it.loan.patronId}">
+										{it.loan.patronName}
+									</Link>
 								{:else if it.loan.patronName}
 									{it.loan.patronName}
 								{:else}
 									{i18n.t("catalog.detail.onLoan")}
 								{/if}
-								<span class="opacity-70"
-									>· {i18n.t("catalog.detail.dueOn", {
+								<span class="opacity-70">
+									· {i18n.t("catalog.detail.dueOn", {
 										date: fmt.day(it.loan.dueDate, "medium"),
-									})}</span
-								>
+									})}
+								</span>
 							{/if}
 						</td>
 						<td class="p-2">
-							<PrintedBadge status={labels} data-testid="item-labels-{it.barcode}"
-								>{i18n.t(`printing.labels.status.${labels}`)}</PrintedBadge
-							>
+							<PrintedBadge status={labels} data-testid="item-labels-{it.barcode}">
+								{i18n.t(`printing.labels.status.${labels}`)}
+							</PrintedBadge>
 						</td>
 						{#if canEdit}
 							<td class="p-2">
@@ -430,15 +432,15 @@
 	onconfirm={doAdd}
 >
 	<div class="space-y-3" data-testid="add-copies-dialog">
-		<Field label={i18n.t("catalog.item.copies")} class="max-w-40"
-			><Input
+		<Field label={i18n.t("catalog.item.copies")} class="max-w-40">
+			<Input
 				type="number"
 				min={1}
 				max={100}
 				bind:value={copies}
 				data-testid="add-copies-count"
-			/></Field
-		>
+			/>
+		</Field>
 		{@render itemFields(draft, "add")}
 	</div>
 </ConfirmDialog>
@@ -461,16 +463,16 @@
 	oncancel={() => (statusItem = null)}
 >
 	<div class="space-y-3" data-testid="status-dialog">
-		<Field label={i18n.t("catalog.item.newStatus")}
-			><Select bind:value={newStatus} data-testid="status-select">
+		<Field label={i18n.t("catalog.item.newStatus")}>
+			<Select bind:value={newStatus} data-testid="status-select">
 				{#each ["available", "lost", "damaged", "in_repair", "withdrawn"] as const as s (s)}
 					<option value={s}>{i18n.t(`common.statuses.${ITEM_STATUS[s].key}`)}</option>
 				{/each}
-			</Select></Field
-		>
-		<Field label={i18n.t("catalog.item.reason")}
-			><Input bind:value={reason} maxlength={200} data-testid="status-reason" /></Field
-		>
+			</Select>
+		</Field>
+		<Field label={i18n.t("catalog.item.reason")}>
+			<Input bind:value={reason} maxlength={200} data-testid="status-reason" />
+		</Field>
 	</div>
 </ConfirmDialog>
 <ConfirmDialog

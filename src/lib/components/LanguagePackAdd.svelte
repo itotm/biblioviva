@@ -23,6 +23,7 @@
 	import Badge from "#lib/ui/Badge.svelte";
 	import Button from "#lib/ui/Button.svelte";
 	import Field from "#lib/ui/Field.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
 	import Hint from "#lib/ui/Hint.svelte";
 	import Loading from "#lib/ui/Loading.svelte";
 	import Row from "#lib/ui/Row.svelte";
@@ -133,12 +134,17 @@
 		href={url}
 		rel="external noreferrer"
 		target="_blank"
-		data-testid="release-page">{i18n.t("admin.appearance.language.add.page")}</a
+		data-testid="release-page"
 	>
+		{i18n.t("admin.appearance.language.add.page")}
+	</a>
 {/snippet}
 
 <section class="space-y-3" data-testid="language-add">
-	<h3 class="title-md">{i18n.t("admin.appearance.language.add.title")}</h3>
+	<Row wrap={false} align="center" gap="1">
+		<h3 class="title-md">{i18n.t("admin.appearance.language.add.title")}</h3>
+		<HelpLink spot="languageInstall" topic={i18n.t("admin.appearance.language.add.title")} />
+	</Row>
 	<Hint>{i18n.t("admin.appearance.language.add.hint")}</Hint>
 
 	{#if !release.current}
@@ -154,43 +160,44 @@
 		{/if}
 	{:else}
 		{#if offered.length === 0}
-			<Hint tone="faint" data-testid="release-all-installed"
-				>{i18n.t("admin.appearance.language.add.allInstalled")}</Hint
-			>
+			<Hint tone="faint" data-testid="release-all-installed">
+				{i18n.t("admin.appearance.language.add.allInstalled")}
+			</Hint>
 		{:else}
 			<Row align="end">
-				<Field label={i18n.t("admin.appearance.language.add.select")} class="max-w-xs grow"
-					><Select bind:value={choice} data-testid="release-select">
+				<Field label={i18n.t("admin.appearance.language.add.select")} class="max-w-xs grow">
+					<Select bind:value={choice} data-testid="release-select">
 						<option value="">{i18n.t("admin.appearance.language.add.choose")}</option>
 						{#each offered as p (p.code)}
 							<option value={p.code}>{p.nativeName} ({p.code})</option>
 						{/each}
-					</Select></Field
-				>
+					</Select>
+				</Field>
 				<Button
 					variant="primary"
 					icon={DownloadIcon}
 					disabled={!chosen || installing}
 					onclick={install}
 					data-testid="release-install"
-					>{i18n.t("config.languages.release.install")}</Button
 				>
+					{i18n.t("config.languages.release.install")}
+				</Button>
 			</Row>
 			{#if chosen}
 				<Row gap="1" align="center">
-					<Hint as="span"
-						>{i18n.t("config.languages.release.percent", {
+					<Hint as="span">
+						{i18n.t("config.languages.release.percent", {
 							percent: chosen.percent,
-						})}</Hint
-					>
+						})}
+					</Hint>
 					{#if chosen.translation === "machine"}
-						<Badge tone="warning" icon={InfoIcon}
-							>{i18n.t("config.languages.release.machine")}</Badge
-						>
+						<Badge tone="warning" icon={InfoIcon}>
+							{i18n.t("config.languages.release.machine")}
+						</Badge>
 					{:else}
-						<Badge tone="success" icon={icons.available}
-							>{i18n.t("config.languages.release.reviewed")}</Badge
-						>
+						<Badge tone="success" icon={icons.available}>
+							{i18n.t("config.languages.release.reviewed")}
+						</Badge>
 					{/if}
 				</Row>
 			{/if}
@@ -221,10 +228,12 @@
 			icon={UploadIcon}
 			onclick={() => picker?.click()}
 			disabled={uploading}
-			data-testid="pack-upload">{i18n.t("config.languages.upload")}</Button
+			data-testid="pack-upload"
 		>
-		<Hint as="span" tone="faint"
-			>{i18n.t("config.languages.uploadHint", { maxMb: data.current?.maxMb ?? "" })}</Hint
-		>
+			{i18n.t("config.languages.upload")}
+		</Button>
+		<Hint as="span" tone="faint">
+			{i18n.t("config.languages.uploadHint", { maxMb: data.current?.maxMb ?? "" })}
+		</Hint>
 	</Row>
 </section>

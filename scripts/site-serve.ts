@@ -1,13 +1,16 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // A tiny static server for the two built sites, not used in production: `bun run site:serve` serves
-// the documentation of `site/dist/` on http://localhost:5175 (the root's page picks the language),
+// the documentation of `site/dist/` on http://localhost:5175 (`SITE_PORT` changes the port; the root's page picks the language),
 // `bun run home:serve` the home page of `home/dist/` on http://localhost:5176. A folder is served
 // by its `index.html`.
 import { existsSync, statSync } from "node:fs";
 import { join, normalize } from "node:path";
 
 const SITES = {
-	docs: { dist: join(import.meta.dir, "..", "site", "dist"), port: 5175 },
+	docs: {
+		dist: join(import.meta.dir, "..", "site", "dist"),
+		port: Number(process.env.SITE_PORT) || 5175,
+	},
 	home: { dist: join(import.meta.dir, "..", "home", "dist"), port: 5176 },
 } as const;
 

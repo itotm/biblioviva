@@ -283,6 +283,22 @@ The library's rules do not allow renewing a book that is already overdue. What t
 The latest date for loans leaves no room for a renewal. What to do: have the book returned (**Return**). This refusal
 cannot be forced.
 
+## Early renewal
+
+A renewal asked for before half of the loan period has passed is not refused: a window in the middle of the page asks
+for confirmation. The period starts on the loan date or, if the book has already been renewed, on the last renewal, and
+ends on the due date.
+
+> “`<title>`” has been on loan for `<n>` of `<days of the period>` days: half of the loan period has not passed yet
+> (due `<date>`). Renewing moves the due date to `<date>`.
+
+The window is titled **Early renewal**. What to do: press **Renew anyway** to renew, or **Cancel** (or Esc) to leave the
+loan as it is; the cursor goes back to the scan field. With the keyboard the button already selected is **Cancel**, so
+an Enter sent by mistake by the scanner renews nothing. Anyone with the "Loan management" account can confirm; the
+warning applies to the administrator too. With **Renew all** (and **Renew selected** in **Books on loan**) the window
+lists the books with an early renewal and is answered once: **Renew anyway** renews all the requested loans, the
+non-early ones too; **Cancel** renews none.
+
 ## Other messages
 
 ### Session closed for inactivity

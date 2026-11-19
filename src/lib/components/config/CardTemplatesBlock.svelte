@@ -86,17 +86,15 @@
 			{#each TYPES as t (t)}
 				<Field label={i18n.t(`config.blocks.cardTemplates.${t}`)}>
 					<Select bind:value={byType[t]} data-testid="card-template-{t}">
-						<option value=""
-							>{i18n.t("config.blocks.cardTemplates.asDefault", {
+						<option value="">
+							{i18n.t("config.blocks.cardTemplates.asDefault", {
 								name: current.defaultTemplate,
-							})}</option
-						>
+							})}
+						</option>
 						{#each current.templates as tpl (tpl.name)}
-							<option value={tpl.name}
-								>{tpl.description
-									? `${tpl.name} — ${tpl.description}`
-									: tpl.name}</option
-							>
+							<option value={tpl.name}>
+								{tpl.description ? `${tpl.name} — ${tpl.description}` : tpl.name}
+							</option>
 						{/each}
 					</Select>
 				</Field>
@@ -104,9 +102,9 @@
 		</Grid>
 		<fieldset class="space-y-2">
 			<legend class="label-text">{i18n.t("config.blocks.cardTemplates.cutLines")}</legend>
-			<Checkbox bind:checked={lines} data-testid="cut-lines"
-				>{i18n.t("config.blocks.cardTemplates.cutLinesOn")}</Checkbox
-			>
+			<Checkbox bind:checked={lines} data-testid="cut-lines">
+				{i18n.t("config.blocks.cardTemplates.cutLinesOn")}
+			</Checkbox>
 			{#if lines}
 				<Row gap="4" align="end">
 					<Field label={i18n.t("config.blocks.cardTemplates.color")}>
@@ -161,8 +159,10 @@
 			<Button
 				icon={PrintIcon}
 				href="/admin/cards/calibration"
-				data-testid="card-calibration-open">{i18n.t("admin.calibration.open")}</Button
+				data-testid="card-calibration-open"
 			>
+				{i18n.t("admin.calibration.open")}
+			</Button>
 			<Row>
 				<DraftActions
 					{dirty}

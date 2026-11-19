@@ -1,0 +1,63 @@
+{
+	"id": "ro-liceu",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). Liceu (teoretic, tehnologic or vocațional) from the clasa a IX-a to the a XII-a, written a IX-a A; the ciclul inferior (IX-X) and the ciclul superior (XI-XII) are not told apart. Pupils come from the a VIII-a of ro-gimnaziala (admission after the evaluarea națională, so the classes are formed anew) [VERIFY]. A liceu that also teaches the gimnaziu (colegiu, liceu with all grades) needs the levels of ro-gimnaziala added; the clasa a XIII-a of the technological and evening courses (seral, frecvență redusă) is not included [VERIFY]. The class names are often tied to the specialisation (a IX-a A matematică-informatică, B științe ale naturii…) [VERIFY]. The school year starts on 1 September, as in ro-gimnaziala [VERIFY]. After the a XII-a a pupil leaves (bacalaureat).",
+	"name": {
+		"it": "Secondaria di secondo grado, liceu (Romania)",
+		"en": "Upper secondary school, liceu (Romania)",
+		"ro": "Liceu (România)"
+	},
+	"country": "RO",
+	"languages": ["ro"],
+	"schoolYear": {
+		"start": "09-01",
+		"label": "span"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "liceal",
+				"name": "Învățământ liceal"
+			}
+		],
+		"levels": [
+			{
+				"code": "9",
+				"label": "a IX-a",
+				"name": "Clasa a IX-a",
+				"stage": "liceal",
+				"aliases": ["IX"]
+			},
+			{
+				"code": "10",
+				"label": "a X-a",
+				"name": "Clasa a X-a",
+				"stage": "liceal",
+				"aliases": ["X"]
+			},
+			{
+				"code": "11",
+				"label": "a XI-a",
+				"name": "Clasa a XI-a",
+				"stage": "liceal",
+				"aliases": ["XI"]
+			},
+			{
+				"code": "12",
+				"label": "a XII-a",
+				"name": "Clasa a XII-a",
+				"stage": "liceal",
+				"aliases": ["XII"]
+			}
+		],
+		"classLabel": "{level} {group}",
+		"groupWord": "Clasa",
+		"cardClass": "{word} {class}",
+		"promotionWithinStage": "keep",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"liceal": ["A", "B", "C", "D"]
+	},
+	"teacherGroup": "Cadre didactice",
+	"readingLevels": []
+}

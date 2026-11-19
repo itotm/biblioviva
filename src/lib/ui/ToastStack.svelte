@@ -55,8 +55,9 @@
 			<Toast.Message class="grow">
 				<Toast.Title class="text-base leading-snug font-bold">{toast.title}</Toast.Title>
 				{#if toast.description}
-					<Toast.Description class="mt-0.5 text-sm">{toast.description}</Toast.Description
-					>
+					<Toast.Description class="mt-0.5 text-sm">
+						{toast.description}
+					</Toast.Description>
 				{/if}
 			</Toast.Message>
 			<Toast.CloseTrigger

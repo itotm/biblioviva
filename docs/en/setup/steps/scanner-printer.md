@@ -111,6 +111,22 @@ If the outlines do not coincide, the sizes of the label sheet are not those of B
 provided is in the technical page
 [Print templates: authoring guide](../../../templates-authoring.md#measuring-a-sheet-and-checking-the-output).
 
+### Check everything from the check page
+
+The **Installation check** page gathers the same tests in one place and also says whether the address, the passwords and
+the backups are in order. It can be used instead of the three previous steps or to repeat them.
+
+1. Open **Administration** → **Installation check**.
+1. In the **Barcode scanner** box click in the **Code read by the scanner** field and read with the scanner the code of a
+   printed label. Under the field the sentence "Correct reading: the keyboard and the scanner agree." must appear. If
+   another sentence appears, follow it.
+1. In the **Printer** box press **Print** next to **Card test page**. The page opens in a new tab: print it with the
+   settings of the section [Set the print window](#set-the-print-window).
+1. Repeat with **Label calibration page**.
+1. Read the summary at the top of the page. The lines to fix have a **Guide** button.
+
+The page is described in [Installation check](../../admin/screens/setup.md).
+
 ## Check before going on
 
 - A code read by the scanner appears in the search field the same as the printed one, with the hyphen and no other
@@ -118,6 +134,8 @@ provided is in the technical page
 - The "10 cm ruler" of the cards test page and that of the calibration page measure 100 mm. If they measure less or
   more, the print window reduced or enlarged the page: go back to [Set the print window](#set-the-print-window).
 - The outlines of the calibration page coincide with the labels of the real sheet.
+- The **Installation check** page has no checks left to fix (red). Checks to review (yellow) are allowed: for example the
+  basic mode on the local network is always to review, because the camera does not work.
 
 ## Possible problems
 

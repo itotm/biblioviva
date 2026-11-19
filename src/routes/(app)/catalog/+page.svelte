@@ -26,7 +26,7 @@
 		getSeriesNames,
 		searchBiblios,
 	} from "#lib/remote/catalog.remote.js";
-	import { pictogramSrc } from "#lib/shared/classification.js";
+	import { pictogramSrc } from "#lib/shared/pictogram-src.js";
 	import { formatSeries } from "#lib/shared/series.js";
 	import { ANY_ACCESSIBLE_FORMAT } from "#lib/shared/accessible-formats.js";
 	import DataGrid, { type GridColumn } from "#lib/components/DataGrid.svelte";
@@ -263,8 +263,10 @@
 					variant="primary"
 					icon={AddIcon}
 					href="/cataloging/new"
-					data-testid="new-biblio">{i18n.t("catalog.list.new")}</Button
+					data-testid="new-biblio"
 				>
+					{i18n.t("catalog.list.new")}
+				</Button>
 			{/if}
 		{/snippet}
 		{#snippet views()}
@@ -284,8 +286,10 @@
 					variant="primary"
 					icon={PrintIcon}
 					onclick={() => (labelDialog = true)}
-					data-testid="print-selected-labels">{i18n.t("printing.labels.selected")}</Button
+					data-testid="print-selected-labels"
 				>
+					{i18n.t("printing.labels.selected")}
+				</Button>
 				<AddToPrintList
 					kind="items"
 					biblioIds={selectedIds.map(Number)}
@@ -296,14 +300,17 @@
 					size="sm"
 					icon={EditIcon}
 					onclick={() => (batchDialog = true)}
-					data-testid="batch-selected">{i18n.t("catalog.batch.selected")}</Button
+					data-testid="batch-selected"
 				>
+					{i18n.t("catalog.batch.selected")}
+				</Button>
 				<Button
 					size="sm"
 					onclick={() => (reclassifyDialog = true)}
 					data-testid="reclassify-selected"
-					>{i18n.t("catalog.batch.reclassify.button")}</Button
 				>
+					{i18n.t("catalog.batch.reclassify.button")}
+				</Button>
 			{/if}
 		{/snippet}
 		{#snippet filters()}
@@ -359,9 +366,9 @@
 					<option value={t.code}>{t.label}</option>
 				{/each}
 			</FilterSelect>
-			<Checkbox bind:checked={f.available} data-testid="only-available"
-				>{i18n.t("catalog.search.available")}</Checkbox
-			>
+			<Checkbox bind:checked={f.available} data-testid="only-available">
+				{i18n.t("catalog.search.available")}
+			</Checkbox>
 			<label class="inline-block w-28">
 				<span class="sr-only">{i18n.t("catalog.search.yearFrom")}</span>
 				<Input
@@ -409,23 +416,25 @@
 					bind:value={f.accessibleFormat}
 					data-testid="filter-accessible"
 				>
-					<option value={ANY_ACCESSIBLE_FORMAT}
-						>{i18n.t("catalog.list.filters.anyAccessibleFormat")}</option
-					>
+					<option value={ANY_ACCESSIBLE_FORMAT}>
+						{i18n.t("catalog.list.filters.anyAccessibleFormat")}
+					</option>
 					{#each options.current?.accessibleFormats ?? [] as name (name)}
 						<option value={name}>{name}</option>
 					{/each}
 				</FilterSelect>
 			{/if}
-			<Checkbox bind:checked={f.withdrawn} data-testid="show-withdrawn"
-				>{i18n.t("catalog.list.filters.withdrawn")}</Checkbox
-			>
+			<Checkbox bind:checked={f.withdrawn} data-testid="show-withdrawn">
+				{i18n.t("catalog.list.filters.withdrawn")}
+			</Checkbox>
 			{#if filtered || f.all}
 				<Button
 					icon={ClearIcon}
 					onclick={() => filterState.clear()}
-					data-testid="clear-filters">{i18n.t("catalog.list.clearFilters")}</Button
+					data-testid="clear-filters"
 				>
+					{i18n.t("catalog.list.clearFilters")}
+				</Button>
 			{/if}
 		{/snippet}
 	</ListToolbar>
@@ -436,9 +445,9 @@
 				barcode: suggestion.barcode,
 				title: suggestion.title,
 			})}
-			<Link class="ml-2 font-semibold" href="/catalog/{suggestion.biblioId}"
-				>{i18n.t("catalog.search.openSuggest")}</Link
-			>
+			<Link class="ml-2 font-semibold" href="/catalog/{suggestion.biblioId}">
+				{i18n.t("catalog.search.openSuggest")}
+			</Link>
 		</Alert>
 	{/if}
 
@@ -454,8 +463,10 @@
 						<Button
 							icon={ListIcon}
 							onclick={() => (f.all = true)}
-							data-testid="show-all">{i18n.t("catalog.list.showAll")}</Button
+							data-testid="show-all"
 						>
+							{i18n.t("catalog.list.showAll")}
+						</Button>
 					{/snippet}
 				</EmptyState>
 			</div>

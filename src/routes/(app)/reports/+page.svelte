@@ -63,24 +63,24 @@
 									{#if r.description}<Hint as="span">{r.description}</Hint>{/if}
 									<Row gap="1" class="mt-1">
 										{#if r.chart}
-											<Badge
-												><ChartIcon
+											<Badge>
+												<ChartIcon
 													size={ICON_SIZE.sm}
 													aria-hidden="true"
-												/>{i18n.t("reports.chart")}</Badge
-											>
+												/>{i18n.t("reports.chart")}
+											</Badge>
 										{/if}
 										{#if r.restricted}
-											<Badge
-												><LockIcon
+											<Badge>
+												<LockIcon
 													size={ICON_SIZE.sm}
 													aria-hidden="true"
-												/>{i18n.t("reports.restricted")}</Badge
-											>
+												/>{i18n.t("reports.restricted")}
+											</Badge>
 										{/if}
-										{#if r.source === "config"}<Badge
-												>{i18n.t("reports.custom")}</Badge
-											>{/if}
+										{#if r.source === "config"}<Badge>
+												{i18n.t("reports.custom")}
+											</Badge>{/if}
 									</Row>
 								</LinkCard>
 							{/each}

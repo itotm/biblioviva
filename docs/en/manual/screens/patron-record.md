@@ -54,7 +54,7 @@ For the accounts that also have the circulation desk (normally "Administration")
 - the icon "Renew …" beside the loan, which renews that book;
 - the icon "Mark … lost", in red, which closes the loan because the book cannot be found.
 
-A refused renewal explains why with a message in the page, the same as at the circulation desk (see [Refused renewals](checkout.md#refused-renewals)); for "Administration" the window **Force the renewal?** allows going on anyway with **Renew anyway**, by writing a reason.
+A refused renewal explains why with a message in the page, the same as at the circulation desk (see [Refused renewals](checkout.md#refused-renewals)); for "Administration" the window **Force the renewal?** allows going on anyway with **Renew anyway**, by writing a reason. A renewal asked for before half of the loan period, for one book or with **Renew all**, opens the window **Early renewal** with **Renew anyway** and **Cancel** (see [Early renewal](checkout.md#early-renewal)).
 
 ### Marking a book lost
 

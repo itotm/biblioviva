@@ -6,6 +6,7 @@ import {
 	canCheckout,
 	canRenew,
 	dueDateFor,
+	isEarlyRenewal,
 	OVERRIDABLE,
 	RENEWAL_OVERRIDABLE,
 	resolveRule,
@@ -286,6 +287,8 @@ describe("renewal", () => {
 	const base = {
 		patronType: "student",
 		itemType: "libro",
+		// 10 of 15 days gone: past half of the period
+		periodStart: "2026-09-15",
 		dueDate: "2026-09-30",
 		renewals: 0,
 		today: TODAY,
@@ -366,5 +369,110 @@ describe("renewal", () => {
 			"renewal_limit_reached",
 			"renewal_overdue_blocked",
 		]);
+	});
+});
+
+describe("early renewal", () => {
+	const base = {
+		patronType: "student",
+		itemType: "libro",
+		periodStart: "2026-09-15",
+		dueDate: "2026-09-30",
+		renewals: 0,
+		today: "2026-09-22",
+	};
+
+	it("is early below half of the period: exactly half is not", () => {
+		// period of 15 days (odd): half is 7.5, so 7 days gone is early and 8 is not
+		expect(isEarlyRenewal({ ...base, today: "2026-09-22" })).toBe(true);
+		expect(isEarlyRenewal({ ...base, today: "2026-09-23" })).toBe(false);
+		// period of 14 days (even): 6 days gone is early, exactly 7 is not
+		const even = { ...base, periodStart: "2026-09-16" };
+		expect(isEarlyRenewal({ ...even, today: "2026-09-22" })).toBe(true);
+		expect(isEarlyRenewal({ ...even, today: "2026-09-23" })).toBe(false);
+		// the day the period starts, and an overdue loan
+		expect(isEarlyRenewal({ ...base, today: "2026-09-15" })).toBe(true);
+		expect(isEarlyRenewal({ ...base, today: "2026-10-05" })).toBe(false);
+		// a period of one day
+		expect(isEarlyRenewal({ ...base, periodStart: "2026-09-29", today: "2026-09-29" })).toBe(
+			true,
+		);
+		expect(isEarlyRenewal({ ...base, periodStart: "2026-09-30", today: "2026-09-30" })).toBe(
+			false,
+		);
+	});
+
+	it("asks for the confirmation, with the days gone, the period and the new due date", () => {
+		expect(canRenew(config, cal, base)).toEqual({
+			ok: false,
+			reason: "renewal_early",
+			overridable: false,
+			early: { elapsed: 7, period: 15, newDue: "2026-10-07" },
+		});
+		expect(canRenew(config, cal, base, { confirmEarly: true })).toMatchObject({
+			ok: true,
+			unchanged: false,
+			dueDate: { due: "2026-10-07" },
+		});
+		// not early: the flag changes nothing
+		expect(canRenew(config, cal, { ...base, today: "2026-09-23" })).toMatchObject({ ok: true });
+	});
+
+	it("counts a renewed loan from its last renewal, not from the loan", () => {
+		// lent on 1 September, renewed on 15 September until 30 September: on 22 September
+		// 7 of 15 days of the new period have gone
+		expect(canRenew(config, cal, base)).toMatchObject({
+			reason: "renewal_early",
+			early: { elapsed: 7, period: 15 },
+		});
+		// the same loan counted from the loan itself would be 21 of 29 days: not early
+		expect(isEarlyRenewal({ ...base, periodStart: "2026-09-01" })).toBe(false);
+	});
+
+	it("comes after the renewal limit, the overdue block and the hard due date", () => {
+		expect(canRenew(config, cal, { ...base, renewals: 5 })).toMatchObject({
+			reason: "renewal_limit_reached",
+		});
+		const strict = withCirculation({ allowRenewalWhenOverdue: false });
+		expect(
+			canRenew(strict, cal, {
+				...base,
+				periodStart: "2026-09-20",
+				dueDate: "2026-09-21",
+				today: "2026-09-22",
+			}),
+		).toMatchObject({ reason: "renewal_overdue_blocked" });
+		const hard = withCirculation({ hardDueDate: "2026-09-30" });
+		expect(canRenew(hard, cal, base)).toMatchObject({ reason: "renewal_hard_due_date" });
+	});
+
+	it("is not asked when the renewal would not move the due date", () => {
+		// lent today with the due date the renewal would give: nothing to do, no warning
+		expect(
+			canRenew(config, cal, {
+				...base,
+				periodStart: "2026-09-22",
+				dueDate: "2026-10-07",
+				today: "2026-09-22",
+			}),
+		).toMatchObject({ ok: true, unchanged: true });
+		const capped = withCirculation({ hardDueDate: "2026-09-25" });
+		expect(canRenew(capped, cal, { ...base, dueDate: "2026-09-25" })).toMatchObject({
+			reason: "renewal_hard_due_date",
+		});
+	});
+
+	it("is a warning any account confirms: the administrator's override does not skip it", () => {
+		expect(canRenew(config, cal, base, { override: true })).toMatchObject({
+			ok: false,
+			reason: "renewal_early",
+			overridable: false,
+		});
+		expect(canRenew(config, cal, { ...base, renewals: 5 }, { override: true })).toMatchObject({
+			reason: "renewal_early",
+		});
+		expect(
+			canRenew(config, cal, { ...base, renewals: 5 }, { override: true, confirmEarly: true }),
+		).toMatchObject({ ok: true });
 	});
 });

@@ -315,8 +315,9 @@
 			</Field>
 		{/each}
 	</Grid>
-	<Checkbox bind:checked={draft.restricted}>{i18n.t("config.reports.editor.restricted")}</Checkbox
-	>
+	<Checkbox bind:checked={draft.restricted}>
+		{i18n.t("config.reports.editor.restricted")}
+	</Checkbox>
 </Card>
 
 <ChoiceButtons
@@ -407,21 +408,21 @@
 					<Field label={i18n.t("config.reports.editor.totals")}>
 						<Select bind:value={q.totals} data-testid="editor-totals">
 							{#each ["both", "rows", "columns", "none"] as t (t)}
-								<option value={t}
-									>{i18n.t(`config.reports.editor.totalsOptions.${t}`)}</option
-								>
+								<option value={t}>
+									{i18n.t(`config.reports.editor.totalsOptions.${t}`)}
+								</option>
 							{/each}
 						</Select>
 					</Field>
 				{:else}
 					<Field label={i18n.t("config.reports.editor.sort")}>
 						<Select bind:value={q.sort} data-testid="editor-sort">
-							<option value="dimension"
-								>{i18n.t("config.reports.editor.sortDimension")}</option
-							>
-							<option value="measure"
-								>{i18n.t("config.reports.editor.sortMeasure")}</option
-							>
+							<option value="dimension">
+								{i18n.t("config.reports.editor.sortDimension")}
+							</option>
+							<option value="measure">
+								{i18n.t("config.reports.editor.sortMeasure")}
+							</option>
 						</Select>
 					</Field>
 				{/if}
@@ -432,8 +433,10 @@
 					<Checkbox
 						checked={q.measures.includes(m.key)}
 						onchange={(e) => toggleMeasure(m.key, e.currentTarget.checked)}
-						data-testid="editor-measure-{m.key}">{m.label}</Checkbox
+						data-testid="editor-measure-{m.key}"
 					>
+						{m.label}
+					</Checkbox>
 				{/each}
 				{#if q.columns}
 					<Hint>{i18n.t("config.reports.editor.oneMeasure")}</Hint>
@@ -450,15 +453,15 @@
 								onchange={(e) => setFilter(f.key, e.currentTarget.value)}
 								data-testid="editor-filter-mode-{f.key}"
 							>
-								<option value="off"
-									>{i18n.t("config.reports.editor.filterModes.off")}</option
-								>
-								<option value="ask"
-									>{i18n.t("config.reports.editor.filterModes.ask")}</option
-								>
-								<option value="fixed"
-									>{i18n.t("config.reports.editor.filterModes.fixed")}</option
-								>
+								<option value="off">
+									{i18n.t("config.reports.editor.filterModes.off")}
+								</option>
+								<option value="ask">
+									{i18n.t("config.reports.editor.filterModes.ask")}
+								</option>
+								<option value="fixed">
+									{i18n.t("config.reports.editor.filterModes.fixed")}
+								</option>
 							</Select>
 						</Field>
 						{#if mode === "fixed" && f.kind === "period"}
@@ -486,12 +489,12 @@
 								>
 									<option value=""></option>
 									{#if f.kind === "patronType"}
-										<option value="student"
-											>{i18n.t("reports.patronTypes.student")}</option
-										>
-										<option value="teacher"
-											>{i18n.t("reports.patronTypes.teacher")}</option
-										>
+										<option value="student">
+											{i18n.t("reports.patronTypes.student")}
+										</option>
+										<option value="teacher">
+											{i18n.t("reports.patronTypes.teacher")}
+										</option>
 									{:else}
 										{#each f.options as o (o.value)}
 											<option value={o.value}>{o.label}</option>
@@ -517,8 +520,10 @@
 				<Button
 					icon={CodeIcon}
 					onclick={() => (convertOpen = true)}
-					data-testid="editor-convert">{i18n.t("config.reports.editor.convert")}</Button
+					data-testid="editor-convert"
 				>
+					{i18n.t("config.reports.editor.convert")}
+				</Button>
 			</div>
 		{:else}
 			<Field label="SQL" hint={i18n.t("config.reports.editor.sqlHint")}>
@@ -552,8 +557,10 @@
 			icon={PreviewIcon}
 			onclick={runPreview}
 			disabled={busy}
-			data-testid="editor-run-preview">{i18n.t("config.reports.editor.runPreview")}</Button
+			data-testid="editor-run-preview"
 		>
+			{i18n.t("config.reports.editor.runPreview")}
+		</Button>
 	</Row>
 	{#if !preview}
 		<Hint>{i18n.t("config.reports.editor.previewHint")}</Hint>
@@ -595,11 +602,13 @@
 		icon={SaveIcon}
 		onclick={save}
 		disabled={busy}
-		data-testid="editor-save">{i18n.t("config.reports.editor.save")}</Button
+		data-testid="editor-save"
 	>
-	<Button icon={BackIcon} href="/admin/config/reports"
-		>{i18n.t("config.reports.editor.back")}</Button
-	>
+		{i18n.t("config.reports.editor.save")}
+	</Button>
+	<Button icon={BackIcon} href="/admin/config/reports">
+		{i18n.t("config.reports.editor.back")}
+	</Button>
 </Row>
 
 <ConfirmDialog

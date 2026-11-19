@@ -5,6 +5,7 @@ import { drizzle, type SQLiteBunDatabase } from "drizzle-orm/bun-sqlite";
 import { mkdirSync } from "node:fs";
 import { dirname } from "node:path";
 import { resolvePerformance, type PerformanceSettings } from "#lib/shared/performance.js";
+import { registerSearchFunctions } from "./fts.js";
 
 export type Db = SQLiteBunDatabase & { $client: Database };
 /** A database handle or a transaction handle: what services accept for their queries. */
@@ -52,6 +53,7 @@ export function openDatabase(
 		mkdirSync(dirname(path), { recursive: true });
 	}
 	const sqlite = new Database(path, { create: true, strict: true });
+	registerSearchFunctions(sqlite);
 	applyPragmas(sqlite, tuning, { wal: path !== ":memory:" });
 	return drizzle({ client: sqlite });
 }

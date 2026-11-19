@@ -42,6 +42,8 @@ const first: Task[] = [
 	{ name: "ui:audit", cmd: ["bun", "run", "ui:audit"] },
 	// every language pack of `i18n-packs/` valid, as the app checks a pack when it loads it
 	{ name: "i18n:status", cmd: ["bun", "run", "i18n:status"] },
+	// the documentation read as the site build reads it: figure markers, bold labels, the languages, links, help targets
+	{ name: "site:check", cmd: ["bun", "run", "site:check"] },
 	{ name: "test", cmd: ["bun", "run", "test"] },
 	// the type check and the build both regenerate `.svelte-kit`: one after the other
 	{

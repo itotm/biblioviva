@@ -1,14 +1,14 @@
 # Administration
 
 The **Administration** page gathers the library's configuration and the jobs on the data: accounts, the audit log,
-backups, imports, the class upgrade and exports. It is reserved for the `admin` account. It opens from the sidebar (on
+backups, imports, the class upgrade, exports and the installation check. It is reserved for the `admin` account. It opens from the sidebar (on
 the phone from the **More** item) and from the **Dashboard**; the other pages of this section have a **Back** button at
 the top, which leads back here.
 
-<!-- figure: admin/home | The Administration page with the seven tabs -->
+<!-- figure: admin/home | The Administration page with the eight tabs -->
 
 1. Page title.
-2. The tabs of the seven areas, each with a title and a line of explanation.
+2. The tabs of the eight areas, each with a title and a line of explanation.
 3. The **Clear sample data** button, present only in an installation that holds sample data.
 
 ## Configuration
@@ -45,6 +45,12 @@ Opens the [Class upgrade](rollover.md), the guided end-of-year procedure. Guide:
 ## Exports
 
 Opens the [Exports](exports.md): patrons, catalogue, loans and all the data as CSV or JSON files.
+
+## Installation check
+
+Opens the [Installation check](setup.md): the state of the configuration file, of the address, of the computer's profile,
+of the passwords and of the backups, and the tests with the printer, the camera and the scanner. While a check is to fix,
+the **Dashboard** of the `admin` account reminds of it.
 
 ## Clear sample data
 

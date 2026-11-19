@@ -15,5 +15,7 @@
 	icon={SimilarIcon}
 	class="shrink-0"
 	title={i18n.t("common.similar.hint")}
-	data-testid="similar-badge">{i18n.t("common.similar.label")}</Badge
+	data-testid="similar-badge"
 >
+	{i18n.t("common.similar.label")}
+</Badge>

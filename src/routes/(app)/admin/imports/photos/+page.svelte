@@ -19,6 +19,7 @@
 	import Card from "#lib/ui/Card.svelte";
 	import Field from "#lib/ui/Field.svelte";
 	import Grid from "#lib/ui/Grid.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
 	import Hint from "#lib/ui/Hint.svelte";
 	import Input from "#lib/ui/Input.svelte";
 	import Page from "#lib/ui/Page.svelte";
@@ -73,16 +74,19 @@
 
 	<Grid from="md" gap="4">
 		<Card gap="3" as="section" data-testid="photos-zip">
-			<h2 class="title-lg">{i18n.t("admin.photosImport.zip.title")}</h2>
+			<Row wrap={false} align="center" gap="1">
+				<h2 class="title-lg">{i18n.t("admin.photosImport.zip.title")}</h2>
+				<HelpLink spot="photosZip" topic={i18n.t("admin.photosImport.zip.title")} />
+			</Row>
 			<form {...zip} enctype="multipart/form-data" class="space-y-3">
-				<Field label={i18n.t("admin.photosImport.zip.file")}
-					><Input
+				<Field label={i18n.t("admin.photosImport.zip.file")}>
+					<Input
 						{...zip.fields.file.as("file")}
 						accept=".zip,application/zip"
 						required
 						data-testid="photos-zip-file"
-					/></Field
-				>
+					/>
+				</Field>
 				{#if zip.fields.file.issues()?.length}
 					<Hint tone="error" role="alert">{zip.fields.file.issues()?.[0]?.message}</Hint>
 				{/if}
@@ -96,14 +100,18 @@
 					icon={UploadIcon}
 					disabled={zip.pending > 0}
 					data-testid="photos-zip-submit"
-					>{zip.pending > 0
-						? i18n.t("common.status.loading")
-						: i18n.t("admin.photosImport.zip.submit")}</Button
 				>
+					{zip.pending > 0
+						? i18n.t("common.status.loading")
+						: i18n.t("admin.photosImport.zip.submit")}
+				</Button>
 			</form>
 		</Card>
 		<Card gap="3" as="section" data-testid="photos-folder">
-			<h2 class="title-lg">{i18n.t("admin.photosImport.folder.title")}</h2>
+			<Row wrap={false} align="center" gap="1">
+				<h2 class="title-lg">{i18n.t("admin.photosImport.folder.title")}</h2>
+				<HelpLink spot="photosFolder" topic={i18n.t("admin.photosImport.folder.title")} />
+			</Row>
 			<Hint>
 				{i18n.t("admin.photosImport.folder.hint", {
 					path: folder.current?.path ?? "",
@@ -119,8 +127,9 @@
 					onclick={fromFolder}
 					disabled={busy || !folder.current?.files}
 					data-testid="photos-folder-submit"
-					>{i18n.t("admin.photosImport.folder.submit")}</Button
 				>
+					{i18n.t("admin.photosImport.folder.submit")}
+				</Button>
 			</Row>
 		</Card>
 	</Grid>
@@ -138,11 +147,11 @@
 				})}
 			</p>
 			{#if summary.unreadable.length > 0}
-				<Hint tone="error-soft" data-testid="photos-unreadable"
-					>{i18n.t("admin.photosImport.summary.unreadable", {
+				<Hint tone="error-soft" data-testid="photos-unreadable">
+					{i18n.t("admin.photosImport.summary.unreadable", {
 						files: summary.unreadable.join(", "),
-					})}</Hint
-				>
+					})}
+				</Hint>
 			{/if}
 			{#if unmatchedHref}
 				<Row>
@@ -151,8 +160,9 @@
 						href={unmatchedHref}
 						download="foto-senza-utente.csv"
 						data-testid="photos-unmatched"
-						>{i18n.t("admin.photosImport.summary.unmatched")}</Button
 					>
+						{i18n.t("admin.photosImport.summary.unmatched")}
+					</Button>
 				</Row>
 			{/if}
 		</Card>

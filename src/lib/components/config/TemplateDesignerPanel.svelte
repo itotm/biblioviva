@@ -188,8 +188,10 @@
 									: undefined,
 							image: images[0],
 						})}
-					data-testid="designer-add-{t}">{typeName(t)}</Button
+					data-testid="designer-add-{t}"
 				>
+					{typeName(t)}
+				</Button>
 			{/each}
 		</Row>
 		{#if images.length === 0}
@@ -274,9 +276,9 @@
 				{/each}
 			</div>
 			{#if !el.placed}
-				<Hint tone="faint" data-testid="designer-unplaced"
-					>{i18n.t("config.designer.unplacedHint")}</Hint
-				>
+				<Hint tone="faint" data-testid="designer-unplaced">
+					{i18n.t("config.designer.unplacedHint")}
+				</Hint>
 			{/if}
 			{#if texty(el.type)}
 				<div class="grid grid-cols-2 gap-2">
@@ -313,18 +315,22 @@
 					<Checkbox
 						checked={look(el, "bold") ?? false}
 						onchange={(e) => (el.style.bold = e.currentTarget.checked)}
-						data-testid="designer-bold">{i18n.t("config.designer.bold")}</Checkbox
+						data-testid="designer-bold"
 					>
+						{i18n.t("config.designer.bold")}
+					</Checkbox>
 					<Checkbox
 						checked={look(el, "italic") ?? false}
 						onchange={(e) => (el.style.italic = e.currentTarget.checked)}
-						>{i18n.t("config.designer.italic")}</Checkbox
 					>
+						{i18n.t("config.designer.italic")}
+					</Checkbox>
 					<Checkbox
 						checked={look(el, "uppercase") ?? false}
 						onchange={(e) => (el.style.uppercase = e.currentTarget.checked)}
-						>{i18n.t("config.designer.uppercase")}</Checkbox
 					>
+						{i18n.t("config.designer.uppercase")}
+					</Checkbox>
 				</Row>
 				<Row gap="3" align="center">
 					<SegmentedGroup
@@ -354,8 +360,10 @@
 						onchange={(e) =>
 							(el.border = e.currentTarget.checked
 								? { color: "#000000", widthMm: 0.3 }
-								: null)}>{i18n.t("config.designer.border")}</Checkbox
+								: null)}
 					>
+						{i18n.t("config.designer.border")}
+					</Checkbox>
 					{#if el.border}
 						<ColorInput
 							bind:value={el.border.color}
@@ -367,8 +375,9 @@
 					<Checkbox
 						checked={el.fill !== null}
 						onchange={(e) => (el.fill = e.currentTarget.checked ? "#eeeeee" : null)}
-						>{i18n.t("config.designer.fill")}</Checkbox
 					>
+						{i18n.t("config.designer.fill")}
+					</Checkbox>
 					{#if el.fill !== null}
 						<ColorInput
 							bind:value={el.fill}
@@ -387,8 +396,9 @@
 						checked={face.background !== null}
 						onchange={(e) =>
 							(face.background = e.currentTarget.checked ? "#ffffff" : null)}
-						>{i18n.t("config.designer.backgroundColor")}</Checkbox
 					>
+						{i18n.t("config.designer.backgroundColor")}
+					</Checkbox>
 					{#if face.background !== null}
 						<ColorInput
 							bind:value={face.background}
@@ -414,16 +424,18 @@
 							onclick={() => (picking = true)}
 							disabled={adding}
 							data-testid="designer-pick-background"
-							>{i18n.t("config.designer.chooseBackground")}</Button
 						>
+							{i18n.t("config.designer.chooseBackground")}
+						</Button>
 						<FileButton
 							icon={UploadIcon}
 							accept="image/png,image/jpeg,image/webp"
 							onchange={onUpload}
 							disabled={adding}
 							data-testid="designer-upload-background"
-							>{i18n.t("config.designer.uploadBackground")}</FileButton
 						>
+							{i18n.t("config.designer.uploadBackground")}
+						</FileButton>
 					</Row>
 					{#if uploadError}<Hint tone="error">{uploadError}</Hint>{/if}
 					<form
@@ -492,11 +504,12 @@
 						size="sm"
 						onclick={() => onsize?.(null)}
 						data-testid="designer-card-default"
-						>{i18n.t("config.designer.cardDefault", {
+					>
+						{i18n.t("config.designer.cardDefault", {
 							width: mmText(cardDefault.width),
 							height: mmText(cardDefault.height),
-						})}</Button
-					>
+						})}
+					</Button>
 				{:else if cardDefault}
 					<Hint tone="faint">{i18n.t("config.designer.cardDefaultHint")}</Hint>
 				{/if}

@@ -72,7 +72,7 @@ BiblioViva is a lean, self-hosted library management system for a **school libra
 ### 1.3 Repository state at the start
 
 - `PLAN.md`, `CLAUDE.md`, `README.md` + `README.it.md`, `LICENSE` (**GPL-3.0-or-later**, see Q24), `docs/reference/` (current printouts and Koha classification list), and a `.gitignore` for .NET projects (to be replaced). No code yet.
-- Development host: Fedora, `podman 5.8.4`, `bun 1.4.4`, `node 25.8.0` available (Node is used only by the Playwright runner, Q37).
+- Development host: Fedora, `podman 5.8.4`, `bun 1.4.5`, `node 25.8.0` available (Node is used only by the Playwright runner, Q37).
 
 ---
 
@@ -84,14 +84,14 @@ Legend: ✅ verified from the npm registry or the official docs · ⚠️ decisi
 
 | Package | Version | Notes |
 |---|---|---|
-| `bun` | **1.4.4** ✅ | First Rust-based release line (1.4.0). Ships `Bun.Image`, `Bun.cron`, `Bun.password`, `node:sqlite` backup API, Temporal. Required ≥ 1.4 by adapter-bun. |
-| `svelte` | **5.57.2** ✅ | `await` in components still behind `compilerOptions.experimental.async` (required by remote functions). No Svelte 6 published. |
-| `@sveltejs/kit` | **3.1.1** ✅ | Docs: https://svelte.dev/docs/kit. Peers: vite ^8.0.12, svelte ^5.56.4, **typescript ^6**, vite-plugin-svelte ^7. |
-| `@sveltejs/adapter-bun` | **1.0.0** ✅ | Official adapter (SvelteKit 3 only, Bun ≥ 1.4). Build `bun run --bun build`, run `bun ./build`. Supports `compile` for a single executable. It builds the server with Vite and leaves the packages under `dependencies` external (`sveltekit-i18n`'s `.svelte.js` core would run uncompiled, `$state is not defined`); a build-only plugin in `vite.config.ts` bundles every package, so the image needs no node_modules (ADR-020). |
+| `bun` | **1.4.5** ✅ | First Rust-based release line (1.4.0). Ships `Bun.Image`, `Bun.cron`, `Bun.password`, `node:sqlite` backup API, Temporal. Required ≥ 1.4 by adapter-bun. |
+| `svelte` | **5.58.0** ✅ | `await` in components still behind `compilerOptions.experimental.async` (required by remote functions). No Svelte 6 published. |
+| `@sveltejs/kit` | **3.4.0** ✅ | Docs: https://svelte.dev/docs/kit. Peers: vite ^8.0.12, svelte ^5.56.4, **typescript ^6**, vite-plugin-svelte ^7. |
+| `@sveltejs/adapter-bun` | **1.0.2** ✅ | Official adapter (SvelteKit 3 only, Bun ≥ 1.4). Build `bun run --bun build`, run `bun ./build`. Supports `compile` for a single executable. It builds the server with Vite and leaves the packages under `dependencies` external (`sveltekit-i18n`'s `.svelte.js` core would run uncompiled, `$state is not defined`); a build-only plugin in `vite.config.ts` bundles every package, so the image needs no node_modules (ADR-020). |
 | `@sveltejs/vite-plugin-svelte` | **7.3.1** ✅ | `runes: true` forced on project files only through `compilerOptions.runes` as a function. |
-| `vite` | **8.3.5** ✅ | Rolldown is the default bundler. |
+| `vite` | **8.3.8** ✅ | Rolldown is the default bundler. |
 | `typescript` | **6.0.3** ✅ | SvelteKit 3 peer-depends on TS 6. TS 7.0.2 (Go port) can be added later under an alias for `tsgo` (optional, Q3). |
-| `svelte-check` | **4.7.7** ✅ | |
+| `svelte-check` | **4.7.8** ✅ | |
 | `sveltekit-i18n` | **3.4.1** ✅ (runes core since 3.0.0) | i18n built for SvelteKit: JSON dictionaries, Curly parser with modifiers, per-route lazy loaders, documented per-request server instance for SSR; peer `svelte >=5`; bundles `@sveltekit-i18n/base` 3.3.2 (linear merge, ADR-019) and `parser-curly` 3.2.2 (§3.16, Q19). |
 | `valibot` | **1.5.0** ✅ | Standard Schema validation for remote functions, config, reports. |
 
@@ -99,14 +99,14 @@ Legend: ✅ verified from the npm registry or the official docs · ⚠️ decisi
 
 | Package | Version | Notes |
 |---|---|---|
-| `tailwindcss`, `@tailwindcss/vite` | **4.3.3** ✅ | |
-| `@skeletonlabs/skeleton` | **5.0.1** ✅ | Design system for Tailwind 4: themes (`data-theme`), presets, typography, form styles. Documented minimums: Tailwind 4, Svelte 5, SvelteKit 2 (verified with the SvelteKit 3 RC in step 0.3). |
-| `@skeletonlabs/skeleton-svelte` | **5.0.1** ✅ (peer `svelte ^5.40`) | Functional components on **Zag.js 1.43** state machines: Dialog, Toast, Combobox, Listbox, Menu, Popover, Tooltip, Tabs, Accordion, Collapsible, Pagination, Progress, Switch, Slider, Radio/Toggle group, Tags input, File upload, Date picker, Steps, Avatar, Tree view, Rating, QR code, Carousel. |
-| `@svar-ui/svelte-grid` | **2.7.5** ✅ | Renamed from `wx-svelte-grid`. MIT, Svelte 5, virtual scrolling, inline editing, sorting/filtering, responsive + touch, CSV export, print. Theme `Willow` (light; `WillowDark` never used). Locales: `@svar-ui/grid-locales`. Confirmed as the data-table choice in §3.19. |
+| `tailwindcss`, `@tailwindcss/vite` | **4.3.5** ✅ | |
+| `@skeletonlabs/skeleton` | **5.0.5** ✅ | Design system for Tailwind 4: themes (`data-theme`), presets, typography, form styles. Documented minimums: Tailwind 4, Svelte 5, SvelteKit 2 (verified with the SvelteKit 3 RC in step 0.3). |
+| `@skeletonlabs/skeleton-svelte` | **5.0.5** ✅ (peer `svelte ^5.40`) | Functional components on **Zag.js 1.43** state machines: Dialog, Toast, Combobox, Listbox, Menu, Popover, Tooltip, Tabs, Accordion, Collapsible, Pagination, Progress, Switch, Slider, Radio/Toggle group, Tags input, File upload, Date picker, Steps, Avatar, Tree view, Rating, QR code, Carousel. |
+| `@svar-ui/svelte-grid` | **2.7.6** ✅ | Renamed from `wx-svelte-grid`. MIT, Svelte 5, virtual scrolling, inline editing, sorting/filtering, responsive + touch, CSV export, print. Theme `Willow` (light; `WillowDark` never used). Locales: `@svar-ui/grid-locales`. Confirmed as the data-table choice in §3.19. |
 | `chart.js` | **4.6.1** ✅ | Charts for statistics (Q2 resolved: simplest and light enough when only the bar, line and doughnut controllers are registered and the chunk is lazy-loaded on report pages). Do **not** use ApexCharts (license). |
 | `@fontsource-variable/inter`, `@fontsource-variable/jetbrains-mono` | **5.3.0** ✅ | The type of the app, the home page and the documentation (ADR-044): Inter for text, JetBrains Mono for codes, variable fonts under the SIL Open Font License 1.1, served by BiblioViva itself (hashed files, subsets by unicode range), never from another site. Print templates name their own fonts. |
-| `@lucide/svelte` | **1.66.0** ✅ (peer `svelte ^5`) | Lucide icons as Svelte components, imported per icon (`import Book from '@lucide/svelte/icons/book'`) so only used icons are bundled; no runtime fetch (works offline). Owner's choice (Q62 resolved): Lucide directly, no Iconify. |
-| `barcode-detector` ⚠️ | **3.2.3** ✅ (uses `zxing-wasm` 3.1.6) | Camera scanning (EAN-13 ISBN, Code 128 new cards/items, Code 39 legacy cards/labels). Ponyfill of the BarcodeDetector API; native API is unusable on iOS/Firefox/Windows. Alternative `@zxing/browser` 0.2.1 (Q5). |
+| `@lucide/svelte` | **1.76.0** ✅ (peer `svelte ^5`) | Lucide icons as Svelte components, imported per icon (`import Book from '@lucide/svelte/icons/book'`) so only used icons are bundled; no runtime fetch (works offline). Owner's choice (Q62 resolved): Lucide directly, no Iconify. |
+| `barcode-detector` ⚠️ | **3.2.4** ✅ (uses `zxing-wasm` 3.1.6) | Camera scanning (EAN-13 ISBN, Code 128 new cards/items, Code 39 legacy cards/labels). Ponyfill of the BarcodeDetector API; native API is unusable on iOS/Firefox/Windows. Alternative `@zxing/browser` 0.2.1 (Q5). |
 | OpenCV.js ⚠️ | official build **5.0.0**: the `js/bin/opencv.js` of the GitHub release archive `opencv-5.0.0-docs.zip` (docs.opencv.org/5.0 serves a pre-release snapshot), vendored in `src/lib/vision/vendor/` (~16.2 MB) and imported as a hashed asset, so the adapter serves it precompressed (~3.3 MB brotli) with an immutable cache header | Cover straightening (Q6, ADR-022). Types from `@techstark/opencv-js` 5.0.0-release.1 (dev dependency only). Lazy-loaded. |
 
 ### 2.3 Data
@@ -124,7 +124,7 @@ Legend: ✅ verified from the npm registry or the official docs · ⚠️ decisi
 | `@bwip-js/generic` (bwip-js) | **4.11.4** ✅ | Pure JS barcode SVG generation (Code 128, Code 39, EAN-8/13) on the server. |
 | `marcjs` | **3.0.3** ✅ | ISO 2709 / MARCXML parser, format-agnostic (UNIMARC OK), UTF-8. Alternative: `@natlibfi/marc-record-serializers` 11.0.5. |
 | `yaz` (Debian package, **not npm**) | trixie **5.34.4** ✅ | `yaz-client` CLI driven from `Bun.spawn` for Z39.50 (§3.9, Q25). Available for amd64 and arm64. Fedora dev: `sudo dnf install yaz`. |
-| `papaparse` | **5.7.0** ✅ | CSV import/export (Bun has no CSV parser). |
+| `papaparse` | **5.7.1** ✅ | CSV import/export (Bun has no CSV parser). |
 | `mustache` | **4.2.0** ✅ | Logic-less templates for cards/labels (safe for non-programmers; auto-escaping). |
 | `fflate` | **0.8.3** ✅ | Zero-dependency zip writer used by the ODS exporter (§3.19). |
 | `date-fns` + `@date-fns/tz` | **4.4.0** ✅ / **1.5.0** ✅ | Date math and time-zone-aware "today" on client and server (Temporal is native in Bun 1.4 but not in Safari). |
@@ -135,19 +135,19 @@ Legend: ✅ verified from the npm registry or the official docs · ⚠️ decisi
 | Package | Version |
 |---|---|
 | `sv` (Svelte CLI) | **1.0.0-next.7** (`sv@next`, scaffolds SvelteKit 3) ✅ |
-| `vitest` | **5.0.5** ✅ |
-| `@playwright/test` | **1.64.1** ✅ (E2E backbone, visual regression of print layouts; a11y via `@axe-core/playwright` **4.14.0** ✅) |
-| `@vitest/browser`, `@vitest/coverage-v8` | 5.0.x (same as vitest) ✅ |
-| `@vitest/ui` | 5.0.x (same as vitest; HTML report only, ADR-021) |
-| `eslint` / `eslint-plugin-svelte` | **10.14.0** / **3.23.1** ✅ |
-| `prettier` / `prettier-plugin-svelte` / `prettier-plugin-tailwindcss` | **3.9.10** / **4.1.1** / **0.8.1** ✅ |
+| `vitest` | **5.1.1** ✅ (the `server` project in worker threads: the process pool's watchdog needs `child.channel.unref()`, missing in Bun) |
+| `@playwright/test` | **1.65.1** ✅ (E2E backbone, visual regression of print layouts; a11y via `@axe-core/playwright` **4.14.0** ✅) |
+| `@vitest/browser`, `@vitest/coverage-v8` | 5.1.x (same as vitest) ✅ |
+| `@vitest/ui` | 5.1.x (same as vitest; HTML report only, ADR-021) |
+| `eslint` / `eslint-plugin-svelte` | **10.15.0** / **3.24.1** ✅ |
+| `prettier` / `prettier-plugin-svelte` / `prettier-plugin-tailwindcss` | **3.10.1** / **4.2.0** / **0.8.1** ✅ |
 | `pagefind` | **1.6.0** ✅ (the search of the documentation site, Q134, ADR-045: the index of each language built by `scripts/site-build.ts`, its interface loaded when the search opens; prebuilt binaries per platform, no build step) |
 
 ### 2.6 Deployment
 
 | Component | Version | Notes |
 |---|---|---|
-| Base image `oven/bun` | **1.4.4-slim** (build stage) and **1.4.4-distroless** (runtime, Debian trixie) ✅ | Multi-arch (amd64+arm64), non-root user `bun` (uid 1000). Runtime: `yaz-client` with only its linked libraries and a static BusyBox shell, both from Debian trixie packages (ADR-020); healthcheck with `bun -e`. Alpine variant cannot install `yaz`. |
+| Base image `oven/bun` | **1.4.5-slim** (build stage) and **1.4.5-distroless** (runtime, Debian trixie) ✅ | Multi-arch (amd64+arm64), non-root user `bun` (uid 1000). Runtime: `yaz-client` with only its linked libraries and a static BusyBox shell, both from Debian trixie packages (ADR-020); healthcheck with `bun -e`. Alpine variant cannot install `yaz`. |
 | `tailscale/tailscale` | **v1.104.4** ✅ | Sidecar container with `tailscale serve` (HTTPS :443 → app :3000). |
 | Bun single executables | the pinned `bun` | The native packages (Q149, ADR-057): `adapter-bun`'s `compile` option puts the runtime, the server and the page assets in one file per target — `bun-windows-x64-baseline`, `bun-linux-x64-baseline`, `bun-linux-arm64` —, cross-compiled from Linux; the baseline targets run on CPUs without AVX2 (9.56). |
 | NSIS | 3.x [VERIFY: the latest stable] | The Windows installer, built on Linux with `makensis` (9.57). zlib licence. |
@@ -182,7 +182,7 @@ Legend: ✅ verified from the npm registry or the official docs · ⚠️ decisi
         ▼
  ┌────────────────────────── compose stack ──────────────────────────┐
  │  tailscale sidecar  ──serve──►  127.0.0.1:3000  app container      │
- │  (tailscale/tailscale)          shared netns   (oven/bun:1.4.4-    │
+ │  (tailscale/tailscale)          shared netns   (oven/bun:1.4.5-    │
  │                                                 distroless         │
  │  TS_SERVE_CONFIG=serve.json                     + yaz-client)      │
  │                                                    │               │
@@ -433,7 +433,7 @@ Cards can also be printed **on both sides of the sheet** by a printer that print
 
 ### 3.14 Performance and size budgets
 
-- Client JS on core pages (dashboard, circulation, patrons, catalog lists): ≤ 250 KB gzipped total; SVAR grid loaded only on list pages.
+- Client JS on core pages (dashboard, circulation, patrons, catalog lists): ≤ 275 KB gzipped total (owner, ADR-061); SVAR grid loaded only on list pages.
 - Lazy chunks: `barcode-detector` + WASM (~1 MB) only on scan-enabled pages after the user taps "Scansiona"; OpenCV.js (~16.2 MB, ~3.3 MB brotli, `Cache-Control: immutable`) only on the cover-capture page (Q6).
 - DB: WAL, `synchronous=NORMAL`, `busy_timeout=5000`, indices in §4, FTS5 for catalog search; every list query paginated (server-side) or virtualised (grid).
 - Long jobs give the turn: the server answers every request on one JavaScript thread, so the sheets of labels and cards are rendered with breaks (`#lib/server/runtime/breaks.ts`: after `BREAK_AFTER_MS`, 20 ms, of work the job awaits the next turn of the event loop and the requests waiting are served). A sheet of every copy takes as long as before, but the desk and the other pages keep answering meanwhile.
@@ -530,10 +530,10 @@ The user manual, the guides and the presentation site show BiblioViva's screens 
 
 - **Generated.** `bun run docs:shots` is a Playwright run (Chromium) on the test setup: a fresh database with the deterministic demo data, the fixed font configuration of the e2e tests (`tests/fixtures/fontconfig/`), the default colour set and the demo library's name. A shot list, `docs/shots.ts`, names each picture (`circulation/desk-ok`), the page it opens, the windows it is taken in (Q132: **computer** 1280 × 800 at scale 1, **tablet** 834 × 1194 at scale 2 — an upright 11-inch tablet —, **phone** 412 × 915 at scale 2; computer and phone are the windows of the e2e projects; a screen is taken in all three unless the shot names fewer, a detail usually in one), the steps that bring the screen to its state (a scan, a dialog opened, a menu unfolded) and, for a detail, the element to crop to (a desk message, a dialog, a badge). Each picture is taken in every language of the site, the interface switched with the tests' `?lang=` override. A step that fails or an element that is missing fails the run, so a change of the app that breaks a picture is seen at once; a picture that merely looks different is simply taken again.
 - **Format: lossless WebP.** Exact pixels (text and thin lines stay sharp, no compression artefacts), about 60 % smaller than PNG, read by every current browser, encoded by `Bun.Image` (no new package). Tablet and phone screens are taken at scale 2, so they stay sharp on high-density screens; computer screens are shown scaled down to the text column. A figure with more than one window has a switch Computer / Tablet / Telefono (CSS only, no script) that starts on the window closest to the reader's screen (a media query) until the reader picks another.
-- **Not committed.** The pictures are written to `site/.shots/<lang>/<name>.webp` (gitignored) by the site build and frozen with each release in the archive branch (below); the repository keeps the shot list, not the pictures. Only synthetic demo data appear, never a school's installation.
-- **The prose stays Markdown.** The manual (`docs/{it,en}/manual/`) and the guides stay Markdown, readable on GitHub; a picture is placed by a marker line `<!-- figure: circulation/desk-ok -->`, invisible on GitHub. The site converts the Markdown with `Bun.markdown.html` (built into Bun, no new package), and replaces each marker with a numbered `<figure>`: the picture of the page's language, at its width, with its caption as the text alternative. The names of buttons, tabs and pages are written in bold in the prose, and the site check fails when a bold label is not a text of that locale's dictionaries (a short exception list covers bold used for emphasis), so the manual never names a button the app has renamed. `bun run site:check` fails on a marker missing from the shot list, a bold label missing from the dictionaries, a heading anchor missing in one language and a step-number mismatch between the languages. The conversion: `Bun.markdown` gives tables, task lists, code blocks, links and heading ids, and a thin layer of the site build adds the rest — notes and warnings are GitHub alerts (`> [!NOTE]`, `> [!WARNING]`, shown by GitHub too) turned into the site's boxes; the anchors of a page are the same in every language, taken from the English heading at the same place (the parity of the headings is checked), so a help link works in both; a link with an anchor is written with the anchor GitHub makes from the target heading in the page's own language, so it works on GitHub too, and the site turns it into the shared anchor; links between the Markdown files are relative `.md` links, which work on GitHub and become site paths; the variant blocks of the installation steps (8.7) are kept or dropped by path; no footnotes and no raw HTML apart from the markers.
+- **Not committed.** The pictures are written to `site/.shots/<lang>/<name>.<window>.webp` (gitignored; `BV_SHOTS_LANGS` and `BV_SHOTS_WINDOWS` narrow a run, and each pass of a language and a window starts its own server on its own seeded folder, so the passes run side by side) by the site build and frozen with each release in the archive branch (below); the repository keeps the shot list, not the pictures. Only synthetic demo data appear, never a school's installation.
+- **The prose stays Markdown.** The manual (`docs/{it,en}/manual/`) and the guides stay Markdown, readable on GitHub; a picture is placed by a marker line `<!-- figure: circulation/desk-ok -->`, invisible on GitHub. The site converts the Markdown with `Bun.markdown.html` (built into Bun, no new package), and replaces each marker with a numbered `<figure>`: the picture of the page's language, at its width, with its caption as the text alternative. The names of buttons, tabs and pages are written in bold in the prose, and the site check fails when a bold label is not a text of that locale's dictionaries (a short exception list covers bold used for emphasis), so the manual never names a button the app has renamed. `bun run site:check` fails on a marker missing from the shot list, a bold label missing from the dictionaries, a heading anchor missing in one language and a step-number mismatch between the languages. The conversion: `Bun.markdown` gives tables, task lists, code blocks, links and heading ids, and a thin layer of the site build adds the rest — notes and warnings are GitHub alerts (`> [!NOTE]`, `> [!WARNING]`, shown by GitHub too) turned into the site's boxes; the anchors of a page are the ones GitHub makes from its headings, in the page's own language, so a link with an anchor works on GitHub and on the site alike, and a help link of the app keeps one anchor per language (`#lib/ui/help-links.ts`); the parity of the headings between the languages is checked; links between the Markdown files are relative `.md` links, which work on GitHub and become site paths; the variant blocks of the installation steps (8.7) are kept or dropped by path; no footnotes and no raw HTML apart from the markers.
 - **Publishing after a change (owner rule, ADR-050).** The site is published by hand only; so every change that alters what the documentation describes or shows (screens, quoted labels and messages, flows, settings, commands, installation, compose files) updates the pages of `docs/` and the shot list in the same commit, and the coding agent tells the owner that the site must be published again (and the home page built and uploaded again when it changed).
-- **When the pictures are taken.** `bun run ci` takes every picture of the list in Italian (a broken step fails it) and builds the site with them, an English page showing the Italian picture; the site build of the Pages workflow and of a release takes them in every language. The manual's PDF (9.5) is printed from the built site.
+- **When the pictures are taken.** `bun run ci` takes every picture of the list in Italian (a broken step fails it) and builds the site with them (`BV_SHOTS_LANGS=it`), an English page showing the Italian pictures when it has none of its own; the site build of the Pages workflow and of a release takes them in every language. The manual's PDF (9.5) is printed from the built site.
 - **Two sites (Q131, ADR-039).** The **home page** of `biblioviva.org` — the presentation, not versioned, Italian at `/` and English at `/en/` — is `home/`: two hand-written pages with the same markup in each language (`it.html`, `en.html`, a test keeps them mirrors), built by `bun run home:build` (`scripts/home-build.ts`: Lucide icons inlined as one sprite, the drawn screens, the addresses of the sites) into `home/dist/` and uploaded by hand to **Cloudflare Pages** (a direct-upload project: `bun run home:build` also writes `home/biblioviva-home.zip`, which the owner uploads; Cloudflare never builds from the repository); its one short script drives the scroll effects, and the page is complete and still without it or with reduced motion; a few inline lines in the head of the Italian page send a browser that prefers English, or neither language, to `/en/`, unless the visitor chose a language with a switch of `biblioviva.org` (the cookie `bv_lang` shared by the home page, the documentation and the public demo, ADR-047; the same switch in all three: a globe, then IT · EN); the links to the documentation and to the repository appear only once those sites are online (`ONLINE` in the build script: 9.7, 9.36). The **documentation** on `docs.biblioviva.org` is built by a Bun script, `scripts/site-build.ts` (`bun run site:build`; owner decision, ADR-043): the Markdown of `docs/` converted with `Bun.markdown` and a thin layer of its own (figures, notes and warnings, variant blocks, the pages of each installation path, links, the side menus read from the sections' READMEs), wrapped in the layout of the approved mock, written as plain files to `site/dist/` (gitignored) with the assets of `site/assets/` and the pictures of `site/.shots/`, and published by **GitHub Pages** (`site/CNAME`); `bun run site:serve` shows it locally (port 5175). No framework and no new dependency; the only scripts of the pages are the search and the few lines of the language switch (with the lines that open the box of a problem reached by its anchor, 9.46), and the root `/` opens the language of the cookie `bv_lang`, else the browser's. Neither site is **served by BiblioViva**: the app only links to them (9.5b); it keeps adapter-bun and server-side rendering, because it needs a server (sessions, database, remote functions).
 - **Sections of the documentation (owner).** Six, named as nouns in the top bar: **Manuale** (for whoever works at the desk, catalogues or makes the cards: step-by-step guides of the tasks — "Catalogare un libro nuovo", as many as the real situations of a school library need (the guides are the part readers use most) — and one reference page per screen, the target of the help icons), **Amministrazione** (the administrator's account: the first steps in order, one guide for each of its tasks, the reference of the administration pages), **Installazione** (for whoever installs, without experience: the choice of computer and network, the material, then a path of numbered steps in the manner of GOV.UK's step by step — every step visible at the side, the ones done ticked —, each ending with a check before going on; then updating, moving, starting again after a failure, the local-network mode), **Aiuto** (common problems, the glossary — copia, segnatura, tessera, tailnet… —, how to ask for help), **Norme** (for the head teacher, the DSGA, the DPO and the Responsabile per la transizione digitale: what the rules of the public administration ask — data protection with the ready texts for the record of processing and the notice, accessibility, open source, ICT security —, what BiblioViva does and what is left to the school; also one PDF per language, Q154) and, last, **Tecnica** (for whoever knows: deployment, the configuration reference, commands, templates, reports, languages, security — the Markdown of `docs/` as it is, with the contents on the right). Four kinds of page, never mixed (Diátaxis): a guide (one task from start to end: time, permission, what is needed, numbered steps with pictures, the result, possible problems, related pages), a reference page (one screen: what it is for, permission, where it opens from, the picture with numbered callouts and their legend, its parts and messages with stable anchors), an installation step and a technical page. Paths are `/<lang>/<section>/<page>/#<anchor>` with English names in every language (`/it/guide/catalog-a-new-book/`, `/it/manual/checkout/#…`, `/it/install/raspberry-tailscale/3-network/`); the Markdown folders map onto them: each language has its folder `docs/<lang>/`, the sections are folders inside it, so a language is added by adding one folder (`docs/<lang>/manual/guides/<page>.md` → `/<lang>/guide/<page>/`, `docs/<lang>/manual/screens/<page>.md` → `/<lang>/manual/<page>/`, `docs/<lang>/admin/` → `/<lang>/admin/`, `docs/<lang>/setup/` → `/<lang>/install/`, `docs/<lang>/help/` → `/<lang>/help/`, `docs/<lang>/compliance/` → `/<lang>/compliance/`, the English documents of `docs/` → `/<lang>/tech/`). The documentation's home lists the sections with their main pages, frequent questions, what is new in the release and the PDFs. **Search** (Q134): Pagefind, a static index built with the site, one per language, its script loaded only when the search opens; without JavaScript the button leads to the A–Z index (a dependency, with its ADR when 9.7 adds it). Beside the sections, one **overview of the features** (`docs/<lang>/features.md`, at `/<lang>/features/`, a card at the top of the documentation's home and a link on the home page): the settings first (the recommended values of the wizard, changed later from Amministrazione), then a short paragraph per area saying what can be done there, in a plain tone that is not promotional and without lists of links (the site's navigation lists the pages).
 - **Tone (owner).** The documentation is serious and plain, neither chatty nor telegraphic: in Italian the instructions are in the infinitive as Italian manuals write them ("Premere **Salva**", "Leggere l'ISBN con il lettore"), the headings are nouns ("Procedura", "Occorrente", "Risultato", "Possibili problemi", "Verifica prima di proseguire"), every page opens with complete sentences saying what it is for, never a joke or a colloquial aside; English mirrors it with the imperative ("Press **Save**"). The home page addresses the visitor as *tu*, in a slightly serious tone. Everywhere the USB barcode scanner is the normal reader of cards, books and ISBNs; the phone is an optional extra, never presented as required.
@@ -968,7 +968,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Depends on: 1.1
 
 - [x] **4.2 Circulation rules engine**
-  - Tasks: `services/circulation-rules.ts`: `resolveRule(patronType, itemType)` (per-type rule + item-type override), `canCheckout(patron, item, openLoans, now)` → `{ ok } | { ok: false, reason }` with the reason codes of Appendix I: `patron_anonymized`, `item_on_loan_same_patron` / `item_on_loan_other_patron`, `item_not_for_loan`, `item_status_unavailable`, `loan_limit_reached` (the patron type's limit, and an item type's own limit when it sets `maxLoans`), `patron_has_overdues` (blocking only with config `blockIfOverdue`), `canRenew(loan, rule, now)` → reasons `renewal_limit_reached`, `renewal_overdue_blocked` (config), `renewal_hard_due_date` (the codes of Appendix I); `computeDueDate(from, rule, calendar, hardDueDate)`; overrides allowed for `admin` with a reason (logged as `override` event) **only** for the reasons Appendix I marks as overridable (`item_not_for_loan`, `item_status_unavailable`); never for the loan limit or a copy on loan (there is no patron blocking, Q79).
+  - Tasks: `services/circulation-rules.ts`: `resolveRule(patronType, itemType)` (per-type rule + item-type override), `canCheckout(patron, item, openLoans, now)` → `{ ok } | { ok: false, reason }` with the reason codes of Appendix I: `patron_anonymized`, `item_on_loan_same_patron` / `item_on_loan_other_patron`, `item_not_for_loan`, `item_status_unavailable`, `loan_limit_reached` (the patron type's limit, and an item type's own limit when it sets `maxLoans`), `patron_has_overdues` (blocking only with config `blockIfOverdue`), `canRenew(loan, rule, now)` → reasons `renewal_limit_reached`, `renewal_overdue_blocked` (config), `renewal_hard_due_date`, `renewal_early` (a warning to confirm, 9.68) (the codes of Appendix I); `computeDueDate(from, rule, calendar, hardDueDate)`; overrides allowed for `admin` with a reason (logged as `override` event) **only** for the reasons Appendix I marks as overridable (`item_not_for_loan`, `item_status_unavailable`); never for the loan limit or a copy on loan (there is no patron blocking, Q79).
   - Acceptance: exhaustive unit tests for each reason and override.
   - Depends on: 4.1
 
@@ -1122,9 +1122,9 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
 - [ ] **9.3 Accessibility and UX review pass** — keyboard-only checkout/check-in; labels and focus order; contrast; `prefers-reduced-motion`; localized screen-reader labels; axe checks in Playwright on main pages (no serious violations). **UX**: heuristic evaluation of every area against §3.18 and Nielsen's ten heuristics; the five-task timed walkthrough (checkout, check-in, add a book by ISBN, enrol a student with photo, print a class's cards) with two staff members, results and fixes recorded in STATUS.md; microcopy review of every Italian and English string; screenshot review of every screen at 412 px and 1280 px.
   - Accessibility state (code audit against WCAG 2.2 AA; `docs/accessibility.md`, the conformance page, and `docs/studies/adoption.md` §2): fixed — the skip link to `<main id="main">`, the data grid that opened a row on the arrows (now Enter or a click), field hints and errors tied to the control (`aria-describedby`, `aria-invalid`), field borders at 3:1 and placeholders at 4.5:1 in every colour set (contrast test), a visible `:focus-visible` outline, the main navigation labelled. Open — the top bar after the page in the DOM (reading and Tab order), a visible mark on required fields, keyboard alternatives to dragging in the photo, cover and class-picture crops, the phone camera as a modal dialog, long titles clamped at large zoom; axe extended to open dialogs, forms with errors and the camera overlay; the manual checks with NVDA and Orca, zoom 200 %/400 %, text spacing and Windows contrast themes. The open items are step 9.54 (target WCAG 2.2 AA, Q147).
 - [ ] **9.4 Device checklist** — manual checklist in Chromium, desktop window and phone-sized window (412 × 915): camera scanning, photo capture, cover capture with a webcam, printing on the real label stock and card sheets; a run on a real phone is welcome but not required (Q77); results in STATUS.md.
-- [ ] **9.5 Documentation** — `docs/admin-guide.it.md` (Italian: installation summary, configuration, users, rollover, anonymization, backups), `docs/operator-guide.it.md` (Italian: circulation desk, census, cataloging with scanner, printing), `docs/config-reference.md`, `docs/reports-authoring.md`, `docs/templates-authoring.md`, `docs/deploy.md`, the setup guides of 8.7 refreshed with final screenshots, `README.md` and `README.it.md` linking to them. **User manual (owner request):** `docs/it/manual/` and `docs/en/manual/` (one Markdown file per chapter, English a faithful mirror), for non-technical readers, covering every screen in the order of a school year (first start, patrons and cards, census, catalogue, circulation desk, printing, reports, rollover, administration), illustrated with **screenshots generated from the app** (§3.23: the seeded demo data, desktop screens at 1280 px and phone screens at 412 px, each taken in both languages by `bun run docs:shots`), placed by markers in the Markdown; the admin and operator guides use the same pictures. The manual prints well to PDF (one H1 per chapter, numbered chapters, page breaks before chapters, figures with captions that never split across pages, no wide tables), and `bun run manual:pdf` prints the print page of the built site (every chapter in one page per language) to `manual.it.pdf` and `manual.en.pdf` with headless Chromium (Playwright, already a dev dependency: no new package); the PDFs are attached to each release, not committed.
+- [ ] **9.5 Documentation** — `docs/admin-guide.it.md` (Italian: installation summary, configuration, users, rollover, anonymization, backups), `docs/operator-guide.it.md` (Italian: circulation desk, census, cataloging with scanner, printing), `docs/config-reference.md`, `docs/reports-authoring.md`, `docs/templates-authoring.md`, `docs/deploy.md`, the setup guides of 8.7 refreshed with final screenshots, `README.md` and `README.it.md` linking to them. **User manual (owner request):** `docs/it/manual/` and `docs/en/manual/` (one Markdown file per chapter, English a faithful mirror), for non-technical readers, covering every screen in the order of a school year (first start, patrons and cards, census, catalogue, circulation desk, printing, reports, rollover, administration), illustrated with **screenshots generated from the app** (§3.23: the seeded demo data, desktop screens at 1280 px and phone screens at 412 px, each taken in both languages by `bun run docs:shots`), placed by markers in the Markdown; the admin and operator guides use the same pictures. The manual prints well to PDF (one H1 per chapter, numbered chapters, page breaks before chapters, figures with captions that never split across pages, no wide tables), and `bun run manual:pdf` prints the print page of the built site (every chapter in one page per language) to `manual.it.pdf` and `manual.en.pdf` with headless Chromium (Playwright, already a dev dependency: no new package); the PDFs are attached to each release, not committed. The PDF holds the manual only (its guides and screens); Amministrazione, with readers of its own, is not part of it.
   - Method (owner): the documentation is written section by section by coding agents (Sonnet; Haiku for mechanical checks), Italian first. `docs/writing-guide.md` is the brief every writer follows: the readers of each section, the tone of §3.23, the four kinds of page with their outline, the figure markers and the bold labels taken from the dictionaries, the scanner as the normal reader, links to the official pages, no dates or history, every fact checked in the code. For each section the page tree is agreed with the owner first; writers take one group of pages each (at most four at once) and hand over the Italian pages, the figures they need (entries for `docs/shots.ts`; third-party screenshots as a list for the owner) and the facts they could not check, marked [VERIFY]; a fresh agent reviews the pages against the code (commands, paths, labels, steps); the owner reads and corrects them; then the English mirror is written and checked for parity (headings, steps, markers, anchors), by an agent until `bun run site:check` exists. Order: the installation section (8.7), the site's tooling (`site:build`, `docs:shots`, `site:check`; 9.7), the Aiuto section (the glossary first), the manual chapter by chapter, the Amministrazione section (from `docs/admin-guide.*.md`), the Tecnica section (the English documents of `docs/`), the PDF.
-- [ ] **9.5b Contextual help: info icons that open the manual** (owner idea)
+- [x] **9.5b Contextual help: info icons that open the manual** (owner idea)
   - Tasks: the user manual is the user-manual section of the public site (9.7, §3.23: one page per chapter, stable anchors per section); the icons open it on the site in the installation's language (`https://docs.biblioviva.org/<lang>/manual/<page>/#<section>`, `rel="external"`; one documentation, the current release's, §3.23), since BiblioViva does not serve the site (without internet, e.g. in the local-network mode of 8.8 on a network that is closed to the outside, the link simply does not open); the help icon of the top bar (`help` icon, tooltip "Guida", every page: the page that explains the screen, 9.67) and small `HelpLink` icons in the trickier spots (fast-add stages, import wizard, cover capture, labels, backups, language packs) opens the matching manual page in a new tab; the mapping page → manual anchor lives in one table (`#lib/ui/help-links.ts`) so a renamed chapter is fixed in one place; `bun run site:check` checks that every anchor of the table exists in the generated HTML.
   - Acceptance: every main page has a help icon; clicking it opens the right chapter in both languages; the anchors test fails on a broken link; the small icons of the trickier spots stay unobtrusive (secondary tone, no text next to the title); the top bar's help button is the visible one of 9.47.
   - Depends on: 9.5, 9.7
@@ -1142,7 +1142,7 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Acceptance: Lighthouse PWA installability checks pass on the mobile project; an e2e test verifies the manifest, the registered worker and that `/healthz` and remote calls are never served from the cache; the OpenCV chunk is served from the cache on the second load of the cover page. (Lighthouse 12 has no PWA category, so the e2e test runs Chromium's own installability check through the DevTools protocol; the setup guide paragraph is written with the manuals in 9.5.)
   - Depends on: 3.7, 9.8
 
-- [ ] **9.6 Release v0.9.0, the first release of the public beta** (the complete version of this plan is 0.9.0, owner decision; Q133, ADR-048) — made from the public repository of 9.36, where the **public beta** has started (the READMEs and the home page say so), as its first tagged release: changelog, git tag, multi-arch image `ghcr.io/<owner>/biblioviva:0.9.0` + `latest` (`latest` goes to the highest stable tag only, ADR-054), GitHub release notes, the documentation site published by hand from the release's tag (§3.23; the same at every release), `softwareVersion` and `releaseDate` of `publiccode.yml` set (9.55), STATUS.md closed. No workflow starts by itself (ADR-054): on the tag the owner runs, when the coding agent proposes them, `publish`, `i18n-packs` and `pages`, and `slow` as a last check. Depends on: 9.1–9.5b, 9.7, 9.8, 9.9, 9.19–9.21, 9.36, 9.44–9.60, 9.62–9.67 and the whole of Phases 11, 12 and 13 (required for the release, owner decision).
+- [ ] **9.6 Release v0.9.0, the first release of the public beta** (the complete version of this plan is 0.9.0, owner decision; Q133, ADR-048) — made from the public repository of 9.36, where the **public beta** has started (the READMEs and the home page say so), as its first tagged release: changelog, git tag, multi-arch image `ghcr.io/<owner>/biblioviva:0.9.0` + `latest` (`latest` goes to the highest stable tag only, ADR-054), GitHub release notes, the documentation site published by hand from the release's tag (§3.23; the same at every release), `softwareVersion` and `releaseDate` of `publiccode.yml` set (9.55), STATUS.md closed. No workflow starts by itself (ADR-054): on the tag the owner runs, when the coding agent proposes them, `publish`, `i18n-packs` and `pages`, and `slow` as a last check. Depends on: 9.1–9.5b, 9.7, 9.8, 9.9, 9.19–9.21, 9.36, 9.44–9.60, 9.62–9.69 and the whole of Phases 11, 12 and 13 (required for the release, owner decision).
 
 - [ ] **9.10 Field testing towards 1.0.0** (owner decision; Q133) — the public beta: the school year 2026/27 at the school on 0.9.x, until the end of lessons in June 2027; 1.0.0 is released for the start of the school year 2027/28 (September 2027), when the library begins to use BiblioViva for real; every problem found becomes a fix released as 0.9.x (patch releases, changelog); 1.0.0 is tagged when the owner declares the field test over, after a run of `bun run test:browsers` (Chromium, Firefox, WebKit, Q110) whose failures are fixed or explained. Until then the database keeps a single regenerated migration (Q82); a schema change during the field test is carried by export and restore. From 1.0.0 an update never loses data: the migrations of 9.37.
 
@@ -2149,6 +2149,43 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
     `bun run ci` green.
   - Depends on: 5.1
 
+- [x] **9.68 A warning before an early renewal** (owner request, Q159; required for 0.9.0)
+  - Context: a pupil sometimes asks to renew a book a few days after borrowing it, and the desk renews it without
+    noticing; the owner wants the desk to stop and ask.
+  - Tasks: the current period of a loan runs from its last renewal (or, never renewed, from the loan) to its due
+    date, in days of `library.timezone`; a renewal is **early** when less than half of the period's days have passed
+    (exactly half is not early). The renewal services answer an early renewal with the reason code `renewal_early`
+    of Appendix I instead of renewing, unless the request carries the confirmation; the warning comes after the
+    refusals (renewal limit, overdue block, hard due date) and only for a renewal that would move the due date; any
+    account with `loans` confirms it, and the administrator's override does not skip it. Every place a renewal
+    starts (the return desk, the loan desk when the copy is already lent to the same patron, the patron's loans,
+    the lists of loans, the renewal of all the loans of a patron) shows a dialog in the middle of the page with
+    what happened and the two buttons **Rinnova comunque** and **Annulla**; a renewal of several loans asks once,
+    listing the early copies: **Rinnova comunque** renews every loan asked, **Annulla** none; the focus starts on
+    **Annulla**, so a stray Enter of the scanner changes nothing. No setting: the rule is fixed.
+  - Docs: the pages of the manual that describe renewals, both languages.
+  - Acceptance: unit tests of the rule (half of the period exactly, odd periods, a renewed loan, the confirmation,
+    the order with the refusals); Playwright on both projects: confirm and cancel at the desk and on the patron's
+    page; `bun run ci` green.
+  - Depends on: 4.5
+
+- [x] **9.69 Non-Latin names in the search and the segnatura** (owner decision, Q169; required for 0.9.0; the part of
+  14.9 that already touches Italian schools)
+  - Context: pupils and authors with Arabic, Hebrew, Cyrillic, Greek or Asian names already appear in Italian
+    schools. The search text split their words (the marks of Arabic and Hebrew became spaces: `إبراهيم` was
+    searched as `ا براهيم`), the catalogue's full-text index did not match a word written with its marks against the
+    same word without them, and the letters of the author in the segnatura kept only `A–Z`, so `Достоевский` or
+    `نجيب محفوظ` gave a segnatura without them (rtl study §10).
+  - Tasks: one fold of the search text, on write and on query, for the patrons, the wishes and the catalogue's index:
+    every combining mark dropped, the Arabic letter variants and digits unified, the Latin results unchanged; the
+    catalogue's index rebuilt when its definition changes; `author3` and `title3` by Unicode letters, the Latin ones
+    unchanged, the Arabic article skipped, the Hebrew one in titles only (a Hebrew surname may begin with ה) [VERIFY
+    with a native librarian]; names of Chinese, Japanese or Korean script give two characters.
+  - Acceptance: unit tests (the fold: Arabic, Hebrew, Latin unchanged; the author's letters: Latin, Cyrillic, Greek,
+    Arabic with the article, Hebrew, Chinese; `محفوظ، نجيب` gives `محف`); searching `احمد` finds `أحمد` and `كتاب` finds `كِتَابُ` among the
+    patrons and in the catalogue, `jose` still finds `José`; `bun run ci` green.
+  - Depends on: 5.1, 9.50
+
 ### Phase 10 — Post-v1 extensions (Koha-inspired; each needs owner approval)
 
 - [ ] **10.1 Personal staff accounts from the admin UI** (`security.auth.mode = 'database'`: create/edit users, roles, reset password, must-change-password flag, per-user locale; config accounts keep working alongside) — Q20.
@@ -2299,6 +2336,137 @@ Each step lists **Goal**, **Tasks**, **Deliverables**, **Acceptance criteria** a
   - Acceptance: `bun run ci` green; the coverage map has no pending entry; the backup and export round trips include the class pictures.
   - Depends on: 13.1–13.3
 
+### Phase 14 — Right-to-left languages (owner request; not required for 0.9.0)
+
+**Owner request:** Arabic and Hebrew wait until the interface can be laid out right to left (Q136). The study
+`docs/studies/rtl.md` ("rtl study" below) audits the code and proposes these steps; its questions are Q160–Q169, and
+until the owner answers them their defaults apply. **The phase waits until the SVAR data grid supports right to left**
+(Q167, Q169); the two defects of non-Latin names that already touch Italian schools are step 9.69, so 14.9 keeps
+only what is left of it. Estimates are agent-days, tests and docs included (about 26 in all).
+
+- [ ] **14.1 Logical layout everywhere and a lint guard** (useful now; ≈ 1½ days)
+  - Context: 61 physical tokens in 39 files and 4 declarations (rtl study §3). Converting them changes nothing in LTR and removes
+    the largest source of mirrored-layout bugs; the guard keeps it so.
+  - Tasks: convert the ≈ 50 mechanical tokens and the `app.css` / `Table.svelte` declarations; decide the 5 judgement cases (rtl study §3.1);
+    replace the `ChoiceButtons` `scrollLeft` maths; replace the `←` of `DetailLayout` by the `back` icon; write
+    `scripts/check-logical-css.ts` with an allow list (the designer canvas, centring pairs, print sheet geometry, a
+    comment per entry) and add it to `lint` and `lint:ci`; add the rule to CLAUDE.md (UX rules) and
+    `docs/design-system.md`.
+  - Acceptance: `bun run lint` fails on a sample `ml-2` and passes on the repository; the print baselines and all
+    e2e specs are unchanged in Chromium (LTR); `bun run ci` green.
+  - Depends on: —
+- [ ] **14.2 Direction plumbing and the forced-direction test mode** (useful now; ≈ 2 days)
+  - Context: rtl study §3.4, rtl study §14.1.
+  - Tasks: `#lib/shared/direction.ts` (`directionOf(locale)` from `sveltekit-i18n/utils` + the pack's optional `dir`);
+    `dir` in `app.html`, `transformPageChunk`, `printDocument` / `previewDocument` (about a dozen call sites), the refusal page, the
+    web manifest, the language switch items; the root layout effect (`lang`, `dir`) and `<LocaleProvider>`; `?dir=rtl` and
+    `BV_FORCE_DIR` (gated like `?lang=`, never in production); Playwright projects `desktop-rtl` / `mobile-rtl` running a first
+    list of specs; the `.font-mono` island rule; the select chevron and note-corner rules.
+  - Acceptance: an Italian page with `?dir=rtl` has `<html dir="rtl" lang="it">`; tabs answer to the arrow keys in the
+    mirrored order; a menu's submenu opens to the left; a toast appears bottom-left; the forced mode is refused in production;
+    unit tests of `directionOf` (ar, he, fa, ur, prs with `dir`, it, en); `bun run ci` green.
+  - Depends on: 14.1
+- [ ] **14.3 Mirrored icons and directional glyphs** (≈ 1 day)
+  - Tasks: the CSS rule of rtl study §4 for `back`, `forward`, `undo`, `logout` (and `lists` if the owner wants it); the list kept
+    in `icons.ts` as a documented set with a unit test that every listed class exists in Lucide; the rule of the
+    `→` separators in messages (rtl study §3.3) in `docs/writing-guide.md`.
+  - Acceptance: browser test: computed `scale` is `-1 1` in `dir="rtl"` and `1` in `ltr` for the four icons, `1` for
+    the clock and the check; the grid pager's previous and next point the right way.
+  - Depends on: 14.2
+- [ ] **14.4 Bidirectional text: user data, placeholders, inputs, codes** (≈ 2½ days; the data parts are useful now)
+  - Tasks: `Input` / `Textarea` / `Select` wrappers: `dir="auto"` by default, `dir="ltr"` for `mono`, e-mail, URL, number,
+    date, password and the barcode fields; `<bdi>` in the shared list and detail components that show titles, authors and
+    names (`DetailLayout`, `MediaCard`, `PatronStatusCell`, desk messages, badges, `NoteTile`); `t()` wraps string parameters
+    in FSI…PDI when the locale is RTL; the barcode containers `dir="ltr"`; `FormErrors` with `<bdi>`.
+  - Acceptance: component tests: an Arabic title in an Italian screen and a Latin title in an RTL screen both show
+    their punctuation right; the desk message of a loan with `«{{title}}»` for «Who am I?» and «كليلة ودمنة» in both
+    directions; unit tests of the wrapper (strings wrapped, numbers and codes not, none in LTR); axe clean.
+  - Depends on: 14.2
+- [ ] **14.5 The data grid in right-to-left** (≈ 3 days, risk up to 6)
+  - Context: rtl study §5.1.
+  - Tasks: `DataGrid.svelte` keeps the grid in an LTR island when the page is RTL, reverses the columns, scrolls to the end
+    after mount and on data replacement, gives cells `unicode-bidi: plaintext; text-align: start`, mirrors the pinned
+    (`fixed`) columns and the footer; `GridPager` and `GridFooter` follow the page's direction; report the fault to SVAR with
+    the probe.
+  - Acceptance: Playwright in `desktop-rtl` on the catalogue, patrons and loans grids: the first column of the reading order
+    is at the right edge, horizontal scrolling reaches every column, header and body stay in step, sorting by a header,
+    selecting by arrows and clicking a row opens it, resize works; a Latin author reads `Rowling, J. K.`; an LTR page is
+    byte-identical in behaviour (the existing grid specs).
+  - Depends on: 14.2, 14.4
+- [ ] **14.6 Numbers, dates and calendars for any pack** (≈ 1½ days; useful for the `fa` and `ar-*` packs only)
+  - Tasks: `formatLocale(code)` (`-u-nu-latn-ca-gregory` by default; `ui.digits: "native"` lifts the digits pin, Q162)
+    used by `#lib/ui/format.ts`, `#lib/shared/dates.ts`, `decorate.ts` and `{{count:number}}` in messages; the `ui.digits`
+    setting in Amministrazione → Aspetto e lingua and the configuration archive (Phase 11 completeness rule); weekdays,
+    `weekStart` presets for the countries of 14.13.
+  - Acceptance: unit tests for `ar`, `ar-EG`, `fa`, `he`, `ur` with both settings (Latin digits and Gregorian by default
+    in all of them; `native` gives Arabic-Indic or Persian digits and never changes a barcode or a card number); the
+    ISO day shown for `fa` equals the stored day.
+  - Depends on: —
+- [ ] **14.7 Fonts for Arabic, Hebrew, Persian and Urdu** (≈ 1 day)
+  - Tasks: the chosen families (Q165) as `@fontsource-variable/*` 5.3.0 exact versions, only the Arabic and Hebrew subset
+    files imported with their `unicode-range`; the stacks of `--font-sans` and the Skeleton typography variable extended;
+    `Chart.defaults.font.family`; ADR in `docs/DECISIONS.md` (supersedes nothing: it extends ADR-044) and the size added to
+    `docs/performance.md`; the fontconfig of the e2e baselines gains an Arabic and Hebrew face; `deps:generate`.
+  - Acceptance: a Latin page requests no new font file (network assertion); an Arabic and a Hebrew page request exactly the
+    subset files they use; a browser test that every letter of the Arabic, Persian and Urdu alphabets and of the Hebrew
+    alphabet has a glyph in the chosen faces; build output grows by less than 200 KB.
+  - Depends on: 14.2
+- [ ] **14.8 Charts, print templates, slips, designer and exports** (≈ 3 days)
+  - Tasks: `ReportChart` (`rtl`, `textDirection`, `x.reverse`, `y.position`, fonts awaited); `dir` and `dir="auto"` in the
+    shipped faces and their variants without photo, the slips and the labels (`barcode` containers `dir="ltr"`), an
+    optional `…-rtl` card template if the owner wants it (Q163); the designer's canvas LTR island, the text-direction field of
+    the text style panel (`direction`, `unicode-bidi` in the element's `style`, round trip kept); ODS `writing-mode`;
+    `docs/templates-authoring.md`.
+  - Acceptance: visual baselines of a card, a label pair and the overdue slip with an Arabic and a Latin name in
+    `desktop-rtl`; the designer saves and reloads an element with `direction: rtl` and changes no other byte; ODS opens
+    right-to-left in LibreOffice `[VERIFY]`; chart legend and tooltip align with the page.
+  - Depends on: 14.2, 14.4, 14.7
+- [ ] **14.9 Searching and filing non-Latin names and titles** (useful now; ≈ 3 days)
+  - Context: rtl study §10.
+  - Tasks: `foldForSearch` and its use in `patron.search_name`, the wishlist and the typo-tolerant search (words, not
+    fragments); mirror columns for the catalogue's FTS (fold on write in the services, same fold on query, a stamp of the
+    tokenizer in `applyFtsMigration`, `rebuildFts` after the schema's regeneration), the Latin results unchanged; `author3`
+    and `title3` Unicode-aware with the Arabic and Hebrew articles and `،`; configurable articles per pack language if the
+    owner wants (Q164); the single migration regenerated (Q82), `docs/database.md`, `docs/navigation.md` untouched.
+  - Acceptance: unit tests (rtl study §14.6); searching `احمد` finds `أحمد` and `كِتَابُ` finds `كتاب` in patrons and in the
+    catalogue; `jose` still finds `José`; the call number of a record by `محفوظ، نجيب` is `… محف` (or the chosen rule), of
+    `Достоевский` is `… ДОС`; e2e: add, search and print a label for an Arabic-named author in the Italian interface.
+  - Depends on: —
+- [ ] **14.10 USB scanners on Arabic, Hebrew and Persian keyboards** (useful for the Cyrillic and Greek layouts too; ≈ 2½ days)
+  - Context: rtl study §9.
+  - Tasks: record `event.code` + modifiers in the scan field (`BarcodeInput`, the desk field) and give `repairCandidates` the
+    string rebuilt from the physical keys as one more candidate; Arabic-Indic and Persian digits mapped to Latin in
+    `normalizeScan`; the setup wizard's layout hint for RTL languages; `docs` (setup guide: «set the scanner to US keyboard
+    mode, or leave it, both work»).
+  - Acceptance: unit tests on recorded sequences of `2026-C0042` on simulated Arabic, Hebrew, Persian, Russian layouts
+    (`code` set, `key` the local letter); an e2e that types such a sequence into the desk field and checks out the copy; the six
+    existing layouts' tests unchanged.
+  - Depends on: —
+- [ ] **14.11 Language-pack tooling for right-to-left** (≈ 1½ days)
+  - Tasks: `OWN_SCRIPTS` for `ar fa ur ps sd ckb he yi`; the checks of rtl study §13 (`→`, bidi controls, placeholders next to Latin
+    letters); `pack.json` optional `dir`; the plural tests for Arabic and Hebrew; the glossary template with the keys of
+    rtl study §13; the grid words travel in the pack (`gridWords()` reads a pack's `grid` block); `docs/writing-guide.md` and
+    `i18n-packs/README.md`.
+  - Acceptance: `bun run i18n:check` accepts a sample `ar` pack and refuses one with `→`; a pack with `zero one two few many other`
+    renders 0, 1, 2, 3, 11, 100 correctly; one with a missing `few` is refused.
+  - Depends on: 14.6 (for the digits policy)
+- [ ] **14.12 The Arabic and Hebrew packs, then Persian and Urdu** (≈ 3 days of agent work + the owner's reviewers' time)
+  - Tasks: glossaries (Sonnet) and the machine translation of `ar` and `he` (Haiku, chunks of 200, ADR-051's pipeline),
+    `translation: "machine"` until a native speaker has read them; the release workflow lists them; Q136 and step 9.39 text
+    updated; the RTL project runs with `?lang=ar` and `?lang=he` on the main pages (axe + screenshots for the owner's
+    review); `fa` and `ur` follow when a reviewer exists.
+  - Acceptance: `bun run i18n:status` green for `ar` and `he`; the e2e RTL run, axe and the visual baselines green; the
+    reviewers' remarks recorded; the packs appear in Aspetto e lingua and switch the direction, the font and the digits.
+  - Depends on: 14.1 – 14.11, 9.39
+- [ ] **14.13 Presets, documentation notes and the About page** (≈ 1 day)
+  - Tasks: school presets for the RTL countries (rtl study §15.3: Israel, Saudi Arabia, Egypt, UAE, Morocco, Iran, Jordan) with
+    their weeks (`weekStart`), `[VERIFY]` marks and the labels in their script; a line in `docs/accessibility.md`, the
+    manual page of languages, `docs/templates-authoring.md` and the README of the packs; PLAN.md rtl study §3.16 and the CLAUDE.md
+    rules updated (the direction rule, the logical-properties rule).
+  - Acceptance: presets validate (`presets.test.ts`); the docs pages build; the documentation site is published again (the
+    owner's step, ADR-050).
+  - Depends on: 14.12
+
 ---
 
 ## 6. Koha features worth considering (suggestions)
@@ -2403,6 +2571,7 @@ For v0.9.0: all Phase 0–9, 11, 12 and 13 steps ticked (except 9.17, the public
 | Public beta | 9.36 | The public repository from a snapshot: the beta starts, the remaining steps of 0.9.0 developed in public |
 | v0.9.0 | 9 | Hardened, tested, documented release: the complete version of this plan, the first tagged release of the public beta (9.6) |
 | v1.0.0 | 9.10, 9.37 | After the field test of the school year 2026/27 and the fixes it brings; for the start of the school year 2027/28; updates with migrations from here on |
+| M11 Right to left | 14 | Logical layout, direction, bidirectional text, the grid, fonts, search and scanners for non-Latin scripts; the Arabic and Hebrew packs (waits for the grid, Q167) |
 
 ---
 
@@ -2618,6 +2787,35 @@ Each item: **question — why it matters — default used until decided (and rec
   computer the guide advises **Docker with Tailscale** (the compose file is ready to copy, like many projects show
   it) and the **Debian package on the local network**; the question of the method stays, marked for experts. No
   other question for now; the times of the steps are estimates.*
+- [x] **Q159 — Early renewals (resolved, owner request; step 9.68):** should the desk warn when a loan is renewed
+  too soon? — *Decision: yes, when less than half of the days of the loan's current period have passed; the
+  warning says so and asks to confirm, or to cancel the renewal.*
+
+### Right-to-left languages (Phase 14, `docs/studies/rtl.md` §16)
+
+- [ ] **Q160 — Which right-to-left languages first?** a) Arabic and Hebrew, b) Arabic only, c) Arabic and Hebrew, then
+  Persian and Urdu when a reviewer exists, d) none for now, only the steps useful already (14.1, 14.2, 14.9, 14.10).
+  *Default: c.*
+- [ ] **Q161 — Who reads the Arabic and Hebrew translations?** a) a named reader, the packs ship as reviewed; b) nobody,
+  the packs ship as `machine` with a visible warning and are not advertised; c) not published. *Default: b.*
+- [ ] **Q162 — Digits and calendars for Arabic, Persian and Urdu?** a) Latin digits and the Gregorian calendar
+  everywhere, with a setting `ui.digits` for the native digits; b) the language's own digits by default; c) a Solar
+  Hijri display for Persian as a later step. *Default: a.*
+- [ ] **Q163 — Print templates in a right-to-left school?** a) the shipped faces stay as drawn, the text elements follow
+  the text's direction; b) also a mirrored card template; c) every shipped template mirrored with a switch.
+  *Default: a.*
+- [ ] **Q164 — The segnatura of Arabic and Hebrew authors?** a) the first three letters of the surname in the author's
+  script, the article skipped; b) a Latin transliteration typed by hand; c) the title's initial. *Default: a.*
+- [ ] **Q165 — Fonts?** a) Noto Sans Arabic and Noto Sans Hebrew; b) Vazirmatn and Noto Sans Hebrew; c) the system's
+  fonts only. *Default: a.*
+- [ ] **Q166 — The documentation in right-to-left languages?** a) Italian and English only, the English pages for every
+  other language; b) the manual translated into Arabic once the packs exist. *Default: a.*
+- [x] **Q167 — The data grid (SVAR has no right-to-left mode)?** (resolved, owner decision) a) the grid kept left to right with its columns
+  reversed; b) wait for a fix upstream and hold the packs back; c) another grid. *Decision: b — Phase 14 waits until the SVAR grid supports right to left; until then nothing of it is planned.*
+- [ ] **Q168 — Scanners on Arabic, Hebrew and Persian keyboards?** a) the physical keys read by the scan field, for
+  every layout; b) tables for Arabic and Hebrew only; c) nothing, the school sets the scanner's layout. *Default: a.*
+- [x] **Q169 — When?** (resolved, owner decision) a) the steps useful already (14.1, 14.2, 14.9, 14.10, the data parts of 14.4) before 0.9.0, the
+  rest after; b) the whole phase before 0.9.0; c) the whole phase after 0.9.0. *Decision: the two defects that already touch Italian schools are fixed now as step 9.69 (the search of non-Latin names and titles, the segnatura of non-Latin authors); the rest of the phase later, once the grid supports right to left (Q167). The other questions wait with the phase.*
 
 ---
 
@@ -3107,6 +3305,7 @@ Single source for the messages of the checkout and check-in desks. Every case ha
 | `renewal_limit_reached` | renew | "*{title}* è già stato rinnovato {n} volte, il massimo. Deve essere restituito." | "Restituisci", "Forza (solo admin)" |
 | `renewal_overdue_blocked` | renew | "*{title}* è in ritardo di {days} giorni e le regole non consentono il rinnovo." | "Restituisci", "Forza (solo admin)" |
 | `renewal_hard_due_date` | renew | "*{title}* non si può rinnovare: la scadenza è già il {due}, l'ultimo giorno di prestito di quest'anno." | "Restituisci" |
+| `renewal_early` | renew (desk, patron page, loans list, "Rinnova invece" at check-in): less than half of the loan's current period has passed (9.68); a warning any account with `loans` confirms, in a dialog titled "Rinnovo anticipato" | "*{title}* è in prestito da {elapsed} giorni su {period}: non è ancora passata metà del periodo del prestito (scadenza {due}). Rinnovando, la nuova scadenza sarà il {newDue}." | "Rinnova comunque", "Annulla" (the focus starts on it; nothing changes, the focus goes back to the field) |
 | `duplicate_scan` | checkout session | "*{title}* è già nell'elenco di questo prestito." | — |
 | `not_on_loan` | check-in | "*{title}* non risulta in prestito: nessuna restituzione da registrare. Se era prestato senza registrazione, il libro è comunque disponibile." | — |
 | `already_returned_today` | check-in | "*{title}* è già stato restituito oggi alle {time}." | — |

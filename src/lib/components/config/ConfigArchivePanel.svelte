@@ -164,19 +164,22 @@
 			download={refuseDownload ? undefined : true}
 			onclick={refuseDownload}
 			data-testid="config-export"
-			>{i18n.t(
+		>
+			{i18n.t(
 				exportHref === "/admin/config/export"
 					? "config.archive.export"
 					: "config.archive.exportSome",
-			)}</Button
-		>
+			)}
+		</Button>
 		<FileButton
 			icon={UploadIcon}
 			accept=".zip,application/zip"
 			onchange={onFile}
 			disabled={checking || importing}
-			data-testid="config-import-file">{i18n.t("config.archive.import")}</FileButton
+			data-testid="config-import-file"
 		>
+			{i18n.t("config.archive.import")}
+		</FileButton>
 	</Row>
 	{#if exportable.current}
 		<Disclosure
@@ -277,16 +280,18 @@
 				</Disclosure>
 			{/if}
 			<Row justify="end">
-				<Button icon={CancelIcon} onclick={cancel} disabled={importing}
-					>{i18n.t("common.actions.cancel")}</Button
-				>
+				<Button icon={CancelIcon} onclick={cancel} disabled={importing}>
+					{i18n.t("common.actions.cancel")}
+				</Button>
 				<Button
 					variant="primary"
 					icon={ImportIcon}
 					onclick={() => (confirm = true)}
 					disabled={!check.ready || importing || rechecking || importParts.length === 0}
-					data-testid="config-import-apply">{i18n.t("config.archive.apply")}</Button
+					data-testid="config-import-apply"
 				>
+					{i18n.t("config.archive.apply")}
+				</Button>
 			</Row>
 		</section>
 	{/if}

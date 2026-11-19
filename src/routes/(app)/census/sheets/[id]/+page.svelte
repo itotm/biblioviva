@@ -250,10 +250,11 @@
 			selected = null;
 		}}
 		data-testid="sheet-edit"
-		>{mode === "view"
-			? i18n.t("patrons.census.sheet.edit")
-			: i18n.t("patrons.census.sheet.editDone")}</Button
 	>
+		{mode === "view"
+			? i18n.t("patrons.census.sheet.edit")
+			: i18n.t("patrons.census.sheet.editDone")}
+	</Button>
 {/snippet}
 
 <Page width="2xl">
@@ -269,16 +270,20 @@
 				icon={SaveIcon}
 				disabled={busy || (view?.plan.save.length ?? 0) === 0}
 				onclick={() => (confirmSave = true)}
-				data-testid="sheet-save">{i18n.t("patrons.census.sheet.save")}</Button
+				data-testid="sheet-save"
 			>
+				{i18n.t("patrons.census.sheet.save")}
+			</Button>
 			{#if view}
 				<Button
 					variant="error-outlined"
 					icon={DeleteIcon}
 					disabled={busy}
 					onclick={() => (confirmDelete = true)}
-					data-testid="sheet-delete">{i18n.t("patrons.census.sheet.deleteSheet")}</Button
+					data-testid="sheet-delete"
 				>
+					{i18n.t("patrons.census.sheet.deleteSheet")}
+				</Button>
 			{/if}
 		{/snippet}
 	</PageHeader>
@@ -327,9 +332,9 @@
 						     second ("Correggi riquadri", then adding and removing a frame) -->
 						<Card gap="3" data-testid="sheet-toolbar">
 							<fieldset class="min-w-0">
-								<legend class="sr-only"
-									>{i18n.t("patrons.census.sheet.kind")}</legend
-								>
+								<legend class="sr-only">
+									{i18n.t("patrons.census.sheet.kind")}
+								</legend>
 								<Row role="radiogroup" data-testid="sheet-kind">
 									{#each SHEET_KINDS as k (k)}
 										<Button
@@ -340,8 +345,9 @@
 											disabled={busy}
 											onclick={() => void setKind(k)}
 											data-testid="sheet-kind-{k}"
-											>{i18n.t(KIND_LABELS[k])}</Button
 										>
+											{i18n.t(KIND_LABELS[k])}
+										</Button>
 									{/each}
 								</Row>
 							</fieldset>
@@ -354,8 +360,9 @@
 										onclick={() => (mode = mode === "draw" ? "edit" : "draw")}
 										disabled={busy}
 										data-testid="sheet-add-frame"
-										>{i18n.t("patrons.census.sheet.addFrame")}</Button
 									>
+										{i18n.t("patrons.census.sheet.addFrame")}
+									</Button>
 								{/if}
 								{#if selected !== null && mode === "edit"}
 									{@const position =
@@ -366,18 +373,19 @@
 										onclick={removeFrame}
 										disabled={busy}
 										data-testid="sheet-delete-frame"
-										>{i18n.t("patrons.census.sheet.deleteFrame", {
-											n: position,
-										})}</Button
 									>
+										{i18n.t("patrons.census.sheet.deleteFrame", {
+											n: position,
+										})}
+									</Button>
 								{/if}
 							</Row>
 						</Card>
-						<Hint data-testid="sheet-kind-hint"
-							>{i18n.t(KIND_HINTS[view.sheet.kind])}{untouched
+						<Hint data-testid="sheet-kind-hint">
+							{i18n.t(KIND_HINTS[view.sheet.kind])}{untouched
 								? ` ${i18n.t("patrons.census.sheet.kindAgain")}`
-								: ""}</Hint
-						>
+								: ""}
+						</Hint>
 						<SheetPicture
 							src="/media/class-sheets/{data.id}"
 							width={view.sheet.width}
@@ -391,13 +399,13 @@
 							{onadd}
 						/>
 						{#if mode !== "view"}
-							<Hint data-testid="sheet-edit-hint"
-								>{mode === "draw"
+							<Hint data-testid="sheet-edit-hint">
+								{mode === "draw"
 									? i18n.t("patrons.census.sheet.addFrameHint")
 									: view.sheet.kind === "scan"
 										? i18n.t("patrons.census.sheet.editHintScan")
-										: i18n.t("patrons.census.sheet.editHint")}</Hint
-							>
+										: i18n.t("patrons.census.sheet.editHint")}
+							</Hint>
 						{/if}
 					</section>
 
@@ -442,25 +450,27 @@
 												<Badge
 													tone="success"
 													data-testid="sheet-saved-{f.position}"
-													>{i18n.t("patrons.census.sheet.saved", {
+												>
+													{i18n.t("patrons.census.sheet.saved", {
 														name: nameOf(f.patronId),
-													})}</Badge
-												>
+													})}
+												</Badge>
 											{:else if f.state === "ignored"}
-												<Hint>{i18n.t("patrons.census.sheet.ignored")}</Hint
-												>
+												<Hint>
+													{i18n.t("patrons.census.sheet.ignored")}
+												</Hint>
 											{:else if f.state === "erased"}
-												<Hint data-testid="sheet-erased-{f.position}"
-													>{i18n.t("patrons.census.sheet.erased")}</Hint
-												>
+												<Hint data-testid="sheet-erased-{f.position}">
+													{i18n.t("patrons.census.sheet.erased")}
+												</Hint>
 											{:else}
 												<label class="block">
-													<span class="sr-only"
-														>{i18n.t("patrons.census.sheet.choose")}
+													<span class="sr-only">
+														{i18n.t("patrons.census.sheet.choose")}
 														{i18n.t("patrons.census.sheet.frame", {
 															n: f.position,
-														})}</span
-													>
+														})}
+													</span>
 													<Select
 														value={f.patronId === null
 															? ""
@@ -477,11 +487,9 @@
 															})}
 														data-testid="sheet-choose-{f.position}"
 													>
-														<option value=""
-															>{i18n.t(
-																"patrons.census.sheet.nobody",
-															)}</option
-														>
+														<option value="">
+															{i18n.t("patrons.census.sheet.nobody")}
+														</option>
 														{#each view.members as m (m.id)}
 															{@const other = holder.get(m.id)}
 															{@const elsewhere =
@@ -493,7 +501,8 @@
 															<option
 																value={String(m.id)}
 																disabled={elsewhere}
-																>{elsewhere
+															>
+																{elsewhere
 																	? i18n.t(
 																			"patrons.census.sheet.takenBy",
 																			{
@@ -513,8 +522,8 @@
 																				: i18n.t(
 																						"patrons.census.sheet.noPhoto",
 																					)
-																		}`}</option
-															>
+																		}`}
+															</option>
 														{/each}
 													</Select>
 												</label>
@@ -527,8 +536,9 @@
 												onclick={() => void ignore(f.id, true)}
 												disabled={busy}
 												data-testid="sheet-ignore-{f.position}"
-												>{i18n.t("patrons.census.sheet.ignore")}</Button
 											>
+												{i18n.t("patrons.census.sheet.ignore")}
+											</Button>
 										{:else if f.state === "ignored"}
 											<Button
 												size="sm"
@@ -536,8 +546,9 @@
 												onclick={() => void ignore(f.id, false)}
 												disabled={busy}
 												data-testid="sheet-unignore-{f.position}"
-												>{i18n.t("patrons.census.sheet.unignore")}</Button
 											>
+												{i18n.t("patrons.census.sheet.unignore")}
+											</Button>
 										{/if}
 									</Card>
 								</li>
@@ -550,9 +561,9 @@
 								<p class="text-sm">
 									{stillMissing.map((m) => patronSortName(m)).join(", ")}
 								</p>
-								<Button href={backHref} icon={CameraIcon}
-									>{i18n.t("patrons.census.sheet.byCamera")}</Button
-								>
+								<Button href={backHref} icon={CameraIcon}>
+									{i18n.t("patrons.census.sheet.byCamera")}
+								</Button>
 							</Card>
 						{/if}
 					</section>

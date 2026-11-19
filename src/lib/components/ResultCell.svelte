@@ -18,8 +18,8 @@
 	{#if row.similar === true}<SimilarBadge />{/if}
 	<span class="truncate">{String(row.label ?? "")}</span>
 	{#if secondary}
-		<span class="truncate text-sm italic opacity-70" data-testid="title-original"
-			>{secondary}</span
-		>
+		<span class="truncate text-sm italic opacity-70" data-testid="title-original">
+			{secondary}
+		</span>
 	{/if}
 </span>

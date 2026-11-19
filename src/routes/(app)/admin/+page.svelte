@@ -32,7 +32,8 @@
 		await goto(resolve("login"));
 	}
 	const sections: {
-		key: "config" | "audit" | "users" | "backups" | "imports" | "rollover" | "exports";
+		key:
+			"config" | "audit" | "users" | "backups" | "imports" | "rollover" | "exports" | "setup";
 		href: ResolvedPathname;
 		icon: IconName;
 	}[] = [
@@ -45,6 +46,8 @@
 		{ key: "imports", href: "/admin/imports", icon: "upload" },
 		{ key: "rollover", href: "/admin/rollover", icon: "teacher" },
 		{ key: "exports", href: "/admin/exports", icon: "export" },
+		// the checklist of the installation (8.7)
+		{ key: "setup", href: "/admin/setup", icon: "checklist" },
 	];
 </script>
 

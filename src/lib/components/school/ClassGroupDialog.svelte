@@ -174,8 +174,10 @@
 								(chosen = e.currentTarget.checked
 									? [...chosen, l.code]
 									: chosen.filter((x) => x !== l.code))}
-							data-testid="class-level-{l.code}">{l.name}</Checkbox
+							data-testid="class-level-{l.code}"
 						>
+							{l.name}
+						</Checkbox>
 					{/each}
 				</Row>
 			</fieldset>
@@ -194,9 +196,9 @@
 			/>
 		</Field>
 		{#if mode === "students" && ordered.length > 1}
-			<Checkbox bind:checked={mixed} data-testid="class-mixed"
-				>{i18n.t("admin.classes.dialog.mixed")}</Checkbox
-			>
+			<Checkbox bind:checked={mixed} data-testid="class-mixed">
+				{i18n.t("admin.classes.dialog.mixed")}
+			</Checkbox>
 		{/if}
 		{#if kind === "teachers"}
 			<Field label={i18n.t("admin.classes.dialog.stage")}>
@@ -214,11 +216,11 @@
 		{#if mode === "students"}
 			{#if preview.length > 0}
 				<div class="space-y-1" data-testid="class-preview">
-					<Hint
-						>{i18n.t("admin.classes.dialog.preview", {
+					<Hint>
+						{i18n.t("admin.classes.dialog.preview", {
 							count: preview.length,
-						})}</Hint
-					>
+						})}
+					</Hint>
 					<Row gap="1">
 						{#each preview as label (label)}<Badge>{label}</Badge>{/each}
 					</Row>
@@ -231,16 +233,18 @@
 			<Alert data-testid="class-problem">{problem}</Alert>
 		{/if}
 		<Row justify="end" as="footer">
-			<Button onclick={() => (open = false)} disabled={pending}
-				>{i18n.t("common.actions.cancel")}</Button
-			>
+			<Button onclick={() => (open = false)} disabled={pending}>
+				{i18n.t("common.actions.cancel")}
+			</Button>
 			<Button
 				variant="primary"
 				type="submit"
 				icon={SaveIcon}
 				disabled={!ready || pending}
-				data-testid="class-save">{i18n.t("common.actions.save")}</Button
+				data-testid="class-save"
 			>
+				{i18n.t("common.actions.save")}
+			</Button>
 		</Row>
 	</form>
 </Modal>

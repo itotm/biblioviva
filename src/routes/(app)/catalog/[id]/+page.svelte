@@ -153,10 +153,11 @@
 								icon={CameraIcon}
 								onclick={() => (coverMode = !coverMode)}
 								data-testid="cover-open"
-								>{b.hasCover
-									? i18n.t("catalog.cover.change")
-									: i18n.t("catalog.cover.take")}</Button
 							>
+								{b.hasCover
+									? i18n.t("catalog.cover.change")
+									: i18n.t("catalog.cover.take")}
+							</Button>
 							{#if b.isbn}
 								<Button
 									icon={DownloadIcon}
@@ -164,10 +165,11 @@
 									onclick={doFetchCover}
 									disabled={downloading}
 									data-testid="cover-download"
-									>{downloading
-										? i18n.t("catalog.cover.downloading")
-										: i18n.t("catalog.cover.download")}</Button
 								>
+									{downloading
+										? i18n.t("catalog.cover.downloading")
+										: i18n.t("catalog.cover.download")}
+								</Button>
 							{/if}
 							{#if b.hasCover}
 								<Button
@@ -175,8 +177,9 @@
 									icon={DeleteIcon}
 									onclick={() => (confirmDeleteCover = true)}
 									data-testid="cover-delete"
-									>{i18n.t("catalog.cover.delete")}</Button
 								>
+									{i18n.t("catalog.cover.delete")}
+								</Button>
 							{/if}
 						</Row>
 					{/if}
@@ -199,21 +202,23 @@
 							icon={ToClassifyIcon}
 							title={i18n.t("catalog.toClassify.badgeHint")}
 							data-testid="to-classify-badge"
-							>{i18n.t("catalog.toClassify.badge")}</Badge
 						>
+							{i18n.t("catalog.toClassify.badge")}
+						</Badge>
 						{#if canEdit}
 							<Button
 								size="sm"
 								variant="primary"
 								href={resolve(`catalog/to-classify/${b.id}`)}
 								data-testid="classify-record"
-								>{i18n.t("catalog.toClassify.classify")}</Button
 							>
+								{i18n.t("catalog.toClassify.classify")}
+							</Button>
 						{/if}
 					{:else}
-						<Badge tone="primary" data-testid="kind-badge"
-							>{i18n.t(`catalog.kinds.${b.kind}`)}</Badge
-						>
+						<Badge tone="primary" data-testid="kind-badge">
+							{i18n.t(`catalog.kinds.${b.kind}`)}
+						</Badge>
 						<ClassificationBadge
 							node={b.classification}
 							readingLevel={b.readingLevel}
@@ -237,17 +242,20 @@
 							tone="success"
 							icon={AccessibleIcon}
 							title={i18n.t("catalog.detail.accessibleFormat", { format: f })}
-							data-testid="accessible-badge">{f}</Badge
+							data-testid="accessible-badge"
 						>
+							{f}
+						</Badge>
 					{/each}
 					<!-- the material is the record's, the same for every copy (9.45) -->
-					<Badge data-testid="item-type-badge"
-						>{data.options.itemTypes.find((t) => t.code === b.itemType)?.label ??
-							b.itemType}</Badge
-					>
-					{#if b.isbn}<Badge class="font-mono" data-testid="isbn-badge"
-							>{i18n.t("catalog.fields.isbn")} {b.isbn}</Badge
-						>{/if}
+					<Badge data-testid="item-type-badge">
+						{data.options.itemTypes.find((t) => t.code === b.itemType)?.label ??
+							b.itemType}
+					</Badge>
+					{#if b.isbn}<Badge class="font-mono" data-testid="isbn-badge">
+							{i18n.t("catalog.fields.isbn")}
+							{b.isbn}
+						</Badge>{/if}
 					<Badge data-testid="copies-badge">
 						{i18n.t("catalog.detail.copies", {
 							available,
@@ -319,16 +327,16 @@
 				{/if}
 				<Tabs defaultValue="copies">
 					<Tabs.List>
-						<Tabs.Trigger value="copies"
-							>{i18n.t("catalog.detail.tabs.copies")} ({b.items.length})</Tabs.Trigger
-						>
-						<Tabs.Trigger value="details"
-							>{i18n.t("catalog.detail.tabs.details")}</Tabs.Trigger
-						>
+						<Tabs.Trigger value="copies">
+							{i18n.t("catalog.detail.tabs.copies")} ({b.items.length})
+						</Tabs.Trigger>
+						<Tabs.Trigger value="details">
+							{i18n.t("catalog.detail.tabs.details")}
+						</Tabs.Trigger>
 						{#if canSeeLoans}
-							<Tabs.Trigger value="history" data-testid="tab-history"
-								>{i18n.t("circulation.history.title")}</Tabs.Trigger
-							>
+							<Tabs.Trigger value="history" data-testid="tab-history">
+								{i18n.t("circulation.history.title")}
+							</Tabs.Trigger>
 						{/if}
 					</Tabs.List>
 					<Tabs.Content value="copies" class="py-4">

@@ -47,7 +47,9 @@
 			title={localeDisplayName(code)}
 			aria-label={localeDisplayName(code)}
 			onclick={() => choose(code)}
-			data-testid="language-{code}">{code.toUpperCase()}</ToggleButton
+			data-testid="language-{code}"
 		>
+			{code.toUpperCase()}
+		</ToggleButton>
 	{/each}
 </SegmentedGroup>

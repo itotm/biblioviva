@@ -99,9 +99,9 @@
 				size={parent ? "sm" : "md"}
 			/>
 			<span class="font-mono text-sm opacity-80">{node.code || "—"}</span>
-			<span class="min-w-0 truncate font-semibold"
-				>{node.label || i18n.t("config.taxonomy.untitled")}</span
-			>
+			<span class="min-w-0 truncate font-semibold">
+				{node.label || i18n.t("config.taxonomy.untitled")}
+			</span>
 			{#if editor.problems[node.key]}
 				<ProblemIcon
 					size={ICON_SIZE.sm}
@@ -112,9 +112,9 @@
 			{/if}
 		</button>
 		{#if used && used.records > 0}
-			<Badge class="hidden sm:inline-flex" data-testid="taxonomy-node-usage"
-				>{i18n.t("config.taxonomy.usageShort", { records: used.records })}</Badge
-			>
+			<Badge class="hidden sm:inline-flex" data-testid="taxonomy-node-usage">
+				{i18n.t("config.taxonomy.usageShort", { records: used.records })}
+			</Badge>
 		{/if}
 		<IconButton
 			icon={MoveIcon}

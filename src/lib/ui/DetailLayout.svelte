@@ -54,9 +54,9 @@
 
 <div class="space-y-6" data-testid="detail-layout">
 	{#if backHref && !store}
-		<a href={backHref} class="text-sm text-primary-700 hover:underline"
-			>← {backLabel ?? backHref}</a
-		>
+		<a href={backHref} class="text-sm text-primary-700 hover:underline">
+			← {backLabel ?? backHref}
+		</a>
 	{/if}
 	<Card as="section" class="flex flex-col gap-4">
 		<!-- the title and the facts first, the cover or photo under them on phones and tablets; side

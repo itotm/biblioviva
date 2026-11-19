@@ -214,15 +214,17 @@
 						onchange={onFile}
 						disabled={uploading}
 						data-testid="pictogram-file"
-						>{i18n.t("config.taxonomy.pictogram.upload")}</FileButton
 					>
+						{i18n.t("config.taxonomy.pictogram.upload")}
+					</FileButton>
 					{#if images.length > 0}
 						<Button
 							icon={ImageIcon}
 							onclick={() => (gallery = true)}
 							data-testid="pictogram-choose"
-							>{i18n.t("config.taxonomy.pictogram.choose")}</Button
 						>
+							{i18n.t("config.taxonomy.pictogram.choose")}
+						</Button>
 					{/if}
 					{#if node.image}
 						<Button
@@ -230,8 +232,9 @@
 							icon={RemoveIcon}
 							onclick={() => (node.image = null)}
 							data-testid="pictogram-remove"
-							>{i18n.t("config.taxonomy.pictogram.remove")}</Button
 						>
+							{i18n.t("config.taxonomy.pictogram.remove")}
+						</Button>
 					{/if}
 				</Row>
 			</Row>
@@ -271,12 +274,12 @@
 				>
 					<option value="">{i18n.t("config.taxonomy.position.top")}</option>
 					{#each editor.nonfiction.filter((n) => n.key !== node.key) as n (n.key)}
-						<option value={n.key}
-							>{i18n.t("config.taxonomy.position.under", {
+						<option value={n.key}>
+							{i18n.t("config.taxonomy.position.under", {
 								code: n.code,
 								label: n.label,
-							})}</option
-						>
+							})}
+						</option>
 					{/each}
 				</Select>
 			</Field>
@@ -284,8 +287,10 @@
 				<Button
 					icon={AddIcon}
 					onclick={() => editor.addClass(node.key)}
-					data-testid="taxonomy-add-child">{i18n.t("config.taxonomy.addSubclass")}</Button
+					data-testid="taxonomy-add-child"
 				>
+					{i18n.t("config.taxonomy.addSubclass")}
+				</Button>
 			{/if}
 		{/if}
 
@@ -306,12 +311,13 @@
 			disabled={!editor.canRemove(node.key)}
 			onclick={askRemove}
 			data-testid="taxonomy-remove"
-			>{i18n.t(
+		>
+			{i18n.t(
 				place.kind === "fiction"
 					? "config.taxonomy.remove.genre"
 					: "config.taxonomy.remove.class",
-			)}</Button
-		>
+			)}
+		</Button>
 
 		{#if previewable}
 			<SpineBandPreview draft={editor.draft} kind={place.kind} code={node.code.trim()} />

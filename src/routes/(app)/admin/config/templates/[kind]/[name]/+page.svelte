@@ -278,16 +278,18 @@
 		backLabel={i18n.t("config.templates.title")}
 	>
 		{#snippet actions()}
-			<Button icon={UndoIcon} onclick={discard} disabled={!dirty || saving}
-				>{i18n.t("config.section.discard")}</Button
-			>
+			<Button icon={UndoIcon} onclick={discard} disabled={!dirty || saving}>
+				{i18n.t("config.section.discard")}
+			</Button>
 			<Button
 				variant="primary"
 				icon={SaveIcon}
 				onclick={save}
 				disabled={!dirty || saving || (preview !== null && !preview.ok)}
-				data-testid="designer-save">{i18n.t("config.section.save")}</Button
+				data-testid="designer-save"
 			>
+				{i18n.t("config.section.save")}
+			</Button>
 		{/snippet}
 	</PageHeader>
 
@@ -360,11 +362,11 @@
 									data-testid="designer-grid-step"
 								>
 									{#each GRID_STEPS as g (g)}
-										<option value={String(g)}
-											>{i18n.t(
+										<option value={String(g)}>
+											{i18n.t(
 												`config.designer.gridSteps.s${String(g).replace(".", "")}`,
-											)}</option
-										>
+											)}
+										</option>
 									{/each}
 								</Select>
 							</InlineField>
@@ -381,16 +383,16 @@
 						/>
 						<Hint tone="faint">{i18n.t("config.designer.canvasHint")}</Hint>
 						{#if d.unplaced > 0}
-							<Hint tone="faint" data-testid="designer-flow"
-								>{i18n.t("config.designer.flowHint", { count: d.unplaced })}</Hint
-							>
+							<Hint tone="faint" data-testid="designer-flow">
+								{i18n.t("config.designer.flowHint", { count: d.unplaced })}
+							</Hint>
 						{/if}
 						{#if (d.current?.locked ?? 0) > 0}
-							<Hint tone="faint" data-testid="designer-locked"
-								>{i18n.t("config.designer.lockedHint", {
+							<Hint tone="faint" data-testid="designer-locked">
+								{i18n.t("config.designer.lockedHint", {
 									count: d.current?.locked ?? 0,
-								})}</Hint
-							>
+								})}
+							</Hint>
 						{/if}
 					</Card>
 					<Card gap="3">
@@ -422,8 +424,10 @@
 										: 'hover:preset-tonal'}"
 									aria-pressed={file === f}
 									onclick={() => (file = f)}
-									data-testid="designer-file-{f}">{f}</button
+									data-testid="designer-file-{f}"
 								>
+									{f}
+								</button>
 							{/each}
 						</SegmentedGroup>
 						{#if file in files}

@@ -208,9 +208,9 @@
 									data-testid="code-input"
 								/>
 								{#each rowProblems as p (p)}
-									<Hint tone="error" data-testid="code-problem"
-										>{i18n.t(`config.blocks.problems.${p}.${kind}`)}</Hint
-									>
+									<Hint tone="error" data-testid="code-problem">
+										{i18n.t(`config.blocks.problems.${p}.${kind}`)}
+									</Hint>
 								{/each}
 							</td>
 							{#if itemTypes}
@@ -232,11 +232,11 @@
 								</td>
 							{/if}
 							<td class="whitespace-nowrap" data-testid="code-usage">
-								<span class="mt-2 inline-block"
-									>{i18n.t(`config.blocks.move.count.${unit}`, {
+								<span class="mt-2 inline-block">
+									{i18n.t(`config.blocks.move.count.${unit}`, {
 										count: usage(row.originalCode),
-									})}</span
-								>
+									})}
+								</span>
 							</td>
 							<td>
 								<Row wrap={false} gap="1">
@@ -284,9 +284,9 @@
 			</Alert>
 		{/if}
 		<Row justify="between" align="center">
-			<Button icon={AddIcon} onclick={() => list.add()} data-testid="block-{kind}-add"
-				>{i18n.t(`config.blocks.${kind}.add`)}</Button
-			>
+			<Button icon={AddIcon} onclick={() => list.add()} data-testid="block-{kind}-add">
+				{i18n.t(`config.blocks.${kind}.add`)}
+			</Button>
 			<Row>
 				<DraftActions
 					{dirty}

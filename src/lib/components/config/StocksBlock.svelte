@@ -18,6 +18,7 @@
 	import Card from "#lib/ui/Card.svelte";
 	import Field from "#lib/ui/Field.svelte";
 	import Grid from "#lib/ui/Grid.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
 	import Hint from "#lib/ui/Hint.svelte";
 	import Input from "#lib/ui/Input.svelte";
 	import Row from "#lib/ui/Row.svelte";
@@ -224,7 +225,10 @@
 {/snippet}
 
 <Card variant="outlined" gap="3" id="stocks" data-testid="block-stocks">
-	<h2 class="title-lg">{i18n.t("config.blocks.stocks.title")}</h2>
+	<Row wrap={false} align="center" gap="1">
+		<h2 class="title-lg">{i18n.t("config.blocks.stocks.title")}</h2>
+		<HelpLink spot="labelStocks" topic={i18n.t("config.blocks.stocks.title")} />
+	</Row>
 	<Hint>{i18n.t("config.blocks.stocks.hint")}</Hint>
 	{#if data.current}
 		<div class="grid gap-4 lg:grid-cols-[minmax(0,16rem)_minmax(0,1fr)]">
@@ -251,9 +255,9 @@
 						</Row>
 					</SelectCard>
 				{/each}
-				<Button icon={AddIcon} full onclick={add} data-testid="stock-add"
-					>{i18n.t("config.blocks.stocks.add")}</Button
-				>
+				<Button icon={AddIcon} full onclick={add} data-testid="stock-add">
+					{i18n.t("config.blocks.stocks.add")}
+				</Button>
 			</div>
 
 			{#if selected}
@@ -355,27 +359,30 @@
 									)}"
 									target="_blank"
 									data-testid="stock-calibration"
-									>{i18n.t("config.blocks.stocks.calibration")}</Button
 								>
+									{i18n.t("config.blocks.stocks.calibration")}
+								</Button>
 							{:else}
-								<Button icon={PrintIcon} disabled data-testid="stock-calibration"
-									>{i18n.t("config.blocks.stocks.calibration")}</Button
-								>
+								<Button icon={PrintIcon} disabled data-testid="stock-calibration">
+									{i18n.t("config.blocks.stocks.calibration")}
+								</Button>
 							{/if}
 							<Button
 								icon={RemoveIcon}
 								variant="error"
 								onclick={() => remove(selected.key)}
 								disabled={selected.usedBy.length > 0 || rows.length === 1}
-								data-testid="stock-remove">{i18n.t("common.actions.delete")}</Button
+								data-testid="stock-remove"
 							>
+								{i18n.t("common.actions.delete")}
+							</Button>
 						</Row>
 						{#if selected.usedBy.length > 0}
-							<Hint tone="faint"
-								>{i18n.t("config.blocks.stocks.inUse", {
+							<Hint tone="faint">
+								{i18n.t("config.blocks.stocks.inUse", {
 									jobs: selected.usedBy.map(JOB).join(", "),
-								})}</Hint
-							>
+								})}
+							</Hint>
 						{/if}
 						{#if dirty && selected.originalId !== null}
 							<Hint tone="faint">{i18n.t("config.blocks.stocks.saveFirst")}</Hint>
@@ -421,11 +428,11 @@
 							{/each}
 						</svg>
 						<figcaption>
-							<Hint tone="faint"
-								>{i18n.t("config.blocks.stocks.caption", {
+							<Hint tone="faint">
+								{i18n.t("config.blocks.stocks.caption", {
 									count: s.columns * s.rows,
-								})}</Hint
-							>
+								})}
+							</Hint>
 						</figcaption>
 					</figure>
 				</div>

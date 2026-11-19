@@ -29,6 +29,10 @@
 			"imports": {
 				"title": "Importazioni",
 				"description": "Catalogo, utenti, prestiti in corso e foto: da file CSV o dall'estrazione di Koha."
+			},
+			"setup": {
+				"title": "Controllo installazione",
+				"description": "Indirizzo, password, backup, stampanti e lettore: che cosa è a posto e che cosa no."
 			}
 		}
 	},
@@ -676,6 +680,142 @@
 			"title": "BiblioViva · calibrazione della stampa fronte-retro",
 			"cut": "Ritagliare lungo la linea nera, poi girare il cartoncino.",
 			"read": "Leggere sui due righelli dove passa il bordo tagliato."
+		}
+	},
+	"checklist": {
+		"title": "Controllo installazione",
+		"subtitle": "Che cosa BiblioViva rileva da sé e le prove da fare con la stampante, la fotocamera e il lettore.",
+		"recheck": "Ricontrolla",
+		"summary": {
+			"ok": "Tutto a posto: nessun controllo segnala problemi. Restano le prove con la stampante, la fotocamera e il lettore.",
+			"warning": "{{warnings:plural; one:Un controllo da guardare; other:{{warnings}} controlli da guardare;}}.",
+			"error": "{{errors:plural; one:Un controllo da correggere; other:{{errors}} controlli da correggere;}}."
+		},
+		"checks": {
+			"title": "Controlli",
+			"intro": "BiblioViva controlla da sé queste voci. Per ogni voce non a posto sono indicati la pagina di Amministrazione dove si corregge e la pagina della guida che la spiega."
+		},
+		"items": {
+			"config": "File di configurazione",
+			"address": "Indirizzo e HTTPS",
+			"profile": "Computer e profilo",
+			"accounts": "Password degli account",
+			"backup": "Backup"
+		},
+		"fix": {
+			"config": "Configurazione",
+			"history": "Cronologia della configurazione",
+			"performance": "Prestazioni",
+			"users": "Account del personale",
+			"backups": "Backup",
+			"backupSettings": "Orario dei backup",
+			"guide": "Guida",
+			"guideOf": "Guida: {{item}}"
+		},
+		"findings": {
+			"config": {
+				"valid": "Il file di configurazione è valido.",
+				"example": "Manca il file config.json: BiblioViva usa la configurazione di esempio, perché la configurazione guidata non è stata completata.",
+				"invalid": "Il file sul disco non è valido ({{count:plural; one:un errore; other:{{count}} errori;}}): il server usa ancora l'ultima configurazione valida, ma al prossimo avvio non partirebbe.",
+				"warnings": "La configurazione ha {{count:plural; one:un avviso; other:{{count}} avvisi;}}."
+			},
+			"address": {
+				"https": "La pagina è aperta con HTTPS su {{host}}: la fotocamera e l'installazione come app funzionano.",
+				"local": "La pagina è aperta con HTTP semplice su {{host}}, cioè sul computer di BiblioViva: qui va bene. Il controllo dell'HTTPS riguarda l'indirizzo che usano gli altri dispositivi: aprire questa pagina da uno di essi.",
+				"lan": "La pagina è aperta con HTTP semplice su {{host}}: è la modalità di base sulla rete locale, senza Tailscale. Tutto funziona con il lettore di codici a barre, ma la fotocamera e l'installazione come app no.",
+				"plainHttp": "La pagina è aperta con HTTP semplice su {{host}} e BiblioViva non è in modalità di base sulla rete locale: l'indirizzo non è quello sicuro (https://…ts.net) di Tailscale. Con HTTP semplice la fotocamera non funziona e le password viaggiano in chiaro sulla rete."
+			},
+			"profile": {
+				"ok": "Profilo in uso: {{profile}}. Il computer ha {{memory}} GB di memoria e {{cpus}} processori.",
+				"weaker": "Il profilo richiede almeno {{needed}} GB di memoria e il computer ne ha {{memory}}: scegliere un profilo più leggero.",
+				"stronger": "Il computer può fare di più: con {{memory}} GB di memoria, {{cpus}} processori e questo disco il profilo «{{suggested}}» ne sfrutterebbe meglio le risorse.",
+				"diskSd": "I dati sono su una scheda SD: il profilo adatto è «{{sdProfile}}», anche con molta memoria.",
+				"diskHdd": "I dati sono su un disco meccanico: il profilo adatto è «{{hddProfile}}».",
+				"diskSsd": "I dati sono su un disco SSD.",
+				"diskUnknown": "Il tipo di disco non si riconosce da qui: su una scheda SD il profilo adatto è «{{sdProfile}}», su un disco meccanico «{{hddProfile}}»."
+			},
+			"accounts": {
+				"ok": "Nessuna password in chiaro nel file e nessuna uguale a quella di esempio ({{count:plural; one:un account attivo; other:{{count}} account attivi;}}).",
+				"example": "{{count:plural; one:Un account ha; other:{{count}} account hanno;}} ancora una password nota a tutti, quella di esempio o dei dati dimostrativi: {{names}}. Chiunque la conosca può entrare.",
+				"plain": "{{count:plural; one:Un account ha; other:{{count}} account hanno;}} la password scritta in chiaro in config.json: {{names}}. Funziona, ma conviene sostituirla."
+			},
+			"backup": {
+				"demo": "La demo pubblica non conserva backup.",
+				"folder": "La cartella dei backup non si può usare, quindi i backup non vengono scritti.",
+				"scheduleInvalid": "L'orario dei backup «{{cron}}» non è valido: i backup automatici non partono.",
+				"notScheduled": "I backup automatici non sono in funzione (orario «{{cron}}»): riavviare BiblioViva.",
+				"schedule": "Backup automatico all'orario «{{cron}}»; il prossimo parte {{nextAt}}.",
+				"none": "Nessun backup ancora: il primo parte all'orario previsto, oppure subito con il pulsante «Esegui backup ora».",
+				"late": "L'ultimo backup è {{name}}, del {{lastAt}}: manca quello dell'ultimo orario previsto. Un computer spento in quel momento lo recupera all'avvio, se l'impostazione di recupero è attiva.",
+				"stale": "L'ultimo backup è di {{days}} giorni fa ({{lastAt}}): fare subito un backup e cercare perché quelli automatici non partono.",
+				"last": "Ultimo backup: {{name}}, {{lastAt}}.",
+				"offsiteNone": "La copia esterna è attiva, ma non ha ancora scritto il suo stato: il servizio «offsite» potrebbe non essere avviato.",
+				"offsiteError": "L'ultima copia esterna è finita con l'esito «{{status}}».",
+				"offsiteStale": "L'ultima copia esterna è del {{lastAt}}: è ferma da più di due giorni.",
+				"offsiteOk": "Ultima copia esterna riuscita: {{lastAt}}."
+			}
+		},
+		"tests": {
+			"title": "Prove",
+			"intro": "Queste prove si fanno a mano: BiblioViva non può sapere come stampa la stampante né come scrive il lettore.",
+			"cards": {
+				"title": "Pagina di prova delle tessere",
+				"description": "Unità vuote con i segni di taglio e di piega e un righello di 10 cm."
+			},
+			"labels": {
+				"title": "Foglio di esempio delle etichette",
+				"description": "Etichette con codici a barre di copie inventate: servono anche a provare il lettore."
+			},
+			"labelCalibration": {
+				"title": "Pagina di calibrazione delle etichette",
+				"description": "I contorni del foglio di etichette adesive, da sovrapporre a un foglio vero."
+			},
+			"duplex": {
+				"title": "Foglio di calibrazione fronte-retro",
+				"description": "Per le tessere stampate sui due lati: dice di quanto il retro è spostato."
+			},
+			"printers": {
+				"title": "Stampante",
+				"hint": "Stampare al 100 %, senza «Adatta alla pagina»: il righello di 10 cm deve misurare 100 mm.",
+				"print": "Stampa"
+			},
+			"camera": {
+				"title": "Fotocamera",
+				"description": "Il pulsante apre il Censimento foto, che usa la fotocamera: il browser chiede il permesso la prima volta.",
+				"descriptionNoPhotos": "Le foto degli utenti sono disattivate: il pulsante apre Nuovo libro, dove la fotocamera legge il codice ISBN.",
+				"open": "Prova la fotocamera",
+				"unavailable": "Su questo indirizzo la fotocamera non è disponibile: serve una pagina sicura (HTTPS)."
+			},
+			"scanner": {
+				"title": "Lettore di codici a barre",
+				"description": "Fare clic nel campo e leggere un codice con il lettore, per esempio quello di un'etichetta del foglio di esempio. Sotto compare ciò che il lettore ha scritto e come BiblioViva lo intende.",
+				"label": "Codice letto dal lettore",
+				"placeholder": "Leggere un codice con il lettore",
+				"clear": "Pulisci",
+				"waiting": "Nessuna lettura ancora.",
+				"typed": "Il lettore ha scritto",
+				"code": "BiblioViva lo legge come",
+				"kind": "Tipo",
+				"enter": "Tasto Invio",
+				"enterYes": "Ricevuto dopo il codice.",
+				"enterNo": "Non ricevuto: attivare nel lettore il suffisso Invio (il manuale del lettore spiega come).",
+				"enterWaiting": "Non ancora ricevuto.",
+				"kinds": {
+					"item": "Copia",
+					"legacy_item": "Copia (codice di un programma precedente)",
+					"card": "Tessera",
+					"isbn": "ISBN",
+					"ambiguous": "Numero che può essere una copia o una tessera",
+					"invalid": "Non riconosciuto"
+				},
+				"verdict": {
+					"ok": "Lettura corretta: la tastiera e il lettore concordano.",
+					"pair": "«{{typed}}» al posto di «{{meant}}»",
+					"mishap": "Il lettore ha scritto {{pairs}}: la tastiera dei computer dichiarata a BiblioViva è «{{layout}}» e non coincide con quella del lettore. BiblioViva corregge la lettura, ma conviene far coincidere le due: si cambia in Configurazione, Codici a barre, campo «Tastiera dei computer».",
+					"mishapOther": "Il lettore ha scritto il codice in modo diverso da come è stampato: la tastiera dei computer dichiarata a BiblioViva è «{{layout}}» e non coincide con quella del lettore. BiblioViva lo corregge, ma conviene far coincidere le due: si cambia in Configurazione, Codici a barre, campo «Tastiera dei computer».",
+					"strange": "Nel codice ci sono caratteri che un codice a barre non ha ({{chars}}): la tastiera del computer non coincide con quella del lettore, oppure il lettore legge un tipo di codice che BiblioViva non conosce."
+				}
+			}
 		}
 	}
 }

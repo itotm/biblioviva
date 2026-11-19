@@ -65,6 +65,7 @@ import LayoutDashboard from "@lucide/svelte/icons/layout-dashboard";
 import Library from "@lucide/svelte/icons/library";
 import LibraryBig from "@lucide/svelte/icons/library-big";
 import ListChecks from "@lucide/svelte/icons/list-checks";
+import ListTodo from "@lucide/svelte/icons/list-todo";
 import LoaderCircle from "@lucide/svelte/icons/loader-circle";
 import LogOut from "@lucide/svelte/icons/log-out";
 import Mail from "@lucide/svelte/icons/mail";
@@ -221,6 +222,8 @@ export const icons = {
 	config: SlidersHorizontal,
 	admin: ShieldCogCorner,
 	lists: ListChecks,
+	/** the installation check, "Controllo installazione" (8.7) */
+	checklist: ListTodo,
 	// Status
 	available: CircleCheck,
 	dueSoon: Clock,

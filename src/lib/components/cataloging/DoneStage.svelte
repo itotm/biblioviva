@@ -10,6 +10,7 @@
 	import Badge from "#lib/ui/Badge.svelte";
 	import Button from "#lib/ui/Button.svelte";
 	import Card from "#lib/ui/Card.svelte";
+	import HelpLink from "#lib/ui/HelpLink.svelte";
 	import Hint from "#lib/ui/Hint.svelte";
 	import Row from "#lib/ui/Row.svelte";
 
@@ -41,7 +42,10 @@
 			</span>
 		{/if}
 		<div class="min-w-0">
-			<h2 class="h4">{i18n.t("catalog.fastAdd.done.heading")}</h2>
+			<Row wrap={false} align="center" gap="1">
+				<h2 class="h4">{i18n.t("catalog.fastAdd.done.heading")}</h2>
+				<HelpLink spot="fastAddDone" topic={i18n.t("catalog.fastAdd.done.heading")} />
+			</Row>
 			<p class="opacity-80" data-testid="done-summary">
 				{saved.copiesOnly
 					? i18n.t("catalog.fastAdd.done.summaryCopies", {
@@ -88,20 +92,22 @@
 		icon={AddIcon}
 		onclick={onanother}
 		autofocus
-		data-testid="done-another">{i18n.t("catalog.fastAdd.done.another")}</Button
+		data-testid="done-another"
 	>
+		{i18n.t("catalog.fastAdd.done.another")}
+	</Button>
 	<Row>
-		<Button icon={PrintIcon} onclick={() => (labelDialog = true)} data-testid="done-print"
-			>{i18n.t("catalog.fastAdd.done.printLabels")}</Button
-		>
+		<Button icon={PrintIcon} onclick={() => (labelDialog = true)} data-testid="done-print">
+			{i18n.t("catalog.fastAdd.done.printLabels")}
+		</Button>
 		<AddToPrintList
 			entityIds={saved.itemIds}
 			kind="items"
 			label={i18n.t("catalog.fastAdd.done.addToList")}
 		/>
-		<Button href="/catalog/{saved.biblioId}" data-testid="done-open"
-			>{i18n.t("catalog.fastAdd.done.open")}</Button
-		>
+		<Button href="/catalog/{saved.biblioId}" data-testid="done-open">
+			{i18n.t("catalog.fastAdd.done.open")}
+		</Button>
 	</Row>
 </Card>
 <LabelPrintDialog bind:open={labelDialog} ids={saved.itemIds} count={saved.itemIds.length} />

@@ -119,8 +119,10 @@
 			accept="image/*"
 			onchange={onFile}
 			disabled={busy}
-			data-testid="sheet-upload">{i18n.t("patrons.census.sheets.upload")}</FileButton
+			data-testid="sheet-upload"
 		>
+			{i18n.t("patrons.census.sheets.upload")}
+		</FileButton>
 		<FileButton
 			icon={CameraIcon}
 			accept="image/*"
@@ -128,21 +130,27 @@
 			onchange={onFile}
 			disabled={busy}
 			class="md:hidden"
-			data-testid="sheet-take">{i18n.t("patrons.census.sheets.take")}</FileButton
+			data-testid="sheet-take"
 		>
+			{i18n.t("patrons.census.sheets.take")}
+		</FileButton>
 		{#if samples}
 			<Button
 				icon={ScanIcon}
 				onclick={() => tryDemo("scan")}
 				disabled={busy}
-				data-testid="sheet-demo-scan">{i18n.t("patrons.census.sheets.demoScan")}</Button
+				data-testid="sheet-demo-scan"
 			>
+				{i18n.t("patrons.census.sheets.demoScan")}
+			</Button>
 			<Button
 				icon={PictureIcon}
 				onclick={() => tryDemo("photo")}
 				disabled={busy}
-				data-testid="sheet-demo-photo">{i18n.t("patrons.census.sheets.demoPhoto")}</Button
+				data-testid="sheet-demo-photo"
 			>
+				{i18n.t("patrons.census.sheets.demoPhoto")}
+			</Button>
 		{/if}
 	</Row>
 	{#if samples}
@@ -190,14 +198,15 @@
 								title={i18n.t("patrons.census.sheets.item", {
 									date: fmt.date(s.createdAt, "medium"),
 								})}
-								>{s.detected
+							>
+								{s.detected
 									? i18n.t("patrons.census.sheets.counts", {
 											frames: s.frames,
 											saved: s.saved,
 											pending: s.pending,
 										})
-									: i18n.t("patrons.census.sheets.notDetected")}</TitleHint
-							>
+									: i18n.t("patrons.census.sheets.notDetected")}
+							</TitleHint>
 							<PictureIcon class="shrink-0 opacity-50" aria-hidden="true" />
 						</a>
 					</li>

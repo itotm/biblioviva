@@ -35,5 +35,10 @@
 		"none": "No dates in the next {{days:plural; one:day; other:{{days}} days;}}.",
 		"more": "and {{count}} more",
 		"open": "Open the calendar"
+	},
+	"setup": {
+		"title": "The installation has something to fix",
+		"text": "{{errors:plural; one:One check is not in order; other:{{errors}} checks are not in order;}}: address, passwords, backups or the configuration file.",
+		"open": "Open the installation check"
 	}
 }

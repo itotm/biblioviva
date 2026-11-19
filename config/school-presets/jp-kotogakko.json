@@ -1,0 +1,56 @@
+{
+	"id": "jp-kotogakko",
+	"_comment": "Levels, labels and customs [VERIFY] with a teacher of the country before the preset is advertised (PLAN.md 9.41). 高等学校 (full-time, three years): classes written 1年2組, as in jp-chugakko; some schools name them with letters or kana [VERIFY]. The part-time (定時制) and correspondence (通信制) courses may last four years, and the 中等教育学校 and 中高一貫校 keep lower and upper secondary in one school: add the levels of jp-chugakko [VERIFY]. Pupils come from the 3年 of jp-chugakko after the entrance examination, so there is no link between the two presets. The school year (年度) starts on 1 April and is named by its starting year, as in jp-chugakko [VERIFY]. Classes are re-formed at least when the pupils choose a course (文系, 理系) in the second year, and in many schools every year (クラス替え), so the promotion clears them [VERIFY]. After the 3年 a pupil leaves.",
+	"name": {
+		"it": "Secondaria di secondo grado, kōtōgakkō (Giappone)",
+		"en": "Senior high school, kotogakko (Japan)",
+		"ja": "高等学校（日本）"
+	},
+	"country": "JP",
+	"languages": ["ja"],
+	"schoolYear": {
+		"start": "04-01",
+		"label": "start"
+	},
+	"school": {
+		"stages": [
+			{
+				"code": "kotogakko",
+				"name": "高等学校"
+			}
+		],
+		"levels": [
+			{
+				"code": "1",
+				"label": "1年",
+				"name": "第1学年",
+				"stage": "kotogakko",
+				"aliases": ["1年生", "高1"]
+			},
+			{
+				"code": "2",
+				"label": "2年",
+				"name": "第2学年",
+				"stage": "kotogakko",
+				"aliases": ["2年生", "高2"]
+			},
+			{
+				"code": "3",
+				"label": "3年",
+				"name": "第3学年",
+				"stage": "kotogakko",
+				"aliases": ["3年生", "高3"]
+			}
+		],
+		"classLabel": "{level}{group}組",
+		"groupWord": "組",
+		"cardClass": "{class}",
+		"promotionWithinStage": "clear",
+		"promotionAcrossStages": "ask"
+	},
+	"groups": {
+		"kotogakko": ["1", "2", "3", "4", "5", "6"]
+	},
+	"teacherGroup": "教員",
+	"readingLevels": []
+}

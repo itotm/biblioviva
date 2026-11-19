@@ -56,6 +56,8 @@ export const DESK_TONE = {
 	renewal_limit_reached: "error",
 	renewal_overdue_blocked: "error",
 	renewal_hard_due_date: "error",
+	// a warning, not a refusal: confirmed in the dialog, it renews
+	renewal_early: "warning",
 	duplicate_scan: "info",
 	not_on_loan: "info",
 	already_returned_today: "info",

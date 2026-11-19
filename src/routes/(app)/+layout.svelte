@@ -127,8 +127,10 @@
 	<a
 		href="#main"
 		class="sr-only z-50 rounded-base bg-surface-50 px-4 py-2 font-semibold text-primary-700 shadow-[var(--bv-shadow-raised)] focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
-		data-testid="skip-link">{i18n.t("nav.skip")}</a
+		data-testid="skip-link"
 	>
+		{i18n.t("nav.skip")}
+	</a>
 	<!-- Desktop sidebar -->
 	<aside
 		class="hidden md:sticky md:top-0 md:col-start-1 md:row-span-2 md:row-start-1 md:block md:h-svh md:self-start"
@@ -149,8 +151,10 @@
 					{@render libraryMark("size-12")}
 					<span
 						class="line-clamp-2 text-lg leading-tight font-extrabold tracking-tight text-primary-700"
-						data-testid="brand-library">{data.libraryName}</span
+						data-testid="brand-library"
 					>
+						{data.libraryName}
+					</span>
 				</a>
 			</Navigation.Header>
 			<Navigation.Content>
@@ -173,9 +177,9 @@
 							>
 								<Icon size={ICON_SIZE.nav} aria-hidden="true" />
 							</IconTile>
-							<Navigation.TriggerText
-								>{i18n.t(`nav.${item.key}`)}</Navigation.TriggerText
-							>
+							<Navigation.TriggerText>
+								{i18n.t(`nav.${item.key}`)}
+							</Navigation.TriggerText>
 						</Navigation.TriggerAnchor>
 					{/each}
 				</Navigation.Menu>
@@ -220,8 +224,10 @@
 					{@render libraryMark("size-9")}
 					<span
 						class="line-clamp-1 text-lg font-extrabold tracking-tight text-primary-700"
-						data-testid="brand-mobile-library">{data.libraryName}</span
+						data-testid="brand-mobile-library"
 					>
+						{data.libraryName}
+					</span>
 				</a>
 			</AppBar.Lead>
 			<AppBar.Headline
@@ -266,8 +272,10 @@
 						>
 							{#if header.current?.brand}<span
 									class="bv-page-brand mr-2 font-extrabold text-primary-700"
-									data-testid="page-brand">{`${header.current.brand} `}</span
-								>{/if}{header.current?.title ?? ""}
+									data-testid="page-brand"
+								>
+									{`${header.current.brand} `}
+								</span>{/if}{header.current?.title ?? ""}
 						</svelte:element>
 						{#if header.current?.subtitle}
 							<Hint class="block truncate">{header.current?.subtitle}</Hint>
@@ -318,23 +326,25 @@
 							aria-label={data.user.displayName}
 						>
 							<UserIcon size={ICON_SIZE.md} aria-hidden="true" />
-							<span class="hidden max-w-40 truncate xl:inline"
-								>{data.user.displayName}</span
-							>
+							<span class="hidden max-w-40 truncate xl:inline">
+								{data.user.displayName}
+							</span>
 						</Menu.Trigger>
 						<MenuPanel>
-							<MenuItem value="about" href="/about" icon={InfoIcon}
-								>{i18n.t("nav.about")}</MenuItem
-							>
+							<MenuItem value="about" href="/about" icon={InfoIcon}>
+								{i18n.t("nav.about")}
+							</MenuItem>
 							<MenuItem
 								value="password"
 								href="/password"
 								icon={KeyIcon}
-								data-testid="menu-password">{i18n.t("nav.password")}</MenuItem
+								data-testid="menu-password"
 							>
-							<MenuItem value="logout" icon={LogoutIcon} onclick={onLogout}
-								>{i18n.t("nav.logout")}</MenuItem
-							>
+								{i18n.t("nav.password")}
+							</MenuItem>
+							<MenuItem value="logout" icon={LogoutIcon} onclick={onLogout}>
+								{i18n.t("nav.logout")}
+							</MenuItem>
 						</MenuPanel>
 					</Menu>
 				{/if}
@@ -383,9 +393,9 @@
 						</Menu.Trigger>
 						<MenuPanel>
 							{#each moreItems as item (item.key)}
-								<MenuItem value={item.key} href={item.href} icon={icons[item.icon]}
-									>{i18n.t(`nav.${item.key}`)}</MenuItem
-								>
+								<MenuItem value={item.key} href={item.href} icon={icons[item.icon]}>
+									{i18n.t(`nav.${item.key}`)}
+								</MenuItem>
 							{/each}
 						</MenuPanel>
 					</Menu>

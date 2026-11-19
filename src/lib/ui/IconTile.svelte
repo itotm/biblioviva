@@ -18,5 +18,7 @@
 
 <span
 	class="flex {size} shrink-0 items-center justify-center rounded-container {className}"
-	{...rest}>{@render children()}</span
+	{...rest}
 >
+	{@render children()}
+</span>

@@ -36,7 +36,8 @@ export const HELP_PAGES: Readonly<Record<AreaKey | "home", string>> = {
 	admin: "admin/",
 };
 
-const section = (page: string, it: string, en: string): HelpTarget => ({
+/** A section of a page: the page and its heading's anchor in each language. */
+export const section = (page: string, it: string, en: string): HelpTarget => ({
 	page,
 	anchor: { it, en },
 });
@@ -65,7 +66,7 @@ export const CONFIG_SECTION_ANCHORS: Readonly<
 	ui: { it: "interfaccia", en: "interface" },
 };
 
-const CONFIG_SECTIONS_PAGE = "admin/screens/configuration/";
+export const CONFIG_SECTIONS_PAGE = "admin/screens/configuration/";
 
 /** Each page of the app (its route id) and what explains it; a function reads the page's parameters. */
 export const SCREEN_HELP: Readonly<
@@ -122,6 +123,7 @@ export const SCREEN_HELP: Readonly<
 	"/(app)/admin/users": { page: "admin/screens/users/" },
 	"/(app)/admin/exports": { page: "admin/screens/exports/" },
 	"/(app)/admin/rollover": { page: "admin/screens/rollover/" },
+	"/(app)/admin/setup": { page: "admin/screens/setup/" },
 	"/(app)/admin/config": { page: CONFIG_SECTIONS_PAGE },
 	"/(app)/admin/config/[section]": ({ section: key = "" }) => ({
 		page: CONFIG_SECTIONS_PAGE,

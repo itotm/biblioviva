@@ -185,9 +185,9 @@
 				}}
 				data-testid="next-{s.id}"
 			>
-				{#each s.choices as c (c.level ?? LEAVES)}<option value={c.level ?? LEAVES}
-						>{levelName(c.level)}</option
-					>{/each}
+				{#each s.choices as c (c.level ?? LEAVES)}<option value={c.level ?? LEAVES}>
+						{levelName(c.level)}
+					</option>{/each}
 			</Select>
 		{/snippet}
 		{@render labelled(i18n.t("admin.rollover.classes.nextYear"), way)}
@@ -205,11 +205,11 @@
 			}}
 			data-testid="group-{s.id}"
 		>
-			{#if groupAfter(s) === null}<option value=""
-					>{unplaced(s)
+			{#if groupAfter(s) === null}<option value="">
+					{unplaced(s)
 						? i18n.t("admin.rollover.classes.choose")
-						: i18n.t("admin.rollover.classes.noGroup")}</option
-				>{/if}
+						: i18n.t("admin.rollover.classes.noGroup")}
+				</option>{/if}
 			{#each choices(s) as t (t.id)}<option value={String(t.id)}>{t.label}</option>{/each}
 		</Select>
 	{/snippet}
@@ -232,9 +232,9 @@
 				<Card gap="3" as="section">
 					<p>{i18n.t("admin.rollover.backup.text")}</p>
 					{#if backup}
-						<Alert tone="success" padded data-testid="rollover-backup"
-							>{i18n.t("admin.rollover.backup.created", { name: backup })}</Alert
-						>
+						<Alert tone="success" padded data-testid="rollover-backup">
+							{i18n.t("admin.rollover.backup.created", { name: backup })}
+						</Alert>
 					{/if}
 					<Row>
 						<Button
@@ -242,15 +242,18 @@
 							onclick={makeBackup}
 							disabled={busy}
 							data-testid="rollover-make-backup"
-							>{i18n.t("admin.rollover.backup.create")}</Button
 						>
+							{i18n.t("admin.rollover.backup.create")}
+						</Button>
 						<Button
 							variant="primary"
 							icon={NextIcon}
 							disabled={!backup}
 							onclick={() => (step = 1)}
-							data-testid="rollover-next">{i18n.t("admin.rollover.next")}</Button
+							data-testid="rollover-next"
 						>
+							{i18n.t("admin.rollover.next")}
+						</Button>
 					</Row>
 				</Card>
 			{:else if step === 1}
@@ -272,31 +275,32 @@
 							<summary
 								class="flex cursor-pointer flex-wrap items-center gap-2 p-3 hover:bg-surface-100"
 							>
-								<strong
-									>{i18n.t("admin.rollover.classes.group", {
+								<strong>
+									{i18n.t("admin.rollover.classes.group", {
 										from: g.label,
 										to: g.nextLabel,
-									})}</strong
-								>
+									})}
+								</strong>
 								{#if g.fate !== "advances"}<Badge
 										tone={g.fate === "archived" ? "warning" : undefined}
-										>{i18n.t(`admin.rollover.classes.fates.${g.fate}`)}</Badge
-									>{/if}
-								<Badge
-									>{i18n.t("admin.rollover.classes.count", {
+									>
+										{i18n.t(`admin.rollover.classes.fates.${g.fate}`)}
+									</Badge>{/if}
+								<Badge>
+									{i18n.t("admin.rollover.classes.count", {
 										count: g.students.length,
-									})}</Badge
-								>
-								{#if exceptions > 0}<Badge tone="warning"
-										>{i18n.t("admin.rollover.classes.exceptions", {
+									})}
+								</Badge>
+								{#if exceptions > 0}<Badge tone="warning">
+										{i18n.t("admin.rollover.classes.exceptions", {
 											count: exceptions,
-										})}</Badge
-									>{/if}
-								{#if lent > 0}<Badge tone="primary"
-										>{i18n.t("admin.rollover.classes.loans", {
+										})}
+									</Badge>{/if}
+								{#if lent > 0}<Badge tone="primary">
+										{i18n.t("admin.rollover.classes.loans", {
 											count: lent,
-										})}</Badge
-									>{/if}
+										})}
+									</Badge>{/if}
 							</summary>
 							<DividedList class="px-3 pb-2">
 								{#each g.students as s (s.id)}
@@ -317,8 +321,9 @@
 														group: undefined,
 													})}
 												data-testid="repeat-{s.id}"
-												>{i18n.t("admin.rollover.classes.repeat")}</Checkbox
 											>
+												{i18n.t("admin.rollover.classes.repeat")}
+											</Checkbox>
 											{#if !decisions[s.id]?.repeat}{@render wayChoice(
 													s,
 												)}{/if}
@@ -330,23 +335,25 @@
 						</details>
 					{/each}
 					{#if waiting.length > 0}
-						<Alert tone="warning" padded data-testid="rollover-unplaced"
-							>{i18n.t("admin.rollover.classes.unplaced", {
+						<Alert tone="warning" padded data-testid="rollover-unplaced">
+							{i18n.t("admin.rollover.classes.unplaced", {
 								count: waiting.length,
-							})}</Alert
-						>
+							})}
+						</Alert>
 					{/if}
 					<Row>
-						<Button icon={BackIcon} onclick={() => (step = 0)}
-							>{i18n.t("admin.rollover.back")}</Button
-						>
+						<Button icon={BackIcon} onclick={() => (step = 0)}>
+							{i18n.t("admin.rollover.back")}
+						</Button>
 						<Button
 							variant="primary"
 							icon={NextIcon}
 							disabled={students.some(unplaced)}
 							onclick={() => (step = 2)}
-							data-testid="rollover-next">{i18n.t("admin.rollover.next")}</Button
+							data-testid="rollover-next"
 						>
+							{i18n.t("admin.rollover.next")}
+						</Button>
 					</Row>
 				</Card>
 			{:else if step === 2}
@@ -364,16 +371,16 @@
 									class="py-2"
 									data-testid="rollover-leaver-{s.id}"
 								>
-									<span class="font-medium"
-										>{patronSortName(s)} · {s.classLabel}</span
-									>
+									<span class="font-medium">
+										{patronSortName(s)} · {s.classLabel}
+									</span>
 									<Row gap="3" align="center">
 										{#if s.openLoans > 0}
-											<Badge tone="warning"
-												>{i18n.t("admin.rollover.leavers.openLoans", {
+											<Badge tone="warning">
+												{i18n.t("admin.rollover.leavers.openLoans", {
 													count: s.openLoans,
-												})}</Badge
-											>
+												})}
+											</Badge>
 										{/if}
 										<Checkbox
 											checked={!decisions[s.id]?.keep}
@@ -383,8 +390,9 @@
 													group: undefined,
 												})}
 											data-testid="leaves-{s.id}"
-											>{i18n.t("admin.rollover.leavers.leaves")}</Checkbox
 										>
+											{i18n.t("admin.rollover.leavers.leaves")}
+										</Checkbox>
 										{#if !decisions[s.id]?.keep}{@render wayChoice(s)}{/if}
 										{#if !leaves(s)}{@render groupChoice(s)}{/if}
 									</Row>
@@ -396,25 +404,27 @@
 						<Alert tone="warning" padded data-testid="rollover-blocked">
 							{i18n.t("admin.rollover.leavers.blocked", { count: blocked.length })}
 							<!-- by name: a pupil who took "leaves" at the classes step is not listed here -->
-							<span data-testid="rollover-blocked-names"
-								>{blocked.map((b) => patronSortName(b)).join(", ")}.</span
-							>
-							<Link class="ml-2 font-semibold" href="/circulation/checkin"
-								>{i18n.t("admin.rollover.leavers.toCheckin")}</Link
-							>
+							<span data-testid="rollover-blocked-names">
+								{blocked.map((b) => patronSortName(b)).join(", ")}.
+							</span>
+							<Link class="ml-2 font-semibold" href="/circulation/checkin">
+								{i18n.t("admin.rollover.leavers.toCheckin")}
+							</Link>
 						</Alert>
 					{/if}
 					<Row>
-						<Button icon={BackIcon} onclick={() => (step = 1)}
-							>{i18n.t("admin.rollover.back")}</Button
-						>
+						<Button icon={BackIcon} onclick={() => (step = 1)}>
+							{i18n.t("admin.rollover.back")}
+						</Button>
 						<Button
 							variant="primary"
 							icon={NextIcon}
 							disabled={blocked.length > 0 || [...kept, ...continuing].some(unplaced)}
 							onclick={() => (step = 3)}
-							data-testid="rollover-next">{i18n.t("admin.rollover.next")}</Button
+							data-testid="rollover-next"
 						>
+							{i18n.t("admin.rollover.next")}
+						</Button>
 					</Row>
 				</Card>
 			{:else if step === 3}
@@ -443,27 +453,28 @@
 						</li>
 					</OrderedList>
 					{#if p.recentRun && p.lastRunAt}
-						<Checkbox bind:checked={confirmRecent} data-testid="rollover-recent"
-							>{i18n.t("admin.rollover.confirm.recent", {
+						<Checkbox bind:checked={confirmRecent} data-testid="rollover-recent">
+							{i18n.t("admin.rollover.confirm.recent", {
 								date: fmt.dateTime(p.lastRunAt),
-							})}</Checkbox
-						>
+							})}
+						</Checkbox>
 					{/if}
 					{#if failure}
 						<Alert tone="error" padded data-testid="rollover-error">{failure}</Alert>
 					{/if}
 					<Row>
-						<Button icon={BackIcon} onclick={() => (step = 2)}
-							>{i18n.t("admin.rollover.back")}</Button
-						>
+						<Button icon={BackIcon} onclick={() => (step = 2)}>
+							{i18n.t("admin.rollover.back")}
+						</Button>
 						<Button
 							variant="error"
 							icon={RunIcon}
 							disabled={busy || (p.recentRun && !confirmRecent)}
 							onclick={run}
 							data-testid="rollover-run"
-							>{i18n.t("admin.rollover.confirm.run")}</Button
 						>
+							{i18n.t("admin.rollover.confirm.run")}
+						</Button>
 					</Row>
 				</Card>
 			{:else if outcome}
@@ -497,8 +508,9 @@
 							variant="primary"
 							href="/admin/imports/students"
 							data-testid="rollover-import"
-							>{i18n.t("admin.rollover.done.import")}</Button
 						>
+							{i18n.t("admin.rollover.done.import")}
+						</Button>
 					</Row>
 				</Card>
 			{/if}
