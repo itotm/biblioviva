@@ -43,7 +43,7 @@ list is cleared at a release, and a new one takes the next.
   type on the record and the segnatura on the copy (Q139).
 - [ ] **14. Adoption study and accessibility**: every question answered (QA1 → 9.54, QA2 yes, QA3 → 9.63, QA4 → 9.64,
   QA5 → 9.55, QA6 → 9.65, QA7 → 9.66); left: look at the darker field borders and placeholders, at the overview page
-  `docs/it/features.md`, and read the Italian pages of the section Norme (`docs/it/compliance/`, 9.63).
+  `docs/it/features.md`, and read the Italian pages of the section Normativa (`docs/it/compliance/`, 9.63).
 - [ ] **15. Accessibility by hand** (9.3): look at the asterisks of the required fields and at the keyboard and tap
   alternatives of the photo, cover and class-picture crops; NVDA (Windows, Firefox or Chrome) and Orca (Linux) on the desk,
   a form with errors, a grid, a dialog; the browser zoom at 200 % and 400 %; a Windows contrast theme.
@@ -102,7 +102,7 @@ list is cleared at a release, and a new one takes the next.
 - [x] 9.54 Accessibility to WCAG 2.2 AA: the six open gaps of the audit, axe on more states, a reflow check (Q147).
 - [ ] 9.55 `publiccode.yml`: the file and its test are in; left: the official validator and the Developers Italia listing
   after 9.36 (Q148, owner's check 16).
-- [x] 9.63 The section Norme of the documentation (data protection with ready texts, accessibility, open source,
+- [x] 9.63 The section Normativa of the documentation (data protection with ready texts, accessibility, open source,
   security), its PDF, and the rules on the home page (Q154, ADR-059).
 - [x] 9.64 The school inventory: inventory number, origin and value of the copies, off by default; the lists of the
   copies withdrawn and entered in a period (Q155).
@@ -166,7 +166,7 @@ list is cleared at a release, and a new one takes the next.
 - [ ] EN 301 549 v4.1.1 (WCAG 2.2): once it is cited in the Official Journal of the EU and AgID updates its
   guidelines, say so in `docs/<lang>/compliance/accessibility.md` and `docs/accessibility.md` (adoption study §2.1).
 - [ ] Whether a school's accessibility statement must cover an internal tool such as BiblioViva: the AgID guidelines
-  do not say; ask AgID or a school's RTD, then update the page Accessibilità of the section Norme.
+  do not say; ask AgID or a school's RTD, then update the page Accessibilità of the section Normativa.
 - [ ] TypeScript 7: waits until `svelte-check` and `@sveltejs/kit` accept it (their peer range stops at 6).
 - [ ] At the next Raspberry Pi load test, measure again how long the print sheets wait with 10 users at once (the
   slowest took 60 s; the idle timeout is 120 s, [performance.md](performance.md)).

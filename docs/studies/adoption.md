@@ -1,7 +1,7 @@
 # Study — what a wide adoption in Italian schools requires
 
 > **Status:** STUDY, decided. Every question of §9 is answered and every proposal is a step of PLAN.md: 9.54
-> (accessibility, done), 9.55 (`publiccode.yml`), 9.63 (the section Norme of the documentation, done), 9.64 (school
+> (accessibility, done), 9.55 (`publiccode.yml`), 9.63 (the section Normativa of the documentation, done), 9.64 (school
 > inventory), 9.65 (MARC), 9.66 (accessible books); the manual accessibility checks stay with 9.3.
 > **Audience:** the owner (what the law asks of a school that adopts BiblioViva, what is missing, cost) and a later
 > coding agent that may expand the chosen proposals into steps.
@@ -16,13 +16,13 @@
 
 | Area | Rule | Where BiblioViva stands | Decision (step) | When |
 |---|---|---|---|---|
-| Accessibility | Legge 4/2004, AgID guidelines → EN 301 549 v3.2.1 = WCAG 2.1 AA (also on intranets) | target WCAG 2.2 AA (Q147); the gaps of the audit closed (§2.3, step 9.54); conformance page `docs/accessibility.md` | the checks by hand of 9.3; the section Norme (9.63, done) | **high** (0.9.0) |
-| Data protection | GDPR, D.Lgs. 196/2003, Garante's school guidance | strong by design (data at school, anonymization, no logs of names) | the section Norme with the ready texts (9.63, done) | **high** (0.9.0, docs only) |
+| Accessibility | Legge 4/2004, AgID guidelines → EN 301 549 v3.2.1 = WCAG 2.1 AA (also on intranets) | target WCAG 2.2 AA (Q147); the gaps of the audit closed (§2.3, step 9.54); conformance page `docs/accessibility.md` | the checks by hand of 9.3; the section Normativa (9.63, done) | **high** (0.9.0) |
+| Data protection | GDPR, D.Lgs. 196/2003, Garante's school guidance | strong by design (data at school, anonymization, no logs of names) | the section Normativa with the ready texts (9.63, done) | **high** (0.9.0, docs only) |
 | School inventory | D.I. 129/2018 art. 31: library books are inventoried assets | not covered: no inventory number, no value, no acquisition source | optional inventory fields and the two lists the office needs (9.64) | 0.9.0 (Q155) |
 | Open source in the PA | CAD art. 68–69, AgID guidelines on acquisition and reuse | GPL, public repository; `publiccode.yml` (step 9.55, Q148) | the listing in the Developers Italia catalogue after 9.36 (9.55) | 0.9.0 |
 | Interoperability and exit | CAD art. 68 (portability), library practice | CSV/JSON exports, Z39.50 and UNIMARC import of records | MARC export and import of the catalogue (9.65) | 0.9.0 (Q156) |
-| Security | AgID minimum ICT security measures (Circolare 2/2017) | accounts, roles, audit log, backups, updates | said in the section Norme (9.63, done) | done |
-| Cloud | ACN regulation on cloud for the PA | self-hosted: not concerned | said in the section Norme and in `docs/security.md` (done) | done |
+| Security | AgID minimum ICT security measures (Circolare 2/2017) | accounts, roles, audit log, backups, updates | said in the section Normativa (9.63, done) | done |
+| Cloud | ACN regulation on cloud for the PA | self-hosted: not concerned | said in the section Normativa and in `docs/security.md` (done) | done |
 | European Accessibility Act | D.Lgs. 82/2022 | not concerned (not a consumer product or service) | none | — |
 | Inclusion | L. 170/2010 (DSA), L. 104/1992 | item types and reading levels are configurable | a list of accessible formats and a catalogue filter (9.66) | 0.9.0 (Q157) |
 
@@ -244,7 +244,7 @@ Numbered here; if accepted they take the next free numbers of PLAN.md §11.
 - **QA2** — Keep the conformance page `docs/accessibility.md` (technical section, written with this study) with the
   state, the known gaps and how the project tests it? *Answered: yes, kept and updated at each pass of 9.3 (PLAN.md Q157).*
 - **QA3** — The page for the head teacher and the DPO (§3.3), with ready texts for the record of processing and the
-  information notice? *Answered: a section of its own, Norme, with a PDF and a summary on the home page (PLAN.md Q154, step 9.63, ADR-059).*
+  information notice? *Answered: a section of its own, Normativa, with a PDF and a summary on the home page (PLAN.md Q154, step 9.63, ADR-059).*
 - **QA4** — Optional inventory fields (inventory number, origin, value) and the two lists for the office (§4)? This
   reopens Q73 for the price. *Answered: yes, before 0.9.0, optional and off by default (PLAN.md Q155, step 9.64).*
 - **QA5** — `publiccode.yml` and the Developers Italia listing after 9.36? *Answered: yes (PLAN.md Q148, step 9.55,

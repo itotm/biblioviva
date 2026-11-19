@@ -12,7 +12,7 @@ PLAN.md §3.23 is the source of these rules; this guide is the working version f
 | **Manuale** | `docs/it/manual/`, `docs/en/manual/` | whoever works at the desk, catalogues or makes the cards | Italian, English mirror |
 | **Amministrazione** | `docs/it/admin/`, `docs/en/admin/` | the administrator's account: first steps, the work during the year and at its end | Italian, English mirror |
 | **Aiuto** | `docs/it/help/`, `docs/en/help/` | everyone: common problems, the glossary, how to ask for help | Italian, English mirror |
-| **Norme** | `docs/it/compliance/`, `docs/en/compliance/` | the head teacher, the DSGA, the DPO and the Responsabile per la transizione digitale: what the rules ask of a school that adopts BiblioViva, what BiblioViva does about it and what is left to the school | Italian, English mirror |
+| **Normativa** | `docs/it/compliance/`, `docs/en/compliance/` | the head teacher, the DSGA, the DPO and the Responsabile per la transizione digitale: what the rules ask of a school that adopts BiblioViva, what BiblioViva does about it and what is left to the school | Italian, English mirror |
 | **Tecnica** | `docs/*.md` | whoever knows Docker, Linux and JSON | English only |
 | Overview (no section) | `docs/it/features.md`, `docs/en/features.md` | everyone who meets BiblioViva, the school deciding to adopt it too: what it does, area by area | Italian, English mirror |
 
@@ -105,7 +105,7 @@ page Aiuto → Problemi comuni is made of problems only: each `##` is a box.
 there; no steps, no figures and no lists of links (the site's header and side menu list the pages), a link only
 where the navigation would not lead the reader. When a feature is added, its area's paragraph names it.
 
-**Norme page** — one area of rules ("Protezione dei dati personali"), for the school's offices.
+**Normativa page** — one area of rules ("Protezione dei dati personali"), for the school's offices.
 `# <area as a noun>`, the opening sentences (which rules, for whom), then: `## Che cosa chiede la norma` (the rule
 in plain words, with its article), `## Che cosa fa BiblioViva` (facts only, each checked in the code),
 `## Che cosa fa la scuola` (what stays to the school: a choice, a document, a check), the ready texts when the page

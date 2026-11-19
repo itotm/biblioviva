@@ -108,7 +108,7 @@ documentale e al suo DPO. Il tempo di conservazione dei dati degli utenti e dei 
 
 ## Pagine correlate
 
-- [Norme](README.md)
+- [Normativa](README.md)
 - [Accessibilità](accessibility.md)
 - [Sicurezza informatica](security.md)
 - [Software libero](open-source.md)

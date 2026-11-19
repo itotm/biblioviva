@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
-// What the PDF runs of the documentation share (`pdf.spec.ts` for the section Norme, `manual-pdf.spec.ts` for
+// What the PDF runs of the documentation share (`pdf.spec.ts` for the section Normativa, `manual-pdf.spec.ts` for
 // the manual): a print page of the built site printed on A4 with page numbers to the file it names in
 // `<meta name="bv-pdf">`, a path under `site/dist/`.
 import { statSync } from "node:fs";

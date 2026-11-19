@@ -446,7 +446,7 @@ cards, the scan overlay).
   approved mock: sidebar, search, footers; `pagefind` indexes by language and its UI takes `dir`), a font for the script
   (`scripts/web-fonts.ts` copies Latin subsets only), the language switch of `biblioviva.org` (`IT · EN`, the cookie
   `bv_lang`) as a drop-down, the shot list's pictures per language (`docs:shots` takes Italian and English; pictures of an RTL
-  app need the forced-direction mode of 14.2 plus the pack), and the PDF of «Norme» (`docs:pdf`, Chromium prints RTL
+  app need the forced-direction mode of 14.2 plus the pack), and the PDF of «Normativa» (`docs:pdf`, Chromium prints RTL
   correctly; it needs the same fonts). About 15-20 days with review: a decision after the packs exist.
 - **Home page** (`home/it.html`, `en.html`, built by `scripts/home-build.ts`): Italian and English only; nothing to do.
 - **Screenshots of the documentation** show the Italian and English app; none in RTL are needed. A **gallery of RTL pictures

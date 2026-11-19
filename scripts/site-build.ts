@@ -3,7 +3,7 @@
 // The documentation site (PLAN.md §3.23): `bun run site:build` turns the Markdown of `docs/` into plain
 // static files in `site/dist/`, in the look of `site/assets/style.css`. Each language has its folder,
 // `docs/<lang>/`, with the sections: Manuale (`manual/`), Amministrazione (`admin/`), Installazione (`setup/`:
-// pages and, for each path, one page per step), Aiuto (`help/`) and Norme (`compliance/`, also one PDF per
+// pages and, for each path, one page per step), Aiuto (`help/`) and Normativa (`compliance/`, also one PDF per
 // language, printed by `bun run docs:pdf` from the print page written here); Tecnica is the English documents
 // of docs/. Markdown goes through `Bun.markdown.html`;
 // a thin layer adds figures, notes (GitHub alerts), variant blocks, the boxes of the guides and the links.
@@ -136,7 +136,7 @@ const TEXT: Record<Lang, Record<string, string>> = {
 		install: "Installazione",
 		tech: "Tecnica",
 		help: "Aiuto",
-		compliance: "Norme",
+		compliance: "Normativa",
 		onThisPage: "In questa pagina",
 		contents: "Indice",
 		sectionMenu: "Menu della sezione",
@@ -200,7 +200,7 @@ const TEXT: Record<Lang, Record<string, string>> = {
 		pdfLead:
 			"Tutte le pagine della sezione in un unico file, da conservare con gli atti della scuola.",
 		pdfGo: "Scarica il PDF",
-		pdfName: "biblioviva-norme.pdf",
+		pdfName: "biblioviva-normativa.pdf",
 		printLead:
 			"Che cosa chiedono le norme a una scuola che adotta BiblioViva, e che cosa fa BiblioViva per ciascuna.",
 		manualPdfTitle: "Il manuale in PDF",
@@ -1156,7 +1156,7 @@ function navGroups(lang: Lang, section: SectionKey): NavGroup[] {
 	} else if (section === "help" || section === "compliance") {
 		const all = pagesOf(lang, section);
 		const index = all.find((p) => p.kind === "index");
-		// Aiuto lists its pages; Norme names them in the table of its first page, in that order.
+		// Aiuto lists its pages; Normativa names them in the table of its first page, in that order.
 		const order = !index
 			? []
 			: section === "help"
@@ -1513,7 +1513,7 @@ function buildRegular(page: Page): void {
 	writePage(page.url, docsPage({ page, rendered, extra }));
 }
 
-/** The section Norme as one PDF (printed by `bun run docs:pdf`, ADR-059), in the section's folder. */
+/** The section Normativa as one PDF (printed by `bun run docs:pdf`, ADR-059), in the section's folder. */
 function compliancePdf(lang: Lang): string {
 	return `${lang}/compliance/${t(lang, "pdfName")}`;
 }
@@ -1658,7 +1658,7 @@ ${cover}
 	writePage(url, withIcons(html));
 }
 
-/** The print page of the section Norme: the pages in the order of its menu, each its own name. */
+/** The print page of the section Normativa: the pages in the order of its menu, each its own name. */
 function buildCompliancePrint(lang: Lang): void {
 	const order = navGroups(lang, "compliance")[0]?.items.map((i) => i.url) ?? [];
 	const list = order.map((u) => pageByUrl(u)).filter((p): p is Page => !!p);

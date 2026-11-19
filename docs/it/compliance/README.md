@@ -1,4 +1,4 @@
-# Norme
+# Normativa
 
 Questa sezione raccoglie ciò che le norme chiedono a una scuola che adotta BiblioViva, ciò che BiblioViva fa al riguardo
 e ciò che resta alla scuola. È scritta per il dirigente scolastico, il DSGA, il responsabile della protezione dei dati
